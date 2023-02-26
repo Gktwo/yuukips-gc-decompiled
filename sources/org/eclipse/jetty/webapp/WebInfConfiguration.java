@@ -19,7 +19,7 @@ import java.util.StringTokenizer;
 import java.util.regex.Pattern;
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.NetworkConnector;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.JavaVersion;
 import org.eclipse.jetty.util.PatternMatcher;
 import org.eclipse.jetty.util.StringUtil;
@@ -213,7 +213,7 @@ public class WebInfConfiguration extends AbstractConfiguration {
     public void deconfigure(WebAppContext context) throws Exception {
         File tempDirectory = context.getTempDirectory();
         if (!context.isPersistTempDirectory()) {
-            C5747IO.delete(tempDirectory);
+            C5739IO.delete(tempDirectory);
         }
         Boolean tmpdirConfigured = (Boolean) context.getAttribute(TEMPDIR_CONFIGURED);
         if (tmpdirConfigured != null && !tmpdirConfigured.booleanValue()) {
@@ -304,7 +304,7 @@ public class WebInfConfiguration extends AbstractConfiguration {
     public void configureTempDirectory(File dir, WebAppContext context) {
         if (dir == null) {
             throw new IllegalArgumentException("Null temp dir");
-        } else if (!context.isPersistTempDirectory() && dir.exists() && !C5747IO.delete(dir)) {
+        } else if (!context.isPersistTempDirectory() && dir.exists() && !C5739IO.delete(dir)) {
             throw new IllegalStateException("Failed to delete temp dir " + dir);
         } else if (dir.exists() || dir.mkdirs()) {
             if (!context.isPersistTempDirectory()) {
@@ -370,7 +370,7 @@ public class WebInfConfiguration extends AbstractConfiguration {
                         extractionLock.delete();
                     } else if (webApp.lastModified() > extractedWebAppDir.lastModified() || extractionLock.exists()) {
                         extractionLock.createNewFile();
-                        C5747IO.delete(extractedWebAppDir);
+                        C5739IO.delete(extractedWebAppDir);
                         extractedWebAppDir.mkdir();
                         LOG.debug("Extract " + webApp + " to " + extractedWebAppDir, new Object[0]);
                         JarResource.newJarResource(webApp).copyTo(extractedWebAppDir);
@@ -395,7 +395,7 @@ public class WebInfConfiguration extends AbstractConfiguration {
             Resource webInf = webApp.addPath("WEB-INF/");
             File extractedWebInfDir = new File(context.getTempDirectory(), "webinf");
             if (extractedWebInfDir.exists()) {
-                C5747IO.delete(extractedWebInfDir);
+                C5739IO.delete(extractedWebInfDir);
             }
             extractedWebInfDir.mkdir();
             Resource webInfLib = webInf.addPath("lib/");
@@ -404,7 +404,7 @@ public class WebInfConfiguration extends AbstractConfiguration {
             if (webInfLib.exists()) {
                 File webInfLibDir = new File(webInfDir, "lib");
                 if (webInfLibDir.exists()) {
-                    C5747IO.delete(webInfLibDir);
+                    C5739IO.delete(webInfLibDir);
                 }
                 webInfLibDir.mkdir();
                 LOG.debug("Copying WEB-INF/lib " + webInfLib + " to " + webInfLibDir, new Object[0]);
@@ -414,7 +414,7 @@ public class WebInfConfiguration extends AbstractConfiguration {
             if (webInfClasses.exists()) {
                 File webInfClassesDir = new File(webInfDir, "classes");
                 if (webInfClassesDir.exists()) {
-                    C5747IO.delete(webInfClassesDir);
+                    C5739IO.delete(webInfClassesDir);
                 }
                 webInfClassesDir.mkdir();
                 LOG.debug("Copying WEB-INF/classes from " + webInfClasses + " to " + webInfClassesDir.getAbsolutePath(), new Object[0]);

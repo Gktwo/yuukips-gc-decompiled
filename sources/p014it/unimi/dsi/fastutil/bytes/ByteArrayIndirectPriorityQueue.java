@@ -12,7 +12,7 @@ public class ByteArrayIndirectPriorityQueue implements ByteIndirectPriorityQueue
     protected int size;
 
     /* renamed from: c */
-    protected ByteComparator f1254c;
+    protected ByteComparator f1218c;
     protected int firstIndex;
     protected boolean firstIndexValid;
 
@@ -22,7 +22,7 @@ public class ByteArrayIndirectPriorityQueue implements ByteIndirectPriorityQueue
             this.array = new int[capacity];
         }
         this.refArray = refArray;
-        this.f1254c = c;
+        this.f1218c = c;
     }
 
     public ByteArrayIndirectPriorityQueue(byte[] refArray, int capacity) {
@@ -63,12 +63,12 @@ public class ByteArrayIndirectPriorityQueue implements ByteIndirectPriorityQueue
         int i = this.size - 1;
         int firstIndex = i;
         byte first = this.refArray[this.array[firstIndex]];
-        if (this.f1254c != null) {
+        if (this.f1218c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f1254c.compare(this.refArray[this.array[i]], first) < 0) {
+                } else if (this.f1218c.compare(this.refArray[this.array[i]], first) < 0) {
                     firstIndex = i;
                     first = this.refArray[this.array[i]];
                 }
@@ -92,12 +92,12 @@ public class ByteArrayIndirectPriorityQueue implements ByteIndirectPriorityQueue
         int i = this.size - 1;
         int lastIndex = i;
         byte last = this.refArray[this.array[lastIndex]];
-        if (this.f1254c != null) {
+        if (this.f1218c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f1254c.compare(last, this.refArray[this.array[i]]) < 0) {
+                } else if (this.f1218c.compare(last, this.refArray[this.array[i]]) < 0) {
                     lastIndex = i;
                     last = this.refArray[this.array[i]];
                 }
@@ -138,11 +138,11 @@ public class ByteArrayIndirectPriorityQueue implements ByteIndirectPriorityQueue
         }
         if (!this.firstIndexValid) {
             this.firstIndexValid = false;
-        } else if (this.f1254c == null) {
+        } else if (this.f1218c == null) {
             if (this.refArray[x] < this.refArray[this.array[this.firstIndex]]) {
                 this.firstIndex = this.size;
             }
-        } else if (this.f1254c.compare(this.refArray[x], this.refArray[this.array[this.firstIndex]]) < 0) {
+        } else if (this.f1218c.compare(this.refArray[x], this.refArray[this.array[this.firstIndex]]) < 0) {
             this.firstIndex = this.size;
         }
         int[] iArr = this.array;
@@ -255,7 +255,7 @@ public class ByteArrayIndirectPriorityQueue implements ByteIndirectPriorityQueue
     /* Return type fixed from 'it.unimi.dsi.fastutil.bytes.ByteComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.bytes.ByteIndirectPriorityQueue, p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public Comparator<? super Byte> comparator() {
-        return this.f1254c;
+        return this.f1218c;
     }
 
     public String toString() {

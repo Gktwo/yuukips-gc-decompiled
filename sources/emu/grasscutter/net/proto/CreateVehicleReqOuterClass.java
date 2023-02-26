@@ -21,9 +21,9 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CreateVehicleReqOuterClass.class */
 public final class CreateVehicleReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016CreateVehicleReq.proto\u001a\fVector.proto\"j\n\u0010CreateVehicleReq\u0012\u0014\n\u0003pos\u0018\u000b \u0001(\u000b2\u0007.Vector\u0012\u0012\n\nvehicle_id\u0018\u0004 \u0001(\r\u0012\u0016\n\u000escene_point_id\u0018\u0003 \u0001(\r\u0012\u0014\n\u0003rot\u0018\u0006 \u0001(\u000b2\u0007.VectorB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016CreateVehicleReq.proto\u001a\fVector.proto\"g\n\u0010CreateVehicleReq\u0012\u0014\n\u0003pos\u0018\u0002 \u0001(\u000b2\u0007.Vector\u0012\u0014\n\u0003rot\u0018\n \u0001(\u000b2\u0007.Vector\u0012\u0011\n\tvehicleId\u0018\u0001 \u0001(\r\u0012\u0014\n\fscenePointId\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_CreateVehicleReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_CreateVehicleReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CreateVehicleReq_descriptor, new String[]{"Pos", "VehicleId", "ScenePointId", "Rot"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_CreateVehicleReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CreateVehicleReq_descriptor, new String[]{"Pos", "Rot", "VehicleId", "ScenePointId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CreateVehicleReqOuterClass$CreateVehicleReqOrBuilder.class */
     public interface CreateVehicleReqOrBuilder extends MessageOrBuilder {
@@ -33,15 +33,15 @@ public final class CreateVehicleReqOuterClass {
 
         VectorOuterClass.VectorOrBuilder getPosOrBuilder();
 
-        int getVehicleId();
-
-        int getScenePointId();
-
         boolean hasRot();
 
         VectorOuterClass.Vector getRot();
 
         VectorOuterClass.VectorOrBuilder getRotOrBuilder();
+
+        int getVehicleId();
+
+        int getScenePointId();
     }
 
     private CreateVehicleReqOuterClass() {
@@ -57,14 +57,14 @@ public final class CreateVehicleReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CreateVehicleReqOuterClass$CreateVehicleReq.class */
     public static final class CreateVehicleReq extends GeneratedMessageV3 implements CreateVehicleReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int POS_FIELD_NUMBER = 11;
+        public static final int POS_FIELD_NUMBER = 2;
         private VectorOuterClass.Vector pos_;
-        public static final int VEHICLE_ID_FIELD_NUMBER = 4;
-        private int vehicleId_;
-        public static final int SCENE_POINT_ID_FIELD_NUMBER = 3;
-        private int scenePointId_;
-        public static final int ROT_FIELD_NUMBER = 6;
+        public static final int ROT_FIELD_NUMBER = 10;
         private VectorOuterClass.Vector rot_;
+        public static final int VEHICLEID_FIELD_NUMBER = 1;
+        private int vehicleId_;
+        public static final int SCENEPOINTID_FIELD_NUMBER = 15;
+        private int scenePointId_;
         private byte memoizedIsInitialized;
         private static final CreateVehicleReq DEFAULT_INSTANCE = new CreateVehicleReq();
         private static final Parser<CreateVehicleReq> PARSER = new AbstractParser<CreateVehicleReq>() { // from class: emu.grasscutter.net.proto.CreateVehicleReqOuterClass.CreateVehicleReq.1
@@ -110,32 +110,32 @@ public final class CreateVehicleReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 24:
-                                this.scenePointId_ = input.readUInt32();
-                                break;
-                            case 32:
+                            case 8:
                                 this.vehicleId_ = input.readUInt32();
                                 break;
-                            case 50:
-                                VectorOuterClass.Vector.Builder subBuilder = this.rot_ != null ? this.rot_.toBuilder() : null;
-                                this.rot_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
+                            case 18:
+                                VectorOuterClass.Vector.Builder subBuilder = this.pos_ != null ? this.pos_.toBuilder() : null;
+                                this.pos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
                                 if (subBuilder == null) {
                                     break;
                                 } else {
-                                    subBuilder.mergeFrom(this.rot_);
-                                    this.rot_ = subBuilder.buildPartial();
+                                    subBuilder.mergeFrom(this.pos_);
+                                    this.pos_ = subBuilder.buildPartial();
                                     break;
                                 }
-                            case 90:
-                                VectorOuterClass.Vector.Builder subBuilder2 = this.pos_ != null ? this.pos_.toBuilder() : null;
-                                this.pos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
+                            case 82:
+                                VectorOuterClass.Vector.Builder subBuilder2 = this.rot_ != null ? this.rot_.toBuilder() : null;
+                                this.rot_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
                                 if (subBuilder2 == null) {
                                     break;
                                 } else {
-                                    subBuilder2.mergeFrom(this.pos_);
-                                    this.pos_ = subBuilder2.buildPartial();
+                                    subBuilder2.mergeFrom(this.rot_);
+                                    this.rot_ = subBuilder2.buildPartial();
                                     break;
                                 }
+                            case 120:
+                                this.scenePointId_ = input.readUInt32();
+                                break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                     break;
@@ -181,16 +181,6 @@ public final class CreateVehicleReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.CreateVehicleReqOuterClass.CreateVehicleReqOrBuilder
-        public int getVehicleId() {
-            return this.vehicleId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.CreateVehicleReqOuterClass.CreateVehicleReqOrBuilder
-        public int getScenePointId() {
-            return this.scenePointId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.CreateVehicleReqOuterClass.CreateVehicleReqOrBuilder
         public boolean hasRot() {
             return this.rot_ != null;
         }
@@ -203,6 +193,16 @@ public final class CreateVehicleReqOuterClass {
         @Override // emu.grasscutter.net.proto.CreateVehicleReqOuterClass.CreateVehicleReqOrBuilder
         public VectorOuterClass.VectorOrBuilder getRotOrBuilder() {
             return getRot();
+        }
+
+        @Override // emu.grasscutter.net.proto.CreateVehicleReqOuterClass.CreateVehicleReqOrBuilder
+        public int getVehicleId() {
+            return this.vehicleId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.CreateVehicleReqOuterClass.CreateVehicleReqOrBuilder
+        public int getScenePointId() {
+            return this.scenePointId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -220,17 +220,17 @@ public final class CreateVehicleReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.scenePointId_ != 0) {
-                output.writeUInt32(3, this.scenePointId_);
-            }
             if (this.vehicleId_ != 0) {
-                output.writeUInt32(4, this.vehicleId_);
-            }
-            if (this.rot_ != null) {
-                output.writeMessage(6, getRot());
+                output.writeUInt32(1, this.vehicleId_);
             }
             if (this.pos_ != null) {
-                output.writeMessage(11, getPos());
+                output.writeMessage(2, getPos());
+            }
+            if (this.rot_ != null) {
+                output.writeMessage(10, getRot());
+            }
+            if (this.scenePointId_ != 0) {
+                output.writeUInt32(15, this.scenePointId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -242,17 +242,17 @@ public final class CreateVehicleReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.scenePointId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.scenePointId_);
-            }
             if (this.vehicleId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(4, this.vehicleId_);
-            }
-            if (this.rot_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(6, getRot());
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.vehicleId_);
             }
             if (this.pos_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(11, getPos());
+                size2 += CodedOutputStream.computeMessageSize(2, getPos());
+            }
+            if (this.rot_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(10, getRot());
+            }
+            if (this.scenePointId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.scenePointId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -271,8 +271,8 @@ public final class CreateVehicleReqOuterClass {
             if (hasPos() != other.hasPos()) {
                 return false;
             }
-            if ((!hasPos() || getPos().equals(other.getPos())) && getVehicleId() == other.getVehicleId() && getScenePointId() == other.getScenePointId() && hasRot() == other.hasRot()) {
-                return (!hasRot() || getRot().equals(other.getRot())) && this.unknownFields.equals(other.unknownFields);
+            if ((!hasPos() || getPos().equals(other.getPos())) && hasRot() == other.hasRot()) {
+                return (!hasRot() || getRot().equals(other.getRot())) && getVehicleId() == other.getVehicleId() && getScenePointId() == other.getScenePointId() && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -284,15 +284,14 @@ public final class CreateVehicleReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasPos()) {
-                hash = (53 * ((37 * hash) + 11)) + getPos().hashCode();
+                hash = (53 * ((37 * hash) + 2)) + getPos().hashCode();
             }
-            int hash2 = (53 * ((37 * ((53 * ((37 * hash) + 4)) + getVehicleId())) + 3)) + getScenePointId();
             if (hasRot()) {
-                hash2 = (53 * ((37 * hash2) + 6)) + getRot().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getRot().hashCode();
             }
-            int hash3 = (29 * hash2) + this.unknownFields.hashCode();
-            this.memoizedHashCode = hash3;
-            return hash3;
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 1)) + getVehicleId())) + 15)) + getScenePointId())) + this.unknownFields.hashCode();
+            this.memoizedHashCode = hash2;
+            return hash2;
         }
 
         public static CreateVehicleReq parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
@@ -371,10 +370,10 @@ public final class CreateVehicleReqOuterClass {
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements CreateVehicleReqOrBuilder {
             private VectorOuterClass.Vector pos_;
             private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> posBuilder_;
-            private int vehicleId_;
-            private int scenePointId_;
             private VectorOuterClass.Vector rot_;
             private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> rotBuilder_;
+            private int vehicleId_;
+            private int scenePointId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return CreateVehicleReqOuterClass.internal_static_CreateVehicleReq_descriptor;
@@ -408,14 +407,14 @@ public final class CreateVehicleReqOuterClass {
                     this.pos_ = null;
                     this.posBuilder_ = null;
                 }
-                this.vehicleId_ = 0;
-                this.scenePointId_ = 0;
                 if (this.rotBuilder_ == null) {
                     this.rot_ = null;
                 } else {
                     this.rot_ = null;
                     this.rotBuilder_ = null;
                 }
+                this.vehicleId_ = 0;
+                this.scenePointId_ = 0;
                 return this;
             }
 
@@ -446,13 +445,13 @@ public final class CreateVehicleReqOuterClass {
                 } else {
                     result.pos_ = this.posBuilder_.build();
                 }
-                result.vehicleId_ = this.vehicleId_;
-                result.scenePointId_ = this.scenePointId_;
                 if (this.rotBuilder_ == null) {
                     result.rot_ = this.rot_;
                 } else {
                     result.rot_ = this.rotBuilder_.build();
                 }
+                result.vehicleId_ = this.vehicleId_;
+                result.scenePointId_ = this.scenePointId_;
                 onBuilt();
                 return result;
             }
@@ -503,14 +502,14 @@ public final class CreateVehicleReqOuterClass {
                 if (other.hasPos()) {
                     mergePos(other.getPos());
                 }
+                if (other.hasRot()) {
+                    mergeRot(other.getRot());
+                }
                 if (other.getVehicleId() != 0) {
                     setVehicleId(other.getVehicleId());
                 }
                 if (other.getScenePointId() != 0) {
                     setScenePointId(other.getScenePointId());
-                }
-                if (other.hasRot()) {
-                    mergeRot(other.getRot());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -626,40 +625,6 @@ public final class CreateVehicleReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.CreateVehicleReqOuterClass.CreateVehicleReqOrBuilder
-            public int getVehicleId() {
-                return this.vehicleId_;
-            }
-
-            public Builder setVehicleId(int value) {
-                this.vehicleId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearVehicleId() {
-                this.vehicleId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.CreateVehicleReqOuterClass.CreateVehicleReqOrBuilder
-            public int getScenePointId() {
-                return this.scenePointId_;
-            }
-
-            public Builder setScenePointId(int value) {
-                this.scenePointId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearScenePointId() {
-                this.scenePointId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.CreateVehicleReqOuterClass.CreateVehicleReqOrBuilder
             public boolean hasRot() {
                 return (this.rotBuilder_ == null && this.rot_ == null) ? false : true;
             }
@@ -738,6 +703,40 @@ public final class CreateVehicleReqOuterClass {
                     this.rot_ = null;
                 }
                 return this.rotBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.CreateVehicleReqOuterClass.CreateVehicleReqOrBuilder
+            public int getVehicleId() {
+                return this.vehicleId_;
+            }
+
+            public Builder setVehicleId(int value) {
+                this.vehicleId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearVehicleId() {
+                this.vehicleId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.CreateVehicleReqOuterClass.CreateVehicleReqOrBuilder
+            public int getScenePointId() {
+                return this.scenePointId_;
+            }
+
+            public Builder setScenePointId(int value) {
+                this.scenePointId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearScenePointId() {
+                this.scenePointId_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

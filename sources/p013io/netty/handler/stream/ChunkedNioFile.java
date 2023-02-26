@@ -15,7 +15,7 @@ import p013io.netty.util.internal.ObjectUtil;
 public class ChunkedNioFile implements ChunkedInput<ByteBuf> {
 
     /* renamed from: in */
-    private final FileChannel f1031in;
+    private final FileChannel f995in;
     private final long startOffset;
     private final long endOffset;
     private final int chunkSize;
@@ -45,7 +45,7 @@ public class ChunkedNioFile implements ChunkedInput<ByteBuf> {
         if (!in.isOpen()) {
             throw new ClosedChannelException();
         }
-        this.f1031in = in;
+        this.f995in = in;
         this.chunkSize = chunkSize;
         this.startOffset = offset;
         this.offset = offset;
@@ -66,12 +66,12 @@ public class ChunkedNioFile implements ChunkedInput<ByteBuf> {
 
     @Override // p013io.netty.handler.stream.ChunkedInput
     public boolean isEndOfInput() throws Exception {
-        return this.offset >= this.endOffset || !this.f1031in.isOpen();
+        return this.offset >= this.endOffset || !this.f995in.isOpen();
     }
 
     @Override // p013io.netty.handler.stream.ChunkedInput
     public void close() throws Exception {
-        this.f1031in.close();
+        this.f995in.close();
     }
 
     @Override // p013io.netty.handler.stream.ChunkedInput
@@ -92,7 +92,7 @@ public class ChunkedNioFile implements ChunkedInput<ByteBuf> {
         int readBytes = 0;
         while (true) {
             try {
-                int localReadBytes = buffer.writeBytes(this.f1031in, offset + ((long) readBytes), chunkSize - readBytes);
+                int localReadBytes = buffer.writeBytes(this.f995in, offset + ((long) readBytes), chunkSize - readBytes);
                 if (localReadBytes < 0) {
                     break;
                 }

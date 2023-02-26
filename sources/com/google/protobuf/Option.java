@@ -34,9 +34,8 @@ public final class Option extends GeneratedMessageV3 implements OptionOrBuilder 
         this.name_ = "";
     }
 
-    /* access modifiers changed from: protected */
     @Override // com.google.protobuf.GeneratedMessageV3
-    public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unused) {
+    protected Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unused) {
         return new Option();
     }
 

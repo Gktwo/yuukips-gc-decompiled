@@ -19,16 +19,16 @@ public class ByteMappedBigList extends AbstractByteBigList {
     private final boolean[] readyToUse;
 
     /* renamed from: n */
-    private final int f1291n;
+    private final int f1255n;
     private final long size;
 
     protected ByteMappedBigList(ByteBuffer[] buffer, long size, boolean[] readyToUse) {
         this.buffer = buffer;
-        this.f1291n = buffer.length;
+        this.f1255n = buffer.length;
         this.size = size;
         this.readyToUse = readyToUse;
-        for (int i = 0; i < this.f1291n; i++) {
-            if (i < this.f1291n - 1 && ((long) buffer[i].capacity()) != CHUNK_SIZE) {
+        for (int i = 0; i < this.f1255n; i++) {
+            if (i < this.f1255n - 1 && ((long) buffer[i].capacity()) != CHUNK_SIZE) {
                 throw new IllegalArgumentException();
             }
         }
@@ -66,7 +66,7 @@ public class ByteMappedBigList extends AbstractByteBigList {
     }
 
     public ByteMappedBigList copy() {
-        return new ByteMappedBigList((ByteBuffer[]) this.buffer.clone(), this.size, new boolean[this.f1291n]);
+        return new ByteMappedBigList((ByteBuffer[]) this.buffer.clone(), this.size, new boolean[this.f1255n]);
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigList

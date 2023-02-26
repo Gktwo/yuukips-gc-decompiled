@@ -5,8 +5,9 @@ import org.jctools.util.Pow2;
 import org.jctools.util.UnsafeAccess;
 
 /* compiled from: FixedSizeStripedLongCounter.java */
+/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:org/jctools/counters/FixedSizeStripedLongCounterFields.class */
-abstract class FixedSizeStripedLongCounterFields extends FixedSizeStripedLongCounterPrePad {
+public abstract class FixedSizeStripedLongCounterFields extends FixedSizeStripedLongCounterPrePad {
     protected static final int CACHE_LINE_IN_LONGS = PortableJvmInfo.CACHE_LINE_SIZE / 8;
     protected static final long COUNTER_ARRAY_BASE = (long) Math.max(UnsafeAccess.UNSAFE.arrayBaseOffset(long[].class), PortableJvmInfo.CACHE_LINE_SIZE - 8);
     protected static final long ELEMENT_SHIFT = (long) Integer.numberOfTrailingZeros(PortableJvmInfo.CACHE_LINE_SIZE);

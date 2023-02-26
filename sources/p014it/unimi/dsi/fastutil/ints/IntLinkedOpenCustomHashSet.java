@@ -30,13 +30,13 @@ public class IntLinkedOpenCustomHashSet extends AbstractIntSortedSet implements 
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f2183n;
+    protected transient int f2147n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2184f;
+    protected final float f2148f;
     private static final int SPLITERATOR_CHARACTERISTICS = 337;
 
     public IntLinkedOpenCustomHashSet(int expected, float f, IntHash.Strategy strategy) {
@@ -48,14 +48,14 @@ public class IntLinkedOpenCustomHashSet extends AbstractIntSortedSet implements 
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2184f = f;
+            this.f2148f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2183n = arraySize;
+            this.f2147n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2183n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2183n, f);
-            this.key = new int[this.f2183n + 1];
-            this.link = new long[this.f2183n + 1];
+            this.mask = this.f2147n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2147n, f);
+            this.key = new int[this.f2147n + 1];
+            this.link = new long[this.f2147n + 1];
         }
     }
 
@@ -133,22 +133,22 @@ public class IntLinkedOpenCustomHashSet extends AbstractIntSortedSet implements 
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2184f);
-        if (needed > this.f2183n) {
+        int needed = HashCommon.arraySize(capacity, this.f2148f);
+        if (needed > this.f2147n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2184f)))));
-        if (needed > this.f2183n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2148f)))));
+        if (needed > this.f2147n) {
             rehash(needed);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntCollection, p014it.unimi.dsi.fastutil.ints.IntCollection
     public boolean addAll(IntCollection c) {
-        if (((double) this.f2184f) <= 0.5d) {
+        if (((double) this.f2148f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -158,7 +158,7 @@ public class IntLinkedOpenCustomHashSet extends AbstractIntSortedSet implements 
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Integer> c) {
-        if (((double) this.f2184f) <= 0.5d) {
+        if (((double) this.f2148f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -192,9 +192,9 @@ public class IntLinkedOpenCustomHashSet extends AbstractIntSortedSet implements 
         } else if (this.containsNull) {
             return false;
         } else {
-            pos = this.f2183n;
+            pos = this.f2147n;
             this.containsNull = true;
-            this.key[this.f2183n] = k;
+            this.key[this.f2147n] = k;
         }
         if (this.size == 0) {
             this.last = pos;
@@ -212,7 +212,7 @@ public class IntLinkedOpenCustomHashSet extends AbstractIntSortedSet implements 
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f2184f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f2148f));
         return true;
     }
 
@@ -250,22 +250,22 @@ public class IntLinkedOpenCustomHashSet extends AbstractIntSortedSet implements 
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f2183n <= this.minN || this.size >= this.maxFill / 4 || this.f2183n <= 16) {
+        if (this.f2147n <= this.minN || this.size >= this.maxFill / 4 || this.f2147n <= 16) {
             return true;
         }
-        rehash(this.f2183n / 2);
+        rehash(this.f2147n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f2183n] = 0;
+        this.key[this.f2147n] = 0;
         this.size--;
-        fixPointers(this.f2183n);
-        if (this.f2183n <= this.minN || this.size >= this.maxFill / 4 || this.f2183n <= 16) {
+        fixPointers(this.f2147n);
+        if (this.f2147n <= this.minN || this.size >= this.maxFill / 4 || this.f2147n <= 16) {
             return true;
         }
-        rehash(this.f2183n / 2);
+        rehash(this.f2147n / 2);
         return true;
     }
 
@@ -341,12 +341,12 @@ public class IntLinkedOpenCustomHashSet extends AbstractIntSortedSet implements 
         this.size--;
         if (this.strategy.equals(k, 0)) {
             this.containsNull = false;
-            this.key[this.f2183n] = 0;
+            this.key[this.f2147n] = 0;
         } else {
             shiftKeys(pos);
         }
-        if (this.f2183n > this.minN && this.size < this.maxFill / 4 && this.f2183n > 16) {
-            rehash(this.f2183n / 2);
+        if (this.f2147n > this.minN && this.size < this.maxFill / 4 && this.f2147n > 16) {
+            rehash(this.f2147n / 2);
         }
         return k;
     }
@@ -366,12 +366,12 @@ public class IntLinkedOpenCustomHashSet extends AbstractIntSortedSet implements 
         this.size--;
         if (this.strategy.equals(k, 0)) {
             this.containsNull = false;
-            this.key[this.f2183n] = 0;
+            this.key[this.f2147n] = 0;
         } else {
             shiftKeys(pos);
         }
-        if (this.f2183n > this.minN && this.size < this.maxFill / 4 && this.f2183n > 16) {
-            rehash(this.f2183n / 2);
+        if (this.f2147n > this.minN && this.size < this.maxFill / 4 && this.f2147n > 16) {
+            rehash(this.f2147n / 2);
         }
         return k;
     }
@@ -443,11 +443,11 @@ public class IntLinkedOpenCustomHashSet extends AbstractIntSortedSet implements 
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToFirst(this.f2183n);
+            moveIndexToFirst(this.f2147n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f2183n;
+            pos = this.f2147n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -466,7 +466,7 @@ public class IntLinkedOpenCustomHashSet extends AbstractIntSortedSet implements 
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f2184f));
+        rehash(HashCommon.arraySize(this.size, this.f2148f));
         return true;
     }
 
@@ -489,11 +489,11 @@ public class IntLinkedOpenCustomHashSet extends AbstractIntSortedSet implements 
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToLast(this.f2183n);
+            moveIndexToLast(this.f2147n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f2183n;
+            pos = this.f2147n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -512,7 +512,7 @@ public class IntLinkedOpenCustomHashSet extends AbstractIntSortedSet implements 
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f2184f));
+        rehash(HashCommon.arraySize(this.size, this.f2148f));
         return true;
     }
 
@@ -657,8 +657,8 @@ public class IntLinkedOpenCustomHashSet extends AbstractIntSortedSet implements 
             this.index = -1;
             if (IntLinkedOpenCustomHashSet.this.strategy.equals(from, 0)) {
                 if (IntLinkedOpenCustomHashSet.this.containsNull) {
-                    this.next = (int) IntLinkedOpenCustomHashSet.this.link[IntLinkedOpenCustomHashSet.this.f2183n];
-                    this.prev = IntLinkedOpenCustomHashSet.this.f2183n;
+                    this.next = (int) IntLinkedOpenCustomHashSet.this.link[IntLinkedOpenCustomHashSet.this.f2147n];
+                    this.prev = IntLinkedOpenCustomHashSet.this.f2147n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + from + " does not belong to this set.");
@@ -797,9 +797,9 @@ public class IntLinkedOpenCustomHashSet extends AbstractIntSortedSet implements 
             }
             int pos = this.curr;
             this.curr = -1;
-            if (pos == IntLinkedOpenCustomHashSet.this.f2183n) {
+            if (pos == IntLinkedOpenCustomHashSet.this.f2147n) {
                 IntLinkedOpenCustomHashSet.this.containsNull = false;
-                IntLinkedOpenCustomHashSet.this.key[IntLinkedOpenCustomHashSet.this.f2183n] = 0;
+                IntLinkedOpenCustomHashSet.this.key[IntLinkedOpenCustomHashSet.this.f2147n] = 0;
                 return;
             }
             int[] key = IntLinkedOpenCustomHashSet.this.key;
@@ -869,8 +869,8 @@ public class IntLinkedOpenCustomHashSet extends AbstractIntSortedSet implements 
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2184f)));
-        if (l >= this.f2183n || this.size > HashCommon.maxFill(l, this.f2184f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2148f)));
+        if (l >= this.f2147n || this.size > HashCommon.maxFill(l, this.f2148f)) {
             return true;
         }
         try {
@@ -928,9 +928,9 @@ public class IntLinkedOpenCustomHashSet extends AbstractIntSortedSet implements 
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f2183n = newN;
+        this.f2147n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f2183n, this.f2184f);
+        this.maxFill = HashCommon.maxFill(this.f2147n, this.f2148f);
         this.key = newKey;
     }
 
@@ -984,12 +984,12 @@ public class IntLinkedOpenCustomHashSet extends AbstractIntSortedSet implements 
         int pos;
         int i;
         s.defaultReadObject();
-        this.f2183n = HashCommon.arraySize(this.size, this.f2184f);
-        this.maxFill = HashCommon.maxFill(this.f2183n, this.f2184f);
-        this.mask = this.f2183n - 1;
-        int[] key = new int[this.f2183n + 1];
+        this.f2147n = HashCommon.arraySize(this.size, this.f2148f);
+        this.maxFill = HashCommon.maxFill(this.f2147n, this.f2148f);
+        this.mask = this.f2147n - 1;
+        int[] key = new int[this.f2147n + 1];
         this.key = key;
-        long[] link = new long[this.f2183n + 1];
+        long[] link = new long[this.f2147n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -1002,7 +1002,7 @@ public class IntLinkedOpenCustomHashSet extends AbstractIntSortedSet implements 
             }
             int k = s.readInt();
             if (this.strategy.equals(k, 0)) {
-                pos = this.f2183n;
+                pos = this.f2147n;
                 this.containsNull = true;
             } else {
                 int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;

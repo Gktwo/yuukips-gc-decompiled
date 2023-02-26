@@ -24,15 +24,15 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExpeditionDataNotifyOuterClass.class */
 public final class AvatarExpeditionDataNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n AvatarExpeditionDataNotify.proto\u001a\u001aAvatarExpeditionInfo.proto\"¾\u0001\n\u001aAvatarExpeditionDataNotify\u0012O\n\u0013expedition_info_map\u0018\u000f \u0003(\u000b22.AvatarExpeditionDataNotify.ExpeditionInfoMapEntry\u001aO\n\u0016ExpeditionInfoMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\u0004\u0012$\n\u0005value\u0018\u0002 \u0001(\u000b2\u0015.AvatarExpeditionInfo:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarExpeditionInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n AvatarExpeditionDataNotify.proto\u001a\u001aAvatarExpeditionInfo.proto\"¼\u0001\n\u001aAvatarExpeditionDataNotify\u0012M\n\u0011expeditionInfoMap\u0018\u0004 \u0003(\u000b22.AvatarExpeditionDataNotify.ExpeditionInfoMapEntry\u001aO\n\u0016ExpeditionInfoMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\u0004\u0012$\n\u0005value\u0018\u0002 \u0001(\u000b2\u0015.AvatarExpeditionInfo:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarExpeditionInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AvatarExpeditionDataNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarExpeditionDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarExpeditionDataNotify_descriptor, new String[]{"ExpeditionInfoMap"});
 
     /* renamed from: internal_static_AvatarExpeditionDataNotify_ExpeditionInfoMapEntry_descriptor */
-    private static final Descriptors.Descriptor f631xa1d2d766 = internal_static_AvatarExpeditionDataNotify_descriptor.getNestedTypes().get(0);
+    private static final Descriptors.Descriptor f630xa1d2d766 = internal_static_AvatarExpeditionDataNotify_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_AvatarExpeditionDataNotify_ExpeditionInfoMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f632x5fbf37e4 = new GeneratedMessageV3.FieldAccessorTable(f631xa1d2d766, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f631x5fbf37e4 = new GeneratedMessageV3.FieldAccessorTable(f630xa1d2d766, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExpeditionDataNotifyOuterClass$AvatarExpeditionDataNotifyOrBuilder.class */
     public interface AvatarExpeditionDataNotifyOrBuilder extends MessageOrBuilder {
@@ -63,7 +63,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExpeditionDataNotifyOuterClass$AvatarExpeditionDataNotify.class */
     public static final class AvatarExpeditionDataNotify extends GeneratedMessageV3 implements AvatarExpeditionDataNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int EXPEDITION_INFO_MAP_FIELD_NUMBER = 15;
+        public static final int EXPEDITIONINFOMAP_FIELD_NUMBER = 4;
         private MapField<Long, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> expeditionInfoMap_;
         private byte memoizedIsInitialized;
         private static final AvatarExpeditionDataNotify DEFAULT_INSTANCE = new AvatarExpeditionDataNotify();
@@ -115,7 +115,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
                 r4 = this;
                 r0 = r5
                 switch(r0) {
-                    case 15: goto L_0x0014;
+                    case 4: goto L_0x0014;
                     default: goto L_0x0019;
                 }
                 r0 = r4
@@ -168,7 +168,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 122:
+                            case 34:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.expeditionInfoMap_ = MapField.newMapField(ExpeditionInfoMapDefaultEntryHolder.defaultEntry);
                                     mutable_bitField0_ |= 1;
@@ -208,7 +208,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
         /* access modifiers changed from: private */
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExpeditionDataNotifyOuterClass$AvatarExpeditionDataNotify$ExpeditionInfoMapDefaultEntryHolder.class */
         public static final class ExpeditionInfoMapDefaultEntryHolder {
-            static final MapEntry<Long, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> defaultEntry = MapEntry.newDefaultInstance(AvatarExpeditionDataNotifyOuterClass.f631xa1d2d766, WireFormat.FieldType.UINT64, 0L, WireFormat.FieldType.MESSAGE, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo.getDefaultInstance());
+            static final MapEntry<Long, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> defaultEntry = MapEntry.newDefaultInstance(AvatarExpeditionDataNotifyOuterClass.f630xa1d2d766, WireFormat.FieldType.UINT64, 0L, WireFormat.FieldType.MESSAGE, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo.getDefaultInstance());
 
             private ExpeditionInfoMapDefaultEntryHolder() {
             }
@@ -272,7 +272,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            GeneratedMessageV3.serializeLongMapTo(output, internalGetExpeditionInfoMap(), ExpeditionInfoMapDefaultEntryHolder.defaultEntry, 15);
+            GeneratedMessageV3.serializeLongMapTo(output, internalGetExpeditionInfoMap(), ExpeditionInfoMapDefaultEntryHolder.defaultEntry, 4);
             this.unknownFields.writeTo(output);
         }
 
@@ -284,7 +284,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
             }
             int size2 = 0;
             for (Map.Entry<Long, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> entry : internalGetExpeditionInfoMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(15, ExpeditionInfoMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+                size2 += CodedOutputStream.computeMessageSize(4, ExpeditionInfoMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -310,7 +310,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (!internalGetExpeditionInfoMap().getMap().isEmpty()) {
-                hash = (53 * ((37 * hash) + 15)) + internalGetExpeditionInfoMap().hashCode();
+                hash = (53 * ((37 * hash) + 4)) + internalGetExpeditionInfoMap().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -431,7 +431,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 15: goto L_0x0014;
+                        case 4: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -484,7 +484,7 @@ public final class AvatarExpeditionDataNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 15: goto L_0x0014;
+                        case 4: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4

@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/McoinExchangeHcoinReqOuterClass.class */
 public final class McoinExchangeHcoinReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bMcoinExchangeHcoinReq.proto\":\n\u0015McoinExchangeHcoinReq\u0012\r\n\u0005hcoin\u0018\u0001 \u0001(\r\u0012\u0012\n\nmcoin_cost\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bMcoinExchangeHcoinReq.proto\"9\n\u0015McoinExchangeHcoinReq\u0012\u0011\n\tmcoinCost\u0018\u000f \u0001(\r\u0012\r\n\u0005hcoin\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_McoinExchangeHcoinReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_McoinExchangeHcoinReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_McoinExchangeHcoinReq_descriptor, new String[]{"Hcoin", "McoinCost"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_McoinExchangeHcoinReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_McoinExchangeHcoinReq_descriptor, new String[]{"McoinCost", "Hcoin"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/McoinExchangeHcoinReqOuterClass$McoinExchangeHcoinReqOrBuilder.class */
     public interface McoinExchangeHcoinReqOrBuilder extends MessageOrBuilder {
-        int getHcoin();
-
         int getMcoinCost();
+
+        int getHcoin();
     }
 
     private McoinExchangeHcoinReqOuterClass() {
@@ -43,10 +43,10 @@ public final class McoinExchangeHcoinReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/McoinExchangeHcoinReqOuterClass$McoinExchangeHcoinReq.class */
     public static final class McoinExchangeHcoinReq extends GeneratedMessageV3 implements McoinExchangeHcoinReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int HCOIN_FIELD_NUMBER = 1;
-        private int hcoin_;
-        public static final int MCOIN_COST_FIELD_NUMBER = 3;
+        public static final int MCOINCOST_FIELD_NUMBER = 15;
         private int mcoinCost_;
+        public static final int HCOIN_FIELD_NUMBER = 13;
+        private int hcoin_;
         private byte memoizedIsInitialized;
         private static final McoinExchangeHcoinReq DEFAULT_INSTANCE = new McoinExchangeHcoinReq();
         private static final Parser<McoinExchangeHcoinReq> PARSER = new AbstractParser<McoinExchangeHcoinReq>() { // from class: emu.grasscutter.net.proto.McoinExchangeHcoinReqOuterClass.McoinExchangeHcoinReq.1
@@ -92,10 +92,10 @@ public final class McoinExchangeHcoinReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
+                            case 104:
                                 this.hcoin_ = input.readUInt32();
                                 break;
-                            case 24:
+                            case 120:
                                 this.mcoinCost_ = input.readUInt32();
                                 break;
                             default:
@@ -128,13 +128,13 @@ public final class McoinExchangeHcoinReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.McoinExchangeHcoinReqOuterClass.McoinExchangeHcoinReqOrBuilder
-        public int getHcoin() {
-            return this.hcoin_;
+        public int getMcoinCost() {
+            return this.mcoinCost_;
         }
 
         @Override // emu.grasscutter.net.proto.McoinExchangeHcoinReqOuterClass.McoinExchangeHcoinReqOrBuilder
-        public int getMcoinCost() {
-            return this.mcoinCost_;
+        public int getHcoin() {
+            return this.hcoin_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -153,10 +153,10 @@ public final class McoinExchangeHcoinReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.hcoin_ != 0) {
-                output.writeUInt32(1, this.hcoin_);
+                output.writeUInt32(13, this.hcoin_);
             }
             if (this.mcoinCost_ != 0) {
-                output.writeUInt32(3, this.mcoinCost_);
+                output.writeUInt32(15, this.mcoinCost_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class McoinExchangeHcoinReqOuterClass {
             }
             int size2 = 0;
             if (this.hcoin_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.hcoin_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(13, this.hcoin_);
             }
             if (this.mcoinCost_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(3, this.mcoinCost_);
+                size2 += CodedOutputStream.computeUInt32Size(15, this.mcoinCost_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -188,7 +188,7 @@ public final class McoinExchangeHcoinReqOuterClass {
                 return equals(obj);
             }
             McoinExchangeHcoinReq other = (McoinExchangeHcoinReq) obj;
-            return getHcoin() == other.getHcoin() && getMcoinCost() == other.getMcoinCost() && this.unknownFields.equals(other.unknownFields);
+            return getMcoinCost() == other.getMcoinCost() && getHcoin() == other.getHcoin() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -196,7 +196,7 @@ public final class McoinExchangeHcoinReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getHcoin())) + 3)) + getMcoinCost())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getMcoinCost())) + 13)) + getHcoin())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -275,8 +275,8 @@ public final class McoinExchangeHcoinReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/McoinExchangeHcoinReqOuterClass$McoinExchangeHcoinReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements McoinExchangeHcoinReqOrBuilder {
-            private int hcoin_;
             private int mcoinCost_;
+            private int hcoin_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return McoinExchangeHcoinReqOuterClass.internal_static_McoinExchangeHcoinReq_descriptor;
@@ -304,8 +304,8 @@ public final class McoinExchangeHcoinReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.hcoin_ = 0;
                 this.mcoinCost_ = 0;
+                this.hcoin_ = 0;
                 return this;
             }
 
@@ -331,8 +331,8 @@ public final class McoinExchangeHcoinReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public McoinExchangeHcoinReq buildPartial() {
                 McoinExchangeHcoinReq result = new McoinExchangeHcoinReq(this);
-                result.hcoin_ = this.hcoin_;
                 result.mcoinCost_ = this.mcoinCost_;
+                result.hcoin_ = this.hcoin_;
                 onBuilt();
                 return result;
             }
@@ -380,11 +380,11 @@ public final class McoinExchangeHcoinReqOuterClass {
                 if (other == McoinExchangeHcoinReq.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getHcoin() != 0) {
-                    setHcoin(other.getHcoin());
-                }
                 if (other.getMcoinCost() != 0) {
                     setMcoinCost(other.getMcoinCost());
+                }
+                if (other.getHcoin() != 0) {
+                    setHcoin(other.getHcoin());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -419,23 +419,6 @@ public final class McoinExchangeHcoinReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.McoinExchangeHcoinReqOuterClass.McoinExchangeHcoinReqOrBuilder
-            public int getHcoin() {
-                return this.hcoin_;
-            }
-
-            public Builder setHcoin(int value) {
-                this.hcoin_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearHcoin() {
-                this.hcoin_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.McoinExchangeHcoinReqOuterClass.McoinExchangeHcoinReqOrBuilder
             public int getMcoinCost() {
                 return this.mcoinCost_;
             }
@@ -448,6 +431,23 @@ public final class McoinExchangeHcoinReqOuterClass {
 
             public Builder clearMcoinCost() {
                 this.mcoinCost_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.McoinExchangeHcoinReqOuterClass.McoinExchangeHcoinReqOrBuilder
+            public int getHcoin() {
+                return this.hcoin_;
+            }
+
+            public Builder setHcoin(int value) {
+                this.hcoin_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearHcoin() {
+                this.hcoin_ = 0;
                 onChanged();
                 return this;
             }

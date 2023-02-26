@@ -41,13 +41,13 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
     protected transient boolean containsNullKey;
 
     /* renamed from: n */
-    protected transient int f2378n;
+    protected transient int f2342n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2379f;
+    protected final float f2343f;
     protected transient Long2ShortMap.FastEntrySet entries;
     protected transient LongSet keys;
     protected transient ShortCollection values;
@@ -58,14 +58,14 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2379f = f;
+            this.f2343f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2378n = arraySize;
+            this.f2342n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2378n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2378n, f);
-            this.key = new long[this.f2378n + 1];
-            this.value = new short[this.f2378n + 1];
+            this.mask = this.f2342n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2342n, f);
+            this.key = new long[this.f2342n + 1];
+            this.value = new short[this.f2342n + 1];
         }
     }
 
@@ -115,15 +115,15 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2379f);
-        if (needed > this.f2378n) {
+        int needed = HashCommon.arraySize(capacity, this.f2343f);
+        if (needed > this.f2342n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2379f)))));
-        if (needed > this.f2378n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2343f)))));
+        if (needed > this.f2342n) {
             rehash(needed);
         }
     }
@@ -133,8 +133,8 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
         short oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f2378n > this.minN && this.size < this.maxFill / 4 && this.f2378n > 16) {
-            rehash(this.f2378n / 2);
+        if (this.f2342n > this.minN && this.size < this.maxFill / 4 && this.f2342n > 16) {
+            rehash(this.f2342n / 2);
         }
         return oldValue;
     }
@@ -142,17 +142,17 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
     /* access modifiers changed from: private */
     public short removeNullEntry() {
         this.containsNullKey = false;
-        short oldValue = this.value[this.f2378n];
+        short oldValue = this.value[this.f2342n];
         this.size--;
-        if (this.f2378n > this.minN && this.size < this.maxFill / 4 && this.f2378n > 16) {
-            rehash(this.f2378n / 2);
+        if (this.f2342n > this.minN && this.size < this.maxFill / 4 && this.f2342n > 16) {
+            rehash(this.f2342n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLong2ShortMap, java.util.Map
     public void putAll(Map<? extends Long, ? extends Short> m) {
-        if (((double) this.f2379f) <= 0.5d) {
+        if (((double) this.f2343f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -163,7 +163,7 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
     private int find(long k) {
         long curr;
         if (k == 0) {
-            return this.containsNullKey ? this.f2378n : -(this.f2378n + 1);
+            return this.containsNullKey ? this.f2342n : -(this.f2342n + 1);
         }
         long[] key = this.key;
         int mix = ((int) HashCommon.mix(k)) & this.mask;
@@ -187,7 +187,7 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
     }
 
     private void insert(int pos, long k, short v) {
-        if (pos == this.f2378n) {
+        if (pos == this.f2342n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -195,7 +195,7 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2379f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2343f));
         }
     }
 
@@ -239,9 +239,9 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f2378n, incr);
+            return addToValue(this.f2342n, incr);
         } else {
-            pos = this.f2378n;
+            pos = this.f2342n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -249,7 +249,7 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2379f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2343f));
         }
         return this.defRetValue;
     }
@@ -315,7 +315,7 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
     public short get(long k) {
         long curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f2378n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2342n] : this.defRetValue;
         }
         long[] key = this.key;
         int mix = ((int) HashCommon.mix(k)) & this.mask;
@@ -369,10 +369,10 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
     public boolean containsValue(short v) {
         short[] value = this.value;
         long[] key = this.key;
-        if (this.containsNullKey && value[this.f2378n] == v) {
+        if (this.containsNullKey && value[this.f2342n] == v) {
             return true;
         }
-        int i = this.f2378n;
+        int i = this.f2342n;
         while (true) {
             i--;
             if (i == 0) {
@@ -388,7 +388,7 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
     public short getOrDefault(long k, short defaultValue) {
         long curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f2378n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2342n] : defaultValue;
         }
         long[] key = this.key;
         int mix = ((int) HashCommon.mix(k)) & this.mask;
@@ -447,7 +447,7 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
                     return true;
                 }
             }
-        } else if (!this.containsNullKey || v != this.value[this.f2378n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f2342n]) {
             return false;
         } else {
             removeNullEntry();
@@ -702,31 +702,31 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
         int last;
 
         /* renamed from: c */
-        int f2380c;
+        int f2344c;
         boolean mustReturnNullKey;
         LongArrayList wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Long2ShortOpenHashMap.this.f2378n;
+            this.pos = Long2ShortOpenHashMap.this.f2342n;
             this.last = -1;
-            this.f2380c = Long2ShortOpenHashMap.this.size;
+            this.f2344c = Long2ShortOpenHashMap.this.size;
             this.mustReturnNullKey = Long2ShortOpenHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f2380c != 0;
+            return this.f2344c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2380c--;
+            this.f2344c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Long2ShortOpenHashMap.this.f2378n;
+                int i = Long2ShortOpenHashMap.this.f2342n;
                 this.last = i;
                 return i;
             }
@@ -758,13 +758,13 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Long2ShortOpenHashMap.this.f2378n;
+                int i = Long2ShortOpenHashMap.this.f2342n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f2380c--;
+                this.f2344c--;
             }
             long[] key = Long2ShortOpenHashMap.this.key;
-            while (this.f2380c != 0) {
+            while (this.f2344c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -781,12 +781,12 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
                         i3 = Long2ShortOpenHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f2380c--;
+                    this.f2344c--;
                 } else if (key[this.pos] != 0) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f2380c--;
+                    this.f2344c--;
                 }
             }
         }
@@ -835,7 +835,7 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Long2ShortOpenHashMap.this.f2378n) {
+            if (this.last == Long2ShortOpenHashMap.this.f2342n) {
                 Long2ShortOpenHashMap.this.containsNullKey = false;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
@@ -932,7 +932,7 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
         int max;
 
         /* renamed from: c */
-        int f2381c;
+        int f2345c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -942,16 +942,16 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Long2ShortOpenHashMap.this.f2378n;
-            this.f2381c = 0;
+            this.max = Long2ShortOpenHashMap.this.f2342n;
+            this.f2345c = 0;
             this.mustReturnNull = Long2ShortOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Long2ShortOpenHashMap.this.f2378n;
-            this.f2381c = 0;
+            this.max = Long2ShortOpenHashMap.this.f2342n;
+            this.f2345c = 0;
             this.mustReturnNull = Long2ShortOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -963,14 +963,14 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2381c++;
-                acceptOnIndex(action, Long2ShortOpenHashMap.this.f2378n);
+                this.f2345c++;
+                acceptOnIndex(action, Long2ShortOpenHashMap.this.f2342n);
                 return true;
             }
             long[] key = Long2ShortOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f2381c++;
+                    this.f2345c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -984,14 +984,14 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2381c++;
-                acceptOnIndex(action, Long2ShortOpenHashMap.this.f2378n);
+                this.f2345c++;
+                acceptOnIndex(action, Long2ShortOpenHashMap.this.f2342n);
             }
             long[] key = Long2ShortOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     acceptOnIndex(action, this.pos);
-                    this.f2381c++;
+                    this.f2345c++;
                 }
                 this.pos++;
             }
@@ -999,9 +999,9 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Long2ShortOpenHashMap.this.size - this.f2381c);
+                return (long) (Long2ShortOpenHashMap.this.size - this.f2345c);
             }
-            return Math.min((long) (Long2ShortOpenHashMap.this.size - this.f2381c), ((long) ((((double) Long2ShortOpenHashMap.this.realSize()) / ((double) Long2ShortOpenHashMap.this.f2378n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Long2ShortOpenHashMap.this.size - this.f2345c), ((long) ((((double) Long2ShortOpenHashMap.this.realSize()) / ((double) Long2ShortOpenHashMap.this.f2342n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1196,7 +1196,7 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
             long k = ((Long) e.getKey()).longValue();
             short v = ((Short) e.getValue()).shortValue();
             if (k == 0) {
-                return Long2ShortOpenHashMap.this.containsNullKey && Long2ShortOpenHashMap.this.value[Long2ShortOpenHashMap.this.f2378n] == v;
+                return Long2ShortOpenHashMap.this.containsNullKey && Long2ShortOpenHashMap.this.value[Long2ShortOpenHashMap.this.f2342n] == v;
             }
             long[] key = Long2ShortOpenHashMap.this.key;
             int mix = ((int) HashCommon.mix(k)) & Long2ShortOpenHashMap.this.mask;
@@ -1257,7 +1257,7 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
                     Long2ShortOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Long2ShortOpenHashMap.this.containsNullKey || Long2ShortOpenHashMap.this.value[Long2ShortOpenHashMap.this.f2378n] != v) {
+            } else if (!Long2ShortOpenHashMap.this.containsNullKey || Long2ShortOpenHashMap.this.value[Long2ShortOpenHashMap.this.f2342n] != v) {
                 return false;
             } else {
                 Long2ShortOpenHashMap.this.removeNullEntry();
@@ -1278,9 +1278,9 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Long2ShortMap.Entry> consumer) {
             if (Long2ShortOpenHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractLong2ShortMap.BasicEntry(Long2ShortOpenHashMap.this.key[Long2ShortOpenHashMap.this.f2378n], Long2ShortOpenHashMap.this.value[Long2ShortOpenHashMap.this.f2378n]));
+                consumer.accept(new AbstractLong2ShortMap.BasicEntry(Long2ShortOpenHashMap.this.key[Long2ShortOpenHashMap.this.f2342n], Long2ShortOpenHashMap.this.value[Long2ShortOpenHashMap.this.f2342n]));
             }
-            int pos = Long2ShortOpenHashMap.this.f2378n;
+            int pos = Long2ShortOpenHashMap.this.f2342n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1296,11 +1296,11 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
         public void fastForEach(Consumer<? super Long2ShortMap.Entry> consumer) {
             AbstractLong2ShortMap.BasicEntry entry = new AbstractLong2ShortMap.BasicEntry();
             if (Long2ShortOpenHashMap.this.containsNullKey) {
-                entry.key = Long2ShortOpenHashMap.this.key[Long2ShortOpenHashMap.this.f2378n];
-                entry.value = Long2ShortOpenHashMap.this.value[Long2ShortOpenHashMap.this.f2378n];
+                entry.key = Long2ShortOpenHashMap.this.key[Long2ShortOpenHashMap.this.f2342n];
+                entry.value = Long2ShortOpenHashMap.this.value[Long2ShortOpenHashMap.this.f2342n];
                 consumer.accept(entry);
             }
-            int pos = Long2ShortOpenHashMap.this.f2378n;
+            int pos = Long2ShortOpenHashMap.this.f2342n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1408,9 +1408,9 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
         @Override // p014it.unimi.dsi.fastutil.longs.LongIterable
         public void forEach(LongConsumer consumer) {
             if (Long2ShortOpenHashMap.this.containsNullKey) {
-                consumer.accept(Long2ShortOpenHashMap.this.key[Long2ShortOpenHashMap.this.f2378n]);
+                consumer.accept(Long2ShortOpenHashMap.this.key[Long2ShortOpenHashMap.this.f2342n]);
             }
-            int pos = Long2ShortOpenHashMap.this.f2378n;
+            int pos = Long2ShortOpenHashMap.this.f2342n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1529,9 +1529,9 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
                 @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterable
                 public void forEach(ShortConsumer consumer) {
                     if (Long2ShortOpenHashMap.this.containsNullKey) {
-                        consumer.accept(Long2ShortOpenHashMap.this.value[Long2ShortOpenHashMap.this.f2378n]);
+                        consumer.accept(Long2ShortOpenHashMap.this.value[Long2ShortOpenHashMap.this.f2342n]);
                     }
-                    int pos = Long2ShortOpenHashMap.this.f2378n;
+                    int pos = Long2ShortOpenHashMap.this.f2342n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1567,8 +1567,8 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2379f)));
-        if (l >= this.f2378n || this.size > HashCommon.maxFill(l, this.f2379f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2343f)));
+        if (l >= this.f2342n || this.size > HashCommon.maxFill(l, this.f2343f)) {
             return true;
         }
         try {
@@ -1586,7 +1586,7 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
         int mask = newN - 1;
         long[] newKey = new long[newN + 1];
         short[] newValue = new short[newN + 1];
-        int i2 = this.f2378n;
+        int i2 = this.f2342n;
         int j = realSize();
         while (true) {
             j--;
@@ -1605,10 +1605,10 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f2378n];
-                this.f2378n = newN;
+                newValue[newN] = value[this.f2342n];
+                this.f2342n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2378n, this.f2379f);
+                this.maxFill = HashCommon.maxFill(this.f2342n, this.f2343f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1649,7 +1649,7 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f2378n];
+            h += this.value[this.f2342n];
         }
         return h;
     }
@@ -1675,12 +1675,12 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2378n = HashCommon.arraySize(this.size, this.f2379f);
-        this.maxFill = HashCommon.maxFill(this.f2378n, this.f2379f);
-        this.mask = this.f2378n - 1;
-        long[] key = new long[this.f2378n + 1];
+        this.f2342n = HashCommon.arraySize(this.size, this.f2343f);
+        this.maxFill = HashCommon.maxFill(this.f2342n, this.f2343f);
+        this.mask = this.f2342n - 1;
+        long[] key = new long[this.f2342n + 1];
         this.key = key;
-        short[] value = new short[this.f2378n + 1];
+        short[] value = new short[this.f2342n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1689,7 +1689,7 @@ public class Long2ShortOpenHashMap extends AbstractLong2ShortMap implements Seri
                 long k = s.readLong();
                 short v = s.readShort();
                 if (k == 0) {
-                    pos = this.f2378n;
+                    pos = this.f2342n;
                     this.containsNullKey = true;
                 } else {
                     int mix = (int) HashCommon.mix(k);

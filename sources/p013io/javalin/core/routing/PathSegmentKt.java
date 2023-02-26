@@ -15,6 +15,7 @@ import p013io.javalin.core.routing.PathSegment;
 /* renamed from: io.javalin.core.routing.PathSegmentKt */
 /* loaded from: grasscutter.jar:io/javalin/core/routing/PathSegmentKt.class */
 public final class PathSegmentKt {
+    /* access modifiers changed from: private */
     public static final String grouped(String $this$grouped) {
         return '(' + $this$grouped + ')';
     }

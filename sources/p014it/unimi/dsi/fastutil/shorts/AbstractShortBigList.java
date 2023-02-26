@@ -119,32 +119,32 @@ public abstract class AbstractShortBigList extends AbstractShortCollection imple
     public static final class IndexBasedSpliterator extends ShortBigSpliterators.LateBindingSizeIndexBasedSpliterator {
 
         /* renamed from: l */
-        final ShortBigList f2887l;
+        final ShortBigList f2851l;
 
         IndexBasedSpliterator(ShortBigList l, long pos) {
             super(pos);
-            this.f2887l = l;
+            this.f2851l = l;
         }
 
         IndexBasedSpliterator(ShortBigList l, long pos, long maxPos) {
             super(pos, maxPos);
-            this.f2887l = l;
+            this.f2851l = l;
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigSpliterators.LateBindingSizeIndexBasedSpliterator
         protected final long getMaxPosFromBackingStore() {
-            return this.f2887l.size64();
+            return this.f2851l.size64();
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigSpliterators.AbstractIndexBasedSpliterator
         protected final short get(long i) {
-            return this.f2887l.getShort(i);
+            return this.f2851l.getShort(i);
         }
 
         /* access modifiers changed from: protected */
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigSpliterators.AbstractIndexBasedSpliterator
         public final IndexBasedSpliterator makeForSplit(long pos, long maxPos) {
-            return new IndexBasedSpliterator(this.f2887l, pos, maxPos);
+            return new IndexBasedSpliterator(this.f2851l, pos, maxPos);
         }
     }
 
@@ -1008,11 +1008,11 @@ public abstract class AbstractShortBigList extends AbstractShortCollection imple
         private static final long serialVersionUID = -7046029254386353129L;
 
         /* renamed from: l */
-        protected final ShortBigList f2888l;
+        protected final ShortBigList f2852l;
         protected final long from;
 
         /* renamed from: to */
-        protected long f2889to;
+        protected long f2853to;
         static final /* synthetic */ boolean $assertionsDisabled;
 
         /* Return type fixed from 'it.unimi.dsi.fastutil.BigListIterator' to match base method */
@@ -1089,18 +1089,18 @@ public abstract class AbstractShortBigList extends AbstractShortCollection imple
         }
 
         public ShortSubList(ShortBigList l, long from, long to) {
-            this.f2888l = l;
+            this.f2852l = l;
             this.from = from;
-            this.f2889to = to;
+            this.f2853to = to;
         }
 
         /* access modifiers changed from: private */
         public boolean assertRange() {
-            if (!$assertionsDisabled && this.from > this.f2888l.size64()) {
+            if (!$assertionsDisabled && this.from > this.f2852l.size64()) {
                 throw new AssertionError();
-            } else if (!$assertionsDisabled && this.f2889to > this.f2888l.size64()) {
+            } else if (!$assertionsDisabled && this.f2853to > this.f2852l.size64()) {
                 throw new AssertionError();
-            } else if ($assertionsDisabled || this.f2889to >= this.from) {
+            } else if ($assertionsDisabled || this.f2853to >= this.from) {
                 return true;
             } else {
                 throw new AssertionError();
@@ -1109,8 +1109,8 @@ public abstract class AbstractShortBigList extends AbstractShortCollection imple
 
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortBigList, p014it.unimi.dsi.fastutil.shorts.AbstractShortCollection, p014it.unimi.dsi.fastutil.shorts.ShortCollection
         public boolean add(short k) {
-            this.f2888l.add(this.f2889to, k);
-            this.f2889to++;
+            this.f2852l.add(this.f2853to, k);
+            this.f2853to++;
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }
@@ -1120,8 +1120,8 @@ public abstract class AbstractShortBigList extends AbstractShortCollection imple
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortBigList, p014it.unimi.dsi.fastutil.shorts.ShortBigList
         public void add(long index, short k) {
             ensureIndex(index);
-            this.f2888l.add(this.from + index, k);
-            this.f2889to++;
+            this.f2852l.add(this.from + index, k);
+            this.f2853to++;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1130,32 +1130,32 @@ public abstract class AbstractShortBigList extends AbstractShortCollection imple
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortBigList, p014it.unimi.dsi.fastutil.BigList
         public boolean addAll(long index, Collection<? extends Short> c) {
             ensureIndex(index);
-            this.f2889to += (long) c.size();
-            return this.f2888l.addAll(this.from + index, c);
+            this.f2853to += (long) c.size();
+            return this.f2852l.addAll(this.from + index, c);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigList
         public short getShort(long index) {
             ensureRestrictedIndex(index);
-            return this.f2888l.getShort(this.from + index);
+            return this.f2852l.getShort(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortBigList, p014it.unimi.dsi.fastutil.shorts.ShortBigList
         public short removeShort(long index) {
             ensureRestrictedIndex(index);
-            this.f2889to--;
-            return this.f2888l.removeShort(this.from + index);
+            this.f2853to--;
+            return this.f2852l.removeShort(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortBigList, p014it.unimi.dsi.fastutil.shorts.ShortBigList
         public short set(long index, short k) {
             ensureRestrictedIndex(index);
-            return this.f2888l.set(this.from + index, k);
+            return this.f2852l.set(this.from + index, k);
         }
 
         @Override // p014it.unimi.dsi.fastutil.Size64
         public long size64() {
-            return this.f2889to - this.from;
+            return this.f2853to - this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortBigList, p014it.unimi.dsi.fastutil.shorts.ShortBigList
@@ -1164,15 +1164,15 @@ public abstract class AbstractShortBigList extends AbstractShortCollection imple
             if (from + length > size64()) {
                 throw new IndexOutOfBoundsException("End index (" + from + length + ") is greater than list size (" + size64() + ")");
             }
-            this.f2888l.getElements(this.from + from, a, offset, length);
+            this.f2852l.getElements(this.from + from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortBigList, p014it.unimi.dsi.fastutil.shorts.ShortBigList
         public void removeElements(long from, long to) {
             ensureIndex(from);
             ensureIndex(to);
-            this.f2888l.removeElements(this.from + from, this.from + to);
-            this.f2889to -= to - from;
+            this.f2852l.removeElements(this.from + from, this.from + to);
+            this.f2853to -= to - from;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1181,8 +1181,8 @@ public abstract class AbstractShortBigList extends AbstractShortCollection imple
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortBigList, p014it.unimi.dsi.fastutil.shorts.ShortBigList
         public void addElements(long index, short[][] a, long offset, long length) {
             ensureIndex(index);
-            this.f2888l.addElements(this.from + index, a, offset, length);
-            this.f2889to += length;
+            this.f2852l.addElements(this.from + index, a, offset, length);
+            this.f2853to += length;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1204,7 +1204,7 @@ public abstract class AbstractShortBigList extends AbstractShortCollection imple
 
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigListIterators.AbstractIndexBasedBigIterator
             protected final short get(long i) {
-                return ShortSubList.this.f2888l.getShort(ShortSubList.this.from + i);
+                return ShortSubList.this.f2852l.getShort(ShortSubList.this.from + i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigListIterators.AbstractIndexBasedBigListIterator
@@ -1224,7 +1224,7 @@ public abstract class AbstractShortBigList extends AbstractShortCollection imple
 
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigListIterators.AbstractIndexBasedBigIterator
             protected final long getMaxPos() {
-                return ShortSubList.this.f2889to - ShortSubList.this.from;
+                return ShortSubList.this.f2853to - ShortSubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigListIterators.AbstractIndexBasedBigListIterator, p014it.unimi.dsi.fastutil.shorts.ShortBigListIterator
@@ -1266,7 +1266,7 @@ public abstract class AbstractShortBigList extends AbstractShortCollection imple
 
             @Override // java.util.Iterator
             public boolean hasNext() {
-                return this.parent.nextIndex() < ShortSubList.this.f2889to;
+                return this.parent.nextIndex() < ShortSubList.this.f2853to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -1329,10 +1329,10 @@ public abstract class AbstractShortBigList extends AbstractShortCollection imple
                 }
                 long currentPos = this.parent.nextIndex();
                 char c = currentPos + n;
-                int i = (c > ShortSubList.this.f2889to ? 1 : (c == ShortSubList.this.f2889to ? 0 : -1));
+                int i = (c > ShortSubList.this.f2853to ? 1 : (c == ShortSubList.this.f2853to ? 0 : -1));
                 long parentNewPos = c;
                 if (i > 0) {
-                    parentNewPos = ShortSubList.this.f2889to;
+                    parentNewPos = ShortSubList.this.f2853to;
                 }
                 return this.parent.skip((parentNewPos == 1 ? 1 : 0) - currentPos);
             }
@@ -1343,17 +1343,17 @@ public abstract class AbstractShortBigList extends AbstractShortCollection imple
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortBigList, p014it.unimi.dsi.fastutil.shorts.ShortBigList, p014it.unimi.dsi.fastutil.BigList
         public BigListIterator<Short> listIterator(long index) {
             ensureIndex(index);
-            return this.f2888l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f2888l.listIterator(index + this.from));
+            return this.f2852l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f2852l.listIterator(index + this.from));
         }
 
         @Override // java.util.Collection, java.lang.Iterable, p014it.unimi.dsi.fastutil.shorts.ShortCollection, p014it.unimi.dsi.fastutil.shorts.ShortIterable
         public ShortSpliterator spliterator() {
-            return this.f2888l instanceof RandomAccess ? new IndexBasedSpliterator(this.f2888l, this.from, this.f2889to) : spliterator();
+            return this.f2852l instanceof RandomAccess ? new IndexBasedSpliterator(this.f2852l, this.from, this.f2853to) : spliterator();
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortBigList, p014it.unimi.dsi.fastutil.shorts.ShortCollection, p014it.unimi.dsi.fastutil.shorts.ShortIterable
         public IntSpliterator intSpliterator() {
-            if (this.f2888l instanceof RandomAccess) {
+            if (this.f2852l instanceof RandomAccess) {
                 return ShortSpliterators.widen(spliterator());
             }
             return intSpliterator();
@@ -1376,8 +1376,8 @@ public abstract class AbstractShortBigList extends AbstractShortCollection imple
             if (index == -1) {
                 return false;
             }
-            this.f2889to--;
-            this.f2888l.removeShort(this.from + index);
+            this.f2853to--;
+            this.f2852l.removeShort(this.from + index);
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }

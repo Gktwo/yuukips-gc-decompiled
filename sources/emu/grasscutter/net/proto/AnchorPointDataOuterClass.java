@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AnchorPointDataOuterClass.class */
 public final class AnchorPointDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015AnchorPointData.proto\u001a\fVector.proto\"z\n\u000fAnchorPointData\u0012\u0010\n\bscene_id\u0018\u0003 \u0001(\r\u0012\u0014\n\u0003rot\u0018\u0004 \u0001(\u000b2\u0007.Vector\u0012\u0010\n\bend_time\u0018\b \u0001(\r\u0012\u0014\n\u0003pos\u0018\u000b \u0001(\u000b2\u0007.Vector\u0012\u0017\n\u000fanchor_point_id\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015AnchorPointData.proto\u001a\fVector.proto\"v\n\u000fAnchorPointData\u0012\u000f\n\u0007sceneId\u0018\u000f \u0001(\r\u0012\u0014\n\u0003rot\u0018\r \u0001(\u000b2\u0007.Vector\u0012\u000f\n\u0007endTime\u0018\n \u0001(\r\u0012\u0014\n\u0003pos\u0018\f \u0001(\u000b2\u0007.Vector\u0012\u0015\n\ranchorPointId\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AnchorPointData_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AnchorPointData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AnchorPointData_descriptor, new String[]{"SceneId", "Rot", "EndTime", "Pos", "AnchorPointId"});
 
@@ -59,15 +59,15 @@ public final class AnchorPointDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AnchorPointDataOuterClass$AnchorPointData.class */
     public static final class AnchorPointData extends GeneratedMessageV3 implements AnchorPointDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SCENE_ID_FIELD_NUMBER = 3;
+        public static final int SCENEID_FIELD_NUMBER = 15;
         private int sceneId_;
-        public static final int ROT_FIELD_NUMBER = 4;
+        public static final int ROT_FIELD_NUMBER = 13;
         private VectorOuterClass.Vector rot_;
-        public static final int END_TIME_FIELD_NUMBER = 8;
+        public static final int ENDTIME_FIELD_NUMBER = 10;
         private int endTime_;
-        public static final int POS_FIELD_NUMBER = 11;
+        public static final int POS_FIELD_NUMBER = 12;
         private VectorOuterClass.Vector pos_;
-        public static final int ANCHOR_POINT_ID_FIELD_NUMBER = 9;
+        public static final int ANCHORPOINTID_FIELD_NUMBER = 11;
         private int anchorPointId_;
         private byte memoizedIsInitialized;
         private static final AnchorPointData DEFAULT_INSTANCE = new AnchorPointData();
@@ -114,35 +114,35 @@ public final class AnchorPointDataOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 24:
-                                this.sceneId_ = input.readUInt32();
+                            case 80:
+                                this.endTime_ = input.readUInt32();
                                 break;
-                            case 34:
-                                VectorOuterClass.Vector.Builder subBuilder = this.rot_ != null ? this.rot_.toBuilder() : null;
-                                this.rot_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
+                            case 88:
+                                this.anchorPointId_ = input.readUInt32();
+                                break;
+                            case 98:
+                                VectorOuterClass.Vector.Builder subBuilder = this.pos_ != null ? this.pos_.toBuilder() : null;
+                                this.pos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
                                 if (subBuilder == null) {
                                     break;
                                 } else {
-                                    subBuilder.mergeFrom(this.rot_);
-                                    this.rot_ = subBuilder.buildPartial();
+                                    subBuilder.mergeFrom(this.pos_);
+                                    this.pos_ = subBuilder.buildPartial();
                                     break;
                                 }
-                            case 64:
-                                this.endTime_ = input.readUInt32();
-                                break;
-                            case 72:
-                                this.anchorPointId_ = input.readUInt32();
-                                break;
-                            case 90:
-                                VectorOuterClass.Vector.Builder subBuilder2 = this.pos_ != null ? this.pos_.toBuilder() : null;
-                                this.pos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
+                            case 106:
+                                VectorOuterClass.Vector.Builder subBuilder2 = this.rot_ != null ? this.rot_.toBuilder() : null;
+                                this.rot_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
                                 if (subBuilder2 == null) {
                                     break;
                                 } else {
-                                    subBuilder2.mergeFrom(this.pos_);
-                                    this.pos_ = subBuilder2.buildPartial();
+                                    subBuilder2.mergeFrom(this.rot_);
+                                    this.rot_ = subBuilder2.buildPartial();
                                     break;
                                 }
+                            case 120:
+                                this.sceneId_ = input.readUInt32();
+                                break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                     break;
@@ -232,20 +232,20 @@ public final class AnchorPointDataOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.sceneId_ != 0) {
-                output.writeUInt32(3, this.sceneId_);
-            }
-            if (this.rot_ != null) {
-                output.writeMessage(4, getRot());
-            }
             if (this.endTime_ != 0) {
-                output.writeUInt32(8, this.endTime_);
+                output.writeUInt32(10, this.endTime_);
             }
             if (this.anchorPointId_ != 0) {
-                output.writeUInt32(9, this.anchorPointId_);
+                output.writeUInt32(11, this.anchorPointId_);
             }
             if (this.pos_ != null) {
-                output.writeMessage(11, getPos());
+                output.writeMessage(12, getPos());
+            }
+            if (this.rot_ != null) {
+                output.writeMessage(13, getRot());
+            }
+            if (this.sceneId_ != 0) {
+                output.writeUInt32(15, this.sceneId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -257,20 +257,20 @@ public final class AnchorPointDataOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.sceneId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.sceneId_);
-            }
-            if (this.rot_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(4, getRot());
-            }
             if (this.endTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.endTime_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(10, this.endTime_);
             }
             if (this.anchorPointId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.anchorPointId_);
+                size2 += CodedOutputStream.computeUInt32Size(11, this.anchorPointId_);
             }
             if (this.pos_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(11, getPos());
+                size2 += CodedOutputStream.computeMessageSize(12, getPos());
+            }
+            if (this.rot_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(13, getRot());
+            }
+            if (this.sceneId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.sceneId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -300,15 +300,15 @@ public final class AnchorPointDataOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getSceneId();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getSceneId();
             if (hasRot()) {
-                hash = (53 * ((37 * hash) + 4)) + getRot().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getRot().hashCode();
             }
-            int hash2 = (53 * ((37 * hash) + 8)) + getEndTime();
+            int hash2 = (53 * ((37 * hash) + 10)) + getEndTime();
             if (hasPos()) {
-                hash2 = (53 * ((37 * hash2) + 11)) + getPos().hashCode();
+                hash2 = (53 * ((37 * hash2) + 12)) + getPos().hashCode();
             }
-            int hash3 = (29 * ((53 * ((37 * hash2) + 9)) + getAnchorPointId())) + this.unknownFields.hashCode();
+            int hash3 = (29 * ((53 * ((37 * hash2) + 11)) + getAnchorPointId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash3;
             return hash3;
         }

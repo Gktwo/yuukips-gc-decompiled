@@ -3,7 +3,6 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.PlayerBuffManager;
 import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass;
 import java.util.Collection;
 import java.util.Objects;
@@ -21,7 +20,7 @@ public class PacketServerBuffChangeNotify extends BasePacket {
     }
 
     public PacketServerBuffChangeNotify(Player player, ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.ServerBuffChangeType changeType, Stream<PlayerBuffManager.PlayerBuff> buffs) {
-        super(PacketOpcodes.ServerBuffChangeNotify);
+        super(315);
         ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.Builder proto = ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.newBuilder();
         LongStream mapToLong = player.getTeamManager().getActiveTeam().stream().mapToLong(entity -> {
             return entity.getAvatar().getGuid();

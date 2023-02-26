@@ -8,7 +8,7 @@ import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketCalcWeaponUpgradeReturnItemsRsp;
 import java.util.List;
 
-@Opcodes(666)
+@Opcodes(691)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerCalcWeaponUpgradeReturnItemsReq.class */
 public class HandlerCalcWeaponUpgradeReturnItemsReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

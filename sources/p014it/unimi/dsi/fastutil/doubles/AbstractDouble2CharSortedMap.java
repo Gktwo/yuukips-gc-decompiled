@@ -90,30 +90,30 @@ public abstract class AbstractDouble2CharSortedMap extends AbstractDouble2CharMa
     public static class KeySetIterator implements DoubleBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Double2CharMap.Entry> f1543i;
+        protected final ObjectBidirectionalIterator<Double2CharMap.Entry> f1507i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Double2CharMap.Entry> i) {
-            this.f1543i = i;
+            this.f1507i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
         public double nextDouble() {
-            return ((Double2CharMap.Entry) this.f1543i.next()).getDoubleKey();
+            return ((Double2CharMap.Entry) this.f1507i.next()).getDoubleKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBidirectionalIterator
         public double previousDouble() {
-            return this.f1543i.previous().getDoubleKey();
+            return this.f1507i.previous().getDoubleKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1543i.hasNext();
+            return this.f1507i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1543i.hasPrevious();
+            return this.f1507i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractDouble2CharSortedMap extends AbstractDouble2CharMa
     public static class ValuesIterator implements CharIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Double2CharMap.Entry> f1544i;
+        protected final ObjectBidirectionalIterator<Double2CharMap.Entry> f1508i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Double2CharMap.Entry> i) {
-            this.f1544i = i;
+            this.f1508i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public char nextChar() {
-            return ((Double2CharMap.Entry) this.f1544i.next()).getCharValue();
+            return ((Double2CharMap.Entry) this.f1508i.next()).getCharValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1544i.hasNext();
+            return this.f1508i.hasNext();
         }
     }
 }

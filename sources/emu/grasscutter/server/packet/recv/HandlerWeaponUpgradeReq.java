@@ -5,7 +5,7 @@ import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.WeaponUpgradeReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 
-@Opcodes(616)
+@Opcodes(646)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerWeaponUpgradeReq.class */
 public class HandlerWeaponUpgradeReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

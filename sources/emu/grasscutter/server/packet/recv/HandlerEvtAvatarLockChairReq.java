@@ -7,7 +7,7 @@ import emu.grasscutter.net.proto.PacketHeadOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketEvtAvatarLockChairRsp;
 
-@Opcodes(308)
+@Opcodes(337)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerEvtAvatarLockChairReq.class */
 public class HandlerEvtAvatarLockChairReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

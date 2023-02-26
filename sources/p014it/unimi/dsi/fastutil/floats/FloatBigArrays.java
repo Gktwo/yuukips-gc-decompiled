@@ -525,8 +525,8 @@ public final class FloatBigArrays {
     /* JADX WARN: Type inference failed for: r28v1 */
     /* JADX WARN: Type inference failed for: r26v1, types: [long] */
     /* JADX WARN: Type inference failed for: r24v1, types: [long] */
-    /* JADX WARN: Type inference failed for: r22v1, types: [float[][], long] */
-    /* JADX WARN: Type inference failed for: r28v2, types: [float[][], long] */
+    /* JADX WARN: Type inference failed for: r22v1, types: [long, float[][]] */
+    /* JADX WARN: Type inference failed for: r28v2, types: [long, float[][]] */
     /* JADX WARN: Type inference failed for: r26v2, types: [long] */
     /* JADX WARN: Type inference failed for: r24v2, types: [long] */
     /* JADX WARN: Type inference failed for: r26v3, types: [long] */
@@ -569,15 +569,15 @@ public final class FloatBigArrays {
         private final long from;
 
         /* renamed from: to */
-        private final long f1935to;
+        private final long f1899to;
 
         /* renamed from: x */
-        private final float[][] f1936x;
+        private final float[][] f1900x;
 
         public ForkJoinQuickSort(float[][] x, long from, long to) {
             this.from = from;
-            this.f1935to = to;
-            this.f1936x = x;
+            this.f1899to = to;
+            this.f1900x = x;
         }
 
         /* JADX DEBUG: Failed to insert an additional move for type inference into block B:40:0x00ad */
@@ -593,8 +593,8 @@ public final class FloatBigArrays {
         /* JADX WARN: Type inference failed for: r32v1 */
         /* JADX WARN: Type inference failed for: r30v1, types: [long] */
         /* JADX WARN: Type inference failed for: r28v1, types: [long] */
-        /* JADX WARN: Type inference failed for: r26v1, types: [float[][], long] */
-        /* JADX WARN: Type inference failed for: r32v2, types: [float[][], long] */
+        /* JADX WARN: Type inference failed for: r26v1, types: [long, float[][]] */
+        /* JADX WARN: Type inference failed for: r32v2, types: [long, float[][]] */
         /* JADX WARN: Type inference failed for: r30v2, types: [long] */
         /* JADX WARN: Type inference failed for: r28v2, types: [long] */
         /* JADX WARN: Type inference failed for: r30v3, types: [long] */
@@ -643,16 +643,16 @@ public final class FloatBigArrays {
         private final long from;
 
         /* renamed from: to */
-        private final long f1937to;
+        private final long f1901to;
 
         /* renamed from: x */
-        private final float[][] f1938x;
+        private final float[][] f1902x;
         private final FloatComparator comp;
 
         public ForkJoinQuickSortComp(float[][] x, long from, long to, FloatComparator comp) {
             this.from = from;
-            this.f1937to = to;
-            this.f1938x = x;
+            this.f1901to = to;
+            this.f1902x = x;
             this.comp = comp;
         }
 

@@ -21,27 +21,27 @@ public final class UnsignedUtils {
 
     @PublishedApi
     /* renamed from: uintDivide-J1ME1BU  reason: not valid java name */
-    public static final int m7411uintDivideJ1ME1BU(int v1, int v2) {
-        return UInt.m7201constructorimpl((int) ((((long) v1) & 4294967295L) / (((long) v2) & 4294967295L)));
+    public static final int m7408uintDivideJ1ME1BU(int v1, int v2) {
+        return UInt.m7198constructorimpl((int) ((((long) v1) & 4294967295L) / (((long) v2) & 4294967295L)));
     }
 
     @PublishedApi
     /* renamed from: uintRemainder-J1ME1BU  reason: not valid java name */
-    public static final int m7412uintRemainderJ1ME1BU(int v1, int v2) {
-        return UInt.m7201constructorimpl((int) ((((long) v1) & 4294967295L) % (((long) v2) & 4294967295L)));
+    public static final int m7409uintRemainderJ1ME1BU(int v1, int v2) {
+        return UInt.m7198constructorimpl((int) ((((long) v1) & 4294967295L) % (((long) v2) & 4294967295L)));
     }
 
     @PublishedApi
     /* renamed from: ulongDivide-eb3DHEI  reason: not valid java name */
-    public static final long m7413ulongDivideeb3DHEI(long v1, long v2) {
+    public static final long m7410ulongDivideeb3DHEI(long v1, long v2) {
         if (v2 < 0) {
-            return ulongCompare(v1, v2) < 0 ? ULong.m7280constructorimpl(0) : ULong.m7280constructorimpl(1);
+            return ulongCompare(v1, v2) < 0 ? ULong.m7277constructorimpl(0) : ULong.m7277constructorimpl(1);
         }
         if (v1 >= 0) {
-            return ULong.m7280constructorimpl(v1 / v2);
+            return ULong.m7277constructorimpl(v1 / v2);
         }
         long quotient = ((v1 >>> 1) / v2) << 1;
-        return ULong.m7280constructorimpl(quotient + ((long) (ulongCompare(ULong.m7280constructorimpl(v1 - (quotient * v2)), ULong.m7280constructorimpl(v2)) >= 0 ? 1 : 0)));
+        return ULong.m7277constructorimpl(quotient + ((long) (ulongCompare(ULong.m7277constructorimpl(v1 - (quotient * v2)), ULong.m7277constructorimpl(v2)) >= 0 ? 1 : 0)));
     }
 
     /* JADX DEBUG: Multi-variable search result rejected for r9v0, resolved type: long */
@@ -51,17 +51,17 @@ public final class UnsignedUtils {
     /* JADX WARN: Type inference failed for: r1v12 */
     @PublishedApi
     /* renamed from: ulongRemainder-eb3DHEI  reason: not valid java name */
-    public static final long m7414ulongRemaindereb3DHEI(long v1, long v2) {
+    public static final long m7411ulongRemaindereb3DHEI(long v1, long v2) {
         if (v2 < 0) {
             if (ulongCompare(v1, v2) < 0) {
                 return v1;
             }
-            return ULong.m7280constructorimpl(v1 - v2);
+            return ULong.m7277constructorimpl(v1 - v2);
         } else if (v1 >= 0) {
-            return ULong.m7280constructorimpl(v1 % v2);
+            return ULong.m7277constructorimpl(v1 % v2);
         } else {
             long rem = v1 - ((((v1 >>> 1) / v2) << 1) * v2);
-            return ULong.m7280constructorimpl(rem - ((ulongCompare(ULong.m7280constructorimpl(rem), ULong.m7280constructorimpl(v2)) >= 0 ? v2 : 0) == true ? 1 : 0));
+            return ULong.m7277constructorimpl(rem - ((ulongCompare(ULong.m7277constructorimpl(rem), ULong.m7277constructorimpl(v2)) >= 0 ? v2 : 0) == true ? 1 : 0));
         }
     }
 
@@ -73,7 +73,7 @@ public final class UnsignedUtils {
         if (v >= uintToDouble(-1)) {
             return -1;
         }
-        return v <= 2.147483647E9d ? UInt.m7201constructorimpl((int) v) : UInt.m7201constructorimpl(UInt.m7201constructorimpl((int) (v - ((double) Integer.MAX_VALUE))) + UInt.m7201constructorimpl(Integer.MAX_VALUE));
+        return v <= 2.147483647E9d ? UInt.m7198constructorimpl((int) v) : UInt.m7198constructorimpl(UInt.m7198constructorimpl((int) (v - ((double) Integer.MAX_VALUE))) + UInt.m7198constructorimpl(Integer.MAX_VALUE));
     }
 
     @PublishedApi
@@ -84,7 +84,7 @@ public final class UnsignedUtils {
         if (v >= ulongToDouble(-1)) {
             return -1;
         }
-        return v < 9.223372036854776E18d ? ULong.m7280constructorimpl((long) v) : ULong.m7280constructorimpl(ULong.m7280constructorimpl((long) (v - 9.223372036854776E18d)) - Long.MIN_VALUE);
+        return v < 9.223372036854776E18d ? ULong.m7277constructorimpl((long) v) : ULong.m7277constructorimpl(ULong.m7277constructorimpl((long) (v - 9.223372036854776E18d)) - Long.MIN_VALUE);
     }
 
     @PublishedApi

@@ -259,7 +259,7 @@ public class ForwardedRequestCustomizer implements HttpConfiguration.Customizer 
     }
 
     protected static int getSecurePort(HttpConfiguration config) {
-        return config.getSecurePort() > 0 ? config.getSecurePort() : PacketOpcodes.AddQuestContentProgressReq;
+        return config.getSecurePort() > 0 ? config.getSecurePort() : PacketOpcodes.PersonalLineAllDataRsp;
     }
 
     protected void onError(HttpField field, Throwable t) {

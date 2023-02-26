@@ -390,7 +390,7 @@ public class GameMainQuest {
         for (Integer subQuestId : Arrays.stream(data.getSubQuests()).map((v0) -> {
             return v0.getSubId();
         }).toList()) {
-            QuestData questConfig = GameData.getQuestDataMap().get(subQuestId);
+            QuestData questConfig = GameData.getQuestDataMap().get(subQuestId.intValue());
             if (questConfig != null) {
                 this.childQuests.put(subQuestId, new GameQuest(this, questConfig));
             }
@@ -553,7 +553,7 @@ public class GameMainQuest {
                     if (targetQuest == null || !targetQuest.rewind(notifyDelete)) {
                         return null;
                     }
-                    Grasscutter.getLogger().info("rewindTo: {}", Integer.valueOf(targetQuest.getSubQuestId()));
+                    Grasscutter.getLogger().warn("rewindTo: {}", Integer.valueOf(targetQuest.getSubQuestId()));
                     List<Position> posAndRot = new ArrayList<>();
                     if (hasRewindPosition(targetQuest.getSubQuestId(), posAndRot)) {
                         return posAndRot;
@@ -569,7 +569,6 @@ public class GameMainQuest {
                 }
 
                 public List<Position> rewind() {
-                    Grasscutter.getLogger().debug("rewind2");
                     if (this.questManager == null) {
                         this.questManager = getOwner().getQuestManager();
                     }
@@ -672,7 +671,12 @@ public class GameMainQuest {
                 }
 
                 public void save() {
-                    DatabaseHelper.saveQuest(this);
+                    try {
+                        DatabaseHelper.saveQuest(this);
+                    } catch (Exception e) {
+                        delete();
+                        DatabaseHelper.saveQuest(this);
+                    }
                 }
 
                 public void delete() {

@@ -21,23 +21,23 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarPropChangeReasonNotifyOuterClass.class */
 public final class AvatarPropChangeReasonNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"AvatarPropChangeReasonNotify.proto\u001a\u0016PropChangeReason.proto\"\u0001\n\u001cAvatarPropChangeReasonNotify\u0012\u0011\n\tprop_type\u0018\u0007 \u0001(\r\u0012!\n\u0006reason\u0018\u000f \u0001(\u000e2\u0011.PropChangeReason\u0012\u0011\n\tcur_value\u0018\u000e \u0001(\u0002\u0012\u0013\n\u000bavatar_guid\u0018\u0003 \u0001(\u0004\u0012\u0011\n\told_value\u0018\r \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PropChangeReasonOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"AvatarPropChangeReasonNotify.proto\u001a\u0016PropChangeReason.proto\"\u0001\n\u001cAvatarPropChangeReasonNotify\u0012\u0010\n\bcurValue\u0018\u0002 \u0001(\u0002\u0012\u0010\n\bpropType\u0018\n \u0001(\r\u0012\u0010\n\boldValue\u0018\u0004 \u0001(\u0002\u0012!\n\u0006reason\u0018\u0005 \u0001(\u000e2\u0011.PropChangeReason\u0012\u0012\n\navatarGuid\u0018\f \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PropChangeReasonOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AvatarPropChangeReasonNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarPropChangeReasonNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarPropChangeReasonNotify_descriptor, new String[]{"PropType", "Reason", "CurValue", "AvatarGuid", "OldValue"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarPropChangeReasonNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarPropChangeReasonNotify_descriptor, new String[]{"CurValue", "PropType", "OldValue", "Reason", "AvatarGuid"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarPropChangeReasonNotifyOuterClass$AvatarPropChangeReasonNotifyOrBuilder.class */
     public interface AvatarPropChangeReasonNotifyOrBuilder extends MessageOrBuilder {
+        float getCurValue();
+
         int getPropType();
+
+        float getOldValue();
 
         int getReasonValue();
 
         PropChangeReasonOuterClass.PropChangeReason getReason();
 
-        float getCurValue();
-
         long getAvatarGuid();
-
-        float getOldValue();
     }
 
     private AvatarPropChangeReasonNotifyOuterClass() {
@@ -53,16 +53,16 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarPropChangeReasonNotifyOuterClass$AvatarPropChangeReasonNotify.class */
     public static final class AvatarPropChangeReasonNotify extends GeneratedMessageV3 implements AvatarPropChangeReasonNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PROP_TYPE_FIELD_NUMBER = 7;
-        private int propType_;
-        public static final int REASON_FIELD_NUMBER = 15;
-        private int reason_;
-        public static final int CUR_VALUE_FIELD_NUMBER = 14;
+        public static final int CURVALUE_FIELD_NUMBER = 2;
         private float curValue_;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 3;
-        private long avatarGuid_;
-        public static final int OLD_VALUE_FIELD_NUMBER = 13;
+        public static final int PROPTYPE_FIELD_NUMBER = 10;
+        private int propType_;
+        public static final int OLDVALUE_FIELD_NUMBER = 4;
         private float oldValue_;
+        public static final int REASON_FIELD_NUMBER = 5;
+        private int reason_;
+        public static final int AVATARGUID_FIELD_NUMBER = 12;
+        private long avatarGuid_;
         private byte memoizedIsInitialized;
         private static final AvatarPropChangeReasonNotify DEFAULT_INSTANCE = new AvatarPropChangeReasonNotify();
         private static final Parser<AvatarPropChangeReasonNotify> PARSER = new AbstractParser<AvatarPropChangeReasonNotify>() { // from class: emu.grasscutter.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotify.1
@@ -109,20 +109,20 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 24:
-                                this.avatarGuid_ = input.readUInt64();
-                                break;
-                            case 56:
-                                this.propType_ = input.readUInt32();
-                                break;
-                            case 109:
-                                this.oldValue_ = input.readFloat();
-                                break;
-                            case 117:
+                            case 21:
                                 this.curValue_ = input.readFloat();
                                 break;
-                            case 120:
+                            case 37:
+                                this.oldValue_ = input.readFloat();
+                                break;
+                            case 40:
                                 this.reason_ = input.readEnum();
+                                break;
+                            case 80:
+                                this.propType_ = input.readUInt32();
+                                break;
+                            case 96:
+                                this.avatarGuid_ = input.readUInt64();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -154,8 +154,18 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotifyOrBuilder
+        public float getCurValue() {
+            return this.curValue_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotifyOrBuilder
         public int getPropType() {
             return this.propType_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotifyOrBuilder
+        public float getOldValue() {
+            return this.oldValue_;
         }
 
         @Override // emu.grasscutter.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotifyOrBuilder
@@ -170,18 +180,8 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotifyOrBuilder
-        public float getCurValue() {
-            return this.curValue_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotifyOrBuilder
         public long getAvatarGuid() {
             return this.avatarGuid_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotifyOrBuilder
-        public float getOldValue() {
-            return this.oldValue_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -199,20 +199,20 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.avatarGuid_ != 0) {
-                output.writeUInt64(3, this.avatarGuid_);
-            }
-            if (this.propType_ != 0) {
-                output.writeUInt32(7, this.propType_);
+            if (this.curValue_ != 0.0f) {
+                output.writeFloat(2, this.curValue_);
             }
             if (this.oldValue_ != 0.0f) {
-                output.writeFloat(13, this.oldValue_);
-            }
-            if (this.curValue_ != 0.0f) {
-                output.writeFloat(14, this.curValue_);
+                output.writeFloat(4, this.oldValue_);
             }
             if (this.reason_ != PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_NONE.getNumber()) {
-                output.writeEnum(15, this.reason_);
+                output.writeEnum(5, this.reason_);
+            }
+            if (this.propType_ != 0) {
+                output.writeUInt32(10, this.propType_);
+            }
+            if (this.avatarGuid_ != 0) {
+                output.writeUInt64(12, this.avatarGuid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -224,20 +224,20 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.avatarGuid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(3, this.avatarGuid_);
-            }
-            if (this.propType_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.propType_);
+            if (this.curValue_ != 0.0f) {
+                size2 = 0 + CodedOutputStream.computeFloatSize(2, this.curValue_);
             }
             if (this.oldValue_ != 0.0f) {
-                size2 += CodedOutputStream.computeFloatSize(13, this.oldValue_);
-            }
-            if (this.curValue_ != 0.0f) {
-                size2 += CodedOutputStream.computeFloatSize(14, this.curValue_);
+                size2 += CodedOutputStream.computeFloatSize(4, this.oldValue_);
             }
             if (this.reason_ != PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_NONE.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(15, this.reason_);
+                size2 += CodedOutputStream.computeEnumSize(5, this.reason_);
+            }
+            if (this.propType_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(10, this.propType_);
+            }
+            if (this.avatarGuid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(12, this.avatarGuid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -253,7 +253,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
                 return equals(obj);
             }
             AvatarPropChangeReasonNotify other = (AvatarPropChangeReasonNotify) obj;
-            return getPropType() == other.getPropType() && this.reason_ == other.reason_ && Float.floatToIntBits(getCurValue()) == Float.floatToIntBits(other.getCurValue()) && getAvatarGuid() == other.getAvatarGuid() && Float.floatToIntBits(getOldValue()) == Float.floatToIntBits(other.getOldValue()) && this.unknownFields.equals(other.unknownFields);
+            return Float.floatToIntBits(getCurValue()) == Float.floatToIntBits(other.getCurValue()) && getPropType() == other.getPropType() && Float.floatToIntBits(getOldValue()) == Float.floatToIntBits(other.getOldValue()) && this.reason_ == other.reason_ && getAvatarGuid() == other.getAvatarGuid() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -261,7 +261,7 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getPropType())) + 15)) + this.reason_)) + 14)) + Float.floatToIntBits(getCurValue()))) + 3)) + Internal.hashLong(getAvatarGuid()))) + 13)) + Float.floatToIntBits(getOldValue()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + Float.floatToIntBits(getCurValue()))) + 10)) + getPropType())) + 4)) + Float.floatToIntBits(getOldValue()))) + 5)) + this.reason_)) + 12)) + Internal.hashLong(getAvatarGuid()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -340,11 +340,11 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarPropChangeReasonNotifyOuterClass$AvatarPropChangeReasonNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements AvatarPropChangeReasonNotifyOrBuilder {
-            private int propType_;
-            private int reason_ = 0;
             private float curValue_;
-            private long avatarGuid_;
+            private int propType_;
             private float oldValue_;
+            private int reason_ = 0;
+            private long avatarGuid_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return AvatarPropChangeReasonNotifyOuterClass.internal_static_AvatarPropChangeReasonNotify_descriptor;
@@ -372,11 +372,11 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.propType_ = 0;
-                this.reason_ = 0;
                 this.curValue_ = 0.0f;
-                this.avatarGuid_ = 0;
+                this.propType_ = 0;
                 this.oldValue_ = 0.0f;
+                this.reason_ = 0;
+                this.avatarGuid_ = 0;
                 return this;
             }
 
@@ -402,11 +402,11 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public AvatarPropChangeReasonNotify buildPartial() {
                 AvatarPropChangeReasonNotify result = new AvatarPropChangeReasonNotify(this);
-                result.propType_ = this.propType_;
-                result.reason_ = this.reason_;
                 result.curValue_ = this.curValue_;
-                result.avatarGuid_ = this.avatarGuid_;
+                result.propType_ = this.propType_;
                 result.oldValue_ = this.oldValue_;
+                result.reason_ = this.reason_;
+                result.avatarGuid_ = this.avatarGuid_;
                 onBuilt();
                 return result;
             }
@@ -454,20 +454,20 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
                 if (other == AvatarPropChangeReasonNotify.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getCurValue() != 0.0f) {
+                    setCurValue(other.getCurValue());
+                }
                 if (other.getPropType() != 0) {
                     setPropType(other.getPropType());
+                }
+                if (other.getOldValue() != 0.0f) {
+                    setOldValue(other.getOldValue());
                 }
                 if (other.reason_ != 0) {
                     setReasonValue(other.getReasonValue());
                 }
-                if (other.getCurValue() != 0.0f) {
-                    setCurValue(other.getCurValue());
-                }
                 if (other.getAvatarGuid() != 0) {
                     setAvatarGuid(other.getAvatarGuid());
-                }
-                if (other.getOldValue() != 0.0f) {
-                    setOldValue(other.getOldValue());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -502,6 +502,23 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotifyOrBuilder
+            public float getCurValue() {
+                return this.curValue_;
+            }
+
+            public Builder setCurValue(float value) {
+                this.curValue_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearCurValue() {
+                this.curValue_ = 0.0f;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotifyOrBuilder
             public int getPropType() {
                 return this.propType_;
             }
@@ -514,6 +531,23 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
 
             public Builder clearPropType() {
                 this.propType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotifyOrBuilder
+            public float getOldValue() {
+                return this.oldValue_;
+            }
+
+            public Builder setOldValue(float value) {
+                this.oldValue_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearOldValue() {
+                this.oldValue_ = 0.0f;
                 onChanged();
                 return this;
             }
@@ -551,23 +585,6 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotifyOrBuilder
-            public float getCurValue() {
-                return this.curValue_;
-            }
-
-            public Builder setCurValue(float value) {
-                this.curValue_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearCurValue() {
-                this.curValue_ = 0.0f;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotifyOrBuilder
             public long getAvatarGuid() {
                 return this.avatarGuid_;
             }
@@ -580,23 +597,6 @@ public final class AvatarPropChangeReasonNotifyOuterClass {
 
             public Builder clearAvatarGuid() {
                 this.avatarGuid_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarPropChangeReasonNotifyOuterClass.AvatarPropChangeReasonNotifyOrBuilder
-            public float getOldValue() {
-                return this.oldValue_;
-            }
-
-            public Builder setOldValue(float value) {
-                this.oldValue_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearOldValue() {
-                this.oldValue_ = 0.0f;
                 onChanged();
                 return this;
             }

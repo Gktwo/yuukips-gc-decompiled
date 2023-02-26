@@ -26,7 +26,7 @@ final class RunSuspend implements Continuation<Unit> {
 
     @Nullable
     /* renamed from: getResult-xLWZpok  reason: not valid java name */
-    public final Result<Unit> m8277getResultxLWZpok() {
+    public final Result<Unit> m8274getResultxLWZpok() {
         return this.result;
     }
 
@@ -37,7 +37,7 @@ final class RunSuspend implements Continuation<Unit> {
     @Override // kotlin.coroutines.Continuation
     public void resumeWith(@NotNull Object result) {
         synchronized (this) {
-            this.result = Result.m7063boximpl(result);
+            this.result = Result.m7060boximpl(result);
             notifyAll();
             Unit unit = Unit.INSTANCE;
         }
@@ -46,11 +46,11 @@ final class RunSuspend implements Continuation<Unit> {
     public final void await() {
         synchronized (this) {
             while (true) {
-                Result result = m8277getResultxLWZpok();
+                Result result = m8274getResultxLWZpok();
                 if (result == null) {
                     wait();
                 } else {
-                    ResultKt.throwOnFailure(result.m7064unboximpl());
+                    ResultKt.throwOnFailure(result.m7061unboximpl());
                 }
             }
         }

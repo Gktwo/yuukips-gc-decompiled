@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeLimitedShopInfoRspOuterClass.class */
 public final class HomeLimitedShopInfoRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cHomeLimitedShopInfoRsp.proto\u001a\u0019HomeLimitedShopInfo.proto\"R\n\u0016HomeLimitedShopInfoRsp\u0012\u000f\n\u0007retcode\u0018\t \u0001(\u0005\u0012'\n\tshop_info\u0018\f \u0001(\u000b2\u0014.HomeLimitedShopInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeLimitedShopInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cHomeLimitedShopInfoRsp.proto\u001a\u0019HomeLimitedShopInfo.proto\"Q\n\u0016HomeLimitedShopInfoRsp\u0012\u000f\n\u0007retcode\u0018\n \u0001(\u0005\u0012&\n\bshopInfo\u0018\u0007 \u0001(\u000b2\u0014.HomeLimitedShopInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeLimitedShopInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_HomeLimitedShopInfoRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeLimitedShopInfoRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeLimitedShopInfoRsp_descriptor, new String[]{"Retcode", "ShopInfo"});
 
@@ -49,9 +49,9 @@ public final class HomeLimitedShopInfoRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeLimitedShopInfoRspOuterClass$HomeLimitedShopInfoRsp.class */
     public static final class HomeLimitedShopInfoRsp extends GeneratedMessageV3 implements HomeLimitedShopInfoRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 9;
+        public static final int RETCODE_FIELD_NUMBER = 10;
         private int retcode_;
-        public static final int SHOP_INFO_FIELD_NUMBER = 12;
+        public static final int SHOPINFO_FIELD_NUMBER = 7;
         private HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo shopInfo_;
         private byte memoizedIsInitialized;
         private static final HomeLimitedShopInfoRsp DEFAULT_INSTANCE = new HomeLimitedShopInfoRsp();
@@ -99,10 +99,7 @@ public final class HomeLimitedShopInfoRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 72:
-                                    this.retcode_ = input.readInt32();
-                                    break;
-                                case 98:
+                                case 58:
                                     HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder subBuilder = this.shopInfo_ != null ? this.shopInfo_.toBuilder() : null;
                                     this.shopInfo_ = (HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo) input.readMessage(HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -112,6 +109,9 @@ public final class HomeLimitedShopInfoRspOuterClass {
                                         this.shopInfo_ = subBuilder.buildPartial();
                                         break;
                                     }
+                                case 80:
+                                    this.retcode_ = input.readInt32();
+                                    break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                         break;
@@ -177,11 +177,11 @@ public final class HomeLimitedShopInfoRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.retcode_ != 0) {
-                output.writeInt32(9, this.retcode_);
-            }
             if (this.shopInfo_ != null) {
-                output.writeMessage(12, getShopInfo());
+                output.writeMessage(7, getShopInfo());
+            }
+            if (this.retcode_ != 0) {
+                output.writeInt32(10, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -193,11 +193,11 @@ public final class HomeLimitedShopInfoRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(9, this.retcode_);
-            }
             if (this.shopInfo_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(12, getShopInfo());
+                size2 = 0 + CodedOutputStream.computeMessageSize(7, getShopInfo());
+            }
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(10, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -224,9 +224,9 @@ public final class HomeLimitedShopInfoRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getRetcode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getRetcode();
             if (hasShopInfo()) {
-                hash = (53 * ((37 * hash) + 12)) + getShopInfo().hashCode();
+                hash = (53 * ((37 * hash) + 7)) + getShopInfo().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

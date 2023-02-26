@@ -87,9 +87,8 @@ public class EpollEventLoop extends SingleThreadEventLoop {
         return this.datagramPacketArray;
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.util.concurrent.SingleThreadEventExecutor
-    public void wakeup(boolean inEventLoop) {
+    protected void wakeup(boolean inEventLoop) {
         if (!inEventLoop && this.nextWakeupNanos.getAndSet(-1) != -1) {
             Native.eventFdWrite(this.eventFd.intValue(), 1);
         }

@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FungusTrainingDungeonDetailOuterClass.class */
 public final class FungusTrainingDungeonDetailOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!FungusTrainingDungeonDetail.proto\"V\n\u001bFungusTrainingDungeonDetail\u0012\u0012\n\nbest_score\u0018\b \u0001(\r\u0012\u0012\n\ndungeon_id\u0018\u0006 \u0001(\r\u0012\u000f\n\u0007is_open\u0018\r \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!FungusTrainingDungeonDetail.proto\"S\n\u001bFungusTrainingDungeonDetail\u0012\u000e\n\u0006isOpen\u0018\b \u0001(\b\u0012\u0011\n\tbestScore\u0018\u0007 \u0001(\r\u0012\u0011\n\tdungeonId\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_FungusTrainingDungeonDetail_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_FungusTrainingDungeonDetail_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FungusTrainingDungeonDetail_descriptor, new String[]{"BestScore", "DungeonId", "IsOpen"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_FungusTrainingDungeonDetail_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FungusTrainingDungeonDetail_descriptor, new String[]{"IsOpen", "BestScore", "DungeonId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FungusTrainingDungeonDetailOuterClass$FungusTrainingDungeonDetailOrBuilder.class */
     public interface FungusTrainingDungeonDetailOrBuilder extends MessageOrBuilder {
+        boolean getIsOpen();
+
         int getBestScore();
 
         int getDungeonId();
-
-        boolean getIsOpen();
     }
 
     private FungusTrainingDungeonDetailOuterClass() {
@@ -46,12 +46,12 @@ public final class FungusTrainingDungeonDetailOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FungusTrainingDungeonDetailOuterClass$FungusTrainingDungeonDetail.class */
     public static final class FungusTrainingDungeonDetail extends GeneratedMessageV3 implements FungusTrainingDungeonDetailOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int BEST_SCORE_FIELD_NUMBER = 8;
-        private int bestScore_;
-        public static final int DUNGEON_ID_FIELD_NUMBER = 6;
-        private int dungeonId_;
-        public static final int IS_OPEN_FIELD_NUMBER = 13;
+        public static final int ISOPEN_FIELD_NUMBER = 8;
         private boolean isOpen_;
+        public static final int BESTSCORE_FIELD_NUMBER = 7;
+        private int bestScore_;
+        public static final int DUNGEONID_FIELD_NUMBER = 6;
+        private int dungeonId_;
         private byte memoizedIsInitialized;
         private static final FungusTrainingDungeonDetail DEFAULT_INSTANCE = new FungusTrainingDungeonDetail();
         private static final Parser<FungusTrainingDungeonDetail> PARSER = new AbstractParser<FungusTrainingDungeonDetail>() { // from class: emu.grasscutter.net.proto.FungusTrainingDungeonDetailOuterClass.FungusTrainingDungeonDetail.1
@@ -101,10 +101,10 @@ public final class FungusTrainingDungeonDetailOuterClass {
                                 case 48:
                                     this.dungeonId_ = input.readUInt32();
                                     break;
-                                case 64:
+                                case 56:
                                     this.bestScore_ = input.readUInt32();
                                     break;
-                                case 104:
+                                case 64:
                                     this.isOpen_ = input.readBool();
                                     break;
                                 default:
@@ -138,6 +138,11 @@ public final class FungusTrainingDungeonDetailOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.FungusTrainingDungeonDetailOuterClass.FungusTrainingDungeonDetailOrBuilder
+        public boolean getIsOpen() {
+            return this.isOpen_;
+        }
+
+        @Override // emu.grasscutter.net.proto.FungusTrainingDungeonDetailOuterClass.FungusTrainingDungeonDetailOrBuilder
         public int getBestScore() {
             return this.bestScore_;
         }
@@ -145,11 +150,6 @@ public final class FungusTrainingDungeonDetailOuterClass {
         @Override // emu.grasscutter.net.proto.FungusTrainingDungeonDetailOuterClass.FungusTrainingDungeonDetailOrBuilder
         public int getDungeonId() {
             return this.dungeonId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.FungusTrainingDungeonDetailOuterClass.FungusTrainingDungeonDetailOrBuilder
-        public boolean getIsOpen() {
-            return this.isOpen_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -171,10 +171,10 @@ public final class FungusTrainingDungeonDetailOuterClass {
                 output.writeUInt32(6, this.dungeonId_);
             }
             if (this.bestScore_ != 0) {
-                output.writeUInt32(8, this.bestScore_);
+                output.writeUInt32(7, this.bestScore_);
             }
             if (this.isOpen_) {
-                output.writeBool(13, this.isOpen_);
+                output.writeBool(8, this.isOpen_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -190,10 +190,10 @@ public final class FungusTrainingDungeonDetailOuterClass {
                 size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.dungeonId_);
             }
             if (this.bestScore_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.bestScore_);
+                size2 += CodedOutputStream.computeUInt32Size(7, this.bestScore_);
             }
             if (this.isOpen_) {
-                size2 += CodedOutputStream.computeBoolSize(13, this.isOpen_);
+                size2 += CodedOutputStream.computeBoolSize(8, this.isOpen_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class FungusTrainingDungeonDetailOuterClass {
                 return equals(obj);
             }
             FungusTrainingDungeonDetail other = (FungusTrainingDungeonDetail) obj;
-            return getBestScore() == other.getBestScore() && getDungeonId() == other.getDungeonId() && getIsOpen() == other.getIsOpen() && this.unknownFields.equals(other.unknownFields);
+            return getIsOpen() == other.getIsOpen() && getBestScore() == other.getBestScore() && getDungeonId() == other.getDungeonId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class FungusTrainingDungeonDetailOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getBestScore())) + 6)) + getDungeonId())) + 13)) + Internal.hashBoolean(getIsOpen()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + Internal.hashBoolean(getIsOpen()))) + 7)) + getBestScore())) + 6)) + getDungeonId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -296,9 +296,9 @@ public final class FungusTrainingDungeonDetailOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FungusTrainingDungeonDetailOuterClass$FungusTrainingDungeonDetail$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements FungusTrainingDungeonDetailOrBuilder {
+            private boolean isOpen_;
             private int bestScore_;
             private int dungeonId_;
-            private boolean isOpen_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return FungusTrainingDungeonDetailOuterClass.internal_static_FungusTrainingDungeonDetail_descriptor;
@@ -326,9 +326,9 @@ public final class FungusTrainingDungeonDetailOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.isOpen_ = false;
                 this.bestScore_ = 0;
                 this.dungeonId_ = 0;
-                this.isOpen_ = false;
                 return this;
             }
 
@@ -354,9 +354,9 @@ public final class FungusTrainingDungeonDetailOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public FungusTrainingDungeonDetail buildPartial() {
                 FungusTrainingDungeonDetail result = new FungusTrainingDungeonDetail(this);
+                result.isOpen_ = this.isOpen_;
                 result.bestScore_ = this.bestScore_;
                 result.dungeonId_ = this.dungeonId_;
-                result.isOpen_ = this.isOpen_;
                 onBuilt();
                 return result;
             }
@@ -404,14 +404,14 @@ public final class FungusTrainingDungeonDetailOuterClass {
                 if (other == FungusTrainingDungeonDetail.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getIsOpen()) {
+                    setIsOpen(other.getIsOpen());
+                }
                 if (other.getBestScore() != 0) {
                     setBestScore(other.getBestScore());
                 }
                 if (other.getDungeonId() != 0) {
                     setDungeonId(other.getDungeonId());
-                }
-                if (other.getIsOpen()) {
-                    setIsOpen(other.getIsOpen());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -446,6 +446,23 @@ public final class FungusTrainingDungeonDetailOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.FungusTrainingDungeonDetailOuterClass.FungusTrainingDungeonDetailOrBuilder
+            public boolean getIsOpen() {
+                return this.isOpen_;
+            }
+
+            public Builder setIsOpen(boolean value) {
+                this.isOpen_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsOpen() {
+                this.isOpen_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.FungusTrainingDungeonDetailOuterClass.FungusTrainingDungeonDetailOrBuilder
             public int getBestScore() {
                 return this.bestScore_;
             }
@@ -475,23 +492,6 @@ public final class FungusTrainingDungeonDetailOuterClass {
 
             public Builder clearDungeonId() {
                 this.dungeonId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.FungusTrainingDungeonDetailOuterClass.FungusTrainingDungeonDetailOrBuilder
-            public boolean getIsOpen() {
-                return this.isOpen_;
-            }
-
-            public Builder setIsOpen(boolean value) {
-                this.isOpen_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsOpen() {
-                this.isOpen_ = false;
                 onChanged();
                 return this;
             }

@@ -21,23 +21,23 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WeekendDjinnInfoOuterClass.class */
 public final class WeekendDjinnInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016WeekendDjinnInfo.proto\u001a\fVector.proto\">\n\u0010WeekendDjinnInfo\u0012\u0014\n\u0003pos\u0018\r \u0001(\u000b2\u0007.Vector\u0012\u0014\n\u0003rot\u0018\u0006 \u0001(\u000b2\u0007.VectorB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016WeekendDjinnInfo.proto\u001a\fVector.proto\">\n\u0010WeekendDjinnInfo\u0012\u0014\n\u0003rot\u0018\u000b \u0001(\u000b2\u0007.Vector\u0012\u0014\n\u0003pos\u0018\n \u0001(\u000b2\u0007.VectorB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_WeekendDjinnInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_WeekendDjinnInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WeekendDjinnInfo_descriptor, new String[]{"Pos", "Rot"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_WeekendDjinnInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WeekendDjinnInfo_descriptor, new String[]{"Rot", "Pos"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WeekendDjinnInfoOuterClass$WeekendDjinnInfoOrBuilder.class */
     public interface WeekendDjinnInfoOrBuilder extends MessageOrBuilder {
-        boolean hasPos();
-
-        VectorOuterClass.Vector getPos();
-
-        VectorOuterClass.VectorOrBuilder getPosOrBuilder();
-
         boolean hasRot();
 
         VectorOuterClass.Vector getRot();
 
         VectorOuterClass.VectorOrBuilder getRotOrBuilder();
+
+        boolean hasPos();
+
+        VectorOuterClass.Vector getPos();
+
+        VectorOuterClass.VectorOrBuilder getPosOrBuilder();
     }
 
     private WeekendDjinnInfoOuterClass() {
@@ -53,10 +53,10 @@ public final class WeekendDjinnInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WeekendDjinnInfoOuterClass$WeekendDjinnInfo.class */
     public static final class WeekendDjinnInfo extends GeneratedMessageV3 implements WeekendDjinnInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int POS_FIELD_NUMBER = 13;
-        private VectorOuterClass.Vector pos_;
-        public static final int ROT_FIELD_NUMBER = 6;
+        public static final int ROT_FIELD_NUMBER = 11;
         private VectorOuterClass.Vector rot_;
+        public static final int POS_FIELD_NUMBER = 10;
+        private VectorOuterClass.Vector pos_;
         private byte memoizedIsInitialized;
         private static final WeekendDjinnInfo DEFAULT_INSTANCE = new WeekendDjinnInfo();
         private static final Parser<WeekendDjinnInfo> PARSER = new AbstractParser<WeekendDjinnInfo>() { // from class: emu.grasscutter.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfo.1
@@ -103,24 +103,24 @@ public final class WeekendDjinnInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 50:
-                                    VectorOuterClass.Vector.Builder subBuilder = this.rot_ != null ? this.rot_.toBuilder() : null;
-                                    this.rot_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
+                                case 82:
+                                    VectorOuterClass.Vector.Builder subBuilder = this.pos_ != null ? this.pos_.toBuilder() : null;
+                                    this.pos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
                                     if (subBuilder == null) {
                                         break;
                                     } else {
-                                        subBuilder.mergeFrom(this.rot_);
-                                        this.rot_ = subBuilder.buildPartial();
+                                        subBuilder.mergeFrom(this.pos_);
+                                        this.pos_ = subBuilder.buildPartial();
                                         break;
                                     }
-                                case 106:
-                                    VectorOuterClass.Vector.Builder subBuilder2 = this.pos_ != null ? this.pos_.toBuilder() : null;
-                                    this.pos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
+                                case 90:
+                                    VectorOuterClass.Vector.Builder subBuilder2 = this.rot_ != null ? this.rot_.toBuilder() : null;
+                                    this.rot_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
                                     if (subBuilder2 == null) {
                                         break;
                                     } else {
-                                        subBuilder2.mergeFrom(this.pos_);
-                                        this.pos_ = subBuilder2.buildPartial();
+                                        subBuilder2.mergeFrom(this.rot_);
+                                        this.rot_ = subBuilder2.buildPartial();
                                         break;
                                     }
                                 default:
@@ -154,21 +154,6 @@ public final class WeekendDjinnInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfoOrBuilder
-        public boolean hasPos() {
-            return this.pos_ != null;
-        }
-
-        @Override // emu.grasscutter.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfoOrBuilder
-        public VectorOuterClass.Vector getPos() {
-            return this.pos_ == null ? VectorOuterClass.Vector.getDefaultInstance() : this.pos_;
-        }
-
-        @Override // emu.grasscutter.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfoOrBuilder
-        public VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-            return getPos();
-        }
-
-        @Override // emu.grasscutter.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfoOrBuilder
         public boolean hasRot() {
             return this.rot_ != null;
         }
@@ -181,6 +166,21 @@ public final class WeekendDjinnInfoOuterClass {
         @Override // emu.grasscutter.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfoOrBuilder
         public VectorOuterClass.VectorOrBuilder getRotOrBuilder() {
             return getRot();
+        }
+
+        @Override // emu.grasscutter.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfoOrBuilder
+        public boolean hasPos() {
+            return this.pos_ != null;
+        }
+
+        @Override // emu.grasscutter.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfoOrBuilder
+        public VectorOuterClass.Vector getPos() {
+            return this.pos_ == null ? VectorOuterClass.Vector.getDefaultInstance() : this.pos_;
+        }
+
+        @Override // emu.grasscutter.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfoOrBuilder
+        public VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
+            return getPos();
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -198,11 +198,11 @@ public final class WeekendDjinnInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.rot_ != null) {
-                output.writeMessage(6, getRot());
-            }
             if (this.pos_ != null) {
-                output.writeMessage(13, getPos());
+                output.writeMessage(10, getPos());
+            }
+            if (this.rot_ != null) {
+                output.writeMessage(11, getRot());
             }
             this.unknownFields.writeTo(output);
         }
@@ -214,11 +214,11 @@ public final class WeekendDjinnInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.rot_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(6, getRot());
-            }
             if (this.pos_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(13, getPos());
+                size2 = 0 + CodedOutputStream.computeMessageSize(10, getPos());
+            }
+            if (this.rot_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(11, getRot());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -234,11 +234,11 @@ public final class WeekendDjinnInfoOuterClass {
                 return equals(obj);
             }
             WeekendDjinnInfo other = (WeekendDjinnInfo) obj;
-            if (hasPos() != other.hasPos()) {
+            if (hasRot() != other.hasRot()) {
                 return false;
             }
-            if ((!hasPos() || getPos().equals(other.getPos())) && hasRot() == other.hasRot()) {
-                return (!hasRot() || getRot().equals(other.getRot())) && this.unknownFields.equals(other.unknownFields);
+            if ((!hasRot() || getRot().equals(other.getRot())) && hasPos() == other.hasPos()) {
+                return (!hasPos() || getPos().equals(other.getPos())) && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -249,11 +249,11 @@ public final class WeekendDjinnInfoOuterClass {
                 return this.memoizedHashCode;
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
-            if (hasPos()) {
-                hash = (53 * ((37 * hash) + 13)) + getPos().hashCode();
-            }
             if (hasRot()) {
-                hash = (53 * ((37 * hash) + 6)) + getRot().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + getRot().hashCode();
+            }
+            if (hasPos()) {
+                hash = (53 * ((37 * hash) + 10)) + getPos().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -334,10 +334,10 @@ public final class WeekendDjinnInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WeekendDjinnInfoOuterClass$WeekendDjinnInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements WeekendDjinnInfoOrBuilder {
-            private VectorOuterClass.Vector pos_;
-            private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> posBuilder_;
             private VectorOuterClass.Vector rot_;
             private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> rotBuilder_;
+            private VectorOuterClass.Vector pos_;
+            private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> posBuilder_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return WeekendDjinnInfoOuterClass.internal_static_WeekendDjinnInfo_descriptor;
@@ -365,17 +365,17 @@ public final class WeekendDjinnInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                if (this.posBuilder_ == null) {
-                    this.pos_ = null;
-                } else {
-                    this.pos_ = null;
-                    this.posBuilder_ = null;
-                }
                 if (this.rotBuilder_ == null) {
                     this.rot_ = null;
                 } else {
                     this.rot_ = null;
                     this.rotBuilder_ = null;
+                }
+                if (this.posBuilder_ == null) {
+                    this.pos_ = null;
+                } else {
+                    this.pos_ = null;
+                    this.posBuilder_ = null;
                 }
                 return this;
             }
@@ -402,15 +402,15 @@ public final class WeekendDjinnInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public WeekendDjinnInfo buildPartial() {
                 WeekendDjinnInfo result = new WeekendDjinnInfo(this);
-                if (this.posBuilder_ == null) {
-                    result.pos_ = this.pos_;
-                } else {
-                    result.pos_ = this.posBuilder_.build();
-                }
                 if (this.rotBuilder_ == null) {
                     result.rot_ = this.rot_;
                 } else {
                     result.rot_ = this.rotBuilder_.build();
+                }
+                if (this.posBuilder_ == null) {
+                    result.pos_ = this.pos_;
+                } else {
+                    result.pos_ = this.posBuilder_.build();
                 }
                 onBuilt();
                 return result;
@@ -459,11 +459,11 @@ public final class WeekendDjinnInfoOuterClass {
                 if (other == WeekendDjinnInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.hasPos()) {
-                    mergePos(other.getPos());
-                }
                 if (other.hasRot()) {
                     mergeRot(other.getRot());
+                }
+                if (other.hasPos()) {
+                    mergePos(other.getPos());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -495,87 +495,6 @@ public final class WeekendDjinnInfoOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfoOrBuilder
-            public boolean hasPos() {
-                return (this.posBuilder_ == null && this.pos_ == null) ? false : true;
-            }
-
-            @Override // emu.grasscutter.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfoOrBuilder
-            public VectorOuterClass.Vector getPos() {
-                if (this.posBuilder_ == null) {
-                    return this.pos_ == null ? VectorOuterClass.Vector.getDefaultInstance() : this.pos_;
-                }
-                return this.posBuilder_.getMessage();
-            }
-
-            public Builder setPos(VectorOuterClass.Vector value) {
-                if (this.posBuilder_ != null) {
-                    this.posBuilder_.setMessage(value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    this.pos_ = value;
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder setPos(VectorOuterClass.Vector.Builder builderForValue) {
-                if (this.posBuilder_ == null) {
-                    this.pos_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    this.posBuilder_.setMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder mergePos(VectorOuterClass.Vector value) {
-                if (this.posBuilder_ == null) {
-                    if (this.pos_ != null) {
-                        this.pos_ = VectorOuterClass.Vector.newBuilder(this.pos_).mergeFrom(value).buildPartial();
-                    } else {
-                        this.pos_ = value;
-                    }
-                    onChanged();
-                } else {
-                    this.posBuilder_.mergeFrom(value);
-                }
-                return this;
-            }
-
-            public Builder clearPos() {
-                if (this.posBuilder_ == null) {
-                    this.pos_ = null;
-                    onChanged();
-                } else {
-                    this.pos_ = null;
-                    this.posBuilder_ = null;
-                }
-                return this;
-            }
-
-            public VectorOuterClass.Vector.Builder getPosBuilder() {
-                onChanged();
-                return getPosFieldBuilder().getBuilder();
-            }
-
-            @Override // emu.grasscutter.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfoOrBuilder
-            public VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-                if (this.posBuilder_ != null) {
-                    return this.posBuilder_.getMessageOrBuilder();
-                }
-                return this.pos_ == null ? VectorOuterClass.Vector.getDefaultInstance() : this.pos_;
-            }
-
-            private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> getPosFieldBuilder() {
-                if (this.posBuilder_ == null) {
-                    this.posBuilder_ = new SingleFieldBuilderV3<>(getPos(), getParentForChildren(), isClean());
-                    this.pos_ = null;
-                }
-                return this.posBuilder_;
             }
 
             @Override // emu.grasscutter.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfoOrBuilder
@@ -657,6 +576,87 @@ public final class WeekendDjinnInfoOuterClass {
                     this.rot_ = null;
                 }
                 return this.rotBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfoOrBuilder
+            public boolean hasPos() {
+                return (this.posBuilder_ == null && this.pos_ == null) ? false : true;
+            }
+
+            @Override // emu.grasscutter.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfoOrBuilder
+            public VectorOuterClass.Vector getPos() {
+                if (this.posBuilder_ == null) {
+                    return this.pos_ == null ? VectorOuterClass.Vector.getDefaultInstance() : this.pos_;
+                }
+                return this.posBuilder_.getMessage();
+            }
+
+            public Builder setPos(VectorOuterClass.Vector value) {
+                if (this.posBuilder_ != null) {
+                    this.posBuilder_.setMessage(value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    this.pos_ = value;
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder setPos(VectorOuterClass.Vector.Builder builderForValue) {
+                if (this.posBuilder_ == null) {
+                    this.pos_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    this.posBuilder_.setMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder mergePos(VectorOuterClass.Vector value) {
+                if (this.posBuilder_ == null) {
+                    if (this.pos_ != null) {
+                        this.pos_ = VectorOuterClass.Vector.newBuilder(this.pos_).mergeFrom(value).buildPartial();
+                    } else {
+                        this.pos_ = value;
+                    }
+                    onChanged();
+                } else {
+                    this.posBuilder_.mergeFrom(value);
+                }
+                return this;
+            }
+
+            public Builder clearPos() {
+                if (this.posBuilder_ == null) {
+                    this.pos_ = null;
+                    onChanged();
+                } else {
+                    this.pos_ = null;
+                    this.posBuilder_ = null;
+                }
+                return this;
+            }
+
+            public VectorOuterClass.Vector.Builder getPosBuilder() {
+                onChanged();
+                return getPosFieldBuilder().getBuilder();
+            }
+
+            @Override // emu.grasscutter.net.proto.WeekendDjinnInfoOuterClass.WeekendDjinnInfoOrBuilder
+            public VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
+                if (this.posBuilder_ != null) {
+                    return this.posBuilder_.getMessageOrBuilder();
+                }
+                return this.pos_ == null ? VectorOuterClass.Vector.getDefaultInstance() : this.pos_;
+            }
+
+            private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> getPosFieldBuilder() {
+                if (this.posBuilder_ == null) {
+                    this.posBuilder_ = new SingleFieldBuilderV3<>(getPos(), getParentForChildren(), isClean());
+                    this.pos_ = null;
+                }
+                return this.posBuilder_;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

@@ -1,6 +1,5 @@
 package p013io.netty.handler.codec;
 
-import emu.grasscutter.net.packet.PacketOpcodes;
 import java.util.BitSet;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -19,7 +18,7 @@ public final class DateFormatter {
     private final GregorianCalendar cal;
 
     /* renamed from: sb */
-    private final StringBuilder f995sb;
+    private final StringBuilder f959sb;
     private boolean timeFound;
     private int hours;
     private int minutes;
@@ -102,7 +101,7 @@ public final class DateFormatter {
 
     private DateFormatter() {
         this.cal = new GregorianCalendar(TimeZone.getTimeZone("UTC"));
-        this.f995sb = new StringBuilder(29);
+        this.f959sb = new StringBuilder(29);
         reset();
     }
 
@@ -118,7 +117,7 @@ public final class DateFormatter {
         this.yearFound = false;
         this.year = -1;
         this.cal.clear();
-        this.f995sb.setLength(0);
+        this.f959sb.setLength(0);
     }
 
     private boolean tryParseTime(CharSequence txt, int tokenStart, int tokenEnd) {
@@ -323,7 +322,7 @@ public final class DateFormatter {
             this.year += 1900;
             return true;
         } else if (this.year >= 0 && this.year < 70) {
-            this.year += PacketOpcodes.SetCoopChapterViewedRsp;
+            this.year += 2000;
             return true;
         } else if (this.year < 1601) {
             return false;
@@ -343,8 +342,8 @@ public final class DateFormatter {
     }
 
     private String format0(Date date) {
-        append0(date, this.f995sb);
-        return this.f995sb.toString();
+        append0(date, this.f959sb);
+        return this.f959sb.toString();
     }
 
     private StringBuilder append0(Date date, StringBuilder sb) {

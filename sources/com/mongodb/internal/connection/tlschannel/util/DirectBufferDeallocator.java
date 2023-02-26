@@ -12,8 +12,9 @@ public class DirectBufferDeallocator {
     private static Logger logger = LoggerFactory.getLogger(DirectBufferDeallocator.class);
     private final Deallocator deallocator;
 
+    /* access modifiers changed from: private */
     /* loaded from: grasscutter.jar:com/mongodb/internal/connection/tlschannel/util/DirectBufferDeallocator$Deallocator.class */
-    private interface Deallocator {
+    public interface Deallocator {
         void free(ByteBuffer byteBuffer);
     }
 

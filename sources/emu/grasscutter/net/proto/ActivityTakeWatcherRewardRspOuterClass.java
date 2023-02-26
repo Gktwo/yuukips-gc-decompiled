@@ -19,17 +19,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ActivityTakeWatcherRewardRspOuterClass.class */
 public final class ActivityTakeWatcherRewardRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"ActivityTakeWatcherRewardRsp.proto\"X\n\u001cActivityTakeWatcherRewardRsp\u0012\u000f\n\u0007retcode\u0018\u000e \u0001(\u0005\u0012\u0013\n\u000bactivity_id\u0018\n \u0001(\r\u0012\u0012\n\nwatcher_id\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"ActivityTakeWatcherRewardRsp.proto\"V\n\u001cActivityTakeWatcherRewardRsp\u0012\u000f\n\u0007retcode\u0018\t \u0001(\u0005\u0012\u0011\n\twatcherId\u0018\u0005 \u0001(\r\u0012\u0012\n\nactivityId\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ActivityTakeWatcherRewardRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ActivityTakeWatcherRewardRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ActivityTakeWatcherRewardRsp_descriptor, new String[]{"Retcode", "ActivityId", "WatcherId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ActivityTakeWatcherRewardRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ActivityTakeWatcherRewardRsp_descriptor, new String[]{"Retcode", "WatcherId", "ActivityId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ActivityTakeWatcherRewardRspOuterClass$ActivityTakeWatcherRewardRspOrBuilder.class */
     public interface ActivityTakeWatcherRewardRspOrBuilder extends MessageOrBuilder {
         int getRetcode();
 
-        int getActivityId();
-
         int getWatcherId();
+
+        int getActivityId();
     }
 
     private ActivityTakeWatcherRewardRspOuterClass() {
@@ -45,12 +45,12 @@ public final class ActivityTakeWatcherRewardRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ActivityTakeWatcherRewardRspOuterClass$ActivityTakeWatcherRewardRsp.class */
     public static final class ActivityTakeWatcherRewardRsp extends GeneratedMessageV3 implements ActivityTakeWatcherRewardRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 14;
+        public static final int RETCODE_FIELD_NUMBER = 9;
         private int retcode_;
-        public static final int ACTIVITY_ID_FIELD_NUMBER = 10;
-        private int activityId_;
-        public static final int WATCHER_ID_FIELD_NUMBER = 15;
+        public static final int WATCHERID_FIELD_NUMBER = 5;
         private int watcherId_;
+        public static final int ACTIVITYID_FIELD_NUMBER = 3;
+        private int activityId_;
         private byte memoizedIsInitialized;
         private static final ActivityTakeWatcherRewardRsp DEFAULT_INSTANCE = new ActivityTakeWatcherRewardRsp();
         private static final Parser<ActivityTakeWatcherRewardRsp> PARSER = new AbstractParser<ActivityTakeWatcherRewardRsp>() { // from class: emu.grasscutter.net.proto.ActivityTakeWatcherRewardRspOuterClass.ActivityTakeWatcherRewardRsp.1
@@ -97,14 +97,14 @@ public final class ActivityTakeWatcherRewardRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 80:
+                                case 24:
                                     this.activityId_ = input.readUInt32();
                                     break;
-                                case 112:
-                                    this.retcode_ = input.readInt32();
-                                    break;
-                                case 120:
+                                case 40:
                                     this.watcherId_ = input.readUInt32();
+                                    break;
+                                case 72:
+                                    this.retcode_ = input.readInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -142,13 +142,13 @@ public final class ActivityTakeWatcherRewardRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ActivityTakeWatcherRewardRspOuterClass.ActivityTakeWatcherRewardRspOrBuilder
-        public int getActivityId() {
-            return this.activityId_;
+        public int getWatcherId() {
+            return this.watcherId_;
         }
 
         @Override // emu.grasscutter.net.proto.ActivityTakeWatcherRewardRspOuterClass.ActivityTakeWatcherRewardRspOrBuilder
-        public int getWatcherId() {
-            return this.watcherId_;
+        public int getActivityId() {
+            return this.activityId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,13 +167,13 @@ public final class ActivityTakeWatcherRewardRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.activityId_ != 0) {
-                output.writeUInt32(10, this.activityId_);
-            }
-            if (this.retcode_ != 0) {
-                output.writeInt32(14, this.retcode_);
+                output.writeUInt32(3, this.activityId_);
             }
             if (this.watcherId_ != 0) {
-                output.writeUInt32(15, this.watcherId_);
+                output.writeUInt32(5, this.watcherId_);
+            }
+            if (this.retcode_ != 0) {
+                output.writeInt32(9, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,13 +186,13 @@ public final class ActivityTakeWatcherRewardRspOuterClass {
             }
             int size2 = 0;
             if (this.activityId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(10, this.activityId_);
-            }
-            if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(14, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.activityId_);
             }
             if (this.watcherId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.watcherId_);
+                size2 += CodedOutputStream.computeUInt32Size(5, this.watcherId_);
+            }
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(9, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -208,7 +208,7 @@ public final class ActivityTakeWatcherRewardRspOuterClass {
                 return equals(obj);
             }
             ActivityTakeWatcherRewardRsp other = (ActivityTakeWatcherRewardRsp) obj;
-            return getRetcode() == other.getRetcode() && getActivityId() == other.getActivityId() && getWatcherId() == other.getWatcherId() && this.unknownFields.equals(other.unknownFields);
+            return getRetcode() == other.getRetcode() && getWatcherId() == other.getWatcherId() && getActivityId() == other.getActivityId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -216,7 +216,7 @@ public final class ActivityTakeWatcherRewardRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getRetcode())) + 10)) + getActivityId())) + 15)) + getWatcherId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getRetcode())) + 5)) + getWatcherId())) + 3)) + getActivityId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -296,8 +296,8 @@ public final class ActivityTakeWatcherRewardRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ActivityTakeWatcherRewardRspOuterClass$ActivityTakeWatcherRewardRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ActivityTakeWatcherRewardRspOrBuilder {
             private int retcode_;
-            private int activityId_;
             private int watcherId_;
+            private int activityId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ActivityTakeWatcherRewardRspOuterClass.internal_static_ActivityTakeWatcherRewardRsp_descriptor;
@@ -326,8 +326,8 @@ public final class ActivityTakeWatcherRewardRspOuterClass {
             public Builder clear() {
                 clear();
                 this.retcode_ = 0;
-                this.activityId_ = 0;
                 this.watcherId_ = 0;
+                this.activityId_ = 0;
                 return this;
             }
 
@@ -354,8 +354,8 @@ public final class ActivityTakeWatcherRewardRspOuterClass {
             public ActivityTakeWatcherRewardRsp buildPartial() {
                 ActivityTakeWatcherRewardRsp result = new ActivityTakeWatcherRewardRsp(this);
                 result.retcode_ = this.retcode_;
-                result.activityId_ = this.activityId_;
                 result.watcherId_ = this.watcherId_;
+                result.activityId_ = this.activityId_;
                 onBuilt();
                 return result;
             }
@@ -406,11 +406,11 @@ public final class ActivityTakeWatcherRewardRspOuterClass {
                 if (other.getRetcode() != 0) {
                     setRetcode(other.getRetcode());
                 }
-                if (other.getActivityId() != 0) {
-                    setActivityId(other.getActivityId());
-                }
                 if (other.getWatcherId() != 0) {
                     setWatcherId(other.getWatcherId());
+                }
+                if (other.getActivityId() != 0) {
+                    setActivityId(other.getActivityId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -462,23 +462,6 @@ public final class ActivityTakeWatcherRewardRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ActivityTakeWatcherRewardRspOuterClass.ActivityTakeWatcherRewardRspOrBuilder
-            public int getActivityId() {
-                return this.activityId_;
-            }
-
-            public Builder setActivityId(int value) {
-                this.activityId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearActivityId() {
-                this.activityId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ActivityTakeWatcherRewardRspOuterClass.ActivityTakeWatcherRewardRspOrBuilder
             public int getWatcherId() {
                 return this.watcherId_;
             }
@@ -491,6 +474,23 @@ public final class ActivityTakeWatcherRewardRspOuterClass {
 
             public Builder clearWatcherId() {
                 this.watcherId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ActivityTakeWatcherRewardRspOuterClass.ActivityTakeWatcherRewardRspOrBuilder
+            public int getActivityId() {
+                return this.activityId_;
+            }
+
+            public Builder setActivityId(int value) {
+                this.activityId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearActivityId() {
+                this.activityId_ = 0;
                 onChanged();
                 return this;
             }

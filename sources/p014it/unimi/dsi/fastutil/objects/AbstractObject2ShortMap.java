@@ -183,30 +183,30 @@ public abstract class AbstractObject2ShortMap<K> extends AbstractObject2ShortFun
                 return new ObjectIterator<K>() { // from class: it.unimi.dsi.fastutil.objects.AbstractObject2ShortMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Object2ShortMap.Entry<K>> f2484i;
+                    private final ObjectIterator<Object2ShortMap.Entry<K>> f2448i;
 
                     {
-                        this.f2484i = Object2ShortMaps.fastIterator(AbstractObject2ShortMap.this);
+                        this.f2448i = Object2ShortMaps.fastIterator(AbstractObject2ShortMap.this);
                     }
 
                     @Override // java.util.Iterator
                     public K next() {
-                        return this.f2484i.next().getKey();
+                        return this.f2448i.next().getKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2484i.hasNext();
+                        return this.f2448i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2484i.remove();
+                        this.f2448i.remove();
                     }
 
                     @Override // java.util.Iterator
                     public void forEachRemaining(Consumer<? super K> action) {
-                        this.f2484i.forEachRemaining(entry -> {
+                        this.f2448i.forEachRemaining(entry -> {
                             action.accept(entry.getKey());
                         });
                     }
@@ -244,30 +244,30 @@ public abstract class AbstractObject2ShortMap<K> extends AbstractObject2ShortFun
                 return new ShortIterator() { // from class: it.unimi.dsi.fastutil.objects.AbstractObject2ShortMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Object2ShortMap.Entry<K>> f2485i;
+                    private final ObjectIterator<Object2ShortMap.Entry<K>> f2449i;
 
                     {
-                        this.f2485i = Object2ShortMaps.fastIterator(AbstractObject2ShortMap.this);
+                        this.f2449i = Object2ShortMaps.fastIterator(AbstractObject2ShortMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
                     public short nextShort() {
-                        return this.f2485i.next().getShortValue();
+                        return this.f2449i.next().getShortValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2485i.hasNext();
+                        return this.f2449i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2485i.remove();
+                        this.f2449i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
                     public void forEachRemaining(ShortConsumer action) {
-                        this.f2485i.forEachRemaining(entry -> {
+                        this.f2449i.forEachRemaining(entry -> {
                             action.accept(entry.getShortValue());
                         });
                     }

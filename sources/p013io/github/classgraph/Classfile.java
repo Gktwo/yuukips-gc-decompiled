@@ -32,9 +32,10 @@ import nonapi.p019io.github.classgraph.utils.Join;
 import nonapi.p019io.github.classgraph.utils.LogNode;
 import p013io.github.classgraph.Scanner;
 
+/* access modifiers changed from: package-private */
 /* renamed from: io.github.classgraph.Classfile */
 /* loaded from: grasscutter.jar:io/github/classgraph/Classfile.class */
-class Classfile {
+public class Classfile {
     private ClassfileReader reader;
     private final ClasspathElement classpathElement;
     private final List<ClasspathElement> classpathOrder;

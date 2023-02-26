@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WidgetGadgetDataOuterClass.class */
 public final class WidgetGadgetDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016WidgetGadgetData.proto\"D\n\u0010WidgetGadgetData\u0012\u001d\n\u0015gadget_entity_id_list\u0018\u0006 \u0003(\r\u0012\u0011\n\tgadget_id\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016WidgetGadgetData.proto\"@\n\u0010WidgetGadgetData\u0012\u001a\n\u0012gadgetEntityIdList\u0018\u000f \u0003(\r\u0012\u0010\n\bgadgetId\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_WidgetGadgetData_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_WidgetGadgetData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WidgetGadgetData_descriptor, new String[]{"GadgetEntityIdList", "GadgetId"});
 
@@ -51,10 +51,10 @@ public final class WidgetGadgetDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WidgetGadgetDataOuterClass$WidgetGadgetData.class */
     public static final class WidgetGadgetData extends GeneratedMessageV3 implements WidgetGadgetDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int GADGET_ENTITY_ID_LIST_FIELD_NUMBER = 6;
+        public static final int GADGETENTITYIDLIST_FIELD_NUMBER = 15;
         private Internal.IntList gadgetEntityIdList_;
         private int gadgetEntityIdListMemoizedSerializedSize;
-        public static final int GADGET_ID_FIELD_NUMBER = 2;
+        public static final int GADGETID_FIELD_NUMBER = 9;
         private int gadgetId_;
         private byte memoizedIsInitialized;
         private static final WidgetGadgetData DEFAULT_INSTANCE = new WidgetGadgetData();
@@ -107,17 +107,17 @@ public final class WidgetGadgetDataOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
+                                case 72:
                                     this.gadgetId_ = input.readUInt32();
                                     break;
-                                case 48:
+                                case 120:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.gadgetEntityIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.gadgetEntityIdList_.addInt(input.readUInt32());
                                     break;
-                                case 50:
+                                case 122:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.gadgetEntityIdList_ = newIntList();
@@ -198,10 +198,10 @@ public final class WidgetGadgetDataOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (this.gadgetId_ != 0) {
-                output.writeUInt32(2, this.gadgetId_);
+                output.writeUInt32(9, this.gadgetId_);
             }
             if (getGadgetEntityIdListList().size() > 0) {
-                output.writeUInt32NoTag(50);
+                output.writeUInt32NoTag(122);
                 output.writeUInt32NoTag(this.gadgetEntityIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.gadgetEntityIdList_.size(); i++) {
@@ -218,7 +218,7 @@ public final class WidgetGadgetDataOuterClass {
             }
             int size2 = 0;
             if (this.gadgetId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.gadgetId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(9, this.gadgetId_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.gadgetEntityIdList_.size(); i++) {
@@ -253,9 +253,9 @@ public final class WidgetGadgetDataOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getGadgetEntityIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 6)) + getGadgetEntityIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 15)) + getGadgetEntityIdListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 2)) + getGadgetId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 9)) + getGadgetId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

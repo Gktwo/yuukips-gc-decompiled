@@ -23,7 +23,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
     public static final int DEFAULT_INITIAL_CAPACITY = 10;
 
     /* renamed from: a */
-    protected transient float[] f1922a;
+    protected transient float[] f1886a;
     protected int size;
     static final /* synthetic */ boolean $assertionsDisabled;
 
@@ -36,20 +36,20 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
     }
 
     private static final float[] copyArrayFromSafe(FloatArrayList l) {
-        return copyArraySafe(l.f1922a, l.size);
+        return copyArraySafe(l.f1886a, l.size);
     }
 
     protected FloatArrayList(float[] a, boolean wrapped) {
-        this.f1922a = a;
+        this.f1886a = a;
     }
 
     private void initArrayFromCapacity(int capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException("Initial capacity (" + capacity + ") is negative");
         } else if (capacity == 0) {
-            this.f1922a = FloatArrays.EMPTY_ARRAY;
+            this.f1886a = FloatArrays.EMPTY_ARRAY;
         } else {
-            this.f1922a = new float[capacity];
+            this.f1886a = new float[capacity];
         }
     }
 
@@ -58,51 +58,51 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
     }
 
     public FloatArrayList() {
-        this.f1922a = FloatArrays.DEFAULT_EMPTY_ARRAY;
+        this.f1886a = FloatArrays.DEFAULT_EMPTY_ARRAY;
     }
 
     public FloatArrayList(Collection<? extends Float> c) {
         if (c instanceof FloatArrayList) {
-            this.f1922a = copyArrayFromSafe((FloatArrayList) c);
-            this.size = this.f1922a.length;
+            this.f1886a = copyArrayFromSafe((FloatArrayList) c);
+            this.size = this.f1886a.length;
             return;
         }
         initArrayFromCapacity(c.size());
         if (c instanceof FloatList) {
-            float[] fArr = this.f1922a;
+            float[] fArr = this.f1886a;
             int size = c.size();
             this.size = size;
             ((FloatList) c).getElements(0, fArr, 0, size);
             return;
         }
-        this.size = FloatIterators.unwrap(FloatIterators.asFloatIterator(c.iterator()), this.f1922a);
+        this.size = FloatIterators.unwrap(FloatIterators.asFloatIterator(c.iterator()), this.f1886a);
     }
 
     public FloatArrayList(FloatCollection c) {
         if (c instanceof FloatArrayList) {
-            this.f1922a = copyArrayFromSafe((FloatArrayList) c);
-            this.size = this.f1922a.length;
+            this.f1886a = copyArrayFromSafe((FloatArrayList) c);
+            this.size = this.f1886a.length;
             return;
         }
         initArrayFromCapacity(c.size());
         if (c instanceof FloatList) {
-            float[] fArr = this.f1922a;
+            float[] fArr = this.f1886a;
             int size = c.size();
             this.size = size;
             ((FloatList) c).getElements(0, fArr, 0, size);
             return;
         }
-        this.size = FloatIterators.unwrap(c.iterator(), this.f1922a);
+        this.size = FloatIterators.unwrap(c.iterator(), this.f1886a);
     }
 
     public FloatArrayList(FloatList l) {
         if (l instanceof FloatArrayList) {
-            this.f1922a = copyArrayFromSafe((FloatArrayList) l);
-            this.size = this.f1922a.length;
+            this.f1886a = copyArrayFromSafe((FloatArrayList) l);
+            this.size = this.f1886a.length;
             return;
         }
         initArrayFromCapacity(l.size());
-        float[] fArr = this.f1922a;
+        float[] fArr = this.f1886a;
         int size = l.size();
         this.size = size;
         l.getElements(0, fArr, 0, size);
@@ -114,7 +114,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
 
     public FloatArrayList(float[] a, int offset, int length) {
         this(length);
-        System.arraycopy(a, offset, this.f1922a, 0, length);
+        System.arraycopy(a, offset, this.f1886a, 0, length);
         this.size = length;
     }
 
@@ -133,7 +133,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
     }
 
     public float[] elements() {
-        return this.f1922a;
+        return this.f1886a;
     }
 
     public static FloatArrayList wrap(float[] a, int length) {
@@ -160,26 +160,26 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
     }
 
     public void ensureCapacity(int capacity) {
-        if (capacity <= this.f1922a.length) {
+        if (capacity <= this.f1886a.length) {
             return;
         }
-        if (this.f1922a != FloatArrays.DEFAULT_EMPTY_ARRAY || capacity > 10) {
-            this.f1922a = FloatArrays.ensureCapacity(this.f1922a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > this.f1922a.length) {
+        if (this.f1886a != FloatArrays.DEFAULT_EMPTY_ARRAY || capacity > 10) {
+            this.f1886a = FloatArrays.ensureCapacity(this.f1886a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > this.f1886a.length) {
                 throw new AssertionError();
             }
         }
     }
 
     private void grow(int capacity) {
-        if (capacity > this.f1922a.length) {
-            if (this.f1922a != FloatArrays.DEFAULT_EMPTY_ARRAY) {
-                capacity = (int) Math.max(Math.min(((long) this.f1922a.length) + ((long) (this.f1922a.length >> 1)), 2147483639L), (long) capacity);
+        if (capacity > this.f1886a.length) {
+            if (this.f1886a != FloatArrays.DEFAULT_EMPTY_ARRAY) {
+                capacity = (int) Math.max(Math.min(((long) this.f1886a.length) + ((long) (this.f1886a.length >> 1)), 2147483639L), (long) capacity);
             } else if (capacity < 10) {
                 capacity = 10;
             }
-            this.f1922a = FloatArrays.forceCapacity(this.f1922a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > this.f1922a.length) {
+            this.f1886a = FloatArrays.forceCapacity(this.f1886a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > this.f1886a.length) {
                 throw new AssertionError();
             }
         }
@@ -190,11 +190,11 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
         ensureIndex(index);
         grow(this.size + 1);
         if (index != this.size) {
-            System.arraycopy(this.f1922a, index, this.f1922a, index + 1, this.size - index);
+            System.arraycopy(this.f1886a, index, this.f1886a, index + 1, this.size - index);
         }
-        this.f1922a[index] = k;
+        this.f1886a[index] = k;
         this.size++;
-        if (!$assertionsDisabled && this.size > this.f1922a.length) {
+        if (!$assertionsDisabled && this.size > this.f1886a.length) {
             throw new AssertionError();
         }
     }
@@ -202,11 +202,11 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList, p014it.unimi.dsi.fastutil.floats.AbstractFloatCollection, p014it.unimi.dsi.fastutil.floats.FloatCollection
     public boolean add(float k) {
         grow(this.size + 1);
-        float[] fArr = this.f1922a;
+        float[] fArr = this.f1886a;
         int i = this.size;
         this.size = i + 1;
         fArr[i] = k;
-        if ($assertionsDisabled || this.size <= this.f1922a.length) {
+        if ($assertionsDisabled || this.size <= this.f1886a.length) {
             return true;
         }
         throw new AssertionError();
@@ -215,7 +215,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
     @Override // p014it.unimi.dsi.fastutil.floats.FloatList
     public float getFloat(int index) {
         if (index < this.size) {
-            return this.f1922a[index];
+            return this.f1886a[index];
         }
         throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
     }
@@ -223,7 +223,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList, p014it.unimi.dsi.fastutil.floats.FloatList
     public int indexOf(float k) {
         for (int i = 0; i < this.size; i++) {
-            if (Float.floatToIntBits(k) == Float.floatToIntBits(this.f1922a[i])) {
+            if (Float.floatToIntBits(k) == Float.floatToIntBits(this.f1886a[i])) {
                 return i;
             }
         }
@@ -238,7 +238,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
             if (i == 0) {
                 return -1;
             }
-        } while (Float.floatToIntBits(k) != Float.floatToIntBits(this.f1922a[i]));
+        } while (Float.floatToIntBits(k) != Float.floatToIntBits(this.f1886a[i]));
         return i;
     }
 
@@ -247,12 +247,12 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        float old = this.f1922a[index];
+        float old = this.f1886a[index];
         this.size--;
         if (index != this.size) {
-            System.arraycopy(this.f1922a, index + 1, this.f1922a, index, this.size - index);
+            System.arraycopy(this.f1886a, index + 1, this.f1886a, index, this.size - index);
         }
-        if ($assertionsDisabled || this.size <= this.f1922a.length) {
+        if ($assertionsDisabled || this.size <= this.f1886a.length) {
             return old;
         }
         throw new AssertionError();
@@ -265,7 +265,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
             return false;
         }
         removeFloat(index);
-        if ($assertionsDisabled || this.size <= this.f1922a.length) {
+        if ($assertionsDisabled || this.size <= this.f1886a.length) {
             return true;
         }
         throw new AssertionError();
@@ -276,15 +276,15 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        float old = this.f1922a[index];
-        this.f1922a[index] = k;
+        float old = this.f1886a[index];
+        this.f1886a[index] = k;
         return old;
     }
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public void clear() {
         this.size = 0;
-        if (!$assertionsDisabled && this.size > this.f1922a.length) {
+        if (!$assertionsDisabled && this.size > this.f1886a.length) {
             throw new AssertionError();
         }
     }
@@ -296,11 +296,11 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList, p014it.unimi.dsi.fastutil.floats.FloatList
     public void size(int size) {
-        if (size > this.f1922a.length) {
-            this.f1922a = FloatArrays.forceCapacity(this.f1922a, size, this.size);
+        if (size > this.f1886a.length) {
+            this.f1886a = FloatArrays.forceCapacity(this.f1886a, size, this.size);
         }
         if (size > this.size) {
-            Arrays.fill(this.f1922a, this.size, size, 0.0f);
+            Arrays.fill(this.f1886a, this.size, size, 0.0f);
         }
         this.size = size;
     }
@@ -315,11 +315,11 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
     }
 
     public void trim(int n) {
-        if (n < this.f1922a.length && this.size != this.f1922a.length) {
+        if (n < this.f1886a.length && this.size != this.f1886a.length) {
             float[] t = new float[Math.max(n, this.size)];
-            System.arraycopy(this.f1922a, 0, t, 0, this.size);
-            this.f1922a = t;
-            if (!$assertionsDisabled && this.size > this.f1922a.length) {
+            System.arraycopy(this.f1886a, 0, t, 0, this.size);
+            this.f1886a = t;
+            if (!$assertionsDisabled && this.size > this.f1886a.length) {
                 throw new AssertionError();
             }
         }
@@ -336,13 +336,13 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
         }
 
         private float[] getParentArray() {
-            return FloatArrayList.this.f1922a;
+            return FloatArrayList.this.f1886a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList.FloatSubList, p014it.unimi.dsi.fastutil.floats.FloatList
         public float getFloat(int i) {
             ensureRestrictedIndex(i);
-            return FloatArrayList.this.f1922a[i + this.from];
+            return FloatArrayList.this.f1886a[i + this.from];
         }
 
         /* access modifiers changed from: private */
@@ -355,7 +355,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
 
             @Override // p014it.unimi.dsi.fastutil.floats.FloatIterators.AbstractIndexBasedIterator
             protected final float get(int i) {
-                return FloatArrayList.this.f1922a[SubList.this.from + i];
+                return FloatArrayList.this.f1886a[SubList.this.from + i];
             }
 
             @Override // p014it.unimi.dsi.fastutil.floats.FloatIterators.AbstractIndexBasedListIterator
@@ -375,7 +375,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
 
             @Override // p014it.unimi.dsi.fastutil.floats.FloatIterators.AbstractIndexBasedIterator
             protected final int getMaxPos() {
-                return SubList.this.f1798to - SubList.this.from;
+                return SubList.this.f1762to - SubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.floats.FloatIterators.AbstractIndexBasedIterator, p014it.unimi.dsi.fastutil.floats.FloatIterator
@@ -383,7 +383,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                float[] fArr = FloatArrayList.this.f1922a;
+                float[] fArr = FloatArrayList.this.f1886a;
                 int i = SubList.this.from;
                 int i2 = this.pos;
                 this.pos = i2 + 1;
@@ -396,7 +396,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                float[] fArr = FloatArrayList.this.f1922a;
+                float[] fArr = FloatArrayList.this.f1886a;
                 int i = SubList.this.from;
                 int i2 = this.pos - 1;
                 this.pos = i2;
@@ -406,9 +406,9 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
 
             @Override // p014it.unimi.dsi.fastutil.floats.FloatIterators.AbstractIndexBasedIterator, p014it.unimi.dsi.fastutil.floats.FloatIterator
             public void forEachRemaining(FloatConsumer action) {
-                int max = SubList.this.f1798to - SubList.this.from;
+                int max = SubList.this.f1762to - SubList.this.from;
                 while (this.pos < max) {
-                    float[] fArr = FloatArrayList.this.f1922a;
+                    float[] fArr = FloatArrayList.this.f1886a;
                     int i = SubList.this.from;
                     int i2 = this.pos;
                     this.pos = i2 + 1;
@@ -438,12 +438,12 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
 
             @Override // p014it.unimi.dsi.fastutil.floats.FloatSpliterators.LateBindingSizeIndexBasedSpliterator
             protected final int getMaxPosFromBackingStore() {
-                return SubList.this.f1798to;
+                return SubList.this.f1762to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.floats.FloatSpliterators.AbstractIndexBasedSpliterator
             protected final float get(int i) {
-                return FloatArrayList.this.f1922a[i];
+                return FloatArrayList.this.f1886a[i];
             }
 
             /* access modifiers changed from: protected */
@@ -457,7 +457,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
                 if (this.pos >= getMaxPos()) {
                     return false;
                 }
-                float[] fArr = FloatArrayList.this.f1922a;
+                float[] fArr = FloatArrayList.this.f1886a;
                 int i = this.pos;
                 this.pos = i + 1;
                 action.accept(fArr[i]);
@@ -468,7 +468,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
             public void forEachRemaining(FloatConsumer action) {
                 int max = getMaxPos();
                 while (this.pos < max) {
-                    float[] fArr = FloatArrayList.this.f1922a;
+                    float[] fArr = FloatArrayList.this.f1886a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(fArr[i]);
@@ -482,7 +482,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
         }
 
         boolean contentsEquals(float[] otherA, int otherAFrom, int otherATo) {
-            if (FloatArrayList.this.f1922a == otherA && this.from == otherAFrom && this.f1798to == otherATo) {
+            if (FloatArrayList.this.f1886a == otherA && this.from == otherAFrom && this.f1762to == otherATo) {
                 return true;
             }
             if (otherATo - otherAFrom != size()) {
@@ -490,10 +490,10 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
             }
             int pos = this.from;
             int otherPos = otherAFrom;
-            while (pos < this.f1798to) {
+            while (pos < this.f1762to) {
                 pos++;
                 otherPos++;
-                if (FloatArrayList.this.f1922a[pos] != otherA[otherPos]) {
+                if (FloatArrayList.this.f1886a[pos] != otherA[otherPos]) {
                     return false;
                 }
             }
@@ -510,23 +510,23 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
             }
             if (o instanceof FloatArrayList) {
                 FloatArrayList other = (FloatArrayList) o;
-                return contentsEquals(other.f1922a, 0, other.size());
+                return contentsEquals(other.f1886a, 0, other.size());
             } else if (!(o instanceof SubList)) {
                 return equals(o);
             } else {
                 SubList other2 = (SubList) o;
-                return contentsEquals(other2.getParentArray(), other2.from, other2.f1798to);
+                return contentsEquals(other2.getParentArray(), other2.from, other2.f1762to);
             }
         }
 
         int contentsCompareTo(float[] otherA, int otherAFrom, int otherATo) {
-            if (FloatArrayList.this.f1922a == otherA && this.from == otherAFrom && this.f1798to == otherATo) {
+            if (FloatArrayList.this.f1886a == otherA && this.from == otherAFrom && this.f1762to == otherATo) {
                 return 0;
             }
             int i = this.from;
             int j = otherAFrom;
-            while (i < this.f1798to && i < otherATo) {
-                int r = Float.compare(FloatArrayList.this.f1922a[i], otherA[j]);
+            while (i < this.f1762to && i < otherATo) {
+                int r = Float.compare(FloatArrayList.this.f1886a[i], otherA[j]);
                 if (r != 0) {
                     return r;
                 }
@@ -536,19 +536,19 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
             if (i < otherATo) {
                 return -1;
             }
-            return i < this.f1798to ? 1 : 0;
+            return i < this.f1762to ? 1 : 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList
         public int compareTo(List<? extends Float> l) {
             if (l instanceof FloatArrayList) {
                 FloatArrayList other = (FloatArrayList) l;
-                return contentsCompareTo(other.f1922a, 0, other.size());
+                return contentsCompareTo(other.f1886a, 0, other.size());
             } else if (!(l instanceof SubList)) {
                 return compareTo(l);
             } else {
                 SubList other2 = (SubList) l;
-                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f1798to);
+                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f1762to);
             }
         }
     }
@@ -570,13 +570,13 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList, p014it.unimi.dsi.fastutil.floats.FloatList
     public void getElements(int from, float[] a, int offset, int length) {
         FloatArrays.ensureOffsetLength(a, offset, length);
-        System.arraycopy(this.f1922a, from, a, offset, length);
+        System.arraycopy(this.f1886a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList, p014it.unimi.dsi.fastutil.floats.FloatList
     public void removeElements(int from, int to) {
         p014it.unimi.dsi.fastutil.Arrays.ensureFromTo(this.size, from, to);
-        System.arraycopy(this.f1922a, to, this.f1922a, from, this.size - to);
+        System.arraycopy(this.f1886a, to, this.f1886a, from, this.size - to);
         this.size -= to - from;
     }
 
@@ -585,8 +585,8 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
         ensureIndex(index);
         FloatArrays.ensureOffsetLength(a, offset, length);
         grow(this.size + length);
-        System.arraycopy(this.f1922a, index, this.f1922a, index + length, this.size - index);
-        System.arraycopy(a, offset, this.f1922a, index, length);
+        System.arraycopy(this.f1886a, index, this.f1886a, index + length, this.size - index);
+        System.arraycopy(a, offset, this.f1886a, index, length);
         this.size += length;
     }
 
@@ -597,13 +597,13 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
         if (index + length > this.size) {
             throw new IndexOutOfBoundsException("End index (" + (index + length) + ") is greater than list size (" + this.size + ")");
         }
-        System.arraycopy(a, offset, this.f1922a, index, length);
+        System.arraycopy(a, offset, this.f1886a, index, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList, p014it.unimi.dsi.fastutil.floats.FloatIterable
     public void forEach(FloatConsumer action) {
         for (int i = 0; i < this.size; i++) {
-            action.accept(this.f1922a[i]);
+            action.accept(this.f1886a[i]);
         }
     }
 
@@ -618,7 +618,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
             return false;
         }
         grow(this.size + n);
-        System.arraycopy(this.f1922a, index, this.f1922a, index + n, this.size - index);
+        System.arraycopy(this.f1886a, index, this.f1886a, index + n, this.size - index);
         FloatIterator i = c.iterator();
         this.size += n;
         while (true) {
@@ -627,9 +627,9 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
                 break;
             }
             index++;
-            this.f1922a[index] = i.nextFloat();
+            this.f1886a[index] = i.nextFloat();
         }
-        if ($assertionsDisabled || this.size <= this.f1922a.length) {
+        if ($assertionsDisabled || this.size <= this.f1886a.length) {
             return true;
         }
         throw new AssertionError();
@@ -643,10 +643,10 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
             return false;
         }
         grow(this.size + n);
-        System.arraycopy(this.f1922a, index, this.f1922a, index + n, this.size - index);
-        l.getElements(0, this.f1922a, index, n);
+        System.arraycopy(this.f1886a, index, this.f1886a, index + n, this.size - index);
+        l.getElements(0, this.f1886a, index, n);
         this.size += n;
-        if ($assertionsDisabled || this.size <= this.f1922a.length) {
+        if ($assertionsDisabled || this.size <= this.f1886a.length) {
             return true;
         }
         throw new AssertionError();
@@ -654,7 +654,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatCollection, p014it.unimi.dsi.fastutil.floats.FloatCollection
     public boolean removeAll(FloatCollection c) {
-        float[] a = this.f1922a;
+        float[] a = this.f1886a;
         int j = 0;
         for (int i = 0; i < this.size; i++) {
             if (!c.contains(a[i])) {
@@ -672,7 +672,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
         if (a == null || a.length < this.size) {
             a = Arrays.copyOf(a, this.size);
         }
-        System.arraycopy(this.f1922a, 0, a, 0, this.size);
+        System.arraycopy(this.f1886a, 0, a, 0, this.size);
         return a;
     }
 
@@ -704,7 +704,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                float[] fArr = FloatArrayList.this.f1922a;
+                float[] fArr = FloatArrayList.this.f1886a;
                 int i = this.pos;
                 this.pos = i + 1;
                 this.last = i;
@@ -716,7 +716,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                float[] fArr = FloatArrayList.this.f1922a;
+                float[] fArr = FloatArrayList.this.f1886a;
                 int i = this.pos - 1;
                 this.pos = i;
                 this.last = i;
@@ -765,7 +765,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
             @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
             public void forEachRemaining(FloatConsumer action) {
                 while (this.pos < FloatArrayList.this.size) {
-                    float[] fArr = FloatArrayList.this.f1922a;
+                    float[] fArr = FloatArrayList.this.f1886a;
                     int i = this.pos;
                     this.pos = i + 1;
                     this.last = i;
@@ -853,7 +853,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            float[] fArr = FloatArrayList.this.f1922a;
+            float[] fArr = FloatArrayList.this.f1886a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(fArr[i]);
@@ -863,7 +863,7 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
         public void forEachRemaining(FloatConsumer action) {
             int max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(FloatArrayList.this.f1922a[this.pos]);
+                action.accept(FloatArrayList.this.f1886a[this.pos]);
                 this.pos++;
             }
         }
@@ -911,18 +911,18 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
     @Override // p014it.unimi.dsi.fastutil.floats.FloatList
     public void sort(FloatComparator comp) {
         if (comp == null) {
-            FloatArrays.stableSort(this.f1922a, 0, this.size);
+            FloatArrays.stableSort(this.f1886a, 0, this.size);
         } else {
-            FloatArrays.stableSort(this.f1922a, 0, this.size, comp);
+            FloatArrays.stableSort(this.f1886a, 0, this.size, comp);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.floats.FloatList
     public void unstableSort(FloatComparator comp) {
         if (comp == null) {
-            FloatArrays.unstableSort(this.f1922a, 0, this.size);
+            FloatArrays.unstableSort(this.f1886a, 0, this.size);
         } else {
-            FloatArrays.unstableSort(this.f1922a, 0, this.size, comp);
+            FloatArrays.unstableSort(this.f1886a, 0, this.size, comp);
         }
     }
 
@@ -930,12 +930,12 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
     public FloatArrayList clone() {
         FloatArrayList cloned;
         if (getClass() == FloatArrayList.class) {
-            cloned = new FloatArrayList(copyArraySafe(this.f1922a, this.size), false);
+            cloned = new FloatArrayList(copyArraySafe(this.f1886a, this.size), false);
             cloned.size = this.size;
         } else {
             try {
                 cloned = (FloatArrayList) clone();
-                cloned.f1922a = copyArraySafe(this.f1922a, this.size);
+                cloned.f1886a = copyArraySafe(this.f1886a, this.size);
             } catch (CloneNotSupportedException err) {
                 throw new InternalError(err);
             }
@@ -951,8 +951,8 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
         if (s != l.size()) {
             return false;
         }
-        float[] a1 = this.f1922a;
-        float[] a2 = l.f1922a;
+        float[] a1 = this.f1886a;
+        float[] a2 = l.f1886a;
         if (a1 == a2 && s == l.size()) {
             return true;
         }
@@ -985,8 +985,8 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
     public int compareTo(FloatArrayList l) {
         int s1 = size();
         int s2 = l.size();
-        float[] a1 = this.f1922a;
-        float[] a2 = l.f1922a;
+        float[] a1 = this.f1886a;
+        float[] a2 = l.f1886a;
         if (a1 == a2 && s1 == s2) {
             return 0;
         }
@@ -1018,15 +1018,15 @@ public class FloatArrayList extends AbstractFloatList implements RandomAccess, C
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; i < this.size; i++) {
-            s.writeFloat(this.f1922a[i]);
+            s.writeFloat(this.f1886a[i]);
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f1922a = new float[this.size];
+        this.f1886a = new float[this.size];
         for (int i = 0; i < this.size; i++) {
-            this.f1922a[i] = s.readFloat();
+            this.f1886a[i] = s.readFloat();
         }
     }
 }

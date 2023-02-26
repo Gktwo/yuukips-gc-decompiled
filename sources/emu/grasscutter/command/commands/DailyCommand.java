@@ -54,13 +54,7 @@ public final class DailyCommand implements CommandHandler {
                     sendUsageMessage(sender, new String[0]);
                     return;
                 }
-                try {
-                    Integer.parseInt(args.remove(0));
-                    return;
-                } catch (NumberFormatException e) {
-                    sendUsageMessage(sender, new String[0]);
-                    return;
-                }
+                return;
             case 2:
                 manager.getDailyTasks().forEach((v0) -> {
                     v0.finish();

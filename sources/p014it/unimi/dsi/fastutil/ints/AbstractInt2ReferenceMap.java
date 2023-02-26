@@ -189,30 +189,30 @@ public abstract class AbstractInt2ReferenceMap<V> extends AbstractInt2ReferenceF
                 return new IntIterator() { // from class: it.unimi.dsi.fastutil.ints.AbstractInt2ReferenceMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Int2ReferenceMap.Entry<V>> f2007i;
+                    private final ObjectIterator<Int2ReferenceMap.Entry<V>> f1971i;
 
                     {
-                        this.f2007i = Int2ReferenceMaps.fastIterator(AbstractInt2ReferenceMap.this);
+                        this.f1971i = Int2ReferenceMaps.fastIterator(AbstractInt2ReferenceMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.ints.IntIterator, java.util.PrimitiveIterator.OfInt
                     public int nextInt() {
-                        return this.f2007i.next().getIntKey();
+                        return this.f1971i.next().getIntKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2007i.hasNext();
+                        return this.f1971i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2007i.remove();
+                        this.f1971i.remove();
                     }
 
                     @Override // java.util.PrimitiveIterator.OfInt
                     public void forEachRemaining(IntConsumer action) {
-                        this.f2007i.forEachRemaining(entry -> {
+                        this.f1971i.forEachRemaining(entry -> {
                             action.accept(entry.getIntKey());
                         });
                     }
@@ -249,30 +249,30 @@ public abstract class AbstractInt2ReferenceMap<V> extends AbstractInt2ReferenceF
                 return new ObjectIterator<V>() { // from class: it.unimi.dsi.fastutil.ints.AbstractInt2ReferenceMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Int2ReferenceMap.Entry<V>> f2008i;
+                    private final ObjectIterator<Int2ReferenceMap.Entry<V>> f1972i;
 
                     {
-                        this.f2008i = Int2ReferenceMaps.fastIterator(AbstractInt2ReferenceMap.this);
+                        this.f1972i = Int2ReferenceMaps.fastIterator(AbstractInt2ReferenceMap.this);
                     }
 
                     @Override // java.util.Iterator
                     public V next() {
-                        return this.f2008i.next().getValue();
+                        return this.f1972i.next().getValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2008i.hasNext();
+                        return this.f1972i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2008i.remove();
+                        this.f1972i.remove();
                     }
 
                     @Override // java.util.Iterator
                     public void forEachRemaining(Consumer<? super V> action) {
-                        this.f2008i.forEachRemaining(entry -> {
+                        this.f1972i.forEachRemaining(entry -> {
                             action.accept(entry.getValue());
                         });
                     }

@@ -11,7 +11,7 @@ import emu.grasscutter.server.packet.send.PacketCombineRsp;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Opcodes(675)
+@Opcodes(650)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerCombineReq.class */
 public class HandlerCombineReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

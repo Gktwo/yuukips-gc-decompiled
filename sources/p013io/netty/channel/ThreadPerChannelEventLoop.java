@@ -10,7 +10,7 @@ public class ThreadPerChannelEventLoop extends SingleThreadEventLoop {
     private final ThreadPerChannelEventLoopGroup parent;
 
     /* renamed from: ch */
-    private Channel f979ch;
+    private Channel f943ch;
 
     public ThreadPerChannelEventLoop(ThreadPerChannelEventLoopGroup parent) {
         super((EventLoopGroup) parent, parent.executor, true);
@@ -23,7 +23,7 @@ public class ThreadPerChannelEventLoop extends SingleThreadEventLoop {
         return register(promise).addListener((GenericFutureListener<? extends Future<? super Void>>) new ChannelFutureListener() { // from class: io.netty.channel.ThreadPerChannelEventLoop.1
             public void operationComplete(ChannelFuture future) throws Exception {
                 if (future.isSuccess()) {
-                    ThreadPerChannelEventLoop.this.f979ch = future.channel();
+                    ThreadPerChannelEventLoop.this.f943ch = future.channel();
                     return;
                 }
                 ThreadPerChannelEventLoop.this.deregister();
@@ -38,7 +38,7 @@ public class ThreadPerChannelEventLoop extends SingleThreadEventLoop {
         return register(channel, promise).addListener((GenericFutureListener<? extends Future<? super Void>>) new ChannelFutureListener() { // from class: io.netty.channel.ThreadPerChannelEventLoop.2
             public void operationComplete(ChannelFuture future) throws Exception {
                 if (future.isSuccess()) {
-                    ThreadPerChannelEventLoop.this.f979ch = future.channel();
+                    ThreadPerChannelEventLoop.this.f943ch = future.channel();
                     return;
                 }
                 ThreadPerChannelEventLoop.this.deregister();
@@ -54,7 +54,7 @@ public class ThreadPerChannelEventLoop extends SingleThreadEventLoop {
                 task.run();
                 updateLastExecutionTime();
             }
-            Channel ch = this.f979ch;
+            Channel ch = this.f943ch;
             if (isShuttingDown()) {
                 if (ch != null) {
                     ch.unsafe().close(ch.unsafe().voidPromise());
@@ -70,7 +70,7 @@ public class ThreadPerChannelEventLoop extends SingleThreadEventLoop {
     }
 
     protected void deregister() {
-        this.f979ch = null;
+        this.f943ch = null;
         this.parent.activeChildren.remove(this);
         this.parent.idleChildren.add(this);
     }

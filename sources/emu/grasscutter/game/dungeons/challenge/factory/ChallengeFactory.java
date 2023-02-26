@@ -22,7 +22,7 @@ public class ChallengeFactory {
     }
 
     public static WorldChallenge getChallenge(int param1, int param2, int param3, int param4, int param5, int param6, Scene scene, SceneGroup group) {
-        Grasscutter.getLogger().info("Challenge: ID Scene {} (Group {}) -> Regional Challenge {} | Type Challenge {} | {},{},{},{} ", Integer.valueOf(scene.getId()), Integer.valueOf(group.f957id), Integer.valueOf(param1), Integer.valueOf(param2), Integer.valueOf(param3), Integer.valueOf(param4), Integer.valueOf(param5), Integer.valueOf(param6));
+        Grasscutter.getLogger().info("Challenge: ID Scene {} (Group {}) -> Regional Challenge {} | Type Challenge {} | {},{},{},{} ", Integer.valueOf(scene.getId()), Integer.valueOf(group.f922id), Integer.valueOf(param1), Integer.valueOf(param2), Integer.valueOf(param3), Integer.valueOf(param4), Integer.valueOf(param5), Integer.valueOf(param6));
         for (ChallengeFactoryHandler handler : challengeFactoryHandlers) {
             if (handler.isThisType(param1, param2, param3, param4, param5, param6, scene, group)) {
                 return handler.build(param1, param2, param3, param4, param5, param6, scene, group);

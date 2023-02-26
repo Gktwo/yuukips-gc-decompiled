@@ -23,17 +23,13 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CityReputationQuestInfoOuterClass.class */
 public final class CityReputationQuestInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dCityReputationQuestInfo.proto\"d\n\u0017CityReputationQuestInfo\u0012\u001b\n\u0013Unk3300_IMLDPDMHJBJ\u0018\f \u0003(\r\u0012\u001b\n\u0013Unk3300_OMGMGDIHDOH\u0018\n \u0003(\r\u0012\u000f\n\u0007is_open\u0018\u0004 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dCityReputationQuestInfo.proto\"c\n\u0017CityReputationQuestInfo\u0012\u000e\n\u0006isOpen\u0018\u000e \u0001(\b\u0012\u001b\n\u0013Unk3300_OMGMGDIHDOH\u0018\u0004 \u0003(\r\u0012\u001b\n\u0013Unk3300_IMLDPDMHJBJ\u0018\n \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_CityReputationQuestInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_CityReputationQuestInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CityReputationQuestInfo_descriptor, new String[]{"Unk3300IMLDPDMHJBJ", "Unk3300OMGMGDIHDOH", "IsOpen"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_CityReputationQuestInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CityReputationQuestInfo_descriptor, new String[]{"IsOpen", "Unk3300OMGMGDIHDOH", "Unk3300IMLDPDMHJBJ"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CityReputationQuestInfoOuterClass$CityReputationQuestInfoOrBuilder.class */
     public interface CityReputationQuestInfoOrBuilder extends MessageOrBuilder {
-        List<Integer> getUnk3300IMLDPDMHJBJList();
-
-        int getUnk3300IMLDPDMHJBJCount();
-
-        int getUnk3300IMLDPDMHJBJ(int i);
+        boolean getIsOpen();
 
         List<Integer> getUnk3300OMGMGDIHDOHList();
 
@@ -41,7 +37,11 @@ public final class CityReputationQuestInfoOuterClass {
 
         int getUnk3300OMGMGDIHDOH(int i);
 
-        boolean getIsOpen();
+        List<Integer> getUnk3300IMLDPDMHJBJList();
+
+        int getUnk3300IMLDPDMHJBJCount();
+
+        int getUnk3300IMLDPDMHJBJ(int i);
     }
 
     private CityReputationQuestInfoOuterClass() {
@@ -57,14 +57,14 @@ public final class CityReputationQuestInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CityReputationQuestInfoOuterClass$CityReputationQuestInfo.class */
     public static final class CityReputationQuestInfo extends GeneratedMessageV3 implements CityReputationQuestInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int UNK3300_IMLDPDMHJBJ_FIELD_NUMBER = 12;
-        private Internal.IntList unk3300IMLDPDMHJBJ_;
-        private int unk3300IMLDPDMHJBJMemoizedSerializedSize;
-        public static final int UNK3300_OMGMGDIHDOH_FIELD_NUMBER = 10;
+        public static final int ISOPEN_FIELD_NUMBER = 14;
+        private boolean isOpen_;
+        public static final int UNK3300_OMGMGDIHDOH_FIELD_NUMBER = 4;
         private Internal.IntList unk3300OMGMGDIHDOH_;
         private int unk3300OMGMGDIHDOHMemoizedSerializedSize;
-        public static final int IS_OPEN_FIELD_NUMBER = 4;
-        private boolean isOpen_;
+        public static final int UNK3300_IMLDPDMHJBJ_FIELD_NUMBER = 10;
+        private Internal.IntList unk3300IMLDPDMHJBJ_;
+        private int unk3300IMLDPDMHJBJMemoizedSerializedSize;
         private byte memoizedIsInitialized;
         private static final CityReputationQuestInfo DEFAULT_INSTANCE = new CityReputationQuestInfo();
         private static final Parser<CityReputationQuestInfo> PARSER = new AbstractParser<CityReputationQuestInfo>() { // from class: emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfo.1
@@ -76,17 +76,17 @@ public final class CityReputationQuestInfoOuterClass {
 
         private CityReputationQuestInfo(GeneratedMessageV3.Builder<?> builder) {
             super(builder);
-            this.unk3300IMLDPDMHJBJMemoizedSerializedSize = -1;
             this.unk3300OMGMGDIHDOHMemoizedSerializedSize = -1;
+            this.unk3300IMLDPDMHJBJMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
         }
 
         private CityReputationQuestInfo() {
-            this.unk3300IMLDPDMHJBJMemoizedSerializedSize = -1;
             this.unk3300OMGMGDIHDOHMemoizedSerializedSize = -1;
+            this.unk3300IMLDPDMHJBJMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
-            this.unk3300IMLDPDMHJBJ_ = emptyIntList();
             this.unk3300OMGMGDIHDOH_ = emptyIntList();
+            this.unk3300IMLDPDMHJBJ_ = emptyIntList();
         }
 
         /* access modifiers changed from: protected */
@@ -120,43 +120,43 @@ public final class CityReputationQuestInfoOuterClass {
                                 done = true;
                                 break;
                             case 32:
-                                this.isOpen_ = input.readBool();
-                                break;
-                            case 80:
-                                if ((mutable_bitField0_ & 2) == 0) {
+                                if ((mutable_bitField0_ & 1) == 0) {
                                     this.unk3300OMGMGDIHDOH_ = newIntList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                 }
                                 this.unk3300OMGMGDIHDOH_.addInt(input.readUInt32());
                                 break;
-                            case 82:
+                            case 34:
                                 int limit = input.pushLimit(input.readRawVarint32());
-                                if ((mutable_bitField0_ & 2) == 0 && input.getBytesUntilLimit() > 0) {
+                                if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.unk3300OMGMGDIHDOH_ = newIntList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                 }
                                 while (input.getBytesUntilLimit() > 0) {
                                     this.unk3300OMGMGDIHDOH_.addInt(input.readUInt32());
                                 }
                                 input.popLimit(limit);
                                 break;
-                            case 96:
-                                if ((mutable_bitField0_ & 1) == 0) {
+                            case 80:
+                                if ((mutable_bitField0_ & 2) == 0) {
                                     this.unk3300IMLDPDMHJBJ_ = newIntList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
                                 }
                                 this.unk3300IMLDPDMHJBJ_.addInt(input.readUInt32());
                                 break;
-                            case 98:
+                            case 82:
                                 int limit2 = input.pushLimit(input.readRawVarint32());
-                                if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
+                                if ((mutable_bitField0_ & 2) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.unk3300IMLDPDMHJBJ_ = newIntList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
                                 }
                                 while (input.getBytesUntilLimit() > 0) {
                                     this.unk3300IMLDPDMHJBJ_.addInt(input.readUInt32());
                                 }
                                 input.popLimit(limit2);
+                                break;
+                            case 112:
+                                this.isOpen_ = input.readBool();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -174,10 +174,10 @@ public final class CityReputationQuestInfoOuterClass {
                     }
                 }
             } finally {
-                if ((mutable_bitField0_ & 2) != 0) {
+                if ((mutable_bitField0_ & 1) != 0) {
                     this.unk3300OMGMGDIHDOH_.makeImmutable();
                 }
-                if ((mutable_bitField0_ & 1) != 0) {
+                if ((mutable_bitField0_ & 2) != 0) {
                     this.unk3300IMLDPDMHJBJ_.makeImmutable();
                 }
                 this.unknownFields = unknownFields.build();
@@ -195,18 +195,8 @@ public final class CityReputationQuestInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfoOrBuilder
-        public List<Integer> getUnk3300IMLDPDMHJBJList() {
-            return this.unk3300IMLDPDMHJBJ_;
-        }
-
-        @Override // emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfoOrBuilder
-        public int getUnk3300IMLDPDMHJBJCount() {
-            return this.unk3300IMLDPDMHJBJ_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfoOrBuilder
-        public int getUnk3300IMLDPDMHJBJ(int index) {
-            return this.unk3300IMLDPDMHJBJ_.getInt(index);
+        public boolean getIsOpen() {
+            return this.isOpen_;
         }
 
         @Override // emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfoOrBuilder
@@ -225,8 +215,18 @@ public final class CityReputationQuestInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfoOrBuilder
-        public boolean getIsOpen() {
-            return this.isOpen_;
+        public List<Integer> getUnk3300IMLDPDMHJBJList() {
+            return this.unk3300IMLDPDMHJBJ_;
+        }
+
+        @Override // emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfoOrBuilder
+        public int getUnk3300IMLDPDMHJBJCount() {
+            return this.unk3300IMLDPDMHJBJ_.size();
+        }
+
+        @Override // emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfoOrBuilder
+        public int getUnk3300IMLDPDMHJBJ(int index) {
+            return this.unk3300IMLDPDMHJBJ_.getInt(index);
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -245,22 +245,22 @@ public final class CityReputationQuestInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (this.isOpen_) {
-                output.writeBool(4, this.isOpen_);
-            }
             if (getUnk3300OMGMGDIHDOHList().size() > 0) {
-                output.writeUInt32NoTag(82);
+                output.writeUInt32NoTag(34);
                 output.writeUInt32NoTag(this.unk3300OMGMGDIHDOHMemoizedSerializedSize);
             }
             for (int i = 0; i < this.unk3300OMGMGDIHDOH_.size(); i++) {
                 output.writeUInt32NoTag(this.unk3300OMGMGDIHDOH_.getInt(i));
             }
             if (getUnk3300IMLDPDMHJBJList().size() > 0) {
-                output.writeUInt32NoTag(98);
+                output.writeUInt32NoTag(82);
                 output.writeUInt32NoTag(this.unk3300IMLDPDMHJBJMemoizedSerializedSize);
             }
             for (int i2 = 0; i2 < this.unk3300IMLDPDMHJBJ_.size(); i2++) {
                 output.writeUInt32NoTag(this.unk3300IMLDPDMHJBJ_.getInt(i2));
+            }
+            if (this.isOpen_) {
+                output.writeBool(14, this.isOpen_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -271,31 +271,30 @@ public final class CityReputationQuestInfoOuterClass {
             if (size != -1) {
                 return size;
             }
-            int size2 = 0;
-            if (this.isOpen_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(4, this.isOpen_);
-            }
             int dataSize = 0;
             for (int i = 0; i < this.unk3300OMGMGDIHDOH_.size(); i++) {
                 dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.unk3300OMGMGDIHDOH_.getInt(i));
             }
-            int size3 = size2 + dataSize;
+            int size2 = 0 + dataSize;
             if (!getUnk3300OMGMGDIHDOHList().isEmpty()) {
-                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.unk3300OMGMGDIHDOHMemoizedSerializedSize = dataSize;
             int dataSize2 = 0;
             for (int i2 = 0; i2 < this.unk3300IMLDPDMHJBJ_.size(); i2++) {
                 dataSize2 += CodedOutputStream.computeUInt32SizeNoTag(this.unk3300IMLDPDMHJBJ_.getInt(i2));
             }
-            int size4 = size3 + dataSize2;
+            int size3 = size2 + dataSize2;
             if (!getUnk3300IMLDPDMHJBJList().isEmpty()) {
-                size4 = size4 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize2);
+                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize2);
             }
             this.unk3300IMLDPDMHJBJMemoizedSerializedSize = dataSize2;
-            int size5 = size4 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size5;
-            return size5;
+            if (this.isOpen_) {
+                size3 += CodedOutputStream.computeBoolSize(14, this.isOpen_);
+            }
+            int size4 = size3 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size4;
+            return size4;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -307,7 +306,7 @@ public final class CityReputationQuestInfoOuterClass {
                 return equals(obj);
             }
             CityReputationQuestInfo other = (CityReputationQuestInfo) obj;
-            return getUnk3300IMLDPDMHJBJList().equals(other.getUnk3300IMLDPDMHJBJList()) && getUnk3300OMGMGDIHDOHList().equals(other.getUnk3300OMGMGDIHDOHList()) && getIsOpen() == other.getIsOpen() && this.unknownFields.equals(other.unknownFields);
+            return getIsOpen() == other.getIsOpen() && getUnk3300OMGMGDIHDOHList().equals(other.getUnk3300OMGMGDIHDOHList()) && getUnk3300IMLDPDMHJBJList().equals(other.getUnk3300IMLDPDMHJBJList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -315,14 +314,14 @@ public final class CityReputationQuestInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
-            if (getUnk3300IMLDPDMHJBJCount() > 0) {
-                hash = (53 * ((37 * hash) + 12)) + getUnk3300IMLDPDMHJBJList().hashCode();
-            }
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + Internal.hashBoolean(getIsOpen());
             if (getUnk3300OMGMGDIHDOHCount() > 0) {
-                hash = (53 * ((37 * hash) + 10)) + getUnk3300OMGMGDIHDOHList().hashCode();
+                hash = (53 * ((37 * hash) + 4)) + getUnk3300OMGMGDIHDOHList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 4)) + Internal.hashBoolean(getIsOpen()))) + this.unknownFields.hashCode();
+            if (getUnk3300IMLDPDMHJBJCount() > 0) {
+                hash = (53 * ((37 * hash) + 10)) + getUnk3300IMLDPDMHJBJList().hashCode();
+            }
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -402,9 +401,9 @@ public final class CityReputationQuestInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CityReputationQuestInfoOuterClass$CityReputationQuestInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements CityReputationQuestInfoOrBuilder {
             private int bitField0_;
-            private Internal.IntList unk3300IMLDPDMHJBJ_ = CityReputationQuestInfo.emptyIntList();
-            private Internal.IntList unk3300OMGMGDIHDOH_ = CityReputationQuestInfo.emptyIntList();
             private boolean isOpen_;
+            private Internal.IntList unk3300OMGMGDIHDOH_ = CityReputationQuestInfo.emptyIntList();
+            private Internal.IntList unk3300IMLDPDMHJBJ_ = CityReputationQuestInfo.emptyIntList();
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return CityReputationQuestInfoOuterClass.internal_static_CityReputationQuestInfo_descriptor;
@@ -432,11 +431,11 @@ public final class CityReputationQuestInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.unk3300IMLDPDMHJBJ_ = CityReputationQuestInfo.emptyIntList();
-                this.bitField0_ &= -2;
-                this.unk3300OMGMGDIHDOH_ = CityReputationQuestInfo.emptyIntList();
-                this.bitField0_ &= -3;
                 this.isOpen_ = false;
+                this.unk3300OMGMGDIHDOH_ = CityReputationQuestInfo.emptyIntList();
+                this.bitField0_ &= -2;
+                this.unk3300IMLDPDMHJBJ_ = CityReputationQuestInfo.emptyIntList();
+                this.bitField0_ &= -3;
                 return this;
             }
 
@@ -463,17 +462,17 @@ public final class CityReputationQuestInfoOuterClass {
             public CityReputationQuestInfo buildPartial() {
                 CityReputationQuestInfo result = new CityReputationQuestInfo(this);
                 int i = this.bitField0_;
+                result.isOpen_ = this.isOpen_;
                 if ((this.bitField0_ & 1) != 0) {
-                    this.unk3300IMLDPDMHJBJ_.makeImmutable();
+                    this.unk3300OMGMGDIHDOH_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
-                result.unk3300IMLDPDMHJBJ_ = this.unk3300IMLDPDMHJBJ_;
+                result.unk3300OMGMGDIHDOH_ = this.unk3300OMGMGDIHDOH_;
                 if ((this.bitField0_ & 2) != 0) {
-                    this.unk3300OMGMGDIHDOH_.makeImmutable();
+                    this.unk3300IMLDPDMHJBJ_.makeImmutable();
                     this.bitField0_ &= -3;
                 }
-                result.unk3300OMGMGDIHDOH_ = this.unk3300OMGMGDIHDOH_;
-                result.isOpen_ = this.isOpen_;
+                result.unk3300IMLDPDMHJBJ_ = this.unk3300IMLDPDMHJBJ_;
                 onBuilt();
                 return result;
             }
@@ -521,28 +520,28 @@ public final class CityReputationQuestInfoOuterClass {
                 if (other == CityReputationQuestInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (!other.unk3300IMLDPDMHJBJ_.isEmpty()) {
-                    if (this.unk3300IMLDPDMHJBJ_.isEmpty()) {
-                        this.unk3300IMLDPDMHJBJ_ = other.unk3300IMLDPDMHJBJ_;
-                        this.bitField0_ &= -2;
-                    } else {
-                        ensureUnk3300IMLDPDMHJBJIsMutable();
-                        this.unk3300IMLDPDMHJBJ_.addAll(other.unk3300IMLDPDMHJBJ_);
-                    }
-                    onChanged();
+                if (other.getIsOpen()) {
+                    setIsOpen(other.getIsOpen());
                 }
                 if (!other.unk3300OMGMGDIHDOH_.isEmpty()) {
                     if (this.unk3300OMGMGDIHDOH_.isEmpty()) {
                         this.unk3300OMGMGDIHDOH_ = other.unk3300OMGMGDIHDOH_;
-                        this.bitField0_ &= -3;
+                        this.bitField0_ &= -2;
                     } else {
                         ensureUnk3300OMGMGDIHDOHIsMutable();
                         this.unk3300OMGMGDIHDOH_.addAll(other.unk3300OMGMGDIHDOH_);
                     }
                     onChanged();
                 }
-                if (other.getIsOpen()) {
-                    setIsOpen(other.getIsOpen());
+                if (!other.unk3300IMLDPDMHJBJ_.isEmpty()) {
+                    if (this.unk3300IMLDPDMHJBJ_.isEmpty()) {
+                        this.unk3300IMLDPDMHJBJ_ = other.unk3300IMLDPDMHJBJ_;
+                        this.bitField0_ &= -3;
+                    } else {
+                        ensureUnk3300IMLDPDMHJBJIsMutable();
+                        this.unk3300IMLDPDMHJBJ_.addAll(other.unk3300IMLDPDMHJBJ_);
+                    }
+                    onChanged();
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -576,66 +575,33 @@ public final class CityReputationQuestInfoOuterClass {
                 }
             }
 
-            private void ensureUnk3300IMLDPDMHJBJIsMutable() {
-                if ((this.bitField0_ & 1) == 0) {
-                    this.unk3300IMLDPDMHJBJ_ = CityReputationQuestInfo.mutableCopy(this.unk3300IMLDPDMHJBJ_);
-                    this.bitField0_ |= 1;
-                }
-            }
-
             @Override // emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfoOrBuilder
-            public List<Integer> getUnk3300IMLDPDMHJBJList() {
-                return (this.bitField0_ & 1) != 0 ? Collections.unmodifiableList(this.unk3300IMLDPDMHJBJ_) : this.unk3300IMLDPDMHJBJ_;
+            public boolean getIsOpen() {
+                return this.isOpen_;
             }
 
-            @Override // emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfoOrBuilder
-            public int getUnk3300IMLDPDMHJBJCount() {
-                return this.unk3300IMLDPDMHJBJ_.size();
-            }
-
-            @Override // emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfoOrBuilder
-            public int getUnk3300IMLDPDMHJBJ(int index) {
-                return this.unk3300IMLDPDMHJBJ_.getInt(index);
-            }
-
-            public Builder setUnk3300IMLDPDMHJBJ(int index, int value) {
-                ensureUnk3300IMLDPDMHJBJIsMutable();
-                this.unk3300IMLDPDMHJBJ_.setInt(index, value);
+            public Builder setIsOpen(boolean value) {
+                this.isOpen_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder addUnk3300IMLDPDMHJBJ(int value) {
-                ensureUnk3300IMLDPDMHJBJIsMutable();
-                this.unk3300IMLDPDMHJBJ_.addInt(value);
-                onChanged();
-                return this;
-            }
-
-            public Builder addAllUnk3300IMLDPDMHJBJ(Iterable<? extends Integer> values) {
-                ensureUnk3300IMLDPDMHJBJIsMutable();
-                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.unk3300IMLDPDMHJBJ_);
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk3300IMLDPDMHJBJ() {
-                this.unk3300IMLDPDMHJBJ_ = CityReputationQuestInfo.emptyIntList();
-                this.bitField0_ &= -2;
+            public Builder clearIsOpen() {
+                this.isOpen_ = false;
                 onChanged();
                 return this;
             }
 
             private void ensureUnk3300OMGMGDIHDOHIsMutable() {
-                if ((this.bitField0_ & 2) == 0) {
+                if ((this.bitField0_ & 1) == 0) {
                     this.unk3300OMGMGDIHDOH_ = CityReputationQuestInfo.mutableCopy(this.unk3300OMGMGDIHDOH_);
-                    this.bitField0_ |= 2;
+                    this.bitField0_ |= 1;
                 }
             }
 
             @Override // emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfoOrBuilder
             public List<Integer> getUnk3300OMGMGDIHDOHList() {
-                return (this.bitField0_ & 2) != 0 ? Collections.unmodifiableList(this.unk3300OMGMGDIHDOH_) : this.unk3300OMGMGDIHDOH_;
+                return (this.bitField0_ & 1) != 0 ? Collections.unmodifiableList(this.unk3300OMGMGDIHDOH_) : this.unk3300OMGMGDIHDOH_;
             }
 
             @Override // emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfoOrBuilder
@@ -671,24 +637,57 @@ public final class CityReputationQuestInfoOuterClass {
 
             public Builder clearUnk3300OMGMGDIHDOH() {
                 this.unk3300OMGMGDIHDOH_ = CityReputationQuestInfo.emptyIntList();
-                this.bitField0_ &= -3;
+                this.bitField0_ &= -2;
                 onChanged();
                 return this;
+            }
+
+            private void ensureUnk3300IMLDPDMHJBJIsMutable() {
+                if ((this.bitField0_ & 2) == 0) {
+                    this.unk3300IMLDPDMHJBJ_ = CityReputationQuestInfo.mutableCopy(this.unk3300IMLDPDMHJBJ_);
+                    this.bitField0_ |= 2;
+                }
             }
 
             @Override // emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfoOrBuilder
-            public boolean getIsOpen() {
-                return this.isOpen_;
+            public List<Integer> getUnk3300IMLDPDMHJBJList() {
+                return (this.bitField0_ & 2) != 0 ? Collections.unmodifiableList(this.unk3300IMLDPDMHJBJ_) : this.unk3300IMLDPDMHJBJ_;
             }
 
-            public Builder setIsOpen(boolean value) {
-                this.isOpen_ = value;
+            @Override // emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfoOrBuilder
+            public int getUnk3300IMLDPDMHJBJCount() {
+                return this.unk3300IMLDPDMHJBJ_.size();
+            }
+
+            @Override // emu.grasscutter.net.proto.CityReputationQuestInfoOuterClass.CityReputationQuestInfoOrBuilder
+            public int getUnk3300IMLDPDMHJBJ(int index) {
+                return this.unk3300IMLDPDMHJBJ_.getInt(index);
+            }
+
+            public Builder setUnk3300IMLDPDMHJBJ(int index, int value) {
+                ensureUnk3300IMLDPDMHJBJIsMutable();
+                this.unk3300IMLDPDMHJBJ_.setInt(index, value);
                 onChanged();
                 return this;
             }
 
-            public Builder clearIsOpen() {
-                this.isOpen_ = false;
+            public Builder addUnk3300IMLDPDMHJBJ(int value) {
+                ensureUnk3300IMLDPDMHJBJIsMutable();
+                this.unk3300IMLDPDMHJBJ_.addInt(value);
+                onChanged();
+                return this;
+            }
+
+            public Builder addAllUnk3300IMLDPDMHJBJ(Iterable<? extends Integer> values) {
+                ensureUnk3300IMLDPDMHJBJIsMutable();
+                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.unk3300IMLDPDMHJBJ_);
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300IMLDPDMHJBJ() {
+                this.unk3300IMLDPDMHJBJ_ = CityReputationQuestInfo.emptyIntList();
+                this.bitField0_ &= -3;
                 onChanged();
                 return this;
             }

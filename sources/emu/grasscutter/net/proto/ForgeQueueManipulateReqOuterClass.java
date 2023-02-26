@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ForgeQueueManipulateReqOuterClass.class */
 public final class ForgeQueueManipulateReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dForgeQueueManipulateReq.proto\u001a\u001eForgeQueueManipulateType.proto\"e\n\u0017ForgeQueueManipulateReq\u0012\u0016\n\u000eforge_queue_id\u0018\u0003 \u0001(\r\u00122\n\u000fmanipulate_type\u0018\u0004 \u0001(\u000e2\u0019.ForgeQueueManipulateTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ForgeQueueManipulateTypeOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dForgeQueueManipulateReq.proto\u001a\u001eForgeQueueManipulateType.proto\"b\n\u0017ForgeQueueManipulateReq\u0012\u0014\n\fforgeQueueId\u0018\u0005 \u0001(\r\u00121\n\u000emanipulateType\u0018\u0002 \u0001(\u000e2\u0019.ForgeQueueManipulateTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ForgeQueueManipulateTypeOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ForgeQueueManipulateReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ForgeQueueManipulateReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ForgeQueueManipulateReq_descriptor, new String[]{"ForgeQueueId", "ManipulateType"});
 
@@ -46,9 +46,9 @@ public final class ForgeQueueManipulateReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ForgeQueueManipulateReqOuterClass$ForgeQueueManipulateReq.class */
     public static final class ForgeQueueManipulateReq extends GeneratedMessageV3 implements ForgeQueueManipulateReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int FORGE_QUEUE_ID_FIELD_NUMBER = 3;
+        public static final int FORGEQUEUEID_FIELD_NUMBER = 5;
         private int forgeQueueId_;
-        public static final int MANIPULATE_TYPE_FIELD_NUMBER = 4;
+        public static final int MANIPULATETYPE_FIELD_NUMBER = 2;
         private int manipulateType_;
         private byte memoizedIsInitialized;
         private static final ForgeQueueManipulateReq DEFAULT_INSTANCE = new ForgeQueueManipulateReq();
@@ -97,11 +97,11 @@ public final class ForgeQueueManipulateReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 24:
-                                    this.forgeQueueId_ = input.readUInt32();
-                                    break;
-                                case 32:
+                                case 16:
                                     this.manipulateType_ = input.readEnum();
+                                    break;
+                                case 40:
+                                    this.forgeQueueId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -164,11 +164,11 @@ public final class ForgeQueueManipulateReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.forgeQueueId_ != 0) {
-                output.writeUInt32(3, this.forgeQueueId_);
-            }
             if (this.manipulateType_ != ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType.FORGE_QUEUE_MANIPULATE_TYPE_RECEIVE_OUTPUT.getNumber()) {
-                output.writeEnum(4, this.manipulateType_);
+                output.writeEnum(2, this.manipulateType_);
+            }
+            if (this.forgeQueueId_ != 0) {
+                output.writeUInt32(5, this.forgeQueueId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -180,11 +180,11 @@ public final class ForgeQueueManipulateReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.forgeQueueId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.forgeQueueId_);
-            }
             if (this.manipulateType_ != ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType.FORGE_QUEUE_MANIPULATE_TYPE_RECEIVE_OUTPUT.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(4, this.manipulateType_);
+                size2 = 0 + CodedOutputStream.computeEnumSize(2, this.manipulateType_);
+            }
+            if (this.forgeQueueId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(5, this.forgeQueueId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -208,7 +208,7 @@ public final class ForgeQueueManipulateReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getForgeQueueId())) + 4)) + this.manipulateType_)) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getForgeQueueId())) + 2)) + this.manipulateType_)) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

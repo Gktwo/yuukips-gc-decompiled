@@ -202,30 +202,30 @@ public abstract class AbstractChar2LongMap extends AbstractChar2LongFunction imp
                 return new CharIterator() { // from class: it.unimi.dsi.fastutil.chars.AbstractChar2LongMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Char2LongMap.Entry> f1330i;
+                    private final ObjectIterator<Char2LongMap.Entry> f1294i;
 
                     {
-                        this.f1330i = Char2LongMaps.fastIterator(AbstractChar2LongMap.this);
+                        this.f1294i = Char2LongMaps.fastIterator(AbstractChar2LongMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
                     public char nextChar() {
-                        return this.f1330i.next().getCharKey();
+                        return this.f1294i.next().getCharKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1330i.hasNext();
+                        return this.f1294i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1330i.remove();
+                        this.f1294i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
                     public void forEachRemaining(CharConsumer action) {
-                        this.f1330i.forEachRemaining(entry -> {
+                        this.f1294i.forEachRemaining(entry -> {
                             action.accept(entry.getCharKey());
                         });
                     }
@@ -263,30 +263,30 @@ public abstract class AbstractChar2LongMap extends AbstractChar2LongFunction imp
                 return new LongIterator() { // from class: it.unimi.dsi.fastutil.chars.AbstractChar2LongMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Char2LongMap.Entry> f1331i;
+                    private final ObjectIterator<Char2LongMap.Entry> f1295i;
 
                     {
-                        this.f1331i = Char2LongMaps.fastIterator(AbstractChar2LongMap.this);
+                        this.f1295i = Char2LongMaps.fastIterator(AbstractChar2LongMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
                     public long nextLong() {
-                        return this.f1331i.next().getLongValue();
+                        return this.f1295i.next().getLongValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1331i.hasNext();
+                        return this.f1295i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1331i.remove();
+                        this.f1295i.remove();
                     }
 
                     @Override // java.util.PrimitiveIterator.OfLong
                     public void forEachRemaining(LongConsumer action) {
-                        this.f1331i.forEachRemaining(entry -> {
+                        this.f1295i.forEachRemaining(entry -> {
                             action.accept(entry.getLongValue());
                         });
                     }

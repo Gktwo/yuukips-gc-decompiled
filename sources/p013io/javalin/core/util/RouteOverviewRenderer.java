@@ -32,10 +32,10 @@ public final class RouteOverviewRenderer implements Handler {
         Intrinsics.checkNotNullParameter(app, "app");
         this.app = app;
         this.app.events((v1) -> {
-            m5787_init_$lambda1(r1, v1);
+            m5784_init_$lambda1(r1, v1);
         });
         this.app.events((v1) -> {
-            m5789_init_$lambda3(r1, v1);
+            m5786_init_$lambda3(r1, v1);
         });
     }
 
@@ -55,7 +55,7 @@ public final class RouteOverviewRenderer implements Handler {
     }
 
     /* renamed from: lambda-1$lambda-0  reason: not valid java name */
-    private static final void m5786lambda1$lambda0(RouteOverviewRenderer this$0, HandlerMetaInfo handlerInfo) {
+    private static final void m5783lambda1$lambda0(RouteOverviewRenderer this$0, HandlerMetaInfo handlerInfo) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         List<HandlerMetaInfo> handlerMetaInfoList = this$0.getHandlerMetaInfoList();
         Intrinsics.checkNotNullExpressionValue(handlerInfo, "handlerInfo");
@@ -63,15 +63,15 @@ public final class RouteOverviewRenderer implements Handler {
     }
 
     /* renamed from: _init_$lambda-1  reason: not valid java name */
-    private static final void m5787_init_$lambda1(RouteOverviewRenderer this$0, EventListener it) {
+    private static final void m5784_init_$lambda1(RouteOverviewRenderer this$0, EventListener it) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         it.handlerAdded((v1) -> {
-            m5786lambda1$lambda0(r1, v1);
+            m5783lambda1$lambda0(r1, v1);
         });
     }
 
     /* renamed from: lambda-3$lambda-2  reason: not valid java name */
-    private static final void m5788lambda3$lambda2(RouteOverviewRenderer this$0, WsHandlerMetaInfo handlerInfo) {
+    private static final void m5785lambda3$lambda2(RouteOverviewRenderer this$0, WsHandlerMetaInfo handlerInfo) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         List<WsHandlerMetaInfo> wsHandlerMetaInfoList = this$0.getWsHandlerMetaInfoList();
         Intrinsics.checkNotNullExpressionValue(handlerInfo, "handlerInfo");
@@ -79,10 +79,10 @@ public final class RouteOverviewRenderer implements Handler {
     }
 
     /* renamed from: _init_$lambda-3  reason: not valid java name */
-    private static final void m5789_init_$lambda3(RouteOverviewRenderer this$0, EventListener it) {
+    private static final void m5786_init_$lambda3(RouteOverviewRenderer this$0, EventListener it) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         it.wsHandlerAdded((v1) -> {
-            m5788lambda3$lambda2(r1, v1);
+            m5785lambda3$lambda2(r1, v1);
         });
     }
 

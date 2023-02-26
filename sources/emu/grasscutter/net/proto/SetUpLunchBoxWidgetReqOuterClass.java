@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetUpLunchBoxWidgetReqOuterClass.class */
 public final class SetUpLunchBoxWidgetReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cSetUpLunchBoxWidgetReq.proto\u001a\u0012LunchBoxData.proto\"?\n\u0016SetUpLunchBoxWidgetReq\u0012%\n\u000elunch_box_data\u0018\u0007 \u0001(\u000b2\r.LunchBoxDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{LunchBoxDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cSetUpLunchBoxWidgetReq.proto\u001a\u0012LunchBoxData.proto\"=\n\u0016SetUpLunchBoxWidgetReq\u0012#\n\flunchBoxData\u0018\u000e \u0001(\u000b2\r.LunchBoxDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{LunchBoxDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SetUpLunchBoxWidgetReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetUpLunchBoxWidgetReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetUpLunchBoxWidgetReq_descriptor, new String[]{"LunchBoxData"});
 
@@ -47,7 +47,7 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetUpLunchBoxWidgetReqOuterClass$SetUpLunchBoxWidgetReq.class */
     public static final class SetUpLunchBoxWidgetReq extends GeneratedMessageV3 implements SetUpLunchBoxWidgetReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int LUNCH_BOX_DATA_FIELD_NUMBER = 7;
+        public static final int LUNCHBOXDATA_FIELD_NUMBER = 14;
         private LunchBoxDataOuterClass.LunchBoxData lunchBoxData_;
         private byte memoizedIsInitialized;
         private static final SetUpLunchBoxWidgetReq DEFAULT_INSTANCE = new SetUpLunchBoxWidgetReq();
@@ -94,7 +94,7 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 58:
+                            case 114:
                                 LunchBoxDataOuterClass.LunchBoxData.Builder subBuilder = this.lunchBoxData_ != null ? this.lunchBoxData_.toBuilder() : null;
                                 this.lunchBoxData_ = (LunchBoxDataOuterClass.LunchBoxData) input.readMessage(LunchBoxDataOuterClass.LunchBoxData.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -164,7 +164,7 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.lunchBoxData_ != null) {
-                output.writeMessage(7, getLunchBoxData());
+                output.writeMessage(14, getLunchBoxData());
             }
             this.unknownFields.writeTo(output);
         }
@@ -177,7 +177,7 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
             }
             int size2 = 0;
             if (this.lunchBoxData_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(7, getLunchBoxData());
+                size2 = 0 + CodedOutputStream.computeMessageSize(14, getLunchBoxData());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -206,7 +206,7 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasLunchBoxData()) {
-                hash = (53 * ((37 * hash) + 7)) + getLunchBoxData().hashCode();
+                hash = (53 * ((37 * hash) + 14)) + getLunchBoxData().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

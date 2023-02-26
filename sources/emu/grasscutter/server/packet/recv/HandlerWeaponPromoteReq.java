@@ -5,7 +5,7 @@ import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.WeaponPromoteReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 
-@Opcodes(637)
+@Opcodes(692)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerWeaponPromoteReq.class */
 public class HandlerWeaponPromoteReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

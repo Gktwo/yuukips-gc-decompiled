@@ -85,13 +85,13 @@ public final class GraphvizDotfileGenerator {
                 case 187:
                     buf.append("&raquo;");
                     break;
-                case Typography.ndash /* 8211 */:
+                case 8211:
                     buf.append("&ndash;");
                     break;
                 case Typography.mdash /* 8212 */:
                     buf.append("&mdash;");
                     break;
-                case 8216:
+                case Typography.leftSingleQuote /* 8216 */:
                     buf.append("&lsquo;");
                     break;
                 case Typography.rightSingleQuote /* 8217 */:

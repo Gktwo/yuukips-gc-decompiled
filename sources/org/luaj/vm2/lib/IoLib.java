@@ -110,14 +110,14 @@ public abstract class IoLib extends TwoArgFunction {
     public static final class IoLibV extends VarArgFunction {
 
         /* renamed from: f */
-        private File f3338f;
+        private File f3302f;
         public IoLib iolib;
 
         public IoLibV() {
         }
 
         public IoLibV(File file, String str, int i, IoLib ioLib) {
-            this.f3338f = file;
+            this.f3302f = file;
             this.name = str;
             this.opcode = i;
             this.iolib = ioLib;
@@ -166,7 +166,7 @@ public abstract class IoLib extends TwoArgFunction {
                     case 18:
                         return this.iolib._io_index(varargs.arg(2));
                     case 19:
-                        return this.iolib._lines_iter(this.f3338f);
+                        return this.iolib._lines_iter(this.f3302f);
                     default:
                         return NONE;
                 }

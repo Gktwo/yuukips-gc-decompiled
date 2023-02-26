@@ -36,7 +36,7 @@ public class CombineManger extends BaseGameSystem {
         } catch (Exception ex) {
             Grasscutter.getLogger().error("Unable to load reliquary decompose data.", (Throwable) ex);
         }
-        Grasscutter.getLogger().warn("Loaded {} reliquary decompose entries.", Integer.valueOf(reliquaryDecomposeData.size()));
+        Grasscutter.getLogger().info("Loaded {} reliquary decompose entries.", Integer.valueOf(reliquaryDecomposeData.size()));
     }
 
     public boolean unlockCombineDiagram(Player player, int combineId) {

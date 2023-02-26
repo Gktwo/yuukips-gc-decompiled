@@ -27,7 +27,7 @@ public final class ReferenceCountedOpenSslServerContext extends ReferenceCounted
     private static final InternalLogger logger = InternalLoggerFactory.getInstance(ReferenceCountedOpenSslServerContext.class);
 
     /* renamed from: ID */
-    private static final byte[] f1026ID = {110, 101, 116, 116, 121};
+    private static final byte[] f990ID = {110, 101, 116, 116, 121};
     private final OpenSslServerSessionContext sessionContext;
 
     /* access modifiers changed from: package-private */
@@ -117,7 +117,7 @@ public final class ReferenceCountedOpenSslServerContext extends ReferenceCounted
                     SSLContext.setSniHostnameMatcher(ctx, new OpenSslSniHostnameMatcher(engineMap));
                 }
                 OpenSslServerSessionContext sessionContext = new OpenSslServerSessionContext(thiz, keyMaterialProvider);
-                sessionContext.setSessionIdContext(f1026ID);
+                sessionContext.setSessionIdContext(f990ID);
                 sessionContext.setSessionCacheEnabled(SERVER_ENABLE_SESSION_CACHE);
                 if (sessionCacheSize > 0) {
                     sessionContext.setSessionCacheSize((int) Math.min(sessionCacheSize, 2147483647L));

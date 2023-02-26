@@ -6,7 +6,7 @@ import emu.grasscutter.net.proto.EntityAiSyncNotifyOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketEntityAiSyncNotify;
 
-@Opcodes(304)
+@Opcodes(354)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerEntityAiSyncNotify.class */
 public class HandlerEntityAiSyncNotify extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

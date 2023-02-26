@@ -9,7 +9,7 @@ import java.util.Collection;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketStoreItemChangeNotify.class */
 public class PacketStoreItemChangeNotify extends BasePacket {
     private PacketStoreItemChangeNotify() {
-        super(656);
+        super(687);
     }
 
     public PacketStoreItemChangeNotify(GameItem item) {

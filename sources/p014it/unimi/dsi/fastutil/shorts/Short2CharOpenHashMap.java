@@ -40,13 +40,13 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
     protected transient boolean containsNullKey;
 
     /* renamed from: n */
-    protected transient int f2924n;
+    protected transient int f2888n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2925f;
+    protected final float f2889f;
     protected transient Short2CharMap.FastEntrySet entries;
     protected transient ShortSet keys;
     protected transient CharCollection values;
@@ -57,14 +57,14 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2925f = f;
+            this.f2889f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2924n = arraySize;
+            this.f2888n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2924n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2924n, f);
-            this.key = new short[this.f2924n + 1];
-            this.value = new char[this.f2924n + 1];
+            this.mask = this.f2888n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2888n, f);
+            this.key = new short[this.f2888n + 1];
+            this.value = new char[this.f2888n + 1];
         }
     }
 
@@ -114,15 +114,15 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2925f);
-        if (needed > this.f2924n) {
+        int needed = HashCommon.arraySize(capacity, this.f2889f);
+        if (needed > this.f2888n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2925f)))));
-        if (needed > this.f2924n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2889f)))));
+        if (needed > this.f2888n) {
             rehash(needed);
         }
     }
@@ -132,8 +132,8 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
         char oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f2924n > this.minN && this.size < this.maxFill / 4 && this.f2924n > 16) {
-            rehash(this.f2924n / 2);
+        if (this.f2888n > this.minN && this.size < this.maxFill / 4 && this.f2888n > 16) {
+            rehash(this.f2888n / 2);
         }
         return oldValue;
     }
@@ -141,17 +141,17 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
     /* access modifiers changed from: private */
     public char removeNullEntry() {
         this.containsNullKey = false;
-        char oldValue = this.value[this.f2924n];
+        char oldValue = this.value[this.f2888n];
         this.size--;
-        if (this.f2924n > this.minN && this.size < this.maxFill / 4 && this.f2924n > 16) {
-            rehash(this.f2924n / 2);
+        if (this.f2888n > this.minN && this.size < this.maxFill / 4 && this.f2888n > 16) {
+            rehash(this.f2888n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShort2CharMap, java.util.Map
     public void putAll(Map<? extends Short, ? extends Character> m) {
-        if (((double) this.f2925f) <= 0.5d) {
+        if (((double) this.f2889f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -162,7 +162,7 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
     private int find(short k) {
         short curr;
         if (k == 0) {
-            return this.containsNullKey ? this.f2924n : -(this.f2924n + 1);
+            return this.containsNullKey ? this.f2888n : -(this.f2888n + 1);
         }
         short[] key = this.key;
         int mix = HashCommon.mix((int) k) & this.mask;
@@ -186,7 +186,7 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
     }
 
     private void insert(int pos, short k, char v) {
-        if (pos == this.f2924n) {
+        if (pos == this.f2888n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -194,7 +194,7 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2925f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2889f));
         }
     }
 
@@ -238,9 +238,9 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f2924n, incr);
+            return addToValue(this.f2888n, incr);
         } else {
-            pos = this.f2924n;
+            pos = this.f2888n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -248,7 +248,7 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2925f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2889f));
         }
         return this.defRetValue;
     }
@@ -314,7 +314,7 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
     public char get(short k) {
         short curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f2924n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2888n] : this.defRetValue;
         }
         short[] key = this.key;
         int mix = HashCommon.mix((int) k) & this.mask;
@@ -368,10 +368,10 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
     public boolean containsValue(char v) {
         char[] value = this.value;
         short[] key = this.key;
-        if (this.containsNullKey && value[this.f2924n] == v) {
+        if (this.containsNullKey && value[this.f2888n] == v) {
             return true;
         }
-        int i = this.f2924n;
+        int i = this.f2888n;
         while (true) {
             i--;
             if (i == 0) {
@@ -387,7 +387,7 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
     public char getOrDefault(short k, char defaultValue) {
         short curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f2924n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2888n] : defaultValue;
         }
         short[] key = this.key;
         int mix = HashCommon.mix((int) k) & this.mask;
@@ -446,7 +446,7 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
                     return true;
                 }
             }
-        } else if (!this.containsNullKey || v != this.value[this.f2924n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f2888n]) {
             return false;
         } else {
             removeNullEntry();
@@ -701,31 +701,31 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
         int last;
 
         /* renamed from: c */
-        int f2926c;
+        int f2890c;
         boolean mustReturnNullKey;
         ShortArrayList wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Short2CharOpenHashMap.this.f2924n;
+            this.pos = Short2CharOpenHashMap.this.f2888n;
             this.last = -1;
-            this.f2926c = Short2CharOpenHashMap.this.size;
+            this.f2890c = Short2CharOpenHashMap.this.size;
             this.mustReturnNullKey = Short2CharOpenHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f2926c != 0;
+            return this.f2890c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2926c--;
+            this.f2890c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Short2CharOpenHashMap.this.f2924n;
+                int i = Short2CharOpenHashMap.this.f2888n;
                 this.last = i;
                 return i;
             }
@@ -757,13 +757,13 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Short2CharOpenHashMap.this.f2924n;
+                int i = Short2CharOpenHashMap.this.f2888n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f2926c--;
+                this.f2890c--;
             }
             short[] key = Short2CharOpenHashMap.this.key;
-            while (this.f2926c != 0) {
+            while (this.f2890c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -780,12 +780,12 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
                         i3 = Short2CharOpenHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f2926c--;
+                    this.f2890c--;
                 } else if (key[this.pos] != 0) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f2926c--;
+                    this.f2890c--;
                 }
             }
         }
@@ -834,7 +834,7 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Short2CharOpenHashMap.this.f2924n) {
+            if (this.last == Short2CharOpenHashMap.this.f2888n) {
                 Short2CharOpenHashMap.this.containsNullKey = false;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
@@ -931,7 +931,7 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
         int max;
 
         /* renamed from: c */
-        int f2927c;
+        int f2891c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -941,16 +941,16 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Short2CharOpenHashMap.this.f2924n;
-            this.f2927c = 0;
+            this.max = Short2CharOpenHashMap.this.f2888n;
+            this.f2891c = 0;
             this.mustReturnNull = Short2CharOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Short2CharOpenHashMap.this.f2924n;
-            this.f2927c = 0;
+            this.max = Short2CharOpenHashMap.this.f2888n;
+            this.f2891c = 0;
             this.mustReturnNull = Short2CharOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -962,14 +962,14 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2927c++;
-                acceptOnIndex(action, Short2CharOpenHashMap.this.f2924n);
+                this.f2891c++;
+                acceptOnIndex(action, Short2CharOpenHashMap.this.f2888n);
                 return true;
             }
             short[] key = Short2CharOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f2927c++;
+                    this.f2891c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -983,14 +983,14 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2927c++;
-                acceptOnIndex(action, Short2CharOpenHashMap.this.f2924n);
+                this.f2891c++;
+                acceptOnIndex(action, Short2CharOpenHashMap.this.f2888n);
             }
             short[] key = Short2CharOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     acceptOnIndex(action, this.pos);
-                    this.f2927c++;
+                    this.f2891c++;
                 }
                 this.pos++;
             }
@@ -998,9 +998,9 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Short2CharOpenHashMap.this.size - this.f2927c);
+                return (long) (Short2CharOpenHashMap.this.size - this.f2891c);
             }
-            return Math.min((long) (Short2CharOpenHashMap.this.size - this.f2927c), ((long) ((((double) Short2CharOpenHashMap.this.realSize()) / ((double) Short2CharOpenHashMap.this.f2924n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Short2CharOpenHashMap.this.size - this.f2891c), ((long) ((((double) Short2CharOpenHashMap.this.realSize()) / ((double) Short2CharOpenHashMap.this.f2888n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1193,7 +1193,7 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
             short k = ((Short) e.getKey()).shortValue();
             char v = ((Character) e.getValue()).charValue();
             if (k == 0) {
-                return Short2CharOpenHashMap.this.containsNullKey && Short2CharOpenHashMap.this.value[Short2CharOpenHashMap.this.f2924n] == v;
+                return Short2CharOpenHashMap.this.containsNullKey && Short2CharOpenHashMap.this.value[Short2CharOpenHashMap.this.f2888n] == v;
             }
             short[] key = Short2CharOpenHashMap.this.key;
             int mix = HashCommon.mix((int) k) & Short2CharOpenHashMap.this.mask;
@@ -1254,7 +1254,7 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
                     Short2CharOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Short2CharOpenHashMap.this.containsNullKey || Short2CharOpenHashMap.this.value[Short2CharOpenHashMap.this.f2924n] != v) {
+            } else if (!Short2CharOpenHashMap.this.containsNullKey || Short2CharOpenHashMap.this.value[Short2CharOpenHashMap.this.f2888n] != v) {
                 return false;
             } else {
                 Short2CharOpenHashMap.this.removeNullEntry();
@@ -1275,9 +1275,9 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Short2CharMap.Entry> consumer) {
             if (Short2CharOpenHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractShort2CharMap.BasicEntry(Short2CharOpenHashMap.this.key[Short2CharOpenHashMap.this.f2924n], Short2CharOpenHashMap.this.value[Short2CharOpenHashMap.this.f2924n]));
+                consumer.accept(new AbstractShort2CharMap.BasicEntry(Short2CharOpenHashMap.this.key[Short2CharOpenHashMap.this.f2888n], Short2CharOpenHashMap.this.value[Short2CharOpenHashMap.this.f2888n]));
             }
-            int pos = Short2CharOpenHashMap.this.f2924n;
+            int pos = Short2CharOpenHashMap.this.f2888n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1293,11 +1293,11 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
         public void fastForEach(Consumer<? super Short2CharMap.Entry> consumer) {
             AbstractShort2CharMap.BasicEntry entry = new AbstractShort2CharMap.BasicEntry();
             if (Short2CharOpenHashMap.this.containsNullKey) {
-                entry.key = Short2CharOpenHashMap.this.key[Short2CharOpenHashMap.this.f2924n];
-                entry.value = Short2CharOpenHashMap.this.value[Short2CharOpenHashMap.this.f2924n];
+                entry.key = Short2CharOpenHashMap.this.key[Short2CharOpenHashMap.this.f2888n];
+                entry.value = Short2CharOpenHashMap.this.value[Short2CharOpenHashMap.this.f2888n];
                 consumer.accept(entry);
             }
-            int pos = Short2CharOpenHashMap.this.f2924n;
+            int pos = Short2CharOpenHashMap.this.f2888n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1395,9 +1395,9 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterable
         public void forEach(ShortConsumer consumer) {
             if (Short2CharOpenHashMap.this.containsNullKey) {
-                consumer.accept(Short2CharOpenHashMap.this.key[Short2CharOpenHashMap.this.f2924n]);
+                consumer.accept(Short2CharOpenHashMap.this.key[Short2CharOpenHashMap.this.f2888n]);
             }
-            int pos = Short2CharOpenHashMap.this.f2924n;
+            int pos = Short2CharOpenHashMap.this.f2888n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1516,9 +1516,9 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
                 @Override // p014it.unimi.dsi.fastutil.chars.CharIterable
                 public void forEach(CharConsumer consumer) {
                     if (Short2CharOpenHashMap.this.containsNullKey) {
-                        consumer.accept(Short2CharOpenHashMap.this.value[Short2CharOpenHashMap.this.f2924n]);
+                        consumer.accept(Short2CharOpenHashMap.this.value[Short2CharOpenHashMap.this.f2888n]);
                     }
-                    int pos = Short2CharOpenHashMap.this.f2924n;
+                    int pos = Short2CharOpenHashMap.this.f2888n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1554,8 +1554,8 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2925f)));
-        if (l >= this.f2924n || this.size > HashCommon.maxFill(l, this.f2925f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2889f)));
+        if (l >= this.f2888n || this.size > HashCommon.maxFill(l, this.f2889f)) {
             return true;
         }
         try {
@@ -1573,7 +1573,7 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
         int mask = newN - 1;
         short[] newKey = new short[newN + 1];
         char[] newValue = new char[newN + 1];
-        int i2 = this.f2924n;
+        int i2 = this.f2888n;
         int j = realSize();
         while (true) {
             j--;
@@ -1592,10 +1592,10 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f2924n];
-                this.f2924n = newN;
+                newValue[newN] = value[this.f2888n];
+                this.f2888n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2924n, this.f2925f);
+                this.maxFill = HashCommon.maxFill(this.f2888n, this.f2889f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1636,7 +1636,7 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f2924n];
+            h += this.value[this.f2888n];
         }
         return h;
     }
@@ -1662,12 +1662,12 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2924n = HashCommon.arraySize(this.size, this.f2925f);
-        this.maxFill = HashCommon.maxFill(this.f2924n, this.f2925f);
-        this.mask = this.f2924n - 1;
-        short[] key = new short[this.f2924n + 1];
+        this.f2888n = HashCommon.arraySize(this.size, this.f2889f);
+        this.maxFill = HashCommon.maxFill(this.f2888n, this.f2889f);
+        this.mask = this.f2888n - 1;
+        short[] key = new short[this.f2888n + 1];
         this.key = key;
-        char[] value = new char[this.f2924n + 1];
+        char[] value = new char[this.f2888n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1676,7 +1676,7 @@ public class Short2CharOpenHashMap extends AbstractShort2CharMap implements Seri
                 short k = s.readShort();
                 char v = s.readChar();
                 if (k == 0) {
-                    pos = this.f2924n;
+                    pos = this.f2888n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix((int) k);

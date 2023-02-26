@@ -21,14 +21,16 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MichiaeMatsuriChallengePositionInfoOuterClass.class */
 public final class MichiaeMatsuriChallengePositionInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n)MichiaeMatsuriChallengePositionInfo.proto\u001a\fVector.proto\"`\n#MichiaeMatsuriChallengePositionInfo\u0012\u0011\n\tgadget_id\u0018\u0007 \u0001(\r\u0012\u0014\n\u0003pos\u0018\u0004 \u0001(\u000b2\u0007.Vector\u0012\u0010\n\bgroup_id\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n)MichiaeMatsuriChallengePositionInfo.proto\u001a\fVector.proto\"^\n#MichiaeMatsuriChallengePositionInfo\u0012\u000f\n\u0007groupId\u0018\u0005 \u0001(\r\u0012\u0010\n\bgadgetId\u0018\u000e \u0001(\r\u0012\u0014\n\u0003pos\u0018\r \u0001(\u000b2\u0007.VectorB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_MichiaeMatsuriChallengePositionInfo_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_MichiaeMatsuriChallengePositionInfo_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f799xa0c2602e = new GeneratedMessageV3.FieldAccessorTable(internal_static_MichiaeMatsuriChallengePositionInfo_descriptor, new String[]{"GadgetId", "Pos", "GroupId"});
+    private static final GeneratedMessageV3.FieldAccessorTable f780xa0c2602e = new GeneratedMessageV3.FieldAccessorTable(internal_static_MichiaeMatsuriChallengePositionInfo_descriptor, new String[]{"GroupId", "GadgetId", "Pos"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MichiaeMatsuriChallengePositionInfoOuterClass$MichiaeMatsuriChallengePositionInfoOrBuilder.class */
     public interface MichiaeMatsuriChallengePositionInfoOrBuilder extends MessageOrBuilder {
+        int getGroupId();
+
         int getGadgetId();
 
         boolean hasPos();
@@ -36,8 +38,6 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
         VectorOuterClass.Vector getPos();
 
         VectorOuterClass.VectorOrBuilder getPosOrBuilder();
-
-        int getGroupId();
     }
 
     private MichiaeMatsuriChallengePositionInfoOuterClass() {
@@ -53,12 +53,12 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MichiaeMatsuriChallengePositionInfoOuterClass$MichiaeMatsuriChallengePositionInfo.class */
     public static final class MichiaeMatsuriChallengePositionInfo extends GeneratedMessageV3 implements MichiaeMatsuriChallengePositionInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int GADGET_ID_FIELD_NUMBER = 7;
-        private int gadgetId_;
-        public static final int POS_FIELD_NUMBER = 4;
-        private VectorOuterClass.Vector pos_;
-        public static final int GROUP_ID_FIELD_NUMBER = 11;
+        public static final int GROUPID_FIELD_NUMBER = 5;
         private int groupId_;
+        public static final int GADGETID_FIELD_NUMBER = 14;
+        private int gadgetId_;
+        public static final int POS_FIELD_NUMBER = 13;
+        private VectorOuterClass.Vector pos_;
         private byte memoizedIsInitialized;
         private static final MichiaeMatsuriChallengePositionInfo DEFAULT_INSTANCE = new MichiaeMatsuriChallengePositionInfo();
         private static final Parser<MichiaeMatsuriChallengePositionInfo> PARSER = new AbstractParser<MichiaeMatsuriChallengePositionInfo>() { // from class: emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo.1
@@ -105,7 +105,10 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 34:
+                                case 40:
+                                    this.groupId_ = input.readUInt32();
+                                    break;
+                                case 106:
                                     VectorOuterClass.Vector.Builder subBuilder = this.pos_ != null ? this.pos_.toBuilder() : null;
                                     this.pos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -115,11 +118,8 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
                                         this.pos_ = subBuilder.buildPartial();
                                         break;
                                     }
-                                case 56:
+                                case 112:
                                     this.gadgetId_ = input.readUInt32();
-                                    break;
-                                case 88:
-                                    this.groupId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -148,7 +148,12 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return MichiaeMatsuriChallengePositionInfoOuterClass.f799xa0c2602e.ensureFieldAccessorsInitialized(MichiaeMatsuriChallengePositionInfo.class, Builder.class);
+            return MichiaeMatsuriChallengePositionInfoOuterClass.f780xa0c2602e.ensureFieldAccessorsInitialized(MichiaeMatsuriChallengePositionInfo.class, Builder.class);
+        }
+
+        @Override // emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfoOrBuilder
+        public int getGroupId() {
+            return this.groupId_;
         }
 
         @Override // emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfoOrBuilder
@@ -171,11 +176,6 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
             return getPos();
         }
 
-        @Override // emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfoOrBuilder
-        public int getGroupId() {
-            return this.groupId_;
-        }
-
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -191,14 +191,14 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.groupId_ != 0) {
+                output.writeUInt32(5, this.groupId_);
+            }
             if (this.pos_ != null) {
-                output.writeMessage(4, getPos());
+                output.writeMessage(13, getPos());
             }
             if (this.gadgetId_ != 0) {
-                output.writeUInt32(7, this.gadgetId_);
-            }
-            if (this.groupId_ != 0) {
-                output.writeUInt32(11, this.groupId_);
+                output.writeUInt32(14, this.gadgetId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -210,14 +210,14 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.groupId_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.groupId_);
+            }
             if (this.pos_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(4, getPos());
+                size2 += CodedOutputStream.computeMessageSize(13, getPos());
             }
             if (this.gadgetId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.gadgetId_);
-            }
-            if (this.groupId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.groupId_);
+                size2 += CodedOutputStream.computeUInt32Size(14, this.gadgetId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -233,8 +233,8 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
                 return equals(obj);
             }
             MichiaeMatsuriChallengePositionInfo other = (MichiaeMatsuriChallengePositionInfo) obj;
-            if (getGadgetId() == other.getGadgetId() && hasPos() == other.hasPos()) {
-                return (!hasPos() || getPos().equals(other.getPos())) && getGroupId() == other.getGroupId() && this.unknownFields.equals(other.unknownFields);
+            if (getGroupId() == other.getGroupId() && getGadgetId() == other.getGadgetId() && hasPos() == other.hasPos()) {
+                return (!hasPos() || getPos().equals(other.getPos())) && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -244,11 +244,11 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getGadgetId();
+            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getGroupId())) + 14)) + getGadgetId();
             if (hasPos()) {
-                hash = (53 * ((37 * hash) + 4)) + getPos().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getPos().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 11)) + getGroupId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -327,10 +327,10 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MichiaeMatsuriChallengePositionInfoOuterClass$MichiaeMatsuriChallengePositionInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements MichiaeMatsuriChallengePositionInfoOrBuilder {
+            private int groupId_;
             private int gadgetId_;
             private VectorOuterClass.Vector pos_;
             private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> posBuilder_;
-            private int groupId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return MichiaeMatsuriChallengePositionInfoOuterClass.internal_static_MichiaeMatsuriChallengePositionInfo_descriptor;
@@ -338,7 +338,7 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return MichiaeMatsuriChallengePositionInfoOuterClass.f799xa0c2602e.ensureFieldAccessorsInitialized(MichiaeMatsuriChallengePositionInfo.class, Builder.class);
+                return MichiaeMatsuriChallengePositionInfoOuterClass.f780xa0c2602e.ensureFieldAccessorsInitialized(MichiaeMatsuriChallengePositionInfo.class, Builder.class);
             }
 
             private Builder() {
@@ -358,6 +358,7 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.groupId_ = 0;
                 this.gadgetId_ = 0;
                 if (this.posBuilder_ == null) {
                     this.pos_ = null;
@@ -365,7 +366,6 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
                     this.pos_ = null;
                     this.posBuilder_ = null;
                 }
-                this.groupId_ = 0;
                 return this;
             }
 
@@ -391,13 +391,13 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public MichiaeMatsuriChallengePositionInfo buildPartial() {
                 MichiaeMatsuriChallengePositionInfo result = new MichiaeMatsuriChallengePositionInfo(this);
+                result.groupId_ = this.groupId_;
                 result.gadgetId_ = this.gadgetId_;
                 if (this.posBuilder_ == null) {
                     result.pos_ = this.pos_;
                 } else {
                     result.pos_ = this.posBuilder_.build();
                 }
-                result.groupId_ = this.groupId_;
                 onBuilt();
                 return result;
             }
@@ -445,14 +445,14 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
                 if (other == MichiaeMatsuriChallengePositionInfo.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getGroupId() != 0) {
+                    setGroupId(other.getGroupId());
+                }
                 if (other.getGadgetId() != 0) {
                     setGadgetId(other.getGadgetId());
                 }
                 if (other.hasPos()) {
                     mergePos(other.getPos());
-                }
-                if (other.getGroupId() != 0) {
-                    setGroupId(other.getGroupId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -484,6 +484,23 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfoOrBuilder
+            public int getGroupId() {
+                return this.groupId_;
+            }
+
+            public Builder setGroupId(int value) {
+                this.groupId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearGroupId() {
+                this.groupId_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfoOrBuilder
@@ -582,23 +599,6 @@ public final class MichiaeMatsuriChallengePositionInfoOuterClass {
                     this.pos_ = null;
                 }
                 return this.posBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfoOrBuilder
-            public int getGroupId() {
-                return this.groupId_;
-            }
-
-            public Builder setGroupId(int value) {
-                this.groupId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearGroupId() {
-                this.groupId_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

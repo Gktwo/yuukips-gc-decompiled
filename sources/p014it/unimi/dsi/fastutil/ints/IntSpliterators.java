@@ -300,22 +300,22 @@ public final class IntSpliterators {
     private static class SpliteratorWrapper implements IntSpliterator {
 
         /* renamed from: i */
-        final Spliterator<Integer> f2205i;
+        final Spliterator<Integer> f2169i;
 
         public SpliteratorWrapper(Spliterator<Integer> i) {
-            this.f2205i = i;
+            this.f2169i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntSpliterator
         public boolean tryAdvance(IntConsumer action) {
-            return this.f2205i.tryAdvance(action);
+            return this.f2169i.tryAdvance(action);
         }
 
         @Override // java.util.Spliterator.OfInt
         public boolean tryAdvance(IntConsumer action) {
             Consumer<? super Integer> consumer;
             Objects.requireNonNull(action);
-            Spliterator<Integer> spliterator = this.f2205i;
+            Spliterator<Integer> spliterator = this.f2169i;
             if (action instanceof Consumer) {
                 consumer = (Consumer) action;
             } else {
@@ -330,19 +330,19 @@ public final class IntSpliterators {
         @Override // p014it.unimi.dsi.fastutil.ints.IntSpliterator, java.util.Spliterator.OfInt, java.util.Spliterator
         @Deprecated
         public boolean tryAdvance(Consumer<? super Integer> action) {
-            return this.f2205i.tryAdvance(action);
+            return this.f2169i.tryAdvance(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntSpliterator
         public void forEachRemaining(IntConsumer action) {
-            this.f2205i.forEachRemaining(action);
+            this.f2169i.forEachRemaining(action);
         }
 
         @Override // java.util.Spliterator.OfInt
         public void forEachRemaining(IntConsumer action) {
             Consumer<? super Integer> consumer;
             Objects.requireNonNull(action);
-            Spliterator<Integer> spliterator = this.f2205i;
+            Spliterator<Integer> spliterator = this.f2169i;
             if (action instanceof Consumer) {
                 consumer = (Consumer) action;
             } else {
@@ -357,27 +357,27 @@ public final class IntSpliterators {
         @Override // p014it.unimi.dsi.fastutil.ints.IntSpliterator, java.util.Spliterator.OfInt, java.util.Spliterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Integer> action) {
-            this.f2205i.forEachRemaining(action);
+            this.f2169i.forEachRemaining(action);
         }
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return this.f2205i.estimateSize();
+            return this.f2169i.estimateSize();
         }
 
         @Override // java.util.Spliterator
         public int characteristics() {
-            return this.f2205i.characteristics();
+            return this.f2169i.characteristics();
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntSpliterator, java.util.Spliterator
         public IntComparator getComparator() {
-            return IntComparators.asIntComparator(this.f2205i.getComparator());
+            return IntComparators.asIntComparator(this.f2169i.getComparator());
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntSpliterator, java.util.Spliterator.OfInt, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public IntSpliterator trySplit() {
-            Spliterator<Integer> innerSplit = this.f2205i.trySplit();
+            Spliterator<Integer> innerSplit = this.f2169i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -402,7 +402,7 @@ public final class IntSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntSpliterators.SpliteratorWrapper, p014it.unimi.dsi.fastutil.ints.IntSpliterator, java.util.Spliterator.OfInt, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public IntSpliterator trySplit() {
-            Spliterator<Integer> innerSplit = this.f2205i.trySplit();
+            Spliterator<Integer> innerSplit = this.f2169i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -415,40 +415,40 @@ public final class IntSpliterators {
     private static class PrimitiveSpliteratorWrapper implements IntSpliterator {
 
         /* renamed from: i */
-        final Spliterator.OfInt f2203i;
+        final Spliterator.OfInt f2167i;
 
         public PrimitiveSpliteratorWrapper(Spliterator.OfInt i) {
-            this.f2203i = i;
+            this.f2167i = i;
         }
 
         @Override // java.util.Spliterator.OfInt
         public boolean tryAdvance(IntConsumer action) {
-            return this.f2203i.tryAdvance(action);
+            return this.f2167i.tryAdvance(action);
         }
 
         @Override // java.util.Spliterator.OfInt
         public void forEachRemaining(IntConsumer action) {
-            this.f2203i.forEachRemaining(action);
+            this.f2167i.forEachRemaining(action);
         }
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return this.f2203i.estimateSize();
+            return this.f2167i.estimateSize();
         }
 
         @Override // java.util.Spliterator
         public int characteristics() {
-            return this.f2203i.characteristics();
+            return this.f2167i.characteristics();
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntSpliterator, java.util.Spliterator
         public IntComparator getComparator() {
-            return IntComparators.asIntComparator(this.f2203i.getComparator());
+            return IntComparators.asIntComparator(this.f2167i.getComparator());
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntSpliterator, java.util.Spliterator.OfInt, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public IntSpliterator trySplit() {
-            Spliterator.OfInt innerSplit = this.f2203i.trySplit();
+            Spliterator.OfInt innerSplit = this.f2167i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -473,7 +473,7 @@ public final class IntSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntSpliterators.PrimitiveSpliteratorWrapper, p014it.unimi.dsi.fastutil.ints.IntSpliterator, java.util.Spliterator.OfInt, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public IntSpliterator trySplit() {
-            Spliterator.OfInt innerSplit = this.f2203i.trySplit();
+            Spliterator.OfInt innerSplit = this.f2167i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -656,16 +656,16 @@ public final class IntSpliterators {
         private int curr;
 
         /* renamed from: to */
-        private int f2202to;
+        private int f2166to;
 
         public IntervalSpliterator(int from, int to) {
             this.curr = from;
-            this.f2202to = to;
+            this.f2166to = to;
         }
 
         @Override // java.util.Spliterator.OfInt
         public boolean tryAdvance(IntConsumer action) {
-            if (this.curr >= this.f2202to) {
+            if (this.curr >= this.f2166to) {
                 return false;
             }
             int i = this.curr;
@@ -677,7 +677,7 @@ public final class IntSpliterators {
         @Override // java.util.Spliterator.OfInt
         public void forEachRemaining(IntConsumer action) {
             Objects.requireNonNull(action);
-            while (this.curr < this.f2202to) {
+            while (this.curr < this.f2166to) {
                 action.accept(this.curr);
                 this.curr++;
             }
@@ -685,7 +685,7 @@ public final class IntSpliterators {
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return ((long) this.f2202to) - ((long) this.curr);
+            return ((long) this.f2166to) - ((long) this.curr);
         }
 
         @Override // java.util.Spliterator
@@ -700,7 +700,7 @@ public final class IntSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntSpliterator, java.util.Spliterator.OfInt, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public IntSpliterator trySplit() {
-            long remaining = (long) (this.f2202to - this.curr);
+            long remaining = (long) (this.f2166to - this.curr);
             int mid = (int) (((long) this.curr) + (remaining >> 1));
             if (remaining >= 0 && remaining <= 2) {
                 return null;
@@ -714,13 +714,13 @@ public final class IntSpliterators {
         public long skip(long n) {
             if (n < 0) {
                 throw new IllegalArgumentException("Argument must be nonnegative: " + n);
-            } else if (this.curr >= this.f2202to) {
+            } else if (this.curr >= this.f2166to) {
                 return 0;
             } else {
                 long newCurr = ((long) this.curr) + n;
-                if (newCurr > ((long) this.f2202to) || newCurr < ((long) this.curr)) {
-                    long n2 = (long) (this.f2202to - this.curr);
-                    this.curr = this.f2202to;
+                if (newCurr > ((long) this.f2166to) || newCurr < ((long) this.curr)) {
+                    long n2 = (long) (this.f2166to - this.curr);
+                    this.curr = this.f2166to;
                     return n2;
                 }
                 this.curr = SafeMath.safeLongToInt(newCurr);
@@ -741,7 +741,7 @@ public final class IntSpliterators {
         private static final int CHARACTERISTICS_NOT_SUPPORTED_WHILE_MULTIPLE = 5;
 
         /* renamed from: a */
-        final IntSpliterator[] f2204a;
+        final IntSpliterator[] f2168a;
         int offset;
         int length;
         long remainingEstimatedExceptCurrent;
@@ -750,7 +750,7 @@ public final class IntSpliterators {
         public SpliteratorConcatenator(IntSpliterator[] a, int offset, int length) {
             this.remainingEstimatedExceptCurrent = LongCompanionObject.MAX_VALUE;
             this.characteristics = 0;
-            this.f2204a = a;
+            this.f2168a = a;
             this.offset = offset;
             this.length = length;
             this.remainingEstimatedExceptCurrent = recomputeRemaining();
@@ -779,7 +779,7 @@ public final class IntSpliterators {
                 r0 = r6
                 if (r0 <= 0) goto L_0x004e
                 r0 = r5
-                it.unimi.dsi.fastutil.ints.IntSpliterator[] r0 = r0.f2204a
+                it.unimi.dsi.fastutil.ints.IntSpliterator[] r0 = r0.f2168a
                 r1 = r7
                 int r7 = r7 + 1
                 r0 = r0[r1]
@@ -829,7 +829,7 @@ public final class IntSpliterators {
             }
             while (curLength > 0) {
                 curOffset++;
-                current &= this.f2204a[curOffset].characteristics();
+                current &= this.f2168a[curOffset].characteristics();
                 curLength--;
             }
             return current;
@@ -850,7 +850,7 @@ public final class IntSpliterators {
             while (true) {
                 if (this.length <= 0) {
                     break;
-                } else if (this.f2204a[this.offset].tryAdvance(action)) {
+                } else if (this.f2168a[this.offset].tryAdvance(action)) {
                     any = true;
                     break;
                 } else {
@@ -863,7 +863,7 @@ public final class IntSpliterators {
         @Override // java.util.Spliterator.OfInt
         public void forEachRemaining(IntConsumer action) {
             while (this.length > 0) {
-                this.f2204a[this.offset].forEachRemaining(action);
+                this.f2168a[this.offset].forEachRemaining(action);
                 advanceNextSpliterator();
             }
         }
@@ -872,7 +872,7 @@ public final class IntSpliterators {
         @Deprecated
         public void forEachRemaining(Consumer<? super Integer> action) {
             while (this.length > 0) {
-                this.f2204a[this.offset].forEachRemaining(action);
+                this.f2168a[this.offset].forEachRemaining(action);
                 advanceNextSpliterator();
             }
         }
@@ -882,7 +882,7 @@ public final class IntSpliterators {
             if (this.length <= 0) {
                 return 0;
             }
-            long est = this.f2204a[this.offset].estimateSize() + this.remainingEstimatedExceptCurrent;
+            long est = this.f2168a[this.offset].estimateSize() + this.remainingEstimatedExceptCurrent;
             if (est < 0) {
                 return LongCompanionObject.MAX_VALUE;
             }
@@ -897,7 +897,7 @@ public final class IntSpliterators {
         @Override // p014it.unimi.dsi.fastutil.ints.IntSpliterator, java.util.Spliterator
         public IntComparator getComparator() {
             if (this.length == 1 && (this.characteristics & 4) != 0) {
-                return this.f2204a[this.offset].getComparator();
+                return this.f2168a[this.offset].getComparator();
             }
             throw new IllegalStateException();
         }
@@ -908,16 +908,16 @@ public final class IntSpliterators {
                 case 0:
                     return null;
                 case 1:
-                    IntSpliterator split = this.f2204a[this.offset].trySplit();
-                    this.characteristics = this.f2204a[this.offset].characteristics();
+                    IntSpliterator split = this.f2168a[this.offset].trySplit();
+                    this.characteristics = this.f2168a[this.offset].characteristics();
                     return split;
                 case 2:
-                    IntSpliterator[] intSpliteratorArr = this.f2204a;
+                    IntSpliterator[] intSpliteratorArr = this.f2168a;
                     int i = this.offset;
                     this.offset = i + 1;
                     IntSpliterator split2 = intSpliteratorArr[i];
                     this.length--;
-                    this.characteristics = this.f2204a[this.offset].characteristics();
+                    this.characteristics = this.f2168a[this.offset].characteristics();
                     this.remainingEstimatedExceptCurrent = 0;
                     return split2;
                 default:
@@ -927,7 +927,7 @@ public final class IntSpliterators {
                     this.length -= mid;
                     this.remainingEstimatedExceptCurrent = recomputeRemaining();
                     this.characteristics = computeCharacteristics();
-                    return new SpliteratorConcatenator(this.f2204a, ret_offset, mid);
+                    return new SpliteratorConcatenator(this.f2168a, ret_offset, mid);
             }
         }
 
@@ -939,7 +939,7 @@ public final class IntSpliterators {
                 return 0;
             }
             while (c < n && this.length >= 0) {
-                c += this.f2204a[this.offset].skip(n - c);
+                c += this.f2168a[this.offset].skip(n - c);
                 if (c < n) {
                     advanceNextSpliterator();
                 }

@@ -5,13 +5,14 @@ import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.LifeState;
 import emu.grasscutter.net.packet.BasePacket;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass;
 import emu.grasscutter.net.proto.PlayerDieTypeOuterClass;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketAvatarLifeStateChangeNotify.class */
 public class PacketAvatarLifeStateChangeNotify extends BasePacket {
     public PacketAvatarLifeStateChangeNotify(Avatar avatar) {
-        super(1247);
+        super(PacketOpcodes.AvatarLifeStateChangeNotify);
         int i;
         AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify.Builder avatarGuid = AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify.newBuilder().setAvatarGuid(avatar.getGuid());
         if (avatar.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) > 0.0f) {
@@ -23,7 +24,7 @@ public class PacketAvatarLifeStateChangeNotify extends BasePacket {
     }
 
     public PacketAvatarLifeStateChangeNotify(Avatar avatar, int attackerId, LifeState lifeState) {
-        super(1247);
+        super(PacketOpcodes.AvatarLifeStateChangeNotify);
         setData(AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify.newBuilder().setAvatarGuid(avatar.getGuid()).setLifeState(lifeState.getValue()).setMoveReliableSeq(attackerId).build());
     }
 
@@ -32,7 +33,7 @@ public class PacketAvatarLifeStateChangeNotify extends BasePacket {
     }
 
     public PacketAvatarLifeStateChangeNotify(Avatar avatar, LifeState lifeState, GameEntity sourceEntity, String attackTag, PlayerDieTypeOuterClass.PlayerDieType dieType) {
-        super(1247);
+        super(PacketOpcodes.AvatarLifeStateChangeNotify);
         AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify.Builder proto = AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify.newBuilder();
         proto.setAvatarGuid(avatar.getGuid());
         proto.setLifeState(lifeState.getValue());

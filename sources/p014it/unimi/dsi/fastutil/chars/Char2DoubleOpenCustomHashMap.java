@@ -40,13 +40,13 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
     protected CharHash.Strategy strategy;
 
     /* renamed from: n */
-    protected transient int f1391n;
+    protected transient int f1355n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1392f;
+    protected final float f1356f;
     protected transient Char2DoubleMap.FastEntrySet entries;
     protected transient CharSet keys;
     protected transient DoubleCollection values;
@@ -124,14 +124,14 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1392f = f;
+            this.f1356f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1391n = arraySize;
+            this.f1355n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1391n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1391n, f);
-            this.key = new char[this.f1391n + 1];
-            this.value = new double[this.f1391n + 1];
+            this.mask = this.f1355n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1355n, f);
+            this.key = new char[this.f1355n + 1];
+            this.value = new double[this.f1355n + 1];
         }
     }
 
@@ -185,15 +185,15 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1392f);
-        if (needed > this.f1391n) {
+        int needed = HashCommon.arraySize(capacity, this.f1356f);
+        if (needed > this.f1355n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1392f)))));
-        if (needed > this.f1391n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1356f)))));
+        if (needed > this.f1355n) {
             rehash(needed);
         }
     }
@@ -203,8 +203,8 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
         double oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f1391n > this.minN && this.size < this.maxFill / 4 && this.f1391n > 16) {
-            rehash(this.f1391n / 2);
+        if (this.f1355n > this.minN && this.size < this.maxFill / 4 && this.f1355n > 16) {
+            rehash(this.f1355n / 2);
         }
         return oldValue;
     }
@@ -212,17 +212,17 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
     /* access modifiers changed from: private */
     public double removeNullEntry() {
         this.containsNullKey = false;
-        double oldValue = this.value[this.f1391n];
+        double oldValue = this.value[this.f1355n];
         this.size--;
-        if (this.f1391n > this.minN && this.size < this.maxFill / 4 && this.f1391n > 16) {
-            rehash(this.f1391n / 2);
+        if (this.f1355n > this.minN && this.size < this.maxFill / 4 && this.f1355n > 16) {
+            rehash(this.f1355n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractChar2DoubleMap, java.util.Map
     public void putAll(Map<? extends Character, ? extends Double> m) {
-        if (((double) this.f1392f) <= 0.5d) {
+        if (((double) this.f1356f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -233,7 +233,7 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
     private int find(char k) {
         char curr;
         if (this.strategy.equals(k, 0)) {
-            return this.containsNullKey ? this.f1391n : -(this.f1391n + 1);
+            return this.containsNullKey ? this.f1355n : -(this.f1355n + 1);
         }
         char[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -257,7 +257,7 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
     }
 
     private void insert(int pos, char k, double v) {
-        if (pos == this.f1391n) {
+        if (pos == this.f1355n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -265,7 +265,7 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f1392f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f1356f));
         }
     }
 
@@ -309,9 +309,9 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f1391n, incr);
+            return addToValue(this.f1355n, incr);
         } else {
-            pos = this.f1391n;
+            pos = this.f1355n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -319,7 +319,7 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f1392f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f1356f));
         }
         return this.defRetValue;
     }
@@ -385,7 +385,7 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
     public double get(char k) {
         char curr;
         if (this.strategy.equals(k, 0)) {
-            return this.containsNullKey ? this.value[this.f1391n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f1355n] : this.defRetValue;
         }
         char[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -439,10 +439,10 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
     public boolean containsValue(double v) {
         double[] value = this.value;
         char[] key = this.key;
-        if (this.containsNullKey && Double.doubleToLongBits(value[this.f1391n]) == Double.doubleToLongBits(v)) {
+        if (this.containsNullKey && Double.doubleToLongBits(value[this.f1355n]) == Double.doubleToLongBits(v)) {
             return true;
         }
-        int i = this.f1391n;
+        int i = this.f1355n;
         while (true) {
             i--;
             if (i == 0) {
@@ -458,7 +458,7 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
     public double getOrDefault(char k, double defaultValue) {
         char curr;
         if (this.strategy.equals(k, 0)) {
-            return this.containsNullKey ? this.value[this.f1391n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f1355n] : defaultValue;
         }
         char[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -518,7 +518,7 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
                 removeEntry(pos);
                 return true;
             }
-        } else if (!this.containsNullKey || Double.doubleToLongBits(v) != Double.doubleToLongBits(this.value[this.f1391n])) {
+        } else if (!this.containsNullKey || Double.doubleToLongBits(v) != Double.doubleToLongBits(this.value[this.f1355n])) {
             return false;
         } else {
             removeNullEntry();
@@ -700,31 +700,31 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
         int last;
 
         /* renamed from: c */
-        int f1393c;
+        int f1357c;
         boolean mustReturnNullKey;
         CharArrayList wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Char2DoubleOpenCustomHashMap.this.f1391n;
+            this.pos = Char2DoubleOpenCustomHashMap.this.f1355n;
             this.last = -1;
-            this.f1393c = Char2DoubleOpenCustomHashMap.this.size;
+            this.f1357c = Char2DoubleOpenCustomHashMap.this.size;
             this.mustReturnNullKey = Char2DoubleOpenCustomHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f1393c != 0;
+            return this.f1357c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f1393c--;
+            this.f1357c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Char2DoubleOpenCustomHashMap.this.f1391n;
+                int i = Char2DoubleOpenCustomHashMap.this.f1355n;
                 this.last = i;
                 return i;
             }
@@ -756,13 +756,13 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Char2DoubleOpenCustomHashMap.this.f1391n;
+                int i = Char2DoubleOpenCustomHashMap.this.f1355n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f1393c--;
+                this.f1357c--;
             }
             char[] key = Char2DoubleOpenCustomHashMap.this.key;
-            while (this.f1393c != 0) {
+            while (this.f1357c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -779,12 +779,12 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
                         i3 = Char2DoubleOpenCustomHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f1393c--;
+                    this.f1357c--;
                 } else if (key[this.pos] != 0) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f1393c--;
+                    this.f1357c--;
                 }
             }
         }
@@ -833,7 +833,7 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Char2DoubleOpenCustomHashMap.this.f1391n) {
+            if (this.last == Char2DoubleOpenCustomHashMap.this.f1355n) {
                 Char2DoubleOpenCustomHashMap.this.containsNullKey = false;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
@@ -930,7 +930,7 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
         int max;
 
         /* renamed from: c */
-        int f1394c;
+        int f1358c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -940,16 +940,16 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Char2DoubleOpenCustomHashMap.this.f1391n;
-            this.f1394c = 0;
+            this.max = Char2DoubleOpenCustomHashMap.this.f1355n;
+            this.f1358c = 0;
             this.mustReturnNull = Char2DoubleOpenCustomHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Char2DoubleOpenCustomHashMap.this.f1391n;
-            this.f1394c = 0;
+            this.max = Char2DoubleOpenCustomHashMap.this.f1355n;
+            this.f1358c = 0;
             this.mustReturnNull = Char2DoubleOpenCustomHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -961,14 +961,14 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1394c++;
-                acceptOnIndex(action, Char2DoubleOpenCustomHashMap.this.f1391n);
+                this.f1358c++;
+                acceptOnIndex(action, Char2DoubleOpenCustomHashMap.this.f1355n);
                 return true;
             }
             char[] key = Char2DoubleOpenCustomHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f1394c++;
+                    this.f1358c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -982,14 +982,14 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1394c++;
-                acceptOnIndex(action, Char2DoubleOpenCustomHashMap.this.f1391n);
+                this.f1358c++;
+                acceptOnIndex(action, Char2DoubleOpenCustomHashMap.this.f1355n);
             }
             char[] key = Char2DoubleOpenCustomHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     acceptOnIndex(action, this.pos);
-                    this.f1394c++;
+                    this.f1358c++;
                 }
                 this.pos++;
             }
@@ -997,9 +997,9 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Char2DoubleOpenCustomHashMap.this.size - this.f1394c);
+                return (long) (Char2DoubleOpenCustomHashMap.this.size - this.f1358c);
             }
-            return Math.min((long) (Char2DoubleOpenCustomHashMap.this.size - this.f1394c), ((long) ((((double) Char2DoubleOpenCustomHashMap.this.realSize()) / ((double) Char2DoubleOpenCustomHashMap.this.f1391n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Char2DoubleOpenCustomHashMap.this.size - this.f1358c), ((long) ((((double) Char2DoubleOpenCustomHashMap.this.realSize()) / ((double) Char2DoubleOpenCustomHashMap.this.f1355n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1192,7 +1192,7 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
             char k = ((Character) e.getKey()).charValue();
             double v = ((Double) e.getValue()).doubleValue();
             if (Char2DoubleOpenCustomHashMap.this.strategy.equals(k, 0)) {
-                return Char2DoubleOpenCustomHashMap.this.containsNullKey && Double.doubleToLongBits(Char2DoubleOpenCustomHashMap.this.value[Char2DoubleOpenCustomHashMap.this.f1391n]) == Double.doubleToLongBits(v);
+                return Char2DoubleOpenCustomHashMap.this.containsNullKey && Double.doubleToLongBits(Char2DoubleOpenCustomHashMap.this.value[Char2DoubleOpenCustomHashMap.this.f1355n]) == Double.doubleToLongBits(v);
             }
             char[] key = Char2DoubleOpenCustomHashMap.this.key;
             int mix = HashCommon.mix(Char2DoubleOpenCustomHashMap.this.strategy.hashCode(k)) & Char2DoubleOpenCustomHashMap.this.mask;
@@ -1253,7 +1253,7 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
                     Char2DoubleOpenCustomHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Char2DoubleOpenCustomHashMap.this.containsNullKey || Double.doubleToLongBits(Char2DoubleOpenCustomHashMap.this.value[Char2DoubleOpenCustomHashMap.this.f1391n]) != Double.doubleToLongBits(v)) {
+            } else if (!Char2DoubleOpenCustomHashMap.this.containsNullKey || Double.doubleToLongBits(Char2DoubleOpenCustomHashMap.this.value[Char2DoubleOpenCustomHashMap.this.f1355n]) != Double.doubleToLongBits(v)) {
                 return false;
             } else {
                 Char2DoubleOpenCustomHashMap.this.removeNullEntry();
@@ -1274,9 +1274,9 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Char2DoubleMap.Entry> consumer) {
             if (Char2DoubleOpenCustomHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractChar2DoubleMap.BasicEntry(Char2DoubleOpenCustomHashMap.this.key[Char2DoubleOpenCustomHashMap.this.f1391n], Char2DoubleOpenCustomHashMap.this.value[Char2DoubleOpenCustomHashMap.this.f1391n]));
+                consumer.accept(new AbstractChar2DoubleMap.BasicEntry(Char2DoubleOpenCustomHashMap.this.key[Char2DoubleOpenCustomHashMap.this.f1355n], Char2DoubleOpenCustomHashMap.this.value[Char2DoubleOpenCustomHashMap.this.f1355n]));
             }
-            int pos = Char2DoubleOpenCustomHashMap.this.f1391n;
+            int pos = Char2DoubleOpenCustomHashMap.this.f1355n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1292,11 +1292,11 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
         public void fastForEach(Consumer<? super Char2DoubleMap.Entry> consumer) {
             AbstractChar2DoubleMap.BasicEntry entry = new AbstractChar2DoubleMap.BasicEntry();
             if (Char2DoubleOpenCustomHashMap.this.containsNullKey) {
-                entry.key = Char2DoubleOpenCustomHashMap.this.key[Char2DoubleOpenCustomHashMap.this.f1391n];
-                entry.value = Char2DoubleOpenCustomHashMap.this.value[Char2DoubleOpenCustomHashMap.this.f1391n];
+                entry.key = Char2DoubleOpenCustomHashMap.this.key[Char2DoubleOpenCustomHashMap.this.f1355n];
+                entry.value = Char2DoubleOpenCustomHashMap.this.value[Char2DoubleOpenCustomHashMap.this.f1355n];
                 consumer.accept(entry);
             }
-            int pos = Char2DoubleOpenCustomHashMap.this.f1391n;
+            int pos = Char2DoubleOpenCustomHashMap.this.f1355n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1394,9 +1394,9 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterable
         public void forEach(CharConsumer consumer) {
             if (Char2DoubleOpenCustomHashMap.this.containsNullKey) {
-                consumer.accept(Char2DoubleOpenCustomHashMap.this.key[Char2DoubleOpenCustomHashMap.this.f1391n]);
+                consumer.accept(Char2DoubleOpenCustomHashMap.this.key[Char2DoubleOpenCustomHashMap.this.f1355n]);
             }
-            int pos = Char2DoubleOpenCustomHashMap.this.f1391n;
+            int pos = Char2DoubleOpenCustomHashMap.this.f1355n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1525,9 +1525,9 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
                 @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterable
                 public void forEach(DoubleConsumer consumer) {
                     if (Char2DoubleOpenCustomHashMap.this.containsNullKey) {
-                        consumer.accept(Char2DoubleOpenCustomHashMap.this.value[Char2DoubleOpenCustomHashMap.this.f1391n]);
+                        consumer.accept(Char2DoubleOpenCustomHashMap.this.value[Char2DoubleOpenCustomHashMap.this.f1355n]);
                     }
-                    int pos = Char2DoubleOpenCustomHashMap.this.f1391n;
+                    int pos = Char2DoubleOpenCustomHashMap.this.f1355n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1563,8 +1563,8 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1392f)));
-        if (l >= this.f1391n || this.size > HashCommon.maxFill(l, this.f1392f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1356f)));
+        if (l >= this.f1355n || this.size > HashCommon.maxFill(l, this.f1356f)) {
             return true;
         }
         try {
@@ -1582,7 +1582,7 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
         int mask = newN - 1;
         char[] newKey = new char[newN + 1];
         double[] newValue = new double[newN + 1];
-        int i2 = this.f1391n;
+        int i2 = this.f1355n;
         int j = realSize();
         while (true) {
             j--;
@@ -1601,10 +1601,10 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f1391n];
-                this.f1391n = newN;
+                newValue[newN] = value[this.f1355n];
+                this.f1355n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f1391n, this.f1392f);
+                this.maxFill = HashCommon.maxFill(this.f1355n, this.f1356f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1646,7 +1646,7 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
             i++;
         }
         if (this.containsNullKey) {
-            h += HashCommon.double2int(this.value[this.f1391n]);
+            h += HashCommon.double2int(this.value[this.f1355n]);
         }
         return h;
     }
@@ -1672,12 +1672,12 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f1391n = HashCommon.arraySize(this.size, this.f1392f);
-        this.maxFill = HashCommon.maxFill(this.f1391n, this.f1392f);
-        this.mask = this.f1391n - 1;
-        char[] key = new char[this.f1391n + 1];
+        this.f1355n = HashCommon.arraySize(this.size, this.f1356f);
+        this.maxFill = HashCommon.maxFill(this.f1355n, this.f1356f);
+        this.mask = this.f1355n - 1;
+        char[] key = new char[this.f1355n + 1];
         this.key = key;
-        double[] value = new double[this.f1391n + 1];
+        double[] value = new double[this.f1355n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1686,7 +1686,7 @@ public class Char2DoubleOpenCustomHashMap extends AbstractChar2DoubleMap impleme
                 char k = s.readChar();
                 double v = s.readDouble();
                 if (this.strategy.equals(k, 0)) {
-                    pos = this.f1391n;
+                    pos = this.f1355n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix(this.strategy.hashCode(k));

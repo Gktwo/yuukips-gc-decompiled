@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ModifierPropertyOuterClass.class */
 public final class ModifierPropertyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016ModifierProperty.proto\u001a\u0013AbilityString.proto\">\n\u0010ModifierProperty\u0012\u001b\n\u0003key\u0018\u0007 \u0001(\u000b2\u000e.AbilityString\u0012\r\n\u0005value\u0018\u0005 \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityStringOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016ModifierProperty.proto\u001a\u0013AbilityString.proto\">\n\u0010ModifierProperty\u0012\u001b\n\u0003key\u0018\b \u0001(\u000b2\u000e.AbilityString\u0012\r\n\u0005value\u0018\u000e \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityStringOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ModifierProperty_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ModifierProperty_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ModifierProperty_descriptor, new String[]{"Key", "Value"});
 
@@ -49,9 +49,9 @@ public final class ModifierPropertyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ModifierPropertyOuterClass$ModifierProperty.class */
     public static final class ModifierProperty extends GeneratedMessageV3 implements ModifierPropertyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int KEY_FIELD_NUMBER = 7;
+        public static final int KEY_FIELD_NUMBER = 8;
         private AbilityStringOuterClass.AbilityString key_;
-        public static final int VALUE_FIELD_NUMBER = 5;
+        public static final int VALUE_FIELD_NUMBER = 14;
         private float value_;
         private byte memoizedIsInitialized;
         private static final ModifierProperty DEFAULT_INSTANCE = new ModifierProperty();
@@ -99,10 +99,7 @@ public final class ModifierPropertyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 45:
-                                    this.value_ = input.readFloat();
-                                    break;
-                                case 58:
+                                case 66:
                                     AbilityStringOuterClass.AbilityString.Builder subBuilder = this.key_ != null ? this.key_.toBuilder() : null;
                                     this.key_ = (AbilityStringOuterClass.AbilityString) input.readMessage(AbilityStringOuterClass.AbilityString.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -112,6 +109,9 @@ public final class ModifierPropertyOuterClass {
                                         this.key_ = subBuilder.buildPartial();
                                         break;
                                     }
+                                case 117:
+                                    this.value_ = input.readFloat();
+                                    break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                         break;
@@ -177,11 +177,11 @@ public final class ModifierPropertyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.value_ != 0.0f) {
-                output.writeFloat(5, this.value_);
-            }
             if (this.key_ != null) {
-                output.writeMessage(7, getKey());
+                output.writeMessage(8, getKey());
+            }
+            if (this.value_ != 0.0f) {
+                output.writeFloat(14, this.value_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -193,11 +193,11 @@ public final class ModifierPropertyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.value_ != 0.0f) {
-                size2 = 0 + CodedOutputStream.computeFloatSize(5, this.value_);
-            }
             if (this.key_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(7, getKey());
+                size2 = 0 + CodedOutputStream.computeMessageSize(8, getKey());
+            }
+            if (this.value_ != 0.0f) {
+                size2 += CodedOutputStream.computeFloatSize(14, this.value_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,9 +226,9 @@ public final class ModifierPropertyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasKey()) {
-                hash = (53 * ((37 * hash) + 7)) + getKey().hashCode();
+                hash = (53 * ((37 * hash) + 8)) + getKey().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 5)) + Float.floatToIntBits(getValue()))) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 14)) + Float.floatToIntBits(getValue()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

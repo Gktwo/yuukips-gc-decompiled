@@ -27,7 +27,7 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneWeaponInfoOuterClass.class */
 public final class SceneWeaponInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015SceneWeaponInfo.proto\u001a\u001aAbilitySyncStateInfo.proto\u001a\u001fEntityRendererChangedInfo.proto\"È\u0002\n\u000fSceneWeaponInfo\u0012\u0011\n\tentity_id\u0018\u0001 \u0001(\r\u0012\u0011\n\tgadget_id\u0018\u0002 \u0001(\r\u0012\u000f\n\u0007item_id\u0018\u0003 \u0001(\r\u0012\f\n\u0004guid\u0018\u0004 \u0001(\u0004\u0012\r\n\u0005level\u0018\u0005 \u0001(\r\u0012\u0015\n\rpromote_level\u0018\u0006 \u0001(\r\u0012+\n\fability_info\u0018\u0007 \u0001(\u000b2\u0015.AbilitySyncStateInfo\u00121\n\taffix_map\u0018\b \u0003(\u000b2\u001e.SceneWeaponInfo.AffixMapEntry\u00129\n\u0015renderer_changed_info\u0018\t \u0001(\u000b2\u001a.EntityRendererChangedInfo\u001a/\n\rAffixMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilitySyncStateInfoOuterClass.getDescriptor(), EntityRendererChangedInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015SceneWeaponInfo.proto\u001a\u001aAbilitySyncStateInfo.proto\u001a\u001fEntityRendererChangedInfo.proto\"À\u0002\n\u000fSceneWeaponInfo\u0012\u0010\n\bentityId\u0018\u0001 \u0001(\r\u0012\u0010\n\bgadgetId\u0018\u0002 \u0001(\r\u0012\u000e\n\u0006itemId\u0018\u0003 \u0001(\r\u0012\f\n\u0004guid\u0018\u0004 \u0001(\u0004\u0012\r\n\u0005level\u0018\u0005 \u0001(\r\u0012\u0014\n\fpromoteLevel\u0018\u0006 \u0001(\r\u0012*\n\u000babilityInfo\u0018\u0007 \u0001(\u000b2\u0015.AbilitySyncStateInfo\u00120\n\baffixMap\u0018\b \u0003(\u000b2\u001e.SceneWeaponInfo.AffixMapEntry\u00127\n\u0013rendererChangedInfo\u0018\t \u0001(\u000b2\u001a.EntityRendererChangedInfo\u001a/\n\rAffixMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilitySyncStateInfoOuterClass.getDescriptor(), EntityRendererChangedInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SceneWeaponInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SceneWeaponInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneWeaponInfo_descriptor, new String[]{"EntityId", "GadgetId", "ItemId", "Guid", "Level", "PromoteLevel", "AbilityInfo", "AffixMap", "RendererChangedInfo"});
     private static final Descriptors.Descriptor internal_static_SceneWeaponInfo_AffixMapEntry_descriptor = internal_static_SceneWeaponInfo_descriptor.getNestedTypes().get(0);
@@ -86,23 +86,23 @@ public final class SceneWeaponInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneWeaponInfoOuterClass$SceneWeaponInfo.class */
     public static final class SceneWeaponInfo extends GeneratedMessageV3 implements SceneWeaponInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTITY_ID_FIELD_NUMBER = 1;
+        public static final int ENTITYID_FIELD_NUMBER = 1;
         private int entityId_;
-        public static final int GADGET_ID_FIELD_NUMBER = 2;
+        public static final int GADGETID_FIELD_NUMBER = 2;
         private int gadgetId_;
-        public static final int ITEM_ID_FIELD_NUMBER = 3;
+        public static final int ITEMID_FIELD_NUMBER = 3;
         private int itemId_;
         public static final int GUID_FIELD_NUMBER = 4;
         private long guid_;
         public static final int LEVEL_FIELD_NUMBER = 5;
         private int level_;
-        public static final int PROMOTE_LEVEL_FIELD_NUMBER = 6;
+        public static final int PROMOTELEVEL_FIELD_NUMBER = 6;
         private int promoteLevel_;
-        public static final int ABILITY_INFO_FIELD_NUMBER = 7;
+        public static final int ABILITYINFO_FIELD_NUMBER = 7;
         private AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo abilityInfo_;
-        public static final int AFFIX_MAP_FIELD_NUMBER = 8;
+        public static final int AFFIXMAP_FIELD_NUMBER = 8;
         private MapField<Integer, Integer> affixMap_;
-        public static final int RENDERER_CHANGED_INFO_FIELD_NUMBER = 9;
+        public static final int RENDERERCHANGEDINFO_FIELD_NUMBER = 9;
         private EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo rendererChangedInfo_;
         private byte memoizedIsInitialized;
         private static final SceneWeaponInfo DEFAULT_INSTANCE = new SceneWeaponInfo();

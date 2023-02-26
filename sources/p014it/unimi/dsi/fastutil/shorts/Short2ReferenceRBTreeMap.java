@@ -853,7 +853,7 @@ public class Short2ReferenceRBTreeMap<V> extends AbstractShort2ReferenceSortedMa
         short from;
 
         /* renamed from: to */
-        short f3000to;
+        short f2964to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Short2ReferenceMap.Entry<V>> entries;
@@ -864,7 +864,7 @@ public class Short2ReferenceRBTreeMap<V> extends AbstractShort2ReferenceSortedMa
             if (bottom || top || Short2ReferenceRBTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f3000to = to;
+                this.f2964to = to;
                 this.top = top;
                 this.defRetValue = Short2ReferenceRBTreeMap.this.defRetValue;
                 return;
@@ -883,7 +883,7 @@ public class Short2ReferenceRBTreeMap<V> extends AbstractShort2ReferenceSortedMa
 
         /* renamed from: in */
         final boolean m449in(short k) {
-            return (this.bottom || Short2ReferenceRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Short2ReferenceRBTreeMap.this.compare(k, this.f3000to) < 0);
+            return (this.bottom || Short2ReferenceRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Short2ReferenceRBTreeMap.this.compare(k, this.f2964to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.Short2ReferenceMap, p014it.unimi.dsi.fastutil.shorts.Short2ReferenceSortedMap
@@ -1063,7 +1063,7 @@ public class Short2ReferenceRBTreeMap<V> extends AbstractShort2ReferenceSortedMa
         public V put(short k, V v) {
             Short2ReferenceRBTreeMap.this.modified = false;
             if (!m449in(k)) {
-                throw new IllegalArgumentException("Key (" + ((int) k) + ") out of range [" + (this.bottom ? "-" : String.valueOf((int) this.from)) + ", " + (this.top ? "-" : String.valueOf((int) this.f3000to)) + ")");
+                throw new IllegalArgumentException("Key (" + ((int) k) + ") out of range [" + (this.bottom ? "-" : String.valueOf((int) this.from)) + ", " + (this.top ? "-" : String.valueOf((int) this.f2964to)) + ")");
             }
             return Short2ReferenceRBTreeMap.this.modified ? (V) this.defRetValue : (V) Short2ReferenceRBTreeMap.this.put(k, (short) v);
         }
@@ -1101,7 +1101,7 @@ public class Short2ReferenceRBTreeMap<V> extends AbstractShort2ReferenceSortedMa
 
         @Override // p014it.unimi.dsi.fastutil.shorts.Short2ReferenceSortedMap
         public Short2ReferenceSortedMap<V> headMap(short to) {
-            if (!this.top && Short2ReferenceRBTreeMap.this.compare(to, this.f3000to) >= 0) {
+            if (!this.top && Short2ReferenceRBTreeMap.this.compare(to, this.f2964to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1112,7 +1112,7 @@ public class Short2ReferenceRBTreeMap<V> extends AbstractShort2ReferenceSortedMa
             if (!this.bottom && Short2ReferenceRBTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f3000to, this.top);
+            return new Submap(from, false, this.f2964to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.Short2ReferenceSortedMap
@@ -1121,12 +1121,12 @@ public class Short2ReferenceRBTreeMap<V> extends AbstractShort2ReferenceSortedMa
                 return new Submap(from, false, to, false);
             }
             if (!this.top) {
-                to = Short2ReferenceRBTreeMap.this.compare(to, this.f3000to) < 0 ? to : this.f3000to;
+                to = Short2ReferenceRBTreeMap.this.compare(to, this.f2964to) < 0 ? to : this.f2964to;
             }
             if (!this.bottom) {
                 from = Short2ReferenceRBTreeMap.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f3000to) ? new Submap(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f2964to) ? new Submap(from, false, to, false) : this;
         }
 
         public Entry<V> firstEntry() {
@@ -1145,7 +1145,7 @@ public class Short2ReferenceRBTreeMap<V> extends AbstractShort2ReferenceSortedMa
             if (e == null) {
                 return null;
             }
-            if (this.top || Short2ReferenceRBTreeMap.this.compare(e.key, this.f3000to) < 0) {
+            if (this.top || Short2ReferenceRBTreeMap.this.compare(e.key, this.f2964to) < 0) {
                 return e;
             }
             return null;
@@ -1159,8 +1159,8 @@ public class Short2ReferenceRBTreeMap<V> extends AbstractShort2ReferenceSortedMa
             if (this.top) {
                 e = Short2ReferenceRBTreeMap.this.lastEntry;
             } else {
-                e = Short2ReferenceRBTreeMap.this.locateKey(this.f3000to);
-                if (Short2ReferenceRBTreeMap.this.compare(e.key, this.f3000to) >= 0) {
+                e = Short2ReferenceRBTreeMap.this.locateKey(this.f2964to);
+                if (Short2ReferenceRBTreeMap.this.compare(e.key, this.f2964to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1238,7 +1238,7 @@ public class Short2ReferenceRBTreeMap<V> extends AbstractShort2ReferenceSortedMa
             @Override // p014it.unimi.dsi.fastutil.shorts.Short2ReferenceRBTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Short2ReferenceRBTreeMap.this.compare(this.next.key, Submap.this.f3000to) >= 0) {
+                if (!Submap.this.top && this.next != null && Short2ReferenceRBTreeMap.this.compare(this.next.key, Submap.this.f2964to) >= 0) {
                     this.next = null;
                 }
             }

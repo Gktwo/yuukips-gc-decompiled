@@ -42,13 +42,13 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
     protected FloatHash.Strategy strategy;
 
     /* renamed from: n */
-    protected transient int f1827n;
+    protected transient int f1791n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1828f;
+    protected final float f1792f;
     protected transient Float2CharMap.FastEntrySet entries;
     protected transient FloatSet keys;
     protected transient CharCollection values;
@@ -60,14 +60,14 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1828f = f;
+            this.f1792f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1827n = arraySize;
+            this.f1791n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1827n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1827n, f);
-            this.key = new float[this.f1827n + 1];
-            this.value = new char[this.f1827n + 1];
+            this.mask = this.f1791n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1791n, f);
+            this.key = new float[this.f1791n + 1];
+            this.value = new char[this.f1791n + 1];
         }
     }
 
@@ -121,15 +121,15 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1828f);
-        if (needed > this.f1827n) {
+        int needed = HashCommon.arraySize(capacity, this.f1792f);
+        if (needed > this.f1791n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1828f)))));
-        if (needed > this.f1827n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1792f)))));
+        if (needed > this.f1791n) {
             rehash(needed);
         }
     }
@@ -139,8 +139,8 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
         char oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f1827n > this.minN && this.size < this.maxFill / 4 && this.f1827n > 16) {
-            rehash(this.f1827n / 2);
+        if (this.f1791n > this.minN && this.size < this.maxFill / 4 && this.f1791n > 16) {
+            rehash(this.f1791n / 2);
         }
         return oldValue;
     }
@@ -148,17 +148,17 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
     /* access modifiers changed from: private */
     public char removeNullEntry() {
         this.containsNullKey = false;
-        char oldValue = this.value[this.f1827n];
+        char oldValue = this.value[this.f1791n];
         this.size--;
-        if (this.f1827n > this.minN && this.size < this.maxFill / 4 && this.f1827n > 16) {
-            rehash(this.f1827n / 2);
+        if (this.f1791n > this.minN && this.size < this.maxFill / 4 && this.f1791n > 16) {
+            rehash(this.f1791n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloat2CharMap, java.util.Map
     public void putAll(Map<? extends Float, ? extends Character> m) {
-        if (((double) this.f1828f) <= 0.5d) {
+        if (((double) this.f1792f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -169,7 +169,7 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
     private int find(float k) {
         float curr;
         if (this.strategy.equals(k, 0.0f)) {
-            return this.containsNullKey ? this.f1827n : -(this.f1827n + 1);
+            return this.containsNullKey ? this.f1791n : -(this.f1791n + 1);
         }
         float[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -193,7 +193,7 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
     }
 
     private void insert(int pos, float k, char v) {
-        if (pos == this.f1827n) {
+        if (pos == this.f1791n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -201,7 +201,7 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f1828f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f1792f));
         }
     }
 
@@ -245,9 +245,9 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f1827n, incr);
+            return addToValue(this.f1791n, incr);
         } else {
-            pos = this.f1827n;
+            pos = this.f1791n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -255,7 +255,7 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f1828f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f1792f));
         }
         return this.defRetValue;
     }
@@ -321,7 +321,7 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
     public char get(float k) {
         float curr;
         if (this.strategy.equals(k, 0.0f)) {
-            return this.containsNullKey ? this.value[this.f1827n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f1791n] : this.defRetValue;
         }
         float[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -375,10 +375,10 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
     public boolean containsValue(char v) {
         char[] value = this.value;
         float[] key = this.key;
-        if (this.containsNullKey && value[this.f1827n] == v) {
+        if (this.containsNullKey && value[this.f1791n] == v) {
             return true;
         }
-        int i = this.f1827n;
+        int i = this.f1791n;
         while (true) {
             i--;
             if (i == 0) {
@@ -394,7 +394,7 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
     public char getOrDefault(float k, char defaultValue) {
         float curr;
         if (this.strategy.equals(k, 0.0f)) {
-            return this.containsNullKey ? this.value[this.f1827n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f1791n] : defaultValue;
         }
         float[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -454,7 +454,7 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
                 removeEntry(pos);
                 return true;
             }
-        } else if (!this.containsNullKey || v != this.value[this.f1827n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f1791n]) {
             return false;
         } else {
             removeNullEntry();
@@ -709,31 +709,31 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
         int last;
 
         /* renamed from: c */
-        int f1829c;
+        int f1793c;
         boolean mustReturnNullKey;
         FloatArrayList wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Float2CharOpenCustomHashMap.this.f1827n;
+            this.pos = Float2CharOpenCustomHashMap.this.f1791n;
             this.last = -1;
-            this.f1829c = Float2CharOpenCustomHashMap.this.size;
+            this.f1793c = Float2CharOpenCustomHashMap.this.size;
             this.mustReturnNullKey = Float2CharOpenCustomHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f1829c != 0;
+            return this.f1793c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f1829c--;
+            this.f1793c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Float2CharOpenCustomHashMap.this.f1827n;
+                int i = Float2CharOpenCustomHashMap.this.f1791n;
                 this.last = i;
                 return i;
             }
@@ -765,13 +765,13 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Float2CharOpenCustomHashMap.this.f1827n;
+                int i = Float2CharOpenCustomHashMap.this.f1791n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f1829c--;
+                this.f1793c--;
             }
             float[] key = Float2CharOpenCustomHashMap.this.key;
-            while (this.f1829c != 0) {
+            while (this.f1793c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -788,12 +788,12 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
                         i3 = Float2CharOpenCustomHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f1829c--;
+                    this.f1793c--;
                 } else if (Float.floatToIntBits(key[this.pos]) != 0) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f1829c--;
+                    this.f1793c--;
                 }
             }
         }
@@ -842,7 +842,7 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Float2CharOpenCustomHashMap.this.f1827n) {
+            if (this.last == Float2CharOpenCustomHashMap.this.f1791n) {
                 Float2CharOpenCustomHashMap.this.containsNullKey = false;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
@@ -939,7 +939,7 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
         int max;
 
         /* renamed from: c */
-        int f1830c;
+        int f1794c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -949,16 +949,16 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Float2CharOpenCustomHashMap.this.f1827n;
-            this.f1830c = 0;
+            this.max = Float2CharOpenCustomHashMap.this.f1791n;
+            this.f1794c = 0;
             this.mustReturnNull = Float2CharOpenCustomHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Float2CharOpenCustomHashMap.this.f1827n;
-            this.f1830c = 0;
+            this.max = Float2CharOpenCustomHashMap.this.f1791n;
+            this.f1794c = 0;
             this.mustReturnNull = Float2CharOpenCustomHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -970,14 +970,14 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1830c++;
-                acceptOnIndex(action, Float2CharOpenCustomHashMap.this.f1827n);
+                this.f1794c++;
+                acceptOnIndex(action, Float2CharOpenCustomHashMap.this.f1791n);
                 return true;
             }
             float[] key = Float2CharOpenCustomHashMap.this.key;
             while (this.pos < this.max) {
                 if (Float.floatToIntBits(key[this.pos]) != 0) {
-                    this.f1830c++;
+                    this.f1794c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -991,14 +991,14 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1830c++;
-                acceptOnIndex(action, Float2CharOpenCustomHashMap.this.f1827n);
+                this.f1794c++;
+                acceptOnIndex(action, Float2CharOpenCustomHashMap.this.f1791n);
             }
             float[] key = Float2CharOpenCustomHashMap.this.key;
             while (this.pos < this.max) {
                 if (Float.floatToIntBits(key[this.pos]) != 0) {
                     acceptOnIndex(action, this.pos);
-                    this.f1830c++;
+                    this.f1794c++;
                 }
                 this.pos++;
             }
@@ -1006,9 +1006,9 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Float2CharOpenCustomHashMap.this.size - this.f1830c);
+                return (long) (Float2CharOpenCustomHashMap.this.size - this.f1794c);
             }
-            return Math.min((long) (Float2CharOpenCustomHashMap.this.size - this.f1830c), ((long) ((((double) Float2CharOpenCustomHashMap.this.realSize()) / ((double) Float2CharOpenCustomHashMap.this.f1827n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Float2CharOpenCustomHashMap.this.size - this.f1794c), ((long) ((((double) Float2CharOpenCustomHashMap.this.realSize()) / ((double) Float2CharOpenCustomHashMap.this.f1791n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1202,7 +1202,7 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
             float k = ((Float) e.getKey()).floatValue();
             char v = ((Character) e.getValue()).charValue();
             if (Float2CharOpenCustomHashMap.this.strategy.equals(k, 0.0f)) {
-                return Float2CharOpenCustomHashMap.this.containsNullKey && Float2CharOpenCustomHashMap.this.value[Float2CharOpenCustomHashMap.this.f1827n] == v;
+                return Float2CharOpenCustomHashMap.this.containsNullKey && Float2CharOpenCustomHashMap.this.value[Float2CharOpenCustomHashMap.this.f1791n] == v;
             }
             float[] key = Float2CharOpenCustomHashMap.this.key;
             int mix = HashCommon.mix(Float2CharOpenCustomHashMap.this.strategy.hashCode(k)) & Float2CharOpenCustomHashMap.this.mask;
@@ -1263,7 +1263,7 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
                     Float2CharOpenCustomHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Float2CharOpenCustomHashMap.this.containsNullKey || Float2CharOpenCustomHashMap.this.value[Float2CharOpenCustomHashMap.this.f1827n] != v) {
+            } else if (!Float2CharOpenCustomHashMap.this.containsNullKey || Float2CharOpenCustomHashMap.this.value[Float2CharOpenCustomHashMap.this.f1791n] != v) {
                 return false;
             } else {
                 Float2CharOpenCustomHashMap.this.removeNullEntry();
@@ -1284,9 +1284,9 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Float2CharMap.Entry> consumer) {
             if (Float2CharOpenCustomHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractFloat2CharMap.BasicEntry(Float2CharOpenCustomHashMap.this.key[Float2CharOpenCustomHashMap.this.f1827n], Float2CharOpenCustomHashMap.this.value[Float2CharOpenCustomHashMap.this.f1827n]));
+                consumer.accept(new AbstractFloat2CharMap.BasicEntry(Float2CharOpenCustomHashMap.this.key[Float2CharOpenCustomHashMap.this.f1791n], Float2CharOpenCustomHashMap.this.value[Float2CharOpenCustomHashMap.this.f1791n]));
             }
-            int pos = Float2CharOpenCustomHashMap.this.f1827n;
+            int pos = Float2CharOpenCustomHashMap.this.f1791n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1302,11 +1302,11 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
         public void fastForEach(Consumer<? super Float2CharMap.Entry> consumer) {
             AbstractFloat2CharMap.BasicEntry entry = new AbstractFloat2CharMap.BasicEntry();
             if (Float2CharOpenCustomHashMap.this.containsNullKey) {
-                entry.key = Float2CharOpenCustomHashMap.this.key[Float2CharOpenCustomHashMap.this.f1827n];
-                entry.value = Float2CharOpenCustomHashMap.this.value[Float2CharOpenCustomHashMap.this.f1827n];
+                entry.key = Float2CharOpenCustomHashMap.this.key[Float2CharOpenCustomHashMap.this.f1791n];
+                entry.value = Float2CharOpenCustomHashMap.this.value[Float2CharOpenCustomHashMap.this.f1791n];
                 consumer.accept(entry);
             }
-            int pos = Float2CharOpenCustomHashMap.this.f1827n;
+            int pos = Float2CharOpenCustomHashMap.this.f1791n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1404,9 +1404,9 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
         @Override // p014it.unimi.dsi.fastutil.floats.FloatIterable
         public void forEach(FloatConsumer consumer) {
             if (Float2CharOpenCustomHashMap.this.containsNullKey) {
-                consumer.accept(Float2CharOpenCustomHashMap.this.key[Float2CharOpenCustomHashMap.this.f1827n]);
+                consumer.accept(Float2CharOpenCustomHashMap.this.key[Float2CharOpenCustomHashMap.this.f1791n]);
             }
-            int pos = Float2CharOpenCustomHashMap.this.f1827n;
+            int pos = Float2CharOpenCustomHashMap.this.f1791n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1525,9 +1525,9 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
                 @Override // p014it.unimi.dsi.fastutil.chars.CharIterable
                 public void forEach(CharConsumer consumer) {
                     if (Float2CharOpenCustomHashMap.this.containsNullKey) {
-                        consumer.accept(Float2CharOpenCustomHashMap.this.value[Float2CharOpenCustomHashMap.this.f1827n]);
+                        consumer.accept(Float2CharOpenCustomHashMap.this.value[Float2CharOpenCustomHashMap.this.f1791n]);
                     }
-                    int pos = Float2CharOpenCustomHashMap.this.f1827n;
+                    int pos = Float2CharOpenCustomHashMap.this.f1791n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1563,8 +1563,8 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1828f)));
-        if (l >= this.f1827n || this.size > HashCommon.maxFill(l, this.f1828f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1792f)));
+        if (l >= this.f1791n || this.size > HashCommon.maxFill(l, this.f1792f)) {
             return true;
         }
         try {
@@ -1582,7 +1582,7 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
         int mask = newN - 1;
         float[] newKey = new float[newN + 1];
         char[] newValue = new char[newN + 1];
-        int i2 = this.f1827n;
+        int i2 = this.f1791n;
         int j = realSize();
         while (true) {
             j--;
@@ -1601,10 +1601,10 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f1827n];
-                this.f1827n = newN;
+                newValue[newN] = value[this.f1791n];
+                this.f1791n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f1827n, this.f1828f);
+                this.maxFill = HashCommon.maxFill(this.f1791n, this.f1792f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1646,7 +1646,7 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f1827n];
+            h += this.value[this.f1791n];
         }
         return h;
     }
@@ -1672,12 +1672,12 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f1827n = HashCommon.arraySize(this.size, this.f1828f);
-        this.maxFill = HashCommon.maxFill(this.f1827n, this.f1828f);
-        this.mask = this.f1827n - 1;
-        float[] key = new float[this.f1827n + 1];
+        this.f1791n = HashCommon.arraySize(this.size, this.f1792f);
+        this.maxFill = HashCommon.maxFill(this.f1791n, this.f1792f);
+        this.mask = this.f1791n - 1;
+        float[] key = new float[this.f1791n + 1];
         this.key = key;
-        char[] value = new char[this.f1827n + 1];
+        char[] value = new char[this.f1791n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1686,7 +1686,7 @@ public class Float2CharOpenCustomHashMap extends AbstractFloat2CharMap implement
                 float k = s.readFloat();
                 char v = s.readChar();
                 if (this.strategy.equals(k, 0.0f)) {
-                    pos = this.f1827n;
+                    pos = this.f1791n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix(this.strategy.hashCode(k));

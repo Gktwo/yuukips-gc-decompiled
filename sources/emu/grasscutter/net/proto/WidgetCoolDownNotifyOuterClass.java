@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WidgetCoolDownNotifyOuterClass.class */
 public final class WidgetCoolDownNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aWidgetCoolDownNotify.proto\u001a\u0018WidgetCoolDownData.proto\"\u0001\n\u0014WidgetCoolDownNotify\u00127\n\u001anormal_cool_down_data_list\u0018\u0002 \u0003(\u000b2\u0013.WidgetCoolDownData\u00126\n\u0019group_cool_down_data_list\u0018\u000e \u0003(\u000b2\u0013.WidgetCoolDownDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{WidgetCoolDownDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aWidgetCoolDownNotify.proto\u001a\u0018WidgetCoolDownData.proto\"\n\u0014WidgetCoolDownNotify\u00123\n\u0016normalCoolDownDataList\u0018\u000f \u0003(\u000b2\u0013.WidgetCoolDownData\u00122\n\u0015groupCoolDownDataList\u0018\n \u0003(\u000b2\u0013.WidgetCoolDownDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{WidgetCoolDownDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_WidgetCoolDownNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_WidgetCoolDownNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WidgetCoolDownNotify_descriptor, new String[]{"NormalCoolDownDataList", "GroupCoolDownDataList"});
 
@@ -65,9 +65,9 @@ public final class WidgetCoolDownNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WidgetCoolDownNotifyOuterClass$WidgetCoolDownNotify.class */
     public static final class WidgetCoolDownNotify extends GeneratedMessageV3 implements WidgetCoolDownNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int NORMAL_COOL_DOWN_DATA_LIST_FIELD_NUMBER = 2;
+        public static final int NORMALCOOLDOWNDATALIST_FIELD_NUMBER = 15;
         private List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> normalCoolDownDataList_;
-        public static final int GROUP_COOL_DOWN_DATA_LIST_FIELD_NUMBER = 14;
+        public static final int GROUPCOOLDOWNDATALIST_FIELD_NUMBER = 10;
         private List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> groupCoolDownDataList_;
         private byte memoizedIsInitialized;
         private static final WidgetCoolDownNotify DEFAULT_INSTANCE = new WidgetCoolDownNotify();
@@ -119,19 +119,19 @@ public final class WidgetCoolDownNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 18:
-                                if ((mutable_bitField0_ & 1) == 0) {
-                                    this.normalCoolDownDataList_ = new ArrayList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
-                                }
-                                this.normalCoolDownDataList_.add((WidgetCoolDownDataOuterClass.WidgetCoolDownData) input.readMessage(WidgetCoolDownDataOuterClass.WidgetCoolDownData.parser(), extensionRegistry));
-                                break;
-                            case 114:
+                            case 82:
                                 if ((mutable_bitField0_ & 2) == 0) {
                                     this.groupCoolDownDataList_ = new ArrayList();
                                     mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
                                 }
                                 this.groupCoolDownDataList_.add((WidgetCoolDownDataOuterClass.WidgetCoolDownData) input.readMessage(WidgetCoolDownDataOuterClass.WidgetCoolDownData.parser(), extensionRegistry));
+                                break;
+                            case 122:
+                                if ((mutable_bitField0_ & 1) == 0) {
+                                    this.normalCoolDownDataList_ = new ArrayList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                }
+                                this.normalCoolDownDataList_.add((WidgetCoolDownDataOuterClass.WidgetCoolDownData) input.readMessage(WidgetCoolDownDataOuterClass.WidgetCoolDownData.parser(), extensionRegistry));
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -149,11 +149,11 @@ public final class WidgetCoolDownNotifyOuterClass {
                     }
                 }
             } finally {
-                if ((mutable_bitField0_ & 1) != 0) {
-                    this.normalCoolDownDataList_ = Collections.unmodifiableList(this.normalCoolDownDataList_);
-                }
                 if ((mutable_bitField0_ & 2) != 0) {
                     this.groupCoolDownDataList_ = Collections.unmodifiableList(this.groupCoolDownDataList_);
+                }
+                if ((mutable_bitField0_ & 1) != 0) {
+                    this.normalCoolDownDataList_ = Collections.unmodifiableList(this.normalCoolDownDataList_);
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -234,11 +234,11 @@ public final class WidgetCoolDownNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            for (int i = 0; i < this.normalCoolDownDataList_.size(); i++) {
-                output.writeMessage(2, this.normalCoolDownDataList_.get(i));
+            for (int i = 0; i < this.groupCoolDownDataList_.size(); i++) {
+                output.writeMessage(10, this.groupCoolDownDataList_.get(i));
             }
-            for (int i2 = 0; i2 < this.groupCoolDownDataList_.size(); i2++) {
-                output.writeMessage(14, this.groupCoolDownDataList_.get(i2));
+            for (int i2 = 0; i2 < this.normalCoolDownDataList_.size(); i2++) {
+                output.writeMessage(15, this.normalCoolDownDataList_.get(i2));
             }
             this.unknownFields.writeTo(output);
         }
@@ -250,11 +250,11 @@ public final class WidgetCoolDownNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            for (int i = 0; i < this.normalCoolDownDataList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(2, this.normalCoolDownDataList_.get(i));
+            for (int i = 0; i < this.groupCoolDownDataList_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(10, this.groupCoolDownDataList_.get(i));
             }
-            for (int i2 = 0; i2 < this.groupCoolDownDataList_.size(); i2++) {
-                size2 += CodedOutputStream.computeMessageSize(14, this.groupCoolDownDataList_.get(i2));
+            for (int i2 = 0; i2 < this.normalCoolDownDataList_.size(); i2++) {
+                size2 += CodedOutputStream.computeMessageSize(15, this.normalCoolDownDataList_.get(i2));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -280,10 +280,10 @@ public final class WidgetCoolDownNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getNormalCoolDownDataListCount() > 0) {
-                hash = (53 * ((37 * hash) + 2)) + getNormalCoolDownDataListList().hashCode();
+                hash = (53 * ((37 * hash) + 15)) + getNormalCoolDownDataListList().hashCode();
             }
             if (getGroupCoolDownDataListCount() > 0) {
-                hash = (53 * ((37 * hash) + 14)) + getGroupCoolDownDataListList().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getGroupCoolDownDataListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

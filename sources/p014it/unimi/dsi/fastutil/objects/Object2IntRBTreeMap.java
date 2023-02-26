@@ -875,7 +875,7 @@ public class Object2IntRBTreeMap<K> extends AbstractObject2IntSortedMap<K> imple
         K from;
 
         /* renamed from: to */
-        K f2623to;
+        K f2587to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Object2IntMap.Entry<K>> entries;
@@ -886,7 +886,7 @@ public class Object2IntRBTreeMap<K> extends AbstractObject2IntSortedMap<K> imple
             if (bottom || top || Object2IntRBTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f2623to = to;
+                this.f2587to = to;
                 this.top = top;
                 this.defRetValue = Object2IntRBTreeMap.this.defRetValue;
                 return;
@@ -905,7 +905,7 @@ public class Object2IntRBTreeMap<K> extends AbstractObject2IntSortedMap<K> imple
 
         /* renamed from: in */
         final boolean m595in(K k) {
-            return (this.bottom || Object2IntRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Object2IntRBTreeMap.this.compare(k, this.f2623to) < 0);
+            return (this.bottom || Object2IntRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Object2IntRBTreeMap.this.compare(k, this.f2587to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.Object2IntMap, p014it.unimi.dsi.fastutil.objects.Object2IntSortedMap
@@ -1091,7 +1091,7 @@ public class Object2IntRBTreeMap<K> extends AbstractObject2IntSortedMap<K> imple
         public int put(K k, int v) {
             Object2IntRBTreeMap.this.modified = false;
             if (!m595in(k)) {
-                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2623to)) + ")");
+                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2587to)) + ")");
             }
             return Object2IntRBTreeMap.this.modified ? this.defRetValue : Object2IntRBTreeMap.this.put((Object2IntRBTreeMap) k, v);
         }
@@ -1128,7 +1128,7 @@ public class Object2IntRBTreeMap<K> extends AbstractObject2IntSortedMap<K> imple
 
         @Override // p014it.unimi.dsi.fastutil.objects.Object2IntSortedMap, java.util.SortedMap
         public Object2IntSortedMap<K> headMap(K to) {
-            if (!this.top && Object2IntRBTreeMap.this.compare(to, this.f2623to) >= 0) {
+            if (!this.top && Object2IntRBTreeMap.this.compare(to, this.f2587to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1139,7 +1139,7 @@ public class Object2IntRBTreeMap<K> extends AbstractObject2IntSortedMap<K> imple
             if (!this.bottom && Object2IntRBTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f2623to, this.top);
+            return new Submap(from, false, this.f2587to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.Object2IntSortedMap, java.util.SortedMap
@@ -1148,12 +1148,12 @@ public class Object2IntRBTreeMap<K> extends AbstractObject2IntSortedMap<K> imple
                 return new Submap(from, false, to, false);
             }
             if (!this.top) {
-                to = Object2IntRBTreeMap.this.compare(to, this.f2623to) < 0 ? to : this.f2623to;
+                to = Object2IntRBTreeMap.this.compare(to, this.f2587to) < 0 ? to : this.f2587to;
             }
             if (!this.bottom) {
                 from = Object2IntRBTreeMap.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f2623to) ? new Submap(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f2587to) ? new Submap(from, false, to, false) : this;
         }
 
         /* JADX DEBUG: Multi-variable search result rejected for r0v11, resolved type: it.unimi.dsi.fastutil.objects.Object2IntRBTreeMap */
@@ -1175,7 +1175,7 @@ public class Object2IntRBTreeMap<K> extends AbstractObject2IntSortedMap<K> imple
             if (e == null) {
                 return null;
             }
-            if (this.top || Object2IntRBTreeMap.this.compare(e.key, this.f2623to) < 0) {
+            if (this.top || Object2IntRBTreeMap.this.compare(e.key, this.f2587to) < 0) {
                 return e;
             }
             return null;
@@ -1192,8 +1192,8 @@ public class Object2IntRBTreeMap<K> extends AbstractObject2IntSortedMap<K> imple
             if (this.top) {
                 e = Object2IntRBTreeMap.this.lastEntry;
             } else {
-                e = Object2IntRBTreeMap.this.locateKey(this.f2623to);
-                if (Object2IntRBTreeMap.this.compare(e.key, this.f2623to) >= 0) {
+                e = Object2IntRBTreeMap.this.locateKey(this.f2587to);
+                if (Object2IntRBTreeMap.this.compare(e.key, this.f2587to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1279,7 +1279,7 @@ public class Object2IntRBTreeMap<K> extends AbstractObject2IntSortedMap<K> imple
             @Override // p014it.unimi.dsi.fastutil.objects.Object2IntRBTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Object2IntRBTreeMap.this.compare(this.next.key, Submap.this.f2623to) >= 0) {
+                if (!Submap.this.top && this.next != null && Object2IntRBTreeMap.this.compare(this.next.key, Submap.this.f2587to) >= 0) {
                     this.next = null;
                 }
             }

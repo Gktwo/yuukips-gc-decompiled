@@ -165,8 +165,9 @@ public final class NewPooledConnection extends AbstractC3P0PooledConnection {
         }
     }
 
+    /* access modifiers changed from: package-private */
     @Override // com.mchange.p009v2.c3p0.impl.AbstractC3P0PooledConnection
-    synchronized void closeMaybeCheckedOut(boolean checked_out) throws SQLException {
+    public synchronized void closeMaybeCheckedOut(boolean checked_out) throws SQLException {
         close(null, checked_out);
     }
 
@@ -596,8 +597,9 @@ public final class NewPooledConnection extends AbstractC3P0PooledConnection {
         return out;
     }
 
+    /* access modifiers changed from: package-private */
     @Override // com.mchange.p009v2.c3p0.impl.AbstractC3P0PooledConnection
-    Connection getPhysicalConnection() {
+    public Connection getPhysicalConnection() {
         return this.physicalConnection;
     }
 

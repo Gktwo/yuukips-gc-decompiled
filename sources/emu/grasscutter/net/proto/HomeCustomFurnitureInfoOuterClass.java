@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeCustomFurnitureInfoOuterClass.class */
 public final class HomeCustomFurnitureInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dHomeCustomFurnitureInfo.proto\u001a\u001aCustomCommonNodeInfo.proto\"Z\n\u0017HomeCustomFurnitureInfo\u0012\f\n\u0004guid\u0018\u0007 \u0001(\r\u00121\n\u0012sub_furniture_list\u0018\u000b \u0003(\u000b2\u0015.CustomCommonNodeInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CustomCommonNodeInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dHomeCustomFurnitureInfo.proto\u001a\u001aCustomCommonNodeInfo.proto\"X\n\u0017HomeCustomFurnitureInfo\u0012\f\n\u0004guid\u0018\b \u0001(\r\u0012/\n\u0010subFurnitureList\u0018\u0005 \u0003(\u000b2\u0015.CustomCommonNodeInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CustomCommonNodeInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_HomeCustomFurnitureInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeCustomFurnitureInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeCustomFurnitureInfo_descriptor, new String[]{"Guid", "SubFurnitureList"});
 
@@ -57,9 +57,9 @@ public final class HomeCustomFurnitureInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeCustomFurnitureInfoOuterClass$HomeCustomFurnitureInfo.class */
     public static final class HomeCustomFurnitureInfo extends GeneratedMessageV3 implements HomeCustomFurnitureInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int GUID_FIELD_NUMBER = 7;
+        public static final int GUID_FIELD_NUMBER = 8;
         private int guid_;
-        public static final int SUB_FURNITURE_LIST_FIELD_NUMBER = 11;
+        public static final int SUBFURNITURELIST_FIELD_NUMBER = 5;
         private List<CustomCommonNodeInfoOuterClass.CustomCommonNodeInfo> subFurnitureList_;
         private byte memoizedIsInitialized;
         private static final HomeCustomFurnitureInfo DEFAULT_INSTANCE = new HomeCustomFurnitureInfo();
@@ -110,15 +110,15 @@ public final class HomeCustomFurnitureInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 56:
-                                    this.guid_ = input.readUInt32();
-                                    break;
-                                case 90:
+                                case 42:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.subFurnitureList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.subFurnitureList_.add((CustomCommonNodeInfoOuterClass.CustomCommonNodeInfo) input.readMessage(CustomCommonNodeInfoOuterClass.CustomCommonNodeInfo.parser(), extensionRegistry));
+                                    break;
+                                case 64:
+                                    this.guid_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -198,11 +198,11 @@ public final class HomeCustomFurnitureInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.guid_ != 0) {
-                output.writeUInt32(7, this.guid_);
-            }
             for (int i = 0; i < this.subFurnitureList_.size(); i++) {
-                output.writeMessage(11, this.subFurnitureList_.get(i));
+                output.writeMessage(5, this.subFurnitureList_.get(i));
+            }
+            if (this.guid_ != 0) {
+                output.writeUInt32(8, this.guid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -214,11 +214,11 @@ public final class HomeCustomFurnitureInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.guid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.guid_);
-            }
             for (int i = 0; i < this.subFurnitureList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(11, this.subFurnitureList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(5, this.subFurnitureList_.get(i));
+            }
+            if (this.guid_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(8, this.guid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -242,9 +242,9 @@ public final class HomeCustomFurnitureInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getGuid();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getGuid();
             if (getSubFurnitureListCount() > 0) {
-                hash = (53 * ((37 * hash) + 11)) + getSubFurnitureListList().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getSubFurnitureListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

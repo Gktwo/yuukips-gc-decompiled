@@ -1,6 +1,5 @@
 package org.eclipse.jetty.http;
 
-import emu.grasscutter.net.packet.PacketOpcodes;
 import java.nio.ByteBuffer;
 import org.eclipse.jetty.util.ArrayTernaryTrie;
 import org.eclipse.jetty.util.ArrayTrie;
@@ -54,7 +53,7 @@ public enum HttpMethod {
     private final byte[] _bytes = StringUtil.getBytes(this._method);
     private final ByteBuffer _buffer = ByteBuffer.wrap(this._bytes);
     private final Type _type;
-    public static final Trie<HttpMethod> INSENSITIVE_CACHE = new ArrayTrie(PacketOpcodes.PersonalSceneJumpReq);
+    public static final Trie<HttpMethod> INSENSITIVE_CACHE = new ArrayTrie(252);
     public static final Trie<HttpMethod> CACHE = new ArrayTernaryTrie(false, 300);
     public static final Trie<HttpMethod> LOOK_AHEAD = new ArrayTernaryTrie(false, 330);
     public static final int ACL_AS_INT = 1094929440;

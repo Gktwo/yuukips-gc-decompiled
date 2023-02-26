@@ -15,7 +15,7 @@ public class ShortArrayPriorityQueue implements ShortPriorityQueue, Serializable
     protected int size;
 
     /* renamed from: c */
-    protected ShortComparator f3024c;
+    protected ShortComparator f2988c;
     protected transient int firstIndex;
     protected transient boolean firstIndexValid;
 
@@ -24,7 +24,7 @@ public class ShortArrayPriorityQueue implements ShortPriorityQueue, Serializable
         if (capacity > 0) {
             this.array = new short[capacity];
         }
-        this.f3024c = c;
+        this.f2988c = c;
     }
 
     public ShortArrayPriorityQueue(int capacity) {
@@ -65,12 +65,12 @@ public class ShortArrayPriorityQueue implements ShortPriorityQueue, Serializable
         int i = this.size - 1;
         int firstIndex = i;
         short first = this.array[firstIndex];
-        if (this.f3024c != null) {
+        if (this.f2988c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f3024c.compare(this.array[i], first) < 0) {
+                } else if (this.f2988c.compare(this.array[i], first) < 0) {
                     firstIndex = i;
                     first = this.array[i];
                 }
@@ -103,11 +103,11 @@ public class ShortArrayPriorityQueue implements ShortPriorityQueue, Serializable
         }
         if (!this.firstIndexValid) {
             this.firstIndexValid = false;
-        } else if (this.f3024c == null) {
+        } else if (this.f2988c == null) {
             if (x < this.array[this.firstIndex]) {
                 this.firstIndex = this.size;
             }
-        } else if (this.f3024c.compare(x, this.array[this.firstIndex]) < 0) {
+        } else if (this.f2988c.compare(x, this.array[this.firstIndex]) < 0) {
             this.firstIndex = this.size;
         }
         short[] sArr = this.array;
@@ -159,7 +159,7 @@ public class ShortArrayPriorityQueue implements ShortPriorityQueue, Serializable
     /* Return type fixed from 'it.unimi.dsi.fastutil.shorts.ShortComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.shorts.ShortPriorityQueue, p014it.unimi.dsi.fastutil.PriorityQueue
     public Comparator<? super Short> comparator() {
-        return this.f3024c;
+        return this.f2988c;
     }
 
     private void writeObject(ObjectOutputStream s) throws IOException {

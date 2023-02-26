@@ -23,7 +23,7 @@ public final class Equip implements CommandHandler {
     public static boolean toAdd = false;
     public static boolean userCalled = true;
 
-    /*  JADX ERROR: Dependency scan failed at insn: 0x01D9: INVOKE_CUSTOM r-34, r-33
+    /*  JADX ERROR: Dependency scan failed at insn: 0x0261: INVOKE_CUSTOM r-44, r-43
         java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
         	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
         	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
@@ -39,7 +39,7 @@ public final class Equip implements CommandHandler {
         	at jadx.core.dex.visitors.usage.UsageInfoVisitor.init(UsageInfoVisitor.java:36)
         	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:267)
         */
-    /*  JADX ERROR: Dependency scan failed at insn: 0x0262: INVOKE_CUSTOM r-49
+    /*  JADX ERROR: Dependency scan failed at insn: 0x02EB: INVOKE_CUSTOM r-59
         java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
         	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
         	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
@@ -55,7 +55,7 @@ public final class Equip implements CommandHandler {
         	at jadx.core.dex.visitors.usage.UsageInfoVisitor.init(UsageInfoVisitor.java:36)
         	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:267)
         */
-    /*  JADX ERROR: Dependency scan failed at insn: 0x0297: INVOKE_CUSTOM r-57, r-56, r-55, r-54
+    /*  JADX ERROR: Dependency scan failed at insn: 0x0321: INVOKE_CUSTOM r-67, r-66, r-65, r-64
         java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
         	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
         	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
@@ -71,7 +71,7 @@ public final class Equip implements CommandHandler {
         	at jadx.core.dex.visitors.usage.UsageInfoVisitor.init(UsageInfoVisitor.java:36)
         	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:267)
         */
-    /*  JADX ERROR: Failed to decode insn: 0x01D9: INVOKE_CUSTOM r1, r2, method: emu.grasscutter.command.commands.Equip.execute(emu.grasscutter.game.player.Player, emu.grasscutter.game.player.Player, java.util.List<java.lang.String>):void
+    /*  JADX ERROR: Failed to decode insn: 0x0261: INVOKE_CUSTOM r1, r2, method: emu.grasscutter.command.commands.Equip.execute(emu.grasscutter.game.player.Player, emu.grasscutter.game.player.Player, java.util.List<java.lang.String>):void
         jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (Ljava/lang/String;, Ljava/lang/String;)Ljava/lang/String;}, Change  to  ]}
         	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:55)
         	at jadx.core.dex.instructions.InsnDecoder.invoke(InsnDecoder.java:568)
@@ -89,7 +89,7 @@ public final class Equip implements CommandHandler {
         	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:42)
         	... 11 more
         */
-    /*  JADX ERROR: Failed to decode insn: 0x0262: INVOKE_CUSTOM r1, method: emu.grasscutter.command.commands.Equip.execute(emu.grasscutter.game.player.Player, emu.grasscutter.game.player.Player, java.util.List<java.lang.String>):void
+    /*  JADX ERROR: Failed to decode insn: 0x02EB: INVOKE_CUSTOM r1, method: emu.grasscutter.command.commands.Equip.execute(emu.grasscutter.game.player.Player, emu.grasscutter.game.player.Player, java.util.List<java.lang.String>):void
         jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (Ljava/lang/String;)Ljava/lang/String;}, Add Gadget ]}
         	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:55)
         	at jadx.core.dex.instructions.InsnDecoder.invoke(InsnDecoder.java:568)
@@ -107,7 +107,7 @@ public final class Equip implements CommandHandler {
         	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:42)
         	... 11 more
         */
-    /*  JADX ERROR: Failed to decode insn: 0x0297: INVOKE_CUSTOM r1, r2, r3, r4, method: emu.grasscutter.command.commands.Equip.execute(emu.grasscutter.game.player.Player, emu.grasscutter.game.player.Player, java.util.List<java.lang.String>):void
+    /*  JADX ERROR: Failed to decode insn: 0x0321: INVOKE_CUSTOM r1, r2, r3, r4, method: emu.grasscutter.command.commands.Equip.execute(emu.grasscutter.game.player.Player, emu.grasscutter.game.player.Player, java.util.List<java.lang.String>):void
         jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (Ljava/lang/String;, Z, I, I)Ljava/lang/String;}, Succeed Replace  (Entity: )  to ]}
         	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:55)
         	at jadx.core.dex.instructions.InsnDecoder.invoke(InsnDecoder.java:568)
@@ -128,7 +128,7 @@ public final class Equip implements CommandHandler {
     @Override // emu.grasscutter.command.CommandHandler
     public void execute(emu.grasscutter.game.player.Player r9, emu.grasscutter.game.player.Player r10, java.util.List<java.lang.String> r11) {
         /*
-        // Method dump skipped, instructions count: 682
+        // Method dump skipped, instructions count: 820
         */
         throw new UnsupportedOperationException("Method not decompiled: emu.grasscutter.command.commands.Equip.execute(emu.grasscutter.game.player.Player, emu.grasscutter.game.player.Player, java.util.List):void");
     }

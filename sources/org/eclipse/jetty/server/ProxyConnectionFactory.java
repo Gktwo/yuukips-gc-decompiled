@@ -555,7 +555,7 @@ public class ProxyConnectionFactory extends DetectorConnectionFactory {
                         }
                     }
                     int versionAndCommand = 255 & this._buffer.get();
-                    if ((versionAndCommand & PacketOpcodes.ExecuteGadgetLuaRsp) != 32) {
+                    if ((versionAndCommand & PacketOpcodes.SceneKickPlayerRsp) != 32) {
                         throw new IOException("Proxy v2 bad PROXY version");
                     }
                     this._local = (versionAndCommand & 15) == 0;

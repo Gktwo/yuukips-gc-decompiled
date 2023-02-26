@@ -25,14 +25,12 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BonusActivityInfoRspOuterClass.class */
 public final class BonusActivityInfoRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aBonusActivityInfoRsp.proto\u001a\u0017BonusActivityInfo.proto\"]\n\u0014BonusActivityInfoRsp\u0012\u000f\n\u0007retcode\u0018\u0006 \u0001(\u0005\u00124\n\u0018bonus_activity_info_list\u0018\u000f \u0003(\u000b2\u0012.BonusActivityInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BonusActivityInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aBonusActivityInfoRsp.proto\u001a\u0017BonusActivityInfo.proto\"Z\n\u0014BonusActivityInfoRsp\u00121\n\u0015bonusActivityInfoList\u0018\r \u0003(\u000b2\u0012.BonusActivityInfo\u0012\u000f\n\u0007retcode\u0018\f \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BonusActivityInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_BonusActivityInfoRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_BonusActivityInfoRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BonusActivityInfoRsp_descriptor, new String[]{"Retcode", "BonusActivityInfoList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_BonusActivityInfoRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BonusActivityInfoRsp_descriptor, new String[]{"BonusActivityInfoList", "Retcode"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BonusActivityInfoRspOuterClass$BonusActivityInfoRspOrBuilder.class */
     public interface BonusActivityInfoRspOrBuilder extends MessageOrBuilder {
-        int getRetcode();
-
         List<BonusActivityInfoOuterClass.BonusActivityInfo> getBonusActivityInfoListList();
 
         BonusActivityInfoOuterClass.BonusActivityInfo getBonusActivityInfoList(int i);
@@ -42,6 +40,8 @@ public final class BonusActivityInfoRspOuterClass {
         List<? extends BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder> getBonusActivityInfoListOrBuilderList();
 
         BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder getBonusActivityInfoListOrBuilder(int i);
+
+        int getRetcode();
     }
 
     private BonusActivityInfoRspOuterClass() {
@@ -57,10 +57,10 @@ public final class BonusActivityInfoRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BonusActivityInfoRspOuterClass$BonusActivityInfoRsp.class */
     public static final class BonusActivityInfoRsp extends GeneratedMessageV3 implements BonusActivityInfoRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 6;
-        private int retcode_;
-        public static final int BONUS_ACTIVITY_INFO_LIST_FIELD_NUMBER = 15;
+        public static final int BONUSACTIVITYINFOLIST_FIELD_NUMBER = 13;
         private List<BonusActivityInfoOuterClass.BonusActivityInfo> bonusActivityInfoList_;
+        public static final int RETCODE_FIELD_NUMBER = 12;
+        private int retcode_;
         private byte memoizedIsInitialized;
         private static final BonusActivityInfoRsp DEFAULT_INSTANCE = new BonusActivityInfoRsp();
         private static final Parser<BonusActivityInfoRsp> PARSER = new AbstractParser<BonusActivityInfoRsp>() { // from class: emu.grasscutter.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRsp.1
@@ -110,10 +110,10 @@ public final class BonusActivityInfoRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 48:
+                                case 96:
                                     this.retcode_ = input.readInt32();
                                     break;
-                                case 122:
+                                case 106:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.bonusActivityInfoList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -154,11 +154,6 @@ public final class BonusActivityInfoRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
-        }
-
-        @Override // emu.grasscutter.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRspOrBuilder
         public List<BonusActivityInfoOuterClass.BonusActivityInfo> getBonusActivityInfoListList() {
             return this.bonusActivityInfoList_;
         }
@@ -183,6 +178,11 @@ public final class BonusActivityInfoRspOuterClass {
             return this.bonusActivityInfoList_.get(index);
         }
 
+        @Override // emu.grasscutter.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRspOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -199,10 +199,10 @@ public final class BonusActivityInfoRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.retcode_ != 0) {
-                output.writeInt32(6, this.retcode_);
+                output.writeInt32(12, this.retcode_);
             }
             for (int i = 0; i < this.bonusActivityInfoList_.size(); i++) {
-                output.writeMessage(15, this.bonusActivityInfoList_.get(i));
+                output.writeMessage(13, this.bonusActivityInfoList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -215,10 +215,10 @@ public final class BonusActivityInfoRspOuterClass {
             }
             int size2 = 0;
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(6, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(12, this.retcode_);
             }
             for (int i = 0; i < this.bonusActivityInfoList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(15, this.bonusActivityInfoList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(13, this.bonusActivityInfoList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -234,7 +234,7 @@ public final class BonusActivityInfoRspOuterClass {
                 return equals(obj);
             }
             BonusActivityInfoRsp other = (BonusActivityInfoRsp) obj;
-            return getRetcode() == other.getRetcode() && getBonusActivityInfoListList().equals(other.getBonusActivityInfoListList()) && this.unknownFields.equals(other.unknownFields);
+            return getBonusActivityInfoListList().equals(other.getBonusActivityInfoListList()) && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -242,11 +242,11 @@ public final class BonusActivityInfoRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getRetcode();
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (getBonusActivityInfoListCount() > 0) {
-                hash = (53 * ((37 * hash) + 15)) + getBonusActivityInfoListList().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getBonusActivityInfoListList().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 12)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -326,9 +326,9 @@ public final class BonusActivityInfoRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BonusActivityInfoRspOuterClass$BonusActivityInfoRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements BonusActivityInfoRspOrBuilder {
             private int bitField0_;
-            private int retcode_;
             private List<BonusActivityInfoOuterClass.BonusActivityInfo> bonusActivityInfoList_ = Collections.emptyList();
             private RepeatedFieldBuilderV3<BonusActivityInfoOuterClass.BonusActivityInfo, BonusActivityInfoOuterClass.BonusActivityInfo.Builder, BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder> bonusActivityInfoListBuilder_;
+            private int retcode_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return BonusActivityInfoRspOuterClass.internal_static_BonusActivityInfoRsp_descriptor;
@@ -357,13 +357,13 @@ public final class BonusActivityInfoRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.retcode_ = 0;
                 if (this.bonusActivityInfoListBuilder_ == null) {
                     this.bonusActivityInfoList_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
                     this.bonusActivityInfoListBuilder_.clear();
                 }
+                this.retcode_ = 0;
                 return this;
             }
 
@@ -390,7 +390,6 @@ public final class BonusActivityInfoRspOuterClass {
             public BonusActivityInfoRsp buildPartial() {
                 BonusActivityInfoRsp result = new BonusActivityInfoRsp(this);
                 int i = this.bitField0_;
-                result.retcode_ = this.retcode_;
                 if (this.bonusActivityInfoListBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
                         this.bonusActivityInfoList_ = Collections.unmodifiableList(this.bonusActivityInfoList_);
@@ -400,6 +399,7 @@ public final class BonusActivityInfoRspOuterClass {
                 } else {
                     result.bonusActivityInfoList_ = this.bonusActivityInfoListBuilder_.build();
                 }
+                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -447,9 +447,6 @@ public final class BonusActivityInfoRspOuterClass {
                 if (other == BonusActivityInfoRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
                 if (this.bonusActivityInfoListBuilder_ == null) {
                     if (!other.bonusActivityInfoList_.isEmpty()) {
                         if (this.bonusActivityInfoList_.isEmpty()) {
@@ -471,6 +468,9 @@ public final class BonusActivityInfoRspOuterClass {
                     } else {
                         this.bonusActivityInfoListBuilder_.addAllMessages(other.bonusActivityInfoList_);
                     }
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -502,23 +502,6 @@ public final class BonusActivityInfoRspOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
             }
 
             private void ensureBonusActivityInfoListIsMutable() {
@@ -695,6 +678,23 @@ public final class BonusActivityInfoRspOuterClass {
                     this.bonusActivityInfoList_ = null;
                 }
                 return this.bonusActivityInfoListBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.BonusActivityInfoRspOuterClass.BonusActivityInfoRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

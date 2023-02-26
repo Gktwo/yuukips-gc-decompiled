@@ -29,7 +29,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
     protected final boolean wrapped;
 
     /* renamed from: a */
-    protected transient K[] f2682a;
+    protected transient K[] f2646a;
     protected int size;
     private static final Collector<Object, ?, ObjectArrayList<Object>> TO_LIST_COLLECTOR;
     static final /* synthetic */ boolean $assertionsDisabled;
@@ -53,11 +53,11 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
     }
 
     private static final <K> K[] copyArrayFromSafe(ObjectArrayList<K> l) {
-        return (K[]) copyArraySafe(l.f2682a, l.size);
+        return (K[]) copyArraySafe(l.f2646a, l.size);
     }
 
     protected ObjectArrayList(K[] a, boolean wrapped) {
-        this.f2682a = a;
+        this.f2646a = a;
         this.wrapped = wrapped;
     }
 
@@ -65,9 +65,9 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
         if (capacity < 0) {
             throw new IllegalArgumentException("Initial capacity (" + capacity + ") is negative");
         } else if (capacity == 0) {
-            this.f2682a = (K[]) ObjectArrays.EMPTY_ARRAY;
+            this.f2646a = (K[]) ObjectArrays.EMPTY_ARRAY;
         } else {
-            this.f2682a = (K[]) new Object[capacity];
+            this.f2646a = (K[]) new Object[capacity];
         }
     }
 
@@ -77,23 +77,23 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
     }
 
     public ObjectArrayList() {
-        this.f2682a = (K[]) ObjectArrays.DEFAULT_EMPTY_ARRAY;
+        this.f2646a = (K[]) ObjectArrays.DEFAULT_EMPTY_ARRAY;
         this.wrapped = false;
     }
 
     public ObjectArrayList(Collection<? extends K> c) {
         if (c instanceof ObjectArrayList) {
-            this.f2682a = (K[]) copyArrayFromSafe((ObjectArrayList) c);
-            this.size = this.f2682a.length;
+            this.f2646a = (K[]) copyArrayFromSafe((ObjectArrayList) c);
+            this.size = this.f2646a.length;
         } else {
             initArrayFromCapacity(c.size());
             if (c instanceof ObjectList) {
-                K[] kArr = this.f2682a;
+                K[] kArr = this.f2646a;
                 int size = c.size();
                 this.size = size;
                 ((ObjectList) c).getElements(0, kArr, 0, size);
             } else {
-                this.size = ObjectIterators.unwrap(c.iterator(), this.f2682a);
+                this.size = ObjectIterators.unwrap(c.iterator(), this.f2646a);
             }
         }
         this.wrapped = false;
@@ -101,17 +101,17 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
 
     public ObjectArrayList(ObjectCollection<? extends K> c) {
         if (c instanceof ObjectArrayList) {
-            this.f2682a = (K[]) copyArrayFromSafe((ObjectArrayList) c);
-            this.size = this.f2682a.length;
+            this.f2646a = (K[]) copyArrayFromSafe((ObjectArrayList) c);
+            this.size = this.f2646a.length;
         } else {
             initArrayFromCapacity(c.size());
             if (c instanceof ObjectList) {
-                K[] kArr = this.f2682a;
+                K[] kArr = this.f2646a;
                 int size = c.size();
                 this.size = size;
                 ((ObjectList) c).getElements(0, kArr, 0, size);
             } else {
-                this.size = ObjectIterators.unwrap(c.iterator(), this.f2682a);
+                this.size = ObjectIterators.unwrap(c.iterator(), this.f2646a);
             }
         }
         this.wrapped = false;
@@ -119,11 +119,11 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
 
     public ObjectArrayList(ObjectList<? extends K> l) {
         if (l instanceof ObjectArrayList) {
-            this.f2682a = (K[]) copyArrayFromSafe((ObjectArrayList) l);
-            this.size = this.f2682a.length;
+            this.f2646a = (K[]) copyArrayFromSafe((ObjectArrayList) l);
+            this.size = this.f2646a.length;
         } else {
             initArrayFromCapacity(l.size());
-            K[] kArr = this.f2682a;
+            K[] kArr = this.f2646a;
             int size = l.size();
             this.size = size;
             l.getElements(0, kArr, 0, size);
@@ -137,7 +137,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
 
     public ObjectArrayList(K[] a, int offset, int length) {
         this(length);
-        System.arraycopy(a, offset, this.f2682a, 0, length);
+        System.arraycopy(a, offset, this.f2646a, 0, length);
         this.size = length;
     }
 
@@ -160,7 +160,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
     }
 
     public K[] elements() {
-        return this.f2682a;
+        return this.f2646a;
     }
 
     public static <K> ObjectArrayList<K> wrap(K[] a, int length) {
@@ -211,38 +211,38 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
     }
 
     public void ensureCapacity(int capacity) {
-        if (capacity <= this.f2682a.length) {
+        if (capacity <= this.f2646a.length) {
             return;
         }
-        if (this.f2682a != ObjectArrays.DEFAULT_EMPTY_ARRAY || capacity > 10) {
+        if (this.f2646a != ObjectArrays.DEFAULT_EMPTY_ARRAY || capacity > 10) {
             if (this.wrapped) {
-                this.f2682a = (K[]) ObjectArrays.ensureCapacity(this.f2682a, capacity, this.size);
-            } else if (capacity > this.f2682a.length) {
+                this.f2646a = (K[]) ObjectArrays.ensureCapacity(this.f2646a, capacity, this.size);
+            } else if (capacity > this.f2646a.length) {
                 K[] kArr = (K[]) new Object[capacity];
-                System.arraycopy(this.f2682a, 0, kArr, 0, this.size);
-                this.f2682a = kArr;
+                System.arraycopy(this.f2646a, 0, kArr, 0, this.size);
+                this.f2646a = kArr;
             }
-            if (!$assertionsDisabled && this.size > this.f2682a.length) {
+            if (!$assertionsDisabled && this.size > this.f2646a.length) {
                 throw new AssertionError();
             }
         }
     }
 
     private void grow(int capacity) {
-        if (capacity > this.f2682a.length) {
-            if (this.f2682a != ObjectArrays.DEFAULT_EMPTY_ARRAY) {
-                capacity = (int) Math.max(Math.min(((long) this.f2682a.length) + ((long) (this.f2682a.length >> 1)), 2147483639L), (long) capacity);
+        if (capacity > this.f2646a.length) {
+            if (this.f2646a != ObjectArrays.DEFAULT_EMPTY_ARRAY) {
+                capacity = (int) Math.max(Math.min(((long) this.f2646a.length) + ((long) (this.f2646a.length >> 1)), 2147483639L), (long) capacity);
             } else if (capacity < 10) {
                 capacity = 10;
             }
             if (this.wrapped) {
-                this.f2682a = (K[]) ObjectArrays.forceCapacity(this.f2682a, capacity, this.size);
+                this.f2646a = (K[]) ObjectArrays.forceCapacity(this.f2646a, capacity, this.size);
             } else {
                 K[] kArr = (K[]) new Object[capacity];
-                System.arraycopy(this.f2682a, 0, kArr, 0, this.size);
-                this.f2682a = kArr;
+                System.arraycopy(this.f2646a, 0, kArr, 0, this.size);
+                this.f2646a = kArr;
             }
-            if (!$assertionsDisabled && this.size > this.f2682a.length) {
+            if (!$assertionsDisabled && this.size > this.f2646a.length) {
                 throw new AssertionError();
             }
         }
@@ -253,11 +253,11 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
         ensureIndex(index);
         grow(this.size + 1);
         if (index != this.size) {
-            System.arraycopy(this.f2682a, index, this.f2682a, index + 1, this.size - index);
+            System.arraycopy(this.f2646a, index, this.f2646a, index + 1, this.size - index);
         }
-        this.f2682a[index] = k;
+        this.f2646a[index] = k;
         this.size++;
-        if (!$assertionsDisabled && this.size > this.f2682a.length) {
+        if (!$assertionsDisabled && this.size > this.f2646a.length) {
             throw new AssertionError();
         }
     }
@@ -265,11 +265,11 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean add(K k) {
         grow(this.size + 1);
-        K[] kArr = this.f2682a;
+        K[] kArr = this.f2646a;
         int i = this.size;
         this.size = i + 1;
         kArr[i] = k;
-        if ($assertionsDisabled || this.size <= this.f2682a.length) {
+        if ($assertionsDisabled || this.size <= this.f2646a.length) {
             return true;
         }
         throw new AssertionError();
@@ -278,7 +278,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
     @Override // java.util.List
     public K get(int index) {
         if (index < this.size) {
-            return this.f2682a[index];
+            return this.f2646a[index];
         }
         throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
     }
@@ -286,7 +286,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, java.util.List
     public int indexOf(Object k) {
         for (int i = 0; i < this.size; i++) {
-            if (Objects.equals(k, this.f2682a[i])) {
+            if (Objects.equals(k, this.f2646a[i])) {
                 return i;
             }
         }
@@ -301,7 +301,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
             if (i == 0) {
                 return -1;
             }
-        } while (!Objects.equals(k, this.f2682a[i]));
+        } while (!Objects.equals(k, this.f2646a[i]));
         return i;
     }
 
@@ -310,13 +310,13 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        K old = this.f2682a[index];
+        K old = this.f2646a[index];
         this.size--;
         if (index != this.size) {
-            System.arraycopy(this.f2682a, index + 1, this.f2682a, index, this.size - index);
+            System.arraycopy(this.f2646a, index + 1, this.f2646a, index, this.size - index);
         }
-        this.f2682a[this.size] = null;
-        if ($assertionsDisabled || this.size <= this.f2682a.length) {
+        this.f2646a[this.size] = null;
+        if ($assertionsDisabled || this.size <= this.f2646a.length) {
             return old;
         }
         throw new AssertionError();
@@ -329,7 +329,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
             return false;
         }
         remove(index);
-        if ($assertionsDisabled || this.size <= this.f2682a.length) {
+        if ($assertionsDisabled || this.size <= this.f2646a.length) {
             return true;
         }
         throw new AssertionError();
@@ -340,16 +340,16 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        K old = this.f2682a[index];
-        this.f2682a[index] = k;
+        K old = this.f2646a[index];
+        this.f2646a[index] = k;
         return old;
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public void clear() {
-        Arrays.fill(this.f2682a, 0, this.size, (Object) null);
+        Arrays.fill(this.f2646a, 0, this.size, (Object) null);
         this.size = 0;
-        if (!$assertionsDisabled && this.size > this.f2682a.length) {
+        if (!$assertionsDisabled && this.size > this.f2646a.length) {
             throw new AssertionError();
         }
     }
@@ -361,13 +361,13 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, p014it.unimi.dsi.fastutil.objects.ObjectList
     public void size(int size) {
-        if (size > this.f2682a.length) {
-            this.f2682a = (K[]) ObjectArrays.forceCapacity(this.f2682a, size, this.size);
+        if (size > this.f2646a.length) {
+            this.f2646a = (K[]) ObjectArrays.forceCapacity(this.f2646a, size, this.size);
         }
         if (size > this.size) {
-            Arrays.fill(this.f2682a, this.size, size, (Object) null);
+            Arrays.fill(this.f2646a, this.size, size, (Object) null);
         } else {
-            Arrays.fill(this.f2682a, size, this.size, (Object) null);
+            Arrays.fill(this.f2646a, size, this.size, (Object) null);
         }
         this.size = size;
     }
@@ -382,11 +382,11 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
     }
 
     public void trim(int n) {
-        if (n < this.f2682a.length && this.size != this.f2682a.length) {
+        if (n < this.f2646a.length && this.size != this.f2646a.length) {
             K[] t = (K[]) new Object[Math.max(n, this.size)];
-            System.arraycopy(this.f2682a, 0, t, 0, this.size);
-            this.f2682a = t;
-            if (!$assertionsDisabled && this.size > this.f2682a.length) {
+            System.arraycopy(this.f2646a, 0, t, 0, this.size);
+            this.f2646a = t;
+            if (!$assertionsDisabled && this.size > this.f2646a.length) {
                 throw new AssertionError();
             }
         }
@@ -408,13 +408,13 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
         }
 
         private K[] getParentArray() {
-            return ObjectArrayList.this.f2682a;
+            return ObjectArrayList.this.f2646a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList.ObjectSubList, java.util.List
         public K get(int i) {
             ensureRestrictedIndex(i);
-            return ObjectArrayList.this.f2682a[i + this.from];
+            return ObjectArrayList.this.f2646a[i + this.from];
         }
 
         /* access modifiers changed from: private */
@@ -427,7 +427,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectIterators.AbstractIndexBasedIterator
             protected final K get(int i) {
-                return ObjectArrayList.this.f2682a[SubList.this.from + i];
+                return ObjectArrayList.this.f2646a[SubList.this.from + i];
             }
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectIterators.AbstractIndexBasedListIterator
@@ -447,7 +447,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectIterators.AbstractIndexBasedIterator
             protected final int getMaxPos() {
-                return SubList.this.f2493to - SubList.this.from;
+                return SubList.this.f2457to - SubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectIterators.AbstractIndexBasedIterator, java.util.Iterator, java.util.ListIterator
@@ -455,7 +455,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                K[] kArr = ObjectArrayList.this.f2682a;
+                K[] kArr = ObjectArrayList.this.f2646a;
                 int i = SubList.this.from;
                 int i2 = this.pos;
                 this.pos = i2 + 1;
@@ -468,7 +468,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                K[] kArr = ObjectArrayList.this.f2682a;
+                K[] kArr = ObjectArrayList.this.f2646a;
                 int i = SubList.this.from;
                 int i2 = this.pos - 1;
                 this.pos = i2;
@@ -478,13 +478,13 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectIterators.AbstractIndexBasedIterator, java.util.Iterator
             public void forEachRemaining(Consumer<? super K> action) {
-                int max = SubList.this.f2493to - SubList.this.from;
+                int max = SubList.this.f2457to - SubList.this.from;
                 while (this.pos < max) {
                     int i = SubList.this.from;
                     int i2 = this.pos;
                     this.pos = i2 + 1;
                     this.lastReturned = i2;
-                    action.accept((Object) ObjectArrayList.this.f2682a[i + i2]);
+                    action.accept((Object) ObjectArrayList.this.f2646a[i + i2]);
                 }
             }
         }
@@ -508,12 +508,12 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterators.LateBindingSizeIndexBasedSpliterator
             protected final int getMaxPosFromBackingStore() {
-                return SubList.this.f2493to;
+                return SubList.this.f2457to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterators.AbstractIndexBasedSpliterator
             protected final K get(int i) {
-                return ObjectArrayList.this.f2682a[i];
+                return ObjectArrayList.this.f2646a[i];
             }
 
             /* access modifiers changed from: protected */
@@ -529,7 +529,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
                 }
                 int i = this.pos;
                 this.pos = i + 1;
-                action.accept((Object) ObjectArrayList.this.f2682a[i]);
+                action.accept((Object) ObjectArrayList.this.f2646a[i]);
                 return true;
             }
 
@@ -539,7 +539,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
                 while (this.pos < max) {
                     int i = this.pos;
                     this.pos = i + 1;
-                    action.accept((Object) ObjectArrayList.this.f2682a[i]);
+                    action.accept((Object) ObjectArrayList.this.f2646a[i]);
                 }
             }
         }
@@ -550,7 +550,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
         }
 
         boolean contentsEquals(K[] otherA, int otherAFrom, int otherATo) {
-            if (ObjectArrayList.this.f2682a == otherA && this.from == otherAFrom && this.f2493to == otherATo) {
+            if (ObjectArrayList.this.f2646a == otherA && this.from == otherAFrom && this.f2457to == otherATo) {
                 return true;
             }
             if (otherATo - otherAFrom != size()) {
@@ -558,10 +558,10 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
             }
             int pos = this.from;
             int otherPos = otherAFrom;
-            while (pos < this.f2493to) {
+            while (pos < this.f2457to) {
                 pos++;
                 otherPos++;
-                if (!Objects.equals(ObjectArrayList.this.f2682a[pos], otherA[otherPos])) {
+                if (!Objects.equals(ObjectArrayList.this.f2646a[pos], otherA[otherPos])) {
                     return false;
                 }
             }
@@ -580,20 +580,20 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
             }
             if (o instanceof ObjectArrayList) {
                 ObjectArrayList<K> other = (ObjectArrayList) o;
-                return contentsEquals(other.f2682a, 0, other.size());
+                return contentsEquals(other.f2646a, 0, other.size());
             } else if (!(o instanceof SubList)) {
                 return equals(o);
             } else {
                 ObjectArrayList<K>.SubList other2 = (SubList) o;
-                return contentsEquals(other2.getParentArray(), other2.from, other2.f2493to);
+                return contentsEquals(other2.getParentArray(), other2.from, other2.f2457to);
             }
         }
 
         int contentsCompareTo(K[] otherA, int otherAFrom, int otherATo) {
             int i = this.from;
             int j = otherAFrom;
-            while (i < this.f2493to && i < otherATo) {
-                int r = ((Comparable) ObjectArrayList.this.f2682a[i]).compareTo(otherA[j]);
+            while (i < this.f2457to && i < otherATo) {
+                int r = ((Comparable) ObjectArrayList.this.f2646a[i]).compareTo(otherA[j]);
                 if (r != 0) {
                     return r;
                 }
@@ -603,7 +603,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
             if (i < otherATo) {
                 return -1;
             }
-            return i < this.f2493to ? 1 : 0;
+            return i < this.f2457to ? 1 : 0;
         }
 
         /* JADX DEBUG: Multi-variable search result rejected for r5v0, resolved type: it.unimi.dsi.fastutil.objects.ObjectArrayList$SubList */
@@ -612,12 +612,12 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
         public int compareTo(List<? extends K> l) {
             if (l instanceof ObjectArrayList) {
                 ObjectArrayList<K> other = (ObjectArrayList) l;
-                return contentsCompareTo(other.f2682a, 0, other.size());
+                return contentsCompareTo(other.f2646a, 0, other.size());
             } else if (!(l instanceof SubList)) {
                 return compareTo((List) l);
             } else {
                 ObjectArrayList<K>.SubList other2 = (SubList) l;
-                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f2493to);
+                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f2457to);
             }
         }
     }
@@ -638,19 +638,19 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, p014it.unimi.dsi.fastutil.objects.ObjectList
     public void getElements(int from, Object[] a, int offset, int length) {
         ObjectArrays.ensureOffsetLength(a, offset, length);
-        System.arraycopy(this.f2682a, from, a, offset, length);
+        System.arraycopy(this.f2646a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, p014it.unimi.dsi.fastutil.objects.ObjectList
     public void removeElements(int from, int to) {
         p014it.unimi.dsi.fastutil.Arrays.ensureFromTo(this.size, from, to);
-        System.arraycopy(this.f2682a, to, this.f2682a, from, this.size - to);
+        System.arraycopy(this.f2646a, to, this.f2646a, from, this.size - to);
         this.size -= to - from;
         int i = to - from;
         while (true) {
             i--;
             if (i != 0) {
-                this.f2682a[this.size + i] = null;
+                this.f2646a[this.size + i] = null;
             } else {
                 return;
             }
@@ -662,8 +662,8 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
         ensureIndex(index);
         ObjectArrays.ensureOffsetLength(a, offset, length);
         grow(this.size + length);
-        System.arraycopy(this.f2682a, index, this.f2682a, index + length, this.size - index);
-        System.arraycopy(a, offset, this.f2682a, index, length);
+        System.arraycopy(this.f2646a, index, this.f2646a, index + length, this.size - index);
+        System.arraycopy(a, offset, this.f2646a, index, length);
         this.size += length;
     }
 
@@ -674,13 +674,13 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
         if (index + length > this.size) {
             throw new IndexOutOfBoundsException("End index (" + (index + length) + ") is greater than list size (" + this.size + ")");
         }
-        System.arraycopy(a, offset, this.f2682a, index, length);
+        System.arraycopy(a, offset, this.f2646a, index, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, java.lang.Iterable
     public void forEach(Consumer<? super K> action) {
         for (int i = 0; i < this.size; i++) {
-            action.accept((Object) this.f2682a[i]);
+            action.accept((Object) this.f2646a[i]);
         }
     }
 
@@ -697,7 +697,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
             return false;
         }
         grow(this.size + n);
-        System.arraycopy(this.f2682a, index, this.f2682a, index + n, this.size - index);
+        System.arraycopy(this.f2646a, index, this.f2646a, index + n, this.size - index);
         Iterator<? extends K> i = c.iterator();
         this.size += n;
         while (true) {
@@ -706,9 +706,9 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
                 break;
             }
             index++;
-            this.f2682a[index] = i.next();
+            this.f2646a[index] = i.next();
         }
-        if ($assertionsDisabled || this.size <= this.f2682a.length) {
+        if ($assertionsDisabled || this.size <= this.f2646a.length) {
             return true;
         }
         throw new AssertionError();
@@ -722,10 +722,10 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
             return false;
         }
         grow(this.size + n);
-        System.arraycopy(this.f2682a, index, this.f2682a, index + n, this.size - index);
-        l.getElements(0, this.f2682a, index, n);
+        System.arraycopy(this.f2646a, index, this.f2646a, index + n, this.size - index);
+        l.getElements(0, this.f2646a, index, n);
         this.size += n;
-        if ($assertionsDisabled || this.size <= this.f2682a.length) {
+        if ($assertionsDisabled || this.size <= this.f2646a.length) {
             return true;
         }
         throw new AssertionError();
@@ -733,7 +733,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean removeAll(Collection<?> c) {
-        Object[] a = this.f2682a;
+        Object[] a = this.f2646a;
         int j = 0;
         for (int i = 0; i < this.size; i++) {
             if (!c.contains(a[i])) {
@@ -749,7 +749,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public Object[] toArray() {
-        return Arrays.copyOf(this.f2682a, size(), Object[].class);
+        return Arrays.copyOf(this.f2646a, size(), Object[].class);
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -759,7 +759,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
         } else if (a.length < size()) {
             a = (K[]) ((Object[]) Array.newInstance(a.getClass().getComponentType(), size()));
         }
-        System.arraycopy(this.f2682a, 0, a, 0, size());
+        System.arraycopy(this.f2646a, 0, a, 0, size());
         if (a.length > size()) {
             a[size()] = null;
         }
@@ -793,7 +793,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                K[] kArr = ObjectArrayList.this.f2682a;
+                K[] kArr = ObjectArrayList.this.f2646a;
                 int i = this.pos;
                 this.pos = i + 1;
                 this.last = i;
@@ -805,7 +805,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                K[] kArr = ObjectArrayList.this.f2682a;
+                K[] kArr = ObjectArrayList.this.f2646a;
                 int i = this.pos - 1;
                 this.pos = i;
                 this.last = i;
@@ -857,7 +857,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
                     int i = this.pos;
                     this.pos = i + 1;
                     this.last = i;
-                    action.accept((Object) ObjectArrayList.this.f2682a[i]);
+                    action.accept((Object) ObjectArrayList.this.f2646a[i]);
                 }
             }
 
@@ -944,7 +944,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
             }
             int i = this.pos;
             this.pos = i + 1;
-            action.accept((Object) ObjectArrayList.this.f2682a[i]);
+            action.accept((Object) ObjectArrayList.this.f2646a[i]);
             return true;
         }
 
@@ -952,7 +952,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
         public void forEachRemaining(Consumer<? super K> action) {
             int max = getWorkingMax();
             while (this.pos < max) {
-                action.accept((Object) ObjectArrayList.this.f2682a[this.pos]);
+                action.accept((Object) ObjectArrayList.this.f2646a[this.pos]);
                 this.pos++;
             }
         }
@@ -1000,18 +1000,18 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
     @Override // p014it.unimi.dsi.fastutil.objects.ObjectList, java.util.List
     public void sort(Comparator<? super K> comp) {
         if (comp == null) {
-            ObjectArrays.stableSort(this.f2682a, 0, this.size);
+            ObjectArrays.stableSort(this.f2646a, 0, this.size);
         } else {
-            ObjectArrays.stableSort(this.f2682a, 0, this.size, comp);
+            ObjectArrays.stableSort(this.f2646a, 0, this.size, comp);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.ObjectList
     public void unstableSort(Comparator<? super K> comp) {
         if (comp == null) {
-            ObjectArrays.unstableSort(this.f2682a, 0, this.size);
+            ObjectArrays.unstableSort(this.f2646a, 0, this.size);
         } else {
-            ObjectArrays.unstableSort(this.f2682a, 0, this.size, comp);
+            ObjectArrays.unstableSort(this.f2646a, 0, this.size, comp);
         }
     }
 
@@ -1019,12 +1019,12 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
     public ObjectArrayList<K> clone() {
         ObjectArrayList<K> cloned;
         if (getClass() == ObjectArrayList.class) {
-            cloned = new ObjectArrayList<>(copyArraySafe(this.f2682a, this.size), false);
+            cloned = new ObjectArrayList<>(copyArraySafe(this.f2646a, this.size), false);
             cloned.size = this.size;
         } else {
             try {
                 cloned = (ObjectArrayList) clone();
-                cloned.f2682a = (K[]) copyArraySafe(this.f2682a, this.size);
+                cloned.f2646a = (K[]) copyArraySafe(this.f2646a, this.size);
             } catch (CloneNotSupportedException err) {
                 throw new InternalError(err);
             }
@@ -1040,8 +1040,8 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
         if (s != l.size()) {
             return false;
         }
-        K[] a1 = this.f2682a;
-        K[] a2 = l.f2682a;
+        K[] a1 = this.f2646a;
+        K[] a2 = l.f2646a;
         if (a1 == a2 && s == l.size()) {
             return true;
         }
@@ -1074,8 +1074,8 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
     public int compareTo(ObjectArrayList<? extends K> l) {
         int s1 = size();
         int s2 = l.size();
-        K[] a1 = this.f2682a;
-        Object[] objArr = l.f2682a;
+        K[] a1 = this.f2646a;
+        Object[] objArr = l.f2646a;
         int i = 0;
         while (i < s1 && i < s2) {
             int r = ((Comparable) a1[i]).compareTo(objArr[i]);
@@ -1104,7 +1104,7 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; i < this.size; i++) {
-            s.writeObject(this.f2682a[i]);
+            s.writeObject(this.f2646a[i]);
         }
     }
 
@@ -1112,9 +1112,9 @@ public class ObjectArrayList<K> extends AbstractObjectList<K> implements RandomA
     /* JADX WARN: Multi-variable type inference failed */
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f2682a = (K[]) new Object[this.size];
+        this.f2646a = (K[]) new Object[this.size];
         for (int i = 0; i < this.size; i++) {
-            this.f2682a[i] = s.readObject();
+            this.f2646a[i] = s.readObject();
         }
     }
 }

@@ -23,13 +23,13 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ItemCdGroupTimeNotifyOuterClass.class */
 public final class ItemCdGroupTimeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bItemCdGroupTimeNotify.proto\"\u0001\n\u0015ItemCdGroupTimeNotify\u0012:\n\u000bitem_cd_map\u0018\u0007 \u0003(\u000b2%.ItemCdGroupTimeNotify.ItemCdMapEntry\u001a0\n\u000eItemCdMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\u0004:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bItemCdGroupTimeNotify.proto\"\u0001\n\u0015ItemCdGroupTimeNotify\u00128\n\titemCdMap\u0018\r \u0003(\u000b2%.ItemCdGroupTimeNotify.ItemCdMapEntry\u001a0\n\u000eItemCdMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\u0004:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ItemCdGroupTimeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ItemCdGroupTimeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ItemCdGroupTimeNotify_descriptor, new String[]{"ItemCdMap"});
     private static final Descriptors.Descriptor internal_static_ItemCdGroupTimeNotify_ItemCdMapEntry_descriptor = internal_static_ItemCdGroupTimeNotify_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_ItemCdGroupTimeNotify_ItemCdMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f768xfef66eb5 = new GeneratedMessageV3.FieldAccessorTable(internal_static_ItemCdGroupTimeNotify_ItemCdMapEntry_descriptor, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f752xfef66eb5 = new GeneratedMessageV3.FieldAccessorTable(internal_static_ItemCdGroupTimeNotify_ItemCdMapEntry_descriptor, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ItemCdGroupTimeNotifyOuterClass$ItemCdGroupTimeNotifyOrBuilder.class */
     public interface ItemCdGroupTimeNotifyOrBuilder extends MessageOrBuilder {
@@ -60,7 +60,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ItemCdGroupTimeNotifyOuterClass$ItemCdGroupTimeNotify.class */
     public static final class ItemCdGroupTimeNotify extends GeneratedMessageV3 implements ItemCdGroupTimeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ITEM_CD_MAP_FIELD_NUMBER = 7;
+        public static final int ITEMCDMAP_FIELD_NUMBER = 13;
         private MapField<Integer, Long> itemCdMap_;
         private byte memoizedIsInitialized;
         private static final ItemCdGroupTimeNotify DEFAULT_INSTANCE = new ItemCdGroupTimeNotify();
@@ -112,7 +112,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
                 r4 = this;
                 r0 = r5
                 switch(r0) {
-                    case 7: goto L_0x0014;
+                    case 13: goto L_0x0014;
                     default: goto L_0x0019;
                 }
                 r0 = r4
@@ -165,7 +165,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 58:
+                            case 106:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.itemCdMap_ = MapField.newMapField(ItemCdMapDefaultEntryHolder.defaultEntry);
                                     mutable_bitField0_ |= 1;
@@ -269,7 +269,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetItemCdMap(), ItemCdMapDefaultEntryHolder.defaultEntry, 7);
+            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetItemCdMap(), ItemCdMapDefaultEntryHolder.defaultEntry, 13);
             this.unknownFields.writeTo(output);
         }
 
@@ -281,7 +281,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
             }
             int size2 = 0;
             for (Map.Entry<Integer, Long> entry : internalGetItemCdMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(7, ItemCdMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+                size2 += CodedOutputStream.computeMessageSize(13, ItemCdMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -307,7 +307,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (!internalGetItemCdMap().getMap().isEmpty()) {
-                hash = (53 * ((37 * hash) + 7)) + internalGetItemCdMap().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + internalGetItemCdMap().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -428,7 +428,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 7: goto L_0x0014;
+                        case 13: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -481,7 +481,7 @@ public final class ItemCdGroupTimeNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 7: goto L_0x0014;
+                        case 13: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4

@@ -7,7 +7,7 @@ import emu.grasscutter.net.proto.EntityAiSyncNotifyOuterClass;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketEntityAiSyncNotify.class */
 public class PacketEntityAiSyncNotify extends BasePacket {
     public PacketEntityAiSyncNotify(EntityAiSyncNotifyOuterClass.EntityAiSyncNotify notify) {
-        super(304, true);
+        super(354, true);
         EntityAiSyncNotifyOuterClass.EntityAiSyncNotify.Builder proto = EntityAiSyncNotifyOuterClass.EntityAiSyncNotify.newBuilder();
         for (Integer num : notify.getLocalAvatarAlertedMonsterListList()) {
             proto.addInfoList(AiSyncInfoOuterClass.AiSyncInfo.newBuilder().setEntityId(num.intValue()).setHasPathToTarget(true));

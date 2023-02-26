@@ -585,7 +585,7 @@ public class ObjectRBTreeSet<K> extends AbstractObjectSortedSet<K> implements Se
         K from;
 
         /* renamed from: to */
-        K f2728to;
+        K f2692to;
         boolean bottom;
         boolean top;
 
@@ -593,7 +593,7 @@ public class ObjectRBTreeSet<K> extends AbstractObjectSortedSet<K> implements Se
             if (bottom || top || ObjectRBTreeSet.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f2728to = to;
+                this.f2692to = to;
                 this.top = top;
                 return;
             }
@@ -611,7 +611,7 @@ public class ObjectRBTreeSet<K> extends AbstractObjectSortedSet<K> implements Se
 
         /* renamed from: in */
         final boolean m537in(K k) {
-            return (this.bottom || ObjectRBTreeSet.this.compare(k, this.from) >= 0) && (this.top || ObjectRBTreeSet.this.compare(k, this.f2728to) < 0);
+            return (this.bottom || ObjectRBTreeSet.this.compare(k, this.from) >= 0) && (this.top || ObjectRBTreeSet.this.compare(k, this.f2692to) < 0);
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
@@ -624,7 +624,7 @@ public class ObjectRBTreeSet<K> extends AbstractObjectSortedSet<K> implements Se
             if (m537in(k)) {
                 return ObjectRBTreeSet.this.add(k);
             }
-            throw new IllegalArgumentException("Element (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2728to)) + ")");
+            throw new IllegalArgumentException("Element (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2692to)) + ")");
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
@@ -668,7 +668,7 @@ public class ObjectRBTreeSet<K> extends AbstractObjectSortedSet<K> implements Se
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSortedSet, java.util.SortedSet
         public ObjectSortedSet<K> headSet(K to) {
-            if (!this.top && ObjectRBTreeSet.this.compare(to, this.f2728to) >= 0) {
+            if (!this.top && ObjectRBTreeSet.this.compare(to, this.f2692to) >= 0) {
                 return this;
             }
             return new Subset(this.from, this.bottom, to, false);
@@ -679,7 +679,7 @@ public class ObjectRBTreeSet<K> extends AbstractObjectSortedSet<K> implements Se
             if (!this.bottom && ObjectRBTreeSet.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Subset(from, false, this.f2728to, this.top);
+            return new Subset(from, false, this.f2692to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSortedSet, java.util.SortedSet
@@ -688,12 +688,12 @@ public class ObjectRBTreeSet<K> extends AbstractObjectSortedSet<K> implements Se
                 return new Subset(from, false, to, false);
             }
             if (!this.top) {
-                to = ObjectRBTreeSet.this.compare(to, this.f2728to) < 0 ? to : this.f2728to;
+                to = ObjectRBTreeSet.this.compare(to, this.f2692to) < 0 ? to : this.f2692to;
             }
             if (!this.bottom) {
                 from = ObjectRBTreeSet.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f2728to) ? new Subset(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f2692to) ? new Subset(from, false, to, false) : this;
         }
 
         public Entry<K> firstEntry() {
@@ -712,7 +712,7 @@ public class ObjectRBTreeSet<K> extends AbstractObjectSortedSet<K> implements Se
             if (e == null) {
                 return null;
             }
-            if (this.top || ObjectRBTreeSet.this.compare(e.key, this.f2728to) < 0) {
+            if (this.top || ObjectRBTreeSet.this.compare(e.key, this.f2692to) < 0) {
                 return e;
             }
             return null;
@@ -726,8 +726,8 @@ public class ObjectRBTreeSet<K> extends AbstractObjectSortedSet<K> implements Se
             if (this.top) {
                 e = ObjectRBTreeSet.this.lastEntry;
             } else {
-                e = ObjectRBTreeSet.this.locateKey(this.f2728to);
-                if (ObjectRBTreeSet.this.compare(e.key, this.f2728to) >= 0) {
+                e = ObjectRBTreeSet.this.locateKey(this.f2692to);
+                if (ObjectRBTreeSet.this.compare(e.key, this.f2692to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -805,7 +805,7 @@ public class ObjectRBTreeSet<K> extends AbstractObjectSortedSet<K> implements Se
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectRBTreeSet.SetIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Subset.this.top && this.next != null && ObjectRBTreeSet.this.compare(this.next.key, Subset.this.f2728to) >= 0) {
+                if (!Subset.this.top && this.next != null && ObjectRBTreeSet.this.compare(this.next.key, Subset.this.f2692to) >= 0) {
                     this.next = null;
                 }
             }

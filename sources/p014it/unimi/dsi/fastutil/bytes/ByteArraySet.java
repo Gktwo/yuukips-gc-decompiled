@@ -17,7 +17,7 @@ public class ByteArraySet extends AbstractByteSet implements Serializable, Clone
     private static final long serialVersionUID = 1;
 
     /* renamed from: a */
-    private transient byte[] f1257a;
+    private transient byte[] f1221a;
     private int size;
 
     static /* synthetic */ int access$010(ByteArraySet x0) {
@@ -27,16 +27,16 @@ public class ByteArraySet extends AbstractByteSet implements Serializable, Clone
     }
 
     public ByteArraySet(byte[] a) {
-        this.f1257a = a;
+        this.f1221a = a;
         this.size = a.length;
     }
 
     public ByteArraySet() {
-        this.f1257a = ByteArrays.EMPTY_ARRAY;
+        this.f1221a = ByteArrays.EMPTY_ARRAY;
     }
 
     public ByteArraySet(int capacity) {
-        this.f1257a = new byte[capacity];
+        this.f1221a = new byte[capacity];
     }
 
     public ByteArraySet(ByteCollection c) {
@@ -54,7 +54,7 @@ public class ByteArraySet extends AbstractByteSet implements Serializable, Clone
         int i = 0;
         Iterator<Byte> it = c.iterator();
         while (it.hasNext()) {
-            this.f1257a[i] = it.next().byteValue();
+            this.f1221a[i] = it.next().byteValue();
             i++;
         }
         this.size = i;
@@ -64,14 +64,14 @@ public class ByteArraySet extends AbstractByteSet implements Serializable, Clone
         this(c.size());
         int i = 0;
         for (Byte x : c) {
-            this.f1257a[i] = x.byteValue();
+            this.f1221a[i] = x.byteValue();
             i++;
         }
         this.size = i;
     }
 
     public ByteArraySet(byte[] a, int size) {
-        this.f1257a = a;
+        this.f1221a = a;
         this.size = size;
         if (size > a.length) {
             throw new IllegalArgumentException("The provided size (" + size + ") is larger than or equal to the array size (" + a.length + ")");
@@ -115,7 +115,7 @@ public class ByteArraySet extends AbstractByteSet implements Serializable, Clone
             if (i == 0) {
                 return -1;
             }
-        } while (this.f1257a[i] != o);
+        } while (this.f1221a[i] != o);
         return i;
     }
 
@@ -135,7 +135,7 @@ public class ByteArraySet extends AbstractByteSet implements Serializable, Clone
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                byte[] bArr = ByteArraySet.this.f1257a;
+                byte[] bArr = ByteArraySet.this.f1221a;
                 int i = this.next;
                 this.next = i + 1;
                 return bArr[i];
@@ -146,7 +146,7 @@ public class ByteArraySet extends AbstractByteSet implements Serializable, Clone
                 int access$010 = ByteArraySet.access$010(ByteArraySet.this);
                 int i = this.next;
                 this.next = i - 1;
-                System.arraycopy(ByteArraySet.this.f1257a, this.next + 1, ByteArraySet.this.f1257a, this.next, access$010 - i);
+                System.arraycopy(ByteArraySet.this.f1221a, this.next + 1, ByteArraySet.this.f1221a, this.next, access$010 - i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectIterator
@@ -211,7 +211,7 @@ public class ByteArraySet extends AbstractByteSet implements Serializable, Clone
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            byte[] bArr = ByteArraySet.this.f1257a;
+            byte[] bArr = ByteArraySet.this.f1221a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(bArr[i]);
@@ -221,7 +221,7 @@ public class ByteArraySet extends AbstractByteSet implements Serializable, Clone
         public void forEachRemaining(ByteConsumer action) {
             int max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(ByteArraySet.this.f1257a[this.pos]);
+                action.accept(ByteArraySet.this.f1221a[this.pos]);
                 this.pos++;
             }
         }
@@ -285,7 +285,7 @@ public class ByteArraySet extends AbstractByteSet implements Serializable, Clone
         }
         int tail = (this.size - pos) - 1;
         for (int i = 0; i < tail; i++) {
-            this.f1257a[pos + i] = this.f1257a[pos + i + 1];
+            this.f1221a[pos + i] = this.f1221a[pos + i + 1];
         }
         this.size--;
         return true;
@@ -296,7 +296,7 @@ public class ByteArraySet extends AbstractByteSet implements Serializable, Clone
         if (findKey(k) != -1) {
             return false;
         }
-        if (this.size == this.f1257a.length) {
+        if (this.size == this.f1221a.length) {
             byte[] b = new byte[this.size == 0 ? 2 : this.size * 2];
             int i = this.size;
             while (true) {
@@ -304,11 +304,11 @@ public class ByteArraySet extends AbstractByteSet implements Serializable, Clone
                 if (i == 0) {
                     break;
                 }
-                b[i] = this.f1257a[i];
+                b[i] = this.f1221a[i];
             }
-            this.f1257a = b;
+            this.f1221a = b;
         }
-        byte[] bArr = this.f1257a;
+        byte[] bArr = this.f1221a;
         int i2 = this.size;
         this.size = i2 + 1;
         bArr[i2] = k;
@@ -327,7 +327,7 @@ public class ByteArraySet extends AbstractByteSet implements Serializable, Clone
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteCollection, p014it.unimi.dsi.fastutil.bytes.ByteCollection
     public byte[] toByteArray() {
-        return Arrays.copyOf(this.f1257a, this.size);
+        return Arrays.copyOf(this.f1221a, this.size);
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteCollection, p014it.unimi.dsi.fastutil.bytes.ByteCollection
@@ -335,7 +335,7 @@ public class ByteArraySet extends AbstractByteSet implements Serializable, Clone
         if (a == null || a.length < this.size) {
             a = new byte[this.size];
         }
-        System.arraycopy(this.f1257a, 0, a, 0, this.size);
+        System.arraycopy(this.f1221a, 0, a, 0, this.size);
         return a;
     }
 
@@ -343,7 +343,7 @@ public class ByteArraySet extends AbstractByteSet implements Serializable, Clone
     public ByteArraySet clone() {
         try {
             ByteArraySet c = (ByteArraySet) clone();
-            c.f1257a = (byte[]) this.f1257a.clone();
+            c.f1221a = (byte[]) this.f1221a.clone();
             return c;
         } catch (CloneNotSupportedException e) {
             throw new InternalError();
@@ -353,15 +353,15 @@ public class ByteArraySet extends AbstractByteSet implements Serializable, Clone
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; i < this.size; i++) {
-            s.writeByte(this.f1257a[i]);
+            s.writeByte(this.f1221a[i]);
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f1257a = new byte[this.size];
+        this.f1221a = new byte[this.size];
         for (int i = 0; i < this.size; i++) {
-            this.f1257a[i] = s.readByte();
+            this.f1221a[i] = s.readByte();
         }
     }
 }

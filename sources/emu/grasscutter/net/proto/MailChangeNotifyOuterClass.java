@@ -26,7 +26,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MailChangeNotifyOuterClass.class */
 public final class MailChangeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016MailChangeNotify.proto\u001a\u000eMailData.proto\"J\n\u0010MailChangeNotify\u0012\u0018\n\u0010del_mail_id_list\u0018\u000f \u0003(\r\u0012\u001c\n\tmail_list\u0018\u0002 \u0003(\u000b2\t.MailDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MailDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016MailChangeNotify.proto\u001a\u000eMailData.proto\"F\n\u0010MailChangeNotify\u0012\u0015\n\rdelMailIdList\u0018\u0004 \u0003(\r\u0012\u001b\n\bmailList\u0018\u0005 \u0003(\u000b2\t.MailDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MailDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_MailChangeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_MailChangeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MailChangeNotify_descriptor, new String[]{"DelMailIdList", "MailList"});
 
@@ -62,10 +62,10 @@ public final class MailChangeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MailChangeNotifyOuterClass$MailChangeNotify.class */
     public static final class MailChangeNotify extends GeneratedMessageV3 implements MailChangeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int DEL_MAIL_ID_LIST_FIELD_NUMBER = 15;
+        public static final int DELMAILIDLIST_FIELD_NUMBER = 4;
         private Internal.IntList delMailIdList_;
         private int delMailIdListMemoizedSerializedSize;
-        public static final int MAIL_LIST_FIELD_NUMBER = 2;
+        public static final int MAILLIST_FIELD_NUMBER = 5;
         private List<MailDataOuterClass.MailData> mailList_;
         private byte memoizedIsInitialized;
         private static final MailChangeNotify DEFAULT_INSTANCE = new MailChangeNotify();
@@ -119,21 +119,14 @@ public final class MailChangeNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 18:
-                                if ((mutable_bitField0_ & 2) == 0) {
-                                    this.mailList_ = new ArrayList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
-                                }
-                                this.mailList_.add((MailDataOuterClass.MailData) input.readMessage(MailDataOuterClass.MailData.parser(), extensionRegistry));
-                                break;
-                            case 120:
+                            case 32:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.delMailIdList_ = newIntList();
                                     mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                 }
                                 this.delMailIdList_.addInt(input.readUInt32());
                                 break;
-                            case 122:
+                            case 34:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.delMailIdList_ = newIntList();
@@ -143,6 +136,13 @@ public final class MailChangeNotifyOuterClass {
                                     this.delMailIdList_.addInt(input.readUInt32());
                                 }
                                 input.popLimit(limit);
+                                break;
+                            case 42:
+                                if ((mutable_bitField0_ & 2) == 0) {
+                                    this.mailList_ = new ArrayList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                }
+                                this.mailList_.add((MailDataOuterClass.MailData) input.readMessage(MailDataOuterClass.MailData.parser(), extensionRegistry));
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -160,11 +160,11 @@ public final class MailChangeNotifyOuterClass {
                     }
                 }
             } finally {
-                if ((mutable_bitField0_ & 2) != 0) {
-                    this.mailList_ = Collections.unmodifiableList(this.mailList_);
-                }
                 if ((mutable_bitField0_ & 1) != 0) {
                     this.delMailIdList_.makeImmutable();
+                }
+                if ((mutable_bitField0_ & 2) != 0) {
+                    this.mailList_ = Collections.unmodifiableList(this.mailList_);
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -236,15 +236,15 @@ public final class MailChangeNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            for (int i = 0; i < this.mailList_.size(); i++) {
-                output.writeMessage(2, this.mailList_.get(i));
-            }
             if (getDelMailIdListList().size() > 0) {
-                output.writeUInt32NoTag(122);
+                output.writeUInt32NoTag(34);
                 output.writeUInt32NoTag(this.delMailIdListMemoizedSerializedSize);
             }
-            for (int i2 = 0; i2 < this.delMailIdList_.size(); i2++) {
-                output.writeUInt32NoTag(this.delMailIdList_.getInt(i2));
+            for (int i = 0; i < this.delMailIdList_.size(); i++) {
+                output.writeUInt32NoTag(this.delMailIdList_.getInt(i));
+            }
+            for (int i2 = 0; i2 < this.mailList_.size(); i2++) {
+                output.writeMessage(5, this.mailList_.get(i2));
             }
             this.unknownFields.writeTo(output);
         }
@@ -255,22 +255,21 @@ public final class MailChangeNotifyOuterClass {
             if (size != -1) {
                 return size;
             }
-            int size2 = 0;
-            for (int i = 0; i < this.mailList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(2, this.mailList_.get(i));
-            }
             int dataSize = 0;
-            for (int i2 = 0; i2 < this.delMailIdList_.size(); i2++) {
-                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.delMailIdList_.getInt(i2));
+            for (int i = 0; i < this.delMailIdList_.size(); i++) {
+                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.delMailIdList_.getInt(i));
             }
-            int size3 = size2 + dataSize;
+            int size2 = 0 + dataSize;
             if (!getDelMailIdListList().isEmpty()) {
-                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.delMailIdListMemoizedSerializedSize = dataSize;
-            int size4 = size3 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size4;
-            return size4;
+            for (int i2 = 0; i2 < this.mailList_.size(); i2++) {
+                size2 += CodedOutputStream.computeMessageSize(5, this.mailList_.get(i2));
+            }
+            int size3 = size2 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size3;
+            return size3;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -292,10 +291,10 @@ public final class MailChangeNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getDelMailIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 15)) + getDelMailIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 4)) + getDelMailIdListList().hashCode();
             }
             if (getMailListCount() > 0) {
-                hash = (53 * ((37 * hash) + 2)) + getMailListList().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getMailListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

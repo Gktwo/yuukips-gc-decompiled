@@ -3,8 +3,6 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandHelpers;
-import emu.grasscutter.config.Configuration;
-import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.GadgetData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.MonsterData;
@@ -18,109 +16,78 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.world.Scene;
-import emu.grasscutter.utils.Language;
 import emu.grasscutter.utils.Position;
-import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.regex.Pattern;
 
-@Command(label = "spawn", aliases = {"drop", "s"}, usage = {"<itemId> [x<amount>] [blk<blockId>] [grp<groupId>] [cfg<configId>] <x> <y> <z>", "<gadgetId> [x<amount>] [state<state>] [maxhp<maxhp>] [hp<hp>(0 for infinite)] [atk<atk>] [def<def>] [blk<blockId>] [grp<groupId>] [cfg<configId>] <x> <y> <z>", "<monsterId> [x<amount>] [lv<level>] [ai<aiId>] [maxhp<maxhp>] [hp<hp>(0 for infinite)] [atk<atk>] [def<def>] [blk<blockId>] [grp<groupId>] [cfg<configId>] <x> <y> <z>"}, permission = "server.spawn", permissionTargeted = "server.spawn.others", ratelimit = 60, count = 10)
+@Command(label = "spawn", aliases = {"drop", "s"}, usage = {"<itemId> [x<amount>] [blk<blockId>] [grp<groupId>] [cfg<configId>] <x> <y> <z>", "<gadgetId> [x<amount>] [state<state>] [maxhp<maxhp>] [hp<hp>(0 for infinite)] [atk<atk>] [def<def>] [blk<blockId>] [grp<groupId>] [cfg<configId>] <x> <y> <z>", "<monsterId> [x<amount>] [lv<level>] [ai<aiId>] [maxhp<maxhp>] [hp<hp>(0 for infinite)] [atk<atk>] [def<def>] [blk<blockId>] [grp<groupId>] [cfg<configId>] <x> <y> <z>"}, permission = "server.spawn", permissionTargeted = "server.spawn.others", ratelimit = 120, count = 10)
 /* loaded from: grasscutter.jar:emu/grasscutter/command/commands/SpawnCommand.class */
 public final class SpawnCommand implements CommandHandler {
-    private static final Map<Pattern, BiConsumer<SpawnParameters, Integer>> intCommandHandlers = Map.ofEntries(Map.entry(CommandHelpers.lvlRegex, (v0, v1) -> {
-        v0.setLvl(v1);
-    }), Map.entry(CommandHelpers.amountRegex, (v0, v1) -> {
-        v0.setAmount(v1);
-    }), Map.entry(CommandHelpers.stateRegex, (v0, v1) -> {
-        v0.setState(v1);
-    }), Map.entry(CommandHelpers.blockRegex, (v0, v1) -> {
-        v0.setBlockId(v1);
-    }), Map.entry(CommandHelpers.groupRegex, (v0, v1) -> {
-        v0.setGroupId(v1);
-    }), Map.entry(CommandHelpers.configRegex, (v0, v1) -> {
-        v0.setConfigId(v1);
-    }), Map.entry(CommandHelpers.maxHPRegex, (v0, v1) -> {
-        v0.setMaxHP(v1);
-    }), Map.entry(CommandHelpers.hpRegex, (v0, v1) -> {
-        v0.setHp(v1);
-    }), Map.entry(CommandHelpers.defRegex, (v0, v1) -> {
-        v0.setDef(v1);
-    }), Map.entry(CommandHelpers.atkRegex, (v0, v1) -> {
-        v0.setAtk(v1);
-    }), Map.entry(CommandHelpers.aiRegex, (v0, v1) -> {
-        v0.setAi(v1);
+    private static final Map<Pattern, BiConsumer<SpawnParameters, Integer>> intCommandHandlers = Map.ofEntries(Map.entry(CommandHelpers.lvlRegex, arg0, arg1 -> {
+        arg0.setLvl(arg1.intValue());
+    }), Map.entry(CommandHelpers.amountRegex, arg0, arg1 -> {
+        arg0.setAmount(arg1.intValue());
+    }), Map.entry(CommandHelpers.stateRegex, arg0, arg1 -> {
+        arg0.setState(arg1.intValue());
+    }), Map.entry(CommandHelpers.blockRegex, arg0, arg1 -> {
+        arg0.setBlockId(arg1.intValue());
+    }), Map.entry(CommandHelpers.groupRegex, arg0, arg1 -> {
+        arg0.setGroupId(arg1.intValue());
+    }), Map.entry(CommandHelpers.configRegex, arg0, arg1 -> {
+        arg0.setConfigId(arg1.intValue());
+    }), Map.entry(CommandHelpers.maxHPRegex, arg0, arg1 -> {
+        arg0.setMaxHP(arg1.intValue());
+    }), Map.entry(CommandHelpers.hpRegex, arg0, arg1 -> {
+        arg0.setHp(arg1.intValue());
+    }), Map.entry(CommandHelpers.defRegex, arg0, arg1 -> {
+        arg0.setDef(arg1.intValue());
+    }), Map.entry(CommandHelpers.atkRegex, arg0, arg1 -> {
+        arg0.setAtk(arg1.intValue());
+    }), Map.entry(CommandHelpers.aiRegex, arg0, arg1 -> {
+        arg0.setAi(arg1.intValue());
     }));
 
+    /*  JADX ERROR: Dependency scan failed at insn: 0x023B: INVOKE_CUSTOM r-53
+        java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
+        	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+        	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+        	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266)
+        	at java.base/java.util.Objects.checkIndex(Objects.java:359)
+        	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+        	at jadx.core.dex.visitors.usage.UsageInfoVisitor.processInsn(UsageInfoVisitor.java:130)
+        	at jadx.core.dex.visitors.usage.UsageInfoVisitor.lambda$processInstructions$0(UsageInfoVisitor.java:79)
+        	at jadx.plugins.input.java.data.code.JavaCodeReader.visitInstructions(JavaCodeReader.java:82)
+        	at jadx.core.dex.visitors.usage.UsageInfoVisitor.processInstructions(UsageInfoVisitor.java:77)
+        	at jadx.core.dex.visitors.usage.UsageInfoVisitor.processMethod(UsageInfoVisitor.java:62)
+        	at jadx.core.dex.visitors.usage.UsageInfoVisitor.processClass(UsageInfoVisitor.java:51)
+        	at jadx.core.dex.visitors.usage.UsageInfoVisitor.init(UsageInfoVisitor.java:36)
+        	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:267)
+        */
+    /*  JADX ERROR: Failed to decode insn: 0x023B: INVOKE_CUSTOM r1, method: emu.grasscutter.command.commands.SpawnCommand.execute(emu.grasscutter.game.player.Player, emu.grasscutter.game.player.Player, java.util.List<java.lang.String>):void
+        jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, Null Data entity? ]}
+        	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:55)
+        	at jadx.core.dex.instructions.InsnDecoder.invoke(InsnDecoder.java:568)
+        	at jadx.core.dex.instructions.InsnDecoder.decode(InsnDecoder.java:438)
+        	at jadx.core.dex.instructions.InsnDecoder.lambda$process$0(InsnDecoder.java:48)
+        	at jadx.plugins.input.java.data.code.JavaCodeReader.visitInstructions(JavaCodeReader.java:82)
+        	at jadx.core.dex.instructions.InsnDecoder.process(InsnDecoder.java:43)
+        	at jadx.core.dex.nodes.MethodNode.load(MethodNode.java:194)
+        	at jadx.core.dex.nodes.ClassNode.load(ClassNode.java:309)
+        	at jadx.core.ProcessClass.process(ProcessClass.java:53)
+        	at jadx.core.ProcessClass.generateCode(ProcessClass.java:87)
+        	at jadx.core.dex.nodes.ClassNode.decompile(ClassNode.java:300)
+        	at jadx.core.dex.nodes.ClassNode.decompile(ClassNode.java:265)
+        Caused by: jadx.core.utils.exceptions.JadxRuntimeException: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, Null Data entity? ]}
+        	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:42)
+        	... 11 more
+        */
     @Override // emu.grasscutter.command.CommandHandler
-    public void execute(Player sender, Player targetPlayer, List<String> args) {
-        SpawnParameters param = new SpawnParameters();
-        CommandHelpers.parseIntParameters(args, param, intCommandHandlers);
-        if (args.size() < 1) {
-            sendUsageMessage(sender, new String[0]);
-            return;
-        }
-        switch (args.size()) {
-            case 1:
-                break;
-            default:
-                sendUsageMessage(sender, new String[0]);
-                return;
-            case 4:
-                try {
-                    param.pos = new Position(Float.parseFloat(args.get(1)), Float.parseFloat(args.get(2)), Float.parseFloat(args.get(3)));
-                    break;
-                } catch (NumberFormatException e) {
-                    CommandHandler.sendMessage(sender, Language.translate(sender, "commands.execution.argument_error", new Object[0]));
-                    break;
-                }
-        }
-        try {
-            param.f494id = Integer.parseInt(args.get(0));
-        } catch (NumberFormatException e2) {
-            CommandHandler.sendMessage(sender, Language.translate(sender, "commands.generic.invalid.entityId", new Object[0]));
-        }
-        MonsterData monsterData = GameData.getMonsterDataMap().get(param.f494id);
-        GadgetData gadgetData = GameData.getGadgetDataMap().get(param.f494id);
-        ItemData itemData = GameData.getItemDataMap().get(param.f494id);
-        if (monsterData == null && gadgetData == null && itemData == null) {
-            CommandHandler.sendMessage(sender, Language.translate(sender, "commands.generic.invalid.entityId", new Object[0]));
-            return;
-        }
-        param.scene = targetPlayer.getScene();
-        Map<Integer, GameEntity> Entityz = param.scene.getEntities();
-        int total = Entityz.size();
-        if (monsterData != null) {
-            total = (int) Entityz.values().stream().filter(entity -> {
-                return entity instanceof EntityMonster;
-            }).count();
-        }
-        int etnow = total + param.amount;
-        if (etnow > Configuration.GAME_OPTIONS.CMD_Spawn) {
-            CommandHandler.sendMessage(sender, Language.translate(sender, "dockergs.commands.limit", Integer.valueOf(Configuration.GAME_OPTIONS.CMD_Spawn), Integer.valueOf(etnow)));
-            return;
-        }
-        double maxRadius = Math.sqrt((((double) param.amount) * 0.2d) / 3.141592653589793d);
-        if (param.pos == null) {
-            param.pos = targetPlayer.getPosition();
-        }
-        for (int i = 0; i < param.amount; i++) {
-            Position pos = GetRandomPositionInCircle(param.pos, maxRadius).addY(3.0f);
-            GameEntity entity = null;
-            if (itemData != null) {
-                entity = createItem(itemData, param, pos);
-            }
-            if (gadgetData != null) {
-                pos.addY(-3.0f);
-                entity = createGadget(gadgetData, param, pos, targetPlayer);
-            }
-            if (monsterData != null) {
-                entity = createMonster(monsterData, param, pos);
-            }
-            applyCommonParameters(entity, param);
-            param.scene.addEntity(entity);
-        }
-        CommandHandler.sendMessage(sender, Language.translate(sender, "commands.spawn.success", Integer.valueOf(param.amount), Integer.valueOf(param.f494id)));
+    public void execute(emu.grasscutter.game.player.Player r9, emu.grasscutter.game.player.Player r10, java.util.List<java.lang.String> r11) {
+        /*
+        // Method dump skipped, instructions count: 622
+        */
+        throw new UnsupportedOperationException("Method not decompiled: emu.grasscutter.command.commands.SpawnCommand.execute(emu.grasscutter.game.player.Player, emu.grasscutter.game.player.Player, java.util.List):void");
     }
 
     private EntityItem createItem(ItemData itemData, SpawnParameters param, Position pos) {
@@ -183,9 +150,8 @@ public final class SpawnCommand implements CommandHandler {
         return target;
     }
 
-    /* access modifiers changed from: private */
     /* loaded from: grasscutter.jar:emu/grasscutter/command/commands/SpawnCommand$SpawnParameters.class */
-    public static class SpawnParameters {
+    private static class SpawnParameters {
 
         /* renamed from: id */
         public int f494id;

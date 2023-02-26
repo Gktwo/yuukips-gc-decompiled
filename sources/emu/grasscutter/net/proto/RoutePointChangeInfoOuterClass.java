@@ -19,17 +19,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RoutePointChangeInfoOuterClass.class */
 public final class RoutePointChangeInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aRoutePointChangeInfo.proto\"W\n\u0014RoutePointChangeInfo\u0012\u0017\n\u000ftarget_velocity\u0018\f \u0001(\u0002\u0012\u0011\n\twait_time\u0018\u000e \u0001(\u0002\u0012\u0013\n\u000bpoint_index\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aRoutePointChangeInfo.proto\"T\n\u0014RoutePointChangeInfo\u0012\u0016\n\u000etargetVelocity\u0018\u0007 \u0001(\u0002\u0012\u0012\n\npointIndex\u0018\u000b \u0001(\r\u0012\u0010\n\bwaitTime\u0018\u000f \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_RoutePointChangeInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_RoutePointChangeInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_RoutePointChangeInfo_descriptor, new String[]{"TargetVelocity", "WaitTime", "PointIndex"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_RoutePointChangeInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_RoutePointChangeInfo_descriptor, new String[]{"TargetVelocity", "PointIndex", "WaitTime"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RoutePointChangeInfoOuterClass$RoutePointChangeInfoOrBuilder.class */
     public interface RoutePointChangeInfoOrBuilder extends MessageOrBuilder {
         float getTargetVelocity();
 
-        float getWaitTime();
-
         int getPointIndex();
+
+        float getWaitTime();
     }
 
     private RoutePointChangeInfoOuterClass() {
@@ -45,12 +45,12 @@ public final class RoutePointChangeInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RoutePointChangeInfoOuterClass$RoutePointChangeInfo.class */
     public static final class RoutePointChangeInfo extends GeneratedMessageV3 implements RoutePointChangeInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TARGET_VELOCITY_FIELD_NUMBER = 12;
+        public static final int TARGETVELOCITY_FIELD_NUMBER = 7;
         private float targetVelocity_;
-        public static final int WAIT_TIME_FIELD_NUMBER = 14;
-        private float waitTime_;
-        public static final int POINT_INDEX_FIELD_NUMBER = 4;
+        public static final int POINTINDEX_FIELD_NUMBER = 11;
         private int pointIndex_;
+        public static final int WAITTIME_FIELD_NUMBER = 15;
+        private float waitTime_;
         private byte memoizedIsInitialized;
         private static final RoutePointChangeInfo DEFAULT_INSTANCE = new RoutePointChangeInfo();
         private static final Parser<RoutePointChangeInfo> PARSER = new AbstractParser<RoutePointChangeInfo>() { // from class: emu.grasscutter.net.proto.RoutePointChangeInfoOuterClass.RoutePointChangeInfo.1
@@ -97,13 +97,13 @@ public final class RoutePointChangeInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 32:
-                                    this.pointIndex_ = input.readUInt32();
-                                    break;
-                                case 101:
+                                case 61:
                                     this.targetVelocity_ = input.readFloat();
                                     break;
-                                case 117:
+                                case 88:
+                                    this.pointIndex_ = input.readUInt32();
+                                    break;
+                                case 125:
                                     this.waitTime_ = input.readFloat();
                                     break;
                                 default:
@@ -142,13 +142,13 @@ public final class RoutePointChangeInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.RoutePointChangeInfoOuterClass.RoutePointChangeInfoOrBuilder
-        public float getWaitTime() {
-            return this.waitTime_;
+        public int getPointIndex() {
+            return this.pointIndex_;
         }
 
         @Override // emu.grasscutter.net.proto.RoutePointChangeInfoOuterClass.RoutePointChangeInfoOrBuilder
-        public int getPointIndex() {
-            return this.pointIndex_;
+        public float getWaitTime() {
+            return this.waitTime_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -166,14 +166,14 @@ public final class RoutePointChangeInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.pointIndex_ != 0) {
-                output.writeUInt32(4, this.pointIndex_);
-            }
             if (this.targetVelocity_ != 0.0f) {
-                output.writeFloat(12, this.targetVelocity_);
+                output.writeFloat(7, this.targetVelocity_);
+            }
+            if (this.pointIndex_ != 0) {
+                output.writeUInt32(11, this.pointIndex_);
             }
             if (this.waitTime_ != 0.0f) {
-                output.writeFloat(14, this.waitTime_);
+                output.writeFloat(15, this.waitTime_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -185,14 +185,14 @@ public final class RoutePointChangeInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.pointIndex_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.pointIndex_);
-            }
             if (this.targetVelocity_ != 0.0f) {
-                size2 += CodedOutputStream.computeFloatSize(12, this.targetVelocity_);
+                size2 = 0 + CodedOutputStream.computeFloatSize(7, this.targetVelocity_);
+            }
+            if (this.pointIndex_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(11, this.pointIndex_);
             }
             if (this.waitTime_ != 0.0f) {
-                size2 += CodedOutputStream.computeFloatSize(14, this.waitTime_);
+                size2 += CodedOutputStream.computeFloatSize(15, this.waitTime_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -208,7 +208,7 @@ public final class RoutePointChangeInfoOuterClass {
                 return equals(obj);
             }
             RoutePointChangeInfo other = (RoutePointChangeInfo) obj;
-            return Float.floatToIntBits(getTargetVelocity()) == Float.floatToIntBits(other.getTargetVelocity()) && Float.floatToIntBits(getWaitTime()) == Float.floatToIntBits(other.getWaitTime()) && getPointIndex() == other.getPointIndex() && this.unknownFields.equals(other.unknownFields);
+            return Float.floatToIntBits(getTargetVelocity()) == Float.floatToIntBits(other.getTargetVelocity()) && getPointIndex() == other.getPointIndex() && Float.floatToIntBits(getWaitTime()) == Float.floatToIntBits(other.getWaitTime()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -216,7 +216,7 @@ public final class RoutePointChangeInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + Float.floatToIntBits(getTargetVelocity()))) + 14)) + Float.floatToIntBits(getWaitTime()))) + 4)) + getPointIndex())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + Float.floatToIntBits(getTargetVelocity()))) + 11)) + getPointIndex())) + 15)) + Float.floatToIntBits(getWaitTime()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -296,8 +296,8 @@ public final class RoutePointChangeInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RoutePointChangeInfoOuterClass$RoutePointChangeInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements RoutePointChangeInfoOrBuilder {
             private float targetVelocity_;
-            private float waitTime_;
             private int pointIndex_;
+            private float waitTime_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return RoutePointChangeInfoOuterClass.internal_static_RoutePointChangeInfo_descriptor;
@@ -326,8 +326,8 @@ public final class RoutePointChangeInfoOuterClass {
             public Builder clear() {
                 clear();
                 this.targetVelocity_ = 0.0f;
-                this.waitTime_ = 0.0f;
                 this.pointIndex_ = 0;
+                this.waitTime_ = 0.0f;
                 return this;
             }
 
@@ -354,8 +354,8 @@ public final class RoutePointChangeInfoOuterClass {
             public RoutePointChangeInfo buildPartial() {
                 RoutePointChangeInfo result = new RoutePointChangeInfo(this);
                 result.targetVelocity_ = this.targetVelocity_;
-                result.waitTime_ = this.waitTime_;
                 result.pointIndex_ = this.pointIndex_;
+                result.waitTime_ = this.waitTime_;
                 onBuilt();
                 return result;
             }
@@ -406,11 +406,11 @@ public final class RoutePointChangeInfoOuterClass {
                 if (other.getTargetVelocity() != 0.0f) {
                     setTargetVelocity(other.getTargetVelocity());
                 }
-                if (other.getWaitTime() != 0.0f) {
-                    setWaitTime(other.getWaitTime());
-                }
                 if (other.getPointIndex() != 0) {
                     setPointIndex(other.getPointIndex());
+                }
+                if (other.getWaitTime() != 0.0f) {
+                    setWaitTime(other.getWaitTime());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -462,23 +462,6 @@ public final class RoutePointChangeInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.RoutePointChangeInfoOuterClass.RoutePointChangeInfoOrBuilder
-            public float getWaitTime() {
-                return this.waitTime_;
-            }
-
-            public Builder setWaitTime(float value) {
-                this.waitTime_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearWaitTime() {
-                this.waitTime_ = 0.0f;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.RoutePointChangeInfoOuterClass.RoutePointChangeInfoOrBuilder
             public int getPointIndex() {
                 return this.pointIndex_;
             }
@@ -491,6 +474,23 @@ public final class RoutePointChangeInfoOuterClass {
 
             public Builder clearPointIndex() {
                 this.pointIndex_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.RoutePointChangeInfoOuterClass.RoutePointChangeInfoOrBuilder
+            public float getWaitTime() {
+                return this.waitTime_;
+            }
+
+            public Builder setWaitTime(float value) {
+                this.waitTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearWaitTime() {
+                this.waitTime_ = 0.0f;
                 onChanged();
                 return this;
             }

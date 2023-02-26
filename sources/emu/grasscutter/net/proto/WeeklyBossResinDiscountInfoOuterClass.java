@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WeeklyBossResinDiscountInfoOuterClass.class */
 public final class WeeklyBossResinDiscountInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!WeeklyBossResinDiscountInfo.proto\"\u0001\n\u001bWeeklyBossResinDiscountInfo\u0012\u0014\n\fdiscount_num\u0018\u0001 \u0001(\r\u0012\u001a\n\u0012discount_num_limit\u0018\u0002 \u0001(\r\u0012\u0012\n\nresin_cost\u0018\u0003 \u0001(\r\u0012\u001b\n\u0013original_resin_cost\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!WeeklyBossResinDiscountInfo.proto\"z\n\u001bWeeklyBossResinDiscountInfo\u0012\u0013\n\u000bdiscountNum\u0018\u0001 \u0001(\r\u0012\u0018\n\u0010discountNumLimit\u0018\u0002 \u0001(\r\u0012\u0011\n\tresinCost\u0018\u0003 \u0001(\r\u0012\u0019\n\u0011originalResinCost\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_WeeklyBossResinDiscountInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_WeeklyBossResinDiscountInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WeeklyBossResinDiscountInfo_descriptor, new String[]{"DiscountNum", "DiscountNumLimit", "ResinCost", "OriginalResinCost"});
 
@@ -47,13 +47,13 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WeeklyBossResinDiscountInfoOuterClass$WeeklyBossResinDiscountInfo.class */
     public static final class WeeklyBossResinDiscountInfo extends GeneratedMessageV3 implements WeeklyBossResinDiscountInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int DISCOUNT_NUM_FIELD_NUMBER = 1;
+        public static final int DISCOUNTNUM_FIELD_NUMBER = 1;
         private int discountNum_;
-        public static final int DISCOUNT_NUM_LIMIT_FIELD_NUMBER = 2;
+        public static final int DISCOUNTNUMLIMIT_FIELD_NUMBER = 2;
         private int discountNumLimit_;
-        public static final int RESIN_COST_FIELD_NUMBER = 3;
+        public static final int RESINCOST_FIELD_NUMBER = 3;
         private int resinCost_;
-        public static final int ORIGINAL_RESIN_COST_FIELD_NUMBER = 4;
+        public static final int ORIGINALRESINCOST_FIELD_NUMBER = 4;
         private int originalResinCost_;
         private byte memoizedIsInitialized;
         private static final WeeklyBossResinDiscountInfo DEFAULT_INSTANCE = new WeeklyBossResinDiscountInfo();

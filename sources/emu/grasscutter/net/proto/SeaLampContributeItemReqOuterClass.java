@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SeaLampContributeItemReqOuterClass.class */
 public final class SeaLampContributeItemReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eSeaLampContributeItemReq.proto\u001a\u000fItemParam.proto\"N\n\u0018SeaLampContributeItemReq\u0012\u001d\n\titem_list\u0018\u000b \u0003(\u000b2\n.ItemParam\u0012\u0013\n\u000bactivity_id\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eSeaLampContributeItemReq.proto\u001a\u000fItemParam.proto\"L\n\u0018SeaLampContributeItemReq\u0012\u001c\n\bitemList\u0018\r \u0003(\u000b2\n.ItemParam\u0012\u0012\n\nactivityId\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SeaLampContributeItemReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SeaLampContributeItemReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SeaLampContributeItemReq_descriptor, new String[]{"ItemList", "ActivityId"});
 
@@ -57,9 +57,9 @@ public final class SeaLampContributeItemReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SeaLampContributeItemReqOuterClass$SeaLampContributeItemReq.class */
     public static final class SeaLampContributeItemReq extends GeneratedMessageV3 implements SeaLampContributeItemReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ITEM_LIST_FIELD_NUMBER = 11;
+        public static final int ITEMLIST_FIELD_NUMBER = 13;
         private List<ItemParamOuterClass.ItemParam> itemList_;
-        public static final int ACTIVITY_ID_FIELD_NUMBER = 2;
+        public static final int ACTIVITYID_FIELD_NUMBER = 12;
         private int activityId_;
         private byte memoizedIsInitialized;
         private static final SeaLampContributeItemReq DEFAULT_INSTANCE = new SeaLampContributeItemReq();
@@ -110,10 +110,10 @@ public final class SeaLampContributeItemReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
+                                case 96:
                                     this.activityId_ = input.readUInt32();
                                     break;
-                                case 90:
+                                case 106:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.itemList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -199,10 +199,10 @@ public final class SeaLampContributeItemReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.activityId_ != 0) {
-                output.writeUInt32(2, this.activityId_);
+                output.writeUInt32(12, this.activityId_);
             }
             for (int i = 0; i < this.itemList_.size(); i++) {
-                output.writeMessage(11, this.itemList_.get(i));
+                output.writeMessage(13, this.itemList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -215,10 +215,10 @@ public final class SeaLampContributeItemReqOuterClass {
             }
             int size2 = 0;
             if (this.activityId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.activityId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(12, this.activityId_);
             }
             for (int i = 0; i < this.itemList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(11, this.itemList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(13, this.itemList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -244,9 +244,9 @@ public final class SeaLampContributeItemReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getItemListCount() > 0) {
-                hash = (53 * ((37 * hash) + 11)) + getItemListList().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getItemListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 2)) + getActivityId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 12)) + getActivityId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

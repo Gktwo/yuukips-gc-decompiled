@@ -21,19 +21,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetUpLunchBoxWidgetRspOuterClass.class */
 public final class SetUpLunchBoxWidgetRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cSetUpLunchBoxWidgetRsp.proto\u001a\u0012LunchBoxData.proto\"P\n\u0016SetUpLunchBoxWidgetRsp\u0012\u000f\n\u0007retcode\u0018\u0007 \u0001(\u0005\u0012%\n\u000elunch_box_data\u0018\u0002 \u0001(\u000b2\r.LunchBoxDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{LunchBoxDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cSetUpLunchBoxWidgetRsp.proto\u001a\u0012LunchBoxData.proto\"N\n\u0016SetUpLunchBoxWidgetRsp\u0012#\n\flunchBoxData\u0018\u000f \u0001(\u000b2\r.LunchBoxData\u0012\u000f\n\u0007retcode\u0018\u0003 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{LunchBoxDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SetUpLunchBoxWidgetRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetUpLunchBoxWidgetRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetUpLunchBoxWidgetRsp_descriptor, new String[]{"Retcode", "LunchBoxData"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetUpLunchBoxWidgetRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetUpLunchBoxWidgetRsp_descriptor, new String[]{"LunchBoxData", "Retcode"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetUpLunchBoxWidgetRspOuterClass$SetUpLunchBoxWidgetRspOrBuilder.class */
     public interface SetUpLunchBoxWidgetRspOrBuilder extends MessageOrBuilder {
-        int getRetcode();
-
         boolean hasLunchBoxData();
 
         LunchBoxDataOuterClass.LunchBoxData getLunchBoxData();
 
         LunchBoxDataOuterClass.LunchBoxDataOrBuilder getLunchBoxDataOrBuilder();
+
+        int getRetcode();
     }
 
     private SetUpLunchBoxWidgetRspOuterClass() {
@@ -49,10 +49,10 @@ public final class SetUpLunchBoxWidgetRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetUpLunchBoxWidgetRspOuterClass$SetUpLunchBoxWidgetRsp.class */
     public static final class SetUpLunchBoxWidgetRsp extends GeneratedMessageV3 implements SetUpLunchBoxWidgetRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 7;
-        private int retcode_;
-        public static final int LUNCH_BOX_DATA_FIELD_NUMBER = 2;
+        public static final int LUNCHBOXDATA_FIELD_NUMBER = 15;
         private LunchBoxDataOuterClass.LunchBoxData lunchBoxData_;
+        public static final int RETCODE_FIELD_NUMBER = 3;
+        private int retcode_;
         private byte memoizedIsInitialized;
         private static final SetUpLunchBoxWidgetRsp DEFAULT_INSTANCE = new SetUpLunchBoxWidgetRsp();
         private static final Parser<SetUpLunchBoxWidgetRsp> PARSER = new AbstractParser<SetUpLunchBoxWidgetRsp>() { // from class: emu.grasscutter.net.proto.SetUpLunchBoxWidgetRspOuterClass.SetUpLunchBoxWidgetRsp.1
@@ -99,7 +99,10 @@ public final class SetUpLunchBoxWidgetRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 18:
+                                case 24:
+                                    this.retcode_ = input.readInt32();
+                                    break;
+                                case 122:
                                     LunchBoxDataOuterClass.LunchBoxData.Builder subBuilder = this.lunchBoxData_ != null ? this.lunchBoxData_.toBuilder() : null;
                                     this.lunchBoxData_ = (LunchBoxDataOuterClass.LunchBoxData) input.readMessage(LunchBoxDataOuterClass.LunchBoxData.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -109,9 +112,6 @@ public final class SetUpLunchBoxWidgetRspOuterClass {
                                         this.lunchBoxData_ = subBuilder.buildPartial();
                                         break;
                                     }
-                                case 56:
-                                    this.retcode_ = input.readInt32();
-                                    break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                         break;
@@ -143,11 +143,6 @@ public final class SetUpLunchBoxWidgetRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SetUpLunchBoxWidgetRspOuterClass.SetUpLunchBoxWidgetRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
-        }
-
-        @Override // emu.grasscutter.net.proto.SetUpLunchBoxWidgetRspOuterClass.SetUpLunchBoxWidgetRspOrBuilder
         public boolean hasLunchBoxData() {
             return this.lunchBoxData_ != null;
         }
@@ -160,6 +155,11 @@ public final class SetUpLunchBoxWidgetRspOuterClass {
         @Override // emu.grasscutter.net.proto.SetUpLunchBoxWidgetRspOuterClass.SetUpLunchBoxWidgetRspOrBuilder
         public LunchBoxDataOuterClass.LunchBoxDataOrBuilder getLunchBoxDataOrBuilder() {
             return getLunchBoxData();
+        }
+
+        @Override // emu.grasscutter.net.proto.SetUpLunchBoxWidgetRspOuterClass.SetUpLunchBoxWidgetRspOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -177,11 +177,11 @@ public final class SetUpLunchBoxWidgetRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.lunchBoxData_ != null) {
-                output.writeMessage(2, getLunchBoxData());
-            }
             if (this.retcode_ != 0) {
-                output.writeInt32(7, this.retcode_);
+                output.writeInt32(3, this.retcode_);
+            }
+            if (this.lunchBoxData_ != null) {
+                output.writeMessage(15, getLunchBoxData());
             }
             this.unknownFields.writeTo(output);
         }
@@ -193,11 +193,11 @@ public final class SetUpLunchBoxWidgetRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.lunchBoxData_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(2, getLunchBoxData());
-            }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(7, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(3, this.retcode_);
+            }
+            if (this.lunchBoxData_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(15, getLunchBoxData());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -213,10 +213,10 @@ public final class SetUpLunchBoxWidgetRspOuterClass {
                 return equals(obj);
             }
             SetUpLunchBoxWidgetRsp other = (SetUpLunchBoxWidgetRsp) obj;
-            if (getRetcode() == other.getRetcode() && hasLunchBoxData() == other.hasLunchBoxData()) {
-                return (!hasLunchBoxData() || getLunchBoxData().equals(other.getLunchBoxData())) && this.unknownFields.equals(other.unknownFields);
+            if (hasLunchBoxData() != other.hasLunchBoxData()) {
+                return false;
             }
-            return false;
+            return (!hasLunchBoxData() || getLunchBoxData().equals(other.getLunchBoxData())) && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -224,11 +224,11 @@ public final class SetUpLunchBoxWidgetRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getRetcode();
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasLunchBoxData()) {
-                hash = (53 * ((37 * hash) + 2)) + getLunchBoxData().hashCode();
+                hash = (53 * ((37 * hash) + 15)) + getLunchBoxData().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 3)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -307,9 +307,9 @@ public final class SetUpLunchBoxWidgetRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetUpLunchBoxWidgetRspOuterClass$SetUpLunchBoxWidgetRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SetUpLunchBoxWidgetRspOrBuilder {
-            private int retcode_;
             private LunchBoxDataOuterClass.LunchBoxData lunchBoxData_;
             private SingleFieldBuilderV3<LunchBoxDataOuterClass.LunchBoxData, LunchBoxDataOuterClass.LunchBoxData.Builder, LunchBoxDataOuterClass.LunchBoxDataOrBuilder> lunchBoxDataBuilder_;
+            private int retcode_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return SetUpLunchBoxWidgetRspOuterClass.internal_static_SetUpLunchBoxWidgetRsp_descriptor;
@@ -337,13 +337,13 @@ public final class SetUpLunchBoxWidgetRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.retcode_ = 0;
                 if (this.lunchBoxDataBuilder_ == null) {
                     this.lunchBoxData_ = null;
                 } else {
                     this.lunchBoxData_ = null;
                     this.lunchBoxDataBuilder_ = null;
                 }
+                this.retcode_ = 0;
                 return this;
             }
 
@@ -369,12 +369,12 @@ public final class SetUpLunchBoxWidgetRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public SetUpLunchBoxWidgetRsp buildPartial() {
                 SetUpLunchBoxWidgetRsp result = new SetUpLunchBoxWidgetRsp(this);
-                result.retcode_ = this.retcode_;
                 if (this.lunchBoxDataBuilder_ == null) {
                     result.lunchBoxData_ = this.lunchBoxData_;
                 } else {
                     result.lunchBoxData_ = this.lunchBoxDataBuilder_.build();
                 }
+                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -422,11 +422,11 @@ public final class SetUpLunchBoxWidgetRspOuterClass {
                 if (other == SetUpLunchBoxWidgetRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
                 if (other.hasLunchBoxData()) {
                     mergeLunchBoxData(other.getLunchBoxData());
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -458,23 +458,6 @@ public final class SetUpLunchBoxWidgetRspOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.SetUpLunchBoxWidgetRspOuterClass.SetUpLunchBoxWidgetRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // emu.grasscutter.net.proto.SetUpLunchBoxWidgetRspOuterClass.SetUpLunchBoxWidgetRspOrBuilder
@@ -556,6 +539,23 @@ public final class SetUpLunchBoxWidgetRspOuterClass {
                     this.lunchBoxData_ = null;
                 }
                 return this.lunchBoxDataBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.SetUpLunchBoxWidgetRspOuterClass.SetUpLunchBoxWidgetRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

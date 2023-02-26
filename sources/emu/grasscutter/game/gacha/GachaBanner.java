@@ -2,8 +2,9 @@ package emu.grasscutter.game.gacha;
 
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.ActivityInfoOuterClass;
+import emu.grasscutter.net.proto.DungeonSettleNotifyOuterClass;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
+import emu.grasscutter.net.proto.VintageMarketInfoOuterClass;
 import emu.grasscutter.utils.Utils;
 import org.eclipse.jetty.websocket.api.StatusCode;
 
@@ -26,9 +27,9 @@ public class GachaBanner {
     private int[] rateUpItems4 = new int[0];
     private int[] rateUpItems5 = new int[0];
     private int[] fallbackItems3 = {11301, 11302, 11306, RetcodeOuterClass.Retcode.RET_GCG_LEVEL_REWARD_LEVEL_ERROR_VALUE, RetcodeOuterClass.Retcode.RET_GCG_LEVEL_REWARD_ALREADY_TAKEN_VALUE, 12305, 13303, 14301, 14302, 14304, 15301, 15302, 15304};
-    private int[] fallbackItems4Pool1 = {StatusCode.INVALID_UPSTREAM_RESPONSE, 1020, 1023, 1024, PacketOpcodes.ProudSkillExtraLevelNotify, PacketOpcodes.ProudSkillChangeNotify, 1031, ActivityInfoOuterClass.ActivityInfo.TREASURE_SEELIE_INFO_FIELD_NUMBER, 1034, 1036, PacketOpcodes.AvatarSkillUpgradeReq, PacketOpcodes.BigTalentPointConvertRsp, 1044, 1045, PacketOpcodes.AvatarSkillUpgradeRsp, 1053, 1055, 1056, 1064};
+    private int[] fallbackItems4Pool1 = {1014, PacketOpcodes.BigTalentPointConvertReq, 1023, 1024, 1025, 1027, 1031, 1032, 1034, 1036, 1039, 1043, 1044, DungeonSettleNotifyOuterClass.DungeonSettleNotify.CHANNELLER_SLAB_LOOP_DUNGEON_RESULT_INFO_FIELD_NUMBER, 1048, 1053, PacketOpcodes.UnlockAvatarTalentRsp, 1056, 1064};
     private int[] fallbackItems4Pool2 = {11401, 11402, 11403, 11405, 12401, 12402, 12403, 12405, 13401, 13407, 14401, 14402, 14403, 14409, 15401, 15402, 15403, 15405};
-    private int[] fallbackItems5Pool1 = {1003, 1016, PacketOpcodes.CanUseSkillNotify, 1035, 1041};
+    private int[] fallbackItems5Pool1 = {StatusCode.BAD_DATA, PacketOpcodes.AvatarSkillChangeNotify, 1042, VintageMarketInfoOuterClass.VintageMarketInfo.UNK3300_ALHLENELIEO_FIELD_NUMBER, 1041};
     private int[] fallbackItems5Pool2 = {11501, 11502, 12501, 12502, 13502, 13505, 14501, 14502, 15501, 15502};
     private boolean removeC6FromPool = false;
     private boolean autoStripRateUpFromFallback = true;

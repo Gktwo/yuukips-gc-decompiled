@@ -28,15 +28,27 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarEnterSceneInfoOuterClass.class */
 public final class AvatarEnterSceneInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aAvatarEnterSceneInfo.proto\u001a\u001aAbilitySyncStateInfo.proto\u001a\u0010ServerBuff.proto\"\u0002\n\u0014AvatarEnterSceneInfo\u0012\u0018\n\u0010weapon_entity_id\u0018\u0005 \u0001(\r\u0012\u0013\n\u000bavatar_guid\u0018\t \u0001(\u0004\u0012\u0018\n\u0010avatar_entity_id\u0018\r \u0001(\r\u0012%\n\u0010server_buff_list\u0018\u0007 \u0003(\u000b2\u000b.ServerBuff\u00122\n\u0013weapon_ability_info\u0018\u0006 \u0001(\u000b2\u0015.AbilitySyncStateInfo\u0012\u0014\n\fbuff_id_list\u0018\b \u0003(\r\u00122\n\u0013avatar_ability_info\u0018\u0001 \u0001(\u000b2\u0015.AbilitySyncStateInfo\u0012\u0013\n\u000bweapon_guid\u0018\u000f \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilitySyncStateInfoOuterClass.getDescriptor(), ServerBuffOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aAvatarEnterSceneInfo.proto\u001a\u001aAbilitySyncStateInfo.proto\u001a\u0010ServerBuff.proto\"\u0002\n\u0014AvatarEnterSceneInfo\u0012\u0012\n\navatarGuid\u0018\b \u0001(\u0004\u0012\u0016\n\u000eweaponEntityId\u0018\r \u0001(\r\u00120\n\u0011avatarAbilityInfo\u0018\u0001 \u0001(\u000b2\u0015.AbilitySyncStateInfo\u0012\u0012\n\nbuffIdList\u0018\u0007 \u0003(\r\u0012\u0016\n\u000eavatarEntityId\u0018\n \u0001(\r\u0012#\n\u000eserverBuffList\u0018\u0004 \u0003(\u000b2\u000b.ServerBuff\u00120\n\u0011weaponAbilityInfo\u0018\u000b \u0001(\u000b2\u0015.AbilitySyncStateInfo\u0012\u0012\n\nweaponGuid\u0018\u000e \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilitySyncStateInfoOuterClass.getDescriptor(), ServerBuffOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AvatarEnterSceneInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarEnterSceneInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarEnterSceneInfo_descriptor, new String[]{"WeaponEntityId", "AvatarGuid", "AvatarEntityId", "ServerBuffList", "WeaponAbilityInfo", "BuffIdList", "AvatarAbilityInfo", "WeaponGuid"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarEnterSceneInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarEnterSceneInfo_descriptor, new String[]{"AvatarGuid", "WeaponEntityId", "AvatarAbilityInfo", "BuffIdList", "AvatarEntityId", "ServerBuffList", "WeaponAbilityInfo", "WeaponGuid"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarEnterSceneInfoOuterClass$AvatarEnterSceneInfoOrBuilder.class */
     public interface AvatarEnterSceneInfoOrBuilder extends MessageOrBuilder {
+        long getAvatarGuid();
+
         int getWeaponEntityId();
 
-        long getAvatarGuid();
+        boolean hasAvatarAbilityInfo();
+
+        AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo getAvatarAbilityInfo();
+
+        AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getAvatarAbilityInfoOrBuilder();
+
+        List<Integer> getBuffIdListList();
+
+        int getBuffIdListCount();
+
+        int getBuffIdList(int i);
 
         int getAvatarEntityId();
 
@@ -56,18 +68,6 @@ public final class AvatarEnterSceneInfoOuterClass {
 
         AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getWeaponAbilityInfoOrBuilder();
 
-        List<Integer> getBuffIdListList();
-
-        int getBuffIdListCount();
-
-        int getBuffIdList(int i);
-
-        boolean hasAvatarAbilityInfo();
-
-        AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo getAvatarAbilityInfo();
-
-        AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getAvatarAbilityInfoOrBuilder();
-
         long getWeaponGuid();
     }
 
@@ -84,22 +84,22 @@ public final class AvatarEnterSceneInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarEnterSceneInfoOuterClass$AvatarEnterSceneInfo.class */
     public static final class AvatarEnterSceneInfo extends GeneratedMessageV3 implements AvatarEnterSceneInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int WEAPON_ENTITY_ID_FIELD_NUMBER = 5;
-        private int weaponEntityId_;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 9;
+        public static final int AVATARGUID_FIELD_NUMBER = 8;
         private long avatarGuid_;
-        public static final int AVATAR_ENTITY_ID_FIELD_NUMBER = 13;
-        private int avatarEntityId_;
-        public static final int SERVER_BUFF_LIST_FIELD_NUMBER = 7;
-        private List<ServerBuffOuterClass.ServerBuff> serverBuffList_;
-        public static final int WEAPON_ABILITY_INFO_FIELD_NUMBER = 6;
-        private AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo weaponAbilityInfo_;
-        public static final int BUFF_ID_LIST_FIELD_NUMBER = 8;
+        public static final int WEAPONENTITYID_FIELD_NUMBER = 13;
+        private int weaponEntityId_;
+        public static final int AVATARABILITYINFO_FIELD_NUMBER = 1;
+        private AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo avatarAbilityInfo_;
+        public static final int BUFFIDLIST_FIELD_NUMBER = 7;
         private Internal.IntList buffIdList_;
         private int buffIdListMemoizedSerializedSize;
-        public static final int AVATAR_ABILITY_INFO_FIELD_NUMBER = 1;
-        private AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo avatarAbilityInfo_;
-        public static final int WEAPON_GUID_FIELD_NUMBER = 15;
+        public static final int AVATARENTITYID_FIELD_NUMBER = 10;
+        private int avatarEntityId_;
+        public static final int SERVERBUFFLIST_FIELD_NUMBER = 4;
+        private List<ServerBuffOuterClass.ServerBuff> serverBuffList_;
+        public static final int WEAPONABILITYINFO_FIELD_NUMBER = 11;
+        private AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo weaponAbilityInfo_;
+        public static final int WEAPONGUID_FIELD_NUMBER = 14;
         private long weaponGuid_;
         private byte memoizedIsInitialized;
         private static final AvatarEnterSceneInfo DEFAULT_INSTANCE = new AvatarEnterSceneInfo();
@@ -119,8 +119,8 @@ public final class AvatarEnterSceneInfoOuterClass {
         private AvatarEnterSceneInfo() {
             this.buffIdListMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
-            this.serverBuffList_ = Collections.emptyList();
             this.buffIdList_ = emptyIntList();
+            this.serverBuffList_ = Collections.emptyList();
         }
 
         /* access modifiers changed from: protected */
@@ -163,10 +163,38 @@ public final class AvatarEnterSceneInfoOuterClass {
                                     this.avatarAbilityInfo_ = subBuilder.buildPartial();
                                     break;
                                 }
-                            case 40:
-                                this.weaponEntityId_ = input.readUInt32();
+                            case 34:
+                                if ((mutable_bitField0_ & 2) == 0) {
+                                    this.serverBuffList_ = new ArrayList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                }
+                                this.serverBuffList_.add((ServerBuffOuterClass.ServerBuff) input.readMessage(ServerBuffOuterClass.ServerBuff.parser(), extensionRegistry));
                                 break;
-                            case 50:
+                            case 56:
+                                if ((mutable_bitField0_ & 1) == 0) {
+                                    this.buffIdList_ = newIntList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                }
+                                this.buffIdList_.addInt(input.readUInt32());
+                                break;
+                            case 58:
+                                int limit = input.pushLimit(input.readRawVarint32());
+                                if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
+                                    this.buffIdList_ = newIntList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                }
+                                while (input.getBytesUntilLimit() > 0) {
+                                    this.buffIdList_.addInt(input.readUInt32());
+                                }
+                                input.popLimit(limit);
+                                break;
+                            case 64:
+                                this.avatarGuid_ = input.readUInt64();
+                                break;
+                            case 80:
+                                this.avatarEntityId_ = input.readUInt32();
+                                break;
+                            case 90:
                                 AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder subBuilder2 = this.weaponAbilityInfo_ != null ? this.weaponAbilityInfo_.toBuilder() : null;
                                 this.weaponAbilityInfo_ = (AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo) input.readMessage(AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.parser(), extensionRegistry);
                                 if (subBuilder2 == null) {
@@ -176,38 +204,10 @@ public final class AvatarEnterSceneInfoOuterClass {
                                     this.weaponAbilityInfo_ = subBuilder2.buildPartial();
                                     break;
                                 }
-                            case 58:
-                                if ((mutable_bitField0_ & 1) == 0) {
-                                    this.serverBuffList_ = new ArrayList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
-                                }
-                                this.serverBuffList_.add((ServerBuffOuterClass.ServerBuff) input.readMessage(ServerBuffOuterClass.ServerBuff.parser(), extensionRegistry));
-                                break;
-                            case 64:
-                                if ((mutable_bitField0_ & 2) == 0) {
-                                    this.buffIdList_ = newIntList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
-                                }
-                                this.buffIdList_.addInt(input.readUInt32());
-                                break;
-                            case 66:
-                                int limit = input.pushLimit(input.readRawVarint32());
-                                if ((mutable_bitField0_ & 2) == 0 && input.getBytesUntilLimit() > 0) {
-                                    this.buffIdList_ = newIntList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
-                                }
-                                while (input.getBytesUntilLimit() > 0) {
-                                    this.buffIdList_.addInt(input.readUInt32());
-                                }
-                                input.popLimit(limit);
-                                break;
-                            case 72:
-                                this.avatarGuid_ = input.readUInt64();
-                                break;
                             case 104:
-                                this.avatarEntityId_ = input.readUInt32();
+                                this.weaponEntityId_ = input.readUInt32();
                                 break;
-                            case 120:
+                            case 112:
                                 this.weaponGuid_ = input.readUInt64();
                                 break;
                             default:
@@ -226,10 +226,10 @@ public final class AvatarEnterSceneInfoOuterClass {
                     }
                 }
             } finally {
-                if ((mutable_bitField0_ & 1) != 0) {
+                if ((mutable_bitField0_ & 2) != 0) {
                     this.serverBuffList_ = Collections.unmodifiableList(this.serverBuffList_);
                 }
-                if ((mutable_bitField0_ & 2) != 0) {
+                if ((mutable_bitField0_ & 1) != 0) {
                     this.buffIdList_.makeImmutable();
                 }
                 this.unknownFields = unknownFields.build();
@@ -247,13 +247,43 @@ public final class AvatarEnterSceneInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
+        public long getAvatarGuid() {
+            return this.avatarGuid_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
         public int getWeaponEntityId() {
             return this.weaponEntityId_;
         }
 
         @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
-        public long getAvatarGuid() {
-            return this.avatarGuid_;
+        public boolean hasAvatarAbilityInfo() {
+            return this.avatarAbilityInfo_ != null;
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
+        public AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo getAvatarAbilityInfo() {
+            return this.avatarAbilityInfo_ == null ? AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : this.avatarAbilityInfo_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
+        public AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getAvatarAbilityInfoOrBuilder() {
+            return getAvatarAbilityInfo();
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
+        public List<Integer> getBuffIdListList() {
+            return this.buffIdList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
+        public int getBuffIdListCount() {
+            return this.buffIdList_.size();
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
+        public int getBuffIdList(int index) {
+            return this.buffIdList_.getInt(index);
         }
 
         @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
@@ -302,36 +332,6 @@ public final class AvatarEnterSceneInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
-        public List<Integer> getBuffIdListList() {
-            return this.buffIdList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
-        public int getBuffIdListCount() {
-            return this.buffIdList_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
-        public int getBuffIdList(int index) {
-            return this.buffIdList_.getInt(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
-        public boolean hasAvatarAbilityInfo() {
-            return this.avatarAbilityInfo_ != null;
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
-        public AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo getAvatarAbilityInfo() {
-            return this.avatarAbilityInfo_ == null ? AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : this.avatarAbilityInfo_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
-        public AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getAvatarAbilityInfoOrBuilder() {
-            return getAvatarAbilityInfo();
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
         public long getWeaponGuid() {
             return this.weaponGuid_;
         }
@@ -355,30 +355,30 @@ public final class AvatarEnterSceneInfoOuterClass {
             if (this.avatarAbilityInfo_ != null) {
                 output.writeMessage(1, getAvatarAbilityInfo());
             }
-            if (this.weaponEntityId_ != 0) {
-                output.writeUInt32(5, this.weaponEntityId_);
-            }
-            if (this.weaponAbilityInfo_ != null) {
-                output.writeMessage(6, getWeaponAbilityInfo());
-            }
             for (int i = 0; i < this.serverBuffList_.size(); i++) {
-                output.writeMessage(7, this.serverBuffList_.get(i));
+                output.writeMessage(4, this.serverBuffList_.get(i));
             }
             if (getBuffIdListList().size() > 0) {
-                output.writeUInt32NoTag(66);
+                output.writeUInt32NoTag(58);
                 output.writeUInt32NoTag(this.buffIdListMemoizedSerializedSize);
             }
             for (int i2 = 0; i2 < this.buffIdList_.size(); i2++) {
                 output.writeUInt32NoTag(this.buffIdList_.getInt(i2));
             }
             if (this.avatarGuid_ != 0) {
-                output.writeUInt64(9, this.avatarGuid_);
+                output.writeUInt64(8, this.avatarGuid_);
             }
             if (this.avatarEntityId_ != 0) {
-                output.writeUInt32(13, this.avatarEntityId_);
+                output.writeUInt32(10, this.avatarEntityId_);
+            }
+            if (this.weaponAbilityInfo_ != null) {
+                output.writeMessage(11, getWeaponAbilityInfo());
+            }
+            if (this.weaponEntityId_ != 0) {
+                output.writeUInt32(13, this.weaponEntityId_);
             }
             if (this.weaponGuid_ != 0) {
-                output.writeUInt64(15, this.weaponGuid_);
+                output.writeUInt64(14, this.weaponGuid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -393,14 +393,8 @@ public final class AvatarEnterSceneInfoOuterClass {
             if (this.avatarAbilityInfo_ != null) {
                 size2 = 0 + CodedOutputStream.computeMessageSize(1, getAvatarAbilityInfo());
             }
-            if (this.weaponEntityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.weaponEntityId_);
-            }
-            if (this.weaponAbilityInfo_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(6, getWeaponAbilityInfo());
-            }
             for (int i = 0; i < this.serverBuffList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(7, this.serverBuffList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(4, this.serverBuffList_.get(i));
             }
             int dataSize = 0;
             for (int i2 = 0; i2 < this.buffIdList_.size(); i2++) {
@@ -412,13 +406,19 @@ public final class AvatarEnterSceneInfoOuterClass {
             }
             this.buffIdListMemoizedSerializedSize = dataSize;
             if (this.avatarGuid_ != 0) {
-                size3 += CodedOutputStream.computeUInt64Size(9, this.avatarGuid_);
+                size3 += CodedOutputStream.computeUInt64Size(8, this.avatarGuid_);
             }
             if (this.avatarEntityId_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(13, this.avatarEntityId_);
+                size3 += CodedOutputStream.computeUInt32Size(10, this.avatarEntityId_);
+            }
+            if (this.weaponAbilityInfo_ != null) {
+                size3 += CodedOutputStream.computeMessageSize(11, getWeaponAbilityInfo());
+            }
+            if (this.weaponEntityId_ != 0) {
+                size3 += CodedOutputStream.computeUInt32Size(13, this.weaponEntityId_);
             }
             if (this.weaponGuid_ != 0) {
-                size3 += CodedOutputStream.computeUInt64Size(15, this.weaponGuid_);
+                size3 += CodedOutputStream.computeUInt64Size(14, this.weaponGuid_);
             }
             int size4 = size3 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size4;
@@ -434,11 +434,11 @@ public final class AvatarEnterSceneInfoOuterClass {
                 return equals(obj);
             }
             AvatarEnterSceneInfo other = (AvatarEnterSceneInfo) obj;
-            if (getWeaponEntityId() != other.getWeaponEntityId() || getAvatarGuid() != other.getAvatarGuid() || getAvatarEntityId() != other.getAvatarEntityId() || !getServerBuffListList().equals(other.getServerBuffListList()) || hasWeaponAbilityInfo() != other.hasWeaponAbilityInfo()) {
+            if (getAvatarGuid() != other.getAvatarGuid() || getWeaponEntityId() != other.getWeaponEntityId() || hasAvatarAbilityInfo() != other.hasAvatarAbilityInfo()) {
                 return false;
             }
-            if ((!hasWeaponAbilityInfo() || getWeaponAbilityInfo().equals(other.getWeaponAbilityInfo())) && getBuffIdListList().equals(other.getBuffIdListList()) && hasAvatarAbilityInfo() == other.hasAvatarAbilityInfo()) {
-                return (!hasAvatarAbilityInfo() || getAvatarAbilityInfo().equals(other.getAvatarAbilityInfo())) && getWeaponGuid() == other.getWeaponGuid() && this.unknownFields.equals(other.unknownFields);
+            if ((!hasAvatarAbilityInfo() || getAvatarAbilityInfo().equals(other.getAvatarAbilityInfo())) && getBuffIdListList().equals(other.getBuffIdListList()) && getAvatarEntityId() == other.getAvatarEntityId() && getServerBuffListList().equals(other.getServerBuffListList()) && hasWeaponAbilityInfo() == other.hasWeaponAbilityInfo()) {
+                return (!hasWeaponAbilityInfo() || getWeaponAbilityInfo().equals(other.getWeaponAbilityInfo())) && getWeaponGuid() == other.getWeaponGuid() && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -448,22 +448,23 @@ public final class AvatarEnterSceneInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getWeaponEntityId())) + 9)) + Internal.hashLong(getAvatarGuid()))) + 13)) + getAvatarEntityId();
-            if (getServerBuffListCount() > 0) {
-                hash = (53 * ((37 * hash) + 7)) + getServerBuffListList().hashCode();
-            }
-            if (hasWeaponAbilityInfo()) {
-                hash = (53 * ((37 * hash) + 6)) + getWeaponAbilityInfo().hashCode();
-            }
-            if (getBuffIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 8)) + getBuffIdListList().hashCode();
-            }
+            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + Internal.hashLong(getAvatarGuid()))) + 13)) + getWeaponEntityId();
             if (hasAvatarAbilityInfo()) {
                 hash = (53 * ((37 * hash) + 1)) + getAvatarAbilityInfo().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 15)) + Internal.hashLong(getWeaponGuid()))) + this.unknownFields.hashCode();
-            this.memoizedHashCode = hash2;
-            return hash2;
+            if (getBuffIdListCount() > 0) {
+                hash = (53 * ((37 * hash) + 7)) + getBuffIdListList().hashCode();
+            }
+            int hash2 = (53 * ((37 * hash) + 10)) + getAvatarEntityId();
+            if (getServerBuffListCount() > 0) {
+                hash2 = (53 * ((37 * hash2) + 4)) + getServerBuffListList().hashCode();
+            }
+            if (hasWeaponAbilityInfo()) {
+                hash2 = (53 * ((37 * hash2) + 11)) + getWeaponAbilityInfo().hashCode();
+            }
+            int hash3 = (29 * ((53 * ((37 * hash2) + 14)) + Internal.hashLong(getWeaponGuid()))) + this.unknownFields.hashCode();
+            this.memoizedHashCode = hash3;
+            return hash3;
         }
 
         public static AvatarEnterSceneInfo parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
@@ -541,17 +542,17 @@ public final class AvatarEnterSceneInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarEnterSceneInfoOuterClass$AvatarEnterSceneInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements AvatarEnterSceneInfoOrBuilder {
             private int bitField0_;
-            private int weaponEntityId_;
             private long avatarGuid_;
+            private int weaponEntityId_;
+            private AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo avatarAbilityInfo_;
+            private SingleFieldBuilderV3<AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo, AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder, AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder> avatarAbilityInfoBuilder_;
             private int avatarEntityId_;
             private RepeatedFieldBuilderV3<ServerBuffOuterClass.ServerBuff, ServerBuffOuterClass.ServerBuff.Builder, ServerBuffOuterClass.ServerBuffOrBuilder> serverBuffListBuilder_;
             private AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo weaponAbilityInfo_;
             private SingleFieldBuilderV3<AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo, AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder, AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder> weaponAbilityInfoBuilder_;
-            private AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo avatarAbilityInfo_;
-            private SingleFieldBuilderV3<AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo, AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder, AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder> avatarAbilityInfoBuilder_;
             private long weaponGuid_;
-            private List<ServerBuffOuterClass.ServerBuff> serverBuffList_ = Collections.emptyList();
             private Internal.IntList buffIdList_ = AvatarEnterSceneInfo.emptyIntList();
+            private List<ServerBuffOuterClass.ServerBuff> serverBuffList_ = Collections.emptyList();
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return AvatarEnterSceneInfoOuterClass.internal_static_AvatarEnterSceneInfo_descriptor;
@@ -580,12 +581,20 @@ public final class AvatarEnterSceneInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.weaponEntityId_ = 0;
                 this.avatarGuid_ = 0;
+                this.weaponEntityId_ = 0;
+                if (this.avatarAbilityInfoBuilder_ == null) {
+                    this.avatarAbilityInfo_ = null;
+                } else {
+                    this.avatarAbilityInfo_ = null;
+                    this.avatarAbilityInfoBuilder_ = null;
+                }
+                this.buffIdList_ = AvatarEnterSceneInfo.emptyIntList();
+                this.bitField0_ &= -2;
                 this.avatarEntityId_ = 0;
                 if (this.serverBuffListBuilder_ == null) {
                     this.serverBuffList_ = Collections.emptyList();
-                    this.bitField0_ &= -2;
+                    this.bitField0_ &= -3;
                 } else {
                     this.serverBuffListBuilder_.clear();
                 }
@@ -594,14 +603,6 @@ public final class AvatarEnterSceneInfoOuterClass {
                 } else {
                     this.weaponAbilityInfo_ = null;
                     this.weaponAbilityInfoBuilder_ = null;
-                }
-                this.buffIdList_ = AvatarEnterSceneInfo.emptyIntList();
-                this.bitField0_ &= -3;
-                if (this.avatarAbilityInfoBuilder_ == null) {
-                    this.avatarAbilityInfo_ = null;
-                } else {
-                    this.avatarAbilityInfo_ = null;
-                    this.avatarAbilityInfoBuilder_ = null;
                 }
                 this.weaponGuid_ = 0;
                 return this;
@@ -630,13 +631,23 @@ public final class AvatarEnterSceneInfoOuterClass {
             public AvatarEnterSceneInfo buildPartial() {
                 AvatarEnterSceneInfo result = new AvatarEnterSceneInfo(this);
                 int i = this.bitField0_;
-                result.weaponEntityId_ = this.weaponEntityId_;
                 result.avatarGuid_ = this.avatarGuid_;
+                result.weaponEntityId_ = this.weaponEntityId_;
+                if (this.avatarAbilityInfoBuilder_ == null) {
+                    result.avatarAbilityInfo_ = this.avatarAbilityInfo_;
+                } else {
+                    result.avatarAbilityInfo_ = this.avatarAbilityInfoBuilder_.build();
+                }
+                if ((this.bitField0_ & 1) != 0) {
+                    this.buffIdList_.makeImmutable();
+                    this.bitField0_ &= -2;
+                }
+                result.buffIdList_ = this.buffIdList_;
                 result.avatarEntityId_ = this.avatarEntityId_;
                 if (this.serverBuffListBuilder_ == null) {
-                    if ((this.bitField0_ & 1) != 0) {
+                    if ((this.bitField0_ & 2) != 0) {
                         this.serverBuffList_ = Collections.unmodifiableList(this.serverBuffList_);
-                        this.bitField0_ &= -2;
+                        this.bitField0_ &= -3;
                     }
                     result.serverBuffList_ = this.serverBuffList_;
                 } else {
@@ -646,16 +657,6 @@ public final class AvatarEnterSceneInfoOuterClass {
                     result.weaponAbilityInfo_ = this.weaponAbilityInfo_;
                 } else {
                     result.weaponAbilityInfo_ = this.weaponAbilityInfoBuilder_.build();
-                }
-                if ((this.bitField0_ & 2) != 0) {
-                    this.buffIdList_.makeImmutable();
-                    this.bitField0_ &= -3;
-                }
-                result.buffIdList_ = this.buffIdList_;
-                if (this.avatarAbilityInfoBuilder_ == null) {
-                    result.avatarAbilityInfo_ = this.avatarAbilityInfo_;
-                } else {
-                    result.avatarAbilityInfo_ = this.avatarAbilityInfoBuilder_.build();
                 }
                 result.weaponGuid_ = this.weaponGuid_;
                 onBuilt();
@@ -705,11 +706,24 @@ public final class AvatarEnterSceneInfoOuterClass {
                 if (other == AvatarEnterSceneInfo.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getAvatarGuid() != 0) {
+                    setAvatarGuid(other.getAvatarGuid());
+                }
                 if (other.getWeaponEntityId() != 0) {
                     setWeaponEntityId(other.getWeaponEntityId());
                 }
-                if (other.getAvatarGuid() != 0) {
-                    setAvatarGuid(other.getAvatarGuid());
+                if (other.hasAvatarAbilityInfo()) {
+                    mergeAvatarAbilityInfo(other.getAvatarAbilityInfo());
+                }
+                if (!other.buffIdList_.isEmpty()) {
+                    if (this.buffIdList_.isEmpty()) {
+                        this.buffIdList_ = other.buffIdList_;
+                        this.bitField0_ &= -2;
+                    } else {
+                        ensureBuffIdListIsMutable();
+                        this.buffIdList_.addAll(other.buffIdList_);
+                    }
+                    onChanged();
                 }
                 if (other.getAvatarEntityId() != 0) {
                     setAvatarEntityId(other.getAvatarEntityId());
@@ -718,7 +732,7 @@ public final class AvatarEnterSceneInfoOuterClass {
                     if (!other.serverBuffList_.isEmpty()) {
                         if (this.serverBuffList_.isEmpty()) {
                             this.serverBuffList_ = other.serverBuffList_;
-                            this.bitField0_ &= -2;
+                            this.bitField0_ &= -3;
                         } else {
                             ensureServerBuffListIsMutable();
                             this.serverBuffList_.addAll(other.serverBuffList_);
@@ -730,7 +744,7 @@ public final class AvatarEnterSceneInfoOuterClass {
                         this.serverBuffListBuilder_.dispose();
                         this.serverBuffListBuilder_ = null;
                         this.serverBuffList_ = other.serverBuffList_;
-                        this.bitField0_ &= -2;
+                        this.bitField0_ &= -3;
                         this.serverBuffListBuilder_ = AvatarEnterSceneInfo.alwaysUseFieldBuilders ? getServerBuffListFieldBuilder() : null;
                     } else {
                         this.serverBuffListBuilder_.addAllMessages(other.serverBuffList_);
@@ -738,19 +752,6 @@ public final class AvatarEnterSceneInfoOuterClass {
                 }
                 if (other.hasWeaponAbilityInfo()) {
                     mergeWeaponAbilityInfo(other.getWeaponAbilityInfo());
-                }
-                if (!other.buffIdList_.isEmpty()) {
-                    if (this.buffIdList_.isEmpty()) {
-                        this.buffIdList_ = other.buffIdList_;
-                        this.bitField0_ &= -3;
-                    } else {
-                        ensureBuffIdListIsMutable();
-                        this.buffIdList_.addAll(other.buffIdList_);
-                    }
-                    onChanged();
-                }
-                if (other.hasAvatarAbilityInfo()) {
-                    mergeAvatarAbilityInfo(other.getAvatarAbilityInfo());
                 }
                 if (other.getWeaponGuid() != 0) {
                     setWeaponGuid(other.getWeaponGuid());
@@ -788,6 +789,23 @@ public final class AvatarEnterSceneInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
+            public long getAvatarGuid() {
+                return this.avatarGuid_;
+            }
+
+            public Builder setAvatarGuid(long value) {
+                this.avatarGuid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearAvatarGuid() {
+                this.avatarGuid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
             public int getWeaponEntityId() {
                 return this.weaponEntityId_;
             }
@@ -805,18 +823,132 @@ public final class AvatarEnterSceneInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
-            public long getAvatarGuid() {
-                return this.avatarGuid_;
+            public boolean hasAvatarAbilityInfo() {
+                return (this.avatarAbilityInfoBuilder_ == null && this.avatarAbilityInfo_ == null) ? false : true;
             }
 
-            public Builder setAvatarGuid(long value) {
-                this.avatarGuid_ = value;
+            @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
+            public AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo getAvatarAbilityInfo() {
+                if (this.avatarAbilityInfoBuilder_ == null) {
+                    return this.avatarAbilityInfo_ == null ? AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : this.avatarAbilityInfo_;
+                }
+                return this.avatarAbilityInfoBuilder_.getMessage();
+            }
+
+            public Builder setAvatarAbilityInfo(AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo value) {
+                if (this.avatarAbilityInfoBuilder_ != null) {
+                    this.avatarAbilityInfoBuilder_.setMessage(value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    this.avatarAbilityInfo_ = value;
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder setAvatarAbilityInfo(AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder builderForValue) {
+                if (this.avatarAbilityInfoBuilder_ == null) {
+                    this.avatarAbilityInfo_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    this.avatarAbilityInfoBuilder_.setMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder mergeAvatarAbilityInfo(AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo value) {
+                if (this.avatarAbilityInfoBuilder_ == null) {
+                    if (this.avatarAbilityInfo_ != null) {
+                        this.avatarAbilityInfo_ = AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.newBuilder(this.avatarAbilityInfo_).mergeFrom(value).buildPartial();
+                    } else {
+                        this.avatarAbilityInfo_ = value;
+                    }
+                    onChanged();
+                } else {
+                    this.avatarAbilityInfoBuilder_.mergeFrom(value);
+                }
+                return this;
+            }
+
+            public Builder clearAvatarAbilityInfo() {
+                if (this.avatarAbilityInfoBuilder_ == null) {
+                    this.avatarAbilityInfo_ = null;
+                    onChanged();
+                } else {
+                    this.avatarAbilityInfo_ = null;
+                    this.avatarAbilityInfoBuilder_ = null;
+                }
+                return this;
+            }
+
+            public AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder getAvatarAbilityInfoBuilder() {
+                onChanged();
+                return getAvatarAbilityInfoFieldBuilder().getBuilder();
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
+            public AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getAvatarAbilityInfoOrBuilder() {
+                if (this.avatarAbilityInfoBuilder_ != null) {
+                    return this.avatarAbilityInfoBuilder_.getMessageOrBuilder();
+                }
+                return this.avatarAbilityInfo_ == null ? AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : this.avatarAbilityInfo_;
+            }
+
+            private SingleFieldBuilderV3<AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo, AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder, AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder> getAvatarAbilityInfoFieldBuilder() {
+                if (this.avatarAbilityInfoBuilder_ == null) {
+                    this.avatarAbilityInfoBuilder_ = new SingleFieldBuilderV3<>(getAvatarAbilityInfo(), getParentForChildren(), isClean());
+                    this.avatarAbilityInfo_ = null;
+                }
+                return this.avatarAbilityInfoBuilder_;
+            }
+
+            private void ensureBuffIdListIsMutable() {
+                if ((this.bitField0_ & 1) == 0) {
+                    this.buffIdList_ = AvatarEnterSceneInfo.mutableCopy(this.buffIdList_);
+                    this.bitField0_ |= 1;
+                }
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
+            public List<Integer> getBuffIdListList() {
+                return (this.bitField0_ & 1) != 0 ? Collections.unmodifiableList(this.buffIdList_) : this.buffIdList_;
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
+            public int getBuffIdListCount() {
+                return this.buffIdList_.size();
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
+            public int getBuffIdList(int index) {
+                return this.buffIdList_.getInt(index);
+            }
+
+            public Builder setBuffIdList(int index, int value) {
+                ensureBuffIdListIsMutable();
+                this.buffIdList_.setInt(index, value);
                 onChanged();
                 return this;
             }
 
-            public Builder clearAvatarGuid() {
-                this.avatarGuid_ = 0;
+            public Builder addBuffIdList(int value) {
+                ensureBuffIdListIsMutable();
+                this.buffIdList_.addInt(value);
+                onChanged();
+                return this;
+            }
+
+            public Builder addAllBuffIdList(Iterable<? extends Integer> values) {
+                ensureBuffIdListIsMutable();
+                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.buffIdList_);
+                onChanged();
+                return this;
+            }
+
+            public Builder clearBuffIdList() {
+                this.buffIdList_ = AvatarEnterSceneInfo.emptyIntList();
+                this.bitField0_ &= -2;
                 onChanged();
                 return this;
             }
@@ -839,9 +971,9 @@ public final class AvatarEnterSceneInfoOuterClass {
             }
 
             private void ensureServerBuffListIsMutable() {
-                if ((this.bitField0_ & 1) == 0) {
+                if ((this.bitField0_ & 2) == 0) {
                     this.serverBuffList_ = new ArrayList(this.serverBuffList_);
-                    this.bitField0_ |= 1;
+                    this.bitField0_ |= 2;
                 }
             }
 
@@ -955,7 +1087,7 @@ public final class AvatarEnterSceneInfoOuterClass {
             public Builder clearServerBuffList() {
                 if (this.serverBuffListBuilder_ == null) {
                     this.serverBuffList_ = Collections.emptyList();
-                    this.bitField0_ &= -2;
+                    this.bitField0_ &= -3;
                     onChanged();
                 } else {
                     this.serverBuffListBuilder_.clear();
@@ -1008,7 +1140,7 @@ public final class AvatarEnterSceneInfoOuterClass {
 
             private RepeatedFieldBuilderV3<ServerBuffOuterClass.ServerBuff, ServerBuffOuterClass.ServerBuff.Builder, ServerBuffOuterClass.ServerBuffOrBuilder> getServerBuffListFieldBuilder() {
                 if (this.serverBuffListBuilder_ == null) {
-                    this.serverBuffListBuilder_ = new RepeatedFieldBuilderV3<>(this.serverBuffList_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
+                    this.serverBuffListBuilder_ = new RepeatedFieldBuilderV3<>(this.serverBuffList_, (this.bitField0_ & 2) != 0, getParentForChildren(), isClean());
                     this.serverBuffList_ = null;
                 }
                 return this.serverBuffListBuilder_;
@@ -1093,137 +1225,6 @@ public final class AvatarEnterSceneInfoOuterClass {
                     this.weaponAbilityInfo_ = null;
                 }
                 return this.weaponAbilityInfoBuilder_;
-            }
-
-            private void ensureBuffIdListIsMutable() {
-                if ((this.bitField0_ & 2) == 0) {
-                    this.buffIdList_ = AvatarEnterSceneInfo.mutableCopy(this.buffIdList_);
-                    this.bitField0_ |= 2;
-                }
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
-            public List<Integer> getBuffIdListList() {
-                return (this.bitField0_ & 2) != 0 ? Collections.unmodifiableList(this.buffIdList_) : this.buffIdList_;
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
-            public int getBuffIdListCount() {
-                return this.buffIdList_.size();
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
-            public int getBuffIdList(int index) {
-                return this.buffIdList_.getInt(index);
-            }
-
-            public Builder setBuffIdList(int index, int value) {
-                ensureBuffIdListIsMutable();
-                this.buffIdList_.setInt(index, value);
-                onChanged();
-                return this;
-            }
-
-            public Builder addBuffIdList(int value) {
-                ensureBuffIdListIsMutable();
-                this.buffIdList_.addInt(value);
-                onChanged();
-                return this;
-            }
-
-            public Builder addAllBuffIdList(Iterable<? extends Integer> values) {
-                ensureBuffIdListIsMutable();
-                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.buffIdList_);
-                onChanged();
-                return this;
-            }
-
-            public Builder clearBuffIdList() {
-                this.buffIdList_ = AvatarEnterSceneInfo.emptyIntList();
-                this.bitField0_ &= -3;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
-            public boolean hasAvatarAbilityInfo() {
-                return (this.avatarAbilityInfoBuilder_ == null && this.avatarAbilityInfo_ == null) ? false : true;
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
-            public AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo getAvatarAbilityInfo() {
-                if (this.avatarAbilityInfoBuilder_ == null) {
-                    return this.avatarAbilityInfo_ == null ? AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : this.avatarAbilityInfo_;
-                }
-                return this.avatarAbilityInfoBuilder_.getMessage();
-            }
-
-            public Builder setAvatarAbilityInfo(AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo value) {
-                if (this.avatarAbilityInfoBuilder_ != null) {
-                    this.avatarAbilityInfoBuilder_.setMessage(value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    this.avatarAbilityInfo_ = value;
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder setAvatarAbilityInfo(AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder builderForValue) {
-                if (this.avatarAbilityInfoBuilder_ == null) {
-                    this.avatarAbilityInfo_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    this.avatarAbilityInfoBuilder_.setMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder mergeAvatarAbilityInfo(AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo value) {
-                if (this.avatarAbilityInfoBuilder_ == null) {
-                    if (this.avatarAbilityInfo_ != null) {
-                        this.avatarAbilityInfo_ = AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.newBuilder(this.avatarAbilityInfo_).mergeFrom(value).buildPartial();
-                    } else {
-                        this.avatarAbilityInfo_ = value;
-                    }
-                    onChanged();
-                } else {
-                    this.avatarAbilityInfoBuilder_.mergeFrom(value);
-                }
-                return this;
-            }
-
-            public Builder clearAvatarAbilityInfo() {
-                if (this.avatarAbilityInfoBuilder_ == null) {
-                    this.avatarAbilityInfo_ = null;
-                    onChanged();
-                } else {
-                    this.avatarAbilityInfo_ = null;
-                    this.avatarAbilityInfoBuilder_ = null;
-                }
-                return this;
-            }
-
-            public AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder getAvatarAbilityInfoBuilder() {
-                onChanged();
-                return getAvatarAbilityInfoFieldBuilder().getBuilder();
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder
-            public AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getAvatarAbilityInfoOrBuilder() {
-                if (this.avatarAbilityInfoBuilder_ != null) {
-                    return this.avatarAbilityInfoBuilder_.getMessageOrBuilder();
-                }
-                return this.avatarAbilityInfo_ == null ? AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : this.avatarAbilityInfo_;
-            }
-
-            private SingleFieldBuilderV3<AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo, AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder, AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder> getAvatarAbilityInfoFieldBuilder() {
-                if (this.avatarAbilityInfoBuilder_ == null) {
-                    this.avatarAbilityInfoBuilder_ = new SingleFieldBuilderV3<>(getAvatarAbilityInfo(), getParentForChildren(), isClean());
-                    this.avatarAbilityInfo_ = null;
-                }
-                return this.avatarAbilityInfoBuilder_;
             }
 
             @Override // emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfoOrBuilder

@@ -10,27 +10,27 @@ public final class UByteKt {
     @WasExperimental(markerClass = {ExperimentalUnsignedTypes.class})
     @InlineOnly
     private static final byte toUByte(byte $this$toUByte) {
-        return UByte.m7122constructorimpl($this$toUByte);
+        return UByte.m7119constructorimpl($this$toUByte);
     }
 
     @SinceKotlin(version = "1.5")
     @WasExperimental(markerClass = {ExperimentalUnsignedTypes.class})
     @InlineOnly
     private static final byte toUByte(short $this$toUByte) {
-        return UByte.m7122constructorimpl((byte) $this$toUByte);
+        return UByte.m7119constructorimpl((byte) $this$toUByte);
     }
 
     @SinceKotlin(version = "1.5")
     @WasExperimental(markerClass = {ExperimentalUnsignedTypes.class})
     @InlineOnly
     private static final byte toUByte(int $this$toUByte) {
-        return UByte.m7122constructorimpl((byte) $this$toUByte);
+        return UByte.m7119constructorimpl((byte) $this$toUByte);
     }
 
     @SinceKotlin(version = "1.5")
     @WasExperimental(markerClass = {ExperimentalUnsignedTypes.class})
     @InlineOnly
     private static final byte toUByte(long $this$toUByte) {
-        return UByte.m7122constructorimpl((byte) ((int) $this$toUByte));
+        return UByte.m7119constructorimpl((byte) ((int) $this$toUByte));
     }
 }

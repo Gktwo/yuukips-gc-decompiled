@@ -227,7 +227,7 @@ public final class HashingSink extends ForwardingSink implements Sink {
     @JvmName(name = "-deprecated_hash")
     @NotNull
     /* renamed from: -deprecated_hash  reason: not valid java name */
-    public final ByteString m9394deprecated_hash() {
+    public final ByteString m9391deprecated_hash() {
         return hash();
     }
 

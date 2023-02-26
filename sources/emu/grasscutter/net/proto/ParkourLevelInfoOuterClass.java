@@ -22,23 +22,23 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ParkourLevelInfoOuterClass.class */
 public final class ParkourLevelInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016ParkourLevelInfo.proto\u001a\fVector.proto\"a\n\u0010ParkourLevelInfo\u0012\u0014\n\u0003pos\u0018\u0002 \u0001(\u000b2\u0007.Vector\u0012\u000f\n\u0007is_open\u0018\u0007 \u0001(\b\u0012\u0013\n\u000bbest_record\u0018\u000e \u0001(\r\u0012\u0011\n\topen_time\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016ParkourLevelInfo.proto\u001a\fVector.proto\"^\n\u0010ParkourLevelInfo\u0012\u0010\n\bopenTime\u0018\n \u0001(\r\u0012\u0014\n\u0003pos\u0018\u0005 \u0001(\u000b2\u0007.Vector\u0012\u0012\n\nbestRecord\u0018\u0001 \u0001(\r\u0012\u000e\n\u0006isOpen\u0018\f \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ParkourLevelInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ParkourLevelInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ParkourLevelInfo_descriptor, new String[]{"Pos", "IsOpen", "BestRecord", "OpenTime"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ParkourLevelInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ParkourLevelInfo_descriptor, new String[]{"OpenTime", "Pos", "BestRecord", "IsOpen"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ParkourLevelInfoOuterClass$ParkourLevelInfoOrBuilder.class */
     public interface ParkourLevelInfoOrBuilder extends MessageOrBuilder {
+        int getOpenTime();
+
         boolean hasPos();
 
         VectorOuterClass.Vector getPos();
 
         VectorOuterClass.VectorOrBuilder getPosOrBuilder();
 
-        boolean getIsOpen();
-
         int getBestRecord();
 
-        int getOpenTime();
+        boolean getIsOpen();
     }
 
     private ParkourLevelInfoOuterClass() {
@@ -54,14 +54,14 @@ public final class ParkourLevelInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ParkourLevelInfoOuterClass$ParkourLevelInfo.class */
     public static final class ParkourLevelInfo extends GeneratedMessageV3 implements ParkourLevelInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int POS_FIELD_NUMBER = 2;
-        private VectorOuterClass.Vector pos_;
-        public static final int IS_OPEN_FIELD_NUMBER = 7;
-        private boolean isOpen_;
-        public static final int BEST_RECORD_FIELD_NUMBER = 14;
-        private int bestRecord_;
-        public static final int OPEN_TIME_FIELD_NUMBER = 4;
+        public static final int OPENTIME_FIELD_NUMBER = 10;
         private int openTime_;
+        public static final int POS_FIELD_NUMBER = 5;
+        private VectorOuterClass.Vector pos_;
+        public static final int BESTRECORD_FIELD_NUMBER = 1;
+        private int bestRecord_;
+        public static final int ISOPEN_FIELD_NUMBER = 12;
+        private boolean isOpen_;
         private byte memoizedIsInitialized;
         private static final ParkourLevelInfo DEFAULT_INSTANCE = new ParkourLevelInfo();
         private static final Parser<ParkourLevelInfo> PARSER = new AbstractParser<ParkourLevelInfo>() { // from class: emu.grasscutter.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfo.1
@@ -107,7 +107,10 @@ public final class ParkourLevelInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 18:
+                            case 8:
+                                this.bestRecord_ = input.readUInt32();
+                                break;
+                            case 42:
                                 VectorOuterClass.Vector.Builder subBuilder = this.pos_ != null ? this.pos_.toBuilder() : null;
                                 this.pos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -117,14 +120,11 @@ public final class ParkourLevelInfoOuterClass {
                                     this.pos_ = subBuilder.buildPartial();
                                     break;
                                 }
-                            case 32:
+                            case 80:
                                 this.openTime_ = input.readUInt32();
                                 break;
-                            case 56:
+                            case 96:
                                 this.isOpen_ = input.readBool();
-                                break;
-                            case 112:
-                                this.bestRecord_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -156,6 +156,11 @@ public final class ParkourLevelInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfoOrBuilder
+        public int getOpenTime() {
+            return this.openTime_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfoOrBuilder
         public boolean hasPos() {
             return this.pos_ != null;
         }
@@ -171,18 +176,13 @@ public final class ParkourLevelInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfoOrBuilder
-        public boolean getIsOpen() {
-            return this.isOpen_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfoOrBuilder
         public int getBestRecord() {
             return this.bestRecord_;
         }
 
         @Override // emu.grasscutter.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfoOrBuilder
-        public int getOpenTime() {
-            return this.openTime_;
+        public boolean getIsOpen() {
+            return this.isOpen_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -200,17 +200,17 @@ public final class ParkourLevelInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.bestRecord_ != 0) {
+                output.writeUInt32(1, this.bestRecord_);
+            }
             if (this.pos_ != null) {
-                output.writeMessage(2, getPos());
+                output.writeMessage(5, getPos());
             }
             if (this.openTime_ != 0) {
-                output.writeUInt32(4, this.openTime_);
+                output.writeUInt32(10, this.openTime_);
             }
             if (this.isOpen_) {
-                output.writeBool(7, this.isOpen_);
-            }
-            if (this.bestRecord_ != 0) {
-                output.writeUInt32(14, this.bestRecord_);
+                output.writeBool(12, this.isOpen_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -222,17 +222,17 @@ public final class ParkourLevelInfoOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.bestRecord_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.bestRecord_);
+            }
             if (this.pos_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(2, getPos());
+                size2 += CodedOutputStream.computeMessageSize(5, getPos());
             }
             if (this.openTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(4, this.openTime_);
+                size2 += CodedOutputStream.computeUInt32Size(10, this.openTime_);
             }
             if (this.isOpen_) {
-                size2 += CodedOutputStream.computeBoolSize(7, this.isOpen_);
-            }
-            if (this.bestRecord_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.bestRecord_);
+                size2 += CodedOutputStream.computeBoolSize(12, this.isOpen_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -248,10 +248,10 @@ public final class ParkourLevelInfoOuterClass {
                 return equals(obj);
             }
             ParkourLevelInfo other = (ParkourLevelInfo) obj;
-            if (hasPos() != other.hasPos()) {
-                return false;
+            if (getOpenTime() == other.getOpenTime() && hasPos() == other.hasPos()) {
+                return (!hasPos() || getPos().equals(other.getPos())) && getBestRecord() == other.getBestRecord() && getIsOpen() == other.getIsOpen() && this.unknownFields.equals(other.unknownFields);
             }
-            return (!hasPos() || getPos().equals(other.getPos())) && getIsOpen() == other.getIsOpen() && getBestRecord() == other.getBestRecord() && getOpenTime() == other.getOpenTime() && this.unknownFields.equals(other.unknownFields);
+            return false;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -259,11 +259,11 @@ public final class ParkourLevelInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getOpenTime();
             if (hasPos()) {
-                hash = (53 * ((37 * hash) + 2)) + getPos().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getPos().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 7)) + Internal.hashBoolean(getIsOpen()))) + 14)) + getBestRecord())) + 4)) + getOpenTime())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 1)) + getBestRecord())) + 12)) + Internal.hashBoolean(getIsOpen()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -342,11 +342,11 @@ public final class ParkourLevelInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ParkourLevelInfoOuterClass$ParkourLevelInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ParkourLevelInfoOrBuilder {
+            private int openTime_;
             private VectorOuterClass.Vector pos_;
             private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> posBuilder_;
-            private boolean isOpen_;
             private int bestRecord_;
-            private int openTime_;
+            private boolean isOpen_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ParkourLevelInfoOuterClass.internal_static_ParkourLevelInfo_descriptor;
@@ -374,15 +374,15 @@ public final class ParkourLevelInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.openTime_ = 0;
                 if (this.posBuilder_ == null) {
                     this.pos_ = null;
                 } else {
                     this.pos_ = null;
                     this.posBuilder_ = null;
                 }
-                this.isOpen_ = false;
                 this.bestRecord_ = 0;
-                this.openTime_ = 0;
+                this.isOpen_ = false;
                 return this;
             }
 
@@ -408,14 +408,14 @@ public final class ParkourLevelInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public ParkourLevelInfo buildPartial() {
                 ParkourLevelInfo result = new ParkourLevelInfo(this);
+                result.openTime_ = this.openTime_;
                 if (this.posBuilder_ == null) {
                     result.pos_ = this.pos_;
                 } else {
                     result.pos_ = this.posBuilder_.build();
                 }
-                result.isOpen_ = this.isOpen_;
                 result.bestRecord_ = this.bestRecord_;
-                result.openTime_ = this.openTime_;
+                result.isOpen_ = this.isOpen_;
                 onBuilt();
                 return result;
             }
@@ -463,17 +463,17 @@ public final class ParkourLevelInfoOuterClass {
                 if (other == ParkourLevelInfo.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getOpenTime() != 0) {
+                    setOpenTime(other.getOpenTime());
+                }
                 if (other.hasPos()) {
                     mergePos(other.getPos());
-                }
-                if (other.getIsOpen()) {
-                    setIsOpen(other.getIsOpen());
                 }
                 if (other.getBestRecord() != 0) {
                     setBestRecord(other.getBestRecord());
                 }
-                if (other.getOpenTime() != 0) {
-                    setOpenTime(other.getOpenTime());
+                if (other.getIsOpen()) {
+                    setIsOpen(other.getIsOpen());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -505,6 +505,23 @@ public final class ParkourLevelInfoOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfoOrBuilder
+            public int getOpenTime() {
+                return this.openTime_;
+            }
+
+            public Builder setOpenTime(int value) {
+                this.openTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearOpenTime() {
+                this.openTime_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfoOrBuilder
@@ -589,23 +606,6 @@ public final class ParkourLevelInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfoOrBuilder
-            public boolean getIsOpen() {
-                return this.isOpen_;
-            }
-
-            public Builder setIsOpen(boolean value) {
-                this.isOpen_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsOpen() {
-                this.isOpen_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfoOrBuilder
             public int getBestRecord() {
                 return this.bestRecord_;
             }
@@ -623,18 +623,18 @@ public final class ParkourLevelInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfoOrBuilder
-            public int getOpenTime() {
-                return this.openTime_;
+            public boolean getIsOpen() {
+                return this.isOpen_;
             }
 
-            public Builder setOpenTime(int value) {
-                this.openTime_ = value;
+            public Builder setIsOpen(boolean value) {
+                this.isOpen_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearOpenTime() {
-                this.openTime_ = 0;
+            public Builder clearIsOpen() {
+                this.isOpen_ = false;
                 onChanged();
                 return this;
             }

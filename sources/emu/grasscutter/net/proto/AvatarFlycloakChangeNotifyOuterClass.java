@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarFlycloakChangeNotifyOuterClass.class */
 public final class AvatarFlycloakChangeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n AvatarFlycloakChangeNotify.proto\"F\n\u001aAvatarFlycloakChangeNotify\u0012\u0013\n\u000bflycloak_id\u0018\u0001 \u0001(\r\u0012\u0013\n\u000bavatar_guid\u0018\r \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n AvatarFlycloakChangeNotify.proto\"D\n\u001aAvatarFlycloakChangeNotify\u0012\u0012\n\nflycloakId\u0018\u0004 \u0001(\r\u0012\u0012\n\navatarGuid\u0018\f \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AvatarFlycloakChangeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarFlycloakChangeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarFlycloakChangeNotify_descriptor, new String[]{"FlycloakId", "AvatarGuid"});
 
@@ -44,9 +44,9 @@ public final class AvatarFlycloakChangeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarFlycloakChangeNotifyOuterClass$AvatarFlycloakChangeNotify.class */
     public static final class AvatarFlycloakChangeNotify extends GeneratedMessageV3 implements AvatarFlycloakChangeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int FLYCLOAK_ID_FIELD_NUMBER = 1;
+        public static final int FLYCLOAKID_FIELD_NUMBER = 4;
         private int flycloakId_;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 13;
+        public static final int AVATARGUID_FIELD_NUMBER = 12;
         private long avatarGuid_;
         private byte memoizedIsInitialized;
         private static final AvatarFlycloakChangeNotify DEFAULT_INSTANCE = new AvatarFlycloakChangeNotify();
@@ -93,10 +93,10 @@ public final class AvatarFlycloakChangeNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
+                            case 32:
                                 this.flycloakId_ = input.readUInt32();
                                 break;
-                            case 104:
+                            case 96:
                                 this.avatarGuid_ = input.readUInt64();
                                 break;
                             default:
@@ -154,10 +154,10 @@ public final class AvatarFlycloakChangeNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.flycloakId_ != 0) {
-                output.writeUInt32(1, this.flycloakId_);
+                output.writeUInt32(4, this.flycloakId_);
             }
             if (this.avatarGuid_ != 0) {
-                output.writeUInt64(13, this.avatarGuid_);
+                output.writeUInt64(12, this.avatarGuid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -170,10 +170,10 @@ public final class AvatarFlycloakChangeNotifyOuterClass {
             }
             int size2 = 0;
             if (this.flycloakId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.flycloakId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.flycloakId_);
             }
             if (this.avatarGuid_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(13, this.avatarGuid_);
+                size2 += CodedOutputStream.computeUInt64Size(12, this.avatarGuid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -197,7 +197,7 @@ public final class AvatarFlycloakChangeNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getFlycloakId())) + 13)) + Internal.hashLong(getAvatarGuid()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getFlycloakId())) + 12)) + Internal.hashLong(getAvatarGuid()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

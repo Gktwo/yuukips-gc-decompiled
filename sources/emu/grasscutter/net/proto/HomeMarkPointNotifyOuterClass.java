@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeMarkPointNotifyOuterClass.class */
 public final class HomeMarkPointNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019HomeMarkPointNotify.proto\u001a\u001cHomeMarkPointSceneData.proto\"L\n\u0013HomeMarkPointNotify\u00125\n\u0014mark_point_data_list\u0018\u000b \u0003(\u000b2\u0017.HomeMarkPointSceneDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeMarkPointSceneDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019HomeMarkPointNotify.proto\u001a\u001cHomeMarkPointSceneData.proto\"I\n\u0013HomeMarkPointNotify\u00122\n\u0011markPointDataList\u0018\u000b \u0003(\u000b2\u0017.HomeMarkPointSceneDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeMarkPointSceneDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_HomeMarkPointNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeMarkPointNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeMarkPointNotify_descriptor, new String[]{"MarkPointDataList"});
 
@@ -55,7 +55,7 @@ public final class HomeMarkPointNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeMarkPointNotifyOuterClass$HomeMarkPointNotify.class */
     public static final class HomeMarkPointNotify extends GeneratedMessageV3 implements HomeMarkPointNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MARK_POINT_DATA_LIST_FIELD_NUMBER = 11;
+        public static final int MARKPOINTDATALIST_FIELD_NUMBER = 11;
         private List<HomeMarkPointSceneDataOuterClass.HomeMarkPointSceneData> markPointDataList_;
         private byte memoizedIsInitialized;
         private static final HomeMarkPointNotify DEFAULT_INSTANCE = new HomeMarkPointNotify();

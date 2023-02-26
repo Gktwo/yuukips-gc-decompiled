@@ -1,6 +1,5 @@
 package p014it.unimi.dsi.fastutil.chars;
 
-import emu.grasscutter.net.proto.ActivityInfoOuterClass;
 import java.io.Serializable;
 import java.util.Random;
 import java.util.concurrent.ExecutorCompletionService;
@@ -290,16 +289,16 @@ public final class CharArrays {
         private final int from;
 
         /* renamed from: to */
-        private final int f1490to;
+        private final int f1454to;
 
         /* renamed from: x */
-        private final char[] f1491x;
+        private final char[] f1455x;
         private final CharComparator comp;
 
         public ForkJoinQuickSortComp(char[] x, int from, int to, CharComparator comp) {
             this.from = from;
-            this.f1490to = to;
-            this.f1491x = x;
+            this.f1454to = to;
+            this.f1455x = x;
             this.comp = comp;
         }
 
@@ -307,20 +306,20 @@ public final class CharArrays {
         protected void compute() {
             int comparison;
             int comparison2;
-            char[] x = this.f1491x;
-            int len = this.f1490to - this.from;
+            char[] x = this.f1455x;
+            int len = this.f1454to - this.from;
             if (len < 8192) {
-                CharArrays.quickSort(x, this.from, this.f1490to, this.comp);
+                CharArrays.quickSort(x, this.from, this.f1454to, this.comp);
                 return;
             }
             int m = this.from + (len / 2);
             int l = this.from;
-            int n = this.f1490to - 1;
+            int n = this.f1454to - 1;
             int s = len / 8;
             char v = x[CharArrays.med3(x, CharArrays.med3(x, l, l + s, l + (2 * s), this.comp), CharArrays.med3(x, m - s, m, m + s, this.comp), CharArrays.med3(x, n - (2 * s), n - s, n, this.comp), this.comp)];
             int a = this.from;
             int b = a;
-            int c = this.f1490to - 1;
+            int c = this.f1454to - 1;
             int d = c;
             while (true) {
                 if (b > c || (comparison2 = this.comp.compare(x[b], v)) > 0) {
@@ -347,16 +346,16 @@ public final class CharArrays {
             }
             int s2 = Math.min(a - this.from, b - a);
             CharArrays.swap(x, this.from, b - s2, s2);
-            int s3 = Math.min(d - c, (this.f1490to - d) - 1);
-            CharArrays.swap(x, b, this.f1490to - s3, s3);
+            int s3 = Math.min(d - c, (this.f1454to - d) - 1);
+            CharArrays.swap(x, b, this.f1454to - s3, s3);
             int s4 = b - a;
             int t = d - c;
             if (s4 > 1 && t > 1) {
-                invokeAll(new ForkJoinQuickSortComp(x, this.from, this.from + s4, this.comp), new ForkJoinQuickSortComp(x, this.f1490to - t, this.f1490to, this.comp));
+                invokeAll(new ForkJoinQuickSortComp(x, this.from, this.from + s4, this.comp), new ForkJoinQuickSortComp(x, this.f1454to - t, this.f1454to, this.comp));
             } else if (s4 > 1) {
                 invokeAll(new ForkJoinTask[]{new ForkJoinQuickSortComp(x, this.from, this.from + s4, this.comp)});
             } else {
-                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSortComp(x, this.f1490to - t, this.f1490to, this.comp)});
+                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSortComp(x, this.f1454to - t, this.f1454to, this.comp)});
             }
         }
     }
@@ -496,35 +495,35 @@ public final class CharArrays {
         private final int from;
 
         /* renamed from: to */
-        private final int f1485to;
+        private final int f1449to;
 
         /* renamed from: x */
-        private final char[] f1486x;
+        private final char[] f1450x;
 
         public ForkJoinQuickSort(char[] x, int from, int to) {
             this.from = from;
-            this.f1485to = to;
-            this.f1486x = x;
+            this.f1449to = to;
+            this.f1450x = x;
         }
 
         @Override // java.util.concurrent.RecursiveAction
         protected void compute() {
             int comparison;
             int comparison2;
-            char[] x = this.f1486x;
-            int len = this.f1485to - this.from;
+            char[] x = this.f1450x;
+            int len = this.f1449to - this.from;
             if (len < 8192) {
-                CharArrays.quickSort(x, this.from, this.f1485to);
+                CharArrays.quickSort(x, this.from, this.f1449to);
                 return;
             }
             int m = this.from + (len / 2);
             int l = this.from;
-            int n = this.f1485to - 1;
+            int n = this.f1449to - 1;
             int s = len / 8;
             char v = x[CharArrays.med3(x, CharArrays.med3(x, l, l + s, l + (2 * s)), CharArrays.med3(x, m - s, m, m + s), CharArrays.med3(x, n - (2 * s), n - s, n))];
             int a = this.from;
             int b = a;
-            int c = this.f1485to - 1;
+            int c = this.f1449to - 1;
             int d = c;
             while (true) {
                 if (b > c || (comparison2 = Character.compare(x[b], v)) > 0) {
@@ -551,16 +550,16 @@ public final class CharArrays {
             }
             int s2 = Math.min(a - this.from, b - a);
             CharArrays.swap(x, this.from, b - s2, s2);
-            int s3 = Math.min(d - c, (this.f1485to - d) - 1);
-            CharArrays.swap(x, b, this.f1485to - s3, s3);
+            int s3 = Math.min(d - c, (this.f1449to - d) - 1);
+            CharArrays.swap(x, b, this.f1449to - s3, s3);
             int s4 = b - a;
             int t = d - c;
             if (s4 > 1 && t > 1) {
-                invokeAll(new ForkJoinQuickSort(x, this.from, this.from + s4), new ForkJoinQuickSort(x, this.f1485to - t, this.f1485to));
+                invokeAll(new ForkJoinQuickSort(x, this.from, this.from + s4), new ForkJoinQuickSort(x, this.f1449to - t, this.f1449to));
             } else if (s4 > 1) {
                 invokeAll(new ForkJoinTask[]{new ForkJoinQuickSort(x, this.from, this.from + s4)});
             } else {
-                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSort(x, this.f1485to - t, this.f1485to)});
+                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSort(x, this.f1449to - t, this.f1449to)});
             }
         }
     }
@@ -687,16 +686,16 @@ public final class CharArrays {
         private final int from;
 
         /* renamed from: to */
-        private final int f1492to;
+        private final int f1456to;
         private final int[] perm;
 
         /* renamed from: x */
-        private final char[] f1493x;
+        private final char[] f1457x;
 
         public ForkJoinQuickSortIndirect(int[] perm, char[] x, int from, int to) {
             this.from = from;
-            this.f1492to = to;
-            this.f1493x = x;
+            this.f1456to = to;
+            this.f1457x = x;
             this.perm = perm;
         }
 
@@ -704,20 +703,20 @@ public final class CharArrays {
         protected void compute() {
             int comparison;
             int comparison2;
-            char[] x = this.f1493x;
-            int len = this.f1492to - this.from;
+            char[] x = this.f1457x;
+            int len = this.f1456to - this.from;
             if (len < 8192) {
-                CharArrays.quickSortIndirect(this.perm, x, this.from, this.f1492to);
+                CharArrays.quickSortIndirect(this.perm, x, this.from, this.f1456to);
                 return;
             }
             int m = this.from + (len / 2);
             int l = this.from;
-            int n = this.f1492to - 1;
+            int n = this.f1456to - 1;
             int s = len / 8;
             char v = x[this.perm[CharArrays.med3Indirect(this.perm, x, CharArrays.med3Indirect(this.perm, x, l, l + s, l + (2 * s)), CharArrays.med3Indirect(this.perm, x, m - s, m, m + s), CharArrays.med3Indirect(this.perm, x, n - (2 * s), n - s, n))]];
             int a = this.from;
             int b = a;
-            int c = this.f1492to - 1;
+            int c = this.f1456to - 1;
             int d = c;
             while (true) {
                 if (b > c || (comparison2 = Character.compare(x[this.perm[b]], v)) > 0) {
@@ -744,16 +743,16 @@ public final class CharArrays {
             }
             int s2 = Math.min(a - this.from, b - a);
             IntArrays.swap(this.perm, this.from, b - s2, s2);
-            int s3 = Math.min(d - c, (this.f1492to - d) - 1);
-            IntArrays.swap(this.perm, b, this.f1492to - s3, s3);
+            int s3 = Math.min(d - c, (this.f1456to - d) - 1);
+            IntArrays.swap(this.perm, b, this.f1456to - s3, s3);
             int s4 = b - a;
             int t = d - c;
             if (s4 > 1 && t > 1) {
-                invokeAll(new ForkJoinQuickSortIndirect(this.perm, x, this.from, this.from + s4), new ForkJoinQuickSortIndirect(this.perm, x, this.f1492to - t, this.f1492to));
+                invokeAll(new ForkJoinQuickSortIndirect(this.perm, x, this.from, this.from + s4), new ForkJoinQuickSortIndirect(this.perm, x, this.f1456to - t, this.f1456to));
             } else if (s4 > 1) {
                 invokeAll(new ForkJoinTask[]{new ForkJoinQuickSortIndirect(this.perm, x, this.from, this.from + s4)});
             } else {
-                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSortIndirect(this.perm, x, this.f1492to - t, this.f1492to)});
+                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSortIndirect(this.perm, x, this.f1456to - t, this.f1456to)});
             }
         }
     }
@@ -922,40 +921,40 @@ public final class CharArrays {
         private final int from;
 
         /* renamed from: to */
-        private final int f1487to;
+        private final int f1451to;
 
         /* renamed from: x */
-        private final char[] f1488x;
+        private final char[] f1452x;
 
         /* renamed from: y */
-        private final char[] f1489y;
+        private final char[] f1453y;
 
         public ForkJoinQuickSort2(char[] x, char[] y, int from, int to) {
             this.from = from;
-            this.f1487to = to;
-            this.f1488x = x;
-            this.f1489y = y;
+            this.f1451to = to;
+            this.f1452x = x;
+            this.f1453y = y;
         }
 
         @Override // java.util.concurrent.RecursiveAction
         protected void compute() {
-            char[] x = this.f1488x;
-            char[] y = this.f1489y;
-            int len = this.f1487to - this.from;
+            char[] x = this.f1452x;
+            char[] y = this.f1453y;
+            int len = this.f1451to - this.from;
             if (len < 8192) {
-                CharArrays.quickSort(x, y, this.from, this.f1487to);
+                CharArrays.quickSort(x, y, this.from, this.f1451to);
                 return;
             }
             int m = this.from + (len / 2);
             int l = this.from;
-            int n = this.f1487to - 1;
+            int n = this.f1451to - 1;
             int s = len / 8;
             int m2 = CharArrays.med3(x, y, CharArrays.med3(x, y, l, l + s, l + (2 * s)), CharArrays.med3(x, y, m - s, m, m + s), CharArrays.med3(x, y, n - (2 * s), n - s, n));
             char v = x[m2];
             char w = y[m2];
             int a = this.from;
             int b = a;
-            int c = this.f1487to - 1;
+            int c = this.f1451to - 1;
             int d = c;
             while (true) {
                 if (b <= c) {
@@ -990,16 +989,16 @@ public final class CharArrays {
             }
             int s2 = Math.min(a - this.from, b - a);
             CharArrays.swap(x, y, this.from, b - s2, s2);
-            int s3 = Math.min(d - c, (this.f1487to - d) - 1);
-            CharArrays.swap(x, y, b, this.f1487to - s3, s3);
+            int s3 = Math.min(d - c, (this.f1451to - d) - 1);
+            CharArrays.swap(x, y, b, this.f1451to - s3, s3);
             int s4 = b - a;
             int t3 = d - c;
             if (s4 > 1 && t3 > 1) {
-                invokeAll(new ForkJoinQuickSort2(x, y, this.from, this.from + s4), new ForkJoinQuickSort2(x, y, this.f1487to - t3, this.f1487to));
+                invokeAll(new ForkJoinQuickSort2(x, y, this.from, this.from + s4), new ForkJoinQuickSort2(x, y, this.f1451to - t3, this.f1451to));
             } else if (s4 > 1) {
                 invokeAll(new ForkJoinTask[]{new ForkJoinQuickSort2(x, y, this.from, this.from + s4)});
             } else {
-                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSort2(x, y, this.f1487to - t3, this.f1487to)});
+                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSort2(x, y, this.f1451to - t3, this.f1451to)});
             }
         }
     }
@@ -1019,7 +1018,7 @@ public final class CharArrays {
     }
 
     public static void unstableSort(char[] a, int from, int to) {
-        if (to - from >= 2000) {
+        if (to - from >= RADIX_SORT_MIN_THRESHOLD) {
             radixSort(a, from, to);
         } else {
             quickSort(a, from, to);
@@ -1653,9 +1652,9 @@ public final class CharArrays {
             quickSort(a, b, from, to);
             return;
         }
-        int[] offsetStack = new int[ActivityInfoOuterClass.ActivityInfo.MOONFIN_TRIAL_INFO_FIELD_NUMBER];
-        int[] lengthStack = new int[ActivityInfoOuterClass.ActivityInfo.MOONFIN_TRIAL_INFO_FIELD_NUMBER];
-        int[] levelStack = new int[ActivityInfoOuterClass.ActivityInfo.MOONFIN_TRIAL_INFO_FIELD_NUMBER];
+        int[] offsetStack = new int[766];
+        int[] lengthStack = new int[766];
+        int[] levelStack = new int[766];
         offsetStack[0] = from;
         lengthStack[0] = to - from;
         int stackPos = 0 + 1;
@@ -1888,9 +1887,9 @@ public final class CharArrays {
             insertionSortIndirect(perm, a, b, from, to);
             return;
         }
-        int[] offsetStack = new int[ActivityInfoOuterClass.ActivityInfo.MOONFIN_TRIAL_INFO_FIELD_NUMBER];
-        int[] lengthStack = new int[ActivityInfoOuterClass.ActivityInfo.MOONFIN_TRIAL_INFO_FIELD_NUMBER];
-        int[] levelStack = new int[ActivityInfoOuterClass.ActivityInfo.MOONFIN_TRIAL_INFO_FIELD_NUMBER];
+        int[] offsetStack = new int[766];
+        int[] lengthStack = new int[766];
+        int[] levelStack = new int[766];
         offsetStack[0] = from;
         lengthStack[0] = to - from;
         int stackPos = 0 + 1;

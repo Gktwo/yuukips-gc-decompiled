@@ -23,21 +23,21 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarTeamOuterClass.class */
 public final class AvatarTeamOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010AvatarTeam.proto\"9\n\nAvatarTeam\u0012\u0018\n\u0010avatar_guid_list\u0018\r \u0003(\u0004\u0012\u0011\n\tteam_name\u0018\u0004 \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010AvatarTeam.proto\"6\n\nAvatarTeam\u0012\u0010\n\bteamName\u0018\u000b \u0001(\t\u0012\u0016\n\u000eavatarGuidList\u0018\u0005 \u0003(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AvatarTeam_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarTeam_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarTeam_descriptor, new String[]{"AvatarGuidList", "TeamName"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarTeam_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarTeam_descriptor, new String[]{"TeamName", "AvatarGuidList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarTeamOuterClass$AvatarTeamOrBuilder.class */
     public interface AvatarTeamOrBuilder extends MessageOrBuilder {
+        String getTeamName();
+
+        ByteString getTeamNameBytes();
+
         List<Long> getAvatarGuidListList();
 
         int getAvatarGuidListCount();
 
         long getAvatarGuidList(int i);
-
-        String getTeamName();
-
-        ByteString getTeamNameBytes();
     }
 
     private AvatarTeamOuterClass() {
@@ -53,11 +53,11 @@ public final class AvatarTeamOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarTeamOuterClass$AvatarTeam.class */
     public static final class AvatarTeam extends GeneratedMessageV3 implements AvatarTeamOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_GUID_LIST_FIELD_NUMBER = 13;
+        public static final int TEAMNAME_FIELD_NUMBER = 11;
+        private volatile Object teamName_;
+        public static final int AVATARGUIDLIST_FIELD_NUMBER = 5;
         private Internal.LongList avatarGuidList_;
         private int avatarGuidListMemoizedSerializedSize;
-        public static final int TEAM_NAME_FIELD_NUMBER = 4;
-        private volatile Object teamName_;
         private byte memoizedIsInitialized;
         private static final AvatarTeam DEFAULT_INSTANCE = new AvatarTeam();
         private static final Parser<AvatarTeam> PARSER = new AbstractParser<AvatarTeam>() { // from class: emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeam.1
@@ -76,8 +76,8 @@ public final class AvatarTeamOuterClass {
         private AvatarTeam() {
             this.avatarGuidListMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
-            this.avatarGuidList_ = emptyLongList();
             this.teamName_ = "";
+            this.avatarGuidList_ = emptyLongList();
         }
 
         /* access modifiers changed from: protected */
@@ -109,17 +109,14 @@ public final class AvatarTeamOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 34:
-                                this.teamName_ = input.readStringRequireUtf8();
-                                break;
-                            case 104:
+                            case 40:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.avatarGuidList_ = newLongList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.avatarGuidList_.addLong(input.readUInt64());
                                 break;
-                            case 106:
+                            case 42:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.avatarGuidList_ = newLongList();
@@ -129,6 +126,9 @@ public final class AvatarTeamOuterClass {
                                     this.avatarGuidList_.addLong(input.readUInt64());
                                 }
                                 input.popLimit(limit);
+                                break;
+                            case 90:
+                                this.teamName_ = input.readStringRequireUtf8();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -163,21 +163,6 @@ public final class AvatarTeamOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeamOrBuilder
-        public List<Long> getAvatarGuidListList() {
-            return this.avatarGuidList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeamOrBuilder
-        public int getAvatarGuidListCount() {
-            return this.avatarGuidList_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeamOrBuilder
-        public long getAvatarGuidList(int index) {
-            return this.avatarGuidList_.getLong(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeamOrBuilder
         public String getTeamName() {
             Object ref = this.teamName_;
             if (ref instanceof String) {
@@ -199,6 +184,21 @@ public final class AvatarTeamOuterClass {
             return b;
         }
 
+        @Override // emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeamOrBuilder
+        public List<Long> getAvatarGuidListList() {
+            return this.avatarGuidList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeamOrBuilder
+        public int getAvatarGuidListCount() {
+            return this.avatarGuidList_.size();
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeamOrBuilder
+        public long getAvatarGuidList(int index) {
+            return this.avatarGuidList_.getLong(index);
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -215,15 +215,15 @@ public final class AvatarTeamOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (!GeneratedMessageV3.isStringEmpty(this.teamName_)) {
-                GeneratedMessageV3.writeString(output, 4, this.teamName_);
-            }
             if (getAvatarGuidListList().size() > 0) {
-                output.writeUInt32NoTag(106);
+                output.writeUInt32NoTag(42);
                 output.writeUInt32NoTag(this.avatarGuidListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.avatarGuidList_.size(); i++) {
                 output.writeUInt64NoTag(this.avatarGuidList_.getLong(i));
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.teamName_)) {
+                GeneratedMessageV3.writeString(output, 11, this.teamName_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -234,22 +234,21 @@ public final class AvatarTeamOuterClass {
             if (size != -1) {
                 return size;
             }
-            int size2 = 0;
-            if (!GeneratedMessageV3.isStringEmpty(this.teamName_)) {
-                size2 = 0 + GeneratedMessageV3.computeStringSize(4, this.teamName_);
-            }
             int dataSize = 0;
             for (int i = 0; i < this.avatarGuidList_.size(); i++) {
                 dataSize += CodedOutputStream.computeUInt64SizeNoTag(this.avatarGuidList_.getLong(i));
             }
-            int size3 = size2 + dataSize;
+            int size2 = 0 + dataSize;
             if (!getAvatarGuidListList().isEmpty()) {
-                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.avatarGuidListMemoizedSerializedSize = dataSize;
-            int size4 = size3 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size4;
-            return size4;
+            if (!GeneratedMessageV3.isStringEmpty(this.teamName_)) {
+                size2 += GeneratedMessageV3.computeStringSize(11, this.teamName_);
+            }
+            int size3 = size2 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size3;
+            return size3;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -261,7 +260,7 @@ public final class AvatarTeamOuterClass {
                 return equals(obj);
             }
             AvatarTeam other = (AvatarTeam) obj;
-            return getAvatarGuidListList().equals(other.getAvatarGuidListList()) && getTeamName().equals(other.getTeamName()) && this.unknownFields.equals(other.unknownFields);
+            return getTeamName().equals(other.getTeamName()) && getAvatarGuidListList().equals(other.getAvatarGuidListList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -269,11 +268,11 @@ public final class AvatarTeamOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getTeamName().hashCode();
             if (getAvatarGuidListCount() > 0) {
-                hash = (53 * ((37 * hash) + 13)) + getAvatarGuidListList().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getAvatarGuidListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 4)) + getTeamName().hashCode())) + this.unknownFields.hashCode();
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -353,8 +352,8 @@ public final class AvatarTeamOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarTeamOuterClass$AvatarTeam$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements AvatarTeamOrBuilder {
             private int bitField0_;
-            private Internal.LongList avatarGuidList_ = AvatarTeam.emptyLongList();
             private Object teamName_ = "";
+            private Internal.LongList avatarGuidList_ = AvatarTeam.emptyLongList();
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return AvatarTeamOuterClass.internal_static_AvatarTeam_descriptor;
@@ -382,9 +381,9 @@ public final class AvatarTeamOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.teamName_ = "";
                 this.avatarGuidList_ = AvatarTeam.emptyLongList();
                 this.bitField0_ &= -2;
-                this.teamName_ = "";
                 return this;
             }
 
@@ -411,12 +410,12 @@ public final class AvatarTeamOuterClass {
             public AvatarTeam buildPartial() {
                 AvatarTeam result = new AvatarTeam(this);
                 int i = this.bitField0_;
+                result.teamName_ = this.teamName_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.avatarGuidList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.avatarGuidList_ = this.avatarGuidList_;
-                result.teamName_ = this.teamName_;
                 onBuilt();
                 return result;
             }
@@ -464,6 +463,10 @@ public final class AvatarTeamOuterClass {
                 if (other == AvatarTeam.getDefaultInstance()) {
                     return this;
                 }
+                if (!other.getTeamName().isEmpty()) {
+                    this.teamName_ = other.teamName_;
+                    onChanged();
+                }
                 if (!other.avatarGuidList_.isEmpty()) {
                     if (this.avatarGuidList_.isEmpty()) {
                         this.avatarGuidList_ = other.avatarGuidList_;
@@ -472,10 +475,6 @@ public final class AvatarTeamOuterClass {
                         ensureAvatarGuidListIsMutable();
                         this.avatarGuidList_.addAll(other.avatarGuidList_);
                     }
-                    onChanged();
-                }
-                if (!other.getTeamName().isEmpty()) {
-                    this.teamName_ = other.teamName_;
                     onChanged();
                 }
                 mergeUnknownFields(other.unknownFields);
@@ -508,6 +507,53 @@ public final class AvatarTeamOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeamOrBuilder
+            public String getTeamName() {
+                Object ref = this.teamName_;
+                if (ref instanceof String) {
+                    return (String) ref;
+                }
+                String s = ((ByteString) ref).toStringUtf8();
+                this.teamName_ = s;
+                return s;
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeamOrBuilder
+            public ByteString getTeamNameBytes() {
+                Object ref = this.teamName_;
+                if (!(ref instanceof String)) {
+                    return (ByteString) ref;
+                }
+                ByteString b = ByteString.copyFromUtf8((String) ref);
+                this.teamName_ = b;
+                return b;
+            }
+
+            public Builder setTeamName(String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.teamName_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearTeamName() {
+                this.teamName_ = AvatarTeam.getDefaultInstance().getTeamName();
+                onChanged();
+                return this;
+            }
+
+            public Builder setTeamNameBytes(ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                AvatarTeam.checkByteStringIsUtf8(value);
+                this.teamName_ = value;
+                onChanged();
+                return this;
             }
 
             private void ensureAvatarGuidListIsMutable() {
@@ -556,53 +602,6 @@ public final class AvatarTeamOuterClass {
             public Builder clearAvatarGuidList() {
                 this.avatarGuidList_ = AvatarTeam.emptyLongList();
                 this.bitField0_ &= -2;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeamOrBuilder
-            public String getTeamName() {
-                Object ref = this.teamName_;
-                if (ref instanceof String) {
-                    return (String) ref;
-                }
-                String s = ((ByteString) ref).toStringUtf8();
-                this.teamName_ = s;
-                return s;
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarTeamOuterClass.AvatarTeamOrBuilder
-            public ByteString getTeamNameBytes() {
-                Object ref = this.teamName_;
-                if (!(ref instanceof String)) {
-                    return (ByteString) ref;
-                }
-                ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.teamName_ = b;
-                return b;
-            }
-
-            public Builder setTeamName(String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.teamName_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearTeamName() {
-                this.teamName_ = AvatarTeam.getDefaultInstance().getTeamName();
-                onChanged();
-                return this;
-            }
-
-            public Builder setTeamNameBytes(ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                AvatarTeam.checkByteStringIsUtf8(value);
-                this.teamName_ = value;
                 onChanged();
                 return this;
             }

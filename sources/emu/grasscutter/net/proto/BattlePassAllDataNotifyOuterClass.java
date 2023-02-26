@@ -28,12 +28,20 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BattlePassAllDataNotifyOuterClass.class */
 public final class BattlePassAllDataNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dBattlePassAllDataNotify.proto\u001a\u0017BattlePassMission.proto\u001a\u0018BattlePassSchedule.proto\"\u0001\n\u0017BattlePassAllDataNotify\u0012(\n\fmission_list\u0018\u0001 \u0003(\u000b2\u0012.BattlePassMission\u0012)\n\fcur_schedule\u0018\n \u0001(\u000b2\u0013.BattlePassSchedule\u0012\u0019\n\u0011have_cur_schedule\u0018\u0003 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BattlePassMissionOuterClass.getDescriptor(), BattlePassScheduleOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dBattlePassAllDataNotify.proto\u001a\u0018BattlePassSchedule.proto\u001a\u0017BattlePassMission.proto\"\u0001\n\u0017BattlePassAllDataNotify\u0012\u0017\n\u000fhaveCurSchedule\u0018\u0006 \u0001(\b\u0012(\n\u000bcurSchedule\u0018\u000f \u0001(\u000b2\u0013.BattlePassSchedule\u0012'\n\u000bmissionList\u0018\u0003 \u0003(\u000b2\u0012.BattlePassMissionB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BattlePassScheduleOuterClass.getDescriptor(), BattlePassMissionOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_BattlePassAllDataNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_BattlePassAllDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BattlePassAllDataNotify_descriptor, new String[]{"MissionList", "CurSchedule", "HaveCurSchedule"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_BattlePassAllDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BattlePassAllDataNotify_descriptor, new String[]{"HaveCurSchedule", "CurSchedule", "MissionList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BattlePassAllDataNotifyOuterClass$BattlePassAllDataNotifyOrBuilder.class */
     public interface BattlePassAllDataNotifyOrBuilder extends MessageOrBuilder {
+        boolean getHaveCurSchedule();
+
+        boolean hasCurSchedule();
+
+        BattlePassScheduleOuterClass.BattlePassSchedule getCurSchedule();
+
+        BattlePassScheduleOuterClass.BattlePassScheduleOrBuilder getCurScheduleOrBuilder();
+
         List<BattlePassMissionOuterClass.BattlePassMission> getMissionListList();
 
         BattlePassMissionOuterClass.BattlePassMission getMissionList(int i);
@@ -43,14 +51,6 @@ public final class BattlePassAllDataNotifyOuterClass {
         List<? extends BattlePassMissionOuterClass.BattlePassMissionOrBuilder> getMissionListOrBuilderList();
 
         BattlePassMissionOuterClass.BattlePassMissionOrBuilder getMissionListOrBuilder(int i);
-
-        boolean hasCurSchedule();
-
-        BattlePassScheduleOuterClass.BattlePassSchedule getCurSchedule();
-
-        BattlePassScheduleOuterClass.BattlePassScheduleOrBuilder getCurScheduleOrBuilder();
-
-        boolean getHaveCurSchedule();
     }
 
     private BattlePassAllDataNotifyOuterClass() {
@@ -66,12 +66,12 @@ public final class BattlePassAllDataNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BattlePassAllDataNotifyOuterClass$BattlePassAllDataNotify.class */
     public static final class BattlePassAllDataNotify extends GeneratedMessageV3 implements BattlePassAllDataNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MISSION_LIST_FIELD_NUMBER = 1;
-        private List<BattlePassMissionOuterClass.BattlePassMission> missionList_;
-        public static final int CUR_SCHEDULE_FIELD_NUMBER = 10;
-        private BattlePassScheduleOuterClass.BattlePassSchedule curSchedule_;
-        public static final int HAVE_CUR_SCHEDULE_FIELD_NUMBER = 3;
+        public static final int HAVECURSCHEDULE_FIELD_NUMBER = 6;
         private boolean haveCurSchedule_;
+        public static final int CURSCHEDULE_FIELD_NUMBER = 15;
+        private BattlePassScheduleOuterClass.BattlePassSchedule curSchedule_;
+        public static final int MISSIONLIST_FIELD_NUMBER = 3;
+        private List<BattlePassMissionOuterClass.BattlePassMission> missionList_;
         private byte memoizedIsInitialized;
         private static final BattlePassAllDataNotify DEFAULT_INSTANCE = new BattlePassAllDataNotify();
         private static final Parser<BattlePassAllDataNotify> PARSER = new AbstractParser<BattlePassAllDataNotify>() { // from class: emu.grasscutter.net.proto.BattlePassAllDataNotifyOuterClass.BattlePassAllDataNotify.1
@@ -120,17 +120,17 @@ public final class BattlePassAllDataNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 10:
+                            case 26:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.missionList_ = new ArrayList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.missionList_.add((BattlePassMissionOuterClass.BattlePassMission) input.readMessage(BattlePassMissionOuterClass.BattlePassMission.parser(), extensionRegistry));
                                 break;
-                            case 24:
+                            case 48:
                                 this.haveCurSchedule_ = input.readBool();
                                 break;
-                            case 82:
+                            case 122:
                                 BattlePassScheduleOuterClass.BattlePassSchedule.Builder subBuilder = this.curSchedule_ != null ? this.curSchedule_.toBuilder() : null;
                                 this.curSchedule_ = (BattlePassScheduleOuterClass.BattlePassSchedule) input.readMessage(BattlePassScheduleOuterClass.BattlePassSchedule.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -173,6 +173,26 @@ public final class BattlePassAllDataNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.BattlePassAllDataNotifyOuterClass.BattlePassAllDataNotifyOrBuilder
+        public boolean getHaveCurSchedule() {
+            return this.haveCurSchedule_;
+        }
+
+        @Override // emu.grasscutter.net.proto.BattlePassAllDataNotifyOuterClass.BattlePassAllDataNotifyOrBuilder
+        public boolean hasCurSchedule() {
+            return this.curSchedule_ != null;
+        }
+
+        @Override // emu.grasscutter.net.proto.BattlePassAllDataNotifyOuterClass.BattlePassAllDataNotifyOrBuilder
+        public BattlePassScheduleOuterClass.BattlePassSchedule getCurSchedule() {
+            return this.curSchedule_ == null ? BattlePassScheduleOuterClass.BattlePassSchedule.getDefaultInstance() : this.curSchedule_;
+        }
+
+        @Override // emu.grasscutter.net.proto.BattlePassAllDataNotifyOuterClass.BattlePassAllDataNotifyOrBuilder
+        public BattlePassScheduleOuterClass.BattlePassScheduleOrBuilder getCurScheduleOrBuilder() {
+            return getCurSchedule();
+        }
+
+        @Override // emu.grasscutter.net.proto.BattlePassAllDataNotifyOuterClass.BattlePassAllDataNotifyOrBuilder
         public List<BattlePassMissionOuterClass.BattlePassMission> getMissionListList() {
             return this.missionList_;
         }
@@ -197,26 +217,6 @@ public final class BattlePassAllDataNotifyOuterClass {
             return this.missionList_.get(index);
         }
 
-        @Override // emu.grasscutter.net.proto.BattlePassAllDataNotifyOuterClass.BattlePassAllDataNotifyOrBuilder
-        public boolean hasCurSchedule() {
-            return this.curSchedule_ != null;
-        }
-
-        @Override // emu.grasscutter.net.proto.BattlePassAllDataNotifyOuterClass.BattlePassAllDataNotifyOrBuilder
-        public BattlePassScheduleOuterClass.BattlePassSchedule getCurSchedule() {
-            return this.curSchedule_ == null ? BattlePassScheduleOuterClass.BattlePassSchedule.getDefaultInstance() : this.curSchedule_;
-        }
-
-        @Override // emu.grasscutter.net.proto.BattlePassAllDataNotifyOuterClass.BattlePassAllDataNotifyOrBuilder
-        public BattlePassScheduleOuterClass.BattlePassScheduleOrBuilder getCurScheduleOrBuilder() {
-            return getCurSchedule();
-        }
-
-        @Override // emu.grasscutter.net.proto.BattlePassAllDataNotifyOuterClass.BattlePassAllDataNotifyOrBuilder
-        public boolean getHaveCurSchedule() {
-            return this.haveCurSchedule_;
-        }
-
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -233,13 +233,13 @@ public final class BattlePassAllDataNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.missionList_.size(); i++) {
-                output.writeMessage(1, this.missionList_.get(i));
+                output.writeMessage(3, this.missionList_.get(i));
             }
             if (this.haveCurSchedule_) {
-                output.writeBool(3, this.haveCurSchedule_);
+                output.writeBool(6, this.haveCurSchedule_);
             }
             if (this.curSchedule_ != null) {
-                output.writeMessage(10, getCurSchedule());
+                output.writeMessage(15, getCurSchedule());
             }
             this.unknownFields.writeTo(output);
         }
@@ -252,13 +252,13 @@ public final class BattlePassAllDataNotifyOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.missionList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(1, this.missionList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(3, this.missionList_.get(i));
             }
             if (this.haveCurSchedule_) {
-                size2 += CodedOutputStream.computeBoolSize(3, this.haveCurSchedule_);
+                size2 += CodedOutputStream.computeBoolSize(6, this.haveCurSchedule_);
             }
             if (this.curSchedule_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(10, getCurSchedule());
+                size2 += CodedOutputStream.computeMessageSize(15, getCurSchedule());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -274,8 +274,8 @@ public final class BattlePassAllDataNotifyOuterClass {
                 return equals(obj);
             }
             BattlePassAllDataNotify other = (BattlePassAllDataNotify) obj;
-            if (getMissionListList().equals(other.getMissionListList()) && hasCurSchedule() == other.hasCurSchedule()) {
-                return (!hasCurSchedule() || getCurSchedule().equals(other.getCurSchedule())) && getHaveCurSchedule() == other.getHaveCurSchedule() && this.unknownFields.equals(other.unknownFields);
+            if (getHaveCurSchedule() == other.getHaveCurSchedule() && hasCurSchedule() == other.hasCurSchedule()) {
+                return (!hasCurSchedule() || getCurSchedule().equals(other.getCurSchedule())) && getMissionListList().equals(other.getMissionListList()) && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -285,14 +285,14 @@ public final class BattlePassAllDataNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
-            if (getMissionListCount() > 0) {
-                hash = (53 * ((37 * hash) + 1)) + getMissionListList().hashCode();
-            }
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + Internal.hashBoolean(getHaveCurSchedule());
             if (hasCurSchedule()) {
-                hash = (53 * ((37 * hash) + 10)) + getCurSchedule().hashCode();
+                hash = (53 * ((37 * hash) + 15)) + getCurSchedule().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 3)) + Internal.hashBoolean(getHaveCurSchedule()))) + this.unknownFields.hashCode();
+            if (getMissionListCount() > 0) {
+                hash = (53 * ((37 * hash) + 3)) + getMissionListList().hashCode();
+            }
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -372,11 +372,11 @@ public final class BattlePassAllDataNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BattlePassAllDataNotifyOuterClass$BattlePassAllDataNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements BattlePassAllDataNotifyOrBuilder {
             private int bitField0_;
-            private List<BattlePassMissionOuterClass.BattlePassMission> missionList_ = Collections.emptyList();
-            private RepeatedFieldBuilderV3<BattlePassMissionOuterClass.BattlePassMission, BattlePassMissionOuterClass.BattlePassMission.Builder, BattlePassMissionOuterClass.BattlePassMissionOrBuilder> missionListBuilder_;
+            private boolean haveCurSchedule_;
             private BattlePassScheduleOuterClass.BattlePassSchedule curSchedule_;
             private SingleFieldBuilderV3<BattlePassScheduleOuterClass.BattlePassSchedule, BattlePassScheduleOuterClass.BattlePassSchedule.Builder, BattlePassScheduleOuterClass.BattlePassScheduleOrBuilder> curScheduleBuilder_;
-            private boolean haveCurSchedule_;
+            private List<BattlePassMissionOuterClass.BattlePassMission> missionList_ = Collections.emptyList();
+            private RepeatedFieldBuilderV3<BattlePassMissionOuterClass.BattlePassMission, BattlePassMissionOuterClass.BattlePassMission.Builder, BattlePassMissionOuterClass.BattlePassMissionOrBuilder> missionListBuilder_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return BattlePassAllDataNotifyOuterClass.internal_static_BattlePassAllDataNotify_descriptor;
@@ -405,19 +405,19 @@ public final class BattlePassAllDataNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                if (this.missionListBuilder_ == null) {
-                    this.missionList_ = Collections.emptyList();
-                    this.bitField0_ &= -2;
-                } else {
-                    this.missionListBuilder_.clear();
-                }
+                this.haveCurSchedule_ = false;
                 if (this.curScheduleBuilder_ == null) {
                     this.curSchedule_ = null;
                 } else {
                     this.curSchedule_ = null;
                     this.curScheduleBuilder_ = null;
                 }
-                this.haveCurSchedule_ = false;
+                if (this.missionListBuilder_ == null) {
+                    this.missionList_ = Collections.emptyList();
+                    this.bitField0_ &= -2;
+                } else {
+                    this.missionListBuilder_.clear();
+                }
                 return this;
             }
 
@@ -444,6 +444,12 @@ public final class BattlePassAllDataNotifyOuterClass {
             public BattlePassAllDataNotify buildPartial() {
                 BattlePassAllDataNotify result = new BattlePassAllDataNotify(this);
                 int i = this.bitField0_;
+                result.haveCurSchedule_ = this.haveCurSchedule_;
+                if (this.curScheduleBuilder_ == null) {
+                    result.curSchedule_ = this.curSchedule_;
+                } else {
+                    result.curSchedule_ = this.curScheduleBuilder_.build();
+                }
                 if (this.missionListBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
                         this.missionList_ = Collections.unmodifiableList(this.missionList_);
@@ -453,12 +459,6 @@ public final class BattlePassAllDataNotifyOuterClass {
                 } else {
                     result.missionList_ = this.missionListBuilder_.build();
                 }
-                if (this.curScheduleBuilder_ == null) {
-                    result.curSchedule_ = this.curSchedule_;
-                } else {
-                    result.curSchedule_ = this.curScheduleBuilder_.build();
-                }
-                result.haveCurSchedule_ = this.haveCurSchedule_;
                 onBuilt();
                 return result;
             }
@@ -506,6 +506,12 @@ public final class BattlePassAllDataNotifyOuterClass {
                 if (other == BattlePassAllDataNotify.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getHaveCurSchedule()) {
+                    setHaveCurSchedule(other.getHaveCurSchedule());
+                }
+                if (other.hasCurSchedule()) {
+                    mergeCurSchedule(other.getCurSchedule());
+                }
                 if (this.missionListBuilder_ == null) {
                     if (!other.missionList_.isEmpty()) {
                         if (this.missionList_.isEmpty()) {
@@ -527,12 +533,6 @@ public final class BattlePassAllDataNotifyOuterClass {
                     } else {
                         this.missionListBuilder_.addAllMessages(other.missionList_);
                     }
-                }
-                if (other.hasCurSchedule()) {
-                    mergeCurSchedule(other.getCurSchedule());
-                }
-                if (other.getHaveCurSchedule()) {
-                    setHaveCurSchedule(other.getHaveCurSchedule());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -564,6 +564,104 @@ public final class BattlePassAllDataNotifyOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.BattlePassAllDataNotifyOuterClass.BattlePassAllDataNotifyOrBuilder
+            public boolean getHaveCurSchedule() {
+                return this.haveCurSchedule_;
+            }
+
+            public Builder setHaveCurSchedule(boolean value) {
+                this.haveCurSchedule_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearHaveCurSchedule() {
+                this.haveCurSchedule_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.BattlePassAllDataNotifyOuterClass.BattlePassAllDataNotifyOrBuilder
+            public boolean hasCurSchedule() {
+                return (this.curScheduleBuilder_ == null && this.curSchedule_ == null) ? false : true;
+            }
+
+            @Override // emu.grasscutter.net.proto.BattlePassAllDataNotifyOuterClass.BattlePassAllDataNotifyOrBuilder
+            public BattlePassScheduleOuterClass.BattlePassSchedule getCurSchedule() {
+                if (this.curScheduleBuilder_ == null) {
+                    return this.curSchedule_ == null ? BattlePassScheduleOuterClass.BattlePassSchedule.getDefaultInstance() : this.curSchedule_;
+                }
+                return this.curScheduleBuilder_.getMessage();
+            }
+
+            public Builder setCurSchedule(BattlePassScheduleOuterClass.BattlePassSchedule value) {
+                if (this.curScheduleBuilder_ != null) {
+                    this.curScheduleBuilder_.setMessage(value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    this.curSchedule_ = value;
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder setCurSchedule(BattlePassScheduleOuterClass.BattlePassSchedule.Builder builderForValue) {
+                if (this.curScheduleBuilder_ == null) {
+                    this.curSchedule_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    this.curScheduleBuilder_.setMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder mergeCurSchedule(BattlePassScheduleOuterClass.BattlePassSchedule value) {
+                if (this.curScheduleBuilder_ == null) {
+                    if (this.curSchedule_ != null) {
+                        this.curSchedule_ = BattlePassScheduleOuterClass.BattlePassSchedule.newBuilder(this.curSchedule_).mergeFrom(value).buildPartial();
+                    } else {
+                        this.curSchedule_ = value;
+                    }
+                    onChanged();
+                } else {
+                    this.curScheduleBuilder_.mergeFrom(value);
+                }
+                return this;
+            }
+
+            public Builder clearCurSchedule() {
+                if (this.curScheduleBuilder_ == null) {
+                    this.curSchedule_ = null;
+                    onChanged();
+                } else {
+                    this.curSchedule_ = null;
+                    this.curScheduleBuilder_ = null;
+                }
+                return this;
+            }
+
+            public BattlePassScheduleOuterClass.BattlePassSchedule.Builder getCurScheduleBuilder() {
+                onChanged();
+                return getCurScheduleFieldBuilder().getBuilder();
+            }
+
+            @Override // emu.grasscutter.net.proto.BattlePassAllDataNotifyOuterClass.BattlePassAllDataNotifyOrBuilder
+            public BattlePassScheduleOuterClass.BattlePassScheduleOrBuilder getCurScheduleOrBuilder() {
+                if (this.curScheduleBuilder_ != null) {
+                    return this.curScheduleBuilder_.getMessageOrBuilder();
+                }
+                return this.curSchedule_ == null ? BattlePassScheduleOuterClass.BattlePassSchedule.getDefaultInstance() : this.curSchedule_;
+            }
+
+            private SingleFieldBuilderV3<BattlePassScheduleOuterClass.BattlePassSchedule, BattlePassScheduleOuterClass.BattlePassSchedule.Builder, BattlePassScheduleOuterClass.BattlePassScheduleOrBuilder> getCurScheduleFieldBuilder() {
+                if (this.curScheduleBuilder_ == null) {
+                    this.curScheduleBuilder_ = new SingleFieldBuilderV3<>(getCurSchedule(), getParentForChildren(), isClean());
+                    this.curSchedule_ = null;
+                }
+                return this.curScheduleBuilder_;
             }
 
             private void ensureMissionListIsMutable() {
@@ -742,104 +840,6 @@ public final class BattlePassAllDataNotifyOuterClass {
                 return this.missionListBuilder_;
             }
 
-            @Override // emu.grasscutter.net.proto.BattlePassAllDataNotifyOuterClass.BattlePassAllDataNotifyOrBuilder
-            public boolean hasCurSchedule() {
-                return (this.curScheduleBuilder_ == null && this.curSchedule_ == null) ? false : true;
-            }
-
-            @Override // emu.grasscutter.net.proto.BattlePassAllDataNotifyOuterClass.BattlePassAllDataNotifyOrBuilder
-            public BattlePassScheduleOuterClass.BattlePassSchedule getCurSchedule() {
-                if (this.curScheduleBuilder_ == null) {
-                    return this.curSchedule_ == null ? BattlePassScheduleOuterClass.BattlePassSchedule.getDefaultInstance() : this.curSchedule_;
-                }
-                return this.curScheduleBuilder_.getMessage();
-            }
-
-            public Builder setCurSchedule(BattlePassScheduleOuterClass.BattlePassSchedule value) {
-                if (this.curScheduleBuilder_ != null) {
-                    this.curScheduleBuilder_.setMessage(value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    this.curSchedule_ = value;
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder setCurSchedule(BattlePassScheduleOuterClass.BattlePassSchedule.Builder builderForValue) {
-                if (this.curScheduleBuilder_ == null) {
-                    this.curSchedule_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    this.curScheduleBuilder_.setMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder mergeCurSchedule(BattlePassScheduleOuterClass.BattlePassSchedule value) {
-                if (this.curScheduleBuilder_ == null) {
-                    if (this.curSchedule_ != null) {
-                        this.curSchedule_ = BattlePassScheduleOuterClass.BattlePassSchedule.newBuilder(this.curSchedule_).mergeFrom(value).buildPartial();
-                    } else {
-                        this.curSchedule_ = value;
-                    }
-                    onChanged();
-                } else {
-                    this.curScheduleBuilder_.mergeFrom(value);
-                }
-                return this;
-            }
-
-            public Builder clearCurSchedule() {
-                if (this.curScheduleBuilder_ == null) {
-                    this.curSchedule_ = null;
-                    onChanged();
-                } else {
-                    this.curSchedule_ = null;
-                    this.curScheduleBuilder_ = null;
-                }
-                return this;
-            }
-
-            public BattlePassScheduleOuterClass.BattlePassSchedule.Builder getCurScheduleBuilder() {
-                onChanged();
-                return getCurScheduleFieldBuilder().getBuilder();
-            }
-
-            @Override // emu.grasscutter.net.proto.BattlePassAllDataNotifyOuterClass.BattlePassAllDataNotifyOrBuilder
-            public BattlePassScheduleOuterClass.BattlePassScheduleOrBuilder getCurScheduleOrBuilder() {
-                if (this.curScheduleBuilder_ != null) {
-                    return this.curScheduleBuilder_.getMessageOrBuilder();
-                }
-                return this.curSchedule_ == null ? BattlePassScheduleOuterClass.BattlePassSchedule.getDefaultInstance() : this.curSchedule_;
-            }
-
-            private SingleFieldBuilderV3<BattlePassScheduleOuterClass.BattlePassSchedule, BattlePassScheduleOuterClass.BattlePassSchedule.Builder, BattlePassScheduleOuterClass.BattlePassScheduleOrBuilder> getCurScheduleFieldBuilder() {
-                if (this.curScheduleBuilder_ == null) {
-                    this.curScheduleBuilder_ = new SingleFieldBuilderV3<>(getCurSchedule(), getParentForChildren(), isClean());
-                    this.curSchedule_ = null;
-                }
-                return this.curScheduleBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.BattlePassAllDataNotifyOuterClass.BattlePassAllDataNotifyOrBuilder
-            public boolean getHaveCurSchedule() {
-                return this.haveCurSchedule_;
-            }
-
-            public Builder setHaveCurSchedule(boolean value) {
-                this.haveCurSchedule_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearHaveCurSchedule() {
-                this.haveCurSchedule_ = false;
-                onChanged();
-                return this;
-            }
-
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
             public final Builder setUnknownFields(UnknownFieldSet unknownFields) {
                 return setUnknownFields(unknownFields);
@@ -875,7 +875,7 @@ public final class BattlePassAllDataNotifyOuterClass {
     }
 
     static {
-        BattlePassMissionOuterClass.getDescriptor();
         BattlePassScheduleOuterClass.getDescriptor();
+        BattlePassMissionOuterClass.getDescriptor();
     }
 }

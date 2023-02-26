@@ -23,7 +23,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
     public static final int DEFAULT_INITIAL_CAPACITY = 10;
 
     /* renamed from: a */
-    protected transient boolean[] f1046a;
+    protected transient boolean[] f1010a;
     protected int size;
     static final /* synthetic */ boolean $assertionsDisabled;
 
@@ -36,20 +36,20 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
     }
 
     private static final boolean[] copyArrayFromSafe(BooleanArrayList l) {
-        return copyArraySafe(l.f1046a, l.size);
+        return copyArraySafe(l.f1010a, l.size);
     }
 
     protected BooleanArrayList(boolean[] a, boolean wrapped) {
-        this.f1046a = a;
+        this.f1010a = a;
     }
 
     private void initArrayFromCapacity(int capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException("Initial capacity (" + capacity + ") is negative");
         } else if (capacity == 0) {
-            this.f1046a = BooleanArrays.EMPTY_ARRAY;
+            this.f1010a = BooleanArrays.EMPTY_ARRAY;
         } else {
-            this.f1046a = new boolean[capacity];
+            this.f1010a = new boolean[capacity];
         }
     }
 
@@ -58,51 +58,51 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
     }
 
     public BooleanArrayList() {
-        this.f1046a = BooleanArrays.DEFAULT_EMPTY_ARRAY;
+        this.f1010a = BooleanArrays.DEFAULT_EMPTY_ARRAY;
     }
 
     public BooleanArrayList(Collection<? extends Boolean> c) {
         if (c instanceof BooleanArrayList) {
-            this.f1046a = copyArrayFromSafe((BooleanArrayList) c);
-            this.size = this.f1046a.length;
+            this.f1010a = copyArrayFromSafe((BooleanArrayList) c);
+            this.size = this.f1010a.length;
             return;
         }
         initArrayFromCapacity(c.size());
         if (c instanceof BooleanList) {
-            boolean[] zArr = this.f1046a;
+            boolean[] zArr = this.f1010a;
             int size = c.size();
             this.size = size;
             ((BooleanList) c).getElements(0, zArr, 0, size);
             return;
         }
-        this.size = BooleanIterators.unwrap(BooleanIterators.asBooleanIterator(c.iterator()), this.f1046a);
+        this.size = BooleanIterators.unwrap(BooleanIterators.asBooleanIterator(c.iterator()), this.f1010a);
     }
 
     public BooleanArrayList(BooleanCollection c) {
         if (c instanceof BooleanArrayList) {
-            this.f1046a = copyArrayFromSafe((BooleanArrayList) c);
-            this.size = this.f1046a.length;
+            this.f1010a = copyArrayFromSafe((BooleanArrayList) c);
+            this.size = this.f1010a.length;
             return;
         }
         initArrayFromCapacity(c.size());
         if (c instanceof BooleanList) {
-            boolean[] zArr = this.f1046a;
+            boolean[] zArr = this.f1010a;
             int size = c.size();
             this.size = size;
             ((BooleanList) c).getElements(0, zArr, 0, size);
             return;
         }
-        this.size = BooleanIterators.unwrap(c.iterator(), this.f1046a);
+        this.size = BooleanIterators.unwrap(c.iterator(), this.f1010a);
     }
 
     public BooleanArrayList(BooleanList l) {
         if (l instanceof BooleanArrayList) {
-            this.f1046a = copyArrayFromSafe((BooleanArrayList) l);
-            this.size = this.f1046a.length;
+            this.f1010a = copyArrayFromSafe((BooleanArrayList) l);
+            this.size = this.f1010a.length;
             return;
         }
         initArrayFromCapacity(l.size());
-        boolean[] zArr = this.f1046a;
+        boolean[] zArr = this.f1010a;
         int size = l.size();
         this.size = size;
         l.getElements(0, zArr, 0, size);
@@ -114,7 +114,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
 
     public BooleanArrayList(boolean[] a, int offset, int length) {
         this(length);
-        System.arraycopy(a, offset, this.f1046a, 0, length);
+        System.arraycopy(a, offset, this.f1010a, 0, length);
         this.size = length;
     }
 
@@ -133,7 +133,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
     }
 
     public boolean[] elements() {
-        return this.f1046a;
+        return this.f1010a;
     }
 
     public static BooleanArrayList wrap(boolean[] a, int length) {
@@ -160,26 +160,26 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
     }
 
     public void ensureCapacity(int capacity) {
-        if (capacity <= this.f1046a.length) {
+        if (capacity <= this.f1010a.length) {
             return;
         }
-        if (this.f1046a != BooleanArrays.DEFAULT_EMPTY_ARRAY || capacity > 10) {
-            this.f1046a = BooleanArrays.ensureCapacity(this.f1046a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > this.f1046a.length) {
+        if (this.f1010a != BooleanArrays.DEFAULT_EMPTY_ARRAY || capacity > 10) {
+            this.f1010a = BooleanArrays.ensureCapacity(this.f1010a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > this.f1010a.length) {
                 throw new AssertionError();
             }
         }
     }
 
     private void grow(int capacity) {
-        if (capacity > this.f1046a.length) {
-            if (this.f1046a != BooleanArrays.DEFAULT_EMPTY_ARRAY) {
-                capacity = (int) Math.max(Math.min(((long) this.f1046a.length) + ((long) (this.f1046a.length >> 1)), 2147483639L), (long) capacity);
+        if (capacity > this.f1010a.length) {
+            if (this.f1010a != BooleanArrays.DEFAULT_EMPTY_ARRAY) {
+                capacity = (int) Math.max(Math.min(((long) this.f1010a.length) + ((long) (this.f1010a.length >> 1)), 2147483639L), (long) capacity);
             } else if (capacity < 10) {
                 capacity = 10;
             }
-            this.f1046a = BooleanArrays.forceCapacity(this.f1046a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > this.f1046a.length) {
+            this.f1010a = BooleanArrays.forceCapacity(this.f1010a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > this.f1010a.length) {
                 throw new AssertionError();
             }
         }
@@ -190,11 +190,11 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
         ensureIndex(index);
         grow(this.size + 1);
         if (index != this.size) {
-            System.arraycopy(this.f1046a, index, this.f1046a, index + 1, this.size - index);
+            System.arraycopy(this.f1010a, index, this.f1010a, index + 1, this.size - index);
         }
-        this.f1046a[index] = k;
+        this.f1010a[index] = k;
         this.size++;
-        if (!$assertionsDisabled && this.size > this.f1046a.length) {
+        if (!$assertionsDisabled && this.size > this.f1010a.length) {
             throw new AssertionError();
         }
     }
@@ -202,11 +202,11 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList, p014it.unimi.dsi.fastutil.booleans.AbstractBooleanCollection, p014it.unimi.dsi.fastutil.booleans.BooleanCollection
     public boolean add(boolean k) {
         grow(this.size + 1);
-        boolean[] zArr = this.f1046a;
+        boolean[] zArr = this.f1010a;
         int i = this.size;
         this.size = i + 1;
         zArr[i] = k;
-        if ($assertionsDisabled || this.size <= this.f1046a.length) {
+        if ($assertionsDisabled || this.size <= this.f1010a.length) {
             return true;
         }
         throw new AssertionError();
@@ -215,7 +215,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
     @Override // p014it.unimi.dsi.fastutil.booleans.BooleanList
     public boolean getBoolean(int index) {
         if (index < this.size) {
-            return this.f1046a[index];
+            return this.f1010a[index];
         }
         throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
     }
@@ -223,7 +223,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList, p014it.unimi.dsi.fastutil.booleans.BooleanList
     public int indexOf(boolean k) {
         for (int i = 0; i < this.size; i++) {
-            if (k == this.f1046a[i]) {
+            if (k == this.f1010a[i]) {
                 return i;
             }
         }
@@ -238,7 +238,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
             if (i == 0) {
                 return -1;
             }
-        } while (k != this.f1046a[i]);
+        } while (k != this.f1010a[i]);
         return i;
     }
 
@@ -247,12 +247,12 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        boolean old = this.f1046a[index];
+        boolean old = this.f1010a[index];
         this.size--;
         if (index != this.size) {
-            System.arraycopy(this.f1046a, index + 1, this.f1046a, index, this.size - index);
+            System.arraycopy(this.f1010a, index + 1, this.f1010a, index, this.size - index);
         }
-        if ($assertionsDisabled || this.size <= this.f1046a.length) {
+        if ($assertionsDisabled || this.size <= this.f1010a.length) {
             return old;
         }
         throw new AssertionError();
@@ -265,7 +265,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
             return false;
         }
         removeBoolean(index);
-        if ($assertionsDisabled || this.size <= this.f1046a.length) {
+        if ($assertionsDisabled || this.size <= this.f1010a.length) {
             return true;
         }
         throw new AssertionError();
@@ -276,15 +276,15 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        boolean old = this.f1046a[index];
-        this.f1046a[index] = k;
+        boolean old = this.f1010a[index];
+        this.f1010a[index] = k;
         return old;
     }
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public void clear() {
         this.size = 0;
-        if (!$assertionsDisabled && this.size > this.f1046a.length) {
+        if (!$assertionsDisabled && this.size > this.f1010a.length) {
             throw new AssertionError();
         }
     }
@@ -296,11 +296,11 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList, p014it.unimi.dsi.fastutil.booleans.BooleanList
     public void size(int size) {
-        if (size > this.f1046a.length) {
-            this.f1046a = BooleanArrays.forceCapacity(this.f1046a, size, this.size);
+        if (size > this.f1010a.length) {
+            this.f1010a = BooleanArrays.forceCapacity(this.f1010a, size, this.size);
         }
         if (size > this.size) {
-            Arrays.fill(this.f1046a, this.size, size, false);
+            Arrays.fill(this.f1010a, this.size, size, false);
         }
         this.size = size;
     }
@@ -315,11 +315,11 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
     }
 
     public void trim(int n) {
-        if (n < this.f1046a.length && this.size != this.f1046a.length) {
+        if (n < this.f1010a.length && this.size != this.f1010a.length) {
             boolean[] t = new boolean[Math.max(n, this.size)];
-            System.arraycopy(this.f1046a, 0, t, 0, this.size);
-            this.f1046a = t;
-            if (!$assertionsDisabled && this.size > this.f1046a.length) {
+            System.arraycopy(this.f1010a, 0, t, 0, this.size);
+            this.f1010a = t;
+            if (!$assertionsDisabled && this.size > this.f1010a.length) {
                 throw new AssertionError();
             }
         }
@@ -336,13 +336,13 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
         }
 
         private boolean[] getParentArray() {
-            return BooleanArrayList.this.f1046a;
+            return BooleanArrayList.this.f1010a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList.BooleanSubList, p014it.unimi.dsi.fastutil.booleans.BooleanList
         public boolean getBoolean(int i) {
             ensureRestrictedIndex(i);
-            return BooleanArrayList.this.f1046a[i + this.from];
+            return BooleanArrayList.this.f1010a[i + this.from];
         }
 
         /* access modifiers changed from: private */
@@ -355,7 +355,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
 
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterators.AbstractIndexBasedIterator
             protected final boolean get(int i) {
-                return BooleanArrayList.this.f1046a[SubList.this.from + i];
+                return BooleanArrayList.this.f1010a[SubList.this.from + i];
             }
 
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterators.AbstractIndexBasedListIterator
@@ -375,7 +375,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
 
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterators.AbstractIndexBasedIterator
             protected final int getMaxPos() {
-                return SubList.this.f1044to - SubList.this.from;
+                return SubList.this.f1008to - SubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterators.AbstractIndexBasedIterator, p014it.unimi.dsi.fastutil.booleans.BooleanIterator
@@ -383,7 +383,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                boolean[] zArr = BooleanArrayList.this.f1046a;
+                boolean[] zArr = BooleanArrayList.this.f1010a;
                 int i = SubList.this.from;
                 int i2 = this.pos;
                 this.pos = i2 + 1;
@@ -396,7 +396,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                boolean[] zArr = BooleanArrayList.this.f1046a;
+                boolean[] zArr = BooleanArrayList.this.f1010a;
                 int i = SubList.this.from;
                 int i2 = this.pos - 1;
                 this.pos = i2;
@@ -406,9 +406,9 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
 
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterators.AbstractIndexBasedIterator, p014it.unimi.dsi.fastutil.booleans.BooleanIterator
             public void forEachRemaining(BooleanConsumer action) {
-                int max = SubList.this.f1044to - SubList.this.from;
+                int max = SubList.this.f1008to - SubList.this.from;
                 while (this.pos < max) {
-                    boolean[] zArr = BooleanArrayList.this.f1046a;
+                    boolean[] zArr = BooleanArrayList.this.f1010a;
                     int i = SubList.this.from;
                     int i2 = this.pos;
                     this.pos = i2 + 1;
@@ -438,12 +438,12 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
 
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanSpliterators.LateBindingSizeIndexBasedSpliterator
             protected final int getMaxPosFromBackingStore() {
-                return SubList.this.f1044to;
+                return SubList.this.f1008to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanSpliterators.AbstractIndexBasedSpliterator
             protected final boolean get(int i) {
-                return BooleanArrayList.this.f1046a[i];
+                return BooleanArrayList.this.f1010a[i];
             }
 
             /* access modifiers changed from: protected */
@@ -457,7 +457,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
                 if (this.pos >= getMaxPos()) {
                     return false;
                 }
-                boolean[] zArr = BooleanArrayList.this.f1046a;
+                boolean[] zArr = BooleanArrayList.this.f1010a;
                 int i = this.pos;
                 this.pos = i + 1;
                 action.accept(zArr[i]);
@@ -468,7 +468,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
             public void forEachRemaining(BooleanConsumer action) {
                 int max = getMaxPos();
                 while (this.pos < max) {
-                    boolean[] zArr = BooleanArrayList.this.f1046a;
+                    boolean[] zArr = BooleanArrayList.this.f1010a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(zArr[i]);
@@ -482,7 +482,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
         }
 
         boolean contentsEquals(boolean[] otherA, int otherAFrom, int otherATo) {
-            if (BooleanArrayList.this.f1046a == otherA && this.from == otherAFrom && this.f1044to == otherATo) {
+            if (BooleanArrayList.this.f1010a == otherA && this.from == otherAFrom && this.f1008to == otherATo) {
                 return true;
             }
             if (otherATo - otherAFrom != size()) {
@@ -490,10 +490,10 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
             }
             int pos = this.from;
             int otherPos = otherAFrom;
-            while (pos < this.f1044to) {
+            while (pos < this.f1008to) {
                 pos++;
                 otherPos++;
-                if (BooleanArrayList.this.f1046a[pos] != otherA[otherPos]) {
+                if (BooleanArrayList.this.f1010a[pos] != otherA[otherPos]) {
                     return false;
                 }
             }
@@ -510,23 +510,23 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
             }
             if (o instanceof BooleanArrayList) {
                 BooleanArrayList other = (BooleanArrayList) o;
-                return contentsEquals(other.f1046a, 0, other.size());
+                return contentsEquals(other.f1010a, 0, other.size());
             } else if (!(o instanceof SubList)) {
                 return equals(o);
             } else {
                 SubList other2 = (SubList) o;
-                return contentsEquals(other2.getParentArray(), other2.from, other2.f1044to);
+                return contentsEquals(other2.getParentArray(), other2.from, other2.f1008to);
             }
         }
 
         int contentsCompareTo(boolean[] otherA, int otherAFrom, int otherATo) {
-            if (BooleanArrayList.this.f1046a == otherA && this.from == otherAFrom && this.f1044to == otherATo) {
+            if (BooleanArrayList.this.f1010a == otherA && this.from == otherAFrom && this.f1008to == otherATo) {
                 return 0;
             }
             int i = this.from;
             int j = otherAFrom;
-            while (i < this.f1044to && i < otherATo) {
-                int r = Boolean.compare(BooleanArrayList.this.f1046a[i], otherA[j]);
+            while (i < this.f1008to && i < otherATo) {
+                int r = Boolean.compare(BooleanArrayList.this.f1010a[i], otherA[j]);
                 if (r != 0) {
                     return r;
                 }
@@ -536,19 +536,19 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
             if (i < otherATo) {
                 return -1;
             }
-            return i < this.f1044to ? 1 : 0;
+            return i < this.f1008to ? 1 : 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList
         public int compareTo(List<? extends Boolean> l) {
             if (l instanceof BooleanArrayList) {
                 BooleanArrayList other = (BooleanArrayList) l;
-                return contentsCompareTo(other.f1046a, 0, other.size());
+                return contentsCompareTo(other.f1010a, 0, other.size());
             } else if (!(l instanceof SubList)) {
                 return compareTo(l);
             } else {
                 SubList other2 = (SubList) l;
-                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f1044to);
+                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f1008to);
             }
         }
     }
@@ -570,13 +570,13 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList, p014it.unimi.dsi.fastutil.booleans.BooleanList
     public void getElements(int from, boolean[] a, int offset, int length) {
         BooleanArrays.ensureOffsetLength(a, offset, length);
-        System.arraycopy(this.f1046a, from, a, offset, length);
+        System.arraycopy(this.f1010a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList, p014it.unimi.dsi.fastutil.booleans.BooleanList
     public void removeElements(int from, int to) {
         p014it.unimi.dsi.fastutil.Arrays.ensureFromTo(this.size, from, to);
-        System.arraycopy(this.f1046a, to, this.f1046a, from, this.size - to);
+        System.arraycopy(this.f1010a, to, this.f1010a, from, this.size - to);
         this.size -= to - from;
     }
 
@@ -585,8 +585,8 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
         ensureIndex(index);
         BooleanArrays.ensureOffsetLength(a, offset, length);
         grow(this.size + length);
-        System.arraycopy(this.f1046a, index, this.f1046a, index + length, this.size - index);
-        System.arraycopy(a, offset, this.f1046a, index, length);
+        System.arraycopy(this.f1010a, index, this.f1010a, index + length, this.size - index);
+        System.arraycopy(a, offset, this.f1010a, index, length);
         this.size += length;
     }
 
@@ -597,13 +597,13 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
         if (index + length > this.size) {
             throw new IndexOutOfBoundsException("End index (" + (index + length) + ") is greater than list size (" + this.size + ")");
         }
-        System.arraycopy(a, offset, this.f1046a, index, length);
+        System.arraycopy(a, offset, this.f1010a, index, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList, p014it.unimi.dsi.fastutil.booleans.BooleanIterable
     public void forEach(BooleanConsumer action) {
         for (int i = 0; i < this.size; i++) {
-            action.accept(this.f1046a[i]);
+            action.accept(this.f1010a[i]);
         }
     }
 
@@ -618,7 +618,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
             return false;
         }
         grow(this.size + n);
-        System.arraycopy(this.f1046a, index, this.f1046a, index + n, this.size - index);
+        System.arraycopy(this.f1010a, index, this.f1010a, index + n, this.size - index);
         BooleanIterator i = c.iterator();
         this.size += n;
         while (true) {
@@ -627,9 +627,9 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
                 break;
             }
             index++;
-            this.f1046a[index] = i.nextBoolean();
+            this.f1010a[index] = i.nextBoolean();
         }
-        if ($assertionsDisabled || this.size <= this.f1046a.length) {
+        if ($assertionsDisabled || this.size <= this.f1010a.length) {
             return true;
         }
         throw new AssertionError();
@@ -643,10 +643,10 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
             return false;
         }
         grow(this.size + n);
-        System.arraycopy(this.f1046a, index, this.f1046a, index + n, this.size - index);
-        l.getElements(0, this.f1046a, index, n);
+        System.arraycopy(this.f1010a, index, this.f1010a, index + n, this.size - index);
+        l.getElements(0, this.f1010a, index, n);
         this.size += n;
-        if ($assertionsDisabled || this.size <= this.f1046a.length) {
+        if ($assertionsDisabled || this.size <= this.f1010a.length) {
             return true;
         }
         throw new AssertionError();
@@ -654,7 +654,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanCollection, p014it.unimi.dsi.fastutil.booleans.BooleanCollection
     public boolean removeAll(BooleanCollection c) {
-        boolean[] a = this.f1046a;
+        boolean[] a = this.f1010a;
         int j = 0;
         for (int i = 0; i < this.size; i++) {
             if (!c.contains(a[i])) {
@@ -672,7 +672,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
         if (a == null || a.length < this.size) {
             a = Arrays.copyOf(a, this.size);
         }
-        System.arraycopy(this.f1046a, 0, a, 0, this.size);
+        System.arraycopy(this.f1010a, 0, a, 0, this.size);
         return a;
     }
 
@@ -704,7 +704,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                boolean[] zArr = BooleanArrayList.this.f1046a;
+                boolean[] zArr = BooleanArrayList.this.f1010a;
                 int i = this.pos;
                 this.pos = i + 1;
                 this.last = i;
@@ -716,7 +716,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                boolean[] zArr = BooleanArrayList.this.f1046a;
+                boolean[] zArr = BooleanArrayList.this.f1010a;
                 int i = this.pos - 1;
                 this.pos = i;
                 this.last = i;
@@ -765,7 +765,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
             public void forEachRemaining(BooleanConsumer action) {
                 while (this.pos < BooleanArrayList.this.size) {
-                    boolean[] zArr = BooleanArrayList.this.f1046a;
+                    boolean[] zArr = BooleanArrayList.this.f1010a;
                     int i = this.pos;
                     this.pos = i + 1;
                     this.last = i;
@@ -853,7 +853,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            boolean[] zArr = BooleanArrayList.this.f1046a;
+            boolean[] zArr = BooleanArrayList.this.f1010a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(zArr[i]);
@@ -863,7 +863,7 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
         public void forEachRemaining(BooleanConsumer action) {
             int max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(BooleanArrayList.this.f1046a[this.pos]);
+                action.accept(BooleanArrayList.this.f1010a[this.pos]);
                 this.pos++;
             }
         }
@@ -911,18 +911,18 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
     @Override // p014it.unimi.dsi.fastutil.booleans.BooleanList
     public void sort(BooleanComparator comp) {
         if (comp == null) {
-            BooleanArrays.stableSort(this.f1046a, 0, this.size);
+            BooleanArrays.stableSort(this.f1010a, 0, this.size);
         } else {
-            BooleanArrays.stableSort(this.f1046a, 0, this.size, comp);
+            BooleanArrays.stableSort(this.f1010a, 0, this.size, comp);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.booleans.BooleanList
     public void unstableSort(BooleanComparator comp) {
         if (comp == null) {
-            BooleanArrays.unstableSort(this.f1046a, 0, this.size);
+            BooleanArrays.unstableSort(this.f1010a, 0, this.size);
         } else {
-            BooleanArrays.unstableSort(this.f1046a, 0, this.size, comp);
+            BooleanArrays.unstableSort(this.f1010a, 0, this.size, comp);
         }
     }
 
@@ -930,12 +930,12 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
     public BooleanArrayList clone() {
         BooleanArrayList cloned;
         if (getClass() == BooleanArrayList.class) {
-            cloned = new BooleanArrayList(copyArraySafe(this.f1046a, this.size), false);
+            cloned = new BooleanArrayList(copyArraySafe(this.f1010a, this.size), false);
             cloned.size = this.size;
         } else {
             try {
                 cloned = (BooleanArrayList) clone();
-                cloned.f1046a = copyArraySafe(this.f1046a, this.size);
+                cloned.f1010a = copyArraySafe(this.f1010a, this.size);
             } catch (CloneNotSupportedException err) {
                 throw new InternalError(err);
             }
@@ -951,8 +951,8 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
         if (s != l.size()) {
             return false;
         }
-        boolean[] a1 = this.f1046a;
-        boolean[] a2 = l.f1046a;
+        boolean[] a1 = this.f1010a;
+        boolean[] a2 = l.f1010a;
         if (a1 == a2 && s == l.size()) {
             return true;
         }
@@ -985,8 +985,8 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
     public int compareTo(BooleanArrayList l) {
         int s1 = size();
         int s2 = l.size();
-        boolean[] a1 = this.f1046a;
-        boolean[] a2 = l.f1046a;
+        boolean[] a1 = this.f1010a;
+        boolean[] a2 = l.f1010a;
         if (a1 == a2 && s1 == s2) {
             return 0;
         }
@@ -1018,15 +1018,15 @@ public class BooleanArrayList extends AbstractBooleanList implements RandomAcces
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; i < this.size; i++) {
-            s.writeBoolean(this.f1046a[i]);
+            s.writeBoolean(this.f1010a[i]);
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f1046a = new boolean[this.size];
+        this.f1010a = new boolean[this.size];
         for (int i = 0; i < this.size; i++) {
-            this.f1046a[i] = s.readBoolean();
+            this.f1010a[i] = s.readBoolean();
         }
     }
 }

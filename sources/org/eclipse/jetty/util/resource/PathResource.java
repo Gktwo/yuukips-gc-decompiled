@@ -25,7 +25,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.jetty.util.BufferUtil;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.StringUtil;
 import org.eclipse.jetty.util.URIUtil;
 import org.eclipse.jetty.util.log.Log;
@@ -368,7 +368,7 @@ public class PathResource extends Resource {
     @Override // org.eclipse.jetty.util.resource.Resource
     public void copyTo(File destination) throws IOException {
         if (isDirectory()) {
-            C5747IO.copyDir(this.path.toFile(), destination);
+            C5739IO.copyDir(this.path.toFile(), destination);
         } else {
             Files.copy(this.path, destination.toPath(), new CopyOption[0]);
         }

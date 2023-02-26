@@ -22,17 +22,13 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TeamEnterSceneInfoOuterClass.class */
 public final class TeamEnterSceneInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018TeamEnterSceneInfo.proto\u001a\u0019AbilityControlBlock.proto\u001a\u001aAbilitySyncStateInfo.proto\"\u0001\n\u0012TeamEnterSceneInfo\u00120\n\u0011team_ability_info\u0018\u0006 \u0001(\u000b2\u0015.AbilitySyncStateInfo\u00123\n\u0015ability_control_block\u0018\u0005 \u0001(\u000b2\u0014.AbilityControlBlock\u0012\u0016\n\u000eteam_entity_id\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityControlBlockOuterClass.getDescriptor(), AbilitySyncStateInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018TeamEnterSceneInfo.proto\u001a\u0019AbilityControlBlock.proto\u001a\u001aAbilitySyncStateInfo.proto\"\u0001\n\u0012TeamEnterSceneInfo\u0012\u0014\n\fteamEntityId\u0018\u0004 \u0001(\r\u00121\n\u0013abilityControlBlock\u0018\f \u0001(\u000b2\u0014.AbilityControlBlock\u0012.\n\u000fteamAbilityInfo\u0018\n \u0001(\u000b2\u0015.AbilitySyncStateInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityControlBlockOuterClass.getDescriptor(), AbilitySyncStateInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_TeamEnterSceneInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TeamEnterSceneInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TeamEnterSceneInfo_descriptor, new String[]{"TeamAbilityInfo", "AbilityControlBlock", "TeamEntityId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TeamEnterSceneInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TeamEnterSceneInfo_descriptor, new String[]{"TeamEntityId", "AbilityControlBlock", "TeamAbilityInfo"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TeamEnterSceneInfoOuterClass$TeamEnterSceneInfoOrBuilder.class */
     public interface TeamEnterSceneInfoOrBuilder extends MessageOrBuilder {
-        boolean hasTeamAbilityInfo();
-
-        AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo getTeamAbilityInfo();
-
-        AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getTeamAbilityInfoOrBuilder();
+        int getTeamEntityId();
 
         boolean hasAbilityControlBlock();
 
@@ -40,7 +36,11 @@ public final class TeamEnterSceneInfoOuterClass {
 
         AbilityControlBlockOuterClass.AbilityControlBlockOrBuilder getAbilityControlBlockOrBuilder();
 
-        int getTeamEntityId();
+        boolean hasTeamAbilityInfo();
+
+        AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo getTeamAbilityInfo();
+
+        AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getTeamAbilityInfoOrBuilder();
     }
 
     private TeamEnterSceneInfoOuterClass() {
@@ -56,12 +56,12 @@ public final class TeamEnterSceneInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TeamEnterSceneInfoOuterClass$TeamEnterSceneInfo.class */
     public static final class TeamEnterSceneInfo extends GeneratedMessageV3 implements TeamEnterSceneInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TEAM_ABILITY_INFO_FIELD_NUMBER = 6;
-        private AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo teamAbilityInfo_;
-        public static final int ABILITY_CONTROL_BLOCK_FIELD_NUMBER = 5;
-        private AbilityControlBlockOuterClass.AbilityControlBlock abilityControlBlock_;
-        public static final int TEAM_ENTITY_ID_FIELD_NUMBER = 11;
+        public static final int TEAMENTITYID_FIELD_NUMBER = 4;
         private int teamEntityId_;
+        public static final int ABILITYCONTROLBLOCK_FIELD_NUMBER = 12;
+        private AbilityControlBlockOuterClass.AbilityControlBlock abilityControlBlock_;
+        public static final int TEAMABILITYINFO_FIELD_NUMBER = 10;
+        private AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo teamAbilityInfo_;
         private byte memoizedIsInitialized;
         private static final TeamEnterSceneInfo DEFAULT_INSTANCE = new TeamEnterSceneInfo();
         private static final Parser<TeamEnterSceneInfo> PARSER = new AbstractParser<TeamEnterSceneInfo>() { // from class: emu.grasscutter.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfo.1
@@ -107,29 +107,29 @@ public final class TeamEnterSceneInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 42:
-                                AbilityControlBlockOuterClass.AbilityControlBlock.Builder subBuilder = this.abilityControlBlock_ != null ? this.abilityControlBlock_.toBuilder() : null;
-                                this.abilityControlBlock_ = (AbilityControlBlockOuterClass.AbilityControlBlock) input.readMessage(AbilityControlBlockOuterClass.AbilityControlBlock.parser(), extensionRegistry);
+                            case 32:
+                                this.teamEntityId_ = input.readUInt32();
+                                break;
+                            case 82:
+                                AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder subBuilder = this.teamAbilityInfo_ != null ? this.teamAbilityInfo_.toBuilder() : null;
+                                this.teamAbilityInfo_ = (AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo) input.readMessage(AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.parser(), extensionRegistry);
                                 if (subBuilder == null) {
                                     break;
                                 } else {
-                                    subBuilder.mergeFrom(this.abilityControlBlock_);
-                                    this.abilityControlBlock_ = subBuilder.buildPartial();
+                                    subBuilder.mergeFrom(this.teamAbilityInfo_);
+                                    this.teamAbilityInfo_ = subBuilder.buildPartial();
                                     break;
                                 }
-                            case 50:
-                                AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder subBuilder2 = this.teamAbilityInfo_ != null ? this.teamAbilityInfo_.toBuilder() : null;
-                                this.teamAbilityInfo_ = (AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo) input.readMessage(AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.parser(), extensionRegistry);
+                            case 98:
+                                AbilityControlBlockOuterClass.AbilityControlBlock.Builder subBuilder2 = this.abilityControlBlock_ != null ? this.abilityControlBlock_.toBuilder() : null;
+                                this.abilityControlBlock_ = (AbilityControlBlockOuterClass.AbilityControlBlock) input.readMessage(AbilityControlBlockOuterClass.AbilityControlBlock.parser(), extensionRegistry);
                                 if (subBuilder2 == null) {
                                     break;
                                 } else {
-                                    subBuilder2.mergeFrom(this.teamAbilityInfo_);
-                                    this.teamAbilityInfo_ = subBuilder2.buildPartial();
+                                    subBuilder2.mergeFrom(this.abilityControlBlock_);
+                                    this.abilityControlBlock_ = subBuilder2.buildPartial();
                                     break;
                                 }
-                            case 88:
-                                this.teamEntityId_ = input.readUInt32();
-                                break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                     break;
@@ -160,18 +160,8 @@ public final class TeamEnterSceneInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfoOrBuilder
-        public boolean hasTeamAbilityInfo() {
-            return this.teamAbilityInfo_ != null;
-        }
-
-        @Override // emu.grasscutter.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfoOrBuilder
-        public AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo getTeamAbilityInfo() {
-            return this.teamAbilityInfo_ == null ? AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : this.teamAbilityInfo_;
-        }
-
-        @Override // emu.grasscutter.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfoOrBuilder
-        public AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getTeamAbilityInfoOrBuilder() {
-            return getTeamAbilityInfo();
+        public int getTeamEntityId() {
+            return this.teamEntityId_;
         }
 
         @Override // emu.grasscutter.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfoOrBuilder
@@ -190,8 +180,18 @@ public final class TeamEnterSceneInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfoOrBuilder
-        public int getTeamEntityId() {
-            return this.teamEntityId_;
+        public boolean hasTeamAbilityInfo() {
+            return this.teamAbilityInfo_ != null;
+        }
+
+        @Override // emu.grasscutter.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfoOrBuilder
+        public AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo getTeamAbilityInfo() {
+            return this.teamAbilityInfo_ == null ? AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : this.teamAbilityInfo_;
+        }
+
+        @Override // emu.grasscutter.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfoOrBuilder
+        public AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getTeamAbilityInfoOrBuilder() {
+            return getTeamAbilityInfo();
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -209,14 +209,14 @@ public final class TeamEnterSceneInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.abilityControlBlock_ != null) {
-                output.writeMessage(5, getAbilityControlBlock());
+            if (this.teamEntityId_ != 0) {
+                output.writeUInt32(4, this.teamEntityId_);
             }
             if (this.teamAbilityInfo_ != null) {
-                output.writeMessage(6, getTeamAbilityInfo());
+                output.writeMessage(10, getTeamAbilityInfo());
             }
-            if (this.teamEntityId_ != 0) {
-                output.writeUInt32(11, this.teamEntityId_);
+            if (this.abilityControlBlock_ != null) {
+                output.writeMessage(12, getAbilityControlBlock());
             }
             this.unknownFields.writeTo(output);
         }
@@ -228,14 +228,14 @@ public final class TeamEnterSceneInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.abilityControlBlock_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(5, getAbilityControlBlock());
+            if (this.teamEntityId_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.teamEntityId_);
             }
             if (this.teamAbilityInfo_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(6, getTeamAbilityInfo());
+                size2 += CodedOutputStream.computeMessageSize(10, getTeamAbilityInfo());
             }
-            if (this.teamEntityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.teamEntityId_);
+            if (this.abilityControlBlock_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(12, getAbilityControlBlock());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -251,11 +251,11 @@ public final class TeamEnterSceneInfoOuterClass {
                 return equals(obj);
             }
             TeamEnterSceneInfo other = (TeamEnterSceneInfo) obj;
-            if (hasTeamAbilityInfo() != other.hasTeamAbilityInfo()) {
+            if (getTeamEntityId() != other.getTeamEntityId() || hasAbilityControlBlock() != other.hasAbilityControlBlock()) {
                 return false;
             }
-            if ((!hasTeamAbilityInfo() || getTeamAbilityInfo().equals(other.getTeamAbilityInfo())) && hasAbilityControlBlock() == other.hasAbilityControlBlock()) {
-                return (!hasAbilityControlBlock() || getAbilityControlBlock().equals(other.getAbilityControlBlock())) && getTeamEntityId() == other.getTeamEntityId() && this.unknownFields.equals(other.unknownFields);
+            if ((!hasAbilityControlBlock() || getAbilityControlBlock().equals(other.getAbilityControlBlock())) && hasTeamAbilityInfo() == other.hasTeamAbilityInfo()) {
+                return (!hasTeamAbilityInfo() || getTeamAbilityInfo().equals(other.getTeamAbilityInfo())) && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -265,14 +265,14 @@ public final class TeamEnterSceneInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
-            if (hasTeamAbilityInfo()) {
-                hash = (53 * ((37 * hash) + 6)) + getTeamAbilityInfo().hashCode();
-            }
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getTeamEntityId();
             if (hasAbilityControlBlock()) {
-                hash = (53 * ((37 * hash) + 5)) + getAbilityControlBlock().hashCode();
+                hash = (53 * ((37 * hash) + 12)) + getAbilityControlBlock().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 11)) + getTeamEntityId())) + this.unknownFields.hashCode();
+            if (hasTeamAbilityInfo()) {
+                hash = (53 * ((37 * hash) + 10)) + getTeamAbilityInfo().hashCode();
+            }
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -351,11 +351,11 @@ public final class TeamEnterSceneInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TeamEnterSceneInfoOuterClass$TeamEnterSceneInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements TeamEnterSceneInfoOrBuilder {
-            private AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo teamAbilityInfo_;
-            private SingleFieldBuilderV3<AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo, AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder, AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder> teamAbilityInfoBuilder_;
+            private int teamEntityId_;
             private AbilityControlBlockOuterClass.AbilityControlBlock abilityControlBlock_;
             private SingleFieldBuilderV3<AbilityControlBlockOuterClass.AbilityControlBlock, AbilityControlBlockOuterClass.AbilityControlBlock.Builder, AbilityControlBlockOuterClass.AbilityControlBlockOrBuilder> abilityControlBlockBuilder_;
-            private int teamEntityId_;
+            private AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo teamAbilityInfo_;
+            private SingleFieldBuilderV3<AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo, AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder, AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder> teamAbilityInfoBuilder_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return TeamEnterSceneInfoOuterClass.internal_static_TeamEnterSceneInfo_descriptor;
@@ -383,19 +383,19 @@ public final class TeamEnterSceneInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                if (this.teamAbilityInfoBuilder_ == null) {
-                    this.teamAbilityInfo_ = null;
-                } else {
-                    this.teamAbilityInfo_ = null;
-                    this.teamAbilityInfoBuilder_ = null;
-                }
+                this.teamEntityId_ = 0;
                 if (this.abilityControlBlockBuilder_ == null) {
                     this.abilityControlBlock_ = null;
                 } else {
                     this.abilityControlBlock_ = null;
                     this.abilityControlBlockBuilder_ = null;
                 }
-                this.teamEntityId_ = 0;
+                if (this.teamAbilityInfoBuilder_ == null) {
+                    this.teamAbilityInfo_ = null;
+                } else {
+                    this.teamAbilityInfo_ = null;
+                    this.teamAbilityInfoBuilder_ = null;
+                }
                 return this;
             }
 
@@ -421,17 +421,17 @@ public final class TeamEnterSceneInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public TeamEnterSceneInfo buildPartial() {
                 TeamEnterSceneInfo result = new TeamEnterSceneInfo(this);
-                if (this.teamAbilityInfoBuilder_ == null) {
-                    result.teamAbilityInfo_ = this.teamAbilityInfo_;
-                } else {
-                    result.teamAbilityInfo_ = this.teamAbilityInfoBuilder_.build();
-                }
+                result.teamEntityId_ = this.teamEntityId_;
                 if (this.abilityControlBlockBuilder_ == null) {
                     result.abilityControlBlock_ = this.abilityControlBlock_;
                 } else {
                     result.abilityControlBlock_ = this.abilityControlBlockBuilder_.build();
                 }
-                result.teamEntityId_ = this.teamEntityId_;
+                if (this.teamAbilityInfoBuilder_ == null) {
+                    result.teamAbilityInfo_ = this.teamAbilityInfo_;
+                } else {
+                    result.teamAbilityInfo_ = this.teamAbilityInfoBuilder_.build();
+                }
                 onBuilt();
                 return result;
             }
@@ -479,14 +479,14 @@ public final class TeamEnterSceneInfoOuterClass {
                 if (other == TeamEnterSceneInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.hasTeamAbilityInfo()) {
-                    mergeTeamAbilityInfo(other.getTeamAbilityInfo());
+                if (other.getTeamEntityId() != 0) {
+                    setTeamEntityId(other.getTeamEntityId());
                 }
                 if (other.hasAbilityControlBlock()) {
                     mergeAbilityControlBlock(other.getAbilityControlBlock());
                 }
-                if (other.getTeamEntityId() != 0) {
-                    setTeamEntityId(other.getTeamEntityId());
+                if (other.hasTeamAbilityInfo()) {
+                    mergeTeamAbilityInfo(other.getTeamAbilityInfo());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -521,84 +521,20 @@ public final class TeamEnterSceneInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfoOrBuilder
-            public boolean hasTeamAbilityInfo() {
-                return (this.teamAbilityInfoBuilder_ == null && this.teamAbilityInfo_ == null) ? false : true;
+            public int getTeamEntityId() {
+                return this.teamEntityId_;
             }
 
-            @Override // emu.grasscutter.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfoOrBuilder
-            public AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo getTeamAbilityInfo() {
-                if (this.teamAbilityInfoBuilder_ == null) {
-                    return this.teamAbilityInfo_ == null ? AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : this.teamAbilityInfo_;
-                }
-                return this.teamAbilityInfoBuilder_.getMessage();
-            }
-
-            public Builder setTeamAbilityInfo(AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo value) {
-                if (this.teamAbilityInfoBuilder_ != null) {
-                    this.teamAbilityInfoBuilder_.setMessage(value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    this.teamAbilityInfo_ = value;
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder setTeamAbilityInfo(AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder builderForValue) {
-                if (this.teamAbilityInfoBuilder_ == null) {
-                    this.teamAbilityInfo_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    this.teamAbilityInfoBuilder_.setMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder mergeTeamAbilityInfo(AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo value) {
-                if (this.teamAbilityInfoBuilder_ == null) {
-                    if (this.teamAbilityInfo_ != null) {
-                        this.teamAbilityInfo_ = AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.newBuilder(this.teamAbilityInfo_).mergeFrom(value).buildPartial();
-                    } else {
-                        this.teamAbilityInfo_ = value;
-                    }
-                    onChanged();
-                } else {
-                    this.teamAbilityInfoBuilder_.mergeFrom(value);
-                }
-                return this;
-            }
-
-            public Builder clearTeamAbilityInfo() {
-                if (this.teamAbilityInfoBuilder_ == null) {
-                    this.teamAbilityInfo_ = null;
-                    onChanged();
-                } else {
-                    this.teamAbilityInfo_ = null;
-                    this.teamAbilityInfoBuilder_ = null;
-                }
-                return this;
-            }
-
-            public AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder getTeamAbilityInfoBuilder() {
+            public Builder setTeamEntityId(int value) {
+                this.teamEntityId_ = value;
                 onChanged();
-                return getTeamAbilityInfoFieldBuilder().getBuilder();
+                return this;
             }
 
-            @Override // emu.grasscutter.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfoOrBuilder
-            public AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getTeamAbilityInfoOrBuilder() {
-                if (this.teamAbilityInfoBuilder_ != null) {
-                    return this.teamAbilityInfoBuilder_.getMessageOrBuilder();
-                }
-                return this.teamAbilityInfo_ == null ? AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : this.teamAbilityInfo_;
-            }
-
-            private SingleFieldBuilderV3<AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo, AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder, AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder> getTeamAbilityInfoFieldBuilder() {
-                if (this.teamAbilityInfoBuilder_ == null) {
-                    this.teamAbilityInfoBuilder_ = new SingleFieldBuilderV3<>(getTeamAbilityInfo(), getParentForChildren(), isClean());
-                    this.teamAbilityInfo_ = null;
-                }
-                return this.teamAbilityInfoBuilder_;
+            public Builder clearTeamEntityId() {
+                this.teamEntityId_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfoOrBuilder
@@ -683,20 +619,84 @@ public final class TeamEnterSceneInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfoOrBuilder
-            public int getTeamEntityId() {
-                return this.teamEntityId_;
+            public boolean hasTeamAbilityInfo() {
+                return (this.teamAbilityInfoBuilder_ == null && this.teamAbilityInfo_ == null) ? false : true;
             }
 
-            public Builder setTeamEntityId(int value) {
-                this.teamEntityId_ = value;
-                onChanged();
+            @Override // emu.grasscutter.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfoOrBuilder
+            public AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo getTeamAbilityInfo() {
+                if (this.teamAbilityInfoBuilder_ == null) {
+                    return this.teamAbilityInfo_ == null ? AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : this.teamAbilityInfo_;
+                }
+                return this.teamAbilityInfoBuilder_.getMessage();
+            }
+
+            public Builder setTeamAbilityInfo(AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo value) {
+                if (this.teamAbilityInfoBuilder_ != null) {
+                    this.teamAbilityInfoBuilder_.setMessage(value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    this.teamAbilityInfo_ = value;
+                    onChanged();
+                }
                 return this;
             }
 
-            public Builder clearTeamEntityId() {
-                this.teamEntityId_ = 0;
-                onChanged();
+            public Builder setTeamAbilityInfo(AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder builderForValue) {
+                if (this.teamAbilityInfoBuilder_ == null) {
+                    this.teamAbilityInfo_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    this.teamAbilityInfoBuilder_.setMessage(builderForValue.build());
+                }
                 return this;
+            }
+
+            public Builder mergeTeamAbilityInfo(AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo value) {
+                if (this.teamAbilityInfoBuilder_ == null) {
+                    if (this.teamAbilityInfo_ != null) {
+                        this.teamAbilityInfo_ = AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.newBuilder(this.teamAbilityInfo_).mergeFrom(value).buildPartial();
+                    } else {
+                        this.teamAbilityInfo_ = value;
+                    }
+                    onChanged();
+                } else {
+                    this.teamAbilityInfoBuilder_.mergeFrom(value);
+                }
+                return this;
+            }
+
+            public Builder clearTeamAbilityInfo() {
+                if (this.teamAbilityInfoBuilder_ == null) {
+                    this.teamAbilityInfo_ = null;
+                    onChanged();
+                } else {
+                    this.teamAbilityInfo_ = null;
+                    this.teamAbilityInfoBuilder_ = null;
+                }
+                return this;
+            }
+
+            public AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder getTeamAbilityInfoBuilder() {
+                onChanged();
+                return getTeamAbilityInfoFieldBuilder().getBuilder();
+            }
+
+            @Override // emu.grasscutter.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfoOrBuilder
+            public AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getTeamAbilityInfoOrBuilder() {
+                if (this.teamAbilityInfoBuilder_ != null) {
+                    return this.teamAbilityInfoBuilder_.getMessageOrBuilder();
+                }
+                return this.teamAbilityInfo_ == null ? AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : this.teamAbilityInfo_;
+            }
+
+            private SingleFieldBuilderV3<AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo, AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder, AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder> getTeamAbilityInfoFieldBuilder() {
+                if (this.teamAbilityInfoBuilder_ == null) {
+                    this.teamAbilityInfoBuilder_ = new SingleFieldBuilderV3<>(getTeamAbilityInfo(), getParentForChildren(), isClean());
+                    this.teamAbilityInfo_ = null;
+                }
+                return this.teamAbilityInfoBuilder_;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

@@ -14,7 +14,6 @@ import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.world.World;
 import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.EnterTypeOuterClass;
 import emu.grasscutter.net.proto.MotionStateOuterClass;
 import emu.grasscutter.net.proto.PlayerDieTypeOuterClass;
@@ -48,6 +47,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
+import org.eclipse.jetty.p023io.SelectorManager;
 import p014it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import p014it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import p014it.unimi.dsi.fastutil.ints.IntOpenHashSet;
@@ -143,8 +143,12 @@ public class TeamManager extends BasePlayerDataManager {
 
     public int getTeamId(TeamInfo team) {
         for (int i = 1; i <= this.teams.size(); i++) {
-            if (this.teams.get(Integer.valueOf(i)).equals(team)) {
-                return i;
+            try {
+                TeamInfo d = this.teams.get(Integer.valueOf(i));
+                if (d != null && d.equals(team)) {
+                    return i;
+                }
+            } catch (Exception e) {
             }
         }
         return -1;
@@ -189,8 +193,8 @@ public class TeamManager extends BasePlayerDataManager {
         } catch (Exception e) {
             try {
                 return (EntityAvatar) getActiveTeam().stream().findFirst().orElseThrow();
-            } catch (Exception e2) {
-                Grasscutter.getLogger().error("Error4: ", (Throwable) e);
+            } catch (Exception ex) {
+                Grasscutter.getLogger().error("Error4: ", (Throwable) ex);
                 return null;
             }
         }
@@ -528,6 +532,7 @@ public class TeamManager extends BasePlayerDataManager {
                     return false;
                 }
                 entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 1.0f);
+                this.player.getSatiationManager().removeSatiationDirectly(entity.getAvatar(), SelectorManager.DEFAULT_CONNECT_TIMEOUT);
                 getPlayer().sendPacket(new PacketAvatarFightPropUpdateNotify(entity.getAvatar(), FightProperty.FIGHT_PROP_CUR_HP));
                 getPlayer().sendPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
                 return true;
@@ -555,6 +560,7 @@ public class TeamManager extends BasePlayerDataManager {
         this.player.getStaminaManager().stopSustainedStaminaHandler();
         for (EntityAvatar entity : getActiveTeam()) {
             entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * 0.4f);
+            this.player.getSatiationManager().removeSatiationDirectly(entity.getAvatar(), SelectorManager.DEFAULT_CONNECT_TIMEOUT);
             getPlayer().sendPacket(new PacketAvatarFightPropUpdateNotify(entity.getAvatar(), FightProperty.FIGHT_PROP_CUR_HP));
             getPlayer().sendPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
         }
@@ -565,7 +571,7 @@ public class TeamManager extends BasePlayerDataManager {
             getPlayer().sendPacket(new PacketPlayerEnterSceneNotify(getPlayer(), EnterTypeOuterClass.EnterType.ENTER_TYPE_SELF, EnterReason.Revival, 3, GameConstants.START_POSITION));
             this.player.getPosition().set(GameConstants.START_POSITION);
         }
-        getPlayer().sendPacket(new BasePacket(PacketOpcodes.WorldPlayerReviveRsp));
+        getPlayer().sendPacket(new BasePacket(221));
     }
 
     public Position getRespawnPosition() {

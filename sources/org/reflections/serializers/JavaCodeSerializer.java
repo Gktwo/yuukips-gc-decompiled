@@ -28,7 +28,7 @@ public class JavaCodeSerializer implements Serializer {
     private static final String tokenSeparator = "_";
 
     /* renamed from: sb */
-    private StringBuilder f3378sb;
+    private StringBuilder f3342sb;
     private List<String> prevPaths;
     private int indent;
 
@@ -55,16 +55,16 @@ public class JavaCodeSerializer implements Serializer {
             className = name.substring(lastDot + 1);
         }
         try {
-            this.f3378sb = new StringBuilder();
-            this.f3378sb.append("//generated using Reflections JavaCodeSerializer").append(" [").append(new Date()).append("]").append("\n");
+            this.f3342sb = new StringBuilder();
+            this.f3342sb.append("//generated using Reflections JavaCodeSerializer").append(" [").append(new Date()).append("]").append("\n");
             if (packageName.length() != 0) {
-                this.f3378sb.append("package ").append(packageName).append(";\n");
-                this.f3378sb.append("\n");
+                this.f3342sb.append("package ").append(packageName).append(";\n");
+                this.f3342sb.append("\n");
             }
-            this.f3378sb.append("public interface ").append(className).append(" {\n\n");
+            this.f3342sb.append("public interface ").append(className).append(" {\n\n");
             toString(reflections);
-            this.f3378sb.append("}\n");
-            Files.write(new File(filename).toPath(), this.f3378sb.toString().getBytes(Charset.defaultCharset()), new OpenOption[0]);
+            this.f3342sb.append("}\n");
+            Files.write(new File(filename).toPath(), this.f3342sb.toString().getBytes(Charset.defaultCharset()), new OpenOption[0]);
             return file;
         } catch (IOException e) {
             throw new RuntimeException();
@@ -111,7 +111,7 @@ public class JavaCodeSerializer implements Serializer {
             i++;
         }
         for (int j = prevPaths.size(); j > i; j--) {
-            StringBuilder sb = this.f3378sb;
+            StringBuilder sb = this.f3342sb;
             int i2 = this.indent - 1;
             this.indent = i2;
             sb.append(indent(i2)).append("}\n");
@@ -121,13 +121,13 @@ public class JavaCodeSerializer implements Serializer {
 
     protected void indentClose(List<String> prevPaths) {
         for (int j = prevPaths.size(); j >= 1; j--) {
-            this.f3378sb.append(indent(j)).append("}\n");
+            this.f3342sb.append(indent(j)).append("}\n");
         }
     }
 
     protected void addPackages(List<String> typePaths, int i) {
         for (int j = i; j < typePaths.size() - 1; j++) {
-            StringBuilder sb = this.f3378sb;
+            StringBuilder sb = this.f3342sb;
             int i2 = this.indent;
             this.indent = i2 + 1;
             sb.append(indent(i2)).append("interface ").append(uniqueName(typePaths.get(j), typePaths, j)).append(" {\n");
@@ -135,7 +135,7 @@ public class JavaCodeSerializer implements Serializer {
     }
 
     protected void addClass(List<String> typePaths, String className) {
-        StringBuilder sb = this.f3378sb;
+        StringBuilder sb = this.f3342sb;
         int i = this.indent;
         this.indent = i + 1;
         sb.append(indent(i)).append("interface ").append(uniqueName(className, typePaths, typePaths.size() - 1)).append(" {\n");
@@ -143,14 +143,14 @@ public class JavaCodeSerializer implements Serializer {
 
     protected void addFields(List<String> typePaths, List<String> fields) {
         if (!fields.isEmpty()) {
-            StringBuilder sb = this.f3378sb;
+            StringBuilder sb = this.f3342sb;
             int i = this.indent;
             this.indent = i + 1;
             sb.append(indent(i)).append("interface fields {\n");
             for (String field : fields) {
-                this.f3378sb.append(indent(this.indent)).append("interface ").append(uniqueName(field, typePaths)).append(" {}\n");
+                this.f3342sb.append(indent(this.indent)).append("interface ").append(uniqueName(field, typePaths)).append(" {}\n");
             }
-            StringBuilder sb2 = this.f3378sb;
+            StringBuilder sb2 = this.f3342sb;
             int i2 = this.indent - 1;
             this.indent = i2;
             sb2.append(indent(i2)).append("}\n");
@@ -159,14 +159,14 @@ public class JavaCodeSerializer implements Serializer {
 
     protected void addMethods(List<String> typePaths, List<String> fields, List<String> methods) {
         if (!methods.isEmpty()) {
-            StringBuilder sb = this.f3378sb;
+            StringBuilder sb = this.f3342sb;
             int i = this.indent;
             this.indent = i + 1;
             sb.append(indent(i)).append("interface methods {\n");
             for (String method : methods) {
-                this.f3378sb.append(indent(this.indent)).append("interface ").append(uniqueName(uniqueName(method, fields), typePaths)).append(" {}\n");
+                this.f3342sb.append(indent(this.indent)).append("interface ").append(uniqueName(uniqueName(method, fields), typePaths)).append(" {}\n");
             }
-            StringBuilder sb2 = this.f3378sb;
+            StringBuilder sb2 = this.f3342sb;
             int i2 = this.indent - 1;
             this.indent = i2;
             sb2.append(indent(i2)).append("}\n");
@@ -175,14 +175,14 @@ public class JavaCodeSerializer implements Serializer {
 
     protected void addAnnotations(List<String> typePaths, List<String> annotations) {
         if (!annotations.isEmpty()) {
-            StringBuilder sb = this.f3378sb;
+            StringBuilder sb = this.f3342sb;
             int i = this.indent;
             this.indent = i + 1;
             sb.append(indent(i)).append("interface annotations {\n");
             for (String annotation : annotations) {
-                this.f3378sb.append(indent(this.indent)).append("interface ").append(uniqueName(annotation, typePaths)).append(" {}\n");
+                this.f3342sb.append(indent(this.indent)).append("interface ").append(uniqueName(annotation, typePaths)).append(" {}\n");
             }
-            StringBuilder sb2 = this.f3378sb;
+            StringBuilder sb2 = this.f3342sb;
             int i2 = this.indent - 1;
             this.indent = i2;
             sb2.append(indent(i2)).append("}\n");

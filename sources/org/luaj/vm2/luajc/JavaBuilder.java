@@ -99,23 +99,23 @@ public class JavaBuilder {
     private static final String NAME_VARRESULT = "v";
 
     /* renamed from: pi */
-    private final ProtoInfo f3345pi;
+    private final ProtoInfo f3309pi;
 
     /* renamed from: p */
-    private final Prototype f3346p;
+    private final Prototype f3310p;
     private final String classname;
 
     /* renamed from: cg */
-    private final ClassGen f3347cg;
+    private final ClassGen f3311cg;
 
     /* renamed from: cp */
-    private final ConstantPoolGen f3348cp;
+    private final ConstantPoolGen f3312cp;
     private final InstructionFactory factory;
     private final InstructionList init;
     private final InstructionList main;
 
     /* renamed from: mg */
-    private final MethodGen f3349mg;
+    private final MethodGen f3313mg;
     private int superclassType;
     private static int SUPERTYPE_VARARGS;
     private final int[] targets;
@@ -148,33 +148,33 @@ public class JavaBuilder {
     static Class class$org$luaj$vm2$lib$ThreeArgFunction;
 
     public JavaBuilder(ProtoInfo protoInfo, String str, String str2) {
-        this.f3345pi = protoInfo;
-        this.f3346p = protoInfo.prototype;
+        this.f3309pi = protoInfo;
+        this.f3310p = protoInfo.prototype;
         this.classname = str;
-        this.superclassType = this.f3346p.numparams;
-        if (this.f3346p.is_vararg != 0 || this.superclassType >= SUPERTYPE_VARARGS) {
+        this.superclassType = this.f3310p.numparams;
+        if (this.f3310p.is_vararg != 0 || this.superclassType >= SUPERTYPE_VARARGS) {
             this.superclassType = SUPERTYPE_VARARGS;
         }
-        int length = this.f3346p.code.length;
+        int length = this.f3310p.code.length;
         for (int i = 0; i < length; i++) {
-            int i2 = this.f3346p.code[i];
+            int i2 = this.f3310p.code[i];
             int GET_OPCODE = Lua.GET_OPCODE(i2);
             if (GET_OPCODE == 30 || (GET_OPCODE == 31 && (Lua.GETARG_B(i2) < 1 || Lua.GETARG_B(i2) > 2))) {
                 this.superclassType = SUPERTYPE_VARARGS;
                 break;
             }
         }
-        this.f3347cg = new ClassGen(str, SUPER_NAME_N[this.superclassType], str2, 33, (String[]) null);
-        this.f3348cp = this.f3347cg.getConstantPool();
-        this.factory = new InstructionFactory(this.f3347cg);
+        this.f3311cg = new ClassGen(str, SUPER_NAME_N[this.superclassType], str2, 33, (String[]) null);
+        this.f3312cp = this.f3311cg.getConstantPool();
+        this.factory = new InstructionFactory(this.f3311cg);
         this.init = new InstructionList();
         this.main = new InstructionList();
-        for (int i3 = 0; i3 < this.f3346p.upvalues.length; i3++) {
-            this.f3347cg.addField(new FieldGen(0, protoInfo.isReadWriteUpvalue(protoInfo.upvals[i3]) ? TYPE_LOCALUPVALUE : TYPE_LUAVALUE, upvalueName(i3), this.f3348cp).getField());
+        for (int i3 = 0; i3 < this.f3310p.upvalues.length; i3++) {
+            this.f3311cg.addField(new FieldGen(0, protoInfo.isReadWriteUpvalue(protoInfo.upvals[i3]) ? TYPE_LOCALUPVALUE : TYPE_LUAVALUE, upvalueName(i3), this.f3312cp).getField());
         }
-        this.f3349mg = new MethodGen(17, RETURN_TYPE_N[this.superclassType], ARG_TYPES_N[this.superclassType], ARG_NAMES_N[this.superclassType], METH_NAME_N[this.superclassType], STR_LUAVALUE, this.main, this.f3348cp);
+        this.f3313mg = new MethodGen(17, RETURN_TYPE_N[this.superclassType], ARG_TYPES_N[this.superclassType], ARG_NAMES_N[this.superclassType], METH_NAME_N[this.superclassType], STR_LUAVALUE, this.main, this.f3312cp);
         initializeSlots();
-        int length2 = this.f3346p.code.length;
+        int length2 = this.f3310p.code.length;
         this.targets = new int[length2];
         this.branches = new BranchInstruction[length2];
         this.branchDestHandles = new InstructionHandle[length2];
@@ -183,35 +183,35 @@ public class JavaBuilder {
 
     public void initializeSlots() {
         int i;
-        createUpvalues(-1, 0, this.f3346p.maxstacksize);
+        createUpvalues(-1, 0, this.f3310p.maxstacksize);
         if (this.superclassType == SUPERTYPE_VARARGS) {
             i = 0;
-            while (i < this.f3346p.numparams) {
-                if (this.f3345pi.isInitialValueUsed(i)) {
+            while (i < this.f3310p.numparams) {
+                if (this.f3309pi.isInitialValueUsed(i)) {
                     append((Instruction) new ALOAD(1));
-                    append((CompoundInstruction) new PUSH(this.f3348cp, i + 1));
+                    append((CompoundInstruction) new PUSH(this.f3312cp, i + 1));
                     append((Instruction) this.factory.createInvoke(STR_VARARGS, ParameterDescription.NAME_PREFIX, TYPE_LUAVALUE, ARG_TYPES_INT, 182));
                     storeLocal(-1, i);
                 }
                 i++;
             }
             append((Instruction) new ALOAD(1));
-            append((CompoundInstruction) new PUSH(this.f3348cp, 1 + this.f3346p.numparams));
+            append((CompoundInstruction) new PUSH(this.f3312cp, 1 + this.f3310p.numparams));
             append((Instruction) this.factory.createInvoke(STR_VARARGS, "subargs", TYPE_VARARGS, ARG_TYPES_INT, 182));
             append((Instruction) new ASTORE(1));
         } else {
             i = 0;
-            while (i < this.f3346p.numparams) {
+            while (i < this.f3310p.numparams) {
                 this.plainSlotVars.put(Integer.valueOf(i), Integer.valueOf(1 + i));
-                if (this.f3345pi.isUpvalueCreate(-1, i)) {
+                if (this.f3309pi.isUpvalueCreate(-1, i)) {
                     append((Instruction) new ALOAD(1 + i));
                     storeLocal(-1, i);
                 }
                 i++;
             }
         }
-        while (i < this.f3346p.maxstacksize) {
-            if (this.f3345pi.isInitialValueUsed(i)) {
+        while (i < this.f3310p.maxstacksize) {
+            if (this.f3309pi.isInitialValueUsed(i)) {
                 loadNil();
                 storeLocal(-1, i);
             }
@@ -221,20 +221,20 @@ public class JavaBuilder {
 
     public byte[] completeClass(boolean z) {
         if (!this.init.isEmpty()) {
-            MethodGen methodGen = new MethodGen(8, Type.VOID, ARG_TYPES_NONE, new String[0], "<clinit>", this.f3347cg.getClassName(), this.init, this.f3347cg.getConstantPool());
+            MethodGen methodGen = new MethodGen(8, Type.VOID, ARG_TYPES_NONE, new String[0], "<clinit>", this.f3311cg.getClassName(), this.init, this.f3311cg.getConstantPool());
             this.init.append(InstructionConstants.RETURN);
             methodGen.setMaxStack();
-            this.f3347cg.addMethod(methodGen.getMethod());
+            this.f3311cg.addMethod(methodGen.getMethod());
             this.init.dispose();
         }
-        this.f3347cg.addEmptyConstructor(1);
+        this.f3311cg.addEmptyConstructor(1);
         resolveBranches();
-        this.f3349mg.setMaxStack();
-        this.f3347cg.addMethod(this.f3349mg.getMethod());
+        this.f3313mg.setMaxStack();
+        this.f3311cg.addMethod(this.f3313mg.getMethod());
         this.main.dispose();
-        if (this.f3346p.upvalues.length == 1 && this.superclassType == SUPERTYPE_VARARGS) {
-            MethodGen methodGen2 = new MethodGen(17, Type.VOID, ARG_TYPES_LUAVALUE, new String[]{"env"}, "initupvalue1", STR_LUAVALUE, this.main, this.f3348cp);
-            boolean isReadWriteUpvalue = this.f3345pi.isReadWriteUpvalue(this.f3345pi.upvals[0]);
+        if (this.f3310p.upvalues.length == 1 && this.superclassType == SUPERTYPE_VARARGS) {
+            MethodGen methodGen2 = new MethodGen(17, Type.VOID, ARG_TYPES_LUAVALUE, new String[]{"env"}, "initupvalue1", STR_LUAVALUE, this.main, this.f3312cp);
+            boolean isReadWriteUpvalue = this.f3309pi.isReadWriteUpvalue(this.f3309pi.upvals[0]);
             append((Instruction) InstructionConstants.THIS);
             append((Instruction) new ALOAD(1));
             if (isReadWriteUpvalue) {
@@ -245,11 +245,11 @@ public class JavaBuilder {
             }
             append((Instruction) InstructionConstants.RETURN);
             methodGen2.setMaxStack();
-            this.f3347cg.addMethod(methodGen2.getMethod());
+            this.f3311cg.addMethod(methodGen2.getMethod());
             this.main.dispose();
         }
         if (z) {
-            MethodGen methodGen3 = new MethodGen(9, Type.VOID, ARG_TYPES_STRINGARRAY, new String[]{ParameterDescription.NAME_PREFIX}, LineReader.MAIN, this.classname, this.main, this.f3348cp);
+            MethodGen methodGen3 = new MethodGen(9, Type.VOID, ARG_TYPES_STRINGARRAY, new String[]{ParameterDescription.NAME_PREFIX}, LineReader.MAIN, this.classname, this.main, this.f3312cp);
             append((Instruction) this.factory.createNew(this.classname));
             append((Instruction) InstructionConstants.DUP);
             append((Instruction) this.factory.createInvoke(this.classname, "<init>", Type.VOID, ARG_TYPES_NONE, 183));
@@ -257,12 +257,12 @@ public class JavaBuilder {
             append((Instruction) this.factory.createInvoke(STR_JSEPLATFORM, "luaMain", Type.VOID, ARG_TYPES_LUAVALUE_STRINGARRAY, 184));
             append((Instruction) InstructionConstants.RETURN);
             methodGen3.setMaxStack();
-            this.f3347cg.addMethod(methodGen3.getMethod());
+            this.f3311cg.addMethod(methodGen3.getMethod());
             this.main.dispose();
         }
         try {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            this.f3347cg.getJavaClass().dump(byteArrayOutputStream);
+            this.f3311cg.getJavaClass().dump(byteArrayOutputStream);
             return byteArrayOutputStream.toByteArray();
         } catch (IOException e) {
             throw new RuntimeException(new StringBuffer().append("JavaClass.dump() threw ").append(e).toString());
@@ -294,7 +294,7 @@ public class JavaBuilder {
         if (map.containsKey(valueOf)) {
             return ((Integer) map.get(valueOf)).intValue();
         }
-        LocalVariableGen addLocalVariable = this.f3349mg.addLocalVariable(new StringBuffer().append(str).append(i).toString(), type, (InstructionHandle) null, (InstructionHandle) null);
+        LocalVariableGen addLocalVariable = this.f3313mg.addLocalVariable(new StringBuffer().append(str).append(i).toString(), type, (InstructionHandle) null, (InstructionHandle) null);
         int index = addLocalVariable.getIndex();
         map.put(valueOf, Integer.valueOf(index));
         this.localVarGenBySlot.put(valueOf, addLocalVariable);
@@ -306,19 +306,19 @@ public class JavaBuilder {
     }
 
     public void loadLocal(int i, int i2) {
-        boolean isUpvalueRefer = this.f3345pi.isUpvalueRefer(i, i2);
+        boolean isUpvalueRefer = this.f3309pi.isUpvalueRefer(i, i2);
         append((Instruction) new ALOAD(findSlotIndex(i2, isUpvalueRefer)));
         if (isUpvalueRefer) {
-            append((CompoundInstruction) new PUSH(this.f3348cp, 0));
+            append((CompoundInstruction) new PUSH(this.f3312cp, 0));
             append((Instruction) InstructionConstants.AALOAD);
         }
     }
 
     public void storeLocal(int i, int i2) {
-        boolean isUpvalueAssign = this.f3345pi.isUpvalueAssign(i, i2);
+        boolean isUpvalueAssign = this.f3309pi.isUpvalueAssign(i, i2);
         int findSlotIndex = findSlotIndex(i2, isUpvalueAssign);
         if (isUpvalueAssign) {
-            if (this.f3345pi.isUpvalueCreate(i, i2)) {
+            if (this.f3309pi.isUpvalueCreate(i, i2)) {
                 append((Instruction) this.factory.createInvoke(this.classname, "newupe", TYPE_LOCALUPVALUE, ARG_TYPES_NONE, 184));
                 append((Instruction) InstructionConstants.DUP);
                 append((Instruction) new ASTORE(findSlotIndex));
@@ -326,7 +326,7 @@ public class JavaBuilder {
                 append((Instruction) new ALOAD(findSlotIndex));
             }
             append((Instruction) InstructionConstants.SWAP);
-            append((CompoundInstruction) new PUSH(this.f3348cp, 0));
+            append((CompoundInstruction) new PUSH(this.f3312cp, 0));
             append((Instruction) InstructionConstants.SWAP);
             append((Instruction) InstructionConstants.AASTORE);
             return;
@@ -337,7 +337,7 @@ public class JavaBuilder {
     public void createUpvalues(int i, int i2, int i3) {
         for (int i4 = 0; i4 < i3; i4++) {
             int i5 = i2 + i4;
-            if (this.f3345pi.isUpvalueCreate(i, i5)) {
+            if (this.f3309pi.isUpvalueCreate(i, i5)) {
                 int findSlotIndex = findSlotIndex(i5, true);
                 append((Instruction) this.factory.createInvoke(this.classname, "newupn", TYPE_LOCALUPVALUE, ARG_TYPES_NONE, 184));
                 append((Instruction) new ASTORE(findSlotIndex));
@@ -346,7 +346,7 @@ public class JavaBuilder {
     }
 
     public void convertToUpvalue(int i, int i2) {
-        if (this.f3345pi.isUpvalueAssign(i, i2)) {
+        if (this.f3309pi.isUpvalueAssign(i, i2)) {
             append((Instruction) new ALOAD(findSlotIndex(i2, false)));
             append((Instruction) this.factory.createInvoke(this.classname, "newupl", TYPE_LOCALUPVALUE, ARG_TYPES_LUAVALUE, 184));
             append((Instruction) new ASTORE(findSlotIndex(i2, true)));
@@ -358,11 +358,11 @@ public class JavaBuilder {
     }
 
     public void loadUpvalue(int i) {
-        boolean isReadWriteUpvalue = this.f3345pi.isReadWriteUpvalue(this.f3345pi.upvals[i]);
+        boolean isReadWriteUpvalue = this.f3309pi.isReadWriteUpvalue(this.f3309pi.upvals[i]);
         append((Instruction) InstructionConstants.THIS);
         if (isReadWriteUpvalue) {
             append((Instruction) this.factory.createFieldAccess(this.classname, upvalueName(i), TYPE_LOCALUPVALUE, 180));
-            append((CompoundInstruction) new PUSH(this.f3348cp, 0));
+            append((CompoundInstruction) new PUSH(this.f3312cp, 0));
             append((Instruction) InstructionConstants.AALOAD);
             return;
         }
@@ -370,11 +370,11 @@ public class JavaBuilder {
     }
 
     public void storeUpvalue(int i, int i2, int i3) {
-        boolean isReadWriteUpvalue = this.f3345pi.isReadWriteUpvalue(this.f3345pi.upvals[i2]);
+        boolean isReadWriteUpvalue = this.f3309pi.isReadWriteUpvalue(this.f3309pi.upvals[i2]);
         append((Instruction) InstructionConstants.THIS);
         if (isReadWriteUpvalue) {
             append((Instruction) this.factory.createFieldAccess(this.classname, upvalueName(i2), TYPE_LOCALUPVALUE, 180));
-            append((CompoundInstruction) new PUSH(this.f3348cp, 0));
+            append((CompoundInstruction) new PUSH(this.f3312cp, 0));
             loadLocal(i, i3);
             append((Instruction) InstructionConstants.AASTORE);
             return;
@@ -384,8 +384,8 @@ public class JavaBuilder {
     }
 
     public void newTable(int i, int i2) {
-        append((CompoundInstruction) new PUSH(this.f3348cp, i));
-        append((CompoundInstruction) new PUSH(this.f3348cp, i2));
+        append((CompoundInstruction) new PUSH(this.f3312cp, i));
+        append((CompoundInstruction) new PUSH(this.f3312cp, i2));
         append((Instruction) this.factory.createInvoke(STR_LUAVALUE, "tableOf", TYPE_LUATABLE, ARG_TYPES_INT_INT, 184));
     }
 
@@ -403,13 +403,13 @@ public class JavaBuilder {
             append((Instruction) this.factory.createInvoke(STR_VARARGS, "arg1", TYPE_LUAVALUE, ARG_TYPES_NONE, 182));
             return;
         }
-        append((CompoundInstruction) new PUSH(this.f3348cp, i));
+        append((CompoundInstruction) new PUSH(this.f3312cp, i));
         append((Instruction) this.factory.createInvoke(STR_VARARGS, ParameterDescription.NAME_PREFIX, TYPE_LUAVALUE, ARG_TYPES_INT, 182));
     }
 
     private int getVarresultIndex() {
         if (this.varresult == null) {
-            this.varresult = this.f3349mg.addLocalVariable(NAME_VARRESULT, TYPE_VARARGS, (InstructionHandle) null, (InstructionHandle) null);
+            this.varresult = this.f3313mg.addLocalVariable(NAME_VARRESULT, TYPE_VARARGS, (InstructionHandle) null, (InstructionHandle) null);
         }
         return this.varresult.getIndex();
     }
@@ -423,7 +423,7 @@ public class JavaBuilder {
     }
 
     public void subargs(int i) {
-        append((CompoundInstruction) new PUSH(this.f3348cp, i));
+        append((CompoundInstruction) new PUSH(this.f3312cp, i));
         append((Instruction) this.factory.createInvoke(STR_VARARGS, "subargs", TYPE_VARARGS, ARG_TYPES_INT, 182));
     }
 
@@ -516,11 +516,11 @@ public class JavaBuilder {
     }
 
     public void loadArrayArgs(int i, int i2, int i3) {
-        append((CompoundInstruction) new PUSH(this.f3348cp, i3));
-        append((Instruction) new ANEWARRAY(this.f3348cp.addClass(STR_LUAVALUE)));
+        append((CompoundInstruction) new PUSH(this.f3312cp, i3));
+        append((Instruction) new ANEWARRAY(this.f3312cp.addClass(STR_LUAVALUE)));
         for (int i4 = 0; i4 < i3; i4++) {
             append((Instruction) InstructionConstants.DUP);
-            append((CompoundInstruction) new PUSH(this.f3348cp, i4));
+            append((CompoundInstruction) new PUSH(this.f3312cp, i4));
             i2++;
             loadLocal(i, i2);
             append((Instruction) new AASTORE());
@@ -611,7 +611,7 @@ public class JavaBuilder {
     }
 
     public void closureInitUpvalueFromUpvalue(String str, int i, int i2) {
-        ArrayType arrayType = this.f3345pi.isReadWriteUpvalue(this.f3345pi.upvals[i2]) ? TYPE_LOCALUPVALUE : TYPE_LUAVALUE;
+        ArrayType arrayType = this.f3309pi.isReadWriteUpvalue(this.f3309pi.upvals[i2]) ? TYPE_LOCALUPVALUE : TYPE_LUAVALUE;
         String upvalueName = upvalueName(i2);
         String upvalueName2 = upvalueName(i);
         append((Instruction) InstructionConstants.THIS);
@@ -620,7 +620,7 @@ public class JavaBuilder {
     }
 
     public void closureInitUpvalueFromLocal(String str, int i, int i2, int i3) {
-        boolean isReadWriteUpvalue = this.f3345pi.isReadWriteUpvalue(this.f3345pi.vars[i3][i2].upvalue);
+        boolean isReadWriteUpvalue = this.f3309pi.isReadWriteUpvalue(this.f3309pi.vars[i3][i2].upvalue);
         ArrayType arrayType = isReadWriteUpvalue ? TYPE_LOCALUPVALUE : TYPE_LUAVALUE;
         String upvalueName = upvalueName(i);
         append((Instruction) new ALOAD(findSlotIndex(i3, isReadWriteUpvalue)));
@@ -652,8 +652,8 @@ public class JavaBuilder {
 
     private String createLuaIntegerField(int i) {
         String stringBuffer = new StringBuffer().append(PREFIX_CONSTANT).append(this.constants.size()).toString();
-        this.f3347cg.addField(new FieldGen(24, TYPE_LUAVALUE, stringBuffer, this.f3348cp).getField());
-        this.init.append(new PUSH(this.f3348cp, i));
+        this.f3311cg.addField(new FieldGen(24, TYPE_LUAVALUE, stringBuffer, this.f3312cp).getField());
+        this.init.append(new PUSH(this.f3312cp, i));
         this.init.append(this.factory.createInvoke(STR_LUAVALUE, CoreConstants.VALUE_OF, TYPE_LUAINTEGER, ARG_TYPES_INT, 184));
         this.init.append(this.factory.createPutStatic(this.classname, stringBuffer, TYPE_LUAVALUE));
         return stringBuffer;
@@ -661,8 +661,8 @@ public class JavaBuilder {
 
     private String createLuaDoubleField(double d) {
         String stringBuffer = new StringBuffer().append(PREFIX_CONSTANT).append(this.constants.size()).toString();
-        this.f3347cg.addField(new FieldGen(24, TYPE_LUAVALUE, stringBuffer, this.f3348cp).getField());
-        this.init.append(new PUSH(this.f3348cp, d));
+        this.f3311cg.addField(new FieldGen(24, TYPE_LUAVALUE, stringBuffer, this.f3312cp).getField());
+        this.init.append(new PUSH(this.f3312cp, d));
         this.init.append(this.factory.createInvoke(STR_LUAVALUE, CoreConstants.VALUE_OF, TYPE_LUANUMBER, ARG_TYPES_DOUBLE, 184));
         this.init.append(this.factory.createPutStatic(this.classname, stringBuffer, TYPE_LUAVALUE));
         return stringBuffer;
@@ -670,17 +670,17 @@ public class JavaBuilder {
 
     private String createLuaStringField(LuaString luaString) {
         String stringBuffer = new StringBuffer().append(PREFIX_CONSTANT).append(this.constants.size()).toString();
-        this.f3347cg.addField(new FieldGen(24, TYPE_LUAVALUE, stringBuffer, this.f3348cp).getField());
+        this.f3311cg.addField(new FieldGen(24, TYPE_LUAVALUE, stringBuffer, this.f3312cp).getField());
         LuaString checkstring = luaString.checkstring();
         if (checkstring.isValidUtf8()) {
-            this.init.append(new PUSH(this.f3348cp, luaString.tojstring()));
+            this.init.append(new PUSH(this.f3312cp, luaString.tojstring()));
             this.init.append(this.factory.createInvoke(STR_LUASTRING, CoreConstants.VALUE_OF, TYPE_LUASTRING, ARG_TYPES_STRING, 184));
         } else {
             char[] cArr = new char[checkstring.m_length];
             for (int i = 0; i < checkstring.m_length; i++) {
                 cArr[i] = (char) (255 & checkstring.m_bytes[checkstring.m_offset + i]);
             }
-            this.init.append(new PUSH(this.f3348cp, new String(cArr)));
+            this.init.append(new PUSH(this.f3312cp, new String(cArr)));
             this.init.append(this.factory.createInvoke(STR_STRING, "toCharArray", TYPE_CHARARRAY, Type.NO_ARGS, 182));
             this.init.append(this.factory.createInvoke(STR_LUASTRING, CoreConstants.VALUE_OF, TYPE_LUASTRING, ARG_TYPES_CHARARRAY, 184));
         }
@@ -727,7 +727,7 @@ public class JavaBuilder {
         this.branchDestHandles[i] = this.beginningOfLuaInstruction;
         this.lastInstrHandles[i] = this.main.getEnd();
         if (i2 != this.prev_line) {
-            MethodGen methodGen = this.f3349mg;
+            MethodGen methodGen = this.f3313mg;
             InstructionHandle instructionHandle = this.beginningOfLuaInstruction;
             this.prev_line = i2;
             methodGen.addLineNumber(instructionHandle, i2);
@@ -749,7 +749,7 @@ public class JavaBuilder {
     }
 
     private void resolveBranches() {
-        int length = this.f3346p.code.length;
+        int length = this.f3310p.code.length;
         for (int i = 0; i < length; i++) {
             if (this.branches[i] != null) {
                 int i2 = this.targets[i];
@@ -757,7 +757,7 @@ public class JavaBuilder {
                     i2++;
                 }
                 if (i2 >= this.branchDestHandles.length) {
-                    throw new IllegalArgumentException(new StringBuffer().append("no target at or after ").append(this.targets[i]).append(" op=").append(Lua.GET_OPCODE(this.f3346p.code[this.targets[i]])).toString());
+                    throw new IllegalArgumentException(new StringBuffer().append("no target at or after ").append(this.targets[i]).append(" op=").append(Lua.GET_OPCODE(this.f3310p.code[this.targets[i]])).toString());
                 }
                 this.branches[i].setTarget(this.branchDestHandles[i2]);
             }
@@ -767,14 +767,14 @@ public class JavaBuilder {
     public void setlistStack(int i, int i2, int i3, int i4) {
         for (int i5 = 0; i5 < i4; i5++) {
             dup();
-            append((CompoundInstruction) new PUSH(this.f3348cp, i3 + i5));
+            append((CompoundInstruction) new PUSH(this.f3312cp, i3 + i5));
             loadLocal(i, i2 + i5);
             append((Instruction) this.factory.createInvoke(STR_LUAVALUE, "rawset", Type.VOID, ARG_TYPES_INT_LUAVALUE, 182));
         }
     }
 
     public void setlistVarargs(int i, int i2) {
-        append((CompoundInstruction) new PUSH(this.f3348cp, i));
+        append((CompoundInstruction) new PUSH(this.f3312cp, i));
         loadVarresult();
         append((Instruction) this.factory.createInvoke(STR_LUAVALUE, "rawsetlist", Type.VOID, ARG_TYPES_INT_VARARGS, 182));
     }

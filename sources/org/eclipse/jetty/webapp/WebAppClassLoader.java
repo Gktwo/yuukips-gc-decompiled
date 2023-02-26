@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 import java.util.StringTokenizer;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.ClassVisibilityChecker;
 import org.eclipse.jetty.util.TypeUtil;
 import org.eclipse.jetty.util.URIUtil;
@@ -417,7 +417,7 @@ public class WebAppClassLoader extends URLClassLoader implements ClassVisibility
             content = null;
             try {
                 content = url.openStream();
-                byte[] bytes = C5747IO.readBytes(content);
+                byte[] bytes = C5739IO.readBytes(content);
                 for (ClassFileTransformer transformer : this._transformers) {
                     byte[] tmp = transformer.transform(this, name, (Class) null, (ProtectionDomain) null, bytes);
                     if (tmp != null) {

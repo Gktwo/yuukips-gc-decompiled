@@ -131,70 +131,70 @@ public final class CacheControl {
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "noCache", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_noCache")
     /* renamed from: -deprecated_noCache  reason: not valid java name */
-    public final boolean m9154deprecated_noCache() {
+    public final boolean m9151deprecated_noCache() {
         return this.noCache;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "noStore", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_noStore")
     /* renamed from: -deprecated_noStore  reason: not valid java name */
-    public final boolean m9155deprecated_noStore() {
+    public final boolean m9152deprecated_noStore() {
         return this.noStore;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "maxAgeSeconds", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_maxAgeSeconds")
     /* renamed from: -deprecated_maxAgeSeconds  reason: not valid java name */
-    public final int m9156deprecated_maxAgeSeconds() {
+    public final int m9153deprecated_maxAgeSeconds() {
         return this.maxAgeSeconds;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "sMaxAgeSeconds", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_sMaxAgeSeconds")
     /* renamed from: -deprecated_sMaxAgeSeconds  reason: not valid java name */
-    public final int m9157deprecated_sMaxAgeSeconds() {
+    public final int m9154deprecated_sMaxAgeSeconds() {
         return this.sMaxAgeSeconds;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "mustRevalidate", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_mustRevalidate")
     /* renamed from: -deprecated_mustRevalidate  reason: not valid java name */
-    public final boolean m9158deprecated_mustRevalidate() {
+    public final boolean m9155deprecated_mustRevalidate() {
         return this.mustRevalidate;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "maxStaleSeconds", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_maxStaleSeconds")
     /* renamed from: -deprecated_maxStaleSeconds  reason: not valid java name */
-    public final int m9159deprecated_maxStaleSeconds() {
+    public final int m9156deprecated_maxStaleSeconds() {
         return this.maxStaleSeconds;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "minFreshSeconds", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_minFreshSeconds")
     /* renamed from: -deprecated_minFreshSeconds  reason: not valid java name */
-    public final int m9160deprecated_minFreshSeconds() {
+    public final int m9157deprecated_minFreshSeconds() {
         return this.minFreshSeconds;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "onlyIfCached", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_onlyIfCached")
     /* renamed from: -deprecated_onlyIfCached  reason: not valid java name */
-    public final boolean m9161deprecated_onlyIfCached() {
+    public final boolean m9158deprecated_onlyIfCached() {
         return this.onlyIfCached;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "noTransform", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_noTransform")
     /* renamed from: -deprecated_noTransform  reason: not valid java name */
-    public final boolean m9162deprecated_noTransform() {
+    public final boolean m9159deprecated_noTransform() {
         return this.noTransform;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "immutable", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_immutable")
     /* renamed from: -deprecated_immutable  reason: not valid java name */
-    public final boolean m9163deprecated_immutable() {
+    public final boolean m9160deprecated_immutable() {
         return this.immutable;
     }
 

@@ -23,7 +23,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
     public static final int DEFAULT_INITIAL_CAPACITY = 10;
 
     /* renamed from: a */
-    protected transient byte[] f1255a;
+    protected transient byte[] f1219a;
     protected int size;
     static final /* synthetic */ boolean $assertionsDisabled;
 
@@ -36,20 +36,20 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
     }
 
     private static final byte[] copyArrayFromSafe(ByteArrayList l) {
-        return copyArraySafe(l.f1255a, l.size);
+        return copyArraySafe(l.f1219a, l.size);
     }
 
     protected ByteArrayList(byte[] a, boolean wrapped) {
-        this.f1255a = a;
+        this.f1219a = a;
     }
 
     private void initArrayFromCapacity(int capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException("Initial capacity (" + capacity + ") is negative");
         } else if (capacity == 0) {
-            this.f1255a = ByteArrays.EMPTY_ARRAY;
+            this.f1219a = ByteArrays.EMPTY_ARRAY;
         } else {
-            this.f1255a = new byte[capacity];
+            this.f1219a = new byte[capacity];
         }
     }
 
@@ -58,51 +58,51 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
     }
 
     public ByteArrayList() {
-        this.f1255a = ByteArrays.DEFAULT_EMPTY_ARRAY;
+        this.f1219a = ByteArrays.DEFAULT_EMPTY_ARRAY;
     }
 
     public ByteArrayList(Collection<? extends Byte> c) {
         if (c instanceof ByteArrayList) {
-            this.f1255a = copyArrayFromSafe((ByteArrayList) c);
-            this.size = this.f1255a.length;
+            this.f1219a = copyArrayFromSafe((ByteArrayList) c);
+            this.size = this.f1219a.length;
             return;
         }
         initArrayFromCapacity(c.size());
         if (c instanceof ByteList) {
-            byte[] bArr = this.f1255a;
+            byte[] bArr = this.f1219a;
             int size = c.size();
             this.size = size;
             ((ByteList) c).getElements(0, bArr, 0, size);
             return;
         }
-        this.size = ByteIterators.unwrap(ByteIterators.asByteIterator(c.iterator()), this.f1255a);
+        this.size = ByteIterators.unwrap(ByteIterators.asByteIterator(c.iterator()), this.f1219a);
     }
 
     public ByteArrayList(ByteCollection c) {
         if (c instanceof ByteArrayList) {
-            this.f1255a = copyArrayFromSafe((ByteArrayList) c);
-            this.size = this.f1255a.length;
+            this.f1219a = copyArrayFromSafe((ByteArrayList) c);
+            this.size = this.f1219a.length;
             return;
         }
         initArrayFromCapacity(c.size());
         if (c instanceof ByteList) {
-            byte[] bArr = this.f1255a;
+            byte[] bArr = this.f1219a;
             int size = c.size();
             this.size = size;
             ((ByteList) c).getElements(0, bArr, 0, size);
             return;
         }
-        this.size = ByteIterators.unwrap(c.iterator(), this.f1255a);
+        this.size = ByteIterators.unwrap(c.iterator(), this.f1219a);
     }
 
     public ByteArrayList(ByteList l) {
         if (l instanceof ByteArrayList) {
-            this.f1255a = copyArrayFromSafe((ByteArrayList) l);
-            this.size = this.f1255a.length;
+            this.f1219a = copyArrayFromSafe((ByteArrayList) l);
+            this.size = this.f1219a.length;
             return;
         }
         initArrayFromCapacity(l.size());
-        byte[] bArr = this.f1255a;
+        byte[] bArr = this.f1219a;
         int size = l.size();
         this.size = size;
         l.getElements(0, bArr, 0, size);
@@ -114,7 +114,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
 
     public ByteArrayList(byte[] a, int offset, int length) {
         this(length);
-        System.arraycopy(a, offset, this.f1255a, 0, length);
+        System.arraycopy(a, offset, this.f1219a, 0, length);
         this.size = length;
     }
 
@@ -133,7 +133,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
     }
 
     public byte[] elements() {
-        return this.f1255a;
+        return this.f1219a;
     }
 
     public static ByteArrayList wrap(byte[] a, int length) {
@@ -160,26 +160,26 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
     }
 
     public void ensureCapacity(int capacity) {
-        if (capacity <= this.f1255a.length) {
+        if (capacity <= this.f1219a.length) {
             return;
         }
-        if (this.f1255a != ByteArrays.DEFAULT_EMPTY_ARRAY || capacity > 10) {
-            this.f1255a = ByteArrays.ensureCapacity(this.f1255a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > this.f1255a.length) {
+        if (this.f1219a != ByteArrays.DEFAULT_EMPTY_ARRAY || capacity > 10) {
+            this.f1219a = ByteArrays.ensureCapacity(this.f1219a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > this.f1219a.length) {
                 throw new AssertionError();
             }
         }
     }
 
     private void grow(int capacity) {
-        if (capacity > this.f1255a.length) {
-            if (this.f1255a != ByteArrays.DEFAULT_EMPTY_ARRAY) {
-                capacity = (int) Math.max(Math.min(((long) this.f1255a.length) + ((long) (this.f1255a.length >> 1)), 2147483639L), (long) capacity);
+        if (capacity > this.f1219a.length) {
+            if (this.f1219a != ByteArrays.DEFAULT_EMPTY_ARRAY) {
+                capacity = (int) Math.max(Math.min(((long) this.f1219a.length) + ((long) (this.f1219a.length >> 1)), 2147483639L), (long) capacity);
             } else if (capacity < 10) {
                 capacity = 10;
             }
-            this.f1255a = ByteArrays.forceCapacity(this.f1255a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > this.f1255a.length) {
+            this.f1219a = ByteArrays.forceCapacity(this.f1219a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > this.f1219a.length) {
                 throw new AssertionError();
             }
         }
@@ -190,11 +190,11 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
         ensureIndex(index);
         grow(this.size + 1);
         if (index != this.size) {
-            System.arraycopy(this.f1255a, index, this.f1255a, index + 1, this.size - index);
+            System.arraycopy(this.f1219a, index, this.f1219a, index + 1, this.size - index);
         }
-        this.f1255a[index] = k;
+        this.f1219a[index] = k;
         this.size++;
-        if (!$assertionsDisabled && this.size > this.f1255a.length) {
+        if (!$assertionsDisabled && this.size > this.f1219a.length) {
             throw new AssertionError();
         }
     }
@@ -202,11 +202,11 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList, p014it.unimi.dsi.fastutil.bytes.AbstractByteCollection, p014it.unimi.dsi.fastutil.bytes.ByteCollection
     public boolean add(byte k) {
         grow(this.size + 1);
-        byte[] bArr = this.f1255a;
+        byte[] bArr = this.f1219a;
         int i = this.size;
         this.size = i + 1;
         bArr[i] = k;
-        if ($assertionsDisabled || this.size <= this.f1255a.length) {
+        if ($assertionsDisabled || this.size <= this.f1219a.length) {
             return true;
         }
         throw new AssertionError();
@@ -215,7 +215,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
     @Override // p014it.unimi.dsi.fastutil.bytes.ByteList
     public byte getByte(int index) {
         if (index < this.size) {
-            return this.f1255a[index];
+            return this.f1219a[index];
         }
         throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
     }
@@ -223,7 +223,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList, p014it.unimi.dsi.fastutil.bytes.ByteList
     public int indexOf(byte k) {
         for (int i = 0; i < this.size; i++) {
-            if (k == this.f1255a[i]) {
+            if (k == this.f1219a[i]) {
                 return i;
             }
         }
@@ -238,7 +238,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
             if (i == 0) {
                 return -1;
             }
-        } while (k != this.f1255a[i]);
+        } while (k != this.f1219a[i]);
         return i;
     }
 
@@ -247,12 +247,12 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        byte old = this.f1255a[index];
+        byte old = this.f1219a[index];
         this.size--;
         if (index != this.size) {
-            System.arraycopy(this.f1255a, index + 1, this.f1255a, index, this.size - index);
+            System.arraycopy(this.f1219a, index + 1, this.f1219a, index, this.size - index);
         }
-        if ($assertionsDisabled || this.size <= this.f1255a.length) {
+        if ($assertionsDisabled || this.size <= this.f1219a.length) {
             return old;
         }
         throw new AssertionError();
@@ -265,7 +265,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
             return false;
         }
         removeByte(index);
-        if ($assertionsDisabled || this.size <= this.f1255a.length) {
+        if ($assertionsDisabled || this.size <= this.f1219a.length) {
             return true;
         }
         throw new AssertionError();
@@ -276,15 +276,15 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        byte old = this.f1255a[index];
-        this.f1255a[index] = k;
+        byte old = this.f1219a[index];
+        this.f1219a[index] = k;
         return old;
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public void clear() {
         this.size = 0;
-        if (!$assertionsDisabled && this.size > this.f1255a.length) {
+        if (!$assertionsDisabled && this.size > this.f1219a.length) {
             throw new AssertionError();
         }
     }
@@ -296,11 +296,11 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList, p014it.unimi.dsi.fastutil.bytes.ByteList
     public void size(int size) {
-        if (size > this.f1255a.length) {
-            this.f1255a = ByteArrays.forceCapacity(this.f1255a, size, this.size);
+        if (size > this.f1219a.length) {
+            this.f1219a = ByteArrays.forceCapacity(this.f1219a, size, this.size);
         }
         if (size > this.size) {
-            Arrays.fill(this.f1255a, this.size, size, (byte) 0);
+            Arrays.fill(this.f1219a, this.size, size, (byte) 0);
         }
         this.size = size;
     }
@@ -315,11 +315,11 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
     }
 
     public void trim(int n) {
-        if (n < this.f1255a.length && this.size != this.f1255a.length) {
+        if (n < this.f1219a.length && this.size != this.f1219a.length) {
             byte[] t = new byte[Math.max(n, this.size)];
-            System.arraycopy(this.f1255a, 0, t, 0, this.size);
-            this.f1255a = t;
-            if (!$assertionsDisabled && this.size > this.f1255a.length) {
+            System.arraycopy(this.f1219a, 0, t, 0, this.size);
+            this.f1219a = t;
+            if (!$assertionsDisabled && this.size > this.f1219a.length) {
                 throw new AssertionError();
             }
         }
@@ -336,13 +336,13 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
         }
 
         private byte[] getParentArray() {
-            return ByteArrayList.this.f1255a;
+            return ByteArrayList.this.f1219a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList.ByteSubList, p014it.unimi.dsi.fastutil.bytes.ByteList
         public byte getByte(int i) {
             ensureRestrictedIndex(i);
-            return ByteArrayList.this.f1255a[i + this.from];
+            return ByteArrayList.this.f1219a[i + this.from];
         }
 
         /* access modifiers changed from: private */
@@ -355,7 +355,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
 
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterators.AbstractIndexBasedIterator
             protected final byte get(int i) {
-                return ByteArrayList.this.f1255a[SubList.this.from + i];
+                return ByteArrayList.this.f1219a[SubList.this.from + i];
             }
 
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterators.AbstractIndexBasedListIterator
@@ -375,7 +375,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
 
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterators.AbstractIndexBasedIterator
             protected final int getMaxPos() {
-                return SubList.this.f1123to - SubList.this.from;
+                return SubList.this.f1087to - SubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterators.AbstractIndexBasedIterator, p014it.unimi.dsi.fastutil.bytes.ByteIterator
@@ -383,7 +383,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                byte[] bArr = ByteArrayList.this.f1255a;
+                byte[] bArr = ByteArrayList.this.f1219a;
                 int i = SubList.this.from;
                 int i2 = this.pos;
                 this.pos = i2 + 1;
@@ -396,7 +396,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                byte[] bArr = ByteArrayList.this.f1255a;
+                byte[] bArr = ByteArrayList.this.f1219a;
                 int i = SubList.this.from;
                 int i2 = this.pos - 1;
                 this.pos = i2;
@@ -406,9 +406,9 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
 
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterators.AbstractIndexBasedIterator, p014it.unimi.dsi.fastutil.bytes.ByteIterator
             public void forEachRemaining(ByteConsumer action) {
-                int max = SubList.this.f1123to - SubList.this.from;
+                int max = SubList.this.f1087to - SubList.this.from;
                 while (this.pos < max) {
-                    byte[] bArr = ByteArrayList.this.f1255a;
+                    byte[] bArr = ByteArrayList.this.f1219a;
                     int i = SubList.this.from;
                     int i2 = this.pos;
                     this.pos = i2 + 1;
@@ -438,12 +438,12 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
 
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteSpliterators.LateBindingSizeIndexBasedSpliterator
             protected final int getMaxPosFromBackingStore() {
-                return SubList.this.f1123to;
+                return SubList.this.f1087to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteSpliterators.AbstractIndexBasedSpliterator
             protected final byte get(int i) {
-                return ByteArrayList.this.f1255a[i];
+                return ByteArrayList.this.f1219a[i];
             }
 
             /* access modifiers changed from: protected */
@@ -457,7 +457,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
                 if (this.pos >= getMaxPos()) {
                     return false;
                 }
-                byte[] bArr = ByteArrayList.this.f1255a;
+                byte[] bArr = ByteArrayList.this.f1219a;
                 int i = this.pos;
                 this.pos = i + 1;
                 action.accept(bArr[i]);
@@ -468,7 +468,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
             public void forEachRemaining(ByteConsumer action) {
                 int max = getMaxPos();
                 while (this.pos < max) {
-                    byte[] bArr = ByteArrayList.this.f1255a;
+                    byte[] bArr = ByteArrayList.this.f1219a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(bArr[i]);
@@ -482,7 +482,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
         }
 
         boolean contentsEquals(byte[] otherA, int otherAFrom, int otherATo) {
-            if (ByteArrayList.this.f1255a == otherA && this.from == otherAFrom && this.f1123to == otherATo) {
+            if (ByteArrayList.this.f1219a == otherA && this.from == otherAFrom && this.f1087to == otherATo) {
                 return true;
             }
             if (otherATo - otherAFrom != size()) {
@@ -490,10 +490,10 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
             }
             int pos = this.from;
             int otherPos = otherAFrom;
-            while (pos < this.f1123to) {
+            while (pos < this.f1087to) {
                 pos++;
                 otherPos++;
-                if (ByteArrayList.this.f1255a[pos] != otherA[otherPos]) {
+                if (ByteArrayList.this.f1219a[pos] != otherA[otherPos]) {
                     return false;
                 }
             }
@@ -510,23 +510,23 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
             }
             if (o instanceof ByteArrayList) {
                 ByteArrayList other = (ByteArrayList) o;
-                return contentsEquals(other.f1255a, 0, other.size());
+                return contentsEquals(other.f1219a, 0, other.size());
             } else if (!(o instanceof SubList)) {
                 return equals(o);
             } else {
                 SubList other2 = (SubList) o;
-                return contentsEquals(other2.getParentArray(), other2.from, other2.f1123to);
+                return contentsEquals(other2.getParentArray(), other2.from, other2.f1087to);
             }
         }
 
         int contentsCompareTo(byte[] otherA, int otherAFrom, int otherATo) {
-            if (ByteArrayList.this.f1255a == otherA && this.from == otherAFrom && this.f1123to == otherATo) {
+            if (ByteArrayList.this.f1219a == otherA && this.from == otherAFrom && this.f1087to == otherATo) {
                 return 0;
             }
             int i = this.from;
             int j = otherAFrom;
-            while (i < this.f1123to && i < otherATo) {
-                int r = Byte.compare(ByteArrayList.this.f1255a[i], otherA[j]);
+            while (i < this.f1087to && i < otherATo) {
+                int r = Byte.compare(ByteArrayList.this.f1219a[i], otherA[j]);
                 if (r != 0) {
                     return r;
                 }
@@ -536,19 +536,19 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
             if (i < otherATo) {
                 return -1;
             }
-            return i < this.f1123to ? 1 : 0;
+            return i < this.f1087to ? 1 : 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList
         public int compareTo(List<? extends Byte> l) {
             if (l instanceof ByteArrayList) {
                 ByteArrayList other = (ByteArrayList) l;
-                return contentsCompareTo(other.f1255a, 0, other.size());
+                return contentsCompareTo(other.f1219a, 0, other.size());
             } else if (!(l instanceof SubList)) {
                 return compareTo(l);
             } else {
                 SubList other2 = (SubList) l;
-                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f1123to);
+                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f1087to);
             }
         }
     }
@@ -570,13 +570,13 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList, p014it.unimi.dsi.fastutil.bytes.ByteList
     public void getElements(int from, byte[] a, int offset, int length) {
         ByteArrays.ensureOffsetLength(a, offset, length);
-        System.arraycopy(this.f1255a, from, a, offset, length);
+        System.arraycopy(this.f1219a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList, p014it.unimi.dsi.fastutil.bytes.ByteList
     public void removeElements(int from, int to) {
         p014it.unimi.dsi.fastutil.Arrays.ensureFromTo(this.size, from, to);
-        System.arraycopy(this.f1255a, to, this.f1255a, from, this.size - to);
+        System.arraycopy(this.f1219a, to, this.f1219a, from, this.size - to);
         this.size -= to - from;
     }
 
@@ -585,8 +585,8 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
         ensureIndex(index);
         ByteArrays.ensureOffsetLength(a, offset, length);
         grow(this.size + length);
-        System.arraycopy(this.f1255a, index, this.f1255a, index + length, this.size - index);
-        System.arraycopy(a, offset, this.f1255a, index, length);
+        System.arraycopy(this.f1219a, index, this.f1219a, index + length, this.size - index);
+        System.arraycopy(a, offset, this.f1219a, index, length);
         this.size += length;
     }
 
@@ -597,13 +597,13 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
         if (index + length > this.size) {
             throw new IndexOutOfBoundsException("End index (" + (index + length) + ") is greater than list size (" + this.size + ")");
         }
-        System.arraycopy(a, offset, this.f1255a, index, length);
+        System.arraycopy(a, offset, this.f1219a, index, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList, p014it.unimi.dsi.fastutil.bytes.ByteIterable
     public void forEach(ByteConsumer action) {
         for (int i = 0; i < this.size; i++) {
-            action.accept(this.f1255a[i]);
+            action.accept(this.f1219a[i]);
         }
     }
 
@@ -618,7 +618,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
             return false;
         }
         grow(this.size + n);
-        System.arraycopy(this.f1255a, index, this.f1255a, index + n, this.size - index);
+        System.arraycopy(this.f1219a, index, this.f1219a, index + n, this.size - index);
         ByteIterator i = c.iterator();
         this.size += n;
         while (true) {
@@ -627,9 +627,9 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
                 break;
             }
             index++;
-            this.f1255a[index] = i.nextByte();
+            this.f1219a[index] = i.nextByte();
         }
-        if ($assertionsDisabled || this.size <= this.f1255a.length) {
+        if ($assertionsDisabled || this.size <= this.f1219a.length) {
             return true;
         }
         throw new AssertionError();
@@ -643,10 +643,10 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
             return false;
         }
         grow(this.size + n);
-        System.arraycopy(this.f1255a, index, this.f1255a, index + n, this.size - index);
-        l.getElements(0, this.f1255a, index, n);
+        System.arraycopy(this.f1219a, index, this.f1219a, index + n, this.size - index);
+        l.getElements(0, this.f1219a, index, n);
         this.size += n;
-        if ($assertionsDisabled || this.size <= this.f1255a.length) {
+        if ($assertionsDisabled || this.size <= this.f1219a.length) {
             return true;
         }
         throw new AssertionError();
@@ -654,7 +654,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteCollection, p014it.unimi.dsi.fastutil.bytes.ByteCollection
     public boolean removeAll(ByteCollection c) {
-        byte[] a = this.f1255a;
+        byte[] a = this.f1219a;
         int j = 0;
         for (int i = 0; i < this.size; i++) {
             if (!c.contains(a[i])) {
@@ -672,7 +672,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
         if (a == null || a.length < this.size) {
             a = Arrays.copyOf(a, this.size);
         }
-        System.arraycopy(this.f1255a, 0, a, 0, this.size);
+        System.arraycopy(this.f1219a, 0, a, 0, this.size);
         return a;
     }
 
@@ -704,7 +704,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                byte[] bArr = ByteArrayList.this.f1255a;
+                byte[] bArr = ByteArrayList.this.f1219a;
                 int i = this.pos;
                 this.pos = i + 1;
                 this.last = i;
@@ -716,7 +716,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                byte[] bArr = ByteArrayList.this.f1255a;
+                byte[] bArr = ByteArrayList.this.f1219a;
                 int i = this.pos - 1;
                 this.pos = i;
                 this.last = i;
@@ -765,7 +765,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
             public void forEachRemaining(ByteConsumer action) {
                 while (this.pos < ByteArrayList.this.size) {
-                    byte[] bArr = ByteArrayList.this.f1255a;
+                    byte[] bArr = ByteArrayList.this.f1219a;
                     int i = this.pos;
                     this.pos = i + 1;
                     this.last = i;
@@ -853,7 +853,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            byte[] bArr = ByteArrayList.this.f1255a;
+            byte[] bArr = ByteArrayList.this.f1219a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(bArr[i]);
@@ -863,7 +863,7 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
         public void forEachRemaining(ByteConsumer action) {
             int max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(ByteArrayList.this.f1255a[this.pos]);
+                action.accept(ByteArrayList.this.f1219a[this.pos]);
                 this.pos++;
             }
         }
@@ -911,18 +911,18 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
     @Override // p014it.unimi.dsi.fastutil.bytes.ByteList
     public void sort(ByteComparator comp) {
         if (comp == null) {
-            ByteArrays.stableSort(this.f1255a, 0, this.size);
+            ByteArrays.stableSort(this.f1219a, 0, this.size);
         } else {
-            ByteArrays.stableSort(this.f1255a, 0, this.size, comp);
+            ByteArrays.stableSort(this.f1219a, 0, this.size, comp);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.ByteList
     public void unstableSort(ByteComparator comp) {
         if (comp == null) {
-            ByteArrays.unstableSort(this.f1255a, 0, this.size);
+            ByteArrays.unstableSort(this.f1219a, 0, this.size);
         } else {
-            ByteArrays.unstableSort(this.f1255a, 0, this.size, comp);
+            ByteArrays.unstableSort(this.f1219a, 0, this.size, comp);
         }
     }
 
@@ -930,12 +930,12 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
     public ByteArrayList clone() {
         ByteArrayList cloned;
         if (getClass() == ByteArrayList.class) {
-            cloned = new ByteArrayList(copyArraySafe(this.f1255a, this.size), false);
+            cloned = new ByteArrayList(copyArraySafe(this.f1219a, this.size), false);
             cloned.size = this.size;
         } else {
             try {
                 cloned = (ByteArrayList) clone();
-                cloned.f1255a = copyArraySafe(this.f1255a, this.size);
+                cloned.f1219a = copyArraySafe(this.f1219a, this.size);
             } catch (CloneNotSupportedException err) {
                 throw new InternalError(err);
             }
@@ -951,8 +951,8 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
         if (s != l.size()) {
             return false;
         }
-        byte[] a1 = this.f1255a;
-        byte[] a2 = l.f1255a;
+        byte[] a1 = this.f1219a;
+        byte[] a2 = l.f1219a;
         if (a1 == a2 && s == l.size()) {
             return true;
         }
@@ -985,8 +985,8 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
     public int compareTo(ByteArrayList l) {
         int s1 = size();
         int s2 = l.size();
-        byte[] a1 = this.f1255a;
-        byte[] a2 = l.f1255a;
+        byte[] a1 = this.f1219a;
+        byte[] a2 = l.f1219a;
         if (a1 == a2 && s1 == s2) {
             return 0;
         }
@@ -1018,15 +1018,15 @@ public class ByteArrayList extends AbstractByteList implements RandomAccess, Clo
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; i < this.size; i++) {
-            s.writeByte(this.f1255a[i]);
+            s.writeByte(this.f1219a[i]);
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f1255a = new byte[this.size];
+        this.f1219a = new byte[this.size];
         for (int i = 0; i < this.size; i++) {
-            this.f1255a[i] = s.readByte();
+            this.f1219a[i] = s.readByte();
         }
     }
 }

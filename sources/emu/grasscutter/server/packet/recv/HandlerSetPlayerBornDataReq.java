@@ -3,7 +3,7 @@ package emu.grasscutter.server.packet.recv;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 
-@Opcodes(142)
+@Opcodes(169)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerSetPlayerBornDataReq.class */
 public class HandlerSetPlayerBornDataReq extends PacketHandler {
     /*  JADX ERROR: Dependency scan failed at insn: 0x008C: INVOKE_CUSTOM r-15
@@ -22,7 +22,7 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
         	at jadx.core.dex.visitors.usage.UsageInfoVisitor.init(UsageInfoVisitor.java:36)
         	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:267)
         */
-    /*  JADX ERROR: Dependency scan failed at insn: 0x00FE: INVOKE_CUSTOM r-27
+    /*  JADX ERROR: Dependency scan failed at insn: 0x00FD: INVOKE_CUSTOM r-27
         java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
         	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
         	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
@@ -56,7 +56,7 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
         	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:42)
         	... 11 more
         */
-    /*  JADX ERROR: Failed to decode insn: 0x00FE: INVOKE_CUSTOM r1, method: emu.grasscutter.server.packet.recv.HandlerSetPlayerBornDataReq.handle(emu.grasscutter.server.game.GameSession, byte[], byte[]):void
+    /*  JADX ERROR: Failed to decode insn: 0x00FD: INVOKE_CUSTOM r1, method: emu.grasscutter.server.packet.recv.HandlerSetPlayerBornDataReq.handle(emu.grasscutter.server.game.GameSession, byte[], byte[]):void
         jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (Ljava/lang/String;)Ljava/lang/String;}, 
         This server run with:<type="browser" text="Grasscutters" href="https://github.com/Grasscutters"/><type="browser" text="DockerGS" href="https://github.com/YuukiPS/DockerGS"/>]}
         	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:55)
@@ -79,7 +79,7 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler
     public void handle(emu.grasscutter.server.game.GameSession r7, byte[] r8, byte[] r9) throws java.lang.Exception {
         /*
-        // Method dump skipped, instructions count: 304
+        // Method dump skipped, instructions count: 303
         */
         throw new UnsupportedOperationException("Method not decompiled: emu.grasscutter.server.packet.recv.HandlerSetPlayerBornDataReq.handle(emu.grasscutter.server.game.GameSession, byte[], byte[]):void");
     }

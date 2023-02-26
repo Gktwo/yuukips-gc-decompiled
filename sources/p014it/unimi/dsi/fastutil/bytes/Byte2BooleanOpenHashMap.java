@@ -42,13 +42,13 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
     protected transient boolean containsNullKey;
 
     /* renamed from: n */
-    protected transient int f1132n;
+    protected transient int f1096n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1133f;
+    protected final float f1097f;
     protected transient Byte2BooleanMap.FastEntrySet entries;
     protected transient ByteSet keys;
     protected transient BooleanCollection values;
@@ -59,14 +59,14 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1133f = f;
+            this.f1097f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1132n = arraySize;
+            this.f1096n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1132n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1132n, f);
-            this.key = new byte[this.f1132n + 1];
-            this.value = new boolean[this.f1132n + 1];
+            this.mask = this.f1096n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1096n, f);
+            this.key = new byte[this.f1096n + 1];
+            this.value = new boolean[this.f1096n + 1];
         }
     }
 
@@ -116,15 +116,15 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1133f);
-        if (needed > this.f1132n) {
+        int needed = HashCommon.arraySize(capacity, this.f1097f);
+        if (needed > this.f1096n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1133f)))));
-        if (needed > this.f1132n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1097f)))));
+        if (needed > this.f1096n) {
             rehash(needed);
         }
     }
@@ -134,8 +134,8 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
         boolean oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f1132n > this.minN && this.size < this.maxFill / 4 && this.f1132n > 16) {
-            rehash(this.f1132n / 2);
+        if (this.f1096n > this.minN && this.size < this.maxFill / 4 && this.f1096n > 16) {
+            rehash(this.f1096n / 2);
         }
         return oldValue;
     }
@@ -143,17 +143,17 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
     /* access modifiers changed from: private */
     public boolean removeNullEntry() {
         this.containsNullKey = false;
-        boolean oldValue = this.value[this.f1132n];
+        boolean oldValue = this.value[this.f1096n];
         this.size--;
-        if (this.f1132n > this.minN && this.size < this.maxFill / 4 && this.f1132n > 16) {
-            rehash(this.f1132n / 2);
+        if (this.f1096n > this.minN && this.size < this.maxFill / 4 && this.f1096n > 16) {
+            rehash(this.f1096n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByte2BooleanMap, java.util.Map
     public void putAll(Map<? extends Byte, ? extends Boolean> m) {
-        if (((double) this.f1133f) <= 0.5d) {
+        if (((double) this.f1097f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -164,7 +164,7 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
     private int find(byte k) {
         byte curr;
         if (k == 0) {
-            return this.containsNullKey ? this.f1132n : -(this.f1132n + 1);
+            return this.containsNullKey ? this.f1096n : -(this.f1096n + 1);
         }
         byte[] key = this.key;
         int mix = HashCommon.mix((int) k) & this.mask;
@@ -188,7 +188,7 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
     }
 
     private void insert(int pos, byte k, boolean v) {
-        if (pos == this.f1132n) {
+        if (pos == this.f1096n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -196,7 +196,7 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f1133f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f1097f));
         }
     }
 
@@ -273,7 +273,7 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
     public boolean get(byte k) {
         byte curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f1132n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f1096n] : this.defRetValue;
         }
         byte[] key = this.key;
         int mix = HashCommon.mix((int) k) & this.mask;
@@ -327,10 +327,10 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
     public boolean containsValue(boolean v) {
         boolean[] value = this.value;
         byte[] key = this.key;
-        if (this.containsNullKey && value[this.f1132n] == v) {
+        if (this.containsNullKey && value[this.f1096n] == v) {
             return true;
         }
-        int i = this.f1132n;
+        int i = this.f1096n;
         while (true) {
             i--;
             if (i == 0) {
@@ -346,7 +346,7 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
     public boolean getOrDefault(byte k, boolean defaultValue) {
         byte curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f1132n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f1096n] : defaultValue;
         }
         byte[] key = this.key;
         int mix = HashCommon.mix((int) k) & this.mask;
@@ -405,7 +405,7 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
                     return true;
                 }
             }
-        } else if (!this.containsNullKey || v != this.value[this.f1132n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f1096n]) {
             return false;
         } else {
             removeNullEntry();
@@ -660,31 +660,31 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
         int last;
 
         /* renamed from: c */
-        int f1134c;
+        int f1098c;
         boolean mustReturnNullKey;
         ByteArrayList wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Byte2BooleanOpenHashMap.this.f1132n;
+            this.pos = Byte2BooleanOpenHashMap.this.f1096n;
             this.last = -1;
-            this.f1134c = Byte2BooleanOpenHashMap.this.size;
+            this.f1098c = Byte2BooleanOpenHashMap.this.size;
             this.mustReturnNullKey = Byte2BooleanOpenHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f1134c != 0;
+            return this.f1098c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f1134c--;
+            this.f1098c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Byte2BooleanOpenHashMap.this.f1132n;
+                int i = Byte2BooleanOpenHashMap.this.f1096n;
                 this.last = i;
                 return i;
             }
@@ -716,13 +716,13 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Byte2BooleanOpenHashMap.this.f1132n;
+                int i = Byte2BooleanOpenHashMap.this.f1096n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f1134c--;
+                this.f1098c--;
             }
             byte[] key = Byte2BooleanOpenHashMap.this.key;
-            while (this.f1134c != 0) {
+            while (this.f1098c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -739,12 +739,12 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
                         i3 = Byte2BooleanOpenHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f1134c--;
+                    this.f1098c--;
                 } else if (key[this.pos] != 0) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f1134c--;
+                    this.f1098c--;
                 }
             }
         }
@@ -793,7 +793,7 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Byte2BooleanOpenHashMap.this.f1132n) {
+            if (this.last == Byte2BooleanOpenHashMap.this.f1096n) {
                 Byte2BooleanOpenHashMap.this.containsNullKey = false;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
@@ -890,7 +890,7 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
         int max;
 
         /* renamed from: c */
-        int f1135c;
+        int f1099c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -900,16 +900,16 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Byte2BooleanOpenHashMap.this.f1132n;
-            this.f1135c = 0;
+            this.max = Byte2BooleanOpenHashMap.this.f1096n;
+            this.f1099c = 0;
             this.mustReturnNull = Byte2BooleanOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Byte2BooleanOpenHashMap.this.f1132n;
-            this.f1135c = 0;
+            this.max = Byte2BooleanOpenHashMap.this.f1096n;
+            this.f1099c = 0;
             this.mustReturnNull = Byte2BooleanOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -921,14 +921,14 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1135c++;
-                acceptOnIndex(action, Byte2BooleanOpenHashMap.this.f1132n);
+                this.f1099c++;
+                acceptOnIndex(action, Byte2BooleanOpenHashMap.this.f1096n);
                 return true;
             }
             byte[] key = Byte2BooleanOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f1135c++;
+                    this.f1099c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -942,14 +942,14 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1135c++;
-                acceptOnIndex(action, Byte2BooleanOpenHashMap.this.f1132n);
+                this.f1099c++;
+                acceptOnIndex(action, Byte2BooleanOpenHashMap.this.f1096n);
             }
             byte[] key = Byte2BooleanOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     acceptOnIndex(action, this.pos);
-                    this.f1135c++;
+                    this.f1099c++;
                 }
                 this.pos++;
             }
@@ -957,9 +957,9 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Byte2BooleanOpenHashMap.this.size - this.f1135c);
+                return (long) (Byte2BooleanOpenHashMap.this.size - this.f1099c);
             }
-            return Math.min((long) (Byte2BooleanOpenHashMap.this.size - this.f1135c), ((long) ((((double) Byte2BooleanOpenHashMap.this.realSize()) / ((double) Byte2BooleanOpenHashMap.this.f1132n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Byte2BooleanOpenHashMap.this.size - this.f1099c), ((long) ((((double) Byte2BooleanOpenHashMap.this.realSize()) / ((double) Byte2BooleanOpenHashMap.this.f1096n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1152,7 +1152,7 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
             byte k = ((Byte) e.getKey()).byteValue();
             boolean v = ((Boolean) e.getValue()).booleanValue();
             if (k == 0) {
-                return Byte2BooleanOpenHashMap.this.containsNullKey && Byte2BooleanOpenHashMap.this.value[Byte2BooleanOpenHashMap.this.f1132n] == v;
+                return Byte2BooleanOpenHashMap.this.containsNullKey && Byte2BooleanOpenHashMap.this.value[Byte2BooleanOpenHashMap.this.f1096n] == v;
             }
             byte[] key = Byte2BooleanOpenHashMap.this.key;
             int mix = HashCommon.mix((int) k) & Byte2BooleanOpenHashMap.this.mask;
@@ -1213,7 +1213,7 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
                     Byte2BooleanOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Byte2BooleanOpenHashMap.this.containsNullKey || Byte2BooleanOpenHashMap.this.value[Byte2BooleanOpenHashMap.this.f1132n] != v) {
+            } else if (!Byte2BooleanOpenHashMap.this.containsNullKey || Byte2BooleanOpenHashMap.this.value[Byte2BooleanOpenHashMap.this.f1096n] != v) {
                 return false;
             } else {
                 Byte2BooleanOpenHashMap.this.removeNullEntry();
@@ -1234,9 +1234,9 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Byte2BooleanMap.Entry> consumer) {
             if (Byte2BooleanOpenHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractByte2BooleanMap.BasicEntry(Byte2BooleanOpenHashMap.this.key[Byte2BooleanOpenHashMap.this.f1132n], Byte2BooleanOpenHashMap.this.value[Byte2BooleanOpenHashMap.this.f1132n]));
+                consumer.accept(new AbstractByte2BooleanMap.BasicEntry(Byte2BooleanOpenHashMap.this.key[Byte2BooleanOpenHashMap.this.f1096n], Byte2BooleanOpenHashMap.this.value[Byte2BooleanOpenHashMap.this.f1096n]));
             }
-            int pos = Byte2BooleanOpenHashMap.this.f1132n;
+            int pos = Byte2BooleanOpenHashMap.this.f1096n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1252,11 +1252,11 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
         public void fastForEach(Consumer<? super Byte2BooleanMap.Entry> consumer) {
             AbstractByte2BooleanMap.BasicEntry entry = new AbstractByte2BooleanMap.BasicEntry();
             if (Byte2BooleanOpenHashMap.this.containsNullKey) {
-                entry.key = Byte2BooleanOpenHashMap.this.key[Byte2BooleanOpenHashMap.this.f1132n];
-                entry.value = Byte2BooleanOpenHashMap.this.value[Byte2BooleanOpenHashMap.this.f1132n];
+                entry.key = Byte2BooleanOpenHashMap.this.key[Byte2BooleanOpenHashMap.this.f1096n];
+                entry.value = Byte2BooleanOpenHashMap.this.value[Byte2BooleanOpenHashMap.this.f1096n];
                 consumer.accept(entry);
             }
-            int pos = Byte2BooleanOpenHashMap.this.f1132n;
+            int pos = Byte2BooleanOpenHashMap.this.f1096n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1356,9 +1356,9 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterable
         public void forEach(ByteConsumer consumer) {
             if (Byte2BooleanOpenHashMap.this.containsNullKey) {
-                consumer.accept(Byte2BooleanOpenHashMap.this.key[Byte2BooleanOpenHashMap.this.f1132n]);
+                consumer.accept(Byte2BooleanOpenHashMap.this.key[Byte2BooleanOpenHashMap.this.f1096n]);
             }
-            int pos = Byte2BooleanOpenHashMap.this.f1132n;
+            int pos = Byte2BooleanOpenHashMap.this.f1096n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1477,9 +1477,9 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
                 @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterable
                 public void forEach(BooleanConsumer consumer) {
                     if (Byte2BooleanOpenHashMap.this.containsNullKey) {
-                        consumer.accept(Byte2BooleanOpenHashMap.this.value[Byte2BooleanOpenHashMap.this.f1132n]);
+                        consumer.accept(Byte2BooleanOpenHashMap.this.value[Byte2BooleanOpenHashMap.this.f1096n]);
                     }
-                    int pos = Byte2BooleanOpenHashMap.this.f1132n;
+                    int pos = Byte2BooleanOpenHashMap.this.f1096n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1515,8 +1515,8 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1133f)));
-        if (l >= this.f1132n || this.size > HashCommon.maxFill(l, this.f1133f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1097f)));
+        if (l >= this.f1096n || this.size > HashCommon.maxFill(l, this.f1097f)) {
             return true;
         }
         try {
@@ -1534,7 +1534,7 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
         int mask = newN - 1;
         byte[] newKey = new byte[newN + 1];
         boolean[] newValue = new boolean[newN + 1];
-        int i2 = this.f1132n;
+        int i2 = this.f1096n;
         int j = realSize();
         while (true) {
             j--;
@@ -1553,10 +1553,10 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f1132n];
-                this.f1132n = newN;
+                newValue[newN] = value[this.f1096n];
+                this.f1096n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f1132n, this.f1133f);
+                this.maxFill = HashCommon.maxFill(this.f1096n, this.f1097f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1597,7 +1597,7 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f1132n] ? RetcodeOuterClass.Retcode.RET_MP_OTHER_DATA_VERSION_NOT_LATEST_VALUE : RetcodeOuterClass.Retcode.RET_MP_MATCH_FULL_VALUE;
+            h += this.value[this.f1096n] ? RetcodeOuterClass.Retcode.RET_MP_OTHER_DATA_VERSION_NOT_LATEST_VALUE : RetcodeOuterClass.Retcode.RET_MP_MATCH_FULL_VALUE;
         }
         return h;
     }
@@ -1623,12 +1623,12 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f1132n = HashCommon.arraySize(this.size, this.f1133f);
-        this.maxFill = HashCommon.maxFill(this.f1132n, this.f1133f);
-        this.mask = this.f1132n - 1;
-        byte[] key = new byte[this.f1132n + 1];
+        this.f1096n = HashCommon.arraySize(this.size, this.f1097f);
+        this.maxFill = HashCommon.maxFill(this.f1096n, this.f1097f);
+        this.mask = this.f1096n - 1;
+        byte[] key = new byte[this.f1096n + 1];
         this.key = key;
-        boolean[] value = new boolean[this.f1132n + 1];
+        boolean[] value = new boolean[this.f1096n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1637,7 +1637,7 @@ public class Byte2BooleanOpenHashMap extends AbstractByte2BooleanMap implements 
                 byte k = s.readByte();
                 boolean v = s.readBoolean();
                 if (k == 0) {
-                    pos = this.f1132n;
+                    pos = this.f1096n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix((int) k);

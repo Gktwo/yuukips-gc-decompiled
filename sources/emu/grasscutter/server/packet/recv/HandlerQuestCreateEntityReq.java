@@ -3,10 +3,9 @@ package emu.grasscutter.server.packet.recv;
 import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.CreateEntityInfoOuterClass;
 
-@Opcodes(PacketOpcodes.QuestCreateEntityReq)
+@Opcodes(414)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerQuestCreateEntityReq.class */
 public class HandlerQuestCreateEntityReq extends PacketHandler {
     /*  JADX ERROR: Dependency scan failed at insn: 0x0088: INVOKE_CUSTOM r-4
@@ -121,31 +120,31 @@ public class HandlerQuestCreateEntityReq extends PacketHandler {
 
     /* renamed from: emu.grasscutter.server.packet.recv.HandlerQuestCreateEntityReq$1 */
     /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerQuestCreateEntityReq$1.class */
-    static /* synthetic */ class C27031 {
+    static /* synthetic */ class C26951 {
         static final /* synthetic */ int[] $SwitchMap$emu$grasscutter$game$props$EntityType;
 
         /* renamed from: $SwitchMap$emu$grasscutter$net$proto$CreateEntityInfoOuterClass$CreateEntityInfo$EntityCase */
-        static final /* synthetic */ int[] f965x930c32f9 = new int[CreateEntityInfoOuterClass.CreateEntityInfo.EntityCase.values().length];
+        static final /* synthetic */ int[] f930x930c32f9 = new int[CreateEntityInfoOuterClass.CreateEntityInfo.EntityCase.values().length];
 
         static {
             try {
-                f965x930c32f9[CreateEntityInfoOuterClass.CreateEntityInfo.EntityCase.GADGET_ID.ordinal()] = 1;
+                f930x930c32f9[CreateEntityInfoOuterClass.CreateEntityInfo.EntityCase.GADGET_ID.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f965x930c32f9[CreateEntityInfoOuterClass.CreateEntityInfo.EntityCase.ITEM_ID.ordinal()] = 2;
+                f930x930c32f9[CreateEntityInfoOuterClass.CreateEntityInfo.EntityCase.ITEM_ID.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f965x930c32f9[CreateEntityInfoOuterClass.CreateEntityInfo.EntityCase.MONSTER_ID.ordinal()] = 3;
+                f930x930c32f9[CreateEntityInfoOuterClass.CreateEntityInfo.EntityCase.MONSTER_ID.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f965x930c32f9[CreateEntityInfoOuterClass.CreateEntityInfo.EntityCase.NPC_ID.ordinal()] = 4;
+                f930x930c32f9[CreateEntityInfoOuterClass.CreateEntityInfo.EntityCase.NPC_ID.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f965x930c32f9[CreateEntityInfoOuterClass.CreateEntityInfo.EntityCase.ENTITY_NOT_SET.ordinal()] = 5;
+                f930x930c32f9[CreateEntityInfoOuterClass.CreateEntityInfo.EntityCase.ENTITY_NOT_SET.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             $SwitchMap$emu$grasscutter$game$props$EntityType = new int[EntityType.values().length];

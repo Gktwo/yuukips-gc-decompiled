@@ -26,7 +26,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
     public static final int DEFAULT_INITIAL_CAPACITY = 10;
 
     /* renamed from: a */
-    protected transient int[] f2151a;
+    protected transient int[] f2115a;
     protected int size;
     static final /* synthetic */ boolean $assertionsDisabled;
 
@@ -39,20 +39,20 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
     }
 
     private static final int[] copyArrayFromSafe(IntArrayList l) {
-        return copyArraySafe(l.f2151a, l.size);
+        return copyArraySafe(l.f2115a, l.size);
     }
 
     protected IntArrayList(int[] a, boolean wrapped) {
-        this.f2151a = a;
+        this.f2115a = a;
     }
 
     private void initArrayFromCapacity(int capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException("Initial capacity (" + capacity + ") is negative");
         } else if (capacity == 0) {
-            this.f2151a = IntArrays.EMPTY_ARRAY;
+            this.f2115a = IntArrays.EMPTY_ARRAY;
         } else {
-            this.f2151a = new int[capacity];
+            this.f2115a = new int[capacity];
         }
     }
 
@@ -61,51 +61,51 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
     }
 
     public IntArrayList() {
-        this.f2151a = IntArrays.DEFAULT_EMPTY_ARRAY;
+        this.f2115a = IntArrays.DEFAULT_EMPTY_ARRAY;
     }
 
     public IntArrayList(Collection<? extends Integer> c) {
         if (c instanceof IntArrayList) {
-            this.f2151a = copyArrayFromSafe((IntArrayList) c);
-            this.size = this.f2151a.length;
+            this.f2115a = copyArrayFromSafe((IntArrayList) c);
+            this.size = this.f2115a.length;
             return;
         }
         initArrayFromCapacity(c.size());
         if (c instanceof IntList) {
-            int[] iArr = this.f2151a;
+            int[] iArr = this.f2115a;
             int size = c.size();
             this.size = size;
             ((IntList) c).getElements(0, iArr, 0, size);
             return;
         }
-        this.size = IntIterators.unwrap(IntIterators.asIntIterator(c.iterator()), this.f2151a);
+        this.size = IntIterators.unwrap(IntIterators.asIntIterator(c.iterator()), this.f2115a);
     }
 
     public IntArrayList(IntCollection c) {
         if (c instanceof IntArrayList) {
-            this.f2151a = copyArrayFromSafe((IntArrayList) c);
-            this.size = this.f2151a.length;
+            this.f2115a = copyArrayFromSafe((IntArrayList) c);
+            this.size = this.f2115a.length;
             return;
         }
         initArrayFromCapacity(c.size());
         if (c instanceof IntList) {
-            int[] iArr = this.f2151a;
+            int[] iArr = this.f2115a;
             int size = c.size();
             this.size = size;
             ((IntList) c).getElements(0, iArr, 0, size);
             return;
         }
-        this.size = IntIterators.unwrap(c.iterator(), this.f2151a);
+        this.size = IntIterators.unwrap(c.iterator(), this.f2115a);
     }
 
     public IntArrayList(IntList l) {
         if (l instanceof IntArrayList) {
-            this.f2151a = copyArrayFromSafe((IntArrayList) l);
-            this.size = this.f2151a.length;
+            this.f2115a = copyArrayFromSafe((IntArrayList) l);
+            this.size = this.f2115a.length;
             return;
         }
         initArrayFromCapacity(l.size());
-        int[] iArr = this.f2151a;
+        int[] iArr = this.f2115a;
         int size = l.size();
         this.size = size;
         l.getElements(0, iArr, 0, size);
@@ -117,7 +117,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
 
     public IntArrayList(int[] a, int offset, int length) {
         this(length);
-        System.arraycopy(a, offset, this.f2151a, 0, length);
+        System.arraycopy(a, offset, this.f2115a, 0, length);
         this.size = length;
     }
 
@@ -136,7 +136,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
     }
 
     public int[] elements() {
-        return this.f2151a;
+        return this.f2115a;
     }
 
     public static IntArrayList wrap(int[] a, int length) {
@@ -184,26 +184,26 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
     }
 
     public void ensureCapacity(int capacity) {
-        if (capacity <= this.f2151a.length) {
+        if (capacity <= this.f2115a.length) {
             return;
         }
-        if (this.f2151a != IntArrays.DEFAULT_EMPTY_ARRAY || capacity > 10) {
-            this.f2151a = IntArrays.ensureCapacity(this.f2151a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > this.f2151a.length) {
+        if (this.f2115a != IntArrays.DEFAULT_EMPTY_ARRAY || capacity > 10) {
+            this.f2115a = IntArrays.ensureCapacity(this.f2115a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > this.f2115a.length) {
                 throw new AssertionError();
             }
         }
     }
 
     private void grow(int capacity) {
-        if (capacity > this.f2151a.length) {
-            if (this.f2151a != IntArrays.DEFAULT_EMPTY_ARRAY) {
-                capacity = (int) Math.max(Math.min(((long) this.f2151a.length) + ((long) (this.f2151a.length >> 1)), 2147483639L), (long) capacity);
+        if (capacity > this.f2115a.length) {
+            if (this.f2115a != IntArrays.DEFAULT_EMPTY_ARRAY) {
+                capacity = (int) Math.max(Math.min(((long) this.f2115a.length) + ((long) (this.f2115a.length >> 1)), 2147483639L), (long) capacity);
             } else if (capacity < 10) {
                 capacity = 10;
             }
-            this.f2151a = IntArrays.forceCapacity(this.f2151a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > this.f2151a.length) {
+            this.f2115a = IntArrays.forceCapacity(this.f2115a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > this.f2115a.length) {
                 throw new AssertionError();
             }
         }
@@ -214,11 +214,11 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
         ensureIndex(index);
         grow(this.size + 1);
         if (index != this.size) {
-            System.arraycopy(this.f2151a, index, this.f2151a, index + 1, this.size - index);
+            System.arraycopy(this.f2115a, index, this.f2115a, index + 1, this.size - index);
         }
-        this.f2151a[index] = k;
+        this.f2115a[index] = k;
         this.size++;
-        if (!$assertionsDisabled && this.size > this.f2151a.length) {
+        if (!$assertionsDisabled && this.size > this.f2115a.length) {
             throw new AssertionError();
         }
     }
@@ -226,11 +226,11 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.AbstractIntCollection, p014it.unimi.dsi.fastutil.ints.IntCollection
     public boolean add(int k) {
         grow(this.size + 1);
-        int[] iArr = this.f2151a;
+        int[] iArr = this.f2115a;
         int i = this.size;
         this.size = i + 1;
         iArr[i] = k;
-        if ($assertionsDisabled || this.size <= this.f2151a.length) {
+        if ($assertionsDisabled || this.size <= this.f2115a.length) {
             return true;
         }
         throw new AssertionError();
@@ -239,7 +239,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
     @Override // p014it.unimi.dsi.fastutil.ints.IntList
     public int getInt(int index) {
         if (index < this.size) {
-            return this.f2151a[index];
+            return this.f2115a[index];
         }
         throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
     }
@@ -247,7 +247,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntList
     public int indexOf(int k) {
         for (int i = 0; i < this.size; i++) {
-            if (k == this.f2151a[i]) {
+            if (k == this.f2115a[i]) {
                 return i;
             }
         }
@@ -262,7 +262,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
             if (i == 0) {
                 return -1;
             }
-        } while (k != this.f2151a[i]);
+        } while (k != this.f2115a[i]);
         return i;
     }
 
@@ -271,12 +271,12 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        int old = this.f2151a[index];
+        int old = this.f2115a[index];
         this.size--;
         if (index != this.size) {
-            System.arraycopy(this.f2151a, index + 1, this.f2151a, index, this.size - index);
+            System.arraycopy(this.f2115a, index + 1, this.f2115a, index, this.size - index);
         }
-        if ($assertionsDisabled || this.size <= this.f2151a.length) {
+        if ($assertionsDisabled || this.size <= this.f2115a.length) {
             return old;
         }
         throw new AssertionError();
@@ -289,7 +289,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
             return false;
         }
         removeInt(index);
-        if ($assertionsDisabled || this.size <= this.f2151a.length) {
+        if ($assertionsDisabled || this.size <= this.f2115a.length) {
             return true;
         }
         throw new AssertionError();
@@ -300,15 +300,15 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        int old = this.f2151a[index];
-        this.f2151a[index] = k;
+        int old = this.f2115a[index];
+        this.f2115a[index] = k;
         return old;
     }
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public void clear() {
         this.size = 0;
-        if (!$assertionsDisabled && this.size > this.f2151a.length) {
+        if (!$assertionsDisabled && this.size > this.f2115a.length) {
             throw new AssertionError();
         }
     }
@@ -320,11 +320,11 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntList
     public void size(int size) {
-        if (size > this.f2151a.length) {
-            this.f2151a = IntArrays.forceCapacity(this.f2151a, size, this.size);
+        if (size > this.f2115a.length) {
+            this.f2115a = IntArrays.forceCapacity(this.f2115a, size, this.size);
         }
         if (size > this.size) {
-            Arrays.fill(this.f2151a, this.size, size, 0);
+            Arrays.fill(this.f2115a, this.size, size, 0);
         }
         this.size = size;
     }
@@ -339,11 +339,11 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
     }
 
     public void trim(int n) {
-        if (n < this.f2151a.length && this.size != this.f2151a.length) {
+        if (n < this.f2115a.length && this.size != this.f2115a.length) {
             int[] t = new int[Math.max(n, this.size)];
-            System.arraycopy(this.f2151a, 0, t, 0, this.size);
-            this.f2151a = t;
-            if (!$assertionsDisabled && this.size > this.f2151a.length) {
+            System.arraycopy(this.f2115a, 0, t, 0, this.size);
+            this.f2115a = t;
+            if (!$assertionsDisabled && this.size > this.f2115a.length) {
                 throw new AssertionError();
             }
         }
@@ -360,13 +360,13 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
         }
 
         private int[] getParentArray() {
-            return IntArrayList.this.f2151a;
+            return IntArrayList.this.f2115a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList.IntSubList, p014it.unimi.dsi.fastutil.ints.IntList
         public int getInt(int i) {
             ensureRestrictedIndex(i);
-            return IntArrayList.this.f2151a[i + this.from];
+            return IntArrayList.this.f2115a[i + this.from];
         }
 
         /* access modifiers changed from: private */
@@ -379,7 +379,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
 
             @Override // p014it.unimi.dsi.fastutil.ints.IntIterators.AbstractIndexBasedIterator
             protected final int get(int i) {
-                return IntArrayList.this.f2151a[SubList.this.from + i];
+                return IntArrayList.this.f2115a[SubList.this.from + i];
             }
 
             @Override // p014it.unimi.dsi.fastutil.ints.IntIterators.AbstractIndexBasedListIterator
@@ -399,7 +399,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
 
             @Override // p014it.unimi.dsi.fastutil.ints.IntIterators.AbstractIndexBasedIterator
             protected final int getMaxPos() {
-                return SubList.this.f2020to - SubList.this.from;
+                return SubList.this.f1984to - SubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.ints.IntIterators.AbstractIndexBasedIterator, p014it.unimi.dsi.fastutil.ints.IntIterator, java.util.PrimitiveIterator.OfInt
@@ -407,7 +407,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                int[] iArr = IntArrayList.this.f2151a;
+                int[] iArr = IntArrayList.this.f2115a;
                 int i = SubList.this.from;
                 int i2 = this.pos;
                 this.pos = i2 + 1;
@@ -420,7 +420,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                int[] iArr = IntArrayList.this.f2151a;
+                int[] iArr = IntArrayList.this.f2115a;
                 int i = SubList.this.from;
                 int i2 = this.pos - 1;
                 this.pos = i2;
@@ -430,9 +430,9 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
 
             @Override // p014it.unimi.dsi.fastutil.ints.IntIterators.AbstractIndexBasedIterator, java.util.PrimitiveIterator.OfInt
             public void forEachRemaining(IntConsumer action) {
-                int max = SubList.this.f2020to - SubList.this.from;
+                int max = SubList.this.f1984to - SubList.this.from;
                 while (this.pos < max) {
-                    int[] iArr = IntArrayList.this.f2151a;
+                    int[] iArr = IntArrayList.this.f2115a;
                     int i = SubList.this.from;
                     int i2 = this.pos;
                     this.pos = i2 + 1;
@@ -462,12 +462,12 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
 
             @Override // p014it.unimi.dsi.fastutil.ints.IntSpliterators.LateBindingSizeIndexBasedSpliterator
             protected final int getMaxPosFromBackingStore() {
-                return SubList.this.f2020to;
+                return SubList.this.f1984to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.ints.IntSpliterators.AbstractIndexBasedSpliterator
             protected final int get(int i) {
-                return IntArrayList.this.f2151a[i];
+                return IntArrayList.this.f2115a[i];
             }
 
             /* access modifiers changed from: protected */
@@ -481,7 +481,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
                 if (this.pos >= getMaxPos()) {
                     return false;
                 }
-                int[] iArr = IntArrayList.this.f2151a;
+                int[] iArr = IntArrayList.this.f2115a;
                 int i = this.pos;
                 this.pos = i + 1;
                 action.accept(iArr[i]);
@@ -492,7 +492,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
             public void forEachRemaining(IntConsumer action) {
                 int max = getMaxPos();
                 while (this.pos < max) {
-                    int[] iArr = IntArrayList.this.f2151a;
+                    int[] iArr = IntArrayList.this.f2115a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(iArr[i]);
@@ -506,7 +506,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
         }
 
         boolean contentsEquals(int[] otherA, int otherAFrom, int otherATo) {
-            if (IntArrayList.this.f2151a == otherA && this.from == otherAFrom && this.f2020to == otherATo) {
+            if (IntArrayList.this.f2115a == otherA && this.from == otherAFrom && this.f1984to == otherATo) {
                 return true;
             }
             if (otherATo - otherAFrom != size()) {
@@ -514,10 +514,10 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
             }
             int pos = this.from;
             int otherPos = otherAFrom;
-            while (pos < this.f2020to) {
+            while (pos < this.f1984to) {
                 pos++;
                 otherPos++;
-                if (IntArrayList.this.f2151a[pos] != otherA[otherPos]) {
+                if (IntArrayList.this.f2115a[pos] != otherA[otherPos]) {
                     return false;
                 }
             }
@@ -534,23 +534,23 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
             }
             if (o instanceof IntArrayList) {
                 IntArrayList other = (IntArrayList) o;
-                return contentsEquals(other.f2151a, 0, other.size());
+                return contentsEquals(other.f2115a, 0, other.size());
             } else if (!(o instanceof SubList)) {
                 return equals(o);
             } else {
                 SubList other2 = (SubList) o;
-                return contentsEquals(other2.getParentArray(), other2.from, other2.f2020to);
+                return contentsEquals(other2.getParentArray(), other2.from, other2.f1984to);
             }
         }
 
         int contentsCompareTo(int[] otherA, int otherAFrom, int otherATo) {
-            if (IntArrayList.this.f2151a == otherA && this.from == otherAFrom && this.f2020to == otherATo) {
+            if (IntArrayList.this.f2115a == otherA && this.from == otherAFrom && this.f1984to == otherATo) {
                 return 0;
             }
             int i = this.from;
             int j = otherAFrom;
-            while (i < this.f2020to && i < otherATo) {
-                int r = Integer.compare(IntArrayList.this.f2151a[i], otherA[j]);
+            while (i < this.f1984to && i < otherATo) {
+                int r = Integer.compare(IntArrayList.this.f2115a[i], otherA[j]);
                 if (r != 0) {
                     return r;
                 }
@@ -560,19 +560,19 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
             if (i < otherATo) {
                 return -1;
             }
-            return i < this.f2020to ? 1 : 0;
+            return i < this.f1984to ? 1 : 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList
         public int compareTo(List<? extends Integer> l) {
             if (l instanceof IntArrayList) {
                 IntArrayList other = (IntArrayList) l;
-                return contentsCompareTo(other.f2151a, 0, other.size());
+                return contentsCompareTo(other.f2115a, 0, other.size());
             } else if (!(l instanceof SubList)) {
                 return compareTo(l);
             } else {
                 SubList other2 = (SubList) l;
-                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f2020to);
+                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f1984to);
             }
         }
     }
@@ -594,13 +594,13 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntList
     public void getElements(int from, int[] a, int offset, int length) {
         IntArrays.ensureOffsetLength(a, offset, length);
-        System.arraycopy(this.f2151a, from, a, offset, length);
+        System.arraycopy(this.f2115a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntList
     public void removeElements(int from, int to) {
         p014it.unimi.dsi.fastutil.Arrays.ensureFromTo(this.size, from, to);
-        System.arraycopy(this.f2151a, to, this.f2151a, from, this.size - to);
+        System.arraycopy(this.f2115a, to, this.f2115a, from, this.size - to);
         this.size -= to - from;
     }
 
@@ -609,8 +609,8 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
         ensureIndex(index);
         IntArrays.ensureOffsetLength(a, offset, length);
         grow(this.size + length);
-        System.arraycopy(this.f2151a, index, this.f2151a, index + length, this.size - index);
-        System.arraycopy(a, offset, this.f2151a, index, length);
+        System.arraycopy(this.f2115a, index, this.f2115a, index + length, this.size - index);
+        System.arraycopy(a, offset, this.f2115a, index, length);
         this.size += length;
     }
 
@@ -621,13 +621,13 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
         if (index + length > this.size) {
             throw new IndexOutOfBoundsException("End index (" + (index + length) + ") is greater than list size (" + this.size + ")");
         }
-        System.arraycopy(a, offset, this.f2151a, index, length);
+        System.arraycopy(a, offset, this.f2115a, index, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntIterable
     public void forEach(IntConsumer action) {
         for (int i = 0; i < this.size; i++) {
-            action.accept(this.f2151a[i]);
+            action.accept(this.f2115a[i]);
         }
     }
 
@@ -642,7 +642,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
             return false;
         }
         grow(this.size + n);
-        System.arraycopy(this.f2151a, index, this.f2151a, index + n, this.size - index);
+        System.arraycopy(this.f2115a, index, this.f2115a, index + n, this.size - index);
         IntIterator i = c.iterator();
         this.size += n;
         while (true) {
@@ -651,9 +651,9 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
                 break;
             }
             index++;
-            this.f2151a[index] = i.nextInt();
+            this.f2115a[index] = i.nextInt();
         }
-        if ($assertionsDisabled || this.size <= this.f2151a.length) {
+        if ($assertionsDisabled || this.size <= this.f2115a.length) {
             return true;
         }
         throw new AssertionError();
@@ -667,10 +667,10 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
             return false;
         }
         grow(this.size + n);
-        System.arraycopy(this.f2151a, index, this.f2151a, index + n, this.size - index);
-        l.getElements(0, this.f2151a, index, n);
+        System.arraycopy(this.f2115a, index, this.f2115a, index + n, this.size - index);
+        l.getElements(0, this.f2115a, index, n);
         this.size += n;
-        if ($assertionsDisabled || this.size <= this.f2151a.length) {
+        if ($assertionsDisabled || this.size <= this.f2115a.length) {
             return true;
         }
         throw new AssertionError();
@@ -678,7 +678,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntCollection, p014it.unimi.dsi.fastutil.ints.IntCollection
     public boolean removeAll(IntCollection c) {
-        int[] a = this.f2151a;
+        int[] a = this.f2115a;
         int j = 0;
         for (int i = 0; i < this.size; i++) {
             if (!c.contains(a[i])) {
@@ -696,7 +696,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
         if (a == null || a.length < this.size) {
             a = Arrays.copyOf(a, this.size);
         }
-        System.arraycopy(this.f2151a, 0, a, 0, this.size);
+        System.arraycopy(this.f2115a, 0, a, 0, this.size);
         return a;
     }
 
@@ -728,7 +728,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                int[] iArr = IntArrayList.this.f2151a;
+                int[] iArr = IntArrayList.this.f2115a;
                 int i = this.pos;
                 this.pos = i + 1;
                 this.last = i;
@@ -740,7 +740,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                int[] iArr = IntArrayList.this.f2151a;
+                int[] iArr = IntArrayList.this.f2115a;
                 int i = this.pos - 1;
                 this.pos = i;
                 this.last = i;
@@ -789,7 +789,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
             @Override // java.util.PrimitiveIterator.OfInt
             public void forEachRemaining(IntConsumer action) {
                 while (this.pos < IntArrayList.this.size) {
-                    int[] iArr = IntArrayList.this.f2151a;
+                    int[] iArr = IntArrayList.this.f2115a;
                     int i = this.pos;
                     this.pos = i + 1;
                     this.last = i;
@@ -878,7 +878,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            int[] iArr = IntArrayList.this.f2151a;
+            int[] iArr = IntArrayList.this.f2115a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(iArr[i]);
@@ -889,7 +889,7 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
         public void forEachRemaining(IntConsumer action) {
             int max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(IntArrayList.this.f2151a[this.pos]);
+                action.accept(IntArrayList.this.f2115a[this.pos]);
                 this.pos++;
             }
         }
@@ -937,18 +937,18 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
     @Override // p014it.unimi.dsi.fastutil.ints.IntList
     public void sort(IntComparator comp) {
         if (comp == null) {
-            IntArrays.stableSort(this.f2151a, 0, this.size);
+            IntArrays.stableSort(this.f2115a, 0, this.size);
         } else {
-            IntArrays.stableSort(this.f2151a, 0, this.size, comp);
+            IntArrays.stableSort(this.f2115a, 0, this.size, comp);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.ints.IntList
     public void unstableSort(IntComparator comp) {
         if (comp == null) {
-            IntArrays.unstableSort(this.f2151a, 0, this.size);
+            IntArrays.unstableSort(this.f2115a, 0, this.size);
         } else {
-            IntArrays.unstableSort(this.f2151a, 0, this.size, comp);
+            IntArrays.unstableSort(this.f2115a, 0, this.size, comp);
         }
     }
 
@@ -956,12 +956,12 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
     public IntArrayList clone() {
         IntArrayList cloned;
         if (getClass() == IntArrayList.class) {
-            cloned = new IntArrayList(copyArraySafe(this.f2151a, this.size), false);
+            cloned = new IntArrayList(copyArraySafe(this.f2115a, this.size), false);
             cloned.size = this.size;
         } else {
             try {
                 cloned = (IntArrayList) clone();
-                cloned.f2151a = copyArraySafe(this.f2151a, this.size);
+                cloned.f2115a = copyArraySafe(this.f2115a, this.size);
             } catch (CloneNotSupportedException err) {
                 throw new InternalError(err);
             }
@@ -977,8 +977,8 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
         if (s != l.size()) {
             return false;
         }
-        int[] a1 = this.f2151a;
-        int[] a2 = l.f2151a;
+        int[] a1 = this.f2115a;
+        int[] a2 = l.f2115a;
         if (a1 == a2 && s == l.size()) {
             return true;
         }
@@ -1011,8 +1011,8 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
     public int compareTo(IntArrayList l) {
         int s1 = size();
         int s2 = l.size();
-        int[] a1 = this.f2151a;
-        int[] a2 = l.f2151a;
+        int[] a1 = this.f2115a;
+        int[] a2 = l.f2115a;
         if (a1 == a2 && s1 == s2) {
             return 0;
         }
@@ -1044,15 +1044,15 @@ public class IntArrayList extends AbstractIntList implements RandomAccess, Clone
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; i < this.size; i++) {
-            s.writeInt(this.f2151a[i]);
+            s.writeInt(this.f2115a[i]);
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f2151a = new int[this.size];
+        this.f2115a = new int[this.size];
         for (int i = 0; i < this.size; i++) {
-            this.f2151a[i] = s.readInt();
+            this.f2115a[i] = s.readInt();
         }
     }
 }

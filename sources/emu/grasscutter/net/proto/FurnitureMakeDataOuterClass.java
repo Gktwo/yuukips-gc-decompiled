@@ -19,23 +19,23 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeDataOuterClass.class */
 public final class FurnitureMakeDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017FurnitureMakeData.proto\"\u0001\n\u0011FurnitureMakeData\u0012\u0012\n\nbegin_time\u0018\u0001 \u0001(\u0007\u0012\u0011\n\tavatar_id\u0018\u0005 \u0001(\r\u0012\u000f\n\u0007make_id\u0018\n \u0001(\r\u0012\r\n\u0005index\u0018\u0006 \u0001(\r\u0012\u0010\n\bdur_time\u0018\b \u0001(\r\u0012\u0017\n\u000faccelerate_time\u0018\u0007 \u0001(\u0007B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017FurnitureMakeData.proto\"\u0001\n\u0011FurnitureMakeData\u0012\u000f\n\u0007durTime\u0018\u0005 \u0001(\r\u0012\u000e\n\u0006makeId\u0018\u0006 \u0001(\r\u0012\u0011\n\tbeginTime\u0018\r \u0001(\u0007\u0012\u0016\n\u000eaccelerateTime\u0018\t \u0001(\u0007\u0012\r\n\u0005index\u0018\n \u0001(\r\u0012\u0010\n\bavatarId\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_FurnitureMakeData_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_FurnitureMakeData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FurnitureMakeData_descriptor, new String[]{"BeginTime", "AvatarId", "MakeId", "Index", "DurTime", "AccelerateTime"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_FurnitureMakeData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FurnitureMakeData_descriptor, new String[]{"DurTime", "MakeId", "BeginTime", "AccelerateTime", "Index", "AvatarId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeDataOuterClass$FurnitureMakeDataOrBuilder.class */
     public interface FurnitureMakeDataOrBuilder extends MessageOrBuilder {
-        int getBeginTime();
-
-        int getAvatarId();
+        int getDurTime();
 
         int getMakeId();
 
-        int getIndex();
-
-        int getDurTime();
+        int getBeginTime();
 
         int getAccelerateTime();
+
+        int getIndex();
+
+        int getAvatarId();
     }
 
     private FurnitureMakeDataOuterClass() {
@@ -51,18 +51,18 @@ public final class FurnitureMakeDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeDataOuterClass$FurnitureMakeData.class */
     public static final class FurnitureMakeData extends GeneratedMessageV3 implements FurnitureMakeDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int BEGIN_TIME_FIELD_NUMBER = 1;
-        private int beginTime_;
-        public static final int AVATAR_ID_FIELD_NUMBER = 5;
-        private int avatarId_;
-        public static final int MAKE_ID_FIELD_NUMBER = 10;
-        private int makeId_;
-        public static final int INDEX_FIELD_NUMBER = 6;
-        private int index_;
-        public static final int DUR_TIME_FIELD_NUMBER = 8;
+        public static final int DURTIME_FIELD_NUMBER = 5;
         private int durTime_;
-        public static final int ACCELERATE_TIME_FIELD_NUMBER = 7;
+        public static final int MAKEID_FIELD_NUMBER = 6;
+        private int makeId_;
+        public static final int BEGINTIME_FIELD_NUMBER = 13;
+        private int beginTime_;
+        public static final int ACCELERATETIME_FIELD_NUMBER = 9;
         private int accelerateTime_;
+        public static final int INDEX_FIELD_NUMBER = 10;
+        private int index_;
+        public static final int AVATARID_FIELD_NUMBER = 1;
+        private int avatarId_;
         private byte memoizedIsInitialized;
         private static final FurnitureMakeData DEFAULT_INSTANCE = new FurnitureMakeData();
         private static final Parser<FurnitureMakeData> PARSER = new AbstractParser<FurnitureMakeData>() { // from class: emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeData.1
@@ -108,23 +108,23 @@ public final class FurnitureMakeDataOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 13:
-                                this.beginTime_ = input.readFixed32();
-                                break;
-                            case 40:
+                            case 8:
                                 this.avatarId_ = input.readUInt32();
                                 break;
-                            case 48:
-                                this.index_ = input.readUInt32();
-                                break;
-                            case 61:
-                                this.accelerateTime_ = input.readFixed32();
-                                break;
-                            case 64:
+                            case 40:
                                 this.durTime_ = input.readUInt32();
                                 break;
-                            case 80:
+                            case 48:
                                 this.makeId_ = input.readUInt32();
+                                break;
+                            case 77:
+                                this.accelerateTime_ = input.readFixed32();
+                                break;
+                            case 80:
+                                this.index_ = input.readUInt32();
+                                break;
+                            case 109:
+                                this.beginTime_ = input.readFixed32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -156,13 +156,8 @@ public final class FurnitureMakeDataOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeDataOrBuilder
-        public int getBeginTime() {
-            return this.beginTime_;
-        }
-
-        @Override // emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeDataOrBuilder
-        public int getAvatarId() {
-            return this.avatarId_;
+        public int getDurTime() {
+            return this.durTime_;
         }
 
         @Override // emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeDataOrBuilder
@@ -171,18 +166,23 @@ public final class FurnitureMakeDataOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeDataOrBuilder
-        public int getIndex() {
-            return this.index_;
-        }
-
-        @Override // emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeDataOrBuilder
-        public int getDurTime() {
-            return this.durTime_;
+        public int getBeginTime() {
+            return this.beginTime_;
         }
 
         @Override // emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeDataOrBuilder
         public int getAccelerateTime() {
             return this.accelerateTime_;
+        }
+
+        @Override // emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeDataOrBuilder
+        public int getIndex() {
+            return this.index_;
+        }
+
+        @Override // emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeDataOrBuilder
+        public int getAvatarId() {
+            return this.avatarId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -200,23 +200,23 @@ public final class FurnitureMakeDataOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.beginTime_ != 0) {
-                output.writeFixed32(1, this.beginTime_);
-            }
             if (this.avatarId_ != 0) {
-                output.writeUInt32(5, this.avatarId_);
-            }
-            if (this.index_ != 0) {
-                output.writeUInt32(6, this.index_);
-            }
-            if (this.accelerateTime_ != 0) {
-                output.writeFixed32(7, this.accelerateTime_);
+                output.writeUInt32(1, this.avatarId_);
             }
             if (this.durTime_ != 0) {
-                output.writeUInt32(8, this.durTime_);
+                output.writeUInt32(5, this.durTime_);
             }
             if (this.makeId_ != 0) {
-                output.writeUInt32(10, this.makeId_);
+                output.writeUInt32(6, this.makeId_);
+            }
+            if (this.accelerateTime_ != 0) {
+                output.writeFixed32(9, this.accelerateTime_);
+            }
+            if (this.index_ != 0) {
+                output.writeUInt32(10, this.index_);
+            }
+            if (this.beginTime_ != 0) {
+                output.writeFixed32(13, this.beginTime_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -228,23 +228,23 @@ public final class FurnitureMakeDataOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.beginTime_ != 0) {
-                size2 = 0 + CodedOutputStream.computeFixed32Size(1, this.beginTime_);
-            }
             if (this.avatarId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.avatarId_);
-            }
-            if (this.index_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(6, this.index_);
-            }
-            if (this.accelerateTime_ != 0) {
-                size2 += CodedOutputStream.computeFixed32Size(7, this.accelerateTime_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.avatarId_);
             }
             if (this.durTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.durTime_);
+                size2 += CodedOutputStream.computeUInt32Size(5, this.durTime_);
             }
             if (this.makeId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.makeId_);
+                size2 += CodedOutputStream.computeUInt32Size(6, this.makeId_);
+            }
+            if (this.accelerateTime_ != 0) {
+                size2 += CodedOutputStream.computeFixed32Size(9, this.accelerateTime_);
+            }
+            if (this.index_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(10, this.index_);
+            }
+            if (this.beginTime_ != 0) {
+                size2 += CodedOutputStream.computeFixed32Size(13, this.beginTime_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -260,7 +260,7 @@ public final class FurnitureMakeDataOuterClass {
                 return equals(obj);
             }
             FurnitureMakeData other = (FurnitureMakeData) obj;
-            return getBeginTime() == other.getBeginTime() && getAvatarId() == other.getAvatarId() && getMakeId() == other.getMakeId() && getIndex() == other.getIndex() && getDurTime() == other.getDurTime() && getAccelerateTime() == other.getAccelerateTime() && this.unknownFields.equals(other.unknownFields);
+            return getDurTime() == other.getDurTime() && getMakeId() == other.getMakeId() && getBeginTime() == other.getBeginTime() && getAccelerateTime() == other.getAccelerateTime() && getIndex() == other.getIndex() && getAvatarId() == other.getAvatarId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -268,7 +268,7 @@ public final class FurnitureMakeDataOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getBeginTime())) + 5)) + getAvatarId())) + 10)) + getMakeId())) + 6)) + getIndex())) + 8)) + getDurTime())) + 7)) + getAccelerateTime())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getDurTime())) + 6)) + getMakeId())) + 13)) + getBeginTime())) + 9)) + getAccelerateTime())) + 10)) + getIndex())) + 1)) + getAvatarId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -347,12 +347,12 @@ public final class FurnitureMakeDataOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeDataOuterClass$FurnitureMakeData$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements FurnitureMakeDataOrBuilder {
-            private int beginTime_;
-            private int avatarId_;
-            private int makeId_;
-            private int index_;
             private int durTime_;
+            private int makeId_;
+            private int beginTime_;
             private int accelerateTime_;
+            private int index_;
+            private int avatarId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return FurnitureMakeDataOuterClass.internal_static_FurnitureMakeData_descriptor;
@@ -380,12 +380,12 @@ public final class FurnitureMakeDataOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.beginTime_ = 0;
-                this.avatarId_ = 0;
-                this.makeId_ = 0;
-                this.index_ = 0;
                 this.durTime_ = 0;
+                this.makeId_ = 0;
+                this.beginTime_ = 0;
                 this.accelerateTime_ = 0;
+                this.index_ = 0;
+                this.avatarId_ = 0;
                 return this;
             }
 
@@ -411,12 +411,12 @@ public final class FurnitureMakeDataOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public FurnitureMakeData buildPartial() {
                 FurnitureMakeData result = new FurnitureMakeData(this);
-                result.beginTime_ = this.beginTime_;
-                result.avatarId_ = this.avatarId_;
-                result.makeId_ = this.makeId_;
-                result.index_ = this.index_;
                 result.durTime_ = this.durTime_;
+                result.makeId_ = this.makeId_;
+                result.beginTime_ = this.beginTime_;
                 result.accelerateTime_ = this.accelerateTime_;
+                result.index_ = this.index_;
+                result.avatarId_ = this.avatarId_;
                 onBuilt();
                 return result;
             }
@@ -464,23 +464,23 @@ public final class FurnitureMakeDataOuterClass {
                 if (other == FurnitureMakeData.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getBeginTime() != 0) {
-                    setBeginTime(other.getBeginTime());
-                }
-                if (other.getAvatarId() != 0) {
-                    setAvatarId(other.getAvatarId());
+                if (other.getDurTime() != 0) {
+                    setDurTime(other.getDurTime());
                 }
                 if (other.getMakeId() != 0) {
                     setMakeId(other.getMakeId());
                 }
-                if (other.getIndex() != 0) {
-                    setIndex(other.getIndex());
-                }
-                if (other.getDurTime() != 0) {
-                    setDurTime(other.getDurTime());
+                if (other.getBeginTime() != 0) {
+                    setBeginTime(other.getBeginTime());
                 }
                 if (other.getAccelerateTime() != 0) {
                     setAccelerateTime(other.getAccelerateTime());
+                }
+                if (other.getIndex() != 0) {
+                    setIndex(other.getIndex());
+                }
+                if (other.getAvatarId() != 0) {
+                    setAvatarId(other.getAvatarId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -515,35 +515,18 @@ public final class FurnitureMakeDataOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeDataOrBuilder
-            public int getBeginTime() {
-                return this.beginTime_;
+            public int getDurTime() {
+                return this.durTime_;
             }
 
-            public Builder setBeginTime(int value) {
-                this.beginTime_ = value;
+            public Builder setDurTime(int value) {
+                this.durTime_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearBeginTime() {
-                this.beginTime_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeDataOrBuilder
-            public int getAvatarId() {
-                return this.avatarId_;
-            }
-
-            public Builder setAvatarId(int value) {
-                this.avatarId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearAvatarId() {
-                this.avatarId_ = 0;
+            public Builder clearDurTime() {
+                this.durTime_ = 0;
                 onChanged();
                 return this;
             }
@@ -566,35 +549,18 @@ public final class FurnitureMakeDataOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeDataOrBuilder
-            public int getIndex() {
-                return this.index_;
+            public int getBeginTime() {
+                return this.beginTime_;
             }
 
-            public Builder setIndex(int value) {
-                this.index_ = value;
+            public Builder setBeginTime(int value) {
+                this.beginTime_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearIndex() {
-                this.index_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeDataOrBuilder
-            public int getDurTime() {
-                return this.durTime_;
-            }
-
-            public Builder setDurTime(int value) {
-                this.durTime_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearDurTime() {
-                this.durTime_ = 0;
+            public Builder clearBeginTime() {
+                this.beginTime_ = 0;
                 onChanged();
                 return this;
             }
@@ -612,6 +578,40 @@ public final class FurnitureMakeDataOuterClass {
 
             public Builder clearAccelerateTime() {
                 this.accelerateTime_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeDataOrBuilder
+            public int getIndex() {
+                return this.index_;
+            }
+
+            public Builder setIndex(int value) {
+                this.index_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIndex() {
+                this.index_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.FurnitureMakeDataOuterClass.FurnitureMakeDataOrBuilder
+            public int getAvatarId() {
+                return this.avatarId_;
+            }
+
+            public Builder setAvatarId(int value) {
+                this.avatarId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearAvatarId() {
+                this.avatarId_ = 0;
                 onChanged();
                 return this;
             }

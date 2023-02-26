@@ -26,7 +26,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
     public static final int DEFAULT_INITIAL_CAPACITY = 10;
 
     /* renamed from: a */
-    protected transient long[] f2393a;
+    protected transient long[] f2357a;
     protected int size;
     static final /* synthetic */ boolean $assertionsDisabled;
 
@@ -39,20 +39,20 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
     }
 
     private static final long[] copyArrayFromSafe(LongArrayList l) {
-        return copyArraySafe(l.f2393a, l.size);
+        return copyArraySafe(l.f2357a, l.size);
     }
 
     protected LongArrayList(long[] a, boolean wrapped) {
-        this.f2393a = a;
+        this.f2357a = a;
     }
 
     private void initArrayFromCapacity(int capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException("Initial capacity (" + capacity + ") is negative");
         } else if (capacity == 0) {
-            this.f2393a = LongArrays.EMPTY_ARRAY;
+            this.f2357a = LongArrays.EMPTY_ARRAY;
         } else {
-            this.f2393a = new long[capacity];
+            this.f2357a = new long[capacity];
         }
     }
 
@@ -61,51 +61,51 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
     }
 
     public LongArrayList() {
-        this.f2393a = LongArrays.DEFAULT_EMPTY_ARRAY;
+        this.f2357a = LongArrays.DEFAULT_EMPTY_ARRAY;
     }
 
     public LongArrayList(Collection<? extends Long> c) {
         if (c instanceof LongArrayList) {
-            this.f2393a = copyArrayFromSafe((LongArrayList) c);
-            this.size = this.f2393a.length;
+            this.f2357a = copyArrayFromSafe((LongArrayList) c);
+            this.size = this.f2357a.length;
             return;
         }
         initArrayFromCapacity(c.size());
         if (c instanceof LongList) {
-            long[] jArr = this.f2393a;
+            long[] jArr = this.f2357a;
             int size = c.size();
             this.size = size;
             ((LongList) c).getElements(0, jArr, 0, size);
             return;
         }
-        this.size = LongIterators.unwrap(LongIterators.asLongIterator(c.iterator()), this.f2393a);
+        this.size = LongIterators.unwrap(LongIterators.asLongIterator(c.iterator()), this.f2357a);
     }
 
     public LongArrayList(LongCollection c) {
         if (c instanceof LongArrayList) {
-            this.f2393a = copyArrayFromSafe((LongArrayList) c);
-            this.size = this.f2393a.length;
+            this.f2357a = copyArrayFromSafe((LongArrayList) c);
+            this.size = this.f2357a.length;
             return;
         }
         initArrayFromCapacity(c.size());
         if (c instanceof LongList) {
-            long[] jArr = this.f2393a;
+            long[] jArr = this.f2357a;
             int size = c.size();
             this.size = size;
             ((LongList) c).getElements(0, jArr, 0, size);
             return;
         }
-        this.size = LongIterators.unwrap(c.iterator(), this.f2393a);
+        this.size = LongIterators.unwrap(c.iterator(), this.f2357a);
     }
 
     public LongArrayList(LongList l) {
         if (l instanceof LongArrayList) {
-            this.f2393a = copyArrayFromSafe((LongArrayList) l);
-            this.size = this.f2393a.length;
+            this.f2357a = copyArrayFromSafe((LongArrayList) l);
+            this.size = this.f2357a.length;
             return;
         }
         initArrayFromCapacity(l.size());
-        long[] jArr = this.f2393a;
+        long[] jArr = this.f2357a;
         int size = l.size();
         this.size = size;
         l.getElements(0, jArr, 0, size);
@@ -117,7 +117,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
 
     public LongArrayList(long[] a, int offset, int length) {
         this(length);
-        System.arraycopy(a, offset, this.f2393a, 0, length);
+        System.arraycopy(a, offset, this.f2357a, 0, length);
         this.size = length;
     }
 
@@ -136,7 +136,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
     }
 
     public long[] elements() {
-        return this.f2393a;
+        return this.f2357a;
     }
 
     public static LongArrayList wrap(long[] a, int length) {
@@ -184,26 +184,26 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
     }
 
     public void ensureCapacity(int capacity) {
-        if (capacity <= this.f2393a.length) {
+        if (capacity <= this.f2357a.length) {
             return;
         }
-        if (this.f2393a != LongArrays.DEFAULT_EMPTY_ARRAY || capacity > 10) {
-            this.f2393a = LongArrays.ensureCapacity(this.f2393a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > this.f2393a.length) {
+        if (this.f2357a != LongArrays.DEFAULT_EMPTY_ARRAY || capacity > 10) {
+            this.f2357a = LongArrays.ensureCapacity(this.f2357a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > this.f2357a.length) {
                 throw new AssertionError();
             }
         }
     }
 
     private void grow(int capacity) {
-        if (capacity > this.f2393a.length) {
-            if (this.f2393a != LongArrays.DEFAULT_EMPTY_ARRAY) {
-                capacity = (int) Math.max(Math.min(((long) this.f2393a.length) + ((long) (this.f2393a.length >> 1)), 2147483639L), (long) capacity);
+        if (capacity > this.f2357a.length) {
+            if (this.f2357a != LongArrays.DEFAULT_EMPTY_ARRAY) {
+                capacity = (int) Math.max(Math.min(((long) this.f2357a.length) + ((long) (this.f2357a.length >> 1)), 2147483639L), (long) capacity);
             } else if (capacity < 10) {
                 capacity = 10;
             }
-            this.f2393a = LongArrays.forceCapacity(this.f2393a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > this.f2393a.length) {
+            this.f2357a = LongArrays.forceCapacity(this.f2357a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > this.f2357a.length) {
                 throw new AssertionError();
             }
         }
@@ -214,11 +214,11 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
         ensureIndex(index);
         grow(this.size + 1);
         if (index != this.size) {
-            System.arraycopy(this.f2393a, index, this.f2393a, index + 1, this.size - index);
+            System.arraycopy(this.f2357a, index, this.f2357a, index + 1, this.size - index);
         }
-        this.f2393a[index] = k;
+        this.f2357a[index] = k;
         this.size++;
-        if (!$assertionsDisabled && this.size > this.f2393a.length) {
+        if (!$assertionsDisabled && this.size > this.f2357a.length) {
             throw new AssertionError();
         }
     }
@@ -226,11 +226,11 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.AbstractLongCollection, p014it.unimi.dsi.fastutil.longs.LongCollection
     public boolean add(long k) {
         grow(this.size + 1);
-        long[] jArr = this.f2393a;
+        long[] jArr = this.f2357a;
         int i = this.size;
         this.size = i + 1;
         jArr[i] = k;
-        if ($assertionsDisabled || this.size <= this.f2393a.length) {
+        if ($assertionsDisabled || this.size <= this.f2357a.length) {
             return true;
         }
         throw new AssertionError();
@@ -239,7 +239,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
     @Override // p014it.unimi.dsi.fastutil.longs.LongList
     public long getLong(int index) {
         if (index < this.size) {
-            return this.f2393a[index];
+            return this.f2357a[index];
         }
         throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
     }
@@ -247,7 +247,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongList
     public int indexOf(long k) {
         for (int i = 0; i < this.size; i++) {
-            if (k == this.f2393a[i]) {
+            if (k == this.f2357a[i]) {
                 return i;
             }
         }
@@ -262,7 +262,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
             if (i == 0) {
                 return -1;
             }
-        } while (k != this.f2393a[i]);
+        } while (k != this.f2357a[i]);
         return i;
     }
 
@@ -271,12 +271,12 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        long old = this.f2393a[index];
+        long old = this.f2357a[index];
         this.size--;
         if (index != this.size) {
-            System.arraycopy(this.f2393a, index + 1, this.f2393a, index, this.size - index);
+            System.arraycopy(this.f2357a, index + 1, this.f2357a, index, this.size - index);
         }
-        if ($assertionsDisabled || this.size <= this.f2393a.length) {
+        if ($assertionsDisabled || this.size <= this.f2357a.length) {
             return old;
         }
         throw new AssertionError();
@@ -289,7 +289,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
             return false;
         }
         removeLong(index);
-        if ($assertionsDisabled || this.size <= this.f2393a.length) {
+        if ($assertionsDisabled || this.size <= this.f2357a.length) {
             return true;
         }
         throw new AssertionError();
@@ -300,15 +300,15 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        long old = this.f2393a[index];
-        this.f2393a[index] = k;
+        long old = this.f2357a[index];
+        this.f2357a[index] = k;
         return old;
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public void clear() {
         this.size = 0;
-        if (!$assertionsDisabled && this.size > this.f2393a.length) {
+        if (!$assertionsDisabled && this.size > this.f2357a.length) {
             throw new AssertionError();
         }
     }
@@ -320,11 +320,11 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongList
     public void size(int size) {
-        if (size > this.f2393a.length) {
-            this.f2393a = LongArrays.forceCapacity(this.f2393a, size, this.size);
+        if (size > this.f2357a.length) {
+            this.f2357a = LongArrays.forceCapacity(this.f2357a, size, this.size);
         }
         if (size > this.size) {
-            Arrays.fill(this.f2393a, this.size, size, 0L);
+            Arrays.fill(this.f2357a, this.size, size, 0L);
         }
         this.size = size;
     }
@@ -339,11 +339,11 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
     }
 
     public void trim(int n) {
-        if (n < this.f2393a.length && this.size != this.f2393a.length) {
+        if (n < this.f2357a.length && this.size != this.f2357a.length) {
             long[] t = new long[Math.max(n, this.size)];
-            System.arraycopy(this.f2393a, 0, t, 0, this.size);
-            this.f2393a = t;
-            if (!$assertionsDisabled && this.size > this.f2393a.length) {
+            System.arraycopy(this.f2357a, 0, t, 0, this.size);
+            this.f2357a = t;
+            if (!$assertionsDisabled && this.size > this.f2357a.length) {
                 throw new AssertionError();
             }
         }
@@ -360,13 +360,13 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
         }
 
         private long[] getParentArray() {
-            return LongArrayList.this.f2393a;
+            return LongArrayList.this.f2357a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList.LongSubList, p014it.unimi.dsi.fastutil.longs.LongList
         public long getLong(int i) {
             ensureRestrictedIndex(i);
-            return LongArrayList.this.f2393a[i + this.from];
+            return LongArrayList.this.f2357a[i + this.from];
         }
 
         /* access modifiers changed from: private */
@@ -379,7 +379,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongIterators.AbstractIndexBasedIterator
             protected final long get(int i) {
-                return LongArrayList.this.f2393a[SubList.this.from + i];
+                return LongArrayList.this.f2357a[SubList.this.from + i];
             }
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongIterators.AbstractIndexBasedListIterator
@@ -399,7 +399,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongIterators.AbstractIndexBasedIterator
             protected final int getMaxPos() {
-                return SubList.this.f2262to - SubList.this.from;
+                return SubList.this.f2226to - SubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongIterators.AbstractIndexBasedIterator, p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
@@ -407,7 +407,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                long[] jArr = LongArrayList.this.f2393a;
+                long[] jArr = LongArrayList.this.f2357a;
                 int i = SubList.this.from;
                 int i2 = this.pos;
                 this.pos = i2 + 1;
@@ -420,7 +420,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                long[] jArr = LongArrayList.this.f2393a;
+                long[] jArr = LongArrayList.this.f2357a;
                 int i = SubList.this.from;
                 int i2 = this.pos - 1;
                 this.pos = i2;
@@ -430,9 +430,9 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongIterators.AbstractIndexBasedIterator, java.util.PrimitiveIterator.OfLong
             public void forEachRemaining(LongConsumer action) {
-                int max = SubList.this.f2262to - SubList.this.from;
+                int max = SubList.this.f2226to - SubList.this.from;
                 while (this.pos < max) {
-                    long[] jArr = LongArrayList.this.f2393a;
+                    long[] jArr = LongArrayList.this.f2357a;
                     int i = SubList.this.from;
                     int i2 = this.pos;
                     this.pos = i2 + 1;
@@ -462,12 +462,12 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongSpliterators.LateBindingSizeIndexBasedSpliterator
             protected final int getMaxPosFromBackingStore() {
-                return SubList.this.f2262to;
+                return SubList.this.f2226to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongSpliterators.AbstractIndexBasedSpliterator
             protected final long get(int i) {
-                return LongArrayList.this.f2393a[i];
+                return LongArrayList.this.f2357a[i];
             }
 
             /* access modifiers changed from: protected */
@@ -481,7 +481,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
                 if (this.pos >= getMaxPos()) {
                     return false;
                 }
-                long[] jArr = LongArrayList.this.f2393a;
+                long[] jArr = LongArrayList.this.f2357a;
                 int i = this.pos;
                 this.pos = i + 1;
                 action.accept(jArr[i]);
@@ -492,7 +492,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
             public void forEachRemaining(LongConsumer action) {
                 int max = getMaxPos();
                 while (this.pos < max) {
-                    long[] jArr = LongArrayList.this.f2393a;
+                    long[] jArr = LongArrayList.this.f2357a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(jArr[i]);
@@ -506,7 +506,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
         }
 
         boolean contentsEquals(long[] otherA, int otherAFrom, int otherATo) {
-            if (LongArrayList.this.f2393a == otherA && this.from == otherAFrom && this.f2262to == otherATo) {
+            if (LongArrayList.this.f2357a == otherA && this.from == otherAFrom && this.f2226to == otherATo) {
                 return true;
             }
             if (otherATo - otherAFrom != size()) {
@@ -514,10 +514,10 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
             }
             int pos = this.from;
             int otherPos = otherAFrom;
-            while (pos < this.f2262to) {
+            while (pos < this.f2226to) {
                 pos++;
                 otherPos++;
-                if (LongArrayList.this.f2393a[pos] != otherA[otherPos]) {
+                if (LongArrayList.this.f2357a[pos] != otherA[otherPos]) {
                     return false;
                 }
             }
@@ -534,23 +534,23 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
             }
             if (o instanceof LongArrayList) {
                 LongArrayList other = (LongArrayList) o;
-                return contentsEquals(other.f2393a, 0, other.size());
+                return contentsEquals(other.f2357a, 0, other.size());
             } else if (!(o instanceof SubList)) {
                 return equals(o);
             } else {
                 SubList other2 = (SubList) o;
-                return contentsEquals(other2.getParentArray(), other2.from, other2.f2262to);
+                return contentsEquals(other2.getParentArray(), other2.from, other2.f2226to);
             }
         }
 
         int contentsCompareTo(long[] otherA, int otherAFrom, int otherATo) {
-            if (LongArrayList.this.f2393a == otherA && this.from == otherAFrom && this.f2262to == otherATo) {
+            if (LongArrayList.this.f2357a == otherA && this.from == otherAFrom && this.f2226to == otherATo) {
                 return 0;
             }
             int i = this.from;
             int j = otherAFrom;
-            while (i < this.f2262to && i < otherATo) {
-                int r = Long.compare(LongArrayList.this.f2393a[i], otherA[j]);
+            while (i < this.f2226to && i < otherATo) {
+                int r = Long.compare(LongArrayList.this.f2357a[i], otherA[j]);
                 if (r != 0) {
                     return r;
                 }
@@ -560,19 +560,19 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
             if (i < otherATo) {
                 return -1;
             }
-            return i < this.f2262to ? 1 : 0;
+            return i < this.f2226to ? 1 : 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList
         public int compareTo(List<? extends Long> l) {
             if (l instanceof LongArrayList) {
                 LongArrayList other = (LongArrayList) l;
-                return contentsCompareTo(other.f2393a, 0, other.size());
+                return contentsCompareTo(other.f2357a, 0, other.size());
             } else if (!(l instanceof SubList)) {
                 return compareTo(l);
             } else {
                 SubList other2 = (SubList) l;
-                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f2262to);
+                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f2226to);
             }
         }
     }
@@ -594,13 +594,13 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongList
     public void getElements(int from, long[] a, int offset, int length) {
         LongArrays.ensureOffsetLength(a, offset, length);
-        System.arraycopy(this.f2393a, from, a, offset, length);
+        System.arraycopy(this.f2357a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongList
     public void removeElements(int from, int to) {
         p014it.unimi.dsi.fastutil.Arrays.ensureFromTo(this.size, from, to);
-        System.arraycopy(this.f2393a, to, this.f2393a, from, this.size - to);
+        System.arraycopy(this.f2357a, to, this.f2357a, from, this.size - to);
         this.size -= to - from;
     }
 
@@ -609,8 +609,8 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
         ensureIndex(index);
         LongArrays.ensureOffsetLength(a, offset, length);
         grow(this.size + length);
-        System.arraycopy(this.f2393a, index, this.f2393a, index + length, this.size - index);
-        System.arraycopy(a, offset, this.f2393a, index, length);
+        System.arraycopy(this.f2357a, index, this.f2357a, index + length, this.size - index);
+        System.arraycopy(a, offset, this.f2357a, index, length);
         this.size += length;
     }
 
@@ -621,13 +621,13 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
         if (index + length > this.size) {
             throw new IndexOutOfBoundsException("End index (" + (index + length) + ") is greater than list size (" + this.size + ")");
         }
-        System.arraycopy(a, offset, this.f2393a, index, length);
+        System.arraycopy(a, offset, this.f2357a, index, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongIterable
     public void forEach(LongConsumer action) {
         for (int i = 0; i < this.size; i++) {
-            action.accept(this.f2393a[i]);
+            action.accept(this.f2357a[i]);
         }
     }
 
@@ -642,7 +642,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
             return false;
         }
         grow(this.size + n);
-        System.arraycopy(this.f2393a, index, this.f2393a, index + n, this.size - index);
+        System.arraycopy(this.f2357a, index, this.f2357a, index + n, this.size - index);
         LongIterator i = c.iterator();
         this.size += n;
         while (true) {
@@ -651,9 +651,9 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
                 break;
             }
             index++;
-            this.f2393a[index] = i.nextLong();
+            this.f2357a[index] = i.nextLong();
         }
-        if ($assertionsDisabled || this.size <= this.f2393a.length) {
+        if ($assertionsDisabled || this.size <= this.f2357a.length) {
             return true;
         }
         throw new AssertionError();
@@ -667,10 +667,10 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
             return false;
         }
         grow(this.size + n);
-        System.arraycopy(this.f2393a, index, this.f2393a, index + n, this.size - index);
-        l.getElements(0, this.f2393a, index, n);
+        System.arraycopy(this.f2357a, index, this.f2357a, index + n, this.size - index);
+        l.getElements(0, this.f2357a, index, n);
         this.size += n;
-        if ($assertionsDisabled || this.size <= this.f2393a.length) {
+        if ($assertionsDisabled || this.size <= this.f2357a.length) {
             return true;
         }
         throw new AssertionError();
@@ -678,7 +678,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongCollection, p014it.unimi.dsi.fastutil.longs.LongCollection
     public boolean removeAll(LongCollection c) {
-        long[] a = this.f2393a;
+        long[] a = this.f2357a;
         int j = 0;
         for (int i = 0; i < this.size; i++) {
             if (!c.contains(a[i])) {
@@ -696,7 +696,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
         if (a == null || a.length < this.size) {
             a = Arrays.copyOf(a, this.size);
         }
-        System.arraycopy(this.f2393a, 0, a, 0, this.size);
+        System.arraycopy(this.f2357a, 0, a, 0, this.size);
         return a;
     }
 
@@ -728,7 +728,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                long[] jArr = LongArrayList.this.f2393a;
+                long[] jArr = LongArrayList.this.f2357a;
                 int i = this.pos;
                 this.pos = i + 1;
                 this.last = i;
@@ -740,7 +740,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                long[] jArr = LongArrayList.this.f2393a;
+                long[] jArr = LongArrayList.this.f2357a;
                 int i = this.pos - 1;
                 this.pos = i;
                 this.last = i;
@@ -789,7 +789,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
             @Override // java.util.PrimitiveIterator.OfLong
             public void forEachRemaining(LongConsumer action) {
                 while (this.pos < LongArrayList.this.size) {
-                    long[] jArr = LongArrayList.this.f2393a;
+                    long[] jArr = LongArrayList.this.f2357a;
                     int i = this.pos;
                     this.pos = i + 1;
                     this.last = i;
@@ -878,7 +878,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            long[] jArr = LongArrayList.this.f2393a;
+            long[] jArr = LongArrayList.this.f2357a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(jArr[i]);
@@ -889,7 +889,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
         public void forEachRemaining(LongConsumer action) {
             int max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(LongArrayList.this.f2393a[this.pos]);
+                action.accept(LongArrayList.this.f2357a[this.pos]);
                 this.pos++;
             }
         }
@@ -937,18 +937,18 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
     @Override // p014it.unimi.dsi.fastutil.longs.LongList
     public void sort(LongComparator comp) {
         if (comp == null) {
-            LongArrays.stableSort(this.f2393a, 0, this.size);
+            LongArrays.stableSort(this.f2357a, 0, this.size);
         } else {
-            LongArrays.stableSort(this.f2393a, 0, this.size, comp);
+            LongArrays.stableSort(this.f2357a, 0, this.size, comp);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.LongList
     public void unstableSort(LongComparator comp) {
         if (comp == null) {
-            LongArrays.unstableSort(this.f2393a, 0, this.size);
+            LongArrays.unstableSort(this.f2357a, 0, this.size);
         } else {
-            LongArrays.unstableSort(this.f2393a, 0, this.size, comp);
+            LongArrays.unstableSort(this.f2357a, 0, this.size, comp);
         }
     }
 
@@ -956,12 +956,12 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
     public LongArrayList clone() {
         LongArrayList cloned;
         if (getClass() == LongArrayList.class) {
-            cloned = new LongArrayList(copyArraySafe(this.f2393a, this.size), false);
+            cloned = new LongArrayList(copyArraySafe(this.f2357a, this.size), false);
             cloned.size = this.size;
         } else {
             try {
                 cloned = (LongArrayList) clone();
-                cloned.f2393a = copyArraySafe(this.f2393a, this.size);
+                cloned.f2357a = copyArraySafe(this.f2357a, this.size);
             } catch (CloneNotSupportedException err) {
                 throw new InternalError(err);
             }
@@ -977,8 +977,8 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
         if (s != l.size()) {
             return false;
         }
-        long[] a1 = this.f2393a;
-        long[] a2 = l.f2393a;
+        long[] a1 = this.f2357a;
+        long[] a2 = l.f2357a;
         if (a1 == a2 && s == l.size()) {
             return true;
         }
@@ -1011,8 +1011,8 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
     public int compareTo(LongArrayList l) {
         int s1 = size();
         int s2 = l.size();
-        long[] a1 = this.f2393a;
-        long[] a2 = l.f2393a;
+        long[] a1 = this.f2357a;
+        long[] a2 = l.f2357a;
         if (a1 == a2 && s1 == s2) {
             return 0;
         }
@@ -1044,15 +1044,15 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; i < this.size; i++) {
-            s.writeLong(this.f2393a[i]);
+            s.writeLong(this.f2357a[i]);
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f2393a = new long[this.size];
+        this.f2357a = new long[this.size];
         for (int i = 0; i < this.size; i++) {
-            this.f2393a[i] = s.readLong();
+            this.f2357a[i] = s.readLong();
         }
     }
 }

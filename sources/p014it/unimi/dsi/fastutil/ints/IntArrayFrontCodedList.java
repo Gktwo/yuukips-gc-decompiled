@@ -16,12 +16,12 @@ public class IntArrayFrontCodedList extends AbstractObjectList<int[]> implements
     private static final long serialVersionUID = 1;
 
     /* renamed from: n */
-    protected final int f2146n;
+    protected final int f2110n;
     protected final int ratio;
     protected final int[][] array;
 
     /* renamed from: p */
-    protected transient long[] f2147p;
+    protected transient long[] f2111p;
 
     /* JADX DEBUG: Failed to insert an additional move for type inference into block B:23:0x0142 */
     /* JADX WARN: Multi-variable type inference failed */
@@ -73,7 +73,7 @@ public class IntArrayFrontCodedList extends AbstractObjectList<int[]> implements
     public int length(int index) {
         int[][] array = this.array;
         int delta = index % this.ratio;
-        long pos = this.f2147p[index / this.ratio];
+        long pos = this.f2111p[index / this.ratio];
         int length = readInt(array, pos);
         if (delta == 0) {
             return length;
@@ -135,7 +135,7 @@ public class IntArrayFrontCodedList extends AbstractObjectList<int[]> implements
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public int size() {
-        return this.f2146n;
+        return this.f2110n;
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, p014it.unimi.dsi.fastutil.objects.ObjectList, java.util.List
@@ -144,27 +144,27 @@ public class IntArrayFrontCodedList extends AbstractObjectList<int[]> implements
         return new ObjectListIterator<int[]>() { // from class: it.unimi.dsi.fastutil.ints.IntArrayFrontCodedList.1
 
             /* renamed from: s */
-            int[] f2148s = IntArrays.EMPTY_ARRAY;
+            int[] f2112s = IntArrays.EMPTY_ARRAY;
 
             /* renamed from: i */
-            int f2149i;
+            int f2113i;
             long pos;
             boolean inSync;
 
             /* JADX WARN: Incorrect args count in method signature: ()V */
             {
-                this.f2149i = 0;
+                this.f2113i = 0;
                 this.pos = 0;
                 if (start == 0) {
                     return;
                 }
-                if (start == IntArrayFrontCodedList.this.f2146n) {
-                    this.f2149i = start;
+                if (start == IntArrayFrontCodedList.this.f2110n) {
+                    this.f2113i = start;
                     return;
                 }
-                this.pos = IntArrayFrontCodedList.this.f2147p[start / IntArrayFrontCodedList.this.ratio];
+                this.pos = IntArrayFrontCodedList.this.f2111p[start / IntArrayFrontCodedList.this.ratio];
                 int j = start % IntArrayFrontCodedList.this.ratio;
-                this.f2149i = start - j;
+                this.f2113i = start - j;
                 while (true) {
                     j--;
                     if (j != 0) {
@@ -177,22 +177,22 @@ public class IntArrayFrontCodedList extends AbstractObjectList<int[]> implements
 
             @Override // java.util.Iterator, java.util.ListIterator
             public boolean hasNext() {
-                return this.f2149i < IntArrayFrontCodedList.this.f2146n;
+                return this.f2113i < IntArrayFrontCodedList.this.f2110n;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
             public boolean hasPrevious() {
-                return this.f2149i > 0;
+                return this.f2113i > 0;
             }
 
             @Override // java.util.ListIterator
             public int previousIndex() {
-                return this.f2149i - 1;
+                return this.f2113i - 1;
             }
 
             @Override // java.util.ListIterator
             public int nextIndex() {
-                return this.f2149i;
+                return this.f2113i;
             }
 
             @Override // java.util.Iterator, java.util.ListIterator
@@ -201,29 +201,29 @@ public class IntArrayFrontCodedList extends AbstractObjectList<int[]> implements
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                if (this.f2149i % IntArrayFrontCodedList.this.ratio == 0) {
-                    this.pos = IntArrayFrontCodedList.this.f2147p[this.f2149i / IntArrayFrontCodedList.this.ratio];
+                if (this.f2113i % IntArrayFrontCodedList.this.ratio == 0) {
+                    this.pos = IntArrayFrontCodedList.this.f2111p[this.f2113i / IntArrayFrontCodedList.this.ratio];
                     length = IntArrayFrontCodedList.readInt(IntArrayFrontCodedList.this.array, this.pos);
-                    this.f2148s = IntArrays.ensureCapacity(this.f2148s, length, 0);
-                    BigArrays.copyFromBig(IntArrayFrontCodedList.this.array, this.pos + ((long) IntArrayFrontCodedList.count(length)), this.f2148s, 0, length);
+                    this.f2112s = IntArrays.ensureCapacity(this.f2112s, length, 0);
+                    BigArrays.copyFromBig(IntArrayFrontCodedList.this.array, this.pos + ((long) IntArrayFrontCodedList.count(length)), this.f2112s, 0, length);
                     this.pos += (long) (length + IntArrayFrontCodedList.count(length));
                     this.inSync = true;
                 } else if (this.inSync) {
                     int length2 = IntArrayFrontCodedList.readInt(IntArrayFrontCodedList.this.array, this.pos);
                     int common = IntArrayFrontCodedList.readInt(IntArrayFrontCodedList.this.array, this.pos + ((long) IntArrayFrontCodedList.count(length2)));
-                    this.f2148s = IntArrays.ensureCapacity(this.f2148s, length2 + common, common);
-                    BigArrays.copyFromBig(IntArrayFrontCodedList.this.array, this.pos + ((long) IntArrayFrontCodedList.count(length2)) + ((long) IntArrayFrontCodedList.count(common)), this.f2148s, common, length2);
+                    this.f2112s = IntArrays.ensureCapacity(this.f2112s, length2 + common, common);
+                    BigArrays.copyFromBig(IntArrayFrontCodedList.this.array, this.pos + ((long) IntArrayFrontCodedList.count(length2)) + ((long) IntArrayFrontCodedList.count(common)), this.f2112s, common, length2);
                     this.pos += (long) (IntArrayFrontCodedList.count(length2) + IntArrayFrontCodedList.count(common) + length2);
                     length = length2 + common;
                 } else {
-                    int[] iArr = this.f2148s;
-                    int length3 = IntArrayFrontCodedList.this.length(this.f2149i);
+                    int[] iArr = this.f2112s;
+                    int length3 = IntArrayFrontCodedList.this.length(this.f2113i);
                     length = length3;
-                    this.f2148s = IntArrays.ensureCapacity(iArr, length3, 0);
-                    IntArrayFrontCodedList.this.extract(this.f2149i, this.f2148s, 0, length);
+                    this.f2112s = IntArrays.ensureCapacity(iArr, length3, 0);
+                    IntArrayFrontCodedList.this.extract(this.f2113i, this.f2112s, 0, length);
                 }
-                this.f2149i++;
-                return IntArrays.copy(this.f2148s, 0, length);
+                this.f2113i++;
+                return IntArrays.copy(this.f2112s, 0, length);
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -233,8 +233,8 @@ public class IntArrayFrontCodedList extends AbstractObjectList<int[]> implements
                 }
                 this.inSync = false;
                 IntArrayFrontCodedList intArrayFrontCodedList = IntArrayFrontCodedList.this;
-                int i = this.f2149i - 1;
-                this.f2149i = i;
+                int i = this.f2113i - 1;
+                this.f2113i = i;
                 return intArrayFrontCodedList.getArray(i);
             }
         };
@@ -249,7 +249,7 @@ public class IntArrayFrontCodedList extends AbstractObjectList<int[]> implements
     public String toString() {
         StringBuffer s = new StringBuffer();
         s.append("[");
-        for (int i = 0; i < this.f2146n; i++) {
+        for (int i = 0; i < this.f2110n; i++) {
             if (i != 0) {
                 s.append(", ");
             }
@@ -265,13 +265,13 @@ public class IntArrayFrontCodedList extends AbstractObjectList<int[]> implements
     protected long[] rebuildPointerArray() {
         int i;
         char c;
-        long[] p = new long[((this.f2146n + this.ratio) - 1) / this.ratio];
+        long[] p = new long[((this.f2110n + this.ratio) - 1) / this.ratio];
         int[][] a = this.array;
         char c2 = 0;
         int i2 = 0;
         int j = 0;
         int skip = this.ratio - 1;
-        while (i2 < this.f2146n) {
+        while (i2 < this.f2110n) {
             int length = readInt(a, c2 == 1 ? 1 : 0);
             int count = count(length);
             skip++;
@@ -293,6 +293,6 @@ public class IntArrayFrontCodedList extends AbstractObjectList<int[]> implements
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f2147p = rebuildPointerArray();
+        this.f2111p = rebuildPointerArray();
     }
 }

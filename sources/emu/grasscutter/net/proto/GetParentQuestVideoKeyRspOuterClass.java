@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetParentQuestVideoKeyRspOuterClass.class */
 public final class GetParentQuestVideoKeyRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fGetParentQuestVideoKeyRsp.proto\"X\n\u0019GetParentQuestVideoKeyRsp\u0012\u0017\n\u000fparent_quest_id\u0018\u000f \u0001(\r\u0012\u0011\n\tvideo_key\u0018\f \u0001(\u0004\u0012\u000f\n\u0007retcode\u0018\u0004 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fGetParentQuestVideoKeyRsp.proto\"U\n\u0019GetParentQuestVideoKeyRsp\u0012\u0010\n\bvideoKey\u0018\u0002 \u0001(\u0004\u0012\u000f\n\u0007retcode\u0018\t \u0001(\u0005\u0012\u0015\n\rparentQuestId\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GetParentQuestVideoKeyRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetParentQuestVideoKeyRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetParentQuestVideoKeyRsp_descriptor, new String[]{"ParentQuestId", "VideoKey", "Retcode"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetParentQuestVideoKeyRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetParentQuestVideoKeyRsp_descriptor, new String[]{"VideoKey", "Retcode", "ParentQuestId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetParentQuestVideoKeyRspOuterClass$GetParentQuestVideoKeyRspOrBuilder.class */
     public interface GetParentQuestVideoKeyRspOrBuilder extends MessageOrBuilder {
-        int getParentQuestId();
-
         long getVideoKey();
 
         int getRetcode();
+
+        int getParentQuestId();
     }
 
     private GetParentQuestVideoKeyRspOuterClass() {
@@ -46,12 +46,12 @@ public final class GetParentQuestVideoKeyRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetParentQuestVideoKeyRspOuterClass$GetParentQuestVideoKeyRsp.class */
     public static final class GetParentQuestVideoKeyRsp extends GeneratedMessageV3 implements GetParentQuestVideoKeyRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PARENT_QUEST_ID_FIELD_NUMBER = 15;
-        private int parentQuestId_;
-        public static final int VIDEO_KEY_FIELD_NUMBER = 12;
+        public static final int VIDEOKEY_FIELD_NUMBER = 2;
         private long videoKey_;
-        public static final int RETCODE_FIELD_NUMBER = 4;
+        public static final int RETCODE_FIELD_NUMBER = 9;
         private int retcode_;
+        public static final int PARENTQUESTID_FIELD_NUMBER = 11;
+        private int parentQuestId_;
         private byte memoizedIsInitialized;
         private static final GetParentQuestVideoKeyRsp DEFAULT_INSTANCE = new GetParentQuestVideoKeyRsp();
         private static final Parser<GetParentQuestVideoKeyRsp> PARSER = new AbstractParser<GetParentQuestVideoKeyRsp>() { // from class: emu.grasscutter.net.proto.GetParentQuestVideoKeyRspOuterClass.GetParentQuestVideoKeyRsp.1
@@ -98,13 +98,13 @@ public final class GetParentQuestVideoKeyRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 32:
-                                    this.retcode_ = input.readInt32();
-                                    break;
-                                case 96:
+                                case 16:
                                     this.videoKey_ = input.readUInt64();
                                     break;
-                                case 120:
+                                case 72:
+                                    this.retcode_ = input.readInt32();
+                                    break;
+                                case 88:
                                     this.parentQuestId_ = input.readUInt32();
                                     break;
                                 default:
@@ -138,11 +138,6 @@ public final class GetParentQuestVideoKeyRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GetParentQuestVideoKeyRspOuterClass.GetParentQuestVideoKeyRspOrBuilder
-        public int getParentQuestId() {
-            return this.parentQuestId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetParentQuestVideoKeyRspOuterClass.GetParentQuestVideoKeyRspOrBuilder
         public long getVideoKey() {
             return this.videoKey_;
         }
@@ -150,6 +145,11 @@ public final class GetParentQuestVideoKeyRspOuterClass {
         @Override // emu.grasscutter.net.proto.GetParentQuestVideoKeyRspOuterClass.GetParentQuestVideoKeyRspOrBuilder
         public int getRetcode() {
             return this.retcode_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetParentQuestVideoKeyRspOuterClass.GetParentQuestVideoKeyRspOrBuilder
+        public int getParentQuestId() {
+            return this.parentQuestId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,14 +167,14 @@ public final class GetParentQuestVideoKeyRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.retcode_ != 0) {
-                output.writeInt32(4, this.retcode_);
-            }
             if (this.videoKey_ != 0) {
-                output.writeUInt64(12, this.videoKey_);
+                output.writeUInt64(2, this.videoKey_);
+            }
+            if (this.retcode_ != 0) {
+                output.writeInt32(9, this.retcode_);
             }
             if (this.parentQuestId_ != 0) {
-                output.writeUInt32(15, this.parentQuestId_);
+                output.writeUInt32(11, this.parentQuestId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class GetParentQuestVideoKeyRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(4, this.retcode_);
-            }
             if (this.videoKey_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(12, this.videoKey_);
+                size2 = 0 + CodedOutputStream.computeUInt64Size(2, this.videoKey_);
+            }
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(9, this.retcode_);
             }
             if (this.parentQuestId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.parentQuestId_);
+                size2 += CodedOutputStream.computeUInt32Size(11, this.parentQuestId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class GetParentQuestVideoKeyRspOuterClass {
                 return equals(obj);
             }
             GetParentQuestVideoKeyRsp other = (GetParentQuestVideoKeyRsp) obj;
-            return getParentQuestId() == other.getParentQuestId() && getVideoKey() == other.getVideoKey() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
+            return getVideoKey() == other.getVideoKey() && getRetcode() == other.getRetcode() && getParentQuestId() == other.getParentQuestId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class GetParentQuestVideoKeyRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getParentQuestId())) + 12)) + Internal.hashLong(getVideoKey()))) + 4)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + Internal.hashLong(getVideoKey()))) + 9)) + getRetcode())) + 11)) + getParentQuestId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -296,9 +296,9 @@ public final class GetParentQuestVideoKeyRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetParentQuestVideoKeyRspOuterClass$GetParentQuestVideoKeyRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements GetParentQuestVideoKeyRspOrBuilder {
-            private int parentQuestId_;
             private long videoKey_;
             private int retcode_;
+            private int parentQuestId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return GetParentQuestVideoKeyRspOuterClass.internal_static_GetParentQuestVideoKeyRsp_descriptor;
@@ -326,9 +326,9 @@ public final class GetParentQuestVideoKeyRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.parentQuestId_ = 0;
                 this.videoKey_ = 0;
                 this.retcode_ = 0;
+                this.parentQuestId_ = 0;
                 return this;
             }
 
@@ -354,9 +354,9 @@ public final class GetParentQuestVideoKeyRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public GetParentQuestVideoKeyRsp buildPartial() {
                 GetParentQuestVideoKeyRsp result = new GetParentQuestVideoKeyRsp(this);
-                result.parentQuestId_ = this.parentQuestId_;
                 result.videoKey_ = this.videoKey_;
                 result.retcode_ = this.retcode_;
+                result.parentQuestId_ = this.parentQuestId_;
                 onBuilt();
                 return result;
             }
@@ -404,14 +404,14 @@ public final class GetParentQuestVideoKeyRspOuterClass {
                 if (other == GetParentQuestVideoKeyRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getParentQuestId() != 0) {
-                    setParentQuestId(other.getParentQuestId());
-                }
                 if (other.getVideoKey() != 0) {
                     setVideoKey(other.getVideoKey());
                 }
                 if (other.getRetcode() != 0) {
                     setRetcode(other.getRetcode());
+                }
+                if (other.getParentQuestId() != 0) {
+                    setParentQuestId(other.getParentQuestId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -446,23 +446,6 @@ public final class GetParentQuestVideoKeyRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.GetParentQuestVideoKeyRspOuterClass.GetParentQuestVideoKeyRspOrBuilder
-            public int getParentQuestId() {
-                return this.parentQuestId_;
-            }
-
-            public Builder setParentQuestId(int value) {
-                this.parentQuestId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearParentQuestId() {
-                this.parentQuestId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetParentQuestVideoKeyRspOuterClass.GetParentQuestVideoKeyRspOrBuilder
             public long getVideoKey() {
                 return this.videoKey_;
             }
@@ -492,6 +475,23 @@ public final class GetParentQuestVideoKeyRspOuterClass {
 
             public Builder clearRetcode() {
                 this.retcode_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetParentQuestVideoKeyRspOuterClass.GetParentQuestVideoKeyRspOrBuilder
+            public int getParentQuestId() {
+                return this.parentQuestId_;
+            }
+
+            public Builder setParentQuestId(int value) {
+                this.parentQuestId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearParentQuestId() {
+                this.parentQuestId_ = 0;
                 onChanged();
                 return this;
             }

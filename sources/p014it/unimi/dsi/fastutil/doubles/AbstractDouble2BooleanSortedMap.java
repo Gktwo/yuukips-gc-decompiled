@@ -90,30 +90,30 @@ public abstract class AbstractDouble2BooleanSortedMap extends AbstractDouble2Boo
     public static class KeySetIterator implements DoubleBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Double2BooleanMap.Entry> f1535i;
+        protected final ObjectBidirectionalIterator<Double2BooleanMap.Entry> f1499i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Double2BooleanMap.Entry> i) {
-            this.f1535i = i;
+            this.f1499i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
         public double nextDouble() {
-            return ((Double2BooleanMap.Entry) this.f1535i.next()).getDoubleKey();
+            return ((Double2BooleanMap.Entry) this.f1499i.next()).getDoubleKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBidirectionalIterator
         public double previousDouble() {
-            return this.f1535i.previous().getDoubleKey();
+            return this.f1499i.previous().getDoubleKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1535i.hasNext();
+            return this.f1499i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1535i.hasPrevious();
+            return this.f1499i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractDouble2BooleanSortedMap extends AbstractDouble2Boo
     public static class ValuesIterator implements BooleanIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Double2BooleanMap.Entry> f1536i;
+        protected final ObjectBidirectionalIterator<Double2BooleanMap.Entry> f1500i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Double2BooleanMap.Entry> i) {
-            this.f1536i = i;
+            this.f1500i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
         public boolean nextBoolean() {
-            return ((Double2BooleanMap.Entry) this.f1536i.next()).getBooleanValue();
+            return ((Double2BooleanMap.Entry) this.f1500i.next()).getBooleanValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1536i.hasNext();
+            return this.f1500i.hasNext();
         }
     }
 }

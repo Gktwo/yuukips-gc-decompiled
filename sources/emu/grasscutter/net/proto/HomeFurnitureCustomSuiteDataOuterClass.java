@@ -25,12 +25,14 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeFurnitureCustomSuiteDataOuterClass.class */
 public final class HomeFurnitureCustomSuiteDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"HomeFurnitureCustomSuiteData.proto\u001a\fVector.proto\"o\n\u001cHomeFurnitureCustomSuiteData\u0012%\n\u001dincluded_furniture_index_list\u0018\u000e \u0003(\u0005\u0012\u001a\n\tspawn_pos\u0018\u0005 \u0001(\u000b2\u0007.Vector\u0012\f\n\u0004guid\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"HomeFurnitureCustomSuiteData.proto\u001a\fVector.proto\"k\n\u001cHomeFurnitureCustomSuiteData\u0012\f\n\u0004guid\u0018\n \u0001(\r\u0012\"\n\u001aincludedFurnitureIndexList\u0018\u0005 \u0003(\u0005\u0012\u0019\n\bspawnPos\u0018\u0006 \u0001(\u000b2\u0007.VectorB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_HomeFurnitureCustomSuiteData_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeFurnitureCustomSuiteData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeFurnitureCustomSuiteData_descriptor, new String[]{"IncludedFurnitureIndexList", "SpawnPos", "Guid"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeFurnitureCustomSuiteData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeFurnitureCustomSuiteData_descriptor, new String[]{"Guid", "IncludedFurnitureIndexList", "SpawnPos"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeFurnitureCustomSuiteDataOuterClass$HomeFurnitureCustomSuiteDataOrBuilder.class */
     public interface HomeFurnitureCustomSuiteDataOrBuilder extends MessageOrBuilder {
+        int getGuid();
+
         List<Integer> getIncludedFurnitureIndexListList();
 
         int getIncludedFurnitureIndexListCount();
@@ -42,8 +44,6 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
         VectorOuterClass.Vector getSpawnPos();
 
         VectorOuterClass.VectorOrBuilder getSpawnPosOrBuilder();
-
-        int getGuid();
     }
 
     private HomeFurnitureCustomSuiteDataOuterClass() {
@@ -59,13 +59,13 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeFurnitureCustomSuiteDataOuterClass$HomeFurnitureCustomSuiteData.class */
     public static final class HomeFurnitureCustomSuiteData extends GeneratedMessageV3 implements HomeFurnitureCustomSuiteDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int INCLUDED_FURNITURE_INDEX_LIST_FIELD_NUMBER = 14;
+        public static final int GUID_FIELD_NUMBER = 10;
+        private int guid_;
+        public static final int INCLUDEDFURNITUREINDEXLIST_FIELD_NUMBER = 5;
         private Internal.IntList includedFurnitureIndexList_;
         private int includedFurnitureIndexListMemoizedSerializedSize;
-        public static final int SPAWN_POS_FIELD_NUMBER = 5;
+        public static final int SPAWNPOS_FIELD_NUMBER = 6;
         private VectorOuterClass.Vector spawnPos_;
-        public static final int GUID_FIELD_NUMBER = 12;
-        private int guid_;
         private byte memoizedIsInitialized;
         private static final HomeFurnitureCustomSuiteData DEFAULT_INSTANCE = new HomeFurnitureCustomSuiteData();
         private static final Parser<HomeFurnitureCustomSuiteData> PARSER = new AbstractParser<HomeFurnitureCustomSuiteData>() { // from class: emu.grasscutter.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteData.1
@@ -116,27 +116,14 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 42:
-                                VectorOuterClass.Vector.Builder subBuilder = this.spawnPos_ != null ? this.spawnPos_.toBuilder() : null;
-                                this.spawnPos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
-                                if (subBuilder == null) {
-                                    break;
-                                } else {
-                                    subBuilder.mergeFrom(this.spawnPos_);
-                                    this.spawnPos_ = subBuilder.buildPartial();
-                                    break;
-                                }
-                            case 96:
-                                this.guid_ = input.readUInt32();
-                                break;
-                            case 112:
+                            case 40:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.includedFurnitureIndexList_ = newIntList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.includedFurnitureIndexList_.addInt(input.readInt32());
                                 break;
-                            case 114:
+                            case 42:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.includedFurnitureIndexList_ = newIntList();
@@ -146,6 +133,19 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
                                     this.includedFurnitureIndexList_.addInt(input.readInt32());
                                 }
                                 input.popLimit(limit);
+                                break;
+                            case 50:
+                                VectorOuterClass.Vector.Builder subBuilder = this.spawnPos_ != null ? this.spawnPos_.toBuilder() : null;
+                                this.spawnPos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
+                                if (subBuilder == null) {
+                                    break;
+                                } else {
+                                    subBuilder.mergeFrom(this.spawnPos_);
+                                    this.spawnPos_ = subBuilder.buildPartial();
+                                    break;
+                                }
+                            case 80:
+                                this.guid_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -180,6 +180,11 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteDataOrBuilder
+        public int getGuid() {
+            return this.guid_;
+        }
+
+        @Override // emu.grasscutter.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteDataOrBuilder
         public List<Integer> getIncludedFurnitureIndexListList() {
             return this.includedFurnitureIndexList_;
         }
@@ -209,11 +214,6 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
             return getSpawnPos();
         }
 
-        @Override // emu.grasscutter.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteDataOrBuilder
-        public int getGuid() {
-            return this.guid_;
-        }
-
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -230,18 +230,18 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (this.spawnPos_ != null) {
-                output.writeMessage(5, getSpawnPos());
-            }
-            if (this.guid_ != 0) {
-                output.writeUInt32(12, this.guid_);
-            }
             if (getIncludedFurnitureIndexListList().size() > 0) {
-                output.writeUInt32NoTag(114);
+                output.writeUInt32NoTag(42);
                 output.writeUInt32NoTag(this.includedFurnitureIndexListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.includedFurnitureIndexList_.size(); i++) {
                 output.writeInt32NoTag(this.includedFurnitureIndexList_.getInt(i));
+            }
+            if (this.spawnPos_ != null) {
+                output.writeMessage(6, getSpawnPos());
+            }
+            if (this.guid_ != 0) {
+                output.writeUInt32(10, this.guid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -252,25 +252,24 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
             if (size != -1) {
                 return size;
             }
-            int size2 = 0;
-            if (this.spawnPos_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(5, getSpawnPos());
-            }
-            if (this.guid_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.guid_);
-            }
             int dataSize = 0;
             for (int i = 0; i < this.includedFurnitureIndexList_.size(); i++) {
                 dataSize += CodedOutputStream.computeInt32SizeNoTag(this.includedFurnitureIndexList_.getInt(i));
             }
-            int size3 = size2 + dataSize;
+            int size2 = 0 + dataSize;
             if (!getIncludedFurnitureIndexListList().isEmpty()) {
-                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.includedFurnitureIndexListMemoizedSerializedSize = dataSize;
-            int size4 = size3 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size4;
-            return size4;
+            if (this.spawnPos_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(6, getSpawnPos());
+            }
+            if (this.guid_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(10, this.guid_);
+            }
+            int size3 = size2 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size3;
+            return size3;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -282,8 +281,8 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
                 return equals(obj);
             }
             HomeFurnitureCustomSuiteData other = (HomeFurnitureCustomSuiteData) obj;
-            if (getIncludedFurnitureIndexListList().equals(other.getIncludedFurnitureIndexListList()) && hasSpawnPos() == other.hasSpawnPos()) {
-                return (!hasSpawnPos() || getSpawnPos().equals(other.getSpawnPos())) && getGuid() == other.getGuid() && this.unknownFields.equals(other.unknownFields);
+            if (getGuid() == other.getGuid() && getIncludedFurnitureIndexListList().equals(other.getIncludedFurnitureIndexListList()) && hasSpawnPos() == other.hasSpawnPos()) {
+                return (!hasSpawnPos() || getSpawnPos().equals(other.getSpawnPos())) && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -293,14 +292,14 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getGuid();
             if (getIncludedFurnitureIndexListCount() > 0) {
-                hash = (53 * ((37 * hash) + 14)) + getIncludedFurnitureIndexListList().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getIncludedFurnitureIndexListList().hashCode();
             }
             if (hasSpawnPos()) {
-                hash = (53 * ((37 * hash) + 5)) + getSpawnPos().hashCode();
+                hash = (53 * ((37 * hash) + 6)) + getSpawnPos().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 12)) + getGuid())) + this.unknownFields.hashCode();
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -380,10 +379,10 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeFurnitureCustomSuiteDataOuterClass$HomeFurnitureCustomSuiteData$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements HomeFurnitureCustomSuiteDataOrBuilder {
             private int bitField0_;
+            private int guid_;
             private Internal.IntList includedFurnitureIndexList_ = HomeFurnitureCustomSuiteData.emptyIntList();
             private VectorOuterClass.Vector spawnPos_;
             private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> spawnPosBuilder_;
-            private int guid_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return HomeFurnitureCustomSuiteDataOuterClass.internal_static_HomeFurnitureCustomSuiteData_descriptor;
@@ -411,6 +410,7 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.guid_ = 0;
                 this.includedFurnitureIndexList_ = HomeFurnitureCustomSuiteData.emptyIntList();
                 this.bitField0_ &= -2;
                 if (this.spawnPosBuilder_ == null) {
@@ -419,7 +419,6 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
                     this.spawnPos_ = null;
                     this.spawnPosBuilder_ = null;
                 }
-                this.guid_ = 0;
                 return this;
             }
 
@@ -446,6 +445,7 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
             public HomeFurnitureCustomSuiteData buildPartial() {
                 HomeFurnitureCustomSuiteData result = new HomeFurnitureCustomSuiteData(this);
                 int i = this.bitField0_;
+                result.guid_ = this.guid_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.includedFurnitureIndexList_.makeImmutable();
                     this.bitField0_ &= -2;
@@ -456,7 +456,6 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
                 } else {
                     result.spawnPos_ = this.spawnPosBuilder_.build();
                 }
-                result.guid_ = this.guid_;
                 onBuilt();
                 return result;
             }
@@ -504,6 +503,9 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
                 if (other == HomeFurnitureCustomSuiteData.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getGuid() != 0) {
+                    setGuid(other.getGuid());
+                }
                 if (!other.includedFurnitureIndexList_.isEmpty()) {
                     if (this.includedFurnitureIndexList_.isEmpty()) {
                         this.includedFurnitureIndexList_ = other.includedFurnitureIndexList_;
@@ -516,9 +518,6 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
                 }
                 if (other.hasSpawnPos()) {
                     mergeSpawnPos(other.getSpawnPos());
-                }
-                if (other.getGuid() != 0) {
-                    setGuid(other.getGuid());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -550,6 +549,23 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteDataOrBuilder
+            public int getGuid() {
+                return this.guid_;
+            }
+
+            public Builder setGuid(int value) {
+                this.guid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearGuid() {
+                this.guid_ = 0;
+                onChanged();
+                return this;
             }
 
             private void ensureIncludedFurnitureIndexListIsMutable() {
@@ -681,23 +697,6 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
                     this.spawnPos_ = null;
                 }
                 return this.spawnPosBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteDataOrBuilder
-            public int getGuid() {
-                return this.guid_;
-            }
-
-            public Builder setGuid(int value) {
-                this.guid_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearGuid() {
-                this.guid_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

@@ -971,7 +971,7 @@ public class Float2FloatAVLTreeMap extends AbstractFloat2FloatSortedMap implemen
         float from;
 
         /* renamed from: to */
-        float f1848to;
+        float f1812to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Float2FloatMap.Entry> entries;
@@ -982,7 +982,7 @@ public class Float2FloatAVLTreeMap extends AbstractFloat2FloatSortedMap implemen
             if (bottom || top || Float2FloatAVLTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f1848to = to;
+                this.f1812to = to;
                 this.top = top;
                 this.defRetValue = Float2FloatAVLTreeMap.this.defRetValue;
                 return;
@@ -1001,7 +1001,7 @@ public class Float2FloatAVLTreeMap extends AbstractFloat2FloatSortedMap implemen
 
         /* renamed from: in */
         final boolean m852in(float k) {
-            return (this.bottom || Float2FloatAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Float2FloatAVLTreeMap.this.compare(k, this.f1848to) < 0);
+            return (this.bottom || Float2FloatAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Float2FloatAVLTreeMap.this.compare(k, this.f1812to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.Float2FloatMap, p014it.unimi.dsi.fastutil.floats.Float2FloatSortedMap
@@ -1176,7 +1176,7 @@ public class Float2FloatAVLTreeMap extends AbstractFloat2FloatSortedMap implemen
         public float put(float k, float v) {
             Float2FloatAVLTreeMap.this.modified = false;
             if (!m852in(k)) {
-                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1848to)) + ")");
+                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1812to)) + ")");
             }
             return Float2FloatAVLTreeMap.this.modified ? this.defRetValue : Float2FloatAVLTreeMap.this.put(k, v);
         }
@@ -1214,7 +1214,7 @@ public class Float2FloatAVLTreeMap extends AbstractFloat2FloatSortedMap implemen
 
         @Override // p014it.unimi.dsi.fastutil.floats.Float2FloatSortedMap
         public Float2FloatSortedMap headMap(float to) {
-            if (!this.top && Float2FloatAVLTreeMap.this.compare(to, this.f1848to) >= 0) {
+            if (!this.top && Float2FloatAVLTreeMap.this.compare(to, this.f1812to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1225,7 +1225,7 @@ public class Float2FloatAVLTreeMap extends AbstractFloat2FloatSortedMap implemen
             if (!this.bottom && Float2FloatAVLTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f1848to, this.top);
+            return new Submap(from, false, this.f1812to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.Float2FloatSortedMap
@@ -1234,12 +1234,12 @@ public class Float2FloatAVLTreeMap extends AbstractFloat2FloatSortedMap implemen
                 return new Submap(from, false, to, false);
             }
             if (!this.top) {
-                to = Float2FloatAVLTreeMap.this.compare(to, this.f1848to) < 0 ? to : this.f1848to;
+                to = Float2FloatAVLTreeMap.this.compare(to, this.f1812to) < 0 ? to : this.f1812to;
             }
             if (!this.bottom) {
                 from = Float2FloatAVLTreeMap.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f1848to) ? new Submap(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f1812to) ? new Submap(from, false, to, false) : this;
         }
 
         public Entry firstEntry() {
@@ -1258,7 +1258,7 @@ public class Float2FloatAVLTreeMap extends AbstractFloat2FloatSortedMap implemen
             if (e == null) {
                 return null;
             }
-            if (this.top || Float2FloatAVLTreeMap.this.compare(e.key, this.f1848to) < 0) {
+            if (this.top || Float2FloatAVLTreeMap.this.compare(e.key, this.f1812to) < 0) {
                 return e;
             }
             return null;
@@ -1272,8 +1272,8 @@ public class Float2FloatAVLTreeMap extends AbstractFloat2FloatSortedMap implemen
             if (this.top) {
                 e = Float2FloatAVLTreeMap.this.lastEntry;
             } else {
-                e = Float2FloatAVLTreeMap.this.locateKey(this.f1848to);
-                if (Float2FloatAVLTreeMap.this.compare(e.key, this.f1848to) >= 0) {
+                e = Float2FloatAVLTreeMap.this.locateKey(this.f1812to);
+                if (Float2FloatAVLTreeMap.this.compare(e.key, this.f1812to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1351,7 +1351,7 @@ public class Float2FloatAVLTreeMap extends AbstractFloat2FloatSortedMap implemen
             @Override // p014it.unimi.dsi.fastutil.floats.Float2FloatAVLTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Float2FloatAVLTreeMap.this.compare(this.next.key, Submap.this.f1848to) >= 0) {
+                if (!Submap.this.top && this.next != null && Float2FloatAVLTreeMap.this.compare(this.next.key, Submap.this.f1812to) >= 0) {
                     this.next = null;
                 }
             }

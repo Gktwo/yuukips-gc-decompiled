@@ -970,7 +970,7 @@ public class Short2ShortAVLTreeMap extends AbstractShort2ShortSortedMap implemen
         short from;
 
         /* renamed from: to */
-        short f3001to;
+        short f2965to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Short2ShortMap.Entry> entries;
@@ -981,7 +981,7 @@ public class Short2ShortAVLTreeMap extends AbstractShort2ShortSortedMap implemen
             if (bottom || top || Short2ShortAVLTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f3001to = to;
+                this.f2965to = to;
                 this.top = top;
                 this.defRetValue = Short2ShortAVLTreeMap.this.defRetValue;
                 return;
@@ -1000,7 +1000,7 @@ public class Short2ShortAVLTreeMap extends AbstractShort2ShortSortedMap implemen
 
         /* renamed from: in */
         final boolean m448in(short k) {
-            return (this.bottom || Short2ShortAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Short2ShortAVLTreeMap.this.compare(k, this.f3001to) < 0);
+            return (this.bottom || Short2ShortAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Short2ShortAVLTreeMap.this.compare(k, this.f2965to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.Short2ShortMap, p014it.unimi.dsi.fastutil.shorts.Short2ShortSortedMap
@@ -1175,7 +1175,7 @@ public class Short2ShortAVLTreeMap extends AbstractShort2ShortSortedMap implemen
         public short put(short k, short v) {
             Short2ShortAVLTreeMap.this.modified = false;
             if (!m448in(k)) {
-                throw new IllegalArgumentException("Key (" + ((int) k) + ") out of range [" + (this.bottom ? "-" : String.valueOf((int) this.from)) + ", " + (this.top ? "-" : String.valueOf((int) this.f3001to)) + ")");
+                throw new IllegalArgumentException("Key (" + ((int) k) + ") out of range [" + (this.bottom ? "-" : String.valueOf((int) this.from)) + ", " + (this.top ? "-" : String.valueOf((int) this.f2965to)) + ")");
             }
             return Short2ShortAVLTreeMap.this.modified ? this.defRetValue : Short2ShortAVLTreeMap.this.put(k, v);
         }
@@ -1213,7 +1213,7 @@ public class Short2ShortAVLTreeMap extends AbstractShort2ShortSortedMap implemen
 
         @Override // p014it.unimi.dsi.fastutil.shorts.Short2ShortSortedMap
         public Short2ShortSortedMap headMap(short to) {
-            if (!this.top && Short2ShortAVLTreeMap.this.compare(to, this.f3001to) >= 0) {
+            if (!this.top && Short2ShortAVLTreeMap.this.compare(to, this.f2965to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1224,7 +1224,7 @@ public class Short2ShortAVLTreeMap extends AbstractShort2ShortSortedMap implemen
             if (!this.bottom && Short2ShortAVLTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f3001to, this.top);
+            return new Submap(from, false, this.f2965to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.Short2ShortSortedMap
@@ -1233,12 +1233,12 @@ public class Short2ShortAVLTreeMap extends AbstractShort2ShortSortedMap implemen
                 return new Submap(from, false, to, false);
             }
             if (!this.top) {
-                to = Short2ShortAVLTreeMap.this.compare(to, this.f3001to) < 0 ? to : this.f3001to;
+                to = Short2ShortAVLTreeMap.this.compare(to, this.f2965to) < 0 ? to : this.f2965to;
             }
             if (!this.bottom) {
                 from = Short2ShortAVLTreeMap.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f3001to) ? new Submap(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f2965to) ? new Submap(from, false, to, false) : this;
         }
 
         public Entry firstEntry() {
@@ -1257,7 +1257,7 @@ public class Short2ShortAVLTreeMap extends AbstractShort2ShortSortedMap implemen
             if (e == null) {
                 return null;
             }
-            if (this.top || Short2ShortAVLTreeMap.this.compare(e.key, this.f3001to) < 0) {
+            if (this.top || Short2ShortAVLTreeMap.this.compare(e.key, this.f2965to) < 0) {
                 return e;
             }
             return null;
@@ -1271,8 +1271,8 @@ public class Short2ShortAVLTreeMap extends AbstractShort2ShortSortedMap implemen
             if (this.top) {
                 e = Short2ShortAVLTreeMap.this.lastEntry;
             } else {
-                e = Short2ShortAVLTreeMap.this.locateKey(this.f3001to);
-                if (Short2ShortAVLTreeMap.this.compare(e.key, this.f3001to) >= 0) {
+                e = Short2ShortAVLTreeMap.this.locateKey(this.f2965to);
+                if (Short2ShortAVLTreeMap.this.compare(e.key, this.f2965to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1350,7 +1350,7 @@ public class Short2ShortAVLTreeMap extends AbstractShort2ShortSortedMap implemen
             @Override // p014it.unimi.dsi.fastutil.shorts.Short2ShortAVLTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Short2ShortAVLTreeMap.this.compare(this.next.key, Submap.this.f3001to) >= 0) {
+                if (!Submap.this.top && this.next != null && Short2ShortAVLTreeMap.this.compare(this.next.key, Submap.this.f2965to) >= 0) {
                     this.next = null;
                 }
             }

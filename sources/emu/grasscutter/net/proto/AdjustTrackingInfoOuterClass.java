@@ -19,35 +19,35 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AdjustTrackingInfoOuterClass.class */
 public final class AdjustTrackingInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018AdjustTrackingInfo.proto\"Â\u0001\n\u0012AdjustTrackingInfo\u0012\u001b\n\u0013Unk3300_CHCOHLGBHLB\u0018\u0002 \u0001(\t\u0012\u001b\n\u0013Unk3300_GAMLJPFKCGC\u0018\t \u0001(\t\u0012\u001b\n\u0013Unk3300_ONNMBNODPIA\u0018\u0004 \u0001(\t\u0012\u001b\n\u0013Unk3300_MHDOPAMDMPL\u0018\u0006 \u0001(\t\u0012\u001b\n\u0013Unk3300_INAIEOMCIEM\u0018\u0007 \u0001(\t\u0012\u001b\n\u0013Unk3300_KLKFLIIOFKK\u0018\u0003 \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018AdjustTrackingInfo.proto\"Â\u0001\n\u0012AdjustTrackingInfo\u0012\u001b\n\u0013Unk3300_GAMLJPFKCGC\u0018\u0005 \u0001(\t\u0012\u001b\n\u0013Unk3300_CHCOHLGBHLB\u0018\b \u0001(\t\u0012\u001b\n\u0013Unk3300_INAIEOMCIEM\u0018\u000f \u0001(\t\u0012\u001b\n\u0013Unk3300_ONNMBNODPIA\u0018\u0003 \u0001(\t\u0012\u001b\n\u0013Unk3300_KLKFLIIOFKK\u0018\u0007 \u0001(\t\u0012\u001b\n\u0013Unk3300_MHDOPAMDMPL\u0018\r \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AdjustTrackingInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AdjustTrackingInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AdjustTrackingInfo_descriptor, new String[]{"Unk3300CHCOHLGBHLB", "Unk3300GAMLJPFKCGC", "Unk3300ONNMBNODPIA", "Unk3300MHDOPAMDMPL", "Unk3300INAIEOMCIEM", "Unk3300KLKFLIIOFKK"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AdjustTrackingInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AdjustTrackingInfo_descriptor, new String[]{"Unk3300GAMLJPFKCGC", "Unk3300CHCOHLGBHLB", "Unk3300INAIEOMCIEM", "Unk3300ONNMBNODPIA", "Unk3300KLKFLIIOFKK", "Unk3300MHDOPAMDMPL"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AdjustTrackingInfoOuterClass$AdjustTrackingInfoOrBuilder.class */
     public interface AdjustTrackingInfoOrBuilder extends MessageOrBuilder {
-        String getUnk3300CHCOHLGBHLB();
-
-        ByteString getUnk3300CHCOHLGBHLBBytes();
-
         String getUnk3300GAMLJPFKCGC();
 
         ByteString getUnk3300GAMLJPFKCGCBytes();
 
-        String getUnk3300ONNMBNODPIA();
+        String getUnk3300CHCOHLGBHLB();
 
-        ByteString getUnk3300ONNMBNODPIABytes();
-
-        String getUnk3300MHDOPAMDMPL();
-
-        ByteString getUnk3300MHDOPAMDMPLBytes();
+        ByteString getUnk3300CHCOHLGBHLBBytes();
 
         String getUnk3300INAIEOMCIEM();
 
         ByteString getUnk3300INAIEOMCIEMBytes();
 
+        String getUnk3300ONNMBNODPIA();
+
+        ByteString getUnk3300ONNMBNODPIABytes();
+
         String getUnk3300KLKFLIIOFKK();
 
         ByteString getUnk3300KLKFLIIOFKKBytes();
+
+        String getUnk3300MHDOPAMDMPL();
+
+        ByteString getUnk3300MHDOPAMDMPLBytes();
     }
 
     private AdjustTrackingInfoOuterClass() {
@@ -63,18 +63,18 @@ public final class AdjustTrackingInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AdjustTrackingInfoOuterClass$AdjustTrackingInfo.class */
     public static final class AdjustTrackingInfo extends GeneratedMessageV3 implements AdjustTrackingInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int UNK3300_CHCOHLGBHLB_FIELD_NUMBER = 2;
-        private volatile Object unk3300CHCOHLGBHLB_;
-        public static final int UNK3300_GAMLJPFKCGC_FIELD_NUMBER = 9;
+        public static final int UNK3300_GAMLJPFKCGC_FIELD_NUMBER = 5;
         private volatile Object unk3300GAMLJPFKCGC_;
-        public static final int UNK3300_ONNMBNODPIA_FIELD_NUMBER = 4;
-        private volatile Object unk3300ONNMBNODPIA_;
-        public static final int UNK3300_MHDOPAMDMPL_FIELD_NUMBER = 6;
-        private volatile Object unk3300MHDOPAMDMPL_;
-        public static final int UNK3300_INAIEOMCIEM_FIELD_NUMBER = 7;
+        public static final int UNK3300_CHCOHLGBHLB_FIELD_NUMBER = 8;
+        private volatile Object unk3300CHCOHLGBHLB_;
+        public static final int UNK3300_INAIEOMCIEM_FIELD_NUMBER = 15;
         private volatile Object unk3300INAIEOMCIEM_;
-        public static final int UNK3300_KLKFLIIOFKK_FIELD_NUMBER = 3;
+        public static final int UNK3300_ONNMBNODPIA_FIELD_NUMBER = 3;
+        private volatile Object unk3300ONNMBNODPIA_;
+        public static final int UNK3300_KLKFLIIOFKK_FIELD_NUMBER = 7;
         private volatile Object unk3300KLKFLIIOFKK_;
+        public static final int UNK3300_MHDOPAMDMPL_FIELD_NUMBER = 13;
+        private volatile Object unk3300MHDOPAMDMPL_;
         private byte memoizedIsInitialized;
         private static final AdjustTrackingInfo DEFAULT_INSTANCE = new AdjustTrackingInfo();
         private static final Parser<AdjustTrackingInfo> PARSER = new AbstractParser<AdjustTrackingInfo>() { // from class: emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfo.1
@@ -91,12 +91,12 @@ public final class AdjustTrackingInfoOuterClass {
 
         private AdjustTrackingInfo() {
             this.memoizedIsInitialized = -1;
-            this.unk3300CHCOHLGBHLB_ = "";
             this.unk3300GAMLJPFKCGC_ = "";
-            this.unk3300ONNMBNODPIA_ = "";
-            this.unk3300MHDOPAMDMPL_ = "";
+            this.unk3300CHCOHLGBHLB_ = "";
             this.unk3300INAIEOMCIEM_ = "";
+            this.unk3300ONNMBNODPIA_ = "";
             this.unk3300KLKFLIIOFKK_ = "";
+            this.unk3300MHDOPAMDMPL_ = "";
         }
 
         /* access modifiers changed from: protected */
@@ -127,23 +127,23 @@ public final class AdjustTrackingInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 18:
-                                    this.unk3300CHCOHLGBHLB_ = input.readStringRequireUtf8();
-                                    break;
                                 case 26:
-                                    this.unk3300KLKFLIIOFKK_ = input.readStringRequireUtf8();
-                                    break;
-                                case 34:
                                     this.unk3300ONNMBNODPIA_ = input.readStringRequireUtf8();
                                     break;
-                                case 50:
-                                    this.unk3300MHDOPAMDMPL_ = input.readStringRequireUtf8();
+                                case 42:
+                                    this.unk3300GAMLJPFKCGC_ = input.readStringRequireUtf8();
                                     break;
                                 case 58:
-                                    this.unk3300INAIEOMCIEM_ = input.readStringRequireUtf8();
+                                    this.unk3300KLKFLIIOFKK_ = input.readStringRequireUtf8();
                                     break;
-                                case 74:
-                                    this.unk3300GAMLJPFKCGC_ = input.readStringRequireUtf8();
+                                case 66:
+                                    this.unk3300CHCOHLGBHLB_ = input.readStringRequireUtf8();
+                                    break;
+                                case 106:
+                                    this.unk3300MHDOPAMDMPL_ = input.readStringRequireUtf8();
+                                    break;
+                                case 122:
+                                    this.unk3300INAIEOMCIEM_ = input.readStringRequireUtf8();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -176,28 +176,6 @@ public final class AdjustTrackingInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
-        public String getUnk3300CHCOHLGBHLB() {
-            Object ref = this.unk3300CHCOHLGBHLB_;
-            if (ref instanceof String) {
-                return (String) ref;
-            }
-            String s = ((ByteString) ref).toStringUtf8();
-            this.unk3300CHCOHLGBHLB_ = s;
-            return s;
-        }
-
-        @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
-        public ByteString getUnk3300CHCOHLGBHLBBytes() {
-            Object ref = this.unk3300CHCOHLGBHLB_;
-            if (!(ref instanceof String)) {
-                return (ByteString) ref;
-            }
-            ByteString b = ByteString.copyFromUtf8((String) ref);
-            this.unk3300CHCOHLGBHLB_ = b;
-            return b;
-        }
-
-        @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
         public String getUnk3300GAMLJPFKCGC() {
             Object ref = this.unk3300GAMLJPFKCGC_;
             if (ref instanceof String) {
@@ -220,46 +198,24 @@ public final class AdjustTrackingInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
-        public String getUnk3300ONNMBNODPIA() {
-            Object ref = this.unk3300ONNMBNODPIA_;
+        public String getUnk3300CHCOHLGBHLB() {
+            Object ref = this.unk3300CHCOHLGBHLB_;
             if (ref instanceof String) {
                 return (String) ref;
             }
             String s = ((ByteString) ref).toStringUtf8();
-            this.unk3300ONNMBNODPIA_ = s;
+            this.unk3300CHCOHLGBHLB_ = s;
             return s;
         }
 
         @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
-        public ByteString getUnk3300ONNMBNODPIABytes() {
-            Object ref = this.unk3300ONNMBNODPIA_;
+        public ByteString getUnk3300CHCOHLGBHLBBytes() {
+            Object ref = this.unk3300CHCOHLGBHLB_;
             if (!(ref instanceof String)) {
                 return (ByteString) ref;
             }
             ByteString b = ByteString.copyFromUtf8((String) ref);
-            this.unk3300ONNMBNODPIA_ = b;
-            return b;
-        }
-
-        @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
-        public String getUnk3300MHDOPAMDMPL() {
-            Object ref = this.unk3300MHDOPAMDMPL_;
-            if (ref instanceof String) {
-                return (String) ref;
-            }
-            String s = ((ByteString) ref).toStringUtf8();
-            this.unk3300MHDOPAMDMPL_ = s;
-            return s;
-        }
-
-        @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
-        public ByteString getUnk3300MHDOPAMDMPLBytes() {
-            Object ref = this.unk3300MHDOPAMDMPL_;
-            if (!(ref instanceof String)) {
-                return (ByteString) ref;
-            }
-            ByteString b = ByteString.copyFromUtf8((String) ref);
-            this.unk3300MHDOPAMDMPL_ = b;
+            this.unk3300CHCOHLGBHLB_ = b;
             return b;
         }
 
@@ -286,6 +242,28 @@ public final class AdjustTrackingInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
+        public String getUnk3300ONNMBNODPIA() {
+            Object ref = this.unk3300ONNMBNODPIA_;
+            if (ref instanceof String) {
+                return (String) ref;
+            }
+            String s = ((ByteString) ref).toStringUtf8();
+            this.unk3300ONNMBNODPIA_ = s;
+            return s;
+        }
+
+        @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
+        public ByteString getUnk3300ONNMBNODPIABytes() {
+            Object ref = this.unk3300ONNMBNODPIA_;
+            if (!(ref instanceof String)) {
+                return (ByteString) ref;
+            }
+            ByteString b = ByteString.copyFromUtf8((String) ref);
+            this.unk3300ONNMBNODPIA_ = b;
+            return b;
+        }
+
+        @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
         public String getUnk3300KLKFLIIOFKK() {
             Object ref = this.unk3300KLKFLIIOFKK_;
             if (ref instanceof String) {
@@ -307,6 +285,28 @@ public final class AdjustTrackingInfoOuterClass {
             return b;
         }
 
+        @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
+        public String getUnk3300MHDOPAMDMPL() {
+            Object ref = this.unk3300MHDOPAMDMPL_;
+            if (ref instanceof String) {
+                return (String) ref;
+            }
+            String s = ((ByteString) ref).toStringUtf8();
+            this.unk3300MHDOPAMDMPL_ = s;
+            return s;
+        }
+
+        @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
+        public ByteString getUnk3300MHDOPAMDMPLBytes() {
+            Object ref = this.unk3300MHDOPAMDMPL_;
+            if (!(ref instanceof String)) {
+                return (ByteString) ref;
+            }
+            ByteString b = ByteString.copyFromUtf8((String) ref);
+            this.unk3300MHDOPAMDMPL_ = b;
+            return b;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -322,23 +322,23 @@ public final class AdjustTrackingInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (!GeneratedMessageV3.isStringEmpty(this.unk3300CHCOHLGBHLB_)) {
-                GeneratedMessageV3.writeString(output, 2, this.unk3300CHCOHLGBHLB_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.unk3300KLKFLIIOFKK_)) {
-                GeneratedMessageV3.writeString(output, 3, this.unk3300KLKFLIIOFKK_);
-            }
             if (!GeneratedMessageV3.isStringEmpty(this.unk3300ONNMBNODPIA_)) {
-                GeneratedMessageV3.writeString(output, 4, this.unk3300ONNMBNODPIA_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.unk3300MHDOPAMDMPL_)) {
-                GeneratedMessageV3.writeString(output, 6, this.unk3300MHDOPAMDMPL_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.unk3300INAIEOMCIEM_)) {
-                GeneratedMessageV3.writeString(output, 7, this.unk3300INAIEOMCIEM_);
+                GeneratedMessageV3.writeString(output, 3, this.unk3300ONNMBNODPIA_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.unk3300GAMLJPFKCGC_)) {
-                GeneratedMessageV3.writeString(output, 9, this.unk3300GAMLJPFKCGC_);
+                GeneratedMessageV3.writeString(output, 5, this.unk3300GAMLJPFKCGC_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.unk3300KLKFLIIOFKK_)) {
+                GeneratedMessageV3.writeString(output, 7, this.unk3300KLKFLIIOFKK_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.unk3300CHCOHLGBHLB_)) {
+                GeneratedMessageV3.writeString(output, 8, this.unk3300CHCOHLGBHLB_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.unk3300MHDOPAMDMPL_)) {
+                GeneratedMessageV3.writeString(output, 13, this.unk3300MHDOPAMDMPL_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.unk3300INAIEOMCIEM_)) {
+                GeneratedMessageV3.writeString(output, 15, this.unk3300INAIEOMCIEM_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -350,23 +350,23 @@ public final class AdjustTrackingInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (!GeneratedMessageV3.isStringEmpty(this.unk3300CHCOHLGBHLB_)) {
-                size2 = 0 + GeneratedMessageV3.computeStringSize(2, this.unk3300CHCOHLGBHLB_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.unk3300KLKFLIIOFKK_)) {
-                size2 += GeneratedMessageV3.computeStringSize(3, this.unk3300KLKFLIIOFKK_);
-            }
             if (!GeneratedMessageV3.isStringEmpty(this.unk3300ONNMBNODPIA_)) {
-                size2 += GeneratedMessageV3.computeStringSize(4, this.unk3300ONNMBNODPIA_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.unk3300MHDOPAMDMPL_)) {
-                size2 += GeneratedMessageV3.computeStringSize(6, this.unk3300MHDOPAMDMPL_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.unk3300INAIEOMCIEM_)) {
-                size2 += GeneratedMessageV3.computeStringSize(7, this.unk3300INAIEOMCIEM_);
+                size2 = 0 + GeneratedMessageV3.computeStringSize(3, this.unk3300ONNMBNODPIA_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.unk3300GAMLJPFKCGC_)) {
-                size2 += GeneratedMessageV3.computeStringSize(9, this.unk3300GAMLJPFKCGC_);
+                size2 += GeneratedMessageV3.computeStringSize(5, this.unk3300GAMLJPFKCGC_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.unk3300KLKFLIIOFKK_)) {
+                size2 += GeneratedMessageV3.computeStringSize(7, this.unk3300KLKFLIIOFKK_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.unk3300CHCOHLGBHLB_)) {
+                size2 += GeneratedMessageV3.computeStringSize(8, this.unk3300CHCOHLGBHLB_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.unk3300MHDOPAMDMPL_)) {
+                size2 += GeneratedMessageV3.computeStringSize(13, this.unk3300MHDOPAMDMPL_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.unk3300INAIEOMCIEM_)) {
+                size2 += GeneratedMessageV3.computeStringSize(15, this.unk3300INAIEOMCIEM_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -382,7 +382,7 @@ public final class AdjustTrackingInfoOuterClass {
                 return equals(obj);
             }
             AdjustTrackingInfo other = (AdjustTrackingInfo) obj;
-            return getUnk3300CHCOHLGBHLB().equals(other.getUnk3300CHCOHLGBHLB()) && getUnk3300GAMLJPFKCGC().equals(other.getUnk3300GAMLJPFKCGC()) && getUnk3300ONNMBNODPIA().equals(other.getUnk3300ONNMBNODPIA()) && getUnk3300MHDOPAMDMPL().equals(other.getUnk3300MHDOPAMDMPL()) && getUnk3300INAIEOMCIEM().equals(other.getUnk3300INAIEOMCIEM()) && getUnk3300KLKFLIIOFKK().equals(other.getUnk3300KLKFLIIOFKK()) && this.unknownFields.equals(other.unknownFields);
+            return getUnk3300GAMLJPFKCGC().equals(other.getUnk3300GAMLJPFKCGC()) && getUnk3300CHCOHLGBHLB().equals(other.getUnk3300CHCOHLGBHLB()) && getUnk3300INAIEOMCIEM().equals(other.getUnk3300INAIEOMCIEM()) && getUnk3300ONNMBNODPIA().equals(other.getUnk3300ONNMBNODPIA()) && getUnk3300KLKFLIIOFKK().equals(other.getUnk3300KLKFLIIOFKK()) && getUnk3300MHDOPAMDMPL().equals(other.getUnk3300MHDOPAMDMPL()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -390,7 +390,7 @@ public final class AdjustTrackingInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getUnk3300CHCOHLGBHLB().hashCode())) + 9)) + getUnk3300GAMLJPFKCGC().hashCode())) + 4)) + getUnk3300ONNMBNODPIA().hashCode())) + 6)) + getUnk3300MHDOPAMDMPL().hashCode())) + 7)) + getUnk3300INAIEOMCIEM().hashCode())) + 3)) + getUnk3300KLKFLIIOFKK().hashCode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getUnk3300GAMLJPFKCGC().hashCode())) + 8)) + getUnk3300CHCOHLGBHLB().hashCode())) + 15)) + getUnk3300INAIEOMCIEM().hashCode())) + 3)) + getUnk3300ONNMBNODPIA().hashCode())) + 7)) + getUnk3300KLKFLIIOFKK().hashCode())) + 13)) + getUnk3300MHDOPAMDMPL().hashCode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -469,12 +469,12 @@ public final class AdjustTrackingInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AdjustTrackingInfoOuterClass$AdjustTrackingInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements AdjustTrackingInfoOrBuilder {
-            private Object unk3300CHCOHLGBHLB_ = "";
             private Object unk3300GAMLJPFKCGC_ = "";
-            private Object unk3300ONNMBNODPIA_ = "";
-            private Object unk3300MHDOPAMDMPL_ = "";
+            private Object unk3300CHCOHLGBHLB_ = "";
             private Object unk3300INAIEOMCIEM_ = "";
+            private Object unk3300ONNMBNODPIA_ = "";
             private Object unk3300KLKFLIIOFKK_ = "";
+            private Object unk3300MHDOPAMDMPL_ = "";
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return AdjustTrackingInfoOuterClass.internal_static_AdjustTrackingInfo_descriptor;
@@ -502,12 +502,12 @@ public final class AdjustTrackingInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.unk3300CHCOHLGBHLB_ = "";
                 this.unk3300GAMLJPFKCGC_ = "";
-                this.unk3300ONNMBNODPIA_ = "";
-                this.unk3300MHDOPAMDMPL_ = "";
+                this.unk3300CHCOHLGBHLB_ = "";
                 this.unk3300INAIEOMCIEM_ = "";
+                this.unk3300ONNMBNODPIA_ = "";
                 this.unk3300KLKFLIIOFKK_ = "";
+                this.unk3300MHDOPAMDMPL_ = "";
                 return this;
             }
 
@@ -533,12 +533,12 @@ public final class AdjustTrackingInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public AdjustTrackingInfo buildPartial() {
                 AdjustTrackingInfo result = new AdjustTrackingInfo(this);
-                result.unk3300CHCOHLGBHLB_ = this.unk3300CHCOHLGBHLB_;
                 result.unk3300GAMLJPFKCGC_ = this.unk3300GAMLJPFKCGC_;
-                result.unk3300ONNMBNODPIA_ = this.unk3300ONNMBNODPIA_;
-                result.unk3300MHDOPAMDMPL_ = this.unk3300MHDOPAMDMPL_;
+                result.unk3300CHCOHLGBHLB_ = this.unk3300CHCOHLGBHLB_;
                 result.unk3300INAIEOMCIEM_ = this.unk3300INAIEOMCIEM_;
+                result.unk3300ONNMBNODPIA_ = this.unk3300ONNMBNODPIA_;
                 result.unk3300KLKFLIIOFKK_ = this.unk3300KLKFLIIOFKK_;
+                result.unk3300MHDOPAMDMPL_ = this.unk3300MHDOPAMDMPL_;
                 onBuilt();
                 return result;
             }
@@ -586,28 +586,28 @@ public final class AdjustTrackingInfoOuterClass {
                 if (other == AdjustTrackingInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (!other.getUnk3300CHCOHLGBHLB().isEmpty()) {
-                    this.unk3300CHCOHLGBHLB_ = other.unk3300CHCOHLGBHLB_;
-                    onChanged();
-                }
                 if (!other.getUnk3300GAMLJPFKCGC().isEmpty()) {
                     this.unk3300GAMLJPFKCGC_ = other.unk3300GAMLJPFKCGC_;
                     onChanged();
                 }
-                if (!other.getUnk3300ONNMBNODPIA().isEmpty()) {
-                    this.unk3300ONNMBNODPIA_ = other.unk3300ONNMBNODPIA_;
-                    onChanged();
-                }
-                if (!other.getUnk3300MHDOPAMDMPL().isEmpty()) {
-                    this.unk3300MHDOPAMDMPL_ = other.unk3300MHDOPAMDMPL_;
+                if (!other.getUnk3300CHCOHLGBHLB().isEmpty()) {
+                    this.unk3300CHCOHLGBHLB_ = other.unk3300CHCOHLGBHLB_;
                     onChanged();
                 }
                 if (!other.getUnk3300INAIEOMCIEM().isEmpty()) {
                     this.unk3300INAIEOMCIEM_ = other.unk3300INAIEOMCIEM_;
                     onChanged();
                 }
+                if (!other.getUnk3300ONNMBNODPIA().isEmpty()) {
+                    this.unk3300ONNMBNODPIA_ = other.unk3300ONNMBNODPIA_;
+                    onChanged();
+                }
                 if (!other.getUnk3300KLKFLIIOFKK().isEmpty()) {
                     this.unk3300KLKFLIIOFKK_ = other.unk3300KLKFLIIOFKK_;
+                    onChanged();
+                }
+                if (!other.getUnk3300MHDOPAMDMPL().isEmpty()) {
+                    this.unk3300MHDOPAMDMPL_ = other.unk3300MHDOPAMDMPL_;
                     onChanged();
                 }
                 mergeUnknownFields(other.unknownFields);
@@ -640,53 +640,6 @@ public final class AdjustTrackingInfoOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
-            public String getUnk3300CHCOHLGBHLB() {
-                Object ref = this.unk3300CHCOHLGBHLB_;
-                if (ref instanceof String) {
-                    return (String) ref;
-                }
-                String s = ((ByteString) ref).toStringUtf8();
-                this.unk3300CHCOHLGBHLB_ = s;
-                return s;
-            }
-
-            @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
-            public ByteString getUnk3300CHCOHLGBHLBBytes() {
-                Object ref = this.unk3300CHCOHLGBHLB_;
-                if (!(ref instanceof String)) {
-                    return (ByteString) ref;
-                }
-                ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.unk3300CHCOHLGBHLB_ = b;
-                return b;
-            }
-
-            public Builder setUnk3300CHCOHLGBHLB(String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.unk3300CHCOHLGBHLB_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk3300CHCOHLGBHLB() {
-                this.unk3300CHCOHLGBHLB_ = AdjustTrackingInfo.getDefaultInstance().getUnk3300CHCOHLGBHLB();
-                onChanged();
-                return this;
-            }
-
-            public Builder setUnk3300CHCOHLGBHLBBytes(ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                AdjustTrackingInfo.checkByteStringIsUtf8(value);
-                this.unk3300CHCOHLGBHLB_ = value;
-                onChanged();
-                return this;
             }
 
             @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
@@ -737,95 +690,48 @@ public final class AdjustTrackingInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
-            public String getUnk3300ONNMBNODPIA() {
-                Object ref = this.unk3300ONNMBNODPIA_;
+            public String getUnk3300CHCOHLGBHLB() {
+                Object ref = this.unk3300CHCOHLGBHLB_;
                 if (ref instanceof String) {
                     return (String) ref;
                 }
                 String s = ((ByteString) ref).toStringUtf8();
-                this.unk3300ONNMBNODPIA_ = s;
+                this.unk3300CHCOHLGBHLB_ = s;
                 return s;
             }
 
             @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
-            public ByteString getUnk3300ONNMBNODPIABytes() {
-                Object ref = this.unk3300ONNMBNODPIA_;
+            public ByteString getUnk3300CHCOHLGBHLBBytes() {
+                Object ref = this.unk3300CHCOHLGBHLB_;
                 if (!(ref instanceof String)) {
                     return (ByteString) ref;
                 }
                 ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.unk3300ONNMBNODPIA_ = b;
+                this.unk3300CHCOHLGBHLB_ = b;
                 return b;
             }
 
-            public Builder setUnk3300ONNMBNODPIA(String value) {
+            public Builder setUnk3300CHCOHLGBHLB(String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
-                this.unk3300ONNMBNODPIA_ = value;
+                this.unk3300CHCOHLGBHLB_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearUnk3300ONNMBNODPIA() {
-                this.unk3300ONNMBNODPIA_ = AdjustTrackingInfo.getDefaultInstance().getUnk3300ONNMBNODPIA();
+            public Builder clearUnk3300CHCOHLGBHLB() {
+                this.unk3300CHCOHLGBHLB_ = AdjustTrackingInfo.getDefaultInstance().getUnk3300CHCOHLGBHLB();
                 onChanged();
                 return this;
             }
 
-            public Builder setUnk3300ONNMBNODPIABytes(ByteString value) {
+            public Builder setUnk3300CHCOHLGBHLBBytes(ByteString value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
                 AdjustTrackingInfo.checkByteStringIsUtf8(value);
-                this.unk3300ONNMBNODPIA_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
-            public String getUnk3300MHDOPAMDMPL() {
-                Object ref = this.unk3300MHDOPAMDMPL_;
-                if (ref instanceof String) {
-                    return (String) ref;
-                }
-                String s = ((ByteString) ref).toStringUtf8();
-                this.unk3300MHDOPAMDMPL_ = s;
-                return s;
-            }
-
-            @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
-            public ByteString getUnk3300MHDOPAMDMPLBytes() {
-                Object ref = this.unk3300MHDOPAMDMPL_;
-                if (!(ref instanceof String)) {
-                    return (ByteString) ref;
-                }
-                ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.unk3300MHDOPAMDMPL_ = b;
-                return b;
-            }
-
-            public Builder setUnk3300MHDOPAMDMPL(String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.unk3300MHDOPAMDMPL_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk3300MHDOPAMDMPL() {
-                this.unk3300MHDOPAMDMPL_ = AdjustTrackingInfo.getDefaultInstance().getUnk3300MHDOPAMDMPL();
-                onChanged();
-                return this;
-            }
-
-            public Builder setUnk3300MHDOPAMDMPLBytes(ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                AdjustTrackingInfo.checkByteStringIsUtf8(value);
-                this.unk3300MHDOPAMDMPL_ = value;
+                this.unk3300CHCOHLGBHLB_ = value;
                 onChanged();
                 return this;
             }
@@ -878,6 +784,53 @@ public final class AdjustTrackingInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
+            public String getUnk3300ONNMBNODPIA() {
+                Object ref = this.unk3300ONNMBNODPIA_;
+                if (ref instanceof String) {
+                    return (String) ref;
+                }
+                String s = ((ByteString) ref).toStringUtf8();
+                this.unk3300ONNMBNODPIA_ = s;
+                return s;
+            }
+
+            @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
+            public ByteString getUnk3300ONNMBNODPIABytes() {
+                Object ref = this.unk3300ONNMBNODPIA_;
+                if (!(ref instanceof String)) {
+                    return (ByteString) ref;
+                }
+                ByteString b = ByteString.copyFromUtf8((String) ref);
+                this.unk3300ONNMBNODPIA_ = b;
+                return b;
+            }
+
+            public Builder setUnk3300ONNMBNODPIA(String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.unk3300ONNMBNODPIA_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300ONNMBNODPIA() {
+                this.unk3300ONNMBNODPIA_ = AdjustTrackingInfo.getDefaultInstance().getUnk3300ONNMBNODPIA();
+                onChanged();
+                return this;
+            }
+
+            public Builder setUnk3300ONNMBNODPIABytes(ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                AdjustTrackingInfo.checkByteStringIsUtf8(value);
+                this.unk3300ONNMBNODPIA_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
             public String getUnk3300KLKFLIIOFKK() {
                 Object ref = this.unk3300KLKFLIIOFKK_;
                 if (ref instanceof String) {
@@ -920,6 +873,53 @@ public final class AdjustTrackingInfoOuterClass {
                 }
                 AdjustTrackingInfo.checkByteStringIsUtf8(value);
                 this.unk3300KLKFLIIOFKK_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
+            public String getUnk3300MHDOPAMDMPL() {
+                Object ref = this.unk3300MHDOPAMDMPL_;
+                if (ref instanceof String) {
+                    return (String) ref;
+                }
+                String s = ((ByteString) ref).toStringUtf8();
+                this.unk3300MHDOPAMDMPL_ = s;
+                return s;
+            }
+
+            @Override // emu.grasscutter.net.proto.AdjustTrackingInfoOuterClass.AdjustTrackingInfoOrBuilder
+            public ByteString getUnk3300MHDOPAMDMPLBytes() {
+                Object ref = this.unk3300MHDOPAMDMPL_;
+                if (!(ref instanceof String)) {
+                    return (ByteString) ref;
+                }
+                ByteString b = ByteString.copyFromUtf8((String) ref);
+                this.unk3300MHDOPAMDMPL_ = b;
+                return b;
+            }
+
+            public Builder setUnk3300MHDOPAMDMPL(String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.unk3300MHDOPAMDMPL_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300MHDOPAMDMPL() {
+                this.unk3300MHDOPAMDMPL_ = AdjustTrackingInfo.getDefaultInstance().getUnk3300MHDOPAMDMPL();
+                onChanged();
+                return this;
+            }
+
+            public Builder setUnk3300MHDOPAMDMPLBytes(ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                AdjustTrackingInfo.checkByteStringIsUtf8(value);
+                this.unk3300MHDOPAMDMPL_ = value;
                 onChanged();
                 return this;
             }

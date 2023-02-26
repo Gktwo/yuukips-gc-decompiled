@@ -139,8 +139,9 @@ public class SettableAnyProperty implements Serializable {
         return "[any property on class " + getClassName() + "]";
     }
 
+    /* access modifiers changed from: private */
     /* loaded from: grasscutter.jar:com/fasterxml/jackson/databind/deser/SettableAnyProperty$AnySetterReferring.class */
-    private static class AnySetterReferring extends ReadableObjectId.Referring {
+    public static class AnySetterReferring extends ReadableObjectId.Referring {
         private final SettableAnyProperty _parent;
         private final Object _pojo;
         private final String _propName;

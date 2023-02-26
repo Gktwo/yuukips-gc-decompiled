@@ -90,30 +90,30 @@ public abstract class AbstractLong2ShortSortedMap extends AbstractLong2ShortMap 
     public static class KeySetIterator implements LongBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Long2ShortMap.Entry> f2255i;
+        protected final ObjectBidirectionalIterator<Long2ShortMap.Entry> f2219i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Long2ShortMap.Entry> i) {
-            this.f2255i = i;
+            this.f2219i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
         public long nextLong() {
-            return ((Long2ShortMap.Entry) this.f2255i.next()).getLongKey();
+            return ((Long2ShortMap.Entry) this.f2219i.next()).getLongKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongBidirectionalIterator
         public long previousLong() {
-            return this.f2255i.previous().getLongKey();
+            return this.f2219i.previous().getLongKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2255i.hasNext();
+            return this.f2219i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2255i.hasPrevious();
+            return this.f2219i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractLong2ShortSortedMap extends AbstractLong2ShortMap 
     public static class ValuesIterator implements ShortIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Long2ShortMap.Entry> f2256i;
+        protected final ObjectBidirectionalIterator<Long2ShortMap.Entry> f2220i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Long2ShortMap.Entry> i) {
-            this.f2256i = i;
+            this.f2220i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
         public short nextShort() {
-            return ((Long2ShortMap.Entry) this.f2256i.next()).getShortValue();
+            return ((Long2ShortMap.Entry) this.f2220i.next()).getShortValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2256i.hasNext();
+            return this.f2220i.hasNext();
         }
     }
 }

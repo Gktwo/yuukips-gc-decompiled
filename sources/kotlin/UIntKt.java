@@ -10,28 +10,28 @@ public final class UIntKt {
     @WasExperimental(markerClass = {ExperimentalUnsignedTypes.class})
     @InlineOnly
     private static final int toUInt(byte $this$toUInt) {
-        return UInt.m7201constructorimpl($this$toUInt);
+        return UInt.m7198constructorimpl($this$toUInt);
     }
 
     @SinceKotlin(version = "1.5")
     @WasExperimental(markerClass = {ExperimentalUnsignedTypes.class})
     @InlineOnly
     private static final int toUInt(short $this$toUInt) {
-        return UInt.m7201constructorimpl($this$toUInt);
+        return UInt.m7198constructorimpl($this$toUInt);
     }
 
     @SinceKotlin(version = "1.5")
     @WasExperimental(markerClass = {ExperimentalUnsignedTypes.class})
     @InlineOnly
     private static final int toUInt(int $this$toUInt) {
-        return UInt.m7201constructorimpl($this$toUInt);
+        return UInt.m7198constructorimpl($this$toUInt);
     }
 
     @SinceKotlin(version = "1.5")
     @WasExperimental(markerClass = {ExperimentalUnsignedTypes.class})
     @InlineOnly
     private static final int toUInt(long $this$toUInt) {
-        return UInt.m7201constructorimpl((int) $this$toUInt);
+        return UInt.m7198constructorimpl((int) $this$toUInt);
     }
 
     @SinceKotlin(version = "1.5")

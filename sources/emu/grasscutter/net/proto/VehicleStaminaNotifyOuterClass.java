@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VehicleStaminaNotifyOuterClass.class */
 public final class VehicleStaminaNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aVehicleStaminaNotify.proto\">\n\u0014VehicleStaminaNotify\u0012\u0011\n\tentity_id\u0018\f \u0001(\r\u0012\u0013\n\u000bcur_stamina\u0018\t \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aVehicleStaminaNotify.proto\"<\n\u0014VehicleStaminaNotify\u0012\u0010\n\bentityId\u0018\f \u0001(\r\u0012\u0012\n\ncurStamina\u0018\u000f \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_VehicleStaminaNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_VehicleStaminaNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_VehicleStaminaNotify_descriptor, new String[]{"EntityId", "CurStamina"});
 
@@ -43,9 +43,9 @@ public final class VehicleStaminaNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VehicleStaminaNotifyOuterClass$VehicleStaminaNotify.class */
     public static final class VehicleStaminaNotify extends GeneratedMessageV3 implements VehicleStaminaNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTITY_ID_FIELD_NUMBER = 12;
+        public static final int ENTITYID_FIELD_NUMBER = 12;
         private int entityId_;
-        public static final int CUR_STAMINA_FIELD_NUMBER = 9;
+        public static final int CURSTAMINA_FIELD_NUMBER = 15;
         private float curStamina_;
         private byte memoizedIsInitialized;
         private static final VehicleStaminaNotify DEFAULT_INSTANCE = new VehicleStaminaNotify();
@@ -92,11 +92,11 @@ public final class VehicleStaminaNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 77:
-                                this.curStamina_ = input.readFloat();
-                                break;
                             case 96:
                                 this.entityId_ = input.readUInt32();
+                                break;
+                            case 125:
+                                this.curStamina_ = input.readFloat();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -152,11 +152,11 @@ public final class VehicleStaminaNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.curStamina_ != 0.0f) {
-                output.writeFloat(9, this.curStamina_);
-            }
             if (this.entityId_ != 0) {
                 output.writeUInt32(12, this.entityId_);
+            }
+            if (this.curStamina_ != 0.0f) {
+                output.writeFloat(15, this.curStamina_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class VehicleStaminaNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.curStamina_ != 0.0f) {
-                size2 = 0 + CodedOutputStream.computeFloatSize(9, this.curStamina_);
-            }
             if (this.entityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.entityId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(12, this.entityId_);
+            }
+            if (this.curStamina_ != 0.0f) {
+                size2 += CodedOutputStream.computeFloatSize(15, this.curStamina_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class VehicleStaminaNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getEntityId())) + 9)) + Float.floatToIntBits(getCurStamina()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getEntityId())) + 15)) + Float.floatToIntBits(getCurStamina()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

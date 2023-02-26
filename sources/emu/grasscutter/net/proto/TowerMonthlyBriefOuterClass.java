@@ -19,19 +19,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerMonthlyBriefOuterClass.class */
 public final class TowerMonthlyBriefOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017TowerMonthlyBrief.proto\"|\n\u0011TowerMonthlyBrief\u0012\u0018\n\u0010best_floor_index\u0018\u0003 \u0001(\r\u0012\u0018\n\u0010total_star_count\u0018\u0006 \u0001(\r\u0012\u0018\n\u0010best_level_index\u0018\t \u0001(\r\u0012\u0019\n\u0011tower_schedule_id\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017TowerMonthlyBrief.proto\"t\n\u0011TowerMonthlyBrief\u0012\u0016\n\u000ebestLevelIndex\u0018\u000b \u0001(\r\u0012\u0017\n\u000ftowerScheduleId\u0018\u0007 \u0001(\r\u0012\u0016\n\u000etotalStarCount\u0018\u000e \u0001(\r\u0012\u0016\n\u000ebestFloorIndex\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_TowerMonthlyBrief_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TowerMonthlyBrief_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TowerMonthlyBrief_descriptor, new String[]{"BestFloorIndex", "TotalStarCount", "BestLevelIndex", "TowerScheduleId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TowerMonthlyBrief_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TowerMonthlyBrief_descriptor, new String[]{"BestLevelIndex", "TowerScheduleId", "TotalStarCount", "BestFloorIndex"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerMonthlyBriefOuterClass$TowerMonthlyBriefOrBuilder.class */
     public interface TowerMonthlyBriefOrBuilder extends MessageOrBuilder {
-        int getBestFloorIndex();
-
-        int getTotalStarCount();
-
         int getBestLevelIndex();
 
         int getTowerScheduleId();
+
+        int getTotalStarCount();
+
+        int getBestFloorIndex();
     }
 
     private TowerMonthlyBriefOuterClass() {
@@ -47,14 +47,14 @@ public final class TowerMonthlyBriefOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerMonthlyBriefOuterClass$TowerMonthlyBrief.class */
     public static final class TowerMonthlyBrief extends GeneratedMessageV3 implements TowerMonthlyBriefOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int BEST_FLOOR_INDEX_FIELD_NUMBER = 3;
-        private int bestFloorIndex_;
-        public static final int TOTAL_STAR_COUNT_FIELD_NUMBER = 6;
-        private int totalStarCount_;
-        public static final int BEST_LEVEL_INDEX_FIELD_NUMBER = 9;
+        public static final int BESTLEVELINDEX_FIELD_NUMBER = 11;
         private int bestLevelIndex_;
-        public static final int TOWER_SCHEDULE_ID_FIELD_NUMBER = 13;
+        public static final int TOWERSCHEDULEID_FIELD_NUMBER = 7;
         private int towerScheduleId_;
+        public static final int TOTALSTARCOUNT_FIELD_NUMBER = 14;
+        private int totalStarCount_;
+        public static final int BESTFLOORINDEX_FIELD_NUMBER = 8;
+        private int bestFloorIndex_;
         private byte memoizedIsInitialized;
         private static final TowerMonthlyBrief DEFAULT_INSTANCE = new TowerMonthlyBrief();
         private static final Parser<TowerMonthlyBrief> PARSER = new AbstractParser<TowerMonthlyBrief>() { // from class: emu.grasscutter.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBrief.1
@@ -101,17 +101,17 @@ public final class TowerMonthlyBriefOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 24:
+                                case 56:
+                                    this.towerScheduleId_ = input.readUInt32();
+                                    break;
+                                case 64:
                                     this.bestFloorIndex_ = input.readUInt32();
                                     break;
-                                case 48:
-                                    this.totalStarCount_ = input.readUInt32();
-                                    break;
-                                case 72:
+                                case 88:
                                     this.bestLevelIndex_ = input.readUInt32();
                                     break;
-                                case 104:
-                                    this.towerScheduleId_ = input.readUInt32();
+                                case 112:
+                                    this.totalStarCount_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -144,8 +144,13 @@ public final class TowerMonthlyBriefOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBriefOrBuilder
-        public int getBestFloorIndex() {
-            return this.bestFloorIndex_;
+        public int getBestLevelIndex() {
+            return this.bestLevelIndex_;
+        }
+
+        @Override // emu.grasscutter.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBriefOrBuilder
+        public int getTowerScheduleId() {
+            return this.towerScheduleId_;
         }
 
         @Override // emu.grasscutter.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBriefOrBuilder
@@ -154,13 +159,8 @@ public final class TowerMonthlyBriefOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBriefOrBuilder
-        public int getBestLevelIndex() {
-            return this.bestLevelIndex_;
-        }
-
-        @Override // emu.grasscutter.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBriefOrBuilder
-        public int getTowerScheduleId() {
-            return this.towerScheduleId_;
+        public int getBestFloorIndex() {
+            return this.bestFloorIndex_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -178,17 +178,17 @@ public final class TowerMonthlyBriefOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.bestFloorIndex_ != 0) {
-                output.writeUInt32(3, this.bestFloorIndex_);
+            if (this.towerScheduleId_ != 0) {
+                output.writeUInt32(7, this.towerScheduleId_);
             }
-            if (this.totalStarCount_ != 0) {
-                output.writeUInt32(6, this.totalStarCount_);
+            if (this.bestFloorIndex_ != 0) {
+                output.writeUInt32(8, this.bestFloorIndex_);
             }
             if (this.bestLevelIndex_ != 0) {
-                output.writeUInt32(9, this.bestLevelIndex_);
+                output.writeUInt32(11, this.bestLevelIndex_);
             }
-            if (this.towerScheduleId_ != 0) {
-                output.writeUInt32(13, this.towerScheduleId_);
+            if (this.totalStarCount_ != 0) {
+                output.writeUInt32(14, this.totalStarCount_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,17 +200,17 @@ public final class TowerMonthlyBriefOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.bestFloorIndex_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.bestFloorIndex_);
+            if (this.towerScheduleId_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.towerScheduleId_);
             }
-            if (this.totalStarCount_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(6, this.totalStarCount_);
+            if (this.bestFloorIndex_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(8, this.bestFloorIndex_);
             }
             if (this.bestLevelIndex_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.bestLevelIndex_);
+                size2 += CodedOutputStream.computeUInt32Size(11, this.bestLevelIndex_);
             }
-            if (this.towerScheduleId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.towerScheduleId_);
+            if (this.totalStarCount_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(14, this.totalStarCount_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class TowerMonthlyBriefOuterClass {
                 return equals(obj);
             }
             TowerMonthlyBrief other = (TowerMonthlyBrief) obj;
-            return getBestFloorIndex() == other.getBestFloorIndex() && getTotalStarCount() == other.getTotalStarCount() && getBestLevelIndex() == other.getBestLevelIndex() && getTowerScheduleId() == other.getTowerScheduleId() && this.unknownFields.equals(other.unknownFields);
+            return getBestLevelIndex() == other.getBestLevelIndex() && getTowerScheduleId() == other.getTowerScheduleId() && getTotalStarCount() == other.getTotalStarCount() && getBestFloorIndex() == other.getBestFloorIndex() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -234,7 +234,7 @@ public final class TowerMonthlyBriefOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getBestFloorIndex())) + 6)) + getTotalStarCount())) + 9)) + getBestLevelIndex())) + 13)) + getTowerScheduleId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getBestLevelIndex())) + 7)) + getTowerScheduleId())) + 14)) + getTotalStarCount())) + 8)) + getBestFloorIndex())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -313,10 +313,10 @@ public final class TowerMonthlyBriefOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerMonthlyBriefOuterClass$TowerMonthlyBrief$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements TowerMonthlyBriefOrBuilder {
-            private int bestFloorIndex_;
-            private int totalStarCount_;
             private int bestLevelIndex_;
             private int towerScheduleId_;
+            private int totalStarCount_;
+            private int bestFloorIndex_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return TowerMonthlyBriefOuterClass.internal_static_TowerMonthlyBrief_descriptor;
@@ -344,10 +344,10 @@ public final class TowerMonthlyBriefOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.bestFloorIndex_ = 0;
-                this.totalStarCount_ = 0;
                 this.bestLevelIndex_ = 0;
                 this.towerScheduleId_ = 0;
+                this.totalStarCount_ = 0;
+                this.bestFloorIndex_ = 0;
                 return this;
             }
 
@@ -373,10 +373,10 @@ public final class TowerMonthlyBriefOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public TowerMonthlyBrief buildPartial() {
                 TowerMonthlyBrief result = new TowerMonthlyBrief(this);
-                result.bestFloorIndex_ = this.bestFloorIndex_;
-                result.totalStarCount_ = this.totalStarCount_;
                 result.bestLevelIndex_ = this.bestLevelIndex_;
                 result.towerScheduleId_ = this.towerScheduleId_;
+                result.totalStarCount_ = this.totalStarCount_;
+                result.bestFloorIndex_ = this.bestFloorIndex_;
                 onBuilt();
                 return result;
             }
@@ -424,17 +424,17 @@ public final class TowerMonthlyBriefOuterClass {
                 if (other == TowerMonthlyBrief.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getBestFloorIndex() != 0) {
-                    setBestFloorIndex(other.getBestFloorIndex());
-                }
-                if (other.getTotalStarCount() != 0) {
-                    setTotalStarCount(other.getTotalStarCount());
-                }
                 if (other.getBestLevelIndex() != 0) {
                     setBestLevelIndex(other.getBestLevelIndex());
                 }
                 if (other.getTowerScheduleId() != 0) {
                     setTowerScheduleId(other.getTowerScheduleId());
+                }
+                if (other.getTotalStarCount() != 0) {
+                    setTotalStarCount(other.getTotalStarCount());
+                }
+                if (other.getBestFloorIndex() != 0) {
+                    setBestFloorIndex(other.getBestFloorIndex());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -469,40 +469,6 @@ public final class TowerMonthlyBriefOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBriefOrBuilder
-            public int getBestFloorIndex() {
-                return this.bestFloorIndex_;
-            }
-
-            public Builder setBestFloorIndex(int value) {
-                this.bestFloorIndex_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearBestFloorIndex() {
-                this.bestFloorIndex_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBriefOrBuilder
-            public int getTotalStarCount() {
-                return this.totalStarCount_;
-            }
-
-            public Builder setTotalStarCount(int value) {
-                this.totalStarCount_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearTotalStarCount() {
-                this.totalStarCount_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBriefOrBuilder
             public int getBestLevelIndex() {
                 return this.bestLevelIndex_;
             }
@@ -532,6 +498,40 @@ public final class TowerMonthlyBriefOuterClass {
 
             public Builder clearTowerScheduleId() {
                 this.towerScheduleId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBriefOrBuilder
+            public int getTotalStarCount() {
+                return this.totalStarCount_;
+            }
+
+            public Builder setTotalStarCount(int value) {
+                this.totalStarCount_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearTotalStarCount() {
+                this.totalStarCount_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBriefOrBuilder
+            public int getBestFloorIndex() {
+                return this.bestFloorIndex_;
+            }
+
+            public Builder setBestFloorIndex(int value) {
+                this.bestFloorIndex_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearBestFloorIndex() {
+                this.bestFloorIndex_ = 0;
                 onChanged();
                 return this;
             }

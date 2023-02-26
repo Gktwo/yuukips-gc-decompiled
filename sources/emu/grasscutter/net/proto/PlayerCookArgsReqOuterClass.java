@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerCookArgsReqOuterClass.class */
 public final class PlayerCookArgsReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017PlayerCookArgsReq.proto\"=\n\u0011PlayerCookArgsReq\u0012\u0011\n\trecipe_id\u0018\r \u0001(\r\u0012\u0015\n\rassist_avatar\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017PlayerCookArgsReq.proto\";\n\u0011PlayerCookArgsReq\u0012\u0010\n\brecipeId\u0018\u0005 \u0001(\r\u0012\u0014\n\fassistAvatar\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PlayerCookArgsReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerCookArgsReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerCookArgsReq_descriptor, new String[]{"RecipeId", "AssistAvatar"});
 
@@ -43,9 +43,9 @@ public final class PlayerCookArgsReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerCookArgsReqOuterClass$PlayerCookArgsReq.class */
     public static final class PlayerCookArgsReq extends GeneratedMessageV3 implements PlayerCookArgsReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RECIPE_ID_FIELD_NUMBER = 13;
+        public static final int RECIPEID_FIELD_NUMBER = 5;
         private int recipeId_;
-        public static final int ASSIST_AVATAR_FIELD_NUMBER = 15;
+        public static final int ASSISTAVATAR_FIELD_NUMBER = 9;
         private int assistAvatar_;
         private byte memoizedIsInitialized;
         private static final PlayerCookArgsReq DEFAULT_INSTANCE = new PlayerCookArgsReq();
@@ -92,10 +92,10 @@ public final class PlayerCookArgsReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 104:
+                            case 40:
                                 this.recipeId_ = input.readUInt32();
                                 break;
-                            case 120:
+                            case 72:
                                 this.assistAvatar_ = input.readUInt32();
                                 break;
                             default:
@@ -153,10 +153,10 @@ public final class PlayerCookArgsReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.recipeId_ != 0) {
-                output.writeUInt32(13, this.recipeId_);
+                output.writeUInt32(5, this.recipeId_);
             }
             if (this.assistAvatar_ != 0) {
-                output.writeUInt32(15, this.assistAvatar_);
+                output.writeUInt32(9, this.assistAvatar_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class PlayerCookArgsReqOuterClass {
             }
             int size2 = 0;
             if (this.recipeId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(13, this.recipeId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.recipeId_);
             }
             if (this.assistAvatar_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.assistAvatar_);
+                size2 += CodedOutputStream.computeUInt32Size(9, this.assistAvatar_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class PlayerCookArgsReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + getRecipeId())) + 15)) + getAssistAvatar())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getRecipeId())) + 9)) + getAssistAvatar())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

@@ -646,6 +646,8 @@ public class StaminaManager extends BasePlayerManager {
                 default:
                     return;
             }
+        } else if (motionState.equals(MotionStateOuterClass.MotionState.MOTION_STATE_CLIMB_JUMP)) {
+            updateStaminaRelative(session, new Consumption(ConsumptionType.CLIMB_JUMP), true);
         }
     }
 
@@ -821,11 +823,10 @@ public class StaminaManager extends BasePlayerManager {
 
     private Consumption getOtherConsumptions() {
         switch (this.currentState) {
-            case MOTION_STATE_NOTIFY:
-            default:
-                return new Consumption();
             case MOTION_STATE_FIGHT:
                 return new Consumption(ConsumptionType.FIGHT, 500);
+            default:
+                return new Consumption();
         }
     }
 

@@ -10,7 +10,7 @@ public final class CharCodeJVM {
     @WasExperimental(markerClass = {ExperimentalStdlibApi.class})
     @InlineOnly
     /* renamed from: Char-xj2QHRw  reason: not valid java name */
-    private static final char m7044Charxj2QHRw(short code) {
+    private static final char m7041Charxj2QHRw(short code) {
         return (char) (code & 65535);
     }
 }

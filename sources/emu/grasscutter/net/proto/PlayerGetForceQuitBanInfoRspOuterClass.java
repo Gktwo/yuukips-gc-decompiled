@@ -19,17 +19,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerGetForceQuitBanInfoRspOuterClass.class */
 public final class PlayerGetForceQuitBanInfoRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"PlayerGetForceQuitBanInfoRsp.proto\"V\n\u001cPlayerGetForceQuitBanInfoRsp\u0012\u0010\n\bmatch_id\u0018\r \u0001(\r\u0012\u0013\n\u000bexpire_time\u0018\u0002 \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0004 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"PlayerGetForceQuitBanInfoRsp.proto\"T\n\u001cPlayerGetForceQuitBanInfoRsp\u0012\u000f\n\u0007retcode\u0018\u0007 \u0001(\u0005\u0012\u0012\n\nexpireTime\u0018\t \u0001(\r\u0012\u000f\n\u0007matchId\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PlayerGetForceQuitBanInfoRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerGetForceQuitBanInfoRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerGetForceQuitBanInfoRsp_descriptor, new String[]{"MatchId", "ExpireTime", "Retcode"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerGetForceQuitBanInfoRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerGetForceQuitBanInfoRsp_descriptor, new String[]{"Retcode", "ExpireTime", "MatchId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerGetForceQuitBanInfoRspOuterClass$PlayerGetForceQuitBanInfoRspOrBuilder.class */
     public interface PlayerGetForceQuitBanInfoRspOrBuilder extends MessageOrBuilder {
-        int getMatchId();
+        int getRetcode();
 
         int getExpireTime();
 
-        int getRetcode();
+        int getMatchId();
     }
 
     private PlayerGetForceQuitBanInfoRspOuterClass() {
@@ -45,12 +45,12 @@ public final class PlayerGetForceQuitBanInfoRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerGetForceQuitBanInfoRspOuterClass$PlayerGetForceQuitBanInfoRsp.class */
     public static final class PlayerGetForceQuitBanInfoRsp extends GeneratedMessageV3 implements PlayerGetForceQuitBanInfoRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MATCH_ID_FIELD_NUMBER = 13;
-        private int matchId_;
-        public static final int EXPIRE_TIME_FIELD_NUMBER = 2;
-        private int expireTime_;
-        public static final int RETCODE_FIELD_NUMBER = 4;
+        public static final int RETCODE_FIELD_NUMBER = 7;
         private int retcode_;
+        public static final int EXPIRETIME_FIELD_NUMBER = 9;
+        private int expireTime_;
+        public static final int MATCHID_FIELD_NUMBER = 10;
+        private int matchId_;
         private byte memoizedIsInitialized;
         private static final PlayerGetForceQuitBanInfoRsp DEFAULT_INSTANCE = new PlayerGetForceQuitBanInfoRsp();
         private static final Parser<PlayerGetForceQuitBanInfoRsp> PARSER = new AbstractParser<PlayerGetForceQuitBanInfoRsp>() { // from class: emu.grasscutter.net.proto.PlayerGetForceQuitBanInfoRspOuterClass.PlayerGetForceQuitBanInfoRsp.1
@@ -97,13 +97,13 @@ public final class PlayerGetForceQuitBanInfoRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
-                                    this.expireTime_ = input.readUInt32();
-                                    break;
-                                case 32:
+                                case 56:
                                     this.retcode_ = input.readInt32();
                                     break;
-                                case 104:
+                                case 72:
+                                    this.expireTime_ = input.readUInt32();
+                                    break;
+                                case 80:
                                     this.matchId_ = input.readUInt32();
                                     break;
                                 default:
@@ -137,8 +137,8 @@ public final class PlayerGetForceQuitBanInfoRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PlayerGetForceQuitBanInfoRspOuterClass.PlayerGetForceQuitBanInfoRspOrBuilder
-        public int getMatchId() {
-            return this.matchId_;
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // emu.grasscutter.net.proto.PlayerGetForceQuitBanInfoRspOuterClass.PlayerGetForceQuitBanInfoRspOrBuilder
@@ -147,8 +147,8 @@ public final class PlayerGetForceQuitBanInfoRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PlayerGetForceQuitBanInfoRspOuterClass.PlayerGetForceQuitBanInfoRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
+        public int getMatchId() {
+            return this.matchId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -166,14 +166,14 @@ public final class PlayerGetForceQuitBanInfoRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.expireTime_ != 0) {
-                output.writeUInt32(2, this.expireTime_);
-            }
             if (this.retcode_ != 0) {
-                output.writeInt32(4, this.retcode_);
+                output.writeInt32(7, this.retcode_);
+            }
+            if (this.expireTime_ != 0) {
+                output.writeUInt32(9, this.expireTime_);
             }
             if (this.matchId_ != 0) {
-                output.writeUInt32(13, this.matchId_);
+                output.writeUInt32(10, this.matchId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -185,14 +185,14 @@ public final class PlayerGetForceQuitBanInfoRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.expireTime_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.expireTime_);
-            }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(4, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(7, this.retcode_);
+            }
+            if (this.expireTime_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(9, this.expireTime_);
             }
             if (this.matchId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.matchId_);
+                size2 += CodedOutputStream.computeUInt32Size(10, this.matchId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -208,7 +208,7 @@ public final class PlayerGetForceQuitBanInfoRspOuterClass {
                 return equals(obj);
             }
             PlayerGetForceQuitBanInfoRsp other = (PlayerGetForceQuitBanInfoRsp) obj;
-            return getMatchId() == other.getMatchId() && getExpireTime() == other.getExpireTime() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
+            return getRetcode() == other.getRetcode() && getExpireTime() == other.getExpireTime() && getMatchId() == other.getMatchId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -216,7 +216,7 @@ public final class PlayerGetForceQuitBanInfoRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + getMatchId())) + 2)) + getExpireTime())) + 4)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getRetcode())) + 9)) + getExpireTime())) + 10)) + getMatchId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -295,9 +295,9 @@ public final class PlayerGetForceQuitBanInfoRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerGetForceQuitBanInfoRspOuterClass$PlayerGetForceQuitBanInfoRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements PlayerGetForceQuitBanInfoRspOrBuilder {
-            private int matchId_;
-            private int expireTime_;
             private int retcode_;
+            private int expireTime_;
+            private int matchId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return PlayerGetForceQuitBanInfoRspOuterClass.internal_static_PlayerGetForceQuitBanInfoRsp_descriptor;
@@ -325,9 +325,9 @@ public final class PlayerGetForceQuitBanInfoRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.matchId_ = 0;
-                this.expireTime_ = 0;
                 this.retcode_ = 0;
+                this.expireTime_ = 0;
+                this.matchId_ = 0;
                 return this;
             }
 
@@ -353,9 +353,9 @@ public final class PlayerGetForceQuitBanInfoRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public PlayerGetForceQuitBanInfoRsp buildPartial() {
                 PlayerGetForceQuitBanInfoRsp result = new PlayerGetForceQuitBanInfoRsp(this);
-                result.matchId_ = this.matchId_;
-                result.expireTime_ = this.expireTime_;
                 result.retcode_ = this.retcode_;
+                result.expireTime_ = this.expireTime_;
+                result.matchId_ = this.matchId_;
                 onBuilt();
                 return result;
             }
@@ -403,14 +403,14 @@ public final class PlayerGetForceQuitBanInfoRspOuterClass {
                 if (other == PlayerGetForceQuitBanInfoRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getMatchId() != 0) {
-                    setMatchId(other.getMatchId());
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 if (other.getExpireTime() != 0) {
                     setExpireTime(other.getExpireTime());
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
+                if (other.getMatchId() != 0) {
+                    setMatchId(other.getMatchId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -445,18 +445,18 @@ public final class PlayerGetForceQuitBanInfoRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.PlayerGetForceQuitBanInfoRspOuterClass.PlayerGetForceQuitBanInfoRspOrBuilder
-            public int getMatchId() {
-                return this.matchId_;
+            public int getRetcode() {
+                return this.retcode_;
             }
 
-            public Builder setMatchId(int value) {
-                this.matchId_ = value;
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearMatchId() {
-                this.matchId_ = 0;
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }
@@ -479,18 +479,18 @@ public final class PlayerGetForceQuitBanInfoRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.PlayerGetForceQuitBanInfoRspOuterClass.PlayerGetForceQuitBanInfoRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
+            public int getMatchId() {
+                return this.matchId_;
             }
 
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
+            public Builder setMatchId(int value) {
+                this.matchId_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
+            public Builder clearMatchId() {
+                this.matchId_ = 0;
                 onChanged();
                 return this;
             }

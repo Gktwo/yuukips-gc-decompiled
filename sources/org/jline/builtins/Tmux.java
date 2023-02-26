@@ -126,8 +126,8 @@ public class Tmux {
 
         public Window(Tmux tmux) throws IOException {
             this.tmux = tmux;
-            this.layout.f3206sx = Tmux.this.size.getColumns();
-            this.layout.f3207sy = Tmux.this.size.getRows();
+            this.layout.f3170sx = Tmux.this.size.getColumns();
+            this.layout.f3171sy = Tmux.this.size.getRows();
             this.layout.type = Layout.Type.WindowPane;
             Objects.requireNonNull(tmux);
             Runnable r9 = () -> {
@@ -181,8 +181,8 @@ public class Tmux {
         public void handleResize() {
             this.layout.resize(Tmux.this.size.getColumns(), Tmux.this.size.getRows() - 1);
             this.panes.forEach(vc -> {
-                if (vc.width() != vc.layout.f3206sx || vc.height() != vc.layout.f3207sy || vc.left() != vc.layout.xoff || vc.top() != vc.layout.yoff) {
-                    vc.resize(vc.layout.xoff, vc.layout.yoff, vc.layout.f3206sx, vc.layout.f3207sy);
+                if (vc.width() != vc.layout.f3170sx || vc.height() != vc.layout.f3171sy || vc.left() != vc.layout.xoff || vc.top() != vc.layout.yoff) {
+                    vc.resize(vc.layout.xoff, vc.layout.yoff, vc.layout.f3170sx, vc.layout.f3171sy);
                     Tmux.this.display.clear();
                 }
             });
@@ -192,8 +192,8 @@ public class Tmux {
             Layout.Type type = opt.isSet("horizontal") ? Layout.Type.LeftRight : Layout.Type.TopBottom;
             if (this.layout.type == Layout.Type.WindowPane) {
                 Layout p = new Layout();
-                p.f3206sx = this.layout.f3206sx;
-                p.f3207sy = this.layout.f3207sy;
+                p.f3170sx = this.layout.f3170sx;
+                p.f3171sy = this.layout.f3171sy;
                 p.type = type;
                 p.cells.add(this.layout);
                 this.layout.parent = p;
@@ -211,9 +211,9 @@ public class Tmux {
             } else if (opt.isSet("perc")) {
                 int p2 = opt.getNumber("perc");
                 if (type == Layout.Type.TopBottom) {
-                    size = (cell.f3207sy * p2) / 100;
+                    size = (cell.f3171sy * p2) / 100;
                 } else {
-                    size = (cell.f3206sx * p2) / 100;
+                    size = (cell.f3170sx * p2) / 100;
                 }
             }
             Layout newCell = cell.split(type, size, opt.isSet("before"));
@@ -225,8 +225,8 @@ public class Tmux {
             String str = Tmux.this.term;
             int i = newCell.xoff;
             int i2 = newCell.yoff;
-            int i3 = newCell.f3206sx;
-            int i4 = newCell.f3207sy;
+            int i3 = newCell.f3170sx;
+            int i4 = newCell.f3171sy;
             Tmux tmux = this.tmux;
             Objects.requireNonNull(tmux);
             Runnable r8 = () -> {
@@ -1022,7 +1022,7 @@ public class Tmux {
                 terminal.dump(screen, terminal.top(), terminal.left(), this.size.getRows(), this.size.getColumns(), terminal == active() ? cursor : null);
             }
             if (this.identify) {
-                print(screen, terminal, Integer.toString(terminal.f3208id), terminal == active() ? this.ACTIVE_COLOR : this.INACTIVE_COLOR);
+                print(screen, terminal, Integer.toString(terminal.f3172id), terminal == active() ? this.ACTIVE_COLOR : this.INACTIVE_COLOR);
             }
             drawBorder(screen, this.size, terminal, 0);
         }
@@ -1043,7 +1043,7 @@ public class Tmux {
                 long d = screen[(y * this.size.getColumns()) + x];
                 int c = (int) (d & 4294967295L);
                 int a = (int) (d >> 32);
-                int bg = a & PacketOpcodes.TakeFirstShareRewardRsp;
+                int bg = a & PacketOpcodes.ProfilePictureChangeNotify;
                 int fg = (a & 16773120) >> 12;
                 boolean ul = (a & 16777216) != 0;
                 boolean inv = (a & 33554432) != 0;
@@ -1055,7 +1055,7 @@ public class Tmux {
                     if (!hasBg) {
                         sb.style(sb.style().backgroundDefault());
                     } else {
-                        sb.style(sb.style().background(Colors.roundRgbColor((bg & 3840) >> 4, bg & PacketOpcodes.ExecuteGadgetLuaRsp, (bg & 15) << 4, 256)));
+                        sb.style(sb.style().background(Colors.roundRgbColor((bg & 3840) >> 4, bg & PacketOpcodes.SceneKickPlayerRsp, (bg & 15) << 4, 256)));
                     }
                     prevBg = bg;
                     prevHasBg = hasBg;
@@ -1064,7 +1064,7 @@ public class Tmux {
                     if (!hasFg) {
                         sb.style(sb.style().foregroundDefault());
                     } else {
-                        sb.style(sb.style().foreground(Colors.roundRgbColor((fg & 3840) >> 4, fg & PacketOpcodes.ExecuteGadgetLuaRsp, (fg & 15) << 4, 256)));
+                        sb.style(sb.style().foreground(Colors.roundRgbColor((fg & 3840) >> 4, fg & PacketOpcodes.SceneKickPlayerRsp, (fg & 15) << 4, 256)));
                     }
                     prevFg = fg;
                     prevHasFg = hasFg;
@@ -1336,10 +1336,10 @@ public class Tmux {
         Layout parent;
 
         /* renamed from: sx */
-        int f3206sx;
+        int f3170sx;
 
         /* renamed from: sy */
-        int f3207sy;
+        int f3171sy;
         int xoff;
         int yoff;
         List<Layout> cells = new CopyOnWriteArrayList();
@@ -1387,7 +1387,7 @@ public class Tmux {
         }
 
         private void doDump(StringBuilder sb) {
-            sb.append(this.f3206sx).append('x').append(this.f3207sy).append(',').append(this.xoff).append(',').append(this.yoff);
+            sb.append(this.f3170sx).append('x').append(this.f3171sy).append(',').append(this.xoff).append(',').append(this.yoff);
             switch (this.type) {
                 case WindowPane:
                     sb.append(',').append('0');
@@ -1518,37 +1518,37 @@ public class Tmux {
                 lcparent = lc.parent;
             }
             if (lcparent != null) {
-                int size = type == Type.LeftRight ? lc.f3206sx : lc.f3207sy;
+                int size = type == Type.LeftRight ? lc.f3170sx : lc.f3171sy;
                 lc.resize(type, lc.nextSibling() == null ? size - new_size : new_size - size, true);
             }
         }
 
         public void resize(int sx, int sy) {
-            int xchange = sx - this.f3206sx;
+            int xchange = sx - this.f3170sx;
             int xlimit = resizeCheck(Type.LeftRight);
             if (xchange < 0 && xchange < (-xlimit)) {
                 xchange = -xlimit;
             }
             if (xlimit == 0) {
-                if (sx <= this.f3206sx) {
+                if (sx <= this.f3170sx) {
                     xchange = 0;
                 } else {
-                    xchange = sx - this.f3206sx;
+                    xchange = sx - this.f3170sx;
                 }
             }
             if (xchange != 0) {
                 resizeAdjust(Type.LeftRight, xchange);
             }
-            int ychange = sy - this.f3207sy;
+            int ychange = sy - this.f3171sy;
             int ylimit = resizeCheck(Type.TopBottom);
             if (ychange < 0 && ychange < (-ylimit)) {
                 ychange = -ylimit;
             }
             if (ylimit == 0) {
-                if (sy <= this.f3207sy) {
+                if (sy <= this.f3171sy) {
                     ychange = 0;
                 } else {
-                    ychange = sy - this.f3207sy;
+                    ychange = sy - this.f3171sy;
                 }
             }
             if (ychange != 0) {
@@ -1564,7 +1564,7 @@ public class Tmux {
             }
             int idx = this.parent.cells.indexOf(this);
             Layout other = this.parent.cells.get(idx == 0 ? 1 : idx - 1);
-            other.resizeAdjust(this.parent.type, this.parent.type == Type.LeftRight ? this.f3206sx + 1 : this.f3207sy + 1);
+            other.resizeAdjust(this.parent.type, this.parent.type == Type.LeftRight ? this.f3170sx + 1 : this.f3171sy + 1);
             this.parent.cells.remove(this);
             if (other.parent.cells.size() != 1) {
                 return;
@@ -1583,9 +1583,9 @@ public class Tmux {
             if (this.type == Type.WindowPane) {
                 int min = 3;
                 if (type == Type.LeftRight) {
-                    avail = this.f3206sx;
+                    avail = this.f3170sx;
                 } else {
-                    avail = this.f3207sy;
+                    avail = this.f3171sy;
                     min = 3 + 1;
                 }
                 if (avail > min) {
@@ -1613,9 +1613,9 @@ public class Tmux {
 
         private void resizeAdjust(Type type, int change) {
             if (type == Type.LeftRight) {
-                this.f3206sx += change;
+                this.f3170sx += change;
             } else {
-                this.f3207sy += change;
+                this.f3171sy += change;
             }
             if (this.type != Type.WindowPane) {
                 if (this.type != type) {
@@ -1647,7 +1647,7 @@ public class Tmux {
                     cell.xoff = xoff;
                     cell.yoff = this.yoff;
                     cell.fixOffsets();
-                    xoff += cell.f3206sx + 1;
+                    xoff += cell.f3170sx + 1;
                 }
             } else if (this.type == Type.TopBottom) {
                 int yoff = this.yoff;
@@ -1655,7 +1655,7 @@ public class Tmux {
                     cell2.xoff = this.xoff;
                     cell2.yoff = yoff;
                     cell2.fixOffsets();
-                    yoff += cell2.f3207sy + 1;
+                    yoff += cell2.f3171sy + 1;
                 }
             }
         }
@@ -1684,13 +1684,13 @@ public class Tmux {
             if (type == Type.WindowPane) {
                 throw new IllegalStateException();
             }
-            if ((type == Type.LeftRight ? this.f3206sx : this.f3207sy) < 7) {
+            if ((type == Type.LeftRight ? this.f3170sx : this.f3171sy) < 7) {
                 return null;
             }
             if (this.parent == null) {
                 throw new IllegalStateException();
             }
-            int saved_size = type == Type.LeftRight ? this.f3206sx : this.f3207sy;
+            int saved_size = type == Type.LeftRight ? this.f3170sx : this.f3171sy;
             int size2 = size < 0 ? ((saved_size + 1) / 2) - 1 : insertBefore ? (saved_size - size) - 1 : size;
             if (size2 < 3) {
                 size2 = 3;
@@ -1702,8 +1702,8 @@ public class Tmux {
                 Layout p = new Layout();
                 p.type = type;
                 p.parent = this.parent;
-                p.f3206sx = this.f3206sx;
-                p.f3207sy = this.f3207sy;
+                p.f3170sx = this.f3170sx;
+                p.f3171sy = this.f3171sy;
                 p.xoff = this.xoff;
                 p.yoff = this.yoff;
                 this.parent.cells.set(this.parent.cells.indexOf(this), p);
@@ -1714,8 +1714,8 @@ public class Tmux {
             cell.type = Type.WindowPane;
             cell.parent = this.parent;
             this.parent.cells.add(this.parent.cells.indexOf(this) + (insertBefore ? 0 : 1), cell);
-            int sx = this.f3206sx;
-            int sy = this.f3207sy;
+            int sx = this.f3170sx;
+            int sy = this.f3171sy;
             int xoff = this.xoff;
             int yoff = this.yoff;
             if (insertBefore) {
@@ -1736,8 +1736,8 @@ public class Tmux {
         }
 
         private void setSize(int sx, int sy, int xoff, int yoff) {
-            this.f3206sx = sx;
-            this.f3207sy = sy;
+            this.f3170sx = sx;
+            this.f3171sy = sy;
             this.xoff = xoff;
             this.yoff = yoff;
         }
@@ -1760,8 +1760,8 @@ public class Tmux {
                 Layout cell = new Layout();
                 cell.type = Type.WindowPane;
                 cell.parent = parent;
-                cell.f3206sx = Integer.parseInt(matcher.group(1));
-                cell.f3207sy = Integer.parseInt(matcher.group(2));
+                cell.f3170sx = Integer.parseInt(matcher.group(1));
+                cell.f3171sy = Integer.parseInt(matcher.group(2));
                 cell.xoff = Integer.parseInt(matcher.group(3));
                 cell.yoff = Integer.parseInt(matcher.group(4));
                 if (parent != null) {
@@ -1848,7 +1848,7 @@ public class Tmux {
         private final Consumer<VirtualConsole> closer;
 
         /* renamed from: id */
-        private final int f3208id;
+        private final int f3172id;
         private int left;
         private int top;
         private final Layout layout;
@@ -1865,7 +1865,7 @@ public class Tmux {
 
         public VirtualConsole(int id, String type, int left, int top, int columns, int rows, final Runnable dirty, final Consumer<VirtualConsole> closer, Layout layout) throws IOException {
             String name = String.format("tmux%02d", Integer.valueOf(id));
-            this.f3208id = id;
+            this.f3172id = id;
             this.left = left;
             this.top = top;
             this.closer = closer;

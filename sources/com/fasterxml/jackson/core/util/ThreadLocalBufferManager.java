@@ -51,9 +51,8 @@ public class ThreadLocalBufferManager {
         }
     }
 
-    /* access modifiers changed from: private */
     /* loaded from: grasscutter.jar:com/fasterxml/jackson/core/util/ThreadLocalBufferManager$ThreadLocalBufferManagerHolder.class */
-    public static final class ThreadLocalBufferManagerHolder {
+    private static final class ThreadLocalBufferManagerHolder {
         static final ThreadLocalBufferManager manager = new ThreadLocalBufferManager();
 
         private ThreadLocalBufferManagerHolder() {

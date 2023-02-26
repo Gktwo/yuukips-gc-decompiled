@@ -26,7 +26,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CompoundDataNotifyOuterClass.class */
 public final class CompoundDataNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018CompoundDataNotify.proto\u001a\u0017CompoundQueueData.proto\"h\n\u0012CompoundDataNotify\u00124\n\u0018compound_queue_data_list\u0018\u0007 \u0003(\u000b2\u0012.CompoundQueueData\u0012\u001c\n\u0014unlock_compound_list\u0018\u000b \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CompoundQueueDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018CompoundDataNotify.proto\u001a\u0017CompoundQueueData.proto\"c\n\u0012CompoundDataNotify\u00121\n\u0015compoundQueueDataList\u0018\u000e \u0003(\u000b2\u0012.CompoundQueueData\u0012\u001a\n\u0012unlockCompoundList\u0018\u0005 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CompoundQueueDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_CompoundDataNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_CompoundDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CompoundDataNotify_descriptor, new String[]{"CompoundQueueDataList", "UnlockCompoundList"});
 
@@ -62,9 +62,9 @@ public final class CompoundDataNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CompoundDataNotifyOuterClass$CompoundDataNotify.class */
     public static final class CompoundDataNotify extends GeneratedMessageV3 implements CompoundDataNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int COMPOUND_QUEUE_DATA_LIST_FIELD_NUMBER = 7;
+        public static final int COMPOUNDQUEUEDATALIST_FIELD_NUMBER = 14;
         private List<CompoundQueueDataOuterClass.CompoundQueueData> compoundQueueDataList_;
-        public static final int UNLOCK_COMPOUND_LIST_FIELD_NUMBER = 11;
+        public static final int UNLOCKCOMPOUNDLIST_FIELD_NUMBER = 5;
         private Internal.IntList unlockCompoundList_;
         private int unlockCompoundListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -119,21 +119,14 @@ public final class CompoundDataNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 58:
-                                if ((mutable_bitField0_ & 1) == 0) {
-                                    this.compoundQueueDataList_ = new ArrayList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
-                                }
-                                this.compoundQueueDataList_.add((CompoundQueueDataOuterClass.CompoundQueueData) input.readMessage(CompoundQueueDataOuterClass.CompoundQueueData.parser(), extensionRegistry));
-                                break;
-                            case 88:
+                            case 40:
                                 if ((mutable_bitField0_ & 2) == 0) {
                                     this.unlockCompoundList_ = newIntList();
                                     mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
                                 }
                                 this.unlockCompoundList_.addInt(input.readUInt32());
                                 break;
-                            case 90:
+                            case 42:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 2) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.unlockCompoundList_ = newIntList();
@@ -143,6 +136,13 @@ public final class CompoundDataNotifyOuterClass {
                                     this.unlockCompoundList_.addInt(input.readUInt32());
                                 }
                                 input.popLimit(limit);
+                                break;
+                            case 114:
+                                if ((mutable_bitField0_ & 1) == 0) {
+                                    this.compoundQueueDataList_ = new ArrayList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                }
+                                this.compoundQueueDataList_.add((CompoundQueueDataOuterClass.CompoundQueueData) input.readMessage(CompoundQueueDataOuterClass.CompoundQueueData.parser(), extensionRegistry));
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -160,11 +160,11 @@ public final class CompoundDataNotifyOuterClass {
                     }
                 }
             } finally {
-                if ((mutable_bitField0_ & 1) != 0) {
-                    this.compoundQueueDataList_ = Collections.unmodifiableList(this.compoundQueueDataList_);
-                }
                 if ((mutable_bitField0_ & 2) != 0) {
                     this.unlockCompoundList_.makeImmutable();
+                }
+                if ((mutable_bitField0_ & 1) != 0) {
+                    this.compoundQueueDataList_ = Collections.unmodifiableList(this.compoundQueueDataList_);
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -236,15 +236,15 @@ public final class CompoundDataNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            for (int i = 0; i < this.compoundQueueDataList_.size(); i++) {
-                output.writeMessage(7, this.compoundQueueDataList_.get(i));
-            }
             if (getUnlockCompoundListList().size() > 0) {
-                output.writeUInt32NoTag(90);
+                output.writeUInt32NoTag(42);
                 output.writeUInt32NoTag(this.unlockCompoundListMemoizedSerializedSize);
             }
-            for (int i2 = 0; i2 < this.unlockCompoundList_.size(); i2++) {
-                output.writeUInt32NoTag(this.unlockCompoundList_.getInt(i2));
+            for (int i = 0; i < this.unlockCompoundList_.size(); i++) {
+                output.writeUInt32NoTag(this.unlockCompoundList_.getInt(i));
+            }
+            for (int i2 = 0; i2 < this.compoundQueueDataList_.size(); i2++) {
+                output.writeMessage(14, this.compoundQueueDataList_.get(i2));
             }
             this.unknownFields.writeTo(output);
         }
@@ -255,22 +255,21 @@ public final class CompoundDataNotifyOuterClass {
             if (size != -1) {
                 return size;
             }
-            int size2 = 0;
-            for (int i = 0; i < this.compoundQueueDataList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(7, this.compoundQueueDataList_.get(i));
-            }
             int dataSize = 0;
-            for (int i2 = 0; i2 < this.unlockCompoundList_.size(); i2++) {
-                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.unlockCompoundList_.getInt(i2));
+            for (int i = 0; i < this.unlockCompoundList_.size(); i++) {
+                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.unlockCompoundList_.getInt(i));
             }
-            int size3 = size2 + dataSize;
+            int size2 = 0 + dataSize;
             if (!getUnlockCompoundListList().isEmpty()) {
-                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.unlockCompoundListMemoizedSerializedSize = dataSize;
-            int size4 = size3 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size4;
-            return size4;
+            for (int i2 = 0; i2 < this.compoundQueueDataList_.size(); i2++) {
+                size2 += CodedOutputStream.computeMessageSize(14, this.compoundQueueDataList_.get(i2));
+            }
+            int size3 = size2 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size3;
+            return size3;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -292,10 +291,10 @@ public final class CompoundDataNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getCompoundQueueDataListCount() > 0) {
-                hash = (53 * ((37 * hash) + 7)) + getCompoundQueueDataListList().hashCode();
+                hash = (53 * ((37 * hash) + 14)) + getCompoundQueueDataListList().hashCode();
             }
             if (getUnlockCompoundListCount() > 0) {
-                hash = (53 * ((37 * hash) + 11)) + getUnlockCompoundListList().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getUnlockCompoundListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

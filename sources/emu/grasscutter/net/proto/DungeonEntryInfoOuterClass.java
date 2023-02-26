@@ -22,17 +22,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonEntryInfoOuterClass.class */
 public final class DungeonEntryInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016DungeonEntryInfo.proto\u001a!WeeklyBossResinDiscountInfo.proto\"\u0002\n\u0010DungeonEntryInfo\u0012\u0010\n\bend_time\u0018\u000e \u0001(\r\u0012\u001a\n\u0012max_boss_chest_num\u0018\t \u0001(\r\u0012\u0011\n\tis_passed\u0018\r \u0001(\b\u0012E\n\u001fweekly_boss_resin_discount_info\u0018\u0006 \u0001(\u000b2\u001c.WeeklyBossResinDiscountInfo\u0012\u0012\n\ndungeon_id\u0018\b \u0001(\r\u0012\u0012\n\nleft_times\u0018\u0005 \u0001(\r\u0012\u0019\n\u0011next_refresh_time\u0018\n \u0001(\r\u0012$\n\u001cnext_boss_chest_refresh_time\u0018\u0003 \u0001(\r\u0012\u0012\n\nstart_time\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{WeeklyBossResinDiscountInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016DungeonEntryInfo.proto\u001a!WeeklyBossResinDiscountInfo.proto\"\u0002\n\u0010DungeonEntryInfo\u0012\u0017\n\u000fmaxBossChestNum\u0018\n \u0001(\r\u0012\u0011\n\tstartTime\u0018\u0001 \u0001(\r\u0012\u0011\n\tleftTimes\u0018\u0006 \u0001(\r\u0012\u000f\n\u0007endTime\u0018\u000e \u0001(\r\u0012A\n\u001bweeklyBossResinDiscountInfo\u0018\r \u0001(\u000b2\u001c.WeeklyBossResinDiscountInfo\u0012\u0011\n\tdungeonId\u0018\u0003 \u0001(\r\u0012 \n\u0018nextBossChestRefreshTime\u0018\u0005 \u0001(\r\u0012\u0010\n\bisPassed\u0018\u0002 \u0001(\b\u0012\u0017\n\u000fnextRefreshTime\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{WeeklyBossResinDiscountInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_DungeonEntryInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_DungeonEntryInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DungeonEntryInfo_descriptor, new String[]{"EndTime", "MaxBossChestNum", "IsPassed", "WeeklyBossResinDiscountInfo", "DungeonId", "LeftTimes", "NextRefreshTime", "NextBossChestRefreshTime", "StartTime"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_DungeonEntryInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DungeonEntryInfo_descriptor, new String[]{"MaxBossChestNum", "StartTime", "LeftTimes", "EndTime", "WeeklyBossResinDiscountInfo", "DungeonId", "NextBossChestRefreshTime", "IsPassed", "NextRefreshTime"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonEntryInfoOuterClass$DungeonEntryInfoOrBuilder.class */
     public interface DungeonEntryInfoOrBuilder extends MessageOrBuilder {
-        int getEndTime();
-
         int getMaxBossChestNum();
 
-        boolean getIsPassed();
+        int getStartTime();
+
+        int getLeftTimes();
+
+        int getEndTime();
 
         boolean hasWeeklyBossResinDiscountInfo();
 
@@ -42,13 +44,11 @@ public final class DungeonEntryInfoOuterClass {
 
         int getDungeonId();
 
-        int getLeftTimes();
-
-        int getNextRefreshTime();
-
         int getNextBossChestRefreshTime();
 
-        int getStartTime();
+        boolean getIsPassed();
+
+        int getNextRefreshTime();
     }
 
     private DungeonEntryInfoOuterClass() {
@@ -64,24 +64,24 @@ public final class DungeonEntryInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonEntryInfoOuterClass$DungeonEntryInfo.class */
     public static final class DungeonEntryInfo extends GeneratedMessageV3 implements DungeonEntryInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int END_TIME_FIELD_NUMBER = 14;
-        private int endTime_;
-        public static final int MAX_BOSS_CHEST_NUM_FIELD_NUMBER = 9;
+        public static final int MAXBOSSCHESTNUM_FIELD_NUMBER = 10;
         private int maxBossChestNum_;
-        public static final int IS_PASSED_FIELD_NUMBER = 13;
-        private boolean isPassed_;
-        public static final int WEEKLY_BOSS_RESIN_DISCOUNT_INFO_FIELD_NUMBER = 6;
-        private WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo weeklyBossResinDiscountInfo_;
-        public static final int DUNGEON_ID_FIELD_NUMBER = 8;
-        private int dungeonId_;
-        public static final int LEFT_TIMES_FIELD_NUMBER = 5;
-        private int leftTimes_;
-        public static final int NEXT_REFRESH_TIME_FIELD_NUMBER = 10;
-        private int nextRefreshTime_;
-        public static final int NEXT_BOSS_CHEST_REFRESH_TIME_FIELD_NUMBER = 3;
-        private int nextBossChestRefreshTime_;
-        public static final int START_TIME_FIELD_NUMBER = 11;
+        public static final int STARTTIME_FIELD_NUMBER = 1;
         private int startTime_;
+        public static final int LEFTTIMES_FIELD_NUMBER = 6;
+        private int leftTimes_;
+        public static final int ENDTIME_FIELD_NUMBER = 14;
+        private int endTime_;
+        public static final int WEEKLYBOSSRESINDISCOUNTINFO_FIELD_NUMBER = 13;
+        private WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo weeklyBossResinDiscountInfo_;
+        public static final int DUNGEONID_FIELD_NUMBER = 3;
+        private int dungeonId_;
+        public static final int NEXTBOSSCHESTREFRESHTIME_FIELD_NUMBER = 5;
+        private int nextBossChestRefreshTime_;
+        public static final int ISPASSED_FIELD_NUMBER = 2;
+        private boolean isPassed_;
+        public static final int NEXTREFRESHTIME_FIELD_NUMBER = 8;
+        private int nextRefreshTime_;
         private byte memoizedIsInitialized;
         private static final DungeonEntryInfo DEFAULT_INSTANCE = new DungeonEntryInfo();
         private static final Parser<DungeonEntryInfo> PARSER = new AbstractParser<DungeonEntryInfo>() { // from class: emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.1
@@ -127,13 +127,28 @@ public final class DungeonEntryInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
+                            case 8:
+                                this.startTime_ = input.readUInt32();
+                                break;
+                            case 16:
+                                this.isPassed_ = input.readBool();
+                                break;
                             case 24:
-                                this.nextBossChestRefreshTime_ = input.readUInt32();
+                                this.dungeonId_ = input.readUInt32();
                                 break;
                             case 40:
+                                this.nextBossChestRefreshTime_ = input.readUInt32();
+                                break;
+                            case 48:
                                 this.leftTimes_ = input.readUInt32();
                                 break;
-                            case 50:
+                            case 64:
+                                this.nextRefreshTime_ = input.readUInt32();
+                                break;
+                            case 80:
+                                this.maxBossChestNum_ = input.readUInt32();
+                                break;
+                            case 106:
                                 WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.Builder subBuilder = this.weeklyBossResinDiscountInfo_ != null ? this.weeklyBossResinDiscountInfo_.toBuilder() : null;
                                 this.weeklyBossResinDiscountInfo_ = (WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo) input.readMessage(WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -143,21 +158,6 @@ public final class DungeonEntryInfoOuterClass {
                                     this.weeklyBossResinDiscountInfo_ = subBuilder.buildPartial();
                                     break;
                                 }
-                            case 64:
-                                this.dungeonId_ = input.readUInt32();
-                                break;
-                            case 72:
-                                this.maxBossChestNum_ = input.readUInt32();
-                                break;
-                            case 80:
-                                this.nextRefreshTime_ = input.readUInt32();
-                                break;
-                            case 88:
-                                this.startTime_ = input.readUInt32();
-                                break;
-                            case 104:
-                                this.isPassed_ = input.readBool();
-                                break;
                             case 112:
                                 this.endTime_ = input.readUInt32();
                                 break;
@@ -191,18 +191,23 @@ public final class DungeonEntryInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
-        public int getEndTime() {
-            return this.endTime_;
-        }
-
-        @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
         public int getMaxBossChestNum() {
             return this.maxBossChestNum_;
         }
 
         @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
-        public boolean getIsPassed() {
-            return this.isPassed_;
+        public int getStartTime() {
+            return this.startTime_;
+        }
+
+        @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
+        public int getLeftTimes() {
+            return this.leftTimes_;
+        }
+
+        @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
+        public int getEndTime() {
+            return this.endTime_;
         }
 
         @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
@@ -226,23 +231,18 @@ public final class DungeonEntryInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
-        public int getLeftTimes() {
-            return this.leftTimes_;
-        }
-
-        @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
-        public int getNextRefreshTime() {
-            return this.nextRefreshTime_;
-        }
-
-        @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
         public int getNextBossChestRefreshTime() {
             return this.nextBossChestRefreshTime_;
         }
 
         @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
-        public int getStartTime() {
-            return this.startTime_;
+        public boolean getIsPassed() {
+            return this.isPassed_;
+        }
+
+        @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
+        public int getNextRefreshTime() {
+            return this.nextRefreshTime_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -260,29 +260,29 @@ public final class DungeonEntryInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.nextBossChestRefreshTime_ != 0) {
-                output.writeUInt32(3, this.nextBossChestRefreshTime_);
-            }
-            if (this.leftTimes_ != 0) {
-                output.writeUInt32(5, this.leftTimes_);
-            }
-            if (this.weeklyBossResinDiscountInfo_ != null) {
-                output.writeMessage(6, getWeeklyBossResinDiscountInfo());
-            }
-            if (this.dungeonId_ != 0) {
-                output.writeUInt32(8, this.dungeonId_);
-            }
-            if (this.maxBossChestNum_ != 0) {
-                output.writeUInt32(9, this.maxBossChestNum_);
-            }
-            if (this.nextRefreshTime_ != 0) {
-                output.writeUInt32(10, this.nextRefreshTime_);
-            }
             if (this.startTime_ != 0) {
-                output.writeUInt32(11, this.startTime_);
+                output.writeUInt32(1, this.startTime_);
             }
             if (this.isPassed_) {
-                output.writeBool(13, this.isPassed_);
+                output.writeBool(2, this.isPassed_);
+            }
+            if (this.dungeonId_ != 0) {
+                output.writeUInt32(3, this.dungeonId_);
+            }
+            if (this.nextBossChestRefreshTime_ != 0) {
+                output.writeUInt32(5, this.nextBossChestRefreshTime_);
+            }
+            if (this.leftTimes_ != 0) {
+                output.writeUInt32(6, this.leftTimes_);
+            }
+            if (this.nextRefreshTime_ != 0) {
+                output.writeUInt32(8, this.nextRefreshTime_);
+            }
+            if (this.maxBossChestNum_ != 0) {
+                output.writeUInt32(10, this.maxBossChestNum_);
+            }
+            if (this.weeklyBossResinDiscountInfo_ != null) {
+                output.writeMessage(13, getWeeklyBossResinDiscountInfo());
             }
             if (this.endTime_ != 0) {
                 output.writeUInt32(14, this.endTime_);
@@ -297,29 +297,29 @@ public final class DungeonEntryInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.nextBossChestRefreshTime_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.nextBossChestRefreshTime_);
-            }
-            if (this.leftTimes_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.leftTimes_);
-            }
-            if (this.weeklyBossResinDiscountInfo_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(6, getWeeklyBossResinDiscountInfo());
-            }
-            if (this.dungeonId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.dungeonId_);
-            }
-            if (this.maxBossChestNum_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.maxBossChestNum_);
-            }
-            if (this.nextRefreshTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.nextRefreshTime_);
-            }
             if (this.startTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.startTime_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.startTime_);
             }
             if (this.isPassed_) {
-                size2 += CodedOutputStream.computeBoolSize(13, this.isPassed_);
+                size2 += CodedOutputStream.computeBoolSize(2, this.isPassed_);
+            }
+            if (this.dungeonId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(3, this.dungeonId_);
+            }
+            if (this.nextBossChestRefreshTime_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(5, this.nextBossChestRefreshTime_);
+            }
+            if (this.leftTimes_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(6, this.leftTimes_);
+            }
+            if (this.nextRefreshTime_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(8, this.nextRefreshTime_);
+            }
+            if (this.maxBossChestNum_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(10, this.maxBossChestNum_);
+            }
+            if (this.weeklyBossResinDiscountInfo_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(13, getWeeklyBossResinDiscountInfo());
             }
             if (this.endTime_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(14, this.endTime_);
@@ -338,8 +338,8 @@ public final class DungeonEntryInfoOuterClass {
                 return equals(obj);
             }
             DungeonEntryInfo other = (DungeonEntryInfo) obj;
-            if (getEndTime() == other.getEndTime() && getMaxBossChestNum() == other.getMaxBossChestNum() && getIsPassed() == other.getIsPassed() && hasWeeklyBossResinDiscountInfo() == other.hasWeeklyBossResinDiscountInfo()) {
-                return (!hasWeeklyBossResinDiscountInfo() || getWeeklyBossResinDiscountInfo().equals(other.getWeeklyBossResinDiscountInfo())) && getDungeonId() == other.getDungeonId() && getLeftTimes() == other.getLeftTimes() && getNextRefreshTime() == other.getNextRefreshTime() && getNextBossChestRefreshTime() == other.getNextBossChestRefreshTime() && getStartTime() == other.getStartTime() && this.unknownFields.equals(other.unknownFields);
+            if (getMaxBossChestNum() == other.getMaxBossChestNum() && getStartTime() == other.getStartTime() && getLeftTimes() == other.getLeftTimes() && getEndTime() == other.getEndTime() && hasWeeklyBossResinDiscountInfo() == other.hasWeeklyBossResinDiscountInfo()) {
+                return (!hasWeeklyBossResinDiscountInfo() || getWeeklyBossResinDiscountInfo().equals(other.getWeeklyBossResinDiscountInfo())) && getDungeonId() == other.getDungeonId() && getNextBossChestRefreshTime() == other.getNextBossChestRefreshTime() && getIsPassed() == other.getIsPassed() && getNextRefreshTime() == other.getNextRefreshTime() && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -349,11 +349,11 @@ public final class DungeonEntryInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getEndTime())) + 9)) + getMaxBossChestNum())) + 13)) + Internal.hashBoolean(getIsPassed());
+            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getMaxBossChestNum())) + 1)) + getStartTime())) + 6)) + getLeftTimes())) + 14)) + getEndTime();
             if (hasWeeklyBossResinDiscountInfo()) {
-                hash = (53 * ((37 * hash) + 6)) + getWeeklyBossResinDiscountInfo().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getWeeklyBossResinDiscountInfo().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 8)) + getDungeonId())) + 5)) + getLeftTimes())) + 10)) + getNextRefreshTime())) + 3)) + getNextBossChestRefreshTime())) + 11)) + getStartTime())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 3)) + getDungeonId())) + 5)) + getNextBossChestRefreshTime())) + 2)) + Internal.hashBoolean(getIsPassed()))) + 8)) + getNextRefreshTime())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -432,16 +432,16 @@ public final class DungeonEntryInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonEntryInfoOuterClass$DungeonEntryInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements DungeonEntryInfoOrBuilder {
-            private int endTime_;
             private int maxBossChestNum_;
-            private boolean isPassed_;
+            private int startTime_;
+            private int leftTimes_;
+            private int endTime_;
             private WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo weeklyBossResinDiscountInfo_;
             private SingleFieldBuilderV3<WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo, WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.Builder, WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfoOrBuilder> weeklyBossResinDiscountInfoBuilder_;
             private int dungeonId_;
-            private int leftTimes_;
-            private int nextRefreshTime_;
             private int nextBossChestRefreshTime_;
-            private int startTime_;
+            private boolean isPassed_;
+            private int nextRefreshTime_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return DungeonEntryInfoOuterClass.internal_static_DungeonEntryInfo_descriptor;
@@ -469,9 +469,10 @@ public final class DungeonEntryInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.endTime_ = 0;
                 this.maxBossChestNum_ = 0;
-                this.isPassed_ = false;
+                this.startTime_ = 0;
+                this.leftTimes_ = 0;
+                this.endTime_ = 0;
                 if (this.weeklyBossResinDiscountInfoBuilder_ == null) {
                     this.weeklyBossResinDiscountInfo_ = null;
                 } else {
@@ -479,10 +480,9 @@ public final class DungeonEntryInfoOuterClass {
                     this.weeklyBossResinDiscountInfoBuilder_ = null;
                 }
                 this.dungeonId_ = 0;
-                this.leftTimes_ = 0;
-                this.nextRefreshTime_ = 0;
                 this.nextBossChestRefreshTime_ = 0;
-                this.startTime_ = 0;
+                this.isPassed_ = false;
+                this.nextRefreshTime_ = 0;
                 return this;
             }
 
@@ -508,19 +508,19 @@ public final class DungeonEntryInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public DungeonEntryInfo buildPartial() {
                 DungeonEntryInfo result = new DungeonEntryInfo(this);
-                result.endTime_ = this.endTime_;
                 result.maxBossChestNum_ = this.maxBossChestNum_;
-                result.isPassed_ = this.isPassed_;
+                result.startTime_ = this.startTime_;
+                result.leftTimes_ = this.leftTimes_;
+                result.endTime_ = this.endTime_;
                 if (this.weeklyBossResinDiscountInfoBuilder_ == null) {
                     result.weeklyBossResinDiscountInfo_ = this.weeklyBossResinDiscountInfo_;
                 } else {
                     result.weeklyBossResinDiscountInfo_ = this.weeklyBossResinDiscountInfoBuilder_.build();
                 }
                 result.dungeonId_ = this.dungeonId_;
-                result.leftTimes_ = this.leftTimes_;
-                result.nextRefreshTime_ = this.nextRefreshTime_;
                 result.nextBossChestRefreshTime_ = this.nextBossChestRefreshTime_;
-                result.startTime_ = this.startTime_;
+                result.isPassed_ = this.isPassed_;
+                result.nextRefreshTime_ = this.nextRefreshTime_;
                 onBuilt();
                 return result;
             }
@@ -568,14 +568,17 @@ public final class DungeonEntryInfoOuterClass {
                 if (other == DungeonEntryInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getEndTime() != 0) {
-                    setEndTime(other.getEndTime());
-                }
                 if (other.getMaxBossChestNum() != 0) {
                     setMaxBossChestNum(other.getMaxBossChestNum());
                 }
-                if (other.getIsPassed()) {
-                    setIsPassed(other.getIsPassed());
+                if (other.getStartTime() != 0) {
+                    setStartTime(other.getStartTime());
+                }
+                if (other.getLeftTimes() != 0) {
+                    setLeftTimes(other.getLeftTimes());
+                }
+                if (other.getEndTime() != 0) {
+                    setEndTime(other.getEndTime());
                 }
                 if (other.hasWeeklyBossResinDiscountInfo()) {
                     mergeWeeklyBossResinDiscountInfo(other.getWeeklyBossResinDiscountInfo());
@@ -583,17 +586,14 @@ public final class DungeonEntryInfoOuterClass {
                 if (other.getDungeonId() != 0) {
                     setDungeonId(other.getDungeonId());
                 }
-                if (other.getLeftTimes() != 0) {
-                    setLeftTimes(other.getLeftTimes());
-                }
-                if (other.getNextRefreshTime() != 0) {
-                    setNextRefreshTime(other.getNextRefreshTime());
-                }
                 if (other.getNextBossChestRefreshTime() != 0) {
                     setNextBossChestRefreshTime(other.getNextBossChestRefreshTime());
                 }
-                if (other.getStartTime() != 0) {
-                    setStartTime(other.getStartTime());
+                if (other.getIsPassed()) {
+                    setIsPassed(other.getIsPassed());
+                }
+                if (other.getNextRefreshTime() != 0) {
+                    setNextRefreshTime(other.getNextRefreshTime());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -628,23 +628,6 @@ public final class DungeonEntryInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
-            public int getEndTime() {
-                return this.endTime_;
-            }
-
-            public Builder setEndTime(int value) {
-                this.endTime_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearEndTime() {
-                this.endTime_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
             public int getMaxBossChestNum() {
                 return this.maxBossChestNum_;
             }
@@ -662,18 +645,52 @@ public final class DungeonEntryInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
-            public boolean getIsPassed() {
-                return this.isPassed_;
+            public int getStartTime() {
+                return this.startTime_;
             }
 
-            public Builder setIsPassed(boolean value) {
-                this.isPassed_ = value;
+            public Builder setStartTime(int value) {
+                this.startTime_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearIsPassed() {
-                this.isPassed_ = false;
+            public Builder clearStartTime() {
+                this.startTime_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
+            public int getLeftTimes() {
+                return this.leftTimes_;
+            }
+
+            public Builder setLeftTimes(int value) {
+                this.leftTimes_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearLeftTimes() {
+                this.leftTimes_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
+            public int getEndTime() {
+                return this.endTime_;
+            }
+
+            public Builder setEndTime(int value) {
+                this.endTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearEndTime() {
+                this.endTime_ = 0;
                 onChanged();
                 return this;
             }
@@ -777,40 +794,6 @@ public final class DungeonEntryInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
-            public int getLeftTimes() {
-                return this.leftTimes_;
-            }
-
-            public Builder setLeftTimes(int value) {
-                this.leftTimes_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearLeftTimes() {
-                this.leftTimes_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
-            public int getNextRefreshTime() {
-                return this.nextRefreshTime_;
-            }
-
-            public Builder setNextRefreshTime(int value) {
-                this.nextRefreshTime_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearNextRefreshTime() {
-                this.nextRefreshTime_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
             public int getNextBossChestRefreshTime() {
                 return this.nextBossChestRefreshTime_;
             }
@@ -828,18 +811,35 @@ public final class DungeonEntryInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
-            public int getStartTime() {
-                return this.startTime_;
+            public boolean getIsPassed() {
+                return this.isPassed_;
             }
 
-            public Builder setStartTime(int value) {
-                this.startTime_ = value;
+            public Builder setIsPassed(boolean value) {
+                this.isPassed_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearStartTime() {
-                this.startTime_ = 0;
+            public Builder clearIsPassed() {
+                this.isPassed_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder
+            public int getNextRefreshTime() {
+                return this.nextRefreshTime_;
+            }
+
+            public Builder setNextRefreshTime(int value) {
+                this.nextRefreshTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearNextRefreshTime() {
+                this.nextRefreshTime_ = 0;
                 onChanged();
                 return this;
             }

@@ -22,7 +22,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WidgetSlotChangeNotifyOuterClass.class */
 public final class WidgetSlotChangeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cWidgetSlotChangeNotify.proto\u001a\u0014WidgetSlotData.proto\u001a\u0012WidgetSlotOp.proto\"R\n\u0016WidgetSlotChangeNotify\u0012\u0019\n\u0002op\u0018\u0005 \u0001(\u000e2\r.WidgetSlotOp\u0012\u001d\n\u0004slot\u0018\u0002 \u0001(\u000b2\u000f.WidgetSlotDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{WidgetSlotDataOuterClass.getDescriptor(), WidgetSlotOpOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cWidgetSlotChangeNotify.proto\u001a\u0012WidgetSlotOp.proto\u001a\u0014WidgetSlotData.proto\"R\n\u0016WidgetSlotChangeNotify\u0012\u0019\n\u0002op\u0018\u000e \u0001(\u000e2\r.WidgetSlotOp\u0012\u001d\n\u0004slot\u0018\u0002 \u0001(\u000b2\u000f.WidgetSlotDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{WidgetSlotOpOuterClass.getDescriptor(), WidgetSlotDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_WidgetSlotChangeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_WidgetSlotChangeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WidgetSlotChangeNotify_descriptor, new String[]{"Op", "Slot"});
 
@@ -52,7 +52,7 @@ public final class WidgetSlotChangeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WidgetSlotChangeNotifyOuterClass$WidgetSlotChangeNotify.class */
     public static final class WidgetSlotChangeNotify extends GeneratedMessageV3 implements WidgetSlotChangeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int OP_FIELD_NUMBER = 5;
+        public static final int OP_FIELD_NUMBER = 14;
         private int op_;
         public static final int SLOT_FIELD_NUMBER = 2;
         private WidgetSlotDataOuterClass.WidgetSlotData slot_;
@@ -113,7 +113,7 @@ public final class WidgetSlotChangeNotifyOuterClass {
                                         this.slot_ = subBuilder.buildPartial();
                                         break;
                                     }
-                                case 40:
+                                case 112:
                                     this.op_ = input.readEnum();
                                     break;
                                 default:
@@ -191,7 +191,7 @@ public final class WidgetSlotChangeNotifyOuterClass {
                 output.writeMessage(2, getSlot());
             }
             if (this.op_ != WidgetSlotOpOuterClass.WidgetSlotOp.WIDGET_SLOT_OP_ATTACH.getNumber()) {
-                output.writeEnum(5, this.op_);
+                output.writeEnum(14, this.op_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -207,7 +207,7 @@ public final class WidgetSlotChangeNotifyOuterClass {
                 size2 = 0 + CodedOutputStream.computeMessageSize(2, getSlot());
             }
             if (this.op_ != WidgetSlotOpOuterClass.WidgetSlotOp.WIDGET_SLOT_OP_ATTACH.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(5, this.op_);
+                size2 += CodedOutputStream.computeEnumSize(14, this.op_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -234,7 +234,7 @@ public final class WidgetSlotChangeNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + this.op_;
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + this.op_;
             if (hasSlot()) {
                 hash = (53 * ((37 * hash) + 2)) + getSlot().hashCode();
             }
@@ -618,7 +618,7 @@ public final class WidgetSlotChangeNotifyOuterClass {
     }
 
     static {
-        WidgetSlotDataOuterClass.getDescriptor();
         WidgetSlotOpOuterClass.getDescriptor();
+        WidgetSlotDataOuterClass.getDescriptor();
     }
 }

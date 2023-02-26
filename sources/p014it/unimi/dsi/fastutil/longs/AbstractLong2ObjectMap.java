@@ -191,30 +191,30 @@ public abstract class AbstractLong2ObjectMap<V> extends AbstractLong2ObjectFunct
                 return new LongIterator() { // from class: it.unimi.dsi.fastutil.longs.AbstractLong2ObjectMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Long2ObjectMap.Entry<V>> f2245i;
+                    private final ObjectIterator<Long2ObjectMap.Entry<V>> f2209i;
 
                     {
-                        this.f2245i = Long2ObjectMaps.fastIterator(AbstractLong2ObjectMap.this);
+                        this.f2209i = Long2ObjectMaps.fastIterator(AbstractLong2ObjectMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
                     public long nextLong() {
-                        return this.f2245i.next().getLongKey();
+                        return this.f2209i.next().getLongKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2245i.hasNext();
+                        return this.f2209i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2245i.remove();
+                        this.f2209i.remove();
                     }
 
                     @Override // java.util.PrimitiveIterator.OfLong
                     public void forEachRemaining(LongConsumer action) {
-                        this.f2245i.forEachRemaining(entry -> {
+                        this.f2209i.forEachRemaining(entry -> {
                             action.accept(entry.getLongKey());
                         });
                     }
@@ -251,30 +251,30 @@ public abstract class AbstractLong2ObjectMap<V> extends AbstractLong2ObjectFunct
                 return new ObjectIterator<V>() { // from class: it.unimi.dsi.fastutil.longs.AbstractLong2ObjectMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Long2ObjectMap.Entry<V>> f2246i;
+                    private final ObjectIterator<Long2ObjectMap.Entry<V>> f2210i;
 
                     {
-                        this.f2246i = Long2ObjectMaps.fastIterator(AbstractLong2ObjectMap.this);
+                        this.f2210i = Long2ObjectMaps.fastIterator(AbstractLong2ObjectMap.this);
                     }
 
                     @Override // java.util.Iterator
                     public V next() {
-                        return this.f2246i.next().getValue();
+                        return this.f2210i.next().getValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2246i.hasNext();
+                        return this.f2210i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2246i.remove();
+                        this.f2210i.remove();
                     }
 
                     @Override // java.util.Iterator
                     public void forEachRemaining(Consumer<? super V> action) {
-                        this.f2246i.forEachRemaining(entry -> {
+                        this.f2210i.forEachRemaining(entry -> {
                             action.accept(entry.getValue());
                         });
                     }

@@ -76,7 +76,7 @@ public class ShopSystem extends BaseGameSystem {
             r1 = r5
             int r1 = r1.size()
             // decode failed: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, Loaded  ShopChest entries.]}
-            r0.warn(r1)
+            r0.info(r1)
             goto L_0x003d
             r5 = move-exception
             ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()

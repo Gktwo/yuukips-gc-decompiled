@@ -33,7 +33,7 @@ public final class PacketHeadOuterClass {
     private static final Descriptors.Descriptor internal_static_PacketHead_ServiceAppIdMapEntry_descriptor = internal_static_PacketHead_descriptor.getNestedTypes().get(1);
 
     /* renamed from: internal_static_PacketHead_ServiceAppIdMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f821x49e14327 = new GeneratedMessageV3.FieldAccessorTable(internal_static_PacketHead_ServiceAppIdMapEntry_descriptor, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f799x49e14327 = new GeneratedMessageV3.FieldAccessorTable(internal_static_PacketHead_ServiceAppIdMapEntry_descriptor, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PacketHeadOuterClass$PacketHeadOrBuilder.class */
     public interface PacketHeadOrBuilder extends MessageOrBuilder {
@@ -297,13 +297,13 @@ public final class PacketHeadOuterClass {
                                 case 192:
                                     this.senderAppId_ = input.readUInt32();
                                     break;
-                                case PacketOpcodes.ScenePlayerLocationNotify:
+                                case PacketOpcodes.EnterSceneDoneReq:
                                     this.sourceService_ = input.readUInt32();
                                     break;
                                 case 256:
                                     this.targetService_ = input.readUInt32();
                                     break;
-                                case PacketOpcodes.ScenePlayerSoundNotify:
+                                case PacketOpcodes.SetSceneWeatherAreaRsp:
                                     if ((mutable_bitField0_ & 2) == 0) {
                                         this.serviceAppIdMap_ = MapField.newMapField(ServiceAppIdMapDefaultEntryHolder.defaultEntry);
                                         mutable_bitField0_ |= 2;
@@ -311,10 +311,10 @@ public final class PacketHeadOuterClass {
                                     MapEntry<Integer, Integer> serviceAppIdMap__ = (MapEntry) input.readMessage(ServiceAppIdMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                                     this.serviceAppIdMap_.getMutableMap().put(serviceAppIdMap__.getKey(), serviceAppIdMap__.getValue());
                                     break;
-                                case PacketOpcodes.SceneCreateEntityRsp:
+                                case PacketOpcodes.HitClientTrivialNotify:
                                     this.isSetGameThread_ = input.readBool();
                                     break;
-                                case PacketOpcodes.SceneForceLockNotify:
+                                case PacketOpcodes.SceneEntityDisappearNotify:
                                     this.gameThreadIndex_ = input.readUInt32();
                                     break;
                                 default:

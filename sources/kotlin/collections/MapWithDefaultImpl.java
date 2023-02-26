@@ -21,7 +21,7 @@ final class MapWithDefaultImpl<K, V> implements MapWithDefault<K, V> {
     @NotNull
 
     /* renamed from: default  reason: not valid java name */
-    private final Function1<K, V> f3384default;
+    private final Function1<K, V> f3348default;
 
     @Override // java.util.Map
     public void clear() {
@@ -50,7 +50,7 @@ final class MapWithDefaultImpl<K, V> implements MapWithDefault<K, V> {
         Intrinsics.checkNotNullParameter(map, "map");
         Intrinsics.checkNotNullParameter(function1, "default");
         this.map = map;
-        this.f3384default = function1;
+        this.f3348default = function1;
     }
 
     @Override // kotlin.collections.MapWithDefault
@@ -142,6 +142,6 @@ final class MapWithDefaultImpl<K, V> implements MapWithDefault<K, V> {
         if (v != null || $this$getOrElseNullable$iv.containsKey(k)) {
             return v;
         }
-        return this.f3384default.invoke(k);
+        return this.f3348default.invoke(k);
     }
 }

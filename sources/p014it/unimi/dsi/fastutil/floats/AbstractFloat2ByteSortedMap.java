@@ -90,30 +90,30 @@ public abstract class AbstractFloat2ByteSortedMap extends AbstractFloat2ByteMap 
     public static class KeySetIterator implements FloatBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Float2ByteMap.Entry> f1760i;
+        protected final ObjectBidirectionalIterator<Float2ByteMap.Entry> f1724i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Float2ByteMap.Entry> i) {
-            this.f1760i = i;
+            this.f1724i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
         public float nextFloat() {
-            return ((Float2ByteMap.Entry) this.f1760i.next()).getFloatKey();
+            return ((Float2ByteMap.Entry) this.f1724i.next()).getFloatKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatBidirectionalIterator
         public float previousFloat() {
-            return this.f1760i.previous().getFloatKey();
+            return this.f1724i.previous().getFloatKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1760i.hasNext();
+            return this.f1724i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1760i.hasPrevious();
+            return this.f1724i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractFloat2ByteSortedMap extends AbstractFloat2ByteMap 
     public static class ValuesIterator implements ByteIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Float2ByteMap.Entry> f1761i;
+        protected final ObjectBidirectionalIterator<Float2ByteMap.Entry> f1725i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Float2ByteMap.Entry> i) {
-            this.f1761i = i;
+            this.f1725i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
         public byte nextByte() {
-            return ((Float2ByteMap.Entry) this.f1761i.next()).getByteValue();
+            return ((Float2ByteMap.Entry) this.f1725i.next()).getByteValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1761i.hasNext();
+            return this.f1725i.hasNext();
         }
     }
 }

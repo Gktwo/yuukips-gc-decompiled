@@ -10,7 +10,7 @@ import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketSelectWorktopOptionRsp;
 
-@Opcodes(900)
+@Opcodes(820)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerSelectWorktopOptionReq.class */
 public class HandlerSelectWorktopOptionReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

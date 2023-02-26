@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RouteOuterClass.class */
 public final class RouteOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000bRoute.proto\u001a\u0010RoutePoint.proto\">\n\u0005Route\u0012!\n\froute_points\u0018\u0001 \u0003(\u000b2\u000b.RoutePoint\u0012\u0012\n\nroute_type\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{RoutePointOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000bRoute.proto\u001a\u0010RoutePoint.proto\"<\n\u0005Route\u0012 \n\u000broutePoints\u0018\u0001 \u0003(\u000b2\u000b.RoutePoint\u0012\u0011\n\trouteType\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{RoutePointOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_Route_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_Route_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_Route_descriptor, new String[]{"RoutePoints", "RouteType"});
 
@@ -57,9 +57,9 @@ public final class RouteOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RouteOuterClass$Route.class */
     public static final class Route extends GeneratedMessageV3 implements RouteOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ROUTE_POINTS_FIELD_NUMBER = 1;
+        public static final int ROUTEPOINTS_FIELD_NUMBER = 1;
         private List<RoutePointOuterClass.RoutePoint> routePoints_;
-        public static final int ROUTE_TYPE_FIELD_NUMBER = 2;
+        public static final int ROUTETYPE_FIELD_NUMBER = 2;
         private int routeType_;
         private byte memoizedIsInitialized;
         private static final Route DEFAULT_INSTANCE = new Route();

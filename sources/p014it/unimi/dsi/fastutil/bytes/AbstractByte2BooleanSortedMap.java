@@ -90,30 +90,30 @@ public abstract class AbstractByte2BooleanSortedMap extends AbstractByte2Boolean
     public static class KeySetIterator implements ByteBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Byte2BooleanMap.Entry> f1081i;
+        protected final ObjectBidirectionalIterator<Byte2BooleanMap.Entry> f1045i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Byte2BooleanMap.Entry> i) {
-            this.f1081i = i;
+            this.f1045i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
         public byte nextByte() {
-            return ((Byte2BooleanMap.Entry) this.f1081i.next()).getByteKey();
+            return ((Byte2BooleanMap.Entry) this.f1045i.next()).getByteKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteBidirectionalIterator
         public byte previousByte() {
-            return this.f1081i.previous().getByteKey();
+            return this.f1045i.previous().getByteKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1081i.hasNext();
+            return this.f1045i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1081i.hasPrevious();
+            return this.f1045i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractByte2BooleanSortedMap extends AbstractByte2Boolean
     public static class ValuesIterator implements BooleanIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Byte2BooleanMap.Entry> f1082i;
+        protected final ObjectBidirectionalIterator<Byte2BooleanMap.Entry> f1046i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Byte2BooleanMap.Entry> i) {
-            this.f1082i = i;
+            this.f1046i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
         public boolean nextBoolean() {
-            return ((Byte2BooleanMap.Entry) this.f1082i.next()).getBooleanValue();
+            return ((Byte2BooleanMap.Entry) this.f1046i.next()).getBooleanValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1082i.hasNext();
+            return this.f1046i.hasNext();
         }
     }
 }

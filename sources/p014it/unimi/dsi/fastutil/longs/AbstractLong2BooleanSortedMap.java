@@ -90,30 +90,30 @@ public abstract class AbstractLong2BooleanSortedMap extends AbstractLong2Boolean
     public static class KeySetIterator implements LongBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Long2BooleanMap.Entry> f2219i;
+        protected final ObjectBidirectionalIterator<Long2BooleanMap.Entry> f2183i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Long2BooleanMap.Entry> i) {
-            this.f2219i = i;
+            this.f2183i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
         public long nextLong() {
-            return ((Long2BooleanMap.Entry) this.f2219i.next()).getLongKey();
+            return ((Long2BooleanMap.Entry) this.f2183i.next()).getLongKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongBidirectionalIterator
         public long previousLong() {
-            return this.f2219i.previous().getLongKey();
+            return this.f2183i.previous().getLongKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2219i.hasNext();
+            return this.f2183i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2219i.hasPrevious();
+            return this.f2183i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractLong2BooleanSortedMap extends AbstractLong2Boolean
     public static class ValuesIterator implements BooleanIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Long2BooleanMap.Entry> f2220i;
+        protected final ObjectBidirectionalIterator<Long2BooleanMap.Entry> f2184i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Long2BooleanMap.Entry> i) {
-            this.f2220i = i;
+            this.f2184i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
         public boolean nextBoolean() {
-            return ((Long2BooleanMap.Entry) this.f2220i.next()).getBooleanValue();
+            return ((Long2BooleanMap.Entry) this.f2184i.next()).getBooleanValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2220i.hasNext();
+            return this.f2184i.hasNext();
         }
     }
 }

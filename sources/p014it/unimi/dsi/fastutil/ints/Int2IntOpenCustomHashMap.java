@@ -37,13 +37,13 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
     protected IntHash.Strategy strategy;
 
     /* renamed from: n */
-    protected transient int f2084n;
+    protected transient int f2048n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2085f;
+    protected final float f2049f;
     protected transient Int2IntMap.FastEntrySet entries;
     protected transient IntSet keys;
     protected transient IntCollection values;
@@ -55,14 +55,14 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2085f = f;
+            this.f2049f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2084n = arraySize;
+            this.f2048n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2084n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2084n, f);
-            this.key = new int[this.f2084n + 1];
-            this.value = new int[this.f2084n + 1];
+            this.mask = this.f2048n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2048n, f);
+            this.key = new int[this.f2048n + 1];
+            this.value = new int[this.f2048n + 1];
         }
     }
 
@@ -116,15 +116,15 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2085f);
-        if (needed > this.f2084n) {
+        int needed = HashCommon.arraySize(capacity, this.f2049f);
+        if (needed > this.f2048n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2085f)))));
-        if (needed > this.f2084n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2049f)))));
+        if (needed > this.f2048n) {
             rehash(needed);
         }
     }
@@ -134,8 +134,8 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
         int oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f2084n > this.minN && this.size < this.maxFill / 4 && this.f2084n > 16) {
-            rehash(this.f2084n / 2);
+        if (this.f2048n > this.minN && this.size < this.maxFill / 4 && this.f2048n > 16) {
+            rehash(this.f2048n / 2);
         }
         return oldValue;
     }
@@ -143,17 +143,17 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
     /* access modifiers changed from: private */
     public int removeNullEntry() {
         this.containsNullKey = false;
-        int oldValue = this.value[this.f2084n];
+        int oldValue = this.value[this.f2048n];
         this.size--;
-        if (this.f2084n > this.minN && this.size < this.maxFill / 4 && this.f2084n > 16) {
-            rehash(this.f2084n / 2);
+        if (this.f2048n > this.minN && this.size < this.maxFill / 4 && this.f2048n > 16) {
+            rehash(this.f2048n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractInt2IntMap, java.util.Map
     public void putAll(Map<? extends Integer, ? extends Integer> m) {
-        if (((double) this.f2085f) <= 0.5d) {
+        if (((double) this.f2049f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -164,7 +164,7 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
     private int find(int k) {
         int curr;
         if (this.strategy.equals(k, 0)) {
-            return this.containsNullKey ? this.f2084n : -(this.f2084n + 1);
+            return this.containsNullKey ? this.f2048n : -(this.f2048n + 1);
         }
         int[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -188,7 +188,7 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
     }
 
     private void insert(int pos, int k, int v) {
-        if (pos == this.f2084n) {
+        if (pos == this.f2048n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -196,7 +196,7 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2085f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2049f));
         }
     }
 
@@ -240,9 +240,9 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f2084n, incr);
+            return addToValue(this.f2048n, incr);
         } else {
-            pos = this.f2084n;
+            pos = this.f2048n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -250,7 +250,7 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2085f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2049f));
         }
         return this.defRetValue;
     }
@@ -316,7 +316,7 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
     public int get(int k) {
         int curr;
         if (this.strategy.equals(k, 0)) {
-            return this.containsNullKey ? this.value[this.f2084n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2048n] : this.defRetValue;
         }
         int[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -370,10 +370,10 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
     public boolean containsValue(int v) {
         int[] value = this.value;
         int[] key = this.key;
-        if (this.containsNullKey && value[this.f2084n] == v) {
+        if (this.containsNullKey && value[this.f2048n] == v) {
             return true;
         }
-        int i = this.f2084n;
+        int i = this.f2048n;
         while (true) {
             i--;
             if (i == 0) {
@@ -389,7 +389,7 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
     public int getOrDefault(int k, int defaultValue) {
         int curr;
         if (this.strategy.equals(k, 0)) {
-            return this.containsNullKey ? this.value[this.f2084n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2048n] : defaultValue;
         }
         int[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -449,7 +449,7 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
                 removeEntry(pos);
                 return true;
             }
-        } else if (!this.containsNullKey || v != this.value[this.f2084n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f2048n]) {
             return false;
         } else {
             removeNullEntry();
@@ -704,31 +704,31 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
         int last;
 
         /* renamed from: c */
-        int f2086c;
+        int f2050c;
         boolean mustReturnNullKey;
         IntArrayList wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Int2IntOpenCustomHashMap.this.f2084n;
+            this.pos = Int2IntOpenCustomHashMap.this.f2048n;
             this.last = -1;
-            this.f2086c = Int2IntOpenCustomHashMap.this.size;
+            this.f2050c = Int2IntOpenCustomHashMap.this.size;
             this.mustReturnNullKey = Int2IntOpenCustomHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f2086c != 0;
+            return this.f2050c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2086c--;
+            this.f2050c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Int2IntOpenCustomHashMap.this.f2084n;
+                int i = Int2IntOpenCustomHashMap.this.f2048n;
                 this.last = i;
                 return i;
             }
@@ -760,13 +760,13 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Int2IntOpenCustomHashMap.this.f2084n;
+                int i = Int2IntOpenCustomHashMap.this.f2048n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f2086c--;
+                this.f2050c--;
             }
             int[] key = Int2IntOpenCustomHashMap.this.key;
-            while (this.f2086c != 0) {
+            while (this.f2050c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -783,12 +783,12 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
                         i3 = Int2IntOpenCustomHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f2086c--;
+                    this.f2050c--;
                 } else if (key[this.pos] != 0) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f2086c--;
+                    this.f2050c--;
                 }
             }
         }
@@ -837,7 +837,7 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Int2IntOpenCustomHashMap.this.f2084n) {
+            if (this.last == Int2IntOpenCustomHashMap.this.f2048n) {
                 Int2IntOpenCustomHashMap.this.containsNullKey = false;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
@@ -934,7 +934,7 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
         int max;
 
         /* renamed from: c */
-        int f2087c;
+        int f2051c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -944,16 +944,16 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Int2IntOpenCustomHashMap.this.f2084n;
-            this.f2087c = 0;
+            this.max = Int2IntOpenCustomHashMap.this.f2048n;
+            this.f2051c = 0;
             this.mustReturnNull = Int2IntOpenCustomHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Int2IntOpenCustomHashMap.this.f2084n;
-            this.f2087c = 0;
+            this.max = Int2IntOpenCustomHashMap.this.f2048n;
+            this.f2051c = 0;
             this.mustReturnNull = Int2IntOpenCustomHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -965,14 +965,14 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2087c++;
-                acceptOnIndex(action, Int2IntOpenCustomHashMap.this.f2084n);
+                this.f2051c++;
+                acceptOnIndex(action, Int2IntOpenCustomHashMap.this.f2048n);
                 return true;
             }
             int[] key = Int2IntOpenCustomHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f2087c++;
+                    this.f2051c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -986,14 +986,14 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2087c++;
-                acceptOnIndex(action, Int2IntOpenCustomHashMap.this.f2084n);
+                this.f2051c++;
+                acceptOnIndex(action, Int2IntOpenCustomHashMap.this.f2048n);
             }
             int[] key = Int2IntOpenCustomHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     acceptOnIndex(action, this.pos);
-                    this.f2087c++;
+                    this.f2051c++;
                 }
                 this.pos++;
             }
@@ -1001,9 +1001,9 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Int2IntOpenCustomHashMap.this.size - this.f2087c);
+                return (long) (Int2IntOpenCustomHashMap.this.size - this.f2051c);
             }
-            return Math.min((long) (Int2IntOpenCustomHashMap.this.size - this.f2087c), ((long) ((((double) Int2IntOpenCustomHashMap.this.realSize()) / ((double) Int2IntOpenCustomHashMap.this.f2084n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Int2IntOpenCustomHashMap.this.size - this.f2051c), ((long) ((((double) Int2IntOpenCustomHashMap.this.realSize()) / ((double) Int2IntOpenCustomHashMap.this.f2048n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1196,7 +1196,7 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
             int k = ((Integer) e.getKey()).intValue();
             int v = ((Integer) e.getValue()).intValue();
             if (Int2IntOpenCustomHashMap.this.strategy.equals(k, 0)) {
-                return Int2IntOpenCustomHashMap.this.containsNullKey && Int2IntOpenCustomHashMap.this.value[Int2IntOpenCustomHashMap.this.f2084n] == v;
+                return Int2IntOpenCustomHashMap.this.containsNullKey && Int2IntOpenCustomHashMap.this.value[Int2IntOpenCustomHashMap.this.f2048n] == v;
             }
             int[] key = Int2IntOpenCustomHashMap.this.key;
             int mix = HashCommon.mix(Int2IntOpenCustomHashMap.this.strategy.hashCode(k)) & Int2IntOpenCustomHashMap.this.mask;
@@ -1257,7 +1257,7 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
                     Int2IntOpenCustomHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Int2IntOpenCustomHashMap.this.containsNullKey || Int2IntOpenCustomHashMap.this.value[Int2IntOpenCustomHashMap.this.f2084n] != v) {
+            } else if (!Int2IntOpenCustomHashMap.this.containsNullKey || Int2IntOpenCustomHashMap.this.value[Int2IntOpenCustomHashMap.this.f2048n] != v) {
                 return false;
             } else {
                 Int2IntOpenCustomHashMap.this.removeNullEntry();
@@ -1278,9 +1278,9 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Int2IntMap.Entry> consumer) {
             if (Int2IntOpenCustomHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractInt2IntMap.BasicEntry(Int2IntOpenCustomHashMap.this.key[Int2IntOpenCustomHashMap.this.f2084n], Int2IntOpenCustomHashMap.this.value[Int2IntOpenCustomHashMap.this.f2084n]));
+                consumer.accept(new AbstractInt2IntMap.BasicEntry(Int2IntOpenCustomHashMap.this.key[Int2IntOpenCustomHashMap.this.f2048n], Int2IntOpenCustomHashMap.this.value[Int2IntOpenCustomHashMap.this.f2048n]));
             }
-            int pos = Int2IntOpenCustomHashMap.this.f2084n;
+            int pos = Int2IntOpenCustomHashMap.this.f2048n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1296,11 +1296,11 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
         public void fastForEach(Consumer<? super Int2IntMap.Entry> consumer) {
             AbstractInt2IntMap.BasicEntry entry = new AbstractInt2IntMap.BasicEntry();
             if (Int2IntOpenCustomHashMap.this.containsNullKey) {
-                entry.key = Int2IntOpenCustomHashMap.this.key[Int2IntOpenCustomHashMap.this.f2084n];
-                entry.value = Int2IntOpenCustomHashMap.this.value[Int2IntOpenCustomHashMap.this.f2084n];
+                entry.key = Int2IntOpenCustomHashMap.this.key[Int2IntOpenCustomHashMap.this.f2048n];
+                entry.value = Int2IntOpenCustomHashMap.this.value[Int2IntOpenCustomHashMap.this.f2048n];
                 consumer.accept(entry);
             }
-            int pos = Int2IntOpenCustomHashMap.this.f2084n;
+            int pos = Int2IntOpenCustomHashMap.this.f2048n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1408,9 +1408,9 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
         @Override // p014it.unimi.dsi.fastutil.ints.IntIterable
         public void forEach(IntConsumer consumer) {
             if (Int2IntOpenCustomHashMap.this.containsNullKey) {
-                consumer.accept(Int2IntOpenCustomHashMap.this.key[Int2IntOpenCustomHashMap.this.f2084n]);
+                consumer.accept(Int2IntOpenCustomHashMap.this.key[Int2IntOpenCustomHashMap.this.f2048n]);
             }
-            int pos = Int2IntOpenCustomHashMap.this.f2084n;
+            int pos = Int2IntOpenCustomHashMap.this.f2048n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1539,9 +1539,9 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
                 @Override // p014it.unimi.dsi.fastutil.ints.IntIterable
                 public void forEach(IntConsumer consumer) {
                     if (Int2IntOpenCustomHashMap.this.containsNullKey) {
-                        consumer.accept(Int2IntOpenCustomHashMap.this.value[Int2IntOpenCustomHashMap.this.f2084n]);
+                        consumer.accept(Int2IntOpenCustomHashMap.this.value[Int2IntOpenCustomHashMap.this.f2048n]);
                     }
-                    int pos = Int2IntOpenCustomHashMap.this.f2084n;
+                    int pos = Int2IntOpenCustomHashMap.this.f2048n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1577,8 +1577,8 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2085f)));
-        if (l >= this.f2084n || this.size > HashCommon.maxFill(l, this.f2085f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2049f)));
+        if (l >= this.f2048n || this.size > HashCommon.maxFill(l, this.f2049f)) {
             return true;
         }
         try {
@@ -1596,7 +1596,7 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
         int mask = newN - 1;
         int[] newKey = new int[newN + 1];
         int[] newValue = new int[newN + 1];
-        int i2 = this.f2084n;
+        int i2 = this.f2048n;
         int j = realSize();
         while (true) {
             j--;
@@ -1615,10 +1615,10 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f2084n];
-                this.f2084n = newN;
+                newValue[newN] = value[this.f2048n];
+                this.f2048n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2084n, this.f2085f);
+                this.maxFill = HashCommon.maxFill(this.f2048n, this.f2049f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1660,7 +1660,7 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f2084n];
+            h += this.value[this.f2048n];
         }
         return h;
     }
@@ -1686,12 +1686,12 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2084n = HashCommon.arraySize(this.size, this.f2085f);
-        this.maxFill = HashCommon.maxFill(this.f2084n, this.f2085f);
-        this.mask = this.f2084n - 1;
-        int[] key = new int[this.f2084n + 1];
+        this.f2048n = HashCommon.arraySize(this.size, this.f2049f);
+        this.maxFill = HashCommon.maxFill(this.f2048n, this.f2049f);
+        this.mask = this.f2048n - 1;
+        int[] key = new int[this.f2048n + 1];
         this.key = key;
-        int[] value = new int[this.f2084n + 1];
+        int[] value = new int[this.f2048n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1700,7 +1700,7 @@ public class Int2IntOpenCustomHashMap extends AbstractInt2IntMap implements Seri
                 int k = s.readInt();
                 int v = s.readInt();
                 if (this.strategy.equals(k, 0)) {
-                    pos = this.f2084n;
+                    pos = this.f2048n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix(this.strategy.hashCode(k));

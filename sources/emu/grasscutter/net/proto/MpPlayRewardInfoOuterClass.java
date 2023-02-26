@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MpPlayRewardInfoOuterClass.class */
 public final class MpPlayRewardInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016MpPlayRewardInfo.proto\"T\n\u0010MpPlayRewardInfo\u0012\r\n\u0005resin\u0018\u0001 \u0001(\r\u0012\u0017\n\u000fremain_uid_list\u0018\u0002 \u0003(\r\u0012\u0018\n\u0010qualify_uid_list\u0018\u0003 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016MpPlayRewardInfo.proto\"P\n\u0010MpPlayRewardInfo\u0012\r\n\u0005resin\u0018\u0001 \u0001(\r\u0012\u0015\n\rremainUidList\u0018\u0002 \u0003(\r\u0012\u0016\n\u000equalifyUidList\u0018\u0003 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_MpPlayRewardInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_MpPlayRewardInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MpPlayRewardInfo_descriptor, new String[]{"Resin", "RemainUidList", "QualifyUidList"});
 
@@ -59,10 +59,10 @@ public final class MpPlayRewardInfoOuterClass {
         private static final long serialVersionUID = 0;
         public static final int RESIN_FIELD_NUMBER = 1;
         private int resin_;
-        public static final int REMAIN_UID_LIST_FIELD_NUMBER = 2;
+        public static final int REMAINUIDLIST_FIELD_NUMBER = 2;
         private Internal.IntList remainUidList_;
         private int remainUidListMemoizedSerializedSize;
-        public static final int QUALIFY_UID_LIST_FIELD_NUMBER = 3;
+        public static final int QUALIFYUIDLIST_FIELD_NUMBER = 3;
         private Internal.IntList qualifyUidList_;
         private int qualifyUidListMemoizedSerializedSize;
         private byte memoizedIsInitialized;

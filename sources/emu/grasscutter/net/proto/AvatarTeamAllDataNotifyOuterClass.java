@@ -28,15 +28,15 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarTeamAllDataNotifyOuterClass.class */
 public final class AvatarTeamAllDataNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dAvatarTeamAllDataNotify.proto\u001a\u0010AvatarTeam.proto\"è\u0001\n\u0017AvatarTeamAllDataNotify\u0012\u001d\n\u0015temp_avatar_guid_list\u0018\u0002 \u0003(\u0004\u0012%\n\u001dbackup_avatar_team_order_list\u0018\n \u0003(\r\u0012D\n\u000favatar_team_map\u0018\u0005 \u0003(\u000b2+.AvatarTeamAllDataNotify.AvatarTeamMapEntry\u001aA\n\u0012AvatarTeamMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\u001a\n\u0005value\u0018\u0002 \u0001(\u000b2\u000b.AvatarTeam:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarTeamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dAvatarTeamAllDataNotify.proto\u001a\u0010AvatarTeam.proto\"ß\u0001\n\u0017AvatarTeamAllDataNotify\u0012\u001a\n\u0012tempAvatarGuidList\u0018\u000f \u0003(\u0004\u0012!\n\u0019backupAvatarTeamOrderList\u0018\u000e \u0003(\r\u0012B\n\ravatarTeamMap\u0018\f \u0003(\u000b2+.AvatarTeamAllDataNotify.AvatarTeamMapEntry\u001aA\n\u0012AvatarTeamMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\u001a\n\u0005value\u0018\u0002 \u0001(\u000b2\u000b.AvatarTeam:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarTeamOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AvatarTeamAllDataNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarTeamAllDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarTeamAllDataNotify_descriptor, new String[]{"TempAvatarGuidList", "BackupAvatarTeamOrderList", "AvatarTeamMap"});
 
     /* renamed from: internal_static_AvatarTeamAllDataNotify_AvatarTeamMapEntry_descriptor */
-    private static final Descriptors.Descriptor f651x23f94a72 = internal_static_AvatarTeamAllDataNotify_descriptor.getNestedTypes().get(0);
+    private static final Descriptors.Descriptor f650x23f94a72 = internal_static_AvatarTeamAllDataNotify_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_AvatarTeamAllDataNotify_AvatarTeamMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f652xcf7def0 = new GeneratedMessageV3.FieldAccessorTable(f651x23f94a72, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f651xcf7def0 = new GeneratedMessageV3.FieldAccessorTable(f650x23f94a72, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarTeamAllDataNotifyOuterClass$AvatarTeamAllDataNotifyOrBuilder.class */
     public interface AvatarTeamAllDataNotifyOrBuilder extends MessageOrBuilder {
@@ -79,13 +79,13 @@ public final class AvatarTeamAllDataNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarTeamAllDataNotifyOuterClass$AvatarTeamAllDataNotify.class */
     public static final class AvatarTeamAllDataNotify extends GeneratedMessageV3 implements AvatarTeamAllDataNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TEMP_AVATAR_GUID_LIST_FIELD_NUMBER = 2;
+        public static final int TEMPAVATARGUIDLIST_FIELD_NUMBER = 15;
         private Internal.LongList tempAvatarGuidList_;
         private int tempAvatarGuidListMemoizedSerializedSize;
-        public static final int BACKUP_AVATAR_TEAM_ORDER_LIST_FIELD_NUMBER = 10;
+        public static final int BACKUPAVATARTEAMORDERLIST_FIELD_NUMBER = 14;
         private Internal.IntList backupAvatarTeamOrderList_;
         private int backupAvatarTeamOrderListMemoizedSerializedSize;
-        public static final int AVATAR_TEAM_MAP_FIELD_NUMBER = 5;
+        public static final int AVATARTEAMMAP_FIELD_NUMBER = 12;
         private MapField<Integer, AvatarTeamOuterClass.AvatarTeam> avatarTeamMap_;
         private byte memoizedIsInitialized;
         private static final AvatarTeamAllDataNotify DEFAULT_INSTANCE = new AvatarTeamAllDataNotify();
@@ -137,7 +137,7 @@ public final class AvatarTeamAllDataNotifyOuterClass {
                 r4 = this;
                 r0 = r5
                 switch(r0) {
-                    case 5: goto L_0x0014;
+                    case 12: goto L_0x0014;
                     default: goto L_0x0019;
                 }
                 r0 = r4
@@ -199,25 +199,7 @@ public final class AvatarTeamAllDataNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
-                                    if ((mutable_bitField0_ & 1) == 0) {
-                                        this.tempAvatarGuidList_ = newLongList();
-                                        mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
-                                    }
-                                    this.tempAvatarGuidList_.addLong(input.readUInt64());
-                                    break;
-                                case 18:
-                                    int limit = input.pushLimit(input.readRawVarint32());
-                                    if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
-                                        this.tempAvatarGuidList_ = newLongList();
-                                        mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
-                                    }
-                                    while (input.getBytesUntilLimit() > 0) {
-                                        this.tempAvatarGuidList_.addLong(input.readUInt64());
-                                    }
-                                    input.popLimit(limit);
-                                    break;
-                                case 42:
+                                case 98:
                                     if ((mutable_bitField0_ & 4) == 0) {
                                         this.avatarTeamMap_ = MapField.newMapField(AvatarTeamMapDefaultEntryHolder.defaultEntry);
                                         mutable_bitField0_ = (mutable_bitField0_ | 4) == 1 ? 1 : 0;
@@ -225,21 +207,39 @@ public final class AvatarTeamAllDataNotifyOuterClass {
                                     MapEntry<Integer, AvatarTeamOuterClass.AvatarTeam> avatarTeamMap__ = (MapEntry) input.readMessage(AvatarTeamMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                                     this.avatarTeamMap_.getMutableMap().put(avatarTeamMap__.getKey(), avatarTeamMap__.getValue());
                                     break;
-                                case 80:
+                                case 112:
                                     if ((mutable_bitField0_ & 2) == 0) {
                                         this.backupAvatarTeamOrderList_ = newIntList();
                                         mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
                                     }
                                     this.backupAvatarTeamOrderList_.addInt(input.readUInt32());
                                     break;
-                                case 82:
-                                    int limit2 = input.pushLimit(input.readRawVarint32());
+                                case 114:
+                                    int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 2) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.backupAvatarTeamOrderList_ = newIntList();
                                         mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
                                     }
                                     while (input.getBytesUntilLimit() > 0) {
                                         this.backupAvatarTeamOrderList_.addInt(input.readUInt32());
+                                    }
+                                    input.popLimit(limit);
+                                    break;
+                                case 120:
+                                    if ((mutable_bitField0_ & 1) == 0) {
+                                        this.tempAvatarGuidList_ = newLongList();
+                                        mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                    }
+                                    this.tempAvatarGuidList_.addLong(input.readUInt64());
+                                    break;
+                                case 122:
+                                    int limit2 = input.pushLimit(input.readRawVarint32());
+                                    if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
+                                        this.tempAvatarGuidList_ = newLongList();
+                                        mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                    }
+                                    while (input.getBytesUntilLimit() > 0) {
+                                        this.tempAvatarGuidList_.addLong(input.readUInt64());
                                     }
                                     input.popLimit(limit2);
                                     break;
@@ -260,11 +260,11 @@ public final class AvatarTeamAllDataNotifyOuterClass {
                     }
                 }
             } finally {
-                if ((mutable_bitField0_ & 1) != 0) {
-                    this.tempAvatarGuidList_.makeImmutable();
-                }
                 if ((mutable_bitField0_ & 2) != 0) {
                     this.backupAvatarTeamOrderList_.makeImmutable();
+                }
+                if ((mutable_bitField0_ & 1) != 0) {
+                    this.tempAvatarGuidList_.makeImmutable();
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -313,7 +313,7 @@ public final class AvatarTeamAllDataNotifyOuterClass {
         /* access modifiers changed from: private */
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarTeamAllDataNotifyOuterClass$AvatarTeamAllDataNotify$AvatarTeamMapDefaultEntryHolder.class */
         public static final class AvatarTeamMapDefaultEntryHolder {
-            static final MapEntry<Integer, AvatarTeamOuterClass.AvatarTeam> defaultEntry = MapEntry.newDefaultInstance(AvatarTeamAllDataNotifyOuterClass.f651x23f94a72, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.MESSAGE, AvatarTeamOuterClass.AvatarTeam.getDefaultInstance());
+            static final MapEntry<Integer, AvatarTeamOuterClass.AvatarTeam> defaultEntry = MapEntry.newDefaultInstance(AvatarTeamAllDataNotifyOuterClass.f650x23f94a72, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.MESSAGE, AvatarTeamOuterClass.AvatarTeam.getDefaultInstance());
 
             private AvatarTeamMapDefaultEntryHolder() {
             }
@@ -378,20 +378,20 @@ public final class AvatarTeamAllDataNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (getTempAvatarGuidListList().size() > 0) {
-                output.writeUInt32NoTag(18);
-                output.writeUInt32NoTag(this.tempAvatarGuidListMemoizedSerializedSize);
-            }
-            for (int i = 0; i < this.tempAvatarGuidList_.size(); i++) {
-                output.writeUInt64NoTag(this.tempAvatarGuidList_.getLong(i));
-            }
-            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetAvatarTeamMap(), AvatarTeamMapDefaultEntryHolder.defaultEntry, 5);
+            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetAvatarTeamMap(), AvatarTeamMapDefaultEntryHolder.defaultEntry, 12);
             if (getBackupAvatarTeamOrderListList().size() > 0) {
-                output.writeUInt32NoTag(82);
+                output.writeUInt32NoTag(114);
                 output.writeUInt32NoTag(this.backupAvatarTeamOrderListMemoizedSerializedSize);
             }
-            for (int i2 = 0; i2 < this.backupAvatarTeamOrderList_.size(); i2++) {
-                output.writeUInt32NoTag(this.backupAvatarTeamOrderList_.getInt(i2));
+            for (int i = 0; i < this.backupAvatarTeamOrderList_.size(); i++) {
+                output.writeUInt32NoTag(this.backupAvatarTeamOrderList_.getInt(i));
+            }
+            if (getTempAvatarGuidListList().size() > 0) {
+                output.writeUInt32NoTag(122);
+                output.writeUInt32NoTag(this.tempAvatarGuidListMemoizedSerializedSize);
+            }
+            for (int i2 = 0; i2 < this.tempAvatarGuidList_.size(); i2++) {
+                output.writeUInt64NoTag(this.tempAvatarGuidList_.getLong(i2));
             }
             this.unknownFields.writeTo(output);
         }
@@ -402,30 +402,31 @@ public final class AvatarTeamAllDataNotifyOuterClass {
             if (size != -1) {
                 return size;
             }
-            int dataSize = 0;
-            for (int i = 0; i < this.tempAvatarGuidList_.size(); i++) {
-                dataSize += CodedOutputStream.computeUInt64SizeNoTag(this.tempAvatarGuidList_.getLong(i));
-            }
-            int size2 = 0 + dataSize;
-            if (!getTempAvatarGuidListList().isEmpty()) {
-                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
-            }
-            this.tempAvatarGuidListMemoizedSerializedSize = dataSize;
+            int size2 = 0;
             for (Map.Entry<Integer, AvatarTeamOuterClass.AvatarTeam> entry : internalGetAvatarTeamMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(5, AvatarTeamMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+                size2 += CodedOutputStream.computeMessageSize(12, AvatarTeamMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
             }
-            int dataSize2 = 0;
-            for (int i2 = 0; i2 < this.backupAvatarTeamOrderList_.size(); i2++) {
-                dataSize2 += CodedOutputStream.computeUInt32SizeNoTag(this.backupAvatarTeamOrderList_.getInt(i2));
+            int dataSize = 0;
+            for (int i = 0; i < this.backupAvatarTeamOrderList_.size(); i++) {
+                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.backupAvatarTeamOrderList_.getInt(i));
             }
-            int size3 = size2 + dataSize2;
+            int size3 = size2 + dataSize;
             if (!getBackupAvatarTeamOrderListList().isEmpty()) {
-                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize2);
+                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
-            this.backupAvatarTeamOrderListMemoizedSerializedSize = dataSize2;
-            int size4 = size3 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size4;
-            return size4;
+            this.backupAvatarTeamOrderListMemoizedSerializedSize = dataSize;
+            int dataSize2 = 0;
+            for (int i2 = 0; i2 < this.tempAvatarGuidList_.size(); i2++) {
+                dataSize2 += CodedOutputStream.computeUInt64SizeNoTag(this.tempAvatarGuidList_.getLong(i2));
+            }
+            int size4 = size3 + dataSize2;
+            if (!getTempAvatarGuidListList().isEmpty()) {
+                size4 = size4 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize2);
+            }
+            this.tempAvatarGuidListMemoizedSerializedSize = dataSize2;
+            int size5 = size4 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size5;
+            return size5;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -447,13 +448,13 @@ public final class AvatarTeamAllDataNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getTempAvatarGuidListCount() > 0) {
-                hash = (53 * ((37 * hash) + 2)) + getTempAvatarGuidListList().hashCode();
+                hash = (53 * ((37 * hash) + 15)) + getTempAvatarGuidListList().hashCode();
             }
             if (getBackupAvatarTeamOrderListCount() > 0) {
-                hash = (53 * ((37 * hash) + 10)) + getBackupAvatarTeamOrderListList().hashCode();
+                hash = (53 * ((37 * hash) + 14)) + getBackupAvatarTeamOrderListList().hashCode();
             }
             if (!internalGetAvatarTeamMap().getMap().isEmpty()) {
-                hash = (53 * ((37 * hash) + 5)) + internalGetAvatarTeamMap().hashCode();
+                hash = (53 * ((37 * hash) + 12)) + internalGetAvatarTeamMap().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -576,7 +577,7 @@ public final class AvatarTeamAllDataNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 5: goto L_0x0014;
+                        case 12: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -629,7 +630,7 @@ public final class AvatarTeamAllDataNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 5: goto L_0x0014;
+                        case 12: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4

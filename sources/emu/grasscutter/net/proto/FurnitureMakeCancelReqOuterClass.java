@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeCancelReqOuterClass.class */
 public final class FurnitureMakeCancelReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cFurnitureMakeCancelReq.proto\"8\n\u0016FurnitureMakeCancelReq\u0012\u000f\n\u0007make_id\u0018\u000e \u0001(\r\u0012\r\n\u0005index\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cFurnitureMakeCancelReq.proto\"7\n\u0016FurnitureMakeCancelReq\u0012\u000e\n\u0006makeId\u0018\u0005 \u0001(\r\u0012\r\n\u0005index\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_FurnitureMakeCancelReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_FurnitureMakeCancelReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FurnitureMakeCancelReq_descriptor, new String[]{"MakeId", "Index"});
 
@@ -43,9 +43,9 @@ public final class FurnitureMakeCancelReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeCancelReqOuterClass$FurnitureMakeCancelReq.class */
     public static final class FurnitureMakeCancelReq extends GeneratedMessageV3 implements FurnitureMakeCancelReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MAKE_ID_FIELD_NUMBER = 14;
+        public static final int MAKEID_FIELD_NUMBER = 5;
         private int makeId_;
-        public static final int INDEX_FIELD_NUMBER = 4;
+        public static final int INDEX_FIELD_NUMBER = 12;
         private int index_;
         private byte memoizedIsInitialized;
         private static final FurnitureMakeCancelReq DEFAULT_INSTANCE = new FurnitureMakeCancelReq();
@@ -92,11 +92,11 @@ public final class FurnitureMakeCancelReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 32:
-                                this.index_ = input.readUInt32();
-                                break;
-                            case 112:
+                            case 40:
                                 this.makeId_ = input.readUInt32();
+                                break;
+                            case 96:
+                                this.index_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -152,11 +152,11 @@ public final class FurnitureMakeCancelReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.index_ != 0) {
-                output.writeUInt32(4, this.index_);
-            }
             if (this.makeId_ != 0) {
-                output.writeUInt32(14, this.makeId_);
+                output.writeUInt32(5, this.makeId_);
+            }
+            if (this.index_ != 0) {
+                output.writeUInt32(12, this.index_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class FurnitureMakeCancelReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.index_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.index_);
-            }
             if (this.makeId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.makeId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.makeId_);
+            }
+            if (this.index_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(12, this.index_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class FurnitureMakeCancelReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getMakeId())) + 4)) + getIndex())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getMakeId())) + 12)) + getIndex())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

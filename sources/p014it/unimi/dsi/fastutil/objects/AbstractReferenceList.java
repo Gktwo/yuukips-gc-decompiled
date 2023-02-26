@@ -119,33 +119,33 @@ public abstract class AbstractReferenceList<K> extends AbstractReferenceCollecti
     public static final class IndexBasedSpliterator<K> extends ObjectSpliterators.LateBindingSizeIndexBasedSpliterator<K> {
 
         /* renamed from: l */
-        final ReferenceList<K> f2537l;
+        final ReferenceList<K> f2501l;
 
         /* access modifiers changed from: package-private */
         public IndexBasedSpliterator(ReferenceList<K> l, int pos) {
             super(pos);
-            this.f2537l = l;
+            this.f2501l = l;
         }
 
         IndexBasedSpliterator(ReferenceList<K> l, int pos, int maxPos) {
             super(pos, maxPos);
-            this.f2537l = l;
+            this.f2501l = l;
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterators.LateBindingSizeIndexBasedSpliterator
         protected final int getMaxPosFromBackingStore() {
-            return this.f2537l.size();
+            return this.f2501l.size();
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterators.AbstractIndexBasedSpliterator
         protected final K get(int i) {
-            return this.f2537l.get(i);
+            return this.f2501l.get(i);
         }
 
         /* access modifiers changed from: protected */
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterators.AbstractIndexBasedSpliterator
         public final IndexBasedSpliterator<K> makeForSplit(int pos, int maxPos) {
-            return new IndexBasedSpliterator<>(this.f2537l, pos, maxPos);
+            return new IndexBasedSpliterator<>(this.f2501l, pos, maxPos);
         }
     }
 
@@ -452,11 +452,11 @@ public abstract class AbstractReferenceList<K> extends AbstractReferenceCollecti
         private static final long serialVersionUID = -7046029254386353129L;
 
         /* renamed from: l */
-        protected final ReferenceList<K> f2538l;
+        protected final ReferenceList<K> f2502l;
         protected final int from;
 
         /* renamed from: to */
-        protected int f2539to;
+        protected int f2503to;
         static final /* synthetic */ boolean $assertionsDisabled;
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, p014it.unimi.dsi.fastutil.objects.ReferenceList, java.util.List
@@ -469,18 +469,18 @@ public abstract class AbstractReferenceList<K> extends AbstractReferenceCollecti
         }
 
         public ReferenceSubList(ReferenceList<K> l, int from, int to) {
-            this.f2538l = l;
+            this.f2502l = l;
             this.from = from;
-            this.f2539to = to;
+            this.f2503to = to;
         }
 
         /* access modifiers changed from: private */
         public boolean assertRange() {
-            if (!$assertionsDisabled && this.from > this.f2538l.size()) {
+            if (!$assertionsDisabled && this.from > this.f2502l.size()) {
                 throw new AssertionError();
-            } else if (!$assertionsDisabled && this.f2539to > this.f2538l.size()) {
+            } else if (!$assertionsDisabled && this.f2503to > this.f2502l.size()) {
                 throw new AssertionError();
-            } else if ($assertionsDisabled || this.f2539to >= this.from) {
+            } else if ($assertionsDisabled || this.f2503to >= this.from) {
                 return true;
             } else {
                 throw new AssertionError();
@@ -489,8 +489,8 @@ public abstract class AbstractReferenceList<K> extends AbstractReferenceCollecti
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, java.util.AbstractCollection, java.util.Collection, java.util.List
         public boolean add(K k) {
-            this.f2538l.add(this.f2539to, k);
-            this.f2539to++;
+            this.f2502l.add(this.f2503to, k);
+            this.f2503to++;
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }
@@ -500,8 +500,8 @@ public abstract class AbstractReferenceList<K> extends AbstractReferenceCollecti
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, java.util.List
         public void add(int index, K k) {
             ensureIndex(index);
-            this.f2538l.add(this.from + index, k);
-            this.f2539to++;
+            this.f2502l.add(this.from + index, k);
+            this.f2503to++;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -510,32 +510,32 @@ public abstract class AbstractReferenceList<K> extends AbstractReferenceCollecti
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, java.util.List
         public boolean addAll(int index, Collection<? extends K> c) {
             ensureIndex(index);
-            this.f2539to += c.size();
-            return this.f2538l.addAll(this.from + index, c);
+            this.f2503to += c.size();
+            return this.f2502l.addAll(this.from + index, c);
         }
 
         @Override // java.util.List
         public K get(int index) {
             ensureRestrictedIndex(index);
-            return this.f2538l.get(this.from + index);
+            return this.f2502l.get(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, java.util.List
         public K remove(int index) {
             ensureRestrictedIndex(index);
-            this.f2539to--;
-            return this.f2538l.remove(this.from + index);
+            this.f2503to--;
+            return this.f2502l.remove(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, java.util.List
         public K set(int index, K k) {
             ensureRestrictedIndex(index);
-            return this.f2538l.set(this.from + index, k);
+            return this.f2502l.set(this.from + index, k);
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public int size() {
-            return this.f2539to - this.from;
+            return this.f2503to - this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, p014it.unimi.dsi.fastutil.objects.ReferenceList
@@ -544,15 +544,15 @@ public abstract class AbstractReferenceList<K> extends AbstractReferenceCollecti
             if (from + length > size()) {
                 throw new IndexOutOfBoundsException("End index (" + from + length + ") is greater than list size (" + size() + ")");
             }
-            this.f2538l.getElements(this.from + from, a, offset, length);
+            this.f2502l.getElements(this.from + from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, p014it.unimi.dsi.fastutil.objects.ReferenceList
         public void removeElements(int from, int to) {
             ensureIndex(from);
             ensureIndex(to);
-            this.f2538l.removeElements(this.from + from, this.from + to);
-            this.f2539to -= to - from;
+            this.f2502l.removeElements(this.from + from, this.from + to);
+            this.f2503to -= to - from;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -561,8 +561,8 @@ public abstract class AbstractReferenceList<K> extends AbstractReferenceCollecti
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, p014it.unimi.dsi.fastutil.objects.ReferenceList
         public void addElements(int index, K[] a, int offset, int length) {
             ensureIndex(index);
-            this.f2538l.addElements(this.from + index, a, offset, length);
-            this.f2539to += length;
+            this.f2502l.addElements(this.from + index, a, offset, length);
+            this.f2503to += length;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -571,7 +571,7 @@ public abstract class AbstractReferenceList<K> extends AbstractReferenceCollecti
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, p014it.unimi.dsi.fastutil.objects.ReferenceList
         public void setElements(int index, K[] a, int offset, int length) {
             ensureIndex(index);
-            this.f2538l.setElements(this.from + index, a, offset, length);
+            this.f2502l.setElements(this.from + index, a, offset, length);
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -593,7 +593,7 @@ public abstract class AbstractReferenceList<K> extends AbstractReferenceCollecti
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectIterators.AbstractIndexBasedIterator
             protected final K get(int i) {
-                return ReferenceSubList.this.f2538l.get(ReferenceSubList.this.from + i);
+                return ReferenceSubList.this.f2502l.get(ReferenceSubList.this.from + i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectIterators.AbstractIndexBasedListIterator
@@ -613,7 +613,7 @@ public abstract class AbstractReferenceList<K> extends AbstractReferenceCollecti
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectIterators.AbstractIndexBasedIterator
             protected final int getMaxPos() {
-                return ReferenceSubList.this.f2539to - ReferenceSubList.this.from;
+                return ReferenceSubList.this.f2503to - ReferenceSubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectIterators.AbstractIndexBasedListIterator, p014it.unimi.dsi.fastutil.objects.ObjectListIterator, java.util.ListIterator
@@ -655,7 +655,7 @@ public abstract class AbstractReferenceList<K> extends AbstractReferenceCollecti
 
             @Override // java.util.Iterator, java.util.ListIterator
             public boolean hasNext() {
-                return this.parent.nextIndex() < ReferenceSubList.this.f2539to;
+                return this.parent.nextIndex() < ReferenceSubList.this.f2503to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -714,8 +714,8 @@ public abstract class AbstractReferenceList<K> extends AbstractReferenceCollecti
                 }
                 int currentPos = this.parent.nextIndex();
                 int parentNewPos = currentPos + n;
-                if (parentNewPos > ReferenceSubList.this.f2539to) {
-                    parentNewPos = ReferenceSubList.this.f2539to;
+                if (parentNewPos > ReferenceSubList.this.f2503to) {
+                    parentNewPos = ReferenceSubList.this.f2503to;
                 }
                 return this.parent.skip(parentNewPos - currentPos);
             }
@@ -724,12 +724,12 @@ public abstract class AbstractReferenceList<K> extends AbstractReferenceCollecti
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, p014it.unimi.dsi.fastutil.objects.ReferenceList, java.util.List
         public ObjectListIterator<K> listIterator(int index) {
             ensureIndex(index);
-            return this.f2538l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f2538l.listIterator(index + this.from));
+            return this.f2502l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f2502l.listIterator(index + this.from));
         }
 
         @Override // java.util.Collection, java.lang.Iterable, p014it.unimi.dsi.fastutil.objects.ReferenceCollection, p014it.unimi.dsi.fastutil.objects.ObjectIterable, p014it.unimi.dsi.fastutil.objects.ObjectCollection, p014it.unimi.dsi.fastutil.objects.ObjectSet, java.util.Set
         public ObjectSpliterator<K> spliterator() {
-            return this.f2538l instanceof RandomAccess ? new IndexBasedSpliterator(this.f2538l, this.from, this.f2539to) : spliterator();
+            return this.f2502l instanceof RandomAccess ? new IndexBasedSpliterator(this.f2502l, this.from, this.f2503to) : spliterator();
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, p014it.unimi.dsi.fastutil.objects.ReferenceList, java.util.List

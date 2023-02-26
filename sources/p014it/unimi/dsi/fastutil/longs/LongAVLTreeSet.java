@@ -738,7 +738,7 @@ public class LongAVLTreeSet extends AbstractLongSortedSet implements Serializabl
         long from;
 
         /* renamed from: to */
-        long f2383to;
+        long f2347to;
         boolean bottom;
         boolean top;
 
@@ -746,7 +746,7 @@ public class LongAVLTreeSet extends AbstractLongSortedSet implements Serializabl
             if (bottom || top || LongAVLTreeSet.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f2383to = to;
+                this.f2347to = to;
                 this.top = top;
                 return;
             }
@@ -764,7 +764,7 @@ public class LongAVLTreeSet extends AbstractLongSortedSet implements Serializabl
 
         /* renamed from: in */
         final boolean m671in(long k) {
-            return (this.bottom || LongAVLTreeSet.this.compare(k, this.from) >= 0) && (this.top || LongAVLTreeSet.this.compare(k, this.f2383to) < 0);
+            return (this.bottom || LongAVLTreeSet.this.compare(k, this.from) >= 0) && (this.top || LongAVLTreeSet.this.compare(k, this.f2347to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongCollection, p014it.unimi.dsi.fastutil.longs.LongCollection
@@ -777,7 +777,7 @@ public class LongAVLTreeSet extends AbstractLongSortedSet implements Serializabl
             if (m671in(k)) {
                 return LongAVLTreeSet.this.add(k);
             }
-            throw new IllegalArgumentException("Element (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2383to)) + ")");
+            throw new IllegalArgumentException("Element (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2347to)) + ")");
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongSet, p014it.unimi.dsi.fastutil.longs.LongSet
@@ -822,7 +822,7 @@ public class LongAVLTreeSet extends AbstractLongSortedSet implements Serializabl
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongSortedSet
         public LongSortedSet headSet(long to) {
-            if (!this.top && LongAVLTreeSet.this.compare(to, this.f2383to) >= 0) {
+            if (!this.top && LongAVLTreeSet.this.compare(to, this.f2347to) >= 0) {
                 return this;
             }
             return new Subset(this.from, this.bottom, to, false);
@@ -833,7 +833,7 @@ public class LongAVLTreeSet extends AbstractLongSortedSet implements Serializabl
             if (!this.bottom && LongAVLTreeSet.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Subset(from, false, this.f2383to, this.top);
+            return new Subset(from, false, this.f2347to, this.top);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -852,7 +852,7 @@ public class LongAVLTreeSet extends AbstractLongSortedSet implements Serializabl
             }
             long to = j2;
             if (!this.top) {
-                to = LongAVLTreeSet.this.compare(j2, this.f2383to) < 0 ? j2 : this.f2383to;
+                to = LongAVLTreeSet.this.compare(j2, this.f2347to) < 0 ? j2 : this.f2347to;
             }
             long from = j;
             if (!this.bottom) {
@@ -860,7 +860,7 @@ public class LongAVLTreeSet extends AbstractLongSortedSet implements Serializabl
             }
             if (!this.top && !this.bottom) {
                 if ((from == 1 ? 1 : 0) == this.from) {
-                    if ((to == 1 ? 1 : 0) == this.f2383to) {
+                    if ((to == 1 ? 1 : 0) == this.f2347to) {
                         return this;
                     }
                 }
@@ -884,7 +884,7 @@ public class LongAVLTreeSet extends AbstractLongSortedSet implements Serializabl
             if (e == null) {
                 return null;
             }
-            if (this.top || LongAVLTreeSet.this.compare(e.key, this.f2383to) < 0) {
+            if (this.top || LongAVLTreeSet.this.compare(e.key, this.f2347to) < 0) {
                 return e;
             }
             return null;
@@ -898,8 +898,8 @@ public class LongAVLTreeSet extends AbstractLongSortedSet implements Serializabl
             if (this.top) {
                 e = LongAVLTreeSet.this.lastEntry;
             } else {
-                e = LongAVLTreeSet.this.locateKey(this.f2383to);
-                if (LongAVLTreeSet.this.compare(e.key, this.f2383to) >= 0) {
+                e = LongAVLTreeSet.this.locateKey(this.f2347to);
+                if (LongAVLTreeSet.this.compare(e.key, this.f2347to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -977,7 +977,7 @@ public class LongAVLTreeSet extends AbstractLongSortedSet implements Serializabl
             @Override // p014it.unimi.dsi.fastutil.longs.LongAVLTreeSet.SetIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Subset.this.top && this.next != null && LongAVLTreeSet.this.compare(this.next.key, Subset.this.f2383to) >= 0) {
+                if (!Subset.this.top && this.next != null && LongAVLTreeSet.this.compare(this.next.key, Subset.this.f2347to) >= 0) {
                     this.next = null;
                 }
             }

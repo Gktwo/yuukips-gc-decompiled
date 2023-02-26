@@ -107,8 +107,8 @@ public class BaseLib extends TwoArgFunction implements ResourceFinder {
 
     /* renamed from: org.luaj.vm2.lib.BaseLib$error */
     /* loaded from: grasscutter.jar:org/luaj/vm2/lib/BaseLib$error.class */
-    static final class C5868error extends TwoArgFunction {
-        C5868error() {
+    static final class C5860error extends TwoArgFunction {
+        C5860error() {
         }
 
         @Override // org.luaj.vm2.lib.TwoArgFunction, org.luaj.vm2.lib.LibFunction, org.luaj.vm2.LuaValue
@@ -451,8 +451,8 @@ public class BaseLib extends TwoArgFunction implements ResourceFinder {
 
     /* renamed from: org.luaj.vm2.lib.BaseLib$type */
     /* loaded from: grasscutter.jar:org/luaj/vm2/lib/BaseLib$type.class */
-    static final class C5869type extends LibFunction {
-        C5869type() {
+    static final class C5861type extends LibFunction {
+        C5861type() {
         }
 
         @Override // org.luaj.vm2.lib.LibFunction, org.luaj.vm2.LuaValue
@@ -494,7 +494,7 @@ public class BaseLib extends TwoArgFunction implements ResourceFinder {
         luaValue2.set("assert", new _assert());
         luaValue2.set("collectgarbage", new collectgarbage());
         luaValue2.set("dofile", new dofile(this));
-        luaValue2.set("error", new C5868error());
+        luaValue2.set("error", new C5860error());
         luaValue2.set("getmetatable", new getmetatable());
         luaValue2.set("load", new load(this));
         luaValue2.set("loadfile", new loadfile(this));
@@ -508,7 +508,7 @@ public class BaseLib extends TwoArgFunction implements ResourceFinder {
         luaValue2.set("setmetatable", new setmetatable());
         luaValue2.set("tonumber", new tonumber());
         luaValue2.set("tostring", new tostring());
-        luaValue2.set("type", new C5869type());
+        luaValue2.set("type", new C5861type());
         luaValue2.set("xpcall", new xpcall(this));
         next next2 = new next();
         luaValue2.set(Tmux.CMD_NEXT, next2);

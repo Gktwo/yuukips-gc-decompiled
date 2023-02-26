@@ -48,15 +48,15 @@ public final class Vector3IntOuterClass {
         public static final int X_FIELD_NUMBER = 1;
 
         /* renamed from: x_ */
-        private int f907x_;
+        private int f876x_;
         public static final int Y_FIELD_NUMBER = 2;
 
         /* renamed from: y_ */
-        private int f908y_;
+        private int f877y_;
         public static final int Z_FIELD_NUMBER = 3;
 
         /* renamed from: z_ */
-        private int f909z_;
+        private int f878z_;
         private byte memoizedIsInitialized;
         private static final Vector3Int DEFAULT_INSTANCE = new Vector3Int();
         private static final Parser<Vector3Int> PARSER = new AbstractParser<Vector3Int>() { // from class: emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3Int.1
@@ -104,13 +104,13 @@ public final class Vector3IntOuterClass {
                                     done = true;
                                     break;
                                 case 8:
-                                    this.f907x_ = input.readInt32();
+                                    this.f876x_ = input.readInt32();
                                     break;
                                 case 16:
-                                    this.f908y_ = input.readInt32();
+                                    this.f877y_ = input.readInt32();
                                     break;
                                 case 24:
-                                    this.f909z_ = input.readInt32();
+                                    this.f878z_ = input.readInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -144,17 +144,17 @@ public final class Vector3IntOuterClass {
 
         @Override // emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder
         public int getX() {
-            return this.f907x_;
+            return this.f876x_;
         }
 
         @Override // emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder
         public int getY() {
-            return this.f908y_;
+            return this.f877y_;
         }
 
         @Override // emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder
         public int getZ() {
-            return this.f909z_;
+            return this.f878z_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -172,14 +172,14 @@ public final class Vector3IntOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.f907x_ != 0) {
-                output.writeInt32(1, this.f907x_);
+            if (this.f876x_ != 0) {
+                output.writeInt32(1, this.f876x_);
             }
-            if (this.f908y_ != 0) {
-                output.writeInt32(2, this.f908y_);
+            if (this.f877y_ != 0) {
+                output.writeInt32(2, this.f877y_);
             }
-            if (this.f909z_ != 0) {
-                output.writeInt32(3, this.f909z_);
+            if (this.f878z_ != 0) {
+                output.writeInt32(3, this.f878z_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -191,14 +191,14 @@ public final class Vector3IntOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.f907x_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(1, this.f907x_);
+            if (this.f876x_ != 0) {
+                size2 = 0 + CodedOutputStream.computeInt32Size(1, this.f876x_);
             }
-            if (this.f908y_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(2, this.f908y_);
+            if (this.f877y_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(2, this.f877y_);
             }
-            if (this.f909z_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(3, this.f909z_);
+            if (this.f878z_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(3, this.f878z_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -303,13 +303,13 @@ public final class Vector3IntOuterClass {
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements Vector3IntOrBuilder {
 
             /* renamed from: x_ */
-            private int f910x_;
+            private int f879x_;
 
             /* renamed from: y_ */
-            private int f911y_;
+            private int f880y_;
 
             /* renamed from: z_ */
-            private int f912z_;
+            private int f881z_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return Vector3IntOuterClass.internal_static_Vector3Int_descriptor;
@@ -337,9 +337,9 @@ public final class Vector3IntOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.f910x_ = 0;
-                this.f911y_ = 0;
-                this.f912z_ = 0;
+                this.f879x_ = 0;
+                this.f880y_ = 0;
+                this.f881z_ = 0;
                 return this;
             }
 
@@ -365,9 +365,9 @@ public final class Vector3IntOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Vector3Int buildPartial() {
                 Vector3Int result = new Vector3Int(this);
-                result.f907x_ = this.f910x_;
-                result.f908y_ = this.f911y_;
-                result.f909z_ = this.f912z_;
+                result.f876x_ = this.f879x_;
+                result.f877y_ = this.f880y_;
+                result.f878z_ = this.f881z_;
                 onBuilt();
                 return result;
             }
@@ -458,51 +458,51 @@ public final class Vector3IntOuterClass {
 
             @Override // emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder
             public int getX() {
-                return this.f910x_;
+                return this.f879x_;
             }
 
             public Builder setX(int value) {
-                this.f910x_ = value;
+                this.f879x_ = value;
                 onChanged();
                 return this;
             }
 
             public Builder clearX() {
-                this.f910x_ = 0;
+                this.f879x_ = 0;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder
             public int getY() {
-                return this.f911y_;
+                return this.f880y_;
             }
 
             public Builder setY(int value) {
-                this.f911y_ = value;
+                this.f880y_ = value;
                 onChanged();
                 return this;
             }
 
             public Builder clearY() {
-                this.f911y_ = 0;
+                this.f880y_ = 0;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.Vector3IntOuterClass.Vector3IntOrBuilder
             public int getZ() {
-                return this.f912z_;
+                return this.f881z_;
             }
 
             public Builder setZ(int value) {
-                this.f912z_ = value;
+                this.f881z_ = value;
                 onChanged();
                 return this;
             }
 
             public Builder clearZ() {
-                this.f912z_ = 0;
+                this.f881z_ = 0;
                 onChanged();
                 return this;
             }

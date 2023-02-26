@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityEmbryoOuterClass.class */
 public final class AbilityEmbryoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013AbilityEmbryo.proto\"b\n\rAbilityEmbryo\u0012\u0012\n\nability_id\u0018\u0001 \u0001(\r\u0012\u0019\n\u0011ability_name_hash\u0018\u0002 \u0001(\u0007\u0012\"\n\u001aability_override_name_hash\u0018\u0003 \u0001(\u0007B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013AbilityEmbryo.proto\"\\\n\rAbilityEmbryo\u0012\u0011\n\tabilityId\u0018\u0001 \u0001(\r\u0012\u0017\n\u000fabilityNameHash\u0018\u0002 \u0001(\u0007\u0012\u001f\n\u0017abilityOverrideNameHash\u0018\u0003 \u0001(\u0007B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AbilityEmbryo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AbilityEmbryo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AbilityEmbryo_descriptor, new String[]{"AbilityId", "AbilityNameHash", "AbilityOverrideNameHash"});
 
@@ -45,11 +45,11 @@ public final class AbilityEmbryoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityEmbryoOuterClass$AbilityEmbryo.class */
     public static final class AbilityEmbryo extends GeneratedMessageV3 implements AbilityEmbryoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ABILITY_ID_FIELD_NUMBER = 1;
+        public static final int ABILITYID_FIELD_NUMBER = 1;
         private int abilityId_;
-        public static final int ABILITY_NAME_HASH_FIELD_NUMBER = 2;
+        public static final int ABILITYNAMEHASH_FIELD_NUMBER = 2;
         private int abilityNameHash_;
-        public static final int ABILITY_OVERRIDE_NAME_HASH_FIELD_NUMBER = 3;
+        public static final int ABILITYOVERRIDENAMEHASH_FIELD_NUMBER = 3;
         private int abilityOverrideNameHash_;
         private byte memoizedIsInitialized;
         private static final AbilityEmbryo DEFAULT_INSTANCE = new AbilityEmbryo();

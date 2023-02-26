@@ -12,7 +12,7 @@ public class ShortArrayIndirectPriorityQueue implements ShortIndirectPriorityQue
     protected int size;
 
     /* renamed from: c */
-    protected ShortComparator f3022c;
+    protected ShortComparator f2986c;
     protected int firstIndex;
     protected boolean firstIndexValid;
 
@@ -22,7 +22,7 @@ public class ShortArrayIndirectPriorityQueue implements ShortIndirectPriorityQue
             this.array = new int[capacity];
         }
         this.refArray = refArray;
-        this.f3022c = c;
+        this.f2986c = c;
     }
 
     public ShortArrayIndirectPriorityQueue(short[] refArray, int capacity) {
@@ -63,12 +63,12 @@ public class ShortArrayIndirectPriorityQueue implements ShortIndirectPriorityQue
         int i = this.size - 1;
         int firstIndex = i;
         short first = this.refArray[this.array[firstIndex]];
-        if (this.f3022c != null) {
+        if (this.f2986c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f3022c.compare(this.refArray[this.array[i]], first) < 0) {
+                } else if (this.f2986c.compare(this.refArray[this.array[i]], first) < 0) {
                     firstIndex = i;
                     first = this.refArray[this.array[i]];
                 }
@@ -92,12 +92,12 @@ public class ShortArrayIndirectPriorityQueue implements ShortIndirectPriorityQue
         int i = this.size - 1;
         int lastIndex = i;
         short last = this.refArray[this.array[lastIndex]];
-        if (this.f3022c != null) {
+        if (this.f2986c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f3022c.compare(last, this.refArray[this.array[i]]) < 0) {
+                } else if (this.f2986c.compare(last, this.refArray[this.array[i]]) < 0) {
                     lastIndex = i;
                     last = this.refArray[this.array[i]];
                 }
@@ -138,11 +138,11 @@ public class ShortArrayIndirectPriorityQueue implements ShortIndirectPriorityQue
         }
         if (!this.firstIndexValid) {
             this.firstIndexValid = false;
-        } else if (this.f3022c == null) {
+        } else if (this.f2986c == null) {
             if (this.refArray[x] < this.refArray[this.array[this.firstIndex]]) {
                 this.firstIndex = this.size;
             }
-        } else if (this.f3022c.compare(this.refArray[x], this.refArray[this.array[this.firstIndex]]) < 0) {
+        } else if (this.f2986c.compare(this.refArray[x], this.refArray[this.array[this.firstIndex]]) < 0) {
             this.firstIndex = this.size;
         }
         int[] iArr = this.array;
@@ -255,7 +255,7 @@ public class ShortArrayIndirectPriorityQueue implements ShortIndirectPriorityQue
     /* Return type fixed from 'it.unimi.dsi.fastutil.shorts.ShortComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.shorts.ShortIndirectPriorityQueue, p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public Comparator<? super Short> comparator() {
-        return this.f3022c;
+        return this.f2986c;
     }
 
     public String toString() {

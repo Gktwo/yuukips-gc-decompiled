@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerCompoundMaterialReqOuterClass.class */
 public final class PlayerCompoundMaterialReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fPlayerCompoundMaterialReq.proto\"?\n\u0019PlayerCompoundMaterialReq\u0012\u0013\n\u000bcompound_id\u0018\u0004 \u0001(\r\u0012\r\n\u0005count\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fPlayerCompoundMaterialReq.proto\">\n\u0019PlayerCompoundMaterialReq\u0012\r\n\u0005count\u0018\u0003 \u0001(\r\u0012\u0012\n\ncompoundId\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PlayerCompoundMaterialReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerCompoundMaterialReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerCompoundMaterialReq_descriptor, new String[]{"CompoundId", "Count"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerCompoundMaterialReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerCompoundMaterialReq_descriptor, new String[]{"Count", "CompoundId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerCompoundMaterialReqOuterClass$PlayerCompoundMaterialReqOrBuilder.class */
     public interface PlayerCompoundMaterialReqOrBuilder extends MessageOrBuilder {
-        int getCompoundId();
-
         int getCount();
+
+        int getCompoundId();
     }
 
     private PlayerCompoundMaterialReqOuterClass() {
@@ -43,10 +43,10 @@ public final class PlayerCompoundMaterialReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerCompoundMaterialReqOuterClass$PlayerCompoundMaterialReq.class */
     public static final class PlayerCompoundMaterialReq extends GeneratedMessageV3 implements PlayerCompoundMaterialReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int COMPOUND_ID_FIELD_NUMBER = 4;
-        private int compoundId_;
         public static final int COUNT_FIELD_NUMBER = 3;
         private int count_;
+        public static final int COMPOUNDID_FIELD_NUMBER = 2;
+        private int compoundId_;
         private byte memoizedIsInitialized;
         private static final PlayerCompoundMaterialReq DEFAULT_INSTANCE = new PlayerCompoundMaterialReq();
         private static final Parser<PlayerCompoundMaterialReq> PARSER = new AbstractParser<PlayerCompoundMaterialReq>() { // from class: emu.grasscutter.net.proto.PlayerCompoundMaterialReqOuterClass.PlayerCompoundMaterialReq.1
@@ -92,11 +92,11 @@ public final class PlayerCompoundMaterialReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
+                            case 16:
+                                this.compoundId_ = input.readUInt32();
+                                break;
                             case 24:
                                 this.count_ = input.readUInt32();
-                                break;
-                            case 32:
-                                this.compoundId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -128,13 +128,13 @@ public final class PlayerCompoundMaterialReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PlayerCompoundMaterialReqOuterClass.PlayerCompoundMaterialReqOrBuilder
-        public int getCompoundId() {
-            return this.compoundId_;
+        public int getCount() {
+            return this.count_;
         }
 
         @Override // emu.grasscutter.net.proto.PlayerCompoundMaterialReqOuterClass.PlayerCompoundMaterialReqOrBuilder
-        public int getCount() {
-            return this.count_;
+        public int getCompoundId() {
+            return this.compoundId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -152,11 +152,11 @@ public final class PlayerCompoundMaterialReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.compoundId_ != 0) {
+                output.writeUInt32(2, this.compoundId_);
+            }
             if (this.count_ != 0) {
                 output.writeUInt32(3, this.count_);
-            }
-            if (this.compoundId_ != 0) {
-                output.writeUInt32(4, this.compoundId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class PlayerCompoundMaterialReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.count_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.count_);
-            }
             if (this.compoundId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(4, this.compoundId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.compoundId_);
+            }
+            if (this.count_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(3, this.count_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -188,7 +188,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
                 return equals(obj);
             }
             PlayerCompoundMaterialReq other = (PlayerCompoundMaterialReq) obj;
-            return getCompoundId() == other.getCompoundId() && getCount() == other.getCount() && this.unknownFields.equals(other.unknownFields);
+            return getCount() == other.getCount() && getCompoundId() == other.getCompoundId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -196,7 +196,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getCompoundId())) + 3)) + getCount())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getCount())) + 2)) + getCompoundId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -275,8 +275,8 @@ public final class PlayerCompoundMaterialReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerCompoundMaterialReqOuterClass$PlayerCompoundMaterialReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements PlayerCompoundMaterialReqOrBuilder {
-            private int compoundId_;
             private int count_;
+            private int compoundId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return PlayerCompoundMaterialReqOuterClass.internal_static_PlayerCompoundMaterialReq_descriptor;
@@ -304,8 +304,8 @@ public final class PlayerCompoundMaterialReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.compoundId_ = 0;
                 this.count_ = 0;
+                this.compoundId_ = 0;
                 return this;
             }
 
@@ -331,8 +331,8 @@ public final class PlayerCompoundMaterialReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public PlayerCompoundMaterialReq buildPartial() {
                 PlayerCompoundMaterialReq result = new PlayerCompoundMaterialReq(this);
-                result.compoundId_ = this.compoundId_;
                 result.count_ = this.count_;
+                result.compoundId_ = this.compoundId_;
                 onBuilt();
                 return result;
             }
@@ -380,11 +380,11 @@ public final class PlayerCompoundMaterialReqOuterClass {
                 if (other == PlayerCompoundMaterialReq.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getCompoundId() != 0) {
-                    setCompoundId(other.getCompoundId());
-                }
                 if (other.getCount() != 0) {
                     setCount(other.getCount());
+                }
+                if (other.getCompoundId() != 0) {
+                    setCompoundId(other.getCompoundId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -419,23 +419,6 @@ public final class PlayerCompoundMaterialReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.PlayerCompoundMaterialReqOuterClass.PlayerCompoundMaterialReqOrBuilder
-            public int getCompoundId() {
-                return this.compoundId_;
-            }
-
-            public Builder setCompoundId(int value) {
-                this.compoundId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearCompoundId() {
-                this.compoundId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerCompoundMaterialReqOuterClass.PlayerCompoundMaterialReqOrBuilder
             public int getCount() {
                 return this.count_;
             }
@@ -448,6 +431,23 @@ public final class PlayerCompoundMaterialReqOuterClass {
 
             public Builder clearCount() {
                 this.count_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerCompoundMaterialReqOuterClass.PlayerCompoundMaterialReqOrBuilder
+            public int getCompoundId() {
+                return this.compoundId_;
+            }
+
+            public Builder setCompoundId(int value) {
+                this.compoundId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearCompoundId() {
+                this.compoundId_ = 0;
                 onChanged();
                 return this;
             }

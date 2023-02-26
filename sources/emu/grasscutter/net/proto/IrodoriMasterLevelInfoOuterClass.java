@@ -25,12 +25,14 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriMasterLevelInfoOuterClass.class */
 public final class IrodoriMasterLevelInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cIrodoriMasterLevelInfo.proto\u001a\"IrodoriMasterLevelDetailInfo.proto\"^\n\u0016IrodoriMasterLevelInfo\u00122\n\u000bdetail_info\u0018\u0001 \u0003(\u000b2\u001d.IrodoriMasterLevelDetailInfo\u0012\u0010\n\blevel_id\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{IrodoriMasterLevelDetailInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cIrodoriMasterLevelInfo.proto\u001a\"IrodoriMasterLevelDetailInfo.proto\"\\\n\u0016IrodoriMasterLevelInfo\u0012\u000f\n\u0007levelId\u0018\u0001 \u0001(\r\u00121\n\ndetailInfo\u0018\u000e \u0003(\u000b2\u001d.IrodoriMasterLevelDetailInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{IrodoriMasterLevelDetailInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_IrodoriMasterLevelInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_IrodoriMasterLevelInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_IrodoriMasterLevelInfo_descriptor, new String[]{"DetailInfo", "LevelId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_IrodoriMasterLevelInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_IrodoriMasterLevelInfo_descriptor, new String[]{"LevelId", "DetailInfo"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriMasterLevelInfoOuterClass$IrodoriMasterLevelInfoOrBuilder.class */
     public interface IrodoriMasterLevelInfoOrBuilder extends MessageOrBuilder {
+        int getLevelId();
+
         List<IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo> getDetailInfoList();
 
         IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo getDetailInfo(int i);
@@ -40,8 +42,6 @@ public final class IrodoriMasterLevelInfoOuterClass {
         List<? extends IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfoOrBuilder> getDetailInfoOrBuilderList();
 
         IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfoOrBuilder getDetailInfoOrBuilder(int i);
-
-        int getLevelId();
     }
 
     private IrodoriMasterLevelInfoOuterClass() {
@@ -57,10 +57,10 @@ public final class IrodoriMasterLevelInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriMasterLevelInfoOuterClass$IrodoriMasterLevelInfo.class */
     public static final class IrodoriMasterLevelInfo extends GeneratedMessageV3 implements IrodoriMasterLevelInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int DETAIL_INFO_FIELD_NUMBER = 1;
-        private List<IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo> detailInfo_;
-        public static final int LEVEL_ID_FIELD_NUMBER = 7;
+        public static final int LEVELID_FIELD_NUMBER = 1;
         private int levelId_;
+        public static final int DETAILINFO_FIELD_NUMBER = 14;
+        private List<IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo> detailInfo_;
         private byte memoizedIsInitialized;
         private static final IrodoriMasterLevelInfo DEFAULT_INSTANCE = new IrodoriMasterLevelInfo();
         private static final Parser<IrodoriMasterLevelInfo> PARSER = new AbstractParser<IrodoriMasterLevelInfo>() { // from class: emu.grasscutter.net.proto.IrodoriMasterLevelInfoOuterClass.IrodoriMasterLevelInfo.1
@@ -110,15 +110,15 @@ public final class IrodoriMasterLevelInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 10:
+                                case 8:
+                                    this.levelId_ = input.readUInt32();
+                                    break;
+                                case 114:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.detailInfo_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.detailInfo_.add((IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo) input.readMessage(IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo.parser(), extensionRegistry));
-                                    break;
-                                case 56:
-                                    this.levelId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -154,6 +154,11 @@ public final class IrodoriMasterLevelInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.IrodoriMasterLevelInfoOuterClass.IrodoriMasterLevelInfoOrBuilder
+        public int getLevelId() {
+            return this.levelId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.IrodoriMasterLevelInfoOuterClass.IrodoriMasterLevelInfoOrBuilder
         public List<IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo> getDetailInfoList() {
             return this.detailInfo_;
         }
@@ -178,11 +183,6 @@ public final class IrodoriMasterLevelInfoOuterClass {
             return this.detailInfo_.get(index);
         }
 
-        @Override // emu.grasscutter.net.proto.IrodoriMasterLevelInfoOuterClass.IrodoriMasterLevelInfoOrBuilder
-        public int getLevelId() {
-            return this.levelId_;
-        }
-
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -198,11 +198,11 @@ public final class IrodoriMasterLevelInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            for (int i = 0; i < this.detailInfo_.size(); i++) {
-                output.writeMessage(1, this.detailInfo_.get(i));
-            }
             if (this.levelId_ != 0) {
-                output.writeUInt32(7, this.levelId_);
+                output.writeUInt32(1, this.levelId_);
+            }
+            for (int i = 0; i < this.detailInfo_.size(); i++) {
+                output.writeMessage(14, this.detailInfo_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -214,11 +214,11 @@ public final class IrodoriMasterLevelInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            for (int i = 0; i < this.detailInfo_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(1, this.detailInfo_.get(i));
-            }
             if (this.levelId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.levelId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.levelId_);
+            }
+            for (int i = 0; i < this.detailInfo_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(14, this.detailInfo_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -234,7 +234,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
                 return equals(obj);
             }
             IrodoriMasterLevelInfo other = (IrodoriMasterLevelInfo) obj;
-            return getDetailInfoList().equals(other.getDetailInfoList()) && getLevelId() == other.getLevelId() && this.unknownFields.equals(other.unknownFields);
+            return getLevelId() == other.getLevelId() && getDetailInfoList().equals(other.getDetailInfoList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -242,11 +242,11 @@ public final class IrodoriMasterLevelInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getLevelId();
             if (getDetailInfoCount() > 0) {
-                hash = (53 * ((37 * hash) + 1)) + getDetailInfoList().hashCode();
+                hash = (53 * ((37 * hash) + 14)) + getDetailInfoList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 7)) + getLevelId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -326,9 +326,9 @@ public final class IrodoriMasterLevelInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriMasterLevelInfoOuterClass$IrodoriMasterLevelInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements IrodoriMasterLevelInfoOrBuilder {
             private int bitField0_;
+            private int levelId_;
             private List<IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo> detailInfo_ = Collections.emptyList();
             private RepeatedFieldBuilderV3<IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo, IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo.Builder, IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfoOrBuilder> detailInfoBuilder_;
-            private int levelId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return IrodoriMasterLevelInfoOuterClass.internal_static_IrodoriMasterLevelInfo_descriptor;
@@ -357,13 +357,13 @@ public final class IrodoriMasterLevelInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.levelId_ = 0;
                 if (this.detailInfoBuilder_ == null) {
                     this.detailInfo_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
                     this.detailInfoBuilder_.clear();
                 }
-                this.levelId_ = 0;
                 return this;
             }
 
@@ -390,6 +390,7 @@ public final class IrodoriMasterLevelInfoOuterClass {
             public IrodoriMasterLevelInfo buildPartial() {
                 IrodoriMasterLevelInfo result = new IrodoriMasterLevelInfo(this);
                 int i = this.bitField0_;
+                result.levelId_ = this.levelId_;
                 if (this.detailInfoBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
                         this.detailInfo_ = Collections.unmodifiableList(this.detailInfo_);
@@ -399,7 +400,6 @@ public final class IrodoriMasterLevelInfoOuterClass {
                 } else {
                     result.detailInfo_ = this.detailInfoBuilder_.build();
                 }
-                result.levelId_ = this.levelId_;
                 onBuilt();
                 return result;
             }
@@ -447,6 +447,9 @@ public final class IrodoriMasterLevelInfoOuterClass {
                 if (other == IrodoriMasterLevelInfo.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getLevelId() != 0) {
+                    setLevelId(other.getLevelId());
+                }
                 if (this.detailInfoBuilder_ == null) {
                     if (!other.detailInfo_.isEmpty()) {
                         if (this.detailInfo_.isEmpty()) {
@@ -468,9 +471,6 @@ public final class IrodoriMasterLevelInfoOuterClass {
                     } else {
                         this.detailInfoBuilder_.addAllMessages(other.detailInfo_);
                     }
-                }
-                if (other.getLevelId() != 0) {
-                    setLevelId(other.getLevelId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -502,6 +502,23 @@ public final class IrodoriMasterLevelInfoOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.IrodoriMasterLevelInfoOuterClass.IrodoriMasterLevelInfoOrBuilder
+            public int getLevelId() {
+                return this.levelId_;
+            }
+
+            public Builder setLevelId(int value) {
+                this.levelId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearLevelId() {
+                this.levelId_ = 0;
+                onChanged();
+                return this;
             }
 
             private void ensureDetailInfoIsMutable() {
@@ -678,23 +695,6 @@ public final class IrodoriMasterLevelInfoOuterClass {
                     this.detailInfo_ = null;
                 }
                 return this.detailInfoBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.IrodoriMasterLevelInfoOuterClass.IrodoriMasterLevelInfoOrBuilder
-            public int getLevelId() {
-                return this.levelId_;
-            }
-
-            public Builder setLevelId(int value) {
-                this.levelId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearLevelId() {
-                this.levelId_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

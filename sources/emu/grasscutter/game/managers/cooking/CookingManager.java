@@ -98,7 +98,7 @@ public class CookingManager extends BasePlayerManager {
         GameItem cookResultNormal = new GameItem(resultItemData, resultParam.getCount() * (count - specialtyCount));
         cookResults.add(cookResultNormal);
         this.player.getInventory().addItem(cookResultNormal);
-        if (specialtyCount > 0) {
+        if (bonusData != null && specialtyCount > 0) {
             GameItem cookResultSpecialty = new GameItem(GameData.getItemDataMap().get(bonusData.getReplacementItemId()), resultParam.getCount() * specialtyCount);
             cookResults.add(cookResultSpecialty);
             this.player.getInventory().addItem(cookResultSpecialty);

@@ -203,30 +203,30 @@ public abstract class AbstractDouble2LongMap extends AbstractDouble2LongFunction
                 return new DoubleIterator() { // from class: it.unimi.dsi.fastutil.doubles.AbstractDouble2LongMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Double2LongMap.Entry> f1557i;
+                    private final ObjectIterator<Double2LongMap.Entry> f1521i;
 
                     {
-                        this.f1557i = Double2LongMaps.fastIterator(AbstractDouble2LongMap.this);
+                        this.f1521i = Double2LongMaps.fastIterator(AbstractDouble2LongMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
                     public double nextDouble() {
-                        return this.f1557i.next().getDoubleKey();
+                        return this.f1521i.next().getDoubleKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1557i.hasNext();
+                        return this.f1521i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1557i.remove();
+                        this.f1521i.remove();
                     }
 
                     @Override // java.util.PrimitiveIterator.OfDouble
                     public void forEachRemaining(DoubleConsumer action) {
-                        this.f1557i.forEachRemaining(entry -> {
+                        this.f1521i.forEachRemaining(entry -> {
                             action.accept(entry.getDoubleKey());
                         });
                     }
@@ -264,30 +264,30 @@ public abstract class AbstractDouble2LongMap extends AbstractDouble2LongFunction
                 return new LongIterator() { // from class: it.unimi.dsi.fastutil.doubles.AbstractDouble2LongMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Double2LongMap.Entry> f1558i;
+                    private final ObjectIterator<Double2LongMap.Entry> f1522i;
 
                     {
-                        this.f1558i = Double2LongMaps.fastIterator(AbstractDouble2LongMap.this);
+                        this.f1522i = Double2LongMaps.fastIterator(AbstractDouble2LongMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
                     public long nextLong() {
-                        return this.f1558i.next().getLongValue();
+                        return this.f1522i.next().getLongValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1558i.hasNext();
+                        return this.f1522i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1558i.remove();
+                        this.f1522i.remove();
                     }
 
                     @Override // java.util.PrimitiveIterator.OfLong
                     public void forEachRemaining(LongConsumer action) {
-                        this.f1558i.forEachRemaining(entry -> {
+                        this.f1522i.forEachRemaining(entry -> {
                             action.accept(entry.getLongValue());
                         });
                     }

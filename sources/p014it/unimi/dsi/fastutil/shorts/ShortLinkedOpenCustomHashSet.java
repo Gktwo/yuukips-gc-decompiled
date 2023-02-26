@@ -29,13 +29,13 @@ public class ShortLinkedOpenCustomHashSet extends AbstractShortSortedSet impleme
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f3055n;
+    protected transient int f3019n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f3056f;
+    protected final float f3020f;
     private static final int SPLITERATOR_CHARACTERISTICS = 337;
 
     public ShortLinkedOpenCustomHashSet(int expected, float f, ShortHash.Strategy strategy) {
@@ -47,14 +47,14 @@ public class ShortLinkedOpenCustomHashSet extends AbstractShortSortedSet impleme
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f3056f = f;
+            this.f3020f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f3055n = arraySize;
+            this.f3019n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f3055n - 1;
-            this.maxFill = HashCommon.maxFill(this.f3055n, f);
-            this.key = new short[this.f3055n + 1];
-            this.link = new long[this.f3055n + 1];
+            this.mask = this.f3019n - 1;
+            this.maxFill = HashCommon.maxFill(this.f3019n, f);
+            this.key = new short[this.f3019n + 1];
+            this.link = new long[this.f3019n + 1];
         }
     }
 
@@ -132,22 +132,22 @@ public class ShortLinkedOpenCustomHashSet extends AbstractShortSortedSet impleme
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f3056f);
-        if (needed > this.f3055n) {
+        int needed = HashCommon.arraySize(capacity, this.f3020f);
+        if (needed > this.f3019n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f3056f)))));
-        if (needed > this.f3055n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f3020f)))));
+        if (needed > this.f3019n) {
             rehash(needed);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortCollection, p014it.unimi.dsi.fastutil.shorts.ShortCollection
     public boolean addAll(ShortCollection c) {
-        if (((double) this.f3056f) <= 0.5d) {
+        if (((double) this.f3020f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -157,7 +157,7 @@ public class ShortLinkedOpenCustomHashSet extends AbstractShortSortedSet impleme
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Short> c) {
-        if (((double) this.f3056f) <= 0.5d) {
+        if (((double) this.f3020f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -191,9 +191,9 @@ public class ShortLinkedOpenCustomHashSet extends AbstractShortSortedSet impleme
         } else if (this.containsNull) {
             return false;
         } else {
-            pos = this.f3055n;
+            pos = this.f3019n;
             this.containsNull = true;
-            this.key[this.f3055n] = k;
+            this.key[this.f3019n] = k;
         }
         if (this.size == 0) {
             this.last = pos;
@@ -211,7 +211,7 @@ public class ShortLinkedOpenCustomHashSet extends AbstractShortSortedSet impleme
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f3056f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f3020f));
         return true;
     }
 
@@ -249,22 +249,22 @@ public class ShortLinkedOpenCustomHashSet extends AbstractShortSortedSet impleme
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f3055n <= this.minN || this.size >= this.maxFill / 4 || this.f3055n <= 16) {
+        if (this.f3019n <= this.minN || this.size >= this.maxFill / 4 || this.f3019n <= 16) {
             return true;
         }
-        rehash(this.f3055n / 2);
+        rehash(this.f3019n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f3055n] = 0;
+        this.key[this.f3019n] = 0;
         this.size--;
-        fixPointers(this.f3055n);
-        if (this.f3055n <= this.minN || this.size >= this.maxFill / 4 || this.f3055n <= 16) {
+        fixPointers(this.f3019n);
+        if (this.f3019n <= this.minN || this.size >= this.maxFill / 4 || this.f3019n <= 16) {
             return true;
         }
-        rehash(this.f3055n / 2);
+        rehash(this.f3019n / 2);
         return true;
     }
 
@@ -340,12 +340,12 @@ public class ShortLinkedOpenCustomHashSet extends AbstractShortSortedSet impleme
         this.size--;
         if (this.strategy.equals(k, 0)) {
             this.containsNull = false;
-            this.key[this.f3055n] = 0;
+            this.key[this.f3019n] = 0;
         } else {
             shiftKeys(pos);
         }
-        if (this.f3055n > this.minN && this.size < this.maxFill / 4 && this.f3055n > 16) {
-            rehash(this.f3055n / 2);
+        if (this.f3019n > this.minN && this.size < this.maxFill / 4 && this.f3019n > 16) {
+            rehash(this.f3019n / 2);
         }
         return k;
     }
@@ -365,12 +365,12 @@ public class ShortLinkedOpenCustomHashSet extends AbstractShortSortedSet impleme
         this.size--;
         if (this.strategy.equals(k, 0)) {
             this.containsNull = false;
-            this.key[this.f3055n] = 0;
+            this.key[this.f3019n] = 0;
         } else {
             shiftKeys(pos);
         }
-        if (this.f3055n > this.minN && this.size < this.maxFill / 4 && this.f3055n > 16) {
-            rehash(this.f3055n / 2);
+        if (this.f3019n > this.minN && this.size < this.maxFill / 4 && this.f3019n > 16) {
+            rehash(this.f3019n / 2);
         }
         return k;
     }
@@ -442,11 +442,11 @@ public class ShortLinkedOpenCustomHashSet extends AbstractShortSortedSet impleme
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToFirst(this.f3055n);
+            moveIndexToFirst(this.f3019n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f3055n;
+            pos = this.f3019n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -465,7 +465,7 @@ public class ShortLinkedOpenCustomHashSet extends AbstractShortSortedSet impleme
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f3056f));
+        rehash(HashCommon.arraySize(this.size, this.f3020f));
         return true;
     }
 
@@ -488,11 +488,11 @@ public class ShortLinkedOpenCustomHashSet extends AbstractShortSortedSet impleme
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToLast(this.f3055n);
+            moveIndexToLast(this.f3019n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f3055n;
+            pos = this.f3019n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -511,7 +511,7 @@ public class ShortLinkedOpenCustomHashSet extends AbstractShortSortedSet impleme
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f3056f));
+        rehash(HashCommon.arraySize(this.size, this.f3020f));
         return true;
     }
 
@@ -656,8 +656,8 @@ public class ShortLinkedOpenCustomHashSet extends AbstractShortSortedSet impleme
             this.index = -1;
             if (ShortLinkedOpenCustomHashSet.this.strategy.equals(from, 0)) {
                 if (ShortLinkedOpenCustomHashSet.this.containsNull) {
-                    this.next = (int) ShortLinkedOpenCustomHashSet.this.link[ShortLinkedOpenCustomHashSet.this.f3055n];
-                    this.prev = ShortLinkedOpenCustomHashSet.this.f3055n;
+                    this.next = (int) ShortLinkedOpenCustomHashSet.this.link[ShortLinkedOpenCustomHashSet.this.f3019n];
+                    this.prev = ShortLinkedOpenCustomHashSet.this.f3019n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + ((int) from) + " does not belong to this set.");
@@ -796,9 +796,9 @@ public class ShortLinkedOpenCustomHashSet extends AbstractShortSortedSet impleme
             }
             int pos = this.curr;
             this.curr = -1;
-            if (pos == ShortLinkedOpenCustomHashSet.this.f3055n) {
+            if (pos == ShortLinkedOpenCustomHashSet.this.f3019n) {
                 ShortLinkedOpenCustomHashSet.this.containsNull = false;
-                ShortLinkedOpenCustomHashSet.this.key[ShortLinkedOpenCustomHashSet.this.f3055n] = 0;
+                ShortLinkedOpenCustomHashSet.this.key[ShortLinkedOpenCustomHashSet.this.f3019n] = 0;
                 return;
             }
             short[] key = ShortLinkedOpenCustomHashSet.this.key;
@@ -868,8 +868,8 @@ public class ShortLinkedOpenCustomHashSet extends AbstractShortSortedSet impleme
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f3056f)));
-        if (l >= this.f3055n || this.size > HashCommon.maxFill(l, this.f3056f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f3020f)));
+        if (l >= this.f3019n || this.size > HashCommon.maxFill(l, this.f3020f)) {
             return true;
         }
         try {
@@ -927,9 +927,9 @@ public class ShortLinkedOpenCustomHashSet extends AbstractShortSortedSet impleme
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f3055n = newN;
+        this.f3019n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f3055n, this.f3056f);
+        this.maxFill = HashCommon.maxFill(this.f3019n, this.f3020f);
         this.key = newKey;
     }
 
@@ -983,12 +983,12 @@ public class ShortLinkedOpenCustomHashSet extends AbstractShortSortedSet impleme
         int pos;
         int i;
         s.defaultReadObject();
-        this.f3055n = HashCommon.arraySize(this.size, this.f3056f);
-        this.maxFill = HashCommon.maxFill(this.f3055n, this.f3056f);
-        this.mask = this.f3055n - 1;
-        short[] key = new short[this.f3055n + 1];
+        this.f3019n = HashCommon.arraySize(this.size, this.f3020f);
+        this.maxFill = HashCommon.maxFill(this.f3019n, this.f3020f);
+        this.mask = this.f3019n - 1;
+        short[] key = new short[this.f3019n + 1];
         this.key = key;
-        long[] link = new long[this.f3055n + 1];
+        long[] link = new long[this.f3019n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -1001,7 +1001,7 @@ public class ShortLinkedOpenCustomHashSet extends AbstractShortSortedSet impleme
             }
             short k = s.readShort();
             if (this.strategy.equals(k, 0)) {
-                pos = this.f3055n;
+                pos = this.f3019n;
                 this.containsNull = true;
             } else {
                 int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;

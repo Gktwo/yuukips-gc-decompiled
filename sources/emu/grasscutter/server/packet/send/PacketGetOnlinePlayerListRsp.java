@@ -9,7 +9,7 @@ import java.util.List;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketGetOnlinePlayerListRsp.class */
 public class PacketGetOnlinePlayerListRsp extends BasePacket {
     public PacketGetOnlinePlayerListRsp(Player session) {
-        super(78);
+        super(62);
         List<Player> players = Grasscutter.getGameServer().getPlayers().values().stream().limit(50).toList();
         GetOnlinePlayerListRspOuterClass.GetOnlinePlayerListRsp.Builder proto = GetOnlinePlayerListRspOuterClass.GetOnlinePlayerListRsp.newBuilder();
         if (players.size() != 0) {

@@ -37,7 +37,7 @@ public class LoadState {
     private int luacNumberFormat;
 
     /* renamed from: is */
-    public final DataInputStream f3285is;
+    public final DataInputStream f3249is;
     String name;
     private byte[] buf = new byte[512];
     public static final Globals.Undumper instance = new GlobalsUndumper(null);
@@ -53,7 +53,7 @@ public class LoadState {
 
     /* renamed from: org.luaj.vm2.LoadState$1 */
     /* loaded from: grasscutter.jar:org/luaj/vm2/LoadState$1.class */
-    static class C58631 {
+    static class C58551 {
     }
 
     /* loaded from: grasscutter.jar:org/luaj/vm2/LoadState$GlobalsUndumper.class */
@@ -66,7 +66,7 @@ public class LoadState {
             return LoadState.undump(inputStream, str);
         }
 
-        GlobalsUndumper(C58631 r3) {
+        GlobalsUndumper(C58551 r3) {
             this();
         }
     }
@@ -76,7 +76,7 @@ public class LoadState {
     }
 
     int loadInt() throws IOException {
-        this.f3285is.readFully(this.buf, 0, 4);
+        this.f3249is.readFully(this.buf, 0, 4);
         return this.luacLittleEndian ? (this.buf[3] << 24) | ((255 & this.buf[2]) << 16) | ((255 & this.buf[1]) << 8) | (255 & this.buf[0]) : (this.buf[0] << 24) | ((255 & this.buf[1]) << 16) | ((255 & this.buf[2]) << 8) | (255 & this.buf[3]);
     }
 
@@ -92,7 +92,7 @@ public class LoadState {
         if (this.buf.length < i2) {
             this.buf = new byte[i2];
         }
-        this.f3285is.readFully(this.buf, 0, i2);
+        this.f3249is.readFully(this.buf, 0, i2);
         int[] iArr = new int[loadInt];
         int i3 = 0;
         int i4 = 0;
@@ -132,7 +132,7 @@ public class LoadState {
             return null;
         }
         byte[] bArr = new byte[loadInt64];
-        this.f3285is.readFully(bArr, 0, loadInt64);
+        this.f3249is.readFully(bArr, 0, loadInt64);
         return LuaString.valueUsing(bArr, 0, bArr.length - 1);
     }
 
@@ -160,7 +160,7 @@ public class LoadState {
         int loadInt = loadInt();
         LuaValue[] luaValueArr = loadInt > 0 ? new LuaValue[loadInt] : NOVALUES;
         for (int i = 0; i < loadInt; i++) {
-            switch (this.f3285is.readByte()) {
+            switch (this.f3249is.readByte()) {
                 case -2:
                     luaValueArr[i] = LuaInteger.valueOf(loadInt());
                     break;
@@ -172,7 +172,7 @@ public class LoadState {
                     luaValueArr[i] = LuaValue.NIL;
                     break;
                 case 1:
-                    luaValueArr[i] = 0 != this.f3285is.readUnsignedByte() ? LuaValue.TRUE : LuaValue.FALSE;
+                    luaValueArr[i] = 0 != this.f3249is.readUnsignedByte() ? LuaValue.TRUE : LuaValue.FALSE;
                     break;
                 case 3:
                     luaValueArr[i] = loadNumber();
@@ -182,20 +182,20 @@ public class LoadState {
                     break;
             }
         }
-        prototype.f3295k = luaValueArr;
+        prototype.f3259k = luaValueArr;
         int loadInt2 = loadInt();
         Prototype[] prototypeArr = loadInt2 > 0 ? new Prototype[loadInt2] : NOPROTOS;
         for (int i2 = 0; i2 < loadInt2; i2++) {
             prototypeArr[i2] = loadFunction(prototype.source);
         }
-        prototype.f3296p = prototypeArr;
+        prototype.f3260p = prototypeArr;
     }
 
     void loadUpvalues(Prototype prototype) throws IOException {
         int loadInt = loadInt();
         prototype.upvalues = loadInt > 0 ? new Upvaldesc[loadInt] : NOUPVALDESCS;
         for (int i = 0; i < loadInt; i++) {
-            prototype.upvalues[i] = new Upvaldesc(null, this.f3285is.readByte() != 0, this.f3285is.readByte() & 255);
+            prototype.upvalues[i] = new Upvaldesc(null, this.f3249is.readByte() != 0, this.f3249is.readByte() & 255);
         }
     }
 
@@ -217,9 +217,9 @@ public class LoadState {
         Prototype prototype = new Prototype();
         prototype.linedefined = loadInt();
         prototype.lastlinedefined = loadInt();
-        prototype.numparams = this.f3285is.readUnsignedByte();
-        prototype.is_vararg = this.f3285is.readUnsignedByte();
-        prototype.maxstacksize = this.f3285is.readUnsignedByte();
+        prototype.numparams = this.f3249is.readUnsignedByte();
+        prototype.is_vararg = this.f3249is.readUnsignedByte();
+        prototype.maxstacksize = this.f3249is.readUnsignedByte();
         prototype.code = loadIntArray();
         loadConstants(prototype);
         loadUpvalues(prototype);
@@ -228,16 +228,16 @@ public class LoadState {
     }
 
     public void loadHeader() throws IOException {
-        this.luacVersion = this.f3285is.readByte();
-        this.luacFormat = this.f3285is.readByte();
-        this.luacLittleEndian = 0 != this.f3285is.readByte();
-        this.luacSizeofInt = this.f3285is.readByte();
-        this.luacSizeofSizeT = this.f3285is.readByte();
-        this.luacSizeofInstruction = this.f3285is.readByte();
-        this.luacSizeofLuaNumber = this.f3285is.readByte();
-        this.luacNumberFormat = this.f3285is.readByte();
+        this.luacVersion = this.f3249is.readByte();
+        this.luacFormat = this.f3249is.readByte();
+        this.luacLittleEndian = 0 != this.f3249is.readByte();
+        this.luacSizeofInt = this.f3249is.readByte();
+        this.luacSizeofSizeT = this.f3249is.readByte();
+        this.luacSizeofInstruction = this.f3249is.readByte();
+        this.luacSizeofLuaNumber = this.f3249is.readByte();
+        this.luacNumberFormat = this.f3249is.readByte();
         for (int i = 0; i < LUAC_TAIL.length; i++) {
-            if (this.f3285is.readByte() != LUAC_TAIL[i]) {
+            if (this.f3249is.readByte() != LUAC_TAIL[i]) {
                 throw new LuaError(new StringBuffer().append("Unexpeted byte in luac tail of header, index=").append(i).toString());
             }
         }
@@ -274,6 +274,6 @@ public class LoadState {
 
     private LoadState(InputStream inputStream, String str) {
         this.name = str;
-        this.f3285is = new DataInputStream(inputStream);
+        this.f3249is = new DataInputStream(inputStream);
     }
 }

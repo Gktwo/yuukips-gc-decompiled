@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakePlayerLevelRewardReqOuterClass.class */
 public final class TakePlayerLevelRewardReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eTakePlayerLevelRewardReq.proto\")\n\u0018TakePlayerLevelRewardReq\u0012\r\n\u0005level\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eTakePlayerLevelRewardReq.proto\")\n\u0018TakePlayerLevelRewardReq\u0012\r\n\u0005level\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_TakePlayerLevelRewardReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_TakePlayerLevelRewardReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TakePlayerLevelRewardReq_descriptor, new String[]{"Level"});
 
@@ -41,7 +41,7 @@ public final class TakePlayerLevelRewardReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakePlayerLevelRewardReqOuterClass$TakePlayerLevelRewardReq.class */
     public static final class TakePlayerLevelRewardReq extends GeneratedMessageV3 implements TakePlayerLevelRewardReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int LEVEL_FIELD_NUMBER = 15;
+        public static final int LEVEL_FIELD_NUMBER = 9;
         private int level_;
         private byte memoizedIsInitialized;
         private static final TakePlayerLevelRewardReq DEFAULT_INSTANCE = new TakePlayerLevelRewardReq();
@@ -88,7 +88,7 @@ public final class TakePlayerLevelRewardReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 120:
+                            case 72:
                                 this.level_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class TakePlayerLevelRewardReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.level_ != 0) {
-                output.writeUInt32(15, this.level_);
+                output.writeUInt32(9, this.level_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class TakePlayerLevelRewardReqOuterClass {
             }
             int size2 = 0;
             if (this.level_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(15, this.level_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(9, this.level_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class TakePlayerLevelRewardReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getLevel())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getLevel())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

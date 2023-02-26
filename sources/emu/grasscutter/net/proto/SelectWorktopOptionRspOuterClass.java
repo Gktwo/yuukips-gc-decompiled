@@ -19,17 +19,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SelectWorktopOptionRspOuterClass.class */
 public final class SelectWorktopOptionRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cSelectWorktopOptionRsp.proto\"V\n\u0016SelectWorktopOptionRsp\u0012\u0011\n\toption_id\u0018\n \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0004 \u0001(\u0005\u0012\u0018\n\u0010gadget_entity_id\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cSelectWorktopOptionRsp.proto\"S\n\u0016SelectWorktopOptionRsp\u0012\u000f\n\u0007retcode\u0018\u000b \u0001(\u0005\u0012\u0016\n\u000egadgetEntityId\u0018\u0003 \u0001(\r\u0012\u0010\n\boptionId\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SelectWorktopOptionRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SelectWorktopOptionRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SelectWorktopOptionRsp_descriptor, new String[]{"OptionId", "Retcode", "GadgetEntityId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SelectWorktopOptionRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SelectWorktopOptionRsp_descriptor, new String[]{"Retcode", "GadgetEntityId", "OptionId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SelectWorktopOptionRspOuterClass$SelectWorktopOptionRspOrBuilder.class */
     public interface SelectWorktopOptionRspOrBuilder extends MessageOrBuilder {
-        int getOptionId();
-
         int getRetcode();
 
         int getGadgetEntityId();
+
+        int getOptionId();
     }
 
     private SelectWorktopOptionRspOuterClass() {
@@ -45,12 +45,12 @@ public final class SelectWorktopOptionRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SelectWorktopOptionRspOuterClass$SelectWorktopOptionRsp.class */
     public static final class SelectWorktopOptionRsp extends GeneratedMessageV3 implements SelectWorktopOptionRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int OPTION_ID_FIELD_NUMBER = 10;
-        private int optionId_;
-        public static final int RETCODE_FIELD_NUMBER = 4;
+        public static final int RETCODE_FIELD_NUMBER = 11;
         private int retcode_;
-        public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 12;
+        public static final int GADGETENTITYID_FIELD_NUMBER = 3;
         private int gadgetEntityId_;
+        public static final int OPTIONID_FIELD_NUMBER = 4;
+        private int optionId_;
         private byte memoizedIsInitialized;
         private static final SelectWorktopOptionRsp DEFAULT_INSTANCE = new SelectWorktopOptionRsp();
         private static final Parser<SelectWorktopOptionRsp> PARSER = new AbstractParser<SelectWorktopOptionRsp>() { // from class: emu.grasscutter.net.proto.SelectWorktopOptionRspOuterClass.SelectWorktopOptionRsp.1
@@ -97,14 +97,14 @@ public final class SelectWorktopOptionRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 32:
-                                    this.retcode_ = input.readInt32();
+                                case 24:
+                                    this.gadgetEntityId_ = input.readUInt32();
                                     break;
-                                case 80:
+                                case 32:
                                     this.optionId_ = input.readUInt32();
                                     break;
-                                case 96:
-                                    this.gadgetEntityId_ = input.readUInt32();
+                                case 88:
+                                    this.retcode_ = input.readInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -137,11 +137,6 @@ public final class SelectWorktopOptionRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SelectWorktopOptionRspOuterClass.SelectWorktopOptionRspOrBuilder
-        public int getOptionId() {
-            return this.optionId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.SelectWorktopOptionRspOuterClass.SelectWorktopOptionRspOrBuilder
         public int getRetcode() {
             return this.retcode_;
         }
@@ -149,6 +144,11 @@ public final class SelectWorktopOptionRspOuterClass {
         @Override // emu.grasscutter.net.proto.SelectWorktopOptionRspOuterClass.SelectWorktopOptionRspOrBuilder
         public int getGadgetEntityId() {
             return this.gadgetEntityId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.SelectWorktopOptionRspOuterClass.SelectWorktopOptionRspOrBuilder
+        public int getOptionId() {
+            return this.optionId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -166,14 +166,14 @@ public final class SelectWorktopOptionRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.retcode_ != 0) {
-                output.writeInt32(4, this.retcode_);
+            if (this.gadgetEntityId_ != 0) {
+                output.writeUInt32(3, this.gadgetEntityId_);
             }
             if (this.optionId_ != 0) {
-                output.writeUInt32(10, this.optionId_);
+                output.writeUInt32(4, this.optionId_);
             }
-            if (this.gadgetEntityId_ != 0) {
-                output.writeUInt32(12, this.gadgetEntityId_);
+            if (this.retcode_ != 0) {
+                output.writeInt32(11, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -185,14 +185,14 @@ public final class SelectWorktopOptionRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(4, this.retcode_);
+            if (this.gadgetEntityId_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.gadgetEntityId_);
             }
             if (this.optionId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.optionId_);
+                size2 += CodedOutputStream.computeUInt32Size(4, this.optionId_);
             }
-            if (this.gadgetEntityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.gadgetEntityId_);
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(11, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -208,7 +208,7 @@ public final class SelectWorktopOptionRspOuterClass {
                 return equals(obj);
             }
             SelectWorktopOptionRsp other = (SelectWorktopOptionRsp) obj;
-            return getOptionId() == other.getOptionId() && getRetcode() == other.getRetcode() && getGadgetEntityId() == other.getGadgetEntityId() && this.unknownFields.equals(other.unknownFields);
+            return getRetcode() == other.getRetcode() && getGadgetEntityId() == other.getGadgetEntityId() && getOptionId() == other.getOptionId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -216,7 +216,7 @@ public final class SelectWorktopOptionRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getOptionId())) + 4)) + getRetcode())) + 12)) + getGadgetEntityId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getRetcode())) + 3)) + getGadgetEntityId())) + 4)) + getOptionId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -295,9 +295,9 @@ public final class SelectWorktopOptionRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SelectWorktopOptionRspOuterClass$SelectWorktopOptionRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SelectWorktopOptionRspOrBuilder {
-            private int optionId_;
             private int retcode_;
             private int gadgetEntityId_;
+            private int optionId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return SelectWorktopOptionRspOuterClass.internal_static_SelectWorktopOptionRsp_descriptor;
@@ -325,9 +325,9 @@ public final class SelectWorktopOptionRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.optionId_ = 0;
                 this.retcode_ = 0;
                 this.gadgetEntityId_ = 0;
+                this.optionId_ = 0;
                 return this;
             }
 
@@ -353,9 +353,9 @@ public final class SelectWorktopOptionRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public SelectWorktopOptionRsp buildPartial() {
                 SelectWorktopOptionRsp result = new SelectWorktopOptionRsp(this);
-                result.optionId_ = this.optionId_;
                 result.retcode_ = this.retcode_;
                 result.gadgetEntityId_ = this.gadgetEntityId_;
+                result.optionId_ = this.optionId_;
                 onBuilt();
                 return result;
             }
@@ -403,14 +403,14 @@ public final class SelectWorktopOptionRspOuterClass {
                 if (other == SelectWorktopOptionRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getOptionId() != 0) {
-                    setOptionId(other.getOptionId());
-                }
                 if (other.getRetcode() != 0) {
                     setRetcode(other.getRetcode());
                 }
                 if (other.getGadgetEntityId() != 0) {
                     setGadgetEntityId(other.getGadgetEntityId());
+                }
+                if (other.getOptionId() != 0) {
+                    setOptionId(other.getOptionId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -445,23 +445,6 @@ public final class SelectWorktopOptionRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.SelectWorktopOptionRspOuterClass.SelectWorktopOptionRspOrBuilder
-            public int getOptionId() {
-                return this.optionId_;
-            }
-
-            public Builder setOptionId(int value) {
-                this.optionId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearOptionId() {
-                this.optionId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.SelectWorktopOptionRspOuterClass.SelectWorktopOptionRspOrBuilder
             public int getRetcode() {
                 return this.retcode_;
             }
@@ -491,6 +474,23 @@ public final class SelectWorktopOptionRspOuterClass {
 
             public Builder clearGadgetEntityId() {
                 this.gadgetEntityId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SelectWorktopOptionRspOuterClass.SelectWorktopOptionRspOrBuilder
+            public int getOptionId() {
+                return this.optionId_;
+            }
+
+            public Builder setOptionId(int value) {
+                this.optionId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearOptionId() {
+                this.optionId_ = 0;
                 onChanged();
                 return this;
             }

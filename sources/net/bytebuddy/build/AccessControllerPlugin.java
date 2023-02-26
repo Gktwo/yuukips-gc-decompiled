@@ -300,29 +300,29 @@ public class AccessControllerPlugin extends Plugin.ForElementMatcher implements 
 
             @Override // net.bytebuddy.jar.asm.MethodVisitor
             public void visitCode() {
-                this.f3104mv.visitCode();
-                this.f3104mv.visitFieldInsn(178, this.instrumentedType.getInternalName(), this.name, Type.getDescriptor(Boolean.TYPE));
+                this.f3068mv.visitCode();
+                this.f3068mv.visitFieldInsn(178, this.instrumentedType.getInternalName(), this.name, Type.getDescriptor(Boolean.TYPE));
                 Label label = new Label();
-                this.f3104mv.visitJumpInsn(153, label);
+                this.f3068mv.visitJumpInsn(153, label);
                 int offset = this.offset;
                 for (TypeDescription typeDescription : this.token.getParameterTypes()) {
-                    this.f3104mv.visitVarInsn(Type.getType(typeDescription.getDescriptor()).getOpcode(21), offset);
+                    this.f3068mv.visitVarInsn(Type.getType(typeDescription.getDescriptor()).getOpcode(21), offset);
                     if (typeDescription.equals(JavaType.ACCESS_CONTROL_CONTEXT.getTypeStub())) {
-                        this.f3104mv.visitTypeInsn(192, typeDescription.getInternalName());
+                        this.f3068mv.visitTypeInsn(192, typeDescription.getInternalName());
                     }
                     offset += typeDescription.getStackSize().getSize();
                 }
-                this.f3104mv.visitMethodInsn(184, AccessControllerPlugin.ACCESS_CONTROLLER.replace('.', '/'), this.token.getName(), this.token.getDescriptor(), false);
-                this.f3104mv.visitInsn(Type.getType(this.token.getReturnType().getDescriptor()).getOpcode(172));
-                this.f3104mv.visitLabel(label);
+                this.f3068mv.visitMethodInsn(184, AccessControllerPlugin.ACCESS_CONTROLLER.replace('.', '/'), this.token.getName(), this.token.getDescriptor(), false);
+                this.f3068mv.visitInsn(Type.getType(this.token.getReturnType().getDescriptor()).getOpcode(172));
+                this.f3068mv.visitLabel(label);
                 if (this.frames) {
-                    this.f3104mv.visitFrame(3, AccessControllerPlugin.EMPTY.length, AccessControllerPlugin.EMPTY, AccessControllerPlugin.EMPTY.length, AccessControllerPlugin.EMPTY);
+                    this.f3068mv.visitFrame(3, AccessControllerPlugin.EMPTY.length, AccessControllerPlugin.EMPTY, AccessControllerPlugin.EMPTY.length, AccessControllerPlugin.EMPTY);
                 }
             }
 
             @Override // net.bytebuddy.jar.asm.MethodVisitor
             public void visitMaxs(int stackSize, int localVariableLength) {
-                this.f3104mv.visitMaxs(Math.max(Math.max(StackSize.m121of(this.token.getParameterTypes()), this.token.getReturnType().getStackSize().getSize()), stackSize), localVariableLength);
+                this.f3068mv.visitMaxs(Math.max(Math.max(StackSize.m121of(this.token.getParameterTypes()), this.token.getReturnType().getStackSize().getSize()), stackSize), localVariableLength);
             }
         }
     }

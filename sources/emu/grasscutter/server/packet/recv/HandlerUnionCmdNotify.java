@@ -6,7 +6,7 @@ import emu.grasscutter.net.proto.UnionCmdNotifyOuterClass;
 import emu.grasscutter.net.proto.UnionCmdOuterClass;
 import emu.grasscutter.server.game.GameSession;
 
-@Opcodes(42)
+@Opcodes(69)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerUnionCmdNotify.class */
 public class HandlerUnionCmdNotify extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

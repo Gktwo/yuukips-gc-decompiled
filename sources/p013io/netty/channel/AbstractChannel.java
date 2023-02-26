@@ -32,7 +32,7 @@ public abstract class AbstractChannel extends DefaultAttributeMap implements Cha
     private final Channel parent;
 
     /* renamed from: id */
-    private final ChannelId f977id;
+    private final ChannelId f941id;
     private final Channel.Unsafe unsafe;
     private final DefaultChannelPipeline pipeline;
     private final VoidChannelPromise unsafeVoidPromise;
@@ -69,7 +69,7 @@ public abstract class AbstractChannel extends DefaultAttributeMap implements Cha
         this.unsafeVoidPromise = new VoidChannelPromise(this, false);
         this.closeFuture = new CloseFuture(this);
         this.parent = parent;
-        this.f977id = newId();
+        this.f941id = newId();
         this.unsafe = newUnsafe();
         this.pipeline = newChannelPipeline();
     }
@@ -79,7 +79,7 @@ public abstract class AbstractChannel extends DefaultAttributeMap implements Cha
         this.unsafeVoidPromise = new VoidChannelPromise(this, false);
         this.closeFuture = new CloseFuture(this);
         this.parent = parent;
-        this.f977id = id;
+        this.f941id = id;
         this.unsafe = newUnsafe();
         this.pipeline = newChannelPipeline();
     }
@@ -99,7 +99,7 @@ public abstract class AbstractChannel extends DefaultAttributeMap implements Cha
     @Override // p013io.netty.channel.Channel
     /* renamed from: id */
     public final ChannelId mo1183id() {
-        return this.f977id;
+        return this.f941id;
     }
 
     protected ChannelId newId() {
@@ -328,7 +328,7 @@ public abstract class AbstractChannel extends DefaultAttributeMap implements Cha
 
     @Override // java.lang.Object
     public final int hashCode() {
-        return this.f977id.hashCode();
+        return this.f941id.hashCode();
     }
 
     @Override // java.lang.Object
@@ -352,11 +352,11 @@ public abstract class AbstractChannel extends DefaultAttributeMap implements Cha
         SocketAddress remoteAddr = remoteAddress();
         SocketAddress localAddr = localAddress();
         if (remoteAddr != null) {
-            this.strVal = new StringBuilder(96).append("[id: 0x").append(this.f977id.asShortText()).append(", L:").append(localAddr).append(active ? " - " : " ! ").append("R:").append(remoteAddr).append(']').toString();
+            this.strVal = new StringBuilder(96).append("[id: 0x").append(this.f941id.asShortText()).append(", L:").append(localAddr).append(active ? " - " : " ! ").append("R:").append(remoteAddr).append(']').toString();
         } else if (localAddr != null) {
-            this.strVal = new StringBuilder(64).append("[id: 0x").append(this.f977id.asShortText()).append(", L:").append(localAddr).append(']').toString();
+            this.strVal = new StringBuilder(64).append("[id: 0x").append(this.f941id.asShortText()).append(", L:").append(localAddr).append(']').toString();
         } else {
-            this.strVal = new StringBuilder(16).append("[id: 0x").append(this.f977id.asShortText()).append(']').toString();
+            this.strVal = new StringBuilder(16).append("[id: 0x").append(this.f941id.asShortText()).append(']').toString();
         }
         this.strValActive = active;
         return this.strVal;

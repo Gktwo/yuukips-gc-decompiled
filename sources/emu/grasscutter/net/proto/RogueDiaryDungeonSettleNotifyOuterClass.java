@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RogueDiaryDungeonSettleNotifyOuterClass.class */
 public final class RogueDiaryDungeonSettleNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#RogueDiaryDungeonSettleNotify.proto\"[\n\u001dRogueDiaryDungeonSettleNotify\u0012\u0011\n\tis_finish\u0018\u000e \u0001(\b\u0012\u0011\n\tcur_round\u0018\u000b \u0001(\r\u0012\u0014\n\fexplore_time\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#RogueDiaryDungeonSettleNotify.proto\"X\n\u001dRogueDiaryDungeonSettleNotify\u0012\u0010\n\bisFinish\u0018\u0002 \u0001(\b\u0012\u0013\n\u000bexploreTime\u0018\u0003 \u0001(\r\u0012\u0010\n\bcurRound\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_RogueDiaryDungeonSettleNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_RogueDiaryDungeonSettleNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_RogueDiaryDungeonSettleNotify_descriptor, new String[]{"IsFinish", "CurRound", "ExploreTime"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_RogueDiaryDungeonSettleNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_RogueDiaryDungeonSettleNotify_descriptor, new String[]{"IsFinish", "ExploreTime", "CurRound"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RogueDiaryDungeonSettleNotifyOuterClass$RogueDiaryDungeonSettleNotifyOrBuilder.class */
     public interface RogueDiaryDungeonSettleNotifyOrBuilder extends MessageOrBuilder {
         boolean getIsFinish();
 
-        int getCurRound();
-
         int getExploreTime();
+
+        int getCurRound();
     }
 
     private RogueDiaryDungeonSettleNotifyOuterClass() {
@@ -46,12 +46,12 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RogueDiaryDungeonSettleNotifyOuterClass$RogueDiaryDungeonSettleNotify.class */
     public static final class RogueDiaryDungeonSettleNotify extends GeneratedMessageV3 implements RogueDiaryDungeonSettleNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_FINISH_FIELD_NUMBER = 14;
+        public static final int ISFINISH_FIELD_NUMBER = 2;
         private boolean isFinish_;
-        public static final int CUR_ROUND_FIELD_NUMBER = 11;
-        private int curRound_;
-        public static final int EXPLORE_TIME_FIELD_NUMBER = 4;
+        public static final int EXPLORETIME_FIELD_NUMBER = 3;
         private int exploreTime_;
+        public static final int CURROUND_FIELD_NUMBER = 12;
+        private int curRound_;
         private byte memoizedIsInitialized;
         private static final RogueDiaryDungeonSettleNotify DEFAULT_INSTANCE = new RogueDiaryDungeonSettleNotify();
         private static final Parser<RogueDiaryDungeonSettleNotify> PARSER = new AbstractParser<RogueDiaryDungeonSettleNotify>() { // from class: emu.grasscutter.net.proto.RogueDiaryDungeonSettleNotifyOuterClass.RogueDiaryDungeonSettleNotify.1
@@ -98,14 +98,14 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 32:
+                                case 16:
+                                    this.isFinish_ = input.readBool();
+                                    break;
+                                case 24:
                                     this.exploreTime_ = input.readUInt32();
                                     break;
-                                case 88:
+                                case 96:
                                     this.curRound_ = input.readUInt32();
-                                    break;
-                                case 112:
-                                    this.isFinish_ = input.readBool();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -143,13 +143,13 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.RogueDiaryDungeonSettleNotifyOuterClass.RogueDiaryDungeonSettleNotifyOrBuilder
-        public int getCurRound() {
-            return this.curRound_;
+        public int getExploreTime() {
+            return this.exploreTime_;
         }
 
         @Override // emu.grasscutter.net.proto.RogueDiaryDungeonSettleNotifyOuterClass.RogueDiaryDungeonSettleNotifyOrBuilder
-        public int getExploreTime() {
-            return this.exploreTime_;
+        public int getCurRound() {
+            return this.curRound_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,14 +167,14 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.isFinish_) {
+                output.writeBool(2, this.isFinish_);
+            }
             if (this.exploreTime_ != 0) {
-                output.writeUInt32(4, this.exploreTime_);
+                output.writeUInt32(3, this.exploreTime_);
             }
             if (this.curRound_ != 0) {
-                output.writeUInt32(11, this.curRound_);
-            }
-            if (this.isFinish_) {
-                output.writeBool(14, this.isFinish_);
+                output.writeUInt32(12, this.curRound_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.isFinish_) {
+                size2 = 0 + CodedOutputStream.computeBoolSize(2, this.isFinish_);
+            }
             if (this.exploreTime_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.exploreTime_);
+                size2 += CodedOutputStream.computeUInt32Size(3, this.exploreTime_);
             }
             if (this.curRound_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.curRound_);
-            }
-            if (this.isFinish_) {
-                size2 += CodedOutputStream.computeBoolSize(14, this.isFinish_);
+                size2 += CodedOutputStream.computeUInt32Size(12, this.curRound_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
                 return equals(obj);
             }
             RogueDiaryDungeonSettleNotify other = (RogueDiaryDungeonSettleNotify) obj;
-            return getIsFinish() == other.getIsFinish() && getCurRound() == other.getCurRound() && getExploreTime() == other.getExploreTime() && this.unknownFields.equals(other.unknownFields);
+            return getIsFinish() == other.getIsFinish() && getExploreTime() == other.getExploreTime() && getCurRound() == other.getCurRound() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + Internal.hashBoolean(getIsFinish()))) + 11)) + getCurRound())) + 4)) + getExploreTime())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + Internal.hashBoolean(getIsFinish()))) + 3)) + getExploreTime())) + 12)) + getCurRound())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -297,8 +297,8 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RogueDiaryDungeonSettleNotifyOuterClass$RogueDiaryDungeonSettleNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements RogueDiaryDungeonSettleNotifyOrBuilder {
             private boolean isFinish_;
-            private int curRound_;
             private int exploreTime_;
+            private int curRound_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return RogueDiaryDungeonSettleNotifyOuterClass.internal_static_RogueDiaryDungeonSettleNotify_descriptor;
@@ -327,8 +327,8 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
             public Builder clear() {
                 clear();
                 this.isFinish_ = false;
-                this.curRound_ = 0;
                 this.exploreTime_ = 0;
+                this.curRound_ = 0;
                 return this;
             }
 
@@ -355,8 +355,8 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
             public RogueDiaryDungeonSettleNotify buildPartial() {
                 RogueDiaryDungeonSettleNotify result = new RogueDiaryDungeonSettleNotify(this);
                 result.isFinish_ = this.isFinish_;
-                result.curRound_ = this.curRound_;
                 result.exploreTime_ = this.exploreTime_;
+                result.curRound_ = this.curRound_;
                 onBuilt();
                 return result;
             }
@@ -407,11 +407,11 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
                 if (other.getIsFinish()) {
                     setIsFinish(other.getIsFinish());
                 }
-                if (other.getCurRound() != 0) {
-                    setCurRound(other.getCurRound());
-                }
                 if (other.getExploreTime() != 0) {
                     setExploreTime(other.getExploreTime());
+                }
+                if (other.getCurRound() != 0) {
+                    setCurRound(other.getCurRound());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -463,23 +463,6 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.RogueDiaryDungeonSettleNotifyOuterClass.RogueDiaryDungeonSettleNotifyOrBuilder
-            public int getCurRound() {
-                return this.curRound_;
-            }
-
-            public Builder setCurRound(int value) {
-                this.curRound_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearCurRound() {
-                this.curRound_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.RogueDiaryDungeonSettleNotifyOuterClass.RogueDiaryDungeonSettleNotifyOrBuilder
             public int getExploreTime() {
                 return this.exploreTime_;
             }
@@ -492,6 +475,23 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
 
             public Builder clearExploreTime() {
                 this.exploreTime_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.RogueDiaryDungeonSettleNotifyOuterClass.RogueDiaryDungeonSettleNotifyOrBuilder
+            public int getCurRound() {
+                return this.curRound_;
+            }
+
+            public Builder setCurRound(int value) {
+                this.curRound_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearCurRound() {
+                this.curRound_ = 0;
                 onChanged();
                 return this;
             }

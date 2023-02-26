@@ -967,7 +967,7 @@ public class Char2BooleanAVLTreeMap extends AbstractChar2BooleanSortedMap implem
         char from;
 
         /* renamed from: to */
-        char f1352to;
+        char f1316to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Char2BooleanMap.Entry> entries;
@@ -978,7 +978,7 @@ public class Char2BooleanAVLTreeMap extends AbstractChar2BooleanSortedMap implem
             if (bottom || top || Char2BooleanAVLTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f1352to = to;
+                this.f1316to = to;
                 this.top = top;
                 this.defRetValue = Char2BooleanAVLTreeMap.this.defRetValue;
                 return;
@@ -997,7 +997,7 @@ public class Char2BooleanAVLTreeMap extends AbstractChar2BooleanSortedMap implem
 
         /* renamed from: in */
         final boolean m1029in(char k) {
-            return (this.bottom || Char2BooleanAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Char2BooleanAVLTreeMap.this.compare(k, this.f1352to) < 0);
+            return (this.bottom || Char2BooleanAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Char2BooleanAVLTreeMap.this.compare(k, this.f1316to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.Char2BooleanMap, p014it.unimi.dsi.fastutil.chars.Char2BooleanSortedMap
@@ -1172,7 +1172,7 @@ public class Char2BooleanAVLTreeMap extends AbstractChar2BooleanSortedMap implem
         public boolean put(char k, boolean v) {
             Char2BooleanAVLTreeMap.this.modified = false;
             if (!m1029in(k)) {
-                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1352to)) + ")");
+                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1316to)) + ")");
             }
             return Char2BooleanAVLTreeMap.this.modified ? this.defRetValue : Char2BooleanAVLTreeMap.this.put(k, v);
         }
@@ -1210,7 +1210,7 @@ public class Char2BooleanAVLTreeMap extends AbstractChar2BooleanSortedMap implem
 
         @Override // p014it.unimi.dsi.fastutil.chars.Char2BooleanSortedMap
         public Char2BooleanSortedMap headMap(char to) {
-            if (!this.top && Char2BooleanAVLTreeMap.this.compare(to, this.f1352to) >= 0) {
+            if (!this.top && Char2BooleanAVLTreeMap.this.compare(to, this.f1316to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1221,7 +1221,7 @@ public class Char2BooleanAVLTreeMap extends AbstractChar2BooleanSortedMap implem
             if (!this.bottom && Char2BooleanAVLTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f1352to, this.top);
+            return new Submap(from, false, this.f1316to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.Char2BooleanSortedMap
@@ -1230,12 +1230,12 @@ public class Char2BooleanAVLTreeMap extends AbstractChar2BooleanSortedMap implem
                 return new Submap(from, false, to, false);
             }
             if (!this.top) {
-                to = Char2BooleanAVLTreeMap.this.compare(to, this.f1352to) < 0 ? to : this.f1352to;
+                to = Char2BooleanAVLTreeMap.this.compare(to, this.f1316to) < 0 ? to : this.f1316to;
             }
             if (!this.bottom) {
                 from = Char2BooleanAVLTreeMap.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f1352to) ? new Submap(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f1316to) ? new Submap(from, false, to, false) : this;
         }
 
         public Entry firstEntry() {
@@ -1254,7 +1254,7 @@ public class Char2BooleanAVLTreeMap extends AbstractChar2BooleanSortedMap implem
             if (e == null) {
                 return null;
             }
-            if (this.top || Char2BooleanAVLTreeMap.this.compare(e.key, this.f1352to) < 0) {
+            if (this.top || Char2BooleanAVLTreeMap.this.compare(e.key, this.f1316to) < 0) {
                 return e;
             }
             return null;
@@ -1268,8 +1268,8 @@ public class Char2BooleanAVLTreeMap extends AbstractChar2BooleanSortedMap implem
             if (this.top) {
                 e = Char2BooleanAVLTreeMap.this.lastEntry;
             } else {
-                e = Char2BooleanAVLTreeMap.this.locateKey(this.f1352to);
-                if (Char2BooleanAVLTreeMap.this.compare(e.key, this.f1352to) >= 0) {
+                e = Char2BooleanAVLTreeMap.this.locateKey(this.f1316to);
+                if (Char2BooleanAVLTreeMap.this.compare(e.key, this.f1316to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1347,7 +1347,7 @@ public class Char2BooleanAVLTreeMap extends AbstractChar2BooleanSortedMap implem
             @Override // p014it.unimi.dsi.fastutil.chars.Char2BooleanAVLTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Char2BooleanAVLTreeMap.this.compare(this.next.key, Submap.this.f1352to) >= 0) {
+                if (!Submap.this.top && this.next != null && Char2BooleanAVLTreeMap.this.compare(this.next.key, Submap.this.f1316to) >= 0) {
                     this.next = null;
                 }
             }

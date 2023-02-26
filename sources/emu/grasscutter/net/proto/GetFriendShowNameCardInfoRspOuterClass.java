@@ -23,21 +23,21 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetFriendShowNameCardInfoRspOuterClass.class */
 public final class GetFriendShowNameCardInfoRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"GetFriendShowNameCardInfoRsp.proto\"\\\n\u001cGetFriendShowNameCardInfoRsp\u0012\u001e\n\u0016show_name_card_id_list\u0018\u0005 \u0003(\r\u0012\u000b\n\u0003uid\u0018\t \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0003 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"GetFriendShowNameCardInfoRsp.proto\"X\n\u001cGetFriendShowNameCardInfoRsp\u0012\u000f\n\u0007retcode\u0018\u0003 \u0001(\u0005\u0012\u000b\n\u0003uid\u0018\u0002 \u0001(\r\u0012\u001a\n\u0012showNameCardIdList\u0018\u000f \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GetFriendShowNameCardInfoRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetFriendShowNameCardInfoRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetFriendShowNameCardInfoRsp_descriptor, new String[]{"ShowNameCardIdList", "Uid", "Retcode"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetFriendShowNameCardInfoRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetFriendShowNameCardInfoRsp_descriptor, new String[]{"Retcode", "Uid", "ShowNameCardIdList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetFriendShowNameCardInfoRspOuterClass$GetFriendShowNameCardInfoRspOrBuilder.class */
     public interface GetFriendShowNameCardInfoRspOrBuilder extends MessageOrBuilder {
+        int getRetcode();
+
+        int getUid();
+
         List<Integer> getShowNameCardIdListList();
 
         int getShowNameCardIdListCount();
 
         int getShowNameCardIdList(int i);
-
-        int getUid();
-
-        int getRetcode();
     }
 
     private GetFriendShowNameCardInfoRspOuterClass() {
@@ -53,13 +53,13 @@ public final class GetFriendShowNameCardInfoRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetFriendShowNameCardInfoRspOuterClass$GetFriendShowNameCardInfoRsp.class */
     public static final class GetFriendShowNameCardInfoRsp extends GeneratedMessageV3 implements GetFriendShowNameCardInfoRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SHOW_NAME_CARD_ID_LIST_FIELD_NUMBER = 5;
-        private Internal.IntList showNameCardIdList_;
-        private int showNameCardIdListMemoizedSerializedSize;
-        public static final int UID_FIELD_NUMBER = 9;
-        private int uid_;
         public static final int RETCODE_FIELD_NUMBER = 3;
         private int retcode_;
+        public static final int UID_FIELD_NUMBER = 2;
+        private int uid_;
+        public static final int SHOWNAMECARDIDLIST_FIELD_NUMBER = 15;
+        private Internal.IntList showNameCardIdList_;
+        private int showNameCardIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
         private static final GetFriendShowNameCardInfoRsp DEFAULT_INSTANCE = new GetFriendShowNameCardInfoRsp();
         private static final Parser<GetFriendShowNameCardInfoRsp> PARSER = new AbstractParser<GetFriendShowNameCardInfoRsp>() { // from class: emu.grasscutter.net.proto.GetFriendShowNameCardInfoRspOuterClass.GetFriendShowNameCardInfoRsp.1
@@ -110,17 +110,20 @@ public final class GetFriendShowNameCardInfoRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
+                            case 16:
+                                this.uid_ = input.readUInt32();
+                                break;
                             case 24:
                                 this.retcode_ = input.readInt32();
                                 break;
-                            case 40:
+                            case 120:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.showNameCardIdList_ = newIntList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.showNameCardIdList_.addInt(input.readUInt32());
                                 break;
-                            case 42:
+                            case 122:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.showNameCardIdList_ = newIntList();
@@ -130,9 +133,6 @@ public final class GetFriendShowNameCardInfoRspOuterClass {
                                     this.showNameCardIdList_.addInt(input.readUInt32());
                                 }
                                 input.popLimit(limit);
-                                break;
-                            case 72:
-                                this.uid_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -167,6 +167,16 @@ public final class GetFriendShowNameCardInfoRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GetFriendShowNameCardInfoRspOuterClass.GetFriendShowNameCardInfoRspOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetFriendShowNameCardInfoRspOuterClass.GetFriendShowNameCardInfoRspOrBuilder
+        public int getUid() {
+            return this.uid_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetFriendShowNameCardInfoRspOuterClass.GetFriendShowNameCardInfoRspOrBuilder
         public List<Integer> getShowNameCardIdListList() {
             return this.showNameCardIdList_;
         }
@@ -179,16 +189,6 @@ public final class GetFriendShowNameCardInfoRspOuterClass {
         @Override // emu.grasscutter.net.proto.GetFriendShowNameCardInfoRspOuterClass.GetFriendShowNameCardInfoRspOrBuilder
         public int getShowNameCardIdList(int index) {
             return this.showNameCardIdList_.getInt(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.GetFriendShowNameCardInfoRspOuterClass.GetFriendShowNameCardInfoRspOrBuilder
-        public int getUid() {
-            return this.uid_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetFriendShowNameCardInfoRspOuterClass.GetFriendShowNameCardInfoRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -207,18 +207,18 @@ public final class GetFriendShowNameCardInfoRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
+            if (this.uid_ != 0) {
+                output.writeUInt32(2, this.uid_);
+            }
             if (this.retcode_ != 0) {
                 output.writeInt32(3, this.retcode_);
             }
             if (getShowNameCardIdListList().size() > 0) {
-                output.writeUInt32NoTag(42);
+                output.writeUInt32NoTag(122);
                 output.writeUInt32NoTag(this.showNameCardIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.showNameCardIdList_.size(); i++) {
                 output.writeUInt32NoTag(this.showNameCardIdList_.getInt(i));
-            }
-            if (this.uid_ != 0) {
-                output.writeUInt32(9, this.uid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -230,8 +230,11 @@ public final class GetFriendShowNameCardInfoRspOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.uid_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.uid_);
+            }
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(3, this.retcode_);
+                size2 += CodedOutputStream.computeInt32Size(3, this.retcode_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.showNameCardIdList_.size(); i++) {
@@ -242,9 +245,6 @@ public final class GetFriendShowNameCardInfoRspOuterClass {
                 size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.showNameCardIdListMemoizedSerializedSize = dataSize;
-            if (this.uid_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(9, this.uid_);
-            }
             int size4 = size3 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size4;
             return size4;
@@ -259,7 +259,7 @@ public final class GetFriendShowNameCardInfoRspOuterClass {
                 return equals(obj);
             }
             GetFriendShowNameCardInfoRsp other = (GetFriendShowNameCardInfoRsp) obj;
-            return getShowNameCardIdListList().equals(other.getShowNameCardIdListList()) && getUid() == other.getUid() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
+            return getRetcode() == other.getRetcode() && getUid() == other.getUid() && getShowNameCardIdListList().equals(other.getShowNameCardIdListList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -267,11 +267,11 @@ public final class GetFriendShowNameCardInfoRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
+            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getRetcode())) + 2)) + getUid();
             if (getShowNameCardIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 5)) + getShowNameCardIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 15)) + getShowNameCardIdListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 9)) + getUid())) + 3)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -351,9 +351,9 @@ public final class GetFriendShowNameCardInfoRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetFriendShowNameCardInfoRspOuterClass$GetFriendShowNameCardInfoRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements GetFriendShowNameCardInfoRspOrBuilder {
             private int bitField0_;
-            private Internal.IntList showNameCardIdList_ = GetFriendShowNameCardInfoRsp.emptyIntList();
-            private int uid_;
             private int retcode_;
+            private int uid_;
+            private Internal.IntList showNameCardIdList_ = GetFriendShowNameCardInfoRsp.emptyIntList();
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return GetFriendShowNameCardInfoRspOuterClass.internal_static_GetFriendShowNameCardInfoRsp_descriptor;
@@ -381,10 +381,10 @@ public final class GetFriendShowNameCardInfoRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.retcode_ = 0;
+                this.uid_ = 0;
                 this.showNameCardIdList_ = GetFriendShowNameCardInfoRsp.emptyIntList();
                 this.bitField0_ &= -2;
-                this.uid_ = 0;
-                this.retcode_ = 0;
                 return this;
             }
 
@@ -411,13 +411,13 @@ public final class GetFriendShowNameCardInfoRspOuterClass {
             public GetFriendShowNameCardInfoRsp buildPartial() {
                 GetFriendShowNameCardInfoRsp result = new GetFriendShowNameCardInfoRsp(this);
                 int i = this.bitField0_;
+                result.retcode_ = this.retcode_;
+                result.uid_ = this.uid_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.showNameCardIdList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.showNameCardIdList_ = this.showNameCardIdList_;
-                result.uid_ = this.uid_;
-                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -465,6 +465,12 @@ public final class GetFriendShowNameCardInfoRspOuterClass {
                 if (other == GetFriendShowNameCardInfoRsp.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
+                }
+                if (other.getUid() != 0) {
+                    setUid(other.getUid());
+                }
                 if (!other.showNameCardIdList_.isEmpty()) {
                     if (this.showNameCardIdList_.isEmpty()) {
                         this.showNameCardIdList_ = other.showNameCardIdList_;
@@ -474,12 +480,6 @@ public final class GetFriendShowNameCardInfoRspOuterClass {
                         this.showNameCardIdList_.addAll(other.showNameCardIdList_);
                     }
                     onChanged();
-                }
-                if (other.getUid() != 0) {
-                    setUid(other.getUid());
-                }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -511,6 +511,40 @@ public final class GetFriendShowNameCardInfoRspOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.GetFriendShowNameCardInfoRspOuterClass.GetFriendShowNameCardInfoRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetFriendShowNameCardInfoRspOuterClass.GetFriendShowNameCardInfoRspOrBuilder
+            public int getUid() {
+                return this.uid_;
+            }
+
+            public Builder setUid(int value) {
+                this.uid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUid() {
+                this.uid_ = 0;
+                onChanged();
+                return this;
             }
 
             private void ensureShowNameCardIdListIsMutable() {
@@ -559,40 +593,6 @@ public final class GetFriendShowNameCardInfoRspOuterClass {
             public Builder clearShowNameCardIdList() {
                 this.showNameCardIdList_ = GetFriendShowNameCardInfoRsp.emptyIntList();
                 this.bitField0_ &= -2;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetFriendShowNameCardInfoRspOuterClass.GetFriendShowNameCardInfoRspOrBuilder
-            public int getUid() {
-                return this.uid_;
-            }
-
-            public Builder setUid(int value) {
-                this.uid_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUid() {
-                this.uid_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetFriendShowNameCardInfoRspOuterClass.GetFriendShowNameCardInfoRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
                 onChanged();
                 return this;
             }

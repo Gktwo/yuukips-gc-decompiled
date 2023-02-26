@@ -20,21 +20,21 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ActivityScheduleInfoOuterClass.class */
 public final class ActivityScheduleInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aActivityScheduleInfo.proto\"w\n\u0014ActivityScheduleInfo\u0012\u0010\n\bend_time\u0018\u0003 \u0001(\r\u0012\u000f\n\u0007is_open\u0018\f \u0001(\b\u0012\u0012\n\nbegin_time\u0018\u0001 \u0001(\r\u0012\u0013\n\u000bschedule_id\u0018\t \u0001(\r\u0012\u0013\n\u000bactivity_id\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aActivityScheduleInfo.proto\"r\n\u0014ActivityScheduleInfo\u0012\u0012\n\nactivityId\u0018\f \u0001(\r\u0012\u0012\n\nscheduleId\u0018\r \u0001(\r\u0012\u0011\n\tbeginTime\u0018\u0002 \u0001(\r\u0012\u000f\n\u0007endTime\u0018\t \u0001(\r\u0012\u000e\n\u0006isOpen\u0018\u0007 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ActivityScheduleInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ActivityScheduleInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ActivityScheduleInfo_descriptor, new String[]{"EndTime", "IsOpen", "BeginTime", "ScheduleId", "ActivityId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ActivityScheduleInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ActivityScheduleInfo_descriptor, new String[]{"ActivityId", "ScheduleId", "BeginTime", "EndTime", "IsOpen"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ActivityScheduleInfoOuterClass$ActivityScheduleInfoOrBuilder.class */
     public interface ActivityScheduleInfoOrBuilder extends MessageOrBuilder {
-        int getEndTime();
-
-        boolean getIsOpen();
-
-        int getBeginTime();
+        int getActivityId();
 
         int getScheduleId();
 
-        int getActivityId();
+        int getBeginTime();
+
+        int getEndTime();
+
+        boolean getIsOpen();
     }
 
     private ActivityScheduleInfoOuterClass() {
@@ -50,16 +50,16 @@ public final class ActivityScheduleInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ActivityScheduleInfoOuterClass$ActivityScheduleInfo.class */
     public static final class ActivityScheduleInfo extends GeneratedMessageV3 implements ActivityScheduleInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int END_TIME_FIELD_NUMBER = 3;
-        private int endTime_;
-        public static final int IS_OPEN_FIELD_NUMBER = 12;
-        private boolean isOpen_;
-        public static final int BEGIN_TIME_FIELD_NUMBER = 1;
-        private int beginTime_;
-        public static final int SCHEDULE_ID_FIELD_NUMBER = 9;
-        private int scheduleId_;
-        public static final int ACTIVITY_ID_FIELD_NUMBER = 11;
+        public static final int ACTIVITYID_FIELD_NUMBER = 12;
         private int activityId_;
+        public static final int SCHEDULEID_FIELD_NUMBER = 13;
+        private int scheduleId_;
+        public static final int BEGINTIME_FIELD_NUMBER = 2;
+        private int beginTime_;
+        public static final int ENDTIME_FIELD_NUMBER = 9;
+        private int endTime_;
+        public static final int ISOPEN_FIELD_NUMBER = 7;
+        private boolean isOpen_;
         private byte memoizedIsInitialized;
         private static final ActivityScheduleInfo DEFAULT_INSTANCE = new ActivityScheduleInfo();
         private static final Parser<ActivityScheduleInfo> PARSER = new AbstractParser<ActivityScheduleInfo>() { // from class: emu.grasscutter.net.proto.ActivityScheduleInfoOuterClass.ActivityScheduleInfo.1
@@ -105,20 +105,20 @@ public final class ActivityScheduleInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
+                            case 16:
                                 this.beginTime_ = input.readUInt32();
                                 break;
-                            case 24:
-                                this.endTime_ = input.readUInt32();
+                            case 56:
+                                this.isOpen_ = input.readBool();
                                 break;
                             case 72:
-                                this.scheduleId_ = input.readUInt32();
-                                break;
-                            case 88:
-                                this.activityId_ = input.readUInt32();
+                                this.endTime_ = input.readUInt32();
                                 break;
                             case 96:
-                                this.isOpen_ = input.readBool();
+                                this.activityId_ = input.readUInt32();
+                                break;
+                            case 104:
+                                this.scheduleId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -150,18 +150,8 @@ public final class ActivityScheduleInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ActivityScheduleInfoOuterClass.ActivityScheduleInfoOrBuilder
-        public int getEndTime() {
-            return this.endTime_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ActivityScheduleInfoOuterClass.ActivityScheduleInfoOrBuilder
-        public boolean getIsOpen() {
-            return this.isOpen_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ActivityScheduleInfoOuterClass.ActivityScheduleInfoOrBuilder
-        public int getBeginTime() {
-            return this.beginTime_;
+        public int getActivityId() {
+            return this.activityId_;
         }
 
         @Override // emu.grasscutter.net.proto.ActivityScheduleInfoOuterClass.ActivityScheduleInfoOrBuilder
@@ -170,8 +160,18 @@ public final class ActivityScheduleInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ActivityScheduleInfoOuterClass.ActivityScheduleInfoOrBuilder
-        public int getActivityId() {
-            return this.activityId_;
+        public int getBeginTime() {
+            return this.beginTime_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ActivityScheduleInfoOuterClass.ActivityScheduleInfoOrBuilder
+        public int getEndTime() {
+            return this.endTime_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ActivityScheduleInfoOuterClass.ActivityScheduleInfoOrBuilder
+        public boolean getIsOpen() {
+            return this.isOpen_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -190,19 +190,19 @@ public final class ActivityScheduleInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.beginTime_ != 0) {
-                output.writeUInt32(1, this.beginTime_);
-            }
-            if (this.endTime_ != 0) {
-                output.writeUInt32(3, this.endTime_);
-            }
-            if (this.scheduleId_ != 0) {
-                output.writeUInt32(9, this.scheduleId_);
-            }
-            if (this.activityId_ != 0) {
-                output.writeUInt32(11, this.activityId_);
+                output.writeUInt32(2, this.beginTime_);
             }
             if (this.isOpen_) {
-                output.writeBool(12, this.isOpen_);
+                output.writeBool(7, this.isOpen_);
+            }
+            if (this.endTime_ != 0) {
+                output.writeUInt32(9, this.endTime_);
+            }
+            if (this.activityId_ != 0) {
+                output.writeUInt32(12, this.activityId_);
+            }
+            if (this.scheduleId_ != 0) {
+                output.writeUInt32(13, this.scheduleId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -215,19 +215,19 @@ public final class ActivityScheduleInfoOuterClass {
             }
             int size2 = 0;
             if (this.beginTime_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.beginTime_);
-            }
-            if (this.endTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(3, this.endTime_);
-            }
-            if (this.scheduleId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.scheduleId_);
-            }
-            if (this.activityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.activityId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.beginTime_);
             }
             if (this.isOpen_) {
-                size2 += CodedOutputStream.computeBoolSize(12, this.isOpen_);
+                size2 += CodedOutputStream.computeBoolSize(7, this.isOpen_);
+            }
+            if (this.endTime_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(9, this.endTime_);
+            }
+            if (this.activityId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(12, this.activityId_);
+            }
+            if (this.scheduleId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(13, this.scheduleId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -243,7 +243,7 @@ public final class ActivityScheduleInfoOuterClass {
                 return equals(obj);
             }
             ActivityScheduleInfo other = (ActivityScheduleInfo) obj;
-            return getEndTime() == other.getEndTime() && getIsOpen() == other.getIsOpen() && getBeginTime() == other.getBeginTime() && getScheduleId() == other.getScheduleId() && getActivityId() == other.getActivityId() && this.unknownFields.equals(other.unknownFields);
+            return getActivityId() == other.getActivityId() && getScheduleId() == other.getScheduleId() && getBeginTime() == other.getBeginTime() && getEndTime() == other.getEndTime() && getIsOpen() == other.getIsOpen() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -251,7 +251,7 @@ public final class ActivityScheduleInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getEndTime())) + 12)) + Internal.hashBoolean(getIsOpen()))) + 1)) + getBeginTime())) + 9)) + getScheduleId())) + 11)) + getActivityId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getActivityId())) + 13)) + getScheduleId())) + 2)) + getBeginTime())) + 9)) + getEndTime())) + 7)) + Internal.hashBoolean(getIsOpen()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -330,11 +330,11 @@ public final class ActivityScheduleInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ActivityScheduleInfoOuterClass$ActivityScheduleInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ActivityScheduleInfoOrBuilder {
+            private int activityId_;
+            private int scheduleId_;
+            private int beginTime_;
             private int endTime_;
             private boolean isOpen_;
-            private int beginTime_;
-            private int scheduleId_;
-            private int activityId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ActivityScheduleInfoOuterClass.internal_static_ActivityScheduleInfo_descriptor;
@@ -362,11 +362,11 @@ public final class ActivityScheduleInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.activityId_ = 0;
+                this.scheduleId_ = 0;
+                this.beginTime_ = 0;
                 this.endTime_ = 0;
                 this.isOpen_ = false;
-                this.beginTime_ = 0;
-                this.scheduleId_ = 0;
-                this.activityId_ = 0;
                 return this;
             }
 
@@ -392,11 +392,11 @@ public final class ActivityScheduleInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public ActivityScheduleInfo buildPartial() {
                 ActivityScheduleInfo result = new ActivityScheduleInfo(this);
+                result.activityId_ = this.activityId_;
+                result.scheduleId_ = this.scheduleId_;
+                result.beginTime_ = this.beginTime_;
                 result.endTime_ = this.endTime_;
                 result.isOpen_ = this.isOpen_;
-                result.beginTime_ = this.beginTime_;
-                result.scheduleId_ = this.scheduleId_;
-                result.activityId_ = this.activityId_;
                 onBuilt();
                 return result;
             }
@@ -444,20 +444,20 @@ public final class ActivityScheduleInfoOuterClass {
                 if (other == ActivityScheduleInfo.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getActivityId() != 0) {
+                    setActivityId(other.getActivityId());
+                }
+                if (other.getScheduleId() != 0) {
+                    setScheduleId(other.getScheduleId());
+                }
+                if (other.getBeginTime() != 0) {
+                    setBeginTime(other.getBeginTime());
+                }
                 if (other.getEndTime() != 0) {
                     setEndTime(other.getEndTime());
                 }
                 if (other.getIsOpen()) {
                     setIsOpen(other.getIsOpen());
-                }
-                if (other.getBeginTime() != 0) {
-                    setBeginTime(other.getBeginTime());
-                }
-                if (other.getScheduleId() != 0) {
-                    setScheduleId(other.getScheduleId());
-                }
-                if (other.getActivityId() != 0) {
-                    setActivityId(other.getActivityId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -492,6 +492,57 @@ public final class ActivityScheduleInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ActivityScheduleInfoOuterClass.ActivityScheduleInfoOrBuilder
+            public int getActivityId() {
+                return this.activityId_;
+            }
+
+            public Builder setActivityId(int value) {
+                this.activityId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearActivityId() {
+                this.activityId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ActivityScheduleInfoOuterClass.ActivityScheduleInfoOrBuilder
+            public int getScheduleId() {
+                return this.scheduleId_;
+            }
+
+            public Builder setScheduleId(int value) {
+                this.scheduleId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearScheduleId() {
+                this.scheduleId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ActivityScheduleInfoOuterClass.ActivityScheduleInfoOrBuilder
+            public int getBeginTime() {
+                return this.beginTime_;
+            }
+
+            public Builder setBeginTime(int value) {
+                this.beginTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearBeginTime() {
+                this.beginTime_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ActivityScheduleInfoOuterClass.ActivityScheduleInfoOrBuilder
             public int getEndTime() {
                 return this.endTime_;
             }
@@ -521,57 +572,6 @@ public final class ActivityScheduleInfoOuterClass {
 
             public Builder clearIsOpen() {
                 this.isOpen_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ActivityScheduleInfoOuterClass.ActivityScheduleInfoOrBuilder
-            public int getBeginTime() {
-                return this.beginTime_;
-            }
-
-            public Builder setBeginTime(int value) {
-                this.beginTime_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearBeginTime() {
-                this.beginTime_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ActivityScheduleInfoOuterClass.ActivityScheduleInfoOrBuilder
-            public int getScheduleId() {
-                return this.scheduleId_;
-            }
-
-            public Builder setScheduleId(int value) {
-                this.scheduleId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearScheduleId() {
-                this.scheduleId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ActivityScheduleInfoOuterClass.ActivityScheduleInfoOrBuilder
-            public int getActivityId() {
-                return this.activityId_;
-            }
-
-            public Builder setActivityId(int value) {
-                this.activityId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearActivityId() {
-                this.activityId_ = 0;
                 onChanged();
                 return this;
             }

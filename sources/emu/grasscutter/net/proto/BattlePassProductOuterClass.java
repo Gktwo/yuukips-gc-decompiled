@@ -19,19 +19,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BattlePassProductOuterClass.class */
 public final class BattlePassProductOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017BattlePassProduct.proto\"d\n\u0011BattlePassProduct\u0012\u0018\n\u0010extra_product_id\u0018\f \u0001(\t\u0012\u0019\n\u0011normal_product_id\u0018\t \u0001(\t\u0012\u001a\n\u0012upgrade_product_id\u0018\u0007 \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017BattlePassProduct.proto\"^\n\u0011BattlePassProduct\u0012\u0017\n\u000fnormalProductId\u0018\u0004 \u0001(\t\u0012\u0016\n\u000eextraProductId\u0018\u000e \u0001(\t\u0012\u0018\n\u0010upgradeProductId\u0018\u0007 \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_BattlePassProduct_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_BattlePassProduct_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BattlePassProduct_descriptor, new String[]{"ExtraProductId", "NormalProductId", "UpgradeProductId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_BattlePassProduct_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BattlePassProduct_descriptor, new String[]{"NormalProductId", "ExtraProductId", "UpgradeProductId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BattlePassProductOuterClass$BattlePassProductOrBuilder.class */
     public interface BattlePassProductOrBuilder extends MessageOrBuilder {
-        String getExtraProductId();
-
-        ByteString getExtraProductIdBytes();
-
         String getNormalProductId();
 
         ByteString getNormalProductIdBytes();
+
+        String getExtraProductId();
+
+        ByteString getExtraProductIdBytes();
 
         String getUpgradeProductId();
 
@@ -51,11 +51,11 @@ public final class BattlePassProductOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BattlePassProductOuterClass$BattlePassProduct.class */
     public static final class BattlePassProduct extends GeneratedMessageV3 implements BattlePassProductOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int EXTRA_PRODUCT_ID_FIELD_NUMBER = 12;
-        private volatile Object extraProductId_;
-        public static final int NORMAL_PRODUCT_ID_FIELD_NUMBER = 9;
+        public static final int NORMALPRODUCTID_FIELD_NUMBER = 4;
         private volatile Object normalProductId_;
-        public static final int UPGRADE_PRODUCT_ID_FIELD_NUMBER = 7;
+        public static final int EXTRAPRODUCTID_FIELD_NUMBER = 14;
+        private volatile Object extraProductId_;
+        public static final int UPGRADEPRODUCTID_FIELD_NUMBER = 7;
         private volatile Object upgradeProductId_;
         private byte memoizedIsInitialized;
         private static final BattlePassProduct DEFAULT_INSTANCE = new BattlePassProduct();
@@ -73,8 +73,8 @@ public final class BattlePassProductOuterClass {
 
         private BattlePassProduct() {
             this.memoizedIsInitialized = -1;
-            this.extraProductId_ = "";
             this.normalProductId_ = "";
+            this.extraProductId_ = "";
             this.upgradeProductId_ = "";
         }
 
@@ -105,13 +105,13 @@ public final class BattlePassProductOuterClass {
                             case 0:
                                 done = true;
                                 break;
+                            case 34:
+                                this.normalProductId_ = input.readStringRequireUtf8();
+                                break;
                             case 58:
                                 this.upgradeProductId_ = input.readStringRequireUtf8();
                                 break;
-                            case 74:
-                                this.normalProductId_ = input.readStringRequireUtf8();
-                                break;
-                            case 98:
+                            case 114:
                                 this.extraProductId_ = input.readStringRequireUtf8();
                                 break;
                             default:
@@ -144,28 +144,6 @@ public final class BattlePassProductOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.BattlePassProductOuterClass.BattlePassProductOrBuilder
-        public String getExtraProductId() {
-            Object ref = this.extraProductId_;
-            if (ref instanceof String) {
-                return (String) ref;
-            }
-            String s = ((ByteString) ref).toStringUtf8();
-            this.extraProductId_ = s;
-            return s;
-        }
-
-        @Override // emu.grasscutter.net.proto.BattlePassProductOuterClass.BattlePassProductOrBuilder
-        public ByteString getExtraProductIdBytes() {
-            Object ref = this.extraProductId_;
-            if (!(ref instanceof String)) {
-                return (ByteString) ref;
-            }
-            ByteString b = ByteString.copyFromUtf8((String) ref);
-            this.extraProductId_ = b;
-            return b;
-        }
-
-        @Override // emu.grasscutter.net.proto.BattlePassProductOuterClass.BattlePassProductOrBuilder
         public String getNormalProductId() {
             Object ref = this.normalProductId_;
             if (ref instanceof String) {
@@ -184,6 +162,28 @@ public final class BattlePassProductOuterClass {
             }
             ByteString b = ByteString.copyFromUtf8((String) ref);
             this.normalProductId_ = b;
+            return b;
+        }
+
+        @Override // emu.grasscutter.net.proto.BattlePassProductOuterClass.BattlePassProductOrBuilder
+        public String getExtraProductId() {
+            Object ref = this.extraProductId_;
+            if (ref instanceof String) {
+                return (String) ref;
+            }
+            String s = ((ByteString) ref).toStringUtf8();
+            this.extraProductId_ = s;
+            return s;
+        }
+
+        @Override // emu.grasscutter.net.proto.BattlePassProductOuterClass.BattlePassProductOrBuilder
+        public ByteString getExtraProductIdBytes() {
+            Object ref = this.extraProductId_;
+            if (!(ref instanceof String)) {
+                return (ByteString) ref;
+            }
+            ByteString b = ByteString.copyFromUtf8((String) ref);
+            this.extraProductId_ = b;
             return b;
         }
 
@@ -224,14 +224,14 @@ public final class BattlePassProductOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (!GeneratedMessageV3.isStringEmpty(this.normalProductId_)) {
+                GeneratedMessageV3.writeString(output, 4, this.normalProductId_);
+            }
             if (!GeneratedMessageV3.isStringEmpty(this.upgradeProductId_)) {
                 GeneratedMessageV3.writeString(output, 7, this.upgradeProductId_);
             }
-            if (!GeneratedMessageV3.isStringEmpty(this.normalProductId_)) {
-                GeneratedMessageV3.writeString(output, 9, this.normalProductId_);
-            }
             if (!GeneratedMessageV3.isStringEmpty(this.extraProductId_)) {
-                GeneratedMessageV3.writeString(output, 12, this.extraProductId_);
+                GeneratedMessageV3.writeString(output, 14, this.extraProductId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -243,14 +243,14 @@ public final class BattlePassProductOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (!GeneratedMessageV3.isStringEmpty(this.upgradeProductId_)) {
-                size2 = 0 + GeneratedMessageV3.computeStringSize(7, this.upgradeProductId_);
-            }
             if (!GeneratedMessageV3.isStringEmpty(this.normalProductId_)) {
-                size2 += GeneratedMessageV3.computeStringSize(9, this.normalProductId_);
+                size2 = 0 + GeneratedMessageV3.computeStringSize(4, this.normalProductId_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.upgradeProductId_)) {
+                size2 += GeneratedMessageV3.computeStringSize(7, this.upgradeProductId_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.extraProductId_)) {
-                size2 += GeneratedMessageV3.computeStringSize(12, this.extraProductId_);
+                size2 += GeneratedMessageV3.computeStringSize(14, this.extraProductId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -266,7 +266,7 @@ public final class BattlePassProductOuterClass {
                 return equals(obj);
             }
             BattlePassProduct other = (BattlePassProduct) obj;
-            return getExtraProductId().equals(other.getExtraProductId()) && getNormalProductId().equals(other.getNormalProductId()) && getUpgradeProductId().equals(other.getUpgradeProductId()) && this.unknownFields.equals(other.unknownFields);
+            return getNormalProductId().equals(other.getNormalProductId()) && getExtraProductId().equals(other.getExtraProductId()) && getUpgradeProductId().equals(other.getUpgradeProductId()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -274,7 +274,7 @@ public final class BattlePassProductOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getExtraProductId().hashCode())) + 9)) + getNormalProductId().hashCode())) + 7)) + getUpgradeProductId().hashCode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getNormalProductId().hashCode())) + 14)) + getExtraProductId().hashCode())) + 7)) + getUpgradeProductId().hashCode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -353,8 +353,8 @@ public final class BattlePassProductOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BattlePassProductOuterClass$BattlePassProduct$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements BattlePassProductOrBuilder {
-            private Object extraProductId_ = "";
             private Object normalProductId_ = "";
+            private Object extraProductId_ = "";
             private Object upgradeProductId_ = "";
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -383,8 +383,8 @@ public final class BattlePassProductOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.extraProductId_ = "";
                 this.normalProductId_ = "";
+                this.extraProductId_ = "";
                 this.upgradeProductId_ = "";
                 return this;
             }
@@ -411,8 +411,8 @@ public final class BattlePassProductOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public BattlePassProduct buildPartial() {
                 BattlePassProduct result = new BattlePassProduct(this);
-                result.extraProductId_ = this.extraProductId_;
                 result.normalProductId_ = this.normalProductId_;
+                result.extraProductId_ = this.extraProductId_;
                 result.upgradeProductId_ = this.upgradeProductId_;
                 onBuilt();
                 return result;
@@ -461,12 +461,12 @@ public final class BattlePassProductOuterClass {
                 if (other == BattlePassProduct.getDefaultInstance()) {
                     return this;
                 }
-                if (!other.getExtraProductId().isEmpty()) {
-                    this.extraProductId_ = other.extraProductId_;
-                    onChanged();
-                }
                 if (!other.getNormalProductId().isEmpty()) {
                     this.normalProductId_ = other.normalProductId_;
+                    onChanged();
+                }
+                if (!other.getExtraProductId().isEmpty()) {
+                    this.extraProductId_ = other.extraProductId_;
                     onChanged();
                 }
                 if (!other.getUpgradeProductId().isEmpty()) {
@@ -503,53 +503,6 @@ public final class BattlePassProductOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.BattlePassProductOuterClass.BattlePassProductOrBuilder
-            public String getExtraProductId() {
-                Object ref = this.extraProductId_;
-                if (ref instanceof String) {
-                    return (String) ref;
-                }
-                String s = ((ByteString) ref).toStringUtf8();
-                this.extraProductId_ = s;
-                return s;
-            }
-
-            @Override // emu.grasscutter.net.proto.BattlePassProductOuterClass.BattlePassProductOrBuilder
-            public ByteString getExtraProductIdBytes() {
-                Object ref = this.extraProductId_;
-                if (!(ref instanceof String)) {
-                    return (ByteString) ref;
-                }
-                ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.extraProductId_ = b;
-                return b;
-            }
-
-            public Builder setExtraProductId(String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.extraProductId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearExtraProductId() {
-                this.extraProductId_ = BattlePassProduct.getDefaultInstance().getExtraProductId();
-                onChanged();
-                return this;
-            }
-
-            public Builder setExtraProductIdBytes(ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                BattlePassProduct.checkByteStringIsUtf8(value);
-                this.extraProductId_ = value;
-                onChanged();
-                return this;
             }
 
             @Override // emu.grasscutter.net.proto.BattlePassProductOuterClass.BattlePassProductOrBuilder
@@ -595,6 +548,53 @@ public final class BattlePassProductOuterClass {
                 }
                 BattlePassProduct.checkByteStringIsUtf8(value);
                 this.normalProductId_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.BattlePassProductOuterClass.BattlePassProductOrBuilder
+            public String getExtraProductId() {
+                Object ref = this.extraProductId_;
+                if (ref instanceof String) {
+                    return (String) ref;
+                }
+                String s = ((ByteString) ref).toStringUtf8();
+                this.extraProductId_ = s;
+                return s;
+            }
+
+            @Override // emu.grasscutter.net.proto.BattlePassProductOuterClass.BattlePassProductOrBuilder
+            public ByteString getExtraProductIdBytes() {
+                Object ref = this.extraProductId_;
+                if (!(ref instanceof String)) {
+                    return (ByteString) ref;
+                }
+                ByteString b = ByteString.copyFromUtf8((String) ref);
+                this.extraProductId_ = b;
+                return b;
+            }
+
+            public Builder setExtraProductId(String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.extraProductId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearExtraProductId() {
+                this.extraProductId_ = BattlePassProduct.getDefaultInstance().getExtraProductId();
+                onChanged();
+                return this;
+            }
+
+            public Builder setExtraProductIdBytes(ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                BattlePassProduct.checkByteStringIsUtf8(value);
+                this.extraProductId_ = value;
                 onChanged();
                 return this;
             }

@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VintageMarketDeliverItemReqOuterClass.class */
 public final class VintageMarketDeliverItemReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!VintageMarketDeliverItemReq.proto\u001a\u000fItemParam.proto\"W\n\u001bVintageMarketDeliverItemReq\u0012%\n\u0011deliver_item_list\u0018\f \u0003(\u000b2\n.ItemParam\u0012\u0011\n\ttrader_id\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!VintageMarketDeliverItemReq.proto\u001a\u000fItemParam.proto\"T\n\u001bVintageMarketDeliverItemReq\u0012#\n\u000fdeliverItemList\u0018\u000f \u0003(\u000b2\n.ItemParam\u0012\u0010\n\btraderId\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_VintageMarketDeliverItemReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_VintageMarketDeliverItemReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_VintageMarketDeliverItemReq_descriptor, new String[]{"DeliverItemList", "TraderId"});
 
@@ -57,9 +57,9 @@ public final class VintageMarketDeliverItemReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VintageMarketDeliverItemReqOuterClass$VintageMarketDeliverItemReq.class */
     public static final class VintageMarketDeliverItemReq extends GeneratedMessageV3 implements VintageMarketDeliverItemReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int DELIVER_ITEM_LIST_FIELD_NUMBER = 12;
+        public static final int DELIVERITEMLIST_FIELD_NUMBER = 15;
         private List<ItemParamOuterClass.ItemParam> deliverItemList_;
-        public static final int TRADER_ID_FIELD_NUMBER = 3;
+        public static final int TRADERID_FIELD_NUMBER = 4;
         private int traderId_;
         private byte memoizedIsInitialized;
         private static final VintageMarketDeliverItemReq DEFAULT_INSTANCE = new VintageMarketDeliverItemReq();
@@ -110,10 +110,10 @@ public final class VintageMarketDeliverItemReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 24:
+                                case 32:
                                     this.traderId_ = input.readUInt32();
                                     break;
-                                case 98:
+                                case 122:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.deliverItemList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -199,10 +199,10 @@ public final class VintageMarketDeliverItemReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.traderId_ != 0) {
-                output.writeUInt32(3, this.traderId_);
+                output.writeUInt32(4, this.traderId_);
             }
             for (int i = 0; i < this.deliverItemList_.size(); i++) {
-                output.writeMessage(12, this.deliverItemList_.get(i));
+                output.writeMessage(15, this.deliverItemList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -215,10 +215,10 @@ public final class VintageMarketDeliverItemReqOuterClass {
             }
             int size2 = 0;
             if (this.traderId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.traderId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.traderId_);
             }
             for (int i = 0; i < this.deliverItemList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(12, this.deliverItemList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(15, this.deliverItemList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -244,9 +244,9 @@ public final class VintageMarketDeliverItemReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getDeliverItemListCount() > 0) {
-                hash = (53 * ((37 * hash) + 12)) + getDeliverItemListList().hashCode();
+                hash = (53 * ((37 * hash) + 15)) + getDeliverItemListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 3)) + getTraderId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 4)) + getTraderId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

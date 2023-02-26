@@ -27,23 +27,23 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneEntityAiInfoOuterClass.class */
 public final class SceneEntityAiInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017SceneEntityAiInfo.proto\u001a\u0011ServantInfo.proto\u001a\fVector.proto\"Ô\u0003\n\u0011SceneEntityAiInfo\u0012\u0012\n\nis_ai_open\u0018\u0001 \u0001(\b\u0012\u0019\n\bborn_pos\u0018\u0002 \u0001(\u000b2\u0007.Vector\u00128\n\fskill_cd_map\u0018\u0003 \u0003(\u000b2\".SceneEntityAiInfo.SkillCdMapEntry\u0012\"\n\fservant_info\u0018\u0004 \u0001(\u000b2\f.ServantInfo\u0012:\n\rai_threat_map\u0018\u0005 \u0003(\u000b2#.SceneEntityAiInfo.AiThreatMapEntry\u0012C\n\u0012skill_group_cd_map\u0018\u0006 \u0003(\u000b2'.SceneEntityAiInfo.SkillGroupCdMapEntry\u0012\u0012\n\ncur_tactic\u0018\u0007 \u0001(\r\u001a1\n\u000fSkillCdMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001\u001a2\n\u0010AiThreatMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001\u001a6\n\u0014SkillGroupCdMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ServantInfoOuterClass.getDescriptor(), VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017SceneEntityAiInfo.proto\u001a\fVector.proto\u001a\u0011ServantInfo.proto\"È\u0003\n\u0011SceneEntityAiInfo\u0012\u0010\n\bisAiOpen\u0018\u0001 \u0001(\b\u0012\u0018\n\u0007bornPos\u0018\u0002 \u0001(\u000b2\u0007.Vector\u00126\n\nskillCdMap\u0018\u0003 \u0003(\u000b2\".SceneEntityAiInfo.SkillCdMapEntry\u0012!\n\u000bservantInfo\u0018\u0004 \u0001(\u000b2\f.ServantInfo\u00128\n\u000baiThreatMap\u0018\u0005 \u0003(\u000b2#.SceneEntityAiInfo.AiThreatMapEntry\u0012@\n\u000fskillGroupCdMap\u0018\u0006 \u0003(\u000b2'.SceneEntityAiInfo.SkillGroupCdMapEntry\u0012\u0011\n\tcurTactic\u0018\u0007 \u0001(\r\u001a1\n\u000fSkillCdMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001\u001a2\n\u0010AiThreatMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001\u001a6\n\u0014SkillGroupCdMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor(), ServantInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SceneEntityAiInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SceneEntityAiInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneEntityAiInfo_descriptor, new String[]{"IsAiOpen", "BornPos", "SkillCdMap", "ServantInfo", "AiThreatMap", "SkillGroupCdMap", "CurTactic"});
     private static final Descriptors.Descriptor internal_static_SceneEntityAiInfo_SkillCdMapEntry_descriptor = internal_static_SceneEntityAiInfo_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_SceneEntityAiInfo_SkillCdMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f860xdba1676d = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneEntityAiInfo_SkillCdMapEntry_descriptor, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f836xdba1676d = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneEntityAiInfo_SkillCdMapEntry_descriptor, new String[]{"Key", "Value"});
     private static final Descriptors.Descriptor internal_static_SceneEntityAiInfo_AiThreatMapEntry_descriptor = internal_static_SceneEntityAiInfo_descriptor.getNestedTypes().get(1);
 
     /* renamed from: internal_static_SceneEntityAiInfo_AiThreatMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f861xd266f0ab = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneEntityAiInfo_AiThreatMapEntry_descriptor, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f837xd266f0ab = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneEntityAiInfo_AiThreatMapEntry_descriptor, new String[]{"Key", "Value"});
 
     /* renamed from: internal_static_SceneEntityAiInfo_SkillGroupCdMapEntry_descriptor */
-    private static final Descriptors.Descriptor f862xce992b40 = internal_static_SceneEntityAiInfo_descriptor.getNestedTypes().get(2);
+    private static final Descriptors.Descriptor f838xce992b40 = internal_static_SceneEntityAiInfo_descriptor.getNestedTypes().get(2);
 
     /* renamed from: internal_static_SceneEntityAiInfo_SkillGroupCdMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f863xd8c911be = new GeneratedMessageV3.FieldAccessorTable(f862xce992b40, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f839xd8c911be = new GeneratedMessageV3.FieldAccessorTable(f838xce992b40, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneEntityAiInfoOuterClass$SceneEntityAiInfoOrBuilder.class */
     public interface SceneEntityAiInfoOrBuilder extends MessageOrBuilder {
@@ -116,19 +116,19 @@ public final class SceneEntityAiInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneEntityAiInfoOuterClass$SceneEntityAiInfo.class */
     public static final class SceneEntityAiInfo extends GeneratedMessageV3 implements SceneEntityAiInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_AI_OPEN_FIELD_NUMBER = 1;
+        public static final int ISAIOPEN_FIELD_NUMBER = 1;
         private boolean isAiOpen_;
-        public static final int BORN_POS_FIELD_NUMBER = 2;
+        public static final int BORNPOS_FIELD_NUMBER = 2;
         private VectorOuterClass.Vector bornPos_;
-        public static final int SKILL_CD_MAP_FIELD_NUMBER = 3;
+        public static final int SKILLCDMAP_FIELD_NUMBER = 3;
         private MapField<Integer, Integer> skillCdMap_;
-        public static final int SERVANT_INFO_FIELD_NUMBER = 4;
+        public static final int SERVANTINFO_FIELD_NUMBER = 4;
         private ServantInfoOuterClass.ServantInfo servantInfo_;
-        public static final int AI_THREAT_MAP_FIELD_NUMBER = 5;
+        public static final int AITHREATMAP_FIELD_NUMBER = 5;
         private MapField<Integer, Integer> aiThreatMap_;
-        public static final int SKILL_GROUP_CD_MAP_FIELD_NUMBER = 6;
+        public static final int SKILLGROUPCDMAP_FIELD_NUMBER = 6;
         private MapField<Integer, Integer> skillGroupCdMap_;
-        public static final int CUR_TACTIC_FIELD_NUMBER = 7;
+        public static final int CURTACTIC_FIELD_NUMBER = 7;
         private int curTactic_;
         private byte memoizedIsInitialized;
         private static final SceneEntityAiInfo DEFAULT_INSTANCE = new SceneEntityAiInfo();
@@ -463,7 +463,7 @@ public final class SceneEntityAiInfoOuterClass {
         /* access modifiers changed from: private */
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneEntityAiInfoOuterClass$SceneEntityAiInfo$SkillGroupCdMapDefaultEntryHolder.class */
         public static final class SkillGroupCdMapDefaultEntryHolder {
-            static final MapEntry<Integer, Integer> defaultEntry = MapEntry.newDefaultInstance(SceneEntityAiInfoOuterClass.f862xce992b40, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.UINT32, 0);
+            static final MapEntry<Integer, Integer> defaultEntry = MapEntry.newDefaultInstance(SceneEntityAiInfoOuterClass.f838xce992b40, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.UINT32, 0);
 
             private SkillGroupCdMapDefaultEntryHolder() {
             }
@@ -1485,7 +1485,7 @@ public final class SceneEntityAiInfoOuterClass {
     }
 
     static {
-        ServantInfoOuterClass.getDescriptor();
         VectorOuterClass.getDescriptor();
+        ServantInfoOuterClass.getDescriptor();
     }
 }

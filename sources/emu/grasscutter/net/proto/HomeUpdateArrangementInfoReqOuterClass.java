@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeUpdateArrangementInfoReqOuterClass.class */
 public final class HomeUpdateArrangementInfoReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"HomeUpdateArrangementInfoReq.proto\u001a\u001eHomeSceneArrangementInfo.proto\"Y\n\u001cHomeUpdateArrangementInfoReq\u00129\n\u0016scene_arrangement_info\u0018\u0006 \u0001(\u000b2\u0019.HomeSceneArrangementInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeSceneArrangementInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"HomeUpdateArrangementInfoReq.proto\u001a\u001eHomeSceneArrangementInfo.proto\"W\n\u001cHomeUpdateArrangementInfoReq\u00127\n\u0014sceneArrangementInfo\u0018\u0002 \u0001(\u000b2\u0019.HomeSceneArrangementInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeSceneArrangementInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_HomeUpdateArrangementInfoReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeUpdateArrangementInfoReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeUpdateArrangementInfoReq_descriptor, new String[]{"SceneArrangementInfo"});
 
@@ -47,7 +47,7 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeUpdateArrangementInfoReqOuterClass$HomeUpdateArrangementInfoReq.class */
     public static final class HomeUpdateArrangementInfoReq extends GeneratedMessageV3 implements HomeUpdateArrangementInfoReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SCENE_ARRANGEMENT_INFO_FIELD_NUMBER = 6;
+        public static final int SCENEARRANGEMENTINFO_FIELD_NUMBER = 2;
         private HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo sceneArrangementInfo_;
         private byte memoizedIsInitialized;
         private static final HomeUpdateArrangementInfoReq DEFAULT_INSTANCE = new HomeUpdateArrangementInfoReq();
@@ -94,7 +94,7 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 50:
+                            case 18:
                                 HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo.Builder subBuilder = this.sceneArrangementInfo_ != null ? this.sceneArrangementInfo_.toBuilder() : null;
                                 this.sceneArrangementInfo_ = (HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo) input.readMessage(HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -164,7 +164,7 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.sceneArrangementInfo_ != null) {
-                output.writeMessage(6, getSceneArrangementInfo());
+                output.writeMessage(2, getSceneArrangementInfo());
             }
             this.unknownFields.writeTo(output);
         }
@@ -177,7 +177,7 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
             }
             int size2 = 0;
             if (this.sceneArrangementInfo_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(6, getSceneArrangementInfo());
+                size2 = 0 + CodedOutputStream.computeMessageSize(2, getSceneArrangementInfo());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -206,7 +206,7 @@ public final class HomeUpdateArrangementInfoReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasSceneArrangementInfo()) {
-                hash = (53 * ((37 * hash) + 6)) + getSceneArrangementInfo().hashCode();
+                hash = (53 * ((37 * hash) + 2)) + getSceneArrangementInfo().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

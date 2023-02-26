@@ -6,7 +6,6 @@ import emu.grasscutter.game.activity.PlayerActivityData;
 import emu.grasscutter.game.activity.musicgame.MusicGamePlayerData;
 import emu.grasscutter.game.props.ActivityType;
 import emu.grasscutter.net.proto.ActivityInfoOuterClass;
-import emu.grasscutter.net.proto.MusicGameActivityDetailInfoOuterClass;
 import emu.grasscutter.utils.JsonUtils;
 
 @GameActivity(ActivityType.NEW_ACTIVITY_MUSIC_GAME)
@@ -20,7 +19,6 @@ public class MusicGameActivityHandler extends ActivityHandler {
     @Override // emu.grasscutter.game.activity.ActivityHandler
     public void onProtoBuild(PlayerActivityData playerActivityData, ActivityInfoOuterClass.ActivityInfo.Builder activityInfo) {
         getMusicGamePlayerData(playerActivityData);
-        activityInfo.setMusicGameInfo(MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.newBuilder());
     }
 
     public MusicGamePlayerData getMusicGamePlayerData(PlayerActivityData playerActivityData) {

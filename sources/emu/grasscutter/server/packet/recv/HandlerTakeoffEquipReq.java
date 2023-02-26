@@ -6,7 +6,7 @@ import emu.grasscutter.net.proto.TakeoffEquipReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketTakeoffEquipRsp;
 
-@Opcodes(642)
+@Opcodes(669)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerTakeoffEquipReq.class */
 public class HandlerTakeoffEquipReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

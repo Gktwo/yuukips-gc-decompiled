@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetBlossomBriefInfoListRspOuterClass.class */
 public final class GetBlossomBriefInfoListRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n GetBlossomBriefInfoListRsp.proto\u001a\u0016BlossomBriefInfo.proto\"Y\n\u001aGetBlossomBriefInfoListRsp\u0012\u000f\n\u0007retcode\u0018\u000e \u0001(\u0005\u0012*\n\u000fbrief_info_list\u0018\u0001 \u0003(\u000b2\u0011.BlossomBriefInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BlossomBriefInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n GetBlossomBriefInfoListRsp.proto\u001a\u0016BlossomBriefInfo.proto\"W\n\u001aGetBlossomBriefInfoListRsp\u0012\u000f\n\u0007retcode\u0018\u0002 \u0001(\u0005\u0012(\n\rbriefInfoList\u0018\u0004 \u0003(\u000b2\u0011.BlossomBriefInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BlossomBriefInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_GetBlossomBriefInfoListRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetBlossomBriefInfoListRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetBlossomBriefInfoListRsp_descriptor, new String[]{"Retcode", "BriefInfoList"});
 
@@ -57,9 +57,9 @@ public final class GetBlossomBriefInfoListRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetBlossomBriefInfoListRspOuterClass$GetBlossomBriefInfoListRsp.class */
     public static final class GetBlossomBriefInfoListRsp extends GeneratedMessageV3 implements GetBlossomBriefInfoListRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 14;
+        public static final int RETCODE_FIELD_NUMBER = 2;
         private int retcode_;
-        public static final int BRIEF_INFO_LIST_FIELD_NUMBER = 1;
+        public static final int BRIEFINFOLIST_FIELD_NUMBER = 4;
         private List<BlossomBriefInfoOuterClass.BlossomBriefInfo> briefInfoList_;
         private byte memoizedIsInitialized;
         private static final GetBlossomBriefInfoListRsp DEFAULT_INSTANCE = new GetBlossomBriefInfoListRsp();
@@ -110,15 +110,15 @@ public final class GetBlossomBriefInfoListRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 10:
+                                case 16:
+                                    this.retcode_ = input.readInt32();
+                                    break;
+                                case 34:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.briefInfoList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.briefInfoList_.add((BlossomBriefInfoOuterClass.BlossomBriefInfo) input.readMessage(BlossomBriefInfoOuterClass.BlossomBriefInfo.parser(), extensionRegistry));
-                                    break;
-                                case 112:
-                                    this.retcode_ = input.readInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -198,11 +198,11 @@ public final class GetBlossomBriefInfoListRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            for (int i = 0; i < this.briefInfoList_.size(); i++) {
-                output.writeMessage(1, this.briefInfoList_.get(i));
-            }
             if (this.retcode_ != 0) {
-                output.writeInt32(14, this.retcode_);
+                output.writeInt32(2, this.retcode_);
+            }
+            for (int i = 0; i < this.briefInfoList_.size(); i++) {
+                output.writeMessage(4, this.briefInfoList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -214,11 +214,11 @@ public final class GetBlossomBriefInfoListRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            for (int i = 0; i < this.briefInfoList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(1, this.briefInfoList_.get(i));
-            }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(14, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(2, this.retcode_);
+            }
+            for (int i = 0; i < this.briefInfoList_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(4, this.briefInfoList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -242,9 +242,9 @@ public final class GetBlossomBriefInfoListRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getRetcode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getRetcode();
             if (getBriefInfoListCount() > 0) {
-                hash = (53 * ((37 * hash) + 1)) + getBriefInfoListList().hashCode();
+                hash = (53 * ((37 * hash) + 4)) + getBriefInfoListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

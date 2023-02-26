@@ -17,14 +17,14 @@ public class IntHeapPriorityQueue implements IntPriorityQueue, Serializable {
     protected int size;
 
     /* renamed from: c */
-    protected IntComparator f2170c;
+    protected IntComparator f2134c;
 
     public IntHeapPriorityQueue(int capacity, IntComparator c) {
         this.heap = IntArrays.EMPTY_ARRAY;
         if (capacity > 0) {
             this.heap = new int[capacity];
         }
-        this.f2170c = c;
+        this.f2134c = c;
     }
 
     public IntHeapPriorityQueue(int capacity) {
@@ -88,7 +88,7 @@ public class IntHeapPriorityQueue implements IntPriorityQueue, Serializable {
         int i = this.size;
         this.size = i + 1;
         iArr[i] = x;
-        IntHeaps.upHeap(this.heap, this.size, this.size - 1, this.f2170c);
+        IntHeaps.upHeap(this.heap, this.size, this.size - 1, this.f2134c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.ints.IntPriorityQueue
@@ -103,7 +103,7 @@ public class IntHeapPriorityQueue implements IntPriorityQueue, Serializable {
         this.size = i;
         iArr[0] = iArr2[i];
         if (this.size != 0) {
-            IntHeaps.downHeap(this.heap, this.size, 0, this.f2170c);
+            IntHeaps.downHeap(this.heap, this.size, 0, this.f2134c);
         }
         return result;
     }
@@ -118,7 +118,7 @@ public class IntHeapPriorityQueue implements IntPriorityQueue, Serializable {
 
     @Override // p014it.unimi.dsi.fastutil.PriorityQueue
     public void changed() {
-        IntHeaps.downHeap(this.heap, this.size, 0, this.f2170c);
+        IntHeaps.downHeap(this.heap, this.size, 0, this.f2134c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.PriorityQueue
@@ -138,7 +138,7 @@ public class IntHeapPriorityQueue implements IntPriorityQueue, Serializable {
     /* Return type fixed from 'it.unimi.dsi.fastutil.ints.IntComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.ints.IntPriorityQueue, p014it.unimi.dsi.fastutil.PriorityQueue
     public Comparator<? super Integer> comparator() {
-        return this.f2170c;
+        return this.f2134c;
     }
 
     private void writeObject(ObjectOutputStream s) throws IOException {

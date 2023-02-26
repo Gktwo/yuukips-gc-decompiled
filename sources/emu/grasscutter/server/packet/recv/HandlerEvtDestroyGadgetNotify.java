@@ -2,8 +2,9 @@ package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
+import emu.grasscutter.net.packet.PacketOpcodes;
 
-@Opcodes(343)
+@Opcodes(PacketOpcodes.EvtDestroyGadgetNotify)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerEvtDestroyGadgetNotify.class */
 public class HandlerEvtDestroyGadgetNotify extends PacketHandler {
     /*  JADX ERROR: Dependency scan failed at insn: 0x0031: INVOKE_CUSTOM r-2

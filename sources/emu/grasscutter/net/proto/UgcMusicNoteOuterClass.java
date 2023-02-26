@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UgcMusicNoteOuterClass.class */
 public final class UgcMusicNoteOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012UgcMusicNote.proto\"4\n\fUgcMusicNote\u0012\u0012\n\nstart_time\u0018\u000b \u0001(\r\u0012\u0010\n\bend_time\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012UgcMusicNote.proto\"2\n\fUgcMusicNote\u0012\u0011\n\tstartTime\u0018\u0003 \u0001(\r\u0012\u000f\n\u0007endTime\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_UgcMusicNote_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_UgcMusicNote_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_UgcMusicNote_descriptor, new String[]{"StartTime", "EndTime"});
 
@@ -43,9 +43,9 @@ public final class UgcMusicNoteOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UgcMusicNoteOuterClass$UgcMusicNote.class */
     public static final class UgcMusicNote extends GeneratedMessageV3 implements UgcMusicNoteOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int START_TIME_FIELD_NUMBER = 11;
+        public static final int STARTTIME_FIELD_NUMBER = 3;
         private int startTime_;
-        public static final int END_TIME_FIELD_NUMBER = 9;
+        public static final int ENDTIME_FIELD_NUMBER = 5;
         private int endTime_;
         private byte memoizedIsInitialized;
         private static final UgcMusicNote DEFAULT_INSTANCE = new UgcMusicNote();
@@ -92,11 +92,11 @@ public final class UgcMusicNoteOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 72:
-                                this.endTime_ = input.readUInt32();
-                                break;
-                            case 88:
+                            case 24:
                                 this.startTime_ = input.readUInt32();
+                                break;
+                            case 40:
+                                this.endTime_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -152,11 +152,11 @@ public final class UgcMusicNoteOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.endTime_ != 0) {
-                output.writeUInt32(9, this.endTime_);
-            }
             if (this.startTime_ != 0) {
-                output.writeUInt32(11, this.startTime_);
+                output.writeUInt32(3, this.startTime_);
+            }
+            if (this.endTime_ != 0) {
+                output.writeUInt32(5, this.endTime_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class UgcMusicNoteOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.endTime_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(9, this.endTime_);
-            }
             if (this.startTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.startTime_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.startTime_);
+            }
+            if (this.endTime_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(5, this.endTime_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class UgcMusicNoteOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getStartTime())) + 9)) + getEndTime())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getStartTime())) + 5)) + getEndTime())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

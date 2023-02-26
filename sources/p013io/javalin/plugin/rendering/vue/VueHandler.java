@@ -99,7 +99,7 @@ public abstract class VueHandler implements Handler {
             index$iv++;
         }
         if (JavalinVue.optimizeDependencies) {
-            dependencies = m5902handle$lambda0(resolver$delegate).resolve(componentId);
+            dependencies = m5899handle$lambda0(resolver$delegate).resolve(componentId);
         } else {
             dependencies = VueHandlerKt.joinVueFiles(allFiles);
         }
@@ -133,7 +133,7 @@ public abstract class VueHandler implements Handler {
     }
 
     /* renamed from: handle$lambda-0  reason: not valid java name */
-    private static final VueDependencyResolver m5902handle$lambda0(Lazy<? extends VueDependencyResolver> lazy) {
+    private static final VueDependencyResolver m5899handle$lambda0(Lazy<? extends VueDependencyResolver> lazy) {
         return (VueDependencyResolver) lazy.getValue();
     }
 

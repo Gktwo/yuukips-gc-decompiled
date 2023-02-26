@@ -23,11 +23,11 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnlockedFurnitureFormulaDataNotifyOuterClass.class */
 public final class UnlockedFurnitureFormulaDataNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n(UnlockedFurnitureFormulaDataNotify.proto\"O\n\"UnlockedFurnitureFormulaDataNotify\u0012\u000e\n\u0006is_all\u0018\u0004 \u0001(\b\u0012\u0019\n\u0011furniture_id_list\u0018\u0002 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n(UnlockedFurnitureFormulaDataNotify.proto\"L\n\"UnlockedFurnitureFormulaDataNotify\u0012\r\n\u0005isAll\u0018\u000e \u0001(\b\u0012\u0017\n\u000ffurnitureIdList\u0018\b \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_UnlockedFurnitureFormulaDataNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_UnlockedFurnitureFormulaDataNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f901x7050f353 = new GeneratedMessageV3.FieldAccessorTable(internal_static_UnlockedFurnitureFormulaDataNotify_descriptor, new String[]{"IsAll", "FurnitureIdList"});
+    private static final GeneratedMessageV3.FieldAccessorTable f870x7050f353 = new GeneratedMessageV3.FieldAccessorTable(internal_static_UnlockedFurnitureFormulaDataNotify_descriptor, new String[]{"IsAll", "FurnitureIdList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnlockedFurnitureFormulaDataNotifyOuterClass$UnlockedFurnitureFormulaDataNotifyOrBuilder.class */
     public interface UnlockedFurnitureFormulaDataNotifyOrBuilder extends MessageOrBuilder {
@@ -53,9 +53,9 @@ public final class UnlockedFurnitureFormulaDataNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnlockedFurnitureFormulaDataNotifyOuterClass$UnlockedFurnitureFormulaDataNotify.class */
     public static final class UnlockedFurnitureFormulaDataNotify extends GeneratedMessageV3 implements UnlockedFurnitureFormulaDataNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_ALL_FIELD_NUMBER = 4;
+        public static final int ISALL_FIELD_NUMBER = 14;
         private boolean isAll_;
-        public static final int FURNITURE_ID_LIST_FIELD_NUMBER = 2;
+        public static final int FURNITUREIDLIST_FIELD_NUMBER = 8;
         private Internal.IntList furnitureIdList_;
         private int furnitureIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -109,14 +109,14 @@ public final class UnlockedFurnitureFormulaDataNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
+                                case 64:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.furnitureIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.furnitureIdList_.addInt(input.readUInt32());
                                     break;
-                                case 18:
+                                case 66:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.furnitureIdList_ = newIntList();
@@ -127,7 +127,7 @@ public final class UnlockedFurnitureFormulaDataNotifyOuterClass {
                                     }
                                     input.popLimit(limit);
                                     break;
-                                case 32:
+                                case 112:
                                     this.isAll_ = input.readBool();
                                     break;
                                 default:
@@ -160,7 +160,7 @@ public final class UnlockedFurnitureFormulaDataNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return UnlockedFurnitureFormulaDataNotifyOuterClass.f901x7050f353.ensureFieldAccessorsInitialized(UnlockedFurnitureFormulaDataNotify.class, Builder.class);
+            return UnlockedFurnitureFormulaDataNotifyOuterClass.f870x7050f353.ensureFieldAccessorsInitialized(UnlockedFurnitureFormulaDataNotify.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.UnlockedFurnitureFormulaDataNotifyOuterClass.UnlockedFurnitureFormulaDataNotifyOrBuilder
@@ -200,14 +200,14 @@ public final class UnlockedFurnitureFormulaDataNotifyOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getFurnitureIdListList().size() > 0) {
-                output.writeUInt32NoTag(18);
+                output.writeUInt32NoTag(66);
                 output.writeUInt32NoTag(this.furnitureIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.furnitureIdList_.size(); i++) {
                 output.writeUInt32NoTag(this.furnitureIdList_.getInt(i));
             }
             if (this.isAll_) {
-                output.writeBool(4, this.isAll_);
+                output.writeBool(14, this.isAll_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -228,7 +228,7 @@ public final class UnlockedFurnitureFormulaDataNotifyOuterClass {
             }
             this.furnitureIdListMemoizedSerializedSize = dataSize;
             if (this.isAll_) {
-                size2 += CodedOutputStream.computeBoolSize(4, this.isAll_);
+                size2 += CodedOutputStream.computeBoolSize(14, this.isAll_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -252,9 +252,9 @@ public final class UnlockedFurnitureFormulaDataNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + Internal.hashBoolean(getIsAll());
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + Internal.hashBoolean(getIsAll());
             if (getFurnitureIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 2)) + getFurnitureIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 8)) + getFurnitureIdListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -345,7 +345,7 @@ public final class UnlockedFurnitureFormulaDataNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return UnlockedFurnitureFormulaDataNotifyOuterClass.f901x7050f353.ensureFieldAccessorsInitialized(UnlockedFurnitureFormulaDataNotify.class, Builder.class);
+                return UnlockedFurnitureFormulaDataNotifyOuterClass.f870x7050f353.ensureFieldAccessorsInitialized(UnlockedFurnitureFormulaDataNotify.class, Builder.class);
             }
 
             private Builder() {

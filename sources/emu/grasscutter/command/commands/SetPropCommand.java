@@ -9,6 +9,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.PlayerProgressManager;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.tower.TowerLevelRecord;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.server.packet.send.PacketHomeBasicInfoNotify;
 import emu.grasscutter.server.packet.send.PacketOpenStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketSceneAreaUnlockNotify;
@@ -22,9 +23,10 @@ import java.util.stream.IntStream;
 /* loaded from: grasscutter.jar:emu/grasscutter/command/commands/SetPropCommand.class */
 public final class SetPropCommand implements CommandHandler {
     Map<String, Prop> props = new HashMap();
+    private static final int total_scene = 9;
     private static final List<Integer> scene_point_rand = IntStream.range(0, 1000).boxed().toList();
     private static final List<Integer> scene_areas_rand = IntStream.range(0, 500).boxed().toList();
-    private static final int total_scene = 9;
+    private static final List<Integer> sceneAreas = List.of((Object[]) new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 17, 18, 19, 20, 21, 22, 23, 24, 25, 29, 100, 101, 102, 103, 200, Integer.valueOf((int) PacketOpcodes.ExecuteGadgetLuaReq), 300, 400, 401, 402, 403});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/command/commands/SetPropCommand$PseudoProp.class */
     enum PseudoProp {
@@ -152,6 +154,8 @@ public final class SetPropCommand implements CommandHandler {
         Prop allopenstate = new Prop("openstate", PseudoProp.ALL_OPENSTATE);
         this.props.put("OpenState", allopenstate);
         this.props.put("osall", allopenstate);
+        this.props.put("barrier", allopenstate);
+        this.props.put("pb", allopenstate);
         Prop setopenstate = new Prop("SetOpenstate", PseudoProp.SET_OPENSTATE);
         this.props.put("setopenstate", setopenstate);
         this.props.put("so", setopenstate);
@@ -161,9 +165,14 @@ public final class SetPropCommand implements CommandHandler {
         Prop unlockmap = new Prop("UnlockMap", PseudoProp.UNLOCK_MAP);
         this.props.put("unlockmap", unlockmap);
         this.props.put("um", unlockmap);
+        this.props.put("point", unlockmap);
+        this.props.put("waypoint", unlockmap);
+        this.props.put("teleport ", unlockmap);
         Prop home = new Prop("UnlockHome", PseudoProp.UNLOCK_HOUSE);
         this.props.put("unlockhome", home);
         this.props.put("uh", home);
+        this.props.put("teapot", home);
+        this.props.put("house", home);
     }
 
     private boolean setTowerLevel(Player sender, Player targetPlayer, int topFloor) {
@@ -281,13 +290,17 @@ public final class SetPropCommand implements CommandHandler {
             targetPlayer.sendPacket(new PacketSceneAreaUnlockNotify(playerScene, targetPlayer.getUnlockedSceneAreas(playerScene)));
             CommandHandler.sendMessage(targetPlayer, "Map is already open");
             return true;
-        } else if (type != 0) {
-            return true;
-        } else {
+        } else if (type == 0) {
             targetPlayer.getUnlockedScenePoints().clear();
             targetPlayer.getUnlockedSceneAreas().clear();
             CommandHandler.sendMessage(targetPlayer, "Remove all Points MAP, you will be logged out automatically in 3 seconds");
             targetPlayer.getSession().LogoutWait(true, 3, "Map close");
+            return true;
+        } else if (type != 4) {
+            return true;
+        } else {
+            CommandHandler.sendMessage(targetPlayer, "Unlock Music");
+            targetPlayer.sendPacket(new PacketScenePointUnlockNotify(3, (int) PacketOpcodes.MeetNpcRsp));
             return true;
         }
     }

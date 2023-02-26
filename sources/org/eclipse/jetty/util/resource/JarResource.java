@@ -12,7 +12,7 @@ import java.net.URLConnection;
 import java.util.jar.JarEntry;
 import java.util.jar.JarInputStream;
 import java.util.jar.Manifest;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.StringUtil;
 import org.eclipse.jetty.util.URIUtil;
 import org.eclipse.jetty.util.log.Log;
@@ -80,7 +80,7 @@ public class JarResource extends URLResource {
             return new FilterInputStream(getInputStream(false)) { // from class: org.eclipse.jetty.util.resource.JarResource.1
                 @Override // java.io.FilterInputStream, java.io.Closeable, java.lang.AutoCloseable, java.io.InputStream
                 public void close() {
-                    this.in = C5747IO.getClosedStream();
+                    this.in = C5739IO.getClosedStream();
                 }
             };
         }
@@ -145,7 +145,7 @@ public class JarResource extends URLResource {
                             }
                             fout = new FileOutputStream(file);
                             try {
-                                C5747IO.copy(jin, fout);
+                                C5739IO.copy(jin, fout);
                                 fout.close();
                                 if (entry.getTime() >= 0) {
                                     file.setLastModified(entry.getTime());

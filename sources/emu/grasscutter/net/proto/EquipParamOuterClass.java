@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EquipParamOuterClass.class */
 public final class EquipParamOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010EquipParam.proto\"Z\n\nEquipParam\u0012\u000f\n\u0007item_id\u0018\u0001 \u0001(\r\u0012\u0010\n\bitem_num\u0018\u0002 \u0001(\r\u0012\u0012\n\nitem_level\u0018\u0003 \u0001(\r\u0012\u0015\n\rpromote_level\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010EquipParam.proto\"V\n\nEquipParam\u0012\u000e\n\u0006itemId\u0018\u0001 \u0001(\r\u0012\u000f\n\u0007itemNum\u0018\u0002 \u0001(\r\u0012\u0011\n\titemLevel\u0018\u0003 \u0001(\r\u0012\u0014\n\fpromoteLevel\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_EquipParam_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_EquipParam_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EquipParam_descriptor, new String[]{"ItemId", "ItemNum", "ItemLevel", "PromoteLevel"});
 
@@ -47,13 +47,13 @@ public final class EquipParamOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EquipParamOuterClass$EquipParam.class */
     public static final class EquipParam extends GeneratedMessageV3 implements EquipParamOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ITEM_ID_FIELD_NUMBER = 1;
+        public static final int ITEMID_FIELD_NUMBER = 1;
         private int itemId_;
-        public static final int ITEM_NUM_FIELD_NUMBER = 2;
+        public static final int ITEMNUM_FIELD_NUMBER = 2;
         private int itemNum_;
-        public static final int ITEM_LEVEL_FIELD_NUMBER = 3;
+        public static final int ITEMLEVEL_FIELD_NUMBER = 3;
         private int itemLevel_;
-        public static final int PROMOTE_LEVEL_FIELD_NUMBER = 4;
+        public static final int PROMOTELEVEL_FIELD_NUMBER = 4;
         private int promoteLevel_;
         private byte memoizedIsInitialized;
         private static final EquipParam DEFAULT_INSTANCE = new EquipParam();

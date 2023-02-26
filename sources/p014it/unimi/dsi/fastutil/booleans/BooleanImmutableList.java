@@ -20,10 +20,10 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
     static final BooleanImmutableList EMPTY = new BooleanImmutableList(BooleanArrays.EMPTY_ARRAY);
 
     /* renamed from: a */
-    private final boolean[] f1064a;
+    private final boolean[] f1028a;
 
     public BooleanImmutableList(boolean[] a) {
-        this.f1064a = a;
+        this.f1028a = a;
     }
 
     public BooleanImmutableList(Collection<? extends Boolean> c) {
@@ -36,12 +36,12 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
 
     public BooleanImmutableList(BooleanList l) {
         this(l.isEmpty() ? BooleanArrays.EMPTY_ARRAY : new boolean[l.size()]);
-        l.getElements(0, this.f1064a, 0, l.size());
+        l.getElements(0, this.f1028a, 0, l.size());
     }
 
     public BooleanImmutableList(boolean[] a, int offset, int length) {
         this(length == 0 ? BooleanArrays.EMPTY_ARRAY : new boolean[length]);
-        System.arraycopy(a, offset, this.f1064a, 0, length);
+        System.arraycopy(a, offset, this.f1028a, 0, length);
     }
 
     public BooleanImmutableList(BooleanIterator i) {
@@ -60,17 +60,17 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
 
     @Override // p014it.unimi.dsi.fastutil.booleans.BooleanList
     public boolean getBoolean(int index) {
-        if (index < this.f1064a.length) {
-            return this.f1064a[index];
+        if (index < this.f1028a.length) {
+            return this.f1028a[index];
         }
-        throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.f1064a.length + ")");
+        throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.f1028a.length + ")");
     }
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList, p014it.unimi.dsi.fastutil.booleans.BooleanList
     public int indexOf(boolean k) {
-        int size = this.f1064a.length;
+        int size = this.f1028a.length;
         for (int i = 0; i < size; i++) {
-            if (k == this.f1064a[i]) {
+            if (k == this.f1028a[i]) {
                 return i;
             }
         }
@@ -79,50 +79,50 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList, p014it.unimi.dsi.fastutil.booleans.BooleanList
     public int lastIndexOf(boolean k) {
-        int i = this.f1064a.length;
+        int i = this.f1028a.length;
         do {
             i--;
             if (i == 0) {
                 return -1;
             }
-        } while (k != this.f1064a[i]);
+        } while (k != this.f1028a[i]);
         return i;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public int size() {
-        return this.f1064a.length;
+        return this.f1028a.length;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List, p014it.unimi.dsi.fastutil.Stack
     public boolean isEmpty() {
-        return this.f1064a.length == 0;
+        return this.f1028a.length == 0;
     }
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList, p014it.unimi.dsi.fastutil.booleans.BooleanList
     public void getElements(int from, boolean[] a, int offset, int length) {
         BooleanArrays.ensureOffsetLength(a, offset, length);
-        System.arraycopy(this.f1064a, from, a, offset, length);
+        System.arraycopy(this.f1028a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList, p014it.unimi.dsi.fastutil.booleans.BooleanIterable
     public void forEach(BooleanConsumer action) {
-        for (int i = 0; i < this.f1064a.length; i++) {
-            action.accept(this.f1064a[i]);
+        for (int i = 0; i < this.f1028a.length; i++) {
+            action.accept(this.f1028a[i]);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList, p014it.unimi.dsi.fastutil.booleans.AbstractBooleanCollection, p014it.unimi.dsi.fastutil.booleans.BooleanCollection
     public boolean[] toBooleanArray() {
-        return (boolean[]) this.f1064a.clone();
+        return (boolean[]) this.f1028a.clone();
     }
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList, p014it.unimi.dsi.fastutil.booleans.AbstractBooleanCollection, p014it.unimi.dsi.fastutil.booleans.BooleanCollection
     public boolean[] toArray(boolean[] a) {
         if (a == null || a.length < size()) {
-            a = new boolean[this.f1064a.length];
+            a = new boolean[this.f1028a.length];
         }
-        System.arraycopy(this.f1064a, 0, a, 0, a.length);
+        System.arraycopy(this.f1028a, 0, a, 0, a.length);
         return a;
     }
 
@@ -140,7 +140,7 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
 
             @Override // java.util.Iterator, java.util.ListIterator
             public boolean hasNext() {
-                return this.pos < BooleanImmutableList.this.f1064a.length;
+                return this.pos < BooleanImmutableList.this.f1028a.length;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -153,7 +153,7 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                boolean[] zArr = BooleanImmutableList.this.f1064a;
+                boolean[] zArr = BooleanImmutableList.this.f1028a;
                 int i = this.pos;
                 this.pos = i + 1;
                 return zArr[i];
@@ -164,7 +164,7 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                boolean[] zArr = BooleanImmutableList.this.f1064a;
+                boolean[] zArr = BooleanImmutableList.this.f1028a;
                 int i = this.pos - 1;
                 this.pos = i;
                 return zArr[i];
@@ -182,8 +182,8 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
 
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
             public void forEachRemaining(BooleanConsumer action) {
-                while (this.pos < BooleanImmutableList.this.f1064a.length) {
-                    boolean[] zArr = BooleanImmutableList.this.f1064a;
+                while (this.pos < BooleanImmutableList.this.f1028a.length) {
+                    boolean[] zArr = BooleanImmutableList.this.f1028a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(zArr[i]);
@@ -210,7 +210,7 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
                 if (n < 0) {
                     throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                 }
-                int remaining = BooleanImmutableList.this.f1064a.length - this.pos;
+                int remaining = BooleanImmutableList.this.f1028a.length - this.pos;
                 if (n < remaining) {
                     this.pos -= n;
                 } else {
@@ -225,12 +225,12 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
                 if (n < 0) {
                     throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                 }
-                int remaining = BooleanImmutableList.this.f1064a.length - this.pos;
+                int remaining = BooleanImmutableList.this.f1028a.length - this.pos;
                 if (n < remaining) {
                     this.pos += n;
                 } else {
                     n = remaining;
-                    this.pos = BooleanImmutableList.this.f1064a.length;
+                    this.pos = BooleanImmutableList.this.f1028a.length;
                 }
                 return n;
             }
@@ -250,7 +250,7 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
         }
 
         public Spliterator(BooleanImmutableList booleanImmutableList) {
-            this(0, booleanImmutableList.f1064a.length);
+            this(0, booleanImmutableList.f1028a.length);
         }
 
         private Spliterator(int pos, int max) {
@@ -276,7 +276,7 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
             if (this.pos >= this.max) {
                 return false;
             }
-            boolean[] zArr = BooleanImmutableList.this.f1064a;
+            boolean[] zArr = BooleanImmutableList.this.f1028a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(zArr[i]);
@@ -285,7 +285,7 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
 
         public void forEachRemaining(BooleanConsumer action) {
             while (this.pos < this.max) {
-                action.accept(BooleanImmutableList.this.f1064a[this.pos]);
+                action.accept(BooleanImmutableList.this.f1028a[this.pos]);
                 this.pos++;
             }
         }
@@ -335,28 +335,28 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
         final int from;
 
         /* renamed from: to */
-        final int f1065to;
+        final int f1029to;
 
         /* renamed from: a */
-        final transient boolean[] f1066a;
+        final transient boolean[] f1030a;
 
         ImmutableSubList(BooleanImmutableList innerList, int from, int to) {
             this.innerList = innerList;
             this.from = from;
-            this.f1065to = to;
-            this.f1066a = innerList.f1064a;
+            this.f1029to = to;
+            this.f1030a = innerList.f1028a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanList
         public boolean getBoolean(int index) {
             ensureRestrictedIndex(index);
-            return this.f1066a[index + this.from];
+            return this.f1030a[index + this.from];
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList, p014it.unimi.dsi.fastutil.booleans.BooleanList
         public int indexOf(boolean k) {
-            for (int i = this.from; i < this.f1065to; i++) {
-                if (k == this.f1066a[i]) {
+            for (int i = this.from; i < this.f1029to; i++) {
+                if (k == this.f1030a[i]) {
                     return i - this.from;
                 }
             }
@@ -365,46 +365,46 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
 
         @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList, p014it.unimi.dsi.fastutil.booleans.BooleanList
         public int lastIndexOf(boolean k) {
-            int i = this.f1065to;
+            int i = this.f1029to;
             do {
                 i--;
                 if (i == this.from) {
                     return -1;
                 }
-            } while (k != this.f1066a[i]);
+            } while (k != this.f1030a[i]);
             return i - this.from;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public int size() {
-            return this.f1065to - this.from;
+            return this.f1029to - this.from;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List, p014it.unimi.dsi.fastutil.Stack
         public boolean isEmpty() {
-            return this.f1065to <= this.from;
+            return this.f1029to <= this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList, p014it.unimi.dsi.fastutil.booleans.BooleanList
         public void getElements(int fromSublistIndex, boolean[] a, int offset, int length) {
             BooleanArrays.ensureOffsetLength(a, offset, length);
             ensureRestrictedIndex(fromSublistIndex);
-            if (this.from + length > this.f1065to) {
+            if (this.from + length > this.f1029to) {
                 throw new IndexOutOfBoundsException("Final index " + (this.from + length) + " (startingIndex: " + this.from + " + length: " + length + ") is greater then list length " + size());
             }
-            System.arraycopy(this.f1066a, fromSublistIndex + this.from, a, offset, length);
+            System.arraycopy(this.f1030a, fromSublistIndex + this.from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList, p014it.unimi.dsi.fastutil.booleans.BooleanIterable
         public void forEach(BooleanConsumer action) {
-            for (int i = this.from; i < this.f1065to; i++) {
-                action.accept(this.f1066a[i]);
+            for (int i = this.from; i < this.f1029to; i++) {
+                action.accept(this.f1030a[i]);
             }
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList, p014it.unimi.dsi.fastutil.booleans.AbstractBooleanCollection, p014it.unimi.dsi.fastutil.booleans.BooleanCollection
         public boolean[] toBooleanArray() {
-            return Arrays.copyOfRange(this.f1066a, this.from, this.f1065to);
+            return Arrays.copyOfRange(this.f1030a, this.from, this.f1029to);
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList, p014it.unimi.dsi.fastutil.booleans.AbstractBooleanCollection, p014it.unimi.dsi.fastutil.booleans.BooleanCollection
@@ -412,7 +412,7 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
             if (a == null || a.length < size()) {
                 a = new boolean[size()];
             }
-            System.arraycopy(this.f1066a, this.from, a, 0, size());
+            System.arraycopy(this.f1030a, this.from, a, 0, size());
             return a;
         }
 
@@ -430,7 +430,7 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
 
                 @Override // java.util.Iterator, java.util.ListIterator
                 public boolean hasNext() {
-                    return this.pos < ImmutableSubList.this.f1065to;
+                    return this.pos < ImmutableSubList.this.f1029to;
                 }
 
                 @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -443,7 +443,7 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
                     if (!hasNext()) {
                         throw new NoSuchElementException();
                     }
-                    boolean[] zArr = ImmutableSubList.this.f1066a;
+                    boolean[] zArr = ImmutableSubList.this.f1030a;
                     int i = this.pos;
                     this.pos = i + 1;
                     return zArr[i + ImmutableSubList.this.from];
@@ -454,7 +454,7 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
                     if (!hasPrevious()) {
                         throw new NoSuchElementException();
                     }
-                    boolean[] zArr = ImmutableSubList.this.f1066a;
+                    boolean[] zArr = ImmutableSubList.this.f1030a;
                     int i = this.pos - 1;
                     this.pos = i;
                     return zArr[i + ImmutableSubList.this.from];
@@ -472,8 +472,8 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
 
                 @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
                 public void forEachRemaining(BooleanConsumer action) {
-                    while (this.pos < ImmutableSubList.this.f1065to) {
-                        boolean[] zArr = ImmutableSubList.this.f1066a;
+                    while (this.pos < ImmutableSubList.this.f1029to) {
+                        boolean[] zArr = ImmutableSubList.this.f1030a;
                         int i = this.pos;
                         this.pos = i + 1;
                         action.accept(zArr[i + ImmutableSubList.this.from]);
@@ -500,7 +500,7 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
                     if (n < 0) {
                         throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                     }
-                    int remaining = ImmutableSubList.this.f1065to - this.pos;
+                    int remaining = ImmutableSubList.this.f1029to - this.pos;
                     if (n < remaining) {
                         this.pos -= n;
                     } else {
@@ -515,12 +515,12 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
                     if (n < 0) {
                         throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                     }
-                    int remaining = ImmutableSubList.this.f1065to - this.pos;
+                    int remaining = ImmutableSubList.this.f1029to - this.pos;
                     if (n < remaining) {
                         this.pos += n;
                     } else {
                         n = remaining;
-                        this.pos = ImmutableSubList.this.f1065to;
+                        this.pos = ImmutableSubList.this.f1029to;
                     }
                     return n;
                 }
@@ -532,7 +532,7 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
         /* loaded from: grasscutter.jar:it/unimi/dsi/fastutil/booleans/BooleanImmutableList$ImmutableSubList$SubListSpliterator.class */
         public final class SubListSpliterator extends BooleanSpliterators.EarlyBindingSizeIndexBasedSpliterator {
             SubListSpliterator() {
-                super(ImmutableSubList.this.from, ImmutableSubList.this.f1065to);
+                super(ImmutableSubList.this.from, ImmutableSubList.this.f1029to);
             }
 
             private SubListSpliterator(int pos, int maxPos) {
@@ -541,7 +541,7 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
 
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanSpliterators.AbstractIndexBasedSpliterator
             protected final boolean get(int i) {
-                return ImmutableSubList.this.f1066a[i];
+                return ImmutableSubList.this.f1030a[i];
             }
 
             /* access modifiers changed from: protected */
@@ -555,7 +555,7 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
                 if (this.pos >= this.maxPos) {
                     return false;
                 }
-                boolean[] zArr = ImmutableSubList.this.f1066a;
+                boolean[] zArr = ImmutableSubList.this.f1030a;
                 int i = this.pos;
                 this.pos = i + 1;
                 action.accept(zArr[i]);
@@ -566,7 +566,7 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
             public void forEachRemaining(BooleanConsumer action) {
                 int max = this.maxPos;
                 while (this.pos < max) {
-                    boolean[] zArr = ImmutableSubList.this.f1066a;
+                    boolean[] zArr = ImmutableSubList.this.f1030a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(zArr[i]);
@@ -585,7 +585,7 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
         }
 
         boolean contentsEquals(boolean[] otherA, int otherAFrom, int otherATo) {
-            if (this.f1066a == otherA && this.from == otherAFrom && this.f1065to == otherATo) {
+            if (this.f1030a == otherA && this.from == otherAFrom && this.f1029to == otherATo) {
                 return true;
             }
             if (otherATo - otherAFrom != size()) {
@@ -593,10 +593,10 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
             }
             int pos = this.from;
             int otherPos = otherAFrom;
-            while (pos < this.f1065to) {
+            while (pos < this.f1029to) {
                 pos++;
                 otherPos++;
-                if (this.f1066a[pos] != otherA[otherPos]) {
+                if (this.f1030a[pos] != otherA[otherPos]) {
                     return false;
                 }
             }
@@ -613,23 +613,23 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
             }
             if (o instanceof BooleanImmutableList) {
                 BooleanImmutableList other = (BooleanImmutableList) o;
-                return contentsEquals(other.f1064a, 0, other.size());
+                return contentsEquals(other.f1028a, 0, other.size());
             } else if (!(o instanceof ImmutableSubList)) {
                 return equals(o);
             } else {
                 ImmutableSubList other2 = (ImmutableSubList) o;
-                return contentsEquals(other2.f1066a, other2.from, other2.f1065to);
+                return contentsEquals(other2.f1030a, other2.from, other2.f1029to);
             }
         }
 
         int contentsCompareTo(boolean[] otherA, int otherAFrom, int otherATo) {
-            if (this.f1066a == otherA && this.from == otherAFrom && this.f1065to == otherATo) {
+            if (this.f1030a == otherA && this.from == otherAFrom && this.f1029to == otherATo) {
                 return 0;
             }
             int i = this.from;
             int j = otherAFrom;
-            while (i < this.f1065to && i < otherATo) {
-                int r = Boolean.compare(this.f1066a[i], otherA[j]);
+            while (i < this.f1029to && i < otherATo) {
+                int r = Boolean.compare(this.f1030a[i], otherA[j]);
                 if (r != 0) {
                     return r;
                 }
@@ -639,25 +639,25 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
             if (i < otherATo) {
                 return -1;
             }
-            return i < this.f1065to ? 1 : 0;
+            return i < this.f1029to ? 1 : 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList
         public int compareTo(List<? extends Boolean> l) {
             if (l instanceof BooleanImmutableList) {
                 BooleanImmutableList other = (BooleanImmutableList) l;
-                return contentsCompareTo(other.f1064a, 0, other.size());
+                return contentsCompareTo(other.f1028a, 0, other.size());
             } else if (!(l instanceof ImmutableSubList)) {
                 return compareTo(l);
             } else {
                 ImmutableSubList other2 = (ImmutableSubList) l;
-                return contentsCompareTo(other2.f1066a, other2.from, other2.f1065to);
+                return contentsCompareTo(other2.f1030a, other2.from, other2.f1029to);
             }
         }
 
         private Object readResolve() throws ObjectStreamException {
             try {
-                return this.innerList.subList(this.from, this.f1065to);
+                return this.innerList.subList(this.from, this.f1029to);
             } catch (IllegalArgumentException | IndexOutOfBoundsException ex) {
                 throw ((InvalidObjectException) new InvalidObjectException(ex.getMessage()).initCause(ex));
             }
@@ -701,13 +701,13 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
     }
 
     public boolean equals(BooleanImmutableList l) {
-        if (l == this || this.f1064a == l.f1064a) {
+        if (l == this || this.f1028a == l.f1028a) {
             return true;
         }
         if (size() != l.size()) {
             return false;
         }
-        return Arrays.equals(this.f1064a, l.f1064a);
+        return Arrays.equals(this.f1028a, l.f1028a);
     }
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanList, java.util.Collection, java.lang.Object, java.util.List
@@ -728,13 +728,13 @@ public class BooleanImmutableList extends BooleanLists.ImmutableListBase impleme
     }
 
     public int compareTo(BooleanImmutableList l) {
-        if (this.f1064a == l.f1064a) {
+        if (this.f1028a == l.f1028a) {
             return 0;
         }
         int s1 = size();
         int s2 = l.size();
-        boolean[] a1 = this.f1064a;
-        boolean[] a2 = l.f1064a;
+        boolean[] a1 = this.f1028a;
+        boolean[] a2 = l.f1028a;
         int i = 0;
         while (i < s1 && i < s2) {
             int r = Boolean.compare(a1[i], a2[i]);

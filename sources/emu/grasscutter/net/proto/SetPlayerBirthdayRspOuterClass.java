@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerBirthdayRspOuterClass.class */
 public final class SetPlayerBirthdayRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aSetPlayerBirthdayRsp.proto\u001a\u000eBirthday.proto\"D\n\u0014SetPlayerBirthdayRsp\u0012\u001b\n\bbirthday\u0018\u0001 \u0001(\u000b2\t.Birthday\u0012\u000f\n\u0007retcode\u0018\u0004 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BirthdayOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aSetPlayerBirthdayRsp.proto\u001a\u000eBirthday.proto\"D\n\u0014SetPlayerBirthdayRsp\u0012\u001b\n\bbirthday\u0018\r \u0001(\u000b2\t.Birthday\u0012\u000f\n\u0007retcode\u0018\u0007 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BirthdayOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SetPlayerBirthdayRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetPlayerBirthdayRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetPlayerBirthdayRsp_descriptor, new String[]{"Birthday", "Retcode"});
 
@@ -49,9 +49,9 @@ public final class SetPlayerBirthdayRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerBirthdayRspOuterClass$SetPlayerBirthdayRsp.class */
     public static final class SetPlayerBirthdayRsp extends GeneratedMessageV3 implements SetPlayerBirthdayRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int BIRTHDAY_FIELD_NUMBER = 1;
+        public static final int BIRTHDAY_FIELD_NUMBER = 13;
         private BirthdayOuterClass.Birthday birthday_;
-        public static final int RETCODE_FIELD_NUMBER = 4;
+        public static final int RETCODE_FIELD_NUMBER = 7;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final SetPlayerBirthdayRsp DEFAULT_INSTANCE = new SetPlayerBirthdayRsp();
@@ -99,7 +99,10 @@ public final class SetPlayerBirthdayRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 10:
+                                case 56:
+                                    this.retcode_ = input.readInt32();
+                                    break;
+                                case 106:
                                     BirthdayOuterClass.Birthday.Builder subBuilder = this.birthday_ != null ? this.birthday_.toBuilder() : null;
                                     this.birthday_ = (BirthdayOuterClass.Birthday) input.readMessage(BirthdayOuterClass.Birthday.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -109,9 +112,6 @@ public final class SetPlayerBirthdayRspOuterClass {
                                         this.birthday_ = subBuilder.buildPartial();
                                         break;
                                     }
-                                case 32:
-                                    this.retcode_ = input.readInt32();
-                                    break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                         break;
@@ -177,11 +177,11 @@ public final class SetPlayerBirthdayRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.birthday_ != null) {
-                output.writeMessage(1, getBirthday());
-            }
             if (this.retcode_ != 0) {
-                output.writeInt32(4, this.retcode_);
+                output.writeInt32(7, this.retcode_);
+            }
+            if (this.birthday_ != null) {
+                output.writeMessage(13, getBirthday());
             }
             this.unknownFields.writeTo(output);
         }
@@ -193,11 +193,11 @@ public final class SetPlayerBirthdayRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.birthday_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(1, getBirthday());
-            }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(4, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(7, this.retcode_);
+            }
+            if (this.birthday_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(13, getBirthday());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,9 +226,9 @@ public final class SetPlayerBirthdayRspOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasBirthday()) {
-                hash = (53 * ((37 * hash) + 1)) + getBirthday().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getBirthday().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 4)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 7)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

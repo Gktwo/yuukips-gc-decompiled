@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestDestroyNpcRspOuterClass.class */
 public final class QuestDestroyNpcRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018QuestDestroyNpcRsp.proto\"N\n\u0012QuestDestroyNpcRsp\u0012\u000e\n\u0006npc_id\u0018\u000e \u0001(\r\u0012\u0017\n\u000fparent_quest_id\u0018\b \u0001(\r\u0012\u000f\n\u0007retcode\u0018\r \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018QuestDestroyNpcRsp.proto\"K\n\u0012QuestDestroyNpcRsp\u0012\r\n\u0005npcId\u0018\u0004 \u0001(\r\u0012\u0015\n\rparentQuestId\u0018\u0006 \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0002 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_QuestDestroyNpcRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_QuestDestroyNpcRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QuestDestroyNpcRsp_descriptor, new String[]{"NpcId", "ParentQuestId", "Retcode"});
 
@@ -45,11 +45,11 @@ public final class QuestDestroyNpcRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestDestroyNpcRspOuterClass$QuestDestroyNpcRsp.class */
     public static final class QuestDestroyNpcRsp extends GeneratedMessageV3 implements QuestDestroyNpcRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int NPC_ID_FIELD_NUMBER = 14;
+        public static final int NPCID_FIELD_NUMBER = 4;
         private int npcId_;
-        public static final int PARENT_QUEST_ID_FIELD_NUMBER = 8;
+        public static final int PARENTQUESTID_FIELD_NUMBER = 6;
         private int parentQuestId_;
-        public static final int RETCODE_FIELD_NUMBER = 13;
+        public static final int RETCODE_FIELD_NUMBER = 2;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final QuestDestroyNpcRsp DEFAULT_INSTANCE = new QuestDestroyNpcRsp();
@@ -97,14 +97,14 @@ public final class QuestDestroyNpcRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 64:
-                                    this.parentQuestId_ = input.readUInt32();
-                                    break;
-                                case 104:
+                                case 16:
                                     this.retcode_ = input.readInt32();
                                     break;
-                                case 112:
+                                case 32:
                                     this.npcId_ = input.readUInt32();
+                                    break;
+                                case 48:
+                                    this.parentQuestId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -166,14 +166,14 @@ public final class QuestDestroyNpcRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.parentQuestId_ != 0) {
-                output.writeUInt32(8, this.parentQuestId_);
-            }
             if (this.retcode_ != 0) {
-                output.writeInt32(13, this.retcode_);
+                output.writeInt32(2, this.retcode_);
             }
             if (this.npcId_ != 0) {
-                output.writeUInt32(14, this.npcId_);
+                output.writeUInt32(4, this.npcId_);
+            }
+            if (this.parentQuestId_ != 0) {
+                output.writeUInt32(6, this.parentQuestId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -185,14 +185,14 @@ public final class QuestDestroyNpcRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.parentQuestId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(8, this.parentQuestId_);
-            }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(13, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(2, this.retcode_);
             }
             if (this.npcId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.npcId_);
+                size2 += CodedOutputStream.computeUInt32Size(4, this.npcId_);
+            }
+            if (this.parentQuestId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(6, this.parentQuestId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -216,7 +216,7 @@ public final class QuestDestroyNpcRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getNpcId())) + 8)) + getParentQuestId())) + 13)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getNpcId())) + 6)) + getParentQuestId())) + 2)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

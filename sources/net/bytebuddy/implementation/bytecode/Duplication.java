@@ -21,7 +21,7 @@ public enum Duplication implements StackManipulation {
     SINGLE(StackSize.SINGLE, 89) {
         @Override // net.bytebuddy.implementation.bytecode.Duplication
         public StackManipulation flipOver(TypeDefinition typeDefinition) {
-            switch (C54674.$SwitchMap$net$bytebuddy$implementation$bytecode$StackSize[typeDefinition.getStackSize().ordinal()]) {
+            switch (C54594.$SwitchMap$net$bytebuddy$implementation$bytecode$StackSize[typeDefinition.getStackSize().ordinal()]) {
                 case 1:
                     return WithFlip.SINGLE_SINGLE;
                 case 2:
@@ -34,7 +34,7 @@ public enum Duplication implements StackManipulation {
     DOUBLE(StackSize.DOUBLE, 92) {
         @Override // net.bytebuddy.implementation.bytecode.Duplication
         public StackManipulation flipOver(TypeDefinition typeDefinition) {
-            switch (C54674.$SwitchMap$net$bytebuddy$implementation$bytecode$StackSize[typeDefinition.getStackSize().ordinal()]) {
+            switch (C54594.$SwitchMap$net$bytebuddy$implementation$bytecode$StackSize[typeDefinition.getStackSize().ordinal()]) {
                 case 1:
                     return WithFlip.DOUBLE_SINGLE;
                 case 2:

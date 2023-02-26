@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExpeditionCallBackReqOuterClass.class */
 public final class AvatarExpeditionCallBackReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!AvatarExpeditionCallBackReq.proto\"2\n\u001bAvatarExpeditionCallBackReq\u0012\u0013\n\u000bavatar_guid\u0018\u000e \u0003(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!AvatarExpeditionCallBackReq.proto\"1\n\u001bAvatarExpeditionCallBackReq\u0012\u0012\n\navatarGuid\u0018\u000e \u0003(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AvatarExpeditionCallBackReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarExpeditionCallBackReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarExpeditionCallBackReq_descriptor, new String[]{"AvatarGuid"});
 
@@ -49,7 +49,7 @@ public final class AvatarExpeditionCallBackReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExpeditionCallBackReqOuterClass$AvatarExpeditionCallBackReq.class */
     public static final class AvatarExpeditionCallBackReq extends GeneratedMessageV3 implements AvatarExpeditionCallBackReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 14;
+        public static final int AVATARGUID_FIELD_NUMBER = 14;
         private Internal.LongList avatarGuid_;
         private int avatarGuidMemoizedSerializedSize;
         private byte memoizedIsInitialized;

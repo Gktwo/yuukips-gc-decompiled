@@ -511,7 +511,7 @@ public final class SceneGadgetInfoOuterClass {
                             case 200:
                                 this.draftId_ = input.readUInt32();
                                 break;
-                            case PacketOpcodes.PlatformStartRouteNotify:
+                            case PacketOpcodes.SetSceneWeatherAreaReq:
                                 this.gadgetTalkState_ = input.readUInt32();
                                 break;
                             case 330:
@@ -550,7 +550,7 @@ public final class SceneGadgetInfoOuterClass {
                                 }
                                 this.contentCase_ = 44;
                                 break;
-                            case TokenId.PLUSPLUS /* 362 */:
+                            case 362:
                                 FoundationInfoOuterClass.FoundationInfo.Builder subBuilder14 = this.contentCase_ == 45 ? ((FoundationInfoOuterClass.FoundationInfo) this.content_).toBuilder() : null;
                                 this.content_ = input.readMessage(FoundationInfoOuterClass.FoundationInfo.parser(), extensionRegistry);
                                 if (subBuilder14 != null) {
@@ -586,7 +586,7 @@ public final class SceneGadgetInfoOuterClass {
                                 }
                                 this.contentCase_ = 48;
                                 break;
-                            case 474:
+                            case PacketOpcodes.AddQuestContentProgressReq:
                                 FishPoolInfoOuterClass.FishPoolInfo.Builder subBuilder18 = this.contentCase_ == 59 ? ((FishPoolInfoOuterClass.FishPoolInfo) this.content_).toBuilder() : null;
                                 this.content_ = input.readMessage(FishPoolInfoOuterClass.FishPoolInfo.parser(), extensionRegistry);
                                 if (subBuilder18 != null) {
@@ -595,7 +595,7 @@ public final class SceneGadgetInfoOuterClass {
                                 }
                                 this.contentCase_ = 59;
                                 break;
-                            case PacketOpcodes.QuestUpdateQuestTimeVarNotify:
+                            case 482:
                                 CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.Builder subBuilder19 = this.contentCase_ == 60 ? ((CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo) this.content_).toBuilder() : null;
                                 this.content_ = input.readMessage(CustomGadgetTreeInfoOuterClass.CustomGadgetTreeInfo.parser(), extensionRegistry);
                                 if (subBuilder19 != null) {
@@ -604,7 +604,7 @@ public final class SceneGadgetInfoOuterClass {
                                 }
                                 this.contentCase_ = 60;
                                 break;
-                            case PacketOpcodes.QuestProgressUpdateNotify:
+                            case PacketOpcodes.AssociateInferenceWordRsp:
                                 RoguelikeGadgetInfoOuterClass.RoguelikeGadgetInfo.Builder subBuilder20 = this.contentCase_ == 61 ? ((RoguelikeGadgetInfoOuterClass.RoguelikeGadgetInfo) this.content_).toBuilder() : null;
                                 this.content_ = input.readMessage(RoguelikeGadgetInfoOuterClass.RoguelikeGadgetInfo.parser(), extensionRegistry);
                                 if (subBuilder20 != null) {
@@ -613,7 +613,7 @@ public final class SceneGadgetInfoOuterClass {
                                 }
                                 this.contentCase_ = 61;
                                 break;
-                            case PacketOpcodes.InterpretInferenceWordRsp:
+                            case PacketOpcodes.FinishedParentQuestNotify:
                                 NightCrowGadgetInfoOuterClass.NightCrowGadgetInfo.Builder subBuilder21 = this.contentCase_ == 62 ? ((NightCrowGadgetInfoOuterClass.NightCrowGadgetInfo) this.content_).toBuilder() : null;
                                 this.content_ = input.readMessage(NightCrowGadgetInfoOuterClass.NightCrowGadgetInfo.parser(), extensionRegistry);
                                 if (subBuilder21 != null) {

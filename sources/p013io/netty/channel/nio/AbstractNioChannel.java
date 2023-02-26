@@ -33,7 +33,7 @@ public abstract class AbstractNioChannel extends AbstractChannel {
     private static final InternalLogger logger;
 
     /* renamed from: ch */
-    private final SelectableChannel f986ch;
+    private final SelectableChannel f950ch;
     protected final int readInterestOp;
     volatile SelectionKey selectionKey;
     boolean readPending;
@@ -73,7 +73,7 @@ public abstract class AbstractNioChannel extends AbstractChannel {
     /* access modifiers changed from: protected */
     public AbstractNioChannel(Channel parent, SelectableChannel ch, int readInterestOp) {
         super(parent);
-        this.f986ch = ch;
+        this.f950ch = ch;
         this.readInterestOp = readInterestOp;
         try {
             ch.configureBlocking(false);
@@ -89,7 +89,7 @@ public abstract class AbstractNioChannel extends AbstractChannel {
 
     @Override // p013io.netty.channel.Channel
     public boolean isOpen() {
-        return this.f986ch.isOpen();
+        return this.f950ch.isOpen();
     }
 
     @Override // p013io.netty.channel.AbstractChannel, p013io.netty.channel.Channel
@@ -98,7 +98,7 @@ public abstract class AbstractNioChannel extends AbstractChannel {
     }
 
     protected SelectableChannel javaChannel() {
-        return this.f986ch;
+        return this.f950ch;
     }
 
     @Override // p013io.netty.channel.AbstractChannel, p013io.netty.channel.Channel

@@ -27,24 +27,12 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetActivityInfoRspOuterClass.class */
 public final class GetActivityInfoRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018GetActivityInfoRsp.proto\u001a\u0012ActivityInfo.proto\u001a\u0010Uint32Pair.proto\"®\u0001\n\u0012GetActivityInfoRsp\u0012<\n'disable_transfer_point_interaction_list\u0018\n \u0003(\u000b2\u000b.Uint32Pair\u0012\u000f\n\u0007retcode\u0018\u0006 \u0001(\u0005\u0012)\n\u0012activity_info_list\u0018\u0002 \u0003(\u000b2\r.ActivityInfo\u0012\u001e\n\u0016activated_sale_id_list\u0018\u0001 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ActivityInfoOuterClass.getDescriptor(), Uint32PairOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018GetActivityInfoRsp.proto\u001a\u0012ActivityInfo.proto\u001a\u0010Uint32Pair.proto\"¥\u0001\n\u0012GetActivityInfoRsp\u0012'\n\u0010activityInfoList\u0018\r \u0003(\u000b2\r.ActivityInfo\u00128\n#disableTransferPointInteractionList\u0018\u0003 \u0003(\u000b2\u000b.Uint32Pair\u0012\u001b\n\u0013activatedSaleIdList\u0018\u0007 \u0003(\r\u0012\u000f\n\u0007retcode\u0018\u000e \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ActivityInfoOuterClass.getDescriptor(), Uint32PairOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_GetActivityInfoRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetActivityInfoRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetActivityInfoRsp_descriptor, new String[]{"DisableTransferPointInteractionList", "Retcode", "ActivityInfoList", "ActivatedSaleIdList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetActivityInfoRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetActivityInfoRsp_descriptor, new String[]{"ActivityInfoList", "DisableTransferPointInteractionList", "ActivatedSaleIdList", "Retcode"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetActivityInfoRspOuterClass$GetActivityInfoRspOrBuilder.class */
     public interface GetActivityInfoRspOrBuilder extends MessageOrBuilder {
-        List<Uint32PairOuterClass.Uint32Pair> getDisableTransferPointInteractionListList();
-
-        Uint32PairOuterClass.Uint32Pair getDisableTransferPointInteractionList(int i);
-
-        int getDisableTransferPointInteractionListCount();
-
-        List<? extends Uint32PairOuterClass.Uint32PairOrBuilder> getDisableTransferPointInteractionListOrBuilderList();
-
-        Uint32PairOuterClass.Uint32PairOrBuilder getDisableTransferPointInteractionListOrBuilder(int i);
-
-        int getRetcode();
-
         List<ActivityInfoOuterClass.ActivityInfo> getActivityInfoListList();
 
         ActivityInfoOuterClass.ActivityInfo getActivityInfoList(int i);
@@ -55,11 +43,23 @@ public final class GetActivityInfoRspOuterClass {
 
         ActivityInfoOuterClass.ActivityInfoOrBuilder getActivityInfoListOrBuilder(int i);
 
+        List<Uint32PairOuterClass.Uint32Pair> getDisableTransferPointInteractionListList();
+
+        Uint32PairOuterClass.Uint32Pair getDisableTransferPointInteractionList(int i);
+
+        int getDisableTransferPointInteractionListCount();
+
+        List<? extends Uint32PairOuterClass.Uint32PairOrBuilder> getDisableTransferPointInteractionListOrBuilderList();
+
+        Uint32PairOuterClass.Uint32PairOrBuilder getDisableTransferPointInteractionListOrBuilder(int i);
+
         List<Integer> getActivatedSaleIdListList();
 
         int getActivatedSaleIdListCount();
 
         int getActivatedSaleIdList(int i);
+
+        int getRetcode();
     }
 
     private GetActivityInfoRspOuterClass() {
@@ -75,15 +75,15 @@ public final class GetActivityInfoRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetActivityInfoRspOuterClass$GetActivityInfoRsp.class */
     public static final class GetActivityInfoRsp extends GeneratedMessageV3 implements GetActivityInfoRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int DISABLE_TRANSFER_POINT_INTERACTION_LIST_FIELD_NUMBER = 10;
-        private List<Uint32PairOuterClass.Uint32Pair> disableTransferPointInteractionList_;
-        public static final int RETCODE_FIELD_NUMBER = 6;
-        private int retcode_;
-        public static final int ACTIVITY_INFO_LIST_FIELD_NUMBER = 2;
+        public static final int ACTIVITYINFOLIST_FIELD_NUMBER = 13;
         private List<ActivityInfoOuterClass.ActivityInfo> activityInfoList_;
-        public static final int ACTIVATED_SALE_ID_LIST_FIELD_NUMBER = 1;
+        public static final int DISABLETRANSFERPOINTINTERACTIONLIST_FIELD_NUMBER = 3;
+        private List<Uint32PairOuterClass.Uint32Pair> disableTransferPointInteractionList_;
+        public static final int ACTIVATEDSALEIDLIST_FIELD_NUMBER = 7;
         private Internal.IntList activatedSaleIdList_;
         private int activatedSaleIdListMemoizedSerializedSize;
+        public static final int RETCODE_FIELD_NUMBER = 14;
+        private int retcode_;
         private byte memoizedIsInitialized;
         private static final GetActivityInfoRsp DEFAULT_INSTANCE = new GetActivityInfoRsp();
         private static final Parser<GetActivityInfoRsp> PARSER = new AbstractParser<GetActivityInfoRsp>() { // from class: emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRsp.1
@@ -102,8 +102,8 @@ public final class GetActivityInfoRspOuterClass {
         private GetActivityInfoRsp() {
             this.activatedSaleIdListMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
-            this.disableTransferPointInteractionList_ = Collections.emptyList();
             this.activityInfoList_ = Collections.emptyList();
+            this.disableTransferPointInteractionList_ = Collections.emptyList();
             this.activatedSaleIdList_ = emptyIntList();
         }
 
@@ -137,14 +137,21 @@ public final class GetActivityInfoRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
+                            case 26:
+                                if ((mutable_bitField0_ & 2) == 0) {
+                                    this.disableTransferPointInteractionList_ = new ArrayList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                }
+                                this.disableTransferPointInteractionList_.add((Uint32PairOuterClass.Uint32Pair) input.readMessage(Uint32PairOuterClass.Uint32Pair.parser(), extensionRegistry));
+                                break;
+                            case 56:
                                 if ((mutable_bitField0_ & 4) == 0) {
                                     this.activatedSaleIdList_ = newIntList();
                                     mutable_bitField0_ = (mutable_bitField0_ | 4) == 1 ? 1 : 0;
                                 }
                                 this.activatedSaleIdList_.addInt(input.readUInt32());
                                 break;
-                            case 10:
+                            case 58:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 4) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.activatedSaleIdList_ = newIntList();
@@ -155,22 +162,15 @@ public final class GetActivityInfoRspOuterClass {
                                 }
                                 input.popLimit(limit);
                                 break;
-                            case 18:
-                                if ((mutable_bitField0_ & 2) == 0) {
+                            case 106:
+                                if ((mutable_bitField0_ & 1) == 0) {
                                     this.activityInfoList_ = new ArrayList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                 }
                                 this.activityInfoList_.add((ActivityInfoOuterClass.ActivityInfo) input.readMessage(ActivityInfoOuterClass.ActivityInfo.parser(), extensionRegistry));
                                 break;
-                            case 48:
+                            case 112:
                                 this.retcode_ = input.readInt32();
-                                break;
-                            case 82:
-                                if ((mutable_bitField0_ & 1) == 0) {
-                                    this.disableTransferPointInteractionList_ = new ArrayList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
-                                }
-                                this.disableTransferPointInteractionList_.add((Uint32PairOuterClass.Uint32Pair) input.readMessage(Uint32PairOuterClass.Uint32Pair.parser(), extensionRegistry));
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -188,14 +188,14 @@ public final class GetActivityInfoRspOuterClass {
                     }
                 }
             } finally {
+                if ((mutable_bitField0_ & 2) != 0) {
+                    this.disableTransferPointInteractionList_ = Collections.unmodifiableList(this.disableTransferPointInteractionList_);
+                }
                 if ((mutable_bitField0_ & 4) != 0) {
                     this.activatedSaleIdList_.makeImmutable();
                 }
-                if ((mutable_bitField0_ & 2) != 0) {
-                    this.activityInfoList_ = Collections.unmodifiableList(this.activityInfoList_);
-                }
                 if ((mutable_bitField0_ & 1) != 0) {
-                    this.disableTransferPointInteractionList_ = Collections.unmodifiableList(this.disableTransferPointInteractionList_);
+                    this.activityInfoList_ = Collections.unmodifiableList(this.activityInfoList_);
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -209,36 +209,6 @@ public final class GetActivityInfoRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return GetActivityInfoRspOuterClass.internal_static_GetActivityInfoRsp_fieldAccessorTable.ensureFieldAccessorsInitialized(GetActivityInfoRsp.class, Builder.class);
-        }
-
-        @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
-        public List<Uint32PairOuterClass.Uint32Pair> getDisableTransferPointInteractionListList() {
-            return this.disableTransferPointInteractionList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
-        public List<? extends Uint32PairOuterClass.Uint32PairOrBuilder> getDisableTransferPointInteractionListOrBuilderList() {
-            return this.disableTransferPointInteractionList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
-        public int getDisableTransferPointInteractionListCount() {
-            return this.disableTransferPointInteractionList_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
-        public Uint32PairOuterClass.Uint32Pair getDisableTransferPointInteractionList(int index) {
-            return this.disableTransferPointInteractionList_.get(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
-        public Uint32PairOuterClass.Uint32PairOrBuilder getDisableTransferPointInteractionListOrBuilder(int index) {
-            return this.disableTransferPointInteractionList_.get(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
         }
 
         @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
@@ -267,6 +237,31 @@ public final class GetActivityInfoRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
+        public List<Uint32PairOuterClass.Uint32Pair> getDisableTransferPointInteractionListList() {
+            return this.disableTransferPointInteractionList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
+        public List<? extends Uint32PairOuterClass.Uint32PairOrBuilder> getDisableTransferPointInteractionListOrBuilderList() {
+            return this.disableTransferPointInteractionList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
+        public int getDisableTransferPointInteractionListCount() {
+            return this.disableTransferPointInteractionList_.size();
+        }
+
+        @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
+        public Uint32PairOuterClass.Uint32Pair getDisableTransferPointInteractionList(int index) {
+            return this.disableTransferPointInteractionList_.get(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
+        public Uint32PairOuterClass.Uint32PairOrBuilder getDisableTransferPointInteractionListOrBuilder(int index) {
+            return this.disableTransferPointInteractionList_.get(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
         public List<Integer> getActivatedSaleIdListList() {
             return this.activatedSaleIdList_;
         }
@@ -279,6 +274,11 @@ public final class GetActivityInfoRspOuterClass {
         @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
         public int getActivatedSaleIdList(int index) {
             return this.activatedSaleIdList_.getInt(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -297,21 +297,21 @@ public final class GetActivityInfoRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
+            for (int i = 0; i < this.disableTransferPointInteractionList_.size(); i++) {
+                output.writeMessage(3, this.disableTransferPointInteractionList_.get(i));
+            }
             if (getActivatedSaleIdListList().size() > 0) {
-                output.writeUInt32NoTag(10);
+                output.writeUInt32NoTag(58);
                 output.writeUInt32NoTag(this.activatedSaleIdListMemoizedSerializedSize);
             }
-            for (int i = 0; i < this.activatedSaleIdList_.size(); i++) {
-                output.writeUInt32NoTag(this.activatedSaleIdList_.getInt(i));
+            for (int i2 = 0; i2 < this.activatedSaleIdList_.size(); i2++) {
+                output.writeUInt32NoTag(this.activatedSaleIdList_.getInt(i2));
             }
-            for (int i2 = 0; i2 < this.activityInfoList_.size(); i2++) {
-                output.writeMessage(2, this.activityInfoList_.get(i2));
+            for (int i3 = 0; i3 < this.activityInfoList_.size(); i3++) {
+                output.writeMessage(13, this.activityInfoList_.get(i3));
             }
             if (this.retcode_ != 0) {
-                output.writeInt32(6, this.retcode_);
-            }
-            for (int i3 = 0; i3 < this.disableTransferPointInteractionList_.size(); i3++) {
-                output.writeMessage(10, this.disableTransferPointInteractionList_.get(i3));
+                output.writeInt32(14, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -322,27 +322,28 @@ public final class GetActivityInfoRspOuterClass {
             if (size != -1) {
                 return size;
             }
-            int dataSize = 0;
-            for (int i = 0; i < this.activatedSaleIdList_.size(); i++) {
-                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.activatedSaleIdList_.getInt(i));
+            int size2 = 0;
+            for (int i = 0; i < this.disableTransferPointInteractionList_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(3, this.disableTransferPointInteractionList_.get(i));
             }
-            int size2 = 0 + dataSize;
+            int dataSize = 0;
+            for (int i2 = 0; i2 < this.activatedSaleIdList_.size(); i2++) {
+                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.activatedSaleIdList_.getInt(i2));
+            }
+            int size3 = size2 + dataSize;
             if (!getActivatedSaleIdListList().isEmpty()) {
-                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.activatedSaleIdListMemoizedSerializedSize = dataSize;
-            for (int i2 = 0; i2 < this.activityInfoList_.size(); i2++) {
-                size2 += CodedOutputStream.computeMessageSize(2, this.activityInfoList_.get(i2));
+            for (int i3 = 0; i3 < this.activityInfoList_.size(); i3++) {
+                size3 += CodedOutputStream.computeMessageSize(13, this.activityInfoList_.get(i3));
             }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(6, this.retcode_);
+                size3 += CodedOutputStream.computeInt32Size(14, this.retcode_);
             }
-            for (int i3 = 0; i3 < this.disableTransferPointInteractionList_.size(); i3++) {
-                size2 += CodedOutputStream.computeMessageSize(10, this.disableTransferPointInteractionList_.get(i3));
-            }
-            int size3 = size2 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size3;
-            return size3;
+            int size4 = size3 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size4;
+            return size4;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -354,7 +355,7 @@ public final class GetActivityInfoRspOuterClass {
                 return equals(obj);
             }
             GetActivityInfoRsp other = (GetActivityInfoRsp) obj;
-            return getDisableTransferPointInteractionListList().equals(other.getDisableTransferPointInteractionListList()) && getRetcode() == other.getRetcode() && getActivityInfoListList().equals(other.getActivityInfoListList()) && getActivatedSaleIdListList().equals(other.getActivatedSaleIdListList()) && this.unknownFields.equals(other.unknownFields);
+            return getActivityInfoListList().equals(other.getActivityInfoListList()) && getDisableTransferPointInteractionListList().equals(other.getDisableTransferPointInteractionListList()) && getActivatedSaleIdListList().equals(other.getActivatedSaleIdListList()) && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -363,19 +364,18 @@ public final class GetActivityInfoRspOuterClass {
                 return this.memoizedHashCode;
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
-            if (getDisableTransferPointInteractionListCount() > 0) {
-                hash = (53 * ((37 * hash) + 10)) + getDisableTransferPointInteractionListList().hashCode();
-            }
-            int hash2 = (53 * ((37 * hash) + 6)) + getRetcode();
             if (getActivityInfoListCount() > 0) {
-                hash2 = (53 * ((37 * hash2) + 2)) + getActivityInfoListList().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getActivityInfoListList().hashCode();
+            }
+            if (getDisableTransferPointInteractionListCount() > 0) {
+                hash = (53 * ((37 * hash) + 3)) + getDisableTransferPointInteractionListList().hashCode();
             }
             if (getActivatedSaleIdListCount() > 0) {
-                hash2 = (53 * ((37 * hash2) + 1)) + getActivatedSaleIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 7)) + getActivatedSaleIdListList().hashCode();
             }
-            int hash3 = (29 * hash2) + this.unknownFields.hashCode();
-            this.memoizedHashCode = hash3;
-            return hash3;
+            int hash2 = (29 * ((53 * ((37 * hash) + 14)) + getRetcode())) + this.unknownFields.hashCode();
+            this.memoizedHashCode = hash2;
+            return hash2;
         }
 
         public static GetActivityInfoRsp parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
@@ -453,11 +453,11 @@ public final class GetActivityInfoRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetActivityInfoRspOuterClass$GetActivityInfoRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements GetActivityInfoRspOrBuilder {
             private int bitField0_;
+            private RepeatedFieldBuilderV3<ActivityInfoOuterClass.ActivityInfo, ActivityInfoOuterClass.ActivityInfo.Builder, ActivityInfoOuterClass.ActivityInfoOrBuilder> activityInfoListBuilder_;
             private RepeatedFieldBuilderV3<Uint32PairOuterClass.Uint32Pair, Uint32PairOuterClass.Uint32Pair.Builder, Uint32PairOuterClass.Uint32PairOrBuilder> disableTransferPointInteractionListBuilder_;
             private int retcode_;
-            private RepeatedFieldBuilderV3<ActivityInfoOuterClass.ActivityInfo, ActivityInfoOuterClass.ActivityInfo.Builder, ActivityInfoOuterClass.ActivityInfoOrBuilder> activityInfoListBuilder_;
-            private List<Uint32PairOuterClass.Uint32Pair> disableTransferPointInteractionList_ = Collections.emptyList();
             private List<ActivityInfoOuterClass.ActivityInfo> activityInfoList_ = Collections.emptyList();
+            private List<Uint32PairOuterClass.Uint32Pair> disableTransferPointInteractionList_ = Collections.emptyList();
             private Internal.IntList activatedSaleIdList_ = GetActivityInfoRsp.emptyIntList();
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -480,29 +480,29 @@ public final class GetActivityInfoRspOuterClass {
 
             private void maybeForceBuilderInitialization() {
                 if (GetActivityInfoRsp.alwaysUseFieldBuilders) {
-                    getDisableTransferPointInteractionListFieldBuilder();
                     getActivityInfoListFieldBuilder();
+                    getDisableTransferPointInteractionListFieldBuilder();
                 }
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                if (this.disableTransferPointInteractionListBuilder_ == null) {
-                    this.disableTransferPointInteractionList_ = Collections.emptyList();
-                    this.bitField0_ &= -2;
-                } else {
-                    this.disableTransferPointInteractionListBuilder_.clear();
-                }
-                this.retcode_ = 0;
                 if (this.activityInfoListBuilder_ == null) {
                     this.activityInfoList_ = Collections.emptyList();
-                    this.bitField0_ &= -3;
+                    this.bitField0_ &= -2;
                 } else {
                     this.activityInfoListBuilder_.clear();
                 }
+                if (this.disableTransferPointInteractionListBuilder_ == null) {
+                    this.disableTransferPointInteractionList_ = Collections.emptyList();
+                    this.bitField0_ &= -3;
+                } else {
+                    this.disableTransferPointInteractionListBuilder_.clear();
+                }
                 this.activatedSaleIdList_ = GetActivityInfoRsp.emptyIntList();
                 this.bitField0_ &= -5;
+                this.retcode_ = 0;
                 return this;
             }
 
@@ -529,30 +529,30 @@ public final class GetActivityInfoRspOuterClass {
             public GetActivityInfoRsp buildPartial() {
                 GetActivityInfoRsp result = new GetActivityInfoRsp(this);
                 int i = this.bitField0_;
-                if (this.disableTransferPointInteractionListBuilder_ == null) {
-                    if ((this.bitField0_ & 1) != 0) {
-                        this.disableTransferPointInteractionList_ = Collections.unmodifiableList(this.disableTransferPointInteractionList_);
-                        this.bitField0_ &= -2;
-                    }
-                    result.disableTransferPointInteractionList_ = this.disableTransferPointInteractionList_;
-                } else {
-                    result.disableTransferPointInteractionList_ = this.disableTransferPointInteractionListBuilder_.build();
-                }
-                result.retcode_ = this.retcode_;
                 if (this.activityInfoListBuilder_ == null) {
-                    if ((this.bitField0_ & 2) != 0) {
+                    if ((this.bitField0_ & 1) != 0) {
                         this.activityInfoList_ = Collections.unmodifiableList(this.activityInfoList_);
-                        this.bitField0_ &= -3;
+                        this.bitField0_ &= -2;
                     }
                     result.activityInfoList_ = this.activityInfoList_;
                 } else {
                     result.activityInfoList_ = this.activityInfoListBuilder_.build();
+                }
+                if (this.disableTransferPointInteractionListBuilder_ == null) {
+                    if ((this.bitField0_ & 2) != 0) {
+                        this.disableTransferPointInteractionList_ = Collections.unmodifiableList(this.disableTransferPointInteractionList_);
+                        this.bitField0_ &= -3;
+                    }
+                    result.disableTransferPointInteractionList_ = this.disableTransferPointInteractionList_;
+                } else {
+                    result.disableTransferPointInteractionList_ = this.disableTransferPointInteractionListBuilder_.build();
                 }
                 if ((this.bitField0_ & 4) != 0) {
                     this.activatedSaleIdList_.makeImmutable();
                     this.bitField0_ &= -5;
                 }
                 result.activatedSaleIdList_ = this.activatedSaleIdList_;
+                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -600,36 +600,11 @@ public final class GetActivityInfoRspOuterClass {
                 if (other == GetActivityInfoRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (this.disableTransferPointInteractionListBuilder_ == null) {
-                    if (!other.disableTransferPointInteractionList_.isEmpty()) {
-                        if (this.disableTransferPointInteractionList_.isEmpty()) {
-                            this.disableTransferPointInteractionList_ = other.disableTransferPointInteractionList_;
-                            this.bitField0_ &= -2;
-                        } else {
-                            ensureDisableTransferPointInteractionListIsMutable();
-                            this.disableTransferPointInteractionList_.addAll(other.disableTransferPointInteractionList_);
-                        }
-                        onChanged();
-                    }
-                } else if (!other.disableTransferPointInteractionList_.isEmpty()) {
-                    if (this.disableTransferPointInteractionListBuilder_.isEmpty()) {
-                        this.disableTransferPointInteractionListBuilder_.dispose();
-                        this.disableTransferPointInteractionListBuilder_ = null;
-                        this.disableTransferPointInteractionList_ = other.disableTransferPointInteractionList_;
-                        this.bitField0_ &= -2;
-                        this.disableTransferPointInteractionListBuilder_ = GetActivityInfoRsp.alwaysUseFieldBuilders ? getDisableTransferPointInteractionListFieldBuilder() : null;
-                    } else {
-                        this.disableTransferPointInteractionListBuilder_.addAllMessages(other.disableTransferPointInteractionList_);
-                    }
-                }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
                 if (this.activityInfoListBuilder_ == null) {
                     if (!other.activityInfoList_.isEmpty()) {
                         if (this.activityInfoList_.isEmpty()) {
                             this.activityInfoList_ = other.activityInfoList_;
-                            this.bitField0_ &= -3;
+                            this.bitField0_ &= -2;
                         } else {
                             ensureActivityInfoListIsMutable();
                             this.activityInfoList_.addAll(other.activityInfoList_);
@@ -641,10 +616,32 @@ public final class GetActivityInfoRspOuterClass {
                         this.activityInfoListBuilder_.dispose();
                         this.activityInfoListBuilder_ = null;
                         this.activityInfoList_ = other.activityInfoList_;
-                        this.bitField0_ &= -3;
+                        this.bitField0_ &= -2;
                         this.activityInfoListBuilder_ = GetActivityInfoRsp.alwaysUseFieldBuilders ? getActivityInfoListFieldBuilder() : null;
                     } else {
                         this.activityInfoListBuilder_.addAllMessages(other.activityInfoList_);
+                    }
+                }
+                if (this.disableTransferPointInteractionListBuilder_ == null) {
+                    if (!other.disableTransferPointInteractionList_.isEmpty()) {
+                        if (this.disableTransferPointInteractionList_.isEmpty()) {
+                            this.disableTransferPointInteractionList_ = other.disableTransferPointInteractionList_;
+                            this.bitField0_ &= -3;
+                        } else {
+                            ensureDisableTransferPointInteractionListIsMutable();
+                            this.disableTransferPointInteractionList_.addAll(other.disableTransferPointInteractionList_);
+                        }
+                        onChanged();
+                    }
+                } else if (!other.disableTransferPointInteractionList_.isEmpty()) {
+                    if (this.disableTransferPointInteractionListBuilder_.isEmpty()) {
+                        this.disableTransferPointInteractionListBuilder_.dispose();
+                        this.disableTransferPointInteractionListBuilder_ = null;
+                        this.disableTransferPointInteractionList_ = other.disableTransferPointInteractionList_;
+                        this.bitField0_ &= -3;
+                        this.disableTransferPointInteractionListBuilder_ = GetActivityInfoRsp.alwaysUseFieldBuilders ? getDisableTransferPointInteractionListFieldBuilder() : null;
+                    } else {
+                        this.disableTransferPointInteractionListBuilder_.addAllMessages(other.disableTransferPointInteractionList_);
                     }
                 }
                 if (!other.activatedSaleIdList_.isEmpty()) {
@@ -656,6 +653,9 @@ public final class GetActivityInfoRspOuterClass {
                         this.activatedSaleIdList_.addAll(other.activatedSaleIdList_);
                     }
                     onChanged();
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -689,203 +689,10 @@ public final class GetActivityInfoRspOuterClass {
                 }
             }
 
-            private void ensureDisableTransferPointInteractionListIsMutable() {
-                if ((this.bitField0_ & 1) == 0) {
-                    this.disableTransferPointInteractionList_ = new ArrayList(this.disableTransferPointInteractionList_);
-                    this.bitField0_ |= 1;
-                }
-            }
-
-            @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
-            public List<Uint32PairOuterClass.Uint32Pair> getDisableTransferPointInteractionListList() {
-                if (this.disableTransferPointInteractionListBuilder_ == null) {
-                    return Collections.unmodifiableList(this.disableTransferPointInteractionList_);
-                }
-                return this.disableTransferPointInteractionListBuilder_.getMessageList();
-            }
-
-            @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
-            public int getDisableTransferPointInteractionListCount() {
-                if (this.disableTransferPointInteractionListBuilder_ == null) {
-                    return this.disableTransferPointInteractionList_.size();
-                }
-                return this.disableTransferPointInteractionListBuilder_.getCount();
-            }
-
-            @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
-            public Uint32PairOuterClass.Uint32Pair getDisableTransferPointInteractionList(int index) {
-                if (this.disableTransferPointInteractionListBuilder_ == null) {
-                    return this.disableTransferPointInteractionList_.get(index);
-                }
-                return this.disableTransferPointInteractionListBuilder_.getMessage(index);
-            }
-
-            public Builder setDisableTransferPointInteractionList(int index, Uint32PairOuterClass.Uint32Pair value) {
-                if (this.disableTransferPointInteractionListBuilder_ != null) {
-                    this.disableTransferPointInteractionListBuilder_.setMessage(index, value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    ensureDisableTransferPointInteractionListIsMutable();
-                    this.disableTransferPointInteractionList_.set(index, value);
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder setDisableTransferPointInteractionList(int index, Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
-                if (this.disableTransferPointInteractionListBuilder_ == null) {
-                    ensureDisableTransferPointInteractionListIsMutable();
-                    this.disableTransferPointInteractionList_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    this.disableTransferPointInteractionListBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addDisableTransferPointInteractionList(Uint32PairOuterClass.Uint32Pair value) {
-                if (this.disableTransferPointInteractionListBuilder_ != null) {
-                    this.disableTransferPointInteractionListBuilder_.addMessage(value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    ensureDisableTransferPointInteractionListIsMutable();
-                    this.disableTransferPointInteractionList_.add(value);
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder addDisableTransferPointInteractionList(int index, Uint32PairOuterClass.Uint32Pair value) {
-                if (this.disableTransferPointInteractionListBuilder_ != null) {
-                    this.disableTransferPointInteractionListBuilder_.addMessage(index, value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    ensureDisableTransferPointInteractionListIsMutable();
-                    this.disableTransferPointInteractionList_.add(index, value);
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder addDisableTransferPointInteractionList(Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
-                if (this.disableTransferPointInteractionListBuilder_ == null) {
-                    ensureDisableTransferPointInteractionListIsMutable();
-                    this.disableTransferPointInteractionList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    this.disableTransferPointInteractionListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addDisableTransferPointInteractionList(int index, Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
-                if (this.disableTransferPointInteractionListBuilder_ == null) {
-                    ensureDisableTransferPointInteractionListIsMutable();
-                    this.disableTransferPointInteractionList_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    this.disableTransferPointInteractionListBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addAllDisableTransferPointInteractionList(Iterable<? extends Uint32PairOuterClass.Uint32Pair> values) {
-                if (this.disableTransferPointInteractionListBuilder_ == null) {
-                    ensureDisableTransferPointInteractionListIsMutable();
-                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.disableTransferPointInteractionList_);
-                    onChanged();
-                } else {
-                    this.disableTransferPointInteractionListBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-
-            public Builder clearDisableTransferPointInteractionList() {
-                if (this.disableTransferPointInteractionListBuilder_ == null) {
-                    this.disableTransferPointInteractionList_ = Collections.emptyList();
-                    this.bitField0_ &= -2;
-                    onChanged();
-                } else {
-                    this.disableTransferPointInteractionListBuilder_.clear();
-                }
-                return this;
-            }
-
-            public Builder removeDisableTransferPointInteractionList(int index) {
-                if (this.disableTransferPointInteractionListBuilder_ == null) {
-                    ensureDisableTransferPointInteractionListIsMutable();
-                    this.disableTransferPointInteractionList_.remove(index);
-                    onChanged();
-                } else {
-                    this.disableTransferPointInteractionListBuilder_.remove(index);
-                }
-                return this;
-            }
-
-            public Uint32PairOuterClass.Uint32Pair.Builder getDisableTransferPointInteractionListBuilder(int index) {
-                return getDisableTransferPointInteractionListFieldBuilder().getBuilder(index);
-            }
-
-            @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
-            public Uint32PairOuterClass.Uint32PairOrBuilder getDisableTransferPointInteractionListOrBuilder(int index) {
-                if (this.disableTransferPointInteractionListBuilder_ == null) {
-                    return this.disableTransferPointInteractionList_.get(index);
-                }
-                return this.disableTransferPointInteractionListBuilder_.getMessageOrBuilder(index);
-            }
-
-            @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
-            public List<? extends Uint32PairOuterClass.Uint32PairOrBuilder> getDisableTransferPointInteractionListOrBuilderList() {
-                if (this.disableTransferPointInteractionListBuilder_ != null) {
-                    return this.disableTransferPointInteractionListBuilder_.getMessageOrBuilderList();
-                }
-                return Collections.unmodifiableList(this.disableTransferPointInteractionList_);
-            }
-
-            public Uint32PairOuterClass.Uint32Pair.Builder addDisableTransferPointInteractionListBuilder() {
-                return getDisableTransferPointInteractionListFieldBuilder().addBuilder(Uint32PairOuterClass.Uint32Pair.getDefaultInstance());
-            }
-
-            public Uint32PairOuterClass.Uint32Pair.Builder addDisableTransferPointInteractionListBuilder(int index) {
-                return getDisableTransferPointInteractionListFieldBuilder().addBuilder(index, Uint32PairOuterClass.Uint32Pair.getDefaultInstance());
-            }
-
-            public List<Uint32PairOuterClass.Uint32Pair.Builder> getDisableTransferPointInteractionListBuilderList() {
-                return getDisableTransferPointInteractionListFieldBuilder().getBuilderList();
-            }
-
-            private RepeatedFieldBuilderV3<Uint32PairOuterClass.Uint32Pair, Uint32PairOuterClass.Uint32Pair.Builder, Uint32PairOuterClass.Uint32PairOrBuilder> getDisableTransferPointInteractionListFieldBuilder() {
-                if (this.disableTransferPointInteractionListBuilder_ == null) {
-                    this.disableTransferPointInteractionListBuilder_ = new RepeatedFieldBuilderV3<>(this.disableTransferPointInteractionList_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
-                    this.disableTransferPointInteractionList_ = null;
-                }
-                return this.disableTransferPointInteractionListBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
-            }
-
             private void ensureActivityInfoListIsMutable() {
-                if ((this.bitField0_ & 2) == 0) {
+                if ((this.bitField0_ & 1) == 0) {
                     this.activityInfoList_ = new ArrayList(this.activityInfoList_);
-                    this.bitField0_ |= 2;
+                    this.bitField0_ |= 1;
                 }
             }
 
@@ -999,7 +806,7 @@ public final class GetActivityInfoRspOuterClass {
             public Builder clearActivityInfoList() {
                 if (this.activityInfoListBuilder_ == null) {
                     this.activityInfoList_ = Collections.emptyList();
-                    this.bitField0_ &= -3;
+                    this.bitField0_ &= -2;
                     onChanged();
                 } else {
                     this.activityInfoListBuilder_.clear();
@@ -1052,10 +859,186 @@ public final class GetActivityInfoRspOuterClass {
 
             private RepeatedFieldBuilderV3<ActivityInfoOuterClass.ActivityInfo, ActivityInfoOuterClass.ActivityInfo.Builder, ActivityInfoOuterClass.ActivityInfoOrBuilder> getActivityInfoListFieldBuilder() {
                 if (this.activityInfoListBuilder_ == null) {
-                    this.activityInfoListBuilder_ = new RepeatedFieldBuilderV3<>(this.activityInfoList_, (this.bitField0_ & 2) != 0, getParentForChildren(), isClean());
+                    this.activityInfoListBuilder_ = new RepeatedFieldBuilderV3<>(this.activityInfoList_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
                     this.activityInfoList_ = null;
                 }
                 return this.activityInfoListBuilder_;
+            }
+
+            private void ensureDisableTransferPointInteractionListIsMutable() {
+                if ((this.bitField0_ & 2) == 0) {
+                    this.disableTransferPointInteractionList_ = new ArrayList(this.disableTransferPointInteractionList_);
+                    this.bitField0_ |= 2;
+                }
+            }
+
+            @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
+            public List<Uint32PairOuterClass.Uint32Pair> getDisableTransferPointInteractionListList() {
+                if (this.disableTransferPointInteractionListBuilder_ == null) {
+                    return Collections.unmodifiableList(this.disableTransferPointInteractionList_);
+                }
+                return this.disableTransferPointInteractionListBuilder_.getMessageList();
+            }
+
+            @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
+            public int getDisableTransferPointInteractionListCount() {
+                if (this.disableTransferPointInteractionListBuilder_ == null) {
+                    return this.disableTransferPointInteractionList_.size();
+                }
+                return this.disableTransferPointInteractionListBuilder_.getCount();
+            }
+
+            @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
+            public Uint32PairOuterClass.Uint32Pair getDisableTransferPointInteractionList(int index) {
+                if (this.disableTransferPointInteractionListBuilder_ == null) {
+                    return this.disableTransferPointInteractionList_.get(index);
+                }
+                return this.disableTransferPointInteractionListBuilder_.getMessage(index);
+            }
+
+            public Builder setDisableTransferPointInteractionList(int index, Uint32PairOuterClass.Uint32Pair value) {
+                if (this.disableTransferPointInteractionListBuilder_ != null) {
+                    this.disableTransferPointInteractionListBuilder_.setMessage(index, value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    ensureDisableTransferPointInteractionListIsMutable();
+                    this.disableTransferPointInteractionList_.set(index, value);
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder setDisableTransferPointInteractionList(int index, Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
+                if (this.disableTransferPointInteractionListBuilder_ == null) {
+                    ensureDisableTransferPointInteractionListIsMutable();
+                    this.disableTransferPointInteractionList_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    this.disableTransferPointInteractionListBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder addDisableTransferPointInteractionList(Uint32PairOuterClass.Uint32Pair value) {
+                if (this.disableTransferPointInteractionListBuilder_ != null) {
+                    this.disableTransferPointInteractionListBuilder_.addMessage(value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    ensureDisableTransferPointInteractionListIsMutable();
+                    this.disableTransferPointInteractionList_.add(value);
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder addDisableTransferPointInteractionList(int index, Uint32PairOuterClass.Uint32Pair value) {
+                if (this.disableTransferPointInteractionListBuilder_ != null) {
+                    this.disableTransferPointInteractionListBuilder_.addMessage(index, value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    ensureDisableTransferPointInteractionListIsMutable();
+                    this.disableTransferPointInteractionList_.add(index, value);
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder addDisableTransferPointInteractionList(Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
+                if (this.disableTransferPointInteractionListBuilder_ == null) {
+                    ensureDisableTransferPointInteractionListIsMutable();
+                    this.disableTransferPointInteractionList_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    this.disableTransferPointInteractionListBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder addDisableTransferPointInteractionList(int index, Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
+                if (this.disableTransferPointInteractionListBuilder_ == null) {
+                    ensureDisableTransferPointInteractionListIsMutable();
+                    this.disableTransferPointInteractionList_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    this.disableTransferPointInteractionListBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder addAllDisableTransferPointInteractionList(Iterable<? extends Uint32PairOuterClass.Uint32Pair> values) {
+                if (this.disableTransferPointInteractionListBuilder_ == null) {
+                    ensureDisableTransferPointInteractionListIsMutable();
+                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.disableTransferPointInteractionList_);
+                    onChanged();
+                } else {
+                    this.disableTransferPointInteractionListBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            public Builder clearDisableTransferPointInteractionList() {
+                if (this.disableTransferPointInteractionListBuilder_ == null) {
+                    this.disableTransferPointInteractionList_ = Collections.emptyList();
+                    this.bitField0_ &= -3;
+                    onChanged();
+                } else {
+                    this.disableTransferPointInteractionListBuilder_.clear();
+                }
+                return this;
+            }
+
+            public Builder removeDisableTransferPointInteractionList(int index) {
+                if (this.disableTransferPointInteractionListBuilder_ == null) {
+                    ensureDisableTransferPointInteractionListIsMutable();
+                    this.disableTransferPointInteractionList_.remove(index);
+                    onChanged();
+                } else {
+                    this.disableTransferPointInteractionListBuilder_.remove(index);
+                }
+                return this;
+            }
+
+            public Uint32PairOuterClass.Uint32Pair.Builder getDisableTransferPointInteractionListBuilder(int index) {
+                return getDisableTransferPointInteractionListFieldBuilder().getBuilder(index);
+            }
+
+            @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
+            public Uint32PairOuterClass.Uint32PairOrBuilder getDisableTransferPointInteractionListOrBuilder(int index) {
+                if (this.disableTransferPointInteractionListBuilder_ == null) {
+                    return this.disableTransferPointInteractionList_.get(index);
+                }
+                return this.disableTransferPointInteractionListBuilder_.getMessageOrBuilder(index);
+            }
+
+            @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
+            public List<? extends Uint32PairOuterClass.Uint32PairOrBuilder> getDisableTransferPointInteractionListOrBuilderList() {
+                if (this.disableTransferPointInteractionListBuilder_ != null) {
+                    return this.disableTransferPointInteractionListBuilder_.getMessageOrBuilderList();
+                }
+                return Collections.unmodifiableList(this.disableTransferPointInteractionList_);
+            }
+
+            public Uint32PairOuterClass.Uint32Pair.Builder addDisableTransferPointInteractionListBuilder() {
+                return getDisableTransferPointInteractionListFieldBuilder().addBuilder(Uint32PairOuterClass.Uint32Pair.getDefaultInstance());
+            }
+
+            public Uint32PairOuterClass.Uint32Pair.Builder addDisableTransferPointInteractionListBuilder(int index) {
+                return getDisableTransferPointInteractionListFieldBuilder().addBuilder(index, Uint32PairOuterClass.Uint32Pair.getDefaultInstance());
+            }
+
+            public List<Uint32PairOuterClass.Uint32Pair.Builder> getDisableTransferPointInteractionListBuilderList() {
+                return getDisableTransferPointInteractionListFieldBuilder().getBuilderList();
+            }
+
+            private RepeatedFieldBuilderV3<Uint32PairOuterClass.Uint32Pair, Uint32PairOuterClass.Uint32Pair.Builder, Uint32PairOuterClass.Uint32PairOrBuilder> getDisableTransferPointInteractionListFieldBuilder() {
+                if (this.disableTransferPointInteractionListBuilder_ == null) {
+                    this.disableTransferPointInteractionListBuilder_ = new RepeatedFieldBuilderV3<>(this.disableTransferPointInteractionList_, (this.bitField0_ & 2) != 0, getParentForChildren(), isClean());
+                    this.disableTransferPointInteractionList_ = null;
+                }
+                return this.disableTransferPointInteractionListBuilder_;
             }
 
             private void ensureActivatedSaleIdListIsMutable() {
@@ -1104,6 +1087,23 @@ public final class GetActivityInfoRspOuterClass {
             public Builder clearActivatedSaleIdList() {
                 this.activatedSaleIdList_ = GetActivityInfoRsp.emptyIntList();
                 this.bitField0_ &= -5;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetActivityInfoRspOuterClass.GetActivityInfoRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }

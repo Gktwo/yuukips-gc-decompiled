@@ -90,30 +90,30 @@ public abstract class AbstractDouble2LongSortedMap extends AbstractDouble2LongMa
     public static class KeySetIterator implements DoubleBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Double2LongMap.Entry> f1559i;
+        protected final ObjectBidirectionalIterator<Double2LongMap.Entry> f1523i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Double2LongMap.Entry> i) {
-            this.f1559i = i;
+            this.f1523i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
         public double nextDouble() {
-            return ((Double2LongMap.Entry) this.f1559i.next()).getDoubleKey();
+            return ((Double2LongMap.Entry) this.f1523i.next()).getDoubleKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBidirectionalIterator
         public double previousDouble() {
-            return this.f1559i.previous().getDoubleKey();
+            return this.f1523i.previous().getDoubleKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1559i.hasNext();
+            return this.f1523i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1559i.hasPrevious();
+            return this.f1523i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractDouble2LongSortedMap extends AbstractDouble2LongMa
     public static class ValuesIterator implements LongIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Double2LongMap.Entry> f1560i;
+        protected final ObjectBidirectionalIterator<Double2LongMap.Entry> f1524i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Double2LongMap.Entry> i) {
-            this.f1560i = i;
+            this.f1524i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
         public long nextLong() {
-            return ((Double2LongMap.Entry) this.f1560i.next()).getLongValue();
+            return ((Double2LongMap.Entry) this.f1524i.next()).getLongValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1560i.hasNext();
+            return this.f1524i.hasNext();
         }
     }
 }

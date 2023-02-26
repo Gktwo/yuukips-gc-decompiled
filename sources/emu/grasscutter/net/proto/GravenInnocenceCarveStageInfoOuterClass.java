@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GravenInnocenceCarveStageInfoOuterClass.class */
 public final class GravenInnocenceCarveStageInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#GravenInnocenceCarveStageInfo.proto\"B\n\u001dGravenInnocenceCarveStageInfo\u0012\u000f\n\u0007is_open\u0018\b \u0001(\b\u0012\u0010\n\bstage_id\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#GravenInnocenceCarveStageInfo.proto\"@\n\u001dGravenInnocenceCarveStageInfo\u0012\u000e\n\u0006isOpen\u0018\f \u0001(\b\u0012\u000f\n\u0007stageId\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GravenInnocenceCarveStageInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GravenInnocenceCarveStageInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GravenInnocenceCarveStageInfo_descriptor, new String[]{"IsOpen", "StageId"});
 
@@ -44,9 +44,9 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GravenInnocenceCarveStageInfoOuterClass$GravenInnocenceCarveStageInfo.class */
     public static final class GravenInnocenceCarveStageInfo extends GeneratedMessageV3 implements GravenInnocenceCarveStageInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_OPEN_FIELD_NUMBER = 8;
+        public static final int ISOPEN_FIELD_NUMBER = 12;
         private boolean isOpen_;
-        public static final int STAGE_ID_FIELD_NUMBER = 10;
+        public static final int STAGEID_FIELD_NUMBER = 2;
         private int stageId_;
         private byte memoizedIsInitialized;
         private static final GravenInnocenceCarveStageInfo DEFAULT_INSTANCE = new GravenInnocenceCarveStageInfo();
@@ -93,11 +93,11 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 64:
-                                this.isOpen_ = input.readBool();
-                                break;
-                            case 80:
+                            case 16:
                                 this.stageId_ = input.readUInt32();
+                                break;
+                            case 96:
+                                this.isOpen_ = input.readBool();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -153,11 +153,11 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.isOpen_) {
-                output.writeBool(8, this.isOpen_);
-            }
             if (this.stageId_ != 0) {
-                output.writeUInt32(10, this.stageId_);
+                output.writeUInt32(2, this.stageId_);
+            }
+            if (this.isOpen_) {
+                output.writeBool(12, this.isOpen_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,11 +169,11 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.isOpen_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(8, this.isOpen_);
-            }
             if (this.stageId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.stageId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.stageId_);
+            }
+            if (this.isOpen_) {
+                size2 += CodedOutputStream.computeBoolSize(12, this.isOpen_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -197,7 +197,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + Internal.hashBoolean(getIsOpen()))) + 10)) + getStageId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + Internal.hashBoolean(getIsOpen()))) + 2)) + getStageId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

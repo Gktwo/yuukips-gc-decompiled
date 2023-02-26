@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ResVersionConfigOuterClass.class */
 public final class ResVersionConfigOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016ResVersionConfig.proto\"¢\u0001\n\u0010ResVersionConfig\u0012\u000f\n\u0007version\u0018\u0001 \u0001(\r\u0012\u000f\n\u0007relogin\u0018\u0002 \u0001(\b\u0012\u000b\n\u0003md5\u0018\u0003 \u0001(\t\u0012\u001a\n\u0012release_total_size\u0018\u0004 \u0001(\t\u0012\u0016\n\u000eversion_suffix\u0018\u0005 \u0001(\t\u0012\u000e\n\u0006branch\u0018\u0006 \u0001(\t\u0012\u001b\n\u0013next_script_version\u0018\u0007 \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016ResVersionConfig.proto\"\u0001\n\u0010ResVersionConfig\u0012\u000f\n\u0007version\u0018\u0001 \u0001(\r\u0012\u000f\n\u0007relogin\u0018\u0002 \u0001(\b\u0012\u000b\n\u0003md5\u0018\u0003 \u0001(\t\u0012\u0018\n\u0010releaseTotalSize\u0018\u0004 \u0001(\t\u0012\u0015\n\rversionSuffix\u0018\u0005 \u0001(\t\u0012\u000e\n\u0006branch\u0018\u0006 \u0001(\t\u0012\u0019\n\u0011nextScriptVersion\u0018\u0007 \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ResVersionConfig_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ResVersionConfig_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ResVersionConfig_descriptor, new String[]{"Version", "Relogin", "Md5", "ReleaseTotalSize", "VersionSuffix", "Branch", "NextScriptVersion"});
 
@@ -70,13 +70,13 @@ public final class ResVersionConfigOuterClass {
         private boolean relogin_;
         public static final int MD5_FIELD_NUMBER = 3;
         private volatile Object md5_;
-        public static final int RELEASE_TOTAL_SIZE_FIELD_NUMBER = 4;
+        public static final int RELEASETOTALSIZE_FIELD_NUMBER = 4;
         private volatile Object releaseTotalSize_;
-        public static final int VERSION_SUFFIX_FIELD_NUMBER = 5;
+        public static final int VERSIONSUFFIX_FIELD_NUMBER = 5;
         private volatile Object versionSuffix_;
         public static final int BRANCH_FIELD_NUMBER = 6;
         private volatile Object branch_;
-        public static final int NEXT_SCRIPT_VERSION_FIELD_NUMBER = 7;
+        public static final int NEXTSCRIPTVERSION_FIELD_NUMBER = 7;
         private volatile Object nextScriptVersion_;
         private byte memoizedIsInitialized;
         private static final ResVersionConfig DEFAULT_INSTANCE = new ResVersionConfig();

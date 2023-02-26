@@ -23,25 +23,25 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SummerTimeSprintBoatRecordOuterClass.class */
 public final class SummerTimeSprintBoatRecordOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n SummerTimeSprintBoatRecord.proto\"\u0001\n\u001aSummerTimeSprintBoatRecord\u0012\u0012\n\nstart_time\u0018\f \u0001(\r\u0012\u0010\n\bgroup_id\u0018\u0005 \u0001(\r\u0012\u0017\n\u000fwatcher_id_list\u0018\u0002 \u0003(\r\u0012\u0012\n\nbest_score\u0018\r \u0001(\r\u0012\u0012\n\nis_touched\u0018\u0006 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n SummerTimeSprintBoatRecord.proto\"}\n\u001aSummerTimeSprintBoatRecord\u0012\u0015\n\rwatcherIdList\u0018\u0005 \u0003(\r\u0012\u0011\n\tstartTime\u0018\u0003 \u0001(\r\u0012\u0011\n\tisTouched\u0018\t \u0001(\b\u0012\u0011\n\tbestScore\u0018\u0002 \u0001(\r\u0012\u000f\n\u0007groupId\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SummerTimeSprintBoatRecord_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SummerTimeSprintBoatRecord_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SummerTimeSprintBoatRecord_descriptor, new String[]{"StartTime", "GroupId", "WatcherIdList", "BestScore", "IsTouched"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SummerTimeSprintBoatRecord_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SummerTimeSprintBoatRecord_descriptor, new String[]{"WatcherIdList", "StartTime", "IsTouched", "BestScore", "GroupId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SummerTimeSprintBoatRecordOuterClass$SummerTimeSprintBoatRecordOrBuilder.class */
     public interface SummerTimeSprintBoatRecordOrBuilder extends MessageOrBuilder {
-        int getStartTime();
-
-        int getGroupId();
-
         List<Integer> getWatcherIdListList();
 
         int getWatcherIdListCount();
 
         int getWatcherIdList(int i);
 
-        int getBestScore();
+        int getStartTime();
 
         boolean getIsTouched();
+
+        int getBestScore();
+
+        int getGroupId();
     }
 
     private SummerTimeSprintBoatRecordOuterClass() {
@@ -57,17 +57,17 @@ public final class SummerTimeSprintBoatRecordOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SummerTimeSprintBoatRecordOuterClass$SummerTimeSprintBoatRecord.class */
     public static final class SummerTimeSprintBoatRecord extends GeneratedMessageV3 implements SummerTimeSprintBoatRecordOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int START_TIME_FIELD_NUMBER = 12;
-        private int startTime_;
-        public static final int GROUP_ID_FIELD_NUMBER = 5;
-        private int groupId_;
-        public static final int WATCHER_ID_LIST_FIELD_NUMBER = 2;
+        public static final int WATCHERIDLIST_FIELD_NUMBER = 5;
         private Internal.IntList watcherIdList_;
         private int watcherIdListMemoizedSerializedSize;
-        public static final int BEST_SCORE_FIELD_NUMBER = 13;
-        private int bestScore_;
-        public static final int IS_TOUCHED_FIELD_NUMBER = 6;
+        public static final int STARTTIME_FIELD_NUMBER = 3;
+        private int startTime_;
+        public static final int ISTOUCHED_FIELD_NUMBER = 9;
         private boolean isTouched_;
+        public static final int BESTSCORE_FIELD_NUMBER = 2;
+        private int bestScore_;
+        public static final int GROUPID_FIELD_NUMBER = 14;
+        private int groupId_;
         private byte memoizedIsInitialized;
         private static final SummerTimeSprintBoatRecord DEFAULT_INSTANCE = new SummerTimeSprintBoatRecord();
         private static final Parser<SummerTimeSprintBoatRecord> PARSER = new AbstractParser<SummerTimeSprintBoatRecord>() { // from class: emu.grasscutter.net.proto.SummerTimeSprintBoatRecordOuterClass.SummerTimeSprintBoatRecord.1
@@ -119,13 +119,19 @@ public final class SummerTimeSprintBoatRecordOuterClass {
                                 done = true;
                                 break;
                             case 16:
+                                this.bestScore_ = input.readUInt32();
+                                break;
+                            case 24:
+                                this.startTime_ = input.readUInt32();
+                                break;
+                            case 40:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.watcherIdList_ = newIntList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.watcherIdList_.addInt(input.readUInt32());
                                 break;
-                            case 18:
+                            case 42:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.watcherIdList_ = newIntList();
@@ -136,17 +142,11 @@ public final class SummerTimeSprintBoatRecordOuterClass {
                                 }
                                 input.popLimit(limit);
                                 break;
-                            case 40:
-                                this.groupId_ = input.readUInt32();
-                                break;
-                            case 48:
+                            case 72:
                                 this.isTouched_ = input.readBool();
                                 break;
-                            case 96:
-                                this.startTime_ = input.readUInt32();
-                                break;
-                            case 104:
-                                this.bestScore_ = input.readUInt32();
+                            case 112:
+                                this.groupId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -181,16 +181,6 @@ public final class SummerTimeSprintBoatRecordOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SummerTimeSprintBoatRecordOuterClass.SummerTimeSprintBoatRecordOrBuilder
-        public int getStartTime() {
-            return this.startTime_;
-        }
-
-        @Override // emu.grasscutter.net.proto.SummerTimeSprintBoatRecordOuterClass.SummerTimeSprintBoatRecordOrBuilder
-        public int getGroupId() {
-            return this.groupId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.SummerTimeSprintBoatRecordOuterClass.SummerTimeSprintBoatRecordOrBuilder
         public List<Integer> getWatcherIdListList() {
             return this.watcherIdList_;
         }
@@ -206,13 +196,23 @@ public final class SummerTimeSprintBoatRecordOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SummerTimeSprintBoatRecordOuterClass.SummerTimeSprintBoatRecordOrBuilder
-        public int getBestScore() {
-            return this.bestScore_;
+        public int getStartTime() {
+            return this.startTime_;
         }
 
         @Override // emu.grasscutter.net.proto.SummerTimeSprintBoatRecordOuterClass.SummerTimeSprintBoatRecordOrBuilder
         public boolean getIsTouched() {
             return this.isTouched_;
+        }
+
+        @Override // emu.grasscutter.net.proto.SummerTimeSprintBoatRecordOuterClass.SummerTimeSprintBoatRecordOrBuilder
+        public int getBestScore() {
+            return this.bestScore_;
+        }
+
+        @Override // emu.grasscutter.net.proto.SummerTimeSprintBoatRecordOuterClass.SummerTimeSprintBoatRecordOrBuilder
+        public int getGroupId() {
+            return this.groupId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -231,24 +231,24 @@ public final class SummerTimeSprintBoatRecordOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
+            if (this.bestScore_ != 0) {
+                output.writeUInt32(2, this.bestScore_);
+            }
+            if (this.startTime_ != 0) {
+                output.writeUInt32(3, this.startTime_);
+            }
             if (getWatcherIdListList().size() > 0) {
-                output.writeUInt32NoTag(18);
+                output.writeUInt32NoTag(42);
                 output.writeUInt32NoTag(this.watcherIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.watcherIdList_.size(); i++) {
                 output.writeUInt32NoTag(this.watcherIdList_.getInt(i));
             }
-            if (this.groupId_ != 0) {
-                output.writeUInt32(5, this.groupId_);
-            }
             if (this.isTouched_) {
-                output.writeBool(6, this.isTouched_);
+                output.writeBool(9, this.isTouched_);
             }
-            if (this.startTime_ != 0) {
-                output.writeUInt32(12, this.startTime_);
-            }
-            if (this.bestScore_ != 0) {
-                output.writeUInt32(13, this.bestScore_);
+            if (this.groupId_ != 0) {
+                output.writeUInt32(14, this.groupId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -259,30 +259,31 @@ public final class SummerTimeSprintBoatRecordOuterClass {
             if (size != -1) {
                 return size;
             }
+            int size2 = 0;
+            if (this.bestScore_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.bestScore_);
+            }
+            if (this.startTime_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(3, this.startTime_);
+            }
             int dataSize = 0;
             for (int i = 0; i < this.watcherIdList_.size(); i++) {
                 dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.watcherIdList_.getInt(i));
             }
-            int size2 = 0 + dataSize;
+            int size3 = size2 + dataSize;
             if (!getWatcherIdListList().isEmpty()) {
-                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.watcherIdListMemoizedSerializedSize = dataSize;
-            if (this.groupId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.groupId_);
-            }
             if (this.isTouched_) {
-                size2 += CodedOutputStream.computeBoolSize(6, this.isTouched_);
+                size3 += CodedOutputStream.computeBoolSize(9, this.isTouched_);
             }
-            if (this.startTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.startTime_);
+            if (this.groupId_ != 0) {
+                size3 += CodedOutputStream.computeUInt32Size(14, this.groupId_);
             }
-            if (this.bestScore_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.bestScore_);
-            }
-            int size3 = size2 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size3;
-            return size3;
+            int size4 = size3 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size4;
+            return size4;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -294,7 +295,7 @@ public final class SummerTimeSprintBoatRecordOuterClass {
                 return equals(obj);
             }
             SummerTimeSprintBoatRecord other = (SummerTimeSprintBoatRecord) obj;
-            return getStartTime() == other.getStartTime() && getGroupId() == other.getGroupId() && getWatcherIdListList().equals(other.getWatcherIdListList()) && getBestScore() == other.getBestScore() && getIsTouched() == other.getIsTouched() && this.unknownFields.equals(other.unknownFields);
+            return getWatcherIdListList().equals(other.getWatcherIdListList()) && getStartTime() == other.getStartTime() && getIsTouched() == other.getIsTouched() && getBestScore() == other.getBestScore() && getGroupId() == other.getGroupId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -302,11 +303,11 @@ public final class SummerTimeSprintBoatRecordOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getStartTime())) + 5)) + getGroupId();
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (getWatcherIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 2)) + getWatcherIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getWatcherIdListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 13)) + getBestScore())) + 6)) + Internal.hashBoolean(getIsTouched()))) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 3)) + getStartTime())) + 9)) + Internal.hashBoolean(getIsTouched()))) + 2)) + getBestScore())) + 14)) + getGroupId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -386,11 +387,11 @@ public final class SummerTimeSprintBoatRecordOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SummerTimeSprintBoatRecordOuterClass$SummerTimeSprintBoatRecord$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SummerTimeSprintBoatRecordOrBuilder {
             private int bitField0_;
-            private int startTime_;
-            private int groupId_;
             private Internal.IntList watcherIdList_ = SummerTimeSprintBoatRecord.emptyIntList();
-            private int bestScore_;
+            private int startTime_;
             private boolean isTouched_;
+            private int bestScore_;
+            private int groupId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return SummerTimeSprintBoatRecordOuterClass.internal_static_SummerTimeSprintBoatRecord_descriptor;
@@ -418,12 +419,12 @@ public final class SummerTimeSprintBoatRecordOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.startTime_ = 0;
-                this.groupId_ = 0;
                 this.watcherIdList_ = SummerTimeSprintBoatRecord.emptyIntList();
                 this.bitField0_ &= -2;
-                this.bestScore_ = 0;
+                this.startTime_ = 0;
                 this.isTouched_ = false;
+                this.bestScore_ = 0;
+                this.groupId_ = 0;
                 return this;
             }
 
@@ -450,15 +451,15 @@ public final class SummerTimeSprintBoatRecordOuterClass {
             public SummerTimeSprintBoatRecord buildPartial() {
                 SummerTimeSprintBoatRecord result = new SummerTimeSprintBoatRecord(this);
                 int i = this.bitField0_;
-                result.startTime_ = this.startTime_;
-                result.groupId_ = this.groupId_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.watcherIdList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.watcherIdList_ = this.watcherIdList_;
-                result.bestScore_ = this.bestScore_;
+                result.startTime_ = this.startTime_;
                 result.isTouched_ = this.isTouched_;
+                result.bestScore_ = this.bestScore_;
+                result.groupId_ = this.groupId_;
                 onBuilt();
                 return result;
             }
@@ -506,12 +507,6 @@ public final class SummerTimeSprintBoatRecordOuterClass {
                 if (other == SummerTimeSprintBoatRecord.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getStartTime() != 0) {
-                    setStartTime(other.getStartTime());
-                }
-                if (other.getGroupId() != 0) {
-                    setGroupId(other.getGroupId());
-                }
                 if (!other.watcherIdList_.isEmpty()) {
                     if (this.watcherIdList_.isEmpty()) {
                         this.watcherIdList_ = other.watcherIdList_;
@@ -522,11 +517,17 @@ public final class SummerTimeSprintBoatRecordOuterClass {
                     }
                     onChanged();
                 }
-                if (other.getBestScore() != 0) {
-                    setBestScore(other.getBestScore());
+                if (other.getStartTime() != 0) {
+                    setStartTime(other.getStartTime());
                 }
                 if (other.getIsTouched()) {
                     setIsTouched(other.getIsTouched());
+                }
+                if (other.getBestScore() != 0) {
+                    setBestScore(other.getBestScore());
+                }
+                if (other.getGroupId() != 0) {
+                    setGroupId(other.getGroupId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -558,40 +559,6 @@ public final class SummerTimeSprintBoatRecordOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.SummerTimeSprintBoatRecordOuterClass.SummerTimeSprintBoatRecordOrBuilder
-            public int getStartTime() {
-                return this.startTime_;
-            }
-
-            public Builder setStartTime(int value) {
-                this.startTime_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearStartTime() {
-                this.startTime_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.SummerTimeSprintBoatRecordOuterClass.SummerTimeSprintBoatRecordOrBuilder
-            public int getGroupId() {
-                return this.groupId_;
-            }
-
-            public Builder setGroupId(int value) {
-                this.groupId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearGroupId() {
-                this.groupId_ = 0;
-                onChanged();
-                return this;
             }
 
             private void ensureWatcherIdListIsMutable() {
@@ -645,18 +612,18 @@ public final class SummerTimeSprintBoatRecordOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.SummerTimeSprintBoatRecordOuterClass.SummerTimeSprintBoatRecordOrBuilder
-            public int getBestScore() {
-                return this.bestScore_;
+            public int getStartTime() {
+                return this.startTime_;
             }
 
-            public Builder setBestScore(int value) {
-                this.bestScore_ = value;
+            public Builder setStartTime(int value) {
+                this.startTime_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearBestScore() {
-                this.bestScore_ = 0;
+            public Builder clearStartTime() {
+                this.startTime_ = 0;
                 onChanged();
                 return this;
             }
@@ -674,6 +641,40 @@ public final class SummerTimeSprintBoatRecordOuterClass {
 
             public Builder clearIsTouched() {
                 this.isTouched_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SummerTimeSprintBoatRecordOuterClass.SummerTimeSprintBoatRecordOrBuilder
+            public int getBestScore() {
+                return this.bestScore_;
+            }
+
+            public Builder setBestScore(int value) {
+                this.bestScore_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearBestScore() {
+                this.bestScore_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SummerTimeSprintBoatRecordOuterClass.SummerTimeSprintBoatRecordOrBuilder
+            public int getGroupId() {
+                return this.groupId_;
+            }
+
+            public Builder setGroupId(int value) {
+                this.groupId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearGroupId() {
+                this.groupId_ = 0;
                 onChanged();
                 return this;
             }

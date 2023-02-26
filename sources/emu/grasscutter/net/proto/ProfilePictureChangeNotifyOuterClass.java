@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ProfilePictureChangeNotifyOuterClass.class */
 public final class ProfilePictureChangeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n ProfilePictureChangeNotify.proto\u001a\u0014ProfilePicture.proto\"F\n\u001aProfilePictureChangeNotify\u0012(\n\u000fprofile_picture\u0018\f \u0001(\u000b2\u000f.ProfilePictureB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ProfilePictureOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n ProfilePictureChangeNotify.proto\u001a\u0014ProfilePicture.proto\"E\n\u001aProfilePictureChangeNotify\u0012'\n\u000eprofilePicture\u0018\r \u0001(\u000b2\u000f.ProfilePictureB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ProfilePictureOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ProfilePictureChangeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ProfilePictureChangeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ProfilePictureChangeNotify_descriptor, new String[]{"ProfilePicture"});
 
@@ -47,7 +47,7 @@ public final class ProfilePictureChangeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ProfilePictureChangeNotifyOuterClass$ProfilePictureChangeNotify.class */
     public static final class ProfilePictureChangeNotify extends GeneratedMessageV3 implements ProfilePictureChangeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PROFILE_PICTURE_FIELD_NUMBER = 12;
+        public static final int PROFILEPICTURE_FIELD_NUMBER = 13;
         private ProfilePictureOuterClass.ProfilePicture profilePicture_;
         private byte memoizedIsInitialized;
         private static final ProfilePictureChangeNotify DEFAULT_INSTANCE = new ProfilePictureChangeNotify();
@@ -94,7 +94,7 @@ public final class ProfilePictureChangeNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 98:
+                            case 106:
                                 ProfilePictureOuterClass.ProfilePicture.Builder subBuilder = this.profilePicture_ != null ? this.profilePicture_.toBuilder() : null;
                                 this.profilePicture_ = (ProfilePictureOuterClass.ProfilePicture) input.readMessage(ProfilePictureOuterClass.ProfilePicture.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -164,7 +164,7 @@ public final class ProfilePictureChangeNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.profilePicture_ != null) {
-                output.writeMessage(12, getProfilePicture());
+                output.writeMessage(13, getProfilePicture());
             }
             this.unknownFields.writeTo(output);
         }
@@ -177,7 +177,7 @@ public final class ProfilePictureChangeNotifyOuterClass {
             }
             int size2 = 0;
             if (this.profilePicture_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(12, getProfilePicture());
+                size2 = 0 + CodedOutputStream.computeMessageSize(13, getProfilePicture());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -206,7 +206,7 @@ public final class ProfilePictureChangeNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasProfilePicture()) {
-                hash = (53 * ((37 * hash) + 12)) + getProfilePicture().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getProfilePicture().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

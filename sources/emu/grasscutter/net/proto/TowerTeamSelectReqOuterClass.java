@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerTeamSelectReqOuterClass.class */
 public final class TowerTeamSelectReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018TowerTeamSelectReq.proto\u001a\u000fTowerTeam.proto\"K\n\u0012TowerTeamSelectReq\u0012#\n\u000ftower_team_list\u0018\u0005 \u0003(\u000b2\n.TowerTeam\u0012\u0010\n\bfloor_id\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{TowerTeamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018TowerTeamSelectReq.proto\u001a\u000fTowerTeam.proto\"H\n\u0012TowerTeamSelectReq\u0012!\n\rtowerTeamList\u0018\u0001 \u0003(\u000b2\n.TowerTeam\u0012\u000f\n\u0007floorId\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{TowerTeamOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_TowerTeamSelectReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_TowerTeamSelectReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TowerTeamSelectReq_descriptor, new String[]{"TowerTeamList", "FloorId"});
 
@@ -57,9 +57,9 @@ public final class TowerTeamSelectReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerTeamSelectReqOuterClass$TowerTeamSelectReq.class */
     public static final class TowerTeamSelectReq extends GeneratedMessageV3 implements TowerTeamSelectReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TOWER_TEAM_LIST_FIELD_NUMBER = 5;
+        public static final int TOWERTEAMLIST_FIELD_NUMBER = 1;
         private List<TowerTeamOuterClass.TowerTeam> towerTeamList_;
-        public static final int FLOOR_ID_FIELD_NUMBER = 10;
+        public static final int FLOORID_FIELD_NUMBER = 11;
         private int floorId_;
         private byte memoizedIsInitialized;
         private static final TowerTeamSelectReq DEFAULT_INSTANCE = new TowerTeamSelectReq();
@@ -110,14 +110,14 @@ public final class TowerTeamSelectReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 42:
+                                case 10:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.towerTeamList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.towerTeamList_.add((TowerTeamOuterClass.TowerTeam) input.readMessage(TowerTeamOuterClass.TowerTeam.parser(), extensionRegistry));
                                     break;
-                                case 80:
+                                case 88:
                                     this.floorId_ = input.readUInt32();
                                     break;
                                 default:
@@ -199,10 +199,10 @@ public final class TowerTeamSelectReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.towerTeamList_.size(); i++) {
-                output.writeMessage(5, this.towerTeamList_.get(i));
+                output.writeMessage(1, this.towerTeamList_.get(i));
             }
             if (this.floorId_ != 0) {
-                output.writeUInt32(10, this.floorId_);
+                output.writeUInt32(11, this.floorId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -215,10 +215,10 @@ public final class TowerTeamSelectReqOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.towerTeamList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(5, this.towerTeamList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(1, this.towerTeamList_.get(i));
             }
             if (this.floorId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.floorId_);
+                size2 += CodedOutputStream.computeUInt32Size(11, this.floorId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -244,9 +244,9 @@ public final class TowerTeamSelectReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getTowerTeamListCount() > 0) {
-                hash = (53 * ((37 * hash) + 5)) + getTowerTeamListList().hashCode();
+                hash = (53 * ((37 * hash) + 1)) + getTowerTeamListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 10)) + getFloorId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 11)) + getFloorId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

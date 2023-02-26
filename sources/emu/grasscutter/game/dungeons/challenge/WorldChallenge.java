@@ -398,7 +398,7 @@ public class WorldChallenge {
     }
 
     public void onMonsterDeath(EntityMonster monster) {
-        if (inProgress() && monster.getGroupId() == getGroup().f957id) {
+        if (inProgress() && monster.getGroupId() == getGroup().f922id) {
             this.challengeTriggers.forEach(t -> {
                 monster.onMonsterDeath(this, monster);
             });
@@ -406,7 +406,7 @@ public class WorldChallenge {
     }
 
     public void onGadgetDeath(EntityGadget gadget) {
-        if (inProgress() && gadget.getGroupId() == getGroup().f957id) {
+        if (inProgress() && gadget.getGroupId() == getGroup().f922id) {
             this.challengeTriggers.forEach(t -> {
                 gadget.onGadgetDeath(this, gadget);
             });
@@ -414,7 +414,7 @@ public class WorldChallenge {
     }
 
     public void onGadgetDamage(EntityGadget gadget) {
-        if (inProgress() && gadget.getGroupId() == getGroup().f957id) {
+        if (inProgress() && gadget.getGroupId() == getGroup().f922id) {
             this.challengeTriggers.forEach(t -> {
                 gadget.onGadgetDamage(this, gadget);
             });

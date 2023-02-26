@@ -1,54 +1,124 @@
 package emu.grasscutter.server.http.handlers;
 
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.command.CommandMap;
+import emu.grasscutter.config.Configuration;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.http.Router;
+import emu.grasscutter.server.http.objects.JsonRequest;
+import emu.grasscutter.server.http.objects.JsonResponse;
+import emu.grasscutter.utils.RateLimiter;
+import emu.grasscutter.utils.Utils;
+import java.util.Objects;
+import java.util.concurrent.TimeUnit;
+import org.quartz.jobs.NativeJob;
 import p013io.javalin.Javalin;
+import p013io.javalin.http.Context;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/server/http/handlers/APIHandler.class */
 public final class APIHandler implements Router {
-    /*  JADX ERROR: Dependency scan failed at insn: 0x02C4: INVOKE_CUSTOM r-70
-        java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
-        	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
-        	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
-        	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266)
-        	at java.base/java.util.Objects.checkIndex(Objects.java:359)
-        	at java.base/java.util.ArrayList.get(ArrayList.java:427)
-        	at jadx.core.dex.visitors.usage.UsageInfoVisitor.processInsn(UsageInfoVisitor.java:130)
-        	at jadx.core.dex.visitors.usage.UsageInfoVisitor.lambda$processInstructions$0(UsageInfoVisitor.java:79)
-        	at jadx.plugins.input.java.data.code.JavaCodeReader.visitInstructions(JavaCodeReader.java:82)
-        	at jadx.core.dex.visitors.usage.UsageInfoVisitor.processInstructions(UsageInfoVisitor.java:77)
-        	at jadx.core.dex.visitors.usage.UsageInfoVisitor.processMethod(UsageInfoVisitor.java:62)
-        	at jadx.core.dex.visitors.usage.UsageInfoVisitor.processClass(UsageInfoVisitor.java:51)
-        	at jadx.core.dex.visitors.usage.UsageInfoVisitor.init(UsageInfoVisitor.java:36)
-        	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:267)
-        */
-    /*  JADX ERROR: Failed to decode insn: 0x02C4: INVOKE_CUSTOM r1, method: emu.grasscutter.server.http.handlers.APIHandler.commandRes(io.javalin.http.Context):void
-        jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (Ljava/lang/String;)Ljava/lang/String;}, Someone executes command from outside: ]}
-        	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:55)
-        	at jadx.core.dex.instructions.InsnDecoder.invoke(InsnDecoder.java:568)
-        	at jadx.core.dex.instructions.InsnDecoder.decode(InsnDecoder.java:438)
-        	at jadx.core.dex.instructions.InsnDecoder.lambda$process$0(InsnDecoder.java:48)
-        	at jadx.plugins.input.java.data.code.JavaCodeReader.visitInstructions(JavaCodeReader.java:82)
-        	at jadx.core.dex.instructions.InsnDecoder.process(InsnDecoder.java:43)
-        	at jadx.core.dex.nodes.MethodNode.load(MethodNode.java:194)
-        	at jadx.core.dex.nodes.ClassNode.load(ClassNode.java:309)
-        	at jadx.core.ProcessClass.process(ProcessClass.java:53)
-        	at jadx.core.ProcessClass.generateCode(ProcessClass.java:87)
-        	at jadx.core.dex.nodes.ClassNode.decompile(ClassNode.java:300)
-        	at jadx.core.dex.nodes.ClassNode.decompile(ClassNode.java:265)
-        Caused by: jadx.core.utils.exceptions.JadxRuntimeException: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (Ljava/lang/String;)Ljava/lang/String;}, Someone executes command from outside: ]}
-        	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:42)
-        	... 11 more
-        */
-    private static void commandRes(p013io.javalin.http.Context r8) {
-        /*
-        // Method dump skipped, instructions count: 767
-        */
-        throw new UnsupportedOperationException("Method not decompiled: emu.grasscutter.server.http.handlers.APIHandler.commandRes(io.javalin.http.Context):void");
-    }
-
     @Override // emu.grasscutter.server.http.Router
     public void applyRoutes(Javalin javalin) {
         javalin.get("/api/command", APIHandler::commandRes);
         javalin.post("/opencommand/api", APIHandler::commandRes);
+    }
+
+    private static void commandRes(Context ctx) {
+        String address = Utils.getClientIpAddress(ctx);
+        String player_id = "";
+        String token = "";
+        String runcmd = "";
+        boolean isOpenCommand = false;
+        if (Objects.equals(ctx.endpointHandlerPath(), "/opencommand/api")) {
+            JsonRequest req = (JsonRequest) ctx.bodyAsClass(JsonRequest.class);
+            if (req.action.equals("verify")) {
+                String[] acc = req.token.split("\\|", -1);
+                if (acc.length == 2) {
+                    player_id = acc[0];
+                    token = acc[1];
+                    runcmd = "help";
+                } else {
+                    ctx.json(new JsonResponse(403, "Format must be [uid|code] get code in-game /remote on"));
+                    return;
+                }
+            } else if (req.action.equals("ping")) {
+                ctx.json(new JsonResponse());
+                return;
+            } else if (req.action.equals("sendCode")) {
+                ctx.json(new JsonResponse(403, "Use Console Tab instead Player Tab!"));
+                return;
+            } else if (req.action.equals(NativeJob.PROP_COMMAND)) {
+                String[] acc2 = req.token.split("\\|", -1);
+                if (acc2.length == 2) {
+                    player_id = acc2[0];
+                    token = acc2[1];
+                    runcmd = (String) req.data;
+                    isOpenCommand = true;
+                } else {
+                    ctx.json(new JsonResponse(403, "Go back to remote tab and set [uid|code] on token"));
+                }
+            } else {
+                ctx.json(new JsonResponse(403, "Access denied2"));
+                return;
+            }
+        } else {
+            token = ctx.queryParam("token");
+            player_id = ctx.queryParam("player");
+            runcmd = ctx.queryParam("cmd");
+        }
+        try {
+            RateLimiter.rateLimit(player_id, Utils.getClientIpAddress(ctx), 1, TimeUnit.MINUTES, 20);
+            if (player_id == null || player_id.isEmpty()) {
+                ctx.json(new JsonResponse(404, "no player id found"));
+            } else if (token == null || token.isEmpty()) {
+                ctx.json(new JsonResponse(404, "no token found"));
+            } else if (runcmd == null || runcmd.isEmpty()) {
+                ctx.json(new JsonResponse(404, "cmd no found"));
+            } else {
+                try {
+                    int tmp_id = Integer.parseInt(player_id);
+                    Grasscutter.getLogger().info("Player Remote {}: (ID {}) (Token {}) run {}", address, player_id, token, runcmd);
+                    Player sender = Grasscutter.getGameServer().getPlayerByUid(tmp_id);
+                    if (sender == null) {
+                        if (!Configuration.GAME_INFO.serverAccount.token_private.contains(token)) {
+                            if (isOpenCommand) {
+                                ctx.json(new JsonResponse(200, "", "Error: This player is not online"));
+                                return;
+                            } else {
+                                ctx.json(new JsonResponse(201, "This player is not online"));
+                                return;
+                            }
+                        }
+                    } else if (Configuration.GAME_INFO.serverAccount.token_public.contains(token)) {
+                        CommandHandler.sendMessage(sender, "(Token Public) Someone accessed command from outside.");
+                    } else if (sender.getAccount().getTokenAPI() == null || sender.getAccount().getTokenAPI().isEmpty()) {
+                        ctx.json(new JsonResponse(403, "Code not set. use /remote on from in-game"));
+                        return;
+                    } else if (!sender.getAccount().getTokenAPI().contains(token)) {
+                        ctx.json(new JsonResponse(403, "Wrong remote access code"));
+                        return;
+                    } else {
+                        CommandHandler.sendMessage(sender, "(Code) Someone accessed command from outside, if this is not yours please change passcode.");
+                    }
+                    CommandMap.getInstance().invoke(sender, null, runcmd);
+                    if (isOpenCommand) {
+                        ctx.json(new JsonResponse(200, "", "Succeed"));
+                    } else {
+                        ctx.json(new JsonResponse());
+                    }
+                } catch (Exception e) {
+                    ctx.json(new JsonResponse(403, "Player must use uid not username/email"));
+                }
+            }
+        } catch (Exception e2) {
+            if (isOpenCommand) {
+                ctx.json(new JsonResponse(200, "", "Error: Can only run 20 commands per minute"));
+                Grasscutter.getLogger().info("{} has been rate limit using commands from OpenCommand", address);
+                return;
+            }
+            ctx.json(new JsonResponse(403, "Can only run 20 commands per minute"));
+            Grasscutter.getLogger().info("{} has been rate limit using commands from API Web", address);
+        }
     }
 }

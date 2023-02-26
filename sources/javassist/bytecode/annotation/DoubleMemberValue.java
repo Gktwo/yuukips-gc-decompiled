@@ -37,11 +37,11 @@ public class DoubleMemberValue extends MemberValue {
     }
 
     public double getValue() {
-        return this.f3074cp.getDoubleInfo(this.valueIndex);
+        return this.f3038cp.getDoubleInfo(this.valueIndex);
     }
 
     public void setValue(double newValue) {
-        this.valueIndex = this.f3074cp.addDoubleInfo(newValue);
+        this.valueIndex = this.f3038cp.addDoubleInfo(newValue);
     }
 
     public String toString() {

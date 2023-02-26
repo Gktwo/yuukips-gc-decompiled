@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ClientGadgetInfoOuterClass.class */
 public final class ClientGadgetInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016ClientGadgetInfo.proto\"Ê\u0001\n\u0010ClientGadgetInfo\u0012\u000f\n\u0007camp_id\u0018\u0001 \u0001(\r\u0012\u0011\n\tcamp_type\u0018\u0002 \u0001(\r\u0012\f\n\u0004guid\u0018\u0003 \u0001(\u0004\u0012\u0017\n\u000fowner_entity_id\u0018\u0004 \u0001(\r\u0012\u0018\n\u0010target_entity_id\u0018\u0005 \u0001(\r\u0012\u0012\n\nasync_load\u0018\u0006 \u0001(\b\u0012\u001e\n\u0016is_peer_id_from_player\u0018\u0007 \u0001(\b\u0012\u001d\n\u0015target_entity_id_list\u0018\b \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016ClientGadgetInfo.proto\"½\u0001\n\u0010ClientGadgetInfo\u0012\u000e\n\u0006campId\u0018\u0001 \u0001(\r\u0012\u0010\n\bcampType\u0018\u0002 \u0001(\r\u0012\f\n\u0004guid\u0018\u0003 \u0001(\u0004\u0012\u0015\n\rownerEntityId\u0018\u0004 \u0001(\r\u0012\u0016\n\u000etargetEntityId\u0018\u0005 \u0001(\r\u0012\u0012\n\nasync_load\u0018\u0006 \u0001(\b\u0012\u001a\n\u0012isPeerIdFromPlayer\u0018\u0007 \u0001(\b\u0012\u001a\n\u0012targetEntityIdList\u0018\b \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ClientGadgetInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ClientGadgetInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ClientGadgetInfo_descriptor, new String[]{"CampId", "CampType", "Guid", "OwnerEntityId", "TargetEntityId", "AsyncLoad", "IsPeerIdFromPlayer", "TargetEntityIdList"});
 
@@ -63,21 +63,21 @@ public final class ClientGadgetInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ClientGadgetInfoOuterClass$ClientGadgetInfo.class */
     public static final class ClientGadgetInfo extends GeneratedMessageV3 implements ClientGadgetInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CAMP_ID_FIELD_NUMBER = 1;
+        public static final int CAMPID_FIELD_NUMBER = 1;
         private int campId_;
-        public static final int CAMP_TYPE_FIELD_NUMBER = 2;
+        public static final int CAMPTYPE_FIELD_NUMBER = 2;
         private int campType_;
         public static final int GUID_FIELD_NUMBER = 3;
         private long guid_;
-        public static final int OWNER_ENTITY_ID_FIELD_NUMBER = 4;
+        public static final int OWNERENTITYID_FIELD_NUMBER = 4;
         private int ownerEntityId_;
-        public static final int TARGET_ENTITY_ID_FIELD_NUMBER = 5;
+        public static final int TARGETENTITYID_FIELD_NUMBER = 5;
         private int targetEntityId_;
         public static final int ASYNC_LOAD_FIELD_NUMBER = 6;
         private boolean asyncLoad_;
-        public static final int IS_PEER_ID_FROM_PLAYER_FIELD_NUMBER = 7;
+        public static final int ISPEERIDFROMPLAYER_FIELD_NUMBER = 7;
         private boolean isPeerIdFromPlayer_;
-        public static final int TARGET_ENTITY_ID_LIST_FIELD_NUMBER = 8;
+        public static final int TARGETENTITYIDLIST_FIELD_NUMBER = 8;
         private Internal.IntList targetEntityIdList_;
         private int targetEntityIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;

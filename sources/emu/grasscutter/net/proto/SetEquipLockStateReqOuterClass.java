@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetEquipLockStateReqOuterClass.class */
 public final class SetEquipLockStateReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aSetEquipLockStateReq.proto\"D\n\u0014SetEquipLockStateReq\u0012\u0019\n\u0011target_equip_guid\u0018\n \u0001(\u0004\u0012\u0011\n\tis_locked\u0018\u0005 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aSetEquipLockStateReq.proto\"A\n\u0014SetEquipLockStateReq\u0012\u0017\n\u000ftargetEquipGuid\u0018\n \u0001(\u0004\u0012\u0010\n\bisLocked\u0018\u0003 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SetEquipLockStateReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetEquipLockStateReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetEquipLockStateReq_descriptor, new String[]{"TargetEquipGuid", "IsLocked"});
 
@@ -44,9 +44,9 @@ public final class SetEquipLockStateReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetEquipLockStateReqOuterClass$SetEquipLockStateReq.class */
     public static final class SetEquipLockStateReq extends GeneratedMessageV3 implements SetEquipLockStateReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TARGET_EQUIP_GUID_FIELD_NUMBER = 10;
+        public static final int TARGETEQUIPGUID_FIELD_NUMBER = 10;
         private long targetEquipGuid_;
-        public static final int IS_LOCKED_FIELD_NUMBER = 5;
+        public static final int ISLOCKED_FIELD_NUMBER = 3;
         private boolean isLocked_;
         private byte memoizedIsInitialized;
         private static final SetEquipLockStateReq DEFAULT_INSTANCE = new SetEquipLockStateReq();
@@ -93,7 +93,7 @@ public final class SetEquipLockStateReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 40:
+                            case 24:
                                 this.isLocked_ = input.readBool();
                                 break;
                             case 80:
@@ -154,7 +154,7 @@ public final class SetEquipLockStateReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.isLocked_) {
-                output.writeBool(5, this.isLocked_);
+                output.writeBool(3, this.isLocked_);
             }
             if (this.targetEquipGuid_ != 0) {
                 output.writeUInt64(10, this.targetEquipGuid_);
@@ -170,7 +170,7 @@ public final class SetEquipLockStateReqOuterClass {
             }
             int size2 = 0;
             if (this.isLocked_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(5, this.isLocked_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(3, this.isLocked_);
             }
             if (this.targetEquipGuid_ != 0) {
                 size2 += CodedOutputStream.computeUInt64Size(10, this.targetEquipGuid_);
@@ -197,7 +197,7 @@ public final class SetEquipLockStateReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + Internal.hashLong(getTargetEquipGuid()))) + 5)) + Internal.hashBoolean(getIsLocked()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + Internal.hashLong(getTargetEquipGuid()))) + 3)) + Internal.hashBoolean(getIsLocked()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

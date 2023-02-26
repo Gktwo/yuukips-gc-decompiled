@@ -21,11 +21,11 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MonsterPointArrayRouteUpdateNotifyOuterClass.class */
 public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n(MonsterPointArrayRouteUpdateNotify.proto\u001a\u0012MonsterRoute.proto\"]\n\"MonsterPointArrayRouteUpdateNotify\u0012\u0011\n\tentity_id\u0018\u0005 \u0001(\r\u0012$\n\rmonster_route\u0018\u000b \u0001(\u000b2\r.MonsterRouteB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MonsterRouteOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n(MonsterPointArrayRouteUpdateNotify.proto\u001a\u0012MonsterRoute.proto\"[\n\"MonsterPointArrayRouteUpdateNotify\u0012\u0010\n\bentityId\u0018\f \u0001(\r\u0012#\n\fmonsterRoute\u0018\u0002 \u0001(\u000b2\r.MonsterRouteB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MonsterRouteOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_MonsterPointArrayRouteUpdateNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_MonsterPointArrayRouteUpdateNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f801x547d8325 = new GeneratedMessageV3.FieldAccessorTable(internal_static_MonsterPointArrayRouteUpdateNotify_descriptor, new String[]{"EntityId", "MonsterRoute"});
+    private static final GeneratedMessageV3.FieldAccessorTable f782x547d8325 = new GeneratedMessageV3.FieldAccessorTable(internal_static_MonsterPointArrayRouteUpdateNotify_descriptor, new String[]{"EntityId", "MonsterRoute"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MonsterPointArrayRouteUpdateNotifyOuterClass$MonsterPointArrayRouteUpdateNotifyOrBuilder.class */
     public interface MonsterPointArrayRouteUpdateNotifyOrBuilder extends MessageOrBuilder {
@@ -51,9 +51,9 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MonsterPointArrayRouteUpdateNotifyOuterClass$MonsterPointArrayRouteUpdateNotify.class */
     public static final class MonsterPointArrayRouteUpdateNotify extends GeneratedMessageV3 implements MonsterPointArrayRouteUpdateNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTITY_ID_FIELD_NUMBER = 5;
+        public static final int ENTITYID_FIELD_NUMBER = 12;
         private int entityId_;
-        public static final int MONSTER_ROUTE_FIELD_NUMBER = 11;
+        public static final int MONSTERROUTE_FIELD_NUMBER = 2;
         private MonsterRouteOuterClass.MonsterRoute monsterRoute_;
         private byte memoizedIsInitialized;
         private static final MonsterPointArrayRouteUpdateNotify DEFAULT_INSTANCE = new MonsterPointArrayRouteUpdateNotify();
@@ -101,10 +101,7 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 40:
-                                    this.entityId_ = input.readUInt32();
-                                    break;
-                                case 90:
+                                case 18:
                                     MonsterRouteOuterClass.MonsterRoute.Builder subBuilder = this.monsterRoute_ != null ? this.monsterRoute_.toBuilder() : null;
                                     this.monsterRoute_ = (MonsterRouteOuterClass.MonsterRoute) input.readMessage(MonsterRouteOuterClass.MonsterRoute.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -114,6 +111,9 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
                                         this.monsterRoute_ = subBuilder.buildPartial();
                                         break;
                                     }
+                                case 96:
+                                    this.entityId_ = input.readUInt32();
+                                    break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                         break;
@@ -141,7 +141,7 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return MonsterPointArrayRouteUpdateNotifyOuterClass.f801x547d8325.ensureFieldAccessorsInitialized(MonsterPointArrayRouteUpdateNotify.class, Builder.class);
+            return MonsterPointArrayRouteUpdateNotifyOuterClass.f782x547d8325.ensureFieldAccessorsInitialized(MonsterPointArrayRouteUpdateNotify.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.MonsterPointArrayRouteUpdateNotifyOuterClass.MonsterPointArrayRouteUpdateNotifyOrBuilder
@@ -179,11 +179,11 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.entityId_ != 0) {
-                output.writeUInt32(5, this.entityId_);
-            }
             if (this.monsterRoute_ != null) {
-                output.writeMessage(11, getMonsterRoute());
+                output.writeMessage(2, getMonsterRoute());
+            }
+            if (this.entityId_ != 0) {
+                output.writeUInt32(12, this.entityId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -195,11 +195,11 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.entityId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.entityId_);
-            }
             if (this.monsterRoute_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(11, getMonsterRoute());
+                size2 = 0 + CodedOutputStream.computeMessageSize(2, getMonsterRoute());
+            }
+            if (this.entityId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(12, this.entityId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,9 +226,9 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getEntityId();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getEntityId();
             if (hasMonsterRoute()) {
-                hash = (53 * ((37 * hash) + 11)) + getMonsterRoute().hashCode();
+                hash = (53 * ((37 * hash) + 2)) + getMonsterRoute().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -319,7 +319,7 @@ public final class MonsterPointArrayRouteUpdateNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return MonsterPointArrayRouteUpdateNotifyOuterClass.f801x547d8325.ensureFieldAccessorsInitialized(MonsterPointArrayRouteUpdateNotify.class, Builder.class);
+                return MonsterPointArrayRouteUpdateNotifyOuterClass.f782x547d8325.ensureFieldAccessorsInitialized(MonsterPointArrayRouteUpdateNotify.class, Builder.class);
             }
 
             private Builder() {

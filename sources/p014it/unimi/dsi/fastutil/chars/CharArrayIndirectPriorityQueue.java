@@ -12,7 +12,7 @@ public class CharArrayIndirectPriorityQueue implements CharIndirectPriorityQueue
     protected int size;
 
     /* renamed from: c */
-    protected CharComparator f1481c;
+    protected CharComparator f1445c;
     protected int firstIndex;
     protected boolean firstIndexValid;
 
@@ -22,7 +22,7 @@ public class CharArrayIndirectPriorityQueue implements CharIndirectPriorityQueue
             this.array = new int[capacity];
         }
         this.refArray = refArray;
-        this.f1481c = c;
+        this.f1445c = c;
     }
 
     public CharArrayIndirectPriorityQueue(char[] refArray, int capacity) {
@@ -63,12 +63,12 @@ public class CharArrayIndirectPriorityQueue implements CharIndirectPriorityQueue
         int i = this.size - 1;
         int firstIndex = i;
         char first = this.refArray[this.array[firstIndex]];
-        if (this.f1481c != null) {
+        if (this.f1445c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f1481c.compare(this.refArray[this.array[i]], first) < 0) {
+                } else if (this.f1445c.compare(this.refArray[this.array[i]], first) < 0) {
                     firstIndex = i;
                     first = this.refArray[this.array[i]];
                 }
@@ -92,12 +92,12 @@ public class CharArrayIndirectPriorityQueue implements CharIndirectPriorityQueue
         int i = this.size - 1;
         int lastIndex = i;
         char last = this.refArray[this.array[lastIndex]];
-        if (this.f1481c != null) {
+        if (this.f1445c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f1481c.compare(last, this.refArray[this.array[i]]) < 0) {
+                } else if (this.f1445c.compare(last, this.refArray[this.array[i]]) < 0) {
                     lastIndex = i;
                     last = this.refArray[this.array[i]];
                 }
@@ -138,11 +138,11 @@ public class CharArrayIndirectPriorityQueue implements CharIndirectPriorityQueue
         }
         if (!this.firstIndexValid) {
             this.firstIndexValid = false;
-        } else if (this.f1481c == null) {
+        } else if (this.f1445c == null) {
             if (this.refArray[x] < this.refArray[this.array[this.firstIndex]]) {
                 this.firstIndex = this.size;
             }
-        } else if (this.f1481c.compare(this.refArray[x], this.refArray[this.array[this.firstIndex]]) < 0) {
+        } else if (this.f1445c.compare(this.refArray[x], this.refArray[this.array[this.firstIndex]]) < 0) {
             this.firstIndex = this.size;
         }
         int[] iArr = this.array;
@@ -255,7 +255,7 @@ public class CharArrayIndirectPriorityQueue implements CharIndirectPriorityQueue
     /* Return type fixed from 'it.unimi.dsi.fastutil.chars.CharComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.chars.CharIndirectPriorityQueue, p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public Comparator<? super Character> comparator() {
-        return this.f1481c;
+        return this.f1445c;
     }
 
     public String toString() {

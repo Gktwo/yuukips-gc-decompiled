@@ -696,8 +696,9 @@ public abstract class AbstractFuture<V> extends InternalFutureFailureAccess impl
     protected void afterDone() {
     }
 
+    /* access modifiers changed from: protected */
     @Override // com.google.common.util.concurrent.internal.InternalFutureFailureAccess
-    protected final Throwable tryInternalFastPathGetFailure() {
+    public final Throwable tryInternalFastPathGetFailure() {
         if (!(this instanceof Trusted)) {
             return null;
         }

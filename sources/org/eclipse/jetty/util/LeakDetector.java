@@ -51,7 +51,7 @@ public class LeakDetector<T> extends AbstractLifeCycle implements Runnable {
                 if (LOG.isDebugEnabled()) {
                     LOG.debug("Resource GC'ed: {}", leakInfo);
                 }
-                if (this.resources.remove(((LeakInfo) leakInfo).f3159id) != null) {
+                if (this.resources.remove(((LeakInfo) leakInfo).f3123id) != null) {
                     leaked(leakInfo);
                 }
             } catch (InterruptedException e) {
@@ -68,13 +68,13 @@ public class LeakDetector<T> extends AbstractLifeCycle implements Runnable {
     public class LeakInfo extends PhantomReference<T> {
 
         /* renamed from: id */
-        private final String f3159id;
+        private final String f3123id;
         private final String description;
         private final Throwable stackFrames;
 
         private LeakInfo(T referent, String id) {
             super(referent, LeakDetector.this.queue);
-            this.f3159id = id;
+            this.f3123id = id;
             this.description = referent.toString();
             this.stackFrames = new Throwable();
         }

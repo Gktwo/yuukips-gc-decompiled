@@ -8,7 +8,7 @@ import org.jctools.queues.MpscLinkedQueue;
 public class OrderedThreadSession {
 
     /* renamed from: id */
-    private int f3086id;
+    private int f3050id;
     private Queue<Runnable> queue;
     private final AtomicBoolean processingCompleted;
     private int runTaskCount;
@@ -45,11 +45,11 @@ public class OrderedThreadSession {
     }
 
     public int getId() {
-        return this.f3086id;
+        return this.f3050id;
     }
 
     public void setId(int id) {
-        this.f3086id = id;
+        this.f3050id = id;
     }
 
     public void setRunTaskCount(int runTaskCount) {

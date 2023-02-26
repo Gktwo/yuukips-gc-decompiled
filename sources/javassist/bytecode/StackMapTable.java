@@ -96,7 +96,7 @@ public class StackMapTable extends AttributeInfo {
             } else if (type == 247) {
                 pos2 = sameLocals(pos, type);
             } else if (type < 251) {
-                chopFrame(pos, ByteArray.readU16bit(this.info, pos + 1), PacketOpcodes.EnterSceneReadyRsp - type);
+                chopFrame(pos, ByteArray.readU16bit(this.info, pos + 1), PacketOpcodes.SceneForceLockNotify - type);
                 pos2 = pos + 3;
             } else if (type == 251) {
                 sameFrame(pos, ByteArray.readU16bit(this.info, pos + 1));
@@ -138,7 +138,7 @@ public class StackMapTable extends AttributeInfo {
         }
 
         private int appendFrame(int pos, int type) throws BadBytecode {
-            int k = type - PacketOpcodes.EnterSceneReadyRsp;
+            int k = type - PacketOpcodes.SceneForceLockNotify;
             int offset = ByteArray.readU16bit(this.info, pos + 1);
             int[] tags = new int[k];
             int[] data = new int[k];
@@ -371,7 +371,7 @@ public class StackMapTable extends AttributeInfo {
                 this.output.write(offsetDelta);
                 return;
             }
-            this.output.write(PacketOpcodes.EnterSceneReadyRsp);
+            this.output.write(PacketOpcodes.SceneForceLockNotify);
             write16(offsetDelta);
         }
 
@@ -380,7 +380,7 @@ public class StackMapTable extends AttributeInfo {
             if (offsetDelta < 64) {
                 this.output.write(offsetDelta + 64);
             } else {
-                this.output.write(247);
+                this.output.write(PacketOpcodes.ClientScriptEventNotify);
                 write16(offsetDelta);
             }
             writeTypeInfo(tag, data);
@@ -388,14 +388,14 @@ public class StackMapTable extends AttributeInfo {
 
         public void chopFrame(int offsetDelta, int k) {
             this.numOfEntries++;
-            this.output.write(PacketOpcodes.EnterSceneReadyRsp - k);
+            this.output.write(PacketOpcodes.SceneForceLockNotify - k);
             write16(offsetDelta);
         }
 
         public void appendFrame(int offsetDelta, int[] tags, int[] data) {
             this.numOfEntries++;
             int k = tags.length;
-            this.output.write(k + PacketOpcodes.EnterSceneReadyRsp);
+            this.output.write(k + PacketOpcodes.SceneForceLockNotify);
             write16(offsetDelta);
             for (int i = 0; i < k; i++) {
                 writeTypeInfo(tags[i], data[i]);
@@ -588,12 +588,12 @@ public class StackMapTable extends AttributeInfo {
 
         @Override // javassist.bytecode.StackMapTable.Walker
         public void sameFrame(int pos, int offsetDelta) {
-            update(pos, offsetDelta, 0, PacketOpcodes.EnterSceneReadyRsp);
+            update(pos, offsetDelta, 0, PacketOpcodes.SceneForceLockNotify);
         }
 
         @Override // javassist.bytecode.StackMapTable.Walker
         public void sameLocals(int pos, int offsetDelta, int stackTag, int stackData) {
-            update(pos, offsetDelta, 64, 247);
+            update(pos, offsetDelta, 64, PacketOpcodes.ClientScriptEventNotify);
         }
 
         void update(int pos, int offsetDelta, int base, int entry) {

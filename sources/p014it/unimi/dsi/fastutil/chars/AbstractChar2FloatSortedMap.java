@@ -90,30 +90,30 @@ public abstract class AbstractChar2FloatSortedMap extends AbstractChar2FloatMap 
     public static class KeySetIterator implements CharBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Char2FloatMap.Entry> f1324i;
+        protected final ObjectBidirectionalIterator<Char2FloatMap.Entry> f1288i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Char2FloatMap.Entry> i) {
-            this.f1324i = i;
+            this.f1288i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public char nextChar() {
-            return ((Char2FloatMap.Entry) this.f1324i.next()).getCharKey();
+            return ((Char2FloatMap.Entry) this.f1288i.next()).getCharKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharBidirectionalIterator
         public char previousChar() {
-            return this.f1324i.previous().getCharKey();
+            return this.f1288i.previous().getCharKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1324i.hasNext();
+            return this.f1288i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1324i.hasPrevious();
+            return this.f1288i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractChar2FloatSortedMap extends AbstractChar2FloatMap 
     public static class ValuesIterator implements FloatIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Char2FloatMap.Entry> f1325i;
+        protected final ObjectBidirectionalIterator<Char2FloatMap.Entry> f1289i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Char2FloatMap.Entry> i) {
-            this.f1325i = i;
+            this.f1289i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
         public float nextFloat() {
-            return ((Char2FloatMap.Entry) this.f1325i.next()).getFloatValue();
+            return ((Char2FloatMap.Entry) this.f1289i.next()).getFloatValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1325i.hasNext();
+            return this.f1289i.hasNext();
         }
     }
 }

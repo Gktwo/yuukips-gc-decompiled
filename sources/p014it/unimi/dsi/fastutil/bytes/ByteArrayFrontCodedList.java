@@ -16,12 +16,12 @@ public class ByteArrayFrontCodedList extends AbstractObjectList<byte[]> implemen
     private static final long serialVersionUID = 1;
 
     /* renamed from: n */
-    protected final int f1250n;
+    protected final int f1214n;
     protected final int ratio;
     protected final byte[][] array;
 
     /* renamed from: p */
-    protected transient long[] f1251p;
+    protected transient long[] f1215p;
 
     /* JADX DEBUG: Failed to insert an additional move for type inference into block B:23:0x0142 */
     /* JADX WARN: Multi-variable type inference failed */
@@ -104,7 +104,7 @@ public class ByteArrayFrontCodedList extends AbstractObjectList<byte[]> implemen
     public int length(int index) {
         byte[][] array = this.array;
         int delta = index % this.ratio;
-        long pos = this.f1251p[index / this.ratio];
+        long pos = this.f1215p[index / this.ratio];
         int length = readInt(array, pos);
         if (delta == 0) {
             return length;
@@ -166,7 +166,7 @@ public class ByteArrayFrontCodedList extends AbstractObjectList<byte[]> implemen
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public int size() {
-        return this.f1250n;
+        return this.f1214n;
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, p014it.unimi.dsi.fastutil.objects.ObjectList, java.util.List
@@ -175,27 +175,27 @@ public class ByteArrayFrontCodedList extends AbstractObjectList<byte[]> implemen
         return new ObjectListIterator<byte[]>() { // from class: it.unimi.dsi.fastutil.bytes.ByteArrayFrontCodedList.1
 
             /* renamed from: s */
-            byte[] f1252s = ByteArrays.EMPTY_ARRAY;
+            byte[] f1216s = ByteArrays.EMPTY_ARRAY;
 
             /* renamed from: i */
-            int f1253i;
+            int f1217i;
             long pos;
             boolean inSync;
 
             /* JADX WARN: Incorrect args count in method signature: ()V */
             {
-                this.f1253i = 0;
+                this.f1217i = 0;
                 this.pos = 0;
                 if (start == 0) {
                     return;
                 }
-                if (start == ByteArrayFrontCodedList.this.f1250n) {
-                    this.f1253i = start;
+                if (start == ByteArrayFrontCodedList.this.f1214n) {
+                    this.f1217i = start;
                     return;
                 }
-                this.pos = ByteArrayFrontCodedList.this.f1251p[start / ByteArrayFrontCodedList.this.ratio];
+                this.pos = ByteArrayFrontCodedList.this.f1215p[start / ByteArrayFrontCodedList.this.ratio];
                 int j = start % ByteArrayFrontCodedList.this.ratio;
-                this.f1253i = start - j;
+                this.f1217i = start - j;
                 while (true) {
                     j--;
                     if (j != 0) {
@@ -208,22 +208,22 @@ public class ByteArrayFrontCodedList extends AbstractObjectList<byte[]> implemen
 
             @Override // java.util.Iterator, java.util.ListIterator
             public boolean hasNext() {
-                return this.f1253i < ByteArrayFrontCodedList.this.f1250n;
+                return this.f1217i < ByteArrayFrontCodedList.this.f1214n;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
             public boolean hasPrevious() {
-                return this.f1253i > 0;
+                return this.f1217i > 0;
             }
 
             @Override // java.util.ListIterator
             public int previousIndex() {
-                return this.f1253i - 1;
+                return this.f1217i - 1;
             }
 
             @Override // java.util.ListIterator
             public int nextIndex() {
-                return this.f1253i;
+                return this.f1217i;
             }
 
             @Override // java.util.Iterator, java.util.ListIterator
@@ -232,29 +232,29 @@ public class ByteArrayFrontCodedList extends AbstractObjectList<byte[]> implemen
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                if (this.f1253i % ByteArrayFrontCodedList.this.ratio == 0) {
-                    this.pos = ByteArrayFrontCodedList.this.f1251p[this.f1253i / ByteArrayFrontCodedList.this.ratio];
+                if (this.f1217i % ByteArrayFrontCodedList.this.ratio == 0) {
+                    this.pos = ByteArrayFrontCodedList.this.f1215p[this.f1217i / ByteArrayFrontCodedList.this.ratio];
                     length = ByteArrayFrontCodedList.readInt(ByteArrayFrontCodedList.this.array, this.pos);
-                    this.f1252s = ByteArrays.ensureCapacity(this.f1252s, length, 0);
-                    BigArrays.copyFromBig(ByteArrayFrontCodedList.this.array, this.pos + ((long) ByteArrayFrontCodedList.count(length)), this.f1252s, 0, length);
+                    this.f1216s = ByteArrays.ensureCapacity(this.f1216s, length, 0);
+                    BigArrays.copyFromBig(ByteArrayFrontCodedList.this.array, this.pos + ((long) ByteArrayFrontCodedList.count(length)), this.f1216s, 0, length);
                     this.pos += (long) (length + ByteArrayFrontCodedList.count(length));
                     this.inSync = true;
                 } else if (this.inSync) {
                     int length2 = ByteArrayFrontCodedList.readInt(ByteArrayFrontCodedList.this.array, this.pos);
                     int common = ByteArrayFrontCodedList.readInt(ByteArrayFrontCodedList.this.array, this.pos + ((long) ByteArrayFrontCodedList.count(length2)));
-                    this.f1252s = ByteArrays.ensureCapacity(this.f1252s, length2 + common, common);
-                    BigArrays.copyFromBig(ByteArrayFrontCodedList.this.array, this.pos + ((long) ByteArrayFrontCodedList.count(length2)) + ((long) ByteArrayFrontCodedList.count(common)), this.f1252s, common, length2);
+                    this.f1216s = ByteArrays.ensureCapacity(this.f1216s, length2 + common, common);
+                    BigArrays.copyFromBig(ByteArrayFrontCodedList.this.array, this.pos + ((long) ByteArrayFrontCodedList.count(length2)) + ((long) ByteArrayFrontCodedList.count(common)), this.f1216s, common, length2);
                     this.pos += (long) (ByteArrayFrontCodedList.count(length2) + ByteArrayFrontCodedList.count(common) + length2);
                     length = length2 + common;
                 } else {
-                    byte[] bArr = this.f1252s;
-                    int length3 = ByteArrayFrontCodedList.this.length(this.f1253i);
+                    byte[] bArr = this.f1216s;
+                    int length3 = ByteArrayFrontCodedList.this.length(this.f1217i);
                     length = length3;
-                    this.f1252s = ByteArrays.ensureCapacity(bArr, length3, 0);
-                    ByteArrayFrontCodedList.this.extract(this.f1253i, this.f1252s, 0, length);
+                    this.f1216s = ByteArrays.ensureCapacity(bArr, length3, 0);
+                    ByteArrayFrontCodedList.this.extract(this.f1217i, this.f1216s, 0, length);
                 }
-                this.f1253i++;
-                return ByteArrays.copy(this.f1252s, 0, length);
+                this.f1217i++;
+                return ByteArrays.copy(this.f1216s, 0, length);
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -264,8 +264,8 @@ public class ByteArrayFrontCodedList extends AbstractObjectList<byte[]> implemen
                 }
                 this.inSync = false;
                 ByteArrayFrontCodedList byteArrayFrontCodedList = ByteArrayFrontCodedList.this;
-                int i = this.f1253i - 1;
-                this.f1253i = i;
+                int i = this.f1217i - 1;
+                this.f1217i = i;
                 return byteArrayFrontCodedList.getArray(i);
             }
         };
@@ -280,7 +280,7 @@ public class ByteArrayFrontCodedList extends AbstractObjectList<byte[]> implemen
     public String toString() {
         StringBuffer s = new StringBuffer();
         s.append("[");
-        for (int i = 0; i < this.f1250n; i++) {
+        for (int i = 0; i < this.f1214n; i++) {
             if (i != 0) {
                 s.append(", ");
             }
@@ -296,13 +296,13 @@ public class ByteArrayFrontCodedList extends AbstractObjectList<byte[]> implemen
     protected long[] rebuildPointerArray() {
         int i;
         char c;
-        long[] p = new long[((this.f1250n + this.ratio) - 1) / this.ratio];
+        long[] p = new long[((this.f1214n + this.ratio) - 1) / this.ratio];
         byte[][] a = this.array;
         char c2 = 0;
         int i2 = 0;
         int j = 0;
         int skip = this.ratio - 1;
-        while (i2 < this.f1250n) {
+        while (i2 < this.f1214n) {
             int length = readInt(a, c2 == 1 ? 1 : 0);
             int count = count(length);
             skip++;
@@ -324,6 +324,6 @@ public class ByteArrayFrontCodedList extends AbstractObjectList<byte[]> implemen
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f1251p = rebuildPointerArray();
+        this.f1215p = rebuildPointerArray();
     }
 }

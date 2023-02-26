@@ -164,30 +164,30 @@ public abstract class AbstractReference2ObjectMap<K, V> extends AbstractReferenc
                 return new ObjectIterator<K>() { // from class: it.unimi.dsi.fastutil.objects.AbstractReference2ObjectMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Reference2ObjectMap.Entry<K, V>> f2522i;
+                    private final ObjectIterator<Reference2ObjectMap.Entry<K, V>> f2486i;
 
                     {
-                        this.f2522i = Reference2ObjectMaps.fastIterator(AbstractReference2ObjectMap.this);
+                        this.f2486i = Reference2ObjectMaps.fastIterator(AbstractReference2ObjectMap.this);
                     }
 
                     @Override // java.util.Iterator
                     public K next() {
-                        return this.f2522i.next().getKey();
+                        return this.f2486i.next().getKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2522i.hasNext();
+                        return this.f2486i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2522i.remove();
+                        this.f2486i.remove();
                     }
 
                     @Override // java.util.Iterator
                     public void forEachRemaining(Consumer<? super K> action) {
-                        this.f2522i.forEachRemaining(entry -> {
+                        this.f2486i.forEachRemaining(entry -> {
                             action.accept(entry.getKey());
                         });
                     }
@@ -224,30 +224,30 @@ public abstract class AbstractReference2ObjectMap<K, V> extends AbstractReferenc
                 return new ObjectIterator<V>() { // from class: it.unimi.dsi.fastutil.objects.AbstractReference2ObjectMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Reference2ObjectMap.Entry<K, V>> f2523i;
+                    private final ObjectIterator<Reference2ObjectMap.Entry<K, V>> f2487i;
 
                     {
-                        this.f2523i = Reference2ObjectMaps.fastIterator(AbstractReference2ObjectMap.this);
+                        this.f2487i = Reference2ObjectMaps.fastIterator(AbstractReference2ObjectMap.this);
                     }
 
                     @Override // java.util.Iterator
                     public V next() {
-                        return this.f2523i.next().getValue();
+                        return this.f2487i.next().getValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2523i.hasNext();
+                        return this.f2487i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2523i.remove();
+                        this.f2487i.remove();
                     }
 
                     @Override // java.util.Iterator
                     public void forEachRemaining(Consumer<? super V> action) {
-                        this.f2523i.forEachRemaining(entry -> {
+                        this.f2487i.forEachRemaining(entry -> {
                             action.accept(entry.getValue());
                         });
                     }

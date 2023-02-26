@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerEnterLevelReqOuterClass.class */
 public final class TowerEnterLevelReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018TowerEnterLevelReq.proto\",\n\u0012TowerEnterLevelReq\u0012\u0016\n\u000eenter_point_id\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018TowerEnterLevelReq.proto\"*\n\u0012TowerEnterLevelReq\u0012\u0014\n\fenterPointId\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_TowerEnterLevelReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_TowerEnterLevelReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TowerEnterLevelReq_descriptor, new String[]{"EnterPointId"});
 
@@ -41,7 +41,7 @@ public final class TowerEnterLevelReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerEnterLevelReqOuterClass$TowerEnterLevelReq.class */
     public static final class TowerEnterLevelReq extends GeneratedMessageV3 implements TowerEnterLevelReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTER_POINT_ID_FIELD_NUMBER = 3;
+        public static final int ENTERPOINTID_FIELD_NUMBER = 9;
         private int enterPointId_;
         private byte memoizedIsInitialized;
         private static final TowerEnterLevelReq DEFAULT_INSTANCE = new TowerEnterLevelReq();
@@ -88,7 +88,7 @@ public final class TowerEnterLevelReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 24:
+                            case 72:
                                 this.enterPointId_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class TowerEnterLevelReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.enterPointId_ != 0) {
-                output.writeUInt32(3, this.enterPointId_);
+                output.writeUInt32(9, this.enterPointId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class TowerEnterLevelReqOuterClass {
             }
             int size2 = 0;
             if (this.enterPointId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.enterPointId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(9, this.enterPointId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class TowerEnterLevelReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getEnterPointId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getEnterPointId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

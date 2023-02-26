@@ -8,7 +8,7 @@ import emu.grasscutter.net.proto.ResinChangeNotifyOuterClass;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketResinChangeNotify.class */
 public class PacketResinChangeNotify extends BasePacket {
     public PacketResinChangeNotify(Player player) {
-        super(611);
+        super(694);
         setData(ResinChangeNotifyOuterClass.ResinChangeNotify.newBuilder().setCurValue(player.getProperty(PlayerProperty.PROP_PLAYER_RESIN)).setNextAddTimestamp(player.getNextResinRefresh()).build());
     }
 }

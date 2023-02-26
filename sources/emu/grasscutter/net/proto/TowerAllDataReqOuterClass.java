@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerAllDataReqOuterClass.class */
 public final class TowerAllDataReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015TowerAllDataReq.proto\"&\n\u000fTowerAllDataReq\u0012\u0013\n\u000bis_interact\u0018\u000f \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015TowerAllDataReq.proto\"%\n\u000fTowerAllDataReq\u0012\u0012\n\nisInteract\u0018\u000f \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_TowerAllDataReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_TowerAllDataReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TowerAllDataReq_descriptor, new String[]{"IsInteract"});
 
@@ -42,7 +42,7 @@ public final class TowerAllDataReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerAllDataReqOuterClass$TowerAllDataReq.class */
     public static final class TowerAllDataReq extends GeneratedMessageV3 implements TowerAllDataReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_INTERACT_FIELD_NUMBER = 15;
+        public static final int ISINTERACT_FIELD_NUMBER = 15;
         private boolean isInteract_;
         private byte memoizedIsInitialized;
         private static final TowerAllDataReq DEFAULT_INSTANCE = new TowerAllDataReq();

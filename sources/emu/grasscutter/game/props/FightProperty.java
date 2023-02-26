@@ -77,12 +77,12 @@ public enum FightProperty {
     FIGHT_PROP_CUR_FIRE_ENERGY(1000),
     FIGHT_PROP_CUR_ELEC_ENERGY(1001),
     FIGHT_PROP_CUR_WATER_ENERGY(1002),
-    FIGHT_PROP_CUR_GRASS_ENERGY(1003),
-    FIGHT_PROP_CUR_WIND_ENERGY(StatusCode.UNDEFINED),
+    FIGHT_PROP_CUR_GRASS_ENERGY(StatusCode.BAD_DATA),
+    FIGHT_PROP_CUR_WIND_ENERGY(1004),
     FIGHT_PROP_CUR_ICE_ENERGY(1005),
     FIGHT_PROP_CUR_ROCK_ENERGY(1006),
     FIGHT_PROP_CUR_HP(StatusCode.REQUIRED_EXTENSION),
-    FIGHT_PROP_MAX_HP(PacketOpcodes.SetCoopChapterViewedRsp),
+    FIGHT_PROP_MAX_HP(2000),
     FIGHT_PROP_CUR_ATTACK(RetcodeOuterClass.Retcode.RET_UID_NOT_EXIST_VALUE),
     FIGHT_PROP_CUR_DEFENSE(2002),
     FIGHT_PROP_CUR_SPEED(2003),
@@ -94,9 +94,9 @@ public enum FightProperty {
     FIGHT_PROP_NONEXTRA_CHARGE_EFFICIENCY(3005),
     FIGHT_PROP_NONEXTRA_ELEMENT_MASTERY(3006),
     FIGHT_PROP_NONEXTRA_PHYSICAL_SUB_HURT(3007),
-    FIGHT_PROP_NONEXTRA_FIRE_ADD_HURT(PacketOpcodes.ForceDragAvatarNotify),
-    FIGHT_PROP_NONEXTRA_ELEC_ADD_HURT(PacketOpcodes.SceneAudioNotify),
-    FIGHT_PROP_NONEXTRA_WATER_ADD_HURT(PacketOpcodes.GetScenePerformanceRsp),
+    FIGHT_PROP_NONEXTRA_FIRE_ADD_HURT(3008),
+    FIGHT_PROP_NONEXTRA_ELEC_ADD_HURT(3009),
+    FIGHT_PROP_NONEXTRA_WATER_ADD_HURT(PacketOpcodes.CloseCommonTipsNotify),
     FIGHT_PROP_NONEXTRA_GRASS_ADD_HURT(3011),
     FIGHT_PROP_NONEXTRA_WIND_ADD_HURT(PacketOpcodes.SceneWeatherForcastRsp),
     FIGHT_PROP_NONEXTRA_ROCK_ADD_HURT(3013),
@@ -104,7 +104,7 @@ public enum FightProperty {
     FIGHT_PROP_NONEXTRA_FIRE_SUB_HURT(3015),
     FIGHT_PROP_NONEXTRA_ELEC_SUB_HURT(3016),
     FIGHT_PROP_NONEXTRA_WATER_SUB_HURT(3017),
-    FIGHT_PROP_NONEXTRA_GRASS_SUB_HURT(PacketOpcodes.HitTreeNotify),
+    FIGHT_PROP_NONEXTRA_GRASS_SUB_HURT(3018),
     FIGHT_PROP_NONEXTRA_WIND_SUB_HURT(3019),
     FIGHT_PROP_NONEXTRA_ROCK_SUB_HURT(3020),
     FIGHT_PROP_NONEXTRA_ICE_SUB_HURT(3021),
@@ -117,7 +117,7 @@ public enum FightProperty {
     private final int f587id;
     private static final Int2ObjectMap<FightProperty> map = new Int2ObjectOpenHashMap();
     private static final Map<String, FightProperty> stringMap = new HashMap();
-    public static final int[] fightProps = {1, 4, 7, 20, 21, 22, 23, 26, 27, 28, 29, 30, 40, 41, 42, 43, 44, 45, 46, 50, 51, 52, 53, 54, 55, 56, PacketOpcodes.SetCoopChapterViewedRsp, RetcodeOuterClass.Retcode.RET_UID_NOT_EXIST_VALUE, 2002, 2003, StatusCode.REQUIRED_EXTENSION};
+    public static final int[] fightProps = {1, 4, 7, 20, 21, 22, 23, 26, 27, 28, 29, 30, 40, 41, 42, 43, 44, 45, 46, 50, 51, 52, 53, 54, 55, 56, 2000, RetcodeOuterClass.Retcode.RET_UID_NOT_EXIST_VALUE, 2002, 2003, StatusCode.REQUIRED_EXTENSION};
     private static final Map<String, FightProperty> shortNameMap = Map.ofEntries(Map.entry("hp", FIGHT_PROP_HP), Map.entry("atk", FIGHT_PROP_ATTACK), Map.entry("def", FIGHT_PROP_DEFENSE), Map.entry("hp%", FIGHT_PROP_HP_PERCENT), Map.entry("atk%", FIGHT_PROP_ATTACK_PERCENT), Map.entry("def%", FIGHT_PROP_DEFENSE_PERCENT), Map.entry("em", FIGHT_PROP_ELEMENT_MASTERY), Map.entry("er", FIGHT_PROP_CHARGE_EFFICIENCY), Map.entry("hb", FIGHT_PROP_HEAL_ADD), Map.entry("heal", FIGHT_PROP_HEAL_ADD), Map.entry("cd", FIGHT_PROP_CRITICAL_HURT), Map.entry("cdmg", FIGHT_PROP_CRITICAL_HURT), Map.entry("cr", FIGHT_PROP_CRITICAL), Map.entry("crate", FIGHT_PROP_CRITICAL), Map.entry("phys%", FIGHT_PROP_PHYSICAL_ADD_HURT), Map.entry("dendro%", FIGHT_PROP_GRASS_ADD_HURT), Map.entry("geo%", FIGHT_PROP_ROCK_ADD_HURT), Map.entry("anemo%", FIGHT_PROP_WIND_ADD_HURT), Map.entry("hydro%", FIGHT_PROP_WATER_ADD_HURT), Map.entry("cryo%", FIGHT_PROP_ICE_ADD_HURT), Map.entry("electro%", FIGHT_PROP_ELEC_ADD_HURT), Map.entry("pyro%", FIGHT_PROP_FIRE_ADD_HURT), Map.entry("maxhp", FIGHT_PROP_MAX_HP), Map.entry("dmg", FIGHT_PROP_ADD_HURT), Map.entry("cdr", FIGHT_PROP_SKILL_CD_MINUS_RATIO), Map.entry("heali", FIGHT_PROP_HEALED_ADD), Map.entry("shield", FIGHT_PROP_SHIELD_COST_MINUS_RATIO), Map.entry("defi", FIGHT_PROP_DEFENCE_IGNORE_RATIO), Map.entry("resall", FIGHT_PROP_SUB_HURT), Map.entry("resanemo", FIGHT_PROP_WIND_SUB_HURT), Map.entry("rescryo", FIGHT_PROP_ICE_SUB_HURT), Map.entry("resdendro", FIGHT_PROP_GRASS_SUB_HURT), Map.entry("reselectro", FIGHT_PROP_ELEC_SUB_HURT), Map.entry("resgeo", FIGHT_PROP_ROCK_SUB_HURT), Map.entry("reshydro", FIGHT_PROP_WATER_SUB_HURT), Map.entry("respyro", FIGHT_PROP_FIRE_SUB_HURT), Map.entry("resphys", FIGHT_PROP_PHYSICAL_SUB_HURT));
     private static final List<FightProperty> flatProps = Arrays.asList(FIGHT_PROP_BASE_HP, FIGHT_PROP_HP, FIGHT_PROP_BASE_ATTACK, FIGHT_PROP_ATTACK, FIGHT_PROP_BASE_DEFENSE, FIGHT_PROP_DEFENSE, FIGHT_PROP_HEALED_ADD, FIGHT_PROP_CUR_FIRE_ENERGY, FIGHT_PROP_CUR_ELEC_ENERGY, FIGHT_PROP_CUR_WATER_ENERGY, FIGHT_PROP_CUR_GRASS_ENERGY, FIGHT_PROP_CUR_WIND_ENERGY, FIGHT_PROP_CUR_ICE_ENERGY, FIGHT_PROP_CUR_ROCK_ENERGY, FIGHT_PROP_CUR_HP, FIGHT_PROP_MAX_HP, FIGHT_PROP_CUR_ATTACK, FIGHT_PROP_CUR_DEFENSE);
     private static Map<FightProperty, CompoundProperty> compoundProperties = Map.ofEntries(Map.entry(FIGHT_PROP_MAX_HP, new CompoundProperty(FIGHT_PROP_MAX_HP, FIGHT_PROP_BASE_HP, FIGHT_PROP_HP_PERCENT, FIGHT_PROP_HP)), Map.entry(FIGHT_PROP_CUR_ATTACK, new CompoundProperty(FIGHT_PROP_CUR_ATTACK, FIGHT_PROP_BASE_ATTACK, FIGHT_PROP_ATTACK_PERCENT, FIGHT_PROP_ATTACK)), Map.entry(FIGHT_PROP_CUR_DEFENSE, new CompoundProperty(FIGHT_PROP_CUR_DEFENSE, FIGHT_PROP_BASE_DEFENSE, FIGHT_PROP_DEFENSE_PERCENT, FIGHT_PROP_DEFENSE)));

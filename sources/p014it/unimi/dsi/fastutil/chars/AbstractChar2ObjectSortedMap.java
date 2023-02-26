@@ -90,30 +90,30 @@ public abstract class AbstractChar2ObjectSortedMap<V> extends AbstractChar2Objec
     public static class KeySetIterator<V> implements CharBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Char2ObjectMap.Entry<V>> f1336i;
+        protected final ObjectBidirectionalIterator<Char2ObjectMap.Entry<V>> f1300i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Char2ObjectMap.Entry<V>> i) {
-            this.f1336i = i;
+            this.f1300i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public char nextChar() {
-            return ((Char2ObjectMap.Entry) this.f1336i.next()).getCharKey();
+            return ((Char2ObjectMap.Entry) this.f1300i.next()).getCharKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharBidirectionalIterator
         public char previousChar() {
-            return this.f1336i.previous().getCharKey();
+            return this.f1300i.previous().getCharKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1336i.hasNext();
+            return this.f1300i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1336i.hasPrevious();
+            return this.f1300i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractChar2ObjectSortedMap<V> extends AbstractChar2Objec
     public static class ValuesIterator<V> implements ObjectIterator<V> {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Char2ObjectMap.Entry<V>> f1337i;
+        protected final ObjectBidirectionalIterator<Char2ObjectMap.Entry<V>> f1301i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Char2ObjectMap.Entry<V>> i) {
-            this.f1337i = i;
+            this.f1301i = i;
         }
 
         @Override // java.util.Iterator
         public V next() {
-            return ((Char2ObjectMap.Entry) this.f1337i.next()).getValue();
+            return ((Char2ObjectMap.Entry) this.f1301i.next()).getValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1337i.hasNext();
+            return this.f1301i.hasNext();
         }
     }
 }

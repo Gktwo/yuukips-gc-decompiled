@@ -122,7 +122,7 @@ public class JnaWinSysTerminal extends AbstractWindowsTerminal {
     public Size getBufferSize() {
         Kernel32.CONSOLE_SCREEN_BUFFER_INFO info = new Kernel32.CONSOLE_SCREEN_BUFFER_INFO();
         Kernel32.INSTANCE.GetConsoleScreenBufferInfo(consoleOut, info);
-        return new Size(info.dwSize.f3247X, info.dwSize.f3248Y);
+        return new Size(info.dwSize.f3211X, info.dwSize.f3212Y);
     }
 
     @Override // org.jline.terminal.impl.AbstractWindowsTerminal
@@ -188,8 +188,8 @@ public class JnaWinSysTerminal extends AbstractWindowsTerminal {
                 } else {
                     return;
                 }
-                int cx = mouseEvent.dwMousePosition.f3247X;
-                int cy = mouseEvent.dwMousePosition.f3248Y;
+                int cx = mouseEvent.dwMousePosition.f3211X;
+                int cy = mouseEvent.dwMousePosition.f3212Y;
                 this.mouse[3] = (char) (32 + cb);
                 this.mouse[4] = (char) (32 + cx + 1);
                 this.mouse[5] = (char) (32 + cy + 1);
@@ -213,6 +213,6 @@ public class JnaWinSysTerminal extends AbstractWindowsTerminal {
     public Cursor getCursorPosition(IntConsumer discarded) {
         Kernel32.CONSOLE_SCREEN_BUFFER_INFO info = new Kernel32.CONSOLE_SCREEN_BUFFER_INFO();
         Kernel32.INSTANCE.GetConsoleScreenBufferInfo(consoleOut, info);
-        return new Cursor(info.dwCursorPosition.f3247X, info.dwCursorPosition.f3248Y);
+        return new Cursor(info.dwCursorPosition.f3211X, info.dwCursorPosition.f3212Y);
     }
 }

@@ -451,7 +451,7 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
     @JvmName(name = "-deprecated_dispatcher")
     @NotNull
     /* renamed from: -deprecated_dispatcher  reason: not valid java name */
-    public final Dispatcher m9249deprecated_dispatcher() {
+    public final Dispatcher m9246deprecated_dispatcher() {
         return this.dispatcher;
     }
 
@@ -459,7 +459,7 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
     @JvmName(name = "-deprecated_connectionPool")
     @NotNull
     /* renamed from: -deprecated_connectionPool  reason: not valid java name */
-    public final ConnectionPool m9250deprecated_connectionPool() {
+    public final ConnectionPool m9247deprecated_connectionPool() {
         return this.connectionPool;
     }
 
@@ -467,7 +467,7 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
     @JvmName(name = "-deprecated_interceptors")
     @NotNull
     /* renamed from: -deprecated_interceptors  reason: not valid java name */
-    public final List<Interceptor> m9251deprecated_interceptors() {
+    public final List<Interceptor> m9248deprecated_interceptors() {
         return this.interceptors;
     }
 
@@ -475,7 +475,7 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
     @JvmName(name = "-deprecated_networkInterceptors")
     @NotNull
     /* renamed from: -deprecated_networkInterceptors  reason: not valid java name */
-    public final List<Interceptor> m9252deprecated_networkInterceptors() {
+    public final List<Interceptor> m9249deprecated_networkInterceptors() {
         return this.networkInterceptors;
     }
 
@@ -483,14 +483,14 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
     @JvmName(name = "-deprecated_eventListenerFactory")
     @NotNull
     /* renamed from: -deprecated_eventListenerFactory  reason: not valid java name */
-    public final EventListener.Factory m9253deprecated_eventListenerFactory() {
+    public final EventListener.Factory m9250deprecated_eventListenerFactory() {
         return this.eventListenerFactory;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "retryOnConnectionFailure", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_retryOnConnectionFailure")
     /* renamed from: -deprecated_retryOnConnectionFailure  reason: not valid java name */
-    public final boolean m9254deprecated_retryOnConnectionFailure() {
+    public final boolean m9251deprecated_retryOnConnectionFailure() {
         return this.retryOnConnectionFailure;
     }
 
@@ -498,21 +498,21 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
     @JvmName(name = "-deprecated_authenticator")
     @NotNull
     /* renamed from: -deprecated_authenticator  reason: not valid java name */
-    public final Authenticator m9255deprecated_authenticator() {
+    public final Authenticator m9252deprecated_authenticator() {
         return this.authenticator;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "followRedirects", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_followRedirects")
     /* renamed from: -deprecated_followRedirects  reason: not valid java name */
-    public final boolean m9256deprecated_followRedirects() {
+    public final boolean m9253deprecated_followRedirects() {
         return this.followRedirects;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "followSslRedirects", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_followSslRedirects")
     /* renamed from: -deprecated_followSslRedirects  reason: not valid java name */
-    public final boolean m9257deprecated_followSslRedirects() {
+    public final boolean m9254deprecated_followSslRedirects() {
         return this.followSslRedirects;
     }
 
@@ -520,7 +520,7 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
     @JvmName(name = "-deprecated_cookieJar")
     @NotNull
     /* renamed from: -deprecated_cookieJar  reason: not valid java name */
-    public final CookieJar m9258deprecated_cookieJar() {
+    public final CookieJar m9255deprecated_cookieJar() {
         return this.cookieJar;
     }
 
@@ -528,7 +528,7 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
     @JvmName(name = "-deprecated_cache")
     @Nullable
     /* renamed from: -deprecated_cache  reason: not valid java name */
-    public final Cache m9259deprecated_cache() {
+    public final Cache m9256deprecated_cache() {
         return this.cache;
     }
 
@@ -536,7 +536,7 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
     @JvmName(name = "-deprecated_dns")
     @NotNull
     /* renamed from: -deprecated_dns  reason: not valid java name */
-    public final Dns m9260deprecated_dns() {
+    public final Dns m9257deprecated_dns() {
         return this.dns;
     }
 
@@ -544,7 +544,7 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
     @JvmName(name = "-deprecated_proxy")
     @Nullable
     /* renamed from: -deprecated_proxy  reason: not valid java name */
-    public final Proxy m9261deprecated_proxy() {
+    public final Proxy m9258deprecated_proxy() {
         return this.proxy;
     }
 
@@ -552,7 +552,7 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
     @JvmName(name = "-deprecated_proxySelector")
     @NotNull
     /* renamed from: -deprecated_proxySelector  reason: not valid java name */
-    public final ProxySelector m9262deprecated_proxySelector() {
+    public final ProxySelector m9259deprecated_proxySelector() {
         return this.proxySelector;
     }
 
@@ -560,7 +560,7 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
     @JvmName(name = "-deprecated_proxyAuthenticator")
     @NotNull
     /* renamed from: -deprecated_proxyAuthenticator  reason: not valid java name */
-    public final Authenticator m9263deprecated_proxyAuthenticator() {
+    public final Authenticator m9260deprecated_proxyAuthenticator() {
         return this.proxyAuthenticator;
     }
 
@@ -568,7 +568,7 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
     @JvmName(name = "-deprecated_socketFactory")
     @NotNull
     /* renamed from: -deprecated_socketFactory  reason: not valid java name */
-    public final SocketFactory m9264deprecated_socketFactory() {
+    public final SocketFactory m9261deprecated_socketFactory() {
         return this.socketFactory;
     }
 
@@ -576,7 +576,7 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
     @JvmName(name = "-deprecated_sslSocketFactory")
     @NotNull
     /* renamed from: -deprecated_sslSocketFactory  reason: not valid java name */
-    public final SSLSocketFactory m9265deprecated_sslSocketFactory() {
+    public final SSLSocketFactory m9262deprecated_sslSocketFactory() {
         return sslSocketFactory();
     }
 
@@ -584,7 +584,7 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
     @JvmName(name = "-deprecated_connectionSpecs")
     @NotNull
     /* renamed from: -deprecated_connectionSpecs  reason: not valid java name */
-    public final List<ConnectionSpec> m9266deprecated_connectionSpecs() {
+    public final List<ConnectionSpec> m9263deprecated_connectionSpecs() {
         return this.connectionSpecs;
     }
 
@@ -592,7 +592,7 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
     @JvmName(name = "-deprecated_protocols")
     @NotNull
     /* renamed from: -deprecated_protocols  reason: not valid java name */
-    public final List<Protocol> m9267deprecated_protocols() {
+    public final List<Protocol> m9264deprecated_protocols() {
         return this.protocols;
     }
 
@@ -600,7 +600,7 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
     @JvmName(name = "-deprecated_hostnameVerifier")
     @NotNull
     /* renamed from: -deprecated_hostnameVerifier  reason: not valid java name */
-    public final HostnameVerifier m9268deprecated_hostnameVerifier() {
+    public final HostnameVerifier m9265deprecated_hostnameVerifier() {
         return this.hostnameVerifier;
     }
 
@@ -608,42 +608,42 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
     @JvmName(name = "-deprecated_certificatePinner")
     @NotNull
     /* renamed from: -deprecated_certificatePinner  reason: not valid java name */
-    public final CertificatePinner m9269deprecated_certificatePinner() {
+    public final CertificatePinner m9266deprecated_certificatePinner() {
         return this.certificatePinner;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "callTimeoutMillis", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_callTimeoutMillis")
     /* renamed from: -deprecated_callTimeoutMillis  reason: not valid java name */
-    public final int m9270deprecated_callTimeoutMillis() {
+    public final int m9267deprecated_callTimeoutMillis() {
         return this.callTimeoutMillis;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "connectTimeoutMillis", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_connectTimeoutMillis")
     /* renamed from: -deprecated_connectTimeoutMillis  reason: not valid java name */
-    public final int m9271deprecated_connectTimeoutMillis() {
+    public final int m9268deprecated_connectTimeoutMillis() {
         return this.connectTimeoutMillis;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "readTimeoutMillis", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_readTimeoutMillis")
     /* renamed from: -deprecated_readTimeoutMillis  reason: not valid java name */
-    public final int m9272deprecated_readTimeoutMillis() {
+    public final int m9269deprecated_readTimeoutMillis() {
         return this.readTimeoutMillis;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "writeTimeoutMillis", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_writeTimeoutMillis")
     /* renamed from: -deprecated_writeTimeoutMillis  reason: not valid java name */
-    public final int m9273deprecated_writeTimeoutMillis() {
+    public final int m9270deprecated_writeTimeoutMillis() {
         return this.writeTimeoutMillis;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "pingIntervalMillis", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_pingIntervalMillis")
     /* renamed from: -deprecated_pingIntervalMillis  reason: not valid java name */
-    public final int m9274deprecated_pingIntervalMillis() {
+    public final int m9271deprecated_pingIntervalMillis() {
         return this.pingIntervalMillis;
     }
 
@@ -1060,7 +1060,7 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
         @JvmName(name = "-addInterceptor")
         @NotNull
         /* renamed from: -addInterceptor  reason: not valid java name */
-        public final Builder m9276addInterceptor(@NotNull Function1<? super Interceptor.Chain, Response> function1) {
+        public final Builder m9273addInterceptor(@NotNull Function1<? super Interceptor.Chain, Response> function1) {
             Intrinsics.checkNotNullParameter(function1, "block");
             return addInterceptor(new OkHttpClient$Builder$addInterceptor$2(function1));
         }
@@ -1080,7 +1080,7 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
         @JvmName(name = "-addNetworkInterceptor")
         @NotNull
         /* renamed from: -addNetworkInterceptor  reason: not valid java name */
-        public final Builder m9277addNetworkInterceptor(@NotNull Function1<? super Interceptor.Chain, Response> function1) {
+        public final Builder m9274addNetworkInterceptor(@NotNull Function1<? super Interceptor.Chain, Response> function1) {
             Intrinsics.checkNotNullParameter(function1, "block");
             return addNetworkInterceptor(new OkHttpClient$Builder$addNetworkInterceptor$2(function1));
         }

@@ -52,14 +52,14 @@ public class DebugLib extends TwoArgFunction {
     public static class CallFrame {
 
         /* renamed from: f */
-        LuaFunction f3334f;
+        LuaFunction f3298f;
 
         /* renamed from: pc */
-        int f3335pc;
+        int f3299pc;
         int top;
 
         /* renamed from: v */
-        Varargs f3336v;
+        Varargs f3300v;
         LuaValue[] stack;
         CallFrame previous;
 
@@ -67,31 +67,31 @@ public class DebugLib extends TwoArgFunction {
         }
 
         void set(LuaClosure luaClosure, Varargs varargs, LuaValue[] luaValueArr) {
-            this.f3334f = luaClosure;
-            this.f3336v = varargs;
+            this.f3298f = luaClosure;
+            this.f3300v = varargs;
             this.stack = luaValueArr;
         }
 
         public String shortsource() {
-            return this.f3334f.isclosure() ? this.f3334f.checkclosure().f3287p.shortsource() : "[Java]";
+            return this.f3298f.isclosure() ? this.f3298f.checkclosure().f3251p.shortsource() : "[Java]";
         }
 
         void set(LuaFunction luaFunction) {
-            this.f3334f = luaFunction;
+            this.f3298f = luaFunction;
         }
 
         void reset() {
-            this.f3334f = null;
-            this.f3336v = null;
+            this.f3298f = null;
+            this.f3300v = null;
             this.stack = null;
         }
 
         void instr(int i, Varargs varargs, int i2) {
-            this.f3335pc = i;
-            this.f3336v = varargs;
+            this.f3299pc = i;
+            this.f3300v = varargs;
             this.top = i2;
             if (DebugLib.TRACE) {
-                Print.printState(this.f3334f.checkclosure(), i, this.stack, i2, varargs);
+                Print.printState(this.f3298f.checkclosure(), i, this.stack, i2, varargs);
             }
         }
 
@@ -111,28 +111,28 @@ public class DebugLib extends TwoArgFunction {
 
         int currentline() {
             int[] iArr;
-            if (this.f3334f.isclosure() && (iArr = this.f3334f.checkclosure().f3287p.lineinfo) != null && this.f3335pc >= 0 && this.f3335pc < iArr.length) {
-                return iArr[this.f3335pc];
+            if (this.f3298f.isclosure() && (iArr = this.f3298f.checkclosure().f3251p.lineinfo) != null && this.f3299pc >= 0 && this.f3299pc < iArr.length) {
+                return iArr[this.f3299pc];
             }
             return -1;
         }
 
         String sourceline() {
-            return !this.f3334f.isclosure() ? this.f3334f.tojstring() : new StringBuffer().append(this.f3334f.checkclosure().f3287p.shortsource()).append(EmitterKt.COMMENT_PREFIX).append(currentline()).toString();
+            return !this.f3298f.isclosure() ? this.f3298f.tojstring() : new StringBuffer().append(this.f3298f.checkclosure().f3251p.shortsource()).append(EmitterKt.COMMENT_PREFIX).append(currentline()).toString();
         }
 
         private int linedefined() {
-            if (this.f3334f.isclosure()) {
-                return this.f3334f.checkclosure().f3287p.linedefined;
+            if (this.f3298f.isclosure()) {
+                return this.f3298f.checkclosure().f3251p.linedefined;
             }
             return -1;
         }
 
         LuaString getlocalname(int i) {
-            if (!this.f3334f.isclosure()) {
+            if (!this.f3298f.isclosure()) {
                 return null;
             }
-            return this.f3334f.checkclosure().f3287p.getlocalname(i, this.f3335pc);
+            return this.f3298f.checkclosure().f3251p.getlocalname(i, this.f3299pc);
         }
 
         static int access$1500(CallFrame callFrame) {
@@ -212,7 +212,7 @@ public class DebugLib extends TwoArgFunction {
                         stringBuffer.append(new StringBuffer().append(callFrame.currentline()).append(EmitterKt.COMMENT_PREFIX).toString());
                     }
                     stringBuffer.append(" in ");
-                    DebugInfo auxgetinfo = auxgetinfo("n", callFrame.f3334f, callFrame);
+                    DebugInfo auxgetinfo = auxgetinfo("n", callFrame.f3298f, callFrame);
                     if (CallFrame.access$1500(callFrame) == 0) {
                         stringBuffer.append("main chunk");
                     } else if (auxgetinfo.name != null) {
@@ -238,7 +238,7 @@ public class DebugLib extends TwoArgFunction {
 
         synchronized CallFrame findCallFrame(LuaValue luaValue) {
             for (int i = 1; i <= this.calls; i++) {
-                if (this.frame[this.calls - i].f3334f == luaValue) {
+                if (this.frame[this.calls - i].f3298f == luaValue) {
                     return this.frame[i];
                 }
             }
@@ -255,10 +255,10 @@ public class DebugLib extends TwoArgFunction {
                         debugInfo.funcinfo(luaFunction);
                         break;
                     case 'l':
-                        debugInfo.currentline = (callFrame == null || !callFrame.f3334f.isclosure()) ? -1 : callFrame.currentline();
+                        debugInfo.currentline = (callFrame == null || !callFrame.f3298f.isclosure()) ? -1 : callFrame.currentline();
                         break;
                     case 'n':
-                        if (!(callFrame == null || callFrame.previous == null || !callFrame.previous.f3334f.isclosure() || (nameWhat = DebugLib.getfuncname(callFrame.previous)) == null)) {
+                        if (!(callFrame == null || callFrame.previous == null || !callFrame.previous.f3298f.isclosure() || (nameWhat = DebugLib.getfuncname(callFrame.previous)) == null)) {
                             debugInfo.name = nameWhat.name;
                             debugInfo.namewhat = nameWhat.namewhat;
                         }
@@ -280,7 +280,7 @@ public class DebugLib extends TwoArgFunction {
                             debugInfo.nparams = 0;
                             break;
                         } else {
-                            Prototype prototype = luaFunction.checkclosure().f3287p;
+                            Prototype prototype = luaFunction.checkclosure().f3251p;
                             debugInfo.nups = (short) prototype.upvalues.length;
                             debugInfo.nparams = (short) prototype.numparams;
                             debugInfo.isvararg = prototype.is_vararg != 0;
@@ -310,14 +310,14 @@ public class DebugLib extends TwoArgFunction {
         String short_src;
 
         /* renamed from: cf */
-        CallFrame f3337cf;
+        CallFrame f3301cf;
 
         DebugInfo() {
         }
 
         public void funcinfo(LuaFunction luaFunction) {
             if (luaFunction.isclosure()) {
-                Prototype prototype = luaFunction.checkclosure().f3287p;
+                Prototype prototype = luaFunction.checkclosure().f3251p;
                 this.source = prototype.source != null ? prototype.source.tojstring() : "=?";
                 this.linedefined = prototype.linedefined;
                 this.lastlinedefined = prototype.lastlinedefined;
@@ -347,8 +347,8 @@ public class DebugLib extends TwoArgFunction {
 
     /* renamed from: org.luaj.vm2.lib.DebugLib$debug */
     /* loaded from: grasscutter.jar:org/luaj/vm2/lib/DebugLib$debug.class */
-    static final class C5871debug extends ZeroArgFunction {
-        C5871debug() {
+    static final class C5863debug extends ZeroArgFunction {
+        C5863debug() {
         }
 
         @Override // org.luaj.vm2.lib.ZeroArgFunction, org.luaj.vm2.lib.LibFunction, org.luaj.vm2.LuaValue
@@ -401,7 +401,7 @@ public class DebugLib extends TwoArgFunction {
                 if (callFrame == null) {
                     return NONE;
                 }
-                arg = callFrame.f3334f;
+                arg = callFrame.f3298f;
             } else if (!arg.isfunction()) {
                 return argerror(i3 - 2, "function or level");
             } else {
@@ -440,7 +440,7 @@ public class DebugLib extends TwoArgFunction {
                     if (callFrame2 == null) {
                         break;
                     }
-                    if (callFrame2.f3334f == arg) {
+                    if (callFrame2.f3298f == arg) {
                         luaTable2.insert(-1, valueOf(callFrame2.currentline()));
                     }
                     i4++;
@@ -775,7 +775,7 @@ public class DebugLib extends TwoArgFunction {
         this.globals = luaValue2.checkglobals();
         this.globals.debuglib = this;
         LuaTable luaTable = new LuaTable();
-        luaTable.set("debug", new C5871debug());
+        luaTable.set("debug", new C5863debug());
         luaTable.set("gethook", new gethook(this));
         luaTable.set("getinfo", new getinfo(this));
         luaTable.set("getlocal", new getlocal(this));
@@ -885,7 +885,7 @@ public class DebugLib extends TwoArgFunction {
         if (luaClosure.upValues == null || i <= 0 || i > luaClosure.upValues.length) {
             return null;
         }
-        return (luaClosure.f3287p.upvalues == null || i > luaClosure.f3287p.upvalues.length) ? LuaString.valueOf(new StringBuffer().append(Mapper.IGNORED_FIELDNAME).append(i).toString()) : luaClosure.f3287p.upvalues[i - 1].name;
+        return (luaClosure.f3251p.upvalues == null || i > luaClosure.f3251p.upvalues.length) ? LuaString.valueOf(new StringBuffer().append(Mapper.IGNORED_FIELDNAME).append(i).toString()) : luaClosure.f3251p.upvalues[i - 1].name;
     }
 
     static void lua_assert(boolean z) {
@@ -896,11 +896,11 @@ public class DebugLib extends TwoArgFunction {
 
     static NameWhat getfuncname(CallFrame callFrame) {
         LuaString luaString;
-        if (!callFrame.f3334f.isclosure()) {
-            return new NameWhat(callFrame.f3334f.classnamestub(), "Java");
+        if (!callFrame.f3298f.isclosure()) {
+            return new NameWhat(callFrame.f3298f.classnamestub(), "Java");
         }
-        Prototype prototype = callFrame.f3334f.checkclosure().f3287p;
-        int i = callFrame.f3335pc;
+        Prototype prototype = callFrame.f3298f.checkclosure().f3251p;
+        int i = callFrame.f3299pc;
         int i2 = prototype.code[i];
         switch (Lua.GET_OPCODE(i2)) {
             case 6:
@@ -951,13 +951,13 @@ public class DebugLib extends TwoArgFunction {
                 luaString = LuaValue.CONCAT;
                 break;
             case 24:
-                luaString = LuaValue.f3291EQ;
+                luaString = LuaValue.f3255EQ;
                 break;
             case 25:
-                luaString = LuaValue.f3292LT;
+                luaString = LuaValue.f3256LT;
                 break;
             case 26:
-                luaString = LuaValue.f3293LE;
+                luaString = LuaValue.f3257LE;
                 break;
             case 29:
             case 30:
@@ -989,8 +989,8 @@ public class DebugLib extends TwoArgFunction {
             case 1:
             case 2:
                 int GETARG_Bx = Lua.GET_OPCODE(i3) == 1 ? Lua.GETARG_Bx(i3) : Lua.GETARG_Ax(prototype.code[findsetreg + 1]);
-                if (prototype.f3295k[GETARG_Bx].isstring()) {
-                    return new NameWhat(prototype.f3295k[GETARG_Bx].strvalue().tojstring(), "constant");
+                if (prototype.f3259k[GETARG_Bx].isstring()) {
+                    return new NameWhat(prototype.f3259k[GETARG_Bx].strvalue().tojstring(), "constant");
                 }
                 return null;
             case 3:
@@ -1016,7 +1016,7 @@ public class DebugLib extends TwoArgFunction {
     }
 
     static LuaString kname(Prototype prototype, int i) {
-        return (!Lua.ISK(i) || !prototype.f3295k[Lua.INDEXK(i)].isstring()) ? QMARK : prototype.f3295k[Lua.INDEXK(i)].strvalue();
+        return (!Lua.ISK(i) || !prototype.f3259k[Lua.INDEXK(i)].isstring()) ? QMARK : prototype.f3259k[Lua.INDEXK(i)].strvalue();
     }
 
     static int findsetreg(Prototype prototype, int i, int i2) {

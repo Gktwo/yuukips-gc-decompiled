@@ -16,7 +16,7 @@ public class FloatArraySet extends AbstractFloatSet implements Serializable, Clo
     private static final long serialVersionUID = 1;
 
     /* renamed from: a */
-    private transient float[] f1924a;
+    private transient float[] f1888a;
     private int size;
 
     static /* synthetic */ int access$010(FloatArraySet x0) {
@@ -26,16 +26,16 @@ public class FloatArraySet extends AbstractFloatSet implements Serializable, Clo
     }
 
     public FloatArraySet(float[] a) {
-        this.f1924a = a;
+        this.f1888a = a;
         this.size = a.length;
     }
 
     public FloatArraySet() {
-        this.f1924a = FloatArrays.EMPTY_ARRAY;
+        this.f1888a = FloatArrays.EMPTY_ARRAY;
     }
 
     public FloatArraySet(int capacity) {
-        this.f1924a = new float[capacity];
+        this.f1888a = new float[capacity];
     }
 
     public FloatArraySet(FloatCollection c) {
@@ -53,7 +53,7 @@ public class FloatArraySet extends AbstractFloatSet implements Serializable, Clo
         int i = 0;
         FloatIterator it = c.iterator();
         while (it.hasNext()) {
-            this.f1924a[i] = it.next().floatValue();
+            this.f1888a[i] = it.next().floatValue();
             i++;
         }
         this.size = i;
@@ -63,14 +63,14 @@ public class FloatArraySet extends AbstractFloatSet implements Serializable, Clo
         this(c.size());
         int i = 0;
         for (Float x : c) {
-            this.f1924a[i] = x.floatValue();
+            this.f1888a[i] = x.floatValue();
             i++;
         }
         this.size = i;
     }
 
     public FloatArraySet(float[] a, int size) {
-        this.f1924a = a;
+        this.f1888a = a;
         this.size = size;
         if (size > a.length) {
             throw new IllegalArgumentException("The provided size (" + size + ") is larger than or equal to the array size (" + a.length + ")");
@@ -114,7 +114,7 @@ public class FloatArraySet extends AbstractFloatSet implements Serializable, Clo
             if (i == 0) {
                 return -1;
             }
-        } while (Float.floatToIntBits(this.f1924a[i]) != Float.floatToIntBits(o));
+        } while (Float.floatToIntBits(this.f1888a[i]) != Float.floatToIntBits(o));
         return i;
     }
 
@@ -133,7 +133,7 @@ public class FloatArraySet extends AbstractFloatSet implements Serializable, Clo
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                float[] fArr = FloatArraySet.this.f1924a;
+                float[] fArr = FloatArraySet.this.f1888a;
                 int i = this.next;
                 this.next = i + 1;
                 return fArr[i];
@@ -144,7 +144,7 @@ public class FloatArraySet extends AbstractFloatSet implements Serializable, Clo
                 int access$010 = FloatArraySet.access$010(FloatArraySet.this);
                 int i = this.next;
                 this.next = i - 1;
-                System.arraycopy(FloatArraySet.this.f1924a, this.next + 1, FloatArraySet.this.f1924a, this.next, access$010 - i);
+                System.arraycopy(FloatArraySet.this.f1888a, this.next + 1, FloatArraySet.this.f1888a, this.next, access$010 - i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectIterator
@@ -209,7 +209,7 @@ public class FloatArraySet extends AbstractFloatSet implements Serializable, Clo
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            float[] fArr = FloatArraySet.this.f1924a;
+            float[] fArr = FloatArraySet.this.f1888a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(fArr[i]);
@@ -219,7 +219,7 @@ public class FloatArraySet extends AbstractFloatSet implements Serializable, Clo
         public void forEachRemaining(FloatConsumer action) {
             int max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(FloatArraySet.this.f1924a[this.pos]);
+                action.accept(FloatArraySet.this.f1888a[this.pos]);
                 this.pos++;
             }
         }
@@ -282,7 +282,7 @@ public class FloatArraySet extends AbstractFloatSet implements Serializable, Clo
         }
         int tail = (this.size - pos) - 1;
         for (int i = 0; i < tail; i++) {
-            this.f1924a[pos + i] = this.f1924a[pos + i + 1];
+            this.f1888a[pos + i] = this.f1888a[pos + i + 1];
         }
         this.size--;
         return true;
@@ -293,7 +293,7 @@ public class FloatArraySet extends AbstractFloatSet implements Serializable, Clo
         if (findKey(k) != -1) {
             return false;
         }
-        if (this.size == this.f1924a.length) {
+        if (this.size == this.f1888a.length) {
             float[] b = new float[this.size == 0 ? 2 : this.size * 2];
             int i = this.size;
             while (true) {
@@ -301,11 +301,11 @@ public class FloatArraySet extends AbstractFloatSet implements Serializable, Clo
                 if (i == 0) {
                     break;
                 }
-                b[i] = this.f1924a[i];
+                b[i] = this.f1888a[i];
             }
-            this.f1924a = b;
+            this.f1888a = b;
         }
-        float[] fArr = this.f1924a;
+        float[] fArr = this.f1888a;
         int i2 = this.size;
         this.size = i2 + 1;
         fArr[i2] = k;
@@ -324,7 +324,7 @@ public class FloatArraySet extends AbstractFloatSet implements Serializable, Clo
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatCollection, p014it.unimi.dsi.fastutil.floats.FloatCollection
     public float[] toFloatArray() {
-        return Arrays.copyOf(this.f1924a, this.size);
+        return Arrays.copyOf(this.f1888a, this.size);
     }
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatCollection, p014it.unimi.dsi.fastutil.floats.FloatCollection
@@ -332,7 +332,7 @@ public class FloatArraySet extends AbstractFloatSet implements Serializable, Clo
         if (a == null || a.length < this.size) {
             a = new float[this.size];
         }
-        System.arraycopy(this.f1924a, 0, a, 0, this.size);
+        System.arraycopy(this.f1888a, 0, a, 0, this.size);
         return a;
     }
 
@@ -340,7 +340,7 @@ public class FloatArraySet extends AbstractFloatSet implements Serializable, Clo
     public FloatArraySet clone() {
         try {
             FloatArraySet c = (FloatArraySet) clone();
-            c.f1924a = (float[]) this.f1924a.clone();
+            c.f1888a = (float[]) this.f1888a.clone();
             return c;
         } catch (CloneNotSupportedException e) {
             throw new InternalError();
@@ -350,15 +350,15 @@ public class FloatArraySet extends AbstractFloatSet implements Serializable, Clo
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; i < this.size; i++) {
-            s.writeFloat(this.f1924a[i]);
+            s.writeFloat(this.f1888a[i]);
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f1924a = new float[this.size];
+        this.f1888a = new float[this.size];
         for (int i = 0; i < this.size; i++) {
-            this.f1924a[i] = s.readFloat();
+            this.f1888a[i] = s.readFloat();
         }
     }
 }

@@ -69,8 +69,8 @@ public final class WindowsAnsiWriter extends AnsiWriter {
     }
 
     private void applyCursorPosition() throws IOException {
-        this.info.dwCursorPosition.f3247X = (short) Math.max(0, Math.min(this.info.dwSize.f3247X - 1, (int) this.info.dwCursorPosition.f3247X));
-        this.info.dwCursorPosition.f3248Y = (short) Math.max(0, Math.min(this.info.dwSize.f3248Y - 1, (int) this.info.dwCursorPosition.f3248Y));
+        this.info.dwCursorPosition.f3211X = (short) Math.max(0, Math.min(this.info.dwSize.f3211X - 1, (int) this.info.dwCursorPosition.f3211X));
+        this.info.dwCursorPosition.f3212Y = (short) Math.max(0, Math.min(this.info.dwSize.f3212Y - 1, (int) this.info.dwCursorPosition.f3212Y));
         Kernel32.INSTANCE.SetConsoleCursorPosition(this.console, this.info.dwCursorPosition);
     }
 
@@ -80,23 +80,23 @@ public final class WindowsAnsiWriter extends AnsiWriter {
         IntByReference written = new IntByReference();
         switch (eraseOption) {
             case 0:
-                int lengthToEnd = ((this.info.srWindow.Bottom - this.info.dwCursorPosition.f3248Y) * this.info.dwSize.f3247X) + (this.info.dwSize.f3247X - this.info.dwCursorPosition.f3247X);
+                int lengthToEnd = ((this.info.srWindow.Bottom - this.info.dwCursorPosition.f3212Y) * this.info.dwSize.f3211X) + (this.info.dwSize.f3211X - this.info.dwCursorPosition.f3211X);
                 Kernel32.INSTANCE.FillConsoleOutputCharacter(this.console, ' ', lengthToEnd, this.info.dwCursorPosition, written);
                 Kernel32.INSTANCE.FillConsoleOutputAttribute(this.console, this.info.wAttributes, lengthToEnd, this.info.dwCursorPosition, written);
                 return;
             case 1:
                 Kernel32.COORD topLeft2 = new Kernel32.COORD();
-                topLeft2.f3247X = 0;
-                topLeft2.f3248Y = this.info.srWindow.Top;
-                int lengthToCursor = ((this.info.dwCursorPosition.f3248Y - this.info.srWindow.Top) * this.info.dwSize.f3247X) + this.info.dwCursorPosition.f3247X;
+                topLeft2.f3211X = 0;
+                topLeft2.f3212Y = this.info.srWindow.Top;
+                int lengthToCursor = ((this.info.dwCursorPosition.f3212Y - this.info.srWindow.Top) * this.info.dwSize.f3211X) + this.info.dwCursorPosition.f3211X;
                 Kernel32.INSTANCE.FillConsoleOutputCharacter(this.console, ' ', lengthToCursor, topLeft2, written);
                 Kernel32.INSTANCE.FillConsoleOutputAttribute(this.console, this.info.wAttributes, lengthToCursor, topLeft2, written);
                 return;
             case 2:
                 Kernel32.COORD topLeft = new Kernel32.COORD();
-                topLeft.f3247X = 0;
-                topLeft.f3248Y = this.info.srWindow.Top;
-                int screenLength = this.info.srWindow.height() * this.info.dwSize.f3247X;
+                topLeft.f3211X = 0;
+                topLeft.f3212Y = this.info.srWindow.Top;
+                int screenLength = this.info.srWindow.height() * this.info.dwSize.f3211X;
                 Kernel32.INSTANCE.FillConsoleOutputCharacter(this.console, ' ', screenLength, topLeft, written);
                 Kernel32.INSTANCE.FillConsoleOutputAttribute(this.console, this.info.wAttributes, screenLength, topLeft, written);
                 return;
@@ -111,19 +111,19 @@ public final class WindowsAnsiWriter extends AnsiWriter {
         IntByReference written = new IntByReference();
         switch (eraseOption) {
             case 0:
-                int lengthToLastCol = this.info.dwSize.f3247X - this.info.dwCursorPosition.f3247X;
+                int lengthToLastCol = this.info.dwSize.f3211X - this.info.dwCursorPosition.f3211X;
                 Kernel32.INSTANCE.FillConsoleOutputCharacter(this.console, ' ', lengthToLastCol, this.info.dwCursorPosition, written);
                 Kernel32.INSTANCE.FillConsoleOutputAttribute(this.console, this.info.wAttributes, lengthToLastCol, this.info.dwCursorPosition, written);
                 return;
             case 1:
-                Kernel32.COORD leftColCurrRow2 = new Kernel32.COORD(0, this.info.dwCursorPosition.f3248Y);
-                Kernel32.INSTANCE.FillConsoleOutputCharacter(this.console, ' ', this.info.dwCursorPosition.f3247X, leftColCurrRow2, written);
-                Kernel32.INSTANCE.FillConsoleOutputAttribute(this.console, this.info.wAttributes, this.info.dwCursorPosition.f3247X, leftColCurrRow2, written);
+                Kernel32.COORD leftColCurrRow2 = new Kernel32.COORD(0, this.info.dwCursorPosition.f3212Y);
+                Kernel32.INSTANCE.FillConsoleOutputCharacter(this.console, ' ', this.info.dwCursorPosition.f3211X, leftColCurrRow2, written);
+                Kernel32.INSTANCE.FillConsoleOutputAttribute(this.console, this.info.wAttributes, this.info.dwCursorPosition.f3211X, leftColCurrRow2, written);
                 return;
             case 2:
-                Kernel32.COORD leftColCurrRow = new Kernel32.COORD(0, this.info.dwCursorPosition.f3248Y);
-                Kernel32.INSTANCE.FillConsoleOutputCharacter(this.console, ' ', this.info.dwSize.f3247X, leftColCurrRow, written);
-                Kernel32.INSTANCE.FillConsoleOutputAttribute(this.console, this.info.wAttributes, this.info.dwSize.f3247X, leftColCurrRow, written);
+                Kernel32.COORD leftColCurrRow = new Kernel32.COORD(0, this.info.dwCursorPosition.f3212Y);
+                Kernel32.INSTANCE.FillConsoleOutputCharacter(this.console, ' ', this.info.dwSize.f3211X, leftColCurrRow, written);
+                Kernel32.INSTANCE.FillConsoleOutputAttribute(this.console, this.info.wAttributes, this.info.dwSize.f3211X, leftColCurrRow, written);
                 return;
             default:
                 return;
@@ -133,18 +133,18 @@ public final class WindowsAnsiWriter extends AnsiWriter {
     @Override // org.jline.utils.AnsiWriter
     protected void processCursorUpLine(int count) throws IOException {
         getConsoleInfo();
-        this.info.dwCursorPosition.f3247X = 0;
+        this.info.dwCursorPosition.f3211X = 0;
         Kernel32.COORD coord = this.info.dwCursorPosition;
-        coord.f3248Y = (short) (coord.f3248Y - count);
+        coord.f3212Y = (short) (coord.f3212Y - count);
         applyCursorPosition();
     }
 
     @Override // org.jline.utils.AnsiWriter
     protected void processCursorDownLine(int count) throws IOException {
         getConsoleInfo();
-        this.info.dwCursorPosition.f3247X = 0;
+        this.info.dwCursorPosition.f3211X = 0;
         Kernel32.COORD coord = this.info.dwCursorPosition;
-        coord.f3248Y = (short) (coord.f3248Y + count);
+        coord.f3212Y = (short) (coord.f3212Y + count);
         applyCursorPosition();
     }
 
@@ -152,7 +152,7 @@ public final class WindowsAnsiWriter extends AnsiWriter {
     protected void processCursorLeft(int count) throws IOException {
         getConsoleInfo();
         Kernel32.COORD coord = this.info.dwCursorPosition;
-        coord.f3247X = (short) (coord.f3247X - count);
+        coord.f3211X = (short) (coord.f3211X - count);
         applyCursorPosition();
     }
 
@@ -160,25 +160,25 @@ public final class WindowsAnsiWriter extends AnsiWriter {
     protected void processCursorRight(int count) throws IOException {
         getConsoleInfo();
         Kernel32.COORD coord = this.info.dwCursorPosition;
-        coord.f3247X = (short) (coord.f3247X + count);
+        coord.f3211X = (short) (coord.f3211X + count);
         applyCursorPosition();
     }
 
     @Override // org.jline.utils.AnsiWriter
     protected void processCursorDown(int count) throws IOException {
         getConsoleInfo();
-        int nb = Math.max(0, ((this.info.dwCursorPosition.f3248Y + count) - this.info.dwSize.f3248Y) + 1);
+        int nb = Math.max(0, ((this.info.dwCursorPosition.f3212Y + count) - this.info.dwSize.f3212Y) + 1);
         if (nb != count) {
             Kernel32.COORD coord = this.info.dwCursorPosition;
-            coord.f3248Y = (short) (coord.f3248Y + count);
+            coord.f3212Y = (short) (coord.f3212Y + count);
             applyCursorPosition();
         }
         if (nb > 0) {
             Kernel32.SMALL_RECT scroll = new Kernel32.SMALL_RECT(this.info.srWindow);
             scroll.Top = 0;
             Kernel32.COORD org2 = new Kernel32.COORD();
-            org2.f3247X = 0;
-            org2.f3248Y = (short) (-nb);
+            org2.f3211X = 0;
+            org2.f3212Y = (short) (-nb);
             Kernel32.INSTANCE.ScrollConsoleScreenBuffer(this.console, scroll, scroll, org2, new Kernel32.CHAR_INFO(' ', this.originalColors));
         }
     }
@@ -187,22 +187,22 @@ public final class WindowsAnsiWriter extends AnsiWriter {
     protected void processCursorUp(int count) throws IOException {
         getConsoleInfo();
         Kernel32.COORD coord = this.info.dwCursorPosition;
-        coord.f3248Y = (short) (coord.f3248Y - count);
+        coord.f3212Y = (short) (coord.f3212Y - count);
         applyCursorPosition();
     }
 
     @Override // org.jline.utils.AnsiWriter
     protected void processCursorTo(int row, int col) throws IOException {
         getConsoleInfo();
-        this.info.dwCursorPosition.f3248Y = (short) ((this.info.srWindow.Top + row) - 1);
-        this.info.dwCursorPosition.f3247X = (short) (col - 1);
+        this.info.dwCursorPosition.f3212Y = (short) ((this.info.srWindow.Top + row) - 1);
+        this.info.dwCursorPosition.f3211X = (short) (col - 1);
         applyCursorPosition();
     }
 
     @Override // org.jline.utils.AnsiWriter
     protected void processCursorToColumn(int x) throws IOException {
         getConsoleInfo();
-        this.info.dwCursorPosition.f3247X = (short) (x - 1);
+        this.info.dwCursorPosition.f3211X = (short) (x - 1);
         applyCursorPosition();
     }
 
@@ -278,16 +278,16 @@ public final class WindowsAnsiWriter extends AnsiWriter {
     @Override // org.jline.utils.AnsiWriter
     protected void processSaveCursorPosition() throws IOException {
         getConsoleInfo();
-        this.savedX = this.info.dwCursorPosition.f3247X;
-        this.savedY = this.info.dwCursorPosition.f3248Y;
+        this.savedX = this.info.dwCursorPosition.f3211X;
+        this.savedY = this.info.dwCursorPosition.f3212Y;
     }
 
     @Override // org.jline.utils.AnsiWriter
     protected void processRestoreCursorPosition() throws IOException {
         if (this.savedX != -1 && this.savedY != -1) {
             this.out.flush();
-            this.info.dwCursorPosition.f3247X = this.savedX;
-            this.info.dwCursorPosition.f3248Y = this.savedY;
+            this.info.dwCursorPosition.f3211X = this.savedX;
+            this.info.dwCursorPosition.f3212Y = this.savedY;
             applyCursorPosition();
         }
     }
@@ -296,10 +296,10 @@ public final class WindowsAnsiWriter extends AnsiWriter {
     protected void processInsertLine(int optionInt) throws IOException {
         getConsoleInfo();
         Kernel32.SMALL_RECT scroll = new Kernel32.SMALL_RECT(this.info.srWindow);
-        scroll.Top = this.info.dwCursorPosition.f3248Y;
+        scroll.Top = this.info.dwCursorPosition.f3212Y;
         Kernel32.COORD org2 = new Kernel32.COORD();
-        org2.f3247X = 0;
-        org2.f3248Y = (short) (this.info.dwCursorPosition.f3248Y + optionInt);
+        org2.f3211X = 0;
+        org2.f3212Y = (short) (this.info.dwCursorPosition.f3212Y + optionInt);
         Kernel32.INSTANCE.ScrollConsoleScreenBuffer(this.console, scroll, scroll, org2, new Kernel32.CHAR_INFO(' ', this.originalColors));
     }
 
@@ -307,10 +307,10 @@ public final class WindowsAnsiWriter extends AnsiWriter {
     protected void processDeleteLine(int optionInt) throws IOException {
         getConsoleInfo();
         Kernel32.SMALL_RECT scroll = new Kernel32.SMALL_RECT(this.info.srWindow);
-        scroll.Top = this.info.dwCursorPosition.f3248Y;
+        scroll.Top = this.info.dwCursorPosition.f3212Y;
         Kernel32.COORD org2 = new Kernel32.COORD();
-        org2.f3247X = 0;
-        org2.f3248Y = (short) (this.info.dwCursorPosition.f3248Y - optionInt);
+        org2.f3211X = 0;
+        org2.f3212Y = (short) (this.info.dwCursorPosition.f3212Y - optionInt);
         Kernel32.INSTANCE.ScrollConsoleScreenBuffer(this.console, scroll, scroll, org2, new Kernel32.CHAR_INFO(' ', this.originalColors));
     }
 

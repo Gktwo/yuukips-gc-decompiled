@@ -13,7 +13,7 @@ import org.eclipse.jetty.websocket.common.extensions.AbstractExtension;
 public class IdentityExtension extends AbstractExtension {
 
     /* renamed from: id */
-    private String f3181id;
+    private String f3145id;
 
     public String getParam(String key) {
         return getConfig().getParameter(key, "?");
@@ -50,11 +50,11 @@ public class IdentityExtension extends AbstractExtension {
             delim = true;
         }
         s.append("]");
-        this.f3181id = s.toString();
+        this.f3145id = s.toString();
     }
 
     @Override // org.eclipse.jetty.websocket.common.extensions.AbstractExtension, org.eclipse.jetty.util.component.AbstractLifeCycle, java.lang.Object
     public String toString() {
-        return this.f3181id;
+        return this.f3145id;
     }
 }

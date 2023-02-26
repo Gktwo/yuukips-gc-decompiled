@@ -21,19 +21,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerApplyEnterMpNotifyOuterClass.class */
 public final class PlayerApplyEnterMpNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001ePlayerApplyEnterMpNotify.proto\u001a\u0016OnlinePlayerInfo.proto\"t\n\u0018PlayerApplyEnterMpNotify\u0012*\n\u000fsrc_player_info\u0018\f \u0001(\u000b2\u0011.OnlinePlayerInfo\u0012\u0018\n\u0010src_thread_index\u0018\t \u0001(\r\u0012\u0012\n\nsrc_app_id\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{OnlinePlayerInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001ePlayerApplyEnterMpNotify.proto\u001a\u0016OnlinePlayerInfo.proto\"n\n\u0018PlayerApplyEnterMpNotify\u0012\u0016\n\u000esrcThreadIndex\u0018\u000e \u0001(\r\u0012(\n\rsrcPlayerInfo\u0018\u000b \u0001(\u000b2\u0011.OnlinePlayerInfo\u0012\u0010\n\bsrcAppId\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{OnlinePlayerInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_PlayerApplyEnterMpNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerApplyEnterMpNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerApplyEnterMpNotify_descriptor, new String[]{"SrcPlayerInfo", "SrcThreadIndex", "SrcAppId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerApplyEnterMpNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerApplyEnterMpNotify_descriptor, new String[]{"SrcThreadIndex", "SrcPlayerInfo", "SrcAppId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerApplyEnterMpNotifyOuterClass$PlayerApplyEnterMpNotifyOrBuilder.class */
     public interface PlayerApplyEnterMpNotifyOrBuilder extends MessageOrBuilder {
+        int getSrcThreadIndex();
+
         boolean hasSrcPlayerInfo();
 
         OnlinePlayerInfoOuterClass.OnlinePlayerInfo getSrcPlayerInfo();
 
         OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder getSrcPlayerInfoOrBuilder();
-
-        int getSrcThreadIndex();
 
         int getSrcAppId();
     }
@@ -51,11 +51,11 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerApplyEnterMpNotifyOuterClass$PlayerApplyEnterMpNotify.class */
     public static final class PlayerApplyEnterMpNotify extends GeneratedMessageV3 implements PlayerApplyEnterMpNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SRC_PLAYER_INFO_FIELD_NUMBER = 12;
-        private OnlinePlayerInfoOuterClass.OnlinePlayerInfo srcPlayerInfo_;
-        public static final int SRC_THREAD_INDEX_FIELD_NUMBER = 9;
+        public static final int SRCTHREADINDEX_FIELD_NUMBER = 14;
         private int srcThreadIndex_;
-        public static final int SRC_APP_ID_FIELD_NUMBER = 13;
+        public static final int SRCPLAYERINFO_FIELD_NUMBER = 11;
+        private OnlinePlayerInfoOuterClass.OnlinePlayerInfo srcPlayerInfo_;
+        public static final int SRCAPPID_FIELD_NUMBER = 12;
         private int srcAppId_;
         private byte memoizedIsInitialized;
         private static final PlayerApplyEnterMpNotify DEFAULT_INSTANCE = new PlayerApplyEnterMpNotify();
@@ -103,10 +103,7 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 72:
-                                    this.srcThreadIndex_ = input.readUInt32();
-                                    break;
-                                case 98:
+                                case 90:
                                     OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder subBuilder = this.srcPlayerInfo_ != null ? this.srcPlayerInfo_.toBuilder() : null;
                                     this.srcPlayerInfo_ = (OnlinePlayerInfoOuterClass.OnlinePlayerInfo) input.readMessage(OnlinePlayerInfoOuterClass.OnlinePlayerInfo.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -116,8 +113,11 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
                                         this.srcPlayerInfo_ = subBuilder.buildPartial();
                                         break;
                                     }
-                                case 104:
+                                case 96:
                                     this.srcAppId_ = input.readUInt32();
+                                    break;
+                                case 112:
+                                    this.srcThreadIndex_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -150,6 +150,11 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PlayerApplyEnterMpNotifyOuterClass.PlayerApplyEnterMpNotifyOrBuilder
+        public int getSrcThreadIndex() {
+            return this.srcThreadIndex_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerApplyEnterMpNotifyOuterClass.PlayerApplyEnterMpNotifyOrBuilder
         public boolean hasSrcPlayerInfo() {
             return this.srcPlayerInfo_ != null;
         }
@@ -162,11 +167,6 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
         @Override // emu.grasscutter.net.proto.PlayerApplyEnterMpNotifyOuterClass.PlayerApplyEnterMpNotifyOrBuilder
         public OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder getSrcPlayerInfoOrBuilder() {
             return getSrcPlayerInfo();
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerApplyEnterMpNotifyOuterClass.PlayerApplyEnterMpNotifyOrBuilder
-        public int getSrcThreadIndex() {
-            return this.srcThreadIndex_;
         }
 
         @Override // emu.grasscutter.net.proto.PlayerApplyEnterMpNotifyOuterClass.PlayerApplyEnterMpNotifyOrBuilder
@@ -189,14 +189,14 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.srcThreadIndex_ != 0) {
-                output.writeUInt32(9, this.srcThreadIndex_);
-            }
             if (this.srcPlayerInfo_ != null) {
-                output.writeMessage(12, getSrcPlayerInfo());
+                output.writeMessage(11, getSrcPlayerInfo());
             }
             if (this.srcAppId_ != 0) {
-                output.writeUInt32(13, this.srcAppId_);
+                output.writeUInt32(12, this.srcAppId_);
+            }
+            if (this.srcThreadIndex_ != 0) {
+                output.writeUInt32(14, this.srcThreadIndex_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -208,14 +208,14 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.srcThreadIndex_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(9, this.srcThreadIndex_);
-            }
             if (this.srcPlayerInfo_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(12, getSrcPlayerInfo());
+                size2 = 0 + CodedOutputStream.computeMessageSize(11, getSrcPlayerInfo());
             }
             if (this.srcAppId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.srcAppId_);
+                size2 += CodedOutputStream.computeUInt32Size(12, this.srcAppId_);
+            }
+            if (this.srcThreadIndex_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(14, this.srcThreadIndex_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -231,10 +231,10 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
                 return equals(obj);
             }
             PlayerApplyEnterMpNotify other = (PlayerApplyEnterMpNotify) obj;
-            if (hasSrcPlayerInfo() != other.hasSrcPlayerInfo()) {
-                return false;
+            if (getSrcThreadIndex() == other.getSrcThreadIndex() && hasSrcPlayerInfo() == other.hasSrcPlayerInfo()) {
+                return (!hasSrcPlayerInfo() || getSrcPlayerInfo().equals(other.getSrcPlayerInfo())) && getSrcAppId() == other.getSrcAppId() && this.unknownFields.equals(other.unknownFields);
             }
-            return (!hasSrcPlayerInfo() || getSrcPlayerInfo().equals(other.getSrcPlayerInfo())) && getSrcThreadIndex() == other.getSrcThreadIndex() && getSrcAppId() == other.getSrcAppId() && this.unknownFields.equals(other.unknownFields);
+            return false;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -242,11 +242,11 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getSrcThreadIndex();
             if (hasSrcPlayerInfo()) {
-                hash = (53 * ((37 * hash) + 12)) + getSrcPlayerInfo().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + getSrcPlayerInfo().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 9)) + getSrcThreadIndex())) + 13)) + getSrcAppId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 12)) + getSrcAppId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -325,9 +325,9 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerApplyEnterMpNotifyOuterClass$PlayerApplyEnterMpNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements PlayerApplyEnterMpNotifyOrBuilder {
+            private int srcThreadIndex_;
             private OnlinePlayerInfoOuterClass.OnlinePlayerInfo srcPlayerInfo_;
             private SingleFieldBuilderV3<OnlinePlayerInfoOuterClass.OnlinePlayerInfo, OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder, OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder> srcPlayerInfoBuilder_;
-            private int srcThreadIndex_;
             private int srcAppId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -356,13 +356,13 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.srcThreadIndex_ = 0;
                 if (this.srcPlayerInfoBuilder_ == null) {
                     this.srcPlayerInfo_ = null;
                 } else {
                     this.srcPlayerInfo_ = null;
                     this.srcPlayerInfoBuilder_ = null;
                 }
-                this.srcThreadIndex_ = 0;
                 this.srcAppId_ = 0;
                 return this;
             }
@@ -389,12 +389,12 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public PlayerApplyEnterMpNotify buildPartial() {
                 PlayerApplyEnterMpNotify result = new PlayerApplyEnterMpNotify(this);
+                result.srcThreadIndex_ = this.srcThreadIndex_;
                 if (this.srcPlayerInfoBuilder_ == null) {
                     result.srcPlayerInfo_ = this.srcPlayerInfo_;
                 } else {
                     result.srcPlayerInfo_ = this.srcPlayerInfoBuilder_.build();
                 }
-                result.srcThreadIndex_ = this.srcThreadIndex_;
                 result.srcAppId_ = this.srcAppId_;
                 onBuilt();
                 return result;
@@ -443,11 +443,11 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
                 if (other == PlayerApplyEnterMpNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.hasSrcPlayerInfo()) {
-                    mergeSrcPlayerInfo(other.getSrcPlayerInfo());
-                }
                 if (other.getSrcThreadIndex() != 0) {
                     setSrcThreadIndex(other.getSrcThreadIndex());
+                }
+                if (other.hasSrcPlayerInfo()) {
+                    mergeSrcPlayerInfo(other.getSrcPlayerInfo());
                 }
                 if (other.getSrcAppId() != 0) {
                     setSrcAppId(other.getSrcAppId());
@@ -482,6 +482,23 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerApplyEnterMpNotifyOuterClass.PlayerApplyEnterMpNotifyOrBuilder
+            public int getSrcThreadIndex() {
+                return this.srcThreadIndex_;
+            }
+
+            public Builder setSrcThreadIndex(int value) {
+                this.srcThreadIndex_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearSrcThreadIndex() {
+                this.srcThreadIndex_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.PlayerApplyEnterMpNotifyOuterClass.PlayerApplyEnterMpNotifyOrBuilder
@@ -563,23 +580,6 @@ public final class PlayerApplyEnterMpNotifyOuterClass {
                     this.srcPlayerInfo_ = null;
                 }
                 return this.srcPlayerInfoBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerApplyEnterMpNotifyOuterClass.PlayerApplyEnterMpNotifyOrBuilder
-            public int getSrcThreadIndex() {
-                return this.srcThreadIndex_;
-            }
-
-            public Builder setSrcThreadIndex(int value) {
-                this.srcThreadIndex_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearSrcThreadIndex() {
-                this.srcThreadIndex_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // emu.grasscutter.net.proto.PlayerApplyEnterMpNotifyOuterClass.PlayerApplyEnterMpNotifyOrBuilder

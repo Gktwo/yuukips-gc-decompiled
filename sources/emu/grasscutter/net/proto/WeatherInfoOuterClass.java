@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WeatherInfoOuterClass.class */
 public final class WeatherInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0011WeatherInfo.proto\"&\n\u000bWeatherInfo\u0012\u0017\n\u000fweather_area_id\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0011WeatherInfo.proto\"$\n\u000bWeatherInfo\u0012\u0015\n\rweatherAreaId\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_WeatherInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_WeatherInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WeatherInfo_descriptor, new String[]{"WeatherAreaId"});
 
@@ -41,7 +41,7 @@ public final class WeatherInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WeatherInfoOuterClass$WeatherInfo.class */
     public static final class WeatherInfo extends GeneratedMessageV3 implements WeatherInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int WEATHER_AREA_ID_FIELD_NUMBER = 1;
+        public static final int WEATHERAREAID_FIELD_NUMBER = 1;
         private int weatherAreaId_;
         private byte memoizedIsInitialized;
         private static final WeatherInfo DEFAULT_INSTANCE = new WeatherInfo();

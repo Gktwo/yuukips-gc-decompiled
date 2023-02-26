@@ -68,7 +68,7 @@ public abstract class ForwardingFileSystem extends FileSystem {
         if (metadataOrNull == null) {
             return null;
         }
-        return metadataOrNull.getSymlinkTarget() == null ? metadataOrNull : FileMetadata.copy$default(metadataOrNull, false, false, onPathResult(metadataOrNull.getSymlinkTarget(), "metadataOrNull"), null, null, null, null, null, PacketOpcodes.EnterSceneReadyRsp, null);
+        return metadataOrNull.getSymlinkTarget() == null ? metadataOrNull : FileMetadata.copy$default(metadataOrNull, false, false, onPathResult(metadataOrNull.getSymlinkTarget(), "metadataOrNull"), null, null, null, null, null, PacketOpcodes.SceneForceLockNotify, null);
     }
 
     @Override // okio.FileSystem

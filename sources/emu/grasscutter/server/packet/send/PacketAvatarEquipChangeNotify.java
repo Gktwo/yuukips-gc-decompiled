@@ -9,7 +9,7 @@ import emu.grasscutter.net.proto.AvatarEquipChangeNotifyOuterClass;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketAvatarEquipChangeNotify.class */
 public class PacketAvatarEquipChangeNotify extends BasePacket {
     public PacketAvatarEquipChangeNotify(Avatar avatar, GameItem item) {
-        super(676);
+        super(639);
         AvatarEquipChangeNotifyOuterClass.AvatarEquipChangeNotify.Builder proto = AvatarEquipChangeNotifyOuterClass.AvatarEquipChangeNotify.newBuilder().setAvatarGuid(avatar.getGuid()).setEquipType(item.getEquipSlot()).setItemId(item.getItemId()).setEquipGuid(item.getGuid());
         if (item.getItemData().getEquipType() == EquipType.EQUIP_WEAPON) {
             proto.setWeapon(item.createSceneWeaponInfo());
@@ -20,7 +20,7 @@ public class PacketAvatarEquipChangeNotify extends BasePacket {
     }
 
     public PacketAvatarEquipChangeNotify(Avatar avatar, EquipType slot) {
-        super(676);
+        super(639);
         setData(AvatarEquipChangeNotifyOuterClass.AvatarEquipChangeNotify.newBuilder().setAvatarGuid(avatar.getGuid()).setEquipType(slot.getValue()));
     }
 }

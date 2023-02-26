@@ -19,16 +19,16 @@ public class FloatMappedBigList extends AbstractFloatBigList {
     private final boolean[] readyToUse;
 
     /* renamed from: n */
-    private final int f1957n;
+    private final int f1921n;
     private final long size;
 
     protected FloatMappedBigList(FloatBuffer[] buffer, long size, boolean[] readyToUse) {
         this.buffer = buffer;
-        this.f1957n = buffer.length;
+        this.f1921n = buffer.length;
         this.size = size;
         this.readyToUse = readyToUse;
-        for (int i = 0; i < this.f1957n; i++) {
-            if (i < this.f1957n - 1 && ((long) buffer[i].capacity()) != CHUNK_SIZE) {
+        for (int i = 0; i < this.f1921n; i++) {
+            if (i < this.f1921n - 1 && ((long) buffer[i].capacity()) != CHUNK_SIZE) {
                 throw new IllegalArgumentException();
             }
         }
@@ -66,7 +66,7 @@ public class FloatMappedBigList extends AbstractFloatBigList {
     }
 
     public FloatMappedBigList copy() {
-        return new FloatMappedBigList((FloatBuffer[]) this.buffer.clone(), this.size, new boolean[this.f1957n]);
+        return new FloatMappedBigList((FloatBuffer[]) this.buffer.clone(), this.size, new boolean[this.f1921n]);
     }
 
     @Override // p014it.unimi.dsi.fastutil.floats.FloatBigList

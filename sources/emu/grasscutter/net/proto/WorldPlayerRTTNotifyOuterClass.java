@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WorldPlayerRTTNotifyOuterClass.class */
 public final class WorldPlayerRTTNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aWorldPlayerRTTNotify.proto\u001a\u0013PlayerRTTInfo.proto\"?\n\u0014WorldPlayerRTTNotify\u0012'\n\u000fplayer_rtt_list\u0018\u0006 \u0003(\u000b2\u000e.PlayerRTTInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PlayerRTTInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aWorldPlayerRTTNotify.proto\u001a\u0013PlayerRTTInfo.proto\"=\n\u0014WorldPlayerRTTNotify\u0012%\n\rplayerRttList\u0018\u0002 \u0003(\u000b2\u000e.PlayerRTTInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PlayerRTTInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_WorldPlayerRTTNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_WorldPlayerRTTNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WorldPlayerRTTNotify_descriptor, new String[]{"PlayerRttList"});
 
@@ -55,7 +55,7 @@ public final class WorldPlayerRTTNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WorldPlayerRTTNotifyOuterClass$WorldPlayerRTTNotify.class */
     public static final class WorldPlayerRTTNotify extends GeneratedMessageV3 implements WorldPlayerRTTNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PLAYER_RTT_LIST_FIELD_NUMBER = 6;
+        public static final int PLAYERRTTLIST_FIELD_NUMBER = 2;
         private List<PlayerRTTInfoOuterClass.PlayerRTTInfo> playerRttList_;
         private byte memoizedIsInitialized;
         private static final WorldPlayerRTTNotify DEFAULT_INSTANCE = new WorldPlayerRTTNotify();
@@ -106,7 +106,7 @@ public final class WorldPlayerRTTNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 50:
+                                case 18:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.playerRttList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -187,7 +187,7 @@ public final class WorldPlayerRTTNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.playerRttList_.size(); i++) {
-                output.writeMessage(6, this.playerRttList_.get(i));
+                output.writeMessage(2, this.playerRttList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,7 +200,7 @@ public final class WorldPlayerRTTNotifyOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.playerRttList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(6, this.playerRttList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(2, this.playerRttList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class WorldPlayerRTTNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getPlayerRttListCount() > 0) {
-                hash = (53 * ((37 * hash) + 6)) + getPlayerRttListList().hashCode();
+                hash = (53 * ((37 * hash) + 2)) + getPlayerRttListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

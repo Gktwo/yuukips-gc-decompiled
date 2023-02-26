@@ -7,7 +7,7 @@ import emu.grasscutter.net.proto.UseItemReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketUseItemRsp;
 
-@Opcodes(647)
+@Opcodes(670)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerUseItemReq.class */
 public class HandlerUseItemReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

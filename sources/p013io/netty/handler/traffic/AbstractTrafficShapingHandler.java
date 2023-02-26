@@ -318,7 +318,7 @@ public abstract class AbstractTrafficShapingHandler extends ChannelDuplexHandler
     }
 
     public String toString() {
-        StringBuilder builder = new StringBuilder((int) PacketOpcodes.ExitTransPointRegionNotify).append("TrafficShaping with Write Limit: ").append(this.writeLimit).append(" Read Limit: ").append(this.readLimit).append(" CheckInterval: ").append(this.checkInterval).append(" maxDelay: ").append(this.maxWriteDelay).append(" maxSize: ").append(this.maxWriteSize).append(" and Counter: ");
+        StringBuilder builder = new StringBuilder((int) PacketOpcodes.ExecuteGroupTriggerReq).append("TrafficShaping with Write Limit: ").append(this.writeLimit).append(" Read Limit: ").append(this.readLimit).append(" CheckInterval: ").append(this.checkInterval).append(" maxDelay: ").append(this.maxWriteDelay).append(" maxSize: ").append(this.maxWriteSize).append(" and Counter: ");
         if (this.trafficCounter != null) {
             builder.append(this.trafficCounter);
         } else {

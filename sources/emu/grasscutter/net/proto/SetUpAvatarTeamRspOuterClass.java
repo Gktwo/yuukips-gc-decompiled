@@ -23,9 +23,9 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetUpAvatarTeamRspOuterClass.class */
 public final class SetUpAvatarTeamRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018SetUpAvatarTeamRsp.proto\"n\n\u0012SetUpAvatarTeamRsp\u0012\u000f\n\u0007team_id\u0018\n \u0001(\r\u0012\u001d\n\u0015avatar_team_guid_list\u0018\t \u0003(\u0004\u0012\u000f\n\u0007retcode\u0018\u0005 \u0001(\u0005\u0012\u0017\n\u000fcur_avatar_guid\u0018\u000b \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018SetUpAvatarTeamRsp.proto\"h\n\u0012SetUpAvatarTeamRsp\u0012\u000e\n\u0006teamId\u0018\u0005 \u0001(\r\u0012\u001a\n\u0012avatarTeamGuidList\u0018\u0006 \u0003(\u0004\u0012\u0015\n\rcurAvatarGuid\u0018\u0002 \u0001(\u0004\u0012\u000f\n\u0007retcode\u0018\u0003 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SetUpAvatarTeamRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetUpAvatarTeamRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetUpAvatarTeamRsp_descriptor, new String[]{"TeamId", "AvatarTeamGuidList", "Retcode", "CurAvatarGuid"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetUpAvatarTeamRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetUpAvatarTeamRsp_descriptor, new String[]{"TeamId", "AvatarTeamGuidList", "CurAvatarGuid", "Retcode"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetUpAvatarTeamRspOuterClass$SetUpAvatarTeamRspOrBuilder.class */
     public interface SetUpAvatarTeamRspOrBuilder extends MessageOrBuilder {
@@ -37,9 +37,9 @@ public final class SetUpAvatarTeamRspOuterClass {
 
         long getAvatarTeamGuidList(int i);
 
-        int getRetcode();
-
         long getCurAvatarGuid();
+
+        int getRetcode();
     }
 
     private SetUpAvatarTeamRspOuterClass() {
@@ -55,15 +55,15 @@ public final class SetUpAvatarTeamRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetUpAvatarTeamRspOuterClass$SetUpAvatarTeamRsp.class */
     public static final class SetUpAvatarTeamRsp extends GeneratedMessageV3 implements SetUpAvatarTeamRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TEAM_ID_FIELD_NUMBER = 10;
+        public static final int TEAMID_FIELD_NUMBER = 5;
         private int teamId_;
-        public static final int AVATAR_TEAM_GUID_LIST_FIELD_NUMBER = 9;
+        public static final int AVATARTEAMGUIDLIST_FIELD_NUMBER = 6;
         private Internal.LongList avatarTeamGuidList_;
         private int avatarTeamGuidListMemoizedSerializedSize;
-        public static final int RETCODE_FIELD_NUMBER = 5;
-        private int retcode_;
-        public static final int CUR_AVATAR_GUID_FIELD_NUMBER = 11;
+        public static final int CURAVATARGUID_FIELD_NUMBER = 2;
         private long curAvatarGuid_;
+        public static final int RETCODE_FIELD_NUMBER = 3;
+        private int retcode_;
         private byte memoizedIsInitialized;
         private static final SetUpAvatarTeamRsp DEFAULT_INSTANCE = new SetUpAvatarTeamRsp();
         private static final Parser<SetUpAvatarTeamRsp> PARSER = new AbstractParser<SetUpAvatarTeamRsp>() { // from class: emu.grasscutter.net.proto.SetUpAvatarTeamRspOuterClass.SetUpAvatarTeamRsp.1
@@ -114,17 +114,23 @@ public final class SetUpAvatarTeamRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 40:
+                            case 16:
+                                this.curAvatarGuid_ = input.readUInt64();
+                                break;
+                            case 24:
                                 this.retcode_ = input.readInt32();
                                 break;
-                            case 72:
+                            case 40:
+                                this.teamId_ = input.readUInt32();
+                                break;
+                            case 48:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.avatarTeamGuidList_ = newLongList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.avatarTeamGuidList_.addLong(input.readUInt64());
                                 break;
-                            case 74:
+                            case 50:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.avatarTeamGuidList_ = newLongList();
@@ -134,12 +140,6 @@ public final class SetUpAvatarTeamRspOuterClass {
                                     this.avatarTeamGuidList_.addLong(input.readUInt64());
                                 }
                                 input.popLimit(limit);
-                                break;
-                            case 80:
-                                this.teamId_ = input.readUInt32();
-                                break;
-                            case 88:
-                                this.curAvatarGuid_ = input.readUInt64();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -194,13 +194,13 @@ public final class SetUpAvatarTeamRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SetUpAvatarTeamRspOuterClass.SetUpAvatarTeamRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
+        public long getCurAvatarGuid() {
+            return this.curAvatarGuid_;
         }
 
         @Override // emu.grasscutter.net.proto.SetUpAvatarTeamRspOuterClass.SetUpAvatarTeamRspOrBuilder
-        public long getCurAvatarGuid() {
-            return this.curAvatarGuid_;
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -219,21 +219,21 @@ public final class SetUpAvatarTeamRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
+            if (this.curAvatarGuid_ != 0) {
+                output.writeUInt64(2, this.curAvatarGuid_);
+            }
             if (this.retcode_ != 0) {
-                output.writeInt32(5, this.retcode_);
+                output.writeInt32(3, this.retcode_);
+            }
+            if (this.teamId_ != 0) {
+                output.writeUInt32(5, this.teamId_);
             }
             if (getAvatarTeamGuidListList().size() > 0) {
-                output.writeUInt32NoTag(74);
+                output.writeUInt32NoTag(50);
                 output.writeUInt32NoTag(this.avatarTeamGuidListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.avatarTeamGuidList_.size(); i++) {
                 output.writeUInt64NoTag(this.avatarTeamGuidList_.getLong(i));
-            }
-            if (this.teamId_ != 0) {
-                output.writeUInt32(10, this.teamId_);
-            }
-            if (this.curAvatarGuid_ != 0) {
-                output.writeUInt64(11, this.curAvatarGuid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -245,8 +245,14 @@ public final class SetUpAvatarTeamRspOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.curAvatarGuid_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt64Size(2, this.curAvatarGuid_);
+            }
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(5, this.retcode_);
+                size2 += CodedOutputStream.computeInt32Size(3, this.retcode_);
+            }
+            if (this.teamId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(5, this.teamId_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.avatarTeamGuidList_.size(); i++) {
@@ -257,12 +263,6 @@ public final class SetUpAvatarTeamRspOuterClass {
                 size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.avatarTeamGuidListMemoizedSerializedSize = dataSize;
-            if (this.teamId_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(10, this.teamId_);
-            }
-            if (this.curAvatarGuid_ != 0) {
-                size3 += CodedOutputStream.computeUInt64Size(11, this.curAvatarGuid_);
-            }
             int size4 = size3 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size4;
             return size4;
@@ -277,7 +277,7 @@ public final class SetUpAvatarTeamRspOuterClass {
                 return equals(obj);
             }
             SetUpAvatarTeamRsp other = (SetUpAvatarTeamRsp) obj;
-            return getTeamId() == other.getTeamId() && getAvatarTeamGuidListList().equals(other.getAvatarTeamGuidListList()) && getRetcode() == other.getRetcode() && getCurAvatarGuid() == other.getCurAvatarGuid() && this.unknownFields.equals(other.unknownFields);
+            return getTeamId() == other.getTeamId() && getAvatarTeamGuidListList().equals(other.getAvatarTeamGuidListList()) && getCurAvatarGuid() == other.getCurAvatarGuid() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -285,11 +285,11 @@ public final class SetUpAvatarTeamRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getTeamId();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getTeamId();
             if (getAvatarTeamGuidListCount() > 0) {
-                hash = (53 * ((37 * hash) + 9)) + getAvatarTeamGuidListList().hashCode();
+                hash = (53 * ((37 * hash) + 6)) + getAvatarTeamGuidListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 5)) + getRetcode())) + 11)) + Internal.hashLong(getCurAvatarGuid()))) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 2)) + Internal.hashLong(getCurAvatarGuid()))) + 3)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -371,8 +371,8 @@ public final class SetUpAvatarTeamRspOuterClass {
             private int bitField0_;
             private int teamId_;
             private Internal.LongList avatarTeamGuidList_ = SetUpAvatarTeamRsp.emptyLongList();
-            private int retcode_;
             private long curAvatarGuid_;
+            private int retcode_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return SetUpAvatarTeamRspOuterClass.internal_static_SetUpAvatarTeamRsp_descriptor;
@@ -403,8 +403,8 @@ public final class SetUpAvatarTeamRspOuterClass {
                 this.teamId_ = 0;
                 this.avatarTeamGuidList_ = SetUpAvatarTeamRsp.emptyLongList();
                 this.bitField0_ &= -2;
-                this.retcode_ = 0;
                 this.curAvatarGuid_ = 0;
+                this.retcode_ = 0;
                 return this;
             }
 
@@ -437,8 +437,8 @@ public final class SetUpAvatarTeamRspOuterClass {
                     this.bitField0_ &= -2;
                 }
                 result.avatarTeamGuidList_ = this.avatarTeamGuidList_;
-                result.retcode_ = this.retcode_;
                 result.curAvatarGuid_ = this.curAvatarGuid_;
+                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -499,11 +499,11 @@ public final class SetUpAvatarTeamRspOuterClass {
                     }
                     onChanged();
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
                 if (other.getCurAvatarGuid() != 0) {
                     setCurAvatarGuid(other.getCurAvatarGuid());
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -605,23 +605,6 @@ public final class SetUpAvatarTeamRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.SetUpAvatarTeamRspOuterClass.SetUpAvatarTeamRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.SetUpAvatarTeamRspOuterClass.SetUpAvatarTeamRspOrBuilder
             public long getCurAvatarGuid() {
                 return this.curAvatarGuid_;
             }
@@ -634,6 +617,23 @@ public final class SetUpAvatarTeamRspOuterClass {
 
             public Builder clearCurAvatarGuid() {
                 this.curAvatarGuid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SetUpAvatarTeamRspOuterClass.SetUpAvatarTeamRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }

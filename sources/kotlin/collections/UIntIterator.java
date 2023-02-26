@@ -16,7 +16,7 @@ import org.jline.builtins.Tmux;
 /* loaded from: grasscutter.jar:kotlin/collections/UIntIterator.class */
 public abstract class UIntIterator implements Iterator<UInt>, KMappedMarker {
     /* renamed from: nextUInt-pVg5ArA */
-    public abstract int mo7223nextUIntpVg5ArA();
+    public abstract int mo7220nextUIntpVg5ArA();
 
     @Override // java.util.Iterator
     public void remove() {
@@ -26,11 +26,11 @@ public abstract class UIntIterator implements Iterator<UInt>, KMappedMarker {
     /* Return type fixed from 'java.lang.Object' to match base method */
     @Override // java.util.Iterator
     public /* bridge */ /* synthetic */ UInt next() {
-        return UInt.m7202boximpl(m7534nextpVg5ArA());
+        return UInt.m7199boximpl(m7531nextpVg5ArA());
     }
 
     /* renamed from: next-pVg5ArA  reason: not valid java name */
-    public final int m7534nextpVg5ArA() {
-        return mo7223nextUIntpVg5ArA();
+    public final int m7531nextpVg5ArA() {
+        return mo7220nextUIntpVg5ArA();
     }
 }

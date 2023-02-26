@@ -14,7 +14,7 @@ import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.StandardOpenOption;
 import java.security.Permission;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.StringUtil;
 import org.eclipse.jetty.util.URIUtil;
 import org.eclipse.jetty.util.log.Log;
@@ -287,11 +287,11 @@ public class FileResource extends Resource {
     @Override // org.eclipse.jetty.util.resource.Resource
     public void copyTo(File destination) throws IOException {
         if (isDirectory()) {
-            C5747IO.copyDir(getFile(), destination);
+            C5739IO.copyDir(getFile(), destination);
         } else if (destination.exists()) {
             throw new IllegalArgumentException(destination + " exists");
         } else {
-            C5747IO.copy(getFile(), destination);
+            C5739IO.copy(getFile(), destination);
         }
     }
 

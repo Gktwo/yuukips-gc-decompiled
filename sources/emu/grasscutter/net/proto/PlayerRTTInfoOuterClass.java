@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerRTTInfoOuterClass.class */
 public final class PlayerRTTInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013PlayerRTTInfo.proto\")\n\rPlayerRTTInfo\u0012\u000b\n\u0003rtt\u0018\f \u0001(\r\u0012\u000b\n\u0003uid\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013PlayerRTTInfo.proto\")\n\rPlayerRTTInfo\u0012\u000b\n\u0003rtt\u0018\u0007 \u0001(\r\u0012\u000b\n\u0003uid\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PlayerRTTInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerRTTInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerRTTInfo_descriptor, new String[]{"Rtt", "Uid"});
 
@@ -43,9 +43,9 @@ public final class PlayerRTTInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerRTTInfoOuterClass$PlayerRTTInfo.class */
     public static final class PlayerRTTInfo extends GeneratedMessageV3 implements PlayerRTTInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RTT_FIELD_NUMBER = 12;
+        public static final int RTT_FIELD_NUMBER = 7;
         private int rtt_;
-        public static final int UID_FIELD_NUMBER = 14;
+        public static final int UID_FIELD_NUMBER = 13;
         private int uid_;
         private byte memoizedIsInitialized;
         private static final PlayerRTTInfo DEFAULT_INSTANCE = new PlayerRTTInfo();
@@ -92,10 +92,10 @@ public final class PlayerRTTInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 96:
+                            case 56:
                                 this.rtt_ = input.readUInt32();
                                 break;
-                            case 112:
+                            case 104:
                                 this.uid_ = input.readUInt32();
                                 break;
                             default:
@@ -153,10 +153,10 @@ public final class PlayerRTTInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.rtt_ != 0) {
-                output.writeUInt32(12, this.rtt_);
+                output.writeUInt32(7, this.rtt_);
             }
             if (this.uid_ != 0) {
-                output.writeUInt32(14, this.uid_);
+                output.writeUInt32(13, this.uid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class PlayerRTTInfoOuterClass {
             }
             int size2 = 0;
             if (this.rtt_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(12, this.rtt_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.rtt_);
             }
             if (this.uid_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.uid_);
+                size2 += CodedOutputStream.computeUInt32Size(13, this.uid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class PlayerRTTInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getRtt())) + 14)) + getUid())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getRtt())) + 13)) + getUid())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

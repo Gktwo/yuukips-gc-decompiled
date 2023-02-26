@@ -15,7 +15,7 @@ import com.google.protobuf.MessageOrBuilder;
 import com.google.protobuf.Parser;
 import com.google.protobuf.RepeatedFieldBuilderV3;
 import com.google.protobuf.UnknownFieldSet;
-import emu.grasscutter.net.proto.Unk2700GBBDJMDIDEI;
+import emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
@@ -25,23 +25,23 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ElementReliquaryResponseOuterClass.class */
 public final class ElementReliquaryResponseOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eElementReliquaryResponse.proto\u001a\u0019Unk2700_GBBDJMDIDEI.proto\"w\n\u0018ElementReliquaryResponse\u0012\u0014\n\felement_type\u0018\u000b \u0001(\r\u00121\n\u0013Unk2700_DMDHDIHGPFA\u0018\u0005 \u0003(\u000b2\u0014.Unk2700_GBBDJMDIDEI\u0012\u0012\n\nequip_type\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{Unk2700GBBDJMDIDEI.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eElementReliquaryResponse.proto\u001a1GameplayRecommendationReliquaryMainPropData.proto\"\u0001\n\u0018ElementReliquaryResponse\u0012\u0013\n\u000belementType\u0018\u0004 \u0001(\r\u0012A\n\u000bnbbpegfkpac\u0018\u0003 \u0003(\u000b2,.GameplayRecommendationReliquaryMainPropData\u0012\u0011\n\tequipType\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{GameplayRecommendationReliquaryMainPropDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ElementReliquaryResponse_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ElementReliquaryResponse_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ElementReliquaryResponse_descriptor, new String[]{"ElementType", "Unk2700DMDHDIHGPFA", "EquipType"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ElementReliquaryResponse_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ElementReliquaryResponse_descriptor, new String[]{"ElementType", "Nbbpegfkpac", "EquipType"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ElementReliquaryResponseOuterClass$ElementReliquaryResponseOrBuilder.class */
     public interface ElementReliquaryResponseOrBuilder extends MessageOrBuilder {
         int getElementType();
 
-        List<Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI> getUnk2700DMDHDIHGPFAList();
+        List<GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData> getNbbpegfkpacList();
 
-        Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI getUnk2700DMDHDIHGPFA(int i);
+        GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData getNbbpegfkpac(int i);
 
-        int getUnk2700DMDHDIHGPFACount();
+        int getNbbpegfkpacCount();
 
-        List<? extends Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEIOrBuilder> getUnk2700DMDHDIHGPFAOrBuilderList();
+        List<? extends GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder> getNbbpegfkpacOrBuilderList();
 
-        Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEIOrBuilder getUnk2700DMDHDIHGPFAOrBuilder(int i);
+        GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder getNbbpegfkpacOrBuilder(int i);
 
         int getEquipType();
     }
@@ -59,11 +59,11 @@ public final class ElementReliquaryResponseOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ElementReliquaryResponseOuterClass$ElementReliquaryResponse.class */
     public static final class ElementReliquaryResponse extends GeneratedMessageV3 implements ElementReliquaryResponseOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ELEMENT_TYPE_FIELD_NUMBER = 11;
+        public static final int ELEMENTTYPE_FIELD_NUMBER = 4;
         private int elementType_;
-        public static final int UNK2700_DMDHDIHGPFA_FIELD_NUMBER = 5;
-        private List<Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI> unk2700DMDHDIHGPFA_;
-        public static final int EQUIP_TYPE_FIELD_NUMBER = 15;
+        public static final int NBBPEGFKPAC_FIELD_NUMBER = 3;
+        private List<GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData> nbbpegfkpac_;
+        public static final int EQUIPTYPE_FIELD_NUMBER = 7;
         private int equipType_;
         private byte memoizedIsInitialized;
         private static final ElementReliquaryResponse DEFAULT_INSTANCE = new ElementReliquaryResponse();
@@ -81,7 +81,7 @@ public final class ElementReliquaryResponseOuterClass {
 
         private ElementReliquaryResponse() {
             this.memoizedIsInitialized = -1;
-            this.unk2700DMDHDIHGPFA_ = Collections.emptyList();
+            this.nbbpegfkpac_ = Collections.emptyList();
         }
 
         /* access modifiers changed from: protected */
@@ -113,17 +113,17 @@ public final class ElementReliquaryResponseOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 42:
+                            case 26:
                                 if ((mutable_bitField0_ & 1) == 0) {
-                                    this.unk2700DMDHDIHGPFA_ = new ArrayList();
+                                    this.nbbpegfkpac_ = new ArrayList();
                                     mutable_bitField0_ |= 1;
                                 }
-                                this.unk2700DMDHDIHGPFA_.add((Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI) input.readMessage(Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI.parser(), extensionRegistry));
+                                this.nbbpegfkpac_.add((GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData) input.readMessage(GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.parser(), extensionRegistry));
                                 break;
-                            case 88:
+                            case 32:
                                 this.elementType_ = input.readUInt32();
                                 break;
-                            case 120:
+                            case 56:
                                 this.equipType_ = input.readUInt32();
                                 break;
                             default:
@@ -142,7 +142,7 @@ public final class ElementReliquaryResponseOuterClass {
                 }
             } finally {
                 if ((mutable_bitField0_ & 1) != 0) {
-                    this.unk2700DMDHDIHGPFA_ = Collections.unmodifiableList(this.unk2700DMDHDIHGPFA_);
+                    this.nbbpegfkpac_ = Collections.unmodifiableList(this.nbbpegfkpac_);
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -164,28 +164,28 @@ public final class ElementReliquaryResponseOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ElementReliquaryResponseOuterClass.ElementReliquaryResponseOrBuilder
-        public List<Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI> getUnk2700DMDHDIHGPFAList() {
-            return this.unk2700DMDHDIHGPFA_;
+        public List<GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData> getNbbpegfkpacList() {
+            return this.nbbpegfkpac_;
         }
 
         @Override // emu.grasscutter.net.proto.ElementReliquaryResponseOuterClass.ElementReliquaryResponseOrBuilder
-        public List<? extends Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEIOrBuilder> getUnk2700DMDHDIHGPFAOrBuilderList() {
-            return this.unk2700DMDHDIHGPFA_;
+        public List<? extends GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder> getNbbpegfkpacOrBuilderList() {
+            return this.nbbpegfkpac_;
         }
 
         @Override // emu.grasscutter.net.proto.ElementReliquaryResponseOuterClass.ElementReliquaryResponseOrBuilder
-        public int getUnk2700DMDHDIHGPFACount() {
-            return this.unk2700DMDHDIHGPFA_.size();
+        public int getNbbpegfkpacCount() {
+            return this.nbbpegfkpac_.size();
         }
 
         @Override // emu.grasscutter.net.proto.ElementReliquaryResponseOuterClass.ElementReliquaryResponseOrBuilder
-        public Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI getUnk2700DMDHDIHGPFA(int index) {
-            return this.unk2700DMDHDIHGPFA_.get(index);
+        public GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData getNbbpegfkpac(int index) {
+            return this.nbbpegfkpac_.get(index);
         }
 
         @Override // emu.grasscutter.net.proto.ElementReliquaryResponseOuterClass.ElementReliquaryResponseOrBuilder
-        public Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEIOrBuilder getUnk2700DMDHDIHGPFAOrBuilder(int index) {
-            return this.unk2700DMDHDIHGPFA_.get(index);
+        public GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder getNbbpegfkpacOrBuilder(int index) {
+            return this.nbbpegfkpac_.get(index);
         }
 
         @Override // emu.grasscutter.net.proto.ElementReliquaryResponseOuterClass.ElementReliquaryResponseOrBuilder
@@ -208,14 +208,14 @@ public final class ElementReliquaryResponseOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            for (int i = 0; i < this.unk2700DMDHDIHGPFA_.size(); i++) {
-                output.writeMessage(5, this.unk2700DMDHDIHGPFA_.get(i));
+            for (int i = 0; i < this.nbbpegfkpac_.size(); i++) {
+                output.writeMessage(3, this.nbbpegfkpac_.get(i));
             }
             if (this.elementType_ != 0) {
-                output.writeUInt32(11, this.elementType_);
+                output.writeUInt32(4, this.elementType_);
             }
             if (this.equipType_ != 0) {
-                output.writeUInt32(15, this.equipType_);
+                output.writeUInt32(7, this.equipType_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -227,14 +227,14 @@ public final class ElementReliquaryResponseOuterClass {
                 return size;
             }
             int size2 = 0;
-            for (int i = 0; i < this.unk2700DMDHDIHGPFA_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(5, this.unk2700DMDHDIHGPFA_.get(i));
+            for (int i = 0; i < this.nbbpegfkpac_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(3, this.nbbpegfkpac_.get(i));
             }
             if (this.elementType_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.elementType_);
+                size2 += CodedOutputStream.computeUInt32Size(4, this.elementType_);
             }
             if (this.equipType_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.equipType_);
+                size2 += CodedOutputStream.computeUInt32Size(7, this.equipType_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -250,7 +250,7 @@ public final class ElementReliquaryResponseOuterClass {
                 return equals(obj);
             }
             ElementReliquaryResponse other = (ElementReliquaryResponse) obj;
-            return getElementType() == other.getElementType() && getUnk2700DMDHDIHGPFAList().equals(other.getUnk2700DMDHDIHGPFAList()) && getEquipType() == other.getEquipType() && this.unknownFields.equals(other.unknownFields);
+            return getElementType() == other.getElementType() && getNbbpegfkpacList().equals(other.getNbbpegfkpacList()) && getEquipType() == other.getEquipType() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -258,11 +258,11 @@ public final class ElementReliquaryResponseOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getElementType();
-            if (getUnk2700DMDHDIHGPFACount() > 0) {
-                hash = (53 * ((37 * hash) + 5)) + getUnk2700DMDHDIHGPFAList().hashCode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getElementType();
+            if (getNbbpegfkpacCount() > 0) {
+                hash = (53 * ((37 * hash) + 3)) + getNbbpegfkpacList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 15)) + getEquipType())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 7)) + getEquipType())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -343,8 +343,8 @@ public final class ElementReliquaryResponseOuterClass {
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ElementReliquaryResponseOrBuilder {
             private int bitField0_;
             private int elementType_;
-            private List<Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI> unk2700DMDHDIHGPFA_ = Collections.emptyList();
-            private RepeatedFieldBuilderV3<Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI, Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI.Builder, Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEIOrBuilder> unk2700DMDHDIHGPFABuilder_;
+            private List<GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData> nbbpegfkpac_ = Collections.emptyList();
+            private RepeatedFieldBuilderV3<GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData, GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder, GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder> nbbpegfkpacBuilder_;
             private int equipType_;
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -367,7 +367,7 @@ public final class ElementReliquaryResponseOuterClass {
 
             private void maybeForceBuilderInitialization() {
                 if (ElementReliquaryResponse.alwaysUseFieldBuilders) {
-                    getUnk2700DMDHDIHGPFAFieldBuilder();
+                    getNbbpegfkpacFieldBuilder();
                 }
             }
 
@@ -375,11 +375,11 @@ public final class ElementReliquaryResponseOuterClass {
             public Builder clear() {
                 clear();
                 this.elementType_ = 0;
-                if (this.unk2700DMDHDIHGPFABuilder_ == null) {
-                    this.unk2700DMDHDIHGPFA_ = Collections.emptyList();
+                if (this.nbbpegfkpacBuilder_ == null) {
+                    this.nbbpegfkpac_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
-                    this.unk2700DMDHDIHGPFABuilder_.clear();
+                    this.nbbpegfkpacBuilder_.clear();
                 }
                 this.equipType_ = 0;
                 return this;
@@ -409,14 +409,14 @@ public final class ElementReliquaryResponseOuterClass {
                 ElementReliquaryResponse result = new ElementReliquaryResponse(this);
                 int i = this.bitField0_;
                 result.elementType_ = this.elementType_;
-                if (this.unk2700DMDHDIHGPFABuilder_ == null) {
+                if (this.nbbpegfkpacBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
-                        this.unk2700DMDHDIHGPFA_ = Collections.unmodifiableList(this.unk2700DMDHDIHGPFA_);
+                        this.nbbpegfkpac_ = Collections.unmodifiableList(this.nbbpegfkpac_);
                         this.bitField0_ &= -2;
                     }
-                    result.unk2700DMDHDIHGPFA_ = this.unk2700DMDHDIHGPFA_;
+                    result.nbbpegfkpac_ = this.nbbpegfkpac_;
                 } else {
-                    result.unk2700DMDHDIHGPFA_ = this.unk2700DMDHDIHGPFABuilder_.build();
+                    result.nbbpegfkpac_ = this.nbbpegfkpacBuilder_.build();
                 }
                 result.equipType_ = this.equipType_;
                 onBuilt();
@@ -469,26 +469,26 @@ public final class ElementReliquaryResponseOuterClass {
                 if (other.getElementType() != 0) {
                     setElementType(other.getElementType());
                 }
-                if (this.unk2700DMDHDIHGPFABuilder_ == null) {
-                    if (!other.unk2700DMDHDIHGPFA_.isEmpty()) {
-                        if (this.unk2700DMDHDIHGPFA_.isEmpty()) {
-                            this.unk2700DMDHDIHGPFA_ = other.unk2700DMDHDIHGPFA_;
+                if (this.nbbpegfkpacBuilder_ == null) {
+                    if (!other.nbbpegfkpac_.isEmpty()) {
+                        if (this.nbbpegfkpac_.isEmpty()) {
+                            this.nbbpegfkpac_ = other.nbbpegfkpac_;
                             this.bitField0_ &= -2;
                         } else {
-                            ensureUnk2700DMDHDIHGPFAIsMutable();
-                            this.unk2700DMDHDIHGPFA_.addAll(other.unk2700DMDHDIHGPFA_);
+                            ensureNbbpegfkpacIsMutable();
+                            this.nbbpegfkpac_.addAll(other.nbbpegfkpac_);
                         }
                         onChanged();
                     }
-                } else if (!other.unk2700DMDHDIHGPFA_.isEmpty()) {
-                    if (this.unk2700DMDHDIHGPFABuilder_.isEmpty()) {
-                        this.unk2700DMDHDIHGPFABuilder_.dispose();
-                        this.unk2700DMDHDIHGPFABuilder_ = null;
-                        this.unk2700DMDHDIHGPFA_ = other.unk2700DMDHDIHGPFA_;
+                } else if (!other.nbbpegfkpac_.isEmpty()) {
+                    if (this.nbbpegfkpacBuilder_.isEmpty()) {
+                        this.nbbpegfkpacBuilder_.dispose();
+                        this.nbbpegfkpacBuilder_ = null;
+                        this.nbbpegfkpac_ = other.nbbpegfkpac_;
                         this.bitField0_ &= -2;
-                        this.unk2700DMDHDIHGPFABuilder_ = ElementReliquaryResponse.alwaysUseFieldBuilders ? getUnk2700DMDHDIHGPFAFieldBuilder() : null;
+                        this.nbbpegfkpacBuilder_ = ElementReliquaryResponse.alwaysUseFieldBuilders ? getNbbpegfkpacFieldBuilder() : null;
                     } else {
-                        this.unk2700DMDHDIHGPFABuilder_.addAllMessages(other.unk2700DMDHDIHGPFA_);
+                        this.nbbpegfkpacBuilder_.addAllMessages(other.nbbpegfkpac_);
                     }
                 }
                 if (other.getEquipType() != 0) {
@@ -543,180 +543,180 @@ public final class ElementReliquaryResponseOuterClass {
                 return this;
             }
 
-            private void ensureUnk2700DMDHDIHGPFAIsMutable() {
+            private void ensureNbbpegfkpacIsMutable() {
                 if ((this.bitField0_ & 1) == 0) {
-                    this.unk2700DMDHDIHGPFA_ = new ArrayList(this.unk2700DMDHDIHGPFA_);
+                    this.nbbpegfkpac_ = new ArrayList(this.nbbpegfkpac_);
                     this.bitField0_ |= 1;
                 }
             }
 
             @Override // emu.grasscutter.net.proto.ElementReliquaryResponseOuterClass.ElementReliquaryResponseOrBuilder
-            public List<Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI> getUnk2700DMDHDIHGPFAList() {
-                if (this.unk2700DMDHDIHGPFABuilder_ == null) {
-                    return Collections.unmodifiableList(this.unk2700DMDHDIHGPFA_);
+            public List<GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData> getNbbpegfkpacList() {
+                if (this.nbbpegfkpacBuilder_ == null) {
+                    return Collections.unmodifiableList(this.nbbpegfkpac_);
                 }
-                return this.unk2700DMDHDIHGPFABuilder_.getMessageList();
+                return this.nbbpegfkpacBuilder_.getMessageList();
             }
 
             @Override // emu.grasscutter.net.proto.ElementReliquaryResponseOuterClass.ElementReliquaryResponseOrBuilder
-            public int getUnk2700DMDHDIHGPFACount() {
-                if (this.unk2700DMDHDIHGPFABuilder_ == null) {
-                    return this.unk2700DMDHDIHGPFA_.size();
+            public int getNbbpegfkpacCount() {
+                if (this.nbbpegfkpacBuilder_ == null) {
+                    return this.nbbpegfkpac_.size();
                 }
-                return this.unk2700DMDHDIHGPFABuilder_.getCount();
+                return this.nbbpegfkpacBuilder_.getCount();
             }
 
             @Override // emu.grasscutter.net.proto.ElementReliquaryResponseOuterClass.ElementReliquaryResponseOrBuilder
-            public Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI getUnk2700DMDHDIHGPFA(int index) {
-                if (this.unk2700DMDHDIHGPFABuilder_ == null) {
-                    return this.unk2700DMDHDIHGPFA_.get(index);
+            public GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData getNbbpegfkpac(int index) {
+                if (this.nbbpegfkpacBuilder_ == null) {
+                    return this.nbbpegfkpac_.get(index);
                 }
-                return this.unk2700DMDHDIHGPFABuilder_.getMessage(index);
+                return this.nbbpegfkpacBuilder_.getMessage(index);
             }
 
-            public Builder setUnk2700DMDHDIHGPFA(int index, Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI value) {
-                if (this.unk2700DMDHDIHGPFABuilder_ != null) {
-                    this.unk2700DMDHDIHGPFABuilder_.setMessage(index, value);
+            public Builder setNbbpegfkpac(int index, GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData value) {
+                if (this.nbbpegfkpacBuilder_ != null) {
+                    this.nbbpegfkpacBuilder_.setMessage(index, value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureUnk2700DMDHDIHGPFAIsMutable();
-                    this.unk2700DMDHDIHGPFA_.set(index, value);
+                    ensureNbbpegfkpacIsMutable();
+                    this.nbbpegfkpac_.set(index, value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder setUnk2700DMDHDIHGPFA(int index, Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI.Builder builderForValue) {
-                if (this.unk2700DMDHDIHGPFABuilder_ == null) {
-                    ensureUnk2700DMDHDIHGPFAIsMutable();
-                    this.unk2700DMDHDIHGPFA_.set(index, builderForValue.build());
+            public Builder setNbbpegfkpac(int index, GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder builderForValue) {
+                if (this.nbbpegfkpacBuilder_ == null) {
+                    ensureNbbpegfkpacIsMutable();
+                    this.nbbpegfkpac_.set(index, builderForValue.build());
                     onChanged();
                 } else {
-                    this.unk2700DMDHDIHGPFABuilder_.setMessage(index, builderForValue.build());
+                    this.nbbpegfkpacBuilder_.setMessage(index, builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder addUnk2700DMDHDIHGPFA(Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI value) {
-                if (this.unk2700DMDHDIHGPFABuilder_ != null) {
-                    this.unk2700DMDHDIHGPFABuilder_.addMessage(value);
+            public Builder addNbbpegfkpac(GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData value) {
+                if (this.nbbpegfkpacBuilder_ != null) {
+                    this.nbbpegfkpacBuilder_.addMessage(value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureUnk2700DMDHDIHGPFAIsMutable();
-                    this.unk2700DMDHDIHGPFA_.add(value);
+                    ensureNbbpegfkpacIsMutable();
+                    this.nbbpegfkpac_.add(value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder addUnk2700DMDHDIHGPFA(int index, Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI value) {
-                if (this.unk2700DMDHDIHGPFABuilder_ != null) {
-                    this.unk2700DMDHDIHGPFABuilder_.addMessage(index, value);
+            public Builder addNbbpegfkpac(int index, GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData value) {
+                if (this.nbbpegfkpacBuilder_ != null) {
+                    this.nbbpegfkpacBuilder_.addMessage(index, value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureUnk2700DMDHDIHGPFAIsMutable();
-                    this.unk2700DMDHDIHGPFA_.add(index, value);
+                    ensureNbbpegfkpacIsMutable();
+                    this.nbbpegfkpac_.add(index, value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder addUnk2700DMDHDIHGPFA(Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI.Builder builderForValue) {
-                if (this.unk2700DMDHDIHGPFABuilder_ == null) {
-                    ensureUnk2700DMDHDIHGPFAIsMutable();
-                    this.unk2700DMDHDIHGPFA_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    this.unk2700DMDHDIHGPFABuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addUnk2700DMDHDIHGPFA(int index, Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI.Builder builderForValue) {
-                if (this.unk2700DMDHDIHGPFABuilder_ == null) {
-                    ensureUnk2700DMDHDIHGPFAIsMutable();
-                    this.unk2700DMDHDIHGPFA_.add(index, builderForValue.build());
+            public Builder addNbbpegfkpac(GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder builderForValue) {
+                if (this.nbbpegfkpacBuilder_ == null) {
+                    ensureNbbpegfkpacIsMutable();
+                    this.nbbpegfkpac_.add(builderForValue.build());
                     onChanged();
                 } else {
-                    this.unk2700DMDHDIHGPFABuilder_.addMessage(index, builderForValue.build());
+                    this.nbbpegfkpacBuilder_.addMessage(builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder addAllUnk2700DMDHDIHGPFA(Iterable<? extends Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI> values) {
-                if (this.unk2700DMDHDIHGPFABuilder_ == null) {
-                    ensureUnk2700DMDHDIHGPFAIsMutable();
-                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.unk2700DMDHDIHGPFA_);
+            public Builder addNbbpegfkpac(int index, GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder builderForValue) {
+                if (this.nbbpegfkpacBuilder_ == null) {
+                    ensureNbbpegfkpacIsMutable();
+                    this.nbbpegfkpac_.add(index, builderForValue.build());
                     onChanged();
                 } else {
-                    this.unk2700DMDHDIHGPFABuilder_.addAllMessages(values);
+                    this.nbbpegfkpacBuilder_.addMessage(index, builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder clearUnk2700DMDHDIHGPFA() {
-                if (this.unk2700DMDHDIHGPFABuilder_ == null) {
-                    this.unk2700DMDHDIHGPFA_ = Collections.emptyList();
+            public Builder addAllNbbpegfkpac(Iterable<? extends GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData> values) {
+                if (this.nbbpegfkpacBuilder_ == null) {
+                    ensureNbbpegfkpacIsMutable();
+                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.nbbpegfkpac_);
+                    onChanged();
+                } else {
+                    this.nbbpegfkpacBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            public Builder clearNbbpegfkpac() {
+                if (this.nbbpegfkpacBuilder_ == null) {
+                    this.nbbpegfkpac_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                     onChanged();
                 } else {
-                    this.unk2700DMDHDIHGPFABuilder_.clear();
+                    this.nbbpegfkpacBuilder_.clear();
                 }
                 return this;
             }
 
-            public Builder removeUnk2700DMDHDIHGPFA(int index) {
-                if (this.unk2700DMDHDIHGPFABuilder_ == null) {
-                    ensureUnk2700DMDHDIHGPFAIsMutable();
-                    this.unk2700DMDHDIHGPFA_.remove(index);
+            public Builder removeNbbpegfkpac(int index) {
+                if (this.nbbpegfkpacBuilder_ == null) {
+                    ensureNbbpegfkpacIsMutable();
+                    this.nbbpegfkpac_.remove(index);
                     onChanged();
                 } else {
-                    this.unk2700DMDHDIHGPFABuilder_.remove(index);
+                    this.nbbpegfkpacBuilder_.remove(index);
                 }
                 return this;
             }
 
-            public Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI.Builder getUnk2700DMDHDIHGPFABuilder(int index) {
-                return getUnk2700DMDHDIHGPFAFieldBuilder().getBuilder(index);
+            public GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder getNbbpegfkpacBuilder(int index) {
+                return getNbbpegfkpacFieldBuilder().getBuilder(index);
             }
 
             @Override // emu.grasscutter.net.proto.ElementReliquaryResponseOuterClass.ElementReliquaryResponseOrBuilder
-            public Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEIOrBuilder getUnk2700DMDHDIHGPFAOrBuilder(int index) {
-                if (this.unk2700DMDHDIHGPFABuilder_ == null) {
-                    return this.unk2700DMDHDIHGPFA_.get(index);
+            public GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder getNbbpegfkpacOrBuilder(int index) {
+                if (this.nbbpegfkpacBuilder_ == null) {
+                    return this.nbbpegfkpac_.get(index);
                 }
-                return this.unk2700DMDHDIHGPFABuilder_.getMessageOrBuilder(index);
+                return this.nbbpegfkpacBuilder_.getMessageOrBuilder(index);
             }
 
             @Override // emu.grasscutter.net.proto.ElementReliquaryResponseOuterClass.ElementReliquaryResponseOrBuilder
-            public List<? extends Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEIOrBuilder> getUnk2700DMDHDIHGPFAOrBuilderList() {
-                if (this.unk2700DMDHDIHGPFABuilder_ != null) {
-                    return this.unk2700DMDHDIHGPFABuilder_.getMessageOrBuilderList();
+            public List<? extends GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder> getNbbpegfkpacOrBuilderList() {
+                if (this.nbbpegfkpacBuilder_ != null) {
+                    return this.nbbpegfkpacBuilder_.getMessageOrBuilderList();
                 }
-                return Collections.unmodifiableList(this.unk2700DMDHDIHGPFA_);
+                return Collections.unmodifiableList(this.nbbpegfkpac_);
             }
 
-            public Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI.Builder addUnk2700DMDHDIHGPFABuilder() {
-                return getUnk2700DMDHDIHGPFAFieldBuilder().addBuilder(Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI.getDefaultInstance());
+            public GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder addNbbpegfkpacBuilder() {
+                return getNbbpegfkpacFieldBuilder().addBuilder(GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.getDefaultInstance());
             }
 
-            public Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI.Builder addUnk2700DMDHDIHGPFABuilder(int index) {
-                return getUnk2700DMDHDIHGPFAFieldBuilder().addBuilder(index, Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI.getDefaultInstance());
+            public GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder addNbbpegfkpacBuilder(int index) {
+                return getNbbpegfkpacFieldBuilder().addBuilder(index, GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.getDefaultInstance());
             }
 
-            public List<Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI.Builder> getUnk2700DMDHDIHGPFABuilderList() {
-                return getUnk2700DMDHDIHGPFAFieldBuilder().getBuilderList();
+            public List<GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder> getNbbpegfkpacBuilderList() {
+                return getNbbpegfkpacFieldBuilder().getBuilderList();
             }
 
-            private RepeatedFieldBuilderV3<Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI, Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEI.Builder, Unk2700GBBDJMDIDEI.Unk2700_GBBDJMDIDEIOrBuilder> getUnk2700DMDHDIHGPFAFieldBuilder() {
-                if (this.unk2700DMDHDIHGPFABuilder_ == null) {
-                    this.unk2700DMDHDIHGPFABuilder_ = new RepeatedFieldBuilderV3<>(this.unk2700DMDHDIHGPFA_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
-                    this.unk2700DMDHDIHGPFA_ = null;
+            private RepeatedFieldBuilderV3<GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData, GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.Builder, GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder> getNbbpegfkpacFieldBuilder() {
+                if (this.nbbpegfkpacBuilder_ == null) {
+                    this.nbbpegfkpacBuilder_ = new RepeatedFieldBuilderV3<>(this.nbbpegfkpac_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
+                    this.nbbpegfkpac_ = null;
                 }
-                return this.unk2700DMDHDIHGPFABuilder_;
+                return this.nbbpegfkpacBuilder_;
             }
 
             @Override // emu.grasscutter.net.proto.ElementReliquaryResponseOuterClass.ElementReliquaryResponseOrBuilder
@@ -771,6 +771,6 @@ public final class ElementReliquaryResponseOuterClass {
     }
 
     static {
-        Unk2700GBBDJMDIDEI.getDescriptor();
+        GameplayRecommendationReliquaryMainPropDataOuterClass.getDescriptor();
     }
 }

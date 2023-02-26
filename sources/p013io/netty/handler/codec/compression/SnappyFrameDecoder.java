@@ -50,30 +50,30 @@ public class SnappyFrameDecoder extends ByteToMessageDecoder {
 
     /* renamed from: io.netty.handler.codec.compression.SnappyFrameDecoder$1 */
     /* loaded from: grasscutter.jar:io/netty/handler/codec/compression/SnappyFrameDecoder$1.class */
-    static /* synthetic */ class C29831 {
+    static /* synthetic */ class C29751 {
 
         /* renamed from: $SwitchMap$io$netty$handler$codec$compression$SnappyFrameDecoder$ChunkType */
-        static final /* synthetic */ int[] f1010xce0a49f3 = new int[ChunkType.values().length];
+        static final /* synthetic */ int[] f974xce0a49f3 = new int[ChunkType.values().length];
 
         static {
             try {
-                f1010xce0a49f3[ChunkType.STREAM_IDENTIFIER.ordinal()] = 1;
+                f974xce0a49f3[ChunkType.STREAM_IDENTIFIER.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f1010xce0a49f3[ChunkType.RESERVED_SKIPPABLE.ordinal()] = 2;
+                f974xce0a49f3[ChunkType.RESERVED_SKIPPABLE.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f1010xce0a49f3[ChunkType.RESERVED_UNSKIPPABLE.ordinal()] = 3;
+                f974xce0a49f3[ChunkType.RESERVED_UNSKIPPABLE.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f1010xce0a49f3[ChunkType.UNCOMPRESSED_DATA.ordinal()] = 4;
+                f974xce0a49f3[ChunkType.UNCOMPRESSED_DATA.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f1010xce0a49f3[ChunkType.COMPRESSED_DATA.ordinal()] = 5;
+                f974xce0a49f3[ChunkType.COMPRESSED_DATA.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
         }

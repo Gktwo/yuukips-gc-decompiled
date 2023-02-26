@@ -22,18 +22,12 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HitCollisionOuterClass.class */
 public final class HitCollisionOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012HitCollision.proto\u001a\u0015HitColliderType.proto\u001a\fVector.proto\"Í\u0001\n\fHitCollision\u0012\u0015\n\rhit_box_index\u0018\b \u0001(\u0005\u0012+\n\u0011hit_collider_type\u0018\u0005 \u0001(\u000e2\u0010.HitColliderType\u0012!\n\u0019attackee_hit_entity_angle\u0018\u0007 \u0001(\u0002\u0012\u0018\n\u0007hit_dir\u0018\u0003 \u0001(\u000b2\u0007.Vector\u0012\u001a\n\thit_point\u0018\u000e \u0001(\u000b2\u0007.Vector\u0012 \n\u0018attackee_hit_force_angle\u0018\n \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HitColliderTypeOuterClass.getDescriptor(), VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012HitCollision.proto\u001a\fVector.proto\u001a\u0015HitColliderType.proto\"Á\u0001\n\fHitCollision\u0012\u001e\n\u0016attackeeHitEntityAngle\u0018\f \u0001(\u0002\u0012\u0017\n\u0006hitDir\u0018\u0004 \u0001(\u000b2\u0007.Vector\u0012\u0019\n\bhitPoint\u0018\u0003 \u0001(\u000b2\u0007.Vector\u0012\u0013\n\u000bhitBoxIndex\u0018\n \u0001(\u0005\u0012\u001d\n\u0015attackeeHitForceAngle\u0018\u000f \u0001(\u0002\u0012)\n\u000fhitColliderType\u0018\t \u0001(\u000e2\u0010.HitColliderTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor(), HitColliderTypeOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_HitCollision_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_HitCollision_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HitCollision_descriptor, new String[]{"HitBoxIndex", "HitColliderType", "AttackeeHitEntityAngle", "HitDir", "HitPoint", "AttackeeHitForceAngle"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_HitCollision_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HitCollision_descriptor, new String[]{"AttackeeHitEntityAngle", "HitDir", "HitPoint", "HitBoxIndex", "AttackeeHitForceAngle", "HitColliderType"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HitCollisionOuterClass$HitCollisionOrBuilder.class */
     public interface HitCollisionOrBuilder extends MessageOrBuilder {
-        int getHitBoxIndex();
-
-        int getHitColliderTypeValue();
-
-        HitColliderTypeOuterClass.HitColliderType getHitColliderType();
-
         float getAttackeeHitEntityAngle();
 
         boolean hasHitDir();
@@ -48,7 +42,13 @@ public final class HitCollisionOuterClass {
 
         VectorOuterClass.VectorOrBuilder getHitPointOrBuilder();
 
+        int getHitBoxIndex();
+
         float getAttackeeHitForceAngle();
+
+        int getHitColliderTypeValue();
+
+        HitColliderTypeOuterClass.HitColliderType getHitColliderType();
     }
 
     private HitCollisionOuterClass() {
@@ -64,18 +64,18 @@ public final class HitCollisionOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HitCollisionOuterClass$HitCollision.class */
     public static final class HitCollision extends GeneratedMessageV3 implements HitCollisionOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int HIT_BOX_INDEX_FIELD_NUMBER = 8;
-        private int hitBoxIndex_;
-        public static final int HIT_COLLIDER_TYPE_FIELD_NUMBER = 5;
-        private int hitColliderType_;
-        public static final int ATTACKEE_HIT_ENTITY_ANGLE_FIELD_NUMBER = 7;
+        public static final int ATTACKEEHITENTITYANGLE_FIELD_NUMBER = 12;
         private float attackeeHitEntityAngle_;
-        public static final int HIT_DIR_FIELD_NUMBER = 3;
+        public static final int HITDIR_FIELD_NUMBER = 4;
         private VectorOuterClass.Vector hitDir_;
-        public static final int HIT_POINT_FIELD_NUMBER = 14;
+        public static final int HITPOINT_FIELD_NUMBER = 3;
         private VectorOuterClass.Vector hitPoint_;
-        public static final int ATTACKEE_HIT_FORCE_ANGLE_FIELD_NUMBER = 10;
+        public static final int HITBOXINDEX_FIELD_NUMBER = 10;
+        private int hitBoxIndex_;
+        public static final int ATTACKEEHITFORCEANGLE_FIELD_NUMBER = 15;
         private float attackeeHitForceAngle_;
+        public static final int HITCOLLIDERTYPE_FIELD_NUMBER = 9;
+        private int hitColliderType_;
         private byte memoizedIsInitialized;
         private static final HitCollision DEFAULT_INSTANCE = new HitCollision();
         private static final Parser<HitCollision> PARSER = new AbstractParser<HitCollision>() { // from class: emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollision.1
@@ -124,37 +124,37 @@ public final class HitCollisionOuterClass {
                                     done = true;
                                     break;
                                 case 26:
-                                    VectorOuterClass.Vector.Builder subBuilder = this.hitDir_ != null ? this.hitDir_.toBuilder() : null;
-                                    this.hitDir_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
+                                    VectorOuterClass.Vector.Builder subBuilder = this.hitPoint_ != null ? this.hitPoint_.toBuilder() : null;
+                                    this.hitPoint_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
                                     if (subBuilder == null) {
                                         break;
                                     } else {
-                                        subBuilder.mergeFrom(this.hitDir_);
-                                        this.hitDir_ = subBuilder.buildPartial();
+                                        subBuilder.mergeFrom(this.hitPoint_);
+                                        this.hitPoint_ = subBuilder.buildPartial();
                                         break;
                                     }
-                                case 40:
-                                    this.hitColliderType_ = input.readEnum();
-                                    break;
-                                case 61:
-                                    this.attackeeHitEntityAngle_ = input.readFloat();
-                                    break;
-                                case 64:
-                                    this.hitBoxIndex_ = input.readInt32();
-                                    break;
-                                case 85:
-                                    this.attackeeHitForceAngle_ = input.readFloat();
-                                    break;
-                                case 114:
-                                    VectorOuterClass.Vector.Builder subBuilder2 = this.hitPoint_ != null ? this.hitPoint_.toBuilder() : null;
-                                    this.hitPoint_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
+                                case 34:
+                                    VectorOuterClass.Vector.Builder subBuilder2 = this.hitDir_ != null ? this.hitDir_.toBuilder() : null;
+                                    this.hitDir_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
                                     if (subBuilder2 == null) {
                                         break;
                                     } else {
-                                        subBuilder2.mergeFrom(this.hitPoint_);
-                                        this.hitPoint_ = subBuilder2.buildPartial();
+                                        subBuilder2.mergeFrom(this.hitDir_);
+                                        this.hitDir_ = subBuilder2.buildPartial();
                                         break;
                                     }
+                                case 72:
+                                    this.hitColliderType_ = input.readEnum();
+                                    break;
+                                case 80:
+                                    this.hitBoxIndex_ = input.readInt32();
+                                    break;
+                                case 101:
+                                    this.attackeeHitEntityAngle_ = input.readFloat();
+                                    break;
+                                case 125:
+                                    this.attackeeHitForceAngle_ = input.readFloat();
+                                    break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                         break;
@@ -183,22 +183,6 @@ public final class HitCollisionOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return HitCollisionOuterClass.internal_static_HitCollision_fieldAccessorTable.ensureFieldAccessorsInitialized(HitCollision.class, Builder.class);
-        }
-
-        @Override // emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollisionOrBuilder
-        public int getHitBoxIndex() {
-            return this.hitBoxIndex_;
-        }
-
-        @Override // emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollisionOrBuilder
-        public int getHitColliderTypeValue() {
-            return this.hitColliderType_;
-        }
-
-        @Override // emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollisionOrBuilder
-        public HitColliderTypeOuterClass.HitColliderType getHitColliderType() {
-            HitColliderTypeOuterClass.HitColliderType result = HitColliderTypeOuterClass.HitColliderType.valueOf(this.hitColliderType_);
-            return result == null ? HitColliderTypeOuterClass.HitColliderType.UNRECOGNIZED : result;
         }
 
         @Override // emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollisionOrBuilder
@@ -237,8 +221,24 @@ public final class HitCollisionOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollisionOrBuilder
+        public int getHitBoxIndex() {
+            return this.hitBoxIndex_;
+        }
+
+        @Override // emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollisionOrBuilder
         public float getAttackeeHitForceAngle() {
             return this.attackeeHitForceAngle_;
+        }
+
+        @Override // emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollisionOrBuilder
+        public int getHitColliderTypeValue() {
+            return this.hitColliderType_;
+        }
+
+        @Override // emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollisionOrBuilder
+        public HitColliderTypeOuterClass.HitColliderType getHitColliderType() {
+            HitColliderTypeOuterClass.HitColliderType result = HitColliderTypeOuterClass.HitColliderType.valueOf(this.hitColliderType_);
+            return result == null ? HitColliderTypeOuterClass.HitColliderType.UNRECOGNIZED : result;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -256,23 +256,23 @@ public final class HitCollisionOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.hitPoint_ != null) {
+                output.writeMessage(3, getHitPoint());
+            }
             if (this.hitDir_ != null) {
-                output.writeMessage(3, getHitDir());
+                output.writeMessage(4, getHitDir());
             }
             if (this.hitColliderType_ != HitColliderTypeOuterClass.HitColliderType.HIT_COLLIDER_TYPE_INVALID.getNumber()) {
-                output.writeEnum(5, this.hitColliderType_);
-            }
-            if (this.attackeeHitEntityAngle_ != 0.0f) {
-                output.writeFloat(7, this.attackeeHitEntityAngle_);
+                output.writeEnum(9, this.hitColliderType_);
             }
             if (this.hitBoxIndex_ != 0) {
-                output.writeInt32(8, this.hitBoxIndex_);
+                output.writeInt32(10, this.hitBoxIndex_);
+            }
+            if (this.attackeeHitEntityAngle_ != 0.0f) {
+                output.writeFloat(12, this.attackeeHitEntityAngle_);
             }
             if (this.attackeeHitForceAngle_ != 0.0f) {
-                output.writeFloat(10, this.attackeeHitForceAngle_);
-            }
-            if (this.hitPoint_ != null) {
-                output.writeMessage(14, getHitPoint());
+                output.writeFloat(15, this.attackeeHitForceAngle_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -284,23 +284,23 @@ public final class HitCollisionOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.hitPoint_ != null) {
+                size2 = 0 + CodedOutputStream.computeMessageSize(3, getHitPoint());
+            }
             if (this.hitDir_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(3, getHitDir());
+                size2 += CodedOutputStream.computeMessageSize(4, getHitDir());
             }
             if (this.hitColliderType_ != HitColliderTypeOuterClass.HitColliderType.HIT_COLLIDER_TYPE_INVALID.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(5, this.hitColliderType_);
-            }
-            if (this.attackeeHitEntityAngle_ != 0.0f) {
-                size2 += CodedOutputStream.computeFloatSize(7, this.attackeeHitEntityAngle_);
+                size2 += CodedOutputStream.computeEnumSize(9, this.hitColliderType_);
             }
             if (this.hitBoxIndex_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(8, this.hitBoxIndex_);
+                size2 += CodedOutputStream.computeInt32Size(10, this.hitBoxIndex_);
+            }
+            if (this.attackeeHitEntityAngle_ != 0.0f) {
+                size2 += CodedOutputStream.computeFloatSize(12, this.attackeeHitEntityAngle_);
             }
             if (this.attackeeHitForceAngle_ != 0.0f) {
-                size2 += CodedOutputStream.computeFloatSize(10, this.attackeeHitForceAngle_);
-            }
-            if (this.hitPoint_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(14, getHitPoint());
+                size2 += CodedOutputStream.computeFloatSize(15, this.attackeeHitForceAngle_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -316,11 +316,11 @@ public final class HitCollisionOuterClass {
                 return equals(obj);
             }
             HitCollision other = (HitCollision) obj;
-            if (getHitBoxIndex() != other.getHitBoxIndex() || this.hitColliderType_ != other.hitColliderType_ || Float.floatToIntBits(getAttackeeHitEntityAngle()) != Float.floatToIntBits(other.getAttackeeHitEntityAngle()) || hasHitDir() != other.hasHitDir()) {
+            if (Float.floatToIntBits(getAttackeeHitEntityAngle()) != Float.floatToIntBits(other.getAttackeeHitEntityAngle()) || hasHitDir() != other.hasHitDir()) {
                 return false;
             }
             if ((!hasHitDir() || getHitDir().equals(other.getHitDir())) && hasHitPoint() == other.hasHitPoint()) {
-                return (!hasHitPoint() || getHitPoint().equals(other.getHitPoint())) && Float.floatToIntBits(getAttackeeHitForceAngle()) == Float.floatToIntBits(other.getAttackeeHitForceAngle()) && this.unknownFields.equals(other.unknownFields);
+                return (!hasHitPoint() || getHitPoint().equals(other.getHitPoint())) && getHitBoxIndex() == other.getHitBoxIndex() && Float.floatToIntBits(getAttackeeHitForceAngle()) == Float.floatToIntBits(other.getAttackeeHitForceAngle()) && this.hitColliderType_ == other.hitColliderType_ && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -330,14 +330,14 @@ public final class HitCollisionOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getHitBoxIndex())) + 5)) + this.hitColliderType_)) + 7)) + Float.floatToIntBits(getAttackeeHitEntityAngle());
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + Float.floatToIntBits(getAttackeeHitEntityAngle());
             if (hasHitDir()) {
-                hash = (53 * ((37 * hash) + 3)) + getHitDir().hashCode();
+                hash = (53 * ((37 * hash) + 4)) + getHitDir().hashCode();
             }
             if (hasHitPoint()) {
-                hash = (53 * ((37 * hash) + 14)) + getHitPoint().hashCode();
+                hash = (53 * ((37 * hash) + 3)) + getHitPoint().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 10)) + Float.floatToIntBits(getAttackeeHitForceAngle()))) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 10)) + getHitBoxIndex())) + 15)) + Float.floatToIntBits(getAttackeeHitForceAngle()))) + 9)) + this.hitColliderType_)) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -416,14 +416,14 @@ public final class HitCollisionOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HitCollisionOuterClass$HitCollision$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements HitCollisionOrBuilder {
-            private int hitBoxIndex_;
-            private int hitColliderType_ = 0;
             private float attackeeHitEntityAngle_;
             private VectorOuterClass.Vector hitDir_;
             private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> hitDirBuilder_;
             private VectorOuterClass.Vector hitPoint_;
             private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> hitPointBuilder_;
+            private int hitBoxIndex_;
             private float attackeeHitForceAngle_;
+            private int hitColliderType_ = 0;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return HitCollisionOuterClass.internal_static_HitCollision_descriptor;
@@ -451,8 +451,6 @@ public final class HitCollisionOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.hitBoxIndex_ = 0;
-                this.hitColliderType_ = 0;
                 this.attackeeHitEntityAngle_ = 0.0f;
                 if (this.hitDirBuilder_ == null) {
                     this.hitDir_ = null;
@@ -466,7 +464,9 @@ public final class HitCollisionOuterClass {
                     this.hitPoint_ = null;
                     this.hitPointBuilder_ = null;
                 }
+                this.hitBoxIndex_ = 0;
                 this.attackeeHitForceAngle_ = 0.0f;
+                this.hitColliderType_ = 0;
                 return this;
             }
 
@@ -492,8 +492,6 @@ public final class HitCollisionOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public HitCollision buildPartial() {
                 HitCollision result = new HitCollision(this);
-                result.hitBoxIndex_ = this.hitBoxIndex_;
-                result.hitColliderType_ = this.hitColliderType_;
                 result.attackeeHitEntityAngle_ = this.attackeeHitEntityAngle_;
                 if (this.hitDirBuilder_ == null) {
                     result.hitDir_ = this.hitDir_;
@@ -505,7 +503,9 @@ public final class HitCollisionOuterClass {
                 } else {
                     result.hitPoint_ = this.hitPointBuilder_.build();
                 }
+                result.hitBoxIndex_ = this.hitBoxIndex_;
                 result.attackeeHitForceAngle_ = this.attackeeHitForceAngle_;
+                result.hitColliderType_ = this.hitColliderType_;
                 onBuilt();
                 return result;
             }
@@ -553,12 +553,6 @@ public final class HitCollisionOuterClass {
                 if (other == HitCollision.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getHitBoxIndex() != 0) {
-                    setHitBoxIndex(other.getHitBoxIndex());
-                }
-                if (other.hitColliderType_ != 0) {
-                    setHitColliderTypeValue(other.getHitColliderTypeValue());
-                }
                 if (other.getAttackeeHitEntityAngle() != 0.0f) {
                     setAttackeeHitEntityAngle(other.getAttackeeHitEntityAngle());
                 }
@@ -568,8 +562,14 @@ public final class HitCollisionOuterClass {
                 if (other.hasHitPoint()) {
                     mergeHitPoint(other.getHitPoint());
                 }
+                if (other.getHitBoxIndex() != 0) {
+                    setHitBoxIndex(other.getHitBoxIndex());
+                }
                 if (other.getAttackeeHitForceAngle() != 0.0f) {
                     setAttackeeHitForceAngle(other.getAttackeeHitForceAngle());
+                }
+                if (other.hitColliderType_ != 0) {
+                    setHitColliderTypeValue(other.getHitColliderTypeValue());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -601,55 +601,6 @@ public final class HitCollisionOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollisionOrBuilder
-            public int getHitBoxIndex() {
-                return this.hitBoxIndex_;
-            }
-
-            public Builder setHitBoxIndex(int value) {
-                this.hitBoxIndex_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearHitBoxIndex() {
-                this.hitBoxIndex_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollisionOrBuilder
-            public int getHitColliderTypeValue() {
-                return this.hitColliderType_;
-            }
-
-            public Builder setHitColliderTypeValue(int value) {
-                this.hitColliderType_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollisionOrBuilder
-            public HitColliderTypeOuterClass.HitColliderType getHitColliderType() {
-                HitColliderTypeOuterClass.HitColliderType result = HitColliderTypeOuterClass.HitColliderType.valueOf(this.hitColliderType_);
-                return result == null ? HitColliderTypeOuterClass.HitColliderType.UNRECOGNIZED : result;
-            }
-
-            public Builder setHitColliderType(HitColliderTypeOuterClass.HitColliderType value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.hitColliderType_ = value.getNumber();
-                onChanged();
-                return this;
-            }
-
-            public Builder clearHitColliderType() {
-                this.hitColliderType_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollisionOrBuilder
@@ -832,6 +783,23 @@ public final class HitCollisionOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollisionOrBuilder
+            public int getHitBoxIndex() {
+                return this.hitBoxIndex_;
+            }
+
+            public Builder setHitBoxIndex(int value) {
+                this.hitBoxIndex_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearHitBoxIndex() {
+                this.hitBoxIndex_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollisionOrBuilder
             public float getAttackeeHitForceAngle() {
                 return this.attackeeHitForceAngle_;
             }
@@ -844,6 +812,38 @@ public final class HitCollisionOuterClass {
 
             public Builder clearAttackeeHitForceAngle() {
                 this.attackeeHitForceAngle_ = 0.0f;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollisionOrBuilder
+            public int getHitColliderTypeValue() {
+                return this.hitColliderType_;
+            }
+
+            public Builder setHitColliderTypeValue(int value) {
+                this.hitColliderType_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.HitCollisionOuterClass.HitCollisionOrBuilder
+            public HitColliderTypeOuterClass.HitColliderType getHitColliderType() {
+                HitColliderTypeOuterClass.HitColliderType result = HitColliderTypeOuterClass.HitColliderType.valueOf(this.hitColliderType_);
+                return result == null ? HitColliderTypeOuterClass.HitColliderType.UNRECOGNIZED : result;
+            }
+
+            public Builder setHitColliderType(HitColliderTypeOuterClass.HitColliderType value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.hitColliderType_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+
+            public Builder clearHitColliderType() {
+                this.hitColliderType_ = 0;
                 onChanged();
                 return this;
             }
@@ -883,7 +883,7 @@ public final class HitCollisionOuterClass {
     }
 
     static {
-        HitColliderTypeOuterClass.getDescriptor();
         VectorOuterClass.getDescriptor();
+        HitColliderTypeOuterClass.getDescriptor();
     }
 }

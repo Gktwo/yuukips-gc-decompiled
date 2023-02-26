@@ -90,30 +90,30 @@ public abstract class AbstractFloat2BooleanSortedMap extends AbstractFloat2Boole
     public static class KeySetIterator implements FloatBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Float2BooleanMap.Entry> f1756i;
+        protected final ObjectBidirectionalIterator<Float2BooleanMap.Entry> f1720i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Float2BooleanMap.Entry> i) {
-            this.f1756i = i;
+            this.f1720i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
         public float nextFloat() {
-            return ((Float2BooleanMap.Entry) this.f1756i.next()).getFloatKey();
+            return ((Float2BooleanMap.Entry) this.f1720i.next()).getFloatKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatBidirectionalIterator
         public float previousFloat() {
-            return this.f1756i.previous().getFloatKey();
+            return this.f1720i.previous().getFloatKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1756i.hasNext();
+            return this.f1720i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1756i.hasPrevious();
+            return this.f1720i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractFloat2BooleanSortedMap extends AbstractFloat2Boole
     public static class ValuesIterator implements BooleanIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Float2BooleanMap.Entry> f1757i;
+        protected final ObjectBidirectionalIterator<Float2BooleanMap.Entry> f1721i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Float2BooleanMap.Entry> i) {
-            this.f1757i = i;
+            this.f1721i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
         public boolean nextBoolean() {
-            return ((Float2BooleanMap.Entry) this.f1757i.next()).getBooleanValue();
+            return ((Float2BooleanMap.Entry) this.f1721i.next()).getBooleanValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1757i.hasNext();
+            return this.f1721i.hasNext();
         }
     }
 }

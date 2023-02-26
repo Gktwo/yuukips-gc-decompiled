@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BattlePassMissionUpdateNotifyOuterClass.class */
 public final class BattlePassMissionUpdateNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#BattlePassMissionUpdateNotify.proto\u001a\u0017BattlePassMission.proto\"I\n\u001dBattlePassMissionUpdateNotify\u0012(\n\fmission_list\u0018\u0001 \u0003(\u000b2\u0012.BattlePassMissionB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BattlePassMissionOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#BattlePassMissionUpdateNotify.proto\u001a\u0017BattlePassMission.proto\"H\n\u001dBattlePassMissionUpdateNotify\u0012'\n\u000bmissionList\u0018\n \u0003(\u000b2\u0012.BattlePassMissionB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BattlePassMissionOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_BattlePassMissionUpdateNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_BattlePassMissionUpdateNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BattlePassMissionUpdateNotify_descriptor, new String[]{"MissionList"});
 
@@ -55,7 +55,7 @@ public final class BattlePassMissionUpdateNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BattlePassMissionUpdateNotifyOuterClass$BattlePassMissionUpdateNotify.class */
     public static final class BattlePassMissionUpdateNotify extends GeneratedMessageV3 implements BattlePassMissionUpdateNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MISSION_LIST_FIELD_NUMBER = 1;
+        public static final int MISSIONLIST_FIELD_NUMBER = 10;
         private List<BattlePassMissionOuterClass.BattlePassMission> missionList_;
         private byte memoizedIsInitialized;
         private static final BattlePassMissionUpdateNotify DEFAULT_INSTANCE = new BattlePassMissionUpdateNotify();
@@ -106,7 +106,7 @@ public final class BattlePassMissionUpdateNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 10:
+                                case 82:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.missionList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -187,7 +187,7 @@ public final class BattlePassMissionUpdateNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.missionList_.size(); i++) {
-                output.writeMessage(1, this.missionList_.get(i));
+                output.writeMessage(10, this.missionList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,7 +200,7 @@ public final class BattlePassMissionUpdateNotifyOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.missionList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(1, this.missionList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(10, this.missionList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class BattlePassMissionUpdateNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getMissionListCount() > 0) {
-                hash = (53 * ((37 * hash) + 1)) + getMissionListList().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getMissionListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

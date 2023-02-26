@@ -81,8 +81,9 @@ public class UTF8DataInputJsonParser extends ParserBase {
     protected void _closeInput() throws IOException {
     }
 
+    /* access modifiers changed from: protected */
     @Override // com.fasterxml.jackson.core.base.ParserBase
-    protected void _releaseBuffers() throws IOException {
+    public void _releaseBuffers() throws IOException {
         _releaseBuffers();
         this._symbols.release();
     }
@@ -1338,13 +1339,13 @@ public class UTF8DataInputJsonParser extends ParserBase {
             int ch2 = (quads[ix >> 2] >> ((3 - (ix & 3)) << 3)) & 255;
             ix++;
             if (ch2 > 127) {
-                if ((ch2 & PacketOpcodes.WorldPlayerLocationNotify) == 192) {
+                if ((ch2 & PacketOpcodes.SceneAvatarStaminaStepRsp) == 192) {
                     ch = ch2 & 31;
                     needed = 1;
-                } else if ((ch2 & PacketOpcodes.ExecuteGadgetLuaRsp) == 224) {
+                } else if ((ch2 & PacketOpcodes.SceneKickPlayerRsp) == 224) {
                     ch = ch2 & 15;
                     needed = 2;
-                } else if ((ch2 & PacketOpcodes.ScenePlayerLocationNotify) == 240) {
+                } else if ((ch2 & PacketOpcodes.EnterSceneDoneReq) == 240) {
                     ch = ch2 & 7;
                     needed = 3;
                 } else {
@@ -1925,13 +1926,13 @@ public class UTF8DataInputJsonParser extends ParserBase {
         int needed;
         int c = firstByte & 255;
         if (c > 127) {
-            if ((c & PacketOpcodes.WorldPlayerLocationNotify) == 192) {
+            if ((c & PacketOpcodes.SceneAvatarStaminaStepRsp) == 192) {
                 c &= 31;
                 needed = 1;
-            } else if ((c & PacketOpcodes.ExecuteGadgetLuaRsp) == 224) {
+            } else if ((c & PacketOpcodes.SceneKickPlayerRsp) == 224) {
                 c &= 15;
                 needed = 2;
-            } else if ((c & PacketOpcodes.ScenePlayerLocationNotify) == 240) {
+            } else if ((c & PacketOpcodes.EnterSceneDoneReq) == 240) {
                 c &= 7;
                 needed = 3;
             } else {

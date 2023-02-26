@@ -7,6 +7,6 @@ public class Fec {
     public static int fecHeaderSize = 6;
     public static int fecDataSize = 2;
     public static int fecHeaderSizePlus2 = fecHeaderSize + fecDataSize;
-    public static int typeData = PacketOpcodes.PlayerEnterSceneInfoNotify;
-    public static int typeParity = 242;
+    public static int typeData = PacketOpcodes.SceneEntitiesMovesReq;
+    public static int typeParity = PacketOpcodes.EnterWorldAreaReq;
 }

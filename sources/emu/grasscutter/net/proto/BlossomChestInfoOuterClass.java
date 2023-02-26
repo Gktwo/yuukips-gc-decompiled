@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BlossomChestInfoOuterClass.class */
 public final class BlossomChestInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016BlossomChestInfo.proto\"\u0001\n\u0010BlossomChestInfo\u0012\r\n\u0005resin\u0018\u0001 \u0001(\r\u0012\u0018\n\u0010qualify_uid_list\u0018\u0002 \u0003(\r\u0012\u0017\n\u000fremain_uid_list\u0018\u0003 \u0003(\r\u0012\u0011\n\tdead_time\u0018\u0004 \u0001(\r\u0012\u001c\n\u0014blossom_refresh_type\u0018\u0005 \u0001(\r\u0012\u0012\n\nrefresh_id\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016BlossomChestInfo.proto\"\u0001\n\u0010BlossomChestInfo\u0012\r\n\u0005resin\u0018\u0001 \u0001(\r\u0012\u0016\n\u000equalifyUidList\u0018\u0002 \u0003(\r\u0012\u0015\n\rremainUidList\u0018\u0003 \u0003(\r\u0012\u0010\n\bdeadTime\u0018\u0004 \u0001(\r\u0012\u001a\n\u0012blossomRefreshType\u0018\u0005 \u0001(\r\u0012\u0011\n\trefreshId\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_BlossomChestInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_BlossomChestInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BlossomChestInfo_descriptor, new String[]{"Resin", "QualifyUidList", "RemainUidList", "DeadTime", "BlossomRefreshType", "RefreshId"});
 
@@ -65,17 +65,17 @@ public final class BlossomChestInfoOuterClass {
         private static final long serialVersionUID = 0;
         public static final int RESIN_FIELD_NUMBER = 1;
         private int resin_;
-        public static final int QUALIFY_UID_LIST_FIELD_NUMBER = 2;
+        public static final int QUALIFYUIDLIST_FIELD_NUMBER = 2;
         private Internal.IntList qualifyUidList_;
         private int qualifyUidListMemoizedSerializedSize;
-        public static final int REMAIN_UID_LIST_FIELD_NUMBER = 3;
+        public static final int REMAINUIDLIST_FIELD_NUMBER = 3;
         private Internal.IntList remainUidList_;
         private int remainUidListMemoizedSerializedSize;
-        public static final int DEAD_TIME_FIELD_NUMBER = 4;
+        public static final int DEADTIME_FIELD_NUMBER = 4;
         private int deadTime_;
-        public static final int BLOSSOM_REFRESH_TYPE_FIELD_NUMBER = 5;
+        public static final int BLOSSOMREFRESHTYPE_FIELD_NUMBER = 5;
         private int blossomRefreshType_;
-        public static final int REFRESH_ID_FIELD_NUMBER = 6;
+        public static final int REFRESHID_FIELD_NUMBER = 6;
         private int refreshId_;
         private byte memoizedIsInitialized;
         private static final BlossomChestInfo DEFAULT_INSTANCE = new BlossomChestInfo();

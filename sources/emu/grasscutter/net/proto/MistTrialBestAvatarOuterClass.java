@@ -20,19 +20,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MistTrialBestAvatarOuterClass.class */
 public final class MistTrialBestAvatarOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019MistTrialBestAvatar.proto\u001a\u0010AvatarType.proto\"^\n\u0013MistTrialBestAvatar\u0012\u0011\n\tavatar_id\u0018\u0004 \u0001(\r\u0012\u0012\n\ncostume_id\u0018\f \u0001(\r\u0012 \n\u000bavatar_type\u0018\u0006 \u0001(\u000e2\u000b.AvatarTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarTypeOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019MistTrialBestAvatar.proto\u001a\u0010AvatarType.proto\"[\n\u0013MistTrialBestAvatar\u0012\u0010\n\bavatarId\u0018\u0002 \u0001(\r\u0012\u001f\n\navatarType\u0018\u0001 \u0001(\u000e2\u000b.AvatarType\u0012\u0011\n\tcostumeId\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarTypeOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_MistTrialBestAvatar_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_MistTrialBestAvatar_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MistTrialBestAvatar_descriptor, new String[]{"AvatarId", "CostumeId", "AvatarType"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_MistTrialBestAvatar_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MistTrialBestAvatar_descriptor, new String[]{"AvatarId", "AvatarType", "CostumeId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MistTrialBestAvatarOuterClass$MistTrialBestAvatarOrBuilder.class */
     public interface MistTrialBestAvatarOrBuilder extends MessageOrBuilder {
         int getAvatarId();
 
-        int getCostumeId();
-
         int getAvatarTypeValue();
 
         AvatarTypeOuterClass.AvatarType getAvatarType();
+
+        int getCostumeId();
     }
 
     private MistTrialBestAvatarOuterClass() {
@@ -48,12 +48,12 @@ public final class MistTrialBestAvatarOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MistTrialBestAvatarOuterClass$MistTrialBestAvatar.class */
     public static final class MistTrialBestAvatar extends GeneratedMessageV3 implements MistTrialBestAvatarOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_ID_FIELD_NUMBER = 4;
+        public static final int AVATARID_FIELD_NUMBER = 2;
         private int avatarId_;
-        public static final int COSTUME_ID_FIELD_NUMBER = 12;
-        private int costumeId_;
-        public static final int AVATAR_TYPE_FIELD_NUMBER = 6;
+        public static final int AVATARTYPE_FIELD_NUMBER = 1;
         private int avatarType_;
+        public static final int COSTUMEID_FIELD_NUMBER = 3;
+        private int costumeId_;
         private byte memoizedIsInitialized;
         private static final MistTrialBestAvatar DEFAULT_INSTANCE = new MistTrialBestAvatar();
         private static final Parser<MistTrialBestAvatar> PARSER = new AbstractParser<MistTrialBestAvatar>() { // from class: emu.grasscutter.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatar.1
@@ -100,13 +100,13 @@ public final class MistTrialBestAvatarOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 32:
-                                this.avatarId_ = input.readUInt32();
-                                break;
-                            case 48:
+                            case 8:
                                 this.avatarType_ = input.readEnum();
                                 break;
-                            case 96:
+                            case 16:
+                                this.avatarId_ = input.readUInt32();
+                                break;
+                            case 24:
                                 this.costumeId_ = input.readUInt32();
                                 break;
                             default:
@@ -144,11 +144,6 @@ public final class MistTrialBestAvatarOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatarOrBuilder
-        public int getCostumeId() {
-            return this.costumeId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatarOrBuilder
         public int getAvatarTypeValue() {
             return this.avatarType_;
         }
@@ -157,6 +152,11 @@ public final class MistTrialBestAvatarOuterClass {
         public AvatarTypeOuterClass.AvatarType getAvatarType() {
             AvatarTypeOuterClass.AvatarType result = AvatarTypeOuterClass.AvatarType.valueOf(this.avatarType_);
             return result == null ? AvatarTypeOuterClass.AvatarType.UNRECOGNIZED : result;
+        }
+
+        @Override // emu.grasscutter.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatarOrBuilder
+        public int getCostumeId() {
+            return this.costumeId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -174,14 +174,14 @@ public final class MistTrialBestAvatarOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.avatarId_ != 0) {
-                output.writeUInt32(4, this.avatarId_);
-            }
             if (this.avatarType_ != AvatarTypeOuterClass.AvatarType.AVATAR_TYPE_NONE.getNumber()) {
-                output.writeEnum(6, this.avatarType_);
+                output.writeEnum(1, this.avatarType_);
+            }
+            if (this.avatarId_ != 0) {
+                output.writeUInt32(2, this.avatarId_);
             }
             if (this.costumeId_ != 0) {
-                output.writeUInt32(12, this.costumeId_);
+                output.writeUInt32(3, this.costumeId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -193,14 +193,14 @@ public final class MistTrialBestAvatarOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.avatarId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.avatarId_);
-            }
             if (this.avatarType_ != AvatarTypeOuterClass.AvatarType.AVATAR_TYPE_NONE.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(6, this.avatarType_);
+                size2 = 0 + CodedOutputStream.computeEnumSize(1, this.avatarType_);
+            }
+            if (this.avatarId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(2, this.avatarId_);
             }
             if (this.costumeId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.costumeId_);
+                size2 += CodedOutputStream.computeUInt32Size(3, this.costumeId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -216,7 +216,7 @@ public final class MistTrialBestAvatarOuterClass {
                 return equals(obj);
             }
             MistTrialBestAvatar other = (MistTrialBestAvatar) obj;
-            return getAvatarId() == other.getAvatarId() && getCostumeId() == other.getCostumeId() && this.avatarType_ == other.avatarType_ && this.unknownFields.equals(other.unknownFields);
+            return getAvatarId() == other.getAvatarId() && this.avatarType_ == other.avatarType_ && getCostumeId() == other.getCostumeId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -224,7 +224,7 @@ public final class MistTrialBestAvatarOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getAvatarId())) + 12)) + getCostumeId())) + 6)) + this.avatarType_)) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getAvatarId())) + 1)) + this.avatarType_)) + 3)) + getCostumeId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -304,8 +304,8 @@ public final class MistTrialBestAvatarOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MistTrialBestAvatarOuterClass$MistTrialBestAvatar$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements MistTrialBestAvatarOrBuilder {
             private int avatarId_;
-            private int costumeId_;
             private int avatarType_ = 0;
+            private int costumeId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return MistTrialBestAvatarOuterClass.internal_static_MistTrialBestAvatar_descriptor;
@@ -334,8 +334,8 @@ public final class MistTrialBestAvatarOuterClass {
             public Builder clear() {
                 clear();
                 this.avatarId_ = 0;
-                this.costumeId_ = 0;
                 this.avatarType_ = 0;
+                this.costumeId_ = 0;
                 return this;
             }
 
@@ -362,8 +362,8 @@ public final class MistTrialBestAvatarOuterClass {
             public MistTrialBestAvatar buildPartial() {
                 MistTrialBestAvatar result = new MistTrialBestAvatar(this);
                 result.avatarId_ = this.avatarId_;
-                result.costumeId_ = this.costumeId_;
                 result.avatarType_ = this.avatarType_;
+                result.costumeId_ = this.costumeId_;
                 onBuilt();
                 return result;
             }
@@ -414,11 +414,11 @@ public final class MistTrialBestAvatarOuterClass {
                 if (other.getAvatarId() != 0) {
                     setAvatarId(other.getAvatarId());
                 }
-                if (other.getCostumeId() != 0) {
-                    setCostumeId(other.getCostumeId());
-                }
                 if (other.avatarType_ != 0) {
                     setAvatarTypeValue(other.getAvatarTypeValue());
+                }
+                if (other.getCostumeId() != 0) {
+                    setCostumeId(other.getCostumeId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -470,23 +470,6 @@ public final class MistTrialBestAvatarOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatarOrBuilder
-            public int getCostumeId() {
-                return this.costumeId_;
-            }
-
-            public Builder setCostumeId(int value) {
-                this.costumeId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearCostumeId() {
-                this.costumeId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatarOrBuilder
             public int getAvatarTypeValue() {
                 return this.avatarType_;
             }
@@ -514,6 +497,23 @@ public final class MistTrialBestAvatarOuterClass {
 
             public Builder clearAvatarType() {
                 this.avatarType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatarOrBuilder
+            public int getCostumeId() {
+                return this.costumeId_;
+            }
+
+            public Builder setCostumeId(int value) {
+                this.costumeId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearCostumeId() {
+                this.costumeId_ = 0;
                 onChanged();
                 return this;
             }

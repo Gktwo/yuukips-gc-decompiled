@@ -25,12 +25,12 @@ public class ObjectOpenHashBigSet<K> extends AbstractObjectSet<K> implements Ser
     protected transient boolean containsNull;
 
     /* renamed from: n */
-    protected transient long f2720n;
+    protected transient long f2684n;
     protected transient long maxFill;
     protected final transient long minN;
 
     /* renamed from: f */
-    protected final float f2721f;
+    protected final float f2685f;
     protected long size;
     private static final Collector<Object, ?, ObjectOpenHashBigSet<Object>> TO_SET_COLLECTOR = Collector.of(ObjectOpenHashBigSet::new, (v0, v1) -> {
         v0.add(v1);
@@ -39,7 +39,7 @@ public class ObjectOpenHashBigSet<K> extends AbstractObjectSet<K> implements Ser
     }, new Collector.Characteristics[0]);
 
     private void initMasks() {
-        this.mask = this.f2720n - 1;
+        this.mask = this.f2684n - 1;
         this.segmentMask = this.key[0].length - 1;
         this.baseMask = this.key.length - 1;
     }
@@ -47,15 +47,15 @@ public class ObjectOpenHashBigSet<K> extends AbstractObjectSet<K> implements Ser
     public ObjectOpenHashBigSet(long expected, float f) {
         if (f <= 0.0f || f > 1.0f) {
             throw new IllegalArgumentException("Load factor must be greater than 0 and smaller than or equal to 1");
-        } else if (this.f2720n < 0) {
+        } else if (this.f2684n < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2721f = f;
+            this.f2685f = f;
             long bigArraySize = HashCommon.bigArraySize(expected, f);
-            this.f2720n = bigArraySize;
+            this.f2684n = bigArraySize;
             this.minN = bigArraySize;
-            this.maxFill = HashCommon.maxFill(this.f2720n, f);
-            this.key = (K[][]) ObjectBigArrays.newBigArray(this.f2720n);
+            this.maxFill = HashCommon.maxFill(this.f2684n, f);
+            this.key = (K[][]) ObjectBigArrays.newBigArray(this.f2684n);
             initMasks();
         }
     }
@@ -144,8 +144,8 @@ public class ObjectOpenHashBigSet<K> extends AbstractObjectSet<K> implements Ser
     }
 
     private void ensureCapacity(long capacity) {
-        long needed = HashCommon.bigArraySize(capacity, this.f2721f);
-        if (needed > this.f2720n) {
+        long needed = HashCommon.bigArraySize(capacity, this.f2685f);
+        if (needed > this.f2684n) {
             rehash(needed);
         }
     }
@@ -153,7 +153,7 @@ public class ObjectOpenHashBigSet<K> extends AbstractObjectSet<K> implements Ser
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public boolean addAll(Collection<? extends K> c) {
         long size = Size64.sizeOf(c);
-        if (((double) this.f2721f) <= 0.5d) {
+        if (((double) this.f2685f) <= 0.5d) {
             ensureCapacity(size);
         } else {
             ensureCapacity(size64() + size);
@@ -199,7 +199,7 @@ public class ObjectOpenHashBigSet<K> extends AbstractObjectSet<K> implements Ser
         if (j < this.maxFill) {
             return true;
         }
-        rehash(2 * this.f2720n);
+        rehash(2 * this.f2684n);
         return true;
     }
 
@@ -238,7 +238,7 @@ public class ObjectOpenHashBigSet<K> extends AbstractObjectSet<K> implements Ser
         long j = this.size;
         this.size = j + 1;
         if (j >= this.maxFill) {
-            rehash(2 * this.f2720n);
+            rehash(2 * this.f2684n);
         }
         return k;
     }
@@ -273,20 +273,20 @@ public class ObjectOpenHashBigSet<K> extends AbstractObjectSet<K> implements Ser
     private boolean removeEntry(int base, int displ) {
         this.size--;
         shiftKeys((((long) base) * 134217728) + ((long) displ));
-        if (this.f2720n <= this.minN || this.size >= this.maxFill / 4 || this.f2720n <= 16) {
+        if (this.f2684n <= this.minN || this.size >= this.maxFill / 4 || this.f2684n <= 16) {
             return true;
         }
-        rehash(this.f2720n / 2);
+        rehash(this.f2684n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
         this.size--;
-        if (this.f2720n <= this.minN || this.size >= this.maxFill / 4 || this.f2720n <= 16) {
+        if (this.f2684n <= this.minN || this.size >= this.maxFill / 4 || this.f2684n <= 16) {
             return true;
         }
-        rehash(this.f2720n / 2);
+        rehash(this.f2684n / 2);
         return true;
     }
 
@@ -409,20 +409,20 @@ public class ObjectOpenHashBigSet<K> extends AbstractObjectSet<K> implements Ser
         long last;
 
         /* renamed from: c */
-        long f2722c;
+        long f2686c;
         boolean mustReturnNull;
         ObjectArrayList<K> wrapped;
 
         private SetIterator() {
             this.base = ObjectOpenHashBigSet.this.key.length;
             this.last = -1;
-            this.f2722c = ObjectOpenHashBigSet.this.size;
+            this.f2686c = ObjectOpenHashBigSet.this.size;
             this.mustReturnNull = ObjectOpenHashBigSet.this.containsNull;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2722c != 0;
+            return this.f2686c != 0;
         }
 
         @Override // java.util.Iterator
@@ -431,10 +431,10 @@ public class ObjectOpenHashBigSet<K> extends AbstractObjectSet<K> implements Ser
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2722c--;
+            this.f2686c--;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = ObjectOpenHashBigSet.this.f2720n;
+                this.last = ObjectOpenHashBigSet.this.f2684n;
                 return null;
             }
             K[][] key = ObjectOpenHashBigSet.this.key;
@@ -505,7 +505,7 @@ public class ObjectOpenHashBigSet<K> extends AbstractObjectSet<K> implements Ser
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == ObjectOpenHashBigSet.this.f2720n) {
+            if (this.last == ObjectOpenHashBigSet.this.f2684n) {
                 ObjectOpenHashBigSet.this.containsNull = false;
             } else if (this.base >= 0) {
                 shiftKeys(this.last);
@@ -533,22 +533,22 @@ public class ObjectOpenHashBigSet<K> extends AbstractObjectSet<K> implements Ser
         long max;
 
         /* renamed from: c */
-        long f2723c;
+        long f2687c;
         boolean mustReturnNull;
         boolean hasSplit;
 
         SetSpliterator() {
             this.pos = 0;
-            this.max = ObjectOpenHashBigSet.this.f2720n;
-            this.f2723c = 0;
+            this.max = ObjectOpenHashBigSet.this.f2684n;
+            this.f2687c = 0;
             this.mustReturnNull = ObjectOpenHashBigSet.this.containsNull;
             this.hasSplit = false;
         }
 
         SetSpliterator(long pos, long max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = ObjectOpenHashBigSet.this.f2720n;
-            this.f2723c = 0;
+            this.max = ObjectOpenHashBigSet.this.f2684n;
+            this.f2687c = 0;
             this.mustReturnNull = ObjectOpenHashBigSet.this.containsNull;
             this.hasSplit = false;
             this.pos = pos;
@@ -561,7 +561,7 @@ public class ObjectOpenHashBigSet<K> extends AbstractObjectSet<K> implements Ser
         public boolean tryAdvance(Consumer<? super K> action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2723c++;
+                this.f2687c++;
                 action.accept(null);
                 return true;
             }
@@ -569,7 +569,7 @@ public class ObjectOpenHashBigSet<K> extends AbstractObjectSet<K> implements Ser
             while (this.pos < this.max) {
                 Object obj = (Object) BigArrays.get(key, this.pos);
                 if (obj != 0) {
-                    this.f2723c++;
+                    this.f2687c++;
                     this.pos++;
                     action.accept(obj);
                     return true;
@@ -584,14 +584,14 @@ public class ObjectOpenHashBigSet<K> extends AbstractObjectSet<K> implements Ser
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
                 action.accept(null);
-                this.f2723c++;
+                this.f2687c++;
             }
             K[][] key = ObjectOpenHashBigSet.this.key;
             while (this.pos < this.max) {
                 Object obj = (Object) BigArrays.get(key, this.pos);
                 if (obj != 0) {
                     action.accept(obj);
-                    this.f2723c++;
+                    this.f2687c++;
                 }
                 this.pos++;
             }
@@ -605,9 +605,9 @@ public class ObjectOpenHashBigSet<K> extends AbstractObjectSet<K> implements Ser
         @Override // java.util.Spliterator
         public long estimateSize() {
             if (!this.hasSplit) {
-                return ObjectOpenHashBigSet.this.size - this.f2723c;
+                return ObjectOpenHashBigSet.this.size - this.f2687c;
             }
-            return Math.min(ObjectOpenHashBigSet.this.size - this.f2723c, ((long) ((((double) ObjectOpenHashBigSet.this.realSize()) / ((double) ObjectOpenHashBigSet.this.f2720n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min(ObjectOpenHashBigSet.this.size - this.f2687c, ((long) ((((double) ObjectOpenHashBigSet.this.realSize()) / ((double) ObjectOpenHashBigSet.this.f2684n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -746,7 +746,7 @@ public class ObjectOpenHashBigSet<K> extends AbstractObjectSet<K> implements Ser
             action.accept(null);
         }
         long pos = 0;
-        long max = this.f2720n;
+        long max = this.f2684n;
         K[][] kArr = this.key;
         while ((pos == true ? 1 : 0) < max) {
             pos++;
@@ -762,8 +762,8 @@ public class ObjectOpenHashBigSet<K> extends AbstractObjectSet<K> implements Ser
     }
 
     public boolean trim(long n) {
-        long l = HashCommon.bigArraySize(n, this.f2721f);
-        if (l >= this.f2720n || this.size > HashCommon.maxFill(l, this.f2721f)) {
+        long l = HashCommon.bigArraySize(n, this.f2685f);
+        if (l >= this.f2684n || this.size > HashCommon.maxFill(l, this.f2685f)) {
             return true;
         }
         try {
@@ -971,9 +971,9 @@ public class ObjectOpenHashBigSet<K> extends AbstractObjectSet<K> implements Ser
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int i;
         s.defaultReadObject();
-        this.f2720n = HashCommon.bigArraySize(this.size, this.f2721f);
-        this.maxFill = HashCommon.maxFill(this.f2720n, this.f2721f);
-        K[][] key = (K[][]) ObjectBigArrays.newBigArray(this.f2720n);
+        this.f2684n = HashCommon.bigArraySize(this.size, this.f2685f);
+        this.maxFill = HashCommon.maxFill(this.f2684n, this.f2685f);
+        K[][] key = (K[][]) ObjectBigArrays.newBigArray(this.f2684n);
         this.key = key;
         initMasks();
         long i2 = this.size;

@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CrystalLinkDungeonAvatarInfoOuterClass.class */
 public final class CrystalLinkDungeonAvatarInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"CrystalLinkDungeonAvatarInfo.proto\"E\n\u001cCrystalLinkDungeonAvatarInfo\u0012\u0013\n\u000bavatar_guid\u0018\u0004 \u0001(\u0004\u0012\u0010\n\bis_trial\u0018\u0005 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"CrystalLinkDungeonAvatarInfo.proto\"C\n\u001cCrystalLinkDungeonAvatarInfo\u0012\u0012\n\navatarGuid\u0018\u0002 \u0001(\u0004\u0012\u000f\n\u0007isTrial\u0018\f \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_CrystalLinkDungeonAvatarInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_CrystalLinkDungeonAvatarInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CrystalLinkDungeonAvatarInfo_descriptor, new String[]{"AvatarGuid", "IsTrial"});
 
@@ -44,9 +44,9 @@ public final class CrystalLinkDungeonAvatarInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CrystalLinkDungeonAvatarInfoOuterClass$CrystalLinkDungeonAvatarInfo.class */
     public static final class CrystalLinkDungeonAvatarInfo extends GeneratedMessageV3 implements CrystalLinkDungeonAvatarInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 4;
+        public static final int AVATARGUID_FIELD_NUMBER = 2;
         private long avatarGuid_;
-        public static final int IS_TRIAL_FIELD_NUMBER = 5;
+        public static final int ISTRIAL_FIELD_NUMBER = 12;
         private boolean isTrial_;
         private byte memoizedIsInitialized;
         private static final CrystalLinkDungeonAvatarInfo DEFAULT_INSTANCE = new CrystalLinkDungeonAvatarInfo();
@@ -93,10 +93,10 @@ public final class CrystalLinkDungeonAvatarInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 32:
+                            case 16:
                                 this.avatarGuid_ = input.readUInt64();
                                 break;
-                            case 40:
+                            case 96:
                                 this.isTrial_ = input.readBool();
                                 break;
                             default:
@@ -154,10 +154,10 @@ public final class CrystalLinkDungeonAvatarInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.avatarGuid_ != 0) {
-                output.writeUInt64(4, this.avatarGuid_);
+                output.writeUInt64(2, this.avatarGuid_);
             }
             if (this.isTrial_) {
-                output.writeBool(5, this.isTrial_);
+                output.writeBool(12, this.isTrial_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -170,10 +170,10 @@ public final class CrystalLinkDungeonAvatarInfoOuterClass {
             }
             int size2 = 0;
             if (this.avatarGuid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(4, this.avatarGuid_);
+                size2 = 0 + CodedOutputStream.computeUInt64Size(2, this.avatarGuid_);
             }
             if (this.isTrial_) {
-                size2 += CodedOutputStream.computeBoolSize(5, this.isTrial_);
+                size2 += CodedOutputStream.computeBoolSize(12, this.isTrial_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -197,7 +197,7 @@ public final class CrystalLinkDungeonAvatarInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + Internal.hashLong(getAvatarGuid()))) + 5)) + Internal.hashBoolean(getIsTrial()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + Internal.hashLong(getAvatarGuid()))) + 12)) + Internal.hashBoolean(getIsTrial()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

@@ -340,7 +340,7 @@ public class UrlEncoded extends MultiMap<String> implements Cloneable {
     public static void decodeUtf16To(InputStream in, MultiMap<String> map, int maxLength, int maxKeys) throws IOException {
         InputStreamReader input = new InputStreamReader(in, StandardCharsets.UTF_16);
         StringWriter buf = new StringWriter(8192);
-        C5747IO.copy(input, buf, (long) maxLength);
+        C5739IO.copy(input, buf, (long) maxLength);
         decodeTo(buf.getBuffer().toString(), map, StandardCharsets.UTF_16);
     }
 

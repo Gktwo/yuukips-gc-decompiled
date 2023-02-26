@@ -32,24 +32,24 @@ public final class BasicAuthFilter implements Plugin {
     public void apply(@NotNull Javalin app) {
         Intrinsics.checkNotNullParameter(app, "app");
         app.before((v1) -> {
-            m5755apply$lambda3(r1, v1);
+            m5752apply$lambda3(r1, v1);
         });
     }
 
     /* renamed from: apply$lambda-3  reason: not valid java name */
-    private static final void m5755apply$lambda3(BasicAuthFilter this$0, Context ctx) {
+    private static final void m5752apply$lambda3(BasicAuthFilter this$0, Context ctx) {
         Object obj;
         boolean matched;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(ctx, "ctx");
         try {
             Result.Companion companion = Result.Companion;
-            obj = Result.m7062constructorimpl(ctx.basicAuthCredentials());
+            obj = Result.m7059constructorimpl(ctx.basicAuthCredentials());
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            obj = Result.m7062constructorimpl(ResultKt.createFailure(th));
+            obj = Result.m7059constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m7058exceptionOrNullimpl(obj) == null) {
+        if (Result.m7055exceptionOrNullimpl(obj) == null) {
             BasicAuthCredentials $dstr$user$pass = (BasicAuthCredentials) obj;
             matched = Intrinsics.areEqual($dstr$user$pass.component1(), this$0.username) && Intrinsics.areEqual($dstr$user$pass.component2(), this$0.password);
         } else {

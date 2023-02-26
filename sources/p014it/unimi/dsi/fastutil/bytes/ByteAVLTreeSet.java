@@ -987,7 +987,7 @@ public class ByteAVLTreeSet extends AbstractByteSortedSet implements Serializabl
         byte from;
 
         /* renamed from: to */
-        byte f1245to;
+        byte f1209to;
         boolean bottom;
         boolean top;
 
@@ -995,7 +995,7 @@ public class ByteAVLTreeSet extends AbstractByteSortedSet implements Serializabl
             if (bottom || top || ByteAVLTreeSet.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f1245to = to;
+                this.f1209to = to;
                 this.top = top;
                 return;
             }
@@ -1013,7 +1013,7 @@ public class ByteAVLTreeSet extends AbstractByteSortedSet implements Serializabl
 
         /* renamed from: in */
         final boolean m1094in(byte k) {
-            return (this.bottom || ByteAVLTreeSet.this.compare(k, this.from) >= 0) && (this.top || ByteAVLTreeSet.this.compare(k, this.f1245to) < 0);
+            return (this.bottom || ByteAVLTreeSet.this.compare(k, this.from) >= 0) && (this.top || ByteAVLTreeSet.this.compare(k, this.f1209to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteCollection, p014it.unimi.dsi.fastutil.bytes.ByteCollection
@@ -1026,7 +1026,7 @@ public class ByteAVLTreeSet extends AbstractByteSortedSet implements Serializabl
             if (m1094in(k)) {
                 return ByteAVLTreeSet.this.add(k);
             }
-            throw new IllegalArgumentException("Element (" + ((int) k) + ") out of range [" + (this.bottom ? "-" : String.valueOf((int) this.from)) + ", " + (this.top ? "-" : String.valueOf((int) this.f1245to)) + ")");
+            throw new IllegalArgumentException("Element (" + ((int) k) + ") out of range [" + (this.bottom ? "-" : String.valueOf((int) this.from)) + ", " + (this.top ? "-" : String.valueOf((int) this.f1209to)) + ")");
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteSet, p014it.unimi.dsi.fastutil.bytes.ByteSet
@@ -1071,7 +1071,7 @@ public class ByteAVLTreeSet extends AbstractByteSortedSet implements Serializabl
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteSortedSet
         public ByteSortedSet headSet(byte to) {
-            if (!this.top && ByteAVLTreeSet.this.compare(to, this.f1245to) >= 0) {
+            if (!this.top && ByteAVLTreeSet.this.compare(to, this.f1209to) >= 0) {
                 return this;
             }
             return new Subset(this.from, this.bottom, to, false);
@@ -1082,7 +1082,7 @@ public class ByteAVLTreeSet extends AbstractByteSortedSet implements Serializabl
             if (!this.bottom && ByteAVLTreeSet.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Subset(from, false, this.f1245to, this.top);
+            return new Subset(from, false, this.f1209to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteSortedSet
@@ -1091,12 +1091,12 @@ public class ByteAVLTreeSet extends AbstractByteSortedSet implements Serializabl
                 return new Subset(from, false, to, false);
             }
             if (!this.top) {
-                to = ByteAVLTreeSet.this.compare(to, this.f1245to) < 0 ? to : this.f1245to;
+                to = ByteAVLTreeSet.this.compare(to, this.f1209to) < 0 ? to : this.f1209to;
             }
             if (!this.bottom) {
                 from = ByteAVLTreeSet.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f1245to) ? new Subset(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f1209to) ? new Subset(from, false, to, false) : this;
         }
 
         public Entry firstEntry() {
@@ -1115,7 +1115,7 @@ public class ByteAVLTreeSet extends AbstractByteSortedSet implements Serializabl
             if (e == null) {
                 return null;
             }
-            if (this.top || ByteAVLTreeSet.this.compare(e.key, this.f1245to) < 0) {
+            if (this.top || ByteAVLTreeSet.this.compare(e.key, this.f1209to) < 0) {
                 return e;
             }
             return null;
@@ -1129,8 +1129,8 @@ public class ByteAVLTreeSet extends AbstractByteSortedSet implements Serializabl
             if (this.top) {
                 e = ByteAVLTreeSet.this.lastEntry;
             } else {
-                e = ByteAVLTreeSet.this.locateKey(this.f1245to);
-                if (ByteAVLTreeSet.this.compare(e.key, this.f1245to) >= 0) {
+                e = ByteAVLTreeSet.this.locateKey(this.f1209to);
+                if (ByteAVLTreeSet.this.compare(e.key, this.f1209to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1208,7 +1208,7 @@ public class ByteAVLTreeSet extends AbstractByteSortedSet implements Serializabl
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteAVLTreeSet.SetIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Subset.this.top && this.next != null && ByteAVLTreeSet.this.compare(this.next.key, Subset.this.f1245to) >= 0) {
+                if (!Subset.this.top && this.next != null && ByteAVLTreeSet.this.compare(this.next.key, Subset.this.f1209to) >= 0) {
                     this.next = null;
                 }
             }

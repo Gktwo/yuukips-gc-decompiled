@@ -49,13 +49,13 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f2324n;
+    protected transient int f2288n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2325f;
+    protected final float f2289f;
     protected transient Long2IntSortedMap.FastSortedEntrySet entries;
     protected transient LongSortedSet keys;
     protected transient IntCollection values;
@@ -68,15 +68,15 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2325f = f;
+            this.f2289f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2324n = arraySize;
+            this.f2288n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2324n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2324n, f);
-            this.key = new long[this.f2324n + 1];
-            this.value = new int[this.f2324n + 1];
-            this.link = new long[this.f2324n + 1];
+            this.mask = this.f2288n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2288n, f);
+            this.key = new long[this.f2288n + 1];
+            this.value = new int[this.f2288n + 1];
+            this.link = new long[this.f2288n + 1];
         }
     }
 
@@ -125,15 +125,15 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2325f);
-        if (needed > this.f2324n) {
+        int needed = HashCommon.arraySize(capacity, this.f2289f);
+        if (needed > this.f2288n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2325f)))));
-        if (needed > this.f2324n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2289f)))));
+        if (needed > this.f2288n) {
             rehash(needed);
         }
     }
@@ -144,8 +144,8 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f2324n > this.minN && this.size < this.maxFill / 4 && this.f2324n > 16) {
-            rehash(this.f2324n / 2);
+        if (this.f2288n > this.minN && this.size < this.maxFill / 4 && this.f2288n > 16) {
+            rehash(this.f2288n / 2);
         }
         return oldValue;
     }
@@ -153,18 +153,18 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
     /* access modifiers changed from: private */
     public int removeNullEntry() {
         this.containsNullKey = false;
-        int oldValue = this.value[this.f2324n];
+        int oldValue = this.value[this.f2288n];
         this.size--;
-        fixPointers(this.f2324n);
-        if (this.f2324n > this.minN && this.size < this.maxFill / 4 && this.f2324n > 16) {
-            rehash(this.f2324n / 2);
+        fixPointers(this.f2288n);
+        if (this.f2288n > this.minN && this.size < this.maxFill / 4 && this.f2288n > 16) {
+            rehash(this.f2288n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLong2IntMap, java.util.Map
     public void putAll(Map<? extends Long, ? extends Integer> m) {
-        if (((double) this.f2325f) <= 0.5d) {
+        if (((double) this.f2289f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -175,7 +175,7 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
     private int find(long k) {
         long curr;
         if (k == 0) {
-            return this.containsNullKey ? this.f2324n : -(this.f2324n + 1);
+            return this.containsNullKey ? this.f2288n : -(this.f2288n + 1);
         }
         long[] key = this.key;
         int mix = ((int) HashCommon.mix(k)) & this.mask;
@@ -199,7 +199,7 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
     }
 
     private void insert(int pos, long k, int v) {
-        if (pos == this.f2324n) {
+        if (pos == this.f2288n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -218,7 +218,7 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2325f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2289f));
         }
     }
 
@@ -262,9 +262,9 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f2324n, incr);
+            return addToValue(this.f2288n, incr);
         } else {
-            pos = this.f2324n;
+            pos = this.f2288n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -283,7 +283,7 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2325f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2289f));
         }
         return this.defRetValue;
     }
@@ -365,13 +365,13 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
         }
         this.size--;
         int v = this.value[pos];
-        if (pos == this.f2324n) {
+        if (pos == this.f2288n) {
             this.containsNullKey = false;
         } else {
             shiftKeys(pos);
         }
-        if (this.f2324n > this.minN && this.size < this.maxFill / 4 && this.f2324n > 16) {
-            rehash(this.f2324n / 2);
+        if (this.f2288n > this.minN && this.size < this.maxFill / 4 && this.f2288n > 16) {
+            rehash(this.f2288n / 2);
         }
         return v;
     }
@@ -389,13 +389,13 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
         }
         this.size--;
         int v = this.value[pos];
-        if (pos == this.f2324n) {
+        if (pos == this.f2288n) {
             this.containsNullKey = false;
         } else {
             shiftKeys(pos);
         }
-        if (this.f2324n > this.minN && this.size < this.maxFill / 4 && this.f2324n > 16) {
-            rehash(this.f2324n / 2);
+        if (this.f2288n > this.minN && this.size < this.maxFill / 4 && this.f2288n > 16) {
+            rehash(this.f2288n / 2);
         }
         return v;
     }
@@ -475,8 +475,8 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
         } else if (!this.containsNullKey) {
             return this.defRetValue;
         } else {
-            moveIndexToFirst(this.f2324n);
-            return this.value[this.f2324n];
+            moveIndexToFirst(this.f2288n);
+            return this.value[this.f2288n];
         }
     }
 
@@ -507,8 +507,8 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
         } else if (!this.containsNullKey) {
             return this.defRetValue;
         } else {
-            moveIndexToLast(this.f2324n);
-            return this.value[this.f2324n];
+            moveIndexToLast(this.f2288n);
+            return this.value[this.f2288n];
         }
     }
 
@@ -536,11 +536,11 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
                 return setValue(pos, v);
             }
         } else if (this.containsNullKey) {
-            moveIndexToFirst(this.f2324n);
-            return setValue(this.f2324n, v);
+            moveIndexToFirst(this.f2288n);
+            return setValue(this.f2288n, v);
         } else {
             this.containsNullKey = true;
-            pos = this.f2324n;
+            pos = this.f2288n;
         }
         this.key[pos] = k;
         this.value[pos] = v;
@@ -558,7 +558,7 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size, this.f2325f));
+            rehash(HashCommon.arraySize(this.size, this.f2289f));
         }
         return this.defRetValue;
     }
@@ -587,11 +587,11 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
                 return setValue(pos, v);
             }
         } else if (this.containsNullKey) {
-            moveIndexToLast(this.f2324n);
-            return setValue(this.f2324n, v);
+            moveIndexToLast(this.f2288n);
+            return setValue(this.f2288n, v);
         } else {
             this.containsNullKey = true;
-            pos = this.f2324n;
+            pos = this.f2288n;
         }
         this.key[pos] = k;
         this.value[pos] = v;
@@ -609,7 +609,7 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size, this.f2325f));
+            rehash(HashCommon.arraySize(this.size, this.f2289f));
         }
         return this.defRetValue;
     }
@@ -618,7 +618,7 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
     public int get(long k) {
         long curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f2324n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2288n] : this.defRetValue;
         }
         long[] key = this.key;
         int mix = ((int) HashCommon.mix(k)) & this.mask;
@@ -672,10 +672,10 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
     public boolean containsValue(int v) {
         int[] value = this.value;
         long[] key = this.key;
-        if (this.containsNullKey && value[this.f2324n] == v) {
+        if (this.containsNullKey && value[this.f2288n] == v) {
             return true;
         }
-        int i = this.f2324n;
+        int i = this.f2288n;
         while (true) {
             i--;
             if (i == 0) {
@@ -691,7 +691,7 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
     public int getOrDefault(long k, int defaultValue) {
         long curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f2324n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2288n] : defaultValue;
         }
         long[] key = this.key;
         int mix = ((int) HashCommon.mix(k)) & this.mask;
@@ -750,7 +750,7 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
                     return true;
                 }
             }
-        } else if (!this.containsNullKey || v != this.value[this.f2324n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f2288n]) {
             return false;
         } else {
             removeNullEntry();
@@ -1121,8 +1121,8 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
             this.index = -1;
             if (from == 0) {
                 if (Long2IntLinkedOpenHashMap.this.containsNullKey) {
-                    this.next = (int) Long2IntLinkedOpenHashMap.this.link[Long2IntLinkedOpenHashMap.this.f2324n];
-                    this.prev = Long2IntLinkedOpenHashMap.this.f2324n;
+                    this.next = (int) Long2IntLinkedOpenHashMap.this.link[Long2IntLinkedOpenHashMap.this.f2288n];
+                    this.prev = Long2IntLinkedOpenHashMap.this.f2288n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + from + " does not belong to this map.");
@@ -1449,7 +1449,7 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
             long k = ((Long) e.getKey()).longValue();
             int v = ((Integer) e.getValue()).intValue();
             if (k == 0) {
-                return Long2IntLinkedOpenHashMap.this.containsNullKey && Long2IntLinkedOpenHashMap.this.value[Long2IntLinkedOpenHashMap.this.f2324n] == v;
+                return Long2IntLinkedOpenHashMap.this.containsNullKey && Long2IntLinkedOpenHashMap.this.value[Long2IntLinkedOpenHashMap.this.f2288n] == v;
             }
             long[] key = Long2IntLinkedOpenHashMap.this.key;
             int mix = ((int) HashCommon.mix(k)) & Long2IntLinkedOpenHashMap.this.mask;
@@ -1510,7 +1510,7 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
                     Long2IntLinkedOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Long2IntLinkedOpenHashMap.this.containsNullKey || Long2IntLinkedOpenHashMap.this.value[Long2IntLinkedOpenHashMap.this.f2324n] != v) {
+            } else if (!Long2IntLinkedOpenHashMap.this.containsNullKey || Long2IntLinkedOpenHashMap.this.value[Long2IntLinkedOpenHashMap.this.f2288n] != v) {
                 return false;
             } else {
                 Long2IntLinkedOpenHashMap.this.removeNullEntry();
@@ -1808,8 +1808,8 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2325f)));
-        if (l >= this.f2324n || this.size > HashCommon.maxFill(l, this.f2325f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2289f)));
+        if (l >= this.f2288n || this.size > HashCommon.maxFill(l, this.f2289f)) {
             return true;
         }
         try {
@@ -1870,9 +1870,9 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f2324n = newN;
+        this.f2288n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f2324n, this.f2325f);
+        this.maxFill = HashCommon.maxFill(this.f2288n, this.f2289f);
         this.key = newKey;
         this.value = newValue;
     }
@@ -1911,7 +1911,7 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f2324n];
+            h += this.value[this.f2288n];
         }
         return h;
     }
@@ -1937,14 +1937,14 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2324n = HashCommon.arraySize(this.size, this.f2325f);
-        this.maxFill = HashCommon.maxFill(this.f2324n, this.f2325f);
-        this.mask = this.f2324n - 1;
-        long[] key = new long[this.f2324n + 1];
+        this.f2288n = HashCommon.arraySize(this.size, this.f2289f);
+        this.maxFill = HashCommon.maxFill(this.f2288n, this.f2289f);
+        this.mask = this.f2288n - 1;
+        long[] key = new long[this.f2288n + 1];
         this.key = key;
-        int[] value = new int[this.f2324n + 1];
+        int[] value = new int[this.f2288n + 1];
         this.value = value;
-        long[] link = new long[this.f2324n + 1];
+        long[] link = new long[this.f2288n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -1969,7 +1969,7 @@ public class Long2IntLinkedOpenHashMap extends AbstractLong2IntSortedMap impleme
                     i2 = this.mask;
                 }
             } else {
-                pos = this.f2324n;
+                pos = this.f2288n;
                 this.containsNullKey = true;
             }
             key[pos] = k;

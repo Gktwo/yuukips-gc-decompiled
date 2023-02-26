@@ -15,19 +15,19 @@ public final class Bzip2DivSufSort {
     private static final int[] LOG_2_TABLE = {-1, 0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7};
 
     /* renamed from: SA */
-    private final int[] f998SA;
+    private final int[] f962SA;
 
     /* renamed from: T */
-    private final byte[] f999T;
+    private final byte[] f963T;
 
     /* renamed from: n */
-    private final int f1000n;
+    private final int f964n;
 
     /* access modifiers changed from: package-private */
     public Bzip2DivSufSort(byte[] block, int[] bwtBlock, int blockLength) {
-        this.f999T = block;
-        this.f998SA = bwtBlock;
-        this.f1000n = blockLength;
+        this.f963T = block;
+        this.f962SA = bwtBlock;
+        this.f964n = blockLength;
     }
 
     private static void swapElements(int[] array1, int idx1, int[] array2, int idx2) {
@@ -37,8 +37,8 @@ public final class Bzip2DivSufSort {
     }
 
     private int ssCompare(int p1, int p2, int depth) {
-        int[] SA = this.f998SA;
-        byte[] T = this.f999T;
+        int[] SA = this.f962SA;
+        byte[] T = this.f963T;
         int U1n = SA[p1 + 1] + 2;
         int U2n = SA[p2 + 1] + 2;
         int U1 = depth + SA[p1];
@@ -57,8 +57,8 @@ public final class Bzip2DivSufSort {
     }
 
     private int ssCompareLast(int pa, int p1, int p2, int depth, int size) {
-        int[] SA = this.f998SA;
-        byte[] T = this.f999T;
+        int[] SA = this.f962SA;
+        byte[] T = this.f963T;
         int U1 = depth + SA[p1];
         int U2 = depth + SA[p2];
         int U2n = SA[p2 + 1] + 2;
@@ -92,7 +92,7 @@ public final class Bzip2DivSufSort {
 
     private void ssInsertionSort(int pa, int first, int last, int depth) {
         int r;
-        int[] SA = this.f998SA;
+        int[] SA = this.f962SA;
         for (int i = last - 2; first <= i; i--) {
             int t = SA[i];
             int j = i + 1;
@@ -117,8 +117,8 @@ public final class Bzip2DivSufSort {
     }
 
     private void ssFixdown(int td, int pa, int sa, int i, int size) {
-        int[] SA = this.f998SA;
-        byte[] T = this.f999T;
+        int[] SA = this.f962SA;
+        byte[] T = this.f963T;
         int v = SA[sa + i];
         int c = T[td + SA[pa + v]] & 255;
         while (true) {
@@ -144,8 +144,8 @@ public final class Bzip2DivSufSort {
     }
 
     private void ssHeapSort(int td, int pa, int sa, int size) {
-        int[] SA = this.f998SA;
-        byte[] T = this.f999T;
+        int[] SA = this.f962SA;
+        byte[] T = this.f963T;
         int m = size;
         if (size % 2 == 0) {
             m--;
@@ -169,8 +169,8 @@ public final class Bzip2DivSufSort {
     }
 
     private int ssMedian3(int td, int pa, int v1, int v2, int v3) {
-        int[] SA = this.f998SA;
-        byte[] T = this.f999T;
+        int[] SA = this.f962SA;
+        byte[] T = this.f963T;
         int T_v1 = T[td + SA[pa + SA[v1]]] & 255;
         int T_v2 = T[td + SA[pa + SA[v2]]] & 255;
         int T_v3 = T[td + SA[pa + SA[v3]]] & 255;
@@ -190,8 +190,8 @@ public final class Bzip2DivSufSort {
     }
 
     private int ssMedian5(int td, int pa, int v1, int v2, int v3, int v4, int v5) {
-        int[] SA = this.f998SA;
-        byte[] T = this.f999T;
+        int[] SA = this.f962SA;
+        byte[] T = this.f963T;
         int T_v1 = T[td + SA[pa + SA[v1]]] & 255;
         int T_v2 = T[td + SA[pa + SA[v2]]] & 255;
         int T_v3 = T[td + SA[pa + SA[v3]]] & 255;
@@ -254,7 +254,7 @@ public final class Bzip2DivSufSort {
     }
 
     private int ssSubstringPartition(int pa, int first, int last, int depth) {
-        int[] SA = this.f998SA;
+        int[] SA = this.f962SA;
         int a = first - 1;
         int b = last;
         while (true) {
@@ -287,28 +287,28 @@ public final class Bzip2DivSufSort {
     public static class StackEntry {
 
         /* renamed from: a */
-        final int f1001a;
+        final int f965a;
 
         /* renamed from: b */
-        final int f1002b;
+        final int f966b;
 
         /* renamed from: c */
-        final int f1003c;
+        final int f967c;
 
         /* renamed from: d */
-        final int f1004d;
+        final int f968d;
 
         StackEntry(int a, int b, int c, int d) {
-            this.f1001a = a;
-            this.f1002b = b;
-            this.f1003c = c;
-            this.f1004d = d;
+            this.f965a = a;
+            this.f966b = b;
+            this.f967c = c;
+            this.f968d = d;
         }
     }
 
     private void ssMultiKeyIntroSort(int pa, int first, int last, int depth) {
-        int[] SA = this.f998SA;
-        byte[] T = this.f999T;
+        int[] SA = this.f962SA;
+        byte[] T = this.f963T;
         StackEntry[] stack = new StackEntry[64];
         int x = 0;
         int ssize = 0;
@@ -321,10 +321,10 @@ public final class Bzip2DivSufSort {
                 if (ssize != 0) {
                     ssize--;
                     StackEntry entry = stack[ssize];
-                    first = entry.f1001a;
-                    last = entry.f1002b;
-                    depth = entry.f1003c;
-                    limit = entry.f1004d;
+                    first = entry.f965a;
+                    last = entry.f966b;
+                    depth = entry.f967c;
+                    limit = entry.f968d;
                 } else {
                     return;
                 }
@@ -646,14 +646,14 @@ public final class Bzip2DivSufSort {
     }
 
     private void ssMergeCheckEqual(int pa, int depth, int a) {
-        int[] SA = this.f998SA;
+        int[] SA = this.f962SA;
         if (0 <= SA[a] && ssCompare(pa + getIDX(SA[a - 1]), pa + SA[a], depth) == 0) {
             SA[a] = SA[a] ^ -1;
         }
     }
 
     private void ssMerge(int pa, int first, int middle, int last, int[] buf, int bufoffset, int bufsize, int depth) {
-        int[] SA = this.f998SA;
+        int[] SA = this.f962SA;
         StackEntry[] stack = new StackEntry[64];
         int check = 0;
         int ssize = 0;
@@ -671,10 +671,10 @@ public final class Bzip2DivSufSort {
                 if (ssize != 0) {
                     ssize--;
                     StackEntry entry = stack[ssize];
-                    first = entry.f1001a;
-                    middle = entry.f1002b;
-                    last = entry.f1003c;
-                    check = entry.f1004d;
+                    first = entry.f965a;
+                    middle = entry.f966b;
+                    last = entry.f967c;
+                    check = entry.f968d;
                 } else {
                     return;
                 }
@@ -691,10 +691,10 @@ public final class Bzip2DivSufSort {
                 if (ssize != 0) {
                     ssize--;
                     StackEntry entry2 = stack[ssize];
-                    first = entry2.f1001a;
-                    middle = entry2.f1002b;
-                    last = entry2.f1003c;
-                    check = entry2.f1004d;
+                    first = entry2.f965a;
+                    middle = entry2.f966b;
+                    last = entry2.f967c;
+                    check = entry2.f968d;
                 } else {
                     return;
                 }
@@ -759,10 +759,10 @@ public final class Bzip2DivSufSort {
                     if (ssize != 0) {
                         ssize--;
                         StackEntry entry3 = stack[ssize];
-                        first = entry3.f1001a;
-                        middle = entry3.f1002b;
-                        last = entry3.f1003c;
-                        check = entry3.f1004d;
+                        first = entry3.f965a;
+                        middle = entry3.f966b;
+                        last = entry3.f967c;
+                        check = entry3.f968d;
                     } else {
                         return;
                     }
@@ -772,7 +772,7 @@ public final class Bzip2DivSufSort {
     }
 
     private void subStringSort(int pa, int first, int last, int[] buf, int bufoffset, int bufsize, int depth, boolean lastsuffix, int size) {
-        int[] SA = this.f998SA;
+        int[] SA = this.f962SA;
         if (lastsuffix) {
             first++;
         }
@@ -831,11 +831,11 @@ public final class Bzip2DivSufSort {
     }
 
     private int trGetC(int isa, int isaD, int isaN, int p) {
-        return isaD + p < isaN ? this.f998SA[isaD + p] : this.f998SA[isa + (((isaD - isa) + p) % (isaN - isa))];
+        return isaD + p < isaN ? this.f962SA[isaD + p] : this.f962SA[isa + (((isaD - isa) + p) % (isaN - isa))];
     }
 
     private void trFixdown(int isa, int isaD, int isaN, int sa, int i, int size) {
-        int[] SA = this.f998SA;
+        int[] SA = this.f962SA;
         int v = SA[sa + i];
         int c = trGetC(isa, isaD, isaN, v);
         while (true) {
@@ -861,7 +861,7 @@ public final class Bzip2DivSufSort {
     }
 
     private void trHeapSort(int isa, int isaD, int isaN, int sa, int size) {
-        int[] SA = this.f998SA;
+        int[] SA = this.f962SA;
         int m = size;
         if (size % 2 == 0) {
             m--;
@@ -886,7 +886,7 @@ public final class Bzip2DivSufSort {
 
     private void trInsertionSort(int isa, int isaD, int isaN, int first, int last) {
         int r;
-        int[] SA = this.f998SA;
+        int[] SA = this.f962SA;
         for (int a = first + 1; a < last; a++) {
             int t = SA[a];
             int b = a - 1;
@@ -911,11 +911,11 @@ public final class Bzip2DivSufSort {
     }
 
     private static int trLog(int n) {
-        return (n & Opcodes.V_PREVIEW) != 0 ? (n & -16777216) != 0 ? 24 + LOG_2_TABLE[(n >> 24) & 255] : LOG_2_TABLE[(n >> 16) & PacketOpcodes.EnterScenePeerNotify] : (n & 65280) != 0 ? 8 + LOG_2_TABLE[(n >> 8) & 255] : LOG_2_TABLE[n & 255];
+        return (n & Opcodes.V_PREVIEW) != 0 ? (n & -16777216) != 0 ? 24 + LOG_2_TABLE[(n >> 24) & 255] : LOG_2_TABLE[(n >> 16) & PacketOpcodes.JoinPlayerFailNotify] : (n & 65280) != 0 ? 8 + LOG_2_TABLE[(n >> 8) & 255] : LOG_2_TABLE[n & 255];
     }
 
     private int trMedian3(int isa, int isaD, int isaN, int v1, int v2, int v3) {
-        int[] SA = this.f998SA;
+        int[] SA = this.f962SA;
         int SA_v1 = trGetC(isa, isaD, isaN, SA[v1]);
         int SA_v2 = trGetC(isa, isaD, isaN, SA[v2]);
         int SA_v3 = trGetC(isa, isaD, isaN, SA[v3]);
@@ -935,7 +935,7 @@ public final class Bzip2DivSufSort {
     }
 
     private int trMedian5(int isa, int isaD, int isaN, int v1, int v2, int v3, int v4, int v5) {
-        int[] SA = this.f998SA;
+        int[] SA = this.f962SA;
         int SA_v1 = trGetC(isa, isaD, isaN, SA[v1]);
         int SA_v2 = trGetC(isa, isaD, isaN, SA[v2]);
         int SA_v3 = trGetC(isa, isaD, isaN, SA[v3]);
@@ -994,7 +994,7 @@ public final class Bzip2DivSufSort {
     }
 
     private void lsUpdateGroup(int isa, int first, int last) {
-        int[] SA = this.f998SA;
+        int[] SA = this.f962SA;
         int a = first;
         while (a < last) {
             if (0 <= SA[a]) {
@@ -1025,7 +1025,7 @@ public final class Bzip2DivSufSort {
 
     private void lsIntroSort(int isa, int isaD, int isaN, int first, int last) {
         int b;
-        int[] SA = this.f998SA;
+        int[] SA = this.f962SA;
         StackEntry[] stack = new StackEntry[64];
         int x = 0;
         int ssize = 0;
@@ -1041,9 +1041,9 @@ public final class Bzip2DivSufSort {
                 if (ssize != 0) {
                     ssize--;
                     StackEntry entry = stack[ssize];
-                    first = entry.f1001a;
-                    last = entry.f1002b;
-                    limit = entry.f1003c;
+                    first = entry.f965a;
+                    last = entry.f966b;
+                    limit = entry.f967c;
                 } else {
                     return;
                 }
@@ -1063,9 +1063,9 @@ public final class Bzip2DivSufSort {
                     if (ssize != 0) {
                         ssize--;
                         StackEntry entry2 = stack[ssize];
-                        first = entry2.f1001a;
-                        last = entry2.f1002b;
-                        limit = entry2.f1003c;
+                        first = entry2.f965a;
+                        last = entry2.f966b;
+                        limit = entry2.f967c;
                     } else {
                         return;
                     }
@@ -1217,9 +1217,9 @@ public final class Bzip2DivSufSort {
                     } else if (ssize != 0) {
                         ssize--;
                         StackEntry entry3 = stack[ssize];
-                        first = entry3.f1001a;
-                        last = entry3.f1002b;
-                        limit = entry3.f1003c;
+                        first = entry3.f965a;
+                        last = entry3.f966b;
+                        limit = entry3.f967c;
                     } else {
                         return;
                     }
@@ -1229,7 +1229,7 @@ public final class Bzip2DivSufSort {
     }
 
     private void lsSort(int isa, int n, int depth) {
-        int[] SA = this.f998SA;
+        int[] SA = this.f962SA;
         int i = isa;
         int i2 = depth;
         while (true) {
@@ -1296,7 +1296,7 @@ public final class Bzip2DivSufSort {
         int x;
         int x2;
         int x3;
-        int[] SA = this.f998SA;
+        int[] SA = this.f962SA;
         int x4 = 0;
         int b = first;
         while (b < last) {
@@ -1403,7 +1403,7 @@ public final class Bzip2DivSufSort {
     }
 
     private void trCopy(int isa, int isaN, int first, int a, int b, int last, int depth) {
-        int[] SA = this.f998SA;
+        int[] SA = this.f962SA;
         int v = b - 1;
         int d = a - 1;
         for (int c = first; c <= d; c++) {
@@ -1438,7 +1438,7 @@ public final class Bzip2DivSufSort {
 
     private void trIntroSort(int isa, int isaD, int isaN, int first, int last, TRBudget budget, int size) {
         int b;
-        int[] SA = this.f998SA;
+        int[] SA = this.f962SA;
         StackEntry[] stack = new StackEntry[64];
         int x = 0;
         int ssize = 0;
@@ -1481,10 +1481,10 @@ public final class Bzip2DivSufSort {
                             } else if (ssize != 0) {
                                 ssize--;
                                 StackEntry entry = stack[ssize];
-                                isaD = entry.f1001a;
-                                first = entry.f1002b;
-                                last = entry.f1003c;
-                                limit = entry.f1004d;
+                                isaD = entry.f965a;
+                                first = entry.f966b;
+                                last = entry.f967c;
+                                limit = entry.f968d;
                             } else {
                                 return;
                             }
@@ -1499,10 +1499,10 @@ public final class Bzip2DivSufSort {
                         } else if (ssize != 0) {
                             ssize--;
                             StackEntry entry2 = stack[ssize];
-                            isaD = entry2.f1001a;
-                            first = entry2.f1002b;
-                            last = entry2.f1003c;
-                            limit = entry2.f1004d;
+                            isaD = entry2.f965a;
+                            first = entry2.f966b;
+                            last = entry2.f967c;
+                            limit = entry2.f968d;
                         } else {
                             return;
                         }
@@ -1513,24 +1513,24 @@ public final class Bzip2DivSufSort {
                         if (ssize != 0) {
                             ssize--;
                             StackEntry entry3 = stack[ssize];
-                            isaD = entry3.f1001a;
-                            first = entry3.f1002b;
-                            last = entry3.f1003c;
-                            limit = entry3.f1004d;
+                            isaD = entry3.f965a;
+                            first = entry3.f966b;
+                            last = entry3.f967c;
+                            limit = entry3.f968d;
                         } else {
                             return;
                         }
                     }
                 } else if (limit == -2) {
                     int ssize3 = ssize - 1;
-                    trCopy(isa, isaN, first, stack[ssize3].f1002b, stack[ssize3].f1003c, last, isaD - isa);
+                    trCopy(isa, isaN, first, stack[ssize3].f966b, stack[ssize3].f967c, last, isaD - isa);
                     if (ssize3 != 0) {
                         ssize = ssize3 - 1;
                         StackEntry entry4 = stack[ssize];
-                        isaD = entry4.f1001a;
-                        first = entry4.f1002b;
-                        last = entry4.f1003c;
-                        limit = entry4.f1004d;
+                        isaD = entry4.f965a;
+                        first = entry4.f966b;
+                        last = entry4.f967c;
+                        limit = entry4.f968d;
                     } else {
                         return;
                     }
@@ -1579,10 +1579,10 @@ public final class Bzip2DivSufSort {
                     } else if (ssize != 0) {
                         ssize--;
                         StackEntry entry5 = stack[ssize];
-                        isaD = entry5.f1001a;
-                        first = entry5.f1002b;
-                        last = entry5.f1003c;
-                        limit = entry5.f1004d;
+                        isaD = entry5.f965a;
+                        first = entry5.f966b;
+                        last = entry5.f967c;
+                        limit = entry5.f968d;
                     } else {
                         return;
                     }
@@ -1737,10 +1737,10 @@ public final class Bzip2DivSufSort {
                                 } else if (ssize != 0) {
                                     ssize--;
                                     StackEntry entry6 = stack[ssize];
-                                    isaD = entry6.f1001a;
-                                    first = entry6.f1002b;
-                                    last = entry6.f1003c;
-                                    limit = entry6.f1004d;
+                                    isaD = entry6.f965a;
+                                    first = entry6.f966b;
+                                    last = entry6.f967c;
+                                    limit = entry6.f968d;
                                 } else {
                                     return;
                                 }
@@ -1854,8 +1854,8 @@ public final class Bzip2DivSufSort {
             }
         }
         for (int s3 = 0; s3 < ssize; s3++) {
-            if (stack[s3].f1004d == -3) {
-                lsUpdateGroup(isa, stack[s3].f1002b, stack[s3].f1003c);
+            if (stack[s3].f968d == -3) {
+                lsUpdateGroup(isa, stack[s3].f966b, stack[s3].f967c);
             }
         }
     }
@@ -1888,7 +1888,7 @@ public final class Bzip2DivSufSort {
     }
 
     private void trSort(int isa, int n, int depth) {
-        int[] SA = this.f998SA;
+        int[] SA = this.f962SA;
         int first = 0;
         if ((-n) < SA[0]) {
             TRBudget budget = new TRBudget(n, ((trLog(n) * 2) / 3) + 1);
@@ -1927,9 +1927,9 @@ public final class Bzip2DivSufSort {
         int ti1;
         int ti2;
         int ti12;
-        byte[] T = this.f999T;
-        int[] SA = this.f998SA;
-        int n = this.f1000n;
+        byte[] T = this.f963T;
+        int[] SA = this.f962SA;
+        int n = this.f964n;
         int[] tempbuf = new int[256];
         int i = 1;
         int flag = 1;
@@ -2119,11 +2119,11 @@ public final class Bzip2DivSufSort {
         return m2;
     }
 
-    /* JADX INFO: Multiple debug info for r1v33 int: [D('s' int), D('s1' int)] */
+    /* JADX INFO: Multiple debug info for r1v33 int: [D('s1' int), D('s' int)] */
     private int constructBWT(int[] bucketA, int[] bucketB) {
-        byte[] T = this.f999T;
-        int[] SA = this.f998SA;
-        int n = this.f1000n;
+        byte[] T = this.f963T;
+        int[] SA = this.f962SA;
+        int n = this.f964n;
         int t = 0;
         int c2 = 0;
         int orig = -1;
@@ -2132,21 +2132,21 @@ public final class Bzip2DivSufSort {
             t = 0;
             c2 = -1;
             for (int j = bucketA[c1 + 1]; i <= j; j--) {
-                int s1 = SA[j];
-                if (0 <= s1) {
-                    int s = s1 - 1;
-                    if (s < 0) {
-                        s = n - 1;
+                int s = SA[j];
+                if (0 <= s) {
+                    int s2 = s - 1;
+                    if (s2 < 0) {
+                        s2 = n - 1;
                     }
-                    int c0 = (T[s] == 1 ? 1 : 0) & 255;
+                    int c0 = (T[s2] == 1 ? 1 : 0) & 255;
                     if (c0 <= c1) {
-                        SA[j] = s1 ^ -1;
-                        if (0 < s && ((T[s - 1] == 1 ? 1 : 0) & 255) > c0) {
-                            s ^= -1;
+                        SA[j] = s ^ -1;
+                        if (0 < s2 && ((T[s2 - 1] == 1 ? 1 : 0) & 255) > c0) {
+                            s2 ^= -1;
                         }
                         if (c2 == c0) {
                             t--;
-                            SA[t] = s;
+                            SA[t] = s2;
                         } else {
                             if (0 <= c2) {
                                 bucketB[BUCKET_B(c2, c1)] = t;
@@ -2154,30 +2154,30 @@ public final class Bzip2DivSufSort {
                             c2 = c0;
                             int i2 = bucketB[BUCKET_B(c0, c1)] - 1;
                             t = i2;
-                            SA[i2] = s;
+                            SA[i2] = s2;
                         }
                     }
                 } else {
-                    SA[j] = s1 ^ -1;
+                    SA[j] = s ^ -1;
                 }
             }
         }
         for (int i3 = 0; i3 < n; i3++) {
-            int s2 = SA[i3];
-            int s12 = s2;
-            if (0 <= s2) {
-                int s3 = s2 - 1;
-                if (s3 < 0) {
-                    s3 = n - 1;
+            int s3 = SA[i3];
+            int s1 = s3;
+            if (0 <= s3) {
+                int s4 = s3 - 1;
+                if (s4 < 0) {
+                    s4 = n - 1;
                 }
-                int c02 = (T[s3] == 1 ? 1 : 0) & 255;
-                if (c02 >= ((T[s3 + 1] == 1 ? 1 : 0) & 255)) {
-                    if (0 < s3 && ((T[s3 - 1] == 1 ? 1 : 0) & 255) < c02) {
-                        s3 ^= -1;
+                int c02 = (T[s4] == 1 ? 1 : 0) & 255;
+                if (c02 >= ((T[s4 + 1] == 1 ? 1 : 0) & 255)) {
+                    if (0 < s4 && ((T[s4 - 1] == 1 ? 1 : 0) & 255) < c02) {
+                        s4 ^= -1;
                     }
                     if (c02 == c2) {
                         t++;
-                        SA[t] = s3;
+                        SA[t] = s4;
                     } else {
                         if (c2 != -1) {
                             bucketA[c2] = t;
@@ -2185,26 +2185,26 @@ public final class Bzip2DivSufSort {
                         c2 = c02;
                         int i4 = bucketA[c02] + 1;
                         t = i4;
-                        SA[i4] = s3;
+                        SA[i4] = s4;
                     }
                 }
             } else {
-                s12 ^= -1;
+                s1 ^= -1;
             }
-            if (s12 == 0) {
+            if (s1 == 0) {
                 SA[i3] = T[n - 1] == 1 ? 1 : 0;
                 orig = i3;
             } else {
-                SA[i3] = T[s12 - 1] == 1 ? 1 : 0;
+                SA[i3] = T[s1 - 1] == 1 ? 1 : 0;
             }
         }
         return orig;
     }
 
     public int bwt() {
-        int[] SA = this.f998SA;
-        byte[] T = this.f999T;
-        int n = this.f1000n;
+        int[] SA = this.f962SA;
+        byte[] T = this.f963T;
+        int n = this.f964n;
         int[] bucketA = new int[256];
         int[] bucketB = new int[65536];
         if (n == 0) {

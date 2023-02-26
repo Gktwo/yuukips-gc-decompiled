@@ -23,21 +23,21 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChangeMpTeamAvatarRspOuterClass.class */
 public final class ChangeMpTeamAvatarRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bChangeMpTeamAvatarRsp.proto\"[\n\u0015ChangeMpTeamAvatarRsp\u0012\u0017\n\u000fcur_avatar_guid\u0018\f \u0001(\u0004\u0012\u000f\n\u0007retcode\u0018\n \u0001(\u0005\u0012\u0018\n\u0010avatar_guid_list\u0018\u0002 \u0003(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bChangeMpTeamAvatarRsp.proto\"W\n\u0015ChangeMpTeamAvatarRsp\u0012\u0015\n\rcurAvatarGuid\u0018\f \u0001(\u0004\u0012\u0016\n\u000eavatarGuidList\u0018\n \u0003(\u0004\u0012\u000f\n\u0007retcode\u0018\u0001 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ChangeMpTeamAvatarRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChangeMpTeamAvatarRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChangeMpTeamAvatarRsp_descriptor, new String[]{"CurAvatarGuid", "Retcode", "AvatarGuidList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChangeMpTeamAvatarRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChangeMpTeamAvatarRsp_descriptor, new String[]{"CurAvatarGuid", "AvatarGuidList", "Retcode"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChangeMpTeamAvatarRspOuterClass$ChangeMpTeamAvatarRspOrBuilder.class */
     public interface ChangeMpTeamAvatarRspOrBuilder extends MessageOrBuilder {
         long getCurAvatarGuid();
-
-        int getRetcode();
 
         List<Long> getAvatarGuidListList();
 
         int getAvatarGuidListCount();
 
         long getAvatarGuidList(int i);
+
+        int getRetcode();
     }
 
     private ChangeMpTeamAvatarRspOuterClass() {
@@ -53,13 +53,13 @@ public final class ChangeMpTeamAvatarRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChangeMpTeamAvatarRspOuterClass$ChangeMpTeamAvatarRsp.class */
     public static final class ChangeMpTeamAvatarRsp extends GeneratedMessageV3 implements ChangeMpTeamAvatarRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CUR_AVATAR_GUID_FIELD_NUMBER = 12;
+        public static final int CURAVATARGUID_FIELD_NUMBER = 12;
         private long curAvatarGuid_;
-        public static final int RETCODE_FIELD_NUMBER = 10;
-        private int retcode_;
-        public static final int AVATAR_GUID_LIST_FIELD_NUMBER = 2;
+        public static final int AVATARGUIDLIST_FIELD_NUMBER = 10;
         private Internal.LongList avatarGuidList_;
         private int avatarGuidListMemoizedSerializedSize;
+        public static final int RETCODE_FIELD_NUMBER = 1;
+        private int retcode_;
         private byte memoizedIsInitialized;
         private static final ChangeMpTeamAvatarRsp DEFAULT_INSTANCE = new ChangeMpTeamAvatarRsp();
         private static final Parser<ChangeMpTeamAvatarRsp> PARSER = new AbstractParser<ChangeMpTeamAvatarRsp>() { // from class: emu.grasscutter.net.proto.ChangeMpTeamAvatarRspOuterClass.ChangeMpTeamAvatarRsp.1
@@ -110,14 +110,17 @@ public final class ChangeMpTeamAvatarRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 16:
+                            case 8:
+                                this.retcode_ = input.readInt32();
+                                break;
+                            case 80:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.avatarGuidList_ = newLongList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.avatarGuidList_.addLong(input.readUInt64());
                                 break;
-                            case 18:
+                            case 82:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.avatarGuidList_ = newLongList();
@@ -127,9 +130,6 @@ public final class ChangeMpTeamAvatarRspOuterClass {
                                     this.avatarGuidList_.addLong(input.readUInt64());
                                 }
                                 input.popLimit(limit);
-                                break;
-                            case 80:
-                                this.retcode_ = input.readInt32();
                                 break;
                             case 96:
                                 this.curAvatarGuid_ = input.readUInt64();
@@ -172,11 +172,6 @@ public final class ChangeMpTeamAvatarRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ChangeMpTeamAvatarRspOuterClass.ChangeMpTeamAvatarRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ChangeMpTeamAvatarRspOuterClass.ChangeMpTeamAvatarRspOrBuilder
         public List<Long> getAvatarGuidListList() {
             return this.avatarGuidList_;
         }
@@ -189,6 +184,11 @@ public final class ChangeMpTeamAvatarRspOuterClass {
         @Override // emu.grasscutter.net.proto.ChangeMpTeamAvatarRspOuterClass.ChangeMpTeamAvatarRspOrBuilder
         public long getAvatarGuidList(int index) {
             return this.avatarGuidList_.getLong(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.ChangeMpTeamAvatarRspOuterClass.ChangeMpTeamAvatarRspOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -207,15 +207,15 @@ public final class ChangeMpTeamAvatarRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
+            if (this.retcode_ != 0) {
+                output.writeInt32(1, this.retcode_);
+            }
             if (getAvatarGuidListList().size() > 0) {
-                output.writeUInt32NoTag(18);
+                output.writeUInt32NoTag(82);
                 output.writeUInt32NoTag(this.avatarGuidListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.avatarGuidList_.size(); i++) {
                 output.writeUInt64NoTag(this.avatarGuidList_.getLong(i));
-            }
-            if (this.retcode_ != 0) {
-                output.writeInt32(10, this.retcode_);
             }
             if (this.curAvatarGuid_ != 0) {
                 output.writeUInt64(12, this.curAvatarGuid_);
@@ -229,24 +229,25 @@ public final class ChangeMpTeamAvatarRspOuterClass {
             if (size != -1) {
                 return size;
             }
+            int size2 = 0;
+            if (this.retcode_ != 0) {
+                size2 = 0 + CodedOutputStream.computeInt32Size(1, this.retcode_);
+            }
             int dataSize = 0;
             for (int i = 0; i < this.avatarGuidList_.size(); i++) {
                 dataSize += CodedOutputStream.computeUInt64SizeNoTag(this.avatarGuidList_.getLong(i));
             }
-            int size2 = 0 + dataSize;
+            int size3 = size2 + dataSize;
             if (!getAvatarGuidListList().isEmpty()) {
-                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.avatarGuidListMemoizedSerializedSize = dataSize;
-            if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(10, this.retcode_);
-            }
             if (this.curAvatarGuid_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(12, this.curAvatarGuid_);
+                size3 += CodedOutputStream.computeUInt64Size(12, this.curAvatarGuid_);
             }
-            int size3 = size2 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size3;
-            return size3;
+            int size4 = size3 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size4;
+            return size4;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -258,7 +259,7 @@ public final class ChangeMpTeamAvatarRspOuterClass {
                 return equals(obj);
             }
             ChangeMpTeamAvatarRsp other = (ChangeMpTeamAvatarRsp) obj;
-            return getCurAvatarGuid() == other.getCurAvatarGuid() && getRetcode() == other.getRetcode() && getAvatarGuidListList().equals(other.getAvatarGuidListList()) && this.unknownFields.equals(other.unknownFields);
+            return getCurAvatarGuid() == other.getCurAvatarGuid() && getAvatarGuidListList().equals(other.getAvatarGuidListList()) && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -266,11 +267,11 @@ public final class ChangeMpTeamAvatarRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + Internal.hashLong(getCurAvatarGuid()))) + 10)) + getRetcode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + Internal.hashLong(getCurAvatarGuid());
             if (getAvatarGuidListCount() > 0) {
-                hash = (53 * ((37 * hash) + 2)) + getAvatarGuidListList().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getAvatarGuidListList().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 1)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -351,8 +352,8 @@ public final class ChangeMpTeamAvatarRspOuterClass {
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ChangeMpTeamAvatarRspOrBuilder {
             private int bitField0_;
             private long curAvatarGuid_;
-            private int retcode_;
             private Internal.LongList avatarGuidList_ = ChangeMpTeamAvatarRsp.emptyLongList();
+            private int retcode_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ChangeMpTeamAvatarRspOuterClass.internal_static_ChangeMpTeamAvatarRsp_descriptor;
@@ -381,9 +382,9 @@ public final class ChangeMpTeamAvatarRspOuterClass {
             public Builder clear() {
                 clear();
                 this.curAvatarGuid_ = 0;
-                this.retcode_ = 0;
                 this.avatarGuidList_ = ChangeMpTeamAvatarRsp.emptyLongList();
                 this.bitField0_ &= -2;
+                this.retcode_ = 0;
                 return this;
             }
 
@@ -411,12 +412,12 @@ public final class ChangeMpTeamAvatarRspOuterClass {
                 ChangeMpTeamAvatarRsp result = new ChangeMpTeamAvatarRsp(this);
                 int i = this.bitField0_;
                 result.curAvatarGuid_ = this.curAvatarGuid_;
-                result.retcode_ = this.retcode_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.avatarGuidList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.avatarGuidList_ = this.avatarGuidList_;
+                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -467,9 +468,6 @@ public final class ChangeMpTeamAvatarRspOuterClass {
                 if (other.getCurAvatarGuid() != 0) {
                     setCurAvatarGuid(other.getCurAvatarGuid());
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
                 if (!other.avatarGuidList_.isEmpty()) {
                     if (this.avatarGuidList_.isEmpty()) {
                         this.avatarGuidList_ = other.avatarGuidList_;
@@ -479,6 +477,9 @@ public final class ChangeMpTeamAvatarRspOuterClass {
                         this.avatarGuidList_.addAll(other.avatarGuidList_);
                     }
                     onChanged();
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -529,23 +530,6 @@ public final class ChangeMpTeamAvatarRspOuterClass {
                 return this;
             }
 
-            @Override // emu.grasscutter.net.proto.ChangeMpTeamAvatarRspOuterClass.ChangeMpTeamAvatarRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
-            }
-
             private void ensureAvatarGuidListIsMutable() {
                 if ((this.bitField0_ & 1) == 0) {
                     this.avatarGuidList_ = ChangeMpTeamAvatarRsp.mutableCopy(this.avatarGuidList_);
@@ -592,6 +576,23 @@ public final class ChangeMpTeamAvatarRspOuterClass {
             public Builder clearAvatarGuidList() {
                 this.avatarGuidList_ = ChangeMpTeamAvatarRsp.emptyLongList();
                 this.bitField0_ &= -2;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ChangeMpTeamAvatarRspOuterClass.ChangeMpTeamAvatarRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }

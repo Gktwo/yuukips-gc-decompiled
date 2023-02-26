@@ -35,13 +35,13 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
     protected transient boolean containsNullKey;
 
     /* renamed from: n */
-    protected transient int f2605n;
+    protected transient int f2569n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2606f;
+    protected final float f2570f;
     protected transient Object2FloatMap.FastEntrySet<K> entries;
     protected transient ObjectSet<K> keys;
     protected transient FloatCollection values;
@@ -52,14 +52,14 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2606f = f;
+            this.f2570f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2605n = arraySize;
+            this.f2569n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2605n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2605n, f);
-            this.key = (K[]) new Object[this.f2605n + 1];
-            this.value = new float[this.f2605n + 1];
+            this.mask = this.f2569n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2569n, f);
+            this.key = (K[]) new Object[this.f2569n + 1];
+            this.value = new float[this.f2569n + 1];
         }
     }
 
@@ -109,15 +109,15 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2606f);
-        if (needed > this.f2605n) {
+        int needed = HashCommon.arraySize(capacity, this.f2570f);
+        if (needed > this.f2569n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2606f)))));
-        if (needed > this.f2605n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2570f)))));
+        if (needed > this.f2569n) {
             rehash(needed);
         }
     }
@@ -127,8 +127,8 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
         float oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f2605n > this.minN && this.size < this.maxFill / 4 && this.f2605n > 16) {
-            rehash(this.f2605n / 2);
+        if (this.f2569n > this.minN && this.size < this.maxFill / 4 && this.f2569n > 16) {
+            rehash(this.f2569n / 2);
         }
         return oldValue;
     }
@@ -136,18 +136,18 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
     /* access modifiers changed from: private */
     public float removeNullEntry() {
         this.containsNullKey = false;
-        this.key[this.f2605n] = null;
-        float oldValue = this.value[this.f2605n];
+        this.key[this.f2569n] = null;
+        float oldValue = this.value[this.f2569n];
         this.size--;
-        if (this.f2605n > this.minN && this.size < this.maxFill / 4 && this.f2605n > 16) {
-            rehash(this.f2605n / 2);
+        if (this.f2569n > this.minN && this.size < this.maxFill / 4 && this.f2569n > 16) {
+            rehash(this.f2569n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObject2FloatMap, java.util.Map
     public void putAll(Map<? extends K, ? extends Float> m) {
-        if (((double) this.f2606f) <= 0.5d) {
+        if (((double) this.f2570f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -158,7 +158,7 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
     private int find(K k) {
         K curr;
         if (k == null) {
-            return this.containsNullKey ? this.f2605n : -(this.f2605n + 1);
+            return this.containsNullKey ? this.f2569n : -(this.f2569n + 1);
         }
         K[] key = this.key;
         int mix = HashCommon.mix(k.hashCode()) & this.mask;
@@ -182,7 +182,7 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
     }
 
     private void insert(int pos, K k, float v) {
-        if (pos == this.f2605n) {
+        if (pos == this.f2569n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -190,7 +190,7 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2606f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2570f));
         }
     }
 
@@ -234,9 +234,9 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f2605n, incr);
+            return addToValue(this.f2569n, incr);
         } else {
-            pos = this.f2605n;
+            pos = this.f2569n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -244,7 +244,7 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2606f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2570f));
         }
         return this.defRetValue;
     }
@@ -310,7 +310,7 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
     public float getFloat(Object k) {
         K curr;
         if (k == null) {
-            return this.containsNullKey ? this.value[this.f2605n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2569n] : this.defRetValue;
         }
         K[] key = this.key;
         int mix = HashCommon.mix(k.hashCode()) & this.mask;
@@ -364,10 +364,10 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
     public boolean containsValue(float v) {
         float[] value = this.value;
         K[] key = this.key;
-        if (this.containsNullKey && Float.floatToIntBits(value[this.f2605n]) == Float.floatToIntBits(v)) {
+        if (this.containsNullKey && Float.floatToIntBits(value[this.f2569n]) == Float.floatToIntBits(v)) {
             return true;
         }
-        int i = this.f2605n;
+        int i = this.f2569n;
         while (true) {
             i--;
             if (i == 0) {
@@ -383,7 +383,7 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
     public float getOrDefault(Object k, float defaultValue) {
         K curr;
         if (k == null) {
-            return this.containsNullKey ? this.value[this.f2605n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2569n] : defaultValue;
         }
         K[] key = this.key;
         int mix = HashCommon.mix(k.hashCode()) & this.mask;
@@ -443,7 +443,7 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
                 removeEntry(pos);
                 return true;
             }
-        } else if (!this.containsNullKey || Float.floatToIntBits(v) != Float.floatToIntBits(this.value[this.f2605n])) {
+        } else if (!this.containsNullKey || Float.floatToIntBits(v) != Float.floatToIntBits(this.value[this.f2569n])) {
             return false;
         } else {
             removeNullEntry();
@@ -676,31 +676,31 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
         int last;
 
         /* renamed from: c */
-        int f2607c;
+        int f2571c;
         boolean mustReturnNullKey;
         ObjectArrayList<K> wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Object2FloatOpenHashMap.this.f2605n;
+            this.pos = Object2FloatOpenHashMap.this.f2569n;
             this.last = -1;
-            this.f2607c = Object2FloatOpenHashMap.this.size;
+            this.f2571c = Object2FloatOpenHashMap.this.size;
             this.mustReturnNullKey = Object2FloatOpenHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f2607c != 0;
+            return this.f2571c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2607c--;
+            this.f2571c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Object2FloatOpenHashMap.this.f2605n;
+                int i = Object2FloatOpenHashMap.this.f2569n;
                 this.last = i;
                 return i;
             }
@@ -732,13 +732,13 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Object2FloatOpenHashMap.this.f2605n;
+                int i = Object2FloatOpenHashMap.this.f2569n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f2607c--;
+                this.f2571c--;
             }
             K[] key = Object2FloatOpenHashMap.this.key;
-            while (this.f2607c != 0) {
+            while (this.f2571c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -755,12 +755,12 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
                         i3 = Object2FloatOpenHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f2607c--;
+                    this.f2571c--;
                 } else if (key[this.pos] != null) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f2607c--;
+                    this.f2571c--;
                 }
             }
         }
@@ -809,9 +809,9 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Object2FloatOpenHashMap.this.f2605n) {
+            if (this.last == Object2FloatOpenHashMap.this.f2569n) {
                 Object2FloatOpenHashMap.this.containsNullKey = false;
-                Object2FloatOpenHashMap.this.key[Object2FloatOpenHashMap.this.f2605n] = null;
+                Object2FloatOpenHashMap.this.key[Object2FloatOpenHashMap.this.f2569n] = null;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -915,7 +915,7 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
         int max;
 
         /* renamed from: c */
-        int f2608c;
+        int f2572c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -925,16 +925,16 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Object2FloatOpenHashMap.this.f2605n;
-            this.f2608c = 0;
+            this.max = Object2FloatOpenHashMap.this.f2569n;
+            this.f2572c = 0;
             this.mustReturnNull = Object2FloatOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Object2FloatOpenHashMap.this.f2605n;
-            this.f2608c = 0;
+            this.max = Object2FloatOpenHashMap.this.f2569n;
+            this.f2572c = 0;
             this.mustReturnNull = Object2FloatOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -946,14 +946,14 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2608c++;
-                acceptOnIndex(action, Object2FloatOpenHashMap.this.f2605n);
+                this.f2572c++;
+                acceptOnIndex(action, Object2FloatOpenHashMap.this.f2569n);
                 return true;
             }
             K[] key = Object2FloatOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != null) {
-                    this.f2608c++;
+                    this.f2572c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -967,14 +967,14 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2608c++;
-                acceptOnIndex(action, Object2FloatOpenHashMap.this.f2605n);
+                this.f2572c++;
+                acceptOnIndex(action, Object2FloatOpenHashMap.this.f2569n);
             }
             K[] key = Object2FloatOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != null) {
                     acceptOnIndex(action, this.pos);
-                    this.f2608c++;
+                    this.f2572c++;
                 }
                 this.pos++;
             }
@@ -982,9 +982,9 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Object2FloatOpenHashMap.this.size - this.f2608c);
+                return (long) (Object2FloatOpenHashMap.this.size - this.f2572c);
             }
-            return Math.min((long) (Object2FloatOpenHashMap.this.size - this.f2608c), ((long) ((((double) Object2FloatOpenHashMap.this.realSize()) / ((double) Object2FloatOpenHashMap.this.f2605n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Object2FloatOpenHashMap.this.size - this.f2572c), ((long) ((((double) Object2FloatOpenHashMap.this.realSize()) / ((double) Object2FloatOpenHashMap.this.f2569n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1181,7 +1181,7 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
             Object key = e.getKey();
             float v = ((Float) e.getValue()).floatValue();
             if (key == null) {
-                return Object2FloatOpenHashMap.this.containsNullKey && Float.floatToIntBits(Object2FloatOpenHashMap.this.value[Object2FloatOpenHashMap.this.f2605n]) == Float.floatToIntBits(v);
+                return Object2FloatOpenHashMap.this.containsNullKey && Float.floatToIntBits(Object2FloatOpenHashMap.this.value[Object2FloatOpenHashMap.this.f2569n]) == Float.floatToIntBits(v);
             }
             K[] key2 = Object2FloatOpenHashMap.this.key;
             int mix = HashCommon.mix(key.hashCode()) & Object2FloatOpenHashMap.this.mask;
@@ -1242,7 +1242,7 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
                     Object2FloatOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Object2FloatOpenHashMap.this.containsNullKey || Float.floatToIntBits(Object2FloatOpenHashMap.this.value[Object2FloatOpenHashMap.this.f2605n]) != Float.floatToIntBits(v)) {
+            } else if (!Object2FloatOpenHashMap.this.containsNullKey || Float.floatToIntBits(Object2FloatOpenHashMap.this.value[Object2FloatOpenHashMap.this.f2569n]) != Float.floatToIntBits(v)) {
                 return false;
             } else {
                 Object2FloatOpenHashMap.this.removeNullEntry();
@@ -1263,9 +1263,9 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Object2FloatMap.Entry<K>> consumer) {
             if (Object2FloatOpenHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractObject2FloatMap.BasicEntry(Object2FloatOpenHashMap.this.key[Object2FloatOpenHashMap.this.f2605n], Object2FloatOpenHashMap.this.value[Object2FloatOpenHashMap.this.f2605n]));
+                consumer.accept(new AbstractObject2FloatMap.BasicEntry(Object2FloatOpenHashMap.this.key[Object2FloatOpenHashMap.this.f2569n], Object2FloatOpenHashMap.this.value[Object2FloatOpenHashMap.this.f2569n]));
             }
-            int pos = Object2FloatOpenHashMap.this.f2605n;
+            int pos = Object2FloatOpenHashMap.this.f2569n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1281,11 +1281,11 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
         public void fastForEach(Consumer<? super Object2FloatMap.Entry<K>> consumer) {
             AbstractObject2FloatMap.BasicEntry<K> entry = new AbstractObject2FloatMap.BasicEntry<>();
             if (Object2FloatOpenHashMap.this.containsNullKey) {
-                entry.key = Object2FloatOpenHashMap.this.key[Object2FloatOpenHashMap.this.f2605n];
-                entry.value = Object2FloatOpenHashMap.this.value[Object2FloatOpenHashMap.this.f2605n];
+                entry.key = Object2FloatOpenHashMap.this.key[Object2FloatOpenHashMap.this.f2569n];
+                entry.value = Object2FloatOpenHashMap.this.value[Object2FloatOpenHashMap.this.f2569n];
                 consumer.accept(entry);
             }
-            int pos = Object2FloatOpenHashMap.this.f2605n;
+            int pos = Object2FloatOpenHashMap.this.f2569n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1401,9 +1401,9 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super K> consumer) {
             if (Object2FloatOpenHashMap.this.containsNullKey) {
-                consumer.accept((Object) Object2FloatOpenHashMap.this.key[Object2FloatOpenHashMap.this.f2605n]);
+                consumer.accept((Object) Object2FloatOpenHashMap.this.key[Object2FloatOpenHashMap.this.f2569n]);
             }
-            int pos = Object2FloatOpenHashMap.this.f2605n;
+            int pos = Object2FloatOpenHashMap.this.f2569n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1521,9 +1521,9 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
                 @Override // p014it.unimi.dsi.fastutil.floats.FloatIterable
                 public void forEach(FloatConsumer consumer) {
                     if (Object2FloatOpenHashMap.this.containsNullKey) {
-                        consumer.accept(Object2FloatOpenHashMap.this.value[Object2FloatOpenHashMap.this.f2605n]);
+                        consumer.accept(Object2FloatOpenHashMap.this.value[Object2FloatOpenHashMap.this.f2569n]);
                     }
-                    int pos = Object2FloatOpenHashMap.this.f2605n;
+                    int pos = Object2FloatOpenHashMap.this.f2569n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1559,8 +1559,8 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2606f)));
-        if (l >= this.f2605n || this.size > HashCommon.maxFill(l, this.f2606f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2570f)));
+        if (l >= this.f2569n || this.size > HashCommon.maxFill(l, this.f2570f)) {
             return true;
         }
         try {
@@ -1578,7 +1578,7 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
         int mask = newN - 1;
         K[] newKey = (K[]) new Object[newN + 1];
         float[] newValue = new float[newN + 1];
-        int i2 = this.f2605n;
+        int i2 = this.f2569n;
         int j = realSize();
         while (true) {
             j--;
@@ -1597,10 +1597,10 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f2605n];
-                this.f2605n = newN;
+                newValue[newN] = value[this.f2569n];
+                this.f2569n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2605n, this.f2606f);
+                this.maxFill = HashCommon.maxFill(this.f2569n, this.f2570f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1646,7 +1646,7 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
             i++;
         }
         if (this.containsNullKey) {
-            h += HashCommon.float2int(this.value[this.f2605n]);
+            h += HashCommon.float2int(this.value[this.f2569n]);
         }
         return h;
     }
@@ -1675,12 +1675,12 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2605n = HashCommon.arraySize(this.size, this.f2606f);
-        this.maxFill = HashCommon.maxFill(this.f2605n, this.f2606f);
-        this.mask = this.f2605n - 1;
-        K[] key = (K[]) new Object[this.f2605n + 1];
+        this.f2569n = HashCommon.arraySize(this.size, this.f2570f);
+        this.maxFill = HashCommon.maxFill(this.f2569n, this.f2570f);
+        this.mask = this.f2569n - 1;
+        K[] key = (K[]) new Object[this.f2569n + 1];
         this.key = key;
-        float[] value = new float[this.f2605n + 1];
+        float[] value = new float[this.f2569n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1689,7 +1689,7 @@ public class Object2FloatOpenHashMap<K> extends AbstractObject2FloatMap<K> imple
                 Object readObject = s.readObject();
                 float v = s.readFloat();
                 if (readObject == null) {
-                    pos = this.f2605n;
+                    pos = this.f2569n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix(readObject.hashCode());

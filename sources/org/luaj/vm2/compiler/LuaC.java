@@ -26,14 +26,14 @@ public class LuaC extends Constants implements Globals.Compiler, Globals.Loader 
         private Prototype luaY_parser(InputStream inputStream, String str) throws IOException {
             LexState lexState = new LexState(this, inputStream);
             FuncState funcState = new FuncState();
-            lexState.f3318fs = funcState;
+            lexState.f3282fs = funcState;
             lexState.setinput(this, inputStream.read(), inputStream, LuaValue.valueOf(str));
-            funcState.f3307f = new Prototype();
-            funcState.f3307f.source = LuaValue.valueOf(str);
+            funcState.f3271f = new Prototype();
+            funcState.f3271f.source = LuaValue.valueOf(str);
             lexState.mainfunc(funcState);
             LuaC._assert(funcState.prev == null);
             LuaC._assert(lexState.dyd == null || (lexState.dyd.n_actvar == 0 && lexState.dyd.n_gt == 0 && lexState.dyd.n_label == 0));
-            return funcState.f3307f;
+            return funcState.f3271f;
         }
 
         public LuaString newTString(String str) {

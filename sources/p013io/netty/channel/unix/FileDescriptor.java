@@ -19,7 +19,7 @@ public class FileDescriptor {
     volatile int state;
 
     /* renamed from: fd */
-    final int f990fd;
+    final int f954fd;
 
     private static native int open(String str);
 
@@ -41,11 +41,11 @@ public class FileDescriptor {
 
     public FileDescriptor(int fd) {
         ObjectUtil.checkPositiveOrZero(fd, "fd");
-        this.f990fd = fd;
+        this.f954fd = fd;
     }
 
     public final int intValue() {
-        return this.f990fd;
+        return this.f954fd;
     }
 
     protected boolean markClosed() {
@@ -61,7 +61,7 @@ public class FileDescriptor {
 
     public void close() throws IOException {
         int res;
-        if (markClosed() && (res = close(this.f990fd)) < 0) {
+        if (markClosed() && (res = close(this.f954fd)) < 0) {
             throw Errors.newIOException("close", res);
         }
     }
@@ -71,7 +71,7 @@ public class FileDescriptor {
     }
 
     public final int write(ByteBuffer buf, int pos, int limit) throws IOException {
-        int res = write(this.f990fd, buf, pos, limit);
+        int res = write(this.f954fd, buf, pos, limit);
         if (res >= 0) {
             return res;
         }
@@ -79,7 +79,7 @@ public class FileDescriptor {
     }
 
     public final int writeAddress(long address, int pos, int limit) throws IOException {
-        int res = writeAddress(this.f990fd, address, pos, limit);
+        int res = writeAddress(this.f954fd, address, pos, limit);
         if (res >= 0) {
             return res;
         }
@@ -87,7 +87,7 @@ public class FileDescriptor {
     }
 
     public final long writev(ByteBuffer[] buffers, int offset, int length, long maxBytesToWrite) throws IOException {
-        long res = writev(this.f990fd, buffers, offset, Math.min(Limits.IOV_MAX, length), maxBytesToWrite);
+        long res = writev(this.f954fd, buffers, offset, Math.min(Limits.IOV_MAX, length), maxBytesToWrite);
         if (res >= 0) {
             return res;
         }
@@ -95,7 +95,7 @@ public class FileDescriptor {
     }
 
     public final long writevAddresses(long memoryAddress, int length) throws IOException {
-        long res = writevAddresses(this.f990fd, memoryAddress, length);
+        long res = writevAddresses(this.f954fd, memoryAddress, length);
         if (res >= 0) {
             return res;
         }
@@ -103,7 +103,7 @@ public class FileDescriptor {
     }
 
     public final int read(ByteBuffer buf, int pos, int limit) throws IOException {
-        int res = read(this.f990fd, buf, pos, limit);
+        int res = read(this.f954fd, buf, pos, limit);
         if (res > 0) {
             return res;
         }
@@ -114,7 +114,7 @@ public class FileDescriptor {
     }
 
     public final int readAddress(long address, int pos, int limit) throws IOException {
-        int res = readAddress(this.f990fd, address, pos, limit);
+        int res = readAddress(this.f954fd, address, pos, limit);
         if (res > 0) {
             return res;
         }
@@ -125,18 +125,18 @@ public class FileDescriptor {
     }
 
     public String toString() {
-        return "FileDescriptor{fd=" + this.f990fd + '}';
+        return "FileDescriptor{fd=" + this.f954fd + '}';
     }
 
     public boolean equals(Object o) {
         if (this == o) {
             return true;
         }
-        return (o instanceof FileDescriptor) && this.f990fd == ((FileDescriptor) o).f990fd;
+        return (o instanceof FileDescriptor) && this.f954fd == ((FileDescriptor) o).f954fd;
     }
 
     public int hashCode() {
-        return this.f990fd;
+        return this.f954fd;
     }
 
     public static FileDescriptor from(String path) throws IOException {

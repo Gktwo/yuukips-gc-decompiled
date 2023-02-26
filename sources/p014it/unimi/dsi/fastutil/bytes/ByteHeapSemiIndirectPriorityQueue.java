@@ -12,7 +12,7 @@ public class ByteHeapSemiIndirectPriorityQueue implements ByteIndirectPriorityQu
     protected int size;
 
     /* renamed from: c */
-    protected ByteComparator f1275c;
+    protected ByteComparator f1239c;
 
     public ByteHeapSemiIndirectPriorityQueue(byte[] refArray, int capacity, ByteComparator c) {
         this.heap = IntArrays.EMPTY_ARRAY;
@@ -20,7 +20,7 @@ public class ByteHeapSemiIndirectPriorityQueue implements ByteIndirectPriorityQu
             this.heap = new int[capacity];
         }
         this.refArray = refArray;
-        this.f1275c = c;
+        this.f1239c = c;
     }
 
     public ByteHeapSemiIndirectPriorityQueue(byte[] refArray, int capacity) {
@@ -72,7 +72,7 @@ public class ByteHeapSemiIndirectPriorityQueue implements ByteIndirectPriorityQu
         int i = this.size;
         this.size = i + 1;
         iArr[i] = x;
-        ByteSemiIndirectHeaps.upHeap(this.refArray, this.heap, this.size, this.size - 1, this.f1275c);
+        ByteSemiIndirectHeaps.upHeap(this.refArray, this.heap, this.size, this.size - 1, this.f1239c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
@@ -87,7 +87,7 @@ public class ByteHeapSemiIndirectPriorityQueue implements ByteIndirectPriorityQu
         this.size = i;
         iArr[0] = iArr2[i];
         if (this.size != 0) {
-            ByteSemiIndirectHeaps.downHeap(this.refArray, this.heap, this.size, 0, this.f1275c);
+            ByteSemiIndirectHeaps.downHeap(this.refArray, this.heap, this.size, 0, this.f1239c);
         }
         return result;
     }
@@ -102,12 +102,12 @@ public class ByteHeapSemiIndirectPriorityQueue implements ByteIndirectPriorityQu
 
     @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public void changed() {
-        ByteSemiIndirectHeaps.downHeap(this.refArray, this.heap, this.size, 0, this.f1275c);
+        ByteSemiIndirectHeaps.downHeap(this.refArray, this.heap, this.size, 0, this.f1239c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public void allChanged() {
-        ByteSemiIndirectHeaps.makeHeap(this.refArray, this.heap, this.size, this.f1275c);
+        ByteSemiIndirectHeaps.makeHeap(this.refArray, this.heap, this.size, this.f1239c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
@@ -127,12 +127,12 @@ public class ByteHeapSemiIndirectPriorityQueue implements ByteIndirectPriorityQu
     /* Return type fixed from 'it.unimi.dsi.fastutil.bytes.ByteComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.bytes.ByteIndirectPriorityQueue, p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public Comparator<? super Byte> comparator() {
-        return this.f1275c;
+        return this.f1239c;
     }
 
     @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public int front(int[] a) {
-        return this.f1275c == null ? ByteSemiIndirectHeaps.front(this.refArray, this.heap, this.size, a) : ByteSemiIndirectHeaps.front(this.refArray, this.heap, this.size, a, this.f1275c);
+        return this.f1239c == null ? ByteSemiIndirectHeaps.front(this.refArray, this.heap, this.size, a) : ByteSemiIndirectHeaps.front(this.refArray, this.heap, this.size, a, this.f1239c);
     }
 
     public String toString() {

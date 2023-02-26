@@ -568,15 +568,15 @@ public final class ByteBigArrays {
         private final long from;
 
         /* renamed from: to */
-        private final long f1268to;
+        private final long f1232to;
 
         /* renamed from: x */
-        private final byte[][] f1269x;
+        private final byte[][] f1233x;
 
         public ForkJoinQuickSort(byte[][] x, long from, long to) {
             this.from = from;
-            this.f1268to = to;
-            this.f1269x = x;
+            this.f1232to = to;
+            this.f1233x = x;
         }
 
         /* JADX DEBUG: Failed to insert an additional move for type inference into block B:40:0x00ad */
@@ -642,16 +642,16 @@ public final class ByteBigArrays {
         private final long from;
 
         /* renamed from: to */
-        private final long f1270to;
+        private final long f1234to;
 
         /* renamed from: x */
-        private final byte[][] f1271x;
+        private final byte[][] f1235x;
         private final ByteComparator comp;
 
         public ForkJoinQuickSortComp(byte[][] x, long from, long to, ByteComparator comp) {
             this.from = from;
-            this.f1270to = to;
-            this.f1271x = x;
+            this.f1234to = to;
+            this.f1235x = x;
             this.comp = comp;
         }
 

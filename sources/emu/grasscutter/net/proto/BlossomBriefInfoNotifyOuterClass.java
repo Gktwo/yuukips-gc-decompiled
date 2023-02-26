@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BlossomBriefInfoNotifyOuterClass.class */
 public final class BlossomBriefInfoNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cBlossomBriefInfoNotify.proto\u001a\u0016BlossomBriefInfo.proto\"D\n\u0016BlossomBriefInfoNotify\u0012*\n\u000fbrief_info_list\u0018\b \u0003(\u000b2\u0011.BlossomBriefInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BlossomBriefInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cBlossomBriefInfoNotify.proto\u001a\u0016BlossomBriefInfo.proto\"B\n\u0016BlossomBriefInfoNotify\u0012(\n\rbriefInfoList\u0018\t \u0003(\u000b2\u0011.BlossomBriefInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BlossomBriefInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_BlossomBriefInfoNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_BlossomBriefInfoNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BlossomBriefInfoNotify_descriptor, new String[]{"BriefInfoList"});
 
@@ -55,7 +55,7 @@ public final class BlossomBriefInfoNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BlossomBriefInfoNotifyOuterClass$BlossomBriefInfoNotify.class */
     public static final class BlossomBriefInfoNotify extends GeneratedMessageV3 implements BlossomBriefInfoNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int BRIEF_INFO_LIST_FIELD_NUMBER = 8;
+        public static final int BRIEFINFOLIST_FIELD_NUMBER = 9;
         private List<BlossomBriefInfoOuterClass.BlossomBriefInfo> briefInfoList_;
         private byte memoizedIsInitialized;
         private static final BlossomBriefInfoNotify DEFAULT_INSTANCE = new BlossomBriefInfoNotify();
@@ -106,7 +106,7 @@ public final class BlossomBriefInfoNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 66:
+                                case 74:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.briefInfoList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -187,7 +187,7 @@ public final class BlossomBriefInfoNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.briefInfoList_.size(); i++) {
-                output.writeMessage(8, this.briefInfoList_.get(i));
+                output.writeMessage(9, this.briefInfoList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,7 +200,7 @@ public final class BlossomBriefInfoNotifyOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.briefInfoList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(8, this.briefInfoList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(9, this.briefInfoList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class BlossomBriefInfoNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getBriefInfoListCount() > 0) {
-                hash = (53 * ((37 * hash) + 8)) + getBriefInfoListList().hashCode();
+                hash = (53 * ((37 * hash) + 9)) + getBriefInfoListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

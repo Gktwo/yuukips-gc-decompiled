@@ -50,19 +50,19 @@ public final class MathQuaternionOuterClass {
         public static final int X_FIELD_NUMBER = 1;
 
         /* renamed from: x_ */
-        private float f790x_;
+        private float f772x_;
         public static final int Y_FIELD_NUMBER = 2;
 
         /* renamed from: y_ */
-        private float f791y_;
+        private float f773y_;
         public static final int Z_FIELD_NUMBER = 3;
 
         /* renamed from: z_ */
-        private float f792z_;
+        private float f774z_;
         public static final int W_FIELD_NUMBER = 4;
 
         /* renamed from: w_ */
-        private float f793w_;
+        private float f775w_;
         private byte memoizedIsInitialized;
         private static final MathQuaternion DEFAULT_INSTANCE = new MathQuaternion();
         private static final Parser<MathQuaternion> PARSER = new AbstractParser<MathQuaternion>() { // from class: emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion.1
@@ -110,16 +110,16 @@ public final class MathQuaternionOuterClass {
                                     done = true;
                                     break;
                                 case 13:
-                                    this.f790x_ = input.readFloat();
+                                    this.f772x_ = input.readFloat();
                                     break;
                                 case 21:
-                                    this.f791y_ = input.readFloat();
+                                    this.f773y_ = input.readFloat();
                                     break;
                                 case 29:
-                                    this.f792z_ = input.readFloat();
+                                    this.f774z_ = input.readFloat();
                                     break;
                                 case 37:
-                                    this.f793w_ = input.readFloat();
+                                    this.f775w_ = input.readFloat();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -153,22 +153,22 @@ public final class MathQuaternionOuterClass {
 
         @Override // emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternionOrBuilder
         public float getX() {
-            return this.f790x_;
+            return this.f772x_;
         }
 
         @Override // emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternionOrBuilder
         public float getY() {
-            return this.f791y_;
+            return this.f773y_;
         }
 
         @Override // emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternionOrBuilder
         public float getZ() {
-            return this.f792z_;
+            return this.f774z_;
         }
 
         @Override // emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternionOrBuilder
         public float getW() {
-            return this.f793w_;
+            return this.f775w_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -186,17 +186,17 @@ public final class MathQuaternionOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.f790x_ != 0.0f) {
-                output.writeFloat(1, this.f790x_);
+            if (this.f772x_ != 0.0f) {
+                output.writeFloat(1, this.f772x_);
             }
-            if (this.f791y_ != 0.0f) {
-                output.writeFloat(2, this.f791y_);
+            if (this.f773y_ != 0.0f) {
+                output.writeFloat(2, this.f773y_);
             }
-            if (this.f792z_ != 0.0f) {
-                output.writeFloat(3, this.f792z_);
+            if (this.f774z_ != 0.0f) {
+                output.writeFloat(3, this.f774z_);
             }
-            if (this.f793w_ != 0.0f) {
-                output.writeFloat(4, this.f793w_);
+            if (this.f775w_ != 0.0f) {
+                output.writeFloat(4, this.f775w_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -208,17 +208,17 @@ public final class MathQuaternionOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.f790x_ != 0.0f) {
-                size2 = 0 + CodedOutputStream.computeFloatSize(1, this.f790x_);
+            if (this.f772x_ != 0.0f) {
+                size2 = 0 + CodedOutputStream.computeFloatSize(1, this.f772x_);
             }
-            if (this.f791y_ != 0.0f) {
-                size2 += CodedOutputStream.computeFloatSize(2, this.f791y_);
+            if (this.f773y_ != 0.0f) {
+                size2 += CodedOutputStream.computeFloatSize(2, this.f773y_);
             }
-            if (this.f792z_ != 0.0f) {
-                size2 += CodedOutputStream.computeFloatSize(3, this.f792z_);
+            if (this.f774z_ != 0.0f) {
+                size2 += CodedOutputStream.computeFloatSize(3, this.f774z_);
             }
-            if (this.f793w_ != 0.0f) {
-                size2 += CodedOutputStream.computeFloatSize(4, this.f793w_);
+            if (this.f775w_ != 0.0f) {
+                size2 += CodedOutputStream.computeFloatSize(4, this.f775w_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -323,16 +323,16 @@ public final class MathQuaternionOuterClass {
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements MathQuaternionOrBuilder {
 
             /* renamed from: x_ */
-            private float f794x_;
+            private float f776x_;
 
             /* renamed from: y_ */
-            private float f795y_;
+            private float f777y_;
 
             /* renamed from: z_ */
-            private float f796z_;
+            private float f778z_;
 
             /* renamed from: w_ */
-            private float f797w_;
+            private float f779w_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return MathQuaternionOuterClass.internal_static_MathQuaternion_descriptor;
@@ -360,10 +360,10 @@ public final class MathQuaternionOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.f794x_ = 0.0f;
-                this.f795y_ = 0.0f;
-                this.f796z_ = 0.0f;
-                this.f797w_ = 0.0f;
+                this.f776x_ = 0.0f;
+                this.f777y_ = 0.0f;
+                this.f778z_ = 0.0f;
+                this.f779w_ = 0.0f;
                 return this;
             }
 
@@ -389,10 +389,10 @@ public final class MathQuaternionOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public MathQuaternion buildPartial() {
                 MathQuaternion result = new MathQuaternion(this);
-                result.f790x_ = this.f794x_;
-                result.f791y_ = this.f795y_;
-                result.f792z_ = this.f796z_;
-                result.f793w_ = this.f797w_;
+                result.f772x_ = this.f776x_;
+                result.f773y_ = this.f777y_;
+                result.f774z_ = this.f778z_;
+                result.f775w_ = this.f779w_;
                 onBuilt();
                 return result;
             }
@@ -486,68 +486,68 @@ public final class MathQuaternionOuterClass {
 
             @Override // emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternionOrBuilder
             public float getX() {
-                return this.f794x_;
+                return this.f776x_;
             }
 
             public Builder setX(float value) {
-                this.f794x_ = value;
+                this.f776x_ = value;
                 onChanged();
                 return this;
             }
 
             public Builder clearX() {
-                this.f794x_ = 0.0f;
+                this.f776x_ = 0.0f;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternionOrBuilder
             public float getY() {
-                return this.f795y_;
+                return this.f777y_;
             }
 
             public Builder setY(float value) {
-                this.f795y_ = value;
+                this.f777y_ = value;
                 onChanged();
                 return this;
             }
 
             public Builder clearY() {
-                this.f795y_ = 0.0f;
+                this.f777y_ = 0.0f;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternionOrBuilder
             public float getZ() {
-                return this.f796z_;
+                return this.f778z_;
             }
 
             public Builder setZ(float value) {
-                this.f796z_ = value;
+                this.f778z_ = value;
                 onChanged();
                 return this;
             }
 
             public Builder clearZ() {
-                this.f796z_ = 0.0f;
+                this.f778z_ = 0.0f;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternionOrBuilder
             public float getW() {
-                return this.f797w_;
+                return this.f779w_;
             }
 
             public Builder setW(float value) {
-                this.f797w_ = value;
+                this.f779w_ = value;
                 onChanged();
                 return this;
             }
 
             public Builder clearW() {
-                this.f797w_ = 0.0f;
+                this.f779w_ = 0.0f;
                 onChanged();
                 return this;
             }

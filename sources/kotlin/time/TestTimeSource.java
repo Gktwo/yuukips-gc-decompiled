@@ -28,13 +28,13 @@ public final class TestTimeSource extends AbstractLongTimeSource {
     /* JADX WARNING: Unknown variable types count: 2 */
     /* renamed from: plusAssign-LRDsOJo  reason: not valid java name */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public final void m8584plusAssignLRDsOJo(long r7) {
+    public final void m8581plusAssignLRDsOJo(long r7) {
         /*
             r6 = this;
             r0 = r7
             r1 = r6
             kotlin.time.DurationUnit r1 = r1.getUnit()
-            long r0 = kotlin.time.Duration.m8477toLongimpl(r0, r1)
+            long r0 = kotlin.time.Duration.m8474toLongimpl(r0, r1)
             r9 = r0
             r0 = r6
             r1 = r9
@@ -66,7 +66,7 @@ public final class TestTimeSource extends AbstractLongTimeSource {
             if (r1 >= 0) goto L_0x003e
             r1 = r6
             r2 = r7
-            r1.m8585overflowLRDsOJo(r2)
+            r1.m8582overflowLRDsOJo(r2)
         L_0x003e:
             r1 = r11
             goto L_0x0071
@@ -74,7 +74,7 @@ public final class TestTimeSource extends AbstractLongTimeSource {
             r1 = r7
             r2 = r6
             kotlin.time.DurationUnit r2 = r2.getUnit()
-            double r1 = kotlin.time.Duration.m8476toDoubleimpl(r1, r2)
+            double r1 = kotlin.time.Duration.m8473toDoubleimpl(r1, r2)
             r11 = r1
             r1 = r6
             long r1 = r1.reading
@@ -93,7 +93,7 @@ public final class TestTimeSource extends AbstractLongTimeSource {
         L_0x0069:
             r1 = r6
             r2 = r7
-            r1.m8585overflowLRDsOJo(r2)
+            r1.m8582overflowLRDsOJo(r2)
         L_0x006e:
             r1 = r13
             long r1 = (long) r1
@@ -101,11 +101,11 @@ public final class TestTimeSource extends AbstractLongTimeSource {
             r0.reading = r1
             return
         */
-        throw new UnsupportedOperationException("Method not decompiled: kotlin.time.TestTimeSource.m8584plusAssignLRDsOJo(long):void");
+        throw new UnsupportedOperationException("Method not decompiled: kotlin.time.TestTimeSource.m8581plusAssignLRDsOJo(long):void");
     }
 
     /* renamed from: overflow-LRDsOJo  reason: not valid java name */
-    private final void m8585overflowLRDsOJo(long duration) {
-        throw new IllegalStateException("TestTimeSource will overflow if its reading " + this.reading + "ns is advanced by " + ((Object) Duration.m8495toStringimpl(duration)) + '.');
+    private final void m8582overflowLRDsOJo(long duration) {
+        throw new IllegalStateException("TestTimeSource will overflow if its reading " + this.reading + "ns is advanced by " + ((Object) Duration.m8492toStringimpl(duration)) + '.');
     }
 }

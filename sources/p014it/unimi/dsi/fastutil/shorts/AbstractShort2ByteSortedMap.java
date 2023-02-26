@@ -90,30 +90,30 @@ public abstract class AbstractShort2ByteSortedMap extends AbstractShort2ByteMap 
     public static class KeySetIterator implements ShortBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Short2ByteMap.Entry> f2853i;
+        protected final ObjectBidirectionalIterator<Short2ByteMap.Entry> f2817i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Short2ByteMap.Entry> i) {
-            this.f2853i = i;
+            this.f2817i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
         public short nextShort() {
-            return ((Short2ByteMap.Entry) this.f2853i.next()).getShortKey();
+            return ((Short2ByteMap.Entry) this.f2817i.next()).getShortKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortBidirectionalIterator
         public short previousShort() {
-            return this.f2853i.previous().getShortKey();
+            return this.f2817i.previous().getShortKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2853i.hasNext();
+            return this.f2817i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2853i.hasPrevious();
+            return this.f2817i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractShort2ByteSortedMap extends AbstractShort2ByteMap 
     public static class ValuesIterator implements ByteIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Short2ByteMap.Entry> f2854i;
+        protected final ObjectBidirectionalIterator<Short2ByteMap.Entry> f2818i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Short2ByteMap.Entry> i) {
-            this.f2854i = i;
+            this.f2818i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
         public byte nextByte() {
-            return ((Short2ByteMap.Entry) this.f2854i.next()).getByteValue();
+            return ((Short2ByteMap.Entry) this.f2818i.next()).getByteValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2854i.hasNext();
+            return this.f2818i.hasNext();
         }
     }
 }

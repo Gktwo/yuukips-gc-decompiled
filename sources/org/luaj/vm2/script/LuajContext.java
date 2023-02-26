@@ -24,15 +24,15 @@ public class LuajContext extends SimpleScriptContext implements ScriptContext {
     static final class ReaderInputStream extends InputStream {
 
         /* renamed from: r */
-        final Reader f3361r;
+        final Reader f3325r;
 
         ReaderInputStream(Reader reader) {
-            this.f3361r = reader;
+            this.f3325r = reader;
         }
 
         @Override // java.io.InputStream
         public int read() throws IOException {
-            return this.f3361r.read();
+            return this.f3325r.read();
         }
     }
 
@@ -40,35 +40,35 @@ public class LuajContext extends SimpleScriptContext implements ScriptContext {
     static final class WriterOutputStream extends OutputStream {
 
         /* renamed from: w */
-        final Writer f3362w;
+        final Writer f3326w;
 
         WriterOutputStream(Writer writer) {
-            this.f3362w = writer;
+            this.f3326w = writer;
         }
 
         @Override // java.io.OutputStream
         public void write(int i) throws IOException {
-            this.f3362w.write(new String(new byte[]{(byte) i}));
+            this.f3326w.write(new String(new byte[]{(byte) i}));
         }
 
         @Override // java.io.OutputStream
         public void write(byte[] bArr, int i, int i2) throws IOException {
-            this.f3362w.write(new String(bArr, i, i2));
+            this.f3326w.write(new String(bArr, i, i2));
         }
 
         @Override // java.io.OutputStream
         public void write(byte[] bArr) throws IOException {
-            this.f3362w.write(new String(bArr));
+            this.f3326w.write(new String(bArr));
         }
 
         @Override // java.io.OutputStream, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
-            this.f3362w.close();
+            this.f3326w.close();
         }
 
         @Override // java.io.OutputStream, java.io.Flushable
         public void flush() throws IOException {
-            this.f3362w.flush();
+            this.f3326w.flush();
         }
     }
 

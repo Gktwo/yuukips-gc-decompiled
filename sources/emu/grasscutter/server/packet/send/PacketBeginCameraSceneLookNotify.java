@@ -1,7 +1,6 @@
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.utils.Position;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,7 +8,7 @@ import java.util.Collection;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketBeginCameraSceneLookNotify.class */
 public class PacketBeginCameraSceneLookNotify extends BasePacket {
     public PacketBeginCameraSceneLookNotify(CameraSceneLookNotify parameters) {
-        super(PacketOpcodes.BeginCameraSceneLookNotify);
+        super(279);
     }
 
     /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketBeginCameraSceneLookNotify$CameraSceneLookNotify.class */

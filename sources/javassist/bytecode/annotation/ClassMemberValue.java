@@ -69,14 +69,14 @@ public class ClassMemberValue extends MemberValue {
 
     public String getValue() {
         try {
-            return SignatureAttribute.toTypeSignature(this.f3074cp.getUtf8Info(this.valueIndex)).jvmTypeName();
+            return SignatureAttribute.toTypeSignature(this.f3038cp.getUtf8Info(this.valueIndex)).jvmTypeName();
         } catch (BadBytecode e) {
             throw new RuntimeException(e);
         }
     }
 
     public void setValue(String newClassName) {
-        this.valueIndex = this.f3074cp.addUtf8Info(Descriptor.m380of(newClassName));
+        this.valueIndex = this.f3038cp.addUtf8Info(Descriptor.m380of(newClassName));
     }
 
     public String toString() {
@@ -85,7 +85,7 @@ public class ClassMemberValue extends MemberValue {
 
     @Override // javassist.bytecode.annotation.MemberValue
     public void write(AnnotationsWriter writer) throws IOException {
-        writer.classInfoIndex(this.f3074cp.getUtf8Info(this.valueIndex));
+        writer.classInfoIndex(this.f3038cp.getUtf8Info(this.valueIndex));
     }
 
     @Override // javassist.bytecode.annotation.MemberValue

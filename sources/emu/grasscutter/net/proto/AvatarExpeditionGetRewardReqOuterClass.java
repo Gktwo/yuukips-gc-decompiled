@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExpeditionGetRewardReqOuterClass.class */
 public final class AvatarExpeditionGetRewardReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"AvatarExpeditionGetRewardReq.proto\"3\n\u001cAvatarExpeditionGetRewardReq\u0012\u0013\n\u000bavatar_guid\u0018\u0002 \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"AvatarExpeditionGetRewardReq.proto\"2\n\u001cAvatarExpeditionGetRewardReq\u0012\u0012\n\navatarGuid\u0018\u000f \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AvatarExpeditionGetRewardReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarExpeditionGetRewardReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarExpeditionGetRewardReq_descriptor, new String[]{"AvatarGuid"});
 
@@ -42,7 +42,7 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExpeditionGetRewardReqOuterClass$AvatarExpeditionGetRewardReq.class */
     public static final class AvatarExpeditionGetRewardReq extends GeneratedMessageV3 implements AvatarExpeditionGetRewardReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 2;
+        public static final int AVATARGUID_FIELD_NUMBER = 15;
         private long avatarGuid_;
         private byte memoizedIsInitialized;
         private static final AvatarExpeditionGetRewardReq DEFAULT_INSTANCE = new AvatarExpeditionGetRewardReq();
@@ -89,7 +89,7 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 16:
+                            case 120:
                                 this.avatarGuid_ = input.readUInt64();
                                 break;
                             default:
@@ -142,7 +142,7 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.avatarGuid_ != 0) {
-                output.writeUInt64(2, this.avatarGuid_);
+                output.writeUInt64(15, this.avatarGuid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -155,7 +155,7 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
             }
             int size2 = 0;
             if (this.avatarGuid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(2, this.avatarGuid_);
+                size2 = 0 + CodedOutputStream.computeUInt64Size(15, this.avatarGuid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -179,7 +179,7 @@ public final class AvatarExpeditionGetRewardReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + Internal.hashLong(getAvatarGuid()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + Internal.hashLong(getAvatarGuid()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

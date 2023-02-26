@@ -110,7 +110,7 @@ public final class MultipartBody extends RequestBody {
     @JvmName(name = "-deprecated_type")
     @NotNull
     /* renamed from: -deprecated_type  reason: not valid java name */
-    public final MediaType m9239deprecated_type() {
+    public final MediaType m9236deprecated_type() {
         return this.type;
     }
 
@@ -118,14 +118,14 @@ public final class MultipartBody extends RequestBody {
     @JvmName(name = "-deprecated_boundary")
     @NotNull
     /* renamed from: -deprecated_boundary  reason: not valid java name */
-    public final String m9240deprecated_boundary() {
+    public final String m9237deprecated_boundary() {
         return boundary();
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "size", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_size")
     /* renamed from: -deprecated_size  reason: not valid java name */
-    public final int m9241deprecated_size() {
+    public final int m9238deprecated_size() {
         return size();
     }
 
@@ -133,7 +133,7 @@ public final class MultipartBody extends RequestBody {
     @JvmName(name = "-deprecated_parts")
     @NotNull
     /* renamed from: -deprecated_parts  reason: not valid java name */
-    public final List<Part> m9242deprecated_parts() {
+    public final List<Part> m9239deprecated_parts() {
         return this.parts;
     }
 
@@ -277,7 +277,7 @@ public final class MultipartBody extends RequestBody {
         @JvmName(name = "-deprecated_headers")
         @Nullable
         /* renamed from: -deprecated_headers  reason: not valid java name */
-        public final Headers m9244deprecated_headers() {
+        public final Headers m9241deprecated_headers() {
             return this.headers;
         }
 
@@ -285,7 +285,7 @@ public final class MultipartBody extends RequestBody {
         @JvmName(name = "-deprecated_body")
         @NotNull
         /* renamed from: -deprecated_body  reason: not valid java name */
-        public final RequestBody m9245deprecated_body() {
+        public final RequestBody m9242deprecated_body() {
             return this.body;
         }
 

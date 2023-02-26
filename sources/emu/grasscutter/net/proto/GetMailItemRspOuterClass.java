@@ -26,7 +26,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetMailItemRspOuterClass.class */
 public final class GetMailItemRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014GetMailItemRsp.proto\u001a\u0010EquipParam.proto\"W\n\u000eGetMailItemRsp\u0012\u001e\n\titem_list\u0018\u0006 \u0003(\u000b2\u000b.EquipParam\u0012\u0014\n\fmail_id_list\u0018\u0003 \u0003(\r\u0012\u000f\n\u0007retcode\u0018\u0007 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{EquipParamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014GetMailItemRsp.proto\u001a\u0010EquipParam.proto\"T\n\u000eGetMailItemRsp\u0012\u001d\n\bitemList\u0018\t \u0003(\u000b2\u000b.EquipParam\u0012\u0012\n\nmailIdList\u0018\u0006 \u0003(\r\u0012\u000f\n\u0007retcode\u0018\f \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{EquipParamOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_GetMailItemRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetMailItemRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetMailItemRsp_descriptor, new String[]{"ItemList", "MailIdList", "Retcode"});
 
@@ -64,12 +64,12 @@ public final class GetMailItemRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetMailItemRspOuterClass$GetMailItemRsp.class */
     public static final class GetMailItemRsp extends GeneratedMessageV3 implements GetMailItemRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ITEM_LIST_FIELD_NUMBER = 6;
+        public static final int ITEMLIST_FIELD_NUMBER = 9;
         private List<EquipParamOuterClass.EquipParam> itemList_;
-        public static final int MAIL_ID_LIST_FIELD_NUMBER = 3;
+        public static final int MAILIDLIST_FIELD_NUMBER = 6;
         private Internal.IntList mailIdList_;
         private int mailIdListMemoizedSerializedSize;
-        public static final int RETCODE_FIELD_NUMBER = 7;
+        public static final int RETCODE_FIELD_NUMBER = 12;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final GetMailItemRsp DEFAULT_INSTANCE = new GetMailItemRsp();
@@ -123,14 +123,14 @@ public final class GetMailItemRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 24:
+                            case 48:
                                 if ((mutable_bitField0_ & 2) == 0) {
                                     this.mailIdList_ = newIntList();
                                     mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
                                 }
                                 this.mailIdList_.addInt(input.readUInt32());
                                 break;
-                            case 26:
+                            case 50:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 2) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.mailIdList_ = newIntList();
@@ -141,14 +141,14 @@ public final class GetMailItemRspOuterClass {
                                 }
                                 input.popLimit(limit);
                                 break;
-                            case 50:
+                            case 74:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.itemList_ = new ArrayList();
                                     mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                 }
                                 this.itemList_.add((EquipParamOuterClass.EquipParam) input.readMessage(EquipParamOuterClass.EquipParam.parser(), extensionRegistry));
                                 break;
-                            case 56:
+                            case 96:
                                 this.retcode_ = input.readInt32();
                                 break;
                             default:
@@ -249,17 +249,17 @@ public final class GetMailItemRspOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getMailIdListList().size() > 0) {
-                output.writeUInt32NoTag(26);
+                output.writeUInt32NoTag(50);
                 output.writeUInt32NoTag(this.mailIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.mailIdList_.size(); i++) {
                 output.writeUInt32NoTag(this.mailIdList_.getInt(i));
             }
             for (int i2 = 0; i2 < this.itemList_.size(); i2++) {
-                output.writeMessage(6, this.itemList_.get(i2));
+                output.writeMessage(9, this.itemList_.get(i2));
             }
             if (this.retcode_ != 0) {
-                output.writeInt32(7, this.retcode_);
+                output.writeInt32(12, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -280,10 +280,10 @@ public final class GetMailItemRspOuterClass {
             }
             this.mailIdListMemoizedSerializedSize = dataSize;
             for (int i2 = 0; i2 < this.itemList_.size(); i2++) {
-                size2 += CodedOutputStream.computeMessageSize(6, this.itemList_.get(i2));
+                size2 += CodedOutputStream.computeMessageSize(9, this.itemList_.get(i2));
             }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(7, this.retcode_);
+                size2 += CodedOutputStream.computeInt32Size(12, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -309,12 +309,12 @@ public final class GetMailItemRspOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getItemListCount() > 0) {
-                hash = (53 * ((37 * hash) + 6)) + getItemListList().hashCode();
+                hash = (53 * ((37 * hash) + 9)) + getItemListList().hashCode();
             }
             if (getMailIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 3)) + getMailIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 6)) + getMailIdListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 7)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 12)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

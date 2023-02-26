@@ -988,7 +988,7 @@ public class FloatAVLTreeSet extends AbstractFloatSortedSet implements Serializa
         float from;
 
         /* renamed from: to */
-        float f1920to;
+        float f1884to;
         boolean bottom;
         boolean top;
 
@@ -996,7 +996,7 @@ public class FloatAVLTreeSet extends AbstractFloatSortedSet implements Serializa
             if (bottom || top || FloatAVLTreeSet.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f1920to = to;
+                this.f1884to = to;
                 this.top = top;
                 return;
             }
@@ -1014,7 +1014,7 @@ public class FloatAVLTreeSet extends AbstractFloatSortedSet implements Serializa
 
         /* renamed from: in */
         final boolean m840in(float k) {
-            return (this.bottom || FloatAVLTreeSet.this.compare(k, this.from) >= 0) && (this.top || FloatAVLTreeSet.this.compare(k, this.f1920to) < 0);
+            return (this.bottom || FloatAVLTreeSet.this.compare(k, this.from) >= 0) && (this.top || FloatAVLTreeSet.this.compare(k, this.f1884to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatCollection, p014it.unimi.dsi.fastutil.floats.FloatCollection
@@ -1027,7 +1027,7 @@ public class FloatAVLTreeSet extends AbstractFloatSortedSet implements Serializa
             if (m840in(k)) {
                 return FloatAVLTreeSet.this.add(k);
             }
-            throw new IllegalArgumentException("Element (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1920to)) + ")");
+            throw new IllegalArgumentException("Element (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1884to)) + ")");
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatSet, p014it.unimi.dsi.fastutil.floats.FloatSet
@@ -1072,7 +1072,7 @@ public class FloatAVLTreeSet extends AbstractFloatSortedSet implements Serializa
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatSortedSet
         public FloatSortedSet headSet(float to) {
-            if (!this.top && FloatAVLTreeSet.this.compare(to, this.f1920to) >= 0) {
+            if (!this.top && FloatAVLTreeSet.this.compare(to, this.f1884to) >= 0) {
                 return this;
             }
             return new Subset(this.from, this.bottom, to, false);
@@ -1083,7 +1083,7 @@ public class FloatAVLTreeSet extends AbstractFloatSortedSet implements Serializa
             if (!this.bottom && FloatAVLTreeSet.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Subset(from, false, this.f1920to, this.top);
+            return new Subset(from, false, this.f1884to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatSortedSet
@@ -1092,12 +1092,12 @@ public class FloatAVLTreeSet extends AbstractFloatSortedSet implements Serializa
                 return new Subset(from, false, to, false);
             }
             if (!this.top) {
-                to = FloatAVLTreeSet.this.compare(to, this.f1920to) < 0 ? to : this.f1920to;
+                to = FloatAVLTreeSet.this.compare(to, this.f1884to) < 0 ? to : this.f1884to;
             }
             if (!this.bottom) {
                 from = FloatAVLTreeSet.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f1920to) ? new Subset(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f1884to) ? new Subset(from, false, to, false) : this;
         }
 
         public Entry firstEntry() {
@@ -1116,7 +1116,7 @@ public class FloatAVLTreeSet extends AbstractFloatSortedSet implements Serializa
             if (e == null) {
                 return null;
             }
-            if (this.top || FloatAVLTreeSet.this.compare(e.key, this.f1920to) < 0) {
+            if (this.top || FloatAVLTreeSet.this.compare(e.key, this.f1884to) < 0) {
                 return e;
             }
             return null;
@@ -1130,8 +1130,8 @@ public class FloatAVLTreeSet extends AbstractFloatSortedSet implements Serializa
             if (this.top) {
                 e = FloatAVLTreeSet.this.lastEntry;
             } else {
-                e = FloatAVLTreeSet.this.locateKey(this.f1920to);
-                if (FloatAVLTreeSet.this.compare(e.key, this.f1920to) >= 0) {
+                e = FloatAVLTreeSet.this.locateKey(this.f1884to);
+                if (FloatAVLTreeSet.this.compare(e.key, this.f1884to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1209,7 +1209,7 @@ public class FloatAVLTreeSet extends AbstractFloatSortedSet implements Serializa
             @Override // p014it.unimi.dsi.fastutil.floats.FloatAVLTreeSet.SetIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Subset.this.top && this.next != null && FloatAVLTreeSet.this.compare(this.next.key, Subset.this.f1920to) >= 0) {
+                if (!Subset.this.top && this.next != null && FloatAVLTreeSet.this.compare(this.next.key, Subset.this.f1884to) >= 0) {
                     this.next = null;
                 }
             }

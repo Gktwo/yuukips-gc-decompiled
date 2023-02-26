@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExcelInfoOuterClass.class */
 public final class AvatarExcelInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015AvatarExcelInfo.proto\"«\u0001\n\u000fAvatarExcelInfo\u0012\u0018\n\u0010prefab_path_hash\u0018\u0001 \u0001(\u0004\u0012\u001f\n\u0017prefab_path_remote_hash\u0018\u0002 \u0001(\u0004\u0012\u001c\n\u0014controller_path_hash\u0018\u0003 \u0001(\u0004\u0012#\n\u001bcontroller_path_remote_hash\u0018\u0004 \u0001(\u0004\u0012\u001a\n\u0012combat_config_hash\u0018\u0005 \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015AvatarExcelInfo.proto\"\u0001\n\u000fAvatarExcelInfo\u0012\u0016\n\u000eprefabPathHash\u0018\u0001 \u0001(\u0004\u0012\u001c\n\u0014prefabPathRemoteHash\u0018\u0002 \u0001(\u0004\u0012\u001a\n\u0012controllerPathHash\u0018\u0003 \u0001(\u0004\u0012 \n\u0018controllerPathRemoteHash\u0018\u0004 \u0001(\u0004\u0012\u0018\n\u0010combatConfigHash\u0018\u0005 \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AvatarExcelInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarExcelInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarExcelInfo_descriptor, new String[]{"PrefabPathHash", "PrefabPathRemoteHash", "ControllerPathHash", "ControllerPathRemoteHash", "CombatConfigHash"});
 
@@ -50,15 +50,15 @@ public final class AvatarExcelInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExcelInfoOuterClass$AvatarExcelInfo.class */
     public static final class AvatarExcelInfo extends GeneratedMessageV3 implements AvatarExcelInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PREFAB_PATH_HASH_FIELD_NUMBER = 1;
+        public static final int PREFABPATHHASH_FIELD_NUMBER = 1;
         private long prefabPathHash_;
-        public static final int PREFAB_PATH_REMOTE_HASH_FIELD_NUMBER = 2;
+        public static final int PREFABPATHREMOTEHASH_FIELD_NUMBER = 2;
         private long prefabPathRemoteHash_;
-        public static final int CONTROLLER_PATH_HASH_FIELD_NUMBER = 3;
+        public static final int CONTROLLERPATHHASH_FIELD_NUMBER = 3;
         private long controllerPathHash_;
-        public static final int CONTROLLER_PATH_REMOTE_HASH_FIELD_NUMBER = 4;
+        public static final int CONTROLLERPATHREMOTEHASH_FIELD_NUMBER = 4;
         private long controllerPathRemoteHash_;
-        public static final int COMBAT_CONFIG_HASH_FIELD_NUMBER = 5;
+        public static final int COMBATCONFIGHASH_FIELD_NUMBER = 5;
         private long combatConfigHash_;
         private byte memoizedIsInitialized;
         private static final AvatarExcelInfo DEFAULT_INSTANCE = new AvatarExcelInfo();

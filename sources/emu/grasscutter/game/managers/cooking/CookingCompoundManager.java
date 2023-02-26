@@ -74,9 +74,9 @@ public class CookingCompoundManager extends BasePlayerManager {
         if (!unlocked.contains(Integer.valueOf(id))) {
             this.player.sendPacket(new PacketPlayerCompoundMaterialRsp(-1));
         } else if (activeCompounds.containsKey(Integer.valueOf(id)) && activeCompounds.get(Integer.valueOf(id)).getTotalCount() + count > compound.getQueueSize()) {
-            this.player.sendPacket(new PacketPlayerCompoundMaterialRsp((int) RetcodeOuterClass.Retcode.RET_COMPOUND_QUEUE_FULL_VALUE));
+            this.player.sendPacket(new PacketPlayerCompoundMaterialRsp(614));
         } else if (!this.player.getInventory().payItems(compound.getInputVec(), count)) {
-            this.player.sendPacket(new PacketPlayerCompoundMaterialRsp(609));
+            this.player.sendPacket(new PacketPlayerCompoundMaterialRsp((int) RetcodeOuterClass.Retcode.RET_ITEM_COUNT_NOT_ENOUGH_VALUE));
         } else {
             int currentTime = Utils.getCurrentSeconds();
             if (activeCompounds.containsKey(Integer.valueOf(id))) {

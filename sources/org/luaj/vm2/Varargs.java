@@ -9,19 +9,19 @@ public abstract class Varargs {
         private final int offset;
 
         /* renamed from: v */
-        private final LuaValue[] f3297v;
+        private final LuaValue[] f3261v;
         private final int length;
         private final Varargs more;
 
         ArrayPartVarargs(LuaValue[] luaValueArr, int i, int i2) {
-            this.f3297v = luaValueArr;
+            this.f3261v = luaValueArr;
             this.offset = i;
             this.length = i2;
             this.more = LuaValue.NONE;
         }
 
         public ArrayPartVarargs(LuaValue[] luaValueArr, int i, int i2, Varargs varargs) {
-            this.f3297v = luaValueArr;
+            this.f3261v = luaValueArr;
             this.offset = i;
             this.length = i2;
             this.more = varargs;
@@ -29,7 +29,7 @@ public abstract class Varargs {
 
         @Override // org.luaj.vm2.Varargs
         public LuaValue arg(int i) {
-            return i < 1 ? LuaValue.NIL : i <= this.length ? this.f3297v[(this.offset + i) - 1] : this.more.arg(i - this.length);
+            return i < 1 ? LuaValue.NIL : i <= this.length ? this.f3261v[(this.offset + i) - 1] : this.more.arg(i - this.length);
         }
 
         @Override // org.luaj.vm2.Varargs
@@ -39,7 +39,7 @@ public abstract class Varargs {
 
         @Override // org.luaj.vm2.Varargs
         public LuaValue arg1() {
-            return this.length > 0 ? this.f3297v[this.offset] : this.more.arg1();
+            return this.length > 0 ? this.f3261v[this.offset] : this.more.arg1();
         }
 
         @Override // org.luaj.vm2.Varargs
@@ -47,13 +47,13 @@ public abstract class Varargs {
             if (i <= 0) {
                 LuaValue.argerror(1, "start must be > 0");
             }
-            return i == 1 ? this : i > this.length ? this.more.subargs(i - this.length) : LuaValue.varargsOf(this.f3297v, (this.offset + i) - 1, this.length - (i - 1), this.more);
+            return i == 1 ? this : i > this.length ? this.more.subargs(i - this.length) : LuaValue.varargsOf(this.f3261v, (this.offset + i) - 1, this.length - (i - 1), this.more);
         }
 
         @Override // org.luaj.vm2.Varargs
         void copyto(LuaValue[] luaValueArr, int i, int i2) {
             int min = Math.min(this.length, i2);
-            System.arraycopy(this.f3297v, this.offset, luaValueArr, i, min);
+            System.arraycopy(this.f3261v, this.offset, luaValueArr, i, min);
             this.more.copyto(luaValueArr, i + min, i2 - min);
         }
     }
@@ -63,30 +63,30 @@ public abstract class Varargs {
     public static final class ArrayVarargs extends Varargs {
 
         /* renamed from: v */
-        private final LuaValue[] f3298v;
+        private final LuaValue[] f3262v;
 
         /* renamed from: r */
-        private final Varargs f3299r;
+        private final Varargs f3263r;
 
         /* access modifiers changed from: package-private */
         public ArrayVarargs(LuaValue[] luaValueArr, Varargs varargs) {
-            this.f3298v = luaValueArr;
-            this.f3299r = varargs;
+            this.f3262v = luaValueArr;
+            this.f3263r = varargs;
         }
 
         @Override // org.luaj.vm2.Varargs
         public LuaValue arg(int i) {
-            return i < 1 ? LuaValue.NIL : i <= this.f3298v.length ? this.f3298v[i - 1] : this.f3299r.arg(i - this.f3298v.length);
+            return i < 1 ? LuaValue.NIL : i <= this.f3262v.length ? this.f3262v[i - 1] : this.f3263r.arg(i - this.f3262v.length);
         }
 
         @Override // org.luaj.vm2.Varargs
         public int narg() {
-            return this.f3298v.length + this.f3299r.narg();
+            return this.f3262v.length + this.f3263r.narg();
         }
 
         @Override // org.luaj.vm2.Varargs
         public LuaValue arg1() {
-            return this.f3298v.length > 0 ? this.f3298v[0] : this.f3299r.arg1();
+            return this.f3262v.length > 0 ? this.f3262v[0] : this.f3263r.arg1();
         }
 
         @Override // org.luaj.vm2.Varargs
@@ -94,14 +94,14 @@ public abstract class Varargs {
             if (i <= 0) {
                 LuaValue.argerror(1, "start must be > 0");
             }
-            return i == 1 ? this : i > this.f3298v.length ? this.f3299r.subargs(i - this.f3298v.length) : LuaValue.varargsOf(this.f3298v, i - 1, this.f3298v.length - (i - 1), this.f3299r);
+            return i == 1 ? this : i > this.f3262v.length ? this.f3263r.subargs(i - this.f3262v.length) : LuaValue.varargsOf(this.f3262v, i - 1, this.f3262v.length - (i - 1), this.f3263r);
         }
 
         @Override // org.luaj.vm2.Varargs
         void copyto(LuaValue[] luaValueArr, int i, int i2) {
-            int min = Math.min(this.f3298v.length, i2);
-            System.arraycopy(this.f3298v, 0, luaValueArr, i, min);
-            this.f3299r.copyto(luaValueArr, i + min, i2 - min);
+            int min = Math.min(this.f3262v.length, i2);
+            System.arraycopy(this.f3262v, 0, luaValueArr, i, min);
+            this.f3263r.copyto(luaValueArr, i + min, i2 - min);
         }
     }
 
@@ -110,35 +110,35 @@ public abstract class Varargs {
     public static final class PairVarargs extends Varargs {
 
         /* renamed from: v1 */
-        private final LuaValue f3300v1;
+        private final LuaValue f3264v1;
 
         /* renamed from: v2 */
-        private final Varargs f3301v2;
+        private final Varargs f3265v2;
 
         /* access modifiers changed from: package-private */
         public PairVarargs(LuaValue luaValue, Varargs varargs) {
-            this.f3300v1 = luaValue;
-            this.f3301v2 = varargs;
+            this.f3264v1 = luaValue;
+            this.f3265v2 = varargs;
         }
 
         @Override // org.luaj.vm2.Varargs
         public LuaValue arg(int i) {
-            return i == 1 ? this.f3300v1 : this.f3301v2.arg(i - 1);
+            return i == 1 ? this.f3264v1 : this.f3265v2.arg(i - 1);
         }
 
         @Override // org.luaj.vm2.Varargs
         public int narg() {
-            return 1 + this.f3301v2.narg();
+            return 1 + this.f3265v2.narg();
         }
 
         @Override // org.luaj.vm2.Varargs
         public LuaValue arg1() {
-            return this.f3300v1;
+            return this.f3264v1;
         }
 
         @Override // org.luaj.vm2.Varargs
         public Varargs subargs(int i) {
-            return i == 1 ? this : i == 2 ? this.f3301v2 : i > 2 ? this.f3301v2.subargs(i - 1) : LuaValue.argerror(1, "start must be > 0");
+            return i == 1 ? this : i == 2 ? this.f3265v2 : i > 2 ? this.f3265v2.subargs(i - 1) : LuaValue.argerror(1, "start must be > 0");
         }
     }
 
@@ -146,12 +146,12 @@ public abstract class Varargs {
     static class SubVarargs extends Varargs {
 
         /* renamed from: v */
-        private final Varargs f3302v;
+        private final Varargs f3266v;
         private final int start;
         private final int end;
 
         public SubVarargs(Varargs varargs, int i, int i2) {
-            this.f3302v = varargs;
+            this.f3266v = varargs;
             this.start = i;
             this.end = i2;
         }
@@ -159,12 +159,12 @@ public abstract class Varargs {
         @Override // org.luaj.vm2.Varargs
         public LuaValue arg(int i) {
             int i2 = i + (this.start - 1);
-            return (i2 < this.start || i2 > this.end) ? LuaValue.NIL : this.f3302v.arg(i2);
+            return (i2 < this.start || i2 > this.end) ? LuaValue.NIL : this.f3266v.arg(i2);
         }
 
         @Override // org.luaj.vm2.Varargs
         public LuaValue arg1() {
-            return this.f3302v.arg(this.start);
+            return this.f3266v.arg(this.start);
         }
 
         @Override // org.luaj.vm2.Varargs
@@ -178,7 +178,7 @@ public abstract class Varargs {
                 return this;
             }
             int i2 = (this.start + i) - 1;
-            return i > 0 ? i2 >= this.end ? LuaValue.NONE : i2 == this.end ? this.f3302v.arg(this.end) : i2 == this.end - 1 ? new PairVarargs(this.f3302v.arg(this.end - 1), this.f3302v.arg(this.end)) : new SubVarargs(this.f3302v, i2, this.end) : new SubVarargs(this.f3302v, i2, this.end);
+            return i > 0 ? i2 >= this.end ? LuaValue.NONE : i2 == this.end ? this.f3266v.arg(this.end) : i2 == this.end - 1 ? new PairVarargs(this.f3266v.arg(this.end - 1), this.f3266v.arg(this.end)) : new SubVarargs(this.f3266v, i2, this.end) : new SubVarargs(this.f3266v, i2, this.end);
         }
     }
 

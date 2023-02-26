@@ -28,13 +28,31 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ShopGoodsOuterClass.class */
 public final class ShopGoodsOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000fShopGoods.proto\u001a\u000fItemParam.proto\"Û\u0003\n\tShopGoods\u0012\u001b\n\u0012secondary_sheet_id\u0018ë\u0007 \u0001(\r\u0012\u001e\n\ngoods_item\u0018\u000f \u0001(\u000b2\n.ItemParam\u0012\"\n\u000ecost_item_list\u0018\u0007 \u0003(\u000b2\n.ItemParam\u0012\u0012\n\nbought_num\u0018\u000e \u0001(\r\u0012\u0019\n\u0011pre_goods_id_list\u0018\t \u0003(\r\u0012\u0011\n\tmin_level\u0018\u0005 \u0001(\r\u0012\r\n\u0005mcoin\u0018\u000b \u0001(\r\u0012\r\n\u0005hcoin\u0018\u0006 \u0001(\r\u0012\u0010\n\bend_time\u0018\u0003 \u0001(\r\u0012\u0019\n\u0011next_refresh_time\u0018\n \u0001(\r\u0012\u0010\n\bgoods_id\u0018\r \u0001(\r\u0012\u001c\n\u0013Unk3300_OMKIFIMDGDN\u0018\b \u0001(\r\u0012\u0011\n\tbuy_limit\u0018\b \u0001(\r\u0012\u001c\n\u0013Unk3300_MBGOMHNBHMG\u0018\u0006 \u0001(\r\u0012\r\n\u0005scoin\u0018\u0002 \u0001(\r\u0012\u0011\n\tmax_level\u0018\u0001 \u0001(\r\u0012\u0015\n\fsingle_limit\u0018ê\r \u0001(\r\u0012\u001c\n\u0013Unk3300_NJCPAJBCEPH\u0018ù\u0003 \u0001(\r\u0012\u0012\n\nbegin_time\u0018\f \u0001(\r\u0012\u0014\n\fdisable_type\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000fShopGoods.proto\u001a\u000fItemParam.proto\"È\u0003\n\tShopGoods\u0012\u001c\n\u0013Unk3300_MBGOMHNBHMG\u0018\u0005 \u0001(\r\u0012\u0010\n\bmaxLevel\u0018\u0003 \u0001(\r\u0012\r\n\u0005hcoin\u0018\r \u0001(\r\u0012\u0019\n\u0010secondarySheetId\u0018ë\u0002 \u0001(\r\u0012\r\n\u0005scoin\u0018\u000b \u0001(\r\u0012\u000f\n\u0007goodsId\u0018\u0002 \u0001(\r\u0012\u0010\n\bbuyLimit\u0018\n \u0001(\r\u0012\u0016\n\u000epreGoodsIdList\u0018\f \u0003(\r\u0012\u001d\n\tgoodsItem\u0018\u0006 \u0001(\u000b2\n.ItemParam\u0012 \n\fcostItemList\u0018\u0007 \u0003(\u000b2\n.ItemParam\u0012\u0014\n\u000bsingleLimit\u0018¨\u0003 \u0001(\r\u0012\u0017\n\u000fnextRefreshTime\u0018\u0001 \u0001(\r\u0012\u001c\n\u0013Unk3300_NJCPAJBCEPH\u0018¶\u0001 \u0001(\r\u0012\u0011\n\tboughtNum\u0018\u0004 \u0001(\r\u0012\u001c\n\u0013Unk3300_OMKIFIMDGDN\u0018ü\u0004 \u0001(\r\u0012\u0010\n\bminLevel\u0018\u000e \u0001(\r\u0012\u000f\n\u0007endTime\u0018\u000f \u0001(\r\u0012\u0011\n\tbeginTime\u0018\b \u0001(\r\u0012\u0013\n\u000bdisableType\u0018\t \u0001(\r\u0012\r\n\u0005mcoin\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ShopGoods_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ShopGoods_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ShopGoods_descriptor, new String[]{"SecondarySheetId", "GoodsItem", "CostItemList", "BoughtNum", "PreGoodsIdList", "MinLevel", "Mcoin", "Hcoin", "EndTime", "NextRefreshTime", "GoodsId", "Unk3300OMKIFIMDGDN", "BuyLimit", "Unk3300MBGOMHNBHMG", "Scoin", "MaxLevel", "SingleLimit", "Unk3300NJCPAJBCEPH", "BeginTime", "DisableType"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ShopGoods_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ShopGoods_descriptor, new String[]{"Unk3300MBGOMHNBHMG", "MaxLevel", "Hcoin", "SecondarySheetId", "Scoin", "GoodsId", "BuyLimit", "PreGoodsIdList", "GoodsItem", "CostItemList", "SingleLimit", "NextRefreshTime", "Unk3300NJCPAJBCEPH", "BoughtNum", "Unk3300OMKIFIMDGDN", "MinLevel", "EndTime", "BeginTime", "DisableType", "Mcoin"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ShopGoodsOuterClass$ShopGoodsOrBuilder.class */
     public interface ShopGoodsOrBuilder extends MessageOrBuilder {
+        int getUnk3300MBGOMHNBHMG();
+
+        int getMaxLevel();
+
+        int getHcoin();
+
         int getSecondarySheetId();
+
+        int getScoin();
+
+        int getGoodsId();
+
+        int getBuyLimit();
+
+        List<Integer> getPreGoodsIdListList();
+
+        int getPreGoodsIdListCount();
+
+        int getPreGoodsIdList(int i);
 
         boolean hasGoodsItem();
 
@@ -52,43 +70,25 @@ public final class ShopGoodsOuterClass {
 
         ItemParamOuterClass.ItemParamOrBuilder getCostItemListOrBuilder(int i);
 
-        int getBoughtNum();
-
-        List<Integer> getPreGoodsIdListList();
-
-        int getPreGoodsIdListCount();
-
-        int getPreGoodsIdList(int i);
-
-        int getMinLevel();
-
-        int getMcoin();
-
-        int getHcoin();
-
-        int getEndTime();
+        int getSingleLimit();
 
         int getNextRefreshTime();
 
-        int getGoodsId();
+        int getUnk3300NJCPAJBCEPH();
+
+        int getBoughtNum();
 
         int getUnk3300OMKIFIMDGDN();
 
-        int getBuyLimit();
+        int getMinLevel();
 
-        int getUnk3300MBGOMHNBHMG();
-
-        int getScoin();
-
-        int getMaxLevel();
-
-        int getSingleLimit();
-
-        int getUnk3300NJCPAJBCEPH();
+        int getEndTime();
 
         int getBeginTime();
 
         int getDisableType();
+
+        int getMcoin();
     }
 
     private ShopGoodsOuterClass() {
@@ -104,47 +104,47 @@ public final class ShopGoodsOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ShopGoodsOuterClass$ShopGoods.class */
     public static final class ShopGoods extends GeneratedMessageV3 implements ShopGoodsOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SECONDARY_SHEET_ID_FIELD_NUMBER = 1003;
+        public static final int UNK3300_MBGOMHNBHMG_FIELD_NUMBER = 655;
+        private int unk3300MBGOMHNBHMG_;
+        public static final int MAXLEVEL_FIELD_NUMBER = 3;
+        private int maxLevel_;
+        public static final int HCOIN_FIELD_NUMBER = 13;
+        private int hcoin_;
+        public static final int SECONDARYSHEETID_FIELD_NUMBER = 363;
         private int secondarySheetId_;
-        public static final int GOODS_ITEM_FIELD_NUMBER = 15;
-        private ItemParamOuterClass.ItemParam goodsItem_;
-        public static final int COST_ITEM_LIST_FIELD_NUMBER = 7;
-        private List<ItemParamOuterClass.ItemParam> costItemList_;
-        public static final int BOUGHT_NUM_FIELD_NUMBER = 14;
-        private int boughtNum_;
-        public static final int PRE_GOODS_ID_LIST_FIELD_NUMBER = 9;
+        public static final int SCOIN_FIELD_NUMBER = 11;
+        private int scoin_;
+        public static final int GOODSID_FIELD_NUMBER = 2;
+        private int goodsId_;
+        public static final int BUYLIMIT_FIELD_NUMBER = 10;
+        private int buyLimit_;
+        public static final int PREGOODSIDLIST_FIELD_NUMBER = 12;
         private Internal.IntList preGoodsIdList_;
         private int preGoodsIdListMemoizedSerializedSize;
-        public static final int MIN_LEVEL_FIELD_NUMBER = 5;
-        private int minLevel_;
-        public static final int MCOIN_FIELD_NUMBER = 11;
-        private int mcoin_;
-        public static final int HCOIN_FIELD_NUMBER = 6;
-        private int hcoin_;
-        public static final int END_TIME_FIELD_NUMBER = 3;
-        private int endTime_;
-        public static final int NEXT_REFRESH_TIME_FIELD_NUMBER = 10;
-        private int nextRefreshTime_;
-        public static final int GOODS_ID_FIELD_NUMBER = 13;
-        private int goodsId_;
-        public static final int UNK3300_OMKIFIMDGDN_FIELD_NUMBER = 1037;
-        private int unk3300OMKIFIMDGDN_;
-        public static final int BUY_LIMIT_FIELD_NUMBER = 8;
-        private int buyLimit_;
-        public static final int UNK3300_MBGOMHNBHMG_FIELD_NUMBER = 777;
-        private int unk3300MBGOMHNBHMG_;
-        public static final int SCOIN_FIELD_NUMBER = 2;
-        private int scoin_;
-        public static final int MAX_LEVEL_FIELD_NUMBER = 1;
-        private int maxLevel_;
-        public static final int SINGLE_LIMIT_FIELD_NUMBER = 1770;
+        public static final int GOODSITEM_FIELD_NUMBER = 6;
+        private ItemParamOuterClass.ItemParam goodsItem_;
+        public static final int COSTITEMLIST_FIELD_NUMBER = 7;
+        private List<ItemParamOuterClass.ItemParam> costItemList_;
+        public static final int SINGLELIMIT_FIELD_NUMBER = 424;
         private int singleLimit_;
-        public static final int UNK3300_NJCPAJBCEPH_FIELD_NUMBER = 505;
+        public static final int NEXTREFRESHTIME_FIELD_NUMBER = 1;
+        private int nextRefreshTime_;
+        public static final int UNK3300_NJCPAJBCEPH_FIELD_NUMBER = 182;
         private int unk3300NJCPAJBCEPH_;
-        public static final int BEGIN_TIME_FIELD_NUMBER = 12;
+        public static final int BOUGHTNUM_FIELD_NUMBER = 4;
+        private int boughtNum_;
+        public static final int UNK3300_OMKIFIMDGDN_FIELD_NUMBER = 636;
+        private int unk3300OMKIFIMDGDN_;
+        public static final int MINLEVEL_FIELD_NUMBER = 14;
+        private int minLevel_;
+        public static final int ENDTIME_FIELD_NUMBER = 15;
+        private int endTime_;
+        public static final int BEGINTIME_FIELD_NUMBER = 8;
         private int beginTime_;
-        public static final int DISABLE_TYPE_FIELD_NUMBER = 4;
+        public static final int DISABLETYPE_FIELD_NUMBER = 9;
         private int disableType_;
+        public static final int MCOIN_FIELD_NUMBER = 5;
+        private int mcoin_;
         private byte memoizedIsInitialized;
         private static final ShopGoods DEFAULT_INSTANCE = new ShopGoods();
         private static final Parser<ShopGoods> PARSER = new AbstractParser<ShopGoods>() { // from class: emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoods.1
@@ -163,8 +163,8 @@ public final class ShopGoodsOuterClass {
         private ShopGoods() {
             this.preGoodsIdListMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
-            this.costItemList_ = Collections.emptyList();
             this.preGoodsIdList_ = emptyIntList();
+            this.costItemList_ = Collections.emptyList();
         }
 
         /* access modifiers changed from: protected */
@@ -198,67 +198,21 @@ public final class ShopGoodsOuterClass {
                                 done = true;
                                 break;
                             case 8:
-                                this.maxLevel_ = input.readUInt32();
-                                break;
-                            case 16:
-                                this.scoin_ = input.readUInt32();
-                                break;
-                            case 24:
-                                this.endTime_ = input.readUInt32();
-                                break;
-                            case 32:
-                                this.disableType_ = input.readUInt32();
-                                break;
-                            case 40:
-                                this.minLevel_ = input.readUInt32();
-                                break;
-                            case 48:
-                                this.hcoin_ = input.readUInt32();
-                                break;
-                            case 58:
-                                if ((mutable_bitField0_ & 1) == 0) {
-                                    this.costItemList_ = new ArrayList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
-                                }
-                                this.costItemList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-                                break;
-                            case 64:
-                                this.buyLimit_ = input.readUInt32();
-                                break;
-                            case 72:
-                                if ((mutable_bitField0_ & 2) == 0) {
-                                    this.preGoodsIdList_ = newIntList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
-                                }
-                                this.preGoodsIdList_.addInt(input.readUInt32());
-                                break;
-                            case 74:
-                                int limit = input.pushLimit(input.readRawVarint32());
-                                if ((mutable_bitField0_ & 2) == 0 && input.getBytesUntilLimit() > 0) {
-                                    this.preGoodsIdList_ = newIntList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
-                                }
-                                while (input.getBytesUntilLimit() > 0) {
-                                    this.preGoodsIdList_.addInt(input.readUInt32());
-                                }
-                                input.popLimit(limit);
-                                break;
-                            case 80:
                                 this.nextRefreshTime_ = input.readUInt32();
                                 break;
-                            case 88:
-                                this.mcoin_ = input.readUInt32();
-                                break;
-                            case 96:
-                                this.beginTime_ = input.readUInt32();
-                                break;
-                            case 104:
+                            case 16:
                                 this.goodsId_ = input.readUInt32();
                                 break;
-                            case 112:
+                            case 24:
+                                this.maxLevel_ = input.readUInt32();
+                                break;
+                            case 32:
                                 this.boughtNum_ = input.readUInt32();
                                 break;
-                            case 122:
+                            case 40:
+                                this.mcoin_ = input.readUInt32();
+                                break;
+                            case 50:
                                 ItemParamOuterClass.ItemParam.Builder subBuilder = this.goodsItem_ != null ? this.goodsItem_.toBuilder() : null;
                                 this.goodsItem_ = (ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -268,20 +222,66 @@ public final class ShopGoodsOuterClass {
                                     this.goodsItem_ = subBuilder.buildPartial();
                                     break;
                                 }
-                            case 4040:
+                            case 58:
+                                if ((mutable_bitField0_ & 2) == 0) {
+                                    this.costItemList_ = new ArrayList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                }
+                                this.costItemList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+                                break;
+                            case 64:
+                                this.beginTime_ = input.readUInt32();
+                                break;
+                            case 72:
+                                this.disableType_ = input.readUInt32();
+                                break;
+                            case 80:
+                                this.buyLimit_ = input.readUInt32();
+                                break;
+                            case 88:
+                                this.scoin_ = input.readUInt32();
+                                break;
+                            case 96:
+                                if ((mutable_bitField0_ & 1) == 0) {
+                                    this.preGoodsIdList_ = newIntList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                }
+                                this.preGoodsIdList_.addInt(input.readUInt32());
+                                break;
+                            case 98:
+                                int limit = input.pushLimit(input.readRawVarint32());
+                                if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
+                                    this.preGoodsIdList_ = newIntList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                }
+                                while (input.getBytesUntilLimit() > 0) {
+                                    this.preGoodsIdList_.addInt(input.readUInt32());
+                                }
+                                input.popLimit(limit);
+                                break;
+                            case 104:
+                                this.hcoin_ = input.readUInt32();
+                                break;
+                            case 112:
+                                this.minLevel_ = input.readUInt32();
+                                break;
+                            case 120:
+                                this.endTime_ = input.readUInt32();
+                                break;
+                            case 1456:
                                 this.unk3300NJCPAJBCEPH_ = input.readUInt32();
                                 break;
-                            case 6216:
-                                this.unk3300MBGOMHNBHMG_ = input.readUInt32();
-                                break;
-                            case 8024:
+                            case 2904:
                                 this.secondarySheetId_ = input.readUInt32();
                                 break;
-                            case PacketOpcodes.TreasureMapHostInfoNotify:
+                            case 3392:
+                                this.singleLimit_ = input.readUInt32();
+                                break;
+                            case PacketOpcodes.ReunionBriefInfoReq:
                                 this.unk3300OMKIFIMDGDN_ = input.readUInt32();
                                 break;
-                            case 14160:
-                                this.singleLimit_ = input.readUInt32();
+                            case 5240:
+                                this.unk3300MBGOMHNBHMG_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -299,10 +299,10 @@ public final class ShopGoodsOuterClass {
                     }
                 }
             } finally {
-                if ((mutable_bitField0_ & 1) != 0) {
+                if ((mutable_bitField0_ & 2) != 0) {
                     this.costItemList_ = Collections.unmodifiableList(this.costItemList_);
                 }
-                if ((mutable_bitField0_ & 2) != 0) {
+                if ((mutable_bitField0_ & 1) != 0) {
                     this.preGoodsIdList_.makeImmutable();
                 }
                 this.unknownFields = unknownFields.build();
@@ -320,8 +320,53 @@ public final class ShopGoodsOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+        public int getUnk3300MBGOMHNBHMG() {
+            return this.unk3300MBGOMHNBHMG_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+        public int getMaxLevel() {
+            return this.maxLevel_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+        public int getHcoin() {
+            return this.hcoin_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
         public int getSecondarySheetId() {
             return this.secondarySheetId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+        public int getScoin() {
+            return this.scoin_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+        public int getGoodsId() {
+            return this.goodsId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+        public int getBuyLimit() {
+            return this.buyLimit_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+        public List<Integer> getPreGoodsIdListList() {
+            return this.preGoodsIdList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+        public int getPreGoodsIdListCount() {
+            return this.preGoodsIdList_.size();
+        }
+
+        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+        public int getPreGoodsIdList(int index) {
+            return this.preGoodsIdList_.getInt(index);
         }
 
         @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
@@ -365,43 +410,8 @@ public final class ShopGoodsOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-        public int getBoughtNum() {
-            return this.boughtNum_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-        public List<Integer> getPreGoodsIdListList() {
-            return this.preGoodsIdList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-        public int getPreGoodsIdListCount() {
-            return this.preGoodsIdList_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-        public int getPreGoodsIdList(int index) {
-            return this.preGoodsIdList_.getInt(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-        public int getMinLevel() {
-            return this.minLevel_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-        public int getMcoin() {
-            return this.mcoin_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-        public int getHcoin() {
-            return this.hcoin_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-        public int getEndTime() {
-            return this.endTime_;
+        public int getSingleLimit() {
+            return this.singleLimit_;
         }
 
         @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
@@ -410,8 +420,13 @@ public final class ShopGoodsOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-        public int getGoodsId() {
-            return this.goodsId_;
+        public int getUnk3300NJCPAJBCEPH() {
+            return this.unk3300NJCPAJBCEPH_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+        public int getBoughtNum() {
+            return this.boughtNum_;
         }
 
         @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
@@ -420,33 +435,13 @@ public final class ShopGoodsOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-        public int getBuyLimit() {
-            return this.buyLimit_;
+        public int getMinLevel() {
+            return this.minLevel_;
         }
 
         @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-        public int getUnk3300MBGOMHNBHMG() {
-            return this.unk3300MBGOMHNBHMG_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-        public int getScoin() {
-            return this.scoin_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-        public int getMaxLevel() {
-            return this.maxLevel_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-        public int getSingleLimit() {
-            return this.singleLimit_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-        public int getUnk3300NJCPAJBCEPH() {
-            return this.unk3300NJCPAJBCEPH_;
+        public int getEndTime() {
+            return this.endTime_;
         }
 
         @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
@@ -457,6 +452,11 @@ public final class ShopGoodsOuterClass {
         @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
         public int getDisableType() {
             return this.disableType_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+        public int getMcoin() {
+            return this.mcoin_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -475,69 +475,69 @@ public final class ShopGoodsOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
+            if (this.nextRefreshTime_ != 0) {
+                output.writeUInt32(1, this.nextRefreshTime_);
+            }
+            if (this.goodsId_ != 0) {
+                output.writeUInt32(2, this.goodsId_);
+            }
             if (this.maxLevel_ != 0) {
-                output.writeUInt32(1, this.maxLevel_);
+                output.writeUInt32(3, this.maxLevel_);
             }
-            if (this.scoin_ != 0) {
-                output.writeUInt32(2, this.scoin_);
+            if (this.boughtNum_ != 0) {
+                output.writeUInt32(4, this.boughtNum_);
             }
-            if (this.endTime_ != 0) {
-                output.writeUInt32(3, this.endTime_);
+            if (this.mcoin_ != 0) {
+                output.writeUInt32(5, this.mcoin_);
             }
-            if (this.disableType_ != 0) {
-                output.writeUInt32(4, this.disableType_);
-            }
-            if (this.minLevel_ != 0) {
-                output.writeUInt32(5, this.minLevel_);
-            }
-            if (this.hcoin_ != 0) {
-                output.writeUInt32(6, this.hcoin_);
+            if (this.goodsItem_ != null) {
+                output.writeMessage(6, getGoodsItem());
             }
             for (int i = 0; i < this.costItemList_.size(); i++) {
                 output.writeMessage(7, this.costItemList_.get(i));
             }
+            if (this.beginTime_ != 0) {
+                output.writeUInt32(8, this.beginTime_);
+            }
+            if (this.disableType_ != 0) {
+                output.writeUInt32(9, this.disableType_);
+            }
             if (this.buyLimit_ != 0) {
-                output.writeUInt32(8, this.buyLimit_);
+                output.writeUInt32(10, this.buyLimit_);
+            }
+            if (this.scoin_ != 0) {
+                output.writeUInt32(11, this.scoin_);
             }
             if (getPreGoodsIdListList().size() > 0) {
-                output.writeUInt32NoTag(74);
+                output.writeUInt32NoTag(98);
                 output.writeUInt32NoTag(this.preGoodsIdListMemoizedSerializedSize);
             }
             for (int i2 = 0; i2 < this.preGoodsIdList_.size(); i2++) {
                 output.writeUInt32NoTag(this.preGoodsIdList_.getInt(i2));
             }
-            if (this.nextRefreshTime_ != 0) {
-                output.writeUInt32(10, this.nextRefreshTime_);
+            if (this.hcoin_ != 0) {
+                output.writeUInt32(13, this.hcoin_);
             }
-            if (this.mcoin_ != 0) {
-                output.writeUInt32(11, this.mcoin_);
+            if (this.minLevel_ != 0) {
+                output.writeUInt32(14, this.minLevel_);
             }
-            if (this.beginTime_ != 0) {
-                output.writeUInt32(12, this.beginTime_);
-            }
-            if (this.goodsId_ != 0) {
-                output.writeUInt32(13, this.goodsId_);
-            }
-            if (this.boughtNum_ != 0) {
-                output.writeUInt32(14, this.boughtNum_);
-            }
-            if (this.goodsItem_ != null) {
-                output.writeMessage(15, getGoodsItem());
+            if (this.endTime_ != 0) {
+                output.writeUInt32(15, this.endTime_);
             }
             if (this.unk3300NJCPAJBCEPH_ != 0) {
-                output.writeUInt32(505, this.unk3300NJCPAJBCEPH_);
-            }
-            if (this.unk3300MBGOMHNBHMG_ != 0) {
-                output.writeUInt32(UNK3300_MBGOMHNBHMG_FIELD_NUMBER, this.unk3300MBGOMHNBHMG_);
+                output.writeUInt32(182, this.unk3300NJCPAJBCEPH_);
             }
             if (this.secondarySheetId_ != 0) {
-                output.writeUInt32(1003, this.secondarySheetId_);
-            }
-            if (this.unk3300OMKIFIMDGDN_ != 0) {
-                output.writeUInt32(UNK3300_OMKIFIMDGDN_FIELD_NUMBER, this.unk3300OMKIFIMDGDN_);
+                output.writeUInt32(363, this.secondarySheetId_);
             }
             if (this.singleLimit_ != 0) {
-                output.writeUInt32(SINGLE_LIMIT_FIELD_NUMBER, this.singleLimit_);
+                output.writeUInt32(424, this.singleLimit_);
+            }
+            if (this.unk3300OMKIFIMDGDN_ != 0) {
+                output.writeUInt32(636, this.unk3300OMKIFIMDGDN_);
+            }
+            if (this.unk3300MBGOMHNBHMG_ != 0) {
+                output.writeUInt32(655, this.unk3300MBGOMHNBHMG_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -549,29 +549,38 @@ public final class ShopGoodsOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.nextRefreshTime_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.nextRefreshTime_);
+            }
+            if (this.goodsId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(2, this.goodsId_);
+            }
             if (this.maxLevel_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.maxLevel_);
+                size2 += CodedOutputStream.computeUInt32Size(3, this.maxLevel_);
             }
-            if (this.scoin_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(2, this.scoin_);
+            if (this.boughtNum_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(4, this.boughtNum_);
             }
-            if (this.endTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(3, this.endTime_);
+            if (this.mcoin_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(5, this.mcoin_);
             }
-            if (this.disableType_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(4, this.disableType_);
-            }
-            if (this.minLevel_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.minLevel_);
-            }
-            if (this.hcoin_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(6, this.hcoin_);
+            if (this.goodsItem_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(6, getGoodsItem());
             }
             for (int i = 0; i < this.costItemList_.size(); i++) {
                 size2 += CodedOutputStream.computeMessageSize(7, this.costItemList_.get(i));
             }
+            if (this.beginTime_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(8, this.beginTime_);
+            }
+            if (this.disableType_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(9, this.disableType_);
+            }
             if (this.buyLimit_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.buyLimit_);
+                size2 += CodedOutputStream.computeUInt32Size(10, this.buyLimit_);
+            }
+            if (this.scoin_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(11, this.scoin_);
             }
             int dataSize = 0;
             for (int i2 = 0; i2 < this.preGoodsIdList_.size(); i2++) {
@@ -582,38 +591,29 @@ public final class ShopGoodsOuterClass {
                 size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.preGoodsIdListMemoizedSerializedSize = dataSize;
-            if (this.nextRefreshTime_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(10, this.nextRefreshTime_);
+            if (this.hcoin_ != 0) {
+                size3 += CodedOutputStream.computeUInt32Size(13, this.hcoin_);
             }
-            if (this.mcoin_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(11, this.mcoin_);
+            if (this.minLevel_ != 0) {
+                size3 += CodedOutputStream.computeUInt32Size(14, this.minLevel_);
             }
-            if (this.beginTime_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(12, this.beginTime_);
-            }
-            if (this.goodsId_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(13, this.goodsId_);
-            }
-            if (this.boughtNum_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(14, this.boughtNum_);
-            }
-            if (this.goodsItem_ != null) {
-                size3 += CodedOutputStream.computeMessageSize(15, getGoodsItem());
+            if (this.endTime_ != 0) {
+                size3 += CodedOutputStream.computeUInt32Size(15, this.endTime_);
             }
             if (this.unk3300NJCPAJBCEPH_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(505, this.unk3300NJCPAJBCEPH_);
-            }
-            if (this.unk3300MBGOMHNBHMG_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(UNK3300_MBGOMHNBHMG_FIELD_NUMBER, this.unk3300MBGOMHNBHMG_);
+                size3 += CodedOutputStream.computeUInt32Size(182, this.unk3300NJCPAJBCEPH_);
             }
             if (this.secondarySheetId_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(1003, this.secondarySheetId_);
-            }
-            if (this.unk3300OMKIFIMDGDN_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(UNK3300_OMKIFIMDGDN_FIELD_NUMBER, this.unk3300OMKIFIMDGDN_);
+                size3 += CodedOutputStream.computeUInt32Size(363, this.secondarySheetId_);
             }
             if (this.singleLimit_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(SINGLE_LIMIT_FIELD_NUMBER, this.singleLimit_);
+                size3 += CodedOutputStream.computeUInt32Size(424, this.singleLimit_);
+            }
+            if (this.unk3300OMKIFIMDGDN_ != 0) {
+                size3 += CodedOutputStream.computeUInt32Size(636, this.unk3300OMKIFIMDGDN_);
+            }
+            if (this.unk3300MBGOMHNBHMG_ != 0) {
+                size3 += CodedOutputStream.computeUInt32Size(655, this.unk3300MBGOMHNBHMG_);
             }
             int size4 = size3 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size4;
@@ -629,8 +629,8 @@ public final class ShopGoodsOuterClass {
                 return equals(obj);
             }
             ShopGoods other = (ShopGoods) obj;
-            if (getSecondarySheetId() == other.getSecondarySheetId() && hasGoodsItem() == other.hasGoodsItem()) {
-                return (!hasGoodsItem() || getGoodsItem().equals(other.getGoodsItem())) && getCostItemListList().equals(other.getCostItemListList()) && getBoughtNum() == other.getBoughtNum() && getPreGoodsIdListList().equals(other.getPreGoodsIdListList()) && getMinLevel() == other.getMinLevel() && getMcoin() == other.getMcoin() && getHcoin() == other.getHcoin() && getEndTime() == other.getEndTime() && getNextRefreshTime() == other.getNextRefreshTime() && getGoodsId() == other.getGoodsId() && getUnk3300OMKIFIMDGDN() == other.getUnk3300OMKIFIMDGDN() && getBuyLimit() == other.getBuyLimit() && getUnk3300MBGOMHNBHMG() == other.getUnk3300MBGOMHNBHMG() && getScoin() == other.getScoin() && getMaxLevel() == other.getMaxLevel() && getSingleLimit() == other.getSingleLimit() && getUnk3300NJCPAJBCEPH() == other.getUnk3300NJCPAJBCEPH() && getBeginTime() == other.getBeginTime() && getDisableType() == other.getDisableType() && this.unknownFields.equals(other.unknownFields);
+            if (getUnk3300MBGOMHNBHMG() == other.getUnk3300MBGOMHNBHMG() && getMaxLevel() == other.getMaxLevel() && getHcoin() == other.getHcoin() && getSecondarySheetId() == other.getSecondarySheetId() && getScoin() == other.getScoin() && getGoodsId() == other.getGoodsId() && getBuyLimit() == other.getBuyLimit() && getPreGoodsIdListList().equals(other.getPreGoodsIdListList()) && hasGoodsItem() == other.hasGoodsItem()) {
+                return (!hasGoodsItem() || getGoodsItem().equals(other.getGoodsItem())) && getCostItemListList().equals(other.getCostItemListList()) && getSingleLimit() == other.getSingleLimit() && getNextRefreshTime() == other.getNextRefreshTime() && getUnk3300NJCPAJBCEPH() == other.getUnk3300NJCPAJBCEPH() && getBoughtNum() == other.getBoughtNum() && getUnk3300OMKIFIMDGDN() == other.getUnk3300OMKIFIMDGDN() && getMinLevel() == other.getMinLevel() && getEndTime() == other.getEndTime() && getBeginTime() == other.getBeginTime() && getDisableType() == other.getDisableType() && getMcoin() == other.getMcoin() && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -640,20 +640,19 @@ public final class ShopGoodsOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1003)) + getSecondarySheetId();
+            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 655)) + getUnk3300MBGOMHNBHMG())) + 3)) + getMaxLevel())) + 13)) + getHcoin())) + 363)) + getSecondarySheetId())) + 11)) + getScoin())) + 2)) + getGoodsId())) + 10)) + getBuyLimit();
+            if (getPreGoodsIdListCount() > 0) {
+                hash = (53 * ((37 * hash) + 12)) + getPreGoodsIdListList().hashCode();
+            }
             if (hasGoodsItem()) {
-                hash = (53 * ((37 * hash) + 15)) + getGoodsItem().hashCode();
+                hash = (53 * ((37 * hash) + 6)) + getGoodsItem().hashCode();
             }
             if (getCostItemListCount() > 0) {
                 hash = (53 * ((37 * hash) + 7)) + getCostItemListList().hashCode();
             }
-            int hash2 = (53 * ((37 * hash) + 14)) + getBoughtNum();
-            if (getPreGoodsIdListCount() > 0) {
-                hash2 = (53 * ((37 * hash2) + 9)) + getPreGoodsIdListList().hashCode();
-            }
-            int hash3 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash2) + 5)) + getMinLevel())) + 11)) + getMcoin())) + 6)) + getHcoin())) + 3)) + getEndTime())) + 10)) + getNextRefreshTime())) + 13)) + getGoodsId())) + UNK3300_OMKIFIMDGDN_FIELD_NUMBER)) + getUnk3300OMKIFIMDGDN())) + 8)) + getBuyLimit())) + UNK3300_MBGOMHNBHMG_FIELD_NUMBER)) + getUnk3300MBGOMHNBHMG())) + 2)) + getScoin())) + 1)) + getMaxLevel())) + SINGLE_LIMIT_FIELD_NUMBER)) + getSingleLimit())) + 505)) + getUnk3300NJCPAJBCEPH())) + 12)) + getBeginTime())) + 4)) + getDisableType())) + this.unknownFields.hashCode();
-            this.memoizedHashCode = hash3;
-            return hash3;
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 424)) + getSingleLimit())) + 1)) + getNextRefreshTime())) + 182)) + getUnk3300NJCPAJBCEPH())) + 4)) + getBoughtNum())) + 636)) + getUnk3300OMKIFIMDGDN())) + 14)) + getMinLevel())) + 15)) + getEndTime())) + 8)) + getBeginTime())) + 9)) + getDisableType())) + 5)) + getMcoin())) + this.unknownFields.hashCode();
+            this.memoizedHashCode = hash2;
+            return hash2;
         }
 
         public static ShopGoods parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
@@ -731,28 +730,28 @@ public final class ShopGoodsOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ShopGoodsOuterClass$ShopGoods$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ShopGoodsOrBuilder {
             private int bitField0_;
+            private int unk3300MBGOMHNBHMG_;
+            private int maxLevel_;
+            private int hcoin_;
             private int secondarySheetId_;
+            private int scoin_;
+            private int goodsId_;
+            private int buyLimit_;
             private ItemParamOuterClass.ItemParam goodsItem_;
             private SingleFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> goodsItemBuilder_;
             private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> costItemListBuilder_;
-            private int boughtNum_;
-            private int minLevel_;
-            private int mcoin_;
-            private int hcoin_;
-            private int endTime_;
-            private int nextRefreshTime_;
-            private int goodsId_;
-            private int unk3300OMKIFIMDGDN_;
-            private int buyLimit_;
-            private int unk3300MBGOMHNBHMG_;
-            private int scoin_;
-            private int maxLevel_;
             private int singleLimit_;
+            private int nextRefreshTime_;
             private int unk3300NJCPAJBCEPH_;
+            private int boughtNum_;
+            private int unk3300OMKIFIMDGDN_;
+            private int minLevel_;
+            private int endTime_;
             private int beginTime_;
             private int disableType_;
-            private List<ItemParamOuterClass.ItemParam> costItemList_ = Collections.emptyList();
+            private int mcoin_;
             private Internal.IntList preGoodsIdList_ = ShopGoods.emptyIntList();
+            private List<ItemParamOuterClass.ItemParam> costItemList_ = Collections.emptyList();
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ShopGoodsOuterClass.internal_static_ShopGoods_descriptor;
@@ -781,7 +780,15 @@ public final class ShopGoodsOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.unk3300MBGOMHNBHMG_ = 0;
+                this.maxLevel_ = 0;
+                this.hcoin_ = 0;
                 this.secondarySheetId_ = 0;
+                this.scoin_ = 0;
+                this.goodsId_ = 0;
+                this.buyLimit_ = 0;
+                this.preGoodsIdList_ = ShopGoods.emptyIntList();
+                this.bitField0_ &= -2;
                 if (this.goodsItemBuilder_ == null) {
                     this.goodsItem_ = null;
                 } else {
@@ -790,28 +797,20 @@ public final class ShopGoodsOuterClass {
                 }
                 if (this.costItemListBuilder_ == null) {
                     this.costItemList_ = Collections.emptyList();
-                    this.bitField0_ &= -2;
+                    this.bitField0_ &= -3;
                 } else {
                     this.costItemListBuilder_.clear();
                 }
-                this.boughtNum_ = 0;
-                this.preGoodsIdList_ = ShopGoods.emptyIntList();
-                this.bitField0_ &= -3;
-                this.minLevel_ = 0;
-                this.mcoin_ = 0;
-                this.hcoin_ = 0;
-                this.endTime_ = 0;
-                this.nextRefreshTime_ = 0;
-                this.goodsId_ = 0;
-                this.unk3300OMKIFIMDGDN_ = 0;
-                this.buyLimit_ = 0;
-                this.unk3300MBGOMHNBHMG_ = 0;
-                this.scoin_ = 0;
-                this.maxLevel_ = 0;
                 this.singleLimit_ = 0;
+                this.nextRefreshTime_ = 0;
                 this.unk3300NJCPAJBCEPH_ = 0;
+                this.boughtNum_ = 0;
+                this.unk3300OMKIFIMDGDN_ = 0;
+                this.minLevel_ = 0;
+                this.endTime_ = 0;
                 this.beginTime_ = 0;
                 this.disableType_ = 0;
+                this.mcoin_ = 0;
                 return this;
             }
 
@@ -838,42 +837,42 @@ public final class ShopGoodsOuterClass {
             public ShopGoods buildPartial() {
                 ShopGoods result = new ShopGoods(this);
                 int i = this.bitField0_;
+                result.unk3300MBGOMHNBHMG_ = this.unk3300MBGOMHNBHMG_;
+                result.maxLevel_ = this.maxLevel_;
+                result.hcoin_ = this.hcoin_;
                 result.secondarySheetId_ = this.secondarySheetId_;
+                result.scoin_ = this.scoin_;
+                result.goodsId_ = this.goodsId_;
+                result.buyLimit_ = this.buyLimit_;
+                if ((this.bitField0_ & 1) != 0) {
+                    this.preGoodsIdList_.makeImmutable();
+                    this.bitField0_ &= -2;
+                }
+                result.preGoodsIdList_ = this.preGoodsIdList_;
                 if (this.goodsItemBuilder_ == null) {
                     result.goodsItem_ = this.goodsItem_;
                 } else {
                     result.goodsItem_ = this.goodsItemBuilder_.build();
                 }
                 if (this.costItemListBuilder_ == null) {
-                    if ((this.bitField0_ & 1) != 0) {
+                    if ((this.bitField0_ & 2) != 0) {
                         this.costItemList_ = Collections.unmodifiableList(this.costItemList_);
-                        this.bitField0_ &= -2;
+                        this.bitField0_ &= -3;
                     }
                     result.costItemList_ = this.costItemList_;
                 } else {
                     result.costItemList_ = this.costItemListBuilder_.build();
                 }
-                result.boughtNum_ = this.boughtNum_;
-                if ((this.bitField0_ & 2) != 0) {
-                    this.preGoodsIdList_.makeImmutable();
-                    this.bitField0_ &= -3;
-                }
-                result.preGoodsIdList_ = this.preGoodsIdList_;
-                result.minLevel_ = this.minLevel_;
-                result.mcoin_ = this.mcoin_;
-                result.hcoin_ = this.hcoin_;
-                result.endTime_ = this.endTime_;
-                result.nextRefreshTime_ = this.nextRefreshTime_;
-                result.goodsId_ = this.goodsId_;
-                result.unk3300OMKIFIMDGDN_ = this.unk3300OMKIFIMDGDN_;
-                result.buyLimit_ = this.buyLimit_;
-                result.unk3300MBGOMHNBHMG_ = this.unk3300MBGOMHNBHMG_;
-                result.scoin_ = this.scoin_;
-                result.maxLevel_ = this.maxLevel_;
                 result.singleLimit_ = this.singleLimit_;
+                result.nextRefreshTime_ = this.nextRefreshTime_;
                 result.unk3300NJCPAJBCEPH_ = this.unk3300NJCPAJBCEPH_;
+                result.boughtNum_ = this.boughtNum_;
+                result.unk3300OMKIFIMDGDN_ = this.unk3300OMKIFIMDGDN_;
+                result.minLevel_ = this.minLevel_;
+                result.endTime_ = this.endTime_;
                 result.beginTime_ = this.beginTime_;
                 result.disableType_ = this.disableType_;
+                result.mcoin_ = this.mcoin_;
                 onBuilt();
                 return result;
             }
@@ -921,8 +920,36 @@ public final class ShopGoodsOuterClass {
                 if (other == ShopGoods.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getUnk3300MBGOMHNBHMG() != 0) {
+                    setUnk3300MBGOMHNBHMG(other.getUnk3300MBGOMHNBHMG());
+                }
+                if (other.getMaxLevel() != 0) {
+                    setMaxLevel(other.getMaxLevel());
+                }
+                if (other.getHcoin() != 0) {
+                    setHcoin(other.getHcoin());
+                }
                 if (other.getSecondarySheetId() != 0) {
                     setSecondarySheetId(other.getSecondarySheetId());
+                }
+                if (other.getScoin() != 0) {
+                    setScoin(other.getScoin());
+                }
+                if (other.getGoodsId() != 0) {
+                    setGoodsId(other.getGoodsId());
+                }
+                if (other.getBuyLimit() != 0) {
+                    setBuyLimit(other.getBuyLimit());
+                }
+                if (!other.preGoodsIdList_.isEmpty()) {
+                    if (this.preGoodsIdList_.isEmpty()) {
+                        this.preGoodsIdList_ = other.preGoodsIdList_;
+                        this.bitField0_ &= -2;
+                    } else {
+                        ensurePreGoodsIdListIsMutable();
+                        this.preGoodsIdList_.addAll(other.preGoodsIdList_);
+                    }
+                    onChanged();
                 }
                 if (other.hasGoodsItem()) {
                     mergeGoodsItem(other.getGoodsItem());
@@ -931,7 +958,7 @@ public final class ShopGoodsOuterClass {
                     if (!other.costItemList_.isEmpty()) {
                         if (this.costItemList_.isEmpty()) {
                             this.costItemList_ = other.costItemList_;
-                            this.bitField0_ &= -2;
+                            this.bitField0_ &= -3;
                         } else {
                             ensureCostItemListIsMutable();
                             this.costItemList_.addAll(other.costItemList_);
@@ -943,69 +970,41 @@ public final class ShopGoodsOuterClass {
                         this.costItemListBuilder_.dispose();
                         this.costItemListBuilder_ = null;
                         this.costItemList_ = other.costItemList_;
-                        this.bitField0_ &= -2;
+                        this.bitField0_ &= -3;
                         this.costItemListBuilder_ = ShopGoods.alwaysUseFieldBuilders ? getCostItemListFieldBuilder() : null;
                     } else {
                         this.costItemListBuilder_.addAllMessages(other.costItemList_);
                     }
                 }
-                if (other.getBoughtNum() != 0) {
-                    setBoughtNum(other.getBoughtNum());
-                }
-                if (!other.preGoodsIdList_.isEmpty()) {
-                    if (this.preGoodsIdList_.isEmpty()) {
-                        this.preGoodsIdList_ = other.preGoodsIdList_;
-                        this.bitField0_ &= -3;
-                    } else {
-                        ensurePreGoodsIdListIsMutable();
-                        this.preGoodsIdList_.addAll(other.preGoodsIdList_);
-                    }
-                    onChanged();
-                }
-                if (other.getMinLevel() != 0) {
-                    setMinLevel(other.getMinLevel());
-                }
-                if (other.getMcoin() != 0) {
-                    setMcoin(other.getMcoin());
-                }
-                if (other.getHcoin() != 0) {
-                    setHcoin(other.getHcoin());
-                }
-                if (other.getEndTime() != 0) {
-                    setEndTime(other.getEndTime());
+                if (other.getSingleLimit() != 0) {
+                    setSingleLimit(other.getSingleLimit());
                 }
                 if (other.getNextRefreshTime() != 0) {
                     setNextRefreshTime(other.getNextRefreshTime());
                 }
-                if (other.getGoodsId() != 0) {
-                    setGoodsId(other.getGoodsId());
+                if (other.getUnk3300NJCPAJBCEPH() != 0) {
+                    setUnk3300NJCPAJBCEPH(other.getUnk3300NJCPAJBCEPH());
+                }
+                if (other.getBoughtNum() != 0) {
+                    setBoughtNum(other.getBoughtNum());
                 }
                 if (other.getUnk3300OMKIFIMDGDN() != 0) {
                     setUnk3300OMKIFIMDGDN(other.getUnk3300OMKIFIMDGDN());
                 }
-                if (other.getBuyLimit() != 0) {
-                    setBuyLimit(other.getBuyLimit());
+                if (other.getMinLevel() != 0) {
+                    setMinLevel(other.getMinLevel());
                 }
-                if (other.getUnk3300MBGOMHNBHMG() != 0) {
-                    setUnk3300MBGOMHNBHMG(other.getUnk3300MBGOMHNBHMG());
-                }
-                if (other.getScoin() != 0) {
-                    setScoin(other.getScoin());
-                }
-                if (other.getMaxLevel() != 0) {
-                    setMaxLevel(other.getMaxLevel());
-                }
-                if (other.getSingleLimit() != 0) {
-                    setSingleLimit(other.getSingleLimit());
-                }
-                if (other.getUnk3300NJCPAJBCEPH() != 0) {
-                    setUnk3300NJCPAJBCEPH(other.getUnk3300NJCPAJBCEPH());
+                if (other.getEndTime() != 0) {
+                    setEndTime(other.getEndTime());
                 }
                 if (other.getBeginTime() != 0) {
                     setBeginTime(other.getBeginTime());
                 }
                 if (other.getDisableType() != 0) {
                     setDisableType(other.getDisableType());
+                }
+                if (other.getMcoin() != 0) {
+                    setMcoin(other.getMcoin());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -1040,6 +1039,57 @@ public final class ShopGoodsOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+            public int getUnk3300MBGOMHNBHMG() {
+                return this.unk3300MBGOMHNBHMG_;
+            }
+
+            public Builder setUnk3300MBGOMHNBHMG(int value) {
+                this.unk3300MBGOMHNBHMG_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300MBGOMHNBHMG() {
+                this.unk3300MBGOMHNBHMG_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+            public int getMaxLevel() {
+                return this.maxLevel_;
+            }
+
+            public Builder setMaxLevel(int value) {
+                this.maxLevel_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearMaxLevel() {
+                this.maxLevel_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+            public int getHcoin() {
+                return this.hcoin_;
+            }
+
+            public Builder setHcoin(int value) {
+                this.hcoin_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearHcoin() {
+                this.hcoin_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
             public int getSecondarySheetId() {
                 return this.secondarySheetId_;
             }
@@ -1052,6 +1102,107 @@ public final class ShopGoodsOuterClass {
 
             public Builder clearSecondarySheetId() {
                 this.secondarySheetId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+            public int getScoin() {
+                return this.scoin_;
+            }
+
+            public Builder setScoin(int value) {
+                this.scoin_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearScoin() {
+                this.scoin_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+            public int getGoodsId() {
+                return this.goodsId_;
+            }
+
+            public Builder setGoodsId(int value) {
+                this.goodsId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearGoodsId() {
+                this.goodsId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+            public int getBuyLimit() {
+                return this.buyLimit_;
+            }
+
+            public Builder setBuyLimit(int value) {
+                this.buyLimit_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearBuyLimit() {
+                this.buyLimit_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private void ensurePreGoodsIdListIsMutable() {
+                if ((this.bitField0_ & 1) == 0) {
+                    this.preGoodsIdList_ = ShopGoods.mutableCopy(this.preGoodsIdList_);
+                    this.bitField0_ |= 1;
+                }
+            }
+
+            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+            public List<Integer> getPreGoodsIdListList() {
+                return (this.bitField0_ & 1) != 0 ? Collections.unmodifiableList(this.preGoodsIdList_) : this.preGoodsIdList_;
+            }
+
+            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+            public int getPreGoodsIdListCount() {
+                return this.preGoodsIdList_.size();
+            }
+
+            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+            public int getPreGoodsIdList(int index) {
+                return this.preGoodsIdList_.getInt(index);
+            }
+
+            public Builder setPreGoodsIdList(int index, int value) {
+                ensurePreGoodsIdListIsMutable();
+                this.preGoodsIdList_.setInt(index, value);
+                onChanged();
+                return this;
+            }
+
+            public Builder addPreGoodsIdList(int value) {
+                ensurePreGoodsIdListIsMutable();
+                this.preGoodsIdList_.addInt(value);
+                onChanged();
+                return this;
+            }
+
+            public Builder addAllPreGoodsIdList(Iterable<? extends Integer> values) {
+                ensurePreGoodsIdListIsMutable();
+                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.preGoodsIdList_);
+                onChanged();
+                return this;
+            }
+
+            public Builder clearPreGoodsIdList() {
+                this.preGoodsIdList_ = ShopGoods.emptyIntList();
+                this.bitField0_ &= -2;
                 onChanged();
                 return this;
             }
@@ -1138,9 +1289,9 @@ public final class ShopGoodsOuterClass {
             }
 
             private void ensureCostItemListIsMutable() {
-                if ((this.bitField0_ & 1) == 0) {
+                if ((this.bitField0_ & 2) == 0) {
                     this.costItemList_ = new ArrayList(this.costItemList_);
-                    this.bitField0_ |= 1;
+                    this.bitField0_ |= 2;
                 }
             }
 
@@ -1254,7 +1405,7 @@ public final class ShopGoodsOuterClass {
             public Builder clearCostItemList() {
                 if (this.costItemListBuilder_ == null) {
                     this.costItemList_ = Collections.emptyList();
-                    this.bitField0_ &= -2;
+                    this.bitField0_ &= -3;
                     onChanged();
                 } else {
                     this.costItemListBuilder_.clear();
@@ -1307,143 +1458,25 @@ public final class ShopGoodsOuterClass {
 
             private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> getCostItemListFieldBuilder() {
                 if (this.costItemListBuilder_ == null) {
-                    this.costItemListBuilder_ = new RepeatedFieldBuilderV3<>(this.costItemList_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
+                    this.costItemListBuilder_ = new RepeatedFieldBuilderV3<>(this.costItemList_, (this.bitField0_ & 2) != 0, getParentForChildren(), isClean());
                     this.costItemList_ = null;
                 }
                 return this.costItemListBuilder_;
             }
 
             @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-            public int getBoughtNum() {
-                return this.boughtNum_;
+            public int getSingleLimit() {
+                return this.singleLimit_;
             }
 
-            public Builder setBoughtNum(int value) {
-                this.boughtNum_ = value;
+            public Builder setSingleLimit(int value) {
+                this.singleLimit_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearBoughtNum() {
-                this.boughtNum_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private void ensurePreGoodsIdListIsMutable() {
-                if ((this.bitField0_ & 2) == 0) {
-                    this.preGoodsIdList_ = ShopGoods.mutableCopy(this.preGoodsIdList_);
-                    this.bitField0_ |= 2;
-                }
-            }
-
-            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-            public List<Integer> getPreGoodsIdListList() {
-                return (this.bitField0_ & 2) != 0 ? Collections.unmodifiableList(this.preGoodsIdList_) : this.preGoodsIdList_;
-            }
-
-            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-            public int getPreGoodsIdListCount() {
-                return this.preGoodsIdList_.size();
-            }
-
-            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-            public int getPreGoodsIdList(int index) {
-                return this.preGoodsIdList_.getInt(index);
-            }
-
-            public Builder setPreGoodsIdList(int index, int value) {
-                ensurePreGoodsIdListIsMutable();
-                this.preGoodsIdList_.setInt(index, value);
-                onChanged();
-                return this;
-            }
-
-            public Builder addPreGoodsIdList(int value) {
-                ensurePreGoodsIdListIsMutable();
-                this.preGoodsIdList_.addInt(value);
-                onChanged();
-                return this;
-            }
-
-            public Builder addAllPreGoodsIdList(Iterable<? extends Integer> values) {
-                ensurePreGoodsIdListIsMutable();
-                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.preGoodsIdList_);
-                onChanged();
-                return this;
-            }
-
-            public Builder clearPreGoodsIdList() {
-                this.preGoodsIdList_ = ShopGoods.emptyIntList();
-                this.bitField0_ &= -3;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-            public int getMinLevel() {
-                return this.minLevel_;
-            }
-
-            public Builder setMinLevel(int value) {
-                this.minLevel_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearMinLevel() {
-                this.minLevel_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-            public int getMcoin() {
-                return this.mcoin_;
-            }
-
-            public Builder setMcoin(int value) {
-                this.mcoin_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearMcoin() {
-                this.mcoin_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-            public int getHcoin() {
-                return this.hcoin_;
-            }
-
-            public Builder setHcoin(int value) {
-                this.hcoin_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearHcoin() {
-                this.hcoin_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-            public int getEndTime() {
-                return this.endTime_;
-            }
-
-            public Builder setEndTime(int value) {
-                this.endTime_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearEndTime() {
-                this.endTime_ = 0;
+            public Builder clearSingleLimit() {
+                this.singleLimit_ = 0;
                 onChanged();
                 return this;
             }
@@ -1466,18 +1499,35 @@ public final class ShopGoodsOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-            public int getGoodsId() {
-                return this.goodsId_;
+            public int getUnk3300NJCPAJBCEPH() {
+                return this.unk3300NJCPAJBCEPH_;
             }
 
-            public Builder setGoodsId(int value) {
-                this.goodsId_ = value;
+            public Builder setUnk3300NJCPAJBCEPH(int value) {
+                this.unk3300NJCPAJBCEPH_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearGoodsId() {
-                this.goodsId_ = 0;
+            public Builder clearUnk3300NJCPAJBCEPH() {
+                this.unk3300NJCPAJBCEPH_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+            public int getBoughtNum() {
+                return this.boughtNum_;
+            }
+
+            public Builder setBoughtNum(int value) {
+                this.boughtNum_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearBoughtNum() {
+                this.boughtNum_ = 0;
                 onChanged();
                 return this;
             }
@@ -1500,103 +1550,35 @@ public final class ShopGoodsOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-            public int getBuyLimit() {
-                return this.buyLimit_;
+            public int getMinLevel() {
+                return this.minLevel_;
             }
 
-            public Builder setBuyLimit(int value) {
-                this.buyLimit_ = value;
+            public Builder setMinLevel(int value) {
+                this.minLevel_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearBuyLimit() {
-                this.buyLimit_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-            public int getUnk3300MBGOMHNBHMG() {
-                return this.unk3300MBGOMHNBHMG_;
-            }
-
-            public Builder setUnk3300MBGOMHNBHMG(int value) {
-                this.unk3300MBGOMHNBHMG_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk3300MBGOMHNBHMG() {
-                this.unk3300MBGOMHNBHMG_ = 0;
+            public Builder clearMinLevel() {
+                this.minLevel_ = 0;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-            public int getScoin() {
-                return this.scoin_;
+            public int getEndTime() {
+                return this.endTime_;
             }
 
-            public Builder setScoin(int value) {
-                this.scoin_ = value;
+            public Builder setEndTime(int value) {
+                this.endTime_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearScoin() {
-                this.scoin_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-            public int getMaxLevel() {
-                return this.maxLevel_;
-            }
-
-            public Builder setMaxLevel(int value) {
-                this.maxLevel_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearMaxLevel() {
-                this.maxLevel_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-            public int getSingleLimit() {
-                return this.singleLimit_;
-            }
-
-            public Builder setSingleLimit(int value) {
-                this.singleLimit_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearSingleLimit() {
-                this.singleLimit_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
-            public int getUnk3300NJCPAJBCEPH() {
-                return this.unk3300NJCPAJBCEPH_;
-            }
-
-            public Builder setUnk3300NJCPAJBCEPH(int value) {
-                this.unk3300NJCPAJBCEPH_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk3300NJCPAJBCEPH() {
-                this.unk3300NJCPAJBCEPH_ = 0;
+            public Builder clearEndTime() {
+                this.endTime_ = 0;
                 onChanged();
                 return this;
             }
@@ -1631,6 +1613,23 @@ public final class ShopGoodsOuterClass {
 
             public Builder clearDisableType() {
                 this.disableType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder
+            public int getMcoin() {
+                return this.mcoin_;
+            }
+
+            public Builder setMcoin(int value) {
+                this.mcoin_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearMcoin() {
+                this.mcoin_ = 0;
                 onChanged();
                 return this;
             }

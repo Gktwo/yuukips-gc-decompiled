@@ -20,7 +20,7 @@ public class ShellCommand implements Command {
     private final String command;
 
     /* renamed from: in */
-    private InputStream f3209in;
+    private InputStream f3173in;
     private OutputStream out;
     private OutputStream err;
     private ExitCallback callback;
@@ -33,7 +33,7 @@ public class ShellCommand implements Command {
     }
 
     public void setInputStream(InputStream in) {
-        this.f3209in = in;
+        this.f3173in = in;
     }
 
     public void setOutputStream(OutputStream out) {
@@ -58,8 +58,8 @@ public class ShellCommand implements Command {
         int exitStatus = 0;
         try {
             try {
-                this.execute.accept(new Ssh.ExecuteParams(this.command, this.env.getEnv(), this.session, this.f3209in, this.out, this.err));
-                ShellFactoryImpl.close(this.f3209in, this.out, this.err);
+                this.execute.accept(new Ssh.ExecuteParams(this.command, this.env.getEnv(), this.session, this.f3173in, this.out, this.err));
+                ShellFactoryImpl.close(this.f3173in, this.out, this.err);
                 this.callback.onExit(0);
             } catch (RuntimeException e) {
                 exitStatus = 1;
@@ -69,11 +69,11 @@ public class ShellCommand implements Command {
                     this.err.flush();
                 } catch (IOException e2) {
                 }
-                ShellFactoryImpl.close(this.f3209in, this.out, this.err);
+                ShellFactoryImpl.close(this.f3173in, this.out, this.err);
                 this.callback.onExit(1);
             }
         } catch (Throwable th) {
-            ShellFactoryImpl.close(this.f3209in, this.out, this.err);
+            ShellFactoryImpl.close(this.f3173in, this.out, this.err);
             this.callback.onExit(exitStatus);
             throw th;
         }

@@ -19,11 +19,11 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonSlipRevivePointActivateReqOuterClass.class */
 public final class DungeonSlipRevivePointActivateReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n'DungeonSlipRevivePointActivateReq.proto\"A\n!DungeonSlipRevivePointActivateReq\u0012\u001c\n\u0014slip_revive_point_id\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n'DungeonSlipRevivePointActivateReq.proto\">\n!DungeonSlipRevivePointActivateReq\u0012\u0019\n\u0011slipRevivePointId\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_DungeonSlipRevivePointActivateReq_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_DungeonSlipRevivePointActivateReq_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f693xb88ee1f1 = new GeneratedMessageV3.FieldAccessorTable(internal_static_DungeonSlipRevivePointActivateReq_descriptor, new String[]{"SlipRevivePointId"});
+    private static final GeneratedMessageV3.FieldAccessorTable f690xb88ee1f1 = new GeneratedMessageV3.FieldAccessorTable(internal_static_DungeonSlipRevivePointActivateReq_descriptor, new String[]{"SlipRevivePointId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonSlipRevivePointActivateReqOuterClass$DungeonSlipRevivePointActivateReqOrBuilder.class */
     public interface DungeonSlipRevivePointActivateReqOrBuilder extends MessageOrBuilder {
@@ -43,7 +43,7 @@ public final class DungeonSlipRevivePointActivateReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonSlipRevivePointActivateReqOuterClass$DungeonSlipRevivePointActivateReq.class */
     public static final class DungeonSlipRevivePointActivateReq extends GeneratedMessageV3 implements DungeonSlipRevivePointActivateReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SLIP_REVIVE_POINT_ID_FIELD_NUMBER = 8;
+        public static final int SLIPREVIVEPOINTID_FIELD_NUMBER = 7;
         private int slipRevivePointId_;
         private byte memoizedIsInitialized;
         private static final DungeonSlipRevivePointActivateReq DEFAULT_INSTANCE = new DungeonSlipRevivePointActivateReq();
@@ -90,7 +90,7 @@ public final class DungeonSlipRevivePointActivateReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 64:
+                            case 56:
                                 this.slipRevivePointId_ = input.readUInt32();
                                 break;
                             default:
@@ -119,7 +119,7 @@ public final class DungeonSlipRevivePointActivateReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return DungeonSlipRevivePointActivateReqOuterClass.f693xb88ee1f1.ensureFieldAccessorsInitialized(DungeonSlipRevivePointActivateReq.class, Builder.class);
+            return DungeonSlipRevivePointActivateReqOuterClass.f690xb88ee1f1.ensureFieldAccessorsInitialized(DungeonSlipRevivePointActivateReq.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.DungeonSlipRevivePointActivateReqOuterClass.DungeonSlipRevivePointActivateReqOrBuilder
@@ -143,7 +143,7 @@ public final class DungeonSlipRevivePointActivateReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.slipRevivePointId_ != 0) {
-                output.writeUInt32(8, this.slipRevivePointId_);
+                output.writeUInt32(7, this.slipRevivePointId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -156,7 +156,7 @@ public final class DungeonSlipRevivePointActivateReqOuterClass {
             }
             int size2 = 0;
             if (this.slipRevivePointId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(8, this.slipRevivePointId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.slipRevivePointId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -180,7 +180,7 @@ public final class DungeonSlipRevivePointActivateReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getSlipRevivePointId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getSlipRevivePointId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -267,7 +267,7 @@ public final class DungeonSlipRevivePointActivateReqOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return DungeonSlipRevivePointActivateReqOuterClass.f693xb88ee1f1.ensureFieldAccessorsInitialized(DungeonSlipRevivePointActivateReq.class, Builder.class);
+                return DungeonSlipRevivePointActivateReqOuterClass.f690xb88ee1f1.ensureFieldAccessorsInitialized(DungeonSlipRevivePointActivateReq.class, Builder.class);
             }
 
             private Builder() {

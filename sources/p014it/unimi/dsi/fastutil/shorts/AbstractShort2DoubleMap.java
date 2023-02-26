@@ -202,30 +202,30 @@ public abstract class AbstractShort2DoubleMap extends AbstractShort2DoubleFuncti
                 return new ShortIterator() { // from class: it.unimi.dsi.fastutil.shorts.AbstractShort2DoubleMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Short2DoubleMap.Entry> f2859i;
+                    private final ObjectIterator<Short2DoubleMap.Entry> f2823i;
 
                     {
-                        this.f2859i = Short2DoubleMaps.fastIterator(AbstractShort2DoubleMap.this);
+                        this.f2823i = Short2DoubleMaps.fastIterator(AbstractShort2DoubleMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
                     public short nextShort() {
-                        return this.f2859i.next().getShortKey();
+                        return this.f2823i.next().getShortKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2859i.hasNext();
+                        return this.f2823i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2859i.remove();
+                        this.f2823i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
                     public void forEachRemaining(ShortConsumer action) {
-                        this.f2859i.forEachRemaining(entry -> {
+                        this.f2823i.forEachRemaining(entry -> {
                             action.accept(entry.getShortKey());
                         });
                     }
@@ -263,30 +263,30 @@ public abstract class AbstractShort2DoubleMap extends AbstractShort2DoubleFuncti
                 return new DoubleIterator() { // from class: it.unimi.dsi.fastutil.shorts.AbstractShort2DoubleMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Short2DoubleMap.Entry> f2860i;
+                    private final ObjectIterator<Short2DoubleMap.Entry> f2824i;
 
                     {
-                        this.f2860i = Short2DoubleMaps.fastIterator(AbstractShort2DoubleMap.this);
+                        this.f2824i = Short2DoubleMaps.fastIterator(AbstractShort2DoubleMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
                     public double nextDouble() {
-                        return this.f2860i.next().getDoubleValue();
+                        return this.f2824i.next().getDoubleValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2860i.hasNext();
+                        return this.f2824i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2860i.remove();
+                        this.f2824i.remove();
                     }
 
                     @Override // java.util.PrimitiveIterator.OfDouble
                     public void forEachRemaining(DoubleConsumer action) {
-                        this.f2860i.forEachRemaining(entry -> {
+                        this.f2824i.forEachRemaining(entry -> {
                             action.accept(entry.getDoubleValue());
                         });
                     }

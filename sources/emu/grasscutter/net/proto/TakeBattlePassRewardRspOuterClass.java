@@ -26,12 +26,22 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeBattlePassRewardRspOuterClass.class */
 public final class TakeBattlePassRewardRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dTakeBattlePassRewardRsp.proto\u001a BattlePassRewardTakeOption.proto\u001a\u000fItemParam.proto\"\u0001\n\u0017TakeBattlePassRewardRsp\u0012\u000f\n\u0007retcode\u0018\u0006 \u0001(\u0005\u00125\n\u0010take_option_list\u0018\u0007 \u0003(\u000b2\u001b.BattlePassRewardTakeOption\u0012\u001d\n\titem_list\u0018\u0004 \u0003(\u000b2\n.ItemParamB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BattlePassRewardTakeOptionOuterClass.getDescriptor(), ItemParamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dTakeBattlePassRewardRsp.proto\u001a\u000fItemParam.proto\u001a BattlePassRewardTakeOption.proto\"}\n\u0017TakeBattlePassRewardRsp\u0012\u001c\n\bitemList\u0018\u0003 \u0003(\u000b2\n.ItemParam\u0012\u000f\n\u0007retcode\u0018\u0005 \u0001(\u0005\u00123\n\u000etakeOptionList\u0018\r \u0003(\u000b2\u001b.BattlePassRewardTakeOptionB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor(), BattlePassRewardTakeOptionOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_TakeBattlePassRewardRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TakeBattlePassRewardRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TakeBattlePassRewardRsp_descriptor, new String[]{"Retcode", "TakeOptionList", "ItemList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TakeBattlePassRewardRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TakeBattlePassRewardRsp_descriptor, new String[]{"ItemList", "Retcode", "TakeOptionList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeBattlePassRewardRspOuterClass$TakeBattlePassRewardRspOrBuilder.class */
     public interface TakeBattlePassRewardRspOrBuilder extends MessageOrBuilder {
+        List<ItemParamOuterClass.ItemParam> getItemListList();
+
+        ItemParamOuterClass.ItemParam getItemList(int i);
+
+        int getItemListCount();
+
+        List<? extends ItemParamOuterClass.ItemParamOrBuilder> getItemListOrBuilderList();
+
+        ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(int i);
+
         int getRetcode();
 
         List<BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> getTakeOptionListList();
@@ -43,16 +53,6 @@ public final class TakeBattlePassRewardRspOuterClass {
         List<? extends BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder> getTakeOptionListOrBuilderList();
 
         BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder getTakeOptionListOrBuilder(int i);
-
-        List<ItemParamOuterClass.ItemParam> getItemListList();
-
-        ItemParamOuterClass.ItemParam getItemList(int i);
-
-        int getItemListCount();
-
-        List<? extends ItemParamOuterClass.ItemParamOrBuilder> getItemListOrBuilderList();
-
-        ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(int i);
     }
 
     private TakeBattlePassRewardRspOuterClass() {
@@ -68,12 +68,12 @@ public final class TakeBattlePassRewardRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeBattlePassRewardRspOuterClass$TakeBattlePassRewardRsp.class */
     public static final class TakeBattlePassRewardRsp extends GeneratedMessageV3 implements TakeBattlePassRewardRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 6;
-        private int retcode_;
-        public static final int TAKE_OPTION_LIST_FIELD_NUMBER = 7;
-        private List<BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> takeOptionList_;
-        public static final int ITEM_LIST_FIELD_NUMBER = 4;
+        public static final int ITEMLIST_FIELD_NUMBER = 3;
         private List<ItemParamOuterClass.ItemParam> itemList_;
+        public static final int RETCODE_FIELD_NUMBER = 5;
+        private int retcode_;
+        public static final int TAKEOPTIONLIST_FIELD_NUMBER = 13;
+        private List<BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> takeOptionList_;
         private byte memoizedIsInitialized;
         private static final TakeBattlePassRewardRsp DEFAULT_INSTANCE = new TakeBattlePassRewardRsp();
         private static final Parser<TakeBattlePassRewardRsp> PARSER = new AbstractParser<TakeBattlePassRewardRsp>() { // from class: emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRsp.1
@@ -90,8 +90,8 @@ public final class TakeBattlePassRewardRspOuterClass {
 
         private TakeBattlePassRewardRsp() {
             this.memoizedIsInitialized = -1;
-            this.takeOptionList_ = Collections.emptyList();
             this.itemList_ = Collections.emptyList();
+            this.takeOptionList_ = Collections.emptyList();
         }
 
         /* access modifiers changed from: protected */
@@ -124,20 +124,20 @@ public final class TakeBattlePassRewardRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 34:
-                                if ((mutable_bitField0_ & 2) == 0) {
+                            case 26:
+                                if ((mutable_bitField0_ & 1) == 0) {
                                     this.itemList_ = new ArrayList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                 }
                                 this.itemList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
                                 break;
-                            case 48:
+                            case 40:
                                 this.retcode_ = input.readInt32();
                                 break;
-                            case 58:
-                                if ((mutable_bitField0_ & 1) == 0) {
+                            case 106:
+                                if ((mutable_bitField0_ & 2) == 0) {
                                     this.takeOptionList_ = new ArrayList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
                                 }
                                 this.takeOptionList_.add((BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption) input.readMessage(BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.parser(), extensionRegistry));
                                 break;
@@ -157,10 +157,10 @@ public final class TakeBattlePassRewardRspOuterClass {
                     }
                 }
             } finally {
-                if ((mutable_bitField0_ & 2) != 0) {
+                if ((mutable_bitField0_ & 1) != 0) {
                     this.itemList_ = Collections.unmodifiableList(this.itemList_);
                 }
-                if ((mutable_bitField0_ & 1) != 0) {
+                if ((mutable_bitField0_ & 2) != 0) {
                     this.takeOptionList_ = Collections.unmodifiableList(this.takeOptionList_);
                 }
                 this.unknownFields = unknownFields.build();
@@ -175,6 +175,31 @@ public final class TakeBattlePassRewardRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return TakeBattlePassRewardRspOuterClass.internal_static_TakeBattlePassRewardRsp_fieldAccessorTable.ensureFieldAccessorsInitialized(TakeBattlePassRewardRsp.class, Builder.class);
+        }
+
+        @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
+        public List<ItemParamOuterClass.ItemParam> getItemListList() {
+            return this.itemList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
+        public List<? extends ItemParamOuterClass.ItemParamOrBuilder> getItemListOrBuilderList() {
+            return this.itemList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
+        public int getItemListCount() {
+            return this.itemList_.size();
+        }
+
+        @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
+        public ItemParamOuterClass.ItemParam getItemList(int index) {
+            return this.itemList_.get(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
+        public ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(int index) {
+            return this.itemList_.get(index);
         }
 
         @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
@@ -207,31 +232,6 @@ public final class TakeBattlePassRewardRspOuterClass {
             return this.takeOptionList_.get(index);
         }
 
-        @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
-        public List<ItemParamOuterClass.ItemParam> getItemListList() {
-            return this.itemList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
-        public List<? extends ItemParamOuterClass.ItemParamOrBuilder> getItemListOrBuilderList() {
-            return this.itemList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
-        public int getItemListCount() {
-            return this.itemList_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
-        public ItemParamOuterClass.ItemParam getItemList(int index) {
-            return this.itemList_.get(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
-        public ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(int index) {
-            return this.itemList_.get(index);
-        }
-
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -248,13 +248,13 @@ public final class TakeBattlePassRewardRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.itemList_.size(); i++) {
-                output.writeMessage(4, this.itemList_.get(i));
+                output.writeMessage(3, this.itemList_.get(i));
             }
             if (this.retcode_ != 0) {
-                output.writeInt32(6, this.retcode_);
+                output.writeInt32(5, this.retcode_);
             }
             for (int i2 = 0; i2 < this.takeOptionList_.size(); i2++) {
-                output.writeMessage(7, this.takeOptionList_.get(i2));
+                output.writeMessage(13, this.takeOptionList_.get(i2));
             }
             this.unknownFields.writeTo(output);
         }
@@ -267,13 +267,13 @@ public final class TakeBattlePassRewardRspOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.itemList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(4, this.itemList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(3, this.itemList_.get(i));
             }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(6, this.retcode_);
+                size2 += CodedOutputStream.computeInt32Size(5, this.retcode_);
             }
             for (int i2 = 0; i2 < this.takeOptionList_.size(); i2++) {
-                size2 += CodedOutputStream.computeMessageSize(7, this.takeOptionList_.get(i2));
+                size2 += CodedOutputStream.computeMessageSize(13, this.takeOptionList_.get(i2));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -289,7 +289,7 @@ public final class TakeBattlePassRewardRspOuterClass {
                 return equals(obj);
             }
             TakeBattlePassRewardRsp other = (TakeBattlePassRewardRsp) obj;
-            return getRetcode() == other.getRetcode() && getTakeOptionListList().equals(other.getTakeOptionListList()) && getItemListList().equals(other.getItemListList()) && this.unknownFields.equals(other.unknownFields);
+            return getItemListList().equals(other.getItemListList()) && getRetcode() == other.getRetcode() && getTakeOptionListList().equals(other.getTakeOptionListList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -297,16 +297,17 @@ public final class TakeBattlePassRewardRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getRetcode();
-            if (getTakeOptionListCount() > 0) {
-                hash = (53 * ((37 * hash) + 7)) + getTakeOptionListList().hashCode();
-            }
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (getItemListCount() > 0) {
-                hash = (53 * ((37 * hash) + 4)) + getItemListList().hashCode();
+                hash = (53 * ((37 * hash) + 3)) + getItemListList().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
-            this.memoizedHashCode = hash2;
-            return hash2;
+            int hash2 = (53 * ((37 * hash) + 5)) + getRetcode();
+            if (getTakeOptionListCount() > 0) {
+                hash2 = (53 * ((37 * hash2) + 13)) + getTakeOptionListList().hashCode();
+            }
+            int hash3 = (29 * hash2) + this.unknownFields.hashCode();
+            this.memoizedHashCode = hash3;
+            return hash3;
         }
 
         public static TakeBattlePassRewardRsp parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
@@ -384,11 +385,11 @@ public final class TakeBattlePassRewardRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeBattlePassRewardRspOuterClass$TakeBattlePassRewardRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements TakeBattlePassRewardRspOrBuilder {
             private int bitField0_;
+            private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> itemListBuilder_;
             private int retcode_;
             private RepeatedFieldBuilderV3<BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption, BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder, BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder> takeOptionListBuilder_;
-            private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> itemListBuilder_;
-            private List<BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> takeOptionList_ = Collections.emptyList();
             private List<ItemParamOuterClass.ItemParam> itemList_ = Collections.emptyList();
+            private List<BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> takeOptionList_ = Collections.emptyList();
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return TakeBattlePassRewardRspOuterClass.internal_static_TakeBattlePassRewardRsp_descriptor;
@@ -410,26 +411,26 @@ public final class TakeBattlePassRewardRspOuterClass {
 
             private void maybeForceBuilderInitialization() {
                 if (TakeBattlePassRewardRsp.alwaysUseFieldBuilders) {
-                    getTakeOptionListFieldBuilder();
                     getItemListFieldBuilder();
+                    getTakeOptionListFieldBuilder();
                 }
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                if (this.itemListBuilder_ == null) {
+                    this.itemList_ = Collections.emptyList();
+                    this.bitField0_ &= -2;
+                } else {
+                    this.itemListBuilder_.clear();
+                }
                 this.retcode_ = 0;
                 if (this.takeOptionListBuilder_ == null) {
                     this.takeOptionList_ = Collections.emptyList();
-                    this.bitField0_ &= -2;
-                } else {
-                    this.takeOptionListBuilder_.clear();
-                }
-                if (this.itemListBuilder_ == null) {
-                    this.itemList_ = Collections.emptyList();
                     this.bitField0_ &= -3;
                 } else {
-                    this.itemListBuilder_.clear();
+                    this.takeOptionListBuilder_.clear();
                 }
                 return this;
             }
@@ -457,24 +458,24 @@ public final class TakeBattlePassRewardRspOuterClass {
             public TakeBattlePassRewardRsp buildPartial() {
                 TakeBattlePassRewardRsp result = new TakeBattlePassRewardRsp(this);
                 int i = this.bitField0_;
-                result.retcode_ = this.retcode_;
-                if (this.takeOptionListBuilder_ == null) {
-                    if ((this.bitField0_ & 1) != 0) {
-                        this.takeOptionList_ = Collections.unmodifiableList(this.takeOptionList_);
-                        this.bitField0_ &= -2;
-                    }
-                    result.takeOptionList_ = this.takeOptionList_;
-                } else {
-                    result.takeOptionList_ = this.takeOptionListBuilder_.build();
-                }
                 if (this.itemListBuilder_ == null) {
-                    if ((this.bitField0_ & 2) != 0) {
+                    if ((this.bitField0_ & 1) != 0) {
                         this.itemList_ = Collections.unmodifiableList(this.itemList_);
-                        this.bitField0_ &= -3;
+                        this.bitField0_ &= -2;
                     }
                     result.itemList_ = this.itemList_;
                 } else {
                     result.itemList_ = this.itemListBuilder_.build();
+                }
+                result.retcode_ = this.retcode_;
+                if (this.takeOptionListBuilder_ == null) {
+                    if ((this.bitField0_ & 2) != 0) {
+                        this.takeOptionList_ = Collections.unmodifiableList(this.takeOptionList_);
+                        this.bitField0_ &= -3;
+                    }
+                    result.takeOptionList_ = this.takeOptionList_;
+                } else {
+                    result.takeOptionList_ = this.takeOptionListBuilder_.build();
                 }
                 onBuilt();
                 return result;
@@ -523,36 +524,11 @@ public final class TakeBattlePassRewardRspOuterClass {
                 if (other == TakeBattlePassRewardRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
-                if (this.takeOptionListBuilder_ == null) {
-                    if (!other.takeOptionList_.isEmpty()) {
-                        if (this.takeOptionList_.isEmpty()) {
-                            this.takeOptionList_ = other.takeOptionList_;
-                            this.bitField0_ &= -2;
-                        } else {
-                            ensureTakeOptionListIsMutable();
-                            this.takeOptionList_.addAll(other.takeOptionList_);
-                        }
-                        onChanged();
-                    }
-                } else if (!other.takeOptionList_.isEmpty()) {
-                    if (this.takeOptionListBuilder_.isEmpty()) {
-                        this.takeOptionListBuilder_.dispose();
-                        this.takeOptionListBuilder_ = null;
-                        this.takeOptionList_ = other.takeOptionList_;
-                        this.bitField0_ &= -2;
-                        this.takeOptionListBuilder_ = TakeBattlePassRewardRsp.alwaysUseFieldBuilders ? getTakeOptionListFieldBuilder() : null;
-                    } else {
-                        this.takeOptionListBuilder_.addAllMessages(other.takeOptionList_);
-                    }
-                }
                 if (this.itemListBuilder_ == null) {
                     if (!other.itemList_.isEmpty()) {
                         if (this.itemList_.isEmpty()) {
                             this.itemList_ = other.itemList_;
-                            this.bitField0_ &= -3;
+                            this.bitField0_ &= -2;
                         } else {
                             ensureItemListIsMutable();
                             this.itemList_.addAll(other.itemList_);
@@ -564,10 +540,35 @@ public final class TakeBattlePassRewardRspOuterClass {
                         this.itemListBuilder_.dispose();
                         this.itemListBuilder_ = null;
                         this.itemList_ = other.itemList_;
-                        this.bitField0_ &= -3;
+                        this.bitField0_ &= -2;
                         this.itemListBuilder_ = TakeBattlePassRewardRsp.alwaysUseFieldBuilders ? getItemListFieldBuilder() : null;
                     } else {
                         this.itemListBuilder_.addAllMessages(other.itemList_);
+                    }
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
+                }
+                if (this.takeOptionListBuilder_ == null) {
+                    if (!other.takeOptionList_.isEmpty()) {
+                        if (this.takeOptionList_.isEmpty()) {
+                            this.takeOptionList_ = other.takeOptionList_;
+                            this.bitField0_ &= -3;
+                        } else {
+                            ensureTakeOptionListIsMutable();
+                            this.takeOptionList_.addAll(other.takeOptionList_);
+                        }
+                        onChanged();
+                    }
+                } else if (!other.takeOptionList_.isEmpty()) {
+                    if (this.takeOptionListBuilder_.isEmpty()) {
+                        this.takeOptionListBuilder_.dispose();
+                        this.takeOptionListBuilder_ = null;
+                        this.takeOptionList_ = other.takeOptionList_;
+                        this.bitField0_ &= -3;
+                        this.takeOptionListBuilder_ = TakeBattlePassRewardRsp.alwaysUseFieldBuilders ? getTakeOptionListFieldBuilder() : null;
+                    } else {
+                        this.takeOptionListBuilder_.addAllMessages(other.takeOptionList_);
                     }
                 }
                 mergeUnknownFields(other.unknownFields);
@@ -602,203 +603,10 @@ public final class TakeBattlePassRewardRspOuterClass {
                 }
             }
 
-            @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private void ensureTakeOptionListIsMutable() {
-                if ((this.bitField0_ & 1) == 0) {
-                    this.takeOptionList_ = new ArrayList(this.takeOptionList_);
-                    this.bitField0_ |= 1;
-                }
-            }
-
-            @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
-            public List<BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> getTakeOptionListList() {
-                if (this.takeOptionListBuilder_ == null) {
-                    return Collections.unmodifiableList(this.takeOptionList_);
-                }
-                return this.takeOptionListBuilder_.getMessageList();
-            }
-
-            @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
-            public int getTakeOptionListCount() {
-                if (this.takeOptionListBuilder_ == null) {
-                    return this.takeOptionList_.size();
-                }
-                return this.takeOptionListBuilder_.getCount();
-            }
-
-            @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
-            public BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption getTakeOptionList(int index) {
-                if (this.takeOptionListBuilder_ == null) {
-                    return this.takeOptionList_.get(index);
-                }
-                return this.takeOptionListBuilder_.getMessage(index);
-            }
-
-            public Builder setTakeOptionList(int index, BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption value) {
-                if (this.takeOptionListBuilder_ != null) {
-                    this.takeOptionListBuilder_.setMessage(index, value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    ensureTakeOptionListIsMutable();
-                    this.takeOptionList_.set(index, value);
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder setTakeOptionList(int index, BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder builderForValue) {
-                if (this.takeOptionListBuilder_ == null) {
-                    ensureTakeOptionListIsMutable();
-                    this.takeOptionList_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    this.takeOptionListBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addTakeOptionList(BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption value) {
-                if (this.takeOptionListBuilder_ != null) {
-                    this.takeOptionListBuilder_.addMessage(value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    ensureTakeOptionListIsMutable();
-                    this.takeOptionList_.add(value);
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder addTakeOptionList(int index, BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption value) {
-                if (this.takeOptionListBuilder_ != null) {
-                    this.takeOptionListBuilder_.addMessage(index, value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    ensureTakeOptionListIsMutable();
-                    this.takeOptionList_.add(index, value);
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder addTakeOptionList(BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder builderForValue) {
-                if (this.takeOptionListBuilder_ == null) {
-                    ensureTakeOptionListIsMutable();
-                    this.takeOptionList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    this.takeOptionListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addTakeOptionList(int index, BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder builderForValue) {
-                if (this.takeOptionListBuilder_ == null) {
-                    ensureTakeOptionListIsMutable();
-                    this.takeOptionList_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    this.takeOptionListBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addAllTakeOptionList(Iterable<? extends BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> values) {
-                if (this.takeOptionListBuilder_ == null) {
-                    ensureTakeOptionListIsMutable();
-                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.takeOptionList_);
-                    onChanged();
-                } else {
-                    this.takeOptionListBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-
-            public Builder clearTakeOptionList() {
-                if (this.takeOptionListBuilder_ == null) {
-                    this.takeOptionList_ = Collections.emptyList();
-                    this.bitField0_ &= -2;
-                    onChanged();
-                } else {
-                    this.takeOptionListBuilder_.clear();
-                }
-                return this;
-            }
-
-            public Builder removeTakeOptionList(int index) {
-                if (this.takeOptionListBuilder_ == null) {
-                    ensureTakeOptionListIsMutable();
-                    this.takeOptionList_.remove(index);
-                    onChanged();
-                } else {
-                    this.takeOptionListBuilder_.remove(index);
-                }
-                return this;
-            }
-
-            public BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder getTakeOptionListBuilder(int index) {
-                return getTakeOptionListFieldBuilder().getBuilder(index);
-            }
-
-            @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
-            public BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder getTakeOptionListOrBuilder(int index) {
-                if (this.takeOptionListBuilder_ == null) {
-                    return this.takeOptionList_.get(index);
-                }
-                return this.takeOptionListBuilder_.getMessageOrBuilder(index);
-            }
-
-            @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
-            public List<? extends BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder> getTakeOptionListOrBuilderList() {
-                if (this.takeOptionListBuilder_ != null) {
-                    return this.takeOptionListBuilder_.getMessageOrBuilderList();
-                }
-                return Collections.unmodifiableList(this.takeOptionList_);
-            }
-
-            public BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder addTakeOptionListBuilder() {
-                return getTakeOptionListFieldBuilder().addBuilder(BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.getDefaultInstance());
-            }
-
-            public BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder addTakeOptionListBuilder(int index) {
-                return getTakeOptionListFieldBuilder().addBuilder(index, BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.getDefaultInstance());
-            }
-
-            public List<BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder> getTakeOptionListBuilderList() {
-                return getTakeOptionListFieldBuilder().getBuilderList();
-            }
-
-            private RepeatedFieldBuilderV3<BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption, BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder, BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder> getTakeOptionListFieldBuilder() {
-                if (this.takeOptionListBuilder_ == null) {
-                    this.takeOptionListBuilder_ = new RepeatedFieldBuilderV3<>(this.takeOptionList_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
-                    this.takeOptionList_ = null;
-                }
-                return this.takeOptionListBuilder_;
-            }
-
             private void ensureItemListIsMutable() {
-                if ((this.bitField0_ & 2) == 0) {
+                if ((this.bitField0_ & 1) == 0) {
                     this.itemList_ = new ArrayList(this.itemList_);
-                    this.bitField0_ |= 2;
+                    this.bitField0_ |= 1;
                 }
             }
 
@@ -912,7 +720,7 @@ public final class TakeBattlePassRewardRspOuterClass {
             public Builder clearItemList() {
                 if (this.itemListBuilder_ == null) {
                     this.itemList_ = Collections.emptyList();
-                    this.bitField0_ &= -3;
+                    this.bitField0_ &= -2;
                     onChanged();
                 } else {
                     this.itemListBuilder_.clear();
@@ -965,10 +773,203 @@ public final class TakeBattlePassRewardRspOuterClass {
 
             private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> getItemListFieldBuilder() {
                 if (this.itemListBuilder_ == null) {
-                    this.itemListBuilder_ = new RepeatedFieldBuilderV3<>(this.itemList_, (this.bitField0_ & 2) != 0, getParentForChildren(), isClean());
+                    this.itemListBuilder_ = new RepeatedFieldBuilderV3<>(this.itemList_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
                     this.itemList_ = null;
                 }
                 return this.itemListBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private void ensureTakeOptionListIsMutable() {
+                if ((this.bitField0_ & 2) == 0) {
+                    this.takeOptionList_ = new ArrayList(this.takeOptionList_);
+                    this.bitField0_ |= 2;
+                }
+            }
+
+            @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
+            public List<BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> getTakeOptionListList() {
+                if (this.takeOptionListBuilder_ == null) {
+                    return Collections.unmodifiableList(this.takeOptionList_);
+                }
+                return this.takeOptionListBuilder_.getMessageList();
+            }
+
+            @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
+            public int getTakeOptionListCount() {
+                if (this.takeOptionListBuilder_ == null) {
+                    return this.takeOptionList_.size();
+                }
+                return this.takeOptionListBuilder_.getCount();
+            }
+
+            @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
+            public BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption getTakeOptionList(int index) {
+                if (this.takeOptionListBuilder_ == null) {
+                    return this.takeOptionList_.get(index);
+                }
+                return this.takeOptionListBuilder_.getMessage(index);
+            }
+
+            public Builder setTakeOptionList(int index, BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption value) {
+                if (this.takeOptionListBuilder_ != null) {
+                    this.takeOptionListBuilder_.setMessage(index, value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    ensureTakeOptionListIsMutable();
+                    this.takeOptionList_.set(index, value);
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder setTakeOptionList(int index, BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder builderForValue) {
+                if (this.takeOptionListBuilder_ == null) {
+                    ensureTakeOptionListIsMutable();
+                    this.takeOptionList_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    this.takeOptionListBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder addTakeOptionList(BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption value) {
+                if (this.takeOptionListBuilder_ != null) {
+                    this.takeOptionListBuilder_.addMessage(value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    ensureTakeOptionListIsMutable();
+                    this.takeOptionList_.add(value);
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder addTakeOptionList(int index, BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption value) {
+                if (this.takeOptionListBuilder_ != null) {
+                    this.takeOptionListBuilder_.addMessage(index, value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    ensureTakeOptionListIsMutable();
+                    this.takeOptionList_.add(index, value);
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder addTakeOptionList(BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder builderForValue) {
+                if (this.takeOptionListBuilder_ == null) {
+                    ensureTakeOptionListIsMutable();
+                    this.takeOptionList_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    this.takeOptionListBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder addTakeOptionList(int index, BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder builderForValue) {
+                if (this.takeOptionListBuilder_ == null) {
+                    ensureTakeOptionListIsMutable();
+                    this.takeOptionList_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    this.takeOptionListBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder addAllTakeOptionList(Iterable<? extends BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> values) {
+                if (this.takeOptionListBuilder_ == null) {
+                    ensureTakeOptionListIsMutable();
+                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.takeOptionList_);
+                    onChanged();
+                } else {
+                    this.takeOptionListBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            public Builder clearTakeOptionList() {
+                if (this.takeOptionListBuilder_ == null) {
+                    this.takeOptionList_ = Collections.emptyList();
+                    this.bitField0_ &= -3;
+                    onChanged();
+                } else {
+                    this.takeOptionListBuilder_.clear();
+                }
+                return this;
+            }
+
+            public Builder removeTakeOptionList(int index) {
+                if (this.takeOptionListBuilder_ == null) {
+                    ensureTakeOptionListIsMutable();
+                    this.takeOptionList_.remove(index);
+                    onChanged();
+                } else {
+                    this.takeOptionListBuilder_.remove(index);
+                }
+                return this;
+            }
+
+            public BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder getTakeOptionListBuilder(int index) {
+                return getTakeOptionListFieldBuilder().getBuilder(index);
+            }
+
+            @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
+            public BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder getTakeOptionListOrBuilder(int index) {
+                if (this.takeOptionListBuilder_ == null) {
+                    return this.takeOptionList_.get(index);
+                }
+                return this.takeOptionListBuilder_.getMessageOrBuilder(index);
+            }
+
+            @Override // emu.grasscutter.net.proto.TakeBattlePassRewardRspOuterClass.TakeBattlePassRewardRspOrBuilder
+            public List<? extends BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder> getTakeOptionListOrBuilderList() {
+                if (this.takeOptionListBuilder_ != null) {
+                    return this.takeOptionListBuilder_.getMessageOrBuilderList();
+                }
+                return Collections.unmodifiableList(this.takeOptionList_);
+            }
+
+            public BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder addTakeOptionListBuilder() {
+                return getTakeOptionListFieldBuilder().addBuilder(BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.getDefaultInstance());
+            }
+
+            public BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder addTakeOptionListBuilder(int index) {
+                return getTakeOptionListFieldBuilder().addBuilder(index, BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.getDefaultInstance());
+            }
+
+            public List<BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder> getTakeOptionListBuilderList() {
+                return getTakeOptionListFieldBuilder().getBuilderList();
+            }
+
+            private RepeatedFieldBuilderV3<BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption, BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.Builder, BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOptionOrBuilder> getTakeOptionListFieldBuilder() {
+                if (this.takeOptionListBuilder_ == null) {
+                    this.takeOptionListBuilder_ = new RepeatedFieldBuilderV3<>(this.takeOptionList_, (this.bitField0_ & 2) != 0, getParentForChildren(), isClean());
+                    this.takeOptionList_ = null;
+                }
+                return this.takeOptionListBuilder_;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
@@ -1006,7 +1007,7 @@ public final class TakeBattlePassRewardRspOuterClass {
     }
 
     static {
-        BattlePassRewardTakeOptionOuterClass.getDescriptor();
         ItemParamOuterClass.getDescriptor();
+        BattlePassRewardTakeOptionOuterClass.getDescriptor();
     }
 }

@@ -197,30 +197,30 @@ public abstract class AbstractInt2BooleanMap extends AbstractInt2BooleanFunction
                 return new IntIterator() { // from class: it.unimi.dsi.fastutil.ints.AbstractInt2BooleanMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Int2BooleanMap.Entry> f1975i;
+                    private final ObjectIterator<Int2BooleanMap.Entry> f1939i;
 
                     {
-                        this.f1975i = Int2BooleanMaps.fastIterator(AbstractInt2BooleanMap.this);
+                        this.f1939i = Int2BooleanMaps.fastIterator(AbstractInt2BooleanMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.ints.IntIterator, java.util.PrimitiveIterator.OfInt
                     public int nextInt() {
-                        return this.f1975i.next().getIntKey();
+                        return this.f1939i.next().getIntKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1975i.hasNext();
+                        return this.f1939i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1975i.remove();
+                        this.f1939i.remove();
                     }
 
                     @Override // java.util.PrimitiveIterator.OfInt
                     public void forEachRemaining(IntConsumer action) {
-                        this.f1975i.forEachRemaining(entry -> {
+                        this.f1939i.forEachRemaining(entry -> {
                             action.accept(entry.getIntKey());
                         });
                     }
@@ -258,30 +258,30 @@ public abstract class AbstractInt2BooleanMap extends AbstractInt2BooleanFunction
                 return new BooleanIterator() { // from class: it.unimi.dsi.fastutil.ints.AbstractInt2BooleanMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Int2BooleanMap.Entry> f1976i;
+                    private final ObjectIterator<Int2BooleanMap.Entry> f1940i;
 
                     {
-                        this.f1976i = Int2BooleanMaps.fastIterator(AbstractInt2BooleanMap.this);
+                        this.f1940i = Int2BooleanMaps.fastIterator(AbstractInt2BooleanMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
                     public boolean nextBoolean() {
-                        return this.f1976i.next().getBooleanValue();
+                        return this.f1940i.next().getBooleanValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1976i.hasNext();
+                        return this.f1940i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1976i.remove();
+                        this.f1940i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
                     public void forEachRemaining(BooleanConsumer action) {
-                        this.f1976i.forEachRemaining(entry -> {
+                        this.f1940i.forEachRemaining(entry -> {
                             action.accept(entry.getBooleanValue());
                         });
                     }

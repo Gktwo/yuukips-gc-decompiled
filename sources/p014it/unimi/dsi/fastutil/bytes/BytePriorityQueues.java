@@ -15,23 +15,23 @@ public final class BytePriorityQueues {
     public static class SynchronizedPriorityQueue implements BytePriorityQueue {
 
         /* renamed from: q */
-        protected final BytePriorityQueue f1300q;
+        protected final BytePriorityQueue f1264q;
         protected final Object sync;
 
         protected SynchronizedPriorityQueue(BytePriorityQueue q, Object sync) {
-            this.f1300q = q;
+            this.f1264q = q;
             this.sync = sync;
         }
 
         protected SynchronizedPriorityQueue(BytePriorityQueue q) {
-            this.f1300q = q;
+            this.f1264q = q;
             this.sync = this;
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.BytePriorityQueue
         public void enqueue(byte x) {
             synchronized (this.sync) {
-                this.f1300q.enqueue(x);
+                this.f1264q.enqueue(x);
             }
         }
 
@@ -39,7 +39,7 @@ public final class BytePriorityQueues {
         public byte dequeueByte() {
             byte dequeueByte;
             synchronized (this.sync) {
-                dequeueByte = this.f1300q.dequeueByte();
+                dequeueByte = this.f1264q.dequeueByte();
             }
             return dequeueByte;
         }
@@ -48,7 +48,7 @@ public final class BytePriorityQueues {
         public byte firstByte() {
             byte firstByte;
             synchronized (this.sync) {
-                firstByte = this.f1300q.firstByte();
+                firstByte = this.f1264q.firstByte();
             }
             return firstByte;
         }
@@ -57,7 +57,7 @@ public final class BytePriorityQueues {
         public byte lastByte() {
             byte lastByte;
             synchronized (this.sync) {
-                lastByte = this.f1300q.lastByte();
+                lastByte = this.f1264q.lastByte();
             }
             return lastByte;
         }
@@ -66,7 +66,7 @@ public final class BytePriorityQueues {
         public boolean isEmpty() {
             boolean isEmpty;
             synchronized (this.sync) {
-                isEmpty = this.f1300q.isEmpty();
+                isEmpty = this.f1264q.isEmpty();
             }
             return isEmpty;
         }
@@ -75,7 +75,7 @@ public final class BytePriorityQueues {
         public int size() {
             int size;
             synchronized (this.sync) {
-                size = this.f1300q.size();
+                size = this.f1264q.size();
             }
             return size;
         }
@@ -83,14 +83,14 @@ public final class BytePriorityQueues {
         @Override // p014it.unimi.dsi.fastutil.PriorityQueue
         public void clear() {
             synchronized (this.sync) {
-                this.f1300q.clear();
+                this.f1264q.clear();
             }
         }
 
         @Override // p014it.unimi.dsi.fastutil.PriorityQueue
         public void changed() {
             synchronized (this.sync) {
-                this.f1300q.changed();
+                this.f1264q.changed();
             }
         }
 
@@ -99,7 +99,7 @@ public final class BytePriorityQueues {
         public Comparator<? super Byte> comparator() {
             Comparator<? super Byte> comparator;
             synchronized (this.sync) {
-                comparator = this.f1300q.comparator();
+                comparator = this.f1264q.comparator();
             }
             return comparator;
         }
@@ -108,7 +108,7 @@ public final class BytePriorityQueues {
         @Deprecated
         public void enqueue(Byte x) {
             synchronized (this.sync) {
-                this.f1300q.enqueue(x);
+                this.f1264q.enqueue(x);
             }
         }
 
@@ -117,7 +117,7 @@ public final class BytePriorityQueues {
         public Byte dequeue() {
             Byte dequeue;
             synchronized (this.sync) {
-                dequeue = this.f1300q.dequeue();
+                dequeue = this.f1264q.dequeue();
             }
             return dequeue;
         }
@@ -127,7 +127,7 @@ public final class BytePriorityQueues {
         public Byte first() {
             Byte first;
             synchronized (this.sync) {
-                first = this.f1300q.first();
+                first = this.f1264q.first();
             }
             return first;
         }
@@ -137,7 +137,7 @@ public final class BytePriorityQueues {
         public Byte last() {
             Byte last;
             synchronized (this.sync) {
-                last = this.f1300q.last();
+                last = this.f1264q.last();
             }
             return last;
         }
@@ -145,7 +145,7 @@ public final class BytePriorityQueues {
         public int hashCode() {
             int hashCode;
             synchronized (this.sync) {
-                hashCode = this.f1300q.hashCode();
+                hashCode = this.f1264q.hashCode();
             }
             return hashCode;
         }
@@ -156,7 +156,7 @@ public final class BytePriorityQueues {
                 return true;
             }
             synchronized (this.sync) {
-                equals = this.f1300q.equals(o);
+                equals = this.f1264q.equals(o);
             }
             return equals;
         }

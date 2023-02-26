@@ -22,10 +22,10 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
     static final IntImmutableList EMPTY = new IntImmutableList(IntArrays.EMPTY_ARRAY);
 
     /* renamed from: a */
-    private final int[] f2172a;
+    private final int[] f2136a;
 
     public IntImmutableList(int[] a) {
-        this.f2172a = a;
+        this.f2136a = a;
     }
 
     public IntImmutableList(Collection<? extends Integer> c) {
@@ -38,12 +38,12 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
 
     public IntImmutableList(IntList l) {
         this(l.isEmpty() ? IntArrays.EMPTY_ARRAY : new int[l.size()]);
-        l.getElements(0, this.f2172a, 0, l.size());
+        l.getElements(0, this.f2136a, 0, l.size());
     }
 
     public IntImmutableList(int[] a, int offset, int length) {
         this(length == 0 ? IntArrays.EMPTY_ARRAY : new int[length]);
-        System.arraycopy(a, offset, this.f2172a, 0, length);
+        System.arraycopy(a, offset, this.f2136a, 0, length);
     }
 
     public IntImmutableList(IntIterator i) {
@@ -81,17 +81,17 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
 
     @Override // p014it.unimi.dsi.fastutil.ints.IntList
     public int getInt(int index) {
-        if (index < this.f2172a.length) {
-            return this.f2172a[index];
+        if (index < this.f2136a.length) {
+            return this.f2136a[index];
         }
-        throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.f2172a.length + ")");
+        throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.f2136a.length + ")");
     }
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntList
     public int indexOf(int k) {
-        int size = this.f2172a.length;
+        int size = this.f2136a.length;
         for (int i = 0; i < size; i++) {
-            if (k == this.f2172a[i]) {
+            if (k == this.f2136a[i]) {
                 return i;
             }
         }
@@ -100,50 +100,50 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntList
     public int lastIndexOf(int k) {
-        int i = this.f2172a.length;
+        int i = this.f2136a.length;
         do {
             i--;
             if (i == 0) {
                 return -1;
             }
-        } while (k != this.f2172a[i]);
+        } while (k != this.f2136a[i]);
         return i;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public int size() {
-        return this.f2172a.length;
+        return this.f2136a.length;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List, p014it.unimi.dsi.fastutil.Stack
     public boolean isEmpty() {
-        return this.f2172a.length == 0;
+        return this.f2136a.length == 0;
     }
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntList
     public void getElements(int from, int[] a, int offset, int length) {
         IntArrays.ensureOffsetLength(a, offset, length);
-        System.arraycopy(this.f2172a, from, a, offset, length);
+        System.arraycopy(this.f2136a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntIterable
     public void forEach(IntConsumer action) {
-        for (int i = 0; i < this.f2172a.length; i++) {
-            action.accept(this.f2172a[i]);
+        for (int i = 0; i < this.f2136a.length; i++) {
+            action.accept(this.f2136a[i]);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.AbstractIntCollection, p014it.unimi.dsi.fastutil.ints.IntCollection
     public int[] toIntArray() {
-        return (int[]) this.f2172a.clone();
+        return (int[]) this.f2136a.clone();
     }
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.AbstractIntCollection, p014it.unimi.dsi.fastutil.ints.IntCollection
     public int[] toArray(int[] a) {
         if (a == null || a.length < size()) {
-            a = new int[this.f2172a.length];
+            a = new int[this.f2136a.length];
         }
-        System.arraycopy(this.f2172a, 0, a, 0, a.length);
+        System.arraycopy(this.f2136a, 0, a, 0, a.length);
         return a;
     }
 
@@ -161,7 +161,7 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
 
             @Override // java.util.Iterator, java.util.ListIterator
             public boolean hasNext() {
-                return this.pos < IntImmutableList.this.f2172a.length;
+                return this.pos < IntImmutableList.this.f2136a.length;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -174,7 +174,7 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                int[] iArr = IntImmutableList.this.f2172a;
+                int[] iArr = IntImmutableList.this.f2136a;
                 int i = this.pos;
                 this.pos = i + 1;
                 return iArr[i];
@@ -185,7 +185,7 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                int[] iArr = IntImmutableList.this.f2172a;
+                int[] iArr = IntImmutableList.this.f2136a;
                 int i = this.pos - 1;
                 this.pos = i;
                 return iArr[i];
@@ -203,8 +203,8 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
 
             @Override // java.util.PrimitiveIterator.OfInt
             public void forEachRemaining(IntConsumer action) {
-                while (this.pos < IntImmutableList.this.f2172a.length) {
-                    int[] iArr = IntImmutableList.this.f2172a;
+                while (this.pos < IntImmutableList.this.f2136a.length) {
+                    int[] iArr = IntImmutableList.this.f2136a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(iArr[i]);
@@ -231,7 +231,7 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
                 if (n < 0) {
                     throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                 }
-                int remaining = IntImmutableList.this.f2172a.length - this.pos;
+                int remaining = IntImmutableList.this.f2136a.length - this.pos;
                 if (n < remaining) {
                     this.pos -= n;
                 } else {
@@ -246,12 +246,12 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
                 if (n < 0) {
                     throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                 }
-                int remaining = IntImmutableList.this.f2172a.length - this.pos;
+                int remaining = IntImmutableList.this.f2136a.length - this.pos;
                 if (n < remaining) {
                     this.pos += n;
                 } else {
                     n = remaining;
-                    this.pos = IntImmutableList.this.f2172a.length;
+                    this.pos = IntImmutableList.this.f2136a.length;
                 }
                 return n;
             }
@@ -271,7 +271,7 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
         }
 
         public Spliterator(IntImmutableList intImmutableList) {
-            this(0, intImmutableList.f2172a.length);
+            this(0, intImmutableList.f2136a.length);
         }
 
         private Spliterator(int pos, int max) {
@@ -298,7 +298,7 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
             if (this.pos >= this.max) {
                 return false;
             }
-            int[] iArr = IntImmutableList.this.f2172a;
+            int[] iArr = IntImmutableList.this.f2136a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(iArr[i]);
@@ -308,7 +308,7 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
         @Override // java.util.Spliterator.OfInt
         public void forEachRemaining(IntConsumer action) {
             while (this.pos < this.max) {
-                action.accept(IntImmutableList.this.f2172a[this.pos]);
+                action.accept(IntImmutableList.this.f2136a[this.pos]);
                 this.pos++;
             }
         }
@@ -358,28 +358,28 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
         final int from;
 
         /* renamed from: to */
-        final int f2173to;
+        final int f2137to;
 
         /* renamed from: a */
-        final transient int[] f2174a;
+        final transient int[] f2138a;
 
         ImmutableSubList(IntImmutableList innerList, int from, int to) {
             this.innerList = innerList;
             this.from = from;
-            this.f2173to = to;
-            this.f2174a = innerList.f2172a;
+            this.f2137to = to;
+            this.f2138a = innerList.f2136a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntList
         public int getInt(int index) {
             ensureRestrictedIndex(index);
-            return this.f2174a[index + this.from];
+            return this.f2138a[index + this.from];
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntList
         public int indexOf(int k) {
-            for (int i = this.from; i < this.f2173to; i++) {
-                if (k == this.f2174a[i]) {
+            for (int i = this.from; i < this.f2137to; i++) {
+                if (k == this.f2138a[i]) {
                     return i - this.from;
                 }
             }
@@ -388,46 +388,46 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntList
         public int lastIndexOf(int k) {
-            int i = this.f2173to;
+            int i = this.f2137to;
             do {
                 i--;
                 if (i == this.from) {
                     return -1;
                 }
-            } while (k != this.f2174a[i]);
+            } while (k != this.f2138a[i]);
             return i - this.from;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public int size() {
-            return this.f2173to - this.from;
+            return this.f2137to - this.from;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List, p014it.unimi.dsi.fastutil.Stack
         public boolean isEmpty() {
-            return this.f2173to <= this.from;
+            return this.f2137to <= this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntList
         public void getElements(int fromSublistIndex, int[] a, int offset, int length) {
             IntArrays.ensureOffsetLength(a, offset, length);
             ensureRestrictedIndex(fromSublistIndex);
-            if (this.from + length > this.f2173to) {
+            if (this.from + length > this.f2137to) {
                 throw new IndexOutOfBoundsException("Final index " + (this.from + length) + " (startingIndex: " + this.from + " + length: " + length + ") is greater then list length " + size());
             }
-            System.arraycopy(this.f2174a, fromSublistIndex + this.from, a, offset, length);
+            System.arraycopy(this.f2138a, fromSublistIndex + this.from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntIterable
         public void forEach(IntConsumer action) {
-            for (int i = this.from; i < this.f2173to; i++) {
-                action.accept(this.f2174a[i]);
+            for (int i = this.from; i < this.f2137to; i++) {
+                action.accept(this.f2138a[i]);
             }
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.AbstractIntCollection, p014it.unimi.dsi.fastutil.ints.IntCollection
         public int[] toIntArray() {
-            return Arrays.copyOfRange(this.f2174a, this.from, this.f2173to);
+            return Arrays.copyOfRange(this.f2138a, this.from, this.f2137to);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.AbstractIntCollection, p014it.unimi.dsi.fastutil.ints.IntCollection
@@ -435,7 +435,7 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
             if (a == null || a.length < size()) {
                 a = new int[size()];
             }
-            System.arraycopy(this.f2174a, this.from, a, 0, size());
+            System.arraycopy(this.f2138a, this.from, a, 0, size());
             return a;
         }
 
@@ -453,7 +453,7 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
 
                 @Override // java.util.Iterator, java.util.ListIterator
                 public boolean hasNext() {
-                    return this.pos < ImmutableSubList.this.f2173to;
+                    return this.pos < ImmutableSubList.this.f2137to;
                 }
 
                 @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -466,7 +466,7 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
                     if (!hasNext()) {
                         throw new NoSuchElementException();
                     }
-                    int[] iArr = ImmutableSubList.this.f2174a;
+                    int[] iArr = ImmutableSubList.this.f2138a;
                     int i = this.pos;
                     this.pos = i + 1;
                     return iArr[i + ImmutableSubList.this.from];
@@ -477,7 +477,7 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
                     if (!hasPrevious()) {
                         throw new NoSuchElementException();
                     }
-                    int[] iArr = ImmutableSubList.this.f2174a;
+                    int[] iArr = ImmutableSubList.this.f2138a;
                     int i = this.pos - 1;
                     this.pos = i;
                     return iArr[i + ImmutableSubList.this.from];
@@ -495,8 +495,8 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
 
                 @Override // java.util.PrimitiveIterator.OfInt
                 public void forEachRemaining(IntConsumer action) {
-                    while (this.pos < ImmutableSubList.this.f2173to) {
-                        int[] iArr = ImmutableSubList.this.f2174a;
+                    while (this.pos < ImmutableSubList.this.f2137to) {
+                        int[] iArr = ImmutableSubList.this.f2138a;
                         int i = this.pos;
                         this.pos = i + 1;
                         action.accept(iArr[i + ImmutableSubList.this.from]);
@@ -523,7 +523,7 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
                     if (n < 0) {
                         throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                     }
-                    int remaining = ImmutableSubList.this.f2173to - this.pos;
+                    int remaining = ImmutableSubList.this.f2137to - this.pos;
                     if (n < remaining) {
                         this.pos -= n;
                     } else {
@@ -538,12 +538,12 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
                     if (n < 0) {
                         throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                     }
-                    int remaining = ImmutableSubList.this.f2173to - this.pos;
+                    int remaining = ImmutableSubList.this.f2137to - this.pos;
                     if (n < remaining) {
                         this.pos += n;
                     } else {
                         n = remaining;
-                        this.pos = ImmutableSubList.this.f2173to;
+                        this.pos = ImmutableSubList.this.f2137to;
                     }
                     return n;
                 }
@@ -555,7 +555,7 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
         /* loaded from: grasscutter.jar:it/unimi/dsi/fastutil/ints/IntImmutableList$ImmutableSubList$SubListSpliterator.class */
         public final class SubListSpliterator extends IntSpliterators.EarlyBindingSizeIndexBasedSpliterator {
             SubListSpliterator() {
-                super(ImmutableSubList.this.from, ImmutableSubList.this.f2173to);
+                super(ImmutableSubList.this.from, ImmutableSubList.this.f2137to);
             }
 
             private SubListSpliterator(int pos, int maxPos) {
@@ -564,7 +564,7 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
 
             @Override // p014it.unimi.dsi.fastutil.ints.IntSpliterators.AbstractIndexBasedSpliterator
             protected final int get(int i) {
-                return ImmutableSubList.this.f2174a[i];
+                return ImmutableSubList.this.f2138a[i];
             }
 
             /* access modifiers changed from: protected */
@@ -578,7 +578,7 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
                 if (this.pos >= this.maxPos) {
                     return false;
                 }
-                int[] iArr = ImmutableSubList.this.f2174a;
+                int[] iArr = ImmutableSubList.this.f2138a;
                 int i = this.pos;
                 this.pos = i + 1;
                 action.accept(iArr[i]);
@@ -589,7 +589,7 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
             public void forEachRemaining(IntConsumer action) {
                 int max = this.maxPos;
                 while (this.pos < max) {
-                    int[] iArr = ImmutableSubList.this.f2174a;
+                    int[] iArr = ImmutableSubList.this.f2138a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(iArr[i]);
@@ -608,7 +608,7 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
         }
 
         boolean contentsEquals(int[] otherA, int otherAFrom, int otherATo) {
-            if (this.f2174a == otherA && this.from == otherAFrom && this.f2173to == otherATo) {
+            if (this.f2138a == otherA && this.from == otherAFrom && this.f2137to == otherATo) {
                 return true;
             }
             if (otherATo - otherAFrom != size()) {
@@ -616,10 +616,10 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
             }
             int pos = this.from;
             int otherPos = otherAFrom;
-            while (pos < this.f2173to) {
+            while (pos < this.f2137to) {
                 pos++;
                 otherPos++;
-                if (this.f2174a[pos] != otherA[otherPos]) {
+                if (this.f2138a[pos] != otherA[otherPos]) {
                     return false;
                 }
             }
@@ -636,23 +636,23 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
             }
             if (o instanceof IntImmutableList) {
                 IntImmutableList other = (IntImmutableList) o;
-                return contentsEquals(other.f2172a, 0, other.size());
+                return contentsEquals(other.f2136a, 0, other.size());
             } else if (!(o instanceof ImmutableSubList)) {
                 return equals(o);
             } else {
                 ImmutableSubList other2 = (ImmutableSubList) o;
-                return contentsEquals(other2.f2174a, other2.from, other2.f2173to);
+                return contentsEquals(other2.f2138a, other2.from, other2.f2137to);
             }
         }
 
         int contentsCompareTo(int[] otherA, int otherAFrom, int otherATo) {
-            if (this.f2174a == otherA && this.from == otherAFrom && this.f2173to == otherATo) {
+            if (this.f2138a == otherA && this.from == otherAFrom && this.f2137to == otherATo) {
                 return 0;
             }
             int i = this.from;
             int j = otherAFrom;
-            while (i < this.f2173to && i < otherATo) {
-                int r = Integer.compare(this.f2174a[i], otherA[j]);
+            while (i < this.f2137to && i < otherATo) {
+                int r = Integer.compare(this.f2138a[i], otherA[j]);
                 if (r != 0) {
                     return r;
                 }
@@ -662,25 +662,25 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
             if (i < otherATo) {
                 return -1;
             }
-            return i < this.f2173to ? 1 : 0;
+            return i < this.f2137to ? 1 : 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList
         public int compareTo(List<? extends Integer> l) {
             if (l instanceof IntImmutableList) {
                 IntImmutableList other = (IntImmutableList) l;
-                return contentsCompareTo(other.f2172a, 0, other.size());
+                return contentsCompareTo(other.f2136a, 0, other.size());
             } else if (!(l instanceof ImmutableSubList)) {
                 return compareTo(l);
             } else {
                 ImmutableSubList other2 = (ImmutableSubList) l;
-                return contentsCompareTo(other2.f2174a, other2.from, other2.f2173to);
+                return contentsCompareTo(other2.f2138a, other2.from, other2.f2137to);
             }
         }
 
         private Object readResolve() throws ObjectStreamException {
             try {
-                return this.innerList.subList(this.from, this.f2173to);
+                return this.innerList.subList(this.from, this.f2137to);
             } catch (IllegalArgumentException | IndexOutOfBoundsException ex) {
                 throw ((InvalidObjectException) new InvalidObjectException(ex.getMessage()).initCause(ex));
             }
@@ -724,13 +724,13 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
     }
 
     public boolean equals(IntImmutableList l) {
-        if (l == this || this.f2172a == l.f2172a) {
+        if (l == this || this.f2136a == l.f2136a) {
             return true;
         }
         if (size() != l.size()) {
             return false;
         }
-        return Arrays.equals(this.f2172a, l.f2172a);
+        return Arrays.equals(this.f2136a, l.f2136a);
     }
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, java.util.Collection, java.lang.Object, java.util.List
@@ -751,13 +751,13 @@ public class IntImmutableList extends IntLists.ImmutableListBase implements IntL
     }
 
     public int compareTo(IntImmutableList l) {
-        if (this.f2172a == l.f2172a) {
+        if (this.f2136a == l.f2136a) {
             return 0;
         }
         int s1 = size();
         int s2 = l.size();
-        int[] a1 = this.f2172a;
-        int[] a2 = l.f2172a;
+        int[] a1 = this.f2136a;
+        int[] a2 = l.f2136a;
         int i = 0;
         while (i < s1 && i < s2) {
             int r = Integer.compare(a1[i], a2[i]);

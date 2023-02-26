@@ -79,7 +79,7 @@ public class SolarisNativePty extends JansiNativePty {
     private static final int CBAUD = 65559;
 
     /* renamed from: B0 */
-    private static final int f3244B0 = 0;
+    private static final int f3208B0 = 0;
     private static final int B50 = 1;
     private static final int B75 = 2;
     private static final int B110 = 3;

@@ -20,21 +20,21 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UseItemReqOuterClass.class */
 public final class UseItemReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010UseItemReq.proto\"t\n\nUseItemReq\u0012\r\n\u0005count\u0018\u000e \u0001(\r\u0012\f\n\u0004guid\u0018\u0001 \u0001(\u0004\u0012\u0013\n\u000btarget_guid\u0018\u0002 \u0001(\u0004\u0012\u0012\n\noption_idx\u0018\b \u0001(\r\u0012 \n\u0018is_enter_mp_dungeon_team\u0018\t \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010UseItemReq.proto\"n\n\nUseItemReq\u0012\f\n\u0004guid\u0018\b \u0001(\u0004\u0012\u0011\n\toptionIdx\u0018\u000e \u0001(\r\u0012\r\n\u0005count\u0018\f \u0001(\r\u0012\u001c\n\u0014isEnterMpDungeonTeam\u0018\r \u0001(\b\u0012\u0012\n\ntargetGuid\u0018\u0006 \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_UseItemReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_UseItemReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_UseItemReq_descriptor, new String[]{"Count", "Guid", "TargetGuid", "OptionIdx", "IsEnterMpDungeonTeam"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_UseItemReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_UseItemReq_descriptor, new String[]{"Guid", "OptionIdx", "Count", "IsEnterMpDungeonTeam", "TargetGuid"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UseItemReqOuterClass$UseItemReqOrBuilder.class */
     public interface UseItemReqOrBuilder extends MessageOrBuilder {
-        int getCount();
-
         long getGuid();
-
-        long getTargetGuid();
 
         int getOptionIdx();
 
+        int getCount();
+
         boolean getIsEnterMpDungeonTeam();
+
+        long getTargetGuid();
     }
 
     private UseItemReqOuterClass() {
@@ -50,16 +50,16 @@ public final class UseItemReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UseItemReqOuterClass$UseItemReq.class */
     public static final class UseItemReq extends GeneratedMessageV3 implements UseItemReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int COUNT_FIELD_NUMBER = 14;
-        private int count_;
-        public static final int GUID_FIELD_NUMBER = 1;
+        public static final int GUID_FIELD_NUMBER = 8;
         private long guid_;
-        public static final int TARGET_GUID_FIELD_NUMBER = 2;
-        private long targetGuid_;
-        public static final int OPTION_IDX_FIELD_NUMBER = 8;
+        public static final int OPTIONIDX_FIELD_NUMBER = 14;
         private int optionIdx_;
-        public static final int IS_ENTER_MP_DUNGEON_TEAM_FIELD_NUMBER = 9;
+        public static final int COUNT_FIELD_NUMBER = 12;
+        private int count_;
+        public static final int ISENTERMPDUNGEONTEAM_FIELD_NUMBER = 13;
         private boolean isEnterMpDungeonTeam_;
+        public static final int TARGETGUID_FIELD_NUMBER = 6;
+        private long targetGuid_;
         private byte memoizedIsInitialized;
         private static final UseItemReq DEFAULT_INSTANCE = new UseItemReq();
         private static final Parser<UseItemReq> PARSER = new AbstractParser<UseItemReq>() { // from class: emu.grasscutter.net.proto.UseItemReqOuterClass.UseItemReq.1
@@ -105,20 +105,20 @@ public final class UseItemReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
-                                this.guid_ = input.readUInt64();
-                                break;
-                            case 16:
+                            case 48:
                                 this.targetGuid_ = input.readUInt64();
                                 break;
                             case 64:
-                                this.optionIdx_ = input.readUInt32();
+                                this.guid_ = input.readUInt64();
                                 break;
-                            case 72:
+                            case 96:
+                                this.count_ = input.readUInt32();
+                                break;
+                            case 104:
                                 this.isEnterMpDungeonTeam_ = input.readBool();
                                 break;
                             case 112:
-                                this.count_ = input.readUInt32();
+                                this.optionIdx_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -150,18 +150,8 @@ public final class UseItemReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.UseItemReqOuterClass.UseItemReqOrBuilder
-        public int getCount() {
-            return this.count_;
-        }
-
-        @Override // emu.grasscutter.net.proto.UseItemReqOuterClass.UseItemReqOrBuilder
         public long getGuid() {
             return this.guid_;
-        }
-
-        @Override // emu.grasscutter.net.proto.UseItemReqOuterClass.UseItemReqOrBuilder
-        public long getTargetGuid() {
-            return this.targetGuid_;
         }
 
         @Override // emu.grasscutter.net.proto.UseItemReqOuterClass.UseItemReqOrBuilder
@@ -170,8 +160,18 @@ public final class UseItemReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.UseItemReqOuterClass.UseItemReqOrBuilder
+        public int getCount() {
+            return this.count_;
+        }
+
+        @Override // emu.grasscutter.net.proto.UseItemReqOuterClass.UseItemReqOrBuilder
         public boolean getIsEnterMpDungeonTeam() {
             return this.isEnterMpDungeonTeam_;
+        }
+
+        @Override // emu.grasscutter.net.proto.UseItemReqOuterClass.UseItemReqOrBuilder
+        public long getTargetGuid() {
+            return this.targetGuid_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -189,20 +189,20 @@ public final class UseItemReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.guid_ != 0) {
-                output.writeUInt64(1, this.guid_);
-            }
             if (this.targetGuid_ != 0) {
-                output.writeUInt64(2, this.targetGuid_);
+                output.writeUInt64(6, this.targetGuid_);
             }
-            if (this.optionIdx_ != 0) {
-                output.writeUInt32(8, this.optionIdx_);
-            }
-            if (this.isEnterMpDungeonTeam_) {
-                output.writeBool(9, this.isEnterMpDungeonTeam_);
+            if (this.guid_ != 0) {
+                output.writeUInt64(8, this.guid_);
             }
             if (this.count_ != 0) {
-                output.writeUInt32(14, this.count_);
+                output.writeUInt32(12, this.count_);
+            }
+            if (this.isEnterMpDungeonTeam_) {
+                output.writeBool(13, this.isEnterMpDungeonTeam_);
+            }
+            if (this.optionIdx_ != 0) {
+                output.writeUInt32(14, this.optionIdx_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -214,20 +214,20 @@ public final class UseItemReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.guid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(1, this.guid_);
-            }
             if (this.targetGuid_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(2, this.targetGuid_);
+                size2 = 0 + CodedOutputStream.computeUInt64Size(6, this.targetGuid_);
             }
-            if (this.optionIdx_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.optionIdx_);
-            }
-            if (this.isEnterMpDungeonTeam_) {
-                size2 += CodedOutputStream.computeBoolSize(9, this.isEnterMpDungeonTeam_);
+            if (this.guid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(8, this.guid_);
             }
             if (this.count_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.count_);
+                size2 += CodedOutputStream.computeUInt32Size(12, this.count_);
+            }
+            if (this.isEnterMpDungeonTeam_) {
+                size2 += CodedOutputStream.computeBoolSize(13, this.isEnterMpDungeonTeam_);
+            }
+            if (this.optionIdx_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(14, this.optionIdx_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -243,7 +243,7 @@ public final class UseItemReqOuterClass {
                 return equals(obj);
             }
             UseItemReq other = (UseItemReq) obj;
-            return getCount() == other.getCount() && getGuid() == other.getGuid() && getTargetGuid() == other.getTargetGuid() && getOptionIdx() == other.getOptionIdx() && getIsEnterMpDungeonTeam() == other.getIsEnterMpDungeonTeam() && this.unknownFields.equals(other.unknownFields);
+            return getGuid() == other.getGuid() && getOptionIdx() == other.getOptionIdx() && getCount() == other.getCount() && getIsEnterMpDungeonTeam() == other.getIsEnterMpDungeonTeam() && getTargetGuid() == other.getTargetGuid() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -251,7 +251,7 @@ public final class UseItemReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getCount())) + 1)) + Internal.hashLong(getGuid()))) + 2)) + Internal.hashLong(getTargetGuid()))) + 8)) + getOptionIdx())) + 9)) + Internal.hashBoolean(getIsEnterMpDungeonTeam()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + Internal.hashLong(getGuid()))) + 14)) + getOptionIdx())) + 12)) + getCount())) + 13)) + Internal.hashBoolean(getIsEnterMpDungeonTeam()))) + 6)) + Internal.hashLong(getTargetGuid()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -330,11 +330,11 @@ public final class UseItemReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UseItemReqOuterClass$UseItemReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements UseItemReqOrBuilder {
-            private int count_;
             private long guid_;
-            private long targetGuid_;
             private int optionIdx_;
+            private int count_;
             private boolean isEnterMpDungeonTeam_;
+            private long targetGuid_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return UseItemReqOuterClass.internal_static_UseItemReq_descriptor;
@@ -362,11 +362,11 @@ public final class UseItemReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.count_ = 0;
                 this.guid_ = 0;
-                this.targetGuid_ = 0;
                 this.optionIdx_ = 0;
+                this.count_ = 0;
                 this.isEnterMpDungeonTeam_ = false;
+                this.targetGuid_ = 0;
                 return this;
             }
 
@@ -392,11 +392,11 @@ public final class UseItemReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public UseItemReq buildPartial() {
                 UseItemReq result = new UseItemReq(this);
-                result.count_ = this.count_;
                 result.guid_ = this.guid_;
-                result.targetGuid_ = this.targetGuid_;
                 result.optionIdx_ = this.optionIdx_;
+                result.count_ = this.count_;
                 result.isEnterMpDungeonTeam_ = this.isEnterMpDungeonTeam_;
+                result.targetGuid_ = this.targetGuid_;
                 onBuilt();
                 return result;
             }
@@ -444,20 +444,20 @@ public final class UseItemReqOuterClass {
                 if (other == UseItemReq.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getCount() != 0) {
-                    setCount(other.getCount());
-                }
                 if (other.getGuid() != 0) {
                     setGuid(other.getGuid());
-                }
-                if (other.getTargetGuid() != 0) {
-                    setTargetGuid(other.getTargetGuid());
                 }
                 if (other.getOptionIdx() != 0) {
                     setOptionIdx(other.getOptionIdx());
                 }
+                if (other.getCount() != 0) {
+                    setCount(other.getCount());
+                }
                 if (other.getIsEnterMpDungeonTeam()) {
                     setIsEnterMpDungeonTeam(other.getIsEnterMpDungeonTeam());
+                }
+                if (other.getTargetGuid() != 0) {
+                    setTargetGuid(other.getTargetGuid());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -492,23 +492,6 @@ public final class UseItemReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.UseItemReqOuterClass.UseItemReqOrBuilder
-            public int getCount() {
-                return this.count_;
-            }
-
-            public Builder setCount(int value) {
-                this.count_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearCount() {
-                this.count_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.UseItemReqOuterClass.UseItemReqOrBuilder
             public long getGuid() {
                 return this.guid_;
             }
@@ -521,23 +504,6 @@ public final class UseItemReqOuterClass {
 
             public Builder clearGuid() {
                 this.guid_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.UseItemReqOuterClass.UseItemReqOrBuilder
-            public long getTargetGuid() {
-                return this.targetGuid_;
-            }
-
-            public Builder setTargetGuid(long value) {
-                this.targetGuid_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearTargetGuid() {
-                this.targetGuid_ = 0;
                 onChanged();
                 return this;
             }
@@ -560,6 +526,23 @@ public final class UseItemReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.UseItemReqOuterClass.UseItemReqOrBuilder
+            public int getCount() {
+                return this.count_;
+            }
+
+            public Builder setCount(int value) {
+                this.count_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearCount() {
+                this.count_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.UseItemReqOuterClass.UseItemReqOrBuilder
             public boolean getIsEnterMpDungeonTeam() {
                 return this.isEnterMpDungeonTeam_;
             }
@@ -572,6 +555,23 @@ public final class UseItemReqOuterClass {
 
             public Builder clearIsEnterMpDungeonTeam() {
                 this.isEnterMpDungeonTeam_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.UseItemReqOuterClass.UseItemReqOrBuilder
+            public long getTargetGuid() {
+                return this.targetGuid_;
+            }
+
+            public Builder setTargetGuid(long value) {
+                this.targetGuid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearTargetGuid() {
+                this.targetGuid_ = 0;
                 onChanged();
                 return this;
             }

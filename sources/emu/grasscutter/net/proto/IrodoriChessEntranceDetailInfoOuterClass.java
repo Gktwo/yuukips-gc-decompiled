@@ -25,11 +25,11 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriChessEntranceDetailInfoOuterClass.class */
 public final class IrodoriChessEntranceDetailInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n$IrodoriChessEntranceDetailInfo.proto\u001a\u001eIrodoriChessEntranceInfo.proto\"N\n\u001eIrodoriChessEntranceDetailInfo\u0012,\n\tinfo_list\u0018\u000e \u0003(\u000b2\u0019.IrodoriChessEntranceInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{IrodoriChessEntranceInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n$IrodoriChessEntranceDetailInfo.proto\u001a\u001eIrodoriChessEntranceInfo.proto\"M\n\u001eIrodoriChessEntranceDetailInfo\u0012+\n\binfoList\u0018\u0002 \u0003(\u000b2\u0019.IrodoriChessEntranceInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{IrodoriChessEntranceInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_IrodoriChessEntranceDetailInfo_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_IrodoriChessEntranceDetailInfo_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f767x7626b70 = new GeneratedMessageV3.FieldAccessorTable(internal_static_IrodoriChessEntranceDetailInfo_descriptor, new String[]{"InfoList"});
+    private static final GeneratedMessageV3.FieldAccessorTable f751x7626b70 = new GeneratedMessageV3.FieldAccessorTable(internal_static_IrodoriChessEntranceDetailInfo_descriptor, new String[]{"InfoList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriChessEntranceDetailInfoOuterClass$IrodoriChessEntranceDetailInfoOrBuilder.class */
     public interface IrodoriChessEntranceDetailInfoOrBuilder extends MessageOrBuilder {
@@ -57,7 +57,7 @@ public final class IrodoriChessEntranceDetailInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriChessEntranceDetailInfoOuterClass$IrodoriChessEntranceDetailInfo.class */
     public static final class IrodoriChessEntranceDetailInfo extends GeneratedMessageV3 implements IrodoriChessEntranceDetailInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int INFO_LIST_FIELD_NUMBER = 14;
+        public static final int INFOLIST_FIELD_NUMBER = 2;
         private List<IrodoriChessEntranceInfoOuterClass.IrodoriChessEntranceInfo> infoList_;
         private byte memoizedIsInitialized;
         private static final IrodoriChessEntranceDetailInfo DEFAULT_INSTANCE = new IrodoriChessEntranceDetailInfo();
@@ -108,7 +108,7 @@ public final class IrodoriChessEntranceDetailInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 114:
+                                case 18:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.infoList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -145,7 +145,7 @@ public final class IrodoriChessEntranceDetailInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return IrodoriChessEntranceDetailInfoOuterClass.f767x7626b70.ensureFieldAccessorsInitialized(IrodoriChessEntranceDetailInfo.class, Builder.class);
+            return IrodoriChessEntranceDetailInfoOuterClass.f751x7626b70.ensureFieldAccessorsInitialized(IrodoriChessEntranceDetailInfo.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.IrodoriChessEntranceDetailInfoOuterClass.IrodoriChessEntranceDetailInfoOrBuilder
@@ -189,7 +189,7 @@ public final class IrodoriChessEntranceDetailInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.infoList_.size(); i++) {
-                output.writeMessage(14, this.infoList_.get(i));
+                output.writeMessage(2, this.infoList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -202,7 +202,7 @@ public final class IrodoriChessEntranceDetailInfoOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.infoList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(14, this.infoList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(2, this.infoList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -228,7 +228,7 @@ public final class IrodoriChessEntranceDetailInfoOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getInfoListCount() > 0) {
-                hash = (53 * ((37 * hash) + 14)) + getInfoListList().hashCode();
+                hash = (53 * ((37 * hash) + 2)) + getInfoListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -319,7 +319,7 @@ public final class IrodoriChessEntranceDetailInfoOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return IrodoriChessEntranceDetailInfoOuterClass.f767x7626b70.ensureFieldAccessorsInitialized(IrodoriChessEntranceDetailInfo.class, Builder.class);
+                return IrodoriChessEntranceDetailInfoOuterClass.f751x7626b70.ensureFieldAccessorsInitialized(IrodoriChessEntranceDetailInfo.class, Builder.class);
             }
 
             private Builder() {

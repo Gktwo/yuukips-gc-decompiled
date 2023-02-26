@@ -27,18 +27,12 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonSettleExhibitionInfoOuterClass.class */
 public final class DungeonSettleExhibitionInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!DungeonSettleExhibitionInfo.proto\u001a\u001bExhibitionDisplayInfo.proto\u001a\u0016OnlinePlayerInfo.proto\"p\n\u001bDungeonSettleExhibitionInfo\u0012&\n\u000bplayer_info\u0018\u000e \u0001(\u000b2\u0011.OnlinePlayerInfo\u0012)\n\tcard_list\u0018\r \u0003(\u000b2\u0016.ExhibitionDisplayInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ExhibitionDisplayInfoOuterClass.getDescriptor(), OnlinePlayerInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!DungeonSettleExhibitionInfo.proto\u001a\u0016OnlinePlayerInfo.proto\u001a\u001bExhibitionDisplayInfo.proto\"n\n\u001bDungeonSettleExhibitionInfo\u0012(\n\bcardList\u0018\u0002 \u0003(\u000b2\u0016.ExhibitionDisplayInfo\u0012%\n\nplayerInfo\u0018\r \u0001(\u000b2\u0011.OnlinePlayerInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{OnlinePlayerInfoOuterClass.getDescriptor(), ExhibitionDisplayInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_DungeonSettleExhibitionInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_DungeonSettleExhibitionInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DungeonSettleExhibitionInfo_descriptor, new String[]{"PlayerInfo", "CardList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_DungeonSettleExhibitionInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DungeonSettleExhibitionInfo_descriptor, new String[]{"CardList", "PlayerInfo"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonSettleExhibitionInfoOuterClass$DungeonSettleExhibitionInfoOrBuilder.class */
     public interface DungeonSettleExhibitionInfoOrBuilder extends MessageOrBuilder {
-        boolean hasPlayerInfo();
-
-        OnlinePlayerInfoOuterClass.OnlinePlayerInfo getPlayerInfo();
-
-        OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder getPlayerInfoOrBuilder();
-
         List<ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> getCardListList();
 
         ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo getCardList(int i);
@@ -48,6 +42,12 @@ public final class DungeonSettleExhibitionInfoOuterClass {
         List<? extends ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder> getCardListOrBuilderList();
 
         ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder getCardListOrBuilder(int i);
+
+        boolean hasPlayerInfo();
+
+        OnlinePlayerInfoOuterClass.OnlinePlayerInfo getPlayerInfo();
+
+        OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder getPlayerInfoOrBuilder();
     }
 
     private DungeonSettleExhibitionInfoOuterClass() {
@@ -63,10 +63,10 @@ public final class DungeonSettleExhibitionInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonSettleExhibitionInfoOuterClass$DungeonSettleExhibitionInfo.class */
     public static final class DungeonSettleExhibitionInfo extends GeneratedMessageV3 implements DungeonSettleExhibitionInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PLAYER_INFO_FIELD_NUMBER = 14;
-        private OnlinePlayerInfoOuterClass.OnlinePlayerInfo playerInfo_;
-        public static final int CARD_LIST_FIELD_NUMBER = 13;
+        public static final int CARDLIST_FIELD_NUMBER = 2;
         private List<ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> cardList_;
+        public static final int PLAYERINFO_FIELD_NUMBER = 13;
+        private OnlinePlayerInfoOuterClass.OnlinePlayerInfo playerInfo_;
         private byte memoizedIsInitialized;
         private static final DungeonSettleExhibitionInfo DEFAULT_INSTANCE = new DungeonSettleExhibitionInfo();
         private static final Parser<DungeonSettleExhibitionInfo> PARSER = new AbstractParser<DungeonSettleExhibitionInfo>() { // from class: emu.grasscutter.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfo.1
@@ -115,14 +115,14 @@ public final class DungeonSettleExhibitionInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 106:
+                            case 18:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.cardList_ = new ArrayList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.cardList_.add((ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo) input.readMessage(ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.parser(), extensionRegistry));
                                 break;
-                            case 114:
+                            case 106:
                                 OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder subBuilder = this.playerInfo_ != null ? this.playerInfo_.toBuilder() : null;
                                 this.playerInfo_ = (OnlinePlayerInfoOuterClass.OnlinePlayerInfo) input.readMessage(OnlinePlayerInfoOuterClass.OnlinePlayerInfo.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -165,21 +165,6 @@ public final class DungeonSettleExhibitionInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfoOrBuilder
-        public boolean hasPlayerInfo() {
-            return this.playerInfo_ != null;
-        }
-
-        @Override // emu.grasscutter.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfoOrBuilder
-        public OnlinePlayerInfoOuterClass.OnlinePlayerInfo getPlayerInfo() {
-            return this.playerInfo_ == null ? OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance() : this.playerInfo_;
-        }
-
-        @Override // emu.grasscutter.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfoOrBuilder
-        public OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder getPlayerInfoOrBuilder() {
-            return getPlayerInfo();
-        }
-
-        @Override // emu.grasscutter.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfoOrBuilder
         public List<ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> getCardListList() {
             return this.cardList_;
         }
@@ -204,6 +189,21 @@ public final class DungeonSettleExhibitionInfoOuterClass {
             return this.cardList_.get(index);
         }
 
+        @Override // emu.grasscutter.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfoOrBuilder
+        public boolean hasPlayerInfo() {
+            return this.playerInfo_ != null;
+        }
+
+        @Override // emu.grasscutter.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfoOrBuilder
+        public OnlinePlayerInfoOuterClass.OnlinePlayerInfo getPlayerInfo() {
+            return this.playerInfo_ == null ? OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance() : this.playerInfo_;
+        }
+
+        @Override // emu.grasscutter.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfoOrBuilder
+        public OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder getPlayerInfoOrBuilder() {
+            return getPlayerInfo();
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -220,10 +220,10 @@ public final class DungeonSettleExhibitionInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.cardList_.size(); i++) {
-                output.writeMessage(13, this.cardList_.get(i));
+                output.writeMessage(2, this.cardList_.get(i));
             }
             if (this.playerInfo_ != null) {
-                output.writeMessage(14, getPlayerInfo());
+                output.writeMessage(13, getPlayerInfo());
             }
             this.unknownFields.writeTo(output);
         }
@@ -236,10 +236,10 @@ public final class DungeonSettleExhibitionInfoOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.cardList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(13, this.cardList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(2, this.cardList_.get(i));
             }
             if (this.playerInfo_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(14, getPlayerInfo());
+                size2 += CodedOutputStream.computeMessageSize(13, getPlayerInfo());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -255,10 +255,10 @@ public final class DungeonSettleExhibitionInfoOuterClass {
                 return equals(obj);
             }
             DungeonSettleExhibitionInfo other = (DungeonSettleExhibitionInfo) obj;
-            if (hasPlayerInfo() != other.hasPlayerInfo()) {
-                return false;
+            if (getCardListList().equals(other.getCardListList()) && hasPlayerInfo() == other.hasPlayerInfo()) {
+                return (!hasPlayerInfo() || getPlayerInfo().equals(other.getPlayerInfo())) && this.unknownFields.equals(other.unknownFields);
             }
-            return (!hasPlayerInfo() || getPlayerInfo().equals(other.getPlayerInfo())) && getCardListList().equals(other.getCardListList()) && this.unknownFields.equals(other.unknownFields);
+            return false;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -267,11 +267,11 @@ public final class DungeonSettleExhibitionInfoOuterClass {
                 return this.memoizedHashCode;
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
-            if (hasPlayerInfo()) {
-                hash = (53 * ((37 * hash) + 14)) + getPlayerInfo().hashCode();
-            }
             if (getCardListCount() > 0) {
-                hash = (53 * ((37 * hash) + 13)) + getCardListList().hashCode();
+                hash = (53 * ((37 * hash) + 2)) + getCardListList().hashCode();
+            }
+            if (hasPlayerInfo()) {
+                hash = (53 * ((37 * hash) + 13)) + getPlayerInfo().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -353,10 +353,10 @@ public final class DungeonSettleExhibitionInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonSettleExhibitionInfoOuterClass$DungeonSettleExhibitionInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements DungeonSettleExhibitionInfoOrBuilder {
             private int bitField0_;
-            private OnlinePlayerInfoOuterClass.OnlinePlayerInfo playerInfo_;
-            private SingleFieldBuilderV3<OnlinePlayerInfoOuterClass.OnlinePlayerInfo, OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder, OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder> playerInfoBuilder_;
             private List<ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> cardList_ = Collections.emptyList();
             private RepeatedFieldBuilderV3<ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo, ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder, ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder> cardListBuilder_;
+            private OnlinePlayerInfoOuterClass.OnlinePlayerInfo playerInfo_;
+            private SingleFieldBuilderV3<OnlinePlayerInfoOuterClass.OnlinePlayerInfo, OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder, OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder> playerInfoBuilder_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return DungeonSettleExhibitionInfoOuterClass.internal_static_DungeonSettleExhibitionInfo_descriptor;
@@ -385,17 +385,17 @@ public final class DungeonSettleExhibitionInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                if (this.playerInfoBuilder_ == null) {
-                    this.playerInfo_ = null;
-                } else {
-                    this.playerInfo_ = null;
-                    this.playerInfoBuilder_ = null;
-                }
                 if (this.cardListBuilder_ == null) {
                     this.cardList_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
                     this.cardListBuilder_.clear();
+                }
+                if (this.playerInfoBuilder_ == null) {
+                    this.playerInfo_ = null;
+                } else {
+                    this.playerInfo_ = null;
+                    this.playerInfoBuilder_ = null;
                 }
                 return this;
             }
@@ -423,11 +423,6 @@ public final class DungeonSettleExhibitionInfoOuterClass {
             public DungeonSettleExhibitionInfo buildPartial() {
                 DungeonSettleExhibitionInfo result = new DungeonSettleExhibitionInfo(this);
                 int i = this.bitField0_;
-                if (this.playerInfoBuilder_ == null) {
-                    result.playerInfo_ = this.playerInfo_;
-                } else {
-                    result.playerInfo_ = this.playerInfoBuilder_.build();
-                }
                 if (this.cardListBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
                         this.cardList_ = Collections.unmodifiableList(this.cardList_);
@@ -436,6 +431,11 @@ public final class DungeonSettleExhibitionInfoOuterClass {
                     result.cardList_ = this.cardList_;
                 } else {
                     result.cardList_ = this.cardListBuilder_.build();
+                }
+                if (this.playerInfoBuilder_ == null) {
+                    result.playerInfo_ = this.playerInfo_;
+                } else {
+                    result.playerInfo_ = this.playerInfoBuilder_.build();
                 }
                 onBuilt();
                 return result;
@@ -484,9 +484,6 @@ public final class DungeonSettleExhibitionInfoOuterClass {
                 if (other == DungeonSettleExhibitionInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.hasPlayerInfo()) {
-                    mergePlayerInfo(other.getPlayerInfo());
-                }
                 if (this.cardListBuilder_ == null) {
                     if (!other.cardList_.isEmpty()) {
                         if (this.cardList_.isEmpty()) {
@@ -508,6 +505,9 @@ public final class DungeonSettleExhibitionInfoOuterClass {
                     } else {
                         this.cardListBuilder_.addAllMessages(other.cardList_);
                     }
+                }
+                if (other.hasPlayerInfo()) {
+                    mergePlayerInfo(other.getPlayerInfo());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -539,87 +539,6 @@ public final class DungeonSettleExhibitionInfoOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfoOrBuilder
-            public boolean hasPlayerInfo() {
-                return (this.playerInfoBuilder_ == null && this.playerInfo_ == null) ? false : true;
-            }
-
-            @Override // emu.grasscutter.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfoOrBuilder
-            public OnlinePlayerInfoOuterClass.OnlinePlayerInfo getPlayerInfo() {
-                if (this.playerInfoBuilder_ == null) {
-                    return this.playerInfo_ == null ? OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance() : this.playerInfo_;
-                }
-                return this.playerInfoBuilder_.getMessage();
-            }
-
-            public Builder setPlayerInfo(OnlinePlayerInfoOuterClass.OnlinePlayerInfo value) {
-                if (this.playerInfoBuilder_ != null) {
-                    this.playerInfoBuilder_.setMessage(value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    this.playerInfo_ = value;
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder setPlayerInfo(OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder builderForValue) {
-                if (this.playerInfoBuilder_ == null) {
-                    this.playerInfo_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    this.playerInfoBuilder_.setMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder mergePlayerInfo(OnlinePlayerInfoOuterClass.OnlinePlayerInfo value) {
-                if (this.playerInfoBuilder_ == null) {
-                    if (this.playerInfo_ != null) {
-                        this.playerInfo_ = OnlinePlayerInfoOuterClass.OnlinePlayerInfo.newBuilder(this.playerInfo_).mergeFrom(value).buildPartial();
-                    } else {
-                        this.playerInfo_ = value;
-                    }
-                    onChanged();
-                } else {
-                    this.playerInfoBuilder_.mergeFrom(value);
-                }
-                return this;
-            }
-
-            public Builder clearPlayerInfo() {
-                if (this.playerInfoBuilder_ == null) {
-                    this.playerInfo_ = null;
-                    onChanged();
-                } else {
-                    this.playerInfo_ = null;
-                    this.playerInfoBuilder_ = null;
-                }
-                return this;
-            }
-
-            public OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder getPlayerInfoBuilder() {
-                onChanged();
-                return getPlayerInfoFieldBuilder().getBuilder();
-            }
-
-            @Override // emu.grasscutter.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfoOrBuilder
-            public OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder getPlayerInfoOrBuilder() {
-                if (this.playerInfoBuilder_ != null) {
-                    return this.playerInfoBuilder_.getMessageOrBuilder();
-                }
-                return this.playerInfo_ == null ? OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance() : this.playerInfo_;
-            }
-
-            private SingleFieldBuilderV3<OnlinePlayerInfoOuterClass.OnlinePlayerInfo, OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder, OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder> getPlayerInfoFieldBuilder() {
-                if (this.playerInfoBuilder_ == null) {
-                    this.playerInfoBuilder_ = new SingleFieldBuilderV3<>(getPlayerInfo(), getParentForChildren(), isClean());
-                    this.playerInfo_ = null;
-                }
-                return this.playerInfoBuilder_;
             }
 
             private void ensureCardListIsMutable() {
@@ -798,6 +717,87 @@ public final class DungeonSettleExhibitionInfoOuterClass {
                 return this.cardListBuilder_;
             }
 
+            @Override // emu.grasscutter.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfoOrBuilder
+            public boolean hasPlayerInfo() {
+                return (this.playerInfoBuilder_ == null && this.playerInfo_ == null) ? false : true;
+            }
+
+            @Override // emu.grasscutter.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfoOrBuilder
+            public OnlinePlayerInfoOuterClass.OnlinePlayerInfo getPlayerInfo() {
+                if (this.playerInfoBuilder_ == null) {
+                    return this.playerInfo_ == null ? OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance() : this.playerInfo_;
+                }
+                return this.playerInfoBuilder_.getMessage();
+            }
+
+            public Builder setPlayerInfo(OnlinePlayerInfoOuterClass.OnlinePlayerInfo value) {
+                if (this.playerInfoBuilder_ != null) {
+                    this.playerInfoBuilder_.setMessage(value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    this.playerInfo_ = value;
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder setPlayerInfo(OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder builderForValue) {
+                if (this.playerInfoBuilder_ == null) {
+                    this.playerInfo_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    this.playerInfoBuilder_.setMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder mergePlayerInfo(OnlinePlayerInfoOuterClass.OnlinePlayerInfo value) {
+                if (this.playerInfoBuilder_ == null) {
+                    if (this.playerInfo_ != null) {
+                        this.playerInfo_ = OnlinePlayerInfoOuterClass.OnlinePlayerInfo.newBuilder(this.playerInfo_).mergeFrom(value).buildPartial();
+                    } else {
+                        this.playerInfo_ = value;
+                    }
+                    onChanged();
+                } else {
+                    this.playerInfoBuilder_.mergeFrom(value);
+                }
+                return this;
+            }
+
+            public Builder clearPlayerInfo() {
+                if (this.playerInfoBuilder_ == null) {
+                    this.playerInfo_ = null;
+                    onChanged();
+                } else {
+                    this.playerInfo_ = null;
+                    this.playerInfoBuilder_ = null;
+                }
+                return this;
+            }
+
+            public OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder getPlayerInfoBuilder() {
+                onChanged();
+                return getPlayerInfoFieldBuilder().getBuilder();
+            }
+
+            @Override // emu.grasscutter.net.proto.DungeonSettleExhibitionInfoOuterClass.DungeonSettleExhibitionInfoOrBuilder
+            public OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder getPlayerInfoOrBuilder() {
+                if (this.playerInfoBuilder_ != null) {
+                    return this.playerInfoBuilder_.getMessageOrBuilder();
+                }
+                return this.playerInfo_ == null ? OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance() : this.playerInfo_;
+            }
+
+            private SingleFieldBuilderV3<OnlinePlayerInfoOuterClass.OnlinePlayerInfo, OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder, OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder> getPlayerInfoFieldBuilder() {
+                if (this.playerInfoBuilder_ == null) {
+                    this.playerInfoBuilder_ = new SingleFieldBuilderV3<>(getPlayerInfo(), getParentForChildren(), isClean());
+                    this.playerInfo_ = null;
+                }
+                return this.playerInfoBuilder_;
+            }
+
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
             public final Builder setUnknownFields(UnknownFieldSet unknownFields) {
                 return setUnknownFields(unknownFields);
@@ -833,7 +833,7 @@ public final class DungeonSettleExhibitionInfoOuterClass {
     }
 
     static {
-        ExhibitionDisplayInfoOuterClass.getDescriptor();
         OnlinePlayerInfoOuterClass.getDescriptor();
+        ExhibitionDisplayInfoOuterClass.getDescriptor();
     }
 }

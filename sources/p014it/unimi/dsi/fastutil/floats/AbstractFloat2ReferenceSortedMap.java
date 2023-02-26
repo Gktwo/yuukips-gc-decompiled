@@ -90,30 +90,30 @@ public abstract class AbstractFloat2ReferenceSortedMap<V> extends AbstractFloat2
     public static class KeySetIterator<V> implements FloatBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Float2ReferenceMap.Entry<V>> f1788i;
+        protected final ObjectBidirectionalIterator<Float2ReferenceMap.Entry<V>> f1752i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Float2ReferenceMap.Entry<V>> i) {
-            this.f1788i = i;
+            this.f1752i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
         public float nextFloat() {
-            return ((Float2ReferenceMap.Entry) this.f1788i.next()).getFloatKey();
+            return ((Float2ReferenceMap.Entry) this.f1752i.next()).getFloatKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatBidirectionalIterator
         public float previousFloat() {
-            return this.f1788i.previous().getFloatKey();
+            return this.f1752i.previous().getFloatKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1788i.hasNext();
+            return this.f1752i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1788i.hasPrevious();
+            return this.f1752i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractFloat2ReferenceSortedMap<V> extends AbstractFloat2
     public static class ValuesIterator<V> implements ObjectIterator<V> {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Float2ReferenceMap.Entry<V>> f1789i;
+        protected final ObjectBidirectionalIterator<Float2ReferenceMap.Entry<V>> f1753i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Float2ReferenceMap.Entry<V>> i) {
-            this.f1789i = i;
+            this.f1753i = i;
         }
 
         @Override // java.util.Iterator
         public V next() {
-            return ((Float2ReferenceMap.Entry) this.f1789i.next()).getValue();
+            return ((Float2ReferenceMap.Entry) this.f1753i.next()).getValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1789i.hasNext();
+            return this.f1753i.hasNext();
         }
     }
 }

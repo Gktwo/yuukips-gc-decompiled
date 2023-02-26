@@ -19,19 +19,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FleurFairMusicGameSettleReqOuterClass.class */
 public final class FleurFairMusicGameSettleReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!FleurFairMusicGameSettleReq.proto\"h\n\u001bFleurFairMusicGameSettleReq\u0012\r\n\u0005score\u0018\u0001 \u0001(\r\u0012\u0013\n\u000bcorrect_hit\u0018\n \u0001(\r\u0012\r\n\u0005combo\u0018\u0003 \u0001(\r\u0012\u0016\n\u000emusic_basic_id\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!FleurFairMusicGameSettleReq.proto\"e\n\u001bFleurFairMusicGameSettleReq\u0012\r\n\u0005combo\u0018\u0003 \u0001(\r\u0012\u0014\n\fmusicBasicId\u0018\t \u0001(\r\u0012\r\n\u0005score\u0018\u0007 \u0001(\r\u0012\u0012\n\ncorrectHit\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_FleurFairMusicGameSettleReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_FleurFairMusicGameSettleReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FleurFairMusicGameSettleReq_descriptor, new String[]{"Score", "CorrectHit", "Combo", "MusicBasicId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_FleurFairMusicGameSettleReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FleurFairMusicGameSettleReq_descriptor, new String[]{"Combo", "MusicBasicId", "Score", "CorrectHit"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FleurFairMusicGameSettleReqOuterClass$FleurFairMusicGameSettleReqOrBuilder.class */
     public interface FleurFairMusicGameSettleReqOrBuilder extends MessageOrBuilder {
-        int getScore();
-
-        int getCorrectHit();
-
         int getCombo();
 
         int getMusicBasicId();
+
+        int getScore();
+
+        int getCorrectHit();
     }
 
     private FleurFairMusicGameSettleReqOuterClass() {
@@ -47,14 +47,14 @@ public final class FleurFairMusicGameSettleReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FleurFairMusicGameSettleReqOuterClass$FleurFairMusicGameSettleReq.class */
     public static final class FleurFairMusicGameSettleReq extends GeneratedMessageV3 implements FleurFairMusicGameSettleReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SCORE_FIELD_NUMBER = 1;
-        private int score_;
-        public static final int CORRECT_HIT_FIELD_NUMBER = 10;
-        private int correctHit_;
         public static final int COMBO_FIELD_NUMBER = 3;
         private int combo_;
-        public static final int MUSIC_BASIC_ID_FIELD_NUMBER = 14;
+        public static final int MUSICBASICID_FIELD_NUMBER = 9;
         private int musicBasicId_;
+        public static final int SCORE_FIELD_NUMBER = 7;
+        private int score_;
+        public static final int CORRECTHIT_FIELD_NUMBER = 6;
+        private int correctHit_;
         private byte memoizedIsInitialized;
         private static final FleurFairMusicGameSettleReq DEFAULT_INSTANCE = new FleurFairMusicGameSettleReq();
         private static final Parser<FleurFairMusicGameSettleReq> PARSER = new AbstractParser<FleurFairMusicGameSettleReq>() { // from class: emu.grasscutter.net.proto.FleurFairMusicGameSettleReqOuterClass.FleurFairMusicGameSettleReq.1
@@ -101,16 +101,16 @@ public final class FleurFairMusicGameSettleReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
-                                    this.score_ = input.readUInt32();
-                                    break;
                                 case 24:
                                     this.combo_ = input.readUInt32();
                                     break;
-                                case 80:
+                                case 48:
                                     this.correctHit_ = input.readUInt32();
                                     break;
-                                case 112:
+                                case 56:
+                                    this.score_ = input.readUInt32();
+                                    break;
+                                case 72:
                                     this.musicBasicId_ = input.readUInt32();
                                     break;
                                 default:
@@ -144,16 +144,6 @@ public final class FleurFairMusicGameSettleReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.FleurFairMusicGameSettleReqOuterClass.FleurFairMusicGameSettleReqOrBuilder
-        public int getScore() {
-            return this.score_;
-        }
-
-        @Override // emu.grasscutter.net.proto.FleurFairMusicGameSettleReqOuterClass.FleurFairMusicGameSettleReqOrBuilder
-        public int getCorrectHit() {
-            return this.correctHit_;
-        }
-
-        @Override // emu.grasscutter.net.proto.FleurFairMusicGameSettleReqOuterClass.FleurFairMusicGameSettleReqOrBuilder
         public int getCombo() {
             return this.combo_;
         }
@@ -161,6 +151,16 @@ public final class FleurFairMusicGameSettleReqOuterClass {
         @Override // emu.grasscutter.net.proto.FleurFairMusicGameSettleReqOuterClass.FleurFairMusicGameSettleReqOrBuilder
         public int getMusicBasicId() {
             return this.musicBasicId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.FleurFairMusicGameSettleReqOuterClass.FleurFairMusicGameSettleReqOrBuilder
+        public int getScore() {
+            return this.score_;
+        }
+
+        @Override // emu.grasscutter.net.proto.FleurFairMusicGameSettleReqOuterClass.FleurFairMusicGameSettleReqOrBuilder
+        public int getCorrectHit() {
+            return this.correctHit_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -178,17 +178,17 @@ public final class FleurFairMusicGameSettleReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.score_ != 0) {
-                output.writeUInt32(1, this.score_);
-            }
             if (this.combo_ != 0) {
                 output.writeUInt32(3, this.combo_);
             }
             if (this.correctHit_ != 0) {
-                output.writeUInt32(10, this.correctHit_);
+                output.writeUInt32(6, this.correctHit_);
+            }
+            if (this.score_ != 0) {
+                output.writeUInt32(7, this.score_);
             }
             if (this.musicBasicId_ != 0) {
-                output.writeUInt32(14, this.musicBasicId_);
+                output.writeUInt32(9, this.musicBasicId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,17 +200,17 @@ public final class FleurFairMusicGameSettleReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.score_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.score_);
-            }
             if (this.combo_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(3, this.combo_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.combo_);
             }
             if (this.correctHit_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.correctHit_);
+                size2 += CodedOutputStream.computeUInt32Size(6, this.correctHit_);
+            }
+            if (this.score_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(7, this.score_);
             }
             if (this.musicBasicId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.musicBasicId_);
+                size2 += CodedOutputStream.computeUInt32Size(9, this.musicBasicId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class FleurFairMusicGameSettleReqOuterClass {
                 return equals(obj);
             }
             FleurFairMusicGameSettleReq other = (FleurFairMusicGameSettleReq) obj;
-            return getScore() == other.getScore() && getCorrectHit() == other.getCorrectHit() && getCombo() == other.getCombo() && getMusicBasicId() == other.getMusicBasicId() && this.unknownFields.equals(other.unknownFields);
+            return getCombo() == other.getCombo() && getMusicBasicId() == other.getMusicBasicId() && getScore() == other.getScore() && getCorrectHit() == other.getCorrectHit() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -234,7 +234,7 @@ public final class FleurFairMusicGameSettleReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getScore())) + 10)) + getCorrectHit())) + 3)) + getCombo())) + 14)) + getMusicBasicId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getCombo())) + 9)) + getMusicBasicId())) + 7)) + getScore())) + 6)) + getCorrectHit())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -313,10 +313,10 @@ public final class FleurFairMusicGameSettleReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FleurFairMusicGameSettleReqOuterClass$FleurFairMusicGameSettleReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements FleurFairMusicGameSettleReqOrBuilder {
-            private int score_;
-            private int correctHit_;
             private int combo_;
             private int musicBasicId_;
+            private int score_;
+            private int correctHit_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return FleurFairMusicGameSettleReqOuterClass.internal_static_FleurFairMusicGameSettleReq_descriptor;
@@ -344,10 +344,10 @@ public final class FleurFairMusicGameSettleReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.score_ = 0;
-                this.correctHit_ = 0;
                 this.combo_ = 0;
                 this.musicBasicId_ = 0;
+                this.score_ = 0;
+                this.correctHit_ = 0;
                 return this;
             }
 
@@ -373,10 +373,10 @@ public final class FleurFairMusicGameSettleReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public FleurFairMusicGameSettleReq buildPartial() {
                 FleurFairMusicGameSettleReq result = new FleurFairMusicGameSettleReq(this);
-                result.score_ = this.score_;
-                result.correctHit_ = this.correctHit_;
                 result.combo_ = this.combo_;
                 result.musicBasicId_ = this.musicBasicId_;
+                result.score_ = this.score_;
+                result.correctHit_ = this.correctHit_;
                 onBuilt();
                 return result;
             }
@@ -424,17 +424,17 @@ public final class FleurFairMusicGameSettleReqOuterClass {
                 if (other == FleurFairMusicGameSettleReq.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getScore() != 0) {
-                    setScore(other.getScore());
-                }
-                if (other.getCorrectHit() != 0) {
-                    setCorrectHit(other.getCorrectHit());
-                }
                 if (other.getCombo() != 0) {
                     setCombo(other.getCombo());
                 }
                 if (other.getMusicBasicId() != 0) {
                     setMusicBasicId(other.getMusicBasicId());
+                }
+                if (other.getScore() != 0) {
+                    setScore(other.getScore());
+                }
+                if (other.getCorrectHit() != 0) {
+                    setCorrectHit(other.getCorrectHit());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -469,40 +469,6 @@ public final class FleurFairMusicGameSettleReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.FleurFairMusicGameSettleReqOuterClass.FleurFairMusicGameSettleReqOrBuilder
-            public int getScore() {
-                return this.score_;
-            }
-
-            public Builder setScore(int value) {
-                this.score_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearScore() {
-                this.score_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.FleurFairMusicGameSettleReqOuterClass.FleurFairMusicGameSettleReqOrBuilder
-            public int getCorrectHit() {
-                return this.correctHit_;
-            }
-
-            public Builder setCorrectHit(int value) {
-                this.correctHit_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearCorrectHit() {
-                this.correctHit_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.FleurFairMusicGameSettleReqOuterClass.FleurFairMusicGameSettleReqOrBuilder
             public int getCombo() {
                 return this.combo_;
             }
@@ -532,6 +498,40 @@ public final class FleurFairMusicGameSettleReqOuterClass {
 
             public Builder clearMusicBasicId() {
                 this.musicBasicId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.FleurFairMusicGameSettleReqOuterClass.FleurFairMusicGameSettleReqOrBuilder
+            public int getScore() {
+                return this.score_;
+            }
+
+            public Builder setScore(int value) {
+                this.score_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearScore() {
+                this.score_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.FleurFairMusicGameSettleReqOuterClass.FleurFairMusicGameSettleReqOrBuilder
+            public int getCorrectHit() {
+                return this.correctHit_;
+            }
+
+            public Builder setCorrectHit(int value) {
+                this.correctHit_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearCorrectHit() {
+                this.correctHit_ = 0;
                 onChanged();
                 return this;
             }

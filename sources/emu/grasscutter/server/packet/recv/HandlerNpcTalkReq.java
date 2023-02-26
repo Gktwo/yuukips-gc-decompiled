@@ -7,20 +7,19 @@ import emu.grasscutter.game.quest.GameMainQuest;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.NpcTalkReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketNpcTalkRsp;
 import java.util.List;
 
-@Opcodes(PacketOpcodes.NpcTalkReq)
+@Opcodes(505)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerNpcTalkReq.class */
 public class HandlerNpcTalkReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         NpcTalkReqOuterClass.NpcTalkReq req = NpcTalkReqOuterClass.NpcTalkReq.parseFrom(payload);
         int talkId = req.getTalkId();
-        Grasscutter.getLogger().warn("NpcTalkReq {}", Integer.valueOf(talkId));
+        Grasscutter.getLogger().debug("NpcTalkReq {}", Integer.valueOf(talkId));
         int mainQuestId = talkId / 100;
         MainQuestData mainQuestData = GameData.getMainQuestDataMap().get(mainQuestId);
         if (mainQuestData != null) {

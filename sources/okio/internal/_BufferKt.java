@@ -957,7 +957,7 @@ public final class _BufferKt {
                 i++;
             } else if (c2 < 55296 || c2 > 57343) {
                 Segment tail3 = $this$commonWriteUtf8.writableSegment$okio(3);
-                tail3.data[tail3.limit] = (byte) ((c2 >> 12) | PacketOpcodes.WorldPlayerLocationNotify);
+                tail3.data[tail3.limit] = (byte) ((c2 >> 12) | PacketOpcodes.SceneAvatarStaminaStepRsp);
                 tail3.data[tail3.limit + 1] = (byte) (((c2 >> 6) & 63) | 128);
                 tail3.data[tail3.limit + 2] = (byte) ((c2 & 63) | 128);
                 tail3.limit += 3;
@@ -969,7 +969,7 @@ public final class _BufferKt {
                     if (56320 <= low ? low <= 57343 : false) {
                         int codePoint = 65536 + (((c2 & 1023) << 10) | (low & 1023));
                         Segment tail4 = $this$commonWriteUtf8.writableSegment$okio(4);
-                        tail4.data[tail4.limit] = (byte) ((codePoint >> 18) | PacketOpcodes.ExecuteGadgetLuaRsp);
+                        tail4.data[tail4.limit] = (byte) ((codePoint >> 18) | PacketOpcodes.SceneKickPlayerRsp);
                         tail4.data[tail4.limit + 1] = (byte) (((codePoint >> 12) & 63) | 128);
                         tail4.data[tail4.limit + 2] = (byte) (((codePoint >> 6) & 63) | 128);
                         tail4.data[tail4.limit + 3] = (byte) ((codePoint & 63) | 128);
@@ -1001,14 +1001,14 @@ public final class _BufferKt {
                 $this$commonWriteUtf8CodePoint.writeByte(63);
             } else if (codePoint < 65536) {
                 Segment tail2 = $this$commonWriteUtf8CodePoint.writableSegment$okio(3);
-                tail2.data[tail2.limit] = (byte) ((codePoint >> 12) | PacketOpcodes.WorldPlayerLocationNotify);
+                tail2.data[tail2.limit] = (byte) ((codePoint >> 12) | PacketOpcodes.SceneAvatarStaminaStepRsp);
                 tail2.data[tail2.limit + 1] = (byte) (((codePoint >> 6) & 63) | 128);
                 tail2.data[tail2.limit + 2] = (byte) ((codePoint & 63) | 128);
                 tail2.limit += 3;
                 $this$commonWriteUtf8CodePoint.setSize$okio($this$commonWriteUtf8CodePoint.size() + 3);
             } else if (codePoint <= 1114111) {
                 Segment tail3 = $this$commonWriteUtf8CodePoint.writableSegment$okio(4);
-                tail3.data[tail3.limit] = (byte) ((codePoint >> 18) | PacketOpcodes.ExecuteGadgetLuaRsp);
+                tail3.data[tail3.limit] = (byte) ((codePoint >> 18) | PacketOpcodes.SceneKickPlayerRsp);
                 tail3.data[tail3.limit + 1] = (byte) (((codePoint >> 12) & 63) | 128);
                 tail3.data[tail3.limit + 2] = (byte) (((codePoint >> 6) & 63) | 128);
                 tail3.data[tail3.limit + 3] = (byte) ((codePoint & 63) | 128);

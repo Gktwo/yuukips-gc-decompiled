@@ -25,12 +25,14 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeHelpRspOuterClass.class */
 public final class FurnitureMakeHelpRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aFurnitureMakeHelpRsp.proto\u001a\u001bFurnitureMakeHelpData.proto\"W\n\u0014FurnitureMakeHelpRsp\u0012.\n\u000ehelp_data_list\u0018\u0004 \u0003(\u000b2\u0016.FurnitureMakeHelpData\u0012\u000f\n\u0007retcode\u0018\u0003 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{FurnitureMakeHelpDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aFurnitureMakeHelpRsp.proto\u001a\u001bFurnitureMakeHelpData.proto\"U\n\u0014FurnitureMakeHelpRsp\u0012\u000f\n\u0007retcode\u0018\u0007 \u0001(\u0005\u0012,\n\fhelpDataList\u0018\u0004 \u0003(\u000b2\u0016.FurnitureMakeHelpDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{FurnitureMakeHelpDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_FurnitureMakeHelpRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_FurnitureMakeHelpRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FurnitureMakeHelpRsp_descriptor, new String[]{"HelpDataList", "Retcode"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_FurnitureMakeHelpRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FurnitureMakeHelpRsp_descriptor, new String[]{"Retcode", "HelpDataList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeHelpRspOuterClass$FurnitureMakeHelpRspOrBuilder.class */
     public interface FurnitureMakeHelpRspOrBuilder extends MessageOrBuilder {
+        int getRetcode();
+
         List<FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData> getHelpDataListList();
 
         FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData getHelpDataList(int i);
@@ -40,8 +42,6 @@ public final class FurnitureMakeHelpRspOuterClass {
         List<? extends FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpDataOrBuilder> getHelpDataListOrBuilderList();
 
         FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpDataOrBuilder getHelpDataListOrBuilder(int i);
-
-        int getRetcode();
     }
 
     private FurnitureMakeHelpRspOuterClass() {
@@ -57,10 +57,10 @@ public final class FurnitureMakeHelpRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeHelpRspOuterClass$FurnitureMakeHelpRsp.class */
     public static final class FurnitureMakeHelpRsp extends GeneratedMessageV3 implements FurnitureMakeHelpRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int HELP_DATA_LIST_FIELD_NUMBER = 4;
-        private List<FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData> helpDataList_;
-        public static final int RETCODE_FIELD_NUMBER = 3;
+        public static final int RETCODE_FIELD_NUMBER = 7;
         private int retcode_;
+        public static final int HELPDATALIST_FIELD_NUMBER = 4;
+        private List<FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData> helpDataList_;
         private byte memoizedIsInitialized;
         private static final FurnitureMakeHelpRsp DEFAULT_INSTANCE = new FurnitureMakeHelpRsp();
         private static final Parser<FurnitureMakeHelpRsp> PARSER = new AbstractParser<FurnitureMakeHelpRsp>() { // from class: emu.grasscutter.net.proto.FurnitureMakeHelpRspOuterClass.FurnitureMakeHelpRsp.1
@@ -110,15 +110,15 @@ public final class FurnitureMakeHelpRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 24:
-                                    this.retcode_ = input.readInt32();
-                                    break;
                                 case 34:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.helpDataList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.helpDataList_.add((FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData) input.readMessage(FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData.parser(), extensionRegistry));
+                                    break;
+                                case 56:
+                                    this.retcode_ = input.readInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -154,6 +154,11 @@ public final class FurnitureMakeHelpRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.FurnitureMakeHelpRspOuterClass.FurnitureMakeHelpRspOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
+        }
+
+        @Override // emu.grasscutter.net.proto.FurnitureMakeHelpRspOuterClass.FurnitureMakeHelpRspOrBuilder
         public List<FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData> getHelpDataListList() {
             return this.helpDataList_;
         }
@@ -178,11 +183,6 @@ public final class FurnitureMakeHelpRspOuterClass {
             return this.helpDataList_.get(index);
         }
 
-        @Override // emu.grasscutter.net.proto.FurnitureMakeHelpRspOuterClass.FurnitureMakeHelpRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
-        }
-
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -198,11 +198,11 @@ public final class FurnitureMakeHelpRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.retcode_ != 0) {
-                output.writeInt32(3, this.retcode_);
-            }
             for (int i = 0; i < this.helpDataList_.size(); i++) {
                 output.writeMessage(4, this.helpDataList_.get(i));
+            }
+            if (this.retcode_ != 0) {
+                output.writeInt32(7, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -214,11 +214,11 @@ public final class FurnitureMakeHelpRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(3, this.retcode_);
-            }
             for (int i = 0; i < this.helpDataList_.size(); i++) {
                 size2 += CodedOutputStream.computeMessageSize(4, this.helpDataList_.get(i));
+            }
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(7, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -234,7 +234,7 @@ public final class FurnitureMakeHelpRspOuterClass {
                 return equals(obj);
             }
             FurnitureMakeHelpRsp other = (FurnitureMakeHelpRsp) obj;
-            return getHelpDataListList().equals(other.getHelpDataListList()) && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
+            return getRetcode() == other.getRetcode() && getHelpDataListList().equals(other.getHelpDataListList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -242,11 +242,11 @@ public final class FurnitureMakeHelpRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getRetcode();
             if (getHelpDataListCount() > 0) {
                 hash = (53 * ((37 * hash) + 4)) + getHelpDataListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 3)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -326,9 +326,9 @@ public final class FurnitureMakeHelpRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeHelpRspOuterClass$FurnitureMakeHelpRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements FurnitureMakeHelpRspOrBuilder {
             private int bitField0_;
+            private int retcode_;
             private List<FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData> helpDataList_ = Collections.emptyList();
             private RepeatedFieldBuilderV3<FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData, FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpData.Builder, FurnitureMakeHelpDataOuterClass.FurnitureMakeHelpDataOrBuilder> helpDataListBuilder_;
-            private int retcode_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return FurnitureMakeHelpRspOuterClass.internal_static_FurnitureMakeHelpRsp_descriptor;
@@ -357,13 +357,13 @@ public final class FurnitureMakeHelpRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.retcode_ = 0;
                 if (this.helpDataListBuilder_ == null) {
                     this.helpDataList_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
                     this.helpDataListBuilder_.clear();
                 }
-                this.retcode_ = 0;
                 return this;
             }
 
@@ -390,6 +390,7 @@ public final class FurnitureMakeHelpRspOuterClass {
             public FurnitureMakeHelpRsp buildPartial() {
                 FurnitureMakeHelpRsp result = new FurnitureMakeHelpRsp(this);
                 int i = this.bitField0_;
+                result.retcode_ = this.retcode_;
                 if (this.helpDataListBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
                         this.helpDataList_ = Collections.unmodifiableList(this.helpDataList_);
@@ -399,7 +400,6 @@ public final class FurnitureMakeHelpRspOuterClass {
                 } else {
                     result.helpDataList_ = this.helpDataListBuilder_.build();
                 }
-                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -447,6 +447,9 @@ public final class FurnitureMakeHelpRspOuterClass {
                 if (other == FurnitureMakeHelpRsp.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
+                }
                 if (this.helpDataListBuilder_ == null) {
                     if (!other.helpDataList_.isEmpty()) {
                         if (this.helpDataList_.isEmpty()) {
@@ -468,9 +471,6 @@ public final class FurnitureMakeHelpRspOuterClass {
                     } else {
                         this.helpDataListBuilder_.addAllMessages(other.helpDataList_);
                     }
-                }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -502,6 +502,23 @@ public final class FurnitureMakeHelpRspOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.FurnitureMakeHelpRspOuterClass.FurnitureMakeHelpRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
+                onChanged();
+                return this;
             }
 
             private void ensureHelpDataListIsMutable() {
@@ -678,23 +695,6 @@ public final class FurnitureMakeHelpRspOuterClass {
                     this.helpDataList_ = null;
                 }
                 return this.helpDataListBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.FurnitureMakeHelpRspOuterClass.FurnitureMakeHelpRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

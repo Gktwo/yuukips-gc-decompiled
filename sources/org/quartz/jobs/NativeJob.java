@@ -83,11 +83,11 @@ public class NativeJob implements Job {
     public class StreamConsumer extends Thread {
 
         /* renamed from: is */
-        InputStream f3373is;
+        InputStream f3337is;
         String type;
 
         public StreamConsumer(InputStream inputStream, String type) {
-            this.f3373is = inputStream;
+            this.f3337is = inputStream;
             this.type = type;
         }
 
@@ -97,7 +97,7 @@ public class NativeJob implements Job {
             try {
                 br = null;
                 try {
-                    br = new BufferedReader(new InputStreamReader(this.f3373is));
+                    br = new BufferedReader(new InputStreamReader(this.f3337is));
                     while (true) {
                         String line = br.readLine();
                         if (line == null) {

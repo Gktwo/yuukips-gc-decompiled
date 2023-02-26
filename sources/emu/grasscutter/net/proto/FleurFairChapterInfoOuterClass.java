@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FleurFairChapterInfoOuterClass.class */
 public final class FleurFairChapterInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aFleurFairChapterInfo.proto\"=\n\u0014FleurFairChapterInfo\u0012\u0012\n\nchapter_id\u0018\f \u0001(\r\u0012\u0011\n\topen_time\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aFleurFairChapterInfo.proto\";\n\u0014FleurFairChapterInfo\u0012\u0010\n\bopenTime\u0018\n \u0001(\r\u0012\u0011\n\tchapterId\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_FleurFairChapterInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_FleurFairChapterInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FleurFairChapterInfo_descriptor, new String[]{"ChapterId", "OpenTime"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_FleurFairChapterInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FleurFairChapterInfo_descriptor, new String[]{"OpenTime", "ChapterId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FleurFairChapterInfoOuterClass$FleurFairChapterInfoOrBuilder.class */
     public interface FleurFairChapterInfoOrBuilder extends MessageOrBuilder {
-        int getChapterId();
-
         int getOpenTime();
+
+        int getChapterId();
     }
 
     private FleurFairChapterInfoOuterClass() {
@@ -43,10 +43,10 @@ public final class FleurFairChapterInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FleurFairChapterInfoOuterClass$FleurFairChapterInfo.class */
     public static final class FleurFairChapterInfo extends GeneratedMessageV3 implements FleurFairChapterInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CHAPTER_ID_FIELD_NUMBER = 12;
-        private int chapterId_;
-        public static final int OPEN_TIME_FIELD_NUMBER = 7;
+        public static final int OPENTIME_FIELD_NUMBER = 10;
         private int openTime_;
+        public static final int CHAPTERID_FIELD_NUMBER = 14;
+        private int chapterId_;
         private byte memoizedIsInitialized;
         private static final FleurFairChapterInfo DEFAULT_INSTANCE = new FleurFairChapterInfo();
         private static final Parser<FleurFairChapterInfo> PARSER = new AbstractParser<FleurFairChapterInfo>() { // from class: emu.grasscutter.net.proto.FleurFairChapterInfoOuterClass.FleurFairChapterInfo.1
@@ -92,10 +92,10 @@ public final class FleurFairChapterInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 56:
+                            case 80:
                                 this.openTime_ = input.readUInt32();
                                 break;
-                            case 96:
+                            case 112:
                                 this.chapterId_ = input.readUInt32();
                                 break;
                             default:
@@ -128,13 +128,13 @@ public final class FleurFairChapterInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.FleurFairChapterInfoOuterClass.FleurFairChapterInfoOrBuilder
-        public int getChapterId() {
-            return this.chapterId_;
+        public int getOpenTime() {
+            return this.openTime_;
         }
 
         @Override // emu.grasscutter.net.proto.FleurFairChapterInfoOuterClass.FleurFairChapterInfoOrBuilder
-        public int getOpenTime() {
-            return this.openTime_;
+        public int getChapterId() {
+            return this.chapterId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -153,10 +153,10 @@ public final class FleurFairChapterInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.openTime_ != 0) {
-                output.writeUInt32(7, this.openTime_);
+                output.writeUInt32(10, this.openTime_);
             }
             if (this.chapterId_ != 0) {
-                output.writeUInt32(12, this.chapterId_);
+                output.writeUInt32(14, this.chapterId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class FleurFairChapterInfoOuterClass {
             }
             int size2 = 0;
             if (this.openTime_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.openTime_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(10, this.openTime_);
             }
             if (this.chapterId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.chapterId_);
+                size2 += CodedOutputStream.computeUInt32Size(14, this.chapterId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -188,7 +188,7 @@ public final class FleurFairChapterInfoOuterClass {
                 return equals(obj);
             }
             FleurFairChapterInfo other = (FleurFairChapterInfo) obj;
-            return getChapterId() == other.getChapterId() && getOpenTime() == other.getOpenTime() && this.unknownFields.equals(other.unknownFields);
+            return getOpenTime() == other.getOpenTime() && getChapterId() == other.getChapterId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -196,7 +196,7 @@ public final class FleurFairChapterInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getChapterId())) + 7)) + getOpenTime())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getOpenTime())) + 14)) + getChapterId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -275,8 +275,8 @@ public final class FleurFairChapterInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FleurFairChapterInfoOuterClass$FleurFairChapterInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements FleurFairChapterInfoOrBuilder {
-            private int chapterId_;
             private int openTime_;
+            private int chapterId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return FleurFairChapterInfoOuterClass.internal_static_FleurFairChapterInfo_descriptor;
@@ -304,8 +304,8 @@ public final class FleurFairChapterInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.chapterId_ = 0;
                 this.openTime_ = 0;
+                this.chapterId_ = 0;
                 return this;
             }
 
@@ -331,8 +331,8 @@ public final class FleurFairChapterInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public FleurFairChapterInfo buildPartial() {
                 FleurFairChapterInfo result = new FleurFairChapterInfo(this);
-                result.chapterId_ = this.chapterId_;
                 result.openTime_ = this.openTime_;
+                result.chapterId_ = this.chapterId_;
                 onBuilt();
                 return result;
             }
@@ -380,11 +380,11 @@ public final class FleurFairChapterInfoOuterClass {
                 if (other == FleurFairChapterInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getChapterId() != 0) {
-                    setChapterId(other.getChapterId());
-                }
                 if (other.getOpenTime() != 0) {
                     setOpenTime(other.getOpenTime());
+                }
+                if (other.getChapterId() != 0) {
+                    setChapterId(other.getChapterId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -419,23 +419,6 @@ public final class FleurFairChapterInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.FleurFairChapterInfoOuterClass.FleurFairChapterInfoOrBuilder
-            public int getChapterId() {
-                return this.chapterId_;
-            }
-
-            public Builder setChapterId(int value) {
-                this.chapterId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearChapterId() {
-                this.chapterId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.FleurFairChapterInfoOuterClass.FleurFairChapterInfoOrBuilder
             public int getOpenTime() {
                 return this.openTime_;
             }
@@ -448,6 +431,23 @@ public final class FleurFairChapterInfoOuterClass {
 
             public Builder clearOpenTime() {
                 this.openTime_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.FleurFairChapterInfoOuterClass.FleurFairChapterInfoOrBuilder
+            public int getChapterId() {
+                return this.chapterId_;
+            }
+
+            public Builder setChapterId(int value) {
+                this.chapterId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearChapterId() {
+                this.chapterId_ = 0;
                 onChanged();
                 return this;
             }

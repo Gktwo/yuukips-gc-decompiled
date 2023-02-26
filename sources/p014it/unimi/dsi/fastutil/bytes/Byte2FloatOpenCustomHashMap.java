@@ -44,13 +44,13 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
     protected ByteHash.Strategy strategy;
 
     /* renamed from: n */
-    protected transient int f1176n;
+    protected transient int f1140n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1177f;
+    protected final float f1141f;
     protected transient Byte2FloatMap.FastEntrySet entries;
     protected transient ByteSet keys;
     protected transient FloatCollection values;
@@ -62,14 +62,14 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1177f = f;
+            this.f1141f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1176n = arraySize;
+            this.f1140n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1176n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1176n, f);
-            this.key = new byte[this.f1176n + 1];
-            this.value = new float[this.f1176n + 1];
+            this.mask = this.f1140n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1140n, f);
+            this.key = new byte[this.f1140n + 1];
+            this.value = new float[this.f1140n + 1];
         }
     }
 
@@ -123,15 +123,15 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1177f);
-        if (needed > this.f1176n) {
+        int needed = HashCommon.arraySize(capacity, this.f1141f);
+        if (needed > this.f1140n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1177f)))));
-        if (needed > this.f1176n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1141f)))));
+        if (needed > this.f1140n) {
             rehash(needed);
         }
     }
@@ -141,8 +141,8 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
         float oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f1176n > this.minN && this.size < this.maxFill / 4 && this.f1176n > 16) {
-            rehash(this.f1176n / 2);
+        if (this.f1140n > this.minN && this.size < this.maxFill / 4 && this.f1140n > 16) {
+            rehash(this.f1140n / 2);
         }
         return oldValue;
     }
@@ -150,17 +150,17 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
     /* access modifiers changed from: private */
     public float removeNullEntry() {
         this.containsNullKey = false;
-        float oldValue = this.value[this.f1176n];
+        float oldValue = this.value[this.f1140n];
         this.size--;
-        if (this.f1176n > this.minN && this.size < this.maxFill / 4 && this.f1176n > 16) {
-            rehash(this.f1176n / 2);
+        if (this.f1140n > this.minN && this.size < this.maxFill / 4 && this.f1140n > 16) {
+            rehash(this.f1140n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByte2FloatMap, java.util.Map
     public void putAll(Map<? extends Byte, ? extends Float> m) {
-        if (((double) this.f1177f) <= 0.5d) {
+        if (((double) this.f1141f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -171,7 +171,7 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
     private int find(byte k) {
         byte curr;
         if (this.strategy.equals(k, (byte) 0)) {
-            return this.containsNullKey ? this.f1176n : -(this.f1176n + 1);
+            return this.containsNullKey ? this.f1140n : -(this.f1140n + 1);
         }
         byte[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -195,7 +195,7 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
     }
 
     private void insert(int pos, byte k, float v) {
-        if (pos == this.f1176n) {
+        if (pos == this.f1140n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -203,7 +203,7 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f1177f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f1141f));
         }
     }
 
@@ -247,9 +247,9 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f1176n, incr);
+            return addToValue(this.f1140n, incr);
         } else {
-            pos = this.f1176n;
+            pos = this.f1140n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -257,7 +257,7 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f1177f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f1141f));
         }
         return this.defRetValue;
     }
@@ -323,7 +323,7 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
     public float get(byte k) {
         byte curr;
         if (this.strategy.equals(k, (byte) 0)) {
-            return this.containsNullKey ? this.value[this.f1176n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f1140n] : this.defRetValue;
         }
         byte[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -377,10 +377,10 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
     public boolean containsValue(float v) {
         float[] value = this.value;
         byte[] key = this.key;
-        if (this.containsNullKey && Float.floatToIntBits(value[this.f1176n]) == Float.floatToIntBits(v)) {
+        if (this.containsNullKey && Float.floatToIntBits(value[this.f1140n]) == Float.floatToIntBits(v)) {
             return true;
         }
-        int i = this.f1176n;
+        int i = this.f1140n;
         while (true) {
             i--;
             if (i == 0) {
@@ -396,7 +396,7 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
     public float getOrDefault(byte k, float defaultValue) {
         byte curr;
         if (this.strategy.equals(k, (byte) 0)) {
-            return this.containsNullKey ? this.value[this.f1176n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f1140n] : defaultValue;
         }
         byte[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -456,7 +456,7 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
                 removeEntry(pos);
                 return true;
             }
-        } else if (!this.containsNullKey || Float.floatToIntBits(v) != Float.floatToIntBits(this.value[this.f1176n])) {
+        } else if (!this.containsNullKey || Float.floatToIntBits(v) != Float.floatToIntBits(this.value[this.f1140n])) {
             return false;
         } else {
             removeNullEntry();
@@ -711,31 +711,31 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
         int last;
 
         /* renamed from: c */
-        int f1178c;
+        int f1142c;
         boolean mustReturnNullKey;
         ByteArrayList wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Byte2FloatOpenCustomHashMap.this.f1176n;
+            this.pos = Byte2FloatOpenCustomHashMap.this.f1140n;
             this.last = -1;
-            this.f1178c = Byte2FloatOpenCustomHashMap.this.size;
+            this.f1142c = Byte2FloatOpenCustomHashMap.this.size;
             this.mustReturnNullKey = Byte2FloatOpenCustomHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f1178c != 0;
+            return this.f1142c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f1178c--;
+            this.f1142c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Byte2FloatOpenCustomHashMap.this.f1176n;
+                int i = Byte2FloatOpenCustomHashMap.this.f1140n;
                 this.last = i;
                 return i;
             }
@@ -767,13 +767,13 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Byte2FloatOpenCustomHashMap.this.f1176n;
+                int i = Byte2FloatOpenCustomHashMap.this.f1140n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f1178c--;
+                this.f1142c--;
             }
             byte[] key = Byte2FloatOpenCustomHashMap.this.key;
-            while (this.f1178c != 0) {
+            while (this.f1142c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -790,12 +790,12 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
                         i3 = Byte2FloatOpenCustomHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f1178c--;
+                    this.f1142c--;
                 } else if (key[this.pos] != 0) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f1178c--;
+                    this.f1142c--;
                 }
             }
         }
@@ -844,7 +844,7 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Byte2FloatOpenCustomHashMap.this.f1176n) {
+            if (this.last == Byte2FloatOpenCustomHashMap.this.f1140n) {
                 Byte2FloatOpenCustomHashMap.this.containsNullKey = false;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
@@ -941,7 +941,7 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
         int max;
 
         /* renamed from: c */
-        int f1179c;
+        int f1143c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -951,16 +951,16 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Byte2FloatOpenCustomHashMap.this.f1176n;
-            this.f1179c = 0;
+            this.max = Byte2FloatOpenCustomHashMap.this.f1140n;
+            this.f1143c = 0;
             this.mustReturnNull = Byte2FloatOpenCustomHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Byte2FloatOpenCustomHashMap.this.f1176n;
-            this.f1179c = 0;
+            this.max = Byte2FloatOpenCustomHashMap.this.f1140n;
+            this.f1143c = 0;
             this.mustReturnNull = Byte2FloatOpenCustomHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -972,14 +972,14 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1179c++;
-                acceptOnIndex(action, Byte2FloatOpenCustomHashMap.this.f1176n);
+                this.f1143c++;
+                acceptOnIndex(action, Byte2FloatOpenCustomHashMap.this.f1140n);
                 return true;
             }
             byte[] key = Byte2FloatOpenCustomHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f1179c++;
+                    this.f1143c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -993,14 +993,14 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1179c++;
-                acceptOnIndex(action, Byte2FloatOpenCustomHashMap.this.f1176n);
+                this.f1143c++;
+                acceptOnIndex(action, Byte2FloatOpenCustomHashMap.this.f1140n);
             }
             byte[] key = Byte2FloatOpenCustomHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     acceptOnIndex(action, this.pos);
-                    this.f1179c++;
+                    this.f1143c++;
                 }
                 this.pos++;
             }
@@ -1008,9 +1008,9 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Byte2FloatOpenCustomHashMap.this.size - this.f1179c);
+                return (long) (Byte2FloatOpenCustomHashMap.this.size - this.f1143c);
             }
-            return Math.min((long) (Byte2FloatOpenCustomHashMap.this.size - this.f1179c), ((long) ((((double) Byte2FloatOpenCustomHashMap.this.realSize()) / ((double) Byte2FloatOpenCustomHashMap.this.f1176n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Byte2FloatOpenCustomHashMap.this.size - this.f1143c), ((long) ((((double) Byte2FloatOpenCustomHashMap.this.realSize()) / ((double) Byte2FloatOpenCustomHashMap.this.f1140n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1203,7 +1203,7 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
             byte k = ((Byte) e.getKey()).byteValue();
             float v = ((Float) e.getValue()).floatValue();
             if (Byte2FloatOpenCustomHashMap.this.strategy.equals(k, (byte) 0)) {
-                return Byte2FloatOpenCustomHashMap.this.containsNullKey && Float.floatToIntBits(Byte2FloatOpenCustomHashMap.this.value[Byte2FloatOpenCustomHashMap.this.f1176n]) == Float.floatToIntBits(v);
+                return Byte2FloatOpenCustomHashMap.this.containsNullKey && Float.floatToIntBits(Byte2FloatOpenCustomHashMap.this.value[Byte2FloatOpenCustomHashMap.this.f1140n]) == Float.floatToIntBits(v);
             }
             byte[] key = Byte2FloatOpenCustomHashMap.this.key;
             int mix = HashCommon.mix(Byte2FloatOpenCustomHashMap.this.strategy.hashCode(k)) & Byte2FloatOpenCustomHashMap.this.mask;
@@ -1264,7 +1264,7 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
                     Byte2FloatOpenCustomHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Byte2FloatOpenCustomHashMap.this.containsNullKey || Float.floatToIntBits(Byte2FloatOpenCustomHashMap.this.value[Byte2FloatOpenCustomHashMap.this.f1176n]) != Float.floatToIntBits(v)) {
+            } else if (!Byte2FloatOpenCustomHashMap.this.containsNullKey || Float.floatToIntBits(Byte2FloatOpenCustomHashMap.this.value[Byte2FloatOpenCustomHashMap.this.f1140n]) != Float.floatToIntBits(v)) {
                 return false;
             } else {
                 Byte2FloatOpenCustomHashMap.this.removeNullEntry();
@@ -1285,9 +1285,9 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Byte2FloatMap.Entry> consumer) {
             if (Byte2FloatOpenCustomHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractByte2FloatMap.BasicEntry(Byte2FloatOpenCustomHashMap.this.key[Byte2FloatOpenCustomHashMap.this.f1176n], Byte2FloatOpenCustomHashMap.this.value[Byte2FloatOpenCustomHashMap.this.f1176n]));
+                consumer.accept(new AbstractByte2FloatMap.BasicEntry(Byte2FloatOpenCustomHashMap.this.key[Byte2FloatOpenCustomHashMap.this.f1140n], Byte2FloatOpenCustomHashMap.this.value[Byte2FloatOpenCustomHashMap.this.f1140n]));
             }
-            int pos = Byte2FloatOpenCustomHashMap.this.f1176n;
+            int pos = Byte2FloatOpenCustomHashMap.this.f1140n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1303,11 +1303,11 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
         public void fastForEach(Consumer<? super Byte2FloatMap.Entry> consumer) {
             AbstractByte2FloatMap.BasicEntry entry = new AbstractByte2FloatMap.BasicEntry();
             if (Byte2FloatOpenCustomHashMap.this.containsNullKey) {
-                entry.key = Byte2FloatOpenCustomHashMap.this.key[Byte2FloatOpenCustomHashMap.this.f1176n];
-                entry.value = Byte2FloatOpenCustomHashMap.this.value[Byte2FloatOpenCustomHashMap.this.f1176n];
+                entry.key = Byte2FloatOpenCustomHashMap.this.key[Byte2FloatOpenCustomHashMap.this.f1140n];
+                entry.value = Byte2FloatOpenCustomHashMap.this.value[Byte2FloatOpenCustomHashMap.this.f1140n];
                 consumer.accept(entry);
             }
-            int pos = Byte2FloatOpenCustomHashMap.this.f1176n;
+            int pos = Byte2FloatOpenCustomHashMap.this.f1140n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1407,9 +1407,9 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterable
         public void forEach(ByteConsumer consumer) {
             if (Byte2FloatOpenCustomHashMap.this.containsNullKey) {
-                consumer.accept(Byte2FloatOpenCustomHashMap.this.key[Byte2FloatOpenCustomHashMap.this.f1176n]);
+                consumer.accept(Byte2FloatOpenCustomHashMap.this.key[Byte2FloatOpenCustomHashMap.this.f1140n]);
             }
-            int pos = Byte2FloatOpenCustomHashMap.this.f1176n;
+            int pos = Byte2FloatOpenCustomHashMap.this.f1140n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1528,9 +1528,9 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
                 @Override // p014it.unimi.dsi.fastutil.floats.FloatIterable
                 public void forEach(FloatConsumer consumer) {
                     if (Byte2FloatOpenCustomHashMap.this.containsNullKey) {
-                        consumer.accept(Byte2FloatOpenCustomHashMap.this.value[Byte2FloatOpenCustomHashMap.this.f1176n]);
+                        consumer.accept(Byte2FloatOpenCustomHashMap.this.value[Byte2FloatOpenCustomHashMap.this.f1140n]);
                     }
-                    int pos = Byte2FloatOpenCustomHashMap.this.f1176n;
+                    int pos = Byte2FloatOpenCustomHashMap.this.f1140n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1566,8 +1566,8 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1177f)));
-        if (l >= this.f1176n || this.size > HashCommon.maxFill(l, this.f1177f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1141f)));
+        if (l >= this.f1140n || this.size > HashCommon.maxFill(l, this.f1141f)) {
             return true;
         }
         try {
@@ -1585,7 +1585,7 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
         int mask = newN - 1;
         byte[] newKey = new byte[newN + 1];
         float[] newValue = new float[newN + 1];
-        int i2 = this.f1176n;
+        int i2 = this.f1140n;
         int j = realSize();
         while (true) {
             j--;
@@ -1604,10 +1604,10 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f1176n];
-                this.f1176n = newN;
+                newValue[newN] = value[this.f1140n];
+                this.f1140n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f1176n, this.f1177f);
+                this.maxFill = HashCommon.maxFill(this.f1140n, this.f1141f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1649,7 +1649,7 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
             i++;
         }
         if (this.containsNullKey) {
-            h += HashCommon.float2int(this.value[this.f1176n]);
+            h += HashCommon.float2int(this.value[this.f1140n]);
         }
         return h;
     }
@@ -1675,12 +1675,12 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f1176n = HashCommon.arraySize(this.size, this.f1177f);
-        this.maxFill = HashCommon.maxFill(this.f1176n, this.f1177f);
-        this.mask = this.f1176n - 1;
-        byte[] key = new byte[this.f1176n + 1];
+        this.f1140n = HashCommon.arraySize(this.size, this.f1141f);
+        this.maxFill = HashCommon.maxFill(this.f1140n, this.f1141f);
+        this.mask = this.f1140n - 1;
+        byte[] key = new byte[this.f1140n + 1];
         this.key = key;
-        float[] value = new float[this.f1176n + 1];
+        float[] value = new float[this.f1140n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1689,7 +1689,7 @@ public class Byte2FloatOpenCustomHashMap extends AbstractByte2FloatMap implement
                 byte k = s.readByte();
                 float v = s.readFloat();
                 if (this.strategy.equals(k, (byte) 0)) {
-                    pos = this.f1176n;
+                    pos = this.f1140n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix(this.strategy.hashCode(k));

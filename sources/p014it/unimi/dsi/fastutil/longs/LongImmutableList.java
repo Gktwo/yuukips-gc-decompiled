@@ -22,10 +22,10 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
     static final LongImmutableList EMPTY = new LongImmutableList(LongArrays.EMPTY_ARRAY);
 
     /* renamed from: a */
-    private final long[] f2414a;
+    private final long[] f2378a;
 
     public LongImmutableList(long[] a) {
-        this.f2414a = a;
+        this.f2378a = a;
     }
 
     public LongImmutableList(Collection<? extends Long> c) {
@@ -38,12 +38,12 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
 
     public LongImmutableList(LongList l) {
         this(l.isEmpty() ? LongArrays.EMPTY_ARRAY : new long[l.size()]);
-        l.getElements(0, this.f2414a, 0, l.size());
+        l.getElements(0, this.f2378a, 0, l.size());
     }
 
     public LongImmutableList(long[] a, int offset, int length) {
         this(length == 0 ? LongArrays.EMPTY_ARRAY : new long[length]);
-        System.arraycopy(a, offset, this.f2414a, 0, length);
+        System.arraycopy(a, offset, this.f2378a, 0, length);
     }
 
     public LongImmutableList(LongIterator i) {
@@ -81,17 +81,17 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
 
     @Override // p014it.unimi.dsi.fastutil.longs.LongList
     public long getLong(int index) {
-        if (index < this.f2414a.length) {
-            return this.f2414a[index];
+        if (index < this.f2378a.length) {
+            return this.f2378a[index];
         }
-        throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.f2414a.length + ")");
+        throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.f2378a.length + ")");
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongList
     public int indexOf(long k) {
-        int size = this.f2414a.length;
+        int size = this.f2378a.length;
         for (int i = 0; i < size; i++) {
-            if (k == this.f2414a[i]) {
+            if (k == this.f2378a[i]) {
                 return i;
             }
         }
@@ -100,50 +100,50 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongList
     public int lastIndexOf(long k) {
-        int i = this.f2414a.length;
+        int i = this.f2378a.length;
         do {
             i--;
             if (i == 0) {
                 return -1;
             }
-        } while (k != this.f2414a[i]);
+        } while (k != this.f2378a[i]);
         return i;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public int size() {
-        return this.f2414a.length;
+        return this.f2378a.length;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List, p014it.unimi.dsi.fastutil.Stack
     public boolean isEmpty() {
-        return this.f2414a.length == 0;
+        return this.f2378a.length == 0;
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongList
     public void getElements(int from, long[] a, int offset, int length) {
         LongArrays.ensureOffsetLength(a, offset, length);
-        System.arraycopy(this.f2414a, from, a, offset, length);
+        System.arraycopy(this.f2378a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongIterable
     public void forEach(LongConsumer action) {
-        for (int i = 0; i < this.f2414a.length; i++) {
-            action.accept(this.f2414a[i]);
+        for (int i = 0; i < this.f2378a.length; i++) {
+            action.accept(this.f2378a[i]);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.AbstractLongCollection, p014it.unimi.dsi.fastutil.longs.LongCollection
     public long[] toLongArray() {
-        return (long[]) this.f2414a.clone();
+        return (long[]) this.f2378a.clone();
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.AbstractLongCollection, p014it.unimi.dsi.fastutil.longs.LongCollection
     public long[] toArray(long[] a) {
         if (a == null || a.length < size()) {
-            a = new long[this.f2414a.length];
+            a = new long[this.f2378a.length];
         }
-        System.arraycopy(this.f2414a, 0, a, 0, a.length);
+        System.arraycopy(this.f2378a, 0, a, 0, a.length);
         return a;
     }
 
@@ -161,7 +161,7 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
 
             @Override // java.util.Iterator, java.util.ListIterator
             public boolean hasNext() {
-                return this.pos < LongImmutableList.this.f2414a.length;
+                return this.pos < LongImmutableList.this.f2378a.length;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -174,7 +174,7 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                long[] jArr = LongImmutableList.this.f2414a;
+                long[] jArr = LongImmutableList.this.f2378a;
                 int i = this.pos;
                 this.pos = i + 1;
                 return jArr[i];
@@ -185,7 +185,7 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                long[] jArr = LongImmutableList.this.f2414a;
+                long[] jArr = LongImmutableList.this.f2378a;
                 int i = this.pos - 1;
                 this.pos = i;
                 return jArr[i];
@@ -203,8 +203,8 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
 
             @Override // java.util.PrimitiveIterator.OfLong
             public void forEachRemaining(LongConsumer action) {
-                while (this.pos < LongImmutableList.this.f2414a.length) {
-                    long[] jArr = LongImmutableList.this.f2414a;
+                while (this.pos < LongImmutableList.this.f2378a.length) {
+                    long[] jArr = LongImmutableList.this.f2378a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(jArr[i]);
@@ -231,7 +231,7 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
                 if (n < 0) {
                     throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                 }
-                int remaining = LongImmutableList.this.f2414a.length - this.pos;
+                int remaining = LongImmutableList.this.f2378a.length - this.pos;
                 if (n < remaining) {
                     this.pos -= n;
                 } else {
@@ -246,12 +246,12 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
                 if (n < 0) {
                     throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                 }
-                int remaining = LongImmutableList.this.f2414a.length - this.pos;
+                int remaining = LongImmutableList.this.f2378a.length - this.pos;
                 if (n < remaining) {
                     this.pos += n;
                 } else {
                     n = remaining;
-                    this.pos = LongImmutableList.this.f2414a.length;
+                    this.pos = LongImmutableList.this.f2378a.length;
                 }
                 return n;
             }
@@ -271,7 +271,7 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
         }
 
         public Spliterator(LongImmutableList longImmutableList) {
-            this(0, longImmutableList.f2414a.length);
+            this(0, longImmutableList.f2378a.length);
         }
 
         private Spliterator(int pos, int max) {
@@ -298,7 +298,7 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
             if (this.pos >= this.max) {
                 return false;
             }
-            long[] jArr = LongImmutableList.this.f2414a;
+            long[] jArr = LongImmutableList.this.f2378a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(jArr[i]);
@@ -308,7 +308,7 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
         @Override // java.util.Spliterator.OfLong
         public void forEachRemaining(LongConsumer action) {
             while (this.pos < this.max) {
-                action.accept(LongImmutableList.this.f2414a[this.pos]);
+                action.accept(LongImmutableList.this.f2378a[this.pos]);
                 this.pos++;
             }
         }
@@ -358,28 +358,28 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
         final int from;
 
         /* renamed from: to */
-        final int f2415to;
+        final int f2379to;
 
         /* renamed from: a */
-        final transient long[] f2416a;
+        final transient long[] f2380a;
 
         ImmutableSubList(LongImmutableList innerList, int from, int to) {
             this.innerList = innerList;
             this.from = from;
-            this.f2415to = to;
-            this.f2416a = innerList.f2414a;
+            this.f2379to = to;
+            this.f2380a = innerList.f2378a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongList
         public long getLong(int index) {
             ensureRestrictedIndex(index);
-            return this.f2416a[index + this.from];
+            return this.f2380a[index + this.from];
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongList
         public int indexOf(long k) {
-            for (int i = this.from; i < this.f2415to; i++) {
-                if (k == this.f2416a[i]) {
+            for (int i = this.from; i < this.f2379to; i++) {
+                if (k == this.f2380a[i]) {
                     return i - this.from;
                 }
             }
@@ -388,46 +388,46 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongList
         public int lastIndexOf(long k) {
-            int i = this.f2415to;
+            int i = this.f2379to;
             do {
                 i--;
                 if (i == this.from) {
                     return -1;
                 }
-            } while (k != this.f2416a[i]);
+            } while (k != this.f2380a[i]);
             return i - this.from;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public int size() {
-            return this.f2415to - this.from;
+            return this.f2379to - this.from;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List, p014it.unimi.dsi.fastutil.Stack
         public boolean isEmpty() {
-            return this.f2415to <= this.from;
+            return this.f2379to <= this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongList
         public void getElements(int fromSublistIndex, long[] a, int offset, int length) {
             LongArrays.ensureOffsetLength(a, offset, length);
             ensureRestrictedIndex(fromSublistIndex);
-            if (this.from + length > this.f2415to) {
+            if (this.from + length > this.f2379to) {
                 throw new IndexOutOfBoundsException("Final index " + (this.from + length) + " (startingIndex: " + this.from + " + length: " + length + ") is greater then list length " + size());
             }
-            System.arraycopy(this.f2416a, fromSublistIndex + this.from, a, offset, length);
+            System.arraycopy(this.f2380a, fromSublistIndex + this.from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongIterable
         public void forEach(LongConsumer action) {
-            for (int i = this.from; i < this.f2415to; i++) {
-                action.accept(this.f2416a[i]);
+            for (int i = this.from; i < this.f2379to; i++) {
+                action.accept(this.f2380a[i]);
             }
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.AbstractLongCollection, p014it.unimi.dsi.fastutil.longs.LongCollection
         public long[] toLongArray() {
-            return Arrays.copyOfRange(this.f2416a, this.from, this.f2415to);
+            return Arrays.copyOfRange(this.f2380a, this.from, this.f2379to);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.AbstractLongCollection, p014it.unimi.dsi.fastutil.longs.LongCollection
@@ -435,7 +435,7 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
             if (a == null || a.length < size()) {
                 a = new long[size()];
             }
-            System.arraycopy(this.f2416a, this.from, a, 0, size());
+            System.arraycopy(this.f2380a, this.from, a, 0, size());
             return a;
         }
 
@@ -453,7 +453,7 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
 
                 @Override // java.util.Iterator, java.util.ListIterator
                 public boolean hasNext() {
-                    return this.pos < ImmutableSubList.this.f2415to;
+                    return this.pos < ImmutableSubList.this.f2379to;
                 }
 
                 @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -466,7 +466,7 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
                     if (!hasNext()) {
                         throw new NoSuchElementException();
                     }
-                    long[] jArr = ImmutableSubList.this.f2416a;
+                    long[] jArr = ImmutableSubList.this.f2380a;
                     int i = this.pos;
                     this.pos = i + 1;
                     return jArr[i + ImmutableSubList.this.from];
@@ -477,7 +477,7 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
                     if (!hasPrevious()) {
                         throw new NoSuchElementException();
                     }
-                    long[] jArr = ImmutableSubList.this.f2416a;
+                    long[] jArr = ImmutableSubList.this.f2380a;
                     int i = this.pos - 1;
                     this.pos = i;
                     return jArr[i + ImmutableSubList.this.from];
@@ -495,8 +495,8 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
 
                 @Override // java.util.PrimitiveIterator.OfLong
                 public void forEachRemaining(LongConsumer action) {
-                    while (this.pos < ImmutableSubList.this.f2415to) {
-                        long[] jArr = ImmutableSubList.this.f2416a;
+                    while (this.pos < ImmutableSubList.this.f2379to) {
+                        long[] jArr = ImmutableSubList.this.f2380a;
                         int i = this.pos;
                         this.pos = i + 1;
                         action.accept(jArr[i + ImmutableSubList.this.from]);
@@ -523,7 +523,7 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
                     if (n < 0) {
                         throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                     }
-                    int remaining = ImmutableSubList.this.f2415to - this.pos;
+                    int remaining = ImmutableSubList.this.f2379to - this.pos;
                     if (n < remaining) {
                         this.pos -= n;
                     } else {
@@ -538,12 +538,12 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
                     if (n < 0) {
                         throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                     }
-                    int remaining = ImmutableSubList.this.f2415to - this.pos;
+                    int remaining = ImmutableSubList.this.f2379to - this.pos;
                     if (n < remaining) {
                         this.pos += n;
                     } else {
                         n = remaining;
-                        this.pos = ImmutableSubList.this.f2415to;
+                        this.pos = ImmutableSubList.this.f2379to;
                     }
                     return n;
                 }
@@ -555,7 +555,7 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
         /* loaded from: grasscutter.jar:it/unimi/dsi/fastutil/longs/LongImmutableList$ImmutableSubList$SubListSpliterator.class */
         public final class SubListSpliterator extends LongSpliterators.EarlyBindingSizeIndexBasedSpliterator {
             SubListSpliterator() {
-                super(ImmutableSubList.this.from, ImmutableSubList.this.f2415to);
+                super(ImmutableSubList.this.from, ImmutableSubList.this.f2379to);
             }
 
             private SubListSpliterator(int pos, int maxPos) {
@@ -564,7 +564,7 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongSpliterators.AbstractIndexBasedSpliterator
             protected final long get(int i) {
-                return ImmutableSubList.this.f2416a[i];
+                return ImmutableSubList.this.f2380a[i];
             }
 
             /* access modifiers changed from: protected */
@@ -578,7 +578,7 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
                 if (this.pos >= this.maxPos) {
                     return false;
                 }
-                long[] jArr = ImmutableSubList.this.f2416a;
+                long[] jArr = ImmutableSubList.this.f2380a;
                 int i = this.pos;
                 this.pos = i + 1;
                 action.accept(jArr[i]);
@@ -589,7 +589,7 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
             public void forEachRemaining(LongConsumer action) {
                 int max = this.maxPos;
                 while (this.pos < max) {
-                    long[] jArr = ImmutableSubList.this.f2416a;
+                    long[] jArr = ImmutableSubList.this.f2380a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(jArr[i]);
@@ -608,7 +608,7 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
         }
 
         boolean contentsEquals(long[] otherA, int otherAFrom, int otherATo) {
-            if (this.f2416a == otherA && this.from == otherAFrom && this.f2415to == otherATo) {
+            if (this.f2380a == otherA && this.from == otherAFrom && this.f2379to == otherATo) {
                 return true;
             }
             if (otherATo - otherAFrom != size()) {
@@ -616,10 +616,10 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
             }
             int pos = this.from;
             int otherPos = otherAFrom;
-            while (pos < this.f2415to) {
+            while (pos < this.f2379to) {
                 pos++;
                 otherPos++;
-                if (this.f2416a[pos] != otherA[otherPos]) {
+                if (this.f2380a[pos] != otherA[otherPos]) {
                     return false;
                 }
             }
@@ -636,23 +636,23 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
             }
             if (o instanceof LongImmutableList) {
                 LongImmutableList other = (LongImmutableList) o;
-                return contentsEquals(other.f2414a, 0, other.size());
+                return contentsEquals(other.f2378a, 0, other.size());
             } else if (!(o instanceof ImmutableSubList)) {
                 return equals(o);
             } else {
                 ImmutableSubList other2 = (ImmutableSubList) o;
-                return contentsEquals(other2.f2416a, other2.from, other2.f2415to);
+                return contentsEquals(other2.f2380a, other2.from, other2.f2379to);
             }
         }
 
         int contentsCompareTo(long[] otherA, int otherAFrom, int otherATo) {
-            if (this.f2416a == otherA && this.from == otherAFrom && this.f2415to == otherATo) {
+            if (this.f2380a == otherA && this.from == otherAFrom && this.f2379to == otherATo) {
                 return 0;
             }
             int i = this.from;
             int j = otherAFrom;
-            while (i < this.f2415to && i < otherATo) {
-                int r = Long.compare(this.f2416a[i], otherA[j]);
+            while (i < this.f2379to && i < otherATo) {
+                int r = Long.compare(this.f2380a[i], otherA[j]);
                 if (r != 0) {
                     return r;
                 }
@@ -662,25 +662,25 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
             if (i < otherATo) {
                 return -1;
             }
-            return i < this.f2415to ? 1 : 0;
+            return i < this.f2379to ? 1 : 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList
         public int compareTo(List<? extends Long> l) {
             if (l instanceof LongImmutableList) {
                 LongImmutableList other = (LongImmutableList) l;
-                return contentsCompareTo(other.f2414a, 0, other.size());
+                return contentsCompareTo(other.f2378a, 0, other.size());
             } else if (!(l instanceof ImmutableSubList)) {
                 return compareTo(l);
             } else {
                 ImmutableSubList other2 = (ImmutableSubList) l;
-                return contentsCompareTo(other2.f2416a, other2.from, other2.f2415to);
+                return contentsCompareTo(other2.f2380a, other2.from, other2.f2379to);
             }
         }
 
         private Object readResolve() throws ObjectStreamException {
             try {
-                return this.innerList.subList(this.from, this.f2415to);
+                return this.innerList.subList(this.from, this.f2379to);
             } catch (IllegalArgumentException | IndexOutOfBoundsException ex) {
                 throw ((InvalidObjectException) new InvalidObjectException(ex.getMessage()).initCause(ex));
             }
@@ -724,13 +724,13 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
     }
 
     public boolean equals(LongImmutableList l) {
-        if (l == this || this.f2414a == l.f2414a) {
+        if (l == this || this.f2378a == l.f2378a) {
             return true;
         }
         if (size() != l.size()) {
             return false;
         }
-        return Arrays.equals(this.f2414a, l.f2414a);
+        return Arrays.equals(this.f2378a, l.f2378a);
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, java.util.Collection, java.lang.Object, java.util.List
@@ -751,13 +751,13 @@ public class LongImmutableList extends LongLists.ImmutableListBase implements Lo
     }
 
     public int compareTo(LongImmutableList l) {
-        if (this.f2414a == l.f2414a) {
+        if (this.f2378a == l.f2378a) {
             return 0;
         }
         int s1 = size();
         int s2 = l.size();
-        long[] a1 = this.f2414a;
-        long[] a2 = l.f2414a;
+        long[] a1 = this.f2378a;
+        long[] a2 = l.f2378a;
         int i = 0;
         while (i < s1 && i < s2) {
             int r = Long.compare(a1[i], a2[i]);

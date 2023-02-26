@@ -204,30 +204,30 @@ public abstract class AbstractByte2DoubleMap extends AbstractByte2DoubleFunction
                 return new ByteIterator() { // from class: it.unimi.dsi.fastutil.bytes.AbstractByte2DoubleMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Byte2DoubleMap.Entry> f1091i;
+                    private final ObjectIterator<Byte2DoubleMap.Entry> f1055i;
 
                     {
-                        this.f1091i = Byte2DoubleMaps.fastIterator(AbstractByte2DoubleMap.this);
+                        this.f1055i = Byte2DoubleMaps.fastIterator(AbstractByte2DoubleMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
                     public byte nextByte() {
-                        return this.f1091i.next().getByteKey();
+                        return this.f1055i.next().getByteKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1091i.hasNext();
+                        return this.f1055i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1091i.remove();
+                        this.f1055i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
                     public void forEachRemaining(ByteConsumer action) {
-                        this.f1091i.forEachRemaining(entry -> {
+                        this.f1055i.forEachRemaining(entry -> {
                             action.accept(entry.getByteKey());
                         });
                     }
@@ -267,30 +267,30 @@ public abstract class AbstractByte2DoubleMap extends AbstractByte2DoubleFunction
                 return new DoubleIterator() { // from class: it.unimi.dsi.fastutil.bytes.AbstractByte2DoubleMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Byte2DoubleMap.Entry> f1092i;
+                    private final ObjectIterator<Byte2DoubleMap.Entry> f1056i;
 
                     {
-                        this.f1092i = Byte2DoubleMaps.fastIterator(AbstractByte2DoubleMap.this);
+                        this.f1056i = Byte2DoubleMaps.fastIterator(AbstractByte2DoubleMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
                     public double nextDouble() {
-                        return this.f1092i.next().getDoubleValue();
+                        return this.f1056i.next().getDoubleValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1092i.hasNext();
+                        return this.f1056i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1092i.remove();
+                        this.f1056i.remove();
                     }
 
                     @Override // java.util.PrimitiveIterator.OfDouble
                     public void forEachRemaining(DoubleConsumer action) {
-                        this.f1092i.forEachRemaining(entry -> {
+                        this.f1056i.forEachRemaining(entry -> {
                             action.accept(entry.getDoubleValue());
                         });
                     }

@@ -35,7 +35,7 @@ public class Options {
     private final String[] defArgs;
 
     /* renamed from: NL */
-    public static final String f3202NL = System.getProperty("line.separator", "\n");
+    public static final String f3166NL = System.getProperty("line.separator", "\n");
     private static final String regex = "(?x)\\s*(?:-([^-]))?(?:,?\\s*-(\\w))?(?:,?\\s*--(\\w[\\w-]*)(=\\w+)?)?(?:,?\\s*--(\\w[\\w-]*))?.*?(?:\\(default=(.*)\\))?\\s*";
     private static final Pattern parser = Pattern.compile(regex);
     private static final Pattern uname = Pattern.compile("^Usage:\\s+(\\w+)");
@@ -187,12 +187,12 @@ public class Options {
         int index = 0;
         if (this.error != null) {
             buf.append(this.error);
-            buf.append(f3202NL);
+            buf.append(f3166NL);
             index = this.usageIndex;
         }
         for (int i = index; i < this.spec.length; i++) {
             buf.append(this.spec[i]);
-            buf.append(f3202NL);
+            buf.append(f3166NL);
         }
         return buf.toString();
     }

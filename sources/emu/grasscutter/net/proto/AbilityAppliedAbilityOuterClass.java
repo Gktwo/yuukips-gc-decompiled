@@ -27,7 +27,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityAppliedAbilityOuterClass.class */
 public final class AbilityAppliedAbilityOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bAbilityAppliedAbility.proto\u001a\u001dAbilityScalarValueEntry.proto\u001a\u0013AbilityString.proto\"µ\u0001\n\u0015AbilityAppliedAbility\u0012$\n\fability_name\u0018\u0001 \u0001(\u000b2\u000e.AbilityString\u0012(\n\u0010ability_override\u0018\u0002 \u0001(\u000b2\u000e.AbilityString\u0012.\n\foverride_map\u0018\u0003 \u0003(\u000b2\u0018.AbilityScalarValueEntry\u0012\u001c\n\u0014instanced_ability_id\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityScalarValueEntryOuterClass.getDescriptor(), AbilityStringOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bAbilityAppliedAbility.proto\u001a\u0013AbilityString.proto\u001a\u001dAbilityScalarValueEntry.proto\"°\u0001\n\u0015AbilityAppliedAbility\u0012#\n\u000babilityName\u0018\u0001 \u0001(\u000b2\u000e.AbilityString\u0012'\n\u000fabilityOverride\u0018\u0002 \u0001(\u000b2\u000e.AbilityString\u0012-\n\u000boverrideMap\u0018\u0003 \u0003(\u000b2\u0018.AbilityScalarValueEntry\u0012\u001a\n\u0012instancedAbilityId\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityStringOuterClass.getDescriptor(), AbilityScalarValueEntryOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AbilityAppliedAbility_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AbilityAppliedAbility_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AbilityAppliedAbility_descriptor, new String[]{"AbilityName", "AbilityOverride", "OverrideMap", "InstancedAbilityId"});
 
@@ -71,13 +71,13 @@ public final class AbilityAppliedAbilityOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityAppliedAbilityOuterClass$AbilityAppliedAbility.class */
     public static final class AbilityAppliedAbility extends GeneratedMessageV3 implements AbilityAppliedAbilityOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ABILITY_NAME_FIELD_NUMBER = 1;
+        public static final int ABILITYNAME_FIELD_NUMBER = 1;
         private AbilityStringOuterClass.AbilityString abilityName_;
-        public static final int ABILITY_OVERRIDE_FIELD_NUMBER = 2;
+        public static final int ABILITYOVERRIDE_FIELD_NUMBER = 2;
         private AbilityStringOuterClass.AbilityString abilityOverride_;
-        public static final int OVERRIDE_MAP_FIELD_NUMBER = 3;
+        public static final int OVERRIDEMAP_FIELD_NUMBER = 3;
         private List<AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry> overrideMap_;
-        public static final int INSTANCED_ABILITY_ID_FIELD_NUMBER = 4;
+        public static final int INSTANCEDABILITYID_FIELD_NUMBER = 4;
         private int instancedAbilityId_;
         private byte memoizedIsInitialized;
         private static final AbilityAppliedAbility DEFAULT_INSTANCE = new AbilityAppliedAbility();
@@ -1016,7 +1016,7 @@ public final class AbilityAppliedAbilityOuterClass {
     }
 
     static {
-        AbilityScalarValueEntryOuterClass.getDescriptor();
         AbilityStringOuterClass.getDescriptor();
+        AbilityScalarValueEntryOuterClass.getDescriptor();
     }
 }

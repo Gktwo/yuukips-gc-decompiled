@@ -25,14 +25,16 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WinterCampAcceptItemResultInfoOuterClass.class */
 public final class WinterCampAcceptItemResultInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n$WinterCampAcceptItemResultInfo.proto\u001a\u000fItemParam.proto\"\n\u001eWinterCampAcceptItemResultInfo\u0012'\n\u0013Unk3300_ILELLFNPDFJ\u0018\u000f \u0003(\u000b2\n.ItemParam\u0012'\n\u0013Unk3300_JHKOMCFHAOG\u0018\r \u0003(\u000b2\n.ItemParam\u0012\u000b\n\u0003uid\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n$WinterCampAcceptItemResultInfo.proto\u001a\u000fItemParam.proto\"\n\u001eWinterCampAcceptItemResultInfo\u0012\u000b\n\u0003uid\u0018\u0006 \u0001(\r\u0012'\n\u0013Unk3300_ILELLFNPDFJ\u0018\t \u0003(\u000b2\n.ItemParam\u0012'\n\u0013Unk3300_JHKOMCFHAOG\u0018\u000b \u0003(\u000b2\n.ItemParamB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_WinterCampAcceptItemResultInfo_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_WinterCampAcceptItemResultInfo_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f949x51c89491 = new GeneratedMessageV3.FieldAccessorTable(internal_static_WinterCampAcceptItemResultInfo_descriptor, new String[]{"Unk3300ILELLFNPDFJ", "Unk3300JHKOMCFHAOG", "Uid"});
+    private static final GeneratedMessageV3.FieldAccessorTable f914x51c89491 = new GeneratedMessageV3.FieldAccessorTable(internal_static_WinterCampAcceptItemResultInfo_descriptor, new String[]{"Uid", "Unk3300ILELLFNPDFJ", "Unk3300JHKOMCFHAOG"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WinterCampAcceptItemResultInfoOuterClass$WinterCampAcceptItemResultInfoOrBuilder.class */
     public interface WinterCampAcceptItemResultInfoOrBuilder extends MessageOrBuilder {
+        int getUid();
+
         List<ItemParamOuterClass.ItemParam> getUnk3300ILELLFNPDFJList();
 
         ItemParamOuterClass.ItemParam getUnk3300ILELLFNPDFJ(int i);
@@ -52,8 +54,6 @@ public final class WinterCampAcceptItemResultInfoOuterClass {
         List<? extends ItemParamOuterClass.ItemParamOrBuilder> getUnk3300JHKOMCFHAOGOrBuilderList();
 
         ItemParamOuterClass.ItemParamOrBuilder getUnk3300JHKOMCFHAOGOrBuilder(int i);
-
-        int getUid();
     }
 
     private WinterCampAcceptItemResultInfoOuterClass() {
@@ -69,12 +69,12 @@ public final class WinterCampAcceptItemResultInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WinterCampAcceptItemResultInfoOuterClass$WinterCampAcceptItemResultInfo.class */
     public static final class WinterCampAcceptItemResultInfo extends GeneratedMessageV3 implements WinterCampAcceptItemResultInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int UNK3300_ILELLFNPDFJ_FIELD_NUMBER = 15;
-        private List<ItemParamOuterClass.ItemParam> unk3300ILELLFNPDFJ_;
-        public static final int UNK3300_JHKOMCFHAOG_FIELD_NUMBER = 13;
-        private List<ItemParamOuterClass.ItemParam> unk3300JHKOMCFHAOG_;
-        public static final int UID_FIELD_NUMBER = 9;
+        public static final int UID_FIELD_NUMBER = 6;
         private int uid_;
+        public static final int UNK3300_ILELLFNPDFJ_FIELD_NUMBER = 9;
+        private List<ItemParamOuterClass.ItemParam> unk3300ILELLFNPDFJ_;
+        public static final int UNK3300_JHKOMCFHAOG_FIELD_NUMBER = 11;
+        private List<ItemParamOuterClass.ItemParam> unk3300JHKOMCFHAOG_;
         private byte memoizedIsInitialized;
         private static final WinterCampAcceptItemResultInfo DEFAULT_INSTANCE = new WinterCampAcceptItemResultInfo();
         private static final Parser<WinterCampAcceptItemResultInfo> PARSER = new AbstractParser<WinterCampAcceptItemResultInfo>() { // from class: emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfo.1
@@ -125,22 +125,22 @@ public final class WinterCampAcceptItemResultInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 72:
+                            case 48:
                                 this.uid_ = input.readUInt32();
                                 break;
-                            case 106:
-                                if ((mutable_bitField0_ & 2) == 0) {
-                                    this.unk3300JHKOMCFHAOG_ = new ArrayList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
-                                }
-                                this.unk3300JHKOMCFHAOG_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-                                break;
-                            case 122:
+                            case 74:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.unk3300ILELLFNPDFJ_ = new ArrayList();
                                     mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                 }
                                 this.unk3300ILELLFNPDFJ_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+                                break;
+                            case 90:
+                                if ((mutable_bitField0_ & 2) == 0) {
+                                    this.unk3300JHKOMCFHAOG_ = new ArrayList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                }
+                                this.unk3300JHKOMCFHAOG_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -158,11 +158,11 @@ public final class WinterCampAcceptItemResultInfoOuterClass {
                     }
                 }
             } finally {
-                if ((mutable_bitField0_ & 2) != 0) {
-                    this.unk3300JHKOMCFHAOG_ = Collections.unmodifiableList(this.unk3300JHKOMCFHAOG_);
-                }
                 if ((mutable_bitField0_ & 1) != 0) {
                     this.unk3300ILELLFNPDFJ_ = Collections.unmodifiableList(this.unk3300ILELLFNPDFJ_);
+                }
+                if ((mutable_bitField0_ & 2) != 0) {
+                    this.unk3300JHKOMCFHAOG_ = Collections.unmodifiableList(this.unk3300JHKOMCFHAOG_);
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -175,7 +175,12 @@ public final class WinterCampAcceptItemResultInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return WinterCampAcceptItemResultInfoOuterClass.f949x51c89491.ensureFieldAccessorsInitialized(WinterCampAcceptItemResultInfo.class, Builder.class);
+            return WinterCampAcceptItemResultInfoOuterClass.f914x51c89491.ensureFieldAccessorsInitialized(WinterCampAcceptItemResultInfo.class, Builder.class);
+        }
+
+        @Override // emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfoOrBuilder
+        public int getUid() {
+            return this.uid_;
         }
 
         @Override // emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfoOrBuilder
@@ -228,11 +233,6 @@ public final class WinterCampAcceptItemResultInfoOuterClass {
             return this.unk3300JHKOMCFHAOG_.get(index);
         }
 
-        @Override // emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfoOrBuilder
-        public int getUid() {
-            return this.uid_;
-        }
-
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -249,13 +249,13 @@ public final class WinterCampAcceptItemResultInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.uid_ != 0) {
-                output.writeUInt32(9, this.uid_);
+                output.writeUInt32(6, this.uid_);
             }
-            for (int i = 0; i < this.unk3300JHKOMCFHAOG_.size(); i++) {
-                output.writeMessage(13, this.unk3300JHKOMCFHAOG_.get(i));
+            for (int i = 0; i < this.unk3300ILELLFNPDFJ_.size(); i++) {
+                output.writeMessage(9, this.unk3300ILELLFNPDFJ_.get(i));
             }
-            for (int i2 = 0; i2 < this.unk3300ILELLFNPDFJ_.size(); i2++) {
-                output.writeMessage(15, this.unk3300ILELLFNPDFJ_.get(i2));
+            for (int i2 = 0; i2 < this.unk3300JHKOMCFHAOG_.size(); i2++) {
+                output.writeMessage(11, this.unk3300JHKOMCFHAOG_.get(i2));
             }
             this.unknownFields.writeTo(output);
         }
@@ -268,13 +268,13 @@ public final class WinterCampAcceptItemResultInfoOuterClass {
             }
             int size2 = 0;
             if (this.uid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(9, this.uid_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.uid_);
             }
-            for (int i = 0; i < this.unk3300JHKOMCFHAOG_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(13, this.unk3300JHKOMCFHAOG_.get(i));
+            for (int i = 0; i < this.unk3300ILELLFNPDFJ_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(9, this.unk3300ILELLFNPDFJ_.get(i));
             }
-            for (int i2 = 0; i2 < this.unk3300ILELLFNPDFJ_.size(); i2++) {
-                size2 += CodedOutputStream.computeMessageSize(15, this.unk3300ILELLFNPDFJ_.get(i2));
+            for (int i2 = 0; i2 < this.unk3300JHKOMCFHAOG_.size(); i2++) {
+                size2 += CodedOutputStream.computeMessageSize(11, this.unk3300JHKOMCFHAOG_.get(i2));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -290,7 +290,7 @@ public final class WinterCampAcceptItemResultInfoOuterClass {
                 return equals(obj);
             }
             WinterCampAcceptItemResultInfo other = (WinterCampAcceptItemResultInfo) obj;
-            return getUnk3300ILELLFNPDFJList().equals(other.getUnk3300ILELLFNPDFJList()) && getUnk3300JHKOMCFHAOGList().equals(other.getUnk3300JHKOMCFHAOGList()) && getUid() == other.getUid() && this.unknownFields.equals(other.unknownFields);
+            return getUid() == other.getUid() && getUnk3300ILELLFNPDFJList().equals(other.getUnk3300ILELLFNPDFJList()) && getUnk3300JHKOMCFHAOGList().equals(other.getUnk3300JHKOMCFHAOGList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -298,14 +298,14 @@ public final class WinterCampAcceptItemResultInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getUid();
             if (getUnk3300ILELLFNPDFJCount() > 0) {
-                hash = (53 * ((37 * hash) + 15)) + getUnk3300ILELLFNPDFJList().hashCode();
+                hash = (53 * ((37 * hash) + 9)) + getUnk3300ILELLFNPDFJList().hashCode();
             }
             if (getUnk3300JHKOMCFHAOGCount() > 0) {
-                hash = (53 * ((37 * hash) + 13)) + getUnk3300JHKOMCFHAOGList().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + getUnk3300JHKOMCFHAOGList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 9)) + getUid())) + this.unknownFields.hashCode();
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -385,9 +385,9 @@ public final class WinterCampAcceptItemResultInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WinterCampAcceptItemResultInfoOuterClass$WinterCampAcceptItemResultInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements WinterCampAcceptItemResultInfoOrBuilder {
             private int bitField0_;
+            private int uid_;
             private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> unk3300ILELLFNPDFJBuilder_;
             private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> unk3300JHKOMCFHAOGBuilder_;
-            private int uid_;
             private List<ItemParamOuterClass.ItemParam> unk3300ILELLFNPDFJ_ = Collections.emptyList();
             private List<ItemParamOuterClass.ItemParam> unk3300JHKOMCFHAOG_ = Collections.emptyList();
 
@@ -397,7 +397,7 @@ public final class WinterCampAcceptItemResultInfoOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return WinterCampAcceptItemResultInfoOuterClass.f949x51c89491.ensureFieldAccessorsInitialized(WinterCampAcceptItemResultInfo.class, Builder.class);
+                return WinterCampAcceptItemResultInfoOuterClass.f914x51c89491.ensureFieldAccessorsInitialized(WinterCampAcceptItemResultInfo.class, Builder.class);
             }
 
             private Builder() {
@@ -419,6 +419,7 @@ public final class WinterCampAcceptItemResultInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.uid_ = 0;
                 if (this.unk3300ILELLFNPDFJBuilder_ == null) {
                     this.unk3300ILELLFNPDFJ_ = Collections.emptyList();
                     this.bitField0_ &= -2;
@@ -431,7 +432,6 @@ public final class WinterCampAcceptItemResultInfoOuterClass {
                 } else {
                     this.unk3300JHKOMCFHAOGBuilder_.clear();
                 }
-                this.uid_ = 0;
                 return this;
             }
 
@@ -458,6 +458,7 @@ public final class WinterCampAcceptItemResultInfoOuterClass {
             public WinterCampAcceptItemResultInfo buildPartial() {
                 WinterCampAcceptItemResultInfo result = new WinterCampAcceptItemResultInfo(this);
                 int i = this.bitField0_;
+                result.uid_ = this.uid_;
                 if (this.unk3300ILELLFNPDFJBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
                         this.unk3300ILELLFNPDFJ_ = Collections.unmodifiableList(this.unk3300ILELLFNPDFJ_);
@@ -476,7 +477,6 @@ public final class WinterCampAcceptItemResultInfoOuterClass {
                 } else {
                     result.unk3300JHKOMCFHAOG_ = this.unk3300JHKOMCFHAOGBuilder_.build();
                 }
-                result.uid_ = this.uid_;
                 onBuilt();
                 return result;
             }
@@ -524,6 +524,9 @@ public final class WinterCampAcceptItemResultInfoOuterClass {
                 if (other == WinterCampAcceptItemResultInfo.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getUid() != 0) {
+                    setUid(other.getUid());
+                }
                 if (this.unk3300ILELLFNPDFJBuilder_ == null) {
                     if (!other.unk3300ILELLFNPDFJ_.isEmpty()) {
                         if (this.unk3300ILELLFNPDFJ_.isEmpty()) {
@@ -568,9 +571,6 @@ public final class WinterCampAcceptItemResultInfoOuterClass {
                         this.unk3300JHKOMCFHAOGBuilder_.addAllMessages(other.unk3300JHKOMCFHAOG_);
                     }
                 }
-                if (other.getUid() != 0) {
-                    setUid(other.getUid());
-                }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
                 return this;
@@ -601,6 +601,23 @@ public final class WinterCampAcceptItemResultInfoOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfoOrBuilder
+            public int getUid() {
+                return this.uid_;
+            }
+
+            public Builder setUid(int value) {
+                this.uid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUid() {
+                this.uid_ = 0;
+                onChanged();
+                return this;
             }
 
             private void ensureUnk3300ILELLFNPDFJIsMutable() {
@@ -953,23 +970,6 @@ public final class WinterCampAcceptItemResultInfoOuterClass {
                     this.unk3300JHKOMCFHAOG_ = null;
                 }
                 return this.unk3300JHKOMCFHAOGBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.WinterCampAcceptItemResultInfoOuterClass.WinterCampAcceptItemResultInfoOrBuilder
-            public int getUid() {
-                return this.uid_;
-            }
-
-            public Builder setUid(int value) {
-                this.uid_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUid() {
-                this.uid_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

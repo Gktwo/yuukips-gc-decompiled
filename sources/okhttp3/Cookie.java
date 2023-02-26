@@ -2,7 +2,6 @@ package okhttp3;
 
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import dev.morphia.mapping.Mapper;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -164,7 +163,7 @@ public final class Cookie {
     @JvmName(name = "-deprecated_name")
     @NotNull
     /* renamed from: -deprecated_name  reason: not valid java name */
-    public final String m9176deprecated_name() {
+    public final String m9173deprecated_name() {
         return this.name;
     }
 
@@ -172,28 +171,28 @@ public final class Cookie {
     @JvmName(name = "-deprecated_value")
     @NotNull
     /* renamed from: -deprecated_value  reason: not valid java name */
-    public final String m9177deprecated_value() {
+    public final String m9174deprecated_value() {
         return this.value;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "persistent", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_persistent")
     /* renamed from: -deprecated_persistent  reason: not valid java name */
-    public final boolean m9178deprecated_persistent() {
+    public final boolean m9175deprecated_persistent() {
         return this.persistent;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "expiresAt", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_expiresAt")
     /* renamed from: -deprecated_expiresAt  reason: not valid java name */
-    public final long m9179deprecated_expiresAt() {
+    public final long m9176deprecated_expiresAt() {
         return this.expiresAt;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "hostOnly", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_hostOnly")
     /* renamed from: -deprecated_hostOnly  reason: not valid java name */
-    public final boolean m9180deprecated_hostOnly() {
+    public final boolean m9177deprecated_hostOnly() {
         return this.hostOnly;
     }
 
@@ -201,7 +200,7 @@ public final class Cookie {
     @JvmName(name = "-deprecated_domain")
     @NotNull
     /* renamed from: -deprecated_domain  reason: not valid java name */
-    public final String m9181deprecated_domain() {
+    public final String m9178deprecated_domain() {
         return this.domain;
     }
 
@@ -209,21 +208,21 @@ public final class Cookie {
     @JvmName(name = "-deprecated_path")
     @NotNull
     /* renamed from: -deprecated_path  reason: not valid java name */
-    public final String m9182deprecated_path() {
+    public final String m9179deprecated_path() {
         return this.path;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "httpOnly", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_httpOnly")
     /* renamed from: -deprecated_httpOnly  reason: not valid java name */
-    public final boolean m9183deprecated_httpOnly() {
+    public final boolean m9180deprecated_httpOnly() {
         return this.httpOnly;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "secure", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_secure")
     /* renamed from: -deprecated_secure  reason: not valid java name */
-    public final boolean m9184deprecated_secure() {
+    public final boolean m9181deprecated_secure() {
         return this.secure;
     }
 
@@ -484,7 +483,7 @@ public final class Cookie {
                 year += 1900;
             }
             if (0 <= year ? year < 70 : false) {
-                year += PacketOpcodes.SetCoopChapterViewedRsp;
+                year += 2000;
             }
             if (!(year >= 1601)) {
                 throw new IllegalArgumentException("Failed requirement.".toString());

@@ -20,10 +20,10 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
     static final ShortImmutableList EMPTY = new ShortImmutableList(ShortArrays.EMPTY_ARRAY);
 
     /* renamed from: a */
-    private final short[] f3044a;
+    private final short[] f3008a;
 
     public ShortImmutableList(short[] a) {
-        this.f3044a = a;
+        this.f3008a = a;
     }
 
     public ShortImmutableList(Collection<? extends Short> c) {
@@ -36,12 +36,12 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
 
     public ShortImmutableList(ShortList l) {
         this(l.isEmpty() ? ShortArrays.EMPTY_ARRAY : new short[l.size()]);
-        l.getElements(0, this.f3044a, 0, l.size());
+        l.getElements(0, this.f3008a, 0, l.size());
     }
 
     public ShortImmutableList(short[] a, int offset, int length) {
         this(length == 0 ? ShortArrays.EMPTY_ARRAY : new short[length]);
-        System.arraycopy(a, offset, this.f3044a, 0, length);
+        System.arraycopy(a, offset, this.f3008a, 0, length);
     }
 
     public ShortImmutableList(ShortIterator i) {
@@ -60,17 +60,17 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
 
     @Override // p014it.unimi.dsi.fastutil.shorts.ShortList
     public short getShort(int index) {
-        if (index < this.f3044a.length) {
-            return this.f3044a[index];
+        if (index < this.f3008a.length) {
+            return this.f3008a[index];
         }
-        throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.f3044a.length + ")");
+        throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.f3008a.length + ")");
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, p014it.unimi.dsi.fastutil.shorts.ShortList
     public int indexOf(short k) {
-        int size = this.f3044a.length;
+        int size = this.f3008a.length;
         for (int i = 0; i < size; i++) {
-            if (k == this.f3044a[i]) {
+            if (k == this.f3008a[i]) {
                 return i;
             }
         }
@@ -79,50 +79,50 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, p014it.unimi.dsi.fastutil.shorts.ShortList
     public int lastIndexOf(short k) {
-        int i = this.f3044a.length;
+        int i = this.f3008a.length;
         do {
             i--;
             if (i == 0) {
                 return -1;
             }
-        } while (k != this.f3044a[i]);
+        } while (k != this.f3008a[i]);
         return i;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public int size() {
-        return this.f3044a.length;
+        return this.f3008a.length;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List, p014it.unimi.dsi.fastutil.Stack
     public boolean isEmpty() {
-        return this.f3044a.length == 0;
+        return this.f3008a.length == 0;
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, p014it.unimi.dsi.fastutil.shorts.ShortList
     public void getElements(int from, short[] a, int offset, int length) {
         ShortArrays.ensureOffsetLength(a, offset, length);
-        System.arraycopy(this.f3044a, from, a, offset, length);
+        System.arraycopy(this.f3008a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, p014it.unimi.dsi.fastutil.shorts.ShortIterable
     public void forEach(ShortConsumer action) {
-        for (int i = 0; i < this.f3044a.length; i++) {
-            action.accept(this.f3044a[i]);
+        for (int i = 0; i < this.f3008a.length; i++) {
+            action.accept(this.f3008a[i]);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, p014it.unimi.dsi.fastutil.shorts.AbstractShortCollection, p014it.unimi.dsi.fastutil.shorts.ShortCollection
     public short[] toShortArray() {
-        return (short[]) this.f3044a.clone();
+        return (short[]) this.f3008a.clone();
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, p014it.unimi.dsi.fastutil.shorts.AbstractShortCollection, p014it.unimi.dsi.fastutil.shorts.ShortCollection
     public short[] toArray(short[] a) {
         if (a == null || a.length < size()) {
-            a = new short[this.f3044a.length];
+            a = new short[this.f3008a.length];
         }
-        System.arraycopy(this.f3044a, 0, a, 0, a.length);
+        System.arraycopy(this.f3008a, 0, a, 0, a.length);
         return a;
     }
 
@@ -140,7 +140,7 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
 
             @Override // java.util.Iterator, java.util.ListIterator
             public boolean hasNext() {
-                return this.pos < ShortImmutableList.this.f3044a.length;
+                return this.pos < ShortImmutableList.this.f3008a.length;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -153,7 +153,7 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                short[] sArr = ShortImmutableList.this.f3044a;
+                short[] sArr = ShortImmutableList.this.f3008a;
                 int i = this.pos;
                 this.pos = i + 1;
                 return sArr[i];
@@ -164,7 +164,7 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                short[] sArr = ShortImmutableList.this.f3044a;
+                short[] sArr = ShortImmutableList.this.f3008a;
                 int i = this.pos - 1;
                 this.pos = i;
                 return sArr[i];
@@ -182,8 +182,8 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
 
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
             public void forEachRemaining(ShortConsumer action) {
-                while (this.pos < ShortImmutableList.this.f3044a.length) {
-                    short[] sArr = ShortImmutableList.this.f3044a;
+                while (this.pos < ShortImmutableList.this.f3008a.length) {
+                    short[] sArr = ShortImmutableList.this.f3008a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(sArr[i]);
@@ -210,7 +210,7 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
                 if (n < 0) {
                     throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                 }
-                int remaining = ShortImmutableList.this.f3044a.length - this.pos;
+                int remaining = ShortImmutableList.this.f3008a.length - this.pos;
                 if (n < remaining) {
                     this.pos -= n;
                 } else {
@@ -225,12 +225,12 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
                 if (n < 0) {
                     throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                 }
-                int remaining = ShortImmutableList.this.f3044a.length - this.pos;
+                int remaining = ShortImmutableList.this.f3008a.length - this.pos;
                 if (n < remaining) {
                     this.pos += n;
                 } else {
                     n = remaining;
-                    this.pos = ShortImmutableList.this.f3044a.length;
+                    this.pos = ShortImmutableList.this.f3008a.length;
                 }
                 return n;
             }
@@ -250,7 +250,7 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
         }
 
         public Spliterator(ShortImmutableList shortImmutableList) {
-            this(0, shortImmutableList.f3044a.length);
+            this(0, shortImmutableList.f3008a.length);
         }
 
         private Spliterator(int pos, int max) {
@@ -276,7 +276,7 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
             if (this.pos >= this.max) {
                 return false;
             }
-            short[] sArr = ShortImmutableList.this.f3044a;
+            short[] sArr = ShortImmutableList.this.f3008a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(sArr[i]);
@@ -285,7 +285,7 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
 
         public void forEachRemaining(ShortConsumer action) {
             while (this.pos < this.max) {
-                action.accept(ShortImmutableList.this.f3044a[this.pos]);
+                action.accept(ShortImmutableList.this.f3008a[this.pos]);
                 this.pos++;
             }
         }
@@ -335,28 +335,28 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
         final int from;
 
         /* renamed from: to */
-        final int f3045to;
+        final int f3009to;
 
         /* renamed from: a */
-        final transient short[] f3046a;
+        final transient short[] f3010a;
 
         ImmutableSubList(ShortImmutableList innerList, int from, int to) {
             this.innerList = innerList;
             this.from = from;
-            this.f3045to = to;
-            this.f3046a = innerList.f3044a;
+            this.f3009to = to;
+            this.f3010a = innerList.f3008a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortList
         public short getShort(int index) {
             ensureRestrictedIndex(index);
-            return this.f3046a[index + this.from];
+            return this.f3010a[index + this.from];
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, p014it.unimi.dsi.fastutil.shorts.ShortList
         public int indexOf(short k) {
-            for (int i = this.from; i < this.f3045to; i++) {
-                if (k == this.f3046a[i]) {
+            for (int i = this.from; i < this.f3009to; i++) {
+                if (k == this.f3010a[i]) {
                     return i - this.from;
                 }
             }
@@ -365,46 +365,46 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
 
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, p014it.unimi.dsi.fastutil.shorts.ShortList
         public int lastIndexOf(short k) {
-            int i = this.f3045to;
+            int i = this.f3009to;
             do {
                 i--;
                 if (i == this.from) {
                     return -1;
                 }
-            } while (k != this.f3046a[i]);
+            } while (k != this.f3010a[i]);
             return i - this.from;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public int size() {
-            return this.f3045to - this.from;
+            return this.f3009to - this.from;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List, p014it.unimi.dsi.fastutil.Stack
         public boolean isEmpty() {
-            return this.f3045to <= this.from;
+            return this.f3009to <= this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, p014it.unimi.dsi.fastutil.shorts.ShortList
         public void getElements(int fromSublistIndex, short[] a, int offset, int length) {
             ShortArrays.ensureOffsetLength(a, offset, length);
             ensureRestrictedIndex(fromSublistIndex);
-            if (this.from + length > this.f3045to) {
+            if (this.from + length > this.f3009to) {
                 throw new IndexOutOfBoundsException("Final index " + (this.from + length) + " (startingIndex: " + this.from + " + length: " + length + ") is greater then list length " + size());
             }
-            System.arraycopy(this.f3046a, fromSublistIndex + this.from, a, offset, length);
+            System.arraycopy(this.f3010a, fromSublistIndex + this.from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, p014it.unimi.dsi.fastutil.shorts.ShortIterable
         public void forEach(ShortConsumer action) {
-            for (int i = this.from; i < this.f3045to; i++) {
-                action.accept(this.f3046a[i]);
+            for (int i = this.from; i < this.f3009to; i++) {
+                action.accept(this.f3010a[i]);
             }
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, p014it.unimi.dsi.fastutil.shorts.AbstractShortCollection, p014it.unimi.dsi.fastutil.shorts.ShortCollection
         public short[] toShortArray() {
-            return Arrays.copyOfRange(this.f3046a, this.from, this.f3045to);
+            return Arrays.copyOfRange(this.f3010a, this.from, this.f3009to);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, p014it.unimi.dsi.fastutil.shorts.AbstractShortCollection, p014it.unimi.dsi.fastutil.shorts.ShortCollection
@@ -412,7 +412,7 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
             if (a == null || a.length < size()) {
                 a = new short[size()];
             }
-            System.arraycopy(this.f3046a, this.from, a, 0, size());
+            System.arraycopy(this.f3010a, this.from, a, 0, size());
             return a;
         }
 
@@ -430,7 +430,7 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
 
                 @Override // java.util.Iterator, java.util.ListIterator
                 public boolean hasNext() {
-                    return this.pos < ImmutableSubList.this.f3045to;
+                    return this.pos < ImmutableSubList.this.f3009to;
                 }
 
                 @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -443,7 +443,7 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
                     if (!hasNext()) {
                         throw new NoSuchElementException();
                     }
-                    short[] sArr = ImmutableSubList.this.f3046a;
+                    short[] sArr = ImmutableSubList.this.f3010a;
                     int i = this.pos;
                     this.pos = i + 1;
                     return sArr[i + ImmutableSubList.this.from];
@@ -454,7 +454,7 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
                     if (!hasPrevious()) {
                         throw new NoSuchElementException();
                     }
-                    short[] sArr = ImmutableSubList.this.f3046a;
+                    short[] sArr = ImmutableSubList.this.f3010a;
                     int i = this.pos - 1;
                     this.pos = i;
                     return sArr[i + ImmutableSubList.this.from];
@@ -472,8 +472,8 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
 
                 @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
                 public void forEachRemaining(ShortConsumer action) {
-                    while (this.pos < ImmutableSubList.this.f3045to) {
-                        short[] sArr = ImmutableSubList.this.f3046a;
+                    while (this.pos < ImmutableSubList.this.f3009to) {
+                        short[] sArr = ImmutableSubList.this.f3010a;
                         int i = this.pos;
                         this.pos = i + 1;
                         action.accept(sArr[i + ImmutableSubList.this.from]);
@@ -500,7 +500,7 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
                     if (n < 0) {
                         throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                     }
-                    int remaining = ImmutableSubList.this.f3045to - this.pos;
+                    int remaining = ImmutableSubList.this.f3009to - this.pos;
                     if (n < remaining) {
                         this.pos -= n;
                     } else {
@@ -515,12 +515,12 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
                     if (n < 0) {
                         throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                     }
-                    int remaining = ImmutableSubList.this.f3045to - this.pos;
+                    int remaining = ImmutableSubList.this.f3009to - this.pos;
                     if (n < remaining) {
                         this.pos += n;
                     } else {
                         n = remaining;
-                        this.pos = ImmutableSubList.this.f3045to;
+                        this.pos = ImmutableSubList.this.f3009to;
                     }
                     return n;
                 }
@@ -532,7 +532,7 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
         /* loaded from: grasscutter.jar:it/unimi/dsi/fastutil/shorts/ShortImmutableList$ImmutableSubList$SubListSpliterator.class */
         public final class SubListSpliterator extends ShortSpliterators.EarlyBindingSizeIndexBasedSpliterator {
             SubListSpliterator() {
-                super(ImmutableSubList.this.from, ImmutableSubList.this.f3045to);
+                super(ImmutableSubList.this.from, ImmutableSubList.this.f3009to);
             }
 
             private SubListSpliterator(int pos, int maxPos) {
@@ -541,7 +541,7 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
 
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortSpliterators.AbstractIndexBasedSpliterator
             protected final short get(int i) {
-                return ImmutableSubList.this.f3046a[i];
+                return ImmutableSubList.this.f3010a[i];
             }
 
             /* access modifiers changed from: protected */
@@ -555,7 +555,7 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
                 if (this.pos >= this.maxPos) {
                     return false;
                 }
-                short[] sArr = ImmutableSubList.this.f3046a;
+                short[] sArr = ImmutableSubList.this.f3010a;
                 int i = this.pos;
                 this.pos = i + 1;
                 action.accept(sArr[i]);
@@ -566,7 +566,7 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
             public void forEachRemaining(ShortConsumer action) {
                 int max = this.maxPos;
                 while (this.pos < max) {
-                    short[] sArr = ImmutableSubList.this.f3046a;
+                    short[] sArr = ImmutableSubList.this.f3010a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(sArr[i]);
@@ -585,7 +585,7 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
         }
 
         boolean contentsEquals(short[] otherA, int otherAFrom, int otherATo) {
-            if (this.f3046a == otherA && this.from == otherAFrom && this.f3045to == otherATo) {
+            if (this.f3010a == otherA && this.from == otherAFrom && this.f3009to == otherATo) {
                 return true;
             }
             if (otherATo - otherAFrom != size()) {
@@ -593,10 +593,10 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
             }
             int pos = this.from;
             int otherPos = otherAFrom;
-            while (pos < this.f3045to) {
+            while (pos < this.f3009to) {
                 pos++;
                 otherPos++;
-                if (this.f3046a[pos] != otherA[otherPos]) {
+                if (this.f3010a[pos] != otherA[otherPos]) {
                     return false;
                 }
             }
@@ -613,23 +613,23 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
             }
             if (o instanceof ShortImmutableList) {
                 ShortImmutableList other = (ShortImmutableList) o;
-                return contentsEquals(other.f3044a, 0, other.size());
+                return contentsEquals(other.f3008a, 0, other.size());
             } else if (!(o instanceof ImmutableSubList)) {
                 return equals(o);
             } else {
                 ImmutableSubList other2 = (ImmutableSubList) o;
-                return contentsEquals(other2.f3046a, other2.from, other2.f3045to);
+                return contentsEquals(other2.f3010a, other2.from, other2.f3009to);
             }
         }
 
         int contentsCompareTo(short[] otherA, int otherAFrom, int otherATo) {
-            if (this.f3046a == otherA && this.from == otherAFrom && this.f3045to == otherATo) {
+            if (this.f3010a == otherA && this.from == otherAFrom && this.f3009to == otherATo) {
                 return 0;
             }
             int i = this.from;
             int j = otherAFrom;
-            while (i < this.f3045to && i < otherATo) {
-                int r = Short.compare(this.f3046a[i], otherA[j]);
+            while (i < this.f3009to && i < otherATo) {
+                int r = Short.compare(this.f3010a[i], otherA[j]);
                 if (r != 0) {
                     return r;
                 }
@@ -639,25 +639,25 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
             if (i < otherATo) {
                 return -1;
             }
-            return i < this.f3045to ? 1 : 0;
+            return i < this.f3009to ? 1 : 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList
         public int compareTo(List<? extends Short> l) {
             if (l instanceof ShortImmutableList) {
                 ShortImmutableList other = (ShortImmutableList) l;
-                return contentsCompareTo(other.f3044a, 0, other.size());
+                return contentsCompareTo(other.f3008a, 0, other.size());
             } else if (!(l instanceof ImmutableSubList)) {
                 return compareTo(l);
             } else {
                 ImmutableSubList other2 = (ImmutableSubList) l;
-                return contentsCompareTo(other2.f3046a, other2.from, other2.f3045to);
+                return contentsCompareTo(other2.f3010a, other2.from, other2.f3009to);
             }
         }
 
         private Object readResolve() throws ObjectStreamException {
             try {
-                return this.innerList.subList(this.from, this.f3045to);
+                return this.innerList.subList(this.from, this.f3009to);
             } catch (IllegalArgumentException | IndexOutOfBoundsException ex) {
                 throw ((InvalidObjectException) new InvalidObjectException(ex.getMessage()).initCause(ex));
             }
@@ -701,13 +701,13 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
     }
 
     public boolean equals(ShortImmutableList l) {
-        if (l == this || this.f3044a == l.f3044a) {
+        if (l == this || this.f3008a == l.f3008a) {
             return true;
         }
         if (size() != l.size()) {
             return false;
         }
-        return Arrays.equals(this.f3044a, l.f3044a);
+        return Arrays.equals(this.f3008a, l.f3008a);
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, java.util.Collection, java.lang.Object, java.util.List
@@ -728,13 +728,13 @@ public class ShortImmutableList extends ShortLists.ImmutableListBase implements 
     }
 
     public int compareTo(ShortImmutableList l) {
-        if (this.f3044a == l.f3044a) {
+        if (this.f3008a == l.f3008a) {
             return 0;
         }
         int s1 = size();
         int s2 = l.size();
-        short[] a1 = this.f3044a;
-        short[] a2 = l.f3044a;
+        short[] a1 = this.f3008a;
+        short[] a2 = l.f3008a;
         int i = 0;
         while (i < s1 && i < s2) {
             int r = Short.compare(a1[i], a2[i]);

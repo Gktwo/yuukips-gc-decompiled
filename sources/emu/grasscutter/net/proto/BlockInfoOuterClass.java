@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BlockInfoOuterClass.class */
 public final class BlockInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000fBlockInfo.proto\"W\n\tBlockInfo\u0012\u0010\n\bblock_id\u0018\u0001 \u0001(\r\u0012\u0014\n\fdata_version\u0018\u0002 \u0001(\r\u0012\u0010\n\bbin_data\u0018\u0003 \u0001(\f\u0012\u0010\n\bis_dirty\u0018\u0004 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000fBlockInfo.proto\"S\n\tBlockInfo\u0012\u000f\n\u0007blockId\u0018\u0001 \u0001(\r\u0012\u0013\n\u000bdataVersion\u0018\u0002 \u0001(\r\u0012\u000f\n\u0007binData\u0018\u0003 \u0001(\f\u0012\u000f\n\u0007isDirty\u0018\u0004 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_BlockInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_BlockInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BlockInfo_descriptor, new String[]{"BlockId", "DataVersion", "BinData", "IsDirty"});
 
@@ -48,13 +48,13 @@ public final class BlockInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BlockInfoOuterClass$BlockInfo.class */
     public static final class BlockInfo extends GeneratedMessageV3 implements BlockInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int BLOCK_ID_FIELD_NUMBER = 1;
+        public static final int BLOCKID_FIELD_NUMBER = 1;
         private int blockId_;
-        public static final int DATA_VERSION_FIELD_NUMBER = 2;
+        public static final int DATAVERSION_FIELD_NUMBER = 2;
         private int dataVersion_;
-        public static final int BIN_DATA_FIELD_NUMBER = 3;
+        public static final int BINDATA_FIELD_NUMBER = 3;
         private ByteString binData_;
-        public static final int IS_DIRTY_FIELD_NUMBER = 4;
+        public static final int ISDIRTY_FIELD_NUMBER = 4;
         private boolean isDirty_;
         private byte memoizedIsInitialized;
         private static final BlockInfo DEFAULT_INSTANCE = new BlockInfo();

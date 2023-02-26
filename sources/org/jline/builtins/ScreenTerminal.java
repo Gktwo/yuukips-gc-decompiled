@@ -22,10 +22,10 @@ public class ScreenTerminal {
     private boolean eol;
 
     /* renamed from: cx */
-    private int f3203cx;
+    private int f3167cx;
 
     /* renamed from: cy */
-    private int f3204cy;
+    private int f3168cy;
     private long[][] screen;
     private long[][] screen2;
     private State vt100_parse_state;
@@ -77,7 +77,7 @@ public class ScreenTerminal {
 
     public ScreenTerminal(int width, int height) {
         this.vt100_parse_state = State.None;
-        this.vt100_charset_graph = new int[]{9674, 8230, 8226, 63, 182, 63, 176, 177, 63, 63, 43, 43, 43, 43, 43, 175, Typography.mdash, Typography.mdash, Typography.mdash, 95, 43, 43, 43, 43, 124, 8804, Typography.greaterOrEqual, 182, Typography.notEqual, 163, 183, 127};
+        this.vt100_charset_graph = new int[]{9674, Typography.ellipsis, Typography.bullet, 63, 182, 63, 176, 177, 63, 63, 43, 43, 43, 43, 43, 175, Typography.mdash, Typography.mdash, Typography.mdash, 95, 43, 43, 43, 43, 124, 8804, Typography.greaterOrEqual, 182, 8800, 163, 183, 127};
         this.vt100_charset_g = new int[]{0, 0};
         this.history = new ArrayList();
         this.dirty = new AtomicBoolean(true);
@@ -131,8 +131,8 @@ public class ScreenTerminal {
         }
         this.scroll_area_y0 = 0;
         this.scroll_area_y1 = this.height;
-        this.f3203cx = 0;
-        this.f3204cy = 0;
+        this.f3167cx = 0;
+        this.f3168cy = 0;
         this.tab_stops = new ArrayList();
         for (int i2 = 7; i2 < this.width; i2 += 8) {
             this.tab_stops.add(Integer.valueOf(i2));
@@ -241,7 +241,7 @@ public class ScreenTerminal {
 
     private void scroll_line_right(int y, int x, int n) {
         if (x < this.width) {
-            int n2 = Math.min(this.width - this.f3203cx, n);
+            int n2 = Math.min(this.width - this.f3167cx, n);
             poke(y, x + n2, peek(y, x, y + 1, this.width - n2));
             clear(y, x, y + 1, x + n2);
         }
@@ -253,7 +253,7 @@ public class ScreenTerminal {
 
     private void scroll_line_left(int y, int x, int n) {
         if (x < this.width) {
-            int n2 = Math.min(this.width - this.f3203cx, n);
+            int n2 = Math.min(this.width - this.f3167cx, n);
             poke(y, x, peek(y, x + n2, y + 1, this.width));
             clear(y, this.width - n2, y + 1, this.width);
         }
@@ -262,8 +262,8 @@ public class ScreenTerminal {
     private int[] cursor_line_width(int next_char) {
         int wx = utf8_charwidth(next_char);
         int lx = 0;
-        for (int x = 0; x < Math.min(this.f3203cx, this.width); x++) {
-            wx += utf8_charwidth((int) (peek(this.f3204cy, x, this.f3204cy + 1, x + 1)[0] & 4294967295L));
+        for (int x = 0; x < Math.min(this.f3167cx, this.width); x++) {
+            wx += utf8_charwidth((int) (peek(this.f3168cy, x, this.f3168cy + 1, x + 1)[0] & 4294967295L));
             lx++;
         }
         return new int[]{wx, lx};
@@ -274,7 +274,7 @@ public class ScreenTerminal {
     }
 
     private void cursor_up(int n) {
-        this.f3204cy = Math.max(this.scroll_area_y0, this.f3204cy - n);
+        this.f3168cy = Math.max(this.scroll_area_y0, this.f3168cy - n);
         setDirty();
     }
 
@@ -283,7 +283,7 @@ public class ScreenTerminal {
     }
 
     private void cursor_down(int n) {
-        this.f3204cy = Math.min(this.scroll_area_y1 - 1, this.f3204cy + n);
+        this.f3168cy = Math.min(this.scroll_area_y1 - 1, this.f3168cy + n);
         setDirty();
     }
 
@@ -293,7 +293,7 @@ public class ScreenTerminal {
 
     private void cursor_left(int n) {
         this.eol = false;
-        this.f3203cx = Math.max(0, this.f3203cx - n);
+        this.f3167cx = Math.max(0, this.f3167cx - n);
         setDirty();
     }
 
@@ -302,19 +302,19 @@ public class ScreenTerminal {
     }
 
     private void cursor_right(int n) {
-        this.eol = this.f3203cx + n >= this.width;
-        this.f3203cx = Math.min(this.width - 1, this.f3203cx + n);
+        this.eol = this.f3167cx + n >= this.width;
+        this.f3167cx = Math.min(this.width - 1, this.f3167cx + n);
         setDirty();
     }
 
     private void cursor_set_x(int x) {
         this.eol = false;
-        this.f3203cx = Math.max(0, x);
+        this.f3167cx = Math.max(0, x);
         setDirty();
     }
 
     private void cursor_set_y(int y) {
-        this.f3204cy = Math.max(0, Math.min(this.height - 1, y));
+        this.f3168cy = Math.max(0, Math.min(this.height - 1, y));
         setDirty();
     }
 
@@ -324,7 +324,7 @@ public class ScreenTerminal {
     }
 
     private void ctrl_BS() {
-        cursor_set(Math.max(this.scroll_area_y0, this.f3204cy + ((this.f3203cx - 1) / this.width)), (this.f3203cx - 1) % this.width);
+        cursor_set(Math.max(this.scroll_area_y0, this.f3168cy + ((this.f3167cx - 1) / this.width)), (this.f3167cx - 1) % this.width);
     }
 
     private void ctrl_HT() {
@@ -332,13 +332,13 @@ public class ScreenTerminal {
     }
 
     private void ctrl_HT(int n) {
-        if (n > 0 && this.f3203cx >= this.width) {
+        if (n > 0 && this.f3167cx >= this.width) {
             return;
         }
-        if (n > 0 || this.f3203cx != 0) {
+        if (n > 0 || this.f3167cx != 0) {
             int ts = -1;
             for (int i = 0; i < this.tab_stops.size(); i++) {
-                if (this.f3203cx >= this.tab_stops.get(i).intValue()) {
+                if (this.f3167cx >= this.tab_stops.get(i).intValue()) {
                     ts = i;
                 }
             }
@@ -355,7 +355,7 @@ public class ScreenTerminal {
         if (this.vt100_mode_lfnewline) {
             ctrl_CR();
         }
-        if (this.f3204cy == this.scroll_area_y1 - 1) {
+        if (this.f3168cy == this.scroll_area_y1 - 1) {
             scroll_area_up(this.scroll_area_y0, this.scroll_area_y1);
         } else {
             cursor_down();
@@ -393,18 +393,18 @@ public class ScreenTerminal {
                 ctrl_CR();
                 ctrl_LF();
             } else {
-                this.f3203cx = cursor_line_width(c)[1] - 1;
+                this.f3167cx = cursor_line_width(c)[1] - 1;
             }
         }
         if (this.vt100_mode_insert) {
-            scroll_line_right(this.f3204cy, this.f3203cx);
+            scroll_line_right(this.f3168cy, this.f3167cx);
         }
         if (this.vt100_charset_is_single_shift) {
             this.vt100_charset_is_single_shift = false;
         } else if (this.vt100_charset_is_graphical && (c & 65504) == 96) {
             c = this.vt100_charset_graph[c - 96];
         }
-        poke(this.f3204cy, this.f3203cx, new long[]{this.attr | ((long) c)});
+        poke(this.f3168cy, this.f3167cx, new long[]{this.attr | ((long) c)});
         cursor_right();
     }
 
@@ -433,7 +433,7 @@ public class ScreenTerminal {
                         break;
                     }
                     break;
-                case RET_WIDGET_TOY_CRYSTAL_ENERGY_NOT_ENOUGH_VALUE:
+                case 1598:
                     if (m.equals("20")) {
                         c = 1;
                         break;
@@ -445,7 +445,7 @@ public class ScreenTerminal {
                         break;
                     }
                     break;
-                case RET_ORDER_INFO_NOT_EXIST_VALUE:
+                case 2004:
                     if (m.equals("?3")) {
                         c = 3;
                         break;
@@ -457,13 +457,13 @@ public class ScreenTerminal {
                         break;
                     }
                     break;
-                case RET_PRODUCT_NOT_EXIST_VALUE:
+                case 2007:
                     if (m.equals("?6")) {
                         c = 5;
                         break;
                     }
                     break;
-                case 2008:
+                case RET_UNFINISH_ORDER_VALUE:
                     if (m.equals("?7")) {
                         c = 6;
                         break;
@@ -546,11 +546,11 @@ public class ScreenTerminal {
                         this.vt100_saved = this.vt100_saved2;
                         this.vt100_saved2 = map;
                         int c2 = this.vt100_alternate_saved_cx;
-                        this.vt100_alternate_saved_cx = this.f3203cx;
-                        this.f3203cx = Math.min(c2, this.width - 1);
+                        this.vt100_alternate_saved_cx = this.f3167cx;
+                        this.f3167cx = Math.min(c2, this.width - 1);
                         int c3 = this.vt100_alternate_saved_cy;
-                        this.vt100_alternate_saved_cy = this.f3204cy;
-                        this.f3204cy = Math.min(c3, this.height - 1);
+                        this.vt100_alternate_saved_cy = this.f3168cy;
+                        this.f3168cy = Math.min(c3, this.height - 1);
                     }
                     this.vt100_mode_alt_screen = state;
                     break;
@@ -619,8 +619,8 @@ public class ScreenTerminal {
 
     private void esc_DECSC() {
         this.vt100_saved = new HashMap();
-        this.vt100_saved.put("cx", Integer.valueOf(this.f3203cx));
-        this.vt100_saved.put("cy", Integer.valueOf(this.f3204cy));
+        this.vt100_saved.put("cx", Integer.valueOf(this.f3167cx));
+        this.vt100_saved.put("cy", Integer.valueOf(this.f3168cy));
         this.vt100_saved.put("attr", Long.valueOf(this.attr));
         this.vt100_saved.put("vt100_charset_g_sel", Integer.valueOf(this.vt100_charset_g_sel));
         this.vt100_saved.put("vt100_charset_g", this.vt100_charset_g);
@@ -629,8 +629,8 @@ public class ScreenTerminal {
     }
 
     private void esc_DECRC() {
-        this.f3203cx = ((Integer) this.vt100_saved.get("cx")).intValue();
-        this.f3204cy = ((Integer) this.vt100_saved.get("cy")).intValue();
+        this.f3167cx = ((Integer) this.vt100_saved.get("cx")).intValue();
+        this.f3168cy = ((Integer) this.vt100_saved.get("cy")).intValue();
         this.attr = ((Long) this.vt100_saved.get("attr")).longValue();
         this.vt100_charset_g_sel = ((Integer) this.vt100_saved.get("vt100_charset_g_sel")).intValue();
         this.vt100_charset_g = (int[]) this.vt100_saved.get("vt100_charset_g");
@@ -653,7 +653,7 @@ public class ScreenTerminal {
     }
 
     private void esc_RI() {
-        if (this.f3204cy == this.scroll_area_y0) {
+        if (this.f3168cy == this.scroll_area_y0) {
             scroll_area_down(this.scroll_area_y0, this.scroll_area_y1);
         } else {
             cursor_up();
@@ -700,7 +700,7 @@ public class ScreenTerminal {
     }
 
     private void csi_ICH(String p) {
-        scroll_line_right(this.f3204cy, this.f3203cx, vt100_parse_params(p, new int[]{1})[0]);
+        scroll_line_right(this.f3168cy, this.f3167cx, vt100_parse_params(p, new int[]{1})[0]);
     }
 
     private void csi_CUU(String p) {
@@ -749,9 +749,9 @@ public class ScreenTerminal {
     private void csi_ED(String p) {
         String[] ps = vt100_parse_params(p, new String[]{"0"});
         if ("0".equals(ps[0])) {
-            clear(this.f3204cy, this.f3203cx, this.height, this.width);
+            clear(this.f3168cy, this.f3167cx, this.height, this.width);
         } else if ("1".equals(ps[0])) {
-            clear(0, 0, this.f3204cy + 1, this.f3203cx + 1);
+            clear(0, 0, this.f3168cy + 1, this.f3167cx + 1);
         } else if ("2".equals(ps[0])) {
             clear(0, 0, this.height, this.width);
         }
@@ -760,30 +760,30 @@ public class ScreenTerminal {
     private void csi_EL(String p) {
         String[] ps = vt100_parse_params(p, new String[]{"0"});
         if ("0".equals(ps[0])) {
-            clear(this.f3204cy, this.f3203cx, this.f3204cy + 1, this.width);
+            clear(this.f3168cy, this.f3167cx, this.f3168cy + 1, this.width);
         } else if ("1".equals(ps[0])) {
-            clear(this.f3204cy, 0, this.f3204cy + 1, this.f3203cx + 1);
+            clear(this.f3168cy, 0, this.f3168cy + 1, this.f3167cx + 1);
         } else if ("2".equals(ps[0])) {
-            clear(this.f3204cy, 0, this.f3204cy + 1, this.width);
+            clear(this.f3168cy, 0, this.f3168cy + 1, this.width);
         }
     }
 
     private void csi_IL(String p) {
         int[] ps = vt100_parse_params(p, new int[]{1});
-        if (this.f3204cy >= this.scroll_area_y0 && this.f3204cy < this.scroll_area_y1) {
-            scroll_area_down(this.f3204cy, this.scroll_area_y1, Math.max(1, ps[0]));
+        if (this.f3168cy >= this.scroll_area_y0 && this.f3168cy < this.scroll_area_y1) {
+            scroll_area_down(this.f3168cy, this.scroll_area_y1, Math.max(1, ps[0]));
         }
     }
 
     private void csi_DL(String p) {
         int[] ps = vt100_parse_params(p, new int[]{1});
-        if (this.f3204cy >= this.scroll_area_y0 && this.f3204cy < this.scroll_area_y1) {
-            scroll_area_up(this.f3204cy, this.scroll_area_y1, Math.max(1, ps[0]));
+        if (this.f3168cy >= this.scroll_area_y0 && this.f3168cy < this.scroll_area_y1) {
+            scroll_area_up(this.f3168cy, this.scroll_area_y1, Math.max(1, ps[0]));
         }
     }
 
     private void csi_DCH(String p) {
-        scroll_line_left(this.f3204cy, this.f3203cx, Math.max(1, vt100_parse_params(p, new int[]{1})[0]));
+        scroll_line_left(this.f3168cy, this.f3167cx, Math.max(1, vt100_parse_params(p, new int[]{1})[0]));
     }
 
     private void csi_SU(String p) {
@@ -798,12 +798,12 @@ public class ScreenTerminal {
         String[] ps = vt100_parse_params(p, new String[]{"0"});
         for (String m : ps) {
             if ("0".equals(m)) {
-                if (this.tab_stops.indexOf(Integer.valueOf(this.f3203cx)) < 0) {
-                    this.tab_stops.add(Integer.valueOf(this.f3203cx));
+                if (this.tab_stops.indexOf(Integer.valueOf(this.f3167cx)) < 0) {
+                    this.tab_stops.add(Integer.valueOf(this.f3167cx));
                     Collections.sort(this.tab_stops);
                 }
             } else if ("2".equals(m)) {
-                this.tab_stops.remove(Integer.valueOf(this.f3203cx));
+                this.tab_stops.remove(Integer.valueOf(this.f3167cx));
             } else if ("5".equals(m)) {
                 this.tab_stops = new ArrayList();
             }
@@ -811,7 +811,7 @@ public class ScreenTerminal {
     }
 
     private void csi_ECH(String p) {
-        clear(this.f3204cy, this.f3203cx, this.f3204cy + 1, this.f3203cx + Math.min(this.width - this.f3203cx, Math.max(1, vt100_parse_params(p, new int[]{1})[0])));
+        clear(this.f3168cy, this.f3167cx, this.f3168cy + 1, this.f3167cx + Math.min(this.width - this.f3167cx, Math.max(1, vt100_parse_params(p, new int[]{1})[0])));
     }
 
     private void csi_CBT(String p) {
@@ -829,7 +829,7 @@ public class ScreenTerminal {
     private void csi_REP(String p) {
         int[] ps = vt100_parse_params(p, new int[]{1});
         if (this.vt100_lastchar >= 32) {
-            int n = Math.min((int) PacketOpcodes.SetCoopChapterViewedRsp, Math.max(1, ps[0]));
+            int n = Math.min(2000, Math.max(1, ps[0]));
             while (true) {
                 n--;
                 if (n > 0) {
@@ -942,13 +942,13 @@ public class ScreenTerminal {
         if ("5".equals(ps[0])) {
             this.vt100_out = "\u001b[0n";
         } else if ("6".equals(ps[0])) {
-            this.vt100_out = ANSIConstants.ESC_START + (this.f3204cy + 1) + ";" + (this.f3203cx + 1) + "R";
+            this.vt100_out = ANSIConstants.ESC_START + (this.f3168cy + 1) + ";" + (this.f3167cx + 1) + "R";
         } else if ("7".equals(ps[0])) {
             this.vt100_out = "gogo-term";
         } else if ("8".equals(ps[0])) {
             this.vt100_out = "1.0-SNAPSHOT";
         } else if ("?6".equals(ps[0])) {
-            this.vt100_out = ANSIConstants.ESC_START + (this.f3204cy + 1) + ";" + (this.f3203cx + 1) + ";0R";
+            this.vt100_out = ANSIConstants.ESC_START + (this.f3168cy + 1) + ";" + (this.f3167cx + 1) + ";0R";
         } else if ("?15".equals(ps[0])) {
             this.vt100_out = "\u001b[?13n";
         } else if ("?25".equals(ps[0])) {
@@ -971,13 +971,13 @@ public class ScreenTerminal {
     }
 
     private void csi_SCP(String p) {
-        this.vt100_saved_cx = this.f3203cx;
-        this.vt100_saved_cy = this.f3204cy;
+        this.vt100_saved_cx = this.f3167cx;
+        this.vt100_saved_cy = this.f3168cy;
     }
 
     private void csi_RCP(String p) {
-        this.f3203cx = this.vt100_saved_cx;
-        this.f3204cy = this.vt100_saved_cy;
+        this.f3167cx = this.vt100_saved_cx;
+        this.f3168cy = this.vt100_saved_cy;
     }
 
     private void csi_DECREQTPARM(String p) {
@@ -1261,7 +1261,7 @@ public class ScreenTerminal {
             case 120:
                 csi_DECREQTPARM(this.vt100_parse_param);
                 break;
-            case PacketOpcodes.ViewLanternProjectionTipsReq:
+            case PacketOpcodes.EchoShellUpdateNotify:
                 csi_DECSTR(this.vt100_parse_param);
                 break;
         }
@@ -1297,7 +1297,7 @@ public class ScreenTerminal {
                 if (this.vt100_parse_len > 32) {
                     vt100_parse_reset();
                 } else {
-                    int msb = c & PacketOpcodes.ExecuteGadgetLuaRsp;
+                    int msb = c & PacketOpcodes.SceneKickPlayerRsp;
                     if (msb == 32) {
                         this.vt100_parse_func <<= 8;
                         this.vt100_parse_func += (char) c;
@@ -1349,12 +1349,12 @@ public class ScreenTerminal {
                 this.screen2[i] = Arrays.copyOf(this.screen2[i], w);
             }
         }
-        if (this.f3203cx >= w) {
-            this.f3203cx = w - 1;
+        if (this.f3167cx >= w) {
+            this.f3167cx = w - 1;
         }
         if (h < this.height) {
             int needed = this.height - h;
-            int avail = (this.height - 1) - this.f3204cy;
+            int avail = (this.height - 1) - this.f3168cy;
             if (avail > 0) {
                 if (avail > needed) {
                     avail = needed;
@@ -1366,7 +1366,7 @@ public class ScreenTerminal {
                 this.history.add(this.screen[i2]);
             }
             this.screen = (long[][]) Arrays.copyOfRange(this.screen, needed2, this.screen.length);
-            this.f3204cy -= needed2;
+            this.f3168cy -= needed2;
         } else if (h > this.height) {
             int needed3 = h - this.height;
             int avail2 = this.history.size();
@@ -1378,7 +1378,7 @@ public class ScreenTerminal {
                 for (int i3 = 0; i3 < avail2; i3++) {
                     sc[i3] = this.history.remove((this.history.size() - avail2) + i3);
                 }
-                this.f3204cy += avail2;
+                this.f3168cy += avail2;
             }
             System.arraycopy(this.screen, 0, sc, avail2, this.screen.length);
             for (int i4 = avail2 + this.screen.length; i4 < sc.length; i4++) {
@@ -1393,8 +1393,8 @@ public class ScreenTerminal {
         }
         this.scroll_area_y0 = Math.min(h, this.scroll_area_y0);
         this.scroll_area_y1 = this.scroll_area_y1 == this.height ? h : Math.min(h, this.scroll_area_y1);
-        this.f3203cx = Math.min(w - 1, this.f3203cx);
-        this.f3204cy = Math.min(h - 1, this.f3204cy);
+        this.f3167cx = Math.min(w - 1, this.f3167cx);
+        this.f3168cy = Math.min(h - 1, this.f3168cy);
         this.width = w;
         this.height = h;
         setDirty();
@@ -1582,8 +1582,8 @@ public class ScreenTerminal {
     }
 
     public synchronized void dump(long[] fullscreen, int ftop, int fleft, int fheight, int fwidth, int[] cursor) {
-        int cx = Math.min(this.f3203cx, this.width - 1);
-        int cy = this.f3204cy;
+        int cx = Math.min(this.f3167cx, this.width - 1);
+        int cy = this.f3168cy;
         for (int y = 0; y < Math.min(this.height, fheight - ftop); y++) {
             System.arraycopy(this.screen[y], 0, fullscreen, ((y + ftop) * fwidth) + fleft, this.width);
         }
@@ -1604,8 +1604,8 @@ public class ScreenTerminal {
         }
         StringBuilder sb = new StringBuilder();
         int prev_attr = -1;
-        int cx = Math.min(this.f3203cx, this.width - 1);
-        int cy = this.f3204cy;
+        int cx = Math.min(this.f3167cx, this.width - 1);
+        int cy = this.f3168cy;
         sb.append("<div><pre class='term'>");
         for (int y = 0; y < this.height; y++) {
             int wx = 0;

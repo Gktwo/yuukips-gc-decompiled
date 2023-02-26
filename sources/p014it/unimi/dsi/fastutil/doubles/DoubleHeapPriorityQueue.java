@@ -17,14 +17,14 @@ public class DoubleHeapPriorityQueue implements DoublePriorityQueue, Serializabl
     protected int size;
 
     /* renamed from: c */
-    protected DoubleComparator f1720c;
+    protected DoubleComparator f1684c;
 
     public DoubleHeapPriorityQueue(int capacity, DoubleComparator c) {
         this.heap = DoubleArrays.EMPTY_ARRAY;
         if (capacity > 0) {
             this.heap = new double[capacity];
         }
-        this.f1720c = c;
+        this.f1684c = c;
     }
 
     public DoubleHeapPriorityQueue(int capacity) {
@@ -88,7 +88,7 @@ public class DoubleHeapPriorityQueue implements DoublePriorityQueue, Serializabl
         int i = this.size;
         this.size = i + 1;
         dArr[i] = x;
-        DoubleHeaps.upHeap(this.heap, this.size, this.size - 1, this.f1720c);
+        DoubleHeaps.upHeap(this.heap, this.size, this.size - 1, this.f1684c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.doubles.DoublePriorityQueue
@@ -103,7 +103,7 @@ public class DoubleHeapPriorityQueue implements DoublePriorityQueue, Serializabl
         this.size = i;
         dArr[0] = dArr2[i];
         if (this.size != 0) {
-            DoubleHeaps.downHeap(this.heap, this.size, 0, this.f1720c);
+            DoubleHeaps.downHeap(this.heap, this.size, 0, this.f1684c);
         }
         return result;
     }
@@ -118,7 +118,7 @@ public class DoubleHeapPriorityQueue implements DoublePriorityQueue, Serializabl
 
     @Override // p014it.unimi.dsi.fastutil.PriorityQueue
     public void changed() {
-        DoubleHeaps.downHeap(this.heap, this.size, 0, this.f1720c);
+        DoubleHeaps.downHeap(this.heap, this.size, 0, this.f1684c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.PriorityQueue
@@ -138,7 +138,7 @@ public class DoubleHeapPriorityQueue implements DoublePriorityQueue, Serializabl
     /* Return type fixed from 'it.unimi.dsi.fastutil.doubles.DoubleComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.doubles.DoublePriorityQueue, p014it.unimi.dsi.fastutil.PriorityQueue
     public Comparator<? super Double> comparator() {
-        return this.f1720c;
+        return this.f1684c;
     }
 
     private void writeObject(ObjectOutputStream s) throws IOException {

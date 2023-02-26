@@ -23,15 +23,15 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetUpAvatarTeamReqOuterClass.class */
 public final class SetUpAvatarTeamReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018SetUpAvatarTeamReq.proto\"]\n\u0012SetUpAvatarTeamReq\u0012\u000f\n\u0007team_id\u0018\r \u0001(\r\u0012\u0017\n\u000fcur_avatar_guid\u0018\u0005 \u0001(\u0004\u0012\u001d\n\u0015avatar_team_guid_list\u0018\u000e \u0003(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018SetUpAvatarTeamReq.proto\"W\n\u0012SetUpAvatarTeamReq\u0012\u0015\n\rcurAvatarGuid\u0018\t \u0001(\u0004\u0012\u000e\n\u0006teamId\u0018\u0004 \u0001(\r\u0012\u001a\n\u0012avatarTeamGuidList\u0018\u000f \u0003(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SetUpAvatarTeamReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetUpAvatarTeamReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetUpAvatarTeamReq_descriptor, new String[]{"TeamId", "CurAvatarGuid", "AvatarTeamGuidList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetUpAvatarTeamReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetUpAvatarTeamReq_descriptor, new String[]{"CurAvatarGuid", "TeamId", "AvatarTeamGuidList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetUpAvatarTeamReqOuterClass$SetUpAvatarTeamReqOrBuilder.class */
     public interface SetUpAvatarTeamReqOrBuilder extends MessageOrBuilder {
-        int getTeamId();
-
         long getCurAvatarGuid();
+
+        int getTeamId();
 
         List<Long> getAvatarTeamGuidListList();
 
@@ -53,11 +53,11 @@ public final class SetUpAvatarTeamReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetUpAvatarTeamReqOuterClass$SetUpAvatarTeamReq.class */
     public static final class SetUpAvatarTeamReq extends GeneratedMessageV3 implements SetUpAvatarTeamReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TEAM_ID_FIELD_NUMBER = 13;
-        private int teamId_;
-        public static final int CUR_AVATAR_GUID_FIELD_NUMBER = 5;
+        public static final int CURAVATARGUID_FIELD_NUMBER = 9;
         private long curAvatarGuid_;
-        public static final int AVATAR_TEAM_GUID_LIST_FIELD_NUMBER = 14;
+        public static final int TEAMID_FIELD_NUMBER = 4;
+        private int teamId_;
+        public static final int AVATARTEAMGUIDLIST_FIELD_NUMBER = 15;
         private Internal.LongList avatarTeamGuidList_;
         private int avatarTeamGuidListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -110,20 +110,20 @@ public final class SetUpAvatarTeamReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 40:
-                                this.curAvatarGuid_ = input.readUInt64();
-                                break;
-                            case 104:
+                            case 32:
                                 this.teamId_ = input.readUInt32();
                                 break;
-                            case 112:
+                            case 72:
+                                this.curAvatarGuid_ = input.readUInt64();
+                                break;
+                            case 120:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.avatarTeamGuidList_ = newLongList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.avatarTeamGuidList_.addLong(input.readUInt64());
                                 break;
-                            case 114:
+                            case 122:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.avatarTeamGuidList_ = newLongList();
@@ -167,13 +167,13 @@ public final class SetUpAvatarTeamReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SetUpAvatarTeamReqOuterClass.SetUpAvatarTeamReqOrBuilder
-        public int getTeamId() {
-            return this.teamId_;
+        public long getCurAvatarGuid() {
+            return this.curAvatarGuid_;
         }
 
         @Override // emu.grasscutter.net.proto.SetUpAvatarTeamReqOuterClass.SetUpAvatarTeamReqOrBuilder
-        public long getCurAvatarGuid() {
-            return this.curAvatarGuid_;
+        public int getTeamId() {
+            return this.teamId_;
         }
 
         @Override // emu.grasscutter.net.proto.SetUpAvatarTeamReqOuterClass.SetUpAvatarTeamReqOrBuilder
@@ -207,14 +207,14 @@ public final class SetUpAvatarTeamReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (this.curAvatarGuid_ != 0) {
-                output.writeUInt64(5, this.curAvatarGuid_);
-            }
             if (this.teamId_ != 0) {
-                output.writeUInt32(13, this.teamId_);
+                output.writeUInt32(4, this.teamId_);
+            }
+            if (this.curAvatarGuid_ != 0) {
+                output.writeUInt64(9, this.curAvatarGuid_);
             }
             if (getAvatarTeamGuidListList().size() > 0) {
-                output.writeUInt32NoTag(114);
+                output.writeUInt32NoTag(122);
                 output.writeUInt32NoTag(this.avatarTeamGuidListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.avatarTeamGuidList_.size(); i++) {
@@ -230,11 +230,11 @@ public final class SetUpAvatarTeamReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.curAvatarGuid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(5, this.curAvatarGuid_);
-            }
             if (this.teamId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.teamId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.teamId_);
+            }
+            if (this.curAvatarGuid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(9, this.curAvatarGuid_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.avatarTeamGuidList_.size(); i++) {
@@ -259,7 +259,7 @@ public final class SetUpAvatarTeamReqOuterClass {
                 return equals(obj);
             }
             SetUpAvatarTeamReq other = (SetUpAvatarTeamReq) obj;
-            return getTeamId() == other.getTeamId() && getCurAvatarGuid() == other.getCurAvatarGuid() && getAvatarTeamGuidListList().equals(other.getAvatarTeamGuidListList()) && this.unknownFields.equals(other.unknownFields);
+            return getCurAvatarGuid() == other.getCurAvatarGuid() && getTeamId() == other.getTeamId() && getAvatarTeamGuidListList().equals(other.getAvatarTeamGuidListList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -267,9 +267,9 @@ public final class SetUpAvatarTeamReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + getTeamId())) + 5)) + Internal.hashLong(getCurAvatarGuid());
+            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + Internal.hashLong(getCurAvatarGuid()))) + 4)) + getTeamId();
             if (getAvatarTeamGuidListCount() > 0) {
-                hash = (53 * ((37 * hash) + 14)) + getAvatarTeamGuidListList().hashCode();
+                hash = (53 * ((37 * hash) + 15)) + getAvatarTeamGuidListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -351,8 +351,8 @@ public final class SetUpAvatarTeamReqOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetUpAvatarTeamReqOuterClass$SetUpAvatarTeamReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SetUpAvatarTeamReqOrBuilder {
             private int bitField0_;
-            private int teamId_;
             private long curAvatarGuid_;
+            private int teamId_;
             private Internal.LongList avatarTeamGuidList_ = SetUpAvatarTeamReq.emptyLongList();
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -381,8 +381,8 @@ public final class SetUpAvatarTeamReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.teamId_ = 0;
                 this.curAvatarGuid_ = 0;
+                this.teamId_ = 0;
                 this.avatarTeamGuidList_ = SetUpAvatarTeamReq.emptyLongList();
                 this.bitField0_ &= -2;
                 return this;
@@ -411,8 +411,8 @@ public final class SetUpAvatarTeamReqOuterClass {
             public SetUpAvatarTeamReq buildPartial() {
                 SetUpAvatarTeamReq result = new SetUpAvatarTeamReq(this);
                 int i = this.bitField0_;
-                result.teamId_ = this.teamId_;
                 result.curAvatarGuid_ = this.curAvatarGuid_;
+                result.teamId_ = this.teamId_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.avatarTeamGuidList_.makeImmutable();
                     this.bitField0_ &= -2;
@@ -465,11 +465,11 @@ public final class SetUpAvatarTeamReqOuterClass {
                 if (other == SetUpAvatarTeamReq.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getTeamId() != 0) {
-                    setTeamId(other.getTeamId());
-                }
                 if (other.getCurAvatarGuid() != 0) {
                     setCurAvatarGuid(other.getCurAvatarGuid());
+                }
+                if (other.getTeamId() != 0) {
+                    setTeamId(other.getTeamId());
                 }
                 if (!other.avatarTeamGuidList_.isEmpty()) {
                     if (this.avatarTeamGuidList_.isEmpty()) {
@@ -514,23 +514,6 @@ public final class SetUpAvatarTeamReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.SetUpAvatarTeamReqOuterClass.SetUpAvatarTeamReqOrBuilder
-            public int getTeamId() {
-                return this.teamId_;
-            }
-
-            public Builder setTeamId(int value) {
-                this.teamId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearTeamId() {
-                this.teamId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.SetUpAvatarTeamReqOuterClass.SetUpAvatarTeamReqOrBuilder
             public long getCurAvatarGuid() {
                 return this.curAvatarGuid_;
             }
@@ -543,6 +526,23 @@ public final class SetUpAvatarTeamReqOuterClass {
 
             public Builder clearCurAvatarGuid() {
                 this.curAvatarGuid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SetUpAvatarTeamReqOuterClass.SetUpAvatarTeamReqOrBuilder
+            public int getTeamId() {
+                return this.teamId_;
+            }
+
+            public Builder setTeamId(int value) {
+                this.teamId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearTeamId() {
+                this.teamId_ = 0;
                 onChanged();
                 return this;
             }

@@ -22,21 +22,21 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarDieAnimationEndReqOuterClass.class */
 public final class AvatarDieAnimationEndReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eAvatarDieAnimationEndReq.proto\u001a\fVector.proto\"[\n\u0018AvatarDieAnimationEndReq\u0012\u0010\n\bdie_guid\u0018\r \u0001(\u0004\u0012\u001b\n\nreborn_pos\u0018\u000e \u0001(\u000b2\u0007.Vector\u0012\u0010\n\bskill_id\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eAvatarDieAnimationEndReq.proto\u001a\fVector.proto\"X\n\u0018AvatarDieAnimationEndReq\u0012\u000f\n\u0007dieGuid\u0018\u0007 \u0001(\u0004\u0012\u000f\n\u0007skillId\u0018\u0004 \u0001(\r\u0012\u001a\n\trebornPos\u0018\n \u0001(\u000b2\u0007.VectorB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AvatarDieAnimationEndReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarDieAnimationEndReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarDieAnimationEndReq_descriptor, new String[]{"DieGuid", "RebornPos", "SkillId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarDieAnimationEndReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarDieAnimationEndReq_descriptor, new String[]{"DieGuid", "SkillId", "RebornPos"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarDieAnimationEndReqOuterClass$AvatarDieAnimationEndReqOrBuilder.class */
     public interface AvatarDieAnimationEndReqOrBuilder extends MessageOrBuilder {
         long getDieGuid();
+
+        int getSkillId();
 
         boolean hasRebornPos();
 
         VectorOuterClass.Vector getRebornPos();
 
         VectorOuterClass.VectorOrBuilder getRebornPosOrBuilder();
-
-        int getSkillId();
     }
 
     private AvatarDieAnimationEndReqOuterClass() {
@@ -52,12 +52,12 @@ public final class AvatarDieAnimationEndReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarDieAnimationEndReqOuterClass$AvatarDieAnimationEndReq.class */
     public static final class AvatarDieAnimationEndReq extends GeneratedMessageV3 implements AvatarDieAnimationEndReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int DIE_GUID_FIELD_NUMBER = 13;
+        public static final int DIEGUID_FIELD_NUMBER = 7;
         private long dieGuid_;
-        public static final int REBORN_POS_FIELD_NUMBER = 14;
-        private VectorOuterClass.Vector rebornPos_;
-        public static final int SKILL_ID_FIELD_NUMBER = 9;
+        public static final int SKILLID_FIELD_NUMBER = 4;
         private int skillId_;
+        public static final int REBORNPOS_FIELD_NUMBER = 10;
+        private VectorOuterClass.Vector rebornPos_;
         private byte memoizedIsInitialized;
         private static final AvatarDieAnimationEndReq DEFAULT_INSTANCE = new AvatarDieAnimationEndReq();
         private static final Parser<AvatarDieAnimationEndReq> PARSER = new AbstractParser<AvatarDieAnimationEndReq>() { // from class: emu.grasscutter.net.proto.AvatarDieAnimationEndReqOuterClass.AvatarDieAnimationEndReq.1
@@ -104,13 +104,13 @@ public final class AvatarDieAnimationEndReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 72:
+                                case 32:
                                     this.skillId_ = input.readUInt32();
                                     break;
-                                case 104:
+                                case 56:
                                     this.dieGuid_ = input.readUInt64();
                                     break;
-                                case 114:
+                                case 82:
                                     VectorOuterClass.Vector.Builder subBuilder = this.rebornPos_ != null ? this.rebornPos_.toBuilder() : null;
                                     this.rebornPos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -156,6 +156,11 @@ public final class AvatarDieAnimationEndReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AvatarDieAnimationEndReqOuterClass.AvatarDieAnimationEndReqOrBuilder
+        public int getSkillId() {
+            return this.skillId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarDieAnimationEndReqOuterClass.AvatarDieAnimationEndReqOrBuilder
         public boolean hasRebornPos() {
             return this.rebornPos_ != null;
         }
@@ -168,11 +173,6 @@ public final class AvatarDieAnimationEndReqOuterClass {
         @Override // emu.grasscutter.net.proto.AvatarDieAnimationEndReqOuterClass.AvatarDieAnimationEndReqOrBuilder
         public VectorOuterClass.VectorOrBuilder getRebornPosOrBuilder() {
             return getRebornPos();
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarDieAnimationEndReqOuterClass.AvatarDieAnimationEndReqOrBuilder
-        public int getSkillId() {
-            return this.skillId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -191,13 +191,13 @@ public final class AvatarDieAnimationEndReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.skillId_ != 0) {
-                output.writeUInt32(9, this.skillId_);
+                output.writeUInt32(4, this.skillId_);
             }
             if (this.dieGuid_ != 0) {
-                output.writeUInt64(13, this.dieGuid_);
+                output.writeUInt64(7, this.dieGuid_);
             }
             if (this.rebornPos_ != null) {
-                output.writeMessage(14, getRebornPos());
+                output.writeMessage(10, getRebornPos());
             }
             this.unknownFields.writeTo(output);
         }
@@ -210,13 +210,13 @@ public final class AvatarDieAnimationEndReqOuterClass {
             }
             int size2 = 0;
             if (this.skillId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(9, this.skillId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.skillId_);
             }
             if (this.dieGuid_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(13, this.dieGuid_);
+                size2 += CodedOutputStream.computeUInt64Size(7, this.dieGuid_);
             }
             if (this.rebornPos_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(14, getRebornPos());
+                size2 += CodedOutputStream.computeMessageSize(10, getRebornPos());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -232,8 +232,8 @@ public final class AvatarDieAnimationEndReqOuterClass {
                 return equals(obj);
             }
             AvatarDieAnimationEndReq other = (AvatarDieAnimationEndReq) obj;
-            if (getDieGuid() == other.getDieGuid() && hasRebornPos() == other.hasRebornPos()) {
-                return (!hasRebornPos() || getRebornPos().equals(other.getRebornPos())) && getSkillId() == other.getSkillId() && this.unknownFields.equals(other.unknownFields);
+            if (getDieGuid() == other.getDieGuid() && getSkillId() == other.getSkillId() && hasRebornPos() == other.hasRebornPos()) {
+                return (!hasRebornPos() || getRebornPos().equals(other.getRebornPos())) && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -243,11 +243,11 @@ public final class AvatarDieAnimationEndReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + Internal.hashLong(getDieGuid());
+            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + Internal.hashLong(getDieGuid()))) + 4)) + getSkillId();
             if (hasRebornPos()) {
-                hash = (53 * ((37 * hash) + 14)) + getRebornPos().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getRebornPos().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 9)) + getSkillId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -327,9 +327,9 @@ public final class AvatarDieAnimationEndReqOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarDieAnimationEndReqOuterClass$AvatarDieAnimationEndReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements AvatarDieAnimationEndReqOrBuilder {
             private long dieGuid_;
+            private int skillId_;
             private VectorOuterClass.Vector rebornPos_;
             private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> rebornPosBuilder_;
-            private int skillId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return AvatarDieAnimationEndReqOuterClass.internal_static_AvatarDieAnimationEndReq_descriptor;
@@ -358,13 +358,13 @@ public final class AvatarDieAnimationEndReqOuterClass {
             public Builder clear() {
                 clear();
                 this.dieGuid_ = 0;
+                this.skillId_ = 0;
                 if (this.rebornPosBuilder_ == null) {
                     this.rebornPos_ = null;
                 } else {
                     this.rebornPos_ = null;
                     this.rebornPosBuilder_ = null;
                 }
-                this.skillId_ = 0;
                 return this;
             }
 
@@ -391,12 +391,12 @@ public final class AvatarDieAnimationEndReqOuterClass {
             public AvatarDieAnimationEndReq buildPartial() {
                 AvatarDieAnimationEndReq result = new AvatarDieAnimationEndReq(this);
                 result.dieGuid_ = this.dieGuid_;
+                result.skillId_ = this.skillId_;
                 if (this.rebornPosBuilder_ == null) {
                     result.rebornPos_ = this.rebornPos_;
                 } else {
                     result.rebornPos_ = this.rebornPosBuilder_.build();
                 }
-                result.skillId_ = this.skillId_;
                 onBuilt();
                 return result;
             }
@@ -447,11 +447,11 @@ public final class AvatarDieAnimationEndReqOuterClass {
                 if (other.getDieGuid() != 0) {
                     setDieGuid(other.getDieGuid());
                 }
-                if (other.hasRebornPos()) {
-                    mergeRebornPos(other.getRebornPos());
-                }
                 if (other.getSkillId() != 0) {
                     setSkillId(other.getSkillId());
+                }
+                if (other.hasRebornPos()) {
+                    mergeRebornPos(other.getRebornPos());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -498,6 +498,23 @@ public final class AvatarDieAnimationEndReqOuterClass {
 
             public Builder clearDieGuid() {
                 this.dieGuid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarDieAnimationEndReqOuterClass.AvatarDieAnimationEndReqOrBuilder
+            public int getSkillId() {
+                return this.skillId_;
+            }
+
+            public Builder setSkillId(int value) {
+                this.skillId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearSkillId() {
+                this.skillId_ = 0;
                 onChanged();
                 return this;
             }
@@ -581,23 +598,6 @@ public final class AvatarDieAnimationEndReqOuterClass {
                     this.rebornPos_ = null;
                 }
                 return this.rebornPosBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarDieAnimationEndReqOuterClass.AvatarDieAnimationEndReqOrBuilder
-            public int getSkillId() {
-                return this.skillId_;
-            }
-
-            public Builder setSkillId(int value) {
-                this.skillId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearSkillId() {
-                this.skillId_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

@@ -496,15 +496,15 @@ public final class ObjectBigArrays {
         private final long from;
 
         /* renamed from: to */
-        private final long f2695to;
+        private final long f2659to;
 
         /* renamed from: x */
-        private final K[][] f2696x;
+        private final K[][] f2660x;
 
         public ForkJoinQuickSort(K[][] x, long from, long to) {
             this.from = from;
-            this.f2695to = to;
-            this.f2696x = x;
+            this.f2659to = to;
+            this.f2660x = x;
         }
 
         /* JADX DEBUG: Failed to insert an additional move for type inference into block B:40:0x00ad */
@@ -570,16 +570,16 @@ public final class ObjectBigArrays {
         private final long from;
 
         /* renamed from: to */
-        private final long f2697to;
+        private final long f2661to;
 
         /* renamed from: x */
-        private final K[][] f2698x;
+        private final K[][] f2662x;
         private final Comparator<K> comp;
 
         public ForkJoinQuickSortComp(K[][] x, long from, long to, Comparator<K> comp) {
             this.from = from;
-            this.f2697to = to;
-            this.f2698x = x;
+            this.f2661to = to;
+            this.f2662x = x;
             this.comp = comp;
         }
 

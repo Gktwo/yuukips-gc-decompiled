@@ -359,28 +359,28 @@ public class MethodWriter extends MethodVisitor {
                         break;
                     case 1:
                         this.f178T += i2;
-                        this.f180v.putByte(PacketOpcodes.EnterSceneReadyRsp + i2).putShort(i4);
+                        this.f180v.putByte(PacketOpcodes.SceneForceLockNotify + i2).putShort(i4);
                         for (int i9 = 0; i9 < i2; i9++) {
                             m1496a(objArr[i9]);
                         }
                         break;
                     case 2:
                         this.f178T -= i2;
-                        this.f180v.putByte(PacketOpcodes.EnterSceneReadyRsp - i2).putShort(i4);
+                        this.f180v.putByte(PacketOpcodes.SceneForceLockNotify - i2).putShort(i4);
                         break;
                     case 3:
                         if (i4 < 64) {
                             this.f180v.putByte(i4);
                             break;
                         } else {
-                            this.f180v.putByte(PacketOpcodes.EnterSceneReadyRsp).putShort(i4);
+                            this.f180v.putByte(PacketOpcodes.SceneForceLockNotify).putShort(i4);
                             break;
                         }
                     case 4:
                         if (i4 < 64) {
                             this.f180v.putByte(64 + i4);
                         } else {
-                            this.f180v.putByte(247).putShort(i4);
+                            this.f180v.putByte(PacketOpcodes.ClientScriptEventNotify).putShort(i4);
                         }
                         m1496a(objArr2[0]);
                         break;
@@ -1275,18 +1275,18 @@ public class MethodWriter extends MethodVisitor {
                 this.f180v.putByte(64 + i5);
                 m1501a(3 + i, 4 + i);
                 return;
-            case 247:
-                this.f180v.putByte(247).putShort(i5);
+            case PacketOpcodes.ClientScriptEventNotify /* 247 */:
+                this.f180v.putByte(PacketOpcodes.ClientScriptEventNotify).putShort(i5);
                 m1501a(3 + i, 4 + i);
                 return;
-            case PacketOpcodes.ScenePlayerLocationNotify /* 248 */:
-                this.f180v.putByte(PacketOpcodes.EnterSceneReadyRsp + i4).putShort(i5);
+            case PacketOpcodes.EnterSceneDoneReq /* 248 */:
+                this.f180v.putByte(PacketOpcodes.SceneForceLockNotify + i4).putShort(i5);
                 return;
-            case PacketOpcodes.EnterSceneReadyRsp /* 251 */:
-                this.f180v.putByte(PacketOpcodes.EnterSceneReadyRsp).putShort(i5);
+            case PacketOpcodes.SceneForceLockNotify /* 251 */:
+                this.f180v.putByte(PacketOpcodes.SceneForceLockNotify).putShort(i5);
                 return;
-            case PacketOpcodes.PersonalSceneJumpReq /* 252 */:
-                this.f180v.putByte(PacketOpcodes.EnterSceneReadyRsp + i4).putShort(i5);
+            case 252:
+                this.f180v.putByte(PacketOpcodes.SceneForceLockNotify + i4).putShort(i5);
                 m1501a(3 + i3, 3 + i);
                 return;
             default:

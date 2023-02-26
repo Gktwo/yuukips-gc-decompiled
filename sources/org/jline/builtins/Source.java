@@ -88,15 +88,15 @@ public interface Source {
     public static class InputStreamSource implements Source {
 
         /* renamed from: in */
-        final InputStream f3205in;
+        final InputStream f3169in;
         final String name;
 
         public InputStreamSource(InputStream in, boolean close, String name) {
             Objects.requireNonNull(in);
             if (close) {
-                this.f3205in = in;
+                this.f3169in = in;
             } else {
-                this.f3205in = new FilterInputStream(in) { // from class: org.jline.builtins.Source.InputStreamSource.1
+                this.f3169in = new FilterInputStream(in) { // from class: org.jline.builtins.Source.InputStreamSource.1
                     @Override // java.io.FilterInputStream, java.io.Closeable, java.lang.AutoCloseable, java.io.InputStream
                     public void close() throws IOException {
                     }
@@ -112,7 +112,7 @@ public interface Source {
 
         @Override // org.jline.builtins.Source
         public InputStream read() throws IOException {
-            return this.f3205in;
+            return this.f3169in;
         }
 
         @Override // org.jline.builtins.Source

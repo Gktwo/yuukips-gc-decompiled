@@ -1,5 +1,6 @@
 package net.bytebuddy.implementation;
 
+import emu.grasscutter.net.packet.PacketOpcodes;
 import net.bytebuddy.build.HashCodeAndEqualsPlugin;
 import net.bytebuddy.description.field.FieldDescription;
 import net.bytebuddy.description.method.MethodDescription;
@@ -442,7 +443,7 @@ public abstract class FixedValue implements Implementation {
         @Override // net.bytebuddy.dynamic.scaffold.InstrumentedType.Prepareable
         public InstrumentedType prepare(InstrumentedType instrumentedType) {
             if (instrumentedType.getDeclaredFields().filter(ElementMatchers.named(this.fieldName).and(ElementMatchers.fieldType(this.fieldType.asErasure()))).isEmpty()) {
-                return instrumentedType.withField(new FieldDescription.Token(this.fieldName, 4169, this.fieldType)).withInitializer(new LoadedTypeInitializer.ForStaticField(this.fieldName, this.value));
+                return instrumentedType.withField(new FieldDescription.Token(this.fieldName, PacketOpcodes.PlayerCancelMatchRsp, this.fieldType)).withInitializer(new LoadedTypeInitializer.ForStaticField(this.fieldName, this.value));
             }
             throw new IllegalStateException("Field with name " + this.fieldName + " and type " + this.fieldType.asErasure() + " already declared by " + instrumentedType);
         }

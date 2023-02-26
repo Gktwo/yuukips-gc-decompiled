@@ -19,13 +19,13 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GameplayRecommendationReliquaryRequestOuterClass.class */
 public final class GameplayRecommendationReliquaryRequestOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n,GameplayRecommendationReliquaryRequest.proto\"<\n&GameplayRecommendationReliquaryRequest\u0012\u0012\n\nequip_type\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n,GameplayRecommendationReliquaryRequest.proto\";\n&GameplayRecommendationReliquaryRequest\u0012\u0011\n\tequipType\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
 
     /* renamed from: internal_static_GameplayRecommendationReliquaryRequest_descriptor */
-    private static final Descriptors.Descriptor f739x21c33ba5 = getDescriptor().getMessageTypes().get(0);
+    private static final Descriptors.Descriptor f725x21c33ba5 = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_GameplayRecommendationReliquaryRequest_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f740x27e2ed23 = new GeneratedMessageV3.FieldAccessorTable(f739x21c33ba5, new String[]{"EquipType"});
+    private static final GeneratedMessageV3.FieldAccessorTable f726x27e2ed23 = new GeneratedMessageV3.FieldAccessorTable(f725x21c33ba5, new String[]{"EquipType"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GameplayRecommendationReliquaryRequestOuterClass$GameplayRecommendationReliquaryRequestOrBuilder.class */
     public interface GameplayRecommendationReliquaryRequestOrBuilder extends MessageOrBuilder {
@@ -45,7 +45,7 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GameplayRecommendationReliquaryRequestOuterClass$GameplayRecommendationReliquaryRequest.class */
     public static final class GameplayRecommendationReliquaryRequest extends GeneratedMessageV3 implements GameplayRecommendationReliquaryRequestOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int EQUIP_TYPE_FIELD_NUMBER = 9;
+        public static final int EQUIPTYPE_FIELD_NUMBER = 7;
         private int equipType_;
         private byte memoizedIsInitialized;
         private static final GameplayRecommendationReliquaryRequest DEFAULT_INSTANCE = new GameplayRecommendationReliquaryRequest();
@@ -92,7 +92,7 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 72:
+                            case 56:
                                 this.equipType_ = input.readUInt32();
                                 break;
                             default:
@@ -116,12 +116,12 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
         }
 
         public static final Descriptors.Descriptor getDescriptor() {
-            return GameplayRecommendationReliquaryRequestOuterClass.f739x21c33ba5;
+            return GameplayRecommendationReliquaryRequestOuterClass.f725x21c33ba5;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return GameplayRecommendationReliquaryRequestOuterClass.f740x27e2ed23.ensureFieldAccessorsInitialized(GameplayRecommendationReliquaryRequest.class, Builder.class);
+            return GameplayRecommendationReliquaryRequestOuterClass.f726x27e2ed23.ensureFieldAccessorsInitialized(GameplayRecommendationReliquaryRequest.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.GameplayRecommendationReliquaryRequestOuterClass.GameplayRecommendationReliquaryRequestOrBuilder
@@ -145,7 +145,7 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.equipType_ != 0) {
-                output.writeUInt32(9, this.equipType_);
+                output.writeUInt32(7, this.equipType_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -158,7 +158,7 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
             }
             int size2 = 0;
             if (this.equipType_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(9, this.equipType_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.equipType_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -182,7 +182,7 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getEquipType())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getEquipType())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -264,12 +264,12 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
             private int equipType_;
 
             public static final Descriptors.Descriptor getDescriptor() {
-                return GameplayRecommendationReliquaryRequestOuterClass.f739x21c33ba5;
+                return GameplayRecommendationReliquaryRequestOuterClass.f725x21c33ba5;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return GameplayRecommendationReliquaryRequestOuterClass.f740x27e2ed23.ensureFieldAccessorsInitialized(GameplayRecommendationReliquaryRequest.class, Builder.class);
+                return GameplayRecommendationReliquaryRequestOuterClass.f726x27e2ed23.ensureFieldAccessorsInitialized(GameplayRecommendationReliquaryRequest.class, Builder.class);
             }
 
             private Builder() {
@@ -295,7 +295,7 @@ public final class GameplayRecommendationReliquaryRequestOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
-                return GameplayRecommendationReliquaryRequestOuterClass.f739x21c33ba5;
+                return GameplayRecommendationReliquaryRequestOuterClass.f725x21c33ba5;
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder

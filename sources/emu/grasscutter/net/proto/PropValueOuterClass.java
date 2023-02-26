@@ -21,15 +21,13 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PropValueOuterClass.class */
 public final class PropValueOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000fPropValue.proto\"O\n\tPropValue\u0012\f\n\u0004type\u0018\u0001 \u0001(\r\u0012\u000b\n\u0003val\u0018\u0004 \u0001(\u0003\u0012\u000e\n\u0004ival\u0018\u0002 \u0001(\u0003H��\u0012\u000e\n\u0004fval\u0018\u0003 \u0001(\u0002H��B\u0007\n\u0005valueB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000fPropValue.proto\"O\n\tPropValue\u0012\f\n\u0004type\u0018\u0001 \u0001(\r\u0012\u000e\n\u0004ival\u0018\u0002 \u0001(\u0003H��\u0012\u000e\n\u0004fval\u0018\u0003 \u0001(\u0002H��\u0012\u000b\n\u0003val\u0018\u0004 \u0001(\u0003B\u0007\n\u0005valueB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PropValue_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PropValue_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PropValue_descriptor, new String[]{"Type", "Val", "Ival", "Fval", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PropValue_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PropValue_descriptor, new String[]{"Type", "Ival", "Fval", "Val", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PropValueOuterClass$PropValueOrBuilder.class */
     public interface PropValueOrBuilder extends MessageOrBuilder {
         int getType();
-
-        long getVal();
 
         boolean hasIval();
 
@@ -38,6 +36,8 @@ public final class PropValueOuterClass {
         boolean hasFval();
 
         float getFval();
+
+        long getVal();
 
         PropValue.ValueCase getValueCase();
     }
@@ -59,10 +59,10 @@ public final class PropValueOuterClass {
         private Object value_;
         public static final int TYPE_FIELD_NUMBER = 1;
         private int type_;
-        public static final int VAL_FIELD_NUMBER = 4;
-        private long val_;
         public static final int IVAL_FIELD_NUMBER = 2;
         public static final int FVAL_FIELD_NUMBER = 3;
+        public static final int VAL_FIELD_NUMBER = 4;
+        private long val_;
         private byte memoizedIsInitialized;
         private static final PropValue DEFAULT_INSTANCE = new PropValue();
         private static final Parser<PropValue> PARSER = new AbstractParser<PropValue>() { // from class: emu.grasscutter.net.proto.PropValueOuterClass.PropValue.1
@@ -203,11 +203,6 @@ public final class PropValueOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PropValueOuterClass.PropValueOrBuilder
-        public long getVal() {
-            return this.val_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PropValueOuterClass.PropValueOrBuilder
         public boolean hasIval() {
             return this.valueCase_ == 2;
         }
@@ -231,6 +226,11 @@ public final class PropValueOuterClass {
                 return ((Float) this.value_).floatValue();
             }
             return 0.0f;
+        }
+
+        @Override // emu.grasscutter.net.proto.PropValueOuterClass.PropValueOrBuilder
+        public long getVal() {
+            return this.val_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -468,13 +468,13 @@ public final class PropValueOuterClass {
             public PropValue buildPartial() {
                 PropValue result = new PropValue(this);
                 result.type_ = this.type_;
-                result.val_ = this.val_;
                 if (this.valueCase_ == 2) {
                     result.value_ = this.value_;
                 }
                 if (this.valueCase_ == 3) {
                     result.value_ = this.value_;
                 }
+                result.val_ = this.val_;
                 result.valueCase_ = this.valueCase_;
                 onBuilt();
                 return result;
@@ -599,23 +599,6 @@ public final class PropValueOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.PropValueOuterClass.PropValueOrBuilder
-            public long getVal() {
-                return this.val_;
-            }
-
-            public Builder setVal(long value) {
-                this.val_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearVal() {
-                this.val_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PropValueOuterClass.PropValueOrBuilder
             public boolean hasIval() {
                 return this.valueCase_ == 2;
             }
@@ -670,6 +653,23 @@ public final class PropValueOuterClass {
                     this.value_ = null;
                     onChanged();
                 }
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.PropValueOuterClass.PropValueOrBuilder
+            public long getVal() {
+                return this.val_;
+            }
+
+            public Builder setVal(long value) {
+                this.val_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearVal() {
+                this.val_ = 0;
+                onChanged();
                 return this;
             }
 

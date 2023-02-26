@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ScenePlayerInfoNotifyOuterClass.class */
 public final class ScenePlayerInfoNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bScenePlayerInfoNotify.proto\u001a\u0015ScenePlayerInfo.proto\"C\n\u0015ScenePlayerInfoNotify\u0012*\n\u0010player_info_list\u0018\u000b \u0003(\u000b2\u0010.ScenePlayerInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ScenePlayerInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bScenePlayerInfoNotify.proto\u001a\u0015ScenePlayerInfo.proto\"A\n\u0015ScenePlayerInfoNotify\u0012(\n\u000eplayerInfoList\u0018\u000b \u0003(\u000b2\u0010.ScenePlayerInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ScenePlayerInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ScenePlayerInfoNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ScenePlayerInfoNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ScenePlayerInfoNotify_descriptor, new String[]{"PlayerInfoList"});
 
@@ -55,7 +55,7 @@ public final class ScenePlayerInfoNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ScenePlayerInfoNotifyOuterClass$ScenePlayerInfoNotify.class */
     public static final class ScenePlayerInfoNotify extends GeneratedMessageV3 implements ScenePlayerInfoNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PLAYER_INFO_LIST_FIELD_NUMBER = 11;
+        public static final int PLAYERINFOLIST_FIELD_NUMBER = 11;
         private List<ScenePlayerInfoOuterClass.ScenePlayerInfo> playerInfoList_;
         private byte memoizedIsInitialized;
         private static final ScenePlayerInfoNotify DEFAULT_INSTANCE = new ScenePlayerInfoNotify();

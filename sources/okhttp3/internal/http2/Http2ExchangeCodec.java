@@ -54,7 +54,7 @@ public final class Http2ExchangeCodec implements ExchangeCodec {
     @NotNull
 
     /* renamed from: TE */
-    private static final String f3112TE = "te";
+    private static final String f3076TE = "te";
     @NotNull
     private static final String TRANSFER_ENCODING = "transfer-encoding";
     @NotNull
@@ -62,9 +62,9 @@ public final class Http2ExchangeCodec implements ExchangeCodec {
     @NotNull
     private static final String UPGRADE = "upgrade";
     @NotNull
-    private static final List<String> HTTP_2_SKIPPED_REQUEST_HEADERS = Util.immutableListOf(CONNECTION, HOST, KEEP_ALIVE, PROXY_CONNECTION, f3112TE, TRANSFER_ENCODING, ENCODING, UPGRADE, Header.TARGET_METHOD_UTF8, Header.TARGET_PATH_UTF8, Header.TARGET_SCHEME_UTF8, Header.TARGET_AUTHORITY_UTF8);
+    private static final List<String> HTTP_2_SKIPPED_REQUEST_HEADERS = Util.immutableListOf(CONNECTION, HOST, KEEP_ALIVE, PROXY_CONNECTION, f3076TE, TRANSFER_ENCODING, ENCODING, UPGRADE, Header.TARGET_METHOD_UTF8, Header.TARGET_PATH_UTF8, Header.TARGET_SCHEME_UTF8, Header.TARGET_AUTHORITY_UTF8);
     @NotNull
-    private static final List<String> HTTP_2_SKIPPED_RESPONSE_HEADERS = Util.immutableListOf(CONNECTION, HOST, KEEP_ALIVE, PROXY_CONNECTION, f3112TE, TRANSFER_ENCODING, ENCODING, UPGRADE);
+    private static final List<String> HTTP_2_SKIPPED_RESPONSE_HEADERS = Util.immutableListOf(CONNECTION, HOST, KEEP_ALIVE, PROXY_CONNECTION, f3076TE, TRANSFER_ENCODING, ENCODING, UPGRADE);
 
     public Http2ExchangeCodec(@NotNull OkHttpClient client, @NotNull RealConnection connection, @NotNull RealInterceptorChain chain, @NotNull Http2Connection http2Connection) {
         Protocol protocol;
@@ -209,7 +209,7 @@ public final class Http2ExchangeCodec implements ExchangeCodec {
                 Intrinsics.checkNotNullExpressionValue(locale, "US");
                 String name2 = name.toLowerCase(locale);
                 Intrinsics.checkNotNullExpressionValue(name2, "this as java.lang.String).toLowerCase(locale)");
-                if (!Http2ExchangeCodec.HTTP_2_SKIPPED_REQUEST_HEADERS.contains(name2) || (Intrinsics.areEqual(name2, Http2ExchangeCodec.f3112TE) && Intrinsics.areEqual(headers.value(i), "trailers"))) {
+                if (!Http2ExchangeCodec.HTTP_2_SKIPPED_REQUEST_HEADERS.contains(name2) || (Intrinsics.areEqual(name2, Http2ExchangeCodec.f3076TE) && Intrinsics.areEqual(headers.value(i), "trailers"))) {
                     result.add(new Header(name2, headers.value(i)));
                 }
             }

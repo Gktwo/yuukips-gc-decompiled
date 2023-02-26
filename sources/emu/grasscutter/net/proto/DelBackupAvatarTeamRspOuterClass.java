@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DelBackupAvatarTeamRspOuterClass.class */
 public final class DelBackupAvatarTeamRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cDelBackupAvatarTeamRsp.proto\"H\n\u0016DelBackupAvatarTeamRsp\u0012\u001d\n\u0015backup_avatar_team_id\u0018\t \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0003 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cDelBackupAvatarTeamRsp.proto\"E\n\u0016DelBackupAvatarTeamRsp\u0012\u001a\n\u0012backupAvatarTeamId\u0018\u000b \u0001(\r\u0012\u000f\n\u0007retcode\u0018\f \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_DelBackupAvatarTeamRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_DelBackupAvatarTeamRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DelBackupAvatarTeamRsp_descriptor, new String[]{"BackupAvatarTeamId", "Retcode"});
 
@@ -43,9 +43,9 @@ public final class DelBackupAvatarTeamRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DelBackupAvatarTeamRspOuterClass$DelBackupAvatarTeamRsp.class */
     public static final class DelBackupAvatarTeamRsp extends GeneratedMessageV3 implements DelBackupAvatarTeamRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int BACKUP_AVATAR_TEAM_ID_FIELD_NUMBER = 9;
+        public static final int BACKUPAVATARTEAMID_FIELD_NUMBER = 11;
         private int backupAvatarTeamId_;
-        public static final int RETCODE_FIELD_NUMBER = 3;
+        public static final int RETCODE_FIELD_NUMBER = 12;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final DelBackupAvatarTeamRsp DEFAULT_INSTANCE = new DelBackupAvatarTeamRsp();
@@ -92,11 +92,11 @@ public final class DelBackupAvatarTeamRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 24:
-                                this.retcode_ = input.readInt32();
-                                break;
-                            case 72:
+                            case 88:
                                 this.backupAvatarTeamId_ = input.readUInt32();
+                                break;
+                            case 96:
+                                this.retcode_ = input.readInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -152,11 +152,11 @@ public final class DelBackupAvatarTeamRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.retcode_ != 0) {
-                output.writeInt32(3, this.retcode_);
-            }
             if (this.backupAvatarTeamId_ != 0) {
-                output.writeUInt32(9, this.backupAvatarTeamId_);
+                output.writeUInt32(11, this.backupAvatarTeamId_);
+            }
+            if (this.retcode_ != 0) {
+                output.writeInt32(12, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class DelBackupAvatarTeamRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(3, this.retcode_);
-            }
             if (this.backupAvatarTeamId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.backupAvatarTeamId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(11, this.backupAvatarTeamId_);
+            }
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(12, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class DelBackupAvatarTeamRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getBackupAvatarTeamId())) + 3)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getBackupAvatarTeamId())) + 12)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

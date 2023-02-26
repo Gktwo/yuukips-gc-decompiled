@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WidgetDoBagRspOuterClass.class */
 public final class WidgetDoBagRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014WidgetDoBagRsp.proto\"6\n\u000eWidgetDoBagRsp\u0012\u0013\n\u000bmaterial_id\u0018\u0006 \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u000e \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014WidgetDoBagRsp.proto\"5\n\u000eWidgetDoBagRsp\u0012\u0012\n\nmaterialId\u0018\u0006 \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0001 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_WidgetDoBagRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_WidgetDoBagRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WidgetDoBagRsp_descriptor, new String[]{"MaterialId", "Retcode"});
 
@@ -43,9 +43,9 @@ public final class WidgetDoBagRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WidgetDoBagRspOuterClass$WidgetDoBagRsp.class */
     public static final class WidgetDoBagRsp extends GeneratedMessageV3 implements WidgetDoBagRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MATERIAL_ID_FIELD_NUMBER = 6;
+        public static final int MATERIALID_FIELD_NUMBER = 6;
         private int materialId_;
-        public static final int RETCODE_FIELD_NUMBER = 14;
+        public static final int RETCODE_FIELD_NUMBER = 1;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final WidgetDoBagRsp DEFAULT_INSTANCE = new WidgetDoBagRsp();
@@ -92,11 +92,11 @@ public final class WidgetDoBagRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
+                            case 8:
+                                this.retcode_ = input.readInt32();
+                                break;
                             case 48:
                                 this.materialId_ = input.readUInt32();
-                                break;
-                            case 112:
-                                this.retcode_ = input.readInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -152,11 +152,11 @@ public final class WidgetDoBagRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.retcode_ != 0) {
+                output.writeInt32(1, this.retcode_);
+            }
             if (this.materialId_ != 0) {
                 output.writeUInt32(6, this.materialId_);
-            }
-            if (this.retcode_ != 0) {
-                output.writeInt32(14, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class WidgetDoBagRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.materialId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.materialId_);
-            }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(14, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(1, this.retcode_);
+            }
+            if (this.materialId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(6, this.materialId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class WidgetDoBagRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getMaterialId())) + 14)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getMaterialId())) + 1)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

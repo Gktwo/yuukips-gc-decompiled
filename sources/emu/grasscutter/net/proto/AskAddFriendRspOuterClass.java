@@ -19,17 +19,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AskAddFriendRspOuterClass.class */
 public final class AskAddFriendRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015AskAddFriendRsp.proto\"E\n\u000fAskAddFriendRsp\u0012\u000f\n\u0007retcode\u0018\u000b \u0001(\u0005\u0012\u0012\n\ntarget_uid\u0018\t \u0001(\r\u0012\r\n\u0005param\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015AskAddFriendRsp.proto\"D\n\u000fAskAddFriendRsp\u0012\u000f\n\u0007retcode\u0018\u000b \u0001(\u0005\u0012\r\n\u0005param\u0018\r \u0001(\r\u0012\u0011\n\ttargetUid\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AskAddFriendRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AskAddFriendRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AskAddFriendRsp_descriptor, new String[]{"Retcode", "TargetUid", "Param"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AskAddFriendRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AskAddFriendRsp_descriptor, new String[]{"Retcode", "Param", "TargetUid"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AskAddFriendRspOuterClass$AskAddFriendRspOrBuilder.class */
     public interface AskAddFriendRspOrBuilder extends MessageOrBuilder {
         int getRetcode();
 
-        int getTargetUid();
-
         int getParam();
+
+        int getTargetUid();
     }
 
     private AskAddFriendRspOuterClass() {
@@ -47,10 +47,10 @@ public final class AskAddFriendRspOuterClass {
         private static final long serialVersionUID = 0;
         public static final int RETCODE_FIELD_NUMBER = 11;
         private int retcode_;
-        public static final int TARGET_UID_FIELD_NUMBER = 9;
-        private int targetUid_;
-        public static final int PARAM_FIELD_NUMBER = 12;
+        public static final int PARAM_FIELD_NUMBER = 13;
         private int param_;
+        public static final int TARGETUID_FIELD_NUMBER = 10;
+        private int targetUid_;
         private byte memoizedIsInitialized;
         private static final AskAddFriendRsp DEFAULT_INSTANCE = new AskAddFriendRsp();
         private static final Parser<AskAddFriendRsp> PARSER = new AbstractParser<AskAddFriendRsp>() { // from class: emu.grasscutter.net.proto.AskAddFriendRspOuterClass.AskAddFriendRsp.1
@@ -97,13 +97,13 @@ public final class AskAddFriendRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 72:
+                                case 80:
                                     this.targetUid_ = input.readUInt32();
                                     break;
                                 case 88:
                                     this.retcode_ = input.readInt32();
                                     break;
-                                case 96:
+                                case 104:
                                     this.param_ = input.readUInt32();
                                     break;
                                 default:
@@ -142,13 +142,13 @@ public final class AskAddFriendRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AskAddFriendRspOuterClass.AskAddFriendRspOrBuilder
-        public int getTargetUid() {
-            return this.targetUid_;
+        public int getParam() {
+            return this.param_;
         }
 
         @Override // emu.grasscutter.net.proto.AskAddFriendRspOuterClass.AskAddFriendRspOrBuilder
-        public int getParam() {
-            return this.param_;
+        public int getTargetUid() {
+            return this.targetUid_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,13 +167,13 @@ public final class AskAddFriendRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.targetUid_ != 0) {
-                output.writeUInt32(9, this.targetUid_);
+                output.writeUInt32(10, this.targetUid_);
             }
             if (this.retcode_ != 0) {
                 output.writeInt32(11, this.retcode_);
             }
             if (this.param_ != 0) {
-                output.writeUInt32(12, this.param_);
+                output.writeUInt32(13, this.param_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,13 +186,13 @@ public final class AskAddFriendRspOuterClass {
             }
             int size2 = 0;
             if (this.targetUid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(9, this.targetUid_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(10, this.targetUid_);
             }
             if (this.retcode_ != 0) {
                 size2 += CodedOutputStream.computeInt32Size(11, this.retcode_);
             }
             if (this.param_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.param_);
+                size2 += CodedOutputStream.computeUInt32Size(13, this.param_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -208,7 +208,7 @@ public final class AskAddFriendRspOuterClass {
                 return equals(obj);
             }
             AskAddFriendRsp other = (AskAddFriendRsp) obj;
-            return getRetcode() == other.getRetcode() && getTargetUid() == other.getTargetUid() && getParam() == other.getParam() && this.unknownFields.equals(other.unknownFields);
+            return getRetcode() == other.getRetcode() && getParam() == other.getParam() && getTargetUid() == other.getTargetUid() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -216,7 +216,7 @@ public final class AskAddFriendRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getRetcode())) + 9)) + getTargetUid())) + 12)) + getParam())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getRetcode())) + 13)) + getParam())) + 10)) + getTargetUid())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -296,8 +296,8 @@ public final class AskAddFriendRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AskAddFriendRspOuterClass$AskAddFriendRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements AskAddFriendRspOrBuilder {
             private int retcode_;
-            private int targetUid_;
             private int param_;
+            private int targetUid_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return AskAddFriendRspOuterClass.internal_static_AskAddFriendRsp_descriptor;
@@ -326,8 +326,8 @@ public final class AskAddFriendRspOuterClass {
             public Builder clear() {
                 clear();
                 this.retcode_ = 0;
-                this.targetUid_ = 0;
                 this.param_ = 0;
+                this.targetUid_ = 0;
                 return this;
             }
 
@@ -354,8 +354,8 @@ public final class AskAddFriendRspOuterClass {
             public AskAddFriendRsp buildPartial() {
                 AskAddFriendRsp result = new AskAddFriendRsp(this);
                 result.retcode_ = this.retcode_;
-                result.targetUid_ = this.targetUid_;
                 result.param_ = this.param_;
+                result.targetUid_ = this.targetUid_;
                 onBuilt();
                 return result;
             }
@@ -406,11 +406,11 @@ public final class AskAddFriendRspOuterClass {
                 if (other.getRetcode() != 0) {
                     setRetcode(other.getRetcode());
                 }
-                if (other.getTargetUid() != 0) {
-                    setTargetUid(other.getTargetUid());
-                }
                 if (other.getParam() != 0) {
                     setParam(other.getParam());
+                }
+                if (other.getTargetUid() != 0) {
+                    setTargetUid(other.getTargetUid());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -462,23 +462,6 @@ public final class AskAddFriendRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AskAddFriendRspOuterClass.AskAddFriendRspOrBuilder
-            public int getTargetUid() {
-                return this.targetUid_;
-            }
-
-            public Builder setTargetUid(int value) {
-                this.targetUid_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearTargetUid() {
-                this.targetUid_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AskAddFriendRspOuterClass.AskAddFriendRspOrBuilder
             public int getParam() {
                 return this.param_;
             }
@@ -491,6 +474,23 @@ public final class AskAddFriendRspOuterClass {
 
             public Builder clearParam() {
                 this.param_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AskAddFriendRspOuterClass.AskAddFriendRspOrBuilder
+            public int getTargetUid() {
+                return this.targetUid_;
+            }
+
+            public Builder setTargetUid(int value) {
+                this.targetUid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearTargetUid() {
+                this.targetUid_ = 0;
                 onChanged();
                 return this;
             }

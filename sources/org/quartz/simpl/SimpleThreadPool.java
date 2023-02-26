@@ -351,7 +351,7 @@ public class SimpleThreadPool implements ThreadPool {
         private AtomicBoolean run;
 
         /* renamed from: tp */
-        private SimpleThreadPool f3377tp;
+        private SimpleThreadPool f3341tp;
         private Runnable runnable;
         private boolean runOnce;
 
@@ -365,7 +365,7 @@ public class SimpleThreadPool implements ThreadPool {
             this.run = new AtomicBoolean(true);
             this.runnable = null;
             this.runOnce = false;
-            this.f3377tp = tp;
+            this.f3341tp = tp;
             this.runnable = runnable;
             if (runnable != null) {
                 this.runOnce = true;

@@ -25,12 +25,12 @@ public class ReferenceOpenHashBigSet<K> extends AbstractReferenceSet<K> implemen
     protected transient boolean containsNull;
 
     /* renamed from: n */
-    protected transient long f2839n;
+    protected transient long f2803n;
     protected transient long maxFill;
     protected final transient long minN;
 
     /* renamed from: f */
-    protected final float f2840f;
+    protected final float f2804f;
     protected long size;
     private static final Collector<Object, ?, ReferenceOpenHashBigSet<Object>> TO_SET_COLLECTOR = Collector.of(ReferenceOpenHashBigSet::new, (v0, v1) -> {
         v0.add(v1);
@@ -39,7 +39,7 @@ public class ReferenceOpenHashBigSet<K> extends AbstractReferenceSet<K> implemen
     }, new Collector.Characteristics[0]);
 
     private void initMasks() {
-        this.mask = this.f2839n - 1;
+        this.mask = this.f2803n - 1;
         this.segmentMask = this.key[0].length - 1;
         this.baseMask = this.key.length - 1;
     }
@@ -47,15 +47,15 @@ public class ReferenceOpenHashBigSet<K> extends AbstractReferenceSet<K> implemen
     public ReferenceOpenHashBigSet(long expected, float f) {
         if (f <= 0.0f || f > 1.0f) {
             throw new IllegalArgumentException("Load factor must be greater than 0 and smaller than or equal to 1");
-        } else if (this.f2839n < 0) {
+        } else if (this.f2803n < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2840f = f;
+            this.f2804f = f;
             long bigArraySize = HashCommon.bigArraySize(expected, f);
-            this.f2839n = bigArraySize;
+            this.f2803n = bigArraySize;
             this.minN = bigArraySize;
-            this.maxFill = HashCommon.maxFill(this.f2839n, f);
-            this.key = (K[][]) ObjectBigArrays.newBigArray(this.f2839n);
+            this.maxFill = HashCommon.maxFill(this.f2803n, f);
+            this.key = (K[][]) ObjectBigArrays.newBigArray(this.f2803n);
             initMasks();
         }
     }
@@ -144,8 +144,8 @@ public class ReferenceOpenHashBigSet<K> extends AbstractReferenceSet<K> implemen
     }
 
     private void ensureCapacity(long capacity) {
-        long needed = HashCommon.bigArraySize(capacity, this.f2840f);
-        if (needed > this.f2839n) {
+        long needed = HashCommon.bigArraySize(capacity, this.f2804f);
+        if (needed > this.f2803n) {
             rehash(needed);
         }
     }
@@ -153,7 +153,7 @@ public class ReferenceOpenHashBigSet<K> extends AbstractReferenceSet<K> implemen
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public boolean addAll(Collection<? extends K> c) {
         long size = Size64.sizeOf(c);
-        if (((double) this.f2840f) <= 0.5d) {
+        if (((double) this.f2804f) <= 0.5d) {
             ensureCapacity(size);
         } else {
             ensureCapacity(size64() + size);
@@ -199,7 +199,7 @@ public class ReferenceOpenHashBigSet<K> extends AbstractReferenceSet<K> implemen
         if (j < this.maxFill) {
             return true;
         }
-        rehash(2 * this.f2839n);
+        rehash(2 * this.f2803n);
         return true;
     }
 
@@ -233,20 +233,20 @@ public class ReferenceOpenHashBigSet<K> extends AbstractReferenceSet<K> implemen
     private boolean removeEntry(int base, int displ) {
         this.size--;
         shiftKeys((((long) base) * 134217728) + ((long) displ));
-        if (this.f2839n <= this.minN || this.size >= this.maxFill / 4 || this.f2839n <= 16) {
+        if (this.f2803n <= this.minN || this.size >= this.maxFill / 4 || this.f2803n <= 16) {
             return true;
         }
-        rehash(this.f2839n / 2);
+        rehash(this.f2803n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
         this.size--;
-        if (this.f2839n <= this.minN || this.size >= this.maxFill / 4 || this.f2839n <= 16) {
+        if (this.f2803n <= this.minN || this.size >= this.maxFill / 4 || this.f2803n <= 16) {
             return true;
         }
-        rehash(this.f2839n / 2);
+        rehash(this.f2803n / 2);
         return true;
     }
 
@@ -337,20 +337,20 @@ public class ReferenceOpenHashBigSet<K> extends AbstractReferenceSet<K> implemen
         long last;
 
         /* renamed from: c */
-        long f2841c;
+        long f2805c;
         boolean mustReturnNull;
         ReferenceArrayList<K> wrapped;
 
         private SetIterator() {
             this.base = ReferenceOpenHashBigSet.this.key.length;
             this.last = -1;
-            this.f2841c = ReferenceOpenHashBigSet.this.size;
+            this.f2805c = ReferenceOpenHashBigSet.this.size;
             this.mustReturnNull = ReferenceOpenHashBigSet.this.containsNull;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2841c != 0;
+            return this.f2805c != 0;
         }
 
         @Override // java.util.Iterator
@@ -359,10 +359,10 @@ public class ReferenceOpenHashBigSet<K> extends AbstractReferenceSet<K> implemen
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2841c--;
+            this.f2805c--;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = ReferenceOpenHashBigSet.this.f2839n;
+                this.last = ReferenceOpenHashBigSet.this.f2803n;
                 return null;
             }
             K[][] key = ReferenceOpenHashBigSet.this.key;
@@ -433,7 +433,7 @@ public class ReferenceOpenHashBigSet<K> extends AbstractReferenceSet<K> implemen
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == ReferenceOpenHashBigSet.this.f2839n) {
+            if (this.last == ReferenceOpenHashBigSet.this.f2803n) {
                 ReferenceOpenHashBigSet.this.containsNull = false;
             } else if (this.base >= 0) {
                 shiftKeys(this.last);
@@ -461,22 +461,22 @@ public class ReferenceOpenHashBigSet<K> extends AbstractReferenceSet<K> implemen
         long max;
 
         /* renamed from: c */
-        long f2842c;
+        long f2806c;
         boolean mustReturnNull;
         boolean hasSplit;
 
         SetSpliterator() {
             this.pos = 0;
-            this.max = ReferenceOpenHashBigSet.this.f2839n;
-            this.f2842c = 0;
+            this.max = ReferenceOpenHashBigSet.this.f2803n;
+            this.f2806c = 0;
             this.mustReturnNull = ReferenceOpenHashBigSet.this.containsNull;
             this.hasSplit = false;
         }
 
         SetSpliterator(long pos, long max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = ReferenceOpenHashBigSet.this.f2839n;
-            this.f2842c = 0;
+            this.max = ReferenceOpenHashBigSet.this.f2803n;
+            this.f2806c = 0;
             this.mustReturnNull = ReferenceOpenHashBigSet.this.containsNull;
             this.hasSplit = false;
             this.pos = pos;
@@ -489,7 +489,7 @@ public class ReferenceOpenHashBigSet<K> extends AbstractReferenceSet<K> implemen
         public boolean tryAdvance(Consumer<? super K> action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2842c++;
+                this.f2806c++;
                 action.accept(null);
                 return true;
             }
@@ -497,7 +497,7 @@ public class ReferenceOpenHashBigSet<K> extends AbstractReferenceSet<K> implemen
             while (this.pos < this.max) {
                 Object obj = (Object) BigArrays.get(key, this.pos);
                 if (obj != 0) {
-                    this.f2842c++;
+                    this.f2806c++;
                     this.pos++;
                     action.accept(obj);
                     return true;
@@ -512,14 +512,14 @@ public class ReferenceOpenHashBigSet<K> extends AbstractReferenceSet<K> implemen
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
                 action.accept(null);
-                this.f2842c++;
+                this.f2806c++;
             }
             K[][] key = ReferenceOpenHashBigSet.this.key;
             while (this.pos < this.max) {
                 Object obj = (Object) BigArrays.get(key, this.pos);
                 if (obj != 0) {
                     action.accept(obj);
-                    this.f2842c++;
+                    this.f2806c++;
                 }
                 this.pos++;
             }
@@ -533,9 +533,9 @@ public class ReferenceOpenHashBigSet<K> extends AbstractReferenceSet<K> implemen
         @Override // java.util.Spliterator
         public long estimateSize() {
             if (!this.hasSplit) {
-                return ReferenceOpenHashBigSet.this.size - this.f2842c;
+                return ReferenceOpenHashBigSet.this.size - this.f2806c;
             }
-            return Math.min(ReferenceOpenHashBigSet.this.size - this.f2842c, ((long) ((((double) ReferenceOpenHashBigSet.this.realSize()) / ((double) ReferenceOpenHashBigSet.this.f2839n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min(ReferenceOpenHashBigSet.this.size - this.f2806c, ((long) ((((double) ReferenceOpenHashBigSet.this.realSize()) / ((double) ReferenceOpenHashBigSet.this.f2803n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -675,7 +675,7 @@ public class ReferenceOpenHashBigSet<K> extends AbstractReferenceSet<K> implemen
             action.accept(null);
         }
         long pos = 0;
-        long max = this.f2839n;
+        long max = this.f2803n;
         K[][] kArr = this.key;
         while ((pos == true ? 1 : 0) < max) {
             pos++;
@@ -691,8 +691,8 @@ public class ReferenceOpenHashBigSet<K> extends AbstractReferenceSet<K> implemen
     }
 
     public boolean trim(long n) {
-        long l = HashCommon.bigArraySize(n, this.f2840f);
-        if (l >= this.f2839n || this.size > HashCommon.maxFill(l, this.f2840f)) {
+        long l = HashCommon.bigArraySize(n, this.f2804f);
+        if (l >= this.f2803n || this.size > HashCommon.maxFill(l, this.f2804f)) {
             return true;
         }
         try {
@@ -901,9 +901,9 @@ public class ReferenceOpenHashBigSet<K> extends AbstractReferenceSet<K> implemen
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int i;
         s.defaultReadObject();
-        this.f2839n = HashCommon.bigArraySize(this.size, this.f2840f);
-        this.maxFill = HashCommon.maxFill(this.f2839n, this.f2840f);
-        K[][] key = (K[][]) ObjectBigArrays.newBigArray(this.f2839n);
+        this.f2803n = HashCommon.bigArraySize(this.size, this.f2804f);
+        this.maxFill = HashCommon.maxFill(this.f2803n, this.f2804f);
+        K[][] key = (K[][]) ObjectBigArrays.newBigArray(this.f2803n);
         this.key = key;
         initMasks();
         long i2 = this.size;

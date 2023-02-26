@@ -240,8 +240,9 @@ public final class Suppliers {
         return new SupplierOfInstance(instance);
     }
 
+    /* access modifiers changed from: private */
     /* loaded from: grasscutter.jar:com/google/common/base/Suppliers$SupplierOfInstance.class */
-    private static class SupplierOfInstance<T> implements Supplier<T>, Serializable {
+    public static class SupplierOfInstance<T> implements Supplier<T>, Serializable {
         final T instance;
         private static final long serialVersionUID = 0;
 

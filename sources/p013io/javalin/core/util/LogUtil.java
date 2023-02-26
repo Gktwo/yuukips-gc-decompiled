@@ -153,33 +153,33 @@ public final class LogUtil {
     @JvmStatic
     public static final void wsDevLogger(@NotNull WsConfig ws) {
         Intrinsics.checkNotNullParameter(ws, "ws");
-        ws.onConnect(LogUtil::m5776wsDevLogger$lambda4);
-        ws.onMessage(LogUtil::m5777wsDevLogger$lambda5);
-        ws.onBinaryMessage(LogUtil::m5778wsDevLogger$lambda6);
-        ws.onClose(LogUtil::m5779wsDevLogger$lambda7);
-        ws.onError(LogUtil::m5780wsDevLogger$lambda8);
+        ws.onConnect(LogUtil::m5773wsDevLogger$lambda4);
+        ws.onMessage(LogUtil::m5774wsDevLogger$lambda5);
+        ws.onBinaryMessage(LogUtil::m5775wsDevLogger$lambda6);
+        ws.onClose(LogUtil::m5776wsDevLogger$lambda7);
+        ws.onError(LogUtil::m5777wsDevLogger$lambda8);
     }
 
     /* renamed from: wsDevLogger$lambda-4  reason: not valid java name */
-    private static final void m5776wsDevLogger$lambda4(WsConnectContext ctx) {
+    private static final void m5773wsDevLogger$lambda4(WsConnectContext ctx) {
         Intrinsics.checkNotNullParameter(ctx, "ctx");
         logEvent$default(INSTANCE, ctx, "onConnect", null, 2, null);
     }
 
     /* renamed from: wsDevLogger$lambda-5  reason: not valid java name */
-    private static final void m5777wsDevLogger$lambda5(WsMessageContext ctx) {
+    private static final void m5774wsDevLogger$lambda5(WsMessageContext ctx) {
         Intrinsics.checkNotNullParameter(ctx, "ctx");
         INSTANCE.logEvent(ctx, "onMessage", Intrinsics.stringPlus("Message (next line):\n", ctx.message()));
     }
 
     /* renamed from: wsDevLogger$lambda-6  reason: not valid java name */
-    private static final void m5778wsDevLogger$lambda6(WsBinaryMessageContext ctx) {
+    private static final void m5775wsDevLogger$lambda6(WsBinaryMessageContext ctx) {
         Intrinsics.checkNotNullParameter(ctx, "ctx");
         INSTANCE.logEvent(ctx, "onBinaryMessage", "Offset: " + ctx.offset() + ", Length: " + ctx.length() + "\nMessage (next line):\n" + ctx.data());
     }
 
     /* renamed from: wsDevLogger$lambda-7  reason: not valid java name */
-    private static final void m5779wsDevLogger$lambda7(WsCloseContext ctx) {
+    private static final void m5776wsDevLogger$lambda7(WsCloseContext ctx) {
         Intrinsics.checkNotNullParameter(ctx, "ctx");
         LogUtil logUtil = INSTANCE;
         WsCloseContext wsCloseContext = ctx;
@@ -189,7 +189,7 @@ public final class LogUtil {
     }
 
     /* renamed from: wsDevLogger$lambda-8  reason: not valid java name */
-    private static final void m5780wsDevLogger$lambda8(WsErrorContext ctx) {
+    private static final void m5777wsDevLogger$lambda8(WsErrorContext ctx) {
         Intrinsics.checkNotNullParameter(ctx, "ctx");
         LogUtil logUtil = INSTANCE;
         WsErrorContext wsErrorContext = ctx;
@@ -234,16 +234,16 @@ public final class LogUtil {
         @Override // p013io.javalin.core.plugin.PluginLifecycleInit
         public void init(@NotNull Javalin app) {
             Intrinsics.checkNotNullParameter(app, "app");
-            app.events(HandlerLoggingPlugin::m5783init$lambda1);
+            app.events(HandlerLoggingPlugin::m5780init$lambda1);
         }
 
         /* renamed from: init$lambda-1  reason: not valid java name */
-        private static final void m5783init$lambda1(EventListener on) {
-            on.handlerAdded(HandlerLoggingPlugin::m5782init$lambda1$lambda0);
+        private static final void m5780init$lambda1(EventListener on) {
+            on.handlerAdded(HandlerLoggingPlugin::m5779init$lambda1$lambda0);
         }
 
         /* renamed from: init$lambda-1$lambda-0  reason: not valid java name */
-        private static final void m5782init$lambda1$lambda0(HandlerMetaInfo handlerMetaInfo) {
+        private static final void m5779init$lambda1$lambda0(HandlerMetaInfo handlerMetaInfo) {
             JavalinLogger.info$default("JAVALIN HANDLER REGISTRATION DEBUG LOG: " + handlerMetaInfo.getHttpMethod() + '[' + handlerMetaInfo.getPath() + ']', null, 2, null);
         }
     }

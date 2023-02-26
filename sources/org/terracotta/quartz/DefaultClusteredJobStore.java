@@ -1577,7 +1577,7 @@ public class DefaultClusteredJobStore implements ClusteredJobStore {
             this.acquires = 0;
         }
 
-        /* synthetic */ LocalLockState(C59801 x0) {
+        /* synthetic */ LocalLockState(C59721 x0) {
             this();
         }
 
@@ -1608,7 +1608,7 @@ public class DefaultClusteredJobStore implements ClusteredJobStore {
     /* access modifiers changed from: package-private */
     /* renamed from: org.terracotta.quartz.DefaultClusteredJobStore$1 */
     /* loaded from: grasscutter.jar:org/terracotta/quartz/DefaultClusteredJobStore$1.class */
-    public static /* synthetic */ class C59801 {
+    public static /* synthetic */ class C59721 {
         static final /* synthetic */ int[] $SwitchMap$org$terracotta$toolkit$cluster$ClusterEvent$Type = new int[ClusterEvent.Type.values().length];
 
         static {
@@ -1632,16 +1632,16 @@ public class DefaultClusteredJobStore implements ClusteredJobStore {
                 $SwitchMap$org$terracotta$toolkit$cluster$ClusterEvent$Type[ClusterEvent.Type.NODE_REJOINED.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
-            f3379xbe37f3ab = new int[StringMatcher.StringOperatorName.values().length];
+            f3343xbe37f3ab = new int[StringMatcher.StringOperatorName.values().length];
             try {
-                f3379xbe37f3ab[StringMatcher.StringOperatorName.EQUALS.ordinal()] = 1;
+                f3343xbe37f3ab[StringMatcher.StringOperatorName.EQUALS.ordinal()] = 1;
             } catch (NoSuchFieldError e6) {
             }
         }
     }
 
     public void onClusterEvent(ClusterEvent event) {
-        switch (C59801.$SwitchMap$org$terracotta$toolkit$cluster$ClusterEvent$Type[event.getType().ordinal()]) {
+        switch (C59721.$SwitchMap$org$terracotta$toolkit$cluster$ClusterEvent$Type[event.getType().ordinal()]) {
             case 1:
             case 2:
             case 3:

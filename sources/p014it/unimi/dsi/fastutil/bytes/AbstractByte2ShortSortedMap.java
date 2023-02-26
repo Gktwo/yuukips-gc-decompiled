@@ -90,30 +90,30 @@ public abstract class AbstractByte2ShortSortedMap extends AbstractByte2ShortMap 
     public static class KeySetIterator implements ByteBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Byte2ShortMap.Entry> f1117i;
+        protected final ObjectBidirectionalIterator<Byte2ShortMap.Entry> f1081i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Byte2ShortMap.Entry> i) {
-            this.f1117i = i;
+            this.f1081i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
         public byte nextByte() {
-            return ((Byte2ShortMap.Entry) this.f1117i.next()).getByteKey();
+            return ((Byte2ShortMap.Entry) this.f1081i.next()).getByteKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteBidirectionalIterator
         public byte previousByte() {
-            return this.f1117i.previous().getByteKey();
+            return this.f1081i.previous().getByteKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1117i.hasNext();
+            return this.f1081i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1117i.hasPrevious();
+            return this.f1081i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractByte2ShortSortedMap extends AbstractByte2ShortMap 
     public static class ValuesIterator implements ShortIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Byte2ShortMap.Entry> f1118i;
+        protected final ObjectBidirectionalIterator<Byte2ShortMap.Entry> f1082i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Byte2ShortMap.Entry> i) {
-            this.f1118i = i;
+            this.f1082i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
         public short nextShort() {
-            return ((Byte2ShortMap.Entry) this.f1118i.next()).getShortValue();
+            return ((Byte2ShortMap.Entry) this.f1082i.next()).getShortValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1118i.hasNext();
+            return this.f1082i.hasNext();
         }
     }
 }

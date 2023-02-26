@@ -299,11 +299,11 @@ public final class RealBufferedSource implements BufferedSource {
     public int readUtf8CodePoint() {
         require(1);
         int b0$iv = this.bufferField.getByte(0);
-        if ((b0$iv & PacketOpcodes.WorldPlayerLocationNotify) == 192) {
+        if ((b0$iv & PacketOpcodes.SceneAvatarStaminaStepRsp) == 192) {
             require(2);
-        } else if ((b0$iv & PacketOpcodes.ExecuteGadgetLuaRsp) == 224) {
+        } else if ((b0$iv & PacketOpcodes.SceneKickPlayerRsp) == 224) {
             require(3);
-        } else if ((b0$iv & PacketOpcodes.ScenePlayerLocationNotify) == 240) {
+        } else if ((b0$iv & PacketOpcodes.EnterSceneDoneReq) == 240) {
             require(4);
         }
         return this.bufferField.readUtf8CodePoint();

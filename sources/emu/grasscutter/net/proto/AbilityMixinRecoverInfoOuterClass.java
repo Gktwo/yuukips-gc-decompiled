@@ -28,12 +28,20 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityMixinRecoverInfoOuterClass.class */
 public final class AbilityMixinRecoverInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dAbilityMixinRecoverInfo.proto\u001a\u0016BreakoutSnapShot.proto\u001a\u0019MassivePropSyncInfo.proto\"\u0002\n\u0017AbilityMixinRecoverInfo\u0012\u0010\n\blocal_id\u0018\u0003 \u0001(\r\u0012\u0011\n\tdata_list\u0018\u0004 \u0003(\r\u0012\u001e\n\u0016is_serverbuff_modifier\u0018\u0005 \u0001(\b\u0012/\n\u0011massive_prop_list\u0018\u0006 \u0003(\u000b2\u0014.MassivePropSyncInfo\u0012-\n\u0012breakout_snap_shot\u0018\u0007 \u0001(\u000b2\u0011.BreakoutSnapShot\u0012\u001e\n\u0014instanced_ability_id\u0018\u0001 \u0001(\rH��\u0012\u001f\n\u0015instanced_modifier_id\u0018\u0002 \u0001(\rH��B\b\n\u0006sourceB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BreakoutSnapShotOuterClass.getDescriptor(), MassivePropSyncInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dAbilityMixinRecoverInfo.proto\u001a\u0016BreakoutSnapShot.proto\u001a\u0019MassivePropSyncInfo.proto\"\u0002\n\u0017AbilityMixinRecoverInfo\u0012\u001e\n\u0014instanced_ability_id\u0018\u0001 \u0001(\rH��\u0012\u001f\n\u0015instanced_modifier_id\u0018\u0002 \u0001(\rH��\u0012\u000f\n\u0007localId\u0018\u0003 \u0001(\r\u0012\u0010\n\bdataList\u0018\u0004 \u0003(\r\u0012\u001c\n\u0014isServerbuffModifier\u0018\u0005 \u0001(\b\u0012-\n\u000fmassivePropList\u0018\u0006 \u0003(\u000b2\u0014.MassivePropSyncInfo\u0012+\n\u0010breakoutSnapShot\u0018\u0007 \u0001(\u000b2\u0011.BreakoutSnapShotB\b\n\u0006sourceB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BreakoutSnapShotOuterClass.getDescriptor(), MassivePropSyncInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AbilityMixinRecoverInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AbilityMixinRecoverInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AbilityMixinRecoverInfo_descriptor, new String[]{"LocalId", "DataList", "IsServerbuffModifier", "MassivePropList", "BreakoutSnapShot", "InstancedAbilityId", "InstancedModifierId", "Source"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AbilityMixinRecoverInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AbilityMixinRecoverInfo_descriptor, new String[]{"InstancedAbilityId", "InstancedModifierId", "LocalId", "DataList", "IsServerbuffModifier", "MassivePropList", "BreakoutSnapShot", "Source"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityMixinRecoverInfoOuterClass$AbilityMixinRecoverInfoOrBuilder.class */
     public interface AbilityMixinRecoverInfoOrBuilder extends MessageOrBuilder {
+        boolean hasInstancedAbilityId();
+
+        int getInstancedAbilityId();
+
+        boolean hasInstancedModifierId();
+
+        int getInstancedModifierId();
+
         int getLocalId();
 
         List<Integer> getDataListList();
@@ -60,14 +68,6 @@ public final class AbilityMixinRecoverInfoOuterClass {
 
         BreakoutSnapShotOuterClass.BreakoutSnapShotOrBuilder getBreakoutSnapShotOrBuilder();
 
-        boolean hasInstancedAbilityId();
-
-        int getInstancedAbilityId();
-
-        boolean hasInstancedModifierId();
-
-        int getInstancedModifierId();
-
         AbilityMixinRecoverInfo.SourceCase getSourceCase();
     }
 
@@ -86,19 +86,19 @@ public final class AbilityMixinRecoverInfoOuterClass {
         private static final long serialVersionUID = 0;
         private int sourceCase_;
         private Object source_;
-        public static final int LOCAL_ID_FIELD_NUMBER = 3;
-        private int localId_;
-        public static final int DATA_LIST_FIELD_NUMBER = 4;
-        private Internal.IntList dataList_;
-        private int dataListMemoizedSerializedSize;
-        public static final int IS_SERVERBUFF_MODIFIER_FIELD_NUMBER = 5;
-        private boolean isServerbuffModifier_;
-        public static final int MASSIVE_PROP_LIST_FIELD_NUMBER = 6;
-        private List<MassivePropSyncInfoOuterClass.MassivePropSyncInfo> massivePropList_;
-        public static final int BREAKOUT_SNAP_SHOT_FIELD_NUMBER = 7;
-        private BreakoutSnapShotOuterClass.BreakoutSnapShot breakoutSnapShot_;
         public static final int INSTANCED_ABILITY_ID_FIELD_NUMBER = 1;
         public static final int INSTANCED_MODIFIER_ID_FIELD_NUMBER = 2;
+        public static final int LOCALID_FIELD_NUMBER = 3;
+        private int localId_;
+        public static final int DATALIST_FIELD_NUMBER = 4;
+        private Internal.IntList dataList_;
+        private int dataListMemoizedSerializedSize;
+        public static final int ISSERVERBUFFMODIFIER_FIELD_NUMBER = 5;
+        private boolean isServerbuffModifier_;
+        public static final int MASSIVEPROPLIST_FIELD_NUMBER = 6;
+        private List<MassivePropSyncInfoOuterClass.MassivePropSyncInfo> massivePropList_;
+        public static final int BREAKOUTSNAPSHOT_FIELD_NUMBER = 7;
+        private BreakoutSnapShotOuterClass.BreakoutSnapShot breakoutSnapShot_;
         private byte memoizedIsInitialized;
         private static final AbilityMixinRecoverInfo DEFAULT_INSTANCE = new AbilityMixinRecoverInfo();
         private static final Parser<AbilityMixinRecoverInfo> PARSER = new AbstractParser<AbilityMixinRecoverInfo>() { // from class: emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfo.1
@@ -280,6 +280,32 @@ public final class AbilityMixinRecoverInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfoOrBuilder
+        public boolean hasInstancedAbilityId() {
+            return this.sourceCase_ == 1;
+        }
+
+        @Override // emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfoOrBuilder
+        public int getInstancedAbilityId() {
+            if (this.sourceCase_ == 1) {
+                return ((Integer) this.source_).intValue();
+            }
+            return 0;
+        }
+
+        @Override // emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfoOrBuilder
+        public boolean hasInstancedModifierId() {
+            return this.sourceCase_ == 2;
+        }
+
+        @Override // emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfoOrBuilder
+        public int getInstancedModifierId() {
+            if (this.sourceCase_ == 2) {
+                return ((Integer) this.source_).intValue();
+            }
+            return 0;
+        }
+
+        @Override // emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfoOrBuilder
         public int getLocalId() {
             return this.localId_;
         }
@@ -342,32 +368,6 @@ public final class AbilityMixinRecoverInfoOuterClass {
         @Override // emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfoOrBuilder
         public BreakoutSnapShotOuterClass.BreakoutSnapShotOrBuilder getBreakoutSnapShotOrBuilder() {
             return getBreakoutSnapShot();
-        }
-
-        @Override // emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfoOrBuilder
-        public boolean hasInstancedAbilityId() {
-            return this.sourceCase_ == 1;
-        }
-
-        @Override // emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfoOrBuilder
-        public int getInstancedAbilityId() {
-            if (this.sourceCase_ == 1) {
-                return ((Integer) this.source_).intValue();
-            }
-            return 0;
-        }
-
-        @Override // emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfoOrBuilder
-        public boolean hasInstancedModifierId() {
-            return this.sourceCase_ == 2;
-        }
-
-        @Override // emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfoOrBuilder
-        public int getInstancedModifierId() {
-            if (this.sourceCase_ == 2) {
-                return ((Integer) this.source_).intValue();
-            }
-            return 0;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -668,6 +668,12 @@ public final class AbilityMixinRecoverInfoOuterClass {
             public AbilityMixinRecoverInfo buildPartial() {
                 AbilityMixinRecoverInfo result = new AbilityMixinRecoverInfo(this);
                 int i = this.bitField0_;
+                if (this.sourceCase_ == 1) {
+                    result.source_ = this.source_;
+                }
+                if (this.sourceCase_ == 2) {
+                    result.source_ = this.source_;
+                }
                 result.localId_ = this.localId_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.dataList_.makeImmutable();
@@ -688,12 +694,6 @@ public final class AbilityMixinRecoverInfoOuterClass {
                     result.breakoutSnapShot_ = this.breakoutSnapShot_;
                 } else {
                     result.breakoutSnapShot_ = this.breakoutSnapShotBuilder_.build();
-                }
-                if (this.sourceCase_ == 1) {
-                    result.source_ = this.source_;
-                }
-                if (this.sourceCase_ == 2) {
-                    result.source_ = this.source_;
                 }
                 result.sourceCase_ = this.sourceCase_;
                 onBuilt();
@@ -833,6 +833,64 @@ public final class AbilityMixinRecoverInfoOuterClass {
                 this.sourceCase_ = 0;
                 this.source_ = null;
                 onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfoOrBuilder
+            public boolean hasInstancedAbilityId() {
+                return this.sourceCase_ == 1;
+            }
+
+            @Override // emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfoOrBuilder
+            public int getInstancedAbilityId() {
+                if (this.sourceCase_ == 1) {
+                    return ((Integer) this.source_).intValue();
+                }
+                return 0;
+            }
+
+            public Builder setInstancedAbilityId(int value) {
+                this.sourceCase_ = 1;
+                this.source_ = Integer.valueOf(value);
+                onChanged();
+                return this;
+            }
+
+            public Builder clearInstancedAbilityId() {
+                if (this.sourceCase_ == 1) {
+                    this.sourceCase_ = 0;
+                    this.source_ = null;
+                    onChanged();
+                }
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfoOrBuilder
+            public boolean hasInstancedModifierId() {
+                return this.sourceCase_ == 2;
+            }
+
+            @Override // emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfoOrBuilder
+            public int getInstancedModifierId() {
+                if (this.sourceCase_ == 2) {
+                    return ((Integer) this.source_).intValue();
+                }
+                return 0;
+            }
+
+            public Builder setInstancedModifierId(int value) {
+                this.sourceCase_ = 2;
+                this.source_ = Integer.valueOf(value);
+                onChanged();
+                return this;
+            }
+
+            public Builder clearInstancedModifierId() {
+                if (this.sourceCase_ == 2) {
+                    this.sourceCase_ = 0;
+                    this.source_ = null;
+                    onChanged();
+                }
                 return this;
             }
 
@@ -1175,64 +1233,6 @@ public final class AbilityMixinRecoverInfoOuterClass {
                     this.breakoutSnapShot_ = null;
                 }
                 return this.breakoutSnapShotBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfoOrBuilder
-            public boolean hasInstancedAbilityId() {
-                return this.sourceCase_ == 1;
-            }
-
-            @Override // emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfoOrBuilder
-            public int getInstancedAbilityId() {
-                if (this.sourceCase_ == 1) {
-                    return ((Integer) this.source_).intValue();
-                }
-                return 0;
-            }
-
-            public Builder setInstancedAbilityId(int value) {
-                this.sourceCase_ = 1;
-                this.source_ = Integer.valueOf(value);
-                onChanged();
-                return this;
-            }
-
-            public Builder clearInstancedAbilityId() {
-                if (this.sourceCase_ == 1) {
-                    this.sourceCase_ = 0;
-                    this.source_ = null;
-                    onChanged();
-                }
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfoOrBuilder
-            public boolean hasInstancedModifierId() {
-                return this.sourceCase_ == 2;
-            }
-
-            @Override // emu.grasscutter.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfoOrBuilder
-            public int getInstancedModifierId() {
-                if (this.sourceCase_ == 2) {
-                    return ((Integer) this.source_).intValue();
-                }
-                return 0;
-            }
-
-            public Builder setInstancedModifierId(int value) {
-                this.sourceCase_ = 2;
-                this.source_ = Integer.valueOf(value);
-                onChanged();
-                return this;
-            }
-
-            public Builder clearInstancedModifierId() {
-                if (this.sourceCase_ == 2) {
-                    this.sourceCase_ = 0;
-                    this.source_ = null;
-                    onChanged();
-                }
-                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

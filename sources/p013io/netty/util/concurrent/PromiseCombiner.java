@@ -39,7 +39,7 @@ public final class PromiseCombiner {
                     PromiseCombiner.this.executor.execute(new Runnable() { // from class: io.netty.util.concurrent.PromiseCombiner.1.1
                         @Override // java.lang.Runnable
                         public void run() {
-                            C31561.this.operationComplete0(future);
+                            C31481.this.operationComplete0(future);
                         }
                     });
                 }

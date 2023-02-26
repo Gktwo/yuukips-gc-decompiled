@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FetterDataOuterClass.class */
 public final class FetterDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010FetterData.proto\"N\n\nFetterData\u0012\u0011\n\tfetter_id\u0018\u0001 \u0001(\r\u0012\u0014\n\ffetter_state\u0018\u0002 \u0001(\r\u0012\u0017\n\u000fcond_index_list\u0018\u0003 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010FetterData.proto\"J\n\nFetterData\u0012\u0010\n\bfetterId\u0018\u0001 \u0001(\r\u0012\u0013\n\u000bfetterState\u0018\u0002 \u0001(\r\u0012\u0015\n\rcondIndexList\u0018\u0003 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_FetterData_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_FetterData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FetterData_descriptor, new String[]{"FetterId", "FetterState", "CondIndexList"});
 
@@ -53,11 +53,11 @@ public final class FetterDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FetterDataOuterClass$FetterData.class */
     public static final class FetterData extends GeneratedMessageV3 implements FetterDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int FETTER_ID_FIELD_NUMBER = 1;
+        public static final int FETTERID_FIELD_NUMBER = 1;
         private int fetterId_;
-        public static final int FETTER_STATE_FIELD_NUMBER = 2;
+        public static final int FETTERSTATE_FIELD_NUMBER = 2;
         private int fetterState_;
-        public static final int COND_INDEX_LIST_FIELD_NUMBER = 3;
+        public static final int CONDINDEXLIST_FIELD_NUMBER = 3;
         private Internal.IntList condIndexList_;
         private int condIndexListMemoizedSerializedSize;
         private byte memoizedIsInitialized;

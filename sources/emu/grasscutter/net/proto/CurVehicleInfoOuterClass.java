@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CurVehicleInfoOuterClass.class */
 public final class CurVehicleInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014CurVehicleInfo.proto\"0\n\u000eCurVehicleInfo\u0012\u0011\n\tentity_id\u0018\u0001 \u0001(\r\u0012\u000b\n\u0003pos\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014CurVehicleInfo.proto\"/\n\u000eCurVehicleInfo\u0012\u0010\n\bentityId\u0018\u0001 \u0001(\r\u0012\u000b\n\u0003pos\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_CurVehicleInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_CurVehicleInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CurVehicleInfo_descriptor, new String[]{"EntityId", "Pos"});
 
@@ -43,7 +43,7 @@ public final class CurVehicleInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CurVehicleInfoOuterClass$CurVehicleInfo.class */
     public static final class CurVehicleInfo extends GeneratedMessageV3 implements CurVehicleInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTITY_ID_FIELD_NUMBER = 1;
+        public static final int ENTITYID_FIELD_NUMBER = 1;
         private int entityId_;
         public static final int POS_FIELD_NUMBER = 2;
         private int pos_;

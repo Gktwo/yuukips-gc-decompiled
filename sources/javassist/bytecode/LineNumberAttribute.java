@@ -10,7 +10,7 @@ public class LineNumberAttribute extends AttributeInfo {
 
     /* renamed from: javassist.bytecode.LineNumberAttribute$Pc */
     /* loaded from: grasscutter.jar:javassist/bytecode/LineNumberAttribute$Pc.class */
-    public static class C5191Pc {
+    public static class C5183Pc {
         public int index;
         public int line;
     }
@@ -61,7 +61,7 @@ public class LineNumberAttribute extends AttributeInfo {
         return -1;
     }
 
-    public C5191Pc toNearPc(int line) {
+    public C5183Pc toNearPc(int line) {
         int n = tableLength();
         int nearPc = 0;
         int distance = 0;
@@ -76,7 +76,7 @@ public class LineNumberAttribute extends AttributeInfo {
                 nearPc = startPc(i);
             }
         }
-        C5191Pc res = new C5191Pc();
+        C5183Pc res = new C5183Pc();
         res.index = nearPc;
         res.line = line + distance;
         return res;

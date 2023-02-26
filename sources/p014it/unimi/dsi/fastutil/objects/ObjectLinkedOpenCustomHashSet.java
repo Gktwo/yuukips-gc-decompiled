@@ -29,13 +29,13 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f2712n;
+    protected transient int f2676n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2713f;
+    protected final float f2677f;
     private static final int SPLITERATOR_CHARACTERISTICS = 81;
 
     public ObjectLinkedOpenCustomHashSet(int expected, float f, Hash.Strategy<? super K> strategy) {
@@ -47,14 +47,14 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2713f = f;
+            this.f2677f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2712n = arraySize;
+            this.f2676n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2712n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2712n, f);
-            this.key = (K[]) new Object[this.f2712n + 1];
-            this.link = new long[this.f2712n + 1];
+            this.mask = this.f2676n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2676n, f);
+            this.key = (K[]) new Object[this.f2676n + 1];
+            this.link = new long[this.f2676n + 1];
         }
     }
 
@@ -126,22 +126,22 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2713f);
-        if (needed > this.f2712n) {
+        int needed = HashCommon.arraySize(capacity, this.f2677f);
+        if (needed > this.f2676n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2713f)))));
-        if (needed > this.f2712n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2677f)))));
+        if (needed > this.f2676n) {
             rehash(needed);
         }
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public boolean addAll(Collection<? extends K> c) {
-        if (((double) this.f2713f) <= 0.5d) {
+        if (((double) this.f2677f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -175,9 +175,9 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
         } else if (this.containsNull) {
             return false;
         } else {
-            pos = this.f2712n;
+            pos = this.f2676n;
             this.containsNull = true;
-            this.key[this.f2712n] = k;
+            this.key[this.f2676n] = k;
         }
         if (this.size == 0) {
             this.last = pos;
@@ -195,7 +195,7 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f2713f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f2677f));
         return true;
     }
 
@@ -222,11 +222,11 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
             }
             key[pos] = k;
         } else if (this.containsNull) {
-            return this.key[this.f2712n];
+            return this.key[this.f2676n];
         } else {
-            pos = this.f2712n;
+            pos = this.f2676n;
             this.containsNull = true;
-            this.key[this.f2712n] = k;
+            this.key[this.f2676n] = k;
         }
         if (this.size == 0) {
             this.last = pos;
@@ -242,7 +242,7 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2713f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2677f));
         }
         return k;
     }
@@ -281,22 +281,22 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f2712n <= this.minN || this.size >= this.maxFill / 4 || this.f2712n <= 16) {
+        if (this.f2676n <= this.minN || this.size >= this.maxFill / 4 || this.f2676n <= 16) {
             return true;
         }
-        rehash(this.f2712n / 2);
+        rehash(this.f2676n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f2712n] = null;
+        this.key[this.f2676n] = null;
         this.size--;
-        fixPointers(this.f2712n);
-        if (this.f2712n <= this.minN || this.size >= this.maxFill / 4 || this.f2712n <= 16) {
+        fixPointers(this.f2676n);
+        if (this.f2676n <= this.minN || this.size >= this.maxFill / 4 || this.f2676n <= 16) {
             return true;
         }
-        rehash(this.f2712n / 2);
+        rehash(this.f2676n / 2);
         return true;
     }
 
@@ -360,7 +360,7 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
     public K get(Object k) {
         K curr;
         if (this.strategy.equals(k, null)) {
-            return this.key[this.f2712n];
+            return this.key[this.f2676n];
         }
         K[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -398,12 +398,12 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
         this.size--;
         if (this.strategy.equals(k, null)) {
             this.containsNull = false;
-            this.key[this.f2712n] = null;
+            this.key[this.f2676n] = null;
         } else {
             shiftKeys(pos);
         }
-        if (this.f2712n > this.minN && this.size < this.maxFill / 4 && this.f2712n > 16) {
-            rehash(this.f2712n / 2);
+        if (this.f2676n > this.minN && this.size < this.maxFill / 4 && this.f2676n > 16) {
+            rehash(this.f2676n / 2);
         }
         return k;
     }
@@ -423,12 +423,12 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
         this.size--;
         if (this.strategy.equals(k, null)) {
             this.containsNull = false;
-            this.key[this.f2712n] = null;
+            this.key[this.f2676n] = null;
         } else {
             shiftKeys(pos);
         }
-        if (this.f2712n > this.minN && this.size < this.maxFill / 4 && this.f2712n > 16) {
-            rehash(this.f2712n / 2);
+        if (this.f2676n > this.minN && this.size < this.maxFill / 4 && this.f2676n > 16) {
+            rehash(this.f2676n / 2);
         }
         return k;
     }
@@ -500,11 +500,11 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToFirst(this.f2712n);
+            moveIndexToFirst(this.f2676n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f2712n;
+            pos = this.f2676n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -523,7 +523,7 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f2713f));
+        rehash(HashCommon.arraySize(this.size, this.f2677f));
         return true;
     }
 
@@ -546,11 +546,11 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToLast(this.f2712n);
+            moveIndexToLast(this.f2676n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f2712n;
+            pos = this.f2676n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -569,7 +569,7 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f2713f));
+        rehash(HashCommon.arraySize(this.size, this.f2677f));
         return true;
     }
 
@@ -713,8 +713,8 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
             this.index = -1;
             if (ObjectLinkedOpenCustomHashSet.this.strategy.equals(from, null)) {
                 if (ObjectLinkedOpenCustomHashSet.this.containsNull) {
-                    this.next = (int) ObjectLinkedOpenCustomHashSet.this.link[ObjectLinkedOpenCustomHashSet.this.f2712n];
-                    this.prev = ObjectLinkedOpenCustomHashSet.this.f2712n;
+                    this.next = (int) ObjectLinkedOpenCustomHashSet.this.link[ObjectLinkedOpenCustomHashSet.this.f2676n];
+                    this.prev = ObjectLinkedOpenCustomHashSet.this.f2676n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + from + " does not belong to this set.");
@@ -853,9 +853,9 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
             }
             int pos = this.curr;
             this.curr = -1;
-            if (pos == ObjectLinkedOpenCustomHashSet.this.f2712n) {
+            if (pos == ObjectLinkedOpenCustomHashSet.this.f2676n) {
                 ObjectLinkedOpenCustomHashSet.this.containsNull = false;
-                ObjectLinkedOpenCustomHashSet.this.key[ObjectLinkedOpenCustomHashSet.this.f2712n] = null;
+                ObjectLinkedOpenCustomHashSet.this.key[ObjectLinkedOpenCustomHashSet.this.f2676n] = null;
                 return;
             }
             K[] key = ObjectLinkedOpenCustomHashSet.this.key;
@@ -925,8 +925,8 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2713f)));
-        if (l >= this.f2712n || this.size > HashCommon.maxFill(l, this.f2713f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2677f)));
+        if (l >= this.f2676n || this.size > HashCommon.maxFill(l, this.f2677f)) {
             return true;
         }
         try {
@@ -984,9 +984,9 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f2712n = newN;
+        this.f2676n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f2712n, this.f2713f);
+        this.maxFill = HashCommon.maxFill(this.f2676n, this.f2677f);
         this.key = newKey;
     }
 
@@ -1046,12 +1046,12 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
         int pos;
         int i;
         s.defaultReadObject();
-        this.f2712n = HashCommon.arraySize(this.size, this.f2713f);
-        this.maxFill = HashCommon.maxFill(this.f2712n, this.f2713f);
-        this.mask = this.f2712n - 1;
-        K[] key = (K[]) new Object[this.f2712n + 1];
+        this.f2676n = HashCommon.arraySize(this.size, this.f2677f);
+        this.maxFill = HashCommon.maxFill(this.f2676n, this.f2677f);
+        this.mask = this.f2676n - 1;
+        K[] key = (K[]) new Object[this.f2676n + 1];
         this.key = key;
-        long[] link = new long[this.f2712n + 1];
+        long[] link = new long[this.f2676n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -1064,7 +1064,7 @@ public class ObjectLinkedOpenCustomHashSet<K> extends AbstractObjectSortedSet<K>
             }
             Object readObject = s.readObject();
             if (this.strategy.equals(readObject, null)) {
-                pos = this.f2712n;
+                pos = this.f2676n;
                 this.containsNull = true;
             } else {
                 int mix = HashCommon.mix(this.strategy.hashCode(readObject)) & this.mask;

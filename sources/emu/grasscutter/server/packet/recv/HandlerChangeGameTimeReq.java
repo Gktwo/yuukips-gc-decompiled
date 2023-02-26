@@ -7,7 +7,7 @@ import emu.grasscutter.net.proto.ChangeGameTimeReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketChangeGameTimeRsp;
 
-@Opcodes(178)
+@Opcodes(162)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerChangeGameTimeReq.class */
 public class HandlerChangeGameTimeReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

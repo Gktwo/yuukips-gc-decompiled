@@ -176,30 +176,30 @@ public final class JavalinServletHandler {
             return;
         }
         CompletableFuture<InputStream> exceptionally = this.currentTaskFuture.thenAccept((v1) -> {
-            m5825queueNextTaskOrFinish$lambda0(r2, v1);
+            m5822queueNextTaskOrFinish$lambda0(r2, v1);
         }).thenCompose((v1) -> {
-            return m5826queueNextTaskOrFinish$lambda1(r2, v1);
+            return m5823queueNextTaskOrFinish$lambda1(r2, v1);
         }).exceptionally((Function<Throwable, ? extends U>) (v1) -> {
-            return m5827queueNextTaskOrFinish$lambda2(r2, v1);
+            return m5824queueNextTaskOrFinish$lambda2(r2, v1);
         });
         Intrinsics.checkNotNullExpressionValue(exceptionally, "currentTaskFuture\n      …ble(ctx.res, throwable) }");
         this.currentTaskFuture = exceptionally;
     }
 
     /* renamed from: queueNextTaskOrFinish$lambda-0  reason: not valid java name */
-    private static final void m5825queueNextTaskOrFinish$lambda0(JavalinServletHandler this$0, InputStream inputStream) {
+    private static final void m5822queueNextTaskOrFinish$lambda0(JavalinServletHandler this$0, InputStream inputStream) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.previousResult = inputStream;
     }
 
     /* renamed from: queueNextTaskOrFinish$lambda-1  reason: not valid java name */
-    private static final CompletionStage m5826queueNextTaskOrFinish$lambda1(JavalinServletHandler this$0, Void it) {
+    private static final CompletionStage m5823queueNextTaskOrFinish$lambda1(JavalinServletHandler this$0, Void it) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         return this$0.executeNextTask();
     }
 
     /* renamed from: queueNextTaskOrFinish$lambda-2  reason: not valid java name */
-    private static final InputStream m5827queueNextTaskOrFinish$lambda2(JavalinServletHandler this$0, Throwable throwable) {
+    private static final InputStream m5824queueNextTaskOrFinish$lambda2(JavalinServletHandler this$0, Throwable throwable) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ExceptionMapper exceptionMapper = this$0.exceptionMapper;
         HttpServletResponse httpServletResponse = this$0.getCtx().res;
@@ -255,13 +255,13 @@ public final class JavalinServletHandler {
                 }, 7, null);
             }
             CompletableFuture<InputStream> thenApply = result.getFuture().thenAccept((v2) -> {
-                m5828executeNextTask$lambda11$lambda6(r1, r2, v2);
+                m5825executeNextTask$lambda11$lambda6(r1, r2, v2);
             }).thenApply((v1) -> {
-                return m5829executeNextTask$lambda11$lambda7(r1, v1);
+                return m5826executeNextTask$lambda11$lambda7(r1, v1);
             }).exceptionally((Function<Throwable, ? extends U>) (v1) -> {
-                return m5830executeNextTask$lambda11$lambda8(r1, v1);
+                return m5827executeNextTask$lambda11$lambda8(r1, v1);
             }).thenApply((v1) -> {
-                return m5831executeNextTask$lambda11$lambda10(r1, v1);
+                return m5828executeNextTask$lambda11$lambda10(r1, v1);
             });
             Intrinsics.checkNotNullExpressionValue(thenApply, "ctx.resultReference.getA…ping a void\n            }");
             return thenApply;
@@ -273,7 +273,7 @@ public final class JavalinServletHandler {
     }
 
     /* renamed from: executeNextTask$lambda-11$lambda-6  reason: not valid java name */
-    private static final void m5828executeNextTask$lambda11$lambda6(Result $result, JavalinServletHandler this$0, Object any) {
+    private static final void m5825executeNextTask$lambda11$lambda6(Result $result, JavalinServletHandler this$0, Object any) {
         Unit unit;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Consumer<Object> callback = $result.getCallback();
@@ -289,14 +289,14 @@ public final class JavalinServletHandler {
     }
 
     /* renamed from: executeNextTask$lambda-11$lambda-7  reason: not valid java name */
-    private static final InputStream m5829executeNextTask$lambda11$lambda7(JavalinServletHandler this$0, Void it) {
+    private static final InputStream m5826executeNextTask$lambda11$lambda7(JavalinServletHandler this$0, Void it) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         InputStream resultStream = this$0.getCtx().resultStream();
         return resultStream == null ? this$0.previousResult : resultStream;
     }
 
     /* renamed from: executeNextTask$lambda-11$lambda-8  reason: not valid java name */
-    private static final InputStream m5830executeNextTask$lambda11$lambda8(JavalinServletHandler this$0, Throwable throwable) {
+    private static final InputStream m5827executeNextTask$lambda11$lambda8(JavalinServletHandler this$0, Throwable throwable) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ExceptionMapper exceptionMapper = this$0.exceptionMapper;
         Context ctx = this$0.getCtx();
@@ -305,7 +305,7 @@ public final class JavalinServletHandler {
     }
 
     /* renamed from: executeNextTask$lambda-11$lambda-10  reason: not valid java name */
-    private static final InputStream m5831executeNextTask$lambda11$lambda10(JavalinServletHandler this$0, InputStream inputStream) {
+    private static final InputStream m5828executeNextTask$lambda11$lambda10(JavalinServletHandler this$0, InputStream inputStream) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.queueNextTaskOrFinish$javalin();
         return inputStream;

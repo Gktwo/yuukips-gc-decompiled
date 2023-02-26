@@ -15,23 +15,23 @@ public final class DoublePriorityQueues {
     public static class SynchronizedPriorityQueue implements DoublePriorityQueue {
 
         /* renamed from: q */
-        protected final DoublePriorityQueue f1749q;
+        protected final DoublePriorityQueue f1713q;
         protected final Object sync;
 
         protected SynchronizedPriorityQueue(DoublePriorityQueue q, Object sync) {
-            this.f1749q = q;
+            this.f1713q = q;
             this.sync = sync;
         }
 
         protected SynchronizedPriorityQueue(DoublePriorityQueue q) {
-            this.f1749q = q;
+            this.f1713q = q;
             this.sync = this;
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoublePriorityQueue
         public void enqueue(double x) {
             synchronized (this.sync) {
-                this.f1749q.enqueue(x);
+                this.f1713q.enqueue(x);
             }
         }
 
@@ -39,7 +39,7 @@ public final class DoublePriorityQueues {
         public double dequeueDouble() {
             double dequeueDouble;
             synchronized (this.sync) {
-                dequeueDouble = this.f1749q.dequeueDouble();
+                dequeueDouble = this.f1713q.dequeueDouble();
             }
             return dequeueDouble;
         }
@@ -48,7 +48,7 @@ public final class DoublePriorityQueues {
         public double firstDouble() {
             double firstDouble;
             synchronized (this.sync) {
-                firstDouble = this.f1749q.firstDouble();
+                firstDouble = this.f1713q.firstDouble();
             }
             return firstDouble;
         }
@@ -57,7 +57,7 @@ public final class DoublePriorityQueues {
         public double lastDouble() {
             double lastDouble;
             synchronized (this.sync) {
-                lastDouble = this.f1749q.lastDouble();
+                lastDouble = this.f1713q.lastDouble();
             }
             return lastDouble;
         }
@@ -66,7 +66,7 @@ public final class DoublePriorityQueues {
         public boolean isEmpty() {
             boolean isEmpty;
             synchronized (this.sync) {
-                isEmpty = this.f1749q.isEmpty();
+                isEmpty = this.f1713q.isEmpty();
             }
             return isEmpty;
         }
@@ -75,7 +75,7 @@ public final class DoublePriorityQueues {
         public int size() {
             int size;
             synchronized (this.sync) {
-                size = this.f1749q.size();
+                size = this.f1713q.size();
             }
             return size;
         }
@@ -83,14 +83,14 @@ public final class DoublePriorityQueues {
         @Override // p014it.unimi.dsi.fastutil.PriorityQueue
         public void clear() {
             synchronized (this.sync) {
-                this.f1749q.clear();
+                this.f1713q.clear();
             }
         }
 
         @Override // p014it.unimi.dsi.fastutil.PriorityQueue
         public void changed() {
             synchronized (this.sync) {
-                this.f1749q.changed();
+                this.f1713q.changed();
             }
         }
 
@@ -99,7 +99,7 @@ public final class DoublePriorityQueues {
         public Comparator<? super Double> comparator() {
             Comparator<? super Double> comparator;
             synchronized (this.sync) {
-                comparator = this.f1749q.comparator();
+                comparator = this.f1713q.comparator();
             }
             return comparator;
         }
@@ -108,7 +108,7 @@ public final class DoublePriorityQueues {
         @Deprecated
         public void enqueue(Double x) {
             synchronized (this.sync) {
-                this.f1749q.enqueue(x);
+                this.f1713q.enqueue(x);
             }
         }
 
@@ -117,7 +117,7 @@ public final class DoublePriorityQueues {
         public Double dequeue() {
             Double dequeue;
             synchronized (this.sync) {
-                dequeue = this.f1749q.dequeue();
+                dequeue = this.f1713q.dequeue();
             }
             return dequeue;
         }
@@ -127,7 +127,7 @@ public final class DoublePriorityQueues {
         public Double first() {
             Double first;
             synchronized (this.sync) {
-                first = this.f1749q.first();
+                first = this.f1713q.first();
             }
             return first;
         }
@@ -137,7 +137,7 @@ public final class DoublePriorityQueues {
         public Double last() {
             Double last;
             synchronized (this.sync) {
-                last = this.f1749q.last();
+                last = this.f1713q.last();
             }
             return last;
         }
@@ -145,7 +145,7 @@ public final class DoublePriorityQueues {
         public int hashCode() {
             int hashCode;
             synchronized (this.sync) {
-                hashCode = this.f1749q.hashCode();
+                hashCode = this.f1713q.hashCode();
             }
             return hashCode;
         }
@@ -156,7 +156,7 @@ public final class DoublePriorityQueues {
                 return true;
             }
             synchronized (this.sync) {
-                equals = this.f1749q.equals(o);
+                equals = this.f1713q.equals(o);
             }
             return equals;
         }

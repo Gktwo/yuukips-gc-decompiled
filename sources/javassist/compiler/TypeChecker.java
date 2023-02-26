@@ -821,8 +821,8 @@ public class TypeChecker extends Visitor implements Opcode, TokenId {
         this.arrayDim = 0;
         int token = k.get();
         switch (token) {
-            case TokenId.SUPER:
-            case 339:
+            case 336:
+            case TokenId.THIS:
                 this.exprType = 307;
                 if (token == 339) {
                     this.className = getThisName();

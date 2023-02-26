@@ -138,7 +138,7 @@ public final class Address {
     @JvmName(name = "-deprecated_url")
     @NotNull
     /* renamed from: -deprecated_url  reason: not valid java name */
-    public final HttpUrl m9138deprecated_url() {
+    public final HttpUrl m9135deprecated_url() {
         return this.url;
     }
 
@@ -146,7 +146,7 @@ public final class Address {
     @JvmName(name = "-deprecated_dns")
     @NotNull
     /* renamed from: -deprecated_dns  reason: not valid java name */
-    public final Dns m9139deprecated_dns() {
+    public final Dns m9136deprecated_dns() {
         return this.dns;
     }
 
@@ -154,7 +154,7 @@ public final class Address {
     @JvmName(name = "-deprecated_socketFactory")
     @NotNull
     /* renamed from: -deprecated_socketFactory  reason: not valid java name */
-    public final SocketFactory m9140deprecated_socketFactory() {
+    public final SocketFactory m9137deprecated_socketFactory() {
         return this.socketFactory;
     }
 
@@ -162,7 +162,7 @@ public final class Address {
     @JvmName(name = "-deprecated_proxyAuthenticator")
     @NotNull
     /* renamed from: -deprecated_proxyAuthenticator  reason: not valid java name */
-    public final Authenticator m9141deprecated_proxyAuthenticator() {
+    public final Authenticator m9138deprecated_proxyAuthenticator() {
         return this.proxyAuthenticator;
     }
 
@@ -170,7 +170,7 @@ public final class Address {
     @JvmName(name = "-deprecated_protocols")
     @NotNull
     /* renamed from: -deprecated_protocols  reason: not valid java name */
-    public final List<Protocol> m9142deprecated_protocols() {
+    public final List<Protocol> m9139deprecated_protocols() {
         return this.protocols;
     }
 
@@ -178,7 +178,7 @@ public final class Address {
     @JvmName(name = "-deprecated_connectionSpecs")
     @NotNull
     /* renamed from: -deprecated_connectionSpecs  reason: not valid java name */
-    public final List<ConnectionSpec> m9143deprecated_connectionSpecs() {
+    public final List<ConnectionSpec> m9140deprecated_connectionSpecs() {
         return this.connectionSpecs;
     }
 
@@ -186,7 +186,7 @@ public final class Address {
     @JvmName(name = "-deprecated_proxySelector")
     @NotNull
     /* renamed from: -deprecated_proxySelector  reason: not valid java name */
-    public final ProxySelector m9144deprecated_proxySelector() {
+    public final ProxySelector m9141deprecated_proxySelector() {
         return this.proxySelector;
     }
 
@@ -194,7 +194,7 @@ public final class Address {
     @JvmName(name = "-deprecated_proxy")
     @Nullable
     /* renamed from: -deprecated_proxy  reason: not valid java name */
-    public final Proxy m9145deprecated_proxy() {
+    public final Proxy m9142deprecated_proxy() {
         return this.proxy;
     }
 
@@ -202,7 +202,7 @@ public final class Address {
     @JvmName(name = "-deprecated_sslSocketFactory")
     @Nullable
     /* renamed from: -deprecated_sslSocketFactory  reason: not valid java name */
-    public final SSLSocketFactory m9146deprecated_sslSocketFactory() {
+    public final SSLSocketFactory m9143deprecated_sslSocketFactory() {
         return this.sslSocketFactory;
     }
 
@@ -210,7 +210,7 @@ public final class Address {
     @JvmName(name = "-deprecated_hostnameVerifier")
     @Nullable
     /* renamed from: -deprecated_hostnameVerifier  reason: not valid java name */
-    public final HostnameVerifier m9147deprecated_hostnameVerifier() {
+    public final HostnameVerifier m9144deprecated_hostnameVerifier() {
         return this.hostnameVerifier;
     }
 
@@ -218,7 +218,7 @@ public final class Address {
     @JvmName(name = "-deprecated_certificatePinner")
     @Nullable
     /* renamed from: -deprecated_certificatePinner  reason: not valid java name */
-    public final CertificatePinner m9148deprecated_certificatePinner() {
+    public final CertificatePinner m9145deprecated_certificatePinner() {
         return this.certificatePinner;
     }
 

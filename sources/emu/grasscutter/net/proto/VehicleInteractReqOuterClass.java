@@ -20,19 +20,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VehicleInteractReqOuterClass.class */
 public final class VehicleInteractReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018VehicleInteractReq.proto\u001a\u0019VehicleInteractType.proto\"a\n\u0012VehicleInteractReq\u0012+\n\rinteract_type\u0018\u0003 \u0001(\u000e2\u0014.VehicleInteractType\u0012\u0011\n\tentity_id\u0018\u000b \u0001(\r\u0012\u000b\n\u0003pos\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VehicleInteractTypeOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018VehicleInteractReq.proto\u001a\u0019VehicleInteractType.proto\"_\n\u0012VehicleInteractReq\u0012\u000b\n\u0003pos\u0018\u000e \u0001(\r\u0012*\n\finteractType\u0018\u000b \u0001(\u000e2\u0014.VehicleInteractType\u0012\u0010\n\bentityId\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VehicleInteractTypeOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_VehicleInteractReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_VehicleInteractReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_VehicleInteractReq_descriptor, new String[]{"InteractType", "EntityId", "Pos"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_VehicleInteractReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_VehicleInteractReq_descriptor, new String[]{"Pos", "InteractType", "EntityId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VehicleInteractReqOuterClass$VehicleInteractReqOrBuilder.class */
     public interface VehicleInteractReqOrBuilder extends MessageOrBuilder {
+        int getPos();
+
         int getInteractTypeValue();
 
         VehicleInteractTypeOuterClass.VehicleInteractType getInteractType();
 
         int getEntityId();
-
-        int getPos();
     }
 
     private VehicleInteractReqOuterClass() {
@@ -48,12 +48,12 @@ public final class VehicleInteractReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VehicleInteractReqOuterClass$VehicleInteractReq.class */
     public static final class VehicleInteractReq extends GeneratedMessageV3 implements VehicleInteractReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int INTERACT_TYPE_FIELD_NUMBER = 3;
-        private int interactType_;
-        public static final int ENTITY_ID_FIELD_NUMBER = 11;
-        private int entityId_;
-        public static final int POS_FIELD_NUMBER = 4;
+        public static final int POS_FIELD_NUMBER = 14;
         private int pos_;
+        public static final int INTERACTTYPE_FIELD_NUMBER = 11;
+        private int interactType_;
+        public static final int ENTITYID_FIELD_NUMBER = 13;
+        private int entityId_;
         private byte memoizedIsInitialized;
         private static final VehicleInteractReq DEFAULT_INSTANCE = new VehicleInteractReq();
         private static final Parser<VehicleInteractReq> PARSER = new AbstractParser<VehicleInteractReq>() { // from class: emu.grasscutter.net.proto.VehicleInteractReqOuterClass.VehicleInteractReq.1
@@ -100,14 +100,14 @@ public final class VehicleInteractReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 24:
+                            case 88:
                                 this.interactType_ = input.readEnum();
                                 break;
-                            case 32:
-                                this.pos_ = input.readUInt32();
-                                break;
-                            case 88:
+                            case 104:
                                 this.entityId_ = input.readUInt32();
+                                break;
+                            case 112:
+                                this.pos_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -139,6 +139,11 @@ public final class VehicleInteractReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.VehicleInteractReqOuterClass.VehicleInteractReqOrBuilder
+        public int getPos() {
+            return this.pos_;
+        }
+
+        @Override // emu.grasscutter.net.proto.VehicleInteractReqOuterClass.VehicleInteractReqOrBuilder
         public int getInteractTypeValue() {
             return this.interactType_;
         }
@@ -152,11 +157,6 @@ public final class VehicleInteractReqOuterClass {
         @Override // emu.grasscutter.net.proto.VehicleInteractReqOuterClass.VehicleInteractReqOrBuilder
         public int getEntityId() {
             return this.entityId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.VehicleInteractReqOuterClass.VehicleInteractReqOrBuilder
-        public int getPos() {
-            return this.pos_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -175,13 +175,13 @@ public final class VehicleInteractReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.interactType_ != VehicleInteractTypeOuterClass.VehicleInteractType.VEHICLE_INTERACT_TYPE_NONE.getNumber()) {
-                output.writeEnum(3, this.interactType_);
-            }
-            if (this.pos_ != 0) {
-                output.writeUInt32(4, this.pos_);
+                output.writeEnum(11, this.interactType_);
             }
             if (this.entityId_ != 0) {
-                output.writeUInt32(11, this.entityId_);
+                output.writeUInt32(13, this.entityId_);
+            }
+            if (this.pos_ != 0) {
+                output.writeUInt32(14, this.pos_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -194,13 +194,13 @@ public final class VehicleInteractReqOuterClass {
             }
             int size2 = 0;
             if (this.interactType_ != VehicleInteractTypeOuterClass.VehicleInteractType.VEHICLE_INTERACT_TYPE_NONE.getNumber()) {
-                size2 = 0 + CodedOutputStream.computeEnumSize(3, this.interactType_);
-            }
-            if (this.pos_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(4, this.pos_);
+                size2 = 0 + CodedOutputStream.computeEnumSize(11, this.interactType_);
             }
             if (this.entityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.entityId_);
+                size2 += CodedOutputStream.computeUInt32Size(13, this.entityId_);
+            }
+            if (this.pos_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(14, this.pos_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -216,7 +216,7 @@ public final class VehicleInteractReqOuterClass {
                 return equals(obj);
             }
             VehicleInteractReq other = (VehicleInteractReq) obj;
-            return this.interactType_ == other.interactType_ && getEntityId() == other.getEntityId() && getPos() == other.getPos() && this.unknownFields.equals(other.unknownFields);
+            return getPos() == other.getPos() && this.interactType_ == other.interactType_ && getEntityId() == other.getEntityId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -224,7 +224,7 @@ public final class VehicleInteractReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + this.interactType_)) + 11)) + getEntityId())) + 4)) + getPos())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getPos())) + 11)) + this.interactType_)) + 13)) + getEntityId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -303,9 +303,9 @@ public final class VehicleInteractReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VehicleInteractReqOuterClass$VehicleInteractReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements VehicleInteractReqOrBuilder {
+            private int pos_;
             private int interactType_ = 0;
             private int entityId_;
-            private int pos_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return VehicleInteractReqOuterClass.internal_static_VehicleInteractReq_descriptor;
@@ -333,9 +333,9 @@ public final class VehicleInteractReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.pos_ = 0;
                 this.interactType_ = 0;
                 this.entityId_ = 0;
-                this.pos_ = 0;
                 return this;
             }
 
@@ -361,9 +361,9 @@ public final class VehicleInteractReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public VehicleInteractReq buildPartial() {
                 VehicleInteractReq result = new VehicleInteractReq(this);
+                result.pos_ = this.pos_;
                 result.interactType_ = this.interactType_;
                 result.entityId_ = this.entityId_;
-                result.pos_ = this.pos_;
                 onBuilt();
                 return result;
             }
@@ -411,14 +411,14 @@ public final class VehicleInteractReqOuterClass {
                 if (other == VehicleInteractReq.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getPos() != 0) {
+                    setPos(other.getPos());
+                }
                 if (other.interactType_ != 0) {
                     setInteractTypeValue(other.getInteractTypeValue());
                 }
                 if (other.getEntityId() != 0) {
                     setEntityId(other.getEntityId());
-                }
-                if (other.getPos() != 0) {
-                    setPos(other.getPos());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -450,6 +450,23 @@ public final class VehicleInteractReqOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.VehicleInteractReqOuterClass.VehicleInteractReqOrBuilder
+            public int getPos() {
+                return this.pos_;
+            }
+
+            public Builder setPos(int value) {
+                this.pos_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearPos() {
+                this.pos_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.VehicleInteractReqOuterClass.VehicleInteractReqOrBuilder
@@ -497,23 +514,6 @@ public final class VehicleInteractReqOuterClass {
 
             public Builder clearEntityId() {
                 this.entityId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.VehicleInteractReqOuterClass.VehicleInteractReqOrBuilder
-            public int getPos() {
-                return this.pos_;
-            }
-
-            public Builder setPos(int value) {
-                this.pos_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearPos() {
-                this.pos_ = 0;
                 onChanged();
                 return this;
             }

@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeMaterialDeleteReturnReqOuterClass.class */
 public final class TakeMaterialDeleteReturnReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!TakeMaterialDeleteReturnReq.proto\u001a\u001eMaterialDeleteReturnType.proto\"F\n\u001bTakeMaterialDeleteReturnReq\u0012'\n\u0004type\u0018\u000b \u0001(\u000e2\u0019.MaterialDeleteReturnTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MaterialDeleteReturnTypeOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!TakeMaterialDeleteReturnReq.proto\u001a\u001eMaterialDeleteReturnType.proto\"F\n\u001bTakeMaterialDeleteReturnReq\u0012'\n\u0004type\u0018\u0006 \u0001(\u000e2\u0019.MaterialDeleteReturnTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MaterialDeleteReturnTypeOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_TakeMaterialDeleteReturnReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_TakeMaterialDeleteReturnReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TakeMaterialDeleteReturnReq_descriptor, new String[]{"Type"});
 
@@ -44,7 +44,7 @@ public final class TakeMaterialDeleteReturnReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeMaterialDeleteReturnReqOuterClass$TakeMaterialDeleteReturnReq.class */
     public static final class TakeMaterialDeleteReturnReq extends GeneratedMessageV3 implements TakeMaterialDeleteReturnReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TYPE_FIELD_NUMBER = 11;
+        public static final int TYPE_FIELD_NUMBER = 6;
         private int type_;
         private byte memoizedIsInitialized;
         private static final TakeMaterialDeleteReturnReq DEFAULT_INSTANCE = new TakeMaterialDeleteReturnReq();
@@ -92,7 +92,7 @@ public final class TakeMaterialDeleteReturnReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 88:
+                            case 48:
                                 this.type_ = input.readEnum();
                                 break;
                             default:
@@ -151,7 +151,7 @@ public final class TakeMaterialDeleteReturnReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.type_ != MaterialDeleteReturnTypeOuterClass.MaterialDeleteReturnType.MATERIAL_DELETE_RETURN_TYPE_BAG.getNumber()) {
-                output.writeEnum(11, this.type_);
+                output.writeEnum(6, this.type_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -164,7 +164,7 @@ public final class TakeMaterialDeleteReturnReqOuterClass {
             }
             int size2 = 0;
             if (this.type_ != MaterialDeleteReturnTypeOuterClass.MaterialDeleteReturnType.MATERIAL_DELETE_RETURN_TYPE_BAG.getNumber()) {
-                size2 = 0 + CodedOutputStream.computeEnumSize(11, this.type_);
+                size2 = 0 + CodedOutputStream.computeEnumSize(6, this.type_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -188,7 +188,7 @@ public final class TakeMaterialDeleteReturnReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + this.type_)) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + this.type_)) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

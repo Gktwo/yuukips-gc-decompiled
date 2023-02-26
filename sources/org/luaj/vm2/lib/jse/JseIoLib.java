@@ -18,7 +18,7 @@ public class JseIoLib extends IoLib {
 
     /* renamed from: org.luaj.vm2.lib.jse.JseIoLib$1 */
     /* loaded from: grasscutter.jar:org/luaj/vm2/lib/jse/JseIoLib$1.class */
-    static class C58761 {
+    static class C58681 {
     }
 
     /* loaded from: grasscutter.jar:org/luaj/vm2/lib/jse/JseIoLib$FileImpl.class */
@@ -26,10 +26,10 @@ public class JseIoLib extends IoLib {
         private final RandomAccessFile file;
 
         /* renamed from: is */
-        private final InputStream f3343is;
+        private final InputStream f3307is;
 
         /* renamed from: os */
-        private final OutputStream f3344os;
+        private final OutputStream f3308os;
         private boolean closed;
         private boolean nobuffer;
         private final JseIoLib this$0;
@@ -40,8 +40,8 @@ public class JseIoLib extends IoLib {
             this.closed = false;
             this.nobuffer = false;
             this.file = randomAccessFile;
-            this.f3343is = inputStream != null ? inputStream.markSupported() ? inputStream : new BufferedInputStream(inputStream) : null;
-            this.f3344os = outputStream;
+            this.f3307is = inputStream != null ? inputStream.markSupported() ? inputStream : new BufferedInputStream(inputStream) : null;
+            this.f3308os = outputStream;
         }
 
         private FileImpl(JseIoLib jseIoLib, RandomAccessFile randomAccessFile) {
@@ -76,15 +76,15 @@ public class JseIoLib extends IoLib {
 
         @Override // org.luaj.vm2.lib.IoLib.File
         public void flush() throws IOException {
-            if (this.f3344os != null) {
-                this.f3344os.flush();
+            if (this.f3308os != null) {
+                this.f3308os.flush();
             }
         }
 
         @Override // org.luaj.vm2.lib.IoLib.File
         public void write(LuaString luaString) throws IOException {
-            if (this.f3344os != null) {
-                this.f3344os.write(luaString.m_bytes, luaString.m_offset, luaString.m_length);
+            if (this.f3308os != null) {
+                this.f3308os.write(luaString.m_bytes, luaString.m_offset, luaString.m_length);
             } else if (this.file != null) {
                 this.file.write(luaString.m_bytes, luaString.m_offset, luaString.m_length);
             } else {
@@ -131,10 +131,10 @@ public class JseIoLib extends IoLib {
 
         @Override // org.luaj.vm2.lib.IoLib.File
         public int peek() throws IOException {
-            if (this.f3343is != null) {
-                this.f3343is.mark(1);
-                int read = this.f3343is.read();
-                this.f3343is.reset();
+            if (this.f3307is != null) {
+                this.f3307is.mark(1);
+                int read = this.f3307is.read();
+                this.f3307is.reset();
                 return read;
             } else if (this.file != null) {
                 long filePointer = this.file.getFilePointer();
@@ -149,8 +149,8 @@ public class JseIoLib extends IoLib {
 
         @Override // org.luaj.vm2.lib.IoLib.File
         public int read() throws IOException {
-            if (this.f3343is != null) {
-                return this.f3343is.read();
+            if (this.f3307is != null) {
+                return this.f3307is.read();
             }
             if (this.file != null) {
                 return this.file.read();
@@ -164,22 +164,22 @@ public class JseIoLib extends IoLib {
             if (this.file != null) {
                 return this.file.read(bArr, i, i2);
             }
-            if (this.f3343is != null) {
-                return this.f3343is.read(bArr, i, i2);
+            if (this.f3307is != null) {
+                return this.f3307is.read(bArr, i, i2);
             }
             JseIoLib.access$500();
             return i2;
         }
 
-        FileImpl(JseIoLib jseIoLib, RandomAccessFile randomAccessFile, C58761 r7) {
+        FileImpl(JseIoLib jseIoLib, RandomAccessFile randomAccessFile, C58681 r7) {
             this(jseIoLib, randomAccessFile);
         }
 
-        FileImpl(JseIoLib jseIoLib, OutputStream outputStream, C58761 r7) {
+        FileImpl(JseIoLib jseIoLib, OutputStream outputStream, C58681 r7) {
             this(jseIoLib, outputStream);
         }
 
-        FileImpl(JseIoLib jseIoLib, InputStream inputStream, C58761 r7) {
+        FileImpl(JseIoLib jseIoLib, InputStream inputStream, C58681 r7) {
             this(jseIoLib, inputStream);
         }
     }
@@ -252,7 +252,7 @@ public class JseIoLib extends IoLib {
             return JseIoLib.access$1200(this.this$0).STDIN.read(bArr, i, i2);
         }
 
-        StdinFile(JseIoLib jseIoLib, C58761 r5) {
+        StdinFile(JseIoLib jseIoLib, C58681 r5) {
             this(jseIoLib);
         }
     }
@@ -330,7 +330,7 @@ public class JseIoLib extends IoLib {
             return 0;
         }
 
-        StdoutFile(JseIoLib jseIoLib, int i, C58761 r7) {
+        StdoutFile(JseIoLib jseIoLib, int i, C58681 r7) {
             this(jseIoLib, i);
         }
     }
@@ -358,20 +358,20 @@ public class JseIoLib extends IoLib {
         } else if (!z) {
             randomAccessFile.setLength(0);
         }
-        return new FileImpl(this, randomAccessFile, (C58761) null);
+        return new FileImpl(this, randomAccessFile, (C58681) null);
     }
 
     @Override // org.luaj.vm2.lib.IoLib
     protected IoLib.File openProgram(String str, String str2) throws IOException {
         Process exec = Runtime.getRuntime().exec(str);
-        return "w".equals(str2) ? new FileImpl(this, exec.getOutputStream(), (C58761) null) : new FileImpl(this, exec.getInputStream(), (C58761) null);
+        return "w".equals(str2) ? new FileImpl(this, exec.getOutputStream(), (C58681) null) : new FileImpl(this, exec.getInputStream(), (C58681) null);
     }
 
     @Override // org.luaj.vm2.lib.IoLib
     protected IoLib.File tmpFile() throws IOException {
         File createTempFile = File.createTempFile(".luaj", "bin");
         createTempFile.deleteOnExit();
-        return new FileImpl(this, new RandomAccessFile(createTempFile, "rw"), (C58761) null);
+        return new FileImpl(this, new RandomAccessFile(createTempFile, "rw"), (C58681) null);
     }
 
     private static void notimplemented() {

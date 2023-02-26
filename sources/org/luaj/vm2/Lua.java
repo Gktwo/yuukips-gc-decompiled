@@ -92,7 +92,7 @@ public class Lua {
     public static final int OpArgU = 1;
     public static final int OpArgR = 2;
     public static final int OpArgK = 3;
-    public static final int[] luaP_opmodes = {96, 113, 65, 84, 80, 80, 92, 108, 60, 16, 60, 84, 108, 124, 124, 124, 124, 124, 124, 96, 96, 96, 104, 34, 188, 188, 188, 132, PacketOpcodes.AllSeenMonsterNotify, 84, 84, 16, 98, 98, 4, PacketOpcodes.SealBattleBeginNotify, 20, 81, 80, 23};
+    public static final int[] luaP_opmodes = {96, 113, 65, 84, 80, 80, 92, 108, 60, 16, 60, 84, 108, 124, 124, 124, 124, 124, 124, 96, 96, 96, 104, 34, 188, 188, 188, 132, PacketOpcodes.SceneCreateEntityReq, 84, 84, 16, 98, 98, 4, PacketOpcodes.SealBattleProgressNotify, 20, 81, 80, 23};
     public static final int LFIELDS_PER_FLUSH = 50;
     private static final int MAXSRC = 80;
 

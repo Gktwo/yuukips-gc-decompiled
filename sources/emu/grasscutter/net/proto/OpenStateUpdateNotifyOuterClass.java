@@ -23,15 +23,15 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/OpenStateUpdateNotifyOuterClass.class */
 public final class OpenStateUpdateNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bOpenStateUpdateNotify.proto\"\u0001\n\u0015OpenStateUpdateNotify\u0012@\n\u000eopen_state_map\u0018\f \u0003(\u000b2(.OpenStateUpdateNotify.OpenStateMapEntry\u001a3\n\u0011OpenStateMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bOpenStateUpdateNotify.proto\"\u0001\n\u0015OpenStateUpdateNotify\u0012>\n\fopenStateMap\u0018\t \u0003(\u000b2(.OpenStateUpdateNotify.OpenStateMapEntry\u001a3\n\u0011OpenStateMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_OpenStateUpdateNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_OpenStateUpdateNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_OpenStateUpdateNotify_descriptor, new String[]{"OpenStateMap"});
 
     /* renamed from: internal_static_OpenStateUpdateNotify_OpenStateMapEntry_descriptor */
-    private static final Descriptors.Descriptor f819x84a724a6 = internal_static_OpenStateUpdateNotify_descriptor.getNestedTypes().get(0);
+    private static final Descriptors.Descriptor f797x84a724a6 = internal_static_OpenStateUpdateNotify_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_OpenStateUpdateNotify_OpenStateMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f820xd5124524 = new GeneratedMessageV3.FieldAccessorTable(f819x84a724a6, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f798xd5124524 = new GeneratedMessageV3.FieldAccessorTable(f797x84a724a6, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/OpenStateUpdateNotifyOuterClass$OpenStateUpdateNotifyOrBuilder.class */
     public interface OpenStateUpdateNotifyOrBuilder extends MessageOrBuilder {
@@ -62,7 +62,7 @@ public final class OpenStateUpdateNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/OpenStateUpdateNotifyOuterClass$OpenStateUpdateNotify.class */
     public static final class OpenStateUpdateNotify extends GeneratedMessageV3 implements OpenStateUpdateNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int OPEN_STATE_MAP_FIELD_NUMBER = 12;
+        public static final int OPENSTATEMAP_FIELD_NUMBER = 9;
         private MapField<Integer, Integer> openStateMap_;
         private byte memoizedIsInitialized;
         private static final OpenStateUpdateNotify DEFAULT_INSTANCE = new OpenStateUpdateNotify();
@@ -114,7 +114,7 @@ public final class OpenStateUpdateNotifyOuterClass {
                 r4 = this;
                 r0 = r5
                 switch(r0) {
-                    case 12: goto L_0x0014;
+                    case 9: goto L_0x0014;
                     default: goto L_0x0019;
                 }
                 r0 = r4
@@ -167,7 +167,7 @@ public final class OpenStateUpdateNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 98:
+                            case 74:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.openStateMap_ = MapField.newMapField(OpenStateMapDefaultEntryHolder.defaultEntry);
                                     mutable_bitField0_ |= 1;
@@ -207,7 +207,7 @@ public final class OpenStateUpdateNotifyOuterClass {
         /* access modifiers changed from: private */
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/OpenStateUpdateNotifyOuterClass$OpenStateUpdateNotify$OpenStateMapDefaultEntryHolder.class */
         public static final class OpenStateMapDefaultEntryHolder {
-            static final MapEntry<Integer, Integer> defaultEntry = MapEntry.newDefaultInstance(OpenStateUpdateNotifyOuterClass.f819x84a724a6, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.UINT32, 0);
+            static final MapEntry<Integer, Integer> defaultEntry = MapEntry.newDefaultInstance(OpenStateUpdateNotifyOuterClass.f797x84a724a6, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.UINT32, 0);
 
             private OpenStateMapDefaultEntryHolder() {
             }
@@ -271,7 +271,7 @@ public final class OpenStateUpdateNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetOpenStateMap(), OpenStateMapDefaultEntryHolder.defaultEntry, 12);
+            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetOpenStateMap(), OpenStateMapDefaultEntryHolder.defaultEntry, 9);
             this.unknownFields.writeTo(output);
         }
 
@@ -283,7 +283,7 @@ public final class OpenStateUpdateNotifyOuterClass {
             }
             int size2 = 0;
             for (Map.Entry<Integer, Integer> entry : internalGetOpenStateMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(12, OpenStateMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+                size2 += CodedOutputStream.computeMessageSize(9, OpenStateMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -309,7 +309,7 @@ public final class OpenStateUpdateNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (!internalGetOpenStateMap().getMap().isEmpty()) {
-                hash = (53 * ((37 * hash) + 12)) + internalGetOpenStateMap().hashCode();
+                hash = (53 * ((37 * hash) + 9)) + internalGetOpenStateMap().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -430,7 +430,7 @@ public final class OpenStateUpdateNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 12: goto L_0x0014;
+                        case 9: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -483,7 +483,7 @@ public final class OpenStateUpdateNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 12: goto L_0x0014;
+                        case 9: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4

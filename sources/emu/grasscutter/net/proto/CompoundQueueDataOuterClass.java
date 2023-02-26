@@ -19,19 +19,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CompoundQueueDataOuterClass.class */
 public final class CompoundQueueDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017CompoundQueueData.proto\"g\n\u0011CompoundQueueData\u0012\u0012\n\nwait_count\u0018\u0005 \u0001(\r\u0012\u0013\n\u000boutput_time\u0018\u000e \u0001(\r\u0012\u0014\n\foutput_count\u0018\n \u0001(\r\u0012\u0013\n\u000bcompound_id\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017CompoundQueueData.proto\"c\n\u0011CompoundQueueData\u0012\u0013\n\u000boutputCount\u0018\f \u0001(\r\u0012\u0012\n\ncompoundId\u0018\t \u0001(\r\u0012\u0011\n\twaitCount\u0018\b \u0001(\r\u0012\u0012\n\noutputTime\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_CompoundQueueData_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_CompoundQueueData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CompoundQueueData_descriptor, new String[]{"WaitCount", "OutputTime", "OutputCount", "CompoundId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_CompoundQueueData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CompoundQueueData_descriptor, new String[]{"OutputCount", "CompoundId", "WaitCount", "OutputTime"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CompoundQueueDataOuterClass$CompoundQueueDataOrBuilder.class */
     public interface CompoundQueueDataOrBuilder extends MessageOrBuilder {
-        int getWaitCount();
-
-        int getOutputTime();
-
         int getOutputCount();
 
         int getCompoundId();
+
+        int getWaitCount();
+
+        int getOutputTime();
     }
 
     private CompoundQueueDataOuterClass() {
@@ -47,14 +47,14 @@ public final class CompoundQueueDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CompoundQueueDataOuterClass$CompoundQueueData.class */
     public static final class CompoundQueueData extends GeneratedMessageV3 implements CompoundQueueDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int WAIT_COUNT_FIELD_NUMBER = 5;
-        private int waitCount_;
-        public static final int OUTPUT_TIME_FIELD_NUMBER = 14;
-        private int outputTime_;
-        public static final int OUTPUT_COUNT_FIELD_NUMBER = 10;
+        public static final int OUTPUTCOUNT_FIELD_NUMBER = 12;
         private int outputCount_;
-        public static final int COMPOUND_ID_FIELD_NUMBER = 12;
+        public static final int COMPOUNDID_FIELD_NUMBER = 9;
         private int compoundId_;
+        public static final int WAITCOUNT_FIELD_NUMBER = 8;
+        private int waitCount_;
+        public static final int OUTPUTTIME_FIELD_NUMBER = 11;
+        private int outputTime_;
         private byte memoizedIsInitialized;
         private static final CompoundQueueData DEFAULT_INSTANCE = new CompoundQueueData();
         private static final Parser<CompoundQueueData> PARSER = new AbstractParser<CompoundQueueData>() { // from class: emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueData.1
@@ -101,17 +101,17 @@ public final class CompoundQueueDataOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 40:
+                                case 64:
                                     this.waitCount_ = input.readUInt32();
                                     break;
-                                case 80:
-                                    this.outputCount_ = input.readUInt32();
-                                    break;
-                                case 96:
+                                case 72:
                                     this.compoundId_ = input.readUInt32();
                                     break;
-                                case 112:
+                                case 88:
                                     this.outputTime_ = input.readUInt32();
+                                    break;
+                                case 96:
+                                    this.outputCount_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -144,16 +144,6 @@ public final class CompoundQueueDataOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueDataOrBuilder
-        public int getWaitCount() {
-            return this.waitCount_;
-        }
-
-        @Override // emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueDataOrBuilder
-        public int getOutputTime() {
-            return this.outputTime_;
-        }
-
-        @Override // emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueDataOrBuilder
         public int getOutputCount() {
             return this.outputCount_;
         }
@@ -161,6 +151,16 @@ public final class CompoundQueueDataOuterClass {
         @Override // emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueDataOrBuilder
         public int getCompoundId() {
             return this.compoundId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueDataOrBuilder
+        public int getWaitCount() {
+            return this.waitCount_;
+        }
+
+        @Override // emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueDataOrBuilder
+        public int getOutputTime() {
+            return this.outputTime_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -179,16 +179,16 @@ public final class CompoundQueueDataOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.waitCount_ != 0) {
-                output.writeUInt32(5, this.waitCount_);
-            }
-            if (this.outputCount_ != 0) {
-                output.writeUInt32(10, this.outputCount_);
+                output.writeUInt32(8, this.waitCount_);
             }
             if (this.compoundId_ != 0) {
-                output.writeUInt32(12, this.compoundId_);
+                output.writeUInt32(9, this.compoundId_);
             }
             if (this.outputTime_ != 0) {
-                output.writeUInt32(14, this.outputTime_);
+                output.writeUInt32(11, this.outputTime_);
+            }
+            if (this.outputCount_ != 0) {
+                output.writeUInt32(12, this.outputCount_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -201,16 +201,16 @@ public final class CompoundQueueDataOuterClass {
             }
             int size2 = 0;
             if (this.waitCount_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.waitCount_);
-            }
-            if (this.outputCount_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.outputCount_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(8, this.waitCount_);
             }
             if (this.compoundId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.compoundId_);
+                size2 += CodedOutputStream.computeUInt32Size(9, this.compoundId_);
             }
             if (this.outputTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.outputTime_);
+                size2 += CodedOutputStream.computeUInt32Size(11, this.outputTime_);
+            }
+            if (this.outputCount_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(12, this.outputCount_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class CompoundQueueDataOuterClass {
                 return equals(obj);
             }
             CompoundQueueData other = (CompoundQueueData) obj;
-            return getWaitCount() == other.getWaitCount() && getOutputTime() == other.getOutputTime() && getOutputCount() == other.getOutputCount() && getCompoundId() == other.getCompoundId() && this.unknownFields.equals(other.unknownFields);
+            return getOutputCount() == other.getOutputCount() && getCompoundId() == other.getCompoundId() && getWaitCount() == other.getWaitCount() && getOutputTime() == other.getOutputTime() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -234,7 +234,7 @@ public final class CompoundQueueDataOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getWaitCount())) + 14)) + getOutputTime())) + 10)) + getOutputCount())) + 12)) + getCompoundId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getOutputCount())) + 9)) + getCompoundId())) + 8)) + getWaitCount())) + 11)) + getOutputTime())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -313,10 +313,10 @@ public final class CompoundQueueDataOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CompoundQueueDataOuterClass$CompoundQueueData$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements CompoundQueueDataOrBuilder {
-            private int waitCount_;
-            private int outputTime_;
             private int outputCount_;
             private int compoundId_;
+            private int waitCount_;
+            private int outputTime_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return CompoundQueueDataOuterClass.internal_static_CompoundQueueData_descriptor;
@@ -344,10 +344,10 @@ public final class CompoundQueueDataOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.waitCount_ = 0;
-                this.outputTime_ = 0;
                 this.outputCount_ = 0;
                 this.compoundId_ = 0;
+                this.waitCount_ = 0;
+                this.outputTime_ = 0;
                 return this;
             }
 
@@ -373,10 +373,10 @@ public final class CompoundQueueDataOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public CompoundQueueData buildPartial() {
                 CompoundQueueData result = new CompoundQueueData(this);
-                result.waitCount_ = this.waitCount_;
-                result.outputTime_ = this.outputTime_;
                 result.outputCount_ = this.outputCount_;
                 result.compoundId_ = this.compoundId_;
+                result.waitCount_ = this.waitCount_;
+                result.outputTime_ = this.outputTime_;
                 onBuilt();
                 return result;
             }
@@ -424,17 +424,17 @@ public final class CompoundQueueDataOuterClass {
                 if (other == CompoundQueueData.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getWaitCount() != 0) {
-                    setWaitCount(other.getWaitCount());
-                }
-                if (other.getOutputTime() != 0) {
-                    setOutputTime(other.getOutputTime());
-                }
                 if (other.getOutputCount() != 0) {
                     setOutputCount(other.getOutputCount());
                 }
                 if (other.getCompoundId() != 0) {
                     setCompoundId(other.getCompoundId());
+                }
+                if (other.getWaitCount() != 0) {
+                    setWaitCount(other.getWaitCount());
+                }
+                if (other.getOutputTime() != 0) {
+                    setOutputTime(other.getOutputTime());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -469,40 +469,6 @@ public final class CompoundQueueDataOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueDataOrBuilder
-            public int getWaitCount() {
-                return this.waitCount_;
-            }
-
-            public Builder setWaitCount(int value) {
-                this.waitCount_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearWaitCount() {
-                this.waitCount_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueDataOrBuilder
-            public int getOutputTime() {
-                return this.outputTime_;
-            }
-
-            public Builder setOutputTime(int value) {
-                this.outputTime_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearOutputTime() {
-                this.outputTime_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueDataOrBuilder
             public int getOutputCount() {
                 return this.outputCount_;
             }
@@ -532,6 +498,40 @@ public final class CompoundQueueDataOuterClass {
 
             public Builder clearCompoundId() {
                 this.compoundId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueDataOrBuilder
+            public int getWaitCount() {
+                return this.waitCount_;
+            }
+
+            public Builder setWaitCount(int value) {
+                this.waitCount_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearWaitCount() {
+                this.waitCount_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.CompoundQueueDataOuterClass.CompoundQueueDataOrBuilder
+            public int getOutputTime() {
+                return this.outputTime_;
+            }
+
+            public Builder setOutputTime(int value) {
+                this.outputTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearOutputTime() {
+                this.outputTime_ = 0;
                 onChanged();
                 return this;
             }

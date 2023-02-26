@@ -16,7 +16,7 @@ public class TreeTrie<V> extends AbstractTrie<V> {
     private final List<TreeTrie<V>> _nextOther;
 
     /* renamed from: _c */
-    private final char f3163_c;
+    private final char f3127_c;
     private String _key;
     private V _value;
 
@@ -24,14 +24,14 @@ public class TreeTrie<V> extends AbstractTrie<V> {
         super(true);
         this._nextOther = new ArrayList();
         this._nextIndex = new TreeTrie[32];
-        this.f3163_c = 0;
+        this.f3127_c = 0;
     }
 
     private TreeTrie(char c) {
         super(true);
         this._nextOther = new ArrayList();
         this._nextIndex = new TreeTrie[32];
-        this.f3163_c = c;
+        this.f3127_c = c;
     }
 
     @Override // org.eclipse.jetty.util.Trie
@@ -63,7 +63,7 @@ public class TreeTrie<V> extends AbstractTrie<V> {
                         break;
                     }
                     n = t._nextOther.get(i);
-                    if (n.f3163_c == c) {
+                    if (n.f3127_c == c) {
                         break;
                     }
                     n = null;
@@ -95,7 +95,7 @@ public class TreeTrie<V> extends AbstractTrie<V> {
                         break;
                     }
                     n = t._nextOther.get(j);
-                    if (n.f3163_c == c) {
+                    if (n.f3127_c == c) {
                         break;
                     }
                     n = null;
@@ -128,7 +128,7 @@ public class TreeTrie<V> extends AbstractTrie<V> {
                         break;
                     }
                     n = t._nextOther.get(j);
-                    if (n.f3163_c == c) {
+                    if (n.f3127_c == c) {
                         break;
                     }
                     n = null;
@@ -213,7 +213,7 @@ public class TreeTrie<V> extends AbstractTrie<V> {
             org.eclipse.jetty.util.TreeTrie r0 = (org.eclipse.jetty.util.TreeTrie) r0
             r14 = r0
             r0 = r14
-            char r0 = r0.f3163_c
+            char r0 = r0.f3127_c
             r1 = r12
             if (r0 != r1) goto L_0x0081
             goto L_0x0087
@@ -331,7 +331,7 @@ public class TreeTrie<V> extends AbstractTrie<V> {
             org.eclipse.jetty.util.TreeTrie r0 = (org.eclipse.jetty.util.TreeTrie) r0
             r14 = r0
             r0 = r14
-            char r0 = r0.f3163_c
+            char r0 = r0.f3127_c
             r1 = r12
             if (r0 != r1) goto L_0x0088
             goto L_0x008e
@@ -457,7 +457,7 @@ public class TreeTrie<V> extends AbstractTrie<V> {
             org.eclipse.jetty.util.TreeTrie r0 = (org.eclipse.jetty.util.TreeTrie) r0
             r15 = r0
             r0 = r15
-            char r0 = r0.f3163_c
+            char r0 = r0.f3127_c
             r1 = r13
             if (r0 != r1) goto L_0x008c
             goto L_0x0092

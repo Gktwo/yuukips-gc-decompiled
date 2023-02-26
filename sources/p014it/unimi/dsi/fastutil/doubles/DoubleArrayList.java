@@ -26,7 +26,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
     public static final int DEFAULT_INITIAL_CAPACITY = 10;
 
     /* renamed from: a */
-    protected transient double[] f1701a;
+    protected transient double[] f1665a;
     protected int size;
     static final /* synthetic */ boolean $assertionsDisabled;
 
@@ -39,20 +39,20 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
     }
 
     private static final double[] copyArrayFromSafe(DoubleArrayList l) {
-        return copyArraySafe(l.f1701a, l.size);
+        return copyArraySafe(l.f1665a, l.size);
     }
 
     protected DoubleArrayList(double[] a, boolean wrapped) {
-        this.f1701a = a;
+        this.f1665a = a;
     }
 
     private void initArrayFromCapacity(int capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException("Initial capacity (" + capacity + ") is negative");
         } else if (capacity == 0) {
-            this.f1701a = DoubleArrays.EMPTY_ARRAY;
+            this.f1665a = DoubleArrays.EMPTY_ARRAY;
         } else {
-            this.f1701a = new double[capacity];
+            this.f1665a = new double[capacity];
         }
     }
 
@@ -61,51 +61,51 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
     }
 
     public DoubleArrayList() {
-        this.f1701a = DoubleArrays.DEFAULT_EMPTY_ARRAY;
+        this.f1665a = DoubleArrays.DEFAULT_EMPTY_ARRAY;
     }
 
     public DoubleArrayList(Collection<? extends Double> c) {
         if (c instanceof DoubleArrayList) {
-            this.f1701a = copyArrayFromSafe((DoubleArrayList) c);
-            this.size = this.f1701a.length;
+            this.f1665a = copyArrayFromSafe((DoubleArrayList) c);
+            this.size = this.f1665a.length;
             return;
         }
         initArrayFromCapacity(c.size());
         if (c instanceof DoubleList) {
-            double[] dArr = this.f1701a;
+            double[] dArr = this.f1665a;
             int size = c.size();
             this.size = size;
             ((DoubleList) c).getElements(0, dArr, 0, size);
             return;
         }
-        this.size = DoubleIterators.unwrap(DoubleIterators.asDoubleIterator(c.iterator()), this.f1701a);
+        this.size = DoubleIterators.unwrap(DoubleIterators.asDoubleIterator(c.iterator()), this.f1665a);
     }
 
     public DoubleArrayList(DoubleCollection c) {
         if (c instanceof DoubleArrayList) {
-            this.f1701a = copyArrayFromSafe((DoubleArrayList) c);
-            this.size = this.f1701a.length;
+            this.f1665a = copyArrayFromSafe((DoubleArrayList) c);
+            this.size = this.f1665a.length;
             return;
         }
         initArrayFromCapacity(c.size());
         if (c instanceof DoubleList) {
-            double[] dArr = this.f1701a;
+            double[] dArr = this.f1665a;
             int size = c.size();
             this.size = size;
             ((DoubleList) c).getElements(0, dArr, 0, size);
             return;
         }
-        this.size = DoubleIterators.unwrap(c.iterator(), this.f1701a);
+        this.size = DoubleIterators.unwrap(c.iterator(), this.f1665a);
     }
 
     public DoubleArrayList(DoubleList l) {
         if (l instanceof DoubleArrayList) {
-            this.f1701a = copyArrayFromSafe((DoubleArrayList) l);
-            this.size = this.f1701a.length;
+            this.f1665a = copyArrayFromSafe((DoubleArrayList) l);
+            this.size = this.f1665a.length;
             return;
         }
         initArrayFromCapacity(l.size());
-        double[] dArr = this.f1701a;
+        double[] dArr = this.f1665a;
         int size = l.size();
         this.size = size;
         l.getElements(0, dArr, 0, size);
@@ -117,7 +117,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
 
     public DoubleArrayList(double[] a, int offset, int length) {
         this(length);
-        System.arraycopy(a, offset, this.f1701a, 0, length);
+        System.arraycopy(a, offset, this.f1665a, 0, length);
         this.size = length;
     }
 
@@ -136,7 +136,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
     }
 
     public double[] elements() {
-        return this.f1701a;
+        return this.f1665a;
     }
 
     public static DoubleArrayList wrap(double[] a, int length) {
@@ -184,26 +184,26 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
     }
 
     public void ensureCapacity(int capacity) {
-        if (capacity <= this.f1701a.length) {
+        if (capacity <= this.f1665a.length) {
             return;
         }
-        if (this.f1701a != DoubleArrays.DEFAULT_EMPTY_ARRAY || capacity > 10) {
-            this.f1701a = DoubleArrays.ensureCapacity(this.f1701a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > this.f1701a.length) {
+        if (this.f1665a != DoubleArrays.DEFAULT_EMPTY_ARRAY || capacity > 10) {
+            this.f1665a = DoubleArrays.ensureCapacity(this.f1665a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > this.f1665a.length) {
                 throw new AssertionError();
             }
         }
     }
 
     private void grow(int capacity) {
-        if (capacity > this.f1701a.length) {
-            if (this.f1701a != DoubleArrays.DEFAULT_EMPTY_ARRAY) {
-                capacity = (int) Math.max(Math.min(((long) this.f1701a.length) + ((long) (this.f1701a.length >> 1)), 2147483639L), (long) capacity);
+        if (capacity > this.f1665a.length) {
+            if (this.f1665a != DoubleArrays.DEFAULT_EMPTY_ARRAY) {
+                capacity = (int) Math.max(Math.min(((long) this.f1665a.length) + ((long) (this.f1665a.length >> 1)), 2147483639L), (long) capacity);
             } else if (capacity < 10) {
                 capacity = 10;
             }
-            this.f1701a = DoubleArrays.forceCapacity(this.f1701a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > this.f1701a.length) {
+            this.f1665a = DoubleArrays.forceCapacity(this.f1665a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > this.f1665a.length) {
                 throw new AssertionError();
             }
         }
@@ -214,11 +214,11 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
         ensureIndex(index);
         grow(this.size + 1);
         if (index != this.size) {
-            System.arraycopy(this.f1701a, index, this.f1701a, index + 1, this.size - index);
+            System.arraycopy(this.f1665a, index, this.f1665a, index + 1, this.size - index);
         }
-        this.f1701a[index] = k;
+        this.f1665a[index] = k;
         this.size++;
-        if (!$assertionsDisabled && this.size > this.f1701a.length) {
+        if (!$assertionsDisabled && this.size > this.f1665a.length) {
             throw new AssertionError();
         }
     }
@@ -226,11 +226,11 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleList, p014it.unimi.dsi.fastutil.doubles.AbstractDoubleCollection, p014it.unimi.dsi.fastutil.doubles.DoubleCollection
     public boolean add(double k) {
         grow(this.size + 1);
-        double[] dArr = this.f1701a;
+        double[] dArr = this.f1665a;
         int i = this.size;
         this.size = i + 1;
         dArr[i] = k;
-        if ($assertionsDisabled || this.size <= this.f1701a.length) {
+        if ($assertionsDisabled || this.size <= this.f1665a.length) {
             return true;
         }
         throw new AssertionError();
@@ -239,7 +239,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
     @Override // p014it.unimi.dsi.fastutil.doubles.DoubleList
     public double getDouble(int index) {
         if (index < this.size) {
-            return this.f1701a[index];
+            return this.f1665a[index];
         }
         throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
     }
@@ -247,7 +247,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleList, p014it.unimi.dsi.fastutil.doubles.DoubleList
     public int indexOf(double k) {
         for (int i = 0; i < this.size; i++) {
-            if (Double.doubleToLongBits(k) == Double.doubleToLongBits(this.f1701a[i])) {
+            if (Double.doubleToLongBits(k) == Double.doubleToLongBits(this.f1665a[i])) {
                 return i;
             }
         }
@@ -262,7 +262,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
             if (i == 0) {
                 return -1;
             }
-        } while (Double.doubleToLongBits(k) != Double.doubleToLongBits(this.f1701a[i]));
+        } while (Double.doubleToLongBits(k) != Double.doubleToLongBits(this.f1665a[i]));
         return i;
     }
 
@@ -271,12 +271,12 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        double old = this.f1701a[index];
+        double old = this.f1665a[index];
         this.size--;
         if (index != this.size) {
-            System.arraycopy(this.f1701a, index + 1, this.f1701a, index, this.size - index);
+            System.arraycopy(this.f1665a, index + 1, this.f1665a, index, this.size - index);
         }
-        if ($assertionsDisabled || this.size <= this.f1701a.length) {
+        if ($assertionsDisabled || this.size <= this.f1665a.length) {
             return old;
         }
         throw new AssertionError();
@@ -289,7 +289,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
             return false;
         }
         removeDouble(index);
-        if ($assertionsDisabled || this.size <= this.f1701a.length) {
+        if ($assertionsDisabled || this.size <= this.f1665a.length) {
             return true;
         }
         throw new AssertionError();
@@ -300,15 +300,15 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        double old = this.f1701a[index];
-        this.f1701a[index] = k;
+        double old = this.f1665a[index];
+        this.f1665a[index] = k;
         return old;
     }
 
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public void clear() {
         this.size = 0;
-        if (!$assertionsDisabled && this.size > this.f1701a.length) {
+        if (!$assertionsDisabled && this.size > this.f1665a.length) {
             throw new AssertionError();
         }
     }
@@ -320,11 +320,11 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
 
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleList, p014it.unimi.dsi.fastutil.doubles.DoubleList
     public void size(int size) {
-        if (size > this.f1701a.length) {
-            this.f1701a = DoubleArrays.forceCapacity(this.f1701a, size, this.size);
+        if (size > this.f1665a.length) {
+            this.f1665a = DoubleArrays.forceCapacity(this.f1665a, size, this.size);
         }
         if (size > this.size) {
-            Arrays.fill(this.f1701a, this.size, size, 0.0d);
+            Arrays.fill(this.f1665a, this.size, size, 0.0d);
         }
         this.size = size;
     }
@@ -339,11 +339,11 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
     }
 
     public void trim(int n) {
-        if (n < this.f1701a.length && this.size != this.f1701a.length) {
+        if (n < this.f1665a.length && this.size != this.f1665a.length) {
             double[] t = new double[Math.max(n, this.size)];
-            System.arraycopy(this.f1701a, 0, t, 0, this.size);
-            this.f1701a = t;
-            if (!$assertionsDisabled && this.size > this.f1701a.length) {
+            System.arraycopy(this.f1665a, 0, t, 0, this.size);
+            this.f1665a = t;
+            if (!$assertionsDisabled && this.size > this.f1665a.length) {
                 throw new AssertionError();
             }
         }
@@ -360,13 +360,13 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
         }
 
         private double[] getParentArray() {
-            return DoubleArrayList.this.f1701a;
+            return DoubleArrayList.this.f1665a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleList.DoubleSubList, p014it.unimi.dsi.fastutil.doubles.DoubleList
         public double getDouble(int i) {
             ensureRestrictedIndex(i);
-            return DoubleArrayList.this.f1701a[i + this.from];
+            return DoubleArrayList.this.f1665a[i + this.from];
         }
 
         /* access modifiers changed from: private */
@@ -379,7 +379,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
 
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterators.AbstractIndexBasedIterator
             protected final double get(int i) {
-                return DoubleArrayList.this.f1701a[SubList.this.from + i];
+                return DoubleArrayList.this.f1665a[SubList.this.from + i];
             }
 
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterators.AbstractIndexBasedListIterator
@@ -399,7 +399,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
 
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterators.AbstractIndexBasedIterator
             protected final int getMaxPos() {
-                return SubList.this.f1577to - SubList.this.from;
+                return SubList.this.f1541to - SubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterators.AbstractIndexBasedIterator, p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
@@ -407,7 +407,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                double[] dArr = DoubleArrayList.this.f1701a;
+                double[] dArr = DoubleArrayList.this.f1665a;
                 int i = SubList.this.from;
                 int i2 = this.pos;
                 this.pos = i2 + 1;
@@ -420,7 +420,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                double[] dArr = DoubleArrayList.this.f1701a;
+                double[] dArr = DoubleArrayList.this.f1665a;
                 int i = SubList.this.from;
                 int i2 = this.pos - 1;
                 this.pos = i2;
@@ -430,9 +430,9 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
 
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterators.AbstractIndexBasedIterator, java.util.PrimitiveIterator.OfDouble
             public void forEachRemaining(DoubleConsumer action) {
-                int max = SubList.this.f1577to - SubList.this.from;
+                int max = SubList.this.f1541to - SubList.this.from;
                 while (this.pos < max) {
-                    double[] dArr = DoubleArrayList.this.f1701a;
+                    double[] dArr = DoubleArrayList.this.f1665a;
                     int i = SubList.this.from;
                     int i2 = this.pos;
                     this.pos = i2 + 1;
@@ -462,12 +462,12 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
 
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleSpliterators.LateBindingSizeIndexBasedSpliterator
             protected final int getMaxPosFromBackingStore() {
-                return SubList.this.f1577to;
+                return SubList.this.f1541to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleSpliterators.AbstractIndexBasedSpliterator
             protected final double get(int i) {
-                return DoubleArrayList.this.f1701a[i];
+                return DoubleArrayList.this.f1665a[i];
             }
 
             /* access modifiers changed from: protected */
@@ -481,7 +481,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
                 if (this.pos >= getMaxPos()) {
                     return false;
                 }
-                double[] dArr = DoubleArrayList.this.f1701a;
+                double[] dArr = DoubleArrayList.this.f1665a;
                 int i = this.pos;
                 this.pos = i + 1;
                 action.accept(dArr[i]);
@@ -492,7 +492,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
             public void forEachRemaining(DoubleConsumer action) {
                 int max = getMaxPos();
                 while (this.pos < max) {
-                    double[] dArr = DoubleArrayList.this.f1701a;
+                    double[] dArr = DoubleArrayList.this.f1665a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(dArr[i]);
@@ -506,7 +506,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
         }
 
         boolean contentsEquals(double[] otherA, int otherAFrom, int otherATo) {
-            if (DoubleArrayList.this.f1701a == otherA && this.from == otherAFrom && this.f1577to == otherATo) {
+            if (DoubleArrayList.this.f1665a == otherA && this.from == otherAFrom && this.f1541to == otherATo) {
                 return true;
             }
             if (otherATo - otherAFrom != size()) {
@@ -514,10 +514,10 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
             }
             int pos = this.from;
             int otherPos = otherAFrom;
-            while (pos < this.f1577to) {
+            while (pos < this.f1541to) {
                 pos++;
                 otherPos++;
-                if (DoubleArrayList.this.f1701a[pos] != otherA[otherPos]) {
+                if (DoubleArrayList.this.f1665a[pos] != otherA[otherPos]) {
                     return false;
                 }
             }
@@ -534,23 +534,23 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
             }
             if (o instanceof DoubleArrayList) {
                 DoubleArrayList other = (DoubleArrayList) o;
-                return contentsEquals(other.f1701a, 0, other.size());
+                return contentsEquals(other.f1665a, 0, other.size());
             } else if (!(o instanceof SubList)) {
                 return equals(o);
             } else {
                 SubList other2 = (SubList) o;
-                return contentsEquals(other2.getParentArray(), other2.from, other2.f1577to);
+                return contentsEquals(other2.getParentArray(), other2.from, other2.f1541to);
             }
         }
 
         int contentsCompareTo(double[] otherA, int otherAFrom, int otherATo) {
-            if (DoubleArrayList.this.f1701a == otherA && this.from == otherAFrom && this.f1577to == otherATo) {
+            if (DoubleArrayList.this.f1665a == otherA && this.from == otherAFrom && this.f1541to == otherATo) {
                 return 0;
             }
             int i = this.from;
             int j = otherAFrom;
-            while (i < this.f1577to && i < otherATo) {
-                int r = Double.compare(DoubleArrayList.this.f1701a[i], otherA[j]);
+            while (i < this.f1541to && i < otherATo) {
+                int r = Double.compare(DoubleArrayList.this.f1665a[i], otherA[j]);
                 if (r != 0) {
                     return r;
                 }
@@ -560,19 +560,19 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
             if (i < otherATo) {
                 return -1;
             }
-            return i < this.f1577to ? 1 : 0;
+            return i < this.f1541to ? 1 : 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleList
         public int compareTo(List<? extends Double> l) {
             if (l instanceof DoubleArrayList) {
                 DoubleArrayList other = (DoubleArrayList) l;
-                return contentsCompareTo(other.f1701a, 0, other.size());
+                return contentsCompareTo(other.f1665a, 0, other.size());
             } else if (!(l instanceof SubList)) {
                 return compareTo(l);
             } else {
                 SubList other2 = (SubList) l;
-                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f1577to);
+                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f1541to);
             }
         }
     }
@@ -594,13 +594,13 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleList, p014it.unimi.dsi.fastutil.doubles.DoubleList
     public void getElements(int from, double[] a, int offset, int length) {
         DoubleArrays.ensureOffsetLength(a, offset, length);
-        System.arraycopy(this.f1701a, from, a, offset, length);
+        System.arraycopy(this.f1665a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleList, p014it.unimi.dsi.fastutil.doubles.DoubleList
     public void removeElements(int from, int to) {
         p014it.unimi.dsi.fastutil.Arrays.ensureFromTo(this.size, from, to);
-        System.arraycopy(this.f1701a, to, this.f1701a, from, this.size - to);
+        System.arraycopy(this.f1665a, to, this.f1665a, from, this.size - to);
         this.size -= to - from;
     }
 
@@ -609,8 +609,8 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
         ensureIndex(index);
         DoubleArrays.ensureOffsetLength(a, offset, length);
         grow(this.size + length);
-        System.arraycopy(this.f1701a, index, this.f1701a, index + length, this.size - index);
-        System.arraycopy(a, offset, this.f1701a, index, length);
+        System.arraycopy(this.f1665a, index, this.f1665a, index + length, this.size - index);
+        System.arraycopy(a, offset, this.f1665a, index, length);
         this.size += length;
     }
 
@@ -621,13 +621,13 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
         if (index + length > this.size) {
             throw new IndexOutOfBoundsException("End index (" + (index + length) + ") is greater than list size (" + this.size + ")");
         }
-        System.arraycopy(a, offset, this.f1701a, index, length);
+        System.arraycopy(a, offset, this.f1665a, index, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleList, p014it.unimi.dsi.fastutil.doubles.DoubleIterable
     public void forEach(DoubleConsumer action) {
         for (int i = 0; i < this.size; i++) {
-            action.accept(this.f1701a[i]);
+            action.accept(this.f1665a[i]);
         }
     }
 
@@ -642,7 +642,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
             return false;
         }
         grow(this.size + n);
-        System.arraycopy(this.f1701a, index, this.f1701a, index + n, this.size - index);
+        System.arraycopy(this.f1665a, index, this.f1665a, index + n, this.size - index);
         DoubleIterator i = c.iterator();
         this.size += n;
         while (true) {
@@ -651,9 +651,9 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
                 break;
             }
             index++;
-            this.f1701a[index] = i.nextDouble();
+            this.f1665a[index] = i.nextDouble();
         }
-        if ($assertionsDisabled || this.size <= this.f1701a.length) {
+        if ($assertionsDisabled || this.size <= this.f1665a.length) {
             return true;
         }
         throw new AssertionError();
@@ -667,10 +667,10 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
             return false;
         }
         grow(this.size + n);
-        System.arraycopy(this.f1701a, index, this.f1701a, index + n, this.size - index);
-        l.getElements(0, this.f1701a, index, n);
+        System.arraycopy(this.f1665a, index, this.f1665a, index + n, this.size - index);
+        l.getElements(0, this.f1665a, index, n);
         this.size += n;
-        if ($assertionsDisabled || this.size <= this.f1701a.length) {
+        if ($assertionsDisabled || this.size <= this.f1665a.length) {
             return true;
         }
         throw new AssertionError();
@@ -678,7 +678,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
 
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleCollection, p014it.unimi.dsi.fastutil.doubles.DoubleCollection
     public boolean removeAll(DoubleCollection c) {
-        double[] a = this.f1701a;
+        double[] a = this.f1665a;
         int j = 0;
         for (int i = 0; i < this.size; i++) {
             if (!c.contains(a[i])) {
@@ -696,7 +696,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
         if (a == null || a.length < this.size) {
             a = Arrays.copyOf(a, this.size);
         }
-        System.arraycopy(this.f1701a, 0, a, 0, this.size);
+        System.arraycopy(this.f1665a, 0, a, 0, this.size);
         return a;
     }
 
@@ -728,7 +728,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                double[] dArr = DoubleArrayList.this.f1701a;
+                double[] dArr = DoubleArrayList.this.f1665a;
                 int i = this.pos;
                 this.pos = i + 1;
                 this.last = i;
@@ -740,7 +740,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                double[] dArr = DoubleArrayList.this.f1701a;
+                double[] dArr = DoubleArrayList.this.f1665a;
                 int i = this.pos - 1;
                 this.pos = i;
                 this.last = i;
@@ -789,7 +789,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
             @Override // java.util.PrimitiveIterator.OfDouble
             public void forEachRemaining(DoubleConsumer action) {
                 while (this.pos < DoubleArrayList.this.size) {
-                    double[] dArr = DoubleArrayList.this.f1701a;
+                    double[] dArr = DoubleArrayList.this.f1665a;
                     int i = this.pos;
                     this.pos = i + 1;
                     this.last = i;
@@ -878,7 +878,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            double[] dArr = DoubleArrayList.this.f1701a;
+            double[] dArr = DoubleArrayList.this.f1665a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(dArr[i]);
@@ -889,7 +889,7 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
         public void forEachRemaining(DoubleConsumer action) {
             int max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(DoubleArrayList.this.f1701a[this.pos]);
+                action.accept(DoubleArrayList.this.f1665a[this.pos]);
                 this.pos++;
             }
         }
@@ -937,18 +937,18 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
     @Override // p014it.unimi.dsi.fastutil.doubles.DoubleList
     public void sort(DoubleComparator comp) {
         if (comp == null) {
-            DoubleArrays.stableSort(this.f1701a, 0, this.size);
+            DoubleArrays.stableSort(this.f1665a, 0, this.size);
         } else {
-            DoubleArrays.stableSort(this.f1701a, 0, this.size, comp);
+            DoubleArrays.stableSort(this.f1665a, 0, this.size, comp);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.doubles.DoubleList
     public void unstableSort(DoubleComparator comp) {
         if (comp == null) {
-            DoubleArrays.unstableSort(this.f1701a, 0, this.size);
+            DoubleArrays.unstableSort(this.f1665a, 0, this.size);
         } else {
-            DoubleArrays.unstableSort(this.f1701a, 0, this.size, comp);
+            DoubleArrays.unstableSort(this.f1665a, 0, this.size, comp);
         }
     }
 
@@ -956,12 +956,12 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
     public DoubleArrayList clone() {
         DoubleArrayList cloned;
         if (getClass() == DoubleArrayList.class) {
-            cloned = new DoubleArrayList(copyArraySafe(this.f1701a, this.size), false);
+            cloned = new DoubleArrayList(copyArraySafe(this.f1665a, this.size), false);
             cloned.size = this.size;
         } else {
             try {
                 cloned = (DoubleArrayList) clone();
-                cloned.f1701a = copyArraySafe(this.f1701a, this.size);
+                cloned.f1665a = copyArraySafe(this.f1665a, this.size);
             } catch (CloneNotSupportedException err) {
                 throw new InternalError(err);
             }
@@ -977,8 +977,8 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
         if (s != l.size()) {
             return false;
         }
-        double[] a1 = this.f1701a;
-        double[] a2 = l.f1701a;
+        double[] a1 = this.f1665a;
+        double[] a2 = l.f1665a;
         if (a1 == a2 && s == l.size()) {
             return true;
         }
@@ -1011,8 +1011,8 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
     public int compareTo(DoubleArrayList l) {
         int s1 = size();
         int s2 = l.size();
-        double[] a1 = this.f1701a;
-        double[] a2 = l.f1701a;
+        double[] a1 = this.f1665a;
+        double[] a2 = l.f1665a;
         if (a1 == a2 && s1 == s2) {
             return 0;
         }
@@ -1044,15 +1044,15 @@ public class DoubleArrayList extends AbstractDoubleList implements RandomAccess,
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; i < this.size; i++) {
-            s.writeDouble(this.f1701a[i]);
+            s.writeDouble(this.f1665a[i]);
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f1701a = new double[this.size];
+        this.f1665a = new double[this.size];
         for (int i = 0; i < this.size; i++) {
-            this.f1701a[i] = s.readDouble();
+            this.f1665a[i] = s.readDouble();
         }
     }
 }

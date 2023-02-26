@@ -24,15 +24,17 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ExpeditionPathInfoOuterClass.class */
 public final class ExpeditionPathInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018ExpeditionPathInfo.proto\u001a\u0015ExpeditionState.proto\"\u0002\n\u0012ExpeditionPathInfo\u0012\u0012\n\nstart_time\u0018\n \u0001(\r\u0012\u0019\n\u0011bonus_probability\u0018\f \u0001(\u0002\u0012\u0016\n\u000eavatar_id_list\u0018\b \u0003(\r\u0012\u000f\n\u0007path_id\u0018\u000b \u0001(\r\u0012\u001b\n\u0013Unk3300_AIEJKADFLKG\u0018\u0006 \u0001(\r\u0012\u001b\n\u0013Unk3300_LKAHOEBNBBI\u0018\u000e \u0001(\r\u0012\u001b\n\u0013Unk3300_AFGPGIIGAKA\u0018\u0007 \u0001(\r\u0012\u001b\n\u0013Unk3300_LFIFDGAGFDC\u0018\u0005 \u0001(\r\u0012\u001f\n\u0005state\u0018\r \u0001(\u000e2\u0010.ExpeditionState\u0012\u0014\n\fchallenge_id\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ExpeditionStateOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018ExpeditionPathInfo.proto\u001a\u0015ExpeditionState.proto\"\u0002\n\u0012ExpeditionPathInfo\u0012\u0011\n\tstartTime\u0018\u000f \u0001(\r\u0012\u001b\n\u0013Unk3300_LFIFDGAGFDC\u0018\u0007 \u0001(\r\u0012\u000e\n\u0006pathId\u0018\u000b \u0001(\r\u0012\u0014\n\favatarIdList\u0018\u0002 \u0003(\r\u0012\u0013\n\u000bchallengeId\u0018\u0003 \u0001(\r\u0012\u001f\n\u0005state\u0018\t \u0001(\u000e2\u0010.ExpeditionState\u0012\u001b\n\u0013Unk3300_AIEJKADFLKG\u0018\n \u0001(\r\u0012\u001b\n\u0013Unk3300_LKAHOEBNBBI\u0018\u0001 \u0001(\r\u0012\u001b\n\u0013Unk3300_AFGPGIIGAKA\u0018\u000e \u0001(\r\u0012\u0018\n\u0010bonusProbability\u0018\b \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ExpeditionStateOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ExpeditionPathInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ExpeditionPathInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ExpeditionPathInfo_descriptor, new String[]{"StartTime", "BonusProbability", "AvatarIdList", "PathId", "Unk3300AIEJKADFLKG", "Unk3300LKAHOEBNBBI", "Unk3300AFGPGIIGAKA", "Unk3300LFIFDGAGFDC", "State", "ChallengeId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ExpeditionPathInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ExpeditionPathInfo_descriptor, new String[]{"StartTime", "Unk3300LFIFDGAGFDC", "PathId", "AvatarIdList", "ChallengeId", "State", "Unk3300AIEJKADFLKG", "Unk3300LKAHOEBNBBI", "Unk3300AFGPGIIGAKA", "BonusProbability"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ExpeditionPathInfoOuterClass$ExpeditionPathInfoOrBuilder.class */
     public interface ExpeditionPathInfoOrBuilder extends MessageOrBuilder {
         int getStartTime();
 
-        float getBonusProbability();
+        int getUnk3300LFIFDGAGFDC();
+
+        int getPathId();
 
         List<Integer> getAvatarIdListList();
 
@@ -40,7 +42,11 @@ public final class ExpeditionPathInfoOuterClass {
 
         int getAvatarIdList(int i);
 
-        int getPathId();
+        int getChallengeId();
+
+        int getStateValue();
+
+        ExpeditionStateOuterClass.ExpeditionState getState();
 
         int getUnk3300AIEJKADFLKG();
 
@@ -48,13 +54,7 @@ public final class ExpeditionPathInfoOuterClass {
 
         int getUnk3300AFGPGIIGAKA();
 
-        int getUnk3300LFIFDGAGFDC();
-
-        int getStateValue();
-
-        ExpeditionStateOuterClass.ExpeditionState getState();
-
-        int getChallengeId();
+        float getBonusProbability();
     }
 
     private ExpeditionPathInfoOuterClass() {
@@ -70,27 +70,27 @@ public final class ExpeditionPathInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ExpeditionPathInfoOuterClass$ExpeditionPathInfo.class */
     public static final class ExpeditionPathInfo extends GeneratedMessageV3 implements ExpeditionPathInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int START_TIME_FIELD_NUMBER = 10;
+        public static final int STARTTIME_FIELD_NUMBER = 15;
         private int startTime_;
-        public static final int BONUS_PROBABILITY_FIELD_NUMBER = 12;
-        private float bonusProbability_;
-        public static final int AVATAR_ID_LIST_FIELD_NUMBER = 8;
+        public static final int UNK3300_LFIFDGAGFDC_FIELD_NUMBER = 7;
+        private int unk3300LFIFDGAGFDC_;
+        public static final int PATHID_FIELD_NUMBER = 11;
+        private int pathId_;
+        public static final int AVATARIDLIST_FIELD_NUMBER = 2;
         private Internal.IntList avatarIdList_;
         private int avatarIdListMemoizedSerializedSize;
-        public static final int PATH_ID_FIELD_NUMBER = 11;
-        private int pathId_;
-        public static final int UNK3300_AIEJKADFLKG_FIELD_NUMBER = 6;
-        private int unk3300AIEJKADFLKG_;
-        public static final int UNK3300_LKAHOEBNBBI_FIELD_NUMBER = 14;
-        private int unk3300LKAHOEBNBBI_;
-        public static final int UNK3300_AFGPGIIGAKA_FIELD_NUMBER = 7;
-        private int unk3300AFGPGIIGAKA_;
-        public static final int UNK3300_LFIFDGAGFDC_FIELD_NUMBER = 5;
-        private int unk3300LFIFDGAGFDC_;
-        public static final int STATE_FIELD_NUMBER = 13;
-        private int state_;
-        public static final int CHALLENGE_ID_FIELD_NUMBER = 9;
+        public static final int CHALLENGEID_FIELD_NUMBER = 3;
         private int challengeId_;
+        public static final int STATE_FIELD_NUMBER = 9;
+        private int state_;
+        public static final int UNK3300_AIEJKADFLKG_FIELD_NUMBER = 10;
+        private int unk3300AIEJKADFLKG_;
+        public static final int UNK3300_LKAHOEBNBBI_FIELD_NUMBER = 1;
+        private int unk3300LKAHOEBNBBI_;
+        public static final int UNK3300_AFGPGIIGAKA_FIELD_NUMBER = 14;
+        private int unk3300AFGPGIIGAKA_;
+        public static final int BONUSPROBABILITY_FIELD_NUMBER = 8;
+        private float bonusProbability_;
         private byte memoizedIsInitialized;
         private static final ExpeditionPathInfo DEFAULT_INSTANCE = new ExpeditionPathInfo();
         private static final Parser<ExpeditionPathInfo> PARSER = new AbstractParser<ExpeditionPathInfo>() { // from class: emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfo.1
@@ -142,23 +142,17 @@ public final class ExpeditionPathInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 40:
-                                this.unk3300LFIFDGAGFDC_ = input.readUInt32();
+                            case 8:
+                                this.unk3300LKAHOEBNBBI_ = input.readUInt32();
                                 break;
-                            case 48:
-                                this.unk3300AIEJKADFLKG_ = input.readUInt32();
-                                break;
-                            case 56:
-                                this.unk3300AFGPGIIGAKA_ = input.readUInt32();
-                                break;
-                            case 64:
+                            case 16:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.avatarIdList_ = newIntList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.avatarIdList_.addInt(input.readUInt32());
                                 break;
-                            case 66:
+                            case 18:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.avatarIdList_ = newIntList();
@@ -169,23 +163,29 @@ public final class ExpeditionPathInfoOuterClass {
                                 }
                                 input.popLimit(limit);
                                 break;
-                            case 72:
+                            case 24:
                                 this.challengeId_ = input.readUInt32();
                                 break;
+                            case 56:
+                                this.unk3300LFIFDGAGFDC_ = input.readUInt32();
+                                break;
+                            case 69:
+                                this.bonusProbability_ = input.readFloat();
+                                break;
+                            case 72:
+                                this.state_ = input.readEnum();
+                                break;
                             case 80:
-                                this.startTime_ = input.readUInt32();
+                                this.unk3300AIEJKADFLKG_ = input.readUInt32();
                                 break;
                             case 88:
                                 this.pathId_ = input.readUInt32();
                                 break;
-                            case 101:
-                                this.bonusProbability_ = input.readFloat();
-                                break;
-                            case 104:
-                                this.state_ = input.readEnum();
-                                break;
                             case 112:
-                                this.unk3300LKAHOEBNBBI_ = input.readUInt32();
+                                this.unk3300AFGPGIIGAKA_ = input.readUInt32();
+                                break;
+                            case 120:
+                                this.startTime_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -225,8 +225,13 @@ public final class ExpeditionPathInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder
-        public float getBonusProbability() {
-            return this.bonusProbability_;
+        public int getUnk3300LFIFDGAGFDC() {
+            return this.unk3300LFIFDGAGFDC_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder
+        public int getPathId() {
+            return this.pathId_;
         }
 
         @Override // emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder
@@ -245,8 +250,19 @@ public final class ExpeditionPathInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder
-        public int getPathId() {
-            return this.pathId_;
+        public int getChallengeId() {
+            return this.challengeId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder
+        public int getStateValue() {
+            return this.state_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder
+        public ExpeditionStateOuterClass.ExpeditionState getState() {
+            ExpeditionStateOuterClass.ExpeditionState result = ExpeditionStateOuterClass.ExpeditionState.valueOf(this.state_);
+            return result == null ? ExpeditionStateOuterClass.ExpeditionState.UNRECOGNIZED : result;
         }
 
         @Override // emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder
@@ -265,24 +281,8 @@ public final class ExpeditionPathInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder
-        public int getUnk3300LFIFDGAGFDC() {
-            return this.unk3300LFIFDGAGFDC_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder
-        public int getStateValue() {
-            return this.state_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder
-        public ExpeditionStateOuterClass.ExpeditionState getState() {
-            ExpeditionStateOuterClass.ExpeditionState result = ExpeditionStateOuterClass.ExpeditionState.valueOf(this.state_);
-            return result == null ? ExpeditionStateOuterClass.ExpeditionState.UNRECOGNIZED : result;
-        }
-
-        @Override // emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder
-        public int getChallengeId() {
-            return this.challengeId_;
+        public float getBonusProbability() {
+            return this.bonusProbability_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -301,39 +301,39 @@ public final class ExpeditionPathInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (this.unk3300LFIFDGAGFDC_ != 0) {
-                output.writeUInt32(5, this.unk3300LFIFDGAGFDC_);
-            }
-            if (this.unk3300AIEJKADFLKG_ != 0) {
-                output.writeUInt32(6, this.unk3300AIEJKADFLKG_);
-            }
-            if (this.unk3300AFGPGIIGAKA_ != 0) {
-                output.writeUInt32(7, this.unk3300AFGPGIIGAKA_);
+            if (this.unk3300LKAHOEBNBBI_ != 0) {
+                output.writeUInt32(1, this.unk3300LKAHOEBNBBI_);
             }
             if (getAvatarIdListList().size() > 0) {
-                output.writeUInt32NoTag(66);
+                output.writeUInt32NoTag(18);
                 output.writeUInt32NoTag(this.avatarIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.avatarIdList_.size(); i++) {
                 output.writeUInt32NoTag(this.avatarIdList_.getInt(i));
             }
             if (this.challengeId_ != 0) {
-                output.writeUInt32(9, this.challengeId_);
+                output.writeUInt32(3, this.challengeId_);
             }
-            if (this.startTime_ != 0) {
-                output.writeUInt32(10, this.startTime_);
+            if (this.unk3300LFIFDGAGFDC_ != 0) {
+                output.writeUInt32(7, this.unk3300LFIFDGAGFDC_);
+            }
+            if (this.bonusProbability_ != 0.0f) {
+                output.writeFloat(8, this.bonusProbability_);
+            }
+            if (this.state_ != ExpeditionStateOuterClass.ExpeditionState.EXPEDITION_STATE_NONE.getNumber()) {
+                output.writeEnum(9, this.state_);
+            }
+            if (this.unk3300AIEJKADFLKG_ != 0) {
+                output.writeUInt32(10, this.unk3300AIEJKADFLKG_);
             }
             if (this.pathId_ != 0) {
                 output.writeUInt32(11, this.pathId_);
             }
-            if (this.bonusProbability_ != 0.0f) {
-                output.writeFloat(12, this.bonusProbability_);
+            if (this.unk3300AFGPGIIGAKA_ != 0) {
+                output.writeUInt32(14, this.unk3300AFGPGIIGAKA_);
             }
-            if (this.state_ != ExpeditionStateOuterClass.ExpeditionState.EXPEDITION_STATE_NONE.getNumber()) {
-                output.writeEnum(13, this.state_);
-            }
-            if (this.unk3300LKAHOEBNBBI_ != 0) {
-                output.writeUInt32(14, this.unk3300LKAHOEBNBBI_);
+            if (this.startTime_ != 0) {
+                output.writeUInt32(15, this.startTime_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -345,14 +345,8 @@ public final class ExpeditionPathInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.unk3300LFIFDGAGFDC_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.unk3300LFIFDGAGFDC_);
-            }
-            if (this.unk3300AIEJKADFLKG_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(6, this.unk3300AIEJKADFLKG_);
-            }
-            if (this.unk3300AFGPGIIGAKA_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.unk3300AFGPGIIGAKA_);
+            if (this.unk3300LKAHOEBNBBI_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.unk3300LKAHOEBNBBI_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.avatarIdList_.size(); i++) {
@@ -364,22 +358,28 @@ public final class ExpeditionPathInfoOuterClass {
             }
             this.avatarIdListMemoizedSerializedSize = dataSize;
             if (this.challengeId_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(9, this.challengeId_);
+                size3 += CodedOutputStream.computeUInt32Size(3, this.challengeId_);
             }
-            if (this.startTime_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(10, this.startTime_);
+            if (this.unk3300LFIFDGAGFDC_ != 0) {
+                size3 += CodedOutputStream.computeUInt32Size(7, this.unk3300LFIFDGAGFDC_);
+            }
+            if (this.bonusProbability_ != 0.0f) {
+                size3 += CodedOutputStream.computeFloatSize(8, this.bonusProbability_);
+            }
+            if (this.state_ != ExpeditionStateOuterClass.ExpeditionState.EXPEDITION_STATE_NONE.getNumber()) {
+                size3 += CodedOutputStream.computeEnumSize(9, this.state_);
+            }
+            if (this.unk3300AIEJKADFLKG_ != 0) {
+                size3 += CodedOutputStream.computeUInt32Size(10, this.unk3300AIEJKADFLKG_);
             }
             if (this.pathId_ != 0) {
                 size3 += CodedOutputStream.computeUInt32Size(11, this.pathId_);
             }
-            if (this.bonusProbability_ != 0.0f) {
-                size3 += CodedOutputStream.computeFloatSize(12, this.bonusProbability_);
+            if (this.unk3300AFGPGIIGAKA_ != 0) {
+                size3 += CodedOutputStream.computeUInt32Size(14, this.unk3300AFGPGIIGAKA_);
             }
-            if (this.state_ != ExpeditionStateOuterClass.ExpeditionState.EXPEDITION_STATE_NONE.getNumber()) {
-                size3 += CodedOutputStream.computeEnumSize(13, this.state_);
-            }
-            if (this.unk3300LKAHOEBNBBI_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(14, this.unk3300LKAHOEBNBBI_);
+            if (this.startTime_ != 0) {
+                size3 += CodedOutputStream.computeUInt32Size(15, this.startTime_);
             }
             int size4 = size3 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size4;
@@ -395,7 +395,7 @@ public final class ExpeditionPathInfoOuterClass {
                 return equals(obj);
             }
             ExpeditionPathInfo other = (ExpeditionPathInfo) obj;
-            return getStartTime() == other.getStartTime() && Float.floatToIntBits(getBonusProbability()) == Float.floatToIntBits(other.getBonusProbability()) && getAvatarIdListList().equals(other.getAvatarIdListList()) && getPathId() == other.getPathId() && getUnk3300AIEJKADFLKG() == other.getUnk3300AIEJKADFLKG() && getUnk3300LKAHOEBNBBI() == other.getUnk3300LKAHOEBNBBI() && getUnk3300AFGPGIIGAKA() == other.getUnk3300AFGPGIIGAKA() && getUnk3300LFIFDGAGFDC() == other.getUnk3300LFIFDGAGFDC() && this.state_ == other.state_ && getChallengeId() == other.getChallengeId() && this.unknownFields.equals(other.unknownFields);
+            return getStartTime() == other.getStartTime() && getUnk3300LFIFDGAGFDC() == other.getUnk3300LFIFDGAGFDC() && getPathId() == other.getPathId() && getAvatarIdListList().equals(other.getAvatarIdListList()) && getChallengeId() == other.getChallengeId() && this.state_ == other.state_ && getUnk3300AIEJKADFLKG() == other.getUnk3300AIEJKADFLKG() && getUnk3300LKAHOEBNBBI() == other.getUnk3300LKAHOEBNBBI() && getUnk3300AFGPGIIGAKA() == other.getUnk3300AFGPGIIGAKA() && Float.floatToIntBits(getBonusProbability()) == Float.floatToIntBits(other.getBonusProbability()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -403,11 +403,11 @@ public final class ExpeditionPathInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getStartTime())) + 12)) + Float.floatToIntBits(getBonusProbability());
+            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getStartTime())) + 7)) + getUnk3300LFIFDGAGFDC())) + 11)) + getPathId();
             if (getAvatarIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 8)) + getAvatarIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 2)) + getAvatarIdListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 11)) + getPathId())) + 6)) + getUnk3300AIEJKADFLKG())) + 14)) + getUnk3300LKAHOEBNBBI())) + 7)) + getUnk3300AFGPGIIGAKA())) + 5)) + getUnk3300LFIFDGAGFDC())) + 13)) + this.state_)) + 9)) + getChallengeId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 3)) + getChallengeId())) + 9)) + this.state_)) + 10)) + getUnk3300AIEJKADFLKG())) + 1)) + getUnk3300LKAHOEBNBBI())) + 14)) + getUnk3300AFGPGIIGAKA())) + 8)) + Float.floatToIntBits(getBonusProbability()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -488,13 +488,13 @@ public final class ExpeditionPathInfoOuterClass {
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ExpeditionPathInfoOrBuilder {
             private int bitField0_;
             private int startTime_;
-            private float bonusProbability_;
+            private int unk3300LFIFDGAGFDC_;
             private int pathId_;
+            private int challengeId_;
             private int unk3300AIEJKADFLKG_;
             private int unk3300LKAHOEBNBBI_;
             private int unk3300AFGPGIIGAKA_;
-            private int unk3300LFIFDGAGFDC_;
-            private int challengeId_;
+            private float bonusProbability_;
             private Internal.IntList avatarIdList_ = ExpeditionPathInfo.emptyIntList();
             private int state_ = 0;
 
@@ -525,16 +525,16 @@ public final class ExpeditionPathInfoOuterClass {
             public Builder clear() {
                 clear();
                 this.startTime_ = 0;
-                this.bonusProbability_ = 0.0f;
+                this.unk3300LFIFDGAGFDC_ = 0;
+                this.pathId_ = 0;
                 this.avatarIdList_ = ExpeditionPathInfo.emptyIntList();
                 this.bitField0_ &= -2;
-                this.pathId_ = 0;
+                this.challengeId_ = 0;
+                this.state_ = 0;
                 this.unk3300AIEJKADFLKG_ = 0;
                 this.unk3300LKAHOEBNBBI_ = 0;
                 this.unk3300AFGPGIIGAKA_ = 0;
-                this.unk3300LFIFDGAGFDC_ = 0;
-                this.state_ = 0;
-                this.challengeId_ = 0;
+                this.bonusProbability_ = 0.0f;
                 return this;
             }
 
@@ -562,19 +562,19 @@ public final class ExpeditionPathInfoOuterClass {
                 ExpeditionPathInfo result = new ExpeditionPathInfo(this);
                 int i = this.bitField0_;
                 result.startTime_ = this.startTime_;
-                result.bonusProbability_ = this.bonusProbability_;
+                result.unk3300LFIFDGAGFDC_ = this.unk3300LFIFDGAGFDC_;
+                result.pathId_ = this.pathId_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.avatarIdList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.avatarIdList_ = this.avatarIdList_;
-                result.pathId_ = this.pathId_;
+                result.challengeId_ = this.challengeId_;
+                result.state_ = this.state_;
                 result.unk3300AIEJKADFLKG_ = this.unk3300AIEJKADFLKG_;
                 result.unk3300LKAHOEBNBBI_ = this.unk3300LKAHOEBNBBI_;
                 result.unk3300AFGPGIIGAKA_ = this.unk3300AFGPGIIGAKA_;
-                result.unk3300LFIFDGAGFDC_ = this.unk3300LFIFDGAGFDC_;
-                result.state_ = this.state_;
-                result.challengeId_ = this.challengeId_;
+                result.bonusProbability_ = this.bonusProbability_;
                 onBuilt();
                 return result;
             }
@@ -625,8 +625,11 @@ public final class ExpeditionPathInfoOuterClass {
                 if (other.getStartTime() != 0) {
                     setStartTime(other.getStartTime());
                 }
-                if (other.getBonusProbability() != 0.0f) {
-                    setBonusProbability(other.getBonusProbability());
+                if (other.getUnk3300LFIFDGAGFDC() != 0) {
+                    setUnk3300LFIFDGAGFDC(other.getUnk3300LFIFDGAGFDC());
+                }
+                if (other.getPathId() != 0) {
+                    setPathId(other.getPathId());
                 }
                 if (!other.avatarIdList_.isEmpty()) {
                     if (this.avatarIdList_.isEmpty()) {
@@ -638,8 +641,11 @@ public final class ExpeditionPathInfoOuterClass {
                     }
                     onChanged();
                 }
-                if (other.getPathId() != 0) {
-                    setPathId(other.getPathId());
+                if (other.getChallengeId() != 0) {
+                    setChallengeId(other.getChallengeId());
+                }
+                if (other.state_ != 0) {
+                    setStateValue(other.getStateValue());
                 }
                 if (other.getUnk3300AIEJKADFLKG() != 0) {
                     setUnk3300AIEJKADFLKG(other.getUnk3300AIEJKADFLKG());
@@ -650,14 +656,8 @@ public final class ExpeditionPathInfoOuterClass {
                 if (other.getUnk3300AFGPGIIGAKA() != 0) {
                     setUnk3300AFGPGIIGAKA(other.getUnk3300AFGPGIIGAKA());
                 }
-                if (other.getUnk3300LFIFDGAGFDC() != 0) {
-                    setUnk3300LFIFDGAGFDC(other.getUnk3300LFIFDGAGFDC());
-                }
-                if (other.state_ != 0) {
-                    setStateValue(other.getStateValue());
-                }
-                if (other.getChallengeId() != 0) {
-                    setChallengeId(other.getChallengeId());
+                if (other.getBonusProbability() != 0.0f) {
+                    setBonusProbability(other.getBonusProbability());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -709,18 +709,35 @@ public final class ExpeditionPathInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder
-            public float getBonusProbability() {
-                return this.bonusProbability_;
+            public int getUnk3300LFIFDGAGFDC() {
+                return this.unk3300LFIFDGAGFDC_;
             }
 
-            public Builder setBonusProbability(float value) {
-                this.bonusProbability_ = value;
+            public Builder setUnk3300LFIFDGAGFDC(int value) {
+                this.unk3300LFIFDGAGFDC_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearBonusProbability() {
-                this.bonusProbability_ = 0.0f;
+            public Builder clearUnk3300LFIFDGAGFDC() {
+                this.unk3300LFIFDGAGFDC_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder
+            public int getPathId() {
+                return this.pathId_;
+            }
+
+            public Builder setPathId(int value) {
+                this.pathId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearPathId() {
+                this.pathId_ = 0;
                 onChanged();
                 return this;
             }
@@ -776,18 +793,50 @@ public final class ExpeditionPathInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder
-            public int getPathId() {
-                return this.pathId_;
+            public int getChallengeId() {
+                return this.challengeId_;
             }
 
-            public Builder setPathId(int value) {
-                this.pathId_ = value;
+            public Builder setChallengeId(int value) {
+                this.challengeId_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearPathId() {
-                this.pathId_ = 0;
+            public Builder clearChallengeId() {
+                this.challengeId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder
+            public int getStateValue() {
+                return this.state_;
+            }
+
+            public Builder setStateValue(int value) {
+                this.state_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder
+            public ExpeditionStateOuterClass.ExpeditionState getState() {
+                ExpeditionStateOuterClass.ExpeditionState result = ExpeditionStateOuterClass.ExpeditionState.valueOf(this.state_);
+                return result == null ? ExpeditionStateOuterClass.ExpeditionState.UNRECOGNIZED : result;
+            }
+
+            public Builder setState(ExpeditionStateOuterClass.ExpeditionState value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.state_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+
+            public Builder clearState() {
+                this.state_ = 0;
                 onChanged();
                 return this;
             }
@@ -844,67 +893,18 @@ public final class ExpeditionPathInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder
-            public int getUnk3300LFIFDGAGFDC() {
-                return this.unk3300LFIFDGAGFDC_;
+            public float getBonusProbability() {
+                return this.bonusProbability_;
             }
 
-            public Builder setUnk3300LFIFDGAGFDC(int value) {
-                this.unk3300LFIFDGAGFDC_ = value;
+            public Builder setBonusProbability(float value) {
+                this.bonusProbability_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearUnk3300LFIFDGAGFDC() {
-                this.unk3300LFIFDGAGFDC_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder
-            public int getStateValue() {
-                return this.state_;
-            }
-
-            public Builder setStateValue(int value) {
-                this.state_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder
-            public ExpeditionStateOuterClass.ExpeditionState getState() {
-                ExpeditionStateOuterClass.ExpeditionState result = ExpeditionStateOuterClass.ExpeditionState.valueOf(this.state_);
-                return result == null ? ExpeditionStateOuterClass.ExpeditionState.UNRECOGNIZED : result;
-            }
-
-            public Builder setState(ExpeditionStateOuterClass.ExpeditionState value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.state_ = value.getNumber();
-                onChanged();
-                return this;
-            }
-
-            public Builder clearState() {
-                this.state_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ExpeditionPathInfoOuterClass.ExpeditionPathInfoOrBuilder
-            public int getChallengeId() {
-                return this.challengeId_;
-            }
-
-            public Builder setChallengeId(int value) {
-                this.challengeId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearChallengeId() {
-                this.challengeId_ = 0;
+            public Builder clearBonusProbability() {
+                this.bonusProbability_ = 0.0f;
                 onChanged();
                 return this;
             }

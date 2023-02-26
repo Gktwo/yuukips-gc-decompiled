@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CanUseSkillNotifyOuterClass.class */
 public final class CanUseSkillNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017CanUseSkillNotify.proto\"-\n\u0011CanUseSkillNotify\u0012\u0018\n\u0010is_can_use_skill\u0018\f \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017CanUseSkillNotify.proto\"*\n\u0011CanUseSkillNotify\u0012\u0015\n\risCanUseSkill\u0018\u0002 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_CanUseSkillNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_CanUseSkillNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CanUseSkillNotify_descriptor, new String[]{"IsCanUseSkill"});
 
@@ -42,7 +42,7 @@ public final class CanUseSkillNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CanUseSkillNotifyOuterClass$CanUseSkillNotify.class */
     public static final class CanUseSkillNotify extends GeneratedMessageV3 implements CanUseSkillNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_CAN_USE_SKILL_FIELD_NUMBER = 12;
+        public static final int ISCANUSESKILL_FIELD_NUMBER = 2;
         private boolean isCanUseSkill_;
         private byte memoizedIsInitialized;
         private static final CanUseSkillNotify DEFAULT_INSTANCE = new CanUseSkillNotify();
@@ -89,7 +89,7 @@ public final class CanUseSkillNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 96:
+                            case 16:
                                 this.isCanUseSkill_ = input.readBool();
                                 break;
                             default:
@@ -142,7 +142,7 @@ public final class CanUseSkillNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.isCanUseSkill_) {
-                output.writeBool(12, this.isCanUseSkill_);
+                output.writeBool(2, this.isCanUseSkill_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -155,7 +155,7 @@ public final class CanUseSkillNotifyOuterClass {
             }
             int size2 = 0;
             if (this.isCanUseSkill_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(12, this.isCanUseSkill_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(2, this.isCanUseSkill_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -179,7 +179,7 @@ public final class CanUseSkillNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + Internal.hashBoolean(getIsCanUseSkill()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + Internal.hashBoolean(getIsCanUseSkill()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

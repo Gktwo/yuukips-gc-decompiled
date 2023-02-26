@@ -17,7 +17,7 @@ public class ObjectArrayPriorityQueue<K> implements PriorityQueue<K>, Serializab
     protected int size;
 
     /* renamed from: c */
-    protected Comparator<? super K> f2683c;
+    protected Comparator<? super K> f2647c;
     protected transient int firstIndex;
     protected transient boolean firstIndexValid;
 
@@ -26,7 +26,7 @@ public class ObjectArrayPriorityQueue<K> implements PriorityQueue<K>, Serializab
         if (capacity > 0) {
             this.array = (K[]) new Object[capacity];
         }
-        this.f2683c = c;
+        this.f2647c = c;
     }
 
     public ObjectArrayPriorityQueue(int capacity) {
@@ -67,12 +67,12 @@ public class ObjectArrayPriorityQueue<K> implements PriorityQueue<K>, Serializab
         int i = this.size - 1;
         int firstIndex = i;
         K first = this.array[firstIndex];
-        if (this.f2683c != null) {
+        if (this.f2647c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f2683c.compare((Object) this.array[i], first) < 0) {
+                } else if (this.f2647c.compare((Object) this.array[i], first) < 0) {
                     firstIndex = i;
                     first = this.array[i];
                 }
@@ -105,11 +105,11 @@ public class ObjectArrayPriorityQueue<K> implements PriorityQueue<K>, Serializab
         }
         if (!this.firstIndexValid) {
             this.firstIndexValid = false;
-        } else if (this.f2683c == null) {
+        } else if (this.f2647c == null) {
             if (((Comparable) x).compareTo(this.array[this.firstIndex]) < 0) {
                 this.firstIndex = this.size;
             }
-        } else if (this.f2683c.compare(x, (Object) this.array[this.firstIndex]) < 0) {
+        } else if (this.f2647c.compare(x, (Object) this.array[this.firstIndex]) < 0) {
             this.firstIndex = this.size;
         }
         K[] kArr = this.array;
@@ -162,7 +162,7 @@ public class ObjectArrayPriorityQueue<K> implements PriorityQueue<K>, Serializab
 
     @Override // p014it.unimi.dsi.fastutil.PriorityQueue
     public Comparator<? super K> comparator() {
-        return this.f2683c;
+        return this.f2647c;
     }
 
     private void writeObject(ObjectOutputStream s) throws IOException {

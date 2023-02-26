@@ -90,30 +90,30 @@ public abstract class AbstractChar2ByteSortedMap extends AbstractChar2ByteMap im
     public static class KeySetIterator implements CharBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Char2ByteMap.Entry> f1312i;
+        protected final ObjectBidirectionalIterator<Char2ByteMap.Entry> f1276i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Char2ByteMap.Entry> i) {
-            this.f1312i = i;
+            this.f1276i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public char nextChar() {
-            return ((Char2ByteMap.Entry) this.f1312i.next()).getCharKey();
+            return ((Char2ByteMap.Entry) this.f1276i.next()).getCharKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharBidirectionalIterator
         public char previousChar() {
-            return this.f1312i.previous().getCharKey();
+            return this.f1276i.previous().getCharKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1312i.hasNext();
+            return this.f1276i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1312i.hasPrevious();
+            return this.f1276i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractChar2ByteSortedMap extends AbstractChar2ByteMap im
     public static class ValuesIterator implements ByteIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Char2ByteMap.Entry> f1313i;
+        protected final ObjectBidirectionalIterator<Char2ByteMap.Entry> f1277i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Char2ByteMap.Entry> i) {
-            this.f1313i = i;
+            this.f1277i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
         public byte nextByte() {
-            return ((Char2ByteMap.Entry) this.f1313i.next()).getByteValue();
+            return ((Char2ByteMap.Entry) this.f1277i.next()).getByteValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1313i.hasNext();
+            return this.f1277i.hasNext();
         }
     }
 }

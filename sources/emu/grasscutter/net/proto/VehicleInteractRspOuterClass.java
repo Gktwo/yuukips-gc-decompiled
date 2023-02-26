@@ -22,19 +22,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VehicleInteractRspOuterClass.class */
 public final class VehicleInteractRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018VehicleInteractRsp.proto\u001a\u0019VehicleInteractType.proto\u001a\u0013VehicleMember.proto\"\u0001\n\u0012VehicleInteractRsp\u0012\u0011\n\tentity_id\u0018\u0004 \u0001(\r\u0012\u001e\n\u0006member\u0018\u000b \u0001(\u000b2\u000e.VehicleMember\u0012\u000f\n\u0007retcode\u0018\u0006 \u0001(\u0005\u0012+\n\rinteract_type\u0018\u0007 \u0001(\u000e2\u0014.VehicleInteractTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VehicleInteractTypeOuterClass.getDescriptor(), VehicleMemberOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018VehicleInteractRsp.proto\u001a\u0013VehicleMember.proto\u001a\u0019VehicleInteractType.proto\"\u0001\n\u0012VehicleInteractRsp\u0012\u001e\n\u0006member\u0018\u000f \u0001(\u000b2\u000e.VehicleMember\u0012\u0010\n\bentityId\u0018\u0002 \u0001(\r\u0012\u000f\n\u0007retcode\u0018\n \u0001(\u0005\u0012*\n\finteractType\u0018\b \u0001(\u000e2\u0014.VehicleInteractTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VehicleMemberOuterClass.getDescriptor(), VehicleInteractTypeOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_VehicleInteractRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_VehicleInteractRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_VehicleInteractRsp_descriptor, new String[]{"EntityId", "Member", "Retcode", "InteractType"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_VehicleInteractRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_VehicleInteractRsp_descriptor, new String[]{"Member", "EntityId", "Retcode", "InteractType"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VehicleInteractRspOuterClass$VehicleInteractRspOrBuilder.class */
     public interface VehicleInteractRspOrBuilder extends MessageOrBuilder {
-        int getEntityId();
-
         boolean hasMember();
 
         VehicleMemberOuterClass.VehicleMember getMember();
 
         VehicleMemberOuterClass.VehicleMemberOrBuilder getMemberOrBuilder();
+
+        int getEntityId();
 
         int getRetcode();
 
@@ -56,13 +56,13 @@ public final class VehicleInteractRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VehicleInteractRspOuterClass$VehicleInteractRsp.class */
     public static final class VehicleInteractRsp extends GeneratedMessageV3 implements VehicleInteractRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTITY_ID_FIELD_NUMBER = 4;
-        private int entityId_;
-        public static final int MEMBER_FIELD_NUMBER = 11;
+        public static final int MEMBER_FIELD_NUMBER = 15;
         private VehicleMemberOuterClass.VehicleMember member_;
-        public static final int RETCODE_FIELD_NUMBER = 6;
+        public static final int ENTITYID_FIELD_NUMBER = 2;
+        private int entityId_;
+        public static final int RETCODE_FIELD_NUMBER = 10;
         private int retcode_;
-        public static final int INTERACT_TYPE_FIELD_NUMBER = 7;
+        public static final int INTERACTTYPE_FIELD_NUMBER = 8;
         private int interactType_;
         private byte memoizedIsInitialized;
         private static final VehicleInteractRsp DEFAULT_INSTANCE = new VehicleInteractRsp();
@@ -110,16 +110,16 @@ public final class VehicleInteractRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 32:
+                            case 16:
                                 this.entityId_ = input.readUInt32();
                                 break;
-                            case 48:
-                                this.retcode_ = input.readInt32();
-                                break;
-                            case 56:
+                            case 64:
                                 this.interactType_ = input.readEnum();
                                 break;
-                            case 90:
+                            case 80:
+                                this.retcode_ = input.readInt32();
+                                break;
+                            case 122:
                                 VehicleMemberOuterClass.VehicleMember.Builder subBuilder = this.member_ != null ? this.member_.toBuilder() : null;
                                 this.member_ = (VehicleMemberOuterClass.VehicleMember) input.readMessage(VehicleMemberOuterClass.VehicleMember.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -159,11 +159,6 @@ public final class VehicleInteractRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.VehicleInteractRspOuterClass.VehicleInteractRspOrBuilder
-        public int getEntityId() {
-            return this.entityId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.VehicleInteractRspOuterClass.VehicleInteractRspOrBuilder
         public boolean hasMember() {
             return this.member_ != null;
         }
@@ -176,6 +171,11 @@ public final class VehicleInteractRspOuterClass {
         @Override // emu.grasscutter.net.proto.VehicleInteractRspOuterClass.VehicleInteractRspOrBuilder
         public VehicleMemberOuterClass.VehicleMemberOrBuilder getMemberOrBuilder() {
             return getMember();
+        }
+
+        @Override // emu.grasscutter.net.proto.VehicleInteractRspOuterClass.VehicleInteractRspOrBuilder
+        public int getEntityId() {
+            return this.entityId_;
         }
 
         @Override // emu.grasscutter.net.proto.VehicleInteractRspOuterClass.VehicleInteractRspOrBuilder
@@ -210,16 +210,16 @@ public final class VehicleInteractRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.entityId_ != 0) {
-                output.writeUInt32(4, this.entityId_);
-            }
-            if (this.retcode_ != 0) {
-                output.writeInt32(6, this.retcode_);
+                output.writeUInt32(2, this.entityId_);
             }
             if (this.interactType_ != VehicleInteractTypeOuterClass.VehicleInteractType.VEHICLE_INTERACT_TYPE_NONE.getNumber()) {
-                output.writeEnum(7, this.interactType_);
+                output.writeEnum(8, this.interactType_);
+            }
+            if (this.retcode_ != 0) {
+                output.writeInt32(10, this.retcode_);
             }
             if (this.member_ != null) {
-                output.writeMessage(11, getMember());
+                output.writeMessage(15, getMember());
             }
             this.unknownFields.writeTo(output);
         }
@@ -232,16 +232,16 @@ public final class VehicleInteractRspOuterClass {
             }
             int size2 = 0;
             if (this.entityId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.entityId_);
-            }
-            if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(6, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.entityId_);
             }
             if (this.interactType_ != VehicleInteractTypeOuterClass.VehicleInteractType.VEHICLE_INTERACT_TYPE_NONE.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(7, this.interactType_);
+                size2 += CodedOutputStream.computeEnumSize(8, this.interactType_);
+            }
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(10, this.retcode_);
             }
             if (this.member_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(11, getMember());
+                size2 += CodedOutputStream.computeMessageSize(15, getMember());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -257,10 +257,10 @@ public final class VehicleInteractRspOuterClass {
                 return equals(obj);
             }
             VehicleInteractRsp other = (VehicleInteractRsp) obj;
-            if (getEntityId() == other.getEntityId() && hasMember() == other.hasMember()) {
-                return (!hasMember() || getMember().equals(other.getMember())) && getRetcode() == other.getRetcode() && this.interactType_ == other.interactType_ && this.unknownFields.equals(other.unknownFields);
+            if (hasMember() != other.hasMember()) {
+                return false;
             }
-            return false;
+            return (!hasMember() || getMember().equals(other.getMember())) && getEntityId() == other.getEntityId() && getRetcode() == other.getRetcode() && this.interactType_ == other.interactType_ && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -268,11 +268,11 @@ public final class VehicleInteractRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getEntityId();
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasMember()) {
-                hash = (53 * ((37 * hash) + 11)) + getMember().hashCode();
+                hash = (53 * ((37 * hash) + 15)) + getMember().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 6)) + getRetcode())) + 7)) + this.interactType_)) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 2)) + getEntityId())) + 10)) + getRetcode())) + 8)) + this.interactType_)) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -351,9 +351,9 @@ public final class VehicleInteractRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VehicleInteractRspOuterClass$VehicleInteractRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements VehicleInteractRspOrBuilder {
-            private int entityId_;
             private VehicleMemberOuterClass.VehicleMember member_;
             private SingleFieldBuilderV3<VehicleMemberOuterClass.VehicleMember, VehicleMemberOuterClass.VehicleMember.Builder, VehicleMemberOuterClass.VehicleMemberOrBuilder> memberBuilder_;
+            private int entityId_;
             private int retcode_;
             private int interactType_ = 0;
 
@@ -383,13 +383,13 @@ public final class VehicleInteractRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.entityId_ = 0;
                 if (this.memberBuilder_ == null) {
                     this.member_ = null;
                 } else {
                     this.member_ = null;
                     this.memberBuilder_ = null;
                 }
+                this.entityId_ = 0;
                 this.retcode_ = 0;
                 this.interactType_ = 0;
                 return this;
@@ -417,12 +417,12 @@ public final class VehicleInteractRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public VehicleInteractRsp buildPartial() {
                 VehicleInteractRsp result = new VehicleInteractRsp(this);
-                result.entityId_ = this.entityId_;
                 if (this.memberBuilder_ == null) {
                     result.member_ = this.member_;
                 } else {
                     result.member_ = this.memberBuilder_.build();
                 }
+                result.entityId_ = this.entityId_;
                 result.retcode_ = this.retcode_;
                 result.interactType_ = this.interactType_;
                 onBuilt();
@@ -472,11 +472,11 @@ public final class VehicleInteractRspOuterClass {
                 if (other == VehicleInteractRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getEntityId() != 0) {
-                    setEntityId(other.getEntityId());
-                }
                 if (other.hasMember()) {
                     mergeMember(other.getMember());
+                }
+                if (other.getEntityId() != 0) {
+                    setEntityId(other.getEntityId());
                 }
                 if (other.getRetcode() != 0) {
                     setRetcode(other.getRetcode());
@@ -514,23 +514,6 @@ public final class VehicleInteractRspOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.VehicleInteractRspOuterClass.VehicleInteractRspOrBuilder
-            public int getEntityId() {
-                return this.entityId_;
-            }
-
-            public Builder setEntityId(int value) {
-                this.entityId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearEntityId() {
-                this.entityId_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // emu.grasscutter.net.proto.VehicleInteractRspOuterClass.VehicleInteractRspOrBuilder
@@ -612,6 +595,23 @@ public final class VehicleInteractRspOuterClass {
                     this.member_ = null;
                 }
                 return this.memberBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.VehicleInteractRspOuterClass.VehicleInteractRspOrBuilder
+            public int getEntityId() {
+                return this.entityId_;
+            }
+
+            public Builder setEntityId(int value) {
+                this.entityId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearEntityId() {
+                this.entityId_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.VehicleInteractRspOuterClass.VehicleInteractRspOrBuilder
@@ -698,7 +698,7 @@ public final class VehicleInteractRspOuterClass {
     }
 
     static {
-        VehicleInteractTypeOuterClass.getDescriptor();
         VehicleMemberOuterClass.getDescriptor();
+        VehicleInteractTypeOuterClass.getDescriptor();
     }
 }

@@ -23,36 +23,36 @@ public final class TimedValue<T> {
     }
 
     /* renamed from: component2-UwyO8pc  reason: not valid java name */
-    public final long m8591component2UwyO8pc() {
+    public final long m8588component2UwyO8pc() {
         return this.duration;
     }
 
     @NotNull
     /* renamed from: copy-RFiDyg4  reason: not valid java name */
-    public final TimedValue<T> m8592copyRFiDyg4(T t, long duration) {
+    public final TimedValue<T> m8589copyRFiDyg4(T t, long duration) {
         return new TimedValue<>(t, duration, null);
     }
 
     /* JADX DEBUG: Multi-variable search result rejected for r5v0, resolved type: kotlin.time.TimedValue */
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: copy-RFiDyg4$default  reason: not valid java name */
-    public static /* synthetic */ TimedValue m8593copyRFiDyg4$default(TimedValue timedValue, Object obj, long j, int i, Object obj2) {
+    public static /* synthetic */ TimedValue m8590copyRFiDyg4$default(TimedValue timedValue, Object obj, long j, int i, Object obj2) {
         if ((i & 1) != 0) {
             obj = timedValue.value;
         }
         if ((i & 2) != 0) {
             j = timedValue.duration;
         }
-        return timedValue.m8592copyRFiDyg4(obj, j);
+        return timedValue.m8589copyRFiDyg4(obj, j);
     }
 
     @NotNull
     public String toString() {
-        return "TimedValue(value=" + this.value + ", duration=" + ((Object) Duration.m8495toStringimpl(this.duration)) + ')';
+        return "TimedValue(value=" + this.value + ", duration=" + ((Object) Duration.m8492toStringimpl(this.duration)) + ')';
     }
 
     public int hashCode() {
-        return ((this.value == null ? 0 : this.value.hashCode()) * 31) + Duration.m8500hashCodeimpl(this.duration);
+        return ((this.value == null ? 0 : this.value.hashCode()) * 31) + Duration.m8497hashCodeimpl(this.duration);
     }
 
     public boolean equals(@Nullable Object other) {
@@ -63,7 +63,7 @@ public final class TimedValue<T> {
             return false;
         }
         TimedValue timedValue = (TimedValue) other;
-        return Intrinsics.areEqual(this.value, timedValue.value) && Duration.m8505equalsimpl0(this.duration, timedValue.duration);
+        return Intrinsics.areEqual(this.value, timedValue.value) && Duration.m8502equalsimpl0(this.duration, timedValue.duration);
     }
 
     public /* synthetic */ TimedValue(Object value, long duration, DefaultConstructorMarker $constructor_marker) {
@@ -80,7 +80,7 @@ public final class TimedValue<T> {
     }
 
     /* renamed from: getDuration-UwyO8pc  reason: not valid java name */
-    public final long m8590getDurationUwyO8pc() {
+    public final long m8587getDurationUwyO8pc() {
         return this.duration;
     }
 }

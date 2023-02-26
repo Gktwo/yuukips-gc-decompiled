@@ -752,7 +752,6 @@ public final class Utils {
         ConfigContainer config = Grasscutter.getConfig();
         Logger logger = Grasscutter.getLogger();
         boolean exit = false;
-        String str = config.folderStructure.resources;
         String dataFolder = config.folderStructure.data;
         if (!Files.exists(FileUtils.getResourcePath(""), new LinkOption[0])) {
             logger.info(Language.translate("messages.status.create_resources", new Object[0]));
@@ -903,8 +902,8 @@ public final class Utils {
         if (probabilities == null || probabilities.size() <= 1 || probabilities.size() != list.size()) {
             return list.get(ThreadLocalRandom.current().nextInt(0, list.size()));
         }
-        int roll = ThreadLocalRandom.current().nextInt(1, probabilities.stream().reduce((v0, v1) -> {
-            return Integer.sum(v0, v1);
+        int roll = ThreadLocalRandom.current().nextInt(1, probabilities.stream().reduce(arg0, arg1 -> {
+            return Integer.valueOf(Integer.sum(arg0.intValue(), arg1.intValue()));
         }).get().intValue() + 1);
         int currentTotalChance = 0;
         for (int i = 0; i < list.size(); i++) {

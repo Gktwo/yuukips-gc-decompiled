@@ -22,7 +22,7 @@ import org.jline.utils.NonBlockingReader;
 public class PosixPtyTerminal extends AbstractPosixTerminal {
 
     /* renamed from: in */
-    private final InputStream f3241in;
+    private final InputStream f3205in;
     private final OutputStream out;
     private final InputStream masterInput;
     private final OutputStream masterOutput;
@@ -47,7 +47,7 @@ public class PosixPtyTerminal extends AbstractPosixTerminal {
         super(name, type, pty, encoding, signalHandler);
         this.lock = new Object();
         this.paused = true;
-        this.f3241in = (InputStream) Objects.requireNonNull(in);
+        this.f3205in = (InputStream) Objects.requireNonNull(in);
         this.out = (OutputStream) Objects.requireNonNull(out);
         this.masterInput = pty.getMasterInput();
         this.masterOutput = pty.getMasterOutput();
@@ -156,17 +156,17 @@ public class PosixPtyTerminal extends AbstractPosixTerminal {
     private static class InputStreamWrapper extends NonBlockingInputStream {
 
         /* renamed from: in */
-        private final NonBlockingInputStream f3242in;
+        private final NonBlockingInputStream f3206in;
         private final AtomicBoolean closed = new AtomicBoolean();
 
         protected InputStreamWrapper(NonBlockingInputStream in) {
-            this.f3242in = in;
+            this.f3206in = in;
         }
 
         @Override // org.jline.utils.NonBlockingInputStream
         public int read(long timeout, boolean isPeek) throws IOException {
             if (!this.closed.get()) {
-                return this.f3242in.read(timeout, isPeek);
+                return this.f3206in.read(timeout, isPeek);
             }
             throw new ClosedException();
         }
@@ -194,7 +194,7 @@ public class PosixPtyTerminal extends AbstractPosixTerminal {
                                 }
                                 return;
                             }
-                            int b = this.f3241in.read();
+                            int b = this.f3205in.read();
                             if (b < 0) {
                                 this.input.close();
                                 synchronized (this.lock) {

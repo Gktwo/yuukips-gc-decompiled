@@ -31,19 +31,19 @@ public class PacketCodexDataFullNotify extends BasePacket {
             }
         });
         player.getCodex().getUnlockedWeapon().forEach(weapon -> {
-            CodexWeaponData codexWeapon = GameData.getCodexWeaponDataIdMap().get(weapon);
+            CodexWeaponData codexWeapon = GameData.getCodexWeaponDataIdMap().get(weapon.intValue());
             if (codexWeapon != null) {
                 weaponTypeData.addCodexIdList(codexWeapon.getId()).addAllHaveViewedList(Collections.singleton(true));
             }
         });
         player.getCodex().getUnlockedAnimal().forEach(animal, amount -> {
-            CodexAnimalData codexAnimal = GameData.getCodexAnimalDataMap().get(animal);
+            CodexAnimalData codexAnimal = GameData.getCodexAnimalDataMap().get(animal.intValue());
             if (codexAnimal != null) {
                 animalTypeData.addCodexIdList(codexAnimal.getId()).addAllHaveViewedList(Collections.singleton(true));
             }
         });
         player.getCodex().getUnlockedMaterial().forEach(material -> {
-            CodexMaterialData codexMaterial = GameData.getCodexMaterialDataIdMap().get(material);
+            CodexMaterialData codexMaterial = GameData.getCodexMaterialDataIdMap().get(material.intValue());
             if (codexMaterial != null) {
                 materialTypeData.addCodexIdList(codexMaterial.getId()).addAllHaveViewedList(Collections.singleton(true));
             }

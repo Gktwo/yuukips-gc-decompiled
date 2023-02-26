@@ -37,11 +37,11 @@ public class IntegerMemberValue extends MemberValue {
     }
 
     public int getValue() {
-        return this.f3074cp.getIntegerInfo(this.valueIndex);
+        return this.f3038cp.getIntegerInfo(this.valueIndex);
     }
 
     public void setValue(int newValue) {
-        this.valueIndex = this.f3074cp.addIntegerInfo(newValue);
+        this.valueIndex = this.f3038cp.addIntegerInfo(newValue);
     }
 
     public String toString() {

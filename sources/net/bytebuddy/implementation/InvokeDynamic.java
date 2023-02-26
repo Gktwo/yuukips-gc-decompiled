@@ -1,6 +1,7 @@
 package net.bytebuddy.implementation;
 
 import edu.umd.p012cs.findbugs.annotations.SuppressFBWarnings;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -746,7 +747,7 @@ public class InvokeDynamic implements Implementation.Composable {
 
                 @Override // net.bytebuddy.implementation.InvokeDynamic.InvocationProvider.ArgumentProvider
                 public InstrumentedType prepare(InstrumentedType instrumentedType) {
-                    return instrumentedType.withField(new FieldDescription.Token(this.name, 4169, this.fieldType.asGenericType())).withInitializer(new LoadedTypeInitializer.ForStaticField(this.name, this.value));
+                    return instrumentedType.withField(new FieldDescription.Token(this.name, PacketOpcodes.PlayerCancelMatchRsp, this.fieldType.asGenericType())).withInitializer(new LoadedTypeInitializer.ForStaticField(this.name, this.value));
                 }
             }
 

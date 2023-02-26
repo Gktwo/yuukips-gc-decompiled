@@ -26,7 +26,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ScenePlayerLocationNotifyOuterClass.class */
 public final class ScenePlayerLocationNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fScenePlayerLocationNotify.proto\u001a\u0018PlayerLocationInfo.proto\u001a\u0019VehicleLocationInfo.proto\"\u0001\n\u0019ScenePlayerLocationNotify\u0012\u0010\n\bscene_id\u0018\u000b \u0001(\r\u0012.\n\u0010vehicle_loc_list\u0018\u0006 \u0003(\u000b2\u0014.VehicleLocationInfo\u0012,\n\u000fplayer_loc_list\u0018\u0004 \u0003(\u000b2\u0013.PlayerLocationInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PlayerLocationInfoOuterClass.getDescriptor(), VehicleLocationInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fScenePlayerLocationNotify.proto\u001a\u0019VehicleLocationInfo.proto\u001a\u0018PlayerLocationInfo.proto\"\u0001\n\u0019ScenePlayerLocationNotify\u0012\u000f\n\u0007sceneId\u0018\u0001 \u0001(\r\u0012,\n\u000evehicleLocList\u0018\u0003 \u0003(\u000b2\u0014.VehicleLocationInfo\u0012*\n\rplayerLocList\u0018\f \u0003(\u000b2\u0013.PlayerLocationInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VehicleLocationInfoOuterClass.getDescriptor(), PlayerLocationInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ScenePlayerLocationNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ScenePlayerLocationNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ScenePlayerLocationNotify_descriptor, new String[]{"SceneId", "VehicleLocList", "PlayerLocList"});
 
@@ -68,11 +68,11 @@ public final class ScenePlayerLocationNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ScenePlayerLocationNotifyOuterClass$ScenePlayerLocationNotify.class */
     public static final class ScenePlayerLocationNotify extends GeneratedMessageV3 implements ScenePlayerLocationNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SCENE_ID_FIELD_NUMBER = 11;
+        public static final int SCENEID_FIELD_NUMBER = 1;
         private int sceneId_;
-        public static final int VEHICLE_LOC_LIST_FIELD_NUMBER = 6;
+        public static final int VEHICLELOCLIST_FIELD_NUMBER = 3;
         private List<VehicleLocationInfoOuterClass.VehicleLocationInfo> vehicleLocList_;
-        public static final int PLAYER_LOC_LIST_FIELD_NUMBER = 4;
+        public static final int PLAYERLOCLIST_FIELD_NUMBER = 12;
         private List<PlayerLocationInfoOuterClass.PlayerLocationInfo> playerLocList_;
         private byte memoizedIsInitialized;
         private static final ScenePlayerLocationNotify DEFAULT_INSTANCE = new ScenePlayerLocationNotify();
@@ -124,22 +124,22 @@ public final class ScenePlayerLocationNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 34:
-                                if ((mutable_bitField0_ & 2) == 0) {
-                                    this.playerLocList_ = new ArrayList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
-                                }
-                                this.playerLocList_.add((PlayerLocationInfoOuterClass.PlayerLocationInfo) input.readMessage(PlayerLocationInfoOuterClass.PlayerLocationInfo.parser(), extensionRegistry));
+                            case 8:
+                                this.sceneId_ = input.readUInt32();
                                 break;
-                            case 50:
+                            case 26:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.vehicleLocList_ = new ArrayList();
                                     mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                 }
                                 this.vehicleLocList_.add((VehicleLocationInfoOuterClass.VehicleLocationInfo) input.readMessage(VehicleLocationInfoOuterClass.VehicleLocationInfo.parser(), extensionRegistry));
                                 break;
-                            case 88:
-                                this.sceneId_ = input.readUInt32();
+                            case 98:
+                                if ((mutable_bitField0_ & 2) == 0) {
+                                    this.playerLocList_ = new ArrayList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                }
+                                this.playerLocList_.add((PlayerLocationInfoOuterClass.PlayerLocationInfo) input.readMessage(PlayerLocationInfoOuterClass.PlayerLocationInfo.parser(), extensionRegistry));
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -157,11 +157,11 @@ public final class ScenePlayerLocationNotifyOuterClass {
                     }
                 }
             } finally {
-                if ((mutable_bitField0_ & 2) != 0) {
-                    this.playerLocList_ = Collections.unmodifiableList(this.playerLocList_);
-                }
                 if ((mutable_bitField0_ & 1) != 0) {
                     this.vehicleLocList_ = Collections.unmodifiableList(this.vehicleLocList_);
+                }
+                if ((mutable_bitField0_ & 2) != 0) {
+                    this.playerLocList_ = Collections.unmodifiableList(this.playerLocList_);
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -247,14 +247,14 @@ public final class ScenePlayerLocationNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            for (int i = 0; i < this.playerLocList_.size(); i++) {
-                output.writeMessage(4, this.playerLocList_.get(i));
-            }
-            for (int i2 = 0; i2 < this.vehicleLocList_.size(); i2++) {
-                output.writeMessage(6, this.vehicleLocList_.get(i2));
-            }
             if (this.sceneId_ != 0) {
-                output.writeUInt32(11, this.sceneId_);
+                output.writeUInt32(1, this.sceneId_);
+            }
+            for (int i = 0; i < this.vehicleLocList_.size(); i++) {
+                output.writeMessage(3, this.vehicleLocList_.get(i));
+            }
+            for (int i2 = 0; i2 < this.playerLocList_.size(); i2++) {
+                output.writeMessage(12, this.playerLocList_.get(i2));
             }
             this.unknownFields.writeTo(output);
         }
@@ -266,14 +266,14 @@ public final class ScenePlayerLocationNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            for (int i = 0; i < this.playerLocList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(4, this.playerLocList_.get(i));
-            }
-            for (int i2 = 0; i2 < this.vehicleLocList_.size(); i2++) {
-                size2 += CodedOutputStream.computeMessageSize(6, this.vehicleLocList_.get(i2));
-            }
             if (this.sceneId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.sceneId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.sceneId_);
+            }
+            for (int i = 0; i < this.vehicleLocList_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(3, this.vehicleLocList_.get(i));
+            }
+            for (int i2 = 0; i2 < this.playerLocList_.size(); i2++) {
+                size2 += CodedOutputStream.computeMessageSize(12, this.playerLocList_.get(i2));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -297,12 +297,12 @@ public final class ScenePlayerLocationNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getSceneId();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getSceneId();
             if (getVehicleLocListCount() > 0) {
-                hash = (53 * ((37 * hash) + 6)) + getVehicleLocListList().hashCode();
+                hash = (53 * ((37 * hash) + 3)) + getVehicleLocListList().hashCode();
             }
             if (getPlayerLocListCount() > 0) {
-                hash = (53 * ((37 * hash) + 4)) + getPlayerLocListList().hashCode();
+                hash = (53 * ((37 * hash) + 12)) + getPlayerLocListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -1006,7 +1006,7 @@ public final class ScenePlayerLocationNotifyOuterClass {
     }
 
     static {
-        PlayerLocationInfoOuterClass.getDescriptor();
         VehicleLocationInfoOuterClass.getDescriptor();
+        PlayerLocationInfoOuterClass.getDescriptor();
     }
 }

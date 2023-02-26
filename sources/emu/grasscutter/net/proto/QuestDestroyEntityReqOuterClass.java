@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestDestroyEntityReqOuterClass.class */
 public final class QuestDestroyEntityReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bQuestDestroyEntityReq.proto\"N\n\u0015QuestDestroyEntityReq\u0012\u0011\n\tentity_id\u0018\b \u0001(\r\u0012\u0010\n\bquest_id\u0018\u0005 \u0001(\r\u0012\u0010\n\bscene_id\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bQuestDestroyEntityReq.proto\"K\n\u0015QuestDestroyEntityReq\u0012\u0010\n\bentityId\u0018\n \u0001(\r\u0012\u000f\n\u0007questId\u0018\f \u0001(\r\u0012\u000f\n\u0007sceneId\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_QuestDestroyEntityReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_QuestDestroyEntityReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QuestDestroyEntityReq_descriptor, new String[]{"EntityId", "QuestId", "SceneId"});
 
@@ -45,11 +45,11 @@ public final class QuestDestroyEntityReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestDestroyEntityReqOuterClass$QuestDestroyEntityReq.class */
     public static final class QuestDestroyEntityReq extends GeneratedMessageV3 implements QuestDestroyEntityReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTITY_ID_FIELD_NUMBER = 8;
+        public static final int ENTITYID_FIELD_NUMBER = 10;
         private int entityId_;
-        public static final int QUEST_ID_FIELD_NUMBER = 5;
+        public static final int QUESTID_FIELD_NUMBER = 12;
         private int questId_;
-        public static final int SCENE_ID_FIELD_NUMBER = 6;
+        public static final int SCENEID_FIELD_NUMBER = 13;
         private int sceneId_;
         private byte memoizedIsInitialized;
         private static final QuestDestroyEntityReq DEFAULT_INSTANCE = new QuestDestroyEntityReq();
@@ -97,14 +97,14 @@ public final class QuestDestroyEntityReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 40:
+                                case 80:
+                                    this.entityId_ = input.readUInt32();
+                                    break;
+                                case 96:
                                     this.questId_ = input.readUInt32();
                                     break;
-                                case 48:
+                                case 104:
                                     this.sceneId_ = input.readUInt32();
-                                    break;
-                                case 64:
-                                    this.entityId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -166,14 +166,14 @@ public final class QuestDestroyEntityReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.entityId_ != 0) {
+                output.writeUInt32(10, this.entityId_);
+            }
             if (this.questId_ != 0) {
-                output.writeUInt32(5, this.questId_);
+                output.writeUInt32(12, this.questId_);
             }
             if (this.sceneId_ != 0) {
-                output.writeUInt32(6, this.sceneId_);
-            }
-            if (this.entityId_ != 0) {
-                output.writeUInt32(8, this.entityId_);
+                output.writeUInt32(13, this.sceneId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -185,14 +185,14 @@ public final class QuestDestroyEntityReqOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.entityId_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(10, this.entityId_);
+            }
             if (this.questId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.questId_);
+                size2 += CodedOutputStream.computeUInt32Size(12, this.questId_);
             }
             if (this.sceneId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(6, this.sceneId_);
-            }
-            if (this.entityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.entityId_);
+                size2 += CodedOutputStream.computeUInt32Size(13, this.sceneId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -216,7 +216,7 @@ public final class QuestDestroyEntityReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getEntityId())) + 5)) + getQuestId())) + 6)) + getSceneId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getEntityId())) + 12)) + getQuestId())) + 13)) + getSceneId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

@@ -857,13 +857,13 @@ public class Commands {
         private String fixedStyle;
 
         /* renamed from: r */
-        int f3193r;
+        int f3157r;
 
         /* renamed from: g */
-        int f3194g;
+        int f3158g;
 
         /* renamed from: b */
-        int f3195b;
+        int f3159b;
 
         public Colors(Terminal terminal, PrintStream out) {
             this.terminal = terminal;
@@ -1258,14 +1258,14 @@ public class Commands {
 
         String getStyleRGB(String s) {
             if (this.fixedStyle == null) {
-                double y = (0.2126d * Math.pow(((double) this.f3193r) / 255.0d, 2.2d)) + (0.7151d * Math.pow(((double) this.f3194g) / 255.0d, 2.2d)) + (0.0721d * Math.pow(((double) this.f3195b) / 255.0d, 2.2d));
+                double y = (0.2126d * Math.pow(((double) this.f3157r) / 255.0d, 2.2d)) + (0.7151d * Math.pow(((double) this.f3158g) / 255.0d, 2.2d)) + (0.0721d * Math.pow(((double) this.f3159b) / 255.0d, 2.2d));
                 String fg = "black";
                 if (1.05d / (y + 0.05d) > (y + 0.05d) / 0.05d) {
                     fg = "white";
                 }
-                return "bg-rgb:" + String.format("#%02x%02x%02x", Integer.valueOf(this.f3193r), Integer.valueOf(this.f3194g), Integer.valueOf(this.f3195b)) + ",fg:" + fg;
+                return "bg-rgb:" + String.format("#%02x%02x%02x", Integer.valueOf(this.f3157r), Integer.valueOf(this.f3158g), Integer.valueOf(this.f3159b)) + ",fg:" + fg;
             }
-            return (this.fixedBg ? "fg-rgb:" : "bg-rgb:") + String.format("#%02x%02x%02x", Integer.valueOf(this.f3193r), Integer.valueOf(this.f3194g), Integer.valueOf(this.f3195b)) + "," + this.fixedStyle;
+            return (this.fixedBg ? "fg-rgb:" : "bg-rgb:") + String.format("#%02x%02x%02x", Integer.valueOf(this.f3157r), Integer.valueOf(this.f3158g), Integer.valueOf(this.f3159b)) + "," + this.fixedStyle;
         }
 
         public void printColor(String name, String style) throws IOException {
@@ -1358,10 +1358,10 @@ public class Commands {
                 c2 = 0;
                 barSize = 18;
             }
-            this.f3193r = rgb[0];
-            this.f3194g = rgb[1];
-            this.f3195b = rgb[2];
-            int[] hsl = rgb2hsl(this.f3193r, this.f3194g, this.f3195b);
+            this.f3157r = rgb[0];
+            this.f3158g = rgb[1];
+            this.f3159b = rgb[2];
+            int[] hsl = rgb2hsl(this.f3157r, this.f3158g, this.f3159b);
             int hueAngle2 = hsl[0];
             this.out.println("HSL: " + hsl[0] + "deg, " + hsl[1] + "%, " + hsl[2] + "%");
             if (hsl[2] > 85 || hsl[2] < 15 || hsl[1] < 15) {
@@ -1369,9 +1369,9 @@ public class Commands {
             }
             double div = (c * 0) / c2;
             int ndiv = (int) (div / c);
-            double xrs = ((double) (255 - this.f3193r)) / div;
-            double xgs = ((double) (255 - this.f3194g)) / div;
-            double xbs = ((double) (255 - this.f3195b)) / div;
+            double xrs = ((double) (255 - this.f3157r)) / div;
+            double xgs = ((double) (255 - this.f3158g)) / div;
+            double xbs = ((double) (255 - this.f3159b)) / div;
             double[] yrs = new double[ndiv];
             double[] ygs = new double[ndiv];
             double[] ybs = new double[ndiv];
@@ -1388,15 +1388,15 @@ public class Commands {
                         ro[x] = ((double) rgb[0]) + (((double) x) * xrs);
                         go[x] = ((double) rgb[1]) + (((double) x) * xgs);
                         bo[x] = ((double) rgb[2]) + (((double) x) * xbs);
-                        this.f3193r = (int) ro[x];
-                        this.f3194g = (int) go[x];
-                        this.f3195b = (int) bo[x];
+                        this.f3157r = (int) ro[x];
+                        this.f3158g = (int) go[x];
+                        this.f3159b = (int) bo[x];
                     } else {
-                        this.f3193r = (int) (ro[x] - (((double) y) * yrs[x]));
-                        this.f3194g = (int) (go[x] - (((double) y) * ygs[x]));
-                        this.f3195b = (int) (bo[x] - (((double) y) * ybs[x]));
+                        this.f3157r = (int) (ro[x] - (((double) y) * yrs[x]));
+                        this.f3158g = (int) (go[x] - (((double) y) * ygs[x]));
+                        this.f3159b = (int) (bo[x] - (((double) y) * ybs[x]));
                     }
-                    String col = String.format("%02x%02x%02x", Integer.valueOf(this.f3193r), Integer.valueOf(this.f3194g), Integer.valueOf(this.f3195b));
+                    String col = String.format("%02x%02x%02x", Integer.valueOf(this.f3157r), Integer.valueOf(this.f3158g), Integer.valueOf(this.f3159b));
                     asb.style(new StyleResolver(this::getStyleRGB).resolve(".rgb" + col));
                     asb.append((CharSequence) " ").append((CharSequence) LineReaderImpl.DEFAULT_COMMENT_BEGIN).append((CharSequence) col).append((CharSequence) " ");
                 }
@@ -1416,9 +1416,9 @@ public class Commands {
                         angle -= 360;
                     }
                     int[] rgb2 = hue2rgb(angle);
-                    this.f3193r = rgb2[0];
-                    this.f3194g = rgb2[1];
-                    this.f3195b = rgb2[2];
+                    this.f3157r = rgb2[0];
+                    this.f3158g = rgb2[1];
+                    this.f3159b = rgb2[2];
                     asb2.style(new StyleResolver(this::getStyleRGB).resolve(".hue" + angle));
                     asb2.append((CharSequence) " ").append((CharSequence) addPadding(3, "" + angle)).append((CharSequence) " ");
                 }

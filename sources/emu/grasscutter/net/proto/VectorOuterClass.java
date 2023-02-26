@@ -48,15 +48,15 @@ public final class VectorOuterClass {
         public static final int X_FIELD_NUMBER = 1;
 
         /* renamed from: x_ */
-        private float f913x_;
+        private float f882x_;
         public static final int Y_FIELD_NUMBER = 2;
 
         /* renamed from: y_ */
-        private float f914y_;
+        private float f883y_;
         public static final int Z_FIELD_NUMBER = 3;
 
         /* renamed from: z_ */
-        private float f915z_;
+        private float f884z_;
         private byte memoizedIsInitialized;
         private static final Vector DEFAULT_INSTANCE = new Vector();
         private static final Parser<Vector> PARSER = new AbstractParser<Vector>() { // from class: emu.grasscutter.net.proto.VectorOuterClass.Vector.1
@@ -104,13 +104,13 @@ public final class VectorOuterClass {
                                     done = true;
                                     break;
                                 case 13:
-                                    this.f913x_ = input.readFloat();
+                                    this.f882x_ = input.readFloat();
                                     break;
                                 case 21:
-                                    this.f914y_ = input.readFloat();
+                                    this.f883y_ = input.readFloat();
                                     break;
                                 case 29:
-                                    this.f915z_ = input.readFloat();
+                                    this.f884z_ = input.readFloat();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -144,17 +144,17 @@ public final class VectorOuterClass {
 
         @Override // emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder
         public float getX() {
-            return this.f913x_;
+            return this.f882x_;
         }
 
         @Override // emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder
         public float getY() {
-            return this.f914y_;
+            return this.f883y_;
         }
 
         @Override // emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder
         public float getZ() {
-            return this.f915z_;
+            return this.f884z_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -172,14 +172,14 @@ public final class VectorOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.f913x_ != 0.0f) {
-                output.writeFloat(1, this.f913x_);
+            if (this.f882x_ != 0.0f) {
+                output.writeFloat(1, this.f882x_);
             }
-            if (this.f914y_ != 0.0f) {
-                output.writeFloat(2, this.f914y_);
+            if (this.f883y_ != 0.0f) {
+                output.writeFloat(2, this.f883y_);
             }
-            if (this.f915z_ != 0.0f) {
-                output.writeFloat(3, this.f915z_);
+            if (this.f884z_ != 0.0f) {
+                output.writeFloat(3, this.f884z_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -191,14 +191,14 @@ public final class VectorOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.f913x_ != 0.0f) {
-                size2 = 0 + CodedOutputStream.computeFloatSize(1, this.f913x_);
+            if (this.f882x_ != 0.0f) {
+                size2 = 0 + CodedOutputStream.computeFloatSize(1, this.f882x_);
             }
-            if (this.f914y_ != 0.0f) {
-                size2 += CodedOutputStream.computeFloatSize(2, this.f914y_);
+            if (this.f883y_ != 0.0f) {
+                size2 += CodedOutputStream.computeFloatSize(2, this.f883y_);
             }
-            if (this.f915z_ != 0.0f) {
-                size2 += CodedOutputStream.computeFloatSize(3, this.f915z_);
+            if (this.f884z_ != 0.0f) {
+                size2 += CodedOutputStream.computeFloatSize(3, this.f884z_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -303,13 +303,13 @@ public final class VectorOuterClass {
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements VectorOrBuilder {
 
             /* renamed from: x_ */
-            private float f916x_;
+            private float f885x_;
 
             /* renamed from: y_ */
-            private float f917y_;
+            private float f886y_;
 
             /* renamed from: z_ */
-            private float f918z_;
+            private float f887z_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return VectorOuterClass.internal_static_Vector_descriptor;
@@ -337,9 +337,9 @@ public final class VectorOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.f916x_ = 0.0f;
-                this.f917y_ = 0.0f;
-                this.f918z_ = 0.0f;
+                this.f885x_ = 0.0f;
+                this.f886y_ = 0.0f;
+                this.f887z_ = 0.0f;
                 return this;
             }
 
@@ -365,9 +365,9 @@ public final class VectorOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Vector buildPartial() {
                 Vector result = new Vector(this);
-                result.f913x_ = this.f916x_;
-                result.f914y_ = this.f917y_;
-                result.f915z_ = this.f918z_;
+                result.f882x_ = this.f885x_;
+                result.f883y_ = this.f886y_;
+                result.f884z_ = this.f887z_;
                 onBuilt();
                 return result;
             }
@@ -458,51 +458,51 @@ public final class VectorOuterClass {
 
             @Override // emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder
             public float getX() {
-                return this.f916x_;
+                return this.f885x_;
             }
 
             public Builder setX(float value) {
-                this.f916x_ = value;
+                this.f885x_ = value;
                 onChanged();
                 return this;
             }
 
             public Builder clearX() {
-                this.f916x_ = 0.0f;
+                this.f885x_ = 0.0f;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder
             public float getY() {
-                return this.f917y_;
+                return this.f886y_;
             }
 
             public Builder setY(float value) {
-                this.f917y_ = value;
+                this.f886y_ = value;
                 onChanged();
                 return this;
             }
 
             public Builder clearY() {
-                this.f917y_ = 0.0f;
+                this.f886y_ = 0.0f;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder
             public float getZ() {
-                return this.f918z_;
+                return this.f887z_;
             }
 
             public Builder setZ(float value) {
-                this.f918z_ = value;
+                this.f887z_ = value;
                 onChanged();
                 return this;
             }
 
             public Builder clearZ() {
-                this.f918z_ = 0.0f;
+                this.f887z_ = 0.0f;
                 onChanged();
                 return this;
             }

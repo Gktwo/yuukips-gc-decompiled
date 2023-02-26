@@ -376,7 +376,7 @@ public class HttpClient extends ContainerLifeCycle {
                         if (nextIndex == socketAddresses.size()) {
                             failed(x);
                         } else {
-                            C55771.this.connect(socketAddresses, nextIndex, context);
+                            C55691.this.connect(socketAddresses, nextIndex, context);
                         }
                     }
                 });
@@ -635,7 +635,7 @@ public class HttpClient extends ContainerLifeCycle {
             return port;
         }
         if (isSchemeSecure(scheme)) {
-            return PacketOpcodes.AddQuestContentProgressReq;
+            return PacketOpcodes.PersonalLineAllDataRsp;
         }
         return 80;
     }

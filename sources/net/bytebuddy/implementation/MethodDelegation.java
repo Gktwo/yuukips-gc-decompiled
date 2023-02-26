@@ -1,5 +1,6 @@
 package net.bytebuddy.implementation;
 
+import emu.grasscutter.net.packet.PacketOpcodes;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -497,7 +498,7 @@ public class MethodDelegation implements Implementation.Composable {
                 @Override // net.bytebuddy.dynamic.scaffold.InstrumentedType.Prepareable
                 public InstrumentedType prepare(InstrumentedType instrumentedType) {
                     if (instrumentedType.getDeclaredFields().filter(ElementMatchers.named(this.fieldName).and(ElementMatchers.fieldType(this.fieldType.asErasure()))).isEmpty()) {
-                        return instrumentedType.withField(new FieldDescription.Token(this.fieldName, 4169, this.fieldType)).withInitializer(new LoadedTypeInitializer.ForStaticField(this.fieldName, this.target));
+                        return instrumentedType.withField(new FieldDescription.Token(this.fieldName, PacketOpcodes.PlayerCancelMatchRsp, this.fieldType)).withInitializer(new LoadedTypeInitializer.ForStaticField(this.fieldName, this.target));
                     }
                     throw new IllegalStateException("Field with name " + this.fieldName + " and type " + this.fieldType.asErasure() + " already declared by " + instrumentedType);
                 }

@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AddNoGachaAvatarCardTransferItemOuterClass.class */
 public final class AddNoGachaAvatarCardTransferItemOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n&AddNoGachaAvatarCardTransferItem.proto\"R\n AddNoGachaAvatarCardTransferItem\u0012\r\n\u0005count\u0018\u0005 \u0001(\r\u0012\u000e\n\u0006is_new\u0018\b \u0001(\b\u0012\u000f\n\u0007item_id\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n&AddNoGachaAvatarCardTransferItem.proto\"P\n AddNoGachaAvatarCardTransferItem\u0012\r\n\u0005count\u0018\n \u0001(\r\u0012\r\n\u0005isNew\u0018\u000b \u0001(\b\u0012\u000e\n\u0006itemId\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AddNoGachaAvatarCardTransferItem_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_AddNoGachaAvatarCardTransferItem_fieldAccessorTable */
@@ -48,11 +48,11 @@ public final class AddNoGachaAvatarCardTransferItemOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AddNoGachaAvatarCardTransferItemOuterClass$AddNoGachaAvatarCardTransferItem.class */
     public static final class AddNoGachaAvatarCardTransferItem extends GeneratedMessageV3 implements AddNoGachaAvatarCardTransferItemOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int COUNT_FIELD_NUMBER = 5;
+        public static final int COUNT_FIELD_NUMBER = 10;
         private int count_;
-        public static final int IS_NEW_FIELD_NUMBER = 8;
+        public static final int ISNEW_FIELD_NUMBER = 11;
         private boolean isNew_;
-        public static final int ITEM_ID_FIELD_NUMBER = 11;
+        public static final int ITEMID_FIELD_NUMBER = 12;
         private int itemId_;
         private byte memoizedIsInitialized;
         private static final AddNoGachaAvatarCardTransferItem DEFAULT_INSTANCE = new AddNoGachaAvatarCardTransferItem();
@@ -100,13 +100,13 @@ public final class AddNoGachaAvatarCardTransferItemOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 40:
+                                case 80:
                                     this.count_ = input.readUInt32();
                                     break;
-                                case 64:
+                                case 88:
                                     this.isNew_ = input.readBool();
                                     break;
-                                case 88:
+                                case 96:
                                     this.itemId_ = input.readUInt32();
                                     break;
                                 default:
@@ -170,13 +170,13 @@ public final class AddNoGachaAvatarCardTransferItemOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.count_ != 0) {
-                output.writeUInt32(5, this.count_);
+                output.writeUInt32(10, this.count_);
             }
             if (this.isNew_) {
-                output.writeBool(8, this.isNew_);
+                output.writeBool(11, this.isNew_);
             }
             if (this.itemId_ != 0) {
-                output.writeUInt32(11, this.itemId_);
+                output.writeUInt32(12, this.itemId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -189,13 +189,13 @@ public final class AddNoGachaAvatarCardTransferItemOuterClass {
             }
             int size2 = 0;
             if (this.count_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.count_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(10, this.count_);
             }
             if (this.isNew_) {
-                size2 += CodedOutputStream.computeBoolSize(8, this.isNew_);
+                size2 += CodedOutputStream.computeBoolSize(11, this.isNew_);
             }
             if (this.itemId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.itemId_);
+                size2 += CodedOutputStream.computeUInt32Size(12, this.itemId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -219,7 +219,7 @@ public final class AddNoGachaAvatarCardTransferItemOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getCount())) + 8)) + Internal.hashBoolean(getIsNew()))) + 11)) + getItemId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getCount())) + 11)) + Internal.hashBoolean(getIsNew()))) + 12)) + getItemId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

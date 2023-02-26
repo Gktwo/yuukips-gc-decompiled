@@ -20,23 +20,23 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MuqadasPotionDungeonSettleNotifyOuterClass.class */
 public final class MuqadasPotionDungeonSettleNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n&MuqadasPotionDungeonSettleNotify.proto\"\u0001\n MuqadasPotionDungeonSettleNotify\u0012\u0012\n\nis_success\u0018\u0001 \u0001(\b\u0012\u0015\n\ris_new_record\u0018\u0005 \u0001(\b\u0012\u0010\n\blevel_id\u0018\b \u0001(\r\u0012\u001e\n\u0016capture_weakness_count\u0018\u0003 \u0001(\r\u0012\u0013\n\u000bfinal_score\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n&MuqadasPotionDungeonSettleNotify.proto\"\u0001\n MuqadasPotionDungeonSettleNotify\u0012\u000f\n\u0007levelId\u0018\u000b \u0001(\r\u0012\u001c\n\u0014captureWeaknessCount\u0018\u0007 \u0001(\r\u0012\u0012\n\nfinalScore\u0018\u000e \u0001(\r\u0012\u0011\n\tisSuccess\u0018\u0003 \u0001(\b\u0012\u0013\n\u000bisNewRecord\u0018\u0002 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_MuqadasPotionDungeonSettleNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_MuqadasPotionDungeonSettleNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f806x29e6bf40 = new GeneratedMessageV3.FieldAccessorTable(internal_static_MuqadasPotionDungeonSettleNotify_descriptor, new String[]{"IsSuccess", "IsNewRecord", "LevelId", "CaptureWeaknessCount", "FinalScore"});
+    private static final GeneratedMessageV3.FieldAccessorTable f784x29e6bf40 = new GeneratedMessageV3.FieldAccessorTable(internal_static_MuqadasPotionDungeonSettleNotify_descriptor, new String[]{"LevelId", "CaptureWeaknessCount", "FinalScore", "IsSuccess", "IsNewRecord"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MuqadasPotionDungeonSettleNotifyOuterClass$MuqadasPotionDungeonSettleNotifyOrBuilder.class */
     public interface MuqadasPotionDungeonSettleNotifyOrBuilder extends MessageOrBuilder {
-        boolean getIsSuccess();
-
-        boolean getIsNewRecord();
-
         int getLevelId();
 
         int getCaptureWeaknessCount();
 
         int getFinalScore();
+
+        boolean getIsSuccess();
+
+        boolean getIsNewRecord();
     }
 
     private MuqadasPotionDungeonSettleNotifyOuterClass() {
@@ -52,16 +52,16 @@ public final class MuqadasPotionDungeonSettleNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MuqadasPotionDungeonSettleNotifyOuterClass$MuqadasPotionDungeonSettleNotify.class */
     public static final class MuqadasPotionDungeonSettleNotify extends GeneratedMessageV3 implements MuqadasPotionDungeonSettleNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_SUCCESS_FIELD_NUMBER = 1;
-        private boolean isSuccess_;
-        public static final int IS_NEW_RECORD_FIELD_NUMBER = 5;
-        private boolean isNewRecord_;
-        public static final int LEVEL_ID_FIELD_NUMBER = 8;
+        public static final int LEVELID_FIELD_NUMBER = 11;
         private int levelId_;
-        public static final int CAPTURE_WEAKNESS_COUNT_FIELD_NUMBER = 3;
+        public static final int CAPTUREWEAKNESSCOUNT_FIELD_NUMBER = 7;
         private int captureWeaknessCount_;
-        public static final int FINAL_SCORE_FIELD_NUMBER = 9;
+        public static final int FINALSCORE_FIELD_NUMBER = 14;
         private int finalScore_;
+        public static final int ISSUCCESS_FIELD_NUMBER = 3;
+        private boolean isSuccess_;
+        public static final int ISNEWRECORD_FIELD_NUMBER = 2;
+        private boolean isNewRecord_;
         private byte memoizedIsInitialized;
         private static final MuqadasPotionDungeonSettleNotify DEFAULT_INSTANCE = new MuqadasPotionDungeonSettleNotify();
         private static final Parser<MuqadasPotionDungeonSettleNotify> PARSER = new AbstractParser<MuqadasPotionDungeonSettleNotify>() { // from class: emu.grasscutter.net.proto.MuqadasPotionDungeonSettleNotifyOuterClass.MuqadasPotionDungeonSettleNotify.1
@@ -107,19 +107,19 @@ public final class MuqadasPotionDungeonSettleNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
-                                this.isSuccess_ = input.readBool();
-                                break;
-                            case 24:
-                                this.captureWeaknessCount_ = input.readUInt32();
-                                break;
-                            case 40:
+                            case 16:
                                 this.isNewRecord_ = input.readBool();
                                 break;
-                            case 64:
+                            case 24:
+                                this.isSuccess_ = input.readBool();
+                                break;
+                            case 56:
+                                this.captureWeaknessCount_ = input.readUInt32();
+                                break;
+                            case 88:
                                 this.levelId_ = input.readUInt32();
                                 break;
-                            case 72:
+                            case 112:
                                 this.finalScore_ = input.readUInt32();
                                 break;
                             default:
@@ -148,17 +148,7 @@ public final class MuqadasPotionDungeonSettleNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return MuqadasPotionDungeonSettleNotifyOuterClass.f806x29e6bf40.ensureFieldAccessorsInitialized(MuqadasPotionDungeonSettleNotify.class, Builder.class);
-        }
-
-        @Override // emu.grasscutter.net.proto.MuqadasPotionDungeonSettleNotifyOuterClass.MuqadasPotionDungeonSettleNotifyOrBuilder
-        public boolean getIsSuccess() {
-            return this.isSuccess_;
-        }
-
-        @Override // emu.grasscutter.net.proto.MuqadasPotionDungeonSettleNotifyOuterClass.MuqadasPotionDungeonSettleNotifyOrBuilder
-        public boolean getIsNewRecord() {
-            return this.isNewRecord_;
+            return MuqadasPotionDungeonSettleNotifyOuterClass.f784x29e6bf40.ensureFieldAccessorsInitialized(MuqadasPotionDungeonSettleNotify.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.MuqadasPotionDungeonSettleNotifyOuterClass.MuqadasPotionDungeonSettleNotifyOrBuilder
@@ -176,6 +166,16 @@ public final class MuqadasPotionDungeonSettleNotifyOuterClass {
             return this.finalScore_;
         }
 
+        @Override // emu.grasscutter.net.proto.MuqadasPotionDungeonSettleNotifyOuterClass.MuqadasPotionDungeonSettleNotifyOrBuilder
+        public boolean getIsSuccess() {
+            return this.isSuccess_;
+        }
+
+        @Override // emu.grasscutter.net.proto.MuqadasPotionDungeonSettleNotifyOuterClass.MuqadasPotionDungeonSettleNotifyOrBuilder
+        public boolean getIsNewRecord() {
+            return this.isNewRecord_;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -191,20 +191,20 @@ public final class MuqadasPotionDungeonSettleNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.isNewRecord_) {
+                output.writeBool(2, this.isNewRecord_);
+            }
             if (this.isSuccess_) {
-                output.writeBool(1, this.isSuccess_);
+                output.writeBool(3, this.isSuccess_);
             }
             if (this.captureWeaknessCount_ != 0) {
-                output.writeUInt32(3, this.captureWeaknessCount_);
-            }
-            if (this.isNewRecord_) {
-                output.writeBool(5, this.isNewRecord_);
+                output.writeUInt32(7, this.captureWeaknessCount_);
             }
             if (this.levelId_ != 0) {
-                output.writeUInt32(8, this.levelId_);
+                output.writeUInt32(11, this.levelId_);
             }
             if (this.finalScore_ != 0) {
-                output.writeUInt32(9, this.finalScore_);
+                output.writeUInt32(14, this.finalScore_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -216,20 +216,20 @@ public final class MuqadasPotionDungeonSettleNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.isNewRecord_) {
+                size2 = 0 + CodedOutputStream.computeBoolSize(2, this.isNewRecord_);
+            }
             if (this.isSuccess_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(1, this.isSuccess_);
+                size2 += CodedOutputStream.computeBoolSize(3, this.isSuccess_);
             }
             if (this.captureWeaknessCount_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(3, this.captureWeaknessCount_);
-            }
-            if (this.isNewRecord_) {
-                size2 += CodedOutputStream.computeBoolSize(5, this.isNewRecord_);
+                size2 += CodedOutputStream.computeUInt32Size(7, this.captureWeaknessCount_);
             }
             if (this.levelId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.levelId_);
+                size2 += CodedOutputStream.computeUInt32Size(11, this.levelId_);
             }
             if (this.finalScore_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.finalScore_);
+                size2 += CodedOutputStream.computeUInt32Size(14, this.finalScore_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -245,7 +245,7 @@ public final class MuqadasPotionDungeonSettleNotifyOuterClass {
                 return equals(obj);
             }
             MuqadasPotionDungeonSettleNotify other = (MuqadasPotionDungeonSettleNotify) obj;
-            return getIsSuccess() == other.getIsSuccess() && getIsNewRecord() == other.getIsNewRecord() && getLevelId() == other.getLevelId() && getCaptureWeaknessCount() == other.getCaptureWeaknessCount() && getFinalScore() == other.getFinalScore() && this.unknownFields.equals(other.unknownFields);
+            return getLevelId() == other.getLevelId() && getCaptureWeaknessCount() == other.getCaptureWeaknessCount() && getFinalScore() == other.getFinalScore() && getIsSuccess() == other.getIsSuccess() && getIsNewRecord() == other.getIsNewRecord() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -253,7 +253,7 @@ public final class MuqadasPotionDungeonSettleNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + Internal.hashBoolean(getIsSuccess()))) + 5)) + Internal.hashBoolean(getIsNewRecord()))) + 8)) + getLevelId())) + 3)) + getCaptureWeaknessCount())) + 9)) + getFinalScore())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getLevelId())) + 7)) + getCaptureWeaknessCount())) + 14)) + getFinalScore())) + 3)) + Internal.hashBoolean(getIsSuccess()))) + 2)) + Internal.hashBoolean(getIsNewRecord()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -332,11 +332,11 @@ public final class MuqadasPotionDungeonSettleNotifyOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MuqadasPotionDungeonSettleNotifyOuterClass$MuqadasPotionDungeonSettleNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements MuqadasPotionDungeonSettleNotifyOrBuilder {
-            private boolean isSuccess_;
-            private boolean isNewRecord_;
             private int levelId_;
             private int captureWeaknessCount_;
             private int finalScore_;
+            private boolean isSuccess_;
+            private boolean isNewRecord_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return MuqadasPotionDungeonSettleNotifyOuterClass.internal_static_MuqadasPotionDungeonSettleNotify_descriptor;
@@ -344,7 +344,7 @@ public final class MuqadasPotionDungeonSettleNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return MuqadasPotionDungeonSettleNotifyOuterClass.f806x29e6bf40.ensureFieldAccessorsInitialized(MuqadasPotionDungeonSettleNotify.class, Builder.class);
+                return MuqadasPotionDungeonSettleNotifyOuterClass.f784x29e6bf40.ensureFieldAccessorsInitialized(MuqadasPotionDungeonSettleNotify.class, Builder.class);
             }
 
             private Builder() {
@@ -364,11 +364,11 @@ public final class MuqadasPotionDungeonSettleNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.isSuccess_ = false;
-                this.isNewRecord_ = false;
                 this.levelId_ = 0;
                 this.captureWeaknessCount_ = 0;
                 this.finalScore_ = 0;
+                this.isSuccess_ = false;
+                this.isNewRecord_ = false;
                 return this;
             }
 
@@ -394,11 +394,11 @@ public final class MuqadasPotionDungeonSettleNotifyOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public MuqadasPotionDungeonSettleNotify buildPartial() {
                 MuqadasPotionDungeonSettleNotify result = new MuqadasPotionDungeonSettleNotify(this);
-                result.isSuccess_ = this.isSuccess_;
-                result.isNewRecord_ = this.isNewRecord_;
                 result.levelId_ = this.levelId_;
                 result.captureWeaknessCount_ = this.captureWeaknessCount_;
                 result.finalScore_ = this.finalScore_;
+                result.isSuccess_ = this.isSuccess_;
+                result.isNewRecord_ = this.isNewRecord_;
                 onBuilt();
                 return result;
             }
@@ -446,12 +446,6 @@ public final class MuqadasPotionDungeonSettleNotifyOuterClass {
                 if (other == MuqadasPotionDungeonSettleNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getIsSuccess()) {
-                    setIsSuccess(other.getIsSuccess());
-                }
-                if (other.getIsNewRecord()) {
-                    setIsNewRecord(other.getIsNewRecord());
-                }
                 if (other.getLevelId() != 0) {
                     setLevelId(other.getLevelId());
                 }
@@ -460,6 +454,12 @@ public final class MuqadasPotionDungeonSettleNotifyOuterClass {
                 }
                 if (other.getFinalScore() != 0) {
                     setFinalScore(other.getFinalScore());
+                }
+                if (other.getIsSuccess()) {
+                    setIsSuccess(other.getIsSuccess());
+                }
+                if (other.getIsNewRecord()) {
+                    setIsNewRecord(other.getIsNewRecord());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -491,40 +491,6 @@ public final class MuqadasPotionDungeonSettleNotifyOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.MuqadasPotionDungeonSettleNotifyOuterClass.MuqadasPotionDungeonSettleNotifyOrBuilder
-            public boolean getIsSuccess() {
-                return this.isSuccess_;
-            }
-
-            public Builder setIsSuccess(boolean value) {
-                this.isSuccess_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsSuccess() {
-                this.isSuccess_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.MuqadasPotionDungeonSettleNotifyOuterClass.MuqadasPotionDungeonSettleNotifyOrBuilder
-            public boolean getIsNewRecord() {
-                return this.isNewRecord_;
-            }
-
-            public Builder setIsNewRecord(boolean value) {
-                this.isNewRecord_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsNewRecord() {
-                this.isNewRecord_ = false;
-                onChanged();
-                return this;
             }
 
             @Override // emu.grasscutter.net.proto.MuqadasPotionDungeonSettleNotifyOuterClass.MuqadasPotionDungeonSettleNotifyOrBuilder
@@ -574,6 +540,40 @@ public final class MuqadasPotionDungeonSettleNotifyOuterClass {
 
             public Builder clearFinalScore() {
                 this.finalScore_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.MuqadasPotionDungeonSettleNotifyOuterClass.MuqadasPotionDungeonSettleNotifyOrBuilder
+            public boolean getIsSuccess() {
+                return this.isSuccess_;
+            }
+
+            public Builder setIsSuccess(boolean value) {
+                this.isSuccess_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsSuccess() {
+                this.isSuccess_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.MuqadasPotionDungeonSettleNotifyOuterClass.MuqadasPotionDungeonSettleNotifyOrBuilder
+            public boolean getIsNewRecord() {
+                return this.isNewRecord_;
+            }
+
+            public Builder setIsNewRecord(boolean value) {
+                this.isNewRecord_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsNewRecord() {
+                this.isNewRecord_ = false;
                 onChanged();
                 return this;
             }

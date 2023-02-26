@@ -73,10 +73,10 @@ public final class StatementCacheBenchmark {
         try {
             c = ds.getConnection();
             long start = System.currentTimeMillis();
-            for (int i = 0; i < 2000; i++) {
+            for (int i = 0; i < NUM_ITERATIONS; i++) {
                 c.prepareStatement(EMPTY_TABLE_CONDITIONAL_SELECT).close();
             }
-            System.err.println(name + " --> " + (((float) (System.currentTimeMillis() - start)) / 2000.0f) + " [2000 iterations]");
+            System.err.println(name + " --> " + (((float) (System.currentTimeMillis() - start)) / 2000.0f) + " [" + NUM_ITERATIONS + " iterations]");
             StatementUtils.attemptClose(null);
             ConnectionUtils.attemptClose(c);
         } catch (Throwable th) {

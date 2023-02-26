@@ -27,7 +27,7 @@ public class CoerceJavaToLua {
 
     /* renamed from: org.luaj.vm2.lib.jse.CoerceJavaToLua$1 */
     /* loaded from: grasscutter.jar:org/luaj/vm2/lib/jse/CoerceJavaToLua$1.class */
-    static class C58741 {
+    static class C58661 {
     }
 
     /* loaded from: grasscutter.jar:org/luaj/vm2/lib/jse/CoerceJavaToLua$ArrayCoercion.class */
@@ -40,7 +40,7 @@ public class CoerceJavaToLua {
             return new JavaArray(obj);
         }
 
-        ArrayCoercion(C58741 r3) {
+        ArrayCoercion(C58661 r3) {
             this();
         }
     }
@@ -55,7 +55,7 @@ public class CoerceJavaToLua {
             return ((Boolean) obj).booleanValue() ? LuaValue.TRUE : LuaValue.FALSE;
         }
 
-        BoolCoercion(C58741 r3) {
+        BoolCoercion(C58661 r3) {
             this();
         }
     }
@@ -70,7 +70,7 @@ public class CoerceJavaToLua {
             return LuaValue.valueOf((byte[]) obj);
         }
 
-        BytesCoercion(C58741 r3) {
+        BytesCoercion(C58661 r3) {
             this();
         }
     }
@@ -85,7 +85,7 @@ public class CoerceJavaToLua {
             return LuaInteger.valueOf((int) ((Character) obj).charValue());
         }
 
-        CharCoercion(C58741 r3) {
+        CharCoercion(C58661 r3) {
             this();
         }
     }
@@ -100,7 +100,7 @@ public class CoerceJavaToLua {
             return JavaClass.forClass((Class) obj);
         }
 
-        ClassCoercion(C58741 r3) {
+        ClassCoercion(C58661 r3) {
             this();
         }
     }
@@ -121,7 +121,7 @@ public class CoerceJavaToLua {
             return LuaDouble.valueOf(((Number) obj).doubleValue());
         }
 
-        DoubleCoercion(C58741 r3) {
+        DoubleCoercion(C58661 r3) {
             this();
         }
     }
@@ -136,7 +136,7 @@ public class CoerceJavaToLua {
             return new JavaInstance(obj);
         }
 
-        InstanceCoercion(C58741 r3) {
+        InstanceCoercion(C58661 r3) {
             this();
         }
     }
@@ -151,7 +151,7 @@ public class CoerceJavaToLua {
             return LuaInteger.valueOf(((Number) obj).intValue());
         }
 
-        IntCoercion(C58741 r3) {
+        IntCoercion(C58661 r3) {
             this();
         }
     }
@@ -166,7 +166,7 @@ public class CoerceJavaToLua {
             return (LuaValue) obj;
         }
 
-        LuaCoercion(C58741 r3) {
+        LuaCoercion(C58661 r3) {
             this();
         }
     }
@@ -181,7 +181,7 @@ public class CoerceJavaToLua {
             return LuaString.valueOf(obj.toString());
         }
 
-        StringCoercion(C58741 r3) {
+        StringCoercion(C58661 r3) {
             this();
         }
     }

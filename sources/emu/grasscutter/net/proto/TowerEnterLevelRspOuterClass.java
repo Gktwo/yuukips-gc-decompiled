@@ -23,23 +23,23 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerEnterLevelRspOuterClass.class */
 public final class TowerEnterLevelRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018TowerEnterLevelRsp.proto\"h\n\u0012TowerEnterLevelRsp\u0012\u001a\n\u0012tower_buff_id_list\u0018\u0005 \u0003(\r\u0012\u0013\n\u000blevel_index\u0018\u0003 \u0001(\r\u0012\u0010\n\bfloor_id\u0018\u000b \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u000e \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018TowerEnterLevelRsp.proto\"c\n\u0012TowerEnterLevelRsp\u0012\u0012\n\nlevelIndex\u0018\u000f \u0001(\r\u0012\u0017\n\u000ftowerBuffIdList\u0018\u0006 \u0003(\r\u0012\u000f\n\u0007retcode\u0018\u0003 \u0001(\u0005\u0012\u000f\n\u0007floorId\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_TowerEnterLevelRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TowerEnterLevelRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TowerEnterLevelRsp_descriptor, new String[]{"TowerBuffIdList", "LevelIndex", "FloorId", "Retcode"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TowerEnterLevelRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TowerEnterLevelRsp_descriptor, new String[]{"LevelIndex", "TowerBuffIdList", "Retcode", "FloorId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerEnterLevelRspOuterClass$TowerEnterLevelRspOrBuilder.class */
     public interface TowerEnterLevelRspOrBuilder extends MessageOrBuilder {
+        int getLevelIndex();
+
         List<Integer> getTowerBuffIdListList();
 
         int getTowerBuffIdListCount();
 
         int getTowerBuffIdList(int i);
 
-        int getLevelIndex();
+        int getRetcode();
 
         int getFloorId();
-
-        int getRetcode();
     }
 
     private TowerEnterLevelRspOuterClass() {
@@ -55,15 +55,15 @@ public final class TowerEnterLevelRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerEnterLevelRspOuterClass$TowerEnterLevelRsp.class */
     public static final class TowerEnterLevelRsp extends GeneratedMessageV3 implements TowerEnterLevelRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TOWER_BUFF_ID_LIST_FIELD_NUMBER = 5;
+        public static final int LEVELINDEX_FIELD_NUMBER = 15;
+        private int levelIndex_;
+        public static final int TOWERBUFFIDLIST_FIELD_NUMBER = 6;
         private Internal.IntList towerBuffIdList_;
         private int towerBuffIdListMemoizedSerializedSize;
-        public static final int LEVEL_INDEX_FIELD_NUMBER = 3;
-        private int levelIndex_;
-        public static final int FLOOR_ID_FIELD_NUMBER = 11;
-        private int floorId_;
-        public static final int RETCODE_FIELD_NUMBER = 14;
+        public static final int RETCODE_FIELD_NUMBER = 3;
         private int retcode_;
+        public static final int FLOORID_FIELD_NUMBER = 11;
+        private int floorId_;
         private byte memoizedIsInitialized;
         private static final TowerEnterLevelRsp DEFAULT_INSTANCE = new TowerEnterLevelRsp();
         private static final Parser<TowerEnterLevelRsp> PARSER = new AbstractParser<TowerEnterLevelRsp>() { // from class: emu.grasscutter.net.proto.TowerEnterLevelRspOuterClass.TowerEnterLevelRsp.1
@@ -115,16 +115,16 @@ public final class TowerEnterLevelRspOuterClass {
                                 done = true;
                                 break;
                             case 24:
-                                this.levelIndex_ = input.readUInt32();
+                                this.retcode_ = input.readInt32();
                                 break;
-                            case 40:
+                            case 48:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.towerBuffIdList_ = newIntList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.towerBuffIdList_.addInt(input.readUInt32());
                                 break;
-                            case 42:
+                            case 50:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.towerBuffIdList_ = newIntList();
@@ -138,8 +138,8 @@ public final class TowerEnterLevelRspOuterClass {
                             case 88:
                                 this.floorId_ = input.readUInt32();
                                 break;
-                            case 112:
-                                this.retcode_ = input.readInt32();
+                            case 120:
+                                this.levelIndex_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -174,6 +174,11 @@ public final class TowerEnterLevelRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.TowerEnterLevelRspOuterClass.TowerEnterLevelRspOrBuilder
+        public int getLevelIndex() {
+            return this.levelIndex_;
+        }
+
+        @Override // emu.grasscutter.net.proto.TowerEnterLevelRspOuterClass.TowerEnterLevelRspOrBuilder
         public List<Integer> getTowerBuffIdListList() {
             return this.towerBuffIdList_;
         }
@@ -189,18 +194,13 @@ public final class TowerEnterLevelRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.TowerEnterLevelRspOuterClass.TowerEnterLevelRspOrBuilder
-        public int getLevelIndex() {
-            return this.levelIndex_;
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // emu.grasscutter.net.proto.TowerEnterLevelRspOuterClass.TowerEnterLevelRspOrBuilder
         public int getFloorId() {
             return this.floorId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.TowerEnterLevelRspOuterClass.TowerEnterLevelRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -219,11 +219,11 @@ public final class TowerEnterLevelRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (this.levelIndex_ != 0) {
-                output.writeUInt32(3, this.levelIndex_);
+            if (this.retcode_ != 0) {
+                output.writeInt32(3, this.retcode_);
             }
             if (getTowerBuffIdListList().size() > 0) {
-                output.writeUInt32NoTag(42);
+                output.writeUInt32NoTag(50);
                 output.writeUInt32NoTag(this.towerBuffIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.towerBuffIdList_.size(); i++) {
@@ -232,8 +232,8 @@ public final class TowerEnterLevelRspOuterClass {
             if (this.floorId_ != 0) {
                 output.writeUInt32(11, this.floorId_);
             }
-            if (this.retcode_ != 0) {
-                output.writeInt32(14, this.retcode_);
+            if (this.levelIndex_ != 0) {
+                output.writeUInt32(15, this.levelIndex_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -245,8 +245,8 @@ public final class TowerEnterLevelRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.levelIndex_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.levelIndex_);
+            if (this.retcode_ != 0) {
+                size2 = 0 + CodedOutputStream.computeInt32Size(3, this.retcode_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.towerBuffIdList_.size(); i++) {
@@ -260,8 +260,8 @@ public final class TowerEnterLevelRspOuterClass {
             if (this.floorId_ != 0) {
                 size3 += CodedOutputStream.computeUInt32Size(11, this.floorId_);
             }
-            if (this.retcode_ != 0) {
-                size3 += CodedOutputStream.computeInt32Size(14, this.retcode_);
+            if (this.levelIndex_ != 0) {
+                size3 += CodedOutputStream.computeUInt32Size(15, this.levelIndex_);
             }
             int size4 = size3 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size4;
@@ -277,7 +277,7 @@ public final class TowerEnterLevelRspOuterClass {
                 return equals(obj);
             }
             TowerEnterLevelRsp other = (TowerEnterLevelRsp) obj;
-            return getTowerBuffIdListList().equals(other.getTowerBuffIdListList()) && getLevelIndex() == other.getLevelIndex() && getFloorId() == other.getFloorId() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
+            return getLevelIndex() == other.getLevelIndex() && getTowerBuffIdListList().equals(other.getTowerBuffIdListList()) && getRetcode() == other.getRetcode() && getFloorId() == other.getFloorId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -285,11 +285,11 @@ public final class TowerEnterLevelRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getLevelIndex();
             if (getTowerBuffIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 5)) + getTowerBuffIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 6)) + getTowerBuffIdListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 3)) + getLevelIndex())) + 11)) + getFloorId())) + 14)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 3)) + getRetcode())) + 11)) + getFloorId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -369,10 +369,10 @@ public final class TowerEnterLevelRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerEnterLevelRspOuterClass$TowerEnterLevelRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements TowerEnterLevelRspOrBuilder {
             private int bitField0_;
-            private Internal.IntList towerBuffIdList_ = TowerEnterLevelRsp.emptyIntList();
             private int levelIndex_;
-            private int floorId_;
+            private Internal.IntList towerBuffIdList_ = TowerEnterLevelRsp.emptyIntList();
             private int retcode_;
+            private int floorId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return TowerEnterLevelRspOuterClass.internal_static_TowerEnterLevelRsp_descriptor;
@@ -400,11 +400,11 @@ public final class TowerEnterLevelRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.levelIndex_ = 0;
                 this.towerBuffIdList_ = TowerEnterLevelRsp.emptyIntList();
                 this.bitField0_ &= -2;
-                this.levelIndex_ = 0;
-                this.floorId_ = 0;
                 this.retcode_ = 0;
+                this.floorId_ = 0;
                 return this;
             }
 
@@ -431,14 +431,14 @@ public final class TowerEnterLevelRspOuterClass {
             public TowerEnterLevelRsp buildPartial() {
                 TowerEnterLevelRsp result = new TowerEnterLevelRsp(this);
                 int i = this.bitField0_;
+                result.levelIndex_ = this.levelIndex_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.towerBuffIdList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.towerBuffIdList_ = this.towerBuffIdList_;
-                result.levelIndex_ = this.levelIndex_;
-                result.floorId_ = this.floorId_;
                 result.retcode_ = this.retcode_;
+                result.floorId_ = this.floorId_;
                 onBuilt();
                 return result;
             }
@@ -486,6 +486,9 @@ public final class TowerEnterLevelRspOuterClass {
                 if (other == TowerEnterLevelRsp.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getLevelIndex() != 0) {
+                    setLevelIndex(other.getLevelIndex());
+                }
                 if (!other.towerBuffIdList_.isEmpty()) {
                     if (this.towerBuffIdList_.isEmpty()) {
                         this.towerBuffIdList_ = other.towerBuffIdList_;
@@ -496,14 +499,11 @@ public final class TowerEnterLevelRspOuterClass {
                     }
                     onChanged();
                 }
-                if (other.getLevelIndex() != 0) {
-                    setLevelIndex(other.getLevelIndex());
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 if (other.getFloorId() != 0) {
                     setFloorId(other.getFloorId());
-                }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -535,6 +535,23 @@ public final class TowerEnterLevelRspOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.TowerEnterLevelRspOuterClass.TowerEnterLevelRspOrBuilder
+            public int getLevelIndex() {
+                return this.levelIndex_;
+            }
+
+            public Builder setLevelIndex(int value) {
+                this.levelIndex_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearLevelIndex() {
+                this.levelIndex_ = 0;
+                onChanged();
+                return this;
             }
 
             private void ensureTowerBuffIdListIsMutable() {
@@ -588,18 +605,18 @@ public final class TowerEnterLevelRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.TowerEnterLevelRspOuterClass.TowerEnterLevelRspOrBuilder
-            public int getLevelIndex() {
-                return this.levelIndex_;
+            public int getRetcode() {
+                return this.retcode_;
             }
 
-            public Builder setLevelIndex(int value) {
-                this.levelIndex_ = value;
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearLevelIndex() {
-                this.levelIndex_ = 0;
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }
@@ -617,23 +634,6 @@ public final class TowerEnterLevelRspOuterClass {
 
             public Builder clearFloorId() {
                 this.floorId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.TowerEnterLevelRspOuterClass.TowerEnterLevelRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
                 onChanged();
                 return this;
             }

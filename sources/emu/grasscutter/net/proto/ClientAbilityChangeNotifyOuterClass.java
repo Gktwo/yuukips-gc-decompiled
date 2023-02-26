@@ -26,14 +26,12 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ClientAbilityChangeNotifyOuterClass.class */
 public final class ClientAbilityChangeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fClientAbilityChangeNotify.proto\u001a\u0018AbilityInvokeEntry.proto\"j\n\u0019ClientAbilityChangeNotify\u0012\u0014\n\fis_init_hash\u0018\n \u0001(\b\u0012$\n\u0007invokes\u0018\u000e \u0003(\u000b2\u0013.AbilityInvokeEntry\u0012\u0011\n\tentity_id\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityInvokeEntryOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fClientAbilityChangeNotify.proto\u001a\u0018AbilityInvokeEntry.proto\"g\n\u0019ClientAbilityChangeNotify\u0012$\n\u0007invokes\u0018\n \u0003(\u000b2\u0013.AbilityInvokeEntry\u0012\u0012\n\nisInitHash\u0018\u0004 \u0001(\b\u0012\u0010\n\bentityId\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityInvokeEntryOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ClientAbilityChangeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ClientAbilityChangeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ClientAbilityChangeNotify_descriptor, new String[]{"IsInitHash", "Invokes", "EntityId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ClientAbilityChangeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ClientAbilityChangeNotify_descriptor, new String[]{"Invokes", "IsInitHash", "EntityId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ClientAbilityChangeNotifyOuterClass$ClientAbilityChangeNotifyOrBuilder.class */
     public interface ClientAbilityChangeNotifyOrBuilder extends MessageOrBuilder {
-        boolean getIsInitHash();
-
         List<AbilityInvokeEntryOuterClass.AbilityInvokeEntry> getInvokesList();
 
         AbilityInvokeEntryOuterClass.AbilityInvokeEntry getInvokes(int i);
@@ -43,6 +41,8 @@ public final class ClientAbilityChangeNotifyOuterClass {
         List<? extends AbilityInvokeEntryOuterClass.AbilityInvokeEntryOrBuilder> getInvokesOrBuilderList();
 
         AbilityInvokeEntryOuterClass.AbilityInvokeEntryOrBuilder getInvokesOrBuilder(int i);
+
+        boolean getIsInitHash();
 
         int getEntityId();
     }
@@ -60,11 +60,11 @@ public final class ClientAbilityChangeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ClientAbilityChangeNotifyOuterClass$ClientAbilityChangeNotify.class */
     public static final class ClientAbilityChangeNotify extends GeneratedMessageV3 implements ClientAbilityChangeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_INIT_HASH_FIELD_NUMBER = 10;
-        private boolean isInitHash_;
-        public static final int INVOKES_FIELD_NUMBER = 14;
+        public static final int INVOKES_FIELD_NUMBER = 10;
         private List<AbilityInvokeEntryOuterClass.AbilityInvokeEntry> invokes_;
-        public static final int ENTITY_ID_FIELD_NUMBER = 11;
+        public static final int ISINITHASH_FIELD_NUMBER = 4;
+        private boolean isInitHash_;
+        public static final int ENTITYID_FIELD_NUMBER = 9;
         private int entityId_;
         private byte memoizedIsInitialized;
         private static final ClientAbilityChangeNotify DEFAULT_INSTANCE = new ClientAbilityChangeNotify();
@@ -114,13 +114,13 @@ public final class ClientAbilityChangeNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 80:
+                            case 32:
                                 this.isInitHash_ = input.readBool();
                                 break;
-                            case 88:
+                            case 72:
                                 this.entityId_ = input.readUInt32();
                                 break;
-                            case 114:
+                            case 82:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.invokes_ = new ArrayList();
                                     mutable_bitField0_ |= 1;
@@ -160,11 +160,6 @@ public final class ClientAbilityChangeNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ClientAbilityChangeNotifyOuterClass.ClientAbilityChangeNotifyOrBuilder
-        public boolean getIsInitHash() {
-            return this.isInitHash_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ClientAbilityChangeNotifyOuterClass.ClientAbilityChangeNotifyOrBuilder
         public List<AbilityInvokeEntryOuterClass.AbilityInvokeEntry> getInvokesList() {
             return this.invokes_;
         }
@@ -190,6 +185,11 @@ public final class ClientAbilityChangeNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ClientAbilityChangeNotifyOuterClass.ClientAbilityChangeNotifyOrBuilder
+        public boolean getIsInitHash() {
+            return this.isInitHash_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ClientAbilityChangeNotifyOuterClass.ClientAbilityChangeNotifyOrBuilder
         public int getEntityId() {
             return this.entityId_;
         }
@@ -210,13 +210,13 @@ public final class ClientAbilityChangeNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.isInitHash_) {
-                output.writeBool(10, this.isInitHash_);
+                output.writeBool(4, this.isInitHash_);
             }
             if (this.entityId_ != 0) {
-                output.writeUInt32(11, this.entityId_);
+                output.writeUInt32(9, this.entityId_);
             }
             for (int i = 0; i < this.invokes_.size(); i++) {
-                output.writeMessage(14, this.invokes_.get(i));
+                output.writeMessage(10, this.invokes_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -229,13 +229,13 @@ public final class ClientAbilityChangeNotifyOuterClass {
             }
             int size2 = 0;
             if (this.isInitHash_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(10, this.isInitHash_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(4, this.isInitHash_);
             }
             if (this.entityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.entityId_);
+                size2 += CodedOutputStream.computeUInt32Size(9, this.entityId_);
             }
             for (int i = 0; i < this.invokes_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(14, this.invokes_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(10, this.invokes_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -251,7 +251,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
                 return equals(obj);
             }
             ClientAbilityChangeNotify other = (ClientAbilityChangeNotify) obj;
-            return getIsInitHash() == other.getIsInitHash() && getInvokesList().equals(other.getInvokesList()) && getEntityId() == other.getEntityId() && this.unknownFields.equals(other.unknownFields);
+            return getInvokesList().equals(other.getInvokesList()) && getIsInitHash() == other.getIsInitHash() && getEntityId() == other.getEntityId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -259,11 +259,11 @@ public final class ClientAbilityChangeNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + Internal.hashBoolean(getIsInitHash());
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (getInvokesCount() > 0) {
-                hash = (53 * ((37 * hash) + 14)) + getInvokesList().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getInvokesList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 11)) + getEntityId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 4)) + Internal.hashBoolean(getIsInitHash()))) + 9)) + getEntityId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -343,9 +343,9 @@ public final class ClientAbilityChangeNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ClientAbilityChangeNotifyOuterClass$ClientAbilityChangeNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ClientAbilityChangeNotifyOrBuilder {
             private int bitField0_;
-            private boolean isInitHash_;
             private List<AbilityInvokeEntryOuterClass.AbilityInvokeEntry> invokes_ = Collections.emptyList();
             private RepeatedFieldBuilderV3<AbilityInvokeEntryOuterClass.AbilityInvokeEntry, AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder, AbilityInvokeEntryOuterClass.AbilityInvokeEntryOrBuilder> invokesBuilder_;
+            private boolean isInitHash_;
             private int entityId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -375,13 +375,13 @@ public final class ClientAbilityChangeNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.isInitHash_ = false;
                 if (this.invokesBuilder_ == null) {
                     this.invokes_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
                     this.invokesBuilder_.clear();
                 }
+                this.isInitHash_ = false;
                 this.entityId_ = 0;
                 return this;
             }
@@ -409,7 +409,6 @@ public final class ClientAbilityChangeNotifyOuterClass {
             public ClientAbilityChangeNotify buildPartial() {
                 ClientAbilityChangeNotify result = new ClientAbilityChangeNotify(this);
                 int i = this.bitField0_;
-                result.isInitHash_ = this.isInitHash_;
                 if (this.invokesBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
                         this.invokes_ = Collections.unmodifiableList(this.invokes_);
@@ -419,6 +418,7 @@ public final class ClientAbilityChangeNotifyOuterClass {
                 } else {
                     result.invokes_ = this.invokesBuilder_.build();
                 }
+                result.isInitHash_ = this.isInitHash_;
                 result.entityId_ = this.entityId_;
                 onBuilt();
                 return result;
@@ -467,9 +467,6 @@ public final class ClientAbilityChangeNotifyOuterClass {
                 if (other == ClientAbilityChangeNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getIsInitHash()) {
-                    setIsInitHash(other.getIsInitHash());
-                }
                 if (this.invokesBuilder_ == null) {
                     if (!other.invokes_.isEmpty()) {
                         if (this.invokes_.isEmpty()) {
@@ -491,6 +488,9 @@ public final class ClientAbilityChangeNotifyOuterClass {
                     } else {
                         this.invokesBuilder_.addAllMessages(other.invokes_);
                     }
+                }
+                if (other.getIsInitHash()) {
+                    setIsInitHash(other.getIsInitHash());
                 }
                 if (other.getEntityId() != 0) {
                     setEntityId(other.getEntityId());
@@ -525,23 +525,6 @@ public final class ClientAbilityChangeNotifyOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.ClientAbilityChangeNotifyOuterClass.ClientAbilityChangeNotifyOrBuilder
-            public boolean getIsInitHash() {
-                return this.isInitHash_;
-            }
-
-            public Builder setIsInitHash(boolean value) {
-                this.isInitHash_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsInitHash() {
-                this.isInitHash_ = false;
-                onChanged();
-                return this;
             }
 
             private void ensureInvokesIsMutable() {
@@ -718,6 +701,23 @@ public final class ClientAbilityChangeNotifyOuterClass {
                     this.invokes_ = null;
                 }
                 return this.invokesBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.ClientAbilityChangeNotifyOuterClass.ClientAbilityChangeNotifyOrBuilder
+            public boolean getIsInitHash() {
+                return this.isInitHash_;
+            }
+
+            public Builder setIsInitHash(boolean value) {
+                this.isInitHash_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsInitHash() {
+                this.isInitHash_ = false;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.ClientAbilityChangeNotifyOuterClass.ClientAbilityChangeNotifyOrBuilder

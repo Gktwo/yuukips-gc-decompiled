@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnlockPersonalLineReqOuterClass.class */
 public final class UnlockPersonalLineReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bUnlockPersonalLineReq.proto\"1\n\u0015UnlockPersonalLineReq\u0012\u0018\n\u0010personal_line_id\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bUnlockPersonalLineReq.proto\"/\n\u0015UnlockPersonalLineReq\u0012\u0016\n\u000epersonalLineId\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_UnlockPersonalLineReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_UnlockPersonalLineReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_UnlockPersonalLineReq_descriptor, new String[]{"PersonalLineId"});
 
@@ -41,7 +41,7 @@ public final class UnlockPersonalLineReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnlockPersonalLineReqOuterClass$UnlockPersonalLineReq.class */
     public static final class UnlockPersonalLineReq extends GeneratedMessageV3 implements UnlockPersonalLineReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PERSONAL_LINE_ID_FIELD_NUMBER = 4;
+        public static final int PERSONALLINEID_FIELD_NUMBER = 7;
         private int personalLineId_;
         private byte memoizedIsInitialized;
         private static final UnlockPersonalLineReq DEFAULT_INSTANCE = new UnlockPersonalLineReq();
@@ -88,7 +88,7 @@ public final class UnlockPersonalLineReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 32:
+                            case 56:
                                 this.personalLineId_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class UnlockPersonalLineReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.personalLineId_ != 0) {
-                output.writeUInt32(4, this.personalLineId_);
+                output.writeUInt32(7, this.personalLineId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class UnlockPersonalLineReqOuterClass {
             }
             int size2 = 0;
             if (this.personalLineId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.personalLineId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.personalLineId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class UnlockPersonalLineReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getPersonalLineId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getPersonalLineId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

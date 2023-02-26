@@ -27,13 +27,13 @@ public class ByteLinkedOpenHashSet extends AbstractByteSortedSet implements Seri
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f1289n;
+    protected transient int f1253n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1290f;
+    protected final float f1254f;
     private static final int SPLITERATOR_CHARACTERISTICS = 337;
 
     public ByteLinkedOpenHashSet(int expected, float f) {
@@ -44,14 +44,14 @@ public class ByteLinkedOpenHashSet extends AbstractByteSortedSet implements Seri
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1290f = f;
+            this.f1254f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1289n = arraySize;
+            this.f1253n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1289n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1289n, f);
-            this.key = new byte[this.f1289n + 1];
-            this.link = new long[this.f1289n + 1];
+            this.mask = this.f1253n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1253n, f);
+            this.key = new byte[this.f1253n + 1];
+            this.link = new long[this.f1253n + 1];
         }
     }
 
@@ -171,22 +171,22 @@ public class ByteLinkedOpenHashSet extends AbstractByteSortedSet implements Seri
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1290f);
-        if (needed > this.f1289n) {
+        int needed = HashCommon.arraySize(capacity, this.f1254f);
+        if (needed > this.f1253n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1290f)))));
-        if (needed > this.f1289n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1254f)))));
+        if (needed > this.f1253n) {
             rehash(needed);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteCollection, p014it.unimi.dsi.fastutil.bytes.ByteCollection
     public boolean addAll(ByteCollection c) {
-        if (((double) this.f1290f) <= 0.5d) {
+        if (((double) this.f1254f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -196,7 +196,7 @@ public class ByteLinkedOpenHashSet extends AbstractByteSortedSet implements Seri
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Byte> c) {
-        if (((double) this.f1290f) <= 0.5d) {
+        if (((double) this.f1254f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -230,7 +230,7 @@ public class ByteLinkedOpenHashSet extends AbstractByteSortedSet implements Seri
         } else if (this.containsNull) {
             return false;
         } else {
-            pos = this.f1289n;
+            pos = this.f1253n;
             this.containsNull = true;
         }
         if (this.size == 0) {
@@ -249,7 +249,7 @@ public class ByteLinkedOpenHashSet extends AbstractByteSortedSet implements Seri
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f1290f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f1254f));
         return true;
     }
 
@@ -287,22 +287,22 @@ public class ByteLinkedOpenHashSet extends AbstractByteSortedSet implements Seri
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f1289n <= this.minN || this.size >= this.maxFill / 4 || this.f1289n <= 16) {
+        if (this.f1253n <= this.minN || this.size >= this.maxFill / 4 || this.f1253n <= 16) {
             return true;
         }
-        rehash(this.f1289n / 2);
+        rehash(this.f1253n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f1289n] = 0;
+        this.key[this.f1253n] = 0;
         this.size--;
-        fixPointers(this.f1289n);
-        if (this.f1289n <= this.minN || this.size >= this.maxFill / 4 || this.f1289n <= 16) {
+        fixPointers(this.f1253n);
+        if (this.f1253n <= this.minN || this.size >= this.maxFill / 4 || this.f1253n <= 16) {
             return true;
         }
-        rehash(this.f1289n / 2);
+        rehash(this.f1253n / 2);
         return true;
     }
 
@@ -378,12 +378,12 @@ public class ByteLinkedOpenHashSet extends AbstractByteSortedSet implements Seri
         this.size--;
         if (k == 0) {
             this.containsNull = false;
-            this.key[this.f1289n] = 0;
+            this.key[this.f1253n] = 0;
         } else {
             shiftKeys(pos);
         }
-        if (this.f1289n > this.minN && this.size < this.maxFill / 4 && this.f1289n > 16) {
-            rehash(this.f1289n / 2);
+        if (this.f1253n > this.minN && this.size < this.maxFill / 4 && this.f1253n > 16) {
+            rehash(this.f1253n / 2);
         }
         return k;
     }
@@ -403,12 +403,12 @@ public class ByteLinkedOpenHashSet extends AbstractByteSortedSet implements Seri
         this.size--;
         if (k == 0) {
             this.containsNull = false;
-            this.key[this.f1289n] = 0;
+            this.key[this.f1253n] = 0;
         } else {
             shiftKeys(pos);
         }
-        if (this.f1289n > this.minN && this.size < this.maxFill / 4 && this.f1289n > 16) {
-            rehash(this.f1289n / 2);
+        if (this.f1253n > this.minN && this.size < this.maxFill / 4 && this.f1253n > 16) {
+            rehash(this.f1253n / 2);
         }
         return k;
     }
@@ -480,11 +480,11 @@ public class ByteLinkedOpenHashSet extends AbstractByteSortedSet implements Seri
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToFirst(this.f1289n);
+            moveIndexToFirst(this.f1253n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f1289n;
+            pos = this.f1253n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -503,7 +503,7 @@ public class ByteLinkedOpenHashSet extends AbstractByteSortedSet implements Seri
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f1290f));
+        rehash(HashCommon.arraySize(this.size, this.f1254f));
         return true;
     }
 
@@ -526,11 +526,11 @@ public class ByteLinkedOpenHashSet extends AbstractByteSortedSet implements Seri
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToLast(this.f1289n);
+            moveIndexToLast(this.f1253n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f1289n;
+            pos = this.f1253n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -549,7 +549,7 @@ public class ByteLinkedOpenHashSet extends AbstractByteSortedSet implements Seri
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f1290f));
+        rehash(HashCommon.arraySize(this.size, this.f1254f));
         return true;
     }
 
@@ -694,8 +694,8 @@ public class ByteLinkedOpenHashSet extends AbstractByteSortedSet implements Seri
             this.index = -1;
             if (from == 0) {
                 if (ByteLinkedOpenHashSet.this.containsNull) {
-                    this.next = (int) ByteLinkedOpenHashSet.this.link[ByteLinkedOpenHashSet.this.f1289n];
-                    this.prev = ByteLinkedOpenHashSet.this.f1289n;
+                    this.next = (int) ByteLinkedOpenHashSet.this.link[ByteLinkedOpenHashSet.this.f1253n];
+                    this.prev = ByteLinkedOpenHashSet.this.f1253n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + ((int) from) + " does not belong to this set.");
@@ -834,9 +834,9 @@ public class ByteLinkedOpenHashSet extends AbstractByteSortedSet implements Seri
             }
             int pos = this.curr;
             this.curr = -1;
-            if (pos == ByteLinkedOpenHashSet.this.f1289n) {
+            if (pos == ByteLinkedOpenHashSet.this.f1253n) {
                 ByteLinkedOpenHashSet.this.containsNull = false;
-                ByteLinkedOpenHashSet.this.key[ByteLinkedOpenHashSet.this.f1289n] = 0;
+                ByteLinkedOpenHashSet.this.key[ByteLinkedOpenHashSet.this.f1253n] = 0;
                 return;
             }
             byte[] key = ByteLinkedOpenHashSet.this.key;
@@ -906,8 +906,8 @@ public class ByteLinkedOpenHashSet extends AbstractByteSortedSet implements Seri
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1290f)));
-        if (l >= this.f1289n || this.size > HashCommon.maxFill(l, this.f1290f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1254f)));
+        if (l >= this.f1253n || this.size > HashCommon.maxFill(l, this.f1254f)) {
             return true;
         }
         try {
@@ -965,9 +965,9 @@ public class ByteLinkedOpenHashSet extends AbstractByteSortedSet implements Seri
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f1289n = newN;
+        this.f1253n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f1289n, this.f1290f);
+        this.maxFill = HashCommon.maxFill(this.f1253n, this.f1254f);
         this.key = newKey;
     }
 
@@ -1020,12 +1020,12 @@ public class ByteLinkedOpenHashSet extends AbstractByteSortedSet implements Seri
         int pos;
         int i;
         s.defaultReadObject();
-        this.f1289n = HashCommon.arraySize(this.size, this.f1290f);
-        this.maxFill = HashCommon.maxFill(this.f1289n, this.f1290f);
-        this.mask = this.f1289n - 1;
-        byte[] key = new byte[this.f1289n + 1];
+        this.f1253n = HashCommon.arraySize(this.size, this.f1254f);
+        this.maxFill = HashCommon.maxFill(this.f1253n, this.f1254f);
+        this.mask = this.f1253n - 1;
+        byte[] key = new byte[this.f1253n + 1];
         this.key = key;
-        long[] link = new long[this.f1289n + 1];
+        long[] link = new long[this.f1253n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -1038,7 +1038,7 @@ public class ByteLinkedOpenHashSet extends AbstractByteSortedSet implements Seri
             }
             byte k = s.readByte();
             if (k == 0) {
-                pos = this.f1289n;
+                pos = this.f1253n;
                 this.containsNull = true;
             } else {
                 int mix = HashCommon.mix((int) k) & this.mask;

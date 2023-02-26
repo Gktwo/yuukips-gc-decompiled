@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PrivateChatReqOuterClass.class */
 public final class PrivateChatReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014PrivateChatReq.proto\"O\n\u000ePrivateChatReq\u0012\u0012\n\ntarget_uid\u0018\u0005 \u0001(\r\u0012\u000e\n\u0004text\u0018\u0001 \u0001(\tH��\u0012\u000e\n\u0004icon\u0018\r \u0001(\rH��B\t\n\u0007contentB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014PrivateChatReq.proto\"N\n\u000ePrivateChatReq\u0012\u0011\n\ttargetUid\u0018\u000b \u0001(\r\u0012\u000e\n\u0004text\u0018\u000f \u0001(\tH��\u0012\u000e\n\u0004icon\u0018\t \u0001(\rH��B\t\n\u0007contentB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PrivateChatReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PrivateChatReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PrivateChatReq_descriptor, new String[]{"TargetUid", "Text", "Icon", "Content"});
 
@@ -57,10 +57,10 @@ public final class PrivateChatReqOuterClass {
         private static final long serialVersionUID = 0;
         private int contentCase_;
         private Object content_;
-        public static final int TARGET_UID_FIELD_NUMBER = 5;
+        public static final int TARGETUID_FIELD_NUMBER = 11;
         private int targetUid_;
-        public static final int TEXT_FIELD_NUMBER = 1;
-        public static final int ICON_FIELD_NUMBER = 13;
+        public static final int TEXT_FIELD_NUMBER = 15;
+        public static final int ICON_FIELD_NUMBER = 9;
         private byte memoizedIsInitialized;
         private static final PrivateChatReq DEFAULT_INSTANCE = new PrivateChatReq();
         private static final Parser<PrivateChatReq> PARSER = new AbstractParser<PrivateChatReq>() { // from class: emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.1
@@ -109,17 +109,17 @@ public final class PrivateChatReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 10:
-                                    String s = input.readStringRequireUtf8();
-                                    this.contentCase_ = 1;
-                                    this.content_ = s;
+                                case 72:
+                                    this.contentCase_ = 9;
+                                    this.content_ = Integer.valueOf(input.readUInt32());
                                     break;
-                                case 40:
+                                case 88:
                                     this.targetUid_ = input.readUInt32();
                                     break;
-                                case 104:
-                                    this.contentCase_ = 13;
-                                    this.content_ = Integer.valueOf(input.readUInt32());
+                                case 122:
+                                    String s = input.readStringRequireUtf8();
+                                    this.contentCase_ = 15;
+                                    this.content_ = s;
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -153,8 +153,8 @@ public final class PrivateChatReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PrivateChatReqOuterClass$PrivateChatReq$ContentCase.class */
         public enum ContentCase implements Internal.EnumLite, AbstractMessageLite.InternalOneOfEnum {
-            TEXT(1),
-            ICON(13),
+            TEXT(15),
+            ICON(9),
             CONTENT_NOT_SET(0);
             
             private final int value;
@@ -172,10 +172,10 @@ public final class PrivateChatReqOuterClass {
                 switch (value) {
                     case 0:
                         return CONTENT_NOT_SET;
-                    case 1:
-                        return TEXT;
-                    case 13:
+                    case 9:
                         return ICON;
+                    case 15:
+                        return TEXT;
                     default:
                         return null;
                 }
@@ -199,20 +199,20 @@ public final class PrivateChatReqOuterClass {
 
         @Override // emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReqOrBuilder
         public boolean hasText() {
-            return this.contentCase_ == 1;
+            return this.contentCase_ == 15;
         }
 
         @Override // emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReqOrBuilder
         public String getText() {
             Object ref = "";
-            if (this.contentCase_ == 1) {
+            if (this.contentCase_ == 15) {
                 ref = this.content_;
             }
             if (ref instanceof String) {
                 return (String) ref;
             }
             String s = ((ByteString) ref).toStringUtf8();
-            if (this.contentCase_ == 1) {
+            if (this.contentCase_ == 15) {
                 this.content_ = s;
             }
             return s;
@@ -221,14 +221,14 @@ public final class PrivateChatReqOuterClass {
         @Override // emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReqOrBuilder
         public ByteString getTextBytes() {
             Object ref = "";
-            if (this.contentCase_ == 1) {
+            if (this.contentCase_ == 15) {
                 ref = this.content_;
             }
             if (!(ref instanceof String)) {
                 return (ByteString) ref;
             }
             ByteString b = ByteString.copyFromUtf8((String) ref);
-            if (this.contentCase_ == 1) {
+            if (this.contentCase_ == 15) {
                 this.content_ = b;
             }
             return b;
@@ -236,12 +236,12 @@ public final class PrivateChatReqOuterClass {
 
         @Override // emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReqOrBuilder
         public boolean hasIcon() {
-            return this.contentCase_ == 13;
+            return this.contentCase_ == 9;
         }
 
         @Override // emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReqOrBuilder
         public int getIcon() {
-            if (this.contentCase_ == 13) {
+            if (this.contentCase_ == 9) {
                 return ((Integer) this.content_).intValue();
             }
             return 0;
@@ -262,14 +262,14 @@ public final class PrivateChatReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.contentCase_ == 1) {
-                GeneratedMessageV3.writeString(output, 1, this.content_);
+            if (this.contentCase_ == 9) {
+                output.writeUInt32(9, ((Integer) this.content_).intValue());
             }
             if (this.targetUid_ != 0) {
-                output.writeUInt32(5, this.targetUid_);
+                output.writeUInt32(11, this.targetUid_);
             }
-            if (this.contentCase_ == 13) {
-                output.writeUInt32(13, ((Integer) this.content_).intValue());
+            if (this.contentCase_ == 15) {
+                GeneratedMessageV3.writeString(output, 15, this.content_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -281,14 +281,14 @@ public final class PrivateChatReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.contentCase_ == 1) {
-                size2 = 0 + GeneratedMessageV3.computeStringSize(1, this.content_);
+            if (this.contentCase_ == 9) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(9, ((Integer) this.content_).intValue());
             }
             if (this.targetUid_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.targetUid_);
+                size2 += CodedOutputStream.computeUInt32Size(11, this.targetUid_);
             }
-            if (this.contentCase_ == 13) {
-                size2 += CodedOutputStream.computeUInt32Size(13, ((Integer) this.content_).intValue());
+            if (this.contentCase_ == 15) {
+                size2 += GeneratedMessageV3.computeStringSize(15, this.content_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -308,13 +308,13 @@ public final class PrivateChatReqOuterClass {
                 return false;
             }
             switch (this.contentCase_) {
-                case 1:
-                    if (!getText().equals(other.getText())) {
+                case 9:
+                    if (getIcon() != other.getIcon()) {
                         return false;
                     }
                     break;
-                case 13:
-                    if (getIcon() != other.getIcon()) {
+                case 15:
+                    if (!getText().equals(other.getText())) {
                         return false;
                     }
                     break;
@@ -327,13 +327,13 @@ public final class PrivateChatReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getTargetUid();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getTargetUid();
             switch (this.contentCase_) {
-                case 1:
-                    hash = (53 * ((37 * hash) + 1)) + getText().hashCode();
+                case 9:
+                    hash = (53 * ((37 * hash) + 9)) + getIcon();
                     break;
-                case 13:
-                    hash = (53 * ((37 * hash) + 13)) + getIcon();
+                case 15:
+                    hash = (53 * ((37 * hash) + 15)) + getText().hashCode();
                     break;
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
@@ -474,10 +474,10 @@ public final class PrivateChatReqOuterClass {
             public PrivateChatReq buildPartial() {
                 PrivateChatReq result = new PrivateChatReq(this);
                 result.targetUid_ = this.targetUid_;
-                if (this.contentCase_ == 1) {
+                if (this.contentCase_ == 15) {
                     result.content_ = this.content_;
                 }
-                if (this.contentCase_ == 13) {
+                if (this.contentCase_ == 9) {
                     result.content_ = this.content_;
                 }
                 result.contentCase_ = this.contentCase_;
@@ -533,7 +533,7 @@ public final class PrivateChatReqOuterClass {
                 }
                 switch (other.getContentCase()) {
                     case TEXT:
-                        this.contentCase_ = 1;
+                        this.contentCase_ = 15;
                         this.content_ = other.content_;
                         onChanged();
                         break;
@@ -604,20 +604,20 @@ public final class PrivateChatReqOuterClass {
 
             @Override // emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReqOrBuilder
             public boolean hasText() {
-                return this.contentCase_ == 1;
+                return this.contentCase_ == 15;
             }
 
             @Override // emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReqOrBuilder
             public String getText() {
                 Object ref = "";
-                if (this.contentCase_ == 1) {
+                if (this.contentCase_ == 15) {
                     ref = this.content_;
                 }
                 if (ref instanceof String) {
                     return (String) ref;
                 }
                 String s = ((ByteString) ref).toStringUtf8();
-                if (this.contentCase_ == 1) {
+                if (this.contentCase_ == 15) {
                     this.content_ = s;
                 }
                 return s;
@@ -626,14 +626,14 @@ public final class PrivateChatReqOuterClass {
             @Override // emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReqOrBuilder
             public ByteString getTextBytes() {
                 Object ref = "";
-                if (this.contentCase_ == 1) {
+                if (this.contentCase_ == 15) {
                     ref = this.content_;
                 }
                 if (!(ref instanceof String)) {
                     return (ByteString) ref;
                 }
                 ByteString b = ByteString.copyFromUtf8((String) ref);
-                if (this.contentCase_ == 1) {
+                if (this.contentCase_ == 15) {
                     this.content_ = b;
                 }
                 return b;
@@ -643,14 +643,14 @@ public final class PrivateChatReqOuterClass {
                 if (value == null) {
                     throw new NullPointerException();
                 }
-                this.contentCase_ = 1;
+                this.contentCase_ = 15;
                 this.content_ = value;
                 onChanged();
                 return this;
             }
 
             public Builder clearText() {
-                if (this.contentCase_ == 1) {
+                if (this.contentCase_ == 15) {
                     this.contentCase_ = 0;
                     this.content_ = null;
                     onChanged();
@@ -663,7 +663,7 @@ public final class PrivateChatReqOuterClass {
                     throw new NullPointerException();
                 }
                 PrivateChatReq.checkByteStringIsUtf8(value);
-                this.contentCase_ = 1;
+                this.contentCase_ = 15;
                 this.content_ = value;
                 onChanged();
                 return this;
@@ -671,26 +671,26 @@ public final class PrivateChatReqOuterClass {
 
             @Override // emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReqOrBuilder
             public boolean hasIcon() {
-                return this.contentCase_ == 13;
+                return this.contentCase_ == 9;
             }
 
             @Override // emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReqOrBuilder
             public int getIcon() {
-                if (this.contentCase_ == 13) {
+                if (this.contentCase_ == 9) {
                     return ((Integer) this.content_).intValue();
                 }
                 return 0;
             }
 
             public Builder setIcon(int value) {
-                this.contentCase_ = 13;
+                this.contentCase_ = 9;
                 this.content_ = Integer.valueOf(value);
                 onChanged();
                 return this;
             }
 
             public Builder clearIcon() {
-                if (this.contentCase_ == 13) {
+                if (this.contentCase_ == 9) {
                     this.contentCase_ = 0;
                     this.content_ = null;
                     onChanged();

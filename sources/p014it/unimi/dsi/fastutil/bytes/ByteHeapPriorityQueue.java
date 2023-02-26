@@ -17,14 +17,14 @@ public class ByteHeapPriorityQueue implements BytePriorityQueue, Serializable {
     protected int size;
 
     /* renamed from: c */
-    protected ByteComparator f1274c;
+    protected ByteComparator f1238c;
 
     public ByteHeapPriorityQueue(int capacity, ByteComparator c) {
         this.heap = ByteArrays.EMPTY_ARRAY;
         if (capacity > 0) {
             this.heap = new byte[capacity];
         }
-        this.f1274c = c;
+        this.f1238c = c;
     }
 
     public ByteHeapPriorityQueue(int capacity) {
@@ -88,7 +88,7 @@ public class ByteHeapPriorityQueue implements BytePriorityQueue, Serializable {
         int i = this.size;
         this.size = i + 1;
         bArr[i] = x;
-        ByteHeaps.upHeap(this.heap, this.size, this.size - 1, this.f1274c);
+        ByteHeaps.upHeap(this.heap, this.size, this.size - 1, this.f1238c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.BytePriorityQueue
@@ -103,7 +103,7 @@ public class ByteHeapPriorityQueue implements BytePriorityQueue, Serializable {
         this.size = i;
         bArr[0] = bArr2[i];
         if (this.size != 0) {
-            ByteHeaps.downHeap(this.heap, this.size, 0, this.f1274c);
+            ByteHeaps.downHeap(this.heap, this.size, 0, this.f1238c);
         }
         return result;
     }
@@ -118,7 +118,7 @@ public class ByteHeapPriorityQueue implements BytePriorityQueue, Serializable {
 
     @Override // p014it.unimi.dsi.fastutil.PriorityQueue
     public void changed() {
-        ByteHeaps.downHeap(this.heap, this.size, 0, this.f1274c);
+        ByteHeaps.downHeap(this.heap, this.size, 0, this.f1238c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.PriorityQueue
@@ -138,7 +138,7 @@ public class ByteHeapPriorityQueue implements BytePriorityQueue, Serializable {
     /* Return type fixed from 'it.unimi.dsi.fastutil.bytes.ByteComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.bytes.BytePriorityQueue, p014it.unimi.dsi.fastutil.PriorityQueue
     public Comparator<? super Byte> comparator() {
-        return this.f1274c;
+        return this.f1238c;
     }
 
     private void writeObject(ObjectOutputStream s) throws IOException {

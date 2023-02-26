@@ -183,30 +183,30 @@ public abstract class AbstractReference2BooleanMap<K> extends AbstractReference2
                 return new ObjectIterator<K>() { // from class: it.unimi.dsi.fastutil.objects.AbstractReference2BooleanMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Reference2BooleanMap.Entry<K>> f2494i;
+                    private final ObjectIterator<Reference2BooleanMap.Entry<K>> f2458i;
 
                     {
-                        this.f2494i = Reference2BooleanMaps.fastIterator(AbstractReference2BooleanMap.this);
+                        this.f2458i = Reference2BooleanMaps.fastIterator(AbstractReference2BooleanMap.this);
                     }
 
                     @Override // java.util.Iterator
                     public K next() {
-                        return this.f2494i.next().getKey();
+                        return this.f2458i.next().getKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2494i.hasNext();
+                        return this.f2458i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2494i.remove();
+                        this.f2458i.remove();
                     }
 
                     @Override // java.util.Iterator
                     public void forEachRemaining(Consumer<? super K> action) {
-                        this.f2494i.forEachRemaining(entry -> {
+                        this.f2458i.forEachRemaining(entry -> {
                             action.accept(entry.getKey());
                         });
                     }
@@ -244,30 +244,30 @@ public abstract class AbstractReference2BooleanMap<K> extends AbstractReference2
                 return new BooleanIterator() { // from class: it.unimi.dsi.fastutil.objects.AbstractReference2BooleanMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Reference2BooleanMap.Entry<K>> f2495i;
+                    private final ObjectIterator<Reference2BooleanMap.Entry<K>> f2459i;
 
                     {
-                        this.f2495i = Reference2BooleanMaps.fastIterator(AbstractReference2BooleanMap.this);
+                        this.f2459i = Reference2BooleanMaps.fastIterator(AbstractReference2BooleanMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
                     public boolean nextBoolean() {
-                        return this.f2495i.next().getBooleanValue();
+                        return this.f2459i.next().getBooleanValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2495i.hasNext();
+                        return this.f2459i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2495i.remove();
+                        this.f2459i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
                     public void forEachRemaining(BooleanConsumer action) {
-                        this.f2495i.forEachRemaining(entry -> {
+                        this.f2459i.forEachRemaining(entry -> {
                             action.accept(entry.getBooleanValue());
                         });
                     }

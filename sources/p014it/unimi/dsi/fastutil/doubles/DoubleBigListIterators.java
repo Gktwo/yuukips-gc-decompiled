@@ -173,51 +173,51 @@ public final class DoubleBigListIterators {
     public static class UnmodifiableBigListIterator implements DoubleBigListIterator {
 
         /* renamed from: i */
-        protected final DoubleBigListIterator f1719i;
+        protected final DoubleBigListIterator f1683i;
 
         public UnmodifiableBigListIterator(DoubleBigListIterator i) {
-            this.f1719i = i;
+            this.f1683i = i;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1719i.hasNext();
+            return this.f1683i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1719i.hasPrevious();
+            return this.f1683i.hasPrevious();
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
         public double nextDouble() {
-            return this.f1719i.nextDouble();
+            return this.f1683i.nextDouble();
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBidirectionalIterator
         public double previousDouble() {
-            return this.f1719i.previousDouble();
+            return this.f1683i.previousDouble();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long nextIndex() {
-            return this.f1719i.nextIndex();
+            return this.f1683i.nextIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long previousIndex() {
-            return this.f1719i.previousIndex();
+            return this.f1683i.previousIndex();
         }
 
         @Override // java.util.PrimitiveIterator.OfDouble
         public void forEachRemaining(DoubleConsumer action) {
-            this.f1719i.forEachRemaining(action);
+            this.f1683i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Double> action) {
-            this.f1719i.forEachRemaining(action);
+            this.f1683i.forEachRemaining(action);
         }
     }
 
@@ -230,10 +230,10 @@ public final class DoubleBigListIterators {
     public static class BigListIteratorListIterator implements DoubleBigListIterator {
 
         /* renamed from: i */
-        protected final DoubleListIterator f1718i;
+        protected final DoubleListIterator f1682i;
 
         protected BigListIteratorListIterator(DoubleListIterator i) {
-            this.f1718i = i;
+            this.f1682i = i;
         }
 
         private int intDisplacement(long n) {
@@ -245,78 +245,78 @@ public final class DoubleBigListIterators {
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigListIterator
         public void set(double ok) {
-            this.f1718i.set(ok);
+            this.f1682i.set(ok);
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigListIterator
         public void add(double ok) {
-            this.f1718i.add(ok);
+            this.f1682i.add(ok);
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator
         public int back(int n) {
-            return this.f1718i.back(n);
+            return this.f1682i.back(n);
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigListIterator
         public long back(long n) {
-            return (long) this.f1718i.back(intDisplacement(n));
+            return (long) this.f1682i.back(intDisplacement(n));
         }
 
         @Override // java.util.Iterator
         public void remove() {
-            this.f1718i.remove();
+            this.f1682i.remove();
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigListIterator, p014it.unimi.dsi.fastutil.doubles.DoubleBidirectionalIterator, p014it.unimi.dsi.fastutil.doubles.DoubleIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectIterator
         public int skip(int n) {
-            return this.f1718i.skip(n);
+            return this.f1682i.skip(n);
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigListIterator
         public long skip(long n) {
-            return (long) this.f1718i.skip(intDisplacement(n));
+            return (long) this.f1682i.skip(intDisplacement(n));
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1718i.hasNext();
+            return this.f1682i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1718i.hasPrevious();
+            return this.f1682i.hasPrevious();
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
         public double nextDouble() {
-            return this.f1718i.nextDouble();
+            return this.f1682i.nextDouble();
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBidirectionalIterator
         public double previousDouble() {
-            return this.f1718i.previousDouble();
+            return this.f1682i.previousDouble();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long nextIndex() {
-            return (long) this.f1718i.nextIndex();
+            return (long) this.f1682i.nextIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long previousIndex() {
-            return (long) this.f1718i.previousIndex();
+            return (long) this.f1682i.previousIndex();
         }
 
         @Override // java.util.PrimitiveIterator.OfDouble
         public void forEachRemaining(DoubleConsumer action) {
-            this.f1718i.forEachRemaining(action);
+            this.f1682i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Double> action) {
-            this.f1718i.forEachRemaining(action);
+            this.f1682i.forEachRemaining(action);
         }
     }
 

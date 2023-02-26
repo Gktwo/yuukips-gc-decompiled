@@ -5,7 +5,7 @@ public abstract class ModuleVisitor {
     protected final int api;
 
     /* renamed from: mv */
-    protected ModuleVisitor f3106mv;
+    protected ModuleVisitor f3070mv;
 
     public ModuleVisitor(int api) {
         this(api, null);
@@ -17,57 +17,57 @@ public abstract class ModuleVisitor {
                 Constants.checkAsmExperimental(this);
             }
             this.api = api;
-            this.f3106mv = moduleVisitor;
+            this.f3070mv = moduleVisitor;
             return;
         }
         throw new IllegalArgumentException("Unsupported api " + api);
     }
 
     public void visitMainClass(String mainClass) {
-        if (this.f3106mv != null) {
-            this.f3106mv.visitMainClass(mainClass);
+        if (this.f3070mv != null) {
+            this.f3070mv.visitMainClass(mainClass);
         }
     }
 
     public void visitPackage(String packaze) {
-        if (this.f3106mv != null) {
-            this.f3106mv.visitPackage(packaze);
+        if (this.f3070mv != null) {
+            this.f3070mv.visitPackage(packaze);
         }
     }
 
     public void visitRequire(String module, int access, String version) {
-        if (this.f3106mv != null) {
-            this.f3106mv.visitRequire(module, access, version);
+        if (this.f3070mv != null) {
+            this.f3070mv.visitRequire(module, access, version);
         }
     }
 
     public void visitExport(String packaze, int access, String... modules) {
-        if (this.f3106mv != null) {
-            this.f3106mv.visitExport(packaze, access, modules);
+        if (this.f3070mv != null) {
+            this.f3070mv.visitExport(packaze, access, modules);
         }
     }
 
     public void visitOpen(String packaze, int access, String... modules) {
-        if (this.f3106mv != null) {
-            this.f3106mv.visitOpen(packaze, access, modules);
+        if (this.f3070mv != null) {
+            this.f3070mv.visitOpen(packaze, access, modules);
         }
     }
 
     public void visitUse(String service) {
-        if (this.f3106mv != null) {
-            this.f3106mv.visitUse(service);
+        if (this.f3070mv != null) {
+            this.f3070mv.visitUse(service);
         }
     }
 
     public void visitProvide(String service, String... providers) {
-        if (this.f3106mv != null) {
-            this.f3106mv.visitProvide(service, providers);
+        if (this.f3070mv != null) {
+            this.f3070mv.visitProvide(service, providers);
         }
     }
 
     public void visitEnd() {
-        if (this.f3106mv != null) {
-            this.f3106mv.visitEnd();
+        if (this.f3070mv != null) {
+            this.f3070mv.visitEnd();
         }
     }
 }

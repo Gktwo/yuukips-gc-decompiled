@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityClientExtraInfoOuterClass.class */
 public final class EntityClientExtraInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bEntityClientExtraInfo.proto\u001a\fVector.proto\"?\n\u0015EntityClientExtraInfo\u0012&\n\u0015skill_anchor_position\u0018\u0001 \u0001(\u000b2\u0007.VectorB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bEntityClientExtraInfo.proto\u001a\fVector.proto\"=\n\u0015EntityClientExtraInfo\u0012$\n\u0013skillAnchorPosition\u0018\u0001 \u0001(\u000b2\u0007.VectorB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_EntityClientExtraInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_EntityClientExtraInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EntityClientExtraInfo_descriptor, new String[]{"SkillAnchorPosition"});
 
@@ -47,7 +47,7 @@ public final class EntityClientExtraInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityClientExtraInfoOuterClass$EntityClientExtraInfo.class */
     public static final class EntityClientExtraInfo extends GeneratedMessageV3 implements EntityClientExtraInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SKILL_ANCHOR_POSITION_FIELD_NUMBER = 1;
+        public static final int SKILLANCHORPOSITION_FIELD_NUMBER = 1;
         private VectorOuterClass.Vector skillAnchorPosition_;
         private byte memoizedIsInitialized;
         private static final EntityClientExtraInfo DEFAULT_INSTANCE = new EntityClientExtraInfo();

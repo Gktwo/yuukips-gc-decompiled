@@ -13,7 +13,7 @@ import org.eclipse.jetty.server.HttpChannel;
 import org.eclipse.jetty.server.HttpOutput;
 import org.eclipse.jetty.server.handler.BufferedResponseHandler;
 import org.eclipse.jetty.util.BufferUtil;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.Callback;
 import org.eclipse.jetty.util.IteratingCallback;
 import org.eclipse.jetty.util.log.Log;
@@ -74,7 +74,7 @@ public class FileBufferedResponseHandler extends BufferedResponseHandler {
                 } catch (IOException e) {
                     FileBufferedResponseHandler.LOG.debug("flush failure", e);
                 }
-                C5747IO.close(this._fileOutputStream);
+                C5739IO.close(this._fileOutputStream);
                 this._fileOutputStream = null;
             }
         }

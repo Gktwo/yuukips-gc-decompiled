@@ -20,18 +20,18 @@ import java.util.regex.Pattern;
 @Command(label = "entity", usage = {"<configId gadget> [state<state>] [maxhp<maxhp>] [hp<hp>(0 for infinite)] [atk<atk>] [def<def>]", "<configId monster> [ai<aiId>] [maxhp<maxhp>] [hp<hp>(0 for infinite)] [atk<atk>] [def<def>]"}, permission = "server.entity")
 /* loaded from: grasscutter.jar:emu/grasscutter/command/commands/EntityCommand.class */
 public final class EntityCommand implements CommandHandler {
-    private static final Map<Pattern, BiConsumer<EntityParameters, Integer>> intCommandHandlers = Map.ofEntries(Map.entry(CommandHelpers.stateRegex, (v0, v1) -> {
-        v0.setState(v1);
-    }), Map.entry(CommandHelpers.maxHPRegex, (v0, v1) -> {
-        v0.setMaxHP(v1);
-    }), Map.entry(CommandHelpers.hpRegex, (v0, v1) -> {
-        v0.setHp(v1);
-    }), Map.entry(CommandHelpers.defRegex, (v0, v1) -> {
-        v0.setDef(v1);
-    }), Map.entry(CommandHelpers.atkRegex, (v0, v1) -> {
-        v0.setAtk(v1);
-    }), Map.entry(CommandHelpers.aiRegex, (v0, v1) -> {
-        v0.setAi(v1);
+    private static final Map<Pattern, BiConsumer<EntityParameters, Integer>> intCommandHandlers = Map.ofEntries(Map.entry(CommandHelpers.stateRegex, arg0, arg1 -> {
+        arg0.setState(arg1.intValue());
+    }), Map.entry(CommandHelpers.maxHPRegex, arg0, arg1 -> {
+        arg0.setMaxHP(arg1.intValue());
+    }), Map.entry(CommandHelpers.hpRegex, arg0, arg1 -> {
+        arg0.setHp(arg1.intValue());
+    }), Map.entry(CommandHelpers.defRegex, arg0, arg1 -> {
+        arg0.setDef(arg1.intValue());
+    }), Map.entry(CommandHelpers.atkRegex, arg0, arg1 -> {
+        arg0.setAtk(arg1.intValue());
+    }), Map.entry(CommandHelpers.aiRegex, arg0, arg1 -> {
+        arg0.setAi(arg1.intValue());
     }));
 
     @Override // emu.grasscutter.command.CommandHandler
@@ -40,7 +40,7 @@ public final class EntityCommand implements CommandHandler {
         CommandHelpers.parseIntParameters(args, param, intCommandHandlers);
         if (args.size() != 1) {
             sendUsageMessage(sender, new String[0]);
-            throw new IllegalArgumentException();
+            return;
         }
         try {
             param.configId = Integer.parseInt(args.get(0));

@@ -6,7 +6,7 @@ import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.WidgetCreateLocationInfoOuterClass;
+import emu.grasscutter.net.proto.LocationInfoOuterClass;
 import emu.grasscutter.net.proto.WidgetDoBagReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketWidgetCoolDownNotify;
@@ -20,7 +20,7 @@ public class HandlerWidgetDoBagReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         WidgetDoBagReqOuterClass.WidgetDoBagReq req = WidgetDoBagReqOuterClass.WidgetDoBagReq.parseFrom(payload);
-        WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo locationInfo = req.getWidgetCreatorInfo().getLocationInfo();
+        LocationInfoOuterClass.LocationInfo locationInfo = req.getWidgetCreatorInfo().getLocationInfo();
         Position pos = new Position(locationInfo.getPos());
         Position rot = new Position(locationInfo.getRot());
         switch (req.getMaterialId()) {

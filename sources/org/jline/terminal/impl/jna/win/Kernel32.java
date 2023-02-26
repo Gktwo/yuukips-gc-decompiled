@@ -206,18 +206,18 @@ public interface Kernel32 extends StdCallLibrary {
     public static class COORD extends Structure implements Structure.ByValue {
 
         /* renamed from: X */
-        public short f3247X;
+        public short f3211X;
 
         /* renamed from: Y */
-        public short f3248Y;
+        public short f3212Y;
         private static String[] fieldOrder = {"X", "Y"};
 
         public COORD() {
         }
 
         public COORD(short X, short Y) {
-            this.f3247X = X;
-            this.f3248Y = Y;
+            this.f3211X = X;
+            this.f3212Y = Y;
         }
 
         @Override // com.sun.jna.Structure

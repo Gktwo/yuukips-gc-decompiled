@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GroupUnloadNotifyOuterClass.class */
 public final class GroupUnloadNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017GroupUnloadNotify.proto\"'\n\u0011GroupUnloadNotify\u0012\u0012\n\ngroup_list\u0018\u0006 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017GroupUnloadNotify.proto\"&\n\u0011GroupUnloadNotify\u0012\u0011\n\tgroupList\u0018\u0006 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GroupUnloadNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GroupUnloadNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GroupUnloadNotify_descriptor, new String[]{"GroupList"});
 
@@ -49,7 +49,7 @@ public final class GroupUnloadNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GroupUnloadNotifyOuterClass$GroupUnloadNotify.class */
     public static final class GroupUnloadNotify extends GeneratedMessageV3 implements GroupUnloadNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int GROUP_LIST_FIELD_NUMBER = 6;
+        public static final int GROUPLIST_FIELD_NUMBER = 6;
         private Internal.IntList groupList_;
         private int groupListMemoizedSerializedSize;
         private byte memoizedIsInitialized;

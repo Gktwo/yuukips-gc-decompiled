@@ -289,50 +289,50 @@ public final class BooleanSpliterators {
     private static class SpliteratorWrapper implements BooleanSpliterator {
 
         /* renamed from: i */
-        final Spliterator<Boolean> f1078i;
+        final Spliterator<Boolean> f1042i;
 
         public SpliteratorWrapper(Spliterator<Boolean> i) {
-            this.f1078i = i;
+            this.f1042i = i;
         }
 
         public boolean tryAdvance(BooleanConsumer action) {
-            return this.f1078i.tryAdvance(action);
+            return this.f1042i.tryAdvance(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanSpliterator, java.util.Spliterator
         @Deprecated
         public boolean tryAdvance(Consumer<? super Boolean> action) {
-            return this.f1078i.tryAdvance(action);
+            return this.f1042i.tryAdvance(action);
         }
 
         public void forEachRemaining(BooleanConsumer action) {
-            this.f1078i.forEachRemaining(action);
+            this.f1042i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanSpliterator, java.util.Spliterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Boolean> action) {
-            this.f1078i.forEachRemaining(action);
+            this.f1042i.forEachRemaining(action);
         }
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return this.f1078i.estimateSize();
+            return this.f1042i.estimateSize();
         }
 
         @Override // java.util.Spliterator
         public int characteristics() {
-            return this.f1078i.characteristics();
+            return this.f1042i.characteristics();
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanSpliterator, java.util.Spliterator
         public BooleanComparator getComparator() {
-            return BooleanComparators.asBooleanComparator(this.f1078i.getComparator());
+            return BooleanComparators.asBooleanComparator(this.f1042i.getComparator());
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public BooleanSpliterator trySplit() {
-            Spliterator<Boolean> innerSplit = this.f1078i.trySplit();
+            Spliterator<Boolean> innerSplit = this.f1042i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -357,7 +357,7 @@ public final class BooleanSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanSpliterators.SpliteratorWrapper, p014it.unimi.dsi.fastutil.booleans.BooleanSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public BooleanSpliterator trySplit() {
-            Spliterator<Boolean> innerSplit = this.f1078i.trySplit();
+            Spliterator<Boolean> innerSplit = this.f1042i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -538,7 +538,7 @@ public final class BooleanSpliterators {
         private static final int CHARACTERISTICS_NOT_SUPPORTED_WHILE_MULTIPLE = 5;
 
         /* renamed from: a */
-        final BooleanSpliterator[] f1077a;
+        final BooleanSpliterator[] f1041a;
         int offset;
         int length;
         long remainingEstimatedExceptCurrent;
@@ -547,7 +547,7 @@ public final class BooleanSpliterators {
         public SpliteratorConcatenator(BooleanSpliterator[] a, int offset, int length) {
             this.remainingEstimatedExceptCurrent = LongCompanionObject.MAX_VALUE;
             this.characteristics = 0;
-            this.f1077a = a;
+            this.f1041a = a;
             this.offset = offset;
             this.length = length;
             this.remainingEstimatedExceptCurrent = recomputeRemaining();
@@ -576,7 +576,7 @@ public final class BooleanSpliterators {
                 r0 = r6
                 if (r0 <= 0) goto L_0x004e
                 r0 = r5
-                it.unimi.dsi.fastutil.booleans.BooleanSpliterator[] r0 = r0.f1077a
+                it.unimi.dsi.fastutil.booleans.BooleanSpliterator[] r0 = r0.f1041a
                 r1 = r7
                 int r7 = r7 + 1
                 r0 = r0[r1]
@@ -626,7 +626,7 @@ public final class BooleanSpliterators {
             }
             while (curLength > 0) {
                 curOffset++;
-                current &= this.f1077a[curOffset].characteristics();
+                current &= this.f1041a[curOffset].characteristics();
                 curLength--;
             }
             return current;
@@ -646,7 +646,7 @@ public final class BooleanSpliterators {
             while (true) {
                 if (this.length <= 0) {
                     break;
-                } else if (this.f1077a[this.offset].tryAdvance((BooleanSpliterator) action)) {
+                } else if (this.f1041a[this.offset].tryAdvance((BooleanSpliterator) action)) {
                     any = true;
                     break;
                 } else {
@@ -658,7 +658,7 @@ public final class BooleanSpliterators {
 
         public void forEachRemaining(BooleanConsumer action) {
             while (this.length > 0) {
-                this.f1077a[this.offset].forEachRemaining((BooleanSpliterator) action);
+                this.f1041a[this.offset].forEachRemaining((BooleanSpliterator) action);
                 advanceNextSpliterator();
             }
         }
@@ -667,7 +667,7 @@ public final class BooleanSpliterators {
         @Deprecated
         public void forEachRemaining(Consumer<? super Boolean> action) {
             while (this.length > 0) {
-                this.f1077a[this.offset].forEachRemaining(action);
+                this.f1041a[this.offset].forEachRemaining(action);
                 advanceNextSpliterator();
             }
         }
@@ -677,7 +677,7 @@ public final class BooleanSpliterators {
             if (this.length <= 0) {
                 return 0;
             }
-            long est = this.f1077a[this.offset].estimateSize() + this.remainingEstimatedExceptCurrent;
+            long est = this.f1041a[this.offset].estimateSize() + this.remainingEstimatedExceptCurrent;
             if (est < 0) {
                 return LongCompanionObject.MAX_VALUE;
             }
@@ -692,7 +692,7 @@ public final class BooleanSpliterators {
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanSpliterator, java.util.Spliterator
         public BooleanComparator getComparator() {
             if (this.length == 1 && (this.characteristics & 4) != 0) {
-                return this.f1077a[this.offset].getComparator();
+                return this.f1041a[this.offset].getComparator();
             }
             throw new IllegalStateException();
         }
@@ -703,16 +703,16 @@ public final class BooleanSpliterators {
                 case 0:
                     return null;
                 case 1:
-                    BooleanSpliterator split = this.f1077a[this.offset].trySplit();
-                    this.characteristics = this.f1077a[this.offset].characteristics();
+                    BooleanSpliterator split = this.f1041a[this.offset].trySplit();
+                    this.characteristics = this.f1041a[this.offset].characteristics();
                     return split;
                 case 2:
-                    BooleanSpliterator[] booleanSpliteratorArr = this.f1077a;
+                    BooleanSpliterator[] booleanSpliteratorArr = this.f1041a;
                     int i = this.offset;
                     this.offset = i + 1;
                     BooleanSpliterator split2 = booleanSpliteratorArr[i];
                     this.length--;
-                    this.characteristics = this.f1077a[this.offset].characteristics();
+                    this.characteristics = this.f1041a[this.offset].characteristics();
                     this.remainingEstimatedExceptCurrent = 0;
                     return split2;
                 default:
@@ -722,7 +722,7 @@ public final class BooleanSpliterators {
                     this.length -= mid;
                     this.remainingEstimatedExceptCurrent = recomputeRemaining();
                     this.characteristics = computeCharacteristics();
-                    return new SpliteratorConcatenator(this.f1077a, ret_offset, mid);
+                    return new SpliteratorConcatenator(this.f1041a, ret_offset, mid);
             }
         }
 
@@ -734,7 +734,7 @@ public final class BooleanSpliterators {
                 return 0;
             }
             while (c < n && this.length >= 0) {
-                c += this.f1077a[this.offset].skip(n - c);
+                c += this.f1041a[this.offset].skip(n - c);
                 if (c < n) {
                     advanceNextSpliterator();
                 }

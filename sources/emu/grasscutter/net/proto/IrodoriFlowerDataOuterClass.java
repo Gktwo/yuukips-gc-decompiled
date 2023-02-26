@@ -26,7 +26,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriFlowerDataOuterClass.class */
 public final class IrodoriFlowerDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017IrodoriFlowerData.proto\u001a\u000fItemParam.proto\"V\n\u0011IrodoriFlowerData\u0012\u001b\n\u0013finished_theme_list\u0018\n \u0003(\r\u0012$\n\u0010used_flower_list\u0018\b \u0003(\u000b2\n.ItemParamB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017IrodoriFlowerData.proto\u001a\u000fItemParam.proto\"R\n\u0011IrodoriFlowerData\u0012\u0019\n\u0011finishedThemeList\u0018\u0005 \u0003(\r\u0012\"\n\u000eusedFlowerList\u0018\f \u0003(\u000b2\n.ItemParamB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_IrodoriFlowerData_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_IrodoriFlowerData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_IrodoriFlowerData_descriptor, new String[]{"FinishedThemeList", "UsedFlowerList"});
 
@@ -62,10 +62,10 @@ public final class IrodoriFlowerDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriFlowerDataOuterClass$IrodoriFlowerData.class */
     public static final class IrodoriFlowerData extends GeneratedMessageV3 implements IrodoriFlowerDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int FINISHED_THEME_LIST_FIELD_NUMBER = 10;
+        public static final int FINISHEDTHEMELIST_FIELD_NUMBER = 5;
         private Internal.IntList finishedThemeList_;
         private int finishedThemeListMemoizedSerializedSize;
-        public static final int USED_FLOWER_LIST_FIELD_NUMBER = 8;
+        public static final int USEDFLOWERLIST_FIELD_NUMBER = 12;
         private List<ItemParamOuterClass.ItemParam> usedFlowerList_;
         private byte memoizedIsInitialized;
         private static final IrodoriFlowerData DEFAULT_INSTANCE = new IrodoriFlowerData();
@@ -119,21 +119,14 @@ public final class IrodoriFlowerDataOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 66:
-                                if ((mutable_bitField0_ & 2) == 0) {
-                                    this.usedFlowerList_ = new ArrayList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
-                                }
-                                this.usedFlowerList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-                                break;
-                            case 80:
+                            case 40:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.finishedThemeList_ = newIntList();
                                     mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                 }
                                 this.finishedThemeList_.addInt(input.readUInt32());
                                 break;
-                            case 82:
+                            case 42:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.finishedThemeList_ = newIntList();
@@ -143,6 +136,13 @@ public final class IrodoriFlowerDataOuterClass {
                                     this.finishedThemeList_.addInt(input.readUInt32());
                                 }
                                 input.popLimit(limit);
+                                break;
+                            case 98:
+                                if ((mutable_bitField0_ & 2) == 0) {
+                                    this.usedFlowerList_ = new ArrayList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                }
+                                this.usedFlowerList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -160,11 +160,11 @@ public final class IrodoriFlowerDataOuterClass {
                     }
                 }
             } finally {
-                if ((mutable_bitField0_ & 2) != 0) {
-                    this.usedFlowerList_ = Collections.unmodifiableList(this.usedFlowerList_);
-                }
                 if ((mutable_bitField0_ & 1) != 0) {
                     this.finishedThemeList_.makeImmutable();
+                }
+                if ((mutable_bitField0_ & 2) != 0) {
+                    this.usedFlowerList_ = Collections.unmodifiableList(this.usedFlowerList_);
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -236,15 +236,15 @@ public final class IrodoriFlowerDataOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            for (int i = 0; i < this.usedFlowerList_.size(); i++) {
-                output.writeMessage(8, this.usedFlowerList_.get(i));
-            }
             if (getFinishedThemeListList().size() > 0) {
-                output.writeUInt32NoTag(82);
+                output.writeUInt32NoTag(42);
                 output.writeUInt32NoTag(this.finishedThemeListMemoizedSerializedSize);
             }
-            for (int i2 = 0; i2 < this.finishedThemeList_.size(); i2++) {
-                output.writeUInt32NoTag(this.finishedThemeList_.getInt(i2));
+            for (int i = 0; i < this.finishedThemeList_.size(); i++) {
+                output.writeUInt32NoTag(this.finishedThemeList_.getInt(i));
+            }
+            for (int i2 = 0; i2 < this.usedFlowerList_.size(); i2++) {
+                output.writeMessage(12, this.usedFlowerList_.get(i2));
             }
             this.unknownFields.writeTo(output);
         }
@@ -255,22 +255,21 @@ public final class IrodoriFlowerDataOuterClass {
             if (size != -1) {
                 return size;
             }
-            int size2 = 0;
-            for (int i = 0; i < this.usedFlowerList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(8, this.usedFlowerList_.get(i));
-            }
             int dataSize = 0;
-            for (int i2 = 0; i2 < this.finishedThemeList_.size(); i2++) {
-                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.finishedThemeList_.getInt(i2));
+            for (int i = 0; i < this.finishedThemeList_.size(); i++) {
+                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.finishedThemeList_.getInt(i));
             }
-            int size3 = size2 + dataSize;
+            int size2 = 0 + dataSize;
             if (!getFinishedThemeListList().isEmpty()) {
-                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.finishedThemeListMemoizedSerializedSize = dataSize;
-            int size4 = size3 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size4;
-            return size4;
+            for (int i2 = 0; i2 < this.usedFlowerList_.size(); i2++) {
+                size2 += CodedOutputStream.computeMessageSize(12, this.usedFlowerList_.get(i2));
+            }
+            int size3 = size2 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size3;
+            return size3;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -292,10 +291,10 @@ public final class IrodoriFlowerDataOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getFinishedThemeListCount() > 0) {
-                hash = (53 * ((37 * hash) + 10)) + getFinishedThemeListList().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getFinishedThemeListList().hashCode();
             }
             if (getUsedFlowerListCount() > 0) {
-                hash = (53 * ((37 * hash) + 8)) + getUsedFlowerListList().hashCode();
+                hash = (53 * ((37 * hash) + 12)) + getUsedFlowerListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

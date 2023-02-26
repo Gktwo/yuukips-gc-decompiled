@@ -15,16 +15,16 @@ public final class UIntArrayKt {
         Intrinsics.checkNotNullParameter(function1, "init");
         int[] iArr = new int[size];
         for (int i = 0; i < size; i++) {
-            iArr[i] = function1.invoke(Integer.valueOf(i)).m7203unboximpl();
+            iArr[i] = function1.invoke(Integer.valueOf(i)).m7200unboximpl();
         }
-        return UIntArray.m7219constructorimpl(iArr);
+        return UIntArray.m7216constructorimpl(iArr);
     }
 
     @SinceKotlin(version = "1.3")
     @ExperimentalUnsignedTypes
     @InlineOnly
     /* renamed from: uintArrayOf--ajY-9A  reason: not valid java name */
-    private static final int[] m7224uintArrayOfajY9A(int... elements) {
+    private static final int[] m7221uintArrayOfajY9A(int... elements) {
         Intrinsics.checkNotNullParameter(elements, "elements");
         return elements;
     }

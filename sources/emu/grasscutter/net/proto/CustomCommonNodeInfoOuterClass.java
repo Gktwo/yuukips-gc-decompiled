@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CustomCommonNodeInfoOuterClass.class */
 public final class CustomCommonNodeInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aCustomCommonNodeInfo.proto\"X\n\u0014CustomCommonNodeInfo\u0012\u0014\n\fparent_index\u0018\u0001 \u0001(\u0005\u0012\u0011\n\tconfig_id\u0018\u0002 \u0001(\r\u0012\u0017\n\u000fslot_identifier\u0018\u0003 \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aCustomCommonNodeInfo.proto\"U\n\u0014CustomCommonNodeInfo\u0012\u0013\n\u000bparentIndex\u0018\u0001 \u0001(\u0005\u0012\u0010\n\bconfigId\u0018\u0002 \u0001(\r\u0012\u0016\n\u000eslotIdentifier\u0018\u0003 \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_CustomCommonNodeInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_CustomCommonNodeInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CustomCommonNodeInfo_descriptor, new String[]{"ParentIndex", "ConfigId", "SlotIdentifier"});
 
@@ -47,11 +47,11 @@ public final class CustomCommonNodeInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CustomCommonNodeInfoOuterClass$CustomCommonNodeInfo.class */
     public static final class CustomCommonNodeInfo extends GeneratedMessageV3 implements CustomCommonNodeInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PARENT_INDEX_FIELD_NUMBER = 1;
+        public static final int PARENTINDEX_FIELD_NUMBER = 1;
         private int parentIndex_;
-        public static final int CONFIG_ID_FIELD_NUMBER = 2;
+        public static final int CONFIGID_FIELD_NUMBER = 2;
         private int configId_;
-        public static final int SLOT_IDENTIFIER_FIELD_NUMBER = 3;
+        public static final int SLOTIDENTIFIER_FIELD_NUMBER = 3;
         private volatile Object slotIdentifier_;
         private byte memoizedIsInitialized;
         private static final CustomCommonNodeInfo DEFAULT_INSTANCE = new CustomCommonNodeInfo();

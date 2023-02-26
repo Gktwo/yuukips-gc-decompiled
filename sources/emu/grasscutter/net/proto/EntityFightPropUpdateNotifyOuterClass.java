@@ -23,20 +23,18 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityFightPropUpdateNotifyOuterClass.class */
 public final class EntityFightPropUpdateNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!EntityFightPropUpdateNotify.proto\"­\u0001\n\u001bEntityFightPropUpdateNotify\u0012\u0011\n\tentity_id\u0018\u000f \u0001(\r\u0012F\n\u000efight_prop_map\u0018\u0007 \u0003(\u000b2..EntityFightPropUpdateNotify.FightPropMapEntry\u001a3\n\u0011FightPropMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\u0002:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!EntityFightPropUpdateNotify.proto\"ª\u0001\n\u001bEntityFightPropUpdateNotify\u0012D\n\ffightPropMap\u0018\u000b \u0003(\u000b2..EntityFightPropUpdateNotify.FightPropMapEntry\u0012\u0010\n\bentityId\u0018\u0007 \u0001(\r\u001a3\n\u0011FightPropMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\u0002:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_EntityFightPropUpdateNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_EntityFightPropUpdateNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EntityFightPropUpdateNotify_descriptor, new String[]{"EntityId", "FightPropMap"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_EntityFightPropUpdateNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EntityFightPropUpdateNotify_descriptor, new String[]{"FightPropMap", "EntityId"});
 
     /* renamed from: internal_static_EntityFightPropUpdateNotify_FightPropMapEntry_descriptor */
-    private static final Descriptors.Descriptor f697x6336a251 = internal_static_EntityFightPropUpdateNotify_descriptor.getNestedTypes().get(0);
+    private static final Descriptors.Descriptor f694x6336a251 = internal_static_EntityFightPropUpdateNotify_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_EntityFightPropUpdateNotify_FightPropMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f698x288ae7cf = new GeneratedMessageV3.FieldAccessorTable(f697x6336a251, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f695x288ae7cf = new GeneratedMessageV3.FieldAccessorTable(f694x6336a251, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityFightPropUpdateNotifyOuterClass$EntityFightPropUpdateNotifyOrBuilder.class */
     public interface EntityFightPropUpdateNotifyOrBuilder extends MessageOrBuilder {
-        int getEntityId();
-
         int getFightPropMapCount();
 
         boolean containsFightPropMap(int i);
@@ -49,6 +47,8 @@ public final class EntityFightPropUpdateNotifyOuterClass {
         float getFightPropMapOrDefault(int i, float f);
 
         float getFightPropMapOrThrow(int i);
+
+        int getEntityId();
     }
 
     private EntityFightPropUpdateNotifyOuterClass() {
@@ -64,10 +64,10 @@ public final class EntityFightPropUpdateNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityFightPropUpdateNotifyOuterClass$EntityFightPropUpdateNotify.class */
     public static final class EntityFightPropUpdateNotify extends GeneratedMessageV3 implements EntityFightPropUpdateNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTITY_ID_FIELD_NUMBER = 15;
-        private int entityId_;
-        public static final int FIGHT_PROP_MAP_FIELD_NUMBER = 7;
+        public static final int FIGHTPROPMAP_FIELD_NUMBER = 11;
         private MapField<Integer, Float> fightPropMap_;
+        public static final int ENTITYID_FIELD_NUMBER = 7;
+        private int entityId_;
         private byte memoizedIsInitialized;
         private static final EntityFightPropUpdateNotify DEFAULT_INSTANCE = new EntityFightPropUpdateNotify();
         private static final Parser<EntityFightPropUpdateNotify> PARSER = new AbstractParser<EntityFightPropUpdateNotify>() { // from class: emu.grasscutter.net.proto.EntityFightPropUpdateNotifyOuterClass.EntityFightPropUpdateNotify.1
@@ -118,7 +118,7 @@ public final class EntityFightPropUpdateNotifyOuterClass {
                 r4 = this;
                 r0 = r5
                 switch(r0) {
-                    case 7: goto L_0x0014;
+                    case 11: goto L_0x0014;
                     default: goto L_0x0019;
                 }
                 r0 = r4
@@ -171,16 +171,16 @@ public final class EntityFightPropUpdateNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 58:
+                            case 56:
+                                this.entityId_ = input.readUInt32();
+                                break;
+                            case 90:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.fightPropMap_ = MapField.newMapField(FightPropMapDefaultEntryHolder.defaultEntry);
                                     mutable_bitField0_ |= 1;
                                 }
                                 MapEntry<Integer, Float> fightPropMap__ = (MapEntry) input.readMessage(FightPropMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                                 this.fightPropMap_.getMutableMap().put(fightPropMap__.getKey(), fightPropMap__.getValue());
-                                break;
-                            case 120:
-                                this.entityId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -211,15 +211,10 @@ public final class EntityFightPropUpdateNotifyOuterClass {
             return EntityFightPropUpdateNotifyOuterClass.internal_static_EntityFightPropUpdateNotify_fieldAccessorTable.ensureFieldAccessorsInitialized(EntityFightPropUpdateNotify.class, Builder.class);
         }
 
-        @Override // emu.grasscutter.net.proto.EntityFightPropUpdateNotifyOuterClass.EntityFightPropUpdateNotifyOrBuilder
-        public int getEntityId() {
-            return this.entityId_;
-        }
-
         /* access modifiers changed from: private */
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityFightPropUpdateNotifyOuterClass$EntityFightPropUpdateNotify$FightPropMapDefaultEntryHolder.class */
         public static final class FightPropMapDefaultEntryHolder {
-            static final MapEntry<Integer, Float> defaultEntry = MapEntry.newDefaultInstance(EntityFightPropUpdateNotifyOuterClass.f697x6336a251, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.FLOAT, Float.valueOf(0.0f));
+            static final MapEntry<Integer, Float> defaultEntry = MapEntry.newDefaultInstance(EntityFightPropUpdateNotifyOuterClass.f694x6336a251, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.FLOAT, Float.valueOf(0.0f));
 
             private FightPropMapDefaultEntryHolder() {
             }
@@ -268,6 +263,11 @@ public final class EntityFightPropUpdateNotifyOuterClass {
             throw new IllegalArgumentException();
         }
 
+        @Override // emu.grasscutter.net.proto.EntityFightPropUpdateNotifyOuterClass.EntityFightPropUpdateNotifyOrBuilder
+        public int getEntityId() {
+            return this.entityId_;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -283,10 +283,10 @@ public final class EntityFightPropUpdateNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetFightPropMap(), FightPropMapDefaultEntryHolder.defaultEntry, 7);
             if (this.entityId_ != 0) {
-                output.writeUInt32(15, this.entityId_);
+                output.writeUInt32(7, this.entityId_);
             }
+            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetFightPropMap(), FightPropMapDefaultEntryHolder.defaultEntry, 11);
             this.unknownFields.writeTo(output);
         }
 
@@ -297,11 +297,11 @@ public final class EntityFightPropUpdateNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            for (Map.Entry<Integer, Float> entry : internalGetFightPropMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(7, FightPropMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
-            }
             if (this.entityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.entityId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.entityId_);
+            }
+            for (Map.Entry<Integer, Float> entry : internalGetFightPropMap().getMap().entrySet()) {
+                size2 += CodedOutputStream.computeMessageSize(11, FightPropMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -317,7 +317,7 @@ public final class EntityFightPropUpdateNotifyOuterClass {
                 return equals(obj);
             }
             EntityFightPropUpdateNotify other = (EntityFightPropUpdateNotify) obj;
-            return getEntityId() == other.getEntityId() && internalGetFightPropMap().equals(other.internalGetFightPropMap()) && this.unknownFields.equals(other.unknownFields);
+            return internalGetFightPropMap().equals(other.internalGetFightPropMap()) && getEntityId() == other.getEntityId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -325,11 +325,11 @@ public final class EntityFightPropUpdateNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getEntityId();
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (!internalGetFightPropMap().getMap().isEmpty()) {
-                hash = (53 * ((37 * hash) + 7)) + internalGetFightPropMap().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + internalGetFightPropMap().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 7)) + getEntityId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -409,8 +409,8 @@ public final class EntityFightPropUpdateNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityFightPropUpdateNotifyOuterClass$EntityFightPropUpdateNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements EntityFightPropUpdateNotifyOrBuilder {
             private int bitField0_;
-            private int entityId_;
             private MapField<Integer, Float> fightPropMap_;
+            private int entityId_;
 
             /*  JADX ERROR: Dependency scan failed at insn: 0x001E: INVOKE_CUSTOM r0
                 java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
@@ -449,7 +449,7 @@ public final class EntityFightPropUpdateNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 7: goto L_0x0014;
+                        case 11: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -502,7 +502,7 @@ public final class EntityFightPropUpdateNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 7: goto L_0x0014;
+                        case 11: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -544,8 +544,8 @@ public final class EntityFightPropUpdateNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.entityId_ = 0;
                 internalGetMutableFightPropMap().clear();
+                this.entityId_ = 0;
                 return this;
             }
 
@@ -572,9 +572,9 @@ public final class EntityFightPropUpdateNotifyOuterClass {
             public EntityFightPropUpdateNotify buildPartial() {
                 EntityFightPropUpdateNotify result = new EntityFightPropUpdateNotify(this);
                 int i = this.bitField0_;
-                result.entityId_ = this.entityId_;
                 result.fightPropMap_ = internalGetFightPropMap();
                 result.fightPropMap_.makeImmutable();
+                result.entityId_ = this.entityId_;
                 onBuilt();
                 return result;
             }
@@ -622,10 +622,10 @@ public final class EntityFightPropUpdateNotifyOuterClass {
                 if (other == EntityFightPropUpdateNotify.getDefaultInstance()) {
                     return this;
                 }
+                internalGetMutableFightPropMap().mergeFrom(other.internalGetFightPropMap());
                 if (other.getEntityId() != 0) {
                     setEntityId(other.getEntityId());
                 }
-                internalGetMutableFightPropMap().mergeFrom(other.internalGetFightPropMap());
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
                 return this;
@@ -656,23 +656,6 @@ public final class EntityFightPropUpdateNotifyOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.EntityFightPropUpdateNotifyOuterClass.EntityFightPropUpdateNotifyOrBuilder
-            public int getEntityId() {
-                return this.entityId_;
-            }
-
-            public Builder setEntityId(int value) {
-                this.entityId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearEntityId() {
-                this.entityId_ = 0;
-                onChanged();
-                return this;
             }
 
             private MapField<Integer, Float> internalGetFightPropMap() {
@@ -751,6 +734,23 @@ public final class EntityFightPropUpdateNotifyOuterClass {
 
             public Builder putAllFightPropMap(Map<Integer, Float> values) {
                 internalGetMutableFightPropMap().getMutableMap().putAll(values);
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.EntityFightPropUpdateNotifyOuterClass.EntityFightPropUpdateNotifyOrBuilder
+            public int getEntityId() {
+                return this.entityId_;
+            }
+
+            public Builder setEntityId(int value) {
+                this.entityId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearEntityId() {
+                this.entityId_ = 0;
+                onChanged();
                 return this;
             }
 

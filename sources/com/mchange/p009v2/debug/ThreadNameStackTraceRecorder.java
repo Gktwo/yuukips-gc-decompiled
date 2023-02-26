@@ -1,6 +1,7 @@
 package com.mchange.p009v2.debug;
 
 import com.mchange.lang.ThrowableUtils;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
@@ -47,7 +48,7 @@ public class ThreadNameStackTraceRecorder {
 
     public synchronized String getDump(String str) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MMMM-yyyy HH:mm:ss.SSSS");
-        StringBuffer stringBuffer = new StringBuffer(2047);
+        StringBuffer stringBuffer = new StringBuffer((int) PacketOpcodes.ActivityScheduleInfoNotify);
         stringBuffer.append(f420NL);
         stringBuffer.append("----------------------------------------------------");
         stringBuffer.append(f420NL);

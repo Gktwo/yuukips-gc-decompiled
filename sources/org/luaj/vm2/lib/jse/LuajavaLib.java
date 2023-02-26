@@ -26,7 +26,7 @@ public class LuajavaLib extends VarArgFunction {
 
     /* renamed from: org.luaj.vm2.lib.jse.LuajavaLib$1 */
     /* loaded from: grasscutter.jar:org/luaj/vm2/lib/jse/LuajavaLib$1.class */
-    static class C58791 {
+    static class C58711 {
     }
 
     /* loaded from: grasscutter.jar:org/luaj/vm2/lib/jse/LuajavaLib$ProxyInvocationHandler.class */
@@ -66,7 +66,7 @@ public class LuajavaLib extends VarArgFunction {
             return CoerceLuaToJava.coerce(luaValue.invoke(luaValueArr).arg1(), method.getReturnType());
         }
 
-        ProxyInvocationHandler(LuaValue luaValue, C58791 r5) {
+        ProxyInvocationHandler(LuaValue luaValue, C58711 r5) {
             this(luaValue);
         }
     }

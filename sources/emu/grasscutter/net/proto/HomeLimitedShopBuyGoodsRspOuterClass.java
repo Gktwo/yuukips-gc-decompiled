@@ -26,9 +26,9 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeLimitedShopBuyGoodsRspOuterClass.class */
 public final class HomeLimitedShopBuyGoodsRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n HomeLimitedShopBuyGoodsRsp.proto\u001a\u001aHomeLimitedShopGoods.proto\"\u0001\n\u001aHomeLimitedShopBuyGoodsRsp\u0012)\n\ngoods_list\u0018\u0003 \u0003(\u000b2\u0015.HomeLimitedShopGoods\u0012\u0011\n\tbuy_count\u0018\n \u0001(\r\u0012\u000f\n\u0007retcode\u0018\r \u0001(\u0005\u0012$\n\u0005goods\u0018\t \u0001(\u000b2\u0015.HomeLimitedShopGoodsB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeLimitedShopGoodsOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n HomeLimitedShopBuyGoodsRsp.proto\u001a\u001aHomeLimitedShopGoods.proto\"\u0001\n\u001aHomeLimitedShopBuyGoodsRsp\u0012(\n\tgoodsList\u0018\u0005 \u0003(\u000b2\u0015.HomeLimitedShopGoods\u0012$\n\u0005goods\u0018\b \u0001(\u000b2\u0015.HomeLimitedShopGoods\u0012\u0010\n\bbuyCount\u0018\u000b \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0001 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeLimitedShopGoodsOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_HomeLimitedShopBuyGoodsRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeLimitedShopBuyGoodsRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeLimitedShopBuyGoodsRsp_descriptor, new String[]{"GoodsList", "BuyCount", "Retcode", "Goods"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeLimitedShopBuyGoodsRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeLimitedShopBuyGoodsRsp_descriptor, new String[]{"GoodsList", "Goods", "BuyCount", "Retcode"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeLimitedShopBuyGoodsRspOuterClass$HomeLimitedShopBuyGoodsRspOrBuilder.class */
     public interface HomeLimitedShopBuyGoodsRspOrBuilder extends MessageOrBuilder {
@@ -42,15 +42,15 @@ public final class HomeLimitedShopBuyGoodsRspOuterClass {
 
         HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoodsOrBuilder getGoodsListOrBuilder(int i);
 
-        int getBuyCount();
-
-        int getRetcode();
-
         boolean hasGoods();
 
         HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods getGoods();
 
         HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoodsOrBuilder getGoodsOrBuilder();
+
+        int getBuyCount();
+
+        int getRetcode();
     }
 
     private HomeLimitedShopBuyGoodsRspOuterClass() {
@@ -66,14 +66,14 @@ public final class HomeLimitedShopBuyGoodsRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeLimitedShopBuyGoodsRspOuterClass$HomeLimitedShopBuyGoodsRsp.class */
     public static final class HomeLimitedShopBuyGoodsRsp extends GeneratedMessageV3 implements HomeLimitedShopBuyGoodsRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int GOODS_LIST_FIELD_NUMBER = 3;
+        public static final int GOODSLIST_FIELD_NUMBER = 5;
         private List<HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods> goodsList_;
-        public static final int BUY_COUNT_FIELD_NUMBER = 10;
-        private int buyCount_;
-        public static final int RETCODE_FIELD_NUMBER = 13;
-        private int retcode_;
-        public static final int GOODS_FIELD_NUMBER = 9;
+        public static final int GOODS_FIELD_NUMBER = 8;
         private HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods goods_;
+        public static final int BUYCOUNT_FIELD_NUMBER = 11;
+        private int buyCount_;
+        public static final int RETCODE_FIELD_NUMBER = 1;
+        private int retcode_;
         private byte memoizedIsInitialized;
         private static final HomeLimitedShopBuyGoodsRsp DEFAULT_INSTANCE = new HomeLimitedShopBuyGoodsRsp();
         private static final Parser<HomeLimitedShopBuyGoodsRsp> PARSER = new AbstractParser<HomeLimitedShopBuyGoodsRsp>() { // from class: emu.grasscutter.net.proto.HomeLimitedShopBuyGoodsRspOuterClass.HomeLimitedShopBuyGoodsRsp.1
@@ -122,14 +122,17 @@ public final class HomeLimitedShopBuyGoodsRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 26:
+                            case 8:
+                                this.retcode_ = input.readInt32();
+                                break;
+                            case 42:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.goodsList_ = new ArrayList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.goodsList_.add((HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods) input.readMessage(HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.parser(), extensionRegistry));
                                 break;
-                            case 74:
+                            case 66:
                                 HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.Builder subBuilder = this.goods_ != null ? this.goods_.toBuilder() : null;
                                 this.goods_ = (HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods) input.readMessage(HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -139,11 +142,8 @@ public final class HomeLimitedShopBuyGoodsRspOuterClass {
                                     this.goods_ = subBuilder.buildPartial();
                                     break;
                                 }
-                            case 80:
+                            case 88:
                                 this.buyCount_ = input.readUInt32();
-                                break;
-                            case 104:
-                                this.retcode_ = input.readInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -203,16 +203,6 @@ public final class HomeLimitedShopBuyGoodsRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.HomeLimitedShopBuyGoodsRspOuterClass.HomeLimitedShopBuyGoodsRspOrBuilder
-        public int getBuyCount() {
-            return this.buyCount_;
-        }
-
-        @Override // emu.grasscutter.net.proto.HomeLimitedShopBuyGoodsRspOuterClass.HomeLimitedShopBuyGoodsRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
-        }
-
-        @Override // emu.grasscutter.net.proto.HomeLimitedShopBuyGoodsRspOuterClass.HomeLimitedShopBuyGoodsRspOrBuilder
         public boolean hasGoods() {
             return this.goods_ != null;
         }
@@ -225,6 +215,16 @@ public final class HomeLimitedShopBuyGoodsRspOuterClass {
         @Override // emu.grasscutter.net.proto.HomeLimitedShopBuyGoodsRspOuterClass.HomeLimitedShopBuyGoodsRspOrBuilder
         public HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoodsOrBuilder getGoodsOrBuilder() {
             return getGoods();
+        }
+
+        @Override // emu.grasscutter.net.proto.HomeLimitedShopBuyGoodsRspOuterClass.HomeLimitedShopBuyGoodsRspOrBuilder
+        public int getBuyCount() {
+            return this.buyCount_;
+        }
+
+        @Override // emu.grasscutter.net.proto.HomeLimitedShopBuyGoodsRspOuterClass.HomeLimitedShopBuyGoodsRspOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -242,17 +242,17 @@ public final class HomeLimitedShopBuyGoodsRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.retcode_ != 0) {
+                output.writeInt32(1, this.retcode_);
+            }
             for (int i = 0; i < this.goodsList_.size(); i++) {
-                output.writeMessage(3, this.goodsList_.get(i));
+                output.writeMessage(5, this.goodsList_.get(i));
             }
             if (this.goods_ != null) {
-                output.writeMessage(9, getGoods());
+                output.writeMessage(8, getGoods());
             }
             if (this.buyCount_ != 0) {
-                output.writeUInt32(10, this.buyCount_);
-            }
-            if (this.retcode_ != 0) {
-                output.writeInt32(13, this.retcode_);
+                output.writeUInt32(11, this.buyCount_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -264,17 +264,17 @@ public final class HomeLimitedShopBuyGoodsRspOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.retcode_ != 0) {
+                size2 = 0 + CodedOutputStream.computeInt32Size(1, this.retcode_);
+            }
             for (int i = 0; i < this.goodsList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(3, this.goodsList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(5, this.goodsList_.get(i));
             }
             if (this.goods_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(9, getGoods());
+                size2 += CodedOutputStream.computeMessageSize(8, getGoods());
             }
             if (this.buyCount_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.buyCount_);
-            }
-            if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(13, this.retcode_);
+                size2 += CodedOutputStream.computeUInt32Size(11, this.buyCount_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -290,8 +290,8 @@ public final class HomeLimitedShopBuyGoodsRspOuterClass {
                 return equals(obj);
             }
             HomeLimitedShopBuyGoodsRsp other = (HomeLimitedShopBuyGoodsRsp) obj;
-            if (getGoodsListList().equals(other.getGoodsListList()) && getBuyCount() == other.getBuyCount() && getRetcode() == other.getRetcode() && hasGoods() == other.hasGoods()) {
-                return (!hasGoods() || getGoods().equals(other.getGoods())) && this.unknownFields.equals(other.unknownFields);
+            if (getGoodsListList().equals(other.getGoodsListList()) && hasGoods() == other.hasGoods()) {
+                return (!hasGoods() || getGoods().equals(other.getGoods())) && getBuyCount() == other.getBuyCount() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -303,15 +303,14 @@ public final class HomeLimitedShopBuyGoodsRspOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getGoodsListCount() > 0) {
-                hash = (53 * ((37 * hash) + 3)) + getGoodsListList().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getGoodsListList().hashCode();
             }
-            int hash2 = (53 * ((37 * ((53 * ((37 * hash) + 10)) + getBuyCount())) + 13)) + getRetcode();
             if (hasGoods()) {
-                hash2 = (53 * ((37 * hash2) + 9)) + getGoods().hashCode();
+                hash = (53 * ((37 * hash) + 8)) + getGoods().hashCode();
             }
-            int hash3 = (29 * hash2) + this.unknownFields.hashCode();
-            this.memoizedHashCode = hash3;
-            return hash3;
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 11)) + getBuyCount())) + 1)) + getRetcode())) + this.unknownFields.hashCode();
+            this.memoizedHashCode = hash2;
+            return hash2;
         }
 
         public static HomeLimitedShopBuyGoodsRsp parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
@@ -391,10 +390,10 @@ public final class HomeLimitedShopBuyGoodsRspOuterClass {
             private int bitField0_;
             private List<HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods> goodsList_ = Collections.emptyList();
             private RepeatedFieldBuilderV3<HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods, HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.Builder, HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoodsOrBuilder> goodsListBuilder_;
-            private int buyCount_;
-            private int retcode_;
             private HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods goods_;
             private SingleFieldBuilderV3<HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods, HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.Builder, HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoodsOrBuilder> goodsBuilder_;
+            private int buyCount_;
+            private int retcode_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return HomeLimitedShopBuyGoodsRspOuterClass.internal_static_HomeLimitedShopBuyGoodsRsp_descriptor;
@@ -429,14 +428,14 @@ public final class HomeLimitedShopBuyGoodsRspOuterClass {
                 } else {
                     this.goodsListBuilder_.clear();
                 }
-                this.buyCount_ = 0;
-                this.retcode_ = 0;
                 if (this.goodsBuilder_ == null) {
                     this.goods_ = null;
                 } else {
                     this.goods_ = null;
                     this.goodsBuilder_ = null;
                 }
+                this.buyCount_ = 0;
+                this.retcode_ = 0;
                 return this;
             }
 
@@ -472,13 +471,13 @@ public final class HomeLimitedShopBuyGoodsRspOuterClass {
                 } else {
                     result.goodsList_ = this.goodsListBuilder_.build();
                 }
-                result.buyCount_ = this.buyCount_;
-                result.retcode_ = this.retcode_;
                 if (this.goodsBuilder_ == null) {
                     result.goods_ = this.goods_;
                 } else {
                     result.goods_ = this.goodsBuilder_.build();
                 }
+                result.buyCount_ = this.buyCount_;
+                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -548,14 +547,14 @@ public final class HomeLimitedShopBuyGoodsRspOuterClass {
                         this.goodsListBuilder_.addAllMessages(other.goodsList_);
                     }
                 }
+                if (other.hasGoods()) {
+                    mergeGoods(other.getGoods());
+                }
                 if (other.getBuyCount() != 0) {
                     setBuyCount(other.getBuyCount());
                 }
                 if (other.getRetcode() != 0) {
                     setRetcode(other.getRetcode());
-                }
-                if (other.hasGoods()) {
-                    mergeGoods(other.getGoods());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -766,40 +765,6 @@ public final class HomeLimitedShopBuyGoodsRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.HomeLimitedShopBuyGoodsRspOuterClass.HomeLimitedShopBuyGoodsRspOrBuilder
-            public int getBuyCount() {
-                return this.buyCount_;
-            }
-
-            public Builder setBuyCount(int value) {
-                this.buyCount_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearBuyCount() {
-                this.buyCount_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.HomeLimitedShopBuyGoodsRspOuterClass.HomeLimitedShopBuyGoodsRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.HomeLimitedShopBuyGoodsRspOuterClass.HomeLimitedShopBuyGoodsRspOrBuilder
             public boolean hasGoods() {
                 return (this.goodsBuilder_ == null && this.goods_ == null) ? false : true;
             }
@@ -878,6 +843,40 @@ public final class HomeLimitedShopBuyGoodsRspOuterClass {
                     this.goods_ = null;
                 }
                 return this.goodsBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.HomeLimitedShopBuyGoodsRspOuterClass.HomeLimitedShopBuyGoodsRspOrBuilder
+            public int getBuyCount() {
+                return this.buyCount_;
+            }
+
+            public Builder setBuyCount(int value) {
+                this.buyCount_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearBuyCount() {
+                this.buyCount_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.HomeLimitedShopBuyGoodsRspOuterClass.HomeLimitedShopBuyGoodsRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

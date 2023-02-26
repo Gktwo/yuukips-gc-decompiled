@@ -20,7 +20,7 @@ public class QuoteUtil {
         private boolean hasToken = false;
 
         /* renamed from: i */
-        private int f3178i = 0;
+        private int f3142i = 0;
 
         /* access modifiers changed from: private */
         /* loaded from: grasscutter.jar:org/eclipse/jetty/websocket/api/util/QuoteUtil$DeQuotingStringIterator$State.class */
@@ -55,10 +55,10 @@ public class QuoteUtil {
             State state = State.START;
             boolean escape = false;
             int inputLen = this.input.length();
-            while (this.f3178i < inputLen) {
+            while (this.f3142i < inputLen) {
                 String str = this.input;
-                int i = this.f3178i;
-                this.f3178i = i + 1;
+                int i = this.f3142i;
+                this.f3142i = i + 1;
                 char c = str.charAt(i);
                 switch (state) {
                     case START:

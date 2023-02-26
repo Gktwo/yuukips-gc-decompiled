@@ -87,30 +87,30 @@ public abstract class AbstractReference2ByteSortedMap<K> extends AbstractReferen
     public static class KeySetIterator<K> implements ObjectBidirectionalIterator<K> {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Reference2ByteMap.Entry<K>> f2500i;
+        protected final ObjectBidirectionalIterator<Reference2ByteMap.Entry<K>> f2464i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Reference2ByteMap.Entry<K>> i) {
-            this.f2500i = i;
+            this.f2464i = i;
         }
 
         @Override // java.util.Iterator
         public K next() {
-            return ((Reference2ByteMap.Entry) this.f2500i.next()).getKey();
+            return ((Reference2ByteMap.Entry) this.f2464i.next()).getKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public K previous() {
-            return this.f2500i.previous().getKey();
+            return this.f2464i.previous().getKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2500i.hasNext();
+            return this.f2464i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2500i.hasPrevious();
+            return this.f2464i.hasPrevious();
         }
     }
 
@@ -153,20 +153,20 @@ public abstract class AbstractReference2ByteSortedMap<K> extends AbstractReferen
     public static class ValuesIterator<K> implements ByteIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Reference2ByteMap.Entry<K>> f2501i;
+        protected final ObjectBidirectionalIterator<Reference2ByteMap.Entry<K>> f2465i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Reference2ByteMap.Entry<K>> i) {
-            this.f2501i = i;
+            this.f2465i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
         public byte nextByte() {
-            return ((Reference2ByteMap.Entry) this.f2501i.next()).getByteValue();
+            return ((Reference2ByteMap.Entry) this.f2465i.next()).getByteValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2501i.hasNext();
+            return this.f2465i.hasNext();
         }
     }
 }

@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ExpeditionChallengeInfoOuterClass.class */
 public final class ExpeditionChallengeInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dExpeditionChallengeInfo.proto\"M\n\u0017ExpeditionChallengeInfo\u0012\n\n\u0002id\u0018\u0005 \u0001(\r\u0012\u0013\n\u000bis_finished\u0018\u0002 \u0001(\b\u0012\u0011\n\topen_time\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dExpeditionChallengeInfo.proto\"K\n\u0017ExpeditionChallengeInfo\u0012\u0010\n\bopenTime\u0018\u000b \u0001(\r\u0012\n\n\u0002id\u0018\r \u0001(\r\u0012\u0012\n\nisFinished\u0018\u000f \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ExpeditionChallengeInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ExpeditionChallengeInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ExpeditionChallengeInfo_descriptor, new String[]{"Id", "IsFinished", "OpenTime"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ExpeditionChallengeInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ExpeditionChallengeInfo_descriptor, new String[]{"OpenTime", "Id", "IsFinished"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ExpeditionChallengeInfoOuterClass$ExpeditionChallengeInfoOrBuilder.class */
     public interface ExpeditionChallengeInfoOrBuilder extends MessageOrBuilder {
+        int getOpenTime();
+
         int getId();
 
         boolean getIsFinished();
-
-        int getOpenTime();
     }
 
     private ExpeditionChallengeInfoOuterClass() {
@@ -46,12 +46,12 @@ public final class ExpeditionChallengeInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ExpeditionChallengeInfoOuterClass$ExpeditionChallengeInfo.class */
     public static final class ExpeditionChallengeInfo extends GeneratedMessageV3 implements ExpeditionChallengeInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ID_FIELD_NUMBER = 5;
-        private int id_;
-        public static final int IS_FINISHED_FIELD_NUMBER = 2;
-        private boolean isFinished_;
-        public static final int OPEN_TIME_FIELD_NUMBER = 12;
+        public static final int OPENTIME_FIELD_NUMBER = 11;
         private int openTime_;
+        public static final int ID_FIELD_NUMBER = 13;
+        private int id_;
+        public static final int ISFINISHED_FIELD_NUMBER = 15;
+        private boolean isFinished_;
         private byte memoizedIsInitialized;
         private static final ExpeditionChallengeInfo DEFAULT_INSTANCE = new ExpeditionChallengeInfo();
         private static final Parser<ExpeditionChallengeInfo> PARSER = new AbstractParser<ExpeditionChallengeInfo>() { // from class: emu.grasscutter.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfo.1
@@ -98,14 +98,14 @@ public final class ExpeditionChallengeInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
-                                    this.isFinished_ = input.readBool();
+                                case 88:
+                                    this.openTime_ = input.readUInt32();
                                     break;
-                                case 40:
+                                case 104:
                                     this.id_ = input.readUInt32();
                                     break;
-                                case 96:
-                                    this.openTime_ = input.readUInt32();
+                                case 120:
+                                    this.isFinished_ = input.readBool();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -138,6 +138,11 @@ public final class ExpeditionChallengeInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfoOrBuilder
+        public int getOpenTime() {
+            return this.openTime_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfoOrBuilder
         public int getId() {
             return this.id_;
         }
@@ -145,11 +150,6 @@ public final class ExpeditionChallengeInfoOuterClass {
         @Override // emu.grasscutter.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfoOrBuilder
         public boolean getIsFinished() {
             return this.isFinished_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfoOrBuilder
-        public int getOpenTime() {
-            return this.openTime_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,14 +167,14 @@ public final class ExpeditionChallengeInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.isFinished_) {
-                output.writeBool(2, this.isFinished_);
+            if (this.openTime_ != 0) {
+                output.writeUInt32(11, this.openTime_);
             }
             if (this.id_ != 0) {
-                output.writeUInt32(5, this.id_);
+                output.writeUInt32(13, this.id_);
             }
-            if (this.openTime_ != 0) {
-                output.writeUInt32(12, this.openTime_);
+            if (this.isFinished_) {
+                output.writeBool(15, this.isFinished_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class ExpeditionChallengeInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.isFinished_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(2, this.isFinished_);
+            if (this.openTime_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(11, this.openTime_);
             }
             if (this.id_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.id_);
+                size2 += CodedOutputStream.computeUInt32Size(13, this.id_);
             }
-            if (this.openTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.openTime_);
+            if (this.isFinished_) {
+                size2 += CodedOutputStream.computeBoolSize(15, this.isFinished_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class ExpeditionChallengeInfoOuterClass {
                 return equals(obj);
             }
             ExpeditionChallengeInfo other = (ExpeditionChallengeInfo) obj;
-            return getId() == other.getId() && getIsFinished() == other.getIsFinished() && getOpenTime() == other.getOpenTime() && this.unknownFields.equals(other.unknownFields);
+            return getOpenTime() == other.getOpenTime() && getId() == other.getId() && getIsFinished() == other.getIsFinished() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class ExpeditionChallengeInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getId())) + 2)) + Internal.hashBoolean(getIsFinished()))) + 12)) + getOpenTime())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getOpenTime())) + 13)) + getId())) + 15)) + Internal.hashBoolean(getIsFinished()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -296,9 +296,9 @@ public final class ExpeditionChallengeInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ExpeditionChallengeInfoOuterClass$ExpeditionChallengeInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ExpeditionChallengeInfoOrBuilder {
+            private int openTime_;
             private int id_;
             private boolean isFinished_;
-            private int openTime_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ExpeditionChallengeInfoOuterClass.internal_static_ExpeditionChallengeInfo_descriptor;
@@ -326,9 +326,9 @@ public final class ExpeditionChallengeInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.openTime_ = 0;
                 this.id_ = 0;
                 this.isFinished_ = false;
-                this.openTime_ = 0;
                 return this;
             }
 
@@ -354,9 +354,9 @@ public final class ExpeditionChallengeInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public ExpeditionChallengeInfo buildPartial() {
                 ExpeditionChallengeInfo result = new ExpeditionChallengeInfo(this);
+                result.openTime_ = this.openTime_;
                 result.id_ = this.id_;
                 result.isFinished_ = this.isFinished_;
-                result.openTime_ = this.openTime_;
                 onBuilt();
                 return result;
             }
@@ -404,14 +404,14 @@ public final class ExpeditionChallengeInfoOuterClass {
                 if (other == ExpeditionChallengeInfo.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getOpenTime() != 0) {
+                    setOpenTime(other.getOpenTime());
+                }
                 if (other.getId() != 0) {
                     setId(other.getId());
                 }
                 if (other.getIsFinished()) {
                     setIsFinished(other.getIsFinished());
-                }
-                if (other.getOpenTime() != 0) {
-                    setOpenTime(other.getOpenTime());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -446,6 +446,23 @@ public final class ExpeditionChallengeInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfoOrBuilder
+            public int getOpenTime() {
+                return this.openTime_;
+            }
+
+            public Builder setOpenTime(int value) {
+                this.openTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearOpenTime() {
+                this.openTime_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfoOrBuilder
             public int getId() {
                 return this.id_;
             }
@@ -475,23 +492,6 @@ public final class ExpeditionChallengeInfoOuterClass {
 
             public Builder clearIsFinished() {
                 this.isFinished_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ExpeditionChallengeInfoOuterClass.ExpeditionChallengeInfoOrBuilder
-            public int getOpenTime() {
-                return this.openTime_;
-            }
-
-            public Builder setOpenTime(int value) {
-                this.openTime_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearOpenTime() {
-                this.openTime_ = 0;
                 onChanged();
                 return this;
             }

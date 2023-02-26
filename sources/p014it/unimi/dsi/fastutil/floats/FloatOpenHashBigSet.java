@@ -23,16 +23,16 @@ public class FloatOpenHashBigSet extends AbstractFloatSet implements Serializabl
     protected transient boolean containsNull;
 
     /* renamed from: n */
-    protected transient long f1962n;
+    protected transient long f1926n;
     protected transient long maxFill;
     protected final transient long minN;
 
     /* renamed from: f */
-    protected final float f1963f;
+    protected final float f1927f;
     protected long size;
 
     private void initMasks() {
-        this.mask = this.f1962n - 1;
+        this.mask = this.f1926n - 1;
         this.segmentMask = this.key[0].length - 1;
         this.baseMask = this.key.length - 1;
     }
@@ -40,15 +40,15 @@ public class FloatOpenHashBigSet extends AbstractFloatSet implements Serializabl
     public FloatOpenHashBigSet(long expected, float f) {
         if (f <= 0.0f || f > 1.0f) {
             throw new IllegalArgumentException("Load factor must be greater than 0 and smaller than or equal to 1");
-        } else if (this.f1962n < 0) {
+        } else if (this.f1926n < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1963f = f;
+            this.f1927f = f;
             long bigArraySize = HashCommon.bigArraySize(expected, f);
-            this.f1962n = bigArraySize;
+            this.f1926n = bigArraySize;
             this.minN = bigArraySize;
-            this.maxFill = HashCommon.maxFill(this.f1962n, f);
-            this.key = FloatBigArrays.newBigArray(this.f1962n);
+            this.maxFill = HashCommon.maxFill(this.f1926n, f);
+            this.key = FloatBigArrays.newBigArray(this.f1926n);
             initMasks();
         }
     }
@@ -124,8 +124,8 @@ public class FloatOpenHashBigSet extends AbstractFloatSet implements Serializabl
     }
 
     private void ensureCapacity(long capacity) {
-        long needed = HashCommon.bigArraySize(capacity, this.f1963f);
-        if (needed > this.f1962n) {
+        long needed = HashCommon.bigArraySize(capacity, this.f1927f);
+        if (needed > this.f1926n) {
             rehash(needed);
         }
     }
@@ -133,7 +133,7 @@ public class FloatOpenHashBigSet extends AbstractFloatSet implements Serializabl
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Float> c) {
         long size = Size64.sizeOf(c);
-        if (((double) this.f1963f) <= 0.5d) {
+        if (((double) this.f1927f) <= 0.5d) {
             ensureCapacity(size);
         } else {
             ensureCapacity(size64() + size);
@@ -144,7 +144,7 @@ public class FloatOpenHashBigSet extends AbstractFloatSet implements Serializabl
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatCollection, p014it.unimi.dsi.fastutil.floats.FloatCollection
     public boolean addAll(FloatCollection c) {
         long size = Size64.sizeOf(c);
-        if (((double) this.f1963f) <= 0.5d) {
+        if (((double) this.f1927f) <= 0.5d) {
             ensureCapacity(size);
         } else {
             ensureCapacity(size64() + size);
@@ -190,7 +190,7 @@ public class FloatOpenHashBigSet extends AbstractFloatSet implements Serializabl
         if (j < this.maxFill) {
             return true;
         }
-        rehash(2 * this.f1962n);
+        rehash(2 * this.f1926n);
         return true;
     }
 
@@ -224,20 +224,20 @@ public class FloatOpenHashBigSet extends AbstractFloatSet implements Serializabl
     private boolean removeEntry(int base, int displ) {
         this.size--;
         shiftKeys((((long) base) * 134217728) + ((long) displ));
-        if (this.f1962n <= this.minN || this.size >= this.maxFill / 4 || this.f1962n <= 16) {
+        if (this.f1926n <= this.minN || this.size >= this.maxFill / 4 || this.f1926n <= 16) {
             return true;
         }
-        rehash(this.f1962n / 2);
+        rehash(this.f1926n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
         this.size--;
-        if (this.f1962n <= this.minN || this.size >= this.maxFill / 4 || this.f1962n <= 16) {
+        if (this.f1926n <= this.minN || this.size >= this.maxFill / 4 || this.f1926n <= 16) {
             return true;
         }
-        rehash(this.f1962n / 2);
+        rehash(this.f1926n / 2);
         return true;
     }
 
@@ -328,20 +328,20 @@ public class FloatOpenHashBigSet extends AbstractFloatSet implements Serializabl
         long last;
 
         /* renamed from: c */
-        long f1964c;
+        long f1928c;
         boolean mustReturnNull;
         FloatArrayList wrapped;
 
         private SetIterator() {
             this.base = FloatOpenHashBigSet.this.key.length;
             this.last = -1;
-            this.f1964c = FloatOpenHashBigSet.this.size;
+            this.f1928c = FloatOpenHashBigSet.this.size;
             this.mustReturnNull = FloatOpenHashBigSet.this.containsNull;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1964c != 0;
+            return this.f1928c != 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
@@ -350,10 +350,10 @@ public class FloatOpenHashBigSet extends AbstractFloatSet implements Serializabl
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f1964c--;
+            this.f1928c--;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = FloatOpenHashBigSet.this.f1962n;
+                this.last = FloatOpenHashBigSet.this.f1926n;
                 return 0.0f;
             }
             float[][] key = FloatOpenHashBigSet.this.key;
@@ -422,7 +422,7 @@ public class FloatOpenHashBigSet extends AbstractFloatSet implements Serializabl
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == FloatOpenHashBigSet.this.f1962n) {
+            if (this.last == FloatOpenHashBigSet.this.f1926n) {
                 FloatOpenHashBigSet.this.containsNull = false;
             } else if (this.base >= 0) {
                 shiftKeys(this.last);
@@ -450,22 +450,22 @@ public class FloatOpenHashBigSet extends AbstractFloatSet implements Serializabl
         long max;
 
         /* renamed from: c */
-        long f1965c;
+        long f1929c;
         boolean mustReturnNull;
         boolean hasSplit;
 
         SetSpliterator() {
             this.pos = 0;
-            this.max = FloatOpenHashBigSet.this.f1962n;
-            this.f1965c = 0;
+            this.max = FloatOpenHashBigSet.this.f1926n;
+            this.f1929c = 0;
             this.mustReturnNull = FloatOpenHashBigSet.this.containsNull;
             this.hasSplit = false;
         }
 
         SetSpliterator(long pos, long max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = FloatOpenHashBigSet.this.f1962n;
-            this.f1965c = 0;
+            this.max = FloatOpenHashBigSet.this.f1926n;
+            this.f1929c = 0;
             this.mustReturnNull = FloatOpenHashBigSet.this.containsNull;
             this.hasSplit = false;
             this.pos = pos;
@@ -477,7 +477,7 @@ public class FloatOpenHashBigSet extends AbstractFloatSet implements Serializabl
         public boolean tryAdvance(FloatConsumer action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1965c++;
+                this.f1929c++;
                 action.accept(0.0f);
                 return true;
             }
@@ -485,7 +485,7 @@ public class FloatOpenHashBigSet extends AbstractFloatSet implements Serializabl
             while (this.pos < this.max) {
                 float gotten = BigArrays.get(key, this.pos);
                 if (Float.floatToIntBits(gotten) != 0) {
-                    this.f1965c++;
+                    this.f1929c++;
                     this.pos++;
                     action.accept(gotten);
                     return true;
@@ -499,14 +499,14 @@ public class FloatOpenHashBigSet extends AbstractFloatSet implements Serializabl
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
                 action.accept(0.0f);
-                this.f1965c++;
+                this.f1929c++;
             }
             float[][] key = FloatOpenHashBigSet.this.key;
             while (this.pos < this.max) {
                 float gotten = BigArrays.get(key, this.pos);
                 if (Float.floatToIntBits(gotten) != 0) {
                     action.accept(gotten);
-                    this.f1965c++;
+                    this.f1929c++;
                 }
                 this.pos++;
             }
@@ -520,9 +520,9 @@ public class FloatOpenHashBigSet extends AbstractFloatSet implements Serializabl
         @Override // java.util.Spliterator
         public long estimateSize() {
             if (!this.hasSplit) {
-                return FloatOpenHashBigSet.this.size - this.f1965c;
+                return FloatOpenHashBigSet.this.size - this.f1929c;
             }
-            return Math.min(FloatOpenHashBigSet.this.size - this.f1965c, ((long) ((((double) FloatOpenHashBigSet.this.realSize()) / ((double) FloatOpenHashBigSet.this.f1962n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min(FloatOpenHashBigSet.this.size - this.f1929c, ((long) ((((double) FloatOpenHashBigSet.this.realSize()) / ((double) FloatOpenHashBigSet.this.f1926n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
@@ -654,7 +654,7 @@ public class FloatOpenHashBigSet extends AbstractFloatSet implements Serializabl
     /* JADX DEBUG: Multi-variable search result rejected for r10v1, resolved type: long */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r10v0 */
-    /* JADX WARN: Type inference failed for: r0v6, types: [float[][], long] */
+    /* JADX WARN: Type inference failed for: r0v6, types: [long, float[][]] */
     /* JADX WARN: Type inference failed for: r10v2, types: [long] */
     /* JADX WARNING: Unknown variable types count: 1 */
     @Override // p014it.unimi.dsi.fastutil.floats.FloatIterable
@@ -672,7 +672,7 @@ public class FloatOpenHashBigSet extends AbstractFloatSet implements Serializabl
             r0 = 0
             r10 = r0
             r0 = r8
-            long r0 = r0.f1962n
+            long r0 = r0.f1926n
             r12 = r0
             r0 = r8
             float[][] r0 = r0.key
@@ -709,8 +709,8 @@ public class FloatOpenHashBigSet extends AbstractFloatSet implements Serializabl
     }
 
     public boolean trim(long n) {
-        long l = HashCommon.bigArraySize(n, this.f1963f);
-        if (l >= this.f1962n || this.size > HashCommon.maxFill(l, this.f1963f)) {
+        long l = HashCommon.bigArraySize(n, this.f1927f);
+        if (l >= this.f1926n || this.size > HashCommon.maxFill(l, this.f1927f)) {
             return true;
         }
         try {
@@ -905,9 +905,9 @@ public class FloatOpenHashBigSet extends AbstractFloatSet implements Serializabl
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int i;
         s.defaultReadObject();
-        this.f1962n = HashCommon.bigArraySize(this.size, this.f1963f);
-        this.maxFill = HashCommon.maxFill(this.f1962n, this.f1963f);
-        float[][] key = FloatBigArrays.newBigArray(this.f1962n);
+        this.f1926n = HashCommon.bigArraySize(this.size, this.f1927f);
+        this.maxFill = HashCommon.maxFill(this.f1926n, this.f1927f);
+        float[][] key = FloatBigArrays.newBigArray(this.f1926n);
         this.key = key;
         initMasks();
         long i2 = this.size;

@@ -17,6 +17,7 @@ import emu.grasscutter.game.inventory.MaterialType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.utils.SparseSet;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,19 +28,19 @@ import net.bytebuddy.utility.JavaConstant;
 import org.jline.console.Printer;
 import p014it.unimi.dsi.fastutil.objects.ObjectIterator;
 
-@Command(label = "give", aliases = {"g", "item", "giveitem"}, usage = {"(<itemId>|<avatarId>|all|weapons|mats|avatars) [lv<level>] [r<refinement>] [x<amount>] [c<constellation>] [sl<skilllevel>]", "<artifactId> [lv<level>] [x<amount>] [<mainPropId>] [<appendPropId>[,<times>]]..."}, permission = "player.give", permissionTargeted = "player.give.others", ratelimit = 120, count = 20)
+@Command(label = "give", aliases = {"g", "item", "giveitem"}, usage = {"(<itemId>|<avatarId>|weapons|mats|avatars|basic|teapot|artifact) [lv<level>] [r<refinement>] [x<amount>] [c<constellation>] [sl<skilllevel>]", "<artifactId> [lv<level>] [x<amount>] [<mainPropId>] [<appendPropId>[,<times>]]..."}, permission = "player.give", permissionTargeted = "player.give.others", ratelimit = 120, count = 20)
 /* loaded from: grasscutter.jar:emu/grasscutter/command/commands/GiveCommand.class */
 public final class GiveCommand implements CommandHandler {
-    private static final Map<Pattern, BiConsumer<GiveItemParameters, Integer>> intCommandHandlers = Map.ofEntries(Map.entry(CommandHelpers.lvlRegex, (v0, v1) -> {
-        v0.setLvl(v1);
-    }), Map.entry(CommandHelpers.refineRegex, (v0, v1) -> {
-        v0.setRefinement(v1);
-    }), Map.entry(CommandHelpers.amountRegex, (v0, v1) -> {
-        v0.setAmount(v1);
-    }), Map.entry(CommandHelpers.constellationRegex, (v0, v1) -> {
-        v0.setConstellation(v1);
-    }), Map.entry(CommandHelpers.skillLevelRegex, (v0, v1) -> {
-        v0.setSkillLevel(v1);
+    private static final Map<Pattern, BiConsumer<GiveItemParameters, Integer>> intCommandHandlers = Map.ofEntries(Map.entry(CommandHelpers.lvlRegex, arg0, arg1 -> {
+        arg0.setLvl(arg1.intValue());
+    }), Map.entry(CommandHelpers.refineRegex, arg0, arg1 -> {
+        arg0.setRefinement(arg1.intValue());
+    }), Map.entry(CommandHelpers.amountRegex, arg0, arg1 -> {
+        arg0.setAmount(arg1.intValue());
+    }), Map.entry(CommandHelpers.constellationRegex, arg0, arg1 -> {
+        arg0.setConstellation(arg1.intValue());
+    }), Map.entry(CommandHelpers.skillLevelRegex, arg0, arg1 -> {
+        arg0.setSkillLevel(arg1.intValue());
     }));
     private static final SparseSet illegalWeaponIds = new SparseSet("10000-10008, 11411, 11506-11508, 12505, 12506, 12508, 12509,\n13503, 13506, 14411, 14503, 14505, 14508, 15504-15506\n");
     private static final SparseSet illegalRelicIds = new SparseSet("20001, 23300-23340, 23383-23385, 78310-78554, 99310-99554\n");
@@ -49,7 +50,7 @@ public final class GiveCommand implements CommandHandler {
     /* loaded from: grasscutter.jar:emu/grasscutter/command/commands/GiveCommand$GiveAllType.class */
     public enum GiveAllType {
         NONE,
-        ALL,
+        BASIC,
         WEAPONS,
         MATS,
         AVATARS,
@@ -189,65 +190,156 @@ public final class GiveCommand implements CommandHandler {
         switch (id.hashCode()) {
             case -1228798510:
                 if (id.equals("artifact")) {
-                    c = 4;
+                    c = '\n';
+                    break;
+                }
+                break;
+            case -877709243:
+                if (id.equals("teapot")) {
+                    c = '\t';
                     break;
                 }
                 break;
             case -635082182:
                 if (id.equals("avatars")) {
-                    c = 6;
+                    c = '\r';
+                    break;
+                }
+                break;
+            case 3109:
+                if (id.equals("af")) {
+                    c = '\f';
+                    break;
+                }
+                break;
+            case PacketOpcodes.WorldPlayerInfoNotify /* 3125 */:
+                if (id.equals("av")) {
+                    c = 14;
+                    break;
+                }
+                break;
+            case 3495:
+                if (id.equals("mt")) {
+                    c = 5;
+                    break;
+                }
+                break;
+            case 3801:
+                if (id.equals("wp")) {
+                    c = 3;
                     break;
                 }
                 break;
             case 96673:
                 if (id.equals(Printer.ALL)) {
-                    c = 0;
+                    c = 1;
+                    break;
+                }
+                break;
+            case 3052374:
+                if (id.equals("char")) {
+                    c = 15;
+                    break;
+                }
+                break;
+            case 3208415:
+                if (id.equals("home")) {
+                    c = '\b';
+                    break;
+                }
+                break;
+            case 3242771:
+                if (id.equals("item")) {
+                    c = 6;
                     break;
                 }
                 break;
             case 3344147:
                 if (id.equals("mats")) {
-                    c = 2;
+                    c = 4;
+                    break;
+                }
+                break;
+            case 3649297:
+                if (id.equals("wife")) {
+                    c = 17;
+                    break;
+                }
+                break;
+            case 3649313:
+                if (id.equals("wifu")) {
+                    c = 19;
+                    break;
+                }
+                break;
+            case 93508654:
+                if (id.equals("basic")) {
+                    c = 0;
                     break;
                 }
                 break;
             case 99469088:
                 if (id.equals("house")) {
-                    c = 3;
+                    c = 7;
+                    break;
+                }
+                break;
+            case 112892910:
+                if (id.equals("waifu")) {
+                    c = 18;
                     break;
                 }
                 break;
             case 561951969:
                 if (id.equals("artifacts")) {
-                    c = 5;
+                    c = 11;
                     break;
                 }
                 break;
             case 1223328215:
                 if (id.equals("weapons")) {
-                    c = 1;
+                    c = 2;
+                    break;
+                }
+                break;
+            case 1269934139:
+                if (id.equals("husband")) {
+                    c = 16;
                     break;
                 }
                 break;
         }
         switch (c) {
             case 0:
-                param.giveAllType = GiveAllType.ALL;
-                break;
             case 1:
-                param.giveAllType = GiveAllType.WEAPONS;
+                param.giveAllType = GiveAllType.BASIC;
                 break;
             case 2:
-                param.giveAllType = GiveAllType.MATS;
-                break;
             case 3:
-                param.giveAllType = GiveAllType.HOUSE;
+                param.giveAllType = GiveAllType.WEAPONS;
                 break;
             case 4:
             case 5:
+            case 6:
+                param.giveAllType = GiveAllType.MATS;
+                break;
+            case 7:
+            case '\b':
+            case '\t':
+                param.giveAllType = GiveAllType.HOUSE;
+                break;
+            case '\n':
+            case 11:
+            case '\f':
                 param.giveAllType = GiveAllType.ARTIFACT;
                 break;
-            case 6:
+            case '\r':
+            case 14:
+            case 15:
+            case 16:
+            case 17:
+            case 18:
+            case 19:
                 param.giveAllType = GiveAllType.AVATARS;
                 break;
             default:
@@ -330,8 +422,8 @@ public final class GiveCommand implements CommandHandler {
         try {
             GiveItemParameters param = parseArgs(sender, targetPlayer, args);
             switch (param.giveAllType) {
-                case ALL:
-                    giveAll(targetPlayer, param);
+                case BASIC:
+                    giveBasic(targetPlayer, param);
                     return;
                 case WEAPONS:
                     giveAllWeapons(targetPlayer, param);
@@ -646,12 +738,14 @@ public final class GiveCommand implements CommandHandler {
         }
     }
 
-    private static void giveAll(Player player, GiveItemParameters param) {
-        giveAllAvatars(player, param);
-        giveAllMats(player, param);
-        giveAllWeapons(player, param);
+    private static void giveBasic(Player player, GiveItemParameters param) {
         SetPropCommand.AllOpenState(player, 1);
         SetPropCommand.unlockMap(player, 1);
-        CommandHandler.sendTranslatedMessage(player, "commands.give.giveall_success", new Object[0]);
+        player.getInventory().addItem(new GameItem(GameData.getItemDataMap().get(201), 10000), ActionReason.SubfieldDrop);
+        player.getInventory().addItem(new GameItem(GameData.getItemDataMap().get(202), 10000), ActionReason.SubfieldDrop);
+        player.getInventory().addItem(new GameItem(GameData.getItemDataMap().get(203), 10000), ActionReason.SubfieldDrop);
+        player.getInventory().addItem(new GameItem(GameData.getItemDataMap().get((int) PacketOpcodes.UnmarkEntityInMinMapNotify), 1000), ActionReason.SubfieldDrop);
+        player.getInventory().addItem(new GameItem(GameData.getItemDataMap().get((int) PacketOpcodes.SceneAvatarStaminaStepRsp), 1000), ActionReason.SubfieldDrop);
+        CommandHandler.sendMessage(player, "Successfully unlock basic, now just need `/g weapons|mats|avatars|basic|teapot|artifact` to unlock all items by category");
     }
 }

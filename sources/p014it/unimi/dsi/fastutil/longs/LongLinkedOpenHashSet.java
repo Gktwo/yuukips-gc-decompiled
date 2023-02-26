@@ -30,13 +30,13 @@ public class LongLinkedOpenHashSet extends AbstractLongSortedSet implements Seri
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f2427n;
+    protected transient int f2391n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2428f;
+    protected final float f2392f;
     private static final int SPLITERATOR_CHARACTERISTICS = 337;
 
     public LongLinkedOpenHashSet(int expected, float f) {
@@ -47,14 +47,14 @@ public class LongLinkedOpenHashSet extends AbstractLongSortedSet implements Seri
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2428f = f;
+            this.f2392f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2427n = arraySize;
+            this.f2391n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2427n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2427n, f);
-            this.key = new long[this.f2427n + 1];
-            this.link = new long[this.f2427n + 1];
+            this.mask = this.f2391n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2391n, f);
+            this.key = new long[this.f2391n + 1];
+            this.link = new long[this.f2391n + 1];
         }
     }
 
@@ -195,22 +195,22 @@ public class LongLinkedOpenHashSet extends AbstractLongSortedSet implements Seri
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2428f);
-        if (needed > this.f2427n) {
+        int needed = HashCommon.arraySize(capacity, this.f2392f);
+        if (needed > this.f2391n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2428f)))));
-        if (needed > this.f2427n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2392f)))));
+        if (needed > this.f2391n) {
             rehash(needed);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongCollection, p014it.unimi.dsi.fastutil.longs.LongCollection
     public boolean addAll(LongCollection c) {
-        if (((double) this.f2428f) <= 0.5d) {
+        if (((double) this.f2392f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -220,7 +220,7 @@ public class LongLinkedOpenHashSet extends AbstractLongSortedSet implements Seri
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Long> c) {
-        if (((double) this.f2428f) <= 0.5d) {
+        if (((double) this.f2392f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -254,7 +254,7 @@ public class LongLinkedOpenHashSet extends AbstractLongSortedSet implements Seri
         } else if (this.containsNull) {
             return false;
         } else {
-            pos = this.f2427n;
+            pos = this.f2391n;
             this.containsNull = true;
         }
         if (this.size == 0) {
@@ -273,7 +273,7 @@ public class LongLinkedOpenHashSet extends AbstractLongSortedSet implements Seri
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f2428f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f2392f));
         return true;
     }
 
@@ -311,22 +311,22 @@ public class LongLinkedOpenHashSet extends AbstractLongSortedSet implements Seri
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f2427n <= this.minN || this.size >= this.maxFill / 4 || this.f2427n <= 16) {
+        if (this.f2391n <= this.minN || this.size >= this.maxFill / 4 || this.f2391n <= 16) {
             return true;
         }
-        rehash(this.f2427n / 2);
+        rehash(this.f2391n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f2427n] = 0;
+        this.key[this.f2391n] = 0;
         this.size--;
-        fixPointers(this.f2427n);
-        if (this.f2427n <= this.minN || this.size >= this.maxFill / 4 || this.f2427n <= 16) {
+        fixPointers(this.f2391n);
+        if (this.f2391n <= this.minN || this.size >= this.maxFill / 4 || this.f2391n <= 16) {
             return true;
         }
-        rehash(this.f2427n / 2);
+        rehash(this.f2391n / 2);
         return true;
     }
 
@@ -402,12 +402,12 @@ public class LongLinkedOpenHashSet extends AbstractLongSortedSet implements Seri
         this.size--;
         if (k == 0) {
             this.containsNull = false;
-            this.key[this.f2427n] = 0;
+            this.key[this.f2391n] = 0;
         } else {
             shiftKeys(pos);
         }
-        if (this.f2427n > this.minN && this.size < this.maxFill / 4 && this.f2427n > 16) {
-            rehash(this.f2427n / 2);
+        if (this.f2391n > this.minN && this.size < this.maxFill / 4 && this.f2391n > 16) {
+            rehash(this.f2391n / 2);
         }
         return k;
     }
@@ -427,12 +427,12 @@ public class LongLinkedOpenHashSet extends AbstractLongSortedSet implements Seri
         this.size--;
         if (k == 0) {
             this.containsNull = false;
-            this.key[this.f2427n] = 0;
+            this.key[this.f2391n] = 0;
         } else {
             shiftKeys(pos);
         }
-        if (this.f2427n > this.minN && this.size < this.maxFill / 4 && this.f2427n > 16) {
-            rehash(this.f2427n / 2);
+        if (this.f2391n > this.minN && this.size < this.maxFill / 4 && this.f2391n > 16) {
+            rehash(this.f2391n / 2);
         }
         return k;
     }
@@ -504,11 +504,11 @@ public class LongLinkedOpenHashSet extends AbstractLongSortedSet implements Seri
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToFirst(this.f2427n);
+            moveIndexToFirst(this.f2391n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f2427n;
+            pos = this.f2391n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -527,7 +527,7 @@ public class LongLinkedOpenHashSet extends AbstractLongSortedSet implements Seri
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f2428f));
+        rehash(HashCommon.arraySize(this.size, this.f2392f));
         return true;
     }
 
@@ -550,11 +550,11 @@ public class LongLinkedOpenHashSet extends AbstractLongSortedSet implements Seri
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToLast(this.f2427n);
+            moveIndexToLast(this.f2391n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f2427n;
+            pos = this.f2391n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -573,7 +573,7 @@ public class LongLinkedOpenHashSet extends AbstractLongSortedSet implements Seri
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f2428f));
+        rehash(HashCommon.arraySize(this.size, this.f2392f));
         return true;
     }
 
@@ -718,8 +718,8 @@ public class LongLinkedOpenHashSet extends AbstractLongSortedSet implements Seri
             this.index = -1;
             if (from == 0) {
                 if (LongLinkedOpenHashSet.this.containsNull) {
-                    this.next = (int) LongLinkedOpenHashSet.this.link[LongLinkedOpenHashSet.this.f2427n];
-                    this.prev = LongLinkedOpenHashSet.this.f2427n;
+                    this.next = (int) LongLinkedOpenHashSet.this.link[LongLinkedOpenHashSet.this.f2391n];
+                    this.prev = LongLinkedOpenHashSet.this.f2391n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + from + " does not belong to this set.");
@@ -858,9 +858,9 @@ public class LongLinkedOpenHashSet extends AbstractLongSortedSet implements Seri
             }
             int pos = this.curr;
             this.curr = -1;
-            if (pos == LongLinkedOpenHashSet.this.f2427n) {
+            if (pos == LongLinkedOpenHashSet.this.f2391n) {
                 LongLinkedOpenHashSet.this.containsNull = false;
-                LongLinkedOpenHashSet.this.key[LongLinkedOpenHashSet.this.f2427n] = 0;
+                LongLinkedOpenHashSet.this.key[LongLinkedOpenHashSet.this.f2391n] = 0;
                 return;
             }
             long[] key = LongLinkedOpenHashSet.this.key;
@@ -930,8 +930,8 @@ public class LongLinkedOpenHashSet extends AbstractLongSortedSet implements Seri
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2428f)));
-        if (l >= this.f2427n || this.size > HashCommon.maxFill(l, this.f2428f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2392f)));
+        if (l >= this.f2391n || this.size > HashCommon.maxFill(l, this.f2392f)) {
             return true;
         }
         try {
@@ -989,9 +989,9 @@ public class LongLinkedOpenHashSet extends AbstractLongSortedSet implements Seri
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f2427n = newN;
+        this.f2391n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f2427n, this.f2428f);
+        this.maxFill = HashCommon.maxFill(this.f2391n, this.f2392f);
         this.key = newKey;
     }
 
@@ -1044,12 +1044,12 @@ public class LongLinkedOpenHashSet extends AbstractLongSortedSet implements Seri
         int pos;
         int i;
         s.defaultReadObject();
-        this.f2427n = HashCommon.arraySize(this.size, this.f2428f);
-        this.maxFill = HashCommon.maxFill(this.f2427n, this.f2428f);
-        this.mask = this.f2427n - 1;
-        long[] key = new long[this.f2427n + 1];
+        this.f2391n = HashCommon.arraySize(this.size, this.f2392f);
+        this.maxFill = HashCommon.maxFill(this.f2391n, this.f2392f);
+        this.mask = this.f2391n - 1;
+        long[] key = new long[this.f2391n + 1];
         this.key = key;
-        long[] link = new long[this.f2427n + 1];
+        long[] link = new long[this.f2391n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -1062,7 +1062,7 @@ public class LongLinkedOpenHashSet extends AbstractLongSortedSet implements Seri
             }
             long k = s.readLong();
             if (k == 0) {
-                pos = this.f2427n;
+                pos = this.f2391n;
                 this.containsNull = true;
             } else {
                 int mix = ((int) HashCommon.mix(k)) & this.mask;

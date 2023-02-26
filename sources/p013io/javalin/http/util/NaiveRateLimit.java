@@ -23,12 +23,12 @@ public final class NaiveRateLimit {
         Intrinsics.checkNotNullParameter(ctx, "ctx");
         Intrinsics.checkNotNullParameter(timeUnit, "timeUnit");
         RateLimitUtil.INSTANCE.getLimiters().computeIfAbsent(timeUnit, (v1) -> {
-            return m5847requestPerTimeUnit$lambda0(r2, v1);
+            return m5844requestPerTimeUnit$lambda0(r2, v1);
         }).incrementCounter(ctx, numRequests);
     }
 
     /* renamed from: requestPerTimeUnit$lambda-0  reason: not valid java name */
-    private static final RateLimiter m5847requestPerTimeUnit$lambda0(TimeUnit $timeUnit, TimeUnit it) {
+    private static final RateLimiter m5844requestPerTimeUnit$lambda0(TimeUnit $timeUnit, TimeUnit it) {
         Intrinsics.checkNotNullParameter($timeUnit, "$timeUnit");
         Intrinsics.checkNotNullParameter(it, "it");
         return new RateLimiter($timeUnit);

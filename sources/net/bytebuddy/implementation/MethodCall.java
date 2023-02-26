@@ -1,5 +1,6 @@
 package net.bytebuddy.implementation;
 
+import emu.grasscutter.net.packet.PacketOpcodes;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -611,9 +612,8 @@ public class MethodCall implements Implementation.Composable {
                 throw new IllegalStateException("Cannot assign " + parameterDescription + " to " + target + " for " + this.instrumentedMethod);
             }
 
-            /* access modifiers changed from: protected */
             /* loaded from: grasscutter.jar:net/bytebuddy/implementation/MethodCall$ArgumentLoader$ForMethodParameter$OfInstrumentedMethod.class */
-            public enum OfInstrumentedMethod implements Factory, ArgumentProvider {
+            protected enum OfInstrumentedMethod implements Factory, ArgumentProvider {
                 INSTANCE;
 
                 @Override // net.bytebuddy.dynamic.scaffold.InstrumentedType.Prepareable
@@ -1521,7 +1521,7 @@ public class MethodCall implements Implementation.Composable {
 
                 @Override // net.bytebuddy.dynamic.scaffold.InstrumentedType.Prepareable
                 public InstrumentedType prepare(InstrumentedType instrumentedType) {
-                    return instrumentedType.withField(new FieldDescription.Token(this.name, 4169, this.fieldType)).withInitializer(new LoadedTypeInitializer.ForStaticField(this.name, this.target));
+                    return instrumentedType.withField(new FieldDescription.Token(this.name, PacketOpcodes.PlayerCancelMatchRsp, this.fieldType)).withInitializer(new LoadedTypeInitializer.ForStaticField(this.name, this.target));
                 }
 
                 @Override // net.bytebuddy.implementation.MethodCall.TargetHandler.Factory

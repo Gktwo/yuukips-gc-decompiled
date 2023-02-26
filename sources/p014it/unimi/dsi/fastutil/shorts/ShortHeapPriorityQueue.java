@@ -17,14 +17,14 @@ public class ShortHeapPriorityQueue implements ShortPriorityQueue, Serializable 
     protected int size;
 
     /* renamed from: c */
-    protected ShortComparator f3042c;
+    protected ShortComparator f3006c;
 
     public ShortHeapPriorityQueue(int capacity, ShortComparator c) {
         this.heap = ShortArrays.EMPTY_ARRAY;
         if (capacity > 0) {
             this.heap = new short[capacity];
         }
-        this.f3042c = c;
+        this.f3006c = c;
     }
 
     public ShortHeapPriorityQueue(int capacity) {
@@ -88,7 +88,7 @@ public class ShortHeapPriorityQueue implements ShortPriorityQueue, Serializable 
         int i = this.size;
         this.size = i + 1;
         sArr[i] = x;
-        ShortHeaps.upHeap(this.heap, this.size, this.size - 1, this.f3042c);
+        ShortHeaps.upHeap(this.heap, this.size, this.size - 1, this.f3006c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.ShortPriorityQueue
@@ -103,7 +103,7 @@ public class ShortHeapPriorityQueue implements ShortPriorityQueue, Serializable 
         this.size = i;
         sArr[0] = sArr2[i];
         if (this.size != 0) {
-            ShortHeaps.downHeap(this.heap, this.size, 0, this.f3042c);
+            ShortHeaps.downHeap(this.heap, this.size, 0, this.f3006c);
         }
         return result;
     }
@@ -118,7 +118,7 @@ public class ShortHeapPriorityQueue implements ShortPriorityQueue, Serializable 
 
     @Override // p014it.unimi.dsi.fastutil.PriorityQueue
     public void changed() {
-        ShortHeaps.downHeap(this.heap, this.size, 0, this.f3042c);
+        ShortHeaps.downHeap(this.heap, this.size, 0, this.f3006c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.PriorityQueue
@@ -138,7 +138,7 @@ public class ShortHeapPriorityQueue implements ShortPriorityQueue, Serializable 
     /* Return type fixed from 'it.unimi.dsi.fastutil.shorts.ShortComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.shorts.ShortPriorityQueue, p014it.unimi.dsi.fastutil.PriorityQueue
     public Comparator<? super Short> comparator() {
-        return this.f3042c;
+        return this.f3006c;
     }
 
     private void writeObject(ObjectOutputStream s) throws IOException {

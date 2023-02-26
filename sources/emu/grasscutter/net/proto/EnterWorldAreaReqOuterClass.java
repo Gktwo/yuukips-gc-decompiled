@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EnterWorldAreaReqOuterClass.class */
 public final class EnterWorldAreaReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017EnterWorldAreaReq.proto\"7\n\u0011EnterWorldAreaReq\u0012\u0011\n\tarea_type\u0018\b \u0001(\r\u0012\u000f\n\u0007area_id\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017EnterWorldAreaReq.proto\"5\n\u0011EnterWorldAreaReq\u0012\u000e\n\u0006areaId\u0018\u0001 \u0001(\r\u0012\u0010\n\bareaType\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_EnterWorldAreaReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_EnterWorldAreaReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EnterWorldAreaReq_descriptor, new String[]{"AreaType", "AreaId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_EnterWorldAreaReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EnterWorldAreaReq_descriptor, new String[]{"AreaId", "AreaType"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EnterWorldAreaReqOuterClass$EnterWorldAreaReqOrBuilder.class */
     public interface EnterWorldAreaReqOrBuilder extends MessageOrBuilder {
-        int getAreaType();
-
         int getAreaId();
+
+        int getAreaType();
     }
 
     private EnterWorldAreaReqOuterClass() {
@@ -43,10 +43,10 @@ public final class EnterWorldAreaReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EnterWorldAreaReqOuterClass$EnterWorldAreaReq.class */
     public static final class EnterWorldAreaReq extends GeneratedMessageV3 implements EnterWorldAreaReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AREA_TYPE_FIELD_NUMBER = 8;
-        private int areaType_;
-        public static final int AREA_ID_FIELD_NUMBER = 10;
+        public static final int AREAID_FIELD_NUMBER = 1;
         private int areaId_;
+        public static final int AREATYPE_FIELD_NUMBER = 11;
+        private int areaType_;
         private byte memoizedIsInitialized;
         private static final EnterWorldAreaReq DEFAULT_INSTANCE = new EnterWorldAreaReq();
         private static final Parser<EnterWorldAreaReq> PARSER = new AbstractParser<EnterWorldAreaReq>() { // from class: emu.grasscutter.net.proto.EnterWorldAreaReqOuterClass.EnterWorldAreaReq.1
@@ -92,11 +92,11 @@ public final class EnterWorldAreaReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 64:
-                                this.areaType_ = input.readUInt32();
-                                break;
-                            case 80:
+                            case 8:
                                 this.areaId_ = input.readUInt32();
+                                break;
+                            case 88:
+                                this.areaType_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -128,13 +128,13 @@ public final class EnterWorldAreaReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.EnterWorldAreaReqOuterClass.EnterWorldAreaReqOrBuilder
-        public int getAreaType() {
-            return this.areaType_;
+        public int getAreaId() {
+            return this.areaId_;
         }
 
         @Override // emu.grasscutter.net.proto.EnterWorldAreaReqOuterClass.EnterWorldAreaReqOrBuilder
-        public int getAreaId() {
-            return this.areaId_;
+        public int getAreaType() {
+            return this.areaType_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -152,11 +152,11 @@ public final class EnterWorldAreaReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.areaType_ != 0) {
-                output.writeUInt32(8, this.areaType_);
-            }
             if (this.areaId_ != 0) {
-                output.writeUInt32(10, this.areaId_);
+                output.writeUInt32(1, this.areaId_);
+            }
+            if (this.areaType_ != 0) {
+                output.writeUInt32(11, this.areaType_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class EnterWorldAreaReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.areaType_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(8, this.areaType_);
-            }
             if (this.areaId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.areaId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.areaId_);
+            }
+            if (this.areaType_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(11, this.areaType_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -188,7 +188,7 @@ public final class EnterWorldAreaReqOuterClass {
                 return equals(obj);
             }
             EnterWorldAreaReq other = (EnterWorldAreaReq) obj;
-            return getAreaType() == other.getAreaType() && getAreaId() == other.getAreaId() && this.unknownFields.equals(other.unknownFields);
+            return getAreaId() == other.getAreaId() && getAreaType() == other.getAreaType() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -196,7 +196,7 @@ public final class EnterWorldAreaReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getAreaType())) + 10)) + getAreaId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getAreaId())) + 11)) + getAreaType())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -275,8 +275,8 @@ public final class EnterWorldAreaReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EnterWorldAreaReqOuterClass$EnterWorldAreaReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements EnterWorldAreaReqOrBuilder {
-            private int areaType_;
             private int areaId_;
+            private int areaType_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return EnterWorldAreaReqOuterClass.internal_static_EnterWorldAreaReq_descriptor;
@@ -304,8 +304,8 @@ public final class EnterWorldAreaReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.areaType_ = 0;
                 this.areaId_ = 0;
+                this.areaType_ = 0;
                 return this;
             }
 
@@ -331,8 +331,8 @@ public final class EnterWorldAreaReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public EnterWorldAreaReq buildPartial() {
                 EnterWorldAreaReq result = new EnterWorldAreaReq(this);
-                result.areaType_ = this.areaType_;
                 result.areaId_ = this.areaId_;
+                result.areaType_ = this.areaType_;
                 onBuilt();
                 return result;
             }
@@ -380,11 +380,11 @@ public final class EnterWorldAreaReqOuterClass {
                 if (other == EnterWorldAreaReq.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getAreaType() != 0) {
-                    setAreaType(other.getAreaType());
-                }
                 if (other.getAreaId() != 0) {
                     setAreaId(other.getAreaId());
+                }
+                if (other.getAreaType() != 0) {
+                    setAreaType(other.getAreaType());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -419,23 +419,6 @@ public final class EnterWorldAreaReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.EnterWorldAreaReqOuterClass.EnterWorldAreaReqOrBuilder
-            public int getAreaType() {
-                return this.areaType_;
-            }
-
-            public Builder setAreaType(int value) {
-                this.areaType_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearAreaType() {
-                this.areaType_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.EnterWorldAreaReqOuterClass.EnterWorldAreaReqOrBuilder
             public int getAreaId() {
                 return this.areaId_;
             }
@@ -448,6 +431,23 @@ public final class EnterWorldAreaReqOuterClass {
 
             public Builder clearAreaId() {
                 this.areaId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.EnterWorldAreaReqOuterClass.EnterWorldAreaReqOrBuilder
+            public int getAreaType() {
+                return this.areaType_;
+            }
+
+            public Builder setAreaType(int value) {
+                this.areaType_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearAreaType() {
+                this.areaType_ = 0;
                 onChanged();
                 return this;
             }

@@ -13,9 +13,9 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Message;
 import com.google.protobuf.MessageOrBuilder;
 import com.google.protobuf.Parser;
-import com.google.protobuf.ProtocolMessageEnum;
 import com.google.protobuf.SingleFieldBuilderV3;
 import com.google.protobuf.UnknownFieldSet;
+import emu.grasscutter.net.proto.LockStateOuterClass;
 import emu.grasscutter.net.proto.VectorOuterClass;
 import emu.grasscutter.net.proto.WeeklyBossResinDiscountInfoOuterClass;
 import java.io.IOException;
@@ -24,29 +24,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/InvestigationMonsterOuterClass.class */
 public final class InvestigationMonsterOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aInvestigationMonster.proto\u001a\fVector.proto\u001a!WeeklyBossResinDiscountInfo.proto\"\u0004\n\u0014InvestigationMonster\u0012\u0010\n\bis_alive\u0018\r \u0001(\b\u0012\u0014\n\u0003pos\u0018\u0007 \u0001(\u000b2\u0007.Vector\u0012\u0010\n\bscene_id\u0018\f \u0001(\r\u0012\u0019\n\u0011next_refresh_time\u0018\b \u0001(\r\u0012\u000f\n\u0007city_id\u0018\u000e \u0001(\r\u0012\u0011\n\bgroup_id\u0018Ç\r \u0001(\r\u0012$\n\u001cnext_boss_chest_refresh_time\u0018\u0001 \u0001(\r\u0012E\n\u001fweekly_boss_resin_discount_info\u0018\u0003 \u0001(\u000b2\u001c.WeeklyBossResinDiscountInfo\u0012\u0016\n\u000eboss_chest_num\u0018\u0006 \u0001(\r\u0012\n\n\u0002id\u0018\t \u0001(\r\u0012\u0013\n\nmonster_id\u0018²\u0004 \u0001(\r\u00123\n\nlock_state\u0018\u0004 \u0001(\u000e2\u001f.InvestigationMonster.LockState\u0012\u0018\n\u0010refresh_interval\u0018\n \u0001(\r\u0012\u0016\n\u000eis_area_locked\u0018\u0005 \u0001(\b\u0012\r\n\u0005level\u0018\u0002 \u0001(\r\u0012\u001a\n\u0012max_boss_chest_num\u0018\u000b \u0001(\r\u0012\r\n\u0005resin\u0018\u000f \u0001(\r\"6\n\tLockState\u0012\u0013\n\u000fLOCK_STATE_NONE\u0010��\u0012\u0014\n\u0010LOCK_STATE_QUEST\u0010\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor(), WeeklyBossResinDiscountInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aInvestigationMonster.proto\u001a!WeeklyBossResinDiscountInfo.proto\u001a\u000fLockState.proto\u001a\fVector.proto\"¨\u0003\n\u0014InvestigationMonster\u0012\u0017\n\u000fnextRefreshTime\u0018\u0001 \u0001(\r\u0012\u0014\n\fbossChestNum\u0018\n \u0001(\r\u0012A\n\u001bweeklyBossResinDiscountInfo\u0018\b \u0001(\u000b2\u001c.WeeklyBossResinDiscountInfo\u0012\u001d\n\tlockState\u0018\u0002 \u0001(\u000e2\n.LockState\u0012\u0017\n\u000frefreshInterval\u0018\u0006 \u0001(\r\u0012\u000f\n\u0007groupId\u0018P \u0001(\r\u0012\u000f\n\u0007sceneId\u0018\r \u0001(\r\u0012\u000e\n\u0006cityId\u0018\u0007 \u0001(\r\u0012\u0017\n\u000fmaxBossChestNum\u0018\u000b \u0001(\r\u0012\u0014\n\u0003pos\u0018\u0004 \u0001(\u000b2\u0007.Vector\u0012\u0014\n\fisAreaLocked\u0018\u0005 \u0001(\b\u0012\r\n\u0005level\u0018\u0003 \u0001(\r\u0012\n\n\u0002id\u0018\u000f \u0001(\r\u0012\u0012\n\tmonsterId\u0018Õ\u000b \u0001(\r\u0012 \n\u0018nextBossChestRefreshTime\u0018\f \u0001(\r\u0012\r\n\u0005resin\u0018\t \u0001(\r\u0012\u000f\n\u0007isAlive\u0018\u000e \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{WeeklyBossResinDiscountInfoOuterClass.getDescriptor(), LockStateOuterClass.getDescriptor(), VectorOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_InvestigationMonster_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_InvestigationMonster_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_InvestigationMonster_descriptor, new String[]{"IsAlive", "Pos", "SceneId", "NextRefreshTime", "CityId", "GroupId", "NextBossChestRefreshTime", "WeeklyBossResinDiscountInfo", "BossChestNum", "Id", "MonsterId", "LockState", "RefreshInterval", "IsAreaLocked", "Level", "MaxBossChestNum", "Resin"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_InvestigationMonster_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_InvestigationMonster_descriptor, new String[]{"NextRefreshTime", "BossChestNum", "WeeklyBossResinDiscountInfo", "LockState", "RefreshInterval", "GroupId", "SceneId", "CityId", "MaxBossChestNum", "Pos", "IsAreaLocked", "Level", "Id", "MonsterId", "NextBossChestRefreshTime", "Resin", "IsAlive"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/InvestigationMonsterOuterClass$InvestigationMonsterOrBuilder.class */
     public interface InvestigationMonsterOrBuilder extends MessageOrBuilder {
-        boolean getIsAlive();
-
-        boolean hasPos();
-
-        VectorOuterClass.Vector getPos();
-
-        VectorOuterClass.VectorOrBuilder getPosOrBuilder();
-
-        int getSceneId();
-
         int getNextRefreshTime();
 
-        int getCityId();
-
-        int getGroupId();
-
-        int getNextBossChestRefreshTime();
+        int getBossChestNum();
 
         boolean hasWeeklyBossResinDiscountInfo();
 
@@ -54,25 +40,39 @@ public final class InvestigationMonsterOuterClass {
 
         WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfoOrBuilder getWeeklyBossResinDiscountInfoOrBuilder();
 
-        int getBossChestNum();
-
-        int getId();
-
-        int getMonsterId();
-
         int getLockStateValue();
 
-        InvestigationMonster.LockState getLockState();
+        LockStateOuterClass.LockState getLockState();
 
         int getRefreshInterval();
+
+        int getGroupId();
+
+        int getSceneId();
+
+        int getCityId();
+
+        int getMaxBossChestNum();
+
+        boolean hasPos();
+
+        VectorOuterClass.Vector getPos();
+
+        VectorOuterClass.VectorOrBuilder getPosOrBuilder();
 
         boolean getIsAreaLocked();
 
         int getLevel();
 
-        int getMaxBossChestNum();
+        int getId();
+
+        int getMonsterId();
+
+        int getNextBossChestRefreshTime();
 
         int getResin();
+
+        boolean getIsAlive();
     }
 
     private InvestigationMonsterOuterClass() {
@@ -88,40 +88,40 @@ public final class InvestigationMonsterOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/InvestigationMonsterOuterClass$InvestigationMonster.class */
     public static final class InvestigationMonster extends GeneratedMessageV3 implements InvestigationMonsterOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_ALIVE_FIELD_NUMBER = 13;
-        private boolean isAlive_;
-        public static final int POS_FIELD_NUMBER = 7;
-        private VectorOuterClass.Vector pos_;
-        public static final int SCENE_ID_FIELD_NUMBER = 12;
-        private int sceneId_;
-        public static final int NEXT_REFRESH_TIME_FIELD_NUMBER = 8;
+        public static final int NEXTREFRESHTIME_FIELD_NUMBER = 1;
         private int nextRefreshTime_;
-        public static final int CITY_ID_FIELD_NUMBER = 14;
-        private int cityId_;
-        public static final int GROUP_ID_FIELD_NUMBER = 1735;
-        private int groupId_;
-        public static final int NEXT_BOSS_CHEST_REFRESH_TIME_FIELD_NUMBER = 1;
-        private int nextBossChestRefreshTime_;
-        public static final int WEEKLY_BOSS_RESIN_DISCOUNT_INFO_FIELD_NUMBER = 3;
-        private WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo weeklyBossResinDiscountInfo_;
-        public static final int BOSS_CHEST_NUM_FIELD_NUMBER = 6;
+        public static final int BOSSCHESTNUM_FIELD_NUMBER = 10;
         private int bossChestNum_;
-        public static final int ID_FIELD_NUMBER = 9;
-        private int id_;
-        public static final int MONSTER_ID_FIELD_NUMBER = 562;
-        private int monsterId_;
-        public static final int LOCK_STATE_FIELD_NUMBER = 4;
+        public static final int WEEKLYBOSSRESINDISCOUNTINFO_FIELD_NUMBER = 8;
+        private WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo weeklyBossResinDiscountInfo_;
+        public static final int LOCKSTATE_FIELD_NUMBER = 2;
         private int lockState_;
-        public static final int REFRESH_INTERVAL_FIELD_NUMBER = 10;
+        public static final int REFRESHINTERVAL_FIELD_NUMBER = 6;
         private int refreshInterval_;
-        public static final int IS_AREA_LOCKED_FIELD_NUMBER = 5;
-        private boolean isAreaLocked_;
-        public static final int LEVEL_FIELD_NUMBER = 2;
-        private int level_;
-        public static final int MAX_BOSS_CHEST_NUM_FIELD_NUMBER = 11;
+        public static final int GROUPID_FIELD_NUMBER = 80;
+        private int groupId_;
+        public static final int SCENEID_FIELD_NUMBER = 13;
+        private int sceneId_;
+        public static final int CITYID_FIELD_NUMBER = 7;
+        private int cityId_;
+        public static final int MAXBOSSCHESTNUM_FIELD_NUMBER = 11;
         private int maxBossChestNum_;
-        public static final int RESIN_FIELD_NUMBER = 15;
+        public static final int POS_FIELD_NUMBER = 4;
+        private VectorOuterClass.Vector pos_;
+        public static final int ISAREALOCKED_FIELD_NUMBER = 5;
+        private boolean isAreaLocked_;
+        public static final int LEVEL_FIELD_NUMBER = 3;
+        private int level_;
+        public static final int ID_FIELD_NUMBER = 15;
+        private int id_;
+        public static final int MONSTERID_FIELD_NUMBER = 1493;
+        private int monsterId_;
+        public static final int NEXTBOSSCHESTREFRESHTIME_FIELD_NUMBER = 12;
+        private int nextBossChestRefreshTime_;
+        public static final int RESIN_FIELD_NUMBER = 9;
         private int resin_;
+        public static final int ISALIVE_FIELD_NUMBER = 14;
+        private boolean isAlive_;
         private byte memoizedIsInitialized;
         private static final InvestigationMonster DEFAULT_INSTANCE = new InvestigationMonster();
         private static final Parser<InvestigationMonster> PARSER = new AbstractParser<InvestigationMonster>() { // from class: emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.1
@@ -170,69 +170,69 @@ public final class InvestigationMonsterOuterClass {
                                     done = true;
                                     break;
                                 case 8:
-                                    this.nextBossChestRefreshTime_ = input.readUInt32();
+                                    this.nextRefreshTime_ = input.readUInt32();
                                     break;
                                 case 16:
+                                    this.lockState_ = input.readEnum();
+                                    break;
+                                case 24:
                                     this.level_ = input.readUInt32();
                                     break;
-                                case 26:
-                                    WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.Builder subBuilder = this.weeklyBossResinDiscountInfo_ != null ? this.weeklyBossResinDiscountInfo_.toBuilder() : null;
-                                    this.weeklyBossResinDiscountInfo_ = (WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo) input.readMessage(WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.parser(), extensionRegistry);
+                                case 34:
+                                    VectorOuterClass.Vector.Builder subBuilder = this.pos_ != null ? this.pos_.toBuilder() : null;
+                                    this.pos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
                                     if (subBuilder == null) {
                                         break;
                                     } else {
-                                        subBuilder.mergeFrom(this.weeklyBossResinDiscountInfo_);
-                                        this.weeklyBossResinDiscountInfo_ = subBuilder.buildPartial();
+                                        subBuilder.mergeFrom(this.pos_);
+                                        this.pos_ = subBuilder.buildPartial();
                                         break;
                                     }
-                                case 32:
-                                    this.lockState_ = input.readEnum();
-                                    break;
                                 case 40:
                                     this.isAreaLocked_ = input.readBool();
                                     break;
                                 case 48:
-                                    this.bossChestNum_ = input.readUInt32();
+                                    this.refreshInterval_ = input.readUInt32();
                                     break;
-                                case 58:
-                                    VectorOuterClass.Vector.Builder subBuilder2 = this.pos_ != null ? this.pos_.toBuilder() : null;
-                                    this.pos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
+                                case 56:
+                                    this.cityId_ = input.readUInt32();
+                                    break;
+                                case 66:
+                                    WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.Builder subBuilder2 = this.weeklyBossResinDiscountInfo_ != null ? this.weeklyBossResinDiscountInfo_.toBuilder() : null;
+                                    this.weeklyBossResinDiscountInfo_ = (WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo) input.readMessage(WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.parser(), extensionRegistry);
                                     if (subBuilder2 == null) {
                                         break;
                                     } else {
-                                        subBuilder2.mergeFrom(this.pos_);
-                                        this.pos_ = subBuilder2.buildPartial();
+                                        subBuilder2.mergeFrom(this.weeklyBossResinDiscountInfo_);
+                                        this.weeklyBossResinDiscountInfo_ = subBuilder2.buildPartial();
                                         break;
                                     }
-                                case 64:
-                                    this.nextRefreshTime_ = input.readUInt32();
-                                    break;
                                 case 72:
-                                    this.id_ = input.readUInt32();
+                                    this.resin_ = input.readUInt32();
                                     break;
                                 case 80:
-                                    this.refreshInterval_ = input.readUInt32();
+                                    this.bossChestNum_ = input.readUInt32();
                                     break;
                                 case 88:
                                     this.maxBossChestNum_ = input.readUInt32();
                                     break;
                                 case 96:
-                                    this.sceneId_ = input.readUInt32();
+                                    this.nextBossChestRefreshTime_ = input.readUInt32();
                                     break;
                                 case 104:
-                                    this.isAlive_ = input.readBool();
+                                    this.sceneId_ = input.readUInt32();
                                     break;
                                 case 112:
-                                    this.cityId_ = input.readUInt32();
+                                    this.isAlive_ = input.readBool();
                                     break;
                                 case 120:
-                                    this.resin_ = input.readUInt32();
+                                    this.id_ = input.readUInt32();
                                     break;
-                                case 4496:
-                                    this.monsterId_ = input.readUInt32();
-                                    break;
-                                case 13880:
+                                case 640:
                                     this.groupId_ = input.readUInt32();
+                                    break;
+                                case 11944:
+                                    this.monsterId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -264,126 +264,14 @@ public final class InvestigationMonsterOuterClass {
             return InvestigationMonsterOuterClass.internal_static_InvestigationMonster_fieldAccessorTable.ensureFieldAccessorsInitialized(InvestigationMonster.class, Builder.class);
         }
 
-        /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/InvestigationMonsterOuterClass$InvestigationMonster$LockState.class */
-        public enum LockState implements ProtocolMessageEnum {
-            LOCK_STATE_NONE(0),
-            LOCK_STATE_QUEST(1),
-            UNRECOGNIZED(-1);
-            
-            public static final int LOCK_STATE_NONE_VALUE = 0;
-            public static final int LOCK_STATE_QUEST_VALUE = 1;
-            private static final Internal.EnumLiteMap<LockState> internalValueMap = new Internal.EnumLiteMap<LockState>() { // from class: emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.LockState.1
-                @Override // com.google.protobuf.Internal.EnumLiteMap
-                public LockState findValueByNumber(int number) {
-                    return LockState.forNumber(number);
-                }
-            };
-            private static final LockState[] VALUES = values();
-            private final int value;
-
-            @Override // com.google.protobuf.ProtocolMessageEnum, com.google.protobuf.Internal.EnumLite
-            public final int getNumber() {
-                if (this != UNRECOGNIZED) {
-                    return this.value;
-                }
-                throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
-            }
-
-            @Deprecated
-            public static LockState valueOf(int value) {
-                return forNumber(value);
-            }
-
-            public static LockState forNumber(int value) {
-                switch (value) {
-                    case 0:
-                        return LOCK_STATE_NONE;
-                    case 1:
-                        return LOCK_STATE_QUEST;
-                    default:
-                        return null;
-                }
-            }
-
-            public static Internal.EnumLiteMap<LockState> internalGetValueMap() {
-                return internalValueMap;
-            }
-
-            @Override // com.google.protobuf.ProtocolMessageEnum
-            public final Descriptors.EnumValueDescriptor getValueDescriptor() {
-                if (this != UNRECOGNIZED) {
-                    return getDescriptor().getValues().get(ordinal());
-                }
-                throw new IllegalStateException("Can't get the descriptor of an unrecognized enum value.");
-            }
-
-            @Override // com.google.protobuf.ProtocolMessageEnum
-            public final Descriptors.EnumDescriptor getDescriptorForType() {
-                return getDescriptor();
-            }
-
-            public static final Descriptors.EnumDescriptor getDescriptor() {
-                return InvestigationMonster.getDescriptor().getEnumTypes().get(0);
-            }
-
-            public static LockState valueOf(Descriptors.EnumValueDescriptor desc) {
-                if (desc.getType() != getDescriptor()) {
-                    throw new IllegalArgumentException("EnumValueDescriptor is not for this type.");
-                } else if (desc.getIndex() == -1) {
-                    return UNRECOGNIZED;
-                } else {
-                    return VALUES[desc.getIndex()];
-                }
-            }
-
-            LockState(int value) {
-                this.value = value;
-            }
-        }
-
-        @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-        public boolean getIsAlive() {
-            return this.isAlive_;
-        }
-
-        @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-        public boolean hasPos() {
-            return this.pos_ != null;
-        }
-
-        @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-        public VectorOuterClass.Vector getPos() {
-            return this.pos_ == null ? VectorOuterClass.Vector.getDefaultInstance() : this.pos_;
-        }
-
-        @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-        public VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-            return getPos();
-        }
-
-        @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-        public int getSceneId() {
-            return this.sceneId_;
-        }
-
         @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
         public int getNextRefreshTime() {
             return this.nextRefreshTime_;
         }
 
         @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-        public int getCityId() {
-            return this.cityId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-        public int getGroupId() {
-            return this.groupId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-        public int getNextBossChestRefreshTime() {
-            return this.nextBossChestRefreshTime_;
+        public int getBossChestNum() {
+            return this.bossChestNum_;
         }
 
         @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
@@ -402,34 +290,54 @@ public final class InvestigationMonsterOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-        public int getBossChestNum() {
-            return this.bossChestNum_;
-        }
-
-        @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-        public int getId() {
-            return this.id_;
-        }
-
-        @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-        public int getMonsterId() {
-            return this.monsterId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
         public int getLockStateValue() {
             return this.lockState_;
         }
 
         @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-        public LockState getLockState() {
-            LockState result = LockState.valueOf(this.lockState_);
-            return result == null ? LockState.UNRECOGNIZED : result;
+        public LockStateOuterClass.LockState getLockState() {
+            LockStateOuterClass.LockState result = LockStateOuterClass.LockState.valueOf(this.lockState_);
+            return result == null ? LockStateOuterClass.LockState.UNRECOGNIZED : result;
         }
 
         @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
         public int getRefreshInterval() {
             return this.refreshInterval_;
+        }
+
+        @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+        public int getGroupId() {
+            return this.groupId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+        public int getSceneId() {
+            return this.sceneId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+        public int getCityId() {
+            return this.cityId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+        public int getMaxBossChestNum() {
+            return this.maxBossChestNum_;
+        }
+
+        @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+        public boolean hasPos() {
+            return this.pos_ != null;
+        }
+
+        @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+        public VectorOuterClass.Vector getPos() {
+            return this.pos_ == null ? VectorOuterClass.Vector.getDefaultInstance() : this.pos_;
+        }
+
+        @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+        public VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
+            return getPos();
         }
 
         @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
@@ -443,13 +351,28 @@ public final class InvestigationMonsterOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-        public int getMaxBossChestNum() {
-            return this.maxBossChestNum_;
+        public int getId() {
+            return this.id_;
+        }
+
+        @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+        public int getMonsterId() {
+            return this.monsterId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+        public int getNextBossChestRefreshTime() {
+            return this.nextBossChestRefreshTime_;
         }
 
         @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
         public int getResin() {
             return this.resin_;
+        }
+
+        @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+        public boolean getIsAlive() {
+            return this.isAlive_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -467,56 +390,56 @@ public final class InvestigationMonsterOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.nextBossChestRefreshTime_ != 0) {
-                output.writeUInt32(1, this.nextBossChestRefreshTime_);
+            if (this.nextRefreshTime_ != 0) {
+                output.writeUInt32(1, this.nextRefreshTime_);
+            }
+            if (this.lockState_ != LockStateOuterClass.LockState.LOCK_STATE_NONE.getNumber()) {
+                output.writeEnum(2, this.lockState_);
             }
             if (this.level_ != 0) {
-                output.writeUInt32(2, this.level_);
+                output.writeUInt32(3, this.level_);
             }
-            if (this.weeklyBossResinDiscountInfo_ != null) {
-                output.writeMessage(3, getWeeklyBossResinDiscountInfo());
-            }
-            if (this.lockState_ != LockState.LOCK_STATE_NONE.getNumber()) {
-                output.writeEnum(4, this.lockState_);
+            if (this.pos_ != null) {
+                output.writeMessage(4, getPos());
             }
             if (this.isAreaLocked_) {
                 output.writeBool(5, this.isAreaLocked_);
             }
-            if (this.bossChestNum_ != 0) {
-                output.writeUInt32(6, this.bossChestNum_);
-            }
-            if (this.pos_ != null) {
-                output.writeMessage(7, getPos());
-            }
-            if (this.nextRefreshTime_ != 0) {
-                output.writeUInt32(8, this.nextRefreshTime_);
-            }
-            if (this.id_ != 0) {
-                output.writeUInt32(9, this.id_);
-            }
             if (this.refreshInterval_ != 0) {
-                output.writeUInt32(10, this.refreshInterval_);
+                output.writeUInt32(6, this.refreshInterval_);
+            }
+            if (this.cityId_ != 0) {
+                output.writeUInt32(7, this.cityId_);
+            }
+            if (this.weeklyBossResinDiscountInfo_ != null) {
+                output.writeMessage(8, getWeeklyBossResinDiscountInfo());
+            }
+            if (this.resin_ != 0) {
+                output.writeUInt32(9, this.resin_);
+            }
+            if (this.bossChestNum_ != 0) {
+                output.writeUInt32(10, this.bossChestNum_);
             }
             if (this.maxBossChestNum_ != 0) {
                 output.writeUInt32(11, this.maxBossChestNum_);
             }
+            if (this.nextBossChestRefreshTime_ != 0) {
+                output.writeUInt32(12, this.nextBossChestRefreshTime_);
+            }
             if (this.sceneId_ != 0) {
-                output.writeUInt32(12, this.sceneId_);
+                output.writeUInt32(13, this.sceneId_);
             }
             if (this.isAlive_) {
-                output.writeBool(13, this.isAlive_);
+                output.writeBool(14, this.isAlive_);
             }
-            if (this.cityId_ != 0) {
-                output.writeUInt32(14, this.cityId_);
-            }
-            if (this.resin_ != 0) {
-                output.writeUInt32(15, this.resin_);
-            }
-            if (this.monsterId_ != 0) {
-                output.writeUInt32(562, this.monsterId_);
+            if (this.id_ != 0) {
+                output.writeUInt32(15, this.id_);
             }
             if (this.groupId_ != 0) {
-                output.writeUInt32(1735, this.groupId_);
+                output.writeUInt32(80, this.groupId_);
+            }
+            if (this.monsterId_ != 0) {
+                output.writeUInt32(MONSTERID_FIELD_NUMBER, this.monsterId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -528,56 +451,56 @@ public final class InvestigationMonsterOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.nextBossChestRefreshTime_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.nextBossChestRefreshTime_);
+            if (this.nextRefreshTime_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.nextRefreshTime_);
+            }
+            if (this.lockState_ != LockStateOuterClass.LockState.LOCK_STATE_NONE.getNumber()) {
+                size2 += CodedOutputStream.computeEnumSize(2, this.lockState_);
             }
             if (this.level_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(2, this.level_);
+                size2 += CodedOutputStream.computeUInt32Size(3, this.level_);
             }
-            if (this.weeklyBossResinDiscountInfo_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(3, getWeeklyBossResinDiscountInfo());
-            }
-            if (this.lockState_ != LockState.LOCK_STATE_NONE.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(4, this.lockState_);
+            if (this.pos_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(4, getPos());
             }
             if (this.isAreaLocked_) {
                 size2 += CodedOutputStream.computeBoolSize(5, this.isAreaLocked_);
             }
-            if (this.bossChestNum_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(6, this.bossChestNum_);
-            }
-            if (this.pos_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(7, getPos());
-            }
-            if (this.nextRefreshTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.nextRefreshTime_);
-            }
-            if (this.id_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.id_);
-            }
             if (this.refreshInterval_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.refreshInterval_);
+                size2 += CodedOutputStream.computeUInt32Size(6, this.refreshInterval_);
+            }
+            if (this.cityId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(7, this.cityId_);
+            }
+            if (this.weeklyBossResinDiscountInfo_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(8, getWeeklyBossResinDiscountInfo());
+            }
+            if (this.resin_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(9, this.resin_);
+            }
+            if (this.bossChestNum_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(10, this.bossChestNum_);
             }
             if (this.maxBossChestNum_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(11, this.maxBossChestNum_);
             }
+            if (this.nextBossChestRefreshTime_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(12, this.nextBossChestRefreshTime_);
+            }
             if (this.sceneId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.sceneId_);
+                size2 += CodedOutputStream.computeUInt32Size(13, this.sceneId_);
             }
             if (this.isAlive_) {
-                size2 += CodedOutputStream.computeBoolSize(13, this.isAlive_);
+                size2 += CodedOutputStream.computeBoolSize(14, this.isAlive_);
             }
-            if (this.cityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.cityId_);
-            }
-            if (this.resin_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.resin_);
-            }
-            if (this.monsterId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(562, this.monsterId_);
+            if (this.id_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.id_);
             }
             if (this.groupId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(1735, this.groupId_);
+                size2 += CodedOutputStream.computeUInt32Size(80, this.groupId_);
+            }
+            if (this.monsterId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(MONSTERID_FIELD_NUMBER, this.monsterId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -593,11 +516,11 @@ public final class InvestigationMonsterOuterClass {
                 return equals(obj);
             }
             InvestigationMonster other = (InvestigationMonster) obj;
-            if (getIsAlive() != other.getIsAlive() || hasPos() != other.hasPos()) {
+            if (getNextRefreshTime() != other.getNextRefreshTime() || getBossChestNum() != other.getBossChestNum() || hasWeeklyBossResinDiscountInfo() != other.hasWeeklyBossResinDiscountInfo()) {
                 return false;
             }
-            if ((!hasPos() || getPos().equals(other.getPos())) && getSceneId() == other.getSceneId() && getNextRefreshTime() == other.getNextRefreshTime() && getCityId() == other.getCityId() && getGroupId() == other.getGroupId() && getNextBossChestRefreshTime() == other.getNextBossChestRefreshTime() && hasWeeklyBossResinDiscountInfo() == other.hasWeeklyBossResinDiscountInfo()) {
-                return (!hasWeeklyBossResinDiscountInfo() || getWeeklyBossResinDiscountInfo().equals(other.getWeeklyBossResinDiscountInfo())) && getBossChestNum() == other.getBossChestNum() && getId() == other.getId() && getMonsterId() == other.getMonsterId() && this.lockState_ == other.lockState_ && getRefreshInterval() == other.getRefreshInterval() && getIsAreaLocked() == other.getIsAreaLocked() && getLevel() == other.getLevel() && getMaxBossChestNum() == other.getMaxBossChestNum() && getResin() == other.getResin() && this.unknownFields.equals(other.unknownFields);
+            if ((!hasWeeklyBossResinDiscountInfo() || getWeeklyBossResinDiscountInfo().equals(other.getWeeklyBossResinDiscountInfo())) && this.lockState_ == other.lockState_ && getRefreshInterval() == other.getRefreshInterval() && getGroupId() == other.getGroupId() && getSceneId() == other.getSceneId() && getCityId() == other.getCityId() && getMaxBossChestNum() == other.getMaxBossChestNum() && hasPos() == other.hasPos()) {
+                return (!hasPos() || getPos().equals(other.getPos())) && getIsAreaLocked() == other.getIsAreaLocked() && getLevel() == other.getLevel() && getId() == other.getId() && getMonsterId() == other.getMonsterId() && getNextBossChestRefreshTime() == other.getNextBossChestRefreshTime() && getResin() == other.getResin() && getIsAlive() == other.getIsAlive() && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -607,15 +530,15 @@ public final class InvestigationMonsterOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + Internal.hashBoolean(getIsAlive());
-            if (hasPos()) {
-                hash = (53 * ((37 * hash) + 7)) + getPos().hashCode();
-            }
-            int hash2 = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 12)) + getSceneId())) + 8)) + getNextRefreshTime())) + 14)) + getCityId())) + 1735)) + getGroupId())) + 1)) + getNextBossChestRefreshTime();
+            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getNextRefreshTime())) + 10)) + getBossChestNum();
             if (hasWeeklyBossResinDiscountInfo()) {
-                hash2 = (53 * ((37 * hash2) + 3)) + getWeeklyBossResinDiscountInfo().hashCode();
+                hash = (53 * ((37 * hash) + 8)) + getWeeklyBossResinDiscountInfo().hashCode();
             }
-            int hash3 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash2) + 6)) + getBossChestNum())) + 9)) + getId())) + 562)) + getMonsterId())) + 4)) + this.lockState_)) + 10)) + getRefreshInterval())) + 5)) + Internal.hashBoolean(getIsAreaLocked()))) + 2)) + getLevel())) + 11)) + getMaxBossChestNum())) + 15)) + getResin())) + this.unknownFields.hashCode();
+            int hash2 = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 2)) + this.lockState_)) + 6)) + getRefreshInterval())) + 80)) + getGroupId())) + 13)) + getSceneId())) + 7)) + getCityId())) + 11)) + getMaxBossChestNum();
+            if (hasPos()) {
+                hash2 = (53 * ((37 * hash2) + 4)) + getPos().hashCode();
+            }
+            int hash3 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash2) + 5)) + Internal.hashBoolean(getIsAreaLocked()))) + 3)) + getLevel())) + 15)) + getId())) + MONSTERID_FIELD_NUMBER)) + getMonsterId())) + 12)) + getNextBossChestRefreshTime())) + 9)) + getResin())) + 14)) + Internal.hashBoolean(getIsAlive()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash3;
             return hash3;
         }
@@ -694,25 +617,25 @@ public final class InvestigationMonsterOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/InvestigationMonsterOuterClass$InvestigationMonster$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements InvestigationMonsterOrBuilder {
-            private boolean isAlive_;
-            private VectorOuterClass.Vector pos_;
-            private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> posBuilder_;
-            private int sceneId_;
             private int nextRefreshTime_;
-            private int cityId_;
-            private int groupId_;
-            private int nextBossChestRefreshTime_;
+            private int bossChestNum_;
             private WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo weeklyBossResinDiscountInfo_;
             private SingleFieldBuilderV3<WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo, WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.Builder, WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfoOrBuilder> weeklyBossResinDiscountInfoBuilder_;
-            private int bossChestNum_;
-            private int id_;
-            private int monsterId_;
             private int lockState_ = 0;
             private int refreshInterval_;
+            private int groupId_;
+            private int sceneId_;
+            private int cityId_;
+            private int maxBossChestNum_;
+            private VectorOuterClass.Vector pos_;
+            private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> posBuilder_;
             private boolean isAreaLocked_;
             private int level_;
-            private int maxBossChestNum_;
+            private int id_;
+            private int monsterId_;
+            private int nextBossChestRefreshTime_;
             private int resin_;
+            private boolean isAlive_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return InvestigationMonsterOuterClass.internal_static_InvestigationMonster_descriptor;
@@ -740,33 +663,33 @@ public final class InvestigationMonsterOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.isAlive_ = false;
-                if (this.posBuilder_ == null) {
-                    this.pos_ = null;
-                } else {
-                    this.pos_ = null;
-                    this.posBuilder_ = null;
-                }
-                this.sceneId_ = 0;
                 this.nextRefreshTime_ = 0;
-                this.cityId_ = 0;
-                this.groupId_ = 0;
-                this.nextBossChestRefreshTime_ = 0;
+                this.bossChestNum_ = 0;
                 if (this.weeklyBossResinDiscountInfoBuilder_ == null) {
                     this.weeklyBossResinDiscountInfo_ = null;
                 } else {
                     this.weeklyBossResinDiscountInfo_ = null;
                     this.weeklyBossResinDiscountInfoBuilder_ = null;
                 }
-                this.bossChestNum_ = 0;
-                this.id_ = 0;
-                this.monsterId_ = 0;
                 this.lockState_ = 0;
                 this.refreshInterval_ = 0;
+                this.groupId_ = 0;
+                this.sceneId_ = 0;
+                this.cityId_ = 0;
+                this.maxBossChestNum_ = 0;
+                if (this.posBuilder_ == null) {
+                    this.pos_ = null;
+                } else {
+                    this.pos_ = null;
+                    this.posBuilder_ = null;
+                }
                 this.isAreaLocked_ = false;
                 this.level_ = 0;
-                this.maxBossChestNum_ = 0;
+                this.id_ = 0;
+                this.monsterId_ = 0;
+                this.nextBossChestRefreshTime_ = 0;
                 this.resin_ = 0;
+                this.isAlive_ = false;
                 return this;
             }
 
@@ -792,31 +715,31 @@ public final class InvestigationMonsterOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public InvestigationMonster buildPartial() {
                 InvestigationMonster result = new InvestigationMonster(this);
-                result.isAlive_ = this.isAlive_;
-                if (this.posBuilder_ == null) {
-                    result.pos_ = this.pos_;
-                } else {
-                    result.pos_ = this.posBuilder_.build();
-                }
-                result.sceneId_ = this.sceneId_;
                 result.nextRefreshTime_ = this.nextRefreshTime_;
-                result.cityId_ = this.cityId_;
-                result.groupId_ = this.groupId_;
-                result.nextBossChestRefreshTime_ = this.nextBossChestRefreshTime_;
+                result.bossChestNum_ = this.bossChestNum_;
                 if (this.weeklyBossResinDiscountInfoBuilder_ == null) {
                     result.weeklyBossResinDiscountInfo_ = this.weeklyBossResinDiscountInfo_;
                 } else {
                     result.weeklyBossResinDiscountInfo_ = this.weeklyBossResinDiscountInfoBuilder_.build();
                 }
-                result.bossChestNum_ = this.bossChestNum_;
-                result.id_ = this.id_;
-                result.monsterId_ = this.monsterId_;
                 result.lockState_ = this.lockState_;
                 result.refreshInterval_ = this.refreshInterval_;
+                result.groupId_ = this.groupId_;
+                result.sceneId_ = this.sceneId_;
+                result.cityId_ = this.cityId_;
+                result.maxBossChestNum_ = this.maxBossChestNum_;
+                if (this.posBuilder_ == null) {
+                    result.pos_ = this.pos_;
+                } else {
+                    result.pos_ = this.posBuilder_.build();
+                }
                 result.isAreaLocked_ = this.isAreaLocked_;
                 result.level_ = this.level_;
-                result.maxBossChestNum_ = this.maxBossChestNum_;
+                result.id_ = this.id_;
+                result.monsterId_ = this.monsterId_;
+                result.nextBossChestRefreshTime_ = this.nextBossChestRefreshTime_;
                 result.resin_ = this.resin_;
+                result.isAlive_ = this.isAlive_;
                 onBuilt();
                 return result;
             }
@@ -864,38 +787,14 @@ public final class InvestigationMonsterOuterClass {
                 if (other == InvestigationMonster.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getIsAlive()) {
-                    setIsAlive(other.getIsAlive());
-                }
-                if (other.hasPos()) {
-                    mergePos(other.getPos());
-                }
-                if (other.getSceneId() != 0) {
-                    setSceneId(other.getSceneId());
-                }
                 if (other.getNextRefreshTime() != 0) {
                     setNextRefreshTime(other.getNextRefreshTime());
-                }
-                if (other.getCityId() != 0) {
-                    setCityId(other.getCityId());
-                }
-                if (other.getGroupId() != 0) {
-                    setGroupId(other.getGroupId());
-                }
-                if (other.getNextBossChestRefreshTime() != 0) {
-                    setNextBossChestRefreshTime(other.getNextBossChestRefreshTime());
-                }
-                if (other.hasWeeklyBossResinDiscountInfo()) {
-                    mergeWeeklyBossResinDiscountInfo(other.getWeeklyBossResinDiscountInfo());
                 }
                 if (other.getBossChestNum() != 0) {
                     setBossChestNum(other.getBossChestNum());
                 }
-                if (other.getId() != 0) {
-                    setId(other.getId());
-                }
-                if (other.getMonsterId() != 0) {
-                    setMonsterId(other.getMonsterId());
+                if (other.hasWeeklyBossResinDiscountInfo()) {
+                    mergeWeeklyBossResinDiscountInfo(other.getWeeklyBossResinDiscountInfo());
                 }
                 if (other.lockState_ != 0) {
                     setLockStateValue(other.getLockStateValue());
@@ -903,17 +802,41 @@ public final class InvestigationMonsterOuterClass {
                 if (other.getRefreshInterval() != 0) {
                     setRefreshInterval(other.getRefreshInterval());
                 }
+                if (other.getGroupId() != 0) {
+                    setGroupId(other.getGroupId());
+                }
+                if (other.getSceneId() != 0) {
+                    setSceneId(other.getSceneId());
+                }
+                if (other.getCityId() != 0) {
+                    setCityId(other.getCityId());
+                }
+                if (other.getMaxBossChestNum() != 0) {
+                    setMaxBossChestNum(other.getMaxBossChestNum());
+                }
+                if (other.hasPos()) {
+                    mergePos(other.getPos());
+                }
                 if (other.getIsAreaLocked()) {
                     setIsAreaLocked(other.getIsAreaLocked());
                 }
                 if (other.getLevel() != 0) {
                     setLevel(other.getLevel());
                 }
-                if (other.getMaxBossChestNum() != 0) {
-                    setMaxBossChestNum(other.getMaxBossChestNum());
+                if (other.getId() != 0) {
+                    setId(other.getId());
+                }
+                if (other.getMonsterId() != 0) {
+                    setMonsterId(other.getMonsterId());
+                }
+                if (other.getNextBossChestRefreshTime() != 0) {
+                    setNextBossChestRefreshTime(other.getNextBossChestRefreshTime());
                 }
                 if (other.getResin() != 0) {
                     setResin(other.getResin());
+                }
+                if (other.getIsAlive()) {
+                    setIsAlive(other.getIsAlive());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -948,121 +871,6 @@ public final class InvestigationMonsterOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-            public boolean getIsAlive() {
-                return this.isAlive_;
-            }
-
-            public Builder setIsAlive(boolean value) {
-                this.isAlive_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsAlive() {
-                this.isAlive_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-            public boolean hasPos() {
-                return (this.posBuilder_ == null && this.pos_ == null) ? false : true;
-            }
-
-            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-            public VectorOuterClass.Vector getPos() {
-                if (this.posBuilder_ == null) {
-                    return this.pos_ == null ? VectorOuterClass.Vector.getDefaultInstance() : this.pos_;
-                }
-                return this.posBuilder_.getMessage();
-            }
-
-            public Builder setPos(VectorOuterClass.Vector value) {
-                if (this.posBuilder_ != null) {
-                    this.posBuilder_.setMessage(value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    this.pos_ = value;
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder setPos(VectorOuterClass.Vector.Builder builderForValue) {
-                if (this.posBuilder_ == null) {
-                    this.pos_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    this.posBuilder_.setMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder mergePos(VectorOuterClass.Vector value) {
-                if (this.posBuilder_ == null) {
-                    if (this.pos_ != null) {
-                        this.pos_ = VectorOuterClass.Vector.newBuilder(this.pos_).mergeFrom(value).buildPartial();
-                    } else {
-                        this.pos_ = value;
-                    }
-                    onChanged();
-                } else {
-                    this.posBuilder_.mergeFrom(value);
-                }
-                return this;
-            }
-
-            public Builder clearPos() {
-                if (this.posBuilder_ == null) {
-                    this.pos_ = null;
-                    onChanged();
-                } else {
-                    this.pos_ = null;
-                    this.posBuilder_ = null;
-                }
-                return this;
-            }
-
-            public VectorOuterClass.Vector.Builder getPosBuilder() {
-                onChanged();
-                return getPosFieldBuilder().getBuilder();
-            }
-
-            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-            public VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-                if (this.posBuilder_ != null) {
-                    return this.posBuilder_.getMessageOrBuilder();
-                }
-                return this.pos_ == null ? VectorOuterClass.Vector.getDefaultInstance() : this.pos_;
-            }
-
-            private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> getPosFieldBuilder() {
-                if (this.posBuilder_ == null) {
-                    this.posBuilder_ = new SingleFieldBuilderV3<>(getPos(), getParentForChildren(), isClean());
-                    this.pos_ = null;
-                }
-                return this.posBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-            public int getSceneId() {
-                return this.sceneId_;
-            }
-
-            public Builder setSceneId(int value) {
-                this.sceneId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearSceneId() {
-                this.sceneId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
             public int getNextRefreshTime() {
                 return this.nextRefreshTime_;
             }
@@ -1080,52 +888,18 @@ public final class InvestigationMonsterOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-            public int getCityId() {
-                return this.cityId_;
+            public int getBossChestNum() {
+                return this.bossChestNum_;
             }
 
-            public Builder setCityId(int value) {
-                this.cityId_ = value;
+            public Builder setBossChestNum(int value) {
+                this.bossChestNum_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearCityId() {
-                this.cityId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-            public int getGroupId() {
-                return this.groupId_;
-            }
-
-            public Builder setGroupId(int value) {
-                this.groupId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearGroupId() {
-                this.groupId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-            public int getNextBossChestRefreshTime() {
-                return this.nextBossChestRefreshTime_;
-            }
-
-            public Builder setNextBossChestRefreshTime(int value) {
-                this.nextBossChestRefreshTime_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearNextBossChestRefreshTime() {
-                this.nextBossChestRefreshTime_ = 0;
+            public Builder clearBossChestNum() {
+                this.bossChestNum_ = 0;
                 onChanged();
                 return this;
             }
@@ -1212,18 +986,233 @@ public final class InvestigationMonsterOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-            public int getBossChestNum() {
-                return this.bossChestNum_;
+            public int getLockStateValue() {
+                return this.lockState_;
             }
 
-            public Builder setBossChestNum(int value) {
-                this.bossChestNum_ = value;
+            public Builder setLockStateValue(int value) {
+                this.lockState_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearBossChestNum() {
-                this.bossChestNum_ = 0;
+            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+            public LockStateOuterClass.LockState getLockState() {
+                LockStateOuterClass.LockState result = LockStateOuterClass.LockState.valueOf(this.lockState_);
+                return result == null ? LockStateOuterClass.LockState.UNRECOGNIZED : result;
+            }
+
+            public Builder setLockState(LockStateOuterClass.LockState value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.lockState_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+
+            public Builder clearLockState() {
+                this.lockState_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+            public int getRefreshInterval() {
+                return this.refreshInterval_;
+            }
+
+            public Builder setRefreshInterval(int value) {
+                this.refreshInterval_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRefreshInterval() {
+                this.refreshInterval_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+            public int getGroupId() {
+                return this.groupId_;
+            }
+
+            public Builder setGroupId(int value) {
+                this.groupId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearGroupId() {
+                this.groupId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+            public int getSceneId() {
+                return this.sceneId_;
+            }
+
+            public Builder setSceneId(int value) {
+                this.sceneId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearSceneId() {
+                this.sceneId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+            public int getCityId() {
+                return this.cityId_;
+            }
+
+            public Builder setCityId(int value) {
+                this.cityId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearCityId() {
+                this.cityId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+            public int getMaxBossChestNum() {
+                return this.maxBossChestNum_;
+            }
+
+            public Builder setMaxBossChestNum(int value) {
+                this.maxBossChestNum_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearMaxBossChestNum() {
+                this.maxBossChestNum_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+            public boolean hasPos() {
+                return (this.posBuilder_ == null && this.pos_ == null) ? false : true;
+            }
+
+            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+            public VectorOuterClass.Vector getPos() {
+                if (this.posBuilder_ == null) {
+                    return this.pos_ == null ? VectorOuterClass.Vector.getDefaultInstance() : this.pos_;
+                }
+                return this.posBuilder_.getMessage();
+            }
+
+            public Builder setPos(VectorOuterClass.Vector value) {
+                if (this.posBuilder_ != null) {
+                    this.posBuilder_.setMessage(value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    this.pos_ = value;
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder setPos(VectorOuterClass.Vector.Builder builderForValue) {
+                if (this.posBuilder_ == null) {
+                    this.pos_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    this.posBuilder_.setMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder mergePos(VectorOuterClass.Vector value) {
+                if (this.posBuilder_ == null) {
+                    if (this.pos_ != null) {
+                        this.pos_ = VectorOuterClass.Vector.newBuilder(this.pos_).mergeFrom(value).buildPartial();
+                    } else {
+                        this.pos_ = value;
+                    }
+                    onChanged();
+                } else {
+                    this.posBuilder_.mergeFrom(value);
+                }
+                return this;
+            }
+
+            public Builder clearPos() {
+                if (this.posBuilder_ == null) {
+                    this.pos_ = null;
+                    onChanged();
+                } else {
+                    this.pos_ = null;
+                    this.posBuilder_ = null;
+                }
+                return this;
+            }
+
+            public VectorOuterClass.Vector.Builder getPosBuilder() {
+                onChanged();
+                return getPosFieldBuilder().getBuilder();
+            }
+
+            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+            public VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
+                if (this.posBuilder_ != null) {
+                    return this.posBuilder_.getMessageOrBuilder();
+                }
+                return this.pos_ == null ? VectorOuterClass.Vector.getDefaultInstance() : this.pos_;
+            }
+
+            private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> getPosFieldBuilder() {
+                if (this.posBuilder_ == null) {
+                    this.posBuilder_ = new SingleFieldBuilderV3<>(getPos(), getParentForChildren(), isClean());
+                    this.pos_ = null;
+                }
+                return this.posBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+            public boolean getIsAreaLocked() {
+                return this.isAreaLocked_;
+            }
+
+            public Builder setIsAreaLocked(boolean value) {
+                this.isAreaLocked_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsAreaLocked() {
+                this.isAreaLocked_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+            public int getLevel() {
+                return this.level_;
+            }
+
+            public Builder setLevel(int value) {
+                this.level_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearLevel() {
+                this.level_ = 0;
                 onChanged();
                 return this;
             }
@@ -1263,101 +1252,18 @@ public final class InvestigationMonsterOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-            public int getLockStateValue() {
-                return this.lockState_;
+            public int getNextBossChestRefreshTime() {
+                return this.nextBossChestRefreshTime_;
             }
 
-            public Builder setLockStateValue(int value) {
-                this.lockState_ = value;
+            public Builder setNextBossChestRefreshTime(int value) {
+                this.nextBossChestRefreshTime_ = value;
                 onChanged();
                 return this;
             }
 
-            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-            public LockState getLockState() {
-                LockState result = LockState.valueOf(this.lockState_);
-                return result == null ? LockState.UNRECOGNIZED : result;
-            }
-
-            public Builder setLockState(LockState value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.lockState_ = value.getNumber();
-                onChanged();
-                return this;
-            }
-
-            public Builder clearLockState() {
-                this.lockState_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-            public int getRefreshInterval() {
-                return this.refreshInterval_;
-            }
-
-            public Builder setRefreshInterval(int value) {
-                this.refreshInterval_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRefreshInterval() {
-                this.refreshInterval_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-            public boolean getIsAreaLocked() {
-                return this.isAreaLocked_;
-            }
-
-            public Builder setIsAreaLocked(boolean value) {
-                this.isAreaLocked_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsAreaLocked() {
-                this.isAreaLocked_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-            public int getLevel() {
-                return this.level_;
-            }
-
-            public Builder setLevel(int value) {
-                this.level_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearLevel() {
-                this.level_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
-            public int getMaxBossChestNum() {
-                return this.maxBossChestNum_;
-            }
-
-            public Builder setMaxBossChestNum(int value) {
-                this.maxBossChestNum_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearMaxBossChestNum() {
-                this.maxBossChestNum_ = 0;
+            public Builder clearNextBossChestRefreshTime() {
+                this.nextBossChestRefreshTime_ = 0;
                 onChanged();
                 return this;
             }
@@ -1375,6 +1281,23 @@ public final class InvestigationMonsterOuterClass {
 
             public Builder clearResin() {
                 this.resin_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder
+            public boolean getIsAlive() {
+                return this.isAlive_;
+            }
+
+            public Builder setIsAlive(boolean value) {
+                this.isAlive_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsAlive() {
+                this.isAlive_ = false;
                 onChanged();
                 return this;
             }
@@ -1414,7 +1337,8 @@ public final class InvestigationMonsterOuterClass {
     }
 
     static {
-        VectorOuterClass.getDescriptor();
         WeeklyBossResinDiscountInfoOuterClass.getDescriptor();
+        LockStateOuterClass.getDescriptor();
+        VectorOuterClass.getDescriptor();
     }
 }

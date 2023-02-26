@@ -12,7 +12,7 @@ public class WeakTable implements Metatable {
     /* access modifiers changed from: package-private */
     /* renamed from: org.luaj.vm2.WeakTable$1 */
     /* loaded from: grasscutter.jar:org/luaj/vm2/WeakTable$1.class */
-    public static class C58651 {
+    public static class C58571 {
     }
 
     /* loaded from: grasscutter.jar:org/luaj/vm2/WeakTable$WeakKeyAndValueSlot.class */
@@ -200,15 +200,15 @@ public class WeakTable implements Metatable {
     public static final class WeakUserdata extends WeakValue {
 
         /* renamed from: ob */
-        private final WeakReference f3303ob;
+        private final WeakReference f3267ob;
 
         /* renamed from: mt */
-        private final LuaValue f3304mt;
+        private final LuaValue f3268mt;
 
         private WeakUserdata(LuaValue luaValue) {
             super(luaValue);
-            this.f3303ob = new WeakReference(luaValue.touserdata());
-            this.f3304mt = luaValue.getmetatable();
+            this.f3267ob = new WeakReference(luaValue.touserdata());
+            this.f3268mt = luaValue.getmetatable();
         }
 
         @Override // org.luaj.vm2.WeakTable.WeakValue, org.luaj.vm2.LuaValue
@@ -217,16 +217,16 @@ public class WeakTable implements Metatable {
             if (obj != null) {
                 return (LuaValue) obj;
             }
-            Object obj2 = this.f3303ob.get();
+            Object obj2 = this.f3267ob.get();
             if (obj2 == null) {
                 return null;
             }
-            LuaUserdata userdataOf = LuaValue.userdataOf(obj2, this.f3304mt);
+            LuaUserdata userdataOf = LuaValue.userdataOf(obj2, this.f3268mt);
             this.ref = new WeakReference(userdataOf);
             return userdataOf;
         }
 
-        WeakUserdata(LuaValue luaValue, C58651 r5) {
+        WeakUserdata(LuaValue luaValue, C58571 r5) {
             this(luaValue);
         }
     }

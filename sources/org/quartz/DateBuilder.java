@@ -38,10 +38,10 @@ public class DateBuilder {
     private int second;
 
     /* renamed from: tz */
-    private TimeZone f3364tz;
+    private TimeZone f3328tz;
 
     /* renamed from: lc */
-    private Locale f3365lc;
+    private Locale f3329lc;
     private static final int MAX_YEAR = Calendar.getInstance().get(1) + 100;
 
     /* loaded from: grasscutter.jar:org/quartz/DateBuilder$IntervalUnit.class */
@@ -68,7 +68,7 @@ public class DateBuilder {
 
     private DateBuilder(TimeZone tz) {
         Calendar cal = Calendar.getInstance(tz);
-        this.f3364tz = tz;
+        this.f3328tz = tz;
         this.month = cal.get(2) + 1;
         this.day = cal.get(5);
         this.year = cal.get(1);
@@ -79,7 +79,7 @@ public class DateBuilder {
 
     private DateBuilder(Locale lc) {
         Calendar cal = Calendar.getInstance(lc);
-        this.f3365lc = lc;
+        this.f3329lc = lc;
         this.month = cal.get(2) + 1;
         this.day = cal.get(5);
         this.year = cal.get(1);
@@ -90,8 +90,8 @@ public class DateBuilder {
 
     private DateBuilder(TimeZone tz, Locale lc) {
         Calendar cal = Calendar.getInstance(tz, lc);
-        this.f3364tz = tz;
-        this.f3365lc = lc;
+        this.f3328tz = tz;
+        this.f3329lc = lc;
         this.month = cal.get(2) + 1;
         this.day = cal.get(5);
         this.year = cal.get(1);
@@ -118,12 +118,12 @@ public class DateBuilder {
 
     public Date build() {
         Calendar cal;
-        if (this.f3364tz != null && this.f3365lc != null) {
-            cal = Calendar.getInstance(this.f3364tz, this.f3365lc);
-        } else if (this.f3364tz != null) {
-            cal = Calendar.getInstance(this.f3364tz);
-        } else if (this.f3365lc != null) {
-            cal = Calendar.getInstance(this.f3365lc);
+        if (this.f3328tz != null && this.f3329lc != null) {
+            cal = Calendar.getInstance(this.f3328tz, this.f3329lc);
+        } else if (this.f3328tz != null) {
+            cal = Calendar.getInstance(this.f3328tz);
+        } else if (this.f3329lc != null) {
+            cal = Calendar.getInstance(this.f3329lc);
         } else {
             cal = Calendar.getInstance();
         }
@@ -192,12 +192,12 @@ public class DateBuilder {
     }
 
     public DateBuilder inTimeZone(TimeZone timezone) {
-        this.f3364tz = timezone;
+        this.f3328tz = timezone;
         return this;
     }
 
     public DateBuilder inLocale(Locale locale) {
-        this.f3365lc = locale;
+        this.f3329lc = locale;
         return this;
     }
 

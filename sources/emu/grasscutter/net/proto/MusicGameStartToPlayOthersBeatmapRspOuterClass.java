@@ -28,7 +28,7 @@ public final class MusicGameStartToPlayOthersBeatmapRspOuterClass {
     private static final Descriptors.Descriptor internal_static_MusicGameStartToPlayOthersBeatmapRsp_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_MusicGameStartToPlayOthersBeatmapRsp_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f815x6a05117 = new GeneratedMessageV3.FieldAccessorTable(internal_static_MusicGameStartToPlayOthersBeatmapRsp_descriptor, new String[]{"Retcode", "UnknownEnum1", "AMNODOLNOIM"});
+    private static final GeneratedMessageV3.FieldAccessorTable f793x6a05117 = new GeneratedMessageV3.FieldAccessorTable(internal_static_MusicGameStartToPlayOthersBeatmapRsp_descriptor, new String[]{"Retcode", "UnknownEnum1", "AMNODOLNOIM"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MusicGameStartToPlayOthersBeatmapRspOuterClass$MusicGameStartToPlayOthersBeatmapRspOrBuilder.class */
     public interface MusicGameStartToPlayOthersBeatmapRspOrBuilder extends MessageOrBuilder {
@@ -169,7 +169,7 @@ public final class MusicGameStartToPlayOthersBeatmapRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return MusicGameStartToPlayOthersBeatmapRspOuterClass.f815x6a05117.ensureFieldAccessorsInitialized(MusicGameStartToPlayOthersBeatmapRsp.class, Builder.class);
+            return MusicGameStartToPlayOthersBeatmapRspOuterClass.f793x6a05117.ensureFieldAccessorsInitialized(MusicGameStartToPlayOthersBeatmapRsp.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.MusicGameStartToPlayOthersBeatmapRspOuterClass.MusicGameStartToPlayOthersBeatmapRspOrBuilder
@@ -373,7 +373,7 @@ public final class MusicGameStartToPlayOthersBeatmapRspOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return MusicGameStartToPlayOthersBeatmapRspOuterClass.f815x6a05117.ensureFieldAccessorsInitialized(MusicGameStartToPlayOthersBeatmapRsp.class, Builder.class);
+                return MusicGameStartToPlayOthersBeatmapRspOuterClass.f793x6a05117.ensureFieldAccessorsInitialized(MusicGameStartToPlayOthersBeatmapRsp.class, Builder.class);
             }
 
             private Builder() {

@@ -41,7 +41,7 @@ public final class SceneMonsterInfoOuterClass {
     private static final Descriptors.Descriptor internal_static_SceneMonsterInfo_SummonTagMapEntry_descriptor = internal_static_SceneMonsterInfo_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_SceneMonsterInfo_SummonTagMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f869x4de84b1 = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneMonsterInfo_SummonTagMapEntry_descriptor, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f843x4de84b1 = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneMonsterInfo_SummonTagMapEntry_descriptor, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneMonsterInfoOuterClass$SceneMonsterInfoOrBuilder.class */
     public interface SceneMonsterInfoOrBuilder extends MessageOrBuilder {

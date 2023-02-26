@@ -19,16 +19,16 @@ public class CharMappedBigList extends AbstractCharBigList {
     private final boolean[] readyToUse;
 
     /* renamed from: n */
-    private final int f1518n;
+    private final int f1482n;
     private final long size;
 
     protected CharMappedBigList(CharBuffer[] buffer, long size, boolean[] readyToUse) {
         this.buffer = buffer;
-        this.f1518n = buffer.length;
+        this.f1482n = buffer.length;
         this.size = size;
         this.readyToUse = readyToUse;
-        for (int i = 0; i < this.f1518n; i++) {
-            if (i < this.f1518n - 1 && ((long) buffer[i].capacity()) != CHUNK_SIZE) {
+        for (int i = 0; i < this.f1482n; i++) {
+            if (i < this.f1482n - 1 && ((long) buffer[i].capacity()) != CHUNK_SIZE) {
                 throw new IllegalArgumentException();
             }
         }
@@ -66,7 +66,7 @@ public class CharMappedBigList extends AbstractCharBigList {
     }
 
     public CharMappedBigList copy() {
-        return new CharMappedBigList((CharBuffer[]) this.buffer.clone(), this.size, new boolean[this.f1518n]);
+        return new CharMappedBigList((CharBuffer[]) this.buffer.clone(), this.size, new boolean[this.f1482n]);
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.CharBigList

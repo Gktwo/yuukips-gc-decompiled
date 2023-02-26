@@ -853,7 +853,7 @@ public class Int2IntRBTreeMap extends AbstractInt2IntSortedMap implements Serial
         int from;
 
         /* renamed from: to */
-        int f2092to;
+        int f2056to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Int2IntMap.Entry> entries;
@@ -864,7 +864,7 @@ public class Int2IntRBTreeMap extends AbstractInt2IntSortedMap implements Serial
             if (bottom || top || Int2IntRBTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f2092to = to;
+                this.f2056to = to;
                 this.top = top;
                 this.defRetValue = Int2IntRBTreeMap.this.defRetValue;
                 return;
@@ -883,7 +883,7 @@ public class Int2IntRBTreeMap extends AbstractInt2IntSortedMap implements Serial
 
         /* renamed from: in */
         final boolean m765in(int k) {
-            return (this.bottom || Int2IntRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Int2IntRBTreeMap.this.compare(k, this.f2092to) < 0);
+            return (this.bottom || Int2IntRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Int2IntRBTreeMap.this.compare(k, this.f2056to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.Int2IntMap, p014it.unimi.dsi.fastutil.ints.Int2IntSortedMap
@@ -1058,7 +1058,7 @@ public class Int2IntRBTreeMap extends AbstractInt2IntSortedMap implements Serial
         public int put(int k, int v) {
             Int2IntRBTreeMap.this.modified = false;
             if (!m765in(k)) {
-                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2092to)) + ")");
+                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2056to)) + ")");
             }
             return Int2IntRBTreeMap.this.modified ? this.defRetValue : Int2IntRBTreeMap.this.put(k, v);
         }
@@ -1096,7 +1096,7 @@ public class Int2IntRBTreeMap extends AbstractInt2IntSortedMap implements Serial
 
         @Override // p014it.unimi.dsi.fastutil.ints.Int2IntSortedMap
         public Int2IntSortedMap headMap(int to) {
-            if (!this.top && Int2IntRBTreeMap.this.compare(to, this.f2092to) >= 0) {
+            if (!this.top && Int2IntRBTreeMap.this.compare(to, this.f2056to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1107,7 +1107,7 @@ public class Int2IntRBTreeMap extends AbstractInt2IntSortedMap implements Serial
             if (!this.bottom && Int2IntRBTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f2092to, this.top);
+            return new Submap(from, false, this.f2056to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.Int2IntSortedMap
@@ -1116,12 +1116,12 @@ public class Int2IntRBTreeMap extends AbstractInt2IntSortedMap implements Serial
                 return new Submap(from, false, to, false);
             }
             if (!this.top) {
-                to = Int2IntRBTreeMap.this.compare(to, this.f2092to) < 0 ? to : this.f2092to;
+                to = Int2IntRBTreeMap.this.compare(to, this.f2056to) < 0 ? to : this.f2056to;
             }
             if (!this.bottom) {
                 from = Int2IntRBTreeMap.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f2092to) ? new Submap(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f2056to) ? new Submap(from, false, to, false) : this;
         }
 
         public Entry firstEntry() {
@@ -1140,7 +1140,7 @@ public class Int2IntRBTreeMap extends AbstractInt2IntSortedMap implements Serial
             if (e == null) {
                 return null;
             }
-            if (this.top || Int2IntRBTreeMap.this.compare(e.key, this.f2092to) < 0) {
+            if (this.top || Int2IntRBTreeMap.this.compare(e.key, this.f2056to) < 0) {
                 return e;
             }
             return null;
@@ -1154,8 +1154,8 @@ public class Int2IntRBTreeMap extends AbstractInt2IntSortedMap implements Serial
             if (this.top) {
                 e = Int2IntRBTreeMap.this.lastEntry;
             } else {
-                e = Int2IntRBTreeMap.this.locateKey(this.f2092to);
-                if (Int2IntRBTreeMap.this.compare(e.key, this.f2092to) >= 0) {
+                e = Int2IntRBTreeMap.this.locateKey(this.f2056to);
+                if (Int2IntRBTreeMap.this.compare(e.key, this.f2056to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1233,7 +1233,7 @@ public class Int2IntRBTreeMap extends AbstractInt2IntSortedMap implements Serial
             @Override // p014it.unimi.dsi.fastutil.ints.Int2IntRBTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Int2IntRBTreeMap.this.compare(this.next.key, Submap.this.f2092to) >= 0) {
+                if (!Submap.this.top && this.next != null && Int2IntRBTreeMap.this.compare(this.next.key, Submap.this.f2056to) >= 0) {
                     this.next = null;
                 }
             }

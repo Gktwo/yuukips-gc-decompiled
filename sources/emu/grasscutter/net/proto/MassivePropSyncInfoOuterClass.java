@@ -26,7 +26,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MassivePropSyncInfoOuterClass.class */
 public final class MassivePropSyncInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019MassivePropSyncInfo.proto\u001a\u0016MassivePropParam.proto\"G\n\u0013MassivePropSyncInfo\u0012\n\n\u0002id\u0018\u0001 \u0001(\u0003\u0012$\n\tprop_list\u0018\u0002 \u0003(\u000b2\u0011.MassivePropParamB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MassivePropParamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019MassivePropSyncInfo.proto\u001a\u0016MassivePropParam.proto\"F\n\u0013MassivePropSyncInfo\u0012\n\n\u0002id\u0018\u0001 \u0001(\u0003\u0012#\n\bpropList\u0018\u0002 \u0003(\u000b2\u0011.MassivePropParamB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MassivePropParamOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_MassivePropSyncInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_MassivePropSyncInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MassivePropSyncInfo_descriptor, new String[]{"Id", "PropList"});
 
@@ -60,7 +60,7 @@ public final class MassivePropSyncInfoOuterClass {
         private static final long serialVersionUID = 0;
         public static final int ID_FIELD_NUMBER = 1;
         private long id_;
-        public static final int PROP_LIST_FIELD_NUMBER = 2;
+        public static final int PROPLIST_FIELD_NUMBER = 2;
         private List<MassivePropParamOuterClass.MassivePropParam> propList_;
         private byte memoizedIsInitialized;
         private static final MassivePropSyncInfo DEFAULT_INSTANCE = new MassivePropSyncInfo();

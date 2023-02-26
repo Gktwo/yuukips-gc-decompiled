@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChooseCurAvatarTeamRspOuterClass.class */
 public final class ChooseCurAvatarTeamRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cChooseCurAvatarTeamRsp.proto\">\n\u0016ChooseCurAvatarTeamRsp\u0012\u000f\n\u0007retcode\u0018\u000f \u0001(\u0005\u0012\u0013\n\u000bcur_team_id\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cChooseCurAvatarTeamRsp.proto\"<\n\u0016ChooseCurAvatarTeamRsp\u0012\u000f\n\u0007retcode\u0018\u0002 \u0001(\u0005\u0012\u0011\n\tcurTeamId\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ChooseCurAvatarTeamRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChooseCurAvatarTeamRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChooseCurAvatarTeamRsp_descriptor, new String[]{"Retcode", "CurTeamId"});
 
@@ -43,9 +43,9 @@ public final class ChooseCurAvatarTeamRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChooseCurAvatarTeamRspOuterClass$ChooseCurAvatarTeamRsp.class */
     public static final class ChooseCurAvatarTeamRsp extends GeneratedMessageV3 implements ChooseCurAvatarTeamRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 15;
+        public static final int RETCODE_FIELD_NUMBER = 2;
         private int retcode_;
-        public static final int CUR_TEAM_ID_FIELD_NUMBER = 11;
+        public static final int CURTEAMID_FIELD_NUMBER = 8;
         private int curTeamId_;
         private byte memoizedIsInitialized;
         private static final ChooseCurAvatarTeamRsp DEFAULT_INSTANCE = new ChooseCurAvatarTeamRsp();
@@ -92,11 +92,11 @@ public final class ChooseCurAvatarTeamRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 88:
-                                this.curTeamId_ = input.readUInt32();
-                                break;
-                            case 120:
+                            case 16:
                                 this.retcode_ = input.readInt32();
+                                break;
+                            case 64:
+                                this.curTeamId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -152,11 +152,11 @@ public final class ChooseCurAvatarTeamRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.curTeamId_ != 0) {
-                output.writeUInt32(11, this.curTeamId_);
-            }
             if (this.retcode_ != 0) {
-                output.writeInt32(15, this.retcode_);
+                output.writeInt32(2, this.retcode_);
+            }
+            if (this.curTeamId_ != 0) {
+                output.writeUInt32(8, this.curTeamId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class ChooseCurAvatarTeamRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.curTeamId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(11, this.curTeamId_);
-            }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(15, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(2, this.retcode_);
+            }
+            if (this.curTeamId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(8, this.curTeamId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class ChooseCurAvatarTeamRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getRetcode())) + 11)) + getCurTeamId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getRetcode())) + 8)) + getCurTeamId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

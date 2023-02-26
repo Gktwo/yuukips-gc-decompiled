@@ -43,7 +43,8 @@ public class ConfigContainer {
         public int worldLevel = 8;
         public String nickName = "Ayaka";
         public String signature = "Hello, have fun playing :)";
-        public String token = "melon";
+        public String token_private = "private_melon";
+        public String token_public = "public_melon";
         public boolean globalChatEnabled = true;
         public String globalChatFormat = "<color=#99CC99>{nickName}</color>: {message}";
     }
@@ -87,7 +88,6 @@ public class ConfigContainer {
         public int bindPort = 22102;
         public String accessAddress = "127.0.0.1";
         public int accessPort = 0;
-        public int loadEntitiesForPlayerRange = 100;
         public boolean enableConsole = true;
         public int kcpInterval = 20;
         public GameOptions gameOptions = new GameOptions();
@@ -99,8 +99,11 @@ public class ConfigContainer {
     public static class GameOptions {
         public InventoryLimits inventoryLimits = new InventoryLimits();
         public AvatarLimits avatarLimits = new AvatarLimits();
-        public int CMD_Spawn = 500;
-        public int sceneEntityLimit = 5000;
+        public int sceneEntityLimit = 1000;
+        public int MonsterEntityLimit = 300;
+        public int EntitySaveLimit = 1500;
+        public int loadEntitiesForPlayerRange = 100;
+        public boolean checkEntity = true;
         public boolean staminaUsage = true;
         public boolean energyUsage = true;
         public boolean fishhookTeleport = true;
@@ -111,6 +114,7 @@ public class ConfigContainer {
         public int CMD_Give_ART = 10;
         public int CMD_Give = 10000000;
         public int CMD_DayLogin = 8;
+        public int CMD_Spawn = 300;
         public boolean CMD_ListOnline = false;
         public boolean DropMo = true;
         public boolean DungeonMT = false;
@@ -143,14 +147,14 @@ public class ConfigContainer {
         public static class ResinOptions {
             public boolean resinUsage = true;
             public int cap = 160;
-            public int rechargeTime = PacketOpcodes.QuestGlobalVarNotify;
+            public int rechargeTime = PacketOpcodes.AddQuestContentProgressRsp;
         }
     }
 
     /* loaded from: grasscutter.jar:emu/grasscutter/config/ConfigContainer$HTTP.class */
     public static class HTTP {
         public String bindAddress = "0.0.0.0";
-        public int bindPort = PacketOpcodes.AddQuestContentProgressReq;
+        public int bindPort = PacketOpcodes.PersonalLineAllDataRsp;
         public String accessAddress = "127.0.0.1";
         public int accessPort = 0;
         public String APICloud = "https://ps.yuuki.me/";
@@ -161,7 +165,7 @@ public class ConfigContainer {
 
     /* loaded from: grasscutter.jar:emu/grasscutter/config/ConfigContainer$JoinOptions.class */
     public static class JoinOptions {
-        public int[] welcomeEmotes = {RetcodeOuterClass.Retcode.RET_LEGENDARY_KEY_NOT_ENOUGH_VALUE, RetcodeOuterClass.Retcode.RET_LEGENDARY_KEY_EXCEED_LIMIT_VALUE, RetcodeOuterClass.Retcode.RET_DAILY_TASK_NOT_ENOUGH_TO_REDEEM_VALUE, RetcodeOuterClass.Retcode.RET_PERSONAL_LINE_OPEN_STATE_OFF_VALUE, 14005, 14006, 14007, 14008};
+        public int[] welcomeEmotes = {RetcodeOuterClass.Retcode.RET_LEGENDARY_KEY_NOT_ENOUGH_VALUE, RetcodeOuterClass.Retcode.RET_LEGENDARY_KEY_EXCEED_LIMIT_VALUE, RetcodeOuterClass.Retcode.RET_DAILY_TASK_NOT_ENOUGH_TO_REDEEM_VALUE, 8004, 14005, 14006, 14007, 14008};
         public String welcomeMessage = "Welcome to YuukiPS";
         public Mail welcomeMail = new Mail();
 
@@ -170,7 +174,7 @@ public class ConfigContainer {
             public String title = "Welcome to YuukiPS";
             public String content = "Hi";
             public String sender = "Yuuki";
-            public Mail.MailItem[] items = {new Mail.MailItem(PacketOpcodes.LevelupCityReq, 1000), new Mail.MailItem(PacketOpcodes.WorldPlayerLocationNotify, 1000), new Mail.MailItem(202, 6000000), new Mail.MailItem(201, Kcp.IKCP_RTO_MAX), new Mail.MailItem(203, 10000), new Mail.MailItem(204, DurationKt.NANOS_IN_MILLIS), new Mail.MailItem(303, 1000)};
+            public Mail.MailItem[] items = {new Mail.MailItem(PacketOpcodes.UnmarkEntityInMinMapNotify, 1000), new Mail.MailItem(PacketOpcodes.SceneAvatarStaminaStepRsp, 1000), new Mail.MailItem(202, 6000000), new Mail.MailItem(201, Kcp.IKCP_RTO_MAX), new Mail.MailItem(203, 10000), new Mail.MailItem(204, DurationKt.NANOS_IN_MILLIS), new Mail.MailItem(303, 1000)};
         }
     }
 
@@ -224,9 +228,9 @@ public class ConfigContainer {
         public Grasscutter.ServerDebugMode debugLevel = Grasscutter.ServerDebugMode.NONE;
         public Set<Integer> DebugBlacklist = new HashSet<Integer>() { // from class: emu.grasscutter.config.ConfigContainer.Server.1
             {
-                add(100);
-                add(43);
-                add(37);
+                add(20);
+                add(74);
+                add(92);
                 add(Integer.valueOf((int) PacketOpcodes.QueryPathReq));
             }
         };
@@ -251,7 +255,7 @@ public class ConfigContainer {
     }
 
     private static int version_config() {
-        return 16;
+        return 17;
     }
 
     public static void updateConfig() {
@@ -259,8 +263,11 @@ public class ConfigContainer {
             File vv = new File(Grasscutter.config.folderStructure.VERSION);
             if (vv.exists()) {
                 dockergs_v = new String(FileUtils.read(vv));
+            } else {
+                dockergs_v = "unknown";
             }
         } catch (Exception e) {
+            dockergs_v = "unknown1";
         }
         try {
             if (!((JsonObject) JsonUtils.loadToClass(Grasscutter.configFile.toPath(), JsonObject.class)).has("version")) {

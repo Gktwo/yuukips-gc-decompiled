@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerCookArgsRspOuterClass.class */
 public final class PlayerCookArgsRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017PlayerCookArgsRsp.proto\"=\n\u0011PlayerCookArgsRsp\u0012\u000f\n\u0007retcode\u0018\u0006 \u0001(\u0005\u0012\u0017\n\u000fqte_range_ratio\u0018\u0003 \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017PlayerCookArgsRsp.proto\";\n\u0011PlayerCookArgsRsp\u0012\u000f\n\u0007retcode\u0018\u000f \u0001(\u0005\u0012\u0015\n\rqteRangeRatio\u0018\u0006 \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PlayerCookArgsRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerCookArgsRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerCookArgsRsp_descriptor, new String[]{"Retcode", "QteRangeRatio"});
 
@@ -43,9 +43,9 @@ public final class PlayerCookArgsRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerCookArgsRspOuterClass$PlayerCookArgsRsp.class */
     public static final class PlayerCookArgsRsp extends GeneratedMessageV3 implements PlayerCookArgsRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 6;
+        public static final int RETCODE_FIELD_NUMBER = 15;
         private int retcode_;
-        public static final int QTE_RANGE_RATIO_FIELD_NUMBER = 3;
+        public static final int QTERANGERATIO_FIELD_NUMBER = 6;
         private float qteRangeRatio_;
         private byte memoizedIsInitialized;
         private static final PlayerCookArgsRsp DEFAULT_INSTANCE = new PlayerCookArgsRsp();
@@ -92,10 +92,10 @@ public final class PlayerCookArgsRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 29:
+                            case 53:
                                 this.qteRangeRatio_ = input.readFloat();
                                 break;
-                            case 48:
+                            case 120:
                                 this.retcode_ = input.readInt32();
                                 break;
                             default:
@@ -153,10 +153,10 @@ public final class PlayerCookArgsRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.qteRangeRatio_ != 0.0f) {
-                output.writeFloat(3, this.qteRangeRatio_);
+                output.writeFloat(6, this.qteRangeRatio_);
             }
             if (this.retcode_ != 0) {
-                output.writeInt32(6, this.retcode_);
+                output.writeInt32(15, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class PlayerCookArgsRspOuterClass {
             }
             int size2 = 0;
             if (this.qteRangeRatio_ != 0.0f) {
-                size2 = 0 + CodedOutputStream.computeFloatSize(3, this.qteRangeRatio_);
+                size2 = 0 + CodedOutputStream.computeFloatSize(6, this.qteRangeRatio_);
             }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(6, this.retcode_);
+                size2 += CodedOutputStream.computeInt32Size(15, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class PlayerCookArgsRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getRetcode())) + 3)) + Float.floatToIntBits(getQteRangeRatio()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getRetcode())) + 6)) + Float.floatToIntBits(getQteRangeRatio()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

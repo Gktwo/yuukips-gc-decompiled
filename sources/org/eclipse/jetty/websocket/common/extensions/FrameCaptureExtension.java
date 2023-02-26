@@ -10,7 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.Calendar;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.StringUtil;
 import org.eclipse.jetty.util.log.Log;
 import org.eclipse.jetty.util.log.Logger;
@@ -48,7 +48,7 @@ public class FrameCaptureExtension extends AbstractExtension {
         try {
             nextIncomingFrame(frame);
         } catch (Throwable t) {
-            C5747IO.close(this.incomingChannel);
+            C5739IO.close(this.incomingChannel);
             this.incomingChannel = null;
             throw t;
         }
@@ -60,7 +60,7 @@ public class FrameCaptureExtension extends AbstractExtension {
         try {
             nextOutgoingFrame(frame, callback, batchMode);
         } catch (Throwable t) {
-            C5747IO.close(this.outgoingChannel);
+            C5739IO.close(this.outgoingChannel);
             this.outgoingChannel = null;
             throw t;
         }

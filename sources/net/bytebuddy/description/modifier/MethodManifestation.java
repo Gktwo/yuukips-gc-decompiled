@@ -9,7 +9,7 @@ public enum MethodManifestation implements ModifierContributor.ForMethod {
     NATIVE(256),
     ABSTRACT(1024),
     FINAL(16),
-    FINAL_NATIVE(PacketOpcodes.SceneCreateEntityRsp),
+    FINAL_NATIVE(PacketOpcodes.HitClientTrivialNotify),
     BRIDGE(64),
     FINAL_BRIDGE(80);
     

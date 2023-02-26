@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DailyTaskDataNotifyOuterClass.class */
 public final class DailyTaskDataNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019DailyTaskDataNotify.proto\"c\n\u0013DailyTaskDataNotify\u0012\u0017\n\u000fscore_reward_id\u0018\r \u0001(\r\u0012\u0014\n\ffinished_num\u0018\b \u0001(\r\u0012\u001d\n\u0015is_taken_score_reward\u0018\u0005 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019DailyTaskDataNotify.proto\"]\n\u0013DailyTaskDataNotify\u0012\u001a\n\u0012isTakenScoreReward\u0018\r \u0001(\b\u0012\u0013\n\u000bfinishedNum\u0018\u000b \u0001(\r\u0012\u0015\n\rscoreRewardId\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_DailyTaskDataNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_DailyTaskDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DailyTaskDataNotify_descriptor, new String[]{"ScoreRewardId", "FinishedNum", "IsTakenScoreReward"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_DailyTaskDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DailyTaskDataNotify_descriptor, new String[]{"IsTakenScoreReward", "FinishedNum", "ScoreRewardId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DailyTaskDataNotifyOuterClass$DailyTaskDataNotifyOrBuilder.class */
     public interface DailyTaskDataNotifyOrBuilder extends MessageOrBuilder {
-        int getScoreRewardId();
+        boolean getIsTakenScoreReward();
 
         int getFinishedNum();
 
-        boolean getIsTakenScoreReward();
+        int getScoreRewardId();
     }
 
     private DailyTaskDataNotifyOuterClass() {
@@ -46,12 +46,12 @@ public final class DailyTaskDataNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DailyTaskDataNotifyOuterClass$DailyTaskDataNotify.class */
     public static final class DailyTaskDataNotify extends GeneratedMessageV3 implements DailyTaskDataNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SCORE_REWARD_ID_FIELD_NUMBER = 13;
-        private int scoreRewardId_;
-        public static final int FINISHED_NUM_FIELD_NUMBER = 8;
-        private int finishedNum_;
-        public static final int IS_TAKEN_SCORE_REWARD_FIELD_NUMBER = 5;
+        public static final int ISTAKENSCOREREWARD_FIELD_NUMBER = 13;
         private boolean isTakenScoreReward_;
+        public static final int FINISHEDNUM_FIELD_NUMBER = 11;
+        private int finishedNum_;
+        public static final int SCOREREWARDID_FIELD_NUMBER = 2;
+        private int scoreRewardId_;
         private byte memoizedIsInitialized;
         private static final DailyTaskDataNotify DEFAULT_INSTANCE = new DailyTaskDataNotify();
         private static final Parser<DailyTaskDataNotify> PARSER = new AbstractParser<DailyTaskDataNotify>() { // from class: emu.grasscutter.net.proto.DailyTaskDataNotifyOuterClass.DailyTaskDataNotify.1
@@ -98,14 +98,14 @@ public final class DailyTaskDataNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 40:
-                                    this.isTakenScoreReward_ = input.readBool();
+                                case 16:
+                                    this.scoreRewardId_ = input.readUInt32();
                                     break;
-                                case 64:
+                                case 88:
                                     this.finishedNum_ = input.readUInt32();
                                     break;
                                 case 104:
-                                    this.scoreRewardId_ = input.readUInt32();
+                                    this.isTakenScoreReward_ = input.readBool();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -138,8 +138,8 @@ public final class DailyTaskDataNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.DailyTaskDataNotifyOuterClass.DailyTaskDataNotifyOrBuilder
-        public int getScoreRewardId() {
-            return this.scoreRewardId_;
+        public boolean getIsTakenScoreReward() {
+            return this.isTakenScoreReward_;
         }
 
         @Override // emu.grasscutter.net.proto.DailyTaskDataNotifyOuterClass.DailyTaskDataNotifyOrBuilder
@@ -148,8 +148,8 @@ public final class DailyTaskDataNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.DailyTaskDataNotifyOuterClass.DailyTaskDataNotifyOrBuilder
-        public boolean getIsTakenScoreReward() {
-            return this.isTakenScoreReward_;
+        public int getScoreRewardId() {
+            return this.scoreRewardId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,14 +167,14 @@ public final class DailyTaskDataNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.isTakenScoreReward_) {
-                output.writeBool(5, this.isTakenScoreReward_);
+            if (this.scoreRewardId_ != 0) {
+                output.writeUInt32(2, this.scoreRewardId_);
             }
             if (this.finishedNum_ != 0) {
-                output.writeUInt32(8, this.finishedNum_);
+                output.writeUInt32(11, this.finishedNum_);
             }
-            if (this.scoreRewardId_ != 0) {
-                output.writeUInt32(13, this.scoreRewardId_);
+            if (this.isTakenScoreReward_) {
+                output.writeBool(13, this.isTakenScoreReward_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class DailyTaskDataNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.isTakenScoreReward_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(5, this.isTakenScoreReward_);
+            if (this.scoreRewardId_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.scoreRewardId_);
             }
             if (this.finishedNum_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.finishedNum_);
+                size2 += CodedOutputStream.computeUInt32Size(11, this.finishedNum_);
             }
-            if (this.scoreRewardId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.scoreRewardId_);
+            if (this.isTakenScoreReward_) {
+                size2 += CodedOutputStream.computeBoolSize(13, this.isTakenScoreReward_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class DailyTaskDataNotifyOuterClass {
                 return equals(obj);
             }
             DailyTaskDataNotify other = (DailyTaskDataNotify) obj;
-            return getScoreRewardId() == other.getScoreRewardId() && getFinishedNum() == other.getFinishedNum() && getIsTakenScoreReward() == other.getIsTakenScoreReward() && this.unknownFields.equals(other.unknownFields);
+            return getIsTakenScoreReward() == other.getIsTakenScoreReward() && getFinishedNum() == other.getFinishedNum() && getScoreRewardId() == other.getScoreRewardId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class DailyTaskDataNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + getScoreRewardId())) + 8)) + getFinishedNum())) + 5)) + Internal.hashBoolean(getIsTakenScoreReward()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + Internal.hashBoolean(getIsTakenScoreReward()))) + 11)) + getFinishedNum())) + 2)) + getScoreRewardId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -296,9 +296,9 @@ public final class DailyTaskDataNotifyOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DailyTaskDataNotifyOuterClass$DailyTaskDataNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements DailyTaskDataNotifyOrBuilder {
-            private int scoreRewardId_;
-            private int finishedNum_;
             private boolean isTakenScoreReward_;
+            private int finishedNum_;
+            private int scoreRewardId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return DailyTaskDataNotifyOuterClass.internal_static_DailyTaskDataNotify_descriptor;
@@ -326,9 +326,9 @@ public final class DailyTaskDataNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.scoreRewardId_ = 0;
-                this.finishedNum_ = 0;
                 this.isTakenScoreReward_ = false;
+                this.finishedNum_ = 0;
+                this.scoreRewardId_ = 0;
                 return this;
             }
 
@@ -354,9 +354,9 @@ public final class DailyTaskDataNotifyOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public DailyTaskDataNotify buildPartial() {
                 DailyTaskDataNotify result = new DailyTaskDataNotify(this);
-                result.scoreRewardId_ = this.scoreRewardId_;
-                result.finishedNum_ = this.finishedNum_;
                 result.isTakenScoreReward_ = this.isTakenScoreReward_;
+                result.finishedNum_ = this.finishedNum_;
+                result.scoreRewardId_ = this.scoreRewardId_;
                 onBuilt();
                 return result;
             }
@@ -404,14 +404,14 @@ public final class DailyTaskDataNotifyOuterClass {
                 if (other == DailyTaskDataNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getScoreRewardId() != 0) {
-                    setScoreRewardId(other.getScoreRewardId());
+                if (other.getIsTakenScoreReward()) {
+                    setIsTakenScoreReward(other.getIsTakenScoreReward());
                 }
                 if (other.getFinishedNum() != 0) {
                     setFinishedNum(other.getFinishedNum());
                 }
-                if (other.getIsTakenScoreReward()) {
-                    setIsTakenScoreReward(other.getIsTakenScoreReward());
+                if (other.getScoreRewardId() != 0) {
+                    setScoreRewardId(other.getScoreRewardId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -446,18 +446,18 @@ public final class DailyTaskDataNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.DailyTaskDataNotifyOuterClass.DailyTaskDataNotifyOrBuilder
-            public int getScoreRewardId() {
-                return this.scoreRewardId_;
+            public boolean getIsTakenScoreReward() {
+                return this.isTakenScoreReward_;
             }
 
-            public Builder setScoreRewardId(int value) {
-                this.scoreRewardId_ = value;
+            public Builder setIsTakenScoreReward(boolean value) {
+                this.isTakenScoreReward_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearScoreRewardId() {
-                this.scoreRewardId_ = 0;
+            public Builder clearIsTakenScoreReward() {
+                this.isTakenScoreReward_ = false;
                 onChanged();
                 return this;
             }
@@ -480,18 +480,18 @@ public final class DailyTaskDataNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.DailyTaskDataNotifyOuterClass.DailyTaskDataNotifyOrBuilder
-            public boolean getIsTakenScoreReward() {
-                return this.isTakenScoreReward_;
+            public int getScoreRewardId() {
+                return this.scoreRewardId_;
             }
 
-            public Builder setIsTakenScoreReward(boolean value) {
-                this.isTakenScoreReward_ = value;
+            public Builder setScoreRewardId(int value) {
+                this.scoreRewardId_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearIsTakenScoreReward() {
-                this.isTakenScoreReward_ = false;
+            public Builder clearScoreRewardId() {
+                this.scoreRewardId_ = 0;
                 onChanged();
                 return this;
             }

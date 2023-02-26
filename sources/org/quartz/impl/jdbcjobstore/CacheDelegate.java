@@ -1,6 +1,5 @@
 package org.quartz.impl.jdbcjobstore;
 
-import emu.grasscutter.net.proto.RetcodeOuterClass;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -15,7 +14,7 @@ import java.sql.SQLException;
 public class CacheDelegate extends StdJDBCDelegate {
     @Override // org.quartz.impl.jdbcjobstore.StdJDBCDelegate
     protected void setBytes(PreparedStatement ps, int index, ByteArrayOutputStream baos) throws SQLException {
-        ps.setObject(index, baos == null ? null : baos.toByteArray(), RetcodeOuterClass.Retcode.RET_ORDER_INFO_NOT_EXIST_VALUE);
+        ps.setObject(index, baos == null ? null : baos.toByteArray(), 2004);
     }
 
     @Override // org.quartz.impl.jdbcjobstore.StdJDBCDelegate

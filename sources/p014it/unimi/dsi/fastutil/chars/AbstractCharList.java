@@ -121,33 +121,33 @@ public abstract class AbstractCharList extends AbstractCharCollection implements
     public static final class IndexBasedSpliterator extends CharSpliterators.LateBindingSizeIndexBasedSpliterator {
 
         /* renamed from: l */
-        final CharList f1351l;
+        final CharList f1315l;
 
         /* access modifiers changed from: package-private */
         public IndexBasedSpliterator(CharList l, int pos) {
             super(pos);
-            this.f1351l = l;
+            this.f1315l = l;
         }
 
         IndexBasedSpliterator(CharList l, int pos, int maxPos) {
             super(pos, maxPos);
-            this.f1351l = l;
+            this.f1315l = l;
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharSpliterators.LateBindingSizeIndexBasedSpliterator
         protected final int getMaxPosFromBackingStore() {
-            return this.f1351l.size();
+            return this.f1315l.size();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharSpliterators.AbstractIndexBasedSpliterator
         protected final char get(int i) {
-            return this.f1351l.getChar(i);
+            return this.f1315l.getChar(i);
         }
 
         /* access modifiers changed from: protected */
         @Override // p014it.unimi.dsi.fastutil.chars.CharSpliterators.AbstractIndexBasedSpliterator
         public final IndexBasedSpliterator makeForSplit(int pos, int maxPos) {
-            return new IndexBasedSpliterator(this.f1351l, pos, maxPos);
+            return new IndexBasedSpliterator(this.f1315l, pos, maxPos);
         }
     }
 
@@ -859,11 +859,11 @@ public abstract class AbstractCharList extends AbstractCharCollection implements
         private static final long serialVersionUID = -7046029254386353129L;
 
         /* renamed from: l */
-        protected final CharList f1349l;
+        protected final CharList f1313l;
         protected final int from;
 
         /* renamed from: to */
-        protected int f1350to;
+        protected int f1314to;
         static final /* synthetic */ boolean $assertionsDisabled;
 
         /* Return type fixed from 'java.util.ListIterator' to match base method */
@@ -883,18 +883,18 @@ public abstract class AbstractCharList extends AbstractCharCollection implements
         }
 
         public CharSubList(CharList l, int from, int to) {
-            this.f1349l = l;
+            this.f1313l = l;
             this.from = from;
-            this.f1350to = to;
+            this.f1314to = to;
         }
 
         /* access modifiers changed from: private */
         public boolean assertRange() {
-            if (!$assertionsDisabled && this.from > this.f1349l.size()) {
+            if (!$assertionsDisabled && this.from > this.f1313l.size()) {
                 throw new AssertionError();
-            } else if (!$assertionsDisabled && this.f1350to > this.f1349l.size()) {
+            } else if (!$assertionsDisabled && this.f1314to > this.f1313l.size()) {
                 throw new AssertionError();
-            } else if ($assertionsDisabled || this.f1350to >= this.from) {
+            } else if ($assertionsDisabled || this.f1314to >= this.from) {
                 return true;
             } else {
                 throw new AssertionError();
@@ -903,8 +903,8 @@ public abstract class AbstractCharList extends AbstractCharCollection implements
 
         @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.AbstractCharCollection, p014it.unimi.dsi.fastutil.chars.CharCollection
         public boolean add(char k) {
-            this.f1349l.add(this.f1350to, k);
-            this.f1350to++;
+            this.f1313l.add(this.f1314to, k);
+            this.f1314to++;
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }
@@ -914,8 +914,8 @@ public abstract class AbstractCharList extends AbstractCharCollection implements
         @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.CharList
         public void add(int index, char k) {
             ensureIndex(index);
-            this.f1349l.add(this.from + index, k);
-            this.f1350to++;
+            this.f1313l.add(this.from + index, k);
+            this.f1314to++;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -924,32 +924,32 @@ public abstract class AbstractCharList extends AbstractCharCollection implements
         @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, java.util.List
         public boolean addAll(int index, Collection<? extends Character> c) {
             ensureIndex(index);
-            this.f1350to += c.size();
-            return this.f1349l.addAll(this.from + index, c);
+            this.f1314to += c.size();
+            return this.f1313l.addAll(this.from + index, c);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharList
         public char getChar(int index) {
             ensureRestrictedIndex(index);
-            return this.f1349l.getChar(this.from + index);
+            return this.f1313l.getChar(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.CharList
         public char removeChar(int index) {
             ensureRestrictedIndex(index);
-            this.f1350to--;
-            return this.f1349l.removeChar(this.from + index);
+            this.f1314to--;
+            return this.f1313l.removeChar(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.CharList
         public char set(int index, char k) {
             ensureRestrictedIndex(index);
-            return this.f1349l.set(this.from + index, k);
+            return this.f1313l.set(this.from + index, k);
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public int size() {
-            return this.f1350to - this.from;
+            return this.f1314to - this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.CharList
@@ -958,15 +958,15 @@ public abstract class AbstractCharList extends AbstractCharCollection implements
             if (from + length > size()) {
                 throw new IndexOutOfBoundsException("End index (" + from + length + ") is greater than list size (" + size() + ")");
             }
-            this.f1349l.getElements(this.from + from, a, offset, length);
+            this.f1313l.getElements(this.from + from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.CharList
         public void removeElements(int from, int to) {
             ensureIndex(from);
             ensureIndex(to);
-            this.f1349l.removeElements(this.from + from, this.from + to);
-            this.f1350to -= to - from;
+            this.f1313l.removeElements(this.from + from, this.from + to);
+            this.f1314to -= to - from;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -975,8 +975,8 @@ public abstract class AbstractCharList extends AbstractCharCollection implements
         @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.CharList
         public void addElements(int index, char[] a, int offset, int length) {
             ensureIndex(index);
-            this.f1349l.addElements(this.from + index, a, offset, length);
-            this.f1350to += length;
+            this.f1313l.addElements(this.from + index, a, offset, length);
+            this.f1314to += length;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -985,7 +985,7 @@ public abstract class AbstractCharList extends AbstractCharCollection implements
         @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.CharList
         public void setElements(int index, char[] a, int offset, int length) {
             ensureIndex(index);
-            this.f1349l.setElements(this.from + index, a, offset, length);
+            this.f1313l.setElements(this.from + index, a, offset, length);
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1007,7 +1007,7 @@ public abstract class AbstractCharList extends AbstractCharCollection implements
 
             @Override // p014it.unimi.dsi.fastutil.chars.CharIterators.AbstractIndexBasedIterator
             protected final char get(int i) {
-                return CharSubList.this.f1349l.getChar(CharSubList.this.from + i);
+                return CharSubList.this.f1313l.getChar(CharSubList.this.from + i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.chars.CharIterators.AbstractIndexBasedListIterator
@@ -1027,7 +1027,7 @@ public abstract class AbstractCharList extends AbstractCharCollection implements
 
             @Override // p014it.unimi.dsi.fastutil.chars.CharIterators.AbstractIndexBasedIterator
             protected final int getMaxPos() {
-                return CharSubList.this.f1350to - CharSubList.this.from;
+                return CharSubList.this.f1314to - CharSubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.chars.CharIterators.AbstractIndexBasedListIterator, p014it.unimi.dsi.fastutil.chars.CharListIterator
@@ -1069,7 +1069,7 @@ public abstract class AbstractCharList extends AbstractCharCollection implements
 
             @Override // java.util.Iterator, java.util.ListIterator
             public boolean hasNext() {
-                return this.parent.nextIndex() < CharSubList.this.f1350to;
+                return this.parent.nextIndex() < CharSubList.this.f1314to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -1128,8 +1128,8 @@ public abstract class AbstractCharList extends AbstractCharCollection implements
                 }
                 int currentPos = this.parent.nextIndex();
                 int parentNewPos = currentPos + n;
-                if (parentNewPos > CharSubList.this.f1350to) {
-                    parentNewPos = CharSubList.this.f1350to;
+                if (parentNewPos > CharSubList.this.f1314to) {
+                    parentNewPos = CharSubList.this.f1314to;
                 }
                 return this.parent.skip(parentNewPos - currentPos);
             }
@@ -1140,12 +1140,12 @@ public abstract class AbstractCharList extends AbstractCharCollection implements
         @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.CharList, java.util.List
         public ListIterator<Character> listIterator(int index) {
             ensureIndex(index);
-            return this.f1349l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f1349l.listIterator(index + this.from));
+            return this.f1313l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f1313l.listIterator(index + this.from));
         }
 
         @Override // java.util.Collection, java.lang.Iterable, p014it.unimi.dsi.fastutil.chars.CharCollection, p014it.unimi.dsi.fastutil.chars.CharIterable
         public CharSpliterator spliterator() {
-            return this.f1349l instanceof RandomAccess ? new IndexBasedSpliterator(this.f1349l, this.from, this.f1350to) : spliterator();
+            return this.f1313l instanceof RandomAccess ? new IndexBasedSpliterator(this.f1313l, this.from, this.f1314to) : spliterator();
         }
 
         /* Return type fixed from 'it.unimi.dsi.fastutil.chars.CharList' to match base method */
@@ -1165,8 +1165,8 @@ public abstract class AbstractCharList extends AbstractCharCollection implements
             if (index == -1) {
                 return false;
             }
-            this.f1350to--;
-            this.f1349l.removeChar(this.from + index);
+            this.f1314to--;
+            this.f1313l.removeChar(this.from + index);
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }

@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ServerAnnounceRevokeNotifyOuterClass.class */
 public final class ServerAnnounceRevokeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n ServerAnnounceRevokeNotify.proto\"4\n\u001aServerAnnounceRevokeNotify\u0012\u0016\n\u000econfig_id_list\u0018\t \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n ServerAnnounceRevokeNotify.proto\"2\n\u001aServerAnnounceRevokeNotify\u0012\u0014\n\fconfigIdList\u0018\f \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ServerAnnounceRevokeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ServerAnnounceRevokeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ServerAnnounceRevokeNotify_descriptor, new String[]{"ConfigIdList"});
 
@@ -49,7 +49,7 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ServerAnnounceRevokeNotifyOuterClass$ServerAnnounceRevokeNotify.class */
     public static final class ServerAnnounceRevokeNotify extends GeneratedMessageV3 implements ServerAnnounceRevokeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CONFIG_ID_LIST_FIELD_NUMBER = 9;
+        public static final int CONFIGIDLIST_FIELD_NUMBER = 12;
         private Internal.IntList configIdList_;
         private int configIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -103,14 +103,14 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 72:
+                                case 96:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.configIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.configIdList_.addInt(input.readUInt32());
                                     break;
-                                case 74:
+                                case 98:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.configIdList_ = newIntList();
@@ -186,7 +186,7 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getConfigIdListList().size() > 0) {
-                output.writeUInt32NoTag(74);
+                output.writeUInt32NoTag(98);
                 output.writeUInt32NoTag(this.configIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.configIdList_.size(); i++) {
@@ -234,7 +234,7 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getConfigIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 9)) + getConfigIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 12)) + getConfigIdListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

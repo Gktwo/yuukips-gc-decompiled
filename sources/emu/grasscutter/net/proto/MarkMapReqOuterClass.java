@@ -23,7 +23,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MarkMapReqOuterClass.class */
 public final class MarkMapReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010MarkMapReq.proto\u001a\u0012MapMarkPoint.proto\"Á\u0001\n\nMarkMapReq\u0012!\n\u0002op\u0018\u0003 \u0001(\u000e2\u0015.MarkMapReq.Operation\u0012\u001a\n\u0003old\u0018\u0006 \u0001(\u000b2\r.MapMarkPoint\u0012\u001b\n\u0004mark\u0018\r \u0001(\u000b2\r.MapMarkPoint\"W\n\tOperation\u0012\u0011\n\rOPERATION_ADD\u0010��\u0012\u0011\n\rOPERATION_MOD\u0010\u0001\u0012\u0011\n\rOPERATION_DEL\u0010\u0002\u0012\u0011\n\rOPERATION_GET\u0010\u0003B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MapMarkPointOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010MarkMapReq.proto\u001a\u0012MapMarkPoint.proto\"Á\u0001\n\nMarkMapReq\u0012!\n\u0002op\u0018\u0003 \u0001(\u000e2\u0015.MarkMapReq.Operation\u0012\u001a\n\u0003old\u0018\u0007 \u0001(\u000b2\r.MapMarkPoint\u0012\u001b\n\u0004mark\u0018\n \u0001(\u000b2\r.MapMarkPoint\"W\n\tOperation\u0012\u0011\n\rOPERATION_ADD\u0010��\u0012\u0011\n\rOPERATION_MOD\u0010\u0001\u0012\u0011\n\rOPERATION_DEL\u0010\u0002\u0012\u0011\n\rOPERATION_GET\u0010\u0003B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MapMarkPointOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_MarkMapReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_MarkMapReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MarkMapReq_descriptor, new String[]{"Op", "Old", "Mark"});
 
@@ -61,9 +61,9 @@ public final class MarkMapReqOuterClass {
         private static final long serialVersionUID = 0;
         public static final int OP_FIELD_NUMBER = 3;
         private int op_;
-        public static final int OLD_FIELD_NUMBER = 6;
+        public static final int OLD_FIELD_NUMBER = 7;
         private MapMarkPointOuterClass.MapMarkPoint old_;
-        public static final int MARK_FIELD_NUMBER = 13;
+        public static final int MARK_FIELD_NUMBER = 10;
         private MapMarkPointOuterClass.MapMarkPoint mark_;
         private byte memoizedIsInitialized;
         private static final MarkMapReq DEFAULT_INSTANCE = new MarkMapReq();
@@ -114,7 +114,7 @@ public final class MarkMapReqOuterClass {
                             case 24:
                                 this.op_ = input.readEnum();
                                 break;
-                            case 50:
+                            case 58:
                                 MapMarkPointOuterClass.MapMarkPoint.Builder subBuilder = this.old_ != null ? this.old_.toBuilder() : null;
                                 this.old_ = (MapMarkPointOuterClass.MapMarkPoint) input.readMessage(MapMarkPointOuterClass.MapMarkPoint.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -124,7 +124,7 @@ public final class MarkMapReqOuterClass {
                                     this.old_ = subBuilder.buildPartial();
                                     break;
                                 }
-                            case 106:
+                            case 82:
                                 MapMarkPointOuterClass.MapMarkPoint.Builder subBuilder2 = this.mark_ != null ? this.mark_.toBuilder() : null;
                                 this.mark_ = (MapMarkPointOuterClass.MapMarkPoint) input.readMessage(MapMarkPointOuterClass.MapMarkPoint.parser(), extensionRegistry);
                                 if (subBuilder2 == null) {
@@ -308,10 +308,10 @@ public final class MarkMapReqOuterClass {
                 output.writeEnum(3, this.op_);
             }
             if (this.old_ != null) {
-                output.writeMessage(6, getOld());
+                output.writeMessage(7, getOld());
             }
             if (this.mark_ != null) {
-                output.writeMessage(13, getMark());
+                output.writeMessage(10, getMark());
             }
             this.unknownFields.writeTo(output);
         }
@@ -327,10 +327,10 @@ public final class MarkMapReqOuterClass {
                 size2 = 0 + CodedOutputStream.computeEnumSize(3, this.op_);
             }
             if (this.old_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(6, getOld());
+                size2 += CodedOutputStream.computeMessageSize(7, getOld());
             }
             if (this.mark_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(13, getMark());
+                size2 += CodedOutputStream.computeMessageSize(10, getMark());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -362,10 +362,10 @@ public final class MarkMapReqOuterClass {
             }
             int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + this.op_;
             if (hasOld()) {
-                hash = (53 * ((37 * hash) + 6)) + getOld().hashCode();
+                hash = (53 * ((37 * hash) + 7)) + getOld().hashCode();
             }
             if (hasMark()) {
-                hash = (53 * ((37 * hash) + 13)) + getMark().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getMark().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

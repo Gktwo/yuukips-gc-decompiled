@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MusicGameRecordOuterClass.class */
 public final class MusicGameRecordOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015MusicGameRecord.proto\"J\n\u000fMusicGameRecord\u0012\u0011\n\tis_unlock\u0018\u0003 \u0001(\b\u0012\u0011\n\tmax_combo\u0018\u000e \u0001(\r\u0012\u0011\n\tmax_score\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015MusicGameRecord.proto\"G\n\u000fMusicGameRecord\u0012\u0010\n\bisUnlock\u0018\b \u0001(\b\u0012\u0010\n\bmaxScore\u0018\u000f \u0001(\r\u0012\u0010\n\bmaxCombo\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_MusicGameRecord_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_MusicGameRecord_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MusicGameRecord_descriptor, new String[]{"IsUnlock", "MaxCombo", "MaxScore"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_MusicGameRecord_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MusicGameRecord_descriptor, new String[]{"IsUnlock", "MaxScore", "MaxCombo"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MusicGameRecordOuterClass$MusicGameRecordOrBuilder.class */
     public interface MusicGameRecordOrBuilder extends MessageOrBuilder {
         boolean getIsUnlock();
 
-        int getMaxCombo();
-
         int getMaxScore();
+
+        int getMaxCombo();
     }
 
     private MusicGameRecordOuterClass() {
@@ -46,12 +46,12 @@ public final class MusicGameRecordOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MusicGameRecordOuterClass$MusicGameRecord.class */
     public static final class MusicGameRecord extends GeneratedMessageV3 implements MusicGameRecordOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_UNLOCK_FIELD_NUMBER = 3;
+        public static final int ISUNLOCK_FIELD_NUMBER = 8;
         private boolean isUnlock_;
-        public static final int MAX_COMBO_FIELD_NUMBER = 14;
-        private int maxCombo_;
-        public static final int MAX_SCORE_FIELD_NUMBER = 7;
+        public static final int MAXSCORE_FIELD_NUMBER = 15;
         private int maxScore_;
+        public static final int MAXCOMBO_FIELD_NUMBER = 1;
+        private int maxCombo_;
         private byte memoizedIsInitialized;
         private static final MusicGameRecord DEFAULT_INSTANCE = new MusicGameRecord();
         private static final Parser<MusicGameRecord> PARSER = new AbstractParser<MusicGameRecord>() { // from class: emu.grasscutter.net.proto.MusicGameRecordOuterClass.MusicGameRecord.1
@@ -98,14 +98,14 @@ public final class MusicGameRecordOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 24:
+                                case 8:
+                                    this.maxCombo_ = input.readUInt32();
+                                    break;
+                                case 64:
                                     this.isUnlock_ = input.readBool();
                                     break;
-                                case 56:
+                                case 120:
                                     this.maxScore_ = input.readUInt32();
-                                    break;
-                                case 112:
-                                    this.maxCombo_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -143,13 +143,13 @@ public final class MusicGameRecordOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.MusicGameRecordOuterClass.MusicGameRecordOrBuilder
-        public int getMaxCombo() {
-            return this.maxCombo_;
+        public int getMaxScore() {
+            return this.maxScore_;
         }
 
         @Override // emu.grasscutter.net.proto.MusicGameRecordOuterClass.MusicGameRecordOrBuilder
-        public int getMaxScore() {
-            return this.maxScore_;
+        public int getMaxCombo() {
+            return this.maxCombo_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,14 +167,14 @@ public final class MusicGameRecordOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.maxCombo_ != 0) {
+                output.writeUInt32(1, this.maxCombo_);
+            }
             if (this.isUnlock_) {
-                output.writeBool(3, this.isUnlock_);
+                output.writeBool(8, this.isUnlock_);
             }
             if (this.maxScore_ != 0) {
-                output.writeUInt32(7, this.maxScore_);
-            }
-            if (this.maxCombo_ != 0) {
-                output.writeUInt32(14, this.maxCombo_);
+                output.writeUInt32(15, this.maxScore_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class MusicGameRecordOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.maxCombo_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.maxCombo_);
+            }
             if (this.isUnlock_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(3, this.isUnlock_);
+                size2 += CodedOutputStream.computeBoolSize(8, this.isUnlock_);
             }
             if (this.maxScore_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.maxScore_);
-            }
-            if (this.maxCombo_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.maxCombo_);
+                size2 += CodedOutputStream.computeUInt32Size(15, this.maxScore_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class MusicGameRecordOuterClass {
                 return equals(obj);
             }
             MusicGameRecord other = (MusicGameRecord) obj;
-            return getIsUnlock() == other.getIsUnlock() && getMaxCombo() == other.getMaxCombo() && getMaxScore() == other.getMaxScore() && this.unknownFields.equals(other.unknownFields);
+            return getIsUnlock() == other.getIsUnlock() && getMaxScore() == other.getMaxScore() && getMaxCombo() == other.getMaxCombo() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class MusicGameRecordOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + Internal.hashBoolean(getIsUnlock()))) + 14)) + getMaxCombo())) + 7)) + getMaxScore())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + Internal.hashBoolean(getIsUnlock()))) + 15)) + getMaxScore())) + 1)) + getMaxCombo())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -297,8 +297,8 @@ public final class MusicGameRecordOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MusicGameRecordOuterClass$MusicGameRecord$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements MusicGameRecordOrBuilder {
             private boolean isUnlock_;
-            private int maxCombo_;
             private int maxScore_;
+            private int maxCombo_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return MusicGameRecordOuterClass.internal_static_MusicGameRecord_descriptor;
@@ -327,8 +327,8 @@ public final class MusicGameRecordOuterClass {
             public Builder clear() {
                 clear();
                 this.isUnlock_ = false;
-                this.maxCombo_ = 0;
                 this.maxScore_ = 0;
+                this.maxCombo_ = 0;
                 return this;
             }
 
@@ -355,8 +355,8 @@ public final class MusicGameRecordOuterClass {
             public MusicGameRecord buildPartial() {
                 MusicGameRecord result = new MusicGameRecord(this);
                 result.isUnlock_ = this.isUnlock_;
-                result.maxCombo_ = this.maxCombo_;
                 result.maxScore_ = this.maxScore_;
+                result.maxCombo_ = this.maxCombo_;
                 onBuilt();
                 return result;
             }
@@ -407,11 +407,11 @@ public final class MusicGameRecordOuterClass {
                 if (other.getIsUnlock()) {
                     setIsUnlock(other.getIsUnlock());
                 }
-                if (other.getMaxCombo() != 0) {
-                    setMaxCombo(other.getMaxCombo());
-                }
                 if (other.getMaxScore() != 0) {
                     setMaxScore(other.getMaxScore());
+                }
+                if (other.getMaxCombo() != 0) {
+                    setMaxCombo(other.getMaxCombo());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -463,23 +463,6 @@ public final class MusicGameRecordOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.MusicGameRecordOuterClass.MusicGameRecordOrBuilder
-            public int getMaxCombo() {
-                return this.maxCombo_;
-            }
-
-            public Builder setMaxCombo(int value) {
-                this.maxCombo_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearMaxCombo() {
-                this.maxCombo_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.MusicGameRecordOuterClass.MusicGameRecordOrBuilder
             public int getMaxScore() {
                 return this.maxScore_;
             }
@@ -492,6 +475,23 @@ public final class MusicGameRecordOuterClass {
 
             public Builder clearMaxScore() {
                 this.maxScore_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.MusicGameRecordOuterClass.MusicGameRecordOrBuilder
+            public int getMaxCombo() {
+                return this.maxCombo_;
+            }
+
+            public Builder setMaxCombo(int value) {
+                this.maxCombo_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearMaxCombo() {
+                this.maxCombo_ = 0;
                 onChanged();
                 return this;
             }

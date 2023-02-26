@@ -163,8 +163,8 @@ public class Kcp implements IKcp {
         buf.writeByte(seg.cmd);
         buf.writeByte(seg.frg);
         buf.writeShortLE(seg.wnd);
-        buf.writeIntLE((int) seg.f3082ts);
-        buf.writeIntLE((int) seg.f3083sn);
+        buf.writeIntLE((int) seg.f3046ts);
+        buf.writeIntLE((int) seg.f3047sn);
         buf.writeIntLE((int) seg.una);
         buf.writeIntLE(seg.data == null ? 0 : seg.data.readableBytes());
         switch (seg.ackMaskSize) {
@@ -230,7 +230,7 @@ public class Kcp implements IKcp {
             int fragment = seg.frg;
             itr.remove();
             if (log.isDebugEnabled()) {
-                log.debug("{} recv sn={}", this, Long.valueOf(seg.f3083sn));
+                log.debug("{} recv sn={}", this, Long.valueOf(seg.f3047sn));
             }
             if (byteBuf == null) {
                 if (fragment == 0) {
@@ -277,7 +277,7 @@ public class Kcp implements IKcp {
             bufList.add(seg.data);
             int fragment = seg.frg;
             if (log.isDebugEnabled()) {
-                log.debug("{} recv sn={}", this, Long.valueOf(seg.f3083sn));
+                log.debug("{} recv sn={}", this, Long.valueOf(seg.f3047sn));
             }
             itr.remove();
             seg.recycle(false);
@@ -401,7 +401,7 @@ public class Kcp implements IKcp {
 
     private void shrinkBuf() {
         if (this.sndBuf.size() > 0) {
-            this.sndUna = this.sndBuf.peek().f3083sn;
+            this.sndUna = this.sndBuf.peek().f3047sn;
         } else {
             this.sndUna = this.sndNxt;
         }
@@ -412,11 +412,11 @@ public class Kcp implements IKcp {
             Iterator<Segment> itr = this.sndBufItr.rewind();
             while (itr.hasNext()) {
                 Segment seg = itr.next();
-                if (sn == seg.f3083sn) {
+                if (sn == seg.f3047sn) {
                     itr.remove();
                     seg.recycle(true);
                     return;
-                } else if (itimediff(sn, seg.f3083sn) < 0) {
+                } else if (itimediff(sn, seg.f3047sn) < 0) {
                     return;
                 }
             }
@@ -428,7 +428,7 @@ public class Kcp implements IKcp {
         Iterator<Segment> itr = this.sndBufItr.rewind();
         while (itr.hasNext()) {
             Segment seg = itr.next();
-            if (itimediff(una, seg.f3083sn) <= 0) {
+            if (itimediff(una, seg.f3047sn) <= 0) {
                 break;
             }
             count++;
@@ -443,7 +443,7 @@ public class Kcp implements IKcp {
             Iterator<Segment> itr = this.sndBufItr.rewind();
             while (itr.hasNext()) {
                 Segment seg = itr.next();
-                long index = (seg.f3083sn - una) - 1;
+                long index = (seg.f3047sn - una) - 1;
                 if (index >= 0) {
                     if (index < ((long) this.ackMaskSize)) {
                         if ((ackMask & ((long) (1 << ((int) index)))) != 0) {
@@ -463,8 +463,8 @@ public class Kcp implements IKcp {
             Iterator<Segment> itr = this.sndBufItr.rewind();
             while (itr.hasNext()) {
                 Segment seg = itr.next();
-                if (itimediff(sn, seg.f3083sn) >= 0) {
-                    if (sn != seg.f3083sn && itimediff(seg.f3082ts, ts) <= 0) {
+                if (itimediff(sn, seg.f3047sn) >= 0) {
+                    if (sn != seg.f3047sn && itimediff(seg.f3046ts, ts) <= 0) {
                         seg.fastack++;
                     }
                 } else {
@@ -490,7 +490,7 @@ public class Kcp implements IKcp {
     }
 
     private boolean parseData(Segment newSeg) {
-        long sn = newSeg.f3083sn;
+        long sn = newSeg.f3047sn;
         if (itimediff(sn, this.rcvNxt + ((long) this.rcvWnd)) >= 0 || itimediff(sn, this.rcvNxt) < 0) {
             newSeg.recycle(true);
             return true;
@@ -505,8 +505,8 @@ public class Kcp implements IKcp {
                     break;
                 }
                 Segment seg = listItr.previous();
-                if (seg.f3083sn != sn) {
-                    if (itimediff(sn, seg.f3083sn) > 0) {
+                if (seg.f3047sn != sn) {
+                    if (itimediff(sn, seg.f3047sn) > 0) {
                         findPos = true;
                         break;
                     }
@@ -534,7 +534,7 @@ public class Kcp implements IKcp {
         Iterator<Segment> itr = this.rcvBufItr.rewind();
         while (itr.hasNext()) {
             Segment seg = itr.next();
-            if (seg.f3083sn == this.rcvNxt && this.rcvQueue.size() < this.rcvWnd) {
+            if (seg.f3047sn == this.rcvNxt && this.rcvQueue.size() < this.rcvWnd) {
                 itr.remove();
                 this.rcvQueue.add(seg);
                 this.rcvNxt++;
@@ -845,10 +845,10 @@ public class Kcp implements IKcp {
         private int wnd;
 
         /* renamed from: ts */
-        private long f3082ts;
+        private long f3046ts;
 
         /* renamed from: sn */
-        private long f3083sn;
+        private long f3047sn;
         private long una;
         private long resendts;
         private int rto;
@@ -874,8 +874,8 @@ public class Kcp implements IKcp {
             this.cmd = 0;
             this.frg = 0;
             this.wnd = 0;
-            this.f3082ts = 0;
-            this.f3083sn = 0;
+            this.f3046ts = 0;
+            this.f3047sn = 0;
             this.una = 0;
             this.resendts = 0;
             this.rto = 0;

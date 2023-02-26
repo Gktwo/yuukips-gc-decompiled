@@ -16,7 +16,7 @@ public class CharArraySet extends AbstractCharSet implements Serializable, Clone
     private static final long serialVersionUID = 1;
 
     /* renamed from: a */
-    private transient char[] f1484a;
+    private transient char[] f1448a;
     private int size;
 
     static /* synthetic */ int access$010(CharArraySet x0) {
@@ -26,16 +26,16 @@ public class CharArraySet extends AbstractCharSet implements Serializable, Clone
     }
 
     public CharArraySet(char[] a) {
-        this.f1484a = a;
+        this.f1448a = a;
         this.size = a.length;
     }
 
     public CharArraySet() {
-        this.f1484a = CharArrays.EMPTY_ARRAY;
+        this.f1448a = CharArrays.EMPTY_ARRAY;
     }
 
     public CharArraySet(int capacity) {
-        this.f1484a = new char[capacity];
+        this.f1448a = new char[capacity];
     }
 
     public CharArraySet(CharCollection c) {
@@ -53,7 +53,7 @@ public class CharArraySet extends AbstractCharSet implements Serializable, Clone
         int i = 0;
         CharIterator it = c.iterator();
         while (it.hasNext()) {
-            this.f1484a[i] = it.next().charValue();
+            this.f1448a[i] = it.next().charValue();
             i++;
         }
         this.size = i;
@@ -63,14 +63,14 @@ public class CharArraySet extends AbstractCharSet implements Serializable, Clone
         this(c.size());
         int i = 0;
         for (Character x : c) {
-            this.f1484a[i] = x.charValue();
+            this.f1448a[i] = x.charValue();
             i++;
         }
         this.size = i;
     }
 
     public CharArraySet(char[] a, int size) {
-        this.f1484a = a;
+        this.f1448a = a;
         this.size = size;
         if (size > a.length) {
             throw new IllegalArgumentException("The provided size (" + size + ") is larger than or equal to the array size (" + a.length + ")");
@@ -114,7 +114,7 @@ public class CharArraySet extends AbstractCharSet implements Serializable, Clone
             if (i == 0) {
                 return -1;
             }
-        } while (this.f1484a[i] != o);
+        } while (this.f1448a[i] != o);
         return i;
     }
 
@@ -133,7 +133,7 @@ public class CharArraySet extends AbstractCharSet implements Serializable, Clone
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                char[] cArr = CharArraySet.this.f1484a;
+                char[] cArr = CharArraySet.this.f1448a;
                 int i = this.next;
                 this.next = i + 1;
                 return cArr[i];
@@ -144,7 +144,7 @@ public class CharArraySet extends AbstractCharSet implements Serializable, Clone
                 int access$010 = CharArraySet.access$010(CharArraySet.this);
                 int i = this.next;
                 this.next = i - 1;
-                System.arraycopy(CharArraySet.this.f1484a, this.next + 1, CharArraySet.this.f1484a, this.next, access$010 - i);
+                System.arraycopy(CharArraySet.this.f1448a, this.next + 1, CharArraySet.this.f1448a, this.next, access$010 - i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.chars.CharIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectIterator
@@ -209,7 +209,7 @@ public class CharArraySet extends AbstractCharSet implements Serializable, Clone
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            char[] cArr = CharArraySet.this.f1484a;
+            char[] cArr = CharArraySet.this.f1448a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(cArr[i]);
@@ -219,7 +219,7 @@ public class CharArraySet extends AbstractCharSet implements Serializable, Clone
         public void forEachRemaining(CharConsumer action) {
             int max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(CharArraySet.this.f1484a[this.pos]);
+                action.accept(CharArraySet.this.f1448a[this.pos]);
                 this.pos++;
             }
         }
@@ -282,7 +282,7 @@ public class CharArraySet extends AbstractCharSet implements Serializable, Clone
         }
         int tail = (this.size - pos) - 1;
         for (int i = 0; i < tail; i++) {
-            this.f1484a[pos + i] = this.f1484a[pos + i + 1];
+            this.f1448a[pos + i] = this.f1448a[pos + i + 1];
         }
         this.size--;
         return true;
@@ -293,7 +293,7 @@ public class CharArraySet extends AbstractCharSet implements Serializable, Clone
         if (findKey(k) != -1) {
             return false;
         }
-        if (this.size == this.f1484a.length) {
+        if (this.size == this.f1448a.length) {
             char[] b = new char[this.size == 0 ? 2 : this.size * 2];
             int i = this.size;
             while (true) {
@@ -301,11 +301,11 @@ public class CharArraySet extends AbstractCharSet implements Serializable, Clone
                 if (i == 0) {
                     break;
                 }
-                b[i] = this.f1484a[i];
+                b[i] = this.f1448a[i];
             }
-            this.f1484a = b;
+            this.f1448a = b;
         }
-        char[] cArr = this.f1484a;
+        char[] cArr = this.f1448a;
         int i2 = this.size;
         this.size = i2 + 1;
         cArr[i2] = k;
@@ -324,7 +324,7 @@ public class CharArraySet extends AbstractCharSet implements Serializable, Clone
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharCollection, p014it.unimi.dsi.fastutil.chars.CharCollection
     public char[] toCharArray() {
-        return Arrays.copyOf(this.f1484a, this.size);
+        return Arrays.copyOf(this.f1448a, this.size);
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharCollection, p014it.unimi.dsi.fastutil.chars.CharCollection
@@ -332,7 +332,7 @@ public class CharArraySet extends AbstractCharSet implements Serializable, Clone
         if (a == null || a.length < this.size) {
             a = new char[this.size];
         }
-        System.arraycopy(this.f1484a, 0, a, 0, this.size);
+        System.arraycopy(this.f1448a, 0, a, 0, this.size);
         return a;
     }
 
@@ -340,7 +340,7 @@ public class CharArraySet extends AbstractCharSet implements Serializable, Clone
     public CharArraySet clone() {
         try {
             CharArraySet c = (CharArraySet) clone();
-            c.f1484a = (char[]) this.f1484a.clone();
+            c.f1448a = (char[]) this.f1448a.clone();
             return c;
         } catch (CloneNotSupportedException e) {
             throw new InternalError();
@@ -350,15 +350,15 @@ public class CharArraySet extends AbstractCharSet implements Serializable, Clone
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; i < this.size; i++) {
-            s.writeChar(this.f1484a[i]);
+            s.writeChar(this.f1448a[i]);
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f1484a = new char[this.size];
+        this.f1448a = new char[this.size];
         for (int i = 0; i < this.size; i++) {
-            this.f1484a[i] = s.readChar();
+            this.f1448a[i] = s.readChar();
         }
     }
 }

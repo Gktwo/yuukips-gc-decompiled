@@ -6,7 +6,7 @@ import emu.grasscutter.net.proto.McoinExchangeHcoinReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketMcoinExchangeHcoinRsp;
 
-@Opcodes(623)
+@Opcodes(695)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerMcoinExchangeHcoinReq.class */
 public class HandlerMcoinExchangeHcoinReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

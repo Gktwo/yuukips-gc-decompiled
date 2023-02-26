@@ -28,18 +28,24 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ForgeQueueDataNotifyOuterClass.class */
 public final class ForgeQueueDataNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aForgeQueueDataNotify.proto\u001a\u0014ForgeQueueData.proto\"Â\u0001\n\u0014ForgeQueueDataNotify\u0012A\n\u000fforge_queue_map\u0018\u0001 \u0003(\u000b2(.ForgeQueueDataNotify.ForgeQueueMapEntry\u0012 \n\u0018removed_forge_queue_list\u0018\u000f \u0003(\r\u001aE\n\u0012ForgeQueueMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\u001e\n\u0005value\u0018\u0002 \u0001(\u000b2\u000f.ForgeQueueData:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ForgeQueueDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aForgeQueueDataNotify.proto\u001a\u0014ForgeQueueData.proto\"½\u0001\n\u0014ForgeQueueDataNotify\u0012\u001d\n\u0015removedForgeQueueList\u0018\n \u0003(\r\u0012?\n\rforgeQueueMap\u0018\u000e \u0003(\u000b2(.ForgeQueueDataNotify.ForgeQueueMapEntry\u001aE\n\u0012ForgeQueueMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\u001e\n\u0005value\u0018\u0002 \u0001(\u000b2\u000f.ForgeQueueData:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ForgeQueueDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ForgeQueueDataNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ForgeQueueDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ForgeQueueDataNotify_descriptor, new String[]{"ForgeQueueMap", "RemovedForgeQueueList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ForgeQueueDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ForgeQueueDataNotify_descriptor, new String[]{"RemovedForgeQueueList", "ForgeQueueMap"});
 
     /* renamed from: internal_static_ForgeQueueDataNotify_ForgeQueueMapEntry_descriptor */
-    private static final Descriptors.Descriptor f721xf8a1bf5b = internal_static_ForgeQueueDataNotify_descriptor.getNestedTypes().get(0);
+    private static final Descriptors.Descriptor f714xf8a1bf5b = internal_static_ForgeQueueDataNotify_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_ForgeQueueDataNotify_ForgeQueueMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f722xae355ad9 = new GeneratedMessageV3.FieldAccessorTable(f721xf8a1bf5b, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f715xae355ad9 = new GeneratedMessageV3.FieldAccessorTable(f714xf8a1bf5b, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ForgeQueueDataNotifyOuterClass$ForgeQueueDataNotifyOrBuilder.class */
     public interface ForgeQueueDataNotifyOrBuilder extends MessageOrBuilder {
+        List<Integer> getRemovedForgeQueueListList();
+
+        int getRemovedForgeQueueListCount();
+
+        int getRemovedForgeQueueList(int i);
+
         int getForgeQueueMapCount();
 
         boolean containsForgeQueueMap(int i);
@@ -52,12 +58,6 @@ public final class ForgeQueueDataNotifyOuterClass {
         ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrDefault(int i, ForgeQueueDataOuterClass.ForgeQueueData forgeQueueData);
 
         ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrThrow(int i);
-
-        List<Integer> getRemovedForgeQueueListList();
-
-        int getRemovedForgeQueueListCount();
-
-        int getRemovedForgeQueueList(int i);
     }
 
     private ForgeQueueDataNotifyOuterClass() {
@@ -73,11 +73,11 @@ public final class ForgeQueueDataNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ForgeQueueDataNotifyOuterClass$ForgeQueueDataNotify.class */
     public static final class ForgeQueueDataNotify extends GeneratedMessageV3 implements ForgeQueueDataNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int FORGE_QUEUE_MAP_FIELD_NUMBER = 1;
-        private MapField<Integer, ForgeQueueDataOuterClass.ForgeQueueData> forgeQueueMap_;
-        public static final int REMOVED_FORGE_QUEUE_LIST_FIELD_NUMBER = 15;
+        public static final int REMOVEDFORGEQUEUELIST_FIELD_NUMBER = 10;
         private Internal.IntList removedForgeQueueList_;
         private int removedForgeQueueListMemoizedSerializedSize;
+        public static final int FORGEQUEUEMAP_FIELD_NUMBER = 14;
+        private MapField<Integer, ForgeQueueDataOuterClass.ForgeQueueData> forgeQueueMap_;
         private byte memoizedIsInitialized;
         private static final ForgeQueueDataNotify DEFAULT_INSTANCE = new ForgeQueueDataNotify();
         private static final Parser<ForgeQueueDataNotify> PARSER = new AbstractParser<ForgeQueueDataNotify>() { // from class: emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotify.1
@@ -128,7 +128,7 @@ public final class ForgeQueueDataNotifyOuterClass {
                 r4 = this;
                 r0 = r5
                 switch(r0) {
-                    case 1: goto L_0x0014;
+                    case 14: goto L_0x0014;
                     default: goto L_0x0019;
                 }
                 r0 = r4
@@ -167,7 +167,6 @@ public final class ForgeQueueDataNotifyOuterClass {
             return this.unknownFields;
         }
 
-        /* JADX DEBUG: Failed to insert an additional move for type inference into block B:62:0x0111 */
         private ForgeQueueDataNotify(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
             this();
             int mutable_bitField0_;
@@ -186,31 +185,31 @@ public final class ForgeQueueDataNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 10:
+                            case 80:
                                 if ((mutable_bitField0_ & 1) == 0) {
-                                    this.forgeQueueMap_ = MapField.newMapField(ForgeQueueMapDefaultEntryHolder.defaultEntry);
-                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
-                                }
-                                MapEntry<Integer, ForgeQueueDataOuterClass.ForgeQueueData> forgeQueueMap__ = (MapEntry) input.readMessage(ForgeQueueMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                                this.forgeQueueMap_.getMutableMap().put(forgeQueueMap__.getKey(), forgeQueueMap__.getValue());
-                                break;
-                            case 120:
-                                if ((mutable_bitField0_ & 2) == 0) {
                                     this.removedForgeQueueList_ = newIntList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                    mutable_bitField0_ |= 1;
                                 }
                                 this.removedForgeQueueList_.addInt(input.readUInt32());
                                 break;
-                            case 122:
+                            case 82:
                                 int limit = input.pushLimit(input.readRawVarint32());
-                                if ((mutable_bitField0_ & 2) == 0 && input.getBytesUntilLimit() > 0) {
+                                if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.removedForgeQueueList_ = newIntList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                    mutable_bitField0_ |= 1;
                                 }
                                 while (input.getBytesUntilLimit() > 0) {
                                     this.removedForgeQueueList_.addInt(input.readUInt32());
                                 }
                                 input.popLimit(limit);
+                                break;
+                            case 114:
+                                if ((mutable_bitField0_ & 2) == 0) {
+                                    this.forgeQueueMap_ = MapField.newMapField(ForgeQueueMapDefaultEntryHolder.defaultEntry);
+                                    mutable_bitField0_ |= 2;
+                                }
+                                MapEntry<Integer, ForgeQueueDataOuterClass.ForgeQueueData> forgeQueueMap__ = (MapEntry) input.readMessage(ForgeQueueMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                                this.forgeQueueMap_.getMutableMap().put(forgeQueueMap__.getKey(), forgeQueueMap__.getValue());
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -220,7 +219,6 @@ public final class ForgeQueueDataNotifyOuterClass {
                                     break;
                                 }
                         }
-                        done = done;
                     } catch (InvalidProtocolBufferException e) {
                         throw e.setUnfinishedMessage(this);
                     } catch (IOException e2) {
@@ -228,7 +226,7 @@ public final class ForgeQueueDataNotifyOuterClass {
                     }
                 }
             } finally {
-                if ((mutable_bitField0_ & 2) != 0) {
+                if ((mutable_bitField0_ & 1) != 0) {
                     this.removedForgeQueueList_.makeImmutable();
                 }
                 this.unknownFields = unknownFields.build();
@@ -245,10 +243,25 @@ public final class ForgeQueueDataNotifyOuterClass {
             return ForgeQueueDataNotifyOuterClass.internal_static_ForgeQueueDataNotify_fieldAccessorTable.ensureFieldAccessorsInitialized(ForgeQueueDataNotify.class, Builder.class);
         }
 
+        @Override // emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotifyOrBuilder
+        public List<Integer> getRemovedForgeQueueListList() {
+            return this.removedForgeQueueList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotifyOrBuilder
+        public int getRemovedForgeQueueListCount() {
+            return this.removedForgeQueueList_.size();
+        }
+
+        @Override // emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotifyOrBuilder
+        public int getRemovedForgeQueueList(int index) {
+            return this.removedForgeQueueList_.getInt(index);
+        }
+
         /* access modifiers changed from: private */
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ForgeQueueDataNotifyOuterClass$ForgeQueueDataNotify$ForgeQueueMapDefaultEntryHolder.class */
         public static final class ForgeQueueMapDefaultEntryHolder {
-            static final MapEntry<Integer, ForgeQueueDataOuterClass.ForgeQueueData> defaultEntry = MapEntry.newDefaultInstance(ForgeQueueDataNotifyOuterClass.f721xf8a1bf5b, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.MESSAGE, ForgeQueueDataOuterClass.ForgeQueueData.getDefaultInstance());
+            static final MapEntry<Integer, ForgeQueueDataOuterClass.ForgeQueueData> defaultEntry = MapEntry.newDefaultInstance(ForgeQueueDataNotifyOuterClass.f714xf8a1bf5b, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.MESSAGE, ForgeQueueDataOuterClass.ForgeQueueData.getDefaultInstance());
 
             private ForgeQueueMapDefaultEntryHolder() {
             }
@@ -297,21 +310,6 @@ public final class ForgeQueueDataNotifyOuterClass {
             throw new IllegalArgumentException();
         }
 
-        @Override // emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotifyOrBuilder
-        public List<Integer> getRemovedForgeQueueListList() {
-            return this.removedForgeQueueList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotifyOrBuilder
-        public int getRemovedForgeQueueListCount() {
-            return this.removedForgeQueueList_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotifyOrBuilder
-        public int getRemovedForgeQueueList(int index) {
-            return this.removedForgeQueueList_.getInt(index);
-        }
-
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -328,14 +326,14 @@ public final class ForgeQueueDataNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetForgeQueueMap(), ForgeQueueMapDefaultEntryHolder.defaultEntry, 1);
             if (getRemovedForgeQueueListList().size() > 0) {
-                output.writeUInt32NoTag(122);
+                output.writeUInt32NoTag(82);
                 output.writeUInt32NoTag(this.removedForgeQueueListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.removedForgeQueueList_.size(); i++) {
                 output.writeUInt32NoTag(this.removedForgeQueueList_.getInt(i));
             }
+            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetForgeQueueMap(), ForgeQueueMapDefaultEntryHolder.defaultEntry, 14);
             this.unknownFields.writeTo(output);
         }
 
@@ -345,22 +343,21 @@ public final class ForgeQueueDataNotifyOuterClass {
             if (size != -1) {
                 return size;
             }
-            int size2 = 0;
-            for (Map.Entry<Integer, ForgeQueueDataOuterClass.ForgeQueueData> entry : internalGetForgeQueueMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(1, ForgeQueueMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
-            }
             int dataSize = 0;
             for (int i = 0; i < this.removedForgeQueueList_.size(); i++) {
                 dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.removedForgeQueueList_.getInt(i));
             }
-            int size3 = size2 + dataSize;
+            int size2 = 0 + dataSize;
             if (!getRemovedForgeQueueListList().isEmpty()) {
-                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.removedForgeQueueListMemoizedSerializedSize = dataSize;
-            int size4 = size3 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size4;
-            return size4;
+            for (Map.Entry<Integer, ForgeQueueDataOuterClass.ForgeQueueData> entry : internalGetForgeQueueMap().getMap().entrySet()) {
+                size2 += CodedOutputStream.computeMessageSize(14, ForgeQueueMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+            }
+            int size3 = size2 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size3;
+            return size3;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -372,7 +369,7 @@ public final class ForgeQueueDataNotifyOuterClass {
                 return equals(obj);
             }
             ForgeQueueDataNotify other = (ForgeQueueDataNotify) obj;
-            return internalGetForgeQueueMap().equals(other.internalGetForgeQueueMap()) && getRemovedForgeQueueListList().equals(other.getRemovedForgeQueueListList()) && this.unknownFields.equals(other.unknownFields);
+            return getRemovedForgeQueueListList().equals(other.getRemovedForgeQueueListList()) && internalGetForgeQueueMap().equals(other.internalGetForgeQueueMap()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -381,11 +378,11 @@ public final class ForgeQueueDataNotifyOuterClass {
                 return this.memoizedHashCode;
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
-            if (!internalGetForgeQueueMap().getMap().isEmpty()) {
-                hash = (53 * ((37 * hash) + 1)) + internalGetForgeQueueMap().hashCode();
-            }
             if (getRemovedForgeQueueListCount() > 0) {
-                hash = (53 * ((37 * hash) + 15)) + getRemovedForgeQueueListList().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getRemovedForgeQueueListList().hashCode();
+            }
+            if (!internalGetForgeQueueMap().getMap().isEmpty()) {
+                hash = (53 * ((37 * hash) + 14)) + internalGetForgeQueueMap().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -467,8 +464,8 @@ public final class ForgeQueueDataNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ForgeQueueDataNotifyOuterClass$ForgeQueueDataNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ForgeQueueDataNotifyOrBuilder {
             private int bitField0_;
-            private MapField<Integer, ForgeQueueDataOuterClass.ForgeQueueData> forgeQueueMap_;
             private Internal.IntList removedForgeQueueList_ = ForgeQueueDataNotify.emptyIntList();
+            private MapField<Integer, ForgeQueueDataOuterClass.ForgeQueueData> forgeQueueMap_;
 
             /*  JADX ERROR: Dependency scan failed at insn: 0x001E: INVOKE_CUSTOM r0
                 java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
@@ -507,7 +504,7 @@ public final class ForgeQueueDataNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 1: goto L_0x0014;
+                        case 14: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -560,7 +557,7 @@ public final class ForgeQueueDataNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 1: goto L_0x0014;
+                        case 14: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -602,9 +599,9 @@ public final class ForgeQueueDataNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                internalGetMutableForgeQueueMap().clear();
                 this.removedForgeQueueList_ = ForgeQueueDataNotify.emptyIntList();
-                this.bitField0_ &= -3;
+                this.bitField0_ &= -2;
+                internalGetMutableForgeQueueMap().clear();
                 return this;
             }
 
@@ -631,13 +628,13 @@ public final class ForgeQueueDataNotifyOuterClass {
             public ForgeQueueDataNotify buildPartial() {
                 ForgeQueueDataNotify result = new ForgeQueueDataNotify(this);
                 int i = this.bitField0_;
-                result.forgeQueueMap_ = internalGetForgeQueueMap();
-                result.forgeQueueMap_.makeImmutable();
-                if ((this.bitField0_ & 2) != 0) {
+                if ((this.bitField0_ & 1) != 0) {
                     this.removedForgeQueueList_.makeImmutable();
-                    this.bitField0_ &= -3;
+                    this.bitField0_ &= -2;
                 }
                 result.removedForgeQueueList_ = this.removedForgeQueueList_;
+                result.forgeQueueMap_ = internalGetForgeQueueMap();
+                result.forgeQueueMap_.makeImmutable();
                 onBuilt();
                 return result;
             }
@@ -685,17 +682,17 @@ public final class ForgeQueueDataNotifyOuterClass {
                 if (other == ForgeQueueDataNotify.getDefaultInstance()) {
                     return this;
                 }
-                internalGetMutableForgeQueueMap().mergeFrom(other.internalGetForgeQueueMap());
                 if (!other.removedForgeQueueList_.isEmpty()) {
                     if (this.removedForgeQueueList_.isEmpty()) {
                         this.removedForgeQueueList_ = other.removedForgeQueueList_;
-                        this.bitField0_ &= -3;
+                        this.bitField0_ &= -2;
                     } else {
                         ensureRemovedForgeQueueListIsMutable();
                         this.removedForgeQueueList_.addAll(other.removedForgeQueueList_);
                     }
                     onChanged();
                 }
+                internalGetMutableForgeQueueMap().mergeFrom(other.internalGetForgeQueueMap());
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
                 return this;
@@ -726,6 +723,56 @@ public final class ForgeQueueDataNotifyOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            private void ensureRemovedForgeQueueListIsMutable() {
+                if ((this.bitField0_ & 1) == 0) {
+                    this.removedForgeQueueList_ = ForgeQueueDataNotify.mutableCopy(this.removedForgeQueueList_);
+                    this.bitField0_ |= 1;
+                }
+            }
+
+            @Override // emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotifyOrBuilder
+            public List<Integer> getRemovedForgeQueueListList() {
+                return (this.bitField0_ & 1) != 0 ? Collections.unmodifiableList(this.removedForgeQueueList_) : this.removedForgeQueueList_;
+            }
+
+            @Override // emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotifyOrBuilder
+            public int getRemovedForgeQueueListCount() {
+                return this.removedForgeQueueList_.size();
+            }
+
+            @Override // emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotifyOrBuilder
+            public int getRemovedForgeQueueList(int index) {
+                return this.removedForgeQueueList_.getInt(index);
+            }
+
+            public Builder setRemovedForgeQueueList(int index, int value) {
+                ensureRemovedForgeQueueListIsMutable();
+                this.removedForgeQueueList_.setInt(index, value);
+                onChanged();
+                return this;
+            }
+
+            public Builder addRemovedForgeQueueList(int value) {
+                ensureRemovedForgeQueueListIsMutable();
+                this.removedForgeQueueList_.addInt(value);
+                onChanged();
+                return this;
+            }
+
+            public Builder addAllRemovedForgeQueueList(Iterable<? extends Integer> values) {
+                ensureRemovedForgeQueueListIsMutable();
+                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.removedForgeQueueList_);
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRemovedForgeQueueList() {
+                this.removedForgeQueueList_ = ForgeQueueDataNotify.emptyIntList();
+                this.bitField0_ &= -2;
+                onChanged();
+                return this;
             }
 
             private MapField<Integer, ForgeQueueDataOuterClass.ForgeQueueData> internalGetForgeQueueMap() {
@@ -807,56 +854,6 @@ public final class ForgeQueueDataNotifyOuterClass {
 
             public Builder putAllForgeQueueMap(Map<Integer, ForgeQueueDataOuterClass.ForgeQueueData> values) {
                 internalGetMutableForgeQueueMap().getMutableMap().putAll(values);
-                return this;
-            }
-
-            private void ensureRemovedForgeQueueListIsMutable() {
-                if ((this.bitField0_ & 2) == 0) {
-                    this.removedForgeQueueList_ = ForgeQueueDataNotify.mutableCopy(this.removedForgeQueueList_);
-                    this.bitField0_ |= 2;
-                }
-            }
-
-            @Override // emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotifyOrBuilder
-            public List<Integer> getRemovedForgeQueueListList() {
-                return (this.bitField0_ & 2) != 0 ? Collections.unmodifiableList(this.removedForgeQueueList_) : this.removedForgeQueueList_;
-            }
-
-            @Override // emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotifyOrBuilder
-            public int getRemovedForgeQueueListCount() {
-                return this.removedForgeQueueList_.size();
-            }
-
-            @Override // emu.grasscutter.net.proto.ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotifyOrBuilder
-            public int getRemovedForgeQueueList(int index) {
-                return this.removedForgeQueueList_.getInt(index);
-            }
-
-            public Builder setRemovedForgeQueueList(int index, int value) {
-                ensureRemovedForgeQueueListIsMutable();
-                this.removedForgeQueueList_.setInt(index, value);
-                onChanged();
-                return this;
-            }
-
-            public Builder addRemovedForgeQueueList(int value) {
-                ensureRemovedForgeQueueListIsMutable();
-                this.removedForgeQueueList_.addInt(value);
-                onChanged();
-                return this;
-            }
-
-            public Builder addAllRemovedForgeQueueList(Iterable<? extends Integer> values) {
-                ensureRemovedForgeQueueListIsMutable();
-                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.removedForgeQueueList_);
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRemovedForgeQueueList() {
-                this.removedForgeQueueList_ = ForgeQueueDataNotify.emptyIntList();
-                this.bitField0_ &= -3;
-                onChanged();
                 return this;
             }
 

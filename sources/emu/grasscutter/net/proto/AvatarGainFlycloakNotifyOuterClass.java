@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarGainFlycloakNotifyOuterClass.class */
 public final class AvatarGainFlycloakNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eAvatarGainFlycloakNotify.proto\"/\n\u0018AvatarGainFlycloakNotify\u0012\u0013\n\u000bflycloak_id\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eAvatarGainFlycloakNotify.proto\".\n\u0018AvatarGainFlycloakNotify\u0012\u0012\n\nflycloakId\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AvatarGainFlycloakNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarGainFlycloakNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarGainFlycloakNotify_descriptor, new String[]{"FlycloakId"});
 
@@ -41,7 +41,7 @@ public final class AvatarGainFlycloakNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarGainFlycloakNotifyOuterClass$AvatarGainFlycloakNotify.class */
     public static final class AvatarGainFlycloakNotify extends GeneratedMessageV3 implements AvatarGainFlycloakNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int FLYCLOAK_ID_FIELD_NUMBER = 4;
+        public static final int FLYCLOAKID_FIELD_NUMBER = 15;
         private int flycloakId_;
         private byte memoizedIsInitialized;
         private static final AvatarGainFlycloakNotify DEFAULT_INSTANCE = new AvatarGainFlycloakNotify();
@@ -88,7 +88,7 @@ public final class AvatarGainFlycloakNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 32:
+                            case 120:
                                 this.flycloakId_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class AvatarGainFlycloakNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.flycloakId_ != 0) {
-                output.writeUInt32(4, this.flycloakId_);
+                output.writeUInt32(15, this.flycloakId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class AvatarGainFlycloakNotifyOuterClass {
             }
             int size2 = 0;
             if (this.flycloakId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.flycloakId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(15, this.flycloakId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class AvatarGainFlycloakNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getFlycloakId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getFlycloakId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

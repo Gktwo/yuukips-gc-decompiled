@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeBattlePassMissionPointReqOuterClass.class */
 public final class TakeBattlePassMissionPointReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#TakeBattlePassMissionPointReq.proto\"8\n\u001dTakeBattlePassMissionPointReq\u0012\u0017\n\u000fmission_id_list\u0018\u0003 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#TakeBattlePassMissionPointReq.proto\"6\n\u001dTakeBattlePassMissionPointReq\u0012\u0015\n\rmissionIdList\u0018\u0005 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_TakeBattlePassMissionPointReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_TakeBattlePassMissionPointReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TakeBattlePassMissionPointReq_descriptor, new String[]{"MissionIdList"});
 
@@ -49,7 +49,7 @@ public final class TakeBattlePassMissionPointReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeBattlePassMissionPointReqOuterClass$TakeBattlePassMissionPointReq.class */
     public static final class TakeBattlePassMissionPointReq extends GeneratedMessageV3 implements TakeBattlePassMissionPointReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MISSION_ID_LIST_FIELD_NUMBER = 3;
+        public static final int MISSIONIDLIST_FIELD_NUMBER = 5;
         private Internal.IntList missionIdList_;
         private int missionIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -103,14 +103,14 @@ public final class TakeBattlePassMissionPointReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 24:
+                                case 40:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.missionIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.missionIdList_.addInt(input.readUInt32());
                                     break;
-                                case 26:
+                                case 42:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.missionIdList_ = newIntList();
@@ -186,7 +186,7 @@ public final class TakeBattlePassMissionPointReqOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getMissionIdListList().size() > 0) {
-                output.writeUInt32NoTag(26);
+                output.writeUInt32NoTag(42);
                 output.writeUInt32NoTag(this.missionIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.missionIdList_.size(); i++) {
@@ -234,7 +234,7 @@ public final class TakeBattlePassMissionPointReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getMissionIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 3)) + getMissionIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getMissionIdListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

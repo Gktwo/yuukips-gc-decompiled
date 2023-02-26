@@ -160,7 +160,7 @@ public final class Response implements Closeable {
     @JvmName(name = "-deprecated_request")
     @NotNull
     /* renamed from: -deprecated_request  reason: not valid java name */
-    public final Request m9285deprecated_request() {
+    public final Request m9282deprecated_request() {
         return this.request;
     }
 
@@ -168,14 +168,14 @@ public final class Response implements Closeable {
     @JvmName(name = "-deprecated_protocol")
     @NotNull
     /* renamed from: -deprecated_protocol  reason: not valid java name */
-    public final Protocol m9286deprecated_protocol() {
+    public final Protocol m9283deprecated_protocol() {
         return this.protocol;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "code", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_code")
     /* renamed from: -deprecated_code  reason: not valid java name */
-    public final int m9287deprecated_code() {
+    public final int m9284deprecated_code() {
         return this.code;
     }
 
@@ -188,7 +188,7 @@ public final class Response implements Closeable {
     @JvmName(name = "-deprecated_message")
     @NotNull
     /* renamed from: -deprecated_message  reason: not valid java name */
-    public final String m9288deprecated_message() {
+    public final String m9285deprecated_message() {
         return this.message;
     }
 
@@ -196,7 +196,7 @@ public final class Response implements Closeable {
     @JvmName(name = "-deprecated_handshake")
     @Nullable
     /* renamed from: -deprecated_handshake  reason: not valid java name */
-    public final Handshake m9289deprecated_handshake() {
+    public final Handshake m9286deprecated_handshake() {
         return this.handshake;
     }
 
@@ -225,7 +225,7 @@ public final class Response implements Closeable {
     @JvmName(name = "-deprecated_headers")
     @NotNull
     /* renamed from: -deprecated_headers  reason: not valid java name */
-    public final Headers m9290deprecated_headers() {
+    public final Headers m9287deprecated_headers() {
         return this.headers;
     }
 
@@ -253,7 +253,7 @@ public final class Response implements Closeable {
     @JvmName(name = "-deprecated_body")
     @Nullable
     /* renamed from: -deprecated_body  reason: not valid java name */
-    public final ResponseBody m9291deprecated_body() {
+    public final ResponseBody m9288deprecated_body() {
         return this.body;
     }
 
@@ -283,7 +283,7 @@ public final class Response implements Closeable {
     @JvmName(name = "-deprecated_networkResponse")
     @Nullable
     /* renamed from: -deprecated_networkResponse  reason: not valid java name */
-    public final Response m9292deprecated_networkResponse() {
+    public final Response m9289deprecated_networkResponse() {
         return this.networkResponse;
     }
 
@@ -291,7 +291,7 @@ public final class Response implements Closeable {
     @JvmName(name = "-deprecated_cacheResponse")
     @Nullable
     /* renamed from: -deprecated_cacheResponse  reason: not valid java name */
-    public final Response m9293deprecated_cacheResponse() {
+    public final Response m9290deprecated_cacheResponse() {
         return this.cacheResponse;
     }
 
@@ -299,7 +299,7 @@ public final class Response implements Closeable {
     @JvmName(name = "-deprecated_priorResponse")
     @Nullable
     /* renamed from: -deprecated_priorResponse  reason: not valid java name */
-    public final Response m9294deprecated_priorResponse() {
+    public final Response m9291deprecated_priorResponse() {
         return this.priorResponse;
     }
 
@@ -335,21 +335,21 @@ public final class Response implements Closeable {
     @JvmName(name = "-deprecated_cacheControl")
     @NotNull
     /* renamed from: -deprecated_cacheControl  reason: not valid java name */
-    public final CacheControl m9295deprecated_cacheControl() {
+    public final CacheControl m9292deprecated_cacheControl() {
         return cacheControl();
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "sentRequestAtMillis", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_sentRequestAtMillis")
     /* renamed from: -deprecated_sentRequestAtMillis  reason: not valid java name */
-    public final long m9296deprecated_sentRequestAtMillis() {
+    public final long m9293deprecated_sentRequestAtMillis() {
         return this.sentRequestAtMillis;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "receivedResponseAtMillis", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_receivedResponseAtMillis")
     /* renamed from: -deprecated_receivedResponseAtMillis  reason: not valid java name */
-    public final long m9297deprecated_receivedResponseAtMillis() {
+    public final long m9294deprecated_receivedResponseAtMillis() {
         return this.receivedResponseAtMillis;
     }
 

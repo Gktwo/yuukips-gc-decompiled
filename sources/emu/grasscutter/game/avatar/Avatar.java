@@ -363,12 +363,34 @@ public class Avatar {
         return 0;
     }
 
-    public boolean addSatiation(float value) {
-        if (this.satiation >= 100) {
+    public boolean addSatiation(int value) {
+        if (this.satiation >= 10000) {
             return false;
         }
-        this.satiation = (int) (((float) this.satiation) + value);
+        this.satiation += value;
         return true;
+    }
+
+    public float reduceSatiation(int value) {
+        if (this.satiation == 0) {
+            return 0.0f;
+        }
+        this.satiation -= value;
+        if (this.satiation < 0) {
+            this.satiation = 0;
+        }
+        return (float) this.satiation;
+    }
+
+    public float reduceSatiationPenalty(int value) {
+        if (this.satiationPenalty == 0) {
+            return 0.0f;
+        }
+        this.satiationPenalty -= value;
+        if (this.satiationPenalty < 0) {
+            this.satiationPenalty = 0;
+        }
+        return (float) this.satiationPenalty;
     }
 
     public GameItem getEquipBySlot(EquipType slot) {
@@ -975,8 +997,8 @@ public class Avatar {
         avatarInfo.putPropMap(PlayerProperty.PROP_LEVEL.getId(), ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, getLevel()));
         avatarInfo.putPropMap(PlayerProperty.PROP_EXP.getId(), ProtoHelper.newPropValue(PlayerProperty.PROP_EXP, getExp()));
         avatarInfo.putPropMap(PlayerProperty.PROP_BREAK_LEVEL.getId(), ProtoHelper.newPropValue(PlayerProperty.PROP_BREAK_LEVEL, getPromoteLevel()));
-        avatarInfo.putPropMap(PlayerProperty.PROP_SATIATION_VAL.getId(), ProtoHelper.newPropValue(PlayerProperty.PROP_SATIATION_VAL, 0));
-        avatarInfo.putPropMap(PlayerProperty.PROP_SATIATION_PENALTY_TIME.getId(), ProtoHelper.newPropValue(PlayerProperty.PROP_SATIATION_PENALTY_TIME, 0));
+        avatarInfo.putPropMap(PlayerProperty.PROP_SATIATION_VAL.getId(), ProtoHelper.newPropValue(PlayerProperty.PROP_SATIATION_VAL, getSatiation()));
+        avatarInfo.putPropMap(PlayerProperty.PROP_SATIATION_PENALTY_TIME.getId(), ProtoHelper.newPropValue(PlayerProperty.PROP_SATIATION_PENALTY_TIME, getSatiationPenalty()));
         return avatarInfo.build();
     }
 

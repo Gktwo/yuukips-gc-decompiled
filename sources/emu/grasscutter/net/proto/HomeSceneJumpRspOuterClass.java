@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeSceneJumpRspOuterClass.class */
 public final class HomeSceneJumpRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016HomeSceneJumpRsp.proto\"@\n\u0010HomeSceneJumpRsp\u0012\u001b\n\u0013is_enter_room_scene\u0018\u0006 \u0001(\b\u0012\u000f\n\u0007retcode\u0018\u0005 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016HomeSceneJumpRsp.proto\"=\n\u0010HomeSceneJumpRsp\u0012\u0018\n\u0010isEnterRoomScene\u0018\u0001 \u0001(\b\u0012\u000f\n\u0007retcode\u0018\u0002 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_HomeSceneJumpRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeSceneJumpRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeSceneJumpRsp_descriptor, new String[]{"IsEnterRoomScene", "Retcode"});
 
@@ -44,9 +44,9 @@ public final class HomeSceneJumpRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeSceneJumpRspOuterClass$HomeSceneJumpRsp.class */
     public static final class HomeSceneJumpRsp extends GeneratedMessageV3 implements HomeSceneJumpRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_ENTER_ROOM_SCENE_FIELD_NUMBER = 6;
+        public static final int ISENTERROOMSCENE_FIELD_NUMBER = 1;
         private boolean isEnterRoomScene_;
-        public static final int RETCODE_FIELD_NUMBER = 5;
+        public static final int RETCODE_FIELD_NUMBER = 2;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final HomeSceneJumpRsp DEFAULT_INSTANCE = new HomeSceneJumpRsp();
@@ -93,11 +93,11 @@ public final class HomeSceneJumpRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 40:
-                                this.retcode_ = input.readInt32();
-                                break;
-                            case 48:
+                            case 8:
                                 this.isEnterRoomScene_ = input.readBool();
+                                break;
+                            case 16:
+                                this.retcode_ = input.readInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -153,11 +153,11 @@ public final class HomeSceneJumpRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.retcode_ != 0) {
-                output.writeInt32(5, this.retcode_);
-            }
             if (this.isEnterRoomScene_) {
-                output.writeBool(6, this.isEnterRoomScene_);
+                output.writeBool(1, this.isEnterRoomScene_);
+            }
+            if (this.retcode_ != 0) {
+                output.writeInt32(2, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,11 +169,11 @@ public final class HomeSceneJumpRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(5, this.retcode_);
-            }
             if (this.isEnterRoomScene_) {
-                size2 += CodedOutputStream.computeBoolSize(6, this.isEnterRoomScene_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(1, this.isEnterRoomScene_);
+            }
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(2, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -197,7 +197,7 @@ public final class HomeSceneJumpRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + Internal.hashBoolean(getIsEnterRoomScene()))) + 5)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + Internal.hashBoolean(getIsEnterRoomScene()))) + 2)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

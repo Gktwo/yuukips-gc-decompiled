@@ -25,7 +25,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
     public static final int DEFAULT_INITIAL_CAPACITY = 10;
 
     /* renamed from: a */
-    protected transient long[][] f2405a;
+    protected transient long[][] f2369a;
     protected long size;
     static final /* synthetic */ boolean $assertionsDisabled;
 
@@ -34,27 +34,27 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
     }
 
     protected LongBigArrayBigList(long[][] a, boolean dummy) {
-        this.f2405a = a;
+        this.f2369a = a;
     }
 
     public LongBigArrayBigList(long capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException("Initial capacity (" + capacity + ") is negative");
         } else if (capacity == 0) {
-            this.f2405a = LongBigArrays.EMPTY_BIG_ARRAY;
+            this.f2369a = LongBigArrays.EMPTY_BIG_ARRAY;
         } else {
-            this.f2405a = LongBigArrays.newBigArray(capacity);
+            this.f2369a = LongBigArrays.newBigArray(capacity);
         }
     }
 
     public LongBigArrayBigList() {
-        this.f2405a = LongBigArrays.DEFAULT_EMPTY_BIG_ARRAY;
+        this.f2369a = LongBigArrays.DEFAULT_EMPTY_BIG_ARRAY;
     }
 
     public LongBigArrayBigList(LongCollection c) {
         this(Size64.sizeOf(c));
         if (c instanceof LongBigList) {
-            long[][] jArr = this.f2405a;
+            long[][] jArr = this.f2369a;
             long sizeOf = Size64.sizeOf(c);
             this.size = sizeOf;
             ((LongBigList) c).getElements(0, jArr, 0, sizeOf);
@@ -68,7 +68,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
 
     public LongBigArrayBigList(LongBigList l) {
         this(l.size64());
-        long[][] jArr = this.f2405a;
+        long[][] jArr = this.f2369a;
         long size64 = l.size64();
         this.size = size64;
         l.getElements(0, jArr, 0, size64);
@@ -80,7 +80,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
 
     public LongBigArrayBigList(long[][] a, long offset, long length) {
         this(length);
-        BigArrays.copy(a, offset, this.f2405a, 0L, length);
+        BigArrays.copy(a, offset, this.f2369a, 0L, length);
         this.size = length;
     }
 
@@ -99,7 +99,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
     }
 
     public long[][] elements() {
-        return this.f2405a;
+        return this.f2369a;
     }
 
     public static LongBigArrayBigList wrap(long[][] a, long length) {
@@ -144,24 +144,24 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
     }
 
     public void ensureCapacity(long capacity) {
-        if (capacity > BigArrays.length(this.f2405a) && this.f2405a != LongBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
-            this.f2405a = BigArrays.forceCapacity(this.f2405a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f2405a)) {
+        if (capacity > BigArrays.length(this.f2369a) && this.f2369a != LongBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
+            this.f2369a = BigArrays.forceCapacity(this.f2369a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f2369a)) {
                 throw new AssertionError();
             }
         }
     }
 
     private void grow(long capacity) {
-        long oldLength = BigArrays.length(this.f2405a);
+        long oldLength = BigArrays.length(this.f2369a);
         if (capacity > oldLength) {
-            if (this.f2405a != LongBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
+            if (this.f2369a != LongBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
                 capacity = Math.max(oldLength + (oldLength >> 1), capacity);
             } else if (capacity < 10) {
                 capacity = 10;
             }
-            this.f2405a = BigArrays.forceCapacity(this.f2405a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f2405a)) {
+            this.f2369a = BigArrays.forceCapacity(this.f2369a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f2369a)) {
                 throw new AssertionError();
             }
         }
@@ -172,11 +172,11 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
         ensureIndex(index);
         grow(this.size + 1);
         if (index != this.size) {
-            BigArrays.copy(this.f2405a, index, this.f2405a, index + 1, this.size - index);
+            BigArrays.copy(this.f2369a, index, this.f2369a, index + 1, this.size - index);
         }
-        BigArrays.set(this.f2405a, index, k);
+        BigArrays.set(this.f2369a, index, k);
         this.size++;
-        if (!$assertionsDisabled && this.size > BigArrays.length(this.f2405a)) {
+        if (!$assertionsDisabled && this.size > BigArrays.length(this.f2369a)) {
             throw new AssertionError();
         }
     }
@@ -184,11 +184,11 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongBigList, p014it.unimi.dsi.fastutil.longs.AbstractLongCollection, p014it.unimi.dsi.fastutil.longs.LongCollection
     public boolean add(long k) {
         grow(this.size + 1);
-        long[][] jArr = this.f2405a;
+        long[][] jArr = this.f2369a;
         long j = this.size;
         this.size = j + 1;
         BigArrays.set(jArr, j, k);
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2405a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2369a)) {
             return true;
         }
         throw new AssertionError();
@@ -197,7 +197,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
     @Override // p014it.unimi.dsi.fastutil.longs.LongBigList
     public long getLong(long index) {
         if (index < this.size) {
-            return BigArrays.get(this.f2405a, index);
+            return BigArrays.get(this.f2369a, index);
         }
         throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
     }
@@ -205,7 +205,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongBigList, p014it.unimi.dsi.fastutil.longs.LongBigList
     public long indexOf(long k) {
         for (long i = 0; i < this.size; i++) {
-            if (k == BigArrays.get(this.f2405a, i)) {
+            if (k == BigArrays.get(this.f2369a, i)) {
                 return i;
             }
         }
@@ -237,7 +237,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
             if (r0 == 0) goto L_0x001e
             r0 = r8
             r1 = r7
-            long[][] r1 = r1.f2405a
+            long[][] r1 = r1.f2369a
             r2 = r10
             long r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
             int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
@@ -256,12 +256,12 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        long old = BigArrays.get(this.f2405a, index);
+        long old = BigArrays.get(this.f2369a, index);
         this.size--;
         if (index != this.size) {
-            BigArrays.copy(this.f2405a, index + 1, this.f2405a, index, this.size - index);
+            BigArrays.copy(this.f2369a, index + 1, this.f2369a, index, this.size - index);
         }
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2405a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2369a)) {
             return old;
         }
         throw new AssertionError();
@@ -274,7 +274,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
             return false;
         }
         removeLong(index);
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2405a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2369a)) {
             return true;
         }
         throw new AssertionError();
@@ -285,8 +285,8 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        long old = BigArrays.get(this.f2405a, index);
-        BigArrays.set(this.f2405a, index, k);
+        long old = BigArrays.get(this.f2369a, index);
+        BigArrays.set(this.f2369a, index, k);
         return old;
     }
 
@@ -302,12 +302,12 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
             if (sd == 134217728) {
                 sd = 0;
                 ss++;
-                s = this.f2405a[ss];
+                s = this.f2369a[ss];
             }
             if (!c.contains(s[sd])) {
                 if (dd == 134217728) {
                     ds++;
-                    d = this.f2405a[ds];
+                    d = this.f2369a[ds];
                     dd = 0;
                 }
                 dd++;
@@ -333,12 +333,12 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
             if (sd == 134217728) {
                 sd = 0;
                 ss++;
-                s = this.f2405a[ss];
+                s = this.f2369a[ss];
             }
             if (!c.contains(Long.valueOf(s[sd]))) {
                 if (dd == 134217728) {
                     ds++;
-                    d = this.f2405a[ds];
+                    d = this.f2369a[ds];
                     dd = 0;
                 }
                 dd++;
@@ -366,17 +366,17 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
             return false;
         }
         grow(this.size + ((long) n));
-        BigArrays.copy(this.f2405a, index, this.f2405a, index + ((long) n), this.size - index);
+        BigArrays.copy(this.f2369a, index, this.f2369a, index + ((long) n), this.size - index);
         LongIterator i = c.iterator();
         this.size += (long) n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2405a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2369a)) {
             while (true) {
                 n--;
                 if (n == 0) {
                     return true;
                 }
                 index++;
-                BigArrays.set(this.f2405a, index, i.nextLong());
+                BigArrays.set(this.f2369a, index, i.nextLong());
             }
         } else {
             throw new AssertionError();
@@ -391,10 +391,10 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
             return false;
         }
         grow(this.size + n);
-        BigArrays.copy(this.f2405a, index, this.f2405a, index + n, this.size - index);
-        list.getElements(0, this.f2405a, index, n);
+        BigArrays.copy(this.f2369a, index, this.f2369a, index + n, this.size - index);
+        list.getElements(0, this.f2369a, index, n);
         this.size += n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2405a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2369a)) {
             return true;
         }
         throw new AssertionError();
@@ -408,15 +408,15 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
             return false;
         }
         grow(this.size + ((long) n));
-        BigArrays.copy(this.f2405a, index, this.f2405a, index + ((long) n), this.size - index);
+        BigArrays.copy(this.f2369a, index, this.f2369a, index + ((long) n), this.size - index);
         this.size += (long) n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2405a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2369a)) {
             int segment = BigArrays.segment(index);
             int displ = BigArrays.displacement(index);
             int pos = 0;
             while (n > 0) {
-                int l = Math.min(this.f2405a[segment].length - displ, n);
-                list.getElements(pos, this.f2405a[segment], displ, l);
+                int l = Math.min(this.f2369a[segment].length - displ, n);
+                list.getElements(pos, this.f2369a[segment], displ, l);
                 int i = displ + l;
                 displ = i;
                 if (i == 134217728) {
@@ -434,7 +434,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongBigList, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         this.size = 0;
-        if (!$assertionsDisabled && this.size > BigArrays.length(this.f2405a)) {
+        if (!$assertionsDisabled && this.size > BigArrays.length(this.f2369a)) {
             throw new AssertionError();
         }
     }
@@ -446,11 +446,11 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongBigList, p014it.unimi.dsi.fastutil.BigList
     public void size(long size) {
-        if (size > BigArrays.length(this.f2405a)) {
-            this.f2405a = BigArrays.forceCapacity(this.f2405a, size, this.size);
+        if (size > BigArrays.length(this.f2369a)) {
+            this.f2369a = BigArrays.forceCapacity(this.f2369a, size, this.size);
         }
         if (size > this.size) {
-            BigArrays.fill(this.f2405a, this.size, size, 0L);
+            BigArrays.fill(this.f2369a, this.size, size, 0L);
         }
         this.size = size;
     }
@@ -465,10 +465,10 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
     }
 
     public void trim(long n) {
-        long arrayLength = BigArrays.length(this.f2405a);
+        long arrayLength = BigArrays.length(this.f2369a);
         if (n < arrayLength && this.size != arrayLength) {
-            this.f2405a = BigArrays.trim(this.f2405a, Math.max(n, this.size));
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f2405a)) {
+            this.f2369a = BigArrays.trim(this.f2369a, Math.max(n, this.size));
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f2369a)) {
                 throw new AssertionError();
             }
         }
@@ -485,13 +485,13 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
         }
 
         private long[][] getParentArray() {
-            return LongBigArrayBigList.this.f2405a;
+            return LongBigArrayBigList.this.f2369a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongBigList.LongSubList, p014it.unimi.dsi.fastutil.longs.LongBigList
         public long getLong(long i) {
             ensureRestrictedIndex(i);
-            return BigArrays.get(LongBigArrayBigList.this.f2405a, i + this.from);
+            return BigArrays.get(LongBigArrayBigList.this.f2369a, i + this.from);
         }
 
         /* access modifiers changed from: private */
@@ -504,7 +504,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongBigListIterators.AbstractIndexBasedBigIterator
             protected final long get(long i) {
-                return BigArrays.get(LongBigArrayBigList.this.f2405a, SubList.this.from + i);
+                return BigArrays.get(LongBigArrayBigList.this.f2369a, SubList.this.from + i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongBigListIterators.AbstractIndexBasedBigListIterator
@@ -524,7 +524,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongBigListIterators.AbstractIndexBasedBigIterator
             protected final long getMaxPos() {
-                return SubList.this.f2259to - SubList.this.from;
+                return SubList.this.f2223to - SubList.this.from;
             }
 
             /* JADX DEBUG: Multi-variable search result rejected for r12v0, resolved type: it.unimi.dsi.fastutil.longs.LongBigArrayBigList$SubList$SubListIterator */
@@ -534,7 +534,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                long[][] jArr = LongBigArrayBigList.this.f2405a;
+                long[][] jArr = LongBigArrayBigList.this.f2369a;
                 long j = SubList.this.from;
                 long j2 = this.pos;
                 this.pos = j2 + 1;
@@ -549,7 +549,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                long[][] jArr = LongBigArrayBigList.this.f2405a;
+                long[][] jArr = LongBigArrayBigList.this.f2369a;
                 long j = SubList.this.from;
                 long j2 = this.pos - 1;
                 this.pos = j2;
@@ -568,7 +568,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
                     r13 = this;
                     r0 = r13
                     it.unimi.dsi.fastutil.longs.LongBigArrayBigList$SubList r0 = p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.SubList.this
-                    long r0 = r0.f2259to
+                    long r0 = r0.f2223to
                     r1 = r13
                     it.unimi.dsi.fastutil.longs.LongBigArrayBigList$SubList r1 = p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.SubList.this
                     long r1 = r1.from
@@ -584,7 +584,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
                     r1 = r13
                     it.unimi.dsi.fastutil.longs.LongBigArrayBigList$SubList r1 = p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.SubList.this
                     it.unimi.dsi.fastutil.longs.LongBigArrayBigList r1 = p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.this
-                    long[][] r1 = r1.f2405a
+                    long[][] r1 = r1.f2369a
                     r2 = r13
                     it.unimi.dsi.fastutil.longs.LongBigArrayBigList$SubList r2 = p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.SubList.this
                     long r2 = r2.from
@@ -629,12 +629,12 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongBigSpliterators.LateBindingSizeIndexBasedSpliterator
             protected final long getMaxPosFromBackingStore() {
-                return SubList.this.f2259to;
+                return SubList.this.f2223to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongBigSpliterators.AbstractIndexBasedSpliterator
             protected final long get(long i) {
-                return BigArrays.get(LongBigArrayBigList.this.f2405a, i);
+                return BigArrays.get(LongBigArrayBigList.this.f2369a, i);
             }
 
             /* access modifiers changed from: protected */
@@ -653,7 +653,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
                 if (this.pos >= getMaxPos()) {
                     return false;
                 }
-                long[][] jArr = LongBigArrayBigList.this.f2405a;
+                long[][] jArr = LongBigArrayBigList.this.f2369a;
                 long j = this.pos;
                 this.pos = j + 1;
                 action.accept(BigArrays.get(jArr, j));
@@ -664,7 +664,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
             public void forEachRemaining(LongConsumer action) {
                 long max = getMaxPos();
                 while (this.pos < max) {
-                    long[][] jArr = LongBigArrayBigList.this.f2405a;
+                    long[][] jArr = LongBigArrayBigList.this.f2369a;
                     long j = this.pos;
                     this.pos = j + 1;
                     action.accept(BigArrays.get(jArr, j));
@@ -689,7 +689,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
                 r8 = this;
                 r0 = r8
                 it.unimi.dsi.fastutil.longs.LongBigArrayBigList r0 = p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.this
-                long[][] r0 = r0.f2405a
+                long[][] r0 = r0.f2369a
                 r1 = r9
                 if (r0 != r1) goto L_0x0020
                 r0 = r8
@@ -698,7 +698,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
                 r0 = r8
-                long r0 = r0.f2259to
+                long r0 = r0.f2223to
                 r1 = r12
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
@@ -716,7 +716,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
                 return r0
             L_0x002e:
                 r0 = r8
-                long r0 = r0.f2259to
+                long r0 = r0.f2223to
                 r14 = r0
                 r0 = r12
                 r16 = r0
@@ -732,7 +732,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
                 if (r0 < 0) goto L_0x0064
                 r0 = r8
                 it.unimi.dsi.fastutil.longs.LongBigArrayBigList r0 = p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.this
-                long[][] r0 = r0.f2405a
+                long[][] r0 = r0.f2369a
                 r1 = r14
                 long r0 = p014it.unimi.dsi.fastutil.BigArrays.get(r0, r1)
                 r1 = r9
@@ -763,12 +763,12 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
             }
             if (o instanceof LongBigArrayBigList) {
                 LongBigArrayBigList other = (LongBigArrayBigList) o;
-                return contentsEquals(other.f2405a, 0, other.size64());
+                return contentsEquals(other.f2369a, 0, other.size64());
             } else if (!(o instanceof SubList)) {
                 return equals(o);
             } else {
                 SubList other2 = (SubList) o;
-                return contentsEquals(other2.getParentArray(), other2.from, other2.f2259to);
+                return contentsEquals(other2.getParentArray(), other2.from, other2.f2223to);
             }
         }
 
@@ -786,7 +786,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
                 r5 = this;
                 r0 = r5
                 it.unimi.dsi.fastutil.longs.LongBigArrayBigList r0 = p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.this
-                long[][] r0 = r0.f2405a
+                long[][] r0 = r0.f2369a
                 r1 = r6
                 if (r0 != r1) goto L_0x0020
                 r0 = r5
@@ -795,7 +795,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
                 r0 = r5
-                long r0 = r0.f2259to
+                long r0 = r0.f2223to
                 r1 = r9
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
@@ -810,7 +810,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
             L_0x0029:
                 r0 = r16
                 r1 = r5
-                long r1 = r1.f2259to
+                long r1 = r1.f2223to
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 >= 0) goto L_0x0070
                 r0 = r16
@@ -819,7 +819,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
                 if (r0 >= 0) goto L_0x0070
                 r0 = r5
                 it.unimi.dsi.fastutil.longs.LongBigArrayBigList r0 = p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.this
-                long[][] r0 = r0.f2405a
+                long[][] r0 = r0.f2369a
                 r1 = r16
                 long r0 = p014it.unimi.dsi.fastutil.BigArrays.get(r0, r1)
                 r11 = r0
@@ -855,7 +855,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
             L_0x007c:
                 r0 = r16
                 r1 = r5
-                long r1 = r1.f2259to
+                long r1 = r1.f2223to
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 >= 0) goto L_0x008a
                 r0 = 1
@@ -872,12 +872,12 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
         public int compareTo(BigList<? extends Long> l) {
             if (l instanceof LongBigArrayBigList) {
                 LongBigArrayBigList other = (LongBigArrayBigList) l;
-                return contentsCompareTo(other.f2405a, 0, other.size64());
+                return contentsCompareTo(other.f2369a, 0, other.size64());
             } else if (!(l instanceof SubList)) {
                 return compareTo(l);
             } else {
                 SubList other2 = (SubList) l;
-                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f2259to);
+                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f2223to);
             }
         }
     }
@@ -898,18 +898,18 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongBigList, p014it.unimi.dsi.fastutil.longs.LongBigList
     public void getElements(long from, long[][] a, long offset, long length) {
-        BigArrays.copy(this.f2405a, from, a, offset, length);
+        BigArrays.copy(this.f2369a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.LongBigList
     public void getElements(long from, long[] a, int offset, int length) {
-        BigArrays.copyFromBig(this.f2405a, from, a, offset, length);
+        BigArrays.copyFromBig(this.f2369a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongBigList, p014it.unimi.dsi.fastutil.longs.LongBigList
     public void removeElements(long from, long to) {
         BigArrays.ensureFromTo(this.size, from, to);
-        BigArrays.copy(this.f2405a, to, this.f2405a, from, this.size - to);
+        BigArrays.copy(this.f2369a, to, this.f2369a, from, this.size - to);
         this.size -= to - from;
     }
 
@@ -918,20 +918,20 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
         ensureIndex(index);
         BigArrays.ensureOffsetLength(a, offset, length);
         grow(this.size + length);
-        BigArrays.copy(this.f2405a, index, this.f2405a, index + length, this.size - index);
-        BigArrays.copy(a, offset, this.f2405a, index, length);
+        BigArrays.copy(this.f2369a, index, this.f2369a, index + length, this.size - index);
+        BigArrays.copy(a, offset, this.f2369a, index, length);
         this.size += length;
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongBigList, p014it.unimi.dsi.fastutil.longs.LongBigList
     public void setElements(long index, long[][] a, long offset, long length) {
-        BigArrays.copy(a, offset, this.f2405a, index, length);
+        BigArrays.copy(a, offset, this.f2369a, index, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongBigList, p014it.unimi.dsi.fastutil.longs.LongIterable
     public void forEach(LongConsumer action) {
         for (long i = 0; i < this.size; i++) {
-            action.accept(BigArrays.get(this.f2405a, i));
+            action.accept(BigArrays.get(this.f2369a, i));
         }
     }
 
@@ -976,7 +976,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
                 L_0x000f:
                     r0 = r10
                     it.unimi.dsi.fastutil.longs.LongBigArrayBigList r0 = p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.this
-                    long[][] r0 = r0.f2405a
+                    long[][] r0 = r0.f2369a
                     r1 = r10
                     r2 = r10
                     r3 = r2
@@ -990,7 +990,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
                     long r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
                     return r1
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.C45761.nextLong():long");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.C45681.nextLong():long");
             }
 
             /* JADX WARN: Type inference failed for: r0v4, types: [long[][], long] */
@@ -1011,7 +1011,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
                 L_0x000f:
                     r0 = r8
                     it.unimi.dsi.fastutil.longs.LongBigArrayBigList r0 = p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.this
-                    long[][] r0 = r0.f2405a
+                    long[][] r0 = r0.f2369a
                     r1 = r8
                     r2 = r8
                     r3 = r2
@@ -1025,7 +1025,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
                     long r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
                     return r1
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.C45761.previousLong():long");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.C45681.previousLong():long");
             }
 
             @Override // p014it.unimi.dsi.fastutil.BigListIterator
@@ -1088,7 +1088,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
                     r0 = r12
                     r1 = r11
                     it.unimi.dsi.fastutil.longs.LongBigArrayBigList r1 = p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.this
-                    long[][] r1 = r1.f2405a
+                    long[][] r1 = r1.f2369a
                     r2 = r11
                     r3 = r11
                     r4 = r3
@@ -1105,7 +1105,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
                 L_0x0032:
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.C45761.forEachRemaining(java.util.function.LongConsumer):void");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.C45681.forEachRemaining(java.util.function.LongConsumer):void");
             }
 
             /* JADX WARN: Multi-variable type inference failed */
@@ -1168,7 +1168,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
                     r0 = r7
                     return r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.C45761.back(long):long");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.C45681.back(long):long");
             }
 
             /* JADX WARN: Multi-variable type inference failed */
@@ -1235,7 +1235,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
                     r0 = r7
                     return r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.C45761.skip(long):long");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.longs.LongBigArrayBigList.C45681.skip(long):long");
             }
         };
     }
@@ -1287,7 +1287,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            long[][] jArr = LongBigArrayBigList.this.f2405a;
+            long[][] jArr = LongBigArrayBigList.this.f2369a;
             long j = this.pos;
             this.pos = j + 1;
             action.accept(BigArrays.get(jArr, j));
@@ -1298,7 +1298,7 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
         public void forEachRemaining(LongConsumer action) {
             long max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(BigArrays.get(LongBigArrayBigList.this.f2405a, this.pos));
+                action.accept(BigArrays.get(LongBigArrayBigList.this.f2369a, this.pos));
                 this.pos++;
             }
         }
@@ -1351,12 +1351,12 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
         } else {
             try {
                 c = (LongBigArrayBigList) clone();
-                c.f2405a = LongBigArrays.newBigArray(this.size);
+                c.f2369a = LongBigArrays.newBigArray(this.size);
             } catch (CloneNotSupportedException e) {
                 throw new InternalError(e);
             }
         }
-        BigArrays.copy(this.f2405a, 0L, c.f2405a, 0L, this.size);
+        BigArrays.copy(this.f2369a, 0L, c.f2369a, 0L, this.size);
         return c;
     }
 
@@ -1370,8 +1370,8 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
         if (size64 != l.size64()) {
             return false;
         }
-        long[][] a1 = this.f2405a;
-        long[][] a2 = l.f2405a;
+        long[][] a1 = this.f2369a;
+        long[][] a2 = l.f2369a;
         if (a1 == a2) {
             return true;
         }
@@ -1404,8 +1404,8 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
     public int compareTo(LongBigArrayBigList l) {
         long s1 = size64();
         long s2 = l.size64();
-        long[][] a1 = this.f2405a;
-        long[][] a2 = l.f2405a;
+        long[][] a1 = this.f2369a;
+        long[][] a2 = l.f2369a;
         if (a1 == a2 && s1 == s2) {
             return 0;
         }
@@ -1437,15 +1437,15 @@ public class LongBigArrayBigList extends AbstractLongBigList implements RandomAc
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; ((long) i) < this.size; i++) {
-            s.writeLong(BigArrays.get(this.f2405a, (long) i));
+            s.writeLong(BigArrays.get(this.f2369a, (long) i));
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f2405a = LongBigArrays.newBigArray(this.size);
+        this.f2369a = LongBigArrays.newBigArray(this.size);
         for (int i = 0; ((long) i) < this.size; i++) {
-            BigArrays.set(this.f2405a, (long) i, s.readLong());
+            BigArrays.set(this.f2369a, (long) i, s.readLong());
         }
     }
 }

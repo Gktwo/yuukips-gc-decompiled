@@ -967,7 +967,7 @@ public class Short2BooleanAVLTreeMap extends AbstractShort2BooleanSortedMap impl
         short from;
 
         /* renamed from: to */
-        short f2893to;
+        short f2857to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Short2BooleanMap.Entry> entries;
@@ -978,7 +978,7 @@ public class Short2BooleanAVLTreeMap extends AbstractShort2BooleanSortedMap impl
             if (bottom || top || Short2BooleanAVLTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f2893to = to;
+                this.f2857to = to;
                 this.top = top;
                 this.defRetValue = Short2BooleanAVLTreeMap.this.defRetValue;
                 return;
@@ -997,7 +997,7 @@ public class Short2BooleanAVLTreeMap extends AbstractShort2BooleanSortedMap impl
 
         /* renamed from: in */
         final boolean m466in(short k) {
-            return (this.bottom || Short2BooleanAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Short2BooleanAVLTreeMap.this.compare(k, this.f2893to) < 0);
+            return (this.bottom || Short2BooleanAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Short2BooleanAVLTreeMap.this.compare(k, this.f2857to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.Short2BooleanMap, p014it.unimi.dsi.fastutil.shorts.Short2BooleanSortedMap
@@ -1172,7 +1172,7 @@ public class Short2BooleanAVLTreeMap extends AbstractShort2BooleanSortedMap impl
         public boolean put(short k, boolean v) {
             Short2BooleanAVLTreeMap.this.modified = false;
             if (!m466in(k)) {
-                throw new IllegalArgumentException("Key (" + ((int) k) + ") out of range [" + (this.bottom ? "-" : String.valueOf((int) this.from)) + ", " + (this.top ? "-" : String.valueOf((int) this.f2893to)) + ")");
+                throw new IllegalArgumentException("Key (" + ((int) k) + ") out of range [" + (this.bottom ? "-" : String.valueOf((int) this.from)) + ", " + (this.top ? "-" : String.valueOf((int) this.f2857to)) + ")");
             }
             return Short2BooleanAVLTreeMap.this.modified ? this.defRetValue : Short2BooleanAVLTreeMap.this.put(k, v);
         }
@@ -1210,7 +1210,7 @@ public class Short2BooleanAVLTreeMap extends AbstractShort2BooleanSortedMap impl
 
         @Override // p014it.unimi.dsi.fastutil.shorts.Short2BooleanSortedMap
         public Short2BooleanSortedMap headMap(short to) {
-            if (!this.top && Short2BooleanAVLTreeMap.this.compare(to, this.f2893to) >= 0) {
+            if (!this.top && Short2BooleanAVLTreeMap.this.compare(to, this.f2857to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1221,7 +1221,7 @@ public class Short2BooleanAVLTreeMap extends AbstractShort2BooleanSortedMap impl
             if (!this.bottom && Short2BooleanAVLTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f2893to, this.top);
+            return new Submap(from, false, this.f2857to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.Short2BooleanSortedMap
@@ -1230,12 +1230,12 @@ public class Short2BooleanAVLTreeMap extends AbstractShort2BooleanSortedMap impl
                 return new Submap(from, false, to, false);
             }
             if (!this.top) {
-                to = Short2BooleanAVLTreeMap.this.compare(to, this.f2893to) < 0 ? to : this.f2893to;
+                to = Short2BooleanAVLTreeMap.this.compare(to, this.f2857to) < 0 ? to : this.f2857to;
             }
             if (!this.bottom) {
                 from = Short2BooleanAVLTreeMap.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f2893to) ? new Submap(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f2857to) ? new Submap(from, false, to, false) : this;
         }
 
         public Entry firstEntry() {
@@ -1254,7 +1254,7 @@ public class Short2BooleanAVLTreeMap extends AbstractShort2BooleanSortedMap impl
             if (e == null) {
                 return null;
             }
-            if (this.top || Short2BooleanAVLTreeMap.this.compare(e.key, this.f2893to) < 0) {
+            if (this.top || Short2BooleanAVLTreeMap.this.compare(e.key, this.f2857to) < 0) {
                 return e;
             }
             return null;
@@ -1268,8 +1268,8 @@ public class Short2BooleanAVLTreeMap extends AbstractShort2BooleanSortedMap impl
             if (this.top) {
                 e = Short2BooleanAVLTreeMap.this.lastEntry;
             } else {
-                e = Short2BooleanAVLTreeMap.this.locateKey(this.f2893to);
-                if (Short2BooleanAVLTreeMap.this.compare(e.key, this.f2893to) >= 0) {
+                e = Short2BooleanAVLTreeMap.this.locateKey(this.f2857to);
+                if (Short2BooleanAVLTreeMap.this.compare(e.key, this.f2857to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1347,7 +1347,7 @@ public class Short2BooleanAVLTreeMap extends AbstractShort2BooleanSortedMap impl
             @Override // p014it.unimi.dsi.fastutil.shorts.Short2BooleanAVLTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Short2BooleanAVLTreeMap.this.compare(this.next.key, Submap.this.f2893to) >= 0) {
+                if (!Submap.this.top && this.next != null && Short2BooleanAVLTreeMap.this.compare(this.next.key, Submap.this.f2857to) >= 0) {
                     this.next = null;
                 }
             }

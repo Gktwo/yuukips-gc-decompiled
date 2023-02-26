@@ -47,13 +47,13 @@ public final class PipedStreamUtil {
         PipedOutputStream pipedOutputStream = new PipedOutputStream();
         PipedStreamUtil$getInputStream$pipedInputStream$1 pipedInputStream = new PipedStreamUtil$getInputStream$pipedInputStream$1(pipedOutputStream);
         executorService.execute(() -> {
-            m5866getInputStream$lambda0(r1, r2, r3);
+            m5863getInputStream$lambda0(r1, r2, r3);
         });
         return pipedInputStream;
     }
 
     /* renamed from: getInputStream$lambda-0  reason: not valid java name */
-    private static final void m5866getInputStream$lambda0(Function1 $userCallback, PipedOutputStream $pipedOutputStream, PipedStreamUtil$getInputStream$pipedInputStream$1 $pipedInputStream) {
+    private static final void m5863getInputStream$lambda0(Function1 $userCallback, PipedOutputStream $pipedOutputStream, PipedStreamUtil$getInputStream$pipedInputStream$1 $pipedInputStream) {
         Intrinsics.checkNotNullParameter($userCallback, "$userCallback");
         Intrinsics.checkNotNullParameter($pipedOutputStream, "$pipedOutputStream");
         Intrinsics.checkNotNullParameter($pipedInputStream, "$pipedInputStream");

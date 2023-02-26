@@ -15,6 +15,12 @@ public class ItemUseUnlockHomeModule extends ItemUseInt {
 
     @Override // emu.grasscutter.game.props.ItemUseAction.C1378ItemUseAction
     public boolean useItem(UseItemParams params) {
-        return false;
+        return true;
+    }
+
+    @Override // emu.grasscutter.game.props.ItemUseAction.C1378ItemUseAction
+    public boolean postUseItem(UseItemParams params) {
+        params.player.addRealmList(this.f589i);
+        return true;
     }
 }

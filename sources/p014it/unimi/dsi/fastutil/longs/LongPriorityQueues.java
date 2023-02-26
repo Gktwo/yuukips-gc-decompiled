@@ -15,23 +15,23 @@ public final class LongPriorityQueues {
     public static class SynchronizedPriorityQueue implements LongPriorityQueue {
 
         /* renamed from: q */
-        protected final LongPriorityQueue f2442q;
+        protected final LongPriorityQueue f2406q;
         protected final Object sync;
 
         protected SynchronizedPriorityQueue(LongPriorityQueue q, Object sync) {
-            this.f2442q = q;
+            this.f2406q = q;
             this.sync = sync;
         }
 
         protected SynchronizedPriorityQueue(LongPriorityQueue q) {
-            this.f2442q = q;
+            this.f2406q = q;
             this.sync = this;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongPriorityQueue
         public void enqueue(long x) {
             synchronized (this.sync) {
-                this.f2442q.enqueue(x);
+                this.f2406q.enqueue(x);
             }
         }
 
@@ -39,7 +39,7 @@ public final class LongPriorityQueues {
         public long dequeueLong() {
             long dequeueLong;
             synchronized (this.sync) {
-                dequeueLong = this.f2442q.dequeueLong();
+                dequeueLong = this.f2406q.dequeueLong();
             }
             return dequeueLong;
         }
@@ -48,7 +48,7 @@ public final class LongPriorityQueues {
         public long firstLong() {
             long firstLong;
             synchronized (this.sync) {
-                firstLong = this.f2442q.firstLong();
+                firstLong = this.f2406q.firstLong();
             }
             return firstLong;
         }
@@ -57,7 +57,7 @@ public final class LongPriorityQueues {
         public long lastLong() {
             long lastLong;
             synchronized (this.sync) {
-                lastLong = this.f2442q.lastLong();
+                lastLong = this.f2406q.lastLong();
             }
             return lastLong;
         }
@@ -66,7 +66,7 @@ public final class LongPriorityQueues {
         public boolean isEmpty() {
             boolean isEmpty;
             synchronized (this.sync) {
-                isEmpty = this.f2442q.isEmpty();
+                isEmpty = this.f2406q.isEmpty();
             }
             return isEmpty;
         }
@@ -75,7 +75,7 @@ public final class LongPriorityQueues {
         public int size() {
             int size;
             synchronized (this.sync) {
-                size = this.f2442q.size();
+                size = this.f2406q.size();
             }
             return size;
         }
@@ -83,14 +83,14 @@ public final class LongPriorityQueues {
         @Override // p014it.unimi.dsi.fastutil.PriorityQueue
         public void clear() {
             synchronized (this.sync) {
-                this.f2442q.clear();
+                this.f2406q.clear();
             }
         }
 
         @Override // p014it.unimi.dsi.fastutil.PriorityQueue
         public void changed() {
             synchronized (this.sync) {
-                this.f2442q.changed();
+                this.f2406q.changed();
             }
         }
 
@@ -99,7 +99,7 @@ public final class LongPriorityQueues {
         public Comparator<? super Long> comparator() {
             Comparator<? super Long> comparator;
             synchronized (this.sync) {
-                comparator = this.f2442q.comparator();
+                comparator = this.f2406q.comparator();
             }
             return comparator;
         }
@@ -108,7 +108,7 @@ public final class LongPriorityQueues {
         @Deprecated
         public void enqueue(Long x) {
             synchronized (this.sync) {
-                this.f2442q.enqueue(x);
+                this.f2406q.enqueue(x);
             }
         }
 
@@ -117,7 +117,7 @@ public final class LongPriorityQueues {
         public Long dequeue() {
             Long dequeue;
             synchronized (this.sync) {
-                dequeue = this.f2442q.dequeue();
+                dequeue = this.f2406q.dequeue();
             }
             return dequeue;
         }
@@ -127,7 +127,7 @@ public final class LongPriorityQueues {
         public Long first() {
             Long first;
             synchronized (this.sync) {
-                first = this.f2442q.first();
+                first = this.f2406q.first();
             }
             return first;
         }
@@ -137,7 +137,7 @@ public final class LongPriorityQueues {
         public Long last() {
             Long last;
             synchronized (this.sync) {
-                last = this.f2442q.last();
+                last = this.f2406q.last();
             }
             return last;
         }
@@ -145,7 +145,7 @@ public final class LongPriorityQueues {
         public int hashCode() {
             int hashCode;
             synchronized (this.sync) {
-                hashCode = this.f2442q.hashCode();
+                hashCode = this.f2406q.hashCode();
             }
             return hashCode;
         }
@@ -156,7 +156,7 @@ public final class LongPriorityQueues {
                 return true;
             }
             synchronized (this.sync) {
-                equals = this.f2442q.equals(o);
+                equals = this.f2406q.equals(o);
             }
             return equals;
         }

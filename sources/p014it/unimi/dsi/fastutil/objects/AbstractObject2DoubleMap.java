@@ -190,30 +190,30 @@ public abstract class AbstractObject2DoubleMap<K> extends AbstractObject2DoubleF
                 return new ObjectIterator<K>() { // from class: it.unimi.dsi.fastutil.objects.AbstractObject2DoubleMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Object2DoubleMap.Entry<K>> f2460i;
+                    private final ObjectIterator<Object2DoubleMap.Entry<K>> f2424i;
 
                     {
-                        this.f2460i = Object2DoubleMaps.fastIterator(AbstractObject2DoubleMap.this);
+                        this.f2424i = Object2DoubleMaps.fastIterator(AbstractObject2DoubleMap.this);
                     }
 
                     @Override // java.util.Iterator
                     public K next() {
-                        return this.f2460i.next().getKey();
+                        return this.f2424i.next().getKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2460i.hasNext();
+                        return this.f2424i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2460i.remove();
+                        this.f2424i.remove();
                     }
 
                     @Override // java.util.Iterator
                     public void forEachRemaining(Consumer<? super K> action) {
-                        this.f2460i.forEachRemaining(entry -> {
+                        this.f2424i.forEachRemaining(entry -> {
                             action.accept(entry.getKey());
                         });
                     }
@@ -251,30 +251,30 @@ public abstract class AbstractObject2DoubleMap<K> extends AbstractObject2DoubleF
                 return new DoubleIterator() { // from class: it.unimi.dsi.fastutil.objects.AbstractObject2DoubleMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Object2DoubleMap.Entry<K>> f2461i;
+                    private final ObjectIterator<Object2DoubleMap.Entry<K>> f2425i;
 
                     {
-                        this.f2461i = Object2DoubleMaps.fastIterator(AbstractObject2DoubleMap.this);
+                        this.f2425i = Object2DoubleMaps.fastIterator(AbstractObject2DoubleMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
                     public double nextDouble() {
-                        return this.f2461i.next().getDoubleValue();
+                        return this.f2425i.next().getDoubleValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2461i.hasNext();
+                        return this.f2425i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2461i.remove();
+                        this.f2425i.remove();
                     }
 
                     @Override // java.util.PrimitiveIterator.OfDouble
                     public void forEachRemaining(DoubleConsumer action) {
-                        this.f2461i.forEachRemaining(entry -> {
+                        this.f2425i.forEachRemaining(entry -> {
                             action.accept(entry.getDoubleValue());
                         });
                     }

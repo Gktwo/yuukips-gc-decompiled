@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChatEmojiCollectionDataOuterClass.class */
 public final class ChatEmojiCollectionDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dChatEmojiCollectionData.proto\"0\n\u0017ChatEmojiCollectionData\u0012\u0015\n\remoji_id_list\u0018\u0001 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dChatEmojiCollectionData.proto\".\n\u0017ChatEmojiCollectionData\u0012\u0013\n\u000bemojiIdList\u0018\u0001 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ChatEmojiCollectionData_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChatEmojiCollectionData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChatEmojiCollectionData_descriptor, new String[]{"EmojiIdList"});
 
@@ -49,7 +49,7 @@ public final class ChatEmojiCollectionDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChatEmojiCollectionDataOuterClass$ChatEmojiCollectionData.class */
     public static final class ChatEmojiCollectionData extends GeneratedMessageV3 implements ChatEmojiCollectionDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int EMOJI_ID_LIST_FIELD_NUMBER = 1;
+        public static final int EMOJIIDLIST_FIELD_NUMBER = 1;
         private Internal.IntList emojiIdList_;
         private int emojiIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;

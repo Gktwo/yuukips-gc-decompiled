@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WeatherWizardDataOuterClass.class */
 public final class WeatherWizardDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017WeatherWizardData.proto\")\n\u0011WeatherWizardData\u0012\u0014\n\fshield_value\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017WeatherWizardData.proto\"(\n\u0011WeatherWizardData\u0012\u0013\n\u000bshieldValue\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_WeatherWizardData_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_WeatherWizardData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WeatherWizardData_descriptor, new String[]{"ShieldValue"});
 
@@ -41,7 +41,7 @@ public final class WeatherWizardDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WeatherWizardDataOuterClass$WeatherWizardData.class */
     public static final class WeatherWizardData extends GeneratedMessageV3 implements WeatherWizardDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SHIELD_VALUE_FIELD_NUMBER = 6;
+        public static final int SHIELDVALUE_FIELD_NUMBER = 14;
         private int shieldValue_;
         private byte memoizedIsInitialized;
         private static final WeatherWizardData DEFAULT_INSTANCE = new WeatherWizardData();
@@ -88,7 +88,7 @@ public final class WeatherWizardDataOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 48:
+                            case 112:
                                 this.shieldValue_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class WeatherWizardDataOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.shieldValue_ != 0) {
-                output.writeUInt32(6, this.shieldValue_);
+                output.writeUInt32(14, this.shieldValue_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class WeatherWizardDataOuterClass {
             }
             int size2 = 0;
             if (this.shieldValue_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.shieldValue_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(14, this.shieldValue_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class WeatherWizardDataOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getShieldValue())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getShieldValue())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

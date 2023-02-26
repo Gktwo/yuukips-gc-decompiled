@@ -25,7 +25,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlatformInfoOuterClass.class */
 public final class PlatformInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012PlatformInfo.proto\u001a\u0014MathQuaternion.proto\u001a\u0018MovingPlatformType.proto\u001a\u000bRoute.proto\u001a\fVector.proto\"\u0003\n\fPlatformInfo\u0012\u0010\n\broute_id\u0018\u0001 \u0001(\r\u0012\u0013\n\u000bstart_index\u0018\u0002 \u0001(\u0005\u0012\u0018\n\u0010start_route_time\u0018\u0003 \u0001(\r\u0012\u0018\n\u0010start_scene_time\u0018\u0004 \u0001(\r\u0012\u001a\n\tstart_pos\u0018\u0007 \u0001(\u000b2\u0007.Vector\u0012\u0012\n\nis_started\u0018\b \u0001(\b\u0012\"\n\tstart_rot\u0018\t \u0001(\u000b2\u000f.MathQuaternion\u0012\u0017\n\u000fstop_scene_time\u0018\n \u0001(\r\u0012\u001b\n\npos_offset\u0018\u000b \u0001(\u000b2\u0007.Vector\u0012#\n\nrot_offset\u0018\f \u0001(\u000b2\u000f.MathQuaternion\u00121\n\u0014moving_platform_type\u0018\r \u0001(\u000e2\u0013.MovingPlatformType\u0012\u0011\n\tis_active\u0018\u000e \u0001(\b\u0012\u0015\n\u0005route\u0018\u000f \u0001(\u000b2\u0006.Route\u0012\u0010\n\bpoint_id\u0018\u0010 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MathQuaternionOuterClass.getDescriptor(), MovingPlatformTypeOuterClass.getDescriptor(), RouteOuterClass.getDescriptor(), VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012PlatformInfo.proto\u001a\fVector.proto\u001a\u0014MathQuaternion.proto\u001a\u0018MovingPlatformType.proto\u001a\u000bRoute.proto\"ø\u0002\n\fPlatformInfo\u0012\u000f\n\u0007routeId\u0018\u0001 \u0001(\r\u0012\u0012\n\nstartIndex\u0018\u0002 \u0001(\u0005\u0012\u0016\n\u000estartRouteTime\u0018\u0003 \u0001(\r\u0012\u0016\n\u000estartSceneTime\u0018\u0004 \u0001(\r\u0012\u0019\n\bstartPos\u0018\u0007 \u0001(\u000b2\u0007.Vector\u0012\u0011\n\tisStarted\u0018\b \u0001(\b\u0012\"\n\tstart_rot\u0018\t \u0001(\u000b2\u000f.MathQuaternion\u0012\u0015\n\rstopSceneTime\u0018\n \u0001(\r\u0012\u001a\n\tposOffset\u0018\u000b \u0001(\u000b2\u0007.Vector\u0012#\n\nrot_offset\u0018\f \u0001(\u000b2\u000f.MathQuaternion\u0012/\n\u0012movingPlatformType\u0018\r \u0001(\u000e2\u0013.MovingPlatformType\u0012\u0010\n\bisActive\u0018\u000e \u0001(\b\u0012\u0015\n\u0005route\u0018\u000f \u0001(\u000b2\u0006.Route\u0012\u000f\n\u0007pointId\u0018\u0010 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor(), MathQuaternionOuterClass.getDescriptor(), MovingPlatformTypeOuterClass.getDescriptor(), RouteOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_PlatformInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlatformInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlatformInfo_descriptor, new String[]{"RouteId", "StartIndex", "StartRouteTime", "StartSceneTime", "StartPos", "IsStarted", "StartRot", "StopSceneTime", "PosOffset", "RotOffset", "MovingPlatformType", "IsActive", "Route", "PointId"});
 
@@ -95,33 +95,33 @@ public final class PlatformInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlatformInfoOuterClass$PlatformInfo.class */
     public static final class PlatformInfo extends GeneratedMessageV3 implements PlatformInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ROUTE_ID_FIELD_NUMBER = 1;
+        public static final int ROUTEID_FIELD_NUMBER = 1;
         private int routeId_;
-        public static final int START_INDEX_FIELD_NUMBER = 2;
+        public static final int STARTINDEX_FIELD_NUMBER = 2;
         private int startIndex_;
-        public static final int START_ROUTE_TIME_FIELD_NUMBER = 3;
+        public static final int STARTROUTETIME_FIELD_NUMBER = 3;
         private int startRouteTime_;
-        public static final int START_SCENE_TIME_FIELD_NUMBER = 4;
+        public static final int STARTSCENETIME_FIELD_NUMBER = 4;
         private int startSceneTime_;
-        public static final int START_POS_FIELD_NUMBER = 7;
+        public static final int STARTPOS_FIELD_NUMBER = 7;
         private VectorOuterClass.Vector startPos_;
-        public static final int IS_STARTED_FIELD_NUMBER = 8;
+        public static final int ISSTARTED_FIELD_NUMBER = 8;
         private boolean isStarted_;
         public static final int START_ROT_FIELD_NUMBER = 9;
         private MathQuaternionOuterClass.MathQuaternion startRot_;
-        public static final int STOP_SCENE_TIME_FIELD_NUMBER = 10;
+        public static final int STOPSCENETIME_FIELD_NUMBER = 10;
         private int stopSceneTime_;
-        public static final int POS_OFFSET_FIELD_NUMBER = 11;
+        public static final int POSOFFSET_FIELD_NUMBER = 11;
         private VectorOuterClass.Vector posOffset_;
         public static final int ROT_OFFSET_FIELD_NUMBER = 12;
         private MathQuaternionOuterClass.MathQuaternion rotOffset_;
-        public static final int MOVING_PLATFORM_TYPE_FIELD_NUMBER = 13;
+        public static final int MOVINGPLATFORMTYPE_FIELD_NUMBER = 13;
         private int movingPlatformType_;
-        public static final int IS_ACTIVE_FIELD_NUMBER = 14;
+        public static final int ISACTIVE_FIELD_NUMBER = 14;
         private boolean isActive_;
         public static final int ROUTE_FIELD_NUMBER = 15;
         private RouteOuterClass.Route route_;
-        public static final int POINT_ID_FIELD_NUMBER = 16;
+        public static final int POINTID_FIELD_NUMBER = 16;
         private int pointId_;
         private byte memoizedIsInitialized;
         private static final PlatformInfo DEFAULT_INSTANCE = new PlatformInfo();
@@ -1520,9 +1520,9 @@ public final class PlatformInfoOuterClass {
     }
 
     static {
+        VectorOuterClass.getDescriptor();
         MathQuaternionOuterClass.getDescriptor();
         MovingPlatformTypeOuterClass.getDescriptor();
         RouteOuterClass.getDescriptor();
-        VectorOuterClass.getDescriptor();
     }
 }

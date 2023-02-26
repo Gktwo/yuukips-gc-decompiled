@@ -19,16 +19,16 @@ public class DoubleMappedBigList extends AbstractDoubleBigList {
     private final boolean[] readyToUse;
 
     /* renamed from: n */
-    private final int f1736n;
+    private final int f1700n;
     private final long size;
 
     protected DoubleMappedBigList(DoubleBuffer[] buffer, long size, boolean[] readyToUse) {
         this.buffer = buffer;
-        this.f1736n = buffer.length;
+        this.f1700n = buffer.length;
         this.size = size;
         this.readyToUse = readyToUse;
-        for (int i = 0; i < this.f1736n; i++) {
-            if (i < this.f1736n - 1 && ((long) buffer[i].capacity()) != CHUNK_SIZE) {
+        for (int i = 0; i < this.f1700n; i++) {
+            if (i < this.f1700n - 1 && ((long) buffer[i].capacity()) != CHUNK_SIZE) {
                 throw new IllegalArgumentException();
             }
         }
@@ -66,7 +66,7 @@ public class DoubleMappedBigList extends AbstractDoubleBigList {
     }
 
     public DoubleMappedBigList copy() {
-        return new DoubleMappedBigList((DoubleBuffer[]) this.buffer.clone(), this.size, new boolean[this.f1736n]);
+        return new DoubleMappedBigList((DoubleBuffer[]) this.buffer.clone(), this.size, new boolean[this.f1700n]);
     }
 
     @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigList

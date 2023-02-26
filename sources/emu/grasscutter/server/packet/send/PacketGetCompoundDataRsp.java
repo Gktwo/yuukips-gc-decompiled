@@ -9,7 +9,7 @@ import java.util.Set;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketGetCompoundDataRsp.class */
 public class PacketGetCompoundDataRsp extends BasePacket {
     public PacketGetCompoundDataRsp(Set<Integer> unlockedCompounds, List<CompoundQueueDataOuterClass.CompoundQueueData> compoundQueueData) {
-        super(115);
+        super(152);
         setData(GetCompoundDataRspOuterClass.GetCompoundDataRsp.newBuilder().addAllUnlockCompoundList(unlockedCompounds).addAllCompoundQueueDataList(compoundQueueData).setRetcode(0).build());
     }
 }

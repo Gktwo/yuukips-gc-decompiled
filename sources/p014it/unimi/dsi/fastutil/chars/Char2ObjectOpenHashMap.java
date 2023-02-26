@@ -34,13 +34,13 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
     protected transient boolean containsNullKey;
 
     /* renamed from: n */
-    protected transient int f1443n;
+    protected transient int f1407n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1444f;
+    protected final float f1408f;
     protected transient Char2ObjectMap.FastEntrySet<V> entries;
     protected transient CharSet keys;
     protected transient ObjectCollection<V> values;
@@ -51,14 +51,14 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1444f = f;
+            this.f1408f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1443n = arraySize;
+            this.f1407n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1443n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1443n, f);
-            this.key = new char[this.f1443n + 1];
-            this.value = (V[]) new Object[this.f1443n + 1];
+            this.mask = this.f1407n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1407n, f);
+            this.key = new char[this.f1407n + 1];
+            this.value = (V[]) new Object[this.f1407n + 1];
         }
     }
 
@@ -108,15 +108,15 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1444f);
-        if (needed > this.f1443n) {
+        int needed = HashCommon.arraySize(capacity, this.f1408f);
+        if (needed > this.f1407n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1444f)))));
-        if (needed > this.f1443n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1408f)))));
+        if (needed > this.f1407n) {
             rehash(needed);
         }
     }
@@ -127,8 +127,8 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
         this.value[pos] = null;
         this.size--;
         shiftKeys(pos);
-        if (this.f1443n > this.minN && this.size < this.maxFill / 4 && this.f1443n > 16) {
-            rehash(this.f1443n / 2);
+        if (this.f1407n > this.minN && this.size < this.maxFill / 4 && this.f1407n > 16) {
+            rehash(this.f1407n / 2);
         }
         return oldValue;
     }
@@ -136,18 +136,18 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
     /* access modifiers changed from: private */
     public V removeNullEntry() {
         this.containsNullKey = false;
-        V oldValue = this.value[this.f1443n];
-        this.value[this.f1443n] = null;
+        V oldValue = this.value[this.f1407n];
+        this.value[this.f1407n] = null;
         this.size--;
-        if (this.f1443n > this.minN && this.size < this.maxFill / 4 && this.f1443n > 16) {
-            rehash(this.f1443n / 2);
+        if (this.f1407n > this.minN && this.size < this.maxFill / 4 && this.f1407n > 16) {
+            rehash(this.f1407n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractChar2ObjectMap, java.util.Map
     public void putAll(Map<? extends Character, ? extends V> m) {
-        if (((double) this.f1444f) <= 0.5d) {
+        if (((double) this.f1408f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -158,7 +158,7 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
     private int find(char k) {
         char curr;
         if (k == 0) {
-            return this.containsNullKey ? this.f1443n : -(this.f1443n + 1);
+            return this.containsNullKey ? this.f1407n : -(this.f1407n + 1);
         }
         char[] key = this.key;
         int mix = HashCommon.mix((int) k) & this.mask;
@@ -182,7 +182,7 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
     }
 
     private void insert(int pos, char k, V v) {
-        if (pos == this.f1443n) {
+        if (pos == this.f1407n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -190,7 +190,7 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f1444f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f1408f));
         }
     }
 
@@ -268,7 +268,7 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
     public V get(char k) {
         char curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f1443n] : (V) this.defRetValue;
+            return this.containsNullKey ? this.value[this.f1407n] : (V) this.defRetValue;
         }
         char[] key = this.key;
         int mix = HashCommon.mix((int) k) & this.mask;
@@ -322,10 +322,10 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
     public boolean containsValue(Object v) {
         V[] value = this.value;
         char[] key = this.key;
-        if (this.containsNullKey && Objects.equals(value[this.f1443n], v)) {
+        if (this.containsNullKey && Objects.equals(value[this.f1407n], v)) {
             return true;
         }
-        int i = this.f1443n;
+        int i = this.f1407n;
         while (true) {
             i--;
             if (i == 0) {
@@ -341,7 +341,7 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
     public V getOrDefault(char k, V defaultValue) {
         char curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f1443n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f1407n] : defaultValue;
         }
         char[] key = this.key;
         int mix = HashCommon.mix((int) k) & this.mask;
@@ -401,7 +401,7 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
                 removeEntry(pos);
                 return true;
             }
-        } else if (!this.containsNullKey || !Objects.equals(v, this.value[this.f1443n])) {
+        } else if (!this.containsNullKey || !Objects.equals(v, this.value[this.f1407n])) {
             return false;
         } else {
             removeNullEntry();
@@ -625,31 +625,31 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
         int last;
 
         /* renamed from: c */
-        int f1445c;
+        int f1409c;
         boolean mustReturnNullKey;
         CharArrayList wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Char2ObjectOpenHashMap.this.f1443n;
+            this.pos = Char2ObjectOpenHashMap.this.f1407n;
             this.last = -1;
-            this.f1445c = Char2ObjectOpenHashMap.this.size;
+            this.f1409c = Char2ObjectOpenHashMap.this.size;
             this.mustReturnNullKey = Char2ObjectOpenHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f1445c != 0;
+            return this.f1409c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f1445c--;
+            this.f1409c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Char2ObjectOpenHashMap.this.f1443n;
+                int i = Char2ObjectOpenHashMap.this.f1407n;
                 this.last = i;
                 return i;
             }
@@ -681,13 +681,13 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Char2ObjectOpenHashMap.this.f1443n;
+                int i = Char2ObjectOpenHashMap.this.f1407n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f1445c--;
+                this.f1409c--;
             }
             char[] key = Char2ObjectOpenHashMap.this.key;
-            while (this.f1445c != 0) {
+            while (this.f1409c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -704,12 +704,12 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
                         i3 = Char2ObjectOpenHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f1445c--;
+                    this.f1409c--;
                 } else if (key[this.pos] != 0) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f1445c--;
+                    this.f1409c--;
                 }
             }
         }
@@ -759,9 +759,9 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Char2ObjectOpenHashMap.this.f1443n) {
+            if (this.last == Char2ObjectOpenHashMap.this.f1407n) {
                 Char2ObjectOpenHashMap.this.containsNullKey = false;
-                Char2ObjectOpenHashMap.this.value[Char2ObjectOpenHashMap.this.f1443n] = null;
+                Char2ObjectOpenHashMap.this.value[Char2ObjectOpenHashMap.this.f1407n] = null;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -865,7 +865,7 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
         int max;
 
         /* renamed from: c */
-        int f1446c;
+        int f1410c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -875,16 +875,16 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Char2ObjectOpenHashMap.this.f1443n;
-            this.f1446c = 0;
+            this.max = Char2ObjectOpenHashMap.this.f1407n;
+            this.f1410c = 0;
             this.mustReturnNull = Char2ObjectOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Char2ObjectOpenHashMap.this.f1443n;
-            this.f1446c = 0;
+            this.max = Char2ObjectOpenHashMap.this.f1407n;
+            this.f1410c = 0;
             this.mustReturnNull = Char2ObjectOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -896,14 +896,14 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1446c++;
-                acceptOnIndex(action, Char2ObjectOpenHashMap.this.f1443n);
+                this.f1410c++;
+                acceptOnIndex(action, Char2ObjectOpenHashMap.this.f1407n);
                 return true;
             }
             char[] key = Char2ObjectOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f1446c++;
+                    this.f1410c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -917,14 +917,14 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1446c++;
-                acceptOnIndex(action, Char2ObjectOpenHashMap.this.f1443n);
+                this.f1410c++;
+                acceptOnIndex(action, Char2ObjectOpenHashMap.this.f1407n);
             }
             char[] key = Char2ObjectOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     acceptOnIndex(action, this.pos);
-                    this.f1446c++;
+                    this.f1410c++;
                 }
                 this.pos++;
             }
@@ -932,9 +932,9 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Char2ObjectOpenHashMap.this.size - this.f1446c);
+                return (long) (Char2ObjectOpenHashMap.this.size - this.f1410c);
             }
-            return Math.min((long) (Char2ObjectOpenHashMap.this.size - this.f1446c), ((long) ((((double) Char2ObjectOpenHashMap.this.realSize()) / ((double) Char2ObjectOpenHashMap.this.f1443n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Char2ObjectOpenHashMap.this.size - this.f1410c), ((long) ((((double) Char2ObjectOpenHashMap.this.realSize()) / ((double) Char2ObjectOpenHashMap.this.f1407n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1131,7 +1131,7 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
             char k = ((Character) e.getKey()).charValue();
             Object value = e.getValue();
             if (k == 0) {
-                return Char2ObjectOpenHashMap.this.containsNullKey && Objects.equals(Char2ObjectOpenHashMap.this.value[Char2ObjectOpenHashMap.this.f1443n], value);
+                return Char2ObjectOpenHashMap.this.containsNullKey && Objects.equals(Char2ObjectOpenHashMap.this.value[Char2ObjectOpenHashMap.this.f1407n], value);
             }
             char[] key = Char2ObjectOpenHashMap.this.key;
             int mix = HashCommon.mix((int) k) & Char2ObjectOpenHashMap.this.mask;
@@ -1192,7 +1192,7 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
                     Char2ObjectOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Char2ObjectOpenHashMap.this.containsNullKey || !Objects.equals(Char2ObjectOpenHashMap.this.value[Char2ObjectOpenHashMap.this.f1443n], value)) {
+            } else if (!Char2ObjectOpenHashMap.this.containsNullKey || !Objects.equals(Char2ObjectOpenHashMap.this.value[Char2ObjectOpenHashMap.this.f1407n], value)) {
                 return false;
             } else {
                 Char2ObjectOpenHashMap.this.removeNullEntry();
@@ -1213,9 +1213,9 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Char2ObjectMap.Entry<V>> consumer) {
             if (Char2ObjectOpenHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractChar2ObjectMap.BasicEntry(Char2ObjectOpenHashMap.this.key[Char2ObjectOpenHashMap.this.f1443n], Char2ObjectOpenHashMap.this.value[Char2ObjectOpenHashMap.this.f1443n]));
+                consumer.accept(new AbstractChar2ObjectMap.BasicEntry(Char2ObjectOpenHashMap.this.key[Char2ObjectOpenHashMap.this.f1407n], Char2ObjectOpenHashMap.this.value[Char2ObjectOpenHashMap.this.f1407n]));
             }
-            int pos = Char2ObjectOpenHashMap.this.f1443n;
+            int pos = Char2ObjectOpenHashMap.this.f1407n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1231,11 +1231,11 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
         public void fastForEach(Consumer<? super Char2ObjectMap.Entry<V>> consumer) {
             AbstractChar2ObjectMap.BasicEntry<V> entry = new AbstractChar2ObjectMap.BasicEntry<>();
             if (Char2ObjectOpenHashMap.this.containsNullKey) {
-                entry.key = Char2ObjectOpenHashMap.this.key[Char2ObjectOpenHashMap.this.f1443n];
-                entry.value = Char2ObjectOpenHashMap.this.value[Char2ObjectOpenHashMap.this.f1443n];
+                entry.key = Char2ObjectOpenHashMap.this.key[Char2ObjectOpenHashMap.this.f1407n];
+                entry.value = Char2ObjectOpenHashMap.this.value[Char2ObjectOpenHashMap.this.f1407n];
                 consumer.accept(entry);
             }
-            int pos = Char2ObjectOpenHashMap.this.f1443n;
+            int pos = Char2ObjectOpenHashMap.this.f1407n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1333,9 +1333,9 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterable
         public void forEach(CharConsumer consumer) {
             if (Char2ObjectOpenHashMap.this.containsNullKey) {
-                consumer.accept(Char2ObjectOpenHashMap.this.key[Char2ObjectOpenHashMap.this.f1443n]);
+                consumer.accept(Char2ObjectOpenHashMap.this.key[Char2ObjectOpenHashMap.this.f1407n]);
             }
-            int pos = Char2ObjectOpenHashMap.this.f1443n;
+            int pos = Char2ObjectOpenHashMap.this.f1407n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1471,9 +1471,9 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
                 @Override // java.lang.Iterable
                 public void forEach(Consumer<? super V> consumer) {
                     if (Char2ObjectOpenHashMap.this.containsNullKey) {
-                        consumer.accept((Object) Char2ObjectOpenHashMap.this.value[Char2ObjectOpenHashMap.this.f1443n]);
+                        consumer.accept((Object) Char2ObjectOpenHashMap.this.value[Char2ObjectOpenHashMap.this.f1407n]);
                     }
-                    int pos = Char2ObjectOpenHashMap.this.f1443n;
+                    int pos = Char2ObjectOpenHashMap.this.f1407n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1509,8 +1509,8 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1444f)));
-        if (l >= this.f1443n || this.size > HashCommon.maxFill(l, this.f1444f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1408f)));
+        if (l >= this.f1407n || this.size > HashCommon.maxFill(l, this.f1408f)) {
             return true;
         }
         try {
@@ -1528,7 +1528,7 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
         int mask = newN - 1;
         char[] newKey = new char[newN + 1];
         V[] newValue = (V[]) new Object[newN + 1];
-        int i2 = this.f1443n;
+        int i2 = this.f1407n;
         int j = realSize();
         while (true) {
             j--;
@@ -1547,10 +1547,10 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f1443n];
-                this.f1443n = newN;
+                newValue[newN] = value[this.f1407n];
+                this.f1407n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f1443n, this.f1444f);
+                this.maxFill = HashCommon.maxFill(this.f1407n, this.f1408f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1600,7 +1600,7 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f1443n] == null ? 0 : this.value[this.f1443n].hashCode();
+            h += this.value[this.f1407n] == null ? 0 : this.value[this.f1407n].hashCode();
         }
         return h;
     }
@@ -1628,12 +1628,12 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f1443n = HashCommon.arraySize(this.size, this.f1444f);
-        this.maxFill = HashCommon.maxFill(this.f1443n, this.f1444f);
-        this.mask = this.f1443n - 1;
-        char[] key = new char[this.f1443n + 1];
+        this.f1407n = HashCommon.arraySize(this.size, this.f1408f);
+        this.maxFill = HashCommon.maxFill(this.f1407n, this.f1408f);
+        this.mask = this.f1407n - 1;
+        char[] key = new char[this.f1407n + 1];
         this.key = key;
-        V[] value = (V[]) new Object[this.f1443n + 1];
+        V[] value = (V[]) new Object[this.f1407n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1642,7 +1642,7 @@ public class Char2ObjectOpenHashMap<V> extends AbstractChar2ObjectMap<V> impleme
                 char k = s.readChar();
                 Object readObject = s.readObject();
                 if (k == 0) {
-                    pos = this.f1443n;
+                    pos = this.f1407n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix((int) k);

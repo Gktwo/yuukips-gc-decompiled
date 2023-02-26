@@ -1,6 +1,7 @@
 package emu.grasscutter.game.world;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.config.Configuration;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.SceneNpcBornData;
 import emu.grasscutter.data.binout.SceneNpcBornEntry;
@@ -55,6 +56,7 @@ import emu.grasscutter.server.packet.send.PacketSceneEntityAppearNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityDisappearNotify;
 import emu.grasscutter.server.packet.send.PacketSceneForceLockNotify;
 import emu.grasscutter.server.packet.send.PacketSceneForceUnlockNotify;
+import emu.grasscutter.server.packet.send.PacketServerGlobalValueChangeNotify;
 import emu.grasscutter.utils.Position;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -69,6 +71,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
+import p001ch.qos.logback.core.spi.AbstractComponentTracker;
 import p014it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/game/world/Scene.class */
@@ -85,9 +88,12 @@ public class Scene {
     private int killedMonsterCount;
     private boolean finishedLoading = false;
     private final List<Runnable> afterLoadedCallbacks = new ArrayList();
+    private long nextCheckSceneSpawn1 = 0;
+    private long nextCheckSceneSpawn2 = 0;
+    private long nextCheckLimit = 0;
     private final List<Player> players = new CopyOnWriteArrayList();
     private final Map<Integer, GameEntity> entities = new ConcurrentHashMap();
-    private int time = PacketOpcodes.QuestGlobalVarNotify;
+    private int time = PacketOpcodes.AddQuestContentProgressRsp;
     private final long startTime = System.currentTimeMillis();
     private int prevScene = 3;
     Int2ObjectMap<Route> sceneRoutes = GameData.getSceneRoutes(getId());
@@ -100,7 +106,7 @@ public class Scene {
     private final BlossomManager blossomManager = new BlossomManager(this);
     private final HashSet<Integer> unlockedForces = new HashSet<>();
 
-    /*  JADX ERROR: Dependency scan failed at insn: 0x0031: INVOKE_CUSTOM r0
+    /*  JADX ERROR: Dependency scan failed at insn: 0x007B: INVOKE_CUSTOM r-2
         java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
         	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
         	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
@@ -116,8 +122,8 @@ public class Scene {
         	at jadx.core.dex.visitors.usage.UsageInfoVisitor.init(UsageInfoVisitor.java:36)
         	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:267)
         */
-    /*  JADX ERROR: Failed to decode insn: 0x0031: INVOKE_CUSTOM r1, method: emu.grasscutter.game.world.Scene.onTick():void
-        jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, There are no scripts available in this scene:  ]}
+    /*  JADX ERROR: Failed to decode insn: 0x007B: INVOKE_CUSTOM r1, method: emu.grasscutter.game.world.Scene.onTick():void
+        jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, There are no scripts available in this scene: ]}
         	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:55)
         	at jadx.core.dex.instructions.InsnDecoder.invoke(InsnDecoder.java:568)
         	at jadx.core.dex.instructions.InsnDecoder.decode(InsnDecoder.java:438)
@@ -130,95 +136,13 @@ public class Scene {
         	at jadx.core.ProcessClass.generateCode(ProcessClass.java:85)
         	at jadx.core.dex.nodes.ClassNode.decompile(ClassNode.java:300)
         	at jadx.core.dex.nodes.ClassNode.decompile(ClassNode.java:265)
-        Caused by: jadx.core.utils.exceptions.JadxRuntimeException: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, There are no scripts available in this scene:  ]}
+        Caused by: jadx.core.utils.exceptions.JadxRuntimeException: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, There are no scripts available in this scene: ]}
         	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:42)
         	... 11 more
         */
     public void onTick() {
         /*
-            r4 = this;
-            r0 = r4
-            emu.grasscutter.game.props.SceneType r0 = r0.getSceneType()
-            emu.grasscutter.game.props.SceneType r1 = emu.grasscutter.game.props.SceneType.SCENE_HOME_WORLD
-            if (r0 == r1) goto L_0x0014
-            r0 = r4
-            emu.grasscutter.game.props.SceneType r0 = r0.getSceneType()
-            emu.grasscutter.game.props.SceneType r1 = emu.grasscutter.game.props.SceneType.SCENE_HOME_ROOM
-            if (r0 != r1) goto L_0x0019
-            r0 = r4
-            r0.finishLoading()
-            return
-            r0 = r4
-            emu.grasscutter.scripts.SceneScriptManager r0 = r0.getScriptManager()
-            boolean r0 = r0.isInit()
-            if (r0 == 0) goto L_0x002a
-            r0 = r4
-            r0.checkBlocks()
-            goto L_0x0039
-            ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
-            r1 = r4
-            int r1 = r1.getId()
-            // decode failed: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, There are no scripts available in this scene:  ]}
-            r0.debug(r1)
-            goto L_0x0047
-            r5 = move-exception
-            ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
-            java.lang.String r1 = "Error Scene (checkBlocks) (Exception): "
-            r2 = r5
-            r0.error(r1, r2)
-            r0 = r4
-            emu.grasscutter.scripts.SceneScriptManager r0 = r0.scriptManager
-            r0.checkRegions()
-            goto L_0x005c
-            r5 = move-exception
-            ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
-            java.lang.String r1 = "Error Scene (checkRegions) (Exception): "
-            r2 = r5
-            r0.error(r1, r2)
-            r0 = r4
-            emu.grasscutter.game.dungeons.challenge.WorldChallenge r0 = r0.challenge
-            if (r0 == 0) goto L_0x006a
-            r0 = r4
-            emu.grasscutter.game.dungeons.challenge.WorldChallenge r0 = r0.challenge
-            r0.onCheckTimeOut()
-            goto L_0x0078
-            r5 = move-exception
-            ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
-            java.lang.String r1 = "Error Scene (onCheckTimeOut) (Exception): "
-            r2 = r5
-            r0.error(r1, r2)
-            r0 = r4
-            emu.grasscutter.game.managers.blossom.BlossomManager r0 = r0.blossomManager
-            r0.onTick()
-            goto L_0x008d
-            r5 = move-exception
-            ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
-            java.lang.String r1 = "Error Scene (blossomManager) (Exception): "
-            r2 = r5
-            r0.error(r1, r2)
-            r0 = r4
-            r0.checkNpcGroup()
-            goto L_0x009f
-            r5 = move-exception
-            ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
-            java.lang.String r1 = "Error Scene (checkNpcGroup) (Exception): "
-            r2 = r5
-            r0.error(r1, r2)
-            r0 = r4
-            emu.grasscutter.game.props.SceneType r0 = r0.getSceneType()
-            emu.grasscutter.game.props.SceneType r1 = emu.grasscutter.game.props.SceneType.SCENE_WORLD
-            if (r0 != r1) goto L_0x00ad
-            r0 = r4
-            r0.checkSpawns()
-            goto L_0x00bb
-            r5 = move-exception
-            ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
-            java.lang.String r1 = "Error Scene (checkSpawns) (Exception): "
-            r2 = r5
-            r0.error(r1, r2)
-            r0 = r4
-            r0.finishLoading()
-            return
+        // Method dump skipped, instructions count: 279
         */
         throw new UnsupportedOperationException("Method not decompiled: emu.grasscutter.game.world.Scene.onTick():void");
     }
@@ -503,6 +427,25 @@ public class Scene {
         }
     }
 
+    public void checkBoss(int findboss) {
+        getEntities().values().stream().filter(entity -> {
+            return entity.getEntityType() == 2;
+        }).map(entity -> {
+            return (EntityMonster) entity;
+        }).filter(entity -> {
+            return entity.getMonsterData().getId() == findboss;
+        }).forEach(entity -> {
+            getScriptManager().callEvent(new ScriptArgs(11, entity.getConfigId()));
+            if (List.of(29070101, 29070102, 29070103, 29070104, 29070105, 29070106).contains(Integer.valueOf(entity.getMonsterData().getId()))) {
+                broadcastPacket(new PacketServerGlobalValueChangeNotify(entity.getId(), 1, "SGV_MONSTER_NADA"));
+            } else if (List.of(29060101, 29060102).contains(Integer.valueOf(entity.getMonsterData().getId()))) {
+                broadcastPacket(new PacketServerGlobalValueChangeNotify(entity.getId(), 1, "SGV_MONSTER_SHOUGUN_CHANGETOTACHI"));
+            } else if (List.of(29060201, 29060202, 29060203).contains(Integer.valueOf(entity.getMonsterData().getId()))) {
+                broadcastPacket(new PacketServerGlobalValueChangeNotify(entity.getId(), 1, "SGV_MONSTER_SHOUGUN_MITAKENARUKAMI_TRANSFORM"));
+            }
+        });
+    }
+
     private GameEntity removeEntityDirectly(GameEntity entity) {
         if (entity == null) {
             return null;
@@ -593,7 +536,43 @@ public class Scene {
         triggerDungeonEvent(dungeonPassConditionType, i);
     }
 
+    public void resetCheckSceneSpawn1() {
+        this.nextCheckSceneSpawn1 = System.currentTimeMillis() + 5000;
+    }
+
+    public void resetCheckSceneSpawn2() {
+        this.nextCheckSceneSpawn2 = System.currentTimeMillis() + AbstractComponentTracker.LINGERING_TIMEOUT;
+    }
+
+    public void resetCheckSceneLimit() {
+        this.nextCheckLimit = System.currentTimeMillis() + 2000;
+    }
+
+    public void checkLimit() {
+        int limit = Configuration.GAME_OPTIONS.sceneEntityLimit;
+        if (getEntities().size() > limit) {
+            getEntities().values().stream().filter(entity -> {
+                return entity.getEntityType() != 1;
+            }).skip((long) limit).forEach(entity -> {
+                removeEntity(entity, VisionTypeOuterClass.VisionType.VISION_TYPE_MISS);
+            });
+        } else {
+            getEntities().values().stream().filter(entity -> {
+                return entity.getEntityType() == 2;
+            }).skip((long) Configuration.GAME_OPTIONS.MonsterEntityLimit).forEach(entity -> {
+                removeEntity(entity, VisionTypeOuterClass.VisionType.VISION_TYPE_MISS);
+            });
+        }
+        if (getDeadSpawnedEntities().size() > Configuration.GAME_OPTIONS.EntitySaveLimit) {
+            getDeadSpawnedEntities().clear();
+        }
+        if (getSpawnedEntities().size() > Configuration.GAME_OPTIONS.EntitySaveLimit) {
+            getSpawnedEntities().clear();
+        }
+    }
+
     public void reload() {
+        Grasscutter.getLogger().warn("Reload Scene");
         try {
             for (Player player : getPlayers()) {
                 World world = player.getWorld();
@@ -669,7 +648,7 @@ public class Scene {
     }
 
     public List<SceneBlock> getPlayerActiveBlocks(Player player) {
-        return SceneIndexManager.queryNeighbors(getScriptManager().getBlocksIndex(), player.getPosition().toXZDoubleArray(), Grasscutter.getConfig().server.game.loadEntitiesForPlayerRange);
+        return SceneIndexManager.queryNeighbors(getScriptManager().getBlocksIndex(), player.getPosition().toXZDoubleArray(), Configuration.GAME_OPTIONS.loadEntitiesForPlayerRange);
     }
 
     private boolean unloadBlockIfNotVisible(Collection<SceneBlock> visible, SceneBlock block) {
@@ -717,10 +696,10 @@ public class Scene {
     }
 
     public List<SceneGroup> playerMeetGroups(Player player, SceneBlock block) {
-        List<SceneGroup> groups = SceneIndexManager.queryNeighbors(block.sceneGroupIndex, player.getPosition().toDoubleArray(), Grasscutter.getConfig().server.game.loadEntitiesForPlayerRange).stream().filter(group -> {
-            return !this.scriptManager.getLoadedGroupSetPerBlock().get(Integer.valueOf(block.f956id)).contains(block);
+        List<SceneGroup> groups = SceneIndexManager.queryNeighbors(block.sceneGroupIndex, player.getPosition().toDoubleArray(), Configuration.GAME_OPTIONS.loadEntitiesForPlayerRange).stream().filter(group -> {
+            return !this.scriptManager.getLoadedGroupSetPerBlock().get(Integer.valueOf(block.f921id)).contains(block);
         }).peek(group -> {
-            this.scriptManager.getLoadedGroupSetPerBlock().get(Integer.valueOf(block.f956id)).add(block);
+            this.scriptManager.getLoadedGroupSetPerBlock().get(Integer.valueOf(block.f921id)).add(block);
         }).toList();
         if (groups.size() == 0) {
             return List.of();
@@ -730,7 +709,7 @@ public class Scene {
 
     public void onLoadBlock(SceneBlock block, List<Player> players) {
         getScriptManager().loadBlockFromScript(block);
-        this.scriptManager.getLoadedGroupSetPerBlock().put(Integer.valueOf(block.f956id), new HashSet());
+        this.scriptManager.getLoadedGroupSetPerBlock().put(Integer.valueOf(block.f921id), new HashSet());
         onLoadGroup(players.stream().filter(player -> {
             return block.contains(player.getPosition());
         }).map(p -> {
@@ -738,7 +717,7 @@ public class Scene {
         }).flatMap((v0) -> {
             return v0.stream();
         }).toList());
-        Grasscutter.getLogger().debug("Scene {} Block {} loaded.", Integer.valueOf(getId()), Integer.valueOf(block.f956id));
+        Grasscutter.getLogger().debug("Scene {} Block {} loaded.", Integer.valueOf(getId()), Integer.valueOf(block.f921id));
     }
 
     public void loadTriggerFromGroup(SceneGroup group, String triggerName) {
@@ -774,7 +753,7 @@ public class Scene {
                     List<SceneGadget> garbageGadgets = group2.getGarbageGadgets();
                     if (garbageGadgets != null) {
                         entities.addAll(garbageGadgets.stream().map(g -> {
-                            return this.scriptManager.createGadget(group.f957id, group.block_id, group2);
+                            return this.scriptManager.createGadget(group.f922id, group.block_id, group2);
                         }).filter((v0) -> {
                             return Objects.nonNull(v0);
                         }).toList());
@@ -782,14 +761,14 @@ public class Scene {
                     entities.addAll(this.scriptManager.getGadgetsInGroupSuite(group2, suiteData));
                     entities.addAll(this.scriptManager.getMonstersInGroupSuite(group2, suiteData));
                     for (Player player : getPlayers()) {
-                        player.getSession().send(new PacketGroupSuiteNotify(group2.f957id, suite));
+                        player.getSession().send(new PacketGroupSuiteNotify(group2.f922id, suite));
                     }
                     this.scriptManager.registerRegionInGroupSuite(group2, suiteData);
                 }
             }
             this.scriptManager.meetEntities(entities);
             groups.forEach(g -> {
-                this.scriptManager.callEvent(new ScriptArgs(29, g.f957id));
+                this.scriptManager.callEvent(new ScriptArgs(29, g.f922id));
             });
             Grasscutter.getLogger().debug("Scene {} loaded {} group(s)", Integer.valueOf(getId()), Integer.valueOf(groups.size()));
         }
@@ -798,7 +777,7 @@ public class Scene {
     public void onUnloadBlock(SceneBlock block) {
         if (block != null) {
             List<GameEntity> toRemove = getEntities().values().stream().filter(e -> {
-                return e.getBlockId() == block.f956id;
+                return e.getBlockId() == block.f921id;
             }).toList();
             if (toRemove.size() > 0) {
                 toRemove.forEach(this::removeEntityDirectly);
@@ -820,8 +799,8 @@ public class Scene {
                     }
                 }
             }
-            this.scriptManager.getLoadedGroupSetPerBlock().remove(Integer.valueOf(block.f956id));
-            Grasscutter.getLogger().debug("Scene {} Block {} is unloaded.", Integer.valueOf(getId()), Integer.valueOf(block.f956id));
+            this.scriptManager.getLoadedGroupSetPerBlock().remove(Integer.valueOf(block.f921id));
+            Grasscutter.getLogger().debug("Scene {} Block {} is unloaded.", Integer.valueOf(getId()), Integer.valueOf(block.f921id));
         }
     }
 
@@ -894,17 +873,18 @@ public class Scene {
     }
 
     private List<SceneNpcBornEntry> loadNpcForPlayer(Player player) {
+        Position pos = player.getPosition();
         SceneNpcBornData data = GameData.getSceneNpcBornData().get(getId());
         if (data == null) {
-            Grasscutter.getLogger().debug("loadNpcForPlayer: Data No found > {}", Integer.valueOf(getId()));
             return List.of();
         }
-        List<SceneNpcBornEntry> npcList = SceneIndexManager.queryNeighbors(data.getIndex(), player.getPosition().toDoubleArray(), Grasscutter.getConfig().server.game.loadEntitiesForPlayerRange);
+        List<SceneNpcBornEntry> npcList = SceneIndexManager.queryNeighbors(data.getIndex(), pos.toDoubleArray(), Configuration.GAME_OPTIONS.loadEntitiesForPlayerRange);
         List<SceneNpcBornEntry> sceneNpcBornEntries = npcList.stream().filter(i -> {
             return !this.npcBornEntrySet.contains(i);
         }).toList();
         if (sceneNpcBornEntries.size() > 0) {
             broadcastPacket(new PacketGroupSuiteNotify(sceneNpcBornEntries));
+            Grasscutter.getLogger().debug("Loaded Npc Group Suite {}", sceneNpcBornEntries);
         }
         return npcList;
     }

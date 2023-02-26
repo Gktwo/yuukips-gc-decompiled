@@ -8,7 +8,7 @@ import com.google.protobuf.ProtocolMessageEnum;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChapterStateOuterClass.class */
 public final class ChapterStateOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012ChapterState.proto*|\n\fChapterState\u0012\u0019\n\u0015CHAPTER_STATE_INVALID\u0010��\u0012!\n\u001dCHAPTER_STATE_UNABLE_TO_BEGIN\u0010\u0001\u0012\u0017\n\u0013CHAPTER_STATE_BEGIN\u0010\u0002\u0012\u0015\n\u0011CHAPTER_STATE_END\u0010\u0003B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012ChapterState.proto*y\n\fChapterState\u0012\u0016\n\u0012CHAPTER_STATE_NONE\u0010��\u0012!\n\u001dCHAPTER_STATE_UNABLE_TO_BEGIN\u0010\u0001\u0012\u0017\n\u0013CHAPTER_STATE_BEGIN\u0010\u0002\u0012\u0015\n\u0011CHAPTER_STATE_END\u0010\u0003B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
 
     private ChapterStateOuterClass() {
     }
@@ -22,13 +22,13 @@ public final class ChapterStateOuterClass {
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChapterStateOuterClass$ChapterState.class */
     public enum ChapterState implements ProtocolMessageEnum {
-        CHAPTER_STATE_INVALID(0),
+        CHAPTER_STATE_NONE(0),
         CHAPTER_STATE_UNABLE_TO_BEGIN(1),
         CHAPTER_STATE_BEGIN(2),
         CHAPTER_STATE_END(3),
         UNRECOGNIZED(-1);
         
-        public static final int CHAPTER_STATE_INVALID_VALUE = 0;
+        public static final int CHAPTER_STATE_NONE_VALUE = 0;
         public static final int CHAPTER_STATE_UNABLE_TO_BEGIN_VALUE = 1;
         public static final int CHAPTER_STATE_BEGIN_VALUE = 2;
         public static final int CHAPTER_STATE_END_VALUE = 3;
@@ -57,7 +57,7 @@ public final class ChapterStateOuterClass {
         public static ChapterState forNumber(int value) {
             switch (value) {
                 case 0:
-                    return CHAPTER_STATE_INVALID;
+                    return CHAPTER_STATE_NONE;
                 case 1:
                     return CHAPTER_STATE_UNABLE_TO_BEGIN;
                 case 2:

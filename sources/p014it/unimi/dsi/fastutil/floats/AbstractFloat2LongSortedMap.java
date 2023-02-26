@@ -90,30 +90,30 @@ public abstract class AbstractFloat2LongSortedMap extends AbstractFloat2LongMap 
     public static class KeySetIterator implements FloatBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Float2LongMap.Entry> f1780i;
+        protected final ObjectBidirectionalIterator<Float2LongMap.Entry> f1744i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Float2LongMap.Entry> i) {
-            this.f1780i = i;
+            this.f1744i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
         public float nextFloat() {
-            return ((Float2LongMap.Entry) this.f1780i.next()).getFloatKey();
+            return ((Float2LongMap.Entry) this.f1744i.next()).getFloatKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatBidirectionalIterator
         public float previousFloat() {
-            return this.f1780i.previous().getFloatKey();
+            return this.f1744i.previous().getFloatKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1780i.hasNext();
+            return this.f1744i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1780i.hasPrevious();
+            return this.f1744i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractFloat2LongSortedMap extends AbstractFloat2LongMap 
     public static class ValuesIterator implements LongIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Float2LongMap.Entry> f1781i;
+        protected final ObjectBidirectionalIterator<Float2LongMap.Entry> f1745i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Float2LongMap.Entry> i) {
-            this.f1781i = i;
+            this.f1745i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
         public long nextLong() {
-            return ((Float2LongMap.Entry) this.f1781i.next()).getLongValue();
+            return ((Float2LongMap.Entry) this.f1745i.next()).getLongValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1781i.hasNext();
+            return this.f1745i.hasNext();
         }
     }
 }

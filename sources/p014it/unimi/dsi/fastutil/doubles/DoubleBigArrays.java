@@ -410,8 +410,8 @@ public final class DoubleBigArrays {
     /* JADX WARN: Type inference failed for: r30v1 */
     /* JADX WARN: Type inference failed for: r28v1, types: [long] */
     /* JADX WARN: Type inference failed for: r26v1, types: [long] */
-    /* JADX WARN: Type inference failed for: r24v1, types: [double[][], long] */
-    /* JADX WARN: Type inference failed for: r30v2, types: [double[][], long] */
+    /* JADX WARN: Type inference failed for: r24v1, types: [long, double[][]] */
+    /* JADX WARN: Type inference failed for: r30v2, types: [long, double[][]] */
     /* JADX WARN: Type inference failed for: r28v2, types: [long] */
     /* JADX WARN: Type inference failed for: r26v2, types: [long] */
     /* JADX WARN: Type inference failed for: r28v3, types: [long] */
@@ -525,7 +525,7 @@ public final class DoubleBigArrays {
     /* JADX DEBUG: Failed to insert an additional move for type inference into block B:49:0x0102 */
     /* JADX DEBUG: Failed to insert an additional move for type inference into block B:45:0x00a3 */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r12v0, types: [double[][], long] */
+    /* JADX WARN: Type inference failed for: r12v0, types: [long, double[][]] */
     /* JADX WARN: Type inference failed for: r13v0, types: [long] */
     /* JADX WARN: Type inference failed for: r0v5, types: [long] */
     /* JADX WARN: Type inference failed for: r27v0, types: [long] */
@@ -572,15 +572,15 @@ public final class DoubleBigArrays {
         private final long from;
 
         /* renamed from: to */
-        private final long f1714to;
+        private final long f1678to;
 
         /* renamed from: x */
-        private final double[][] f1715x;
+        private final double[][] f1679x;
 
         public ForkJoinQuickSort(double[][] x, long from, long to) {
             this.from = from;
-            this.f1714to = to;
-            this.f1715x = x;
+            this.f1678to = to;
+            this.f1679x = x;
         }
 
         /* JADX DEBUG: Failed to insert an additional move for type inference into block B:40:0x00ad */
@@ -588,7 +588,7 @@ public final class DoubleBigArrays {
         /* JADX DEBUG: Failed to insert an additional move for type inference into block B:46:0x010c */
         /* JADX DEBUG: Failed to insert an additional move for type inference into block B:42:0x00ad */
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r0v1, types: [double[][], long] */
+        /* JADX WARN: Type inference failed for: r0v1, types: [long, double[][]] */
         /* JADX WARN: Type inference failed for: r0v28, types: [long] */
         /* JADX WARN: Type inference failed for: r31v0, types: [long] */
         /* JADX WARN: Type inference failed for: r33v0 */
@@ -640,16 +640,16 @@ public final class DoubleBigArrays {
         private final long from;
 
         /* renamed from: to */
-        private final long f1716to;
+        private final long f1680to;
 
         /* renamed from: x */
-        private final double[][] f1717x;
+        private final double[][] f1681x;
         private final DoubleComparator comp;
 
         public ForkJoinQuickSortComp(double[][] x, long from, long to, DoubleComparator comp) {
             this.from = from;
-            this.f1716to = to;
-            this.f1717x = x;
+            this.f1680to = to;
+            this.f1681x = x;
             this.comp = comp;
         }
 
@@ -666,8 +666,8 @@ public final class DoubleBigArrays {
         /* JADX WARN: Type inference failed for: r33v1 */
         /* JADX WARN: Type inference failed for: r31v1, types: [long] */
         /* JADX WARN: Type inference failed for: r29v1, types: [long] */
-        /* JADX WARN: Type inference failed for: r27v1, types: [double[][], long] */
-        /* JADX WARN: Type inference failed for: r33v2, types: [double[][], long] */
+        /* JADX WARN: Type inference failed for: r27v1, types: [long, double[][]] */
+        /* JADX WARN: Type inference failed for: r33v2, types: [long, double[][]] */
         /* JADX WARN: Type inference failed for: r31v2, types: [long] */
         /* JADX WARN: Type inference failed for: r29v2, types: [long] */
         /* JADX WARN: Type inference failed for: r31v3, types: [long] */

@@ -630,14 +630,14 @@ public class ByteString implements Serializable, Comparable<ByteString> {
     @Deprecated(message = "moved to operator function", replaceWith = @ReplaceWith(expression = "this[index]", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_getByte")
     /* renamed from: -deprecated_getByte */
-    public final byte m9377deprecated_getByte(int index) {
+    public final byte m9374deprecated_getByte(int index) {
         return getByte(index);
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "size", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_size")
     /* renamed from: -deprecated_size */
-    public final int m9378deprecated_size() {
+    public final int m9375deprecated_size() {
         return size();
     }
 
@@ -775,7 +775,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         @JvmName(name = "-deprecated_decodeBase64")
         @Nullable
         /* renamed from: -deprecated_decodeBase64 */
-        public final ByteString m9380deprecated_decodeBase64(@NotNull String string) {
+        public final ByteString m9377deprecated_decodeBase64(@NotNull String string) {
             Intrinsics.checkNotNullParameter(string, "string");
             return decodeBase64(string);
         }
@@ -784,7 +784,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         @JvmName(name = "-deprecated_decodeHex")
         @NotNull
         /* renamed from: -deprecated_decodeHex */
-        public final ByteString m9381deprecated_decodeHex(@NotNull String string) {
+        public final ByteString m9378deprecated_decodeHex(@NotNull String string) {
             Intrinsics.checkNotNullParameter(string, "string");
             return decodeHex(string);
         }
@@ -793,7 +793,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         @JvmName(name = "-deprecated_encodeString")
         @NotNull
         /* renamed from: -deprecated_encodeString */
-        public final ByteString m9382deprecated_encodeString(@NotNull String string, @NotNull Charset charset) {
+        public final ByteString m9379deprecated_encodeString(@NotNull String string, @NotNull Charset charset) {
             Intrinsics.checkNotNullParameter(string, "string");
             Intrinsics.checkNotNullParameter(charset, "charset");
             return encodeString(string, charset);
@@ -803,7 +803,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         @JvmName(name = "-deprecated_encodeUtf8")
         @NotNull
         /* renamed from: -deprecated_encodeUtf8 */
-        public final ByteString m9383deprecated_encodeUtf8(@NotNull String string) {
+        public final ByteString m9380deprecated_encodeUtf8(@NotNull String string) {
             Intrinsics.checkNotNullParameter(string, "string");
             return encodeUtf8(string);
         }
@@ -812,7 +812,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         @JvmName(name = "-deprecated_of")
         @NotNull
         /* renamed from: -deprecated_of */
-        public final ByteString m9384deprecated_of(@NotNull ByteBuffer buffer) {
+        public final ByteString m9381deprecated_of(@NotNull ByteBuffer buffer) {
             Intrinsics.checkNotNullParameter(buffer, "buffer");
             return m50of(buffer);
         }
@@ -821,7 +821,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         @JvmName(name = "-deprecated_of")
         @NotNull
         /* renamed from: -deprecated_of */
-        public final ByteString m9385deprecated_of(@NotNull byte[] array, int offset, int byteCount) {
+        public final ByteString m9382deprecated_of(@NotNull byte[] array, int offset, int byteCount) {
             Intrinsics.checkNotNullParameter(array, "array");
             return m48of(array, offset, byteCount);
         }
@@ -830,7 +830,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         @JvmName(name = "-deprecated_read")
         @NotNull
         /* renamed from: -deprecated_read */
-        public final ByteString m9386deprecated_read(@NotNull InputStream inputstream, int byteCount) {
+        public final ByteString m9383deprecated_read(@NotNull InputStream inputstream, int byteCount) {
             Intrinsics.checkNotNullParameter(inputstream, "inputstream");
             return read(inputstream, byteCount);
         }

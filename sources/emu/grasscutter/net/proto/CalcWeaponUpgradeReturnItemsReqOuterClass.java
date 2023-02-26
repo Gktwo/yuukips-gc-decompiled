@@ -26,11 +26,11 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CalcWeaponUpgradeReturnItemsReqOuterClass.class */
 public final class CalcWeaponUpgradeReturnItemsReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n%CalcWeaponUpgradeReturnItemsReq.proto\u001a\u000fItemParam.proto\"\u0001\n\u001fCalcWeaponUpgradeReturnItemsReq\u0012\u001d\n\u0015food_weapon_guid_list\u0018\f \u0003(\u0004\u0012#\n\u000fitem_param_list\u0018\b \u0003(\u000b2\n.ItemParam\u0012\u001a\n\u0012target_weapon_guid\u0018\u0002 \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n%CalcWeaponUpgradeReturnItemsReq.proto\u001a\u000fItemParam.proto\"z\n\u001fCalcWeaponUpgradeReturnItemsReq\u0012\u001a\n\u0012foodWeaponGuidList\u0018\b \u0003(\u0004\u0012!\n\ritemParamList\u0018\u0004 \u0003(\u000b2\n.ItemParam\u0012\u0018\n\u0010targetWeaponGuid\u0018\n \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_CalcWeaponUpgradeReturnItemsReq_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_CalcWeaponUpgradeReturnItemsReq_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f670xd5e02882 = new GeneratedMessageV3.FieldAccessorTable(internal_static_CalcWeaponUpgradeReturnItemsReq_descriptor, new String[]{"FoodWeaponGuidList", "ItemParamList", "TargetWeaponGuid"});
+    private static final GeneratedMessageV3.FieldAccessorTable f667xd5e02882 = new GeneratedMessageV3.FieldAccessorTable(internal_static_CalcWeaponUpgradeReturnItemsReq_descriptor, new String[]{"FoodWeaponGuidList", "ItemParamList", "TargetWeaponGuid"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CalcWeaponUpgradeReturnItemsReqOuterClass$CalcWeaponUpgradeReturnItemsReqOrBuilder.class */
     public interface CalcWeaponUpgradeReturnItemsReqOrBuilder extends MessageOrBuilder {
@@ -66,12 +66,12 @@ public final class CalcWeaponUpgradeReturnItemsReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CalcWeaponUpgradeReturnItemsReqOuterClass$CalcWeaponUpgradeReturnItemsReq.class */
     public static final class CalcWeaponUpgradeReturnItemsReq extends GeneratedMessageV3 implements CalcWeaponUpgradeReturnItemsReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int FOOD_WEAPON_GUID_LIST_FIELD_NUMBER = 12;
+        public static final int FOODWEAPONGUIDLIST_FIELD_NUMBER = 8;
         private Internal.LongList foodWeaponGuidList_;
         private int foodWeaponGuidListMemoizedSerializedSize;
-        public static final int ITEM_PARAM_LIST_FIELD_NUMBER = 8;
+        public static final int ITEMPARAMLIST_FIELD_NUMBER = 4;
         private List<ItemParamOuterClass.ItemParam> itemParamList_;
-        public static final int TARGET_WEAPON_GUID_FIELD_NUMBER = 2;
+        public static final int TARGETWEAPONGUID_FIELD_NUMBER = 10;
         private long targetWeaponGuid_;
         private byte memoizedIsInitialized;
         private static final CalcWeaponUpgradeReturnItemsReq DEFAULT_INSTANCE = new CalcWeaponUpgradeReturnItemsReq();
@@ -125,24 +125,21 @@ public final class CalcWeaponUpgradeReturnItemsReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 16:
-                                this.targetWeaponGuid_ = input.readUInt64();
-                                break;
-                            case 66:
+                            case 34:
                                 if ((mutable_bitField0_ & 2) == 0) {
                                     this.itemParamList_ = new ArrayList();
                                     mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
                                 }
                                 this.itemParamList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
                                 break;
-                            case 96:
+                            case 64:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.foodWeaponGuidList_ = newLongList();
                                     mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                 }
                                 this.foodWeaponGuidList_.addLong(input.readUInt64());
                                 break;
-                            case 98:
+                            case 66:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.foodWeaponGuidList_ = newLongList();
@@ -152,6 +149,9 @@ public final class CalcWeaponUpgradeReturnItemsReqOuterClass {
                                     this.foodWeaponGuidList_.addLong(input.readUInt64());
                                 }
                                 input.popLimit(limit);
+                                break;
+                            case 80:
+                                this.targetWeaponGuid_ = input.readUInt64();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -186,7 +186,7 @@ public final class CalcWeaponUpgradeReturnItemsReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return CalcWeaponUpgradeReturnItemsReqOuterClass.f670xd5e02882.ensureFieldAccessorsInitialized(CalcWeaponUpgradeReturnItemsReq.class, Builder.class);
+            return CalcWeaponUpgradeReturnItemsReqOuterClass.f667xd5e02882.ensureFieldAccessorsInitialized(CalcWeaponUpgradeReturnItemsReq.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.CalcWeaponUpgradeReturnItemsReqOuterClass.CalcWeaponUpgradeReturnItemsReqOrBuilder
@@ -250,18 +250,18 @@ public final class CalcWeaponUpgradeReturnItemsReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (this.targetWeaponGuid_ != 0) {
-                output.writeUInt64(2, this.targetWeaponGuid_);
-            }
             for (int i = 0; i < this.itemParamList_.size(); i++) {
-                output.writeMessage(8, this.itemParamList_.get(i));
+                output.writeMessage(4, this.itemParamList_.get(i));
             }
             if (getFoodWeaponGuidListList().size() > 0) {
-                output.writeUInt32NoTag(98);
+                output.writeUInt32NoTag(66);
                 output.writeUInt32NoTag(this.foodWeaponGuidListMemoizedSerializedSize);
             }
             for (int i2 = 0; i2 < this.foodWeaponGuidList_.size(); i2++) {
                 output.writeUInt64NoTag(this.foodWeaponGuidList_.getLong(i2));
+            }
+            if (this.targetWeaponGuid_ != 0) {
+                output.writeUInt64(10, this.targetWeaponGuid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -273,11 +273,8 @@ public final class CalcWeaponUpgradeReturnItemsReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.targetWeaponGuid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(2, this.targetWeaponGuid_);
-            }
             for (int i = 0; i < this.itemParamList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(8, this.itemParamList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(4, this.itemParamList_.get(i));
             }
             int dataSize = 0;
             for (int i2 = 0; i2 < this.foodWeaponGuidList_.size(); i2++) {
@@ -288,6 +285,9 @@ public final class CalcWeaponUpgradeReturnItemsReqOuterClass {
                 size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.foodWeaponGuidListMemoizedSerializedSize = dataSize;
+            if (this.targetWeaponGuid_ != 0) {
+                size3 += CodedOutputStream.computeUInt64Size(10, this.targetWeaponGuid_);
+            }
             int size4 = size3 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size4;
             return size4;
@@ -312,12 +312,12 @@ public final class CalcWeaponUpgradeReturnItemsReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getFoodWeaponGuidListCount() > 0) {
-                hash = (53 * ((37 * hash) + 12)) + getFoodWeaponGuidListList().hashCode();
+                hash = (53 * ((37 * hash) + 8)) + getFoodWeaponGuidListList().hashCode();
             }
             if (getItemParamListCount() > 0) {
-                hash = (53 * ((37 * hash) + 8)) + getItemParamListList().hashCode();
+                hash = (53 * ((37 * hash) + 4)) + getItemParamListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 2)) + Internal.hashLong(getTargetWeaponGuid()))) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 10)) + Internal.hashLong(getTargetWeaponGuid()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -408,7 +408,7 @@ public final class CalcWeaponUpgradeReturnItemsReqOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return CalcWeaponUpgradeReturnItemsReqOuterClass.f670xd5e02882.ensureFieldAccessorsInitialized(CalcWeaponUpgradeReturnItemsReq.class, Builder.class);
+                return CalcWeaponUpgradeReturnItemsReqOuterClass.f667xd5e02882.ensureFieldAccessorsInitialized(CalcWeaponUpgradeReturnItemsReq.class, Builder.class);
             }
 
             private Builder() {

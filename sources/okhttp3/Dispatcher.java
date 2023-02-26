@@ -252,7 +252,7 @@ public final class Dispatcher {
     @JvmName(name = "-deprecated_executorService")
     @NotNull
     /* renamed from: -deprecated_executorService  reason: not valid java name */
-    public final ExecutorService m9189deprecated_executorService() {
+    public final ExecutorService m9186deprecated_executorService() {
         return executorService();
     }
 }

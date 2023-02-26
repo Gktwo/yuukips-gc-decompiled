@@ -163,7 +163,7 @@ public class HotSwapper {
                 L_0x0051:
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: javassist.util.HotSwapper.C52031.run():void");
+                throw new UnsupportedOperationException("Method not decompiled: javassist.util.HotSwapper.C51951.run():void");
             }
         }.start();
     }

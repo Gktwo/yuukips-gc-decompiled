@@ -51,7 +51,7 @@ public final class BrotliDecoder extends ByteToMessageDecoder {
     /* access modifiers changed from: package-private */
     /* renamed from: io.netty.handler.codec.compression.BrotliDecoder$1 */
     /* loaded from: grasscutter.jar:io/netty/handler/codec/compression/BrotliDecoder$1.class */
-    public static /* synthetic */ class C29601 {
+    public static /* synthetic */ class C29521 {
         static final /* synthetic */ int[] $SwitchMap$com$aayushatharva$brotli4j$decoder$DecoderJNI$Status = new int[DecoderJNI.Status.values().length];
 
         static {
@@ -76,7 +76,7 @@ public final class BrotliDecoder extends ByteToMessageDecoder {
 
     private State decompress(ByteBuf input, List<Object> output, ByteBufAllocator alloc) {
         while (true) {
-            switch (C29601.$SwitchMap$com$aayushatharva$brotli4j$decoder$DecoderJNI$Status[this.decoder.getStatus().ordinal()]) {
+            switch (C29521.$SwitchMap$com$aayushatharva$brotli4j$decoder$DecoderJNI$Status[this.decoder.getStatus().ordinal()]) {
                 case 1:
                     return State.DONE;
                 case 2:

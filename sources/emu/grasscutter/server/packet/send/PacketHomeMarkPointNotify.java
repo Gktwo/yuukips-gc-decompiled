@@ -14,9 +14,9 @@ public class PacketHomeMarkPointNotify extends BasePacket {
         HomeMarkPointNotifyOuterClass.HomeMarkPointNotify.Builder proto = HomeMarkPointNotifyOuterClass.HomeMarkPointNotify.newBuilder();
         if (player.getRealmList() != null) {
             for (Integer moduleId : player.getRealmList()) {
-                HomeSceneItem homeScene = player.getHome().getHomeSceneItem(PacketOpcodes.SetCoopChapterViewedRsp + moduleId.intValue());
+                HomeSceneItem homeScene = player.getHome().getHomeSceneItem(2000 + moduleId.intValue());
                 if (homeScene != null) {
-                    HomeMarkPointSceneDataOuterClass.HomeMarkPointSceneData.Builder markPointData = HomeMarkPointSceneDataOuterClass.HomeMarkPointSceneData.newBuilder().setModuleId(moduleId.intValue()).setSceneId(moduleId.intValue() + PacketOpcodes.SetCoopChapterViewedRsp).setTeapotSpiritPos(homeScene.getDjinnPos().toProto());
+                    HomeMarkPointSceneDataOuterClass.HomeMarkPointSceneData.Builder markPointData = HomeMarkPointSceneDataOuterClass.HomeMarkPointSceneData.newBuilder().setModuleId(moduleId.intValue()).setSceneId(moduleId.intValue() + 2000).setTeapotSpiritPos(homeScene.getDjinnPos().toProto());
                     markPointData.addAllFurnitureList(homeScene.getBlockItems().values().stream().map((v0) -> {
                         return v0.getDeployFurnitureList();
                     }).flatMap((v0) -> {

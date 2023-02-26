@@ -25,23 +25,23 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DropHintNotifyOuterClass.class */
 public final class DropHintNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014DropHintNotify.proto\u001a\fVector.proto\"A\n\u000eDropHintNotify\u0012\u0014\n\fitem_id_list\u0018\f \u0003(\r\u0012\u0019\n\bposition\u0018\t \u0001(\u000b2\u0007.VectorB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014DropHintNotify.proto\u001a\fVector.proto\"?\n\u000eDropHintNotify\u0012\u0019\n\bposition\u0018\t \u0001(\u000b2\u0007.Vector\u0012\u0012\n\nitemIdList\u0018\n \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_DropHintNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_DropHintNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DropHintNotify_descriptor, new String[]{"ItemIdList", "Position"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_DropHintNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DropHintNotify_descriptor, new String[]{"Position", "ItemIdList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DropHintNotifyOuterClass$DropHintNotifyOrBuilder.class */
     public interface DropHintNotifyOrBuilder extends MessageOrBuilder {
-        List<Integer> getItemIdListList();
-
-        int getItemIdListCount();
-
-        int getItemIdList(int i);
-
         boolean hasPosition();
 
         VectorOuterClass.Vector getPosition();
 
         VectorOuterClass.VectorOrBuilder getPositionOrBuilder();
+
+        List<Integer> getItemIdListList();
+
+        int getItemIdListCount();
+
+        int getItemIdList(int i);
     }
 
     private DropHintNotifyOuterClass() {
@@ -57,11 +57,11 @@ public final class DropHintNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DropHintNotifyOuterClass$DropHintNotify.class */
     public static final class DropHintNotify extends GeneratedMessageV3 implements DropHintNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ITEM_ID_LIST_FIELD_NUMBER = 12;
-        private Internal.IntList itemIdList_;
-        private int itemIdListMemoizedSerializedSize;
         public static final int POSITION_FIELD_NUMBER = 9;
         private VectorOuterClass.Vector position_;
+        public static final int ITEMIDLIST_FIELD_NUMBER = 10;
+        private Internal.IntList itemIdList_;
+        private int itemIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
         private static final DropHintNotify DEFAULT_INSTANCE = new DropHintNotify();
         private static final Parser<DropHintNotify> PARSER = new AbstractParser<DropHintNotify>() { // from class: emu.grasscutter.net.proto.DropHintNotifyOuterClass.DropHintNotify.1
@@ -122,14 +122,14 @@ public final class DropHintNotifyOuterClass {
                                     this.position_ = subBuilder.buildPartial();
                                     break;
                                 }
-                            case 96:
+                            case 80:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.itemIdList_ = newIntList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.itemIdList_.addInt(input.readUInt32());
                                 break;
-                            case 98:
+                            case 82:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.itemIdList_ = newIntList();
@@ -173,21 +173,6 @@ public final class DropHintNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.DropHintNotifyOuterClass.DropHintNotifyOrBuilder
-        public List<Integer> getItemIdListList() {
-            return this.itemIdList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.DropHintNotifyOuterClass.DropHintNotifyOrBuilder
-        public int getItemIdListCount() {
-            return this.itemIdList_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.DropHintNotifyOuterClass.DropHintNotifyOrBuilder
-        public int getItemIdList(int index) {
-            return this.itemIdList_.getInt(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.DropHintNotifyOuterClass.DropHintNotifyOrBuilder
         public boolean hasPosition() {
             return this.position_ != null;
         }
@@ -200,6 +185,21 @@ public final class DropHintNotifyOuterClass {
         @Override // emu.grasscutter.net.proto.DropHintNotifyOuterClass.DropHintNotifyOrBuilder
         public VectorOuterClass.VectorOrBuilder getPositionOrBuilder() {
             return getPosition();
+        }
+
+        @Override // emu.grasscutter.net.proto.DropHintNotifyOuterClass.DropHintNotifyOrBuilder
+        public List<Integer> getItemIdListList() {
+            return this.itemIdList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.DropHintNotifyOuterClass.DropHintNotifyOrBuilder
+        public int getItemIdListCount() {
+            return this.itemIdList_.size();
+        }
+
+        @Override // emu.grasscutter.net.proto.DropHintNotifyOuterClass.DropHintNotifyOrBuilder
+        public int getItemIdList(int index) {
+            return this.itemIdList_.getInt(index);
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -222,7 +222,7 @@ public final class DropHintNotifyOuterClass {
                 output.writeMessage(9, getPosition());
             }
             if (getItemIdListList().size() > 0) {
-                output.writeUInt32NoTag(98);
+                output.writeUInt32NoTag(82);
                 output.writeUInt32NoTag(this.itemIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.itemIdList_.size(); i++) {
@@ -264,10 +264,10 @@ public final class DropHintNotifyOuterClass {
                 return equals(obj);
             }
             DropHintNotify other = (DropHintNotify) obj;
-            if (getItemIdListList().equals(other.getItemIdListList()) && hasPosition() == other.hasPosition()) {
-                return (!hasPosition() || getPosition().equals(other.getPosition())) && this.unknownFields.equals(other.unknownFields);
+            if (hasPosition() != other.hasPosition()) {
+                return false;
             }
-            return false;
+            return (!hasPosition() || getPosition().equals(other.getPosition())) && getItemIdListList().equals(other.getItemIdListList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -276,11 +276,11 @@ public final class DropHintNotifyOuterClass {
                 return this.memoizedHashCode;
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
-            if (getItemIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 12)) + getItemIdListList().hashCode();
-            }
             if (hasPosition()) {
                 hash = (53 * ((37 * hash) + 9)) + getPosition().hashCode();
+            }
+            if (getItemIdListCount() > 0) {
+                hash = (53 * ((37 * hash) + 10)) + getItemIdListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -362,9 +362,9 @@ public final class DropHintNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DropHintNotifyOuterClass$DropHintNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements DropHintNotifyOrBuilder {
             private int bitField0_;
-            private Internal.IntList itemIdList_ = DropHintNotify.emptyIntList();
             private VectorOuterClass.Vector position_;
             private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> positionBuilder_;
+            private Internal.IntList itemIdList_ = DropHintNotify.emptyIntList();
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return DropHintNotifyOuterClass.internal_static_DropHintNotify_descriptor;
@@ -392,14 +392,14 @@ public final class DropHintNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.itemIdList_ = DropHintNotify.emptyIntList();
-                this.bitField0_ &= -2;
                 if (this.positionBuilder_ == null) {
                     this.position_ = null;
                 } else {
                     this.position_ = null;
                     this.positionBuilder_ = null;
                 }
+                this.itemIdList_ = DropHintNotify.emptyIntList();
+                this.bitField0_ &= -2;
                 return this;
             }
 
@@ -426,16 +426,16 @@ public final class DropHintNotifyOuterClass {
             public DropHintNotify buildPartial() {
                 DropHintNotify result = new DropHintNotify(this);
                 int i = this.bitField0_;
-                if ((this.bitField0_ & 1) != 0) {
-                    this.itemIdList_.makeImmutable();
-                    this.bitField0_ &= -2;
-                }
-                result.itemIdList_ = this.itemIdList_;
                 if (this.positionBuilder_ == null) {
                     result.position_ = this.position_;
                 } else {
                     result.position_ = this.positionBuilder_.build();
                 }
+                if ((this.bitField0_ & 1) != 0) {
+                    this.itemIdList_.makeImmutable();
+                    this.bitField0_ &= -2;
+                }
+                result.itemIdList_ = this.itemIdList_;
                 onBuilt();
                 return result;
             }
@@ -483,6 +483,9 @@ public final class DropHintNotifyOuterClass {
                 if (other == DropHintNotify.getDefaultInstance()) {
                     return this;
                 }
+                if (other.hasPosition()) {
+                    mergePosition(other.getPosition());
+                }
                 if (!other.itemIdList_.isEmpty()) {
                     if (this.itemIdList_.isEmpty()) {
                         this.itemIdList_ = other.itemIdList_;
@@ -492,9 +495,6 @@ public final class DropHintNotifyOuterClass {
                         this.itemIdList_.addAll(other.itemIdList_);
                     }
                     onChanged();
-                }
-                if (other.hasPosition()) {
-                    mergePosition(other.getPosition());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -526,56 +526,6 @@ public final class DropHintNotifyOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            private void ensureItemIdListIsMutable() {
-                if ((this.bitField0_ & 1) == 0) {
-                    this.itemIdList_ = DropHintNotify.mutableCopy(this.itemIdList_);
-                    this.bitField0_ |= 1;
-                }
-            }
-
-            @Override // emu.grasscutter.net.proto.DropHintNotifyOuterClass.DropHintNotifyOrBuilder
-            public List<Integer> getItemIdListList() {
-                return (this.bitField0_ & 1) != 0 ? Collections.unmodifiableList(this.itemIdList_) : this.itemIdList_;
-            }
-
-            @Override // emu.grasscutter.net.proto.DropHintNotifyOuterClass.DropHintNotifyOrBuilder
-            public int getItemIdListCount() {
-                return this.itemIdList_.size();
-            }
-
-            @Override // emu.grasscutter.net.proto.DropHintNotifyOuterClass.DropHintNotifyOrBuilder
-            public int getItemIdList(int index) {
-                return this.itemIdList_.getInt(index);
-            }
-
-            public Builder setItemIdList(int index, int value) {
-                ensureItemIdListIsMutable();
-                this.itemIdList_.setInt(index, value);
-                onChanged();
-                return this;
-            }
-
-            public Builder addItemIdList(int value) {
-                ensureItemIdListIsMutable();
-                this.itemIdList_.addInt(value);
-                onChanged();
-                return this;
-            }
-
-            public Builder addAllItemIdList(Iterable<? extends Integer> values) {
-                ensureItemIdListIsMutable();
-                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.itemIdList_);
-                onChanged();
-                return this;
-            }
-
-            public Builder clearItemIdList() {
-                this.itemIdList_ = DropHintNotify.emptyIntList();
-                this.bitField0_ &= -2;
-                onChanged();
-                return this;
             }
 
             @Override // emu.grasscutter.net.proto.DropHintNotifyOuterClass.DropHintNotifyOrBuilder
@@ -657,6 +607,56 @@ public final class DropHintNotifyOuterClass {
                     this.position_ = null;
                 }
                 return this.positionBuilder_;
+            }
+
+            private void ensureItemIdListIsMutable() {
+                if ((this.bitField0_ & 1) == 0) {
+                    this.itemIdList_ = DropHintNotify.mutableCopy(this.itemIdList_);
+                    this.bitField0_ |= 1;
+                }
+            }
+
+            @Override // emu.grasscutter.net.proto.DropHintNotifyOuterClass.DropHintNotifyOrBuilder
+            public List<Integer> getItemIdListList() {
+                return (this.bitField0_ & 1) != 0 ? Collections.unmodifiableList(this.itemIdList_) : this.itemIdList_;
+            }
+
+            @Override // emu.grasscutter.net.proto.DropHintNotifyOuterClass.DropHintNotifyOrBuilder
+            public int getItemIdListCount() {
+                return this.itemIdList_.size();
+            }
+
+            @Override // emu.grasscutter.net.proto.DropHintNotifyOuterClass.DropHintNotifyOrBuilder
+            public int getItemIdList(int index) {
+                return this.itemIdList_.getInt(index);
+            }
+
+            public Builder setItemIdList(int index, int value) {
+                ensureItemIdListIsMutable();
+                this.itemIdList_.setInt(index, value);
+                onChanged();
+                return this;
+            }
+
+            public Builder addItemIdList(int value) {
+                ensureItemIdListIsMutable();
+                this.itemIdList_.addInt(value);
+                onChanged();
+                return this;
+            }
+
+            public Builder addAllItemIdList(Iterable<? extends Integer> values) {
+                ensureItemIdListIsMutable();
+                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.itemIdList_);
+                onChanged();
+                return this;
+            }
+
+            public Builder clearItemIdList() {
+                this.itemIdList_ = DropHintNotify.emptyIntList();
+                this.bitField0_ &= -2;
+                onChanged();
+                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

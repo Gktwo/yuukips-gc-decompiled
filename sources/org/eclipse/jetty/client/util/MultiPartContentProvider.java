@@ -17,7 +17,7 @@ import org.eclipse.jetty.http.HttpField;
 import org.eclipse.jetty.http.HttpFields;
 import org.eclipse.jetty.http.HttpHeader;
 import org.eclipse.jetty.p023io.RuntimeIOException;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.Callback;
 import org.eclipse.jetty.util.log.Log;
 import org.eclipse.jetty.util.log.Logger;
@@ -252,7 +252,7 @@ public class MultiPartContentProvider extends AbstractTypedContentProvider imple
                                 if (!(this.iterator instanceof Closeable)) {
                                     break;
                                 } else {
-                                    C5747IO.close((Closeable) this.iterator);
+                                    C5739IO.close((Closeable) this.iterator);
                                     break;
                                 }
                             }

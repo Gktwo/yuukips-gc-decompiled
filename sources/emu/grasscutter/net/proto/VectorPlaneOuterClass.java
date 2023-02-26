@@ -46,11 +46,11 @@ public final class VectorPlaneOuterClass {
         public static final int X_FIELD_NUMBER = 1;
 
         /* renamed from: x_ */
-        private float f919x_;
+        private float f888x_;
         public static final int Y_FIELD_NUMBER = 2;
 
         /* renamed from: y_ */
-        private float f920y_;
+        private float f889y_;
         private byte memoizedIsInitialized;
         private static final VectorPlane DEFAULT_INSTANCE = new VectorPlane();
         private static final Parser<VectorPlane> PARSER = new AbstractParser<VectorPlane>() { // from class: emu.grasscutter.net.proto.VectorPlaneOuterClass.VectorPlane.1
@@ -97,10 +97,10 @@ public final class VectorPlaneOuterClass {
                                 done = true;
                                 break;
                             case 13:
-                                this.f919x_ = input.readFloat();
+                                this.f888x_ = input.readFloat();
                                 break;
                             case 21:
-                                this.f920y_ = input.readFloat();
+                                this.f889y_ = input.readFloat();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -133,12 +133,12 @@ public final class VectorPlaneOuterClass {
 
         @Override // emu.grasscutter.net.proto.VectorPlaneOuterClass.VectorPlaneOrBuilder
         public float getX() {
-            return this.f919x_;
+            return this.f888x_;
         }
 
         @Override // emu.grasscutter.net.proto.VectorPlaneOuterClass.VectorPlaneOrBuilder
         public float getY() {
-            return this.f920y_;
+            return this.f889y_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -156,11 +156,11 @@ public final class VectorPlaneOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.f919x_ != 0.0f) {
-                output.writeFloat(1, this.f919x_);
+            if (this.f888x_ != 0.0f) {
+                output.writeFloat(1, this.f888x_);
             }
-            if (this.f920y_ != 0.0f) {
-                output.writeFloat(2, this.f920y_);
+            if (this.f889y_ != 0.0f) {
+                output.writeFloat(2, this.f889y_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -172,11 +172,11 @@ public final class VectorPlaneOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.f919x_ != 0.0f) {
-                size2 = 0 + CodedOutputStream.computeFloatSize(1, this.f919x_);
+            if (this.f888x_ != 0.0f) {
+                size2 = 0 + CodedOutputStream.computeFloatSize(1, this.f888x_);
             }
-            if (this.f920y_ != 0.0f) {
-                size2 += CodedOutputStream.computeFloatSize(2, this.f920y_);
+            if (this.f889y_ != 0.0f) {
+                size2 += CodedOutputStream.computeFloatSize(2, this.f889y_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -281,10 +281,10 @@ public final class VectorPlaneOuterClass {
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements VectorPlaneOrBuilder {
 
             /* renamed from: x_ */
-            private float f921x_;
+            private float f890x_;
 
             /* renamed from: y_ */
-            private float f922y_;
+            private float f891y_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return VectorPlaneOuterClass.internal_static_VectorPlane_descriptor;
@@ -312,8 +312,8 @@ public final class VectorPlaneOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.f921x_ = 0.0f;
-                this.f922y_ = 0.0f;
+                this.f890x_ = 0.0f;
+                this.f891y_ = 0.0f;
                 return this;
             }
 
@@ -339,8 +339,8 @@ public final class VectorPlaneOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public VectorPlane buildPartial() {
                 VectorPlane result = new VectorPlane(this);
-                result.f919x_ = this.f921x_;
-                result.f920y_ = this.f922y_;
+                result.f888x_ = this.f890x_;
+                result.f889y_ = this.f891y_;
                 onBuilt();
                 return result;
             }
@@ -428,34 +428,34 @@ public final class VectorPlaneOuterClass {
 
             @Override // emu.grasscutter.net.proto.VectorPlaneOuterClass.VectorPlaneOrBuilder
             public float getX() {
-                return this.f921x_;
+                return this.f890x_;
             }
 
             public Builder setX(float value) {
-                this.f921x_ = value;
+                this.f890x_ = value;
                 onChanged();
                 return this;
             }
 
             public Builder clearX() {
-                this.f921x_ = 0.0f;
+                this.f890x_ = 0.0f;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.VectorPlaneOuterClass.VectorPlaneOrBuilder
             public float getY() {
-                return this.f922y_;
+                return this.f891y_;
             }
 
             public Builder setY(float value) {
-                this.f922y_ = value;
+                this.f891y_ = value;
                 onChanged();
                 return this;
             }
 
             public Builder clearY() {
-                this.f922y_ = 0.0f;
+                this.f891y_ = 0.0f;
                 onChanged();
                 return this;
             }

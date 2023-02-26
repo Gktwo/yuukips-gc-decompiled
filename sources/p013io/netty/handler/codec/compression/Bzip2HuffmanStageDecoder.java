@@ -36,8 +36,8 @@ final class Bzip2HuffmanStageDecoder {
         this.minimumLengths = new int[totalTables];
         this.codeBases = new int[totalTables][25][];
         this.codeLimits = new int[totalTables][24][];
-        this.codeSymbols = new int[totalTables][PacketOpcodes.JoinPlayerFailNotify][];
-        this.tableCodeLengths = new byte[totalTables][PacketOpcodes.JoinPlayerFailNotify][];
+        this.codeSymbols = new int[totalTables][PacketOpcodes.SceneAreaUnlockNotify][];
+        this.tableCodeLengths = new byte[totalTables][PacketOpcodes.SceneAreaUnlockNotify][];
     }
 
     /* access modifiers changed from: package-private */

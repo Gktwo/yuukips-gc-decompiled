@@ -40,9 +40,8 @@ public abstract class AnnotationCollector {
         return this._data;
     }
 
-    /* access modifiers changed from: package-private */
     /* loaded from: grasscutter.jar:com/fasterxml/jackson/databind/introspect/AnnotationCollector$EmptyCollector.class */
-    public static class EmptyCollector extends AnnotationCollector {
+    static class EmptyCollector extends AnnotationCollector {
         public static final EmptyCollector instance = new EmptyCollector(null);
 
         EmptyCollector(Object data) {

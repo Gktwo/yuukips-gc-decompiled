@@ -23,7 +23,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
     public static final int DEFAULT_INITIAL_CAPACITY = 10;
 
     /* renamed from: a */
-    protected transient byte[][] f1267a;
+    protected transient byte[][] f1231a;
     protected long size;
     static final /* synthetic */ boolean $assertionsDisabled;
 
@@ -32,27 +32,27 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
     }
 
     protected ByteBigArrayBigList(byte[][] a, boolean dummy) {
-        this.f1267a = a;
+        this.f1231a = a;
     }
 
     public ByteBigArrayBigList(long capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException("Initial capacity (" + capacity + ") is negative");
         } else if (capacity == 0) {
-            this.f1267a = ByteBigArrays.EMPTY_BIG_ARRAY;
+            this.f1231a = ByteBigArrays.EMPTY_BIG_ARRAY;
         } else {
-            this.f1267a = ByteBigArrays.newBigArray(capacity);
+            this.f1231a = ByteBigArrays.newBigArray(capacity);
         }
     }
 
     public ByteBigArrayBigList() {
-        this.f1267a = ByteBigArrays.DEFAULT_EMPTY_BIG_ARRAY;
+        this.f1231a = ByteBigArrays.DEFAULT_EMPTY_BIG_ARRAY;
     }
 
     public ByteBigArrayBigList(ByteCollection c) {
         this(Size64.sizeOf(c));
         if (c instanceof ByteBigList) {
-            byte[][] bArr = this.f1267a;
+            byte[][] bArr = this.f1231a;
             long sizeOf = Size64.sizeOf(c);
             this.size = sizeOf;
             ((ByteBigList) c).getElements(0, bArr, 0, sizeOf);
@@ -66,7 +66,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
 
     public ByteBigArrayBigList(ByteBigList l) {
         this(l.size64());
-        byte[][] bArr = this.f1267a;
+        byte[][] bArr = this.f1231a;
         long size64 = l.size64();
         this.size = size64;
         l.getElements(0, bArr, 0, size64);
@@ -78,7 +78,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
 
     public ByteBigArrayBigList(byte[][] a, long offset, long length) {
         this(length);
-        BigArrays.copy(a, offset, this.f1267a, 0L, length);
+        BigArrays.copy(a, offset, this.f1231a, 0L, length);
         this.size = length;
     }
 
@@ -97,7 +97,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
     }
 
     public byte[][] elements() {
-        return this.f1267a;
+        return this.f1231a;
     }
 
     public static ByteBigArrayBigList wrap(byte[][] a, long length) {
@@ -124,24 +124,24 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
     }
 
     public void ensureCapacity(long capacity) {
-        if (capacity > BigArrays.length(this.f1267a) && this.f1267a != ByteBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
-            this.f1267a = BigArrays.forceCapacity(this.f1267a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1267a)) {
+        if (capacity > BigArrays.length(this.f1231a) && this.f1231a != ByteBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
+            this.f1231a = BigArrays.forceCapacity(this.f1231a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1231a)) {
                 throw new AssertionError();
             }
         }
     }
 
     private void grow(long capacity) {
-        long oldLength = BigArrays.length(this.f1267a);
+        long oldLength = BigArrays.length(this.f1231a);
         if (capacity > oldLength) {
-            if (this.f1267a != ByteBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
+            if (this.f1231a != ByteBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
                 capacity = Math.max(oldLength + (oldLength >> 1), capacity);
             } else if (capacity < 10) {
                 capacity = 10;
             }
-            this.f1267a = BigArrays.forceCapacity(this.f1267a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1267a)) {
+            this.f1231a = BigArrays.forceCapacity(this.f1231a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1231a)) {
                 throw new AssertionError();
             }
         }
@@ -152,11 +152,11 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
         ensureIndex(index);
         grow(this.size + 1);
         if (index != this.size) {
-            BigArrays.copy(this.f1267a, index, this.f1267a, index + 1, this.size - index);
+            BigArrays.copy(this.f1231a, index, this.f1231a, index + 1, this.size - index);
         }
-        BigArrays.set(this.f1267a, index, k);
+        BigArrays.set(this.f1231a, index, k);
         this.size++;
-        if (!$assertionsDisabled && this.size > BigArrays.length(this.f1267a)) {
+        if (!$assertionsDisabled && this.size > BigArrays.length(this.f1231a)) {
             throw new AssertionError();
         }
     }
@@ -164,11 +164,11 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteBigList, p014it.unimi.dsi.fastutil.bytes.AbstractByteCollection, p014it.unimi.dsi.fastutil.bytes.ByteCollection
     public boolean add(byte k) {
         grow(this.size + 1);
-        byte[][] bArr = this.f1267a;
+        byte[][] bArr = this.f1231a;
         long j = this.size;
         this.size = j + 1;
         BigArrays.set(bArr, j, k);
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1267a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1231a)) {
             return true;
         }
         throw new AssertionError();
@@ -177,7 +177,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
     @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigList
     public byte getByte(long index) {
         if (index < this.size) {
-            return BigArrays.get(this.f1267a, index);
+            return BigArrays.get(this.f1231a, index);
         }
         throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
     }
@@ -185,7 +185,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteBigList, p014it.unimi.dsi.fastutil.bytes.ByteBigList
     public long indexOf(byte k) {
         for (long i = 0; i < this.size; i++) {
-            if (k == BigArrays.get(this.f1267a, i)) {
+            if (k == BigArrays.get(this.f1231a, i)) {
                 return i;
             }
         }
@@ -217,7 +217,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
             if (r0 == 0) goto L_0x001d
             r0 = r8
             r1 = r7
-            byte[][] r1 = r1.f1267a
+            byte[][] r1 = r1.f1231a
             r2 = r9
             byte r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
             if (r0 != r1) goto L_0x0005
@@ -235,12 +235,12 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        byte old = BigArrays.get(this.f1267a, index);
+        byte old = BigArrays.get(this.f1231a, index);
         this.size--;
         if (index != this.size) {
-            BigArrays.copy(this.f1267a, index + 1, this.f1267a, index, this.size - index);
+            BigArrays.copy(this.f1231a, index + 1, this.f1231a, index, this.size - index);
         }
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1267a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1231a)) {
             return old;
         }
         throw new AssertionError();
@@ -253,7 +253,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
             return false;
         }
         removeByte(index);
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1267a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1231a)) {
             return true;
         }
         throw new AssertionError();
@@ -264,8 +264,8 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        byte old = BigArrays.get(this.f1267a, index);
-        BigArrays.set(this.f1267a, index, k);
+        byte old = BigArrays.get(this.f1231a, index);
+        BigArrays.set(this.f1231a, index, k);
         return old;
     }
 
@@ -281,12 +281,12 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
             if (sd == 134217728) {
                 sd = 0;
                 ss++;
-                s = this.f1267a[ss];
+                s = this.f1231a[ss];
             }
             if (!c.contains(s[sd])) {
                 if (dd == 134217728) {
                     ds++;
-                    d = this.f1267a[ds];
+                    d = this.f1231a[ds];
                     dd = 0;
                 }
                 dd++;
@@ -312,12 +312,12 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
             if (sd == 134217728) {
                 sd = 0;
                 ss++;
-                s = this.f1267a[ss];
+                s = this.f1231a[ss];
             }
             if (!c.contains(Byte.valueOf(s[sd]))) {
                 if (dd == 134217728) {
                     ds++;
-                    d = this.f1267a[ds];
+                    d = this.f1231a[ds];
                     dd = 0;
                 }
                 dd++;
@@ -345,17 +345,17 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
             return false;
         }
         grow(this.size + ((long) n));
-        BigArrays.copy(this.f1267a, index, this.f1267a, index + ((long) n), this.size - index);
+        BigArrays.copy(this.f1231a, index, this.f1231a, index + ((long) n), this.size - index);
         ByteIterator i = c.iterator();
         this.size += (long) n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1267a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1231a)) {
             while (true) {
                 n--;
                 if (n == 0) {
                     return true;
                 }
                 index++;
-                BigArrays.set(this.f1267a, index, i.nextByte());
+                BigArrays.set(this.f1231a, index, i.nextByte());
             }
         } else {
             throw new AssertionError();
@@ -370,10 +370,10 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
             return false;
         }
         grow(this.size + n);
-        BigArrays.copy(this.f1267a, index, this.f1267a, index + n, this.size - index);
-        list.getElements(0, this.f1267a, index, n);
+        BigArrays.copy(this.f1231a, index, this.f1231a, index + n, this.size - index);
+        list.getElements(0, this.f1231a, index, n);
         this.size += n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1267a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1231a)) {
             return true;
         }
         throw new AssertionError();
@@ -387,15 +387,15 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
             return false;
         }
         grow(this.size + ((long) n));
-        BigArrays.copy(this.f1267a, index, this.f1267a, index + ((long) n), this.size - index);
+        BigArrays.copy(this.f1231a, index, this.f1231a, index + ((long) n), this.size - index);
         this.size += (long) n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1267a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1231a)) {
             int segment = BigArrays.segment(index);
             int displ = BigArrays.displacement(index);
             int pos = 0;
             while (n > 0) {
-                int l = Math.min(this.f1267a[segment].length - displ, n);
-                list.getElements(pos, this.f1267a[segment], displ, l);
+                int l = Math.min(this.f1231a[segment].length - displ, n);
+                list.getElements(pos, this.f1231a[segment], displ, l);
                 int i = displ + l;
                 displ = i;
                 if (i == 134217728) {
@@ -413,7 +413,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteBigList, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         this.size = 0;
-        if (!$assertionsDisabled && this.size > BigArrays.length(this.f1267a)) {
+        if (!$assertionsDisabled && this.size > BigArrays.length(this.f1231a)) {
             throw new AssertionError();
         }
     }
@@ -425,11 +425,11 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteBigList, p014it.unimi.dsi.fastutil.BigList
     public void size(long size) {
-        if (size > BigArrays.length(this.f1267a)) {
-            this.f1267a = BigArrays.forceCapacity(this.f1267a, size, this.size);
+        if (size > BigArrays.length(this.f1231a)) {
+            this.f1231a = BigArrays.forceCapacity(this.f1231a, size, this.size);
         }
         if (size > this.size) {
-            BigArrays.fill(this.f1267a, this.size, size, (byte) 0);
+            BigArrays.fill(this.f1231a, this.size, size, (byte) 0);
         }
         this.size = size;
     }
@@ -444,10 +444,10 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
     }
 
     public void trim(long n) {
-        long arrayLength = BigArrays.length(this.f1267a);
+        long arrayLength = BigArrays.length(this.f1231a);
         if (n < arrayLength && this.size != arrayLength) {
-            this.f1267a = BigArrays.trim(this.f1267a, Math.max(n, this.size));
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1267a)) {
+            this.f1231a = BigArrays.trim(this.f1231a, Math.max(n, this.size));
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1231a)) {
                 throw new AssertionError();
             }
         }
@@ -464,13 +464,13 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
         }
 
         private byte[][] getParentArray() {
-            return ByteBigArrayBigList.this.f1267a;
+            return ByteBigArrayBigList.this.f1231a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteBigList.ByteSubList, p014it.unimi.dsi.fastutil.bytes.ByteBigList
         public byte getByte(long i) {
             ensureRestrictedIndex(i);
-            return BigArrays.get(ByteBigArrayBigList.this.f1267a, i + this.from);
+            return BigArrays.get(ByteBigArrayBigList.this.f1231a, i + this.from);
         }
 
         /* access modifiers changed from: private */
@@ -483,7 +483,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
 
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigListIterators.AbstractIndexBasedBigIterator
             protected final byte get(long i) {
-                return BigArrays.get(ByteBigArrayBigList.this.f1267a, SubList.this.from + i);
+                return BigArrays.get(ByteBigArrayBigList.this.f1231a, SubList.this.from + i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigListIterators.AbstractIndexBasedBigListIterator
@@ -503,7 +503,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
 
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigListIterators.AbstractIndexBasedBigIterator
             protected final long getMaxPos() {
-                return SubList.this.f1120to - SubList.this.from;
+                return SubList.this.f1084to - SubList.this.from;
             }
 
             /* JADX DEBUG: Multi-variable search result rejected for r12v0, resolved type: it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList$SubList$SubListIterator */
@@ -513,7 +513,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                byte[][] bArr = ByteBigArrayBigList.this.f1267a;
+                byte[][] bArr = ByteBigArrayBigList.this.f1231a;
                 long j = SubList.this.from;
                 long j2 = this.pos;
                 this.pos = j2 + 1;
@@ -528,7 +528,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                byte[][] bArr = ByteBigArrayBigList.this.f1267a;
+                byte[][] bArr = ByteBigArrayBigList.this.f1231a;
                 long j = SubList.this.from;
                 long j2 = this.pos - 1;
                 this.pos = j2;
@@ -538,7 +538,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
 
             /* JADX DEBUG: Multi-variable search result rejected for r13v0, resolved type: it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList$SubList$SubListIterator */
             /* JADX WARN: Multi-variable type inference failed */
-            /* JADX WARN: Type inference failed for: r1v7, types: [it.unimi.dsi.fastutil.bytes.ByteConsumer, byte[][]] */
+            /* JADX WARN: Type inference failed for: r1v7, types: [byte[][], it.unimi.dsi.fastutil.bytes.ByteConsumer] */
             /* JADX WARNING: Unknown variable types count: 1 */
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigListIterators.AbstractIndexBasedBigIterator, p014it.unimi.dsi.fastutil.bytes.ByteIterator
             /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -547,7 +547,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
                     r13 = this;
                     r0 = r13
                     it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList$SubList r0 = p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.SubList.this
-                    long r0 = r0.f1120to
+                    long r0 = r0.f1084to
                     r1 = r13
                     it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList$SubList r1 = p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.SubList.this
                     long r1 = r1.from
@@ -563,7 +563,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
                     r1 = r13
                     it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList$SubList r1 = p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.SubList.this
                     it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList r1 = p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.this
-                    byte[][] r1 = r1.f1267a
+                    byte[][] r1 = r1.f1231a
                     r2 = r13
                     it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList$SubList r2 = p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.SubList.this
                     long r2 = r2.from
@@ -608,12 +608,12 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
 
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigSpliterators.LateBindingSizeIndexBasedSpliterator
             protected final long getMaxPosFromBackingStore() {
-                return SubList.this.f1120to;
+                return SubList.this.f1084to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigSpliterators.AbstractIndexBasedSpliterator
             protected final byte get(long i) {
-                return BigArrays.get(ByteBigArrayBigList.this.f1267a, i);
+                return BigArrays.get(ByteBigArrayBigList.this.f1231a, i);
             }
 
             /* access modifiers changed from: protected */
@@ -632,7 +632,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
                 if (this.pos >= getMaxPos()) {
                     return false;
                 }
-                byte[][] bArr = ByteBigArrayBigList.this.f1267a;
+                byte[][] bArr = ByteBigArrayBigList.this.f1231a;
                 long j = this.pos;
                 this.pos = j + 1;
                 action.accept(BigArrays.get(bArr, j));
@@ -643,7 +643,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
             public void forEachRemaining(ByteConsumer action) {
                 long max = getMaxPos();
                 while (this.pos < max) {
-                    byte[][] bArr = ByteBigArrayBigList.this.f1267a;
+                    byte[][] bArr = ByteBigArrayBigList.this.f1231a;
                     long j = this.pos;
                     this.pos = j + 1;
                     action.accept(BigArrays.get(bArr, j));
@@ -667,7 +667,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
                 r7 = this;
                 r0 = r7
                 it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList r0 = p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.this
-                byte[][] r0 = r0.f1267a
+                byte[][] r0 = r0.f1231a
                 r1 = r8
                 if (r0 != r1) goto L_0x0020
                 r0 = r7
@@ -676,7 +676,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
                 r0 = r7
-                long r0 = r0.f1120to
+                long r0 = r0.f1084to
                 r1 = r11
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
@@ -694,7 +694,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
                 return r0
             L_0x002e:
                 r0 = r7
-                long r0 = r0.f1120to
+                long r0 = r0.f1084to
                 r13 = r0
                 r0 = r11
                 r15 = r0
@@ -710,7 +710,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
                 if (r0 < 0) goto L_0x0063
                 r0 = r7
                 it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList r0 = p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.this
-                byte[][] r0 = r0.f1267a
+                byte[][] r0 = r0.f1231a
                 r1 = r13
                 byte r0 = p014it.unimi.dsi.fastutil.BigArrays.get(r0, r1)
                 r1 = r8
@@ -740,12 +740,12 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
             }
             if (o instanceof ByteBigArrayBigList) {
                 ByteBigArrayBigList other = (ByteBigArrayBigList) o;
-                return contentsEquals(other.f1267a, 0, other.size64());
+                return contentsEquals(other.f1231a, 0, other.size64());
             } else if (!(o instanceof SubList)) {
                 return equals(o);
             } else {
                 SubList other2 = (SubList) o;
-                return contentsEquals(other2.getParentArray(), other2.from, other2.f1120to);
+                return contentsEquals(other2.getParentArray(), other2.from, other2.f1084to);
             }
         }
 
@@ -763,7 +763,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
                 r5 = this;
                 r0 = r5
                 it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList r0 = p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.this
-                byte[][] r0 = r0.f1267a
+                byte[][] r0 = r0.f1231a
                 r1 = r6
                 if (r0 != r1) goto L_0x0020
                 r0 = r5
@@ -772,7 +772,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
                 r0 = r5
-                long r0 = r0.f1120to
+                long r0 = r0.f1084to
                 r1 = r9
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
@@ -787,7 +787,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
             L_0x0029:
                 r0 = r14
                 r1 = r5
-                long r1 = r1.f1120to
+                long r1 = r1.f1084to
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 >= 0) goto L_0x0070
                 r0 = r14
@@ -796,7 +796,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
                 if (r0 >= 0) goto L_0x0070
                 r0 = r5
                 it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList r0 = p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.this
-                byte[][] r0 = r0.f1267a
+                byte[][] r0 = r0.f1231a
                 r1 = r14
                 byte r0 = p014it.unimi.dsi.fastutil.BigArrays.get(r0, r1)
                 r11 = r0
@@ -832,7 +832,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
             L_0x007c:
                 r0 = r14
                 r1 = r5
-                long r1 = r1.f1120to
+                long r1 = r1.f1084to
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 >= 0) goto L_0x008a
                 r0 = 1
@@ -849,12 +849,12 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
         public int compareTo(BigList<? extends Byte> l) {
             if (l instanceof ByteBigArrayBigList) {
                 ByteBigArrayBigList other = (ByteBigArrayBigList) l;
-                return contentsCompareTo(other.f1267a, 0, other.size64());
+                return contentsCompareTo(other.f1231a, 0, other.size64());
             } else if (!(l instanceof SubList)) {
                 return compareTo(l);
             } else {
                 SubList other2 = (SubList) l;
-                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f1120to);
+                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f1084to);
             }
         }
     }
@@ -875,18 +875,18 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteBigList, p014it.unimi.dsi.fastutil.bytes.ByteBigList
     public void getElements(long from, byte[][] a, long offset, long length) {
-        BigArrays.copy(this.f1267a, from, a, offset, length);
+        BigArrays.copy(this.f1231a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigList
     public void getElements(long from, byte[] a, int offset, int length) {
-        BigArrays.copyFromBig(this.f1267a, from, a, offset, length);
+        BigArrays.copyFromBig(this.f1231a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteBigList, p014it.unimi.dsi.fastutil.bytes.ByteBigList
     public void removeElements(long from, long to) {
         BigArrays.ensureFromTo(this.size, from, to);
-        BigArrays.copy(this.f1267a, to, this.f1267a, from, this.size - to);
+        BigArrays.copy(this.f1231a, to, this.f1231a, from, this.size - to);
         this.size -= to - from;
     }
 
@@ -895,20 +895,20 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
         ensureIndex(index);
         BigArrays.ensureOffsetLength(a, offset, length);
         grow(this.size + length);
-        BigArrays.copy(this.f1267a, index, this.f1267a, index + length, this.size - index);
-        BigArrays.copy(a, offset, this.f1267a, index, length);
+        BigArrays.copy(this.f1231a, index, this.f1231a, index + length, this.size - index);
+        BigArrays.copy(a, offset, this.f1231a, index, length);
         this.size += length;
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteBigList, p014it.unimi.dsi.fastutil.bytes.ByteBigList
     public void setElements(long index, byte[][] a, long offset, long length) {
-        BigArrays.copy(a, offset, this.f1267a, index, length);
+        BigArrays.copy(a, offset, this.f1231a, index, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteBigList, p014it.unimi.dsi.fastutil.bytes.ByteIterable
     public void forEach(ByteConsumer action) {
         for (long i = 0; i < this.size; i++) {
-            action.accept(BigArrays.get(this.f1267a, i));
+            action.accept(BigArrays.get(this.f1231a, i));
         }
     }
 
@@ -953,7 +953,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
                 L_0x000f:
                     r0 = r10
                     it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList r0 = p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.this
-                    byte[][] r0 = r0.f1267a
+                    byte[][] r0 = r0.f1231a
                     r1 = r10
                     r2 = r10
                     r3 = r2
@@ -967,7 +967,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
                     byte r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
                     return r1
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.C34481.nextByte():byte");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.C34401.nextByte():byte");
             }
 
             /* JADX WARN: Type inference failed for: r0v4, types: [long, byte[][]] */
@@ -988,7 +988,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
                 L_0x000f:
                     r0 = r8
                     it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList r0 = p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.this
-                    byte[][] r0 = r0.f1267a
+                    byte[][] r0 = r0.f1231a
                     r1 = r8
                     r2 = r8
                     r3 = r2
@@ -1002,7 +1002,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
                     byte r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
                     return r1
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.C34481.previousByte():byte");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.C34401.previousByte():byte");
             }
 
             @Override // p014it.unimi.dsi.fastutil.BigListIterator
@@ -1065,7 +1065,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
                     r0 = r12
                     r1 = r11
                     it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList r1 = p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.this
-                    byte[][] r1 = r1.f1267a
+                    byte[][] r1 = r1.f1231a
                     r2 = r11
                     r3 = r11
                     r4 = r3
@@ -1082,7 +1082,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
                 L_0x0032:
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.C34481.forEachRemaining(it.unimi.dsi.fastutil.bytes.ByteConsumer):void");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.C34401.forEachRemaining(it.unimi.dsi.fastutil.bytes.ByteConsumer):void");
             }
 
             /* JADX WARN: Multi-variable type inference failed */
@@ -1145,7 +1145,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
                     r0 = r7
                     return r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.C34481.back(long):long");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.C34401.back(long):long");
             }
 
             /* JADX WARN: Multi-variable type inference failed */
@@ -1212,7 +1212,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
                     r0 = r7
                     return r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.C34481.skip(long):long");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.bytes.ByteBigArrayBigList.C34401.skip(long):long");
             }
         };
     }
@@ -1263,7 +1263,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            byte[][] bArr = ByteBigArrayBigList.this.f1267a;
+            byte[][] bArr = ByteBigArrayBigList.this.f1231a;
             long j = this.pos;
             this.pos = j + 1;
             action.accept(BigArrays.get(bArr, j));
@@ -1273,7 +1273,7 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
         public void forEachRemaining(ByteConsumer action) {
             long max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(BigArrays.get(ByteBigArrayBigList.this.f1267a, this.pos));
+                action.accept(BigArrays.get(ByteBigArrayBigList.this.f1231a, this.pos));
                 this.pos++;
             }
         }
@@ -1326,12 +1326,12 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
         } else {
             try {
                 c = (ByteBigArrayBigList) clone();
-                c.f1267a = ByteBigArrays.newBigArray(this.size);
+                c.f1231a = ByteBigArrays.newBigArray(this.size);
             } catch (CloneNotSupportedException e) {
                 throw new InternalError(e);
             }
         }
-        BigArrays.copy(this.f1267a, 0L, c.f1267a, 0L, this.size);
+        BigArrays.copy(this.f1231a, 0L, c.f1231a, 0L, this.size);
         return c;
     }
 
@@ -1345,8 +1345,8 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
         if (size64 != l.size64()) {
             return false;
         }
-        byte[][] a1 = this.f1267a;
-        byte[][] a2 = l.f1267a;
+        byte[][] a1 = this.f1231a;
+        byte[][] a2 = l.f1231a;
         if (a1 == a2) {
             return true;
         }
@@ -1379,8 +1379,8 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
     public int compareTo(ByteBigArrayBigList l) {
         long s1 = size64();
         long s2 = l.size64();
-        byte[][] a1 = this.f1267a;
-        byte[][] a2 = l.f1267a;
+        byte[][] a1 = this.f1231a;
+        byte[][] a2 = l.f1231a;
         if (a1 == a2 && s1 == s2) {
             return 0;
         }
@@ -1412,15 +1412,15 @@ public class ByteBigArrayBigList extends AbstractByteBigList implements RandomAc
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; ((long) i) < this.size; i++) {
-            s.writeByte(BigArrays.get(this.f1267a, (long) i));
+            s.writeByte(BigArrays.get(this.f1231a, (long) i));
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f1267a = ByteBigArrays.newBigArray(this.size);
+        this.f1231a = ByteBigArrays.newBigArray(this.size);
         for (int i = 0; ((long) i) < this.size; i++) {
-            BigArrays.set(this.f1267a, (long) i, s.readByte());
+            BigArrays.set(this.f1231a, (long) i, s.readByte());
         }
     }
 }

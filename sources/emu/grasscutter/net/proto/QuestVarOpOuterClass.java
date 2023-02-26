@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestVarOpOuterClass.class */
 public final class QuestVarOpOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010QuestVarOp.proto\":\n\nQuestVarOp\u0012\r\n\u0005index\u0018\t \u0001(\r\u0012\u000e\n\u0006is_add\u0018\u0003 \u0001(\b\u0012\r\n\u0005value\u0018\b \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010QuestVarOp.proto\"9\n\nQuestVarOp\u0012\r\n\u0005index\u0018\u000e \u0001(\r\u0012\r\n\u0005value\u0018\u0006 \u0001(\u0005\u0012\r\n\u0005isAdd\u0018\u0005 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_QuestVarOp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_QuestVarOp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QuestVarOp_descriptor, new String[]{"Index", "IsAdd", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_QuestVarOp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QuestVarOp_descriptor, new String[]{"Index", "Value", "IsAdd"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestVarOpOuterClass$QuestVarOpOrBuilder.class */
     public interface QuestVarOpOrBuilder extends MessageOrBuilder {
         int getIndex();
 
-        boolean getIsAdd();
-
         int getValue();
+
+        boolean getIsAdd();
     }
 
     private QuestVarOpOuterClass() {
@@ -46,12 +46,12 @@ public final class QuestVarOpOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestVarOpOuterClass$QuestVarOp.class */
     public static final class QuestVarOp extends GeneratedMessageV3 implements QuestVarOpOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int INDEX_FIELD_NUMBER = 9;
+        public static final int INDEX_FIELD_NUMBER = 14;
         private int index_;
-        public static final int IS_ADD_FIELD_NUMBER = 3;
-        private boolean isAdd_;
-        public static final int VALUE_FIELD_NUMBER = 8;
+        public static final int VALUE_FIELD_NUMBER = 6;
         private int value_;
+        public static final int ISADD_FIELD_NUMBER = 5;
+        private boolean isAdd_;
         private byte memoizedIsInitialized;
         private static final QuestVarOp DEFAULT_INSTANCE = new QuestVarOp();
         private static final Parser<QuestVarOp> PARSER = new AbstractParser<QuestVarOp>() { // from class: emu.grasscutter.net.proto.QuestVarOpOuterClass.QuestVarOp.1
@@ -98,13 +98,13 @@ public final class QuestVarOpOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 24:
+                                case 40:
                                     this.isAdd_ = input.readBool();
                                     break;
-                                case 64:
+                                case 48:
                                     this.value_ = input.readInt32();
                                     break;
-                                case 72:
+                                case 112:
                                     this.index_ = input.readUInt32();
                                     break;
                                 default:
@@ -143,13 +143,13 @@ public final class QuestVarOpOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.QuestVarOpOuterClass.QuestVarOpOrBuilder
-        public boolean getIsAdd() {
-            return this.isAdd_;
+        public int getValue() {
+            return this.value_;
         }
 
         @Override // emu.grasscutter.net.proto.QuestVarOpOuterClass.QuestVarOpOrBuilder
-        public int getValue() {
-            return this.value_;
+        public boolean getIsAdd() {
+            return this.isAdd_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -168,13 +168,13 @@ public final class QuestVarOpOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.isAdd_) {
-                output.writeBool(3, this.isAdd_);
+                output.writeBool(5, this.isAdd_);
             }
             if (this.value_ != 0) {
-                output.writeInt32(8, this.value_);
+                output.writeInt32(6, this.value_);
             }
             if (this.index_ != 0) {
-                output.writeUInt32(9, this.index_);
+                output.writeUInt32(14, this.index_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -187,13 +187,13 @@ public final class QuestVarOpOuterClass {
             }
             int size2 = 0;
             if (this.isAdd_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(3, this.isAdd_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(5, this.isAdd_);
             }
             if (this.value_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(8, this.value_);
+                size2 += CodedOutputStream.computeInt32Size(6, this.value_);
             }
             if (this.index_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.index_);
+                size2 += CodedOutputStream.computeUInt32Size(14, this.index_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class QuestVarOpOuterClass {
                 return equals(obj);
             }
             QuestVarOp other = (QuestVarOp) obj;
-            return getIndex() == other.getIndex() && getIsAdd() == other.getIsAdd() && getValue() == other.getValue() && this.unknownFields.equals(other.unknownFields);
+            return getIndex() == other.getIndex() && getValue() == other.getValue() && getIsAdd() == other.getIsAdd() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class QuestVarOpOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getIndex())) + 3)) + Internal.hashBoolean(getIsAdd()))) + 8)) + getValue())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getIndex())) + 6)) + getValue())) + 5)) + Internal.hashBoolean(getIsAdd()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -297,8 +297,8 @@ public final class QuestVarOpOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestVarOpOuterClass$QuestVarOp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements QuestVarOpOrBuilder {
             private int index_;
-            private boolean isAdd_;
             private int value_;
+            private boolean isAdd_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return QuestVarOpOuterClass.internal_static_QuestVarOp_descriptor;
@@ -327,8 +327,8 @@ public final class QuestVarOpOuterClass {
             public Builder clear() {
                 clear();
                 this.index_ = 0;
-                this.isAdd_ = false;
                 this.value_ = 0;
+                this.isAdd_ = false;
                 return this;
             }
 
@@ -355,8 +355,8 @@ public final class QuestVarOpOuterClass {
             public QuestVarOp buildPartial() {
                 QuestVarOp result = new QuestVarOp(this);
                 result.index_ = this.index_;
-                result.isAdd_ = this.isAdd_;
                 result.value_ = this.value_;
+                result.isAdd_ = this.isAdd_;
                 onBuilt();
                 return result;
             }
@@ -407,11 +407,11 @@ public final class QuestVarOpOuterClass {
                 if (other.getIndex() != 0) {
                     setIndex(other.getIndex());
                 }
-                if (other.getIsAdd()) {
-                    setIsAdd(other.getIsAdd());
-                }
                 if (other.getValue() != 0) {
                     setValue(other.getValue());
+                }
+                if (other.getIsAdd()) {
+                    setIsAdd(other.getIsAdd());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -463,23 +463,6 @@ public final class QuestVarOpOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.QuestVarOpOuterClass.QuestVarOpOrBuilder
-            public boolean getIsAdd() {
-                return this.isAdd_;
-            }
-
-            public Builder setIsAdd(boolean value) {
-                this.isAdd_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsAdd() {
-                this.isAdd_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.QuestVarOpOuterClass.QuestVarOpOrBuilder
             public int getValue() {
                 return this.value_;
             }
@@ -492,6 +475,23 @@ public final class QuestVarOpOuterClass {
 
             public Builder clearValue() {
                 this.value_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.QuestVarOpOuterClass.QuestVarOpOrBuilder
+            public boolean getIsAdd() {
+                return this.isAdd_;
+            }
+
+            public Builder setIsAdd(boolean value) {
+                this.isAdd_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsAdd() {
+                this.isAdd_ = false;
                 onChanged();
                 return this;
             }

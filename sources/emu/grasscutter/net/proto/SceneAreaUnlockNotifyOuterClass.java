@@ -23,19 +23,19 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneAreaUnlockNotifyOuterClass.class */
 public final class SceneAreaUnlockNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bSceneAreaUnlockNotify.proto\"<\n\u0015SceneAreaUnlockNotify\u0012\u0010\n\bscene_id\u0018\u0001 \u0001(\r\u0012\u0011\n\tarea_list\u0018\u0005 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bSceneAreaUnlockNotify.proto\":\n\u0015SceneAreaUnlockNotify\u0012\u0010\n\bareaList\u0018\f \u0003(\r\u0012\u000f\n\u0007sceneId\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SceneAreaUnlockNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SceneAreaUnlockNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneAreaUnlockNotify_descriptor, new String[]{"SceneId", "AreaList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SceneAreaUnlockNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneAreaUnlockNotify_descriptor, new String[]{"AreaList", "SceneId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneAreaUnlockNotifyOuterClass$SceneAreaUnlockNotifyOrBuilder.class */
     public interface SceneAreaUnlockNotifyOrBuilder extends MessageOrBuilder {
-        int getSceneId();
-
         List<Integer> getAreaListList();
 
         int getAreaListCount();
 
         int getAreaList(int i);
+
+        int getSceneId();
     }
 
     private SceneAreaUnlockNotifyOuterClass() {
@@ -51,11 +51,11 @@ public final class SceneAreaUnlockNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneAreaUnlockNotifyOuterClass$SceneAreaUnlockNotify.class */
     public static final class SceneAreaUnlockNotify extends GeneratedMessageV3 implements SceneAreaUnlockNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SCENE_ID_FIELD_NUMBER = 1;
-        private int sceneId_;
-        public static final int AREA_LIST_FIELD_NUMBER = 5;
+        public static final int AREALIST_FIELD_NUMBER = 12;
         private Internal.IntList areaList_;
         private int areaListMemoizedSerializedSize;
+        public static final int SCENEID_FIELD_NUMBER = 11;
+        private int sceneId_;
         private byte memoizedIsInitialized;
         private static final SceneAreaUnlockNotify DEFAULT_INSTANCE = new SceneAreaUnlockNotify();
         private static final Parser<SceneAreaUnlockNotify> PARSER = new AbstractParser<SceneAreaUnlockNotify>() { // from class: emu.grasscutter.net.proto.SceneAreaUnlockNotifyOuterClass.SceneAreaUnlockNotify.1
@@ -107,17 +107,17 @@ public final class SceneAreaUnlockNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
+                                case 88:
                                     this.sceneId_ = input.readUInt32();
                                     break;
-                                case 40:
+                                case 96:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.areaList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.areaList_.addInt(input.readUInt32());
                                     break;
-                                case 42:
+                                case 98:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.areaList_ = newIntList();
@@ -162,11 +162,6 @@ public final class SceneAreaUnlockNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SceneAreaUnlockNotifyOuterClass.SceneAreaUnlockNotifyOrBuilder
-        public int getSceneId() {
-            return this.sceneId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.SceneAreaUnlockNotifyOuterClass.SceneAreaUnlockNotifyOrBuilder
         public List<Integer> getAreaListList() {
             return this.areaList_;
         }
@@ -179,6 +174,11 @@ public final class SceneAreaUnlockNotifyOuterClass {
         @Override // emu.grasscutter.net.proto.SceneAreaUnlockNotifyOuterClass.SceneAreaUnlockNotifyOrBuilder
         public int getAreaList(int index) {
             return this.areaList_.getInt(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.SceneAreaUnlockNotifyOuterClass.SceneAreaUnlockNotifyOrBuilder
+        public int getSceneId() {
+            return this.sceneId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -198,10 +198,10 @@ public final class SceneAreaUnlockNotifyOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (this.sceneId_ != 0) {
-                output.writeUInt32(1, this.sceneId_);
+                output.writeUInt32(11, this.sceneId_);
             }
             if (getAreaListList().size() > 0) {
-                output.writeUInt32NoTag(42);
+                output.writeUInt32NoTag(98);
                 output.writeUInt32NoTag(this.areaListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.areaList_.size(); i++) {
@@ -218,7 +218,7 @@ public final class SceneAreaUnlockNotifyOuterClass {
             }
             int size2 = 0;
             if (this.sceneId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.sceneId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(11, this.sceneId_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.areaList_.size(); i++) {
@@ -243,7 +243,7 @@ public final class SceneAreaUnlockNotifyOuterClass {
                 return equals(obj);
             }
             SceneAreaUnlockNotify other = (SceneAreaUnlockNotify) obj;
-            return getSceneId() == other.getSceneId() && getAreaListList().equals(other.getAreaListList()) && this.unknownFields.equals(other.unknownFields);
+            return getAreaListList().equals(other.getAreaListList()) && getSceneId() == other.getSceneId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -251,11 +251,11 @@ public final class SceneAreaUnlockNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getSceneId();
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (getAreaListCount() > 0) {
-                hash = (53 * ((37 * hash) + 5)) + getAreaListList().hashCode();
+                hash = (53 * ((37 * hash) + 12)) + getAreaListList().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 11)) + getSceneId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -335,8 +335,8 @@ public final class SceneAreaUnlockNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneAreaUnlockNotifyOuterClass$SceneAreaUnlockNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SceneAreaUnlockNotifyOrBuilder {
             private int bitField0_;
-            private int sceneId_;
             private Internal.IntList areaList_ = SceneAreaUnlockNotify.emptyIntList();
+            private int sceneId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return SceneAreaUnlockNotifyOuterClass.internal_static_SceneAreaUnlockNotify_descriptor;
@@ -364,9 +364,9 @@ public final class SceneAreaUnlockNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.sceneId_ = 0;
                 this.areaList_ = SceneAreaUnlockNotify.emptyIntList();
                 this.bitField0_ &= -2;
+                this.sceneId_ = 0;
                 return this;
             }
 
@@ -393,12 +393,12 @@ public final class SceneAreaUnlockNotifyOuterClass {
             public SceneAreaUnlockNotify buildPartial() {
                 SceneAreaUnlockNotify result = new SceneAreaUnlockNotify(this);
                 int i = this.bitField0_;
-                result.sceneId_ = this.sceneId_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.areaList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.areaList_ = this.areaList_;
+                result.sceneId_ = this.sceneId_;
                 onBuilt();
                 return result;
             }
@@ -446,9 +446,6 @@ public final class SceneAreaUnlockNotifyOuterClass {
                 if (other == SceneAreaUnlockNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getSceneId() != 0) {
-                    setSceneId(other.getSceneId());
-                }
                 if (!other.areaList_.isEmpty()) {
                     if (this.areaList_.isEmpty()) {
                         this.areaList_ = other.areaList_;
@@ -458,6 +455,9 @@ public final class SceneAreaUnlockNotifyOuterClass {
                         this.areaList_.addAll(other.areaList_);
                     }
                     onChanged();
+                }
+                if (other.getSceneId() != 0) {
+                    setSceneId(other.getSceneId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -489,23 +489,6 @@ public final class SceneAreaUnlockNotifyOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.SceneAreaUnlockNotifyOuterClass.SceneAreaUnlockNotifyOrBuilder
-            public int getSceneId() {
-                return this.sceneId_;
-            }
-
-            public Builder setSceneId(int value) {
-                this.sceneId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearSceneId() {
-                this.sceneId_ = 0;
-                onChanged();
-                return this;
             }
 
             private void ensureAreaListIsMutable() {
@@ -554,6 +537,23 @@ public final class SceneAreaUnlockNotifyOuterClass {
             public Builder clearAreaList() {
                 this.areaList_ = SceneAreaUnlockNotify.emptyIntList();
                 this.bitField0_ &= -2;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SceneAreaUnlockNotifyOuterClass.SceneAreaUnlockNotifyOrBuilder
+            public int getSceneId() {
+                return this.sceneId_;
+            }
+
+            public Builder setSceneId(int value) {
+                this.sceneId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearSceneId() {
+                this.sceneId_ = 0;
                 onChanged();
                 return this;
             }

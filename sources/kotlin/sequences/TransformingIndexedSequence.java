@@ -43,7 +43,7 @@ public final class TransformingIndexedSequence<T, R> implements Sequence<R> {
             /* access modifiers changed from: package-private */
             {
                 this.this$0 = r4;
-                this.iterator = TransformingIndexedSequence.access$getSequence$p(r4).iterator();
+                this.iterator = r4.sequence.iterator();
             }
 
             @NotNull
@@ -62,13 +62,13 @@ public final class TransformingIndexedSequence<T, R> implements Sequence<R> {
             /* JADX WARN: Type inference failed for: r0v3, types: [R, java.lang.Object] */
             @Override // java.util.Iterator
             public R next() {
-                Function2 access$getTransformer$p = TransformingIndexedSequence.access$getTransformer$p(this.this$0);
+                Function2 function2 = this.this$0.transformer;
                 int i = this.index;
                 this.index = i + 1;
                 if (i < 0) {
                     CollectionsKt.throwIndexOverflow();
                 }
-                return access$getTransformer$p.invoke(Integer.valueOf(i), this.iterator.next());
+                return function2.invoke(Integer.valueOf(i), this.iterator.next());
             }
 
             @Override // java.util.Iterator

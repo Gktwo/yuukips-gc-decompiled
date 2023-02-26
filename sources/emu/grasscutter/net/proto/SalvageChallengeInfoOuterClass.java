@@ -16,35 +16,35 @@ import com.google.protobuf.MessageOrBuilder;
 import com.google.protobuf.Parser;
 import com.google.protobuf.SingleFieldBuilderV3;
 import com.google.protobuf.UnknownFieldSet;
-import emu.grasscutter.net.proto.SalvageBundleChallengeInfoOuterClass;
-import emu.grasscutter.net.proto.SalvageScoreChallengeInfoOuterClass;
+import emu.grasscutter.net.proto.BundleInfoOuterClass;
+import emu.grasscutter.net.proto.ScoreChallengeInfoOuterClass;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SalvageChallengeInfoOuterClass.class */
 public final class SalvageChallengeInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aSalvageChallengeInfo.proto\u001a SalvageBundleChallengeInfo.proto\u001a\u001fSalvageScoreChallengeInfo.proto\"â\u0001\n\u0014SalvageChallengeInfo\u0012\u0016\n\u000echallenge_type\u0018\u000b \u0001(\r\u0012\u0011\n\tis_unlock\u0018\u000e \u0001(\b\u00122\n\u000bbundle_info\u0018\u0002 \u0001(\u000b2\u001b.SalvageBundleChallengeInfoH��\u0012:\n\u0014score_challenge_info\u0018\t \u0001(\u000b2\u001a.SalvageScoreChallengeInfoH��\u0012\u001b\n\u0011boss_challenge_id\u0018\f \u0001(\rH��B\u0012\n\u0010challenge_detailB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{SalvageBundleChallengeInfoOuterClass.getDescriptor(), SalvageScoreChallengeInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aSalvageChallengeInfo.proto\u001a\u0010BundleInfo.proto\u001a\u0018ScoreChallengeInfo.proto\"É\u0001\n\u0014SalvageChallengeInfo\u0012\u0010\n\bisUnlock\u0018\u0002 \u0001(\b\u0012\u0015\n\rchallengeType\u0018\u000e \u0001(\r\u0012\"\n\u000bbundle_info\u0018\b \u0001(\u000b2\u000b.BundleInfoH��\u00123\n\u0014score_challenge_info\u0018\u0005 \u0001(\u000b2\u0013.ScoreChallengeInfoH��\u0012\u001b\n\u0011boss_challenge_id\u0018\u0001 \u0001(\rH��B\u0012\n\u0010challenge_detailB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BundleInfoOuterClass.getDescriptor(), ScoreChallengeInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SalvageChallengeInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SalvageChallengeInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SalvageChallengeInfo_descriptor, new String[]{"ChallengeType", "IsUnlock", "BundleInfo", "ScoreChallengeInfo", "BossChallengeId", "ChallengeDetail"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SalvageChallengeInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SalvageChallengeInfo_descriptor, new String[]{"IsUnlock", "ChallengeType", "BundleInfo", "ScoreChallengeInfo", "BossChallengeId", "ChallengeDetail"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SalvageChallengeInfoOuterClass$SalvageChallengeInfoOrBuilder.class */
     public interface SalvageChallengeInfoOrBuilder extends MessageOrBuilder {
-        int getChallengeType();
-
         boolean getIsUnlock();
+
+        int getChallengeType();
 
         boolean hasBundleInfo();
 
-        SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo getBundleInfo();
+        BundleInfoOuterClass.BundleInfo getBundleInfo();
 
-        SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfoOrBuilder getBundleInfoOrBuilder();
+        BundleInfoOuterClass.BundleInfoOrBuilder getBundleInfoOrBuilder();
 
         boolean hasScoreChallengeInfo();
 
-        SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo getScoreChallengeInfo();
+        ScoreChallengeInfoOuterClass.ScoreChallengeInfo getScoreChallengeInfo();
 
-        SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfoOrBuilder getScoreChallengeInfoOrBuilder();
+        ScoreChallengeInfoOuterClass.ScoreChallengeInfoOrBuilder getScoreChallengeInfoOrBuilder();
 
         boolean hasBossChallengeId();
 
@@ -68,13 +68,13 @@ public final class SalvageChallengeInfoOuterClass {
         private static final long serialVersionUID = 0;
         private int challengeDetailCase_;
         private Object challengeDetail_;
-        public static final int CHALLENGE_TYPE_FIELD_NUMBER = 11;
-        private int challengeType_;
-        public static final int IS_UNLOCK_FIELD_NUMBER = 14;
+        public static final int ISUNLOCK_FIELD_NUMBER = 2;
         private boolean isUnlock_;
-        public static final int BUNDLE_INFO_FIELD_NUMBER = 2;
-        public static final int SCORE_CHALLENGE_INFO_FIELD_NUMBER = 9;
-        public static final int BOSS_CHALLENGE_ID_FIELD_NUMBER = 12;
+        public static final int CHALLENGETYPE_FIELD_NUMBER = 14;
+        private int challengeType_;
+        public static final int BUNDLE_INFO_FIELD_NUMBER = 8;
+        public static final int SCORE_CHALLENGE_INFO_FIELD_NUMBER = 5;
+        public static final int BOSS_CHALLENGE_ID_FIELD_NUMBER = 1;
         private byte memoizedIsInitialized;
         private static final SalvageChallengeInfo DEFAULT_INSTANCE = new SalvageChallengeInfo();
         private static final Parser<SalvageChallengeInfo> PARSER = new AbstractParser<SalvageChallengeInfo>() { // from class: emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfo.1
@@ -122,33 +122,33 @@ public final class SalvageChallengeInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 18:
-                                SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo.Builder subBuilder = this.challengeDetailCase_ == 2 ? ((SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo) this.challengeDetail_).toBuilder() : null;
-                                this.challengeDetail_ = input.readMessage(SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo.parser(), extensionRegistry);
-                                if (subBuilder != null) {
-                                    subBuilder.mergeFrom((SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo) this.challengeDetail_);
-                                    this.challengeDetail_ = subBuilder.buildPartial();
-                                }
-                                this.challengeDetailCase_ = 2;
-                                break;
-                            case 74:
-                                SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo.Builder subBuilder2 = this.challengeDetailCase_ == 9 ? ((SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo) this.challengeDetail_).toBuilder() : null;
-                                this.challengeDetail_ = input.readMessage(SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo.parser(), extensionRegistry);
-                                if (subBuilder2 != null) {
-                                    subBuilder2.mergeFrom((SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo) this.challengeDetail_);
-                                    this.challengeDetail_ = subBuilder2.buildPartial();
-                                }
-                                this.challengeDetailCase_ = 9;
-                                break;
-                            case 88:
-                                this.challengeType_ = input.readUInt32();
-                                break;
-                            case 96:
-                                this.challengeDetailCase_ = 12;
+                            case 8:
+                                this.challengeDetailCase_ = 1;
                                 this.challengeDetail_ = Integer.valueOf(input.readUInt32());
                                 break;
-                            case 112:
+                            case 16:
                                 this.isUnlock_ = input.readBool();
+                                break;
+                            case 42:
+                                ScoreChallengeInfoOuterClass.ScoreChallengeInfo.Builder subBuilder = this.challengeDetailCase_ == 5 ? ((ScoreChallengeInfoOuterClass.ScoreChallengeInfo) this.challengeDetail_).toBuilder() : null;
+                                this.challengeDetail_ = input.readMessage(ScoreChallengeInfoOuterClass.ScoreChallengeInfo.parser(), extensionRegistry);
+                                if (subBuilder != null) {
+                                    subBuilder.mergeFrom((ScoreChallengeInfoOuterClass.ScoreChallengeInfo) this.challengeDetail_);
+                                    this.challengeDetail_ = subBuilder.buildPartial();
+                                }
+                                this.challengeDetailCase_ = 5;
+                                break;
+                            case 66:
+                                BundleInfoOuterClass.BundleInfo.Builder subBuilder2 = this.challengeDetailCase_ == 8 ? ((BundleInfoOuterClass.BundleInfo) this.challengeDetail_).toBuilder() : null;
+                                this.challengeDetail_ = input.readMessage(BundleInfoOuterClass.BundleInfo.parser(), extensionRegistry);
+                                if (subBuilder2 != null) {
+                                    subBuilder2.mergeFrom((BundleInfoOuterClass.BundleInfo) this.challengeDetail_);
+                                    this.challengeDetail_ = subBuilder2.buildPartial();
+                                }
+                                this.challengeDetailCase_ = 8;
+                                break;
+                            case 112:
+                                this.challengeType_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -181,9 +181,9 @@ public final class SalvageChallengeInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SalvageChallengeInfoOuterClass$SalvageChallengeInfo$ChallengeDetailCase.class */
         public enum ChallengeDetailCase implements Internal.EnumLite, AbstractMessageLite.InternalOneOfEnum {
-            BUNDLE_INFO(2),
-            SCORE_CHALLENGE_INFO(9),
-            BOSS_CHALLENGE_ID(12),
+            BUNDLE_INFO(8),
+            SCORE_CHALLENGE_INFO(5),
+            BOSS_CHALLENGE_ID(1),
             CHALLENGEDETAIL_NOT_SET(0);
             
             private final int value;
@@ -201,14 +201,19 @@ public final class SalvageChallengeInfoOuterClass {
                 switch (value) {
                     case 0:
                         return CHALLENGEDETAIL_NOT_SET;
-                    case 2:
-                        return BUNDLE_INFO;
-                    case 9:
-                        return SCORE_CHALLENGE_INFO;
-                    case 12:
+                    case 1:
                         return BOSS_CHALLENGE_ID;
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 6:
+                    case 7:
                     default:
                         return null;
+                    case 5:
+                        return SCORE_CHALLENGE_INFO;
+                    case 8:
+                        return BUNDLE_INFO;
                 }
             }
 
@@ -224,65 +229,65 @@ public final class SalvageChallengeInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
-        public int getChallengeType() {
-            return this.challengeType_;
-        }
-
-        @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
         public boolean getIsUnlock() {
             return this.isUnlock_;
         }
 
         @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
+        public int getChallengeType() {
+            return this.challengeType_;
+        }
+
+        @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
         public boolean hasBundleInfo() {
-            return this.challengeDetailCase_ == 2;
+            return this.challengeDetailCase_ == 8;
         }
 
         @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
-        public SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo getBundleInfo() {
-            if (this.challengeDetailCase_ == 2) {
-                return (SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo) this.challengeDetail_;
+        public BundleInfoOuterClass.BundleInfo getBundleInfo() {
+            if (this.challengeDetailCase_ == 8) {
+                return (BundleInfoOuterClass.BundleInfo) this.challengeDetail_;
             }
-            return SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo.getDefaultInstance();
+            return BundleInfoOuterClass.BundleInfo.getDefaultInstance();
         }
 
         @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
-        public SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfoOrBuilder getBundleInfoOrBuilder() {
-            if (this.challengeDetailCase_ == 2) {
-                return (SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo) this.challengeDetail_;
+        public BundleInfoOuterClass.BundleInfoOrBuilder getBundleInfoOrBuilder() {
+            if (this.challengeDetailCase_ == 8) {
+                return (BundleInfoOuterClass.BundleInfo) this.challengeDetail_;
             }
-            return SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo.getDefaultInstance();
+            return BundleInfoOuterClass.BundleInfo.getDefaultInstance();
         }
 
         @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
         public boolean hasScoreChallengeInfo() {
-            return this.challengeDetailCase_ == 9;
+            return this.challengeDetailCase_ == 5;
         }
 
         @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
-        public SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo getScoreChallengeInfo() {
-            if (this.challengeDetailCase_ == 9) {
-                return (SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo) this.challengeDetail_;
+        public ScoreChallengeInfoOuterClass.ScoreChallengeInfo getScoreChallengeInfo() {
+            if (this.challengeDetailCase_ == 5) {
+                return (ScoreChallengeInfoOuterClass.ScoreChallengeInfo) this.challengeDetail_;
             }
-            return SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo.getDefaultInstance();
+            return ScoreChallengeInfoOuterClass.ScoreChallengeInfo.getDefaultInstance();
         }
 
         @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
-        public SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfoOrBuilder getScoreChallengeInfoOrBuilder() {
-            if (this.challengeDetailCase_ == 9) {
-                return (SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo) this.challengeDetail_;
+        public ScoreChallengeInfoOuterClass.ScoreChallengeInfoOrBuilder getScoreChallengeInfoOrBuilder() {
+            if (this.challengeDetailCase_ == 5) {
+                return (ScoreChallengeInfoOuterClass.ScoreChallengeInfo) this.challengeDetail_;
             }
-            return SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo.getDefaultInstance();
+            return ScoreChallengeInfoOuterClass.ScoreChallengeInfo.getDefaultInstance();
         }
 
         @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
         public boolean hasBossChallengeId() {
-            return this.challengeDetailCase_ == 12;
+            return this.challengeDetailCase_ == 1;
         }
 
         @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
         public int getBossChallengeId() {
-            if (this.challengeDetailCase_ == 12) {
+            if (this.challengeDetailCase_ == 1) {
                 return ((Integer) this.challengeDetail_).intValue();
             }
             return 0;
@@ -303,20 +308,20 @@ public final class SalvageChallengeInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.challengeDetailCase_ == 2) {
-                output.writeMessage(2, (SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo) this.challengeDetail_);
-            }
-            if (this.challengeDetailCase_ == 9) {
-                output.writeMessage(9, (SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo) this.challengeDetail_);
-            }
-            if (this.challengeType_ != 0) {
-                output.writeUInt32(11, this.challengeType_);
-            }
-            if (this.challengeDetailCase_ == 12) {
-                output.writeUInt32(12, ((Integer) this.challengeDetail_).intValue());
+            if (this.challengeDetailCase_ == 1) {
+                output.writeUInt32(1, ((Integer) this.challengeDetail_).intValue());
             }
             if (this.isUnlock_) {
-                output.writeBool(14, this.isUnlock_);
+                output.writeBool(2, this.isUnlock_);
+            }
+            if (this.challengeDetailCase_ == 5) {
+                output.writeMessage(5, (ScoreChallengeInfoOuterClass.ScoreChallengeInfo) this.challengeDetail_);
+            }
+            if (this.challengeDetailCase_ == 8) {
+                output.writeMessage(8, (BundleInfoOuterClass.BundleInfo) this.challengeDetail_);
+            }
+            if (this.challengeType_ != 0) {
+                output.writeUInt32(14, this.challengeType_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -328,20 +333,20 @@ public final class SalvageChallengeInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.challengeDetailCase_ == 2) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(2, (SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo) this.challengeDetail_);
-            }
-            if (this.challengeDetailCase_ == 9) {
-                size2 += CodedOutputStream.computeMessageSize(9, (SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo) this.challengeDetail_);
-            }
-            if (this.challengeType_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.challengeType_);
-            }
-            if (this.challengeDetailCase_ == 12) {
-                size2 += CodedOutputStream.computeUInt32Size(12, ((Integer) this.challengeDetail_).intValue());
+            if (this.challengeDetailCase_ == 1) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, ((Integer) this.challengeDetail_).intValue());
             }
             if (this.isUnlock_) {
-                size2 += CodedOutputStream.computeBoolSize(14, this.isUnlock_);
+                size2 += CodedOutputStream.computeBoolSize(2, this.isUnlock_);
+            }
+            if (this.challengeDetailCase_ == 5) {
+                size2 += CodedOutputStream.computeMessageSize(5, (ScoreChallengeInfoOuterClass.ScoreChallengeInfo) this.challengeDetail_);
+            }
+            if (this.challengeDetailCase_ == 8) {
+                size2 += CodedOutputStream.computeMessageSize(8, (BundleInfoOuterClass.BundleInfo) this.challengeDetail_);
+            }
+            if (this.challengeType_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(14, this.challengeType_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -357,22 +362,22 @@ public final class SalvageChallengeInfoOuterClass {
                 return equals(obj);
             }
             SalvageChallengeInfo other = (SalvageChallengeInfo) obj;
-            if (getChallengeType() != other.getChallengeType() || getIsUnlock() != other.getIsUnlock() || !getChallengeDetailCase().equals(other.getChallengeDetailCase())) {
+            if (getIsUnlock() != other.getIsUnlock() || getChallengeType() != other.getChallengeType() || !getChallengeDetailCase().equals(other.getChallengeDetailCase())) {
                 return false;
             }
             switch (this.challengeDetailCase_) {
-                case 2:
-                    if (!getBundleInfo().equals(other.getBundleInfo())) {
+                case 1:
+                    if (getBossChallengeId() != other.getBossChallengeId()) {
                         return false;
                     }
                     break;
-                case 9:
+                case 5:
                     if (!getScoreChallengeInfo().equals(other.getScoreChallengeInfo())) {
                         return false;
                     }
                     break;
-                case 12:
-                    if (getBossChallengeId() != other.getBossChallengeId()) {
+                case 8:
+                    if (!getBundleInfo().equals(other.getBundleInfo())) {
                         return false;
                     }
                     break;
@@ -385,16 +390,16 @@ public final class SalvageChallengeInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getChallengeType())) + 14)) + Internal.hashBoolean(getIsUnlock());
+            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + Internal.hashBoolean(getIsUnlock()))) + 14)) + getChallengeType();
             switch (this.challengeDetailCase_) {
-                case 2:
-                    hash = (53 * ((37 * hash) + 2)) + getBundleInfo().hashCode();
+                case 1:
+                    hash = (53 * ((37 * hash) + 1)) + getBossChallengeId();
                     break;
-                case 9:
-                    hash = (53 * ((37 * hash) + 9)) + getScoreChallengeInfo().hashCode();
+                case 5:
+                    hash = (53 * ((37 * hash) + 5)) + getScoreChallengeInfo().hashCode();
                     break;
-                case 12:
-                    hash = (53 * ((37 * hash) + 12)) + getBossChallengeId();
+                case 8:
+                    hash = (53 * ((37 * hash) + 8)) + getBundleInfo().hashCode();
                     break;
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
@@ -478,10 +483,10 @@ public final class SalvageChallengeInfoOuterClass {
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SalvageChallengeInfoOrBuilder {
             private int challengeDetailCase_ = 0;
             private Object challengeDetail_;
-            private int challengeType_;
             private boolean isUnlock_;
-            private SingleFieldBuilderV3<SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo, SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo.Builder, SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfoOrBuilder> bundleInfoBuilder_;
-            private SingleFieldBuilderV3<SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo, SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo.Builder, SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfoOrBuilder> scoreChallengeInfoBuilder_;
+            private int challengeType_;
+            private SingleFieldBuilderV3<BundleInfoOuterClass.BundleInfo, BundleInfoOuterClass.BundleInfo.Builder, BundleInfoOuterClass.BundleInfoOrBuilder> bundleInfoBuilder_;
+            private SingleFieldBuilderV3<ScoreChallengeInfoOuterClass.ScoreChallengeInfo, ScoreChallengeInfoOuterClass.ScoreChallengeInfo.Builder, ScoreChallengeInfoOuterClass.ScoreChallengeInfoOrBuilder> scoreChallengeInfoBuilder_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return SalvageChallengeInfoOuterClass.internal_static_SalvageChallengeInfo_descriptor;
@@ -509,8 +514,8 @@ public final class SalvageChallengeInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.challengeType_ = 0;
                 this.isUnlock_ = false;
+                this.challengeType_ = 0;
                 this.challengeDetailCase_ = 0;
                 this.challengeDetail_ = null;
                 return this;
@@ -538,23 +543,23 @@ public final class SalvageChallengeInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public SalvageChallengeInfo buildPartial() {
                 SalvageChallengeInfo result = new SalvageChallengeInfo(this);
-                result.challengeType_ = this.challengeType_;
                 result.isUnlock_ = this.isUnlock_;
-                if (this.challengeDetailCase_ == 2) {
+                result.challengeType_ = this.challengeType_;
+                if (this.challengeDetailCase_ == 8) {
                     if (this.bundleInfoBuilder_ == null) {
                         result.challengeDetail_ = this.challengeDetail_;
                     } else {
                         result.challengeDetail_ = this.bundleInfoBuilder_.build();
                     }
                 }
-                if (this.challengeDetailCase_ == 9) {
+                if (this.challengeDetailCase_ == 5) {
                     if (this.scoreChallengeInfoBuilder_ == null) {
                         result.challengeDetail_ = this.challengeDetail_;
                     } else {
                         result.challengeDetail_ = this.scoreChallengeInfoBuilder_.build();
                     }
                 }
-                if (this.challengeDetailCase_ == 12) {
+                if (this.challengeDetailCase_ == 1) {
                     result.challengeDetail_ = this.challengeDetail_;
                 }
                 result.challengeDetailCase_ = this.challengeDetailCase_;
@@ -605,11 +610,11 @@ public final class SalvageChallengeInfoOuterClass {
                 if (other == SalvageChallengeInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getChallengeType() != 0) {
-                    setChallengeType(other.getChallengeType());
-                }
                 if (other.getIsUnlock()) {
                     setIsUnlock(other.getIsUnlock());
+                }
+                if (other.getChallengeType() != 0) {
+                    setChallengeType(other.getChallengeType());
                 }
                 switch (other.getChallengeDetailCase()) {
                     case BUNDLE_INFO:
@@ -667,23 +672,6 @@ public final class SalvageChallengeInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
-            public int getChallengeType() {
-                return this.challengeType_;
-            }
-
-            public Builder setChallengeType(int value) {
-                this.challengeType_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearChallengeType() {
-                this.challengeType_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
             public boolean getIsUnlock() {
                 return this.isUnlock_;
             }
@@ -701,25 +689,42 @@ public final class SalvageChallengeInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
-            public boolean hasBundleInfo() {
-                return this.challengeDetailCase_ == 2;
+            public int getChallengeType() {
+                return this.challengeType_;
+            }
+
+            public Builder setChallengeType(int value) {
+                this.challengeType_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearChallengeType() {
+                this.challengeType_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
-            public SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo getBundleInfo() {
+            public boolean hasBundleInfo() {
+                return this.challengeDetailCase_ == 8;
+            }
+
+            @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
+            public BundleInfoOuterClass.BundleInfo getBundleInfo() {
                 if (this.bundleInfoBuilder_ == null) {
-                    if (this.challengeDetailCase_ == 2) {
-                        return (SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo) this.challengeDetail_;
+                    if (this.challengeDetailCase_ == 8) {
+                        return (BundleInfoOuterClass.BundleInfo) this.challengeDetail_;
                     }
-                    return SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo.getDefaultInstance();
-                } else if (this.challengeDetailCase_ == 2) {
+                    return BundleInfoOuterClass.BundleInfo.getDefaultInstance();
+                } else if (this.challengeDetailCase_ == 8) {
                     return this.bundleInfoBuilder_.getMessage();
                 } else {
-                    return SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo.getDefaultInstance();
+                    return BundleInfoOuterClass.BundleInfo.getDefaultInstance();
                 }
             }
 
-            public Builder setBundleInfo(SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo value) {
+            public Builder setBundleInfo(BundleInfoOuterClass.BundleInfo value) {
                 if (this.bundleInfoBuilder_ != null) {
                     this.bundleInfoBuilder_.setMessage(value);
                 } else if (value == null) {
@@ -728,47 +733,47 @@ public final class SalvageChallengeInfoOuterClass {
                     this.challengeDetail_ = value;
                     onChanged();
                 }
-                this.challengeDetailCase_ = 2;
+                this.challengeDetailCase_ = 8;
                 return this;
             }
 
-            public Builder setBundleInfo(SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo.Builder builderForValue) {
+            public Builder setBundleInfo(BundleInfoOuterClass.BundleInfo.Builder builderForValue) {
                 if (this.bundleInfoBuilder_ == null) {
                     this.challengeDetail_ = builderForValue.build();
                     onChanged();
                 } else {
                     this.bundleInfoBuilder_.setMessage(builderForValue.build());
                 }
-                this.challengeDetailCase_ = 2;
+                this.challengeDetailCase_ = 8;
                 return this;
             }
 
-            public Builder mergeBundleInfo(SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo value) {
+            public Builder mergeBundleInfo(BundleInfoOuterClass.BundleInfo value) {
                 if (this.bundleInfoBuilder_ == null) {
-                    if (this.challengeDetailCase_ != 2 || this.challengeDetail_ == SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo.getDefaultInstance()) {
+                    if (this.challengeDetailCase_ != 8 || this.challengeDetail_ == BundleInfoOuterClass.BundleInfo.getDefaultInstance()) {
                         this.challengeDetail_ = value;
                     } else {
-                        this.challengeDetail_ = SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo.newBuilder((SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo) this.challengeDetail_).mergeFrom(value).buildPartial();
+                        this.challengeDetail_ = BundleInfoOuterClass.BundleInfo.newBuilder((BundleInfoOuterClass.BundleInfo) this.challengeDetail_).mergeFrom(value).buildPartial();
                     }
                     onChanged();
                 } else {
-                    if (this.challengeDetailCase_ == 2) {
+                    if (this.challengeDetailCase_ == 8) {
                         this.bundleInfoBuilder_.mergeFrom(value);
                     }
                     this.bundleInfoBuilder_.setMessage(value);
                 }
-                this.challengeDetailCase_ = 2;
+                this.challengeDetailCase_ = 8;
                 return this;
             }
 
             public Builder clearBundleInfo() {
                 if (this.bundleInfoBuilder_ != null) {
-                    if (this.challengeDetailCase_ == 2) {
+                    if (this.challengeDetailCase_ == 8) {
                         this.challengeDetailCase_ = 0;
                         this.challengeDetail_ = null;
                     }
                     this.bundleInfoBuilder_.clear();
-                } else if (this.challengeDetailCase_ == 2) {
+                } else if (this.challengeDetailCase_ == 8) {
                     this.challengeDetailCase_ = 0;
                     this.challengeDetail_ = null;
                     onChanged();
@@ -776,54 +781,54 @@ public final class SalvageChallengeInfoOuterClass {
                 return this;
             }
 
-            public SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo.Builder getBundleInfoBuilder() {
+            public BundleInfoOuterClass.BundleInfo.Builder getBundleInfoBuilder() {
                 return getBundleInfoFieldBuilder().getBuilder();
             }
 
             @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
-            public SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfoOrBuilder getBundleInfoOrBuilder() {
-                if (this.challengeDetailCase_ == 2 && this.bundleInfoBuilder_ != null) {
+            public BundleInfoOuterClass.BundleInfoOrBuilder getBundleInfoOrBuilder() {
+                if (this.challengeDetailCase_ == 8 && this.bundleInfoBuilder_ != null) {
                     return this.bundleInfoBuilder_.getMessageOrBuilder();
                 }
-                if (this.challengeDetailCase_ == 2) {
-                    return (SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo) this.challengeDetail_;
+                if (this.challengeDetailCase_ == 8) {
+                    return (BundleInfoOuterClass.BundleInfo) this.challengeDetail_;
                 }
-                return SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo.getDefaultInstance();
+                return BundleInfoOuterClass.BundleInfo.getDefaultInstance();
             }
 
-            private SingleFieldBuilderV3<SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo, SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo.Builder, SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfoOrBuilder> getBundleInfoFieldBuilder() {
+            private SingleFieldBuilderV3<BundleInfoOuterClass.BundleInfo, BundleInfoOuterClass.BundleInfo.Builder, BundleInfoOuterClass.BundleInfoOrBuilder> getBundleInfoFieldBuilder() {
                 if (this.bundleInfoBuilder_ == null) {
-                    if (this.challengeDetailCase_ != 2) {
-                        this.challengeDetail_ = SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo.getDefaultInstance();
+                    if (this.challengeDetailCase_ != 8) {
+                        this.challengeDetail_ = BundleInfoOuterClass.BundleInfo.getDefaultInstance();
                     }
-                    this.bundleInfoBuilder_ = new SingleFieldBuilderV3<>((SalvageBundleChallengeInfoOuterClass.SalvageBundleChallengeInfo) this.challengeDetail_, getParentForChildren(), isClean());
+                    this.bundleInfoBuilder_ = new SingleFieldBuilderV3<>((BundleInfoOuterClass.BundleInfo) this.challengeDetail_, getParentForChildren(), isClean());
                     this.challengeDetail_ = null;
                 }
-                this.challengeDetailCase_ = 2;
+                this.challengeDetailCase_ = 8;
                 onChanged();
                 return this.bundleInfoBuilder_;
             }
 
             @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
             public boolean hasScoreChallengeInfo() {
-                return this.challengeDetailCase_ == 9;
+                return this.challengeDetailCase_ == 5;
             }
 
             @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
-            public SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo getScoreChallengeInfo() {
+            public ScoreChallengeInfoOuterClass.ScoreChallengeInfo getScoreChallengeInfo() {
                 if (this.scoreChallengeInfoBuilder_ == null) {
-                    if (this.challengeDetailCase_ == 9) {
-                        return (SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo) this.challengeDetail_;
+                    if (this.challengeDetailCase_ == 5) {
+                        return (ScoreChallengeInfoOuterClass.ScoreChallengeInfo) this.challengeDetail_;
                     }
-                    return SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo.getDefaultInstance();
-                } else if (this.challengeDetailCase_ == 9) {
+                    return ScoreChallengeInfoOuterClass.ScoreChallengeInfo.getDefaultInstance();
+                } else if (this.challengeDetailCase_ == 5) {
                     return this.scoreChallengeInfoBuilder_.getMessage();
                 } else {
-                    return SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo.getDefaultInstance();
+                    return ScoreChallengeInfoOuterClass.ScoreChallengeInfo.getDefaultInstance();
                 }
             }
 
-            public Builder setScoreChallengeInfo(SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo value) {
+            public Builder setScoreChallengeInfo(ScoreChallengeInfoOuterClass.ScoreChallengeInfo value) {
                 if (this.scoreChallengeInfoBuilder_ != null) {
                     this.scoreChallengeInfoBuilder_.setMessage(value);
                 } else if (value == null) {
@@ -832,47 +837,47 @@ public final class SalvageChallengeInfoOuterClass {
                     this.challengeDetail_ = value;
                     onChanged();
                 }
-                this.challengeDetailCase_ = 9;
+                this.challengeDetailCase_ = 5;
                 return this;
             }
 
-            public Builder setScoreChallengeInfo(SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo.Builder builderForValue) {
+            public Builder setScoreChallengeInfo(ScoreChallengeInfoOuterClass.ScoreChallengeInfo.Builder builderForValue) {
                 if (this.scoreChallengeInfoBuilder_ == null) {
                     this.challengeDetail_ = builderForValue.build();
                     onChanged();
                 } else {
                     this.scoreChallengeInfoBuilder_.setMessage(builderForValue.build());
                 }
-                this.challengeDetailCase_ = 9;
+                this.challengeDetailCase_ = 5;
                 return this;
             }
 
-            public Builder mergeScoreChallengeInfo(SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo value) {
+            public Builder mergeScoreChallengeInfo(ScoreChallengeInfoOuterClass.ScoreChallengeInfo value) {
                 if (this.scoreChallengeInfoBuilder_ == null) {
-                    if (this.challengeDetailCase_ != 9 || this.challengeDetail_ == SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo.getDefaultInstance()) {
+                    if (this.challengeDetailCase_ != 5 || this.challengeDetail_ == ScoreChallengeInfoOuterClass.ScoreChallengeInfo.getDefaultInstance()) {
                         this.challengeDetail_ = value;
                     } else {
-                        this.challengeDetail_ = SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo.newBuilder((SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo) this.challengeDetail_).mergeFrom(value).buildPartial();
+                        this.challengeDetail_ = ScoreChallengeInfoOuterClass.ScoreChallengeInfo.newBuilder((ScoreChallengeInfoOuterClass.ScoreChallengeInfo) this.challengeDetail_).mergeFrom(value).buildPartial();
                     }
                     onChanged();
                 } else {
-                    if (this.challengeDetailCase_ == 9) {
+                    if (this.challengeDetailCase_ == 5) {
                         this.scoreChallengeInfoBuilder_.mergeFrom(value);
                     }
                     this.scoreChallengeInfoBuilder_.setMessage(value);
                 }
-                this.challengeDetailCase_ = 9;
+                this.challengeDetailCase_ = 5;
                 return this;
             }
 
             public Builder clearScoreChallengeInfo() {
                 if (this.scoreChallengeInfoBuilder_ != null) {
-                    if (this.challengeDetailCase_ == 9) {
+                    if (this.challengeDetailCase_ == 5) {
                         this.challengeDetailCase_ = 0;
                         this.challengeDetail_ = null;
                     }
                     this.scoreChallengeInfoBuilder_.clear();
-                } else if (this.challengeDetailCase_ == 9) {
+                } else if (this.challengeDetailCase_ == 5) {
                     this.challengeDetailCase_ = 0;
                     this.challengeDetail_ = null;
                     onChanged();
@@ -880,56 +885,56 @@ public final class SalvageChallengeInfoOuterClass {
                 return this;
             }
 
-            public SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo.Builder getScoreChallengeInfoBuilder() {
+            public ScoreChallengeInfoOuterClass.ScoreChallengeInfo.Builder getScoreChallengeInfoBuilder() {
                 return getScoreChallengeInfoFieldBuilder().getBuilder();
             }
 
             @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
-            public SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfoOrBuilder getScoreChallengeInfoOrBuilder() {
-                if (this.challengeDetailCase_ == 9 && this.scoreChallengeInfoBuilder_ != null) {
+            public ScoreChallengeInfoOuterClass.ScoreChallengeInfoOrBuilder getScoreChallengeInfoOrBuilder() {
+                if (this.challengeDetailCase_ == 5 && this.scoreChallengeInfoBuilder_ != null) {
                     return this.scoreChallengeInfoBuilder_.getMessageOrBuilder();
                 }
-                if (this.challengeDetailCase_ == 9) {
-                    return (SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo) this.challengeDetail_;
+                if (this.challengeDetailCase_ == 5) {
+                    return (ScoreChallengeInfoOuterClass.ScoreChallengeInfo) this.challengeDetail_;
                 }
-                return SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo.getDefaultInstance();
+                return ScoreChallengeInfoOuterClass.ScoreChallengeInfo.getDefaultInstance();
             }
 
-            private SingleFieldBuilderV3<SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo, SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo.Builder, SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfoOrBuilder> getScoreChallengeInfoFieldBuilder() {
+            private SingleFieldBuilderV3<ScoreChallengeInfoOuterClass.ScoreChallengeInfo, ScoreChallengeInfoOuterClass.ScoreChallengeInfo.Builder, ScoreChallengeInfoOuterClass.ScoreChallengeInfoOrBuilder> getScoreChallengeInfoFieldBuilder() {
                 if (this.scoreChallengeInfoBuilder_ == null) {
-                    if (this.challengeDetailCase_ != 9) {
-                        this.challengeDetail_ = SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo.getDefaultInstance();
+                    if (this.challengeDetailCase_ != 5) {
+                        this.challengeDetail_ = ScoreChallengeInfoOuterClass.ScoreChallengeInfo.getDefaultInstance();
                     }
-                    this.scoreChallengeInfoBuilder_ = new SingleFieldBuilderV3<>((SalvageScoreChallengeInfoOuterClass.SalvageScoreChallengeInfo) this.challengeDetail_, getParentForChildren(), isClean());
+                    this.scoreChallengeInfoBuilder_ = new SingleFieldBuilderV3<>((ScoreChallengeInfoOuterClass.ScoreChallengeInfo) this.challengeDetail_, getParentForChildren(), isClean());
                     this.challengeDetail_ = null;
                 }
-                this.challengeDetailCase_ = 9;
+                this.challengeDetailCase_ = 5;
                 onChanged();
                 return this.scoreChallengeInfoBuilder_;
             }
 
             @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
             public boolean hasBossChallengeId() {
-                return this.challengeDetailCase_ == 12;
+                return this.challengeDetailCase_ == 1;
             }
 
             @Override // emu.grasscutter.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder
             public int getBossChallengeId() {
-                if (this.challengeDetailCase_ == 12) {
+                if (this.challengeDetailCase_ == 1) {
                     return ((Integer) this.challengeDetail_).intValue();
                 }
                 return 0;
             }
 
             public Builder setBossChallengeId(int value) {
-                this.challengeDetailCase_ = 12;
+                this.challengeDetailCase_ = 1;
                 this.challengeDetail_ = Integer.valueOf(value);
                 onChanged();
                 return this;
             }
 
             public Builder clearBossChallengeId() {
-                if (this.challengeDetailCase_ == 12) {
+                if (this.challengeDetailCase_ == 1) {
                     this.challengeDetailCase_ = 0;
                     this.challengeDetail_ = null;
                     onChanged();
@@ -972,7 +977,7 @@ public final class SalvageChallengeInfoOuterClass {
     }
 
     static {
-        SalvageBundleChallengeInfoOuterClass.getDescriptor();
-        SalvageScoreChallengeInfoOuterClass.getDescriptor();
+        BundleInfoOuterClass.getDescriptor();
+        ScoreChallengeInfoOuterClass.getDescriptor();
     }
 }

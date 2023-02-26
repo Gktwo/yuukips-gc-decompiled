@@ -308,7 +308,7 @@ public class Response implements HttpServletResponse {
             String path2 = path == null ? "" : path;
             int port = uri.getPort();
             if (port < 0) {
-                port = HttpScheme.HTTPS.asString().equalsIgnoreCase(uri.getScheme()) ? PacketOpcodes.AddQuestContentProgressReq : 80;
+                port = HttpScheme.HTTPS.asString().equalsIgnoreCase(uri.getScheme()) ? PacketOpcodes.PersonalLineAllDataRsp : 80;
             }
             if (!request.getServerName().equalsIgnoreCase(uri.getHost())) {
                 return url;

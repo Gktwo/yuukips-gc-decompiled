@@ -20,19 +20,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RockBoardExploreStageDataOuterClass.class */
 public final class RockBoardExploreStageDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fRockBoardExploreStageData.proto\"d\n\u0019RockBoardExploreStageData\u0012\u0011\n\tis_finish\u0018\b \u0001(\b\u0012\u000f\n\u0007is_open\u0018\t \u0001(\b\u0012\u0011\n\topen_time\u0018\f \u0001(\r\u0012\u0010\n\bstage_id\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fRockBoardExploreStageData.proto\"`\n\u0019RockBoardExploreStageData\u0012\u0010\n\bisFinish\u0018\u0001 \u0001(\b\u0012\u000f\n\u0007stageId\u0018\t \u0001(\r\u0012\u000e\n\u0006isOpen\u0018\u0006 \u0001(\b\u0012\u0010\n\bopenTime\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_RockBoardExploreStageData_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_RockBoardExploreStageData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_RockBoardExploreStageData_descriptor, new String[]{"IsFinish", "IsOpen", "OpenTime", "StageId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_RockBoardExploreStageData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_RockBoardExploreStageData_descriptor, new String[]{"IsFinish", "StageId", "IsOpen", "OpenTime"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RockBoardExploreStageDataOuterClass$RockBoardExploreStageDataOrBuilder.class */
     public interface RockBoardExploreStageDataOrBuilder extends MessageOrBuilder {
         boolean getIsFinish();
 
+        int getStageId();
+
         boolean getIsOpen();
 
         int getOpenTime();
-
-        int getStageId();
     }
 
     private RockBoardExploreStageDataOuterClass() {
@@ -48,14 +48,14 @@ public final class RockBoardExploreStageDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RockBoardExploreStageDataOuterClass$RockBoardExploreStageData.class */
     public static final class RockBoardExploreStageData extends GeneratedMessageV3 implements RockBoardExploreStageDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_FINISH_FIELD_NUMBER = 8;
+        public static final int ISFINISH_FIELD_NUMBER = 1;
         private boolean isFinish_;
-        public static final int IS_OPEN_FIELD_NUMBER = 9;
-        private boolean isOpen_;
-        public static final int OPEN_TIME_FIELD_NUMBER = 12;
-        private int openTime_;
-        public static final int STAGE_ID_FIELD_NUMBER = 13;
+        public static final int STAGEID_FIELD_NUMBER = 9;
         private int stageId_;
+        public static final int ISOPEN_FIELD_NUMBER = 6;
+        private boolean isOpen_;
+        public static final int OPENTIME_FIELD_NUMBER = 7;
+        private int openTime_;
         private byte memoizedIsInitialized;
         private static final RockBoardExploreStageData DEFAULT_INSTANCE = new RockBoardExploreStageData();
         private static final Parser<RockBoardExploreStageData> PARSER = new AbstractParser<RockBoardExploreStageData>() { // from class: emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageData.1
@@ -102,16 +102,16 @@ public final class RockBoardExploreStageDataOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 64:
+                                case 8:
                                     this.isFinish_ = input.readBool();
                                     break;
-                                case 72:
+                                case 48:
                                     this.isOpen_ = input.readBool();
                                     break;
-                                case 96:
+                                case 56:
                                     this.openTime_ = input.readUInt32();
                                     break;
-                                case 104:
+                                case 72:
                                     this.stageId_ = input.readUInt32();
                                     break;
                                 default:
@@ -150,6 +150,11 @@ public final class RockBoardExploreStageDataOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageDataOrBuilder
+        public int getStageId() {
+            return this.stageId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageDataOrBuilder
         public boolean getIsOpen() {
             return this.isOpen_;
         }
@@ -157,11 +162,6 @@ public final class RockBoardExploreStageDataOuterClass {
         @Override // emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageDataOrBuilder
         public int getOpenTime() {
             return this.openTime_;
-        }
-
-        @Override // emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageDataOrBuilder
-        public int getStageId() {
-            return this.stageId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -180,16 +180,16 @@ public final class RockBoardExploreStageDataOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.isFinish_) {
-                output.writeBool(8, this.isFinish_);
+                output.writeBool(1, this.isFinish_);
             }
             if (this.isOpen_) {
-                output.writeBool(9, this.isOpen_);
+                output.writeBool(6, this.isOpen_);
             }
             if (this.openTime_ != 0) {
-                output.writeUInt32(12, this.openTime_);
+                output.writeUInt32(7, this.openTime_);
             }
             if (this.stageId_ != 0) {
-                output.writeUInt32(13, this.stageId_);
+                output.writeUInt32(9, this.stageId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -202,16 +202,16 @@ public final class RockBoardExploreStageDataOuterClass {
             }
             int size2 = 0;
             if (this.isFinish_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(8, this.isFinish_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(1, this.isFinish_);
             }
             if (this.isOpen_) {
-                size2 += CodedOutputStream.computeBoolSize(9, this.isOpen_);
+                size2 += CodedOutputStream.computeBoolSize(6, this.isOpen_);
             }
             if (this.openTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.openTime_);
+                size2 += CodedOutputStream.computeUInt32Size(7, this.openTime_);
             }
             if (this.stageId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.stageId_);
+                size2 += CodedOutputStream.computeUInt32Size(9, this.stageId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -227,7 +227,7 @@ public final class RockBoardExploreStageDataOuterClass {
                 return equals(obj);
             }
             RockBoardExploreStageData other = (RockBoardExploreStageData) obj;
-            return getIsFinish() == other.getIsFinish() && getIsOpen() == other.getIsOpen() && getOpenTime() == other.getOpenTime() && getStageId() == other.getStageId() && this.unknownFields.equals(other.unknownFields);
+            return getIsFinish() == other.getIsFinish() && getStageId() == other.getStageId() && getIsOpen() == other.getIsOpen() && getOpenTime() == other.getOpenTime() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -235,7 +235,7 @@ public final class RockBoardExploreStageDataOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + Internal.hashBoolean(getIsFinish()))) + 9)) + Internal.hashBoolean(getIsOpen()))) + 12)) + getOpenTime())) + 13)) + getStageId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + Internal.hashBoolean(getIsFinish()))) + 9)) + getStageId())) + 6)) + Internal.hashBoolean(getIsOpen()))) + 7)) + getOpenTime())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -315,9 +315,9 @@ public final class RockBoardExploreStageDataOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RockBoardExploreStageDataOuterClass$RockBoardExploreStageData$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements RockBoardExploreStageDataOrBuilder {
             private boolean isFinish_;
+            private int stageId_;
             private boolean isOpen_;
             private int openTime_;
-            private int stageId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return RockBoardExploreStageDataOuterClass.internal_static_RockBoardExploreStageData_descriptor;
@@ -346,9 +346,9 @@ public final class RockBoardExploreStageDataOuterClass {
             public Builder clear() {
                 clear();
                 this.isFinish_ = false;
+                this.stageId_ = 0;
                 this.isOpen_ = false;
                 this.openTime_ = 0;
-                this.stageId_ = 0;
                 return this;
             }
 
@@ -375,9 +375,9 @@ public final class RockBoardExploreStageDataOuterClass {
             public RockBoardExploreStageData buildPartial() {
                 RockBoardExploreStageData result = new RockBoardExploreStageData(this);
                 result.isFinish_ = this.isFinish_;
+                result.stageId_ = this.stageId_;
                 result.isOpen_ = this.isOpen_;
                 result.openTime_ = this.openTime_;
-                result.stageId_ = this.stageId_;
                 onBuilt();
                 return result;
             }
@@ -428,14 +428,14 @@ public final class RockBoardExploreStageDataOuterClass {
                 if (other.getIsFinish()) {
                     setIsFinish(other.getIsFinish());
                 }
+                if (other.getStageId() != 0) {
+                    setStageId(other.getStageId());
+                }
                 if (other.getIsOpen()) {
                     setIsOpen(other.getIsOpen());
                 }
                 if (other.getOpenTime() != 0) {
                     setOpenTime(other.getOpenTime());
-                }
-                if (other.getStageId() != 0) {
-                    setStageId(other.getStageId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -487,6 +487,23 @@ public final class RockBoardExploreStageDataOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageDataOrBuilder
+            public int getStageId() {
+                return this.stageId_;
+            }
+
+            public Builder setStageId(int value) {
+                this.stageId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearStageId() {
+                this.stageId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageDataOrBuilder
             public boolean getIsOpen() {
                 return this.isOpen_;
             }
@@ -516,23 +533,6 @@ public final class RockBoardExploreStageDataOuterClass {
 
             public Builder clearOpenTime() {
                 this.openTime_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.RockBoardExploreStageDataOuterClass.RockBoardExploreStageDataOrBuilder
-            public int getStageId() {
-                return this.stageId_;
-            }
-
-            public Builder setStageId(int value) {
-                this.stageId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearStageId() {
-                this.stageId_ = 0;
                 onChanged();
                 return this;
             }

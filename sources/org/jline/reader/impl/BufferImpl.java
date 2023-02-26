@@ -10,10 +10,10 @@ public class BufferImpl implements Buffer {
     private int[] buffer;
 
     /* renamed from: g0 */
-    private int f3230g0;
+    private int f3194g0;
 
     /* renamed from: g1 */
-    private int f3231g1;
+    private int f3195g1;
 
     public BufferImpl() {
         this(64);
@@ -23,8 +23,8 @@ public class BufferImpl implements Buffer {
         this.cursor = 0;
         this.cursorCol = -1;
         this.buffer = new int[size];
-        this.f3230g0 = 0;
-        this.f3231g1 = this.buffer.length;
+        this.f3194g0 = 0;
+        this.f3195g1 = this.buffer.length;
     }
 
     private BufferImpl(BufferImpl buffer) {
@@ -33,8 +33,8 @@ public class BufferImpl implements Buffer {
         this.cursor = buffer.cursor;
         this.cursorCol = buffer.cursorCol;
         this.buffer = (int[]) buffer.buffer.clone();
-        this.f3230g0 = buffer.f3230g0;
-        this.f3231g1 = buffer.f3231g1;
+        this.f3194g0 = buffer.f3194g0;
+        this.f3195g1 = buffer.f3195g1;
     }
 
     @Override // org.jline.reader.Buffer
@@ -49,7 +49,7 @@ public class BufferImpl implements Buffer {
 
     @Override // org.jline.reader.Buffer
     public int length() {
-        return this.buffer.length - (this.f3231g1 - this.f3230g0);
+        return this.buffer.length - (this.f3195g1 - this.f3194g0);
     }
 
     @Override // org.jline.reader.Buffer
@@ -94,7 +94,7 @@ public class BufferImpl implements Buffer {
     }
 
     private int adjust(int i) {
-        return i >= this.f3230g0 ? (i + this.f3231g1) - this.f3230g0 : i;
+        return i >= this.f3194g0 ? (i + this.f3195g1) - this.f3194g0 : i;
     }
 
     @Override // org.jline.reader.Buffer
@@ -135,13 +135,13 @@ public class BufferImpl implements Buffer {
                 sz *= 2;
             }
             int[] nb = new int[sz];
-            System.arraycopy(this.buffer, 0, nb, 0, this.f3230g0);
-            System.arraycopy(this.buffer, this.f3231g1, nb, (this.f3231g1 + sz) - this.buffer.length, this.buffer.length - this.f3231g1);
-            this.f3231g1 += sz - this.buffer.length;
+            System.arraycopy(this.buffer, 0, nb, 0, this.f3194g0);
+            System.arraycopy(this.buffer, this.f3195g1, nb, (this.f3195g1 + sz) - this.buffer.length, this.buffer.length - this.f3195g1);
+            this.f3195g1 += sz - this.buffer.length;
             this.buffer = nb;
         }
         System.arraycopy(ucps, 0, this.buffer, this.cursor, ucps.length);
-        this.f3230g0 += ucps.length;
+        this.f3194g0 += ucps.length;
         this.cursor += ucps.length;
         this.cursorCol = -1;
     }
@@ -151,8 +151,8 @@ public class BufferImpl implements Buffer {
         if (length() == 0) {
             return false;
         }
-        this.f3230g0 = 0;
-        this.f3231g1 = this.buffer.length;
+        this.f3194g0 = 0;
+        this.f3195g1 = this.buffer.length;
         this.cursor = 0;
         this.cursorCol = -1;
         return true;
@@ -168,14 +168,14 @@ public class BufferImpl implements Buffer {
         if (start >= end || start < 0 || end > length()) {
             return "";
         }
-        if (end <= this.f3230g0) {
+        if (end <= this.f3194g0) {
             return new String(this.buffer, start, end - start);
         }
-        if (start > this.f3230g0) {
-            return new String(this.buffer, (this.f3231g1 - this.f3230g0) + start, end - start);
+        if (start > this.f3194g0) {
+            return new String(this.buffer, (this.f3195g1 - this.f3194g0) + start, end - start);
         }
         int[] b = (int[]) this.buffer.clone();
-        System.arraycopy(b, this.f3231g1, b, this.f3230g0, b.length - this.f3231g1);
+        System.arraycopy(b, this.f3195g1, b, this.f3194g0, b.length - this.f3195g1);
         return new String(b, start, end - start);
     }
 
@@ -284,7 +284,7 @@ public class BufferImpl implements Buffer {
         int count = Math.max(Math.min(this.cursor, num), 0);
         moveGapToCursor();
         this.cursor -= count;
-        this.f3230g0 -= count;
+        this.f3194g0 -= count;
         this.cursorCol = -1;
         return count;
     }
@@ -298,7 +298,7 @@ public class BufferImpl implements Buffer {
     public int delete(int num) {
         int count = Math.max(Math.min(length() - this.cursor, num), 0);
         moveGapToCursor();
-        this.f3231g1 += count;
+        this.f3195g1 += count;
         this.cursorCol = -1;
         return count;
     }
@@ -319,24 +319,24 @@ public class BufferImpl implements Buffer {
             throw new IllegalStateException();
         }
         BufferImpl that = (BufferImpl) buf;
-        this.f3230g0 = that.f3230g0;
-        this.f3231g1 = that.f3231g1;
+        this.f3194g0 = that.f3194g0;
+        this.f3195g1 = that.f3195g1;
         this.buffer = (int[]) that.buffer.clone();
         this.cursor = that.cursor;
         this.cursorCol = that.cursorCol;
     }
 
     private void moveGapToCursor() {
-        if (this.cursor < this.f3230g0) {
-            int l = this.f3230g0 - this.cursor;
-            System.arraycopy(this.buffer, this.cursor, this.buffer, this.f3231g1 - l, l);
-            this.f3230g0 -= l;
-            this.f3231g1 -= l;
-        } else if (this.cursor > this.f3230g0) {
-            int l2 = this.cursor - this.f3230g0;
-            System.arraycopy(this.buffer, this.f3231g1, this.buffer, this.f3230g0, l2);
-            this.f3230g0 += l2;
-            this.f3231g1 += l2;
+        if (this.cursor < this.f3194g0) {
+            int l = this.f3194g0 - this.cursor;
+            System.arraycopy(this.buffer, this.cursor, this.buffer, this.f3195g1 - l, l);
+            this.f3194g0 -= l;
+            this.f3195g1 -= l;
+        } else if (this.cursor > this.f3194g0) {
+            int l2 = this.cursor - this.f3194g0;
+            System.arraycopy(this.buffer, this.f3195g1, this.buffer, this.f3194g0, l2);
+            this.f3194g0 += l2;
+            this.f3195g1 += l2;
         }
     }
 }

@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChangeMpTeamAvatarReqOuterClass.class */
 public final class ChangeMpTeamAvatarReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bChangeMpTeamAvatarReq.proto\"J\n\u0015ChangeMpTeamAvatarReq\u0012\u0017\n\u000fcur_avatar_guid\u0018\u0003 \u0001(\u0004\u0012\u0018\n\u0010avatar_guid_list\u0018\u000e \u0003(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bChangeMpTeamAvatarReq.proto\"F\n\u0015ChangeMpTeamAvatarReq\u0012\u0015\n\rcurAvatarGuid\u0018\b \u0001(\u0004\u0012\u0016\n\u000eavatarGuidList\u0018\u0002 \u0003(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ChangeMpTeamAvatarReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChangeMpTeamAvatarReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChangeMpTeamAvatarReq_descriptor, new String[]{"CurAvatarGuid", "AvatarGuidList"});
 
@@ -51,9 +51,9 @@ public final class ChangeMpTeamAvatarReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChangeMpTeamAvatarReqOuterClass$ChangeMpTeamAvatarReq.class */
     public static final class ChangeMpTeamAvatarReq extends GeneratedMessageV3 implements ChangeMpTeamAvatarReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CUR_AVATAR_GUID_FIELD_NUMBER = 3;
+        public static final int CURAVATARGUID_FIELD_NUMBER = 8;
         private long curAvatarGuid_;
-        public static final int AVATAR_GUID_LIST_FIELD_NUMBER = 14;
+        public static final int AVATARGUIDLIST_FIELD_NUMBER = 2;
         private Internal.LongList avatarGuidList_;
         private int avatarGuidListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -107,17 +107,14 @@ public final class ChangeMpTeamAvatarReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 24:
-                                    this.curAvatarGuid_ = input.readUInt64();
-                                    break;
-                                case 112:
+                                case 16:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.avatarGuidList_ = newLongList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.avatarGuidList_.addLong(input.readUInt64());
                                     break;
-                                case 114:
+                                case 18:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.avatarGuidList_ = newLongList();
@@ -127,6 +124,9 @@ public final class ChangeMpTeamAvatarReqOuterClass {
                                         this.avatarGuidList_.addLong(input.readUInt64());
                                     }
                                     input.popLimit(limit);
+                                    break;
+                                case 64:
+                                    this.curAvatarGuid_ = input.readUInt64();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -197,15 +197,15 @@ public final class ChangeMpTeamAvatarReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (this.curAvatarGuid_ != 0) {
-                output.writeUInt64(3, this.curAvatarGuid_);
-            }
             if (getAvatarGuidListList().size() > 0) {
-                output.writeUInt32NoTag(114);
+                output.writeUInt32NoTag(18);
                 output.writeUInt32NoTag(this.avatarGuidListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.avatarGuidList_.size(); i++) {
                 output.writeUInt64NoTag(this.avatarGuidList_.getLong(i));
+            }
+            if (this.curAvatarGuid_ != 0) {
+                output.writeUInt64(8, this.curAvatarGuid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -216,22 +216,21 @@ public final class ChangeMpTeamAvatarReqOuterClass {
             if (size != -1) {
                 return size;
             }
-            int size2 = 0;
-            if (this.curAvatarGuid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(3, this.curAvatarGuid_);
-            }
             int dataSize = 0;
             for (int i = 0; i < this.avatarGuidList_.size(); i++) {
                 dataSize += CodedOutputStream.computeUInt64SizeNoTag(this.avatarGuidList_.getLong(i));
             }
-            int size3 = size2 + dataSize;
+            int size2 = 0 + dataSize;
             if (!getAvatarGuidListList().isEmpty()) {
-                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.avatarGuidListMemoizedSerializedSize = dataSize;
-            int size4 = size3 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size4;
-            return size4;
+            if (this.curAvatarGuid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(8, this.curAvatarGuid_);
+            }
+            int size3 = size2 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size3;
+            return size3;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -251,9 +250,9 @@ public final class ChangeMpTeamAvatarReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + Internal.hashLong(getCurAvatarGuid());
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + Internal.hashLong(getCurAvatarGuid());
             if (getAvatarGuidListCount() > 0) {
-                hash = (53 * ((37 * hash) + 14)) + getAvatarGuidListList().hashCode();
+                hash = (53 * ((37 * hash) + 2)) + getAvatarGuidListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

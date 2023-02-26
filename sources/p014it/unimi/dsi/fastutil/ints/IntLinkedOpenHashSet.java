@@ -30,13 +30,13 @@ public class IntLinkedOpenHashSet extends AbstractIntSortedSet implements Serial
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f2185n;
+    protected transient int f2149n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2186f;
+    protected final float f2150f;
     private static final int SPLITERATOR_CHARACTERISTICS = 337;
 
     public IntLinkedOpenHashSet(int expected, float f) {
@@ -47,14 +47,14 @@ public class IntLinkedOpenHashSet extends AbstractIntSortedSet implements Serial
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2186f = f;
+            this.f2150f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2185n = arraySize;
+            this.f2149n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2185n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2185n, f);
-            this.key = new int[this.f2185n + 1];
-            this.link = new long[this.f2185n + 1];
+            this.mask = this.f2149n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2149n, f);
+            this.key = new int[this.f2149n + 1];
+            this.link = new long[this.f2149n + 1];
         }
     }
 
@@ -195,22 +195,22 @@ public class IntLinkedOpenHashSet extends AbstractIntSortedSet implements Serial
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2186f);
-        if (needed > this.f2185n) {
+        int needed = HashCommon.arraySize(capacity, this.f2150f);
+        if (needed > this.f2149n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2186f)))));
-        if (needed > this.f2185n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2150f)))));
+        if (needed > this.f2149n) {
             rehash(needed);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntCollection, p014it.unimi.dsi.fastutil.ints.IntCollection
     public boolean addAll(IntCollection c) {
-        if (((double) this.f2186f) <= 0.5d) {
+        if (((double) this.f2150f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -220,7 +220,7 @@ public class IntLinkedOpenHashSet extends AbstractIntSortedSet implements Serial
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Integer> c) {
-        if (((double) this.f2186f) <= 0.5d) {
+        if (((double) this.f2150f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -254,7 +254,7 @@ public class IntLinkedOpenHashSet extends AbstractIntSortedSet implements Serial
         } else if (this.containsNull) {
             return false;
         } else {
-            pos = this.f2185n;
+            pos = this.f2149n;
             this.containsNull = true;
         }
         if (this.size == 0) {
@@ -273,7 +273,7 @@ public class IntLinkedOpenHashSet extends AbstractIntSortedSet implements Serial
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f2186f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f2150f));
         return true;
     }
 
@@ -311,22 +311,22 @@ public class IntLinkedOpenHashSet extends AbstractIntSortedSet implements Serial
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f2185n <= this.minN || this.size >= this.maxFill / 4 || this.f2185n <= 16) {
+        if (this.f2149n <= this.minN || this.size >= this.maxFill / 4 || this.f2149n <= 16) {
             return true;
         }
-        rehash(this.f2185n / 2);
+        rehash(this.f2149n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f2185n] = 0;
+        this.key[this.f2149n] = 0;
         this.size--;
-        fixPointers(this.f2185n);
-        if (this.f2185n <= this.minN || this.size >= this.maxFill / 4 || this.f2185n <= 16) {
+        fixPointers(this.f2149n);
+        if (this.f2149n <= this.minN || this.size >= this.maxFill / 4 || this.f2149n <= 16) {
             return true;
         }
-        rehash(this.f2185n / 2);
+        rehash(this.f2149n / 2);
         return true;
     }
 
@@ -402,12 +402,12 @@ public class IntLinkedOpenHashSet extends AbstractIntSortedSet implements Serial
         this.size--;
         if (k == 0) {
             this.containsNull = false;
-            this.key[this.f2185n] = 0;
+            this.key[this.f2149n] = 0;
         } else {
             shiftKeys(pos);
         }
-        if (this.f2185n > this.minN && this.size < this.maxFill / 4 && this.f2185n > 16) {
-            rehash(this.f2185n / 2);
+        if (this.f2149n > this.minN && this.size < this.maxFill / 4 && this.f2149n > 16) {
+            rehash(this.f2149n / 2);
         }
         return k;
     }
@@ -427,12 +427,12 @@ public class IntLinkedOpenHashSet extends AbstractIntSortedSet implements Serial
         this.size--;
         if (k == 0) {
             this.containsNull = false;
-            this.key[this.f2185n] = 0;
+            this.key[this.f2149n] = 0;
         } else {
             shiftKeys(pos);
         }
-        if (this.f2185n > this.minN && this.size < this.maxFill / 4 && this.f2185n > 16) {
-            rehash(this.f2185n / 2);
+        if (this.f2149n > this.minN && this.size < this.maxFill / 4 && this.f2149n > 16) {
+            rehash(this.f2149n / 2);
         }
         return k;
     }
@@ -504,11 +504,11 @@ public class IntLinkedOpenHashSet extends AbstractIntSortedSet implements Serial
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToFirst(this.f2185n);
+            moveIndexToFirst(this.f2149n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f2185n;
+            pos = this.f2149n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -527,7 +527,7 @@ public class IntLinkedOpenHashSet extends AbstractIntSortedSet implements Serial
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f2186f));
+        rehash(HashCommon.arraySize(this.size, this.f2150f));
         return true;
     }
 
@@ -550,11 +550,11 @@ public class IntLinkedOpenHashSet extends AbstractIntSortedSet implements Serial
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToLast(this.f2185n);
+            moveIndexToLast(this.f2149n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f2185n;
+            pos = this.f2149n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -573,7 +573,7 @@ public class IntLinkedOpenHashSet extends AbstractIntSortedSet implements Serial
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f2186f));
+        rehash(HashCommon.arraySize(this.size, this.f2150f));
         return true;
     }
 
@@ -718,8 +718,8 @@ public class IntLinkedOpenHashSet extends AbstractIntSortedSet implements Serial
             this.index = -1;
             if (from == 0) {
                 if (IntLinkedOpenHashSet.this.containsNull) {
-                    this.next = (int) IntLinkedOpenHashSet.this.link[IntLinkedOpenHashSet.this.f2185n];
-                    this.prev = IntLinkedOpenHashSet.this.f2185n;
+                    this.next = (int) IntLinkedOpenHashSet.this.link[IntLinkedOpenHashSet.this.f2149n];
+                    this.prev = IntLinkedOpenHashSet.this.f2149n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + from + " does not belong to this set.");
@@ -858,9 +858,9 @@ public class IntLinkedOpenHashSet extends AbstractIntSortedSet implements Serial
             }
             int pos = this.curr;
             this.curr = -1;
-            if (pos == IntLinkedOpenHashSet.this.f2185n) {
+            if (pos == IntLinkedOpenHashSet.this.f2149n) {
                 IntLinkedOpenHashSet.this.containsNull = false;
-                IntLinkedOpenHashSet.this.key[IntLinkedOpenHashSet.this.f2185n] = 0;
+                IntLinkedOpenHashSet.this.key[IntLinkedOpenHashSet.this.f2149n] = 0;
                 return;
             }
             int[] key = IntLinkedOpenHashSet.this.key;
@@ -930,8 +930,8 @@ public class IntLinkedOpenHashSet extends AbstractIntSortedSet implements Serial
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2186f)));
-        if (l >= this.f2185n || this.size > HashCommon.maxFill(l, this.f2186f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2150f)));
+        if (l >= this.f2149n || this.size > HashCommon.maxFill(l, this.f2150f)) {
             return true;
         }
         try {
@@ -989,9 +989,9 @@ public class IntLinkedOpenHashSet extends AbstractIntSortedSet implements Serial
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f2185n = newN;
+        this.f2149n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f2185n, this.f2186f);
+        this.maxFill = HashCommon.maxFill(this.f2149n, this.f2150f);
         this.key = newKey;
     }
 
@@ -1044,12 +1044,12 @@ public class IntLinkedOpenHashSet extends AbstractIntSortedSet implements Serial
         int pos;
         int i;
         s.defaultReadObject();
-        this.f2185n = HashCommon.arraySize(this.size, this.f2186f);
-        this.maxFill = HashCommon.maxFill(this.f2185n, this.f2186f);
-        this.mask = this.f2185n - 1;
-        int[] key = new int[this.f2185n + 1];
+        this.f2149n = HashCommon.arraySize(this.size, this.f2150f);
+        this.maxFill = HashCommon.maxFill(this.f2149n, this.f2150f);
+        this.mask = this.f2149n - 1;
+        int[] key = new int[this.f2149n + 1];
         this.key = key;
-        long[] link = new long[this.f2185n + 1];
+        long[] link = new long[this.f2149n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -1062,7 +1062,7 @@ public class IntLinkedOpenHashSet extends AbstractIntSortedSet implements Serial
             }
             int k = s.readInt();
             if (k == 0) {
-                pos = this.f2185n;
+                pos = this.f2149n;
                 this.containsNull = true;
             } else {
                 int mix = HashCommon.mix(k) & this.mask;

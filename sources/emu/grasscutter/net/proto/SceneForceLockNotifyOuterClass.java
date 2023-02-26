@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneForceLockNotifyOuterClass.class */
 public final class SceneForceLockNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aSceneForceLockNotify.proto\"-\n\u0014SceneForceLockNotify\u0012\u0015\n\rforce_id_list\u0018\u0001 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aSceneForceLockNotify.proto\"+\n\u0014SceneForceLockNotify\u0012\u0013\n\u000bforceIdList\u0018\u0006 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SceneForceLockNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SceneForceLockNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneForceLockNotify_descriptor, new String[]{"ForceIdList"});
 
@@ -49,7 +49,7 @@ public final class SceneForceLockNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneForceLockNotifyOuterClass$SceneForceLockNotify.class */
     public static final class SceneForceLockNotify extends GeneratedMessageV3 implements SceneForceLockNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int FORCE_ID_LIST_FIELD_NUMBER = 1;
+        public static final int FORCEIDLIST_FIELD_NUMBER = 6;
         private Internal.IntList forceIdList_;
         private int forceIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -103,14 +103,14 @@ public final class SceneForceLockNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
+                                case 48:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.forceIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.forceIdList_.addInt(input.readUInt32());
                                     break;
-                                case 10:
+                                case 50:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.forceIdList_ = newIntList();
@@ -186,7 +186,7 @@ public final class SceneForceLockNotifyOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getForceIdListList().size() > 0) {
-                output.writeUInt32NoTag(10);
+                output.writeUInt32NoTag(50);
                 output.writeUInt32NoTag(this.forceIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.forceIdList_.size(); i++) {
@@ -234,7 +234,7 @@ public final class SceneForceLockNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getForceIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 1)) + getForceIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 6)) + getForceIdListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

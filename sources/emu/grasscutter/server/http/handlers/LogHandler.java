@@ -196,7 +196,7 @@ public final class LogHandler implements Router {
             emu.grasscutter.server.http.log.LogWeb[] r0 = (emu.grasscutter.server.http.log.LogWeb[]) r0
             r7 = r0
             r0 = r7
-            if (r0 == 0) goto L_0x0020
+            if (r0 == 0) goto L_0x007f
             r0 = r7
             int r0 = r0.length
             r1 = 1
@@ -341,7 +341,7 @@ public final class LogHandler implements Router {
             emu.grasscutter.server.http.error.LogError[] r0 = (emu.grasscutter.server.http.error.LogError[]) r0
             r11 = r0
             r0 = r11
-            if (r0 == 0) goto L_0x0020
+            if (r0 == 0) goto L_0x0095
             r0 = r11
             int r0 = r0.length
             r1 = 1

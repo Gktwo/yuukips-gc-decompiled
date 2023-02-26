@@ -22,13 +22,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestCreateEntityReqOuterClass.class */
 public final class QuestCreateEntityReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aQuestCreateEntityReq.proto\u001a\u0016CreateEntityInfo.proto\"w\n\u0014QuestCreateEntityReq\u0012\u0017\n\u000fparent_quest_id\u0018\u000e \u0001(\r\u0012!\n\u0006entity\u0018\u0003 \u0001(\u000b2\u0011.CreateEntityInfo\u0012\u0010\n\bquest_id\u0018\u0005 \u0001(\r\u0012\u0011\n\tis_rewind\u0018\u000b \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CreateEntityInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aQuestCreateEntityReq.proto\u001a\u0016CreateEntityInfo.proto\"s\n\u0014QuestCreateEntityReq\u0012\u0015\n\rparentQuestId\u0018\u0004 \u0001(\r\u0012\u0010\n\bisRewind\u0018\f \u0001(\b\u0012!\n\u0006entity\u0018\u000b \u0001(\u000b2\u0011.CreateEntityInfo\u0012\u000f\n\u0007questId\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CreateEntityInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_QuestCreateEntityReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_QuestCreateEntityReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QuestCreateEntityReq_descriptor, new String[]{"ParentQuestId", "Entity", "QuestId", "IsRewind"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_QuestCreateEntityReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QuestCreateEntityReq_descriptor, new String[]{"ParentQuestId", "IsRewind", "Entity", "QuestId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestCreateEntityReqOuterClass$QuestCreateEntityReqOrBuilder.class */
     public interface QuestCreateEntityReqOrBuilder extends MessageOrBuilder {
         int getParentQuestId();
+
+        boolean getIsRewind();
 
         boolean hasEntity();
 
@@ -37,8 +39,6 @@ public final class QuestCreateEntityReqOuterClass {
         CreateEntityInfoOuterClass.CreateEntityInfoOrBuilder getEntityOrBuilder();
 
         int getQuestId();
-
-        boolean getIsRewind();
     }
 
     private QuestCreateEntityReqOuterClass() {
@@ -54,14 +54,14 @@ public final class QuestCreateEntityReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestCreateEntityReqOuterClass$QuestCreateEntityReq.class */
     public static final class QuestCreateEntityReq extends GeneratedMessageV3 implements QuestCreateEntityReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PARENT_QUEST_ID_FIELD_NUMBER = 14;
+        public static final int PARENTQUESTID_FIELD_NUMBER = 4;
         private int parentQuestId_;
-        public static final int ENTITY_FIELD_NUMBER = 3;
-        private CreateEntityInfoOuterClass.CreateEntityInfo entity_;
-        public static final int QUEST_ID_FIELD_NUMBER = 5;
-        private int questId_;
-        public static final int IS_REWIND_FIELD_NUMBER = 11;
+        public static final int ISREWIND_FIELD_NUMBER = 12;
         private boolean isRewind_;
+        public static final int ENTITY_FIELD_NUMBER = 11;
+        private CreateEntityInfoOuterClass.CreateEntityInfo entity_;
+        public static final int QUESTID_FIELD_NUMBER = 10;
+        private int questId_;
         private byte memoizedIsInitialized;
         private static final QuestCreateEntityReq DEFAULT_INSTANCE = new QuestCreateEntityReq();
         private static final Parser<QuestCreateEntityReq> PARSER = new AbstractParser<QuestCreateEntityReq>() { // from class: emu.grasscutter.net.proto.QuestCreateEntityReqOuterClass.QuestCreateEntityReq.1
@@ -107,7 +107,13 @@ public final class QuestCreateEntityReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 26:
+                            case 32:
+                                this.parentQuestId_ = input.readUInt32();
+                                break;
+                            case 80:
+                                this.questId_ = input.readUInt32();
+                                break;
+                            case 90:
                                 CreateEntityInfoOuterClass.CreateEntityInfo.Builder subBuilder = this.entity_ != null ? this.entity_.toBuilder() : null;
                                 this.entity_ = (CreateEntityInfoOuterClass.CreateEntityInfo) input.readMessage(CreateEntityInfoOuterClass.CreateEntityInfo.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -117,14 +123,8 @@ public final class QuestCreateEntityReqOuterClass {
                                     this.entity_ = subBuilder.buildPartial();
                                     break;
                                 }
-                            case 40:
-                                this.questId_ = input.readUInt32();
-                                break;
-                            case 88:
+                            case 96:
                                 this.isRewind_ = input.readBool();
-                                break;
-                            case 112:
-                                this.parentQuestId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -161,6 +161,11 @@ public final class QuestCreateEntityReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.QuestCreateEntityReqOuterClass.QuestCreateEntityReqOrBuilder
+        public boolean getIsRewind() {
+            return this.isRewind_;
+        }
+
+        @Override // emu.grasscutter.net.proto.QuestCreateEntityReqOuterClass.QuestCreateEntityReqOrBuilder
         public boolean hasEntity() {
             return this.entity_ != null;
         }
@@ -180,11 +185,6 @@ public final class QuestCreateEntityReqOuterClass {
             return this.questId_;
         }
 
-        @Override // emu.grasscutter.net.proto.QuestCreateEntityReqOuterClass.QuestCreateEntityReqOrBuilder
-        public boolean getIsRewind() {
-            return this.isRewind_;
-        }
-
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -200,17 +200,17 @@ public final class QuestCreateEntityReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.entity_ != null) {
-                output.writeMessage(3, getEntity());
+            if (this.parentQuestId_ != 0) {
+                output.writeUInt32(4, this.parentQuestId_);
             }
             if (this.questId_ != 0) {
-                output.writeUInt32(5, this.questId_);
+                output.writeUInt32(10, this.questId_);
+            }
+            if (this.entity_ != null) {
+                output.writeMessage(11, getEntity());
             }
             if (this.isRewind_) {
-                output.writeBool(11, this.isRewind_);
-            }
-            if (this.parentQuestId_ != 0) {
-                output.writeUInt32(14, this.parentQuestId_);
+                output.writeBool(12, this.isRewind_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -222,17 +222,17 @@ public final class QuestCreateEntityReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.entity_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(3, getEntity());
+            if (this.parentQuestId_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.parentQuestId_);
             }
             if (this.questId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.questId_);
+                size2 += CodedOutputStream.computeUInt32Size(10, this.questId_);
+            }
+            if (this.entity_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(11, getEntity());
             }
             if (this.isRewind_) {
-                size2 += CodedOutputStream.computeBoolSize(11, this.isRewind_);
-            }
-            if (this.parentQuestId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.parentQuestId_);
+                size2 += CodedOutputStream.computeBoolSize(12, this.isRewind_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -248,8 +248,8 @@ public final class QuestCreateEntityReqOuterClass {
                 return equals(obj);
             }
             QuestCreateEntityReq other = (QuestCreateEntityReq) obj;
-            if (getParentQuestId() == other.getParentQuestId() && hasEntity() == other.hasEntity()) {
-                return (!hasEntity() || getEntity().equals(other.getEntity())) && getQuestId() == other.getQuestId() && getIsRewind() == other.getIsRewind() && this.unknownFields.equals(other.unknownFields);
+            if (getParentQuestId() == other.getParentQuestId() && getIsRewind() == other.getIsRewind() && hasEntity() == other.hasEntity()) {
+                return (!hasEntity() || getEntity().equals(other.getEntity())) && getQuestId() == other.getQuestId() && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -259,11 +259,11 @@ public final class QuestCreateEntityReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getParentQuestId();
+            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getParentQuestId())) + 12)) + Internal.hashBoolean(getIsRewind());
             if (hasEntity()) {
-                hash = (53 * ((37 * hash) + 3)) + getEntity().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + getEntity().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 5)) + getQuestId())) + 11)) + Internal.hashBoolean(getIsRewind()))) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 10)) + getQuestId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -343,10 +343,10 @@ public final class QuestCreateEntityReqOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestCreateEntityReqOuterClass$QuestCreateEntityReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements QuestCreateEntityReqOrBuilder {
             private int parentQuestId_;
+            private boolean isRewind_;
             private CreateEntityInfoOuterClass.CreateEntityInfo entity_;
             private SingleFieldBuilderV3<CreateEntityInfoOuterClass.CreateEntityInfo, CreateEntityInfoOuterClass.CreateEntityInfo.Builder, CreateEntityInfoOuterClass.CreateEntityInfoOrBuilder> entityBuilder_;
             private int questId_;
-            private boolean isRewind_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return QuestCreateEntityReqOuterClass.internal_static_QuestCreateEntityReq_descriptor;
@@ -375,6 +375,7 @@ public final class QuestCreateEntityReqOuterClass {
             public Builder clear() {
                 clear();
                 this.parentQuestId_ = 0;
+                this.isRewind_ = false;
                 if (this.entityBuilder_ == null) {
                     this.entity_ = null;
                 } else {
@@ -382,7 +383,6 @@ public final class QuestCreateEntityReqOuterClass {
                     this.entityBuilder_ = null;
                 }
                 this.questId_ = 0;
-                this.isRewind_ = false;
                 return this;
             }
 
@@ -409,13 +409,13 @@ public final class QuestCreateEntityReqOuterClass {
             public QuestCreateEntityReq buildPartial() {
                 QuestCreateEntityReq result = new QuestCreateEntityReq(this);
                 result.parentQuestId_ = this.parentQuestId_;
+                result.isRewind_ = this.isRewind_;
                 if (this.entityBuilder_ == null) {
                     result.entity_ = this.entity_;
                 } else {
                     result.entity_ = this.entityBuilder_.build();
                 }
                 result.questId_ = this.questId_;
-                result.isRewind_ = this.isRewind_;
                 onBuilt();
                 return result;
             }
@@ -466,14 +466,14 @@ public final class QuestCreateEntityReqOuterClass {
                 if (other.getParentQuestId() != 0) {
                     setParentQuestId(other.getParentQuestId());
                 }
+                if (other.getIsRewind()) {
+                    setIsRewind(other.getIsRewind());
+                }
                 if (other.hasEntity()) {
                     mergeEntity(other.getEntity());
                 }
                 if (other.getQuestId() != 0) {
                     setQuestId(other.getQuestId());
-                }
-                if (other.getIsRewind()) {
-                    setIsRewind(other.getIsRewind());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -520,6 +520,23 @@ public final class QuestCreateEntityReqOuterClass {
 
             public Builder clearParentQuestId() {
                 this.parentQuestId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.QuestCreateEntityReqOuterClass.QuestCreateEntityReqOrBuilder
+            public boolean getIsRewind() {
+                return this.isRewind_;
+            }
+
+            public Builder setIsRewind(boolean value) {
+                this.isRewind_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsRewind() {
+                this.isRewind_ = false;
                 onChanged();
                 return this;
             }
@@ -618,23 +635,6 @@ public final class QuestCreateEntityReqOuterClass {
 
             public Builder clearQuestId() {
                 this.questId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.QuestCreateEntityReqOuterClass.QuestCreateEntityReqOrBuilder
-            public boolean getIsRewind() {
-                return this.isRewind_;
-            }
-
-            public Builder setIsRewind(boolean value) {
-                this.isRewind_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsRewind() {
-                this.isRewind_ = false;
                 onChanged();
                 return this;
             }

@@ -154,31 +154,45 @@ public abstract class GameEntity {
     }
 
     public void setFightProperty(FightProperty prop, float value) {
-        getFightProperties().put(prop.getId(), value);
+        if (getFightProperties() != null) {
+            getFightProperties().put(prop.getId(), value);
+        }
     }
 
     public void setFightProperty(int id, float value) {
-        getFightProperties().put(id, value);
+        if (getFightProperties() != null) {
+            getFightProperties().put(id, value);
+        }
     }
 
     public void addFightProperty(FightProperty prop, float value) {
-        getFightProperties().put(prop.getId(), getFightProperty(prop) + value);
+        if (getFightProperties() != null) {
+            getFightProperties().put(prop.getId(), getFightProperty(prop) + value);
+        }
     }
 
     public float getFightProperty(FightProperty prop) {
-        return getFightProperties().getOrDefault(prop.getId(), 0.0f);
+        if (getFightProperties() != null) {
+            return getFightProperties().getOrDefault(prop.getId(), 0.0f);
+        }
+        return 0.0f;
     }
 
     public boolean hasFightProperty(FightProperty prop) {
-        return getFightProperties().containsKey(prop.getId());
+        if (getFightProperties() != null) {
+            return getFightProperties().containsKey(prop.getId());
+        }
+        return false;
     }
 
     public void addAllFightPropsToEntityInfo(SceneEntityInfoOuterClass.SceneEntityInfo.Builder entityInfo) {
-        getFightProperties().forEach(key, value -> {
-            if (key.intValue() != 0) {
-                entityInfo.addFightPropList(FightPropPairOuterClass.FightPropPair.newBuilder().setPropType(key.intValue()).setPropValue(value.floatValue()).build());
-            }
-        });
+        if (getFightProperties() != null) {
+            getFightProperties().forEach(key, value -> {
+                if (key.intValue() != 0) {
+                    entityInfo.addFightPropList(FightPropPairOuterClass.FightPropPair.newBuilder().setPropType(key.intValue()).setPropValue(value.floatValue()).build());
+                }
+            });
+        }
     }
 
     protected MotionInfoOuterClass.MotionInfo getMotionInfo() {

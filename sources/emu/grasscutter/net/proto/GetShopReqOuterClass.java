@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetShopReqOuterClass.class */
 public final class GetShopReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010GetShopReq.proto\"\u001f\n\nGetShopReq\u0012\u0011\n\tshop_type\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010GetShopReq.proto\"\u001e\n\nGetShopReq\u0012\u0010\n\bshopType\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GetShopReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetShopReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetShopReq_descriptor, new String[]{"ShopType"});
 
@@ -41,7 +41,7 @@ public final class GetShopReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetShopReqOuterClass$GetShopReq.class */
     public static final class GetShopReq extends GeneratedMessageV3 implements GetShopReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SHOP_TYPE_FIELD_NUMBER = 9;
+        public static final int SHOPTYPE_FIELD_NUMBER = 5;
         private int shopType_;
         private byte memoizedIsInitialized;
         private static final GetShopReq DEFAULT_INSTANCE = new GetShopReq();
@@ -88,7 +88,7 @@ public final class GetShopReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 72:
+                            case 40:
                                 this.shopType_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class GetShopReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.shopType_ != 0) {
-                output.writeUInt32(9, this.shopType_);
+                output.writeUInt32(5, this.shopType_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class GetShopReqOuterClass {
             }
             int size2 = 0;
             if (this.shopType_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(9, this.shopType_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.shopType_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class GetShopReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getShopType())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getShopType())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

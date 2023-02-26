@@ -19,17 +19,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CityInfoOuterClass.class */
 public final class CityInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000eCityInfo.proto\"?\n\bCityInfo\u0012\u000f\n\u0007city_id\u0018\t \u0001(\r\u0012\r\n\u0005level\u0018\f \u0001(\r\u0012\u0013\n\u000bcrystal_num\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000eCityInfo.proto\"=\n\bCityInfo\u0012\u0012\n\ncrystalNum\u0018\u000f \u0001(\r\u0012\u000e\n\u0006cityId\u0018\u0006 \u0001(\r\u0012\r\n\u0005level\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_CityInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_CityInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CityInfo_descriptor, new String[]{"CityId", "Level", "CrystalNum"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_CityInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CityInfo_descriptor, new String[]{"CrystalNum", "CityId", "Level"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CityInfoOuterClass$CityInfoOrBuilder.class */
     public interface CityInfoOrBuilder extends MessageOrBuilder {
+        int getCrystalNum();
+
         int getCityId();
 
         int getLevel();
-
-        int getCrystalNum();
     }
 
     private CityInfoOuterClass() {
@@ -45,12 +45,12 @@ public final class CityInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CityInfoOuterClass$CityInfo.class */
     public static final class CityInfo extends GeneratedMessageV3 implements CityInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CITY_ID_FIELD_NUMBER = 9;
-        private int cityId_;
-        public static final int LEVEL_FIELD_NUMBER = 12;
-        private int level_;
-        public static final int CRYSTAL_NUM_FIELD_NUMBER = 2;
+        public static final int CRYSTALNUM_FIELD_NUMBER = 15;
         private int crystalNum_;
+        public static final int CITYID_FIELD_NUMBER = 6;
+        private int cityId_;
+        public static final int LEVEL_FIELD_NUMBER = 11;
+        private int level_;
         private byte memoizedIsInitialized;
         private static final CityInfo DEFAULT_INSTANCE = new CityInfo();
         private static final Parser<CityInfo> PARSER = new AbstractParser<CityInfo>() { // from class: emu.grasscutter.net.proto.CityInfoOuterClass.CityInfo.1
@@ -97,14 +97,14 @@ public final class CityInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
-                                    this.crystalNum_ = input.readUInt32();
-                                    break;
-                                case 72:
+                                case 48:
                                     this.cityId_ = input.readUInt32();
                                     break;
-                                case 96:
+                                case 88:
                                     this.level_ = input.readUInt32();
+                                    break;
+                                case 120:
+                                    this.crystalNum_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -137,6 +137,11 @@ public final class CityInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.CityInfoOuterClass.CityInfoOrBuilder
+        public int getCrystalNum() {
+            return this.crystalNum_;
+        }
+
+        @Override // emu.grasscutter.net.proto.CityInfoOuterClass.CityInfoOrBuilder
         public int getCityId() {
             return this.cityId_;
         }
@@ -144,11 +149,6 @@ public final class CityInfoOuterClass {
         @Override // emu.grasscutter.net.proto.CityInfoOuterClass.CityInfoOrBuilder
         public int getLevel() {
             return this.level_;
-        }
-
-        @Override // emu.grasscutter.net.proto.CityInfoOuterClass.CityInfoOrBuilder
-        public int getCrystalNum() {
-            return this.crystalNum_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -166,14 +166,14 @@ public final class CityInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.crystalNum_ != 0) {
-                output.writeUInt32(2, this.crystalNum_);
-            }
             if (this.cityId_ != 0) {
-                output.writeUInt32(9, this.cityId_);
+                output.writeUInt32(6, this.cityId_);
             }
             if (this.level_ != 0) {
-                output.writeUInt32(12, this.level_);
+                output.writeUInt32(11, this.level_);
+            }
+            if (this.crystalNum_ != 0) {
+                output.writeUInt32(15, this.crystalNum_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -185,14 +185,14 @@ public final class CityInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.crystalNum_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.crystalNum_);
-            }
             if (this.cityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.cityId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.cityId_);
             }
             if (this.level_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.level_);
+                size2 += CodedOutputStream.computeUInt32Size(11, this.level_);
+            }
+            if (this.crystalNum_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.crystalNum_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -208,7 +208,7 @@ public final class CityInfoOuterClass {
                 return equals(obj);
             }
             CityInfo other = (CityInfo) obj;
-            return getCityId() == other.getCityId() && getLevel() == other.getLevel() && getCrystalNum() == other.getCrystalNum() && this.unknownFields.equals(other.unknownFields);
+            return getCrystalNum() == other.getCrystalNum() && getCityId() == other.getCityId() && getLevel() == other.getLevel() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -216,7 +216,7 @@ public final class CityInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getCityId())) + 12)) + getLevel())) + 2)) + getCrystalNum())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getCrystalNum())) + 6)) + getCityId())) + 11)) + getLevel())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -295,9 +295,9 @@ public final class CityInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CityInfoOuterClass$CityInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements CityInfoOrBuilder {
+            private int crystalNum_;
             private int cityId_;
             private int level_;
-            private int crystalNum_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return CityInfoOuterClass.internal_static_CityInfo_descriptor;
@@ -325,9 +325,9 @@ public final class CityInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.crystalNum_ = 0;
                 this.cityId_ = 0;
                 this.level_ = 0;
-                this.crystalNum_ = 0;
                 return this;
             }
 
@@ -353,9 +353,9 @@ public final class CityInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public CityInfo buildPartial() {
                 CityInfo result = new CityInfo(this);
+                result.crystalNum_ = this.crystalNum_;
                 result.cityId_ = this.cityId_;
                 result.level_ = this.level_;
-                result.crystalNum_ = this.crystalNum_;
                 onBuilt();
                 return result;
             }
@@ -403,14 +403,14 @@ public final class CityInfoOuterClass {
                 if (other == CityInfo.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getCrystalNum() != 0) {
+                    setCrystalNum(other.getCrystalNum());
+                }
                 if (other.getCityId() != 0) {
                     setCityId(other.getCityId());
                 }
                 if (other.getLevel() != 0) {
                     setLevel(other.getLevel());
-                }
-                if (other.getCrystalNum() != 0) {
-                    setCrystalNum(other.getCrystalNum());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -445,6 +445,23 @@ public final class CityInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.CityInfoOuterClass.CityInfoOrBuilder
+            public int getCrystalNum() {
+                return this.crystalNum_;
+            }
+
+            public Builder setCrystalNum(int value) {
+                this.crystalNum_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearCrystalNum() {
+                this.crystalNum_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.CityInfoOuterClass.CityInfoOrBuilder
             public int getCityId() {
                 return this.cityId_;
             }
@@ -474,23 +491,6 @@ public final class CityInfoOuterClass {
 
             public Builder clearLevel() {
                 this.level_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.CityInfoOuterClass.CityInfoOrBuilder
-            public int getCrystalNum() {
-                return this.crystalNum_;
-            }
-
-            public Builder setCrystalNum(int value) {
-                this.crystalNum_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearCrystalNum() {
-                this.crystalNum_ = 0;
                 onChanged();
                 return this;
             }

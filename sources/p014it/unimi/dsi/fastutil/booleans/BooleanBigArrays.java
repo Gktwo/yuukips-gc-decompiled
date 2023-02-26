@@ -474,15 +474,15 @@ public final class BooleanBigArrays {
         private final long from;
 
         /* renamed from: to */
-        private final long f1058to;
+        private final long f1022to;
 
         /* renamed from: x */
-        private final boolean[][] f1059x;
+        private final boolean[][] f1023x;
 
         public ForkJoinQuickSort(boolean[][] x, long from, long to) {
             this.from = from;
-            this.f1058to = to;
-            this.f1059x = x;
+            this.f1022to = to;
+            this.f1023x = x;
         }
 
         /* JADX DEBUG: Failed to insert an additional move for type inference into block B:40:0x00ad */
@@ -548,16 +548,16 @@ public final class BooleanBigArrays {
         private final long from;
 
         /* renamed from: to */
-        private final long f1060to;
+        private final long f1024to;
 
         /* renamed from: x */
-        private final boolean[][] f1061x;
+        private final boolean[][] f1025x;
         private final BooleanComparator comp;
 
         public ForkJoinQuickSortComp(boolean[][] x, long from, long to, BooleanComparator comp) {
             this.from = from;
-            this.f1060to = to;
-            this.f1061x = x;
+            this.f1024to = to;
+            this.f1025x = x;
             this.comp = comp;
         }
 

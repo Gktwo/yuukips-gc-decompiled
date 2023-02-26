@@ -23,17 +23,17 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriChessMonsterInfoOuterClass.class */
 public final class IrodoriChessMonsterInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dIrodoriChessMonsterInfo.proto\"f\n\u0017IrodoriChessMonsterInfo\u0012\u0014\n\fgrant_points\u0018\u0007 \u0001(\r\u0012\u0012\n\nmonster_id\u0018\r \u0001(\r\u0012\r\n\u0005level\u0018\u000b \u0001(\r\u0012\u0012\n\naffix_list\u0018\n \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dIrodoriChessMonsterInfo.proto\"c\n\u0017IrodoriChessMonsterInfo\u0012\u0011\n\tmonsterId\u0018\f \u0001(\r\u0012\r\n\u0005level\u0018\r \u0001(\r\u0012\u0013\n\u000bhhmklcpngkl\u0018\u000e \u0001(\r\u0012\u0011\n\taffixList\u0018\u0001 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_IrodoriChessMonsterInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_IrodoriChessMonsterInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_IrodoriChessMonsterInfo_descriptor, new String[]{"GrantPoints", "MonsterId", "Level", "AffixList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_IrodoriChessMonsterInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_IrodoriChessMonsterInfo_descriptor, new String[]{"MonsterId", "Level", "Hhmklcpngkl", "AffixList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriChessMonsterInfoOuterClass$IrodoriChessMonsterInfoOrBuilder.class */
     public interface IrodoriChessMonsterInfoOrBuilder extends MessageOrBuilder {
-        int getGrantPoints();
-
         int getMonsterId();
 
         int getLevel();
+
+        int getHhmklcpngkl();
 
         List<Integer> getAffixListList();
 
@@ -55,13 +55,13 @@ public final class IrodoriChessMonsterInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriChessMonsterInfoOuterClass$IrodoriChessMonsterInfo.class */
     public static final class IrodoriChessMonsterInfo extends GeneratedMessageV3 implements IrodoriChessMonsterInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int GRANT_POINTS_FIELD_NUMBER = 7;
-        private int grantPoints_;
-        public static final int MONSTER_ID_FIELD_NUMBER = 13;
+        public static final int MONSTERID_FIELD_NUMBER = 12;
         private int monsterId_;
-        public static final int LEVEL_FIELD_NUMBER = 11;
+        public static final int LEVEL_FIELD_NUMBER = 13;
         private int level_;
-        public static final int AFFIX_LIST_FIELD_NUMBER = 10;
+        public static final int HHMKLCPNGKL_FIELD_NUMBER = 14;
+        private int hhmklcpngkl_;
+        public static final int AFFIXLIST_FIELD_NUMBER = 1;
         private Internal.IntList affixList_;
         private int affixListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -114,17 +114,14 @@ public final class IrodoriChessMonsterInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 56:
-                                this.grantPoints_ = input.readUInt32();
-                                break;
-                            case 80:
+                            case 8:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.affixList_ = newIntList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.affixList_.addInt(input.readUInt32());
                                 break;
-                            case 82:
+                            case 10:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.affixList_ = newIntList();
@@ -135,11 +132,14 @@ public final class IrodoriChessMonsterInfoOuterClass {
                                 }
                                 input.popLimit(limit);
                                 break;
-                            case 88:
-                                this.level_ = input.readUInt32();
+                            case 96:
+                                this.monsterId_ = input.readUInt32();
                                 break;
                             case 104:
-                                this.monsterId_ = input.readUInt32();
+                                this.level_ = input.readUInt32();
+                                break;
+                            case 112:
+                                this.hhmklcpngkl_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -174,11 +174,6 @@ public final class IrodoriChessMonsterInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder
-        public int getGrantPoints() {
-            return this.grantPoints_;
-        }
-
-        @Override // emu.grasscutter.net.proto.IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder
         public int getMonsterId() {
             return this.monsterId_;
         }
@@ -186,6 +181,11 @@ public final class IrodoriChessMonsterInfoOuterClass {
         @Override // emu.grasscutter.net.proto.IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder
         public int getLevel() {
             return this.level_;
+        }
+
+        @Override // emu.grasscutter.net.proto.IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder
+        public int getHhmklcpngkl() {
+            return this.hhmklcpngkl_;
         }
 
         @Override // emu.grasscutter.net.proto.IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder
@@ -219,21 +219,21 @@ public final class IrodoriChessMonsterInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (this.grantPoints_ != 0) {
-                output.writeUInt32(7, this.grantPoints_);
-            }
             if (getAffixListList().size() > 0) {
-                output.writeUInt32NoTag(82);
+                output.writeUInt32NoTag(10);
                 output.writeUInt32NoTag(this.affixListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.affixList_.size(); i++) {
                 output.writeUInt32NoTag(this.affixList_.getInt(i));
             }
-            if (this.level_ != 0) {
-                output.writeUInt32(11, this.level_);
-            }
             if (this.monsterId_ != 0) {
-                output.writeUInt32(13, this.monsterId_);
+                output.writeUInt32(12, this.monsterId_);
+            }
+            if (this.level_ != 0) {
+                output.writeUInt32(13, this.level_);
+            }
+            if (this.hhmklcpngkl_ != 0) {
+                output.writeUInt32(14, this.hhmklcpngkl_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -244,28 +244,27 @@ public final class IrodoriChessMonsterInfoOuterClass {
             if (size != -1) {
                 return size;
             }
-            int size2 = 0;
-            if (this.grantPoints_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.grantPoints_);
-            }
             int dataSize = 0;
             for (int i = 0; i < this.affixList_.size(); i++) {
                 dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.affixList_.getInt(i));
             }
-            int size3 = size2 + dataSize;
+            int size2 = 0 + dataSize;
             if (!getAffixListList().isEmpty()) {
-                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.affixListMemoizedSerializedSize = dataSize;
-            if (this.level_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(11, this.level_);
-            }
             if (this.monsterId_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(13, this.monsterId_);
+                size2 += CodedOutputStream.computeUInt32Size(12, this.monsterId_);
             }
-            int size4 = size3 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size4;
-            return size4;
+            if (this.level_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(13, this.level_);
+            }
+            if (this.hhmklcpngkl_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(14, this.hhmklcpngkl_);
+            }
+            int size3 = size2 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size3;
+            return size3;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -277,7 +276,7 @@ public final class IrodoriChessMonsterInfoOuterClass {
                 return equals(obj);
             }
             IrodoriChessMonsterInfo other = (IrodoriChessMonsterInfo) obj;
-            return getGrantPoints() == other.getGrantPoints() && getMonsterId() == other.getMonsterId() && getLevel() == other.getLevel() && getAffixListList().equals(other.getAffixListList()) && this.unknownFields.equals(other.unknownFields);
+            return getMonsterId() == other.getMonsterId() && getLevel() == other.getLevel() && getHhmklcpngkl() == other.getHhmklcpngkl() && getAffixListList().equals(other.getAffixListList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -285,9 +284,9 @@ public final class IrodoriChessMonsterInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getGrantPoints())) + 13)) + getMonsterId())) + 11)) + getLevel();
+            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getMonsterId())) + 13)) + getLevel())) + 14)) + getHhmklcpngkl();
             if (getAffixListCount() > 0) {
-                hash = (53 * ((37 * hash) + 10)) + getAffixListList().hashCode();
+                hash = (53 * ((37 * hash) + 1)) + getAffixListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -369,9 +368,9 @@ public final class IrodoriChessMonsterInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriChessMonsterInfoOuterClass$IrodoriChessMonsterInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements IrodoriChessMonsterInfoOrBuilder {
             private int bitField0_;
-            private int grantPoints_;
             private int monsterId_;
             private int level_;
+            private int hhmklcpngkl_;
             private Internal.IntList affixList_ = IrodoriChessMonsterInfo.emptyIntList();
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -400,9 +399,9 @@ public final class IrodoriChessMonsterInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.grantPoints_ = 0;
                 this.monsterId_ = 0;
                 this.level_ = 0;
+                this.hhmklcpngkl_ = 0;
                 this.affixList_ = IrodoriChessMonsterInfo.emptyIntList();
                 this.bitField0_ &= -2;
                 return this;
@@ -431,9 +430,9 @@ public final class IrodoriChessMonsterInfoOuterClass {
             public IrodoriChessMonsterInfo buildPartial() {
                 IrodoriChessMonsterInfo result = new IrodoriChessMonsterInfo(this);
                 int i = this.bitField0_;
-                result.grantPoints_ = this.grantPoints_;
                 result.monsterId_ = this.monsterId_;
                 result.level_ = this.level_;
+                result.hhmklcpngkl_ = this.hhmklcpngkl_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.affixList_.makeImmutable();
                     this.bitField0_ &= -2;
@@ -486,14 +485,14 @@ public final class IrodoriChessMonsterInfoOuterClass {
                 if (other == IrodoriChessMonsterInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getGrantPoints() != 0) {
-                    setGrantPoints(other.getGrantPoints());
-                }
                 if (other.getMonsterId() != 0) {
                     setMonsterId(other.getMonsterId());
                 }
                 if (other.getLevel() != 0) {
                     setLevel(other.getLevel());
+                }
+                if (other.getHhmklcpngkl() != 0) {
+                    setHhmklcpngkl(other.getHhmklcpngkl());
                 }
                 if (!other.affixList_.isEmpty()) {
                     if (this.affixList_.isEmpty()) {
@@ -538,23 +537,6 @@ public final class IrodoriChessMonsterInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder
-            public int getGrantPoints() {
-                return this.grantPoints_;
-            }
-
-            public Builder setGrantPoints(int value) {
-                this.grantPoints_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearGrantPoints() {
-                this.grantPoints_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder
             public int getMonsterId() {
                 return this.monsterId_;
             }
@@ -584,6 +566,23 @@ public final class IrodoriChessMonsterInfoOuterClass {
 
             public Builder clearLevel() {
                 this.level_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder
+            public int getHhmklcpngkl() {
+                return this.hhmklcpngkl_;
+            }
+
+            public Builder setHhmklcpngkl(int value) {
+                this.hhmklcpngkl_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearHhmklcpngkl() {
+                this.hhmklcpngkl_ = 0;
                 onChanged();
                 return this;
             }

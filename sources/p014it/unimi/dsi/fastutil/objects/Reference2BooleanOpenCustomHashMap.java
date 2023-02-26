@@ -36,13 +36,13 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
     protected Hash.Strategy<? super K> strategy;
 
     /* renamed from: n */
-    protected transient int f2733n;
+    protected transient int f2697n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2734f;
+    protected final float f2698f;
     protected transient Reference2BooleanMap.FastEntrySet<K> entries;
     protected transient ReferenceSet<K> keys;
     protected transient BooleanCollection values;
@@ -54,14 +54,14 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2734f = f;
+            this.f2698f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2733n = arraySize;
+            this.f2697n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2733n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2733n, f);
-            this.key = (K[]) new Object[this.f2733n + 1];
-            this.value = new boolean[this.f2733n + 1];
+            this.mask = this.f2697n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2697n, f);
+            this.key = (K[]) new Object[this.f2697n + 1];
+            this.value = new boolean[this.f2697n + 1];
         }
     }
 
@@ -115,15 +115,15 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2734f);
-        if (needed > this.f2733n) {
+        int needed = HashCommon.arraySize(capacity, this.f2698f);
+        if (needed > this.f2697n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2734f)))));
-        if (needed > this.f2733n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2698f)))));
+        if (needed > this.f2697n) {
             rehash(needed);
         }
     }
@@ -133,8 +133,8 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
         boolean oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f2733n > this.minN && this.size < this.maxFill / 4 && this.f2733n > 16) {
-            rehash(this.f2733n / 2);
+        if (this.f2697n > this.minN && this.size < this.maxFill / 4 && this.f2697n > 16) {
+            rehash(this.f2697n / 2);
         }
         return oldValue;
     }
@@ -142,18 +142,18 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
     /* access modifiers changed from: private */
     public boolean removeNullEntry() {
         this.containsNullKey = false;
-        this.key[this.f2733n] = null;
-        boolean oldValue = this.value[this.f2733n];
+        this.key[this.f2697n] = null;
+        boolean oldValue = this.value[this.f2697n];
         this.size--;
-        if (this.f2733n > this.minN && this.size < this.maxFill / 4 && this.f2733n > 16) {
-            rehash(this.f2733n / 2);
+        if (this.f2697n > this.minN && this.size < this.maxFill / 4 && this.f2697n > 16) {
+            rehash(this.f2697n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractReference2BooleanMap, java.util.Map
     public void putAll(Map<? extends K, ? extends Boolean> m) {
-        if (((double) this.f2734f) <= 0.5d) {
+        if (((double) this.f2698f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -164,7 +164,7 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
     private int find(K k) {
         K curr;
         if (this.strategy.equals(k, null)) {
-            return this.containsNullKey ? this.f2733n : -(this.f2733n + 1);
+            return this.containsNullKey ? this.f2697n : -(this.f2697n + 1);
         }
         K[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -188,7 +188,7 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
     }
 
     private void insert(int pos, K k, boolean v) {
-        if (pos == this.f2733n) {
+        if (pos == this.f2697n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -196,7 +196,7 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2734f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2698f));
         }
     }
 
@@ -273,7 +273,7 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
     public boolean getBoolean(Object k) {
         K curr;
         if (this.strategy.equals(k, null)) {
-            return this.containsNullKey ? this.value[this.f2733n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2697n] : this.defRetValue;
         }
         K[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -327,10 +327,10 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
     public boolean containsValue(boolean v) {
         boolean[] value = this.value;
         K[] key = this.key;
-        if (this.containsNullKey && value[this.f2733n] == v) {
+        if (this.containsNullKey && value[this.f2697n] == v) {
             return true;
         }
-        int i = this.f2733n;
+        int i = this.f2697n;
         while (true) {
             i--;
             if (i == 0) {
@@ -346,7 +346,7 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
     public boolean getOrDefault(Object k, boolean defaultValue) {
         K curr;
         if (this.strategy.equals(k, null)) {
-            return this.containsNullKey ? this.value[this.f2733n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2697n] : defaultValue;
         }
         K[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -406,7 +406,7 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
                 removeEntry(pos);
                 return true;
             }
-        } else if (!this.containsNullKey || v != this.value[this.f2733n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f2697n]) {
             return false;
         } else {
             removeNullEntry();
@@ -639,31 +639,31 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
         int last;
 
         /* renamed from: c */
-        int f2735c;
+        int f2699c;
         boolean mustReturnNullKey;
         ReferenceArrayList<K> wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Reference2BooleanOpenCustomHashMap.this.f2733n;
+            this.pos = Reference2BooleanOpenCustomHashMap.this.f2697n;
             this.last = -1;
-            this.f2735c = Reference2BooleanOpenCustomHashMap.this.size;
+            this.f2699c = Reference2BooleanOpenCustomHashMap.this.size;
             this.mustReturnNullKey = Reference2BooleanOpenCustomHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f2735c != 0;
+            return this.f2699c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2735c--;
+            this.f2699c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Reference2BooleanOpenCustomHashMap.this.f2733n;
+                int i = Reference2BooleanOpenCustomHashMap.this.f2697n;
                 this.last = i;
                 return i;
             }
@@ -695,13 +695,13 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Reference2BooleanOpenCustomHashMap.this.f2733n;
+                int i = Reference2BooleanOpenCustomHashMap.this.f2697n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f2735c--;
+                this.f2699c--;
             }
             K[] key = Reference2BooleanOpenCustomHashMap.this.key;
-            while (this.f2735c != 0) {
+            while (this.f2699c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -718,12 +718,12 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
                         i3 = Reference2BooleanOpenCustomHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f2735c--;
+                    this.f2699c--;
                 } else if (key[this.pos] != null) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f2735c--;
+                    this.f2699c--;
                 }
             }
         }
@@ -772,9 +772,9 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Reference2BooleanOpenCustomHashMap.this.f2733n) {
+            if (this.last == Reference2BooleanOpenCustomHashMap.this.f2697n) {
                 Reference2BooleanOpenCustomHashMap.this.containsNullKey = false;
-                Reference2BooleanOpenCustomHashMap.this.key[Reference2BooleanOpenCustomHashMap.this.f2733n] = null;
+                Reference2BooleanOpenCustomHashMap.this.key[Reference2BooleanOpenCustomHashMap.this.f2697n] = null;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -878,7 +878,7 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
         int max;
 
         /* renamed from: c */
-        int f2736c;
+        int f2700c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -888,16 +888,16 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Reference2BooleanOpenCustomHashMap.this.f2733n;
-            this.f2736c = 0;
+            this.max = Reference2BooleanOpenCustomHashMap.this.f2697n;
+            this.f2700c = 0;
             this.mustReturnNull = Reference2BooleanOpenCustomHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Reference2BooleanOpenCustomHashMap.this.f2733n;
-            this.f2736c = 0;
+            this.max = Reference2BooleanOpenCustomHashMap.this.f2697n;
+            this.f2700c = 0;
             this.mustReturnNull = Reference2BooleanOpenCustomHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -909,14 +909,14 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2736c++;
-                acceptOnIndex(action, Reference2BooleanOpenCustomHashMap.this.f2733n);
+                this.f2700c++;
+                acceptOnIndex(action, Reference2BooleanOpenCustomHashMap.this.f2697n);
                 return true;
             }
             K[] key = Reference2BooleanOpenCustomHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != null) {
-                    this.f2736c++;
+                    this.f2700c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -930,14 +930,14 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2736c++;
-                acceptOnIndex(action, Reference2BooleanOpenCustomHashMap.this.f2733n);
+                this.f2700c++;
+                acceptOnIndex(action, Reference2BooleanOpenCustomHashMap.this.f2697n);
             }
             K[] key = Reference2BooleanOpenCustomHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != null) {
                     acceptOnIndex(action, this.pos);
-                    this.f2736c++;
+                    this.f2700c++;
                 }
                 this.pos++;
             }
@@ -945,9 +945,9 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Reference2BooleanOpenCustomHashMap.this.size - this.f2736c);
+                return (long) (Reference2BooleanOpenCustomHashMap.this.size - this.f2700c);
             }
-            return Math.min((long) (Reference2BooleanOpenCustomHashMap.this.size - this.f2736c), ((long) ((((double) Reference2BooleanOpenCustomHashMap.this.realSize()) / ((double) Reference2BooleanOpenCustomHashMap.this.f2733n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Reference2BooleanOpenCustomHashMap.this.size - this.f2700c), ((long) ((((double) Reference2BooleanOpenCustomHashMap.this.realSize()) / ((double) Reference2BooleanOpenCustomHashMap.this.f2697n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1145,7 +1145,7 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
             Object key = e.getKey();
             boolean v = ((Boolean) e.getValue()).booleanValue();
             if (Reference2BooleanOpenCustomHashMap.this.strategy.equals(key, null)) {
-                return Reference2BooleanOpenCustomHashMap.this.containsNullKey && Reference2BooleanOpenCustomHashMap.this.value[Reference2BooleanOpenCustomHashMap.this.f2733n] == v;
+                return Reference2BooleanOpenCustomHashMap.this.containsNullKey && Reference2BooleanOpenCustomHashMap.this.value[Reference2BooleanOpenCustomHashMap.this.f2697n] == v;
             }
             K[] key2 = Reference2BooleanOpenCustomHashMap.this.key;
             int mix = HashCommon.mix(Reference2BooleanOpenCustomHashMap.this.strategy.hashCode(key)) & Reference2BooleanOpenCustomHashMap.this.mask;
@@ -1206,7 +1206,7 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
                     Reference2BooleanOpenCustomHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Reference2BooleanOpenCustomHashMap.this.containsNullKey || Reference2BooleanOpenCustomHashMap.this.value[Reference2BooleanOpenCustomHashMap.this.f2733n] != v) {
+            } else if (!Reference2BooleanOpenCustomHashMap.this.containsNullKey || Reference2BooleanOpenCustomHashMap.this.value[Reference2BooleanOpenCustomHashMap.this.f2697n] != v) {
                 return false;
             } else {
                 Reference2BooleanOpenCustomHashMap.this.removeNullEntry();
@@ -1227,9 +1227,9 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Reference2BooleanMap.Entry<K>> consumer) {
             if (Reference2BooleanOpenCustomHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractReference2BooleanMap.BasicEntry(Reference2BooleanOpenCustomHashMap.this.key[Reference2BooleanOpenCustomHashMap.this.f2733n], Reference2BooleanOpenCustomHashMap.this.value[Reference2BooleanOpenCustomHashMap.this.f2733n]));
+                consumer.accept(new AbstractReference2BooleanMap.BasicEntry(Reference2BooleanOpenCustomHashMap.this.key[Reference2BooleanOpenCustomHashMap.this.f2697n], Reference2BooleanOpenCustomHashMap.this.value[Reference2BooleanOpenCustomHashMap.this.f2697n]));
             }
-            int pos = Reference2BooleanOpenCustomHashMap.this.f2733n;
+            int pos = Reference2BooleanOpenCustomHashMap.this.f2697n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1245,11 +1245,11 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
         public void fastForEach(Consumer<? super Reference2BooleanMap.Entry<K>> consumer) {
             AbstractReference2BooleanMap.BasicEntry<K> entry = new AbstractReference2BooleanMap.BasicEntry<>();
             if (Reference2BooleanOpenCustomHashMap.this.containsNullKey) {
-                entry.key = Reference2BooleanOpenCustomHashMap.this.key[Reference2BooleanOpenCustomHashMap.this.f2733n];
-                entry.value = Reference2BooleanOpenCustomHashMap.this.value[Reference2BooleanOpenCustomHashMap.this.f2733n];
+                entry.key = Reference2BooleanOpenCustomHashMap.this.key[Reference2BooleanOpenCustomHashMap.this.f2697n];
+                entry.value = Reference2BooleanOpenCustomHashMap.this.value[Reference2BooleanOpenCustomHashMap.this.f2697n];
                 consumer.accept(entry);
             }
-            int pos = Reference2BooleanOpenCustomHashMap.this.f2733n;
+            int pos = Reference2BooleanOpenCustomHashMap.this.f2697n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1365,9 +1365,9 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super K> consumer) {
             if (Reference2BooleanOpenCustomHashMap.this.containsNullKey) {
-                consumer.accept((Object) Reference2BooleanOpenCustomHashMap.this.key[Reference2BooleanOpenCustomHashMap.this.f2733n]);
+                consumer.accept((Object) Reference2BooleanOpenCustomHashMap.this.key[Reference2BooleanOpenCustomHashMap.this.f2697n]);
             }
-            int pos = Reference2BooleanOpenCustomHashMap.this.f2733n;
+            int pos = Reference2BooleanOpenCustomHashMap.this.f2697n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1485,9 +1485,9 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
                 @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterable
                 public void forEach(BooleanConsumer consumer) {
                     if (Reference2BooleanOpenCustomHashMap.this.containsNullKey) {
-                        consumer.accept(Reference2BooleanOpenCustomHashMap.this.value[Reference2BooleanOpenCustomHashMap.this.f2733n]);
+                        consumer.accept(Reference2BooleanOpenCustomHashMap.this.value[Reference2BooleanOpenCustomHashMap.this.f2697n]);
                     }
-                    int pos = Reference2BooleanOpenCustomHashMap.this.f2733n;
+                    int pos = Reference2BooleanOpenCustomHashMap.this.f2697n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1523,8 +1523,8 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2734f)));
-        if (l >= this.f2733n || this.size > HashCommon.maxFill(l, this.f2734f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2698f)));
+        if (l >= this.f2697n || this.size > HashCommon.maxFill(l, this.f2698f)) {
             return true;
         }
         try {
@@ -1542,7 +1542,7 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
         int mask = newN - 1;
         K[] newKey = (K[]) new Object[newN + 1];
         boolean[] newValue = new boolean[newN + 1];
-        int i2 = this.f2733n;
+        int i2 = this.f2697n;
         int j = realSize();
         while (true) {
             j--;
@@ -1561,10 +1561,10 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f2733n];
-                this.f2733n = newN;
+                newValue[newN] = value[this.f2697n];
+                this.f2697n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2733n, this.f2734f);
+                this.maxFill = HashCommon.maxFill(this.f2697n, this.f2698f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1611,7 +1611,7 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f2733n] ? RetcodeOuterClass.Retcode.RET_MP_OTHER_DATA_VERSION_NOT_LATEST_VALUE : RetcodeOuterClass.Retcode.RET_MP_MATCH_FULL_VALUE;
+            h += this.value[this.f2697n] ? RetcodeOuterClass.Retcode.RET_MP_OTHER_DATA_VERSION_NOT_LATEST_VALUE : RetcodeOuterClass.Retcode.RET_MP_MATCH_FULL_VALUE;
         }
         return h;
     }
@@ -1640,12 +1640,12 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2733n = HashCommon.arraySize(this.size, this.f2734f);
-        this.maxFill = HashCommon.maxFill(this.f2733n, this.f2734f);
-        this.mask = this.f2733n - 1;
-        K[] key = (K[]) new Object[this.f2733n + 1];
+        this.f2697n = HashCommon.arraySize(this.size, this.f2698f);
+        this.maxFill = HashCommon.maxFill(this.f2697n, this.f2698f);
+        this.mask = this.f2697n - 1;
+        K[] key = (K[]) new Object[this.f2697n + 1];
         this.key = key;
-        boolean[] value = new boolean[this.f2733n + 1];
+        boolean[] value = new boolean[this.f2697n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1654,7 +1654,7 @@ public class Reference2BooleanOpenCustomHashMap<K> extends AbstractReference2Boo
                 Object readObject = s.readObject();
                 boolean v = s.readBoolean();
                 if (this.strategy.equals(readObject, null)) {
-                    pos = this.f2733n;
+                    pos = this.f2697n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix(this.strategy.hashCode(readObject));

@@ -18,14 +18,14 @@ public class ObjectHeapPriorityQueue<K> implements PriorityQueue<K>, Serializabl
     protected int size;
 
     /* renamed from: c */
-    protected Comparator<? super K> f2701c;
+    protected Comparator<? super K> f2665c;
 
     public ObjectHeapPriorityQueue(int capacity, Comparator<? super K> c) {
         this.heap = (K[]) ObjectArrays.EMPTY_ARRAY;
         if (capacity > 0) {
             this.heap = (K[]) new Object[capacity];
         }
-        this.f2701c = c;
+        this.f2665c = c;
     }
 
     public ObjectHeapPriorityQueue(int capacity) {
@@ -76,7 +76,7 @@ public class ObjectHeapPriorityQueue<K> implements PriorityQueue<K>, Serializabl
         int i = this.size;
         this.size = i + 1;
         kArr[i] = x;
-        ObjectHeaps.upHeap(this.heap, this.size, this.size - 1, this.f2701c);
+        ObjectHeaps.upHeap(this.heap, this.size, this.size - 1, this.f2665c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.PriorityQueue
@@ -92,7 +92,7 @@ public class ObjectHeapPriorityQueue<K> implements PriorityQueue<K>, Serializabl
         kArr[0] = kArr2[i];
         this.heap[this.size] = null;
         if (this.size != 0) {
-            ObjectHeaps.downHeap(this.heap, this.size, 0, this.f2701c);
+            ObjectHeaps.downHeap(this.heap, this.size, 0, this.f2665c);
         }
         return result;
     }
@@ -107,7 +107,7 @@ public class ObjectHeapPriorityQueue<K> implements PriorityQueue<K>, Serializabl
 
     @Override // p014it.unimi.dsi.fastutil.PriorityQueue
     public void changed() {
-        ObjectHeaps.downHeap(this.heap, this.size, 0, this.f2701c);
+        ObjectHeaps.downHeap(this.heap, this.size, 0, this.f2665c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.PriorityQueue
@@ -127,7 +127,7 @@ public class ObjectHeapPriorityQueue<K> implements PriorityQueue<K>, Serializabl
 
     @Override // p014it.unimi.dsi.fastutil.PriorityQueue
     public Comparator<? super K> comparator() {
-        return this.f2701c;
+        return this.f2665c;
     }
 
     private void writeObject(ObjectOutputStream s) throws IOException {

@@ -478,7 +478,7 @@ public final class HttpUrl {
     @JvmName(name = "-deprecated_url")
     @NotNull
     /* renamed from: -deprecated_url  reason: not valid java name */
-    public final URL m9207deprecated_url() {
+    public final URL m9204deprecated_url() {
         return url();
     }
 
@@ -486,7 +486,7 @@ public final class HttpUrl {
     @JvmName(name = "-deprecated_uri")
     @NotNull
     /* renamed from: -deprecated_uri  reason: not valid java name */
-    public final URI m9208deprecated_uri() {
+    public final URI m9205deprecated_uri() {
         return uri();
     }
 
@@ -494,7 +494,7 @@ public final class HttpUrl {
     @JvmName(name = "-deprecated_scheme")
     @NotNull
     /* renamed from: -deprecated_scheme  reason: not valid java name */
-    public final String m9209deprecated_scheme() {
+    public final String m9206deprecated_scheme() {
         return this.scheme;
     }
 
@@ -502,7 +502,7 @@ public final class HttpUrl {
     @JvmName(name = "-deprecated_encodedUsername")
     @NotNull
     /* renamed from: -deprecated_encodedUsername  reason: not valid java name */
-    public final String m9210deprecated_encodedUsername() {
+    public final String m9207deprecated_encodedUsername() {
         return encodedUsername();
     }
 
@@ -510,7 +510,7 @@ public final class HttpUrl {
     @JvmName(name = "-deprecated_username")
     @NotNull
     /* renamed from: -deprecated_username  reason: not valid java name */
-    public final String m9211deprecated_username() {
+    public final String m9208deprecated_username() {
         return this.username;
     }
 
@@ -518,7 +518,7 @@ public final class HttpUrl {
     @JvmName(name = "-deprecated_encodedPassword")
     @NotNull
     /* renamed from: -deprecated_encodedPassword  reason: not valid java name */
-    public final String m9212deprecated_encodedPassword() {
+    public final String m9209deprecated_encodedPassword() {
         return encodedPassword();
     }
 
@@ -526,7 +526,7 @@ public final class HttpUrl {
     @JvmName(name = "-deprecated_password")
     @NotNull
     /* renamed from: -deprecated_password  reason: not valid java name */
-    public final String m9213deprecated_password() {
+    public final String m9210deprecated_password() {
         return this.password;
     }
 
@@ -534,21 +534,21 @@ public final class HttpUrl {
     @JvmName(name = "-deprecated_host")
     @NotNull
     /* renamed from: -deprecated_host  reason: not valid java name */
-    public final String m9214deprecated_host() {
+    public final String m9211deprecated_host() {
         return this.host;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "port", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_port")
     /* renamed from: -deprecated_port  reason: not valid java name */
-    public final int m9215deprecated_port() {
+    public final int m9212deprecated_port() {
         return this.port;
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "pathSize", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_pathSize")
     /* renamed from: -deprecated_pathSize  reason: not valid java name */
-    public final int m9216deprecated_pathSize() {
+    public final int m9213deprecated_pathSize() {
         return pathSize();
     }
 
@@ -556,7 +556,7 @@ public final class HttpUrl {
     @JvmName(name = "-deprecated_encodedPath")
     @NotNull
     /* renamed from: -deprecated_encodedPath  reason: not valid java name */
-    public final String m9217deprecated_encodedPath() {
+    public final String m9214deprecated_encodedPath() {
         return encodedPath();
     }
 
@@ -564,7 +564,7 @@ public final class HttpUrl {
     @JvmName(name = "-deprecated_encodedPathSegments")
     @NotNull
     /* renamed from: -deprecated_encodedPathSegments  reason: not valid java name */
-    public final List<String> m9218deprecated_encodedPathSegments() {
+    public final List<String> m9215deprecated_encodedPathSegments() {
         return encodedPathSegments();
     }
 
@@ -572,7 +572,7 @@ public final class HttpUrl {
     @JvmName(name = "-deprecated_pathSegments")
     @NotNull
     /* renamed from: -deprecated_pathSegments  reason: not valid java name */
-    public final List<String> m9219deprecated_pathSegments() {
+    public final List<String> m9216deprecated_pathSegments() {
         return this.pathSegments;
     }
 
@@ -580,7 +580,7 @@ public final class HttpUrl {
     @JvmName(name = "-deprecated_encodedQuery")
     @Nullable
     /* renamed from: -deprecated_encodedQuery  reason: not valid java name */
-    public final String m9220deprecated_encodedQuery() {
+    public final String m9217deprecated_encodedQuery() {
         return encodedQuery();
     }
 
@@ -588,14 +588,14 @@ public final class HttpUrl {
     @JvmName(name = "-deprecated_query")
     @Nullable
     /* renamed from: -deprecated_query  reason: not valid java name */
-    public final String m9221deprecated_query() {
+    public final String m9218deprecated_query() {
         return query();
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "querySize", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_querySize")
     /* renamed from: -deprecated_querySize  reason: not valid java name */
-    public final int m9222deprecated_querySize() {
+    public final int m9219deprecated_querySize() {
         return querySize();
     }
 
@@ -603,7 +603,7 @@ public final class HttpUrl {
     @JvmName(name = "-deprecated_queryParameterNames")
     @NotNull
     /* renamed from: -deprecated_queryParameterNames  reason: not valid java name */
-    public final Set<String> m9223deprecated_queryParameterNames() {
+    public final Set<String> m9220deprecated_queryParameterNames() {
         return queryParameterNames();
     }
 
@@ -611,7 +611,7 @@ public final class HttpUrl {
     @JvmName(name = "-deprecated_encodedFragment")
     @Nullable
     /* renamed from: -deprecated_encodedFragment  reason: not valid java name */
-    public final String m9224deprecated_encodedFragment() {
+    public final String m9221deprecated_encodedFragment() {
         return encodedFragment();
     }
 
@@ -619,7 +619,7 @@ public final class HttpUrl {
     @JvmName(name = "-deprecated_fragment")
     @Nullable
     /* renamed from: -deprecated_fragment  reason: not valid java name */
-    public final String m9225deprecated_fragment() {
+    public final String m9222deprecated_fragment() {
         return this.fragment;
     }
 
@@ -737,28 +737,28 @@ public final class HttpUrl {
         @NotNull
         public final Builder username(@NotNull String username) {
             Intrinsics.checkNotNullParameter(username, SendMailJob.PROP_USERNAME);
-            setEncodedUsername$okhttp(Companion.canonicalize$okhttp$default(HttpUrl.Companion, username, 0, 0, " \"':;<=>@[]^`{}|/\\?#", false, false, false, false, null, PacketOpcodes.EnterSceneReadyRsp, null));
+            setEncodedUsername$okhttp(Companion.canonicalize$okhttp$default(HttpUrl.Companion, username, 0, 0, " \"':;<=>@[]^`{}|/\\?#", false, false, false, false, null, PacketOpcodes.SceneForceLockNotify, null));
             return this;
         }
 
         @NotNull
         public final Builder encodedUsername(@NotNull String encodedUsername) {
             Intrinsics.checkNotNullParameter(encodedUsername, "encodedUsername");
-            setEncodedUsername$okhttp(Companion.canonicalize$okhttp$default(HttpUrl.Companion, encodedUsername, 0, 0, " \"':;<=>@[]^`{}|/\\?#", true, false, false, false, null, PacketOpcodes.SceneEntityAppearNotify, null));
+            setEncodedUsername$okhttp(Companion.canonicalize$okhttp$default(HttpUrl.Companion, encodedUsername, 0, 0, " \"':;<=>@[]^`{}|/\\?#", true, false, false, false, null, PacketOpcodes.EntityForceSyncRsp, null));
             return this;
         }
 
         @NotNull
         public final Builder password(@NotNull String password) {
             Intrinsics.checkNotNullParameter(password, "password");
-            setEncodedPassword$okhttp(Companion.canonicalize$okhttp$default(HttpUrl.Companion, password, 0, 0, " \"':;<=>@[]^`{}|/\\?#", false, false, false, false, null, PacketOpcodes.EnterSceneReadyRsp, null));
+            setEncodedPassword$okhttp(Companion.canonicalize$okhttp$default(HttpUrl.Companion, password, 0, 0, " \"':;<=>@[]^`{}|/\\?#", false, false, false, false, null, PacketOpcodes.SceneForceLockNotify, null));
             return this;
         }
 
         @NotNull
         public final Builder encodedPassword(@NotNull String encodedPassword) {
             Intrinsics.checkNotNullParameter(encodedPassword, "encodedPassword");
-            setEncodedPassword$okhttp(Companion.canonicalize$okhttp$default(HttpUrl.Companion, encodedPassword, 0, 0, " \"':;<=>@[]^`{}|/\\?#", true, false, false, false, null, PacketOpcodes.SceneEntityAppearNotify, null));
+            setEncodedPassword$okhttp(Companion.canonicalize$okhttp$default(HttpUrl.Companion, encodedPassword, 0, 0, " \"':;<=>@[]^`{}|/\\?#", true, false, false, false, null, PacketOpcodes.EntityForceSyncRsp, null));
             return this;
         }
 
@@ -835,7 +835,7 @@ public final class HttpUrl {
         public final Builder setPathSegment(int index, @NotNull String pathSegment) {
             Intrinsics.checkNotNullParameter(pathSegment, "pathSegment");
             Builder $this$setPathSegment_u24lambda_u2d12 = this;
-            String canonicalPathSegment = Companion.canonicalize$okhttp$default(HttpUrl.Companion, pathSegment, 0, 0, HttpUrl.PATH_SEGMENT_ENCODE_SET, false, false, false, false, null, PacketOpcodes.EnterSceneReadyRsp, null);
+            String canonicalPathSegment = Companion.canonicalize$okhttp$default(HttpUrl.Companion, pathSegment, 0, 0, HttpUrl.PATH_SEGMENT_ENCODE_SET, false, false, false, false, null, PacketOpcodes.SceneForceLockNotify, null);
             if (!(!$this$setPathSegment_u24lambda_u2d12.isDot(canonicalPathSegment) && !$this$setPathSegment_u24lambda_u2d12.isDotDot(canonicalPathSegment))) {
                 throw new IllegalArgumentException(Intrinsics.stringPlus("unexpected path segment: ", pathSegment).toString());
             }
@@ -847,7 +847,7 @@ public final class HttpUrl {
         public final Builder setEncodedPathSegment(int index, @NotNull String encodedPathSegment) {
             Intrinsics.checkNotNullParameter(encodedPathSegment, "encodedPathSegment");
             Builder $this$setEncodedPathSegment_u24lambda_u2d14 = this;
-            String canonicalPathSegment = Companion.canonicalize$okhttp$default(HttpUrl.Companion, encodedPathSegment, 0, 0, HttpUrl.PATH_SEGMENT_ENCODE_SET, true, false, false, false, null, PacketOpcodes.SceneEntityAppearNotify, null);
+            String canonicalPathSegment = Companion.canonicalize$okhttp$default(HttpUrl.Companion, encodedPathSegment, 0, 0, HttpUrl.PATH_SEGMENT_ENCODE_SET, true, false, false, false, null, PacketOpcodes.EntityForceSyncRsp, null);
             $this$setEncodedPathSegment_u24lambda_u2d14.getEncodedPathSegments$okhttp().set(index, canonicalPathSegment);
             if (!$this$setEncodedPathSegment_u24lambda_u2d14.isDot(canonicalPathSegment) && !$this$setEncodedPathSegment_u24lambda_u2d14.isDotDot(canonicalPathSegment)) {
                 return this;
@@ -883,7 +883,7 @@ public final class HttpUrl {
             if (query == null) {
                 list = null;
             } else {
-                String canonicalize$okhttp$default = Companion.canonicalize$okhttp$default(HttpUrl.Companion, query, 0, 0, HttpUrl.QUERY_ENCODE_SET, false, false, true, false, null, PacketOpcodes.SceneInitFinishReq, null);
+                String canonicalize$okhttp$default = Companion.canonicalize$okhttp$default(HttpUrl.Companion, query, 0, 0, HttpUrl.QUERY_ENCODE_SET, false, false, true, false, null, PacketOpcodes.WorldPlayerReviveReq, null);
                 list = canonicalize$okhttp$default == null ? null : HttpUrl.Companion.toQueryNamesAndValues$okhttp(canonicalize$okhttp$default);
             }
             $this$query_u24lambda_u2d18.setEncodedQueryNamesAndValues$okhttp(list);
@@ -897,7 +897,7 @@ public final class HttpUrl {
             if (encodedQuery == null) {
                 list = null;
             } else {
-                String canonicalize$okhttp$default = Companion.canonicalize$okhttp$default(HttpUrl.Companion, encodedQuery, 0, 0, HttpUrl.QUERY_ENCODE_SET, true, false, true, false, null, PacketOpcodes.ExitSceneWeatherAreaNotify, null);
+                String canonicalize$okhttp$default = Companion.canonicalize$okhttp$default(HttpUrl.Companion, encodedQuery, 0, 0, HttpUrl.QUERY_ENCODE_SET, true, false, true, false, null, PacketOpcodes.PlatformChangeRouteNotify, null);
                 list = canonicalize$okhttp$default == null ? null : HttpUrl.Companion.toQueryNamesAndValues$okhttp(canonicalize$okhttp$default);
             }
             $this$encodedQuery_u24lambda_u2d19.setEncodedQueryNamesAndValues$okhttp(list);
@@ -913,10 +913,10 @@ public final class HttpUrl {
             }
             List<String> encodedQueryNamesAndValues$okhttp = $this$addQueryParameter_u24lambda_u2d20.getEncodedQueryNamesAndValues$okhttp();
             Intrinsics.checkNotNull(encodedQueryNamesAndValues$okhttp);
-            encodedQueryNamesAndValues$okhttp.add(Companion.canonicalize$okhttp$default(HttpUrl.Companion, name, 0, 0, HttpUrl.QUERY_COMPONENT_ENCODE_SET, false, false, true, false, null, PacketOpcodes.SceneInitFinishReq, null));
+            encodedQueryNamesAndValues$okhttp.add(Companion.canonicalize$okhttp$default(HttpUrl.Companion, name, 0, 0, HttpUrl.QUERY_COMPONENT_ENCODE_SET, false, false, true, false, null, PacketOpcodes.WorldPlayerReviveReq, null));
             List<String> encodedQueryNamesAndValues$okhttp2 = $this$addQueryParameter_u24lambda_u2d20.getEncodedQueryNamesAndValues$okhttp();
             Intrinsics.checkNotNull(encodedQueryNamesAndValues$okhttp2);
-            encodedQueryNamesAndValues$okhttp2.add(value == null ? null : Companion.canonicalize$okhttp$default(HttpUrl.Companion, value, 0, 0, HttpUrl.QUERY_COMPONENT_ENCODE_SET, false, false, true, false, null, PacketOpcodes.SceneInitFinishReq, null));
+            encodedQueryNamesAndValues$okhttp2.add(value == null ? null : Companion.canonicalize$okhttp$default(HttpUrl.Companion, value, 0, 0, HttpUrl.QUERY_COMPONENT_ENCODE_SET, false, false, true, false, null, PacketOpcodes.WorldPlayerReviveReq, null));
             return this;
         }
 
@@ -929,10 +929,10 @@ public final class HttpUrl {
             }
             List<String> encodedQueryNamesAndValues$okhttp = $this$addEncodedQueryParameter_u24lambda_u2d21.getEncodedQueryNamesAndValues$okhttp();
             Intrinsics.checkNotNull(encodedQueryNamesAndValues$okhttp);
-            encodedQueryNamesAndValues$okhttp.add(Companion.canonicalize$okhttp$default(HttpUrl.Companion, encodedName, 0, 0, HttpUrl.QUERY_COMPONENT_REENCODE_SET, true, false, true, false, null, PacketOpcodes.ExitSceneWeatherAreaNotify, null));
+            encodedQueryNamesAndValues$okhttp.add(Companion.canonicalize$okhttp$default(HttpUrl.Companion, encodedName, 0, 0, HttpUrl.QUERY_COMPONENT_REENCODE_SET, true, false, true, false, null, PacketOpcodes.PlatformChangeRouteNotify, null));
             List<String> encodedQueryNamesAndValues$okhttp2 = $this$addEncodedQueryParameter_u24lambda_u2d21.getEncodedQueryNamesAndValues$okhttp();
             Intrinsics.checkNotNull(encodedQueryNamesAndValues$okhttp2);
-            encodedQueryNamesAndValues$okhttp2.add(encodedValue == null ? null : Companion.canonicalize$okhttp$default(HttpUrl.Companion, encodedValue, 0, 0, HttpUrl.QUERY_COMPONENT_REENCODE_SET, true, false, true, false, null, PacketOpcodes.ExitSceneWeatherAreaNotify, null));
+            encodedQueryNamesAndValues$okhttp2.add(encodedValue == null ? null : Companion.canonicalize$okhttp$default(HttpUrl.Companion, encodedValue, 0, 0, HttpUrl.QUERY_COMPONENT_REENCODE_SET, true, false, true, false, null, PacketOpcodes.PlatformChangeRouteNotify, null));
             return this;
         }
 
@@ -961,7 +961,7 @@ public final class HttpUrl {
             if ($this$removeAllQueryParameters_u24lambda_u2d24.getEncodedQueryNamesAndValues$okhttp() == null) {
                 return $this$removeAllQueryParameters_u24lambda_u2d24;
             }
-            $this$removeAllQueryParameters_u24lambda_u2d24.removeAllCanonicalQueryParameters(Companion.canonicalize$okhttp$default(HttpUrl.Companion, name, 0, 0, HttpUrl.QUERY_COMPONENT_ENCODE_SET, false, false, true, false, null, PacketOpcodes.SceneInitFinishReq, null));
+            $this$removeAllQueryParameters_u24lambda_u2d24.removeAllCanonicalQueryParameters(Companion.canonicalize$okhttp$default(HttpUrl.Companion, name, 0, 0, HttpUrl.QUERY_COMPONENT_ENCODE_SET, false, false, true, false, null, PacketOpcodes.WorldPlayerReviveReq, null));
             return this;
         }
 
@@ -972,7 +972,7 @@ public final class HttpUrl {
             if ($this$removeAllEncodedQueryParameters_u24lambda_u2d25.getEncodedQueryNamesAndValues$okhttp() == null) {
                 return $this$removeAllEncodedQueryParameters_u24lambda_u2d25;
             }
-            $this$removeAllEncodedQueryParameters_u24lambda_u2d25.removeAllCanonicalQueryParameters(Companion.canonicalize$okhttp$default(HttpUrl.Companion, encodedName, 0, 0, HttpUrl.QUERY_COMPONENT_REENCODE_SET, true, false, true, false, null, PacketOpcodes.ExitSceneWeatherAreaNotify, null));
+            $this$removeAllEncodedQueryParameters_u24lambda_u2d25.removeAllCanonicalQueryParameters(Companion.canonicalize$okhttp$default(HttpUrl.Companion, encodedName, 0, 0, HttpUrl.QUERY_COMPONENT_REENCODE_SET, true, false, true, false, null, PacketOpcodes.PlatformChangeRouteNotify, null));
             return this;
         }
 
@@ -1026,7 +1026,7 @@ public final class HttpUrl {
             int size = $this$reencodeForUri_u24lambda_u2d28.getEncodedPathSegments$okhttp().size();
             while (i < size) {
                 i++;
-                $this$reencodeForUri_u24lambda_u2d28.getEncodedPathSegments$okhttp().set(i, Companion.canonicalize$okhttp$default(HttpUrl.Companion, $this$reencodeForUri_u24lambda_u2d28.getEncodedPathSegments$okhttp().get(i), 0, 0, HttpUrl.PATH_SEGMENT_ENCODE_SET_URI, true, true, false, false, null, PacketOpcodes.SceneAvatarStaminaStepRsp, null));
+                $this$reencodeForUri_u24lambda_u2d28.getEncodedPathSegments$okhttp().set(i, Companion.canonicalize$okhttp$default(HttpUrl.Companion, $this$reencodeForUri_u24lambda_u2d28.getEncodedPathSegments$okhttp().get(i), 0, 0, HttpUrl.PATH_SEGMENT_ENCODE_SET_URI, true, true, false, false, null, PacketOpcodes.EndCameraSceneLookNotify, null));
             }
             List encodedQueryNamesAndValues = $this$reencodeForUri_u24lambda_u2d28.getEncodedQueryNamesAndValues$okhttp();
             if (encodedQueryNamesAndValues != null) {
@@ -1177,7 +1177,7 @@ public final class HttpUrl {
                         case 64:
                             if (!hasPassword) {
                                 int passwordColonOffset = Util.delimiterOffset(input, ':', pos2, componentDelimiterOffset);
-                                String canonicalUsername = Companion.canonicalize$okhttp$default(HttpUrl.Companion, input, pos2, passwordColonOffset, " \"':;<=>@[]^`{}|/\\?#", true, false, false, false, null, PacketOpcodes.ExecuteGadgetLuaRsp, null);
+                                String canonicalUsername = Companion.canonicalize$okhttp$default(HttpUrl.Companion, input, pos2, passwordColonOffset, " \"':;<=>@[]^`{}|/\\?#", true, false, false, false, null, PacketOpcodes.SceneKickPlayerRsp, null);
                                 if (hasUsername) {
                                     str = this.encodedUsername + "%40" + canonicalUsername;
                                 } else {
@@ -1186,11 +1186,11 @@ public final class HttpUrl {
                                 this.encodedUsername = str;
                                 if (passwordColonOffset != componentDelimiterOffset) {
                                     hasPassword = true;
-                                    this.encodedPassword = Companion.canonicalize$okhttp$default(HttpUrl.Companion, input, passwordColonOffset + 1, componentDelimiterOffset, " \"':;<=>@[]^`{}|/\\?#", true, false, false, false, null, PacketOpcodes.ExecuteGadgetLuaRsp, null);
+                                    this.encodedPassword = Companion.canonicalize$okhttp$default(HttpUrl.Companion, input, passwordColonOffset + 1, componentDelimiterOffset, " \"':;<=>@[]^`{}|/\\?#", true, false, false, false, null, PacketOpcodes.SceneKickPlayerRsp, null);
                                 }
                                 hasUsername = true;
                             } else {
-                                this.encodedPassword += "%40" + Companion.canonicalize$okhttp$default(HttpUrl.Companion, input, pos2, componentDelimiterOffset, " \"':;<=>@[]^`{}|/\\?#", true, false, false, false, null, PacketOpcodes.ExecuteGadgetLuaRsp, null);
+                                this.encodedPassword += "%40" + Companion.canonicalize$okhttp$default(HttpUrl.Companion, input, pos2, componentDelimiterOffset, " \"':;<=>@[]^`{}|/\\?#", true, false, false, false, null, PacketOpcodes.SceneKickPlayerRsp, null);
                             }
                             pos2 = componentDelimiterOffset + 1;
                             break;
@@ -1212,7 +1212,7 @@ public final class HttpUrl {
             int pos3 = pathDelimiterOffset;
             if (pos3 < limit && input.charAt(pos3) == '?') {
                 int queryDelimiterOffset = Util.delimiterOffset(input, '#', pos3, limit);
-                this.encodedQueryNamesAndValues = HttpUrl.Companion.toQueryNamesAndValues$okhttp(Companion.canonicalize$okhttp$default(HttpUrl.Companion, input, pos3 + 1, queryDelimiterOffset, HttpUrl.QUERY_ENCODE_SET, true, false, true, false, null, PacketOpcodes.PlatformStartRouteNotify, null));
+                this.encodedQueryNamesAndValues = HttpUrl.Companion.toQueryNamesAndValues$okhttp(Companion.canonicalize$okhttp$default(HttpUrl.Companion, input, pos3 + 1, queryDelimiterOffset, HttpUrl.QUERY_ENCODE_SET, true, false, true, false, null, PacketOpcodes.SetSceneWeatherAreaReq, null));
                 pos3 = queryDelimiterOffset;
             }
             if (pos3 < limit && input.charAt(pos3) == '#') {
@@ -1246,7 +1246,7 @@ public final class HttpUrl {
         }
 
         private final void push(String input, int pos, int limit, boolean addTrailingSlash, boolean alreadyEncoded) {
-            String segment = Companion.canonicalize$okhttp$default(HttpUrl.Companion, input, pos, limit, HttpUrl.PATH_SEGMENT_ENCODE_SET, alreadyEncoded, false, false, false, null, PacketOpcodes.ExecuteGadgetLuaRsp, null);
+            String segment = Companion.canonicalize$okhttp$default(HttpUrl.Companion, input, pos, limit, HttpUrl.PATH_SEGMENT_ENCODE_SET, alreadyEncoded, false, false, false, null, PacketOpcodes.SceneKickPlayerRsp, null);
             if (!isDot(segment)) {
                 if (isDotDot(segment)) {
                     pop();
@@ -1365,7 +1365,7 @@ public final class HttpUrl {
                 int i;
                 boolean z;
                 try {
-                    int i2 = Integer.parseInt(Companion.canonicalize$okhttp$default(HttpUrl.Companion, input, pos, limit, "", false, false, false, false, null, PacketOpcodes.ScenePlayerLocationNotify, null));
+                    int i2 = Integer.parseInt(Companion.canonicalize$okhttp$default(HttpUrl.Companion, input, pos, limit, "", false, false, false, false, null, PacketOpcodes.EnterSceneDoneReq, null));
                     if (1 <= i2) {
                         z = i2 < 65536;
                     } else {
@@ -1398,7 +1398,7 @@ public final class HttpUrl {
                 return 80;
             }
             if (Intrinsics.areEqual(scheme, URIUtil.HTTPS)) {
-                return PacketOpcodes.AddQuestContentProgressReq;
+                return PacketOpcodes.PersonalLineAllDataRsp;
             }
             return -1;
         }
@@ -1514,7 +1514,7 @@ public final class HttpUrl {
         @JvmName(name = "-deprecated_get")
         @NotNull
         /* renamed from: -deprecated_get  reason: not valid java name */
-        public final HttpUrl m9228deprecated_get(@NotNull String url) {
+        public final HttpUrl m9225deprecated_get(@NotNull String url) {
             Intrinsics.checkNotNullParameter(url, "url");
             return get(url);
         }
@@ -1523,7 +1523,7 @@ public final class HttpUrl {
         @JvmName(name = "-deprecated_parse")
         @Nullable
         /* renamed from: -deprecated_parse  reason: not valid java name */
-        public final HttpUrl m9229deprecated_parse(@NotNull String url) {
+        public final HttpUrl m9226deprecated_parse(@NotNull String url) {
             Intrinsics.checkNotNullParameter(url, "url");
             return parse(url);
         }
@@ -1532,7 +1532,7 @@ public final class HttpUrl {
         @JvmName(name = "-deprecated_get")
         @Nullable
         /* renamed from: -deprecated_get  reason: not valid java name */
-        public final HttpUrl m9230deprecated_get(@NotNull URL url) {
+        public final HttpUrl m9227deprecated_get(@NotNull URL url) {
             Intrinsics.checkNotNullParameter(url, "url");
             return get(url);
         }
@@ -1541,7 +1541,7 @@ public final class HttpUrl {
         @JvmName(name = "-deprecated_get")
         @Nullable
         /* renamed from: -deprecated_get  reason: not valid java name */
-        public final HttpUrl m9231deprecated_get(@NotNull URI uri) {
+        public final HttpUrl m9228deprecated_get(@NotNull URI uri) {
             Intrinsics.checkNotNullParameter(uri, "uri");
             return get(uri);
         }

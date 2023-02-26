@@ -125,32 +125,32 @@ public abstract class AbstractObjectBigList<K> extends AbstractObjectCollection<
     public static final class IndexBasedSpliterator<K> extends ObjectBigSpliterators.LateBindingSizeIndexBasedSpliterator<K> {
 
         /* renamed from: l */
-        final ObjectBigList<K> f2488l;
+        final ObjectBigList<K> f2452l;
 
         IndexBasedSpliterator(ObjectBigList<K> l, long pos) {
             super(pos);
-            this.f2488l = l;
+            this.f2452l = l;
         }
 
         IndexBasedSpliterator(ObjectBigList<K> l, long pos, long maxPos) {
             super(pos, maxPos);
-            this.f2488l = l;
+            this.f2452l = l;
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigSpliterators.LateBindingSizeIndexBasedSpliterator
         protected final long getMaxPosFromBackingStore() {
-            return this.f2488l.size64();
+            return this.f2452l.size64();
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigSpliterators.AbstractIndexBasedSpliterator
         protected final K get(long i) {
-            return this.f2488l.get(i);
+            return this.f2452l.get(i);
         }
 
         /* access modifiers changed from: protected */
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigSpliterators.AbstractIndexBasedSpliterator
         public final IndexBasedSpliterator<K> makeForSplit(long pos, long maxPos) {
-            return new IndexBasedSpliterator<>(this.f2488l, pos, maxPos);
+            return new IndexBasedSpliterator<>(this.f2452l, pos, maxPos);
         }
     }
 
@@ -341,7 +341,7 @@ public abstract class AbstractObjectBigList<K> extends AbstractObjectCollection<
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r11v0, types: [it.unimi.dsi.fastutil.objects.AbstractObjectBigList, long, it.unimi.dsi.fastutil.objects.AbstractObjectBigList<K>] */
+    /* JADX WARN: Type inference failed for: r11v0, types: [long, it.unimi.dsi.fastutil.objects.AbstractObjectBigList, it.unimi.dsi.fastutil.objects.AbstractObjectBigList<K>] */
     /* JADX WARN: Type inference failed for: r12v0, types: [long] */
     /* JADX WARN: Type inference failed for: r17v0, types: [long] */
     /* JADX WARN: Type inference failed for: r2v0, types: [long] */
@@ -709,11 +709,11 @@ public abstract class AbstractObjectBigList<K> extends AbstractObjectCollection<
         private static final long serialVersionUID = -7046029254386353129L;
 
         /* renamed from: l */
-        protected final ObjectBigList<K> f2489l;
+        protected final ObjectBigList<K> f2453l;
         protected final long from;
 
         /* renamed from: to */
-        protected long f2490to;
+        protected long f2454to;
         static final /* synthetic */ boolean $assertionsDisabled;
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, p014it.unimi.dsi.fastutil.objects.ObjectBigList, p014it.unimi.dsi.fastutil.BigList
@@ -731,18 +731,18 @@ public abstract class AbstractObjectBigList<K> extends AbstractObjectCollection<
         }
 
         public ObjectSubList(ObjectBigList<K> l, long from, long to) {
-            this.f2489l = l;
+            this.f2453l = l;
             this.from = from;
-            this.f2490to = to;
+            this.f2454to = to;
         }
 
         /* access modifiers changed from: private */
         public boolean assertRange() {
-            if (!$assertionsDisabled && this.from > this.f2489l.size64()) {
+            if (!$assertionsDisabled && this.from > this.f2453l.size64()) {
                 throw new AssertionError();
-            } else if (!$assertionsDisabled && this.f2490to > this.f2489l.size64()) {
+            } else if (!$assertionsDisabled && this.f2454to > this.f2453l.size64()) {
                 throw new AssertionError();
-            } else if ($assertionsDisabled || this.f2490to >= this.from) {
+            } else if ($assertionsDisabled || this.f2454to >= this.from) {
                 return true;
             } else {
                 throw new AssertionError();
@@ -751,8 +751,8 @@ public abstract class AbstractObjectBigList<K> extends AbstractObjectCollection<
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, java.util.AbstractCollection, java.util.Collection
         public boolean add(K k) {
-            this.f2489l.add(this.f2490to, k);
-            this.f2490to++;
+            this.f2453l.add(this.f2454to, k);
+            this.f2454to++;
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }
@@ -762,8 +762,8 @@ public abstract class AbstractObjectBigList<K> extends AbstractObjectCollection<
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, p014it.unimi.dsi.fastutil.BigList
         public void add(long index, K k) {
             ensureIndex(index);
-            this.f2489l.add(this.from + index, k);
-            this.f2490to++;
+            this.f2453l.add(this.from + index, k);
+            this.f2454to++;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -772,32 +772,32 @@ public abstract class AbstractObjectBigList<K> extends AbstractObjectCollection<
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, p014it.unimi.dsi.fastutil.BigList
         public boolean addAll(long index, Collection<? extends K> c) {
             ensureIndex(index);
-            this.f2490to += (long) c.size();
-            return this.f2489l.addAll(this.from + index, c);
+            this.f2454to += (long) c.size();
+            return this.f2453l.addAll(this.from + index, c);
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigList
         public K get(long index) {
             ensureRestrictedIndex(index);
-            return this.f2489l.get(this.from + index);
+            return this.f2453l.get(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, p014it.unimi.dsi.fastutil.BigList
         public K remove(long index) {
             ensureRestrictedIndex(index);
-            this.f2490to--;
-            return this.f2489l.remove(this.from + index);
+            this.f2454to--;
+            return this.f2453l.remove(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, p014it.unimi.dsi.fastutil.BigList
         public K set(long index, K k) {
             ensureRestrictedIndex(index);
-            return this.f2489l.set(this.from + index, k);
+            return this.f2453l.set(this.from + index, k);
         }
 
         @Override // p014it.unimi.dsi.fastutil.Size64
         public long size64() {
-            return this.f2490to - this.from;
+            return this.f2454to - this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, p014it.unimi.dsi.fastutil.objects.ObjectBigList
@@ -806,15 +806,15 @@ public abstract class AbstractObjectBigList<K> extends AbstractObjectCollection<
             if (from + length > size64()) {
                 throw new IndexOutOfBoundsException("End index (" + from + length + ") is greater than list size (" + size64() + ")");
             }
-            this.f2489l.getElements(this.from + from, a, offset, length);
+            this.f2453l.getElements(this.from + from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, p014it.unimi.dsi.fastutil.objects.ObjectBigList
         public void removeElements(long from, long to) {
             ensureIndex(from);
             ensureIndex(to);
-            this.f2489l.removeElements(this.from + from, this.from + to);
-            this.f2490to -= to - from;
+            this.f2453l.removeElements(this.from + from, this.from + to);
+            this.f2454to -= to - from;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -823,8 +823,8 @@ public abstract class AbstractObjectBigList<K> extends AbstractObjectCollection<
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, p014it.unimi.dsi.fastutil.objects.ObjectBigList
         public void addElements(long index, K[][] a, long offset, long length) {
             ensureIndex(index);
-            this.f2489l.addElements(this.from + index, a, offset, length);
-            this.f2490to += length;
+            this.f2453l.addElements(this.from + index, a, offset, length);
+            this.f2454to += length;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -846,7 +846,7 @@ public abstract class AbstractObjectBigList<K> extends AbstractObjectCollection<
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigListIterators.AbstractIndexBasedBigIterator
             protected final K get(long i) {
-                return ObjectSubList.this.f2489l.get(ObjectSubList.this.from + i);
+                return ObjectSubList.this.f2453l.get(ObjectSubList.this.from + i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigListIterators.AbstractIndexBasedBigListIterator
@@ -866,7 +866,7 @@ public abstract class AbstractObjectBigList<K> extends AbstractObjectCollection<
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigListIterators.AbstractIndexBasedBigIterator
             protected final long getMaxPos() {
-                return ObjectSubList.this.f2490to - ObjectSubList.this.from;
+                return ObjectSubList.this.f2454to - ObjectSubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigListIterators.AbstractIndexBasedBigListIterator, p014it.unimi.dsi.fastutil.objects.ObjectBigListIterator, p014it.unimi.dsi.fastutil.BigListIterator
@@ -908,7 +908,7 @@ public abstract class AbstractObjectBigList<K> extends AbstractObjectCollection<
 
             @Override // java.util.Iterator
             public boolean hasNext() {
-                return this.parent.nextIndex() < ObjectSubList.this.f2490to;
+                return this.parent.nextIndex() < ObjectSubList.this.f2454to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -971,10 +971,10 @@ public abstract class AbstractObjectBigList<K> extends AbstractObjectCollection<
                 }
                 long currentPos = this.parent.nextIndex();
                 char c = currentPos + n;
-                int i = (c > ObjectSubList.this.f2490to ? 1 : (c == ObjectSubList.this.f2490to ? 0 : -1));
+                int i = (c > ObjectSubList.this.f2454to ? 1 : (c == ObjectSubList.this.f2454to ? 0 : -1));
                 long parentNewPos = c;
                 if (i > 0) {
-                    parentNewPos = ObjectSubList.this.f2490to;
+                    parentNewPos = ObjectSubList.this.f2454to;
                 }
                 return this.parent.skip((parentNewPos == 1 ? 1 : 0) - currentPos);
             }
@@ -983,12 +983,12 @@ public abstract class AbstractObjectBigList<K> extends AbstractObjectCollection<
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, p014it.unimi.dsi.fastutil.objects.ObjectBigList, p014it.unimi.dsi.fastutil.BigList
         public ObjectBigListIterator<K> listIterator(long index) {
             ensureIndex(index);
-            return this.f2489l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f2489l.listIterator(index + this.from));
+            return this.f2453l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f2453l.listIterator(index + this.from));
         }
 
         @Override // java.util.Collection, java.lang.Iterable, p014it.unimi.dsi.fastutil.objects.ObjectCollection, p014it.unimi.dsi.fastutil.objects.ObjectIterable, p014it.unimi.dsi.fastutil.objects.ObjectSet, java.util.Set
         public ObjectSpliterator<K> spliterator() {
-            return this.f2489l instanceof RandomAccess ? new IndexBasedSpliterator(this.f2489l, this.from, this.f2490to) : spliterator();
+            return this.f2453l instanceof RandomAccess ? new IndexBasedSpliterator(this.f2453l, this.from, this.f2454to) : spliterator();
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, p014it.unimi.dsi.fastutil.objects.ObjectBigList, p014it.unimi.dsi.fastutil.BigList

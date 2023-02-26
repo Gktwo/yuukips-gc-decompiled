@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WorldPlayerReviveRspOuterClass.class */
 public final class WorldPlayerReviveRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aWorldPlayerReviveRsp.proto\"'\n\u0014WorldPlayerReviveRsp\u0012\u000f\n\u0007retcode\u0018\u000b \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aWorldPlayerReviveRsp.proto\"'\n\u0014WorldPlayerReviveRsp\u0012\u000f\n\u0007retcode\u0018\u0006 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_WorldPlayerReviveRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_WorldPlayerReviveRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WorldPlayerReviveRsp_descriptor, new String[]{"Retcode"});
 
@@ -41,7 +41,7 @@ public final class WorldPlayerReviveRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WorldPlayerReviveRspOuterClass$WorldPlayerReviveRsp.class */
     public static final class WorldPlayerReviveRsp extends GeneratedMessageV3 implements WorldPlayerReviveRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 11;
+        public static final int RETCODE_FIELD_NUMBER = 6;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final WorldPlayerReviveRsp DEFAULT_INSTANCE = new WorldPlayerReviveRsp();
@@ -88,7 +88,7 @@ public final class WorldPlayerReviveRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 88:
+                            case 48:
                                 this.retcode_ = input.readInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class WorldPlayerReviveRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.retcode_ != 0) {
-                output.writeInt32(11, this.retcode_);
+                output.writeInt32(6, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class WorldPlayerReviveRspOuterClass {
             }
             int size2 = 0;
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(11, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(6, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class WorldPlayerReviveRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

@@ -24,7 +24,7 @@ public final class MethodWriter extends MethodVisitor {
     static final int COMPUTE_ALL_FRAMES = 4;
 
     /* renamed from: NA */
-    private static final int f3105NA = 0;
+    private static final int f3069NA = 0;
     private static final int[] STACK_SIZE_DELTA = {0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 2, 2, 1, 1, 1, 0, 0, 1, 2, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, -1, 0, -1, -1, -1, -1, -1, -2, -1, -2, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3, -4, -3, -4, -3, -3, -3, -3, -1, -2, 1, 1, 1, 2, 2, 2, 0, -1, -2, -1, -2, -1, -2, -1, -2, -1, -2, -1, -2, -1, -2, -1, -2, -1, -2, -1, -2, 0, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -2, -1, -2, -1, -2, 0, 1, 0, 1, -1, -1, 0, 0, 1, 1, -1, 0, -1, 0, 0, 0, -3, -1, -1, -3, -3, -1, -1, -1, -1, -1, -1, -2, -2, -2, -2, -2, -2, -2, -2, 0, 1, 0, -1, -1, -1, -2, -1, -2, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, -1, -1, 0, 0, -1, -1, 0, 0};
     private final SymbolTable symbolTable;
     private final int accessFlags;
@@ -265,28 +265,28 @@ public final class MethodWriter extends MethodVisitor {
                         break;
                     case 1:
                         this.currentLocals += numLocal;
-                        this.stackMapTableEntries.putByte(PacketOpcodes.EnterSceneReadyRsp + numLocal).putShort(offsetDelta);
+                        this.stackMapTableEntries.putByte(PacketOpcodes.SceneForceLockNotify + numLocal).putShort(offsetDelta);
                         for (int i5 = 0; i5 < numLocal; i5++) {
                             putFrameType(local[i5]);
                         }
                         break;
                     case 2:
                         this.currentLocals -= numLocal;
-                        this.stackMapTableEntries.putByte(PacketOpcodes.EnterSceneReadyRsp - numLocal).putShort(offsetDelta);
+                        this.stackMapTableEntries.putByte(PacketOpcodes.SceneForceLockNotify - numLocal).putShort(offsetDelta);
                         break;
                     case 3:
                         if (offsetDelta < 64) {
                             this.stackMapTableEntries.putByte(offsetDelta);
                             break;
                         } else {
-                            this.stackMapTableEntries.putByte(PacketOpcodes.EnterSceneReadyRsp).putShort(offsetDelta);
+                            this.stackMapTableEntries.putByte(PacketOpcodes.SceneForceLockNotify).putShort(offsetDelta);
                             break;
                         }
                     case 4:
                         if (offsetDelta < 64) {
                             this.stackMapTableEntries.putByte(64 + offsetDelta);
                         } else {
-                            this.stackMapTableEntries.putByte(247).putShort(offsetDelta);
+                            this.stackMapTableEntries.putByte(PacketOpcodes.ClientScriptEventNotify).putShort(offsetDelta);
                         }
                         putFrameType(stack[0]);
                         break;
@@ -520,7 +520,7 @@ public final class MethodWriter extends MethodVisitor {
             } else {
                 this.code.putByte(baseOpcode >= 198 ? baseOpcode ^ 1 : ((baseOpcode + 1) ^ 1) - 1);
                 this.code.putShort(8);
-                this.code.putByte(220);
+                this.code.putByte(PacketOpcodes.SceneInitFinishRsp);
                 this.hasAsmInstructions = true;
                 nextInsnIsJumpTarget = true;
             }
@@ -1024,7 +1024,7 @@ public final class MethodWriter extends MethodVisitor {
                     type = 248;
                     break;
                 case 0:
-                    type = offsetDelta < 64 ? 0 : PacketOpcodes.EnterSceneReadyRsp;
+                    type = offsetDelta < 64 ? 0 : PacketOpcodes.SceneForceLockNotify;
                     break;
                 case 1:
                 case 2:
@@ -1036,7 +1036,7 @@ public final class MethodWriter extends MethodVisitor {
             if (offsetDelta < 63) {
                 type = 64;
             } else {
-                type = 247;
+                type = PacketOpcodes.ClientScriptEventNotify;
             }
         }
         if (type != 255) {
@@ -1061,18 +1061,18 @@ public final class MethodWriter extends MethodVisitor {
                 this.stackMapTableEntries.putByte(64 + offsetDelta);
                 putAbstractTypes(3 + numLocal, 4 + numLocal);
                 return;
-            case 247:
-                this.stackMapTableEntries.putByte(247).putShort(offsetDelta);
+            case PacketOpcodes.ClientScriptEventNotify:
+                this.stackMapTableEntries.putByte(PacketOpcodes.ClientScriptEventNotify).putShort(offsetDelta);
                 putAbstractTypes(3 + numLocal, 4 + numLocal);
                 return;
-            case PacketOpcodes.ScenePlayerLocationNotify:
-                this.stackMapTableEntries.putByte(PacketOpcodes.EnterSceneReadyRsp + numLocalDelta).putShort(offsetDelta);
+            case PacketOpcodes.EnterSceneDoneReq:
+                this.stackMapTableEntries.putByte(PacketOpcodes.SceneForceLockNotify + numLocalDelta).putShort(offsetDelta);
                 return;
-            case PacketOpcodes.EnterSceneReadyRsp:
-                this.stackMapTableEntries.putByte(PacketOpcodes.EnterSceneReadyRsp).putShort(offsetDelta);
+            case PacketOpcodes.SceneForceLockNotify:
+                this.stackMapTableEntries.putByte(PacketOpcodes.SceneForceLockNotify).putShort(offsetDelta);
                 return;
-            case PacketOpcodes.PersonalSceneJumpReq:
-                this.stackMapTableEntries.putByte(PacketOpcodes.EnterSceneReadyRsp + numLocalDelta).putShort(offsetDelta);
+            case 252:
+                this.stackMapTableEntries.putByte(PacketOpcodes.SceneForceLockNotify + numLocalDelta).putShort(offsetDelta);
                 putAbstractTypes(3 + previousNumlocal, 3 + numLocal);
                 return;
             case 255:

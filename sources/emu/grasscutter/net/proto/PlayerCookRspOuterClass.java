@@ -27,31 +27,13 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerCookRspOuterClass.class */
 public final class PlayerCookRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013PlayerCookRsp.proto\u001a\u0014CookRecipeData.proto\u001a\u000fItemParam.proto\"³\u0001\n\rPlayerCookRsp\u0012\u000f\n\u0007retcode\u0018\u0004 \u0001(\u0005\u0012$\n\u000brecipe_data\u0018\f \u0001(\u000b2\u000f.CookRecipeData\u0012\u001d\n\titem_list\u0018\u0005 \u0003(\u000b2\n.ItemParam\u0012\u0013\n\u000bqte_quality\u0018\u0001 \u0001(\r\u0012#\n\u000fextra_item_list\u0018\u0003 \u0003(\u000b2\n.ItemParam\u0012\u0012\n\ncook_count\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CookRecipeDataOuterClass.getDescriptor(), ItemParamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013PlayerCookRsp.proto\u001a\u0014CookRecipeData.proto\u001a\u000fItemParam.proto\"­\u0001\n\rPlayerCookRsp\u0012\u000f\n\u0007retcode\u0018\u0007 \u0001(\u0005\u0012!\n\rextraItemList\u0018\r \u0003(\u000b2\n.ItemParam\u0012\u001c\n\bitemList\u0018\t \u0003(\u000b2\n.ItemParam\u0012#\n\nrecipeData\u0018\u0005 \u0001(\u000b2\u000f.CookRecipeData\u0012\u0011\n\tcookCount\u0018\f \u0001(\r\u0012\u0012\n\nqteQuality\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CookRecipeDataOuterClass.getDescriptor(), ItemParamOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_PlayerCookRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerCookRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerCookRsp_descriptor, new String[]{"Retcode", "RecipeData", "ItemList", "QteQuality", "ExtraItemList", "CookCount"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerCookRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerCookRsp_descriptor, new String[]{"Retcode", "ExtraItemList", "ItemList", "RecipeData", "CookCount", "QteQuality"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerCookRspOuterClass$PlayerCookRspOrBuilder.class */
     public interface PlayerCookRspOrBuilder extends MessageOrBuilder {
         int getRetcode();
-
-        boolean hasRecipeData();
-
-        CookRecipeDataOuterClass.CookRecipeData getRecipeData();
-
-        CookRecipeDataOuterClass.CookRecipeDataOrBuilder getRecipeDataOrBuilder();
-
-        List<ItemParamOuterClass.ItemParam> getItemListList();
-
-        ItemParamOuterClass.ItemParam getItemList(int i);
-
-        int getItemListCount();
-
-        List<? extends ItemParamOuterClass.ItemParamOrBuilder> getItemListOrBuilderList();
-
-        ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(int i);
-
-        int getQteQuality();
 
         List<ItemParamOuterClass.ItemParam> getExtraItemListList();
 
@@ -63,7 +45,25 @@ public final class PlayerCookRspOuterClass {
 
         ItemParamOuterClass.ItemParamOrBuilder getExtraItemListOrBuilder(int i);
 
+        List<ItemParamOuterClass.ItemParam> getItemListList();
+
+        ItemParamOuterClass.ItemParam getItemList(int i);
+
+        int getItemListCount();
+
+        List<? extends ItemParamOuterClass.ItemParamOrBuilder> getItemListOrBuilderList();
+
+        ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(int i);
+
+        boolean hasRecipeData();
+
+        CookRecipeDataOuterClass.CookRecipeData getRecipeData();
+
+        CookRecipeDataOuterClass.CookRecipeDataOrBuilder getRecipeDataOrBuilder();
+
         int getCookCount();
+
+        int getQteQuality();
     }
 
     private PlayerCookRspOuterClass() {
@@ -79,18 +79,18 @@ public final class PlayerCookRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerCookRspOuterClass$PlayerCookRsp.class */
     public static final class PlayerCookRsp extends GeneratedMessageV3 implements PlayerCookRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 4;
+        public static final int RETCODE_FIELD_NUMBER = 7;
         private int retcode_;
-        public static final int RECIPE_DATA_FIELD_NUMBER = 12;
-        private CookRecipeDataOuterClass.CookRecipeData recipeData_;
-        public static final int ITEM_LIST_FIELD_NUMBER = 5;
-        private List<ItemParamOuterClass.ItemParam> itemList_;
-        public static final int QTE_QUALITY_FIELD_NUMBER = 1;
-        private int qteQuality_;
-        public static final int EXTRA_ITEM_LIST_FIELD_NUMBER = 3;
+        public static final int EXTRAITEMLIST_FIELD_NUMBER = 13;
         private List<ItemParamOuterClass.ItemParam> extraItemList_;
-        public static final int COOK_COUNT_FIELD_NUMBER = 11;
+        public static final int ITEMLIST_FIELD_NUMBER = 9;
+        private List<ItemParamOuterClass.ItemParam> itemList_;
+        public static final int RECIPEDATA_FIELD_NUMBER = 5;
+        private CookRecipeDataOuterClass.CookRecipeData recipeData_;
+        public static final int COOKCOUNT_FIELD_NUMBER = 12;
         private int cookCount_;
+        public static final int QTEQUALITY_FIELD_NUMBER = 4;
+        private int qteQuality_;
         private byte memoizedIsInitialized;
         private static final PlayerCookRsp DEFAULT_INSTANCE = new PlayerCookRsp();
         private static final Parser<PlayerCookRsp> PARSER = new AbstractParser<PlayerCookRsp>() { // from class: emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRsp.1
@@ -107,8 +107,8 @@ public final class PlayerCookRspOuterClass {
 
         private PlayerCookRsp() {
             this.memoizedIsInitialized = -1;
-            this.itemList_ = Collections.emptyList();
             this.extraItemList_ = Collections.emptyList();
+            this.itemList_ = Collections.emptyList();
         }
 
         /* access modifiers changed from: protected */
@@ -142,30 +142,10 @@ public final class PlayerCookRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
+                                case 32:
                                     this.qteQuality_ = input.readUInt32();
                                     break;
-                                case 26:
-                                    if ((mutable_bitField0_ & 2) == 0) {
-                                        this.extraItemList_ = new ArrayList();
-                                        mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
-                                    }
-                                    this.extraItemList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-                                    break;
-                                case 32:
-                                    this.retcode_ = input.readInt32();
-                                    break;
                                 case 42:
-                                    if ((mutable_bitField0_ & 1) == 0) {
-                                        this.itemList_ = new ArrayList();
-                                        mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
-                                    }
-                                    this.itemList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-                                    break;
-                                case 88:
-                                    this.cookCount_ = input.readUInt32();
-                                    break;
-                                case 98:
                                     CookRecipeDataOuterClass.CookRecipeData.Builder subBuilder = this.recipeData_ != null ? this.recipeData_.toBuilder() : null;
                                     this.recipeData_ = (CookRecipeDataOuterClass.CookRecipeData) input.readMessage(CookRecipeDataOuterClass.CookRecipeData.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -175,6 +155,26 @@ public final class PlayerCookRspOuterClass {
                                         this.recipeData_ = subBuilder.buildPartial();
                                         break;
                                     }
+                                case 56:
+                                    this.retcode_ = input.readInt32();
+                                    break;
+                                case 74:
+                                    if ((mutable_bitField0_ & 2) == 0) {
+                                        this.itemList_ = new ArrayList();
+                                        mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                    }
+                                    this.itemList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+                                    break;
+                                case 96:
+                                    this.cookCount_ = input.readUInt32();
+                                    break;
+                                case 106:
+                                    if ((mutable_bitField0_ & 1) == 0) {
+                                        this.extraItemList_ = new ArrayList();
+                                        mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                    }
+                                    this.extraItemList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+                                    break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                         break;
@@ -193,10 +193,10 @@ public final class PlayerCookRspOuterClass {
                 }
             } finally {
                 if ((mutable_bitField0_ & 2) != 0) {
-                    this.extraItemList_ = Collections.unmodifiableList(this.extraItemList_);
+                    this.itemList_ = Collections.unmodifiableList(this.itemList_);
                 }
                 if ((mutable_bitField0_ & 1) != 0) {
-                    this.itemList_ = Collections.unmodifiableList(this.itemList_);
+                    this.extraItemList_ = Collections.unmodifiableList(this.extraItemList_);
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -215,51 +215,6 @@ public final class PlayerCookRspOuterClass {
         @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
         public int getRetcode() {
             return this.retcode_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
-        public boolean hasRecipeData() {
-            return this.recipeData_ != null;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
-        public CookRecipeDataOuterClass.CookRecipeData getRecipeData() {
-            return this.recipeData_ == null ? CookRecipeDataOuterClass.CookRecipeData.getDefaultInstance() : this.recipeData_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
-        public CookRecipeDataOuterClass.CookRecipeDataOrBuilder getRecipeDataOrBuilder() {
-            return getRecipeData();
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
-        public List<ItemParamOuterClass.ItemParam> getItemListList() {
-            return this.itemList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
-        public List<? extends ItemParamOuterClass.ItemParamOrBuilder> getItemListOrBuilderList() {
-            return this.itemList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
-        public int getItemListCount() {
-            return this.itemList_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
-        public ItemParamOuterClass.ItemParam getItemList(int index) {
-            return this.itemList_.get(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
-        public ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(int index) {
-            return this.itemList_.get(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
-        public int getQteQuality() {
-            return this.qteQuality_;
         }
 
         @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
@@ -288,8 +243,53 @@ public final class PlayerCookRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
+        public List<ItemParamOuterClass.ItemParam> getItemListList() {
+            return this.itemList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
+        public List<? extends ItemParamOuterClass.ItemParamOrBuilder> getItemListOrBuilderList() {
+            return this.itemList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
+        public int getItemListCount() {
+            return this.itemList_.size();
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
+        public ItemParamOuterClass.ItemParam getItemList(int index) {
+            return this.itemList_.get(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
+        public ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(int index) {
+            return this.itemList_.get(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
+        public boolean hasRecipeData() {
+            return this.recipeData_ != null;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
+        public CookRecipeDataOuterClass.CookRecipeData getRecipeData() {
+            return this.recipeData_ == null ? CookRecipeDataOuterClass.CookRecipeData.getDefaultInstance() : this.recipeData_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
+        public CookRecipeDataOuterClass.CookRecipeDataOrBuilder getRecipeDataOrBuilder() {
+            return getRecipeData();
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
         public int getCookCount() {
             return this.cookCount_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
+        public int getQteQuality() {
+            return this.qteQuality_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -308,22 +308,22 @@ public final class PlayerCookRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.qteQuality_ != 0) {
-                output.writeUInt32(1, this.qteQuality_);
-            }
-            for (int i = 0; i < this.extraItemList_.size(); i++) {
-                output.writeMessage(3, this.extraItemList_.get(i));
-            }
-            if (this.retcode_ != 0) {
-                output.writeInt32(4, this.retcode_);
-            }
-            for (int i2 = 0; i2 < this.itemList_.size(); i2++) {
-                output.writeMessage(5, this.itemList_.get(i2));
-            }
-            if (this.cookCount_ != 0) {
-                output.writeUInt32(11, this.cookCount_);
+                output.writeUInt32(4, this.qteQuality_);
             }
             if (this.recipeData_ != null) {
-                output.writeMessage(12, getRecipeData());
+                output.writeMessage(5, getRecipeData());
+            }
+            if (this.retcode_ != 0) {
+                output.writeInt32(7, this.retcode_);
+            }
+            for (int i = 0; i < this.itemList_.size(); i++) {
+                output.writeMessage(9, this.itemList_.get(i));
+            }
+            if (this.cookCount_ != 0) {
+                output.writeUInt32(12, this.cookCount_);
+            }
+            for (int i2 = 0; i2 < this.extraItemList_.size(); i2++) {
+                output.writeMessage(13, this.extraItemList_.get(i2));
             }
             this.unknownFields.writeTo(output);
         }
@@ -336,22 +336,22 @@ public final class PlayerCookRspOuterClass {
             }
             int size2 = 0;
             if (this.qteQuality_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.qteQuality_);
-            }
-            for (int i = 0; i < this.extraItemList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(3, this.extraItemList_.get(i));
-            }
-            if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(4, this.retcode_);
-            }
-            for (int i2 = 0; i2 < this.itemList_.size(); i2++) {
-                size2 += CodedOutputStream.computeMessageSize(5, this.itemList_.get(i2));
-            }
-            if (this.cookCount_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.cookCount_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.qteQuality_);
             }
             if (this.recipeData_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(12, getRecipeData());
+                size2 += CodedOutputStream.computeMessageSize(5, getRecipeData());
+            }
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(7, this.retcode_);
+            }
+            for (int i = 0; i < this.itemList_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(9, this.itemList_.get(i));
+            }
+            if (this.cookCount_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(12, this.cookCount_);
+            }
+            for (int i2 = 0; i2 < this.extraItemList_.size(); i2++) {
+                size2 += CodedOutputStream.computeMessageSize(13, this.extraItemList_.get(i2));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -367,8 +367,8 @@ public final class PlayerCookRspOuterClass {
                 return equals(obj);
             }
             PlayerCookRsp other = (PlayerCookRsp) obj;
-            if (getRetcode() == other.getRetcode() && hasRecipeData() == other.hasRecipeData()) {
-                return (!hasRecipeData() || getRecipeData().equals(other.getRecipeData())) && getItemListList().equals(other.getItemListList()) && getQteQuality() == other.getQteQuality() && getExtraItemListList().equals(other.getExtraItemListList()) && getCookCount() == other.getCookCount() && this.unknownFields.equals(other.unknownFields);
+            if (getRetcode() == other.getRetcode() && getExtraItemListList().equals(other.getExtraItemListList()) && getItemListList().equals(other.getItemListList()) && hasRecipeData() == other.hasRecipeData()) {
+                return (!hasRecipeData() || getRecipeData().equals(other.getRecipeData())) && getCookCount() == other.getCookCount() && getQteQuality() == other.getQteQuality() && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -378,20 +378,19 @@ public final class PlayerCookRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getRetcode();
-            if (hasRecipeData()) {
-                hash = (53 * ((37 * hash) + 12)) + getRecipeData().hashCode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getRetcode();
+            if (getExtraItemListCount() > 0) {
+                hash = (53 * ((37 * hash) + 13)) + getExtraItemListList().hashCode();
             }
             if (getItemListCount() > 0) {
-                hash = (53 * ((37 * hash) + 5)) + getItemListList().hashCode();
+                hash = (53 * ((37 * hash) + 9)) + getItemListList().hashCode();
             }
-            int hash2 = (53 * ((37 * hash) + 1)) + getQteQuality();
-            if (getExtraItemListCount() > 0) {
-                hash2 = (53 * ((37 * hash2) + 3)) + getExtraItemListList().hashCode();
+            if (hasRecipeData()) {
+                hash = (53 * ((37 * hash) + 5)) + getRecipeData().hashCode();
             }
-            int hash3 = (29 * ((53 * ((37 * hash2) + 11)) + getCookCount())) + this.unknownFields.hashCode();
-            this.memoizedHashCode = hash3;
-            return hash3;
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 12)) + getCookCount())) + 4)) + getQteQuality())) + this.unknownFields.hashCode();
+            this.memoizedHashCode = hash2;
+            return hash2;
         }
 
         public static PlayerCookRsp parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
@@ -470,14 +469,14 @@ public final class PlayerCookRspOuterClass {
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements PlayerCookRspOrBuilder {
             private int bitField0_;
             private int retcode_;
+            private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> extraItemListBuilder_;
+            private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> itemListBuilder_;
             private CookRecipeDataOuterClass.CookRecipeData recipeData_;
             private SingleFieldBuilderV3<CookRecipeDataOuterClass.CookRecipeData, CookRecipeDataOuterClass.CookRecipeData.Builder, CookRecipeDataOuterClass.CookRecipeDataOrBuilder> recipeDataBuilder_;
-            private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> itemListBuilder_;
-            private int qteQuality_;
-            private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> extraItemListBuilder_;
             private int cookCount_;
-            private List<ItemParamOuterClass.ItemParam> itemList_ = Collections.emptyList();
+            private int qteQuality_;
             private List<ItemParamOuterClass.ItemParam> extraItemList_ = Collections.emptyList();
+            private List<ItemParamOuterClass.ItemParam> itemList_ = Collections.emptyList();
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return PlayerCookRspOuterClass.internal_static_PlayerCookRsp_descriptor;
@@ -499,8 +498,8 @@ public final class PlayerCookRspOuterClass {
 
             private void maybeForceBuilderInitialization() {
                 if (PlayerCookRsp.alwaysUseFieldBuilders) {
-                    getItemListFieldBuilder();
                     getExtraItemListFieldBuilder();
+                    getItemListFieldBuilder();
                 }
             }
 
@@ -508,26 +507,26 @@ public final class PlayerCookRspOuterClass {
             public Builder clear() {
                 clear();
                 this.retcode_ = 0;
+                if (this.extraItemListBuilder_ == null) {
+                    this.extraItemList_ = Collections.emptyList();
+                    this.bitField0_ &= -2;
+                } else {
+                    this.extraItemListBuilder_.clear();
+                }
+                if (this.itemListBuilder_ == null) {
+                    this.itemList_ = Collections.emptyList();
+                    this.bitField0_ &= -3;
+                } else {
+                    this.itemListBuilder_.clear();
+                }
                 if (this.recipeDataBuilder_ == null) {
                     this.recipeData_ = null;
                 } else {
                     this.recipeData_ = null;
                     this.recipeDataBuilder_ = null;
                 }
-                if (this.itemListBuilder_ == null) {
-                    this.itemList_ = Collections.emptyList();
-                    this.bitField0_ &= -2;
-                } else {
-                    this.itemListBuilder_.clear();
-                }
-                this.qteQuality_ = 0;
-                if (this.extraItemListBuilder_ == null) {
-                    this.extraItemList_ = Collections.emptyList();
-                    this.bitField0_ &= -3;
-                } else {
-                    this.extraItemListBuilder_.clear();
-                }
                 this.cookCount_ = 0;
+                this.qteQuality_ = 0;
                 return this;
             }
 
@@ -555,31 +554,31 @@ public final class PlayerCookRspOuterClass {
                 PlayerCookRsp result = new PlayerCookRsp(this);
                 int i = this.bitField0_;
                 result.retcode_ = this.retcode_;
-                if (this.recipeDataBuilder_ == null) {
-                    result.recipeData_ = this.recipeData_;
-                } else {
-                    result.recipeData_ = this.recipeDataBuilder_.build();
-                }
-                if (this.itemListBuilder_ == null) {
-                    if ((this.bitField0_ & 1) != 0) {
-                        this.itemList_ = Collections.unmodifiableList(this.itemList_);
-                        this.bitField0_ &= -2;
-                    }
-                    result.itemList_ = this.itemList_;
-                } else {
-                    result.itemList_ = this.itemListBuilder_.build();
-                }
-                result.qteQuality_ = this.qteQuality_;
                 if (this.extraItemListBuilder_ == null) {
-                    if ((this.bitField0_ & 2) != 0) {
+                    if ((this.bitField0_ & 1) != 0) {
                         this.extraItemList_ = Collections.unmodifiableList(this.extraItemList_);
-                        this.bitField0_ &= -3;
+                        this.bitField0_ &= -2;
                     }
                     result.extraItemList_ = this.extraItemList_;
                 } else {
                     result.extraItemList_ = this.extraItemListBuilder_.build();
                 }
+                if (this.itemListBuilder_ == null) {
+                    if ((this.bitField0_ & 2) != 0) {
+                        this.itemList_ = Collections.unmodifiableList(this.itemList_);
+                        this.bitField0_ &= -3;
+                    }
+                    result.itemList_ = this.itemList_;
+                } else {
+                    result.itemList_ = this.itemListBuilder_.build();
+                }
+                if (this.recipeDataBuilder_ == null) {
+                    result.recipeData_ = this.recipeData_;
+                } else {
+                    result.recipeData_ = this.recipeDataBuilder_.build();
+                }
                 result.cookCount_ = this.cookCount_;
+                result.qteQuality_ = this.qteQuality_;
                 onBuilt();
                 return result;
             }
@@ -630,39 +629,11 @@ public final class PlayerCookRspOuterClass {
                 if (other.getRetcode() != 0) {
                     setRetcode(other.getRetcode());
                 }
-                if (other.hasRecipeData()) {
-                    mergeRecipeData(other.getRecipeData());
-                }
-                if (this.itemListBuilder_ == null) {
-                    if (!other.itemList_.isEmpty()) {
-                        if (this.itemList_.isEmpty()) {
-                            this.itemList_ = other.itemList_;
-                            this.bitField0_ &= -2;
-                        } else {
-                            ensureItemListIsMutable();
-                            this.itemList_.addAll(other.itemList_);
-                        }
-                        onChanged();
-                    }
-                } else if (!other.itemList_.isEmpty()) {
-                    if (this.itemListBuilder_.isEmpty()) {
-                        this.itemListBuilder_.dispose();
-                        this.itemListBuilder_ = null;
-                        this.itemList_ = other.itemList_;
-                        this.bitField0_ &= -2;
-                        this.itemListBuilder_ = PlayerCookRsp.alwaysUseFieldBuilders ? getItemListFieldBuilder() : null;
-                    } else {
-                        this.itemListBuilder_.addAllMessages(other.itemList_);
-                    }
-                }
-                if (other.getQteQuality() != 0) {
-                    setQteQuality(other.getQteQuality());
-                }
                 if (this.extraItemListBuilder_ == null) {
                     if (!other.extraItemList_.isEmpty()) {
                         if (this.extraItemList_.isEmpty()) {
                             this.extraItemList_ = other.extraItemList_;
-                            this.bitField0_ &= -3;
+                            this.bitField0_ &= -2;
                         } else {
                             ensureExtraItemListIsMutable();
                             this.extraItemList_.addAll(other.extraItemList_);
@@ -674,14 +645,42 @@ public final class PlayerCookRspOuterClass {
                         this.extraItemListBuilder_.dispose();
                         this.extraItemListBuilder_ = null;
                         this.extraItemList_ = other.extraItemList_;
-                        this.bitField0_ &= -3;
+                        this.bitField0_ &= -2;
                         this.extraItemListBuilder_ = PlayerCookRsp.alwaysUseFieldBuilders ? getExtraItemListFieldBuilder() : null;
                     } else {
                         this.extraItemListBuilder_.addAllMessages(other.extraItemList_);
                     }
                 }
+                if (this.itemListBuilder_ == null) {
+                    if (!other.itemList_.isEmpty()) {
+                        if (this.itemList_.isEmpty()) {
+                            this.itemList_ = other.itemList_;
+                            this.bitField0_ &= -3;
+                        } else {
+                            ensureItemListIsMutable();
+                            this.itemList_.addAll(other.itemList_);
+                        }
+                        onChanged();
+                    }
+                } else if (!other.itemList_.isEmpty()) {
+                    if (this.itemListBuilder_.isEmpty()) {
+                        this.itemListBuilder_.dispose();
+                        this.itemListBuilder_ = null;
+                        this.itemList_ = other.itemList_;
+                        this.bitField0_ &= -3;
+                        this.itemListBuilder_ = PlayerCookRsp.alwaysUseFieldBuilders ? getItemListFieldBuilder() : null;
+                    } else {
+                        this.itemListBuilder_.addAllMessages(other.itemList_);
+                    }
+                }
+                if (other.hasRecipeData()) {
+                    mergeRecipeData(other.getRecipeData());
+                }
                 if (other.getCookCount() != 0) {
                     setCookCount(other.getCookCount());
+                }
+                if (other.getQteQuality() != 0) {
+                    setQteQuality(other.getQteQuality());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -732,284 +731,10 @@ public final class PlayerCookRspOuterClass {
                 return this;
             }
 
-            @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
-            public boolean hasRecipeData() {
-                return (this.recipeDataBuilder_ == null && this.recipeData_ == null) ? false : true;
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
-            public CookRecipeDataOuterClass.CookRecipeData getRecipeData() {
-                if (this.recipeDataBuilder_ == null) {
-                    return this.recipeData_ == null ? CookRecipeDataOuterClass.CookRecipeData.getDefaultInstance() : this.recipeData_;
-                }
-                return this.recipeDataBuilder_.getMessage();
-            }
-
-            public Builder setRecipeData(CookRecipeDataOuterClass.CookRecipeData value) {
-                if (this.recipeDataBuilder_ != null) {
-                    this.recipeDataBuilder_.setMessage(value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    this.recipeData_ = value;
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder setRecipeData(CookRecipeDataOuterClass.CookRecipeData.Builder builderForValue) {
-                if (this.recipeDataBuilder_ == null) {
-                    this.recipeData_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    this.recipeDataBuilder_.setMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder mergeRecipeData(CookRecipeDataOuterClass.CookRecipeData value) {
-                if (this.recipeDataBuilder_ == null) {
-                    if (this.recipeData_ != null) {
-                        this.recipeData_ = CookRecipeDataOuterClass.CookRecipeData.newBuilder(this.recipeData_).mergeFrom(value).buildPartial();
-                    } else {
-                        this.recipeData_ = value;
-                    }
-                    onChanged();
-                } else {
-                    this.recipeDataBuilder_.mergeFrom(value);
-                }
-                return this;
-            }
-
-            public Builder clearRecipeData() {
-                if (this.recipeDataBuilder_ == null) {
-                    this.recipeData_ = null;
-                    onChanged();
-                } else {
-                    this.recipeData_ = null;
-                    this.recipeDataBuilder_ = null;
-                }
-                return this;
-            }
-
-            public CookRecipeDataOuterClass.CookRecipeData.Builder getRecipeDataBuilder() {
-                onChanged();
-                return getRecipeDataFieldBuilder().getBuilder();
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
-            public CookRecipeDataOuterClass.CookRecipeDataOrBuilder getRecipeDataOrBuilder() {
-                if (this.recipeDataBuilder_ != null) {
-                    return this.recipeDataBuilder_.getMessageOrBuilder();
-                }
-                return this.recipeData_ == null ? CookRecipeDataOuterClass.CookRecipeData.getDefaultInstance() : this.recipeData_;
-            }
-
-            private SingleFieldBuilderV3<CookRecipeDataOuterClass.CookRecipeData, CookRecipeDataOuterClass.CookRecipeData.Builder, CookRecipeDataOuterClass.CookRecipeDataOrBuilder> getRecipeDataFieldBuilder() {
-                if (this.recipeDataBuilder_ == null) {
-                    this.recipeDataBuilder_ = new SingleFieldBuilderV3<>(getRecipeData(), getParentForChildren(), isClean());
-                    this.recipeData_ = null;
-                }
-                return this.recipeDataBuilder_;
-            }
-
-            private void ensureItemListIsMutable() {
-                if ((this.bitField0_ & 1) == 0) {
-                    this.itemList_ = new ArrayList(this.itemList_);
-                    this.bitField0_ |= 1;
-                }
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
-            public List<ItemParamOuterClass.ItemParam> getItemListList() {
-                if (this.itemListBuilder_ == null) {
-                    return Collections.unmodifiableList(this.itemList_);
-                }
-                return this.itemListBuilder_.getMessageList();
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
-            public int getItemListCount() {
-                if (this.itemListBuilder_ == null) {
-                    return this.itemList_.size();
-                }
-                return this.itemListBuilder_.getCount();
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
-            public ItemParamOuterClass.ItemParam getItemList(int index) {
-                if (this.itemListBuilder_ == null) {
-                    return this.itemList_.get(index);
-                }
-                return this.itemListBuilder_.getMessage(index);
-            }
-
-            public Builder setItemList(int index, ItemParamOuterClass.ItemParam value) {
-                if (this.itemListBuilder_ != null) {
-                    this.itemListBuilder_.setMessage(index, value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    ensureItemListIsMutable();
-                    this.itemList_.set(index, value);
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder setItemList(int index, ItemParamOuterClass.ItemParam.Builder builderForValue) {
-                if (this.itemListBuilder_ == null) {
-                    ensureItemListIsMutable();
-                    this.itemList_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    this.itemListBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addItemList(ItemParamOuterClass.ItemParam value) {
-                if (this.itemListBuilder_ != null) {
-                    this.itemListBuilder_.addMessage(value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    ensureItemListIsMutable();
-                    this.itemList_.add(value);
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder addItemList(int index, ItemParamOuterClass.ItemParam value) {
-                if (this.itemListBuilder_ != null) {
-                    this.itemListBuilder_.addMessage(index, value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    ensureItemListIsMutable();
-                    this.itemList_.add(index, value);
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder addItemList(ItemParamOuterClass.ItemParam.Builder builderForValue) {
-                if (this.itemListBuilder_ == null) {
-                    ensureItemListIsMutable();
-                    this.itemList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    this.itemListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addItemList(int index, ItemParamOuterClass.ItemParam.Builder builderForValue) {
-                if (this.itemListBuilder_ == null) {
-                    ensureItemListIsMutable();
-                    this.itemList_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    this.itemListBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addAllItemList(Iterable<? extends ItemParamOuterClass.ItemParam> values) {
-                if (this.itemListBuilder_ == null) {
-                    ensureItemListIsMutable();
-                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.itemList_);
-                    onChanged();
-                } else {
-                    this.itemListBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-
-            public Builder clearItemList() {
-                if (this.itemListBuilder_ == null) {
-                    this.itemList_ = Collections.emptyList();
-                    this.bitField0_ &= -2;
-                    onChanged();
-                } else {
-                    this.itemListBuilder_.clear();
-                }
-                return this;
-            }
-
-            public Builder removeItemList(int index) {
-                if (this.itemListBuilder_ == null) {
-                    ensureItemListIsMutable();
-                    this.itemList_.remove(index);
-                    onChanged();
-                } else {
-                    this.itemListBuilder_.remove(index);
-                }
-                return this;
-            }
-
-            public ItemParamOuterClass.ItemParam.Builder getItemListBuilder(int index) {
-                return getItemListFieldBuilder().getBuilder(index);
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
-            public ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(int index) {
-                if (this.itemListBuilder_ == null) {
-                    return this.itemList_.get(index);
-                }
-                return this.itemListBuilder_.getMessageOrBuilder(index);
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
-            public List<? extends ItemParamOuterClass.ItemParamOrBuilder> getItemListOrBuilderList() {
-                if (this.itemListBuilder_ != null) {
-                    return this.itemListBuilder_.getMessageOrBuilderList();
-                }
-                return Collections.unmodifiableList(this.itemList_);
-            }
-
-            public ItemParamOuterClass.ItemParam.Builder addItemListBuilder() {
-                return getItemListFieldBuilder().addBuilder(ItemParamOuterClass.ItemParam.getDefaultInstance());
-            }
-
-            public ItemParamOuterClass.ItemParam.Builder addItemListBuilder(int index) {
-                return getItemListFieldBuilder().addBuilder(index, ItemParamOuterClass.ItemParam.getDefaultInstance());
-            }
-
-            public List<ItemParamOuterClass.ItemParam.Builder> getItemListBuilderList() {
-                return getItemListFieldBuilder().getBuilderList();
-            }
-
-            private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> getItemListFieldBuilder() {
-                if (this.itemListBuilder_ == null) {
-                    this.itemListBuilder_ = new RepeatedFieldBuilderV3<>(this.itemList_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
-                    this.itemList_ = null;
-                }
-                return this.itemListBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
-            public int getQteQuality() {
-                return this.qteQuality_;
-            }
-
-            public Builder setQteQuality(int value) {
-                this.qteQuality_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearQteQuality() {
-                this.qteQuality_ = 0;
-                onChanged();
-                return this;
-            }
-
             private void ensureExtraItemListIsMutable() {
-                if ((this.bitField0_ & 2) == 0) {
+                if ((this.bitField0_ & 1) == 0) {
                     this.extraItemList_ = new ArrayList(this.extraItemList_);
-                    this.bitField0_ |= 2;
+                    this.bitField0_ |= 1;
                 }
             }
 
@@ -1123,7 +848,7 @@ public final class PlayerCookRspOuterClass {
             public Builder clearExtraItemList() {
                 if (this.extraItemListBuilder_ == null) {
                     this.extraItemList_ = Collections.emptyList();
-                    this.bitField0_ &= -3;
+                    this.bitField0_ &= -2;
                     onChanged();
                 } else {
                     this.extraItemListBuilder_.clear();
@@ -1176,10 +901,267 @@ public final class PlayerCookRspOuterClass {
 
             private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> getExtraItemListFieldBuilder() {
                 if (this.extraItemListBuilder_ == null) {
-                    this.extraItemListBuilder_ = new RepeatedFieldBuilderV3<>(this.extraItemList_, (this.bitField0_ & 2) != 0, getParentForChildren(), isClean());
+                    this.extraItemListBuilder_ = new RepeatedFieldBuilderV3<>(this.extraItemList_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
                     this.extraItemList_ = null;
                 }
                 return this.extraItemListBuilder_;
+            }
+
+            private void ensureItemListIsMutable() {
+                if ((this.bitField0_ & 2) == 0) {
+                    this.itemList_ = new ArrayList(this.itemList_);
+                    this.bitField0_ |= 2;
+                }
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
+            public List<ItemParamOuterClass.ItemParam> getItemListList() {
+                if (this.itemListBuilder_ == null) {
+                    return Collections.unmodifiableList(this.itemList_);
+                }
+                return this.itemListBuilder_.getMessageList();
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
+            public int getItemListCount() {
+                if (this.itemListBuilder_ == null) {
+                    return this.itemList_.size();
+                }
+                return this.itemListBuilder_.getCount();
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
+            public ItemParamOuterClass.ItemParam getItemList(int index) {
+                if (this.itemListBuilder_ == null) {
+                    return this.itemList_.get(index);
+                }
+                return this.itemListBuilder_.getMessage(index);
+            }
+
+            public Builder setItemList(int index, ItemParamOuterClass.ItemParam value) {
+                if (this.itemListBuilder_ != null) {
+                    this.itemListBuilder_.setMessage(index, value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    ensureItemListIsMutable();
+                    this.itemList_.set(index, value);
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder setItemList(int index, ItemParamOuterClass.ItemParam.Builder builderForValue) {
+                if (this.itemListBuilder_ == null) {
+                    ensureItemListIsMutable();
+                    this.itemList_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    this.itemListBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder addItemList(ItemParamOuterClass.ItemParam value) {
+                if (this.itemListBuilder_ != null) {
+                    this.itemListBuilder_.addMessage(value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    ensureItemListIsMutable();
+                    this.itemList_.add(value);
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder addItemList(int index, ItemParamOuterClass.ItemParam value) {
+                if (this.itemListBuilder_ != null) {
+                    this.itemListBuilder_.addMessage(index, value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    ensureItemListIsMutable();
+                    this.itemList_.add(index, value);
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder addItemList(ItemParamOuterClass.ItemParam.Builder builderForValue) {
+                if (this.itemListBuilder_ == null) {
+                    ensureItemListIsMutable();
+                    this.itemList_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    this.itemListBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder addItemList(int index, ItemParamOuterClass.ItemParam.Builder builderForValue) {
+                if (this.itemListBuilder_ == null) {
+                    ensureItemListIsMutable();
+                    this.itemList_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    this.itemListBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder addAllItemList(Iterable<? extends ItemParamOuterClass.ItemParam> values) {
+                if (this.itemListBuilder_ == null) {
+                    ensureItemListIsMutable();
+                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.itemList_);
+                    onChanged();
+                } else {
+                    this.itemListBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            public Builder clearItemList() {
+                if (this.itemListBuilder_ == null) {
+                    this.itemList_ = Collections.emptyList();
+                    this.bitField0_ &= -3;
+                    onChanged();
+                } else {
+                    this.itemListBuilder_.clear();
+                }
+                return this;
+            }
+
+            public Builder removeItemList(int index) {
+                if (this.itemListBuilder_ == null) {
+                    ensureItemListIsMutable();
+                    this.itemList_.remove(index);
+                    onChanged();
+                } else {
+                    this.itemListBuilder_.remove(index);
+                }
+                return this;
+            }
+
+            public ItemParamOuterClass.ItemParam.Builder getItemListBuilder(int index) {
+                return getItemListFieldBuilder().getBuilder(index);
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
+            public ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(int index) {
+                if (this.itemListBuilder_ == null) {
+                    return this.itemList_.get(index);
+                }
+                return this.itemListBuilder_.getMessageOrBuilder(index);
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
+            public List<? extends ItemParamOuterClass.ItemParamOrBuilder> getItemListOrBuilderList() {
+                if (this.itemListBuilder_ != null) {
+                    return this.itemListBuilder_.getMessageOrBuilderList();
+                }
+                return Collections.unmodifiableList(this.itemList_);
+            }
+
+            public ItemParamOuterClass.ItemParam.Builder addItemListBuilder() {
+                return getItemListFieldBuilder().addBuilder(ItemParamOuterClass.ItemParam.getDefaultInstance());
+            }
+
+            public ItemParamOuterClass.ItemParam.Builder addItemListBuilder(int index) {
+                return getItemListFieldBuilder().addBuilder(index, ItemParamOuterClass.ItemParam.getDefaultInstance());
+            }
+
+            public List<ItemParamOuterClass.ItemParam.Builder> getItemListBuilderList() {
+                return getItemListFieldBuilder().getBuilderList();
+            }
+
+            private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> getItemListFieldBuilder() {
+                if (this.itemListBuilder_ == null) {
+                    this.itemListBuilder_ = new RepeatedFieldBuilderV3<>(this.itemList_, (this.bitField0_ & 2) != 0, getParentForChildren(), isClean());
+                    this.itemList_ = null;
+                }
+                return this.itemListBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
+            public boolean hasRecipeData() {
+                return (this.recipeDataBuilder_ == null && this.recipeData_ == null) ? false : true;
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
+            public CookRecipeDataOuterClass.CookRecipeData getRecipeData() {
+                if (this.recipeDataBuilder_ == null) {
+                    return this.recipeData_ == null ? CookRecipeDataOuterClass.CookRecipeData.getDefaultInstance() : this.recipeData_;
+                }
+                return this.recipeDataBuilder_.getMessage();
+            }
+
+            public Builder setRecipeData(CookRecipeDataOuterClass.CookRecipeData value) {
+                if (this.recipeDataBuilder_ != null) {
+                    this.recipeDataBuilder_.setMessage(value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    this.recipeData_ = value;
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder setRecipeData(CookRecipeDataOuterClass.CookRecipeData.Builder builderForValue) {
+                if (this.recipeDataBuilder_ == null) {
+                    this.recipeData_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    this.recipeDataBuilder_.setMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder mergeRecipeData(CookRecipeDataOuterClass.CookRecipeData value) {
+                if (this.recipeDataBuilder_ == null) {
+                    if (this.recipeData_ != null) {
+                        this.recipeData_ = CookRecipeDataOuterClass.CookRecipeData.newBuilder(this.recipeData_).mergeFrom(value).buildPartial();
+                    } else {
+                        this.recipeData_ = value;
+                    }
+                    onChanged();
+                } else {
+                    this.recipeDataBuilder_.mergeFrom(value);
+                }
+                return this;
+            }
+
+            public Builder clearRecipeData() {
+                if (this.recipeDataBuilder_ == null) {
+                    this.recipeData_ = null;
+                    onChanged();
+                } else {
+                    this.recipeData_ = null;
+                    this.recipeDataBuilder_ = null;
+                }
+                return this;
+            }
+
+            public CookRecipeDataOuterClass.CookRecipeData.Builder getRecipeDataBuilder() {
+                onChanged();
+                return getRecipeDataFieldBuilder().getBuilder();
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
+            public CookRecipeDataOuterClass.CookRecipeDataOrBuilder getRecipeDataOrBuilder() {
+                if (this.recipeDataBuilder_ != null) {
+                    return this.recipeDataBuilder_.getMessageOrBuilder();
+                }
+                return this.recipeData_ == null ? CookRecipeDataOuterClass.CookRecipeData.getDefaultInstance() : this.recipeData_;
+            }
+
+            private SingleFieldBuilderV3<CookRecipeDataOuterClass.CookRecipeData, CookRecipeDataOuterClass.CookRecipeData.Builder, CookRecipeDataOuterClass.CookRecipeDataOrBuilder> getRecipeDataFieldBuilder() {
+                if (this.recipeDataBuilder_ == null) {
+                    this.recipeDataBuilder_ = new SingleFieldBuilderV3<>(getRecipeData(), getParentForChildren(), isClean());
+                    this.recipeData_ = null;
+                }
+                return this.recipeDataBuilder_;
             }
 
             @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
@@ -1195,6 +1177,23 @@ public final class PlayerCookRspOuterClass {
 
             public Builder clearCookCount() {
                 this.cookCount_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerCookRspOuterClass.PlayerCookRspOrBuilder
+            public int getQteQuality() {
+                return this.qteQuality_;
+            }
+
+            public Builder setQteQuality(int value) {
+                this.qteQuality_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearQteQuality() {
+                this.qteQuality_ = 0;
                 onChanged();
                 return this;
             }

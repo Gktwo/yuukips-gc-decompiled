@@ -120,7 +120,7 @@ public final class Handshake {
     @JvmName(name = "-deprecated_tlsVersion")
     @NotNull
     /* renamed from: -deprecated_tlsVersion  reason: not valid java name */
-    public final TlsVersion m9195deprecated_tlsVersion() {
+    public final TlsVersion m9192deprecated_tlsVersion() {
         return this.tlsVersion;
     }
 
@@ -128,7 +128,7 @@ public final class Handshake {
     @JvmName(name = "-deprecated_cipherSuite")
     @NotNull
     /* renamed from: -deprecated_cipherSuite  reason: not valid java name */
-    public final CipherSuite m9196deprecated_cipherSuite() {
+    public final CipherSuite m9193deprecated_cipherSuite() {
         return this.cipherSuite;
     }
 
@@ -136,7 +136,7 @@ public final class Handshake {
     @JvmName(name = "-deprecated_peerCertificates")
     @NotNull
     /* renamed from: -deprecated_peerCertificates  reason: not valid java name */
-    public final List<Certificate> m9197deprecated_peerCertificates() {
+    public final List<Certificate> m9194deprecated_peerCertificates() {
         return peerCertificates();
     }
 
@@ -152,7 +152,7 @@ public final class Handshake {
     @JvmName(name = "-deprecated_peerPrincipal")
     @Nullable
     /* renamed from: -deprecated_peerPrincipal  reason: not valid java name */
-    public final Principal m9198deprecated_peerPrincipal() {
+    public final Principal m9195deprecated_peerPrincipal() {
         return peerPrincipal();
     }
 
@@ -160,7 +160,7 @@ public final class Handshake {
     @JvmName(name = "-deprecated_localCertificates")
     @NotNull
     /* renamed from: -deprecated_localCertificates  reason: not valid java name */
-    public final List<Certificate> m9199deprecated_localCertificates() {
+    public final List<Certificate> m9196deprecated_localCertificates() {
         return this.localCertificates;
     }
 
@@ -176,7 +176,7 @@ public final class Handshake {
     @JvmName(name = "-deprecated_localPrincipal")
     @Nullable
     /* renamed from: -deprecated_localPrincipal  reason: not valid java name */
-    public final Principal m9200deprecated_localPrincipal() {
+    public final Principal m9197deprecated_localPrincipal() {
         return localPrincipal();
     }
 
@@ -265,7 +265,7 @@ public final class Handshake {
         @JvmName(name = "-deprecated_get")
         @NotNull
         /* renamed from: -deprecated_get  reason: not valid java name */
-        public final Handshake m9202deprecated_get(@NotNull SSLSession sslSession) throws IOException {
+        public final Handshake m9199deprecated_get(@NotNull SSLSession sslSession) throws IOException {
             Intrinsics.checkNotNullParameter(sslSession, "sslSession");
             return get(sslSession);
         }

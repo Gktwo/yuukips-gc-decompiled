@@ -25,7 +25,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
     public static final int DEFAULT_INITIAL_CAPACITY = 10;
 
     /* renamed from: a */
-    protected transient double[][] f1713a;
+    protected transient double[][] f1677a;
     protected long size;
     static final /* synthetic */ boolean $assertionsDisabled;
 
@@ -34,27 +34,27 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
     }
 
     protected DoubleBigArrayBigList(double[][] a, boolean dummy) {
-        this.f1713a = a;
+        this.f1677a = a;
     }
 
     public DoubleBigArrayBigList(long capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException("Initial capacity (" + capacity + ") is negative");
         } else if (capacity == 0) {
-            this.f1713a = DoubleBigArrays.EMPTY_BIG_ARRAY;
+            this.f1677a = DoubleBigArrays.EMPTY_BIG_ARRAY;
         } else {
-            this.f1713a = DoubleBigArrays.newBigArray(capacity);
+            this.f1677a = DoubleBigArrays.newBigArray(capacity);
         }
     }
 
     public DoubleBigArrayBigList() {
-        this.f1713a = DoubleBigArrays.DEFAULT_EMPTY_BIG_ARRAY;
+        this.f1677a = DoubleBigArrays.DEFAULT_EMPTY_BIG_ARRAY;
     }
 
     public DoubleBigArrayBigList(DoubleCollection c) {
         this(Size64.sizeOf(c));
         if (c instanceof DoubleBigList) {
-            double[][] dArr = this.f1713a;
+            double[][] dArr = this.f1677a;
             long sizeOf = Size64.sizeOf(c);
             this.size = sizeOf;
             ((DoubleBigList) c).getElements(0, dArr, 0, sizeOf);
@@ -68,7 +68,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
 
     public DoubleBigArrayBigList(DoubleBigList l) {
         this(l.size64());
-        double[][] dArr = this.f1713a;
+        double[][] dArr = this.f1677a;
         long size64 = l.size64();
         this.size = size64;
         l.getElements(0, dArr, 0, size64);
@@ -80,7 +80,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
 
     public DoubleBigArrayBigList(double[][] a, long offset, long length) {
         this(length);
-        BigArrays.copy(a, offset, this.f1713a, 0, length);
+        BigArrays.copy(a, offset, this.f1677a, 0, length);
         this.size = length;
     }
 
@@ -99,7 +99,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
     }
 
     public double[][] elements() {
-        return this.f1713a;
+        return this.f1677a;
     }
 
     public static DoubleBigArrayBigList wrap(double[][] a, long length) {
@@ -144,24 +144,24 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
     }
 
     public void ensureCapacity(long capacity) {
-        if (capacity > BigArrays.length(this.f1713a) && this.f1713a != DoubleBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
-            this.f1713a = BigArrays.forceCapacity(this.f1713a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1713a)) {
+        if (capacity > BigArrays.length(this.f1677a) && this.f1677a != DoubleBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
+            this.f1677a = BigArrays.forceCapacity(this.f1677a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1677a)) {
                 throw new AssertionError();
             }
         }
     }
 
     private void grow(long capacity) {
-        long oldLength = BigArrays.length(this.f1713a);
+        long oldLength = BigArrays.length(this.f1677a);
         if (capacity > oldLength) {
-            if (this.f1713a != DoubleBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
+            if (this.f1677a != DoubleBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
                 capacity = Math.max(oldLength + (oldLength >> 1), capacity);
             } else if (capacity < 10) {
                 capacity = 10;
             }
-            this.f1713a = BigArrays.forceCapacity(this.f1713a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1713a)) {
+            this.f1677a = BigArrays.forceCapacity(this.f1677a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1677a)) {
                 throw new AssertionError();
             }
         }
@@ -172,11 +172,11 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
         ensureIndex(index);
         grow(this.size + 1);
         if (index != this.size) {
-            BigArrays.copy(this.f1713a, index, this.f1713a, index + 1, this.size - index);
+            BigArrays.copy(this.f1677a, index, this.f1677a, index + 1, this.size - index);
         }
-        BigArrays.set(this.f1713a, index, k);
+        BigArrays.set(this.f1677a, index, k);
         this.size++;
-        if (!$assertionsDisabled && this.size > BigArrays.length(this.f1713a)) {
+        if (!$assertionsDisabled && this.size > BigArrays.length(this.f1677a)) {
             throw new AssertionError();
         }
     }
@@ -184,11 +184,11 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleBigList, p014it.unimi.dsi.fastutil.doubles.AbstractDoubleCollection, p014it.unimi.dsi.fastutil.doubles.DoubleCollection
     public boolean add(double k) {
         grow(this.size + 1);
-        double[][] dArr = this.f1713a;
+        double[][] dArr = this.f1677a;
         long j = this.size;
         this.size = j + 1;
         BigArrays.set(dArr, j, k);
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1713a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1677a)) {
             return true;
         }
         throw new AssertionError();
@@ -197,7 +197,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
     @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigList
     public double getDouble(long index) {
         if (index < this.size) {
-            return BigArrays.get(this.f1713a, index);
+            return BigArrays.get(this.f1677a, index);
         }
         throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
     }
@@ -205,7 +205,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleBigList, p014it.unimi.dsi.fastutil.doubles.DoubleBigList
     public long indexOf(double k) {
         for (long i = 0; i < this.size; i++) {
-            if (Double.doubleToLongBits(k) == Double.doubleToLongBits(BigArrays.get(this.f1713a, i))) {
+            if (Double.doubleToLongBits(k) == Double.doubleToLongBits(BigArrays.get(this.f1677a, i))) {
                 return i;
             }
         }
@@ -238,7 +238,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
             r0 = r8
             long r0 = java.lang.Double.doubleToLongBits(r0)
             r1 = r7
-            double[][] r1 = r1.f1713a
+            double[][] r1 = r1.f1677a
             r2 = r10
             double r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
             long r1 = java.lang.Double.doubleToLongBits(r1)
@@ -258,12 +258,12 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        double old = BigArrays.get(this.f1713a, index);
+        double old = BigArrays.get(this.f1677a, index);
         this.size--;
         if (index != this.size) {
-            BigArrays.copy(this.f1713a, index + 1, this.f1713a, index, this.size - index);
+            BigArrays.copy(this.f1677a, index + 1, this.f1677a, index, this.size - index);
         }
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1713a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1677a)) {
             return old;
         }
         throw new AssertionError();
@@ -276,7 +276,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
             return false;
         }
         removeDouble(index);
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1713a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1677a)) {
             return true;
         }
         throw new AssertionError();
@@ -287,8 +287,8 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        double old = BigArrays.get(this.f1713a, index);
-        BigArrays.set(this.f1713a, index, k);
+        double old = BigArrays.get(this.f1677a, index);
+        BigArrays.set(this.f1677a, index, k);
         return old;
     }
 
@@ -304,12 +304,12 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
             if (sd == 134217728) {
                 sd = 0;
                 ss++;
-                s = this.f1713a[ss];
+                s = this.f1677a[ss];
             }
             if (!c.contains(s[sd])) {
                 if (dd == 134217728) {
                     ds++;
-                    d = this.f1713a[ds];
+                    d = this.f1677a[ds];
                     dd = 0;
                 }
                 dd++;
@@ -335,12 +335,12 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
             if (sd == 134217728) {
                 sd = 0;
                 ss++;
-                s = this.f1713a[ss];
+                s = this.f1677a[ss];
             }
             if (!c.contains(Double.valueOf(s[sd]))) {
                 if (dd == 134217728) {
                     ds++;
-                    d = this.f1713a[ds];
+                    d = this.f1677a[ds];
                     dd = 0;
                 }
                 dd++;
@@ -368,17 +368,17 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
             return false;
         }
         grow(this.size + ((long) n));
-        BigArrays.copy(this.f1713a, index, this.f1713a, index + ((long) n), this.size - index);
+        BigArrays.copy(this.f1677a, index, this.f1677a, index + ((long) n), this.size - index);
         DoubleIterator i = c.iterator();
         this.size += (long) n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1713a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1677a)) {
             while (true) {
                 n--;
                 if (n == 0) {
                     return true;
                 }
                 index++;
-                BigArrays.set(this.f1713a, index, i.nextDouble());
+                BigArrays.set(this.f1677a, index, i.nextDouble());
             }
         } else {
             throw new AssertionError();
@@ -393,10 +393,10 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
             return false;
         }
         grow(this.size + n);
-        BigArrays.copy(this.f1713a, index, this.f1713a, index + n, this.size - index);
-        list.getElements(0, this.f1713a, index, n);
+        BigArrays.copy(this.f1677a, index, this.f1677a, index + n, this.size - index);
+        list.getElements(0, this.f1677a, index, n);
         this.size += n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1713a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1677a)) {
             return true;
         }
         throw new AssertionError();
@@ -410,15 +410,15 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
             return false;
         }
         grow(this.size + ((long) n));
-        BigArrays.copy(this.f1713a, index, this.f1713a, index + ((long) n), this.size - index);
+        BigArrays.copy(this.f1677a, index, this.f1677a, index + ((long) n), this.size - index);
         this.size += (long) n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1713a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1677a)) {
             int segment = BigArrays.segment(index);
             int displ = BigArrays.displacement(index);
             int pos = 0;
             while (n > 0) {
-                int l = Math.min(this.f1713a[segment].length - displ, n);
-                list.getElements(pos, this.f1713a[segment], displ, l);
+                int l = Math.min(this.f1677a[segment].length - displ, n);
+                list.getElements(pos, this.f1677a[segment], displ, l);
                 int i = displ + l;
                 displ = i;
                 if (i == 134217728) {
@@ -436,7 +436,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleBigList, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         this.size = 0;
-        if (!$assertionsDisabled && this.size > BigArrays.length(this.f1713a)) {
+        if (!$assertionsDisabled && this.size > BigArrays.length(this.f1677a)) {
             throw new AssertionError();
         }
     }
@@ -448,11 +448,11 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
 
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleBigList, p014it.unimi.dsi.fastutil.BigList
     public void size(long size) {
-        if (size > BigArrays.length(this.f1713a)) {
-            this.f1713a = BigArrays.forceCapacity(this.f1713a, size, this.size);
+        if (size > BigArrays.length(this.f1677a)) {
+            this.f1677a = BigArrays.forceCapacity(this.f1677a, size, this.size);
         }
         if (size > this.size) {
-            BigArrays.fill(this.f1713a, this.size, size, 0.0d);
+            BigArrays.fill(this.f1677a, this.size, size, 0.0d);
         }
         this.size = size;
     }
@@ -467,10 +467,10 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
     }
 
     public void trim(long n) {
-        long arrayLength = BigArrays.length(this.f1713a);
+        long arrayLength = BigArrays.length(this.f1677a);
         if (n < arrayLength && this.size != arrayLength) {
-            this.f1713a = BigArrays.trim(this.f1713a, Math.max(n, this.size));
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1713a)) {
+            this.f1677a = BigArrays.trim(this.f1677a, Math.max(n, this.size));
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1677a)) {
                 throw new AssertionError();
             }
         }
@@ -487,13 +487,13 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
         }
 
         private double[][] getParentArray() {
-            return DoubleBigArrayBigList.this.f1713a;
+            return DoubleBigArrayBigList.this.f1677a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleBigList.DoubleSubList, p014it.unimi.dsi.fastutil.doubles.DoubleBigList
         public double getDouble(long i) {
             ensureRestrictedIndex(i);
-            return BigArrays.get(DoubleBigArrayBigList.this.f1713a, i + this.from);
+            return BigArrays.get(DoubleBigArrayBigList.this.f1677a, i + this.from);
         }
 
         /* access modifiers changed from: private */
@@ -506,7 +506,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
 
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigListIterators.AbstractIndexBasedBigIterator
             protected final double get(long i) {
-                return BigArrays.get(DoubleBigArrayBigList.this.f1713a, SubList.this.from + i);
+                return BigArrays.get(DoubleBigArrayBigList.this.f1677a, SubList.this.from + i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigListIterators.AbstractIndexBasedBigListIterator
@@ -526,7 +526,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
 
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigListIterators.AbstractIndexBasedBigIterator
             protected final long getMaxPos() {
-                return SubList.this.f1574to - SubList.this.from;
+                return SubList.this.f1538to - SubList.this.from;
             }
 
             /* JADX DEBUG: Multi-variable search result rejected for r12v0, resolved type: it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList$SubList$SubListIterator */
@@ -536,7 +536,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                double[][] dArr = DoubleBigArrayBigList.this.f1713a;
+                double[][] dArr = DoubleBigArrayBigList.this.f1677a;
                 long j = SubList.this.from;
                 long j2 = this.pos;
                 this.pos = j2 + 1;
@@ -551,7 +551,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                double[][] dArr = DoubleBigArrayBigList.this.f1713a;
+                double[][] dArr = DoubleBigArrayBigList.this.f1677a;
                 long j = SubList.this.from;
                 long j2 = this.pos - 1;
                 this.pos = j2;
@@ -570,7 +570,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                     r13 = this;
                     r0 = r13
                     it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList$SubList r0 = p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.SubList.this
-                    long r0 = r0.f1574to
+                    long r0 = r0.f1538to
                     r1 = r13
                     it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList$SubList r1 = p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.SubList.this
                     long r1 = r1.from
@@ -586,7 +586,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                     r1 = r13
                     it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList$SubList r1 = p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.SubList.this
                     it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList r1 = p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.this
-                    double[][] r1 = r1.f1713a
+                    double[][] r1 = r1.f1677a
                     r2 = r13
                     it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList$SubList r2 = p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.SubList.this
                     long r2 = r2.from
@@ -631,12 +631,12 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
 
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigSpliterators.LateBindingSizeIndexBasedSpliterator
             protected final long getMaxPosFromBackingStore() {
-                return SubList.this.f1574to;
+                return SubList.this.f1538to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigSpliterators.AbstractIndexBasedSpliterator
             protected final double get(long i) {
-                return BigArrays.get(DoubleBigArrayBigList.this.f1713a, i);
+                return BigArrays.get(DoubleBigArrayBigList.this.f1677a, i);
             }
 
             /* access modifiers changed from: protected */
@@ -655,7 +655,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                 if (this.pos >= getMaxPos()) {
                     return false;
                 }
-                double[][] dArr = DoubleBigArrayBigList.this.f1713a;
+                double[][] dArr = DoubleBigArrayBigList.this.f1677a;
                 long j = this.pos;
                 this.pos = j + 1;
                 action.accept(BigArrays.get(dArr, j));
@@ -666,7 +666,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
             public void forEachRemaining(DoubleConsumer action) {
                 long max = getMaxPos();
                 while (this.pos < max) {
-                    double[][] dArr = DoubleBigArrayBigList.this.f1713a;
+                    double[][] dArr = DoubleBigArrayBigList.this.f1677a;
                     long j = this.pos;
                     this.pos = j + 1;
                     action.accept(BigArrays.get(dArr, j));
@@ -691,7 +691,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                 r8 = this;
                 r0 = r8
                 it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList r0 = p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.this
-                double[][] r0 = r0.f1713a
+                double[][] r0 = r0.f1677a
                 r1 = r9
                 if (r0 != r1) goto L_0x0020
                 r0 = r8
@@ -700,7 +700,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
                 r0 = r8
-                long r0 = r0.f1574to
+                long r0 = r0.f1538to
                 r1 = r12
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
@@ -718,7 +718,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                 return r0
             L_0x002e:
                 r0 = r8
-                long r0 = r0.f1574to
+                long r0 = r0.f1538to
                 r14 = r0
                 r0 = r12
                 r16 = r0
@@ -734,7 +734,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                 if (r0 < 0) goto L_0x0064
                 r0 = r8
                 it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList r0 = p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.this
-                double[][] r0 = r0.f1713a
+                double[][] r0 = r0.f1677a
                 r1 = r14
                 double r0 = p014it.unimi.dsi.fastutil.BigArrays.get(r0, r1)
                 r1 = r9
@@ -765,12 +765,12 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
             }
             if (o instanceof DoubleBigArrayBigList) {
                 DoubleBigArrayBigList other = (DoubleBigArrayBigList) o;
-                return contentsEquals(other.f1713a, 0, other.size64());
+                return contentsEquals(other.f1677a, 0, other.size64());
             } else if (!(o instanceof SubList)) {
                 return equals(o);
             } else {
                 SubList other2 = (SubList) o;
-                return contentsEquals(other2.getParentArray(), other2.from, other2.f1574to);
+                return contentsEquals(other2.getParentArray(), other2.from, other2.f1538to);
             }
         }
 
@@ -788,7 +788,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                 r5 = this;
                 r0 = r5
                 it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList r0 = p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.this
-                double[][] r0 = r0.f1713a
+                double[][] r0 = r0.f1677a
                 r1 = r6
                 if (r0 != r1) goto L_0x0020
                 r0 = r5
@@ -797,7 +797,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
                 r0 = r5
-                long r0 = r0.f1574to
+                long r0 = r0.f1538to
                 r1 = r9
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
@@ -812,7 +812,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
             L_0x0029:
                 r0 = r16
                 r1 = r5
-                long r1 = r1.f1574to
+                long r1 = r1.f1538to
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 >= 0) goto L_0x0070
                 r0 = r16
@@ -821,7 +821,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                 if (r0 >= 0) goto L_0x0070
                 r0 = r5
                 it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList r0 = p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.this
-                double[][] r0 = r0.f1713a
+                double[][] r0 = r0.f1677a
                 r1 = r16
                 double r0 = p014it.unimi.dsi.fastutil.BigArrays.get(r0, r1)
                 r11 = r0
@@ -857,7 +857,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
             L_0x007c:
                 r0 = r16
                 r1 = r5
-                long r1 = r1.f1574to
+                long r1 = r1.f1538to
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 >= 0) goto L_0x008a
                 r0 = 1
@@ -874,12 +874,12 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
         public int compareTo(BigList<? extends Double> l) {
             if (l instanceof DoubleBigArrayBigList) {
                 DoubleBigArrayBigList other = (DoubleBigArrayBigList) l;
-                return contentsCompareTo(other.f1713a, 0, other.size64());
+                return contentsCompareTo(other.f1677a, 0, other.size64());
             } else if (!(l instanceof SubList)) {
                 return compareTo(l);
             } else {
                 SubList other2 = (SubList) l;
-                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f1574to);
+                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f1538to);
             }
         }
     }
@@ -900,18 +900,18 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
 
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleBigList, p014it.unimi.dsi.fastutil.doubles.DoubleBigList
     public void getElements(long from, double[][] a, long offset, long length) {
-        BigArrays.copy(this.f1713a, from, a, offset, length);
+        BigArrays.copy(this.f1677a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigList
     public void getElements(long from, double[] a, int offset, int length) {
-        BigArrays.copyFromBig(this.f1713a, from, a, offset, length);
+        BigArrays.copyFromBig(this.f1677a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleBigList, p014it.unimi.dsi.fastutil.doubles.DoubleBigList
     public void removeElements(long from, long to) {
         BigArrays.ensureFromTo(this.size, from, to);
-        BigArrays.copy(this.f1713a, to, this.f1713a, from, this.size - to);
+        BigArrays.copy(this.f1677a, to, this.f1677a, from, this.size - to);
         this.size -= to - from;
     }
 
@@ -920,20 +920,20 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
         ensureIndex(index);
         BigArrays.ensureOffsetLength(a, offset, length);
         grow(this.size + length);
-        BigArrays.copy(this.f1713a, index, this.f1713a, index + length, this.size - index);
-        BigArrays.copy(a, offset, this.f1713a, index, length);
+        BigArrays.copy(this.f1677a, index, this.f1677a, index + length, this.size - index);
+        BigArrays.copy(a, offset, this.f1677a, index, length);
         this.size += length;
     }
 
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleBigList, p014it.unimi.dsi.fastutil.doubles.DoubleBigList
     public void setElements(long index, double[][] a, long offset, long length) {
-        BigArrays.copy(a, offset, this.f1713a, index, length);
+        BigArrays.copy(a, offset, this.f1677a, index, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleBigList, p014it.unimi.dsi.fastutil.doubles.DoubleIterable
     public void forEach(DoubleConsumer action) {
         for (long i = 0; i < this.size; i++) {
-            action.accept(BigArrays.get(this.f1713a, i));
+            action.accept(BigArrays.get(this.f1677a, i));
         }
     }
 
@@ -960,8 +960,8 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                 return this.pos > 0;
             }
 
-            /* JADX WARN: Type inference failed for: r0v4, types: [double[][], long] */
-            /* JADX WARN: Type inference failed for: r3v1, types: [double[][], long] */
+            /* JADX WARN: Type inference failed for: r0v4, types: [long, double[][]] */
+            /* JADX WARN: Type inference failed for: r3v1, types: [long, double[][]] */
             /* JADX WARNING: Unknown variable types count: 2 */
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
             /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -978,7 +978,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                 L_0x000f:
                     r0 = r10
                     it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList r0 = p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.this
-                    double[][] r0 = r0.f1713a
+                    double[][] r0 = r0.f1677a
                     r1 = r10
                     r2 = r10
                     r3 = r2
@@ -992,11 +992,11 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                     double r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
                     return r1
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.C39001.nextDouble():double");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.C38921.nextDouble():double");
             }
 
-            /* JADX WARN: Type inference failed for: r0v4, types: [double[][], long] */
-            /* JADX WARN: Type inference failed for: r3v2, types: [double[][], long] */
+            /* JADX WARN: Type inference failed for: r0v4, types: [long, double[][]] */
+            /* JADX WARN: Type inference failed for: r3v2, types: [long, double[][]] */
             /* JADX WARNING: Unknown variable types count: 2 */
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBidirectionalIterator
             /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -1013,7 +1013,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                 L_0x000f:
                     r0 = r8
                     it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList r0 = p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.this
-                    double[][] r0 = r0.f1713a
+                    double[][] r0 = r0.f1677a
                     r1 = r8
                     r2 = r8
                     r3 = r2
@@ -1027,7 +1027,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                     double r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
                     return r1
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.C39001.previousDouble():double");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.C38921.previousDouble():double");
             }
 
             @Override // p014it.unimi.dsi.fastutil.BigListIterator
@@ -1071,8 +1071,8 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
 
             /* JADX DEBUG: Multi-variable search result rejected for r11v0, resolved type: it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList$1 */
             /* JADX WARN: Multi-variable type inference failed */
-            /* JADX WARN: Type inference failed for: r1v5, types: [double[][], long] */
-            /* JADX WARN: Type inference failed for: r4v1, types: [double[][], long] */
+            /* JADX WARN: Type inference failed for: r1v5, types: [long, double[][]] */
+            /* JADX WARN: Type inference failed for: r4v1, types: [long, double[][]] */
             /* JADX WARNING: Unknown variable types count: 2 */
             @Override // java.util.PrimitiveIterator.OfDouble
             /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -1090,7 +1090,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                     r0 = r12
                     r1 = r11
                     it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList r1 = p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.this
-                    double[][] r1 = r1.f1713a
+                    double[][] r1 = r1.f1677a
                     r2 = r11
                     r3 = r11
                     r4 = r3
@@ -1107,7 +1107,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                 L_0x0032:
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.C39001.forEachRemaining(java.util.function.DoubleConsumer):void");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.C38921.forEachRemaining(java.util.function.DoubleConsumer):void");
             }
 
             /* JADX WARN: Multi-variable type inference failed */
@@ -1170,7 +1170,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                     r0 = r7
                     return r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.C39001.back(long):long");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.C38921.back(long):long");
             }
 
             /* JADX WARN: Multi-variable type inference failed */
@@ -1237,7 +1237,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
                     r0 = r7
                     return r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.C39001.skip(long):long");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.doubles.DoubleBigArrayBigList.C38921.skip(long):long");
             }
         };
     }
@@ -1289,7 +1289,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            double[][] dArr = DoubleBigArrayBigList.this.f1713a;
+            double[][] dArr = DoubleBigArrayBigList.this.f1677a;
             long j = this.pos;
             this.pos = j + 1;
             action.accept(BigArrays.get(dArr, j));
@@ -1300,7 +1300,7 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
         public void forEachRemaining(DoubleConsumer action) {
             long max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(BigArrays.get(DoubleBigArrayBigList.this.f1713a, this.pos));
+                action.accept(BigArrays.get(DoubleBigArrayBigList.this.f1677a, this.pos));
                 this.pos++;
             }
         }
@@ -1353,12 +1353,12 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
         } else {
             try {
                 c = (DoubleBigArrayBigList) clone();
-                c.f1713a = DoubleBigArrays.newBigArray(this.size);
+                c.f1677a = DoubleBigArrays.newBigArray(this.size);
             } catch (CloneNotSupportedException e) {
                 throw new InternalError(e);
             }
         }
-        BigArrays.copy(this.f1713a, 0, c.f1713a, 0, this.size);
+        BigArrays.copy(this.f1677a, 0, c.f1677a, 0, this.size);
         return c;
     }
 
@@ -1372,8 +1372,8 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
         if (size64 != l.size64()) {
             return false;
         }
-        double[][] a1 = this.f1713a;
-        double[][] a2 = l.f1713a;
+        double[][] a1 = this.f1677a;
+        double[][] a2 = l.f1677a;
         if (a1 == a2) {
             return true;
         }
@@ -1406,8 +1406,8 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
     public int compareTo(DoubleBigArrayBigList l) {
         long s1 = size64();
         long s2 = l.size64();
-        double[][] a1 = this.f1713a;
-        double[][] a2 = l.f1713a;
+        double[][] a1 = this.f1677a;
+        double[][] a2 = l.f1677a;
         if (a1 == a2 && s1 == s2) {
             return 0;
         }
@@ -1439,15 +1439,15 @@ public class DoubleBigArrayBigList extends AbstractDoubleBigList implements Rand
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; ((long) i) < this.size; i++) {
-            s.writeDouble(BigArrays.get(this.f1713a, (long) i));
+            s.writeDouble(BigArrays.get(this.f1677a, (long) i));
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f1713a = DoubleBigArrays.newBigArray(this.size);
+        this.f1677a = DoubleBigArrays.newBigArray(this.size);
         for (int i = 0; ((long) i) < this.size; i++) {
-            BigArrays.set(this.f1713a, (long) i, s.readDouble());
+            BigArrays.set(this.f1677a, (long) i, s.readDouble());
         }
     }
 }

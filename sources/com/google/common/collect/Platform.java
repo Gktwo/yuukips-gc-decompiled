@@ -6,9 +6,10 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.Set;
 
+/* access modifiers changed from: package-private */
 @GwtCompatible(emulated = true)
 /* loaded from: grasscutter.jar:com/google/common/collect/Platform.class */
-final class Platform {
+public final class Platform {
     /* access modifiers changed from: package-private */
     public static <K, V> Map<K, V> newHashMapWithExpectedSize(int expectedSize) {
         return Maps.newHashMapWithExpectedSize(expectedSize);

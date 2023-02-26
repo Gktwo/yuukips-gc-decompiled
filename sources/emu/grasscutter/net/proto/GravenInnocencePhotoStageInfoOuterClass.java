@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GravenInnocencePhotoStageInfoOuterClass.class */
 public final class GravenInnocencePhotoStageInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#GravenInnocencePhotoStageInfo.proto\"W\n\u001dGravenInnocencePhotoStageInfo\u0012\u0010\n\bstage_id\u0018\u000b \u0001(\r\u0012\u000f\n\u0007is_open\u0018\n \u0001(\b\u0012\u0013\n\u000bis_finished\u0018\b \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#GravenInnocencePhotoStageInfo.proto\"T\n\u001dGravenInnocencePhotoStageInfo\u0012\u000f\n\u0007stageId\u0018\f \u0001(\r\u0012\u0012\n\nisFinished\u0018\u0005 \u0001(\b\u0012\u000e\n\u0006isOpen\u0018\r \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GravenInnocencePhotoStageInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GravenInnocencePhotoStageInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GravenInnocencePhotoStageInfo_descriptor, new String[]{"StageId", "IsOpen", "IsFinished"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GravenInnocencePhotoStageInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GravenInnocencePhotoStageInfo_descriptor, new String[]{"StageId", "IsFinished", "IsOpen"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GravenInnocencePhotoStageInfoOuterClass$GravenInnocencePhotoStageInfoOrBuilder.class */
     public interface GravenInnocencePhotoStageInfoOrBuilder extends MessageOrBuilder {
         int getStageId();
 
-        boolean getIsOpen();
-
         boolean getIsFinished();
+
+        boolean getIsOpen();
     }
 
     private GravenInnocencePhotoStageInfoOuterClass() {
@@ -46,12 +46,12 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GravenInnocencePhotoStageInfoOuterClass$GravenInnocencePhotoStageInfo.class */
     public static final class GravenInnocencePhotoStageInfo extends GeneratedMessageV3 implements GravenInnocencePhotoStageInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int STAGE_ID_FIELD_NUMBER = 11;
+        public static final int STAGEID_FIELD_NUMBER = 12;
         private int stageId_;
-        public static final int IS_OPEN_FIELD_NUMBER = 10;
-        private boolean isOpen_;
-        public static final int IS_FINISHED_FIELD_NUMBER = 8;
+        public static final int ISFINISHED_FIELD_NUMBER = 5;
         private boolean isFinished_;
+        public static final int ISOPEN_FIELD_NUMBER = 13;
+        private boolean isOpen_;
         private byte memoizedIsInitialized;
         private static final GravenInnocencePhotoStageInfo DEFAULT_INSTANCE = new GravenInnocencePhotoStageInfo();
         private static final Parser<GravenInnocencePhotoStageInfo> PARSER = new AbstractParser<GravenInnocencePhotoStageInfo>() { // from class: emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo.1
@@ -98,14 +98,14 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 64:
+                                case 40:
                                     this.isFinished_ = input.readBool();
                                     break;
-                                case 80:
-                                    this.isOpen_ = input.readBool();
-                                    break;
-                                case 88:
+                                case 96:
                                     this.stageId_ = input.readUInt32();
+                                    break;
+                                case 104:
+                                    this.isOpen_ = input.readBool();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -143,13 +143,13 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfoOrBuilder
-        public boolean getIsOpen() {
-            return this.isOpen_;
+        public boolean getIsFinished() {
+            return this.isFinished_;
         }
 
         @Override // emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfoOrBuilder
-        public boolean getIsFinished() {
-            return this.isFinished_;
+        public boolean getIsOpen() {
+            return this.isOpen_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -168,13 +168,13 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.isFinished_) {
-                output.writeBool(8, this.isFinished_);
-            }
-            if (this.isOpen_) {
-                output.writeBool(10, this.isOpen_);
+                output.writeBool(5, this.isFinished_);
             }
             if (this.stageId_ != 0) {
-                output.writeUInt32(11, this.stageId_);
+                output.writeUInt32(12, this.stageId_);
+            }
+            if (this.isOpen_) {
+                output.writeBool(13, this.isOpen_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -187,13 +187,13 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
             }
             int size2 = 0;
             if (this.isFinished_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(8, this.isFinished_);
-            }
-            if (this.isOpen_) {
-                size2 += CodedOutputStream.computeBoolSize(10, this.isOpen_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(5, this.isFinished_);
             }
             if (this.stageId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.stageId_);
+                size2 += CodedOutputStream.computeUInt32Size(12, this.stageId_);
+            }
+            if (this.isOpen_) {
+                size2 += CodedOutputStream.computeBoolSize(13, this.isOpen_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
                 return equals(obj);
             }
             GravenInnocencePhotoStageInfo other = (GravenInnocencePhotoStageInfo) obj;
-            return getStageId() == other.getStageId() && getIsOpen() == other.getIsOpen() && getIsFinished() == other.getIsFinished() && this.unknownFields.equals(other.unknownFields);
+            return getStageId() == other.getStageId() && getIsFinished() == other.getIsFinished() && getIsOpen() == other.getIsOpen() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getStageId())) + 10)) + Internal.hashBoolean(getIsOpen()))) + 8)) + Internal.hashBoolean(getIsFinished()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getStageId())) + 5)) + Internal.hashBoolean(getIsFinished()))) + 13)) + Internal.hashBoolean(getIsOpen()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -297,8 +297,8 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GravenInnocencePhotoStageInfoOuterClass$GravenInnocencePhotoStageInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements GravenInnocencePhotoStageInfoOrBuilder {
             private int stageId_;
-            private boolean isOpen_;
             private boolean isFinished_;
+            private boolean isOpen_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return GravenInnocencePhotoStageInfoOuterClass.internal_static_GravenInnocencePhotoStageInfo_descriptor;
@@ -327,8 +327,8 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
             public Builder clear() {
                 clear();
                 this.stageId_ = 0;
-                this.isOpen_ = false;
                 this.isFinished_ = false;
+                this.isOpen_ = false;
                 return this;
             }
 
@@ -355,8 +355,8 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
             public GravenInnocencePhotoStageInfo buildPartial() {
                 GravenInnocencePhotoStageInfo result = new GravenInnocencePhotoStageInfo(this);
                 result.stageId_ = this.stageId_;
-                result.isOpen_ = this.isOpen_;
                 result.isFinished_ = this.isFinished_;
+                result.isOpen_ = this.isOpen_;
                 onBuilt();
                 return result;
             }
@@ -407,11 +407,11 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
                 if (other.getStageId() != 0) {
                     setStageId(other.getStageId());
                 }
-                if (other.getIsOpen()) {
-                    setIsOpen(other.getIsOpen());
-                }
                 if (other.getIsFinished()) {
                     setIsFinished(other.getIsFinished());
+                }
+                if (other.getIsOpen()) {
+                    setIsOpen(other.getIsOpen());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -463,23 +463,6 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfoOrBuilder
-            public boolean getIsOpen() {
-                return this.isOpen_;
-            }
-
-            public Builder setIsOpen(boolean value) {
-                this.isOpen_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsOpen() {
-                this.isOpen_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfoOrBuilder
             public boolean getIsFinished() {
                 return this.isFinished_;
             }
@@ -492,6 +475,23 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
 
             public Builder clearIsFinished() {
                 this.isFinished_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfoOrBuilder
+            public boolean getIsOpen() {
+                return this.isOpen_;
+            }
+
+            public Builder setIsOpen(boolean value) {
+                this.isOpen_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsOpen() {
+                this.isOpen_ = false;
                 onChanged();
                 return this;
             }

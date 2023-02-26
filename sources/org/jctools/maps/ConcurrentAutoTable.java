@@ -52,7 +52,7 @@ public class ConcurrentAutoTable implements Serializable {
     }
 
     public int internal_size() {
-        return this._cat.f3188_t.length;
+        return this._cat.f3152_t.length;
     }
 
     private long add_if(long x) {
@@ -78,7 +78,7 @@ public class ConcurrentAutoTable implements Serializable {
         private static final int MAX_SPIN = 1;
 
         /* renamed from: _t */
-        private final long[] f3188_t;
+        private final long[] f3152_t;
         static final /* synthetic */ boolean $assertionsDisabled;
 
         /*  JADX ERROR: Dependency scan failed at insn: 0x000B: INVOKE_CUSTOM r0, r0
@@ -155,7 +155,7 @@ public class ConcurrentAutoTable implements Serializable {
             /*
                 r4 = this;
                 r0 = r4
-                long[] r0 = r0.f3188_t
+                long[] r0 = r0.f3152_t
                 r5 = r0
                 java.io.PrintStream r0 = java.lang.System.out
                 r1 = r5
@@ -210,13 +210,13 @@ public class ConcurrentAutoTable implements Serializable {
 
         CAT(CAT next, int sz, long init) {
             this._next = next;
-            this.f3188_t = new long[sz];
-            this.f3188_t[0] = init;
+            this.f3152_t = new long[sz];
+            this.f3152_t[0] = init;
         }
 
         public long add_if(long x, int hash, ConcurrentAutoTable master) {
             long old;
-            long[] t = this.f3188_t;
+            long[] t = this.f3152_t;
             int idx = hash & (t.length - 1);
             long old2 = t[idx];
             if (CAS(t, idx, old2, old2 + x)) {
@@ -241,14 +241,14 @@ public class ConcurrentAutoTable implements Serializable {
 
         public long sum() {
             long sum = this._next == null ? 0 : this._next.sum();
-            for (long cnt : this.f3188_t) {
+            for (long cnt : this.f3152_t) {
                 sum += cnt;
             }
             return sum;
         }
 
         public long estimate_sum() {
-            if (this.f3188_t.length <= 64) {
+            if (this.f3152_t.length <= 64) {
                 return sum();
             }
             long millis = System.currentTimeMillis();

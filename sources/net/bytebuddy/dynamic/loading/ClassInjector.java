@@ -1635,8 +1635,9 @@ public interface ClassInjector {
             throw new UnsupportedOperationException("Method not decompiled: net.bytebuddy.dynamic.loading.ClassInjector.UsingJna.injectRaw(java.util.Map):java.util.Map");
         }
 
+        /* access modifiers changed from: protected */
         /* loaded from: grasscutter.jar:net/bytebuddy/dynamic/loading/ClassInjector$UsingJna$Dispatcher.class */
-        protected interface Dispatcher {
+        public interface Dispatcher {
 
             /* loaded from: grasscutter.jar:net/bytebuddy/dynamic/loading/ClassInjector$UsingJna$Dispatcher$Jvm.class */
             public interface Jvm extends Library {

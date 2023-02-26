@@ -7,7 +7,7 @@ import org.eclipse.jetty.client.ContinueProtocolHandler;
 public class Lex implements TokenId {
     private String input;
     private int maxlen;
-    private static final int[] equalOps = {350, 0, 0, 0, TokenId.MOD_E, 352, 0, 0, 0, 353, 354, 0, TokenId.MINUS_E, 0, 356, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 357, TokenId.f3079EQ, TokenId.f3080GE, 0};
+    private static final int[] equalOps = {350, 0, 0, 0, 351, TokenId.AND_E, 0, 0, 0, 353, 354, 0, 355, 0, 356, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, TokenId.f3042LE, 358, TokenId.f3044GE, 0};
     private static final KeywordTable ktable = new KeywordTable();
     private int lastChar = -1;
     private StringBuffer textBuffer = new StringBuffer();
@@ -347,14 +347,14 @@ public class Lex implements TokenId {
         ktable.append("default", TokenId.DEFAULT);
         ktable.append("do", 311);
         ktable.append("double", TokenId.DOUBLE);
-        ktable.append("else", TokenId.ELSE);
+        ktable.append("else", 313);
         ktable.append("extends", 314);
         ktable.append("false", 411);
         ktable.append("final", 315);
         ktable.append("finally", 316);
         ktable.append("float", 317);
-        ktable.append("for", TokenId.FOR);
-        ktable.append("goto", 319);
+        ktable.append("for", 318);
+        ktable.append("goto", TokenId.GOTO);
         ktable.append("if", 320);
         ktable.append("implements", 321);
         ktable.append("import", 322);
@@ -363,27 +363,27 @@ public class Lex implements TokenId {
         ktable.append("interface", 325);
         ktable.append("long", TokenId.LONG);
         ktable.append("native", 327);
-        ktable.append("new", TokenId.NEW);
+        ktable.append("new", 328);
         ktable.append("null", 412);
-        ktable.append("package", TokenId.PACKAGE);
+        ktable.append("package", 329);
         ktable.append("private", 330);
         ktable.append("protected", TokenId.PROTECTED);
         ktable.append("public", TokenId.PUBLIC);
-        ktable.append("return", 333);
-        ktable.append("short", 334);
-        ktable.append("static", TokenId.STATIC);
+        ktable.append("return", TokenId.RETURN);
+        ktable.append("short", TokenId.SHORT);
+        ktable.append("static", 335);
         ktable.append("strictfp", 347);
-        ktable.append("super", TokenId.SUPER);
-        ktable.append("switch", TokenId.SWITCH);
+        ktable.append("super", 336);
+        ktable.append("switch", 337);
         ktable.append("synchronized", TokenId.SYNCHRONIZED);
-        ktable.append("this", 339);
+        ktable.append("this", TokenId.THIS);
         ktable.append("throw", TokenId.THROW);
         ktable.append("throws", 341);
-        ktable.append("transient", TokenId.TRANSIENT);
+        ktable.append("transient", 342);
         ktable.append(C3P0Substitutions.DEBUG, 410);
         ktable.append("try", 343);
-        ktable.append("void", 344);
-        ktable.append("volatile", TokenId.VOLATILE);
+        ktable.append("void", TokenId.VOID);
+        ktable.append("volatile", 345);
         ktable.append("while", 346);
     }
 
@@ -400,7 +400,7 @@ public class Lex implements TokenId {
                     case 38:
                         return TokenId.ANDAND;
                     case 43:
-                        return TokenId.PLUSPLUS;
+                        return 362;
                     case 45:
                         return 363;
                     case 60:
@@ -411,11 +411,11 @@ public class Lex implements TokenId {
                         ungetc(c3);
                         return 364;
                     case 61:
-                        return TokenId.f3079EQ;
+                        return 358;
                     case 62:
                         int c32 = getc();
                         if (c32 == 61) {
-                            return TokenId.RSHIFT_E;
+                            return 367;
                         }
                         if (c32 == 62) {
                             int c33 = getc();
@@ -426,7 +426,7 @@ public class Lex implements TokenId {
                             return 370;
                         }
                         ungetc(c32);
-                        return 366;
+                        return TokenId.RSHIFT;
                 }
             } else if (c2 == 61) {
                 return t;
@@ -441,7 +441,7 @@ public class Lex implements TokenId {
         } else {
             c2 = getc();
             if (c2 == 61) {
-                return 361;
+                return TokenId.OR_E;
             }
             if (c2 == 124) {
                 return TokenId.OROR;

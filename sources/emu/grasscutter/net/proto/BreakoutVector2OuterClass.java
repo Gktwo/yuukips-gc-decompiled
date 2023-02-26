@@ -46,11 +46,11 @@ public final class BreakoutVector2OuterClass {
         public static final int X_FIELD_NUMBER = 1;
 
         /* renamed from: x_ */
-        private int f664x_;
+        private int f662x_;
         public static final int Y_FIELD_NUMBER = 2;
 
         /* renamed from: y_ */
-        private int f665y_;
+        private int f663y_;
         private byte memoizedIsInitialized;
         private static final BreakoutVector2 DEFAULT_INSTANCE = new BreakoutVector2();
         private static final Parser<BreakoutVector2> PARSER = new AbstractParser<BreakoutVector2>() { // from class: emu.grasscutter.net.proto.BreakoutVector2OuterClass.BreakoutVector2.1
@@ -97,10 +97,10 @@ public final class BreakoutVector2OuterClass {
                                 done = true;
                                 break;
                             case 8:
-                                this.f664x_ = input.readInt32();
+                                this.f662x_ = input.readInt32();
                                 break;
                             case 16:
-                                this.f665y_ = input.readInt32();
+                                this.f663y_ = input.readInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -133,12 +133,12 @@ public final class BreakoutVector2OuterClass {
 
         @Override // emu.grasscutter.net.proto.BreakoutVector2OuterClass.BreakoutVector2OrBuilder
         public int getX() {
-            return this.f664x_;
+            return this.f662x_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutVector2OuterClass.BreakoutVector2OrBuilder
         public int getY() {
-            return this.f665y_;
+            return this.f663y_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -156,11 +156,11 @@ public final class BreakoutVector2OuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.f664x_ != 0) {
-                output.writeInt32(1, this.f664x_);
+            if (this.f662x_ != 0) {
+                output.writeInt32(1, this.f662x_);
             }
-            if (this.f665y_ != 0) {
-                output.writeInt32(2, this.f665y_);
+            if (this.f663y_ != 0) {
+                output.writeInt32(2, this.f663y_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -172,11 +172,11 @@ public final class BreakoutVector2OuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.f664x_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(1, this.f664x_);
+            if (this.f662x_ != 0) {
+                size2 = 0 + CodedOutputStream.computeInt32Size(1, this.f662x_);
             }
-            if (this.f665y_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(2, this.f665y_);
+            if (this.f663y_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(2, this.f663y_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -281,10 +281,10 @@ public final class BreakoutVector2OuterClass {
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements BreakoutVector2OrBuilder {
 
             /* renamed from: x_ */
-            private int f666x_;
+            private int f664x_;
 
             /* renamed from: y_ */
-            private int f667y_;
+            private int f665y_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return BreakoutVector2OuterClass.internal_static_BreakoutVector2_descriptor;
@@ -312,8 +312,8 @@ public final class BreakoutVector2OuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.f666x_ = 0;
-                this.f667y_ = 0;
+                this.f664x_ = 0;
+                this.f665y_ = 0;
                 return this;
             }
 
@@ -339,8 +339,8 @@ public final class BreakoutVector2OuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public BreakoutVector2 buildPartial() {
                 BreakoutVector2 result = new BreakoutVector2(this);
-                result.f664x_ = this.f666x_;
-                result.f665y_ = this.f667y_;
+                result.f662x_ = this.f664x_;
+                result.f663y_ = this.f665y_;
                 onBuilt();
                 return result;
             }
@@ -428,34 +428,34 @@ public final class BreakoutVector2OuterClass {
 
             @Override // emu.grasscutter.net.proto.BreakoutVector2OuterClass.BreakoutVector2OrBuilder
             public int getX() {
-                return this.f666x_;
+                return this.f664x_;
             }
 
             public Builder setX(int value) {
-                this.f666x_ = value;
+                this.f664x_ = value;
                 onChanged();
                 return this;
             }
 
             public Builder clearX() {
-                this.f666x_ = 0;
+                this.f664x_ = 0;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutVector2OuterClass.BreakoutVector2OrBuilder
             public int getY() {
-                return this.f667y_;
+                return this.f665y_;
             }
 
             public Builder setY(int value) {
-                this.f667y_ = value;
+                this.f665y_ = value;
                 onChanged();
                 return this;
             }
 
             public Builder clearY() {
-                this.f667y_ = 0;
+                this.f665y_ = 0;
                 onChanged();
                 return this;
             }

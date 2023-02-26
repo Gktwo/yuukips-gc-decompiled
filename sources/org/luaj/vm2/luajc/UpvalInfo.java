@@ -6,24 +6,24 @@ import org.luaj.vm2.Lua;
 public class UpvalInfo {
 
     /* renamed from: pi */
-    ProtoInfo f3350pi;
+    ProtoInfo f3314pi;
     int slot;
     int nvars;
     VarInfo[] var;
 
     /* renamed from: rw */
-    boolean f3351rw;
+    boolean f3315rw;
 
     public UpvalInfo(ProtoInfo protoInfo) {
-        this.f3350pi = protoInfo;
+        this.f3314pi = protoInfo;
         this.slot = 0;
         this.nvars = 1;
         this.var = new VarInfo[]{VarInfo.PARAM(0)};
-        this.f3351rw = false;
+        this.f3315rw = false;
     }
 
     public UpvalInfo(ProtoInfo protoInfo, int i, int i2) {
-        this.f3350pi = protoInfo;
+        this.f3314pi = protoInfo;
         this.slot = i2;
         this.nvars = 0;
         this.var = null;
@@ -31,7 +31,7 @@ public class UpvalInfo {
         for (int i3 = 0; i3 < this.nvars; i3++) {
             this.var[i3].allocupvalue = testIsAllocUpvalue(this.var[i3]);
         }
-        this.f3351rw = this.nvars > 1;
+        this.f3315rw = this.nvars > 1;
     }
 
     private boolean includeVarAndPosteriorVars(VarInfo varInfo) {
@@ -54,10 +54,10 @@ public class UpvalInfo {
     }
 
     private boolean isLoopVariable(VarInfo varInfo) {
-        if (varInfo.f3352pc < 0) {
+        if (varInfo.f3316pc < 0) {
             return false;
         }
-        switch (Lua.GET_OPCODE(this.f3350pi.prototype.code[varInfo.f3352pc])) {
+        switch (Lua.GET_OPCODE(this.f3314pi.prototype.code[varInfo.f3316pc])) {
             case 32:
             case 35:
                 return true;
@@ -68,13 +68,13 @@ public class UpvalInfo {
 
     private boolean includePosteriorVarsCheckLoops(VarInfo varInfo) {
         boolean z = false;
-        int length = this.f3350pi.blocklist.length;
+        int length = this.f3314pi.blocklist.length;
         for (int i = 0; i < length; i++) {
-            BasicBlock basicBlock = this.f3350pi.blocklist[i];
-            if (this.f3350pi.vars[this.slot][basicBlock.pc1] == varInfo) {
+            BasicBlock basicBlock = this.f3314pi.blocklist[i];
+            if (this.f3314pi.vars[this.slot][basicBlock.pc1] == varInfo) {
                 int length2 = basicBlock.next != null ? basicBlock.next.length : 0;
                 for (int i2 = 0; i2 < length2; i2++) {
-                    VarInfo varInfo2 = this.f3350pi.vars[this.slot][basicBlock.next[i2].pc0];
+                    VarInfo varInfo2 = this.f3314pi.vars[this.slot][basicBlock.next[i2].pc0];
                     if (varInfo2 != varInfo) {
                         z |= includeVarAndPosteriorVars(varInfo2);
                         if (varInfo2.isPhiVar()) {
@@ -87,8 +87,8 @@ public class UpvalInfo {
                 while (true) {
                     if (i3 < basicBlock.pc0) {
                         break;
-                    } else if (this.f3350pi.vars[this.slot][i3] == varInfo) {
-                        z |= includeVarAndPosteriorVars(this.f3350pi.vars[this.slot][i3 + 1]);
+                    } else if (this.f3314pi.vars[this.slot][i3] == varInfo) {
+                        z |= includeVarAndPosteriorVars(this.f3314pi.vars[this.slot][i3 + 1]);
                         break;
                     } else {
                         i3--;
@@ -100,13 +100,13 @@ public class UpvalInfo {
     }
 
     private void includePriorVarsIgnoreLoops(VarInfo varInfo) {
-        int length = this.f3350pi.blocklist.length;
+        int length = this.f3314pi.blocklist.length;
         for (int i = 0; i < length; i++) {
-            BasicBlock basicBlock = this.f3350pi.blocklist[i];
-            if (this.f3350pi.vars[this.slot][basicBlock.pc0] == varInfo) {
+            BasicBlock basicBlock = this.f3314pi.blocklist[i];
+            if (this.f3314pi.vars[this.slot][basicBlock.pc0] == varInfo) {
                 int length2 = basicBlock.prev != null ? basicBlock.prev.length : 0;
                 for (int i2 = 0; i2 < length2; i2++) {
-                    VarInfo varInfo2 = this.f3350pi.vars[this.slot][basicBlock.prev[i2].pc1];
+                    VarInfo varInfo2 = this.f3314pi.vars[this.slot][basicBlock.prev[i2].pc1];
                     if (varInfo2 != varInfo) {
                         includeVarAndPosteriorVars(varInfo2);
                     }
@@ -116,8 +116,8 @@ public class UpvalInfo {
                 while (true) {
                     if (i3 > basicBlock.pc1) {
                         break;
-                    } else if (this.f3350pi.vars[this.slot][i3] == varInfo) {
-                        includeVarAndPosteriorVars(this.f3350pi.vars[this.slot][i3 - 1]);
+                    } else if (this.f3314pi.vars[this.slot][i3] == varInfo) {
+                        includeVarAndPosteriorVars(this.f3314pi.vars[this.slot][i3 - 1]);
                         break;
                     } else {
                         i3++;
@@ -143,34 +143,34 @@ public class UpvalInfo {
 
     public String toString() {
         StringBuffer stringBuffer = new StringBuffer();
-        stringBuffer.append(this.f3350pi.name);
+        stringBuffer.append(this.f3314pi.name);
         int i = 0;
         while (i < this.nvars) {
             stringBuffer.append(i > 0 ? "," : " ");
             stringBuffer.append(String.valueOf(this.var[i]));
             i++;
         }
-        if (this.f3351rw) {
+        if (this.f3315rw) {
             stringBuffer.append("(rw)");
         }
         return stringBuffer.toString();
     }
 
     private boolean testIsAllocUpvalue(VarInfo varInfo) {
-        if (varInfo.f3352pc < 0) {
+        if (varInfo.f3316pc < 0) {
             return true;
         }
-        BasicBlock basicBlock = this.f3350pi.blocks[varInfo.f3352pc];
-        if (varInfo.f3352pc > basicBlock.pc0) {
-            return this.f3350pi.vars[this.slot][varInfo.f3352pc - 1].upvalue != this;
+        BasicBlock basicBlock = this.f3314pi.blocks[varInfo.f3316pc];
+        if (varInfo.f3316pc > basicBlock.pc0) {
+            return this.f3314pi.vars[this.slot][varInfo.f3316pc - 1].upvalue != this;
         }
         if (basicBlock.prev == null) {
-            VarInfo varInfo2 = this.f3350pi.params[this.slot];
+            VarInfo varInfo2 = this.f3314pi.params[this.slot];
             return (varInfo2 == null || varInfo2.upvalue == this) ? false : true;
         }
         int length = basicBlock.prev.length;
         for (int i = 0; i < length; i++) {
-            VarInfo varInfo3 = this.f3350pi.vars[this.slot][basicBlock.prev[i].pc1];
+            VarInfo varInfo3 = this.f3314pi.vars[this.slot][basicBlock.prev[i].pc1];
             if (!(varInfo3 == null || varInfo3.upvalue == this)) {
                 return true;
             }

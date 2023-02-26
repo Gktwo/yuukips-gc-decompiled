@@ -295,50 +295,50 @@ public final class ShortSpliterators {
     private static class SpliteratorWrapper implements ShortSpliterator {
 
         /* renamed from: i */
-        final Spliterator<Short> f3073i;
+        final Spliterator<Short> f3037i;
 
         public SpliteratorWrapper(Spliterator<Short> i) {
-            this.f3073i = i;
+            this.f3037i = i;
         }
 
         public boolean tryAdvance(ShortConsumer action) {
-            return this.f3073i.tryAdvance(action);
+            return this.f3037i.tryAdvance(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortSpliterator, java.util.Spliterator
         @Deprecated
         public boolean tryAdvance(Consumer<? super Short> action) {
-            return this.f3073i.tryAdvance(action);
+            return this.f3037i.tryAdvance(action);
         }
 
         public void forEachRemaining(ShortConsumer action) {
-            this.f3073i.forEachRemaining(action);
+            this.f3037i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortSpliterator, java.util.Spliterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Short> action) {
-            this.f3073i.forEachRemaining(action);
+            this.f3037i.forEachRemaining(action);
         }
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return this.f3073i.estimateSize();
+            return this.f3037i.estimateSize();
         }
 
         @Override // java.util.Spliterator
         public int characteristics() {
-            return this.f3073i.characteristics();
+            return this.f3037i.characteristics();
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortSpliterator, java.util.Spliterator
         public ShortComparator getComparator() {
-            return ShortComparators.asShortComparator(this.f3073i.getComparator());
+            return ShortComparators.asShortComparator(this.f3037i.getComparator());
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public ShortSpliterator trySplit() {
-            Spliterator<Short> innerSplit = this.f3073i.trySplit();
+            Spliterator<Short> innerSplit = this.f3037i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -363,7 +363,7 @@ public final class ShortSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortSpliterators.SpliteratorWrapper, p014it.unimi.dsi.fastutil.shorts.ShortSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public ShortSpliterator trySplit() {
-            Spliterator<Short> innerSplit = this.f3073i.trySplit();
+            Spliterator<Short> innerSplit = this.f3037i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -376,33 +376,33 @@ public final class ShortSpliterators {
     private static class PrimitiveSpliteratorWrapper implements ShortSpliterator {
 
         /* renamed from: i */
-        final Spliterator.OfInt f3071i;
+        final Spliterator.OfInt f3035i;
 
         public PrimitiveSpliteratorWrapper(Spliterator.OfInt i) {
-            this.f3071i = i;
+            this.f3035i = i;
         }
 
         public boolean tryAdvance(ShortConsumer action) {
-            return this.f3071i.tryAdvance((IntConsumer) action);
+            return this.f3035i.tryAdvance((IntConsumer) action);
         }
 
         public void forEachRemaining(ShortConsumer action) {
-            this.f3071i.forEachRemaining((IntConsumer) action);
+            this.f3035i.forEachRemaining((IntConsumer) action);
         }
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return this.f3071i.estimateSize();
+            return this.f3035i.estimateSize();
         }
 
         @Override // java.util.Spliterator
         public int characteristics() {
-            return this.f3071i.characteristics();
+            return this.f3035i.characteristics();
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortSpliterator, java.util.Spliterator
         public ShortComparator getComparator() {
-            Comparator<? super Integer> comp = this.f3071i.getComparator();
+            Comparator<? super Integer> comp = this.f3035i.getComparator();
             return left, right -> {
                 return comp.compare(Integer.valueOf(left), Integer.valueOf(right));
             };
@@ -410,7 +410,7 @@ public final class ShortSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public ShortSpliterator trySplit() {
-            Spliterator.OfInt innerSplit = this.f3071i.trySplit();
+            Spliterator.OfInt innerSplit = this.f3035i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -435,7 +435,7 @@ public final class ShortSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortSpliterators.PrimitiveSpliteratorWrapper, p014it.unimi.dsi.fastutil.shorts.ShortSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public ShortSpliterator trySplit() {
-            Spliterator.OfInt innerSplit = this.f3071i.trySplit();
+            Spliterator.OfInt innerSplit = this.f3035i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -634,15 +634,15 @@ public final class ShortSpliterators {
         private short curr;
 
         /* renamed from: to */
-        private short f3070to;
+        private short f3034to;
 
         public IntervalSpliterator(short from, short to) {
             this.curr = from;
-            this.f3070to = to;
+            this.f3034to = to;
         }
 
         public boolean tryAdvance(ShortConsumer action) {
-            if (this.curr >= this.f3070to) {
+            if (this.curr >= this.f3034to) {
                 return false;
             }
             short s = this.curr;
@@ -653,7 +653,7 @@ public final class ShortSpliterators {
 
         public void forEachRemaining(ShortConsumer action) {
             Objects.requireNonNull(action);
-            while (this.curr < this.f3070to) {
+            while (this.curr < this.f3034to) {
                 action.accept(this.curr);
                 this.curr = (short) (this.curr + 1);
             }
@@ -661,7 +661,7 @@ public final class ShortSpliterators {
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return (long) (this.f3070to - this.curr);
+            return (long) (this.f3034to - this.curr);
         }
 
         @Override // java.util.Spliterator
@@ -676,7 +676,7 @@ public final class ShortSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public ShortSpliterator trySplit() {
-            int remaining = this.f3070to - this.curr;
+            int remaining = this.f3034to - this.curr;
             short mid = (short) (this.curr + (remaining >> 1));
             if (remaining >= 0 && remaining <= 2) {
                 return null;
@@ -690,13 +690,13 @@ public final class ShortSpliterators {
         public long skip(long n) {
             if (n < 0) {
                 throw new IllegalArgumentException("Argument must be nonnegative: " + n);
-            } else if (this.curr >= this.f3070to) {
+            } else if (this.curr >= this.f3034to) {
                 return 0;
             } else {
                 long newCurr = ((long) this.curr) + n;
-                if (newCurr > ((long) this.f3070to) || newCurr < ((long) this.curr)) {
-                    long n2 = (long) (this.f3070to - this.curr);
-                    this.curr = this.f3070to;
+                if (newCurr > ((long) this.f3034to) || newCurr < ((long) this.curr)) {
+                    long n2 = (long) (this.f3034to - this.curr);
+                    this.curr = this.f3034to;
                     return n2;
                 }
                 this.curr = SafeMath.safeLongToShort(newCurr);
@@ -717,7 +717,7 @@ public final class ShortSpliterators {
         private static final int CHARACTERISTICS_NOT_SUPPORTED_WHILE_MULTIPLE = 5;
 
         /* renamed from: a */
-        final ShortSpliterator[] f3072a;
+        final ShortSpliterator[] f3036a;
         int offset;
         int length;
         long remainingEstimatedExceptCurrent;
@@ -726,7 +726,7 @@ public final class ShortSpliterators {
         public SpliteratorConcatenator(ShortSpliterator[] a, int offset, int length) {
             this.remainingEstimatedExceptCurrent = LongCompanionObject.MAX_VALUE;
             this.characteristics = 0;
-            this.f3072a = a;
+            this.f3036a = a;
             this.offset = offset;
             this.length = length;
             this.remainingEstimatedExceptCurrent = recomputeRemaining();
@@ -755,7 +755,7 @@ public final class ShortSpliterators {
                 r0 = r6
                 if (r0 <= 0) goto L_0x004e
                 r0 = r5
-                it.unimi.dsi.fastutil.shorts.ShortSpliterator[] r0 = r0.f3072a
+                it.unimi.dsi.fastutil.shorts.ShortSpliterator[] r0 = r0.f3036a
                 r1 = r7
                 int r7 = r7 + 1
                 r0 = r0[r1]
@@ -805,7 +805,7 @@ public final class ShortSpliterators {
             }
             while (curLength > 0) {
                 curOffset++;
-                current &= this.f3072a[curOffset].characteristics();
+                current &= this.f3036a[curOffset].characteristics();
                 curLength--;
             }
             return current;
@@ -825,7 +825,7 @@ public final class ShortSpliterators {
             while (true) {
                 if (this.length <= 0) {
                     break;
-                } else if (this.f3072a[this.offset].tryAdvance((ShortSpliterator) action)) {
+                } else if (this.f3036a[this.offset].tryAdvance((ShortSpliterator) action)) {
                     any = true;
                     break;
                 } else {
@@ -837,7 +837,7 @@ public final class ShortSpliterators {
 
         public void forEachRemaining(ShortConsumer action) {
             while (this.length > 0) {
-                this.f3072a[this.offset].forEachRemaining((ShortSpliterator) action);
+                this.f3036a[this.offset].forEachRemaining((ShortSpliterator) action);
                 advanceNextSpliterator();
             }
         }
@@ -846,7 +846,7 @@ public final class ShortSpliterators {
         @Deprecated
         public void forEachRemaining(Consumer<? super Short> action) {
             while (this.length > 0) {
-                this.f3072a[this.offset].forEachRemaining(action);
+                this.f3036a[this.offset].forEachRemaining(action);
                 advanceNextSpliterator();
             }
         }
@@ -856,7 +856,7 @@ public final class ShortSpliterators {
             if (this.length <= 0) {
                 return 0;
             }
-            long est = this.f3072a[this.offset].estimateSize() + this.remainingEstimatedExceptCurrent;
+            long est = this.f3036a[this.offset].estimateSize() + this.remainingEstimatedExceptCurrent;
             if (est < 0) {
                 return LongCompanionObject.MAX_VALUE;
             }
@@ -871,7 +871,7 @@ public final class ShortSpliterators {
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortSpliterator, java.util.Spliterator
         public ShortComparator getComparator() {
             if (this.length == 1 && (this.characteristics & 4) != 0) {
-                return this.f3072a[this.offset].getComparator();
+                return this.f3036a[this.offset].getComparator();
             }
             throw new IllegalStateException();
         }
@@ -882,16 +882,16 @@ public final class ShortSpliterators {
                 case 0:
                     return null;
                 case 1:
-                    ShortSpliterator split = this.f3072a[this.offset].trySplit();
-                    this.characteristics = this.f3072a[this.offset].characteristics();
+                    ShortSpliterator split = this.f3036a[this.offset].trySplit();
+                    this.characteristics = this.f3036a[this.offset].characteristics();
                     return split;
                 case 2:
-                    ShortSpliterator[] shortSpliteratorArr = this.f3072a;
+                    ShortSpliterator[] shortSpliteratorArr = this.f3036a;
                     int i = this.offset;
                     this.offset = i + 1;
                     ShortSpliterator split2 = shortSpliteratorArr[i];
                     this.length--;
-                    this.characteristics = this.f3072a[this.offset].characteristics();
+                    this.characteristics = this.f3036a[this.offset].characteristics();
                     this.remainingEstimatedExceptCurrent = 0;
                     return split2;
                 default:
@@ -901,7 +901,7 @@ public final class ShortSpliterators {
                     this.length -= mid;
                     this.remainingEstimatedExceptCurrent = recomputeRemaining();
                     this.characteristics = computeCharacteristics();
-                    return new SpliteratorConcatenator(this.f3072a, ret_offset, mid);
+                    return new SpliteratorConcatenator(this.f3036a, ret_offset, mid);
             }
         }
 
@@ -913,7 +913,7 @@ public final class ShortSpliterators {
                 return 0;
             }
             while (c < n && this.length >= 0) {
-                c += this.f3072a[this.offset].skip(n - c);
+                c += this.f3036a[this.offset].skip(n - c);
                 if (c < n) {
                     advanceNextSpliterator();
                 }

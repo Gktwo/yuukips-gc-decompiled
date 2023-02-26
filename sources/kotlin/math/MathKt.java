@@ -7,10 +7,10 @@ import kotlin.Metadata;
 public final class MathKt extends MathJVM {
 
     /* renamed from: PI */
-    public static final double f3088PI = 3.141592653589793d;
+    public static final double f3052PI = 3.141592653589793d;
 
     /* renamed from: E */
-    public static final double f3089E = 2.718281828459045d;
+    public static final double f3053E = 2.718281828459045d;
 
     private MathKt() {
     }

@@ -297,50 +297,50 @@ public final class FloatSpliterators {
     private static class SpliteratorWrapper implements FloatSpliterator {
 
         /* renamed from: i */
-        final Spliterator<Float> f1974i;
+        final Spliterator<Float> f1938i;
 
         public SpliteratorWrapper(Spliterator<Float> i) {
-            this.f1974i = i;
+            this.f1938i = i;
         }
 
         public boolean tryAdvance(FloatConsumer action) {
-            return this.f1974i.tryAdvance(action);
+            return this.f1938i.tryAdvance(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatSpliterator, java.util.Spliterator
         @Deprecated
         public boolean tryAdvance(Consumer<? super Float> action) {
-            return this.f1974i.tryAdvance(action);
+            return this.f1938i.tryAdvance(action);
         }
 
         public void forEachRemaining(FloatConsumer action) {
-            this.f1974i.forEachRemaining(action);
+            this.f1938i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatSpliterator, java.util.Spliterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Float> action) {
-            this.f1974i.forEachRemaining(action);
+            this.f1938i.forEachRemaining(action);
         }
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return this.f1974i.estimateSize();
+            return this.f1938i.estimateSize();
         }
 
         @Override // java.util.Spliterator
         public int characteristics() {
-            return this.f1974i.characteristics();
+            return this.f1938i.characteristics();
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatSpliterator, java.util.Spliterator
         public FloatComparator getComparator() {
-            return FloatComparators.asFloatComparator(this.f1974i.getComparator());
+            return FloatComparators.asFloatComparator(this.f1938i.getComparator());
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public FloatSpliterator trySplit() {
-            Spliterator<Float> innerSplit = this.f1974i.trySplit();
+            Spliterator<Float> innerSplit = this.f1938i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -365,7 +365,7 @@ public final class FloatSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatSpliterators.SpliteratorWrapper, p014it.unimi.dsi.fastutil.floats.FloatSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public FloatSpliterator trySplit() {
-            Spliterator<Float> innerSplit = this.f1974i.trySplit();
+            Spliterator<Float> innerSplit = this.f1938i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -378,33 +378,33 @@ public final class FloatSpliterators {
     private static class PrimitiveSpliteratorWrapper implements FloatSpliterator {
 
         /* renamed from: i */
-        final Spliterator.OfDouble f1972i;
+        final Spliterator.OfDouble f1936i;
 
         public PrimitiveSpliteratorWrapper(Spliterator.OfDouble i) {
-            this.f1972i = i;
+            this.f1936i = i;
         }
 
         public boolean tryAdvance(FloatConsumer action) {
-            return this.f1972i.tryAdvance((DoubleConsumer) action);
+            return this.f1936i.tryAdvance((DoubleConsumer) action);
         }
 
         public void forEachRemaining(FloatConsumer action) {
-            this.f1972i.forEachRemaining((DoubleConsumer) action);
+            this.f1936i.forEachRemaining((DoubleConsumer) action);
         }
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return this.f1972i.estimateSize();
+            return this.f1936i.estimateSize();
         }
 
         @Override // java.util.Spliterator
         public int characteristics() {
-            return this.f1972i.characteristics();
+            return this.f1936i.characteristics();
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatSpliterator, java.util.Spliterator
         public FloatComparator getComparator() {
-            Comparator<? super Double> comp = this.f1972i.getComparator();
+            Comparator<? super Double> comp = this.f1936i.getComparator();
             return left, right -> {
                 return comp.compare(Double.valueOf((double) left), Double.valueOf((double) right));
             };
@@ -412,7 +412,7 @@ public final class FloatSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public FloatSpliterator trySplit() {
-            Spliterator.OfDouble innerSplit = this.f1972i.trySplit();
+            Spliterator.OfDouble innerSplit = this.f1936i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -437,7 +437,7 @@ public final class FloatSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatSpliterators.PrimitiveSpliteratorWrapper, p014it.unimi.dsi.fastutil.floats.FloatSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public FloatSpliterator trySplit() {
-            Spliterator.OfDouble innerSplit = this.f1972i.trySplit();
+            Spliterator.OfDouble innerSplit = this.f1936i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -636,7 +636,7 @@ public final class FloatSpliterators {
         private static final int CHARACTERISTICS_NOT_SUPPORTED_WHILE_MULTIPLE = 5;
 
         /* renamed from: a */
-        final FloatSpliterator[] f1973a;
+        final FloatSpliterator[] f1937a;
         int offset;
         int length;
         long remainingEstimatedExceptCurrent;
@@ -645,7 +645,7 @@ public final class FloatSpliterators {
         public SpliteratorConcatenator(FloatSpliterator[] a, int offset, int length) {
             this.remainingEstimatedExceptCurrent = LongCompanionObject.MAX_VALUE;
             this.characteristics = 0;
-            this.f1973a = a;
+            this.f1937a = a;
             this.offset = offset;
             this.length = length;
             this.remainingEstimatedExceptCurrent = recomputeRemaining();
@@ -674,7 +674,7 @@ public final class FloatSpliterators {
                 r0 = r6
                 if (r0 <= 0) goto L_0x004e
                 r0 = r5
-                it.unimi.dsi.fastutil.floats.FloatSpliterator[] r0 = r0.f1973a
+                it.unimi.dsi.fastutil.floats.FloatSpliterator[] r0 = r0.f1937a
                 r1 = r7
                 int r7 = r7 + 1
                 r0 = r0[r1]
@@ -724,7 +724,7 @@ public final class FloatSpliterators {
             }
             while (curLength > 0) {
                 curOffset++;
-                current &= this.f1973a[curOffset].characteristics();
+                current &= this.f1937a[curOffset].characteristics();
                 curLength--;
             }
             return current;
@@ -744,7 +744,7 @@ public final class FloatSpliterators {
             while (true) {
                 if (this.length <= 0) {
                     break;
-                } else if (this.f1973a[this.offset].tryAdvance((FloatSpliterator) action)) {
+                } else if (this.f1937a[this.offset].tryAdvance((FloatSpliterator) action)) {
                     any = true;
                     break;
                 } else {
@@ -756,7 +756,7 @@ public final class FloatSpliterators {
 
         public void forEachRemaining(FloatConsumer action) {
             while (this.length > 0) {
-                this.f1973a[this.offset].forEachRemaining((FloatSpliterator) action);
+                this.f1937a[this.offset].forEachRemaining((FloatSpliterator) action);
                 advanceNextSpliterator();
             }
         }
@@ -765,7 +765,7 @@ public final class FloatSpliterators {
         @Deprecated
         public void forEachRemaining(Consumer<? super Float> action) {
             while (this.length > 0) {
-                this.f1973a[this.offset].forEachRemaining(action);
+                this.f1937a[this.offset].forEachRemaining(action);
                 advanceNextSpliterator();
             }
         }
@@ -775,7 +775,7 @@ public final class FloatSpliterators {
             if (this.length <= 0) {
                 return 0;
             }
-            long est = this.f1973a[this.offset].estimateSize() + this.remainingEstimatedExceptCurrent;
+            long est = this.f1937a[this.offset].estimateSize() + this.remainingEstimatedExceptCurrent;
             if (est < 0) {
                 return LongCompanionObject.MAX_VALUE;
             }
@@ -790,7 +790,7 @@ public final class FloatSpliterators {
         @Override // p014it.unimi.dsi.fastutil.floats.FloatSpliterator, java.util.Spliterator
         public FloatComparator getComparator() {
             if (this.length == 1 && (this.characteristics & 4) != 0) {
-                return this.f1973a[this.offset].getComparator();
+                return this.f1937a[this.offset].getComparator();
             }
             throw new IllegalStateException();
         }
@@ -801,16 +801,16 @@ public final class FloatSpliterators {
                 case 0:
                     return null;
                 case 1:
-                    FloatSpliterator split = this.f1973a[this.offset].trySplit();
-                    this.characteristics = this.f1973a[this.offset].characteristics();
+                    FloatSpliterator split = this.f1937a[this.offset].trySplit();
+                    this.characteristics = this.f1937a[this.offset].characteristics();
                     return split;
                 case 2:
-                    FloatSpliterator[] floatSpliteratorArr = this.f1973a;
+                    FloatSpliterator[] floatSpliteratorArr = this.f1937a;
                     int i = this.offset;
                     this.offset = i + 1;
                     FloatSpliterator split2 = floatSpliteratorArr[i];
                     this.length--;
-                    this.characteristics = this.f1973a[this.offset].characteristics();
+                    this.characteristics = this.f1937a[this.offset].characteristics();
                     this.remainingEstimatedExceptCurrent = 0;
                     return split2;
                 default:
@@ -820,7 +820,7 @@ public final class FloatSpliterators {
                     this.length -= mid;
                     this.remainingEstimatedExceptCurrent = recomputeRemaining();
                     this.characteristics = computeCharacteristics();
-                    return new SpliteratorConcatenator(this.f1973a, ret_offset, mid);
+                    return new SpliteratorConcatenator(this.f1937a, ret_offset, mid);
             }
         }
 
@@ -832,7 +832,7 @@ public final class FloatSpliterators {
                 return 0;
             }
             while (c < n && this.length >= 0) {
-                c += this.f1973a[this.offset].skip(n - c);
+                c += this.f1937a[this.offset].skip(n - c);
                 if (c < n) {
                     advanceNextSpliterator();
                 }

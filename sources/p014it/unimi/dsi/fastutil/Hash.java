@@ -29,7 +29,7 @@ public interface Hash {
     }
 
     static {
-        int[] iArr = new int[PacketOpcodes.RedeemLegendaryKeyReq];
+        int[] iArr = new int[PacketOpcodes.GetQuestLackingResourceReq];
         iArr[0] = 3;
         iArr[1] = 3;
         iArr[2] = 3;

@@ -19,19 +19,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MarkTargetInvestigationMonsterNotifyOuterClass.class */
 public final class MarkTargetInvestigationMonsterNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n*MarkTargetInvestigationMonsterNotify.proto\"\u0001\n$MarkTargetInvestigationMonsterNotify\u0012\u0012\n\nmonster_id\u0018\n \u0001(\r\u0012\u0010\n\bscene_id\u0018\u0007 \u0001(\r\u0012\u0010\n\bgroup_id\u0018\u000f \u0001(\r\u0012 \n\u0018investigation_monster_id\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n*MarkTargetInvestigationMonsterNotify.proto\"{\n$MarkTargetInvestigationMonsterNotify\u0012\u000f\n\u0007groupId\u0018\u000f \u0001(\r\u0012\u0011\n\tmonsterId\u0018\f \u0001(\r\u0012\u000f\n\u0007sceneId\u0018\u000e \u0001(\r\u0012\u001e\n\u0016investigationMonsterId\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_MarkTargetInvestigationMonsterNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_MarkTargetInvestigationMonsterNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f776xc305d0be = new GeneratedMessageV3.FieldAccessorTable(internal_static_MarkTargetInvestigationMonsterNotify_descriptor, new String[]{"MonsterId", "SceneId", "GroupId", "InvestigationMonsterId"});
+    private static final GeneratedMessageV3.FieldAccessorTable f758xc305d0be = new GeneratedMessageV3.FieldAccessorTable(internal_static_MarkTargetInvestigationMonsterNotify_descriptor, new String[]{"GroupId", "MonsterId", "SceneId", "InvestigationMonsterId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MarkTargetInvestigationMonsterNotifyOuterClass$MarkTargetInvestigationMonsterNotifyOrBuilder.class */
     public interface MarkTargetInvestigationMonsterNotifyOrBuilder extends MessageOrBuilder {
+        int getGroupId();
+
         int getMonsterId();
 
         int getSceneId();
-
-        int getGroupId();
 
         int getInvestigationMonsterId();
     }
@@ -49,13 +49,13 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MarkTargetInvestigationMonsterNotifyOuterClass$MarkTargetInvestigationMonsterNotify.class */
     public static final class MarkTargetInvestigationMonsterNotify extends GeneratedMessageV3 implements MarkTargetInvestigationMonsterNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MONSTER_ID_FIELD_NUMBER = 10;
-        private int monsterId_;
-        public static final int SCENE_ID_FIELD_NUMBER = 7;
-        private int sceneId_;
-        public static final int GROUP_ID_FIELD_NUMBER = 15;
+        public static final int GROUPID_FIELD_NUMBER = 15;
         private int groupId_;
-        public static final int INVESTIGATION_MONSTER_ID_FIELD_NUMBER = 3;
+        public static final int MONSTERID_FIELD_NUMBER = 12;
+        private int monsterId_;
+        public static final int SCENEID_FIELD_NUMBER = 14;
+        private int sceneId_;
+        public static final int INVESTIGATIONMONSTERID_FIELD_NUMBER = 2;
         private int investigationMonsterId_;
         private byte memoizedIsInitialized;
         private static final MarkTargetInvestigationMonsterNotify DEFAULT_INSTANCE = new MarkTargetInvestigationMonsterNotify();
@@ -103,14 +103,14 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 24:
+                                case 16:
                                     this.investigationMonsterId_ = input.readUInt32();
                                     break;
-                                case 56:
-                                    this.sceneId_ = input.readUInt32();
-                                    break;
-                                case 80:
+                                case 96:
                                     this.monsterId_ = input.readUInt32();
+                                    break;
+                                case 112:
+                                    this.sceneId_ = input.readUInt32();
                                     break;
                                 case 120:
                                     this.groupId_ = input.readUInt32();
@@ -142,7 +142,12 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return MarkTargetInvestigationMonsterNotifyOuterClass.f776xc305d0be.ensureFieldAccessorsInitialized(MarkTargetInvestigationMonsterNotify.class, Builder.class);
+            return MarkTargetInvestigationMonsterNotifyOuterClass.f758xc305d0be.ensureFieldAccessorsInitialized(MarkTargetInvestigationMonsterNotify.class, Builder.class);
+        }
+
+        @Override // emu.grasscutter.net.proto.MarkTargetInvestigationMonsterNotifyOuterClass.MarkTargetInvestigationMonsterNotifyOrBuilder
+        public int getGroupId() {
+            return this.groupId_;
         }
 
         @Override // emu.grasscutter.net.proto.MarkTargetInvestigationMonsterNotifyOuterClass.MarkTargetInvestigationMonsterNotifyOrBuilder
@@ -153,11 +158,6 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
         @Override // emu.grasscutter.net.proto.MarkTargetInvestigationMonsterNotifyOuterClass.MarkTargetInvestigationMonsterNotifyOrBuilder
         public int getSceneId() {
             return this.sceneId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.MarkTargetInvestigationMonsterNotifyOuterClass.MarkTargetInvestigationMonsterNotifyOrBuilder
-        public int getGroupId() {
-            return this.groupId_;
         }
 
         @Override // emu.grasscutter.net.proto.MarkTargetInvestigationMonsterNotifyOuterClass.MarkTargetInvestigationMonsterNotifyOrBuilder
@@ -181,13 +181,13 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.investigationMonsterId_ != 0) {
-                output.writeUInt32(3, this.investigationMonsterId_);
-            }
-            if (this.sceneId_ != 0) {
-                output.writeUInt32(7, this.sceneId_);
+                output.writeUInt32(2, this.investigationMonsterId_);
             }
             if (this.monsterId_ != 0) {
-                output.writeUInt32(10, this.monsterId_);
+                output.writeUInt32(12, this.monsterId_);
+            }
+            if (this.sceneId_ != 0) {
+                output.writeUInt32(14, this.sceneId_);
             }
             if (this.groupId_ != 0) {
                 output.writeUInt32(15, this.groupId_);
@@ -203,13 +203,13 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
             }
             int size2 = 0;
             if (this.investigationMonsterId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.investigationMonsterId_);
-            }
-            if (this.sceneId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.sceneId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.investigationMonsterId_);
             }
             if (this.monsterId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.monsterId_);
+                size2 += CodedOutputStream.computeUInt32Size(12, this.monsterId_);
+            }
+            if (this.sceneId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(14, this.sceneId_);
             }
             if (this.groupId_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(15, this.groupId_);
@@ -228,7 +228,7 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
                 return equals(obj);
             }
             MarkTargetInvestigationMonsterNotify other = (MarkTargetInvestigationMonsterNotify) obj;
-            return getMonsterId() == other.getMonsterId() && getSceneId() == other.getSceneId() && getGroupId() == other.getGroupId() && getInvestigationMonsterId() == other.getInvestigationMonsterId() && this.unknownFields.equals(other.unknownFields);
+            return getGroupId() == other.getGroupId() && getMonsterId() == other.getMonsterId() && getSceneId() == other.getSceneId() && getInvestigationMonsterId() == other.getInvestigationMonsterId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -236,7 +236,7 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getMonsterId())) + 7)) + getSceneId())) + 15)) + getGroupId())) + 3)) + getInvestigationMonsterId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getGroupId())) + 12)) + getMonsterId())) + 14)) + getSceneId())) + 2)) + getInvestigationMonsterId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -315,9 +315,9 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MarkTargetInvestigationMonsterNotifyOuterClass$MarkTargetInvestigationMonsterNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements MarkTargetInvestigationMonsterNotifyOrBuilder {
+            private int groupId_;
             private int monsterId_;
             private int sceneId_;
-            private int groupId_;
             private int investigationMonsterId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -326,7 +326,7 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return MarkTargetInvestigationMonsterNotifyOuterClass.f776xc305d0be.ensureFieldAccessorsInitialized(MarkTargetInvestigationMonsterNotify.class, Builder.class);
+                return MarkTargetInvestigationMonsterNotifyOuterClass.f758xc305d0be.ensureFieldAccessorsInitialized(MarkTargetInvestigationMonsterNotify.class, Builder.class);
             }
 
             private Builder() {
@@ -346,9 +346,9 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.groupId_ = 0;
                 this.monsterId_ = 0;
                 this.sceneId_ = 0;
-                this.groupId_ = 0;
                 this.investigationMonsterId_ = 0;
                 return this;
             }
@@ -375,9 +375,9 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public MarkTargetInvestigationMonsterNotify buildPartial() {
                 MarkTargetInvestigationMonsterNotify result = new MarkTargetInvestigationMonsterNotify(this);
+                result.groupId_ = this.groupId_;
                 result.monsterId_ = this.monsterId_;
                 result.sceneId_ = this.sceneId_;
-                result.groupId_ = this.groupId_;
                 result.investigationMonsterId_ = this.investigationMonsterId_;
                 onBuilt();
                 return result;
@@ -426,14 +426,14 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
                 if (other == MarkTargetInvestigationMonsterNotify.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getGroupId() != 0) {
+                    setGroupId(other.getGroupId());
+                }
                 if (other.getMonsterId() != 0) {
                     setMonsterId(other.getMonsterId());
                 }
                 if (other.getSceneId() != 0) {
                     setSceneId(other.getSceneId());
-                }
-                if (other.getGroupId() != 0) {
-                    setGroupId(other.getGroupId());
                 }
                 if (other.getInvestigationMonsterId() != 0) {
                     setInvestigationMonsterId(other.getInvestigationMonsterId());
@@ -471,6 +471,23 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.MarkTargetInvestigationMonsterNotifyOuterClass.MarkTargetInvestigationMonsterNotifyOrBuilder
+            public int getGroupId() {
+                return this.groupId_;
+            }
+
+            public Builder setGroupId(int value) {
+                this.groupId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearGroupId() {
+                this.groupId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.MarkTargetInvestigationMonsterNotifyOuterClass.MarkTargetInvestigationMonsterNotifyOrBuilder
             public int getMonsterId() {
                 return this.monsterId_;
             }
@@ -500,23 +517,6 @@ public final class MarkTargetInvestigationMonsterNotifyOuterClass {
 
             public Builder clearSceneId() {
                 this.sceneId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.MarkTargetInvestigationMonsterNotifyOuterClass.MarkTargetInvestigationMonsterNotifyOrBuilder
-            public int getGroupId() {
-                return this.groupId_;
-            }
-
-            public Builder setGroupId(int value) {
-                this.groupId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearGroupId() {
-                this.groupId_ = 0;
                 onChanged();
                 return this;
             }

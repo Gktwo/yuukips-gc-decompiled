@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeSceneInitFinishRspOuterClass.class */
 public final class HomeSceneInitFinishRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cHomeSceneInitFinishRsp.proto\")\n\u0016HomeSceneInitFinishRsp\u0012\u000f\n\u0007retcode\u0018\u000f \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cHomeSceneInitFinishRsp.proto\")\n\u0016HomeSceneInitFinishRsp\u0012\u000f\n\u0007retcode\u0018\t \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_HomeSceneInitFinishRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeSceneInitFinishRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeSceneInitFinishRsp_descriptor, new String[]{"Retcode"});
 
@@ -41,7 +41,7 @@ public final class HomeSceneInitFinishRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeSceneInitFinishRspOuterClass$HomeSceneInitFinishRsp.class */
     public static final class HomeSceneInitFinishRsp extends GeneratedMessageV3 implements HomeSceneInitFinishRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 15;
+        public static final int RETCODE_FIELD_NUMBER = 9;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final HomeSceneInitFinishRsp DEFAULT_INSTANCE = new HomeSceneInitFinishRsp();
@@ -88,7 +88,7 @@ public final class HomeSceneInitFinishRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 120:
+                            case 72:
                                 this.retcode_ = input.readInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class HomeSceneInitFinishRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.retcode_ != 0) {
-                output.writeInt32(15, this.retcode_);
+                output.writeInt32(9, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class HomeSceneInitFinishRspOuterClass {
             }
             int size2 = 0;
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(15, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(9, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class HomeSceneInitFinishRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

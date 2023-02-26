@@ -56,8 +56,8 @@ public class CoroutineLib extends TwoArgFunction {
 
     /* renamed from: org.luaj.vm2.lib.CoroutineLib$status */
     /* loaded from: grasscutter.jar:org/luaj/vm2/lib/CoroutineLib$status.class */
-    static final class C5870status extends LibFunction {
-        C5870status() {
+    static final class C5862status extends LibFunction {
+        C5862status() {
         }
 
         @Override // org.luaj.vm2.lib.LibFunction, org.luaj.vm2.LuaValue
@@ -118,7 +118,7 @@ public class CoroutineLib extends TwoArgFunction {
         luaTable.set("create", new create(this));
         luaTable.set("resume", new resume(this));
         luaTable.set("running", new running(this));
-        luaTable.set("status", new C5870status());
+        luaTable.set("status", new C5862status());
         luaTable.set("yield", new yield(this));
         luaTable.set("wrap", new wrap(this));
         luaValue2.set("coroutine", luaTable);

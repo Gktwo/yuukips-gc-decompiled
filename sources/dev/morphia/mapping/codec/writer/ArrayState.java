@@ -67,9 +67,8 @@ class ArrayState extends ValueState<List<Object>> {
         done();
     }
 
-    /* access modifiers changed from: package-private */
     @Override // dev.morphia.mapping.codec.writer.WriteState
-    public void end() {
+    void end() {
         this.finished = true;
         if (this.substate != null) {
             this.substate.end();

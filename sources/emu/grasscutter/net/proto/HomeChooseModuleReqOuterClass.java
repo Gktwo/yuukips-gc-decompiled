@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeChooseModuleReqOuterClass.class */
 public final class HomeChooseModuleReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019HomeChooseModuleReq.proto\"(\n\u0013HomeChooseModuleReq\u0012\u0011\n\tmodule_id\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019HomeChooseModuleReq.proto\"'\n\u0013HomeChooseModuleReq\u0012\u0010\n\bmoduleId\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_HomeChooseModuleReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeChooseModuleReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeChooseModuleReq_descriptor, new String[]{"ModuleId"});
 
@@ -41,7 +41,7 @@ public final class HomeChooseModuleReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeChooseModuleReqOuterClass$HomeChooseModuleReq.class */
     public static final class HomeChooseModuleReq extends GeneratedMessageV3 implements HomeChooseModuleReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MODULE_ID_FIELD_NUMBER = 14;
+        public static final int MODULEID_FIELD_NUMBER = 11;
         private int moduleId_;
         private byte memoizedIsInitialized;
         private static final HomeChooseModuleReq DEFAULT_INSTANCE = new HomeChooseModuleReq();
@@ -88,7 +88,7 @@ public final class HomeChooseModuleReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 112:
+                            case 88:
                                 this.moduleId_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class HomeChooseModuleReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.moduleId_ != 0) {
-                output.writeUInt32(14, this.moduleId_);
+                output.writeUInt32(11, this.moduleId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class HomeChooseModuleReqOuterClass {
             }
             int size2 = 0;
             if (this.moduleId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(14, this.moduleId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(11, this.moduleId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class HomeChooseModuleReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getModuleId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getModuleId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

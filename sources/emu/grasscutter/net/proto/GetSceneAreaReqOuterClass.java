@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetSceneAreaReqOuterClass.class */
 public final class GetSceneAreaReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015GetSceneAreaReq.proto\"7\n\u000fGetSceneAreaReq\u0012\u0010\n\bscene_id\u0018\u0001 \u0001(\r\u0012\u0012\n\nbelong_uid\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015GetSceneAreaReq.proto\"5\n\u000fGetSceneAreaReq\u0012\u000f\n\u0007sceneId\u0018\u0006 \u0001(\r\u0012\u0011\n\tbelongUid\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GetSceneAreaReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetSceneAreaReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetSceneAreaReq_descriptor, new String[]{"SceneId", "BelongUid"});
 
@@ -43,9 +43,9 @@ public final class GetSceneAreaReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetSceneAreaReqOuterClass$GetSceneAreaReq.class */
     public static final class GetSceneAreaReq extends GeneratedMessageV3 implements GetSceneAreaReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SCENE_ID_FIELD_NUMBER = 1;
+        public static final int SCENEID_FIELD_NUMBER = 6;
         private int sceneId_;
-        public static final int BELONG_UID_FIELD_NUMBER = 6;
+        public static final int BELONGUID_FIELD_NUMBER = 5;
         private int belongUid_;
         private byte memoizedIsInitialized;
         private static final GetSceneAreaReq DEFAULT_INSTANCE = new GetSceneAreaReq();
@@ -92,11 +92,11 @@ public final class GetSceneAreaReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
-                                this.sceneId_ = input.readUInt32();
+                            case 40:
+                                this.belongUid_ = input.readUInt32();
                                 break;
                             case 48:
-                                this.belongUid_ = input.readUInt32();
+                                this.sceneId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -152,11 +152,11 @@ public final class GetSceneAreaReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.sceneId_ != 0) {
-                output.writeUInt32(1, this.sceneId_);
-            }
             if (this.belongUid_ != 0) {
-                output.writeUInt32(6, this.belongUid_);
+                output.writeUInt32(5, this.belongUid_);
+            }
+            if (this.sceneId_ != 0) {
+                output.writeUInt32(6, this.sceneId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class GetSceneAreaReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.sceneId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.sceneId_);
-            }
             if (this.belongUid_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(6, this.belongUid_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.belongUid_);
+            }
+            if (this.sceneId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(6, this.sceneId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class GetSceneAreaReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getSceneId())) + 6)) + getBelongUid())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getSceneId())) + 5)) + getBelongUid())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

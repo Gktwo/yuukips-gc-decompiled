@@ -25,11 +25,11 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerWorldSceneInfoListNotifyOuterClass.class */
 public final class PlayerWorldSceneInfoListNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n$PlayerWorldSceneInfoListNotify.proto\u001a\u001aPlayerWorldSceneInfo.proto\"J\n\u001ePlayerWorldSceneInfoListNotify\u0012(\n\tinfo_list\u0018\u0002 \u0003(\u000b2\u0015.PlayerWorldSceneInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PlayerWorldSceneInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n$PlayerWorldSceneInfoListNotify.proto\u001a\u001aPlayerWorldSceneInfo.proto\"I\n\u001ePlayerWorldSceneInfoListNotify\u0012'\n\binfoList\u0018\u0005 \u0003(\u000b2\u0015.PlayerWorldSceneInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PlayerWorldSceneInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_PlayerWorldSceneInfoListNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_PlayerWorldSceneInfoListNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f832x8845778d = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerWorldSceneInfoListNotify_descriptor, new String[]{"InfoList"});
+    private static final GeneratedMessageV3.FieldAccessorTable f810x8845778d = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerWorldSceneInfoListNotify_descriptor, new String[]{"InfoList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerWorldSceneInfoListNotifyOuterClass$PlayerWorldSceneInfoListNotifyOrBuilder.class */
     public interface PlayerWorldSceneInfoListNotifyOrBuilder extends MessageOrBuilder {
@@ -57,7 +57,7 @@ public final class PlayerWorldSceneInfoListNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerWorldSceneInfoListNotifyOuterClass$PlayerWorldSceneInfoListNotify.class */
     public static final class PlayerWorldSceneInfoListNotify extends GeneratedMessageV3 implements PlayerWorldSceneInfoListNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int INFO_LIST_FIELD_NUMBER = 2;
+        public static final int INFOLIST_FIELD_NUMBER = 5;
         private List<PlayerWorldSceneInfoOuterClass.PlayerWorldSceneInfo> infoList_;
         private byte memoizedIsInitialized;
         private static final PlayerWorldSceneInfoListNotify DEFAULT_INSTANCE = new PlayerWorldSceneInfoListNotify();
@@ -108,7 +108,7 @@ public final class PlayerWorldSceneInfoListNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 18:
+                                case 42:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.infoList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -145,7 +145,7 @@ public final class PlayerWorldSceneInfoListNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return PlayerWorldSceneInfoListNotifyOuterClass.f832x8845778d.ensureFieldAccessorsInitialized(PlayerWorldSceneInfoListNotify.class, Builder.class);
+            return PlayerWorldSceneInfoListNotifyOuterClass.f810x8845778d.ensureFieldAccessorsInitialized(PlayerWorldSceneInfoListNotify.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.PlayerWorldSceneInfoListNotifyOuterClass.PlayerWorldSceneInfoListNotifyOrBuilder
@@ -189,7 +189,7 @@ public final class PlayerWorldSceneInfoListNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.infoList_.size(); i++) {
-                output.writeMessage(2, this.infoList_.get(i));
+                output.writeMessage(5, this.infoList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -202,7 +202,7 @@ public final class PlayerWorldSceneInfoListNotifyOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.infoList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(2, this.infoList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(5, this.infoList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -228,7 +228,7 @@ public final class PlayerWorldSceneInfoListNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getInfoListCount() > 0) {
-                hash = (53 * ((37 * hash) + 2)) + getInfoListList().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getInfoListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -319,7 +319,7 @@ public final class PlayerWorldSceneInfoListNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return PlayerWorldSceneInfoListNotifyOuterClass.f832x8845778d.ensureFieldAccessorsInitialized(PlayerWorldSceneInfoListNotify.class, Builder.class);
+                return PlayerWorldSceneInfoListNotifyOuterClass.f810x8845778d.ensureFieldAccessorsInitialized(PlayerWorldSceneInfoListNotify.class, Builder.class);
             }
 
             private Builder() {

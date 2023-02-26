@@ -568,15 +568,15 @@ public final class CharBigArrays {
         private final long from;
 
         /* renamed from: to */
-        private final long f1495to;
+        private final long f1459to;
 
         /* renamed from: x */
-        private final char[][] f1496x;
+        private final char[][] f1460x;
 
         public ForkJoinQuickSort(char[][] x, long from, long to) {
             this.from = from;
-            this.f1495to = to;
-            this.f1496x = x;
+            this.f1459to = to;
+            this.f1460x = x;
         }
 
         /* JADX DEBUG: Failed to insert an additional move for type inference into block B:40:0x00ad */
@@ -642,16 +642,16 @@ public final class CharBigArrays {
         private final long from;
 
         /* renamed from: to */
-        private final long f1497to;
+        private final long f1461to;
 
         /* renamed from: x */
-        private final char[][] f1498x;
+        private final char[][] f1462x;
         private final CharComparator comp;
 
         public ForkJoinQuickSortComp(char[][] x, long from, long to, CharComparator comp) {
             this.from = from;
-            this.f1497to = to;
-            this.f1498x = x;
+            this.f1461to = to;
+            this.f1462x = x;
             this.comp = comp;
         }
 

@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriChessEquipCardReqOuterClass.class */
 public final class IrodoriChessEquipCardReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eIrodoriChessEquipCardReq.proto\"R\n\u0018IrodoriChessEquipCardReq\u0012\u0013\n\u000bis_hard_map\u0018\b \u0001(\b\u0012\u0010\n\blevel_id\u0018\u0001 \u0001(\r\u0012\u000f\n\u0007card_id\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eIrodoriChessEquipCardReq.proto\"N\n\u0018IrodoriChessEquipCardReq\u0012\u000e\n\u0006cardId\u0018\u0001 \u0001(\r\u0012\u0011\n\tisHardMap\u0018\u0007 \u0001(\b\u0012\u000f\n\u0007levelId\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_IrodoriChessEquipCardReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_IrodoriChessEquipCardReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_IrodoriChessEquipCardReq_descriptor, new String[]{"IsHardMap", "LevelId", "CardId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_IrodoriChessEquipCardReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_IrodoriChessEquipCardReq_descriptor, new String[]{"CardId", "IsHardMap", "LevelId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriChessEquipCardReqOuterClass$IrodoriChessEquipCardReqOrBuilder.class */
     public interface IrodoriChessEquipCardReqOrBuilder extends MessageOrBuilder {
+        int getCardId();
+
         boolean getIsHardMap();
 
         int getLevelId();
-
-        int getCardId();
     }
 
     private IrodoriChessEquipCardReqOuterClass() {
@@ -46,12 +46,12 @@ public final class IrodoriChessEquipCardReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriChessEquipCardReqOuterClass$IrodoriChessEquipCardReq.class */
     public static final class IrodoriChessEquipCardReq extends GeneratedMessageV3 implements IrodoriChessEquipCardReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_HARD_MAP_FIELD_NUMBER = 8;
-        private boolean isHardMap_;
-        public static final int LEVEL_ID_FIELD_NUMBER = 1;
-        private int levelId_;
-        public static final int CARD_ID_FIELD_NUMBER = 3;
+        public static final int CARDID_FIELD_NUMBER = 1;
         private int cardId_;
+        public static final int ISHARDMAP_FIELD_NUMBER = 7;
+        private boolean isHardMap_;
+        public static final int LEVELID_FIELD_NUMBER = 12;
+        private int levelId_;
         private byte memoizedIsInitialized;
         private static final IrodoriChessEquipCardReq DEFAULT_INSTANCE = new IrodoriChessEquipCardReq();
         private static final Parser<IrodoriChessEquipCardReq> PARSER = new AbstractParser<IrodoriChessEquipCardReq>() { // from class: emu.grasscutter.net.proto.IrodoriChessEquipCardReqOuterClass.IrodoriChessEquipCardReq.1
@@ -99,13 +99,13 @@ public final class IrodoriChessEquipCardReqOuterClass {
                                     done = true;
                                     break;
                                 case 8:
-                                    this.levelId_ = input.readUInt32();
-                                    break;
-                                case 24:
                                     this.cardId_ = input.readUInt32();
                                     break;
-                                case 64:
+                                case 56:
                                     this.isHardMap_ = input.readBool();
+                                    break;
+                                case 96:
+                                    this.levelId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -138,6 +138,11 @@ public final class IrodoriChessEquipCardReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.IrodoriChessEquipCardReqOuterClass.IrodoriChessEquipCardReqOrBuilder
+        public int getCardId() {
+            return this.cardId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.IrodoriChessEquipCardReqOuterClass.IrodoriChessEquipCardReqOrBuilder
         public boolean getIsHardMap() {
             return this.isHardMap_;
         }
@@ -145,11 +150,6 @@ public final class IrodoriChessEquipCardReqOuterClass {
         @Override // emu.grasscutter.net.proto.IrodoriChessEquipCardReqOuterClass.IrodoriChessEquipCardReqOrBuilder
         public int getLevelId() {
             return this.levelId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.IrodoriChessEquipCardReqOuterClass.IrodoriChessEquipCardReqOrBuilder
-        public int getCardId() {
-            return this.cardId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,14 +167,14 @@ public final class IrodoriChessEquipCardReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.levelId_ != 0) {
-                output.writeUInt32(1, this.levelId_);
-            }
             if (this.cardId_ != 0) {
-                output.writeUInt32(3, this.cardId_);
+                output.writeUInt32(1, this.cardId_);
             }
             if (this.isHardMap_) {
-                output.writeBool(8, this.isHardMap_);
+                output.writeBool(7, this.isHardMap_);
+            }
+            if (this.levelId_ != 0) {
+                output.writeUInt32(12, this.levelId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class IrodoriChessEquipCardReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.levelId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.levelId_);
-            }
             if (this.cardId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(3, this.cardId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.cardId_);
             }
             if (this.isHardMap_) {
-                size2 += CodedOutputStream.computeBoolSize(8, this.isHardMap_);
+                size2 += CodedOutputStream.computeBoolSize(7, this.isHardMap_);
+            }
+            if (this.levelId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(12, this.levelId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class IrodoriChessEquipCardReqOuterClass {
                 return equals(obj);
             }
             IrodoriChessEquipCardReq other = (IrodoriChessEquipCardReq) obj;
-            return getIsHardMap() == other.getIsHardMap() && getLevelId() == other.getLevelId() && getCardId() == other.getCardId() && this.unknownFields.equals(other.unknownFields);
+            return getCardId() == other.getCardId() && getIsHardMap() == other.getIsHardMap() && getLevelId() == other.getLevelId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class IrodoriChessEquipCardReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + Internal.hashBoolean(getIsHardMap()))) + 1)) + getLevelId())) + 3)) + getCardId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getCardId())) + 7)) + Internal.hashBoolean(getIsHardMap()))) + 12)) + getLevelId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -296,9 +296,9 @@ public final class IrodoriChessEquipCardReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriChessEquipCardReqOuterClass$IrodoriChessEquipCardReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements IrodoriChessEquipCardReqOrBuilder {
+            private int cardId_;
             private boolean isHardMap_;
             private int levelId_;
-            private int cardId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return IrodoriChessEquipCardReqOuterClass.internal_static_IrodoriChessEquipCardReq_descriptor;
@@ -326,9 +326,9 @@ public final class IrodoriChessEquipCardReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.cardId_ = 0;
                 this.isHardMap_ = false;
                 this.levelId_ = 0;
-                this.cardId_ = 0;
                 return this;
             }
 
@@ -354,9 +354,9 @@ public final class IrodoriChessEquipCardReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public IrodoriChessEquipCardReq buildPartial() {
                 IrodoriChessEquipCardReq result = new IrodoriChessEquipCardReq(this);
+                result.cardId_ = this.cardId_;
                 result.isHardMap_ = this.isHardMap_;
                 result.levelId_ = this.levelId_;
-                result.cardId_ = this.cardId_;
                 onBuilt();
                 return result;
             }
@@ -404,14 +404,14 @@ public final class IrodoriChessEquipCardReqOuterClass {
                 if (other == IrodoriChessEquipCardReq.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getCardId() != 0) {
+                    setCardId(other.getCardId());
+                }
                 if (other.getIsHardMap()) {
                     setIsHardMap(other.getIsHardMap());
                 }
                 if (other.getLevelId() != 0) {
                     setLevelId(other.getLevelId());
-                }
-                if (other.getCardId() != 0) {
-                    setCardId(other.getCardId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -446,6 +446,23 @@ public final class IrodoriChessEquipCardReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.IrodoriChessEquipCardReqOuterClass.IrodoriChessEquipCardReqOrBuilder
+            public int getCardId() {
+                return this.cardId_;
+            }
+
+            public Builder setCardId(int value) {
+                this.cardId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearCardId() {
+                this.cardId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.IrodoriChessEquipCardReqOuterClass.IrodoriChessEquipCardReqOrBuilder
             public boolean getIsHardMap() {
                 return this.isHardMap_;
             }
@@ -475,23 +492,6 @@ public final class IrodoriChessEquipCardReqOuterClass {
 
             public Builder clearLevelId() {
                 this.levelId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.IrodoriChessEquipCardReqOuterClass.IrodoriChessEquipCardReqOrBuilder
-            public int getCardId() {
-                return this.cardId_;
-            }
-
-            public Builder setCardId(int value) {
-                this.cardId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearCardId() {
-                this.cardId_ = 0;
                 onChanged();
                 return this;
             }

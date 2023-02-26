@@ -26,14 +26,12 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriChessDataOuterClass.class */
 public final class IrodoriChessDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016IrodoriChessData.proto\u001a\u001bIrodoriChessLevelData.proto\"T\n\u0010IrodoriChessData\u0012\u000f\n\u0007is_open\u0018\b \u0001(\b\u0012/\n\u000flevel_data_list\u0018\r \u0003(\u000b2\u0016.IrodoriChessLevelDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{IrodoriChessLevelDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016IrodoriChessData.proto\u001a\u001bIrodoriChessLevelData.proto\"Q\n\u0010IrodoriChessData\u0012-\n\rlevelDataList\u0018\t \u0003(\u000b2\u0016.IrodoriChessLevelData\u0012\u000e\n\u0006isOpen\u0018\u0007 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{IrodoriChessLevelDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_IrodoriChessData_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_IrodoriChessData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_IrodoriChessData_descriptor, new String[]{"IsOpen", "LevelDataList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_IrodoriChessData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_IrodoriChessData_descriptor, new String[]{"LevelDataList", "IsOpen"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriChessDataOuterClass$IrodoriChessDataOrBuilder.class */
     public interface IrodoriChessDataOrBuilder extends MessageOrBuilder {
-        boolean getIsOpen();
-
         List<IrodoriChessLevelDataOuterClass.IrodoriChessLevelData> getLevelDataListList();
 
         IrodoriChessLevelDataOuterClass.IrodoriChessLevelData getLevelDataList(int i);
@@ -43,6 +41,8 @@ public final class IrodoriChessDataOuterClass {
         List<? extends IrodoriChessLevelDataOuterClass.IrodoriChessLevelDataOrBuilder> getLevelDataListOrBuilderList();
 
         IrodoriChessLevelDataOuterClass.IrodoriChessLevelDataOrBuilder getLevelDataListOrBuilder(int i);
+
+        boolean getIsOpen();
     }
 
     private IrodoriChessDataOuterClass() {
@@ -58,10 +58,10 @@ public final class IrodoriChessDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriChessDataOuterClass$IrodoriChessData.class */
     public static final class IrodoriChessData extends GeneratedMessageV3 implements IrodoriChessDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_OPEN_FIELD_NUMBER = 8;
-        private boolean isOpen_;
-        public static final int LEVEL_DATA_LIST_FIELD_NUMBER = 13;
+        public static final int LEVELDATALIST_FIELD_NUMBER = 9;
         private List<IrodoriChessLevelDataOuterClass.IrodoriChessLevelData> levelDataList_;
+        public static final int ISOPEN_FIELD_NUMBER = 7;
+        private boolean isOpen_;
         private byte memoizedIsInitialized;
         private static final IrodoriChessData DEFAULT_INSTANCE = new IrodoriChessData();
         private static final Parser<IrodoriChessData> PARSER = new AbstractParser<IrodoriChessData>() { // from class: emu.grasscutter.net.proto.IrodoriChessDataOuterClass.IrodoriChessData.1
@@ -111,10 +111,10 @@ public final class IrodoriChessDataOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 64:
+                                case 56:
                                     this.isOpen_ = input.readBool();
                                     break;
-                                case 106:
+                                case 74:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.levelDataList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -155,11 +155,6 @@ public final class IrodoriChessDataOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.IrodoriChessDataOuterClass.IrodoriChessDataOrBuilder
-        public boolean getIsOpen() {
-            return this.isOpen_;
-        }
-
-        @Override // emu.grasscutter.net.proto.IrodoriChessDataOuterClass.IrodoriChessDataOrBuilder
         public List<IrodoriChessLevelDataOuterClass.IrodoriChessLevelData> getLevelDataListList() {
             return this.levelDataList_;
         }
@@ -184,6 +179,11 @@ public final class IrodoriChessDataOuterClass {
             return this.levelDataList_.get(index);
         }
 
+        @Override // emu.grasscutter.net.proto.IrodoriChessDataOuterClass.IrodoriChessDataOrBuilder
+        public boolean getIsOpen() {
+            return this.isOpen_;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -200,10 +200,10 @@ public final class IrodoriChessDataOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.isOpen_) {
-                output.writeBool(8, this.isOpen_);
+                output.writeBool(7, this.isOpen_);
             }
             for (int i = 0; i < this.levelDataList_.size(); i++) {
-                output.writeMessage(13, this.levelDataList_.get(i));
+                output.writeMessage(9, this.levelDataList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -216,10 +216,10 @@ public final class IrodoriChessDataOuterClass {
             }
             int size2 = 0;
             if (this.isOpen_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(8, this.isOpen_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(7, this.isOpen_);
             }
             for (int i = 0; i < this.levelDataList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(13, this.levelDataList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(9, this.levelDataList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -235,7 +235,7 @@ public final class IrodoriChessDataOuterClass {
                 return equals(obj);
             }
             IrodoriChessData other = (IrodoriChessData) obj;
-            return getIsOpen() == other.getIsOpen() && getLevelDataListList().equals(other.getLevelDataListList()) && this.unknownFields.equals(other.unknownFields);
+            return getLevelDataListList().equals(other.getLevelDataListList()) && getIsOpen() == other.getIsOpen() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -243,11 +243,11 @@ public final class IrodoriChessDataOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + Internal.hashBoolean(getIsOpen());
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (getLevelDataListCount() > 0) {
-                hash = (53 * ((37 * hash) + 13)) + getLevelDataListList().hashCode();
+                hash = (53 * ((37 * hash) + 9)) + getLevelDataListList().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 7)) + Internal.hashBoolean(getIsOpen()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -327,9 +327,9 @@ public final class IrodoriChessDataOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriChessDataOuterClass$IrodoriChessData$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements IrodoriChessDataOrBuilder {
             private int bitField0_;
-            private boolean isOpen_;
             private List<IrodoriChessLevelDataOuterClass.IrodoriChessLevelData> levelDataList_ = Collections.emptyList();
             private RepeatedFieldBuilderV3<IrodoriChessLevelDataOuterClass.IrodoriChessLevelData, IrodoriChessLevelDataOuterClass.IrodoriChessLevelData.Builder, IrodoriChessLevelDataOuterClass.IrodoriChessLevelDataOrBuilder> levelDataListBuilder_;
+            private boolean isOpen_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return IrodoriChessDataOuterClass.internal_static_IrodoriChessData_descriptor;
@@ -358,13 +358,13 @@ public final class IrodoriChessDataOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.isOpen_ = false;
                 if (this.levelDataListBuilder_ == null) {
                     this.levelDataList_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
                     this.levelDataListBuilder_.clear();
                 }
+                this.isOpen_ = false;
                 return this;
             }
 
@@ -391,7 +391,6 @@ public final class IrodoriChessDataOuterClass {
             public IrodoriChessData buildPartial() {
                 IrodoriChessData result = new IrodoriChessData(this);
                 int i = this.bitField0_;
-                result.isOpen_ = this.isOpen_;
                 if (this.levelDataListBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
                         this.levelDataList_ = Collections.unmodifiableList(this.levelDataList_);
@@ -401,6 +400,7 @@ public final class IrodoriChessDataOuterClass {
                 } else {
                     result.levelDataList_ = this.levelDataListBuilder_.build();
                 }
+                result.isOpen_ = this.isOpen_;
                 onBuilt();
                 return result;
             }
@@ -448,9 +448,6 @@ public final class IrodoriChessDataOuterClass {
                 if (other == IrodoriChessData.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getIsOpen()) {
-                    setIsOpen(other.getIsOpen());
-                }
                 if (this.levelDataListBuilder_ == null) {
                     if (!other.levelDataList_.isEmpty()) {
                         if (this.levelDataList_.isEmpty()) {
@@ -472,6 +469,9 @@ public final class IrodoriChessDataOuterClass {
                     } else {
                         this.levelDataListBuilder_.addAllMessages(other.levelDataList_);
                     }
+                }
+                if (other.getIsOpen()) {
+                    setIsOpen(other.getIsOpen());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -503,23 +503,6 @@ public final class IrodoriChessDataOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.IrodoriChessDataOuterClass.IrodoriChessDataOrBuilder
-            public boolean getIsOpen() {
-                return this.isOpen_;
-            }
-
-            public Builder setIsOpen(boolean value) {
-                this.isOpen_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsOpen() {
-                this.isOpen_ = false;
-                onChanged();
-                return this;
             }
 
             private void ensureLevelDataListIsMutable() {
@@ -696,6 +679,23 @@ public final class IrodoriChessDataOuterClass {
                     this.levelDataList_ = null;
                 }
                 return this.levelDataListBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.IrodoriChessDataOuterClass.IrodoriChessDataOrBuilder
+            public boolean getIsOpen() {
+                return this.isOpen_;
+            }
+
+            public Builder setIsOpen(boolean value) {
+                this.isOpen_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsOpen() {
+                this.isOpen_ = false;
+                onChanged();
+                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

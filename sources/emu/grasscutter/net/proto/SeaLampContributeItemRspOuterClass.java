@@ -19,17 +19,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SeaLampContributeItemRspOuterClass.class */
 public final class SeaLampContributeItemRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eSeaLampContributeItemRsp.proto\"{\n\u0018SeaLampContributeItemRsp\u0012\u000f\n\u0007retcode\u0018\u0004 \u0001(\u0005\u0012\u001b\n\u0013Unk3300_AIINHBHNHOI\u0018\u000b \u0001(\r\u0012\u0014\n\fadd_progress\u0018\u0005 \u0001(\r\u0012\u001b\n\u0013Unk3300_LPHALOGLGAL\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eSeaLampContributeItemRsp.proto\"z\n\u0018SeaLampContributeItemRsp\u0012\u0013\n\u000baddProgress\u0018\u0004 \u0001(\r\u0012\u001b\n\u0013Unk3300_AIINHBHNHOI\u0018\t \u0001(\r\u0012\u000f\n\u0007retcode\u0018\f \u0001(\u0005\u0012\u001b\n\u0013Unk3300_LPHALOGLGAL\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SeaLampContributeItemRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SeaLampContributeItemRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SeaLampContributeItemRsp_descriptor, new String[]{"Retcode", "Unk3300AIINHBHNHOI", "AddProgress", "Unk3300LPHALOGLGAL"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SeaLampContributeItemRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SeaLampContributeItemRsp_descriptor, new String[]{"AddProgress", "Unk3300AIINHBHNHOI", "Retcode", "Unk3300LPHALOGLGAL"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SeaLampContributeItemRspOuterClass$SeaLampContributeItemRspOrBuilder.class */
     public interface SeaLampContributeItemRspOrBuilder extends MessageOrBuilder {
-        int getRetcode();
+        int getAddProgress();
 
         int getUnk3300AIINHBHNHOI();
 
-        int getAddProgress();
+        int getRetcode();
 
         int getUnk3300LPHALOGLGAL();
     }
@@ -47,13 +47,13 @@ public final class SeaLampContributeItemRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SeaLampContributeItemRspOuterClass$SeaLampContributeItemRsp.class */
     public static final class SeaLampContributeItemRsp extends GeneratedMessageV3 implements SeaLampContributeItemRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 4;
-        private int retcode_;
-        public static final int UNK3300_AIINHBHNHOI_FIELD_NUMBER = 11;
-        private int unk3300AIINHBHNHOI_;
-        public static final int ADD_PROGRESS_FIELD_NUMBER = 5;
+        public static final int ADDPROGRESS_FIELD_NUMBER = 4;
         private int addProgress_;
-        public static final int UNK3300_LPHALOGLGAL_FIELD_NUMBER = 9;
+        public static final int UNK3300_AIINHBHNHOI_FIELD_NUMBER = 9;
+        private int unk3300AIINHBHNHOI_;
+        public static final int RETCODE_FIELD_NUMBER = 12;
+        private int retcode_;
+        public static final int UNK3300_LPHALOGLGAL_FIELD_NUMBER = 2;
         private int unk3300LPHALOGLGAL_;
         private byte memoizedIsInitialized;
         private static final SeaLampContributeItemRsp DEFAULT_INSTANCE = new SeaLampContributeItemRsp();
@@ -101,17 +101,17 @@ public final class SeaLampContributeItemRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 32:
-                                    this.retcode_ = input.readInt32();
+                                case 16:
+                                    this.unk3300LPHALOGLGAL_ = input.readUInt32();
                                     break;
-                                case 40:
+                                case 32:
                                     this.addProgress_ = input.readUInt32();
                                     break;
                                 case 72:
-                                    this.unk3300LPHALOGLGAL_ = input.readUInt32();
-                                    break;
-                                case 88:
                                     this.unk3300AIINHBHNHOI_ = input.readUInt32();
+                                    break;
+                                case 96:
+                                    this.retcode_ = input.readInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -144,8 +144,8 @@ public final class SeaLampContributeItemRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
+        public int getAddProgress() {
+            return this.addProgress_;
         }
 
         @Override // emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRspOrBuilder
@@ -154,8 +154,8 @@ public final class SeaLampContributeItemRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRspOrBuilder
-        public int getAddProgress() {
-            return this.addProgress_;
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRspOrBuilder
@@ -178,17 +178,17 @@ public final class SeaLampContributeItemRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.retcode_ != 0) {
-                output.writeInt32(4, this.retcode_);
+            if (this.unk3300LPHALOGLGAL_ != 0) {
+                output.writeUInt32(2, this.unk3300LPHALOGLGAL_);
             }
             if (this.addProgress_ != 0) {
-                output.writeUInt32(5, this.addProgress_);
-            }
-            if (this.unk3300LPHALOGLGAL_ != 0) {
-                output.writeUInt32(9, this.unk3300LPHALOGLGAL_);
+                output.writeUInt32(4, this.addProgress_);
             }
             if (this.unk3300AIINHBHNHOI_ != 0) {
-                output.writeUInt32(11, this.unk3300AIINHBHNHOI_);
+                output.writeUInt32(9, this.unk3300AIINHBHNHOI_);
+            }
+            if (this.retcode_ != 0) {
+                output.writeInt32(12, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,17 +200,17 @@ public final class SeaLampContributeItemRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(4, this.retcode_);
+            if (this.unk3300LPHALOGLGAL_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.unk3300LPHALOGLGAL_);
             }
             if (this.addProgress_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.addProgress_);
-            }
-            if (this.unk3300LPHALOGLGAL_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.unk3300LPHALOGLGAL_);
+                size2 += CodedOutputStream.computeUInt32Size(4, this.addProgress_);
             }
             if (this.unk3300AIINHBHNHOI_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.unk3300AIINHBHNHOI_);
+                size2 += CodedOutputStream.computeUInt32Size(9, this.unk3300AIINHBHNHOI_);
+            }
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(12, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class SeaLampContributeItemRspOuterClass {
                 return equals(obj);
             }
             SeaLampContributeItemRsp other = (SeaLampContributeItemRsp) obj;
-            return getRetcode() == other.getRetcode() && getUnk3300AIINHBHNHOI() == other.getUnk3300AIINHBHNHOI() && getAddProgress() == other.getAddProgress() && getUnk3300LPHALOGLGAL() == other.getUnk3300LPHALOGLGAL() && this.unknownFields.equals(other.unknownFields);
+            return getAddProgress() == other.getAddProgress() && getUnk3300AIINHBHNHOI() == other.getUnk3300AIINHBHNHOI() && getRetcode() == other.getRetcode() && getUnk3300LPHALOGLGAL() == other.getUnk3300LPHALOGLGAL() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -234,7 +234,7 @@ public final class SeaLampContributeItemRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getRetcode())) + 11)) + getUnk3300AIINHBHNHOI())) + 5)) + getAddProgress())) + 9)) + getUnk3300LPHALOGLGAL())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getAddProgress())) + 9)) + getUnk3300AIINHBHNHOI())) + 12)) + getRetcode())) + 2)) + getUnk3300LPHALOGLGAL())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -313,9 +313,9 @@ public final class SeaLampContributeItemRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SeaLampContributeItemRspOuterClass$SeaLampContributeItemRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SeaLampContributeItemRspOrBuilder {
-            private int retcode_;
-            private int unk3300AIINHBHNHOI_;
             private int addProgress_;
+            private int unk3300AIINHBHNHOI_;
+            private int retcode_;
             private int unk3300LPHALOGLGAL_;
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -344,9 +344,9 @@ public final class SeaLampContributeItemRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.retcode_ = 0;
-                this.unk3300AIINHBHNHOI_ = 0;
                 this.addProgress_ = 0;
+                this.unk3300AIINHBHNHOI_ = 0;
+                this.retcode_ = 0;
                 this.unk3300LPHALOGLGAL_ = 0;
                 return this;
             }
@@ -373,9 +373,9 @@ public final class SeaLampContributeItemRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public SeaLampContributeItemRsp buildPartial() {
                 SeaLampContributeItemRsp result = new SeaLampContributeItemRsp(this);
-                result.retcode_ = this.retcode_;
-                result.unk3300AIINHBHNHOI_ = this.unk3300AIINHBHNHOI_;
                 result.addProgress_ = this.addProgress_;
+                result.unk3300AIINHBHNHOI_ = this.unk3300AIINHBHNHOI_;
+                result.retcode_ = this.retcode_;
                 result.unk3300LPHALOGLGAL_ = this.unk3300LPHALOGLGAL_;
                 onBuilt();
                 return result;
@@ -424,14 +424,14 @@ public final class SeaLampContributeItemRspOuterClass {
                 if (other == SeaLampContributeItemRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
+                if (other.getAddProgress() != 0) {
+                    setAddProgress(other.getAddProgress());
                 }
                 if (other.getUnk3300AIINHBHNHOI() != 0) {
                     setUnk3300AIINHBHNHOI(other.getUnk3300AIINHBHNHOI());
                 }
-                if (other.getAddProgress() != 0) {
-                    setAddProgress(other.getAddProgress());
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 if (other.getUnk3300LPHALOGLGAL() != 0) {
                     setUnk3300LPHALOGLGAL(other.getUnk3300LPHALOGLGAL());
@@ -469,18 +469,18 @@ public final class SeaLampContributeItemRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
+            public int getAddProgress() {
+                return this.addProgress_;
             }
 
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
+            public Builder setAddProgress(int value) {
+                this.addProgress_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
+            public Builder clearAddProgress() {
+                this.addProgress_ = 0;
                 onChanged();
                 return this;
             }
@@ -503,18 +503,18 @@ public final class SeaLampContributeItemRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.SeaLampContributeItemRspOuterClass.SeaLampContributeItemRspOrBuilder
-            public int getAddProgress() {
-                return this.addProgress_;
+            public int getRetcode() {
+                return this.retcode_;
             }
 
-            public Builder setAddProgress(int value) {
-                this.addProgress_ = value;
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearAddProgress() {
-                this.addProgress_ = 0;
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }

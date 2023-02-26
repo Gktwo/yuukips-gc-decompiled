@@ -20,11 +20,11 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetIsAutoUnlockSpecificEquipReqOuterClass.class */
 public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n%SetIsAutoUnlockSpecificEquipReq.proto\"H\n\u001fSetIsAutoUnlockSpecificEquipReq\u0012%\n\u001dis_auto_unlock_specific_equip\u0018\b \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n%SetIsAutoUnlockSpecificEquipReq.proto\"D\n\u001fSetIsAutoUnlockSpecificEquipReq\u0012!\n\u0019isAutoUnlockSpecificEquip\u0018\u0003 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SetIsAutoUnlockSpecificEquipReq_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_SetIsAutoUnlockSpecificEquipReq_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f872x184c11dc = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetIsAutoUnlockSpecificEquipReq_descriptor, new String[]{"IsAutoUnlockSpecificEquip"});
+    private static final GeneratedMessageV3.FieldAccessorTable f846x184c11dc = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetIsAutoUnlockSpecificEquipReq_descriptor, new String[]{"IsAutoUnlockSpecificEquip"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetIsAutoUnlockSpecificEquipReqOuterClass$SetIsAutoUnlockSpecificEquipReqOrBuilder.class */
     public interface SetIsAutoUnlockSpecificEquipReqOrBuilder extends MessageOrBuilder {
@@ -44,7 +44,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetIsAutoUnlockSpecificEquipReqOuterClass$SetIsAutoUnlockSpecificEquipReq.class */
     public static final class SetIsAutoUnlockSpecificEquipReq extends GeneratedMessageV3 implements SetIsAutoUnlockSpecificEquipReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_AUTO_UNLOCK_SPECIFIC_EQUIP_FIELD_NUMBER = 8;
+        public static final int ISAUTOUNLOCKSPECIFICEQUIP_FIELD_NUMBER = 3;
         private boolean isAutoUnlockSpecificEquip_;
         private byte memoizedIsInitialized;
         private static final SetIsAutoUnlockSpecificEquipReq DEFAULT_INSTANCE = new SetIsAutoUnlockSpecificEquipReq();
@@ -91,7 +91,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 64:
+                            case 24:
                                 this.isAutoUnlockSpecificEquip_ = input.readBool();
                                 break;
                             default:
@@ -120,7 +120,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return SetIsAutoUnlockSpecificEquipReqOuterClass.f872x184c11dc.ensureFieldAccessorsInitialized(SetIsAutoUnlockSpecificEquipReq.class, Builder.class);
+            return SetIsAutoUnlockSpecificEquipReqOuterClass.f846x184c11dc.ensureFieldAccessorsInitialized(SetIsAutoUnlockSpecificEquipReq.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.SetIsAutoUnlockSpecificEquipReqOuterClass.SetIsAutoUnlockSpecificEquipReqOrBuilder
@@ -144,7 +144,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.isAutoUnlockSpecificEquip_) {
-                output.writeBool(8, this.isAutoUnlockSpecificEquip_);
+                output.writeBool(3, this.isAutoUnlockSpecificEquip_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -157,7 +157,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
             }
             int size2 = 0;
             if (this.isAutoUnlockSpecificEquip_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(8, this.isAutoUnlockSpecificEquip_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(3, this.isAutoUnlockSpecificEquip_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -181,7 +181,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + Internal.hashBoolean(getIsAutoUnlockSpecificEquip()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + Internal.hashBoolean(getIsAutoUnlockSpecificEquip()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -268,7 +268,7 @@ public final class SetIsAutoUnlockSpecificEquipReqOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return SetIsAutoUnlockSpecificEquipReqOuterClass.f872x184c11dc.ensureFieldAccessorsInitialized(SetIsAutoUnlockSpecificEquipReq.class, Builder.class);
+                return SetIsAutoUnlockSpecificEquipReqOuterClass.f846x184c11dc.ensureFieldAccessorsInitialized(SetIsAutoUnlockSpecificEquipReq.class, Builder.class);
             }
 
             private Builder() {

@@ -1,8 +1,7 @@
 package com.esotericsoftware.asm;
 
-/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:com/esotericsoftware/asm/AnnotationWriter.class */
-public final class AnnotationWriter extends AnnotationVisitor {
+final class AnnotationWriter extends AnnotationVisitor {
 
     /* renamed from: a */
     private final ClassWriter f23a;

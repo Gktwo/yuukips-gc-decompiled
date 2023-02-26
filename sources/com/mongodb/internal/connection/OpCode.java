@@ -8,10 +8,10 @@ public enum OpCode {
     OP_REPLY(1),
     OP_UPDATE(RetcodeOuterClass.Retcode.RET_UID_NOT_EXIST_VALUE),
     OP_INSERT(2002),
-    OP_QUERY(RetcodeOuterClass.Retcode.RET_ORDER_INFO_NOT_EXIST_VALUE),
+    OP_QUERY(2004),
     OP_GETMORE(2005),
     OP_DELETE(2006),
-    OP_KILL_CURSORS(RetcodeOuterClass.Retcode.RET_PRODUCT_NOT_EXIST_VALUE),
+    OP_KILL_CURSORS(2007),
     OP_COMPRESSED(2012),
     OP_MSG(2013);
     

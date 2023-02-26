@@ -9,7 +9,7 @@ import emu.grasscutter.net.proto.WorldPlayerRTTNotifyOuterClass;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketWorldPlayerRTTNotify.class */
 public class PacketWorldPlayerRTTNotify extends BasePacket {
     public PacketWorldPlayerRTTNotify(World world) {
-        super(37);
+        super(92);
         WorldPlayerRTTNotifyOuterClass.WorldPlayerRTTNotify.Builder proto = WorldPlayerRTTNotifyOuterClass.WorldPlayerRTTNotify.newBuilder();
         for (Player player : world.getPlayers()) {
             proto.addPlayerRttList(PlayerRTTInfoOuterClass.PlayerRTTInfo.newBuilder().setUid(player.getUid()).setRtt(10));

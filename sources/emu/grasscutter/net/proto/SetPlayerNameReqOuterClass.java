@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerNameReqOuterClass.class */
 public final class SetPlayerNameReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016SetPlayerNameReq.proto\"%\n\u0010SetPlayerNameReq\u0012\u0011\n\tnick_name\u0018\r \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016SetPlayerNameReq.proto\"$\n\u0010SetPlayerNameReq\u0012\u0010\n\bnickName\u0018\u0003 \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SetPlayerNameReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetPlayerNameReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetPlayerNameReq_descriptor, new String[]{"NickName"});
 
@@ -43,7 +43,7 @@ public final class SetPlayerNameReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerNameReqOuterClass$SetPlayerNameReq.class */
     public static final class SetPlayerNameReq extends GeneratedMessageV3 implements SetPlayerNameReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int NICK_NAME_FIELD_NUMBER = 13;
+        public static final int NICKNAME_FIELD_NUMBER = 3;
         private volatile Object nickName_;
         private byte memoizedIsInitialized;
         private static final SetPlayerNameReq DEFAULT_INSTANCE = new SetPlayerNameReq();
@@ -91,7 +91,7 @@ public final class SetPlayerNameReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 106:
+                            case 26:
                                 this.nickName_ = input.readStringRequireUtf8();
                                 break;
                             default:
@@ -161,7 +161,7 @@ public final class SetPlayerNameReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (!GeneratedMessageV3.isStringEmpty(this.nickName_)) {
-                GeneratedMessageV3.writeString(output, 13, this.nickName_);
+                GeneratedMessageV3.writeString(output, 3, this.nickName_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -174,7 +174,7 @@ public final class SetPlayerNameReqOuterClass {
             }
             int size2 = 0;
             if (!GeneratedMessageV3.isStringEmpty(this.nickName_)) {
-                size2 = 0 + GeneratedMessageV3.computeStringSize(13, this.nickName_);
+                size2 = 0 + GeneratedMessageV3.computeStringSize(3, this.nickName_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -198,7 +198,7 @@ public final class SetPlayerNameReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + getNickName().hashCode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getNickName().hashCode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

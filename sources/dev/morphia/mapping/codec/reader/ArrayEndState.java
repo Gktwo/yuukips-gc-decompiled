@@ -11,13 +11,15 @@ class ArrayEndState extends ReaderState {
         super(reader);
     }
 
+    /* access modifiers changed from: package-private */
     @Override // dev.morphia.mapping.codec.reader.ReaderState
-    void endArray() {
+    public void endArray() {
         advance();
     }
 
+    /* access modifiers changed from: package-private */
     @Override // dev.morphia.mapping.codec.reader.ReaderState
-    BsonType getCurrentBsonType() {
+    public BsonType getCurrentBsonType() {
         return BsonType.END_OF_DOCUMENT;
     }
 

@@ -9,10 +9,10 @@ public final class LuaBoolean extends LuaValue {
     public static LuaValue s_metatable;
 
     /* renamed from: v */
-    public final boolean f3286v;
+    public final boolean f3250v;
 
     LuaBoolean(boolean z) {
-        this.f3286v = z;
+        this.f3250v = z;
     }
 
     @Override // org.luaj.vm2.LuaValue
@@ -32,31 +32,31 @@ public final class LuaBoolean extends LuaValue {
 
     @Override // org.luaj.vm2.LuaValue
     public LuaValue not() {
-        return this.f3286v ? FALSE : LuaValue.TRUE;
+        return this.f3250v ? FALSE : LuaValue.TRUE;
     }
 
     public boolean booleanValue() {
-        return this.f3286v;
+        return this.f3250v;
     }
 
     @Override // org.luaj.vm2.LuaValue
     public boolean toboolean() {
-        return this.f3286v;
+        return this.f3250v;
     }
 
     @Override // org.luaj.vm2.LuaValue, org.luaj.vm2.Varargs
     public String tojstring() {
-        return this.f3286v ? C3P0Substitutions.DEBUG : "false";
+        return this.f3250v ? C3P0Substitutions.DEBUG : "false";
     }
 
     @Override // org.luaj.vm2.LuaValue
     public boolean optboolean(boolean z) {
-        return this.f3286v;
+        return this.f3250v;
     }
 
     @Override // org.luaj.vm2.LuaValue
     public boolean checkboolean() {
-        return this.f3286v;
+        return this.f3250v;
     }
 
     @Override // org.luaj.vm2.LuaValue

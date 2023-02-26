@@ -35,7 +35,7 @@ public class BlossomActivity {
     private int step = 0;
 
     public BlossomActivity(EntityGadget entityGadget, List<Integer> monsters, int timeout, int worldLevel) {
-        this.tempSceneGroup.f957id = entityGadget.getId();
+        this.tempSceneGroup.f922id = entityGadget.getId();
         this.gadget = entityGadget;
         this.goal = monsters.size();
         this.candidateMonsters.addAll(monsters);
@@ -53,7 +53,7 @@ public class BlossomActivity {
         this.activeMonsters.clear();
         this.activeMonsters.addAll(monsters);
         for (EntityMonster monster : monsters) {
-            monster.setGroupId(this.tempSceneGroup.f957id);
+            monster.setGroupId(this.tempSceneGroup.f922id);
         }
     }
 
@@ -95,7 +95,7 @@ public class BlossomActivity {
             }
             this.generatedCount += willSpawn;
             for (int i = 0; i < willSpawn; i++) {
-                EntityMonster entity = new EntityMonster(scene, GameData.getMonsterDataMap().get(this.candidateMonsters.poll()), pos.nearby2d(4.0f), scene.getEntityLevel(1, worldLevelOverride));
+                EntityMonster entity = new EntityMonster(scene, GameData.getMonsterDataMap().get(this.candidateMonsters.poll().intValue()), pos.nearby2d(4.0f), scene.getEntityLevel(1, worldLevelOverride));
                 scene.addEntity(entity);
                 newMonsters.add(entity);
             }

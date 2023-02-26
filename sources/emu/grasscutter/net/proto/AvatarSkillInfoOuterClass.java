@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarSkillInfoOuterClass.class */
 public final class AvatarSkillInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015AvatarSkillInfo.proto\"\\\n\u000fAvatarSkillInfo\u0012\u0014\n\fpass_cd_time\u0018\u0001 \u0001(\r\u0012\u0019\n\u0011full_cd_time_list\u0018\u0002 \u0003(\r\u0012\u0018\n\u0010max_charge_count\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015AvatarSkillInfo.proto\"U\n\u000fAvatarSkillInfo\u0012\u0012\n\npassCdTime\u0018\u0001 \u0001(\r\u0012\u0016\n\u000efullCdTimeList\u0018\u0002 \u0003(\r\u0012\u0016\n\u000emaxChargeCount\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AvatarSkillInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarSkillInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarSkillInfo_descriptor, new String[]{"PassCdTime", "FullCdTimeList", "MaxChargeCount"});
 
@@ -53,12 +53,12 @@ public final class AvatarSkillInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarSkillInfoOuterClass$AvatarSkillInfo.class */
     public static final class AvatarSkillInfo extends GeneratedMessageV3 implements AvatarSkillInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PASS_CD_TIME_FIELD_NUMBER = 1;
+        public static final int PASSCDTIME_FIELD_NUMBER = 1;
         private int passCdTime_;
-        public static final int FULL_CD_TIME_LIST_FIELD_NUMBER = 2;
+        public static final int FULLCDTIMELIST_FIELD_NUMBER = 2;
         private Internal.IntList fullCdTimeList_;
         private int fullCdTimeListMemoizedSerializedSize;
-        public static final int MAX_CHARGE_COUNT_FIELD_NUMBER = 3;
+        public static final int MAXCHARGECOUNT_FIELD_NUMBER = 3;
         private int maxChargeCount_;
         private byte memoizedIsInitialized;
         private static final AvatarSkillInfo DEFAULT_INSTANCE = new AvatarSkillInfo();

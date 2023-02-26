@@ -300,16 +300,16 @@ public final class DurationKt {
     @WasExperimental(markerClass = {ExperimentalTime.class})
     @InlineOnly
     /* renamed from: times-mvk6XK0 */
-    private static final long m8578timesmvk6XK0(int $this$times_u2dmvk6XK0, long duration) {
-        return Duration.m8456timesUwyO8pc(duration, $this$times_u2dmvk6XK0);
+    private static final long m8575timesmvk6XK0(int $this$times_u2dmvk6XK0, long duration) {
+        return Duration.m8453timesUwyO8pc(duration, $this$times_u2dmvk6XK0);
     }
 
     @SinceKotlin(version = "1.6")
     @WasExperimental(markerClass = {ExperimentalTime.class})
     @InlineOnly
     /* renamed from: times-kIfJnKk */
-    private static final long m8579timeskIfJnKk(double $this$times_u2dkIfJnKk, long duration) {
-        return Duration.m8457timesUwyO8pc(duration, $this$times_u2dkIfJnKk);
+    private static final long m8576timeskIfJnKk(double $this$times_u2dkIfJnKk, long duration) {
+        return Duration.m8454timesUwyO8pc(duration, $this$times_u2dkIfJnKk);
     }
 
     /* JADX DEBUG: Failed to insert an additional move for type inference into block B:193:0x00a0 */
@@ -337,7 +337,7 @@ public final class DurationKt {
             throw new IllegalArgumentException("The string is empty");
         }
         int index = 0;
-        long result = Duration.Companion.m8507getZEROUwyO8pc();
+        long result = Duration.Companion.m8504getZEROUwyO8pc();
         char charAt = value.charAt(0);
         if (charAt == '+' ? true : charAt == '-') {
             index = 0 + 1;
@@ -388,14 +388,14 @@ public final class DurationKt {
                     prevUnit = unit;
                     int dotIndex = StringsKt.indexOf$default((CharSequence) component, '.', 0, false, 6, (Object) null);
                     if (unit != DurationUnit.SECONDS || dotIndex <= 0) {
-                        result = Duration.m8453plusLRDsOJo(result, toDuration(parseOverLongIsoComponent(component), unit));
+                        result = Duration.m8450plusLRDsOJo(result, toDuration(parseOverLongIsoComponent(component), unit));
                     } else {
                         String whole = component.substring(0, dotIndex);
                         Intrinsics.checkNotNullExpressionValue(whole, "this as java.lang.String…ing(startIndex, endIndex)");
-                        long result2 = Duration.m8453plusLRDsOJo(result, toDuration(parseOverLongIsoComponent(whole), unit));
+                        long result2 = Duration.m8450plusLRDsOJo(result, toDuration(parseOverLongIsoComponent(whole), unit));
                         String substring = component.substring(dotIndex);
                         Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String).substring(startIndex)");
-                        result = Duration.m8453plusLRDsOJo(result2, toDuration(Double.parseDouble(substring), unit));
+                        result = Duration.m8450plusLRDsOJo(result2, toDuration(Double.parseDouble(substring), unit));
                     }
                 } else {
                     throw new IllegalArgumentException("Unexpected order of duration components");
@@ -404,7 +404,7 @@ public final class DurationKt {
         } else if (strictIso) {
             throw new IllegalArgumentException();
         } else if (StringsKt.regionMatches(value, index, "Infinity", 0, Math.max(length - index, "Infinity".length()), true)) {
-            result = Duration.Companion.m8508getINFINITEUwyO8pc();
+            result = Duration.Companion.m8505getINFINITEUwyO8pc();
         } else {
             DurationUnit prevUnit2 = null;
             boolean afterFirst = false;
@@ -461,22 +461,22 @@ public final class DurationKt {
                     if (dotIndex2 > 0) {
                         String whole2 = component2.substring(0, dotIndex2);
                         Intrinsics.checkNotNullExpressionValue(whole2, "this as java.lang.String…ing(startIndex, endIndex)");
-                        long result3 = Duration.m8453plusLRDsOJo(result, toDuration(Long.parseLong(whole2), unit2));
+                        long result3 = Duration.m8450plusLRDsOJo(result, toDuration(Long.parseLong(whole2), unit2));
                         String substring2 = component2.substring(dotIndex2);
                         Intrinsics.checkNotNullExpressionValue(substring2, "this as java.lang.String).substring(startIndex)");
-                        result = Duration.m8453plusLRDsOJo(result3, toDuration(Double.parseDouble(substring2), unit2));
+                        result = Duration.m8450plusLRDsOJo(result3, toDuration(Double.parseDouble(substring2), unit2));
                         if (index < length) {
                             throw new IllegalArgumentException("Fractional component must be last");
                         }
                     } else {
-                        result = Duration.m8453plusLRDsOJo(result, toDuration(Long.parseLong(component2), unit2));
+                        result = Duration.m8450plusLRDsOJo(result, toDuration(Long.parseLong(component2), unit2));
                     }
                 } else {
                     throw new IllegalArgumentException("Unexpected order of duration components");
                 }
             }
         }
-        return isNegative ? Duration.m8452unaryMinusUwyO8pc(result == true ? 1 : 0) : result;
+        return isNegative ? Duration.m8449unaryMinusUwyO8pc(result == true ? 1 : 0) : result;
     }
 
     private static final long parseOverLongIsoComponent(String value) {
@@ -552,15 +552,15 @@ public final class DurationKt {
     }
 
     public static final long durationOfNanos(long normalNanos) {
-        return Duration.m8502constructorimpl(normalNanos << 1);
+        return Duration.m8499constructorimpl(normalNanos << 1);
     }
 
     public static final long durationOfMillis(long normalMillis) {
-        return Duration.m8502constructorimpl((normalMillis << 1) + 1);
+        return Duration.m8499constructorimpl((normalMillis << 1) + 1);
     }
 
     public static final long durationOf(long normalValue, int unitDiscriminator) {
-        return Duration.m8502constructorimpl((normalValue << 1) + ((long) unitDiscriminator));
+        return Duration.m8499constructorimpl((normalValue << 1) + ((long) unitDiscriminator));
     }
 
     public static final long durationOfNanosNormalized(long nanos) {

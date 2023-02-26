@@ -9,7 +9,7 @@ public abstract class AbstractConstant<T extends AbstractConstant<T>> implements
     private static final AtomicLong uniqueIdGenerator = new AtomicLong();
 
     /* renamed from: id */
-    private final int f1034id;
+    private final int f998id;
     private final String name;
     private final long uniquifier = uniqueIdGenerator.getAndIncrement();
 
@@ -22,7 +22,7 @@ public abstract class AbstractConstant<T extends AbstractConstant<T>> implements
 
     /* access modifiers changed from: protected */
     public AbstractConstant(int id, String name) {
-        this.f1034id = id;
+        this.f998id = id;
         this.name = name;
     }
 
@@ -34,7 +34,7 @@ public abstract class AbstractConstant<T extends AbstractConstant<T>> implements
     @Override // p013io.netty.util.Constant
     /* renamed from: id */
     public final int mo1173id() {
-        return this.f1034id;
+        return this.f998id;
     }
 
     @Override // java.lang.Object

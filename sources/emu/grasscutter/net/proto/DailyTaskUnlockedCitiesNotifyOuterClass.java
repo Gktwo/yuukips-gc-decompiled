@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DailyTaskUnlockedCitiesNotifyOuterClass.class */
 public final class DailyTaskUnlockedCitiesNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#DailyTaskUnlockedCitiesNotify.proto\";\n\u001dDailyTaskUnlockedCitiesNotify\u0012\u001a\n\u0012unlocked_city_list\u0018\u000f \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#DailyTaskUnlockedCitiesNotify.proto\u001a\fuint32.proto\"9\n\u001dDailyTaskUnlockedCitiesNotify\u0012\u0018\n\u0010unlockedCityList\u0018\u0006 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{Uint32.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_DailyTaskUnlockedCitiesNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_DailyTaskUnlockedCitiesNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DailyTaskUnlockedCitiesNotify_descriptor, new String[]{"UnlockedCityList"});
 
@@ -49,7 +49,7 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DailyTaskUnlockedCitiesNotifyOuterClass$DailyTaskUnlockedCitiesNotify.class */
     public static final class DailyTaskUnlockedCitiesNotify extends GeneratedMessageV3 implements DailyTaskUnlockedCitiesNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int UNLOCKED_CITY_LIST_FIELD_NUMBER = 15;
+        public static final int UNLOCKEDCITYLIST_FIELD_NUMBER = 6;
         private Internal.IntList unlockedCityList_;
         private int unlockedCityListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -103,14 +103,14 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 120:
+                                case 48:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.unlockedCityList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.unlockedCityList_.addInt(input.readUInt32());
                                     break;
-                                case 122:
+                                case 50:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.unlockedCityList_ = newIntList();
@@ -186,7 +186,7 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getUnlockedCityListList().size() > 0) {
-                output.writeUInt32NoTag(122);
+                output.writeUInt32NoTag(50);
                 output.writeUInt32NoTag(this.unlockedCityListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.unlockedCityList_.size(); i++) {
@@ -234,7 +234,7 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getUnlockedCityListCount() > 0) {
-                hash = (53 * ((37 * hash) + 15)) + getUnlockedCityListList().hashCode();
+                hash = (53 * ((37 * hash) + 6)) + getUnlockedCityListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -548,5 +548,9 @@ public final class DailyTaskUnlockedCitiesNotifyOuterClass {
 
     public static Descriptors.FileDescriptor getDescriptor() {
         return descriptor;
+    }
+
+    static {
+        Uint32.getDescriptor();
     }
 }

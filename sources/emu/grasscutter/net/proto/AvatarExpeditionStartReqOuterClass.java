@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExpeditionStartReqOuterClass.class */
 public final class AvatarExpeditionStartReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eAvatarExpeditionStartReq.proto\"R\n\u0018AvatarExpeditionStartReq\u0012\u0011\n\thour_time\u0018\u0007 \u0001(\r\u0012\u0013\n\u000bavatar_guid\u0018\u0003 \u0001(\u0004\u0012\u000e\n\u0006exp_id\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eAvatarExpeditionStartReq.proto\"O\n\u0018AvatarExpeditionStartReq\u0012\u0010\n\bhourTime\u0018\f \u0001(\r\u0012\u0012\n\navatarGuid\u0018\b \u0001(\u0004\u0012\r\n\u0005expId\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AvatarExpeditionStartReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarExpeditionStartReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarExpeditionStartReq_descriptor, new String[]{"HourTime", "AvatarGuid", "ExpId"});
 
@@ -46,11 +46,11 @@ public final class AvatarExpeditionStartReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExpeditionStartReqOuterClass$AvatarExpeditionStartReq.class */
     public static final class AvatarExpeditionStartReq extends GeneratedMessageV3 implements AvatarExpeditionStartReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int HOUR_TIME_FIELD_NUMBER = 7;
+        public static final int HOURTIME_FIELD_NUMBER = 12;
         private int hourTime_;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 3;
+        public static final int AVATARGUID_FIELD_NUMBER = 8;
         private long avatarGuid_;
-        public static final int EXP_ID_FIELD_NUMBER = 2;
+        public static final int EXPID_FIELD_NUMBER = 14;
         private int expId_;
         private byte memoizedIsInitialized;
         private static final AvatarExpeditionStartReq DEFAULT_INSTANCE = new AvatarExpeditionStartReq();
@@ -98,14 +98,14 @@ public final class AvatarExpeditionStartReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
-                                    this.expId_ = input.readUInt32();
-                                    break;
-                                case 24:
+                                case 64:
                                     this.avatarGuid_ = input.readUInt64();
                                     break;
-                                case 56:
+                                case 96:
                                     this.hourTime_ = input.readUInt32();
+                                    break;
+                                case 112:
+                                    this.expId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -167,14 +167,14 @@ public final class AvatarExpeditionStartReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.expId_ != 0) {
-                output.writeUInt32(2, this.expId_);
-            }
             if (this.avatarGuid_ != 0) {
-                output.writeUInt64(3, this.avatarGuid_);
+                output.writeUInt64(8, this.avatarGuid_);
             }
             if (this.hourTime_ != 0) {
-                output.writeUInt32(7, this.hourTime_);
+                output.writeUInt32(12, this.hourTime_);
+            }
+            if (this.expId_ != 0) {
+                output.writeUInt32(14, this.expId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class AvatarExpeditionStartReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.expId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.expId_);
-            }
             if (this.avatarGuid_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(3, this.avatarGuid_);
+                size2 = 0 + CodedOutputStream.computeUInt64Size(8, this.avatarGuid_);
             }
             if (this.hourTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.hourTime_);
+                size2 += CodedOutputStream.computeUInt32Size(12, this.hourTime_);
+            }
+            if (this.expId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(14, this.expId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -217,7 +217,7 @@ public final class AvatarExpeditionStartReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getHourTime())) + 3)) + Internal.hashLong(getAvatarGuid()))) + 2)) + getExpId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getHourTime())) + 8)) + Internal.hashLong(getAvatarGuid()))) + 14)) + getExpId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EnterSceneReadyRspOuterClass.class */
 public final class EnterSceneReadyRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018EnterSceneReadyRsp.proto\"@\n\u0012EnterSceneReadyRsp\u0012\u0019\n\u0011enter_scene_token\u0018\u000b \u0001(\r\u0012\u000f\n\u0007retcode\u0018\b \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018EnterSceneReadyRsp.proto\">\n\u0012EnterSceneReadyRsp\u0012\u000f\n\u0007retcode\u0018\u0007 \u0001(\u0005\u0012\u0017\n\u000fenterSceneToken\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_EnterSceneReadyRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_EnterSceneReadyRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EnterSceneReadyRsp_descriptor, new String[]{"EnterSceneToken", "Retcode"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_EnterSceneReadyRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EnterSceneReadyRsp_descriptor, new String[]{"Retcode", "EnterSceneToken"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EnterSceneReadyRspOuterClass$EnterSceneReadyRspOrBuilder.class */
     public interface EnterSceneReadyRspOrBuilder extends MessageOrBuilder {
-        int getEnterSceneToken();
-
         int getRetcode();
+
+        int getEnterSceneToken();
     }
 
     private EnterSceneReadyRspOuterClass() {
@@ -43,10 +43,10 @@ public final class EnterSceneReadyRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EnterSceneReadyRspOuterClass$EnterSceneReadyRsp.class */
     public static final class EnterSceneReadyRsp extends GeneratedMessageV3 implements EnterSceneReadyRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTER_SCENE_TOKEN_FIELD_NUMBER = 11;
-        private int enterSceneToken_;
-        public static final int RETCODE_FIELD_NUMBER = 8;
+        public static final int RETCODE_FIELD_NUMBER = 7;
         private int retcode_;
+        public static final int ENTERSCENETOKEN_FIELD_NUMBER = 9;
+        private int enterSceneToken_;
         private byte memoizedIsInitialized;
         private static final EnterSceneReadyRsp DEFAULT_INSTANCE = new EnterSceneReadyRsp();
         private static final Parser<EnterSceneReadyRsp> PARSER = new AbstractParser<EnterSceneReadyRsp>() { // from class: emu.grasscutter.net.proto.EnterSceneReadyRspOuterClass.EnterSceneReadyRsp.1
@@ -92,10 +92,10 @@ public final class EnterSceneReadyRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 64:
+                            case 56:
                                 this.retcode_ = input.readInt32();
                                 break;
-                            case 88:
+                            case 72:
                                 this.enterSceneToken_ = input.readUInt32();
                                 break;
                             default:
@@ -128,13 +128,13 @@ public final class EnterSceneReadyRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.EnterSceneReadyRspOuterClass.EnterSceneReadyRspOrBuilder
-        public int getEnterSceneToken() {
-            return this.enterSceneToken_;
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // emu.grasscutter.net.proto.EnterSceneReadyRspOuterClass.EnterSceneReadyRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
+        public int getEnterSceneToken() {
+            return this.enterSceneToken_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -153,10 +153,10 @@ public final class EnterSceneReadyRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.retcode_ != 0) {
-                output.writeInt32(8, this.retcode_);
+                output.writeInt32(7, this.retcode_);
             }
             if (this.enterSceneToken_ != 0) {
-                output.writeUInt32(11, this.enterSceneToken_);
+                output.writeUInt32(9, this.enterSceneToken_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class EnterSceneReadyRspOuterClass {
             }
             int size2 = 0;
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(8, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(7, this.retcode_);
             }
             if (this.enterSceneToken_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.enterSceneToken_);
+                size2 += CodedOutputStream.computeUInt32Size(9, this.enterSceneToken_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -188,7 +188,7 @@ public final class EnterSceneReadyRspOuterClass {
                 return equals(obj);
             }
             EnterSceneReadyRsp other = (EnterSceneReadyRsp) obj;
-            return getEnterSceneToken() == other.getEnterSceneToken() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
+            return getRetcode() == other.getRetcode() && getEnterSceneToken() == other.getEnterSceneToken() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -196,7 +196,7 @@ public final class EnterSceneReadyRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getEnterSceneToken())) + 8)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getRetcode())) + 9)) + getEnterSceneToken())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -275,8 +275,8 @@ public final class EnterSceneReadyRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EnterSceneReadyRspOuterClass$EnterSceneReadyRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements EnterSceneReadyRspOrBuilder {
-            private int enterSceneToken_;
             private int retcode_;
+            private int enterSceneToken_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return EnterSceneReadyRspOuterClass.internal_static_EnterSceneReadyRsp_descriptor;
@@ -304,8 +304,8 @@ public final class EnterSceneReadyRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.enterSceneToken_ = 0;
                 this.retcode_ = 0;
+                this.enterSceneToken_ = 0;
                 return this;
             }
 
@@ -331,8 +331,8 @@ public final class EnterSceneReadyRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public EnterSceneReadyRsp buildPartial() {
                 EnterSceneReadyRsp result = new EnterSceneReadyRsp(this);
-                result.enterSceneToken_ = this.enterSceneToken_;
                 result.retcode_ = this.retcode_;
+                result.enterSceneToken_ = this.enterSceneToken_;
                 onBuilt();
                 return result;
             }
@@ -380,11 +380,11 @@ public final class EnterSceneReadyRspOuterClass {
                 if (other == EnterSceneReadyRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getEnterSceneToken() != 0) {
-                    setEnterSceneToken(other.getEnterSceneToken());
-                }
                 if (other.getRetcode() != 0) {
                     setRetcode(other.getRetcode());
+                }
+                if (other.getEnterSceneToken() != 0) {
+                    setEnterSceneToken(other.getEnterSceneToken());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -419,23 +419,6 @@ public final class EnterSceneReadyRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.EnterSceneReadyRspOuterClass.EnterSceneReadyRspOrBuilder
-            public int getEnterSceneToken() {
-                return this.enterSceneToken_;
-            }
-
-            public Builder setEnterSceneToken(int value) {
-                this.enterSceneToken_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearEnterSceneToken() {
-                this.enterSceneToken_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.EnterSceneReadyRspOuterClass.EnterSceneReadyRspOrBuilder
             public int getRetcode() {
                 return this.retcode_;
             }
@@ -448,6 +431,23 @@ public final class EnterSceneReadyRspOuterClass {
 
             public Builder clearRetcode() {
                 this.retcode_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.EnterSceneReadyRspOuterClass.EnterSceneReadyRspOrBuilder
+            public int getEnterSceneToken() {
+                return this.enterSceneToken_;
+            }
+
+            public Builder setEnterSceneToken(int value) {
+                this.enterSceneToken_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearEnterSceneToken() {
+                this.enterSceneToken_ = 0;
                 onChanged();
                 return this;
             }

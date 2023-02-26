@@ -15,7 +15,7 @@ public class LongArrayPriorityQueue implements LongPriorityQueue, Serializable {
     protected int size;
 
     /* renamed from: c */
-    protected LongComparator f2394c;
+    protected LongComparator f2358c;
     protected transient int firstIndex;
     protected transient boolean firstIndexValid;
 
@@ -24,7 +24,7 @@ public class LongArrayPriorityQueue implements LongPriorityQueue, Serializable {
         if (capacity > 0) {
             this.array = new long[capacity];
         }
-        this.f2394c = c;
+        this.f2358c = c;
     }
 
     public LongArrayPriorityQueue(int capacity) {
@@ -65,12 +65,12 @@ public class LongArrayPriorityQueue implements LongPriorityQueue, Serializable {
         int i = this.size - 1;
         int firstIndex = i;
         long first = this.array[firstIndex];
-        if (this.f2394c != null) {
+        if (this.f2358c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f2394c.compare(this.array[i], first) < 0) {
+                } else if (this.f2358c.compare(this.array[i], first) < 0) {
                     firstIndex = i;
                     first = this.array[i];
                 }
@@ -103,11 +103,11 @@ public class LongArrayPriorityQueue implements LongPriorityQueue, Serializable {
         }
         if (!this.firstIndexValid) {
             this.firstIndexValid = false;
-        } else if (this.f2394c == null) {
+        } else if (this.f2358c == null) {
             if (x < this.array[this.firstIndex]) {
                 this.firstIndex = this.size;
             }
-        } else if (this.f2394c.compare(x, this.array[this.firstIndex]) < 0) {
+        } else if (this.f2358c.compare(x, this.array[this.firstIndex]) < 0) {
             this.firstIndex = this.size;
         }
         long[] jArr = this.array;
@@ -159,7 +159,7 @@ public class LongArrayPriorityQueue implements LongPriorityQueue, Serializable {
     /* Return type fixed from 'it.unimi.dsi.fastutil.longs.LongComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.longs.LongPriorityQueue, p014it.unimi.dsi.fastutil.PriorityQueue
     public Comparator<? super Long> comparator() {
-        return this.f2394c;
+        return this.f2358c;
     }
 
     private void writeObject(ObjectOutputStream s) throws IOException {

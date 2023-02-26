@@ -21,9 +21,9 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GadgetInteractRspOuterClass.class */
 public final class GadgetInteractRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017GadgetInteractRsp.proto\u001a\u0011InterOpType.proto\u001a\u0012InteractType.proto\"\u0001\n\u0011GadgetInteractRsp\u0012$\n\rinteract_type\u0018\u0002 \u0001(\u000e2\r.InteractType\u0012\u0011\n\tgadget_id\u0018\u000b \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0007 \u0001(\u0005\u0012\u0018\n\u0010gadget_entity_id\u0018\u0001 \u0001(\r\u0012\u001d\n\u0007op_type\u0018\b \u0001(\u000e2\f.InterOpTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{InterOpTypeOuterClass.getDescriptor(), InteractTypeOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017GadgetInteractRsp.proto\u001a\u0012InteractType.proto\u001a\u0011InterOpType.proto\"\u0001\n\u0011GadgetInteractRsp\u0012#\n\finteractType\u0018\u0003 \u0001(\u000e2\r.InteractType\u0012\u000f\n\u0007retcode\u0018\f \u0001(\u0005\u0012\u0010\n\bgadgetId\u0018\n \u0001(\r\u0012\u0016\n\u000egadgetEntityId\u0018\u0002 \u0001(\r\u0012\u001c\n\u0006opType\u0018\u0006 \u0001(\u000e2\f.InterOpTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{InteractTypeOuterClass.getDescriptor(), InterOpTypeOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_GadgetInteractRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GadgetInteractRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GadgetInteractRsp_descriptor, new String[]{"InteractType", "GadgetId", "Retcode", "GadgetEntityId", "OpType"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GadgetInteractRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GadgetInteractRsp_descriptor, new String[]{"InteractType", "Retcode", "GadgetId", "GadgetEntityId", "OpType"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GadgetInteractRspOuterClass$GadgetInteractRspOrBuilder.class */
     public interface GadgetInteractRspOrBuilder extends MessageOrBuilder {
@@ -31,9 +31,9 @@ public final class GadgetInteractRspOuterClass {
 
         InteractTypeOuterClass.InteractType getInteractType();
 
-        int getGadgetId();
-
         int getRetcode();
+
+        int getGadgetId();
 
         int getGadgetEntityId();
 
@@ -55,15 +55,15 @@ public final class GadgetInteractRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GadgetInteractRspOuterClass$GadgetInteractRsp.class */
     public static final class GadgetInteractRsp extends GeneratedMessageV3 implements GadgetInteractRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int INTERACT_TYPE_FIELD_NUMBER = 2;
+        public static final int INTERACTTYPE_FIELD_NUMBER = 3;
         private int interactType_;
-        public static final int GADGET_ID_FIELD_NUMBER = 11;
-        private int gadgetId_;
-        public static final int RETCODE_FIELD_NUMBER = 7;
+        public static final int RETCODE_FIELD_NUMBER = 12;
         private int retcode_;
-        public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 1;
+        public static final int GADGETID_FIELD_NUMBER = 10;
+        private int gadgetId_;
+        public static final int GADGETENTITYID_FIELD_NUMBER = 2;
         private int gadgetEntityId_;
-        public static final int OP_TYPE_FIELD_NUMBER = 8;
+        public static final int OPTYPE_FIELD_NUMBER = 6;
         private int opType_;
         private byte memoizedIsInitialized;
         private static final GadgetInteractRsp DEFAULT_INSTANCE = new GadgetInteractRsp();
@@ -112,20 +112,20 @@ public final class GadgetInteractRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
+                            case 16:
                                 this.gadgetEntityId_ = input.readUInt32();
                                 break;
-                            case 16:
+                            case 24:
                                 this.interactType_ = input.readEnum();
                                 break;
-                            case 56:
-                                this.retcode_ = input.readInt32();
-                                break;
-                            case 64:
+                            case 48:
                                 this.opType_ = input.readEnum();
                                 break;
-                            case 88:
+                            case 80:
                                 this.gadgetId_ = input.readUInt32();
+                                break;
+                            case 96:
+                                this.retcode_ = input.readInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -168,13 +168,13 @@ public final class GadgetInteractRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRspOrBuilder
-        public int getGadgetId() {
-            return this.gadgetId_;
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
+        public int getGadgetId() {
+            return this.gadgetId_;
         }
 
         @Override // emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRspOrBuilder
@@ -209,19 +209,19 @@ public final class GadgetInteractRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.gadgetEntityId_ != 0) {
-                output.writeUInt32(1, this.gadgetEntityId_);
+                output.writeUInt32(2, this.gadgetEntityId_);
             }
             if (this.interactType_ != InteractTypeOuterClass.InteractType.INTERACT_TYPE_NONE.getNumber()) {
-                output.writeEnum(2, this.interactType_);
-            }
-            if (this.retcode_ != 0) {
-                output.writeInt32(7, this.retcode_);
+                output.writeEnum(3, this.interactType_);
             }
             if (this.opType_ != InterOpTypeOuterClass.InterOpType.INTER_OP_TYPE_FINISH.getNumber()) {
-                output.writeEnum(8, this.opType_);
+                output.writeEnum(6, this.opType_);
             }
             if (this.gadgetId_ != 0) {
-                output.writeUInt32(11, this.gadgetId_);
+                output.writeUInt32(10, this.gadgetId_);
+            }
+            if (this.retcode_ != 0) {
+                output.writeInt32(12, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -234,19 +234,19 @@ public final class GadgetInteractRspOuterClass {
             }
             int size2 = 0;
             if (this.gadgetEntityId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.gadgetEntityId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.gadgetEntityId_);
             }
             if (this.interactType_ != InteractTypeOuterClass.InteractType.INTERACT_TYPE_NONE.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(2, this.interactType_);
-            }
-            if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(7, this.retcode_);
+                size2 += CodedOutputStream.computeEnumSize(3, this.interactType_);
             }
             if (this.opType_ != InterOpTypeOuterClass.InterOpType.INTER_OP_TYPE_FINISH.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(8, this.opType_);
+                size2 += CodedOutputStream.computeEnumSize(6, this.opType_);
             }
             if (this.gadgetId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.gadgetId_);
+                size2 += CodedOutputStream.computeUInt32Size(10, this.gadgetId_);
+            }
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(12, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -262,7 +262,7 @@ public final class GadgetInteractRspOuterClass {
                 return equals(obj);
             }
             GadgetInteractRsp other = (GadgetInteractRsp) obj;
-            return this.interactType_ == other.interactType_ && getGadgetId() == other.getGadgetId() && getRetcode() == other.getRetcode() && getGadgetEntityId() == other.getGadgetEntityId() && this.opType_ == other.opType_ && this.unknownFields.equals(other.unknownFields);
+            return this.interactType_ == other.interactType_ && getRetcode() == other.getRetcode() && getGadgetId() == other.getGadgetId() && getGadgetEntityId() == other.getGadgetEntityId() && this.opType_ == other.opType_ && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -270,7 +270,7 @@ public final class GadgetInteractRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + this.interactType_)) + 11)) + getGadgetId())) + 7)) + getRetcode())) + 1)) + getGadgetEntityId())) + 8)) + this.opType_)) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + this.interactType_)) + 12)) + getRetcode())) + 10)) + getGadgetId())) + 2)) + getGadgetEntityId())) + 6)) + this.opType_)) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -349,8 +349,8 @@ public final class GadgetInteractRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GadgetInteractRspOuterClass$GadgetInteractRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements GadgetInteractRspOrBuilder {
-            private int gadgetId_;
             private int retcode_;
+            private int gadgetId_;
             private int gadgetEntityId_;
             private int interactType_ = 0;
             private int opType_ = 0;
@@ -382,8 +382,8 @@ public final class GadgetInteractRspOuterClass {
             public Builder clear() {
                 clear();
                 this.interactType_ = 0;
-                this.gadgetId_ = 0;
                 this.retcode_ = 0;
+                this.gadgetId_ = 0;
                 this.gadgetEntityId_ = 0;
                 this.opType_ = 0;
                 return this;
@@ -412,8 +412,8 @@ public final class GadgetInteractRspOuterClass {
             public GadgetInteractRsp buildPartial() {
                 GadgetInteractRsp result = new GadgetInteractRsp(this);
                 result.interactType_ = this.interactType_;
-                result.gadgetId_ = this.gadgetId_;
                 result.retcode_ = this.retcode_;
+                result.gadgetId_ = this.gadgetId_;
                 result.gadgetEntityId_ = this.gadgetEntityId_;
                 result.opType_ = this.opType_;
                 onBuilt();
@@ -466,11 +466,11 @@ public final class GadgetInteractRspOuterClass {
                 if (other.interactType_ != 0) {
                     setInteractTypeValue(other.getInteractTypeValue());
                 }
-                if (other.getGadgetId() != 0) {
-                    setGadgetId(other.getGadgetId());
-                }
                 if (other.getRetcode() != 0) {
                     setRetcode(other.getRetcode());
+                }
+                if (other.getGadgetId() != 0) {
+                    setGadgetId(other.getGadgetId());
                 }
                 if (other.getGadgetEntityId() != 0) {
                     setGadgetEntityId(other.getGadgetEntityId());
@@ -543,23 +543,6 @@ public final class GadgetInteractRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRspOrBuilder
-            public int getGadgetId() {
-                return this.gadgetId_;
-            }
-
-            public Builder setGadgetId(int value) {
-                this.gadgetId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearGadgetId() {
-                this.gadgetId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRspOrBuilder
             public int getRetcode() {
                 return this.retcode_;
             }
@@ -572,6 +555,23 @@ public final class GadgetInteractRspOuterClass {
 
             public Builder clearRetcode() {
                 this.retcode_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GadgetInteractRspOuterClass.GadgetInteractRspOrBuilder
+            public int getGadgetId() {
+                return this.gadgetId_;
+            }
+
+            public Builder setGadgetId(int value) {
+                this.gadgetId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearGadgetId() {
+                this.gadgetId_ = 0;
                 onChanged();
                 return this;
             }
@@ -660,7 +660,7 @@ public final class GadgetInteractRspOuterClass {
     }
 
     static {
-        InterOpTypeOuterClass.getDescriptor();
         InteractTypeOuterClass.getDescriptor();
+        InterOpTypeOuterClass.getDescriptor();
     }
 }

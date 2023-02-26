@@ -11,7 +11,7 @@ public final class Bzip2MTFAndRLE2StageEncoder {
     private final boolean[] bwtValuesPresent;
     private final char[] mtfBlock;
     private int mtfLength;
-    private final int[] mtfSymbolFrequencies = new int[PacketOpcodes.JoinPlayerFailNotify];
+    private final int[] mtfSymbolFrequencies = new int[PacketOpcodes.SceneAreaUnlockNotify];
     private int alphabetSize;
 
     /* access modifiers changed from: package-private */

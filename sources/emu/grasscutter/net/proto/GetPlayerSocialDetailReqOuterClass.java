@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetPlayerSocialDetailReqOuterClass.class */
 public final class GetPlayerSocialDetailReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eGetPlayerSocialDetailReq.proto\"'\n\u0018GetPlayerSocialDetailReq\u0012\u000b\n\u0003uid\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eGetPlayerSocialDetailReq.proto\"'\n\u0018GetPlayerSocialDetailReq\u0012\u000b\n\u0003uid\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GetPlayerSocialDetailReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetPlayerSocialDetailReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetPlayerSocialDetailReq_descriptor, new String[]{"Uid"});
 
@@ -41,7 +41,7 @@ public final class GetPlayerSocialDetailReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetPlayerSocialDetailReqOuterClass$GetPlayerSocialDetailReq.class */
     public static final class GetPlayerSocialDetailReq extends GeneratedMessageV3 implements GetPlayerSocialDetailReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int UID_FIELD_NUMBER = 1;
+        public static final int UID_FIELD_NUMBER = 14;
         private int uid_;
         private byte memoizedIsInitialized;
         private static final GetPlayerSocialDetailReq DEFAULT_INSTANCE = new GetPlayerSocialDetailReq();
@@ -88,7 +88,7 @@ public final class GetPlayerSocialDetailReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
+                            case 112:
                                 this.uid_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class GetPlayerSocialDetailReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.uid_ != 0) {
-                output.writeUInt32(1, this.uid_);
+                output.writeUInt32(14, this.uid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class GetPlayerSocialDetailReqOuterClass {
             }
             int size2 = 0;
             if (this.uid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.uid_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(14, this.uid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class GetPlayerSocialDetailReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getUid())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getUid())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

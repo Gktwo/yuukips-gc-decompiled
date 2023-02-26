@@ -1,6 +1,5 @@
 package net.bytebuddy.utility;
 
-import emu.grasscutter.net.packet.PacketOpcodes;
 import java.io.Serializable;
 import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.AnnotatedElement;
@@ -21,22 +20,22 @@ public enum JavaType {
     TYPE_DESCRIPTOR_OF_FIELD("java.lang.invoke.TypeDescriptor$OfField", 1537, TypeDescription.UNDEFINED, TYPE_DESCRIPTOR.getTypeStub()),
     TYPE_DESCRIPTOR_OF_METHOD("java.lang.invoke.TypeDescriptor$OfMethod", 1537, TypeDescription.UNDEFINED, TYPE_DESCRIPTOR.getTypeStub()),
     CONSTANT_DESCRIPTION("java.lang.constant.ConstantDesc", 1537, TypeDescription.UNDEFINED, new TypeDefinition[0]),
-    DYNAMIC_CONSTANT_DESCRIPTION("java.lang.constant.DynamicConstantDesc", (int) PacketOpcodes.ProudSkillExtraLevelNotify, TypeDescription.OBJECT, CONSTANT_DESCRIPTION.getTypeStub()),
+    DYNAMIC_CONSTANT_DESCRIPTION("java.lang.constant.DynamicConstantDesc", 1025, TypeDescription.OBJECT, CONSTANT_DESCRIPTION.getTypeStub()),
     CLASS_DESCRIPTION("java.lang.constant.ClassDesc", 1537, TypeDescription.UNDEFINED, CONSTANT_DESCRIPTION.getTypeStub(), TYPE_DESCRIPTOR_OF_FIELD.getTypeStub()),
     METHOD_TYPE_DESCRIPTION("java.lang.constant.MethodTypeDesc", 1537, TypeDescription.UNDEFINED, CONSTANT_DESCRIPTION.getTypeStub(), TYPE_DESCRIPTOR_OF_METHOD.getTypeStub()),
     METHOD_HANDLE_DESCRIPTION("java.lang.constant.MethodHandleDesc", 1537, TypeDescription.UNDEFINED, CONSTANT_DESCRIPTION.getTypeStub()),
     DIRECT_METHOD_HANDLE_DESCRIPTION("java.lang.constant.DirectMethodHandleDesc", 1537, TypeDescription.UNDEFINED, METHOD_HANDLE_DESCRIPTION.getTypeStub()),
-    METHOD_HANDLE("java.lang.invoke.MethodHandle", (int) PacketOpcodes.ProudSkillExtraLevelNotify, TypeDescription.OBJECT, CONSTABLE.getTypeStub()),
+    METHOD_HANDLE("java.lang.invoke.MethodHandle", 1025, TypeDescription.OBJECT, CONSTABLE.getTypeStub()),
     METHOD_HANDLES("java.lang.invoke.MethodHandles", 1, Object.class, new Type[0]),
     METHOD_TYPE("java.lang.invoke.MethodType", 17, TypeDescription.OBJECT, CONSTABLE.getTypeStub(), TYPE_DESCRIPTOR_OF_METHOD.getTypeStub(), TypeDescription.ForLoadedType.m247of(Serializable.class)),
     METHOD_HANDLES_LOOKUP("java.lang.invoke.MethodHandles$Lookup", 25, Object.class, new Type[0]),
-    CALL_SITE("java.lang.invoke.CallSite", (int) PacketOpcodes.ProudSkillExtraLevelNotify, Object.class, new Type[0]),
-    VAR_HANDLE("java.lang.invoke.VarHandle", (int) PacketOpcodes.ProudSkillExtraLevelNotify, TypeDescription.Generic.OBJECT, CONSTABLE.getTypeStub()),
+    CALL_SITE("java.lang.invoke.CallSite", 1025, Object.class, new Type[0]),
+    VAR_HANDLE("java.lang.invoke.VarHandle", 1025, TypeDescription.Generic.OBJECT, CONSTABLE.getTypeStub()),
     PARAMETER("java.lang.reflect.Parameter", 17, Object.class, AnnotatedElement.class),
-    EXECUTABLE("java.lang.reflect.Executable", (int) PacketOpcodes.ProudSkillExtraLevelNotify, AccessibleObject.class, Member.class, GenericDeclaration.class),
+    EXECUTABLE("java.lang.reflect.Executable", 1025, AccessibleObject.class, Member.class, GenericDeclaration.class),
     MODULE("java.lang.Module", 17, Object.class, AnnotatedElement.class),
     CONSTANT_BOOTSTRAPS("java.lang.invoke.ConstantBootstraps", 17, Object.class, new Type[0]),
-    RECORD("java.lang.Record", (int) PacketOpcodes.ProudSkillExtraLevelNotify, Object.class, new Type[0]),
+    RECORD("java.lang.Record", 1025, Object.class, new Type[0]),
     OBJECT_METHODS("java.lang.runtime.ObjectMethods", 1, Object.class, new Type[0]),
     ACCESS_CONTROL_CONTEXT("java.security.AccessControlContext", 17, TypeDescription.UNDEFINED, new TypeDefinition[0]);
     

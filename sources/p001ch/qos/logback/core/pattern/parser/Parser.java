@@ -3,7 +3,6 @@ package p001ch.qos.logback.core.pattern.parser;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.eclipse.jetty.websocket.api.StatusCode;
 import p001ch.qos.logback.core.pattern.Converter;
 import p001ch.qos.logback.core.pattern.FormatInfo;
 import p001ch.qos.logback.core.pattern.IdentityCompositeConverter;
@@ -107,7 +106,7 @@ public class Parser<E> extends ContextAwareBase {
         Token t = getCurentToken();
         expectNotNull(t, "a LEFT_PARENTHESIS or KEYWORD");
         switch (t.getType()) {
-            case StatusCode.UNDEFINED /* 1004 */:
+            case 1004:
                 return SINGLE();
             case 1005:
                 advanceTokenPointer();

@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerBirthdayReqOuterClass.class */
 public final class SetPlayerBirthdayReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aSetPlayerBirthdayReq.proto\u001a\u000eBirthday.proto\"3\n\u0014SetPlayerBirthdayReq\u0012\u001b\n\bbirthday\u0018\b \u0001(\u000b2\t.BirthdayB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BirthdayOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aSetPlayerBirthdayReq.proto\u001a\u000eBirthday.proto\"3\n\u0014SetPlayerBirthdayReq\u0012\u001b\n\bbirthday\u0018\u000f \u0001(\u000b2\t.BirthdayB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BirthdayOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SetPlayerBirthdayReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetPlayerBirthdayReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetPlayerBirthdayReq_descriptor, new String[]{"Birthday"});
 
@@ -47,7 +47,7 @@ public final class SetPlayerBirthdayReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerBirthdayReqOuterClass$SetPlayerBirthdayReq.class */
     public static final class SetPlayerBirthdayReq extends GeneratedMessageV3 implements SetPlayerBirthdayReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int BIRTHDAY_FIELD_NUMBER = 8;
+        public static final int BIRTHDAY_FIELD_NUMBER = 15;
         private BirthdayOuterClass.Birthday birthday_;
         private byte memoizedIsInitialized;
         private static final SetPlayerBirthdayReq DEFAULT_INSTANCE = new SetPlayerBirthdayReq();
@@ -94,7 +94,7 @@ public final class SetPlayerBirthdayReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 66:
+                            case 122:
                                 BirthdayOuterClass.Birthday.Builder subBuilder = this.birthday_ != null ? this.birthday_.toBuilder() : null;
                                 this.birthday_ = (BirthdayOuterClass.Birthday) input.readMessage(BirthdayOuterClass.Birthday.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -164,7 +164,7 @@ public final class SetPlayerBirthdayReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.birthday_ != null) {
-                output.writeMessage(8, getBirthday());
+                output.writeMessage(15, getBirthday());
             }
             this.unknownFields.writeTo(output);
         }
@@ -177,7 +177,7 @@ public final class SetPlayerBirthdayReqOuterClass {
             }
             int size2 = 0;
             if (this.birthday_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(8, getBirthday());
+                size2 = 0 + CodedOutputStream.computeMessageSize(15, getBirthday());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -206,7 +206,7 @@ public final class SetPlayerBirthdayReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasBirthday()) {
-                hash = (53 * ((37 * hash) + 8)) + getBirthday().hashCode();
+                hash = (53 * ((37 * hash) + 15)) + getBirthday().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

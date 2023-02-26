@@ -1085,7 +1085,7 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
                 i$iv++;
             } else if (c$iv2 < 55296 || c$iv2 > 57343) {
                 Segment tail$iv3 = writableSegment$okio(3);
-                tail$iv3.data[tail$iv3.limit] = (byte) ((c$iv2 >> 12) | PacketOpcodes.WorldPlayerLocationNotify);
+                tail$iv3.data[tail$iv3.limit] = (byte) ((c$iv2 >> 12) | PacketOpcodes.SceneAvatarStaminaStepRsp);
                 tail$iv3.data[tail$iv3.limit + 1] = (byte) (((c$iv2 >> 6) & 63) | 128);
                 tail$iv3.data[tail$iv3.limit + 2] = (byte) ((c$iv2 & 63) | 128);
                 tail$iv3.limit += 3;
@@ -1097,7 +1097,7 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
                     if (56320 <= low$iv ? low$iv <= 57343 : false) {
                         int codePoint$iv = 65536 + (((c$iv2 & 1023) << 10) | (low$iv & 1023));
                         Segment tail$iv4 = writableSegment$okio(4);
-                        tail$iv4.data[tail$iv4.limit] = (byte) ((codePoint$iv >> 18) | PacketOpcodes.ExecuteGadgetLuaRsp);
+                        tail$iv4.data[tail$iv4.limit] = (byte) ((codePoint$iv >> 18) | PacketOpcodes.SceneKickPlayerRsp);
                         tail$iv4.data[tail$iv4.limit + 1] = (byte) (((codePoint$iv >> 12) & 63) | 128);
                         tail$iv4.data[tail$iv4.limit + 2] = (byte) (((codePoint$iv >> 6) & 63) | 128);
                         tail$iv4.data[tail$iv4.limit + 3] = (byte) ((codePoint$iv & 63) | 128);
@@ -1129,14 +1129,14 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
                 writeByte(63);
             } else if (codePoint < 65536) {
                 Segment tail$iv2 = writableSegment$okio(3);
-                tail$iv2.data[tail$iv2.limit] = (byte) ((codePoint >> 12) | PacketOpcodes.WorldPlayerLocationNotify);
+                tail$iv2.data[tail$iv2.limit] = (byte) ((codePoint >> 12) | PacketOpcodes.SceneAvatarStaminaStepRsp);
                 tail$iv2.data[tail$iv2.limit + 1] = (byte) (((codePoint >> 6) & 63) | 128);
                 tail$iv2.data[tail$iv2.limit + 2] = (byte) ((codePoint & 63) | 128);
                 tail$iv2.limit += 3;
                 setSize$okio(size() + 3);
             } else if (codePoint <= 1114111) {
                 Segment tail$iv3 = writableSegment$okio(4);
-                tail$iv3.data[tail$iv3.limit] = (byte) ((codePoint >> 18) | PacketOpcodes.ExecuteGadgetLuaRsp);
+                tail$iv3.data[tail$iv3.limit] = (byte) ((codePoint >> 18) | PacketOpcodes.SceneKickPlayerRsp);
                 tail$iv3.data[tail$iv3.limit + 1] = (byte) (((codePoint >> 12) & 63) | 128);
                 tail$iv3.data[tail$iv3.limit + 2] = (byte) (((codePoint >> 6) & 63) | 128);
                 tail$iv3.data[tail$iv3.limit + 3] = (byte) ((codePoint & 63) | 128);
@@ -1937,14 +1937,14 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
     @Deprecated(message = "moved to operator function", replaceWith = @ReplaceWith(expression = "this[index]", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_getByte")
     /* renamed from: -deprecated_getByte  reason: not valid java name */
-    public final byte m9375deprecated_getByte(long index) {
+    public final byte m9372deprecated_getByte(long index) {
         return getByte(index);
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "size", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_size")
     /* renamed from: -deprecated_size  reason: not valid java name */
-    public final long m9376deprecated_size() {
+    public final long m9373deprecated_size() {
         return this.size;
     }
 

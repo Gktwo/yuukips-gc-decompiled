@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarChangeCostumeRspOuterClass.class */
 public final class AvatarChangeCostumeRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cAvatarChangeCostumeRsp.proto\"R\n\u0016AvatarChangeCostumeRsp\u0012\u000f\n\u0007retcode\u0018\n \u0001(\u0005\u0012\u0013\n\u000bavatar_guid\u0018\t \u0001(\u0004\u0012\u0012\n\ncostume_id\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cAvatarChangeCostumeRsp.proto\"P\n\u0016AvatarChangeCostumeRsp\u0012\u0011\n\tcostumeId\u0018\u000f \u0001(\r\u0012\u0012\n\navatarGuid\u0018\u0005 \u0001(\u0004\u0012\u000f\n\u0007retcode\u0018\u0007 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AvatarChangeCostumeRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarChangeCostumeRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarChangeCostumeRsp_descriptor, new String[]{"Retcode", "AvatarGuid", "CostumeId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarChangeCostumeRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarChangeCostumeRsp_descriptor, new String[]{"CostumeId", "AvatarGuid", "Retcode"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarChangeCostumeRspOuterClass$AvatarChangeCostumeRspOrBuilder.class */
     public interface AvatarChangeCostumeRspOrBuilder extends MessageOrBuilder {
-        int getRetcode();
+        int getCostumeId();
 
         long getAvatarGuid();
 
-        int getCostumeId();
+        int getRetcode();
     }
 
     private AvatarChangeCostumeRspOuterClass() {
@@ -46,12 +46,12 @@ public final class AvatarChangeCostumeRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarChangeCostumeRspOuterClass$AvatarChangeCostumeRsp.class */
     public static final class AvatarChangeCostumeRsp extends GeneratedMessageV3 implements AvatarChangeCostumeRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 10;
-        private int retcode_;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 9;
-        private long avatarGuid_;
-        public static final int COSTUME_ID_FIELD_NUMBER = 3;
+        public static final int COSTUMEID_FIELD_NUMBER = 15;
         private int costumeId_;
+        public static final int AVATARGUID_FIELD_NUMBER = 5;
+        private long avatarGuid_;
+        public static final int RETCODE_FIELD_NUMBER = 7;
+        private int retcode_;
         private byte memoizedIsInitialized;
         private static final AvatarChangeCostumeRsp DEFAULT_INSTANCE = new AvatarChangeCostumeRsp();
         private static final Parser<AvatarChangeCostumeRsp> PARSER = new AbstractParser<AvatarChangeCostumeRsp>() { // from class: emu.grasscutter.net.proto.AvatarChangeCostumeRspOuterClass.AvatarChangeCostumeRsp.1
@@ -98,14 +98,14 @@ public final class AvatarChangeCostumeRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 24:
-                                    this.costumeId_ = input.readUInt32();
-                                    break;
-                                case 72:
+                                case 40:
                                     this.avatarGuid_ = input.readUInt64();
                                     break;
-                                case 80:
+                                case 56:
                                     this.retcode_ = input.readInt32();
+                                    break;
+                                case 120:
+                                    this.costumeId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -138,8 +138,8 @@ public final class AvatarChangeCostumeRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AvatarChangeCostumeRspOuterClass.AvatarChangeCostumeRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
+        public int getCostumeId() {
+            return this.costumeId_;
         }
 
         @Override // emu.grasscutter.net.proto.AvatarChangeCostumeRspOuterClass.AvatarChangeCostumeRspOrBuilder
@@ -148,8 +148,8 @@ public final class AvatarChangeCostumeRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AvatarChangeCostumeRspOuterClass.AvatarChangeCostumeRspOrBuilder
-        public int getCostumeId() {
-            return this.costumeId_;
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,14 +167,14 @@ public final class AvatarChangeCostumeRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.costumeId_ != 0) {
-                output.writeUInt32(3, this.costumeId_);
-            }
             if (this.avatarGuid_ != 0) {
-                output.writeUInt64(9, this.avatarGuid_);
+                output.writeUInt64(5, this.avatarGuid_);
             }
             if (this.retcode_ != 0) {
-                output.writeInt32(10, this.retcode_);
+                output.writeInt32(7, this.retcode_);
+            }
+            if (this.costumeId_ != 0) {
+                output.writeUInt32(15, this.costumeId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class AvatarChangeCostumeRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.costumeId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.costumeId_);
-            }
             if (this.avatarGuid_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(9, this.avatarGuid_);
+                size2 = 0 + CodedOutputStream.computeUInt64Size(5, this.avatarGuid_);
             }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(10, this.retcode_);
+                size2 += CodedOutputStream.computeInt32Size(7, this.retcode_);
+            }
+            if (this.costumeId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.costumeId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class AvatarChangeCostumeRspOuterClass {
                 return equals(obj);
             }
             AvatarChangeCostumeRsp other = (AvatarChangeCostumeRsp) obj;
-            return getRetcode() == other.getRetcode() && getAvatarGuid() == other.getAvatarGuid() && getCostumeId() == other.getCostumeId() && this.unknownFields.equals(other.unknownFields);
+            return getCostumeId() == other.getCostumeId() && getAvatarGuid() == other.getAvatarGuid() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class AvatarChangeCostumeRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getRetcode())) + 9)) + Internal.hashLong(getAvatarGuid()))) + 3)) + getCostumeId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getCostumeId())) + 5)) + Internal.hashLong(getAvatarGuid()))) + 7)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -296,9 +296,9 @@ public final class AvatarChangeCostumeRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarChangeCostumeRspOuterClass$AvatarChangeCostumeRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements AvatarChangeCostumeRspOrBuilder {
-            private int retcode_;
-            private long avatarGuid_;
             private int costumeId_;
+            private long avatarGuid_;
+            private int retcode_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return AvatarChangeCostumeRspOuterClass.internal_static_AvatarChangeCostumeRsp_descriptor;
@@ -326,9 +326,9 @@ public final class AvatarChangeCostumeRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.retcode_ = 0;
-                this.avatarGuid_ = 0;
                 this.costumeId_ = 0;
+                this.avatarGuid_ = 0;
+                this.retcode_ = 0;
                 return this;
             }
 
@@ -354,9 +354,9 @@ public final class AvatarChangeCostumeRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public AvatarChangeCostumeRsp buildPartial() {
                 AvatarChangeCostumeRsp result = new AvatarChangeCostumeRsp(this);
-                result.retcode_ = this.retcode_;
-                result.avatarGuid_ = this.avatarGuid_;
                 result.costumeId_ = this.costumeId_;
+                result.avatarGuid_ = this.avatarGuid_;
+                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -404,14 +404,14 @@ public final class AvatarChangeCostumeRspOuterClass {
                 if (other == AvatarChangeCostumeRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
+                if (other.getCostumeId() != 0) {
+                    setCostumeId(other.getCostumeId());
                 }
                 if (other.getAvatarGuid() != 0) {
                     setAvatarGuid(other.getAvatarGuid());
                 }
-                if (other.getCostumeId() != 0) {
-                    setCostumeId(other.getCostumeId());
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -446,18 +446,18 @@ public final class AvatarChangeCostumeRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AvatarChangeCostumeRspOuterClass.AvatarChangeCostumeRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
+            public int getCostumeId() {
+                return this.costumeId_;
             }
 
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
+            public Builder setCostumeId(int value) {
+                this.costumeId_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
+            public Builder clearCostumeId() {
+                this.costumeId_ = 0;
                 onChanged();
                 return this;
             }
@@ -480,18 +480,18 @@ public final class AvatarChangeCostumeRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AvatarChangeCostumeRspOuterClass.AvatarChangeCostumeRspOrBuilder
-            public int getCostumeId() {
-                return this.costumeId_;
+            public int getRetcode() {
+                return this.retcode_;
             }
 
-            public Builder setCostumeId(int value) {
-                this.costumeId_ = value;
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearCostumeId() {
-                this.costumeId_ = 0;
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }

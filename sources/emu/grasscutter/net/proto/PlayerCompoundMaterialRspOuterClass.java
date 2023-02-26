@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerCompoundMaterialRspOuterClass.class */
 public final class PlayerCompoundMaterialRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fPlayerCompoundMaterialRsp.proto\u001a\u0017CompoundQueueData.proto\"]\n\u0019PlayerCompoundMaterialRsp\u0012/\n\u0013compound_queue_data\u0018\t \u0001(\u000b2\u0012.CompoundQueueData\u0012\u000f\n\u0007retcode\u0018\u0005 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CompoundQueueDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fPlayerCompoundMaterialRsp.proto\u001a\u0017CompoundQueueData.proto\"[\n\u0019PlayerCompoundMaterialRsp\u0012-\n\u0011compoundQueueData\u0018\b \u0001(\u000b2\u0012.CompoundQueueData\u0012\u000f\n\u0007retcode\u0018\u000f \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CompoundQueueDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_PlayerCompoundMaterialRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerCompoundMaterialRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerCompoundMaterialRsp_descriptor, new String[]{"CompoundQueueData", "Retcode"});
 
@@ -49,9 +49,9 @@ public final class PlayerCompoundMaterialRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerCompoundMaterialRspOuterClass$PlayerCompoundMaterialRsp.class */
     public static final class PlayerCompoundMaterialRsp extends GeneratedMessageV3 implements PlayerCompoundMaterialRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int COMPOUND_QUEUE_DATA_FIELD_NUMBER = 9;
+        public static final int COMPOUNDQUEUEDATA_FIELD_NUMBER = 8;
         private CompoundQueueDataOuterClass.CompoundQueueData compoundQueueData_;
-        public static final int RETCODE_FIELD_NUMBER = 5;
+        public static final int RETCODE_FIELD_NUMBER = 15;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final PlayerCompoundMaterialRsp DEFAULT_INSTANCE = new PlayerCompoundMaterialRsp();
@@ -99,10 +99,7 @@ public final class PlayerCompoundMaterialRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 40:
-                                    this.retcode_ = input.readInt32();
-                                    break;
-                                case 74:
+                                case 66:
                                     CompoundQueueDataOuterClass.CompoundQueueData.Builder subBuilder = this.compoundQueueData_ != null ? this.compoundQueueData_.toBuilder() : null;
                                     this.compoundQueueData_ = (CompoundQueueDataOuterClass.CompoundQueueData) input.readMessage(CompoundQueueDataOuterClass.CompoundQueueData.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -112,6 +109,9 @@ public final class PlayerCompoundMaterialRspOuterClass {
                                         this.compoundQueueData_ = subBuilder.buildPartial();
                                         break;
                                     }
+                                case 120:
+                                    this.retcode_ = input.readInt32();
+                                    break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                         break;
@@ -177,11 +177,11 @@ public final class PlayerCompoundMaterialRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.retcode_ != 0) {
-                output.writeInt32(5, this.retcode_);
-            }
             if (this.compoundQueueData_ != null) {
-                output.writeMessage(9, getCompoundQueueData());
+                output.writeMessage(8, getCompoundQueueData());
+            }
+            if (this.retcode_ != 0) {
+                output.writeInt32(15, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -193,11 +193,11 @@ public final class PlayerCompoundMaterialRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(5, this.retcode_);
-            }
             if (this.compoundQueueData_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(9, getCompoundQueueData());
+                size2 = 0 + CodedOutputStream.computeMessageSize(8, getCompoundQueueData());
+            }
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(15, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,9 +226,9 @@ public final class PlayerCompoundMaterialRspOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasCompoundQueueData()) {
-                hash = (53 * ((37 * hash) + 9)) + getCompoundQueueData().hashCode();
+                hash = (53 * ((37 * hash) + 8)) + getCompoundQueueData().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 5)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 15)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

@@ -77,7 +77,7 @@ public class DumpState {
     }
 
     void dumpConstants(Prototype prototype) throws IOException {
-        LuaValue[] luaValueArr = prototype.f3295k;
+        LuaValue[] luaValueArr = prototype.f3259k;
         int length = luaValueArr.length;
         dumpInt(length);
         for (LuaValue luaValue : luaValueArr) {
@@ -127,10 +127,10 @@ public class DumpState {
                     break;
             }
         }
-        int length2 = prototype.f3296p.length;
+        int length2 = prototype.f3260p.length;
         dumpInt(length2);
         for (int i = 0; i < length2; i++) {
-            dumpFunction(prototype.f3296p[i]);
+            dumpFunction(prototype.f3260p[i]);
         }
     }
 

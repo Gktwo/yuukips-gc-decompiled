@@ -23,9 +23,9 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BreakoutSyncConnectUidInfoOuterClass.class */
 public final class BreakoutSyncConnectUidInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n BreakoutSyncConnectUidInfo.proto\"Z\n\u001aBreakoutSyncConnectUidInfo\u0012\u000b\n\u0003uid\u0018\u0001 \u0001(\r\u0012\u0015\n\rskill_id_list\u0018\u0002 \u0003(\r\u0012\u0018\n\u0010skill_level_list\u0018\u0003 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n BreakoutSyncConnectUidInfo.proto\"S\n\u001aBreakoutSyncConnectUidInfo\u0012\u000b\n\u0003uid\u0018\u0001 \u0001(\r\u0012\u0013\n\u000bskillIdList\u0018\u0002 \u0003(\r\u0012\u0013\n\u000bnamghchjljl\u0018\u0003 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_BreakoutSyncConnectUidInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_BreakoutSyncConnectUidInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BreakoutSyncConnectUidInfo_descriptor, new String[]{"Uid", "SkillIdList", "SkillLevelList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_BreakoutSyncConnectUidInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BreakoutSyncConnectUidInfo_descriptor, new String[]{"Uid", "SkillIdList", "Namghchjljl"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BreakoutSyncConnectUidInfoOuterClass$BreakoutSyncConnectUidInfoOrBuilder.class */
     public interface BreakoutSyncConnectUidInfoOrBuilder extends MessageOrBuilder {
@@ -37,11 +37,11 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
 
         int getSkillIdList(int i);
 
-        List<Integer> getSkillLevelListList();
+        List<Integer> getNamghchjljlList();
 
-        int getSkillLevelListCount();
+        int getNamghchjljlCount();
 
-        int getSkillLevelList(int i);
+        int getNamghchjljl(int i);
     }
 
     private BreakoutSyncConnectUidInfoOuterClass() {
@@ -59,12 +59,12 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
         private static final long serialVersionUID = 0;
         public static final int UID_FIELD_NUMBER = 1;
         private int uid_;
-        public static final int SKILL_ID_LIST_FIELD_NUMBER = 2;
+        public static final int SKILLIDLIST_FIELD_NUMBER = 2;
         private Internal.IntList skillIdList_;
         private int skillIdListMemoizedSerializedSize;
-        public static final int SKILL_LEVEL_LIST_FIELD_NUMBER = 3;
-        private Internal.IntList skillLevelList_;
-        private int skillLevelListMemoizedSerializedSize;
+        public static final int NAMGHCHJLJL_FIELD_NUMBER = 3;
+        private Internal.IntList namghchjljl_;
+        private int namghchjljlMemoizedSerializedSize;
         private byte memoizedIsInitialized;
         private static final BreakoutSyncConnectUidInfo DEFAULT_INSTANCE = new BreakoutSyncConnectUidInfo();
         private static final Parser<BreakoutSyncConnectUidInfo> PARSER = new AbstractParser<BreakoutSyncConnectUidInfo>() { // from class: emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo.1
@@ -77,16 +77,16 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
         private BreakoutSyncConnectUidInfo(GeneratedMessageV3.Builder<?> builder) {
             super(builder);
             this.skillIdListMemoizedSerializedSize = -1;
-            this.skillLevelListMemoizedSerializedSize = -1;
+            this.namghchjljlMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
         }
 
         private BreakoutSyncConnectUidInfo() {
             this.skillIdListMemoizedSerializedSize = -1;
-            this.skillLevelListMemoizedSerializedSize = -1;
+            this.namghchjljlMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
             this.skillIdList_ = emptyIntList();
-            this.skillLevelList_ = emptyIntList();
+            this.namghchjljl_ = emptyIntList();
         }
 
         /* access modifiers changed from: protected */
@@ -142,19 +142,19 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
                                 break;
                             case 24:
                                 if ((mutable_bitField0_ & 2) == 0) {
-                                    this.skillLevelList_ = newIntList();
+                                    this.namghchjljl_ = newIntList();
                                     mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
                                 }
-                                this.skillLevelList_.addInt(input.readUInt32());
+                                this.namghchjljl_.addInt(input.readUInt32());
                                 break;
                             case 26:
                                 int limit2 = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 2) == 0 && input.getBytesUntilLimit() > 0) {
-                                    this.skillLevelList_ = newIntList();
+                                    this.namghchjljl_ = newIntList();
                                     mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
                                 }
                                 while (input.getBytesUntilLimit() > 0) {
-                                    this.skillLevelList_.addInt(input.readUInt32());
+                                    this.namghchjljl_.addInt(input.readUInt32());
                                 }
                                 input.popLimit(limit2);
                                 break;
@@ -178,7 +178,7 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
                     this.skillIdList_.makeImmutable();
                 }
                 if ((mutable_bitField0_ & 2) != 0) {
-                    this.skillLevelList_.makeImmutable();
+                    this.namghchjljl_.makeImmutable();
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -215,18 +215,18 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfoOrBuilder
-        public List<Integer> getSkillLevelListList() {
-            return this.skillLevelList_;
+        public List<Integer> getNamghchjljlList() {
+            return this.namghchjljl_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfoOrBuilder
-        public int getSkillLevelListCount() {
-            return this.skillLevelList_.size();
+        public int getNamghchjljlCount() {
+            return this.namghchjljl_.size();
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfoOrBuilder
-        public int getSkillLevelList(int index) {
-            return this.skillLevelList_.getInt(index);
+        public int getNamghchjljl(int index) {
+            return this.namghchjljl_.getInt(index);
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -255,12 +255,12 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
             for (int i = 0; i < this.skillIdList_.size(); i++) {
                 output.writeUInt32NoTag(this.skillIdList_.getInt(i));
             }
-            if (getSkillLevelListList().size() > 0) {
+            if (getNamghchjljlList().size() > 0) {
                 output.writeUInt32NoTag(26);
-                output.writeUInt32NoTag(this.skillLevelListMemoizedSerializedSize);
+                output.writeUInt32NoTag(this.namghchjljlMemoizedSerializedSize);
             }
-            for (int i2 = 0; i2 < this.skillLevelList_.size(); i2++) {
-                output.writeUInt32NoTag(this.skillLevelList_.getInt(i2));
+            for (int i2 = 0; i2 < this.namghchjljl_.size(); i2++) {
+                output.writeUInt32NoTag(this.namghchjljl_.getInt(i2));
             }
             this.unknownFields.writeTo(output);
         }
@@ -285,14 +285,14 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
             }
             this.skillIdListMemoizedSerializedSize = dataSize;
             int dataSize2 = 0;
-            for (int i2 = 0; i2 < this.skillLevelList_.size(); i2++) {
-                dataSize2 += CodedOutputStream.computeUInt32SizeNoTag(this.skillLevelList_.getInt(i2));
+            for (int i2 = 0; i2 < this.namghchjljl_.size(); i2++) {
+                dataSize2 += CodedOutputStream.computeUInt32SizeNoTag(this.namghchjljl_.getInt(i2));
             }
             int size4 = size3 + dataSize2;
-            if (!getSkillLevelListList().isEmpty()) {
+            if (!getNamghchjljlList().isEmpty()) {
                 size4 = size4 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize2);
             }
-            this.skillLevelListMemoizedSerializedSize = dataSize2;
+            this.namghchjljlMemoizedSerializedSize = dataSize2;
             int size5 = size4 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size5;
             return size5;
@@ -307,7 +307,7 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
                 return equals(obj);
             }
             BreakoutSyncConnectUidInfo other = (BreakoutSyncConnectUidInfo) obj;
-            return getUid() == other.getUid() && getSkillIdListList().equals(other.getSkillIdListList()) && getSkillLevelListList().equals(other.getSkillLevelListList()) && this.unknownFields.equals(other.unknownFields);
+            return getUid() == other.getUid() && getSkillIdListList().equals(other.getSkillIdListList()) && getNamghchjljlList().equals(other.getNamghchjljlList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -319,8 +319,8 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
             if (getSkillIdListCount() > 0) {
                 hash = (53 * ((37 * hash) + 2)) + getSkillIdListList().hashCode();
             }
-            if (getSkillLevelListCount() > 0) {
-                hash = (53 * ((37 * hash) + 3)) + getSkillLevelListList().hashCode();
+            if (getNamghchjljlCount() > 0) {
+                hash = (53 * ((37 * hash) + 3)) + getNamghchjljlList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -404,7 +404,7 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
             private int bitField0_;
             private int uid_;
             private Internal.IntList skillIdList_ = BreakoutSyncConnectUidInfo.emptyIntList();
-            private Internal.IntList skillLevelList_ = BreakoutSyncConnectUidInfo.emptyIntList();
+            private Internal.IntList namghchjljl_ = BreakoutSyncConnectUidInfo.emptyIntList();
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return BreakoutSyncConnectUidInfoOuterClass.internal_static_BreakoutSyncConnectUidInfo_descriptor;
@@ -435,7 +435,7 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
                 this.uid_ = 0;
                 this.skillIdList_ = BreakoutSyncConnectUidInfo.emptyIntList();
                 this.bitField0_ &= -2;
-                this.skillLevelList_ = BreakoutSyncConnectUidInfo.emptyIntList();
+                this.namghchjljl_ = BreakoutSyncConnectUidInfo.emptyIntList();
                 this.bitField0_ &= -3;
                 return this;
             }
@@ -470,10 +470,10 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
                 }
                 result.skillIdList_ = this.skillIdList_;
                 if ((this.bitField0_ & 2) != 0) {
-                    this.skillLevelList_.makeImmutable();
+                    this.namghchjljl_.makeImmutable();
                     this.bitField0_ &= -3;
                 }
-                result.skillLevelList_ = this.skillLevelList_;
+                result.namghchjljl_ = this.namghchjljl_;
                 onBuilt();
                 return result;
             }
@@ -534,13 +534,13 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
                     }
                     onChanged();
                 }
-                if (!other.skillLevelList_.isEmpty()) {
-                    if (this.skillLevelList_.isEmpty()) {
-                        this.skillLevelList_ = other.skillLevelList_;
+                if (!other.namghchjljl_.isEmpty()) {
+                    if (this.namghchjljl_.isEmpty()) {
+                        this.namghchjljl_ = other.namghchjljl_;
                         this.bitField0_ &= -3;
                     } else {
-                        ensureSkillLevelListIsMutable();
-                        this.skillLevelList_.addAll(other.skillLevelList_);
+                        ensureNamghchjljlIsMutable();
+                        this.namghchjljl_.addAll(other.namghchjljl_);
                     }
                     onChanged();
                 }
@@ -643,51 +643,51 @@ public final class BreakoutSyncConnectUidInfoOuterClass {
                 return this;
             }
 
-            private void ensureSkillLevelListIsMutable() {
+            private void ensureNamghchjljlIsMutable() {
                 if ((this.bitField0_ & 2) == 0) {
-                    this.skillLevelList_ = BreakoutSyncConnectUidInfo.mutableCopy(this.skillLevelList_);
+                    this.namghchjljl_ = BreakoutSyncConnectUidInfo.mutableCopy(this.namghchjljl_);
                     this.bitField0_ |= 2;
                 }
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfoOrBuilder
-            public List<Integer> getSkillLevelListList() {
-                return (this.bitField0_ & 2) != 0 ? Collections.unmodifiableList(this.skillLevelList_) : this.skillLevelList_;
+            public List<Integer> getNamghchjljlList() {
+                return (this.bitField0_ & 2) != 0 ? Collections.unmodifiableList(this.namghchjljl_) : this.namghchjljl_;
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfoOrBuilder
-            public int getSkillLevelListCount() {
-                return this.skillLevelList_.size();
+            public int getNamghchjljlCount() {
+                return this.namghchjljl_.size();
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfoOrBuilder
-            public int getSkillLevelList(int index) {
-                return this.skillLevelList_.getInt(index);
+            public int getNamghchjljl(int index) {
+                return this.namghchjljl_.getInt(index);
             }
 
-            public Builder setSkillLevelList(int index, int value) {
-                ensureSkillLevelListIsMutable();
-                this.skillLevelList_.setInt(index, value);
+            public Builder setNamghchjljl(int index, int value) {
+                ensureNamghchjljlIsMutable();
+                this.namghchjljl_.setInt(index, value);
                 onChanged();
                 return this;
             }
 
-            public Builder addSkillLevelList(int value) {
-                ensureSkillLevelListIsMutable();
-                this.skillLevelList_.addInt(value);
+            public Builder addNamghchjljl(int value) {
+                ensureNamghchjljlIsMutable();
+                this.namghchjljl_.addInt(value);
                 onChanged();
                 return this;
             }
 
-            public Builder addAllSkillLevelList(Iterable<? extends Integer> values) {
-                ensureSkillLevelListIsMutable();
-                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.skillLevelList_);
+            public Builder addAllNamghchjljl(Iterable<? extends Integer> values) {
+                ensureNamghchjljlIsMutable();
+                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.namghchjljl_);
                 onChanged();
                 return this;
             }
 
-            public Builder clearSkillLevelList() {
-                this.skillLevelList_ = BreakoutSyncConnectUidInfo.emptyIntList();
+            public Builder clearNamghchjljl() {
+                this.namghchjljl_ = BreakoutSyncConnectUidInfo.emptyIntList();
                 this.bitField0_ &= -3;
                 onChanged();
                 return this;

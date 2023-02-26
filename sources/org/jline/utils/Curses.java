@@ -10,10 +10,10 @@ import java.io.StringWriter;
 public final class Curses {
 
     /* renamed from: sv */
-    private static final Object[] f3267sv = new Object[26];
+    private static final Object[] f3231sv = new Object[26];
 
     /* renamed from: dv */
-    private static final Object[] f3268dv = new Object[26];
+    private static final Object[] f3232dv = new Object[26];
     private static final int IFTE_NONE = 0;
     private static final int IFTE_IF = 1;
     private static final int IFTE_THEN = 2;

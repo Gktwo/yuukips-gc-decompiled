@@ -307,23 +307,23 @@ public class StatisticsServlet extends HttpServlet {
         private int indent = 0;
 
         /* renamed from: sb */
-        private final StringBuilder f3154sb = new StringBuilder();
+        private final StringBuilder f3118sb = new StringBuilder();
 
         @Override // org.eclipse.jetty.servlet.StatisticsServlet.OutputProducer
         public CharSequence generate(String id, Map<String, Object> map) {
             add(id, map);
-            return this.f3154sb;
+            return this.f3118sb;
         }
 
         private void indent() {
-            this.f3154sb.append("\n");
+            this.f3118sb.append("\n");
             for (int i = 0; i < this.indent; i++) {
-                this.f3154sb.append(' ').append(' ');
+                this.f3118sb.append(' ').append(' ');
             }
         }
 
         private void add(String id, Object obj) {
-            this.f3154sb.append('<').append(StringUtil.sanitizeXmlString(id)).append('>');
+            this.f3118sb.append('<').append(StringUtil.sanitizeXmlString(id)).append('>');
             this.indent++;
             boolean wasIndented = false;
             if (obj instanceof Map) {
@@ -339,7 +339,7 @@ public class StatisticsServlet extends HttpServlet {
             if (wasIndented) {
                 indent();
             }
-            this.f3154sb.append("</").append(id).append('>');
+            this.f3118sb.append("</").append(id).append('>');
         }
 
         private void addMap(Map<String, ?> map) {
@@ -358,7 +358,7 @@ public class StatisticsServlet extends HttpServlet {
         }
 
         private void addObject(Object obj) {
-            this.f3154sb.append(StringUtil.sanitizeXmlString(Objects.toString(obj)));
+            this.f3118sb.append(StringUtil.sanitizeXmlString(Objects.toString(obj)));
         }
     }
 
@@ -368,33 +368,33 @@ public class StatisticsServlet extends HttpServlet {
         private int indent = 0;
 
         /* renamed from: sb */
-        private final StringBuilder f3153sb = new StringBuilder();
+        private final StringBuilder f3117sb = new StringBuilder();
 
         @Override // org.eclipse.jetty.servlet.StatisticsServlet.OutputProducer
         public CharSequence generate(String id, Map<String, Object> map) {
             add(id, map);
-            return this.f3153sb;
+            return this.f3117sb;
         }
 
         private void indent() {
             for (int i = 0; i < this.indent; i++) {
-                this.f3153sb.append(' ').append(' ');
+                this.f3117sb.append(' ').append(' ');
             }
         }
 
         private void add(String id, Object obj) {
             indent();
-            this.f3153sb.append(id).append(": ");
+            this.f3117sb.append(id).append(": ");
             this.indent++;
             if (obj instanceof Map) {
-                this.f3153sb.append('\n');
+                this.f3117sb.append('\n');
                 addMap((Map) obj);
             } else if (obj instanceof List) {
-                this.f3153sb.append('\n');
+                this.f3117sb.append('\n');
                 addList(id, (List) obj);
             } else {
                 addObject(obj);
-                this.f3153sb.append('\n');
+                this.f3117sb.append('\n');
             }
             this.indent--;
         }
@@ -413,7 +413,7 @@ public class StatisticsServlet extends HttpServlet {
         }
 
         private void addObject(Object obj) {
-            this.f3153sb.append(obj);
+            this.f3117sb.append(obj);
         }
     }
 
@@ -423,26 +423,26 @@ public class StatisticsServlet extends HttpServlet {
         private int indent = 0;
 
         /* renamed from: sb */
-        private final StringBuilder f3152sb = new StringBuilder();
+        private final StringBuilder f3116sb = new StringBuilder();
 
         @Override // org.eclipse.jetty.servlet.StatisticsServlet.OutputProducer
         public CharSequence generate(String id, Map<String, Object> map) {
-            this.f3152sb.append("<ul>\n");
+            this.f3116sb.append("<ul>\n");
             add(id, map);
-            this.f3152sb.append("</ul>\n");
-            return this.f3152sb;
+            this.f3116sb.append("</ul>\n");
+            return this.f3116sb;
         }
 
         private void indent() {
             for (int i = 0; i < this.indent; i++) {
-                this.f3152sb.append(' ').append(' ');
+                this.f3116sb.append(' ').append(' ');
             }
         }
 
         private void add(String id, Object obj) {
             indent();
             this.indent++;
-            this.f3152sb.append("<li><em>").append(StringUtil.sanitizeXmlString(id)).append("</em>: ");
+            this.f3116sb.append("<li><em>").append(StringUtil.sanitizeXmlString(id)).append("</em>: ");
             if (obj instanceof Map) {
                 addMap((Map) obj);
                 indent();
@@ -452,14 +452,14 @@ public class StatisticsServlet extends HttpServlet {
             } else {
                 addObject(obj);
             }
-            this.f3152sb.append("</li>\n");
+            this.f3116sb.append("</li>\n");
             this.indent--;
         }
 
         private void addMap(Map<String, ?> map) {
-            this.f3152sb.append("\n");
+            this.f3116sb.append("\n");
             indent();
-            this.f3152sb.append("<ul>\n");
+            this.f3116sb.append("<ul>\n");
             this.indent++;
             map.keySet().stream().sorted((v0, v1) -> {
                 return v0.compareToIgnoreCase(v1);
@@ -468,13 +468,13 @@ public class StatisticsServlet extends HttpServlet {
             });
             this.indent--;
             indent();
-            this.f3152sb.append("</ul>\n");
+            this.f3116sb.append("</ul>\n");
         }
 
         private void addList(String parentId, List<?> list) {
-            this.f3152sb.append("\n");
+            this.f3116sb.append("\n");
             indent();
-            this.f3152sb.append("<ul>\n");
+            this.f3116sb.append("<ul>\n");
             this.indent++;
             String childName = parentId.replaceFirst("s$", "");
             list.forEach(entry -> {
@@ -482,11 +482,11 @@ public class StatisticsServlet extends HttpServlet {
             });
             this.indent--;
             indent();
-            this.f3152sb.append("</ul>\n");
+            this.f3116sb.append("</ul>\n");
         }
 
         private void addObject(Object obj) {
-            this.f3152sb.append(StringUtil.sanitizeXmlString(Objects.toString(obj)));
+            this.f3116sb.append(StringUtil.sanitizeXmlString(Objects.toString(obj)));
         }
     }
 }

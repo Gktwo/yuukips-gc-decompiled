@@ -8,7 +8,7 @@ import emu.grasscutter.net.proto.WorldOwnerDailyTaskNotifyOuterClass;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketWorldOwnerDailyTaskNotify.class */
 public class PacketWorldOwnerDailyTaskNotify extends BasePacket {
     public PacketWorldOwnerDailyTaskNotify(Player player) {
-        super(193);
+        super(163);
         DailyTaskManager manager = player.getDailyTaskManager();
         WorldOwnerDailyTaskNotifyOuterClass.WorldOwnerDailyTaskNotify.Builder notify = WorldOwnerDailyTaskNotifyOuterClass.WorldOwnerDailyTaskNotify.newBuilder();
         manager.getDailyTasks().forEach(dailyTask -> {

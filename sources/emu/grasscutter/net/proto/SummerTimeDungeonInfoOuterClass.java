@@ -19,19 +19,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SummerTimeDungeonInfoOuterClass.class */
 public final class SummerTimeDungeonInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bSummerTimeDungeonInfo.proto\"\u0001\n\u0015SummerTimeDungeonInfo\u0012\u0012\n\ndungeon_id\u0018\t \u0001(\r\u0012\u001b\n\u0013Unk3300_GMKMNHIBPEP\u0018\u0001 \u0001(\r\u0012\u001b\n\u0013Unk3300_HJHODMOIMKG\u0018\b \u0001(\r\u0012\u001b\n\u0013Unk3300_GALEDJLAIPM\u0018\u0005 \u0001(\r\u0012\u001b\n\u0013Unk3300_EGGFJCICOBD\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bSummerTimeDungeonInfo.proto\"\u0001\n\u0015SummerTimeDungeonInfo\u0012\u001b\n\u0013Unk3300_HJHODMOIMKG\u0018\b \u0001(\r\u0012\u001b\n\u0013Unk3300_GALEDJLAIPM\u0018\u0002 \u0001(\r\u0012\u0011\n\tdungeonId\u0018\u0005 \u0001(\r\u0012\u001b\n\u0013Unk3300_GMKMNHIBPEP\u0018\u0004 \u0001(\r\u0012\u001b\n\u0013Unk3300_EGGFJCICOBD\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SummerTimeDungeonInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SummerTimeDungeonInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SummerTimeDungeonInfo_descriptor, new String[]{"DungeonId", "Unk3300GMKMNHIBPEP", "Unk3300HJHODMOIMKG", "Unk3300GALEDJLAIPM", "Unk3300EGGFJCICOBD"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SummerTimeDungeonInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SummerTimeDungeonInfo_descriptor, new String[]{"Unk3300HJHODMOIMKG", "Unk3300GALEDJLAIPM", "DungeonId", "Unk3300GMKMNHIBPEP", "Unk3300EGGFJCICOBD"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SummerTimeDungeonInfoOuterClass$SummerTimeDungeonInfoOrBuilder.class */
     public interface SummerTimeDungeonInfoOrBuilder extends MessageOrBuilder {
-        int getDungeonId();
-
-        int getUnk3300GMKMNHIBPEP();
-
         int getUnk3300HJHODMOIMKG();
 
         int getUnk3300GALEDJLAIPM();
+
+        int getDungeonId();
+
+        int getUnk3300GMKMNHIBPEP();
 
         int getUnk3300EGGFJCICOBD();
     }
@@ -49,15 +49,15 @@ public final class SummerTimeDungeonInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SummerTimeDungeonInfoOuterClass$SummerTimeDungeonInfo.class */
     public static final class SummerTimeDungeonInfo extends GeneratedMessageV3 implements SummerTimeDungeonInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int DUNGEON_ID_FIELD_NUMBER = 9;
-        private int dungeonId_;
-        public static final int UNK3300_GMKMNHIBPEP_FIELD_NUMBER = 1;
-        private int unk3300GMKMNHIBPEP_;
         public static final int UNK3300_HJHODMOIMKG_FIELD_NUMBER = 8;
         private int unk3300HJHODMOIMKG_;
-        public static final int UNK3300_GALEDJLAIPM_FIELD_NUMBER = 5;
+        public static final int UNK3300_GALEDJLAIPM_FIELD_NUMBER = 2;
         private int unk3300GALEDJLAIPM_;
-        public static final int UNK3300_EGGFJCICOBD_FIELD_NUMBER = 12;
+        public static final int DUNGEONID_FIELD_NUMBER = 5;
+        private int dungeonId_;
+        public static final int UNK3300_GMKMNHIBPEP_FIELD_NUMBER = 4;
+        private int unk3300GMKMNHIBPEP_;
+        public static final int UNK3300_EGGFJCICOBD_FIELD_NUMBER = 13;
         private int unk3300EGGFJCICOBD_;
         private byte memoizedIsInitialized;
         private static final SummerTimeDungeonInfo DEFAULT_INSTANCE = new SummerTimeDungeonInfo();
@@ -104,19 +104,19 @@ public final class SummerTimeDungeonInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
+                            case 16:
+                                this.unk3300GALEDJLAIPM_ = input.readUInt32();
+                                break;
+                            case 32:
                                 this.unk3300GMKMNHIBPEP_ = input.readUInt32();
                                 break;
                             case 40:
-                                this.unk3300GALEDJLAIPM_ = input.readUInt32();
+                                this.dungeonId_ = input.readUInt32();
                                 break;
                             case 64:
                                 this.unk3300HJHODMOIMKG_ = input.readUInt32();
                                 break;
-                            case 72:
-                                this.dungeonId_ = input.readUInt32();
-                                break;
-                            case 96:
+                            case 104:
                                 this.unk3300EGGFJCICOBD_ = input.readUInt32();
                                 break;
                             default:
@@ -149,16 +149,6 @@ public final class SummerTimeDungeonInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfoOrBuilder
-        public int getDungeonId() {
-            return this.dungeonId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfoOrBuilder
-        public int getUnk3300GMKMNHIBPEP() {
-            return this.unk3300GMKMNHIBPEP_;
-        }
-
-        @Override // emu.grasscutter.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfoOrBuilder
         public int getUnk3300HJHODMOIMKG() {
             return this.unk3300HJHODMOIMKG_;
         }
@@ -166,6 +156,16 @@ public final class SummerTimeDungeonInfoOuterClass {
         @Override // emu.grasscutter.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfoOrBuilder
         public int getUnk3300GALEDJLAIPM() {
             return this.unk3300GALEDJLAIPM_;
+        }
+
+        @Override // emu.grasscutter.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfoOrBuilder
+        public int getDungeonId() {
+            return this.dungeonId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfoOrBuilder
+        public int getUnk3300GMKMNHIBPEP() {
+            return this.unk3300GMKMNHIBPEP_;
         }
 
         @Override // emu.grasscutter.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfoOrBuilder
@@ -188,20 +188,20 @@ public final class SummerTimeDungeonInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.unk3300GMKMNHIBPEP_ != 0) {
-                output.writeUInt32(1, this.unk3300GMKMNHIBPEP_);
-            }
             if (this.unk3300GALEDJLAIPM_ != 0) {
-                output.writeUInt32(5, this.unk3300GALEDJLAIPM_);
+                output.writeUInt32(2, this.unk3300GALEDJLAIPM_);
+            }
+            if (this.unk3300GMKMNHIBPEP_ != 0) {
+                output.writeUInt32(4, this.unk3300GMKMNHIBPEP_);
+            }
+            if (this.dungeonId_ != 0) {
+                output.writeUInt32(5, this.dungeonId_);
             }
             if (this.unk3300HJHODMOIMKG_ != 0) {
                 output.writeUInt32(8, this.unk3300HJHODMOIMKG_);
             }
-            if (this.dungeonId_ != 0) {
-                output.writeUInt32(9, this.dungeonId_);
-            }
             if (this.unk3300EGGFJCICOBD_ != 0) {
-                output.writeUInt32(12, this.unk3300EGGFJCICOBD_);
+                output.writeUInt32(13, this.unk3300EGGFJCICOBD_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -213,20 +213,20 @@ public final class SummerTimeDungeonInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.unk3300GMKMNHIBPEP_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.unk3300GMKMNHIBPEP_);
-            }
             if (this.unk3300GALEDJLAIPM_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.unk3300GALEDJLAIPM_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.unk3300GALEDJLAIPM_);
+            }
+            if (this.unk3300GMKMNHIBPEP_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(4, this.unk3300GMKMNHIBPEP_);
+            }
+            if (this.dungeonId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(5, this.dungeonId_);
             }
             if (this.unk3300HJHODMOIMKG_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(8, this.unk3300HJHODMOIMKG_);
             }
-            if (this.dungeonId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.dungeonId_);
-            }
             if (this.unk3300EGGFJCICOBD_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.unk3300EGGFJCICOBD_);
+                size2 += CodedOutputStream.computeUInt32Size(13, this.unk3300EGGFJCICOBD_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -242,7 +242,7 @@ public final class SummerTimeDungeonInfoOuterClass {
                 return equals(obj);
             }
             SummerTimeDungeonInfo other = (SummerTimeDungeonInfo) obj;
-            return getDungeonId() == other.getDungeonId() && getUnk3300GMKMNHIBPEP() == other.getUnk3300GMKMNHIBPEP() && getUnk3300HJHODMOIMKG() == other.getUnk3300HJHODMOIMKG() && getUnk3300GALEDJLAIPM() == other.getUnk3300GALEDJLAIPM() && getUnk3300EGGFJCICOBD() == other.getUnk3300EGGFJCICOBD() && this.unknownFields.equals(other.unknownFields);
+            return getUnk3300HJHODMOIMKG() == other.getUnk3300HJHODMOIMKG() && getUnk3300GALEDJLAIPM() == other.getUnk3300GALEDJLAIPM() && getDungeonId() == other.getDungeonId() && getUnk3300GMKMNHIBPEP() == other.getUnk3300GMKMNHIBPEP() && getUnk3300EGGFJCICOBD() == other.getUnk3300EGGFJCICOBD() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -250,7 +250,7 @@ public final class SummerTimeDungeonInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getDungeonId())) + 1)) + getUnk3300GMKMNHIBPEP())) + 8)) + getUnk3300HJHODMOIMKG())) + 5)) + getUnk3300GALEDJLAIPM())) + 12)) + getUnk3300EGGFJCICOBD())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getUnk3300HJHODMOIMKG())) + 2)) + getUnk3300GALEDJLAIPM())) + 5)) + getDungeonId())) + 4)) + getUnk3300GMKMNHIBPEP())) + 13)) + getUnk3300EGGFJCICOBD())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -329,10 +329,10 @@ public final class SummerTimeDungeonInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SummerTimeDungeonInfoOuterClass$SummerTimeDungeonInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SummerTimeDungeonInfoOrBuilder {
-            private int dungeonId_;
-            private int unk3300GMKMNHIBPEP_;
             private int unk3300HJHODMOIMKG_;
             private int unk3300GALEDJLAIPM_;
+            private int dungeonId_;
+            private int unk3300GMKMNHIBPEP_;
             private int unk3300EGGFJCICOBD_;
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -361,10 +361,10 @@ public final class SummerTimeDungeonInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.dungeonId_ = 0;
-                this.unk3300GMKMNHIBPEP_ = 0;
                 this.unk3300HJHODMOIMKG_ = 0;
                 this.unk3300GALEDJLAIPM_ = 0;
+                this.dungeonId_ = 0;
+                this.unk3300GMKMNHIBPEP_ = 0;
                 this.unk3300EGGFJCICOBD_ = 0;
                 return this;
             }
@@ -391,10 +391,10 @@ public final class SummerTimeDungeonInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public SummerTimeDungeonInfo buildPartial() {
                 SummerTimeDungeonInfo result = new SummerTimeDungeonInfo(this);
-                result.dungeonId_ = this.dungeonId_;
-                result.unk3300GMKMNHIBPEP_ = this.unk3300GMKMNHIBPEP_;
                 result.unk3300HJHODMOIMKG_ = this.unk3300HJHODMOIMKG_;
                 result.unk3300GALEDJLAIPM_ = this.unk3300GALEDJLAIPM_;
+                result.dungeonId_ = this.dungeonId_;
+                result.unk3300GMKMNHIBPEP_ = this.unk3300GMKMNHIBPEP_;
                 result.unk3300EGGFJCICOBD_ = this.unk3300EGGFJCICOBD_;
                 onBuilt();
                 return result;
@@ -443,17 +443,17 @@ public final class SummerTimeDungeonInfoOuterClass {
                 if (other == SummerTimeDungeonInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getDungeonId() != 0) {
-                    setDungeonId(other.getDungeonId());
-                }
-                if (other.getUnk3300GMKMNHIBPEP() != 0) {
-                    setUnk3300GMKMNHIBPEP(other.getUnk3300GMKMNHIBPEP());
-                }
                 if (other.getUnk3300HJHODMOIMKG() != 0) {
                     setUnk3300HJHODMOIMKG(other.getUnk3300HJHODMOIMKG());
                 }
                 if (other.getUnk3300GALEDJLAIPM() != 0) {
                     setUnk3300GALEDJLAIPM(other.getUnk3300GALEDJLAIPM());
+                }
+                if (other.getDungeonId() != 0) {
+                    setDungeonId(other.getDungeonId());
+                }
+                if (other.getUnk3300GMKMNHIBPEP() != 0) {
+                    setUnk3300GMKMNHIBPEP(other.getUnk3300GMKMNHIBPEP());
                 }
                 if (other.getUnk3300EGGFJCICOBD() != 0) {
                     setUnk3300EGGFJCICOBD(other.getUnk3300EGGFJCICOBD());
@@ -491,40 +491,6 @@ public final class SummerTimeDungeonInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfoOrBuilder
-            public int getDungeonId() {
-                return this.dungeonId_;
-            }
-
-            public Builder setDungeonId(int value) {
-                this.dungeonId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearDungeonId() {
-                this.dungeonId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfoOrBuilder
-            public int getUnk3300GMKMNHIBPEP() {
-                return this.unk3300GMKMNHIBPEP_;
-            }
-
-            public Builder setUnk3300GMKMNHIBPEP(int value) {
-                this.unk3300GMKMNHIBPEP_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk3300GMKMNHIBPEP() {
-                this.unk3300GMKMNHIBPEP_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfoOrBuilder
             public int getUnk3300HJHODMOIMKG() {
                 return this.unk3300HJHODMOIMKG_;
             }
@@ -554,6 +520,40 @@ public final class SummerTimeDungeonInfoOuterClass {
 
             public Builder clearUnk3300GALEDJLAIPM() {
                 this.unk3300GALEDJLAIPM_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfoOrBuilder
+            public int getDungeonId() {
+                return this.dungeonId_;
+            }
+
+            public Builder setDungeonId(int value) {
+                this.dungeonId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearDungeonId() {
+                this.dungeonId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfoOrBuilder
+            public int getUnk3300GMKMNHIBPEP() {
+                return this.unk3300GMKMNHIBPEP_;
+            }
+
+            public Builder setUnk3300GMKMNHIBPEP(int value) {
+                this.unk3300GMKMNHIBPEP_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300GMKMNHIBPEP() {
+                this.unk3300GMKMNHIBPEP_ = 0;
                 onChanged();
                 return this;
             }

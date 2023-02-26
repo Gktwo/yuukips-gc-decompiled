@@ -24,7 +24,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ShowEquipOuterClass.class */
 public final class ShowEquipOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000fShowEquip.proto\u001a\u000fReliquary.proto\u001a\fWeapon.proto\"b\n\tShowEquip\u0012\u000f\n\u0007item_id\u0018\u0001 \u0001(\r\u0012\u001f\n\treliquary\u0018\u0002 \u0001(\u000b2\n.ReliquaryH��\u0012\u0019\n\u0006weapon\u0018\u0003 \u0001(\u000b2\u0007.WeaponH��B\b\n\u0006detailB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ReliquaryOuterClass.getDescriptor(), WeaponOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000fShowEquip.proto\u001a\u000fReliquary.proto\u001a\fWeapon.proto\"a\n\tShowEquip\u0012\u000e\n\u0006itemId\u0018\u0001 \u0001(\r\u0012\u001f\n\treliquary\u0018\u0002 \u0001(\u000b2\n.ReliquaryH��\u0012\u0019\n\u0006weapon\u0018\u0003 \u0001(\u000b2\u0007.WeaponH��B\b\n\u0006detailB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ReliquaryOuterClass.getDescriptor(), WeaponOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ShowEquip_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ShowEquip_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ShowEquip_descriptor, new String[]{"ItemId", "Reliquary", "Weapon", "Detail"});
 
@@ -62,7 +62,7 @@ public final class ShowEquipOuterClass {
         private static final long serialVersionUID = 0;
         private int detailCase_;
         private Object detail_;
-        public static final int ITEM_ID_FIELD_NUMBER = 1;
+        public static final int ITEMID_FIELD_NUMBER = 1;
         private int itemId_;
         public static final int RELIQUARY_FIELD_NUMBER = 2;
         public static final int WEAPON_FIELD_NUMBER = 3;

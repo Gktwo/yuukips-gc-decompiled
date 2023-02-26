@@ -592,7 +592,7 @@ public class Context {
     @NotNull
     /* renamed from: ip */
     public final String m1185ip() {
-        return ContextResolverKt.contextResolver(this).f974ip.invoke(this);
+        return ContextResolverKt.contextResolver(this).f938ip.invoke(this);
     }
 
     public final boolean isMultipart() {
@@ -812,10 +812,10 @@ public class Context {
                 resultStream2.close();
                 unit = Unit.INSTANCE;
             }
-            Result.m7062constructorimpl(unit);
+            Result.m7059constructorimpl(unit);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            Result.m7062constructorimpl(ResultKt.createFailure(th));
+            Result.m7059constructorimpl(ResultKt.createFailure(th));
         }
         CompletableFuture completedFuture = CompletableFuture.completedFuture(resultStream);
         Intrinsics.checkNotNullExpressionValue(completedFuture, "completedFuture(resultStream)");
@@ -865,13 +865,13 @@ public class Context {
     public final Context future(@NotNull CompletableFuture<?> completableFuture, @Nullable Consumer<Object> consumer) {
         Intrinsics.checkNotNullParameter(completableFuture, "future");
         this.resultReference.updateAndGet((v2) -> {
-            return m5810future$lambda9(r1, r2, v2);
+            return m5807future$lambda9(r1, r2, v2);
         });
         return this;
     }
 
     /* renamed from: future$lambda-9  reason: not valid java name */
-    private static final Result m5810future$lambda9(CompletableFuture $future, Consumer $callback, Result oldResult) {
+    private static final Result m5807future$lambda9(CompletableFuture $future, Consumer $callback, Result oldResult) {
         Intrinsics.checkNotNullParameter($future, "$future");
         oldResult.getFuture().cancel(true);
         return new Result(oldResult.getPrevious(), $future, $callback);

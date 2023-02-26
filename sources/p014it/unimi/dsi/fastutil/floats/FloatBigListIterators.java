@@ -172,51 +172,51 @@ public final class FloatBigListIterators {
     public static class UnmodifiableBigListIterator implements FloatBigListIterator {
 
         /* renamed from: i */
-        protected final FloatBigListIterator f1940i;
+        protected final FloatBigListIterator f1904i;
 
         public UnmodifiableBigListIterator(FloatBigListIterator i) {
-            this.f1940i = i;
+            this.f1904i = i;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1940i.hasNext();
+            return this.f1904i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1940i.hasPrevious();
+            return this.f1904i.hasPrevious();
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
         public float nextFloat() {
-            return this.f1940i.nextFloat();
+            return this.f1904i.nextFloat();
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatBidirectionalIterator
         public float previousFloat() {
-            return this.f1940i.previousFloat();
+            return this.f1904i.previousFloat();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long nextIndex() {
-            return this.f1940i.nextIndex();
+            return this.f1904i.nextIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long previousIndex() {
-            return this.f1940i.previousIndex();
+            return this.f1904i.previousIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
         public void forEachRemaining(FloatConsumer action) {
-            this.f1940i.forEachRemaining(action);
+            this.f1904i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Float> action) {
-            this.f1940i.forEachRemaining(action);
+            this.f1904i.forEachRemaining(action);
         }
     }
 
@@ -229,10 +229,10 @@ public final class FloatBigListIterators {
     public static class BigListIteratorListIterator implements FloatBigListIterator {
 
         /* renamed from: i */
-        protected final FloatListIterator f1939i;
+        protected final FloatListIterator f1903i;
 
         protected BigListIteratorListIterator(FloatListIterator i) {
-            this.f1939i = i;
+            this.f1903i = i;
         }
 
         private int intDisplacement(long n) {
@@ -244,78 +244,78 @@ public final class FloatBigListIterators {
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatBigListIterator
         public void set(float ok) {
-            this.f1939i.set(ok);
+            this.f1903i.set(ok);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatBigListIterator
         public void add(float ok) {
-            this.f1939i.add(ok);
+            this.f1903i.add(ok);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator
         public int back(int n) {
-            return this.f1939i.back(n);
+            return this.f1903i.back(n);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatBigListIterator
         public long back(long n) {
-            return (long) this.f1939i.back(intDisplacement(n));
+            return (long) this.f1903i.back(intDisplacement(n));
         }
 
         @Override // java.util.Iterator
         public void remove() {
-            this.f1939i.remove();
+            this.f1903i.remove();
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatBigListIterator, p014it.unimi.dsi.fastutil.floats.FloatBidirectionalIterator, p014it.unimi.dsi.fastutil.floats.FloatIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectIterator
         public int skip(int n) {
-            return this.f1939i.skip(n);
+            return this.f1903i.skip(n);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatBigListIterator
         public long skip(long n) {
-            return (long) this.f1939i.skip(intDisplacement(n));
+            return (long) this.f1903i.skip(intDisplacement(n));
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1939i.hasNext();
+            return this.f1903i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1939i.hasPrevious();
+            return this.f1903i.hasPrevious();
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
         public float nextFloat() {
-            return this.f1939i.nextFloat();
+            return this.f1903i.nextFloat();
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatBidirectionalIterator
         public float previousFloat() {
-            return this.f1939i.previousFloat();
+            return this.f1903i.previousFloat();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long nextIndex() {
-            return (long) this.f1939i.nextIndex();
+            return (long) this.f1903i.nextIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long previousIndex() {
-            return (long) this.f1939i.previousIndex();
+            return (long) this.f1903i.previousIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
         public void forEachRemaining(FloatConsumer action) {
-            this.f1939i.forEachRemaining(action);
+            this.f1903i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Float> action) {
-            this.f1939i.forEachRemaining(action);
+            this.f1903i.forEachRemaining(action);
         }
     }
 

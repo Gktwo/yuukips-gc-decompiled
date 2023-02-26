@@ -20,19 +20,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriMasterLevelDetailInfoOuterClass.class */
 public final class IrodoriMasterLevelDetailInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"IrodoriMasterLevelDetailInfo.proto\"s\n\u001cIrodoriMasterLevelDetailInfo\u0012\u0011\n\tis_finish\u0018\n \u0001(\b\u0012\u0012\n\ndifficulty\u0018\u000b \u0001(\r\u0012\u0013\n\u000bis_have_try\u0018\u000f \u0001(\b\u0012\u0017\n\u000fmin_finish_time\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"IrodoriMasterLevelDetailInfo.proto\"n\n\u001cIrodoriMasterLevelDetailInfo\u0012\u0010\n\bisFinish\u0018\u0006 \u0001(\b\u0012\u0011\n\tisHaveTry\u0018\u0005 \u0001(\b\u0012\u0015\n\rminFinishTime\u0018\u000e \u0001(\r\u0012\u0012\n\ndifficulty\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_IrodoriMasterLevelDetailInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_IrodoriMasterLevelDetailInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_IrodoriMasterLevelDetailInfo_descriptor, new String[]{"IsFinish", "Difficulty", "IsHaveTry", "MinFinishTime"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_IrodoriMasterLevelDetailInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_IrodoriMasterLevelDetailInfo_descriptor, new String[]{"IsFinish", "IsHaveTry", "MinFinishTime", "Difficulty"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriMasterLevelDetailInfoOuterClass$IrodoriMasterLevelDetailInfoOrBuilder.class */
     public interface IrodoriMasterLevelDetailInfoOrBuilder extends MessageOrBuilder {
         boolean getIsFinish();
 
-        int getDifficulty();
-
         boolean getIsHaveTry();
 
         int getMinFinishTime();
+
+        int getDifficulty();
     }
 
     private IrodoriMasterLevelDetailInfoOuterClass() {
@@ -48,14 +48,14 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriMasterLevelDetailInfoOuterClass$IrodoriMasterLevelDetailInfo.class */
     public static final class IrodoriMasterLevelDetailInfo extends GeneratedMessageV3 implements IrodoriMasterLevelDetailInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_FINISH_FIELD_NUMBER = 10;
+        public static final int ISFINISH_FIELD_NUMBER = 6;
         private boolean isFinish_;
-        public static final int DIFFICULTY_FIELD_NUMBER = 11;
-        private int difficulty_;
-        public static final int IS_HAVE_TRY_FIELD_NUMBER = 15;
+        public static final int ISHAVETRY_FIELD_NUMBER = 5;
         private boolean isHaveTry_;
-        public static final int MIN_FINISH_TIME_FIELD_NUMBER = 12;
+        public static final int MINFINISHTIME_FIELD_NUMBER = 14;
         private int minFinishTime_;
+        public static final int DIFFICULTY_FIELD_NUMBER = 3;
+        private int difficulty_;
         private byte memoizedIsInitialized;
         private static final IrodoriMasterLevelDetailInfo DEFAULT_INSTANCE = new IrodoriMasterLevelDetailInfo();
         private static final Parser<IrodoriMasterLevelDetailInfo> PARSER = new AbstractParser<IrodoriMasterLevelDetailInfo>() { // from class: emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo.1
@@ -102,17 +102,17 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 80:
-                                    this.isFinish_ = input.readBool();
-                                    break;
-                                case 88:
+                                case 24:
                                     this.difficulty_ = input.readUInt32();
                                     break;
-                                case 96:
-                                    this.minFinishTime_ = input.readUInt32();
-                                    break;
-                                case 120:
+                                case 40:
                                     this.isHaveTry_ = input.readBool();
+                                    break;
+                                case 48:
+                                    this.isFinish_ = input.readBool();
+                                    break;
+                                case 112:
+                                    this.minFinishTime_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -150,11 +150,6 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfoOrBuilder
-        public int getDifficulty() {
-            return this.difficulty_;
-        }
-
-        @Override // emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfoOrBuilder
         public boolean getIsHaveTry() {
             return this.isHaveTry_;
         }
@@ -162,6 +157,11 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
         @Override // emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfoOrBuilder
         public int getMinFinishTime() {
             return this.minFinishTime_;
+        }
+
+        @Override // emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfoOrBuilder
+        public int getDifficulty() {
+            return this.difficulty_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -179,17 +179,17 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.isFinish_) {
-                output.writeBool(10, this.isFinish_);
-            }
             if (this.difficulty_ != 0) {
-                output.writeUInt32(11, this.difficulty_);
-            }
-            if (this.minFinishTime_ != 0) {
-                output.writeUInt32(12, this.minFinishTime_);
+                output.writeUInt32(3, this.difficulty_);
             }
             if (this.isHaveTry_) {
-                output.writeBool(15, this.isHaveTry_);
+                output.writeBool(5, this.isHaveTry_);
+            }
+            if (this.isFinish_) {
+                output.writeBool(6, this.isFinish_);
+            }
+            if (this.minFinishTime_ != 0) {
+                output.writeUInt32(14, this.minFinishTime_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -201,17 +201,17 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.isFinish_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(10, this.isFinish_);
-            }
             if (this.difficulty_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.difficulty_);
-            }
-            if (this.minFinishTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.minFinishTime_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.difficulty_);
             }
             if (this.isHaveTry_) {
-                size2 += CodedOutputStream.computeBoolSize(15, this.isHaveTry_);
+                size2 += CodedOutputStream.computeBoolSize(5, this.isHaveTry_);
+            }
+            if (this.isFinish_) {
+                size2 += CodedOutputStream.computeBoolSize(6, this.isFinish_);
+            }
+            if (this.minFinishTime_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(14, this.minFinishTime_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -227,7 +227,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
                 return equals(obj);
             }
             IrodoriMasterLevelDetailInfo other = (IrodoriMasterLevelDetailInfo) obj;
-            return getIsFinish() == other.getIsFinish() && getDifficulty() == other.getDifficulty() && getIsHaveTry() == other.getIsHaveTry() && getMinFinishTime() == other.getMinFinishTime() && this.unknownFields.equals(other.unknownFields);
+            return getIsFinish() == other.getIsFinish() && getIsHaveTry() == other.getIsHaveTry() && getMinFinishTime() == other.getMinFinishTime() && getDifficulty() == other.getDifficulty() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -235,7 +235,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + Internal.hashBoolean(getIsFinish()))) + 11)) + getDifficulty())) + 15)) + Internal.hashBoolean(getIsHaveTry()))) + 12)) + getMinFinishTime())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + Internal.hashBoolean(getIsFinish()))) + 5)) + Internal.hashBoolean(getIsHaveTry()))) + 14)) + getMinFinishTime())) + 3)) + getDifficulty())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -315,9 +315,9 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriMasterLevelDetailInfoOuterClass$IrodoriMasterLevelDetailInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements IrodoriMasterLevelDetailInfoOrBuilder {
             private boolean isFinish_;
-            private int difficulty_;
             private boolean isHaveTry_;
             private int minFinishTime_;
+            private int difficulty_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return IrodoriMasterLevelDetailInfoOuterClass.internal_static_IrodoriMasterLevelDetailInfo_descriptor;
@@ -346,9 +346,9 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
             public Builder clear() {
                 clear();
                 this.isFinish_ = false;
-                this.difficulty_ = 0;
                 this.isHaveTry_ = false;
                 this.minFinishTime_ = 0;
+                this.difficulty_ = 0;
                 return this;
             }
 
@@ -375,9 +375,9 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
             public IrodoriMasterLevelDetailInfo buildPartial() {
                 IrodoriMasterLevelDetailInfo result = new IrodoriMasterLevelDetailInfo(this);
                 result.isFinish_ = this.isFinish_;
-                result.difficulty_ = this.difficulty_;
                 result.isHaveTry_ = this.isHaveTry_;
                 result.minFinishTime_ = this.minFinishTime_;
+                result.difficulty_ = this.difficulty_;
                 onBuilt();
                 return result;
             }
@@ -428,14 +428,14 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
                 if (other.getIsFinish()) {
                     setIsFinish(other.getIsFinish());
                 }
-                if (other.getDifficulty() != 0) {
-                    setDifficulty(other.getDifficulty());
-                }
                 if (other.getIsHaveTry()) {
                     setIsHaveTry(other.getIsHaveTry());
                 }
                 if (other.getMinFinishTime() != 0) {
                     setMinFinishTime(other.getMinFinishTime());
+                }
+                if (other.getDifficulty() != 0) {
+                    setDifficulty(other.getDifficulty());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -487,23 +487,6 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfoOrBuilder
-            public int getDifficulty() {
-                return this.difficulty_;
-            }
-
-            public Builder setDifficulty(int value) {
-                this.difficulty_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearDifficulty() {
-                this.difficulty_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfoOrBuilder
             public boolean getIsHaveTry() {
                 return this.isHaveTry_;
             }
@@ -533,6 +516,23 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
 
             public Builder clearMinFinishTime() {
                 this.minFinishTime_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfoOrBuilder
+            public int getDifficulty() {
+                return this.difficulty_;
+            }
+
+            public Builder setDifficulty(int value) {
+                this.difficulty_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearDifficulty() {
+                this.difficulty_ = 0;
                 onChanged();
                 return this;
             }

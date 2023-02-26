@@ -10,11 +10,11 @@ import p013io.javalin.http.Handler;
 /* renamed from: io.javalin.apibuilder.CrudFunction */
 /* loaded from: grasscutter.jar:io/javalin/apibuilder/CrudFunction.class */
 public enum CrudFunction {
-    GET_ALL("getAll", C27411.INSTANCE),
-    GET_ONE("getOne", C27422.INSTANCE),
-    CREATE("create", C27433.INSTANCE),
-    UPDATE("update", C27444.INSTANCE),
-    DELETE("delete", C27455.INSTANCE);
+    GET_ALL("getAll", C27331.INSTANCE),
+    GET_ONE("getOne", C27342.INSTANCE),
+    CREATE("create", C27353.INSTANCE),
+    UPDATE("update", C27364.INSTANCE),
+    DELETE("delete", C27375.INSTANCE);
     
     @NotNull
     private final String value;

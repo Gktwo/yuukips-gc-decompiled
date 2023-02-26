@@ -26,22 +26,12 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WorldPlayerLocationNotifyOuterClass.class */
 public final class WorldPlayerLocationNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fWorldPlayerLocationNotify.proto\u001a\u0018PlayerLocationInfo.proto\u001a\u001dPlayerWorldLocationInfo.proto\"\u0001\n\u0019WorldPlayerLocationNotify\u00127\n\u0015player_world_loc_list\u0018\u0005 \u0003(\u000b2\u0018.PlayerWorldLocationInfo\u0012,\n\u000fplayer_loc_list\u0018\u000e \u0003(\u000b2\u0013.PlayerLocationInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PlayerLocationInfoOuterClass.getDescriptor(), PlayerWorldLocationInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fWorldPlayerLocationNotify.proto\u001a\u0018PlayerLocationInfo.proto\u001a\u001dPlayerWorldLocationInfo.proto\"}\n\u0019WorldPlayerLocationNotify\u0012*\n\rplayerLocList\u0018\u0004 \u0003(\u000b2\u0013.PlayerLocationInfo\u00124\n\u0012playerWorldLocList\u0018\u0003 \u0003(\u000b2\u0018.PlayerWorldLocationInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PlayerLocationInfoOuterClass.getDescriptor(), PlayerWorldLocationInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_WorldPlayerLocationNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_WorldPlayerLocationNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WorldPlayerLocationNotify_descriptor, new String[]{"PlayerWorldLocList", "PlayerLocList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_WorldPlayerLocationNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WorldPlayerLocationNotify_descriptor, new String[]{"PlayerLocList", "PlayerWorldLocList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WorldPlayerLocationNotifyOuterClass$WorldPlayerLocationNotifyOrBuilder.class */
     public interface WorldPlayerLocationNotifyOrBuilder extends MessageOrBuilder {
-        List<PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo> getPlayerWorldLocListList();
-
-        PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo getPlayerWorldLocList(int i);
-
-        int getPlayerWorldLocListCount();
-
-        List<? extends PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder> getPlayerWorldLocListOrBuilderList();
-
-        PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder getPlayerWorldLocListOrBuilder(int i);
-
         List<PlayerLocationInfoOuterClass.PlayerLocationInfo> getPlayerLocListList();
 
         PlayerLocationInfoOuterClass.PlayerLocationInfo getPlayerLocList(int i);
@@ -51,6 +41,16 @@ public final class WorldPlayerLocationNotifyOuterClass {
         List<? extends PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder> getPlayerLocListOrBuilderList();
 
         PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder getPlayerLocListOrBuilder(int i);
+
+        List<PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo> getPlayerWorldLocListList();
+
+        PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo getPlayerWorldLocList(int i);
+
+        int getPlayerWorldLocListCount();
+
+        List<? extends PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder> getPlayerWorldLocListOrBuilderList();
+
+        PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder getPlayerWorldLocListOrBuilder(int i);
     }
 
     private WorldPlayerLocationNotifyOuterClass() {
@@ -66,10 +66,10 @@ public final class WorldPlayerLocationNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WorldPlayerLocationNotifyOuterClass$WorldPlayerLocationNotify.class */
     public static final class WorldPlayerLocationNotify extends GeneratedMessageV3 implements WorldPlayerLocationNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PLAYER_WORLD_LOC_LIST_FIELD_NUMBER = 5;
-        private List<PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo> playerWorldLocList_;
-        public static final int PLAYER_LOC_LIST_FIELD_NUMBER = 14;
+        public static final int PLAYERLOCLIST_FIELD_NUMBER = 4;
         private List<PlayerLocationInfoOuterClass.PlayerLocationInfo> playerLocList_;
+        public static final int PLAYERWORLDLOCLIST_FIELD_NUMBER = 3;
+        private List<PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo> playerWorldLocList_;
         private byte memoizedIsInitialized;
         private static final WorldPlayerLocationNotify DEFAULT_INSTANCE = new WorldPlayerLocationNotify();
         private static final Parser<WorldPlayerLocationNotify> PARSER = new AbstractParser<WorldPlayerLocationNotify>() { // from class: emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotify.1
@@ -86,8 +86,8 @@ public final class WorldPlayerLocationNotifyOuterClass {
 
         private WorldPlayerLocationNotify() {
             this.memoizedIsInitialized = -1;
-            this.playerWorldLocList_ = Collections.emptyList();
             this.playerLocList_ = Collections.emptyList();
+            this.playerWorldLocList_ = Collections.emptyList();
         }
 
         /* access modifiers changed from: protected */
@@ -120,17 +120,17 @@ public final class WorldPlayerLocationNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 42:
-                                if ((mutable_bitField0_ & 1) == 0) {
+                            case 26:
+                                if ((mutable_bitField0_ & 2) == 0) {
                                     this.playerWorldLocList_ = new ArrayList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
                                 }
                                 this.playerWorldLocList_.add((PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo) input.readMessage(PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.parser(), extensionRegistry));
                                 break;
-                            case 114:
-                                if ((mutable_bitField0_ & 2) == 0) {
+                            case 34:
+                                if ((mutable_bitField0_ & 1) == 0) {
                                     this.playerLocList_ = new ArrayList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                 }
                                 this.playerLocList_.add((PlayerLocationInfoOuterClass.PlayerLocationInfo) input.readMessage(PlayerLocationInfoOuterClass.PlayerLocationInfo.parser(), extensionRegistry));
                                 break;
@@ -150,10 +150,10 @@ public final class WorldPlayerLocationNotifyOuterClass {
                     }
                 }
             } finally {
-                if ((mutable_bitField0_ & 1) != 0) {
+                if ((mutable_bitField0_ & 2) != 0) {
                     this.playerWorldLocList_ = Collections.unmodifiableList(this.playerWorldLocList_);
                 }
-                if ((mutable_bitField0_ & 2) != 0) {
+                if ((mutable_bitField0_ & 1) != 0) {
                     this.playerLocList_ = Collections.unmodifiableList(this.playerLocList_);
                 }
                 this.unknownFields = unknownFields.build();
@@ -168,31 +168,6 @@ public final class WorldPlayerLocationNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return WorldPlayerLocationNotifyOuterClass.internal_static_WorldPlayerLocationNotify_fieldAccessorTable.ensureFieldAccessorsInitialized(WorldPlayerLocationNotify.class, Builder.class);
-        }
-
-        @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
-        public List<PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo> getPlayerWorldLocListList() {
-            return this.playerWorldLocList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
-        public List<? extends PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder> getPlayerWorldLocListOrBuilderList() {
-            return this.playerWorldLocList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
-        public int getPlayerWorldLocListCount() {
-            return this.playerWorldLocList_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
-        public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo getPlayerWorldLocList(int index) {
-            return this.playerWorldLocList_.get(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
-        public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder getPlayerWorldLocListOrBuilder(int index) {
-            return this.playerWorldLocList_.get(index);
         }
 
         @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
@@ -220,6 +195,31 @@ public final class WorldPlayerLocationNotifyOuterClass {
             return this.playerLocList_.get(index);
         }
 
+        @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
+        public List<PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo> getPlayerWorldLocListList() {
+            return this.playerWorldLocList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
+        public List<? extends PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder> getPlayerWorldLocListOrBuilderList() {
+            return this.playerWorldLocList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
+        public int getPlayerWorldLocListCount() {
+            return this.playerWorldLocList_.size();
+        }
+
+        @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
+        public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo getPlayerWorldLocList(int index) {
+            return this.playerWorldLocList_.get(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
+        public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder getPlayerWorldLocListOrBuilder(int index) {
+            return this.playerWorldLocList_.get(index);
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -236,10 +236,10 @@ public final class WorldPlayerLocationNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.playerWorldLocList_.size(); i++) {
-                output.writeMessage(5, this.playerWorldLocList_.get(i));
+                output.writeMessage(3, this.playerWorldLocList_.get(i));
             }
             for (int i2 = 0; i2 < this.playerLocList_.size(); i2++) {
-                output.writeMessage(14, this.playerLocList_.get(i2));
+                output.writeMessage(4, this.playerLocList_.get(i2));
             }
             this.unknownFields.writeTo(output);
         }
@@ -252,10 +252,10 @@ public final class WorldPlayerLocationNotifyOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.playerWorldLocList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(5, this.playerWorldLocList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(3, this.playerWorldLocList_.get(i));
             }
             for (int i2 = 0; i2 < this.playerLocList_.size(); i2++) {
-                size2 += CodedOutputStream.computeMessageSize(14, this.playerLocList_.get(i2));
+                size2 += CodedOutputStream.computeMessageSize(4, this.playerLocList_.get(i2));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -271,7 +271,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
                 return equals(obj);
             }
             WorldPlayerLocationNotify other = (WorldPlayerLocationNotify) obj;
-            return getPlayerWorldLocListList().equals(other.getPlayerWorldLocListList()) && getPlayerLocListList().equals(other.getPlayerLocListList()) && this.unknownFields.equals(other.unknownFields);
+            return getPlayerLocListList().equals(other.getPlayerLocListList()) && getPlayerWorldLocListList().equals(other.getPlayerWorldLocListList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -280,11 +280,11 @@ public final class WorldPlayerLocationNotifyOuterClass {
                 return this.memoizedHashCode;
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
-            if (getPlayerWorldLocListCount() > 0) {
-                hash = (53 * ((37 * hash) + 5)) + getPlayerWorldLocListList().hashCode();
-            }
             if (getPlayerLocListCount() > 0) {
-                hash = (53 * ((37 * hash) + 14)) + getPlayerLocListList().hashCode();
+                hash = (53 * ((37 * hash) + 4)) + getPlayerLocListList().hashCode();
+            }
+            if (getPlayerWorldLocListCount() > 0) {
+                hash = (53 * ((37 * hash) + 3)) + getPlayerWorldLocListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -366,10 +366,10 @@ public final class WorldPlayerLocationNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WorldPlayerLocationNotifyOuterClass$WorldPlayerLocationNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements WorldPlayerLocationNotifyOrBuilder {
             private int bitField0_;
-            private RepeatedFieldBuilderV3<PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo, PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder, PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder> playerWorldLocListBuilder_;
             private RepeatedFieldBuilderV3<PlayerLocationInfoOuterClass.PlayerLocationInfo, PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder, PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder> playerLocListBuilder_;
-            private List<PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo> playerWorldLocList_ = Collections.emptyList();
+            private RepeatedFieldBuilderV3<PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo, PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder, PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder> playerWorldLocListBuilder_;
             private List<PlayerLocationInfoOuterClass.PlayerLocationInfo> playerLocList_ = Collections.emptyList();
+            private List<PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo> playerWorldLocList_ = Collections.emptyList();
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return WorldPlayerLocationNotifyOuterClass.internal_static_WorldPlayerLocationNotify_descriptor;
@@ -391,25 +391,25 @@ public final class WorldPlayerLocationNotifyOuterClass {
 
             private void maybeForceBuilderInitialization() {
                 if (WorldPlayerLocationNotify.alwaysUseFieldBuilders) {
-                    getPlayerWorldLocListFieldBuilder();
                     getPlayerLocListFieldBuilder();
+                    getPlayerWorldLocListFieldBuilder();
                 }
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                if (this.playerWorldLocListBuilder_ == null) {
-                    this.playerWorldLocList_ = Collections.emptyList();
-                    this.bitField0_ &= -2;
-                } else {
-                    this.playerWorldLocListBuilder_.clear();
-                }
                 if (this.playerLocListBuilder_ == null) {
                     this.playerLocList_ = Collections.emptyList();
-                    this.bitField0_ &= -3;
+                    this.bitField0_ &= -2;
                 } else {
                     this.playerLocListBuilder_.clear();
+                }
+                if (this.playerWorldLocListBuilder_ == null) {
+                    this.playerWorldLocList_ = Collections.emptyList();
+                    this.bitField0_ &= -3;
+                } else {
+                    this.playerWorldLocListBuilder_.clear();
                 }
                 return this;
             }
@@ -437,23 +437,23 @@ public final class WorldPlayerLocationNotifyOuterClass {
             public WorldPlayerLocationNotify buildPartial() {
                 WorldPlayerLocationNotify result = new WorldPlayerLocationNotify(this);
                 int i = this.bitField0_;
-                if (this.playerWorldLocListBuilder_ == null) {
-                    if ((this.bitField0_ & 1) != 0) {
-                        this.playerWorldLocList_ = Collections.unmodifiableList(this.playerWorldLocList_);
-                        this.bitField0_ &= -2;
-                    }
-                    result.playerWorldLocList_ = this.playerWorldLocList_;
-                } else {
-                    result.playerWorldLocList_ = this.playerWorldLocListBuilder_.build();
-                }
                 if (this.playerLocListBuilder_ == null) {
-                    if ((this.bitField0_ & 2) != 0) {
+                    if ((this.bitField0_ & 1) != 0) {
                         this.playerLocList_ = Collections.unmodifiableList(this.playerLocList_);
-                        this.bitField0_ &= -3;
+                        this.bitField0_ &= -2;
                     }
                     result.playerLocList_ = this.playerLocList_;
                 } else {
                     result.playerLocList_ = this.playerLocListBuilder_.build();
+                }
+                if (this.playerWorldLocListBuilder_ == null) {
+                    if ((this.bitField0_ & 2) != 0) {
+                        this.playerWorldLocList_ = Collections.unmodifiableList(this.playerWorldLocList_);
+                        this.bitField0_ &= -3;
+                    }
+                    result.playerWorldLocList_ = this.playerWorldLocList_;
+                } else {
+                    result.playerWorldLocList_ = this.playerWorldLocListBuilder_.build();
                 }
                 onBuilt();
                 return result;
@@ -502,33 +502,11 @@ public final class WorldPlayerLocationNotifyOuterClass {
                 if (other == WorldPlayerLocationNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (this.playerWorldLocListBuilder_ == null) {
-                    if (!other.playerWorldLocList_.isEmpty()) {
-                        if (this.playerWorldLocList_.isEmpty()) {
-                            this.playerWorldLocList_ = other.playerWorldLocList_;
-                            this.bitField0_ &= -2;
-                        } else {
-                            ensurePlayerWorldLocListIsMutable();
-                            this.playerWorldLocList_.addAll(other.playerWorldLocList_);
-                        }
-                        onChanged();
-                    }
-                } else if (!other.playerWorldLocList_.isEmpty()) {
-                    if (this.playerWorldLocListBuilder_.isEmpty()) {
-                        this.playerWorldLocListBuilder_.dispose();
-                        this.playerWorldLocListBuilder_ = null;
-                        this.playerWorldLocList_ = other.playerWorldLocList_;
-                        this.bitField0_ &= -2;
-                        this.playerWorldLocListBuilder_ = WorldPlayerLocationNotify.alwaysUseFieldBuilders ? getPlayerWorldLocListFieldBuilder() : null;
-                    } else {
-                        this.playerWorldLocListBuilder_.addAllMessages(other.playerWorldLocList_);
-                    }
-                }
                 if (this.playerLocListBuilder_ == null) {
                     if (!other.playerLocList_.isEmpty()) {
                         if (this.playerLocList_.isEmpty()) {
                             this.playerLocList_ = other.playerLocList_;
-                            this.bitField0_ &= -3;
+                            this.bitField0_ &= -2;
                         } else {
                             ensurePlayerLocListIsMutable();
                             this.playerLocList_.addAll(other.playerLocList_);
@@ -540,10 +518,32 @@ public final class WorldPlayerLocationNotifyOuterClass {
                         this.playerLocListBuilder_.dispose();
                         this.playerLocListBuilder_ = null;
                         this.playerLocList_ = other.playerLocList_;
-                        this.bitField0_ &= -3;
+                        this.bitField0_ &= -2;
                         this.playerLocListBuilder_ = WorldPlayerLocationNotify.alwaysUseFieldBuilders ? getPlayerLocListFieldBuilder() : null;
                     } else {
                         this.playerLocListBuilder_.addAllMessages(other.playerLocList_);
+                    }
+                }
+                if (this.playerWorldLocListBuilder_ == null) {
+                    if (!other.playerWorldLocList_.isEmpty()) {
+                        if (this.playerWorldLocList_.isEmpty()) {
+                            this.playerWorldLocList_ = other.playerWorldLocList_;
+                            this.bitField0_ &= -3;
+                        } else {
+                            ensurePlayerWorldLocListIsMutable();
+                            this.playerWorldLocList_.addAll(other.playerWorldLocList_);
+                        }
+                        onChanged();
+                    }
+                } else if (!other.playerWorldLocList_.isEmpty()) {
+                    if (this.playerWorldLocListBuilder_.isEmpty()) {
+                        this.playerWorldLocListBuilder_.dispose();
+                        this.playerWorldLocListBuilder_ = null;
+                        this.playerWorldLocList_ = other.playerWorldLocList_;
+                        this.bitField0_ &= -3;
+                        this.playerWorldLocListBuilder_ = WorldPlayerLocationNotify.alwaysUseFieldBuilders ? getPlayerWorldLocListFieldBuilder() : null;
+                    } else {
+                        this.playerWorldLocListBuilder_.addAllMessages(other.playerWorldLocList_);
                     }
                 }
                 mergeUnknownFields(other.unknownFields);
@@ -578,186 +578,10 @@ public final class WorldPlayerLocationNotifyOuterClass {
                 }
             }
 
-            private void ensurePlayerWorldLocListIsMutable() {
-                if ((this.bitField0_ & 1) == 0) {
-                    this.playerWorldLocList_ = new ArrayList(this.playerWorldLocList_);
-                    this.bitField0_ |= 1;
-                }
-            }
-
-            @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
-            public List<PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo> getPlayerWorldLocListList() {
-                if (this.playerWorldLocListBuilder_ == null) {
-                    return Collections.unmodifiableList(this.playerWorldLocList_);
-                }
-                return this.playerWorldLocListBuilder_.getMessageList();
-            }
-
-            @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
-            public int getPlayerWorldLocListCount() {
-                if (this.playerWorldLocListBuilder_ == null) {
-                    return this.playerWorldLocList_.size();
-                }
-                return this.playerWorldLocListBuilder_.getCount();
-            }
-
-            @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
-            public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo getPlayerWorldLocList(int index) {
-                if (this.playerWorldLocListBuilder_ == null) {
-                    return this.playerWorldLocList_.get(index);
-                }
-                return this.playerWorldLocListBuilder_.getMessage(index);
-            }
-
-            public Builder setPlayerWorldLocList(int index, PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo value) {
-                if (this.playerWorldLocListBuilder_ != null) {
-                    this.playerWorldLocListBuilder_.setMessage(index, value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    ensurePlayerWorldLocListIsMutable();
-                    this.playerWorldLocList_.set(index, value);
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder setPlayerWorldLocList(int index, PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder builderForValue) {
-                if (this.playerWorldLocListBuilder_ == null) {
-                    ensurePlayerWorldLocListIsMutable();
-                    this.playerWorldLocList_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    this.playerWorldLocListBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addPlayerWorldLocList(PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo value) {
-                if (this.playerWorldLocListBuilder_ != null) {
-                    this.playerWorldLocListBuilder_.addMessage(value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    ensurePlayerWorldLocListIsMutable();
-                    this.playerWorldLocList_.add(value);
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder addPlayerWorldLocList(int index, PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo value) {
-                if (this.playerWorldLocListBuilder_ != null) {
-                    this.playerWorldLocListBuilder_.addMessage(index, value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    ensurePlayerWorldLocListIsMutable();
-                    this.playerWorldLocList_.add(index, value);
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder addPlayerWorldLocList(PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder builderForValue) {
-                if (this.playerWorldLocListBuilder_ == null) {
-                    ensurePlayerWorldLocListIsMutable();
-                    this.playerWorldLocList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    this.playerWorldLocListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addPlayerWorldLocList(int index, PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder builderForValue) {
-                if (this.playerWorldLocListBuilder_ == null) {
-                    ensurePlayerWorldLocListIsMutable();
-                    this.playerWorldLocList_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    this.playerWorldLocListBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addAllPlayerWorldLocList(Iterable<? extends PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo> values) {
-                if (this.playerWorldLocListBuilder_ == null) {
-                    ensurePlayerWorldLocListIsMutable();
-                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.playerWorldLocList_);
-                    onChanged();
-                } else {
-                    this.playerWorldLocListBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-
-            public Builder clearPlayerWorldLocList() {
-                if (this.playerWorldLocListBuilder_ == null) {
-                    this.playerWorldLocList_ = Collections.emptyList();
-                    this.bitField0_ &= -2;
-                    onChanged();
-                } else {
-                    this.playerWorldLocListBuilder_.clear();
-                }
-                return this;
-            }
-
-            public Builder removePlayerWorldLocList(int index) {
-                if (this.playerWorldLocListBuilder_ == null) {
-                    ensurePlayerWorldLocListIsMutable();
-                    this.playerWorldLocList_.remove(index);
-                    onChanged();
-                } else {
-                    this.playerWorldLocListBuilder_.remove(index);
-                }
-                return this;
-            }
-
-            public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder getPlayerWorldLocListBuilder(int index) {
-                return getPlayerWorldLocListFieldBuilder().getBuilder(index);
-            }
-
-            @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
-            public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder getPlayerWorldLocListOrBuilder(int index) {
-                if (this.playerWorldLocListBuilder_ == null) {
-                    return this.playerWorldLocList_.get(index);
-                }
-                return this.playerWorldLocListBuilder_.getMessageOrBuilder(index);
-            }
-
-            @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
-            public List<? extends PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder> getPlayerWorldLocListOrBuilderList() {
-                if (this.playerWorldLocListBuilder_ != null) {
-                    return this.playerWorldLocListBuilder_.getMessageOrBuilderList();
-                }
-                return Collections.unmodifiableList(this.playerWorldLocList_);
-            }
-
-            public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder addPlayerWorldLocListBuilder() {
-                return getPlayerWorldLocListFieldBuilder().addBuilder(PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.getDefaultInstance());
-            }
-
-            public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder addPlayerWorldLocListBuilder(int index) {
-                return getPlayerWorldLocListFieldBuilder().addBuilder(index, PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.getDefaultInstance());
-            }
-
-            public List<PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder> getPlayerWorldLocListBuilderList() {
-                return getPlayerWorldLocListFieldBuilder().getBuilderList();
-            }
-
-            private RepeatedFieldBuilderV3<PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo, PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder, PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder> getPlayerWorldLocListFieldBuilder() {
-                if (this.playerWorldLocListBuilder_ == null) {
-                    this.playerWorldLocListBuilder_ = new RepeatedFieldBuilderV3<>(this.playerWorldLocList_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
-                    this.playerWorldLocList_ = null;
-                }
-                return this.playerWorldLocListBuilder_;
-            }
-
             private void ensurePlayerLocListIsMutable() {
-                if ((this.bitField0_ & 2) == 0) {
+                if ((this.bitField0_ & 1) == 0) {
                     this.playerLocList_ = new ArrayList(this.playerLocList_);
-                    this.bitField0_ |= 2;
+                    this.bitField0_ |= 1;
                 }
             }
 
@@ -871,7 +695,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
             public Builder clearPlayerLocList() {
                 if (this.playerLocListBuilder_ == null) {
                     this.playerLocList_ = Collections.emptyList();
-                    this.bitField0_ &= -3;
+                    this.bitField0_ &= -2;
                     onChanged();
                 } else {
                     this.playerLocListBuilder_.clear();
@@ -924,10 +748,186 @@ public final class WorldPlayerLocationNotifyOuterClass {
 
             private RepeatedFieldBuilderV3<PlayerLocationInfoOuterClass.PlayerLocationInfo, PlayerLocationInfoOuterClass.PlayerLocationInfo.Builder, PlayerLocationInfoOuterClass.PlayerLocationInfoOrBuilder> getPlayerLocListFieldBuilder() {
                 if (this.playerLocListBuilder_ == null) {
-                    this.playerLocListBuilder_ = new RepeatedFieldBuilderV3<>(this.playerLocList_, (this.bitField0_ & 2) != 0, getParentForChildren(), isClean());
+                    this.playerLocListBuilder_ = new RepeatedFieldBuilderV3<>(this.playerLocList_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
                     this.playerLocList_ = null;
                 }
                 return this.playerLocListBuilder_;
+            }
+
+            private void ensurePlayerWorldLocListIsMutable() {
+                if ((this.bitField0_ & 2) == 0) {
+                    this.playerWorldLocList_ = new ArrayList(this.playerWorldLocList_);
+                    this.bitField0_ |= 2;
+                }
+            }
+
+            @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
+            public List<PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo> getPlayerWorldLocListList() {
+                if (this.playerWorldLocListBuilder_ == null) {
+                    return Collections.unmodifiableList(this.playerWorldLocList_);
+                }
+                return this.playerWorldLocListBuilder_.getMessageList();
+            }
+
+            @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
+            public int getPlayerWorldLocListCount() {
+                if (this.playerWorldLocListBuilder_ == null) {
+                    return this.playerWorldLocList_.size();
+                }
+                return this.playerWorldLocListBuilder_.getCount();
+            }
+
+            @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
+            public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo getPlayerWorldLocList(int index) {
+                if (this.playerWorldLocListBuilder_ == null) {
+                    return this.playerWorldLocList_.get(index);
+                }
+                return this.playerWorldLocListBuilder_.getMessage(index);
+            }
+
+            public Builder setPlayerWorldLocList(int index, PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo value) {
+                if (this.playerWorldLocListBuilder_ != null) {
+                    this.playerWorldLocListBuilder_.setMessage(index, value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    ensurePlayerWorldLocListIsMutable();
+                    this.playerWorldLocList_.set(index, value);
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder setPlayerWorldLocList(int index, PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder builderForValue) {
+                if (this.playerWorldLocListBuilder_ == null) {
+                    ensurePlayerWorldLocListIsMutable();
+                    this.playerWorldLocList_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    this.playerWorldLocListBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder addPlayerWorldLocList(PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo value) {
+                if (this.playerWorldLocListBuilder_ != null) {
+                    this.playerWorldLocListBuilder_.addMessage(value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    ensurePlayerWorldLocListIsMutable();
+                    this.playerWorldLocList_.add(value);
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder addPlayerWorldLocList(int index, PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo value) {
+                if (this.playerWorldLocListBuilder_ != null) {
+                    this.playerWorldLocListBuilder_.addMessage(index, value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    ensurePlayerWorldLocListIsMutable();
+                    this.playerWorldLocList_.add(index, value);
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder addPlayerWorldLocList(PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder builderForValue) {
+                if (this.playerWorldLocListBuilder_ == null) {
+                    ensurePlayerWorldLocListIsMutable();
+                    this.playerWorldLocList_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    this.playerWorldLocListBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder addPlayerWorldLocList(int index, PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder builderForValue) {
+                if (this.playerWorldLocListBuilder_ == null) {
+                    ensurePlayerWorldLocListIsMutable();
+                    this.playerWorldLocList_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    this.playerWorldLocListBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder addAllPlayerWorldLocList(Iterable<? extends PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo> values) {
+                if (this.playerWorldLocListBuilder_ == null) {
+                    ensurePlayerWorldLocListIsMutable();
+                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.playerWorldLocList_);
+                    onChanged();
+                } else {
+                    this.playerWorldLocListBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            public Builder clearPlayerWorldLocList() {
+                if (this.playerWorldLocListBuilder_ == null) {
+                    this.playerWorldLocList_ = Collections.emptyList();
+                    this.bitField0_ &= -3;
+                    onChanged();
+                } else {
+                    this.playerWorldLocListBuilder_.clear();
+                }
+                return this;
+            }
+
+            public Builder removePlayerWorldLocList(int index) {
+                if (this.playerWorldLocListBuilder_ == null) {
+                    ensurePlayerWorldLocListIsMutable();
+                    this.playerWorldLocList_.remove(index);
+                    onChanged();
+                } else {
+                    this.playerWorldLocListBuilder_.remove(index);
+                }
+                return this;
+            }
+
+            public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder getPlayerWorldLocListBuilder(int index) {
+                return getPlayerWorldLocListFieldBuilder().getBuilder(index);
+            }
+
+            @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
+            public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder getPlayerWorldLocListOrBuilder(int index) {
+                if (this.playerWorldLocListBuilder_ == null) {
+                    return this.playerWorldLocList_.get(index);
+                }
+                return this.playerWorldLocListBuilder_.getMessageOrBuilder(index);
+            }
+
+            @Override // emu.grasscutter.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotifyOrBuilder
+            public List<? extends PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder> getPlayerWorldLocListOrBuilderList() {
+                if (this.playerWorldLocListBuilder_ != null) {
+                    return this.playerWorldLocListBuilder_.getMessageOrBuilderList();
+                }
+                return Collections.unmodifiableList(this.playerWorldLocList_);
+            }
+
+            public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder addPlayerWorldLocListBuilder() {
+                return getPlayerWorldLocListFieldBuilder().addBuilder(PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.getDefaultInstance());
+            }
+
+            public PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder addPlayerWorldLocListBuilder(int index) {
+                return getPlayerWorldLocListFieldBuilder().addBuilder(index, PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.getDefaultInstance());
+            }
+
+            public List<PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder> getPlayerWorldLocListBuilderList() {
+                return getPlayerWorldLocListFieldBuilder().getBuilderList();
+            }
+
+            private RepeatedFieldBuilderV3<PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo, PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.Builder, PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfoOrBuilder> getPlayerWorldLocListFieldBuilder() {
+                if (this.playerWorldLocListBuilder_ == null) {
+                    this.playerWorldLocListBuilder_ = new RepeatedFieldBuilderV3<>(this.playerWorldLocList_, (this.bitField0_ & 2) != 0, getParentForChildren(), isClean());
+                    this.playerWorldLocList_ = null;
+                }
+                return this.playerWorldLocListBuilder_;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

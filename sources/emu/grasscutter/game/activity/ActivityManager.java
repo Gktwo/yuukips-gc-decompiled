@@ -263,8 +263,8 @@ public class ActivityManager extends BasePlayerManager {
 
     /* JADX DEBUG: Type inference failed for r0v2. Raw type applied. Possible types: java.util.Optional<U>, java.util.Optional<emu.grasscutter.net.proto.ActivityInfoOuterClass$ActivityInfo> */
     public Optional<ActivityInfoOuterClass.ActivityInfo> getInfoProtoByActivityType(ActivityType type) {
-        return getActivityIdByActivityType(type).map((v1) -> {
-            return getInfoProtoByActivityId(v1);
+        return getActivityIdByActivityType(type).map(arg0 -> {
+            return getInfoProtoByActivityId(arg0.intValue());
         });
     }
 }

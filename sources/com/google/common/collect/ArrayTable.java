@@ -333,7 +333,7 @@ public final class ArrayTable<R, C, V> extends AbstractTable<R, C, V> implements
 
     @Override // com.google.common.collect.AbstractTable
     Spliterator<Table.Cell<R, C, V>> cellSpliterator() {
-        return CollectSpliterators.indexed(size(), PacketOpcodes.SceneTransToPointRsp, this::getCell);
+        return CollectSpliterators.indexed(size(), PacketOpcodes.SceneCreateEntityRsp, this::getCell);
     }
 
     /* access modifiers changed from: private */

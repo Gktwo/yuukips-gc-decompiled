@@ -48,32 +48,32 @@ public abstract class AbstractPty implements Pty {
     class PtyInputStream extends NonBlockingInputStream {
 
         /* renamed from: in */
-        final InputStream f3239in;
+        final InputStream f3203in;
 
         /* renamed from: c */
-        int f3240c = 0;
+        int f3204c = 0;
 
         PtyInputStream(InputStream in) {
-            this.f3239in = in;
+            this.f3203in = in;
         }
 
         @Override // org.jline.utils.NonBlockingInputStream
         public int read(long timeout, boolean isPeek) throws IOException {
             AbstractPty.this.checkInterrupted();
-            if (this.f3240c != 0) {
-                int r = this.f3240c;
+            if (this.f3204c != 0) {
+                int r = this.f3204c;
                 if (!isPeek) {
-                    this.f3240c = 0;
+                    this.f3204c = 0;
                 }
                 return r;
             }
             setNonBlocking();
             long start = System.currentTimeMillis();
             while (true) {
-                int r2 = this.f3239in.read();
+                int r2 = this.f3203in.read();
                 if (r2 >= 0) {
                     if (isPeek) {
-                        this.f3240c = r2;
+                        this.f3204c = r2;
                     }
                     return r2;
                 }
@@ -87,7 +87,7 @@ public abstract class AbstractPty implements Pty {
 
         @Override // org.jline.utils.NonBlockingInputStream
         public int readBuffered(byte[] b) throws IOException {
-            return this.f3239in.read(b);
+            return this.f3203in.read(b);
         }
 
         private void setNonBlocking() {

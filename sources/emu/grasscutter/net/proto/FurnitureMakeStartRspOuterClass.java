@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeStartRspOuterClass.class */
 public final class FurnitureMakeStartRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bFurnitureMakeStartRsp.proto\u001a\u0017FurnitureMakeSlot.proto\"Y\n\u0015FurnitureMakeStartRsp\u0012/\n\u0013furniture_make_slot\u0018\u000e \u0001(\u000b2\u0012.FurnitureMakeSlot\u0012\u000f\n\u0007retcode\u0018\b \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{FurnitureMakeSlotOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bFurnitureMakeStartRsp.proto\u001a\u0017FurnitureMakeSlot.proto\"W\n\u0015FurnitureMakeStartRsp\u0012-\n\u0011furnitureMakeSlot\u0018\u000b \u0001(\u000b2\u0012.FurnitureMakeSlot\u0012\u000f\n\u0007retcode\u0018\u000f \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{FurnitureMakeSlotOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_FurnitureMakeStartRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_FurnitureMakeStartRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FurnitureMakeStartRsp_descriptor, new String[]{"FurnitureMakeSlot", "Retcode"});
 
@@ -49,9 +49,9 @@ public final class FurnitureMakeStartRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeStartRspOuterClass$FurnitureMakeStartRsp.class */
     public static final class FurnitureMakeStartRsp extends GeneratedMessageV3 implements FurnitureMakeStartRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int FURNITURE_MAKE_SLOT_FIELD_NUMBER = 14;
+        public static final int FURNITUREMAKESLOT_FIELD_NUMBER = 11;
         private FurnitureMakeSlotOuterClass.FurnitureMakeSlot furnitureMakeSlot_;
-        public static final int RETCODE_FIELD_NUMBER = 8;
+        public static final int RETCODE_FIELD_NUMBER = 15;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final FurnitureMakeStartRsp DEFAULT_INSTANCE = new FurnitureMakeStartRsp();
@@ -99,10 +99,7 @@ public final class FurnitureMakeStartRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 64:
-                                    this.retcode_ = input.readInt32();
-                                    break;
-                                case 114:
+                                case 90:
                                     FurnitureMakeSlotOuterClass.FurnitureMakeSlot.Builder subBuilder = this.furnitureMakeSlot_ != null ? this.furnitureMakeSlot_.toBuilder() : null;
                                     this.furnitureMakeSlot_ = (FurnitureMakeSlotOuterClass.FurnitureMakeSlot) input.readMessage(FurnitureMakeSlotOuterClass.FurnitureMakeSlot.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -112,6 +109,9 @@ public final class FurnitureMakeStartRspOuterClass {
                                         this.furnitureMakeSlot_ = subBuilder.buildPartial();
                                         break;
                                     }
+                                case 120:
+                                    this.retcode_ = input.readInt32();
+                                    break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                         break;
@@ -177,11 +177,11 @@ public final class FurnitureMakeStartRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.retcode_ != 0) {
-                output.writeInt32(8, this.retcode_);
-            }
             if (this.furnitureMakeSlot_ != null) {
-                output.writeMessage(14, getFurnitureMakeSlot());
+                output.writeMessage(11, getFurnitureMakeSlot());
+            }
+            if (this.retcode_ != 0) {
+                output.writeInt32(15, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -193,11 +193,11 @@ public final class FurnitureMakeStartRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(8, this.retcode_);
-            }
             if (this.furnitureMakeSlot_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(14, getFurnitureMakeSlot());
+                size2 = 0 + CodedOutputStream.computeMessageSize(11, getFurnitureMakeSlot());
+            }
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(15, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,9 +226,9 @@ public final class FurnitureMakeStartRspOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasFurnitureMakeSlot()) {
-                hash = (53 * ((37 * hash) + 14)) + getFurnitureMakeSlot().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + getFurnitureMakeSlot().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 8)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 15)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

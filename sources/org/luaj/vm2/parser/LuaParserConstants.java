@@ -18,7 +18,7 @@ public interface LuaParserConstants {
     public static final int BREAK = 30;
 
     /* renamed from: DO */
-    public static final int f3354DO = 31;
+    public static final int f3318DO = 31;
     public static final int ELSE = 32;
     public static final int ELSEIF = 33;
     public static final int END = 34;
@@ -28,16 +28,16 @@ public interface LuaParserConstants {
     public static final int GOTO = 38;
 
     /* renamed from: IF */
-    public static final int f3355IF = 39;
+    public static final int f3319IF = 39;
 
     /* renamed from: IN */
-    public static final int f3356IN = 40;
+    public static final int f3320IN = 40;
     public static final int LOCAL = 41;
     public static final int NIL = 42;
     public static final int NOT = 43;
 
     /* renamed from: OR */
-    public static final int f3357OR = 44;
+    public static final int f3321OR = 44;
     public static final int RETURN = 45;
     public static final int REPEAT = 46;
     public static final int THEN = 47;
@@ -63,7 +63,7 @@ public interface LuaParserConstants {
     public static final int CHAR = 67;
 
     /* renamed from: LF */
-    public static final int f3358LF = 68;
+    public static final int f3322LF = 68;
     public static final int DEFAULT = 0;
     public static final int IN_COMMENT = 1;
     public static final int IN_LC0 = 2;

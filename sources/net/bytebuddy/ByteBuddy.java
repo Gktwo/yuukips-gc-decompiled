@@ -1,7 +1,6 @@
 package net.bytebuddy;
 
 import dev.morphia.mapping.Mapper;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import java.lang.annotation.Annotation;
 import java.lang.annotation.ElementType;
 import java.lang.reflect.Type;
@@ -190,7 +189,7 @@ public class ByteBuddy {
     }
 
     public DynamicType.Builder<?> makeRecord() {
-        TypeDescription.Generic record = InstrumentedType.Default.m214of(JavaType.RECORD.getTypeStub().getName(), TypeDescription.Generic.OBJECT, Visibility.PUBLIC).withMethod(new MethodDescription.Token(4)).withMethod(new MethodDescription.Token("hashCode", PacketOpcodes.ProudSkillExtraLevelNotify, TypeDescription.ForLoadedType.m247of(Integer.TYPE).asGenericType())).withMethod(new MethodDescription.Token("equals", PacketOpcodes.ProudSkillExtraLevelNotify, TypeDescription.ForLoadedType.m247of(Boolean.TYPE).asGenericType(), Collections.singletonList(TypeDescription.Generic.OBJECT))).withMethod(new MethodDescription.Token(Printer.TO_STRING, PacketOpcodes.ProudSkillExtraLevelNotify, TypeDescription.ForLoadedType.m247of(String.class).asGenericType())).asGenericType();
+        TypeDescription.Generic record = InstrumentedType.Default.m214of(JavaType.RECORD.getTypeStub().getName(), TypeDescription.Generic.OBJECT, Visibility.PUBLIC).withMethod(new MethodDescription.Token(4)).withMethod(new MethodDescription.Token("hashCode", 1025, TypeDescription.ForLoadedType.m247of(Integer.TYPE).asGenericType())).withMethod(new MethodDescription.Token("equals", 1025, TypeDescription.ForLoadedType.m247of(Boolean.TYPE).asGenericType(), Collections.singletonList(TypeDescription.Generic.OBJECT))).withMethod(new MethodDescription.Token(Printer.TO_STRING, 1025, TypeDescription.ForLoadedType.m247of(String.class).asGenericType())).asGenericType();
         return new SubclassDynamicTypeBuilder(this.instrumentedTypeFactory.subclass(this.namingStrategy.subclass(record), 17, record).withRecord(true), this.classFileVersion, this.auxiliaryTypeNamingStrategy, this.annotationValueFilterFactory, this.annotationRetention, this.implementationContextFactory, this.methodGraphCompiler, this.typeValidation, this.visibilityBridgeStrategy, this.classWriterStrategy, this.ignoredMethods, RecordConstructorStrategy.INSTANCE).method(ElementMatchers.isHashCode()).intercept(RecordObjectMethod.HASH_CODE).method(ElementMatchers.isEquals()).intercept(RecordObjectMethod.EQUALS).method(ElementMatchers.isToString()).intercept(RecordObjectMethod.TO_STRING);
     }
 

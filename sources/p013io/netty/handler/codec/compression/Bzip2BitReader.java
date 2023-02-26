@@ -8,13 +8,13 @@ class Bzip2BitReader {
     private static final int MAX_COUNT_OF_READABLE_BYTES = 268435455;
 
     /* renamed from: in */
-    private ByteBuf f997in;
+    private ByteBuf f961in;
     private long bitBuffer;
     private int bitCount;
 
     /* access modifiers changed from: package-private */
     public void setByteBuf(ByteBuf in) {
-        this.f997in = in;
+        this.f961in = in;
     }
 
     /* JADX WARN: Type inference failed for: r0v6, types: [long] */
@@ -29,21 +29,21 @@ class Bzip2BitReader {
         int i = this.bitBuffer;
         long bitBuffer = i;
         if (bitCount < count) {
-            switch (this.f997in.readableBytes()) {
+            switch (this.f961in.readableBytes()) {
                 case 1:
-                    readData = (long) this.f997in.readUnsignedByte();
+                    readData = (long) this.f961in.readUnsignedByte();
                     offset = 8;
                     break;
                 case 2:
-                    readData = (long) this.f997in.readUnsignedShort();
+                    readData = (long) this.f961in.readUnsignedShort();
                     offset = 16;
                     break;
                 case 3:
-                    readData = (long) this.f997in.readUnsignedMedium();
+                    readData = (long) this.f961in.readUnsignedMedium();
                     offset = 24;
                     break;
                 default:
-                    readData = this.f997in.readUnsignedInt();
+                    readData = this.f961in.readUnsignedInt();
                     offset = 32;
                     break;
             }
@@ -69,19 +69,19 @@ class Bzip2BitReader {
 
     /* access modifiers changed from: package-private */
     public void refill() {
-        this.bitBuffer = (this.bitBuffer << 8) | ((long) this.f997in.readUnsignedByte());
+        this.bitBuffer = (this.bitBuffer << 8) | ((long) this.f961in.readUnsignedByte());
         this.bitCount += 8;
     }
 
     /* access modifiers changed from: package-private */
     public boolean isReadable() {
-        return this.bitCount > 0 || this.f997in.isReadable();
+        return this.bitCount > 0 || this.f961in.isReadable();
     }
 
     /* access modifiers changed from: package-private */
     public boolean hasReadableBits(int count) {
         if (count >= 0) {
-            return this.bitCount >= count || ((this.f997in.readableBytes() << 3) & Integer.MAX_VALUE) >= count - this.bitCount;
+            return this.bitCount >= count || ((this.f961in.readableBytes() << 3) & Integer.MAX_VALUE) >= count - this.bitCount;
         }
         throw new IllegalArgumentException("count: " + count + " (expected value greater than 0)");
     }

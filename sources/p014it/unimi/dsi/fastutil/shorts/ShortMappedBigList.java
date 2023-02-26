@@ -19,16 +19,16 @@ public class ShortMappedBigList extends AbstractShortBigList {
     private final boolean[] readyToUse;
 
     /* renamed from: n */
-    private final int f3059n;
+    private final int f3023n;
     private final long size;
 
     protected ShortMappedBigList(ShortBuffer[] buffer, long size, boolean[] readyToUse) {
         this.buffer = buffer;
-        this.f3059n = buffer.length;
+        this.f3023n = buffer.length;
         this.size = size;
         this.readyToUse = readyToUse;
-        for (int i = 0; i < this.f3059n; i++) {
-            if (i < this.f3059n - 1 && ((long) buffer[i].capacity()) != CHUNK_SIZE) {
+        for (int i = 0; i < this.f3023n; i++) {
+            if (i < this.f3023n - 1 && ((long) buffer[i].capacity()) != CHUNK_SIZE) {
                 throw new IllegalArgumentException();
             }
         }
@@ -66,7 +66,7 @@ public class ShortMappedBigList extends AbstractShortBigList {
     }
 
     public ShortMappedBigList copy() {
-        return new ShortMappedBigList((ShortBuffer[]) this.buffer.clone(), this.size, new boolean[this.f3059n]);
+        return new ShortMappedBigList((ShortBuffer[]) this.buffer.clone(), this.size, new boolean[this.f3023n]);
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigList

@@ -35,13 +35,13 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
     protected transient boolean containsNullKey;
 
     /* renamed from: n */
-    protected transient int f2675n;
+    protected transient int f2639n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2676f;
+    protected final float f2640f;
     protected transient Object2ShortMap.FastEntrySet<K> entries;
     protected transient ObjectSet<K> keys;
     protected transient ShortCollection values;
@@ -52,14 +52,14 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2676f = f;
+            this.f2640f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2675n = arraySize;
+            this.f2639n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2675n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2675n, f);
-            this.key = (K[]) new Object[this.f2675n + 1];
-            this.value = new short[this.f2675n + 1];
+            this.mask = this.f2639n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2639n, f);
+            this.key = (K[]) new Object[this.f2639n + 1];
+            this.value = new short[this.f2639n + 1];
         }
     }
 
@@ -109,15 +109,15 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2676f);
-        if (needed > this.f2675n) {
+        int needed = HashCommon.arraySize(capacity, this.f2640f);
+        if (needed > this.f2639n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2676f)))));
-        if (needed > this.f2675n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2640f)))));
+        if (needed > this.f2639n) {
             rehash(needed);
         }
     }
@@ -127,8 +127,8 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
         short oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f2675n > this.minN && this.size < this.maxFill / 4 && this.f2675n > 16) {
-            rehash(this.f2675n / 2);
+        if (this.f2639n > this.minN && this.size < this.maxFill / 4 && this.f2639n > 16) {
+            rehash(this.f2639n / 2);
         }
         return oldValue;
     }
@@ -136,18 +136,18 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
     /* access modifiers changed from: private */
     public short removeNullEntry() {
         this.containsNullKey = false;
-        this.key[this.f2675n] = null;
-        short oldValue = this.value[this.f2675n];
+        this.key[this.f2639n] = null;
+        short oldValue = this.value[this.f2639n];
         this.size--;
-        if (this.f2675n > this.minN && this.size < this.maxFill / 4 && this.f2675n > 16) {
-            rehash(this.f2675n / 2);
+        if (this.f2639n > this.minN && this.size < this.maxFill / 4 && this.f2639n > 16) {
+            rehash(this.f2639n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObject2ShortMap, java.util.Map
     public void putAll(Map<? extends K, ? extends Short> m) {
-        if (((double) this.f2676f) <= 0.5d) {
+        if (((double) this.f2640f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -158,7 +158,7 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
     private int find(K k) {
         K curr;
         if (k == null) {
-            return this.containsNullKey ? this.f2675n : -(this.f2675n + 1);
+            return this.containsNullKey ? this.f2639n : -(this.f2639n + 1);
         }
         K[] key = this.key;
         int mix = HashCommon.mix(k.hashCode()) & this.mask;
@@ -182,7 +182,7 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
     }
 
     private void insert(int pos, K k, short v) {
-        if (pos == this.f2675n) {
+        if (pos == this.f2639n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -190,7 +190,7 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2676f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2640f));
         }
     }
 
@@ -234,9 +234,9 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f2675n, incr);
+            return addToValue(this.f2639n, incr);
         } else {
-            pos = this.f2675n;
+            pos = this.f2639n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -244,7 +244,7 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2676f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2640f));
         }
         return this.defRetValue;
     }
@@ -310,7 +310,7 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
     public short getShort(Object k) {
         K curr;
         if (k == null) {
-            return this.containsNullKey ? this.value[this.f2675n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2639n] : this.defRetValue;
         }
         K[] key = this.key;
         int mix = HashCommon.mix(k.hashCode()) & this.mask;
@@ -364,10 +364,10 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
     public boolean containsValue(short v) {
         short[] value = this.value;
         K[] key = this.key;
-        if (this.containsNullKey && value[this.f2675n] == v) {
+        if (this.containsNullKey && value[this.f2639n] == v) {
             return true;
         }
-        int i = this.f2675n;
+        int i = this.f2639n;
         while (true) {
             i--;
             if (i == 0) {
@@ -383,7 +383,7 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
     public short getOrDefault(Object k, short defaultValue) {
         K curr;
         if (k == null) {
-            return this.containsNullKey ? this.value[this.f2675n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2639n] : defaultValue;
         }
         K[] key = this.key;
         int mix = HashCommon.mix(k.hashCode()) & this.mask;
@@ -443,7 +443,7 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
                 removeEntry(pos);
                 return true;
             }
-        } else if (!this.containsNullKey || v != this.value[this.f2675n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f2639n]) {
             return false;
         } else {
             removeNullEntry();
@@ -676,31 +676,31 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
         int last;
 
         /* renamed from: c */
-        int f2677c;
+        int f2641c;
         boolean mustReturnNullKey;
         ObjectArrayList<K> wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Object2ShortOpenHashMap.this.f2675n;
+            this.pos = Object2ShortOpenHashMap.this.f2639n;
             this.last = -1;
-            this.f2677c = Object2ShortOpenHashMap.this.size;
+            this.f2641c = Object2ShortOpenHashMap.this.size;
             this.mustReturnNullKey = Object2ShortOpenHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f2677c != 0;
+            return this.f2641c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2677c--;
+            this.f2641c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Object2ShortOpenHashMap.this.f2675n;
+                int i = Object2ShortOpenHashMap.this.f2639n;
                 this.last = i;
                 return i;
             }
@@ -732,13 +732,13 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Object2ShortOpenHashMap.this.f2675n;
+                int i = Object2ShortOpenHashMap.this.f2639n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f2677c--;
+                this.f2641c--;
             }
             K[] key = Object2ShortOpenHashMap.this.key;
-            while (this.f2677c != 0) {
+            while (this.f2641c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -755,12 +755,12 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
                         i3 = Object2ShortOpenHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f2677c--;
+                    this.f2641c--;
                 } else if (key[this.pos] != null) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f2677c--;
+                    this.f2641c--;
                 }
             }
         }
@@ -809,9 +809,9 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Object2ShortOpenHashMap.this.f2675n) {
+            if (this.last == Object2ShortOpenHashMap.this.f2639n) {
                 Object2ShortOpenHashMap.this.containsNullKey = false;
-                Object2ShortOpenHashMap.this.key[Object2ShortOpenHashMap.this.f2675n] = null;
+                Object2ShortOpenHashMap.this.key[Object2ShortOpenHashMap.this.f2639n] = null;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -915,7 +915,7 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
         int max;
 
         /* renamed from: c */
-        int f2678c;
+        int f2642c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -925,16 +925,16 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Object2ShortOpenHashMap.this.f2675n;
-            this.f2678c = 0;
+            this.max = Object2ShortOpenHashMap.this.f2639n;
+            this.f2642c = 0;
             this.mustReturnNull = Object2ShortOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Object2ShortOpenHashMap.this.f2675n;
-            this.f2678c = 0;
+            this.max = Object2ShortOpenHashMap.this.f2639n;
+            this.f2642c = 0;
             this.mustReturnNull = Object2ShortOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -946,14 +946,14 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2678c++;
-                acceptOnIndex(action, Object2ShortOpenHashMap.this.f2675n);
+                this.f2642c++;
+                acceptOnIndex(action, Object2ShortOpenHashMap.this.f2639n);
                 return true;
             }
             K[] key = Object2ShortOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != null) {
-                    this.f2678c++;
+                    this.f2642c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -967,14 +967,14 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2678c++;
-                acceptOnIndex(action, Object2ShortOpenHashMap.this.f2675n);
+                this.f2642c++;
+                acceptOnIndex(action, Object2ShortOpenHashMap.this.f2639n);
             }
             K[] key = Object2ShortOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != null) {
                     acceptOnIndex(action, this.pos);
-                    this.f2678c++;
+                    this.f2642c++;
                 }
                 this.pos++;
             }
@@ -982,9 +982,9 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Object2ShortOpenHashMap.this.size - this.f2678c);
+                return (long) (Object2ShortOpenHashMap.this.size - this.f2642c);
             }
-            return Math.min((long) (Object2ShortOpenHashMap.this.size - this.f2678c), ((long) ((((double) Object2ShortOpenHashMap.this.realSize()) / ((double) Object2ShortOpenHashMap.this.f2675n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Object2ShortOpenHashMap.this.size - this.f2642c), ((long) ((((double) Object2ShortOpenHashMap.this.realSize()) / ((double) Object2ShortOpenHashMap.this.f2639n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1181,7 +1181,7 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
             Object key = e.getKey();
             short v = ((Short) e.getValue()).shortValue();
             if (key == null) {
-                return Object2ShortOpenHashMap.this.containsNullKey && Object2ShortOpenHashMap.this.value[Object2ShortOpenHashMap.this.f2675n] == v;
+                return Object2ShortOpenHashMap.this.containsNullKey && Object2ShortOpenHashMap.this.value[Object2ShortOpenHashMap.this.f2639n] == v;
             }
             K[] key2 = Object2ShortOpenHashMap.this.key;
             int mix = HashCommon.mix(key.hashCode()) & Object2ShortOpenHashMap.this.mask;
@@ -1242,7 +1242,7 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
                     Object2ShortOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Object2ShortOpenHashMap.this.containsNullKey || Object2ShortOpenHashMap.this.value[Object2ShortOpenHashMap.this.f2675n] != v) {
+            } else if (!Object2ShortOpenHashMap.this.containsNullKey || Object2ShortOpenHashMap.this.value[Object2ShortOpenHashMap.this.f2639n] != v) {
                 return false;
             } else {
                 Object2ShortOpenHashMap.this.removeNullEntry();
@@ -1263,9 +1263,9 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Object2ShortMap.Entry<K>> consumer) {
             if (Object2ShortOpenHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractObject2ShortMap.BasicEntry(Object2ShortOpenHashMap.this.key[Object2ShortOpenHashMap.this.f2675n], Object2ShortOpenHashMap.this.value[Object2ShortOpenHashMap.this.f2675n]));
+                consumer.accept(new AbstractObject2ShortMap.BasicEntry(Object2ShortOpenHashMap.this.key[Object2ShortOpenHashMap.this.f2639n], Object2ShortOpenHashMap.this.value[Object2ShortOpenHashMap.this.f2639n]));
             }
-            int pos = Object2ShortOpenHashMap.this.f2675n;
+            int pos = Object2ShortOpenHashMap.this.f2639n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1281,11 +1281,11 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
         public void fastForEach(Consumer<? super Object2ShortMap.Entry<K>> consumer) {
             AbstractObject2ShortMap.BasicEntry<K> entry = new AbstractObject2ShortMap.BasicEntry<>();
             if (Object2ShortOpenHashMap.this.containsNullKey) {
-                entry.key = Object2ShortOpenHashMap.this.key[Object2ShortOpenHashMap.this.f2675n];
-                entry.value = Object2ShortOpenHashMap.this.value[Object2ShortOpenHashMap.this.f2675n];
+                entry.key = Object2ShortOpenHashMap.this.key[Object2ShortOpenHashMap.this.f2639n];
+                entry.value = Object2ShortOpenHashMap.this.value[Object2ShortOpenHashMap.this.f2639n];
                 consumer.accept(entry);
             }
-            int pos = Object2ShortOpenHashMap.this.f2675n;
+            int pos = Object2ShortOpenHashMap.this.f2639n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1401,9 +1401,9 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super K> consumer) {
             if (Object2ShortOpenHashMap.this.containsNullKey) {
-                consumer.accept((Object) Object2ShortOpenHashMap.this.key[Object2ShortOpenHashMap.this.f2675n]);
+                consumer.accept((Object) Object2ShortOpenHashMap.this.key[Object2ShortOpenHashMap.this.f2639n]);
             }
-            int pos = Object2ShortOpenHashMap.this.f2675n;
+            int pos = Object2ShortOpenHashMap.this.f2639n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1521,9 +1521,9 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
                 @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterable
                 public void forEach(ShortConsumer consumer) {
                     if (Object2ShortOpenHashMap.this.containsNullKey) {
-                        consumer.accept(Object2ShortOpenHashMap.this.value[Object2ShortOpenHashMap.this.f2675n]);
+                        consumer.accept(Object2ShortOpenHashMap.this.value[Object2ShortOpenHashMap.this.f2639n]);
                     }
-                    int pos = Object2ShortOpenHashMap.this.f2675n;
+                    int pos = Object2ShortOpenHashMap.this.f2639n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1559,8 +1559,8 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2676f)));
-        if (l >= this.f2675n || this.size > HashCommon.maxFill(l, this.f2676f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2640f)));
+        if (l >= this.f2639n || this.size > HashCommon.maxFill(l, this.f2640f)) {
             return true;
         }
         try {
@@ -1578,7 +1578,7 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
         int mask = newN - 1;
         K[] newKey = (K[]) new Object[newN + 1];
         short[] newValue = new short[newN + 1];
-        int i2 = this.f2675n;
+        int i2 = this.f2639n;
         int j = realSize();
         while (true) {
             j--;
@@ -1597,10 +1597,10 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f2675n];
-                this.f2675n = newN;
+                newValue[newN] = value[this.f2639n];
+                this.f2639n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2675n, this.f2676f);
+                this.maxFill = HashCommon.maxFill(this.f2639n, this.f2640f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1646,7 +1646,7 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f2675n];
+            h += this.value[this.f2639n];
         }
         return h;
     }
@@ -1675,12 +1675,12 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2675n = HashCommon.arraySize(this.size, this.f2676f);
-        this.maxFill = HashCommon.maxFill(this.f2675n, this.f2676f);
-        this.mask = this.f2675n - 1;
-        K[] key = (K[]) new Object[this.f2675n + 1];
+        this.f2639n = HashCommon.arraySize(this.size, this.f2640f);
+        this.maxFill = HashCommon.maxFill(this.f2639n, this.f2640f);
+        this.mask = this.f2639n - 1;
+        K[] key = (K[]) new Object[this.f2639n + 1];
         this.key = key;
-        short[] value = new short[this.f2675n + 1];
+        short[] value = new short[this.f2639n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1689,7 +1689,7 @@ public class Object2ShortOpenHashMap<K> extends AbstractObject2ShortMap<K> imple
                 Object readObject = s.readObject();
                 short v = s.readShort();
                 if (readObject == null) {
-                    pos = this.f2675n;
+                    pos = this.f2639n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix(readObject.hashCode());

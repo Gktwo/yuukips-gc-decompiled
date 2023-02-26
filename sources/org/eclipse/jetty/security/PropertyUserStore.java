@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.PathWatcher;
 import org.eclipse.jetty.util.StringUtil;
 import org.eclipse.jetty.util.log.Log;
@@ -91,7 +91,7 @@ public class PropertyUserStore extends UserStore implements PathWatcher.Listener
         Path extractedPath = Paths.get(tmpDirectory.toString(), entryPath);
         Files.deleteIfExists(extractedPath);
         extractedPath.toFile().deleteOnExit();
-        C5747IO.copy(configResource.getInputStream(), new FileOutputStream(extractedPath.toFile()));
+        C5739IO.copy(configResource.getInputStream(), new FileOutputStream(extractedPath.toFile()));
         if (isHotReload()) {
             LOG.warn("Cannot hot reload from packed configuration: {}", configResource);
             setHotReload(false);

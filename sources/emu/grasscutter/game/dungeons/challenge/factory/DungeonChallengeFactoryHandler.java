@@ -14,7 +14,7 @@ import java.util.List;
 public class DungeonChallengeFactoryHandler implements ChallengeFactoryHandler {
     @Override // emu.grasscutter.game.dungeons.challenge.factory.ChallengeFactoryHandler
     public boolean isThisType(int id_challenge, int type_challenge, int time, int grup_id, int goal_kill, int unknown1, Scene scene, SceneGroup group) {
-        return scene.getSceneType() == SceneType.SCENE_DUNGEON && grup_id == group.f957id;
+        return scene.getSceneType() == SceneType.SCENE_DUNGEON && grup_id == group.f922id;
     }
 
     @Override // emu.grasscutter.game.dungeons.challenge.factory.ChallengeFactoryHandler

@@ -33,20 +33,20 @@ public final class RedirectToLowercasePathPlugin implements Plugin, PluginLifecy
     public void init(@NotNull Javalin app) {
         Intrinsics.checkNotNullParameter(app, "app");
         app.events((v1) -> {
-            m5854init$lambda6(r1, v1);
+            m5851init$lambda6(r1, v1);
         });
     }
 
     /* renamed from: init$lambda-6  reason: not valid java name */
-    private static final void m5854init$lambda6(Javalin $app, EventListener e) {
+    private static final void m5851init$lambda6(Javalin $app, EventListener e) {
         Intrinsics.checkNotNullParameter($app, "$app");
         e.handlerAdded((v1) -> {
-            m5853init$lambda6$lambda5(r1, v1);
+            m5850init$lambda6$lambda5(r1, v1);
         });
     }
 
     /* renamed from: init$lambda-6$lambda-5  reason: not valid java name */
-    private static final void m5853init$lambda6$lambda5(Javalin $app, HandlerMetaInfo h) {
+    private static final void m5850init$lambda6$lambda5(Javalin $app, HandlerMetaInfo h) {
         Intrinsics.checkNotNullParameter($app, "$app");
         PathParser parser = new PathParser(h.getPath(), $app._conf.ignoreTrailingSlashes);
         Iterable $this$filterIsInstance$iv = parser.getSegments();
@@ -115,12 +115,12 @@ public final class RedirectToLowercasePathPlugin implements Plugin, PluginLifecy
     public void apply(@NotNull Javalin app) {
         Intrinsics.checkNotNullParameter(app, "app");
         app.before((v1) -> {
-            m5855apply$lambda12(r1, v1);
+            m5852apply$lambda12(r1, v1);
         });
     }
 
     /* renamed from: apply$lambda-12  reason: not valid java name */
-    private static final void m5855apply$lambda12(Javalin $app, Context ctx) {
+    private static final void m5852apply$lambda12(Javalin $app, Context ctx) {
         Intrinsics.checkNotNullParameter($app, "$app");
         Intrinsics.checkNotNullParameter(ctx, "ctx");
         HandlerType type = HandlerType.Companion.fromServletRequest(ctx.req);

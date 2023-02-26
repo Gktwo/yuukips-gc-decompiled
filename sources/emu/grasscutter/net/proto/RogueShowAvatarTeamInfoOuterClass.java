@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RogueShowAvatarTeamInfoOuterClass.class */
 public final class RogueShowAvatarTeamInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dRogueShowAvatarTeamInfo.proto\u001a\u0015RogueAvatarInfo.proto\"@\n\u0017RogueShowAvatarTeamInfo\u0012%\n\u000bavatar_list\u0018\r \u0003(\u000b2\u0010.RogueAvatarInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{RogueAvatarInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dRogueShowAvatarTeamInfo.proto\u001a\u0015RogueAvatarInfo.proto\"?\n\u0017RogueShowAvatarTeamInfo\u0012$\n\navatarList\u0018\u0003 \u0003(\u000b2\u0010.RogueAvatarInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{RogueAvatarInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_RogueShowAvatarTeamInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_RogueShowAvatarTeamInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_RogueShowAvatarTeamInfo_descriptor, new String[]{"AvatarList"});
 
@@ -55,7 +55,7 @@ public final class RogueShowAvatarTeamInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RogueShowAvatarTeamInfoOuterClass$RogueShowAvatarTeamInfo.class */
     public static final class RogueShowAvatarTeamInfo extends GeneratedMessageV3 implements RogueShowAvatarTeamInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_LIST_FIELD_NUMBER = 13;
+        public static final int AVATARLIST_FIELD_NUMBER = 3;
         private List<RogueAvatarInfoOuterClass.RogueAvatarInfo> avatarList_;
         private byte memoizedIsInitialized;
         private static final RogueShowAvatarTeamInfo DEFAULT_INSTANCE = new RogueShowAvatarTeamInfo();
@@ -106,7 +106,7 @@ public final class RogueShowAvatarTeamInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 106:
+                                case 26:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.avatarList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -187,7 +187,7 @@ public final class RogueShowAvatarTeamInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.avatarList_.size(); i++) {
-                output.writeMessage(13, this.avatarList_.get(i));
+                output.writeMessage(3, this.avatarList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,7 +200,7 @@ public final class RogueShowAvatarTeamInfoOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.avatarList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(13, this.avatarList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(3, this.avatarList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class RogueShowAvatarTeamInfoOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getAvatarListCount() > 0) {
-                hash = (53 * ((37 * hash) + 13)) + getAvatarListList().hashCode();
+                hash = (53 * ((37 * hash) + 3)) + getAvatarListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

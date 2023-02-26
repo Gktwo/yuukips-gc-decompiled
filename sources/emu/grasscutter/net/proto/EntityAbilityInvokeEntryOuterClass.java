@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityAbilityInvokeEntryOuterClass.class */
 public final class EntityAbilityInvokeEntryOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eEntityAbilityInvokeEntry.proto\u001a\u0018AbilityInvokeEntry.proto\"S\n\u0018EntityAbilityInvokeEntry\u0012$\n\u0007invokes\u0018\u000e \u0003(\u000b2\u0013.AbilityInvokeEntry\u0012\u0011\n\tentity_id\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityInvokeEntryOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eEntityAbilityInvokeEntry.proto\u001a\u0018AbilityInvokeEntry.proto\"R\n\u0018EntityAbilityInvokeEntry\u0012$\n\u0007invokes\u0018\u0004 \u0003(\u000b2\u0013.AbilityInvokeEntry\u0012\u0010\n\bentityId\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityInvokeEntryOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_EntityAbilityInvokeEntry_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_EntityAbilityInvokeEntry_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EntityAbilityInvokeEntry_descriptor, new String[]{"Invokes", "EntityId"});
 
@@ -57,9 +57,9 @@ public final class EntityAbilityInvokeEntryOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityAbilityInvokeEntryOuterClass$EntityAbilityInvokeEntry.class */
     public static final class EntityAbilityInvokeEntry extends GeneratedMessageV3 implements EntityAbilityInvokeEntryOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int INVOKES_FIELD_NUMBER = 14;
+        public static final int INVOKES_FIELD_NUMBER = 4;
         private List<AbilityInvokeEntryOuterClass.AbilityInvokeEntry> invokes_;
-        public static final int ENTITY_ID_FIELD_NUMBER = 7;
+        public static final int ENTITYID_FIELD_NUMBER = 9;
         private int entityId_;
         private byte memoizedIsInitialized;
         private static final EntityAbilityInvokeEntry DEFAULT_INSTANCE = new EntityAbilityInvokeEntry();
@@ -110,15 +110,15 @@ public final class EntityAbilityInvokeEntryOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 56:
-                                    this.entityId_ = input.readUInt32();
-                                    break;
-                                case 114:
+                                case 34:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.invokes_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.invokes_.add((AbilityInvokeEntryOuterClass.AbilityInvokeEntry) input.readMessage(AbilityInvokeEntryOuterClass.AbilityInvokeEntry.parser(), extensionRegistry));
+                                    break;
+                                case 72:
+                                    this.entityId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -198,11 +198,11 @@ public final class EntityAbilityInvokeEntryOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.entityId_ != 0) {
-                output.writeUInt32(7, this.entityId_);
-            }
             for (int i = 0; i < this.invokes_.size(); i++) {
-                output.writeMessage(14, this.invokes_.get(i));
+                output.writeMessage(4, this.invokes_.get(i));
+            }
+            if (this.entityId_ != 0) {
+                output.writeUInt32(9, this.entityId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -214,11 +214,11 @@ public final class EntityAbilityInvokeEntryOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.entityId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.entityId_);
-            }
             for (int i = 0; i < this.invokes_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(14, this.invokes_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(4, this.invokes_.get(i));
+            }
+            if (this.entityId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(9, this.entityId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -244,9 +244,9 @@ public final class EntityAbilityInvokeEntryOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getInvokesCount() > 0) {
-                hash = (53 * ((37 * hash) + 14)) + getInvokesList().hashCode();
+                hash = (53 * ((37 * hash) + 4)) + getInvokesList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 7)) + getEntityId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 9)) + getEntityId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

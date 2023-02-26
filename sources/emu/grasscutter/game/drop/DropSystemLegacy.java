@@ -44,7 +44,7 @@ public class DropSystemLegacy extends BaseGameSystem {
                     getDropData().put(di.getMonsterId(), (int) di.getDropDataList());
                     this.DropInfo.add(Integer.valueOf(di.getMonsterId()));
                 }
-                Grasscutter.getLogger().warn("Drop data {} successfully loaded.", Integer.valueOf(getDropData().size()));
+                Grasscutter.getLogger().info("Loaded {} Drop Data", Integer.valueOf(getDropData().size()));
             } else {
                 Grasscutter.getLogger().error("Unable to load drop data. Drop data size is 0.");
             }

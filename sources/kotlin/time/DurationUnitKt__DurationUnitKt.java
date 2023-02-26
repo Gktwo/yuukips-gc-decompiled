@@ -81,7 +81,7 @@ class DurationUnitKt__DurationUnitKt extends DurationUnitJvm {
                     return DurationUnit.SECONDS;
                 }
                 break;
-            case PacketOpcodes.ForceDragBackTransferNotify:
+            case PacketOpcodes.GetScenePerformanceReq:
                 if (shortName.equals("ms")) {
                     return DurationUnit.MILLISECONDS;
                 }

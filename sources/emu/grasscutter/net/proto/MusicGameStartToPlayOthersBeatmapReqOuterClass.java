@@ -24,7 +24,7 @@ public final class MusicGameStartToPlayOthersBeatmapReqOuterClass {
     private static final Descriptors.Descriptor internal_static_MusicGameStartToPlayOthersBeatmapReq_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_MusicGameStartToPlayOthersBeatmapReq_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f814x3de4ba68 = new GeneratedMessageV3.FieldAccessorTable(internal_static_MusicGameStartToPlayOthersBeatmapReq_descriptor, new String[]{"UnknownEnum1"});
+    private static final GeneratedMessageV3.FieldAccessorTable f792x3de4ba68 = new GeneratedMessageV3.FieldAccessorTable(internal_static_MusicGameStartToPlayOthersBeatmapReq_descriptor, new String[]{"UnknownEnum1"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MusicGameStartToPlayOthersBeatmapReqOuterClass$MusicGameStartToPlayOthersBeatmapReqOrBuilder.class */
     public interface MusicGameStartToPlayOthersBeatmapReqOrBuilder extends MessageOrBuilder {
@@ -123,7 +123,7 @@ public final class MusicGameStartToPlayOthersBeatmapReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return MusicGameStartToPlayOthersBeatmapReqOuterClass.f814x3de4ba68.ensureFieldAccessorsInitialized(MusicGameStartToPlayOthersBeatmapReq.class, Builder.class);
+            return MusicGameStartToPlayOthersBeatmapReqOuterClass.f792x3de4ba68.ensureFieldAccessorsInitialized(MusicGameStartToPlayOthersBeatmapReq.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.MusicGameStartToPlayOthersBeatmapReqOuterClass.MusicGameStartToPlayOthersBeatmapReqOrBuilder
@@ -277,7 +277,7 @@ public final class MusicGameStartToPlayOthersBeatmapReqOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return MusicGameStartToPlayOthersBeatmapReqOuterClass.f814x3de4ba68.ensureFieldAccessorsInitialized(MusicGameStartToPlayOthersBeatmapReq.class, Builder.class);
+                return MusicGameStartToPlayOthersBeatmapReqOuterClass.f792x3de4ba68.ensureFieldAccessorsInitialized(MusicGameStartToPlayOthersBeatmapReq.class, Builder.class);
             }
 
             private Builder() {

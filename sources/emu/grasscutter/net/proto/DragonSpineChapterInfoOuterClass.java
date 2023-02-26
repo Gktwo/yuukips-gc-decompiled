@@ -20,21 +20,21 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DragonSpineChapterInfoOuterClass.class */
 public final class DragonSpineChapterInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cDragonSpineChapterInfo.proto\"\u0001\n\u0016DragonSpineChapterInfo\u0012\u0011\n\topen_time\u0018\u0001 \u0001(\r\u0012\u0010\n\bprogress\u0018\f \u0001(\r\u0012\u0012\n\nchapter_id\u0018\u0006 \u0001(\r\u0012\u001c\n\u0014finished_mission_num\u0018\u0005 \u0001(\r\u0012\u000f\n\u0007is_open\u0018\u0002 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cDragonSpineChapterInfo.proto\"{\n\u0016DragonSpineChapterInfo\u0012\u001a\n\u0012finishedMissionNum\u0018\u0007 \u0001(\r\u0012\u0011\n\tchapterId\u0018\u0004 \u0001(\r\u0012\u000e\n\u0006isOpen\u0018\u0006 \u0001(\b\u0012\u0010\n\bprogress\u0018\b \u0001(\r\u0012\u0010\n\bopenTime\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_DragonSpineChapterInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_DragonSpineChapterInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DragonSpineChapterInfo_descriptor, new String[]{"OpenTime", "Progress", "ChapterId", "FinishedMissionNum", "IsOpen"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_DragonSpineChapterInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DragonSpineChapterInfo_descriptor, new String[]{"FinishedMissionNum", "ChapterId", "IsOpen", "Progress", "OpenTime"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DragonSpineChapterInfoOuterClass$DragonSpineChapterInfoOrBuilder.class */
     public interface DragonSpineChapterInfoOrBuilder extends MessageOrBuilder {
-        int getOpenTime();
-
-        int getProgress();
+        int getFinishedMissionNum();
 
         int getChapterId();
 
-        int getFinishedMissionNum();
-
         boolean getIsOpen();
+
+        int getProgress();
+
+        int getOpenTime();
     }
 
     private DragonSpineChapterInfoOuterClass() {
@@ -50,16 +50,16 @@ public final class DragonSpineChapterInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DragonSpineChapterInfoOuterClass$DragonSpineChapterInfo.class */
     public static final class DragonSpineChapterInfo extends GeneratedMessageV3 implements DragonSpineChapterInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int OPEN_TIME_FIELD_NUMBER = 1;
-        private int openTime_;
-        public static final int PROGRESS_FIELD_NUMBER = 12;
-        private int progress_;
-        public static final int CHAPTER_ID_FIELD_NUMBER = 6;
-        private int chapterId_;
-        public static final int FINISHED_MISSION_NUM_FIELD_NUMBER = 5;
+        public static final int FINISHEDMISSIONNUM_FIELD_NUMBER = 7;
         private int finishedMissionNum_;
-        public static final int IS_OPEN_FIELD_NUMBER = 2;
+        public static final int CHAPTERID_FIELD_NUMBER = 4;
+        private int chapterId_;
+        public static final int ISOPEN_FIELD_NUMBER = 6;
         private boolean isOpen_;
+        public static final int PROGRESS_FIELD_NUMBER = 8;
+        private int progress_;
+        public static final int OPENTIME_FIELD_NUMBER = 3;
+        private int openTime_;
         private byte memoizedIsInitialized;
         private static final DragonSpineChapterInfo DEFAULT_INSTANCE = new DragonSpineChapterInfo();
         private static final Parser<DragonSpineChapterInfo> PARSER = new AbstractParser<DragonSpineChapterInfo>() { // from class: emu.grasscutter.net.proto.DragonSpineChapterInfoOuterClass.DragonSpineChapterInfo.1
@@ -105,19 +105,19 @@ public final class DragonSpineChapterInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
+                            case 24:
                                 this.openTime_ = input.readUInt32();
                                 break;
-                            case 16:
-                                this.isOpen_ = input.readBool();
-                                break;
-                            case 40:
-                                this.finishedMissionNum_ = input.readUInt32();
-                                break;
-                            case 48:
+                            case 32:
                                 this.chapterId_ = input.readUInt32();
                                 break;
-                            case 96:
+                            case 48:
+                                this.isOpen_ = input.readBool();
+                                break;
+                            case 56:
+                                this.finishedMissionNum_ = input.readUInt32();
+                                break;
+                            case 64:
                                 this.progress_ = input.readUInt32();
                                 break;
                             default:
@@ -150,13 +150,8 @@ public final class DragonSpineChapterInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.DragonSpineChapterInfoOuterClass.DragonSpineChapterInfoOrBuilder
-        public int getOpenTime() {
-            return this.openTime_;
-        }
-
-        @Override // emu.grasscutter.net.proto.DragonSpineChapterInfoOuterClass.DragonSpineChapterInfoOrBuilder
-        public int getProgress() {
-            return this.progress_;
+        public int getFinishedMissionNum() {
+            return this.finishedMissionNum_;
         }
 
         @Override // emu.grasscutter.net.proto.DragonSpineChapterInfoOuterClass.DragonSpineChapterInfoOrBuilder
@@ -165,13 +160,18 @@ public final class DragonSpineChapterInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.DragonSpineChapterInfoOuterClass.DragonSpineChapterInfoOrBuilder
-        public int getFinishedMissionNum() {
-            return this.finishedMissionNum_;
+        public boolean getIsOpen() {
+            return this.isOpen_;
         }
 
         @Override // emu.grasscutter.net.proto.DragonSpineChapterInfoOuterClass.DragonSpineChapterInfoOrBuilder
-        public boolean getIsOpen() {
-            return this.isOpen_;
+        public int getProgress() {
+            return this.progress_;
+        }
+
+        @Override // emu.grasscutter.net.proto.DragonSpineChapterInfoOuterClass.DragonSpineChapterInfoOrBuilder
+        public int getOpenTime() {
+            return this.openTime_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -190,19 +190,19 @@ public final class DragonSpineChapterInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.openTime_ != 0) {
-                output.writeUInt32(1, this.openTime_);
-            }
-            if (this.isOpen_) {
-                output.writeBool(2, this.isOpen_);
-            }
-            if (this.finishedMissionNum_ != 0) {
-                output.writeUInt32(5, this.finishedMissionNum_);
+                output.writeUInt32(3, this.openTime_);
             }
             if (this.chapterId_ != 0) {
-                output.writeUInt32(6, this.chapterId_);
+                output.writeUInt32(4, this.chapterId_);
+            }
+            if (this.isOpen_) {
+                output.writeBool(6, this.isOpen_);
+            }
+            if (this.finishedMissionNum_ != 0) {
+                output.writeUInt32(7, this.finishedMissionNum_);
             }
             if (this.progress_ != 0) {
-                output.writeUInt32(12, this.progress_);
+                output.writeUInt32(8, this.progress_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -215,19 +215,19 @@ public final class DragonSpineChapterInfoOuterClass {
             }
             int size2 = 0;
             if (this.openTime_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.openTime_);
-            }
-            if (this.isOpen_) {
-                size2 += CodedOutputStream.computeBoolSize(2, this.isOpen_);
-            }
-            if (this.finishedMissionNum_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.finishedMissionNum_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.openTime_);
             }
             if (this.chapterId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(6, this.chapterId_);
+                size2 += CodedOutputStream.computeUInt32Size(4, this.chapterId_);
+            }
+            if (this.isOpen_) {
+                size2 += CodedOutputStream.computeBoolSize(6, this.isOpen_);
+            }
+            if (this.finishedMissionNum_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(7, this.finishedMissionNum_);
             }
             if (this.progress_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.progress_);
+                size2 += CodedOutputStream.computeUInt32Size(8, this.progress_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -243,7 +243,7 @@ public final class DragonSpineChapterInfoOuterClass {
                 return equals(obj);
             }
             DragonSpineChapterInfo other = (DragonSpineChapterInfo) obj;
-            return getOpenTime() == other.getOpenTime() && getProgress() == other.getProgress() && getChapterId() == other.getChapterId() && getFinishedMissionNum() == other.getFinishedMissionNum() && getIsOpen() == other.getIsOpen() && this.unknownFields.equals(other.unknownFields);
+            return getFinishedMissionNum() == other.getFinishedMissionNum() && getChapterId() == other.getChapterId() && getIsOpen() == other.getIsOpen() && getProgress() == other.getProgress() && getOpenTime() == other.getOpenTime() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -251,7 +251,7 @@ public final class DragonSpineChapterInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getOpenTime())) + 12)) + getProgress())) + 6)) + getChapterId())) + 5)) + getFinishedMissionNum())) + 2)) + Internal.hashBoolean(getIsOpen()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getFinishedMissionNum())) + 4)) + getChapterId())) + 6)) + Internal.hashBoolean(getIsOpen()))) + 8)) + getProgress())) + 3)) + getOpenTime())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -330,11 +330,11 @@ public final class DragonSpineChapterInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DragonSpineChapterInfoOuterClass$DragonSpineChapterInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements DragonSpineChapterInfoOrBuilder {
-            private int openTime_;
-            private int progress_;
-            private int chapterId_;
             private int finishedMissionNum_;
+            private int chapterId_;
             private boolean isOpen_;
+            private int progress_;
+            private int openTime_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return DragonSpineChapterInfoOuterClass.internal_static_DragonSpineChapterInfo_descriptor;
@@ -362,11 +362,11 @@ public final class DragonSpineChapterInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.openTime_ = 0;
-                this.progress_ = 0;
-                this.chapterId_ = 0;
                 this.finishedMissionNum_ = 0;
+                this.chapterId_ = 0;
                 this.isOpen_ = false;
+                this.progress_ = 0;
+                this.openTime_ = 0;
                 return this;
             }
 
@@ -392,11 +392,11 @@ public final class DragonSpineChapterInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public DragonSpineChapterInfo buildPartial() {
                 DragonSpineChapterInfo result = new DragonSpineChapterInfo(this);
-                result.openTime_ = this.openTime_;
-                result.progress_ = this.progress_;
-                result.chapterId_ = this.chapterId_;
                 result.finishedMissionNum_ = this.finishedMissionNum_;
+                result.chapterId_ = this.chapterId_;
                 result.isOpen_ = this.isOpen_;
+                result.progress_ = this.progress_;
+                result.openTime_ = this.openTime_;
                 onBuilt();
                 return result;
             }
@@ -444,20 +444,20 @@ public final class DragonSpineChapterInfoOuterClass {
                 if (other == DragonSpineChapterInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getOpenTime() != 0) {
-                    setOpenTime(other.getOpenTime());
-                }
-                if (other.getProgress() != 0) {
-                    setProgress(other.getProgress());
+                if (other.getFinishedMissionNum() != 0) {
+                    setFinishedMissionNum(other.getFinishedMissionNum());
                 }
                 if (other.getChapterId() != 0) {
                     setChapterId(other.getChapterId());
                 }
-                if (other.getFinishedMissionNum() != 0) {
-                    setFinishedMissionNum(other.getFinishedMissionNum());
-                }
                 if (other.getIsOpen()) {
                     setIsOpen(other.getIsOpen());
+                }
+                if (other.getProgress() != 0) {
+                    setProgress(other.getProgress());
+                }
+                if (other.getOpenTime() != 0) {
+                    setOpenTime(other.getOpenTime());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -492,35 +492,18 @@ public final class DragonSpineChapterInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.DragonSpineChapterInfoOuterClass.DragonSpineChapterInfoOrBuilder
-            public int getOpenTime() {
-                return this.openTime_;
+            public int getFinishedMissionNum() {
+                return this.finishedMissionNum_;
             }
 
-            public Builder setOpenTime(int value) {
-                this.openTime_ = value;
+            public Builder setFinishedMissionNum(int value) {
+                this.finishedMissionNum_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearOpenTime() {
-                this.openTime_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.DragonSpineChapterInfoOuterClass.DragonSpineChapterInfoOrBuilder
-            public int getProgress() {
-                return this.progress_;
-            }
-
-            public Builder setProgress(int value) {
-                this.progress_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearProgress() {
-                this.progress_ = 0;
+            public Builder clearFinishedMissionNum() {
+                this.finishedMissionNum_ = 0;
                 onChanged();
                 return this;
             }
@@ -543,23 +526,6 @@ public final class DragonSpineChapterInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.DragonSpineChapterInfoOuterClass.DragonSpineChapterInfoOrBuilder
-            public int getFinishedMissionNum() {
-                return this.finishedMissionNum_;
-            }
-
-            public Builder setFinishedMissionNum(int value) {
-                this.finishedMissionNum_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearFinishedMissionNum() {
-                this.finishedMissionNum_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.DragonSpineChapterInfoOuterClass.DragonSpineChapterInfoOrBuilder
             public boolean getIsOpen() {
                 return this.isOpen_;
             }
@@ -572,6 +538,40 @@ public final class DragonSpineChapterInfoOuterClass {
 
             public Builder clearIsOpen() {
                 this.isOpen_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.DragonSpineChapterInfoOuterClass.DragonSpineChapterInfoOrBuilder
+            public int getProgress() {
+                return this.progress_;
+            }
+
+            public Builder setProgress(int value) {
+                this.progress_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearProgress() {
+                this.progress_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.DragonSpineChapterInfoOuterClass.DragonSpineChapterInfoOrBuilder
+            public int getOpenTime() {
+                return this.openTime_;
+            }
+
+            public Builder setOpenTime(int value) {
+                this.openTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearOpenTime() {
+                this.openTime_ = 0;
                 onChanged();
                 return this;
             }

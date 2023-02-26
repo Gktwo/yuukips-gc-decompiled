@@ -27,7 +27,7 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestOuterClass.class */
 public final class QuestOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000bQuest.proto\"ñ\u0003\n\u0005Quest\u0012\u0010\n\bquest_id\u0018\u0001 \u0001(\r\u0012\r\n\u0005state\u0018\u0002 \u0001(\r\u0012\u0012\n\nstart_time\u0018\u0004 \u0001(\r\u0012\u0011\n\tis_random\u0018\u0005 \u0001(\b\u0012\u0017\n\u000fparent_quest_id\u0018\u0006 \u0001(\r\u0012\u0017\n\u000fquest_config_id\u0018\u0007 \u0001(\r\u0012\u0017\n\u000fstart_game_time\u0018\b \u0001(\r\u0012\u0013\n\u000baccept_time\u0018\t \u0001(\r\u0012\u0017\n\u000flacked_npc_list\u0018\n \u0003(\r\u0012\u001c\n\u0014finish_progress_list\u0018\u000b \u0003(\r\u0012\u001a\n\u0012fail_progress_list\u0018\f \u0003(\r\u00120\n\u000elacked_npc_map\u0018\r \u0003(\u000b2\u0018.Quest.LackedNpcMapEntry\u0012\u0019\n\u0011lacked_place_list\u0018\u000e \u0003(\r\u00124\n\u0010lacked_place_map\u0018\u000f \u0003(\u000b2\u001a.Quest.LackedPlaceMapEntry\u001a3\n\u0011LackedNpcMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001\u001a5\n\u0013LackedPlaceMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000bQuest.proto\"Û\u0003\n\u0005Quest\u0012\u000f\n\u0007questId\u0018\u0001 \u0001(\r\u0012\r\n\u0005state\u0018\u0002 \u0001(\r\u0012\u0011\n\tstartTime\u0018\u0004 \u0001(\r\u0012\u0010\n\bisRandom\u0018\u0005 \u0001(\b\u0012\u0015\n\rparentQuestId\u0018\u0006 \u0001(\r\u0012\u0015\n\rquestConfigId\u0018\u0007 \u0001(\r\u0012\u0015\n\rstartGameTime\u0018\b \u0001(\r\u0012\u0012\n\nacceptTime\u0018\t \u0001(\r\u0012\u0015\n\rlackedNpcList\u0018\n \u0003(\r\u0012\u001a\n\u0012finishProgressList\u0018\u000b \u0003(\r\u0012\u0018\n\u0010failProgressList\u0018\f \u0003(\r\u0012.\n\flackedNpcMap\u0018\r \u0003(\u000b2\u0018.Quest.LackedNpcMapEntry\u0012\u0017\n\u000flackedPlaceList\u0018\u000e \u0003(\r\u00122\n\u000elackedPlaceMap\u0018\u000f \u0003(\u000b2\u001a.Quest.LackedPlaceMapEntry\u001a3\n\u0011LackedNpcMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001\u001a5\n\u0013LackedPlaceMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_Quest_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_Quest_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_Quest_descriptor, new String[]{"QuestId", "State", "StartTime", "IsRandom", "ParentQuestId", "QuestConfigId", "StartGameTime", "AcceptTime", "LackedNpcList", "FinishProgressList", "FailProgressList", "LackedNpcMap", "LackedPlaceList", "LackedPlaceMap"});
     private static final Descriptors.Descriptor internal_static_Quest_LackedNpcMapEntry_descriptor = internal_static_Quest_descriptor.getNestedTypes().get(0);
@@ -117,37 +117,37 @@ public final class QuestOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestOuterClass$Quest.class */
     public static final class Quest extends GeneratedMessageV3 implements QuestOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int QUEST_ID_FIELD_NUMBER = 1;
+        public static final int QUESTID_FIELD_NUMBER = 1;
         private int questId_;
         public static final int STATE_FIELD_NUMBER = 2;
         private int state_;
-        public static final int START_TIME_FIELD_NUMBER = 4;
+        public static final int STARTTIME_FIELD_NUMBER = 4;
         private int startTime_;
-        public static final int IS_RANDOM_FIELD_NUMBER = 5;
+        public static final int ISRANDOM_FIELD_NUMBER = 5;
         private boolean isRandom_;
-        public static final int PARENT_QUEST_ID_FIELD_NUMBER = 6;
+        public static final int PARENTQUESTID_FIELD_NUMBER = 6;
         private int parentQuestId_;
-        public static final int QUEST_CONFIG_ID_FIELD_NUMBER = 7;
+        public static final int QUESTCONFIGID_FIELD_NUMBER = 7;
         private int questConfigId_;
-        public static final int START_GAME_TIME_FIELD_NUMBER = 8;
+        public static final int STARTGAMETIME_FIELD_NUMBER = 8;
         private int startGameTime_;
-        public static final int ACCEPT_TIME_FIELD_NUMBER = 9;
+        public static final int ACCEPTTIME_FIELD_NUMBER = 9;
         private int acceptTime_;
-        public static final int LACKED_NPC_LIST_FIELD_NUMBER = 10;
+        public static final int LACKEDNPCLIST_FIELD_NUMBER = 10;
         private Internal.IntList lackedNpcList_;
         private int lackedNpcListMemoizedSerializedSize;
-        public static final int FINISH_PROGRESS_LIST_FIELD_NUMBER = 11;
+        public static final int FINISHPROGRESSLIST_FIELD_NUMBER = 11;
         private Internal.IntList finishProgressList_;
         private int finishProgressListMemoizedSerializedSize;
-        public static final int FAIL_PROGRESS_LIST_FIELD_NUMBER = 12;
+        public static final int FAILPROGRESSLIST_FIELD_NUMBER = 12;
         private Internal.IntList failProgressList_;
         private int failProgressListMemoizedSerializedSize;
-        public static final int LACKED_NPC_MAP_FIELD_NUMBER = 13;
+        public static final int LACKEDNPCMAP_FIELD_NUMBER = 13;
         private MapField<Integer, Integer> lackedNpcMap_;
-        public static final int LACKED_PLACE_LIST_FIELD_NUMBER = 14;
+        public static final int LACKEDPLACELIST_FIELD_NUMBER = 14;
         private Internal.IntList lackedPlaceList_;
         private int lackedPlaceListMemoizedSerializedSize;
-        public static final int LACKED_PLACE_MAP_FIELD_NUMBER = 15;
+        public static final int LACKEDPLACEMAP_FIELD_NUMBER = 15;
         private MapField<Integer, Integer> lackedPlaceMap_;
         private byte memoizedIsInitialized;
         private static final Quest DEFAULT_INSTANCE = new Quest();

@@ -1,8 +1,7 @@
 package com.esotericsoftware.asm;
 
-/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:com/esotericsoftware/asm/Handler.class */
-public class Handler {
+class Handler {
 
     /* renamed from: a */
     Label f129a;

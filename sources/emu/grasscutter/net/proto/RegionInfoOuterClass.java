@@ -340,34 +340,34 @@ public final class RegionInfoOuterClass {
                             case 194:
                                 this.officialCommunityUrl_ = input.readStringRequireUtf8();
                                 break;
-                            case PacketOpcodes.SceneForceUnlockNotify:
+                            case PacketOpcodes.ExecuteGadgetLuaReq:
                                 this.clientVersionSuffix_ = input.readStringRequireUtf8();
                                 break;
-                            case PacketOpcodes.BackMyWorldRsp:
+                            case PacketOpcodes.SceneEntityDrownReq:
                                 this.clientSilenceVersionSuffix_ = input.readStringRequireUtf8();
                                 break;
-                            case PacketOpcodes.WorldPlayerLocationNotify:
+                            case PacketOpcodes.SceneAvatarStaminaStepRsp:
                                 this.useGateserverDomainName_ = input.readBool();
                                 break;
-                            case PacketOpcodes.EntityForceSyncReq:
+                            case PacketOpcodes.JoinPlayerSceneReq:
                                 this.gateserverDomainName_ = input.readStringRequireUtf8();
                                 break;
-                            case 242:
+                            case PacketOpcodes.EnterWorldAreaReq:
                                 this.userCenterUrl_ = input.readStringRequireUtf8();
                                 break;
                             case 250:
                                 this.accountBindUrl_ = input.readStringRequireUtf8();
                                 break;
-                            case PacketOpcodes.JoinPlayerFailNotify:
+                            case PacketOpcodes.SceneAreaUnlockNotify:
                                 this.cdkeyUrl_ = input.readStringRequireUtf8();
                                 break;
-                            case PacketOpcodes.ScenePlayerSoundNotify:
+                            case PacketOpcodes.SetSceneWeatherAreaRsp:
                                 this.privacyPolicyUrl_ = input.readStringRequireUtf8();
                                 break;
-                            case PacketOpcodes.PersonalSceneJumpRsp:
+                            case PacketOpcodes.SceneEntityAppearNotify:
                                 this.nextResourceUrl_ = input.readStringRequireUtf8();
                                 break;
-                            case PacketOpcodes.EnterSceneWeatherAreaNotify:
+                            case PacketOpcodes.SceneKickPlayerNotify:
                                 ResVersionConfigOuterClass.ResVersionConfig.Builder subBuilder2 = this.nextResVersionConfig_ != null ? this.nextResVersionConfig_.toBuilder() : null;
                                 this.nextResVersionConfig_ = (ResVersionConfigOuterClass.ResVersionConfig) input.readMessage(ResVersionConfigOuterClass.ResVersionConfig.parser(), extensionRegistry);
                                 if (subBuilder2 == null) {
@@ -377,7 +377,7 @@ public final class RegionInfoOuterClass {
                                     this.nextResVersionConfig_ = subBuilder2.buildPartial();
                                     break;
                                 }
-                            case PacketOpcodes.ExitTransPointRegionNotify:
+                            case PacketOpcodes.ExecuteGroupTriggerReq:
                                 this.gameBiz_ = input.readStringRequireUtf8();
                                 break;
                             default:

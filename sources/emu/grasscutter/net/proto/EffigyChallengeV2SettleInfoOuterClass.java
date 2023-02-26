@@ -20,23 +20,23 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EffigyChallengeV2SettleInfoOuterClass.class */
 public final class EffigyChallengeV2SettleInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!EffigyChallengeV2SettleInfo.proto\"Ñ\u0001\n\u001bEffigyChallengeV2SettleInfo\u0012!\n\u0019challenge_mode_difficulty\u0018\r \u0001(\r\u0012\u001b\n\u0013Unk3300_MHOIIPJKAMN\u0018\u000e \u0001(\r\u0012\u001b\n\u0013Unk3300_PHEIMLOKIJG\u0018\u000b \u0001(\r\u0012\u001b\n\u0013Unk3300_ONKPGFOLDFL\u0018\f \u0001(\r\u0012\u001b\n\u0013Unk3300_NGBKNDHJPCP\u0018\u0005 \u0001(\b\u0012\u001b\n\u0013Unk3300_AKMPCDIKBJD\u0018\t \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!EffigyChallengeV2SettleInfo.proto\"Ï\u0001\n\u001bEffigyChallengeV2SettleInfo\u0012\u001b\n\u0013Unk3300_MHOIIPJKAMN\u0018\u000e \u0001(\r\u0012\u001b\n\u0013Unk3300_AKMPCDIKBJD\u0018\u0005 \u0001(\b\u0012\u001b\n\u0013Unk3300_ONKPGFOLDFL\u0018\u000f \u0001(\r\u0012\u001b\n\u0013Unk3300_PHEIMLOKIJG\u0018\n \u0001(\r\u0012\u001f\n\u0017challengeModeDifficulty\u0018\r \u0001(\r\u0012\u001b\n\u0013Unk3300_NGBKNDHJPCP\u0018\u0001 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_EffigyChallengeV2SettleInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_EffigyChallengeV2SettleInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EffigyChallengeV2SettleInfo_descriptor, new String[]{"ChallengeModeDifficulty", "Unk3300MHOIIPJKAMN", "Unk3300PHEIMLOKIJG", "Unk3300ONKPGFOLDFL", "Unk3300NGBKNDHJPCP", "Unk3300AKMPCDIKBJD"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_EffigyChallengeV2SettleInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EffigyChallengeV2SettleInfo_descriptor, new String[]{"Unk3300MHOIIPJKAMN", "Unk3300AKMPCDIKBJD", "Unk3300ONKPGFOLDFL", "Unk3300PHEIMLOKIJG", "ChallengeModeDifficulty", "Unk3300NGBKNDHJPCP"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EffigyChallengeV2SettleInfoOuterClass$EffigyChallengeV2SettleInfoOrBuilder.class */
     public interface EffigyChallengeV2SettleInfoOrBuilder extends MessageOrBuilder {
-        int getChallengeModeDifficulty();
-
         int getUnk3300MHOIIPJKAMN();
 
-        int getUnk3300PHEIMLOKIJG();
+        boolean getUnk3300AKMPCDIKBJD();
 
         int getUnk3300ONKPGFOLDFL();
 
-        boolean getUnk3300NGBKNDHJPCP();
+        int getUnk3300PHEIMLOKIJG();
 
-        boolean getUnk3300AKMPCDIKBJD();
+        int getChallengeModeDifficulty();
+
+        boolean getUnk3300NGBKNDHJPCP();
     }
 
     private EffigyChallengeV2SettleInfoOuterClass() {
@@ -52,18 +52,18 @@ public final class EffigyChallengeV2SettleInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EffigyChallengeV2SettleInfoOuterClass$EffigyChallengeV2SettleInfo.class */
     public static final class EffigyChallengeV2SettleInfo extends GeneratedMessageV3 implements EffigyChallengeV2SettleInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CHALLENGE_MODE_DIFFICULTY_FIELD_NUMBER = 13;
-        private int challengeModeDifficulty_;
         public static final int UNK3300_MHOIIPJKAMN_FIELD_NUMBER = 14;
         private int unk3300MHOIIPJKAMN_;
-        public static final int UNK3300_PHEIMLOKIJG_FIELD_NUMBER = 11;
-        private int unk3300PHEIMLOKIJG_;
-        public static final int UNK3300_ONKPGFOLDFL_FIELD_NUMBER = 12;
-        private int unk3300ONKPGFOLDFL_;
-        public static final int UNK3300_NGBKNDHJPCP_FIELD_NUMBER = 5;
-        private boolean unk3300NGBKNDHJPCP_;
-        public static final int UNK3300_AKMPCDIKBJD_FIELD_NUMBER = 9;
+        public static final int UNK3300_AKMPCDIKBJD_FIELD_NUMBER = 5;
         private boolean unk3300AKMPCDIKBJD_;
+        public static final int UNK3300_ONKPGFOLDFL_FIELD_NUMBER = 15;
+        private int unk3300ONKPGFOLDFL_;
+        public static final int UNK3300_PHEIMLOKIJG_FIELD_NUMBER = 10;
+        private int unk3300PHEIMLOKIJG_;
+        public static final int CHALLENGEMODEDIFFICULTY_FIELD_NUMBER = 13;
+        private int challengeModeDifficulty_;
+        public static final int UNK3300_NGBKNDHJPCP_FIELD_NUMBER = 1;
+        private boolean unk3300NGBKNDHJPCP_;
         private byte memoizedIsInitialized;
         private static final EffigyChallengeV2SettleInfo DEFAULT_INSTANCE = new EffigyChallengeV2SettleInfo();
         private static final Parser<EffigyChallengeV2SettleInfo> PARSER = new AbstractParser<EffigyChallengeV2SettleInfo>() { // from class: emu.grasscutter.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfo.1
@@ -109,23 +109,23 @@ public final class EffigyChallengeV2SettleInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 40:
+                            case 8:
                                 this.unk3300NGBKNDHJPCP_ = input.readBool();
                                 break;
-                            case 72:
+                            case 40:
                                 this.unk3300AKMPCDIKBJD_ = input.readBool();
                                 break;
-                            case 88:
+                            case 80:
                                 this.unk3300PHEIMLOKIJG_ = input.readUInt32();
-                                break;
-                            case 96:
-                                this.unk3300ONKPGFOLDFL_ = input.readUInt32();
                                 break;
                             case 104:
                                 this.challengeModeDifficulty_ = input.readUInt32();
                                 break;
                             case 112:
                                 this.unk3300MHOIIPJKAMN_ = input.readUInt32();
+                                break;
+                            case 120:
+                                this.unk3300ONKPGFOLDFL_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -157,18 +157,13 @@ public final class EffigyChallengeV2SettleInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfoOrBuilder
-        public int getChallengeModeDifficulty() {
-            return this.challengeModeDifficulty_;
-        }
-
-        @Override // emu.grasscutter.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfoOrBuilder
         public int getUnk3300MHOIIPJKAMN() {
             return this.unk3300MHOIIPJKAMN_;
         }
 
         @Override // emu.grasscutter.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfoOrBuilder
-        public int getUnk3300PHEIMLOKIJG() {
-            return this.unk3300PHEIMLOKIJG_;
+        public boolean getUnk3300AKMPCDIKBJD() {
+            return this.unk3300AKMPCDIKBJD_;
         }
 
         @Override // emu.grasscutter.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfoOrBuilder
@@ -177,13 +172,18 @@ public final class EffigyChallengeV2SettleInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfoOrBuilder
-        public boolean getUnk3300NGBKNDHJPCP() {
-            return this.unk3300NGBKNDHJPCP_;
+        public int getUnk3300PHEIMLOKIJG() {
+            return this.unk3300PHEIMLOKIJG_;
         }
 
         @Override // emu.grasscutter.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfoOrBuilder
-        public boolean getUnk3300AKMPCDIKBJD() {
-            return this.unk3300AKMPCDIKBJD_;
+        public int getChallengeModeDifficulty() {
+            return this.challengeModeDifficulty_;
+        }
+
+        @Override // emu.grasscutter.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfoOrBuilder
+        public boolean getUnk3300NGBKNDHJPCP() {
+            return this.unk3300NGBKNDHJPCP_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -202,22 +202,22 @@ public final class EffigyChallengeV2SettleInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.unk3300NGBKNDHJPCP_) {
-                output.writeBool(5, this.unk3300NGBKNDHJPCP_);
+                output.writeBool(1, this.unk3300NGBKNDHJPCP_);
             }
             if (this.unk3300AKMPCDIKBJD_) {
-                output.writeBool(9, this.unk3300AKMPCDIKBJD_);
+                output.writeBool(5, this.unk3300AKMPCDIKBJD_);
             }
             if (this.unk3300PHEIMLOKIJG_ != 0) {
-                output.writeUInt32(11, this.unk3300PHEIMLOKIJG_);
-            }
-            if (this.unk3300ONKPGFOLDFL_ != 0) {
-                output.writeUInt32(12, this.unk3300ONKPGFOLDFL_);
+                output.writeUInt32(10, this.unk3300PHEIMLOKIJG_);
             }
             if (this.challengeModeDifficulty_ != 0) {
                 output.writeUInt32(13, this.challengeModeDifficulty_);
             }
             if (this.unk3300MHOIIPJKAMN_ != 0) {
                 output.writeUInt32(14, this.unk3300MHOIIPJKAMN_);
+            }
+            if (this.unk3300ONKPGFOLDFL_ != 0) {
+                output.writeUInt32(15, this.unk3300ONKPGFOLDFL_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -230,22 +230,22 @@ public final class EffigyChallengeV2SettleInfoOuterClass {
             }
             int size2 = 0;
             if (this.unk3300NGBKNDHJPCP_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(5, this.unk3300NGBKNDHJPCP_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(1, this.unk3300NGBKNDHJPCP_);
             }
             if (this.unk3300AKMPCDIKBJD_) {
-                size2 += CodedOutputStream.computeBoolSize(9, this.unk3300AKMPCDIKBJD_);
+                size2 += CodedOutputStream.computeBoolSize(5, this.unk3300AKMPCDIKBJD_);
             }
             if (this.unk3300PHEIMLOKIJG_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.unk3300PHEIMLOKIJG_);
-            }
-            if (this.unk3300ONKPGFOLDFL_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.unk3300ONKPGFOLDFL_);
+                size2 += CodedOutputStream.computeUInt32Size(10, this.unk3300PHEIMLOKIJG_);
             }
             if (this.challengeModeDifficulty_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(13, this.challengeModeDifficulty_);
             }
             if (this.unk3300MHOIIPJKAMN_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(14, this.unk3300MHOIIPJKAMN_);
+            }
+            if (this.unk3300ONKPGFOLDFL_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.unk3300ONKPGFOLDFL_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -261,7 +261,7 @@ public final class EffigyChallengeV2SettleInfoOuterClass {
                 return equals(obj);
             }
             EffigyChallengeV2SettleInfo other = (EffigyChallengeV2SettleInfo) obj;
-            return getChallengeModeDifficulty() == other.getChallengeModeDifficulty() && getUnk3300MHOIIPJKAMN() == other.getUnk3300MHOIIPJKAMN() && getUnk3300PHEIMLOKIJG() == other.getUnk3300PHEIMLOKIJG() && getUnk3300ONKPGFOLDFL() == other.getUnk3300ONKPGFOLDFL() && getUnk3300NGBKNDHJPCP() == other.getUnk3300NGBKNDHJPCP() && getUnk3300AKMPCDIKBJD() == other.getUnk3300AKMPCDIKBJD() && this.unknownFields.equals(other.unknownFields);
+            return getUnk3300MHOIIPJKAMN() == other.getUnk3300MHOIIPJKAMN() && getUnk3300AKMPCDIKBJD() == other.getUnk3300AKMPCDIKBJD() && getUnk3300ONKPGFOLDFL() == other.getUnk3300ONKPGFOLDFL() && getUnk3300PHEIMLOKIJG() == other.getUnk3300PHEIMLOKIJG() && getChallengeModeDifficulty() == other.getChallengeModeDifficulty() && getUnk3300NGBKNDHJPCP() == other.getUnk3300NGBKNDHJPCP() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -269,7 +269,7 @@ public final class EffigyChallengeV2SettleInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + getChallengeModeDifficulty())) + 14)) + getUnk3300MHOIIPJKAMN())) + 11)) + getUnk3300PHEIMLOKIJG())) + 12)) + getUnk3300ONKPGFOLDFL())) + 5)) + Internal.hashBoolean(getUnk3300NGBKNDHJPCP()))) + 9)) + Internal.hashBoolean(getUnk3300AKMPCDIKBJD()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getUnk3300MHOIIPJKAMN())) + 5)) + Internal.hashBoolean(getUnk3300AKMPCDIKBJD()))) + 15)) + getUnk3300ONKPGFOLDFL())) + 10)) + getUnk3300PHEIMLOKIJG())) + 13)) + getChallengeModeDifficulty())) + 1)) + Internal.hashBoolean(getUnk3300NGBKNDHJPCP()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -348,12 +348,12 @@ public final class EffigyChallengeV2SettleInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EffigyChallengeV2SettleInfoOuterClass$EffigyChallengeV2SettleInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements EffigyChallengeV2SettleInfoOrBuilder {
-            private int challengeModeDifficulty_;
             private int unk3300MHOIIPJKAMN_;
-            private int unk3300PHEIMLOKIJG_;
-            private int unk3300ONKPGFOLDFL_;
-            private boolean unk3300NGBKNDHJPCP_;
             private boolean unk3300AKMPCDIKBJD_;
+            private int unk3300ONKPGFOLDFL_;
+            private int unk3300PHEIMLOKIJG_;
+            private int challengeModeDifficulty_;
+            private boolean unk3300NGBKNDHJPCP_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return EffigyChallengeV2SettleInfoOuterClass.internal_static_EffigyChallengeV2SettleInfo_descriptor;
@@ -381,12 +381,12 @@ public final class EffigyChallengeV2SettleInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.challengeModeDifficulty_ = 0;
                 this.unk3300MHOIIPJKAMN_ = 0;
-                this.unk3300PHEIMLOKIJG_ = 0;
-                this.unk3300ONKPGFOLDFL_ = 0;
-                this.unk3300NGBKNDHJPCP_ = false;
                 this.unk3300AKMPCDIKBJD_ = false;
+                this.unk3300ONKPGFOLDFL_ = 0;
+                this.unk3300PHEIMLOKIJG_ = 0;
+                this.challengeModeDifficulty_ = 0;
+                this.unk3300NGBKNDHJPCP_ = false;
                 return this;
             }
 
@@ -412,12 +412,12 @@ public final class EffigyChallengeV2SettleInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public EffigyChallengeV2SettleInfo buildPartial() {
                 EffigyChallengeV2SettleInfo result = new EffigyChallengeV2SettleInfo(this);
-                result.challengeModeDifficulty_ = this.challengeModeDifficulty_;
                 result.unk3300MHOIIPJKAMN_ = this.unk3300MHOIIPJKAMN_;
-                result.unk3300PHEIMLOKIJG_ = this.unk3300PHEIMLOKIJG_;
-                result.unk3300ONKPGFOLDFL_ = this.unk3300ONKPGFOLDFL_;
-                result.unk3300NGBKNDHJPCP_ = this.unk3300NGBKNDHJPCP_;
                 result.unk3300AKMPCDIKBJD_ = this.unk3300AKMPCDIKBJD_;
+                result.unk3300ONKPGFOLDFL_ = this.unk3300ONKPGFOLDFL_;
+                result.unk3300PHEIMLOKIJG_ = this.unk3300PHEIMLOKIJG_;
+                result.challengeModeDifficulty_ = this.challengeModeDifficulty_;
+                result.unk3300NGBKNDHJPCP_ = this.unk3300NGBKNDHJPCP_;
                 onBuilt();
                 return result;
             }
@@ -465,23 +465,23 @@ public final class EffigyChallengeV2SettleInfoOuterClass {
                 if (other == EffigyChallengeV2SettleInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getChallengeModeDifficulty() != 0) {
-                    setChallengeModeDifficulty(other.getChallengeModeDifficulty());
-                }
                 if (other.getUnk3300MHOIIPJKAMN() != 0) {
                     setUnk3300MHOIIPJKAMN(other.getUnk3300MHOIIPJKAMN());
                 }
-                if (other.getUnk3300PHEIMLOKIJG() != 0) {
-                    setUnk3300PHEIMLOKIJG(other.getUnk3300PHEIMLOKIJG());
+                if (other.getUnk3300AKMPCDIKBJD()) {
+                    setUnk3300AKMPCDIKBJD(other.getUnk3300AKMPCDIKBJD());
                 }
                 if (other.getUnk3300ONKPGFOLDFL() != 0) {
                     setUnk3300ONKPGFOLDFL(other.getUnk3300ONKPGFOLDFL());
                 }
+                if (other.getUnk3300PHEIMLOKIJG() != 0) {
+                    setUnk3300PHEIMLOKIJG(other.getUnk3300PHEIMLOKIJG());
+                }
+                if (other.getChallengeModeDifficulty() != 0) {
+                    setChallengeModeDifficulty(other.getChallengeModeDifficulty());
+                }
                 if (other.getUnk3300NGBKNDHJPCP()) {
                     setUnk3300NGBKNDHJPCP(other.getUnk3300NGBKNDHJPCP());
-                }
-                if (other.getUnk3300AKMPCDIKBJD()) {
-                    setUnk3300AKMPCDIKBJD(other.getUnk3300AKMPCDIKBJD());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -516,23 +516,6 @@ public final class EffigyChallengeV2SettleInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfoOrBuilder
-            public int getChallengeModeDifficulty() {
-                return this.challengeModeDifficulty_;
-            }
-
-            public Builder setChallengeModeDifficulty(int value) {
-                this.challengeModeDifficulty_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearChallengeModeDifficulty() {
-                this.challengeModeDifficulty_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfoOrBuilder
             public int getUnk3300MHOIIPJKAMN() {
                 return this.unk3300MHOIIPJKAMN_;
             }
@@ -550,18 +533,18 @@ public final class EffigyChallengeV2SettleInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfoOrBuilder
-            public int getUnk3300PHEIMLOKIJG() {
-                return this.unk3300PHEIMLOKIJG_;
+            public boolean getUnk3300AKMPCDIKBJD() {
+                return this.unk3300AKMPCDIKBJD_;
             }
 
-            public Builder setUnk3300PHEIMLOKIJG(int value) {
-                this.unk3300PHEIMLOKIJG_ = value;
+            public Builder setUnk3300AKMPCDIKBJD(boolean value) {
+                this.unk3300AKMPCDIKBJD_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearUnk3300PHEIMLOKIJG() {
-                this.unk3300PHEIMLOKIJG_ = 0;
+            public Builder clearUnk3300AKMPCDIKBJD() {
+                this.unk3300AKMPCDIKBJD_ = false;
                 onChanged();
                 return this;
             }
@@ -584,6 +567,40 @@ public final class EffigyChallengeV2SettleInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfoOrBuilder
+            public int getUnk3300PHEIMLOKIJG() {
+                return this.unk3300PHEIMLOKIJG_;
+            }
+
+            public Builder setUnk3300PHEIMLOKIJG(int value) {
+                this.unk3300PHEIMLOKIJG_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300PHEIMLOKIJG() {
+                this.unk3300PHEIMLOKIJG_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfoOrBuilder
+            public int getChallengeModeDifficulty() {
+                return this.challengeModeDifficulty_;
+            }
+
+            public Builder setChallengeModeDifficulty(int value) {
+                this.challengeModeDifficulty_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearChallengeModeDifficulty() {
+                this.challengeModeDifficulty_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfoOrBuilder
             public boolean getUnk3300NGBKNDHJPCP() {
                 return this.unk3300NGBKNDHJPCP_;
             }
@@ -596,23 +613,6 @@ public final class EffigyChallengeV2SettleInfoOuterClass {
 
             public Builder clearUnk3300NGBKNDHJPCP() {
                 this.unk3300NGBKNDHJPCP_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.EffigyChallengeV2SettleInfoOuterClass.EffigyChallengeV2SettleInfoOrBuilder
-            public boolean getUnk3300AKMPCDIKBJD() {
-                return this.unk3300AKMPCDIKBJD_;
-            }
-
-            public Builder setUnk3300AKMPCDIKBJD(boolean value) {
-                this.unk3300AKMPCDIKBJD_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk3300AKMPCDIKBJD() {
-                this.unk3300AKMPCDIKBJD_ = false;
                 onChanged();
                 return this;
             }

@@ -38,11 +38,11 @@ public class BooleanMemberValue extends MemberValue {
     }
 
     public boolean getValue() {
-        return this.f3074cp.getIntegerInfo(this.valueIndex) != 0;
+        return this.f3038cp.getIntegerInfo(this.valueIndex) != 0;
     }
 
     public void setValue(boolean newValue) {
-        this.valueIndex = this.f3074cp.addIntegerInfo(newValue ? 1 : 0);
+        this.valueIndex = this.f3038cp.addIntegerInfo(newValue ? 1 : 0);
     }
 
     public String toString() {

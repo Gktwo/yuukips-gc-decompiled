@@ -1,7 +1,5 @@
 package org.luaj.vm2.parser;
 
-import com.sun.jna.Function;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import java.io.InputStream;
 import java.io.Reader;
 import java.io.UnsupportedEncodingException;
@@ -51,7 +49,7 @@ public class LuaParser implements LuaParserConstants {
 
     /* renamed from: org.luaj.vm2.parser.LuaParser$1 */
     /* loaded from: grasscutter.jar:org/luaj/vm2/parser/LuaParser$1.class */
-    static class C58821 {
+    static class C58741 {
     }
 
     /* access modifiers changed from: package-private */
@@ -72,7 +70,7 @@ public class LuaParser implements LuaParserConstants {
         private LookaheadSuccess() {
         }
 
-        LookaheadSuccess(C58821 r3) {
+        LookaheadSuccess(C58741 r3) {
             this();
         }
     }
@@ -1878,7 +1876,7 @@ public class LuaParser implements LuaParserConstants {
     }
 
     private static void jj_la1_init_2() {
-        jj_la1_2 = new int[]{32, PacketOpcodes.SeaLampFlyLampNotify, 0, 256, 128, 66, 0, 2048, 0, 0, 624672, 64, Function.USE_VARARGS, 256, 512, 1024, 2048, 77312, 624672, 67584, 256, 100352, 0, 624672, 32768, 256, 32768, 632864, 320, 8192, 624672, 320, 2147221504, 524320};
+        jj_la1_2 = new int[]{32, 2114, 0, 256, 128, 66, 0, 2048, 0, 0, 624672, 64, 384, 256, 512, 1024, 2048, 77312, 624672, 67584, 256, 100352, 0, 624672, 32768, 256, 32768, 632864, 320, 8192, 624672, 320, 2147221504, 524320};
     }
 
     public LuaParser(InputStream inputStream) {

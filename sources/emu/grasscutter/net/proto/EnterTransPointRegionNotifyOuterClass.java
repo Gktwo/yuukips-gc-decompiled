@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EnterTransPointRegionNotifyOuterClass.class */
 public final class EnterTransPointRegionNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!EnterTransPointRegionNotify.proto\"A\n\u001bEnterTransPointRegionNotify\u0012\u0010\n\bpoint_id\u0018\u0001 \u0001(\r\u0012\u0010\n\bscene_id\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!EnterTransPointRegionNotify.proto\"?\n\u001bEnterTransPointRegionNotify\u0012\u000f\n\u0007pointId\u0018\u0001 \u0001(\r\u0012\u000f\n\u0007sceneId\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_EnterTransPointRegionNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_EnterTransPointRegionNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EnterTransPointRegionNotify_descriptor, new String[]{"PointId", "SceneId"});
 
@@ -43,9 +43,9 @@ public final class EnterTransPointRegionNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EnterTransPointRegionNotifyOuterClass$EnterTransPointRegionNotify.class */
     public static final class EnterTransPointRegionNotify extends GeneratedMessageV3 implements EnterTransPointRegionNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int POINT_ID_FIELD_NUMBER = 1;
+        public static final int POINTID_FIELD_NUMBER = 1;
         private int pointId_;
-        public static final int SCENE_ID_FIELD_NUMBER = 15;
+        public static final int SCENEID_FIELD_NUMBER = 3;
         private int sceneId_;
         private byte memoizedIsInitialized;
         private static final EnterTransPointRegionNotify DEFAULT_INSTANCE = new EnterTransPointRegionNotify();
@@ -95,7 +95,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
                             case 8:
                                 this.pointId_ = input.readUInt32();
                                 break;
-                            case 120:
+                            case 24:
                                 this.sceneId_ = input.readUInt32();
                                 break;
                             default:
@@ -156,7 +156,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
                 output.writeUInt32(1, this.pointId_);
             }
             if (this.sceneId_ != 0) {
-                output.writeUInt32(15, this.sceneId_);
+                output.writeUInt32(3, this.sceneId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -172,7 +172,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
                 size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.pointId_);
             }
             if (this.sceneId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.sceneId_);
+                size2 += CodedOutputStream.computeUInt32Size(3, this.sceneId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class EnterTransPointRegionNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getPointId())) + 15)) + getSceneId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getPointId())) + 3)) + getSceneId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

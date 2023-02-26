@@ -84,12 +84,12 @@ public final class JettyUtil {
     public static final void maybeLogIfServerNotStarted(@NotNull JettyServer jettyServer) {
         Intrinsics.checkNotNullParameter(jettyServer, "jettyServer");
         new Thread(() -> {
-            m5862maybeLogIfServerNotStarted$lambda2(r2);
+            m5859maybeLogIfServerNotStarted$lambda2(r2);
         }).start();
     }
 
     /* renamed from: maybeLogIfServerNotStarted$lambda-2  reason: not valid java name */
-    private static final void m5862maybeLogIfServerNotStarted$lambda2(JettyServer $jettyServer) {
+    private static final void m5859maybeLogIfServerNotStarted$lambda2(JettyServer $jettyServer) {
         Intrinsics.checkNotNullParameter($jettyServer, "$jettyServer");
         Thread.sleep(5000);
         if (INSTANCE.getLogIfNotStarted() && !$jettyServer.started) {

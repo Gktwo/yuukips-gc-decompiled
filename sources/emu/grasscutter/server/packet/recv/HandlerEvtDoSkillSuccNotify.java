@@ -5,10 +5,11 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.EvtDoSkillSuccNotifyOuterClass;
 import emu.grasscutter.server.game.GameSession;
 
-@Opcodes(319)
+@Opcodes(PacketOpcodes.EvtDoSkillSuccNotify)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerEvtDoSkillSuccNotify.class */
 public class HandlerEvtDoSkillSuccNotify extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

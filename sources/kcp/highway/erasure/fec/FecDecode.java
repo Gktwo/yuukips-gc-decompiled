@@ -15,7 +15,7 @@ public class FecDecode implements IFecDecode {
     private int shardSize;
 
     /* renamed from: rx */
-    private MyArrayList<FecPacket> f3084rx;
+    private MyArrayList<FecPacket> f3048rx;
     private ByteBuf[] decodeCache;
     private boolean[] flagCache;
     private ByteBuf zeros;
@@ -110,7 +110,7 @@ public class FecDecode implements IFecDecode {
             this.codec = codec;
             this.decodeCache = new ByteBuf[this.shardSize];
             this.flagCache = new boolean[this.shardSize];
-            this.f3084rx = new MyArrayList<>(rxlimit);
+            this.f3048rx = new MyArrayList<>(rxlimit);
             this.zeros = ByteBufAllocator.DEFAULT.buffer(mtu);
             this.zeros.writeBytes(new byte[mtu]);
         }
@@ -122,7 +122,7 @@ public class FecDecode implements IFecDecode {
         this.dataShards = 0;
         this.parityShards = 0;
         this.shardSize = 0;
-        Iterator<FecPacket> it = this.f3084rx.iterator();
+        Iterator<FecPacket> it = this.f3048rx.iterator();
         while (it.hasNext()) {
             FecPacket fecPacket = it.next();
             if (fecPacket != null) {

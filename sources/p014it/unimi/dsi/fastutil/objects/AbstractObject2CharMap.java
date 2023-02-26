@@ -183,30 +183,30 @@ public abstract class AbstractObject2CharMap<K> extends AbstractObject2CharFunct
                 return new ObjectIterator<K>() { // from class: it.unimi.dsi.fastutil.objects.AbstractObject2CharMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Object2CharMap.Entry<K>> f2456i;
+                    private final ObjectIterator<Object2CharMap.Entry<K>> f2420i;
 
                     {
-                        this.f2456i = Object2CharMaps.fastIterator(AbstractObject2CharMap.this);
+                        this.f2420i = Object2CharMaps.fastIterator(AbstractObject2CharMap.this);
                     }
 
                     @Override // java.util.Iterator
                     public K next() {
-                        return this.f2456i.next().getKey();
+                        return this.f2420i.next().getKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2456i.hasNext();
+                        return this.f2420i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2456i.remove();
+                        this.f2420i.remove();
                     }
 
                     @Override // java.util.Iterator
                     public void forEachRemaining(Consumer<? super K> action) {
-                        this.f2456i.forEachRemaining(entry -> {
+                        this.f2420i.forEachRemaining(entry -> {
                             action.accept(entry.getKey());
                         });
                     }
@@ -244,30 +244,30 @@ public abstract class AbstractObject2CharMap<K> extends AbstractObject2CharFunct
                 return new CharIterator() { // from class: it.unimi.dsi.fastutil.objects.AbstractObject2CharMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Object2CharMap.Entry<K>> f2457i;
+                    private final ObjectIterator<Object2CharMap.Entry<K>> f2421i;
 
                     {
-                        this.f2457i = Object2CharMaps.fastIterator(AbstractObject2CharMap.this);
+                        this.f2421i = Object2CharMaps.fastIterator(AbstractObject2CharMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
                     public char nextChar() {
-                        return this.f2457i.next().getCharValue();
+                        return this.f2421i.next().getCharValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2457i.hasNext();
+                        return this.f2421i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2457i.remove();
+                        this.f2421i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
                     public void forEachRemaining(CharConsumer action) {
-                        this.f2457i.forEachRemaining(entry -> {
+                        this.f2421i.forEachRemaining(entry -> {
                             action.accept(entry.getCharValue());
                         });
                     }

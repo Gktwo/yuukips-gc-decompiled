@@ -495,30 +495,30 @@ public final class ObjectIterators {
     private static class IteratorWrapper<K> implements ObjectIterator<K> {
 
         /* renamed from: i */
-        final Iterator<K> f2707i;
+        final Iterator<K> f2671i;
 
         public IteratorWrapper(Iterator<K> i) {
-            this.f2707i = i;
+            this.f2671i = i;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2707i.hasNext();
+            return this.f2671i.hasNext();
         }
 
         @Override // java.util.Iterator
         public void remove() {
-            this.f2707i.remove();
+            this.f2671i.remove();
         }
 
         @Override // java.util.Iterator
         public K next() {
-            return this.f2707i.next();
+            return this.f2671i.next();
         }
 
         @Override // java.util.Iterator
         public void forEachRemaining(Consumer<? super K> action) {
-            this.f2707i.forEachRemaining(action);
+            this.f2671i.forEachRemaining(action);
         }
     }
 
@@ -531,60 +531,60 @@ public final class ObjectIterators {
     private static class ListIteratorWrapper<K> implements ObjectListIterator<K> {
 
         /* renamed from: i */
-        final ListIterator<K> f2708i;
+        final ListIterator<K> f2672i;
 
         public ListIteratorWrapper(ListIterator<K> i) {
-            this.f2708i = i;
+            this.f2672i = i;
         }
 
         @Override // java.util.Iterator, java.util.ListIterator
         public boolean hasNext() {
-            return this.f2708i.hasNext();
+            return this.f2672i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2708i.hasPrevious();
+            return this.f2672i.hasPrevious();
         }
 
         @Override // java.util.ListIterator
         public int nextIndex() {
-            return this.f2708i.nextIndex();
+            return this.f2672i.nextIndex();
         }
 
         @Override // java.util.ListIterator
         public int previousIndex() {
-            return this.f2708i.previousIndex();
+            return this.f2672i.previousIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectListIterator, java.util.ListIterator
         public void set(K k) {
-            this.f2708i.set(k);
+            this.f2672i.set(k);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectListIterator, java.util.ListIterator
         public void add(K k) {
-            this.f2708i.add(k);
+            this.f2672i.add(k);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectListIterator, java.util.Iterator, java.util.ListIterator
         public void remove() {
-            this.f2708i.remove();
+            this.f2672i.remove();
         }
 
         @Override // java.util.Iterator, java.util.ListIterator
         public K next() {
-            return this.f2708i.next();
+            return this.f2672i.next();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public K previous() {
-            return this.f2708i.previous();
+            return this.f2672i.previous();
         }
 
         @Override // java.util.Iterator
         public void forEachRemaining(Consumer<? super K> action) {
-            this.f2708i.forEachRemaining(action);
+            this.f2672i.forEachRemaining(action);
         }
     }
 
@@ -769,20 +769,20 @@ public final class ObjectIterators {
     public static class IteratorConcatenator<K> implements ObjectIterator<K> {
 
         /* renamed from: a */
-        final ObjectIterator<? extends K>[] f2706a;
+        final ObjectIterator<? extends K>[] f2670a;
         int offset;
         int length;
         int lastOffset = -1;
 
         public IteratorConcatenator(ObjectIterator<? extends K>[] a, int offset, int length) {
-            this.f2706a = a;
+            this.f2670a = a;
             this.offset = offset;
             this.length = length;
             advance();
         }
 
         private void advance() {
-            while (this.length != 0 && !this.f2706a[this.offset].hasNext()) {
+            while (this.length != 0 && !this.f2670a[this.offset].hasNext()) {
                 this.length--;
                 this.offset++;
             }
@@ -798,7 +798,7 @@ public final class ObjectIterators {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            ObjectIterator<? extends K>[] objectIteratorArr = this.f2706a;
+            ObjectIterator<? extends K>[] objectIteratorArr = this.f2670a;
             int i = this.offset;
             this.lastOffset = i;
             K next = (K) objectIteratorArr[i].next();
@@ -809,7 +809,7 @@ public final class ObjectIterators {
         @Override // java.util.Iterator
         public void forEachRemaining(Consumer<? super K> action) {
             while (this.length > 0) {
-                ObjectIterator<? extends K>[] objectIteratorArr = this.f2706a;
+                ObjectIterator<? extends K>[] objectIteratorArr = this.f2670a;
                 int i = this.offset;
                 this.lastOffset = i;
                 objectIteratorArr[i].forEachRemaining(action);
@@ -822,7 +822,7 @@ public final class ObjectIterators {
             if (this.lastOffset == -1) {
                 throw new IllegalStateException();
             }
-            this.f2706a[this.lastOffset].remove();
+            this.f2670a[this.lastOffset].remove();
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectIterator
@@ -833,8 +833,8 @@ public final class ObjectIterators {
             this.lastOffset = -1;
             int skipped = 0;
             while (skipped < n && this.length != 0) {
-                skipped += this.f2706a[this.offset].skip(n - skipped);
-                if (this.f2706a[this.offset].hasNext()) {
+                skipped += this.f2670a[this.offset].skip(n - skipped);
+                if (this.f2670a[this.offset].hasNext()) {
                     break;
                 }
                 this.length--;
@@ -858,25 +858,25 @@ public final class ObjectIterators {
     public static class UnmodifiableIterator<K> implements ObjectIterator<K> {
 
         /* renamed from: i */
-        protected final ObjectIterator<? extends K> f2710i;
+        protected final ObjectIterator<? extends K> f2674i;
 
         public UnmodifiableIterator(ObjectIterator<? extends K> i) {
-            this.f2710i = i;
+            this.f2674i = i;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2710i.hasNext();
+            return this.f2674i.hasNext();
         }
 
         @Override // java.util.Iterator
         public K next() {
-            return (K) this.f2710i.next();
+            return (K) this.f2674i.next();
         }
 
         @Override // java.util.Iterator
         public void forEachRemaining(Consumer<? super K> action) {
-            this.f2710i.forEachRemaining(action);
+            this.f2674i.forEachRemaining(action);
         }
     }
 
@@ -889,35 +889,35 @@ public final class ObjectIterators {
     public static class UnmodifiableBidirectionalIterator<K> implements ObjectBidirectionalIterator<K> {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<? extends K> f2709i;
+        protected final ObjectBidirectionalIterator<? extends K> f2673i;
 
         public UnmodifiableBidirectionalIterator(ObjectBidirectionalIterator<? extends K> i) {
-            this.f2709i = i;
+            this.f2673i = i;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2709i.hasNext();
+            return this.f2673i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2709i.hasPrevious();
+            return this.f2673i.hasPrevious();
         }
 
         @Override // java.util.Iterator
         public K next() {
-            return (K) this.f2709i.next();
+            return (K) this.f2673i.next();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public K previous() {
-            return (K) this.f2709i.previous();
+            return (K) this.f2673i.previous();
         }
 
         @Override // java.util.Iterator
         public void forEachRemaining(Consumer<? super K> action) {
-            this.f2709i.forEachRemaining(action);
+            this.f2673i.forEachRemaining(action);
         }
     }
 
@@ -930,45 +930,45 @@ public final class ObjectIterators {
     public static class UnmodifiableListIterator<K> implements ObjectListIterator<K> {
 
         /* renamed from: i */
-        protected final ObjectListIterator<? extends K> f2711i;
+        protected final ObjectListIterator<? extends K> f2675i;
 
         public UnmodifiableListIterator(ObjectListIterator<? extends K> i) {
-            this.f2711i = i;
+            this.f2675i = i;
         }
 
         @Override // java.util.Iterator, java.util.ListIterator
         public boolean hasNext() {
-            return this.f2711i.hasNext();
+            return this.f2675i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2711i.hasPrevious();
+            return this.f2675i.hasPrevious();
         }
 
         @Override // java.util.Iterator, java.util.ListIterator
         public K next() {
-            return (K) this.f2711i.next();
+            return (K) this.f2675i.next();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public K previous() {
-            return (K) this.f2711i.previous();
+            return (K) this.f2675i.previous();
         }
 
         @Override // java.util.ListIterator
         public int nextIndex() {
-            return this.f2711i.nextIndex();
+            return this.f2675i.nextIndex();
         }
 
         @Override // java.util.ListIterator
         public int previousIndex() {
-            return this.f2711i.previousIndex();
+            return this.f2675i.previousIndex();
         }
 
         @Override // java.util.Iterator
         public void forEachRemaining(Consumer<? super K> action) {
-            this.f2711i.forEachRemaining(action);
+            this.f2675i.forEachRemaining(action);
         }
     }
 

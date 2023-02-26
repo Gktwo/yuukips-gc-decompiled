@@ -189,7 +189,7 @@ public class DefaultServlet extends HttpServlet implements ResourceFactory, Reso
             }
         } else if (precompressed != null) {
             if (Boolean.parseBoolean(precompressed)) {
-                ret.add(CompressedContentFormat.f3129BR);
+                ret.add(CompressedContentFormat.f3093BR);
                 ret.add(CompressedContentFormat.GZIP);
             }
         } else if (gzip) {

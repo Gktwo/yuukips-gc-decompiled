@@ -5,7 +5,7 @@ import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.PlayerCookArgsReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 
-@Opcodes(109)
+@Opcodes(184)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerPlayerCookArgsReq.class */
 public class HandlerPlayerCookArgsReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

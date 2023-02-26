@@ -198,7 +198,7 @@ public abstract class ImmutableSet<E> extends ImmutableCollection<E> implements 
 
         @Override // com.google.common.collect.ImmutableCollection, java.util.Collection, java.lang.Iterable
         public Spliterator<E> spliterator() {
-            return CollectSpliterators.indexed(size(), 1297, this::get);
+            return CollectSpliterators.indexed(size(), ImmutableSet.SPLITERATOR_CHARACTERISTICS, this::get);
         }
 
         @Override // java.lang.Iterable

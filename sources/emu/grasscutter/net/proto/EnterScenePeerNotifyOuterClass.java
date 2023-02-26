@@ -19,19 +19,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EnterScenePeerNotifyOuterClass.class */
 public final class EnterScenePeerNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aEnterScenePeerNotify.proto\"o\n\u0014EnterScenePeerNotify\u0012\u0019\n\u0011enter_scene_token\u0018\u0007 \u0001(\r\u0012\u0014\n\fhost_peer_id\u0018\f \u0001(\r\u0012\u000f\n\u0007peer_id\u0018\u000e \u0001(\r\u0012\u0015\n\rdest_scene_id\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aEnterScenePeerNotify.proto\"h\n\u0014EnterScenePeerNotify\u0012\u0012\n\nhostPeerId\u0018\n \u0001(\r\u0012\u0013\n\u000bdestSceneId\u0018\b \u0001(\r\u0012\u0017\n\u000fenterSceneToken\u0018\t \u0001(\r\u0012\u000e\n\u0006peerId\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_EnterScenePeerNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_EnterScenePeerNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EnterScenePeerNotify_descriptor, new String[]{"EnterSceneToken", "HostPeerId", "PeerId", "DestSceneId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_EnterScenePeerNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EnterScenePeerNotify_descriptor, new String[]{"HostPeerId", "DestSceneId", "EnterSceneToken", "PeerId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EnterScenePeerNotifyOuterClass$EnterScenePeerNotifyOrBuilder.class */
     public interface EnterScenePeerNotifyOrBuilder extends MessageOrBuilder {
-        int getEnterSceneToken();
-
         int getHostPeerId();
 
-        int getPeerId();
-
         int getDestSceneId();
+
+        int getEnterSceneToken();
+
+        int getPeerId();
     }
 
     private EnterScenePeerNotifyOuterClass() {
@@ -47,14 +47,14 @@ public final class EnterScenePeerNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EnterScenePeerNotifyOuterClass$EnterScenePeerNotify.class */
     public static final class EnterScenePeerNotify extends GeneratedMessageV3 implements EnterScenePeerNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTER_SCENE_TOKEN_FIELD_NUMBER = 7;
-        private int enterSceneToken_;
-        public static final int HOST_PEER_ID_FIELD_NUMBER = 12;
+        public static final int HOSTPEERID_FIELD_NUMBER = 10;
         private int hostPeerId_;
-        public static final int PEER_ID_FIELD_NUMBER = 14;
-        private int peerId_;
-        public static final int DEST_SCENE_ID_FIELD_NUMBER = 2;
+        public static final int DESTSCENEID_FIELD_NUMBER = 8;
         private int destSceneId_;
+        public static final int ENTERSCENETOKEN_FIELD_NUMBER = 9;
+        private int enterSceneToken_;
+        public static final int PEERID_FIELD_NUMBER = 6;
+        private int peerId_;
         private byte memoizedIsInitialized;
         private static final EnterScenePeerNotify DEFAULT_INSTANCE = new EnterScenePeerNotify();
         private static final Parser<EnterScenePeerNotify> PARSER = new AbstractParser<EnterScenePeerNotify>() { // from class: emu.grasscutter.net.proto.EnterScenePeerNotifyOuterClass.EnterScenePeerNotify.1
@@ -101,17 +101,17 @@ public final class EnterScenePeerNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
+                                case 48:
+                                    this.peerId_ = input.readUInt32();
+                                    break;
+                                case 64:
                                     this.destSceneId_ = input.readUInt32();
                                     break;
-                                case 56:
+                                case 72:
                                     this.enterSceneToken_ = input.readUInt32();
                                     break;
-                                case 96:
+                                case 80:
                                     this.hostPeerId_ = input.readUInt32();
-                                    break;
-                                case 112:
-                                    this.peerId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -144,23 +144,23 @@ public final class EnterScenePeerNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.EnterScenePeerNotifyOuterClass.EnterScenePeerNotifyOrBuilder
-        public int getEnterSceneToken() {
-            return this.enterSceneToken_;
-        }
-
-        @Override // emu.grasscutter.net.proto.EnterScenePeerNotifyOuterClass.EnterScenePeerNotifyOrBuilder
         public int getHostPeerId() {
             return this.hostPeerId_;
         }
 
         @Override // emu.grasscutter.net.proto.EnterScenePeerNotifyOuterClass.EnterScenePeerNotifyOrBuilder
-        public int getPeerId() {
-            return this.peerId_;
+        public int getDestSceneId() {
+            return this.destSceneId_;
         }
 
         @Override // emu.grasscutter.net.proto.EnterScenePeerNotifyOuterClass.EnterScenePeerNotifyOrBuilder
-        public int getDestSceneId() {
-            return this.destSceneId_;
+        public int getEnterSceneToken() {
+            return this.enterSceneToken_;
+        }
+
+        @Override // emu.grasscutter.net.proto.EnterScenePeerNotifyOuterClass.EnterScenePeerNotifyOrBuilder
+        public int getPeerId() {
+            return this.peerId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -178,17 +178,17 @@ public final class EnterScenePeerNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.peerId_ != 0) {
+                output.writeUInt32(6, this.peerId_);
+            }
             if (this.destSceneId_ != 0) {
-                output.writeUInt32(2, this.destSceneId_);
+                output.writeUInt32(8, this.destSceneId_);
             }
             if (this.enterSceneToken_ != 0) {
-                output.writeUInt32(7, this.enterSceneToken_);
+                output.writeUInt32(9, this.enterSceneToken_);
             }
             if (this.hostPeerId_ != 0) {
-                output.writeUInt32(12, this.hostPeerId_);
-            }
-            if (this.peerId_ != 0) {
-                output.writeUInt32(14, this.peerId_);
+                output.writeUInt32(10, this.hostPeerId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,17 +200,17 @@ public final class EnterScenePeerNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.peerId_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.peerId_);
+            }
             if (this.destSceneId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.destSceneId_);
+                size2 += CodedOutputStream.computeUInt32Size(8, this.destSceneId_);
             }
             if (this.enterSceneToken_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.enterSceneToken_);
+                size2 += CodedOutputStream.computeUInt32Size(9, this.enterSceneToken_);
             }
             if (this.hostPeerId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.hostPeerId_);
-            }
-            if (this.peerId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.peerId_);
+                size2 += CodedOutputStream.computeUInt32Size(10, this.hostPeerId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class EnterScenePeerNotifyOuterClass {
                 return equals(obj);
             }
             EnterScenePeerNotify other = (EnterScenePeerNotify) obj;
-            return getEnterSceneToken() == other.getEnterSceneToken() && getHostPeerId() == other.getHostPeerId() && getPeerId() == other.getPeerId() && getDestSceneId() == other.getDestSceneId() && this.unknownFields.equals(other.unknownFields);
+            return getHostPeerId() == other.getHostPeerId() && getDestSceneId() == other.getDestSceneId() && getEnterSceneToken() == other.getEnterSceneToken() && getPeerId() == other.getPeerId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -234,7 +234,7 @@ public final class EnterScenePeerNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getEnterSceneToken())) + 12)) + getHostPeerId())) + 14)) + getPeerId())) + 2)) + getDestSceneId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getHostPeerId())) + 8)) + getDestSceneId())) + 9)) + getEnterSceneToken())) + 6)) + getPeerId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -313,10 +313,10 @@ public final class EnterScenePeerNotifyOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EnterScenePeerNotifyOuterClass$EnterScenePeerNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements EnterScenePeerNotifyOrBuilder {
-            private int enterSceneToken_;
             private int hostPeerId_;
-            private int peerId_;
             private int destSceneId_;
+            private int enterSceneToken_;
+            private int peerId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return EnterScenePeerNotifyOuterClass.internal_static_EnterScenePeerNotify_descriptor;
@@ -344,10 +344,10 @@ public final class EnterScenePeerNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.enterSceneToken_ = 0;
                 this.hostPeerId_ = 0;
-                this.peerId_ = 0;
                 this.destSceneId_ = 0;
+                this.enterSceneToken_ = 0;
+                this.peerId_ = 0;
                 return this;
             }
 
@@ -373,10 +373,10 @@ public final class EnterScenePeerNotifyOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public EnterScenePeerNotify buildPartial() {
                 EnterScenePeerNotify result = new EnterScenePeerNotify(this);
-                result.enterSceneToken_ = this.enterSceneToken_;
                 result.hostPeerId_ = this.hostPeerId_;
-                result.peerId_ = this.peerId_;
                 result.destSceneId_ = this.destSceneId_;
+                result.enterSceneToken_ = this.enterSceneToken_;
+                result.peerId_ = this.peerId_;
                 onBuilt();
                 return result;
             }
@@ -424,17 +424,17 @@ public final class EnterScenePeerNotifyOuterClass {
                 if (other == EnterScenePeerNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getEnterSceneToken() != 0) {
-                    setEnterSceneToken(other.getEnterSceneToken());
-                }
                 if (other.getHostPeerId() != 0) {
                     setHostPeerId(other.getHostPeerId());
                 }
-                if (other.getPeerId() != 0) {
-                    setPeerId(other.getPeerId());
-                }
                 if (other.getDestSceneId() != 0) {
                     setDestSceneId(other.getDestSceneId());
+                }
+                if (other.getEnterSceneToken() != 0) {
+                    setEnterSceneToken(other.getEnterSceneToken());
+                }
+                if (other.getPeerId() != 0) {
+                    setPeerId(other.getPeerId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -469,23 +469,6 @@ public final class EnterScenePeerNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.EnterScenePeerNotifyOuterClass.EnterScenePeerNotifyOrBuilder
-            public int getEnterSceneToken() {
-                return this.enterSceneToken_;
-            }
-
-            public Builder setEnterSceneToken(int value) {
-                this.enterSceneToken_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearEnterSceneToken() {
-                this.enterSceneToken_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.EnterScenePeerNotifyOuterClass.EnterScenePeerNotifyOrBuilder
             public int getHostPeerId() {
                 return this.hostPeerId_;
             }
@@ -503,23 +486,6 @@ public final class EnterScenePeerNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.EnterScenePeerNotifyOuterClass.EnterScenePeerNotifyOrBuilder
-            public int getPeerId() {
-                return this.peerId_;
-            }
-
-            public Builder setPeerId(int value) {
-                this.peerId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearPeerId() {
-                this.peerId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.EnterScenePeerNotifyOuterClass.EnterScenePeerNotifyOrBuilder
             public int getDestSceneId() {
                 return this.destSceneId_;
             }
@@ -532,6 +498,40 @@ public final class EnterScenePeerNotifyOuterClass {
 
             public Builder clearDestSceneId() {
                 this.destSceneId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.EnterScenePeerNotifyOuterClass.EnterScenePeerNotifyOrBuilder
+            public int getEnterSceneToken() {
+                return this.enterSceneToken_;
+            }
+
+            public Builder setEnterSceneToken(int value) {
+                this.enterSceneToken_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearEnterSceneToken() {
+                this.enterSceneToken_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.EnterScenePeerNotifyOuterClass.EnterScenePeerNotifyOrBuilder
+            public int getPeerId() {
+                return this.peerId_;
+            }
+
+            public Builder setPeerId(int value) {
+                this.peerId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearPeerId() {
+                this.peerId_ = 0;
                 onChanged();
                 return this;
             }

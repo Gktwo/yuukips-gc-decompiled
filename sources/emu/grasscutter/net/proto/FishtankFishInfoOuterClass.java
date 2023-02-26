@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FishtankFishInfoOuterClass.class */
 public final class FishtankFishInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016FishtankFishInfo.proto\"d\n\u0010FishtankFishInfo\u0012 \n\u0018fish_distance_from_water\u0018\u0001 \u0001(\u0002\u0012\u0012\n\nfish_scale\u0018\u0002 \u0001(\u0002\u0012\u001a\n\u0012initial_rotation_y\u0018\u0003 \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016FishtankFishInfo.proto\"^\n\u0010FishtankFishInfo\u0012\u001d\n\u0015fishDistanceFromWater\u0018\u0001 \u0001(\u0002\u0012\u0011\n\tfishScale\u0018\u0002 \u0001(\u0002\u0012\u0018\n\u0010initialRotationY\u0018\u0003 \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_FishtankFishInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_FishtankFishInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FishtankFishInfo_descriptor, new String[]{"FishDistanceFromWater", "FishScale", "InitialRotationY"});
 
@@ -45,11 +45,11 @@ public final class FishtankFishInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FishtankFishInfoOuterClass$FishtankFishInfo.class */
     public static final class FishtankFishInfo extends GeneratedMessageV3 implements FishtankFishInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int FISH_DISTANCE_FROM_WATER_FIELD_NUMBER = 1;
+        public static final int FISHDISTANCEFROMWATER_FIELD_NUMBER = 1;
         private float fishDistanceFromWater_;
-        public static final int FISH_SCALE_FIELD_NUMBER = 2;
+        public static final int FISHSCALE_FIELD_NUMBER = 2;
         private float fishScale_;
-        public static final int INITIAL_ROTATION_Y_FIELD_NUMBER = 3;
+        public static final int INITIALROTATIONY_FIELD_NUMBER = 3;
         private float initialRotationY_;
         private byte memoizedIsInitialized;
         private static final FishtankFishInfo DEFAULT_INSTANCE = new FishtankFishInfo();

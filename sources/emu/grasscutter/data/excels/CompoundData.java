@@ -1,5 +1,6 @@
 package emu.grasscutter.data.excels;
 
+import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.GameResource;
 import emu.grasscutter.data.ResourceType;
 import emu.grasscutter.data.common.ItemParamData;
@@ -11,6 +12,7 @@ public class CompoundData extends GameResource {
 
     /* renamed from: id */
     private int f523id;
+    @SerializedName(value = "groupId", alternate = {"groupID"})
     private int groupId;
     private int rankLevel;
     private boolean isDefaultUnlocked;

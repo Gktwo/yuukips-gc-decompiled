@@ -22,7 +22,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/LunaRiteHintPointOuterClass.class */
 public final class LunaRiteHintPointOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017LunaRiteHintPoint.proto\u001a\u001bLunaRiteHintPointType.proto\u001a\fVector.proto\"o\n\u0011LunaRiteHintPoint\u0012\r\n\u0005index\u0018\b \u0001(\r\u0012\u0014\n\u0003pos\u0018\u0003 \u0001(\u000b2\u0007.Vector\u0012\u000f\n\u0007area_id\u0018\u0002 \u0001(\r\u0012$\n\u0004type\u0018\u000f \u0001(\u000e2\u0016.LunaRiteHintPointTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{LunaRiteHintPointTypeOuterClass.getDescriptor(), VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017LunaRiteHintPoint.proto\u001a\fVector.proto\u001a\u001bLunaRiteHintPointType.proto\"n\n\u0011LunaRiteHintPoint\u0012\r\n\u0005index\u0018\u0004 \u0001(\r\u0012\u0014\n\u0003pos\u0018\u000b \u0001(\u000b2\u0007.Vector\u0012\u000e\n\u0006areaId\u0018\u0002 \u0001(\r\u0012$\n\u0004type\u0018\u000f \u0001(\u000e2\u0016.LunaRiteHintPointTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor(), LunaRiteHintPointTypeOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_LunaRiteHintPoint_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_LunaRiteHintPoint_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_LunaRiteHintPoint_descriptor, new String[]{"Index", "Pos", "AreaId", "Type"});
 
@@ -56,11 +56,11 @@ public final class LunaRiteHintPointOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/LunaRiteHintPointOuterClass$LunaRiteHintPoint.class */
     public static final class LunaRiteHintPoint extends GeneratedMessageV3 implements LunaRiteHintPointOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int INDEX_FIELD_NUMBER = 8;
+        public static final int INDEX_FIELD_NUMBER = 4;
         private int index_;
-        public static final int POS_FIELD_NUMBER = 3;
+        public static final int POS_FIELD_NUMBER = 11;
         private VectorOuterClass.Vector pos_;
-        public static final int AREA_ID_FIELD_NUMBER = 2;
+        public static final int AREAID_FIELD_NUMBER = 2;
         private int areaId_;
         public static final int TYPE_FIELD_NUMBER = 15;
         private int type_;
@@ -113,7 +113,10 @@ public final class LunaRiteHintPointOuterClass {
                             case 16:
                                 this.areaId_ = input.readUInt32();
                                 break;
-                            case 26:
+                            case 32:
+                                this.index_ = input.readUInt32();
+                                break;
+                            case 90:
                                 VectorOuterClass.Vector.Builder subBuilder = this.pos_ != null ? this.pos_.toBuilder() : null;
                                 this.pos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -123,9 +126,6 @@ public final class LunaRiteHintPointOuterClass {
                                     this.pos_ = subBuilder.buildPartial();
                                     break;
                                 }
-                            case 64:
-                                this.index_ = input.readUInt32();
-                                break;
                             case 120:
                                 this.type_ = input.readEnum();
                                 break;
@@ -212,11 +212,11 @@ public final class LunaRiteHintPointOuterClass {
             if (this.areaId_ != 0) {
                 output.writeUInt32(2, this.areaId_);
             }
-            if (this.pos_ != null) {
-                output.writeMessage(3, getPos());
-            }
             if (this.index_ != 0) {
-                output.writeUInt32(8, this.index_);
+                output.writeUInt32(4, this.index_);
+            }
+            if (this.pos_ != null) {
+                output.writeMessage(11, getPos());
             }
             if (this.type_ != LunaRiteHintPointTypeOuterClass.LunaRiteHintPointType.LUNA_RITE_HINT_POINT_TYPE_NONE.getNumber()) {
                 output.writeEnum(15, this.type_);
@@ -234,11 +234,11 @@ public final class LunaRiteHintPointOuterClass {
             if (this.areaId_ != 0) {
                 size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.areaId_);
             }
-            if (this.pos_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(3, getPos());
-            }
             if (this.index_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.index_);
+                size2 += CodedOutputStream.computeUInt32Size(4, this.index_);
+            }
+            if (this.pos_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(11, getPos());
             }
             if (this.type_ != LunaRiteHintPointTypeOuterClass.LunaRiteHintPointType.LUNA_RITE_HINT_POINT_TYPE_NONE.getNumber()) {
                 size2 += CodedOutputStream.computeEnumSize(15, this.type_);
@@ -268,9 +268,9 @@ public final class LunaRiteHintPointOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getIndex();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getIndex();
             if (hasPos()) {
-                hash = (53 * ((37 * hash) + 3)) + getPos().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + getPos().hashCode();
             }
             int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 2)) + getAreaId())) + 15)) + this.type_)) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -698,7 +698,7 @@ public final class LunaRiteHintPointOuterClass {
     }
 
     static {
-        LunaRiteHintPointTypeOuterClass.getDescriptor();
         VectorOuterClass.getDescriptor();
+        LunaRiteHintPointTypeOuterClass.getDescriptor();
     }
 }

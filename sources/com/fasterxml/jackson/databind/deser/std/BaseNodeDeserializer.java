@@ -14,7 +14,6 @@ import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.databind.type.LogicalType;
 import com.fasterxml.jackson.databind.util.RawValue;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -310,7 +309,7 @@ public abstract class BaseNodeDeserializer<T extends JsonNode> extends StdDeseri
                 this._end = 10;
                 this._stack = new ContainerNode[this._end];
             } else {
-                this._end += Math.min((int) PacketOpcodes.MechanicusOpenNotify, Math.max(20, this._end >> 1));
+                this._end += Math.min(4000, Math.max(20, this._end >> 1));
                 this._stack = (ContainerNode[]) Arrays.copyOf(this._stack, this._end);
             }
             ContainerNode[] containerNodeArr2 = this._stack;

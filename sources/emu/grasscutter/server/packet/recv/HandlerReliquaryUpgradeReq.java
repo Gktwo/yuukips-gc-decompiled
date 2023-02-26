@@ -5,7 +5,7 @@ import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.ReliquaryUpgradeReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 
-@Opcodes(644)
+@Opcodes(625)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerReliquaryUpgradeReq.class */
 public class HandlerReliquaryUpgradeReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

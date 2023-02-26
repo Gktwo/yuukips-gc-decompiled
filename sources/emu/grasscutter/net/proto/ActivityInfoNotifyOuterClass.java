@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ActivityInfoNotifyOuterClass.class */
 public final class ActivityInfoNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018ActivityInfoNotify.proto\u001a\u0012ActivityInfo.proto\":\n\u0012ActivityInfoNotify\u0012$\n\ractivity_info\u0018\f \u0001(\u000b2\r.ActivityInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ActivityInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018ActivityInfoNotify.proto\u001a\u0012ActivityInfo.proto\"9\n\u0012ActivityInfoNotify\u0012#\n\factivityInfo\u0018\u0003 \u0001(\u000b2\r.ActivityInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ActivityInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ActivityInfoNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ActivityInfoNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ActivityInfoNotify_descriptor, new String[]{"ActivityInfo"});
 
@@ -47,7 +47,7 @@ public final class ActivityInfoNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ActivityInfoNotifyOuterClass$ActivityInfoNotify.class */
     public static final class ActivityInfoNotify extends GeneratedMessageV3 implements ActivityInfoNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ACTIVITY_INFO_FIELD_NUMBER = 12;
+        public static final int ACTIVITYINFO_FIELD_NUMBER = 3;
         private ActivityInfoOuterClass.ActivityInfo activityInfo_;
         private byte memoizedIsInitialized;
         private static final ActivityInfoNotify DEFAULT_INSTANCE = new ActivityInfoNotify();
@@ -94,7 +94,7 @@ public final class ActivityInfoNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 98:
+                            case 26:
                                 ActivityInfoOuterClass.ActivityInfo.Builder subBuilder = this.activityInfo_ != null ? this.activityInfo_.toBuilder() : null;
                                 this.activityInfo_ = (ActivityInfoOuterClass.ActivityInfo) input.readMessage(ActivityInfoOuterClass.ActivityInfo.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -164,7 +164,7 @@ public final class ActivityInfoNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.activityInfo_ != null) {
-                output.writeMessage(12, getActivityInfo());
+                output.writeMessage(3, getActivityInfo());
             }
             this.unknownFields.writeTo(output);
         }
@@ -177,7 +177,7 @@ public final class ActivityInfoNotifyOuterClass {
             }
             int size2 = 0;
             if (this.activityInfo_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(12, getActivityInfo());
+                size2 = 0 + CodedOutputStream.computeMessageSize(3, getActivityInfo());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -206,7 +206,7 @@ public final class ActivityInfoNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasActivityInfo()) {
-                hash = (53 * ((37 * hash) + 12)) + getActivityInfo().hashCode();
+                hash = (53 * ((37 * hash) + 3)) + getActivityInfo().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

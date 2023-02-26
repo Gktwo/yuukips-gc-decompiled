@@ -20,21 +20,21 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestRenameAvatarRspOuterClass.class */
 public final class QuestRenameAvatarRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aQuestRenameAvatarRsp.proto\"a\n\u0014QuestRenameAvatarRsp\u0012\u000f\n\u0007retcode\u0018\u000b \u0001(\u0005\u0012\u0010\n\bis_check\u0018\u0004 \u0001(\b\u0012\u0011\n\trename_id\u0018\u000f \u0001(\r\u0012\u0013\n\u000bavatar_name\u0018\b \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aQuestRenameAvatarRsp.proto\"^\n\u0014QuestRenameAvatarRsp\u0012\u0012\n\navatarName\u0018\u000f \u0001(\t\u0012\u000f\n\u0007isCheck\u0018\u0002 \u0001(\b\u0012\u0010\n\brenameId\u0018\r \u0001(\r\u0012\u000f\n\u0007retcode\u0018\n \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_QuestRenameAvatarRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_QuestRenameAvatarRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QuestRenameAvatarRsp_descriptor, new String[]{"Retcode", "IsCheck", "RenameId", "AvatarName"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_QuestRenameAvatarRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QuestRenameAvatarRsp_descriptor, new String[]{"AvatarName", "IsCheck", "RenameId", "Retcode"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestRenameAvatarRspOuterClass$QuestRenameAvatarRspOrBuilder.class */
     public interface QuestRenameAvatarRspOrBuilder extends MessageOrBuilder {
-        int getRetcode();
+        String getAvatarName();
+
+        ByteString getAvatarNameBytes();
 
         boolean getIsCheck();
 
         int getRenameId();
 
-        String getAvatarName();
-
-        ByteString getAvatarNameBytes();
+        int getRetcode();
     }
 
     private QuestRenameAvatarRspOuterClass() {
@@ -50,14 +50,14 @@ public final class QuestRenameAvatarRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestRenameAvatarRspOuterClass$QuestRenameAvatarRsp.class */
     public static final class QuestRenameAvatarRsp extends GeneratedMessageV3 implements QuestRenameAvatarRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 11;
-        private int retcode_;
-        public static final int IS_CHECK_FIELD_NUMBER = 4;
-        private boolean isCheck_;
-        public static final int RENAME_ID_FIELD_NUMBER = 15;
-        private int renameId_;
-        public static final int AVATAR_NAME_FIELD_NUMBER = 8;
+        public static final int AVATARNAME_FIELD_NUMBER = 15;
         private volatile Object avatarName_;
+        public static final int ISCHECK_FIELD_NUMBER = 2;
+        private boolean isCheck_;
+        public static final int RENAMEID_FIELD_NUMBER = 13;
+        private int renameId_;
+        public static final int RETCODE_FIELD_NUMBER = 10;
+        private int retcode_;
         private byte memoizedIsInitialized;
         private static final QuestRenameAvatarRsp DEFAULT_INSTANCE = new QuestRenameAvatarRsp();
         private static final Parser<QuestRenameAvatarRsp> PARSER = new AbstractParser<QuestRenameAvatarRsp>() { // from class: emu.grasscutter.net.proto.QuestRenameAvatarRspOuterClass.QuestRenameAvatarRsp.1
@@ -104,17 +104,17 @@ public final class QuestRenameAvatarRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 32:
+                            case 16:
                                 this.isCheck_ = input.readBool();
                                 break;
-                            case 66:
-                                this.avatarName_ = input.readStringRequireUtf8();
-                                break;
-                            case 88:
+                            case 80:
                                 this.retcode_ = input.readInt32();
                                 break;
-                            case 120:
+                            case 104:
                                 this.renameId_ = input.readUInt32();
+                                break;
+                            case 122:
+                                this.avatarName_ = input.readStringRequireUtf8();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -146,21 +146,6 @@ public final class QuestRenameAvatarRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.QuestRenameAvatarRspOuterClass.QuestRenameAvatarRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
-        }
-
-        @Override // emu.grasscutter.net.proto.QuestRenameAvatarRspOuterClass.QuestRenameAvatarRspOrBuilder
-        public boolean getIsCheck() {
-            return this.isCheck_;
-        }
-
-        @Override // emu.grasscutter.net.proto.QuestRenameAvatarRspOuterClass.QuestRenameAvatarRspOrBuilder
-        public int getRenameId() {
-            return this.renameId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.QuestRenameAvatarRspOuterClass.QuestRenameAvatarRspOrBuilder
         public String getAvatarName() {
             Object ref = this.avatarName_;
             if (ref instanceof String) {
@@ -182,6 +167,21 @@ public final class QuestRenameAvatarRspOuterClass {
             return b;
         }
 
+        @Override // emu.grasscutter.net.proto.QuestRenameAvatarRspOuterClass.QuestRenameAvatarRspOrBuilder
+        public boolean getIsCheck() {
+            return this.isCheck_;
+        }
+
+        @Override // emu.grasscutter.net.proto.QuestRenameAvatarRspOuterClass.QuestRenameAvatarRspOrBuilder
+        public int getRenameId() {
+            return this.renameId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.QuestRenameAvatarRspOuterClass.QuestRenameAvatarRspOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -198,16 +198,16 @@ public final class QuestRenameAvatarRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.isCheck_) {
-                output.writeBool(4, this.isCheck_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.avatarName_)) {
-                GeneratedMessageV3.writeString(output, 8, this.avatarName_);
+                output.writeBool(2, this.isCheck_);
             }
             if (this.retcode_ != 0) {
-                output.writeInt32(11, this.retcode_);
+                output.writeInt32(10, this.retcode_);
             }
             if (this.renameId_ != 0) {
-                output.writeUInt32(15, this.renameId_);
+                output.writeUInt32(13, this.renameId_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.avatarName_)) {
+                GeneratedMessageV3.writeString(output, 15, this.avatarName_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -220,16 +220,16 @@ public final class QuestRenameAvatarRspOuterClass {
             }
             int size2 = 0;
             if (this.isCheck_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(4, this.isCheck_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.avatarName_)) {
-                size2 += GeneratedMessageV3.computeStringSize(8, this.avatarName_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(2, this.isCheck_);
             }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(11, this.retcode_);
+                size2 += CodedOutputStream.computeInt32Size(10, this.retcode_);
             }
             if (this.renameId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.renameId_);
+                size2 += CodedOutputStream.computeUInt32Size(13, this.renameId_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.avatarName_)) {
+                size2 += GeneratedMessageV3.computeStringSize(15, this.avatarName_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -245,7 +245,7 @@ public final class QuestRenameAvatarRspOuterClass {
                 return equals(obj);
             }
             QuestRenameAvatarRsp other = (QuestRenameAvatarRsp) obj;
-            return getRetcode() == other.getRetcode() && getIsCheck() == other.getIsCheck() && getRenameId() == other.getRenameId() && getAvatarName().equals(other.getAvatarName()) && this.unknownFields.equals(other.unknownFields);
+            return getAvatarName().equals(other.getAvatarName()) && getIsCheck() == other.getIsCheck() && getRenameId() == other.getRenameId() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -253,7 +253,7 @@ public final class QuestRenameAvatarRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getRetcode())) + 4)) + Internal.hashBoolean(getIsCheck()))) + 15)) + getRenameId())) + 8)) + getAvatarName().hashCode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getAvatarName().hashCode())) + 2)) + Internal.hashBoolean(getIsCheck()))) + 13)) + getRenameId())) + 10)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -332,10 +332,10 @@ public final class QuestRenameAvatarRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestRenameAvatarRspOuterClass$QuestRenameAvatarRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements QuestRenameAvatarRspOrBuilder {
-            private int retcode_;
+            private Object avatarName_ = "";
             private boolean isCheck_;
             private int renameId_;
-            private Object avatarName_ = "";
+            private int retcode_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return QuestRenameAvatarRspOuterClass.internal_static_QuestRenameAvatarRsp_descriptor;
@@ -363,10 +363,10 @@ public final class QuestRenameAvatarRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.retcode_ = 0;
+                this.avatarName_ = "";
                 this.isCheck_ = false;
                 this.renameId_ = 0;
-                this.avatarName_ = "";
+                this.retcode_ = 0;
                 return this;
             }
 
@@ -392,10 +392,10 @@ public final class QuestRenameAvatarRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public QuestRenameAvatarRsp buildPartial() {
                 QuestRenameAvatarRsp result = new QuestRenameAvatarRsp(this);
-                result.retcode_ = this.retcode_;
+                result.avatarName_ = this.avatarName_;
                 result.isCheck_ = this.isCheck_;
                 result.renameId_ = this.renameId_;
-                result.avatarName_ = this.avatarName_;
+                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -443,8 +443,9 @@ public final class QuestRenameAvatarRspOuterClass {
                 if (other == QuestRenameAvatarRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
+                if (!other.getAvatarName().isEmpty()) {
+                    this.avatarName_ = other.avatarName_;
+                    onChanged();
                 }
                 if (other.getIsCheck()) {
                     setIsCheck(other.getIsCheck());
@@ -452,9 +453,8 @@ public final class QuestRenameAvatarRspOuterClass {
                 if (other.getRenameId() != 0) {
                     setRenameId(other.getRenameId());
                 }
-                if (!other.getAvatarName().isEmpty()) {
-                    this.avatarName_ = other.avatarName_;
-                    onChanged();
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -486,57 +486,6 @@ public final class QuestRenameAvatarRspOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.QuestRenameAvatarRspOuterClass.QuestRenameAvatarRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.QuestRenameAvatarRspOuterClass.QuestRenameAvatarRspOrBuilder
-            public boolean getIsCheck() {
-                return this.isCheck_;
-            }
-
-            public Builder setIsCheck(boolean value) {
-                this.isCheck_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsCheck() {
-                this.isCheck_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.QuestRenameAvatarRspOuterClass.QuestRenameAvatarRspOrBuilder
-            public int getRenameId() {
-                return this.renameId_;
-            }
-
-            public Builder setRenameId(int value) {
-                this.renameId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRenameId() {
-                this.renameId_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // emu.grasscutter.net.proto.QuestRenameAvatarRspOuterClass.QuestRenameAvatarRspOrBuilder
@@ -582,6 +531,57 @@ public final class QuestRenameAvatarRspOuterClass {
                 }
                 QuestRenameAvatarRsp.checkByteStringIsUtf8(value);
                 this.avatarName_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.QuestRenameAvatarRspOuterClass.QuestRenameAvatarRspOrBuilder
+            public boolean getIsCheck() {
+                return this.isCheck_;
+            }
+
+            public Builder setIsCheck(boolean value) {
+                this.isCheck_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsCheck() {
+                this.isCheck_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.QuestRenameAvatarRspOuterClass.QuestRenameAvatarRspOrBuilder
+            public int getRenameId() {
+                return this.renameId_;
+            }
+
+            public Builder setRenameId(int value) {
+                this.renameId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRenameId() {
+                this.renameId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.QuestRenameAvatarRspOuterClass.QuestRenameAvatarRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }

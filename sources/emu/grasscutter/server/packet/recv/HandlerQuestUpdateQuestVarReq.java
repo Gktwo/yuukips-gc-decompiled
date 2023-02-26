@@ -3,13 +3,14 @@ package emu.grasscutter.server.packet.recv;
 import emu.grasscutter.game.quest.GameMainQuest;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.QuestUpdateQuestVarReqOuterClass;
 import emu.grasscutter.net.proto.QuestVarOpOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketQuestUpdateQuestVarRsp;
 import java.util.List;
 
-@Opcodes(476)
+@Opcodes(PacketOpcodes.QuestUpdateQuestVarReq)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerQuestUpdateQuestVarReq.class */
 public class HandlerQuestUpdateQuestVarReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

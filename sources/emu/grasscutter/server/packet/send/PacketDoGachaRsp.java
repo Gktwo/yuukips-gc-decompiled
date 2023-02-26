@@ -4,7 +4,6 @@ import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.gacha.GachaBanner;
 import emu.grasscutter.game.gacha.PlayerGachaBannerInfo;
 import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.DoGachaRspOuterClass;
 import emu.grasscutter.net.proto.GachaItemOuterClass;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
@@ -13,7 +12,7 @@ import java.util.List;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketDoGachaRsp.class */
 public class PacketDoGachaRsp extends BasePacket {
     public PacketDoGachaRsp(GachaBanner banner, List<GachaItemOuterClass.GachaItem> list, PlayerGachaBannerInfo gachaInfo) {
-        super(PacketOpcodes.DoGachaRsp);
+        super(1598);
         int leftGachaTimes;
         ItemParamData costItem = banner.getCost(1);
         ItemParamData costItem10 = banner.getCost(10);
@@ -34,12 +33,12 @@ public class PacketDoGachaRsp extends BasePacket {
     }
 
     public PacketDoGachaRsp() {
-        super(PacketOpcodes.DoGachaRsp);
+        super(1598);
         setData(DoGachaRspOuterClass.DoGachaRsp.newBuilder().setRetcode(1).build());
     }
 
     public PacketDoGachaRsp(RetcodeOuterClass.Retcode retcode) {
-        super(PacketOpcodes.DoGachaRsp);
+        super(1598);
         setData(DoGachaRspOuterClass.DoGachaRsp.newBuilder().setRetcode(retcode.getNumber()).build());
     }
 }

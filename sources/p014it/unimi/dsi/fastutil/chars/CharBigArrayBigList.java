@@ -23,7 +23,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
     public static final int DEFAULT_INITIAL_CAPACITY = 10;
 
     /* renamed from: a */
-    protected transient char[][] f1494a;
+    protected transient char[][] f1458a;
     protected long size;
     static final /* synthetic */ boolean $assertionsDisabled;
 
@@ -32,27 +32,27 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
     }
 
     protected CharBigArrayBigList(char[][] a, boolean dummy) {
-        this.f1494a = a;
+        this.f1458a = a;
     }
 
     public CharBigArrayBigList(long capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException("Initial capacity (" + capacity + ") is negative");
         } else if (capacity == 0) {
-            this.f1494a = CharBigArrays.EMPTY_BIG_ARRAY;
+            this.f1458a = CharBigArrays.EMPTY_BIG_ARRAY;
         } else {
-            this.f1494a = CharBigArrays.newBigArray(capacity);
+            this.f1458a = CharBigArrays.newBigArray(capacity);
         }
     }
 
     public CharBigArrayBigList() {
-        this.f1494a = CharBigArrays.DEFAULT_EMPTY_BIG_ARRAY;
+        this.f1458a = CharBigArrays.DEFAULT_EMPTY_BIG_ARRAY;
     }
 
     public CharBigArrayBigList(CharCollection c) {
         this(Size64.sizeOf(c));
         if (c instanceof CharBigList) {
-            char[][] cArr = this.f1494a;
+            char[][] cArr = this.f1458a;
             long sizeOf = Size64.sizeOf(c);
             this.size = sizeOf;
             ((CharBigList) c).getElements(0, cArr, 0, sizeOf);
@@ -66,7 +66,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
 
     public CharBigArrayBigList(CharBigList l) {
         this(l.size64());
-        char[][] cArr = this.f1494a;
+        char[][] cArr = this.f1458a;
         long size64 = l.size64();
         this.size = size64;
         l.getElements(0, cArr, 0, size64);
@@ -78,7 +78,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
 
     public CharBigArrayBigList(char[][] a, long offset, long length) {
         this(length);
-        BigArrays.copy(a, offset, this.f1494a, 0L, length);
+        BigArrays.copy(a, offset, this.f1458a, 0L, length);
         this.size = length;
     }
 
@@ -97,7 +97,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
     }
 
     public char[][] elements() {
-        return this.f1494a;
+        return this.f1458a;
     }
 
     public static CharBigArrayBigList wrap(char[][] a, long length) {
@@ -124,24 +124,24 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
     }
 
     public void ensureCapacity(long capacity) {
-        if (capacity > BigArrays.length(this.f1494a) && this.f1494a != CharBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
-            this.f1494a = BigArrays.forceCapacity(this.f1494a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1494a)) {
+        if (capacity > BigArrays.length(this.f1458a) && this.f1458a != CharBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
+            this.f1458a = BigArrays.forceCapacity(this.f1458a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1458a)) {
                 throw new AssertionError();
             }
         }
     }
 
     private void grow(long capacity) {
-        long oldLength = BigArrays.length(this.f1494a);
+        long oldLength = BigArrays.length(this.f1458a);
         if (capacity > oldLength) {
-            if (this.f1494a != CharBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
+            if (this.f1458a != CharBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
                 capacity = Math.max(oldLength + (oldLength >> 1), capacity);
             } else if (capacity < 10) {
                 capacity = 10;
             }
-            this.f1494a = BigArrays.forceCapacity(this.f1494a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1494a)) {
+            this.f1458a = BigArrays.forceCapacity(this.f1458a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1458a)) {
                 throw new AssertionError();
             }
         }
@@ -152,11 +152,11 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
         ensureIndex(index);
         grow(this.size + 1);
         if (index != this.size) {
-            BigArrays.copy(this.f1494a, index, this.f1494a, index + 1, this.size - index);
+            BigArrays.copy(this.f1458a, index, this.f1458a, index + 1, this.size - index);
         }
-        BigArrays.set(this.f1494a, index, k);
+        BigArrays.set(this.f1458a, index, k);
         this.size++;
-        if (!$assertionsDisabled && this.size > BigArrays.length(this.f1494a)) {
+        if (!$assertionsDisabled && this.size > BigArrays.length(this.f1458a)) {
             throw new AssertionError();
         }
     }
@@ -164,11 +164,11 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharBigList, p014it.unimi.dsi.fastutil.chars.AbstractCharCollection, p014it.unimi.dsi.fastutil.chars.CharCollection
     public boolean add(char k) {
         grow(this.size + 1);
-        char[][] cArr = this.f1494a;
+        char[][] cArr = this.f1458a;
         long j = this.size;
         this.size = j + 1;
         BigArrays.set(cArr, j, k);
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1494a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1458a)) {
             return true;
         }
         throw new AssertionError();
@@ -177,7 +177,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
     @Override // p014it.unimi.dsi.fastutil.chars.CharBigList
     public char getChar(long index) {
         if (index < this.size) {
-            return BigArrays.get(this.f1494a, index);
+            return BigArrays.get(this.f1458a, index);
         }
         throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
     }
@@ -185,7 +185,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharBigList, p014it.unimi.dsi.fastutil.chars.CharBigList
     public long indexOf(char k) {
         for (long i = 0; i < this.size; i++) {
-            if (k == BigArrays.get(this.f1494a, i)) {
+            if (k == BigArrays.get(this.f1458a, i)) {
                 return i;
             }
         }
@@ -217,7 +217,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
             if (r0 == 0) goto L_0x001d
             r0 = r8
             r1 = r7
-            char[][] r1 = r1.f1494a
+            char[][] r1 = r1.f1458a
             r2 = r9
             char r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
             if (r0 != r1) goto L_0x0005
@@ -235,12 +235,12 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        char old = BigArrays.get(this.f1494a, index);
+        char old = BigArrays.get(this.f1458a, index);
         this.size--;
         if (index != this.size) {
-            BigArrays.copy(this.f1494a, index + 1, this.f1494a, index, this.size - index);
+            BigArrays.copy(this.f1458a, index + 1, this.f1458a, index, this.size - index);
         }
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1494a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1458a)) {
             return old;
         }
         throw new AssertionError();
@@ -253,7 +253,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
             return false;
         }
         removeChar(index);
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1494a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1458a)) {
             return true;
         }
         throw new AssertionError();
@@ -264,8 +264,8 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        char old = BigArrays.get(this.f1494a, index);
-        BigArrays.set(this.f1494a, index, k);
+        char old = BigArrays.get(this.f1458a, index);
+        BigArrays.set(this.f1458a, index, k);
         return old;
     }
 
@@ -281,12 +281,12 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
             if (sd == 134217728) {
                 sd = 0;
                 ss++;
-                s = this.f1494a[ss];
+                s = this.f1458a[ss];
             }
             if (!c.contains(s[sd])) {
                 if (dd == 134217728) {
                     ds++;
-                    d = this.f1494a[ds];
+                    d = this.f1458a[ds];
                     dd = 0;
                 }
                 dd++;
@@ -312,12 +312,12 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
             if (sd == 134217728) {
                 sd = 0;
                 ss++;
-                s = this.f1494a[ss];
+                s = this.f1458a[ss];
             }
             if (!c.contains(Character.valueOf(s[sd]))) {
                 if (dd == 134217728) {
                     ds++;
-                    d = this.f1494a[ds];
+                    d = this.f1458a[ds];
                     dd = 0;
                 }
                 dd++;
@@ -345,17 +345,17 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
             return false;
         }
         grow(this.size + ((long) n));
-        BigArrays.copy(this.f1494a, index, this.f1494a, index + ((long) n), this.size - index);
+        BigArrays.copy(this.f1458a, index, this.f1458a, index + ((long) n), this.size - index);
         CharIterator i = c.iterator();
         this.size += (long) n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1494a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1458a)) {
             while (true) {
                 n--;
                 if (n == 0) {
                     return true;
                 }
                 index++;
-                BigArrays.set(this.f1494a, index, i.nextChar());
+                BigArrays.set(this.f1458a, index, i.nextChar());
             }
         } else {
             throw new AssertionError();
@@ -370,10 +370,10 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
             return false;
         }
         grow(this.size + n);
-        BigArrays.copy(this.f1494a, index, this.f1494a, index + n, this.size - index);
-        list.getElements(0, this.f1494a, index, n);
+        BigArrays.copy(this.f1458a, index, this.f1458a, index + n, this.size - index);
+        list.getElements(0, this.f1458a, index, n);
         this.size += n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1494a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1458a)) {
             return true;
         }
         throw new AssertionError();
@@ -387,15 +387,15 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
             return false;
         }
         grow(this.size + ((long) n));
-        BigArrays.copy(this.f1494a, index, this.f1494a, index + ((long) n), this.size - index);
+        BigArrays.copy(this.f1458a, index, this.f1458a, index + ((long) n), this.size - index);
         this.size += (long) n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1494a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1458a)) {
             int segment = BigArrays.segment(index);
             int displ = BigArrays.displacement(index);
             int pos = 0;
             while (n > 0) {
-                int l = Math.min(this.f1494a[segment].length - displ, n);
-                list.getElements(pos, this.f1494a[segment], displ, l);
+                int l = Math.min(this.f1458a[segment].length - displ, n);
+                list.getElements(pos, this.f1458a[segment], displ, l);
                 int i = displ + l;
                 displ = i;
                 if (i == 134217728) {
@@ -413,7 +413,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharBigList, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         this.size = 0;
-        if (!$assertionsDisabled && this.size > BigArrays.length(this.f1494a)) {
+        if (!$assertionsDisabled && this.size > BigArrays.length(this.f1458a)) {
             throw new AssertionError();
         }
     }
@@ -425,11 +425,11 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharBigList, p014it.unimi.dsi.fastutil.BigList
     public void size(long size) {
-        if (size > BigArrays.length(this.f1494a)) {
-            this.f1494a = BigArrays.forceCapacity(this.f1494a, size, this.size);
+        if (size > BigArrays.length(this.f1458a)) {
+            this.f1458a = BigArrays.forceCapacity(this.f1458a, size, this.size);
         }
         if (size > this.size) {
-            BigArrays.fill(this.f1494a, this.size, size, (char) 0);
+            BigArrays.fill(this.f1458a, this.size, size, (char) 0);
         }
         this.size = size;
     }
@@ -444,10 +444,10 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
     }
 
     public void trim(long n) {
-        long arrayLength = BigArrays.length(this.f1494a);
+        long arrayLength = BigArrays.length(this.f1458a);
         if (n < arrayLength && this.size != arrayLength) {
-            this.f1494a = BigArrays.trim(this.f1494a, Math.max(n, this.size));
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1494a)) {
+            this.f1458a = BigArrays.trim(this.f1458a, Math.max(n, this.size));
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1458a)) {
                 throw new AssertionError();
             }
         }
@@ -464,13 +464,13 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
         }
 
         private char[][] getParentArray() {
-            return CharBigArrayBigList.this.f1494a;
+            return CharBigArrayBigList.this.f1458a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharBigList.CharSubList, p014it.unimi.dsi.fastutil.chars.CharBigList
         public char getChar(long i) {
             ensureRestrictedIndex(i);
-            return BigArrays.get(CharBigArrayBigList.this.f1494a, i + this.from);
+            return BigArrays.get(CharBigArrayBigList.this.f1458a, i + this.from);
         }
 
         /* access modifiers changed from: private */
@@ -483,7 +483,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
 
             @Override // p014it.unimi.dsi.fastutil.chars.CharBigListIterators.AbstractIndexBasedBigIterator
             protected final char get(long i) {
-                return BigArrays.get(CharBigArrayBigList.this.f1494a, SubList.this.from + i);
+                return BigArrays.get(CharBigArrayBigList.this.f1458a, SubList.this.from + i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.chars.CharBigListIterators.AbstractIndexBasedBigListIterator
@@ -503,7 +503,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
 
             @Override // p014it.unimi.dsi.fastutil.chars.CharBigListIterators.AbstractIndexBasedBigIterator
             protected final long getMaxPos() {
-                return SubList.this.f1347to - SubList.this.from;
+                return SubList.this.f1311to - SubList.this.from;
             }
 
             /* JADX DEBUG: Multi-variable search result rejected for r12v0, resolved type: it.unimi.dsi.fastutil.chars.CharBigArrayBigList$SubList$SubListIterator */
@@ -513,7 +513,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                char[][] cArr = CharBigArrayBigList.this.f1494a;
+                char[][] cArr = CharBigArrayBigList.this.f1458a;
                 long j = SubList.this.from;
                 long j2 = this.pos;
                 this.pos = j2 + 1;
@@ -528,7 +528,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                char[][] cArr = CharBigArrayBigList.this.f1494a;
+                char[][] cArr = CharBigArrayBigList.this.f1458a;
                 long j = SubList.this.from;
                 long j2 = this.pos - 1;
                 this.pos = j2;
@@ -538,7 +538,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
 
             /* JADX DEBUG: Multi-variable search result rejected for r13v0, resolved type: it.unimi.dsi.fastutil.chars.CharBigArrayBigList$SubList$SubListIterator */
             /* JADX WARN: Multi-variable type inference failed */
-            /* JADX WARN: Type inference failed for: r1v7, types: [it.unimi.dsi.fastutil.chars.CharConsumer, char[][]] */
+            /* JADX WARN: Type inference failed for: r1v7, types: [char[][], it.unimi.dsi.fastutil.chars.CharConsumer] */
             /* JADX WARNING: Unknown variable types count: 1 */
             @Override // p014it.unimi.dsi.fastutil.chars.CharBigListIterators.AbstractIndexBasedBigIterator, p014it.unimi.dsi.fastutil.chars.CharIterator
             /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -547,7 +547,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                     r13 = this;
                     r0 = r13
                     it.unimi.dsi.fastutil.chars.CharBigArrayBigList$SubList r0 = p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.SubList.this
-                    long r0 = r0.f1347to
+                    long r0 = r0.f1311to
                     r1 = r13
                     it.unimi.dsi.fastutil.chars.CharBigArrayBigList$SubList r1 = p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.SubList.this
                     long r1 = r1.from
@@ -563,7 +563,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                     r1 = r13
                     it.unimi.dsi.fastutil.chars.CharBigArrayBigList$SubList r1 = p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.SubList.this
                     it.unimi.dsi.fastutil.chars.CharBigArrayBigList r1 = p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.this
-                    char[][] r1 = r1.f1494a
+                    char[][] r1 = r1.f1458a
                     r2 = r13
                     it.unimi.dsi.fastutil.chars.CharBigArrayBigList$SubList r2 = p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.SubList.this
                     long r2 = r2.from
@@ -608,12 +608,12 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
 
             @Override // p014it.unimi.dsi.fastutil.chars.CharBigSpliterators.LateBindingSizeIndexBasedSpliterator
             protected final long getMaxPosFromBackingStore() {
-                return SubList.this.f1347to;
+                return SubList.this.f1311to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.chars.CharBigSpliterators.AbstractIndexBasedSpliterator
             protected final char get(long i) {
-                return BigArrays.get(CharBigArrayBigList.this.f1494a, i);
+                return BigArrays.get(CharBigArrayBigList.this.f1458a, i);
             }
 
             /* access modifiers changed from: protected */
@@ -632,7 +632,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                 if (this.pos >= getMaxPos()) {
                     return false;
                 }
-                char[][] cArr = CharBigArrayBigList.this.f1494a;
+                char[][] cArr = CharBigArrayBigList.this.f1458a;
                 long j = this.pos;
                 this.pos = j + 1;
                 action.accept(BigArrays.get(cArr, j));
@@ -643,7 +643,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
             public void forEachRemaining(CharConsumer action) {
                 long max = getMaxPos();
                 while (this.pos < max) {
-                    char[][] cArr = CharBigArrayBigList.this.f1494a;
+                    char[][] cArr = CharBigArrayBigList.this.f1458a;
                     long j = this.pos;
                     this.pos = j + 1;
                     action.accept(BigArrays.get(cArr, j));
@@ -667,7 +667,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                 r7 = this;
                 r0 = r7
                 it.unimi.dsi.fastutil.chars.CharBigArrayBigList r0 = p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.this
-                char[][] r0 = r0.f1494a
+                char[][] r0 = r0.f1458a
                 r1 = r8
                 if (r0 != r1) goto L_0x0020
                 r0 = r7
@@ -676,7 +676,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
                 r0 = r7
-                long r0 = r0.f1347to
+                long r0 = r0.f1311to
                 r1 = r11
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
@@ -694,7 +694,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                 return r0
             L_0x002e:
                 r0 = r7
-                long r0 = r0.f1347to
+                long r0 = r0.f1311to
                 r13 = r0
                 r0 = r11
                 r15 = r0
@@ -710,7 +710,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                 if (r0 < 0) goto L_0x0063
                 r0 = r7
                 it.unimi.dsi.fastutil.chars.CharBigArrayBigList r0 = p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.this
-                char[][] r0 = r0.f1494a
+                char[][] r0 = r0.f1458a
                 r1 = r13
                 char r0 = p014it.unimi.dsi.fastutil.BigArrays.get(r0, r1)
                 r1 = r8
@@ -740,12 +740,12 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
             }
             if (o instanceof CharBigArrayBigList) {
                 CharBigArrayBigList other = (CharBigArrayBigList) o;
-                return contentsEquals(other.f1494a, 0, other.size64());
+                return contentsEquals(other.f1458a, 0, other.size64());
             } else if (!(o instanceof SubList)) {
                 return equals(o);
             } else {
                 SubList other2 = (SubList) o;
-                return contentsEquals(other2.getParentArray(), other2.from, other2.f1347to);
+                return contentsEquals(other2.getParentArray(), other2.from, other2.f1311to);
             }
         }
 
@@ -763,7 +763,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                 r5 = this;
                 r0 = r5
                 it.unimi.dsi.fastutil.chars.CharBigArrayBigList r0 = p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.this
-                char[][] r0 = r0.f1494a
+                char[][] r0 = r0.f1458a
                 r1 = r6
                 if (r0 != r1) goto L_0x0020
                 r0 = r5
@@ -772,7 +772,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
                 r0 = r5
-                long r0 = r0.f1347to
+                long r0 = r0.f1311to
                 r1 = r9
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
@@ -787,7 +787,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
             L_0x0029:
                 r0 = r14
                 r1 = r5
-                long r1 = r1.f1347to
+                long r1 = r1.f1311to
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 >= 0) goto L_0x0070
                 r0 = r14
@@ -796,7 +796,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                 if (r0 >= 0) goto L_0x0070
                 r0 = r5
                 it.unimi.dsi.fastutil.chars.CharBigArrayBigList r0 = p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.this
-                char[][] r0 = r0.f1494a
+                char[][] r0 = r0.f1458a
                 r1 = r14
                 char r0 = p014it.unimi.dsi.fastutil.BigArrays.get(r0, r1)
                 r11 = r0
@@ -832,7 +832,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
             L_0x007c:
                 r0 = r14
                 r1 = r5
-                long r1 = r1.f1347to
+                long r1 = r1.f1311to
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 >= 0) goto L_0x008a
                 r0 = 1
@@ -849,12 +849,12 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
         public int compareTo(BigList<? extends Character> l) {
             if (l instanceof CharBigArrayBigList) {
                 CharBigArrayBigList other = (CharBigArrayBigList) l;
-                return contentsCompareTo(other.f1494a, 0, other.size64());
+                return contentsCompareTo(other.f1458a, 0, other.size64());
             } else if (!(l instanceof SubList)) {
                 return compareTo(l);
             } else {
                 SubList other2 = (SubList) l;
-                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f1347to);
+                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f1311to);
             }
         }
     }
@@ -875,18 +875,18 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharBigList, p014it.unimi.dsi.fastutil.chars.CharBigList
     public void getElements(long from, char[][] a, long offset, long length) {
-        BigArrays.copy(this.f1494a, from, a, offset, length);
+        BigArrays.copy(this.f1458a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.CharBigList
     public void getElements(long from, char[] a, int offset, int length) {
-        BigArrays.copyFromBig(this.f1494a, from, a, offset, length);
+        BigArrays.copyFromBig(this.f1458a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharBigList, p014it.unimi.dsi.fastutil.chars.CharBigList
     public void removeElements(long from, long to) {
         BigArrays.ensureFromTo(this.size, from, to);
-        BigArrays.copy(this.f1494a, to, this.f1494a, from, this.size - to);
+        BigArrays.copy(this.f1458a, to, this.f1458a, from, this.size - to);
         this.size -= to - from;
     }
 
@@ -895,20 +895,20 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
         ensureIndex(index);
         BigArrays.ensureOffsetLength(a, offset, length);
         grow(this.size + length);
-        BigArrays.copy(this.f1494a, index, this.f1494a, index + length, this.size - index);
-        BigArrays.copy(a, offset, this.f1494a, index, length);
+        BigArrays.copy(this.f1458a, index, this.f1458a, index + length, this.size - index);
+        BigArrays.copy(a, offset, this.f1458a, index, length);
         this.size += length;
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharBigList, p014it.unimi.dsi.fastutil.chars.CharBigList
     public void setElements(long index, char[][] a, long offset, long length) {
-        BigArrays.copy(a, offset, this.f1494a, index, length);
+        BigArrays.copy(a, offset, this.f1458a, index, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharBigList, p014it.unimi.dsi.fastutil.chars.CharIterable
     public void forEach(CharConsumer action) {
         for (long i = 0; i < this.size; i++) {
-            action.accept(BigArrays.get(this.f1494a, i));
+            action.accept(BigArrays.get(this.f1458a, i));
         }
     }
 
@@ -953,7 +953,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                 L_0x000f:
                     r0 = r10
                     it.unimi.dsi.fastutil.chars.CharBigArrayBigList r0 = p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.this
-                    char[][] r0 = r0.f1494a
+                    char[][] r0 = r0.f1458a
                     r1 = r10
                     r2 = r10
                     r3 = r2
@@ -967,7 +967,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                     char r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
                     return r1
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.C36751.nextChar():char");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.C36671.nextChar():char");
             }
 
             /* JADX WARN: Type inference failed for: r0v4, types: [long, char[][]] */
@@ -988,7 +988,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                 L_0x000f:
                     r0 = r8
                     it.unimi.dsi.fastutil.chars.CharBigArrayBigList r0 = p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.this
-                    char[][] r0 = r0.f1494a
+                    char[][] r0 = r0.f1458a
                     r1 = r8
                     r2 = r8
                     r3 = r2
@@ -1002,7 +1002,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                     char r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
                     return r1
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.C36751.previousChar():char");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.C36671.previousChar():char");
             }
 
             @Override // p014it.unimi.dsi.fastutil.BigListIterator
@@ -1065,7 +1065,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                     r0 = r12
                     r1 = r11
                     it.unimi.dsi.fastutil.chars.CharBigArrayBigList r1 = p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.this
-                    char[][] r1 = r1.f1494a
+                    char[][] r1 = r1.f1458a
                     r2 = r11
                     r3 = r11
                     r4 = r3
@@ -1082,7 +1082,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                 L_0x0032:
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.C36751.forEachRemaining(it.unimi.dsi.fastutil.chars.CharConsumer):void");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.C36671.forEachRemaining(it.unimi.dsi.fastutil.chars.CharConsumer):void");
             }
 
             /* JADX WARN: Multi-variable type inference failed */
@@ -1145,7 +1145,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                     r0 = r7
                     return r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.C36751.back(long):long");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.C36671.back(long):long");
             }
 
             /* JADX WARN: Multi-variable type inference failed */
@@ -1212,7 +1212,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
                     r0 = r7
                     return r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.C36751.skip(long):long");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.chars.CharBigArrayBigList.C36671.skip(long):long");
             }
         };
     }
@@ -1263,7 +1263,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            char[][] cArr = CharBigArrayBigList.this.f1494a;
+            char[][] cArr = CharBigArrayBigList.this.f1458a;
             long j = this.pos;
             this.pos = j + 1;
             action.accept(BigArrays.get(cArr, j));
@@ -1273,7 +1273,7 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
         public void forEachRemaining(CharConsumer action) {
             long max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(BigArrays.get(CharBigArrayBigList.this.f1494a, this.pos));
+                action.accept(BigArrays.get(CharBigArrayBigList.this.f1458a, this.pos));
                 this.pos++;
             }
         }
@@ -1326,12 +1326,12 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
         } else {
             try {
                 c = (CharBigArrayBigList) clone();
-                c.f1494a = CharBigArrays.newBigArray(this.size);
+                c.f1458a = CharBigArrays.newBigArray(this.size);
             } catch (CloneNotSupportedException e) {
                 throw new InternalError(e);
             }
         }
-        BigArrays.copy(this.f1494a, 0L, c.f1494a, 0L, this.size);
+        BigArrays.copy(this.f1458a, 0L, c.f1458a, 0L, this.size);
         return c;
     }
 
@@ -1345,8 +1345,8 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
         if (size64 != l.size64()) {
             return false;
         }
-        char[][] a1 = this.f1494a;
-        char[][] a2 = l.f1494a;
+        char[][] a1 = this.f1458a;
+        char[][] a2 = l.f1458a;
         if (a1 == a2) {
             return true;
         }
@@ -1379,8 +1379,8 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
     public int compareTo(CharBigArrayBigList l) {
         long s1 = size64();
         long s2 = l.size64();
-        char[][] a1 = this.f1494a;
-        char[][] a2 = l.f1494a;
+        char[][] a1 = this.f1458a;
+        char[][] a2 = l.f1458a;
         if (a1 == a2 && s1 == s2) {
             return 0;
         }
@@ -1412,15 +1412,15 @@ public class CharBigArrayBigList extends AbstractCharBigList implements RandomAc
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; ((long) i) < this.size; i++) {
-            s.writeChar(BigArrays.get(this.f1494a, (long) i));
+            s.writeChar(BigArrays.get(this.f1458a, (long) i));
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f1494a = CharBigArrays.newBigArray(this.size);
+        this.f1458a = CharBigArrays.newBigArray(this.size);
         for (int i = 0; ((long) i) < this.size; i++) {
-            BigArrays.set(this.f1494a, (long) i, s.readChar());
+            BigArrays.set(this.f1458a, (long) i, s.readChar());
         }
     }
 }

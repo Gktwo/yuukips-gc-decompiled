@@ -197,30 +197,30 @@ public abstract class AbstractByte2BooleanMap extends AbstractByte2BooleanFuncti
                 return new ByteIterator() { // from class: it.unimi.dsi.fastutil.bytes.AbstractByte2BooleanMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Byte2BooleanMap.Entry> f1079i;
+                    private final ObjectIterator<Byte2BooleanMap.Entry> f1043i;
 
                     {
-                        this.f1079i = Byte2BooleanMaps.fastIterator(AbstractByte2BooleanMap.this);
+                        this.f1043i = Byte2BooleanMaps.fastIterator(AbstractByte2BooleanMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
                     public byte nextByte() {
-                        return this.f1079i.next().getByteKey();
+                        return this.f1043i.next().getByteKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1079i.hasNext();
+                        return this.f1043i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1079i.remove();
+                        this.f1043i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
                     public void forEachRemaining(ByteConsumer action) {
-                        this.f1079i.forEachRemaining(entry -> {
+                        this.f1043i.forEachRemaining(entry -> {
                             action.accept(entry.getByteKey());
                         });
                     }
@@ -260,30 +260,30 @@ public abstract class AbstractByte2BooleanMap extends AbstractByte2BooleanFuncti
                 return new BooleanIterator() { // from class: it.unimi.dsi.fastutil.bytes.AbstractByte2BooleanMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Byte2BooleanMap.Entry> f1080i;
+                    private final ObjectIterator<Byte2BooleanMap.Entry> f1044i;
 
                     {
-                        this.f1080i = Byte2BooleanMaps.fastIterator(AbstractByte2BooleanMap.this);
+                        this.f1044i = Byte2BooleanMaps.fastIterator(AbstractByte2BooleanMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
                     public boolean nextBoolean() {
-                        return this.f1080i.next().getBooleanValue();
+                        return this.f1044i.next().getBooleanValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1080i.hasNext();
+                        return this.f1044i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1080i.remove();
+                        this.f1044i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
                     public void forEachRemaining(BooleanConsumer action) {
-                        this.f1080i.forEachRemaining(entry -> {
+                        this.f1044i.forEachRemaining(entry -> {
                             action.accept(entry.getBooleanValue());
                         });
                     }

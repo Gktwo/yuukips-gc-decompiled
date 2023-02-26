@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ClientCollectorDataOuterClass.class */
 public final class ClientCollectorDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019ClientCollectorData.proto\"S\n\u0013ClientCollectorData\u0012\u0012\n\nmax_points\u0018\u0002 \u0001(\r\u0012\u0013\n\u000bcurr_points\u0018\u0003 \u0001(\r\u0012\u0013\n\u000bmaterial_id\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019ClientCollectorData.proto\"P\n\u0013ClientCollectorData\u0012\u0011\n\tmaxPoints\u0018\b \u0001(\r\u0012\u0012\n\ncurrPoints\u0018\u0002 \u0001(\r\u0012\u0012\n\nmaterialId\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ClientCollectorData_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ClientCollectorData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ClientCollectorData_descriptor, new String[]{"MaxPoints", "CurrPoints", "MaterialId"});
 
@@ -45,11 +45,11 @@ public final class ClientCollectorDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ClientCollectorDataOuterClass$ClientCollectorData.class */
     public static final class ClientCollectorData extends GeneratedMessageV3 implements ClientCollectorDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MAX_POINTS_FIELD_NUMBER = 2;
+        public static final int MAXPOINTS_FIELD_NUMBER = 8;
         private int maxPoints_;
-        public static final int CURR_POINTS_FIELD_NUMBER = 3;
+        public static final int CURRPOINTS_FIELD_NUMBER = 2;
         private int currPoints_;
-        public static final int MATERIAL_ID_FIELD_NUMBER = 9;
+        public static final int MATERIALID_FIELD_NUMBER = 13;
         private int materialId_;
         private byte memoizedIsInitialized;
         private static final ClientCollectorData DEFAULT_INSTANCE = new ClientCollectorData();
@@ -98,12 +98,12 @@ public final class ClientCollectorDataOuterClass {
                                     done = true;
                                     break;
                                 case 16:
-                                    this.maxPoints_ = input.readUInt32();
-                                    break;
-                                case 24:
                                     this.currPoints_ = input.readUInt32();
                                     break;
-                                case 72:
+                                case 64:
+                                    this.maxPoints_ = input.readUInt32();
+                                    break;
+                                case 104:
                                     this.materialId_ = input.readUInt32();
                                     break;
                                 default:
@@ -166,14 +166,14 @@ public final class ClientCollectorDataOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.maxPoints_ != 0) {
-                output.writeUInt32(2, this.maxPoints_);
-            }
             if (this.currPoints_ != 0) {
-                output.writeUInt32(3, this.currPoints_);
+                output.writeUInt32(2, this.currPoints_);
+            }
+            if (this.maxPoints_ != 0) {
+                output.writeUInt32(8, this.maxPoints_);
             }
             if (this.materialId_ != 0) {
-                output.writeUInt32(9, this.materialId_);
+                output.writeUInt32(13, this.materialId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -185,14 +185,14 @@ public final class ClientCollectorDataOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.maxPoints_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.maxPoints_);
-            }
             if (this.currPoints_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(3, this.currPoints_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.currPoints_);
+            }
+            if (this.maxPoints_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(8, this.maxPoints_);
             }
             if (this.materialId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.materialId_);
+                size2 += CodedOutputStream.computeUInt32Size(13, this.materialId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -216,7 +216,7 @@ public final class ClientCollectorDataOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getMaxPoints())) + 3)) + getCurrPoints())) + 9)) + getMaterialId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getMaxPoints())) + 2)) + getCurrPoints())) + 13)) + getMaterialId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

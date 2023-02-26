@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayTeamEntityInfoOuterClass.class */
 public final class PlayTeamEntityInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018PlayTeamEntityInfo.proto\u001a\u001aAbilitySyncStateInfo.proto\"\u0001\n\u0012PlayTeamEntityInfo\u0012\u0011\n\tentity_id\u0018\u0001 \u0001(\r\u0012\u0012\n\nplayer_uid\u0018\u0002 \u0001(\r\u0012\u0019\n\u0011authority_peer_id\u0018\u0003 \u0001(\r\u0012\u0018\n\u0010gadget_config_id\u0018\u0005 \u0001(\r\u0012+\n\fability_info\u0018\u0006 \u0001(\u000b2\u0015.AbilitySyncStateInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilitySyncStateInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018PlayTeamEntityInfo.proto\u001a\u001aAbilitySyncStateInfo.proto\"\u0001\n\u0012PlayTeamEntityInfo\u0012\u0010\n\bentityId\u0018\u0001 \u0001(\r\u0012\u0011\n\tplayerUid\u0018\u0002 \u0001(\r\u0012\u0017\n\u000fauthorityPeerId\u0018\u0003 \u0001(\r\u0012\u0016\n\u000egadgetConfigId\u0018\u0005 \u0001(\r\u0012*\n\u000babilityInfo\u0018\u0006 \u0001(\u000b2\u0015.AbilitySyncStateInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilitySyncStateInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_PlayTeamEntityInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayTeamEntityInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayTeamEntityInfo_descriptor, new String[]{"EntityId", "PlayerUid", "AuthorityPeerId", "GadgetConfigId", "AbilityInfo"});
 
@@ -55,15 +55,15 @@ public final class PlayTeamEntityInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayTeamEntityInfoOuterClass$PlayTeamEntityInfo.class */
     public static final class PlayTeamEntityInfo extends GeneratedMessageV3 implements PlayTeamEntityInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTITY_ID_FIELD_NUMBER = 1;
+        public static final int ENTITYID_FIELD_NUMBER = 1;
         private int entityId_;
-        public static final int PLAYER_UID_FIELD_NUMBER = 2;
+        public static final int PLAYERUID_FIELD_NUMBER = 2;
         private int playerUid_;
-        public static final int AUTHORITY_PEER_ID_FIELD_NUMBER = 3;
+        public static final int AUTHORITYPEERID_FIELD_NUMBER = 3;
         private int authorityPeerId_;
-        public static final int GADGET_CONFIG_ID_FIELD_NUMBER = 5;
+        public static final int GADGETCONFIGID_FIELD_NUMBER = 5;
         private int gadgetConfigId_;
-        public static final int ABILITY_INFO_FIELD_NUMBER = 6;
+        public static final int ABILITYINFO_FIELD_NUMBER = 6;
         private AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo abilityInfo_;
         private byte memoizedIsInitialized;
         private static final PlayTeamEntityInfo DEFAULT_INSTANCE = new PlayTeamEntityInfo();

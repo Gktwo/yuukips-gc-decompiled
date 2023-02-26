@@ -62,7 +62,7 @@ public class BaseValidator<T> {
             }
 
             /* renamed from: invoke$lambda-3$lambda-1  reason: not valid java name */
-            private static final List m5792invoke$lambda3$lambda1(String it) {
+            private static final List m5789invoke$lambda3$lambda1(String it) {
                 Intrinsics.checkNotNullParameter(it, "it");
                 return new ArrayList();
             }

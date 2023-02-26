@@ -970,7 +970,7 @@ public class Int2IntAVLTreeMap extends AbstractInt2IntSortedMap implements Seria
         int from;
 
         /* renamed from: to */
-        int f2081to;
+        int f2045to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Int2IntMap.Entry> entries;
@@ -981,7 +981,7 @@ public class Int2IntAVLTreeMap extends AbstractInt2IntSortedMap implements Seria
             if (bottom || top || Int2IntAVLTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f2081to = to;
+                this.f2045to = to;
                 this.top = top;
                 this.defRetValue = Int2IntAVLTreeMap.this.defRetValue;
                 return;
@@ -1000,7 +1000,7 @@ public class Int2IntAVLTreeMap extends AbstractInt2IntSortedMap implements Seria
 
         /* renamed from: in */
         final boolean m766in(int k) {
-            return (this.bottom || Int2IntAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Int2IntAVLTreeMap.this.compare(k, this.f2081to) < 0);
+            return (this.bottom || Int2IntAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Int2IntAVLTreeMap.this.compare(k, this.f2045to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.Int2IntMap, p014it.unimi.dsi.fastutil.ints.Int2IntSortedMap
@@ -1175,7 +1175,7 @@ public class Int2IntAVLTreeMap extends AbstractInt2IntSortedMap implements Seria
         public int put(int k, int v) {
             Int2IntAVLTreeMap.this.modified = false;
             if (!m766in(k)) {
-                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2081to)) + ")");
+                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2045to)) + ")");
             }
             return Int2IntAVLTreeMap.this.modified ? this.defRetValue : Int2IntAVLTreeMap.this.put(k, v);
         }
@@ -1213,7 +1213,7 @@ public class Int2IntAVLTreeMap extends AbstractInt2IntSortedMap implements Seria
 
         @Override // p014it.unimi.dsi.fastutil.ints.Int2IntSortedMap
         public Int2IntSortedMap headMap(int to) {
-            if (!this.top && Int2IntAVLTreeMap.this.compare(to, this.f2081to) >= 0) {
+            if (!this.top && Int2IntAVLTreeMap.this.compare(to, this.f2045to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1224,7 +1224,7 @@ public class Int2IntAVLTreeMap extends AbstractInt2IntSortedMap implements Seria
             if (!this.bottom && Int2IntAVLTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f2081to, this.top);
+            return new Submap(from, false, this.f2045to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.Int2IntSortedMap
@@ -1233,12 +1233,12 @@ public class Int2IntAVLTreeMap extends AbstractInt2IntSortedMap implements Seria
                 return new Submap(from, false, to, false);
             }
             if (!this.top) {
-                to = Int2IntAVLTreeMap.this.compare(to, this.f2081to) < 0 ? to : this.f2081to;
+                to = Int2IntAVLTreeMap.this.compare(to, this.f2045to) < 0 ? to : this.f2045to;
             }
             if (!this.bottom) {
                 from = Int2IntAVLTreeMap.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f2081to) ? new Submap(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f2045to) ? new Submap(from, false, to, false) : this;
         }
 
         public Entry firstEntry() {
@@ -1257,7 +1257,7 @@ public class Int2IntAVLTreeMap extends AbstractInt2IntSortedMap implements Seria
             if (e == null) {
                 return null;
             }
-            if (this.top || Int2IntAVLTreeMap.this.compare(e.key, this.f2081to) < 0) {
+            if (this.top || Int2IntAVLTreeMap.this.compare(e.key, this.f2045to) < 0) {
                 return e;
             }
             return null;
@@ -1271,8 +1271,8 @@ public class Int2IntAVLTreeMap extends AbstractInt2IntSortedMap implements Seria
             if (this.top) {
                 e = Int2IntAVLTreeMap.this.lastEntry;
             } else {
-                e = Int2IntAVLTreeMap.this.locateKey(this.f2081to);
-                if (Int2IntAVLTreeMap.this.compare(e.key, this.f2081to) >= 0) {
+                e = Int2IntAVLTreeMap.this.locateKey(this.f2045to);
+                if (Int2IntAVLTreeMap.this.compare(e.key, this.f2045to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1350,7 +1350,7 @@ public class Int2IntAVLTreeMap extends AbstractInt2IntSortedMap implements Seria
             @Override // p014it.unimi.dsi.fastutil.ints.Int2IntAVLTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Int2IntAVLTreeMap.this.compare(this.next.key, Submap.this.f2081to) >= 0) {
+                if (!Submap.this.top && this.next != null && Int2IntAVLTreeMap.this.compare(this.next.key, Submap.this.f2045to) >= 0) {
                     this.next = null;
                 }
             }

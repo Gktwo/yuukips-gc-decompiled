@@ -6,7 +6,7 @@ import emu.grasscutter.net.proto.EvtAvatarSitDownNotifyOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketEvtAvatarSitDownNotify;
 
-@Opcodes(322)
+@Opcodes(353)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerEvtAvatarSitDownNotify.class */
 public class HandlerEvtAvatarSitDownNotify extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

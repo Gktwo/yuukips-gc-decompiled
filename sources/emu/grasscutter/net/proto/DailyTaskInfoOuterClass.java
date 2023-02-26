@@ -20,21 +20,21 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DailyTaskInfoOuterClass.class */
 public final class DailyTaskInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013DailyTaskInfo.proto\"y\n\rDailyTaskInfo\u0012\u0011\n\treward_id\u0018\u0007 \u0001(\r\u0012\u0017\n\u000ffinish_progress\u0018\f \u0001(\r\u0012\u0013\n\u000bis_finished\u0018\u0002 \u0001(\b\u0012\u0015\n\rdaily_task_id\u0018\u0005 \u0001(\r\u0012\u0010\n\bprogress\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013DailyTaskInfo.proto\"t\n\rDailyTaskInfo\u0012\u0016\n\u000efinishProgress\u0018\t \u0001(\r\u0012\u0012\n\nisFinished\u0018\u0003 \u0001(\b\u0012\u0010\n\bprogress\u0018\u0007 \u0001(\r\u0012\u0013\n\u000bdailyTaskId\u0018\u0005 \u0001(\r\u0012\u0010\n\brewardId\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_DailyTaskInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_DailyTaskInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DailyTaskInfo_descriptor, new String[]{"RewardId", "FinishProgress", "IsFinished", "DailyTaskId", "Progress"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_DailyTaskInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DailyTaskInfo_descriptor, new String[]{"FinishProgress", "IsFinished", "Progress", "DailyTaskId", "RewardId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DailyTaskInfoOuterClass$DailyTaskInfoOrBuilder.class */
     public interface DailyTaskInfoOrBuilder extends MessageOrBuilder {
-        int getRewardId();
-
         int getFinishProgress();
 
         boolean getIsFinished();
 
+        int getProgress();
+
         int getDailyTaskId();
 
-        int getProgress();
+        int getRewardId();
     }
 
     private DailyTaskInfoOuterClass() {
@@ -50,16 +50,16 @@ public final class DailyTaskInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DailyTaskInfoOuterClass$DailyTaskInfo.class */
     public static final class DailyTaskInfo extends GeneratedMessageV3 implements DailyTaskInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int REWARD_ID_FIELD_NUMBER = 7;
-        private int rewardId_;
-        public static final int FINISH_PROGRESS_FIELD_NUMBER = 12;
+        public static final int FINISHPROGRESS_FIELD_NUMBER = 9;
         private int finishProgress_;
-        public static final int IS_FINISHED_FIELD_NUMBER = 2;
+        public static final int ISFINISHED_FIELD_NUMBER = 3;
         private boolean isFinished_;
-        public static final int DAILY_TASK_ID_FIELD_NUMBER = 5;
-        private int dailyTaskId_;
-        public static final int PROGRESS_FIELD_NUMBER = 10;
+        public static final int PROGRESS_FIELD_NUMBER = 7;
         private int progress_;
+        public static final int DAILYTASKID_FIELD_NUMBER = 5;
+        private int dailyTaskId_;
+        public static final int REWARDID_FIELD_NUMBER = 14;
+        private int rewardId_;
         private byte memoizedIsInitialized;
         private static final DailyTaskInfo DEFAULT_INSTANCE = new DailyTaskInfo();
         private static final Parser<DailyTaskInfo> PARSER = new AbstractParser<DailyTaskInfo>() { // from class: emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo.1
@@ -105,20 +105,20 @@ public final class DailyTaskInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 16:
+                            case 24:
                                 this.isFinished_ = input.readBool();
                                 break;
                             case 40:
                                 this.dailyTaskId_ = input.readUInt32();
                                 break;
                             case 56:
-                                this.rewardId_ = input.readUInt32();
-                                break;
-                            case 80:
                                 this.progress_ = input.readUInt32();
                                 break;
-                            case 96:
+                            case 72:
                                 this.finishProgress_ = input.readUInt32();
+                                break;
+                            case 112:
+                                this.rewardId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -150,11 +150,6 @@ public final class DailyTaskInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder
-        public int getRewardId() {
-            return this.rewardId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder
         public int getFinishProgress() {
             return this.finishProgress_;
         }
@@ -165,13 +160,18 @@ public final class DailyTaskInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder
+        public int getProgress() {
+            return this.progress_;
+        }
+
+        @Override // emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder
         public int getDailyTaskId() {
             return this.dailyTaskId_;
         }
 
         @Override // emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder
-        public int getProgress() {
-            return this.progress_;
+        public int getRewardId() {
+            return this.rewardId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -190,19 +190,19 @@ public final class DailyTaskInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.isFinished_) {
-                output.writeBool(2, this.isFinished_);
+                output.writeBool(3, this.isFinished_);
             }
             if (this.dailyTaskId_ != 0) {
                 output.writeUInt32(5, this.dailyTaskId_);
             }
-            if (this.rewardId_ != 0) {
-                output.writeUInt32(7, this.rewardId_);
-            }
             if (this.progress_ != 0) {
-                output.writeUInt32(10, this.progress_);
+                output.writeUInt32(7, this.progress_);
             }
             if (this.finishProgress_ != 0) {
-                output.writeUInt32(12, this.finishProgress_);
+                output.writeUInt32(9, this.finishProgress_);
+            }
+            if (this.rewardId_ != 0) {
+                output.writeUInt32(14, this.rewardId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -215,19 +215,19 @@ public final class DailyTaskInfoOuterClass {
             }
             int size2 = 0;
             if (this.isFinished_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(2, this.isFinished_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(3, this.isFinished_);
             }
             if (this.dailyTaskId_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(5, this.dailyTaskId_);
             }
-            if (this.rewardId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.rewardId_);
-            }
             if (this.progress_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.progress_);
+                size2 += CodedOutputStream.computeUInt32Size(7, this.progress_);
             }
             if (this.finishProgress_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.finishProgress_);
+                size2 += CodedOutputStream.computeUInt32Size(9, this.finishProgress_);
+            }
+            if (this.rewardId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(14, this.rewardId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -243,7 +243,7 @@ public final class DailyTaskInfoOuterClass {
                 return equals(obj);
             }
             DailyTaskInfo other = (DailyTaskInfo) obj;
-            return getRewardId() == other.getRewardId() && getFinishProgress() == other.getFinishProgress() && getIsFinished() == other.getIsFinished() && getDailyTaskId() == other.getDailyTaskId() && getProgress() == other.getProgress() && this.unknownFields.equals(other.unknownFields);
+            return getFinishProgress() == other.getFinishProgress() && getIsFinished() == other.getIsFinished() && getProgress() == other.getProgress() && getDailyTaskId() == other.getDailyTaskId() && getRewardId() == other.getRewardId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -251,7 +251,7 @@ public final class DailyTaskInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getRewardId())) + 12)) + getFinishProgress())) + 2)) + Internal.hashBoolean(getIsFinished()))) + 5)) + getDailyTaskId())) + 10)) + getProgress())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getFinishProgress())) + 3)) + Internal.hashBoolean(getIsFinished()))) + 7)) + getProgress())) + 5)) + getDailyTaskId())) + 14)) + getRewardId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -330,11 +330,11 @@ public final class DailyTaskInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DailyTaskInfoOuterClass$DailyTaskInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements DailyTaskInfoOrBuilder {
-            private int rewardId_;
             private int finishProgress_;
             private boolean isFinished_;
-            private int dailyTaskId_;
             private int progress_;
+            private int dailyTaskId_;
+            private int rewardId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return DailyTaskInfoOuterClass.internal_static_DailyTaskInfo_descriptor;
@@ -362,11 +362,11 @@ public final class DailyTaskInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.rewardId_ = 0;
                 this.finishProgress_ = 0;
                 this.isFinished_ = false;
-                this.dailyTaskId_ = 0;
                 this.progress_ = 0;
+                this.dailyTaskId_ = 0;
+                this.rewardId_ = 0;
                 return this;
             }
 
@@ -392,11 +392,11 @@ public final class DailyTaskInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public DailyTaskInfo buildPartial() {
                 DailyTaskInfo result = new DailyTaskInfo(this);
-                result.rewardId_ = this.rewardId_;
                 result.finishProgress_ = this.finishProgress_;
                 result.isFinished_ = this.isFinished_;
-                result.dailyTaskId_ = this.dailyTaskId_;
                 result.progress_ = this.progress_;
+                result.dailyTaskId_ = this.dailyTaskId_;
+                result.rewardId_ = this.rewardId_;
                 onBuilt();
                 return result;
             }
@@ -444,20 +444,20 @@ public final class DailyTaskInfoOuterClass {
                 if (other == DailyTaskInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getRewardId() != 0) {
-                    setRewardId(other.getRewardId());
-                }
                 if (other.getFinishProgress() != 0) {
                     setFinishProgress(other.getFinishProgress());
                 }
                 if (other.getIsFinished()) {
                     setIsFinished(other.getIsFinished());
                 }
+                if (other.getProgress() != 0) {
+                    setProgress(other.getProgress());
+                }
                 if (other.getDailyTaskId() != 0) {
                     setDailyTaskId(other.getDailyTaskId());
                 }
-                if (other.getProgress() != 0) {
-                    setProgress(other.getProgress());
+                if (other.getRewardId() != 0) {
+                    setRewardId(other.getRewardId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -489,23 +489,6 @@ public final class DailyTaskInfoOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder
-            public int getRewardId() {
-                return this.rewardId_;
-            }
-
-            public Builder setRewardId(int value) {
-                this.rewardId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRewardId() {
-                this.rewardId_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder
@@ -543,6 +526,23 @@ public final class DailyTaskInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder
+            public int getProgress() {
+                return this.progress_;
+            }
+
+            public Builder setProgress(int value) {
+                this.progress_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearProgress() {
+                this.progress_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder
             public int getDailyTaskId() {
                 return this.dailyTaskId_;
             }
@@ -560,18 +560,18 @@ public final class DailyTaskInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder
-            public int getProgress() {
-                return this.progress_;
+            public int getRewardId() {
+                return this.rewardId_;
             }
 
-            public Builder setProgress(int value) {
-                this.progress_ = value;
+            public Builder setRewardId(int value) {
+                this.rewardId_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearProgress() {
-                this.progress_ = 0;
+            public Builder clearRewardId() {
+                this.rewardId_ = 0;
                 onChanged();
                 return this;
             }

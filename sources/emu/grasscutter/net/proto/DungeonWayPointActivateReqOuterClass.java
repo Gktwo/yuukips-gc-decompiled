@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonWayPointActivateReqOuterClass.class */
 public final class DungeonWayPointActivateReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n DungeonWayPointActivateReq.proto\"2\n\u001aDungeonWayPointActivateReq\u0012\u0014\n\fway_point_id\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n DungeonWayPointActivateReq.proto\"0\n\u001aDungeonWayPointActivateReq\u0012\u0012\n\nwayPointId\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_DungeonWayPointActivateReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_DungeonWayPointActivateReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DungeonWayPointActivateReq_descriptor, new String[]{"WayPointId"});
 
@@ -41,7 +41,7 @@ public final class DungeonWayPointActivateReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonWayPointActivateReqOuterClass$DungeonWayPointActivateReq.class */
     public static final class DungeonWayPointActivateReq extends GeneratedMessageV3 implements DungeonWayPointActivateReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int WAY_POINT_ID_FIELD_NUMBER = 14;
+        public static final int WAYPOINTID_FIELD_NUMBER = 11;
         private int wayPointId_;
         private byte memoizedIsInitialized;
         private static final DungeonWayPointActivateReq DEFAULT_INSTANCE = new DungeonWayPointActivateReq();
@@ -88,7 +88,7 @@ public final class DungeonWayPointActivateReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 112:
+                            case 88:
                                 this.wayPointId_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class DungeonWayPointActivateReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.wayPointId_ != 0) {
-                output.writeUInt32(14, this.wayPointId_);
+                output.writeUInt32(11, this.wayPointId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class DungeonWayPointActivateReqOuterClass {
             }
             int size2 = 0;
             if (this.wayPointId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(14, this.wayPointId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(11, this.wayPointId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class DungeonWayPointActivateReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getWayPointId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getWayPointId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

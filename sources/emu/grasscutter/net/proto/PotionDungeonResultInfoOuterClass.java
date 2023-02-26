@@ -19,23 +19,23 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PotionDungeonResultInfoOuterClass.class */
 public final class PotionDungeonResultInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dPotionDungeonResultInfo.proto\"\u0001\n\u0017PotionDungeonResultInfo\u0012\u0011\n\tleft_time\u0018\u0007 \u0001(\r\u0012\u000f\n\u0007mode_id\u0018\r \u0001(\r\u0012\u0010\n\bstage_id\u0018\u0001 \u0001(\r\u0012\u0010\n\blevel_id\u0018\u0002 \u0001(\r\u0012\u0013\n\u000bfinal_score\u0018\u000f \u0001(\r\u0012\u0018\n\u0010difficulty_level\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dPotionDungeonResultInfo.proto\"\u0001\n\u0017PotionDungeonResultInfo\u0012\u000e\n\u0006modeId\u0018\f \u0001(\r\u0012\u0017\n\u000fdifficultyLevel\u0018\u0001 \u0001(\r\u0012\u0010\n\bleftTime\u0018\u0006 \u0001(\r\u0012\u000f\n\u0007levelId\u0018\u0002 \u0001(\r\u0012\u0012\n\nfinalScore\u0018\n \u0001(\r\u0012\u000f\n\u0007stageId\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PotionDungeonResultInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PotionDungeonResultInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PotionDungeonResultInfo_descriptor, new String[]{"LeftTime", "ModeId", "StageId", "LevelId", "FinalScore", "DifficultyLevel"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PotionDungeonResultInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PotionDungeonResultInfo_descriptor, new String[]{"ModeId", "DifficultyLevel", "LeftTime", "LevelId", "FinalScore", "StageId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PotionDungeonResultInfoOuterClass$PotionDungeonResultInfoOrBuilder.class */
     public interface PotionDungeonResultInfoOrBuilder extends MessageOrBuilder {
-        int getLeftTime();
-
         int getModeId();
 
-        int getStageId();
+        int getDifficultyLevel();
+
+        int getLeftTime();
 
         int getLevelId();
 
         int getFinalScore();
 
-        int getDifficultyLevel();
+        int getStageId();
     }
 
     private PotionDungeonResultInfoOuterClass() {
@@ -51,18 +51,18 @@ public final class PotionDungeonResultInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PotionDungeonResultInfoOuterClass$PotionDungeonResultInfo.class */
     public static final class PotionDungeonResultInfo extends GeneratedMessageV3 implements PotionDungeonResultInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int LEFT_TIME_FIELD_NUMBER = 7;
-        private int leftTime_;
-        public static final int MODE_ID_FIELD_NUMBER = 13;
+        public static final int MODEID_FIELD_NUMBER = 12;
         private int modeId_;
-        public static final int STAGE_ID_FIELD_NUMBER = 1;
-        private int stageId_;
-        public static final int LEVEL_ID_FIELD_NUMBER = 2;
-        private int levelId_;
-        public static final int FINAL_SCORE_FIELD_NUMBER = 15;
-        private int finalScore_;
-        public static final int DIFFICULTY_LEVEL_FIELD_NUMBER = 8;
+        public static final int DIFFICULTYLEVEL_FIELD_NUMBER = 1;
         private int difficultyLevel_;
+        public static final int LEFTTIME_FIELD_NUMBER = 6;
+        private int leftTime_;
+        public static final int LEVELID_FIELD_NUMBER = 2;
+        private int levelId_;
+        public static final int FINALSCORE_FIELD_NUMBER = 10;
+        private int finalScore_;
+        public static final int STAGEID_FIELD_NUMBER = 9;
+        private int stageId_;
         private byte memoizedIsInitialized;
         private static final PotionDungeonResultInfo DEFAULT_INSTANCE = new PotionDungeonResultInfo();
         private static final Parser<PotionDungeonResultInfo> PARSER = new AbstractParser<PotionDungeonResultInfo>() { // from class: emu.grasscutter.net.proto.PotionDungeonResultInfoOuterClass.PotionDungeonResultInfo.1
@@ -109,22 +109,22 @@ public final class PotionDungeonResultInfoOuterClass {
                                 done = true;
                                 break;
                             case 8:
-                                this.stageId_ = input.readUInt32();
+                                this.difficultyLevel_ = input.readUInt32();
                                 break;
                             case 16:
                                 this.levelId_ = input.readUInt32();
                                 break;
-                            case 56:
+                            case 48:
                                 this.leftTime_ = input.readUInt32();
                                 break;
-                            case 64:
-                                this.difficultyLevel_ = input.readUInt32();
+                            case 72:
+                                this.stageId_ = input.readUInt32();
                                 break;
-                            case 104:
-                                this.modeId_ = input.readUInt32();
-                                break;
-                            case 120:
+                            case 80:
                                 this.finalScore_ = input.readUInt32();
+                                break;
+                            case 96:
+                                this.modeId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -156,18 +156,18 @@ public final class PotionDungeonResultInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PotionDungeonResultInfoOuterClass.PotionDungeonResultInfoOrBuilder
-        public int getLeftTime() {
-            return this.leftTime_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PotionDungeonResultInfoOuterClass.PotionDungeonResultInfoOrBuilder
         public int getModeId() {
             return this.modeId_;
         }
 
         @Override // emu.grasscutter.net.proto.PotionDungeonResultInfoOuterClass.PotionDungeonResultInfoOrBuilder
-        public int getStageId() {
-            return this.stageId_;
+        public int getDifficultyLevel() {
+            return this.difficultyLevel_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PotionDungeonResultInfoOuterClass.PotionDungeonResultInfoOrBuilder
+        public int getLeftTime() {
+            return this.leftTime_;
         }
 
         @Override // emu.grasscutter.net.proto.PotionDungeonResultInfoOuterClass.PotionDungeonResultInfoOrBuilder
@@ -181,8 +181,8 @@ public final class PotionDungeonResultInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PotionDungeonResultInfoOuterClass.PotionDungeonResultInfoOrBuilder
-        public int getDifficultyLevel() {
-            return this.difficultyLevel_;
+        public int getStageId() {
+            return this.stageId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -200,23 +200,23 @@ public final class PotionDungeonResultInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.stageId_ != 0) {
-                output.writeUInt32(1, this.stageId_);
+            if (this.difficultyLevel_ != 0) {
+                output.writeUInt32(1, this.difficultyLevel_);
             }
             if (this.levelId_ != 0) {
                 output.writeUInt32(2, this.levelId_);
             }
             if (this.leftTime_ != 0) {
-                output.writeUInt32(7, this.leftTime_);
+                output.writeUInt32(6, this.leftTime_);
             }
-            if (this.difficultyLevel_ != 0) {
-                output.writeUInt32(8, this.difficultyLevel_);
-            }
-            if (this.modeId_ != 0) {
-                output.writeUInt32(13, this.modeId_);
+            if (this.stageId_ != 0) {
+                output.writeUInt32(9, this.stageId_);
             }
             if (this.finalScore_ != 0) {
-                output.writeUInt32(15, this.finalScore_);
+                output.writeUInt32(10, this.finalScore_);
+            }
+            if (this.modeId_ != 0) {
+                output.writeUInt32(12, this.modeId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -228,23 +228,23 @@ public final class PotionDungeonResultInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.stageId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.stageId_);
+            if (this.difficultyLevel_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.difficultyLevel_);
             }
             if (this.levelId_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(2, this.levelId_);
             }
             if (this.leftTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.leftTime_);
+                size2 += CodedOutputStream.computeUInt32Size(6, this.leftTime_);
             }
-            if (this.difficultyLevel_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.difficultyLevel_);
-            }
-            if (this.modeId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.modeId_);
+            if (this.stageId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(9, this.stageId_);
             }
             if (this.finalScore_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.finalScore_);
+                size2 += CodedOutputStream.computeUInt32Size(10, this.finalScore_);
+            }
+            if (this.modeId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(12, this.modeId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -260,7 +260,7 @@ public final class PotionDungeonResultInfoOuterClass {
                 return equals(obj);
             }
             PotionDungeonResultInfo other = (PotionDungeonResultInfo) obj;
-            return getLeftTime() == other.getLeftTime() && getModeId() == other.getModeId() && getStageId() == other.getStageId() && getLevelId() == other.getLevelId() && getFinalScore() == other.getFinalScore() && getDifficultyLevel() == other.getDifficultyLevel() && this.unknownFields.equals(other.unknownFields);
+            return getModeId() == other.getModeId() && getDifficultyLevel() == other.getDifficultyLevel() && getLeftTime() == other.getLeftTime() && getLevelId() == other.getLevelId() && getFinalScore() == other.getFinalScore() && getStageId() == other.getStageId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -268,7 +268,7 @@ public final class PotionDungeonResultInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getLeftTime())) + 13)) + getModeId())) + 1)) + getStageId())) + 2)) + getLevelId())) + 15)) + getFinalScore())) + 8)) + getDifficultyLevel())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getModeId())) + 1)) + getDifficultyLevel())) + 6)) + getLeftTime())) + 2)) + getLevelId())) + 10)) + getFinalScore())) + 9)) + getStageId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -347,12 +347,12 @@ public final class PotionDungeonResultInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PotionDungeonResultInfoOuterClass$PotionDungeonResultInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements PotionDungeonResultInfoOrBuilder {
-            private int leftTime_;
             private int modeId_;
-            private int stageId_;
+            private int difficultyLevel_;
+            private int leftTime_;
             private int levelId_;
             private int finalScore_;
-            private int difficultyLevel_;
+            private int stageId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return PotionDungeonResultInfoOuterClass.internal_static_PotionDungeonResultInfo_descriptor;
@@ -380,12 +380,12 @@ public final class PotionDungeonResultInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.leftTime_ = 0;
                 this.modeId_ = 0;
-                this.stageId_ = 0;
+                this.difficultyLevel_ = 0;
+                this.leftTime_ = 0;
                 this.levelId_ = 0;
                 this.finalScore_ = 0;
-                this.difficultyLevel_ = 0;
+                this.stageId_ = 0;
                 return this;
             }
 
@@ -411,12 +411,12 @@ public final class PotionDungeonResultInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public PotionDungeonResultInfo buildPartial() {
                 PotionDungeonResultInfo result = new PotionDungeonResultInfo(this);
-                result.leftTime_ = this.leftTime_;
                 result.modeId_ = this.modeId_;
-                result.stageId_ = this.stageId_;
+                result.difficultyLevel_ = this.difficultyLevel_;
+                result.leftTime_ = this.leftTime_;
                 result.levelId_ = this.levelId_;
                 result.finalScore_ = this.finalScore_;
-                result.difficultyLevel_ = this.difficultyLevel_;
+                result.stageId_ = this.stageId_;
                 onBuilt();
                 return result;
             }
@@ -464,14 +464,14 @@ public final class PotionDungeonResultInfoOuterClass {
                 if (other == PotionDungeonResultInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getLeftTime() != 0) {
-                    setLeftTime(other.getLeftTime());
-                }
                 if (other.getModeId() != 0) {
                     setModeId(other.getModeId());
                 }
-                if (other.getStageId() != 0) {
-                    setStageId(other.getStageId());
+                if (other.getDifficultyLevel() != 0) {
+                    setDifficultyLevel(other.getDifficultyLevel());
+                }
+                if (other.getLeftTime() != 0) {
+                    setLeftTime(other.getLeftTime());
                 }
                 if (other.getLevelId() != 0) {
                     setLevelId(other.getLevelId());
@@ -479,8 +479,8 @@ public final class PotionDungeonResultInfoOuterClass {
                 if (other.getFinalScore() != 0) {
                     setFinalScore(other.getFinalScore());
                 }
-                if (other.getDifficultyLevel() != 0) {
-                    setDifficultyLevel(other.getDifficultyLevel());
+                if (other.getStageId() != 0) {
+                    setStageId(other.getStageId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -515,23 +515,6 @@ public final class PotionDungeonResultInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.PotionDungeonResultInfoOuterClass.PotionDungeonResultInfoOrBuilder
-            public int getLeftTime() {
-                return this.leftTime_;
-            }
-
-            public Builder setLeftTime(int value) {
-                this.leftTime_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearLeftTime() {
-                this.leftTime_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PotionDungeonResultInfoOuterClass.PotionDungeonResultInfoOrBuilder
             public int getModeId() {
                 return this.modeId_;
             }
@@ -549,18 +532,35 @@ public final class PotionDungeonResultInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.PotionDungeonResultInfoOuterClass.PotionDungeonResultInfoOrBuilder
-            public int getStageId() {
-                return this.stageId_;
+            public int getDifficultyLevel() {
+                return this.difficultyLevel_;
             }
 
-            public Builder setStageId(int value) {
-                this.stageId_ = value;
+            public Builder setDifficultyLevel(int value) {
+                this.difficultyLevel_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearStageId() {
-                this.stageId_ = 0;
+            public Builder clearDifficultyLevel() {
+                this.difficultyLevel_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.PotionDungeonResultInfoOuterClass.PotionDungeonResultInfoOrBuilder
+            public int getLeftTime() {
+                return this.leftTime_;
+            }
+
+            public Builder setLeftTime(int value) {
+                this.leftTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearLeftTime() {
+                this.leftTime_ = 0;
                 onChanged();
                 return this;
             }
@@ -600,18 +600,18 @@ public final class PotionDungeonResultInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.PotionDungeonResultInfoOuterClass.PotionDungeonResultInfoOrBuilder
-            public int getDifficultyLevel() {
-                return this.difficultyLevel_;
+            public int getStageId() {
+                return this.stageId_;
             }
 
-            public Builder setDifficultyLevel(int value) {
-                this.difficultyLevel_ = value;
+            public Builder setStageId(int value) {
+                this.stageId_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearDifficultyLevel() {
-                this.difficultyLevel_ = 0;
+            public Builder clearStageId() {
+                this.stageId_ = 0;
                 onChanged();
                 return this;
             }

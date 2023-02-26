@@ -975,7 +975,7 @@ public class Float2LongAVLTreeMap extends AbstractFloat2LongSortedMap implements
         float from;
 
         /* renamed from: to */
-        float f1872to;
+        float f1836to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Float2LongMap.Entry> entries;
@@ -986,7 +986,7 @@ public class Float2LongAVLTreeMap extends AbstractFloat2LongSortedMap implements
             if (bottom || top || Float2LongAVLTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f1872to = to;
+                this.f1836to = to;
                 this.top = top;
                 this.defRetValue = Float2LongAVLTreeMap.this.defRetValue;
                 return;
@@ -1005,7 +1005,7 @@ public class Float2LongAVLTreeMap extends AbstractFloat2LongSortedMap implements
 
         /* renamed from: in */
         final boolean m848in(float k) {
-            return (this.bottom || Float2LongAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Float2LongAVLTreeMap.this.compare(k, this.f1872to) < 0);
+            return (this.bottom || Float2LongAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Float2LongAVLTreeMap.this.compare(k, this.f1836to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.Float2LongMap, p014it.unimi.dsi.fastutil.floats.Float2LongSortedMap
@@ -1180,7 +1180,7 @@ public class Float2LongAVLTreeMap extends AbstractFloat2LongSortedMap implements
         public long put(float k, long v) {
             Float2LongAVLTreeMap.this.modified = false;
             if (!m848in(k)) {
-                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1872to)) + ")");
+                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1836to)) + ")");
             }
             return Float2LongAVLTreeMap.this.modified ? this.defRetValue : Float2LongAVLTreeMap.this.put(k, v);
         }
@@ -1218,7 +1218,7 @@ public class Float2LongAVLTreeMap extends AbstractFloat2LongSortedMap implements
 
         @Override // p014it.unimi.dsi.fastutil.floats.Float2LongSortedMap
         public Float2LongSortedMap headMap(float to) {
-            if (!this.top && Float2LongAVLTreeMap.this.compare(to, this.f1872to) >= 0) {
+            if (!this.top && Float2LongAVLTreeMap.this.compare(to, this.f1836to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1229,7 +1229,7 @@ public class Float2LongAVLTreeMap extends AbstractFloat2LongSortedMap implements
             if (!this.bottom && Float2LongAVLTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f1872to, this.top);
+            return new Submap(from, false, this.f1836to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.Float2LongSortedMap
@@ -1238,12 +1238,12 @@ public class Float2LongAVLTreeMap extends AbstractFloat2LongSortedMap implements
                 return new Submap(from, false, to, false);
             }
             if (!this.top) {
-                to = Float2LongAVLTreeMap.this.compare(to, this.f1872to) < 0 ? to : this.f1872to;
+                to = Float2LongAVLTreeMap.this.compare(to, this.f1836to) < 0 ? to : this.f1836to;
             }
             if (!this.bottom) {
                 from = Float2LongAVLTreeMap.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f1872to) ? new Submap(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f1836to) ? new Submap(from, false, to, false) : this;
         }
 
         public Entry firstEntry() {
@@ -1262,7 +1262,7 @@ public class Float2LongAVLTreeMap extends AbstractFloat2LongSortedMap implements
             if (e == null) {
                 return null;
             }
-            if (this.top || Float2LongAVLTreeMap.this.compare(e.key, this.f1872to) < 0) {
+            if (this.top || Float2LongAVLTreeMap.this.compare(e.key, this.f1836to) < 0) {
                 return e;
             }
             return null;
@@ -1276,8 +1276,8 @@ public class Float2LongAVLTreeMap extends AbstractFloat2LongSortedMap implements
             if (this.top) {
                 e = Float2LongAVLTreeMap.this.lastEntry;
             } else {
-                e = Float2LongAVLTreeMap.this.locateKey(this.f1872to);
-                if (Float2LongAVLTreeMap.this.compare(e.key, this.f1872to) >= 0) {
+                e = Float2LongAVLTreeMap.this.locateKey(this.f1836to);
+                if (Float2LongAVLTreeMap.this.compare(e.key, this.f1836to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1355,7 +1355,7 @@ public class Float2LongAVLTreeMap extends AbstractFloat2LongSortedMap implements
             @Override // p014it.unimi.dsi.fastutil.floats.Float2LongAVLTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Float2LongAVLTreeMap.this.compare(this.next.key, Submap.this.f1872to) >= 0) {
+                if (!Submap.this.top && this.next != null && Float2LongAVLTreeMap.this.compare(this.next.key, Submap.this.f1836to) >= 0) {
                     this.next = null;
                 }
             }

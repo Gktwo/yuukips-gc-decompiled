@@ -25,13 +25,13 @@ public class LongOpenCustomHashSet extends AbstractLongSet implements Serializab
     protected LongHash.Strategy strategy;
 
     /* renamed from: n */
-    protected transient int f2430n;
+    protected transient int f2394n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2431f;
+    protected final float f2395f;
 
     public LongOpenCustomHashSet(int expected, float f, LongHash.Strategy strategy) {
         this.strategy = strategy;
@@ -40,13 +40,13 @@ public class LongOpenCustomHashSet extends AbstractLongSet implements Serializab
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2431f = f;
+            this.f2395f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2430n = arraySize;
+            this.f2394n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2430n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2430n, f);
-            this.key = new long[this.f2430n + 1];
+            this.mask = this.f2394n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2394n, f);
+            this.key = new long[this.f2394n + 1];
         }
     }
 
@@ -125,22 +125,22 @@ public class LongOpenCustomHashSet extends AbstractLongSet implements Serializab
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2431f);
-        if (needed > this.f2430n) {
+        int needed = HashCommon.arraySize(capacity, this.f2395f);
+        if (needed > this.f2394n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2431f)))));
-        if (needed > this.f2430n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2395f)))));
+        if (needed > this.f2394n) {
             rehash(needed);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongCollection, p014it.unimi.dsi.fastutil.longs.LongCollection
     public boolean addAll(LongCollection c) {
-        if (((double) this.f2431f) <= 0.5d) {
+        if (((double) this.f2395f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -150,7 +150,7 @@ public class LongOpenCustomHashSet extends AbstractLongSet implements Serializab
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Long> c) {
-        if (((double) this.f2431f) <= 0.5d) {
+        if (((double) this.f2395f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -182,14 +182,14 @@ public class LongOpenCustomHashSet extends AbstractLongSet implements Serializab
             return false;
         } else {
             this.containsNull = true;
-            this.key[this.f2430n] = k;
+            this.key[this.f2394n] = k;
         }
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f2431f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f2395f));
         return true;
     }
 
@@ -225,21 +225,21 @@ public class LongOpenCustomHashSet extends AbstractLongSet implements Serializab
     private boolean removeEntry(int pos) {
         this.size--;
         shiftKeys(pos);
-        if (this.f2430n <= this.minN || this.size >= this.maxFill / 4 || this.f2430n <= 16) {
+        if (this.f2394n <= this.minN || this.size >= this.maxFill / 4 || this.f2394n <= 16) {
             return true;
         }
-        rehash(this.f2430n / 2);
+        rehash(this.f2394n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f2430n] = 0;
+        this.key[this.f2394n] = 0;
         this.size--;
-        if (this.f2430n <= this.minN || this.size >= this.maxFill / 4 || this.f2430n <= 16) {
+        if (this.f2394n <= this.minN || this.size >= this.maxFill / 4 || this.f2394n <= 16) {
             return true;
         }
-        rehash(this.f2430n / 2);
+        rehash(this.f2394n / 2);
         return true;
     }
 
@@ -323,20 +323,20 @@ public class LongOpenCustomHashSet extends AbstractLongSet implements Serializab
         int last;
 
         /* renamed from: c */
-        int f2432c;
+        int f2396c;
         boolean mustReturnNull;
         LongArrayList wrapped;
 
         private SetIterator() {
-            this.pos = LongOpenCustomHashSet.this.f2430n;
+            this.pos = LongOpenCustomHashSet.this.f2394n;
             this.last = -1;
-            this.f2432c = LongOpenCustomHashSet.this.size;
+            this.f2396c = LongOpenCustomHashSet.this.size;
             this.mustReturnNull = LongOpenCustomHashSet.this.containsNull;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2432c != 0;
+            return this.f2396c != 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
@@ -344,11 +344,11 @@ public class LongOpenCustomHashSet extends AbstractLongSet implements Serializab
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2432c--;
+            this.f2396c--;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = LongOpenCustomHashSet.this.f2430n;
-                return LongOpenCustomHashSet.this.key[LongOpenCustomHashSet.this.f2430n];
+                this.last = LongOpenCustomHashSet.this.f2394n;
+                return LongOpenCustomHashSet.this.key[LongOpenCustomHashSet.this.f2394n];
             }
             long[] key = LongOpenCustomHashSet.this.key;
             do {
@@ -407,9 +407,9 @@ public class LongOpenCustomHashSet extends AbstractLongSet implements Serializab
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == LongOpenCustomHashSet.this.f2430n) {
+            if (this.last == LongOpenCustomHashSet.this.f2394n) {
                 LongOpenCustomHashSet.this.containsNull = false;
-                LongOpenCustomHashSet.this.key[LongOpenCustomHashSet.this.f2430n] = 0;
+                LongOpenCustomHashSet.this.key[LongOpenCustomHashSet.this.f2394n] = 0;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -426,22 +426,22 @@ public class LongOpenCustomHashSet extends AbstractLongSet implements Serializab
             long[] key = LongOpenCustomHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = LongOpenCustomHashSet.this.f2430n;
-                action.accept(key[LongOpenCustomHashSet.this.f2430n]);
-                this.f2432c--;
+                this.last = LongOpenCustomHashSet.this.f2394n;
+                action.accept(key[LongOpenCustomHashSet.this.f2394n]);
+                this.f2396c--;
             }
-            while (this.f2432c != 0) {
+            while (this.f2396c != 0) {
                 int i = this.pos - 1;
                 this.pos = i;
                 if (i < 0) {
                     this.last = Integer.MIN_VALUE;
                     action.accept(this.wrapped.getLong((-this.pos) - 1));
-                    this.f2432c--;
+                    this.f2396c--;
                 } else if (key[this.pos] != 0) {
                     int i2 = this.pos;
                     this.last = i2;
                     action.accept(key[i2]);
-                    this.f2432c--;
+                    this.f2396c--;
                 }
             }
         }
@@ -461,22 +461,22 @@ public class LongOpenCustomHashSet extends AbstractLongSet implements Serializab
         int max;
 
         /* renamed from: c */
-        int f2433c;
+        int f2397c;
         boolean mustReturnNull;
         boolean hasSplit;
 
         SetSpliterator() {
             this.pos = 0;
-            this.max = LongOpenCustomHashSet.this.f2430n;
-            this.f2433c = 0;
+            this.max = LongOpenCustomHashSet.this.f2394n;
+            this.f2397c = 0;
             this.mustReturnNull = LongOpenCustomHashSet.this.containsNull;
             this.hasSplit = false;
         }
 
         SetSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = LongOpenCustomHashSet.this.f2430n;
-            this.f2433c = 0;
+            this.max = LongOpenCustomHashSet.this.f2394n;
+            this.f2397c = 0;
             this.mustReturnNull = LongOpenCustomHashSet.this.containsNull;
             this.hasSplit = false;
             this.pos = pos;
@@ -489,14 +489,14 @@ public class LongOpenCustomHashSet extends AbstractLongSet implements Serializab
         public boolean tryAdvance(LongConsumer action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2433c++;
-                action.accept(LongOpenCustomHashSet.this.key[LongOpenCustomHashSet.this.f2430n]);
+                this.f2397c++;
+                action.accept(LongOpenCustomHashSet.this.key[LongOpenCustomHashSet.this.f2394n]);
                 return true;
             }
             long[] key = LongOpenCustomHashSet.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f2433c++;
+                    this.f2397c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(key[i]);
@@ -512,13 +512,13 @@ public class LongOpenCustomHashSet extends AbstractLongSet implements Serializab
             long[] key = LongOpenCustomHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                action.accept(key[LongOpenCustomHashSet.this.f2430n]);
-                this.f2433c++;
+                action.accept(key[LongOpenCustomHashSet.this.f2394n]);
+                this.f2397c++;
             }
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     action.accept(key[this.pos]);
-                    this.f2433c++;
+                    this.f2397c++;
                 }
                 this.pos++;
             }
@@ -532,9 +532,9 @@ public class LongOpenCustomHashSet extends AbstractLongSet implements Serializab
         @Override // java.util.Spliterator
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (LongOpenCustomHashSet.this.size - this.f2433c);
+                return (long) (LongOpenCustomHashSet.this.size - this.f2397c);
             }
-            return Math.min((long) (LongOpenCustomHashSet.this.size - this.f2433c), ((long) ((((double) LongOpenCustomHashSet.this.realSize()) / ((double) LongOpenCustomHashSet.this.f2430n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (LongOpenCustomHashSet.this.size - this.f2397c), ((long) ((((double) LongOpenCustomHashSet.this.realSize()) / ((double) LongOpenCustomHashSet.this.f2394n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongSpliterator, java.util.Spliterator.OfLong, java.util.Spliterator.OfPrimitive, java.util.Spliterator
@@ -662,10 +662,10 @@ public class LongOpenCustomHashSet extends AbstractLongSet implements Serializab
     @Override // p014it.unimi.dsi.fastutil.longs.LongIterable
     public void forEach(LongConsumer action) {
         if (this.containsNull) {
-            action.accept(this.key[this.f2430n]);
+            action.accept(this.key[this.f2394n]);
         }
         long[] key = this.key;
-        int pos = this.f2430n;
+        int pos = this.f2394n;
         while (true) {
             pos--;
             if (pos == 0) {
@@ -682,8 +682,8 @@ public class LongOpenCustomHashSet extends AbstractLongSet implements Serializab
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2431f)));
-        if (l >= this.f2430n || this.size > HashCommon.maxFill(l, this.f2431f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2395f)));
+        if (l >= this.f2394n || this.size > HashCommon.maxFill(l, this.f2395f)) {
             return true;
         }
         try {
@@ -699,7 +699,7 @@ public class LongOpenCustomHashSet extends AbstractLongSet implements Serializab
         long[] key = this.key;
         int mask = newN - 1;
         long[] newKey = new long[newN + 1];
-        int i2 = this.f2430n;
+        int i2 = this.f2394n;
         int j = realSize();
         while (true) {
             j--;
@@ -717,9 +717,9 @@ public class LongOpenCustomHashSet extends AbstractLongSet implements Serializab
                 }
                 newKey[pos] = key[i2];
             } else {
-                this.f2430n = newN;
+                this.f2394n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2430n, this.f2431f);
+                this.maxFill = HashCommon.maxFill(this.f2394n, this.f2395f);
                 this.key = newKey;
                 return;
             }
@@ -775,10 +775,10 @@ public class LongOpenCustomHashSet extends AbstractLongSet implements Serializab
         int pos;
         int i;
         s.defaultReadObject();
-        this.f2430n = HashCommon.arraySize(this.size, this.f2431f);
-        this.maxFill = HashCommon.maxFill(this.f2430n, this.f2431f);
-        this.mask = this.f2430n - 1;
-        long[] key = new long[this.f2430n + 1];
+        this.f2394n = HashCommon.arraySize(this.size, this.f2395f);
+        this.maxFill = HashCommon.maxFill(this.f2394n, this.f2395f);
+        this.mask = this.f2394n - 1;
+        long[] key = new long[this.f2394n + 1];
         this.key = key;
         int i2 = this.size;
         while (true) {
@@ -786,7 +786,7 @@ public class LongOpenCustomHashSet extends AbstractLongSet implements Serializab
             if (i2 != 0) {
                 long k = s.readLong();
                 if (this.strategy.equals(k, 0)) {
-                    pos = this.f2430n;
+                    pos = this.f2394n;
                     this.containsNull = true;
                 } else {
                     int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;

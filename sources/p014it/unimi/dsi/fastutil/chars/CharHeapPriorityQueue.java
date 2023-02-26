@@ -17,14 +17,14 @@ public class CharHeapPriorityQueue implements CharPriorityQueue, Serializable {
     protected int size;
 
     /* renamed from: c */
-    protected CharComparator f1501c;
+    protected CharComparator f1465c;
 
     public CharHeapPriorityQueue(int capacity, CharComparator c) {
         this.heap = CharArrays.EMPTY_ARRAY;
         if (capacity > 0) {
             this.heap = new char[capacity];
         }
-        this.f1501c = c;
+        this.f1465c = c;
     }
 
     public CharHeapPriorityQueue(int capacity) {
@@ -88,7 +88,7 @@ public class CharHeapPriorityQueue implements CharPriorityQueue, Serializable {
         int i = this.size;
         this.size = i + 1;
         cArr[i] = x;
-        CharHeaps.upHeap(this.heap, this.size, this.size - 1, this.f1501c);
+        CharHeaps.upHeap(this.heap, this.size, this.size - 1, this.f1465c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.CharPriorityQueue
@@ -103,7 +103,7 @@ public class CharHeapPriorityQueue implements CharPriorityQueue, Serializable {
         this.size = i;
         cArr[0] = cArr2[i];
         if (this.size != 0) {
-            CharHeaps.downHeap(this.heap, this.size, 0, this.f1501c);
+            CharHeaps.downHeap(this.heap, this.size, 0, this.f1465c);
         }
         return result;
     }
@@ -118,7 +118,7 @@ public class CharHeapPriorityQueue implements CharPriorityQueue, Serializable {
 
     @Override // p014it.unimi.dsi.fastutil.PriorityQueue
     public void changed() {
-        CharHeaps.downHeap(this.heap, this.size, 0, this.f1501c);
+        CharHeaps.downHeap(this.heap, this.size, 0, this.f1465c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.PriorityQueue
@@ -138,7 +138,7 @@ public class CharHeapPriorityQueue implements CharPriorityQueue, Serializable {
     /* Return type fixed from 'it.unimi.dsi.fastutil.chars.CharComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.chars.CharPriorityQueue, p014it.unimi.dsi.fastutil.PriorityQueue
     public Comparator<? super Character> comparator() {
-        return this.f1501c;
+        return this.f1465c;
     }
 
     private void writeObject(ObjectOutputStream s) throws IOException {

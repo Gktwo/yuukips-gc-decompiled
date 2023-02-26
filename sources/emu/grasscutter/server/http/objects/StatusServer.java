@@ -52,7 +52,7 @@ public class StatusServer {
         private boolean gameonly;
 
         /* renamed from: mb */
-        private int f962mb;
+        private int f927mb;
         private MemoryMXBean memoryBean;
         private ThreadMXBean threadBean;
         public long MemoryMax;
@@ -70,13 +70,13 @@ public class StatusServer {
 
         public Status() {
             this.gameonly = this.runMode == Grasscutter.ServerRunMode.GAME_ONLY || this.runMode == Grasscutter.ServerRunMode.HYBRID;
-            this.f962mb = 1048576;
+            this.f927mb = 1048576;
             this.memoryBean = ManagementFactory.getMemoryMXBean();
             this.threadBean = ManagementFactory.getThreadMXBean();
-            this.MemoryMax = this.memoryBean.getHeapMemoryUsage().getMax() / ((long) this.f962mb);
-            this.MemoryCurrently = this.memoryBean.getHeapMemoryUsage().getUsed() / ((long) this.f962mb);
-            this.MemoryInit = this.memoryBean.getHeapMemoryUsage().getInit() / ((long) this.f962mb);
-            this.MemoryCommitted = this.memoryBean.getHeapMemoryUsage().getCommitted() / ((long) this.f962mb);
+            this.MemoryMax = this.memoryBean.getHeapMemoryUsage().getMax() / ((long) this.f927mb);
+            this.MemoryCurrently = this.memoryBean.getHeapMemoryUsage().getUsed() / ((long) this.f927mb);
+            this.MemoryInit = this.memoryBean.getHeapMemoryUsage().getInit() / ((long) this.f927mb);
+            this.MemoryCommitted = this.memoryBean.getHeapMemoryUsage().getCommitted() / ((long) this.f927mb);
             this.Thread = this.threadBean.getThreadCount();
             this.ThreadTotalStarted = this.threadBean.getTotalStartedThreadCount();
             this.ThreadDaemon = this.threadBean.getDaemonThreadCount();
@@ -96,7 +96,6 @@ public class StatusServer {
         public long lastping;
         public int time;
         public Position pos;
-        public int entity;
         public int scene;
         public int player_in_scene;
 
@@ -106,7 +105,6 @@ public class StatusServer {
             this.uid = player.getUid();
             this.lastping = ((new Date().getTime() - player.getLastPingTime()) / 1000) % 60;
             this.time = player.getClientTime();
-            this.entity = t.getEntities().size();
             this.pos = player.getPosition();
             this.scene = player.getSceneId();
             this.player_in_scene = t.getPlayerCount();

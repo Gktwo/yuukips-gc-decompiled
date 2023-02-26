@@ -23,7 +23,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
     public static final int DEFAULT_INITIAL_CAPACITY = 10;
 
     /* renamed from: a */
-    protected transient short[][] f3035a;
+    protected transient short[][] f2999a;
     protected long size;
     static final /* synthetic */ boolean $assertionsDisabled;
 
@@ -32,27 +32,27 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
     }
 
     protected ShortBigArrayBigList(short[][] a, boolean dummy) {
-        this.f3035a = a;
+        this.f2999a = a;
     }
 
     public ShortBigArrayBigList(long capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException("Initial capacity (" + capacity + ") is negative");
         } else if (capacity == 0) {
-            this.f3035a = ShortBigArrays.EMPTY_BIG_ARRAY;
+            this.f2999a = ShortBigArrays.EMPTY_BIG_ARRAY;
         } else {
-            this.f3035a = ShortBigArrays.newBigArray(capacity);
+            this.f2999a = ShortBigArrays.newBigArray(capacity);
         }
     }
 
     public ShortBigArrayBigList() {
-        this.f3035a = ShortBigArrays.DEFAULT_EMPTY_BIG_ARRAY;
+        this.f2999a = ShortBigArrays.DEFAULT_EMPTY_BIG_ARRAY;
     }
 
     public ShortBigArrayBigList(ShortCollection c) {
         this(Size64.sizeOf(c));
         if (c instanceof ShortBigList) {
-            short[][] sArr = this.f3035a;
+            short[][] sArr = this.f2999a;
             long sizeOf = Size64.sizeOf(c);
             this.size = sizeOf;
             ((ShortBigList) c).getElements(0, sArr, 0, sizeOf);
@@ -66,7 +66,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
 
     public ShortBigArrayBigList(ShortBigList l) {
         this(l.size64());
-        short[][] sArr = this.f3035a;
+        short[][] sArr = this.f2999a;
         long size64 = l.size64();
         this.size = size64;
         l.getElements(0, sArr, 0, size64);
@@ -78,7 +78,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
 
     public ShortBigArrayBigList(short[][] a, long offset, long length) {
         this(length);
-        BigArrays.copy(a, offset, this.f3035a, 0L, length);
+        BigArrays.copy(a, offset, this.f2999a, 0L, length);
         this.size = length;
     }
 
@@ -97,7 +97,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
     }
 
     public short[][] elements() {
-        return this.f3035a;
+        return this.f2999a;
     }
 
     public static ShortBigArrayBigList wrap(short[][] a, long length) {
@@ -124,24 +124,24 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
     }
 
     public void ensureCapacity(long capacity) {
-        if (capacity > BigArrays.length(this.f3035a) && this.f3035a != ShortBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
-            this.f3035a = BigArrays.forceCapacity(this.f3035a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f3035a)) {
+        if (capacity > BigArrays.length(this.f2999a) && this.f2999a != ShortBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
+            this.f2999a = BigArrays.forceCapacity(this.f2999a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f2999a)) {
                 throw new AssertionError();
             }
         }
     }
 
     private void grow(long capacity) {
-        long oldLength = BigArrays.length(this.f3035a);
+        long oldLength = BigArrays.length(this.f2999a);
         if (capacity > oldLength) {
-            if (this.f3035a != ShortBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
+            if (this.f2999a != ShortBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
                 capacity = Math.max(oldLength + (oldLength >> 1), capacity);
             } else if (capacity < 10) {
                 capacity = 10;
             }
-            this.f3035a = BigArrays.forceCapacity(this.f3035a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f3035a)) {
+            this.f2999a = BigArrays.forceCapacity(this.f2999a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f2999a)) {
                 throw new AssertionError();
             }
         }
@@ -152,11 +152,11 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
         ensureIndex(index);
         grow(this.size + 1);
         if (index != this.size) {
-            BigArrays.copy(this.f3035a, index, this.f3035a, index + 1, this.size - index);
+            BigArrays.copy(this.f2999a, index, this.f2999a, index + 1, this.size - index);
         }
-        BigArrays.set(this.f3035a, index, k);
+        BigArrays.set(this.f2999a, index, k);
         this.size++;
-        if (!$assertionsDisabled && this.size > BigArrays.length(this.f3035a)) {
+        if (!$assertionsDisabled && this.size > BigArrays.length(this.f2999a)) {
             throw new AssertionError();
         }
     }
@@ -164,11 +164,11 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortBigList, p014it.unimi.dsi.fastutil.shorts.AbstractShortCollection, p014it.unimi.dsi.fastutil.shorts.ShortCollection
     public boolean add(short k) {
         grow(this.size + 1);
-        short[][] sArr = this.f3035a;
+        short[][] sArr = this.f2999a;
         long j = this.size;
         this.size = j + 1;
         BigArrays.set(sArr, j, k);
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f3035a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2999a)) {
             return true;
         }
         throw new AssertionError();
@@ -177,7 +177,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
     @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigList
     public short getShort(long index) {
         if (index < this.size) {
-            return BigArrays.get(this.f3035a, index);
+            return BigArrays.get(this.f2999a, index);
         }
         throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
     }
@@ -185,7 +185,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortBigList, p014it.unimi.dsi.fastutil.shorts.ShortBigList
     public long indexOf(short k) {
         for (long i = 0; i < this.size; i++) {
-            if (k == BigArrays.get(this.f3035a, i)) {
+            if (k == BigArrays.get(this.f2999a, i)) {
                 return i;
             }
         }
@@ -217,7 +217,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
             if (r0 == 0) goto L_0x001d
             r0 = r8
             r1 = r7
-            short[][] r1 = r1.f3035a
+            short[][] r1 = r1.f2999a
             r2 = r9
             short r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
             if (r0 != r1) goto L_0x0005
@@ -235,12 +235,12 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        short old = BigArrays.get(this.f3035a, index);
+        short old = BigArrays.get(this.f2999a, index);
         this.size--;
         if (index != this.size) {
-            BigArrays.copy(this.f3035a, index + 1, this.f3035a, index, this.size - index);
+            BigArrays.copy(this.f2999a, index + 1, this.f2999a, index, this.size - index);
         }
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f3035a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2999a)) {
             return old;
         }
         throw new AssertionError();
@@ -253,7 +253,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
             return false;
         }
         removeShort(index);
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f3035a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2999a)) {
             return true;
         }
         throw new AssertionError();
@@ -264,8 +264,8 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        short old = BigArrays.get(this.f3035a, index);
-        BigArrays.set(this.f3035a, index, k);
+        short old = BigArrays.get(this.f2999a, index);
+        BigArrays.set(this.f2999a, index, k);
         return old;
     }
 
@@ -281,12 +281,12 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
             if (sd == 134217728) {
                 sd = 0;
                 ss++;
-                s = this.f3035a[ss];
+                s = this.f2999a[ss];
             }
             if (!c.contains(s[sd])) {
                 if (dd == 134217728) {
                     ds++;
-                    d = this.f3035a[ds];
+                    d = this.f2999a[ds];
                     dd = 0;
                 }
                 dd++;
@@ -312,12 +312,12 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
             if (sd == 134217728) {
                 sd = 0;
                 ss++;
-                s = this.f3035a[ss];
+                s = this.f2999a[ss];
             }
             if (!c.contains(Short.valueOf(s[sd]))) {
                 if (dd == 134217728) {
                     ds++;
-                    d = this.f3035a[ds];
+                    d = this.f2999a[ds];
                     dd = 0;
                 }
                 dd++;
@@ -345,17 +345,17 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
             return false;
         }
         grow(this.size + ((long) n));
-        BigArrays.copy(this.f3035a, index, this.f3035a, index + ((long) n), this.size - index);
+        BigArrays.copy(this.f2999a, index, this.f2999a, index + ((long) n), this.size - index);
         ShortIterator i = c.iterator();
         this.size += (long) n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f3035a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2999a)) {
             while (true) {
                 n--;
                 if (n == 0) {
                     return true;
                 }
                 index++;
-                BigArrays.set(this.f3035a, index, i.nextShort());
+                BigArrays.set(this.f2999a, index, i.nextShort());
             }
         } else {
             throw new AssertionError();
@@ -370,10 +370,10 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
             return false;
         }
         grow(this.size + n);
-        BigArrays.copy(this.f3035a, index, this.f3035a, index + n, this.size - index);
-        list.getElements(0, this.f3035a, index, n);
+        BigArrays.copy(this.f2999a, index, this.f2999a, index + n, this.size - index);
+        list.getElements(0, this.f2999a, index, n);
         this.size += n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f3035a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2999a)) {
             return true;
         }
         throw new AssertionError();
@@ -387,15 +387,15 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
             return false;
         }
         grow(this.size + ((long) n));
-        BigArrays.copy(this.f3035a, index, this.f3035a, index + ((long) n), this.size - index);
+        BigArrays.copy(this.f2999a, index, this.f2999a, index + ((long) n), this.size - index);
         this.size += (long) n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f3035a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2999a)) {
             int segment = BigArrays.segment(index);
             int displ = BigArrays.displacement(index);
             int pos = 0;
             while (n > 0) {
-                int l = Math.min(this.f3035a[segment].length - displ, n);
-                list.getElements(pos, this.f3035a[segment], displ, l);
+                int l = Math.min(this.f2999a[segment].length - displ, n);
+                list.getElements(pos, this.f2999a[segment], displ, l);
                 int i = displ + l;
                 displ = i;
                 if (i == 134217728) {
@@ -413,7 +413,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortBigList, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         this.size = 0;
-        if (!$assertionsDisabled && this.size > BigArrays.length(this.f3035a)) {
+        if (!$assertionsDisabled && this.size > BigArrays.length(this.f2999a)) {
             throw new AssertionError();
         }
     }
@@ -425,11 +425,11 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortBigList, p014it.unimi.dsi.fastutil.BigList
     public void size(long size) {
-        if (size > BigArrays.length(this.f3035a)) {
-            this.f3035a = BigArrays.forceCapacity(this.f3035a, size, this.size);
+        if (size > BigArrays.length(this.f2999a)) {
+            this.f2999a = BigArrays.forceCapacity(this.f2999a, size, this.size);
         }
         if (size > this.size) {
-            BigArrays.fill(this.f3035a, this.size, size, (short) 0);
+            BigArrays.fill(this.f2999a, this.size, size, (short) 0);
         }
         this.size = size;
     }
@@ -444,10 +444,10 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
     }
 
     public void trim(long n) {
-        long arrayLength = BigArrays.length(this.f3035a);
+        long arrayLength = BigArrays.length(this.f2999a);
         if (n < arrayLength && this.size != arrayLength) {
-            this.f3035a = BigArrays.trim(this.f3035a, Math.max(n, this.size));
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f3035a)) {
+            this.f2999a = BigArrays.trim(this.f2999a, Math.max(n, this.size));
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f2999a)) {
                 throw new AssertionError();
             }
         }
@@ -464,13 +464,13 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
         }
 
         private short[][] getParentArray() {
-            return ShortBigArrayBigList.this.f3035a;
+            return ShortBigArrayBigList.this.f2999a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortBigList.ShortSubList, p014it.unimi.dsi.fastutil.shorts.ShortBigList
         public short getShort(long i) {
             ensureRestrictedIndex(i);
-            return BigArrays.get(ShortBigArrayBigList.this.f3035a, i + this.from);
+            return BigArrays.get(ShortBigArrayBigList.this.f2999a, i + this.from);
         }
 
         /* access modifiers changed from: private */
@@ -483,7 +483,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
 
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigListIterators.AbstractIndexBasedBigIterator
             protected final short get(long i) {
-                return BigArrays.get(ShortBigArrayBigList.this.f3035a, SubList.this.from + i);
+                return BigArrays.get(ShortBigArrayBigList.this.f2999a, SubList.this.from + i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigListIterators.AbstractIndexBasedBigListIterator
@@ -503,7 +503,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
 
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigListIterators.AbstractIndexBasedBigIterator
             protected final long getMaxPos() {
-                return SubList.this.f2889to - SubList.this.from;
+                return SubList.this.f2853to - SubList.this.from;
             }
 
             /* JADX DEBUG: Multi-variable search result rejected for r12v0, resolved type: it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList$SubList$SubListIterator */
@@ -513,7 +513,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                short[][] sArr = ShortBigArrayBigList.this.f3035a;
+                short[][] sArr = ShortBigArrayBigList.this.f2999a;
                 long j = SubList.this.from;
                 long j2 = this.pos;
                 this.pos = j2 + 1;
@@ -528,7 +528,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                short[][] sArr = ShortBigArrayBigList.this.f3035a;
+                short[][] sArr = ShortBigArrayBigList.this.f2999a;
                 long j = SubList.this.from;
                 long j2 = this.pos - 1;
                 this.pos = j2;
@@ -538,7 +538,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
 
             /* JADX DEBUG: Multi-variable search result rejected for r13v0, resolved type: it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList$SubList$SubListIterator */
             /* JADX WARN: Multi-variable type inference failed */
-            /* JADX WARN: Type inference failed for: r1v7, types: [short[][], it.unimi.dsi.fastutil.shorts.ShortConsumer] */
+            /* JADX WARN: Type inference failed for: r1v7, types: [it.unimi.dsi.fastutil.shorts.ShortConsumer, short[][]] */
             /* JADX WARNING: Unknown variable types count: 1 */
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigListIterators.AbstractIndexBasedBigIterator, p014it.unimi.dsi.fastutil.shorts.ShortIterator
             /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -547,7 +547,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                     r13 = this;
                     r0 = r13
                     it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList$SubList r0 = p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.SubList.this
-                    long r0 = r0.f2889to
+                    long r0 = r0.f2853to
                     r1 = r13
                     it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList$SubList r1 = p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.SubList.this
                     long r1 = r1.from
@@ -563,7 +563,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                     r1 = r13
                     it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList$SubList r1 = p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.SubList.this
                     it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList r1 = p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.this
-                    short[][] r1 = r1.f3035a
+                    short[][] r1 = r1.f2999a
                     r2 = r13
                     it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList$SubList r2 = p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.SubList.this
                     long r2 = r2.from
@@ -608,12 +608,12 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
 
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigSpliterators.LateBindingSizeIndexBasedSpliterator
             protected final long getMaxPosFromBackingStore() {
-                return SubList.this.f2889to;
+                return SubList.this.f2853to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigSpliterators.AbstractIndexBasedSpliterator
             protected final short get(long i) {
-                return BigArrays.get(ShortBigArrayBigList.this.f3035a, i);
+                return BigArrays.get(ShortBigArrayBigList.this.f2999a, i);
             }
 
             /* access modifiers changed from: protected */
@@ -632,7 +632,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                 if (this.pos >= getMaxPos()) {
                     return false;
                 }
-                short[][] sArr = ShortBigArrayBigList.this.f3035a;
+                short[][] sArr = ShortBigArrayBigList.this.f2999a;
                 long j = this.pos;
                 this.pos = j + 1;
                 action.accept(BigArrays.get(sArr, j));
@@ -643,7 +643,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
             public void forEachRemaining(ShortConsumer action) {
                 long max = getMaxPos();
                 while (this.pos < max) {
-                    short[][] sArr = ShortBigArrayBigList.this.f3035a;
+                    short[][] sArr = ShortBigArrayBigList.this.f2999a;
                     long j = this.pos;
                     this.pos = j + 1;
                     action.accept(BigArrays.get(sArr, j));
@@ -667,7 +667,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                 r7 = this;
                 r0 = r7
                 it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList r0 = p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.this
-                short[][] r0 = r0.f3035a
+                short[][] r0 = r0.f2999a
                 r1 = r8
                 if (r0 != r1) goto L_0x0020
                 r0 = r7
@@ -676,7 +676,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
                 r0 = r7
-                long r0 = r0.f2889to
+                long r0 = r0.f2853to
                 r1 = r11
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
@@ -694,7 +694,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                 return r0
             L_0x002e:
                 r0 = r7
-                long r0 = r0.f2889to
+                long r0 = r0.f2853to
                 r13 = r0
                 r0 = r11
                 r15 = r0
@@ -710,7 +710,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                 if (r0 < 0) goto L_0x0063
                 r0 = r7
                 it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList r0 = p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.this
-                short[][] r0 = r0.f3035a
+                short[][] r0 = r0.f2999a
                 r1 = r13
                 short r0 = p014it.unimi.dsi.fastutil.BigArrays.get(r0, r1)
                 r1 = r8
@@ -740,12 +740,12 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
             }
             if (o instanceof ShortBigArrayBigList) {
                 ShortBigArrayBigList other = (ShortBigArrayBigList) o;
-                return contentsEquals(other.f3035a, 0, other.size64());
+                return contentsEquals(other.f2999a, 0, other.size64());
             } else if (!(o instanceof SubList)) {
                 return equals(o);
             } else {
                 SubList other2 = (SubList) o;
-                return contentsEquals(other2.getParentArray(), other2.from, other2.f2889to);
+                return contentsEquals(other2.getParentArray(), other2.from, other2.f2853to);
             }
         }
 
@@ -763,7 +763,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                 r5 = this;
                 r0 = r5
                 it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList r0 = p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.this
-                short[][] r0 = r0.f3035a
+                short[][] r0 = r0.f2999a
                 r1 = r6
                 if (r0 != r1) goto L_0x0020
                 r0 = r5
@@ -772,7 +772,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
                 r0 = r5
-                long r0 = r0.f2889to
+                long r0 = r0.f2853to
                 r1 = r9
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
@@ -787,7 +787,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
             L_0x0029:
                 r0 = r14
                 r1 = r5
-                long r1 = r1.f2889to
+                long r1 = r1.f2853to
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 >= 0) goto L_0x0070
                 r0 = r14
@@ -796,7 +796,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                 if (r0 >= 0) goto L_0x0070
                 r0 = r5
                 it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList r0 = p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.this
-                short[][] r0 = r0.f3035a
+                short[][] r0 = r0.f2999a
                 r1 = r14
                 short r0 = p014it.unimi.dsi.fastutil.BigArrays.get(r0, r1)
                 r11 = r0
@@ -832,7 +832,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
             L_0x007c:
                 r0 = r14
                 r1 = r5
-                long r1 = r1.f2889to
+                long r1 = r1.f2853to
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 >= 0) goto L_0x008a
                 r0 = 1
@@ -849,12 +849,12 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
         public int compareTo(BigList<? extends Short> l) {
             if (l instanceof ShortBigArrayBigList) {
                 ShortBigArrayBigList other = (ShortBigArrayBigList) l;
-                return contentsCompareTo(other.f3035a, 0, other.size64());
+                return contentsCompareTo(other.f2999a, 0, other.size64());
             } else if (!(l instanceof SubList)) {
                 return compareTo(l);
             } else {
                 SubList other2 = (SubList) l;
-                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f2889to);
+                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f2853to);
             }
         }
     }
@@ -875,18 +875,18 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortBigList, p014it.unimi.dsi.fastutil.shorts.ShortBigList
     public void getElements(long from, short[][] a, long offset, long length) {
-        BigArrays.copy(this.f3035a, from, a, offset, length);
+        BigArrays.copy(this.f2999a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigList
     public void getElements(long from, short[] a, int offset, int length) {
-        BigArrays.copyFromBig(this.f3035a, from, a, offset, length);
+        BigArrays.copyFromBig(this.f2999a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortBigList, p014it.unimi.dsi.fastutil.shorts.ShortBigList
     public void removeElements(long from, long to) {
         BigArrays.ensureFromTo(this.size, from, to);
-        BigArrays.copy(this.f3035a, to, this.f3035a, from, this.size - to);
+        BigArrays.copy(this.f2999a, to, this.f2999a, from, this.size - to);
         this.size -= to - from;
     }
 
@@ -895,20 +895,20 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
         ensureIndex(index);
         BigArrays.ensureOffsetLength(a, offset, length);
         grow(this.size + length);
-        BigArrays.copy(this.f3035a, index, this.f3035a, index + length, this.size - index);
-        BigArrays.copy(a, offset, this.f3035a, index, length);
+        BigArrays.copy(this.f2999a, index, this.f2999a, index + length, this.size - index);
+        BigArrays.copy(a, offset, this.f2999a, index, length);
         this.size += length;
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortBigList, p014it.unimi.dsi.fastutil.shorts.ShortBigList
     public void setElements(long index, short[][] a, long offset, long length) {
-        BigArrays.copy(a, offset, this.f3035a, index, length);
+        BigArrays.copy(a, offset, this.f2999a, index, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortBigList, p014it.unimi.dsi.fastutil.shorts.ShortIterable
     public void forEach(ShortConsumer action) {
         for (long i = 0; i < this.size; i++) {
-            action.accept(BigArrays.get(this.f3035a, i));
+            action.accept(BigArrays.get(this.f2999a, i));
         }
     }
 
@@ -953,7 +953,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                 L_0x000f:
                     r0 = r10
                     it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList r0 = p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.this
-                    short[][] r0 = r0.f3035a
+                    short[][] r0 = r0.f2999a
                     r1 = r10
                     r2 = r10
                     r3 = r2
@@ -967,7 +967,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                     short r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
                     return r1
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.C51751.nextShort():short");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.C51671.nextShort():short");
             }
 
             /* JADX WARN: Type inference failed for: r0v4, types: [long, short[][]] */
@@ -988,7 +988,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                 L_0x000f:
                     r0 = r8
                     it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList r0 = p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.this
-                    short[][] r0 = r0.f3035a
+                    short[][] r0 = r0.f2999a
                     r1 = r8
                     r2 = r8
                     r3 = r2
@@ -1002,7 +1002,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                     short r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
                     return r1
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.C51751.previousShort():short");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.C51671.previousShort():short");
             }
 
             @Override // p014it.unimi.dsi.fastutil.BigListIterator
@@ -1065,7 +1065,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                     r0 = r12
                     r1 = r11
                     it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList r1 = p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.this
-                    short[][] r1 = r1.f3035a
+                    short[][] r1 = r1.f2999a
                     r2 = r11
                     r3 = r11
                     r4 = r3
@@ -1082,7 +1082,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                 L_0x0032:
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.C51751.forEachRemaining(it.unimi.dsi.fastutil.shorts.ShortConsumer):void");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.C51671.forEachRemaining(it.unimi.dsi.fastutil.shorts.ShortConsumer):void");
             }
 
             /* JADX WARN: Multi-variable type inference failed */
@@ -1145,7 +1145,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                     r0 = r7
                     return r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.C51751.back(long):long");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.C51671.back(long):long");
             }
 
             /* JADX WARN: Multi-variable type inference failed */
@@ -1212,7 +1212,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
                     r0 = r7
                     return r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.C51751.skip(long):long");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.shorts.ShortBigArrayBigList.C51671.skip(long):long");
             }
         };
     }
@@ -1263,7 +1263,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            short[][] sArr = ShortBigArrayBigList.this.f3035a;
+            short[][] sArr = ShortBigArrayBigList.this.f2999a;
             long j = this.pos;
             this.pos = j + 1;
             action.accept(BigArrays.get(sArr, j));
@@ -1273,7 +1273,7 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
         public void forEachRemaining(ShortConsumer action) {
             long max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(BigArrays.get(ShortBigArrayBigList.this.f3035a, this.pos));
+                action.accept(BigArrays.get(ShortBigArrayBigList.this.f2999a, this.pos));
                 this.pos++;
             }
         }
@@ -1326,12 +1326,12 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
         } else {
             try {
                 c = (ShortBigArrayBigList) clone();
-                c.f3035a = ShortBigArrays.newBigArray(this.size);
+                c.f2999a = ShortBigArrays.newBigArray(this.size);
             } catch (CloneNotSupportedException e) {
                 throw new InternalError(e);
             }
         }
-        BigArrays.copy(this.f3035a, 0L, c.f3035a, 0L, this.size);
+        BigArrays.copy(this.f2999a, 0L, c.f2999a, 0L, this.size);
         return c;
     }
 
@@ -1345,8 +1345,8 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
         if (size64 != l.size64()) {
             return false;
         }
-        short[][] a1 = this.f3035a;
-        short[][] a2 = l.f3035a;
+        short[][] a1 = this.f2999a;
+        short[][] a2 = l.f2999a;
         if (a1 == a2) {
             return true;
         }
@@ -1379,8 +1379,8 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
     public int compareTo(ShortBigArrayBigList l) {
         long s1 = size64();
         long s2 = l.size64();
-        short[][] a1 = this.f3035a;
-        short[][] a2 = l.f3035a;
+        short[][] a1 = this.f2999a;
+        short[][] a2 = l.f2999a;
         if (a1 == a2 && s1 == s2) {
             return 0;
         }
@@ -1412,15 +1412,15 @@ public class ShortBigArrayBigList extends AbstractShortBigList implements Random
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; ((long) i) < this.size; i++) {
-            s.writeShort(BigArrays.get(this.f3035a, (long) i));
+            s.writeShort(BigArrays.get(this.f2999a, (long) i));
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f3035a = ShortBigArrays.newBigArray(this.size);
+        this.f2999a = ShortBigArrays.newBigArray(this.size);
         for (int i = 0; ((long) i) < this.size; i++) {
-            BigArrays.set(this.f3035a, (long) i, s.readShort());
+            BigArrays.set(this.f2999a, (long) i, s.readShort());
         }
     }
 }

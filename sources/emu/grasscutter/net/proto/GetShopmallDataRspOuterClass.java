@@ -23,19 +23,19 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetShopmallDataRspOuterClass.class */
 public final class GetShopmallDataRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018GetShopmallDataRsp.proto\"=\n\u0012GetShopmallDataRsp\u0012\u000f\n\u0007retcode\u0018\u0002 \u0001(\u0005\u0012\u0016\n\u000eshop_type_list\u0018\u0007 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018GetShopmallDataRsp.proto\";\n\u0012GetShopmallDataRsp\u0012\u0014\n\fshopTypeList\u0018\n \u0003(\r\u0012\u000f\n\u0007retcode\u0018\u0003 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GetShopmallDataRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetShopmallDataRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetShopmallDataRsp_descriptor, new String[]{"Retcode", "ShopTypeList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetShopmallDataRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetShopmallDataRsp_descriptor, new String[]{"ShopTypeList", "Retcode"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetShopmallDataRspOuterClass$GetShopmallDataRspOrBuilder.class */
     public interface GetShopmallDataRspOrBuilder extends MessageOrBuilder {
-        int getRetcode();
-
         List<Integer> getShopTypeListList();
 
         int getShopTypeListCount();
 
         int getShopTypeList(int i);
+
+        int getRetcode();
     }
 
     private GetShopmallDataRspOuterClass() {
@@ -51,11 +51,11 @@ public final class GetShopmallDataRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetShopmallDataRspOuterClass$GetShopmallDataRsp.class */
     public static final class GetShopmallDataRsp extends GeneratedMessageV3 implements GetShopmallDataRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 2;
-        private int retcode_;
-        public static final int SHOP_TYPE_LIST_FIELD_NUMBER = 7;
+        public static final int SHOPTYPELIST_FIELD_NUMBER = 10;
         private Internal.IntList shopTypeList_;
         private int shopTypeListMemoizedSerializedSize;
+        public static final int RETCODE_FIELD_NUMBER = 3;
+        private int retcode_;
         private byte memoizedIsInitialized;
         private static final GetShopmallDataRsp DEFAULT_INSTANCE = new GetShopmallDataRsp();
         private static final Parser<GetShopmallDataRsp> PARSER = new AbstractParser<GetShopmallDataRsp>() { // from class: emu.grasscutter.net.proto.GetShopmallDataRspOuterClass.GetShopmallDataRsp.1
@@ -107,17 +107,17 @@ public final class GetShopmallDataRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
+                                case 24:
                                     this.retcode_ = input.readInt32();
                                     break;
-                                case 56:
+                                case 80:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.shopTypeList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.shopTypeList_.addInt(input.readUInt32());
                                     break;
-                                case 58:
+                                case 82:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.shopTypeList_ = newIntList();
@@ -162,11 +162,6 @@ public final class GetShopmallDataRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GetShopmallDataRspOuterClass.GetShopmallDataRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetShopmallDataRspOuterClass.GetShopmallDataRspOrBuilder
         public List<Integer> getShopTypeListList() {
             return this.shopTypeList_;
         }
@@ -179,6 +174,11 @@ public final class GetShopmallDataRspOuterClass {
         @Override // emu.grasscutter.net.proto.GetShopmallDataRspOuterClass.GetShopmallDataRspOrBuilder
         public int getShopTypeList(int index) {
             return this.shopTypeList_.getInt(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.GetShopmallDataRspOuterClass.GetShopmallDataRspOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -198,10 +198,10 @@ public final class GetShopmallDataRspOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (this.retcode_ != 0) {
-                output.writeInt32(2, this.retcode_);
+                output.writeInt32(3, this.retcode_);
             }
             if (getShopTypeListList().size() > 0) {
-                output.writeUInt32NoTag(58);
+                output.writeUInt32NoTag(82);
                 output.writeUInt32NoTag(this.shopTypeListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.shopTypeList_.size(); i++) {
@@ -218,7 +218,7 @@ public final class GetShopmallDataRspOuterClass {
             }
             int size2 = 0;
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(2, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(3, this.retcode_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.shopTypeList_.size(); i++) {
@@ -243,7 +243,7 @@ public final class GetShopmallDataRspOuterClass {
                 return equals(obj);
             }
             GetShopmallDataRsp other = (GetShopmallDataRsp) obj;
-            return getRetcode() == other.getRetcode() && getShopTypeListList().equals(other.getShopTypeListList()) && this.unknownFields.equals(other.unknownFields);
+            return getShopTypeListList().equals(other.getShopTypeListList()) && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -251,11 +251,11 @@ public final class GetShopmallDataRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getRetcode();
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (getShopTypeListCount() > 0) {
-                hash = (53 * ((37 * hash) + 7)) + getShopTypeListList().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getShopTypeListList().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 3)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -335,8 +335,8 @@ public final class GetShopmallDataRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetShopmallDataRspOuterClass$GetShopmallDataRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements GetShopmallDataRspOrBuilder {
             private int bitField0_;
-            private int retcode_;
             private Internal.IntList shopTypeList_ = GetShopmallDataRsp.emptyIntList();
+            private int retcode_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return GetShopmallDataRspOuterClass.internal_static_GetShopmallDataRsp_descriptor;
@@ -364,9 +364,9 @@ public final class GetShopmallDataRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.retcode_ = 0;
                 this.shopTypeList_ = GetShopmallDataRsp.emptyIntList();
                 this.bitField0_ &= -2;
+                this.retcode_ = 0;
                 return this;
             }
 
@@ -393,12 +393,12 @@ public final class GetShopmallDataRspOuterClass {
             public GetShopmallDataRsp buildPartial() {
                 GetShopmallDataRsp result = new GetShopmallDataRsp(this);
                 int i = this.bitField0_;
-                result.retcode_ = this.retcode_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.shopTypeList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.shopTypeList_ = this.shopTypeList_;
+                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -446,9 +446,6 @@ public final class GetShopmallDataRspOuterClass {
                 if (other == GetShopmallDataRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
                 if (!other.shopTypeList_.isEmpty()) {
                     if (this.shopTypeList_.isEmpty()) {
                         this.shopTypeList_ = other.shopTypeList_;
@@ -458,6 +455,9 @@ public final class GetShopmallDataRspOuterClass {
                         this.shopTypeList_.addAll(other.shopTypeList_);
                     }
                     onChanged();
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -489,23 +489,6 @@ public final class GetShopmallDataRspOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.GetShopmallDataRspOuterClass.GetShopmallDataRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
             }
 
             private void ensureShopTypeListIsMutable() {
@@ -554,6 +537,23 @@ public final class GetShopmallDataRspOuterClass {
             public Builder clearShopTypeList() {
                 this.shopTypeList_ = GetShopmallDataRsp.emptyIntList();
                 this.bitField0_ &= -2;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetShopmallDataRspOuterClass.GetShopmallDataRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }

@@ -25,14 +25,12 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerWidgetInfoOuterClass.class */
 public final class PlayerWidgetInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016PlayerWidgetInfo.proto\u001a\u0014WidgetSlotData.proto\"C\n\u0010PlayerWidgetInfo\u0012\u000b\n\u0003uid\u0018\u0006 \u0001(\r\u0012\"\n\tslot_list\u0018\u0004 \u0003(\u000b2\u000f.WidgetSlotDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{WidgetSlotDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016PlayerWidgetInfo.proto\u001a\u0014WidgetSlotData.proto\"B\n\u0010PlayerWidgetInfo\u0012!\n\bslotList\u0018\u000f \u0003(\u000b2\u000f.WidgetSlotData\u0012\u000b\n\u0003uid\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{WidgetSlotDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_PlayerWidgetInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerWidgetInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerWidgetInfo_descriptor, new String[]{"Uid", "SlotList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerWidgetInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerWidgetInfo_descriptor, new String[]{"SlotList", "Uid"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerWidgetInfoOuterClass$PlayerWidgetInfoOrBuilder.class */
     public interface PlayerWidgetInfoOrBuilder extends MessageOrBuilder {
-        int getUid();
-
         List<WidgetSlotDataOuterClass.WidgetSlotData> getSlotListList();
 
         WidgetSlotDataOuterClass.WidgetSlotData getSlotList(int i);
@@ -42,6 +40,8 @@ public final class PlayerWidgetInfoOuterClass {
         List<? extends WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder> getSlotListOrBuilderList();
 
         WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder getSlotListOrBuilder(int i);
+
+        int getUid();
     }
 
     private PlayerWidgetInfoOuterClass() {
@@ -57,10 +57,10 @@ public final class PlayerWidgetInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerWidgetInfoOuterClass$PlayerWidgetInfo.class */
     public static final class PlayerWidgetInfo extends GeneratedMessageV3 implements PlayerWidgetInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int UID_FIELD_NUMBER = 6;
-        private int uid_;
-        public static final int SLOT_LIST_FIELD_NUMBER = 4;
+        public static final int SLOTLIST_FIELD_NUMBER = 15;
         private List<WidgetSlotDataOuterClass.WidgetSlotData> slotList_;
+        public static final int UID_FIELD_NUMBER = 10;
+        private int uid_;
         private byte memoizedIsInitialized;
         private static final PlayerWidgetInfo DEFAULT_INSTANCE = new PlayerWidgetInfo();
         private static final Parser<PlayerWidgetInfo> PARSER = new AbstractParser<PlayerWidgetInfo>() { // from class: emu.grasscutter.net.proto.PlayerWidgetInfoOuterClass.PlayerWidgetInfo.1
@@ -110,15 +110,15 @@ public final class PlayerWidgetInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 34:
+                                case 80:
+                                    this.uid_ = input.readUInt32();
+                                    break;
+                                case 122:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.slotList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.slotList_.add((WidgetSlotDataOuterClass.WidgetSlotData) input.readMessage(WidgetSlotDataOuterClass.WidgetSlotData.parser(), extensionRegistry));
-                                    break;
-                                case 48:
-                                    this.uid_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -154,11 +154,6 @@ public final class PlayerWidgetInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PlayerWidgetInfoOuterClass.PlayerWidgetInfoOrBuilder
-        public int getUid() {
-            return this.uid_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerWidgetInfoOuterClass.PlayerWidgetInfoOrBuilder
         public List<WidgetSlotDataOuterClass.WidgetSlotData> getSlotListList() {
             return this.slotList_;
         }
@@ -183,6 +178,11 @@ public final class PlayerWidgetInfoOuterClass {
             return this.slotList_.get(index);
         }
 
+        @Override // emu.grasscutter.net.proto.PlayerWidgetInfoOuterClass.PlayerWidgetInfoOrBuilder
+        public int getUid() {
+            return this.uid_;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -198,11 +198,11 @@ public final class PlayerWidgetInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            for (int i = 0; i < this.slotList_.size(); i++) {
-                output.writeMessage(4, this.slotList_.get(i));
-            }
             if (this.uid_ != 0) {
-                output.writeUInt32(6, this.uid_);
+                output.writeUInt32(10, this.uid_);
+            }
+            for (int i = 0; i < this.slotList_.size(); i++) {
+                output.writeMessage(15, this.slotList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -214,11 +214,11 @@ public final class PlayerWidgetInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            for (int i = 0; i < this.slotList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(4, this.slotList_.get(i));
-            }
             if (this.uid_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(6, this.uid_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(10, this.uid_);
+            }
+            for (int i = 0; i < this.slotList_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(15, this.slotList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -234,7 +234,7 @@ public final class PlayerWidgetInfoOuterClass {
                 return equals(obj);
             }
             PlayerWidgetInfo other = (PlayerWidgetInfo) obj;
-            return getUid() == other.getUid() && getSlotListList().equals(other.getSlotListList()) && this.unknownFields.equals(other.unknownFields);
+            return getSlotListList().equals(other.getSlotListList()) && getUid() == other.getUid() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -242,11 +242,11 @@ public final class PlayerWidgetInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getUid();
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (getSlotListCount() > 0) {
-                hash = (53 * ((37 * hash) + 4)) + getSlotListList().hashCode();
+                hash = (53 * ((37 * hash) + 15)) + getSlotListList().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 10)) + getUid())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -326,9 +326,9 @@ public final class PlayerWidgetInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerWidgetInfoOuterClass$PlayerWidgetInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements PlayerWidgetInfoOrBuilder {
             private int bitField0_;
-            private int uid_;
             private List<WidgetSlotDataOuterClass.WidgetSlotData> slotList_ = Collections.emptyList();
             private RepeatedFieldBuilderV3<WidgetSlotDataOuterClass.WidgetSlotData, WidgetSlotDataOuterClass.WidgetSlotData.Builder, WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder> slotListBuilder_;
+            private int uid_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return PlayerWidgetInfoOuterClass.internal_static_PlayerWidgetInfo_descriptor;
@@ -357,13 +357,13 @@ public final class PlayerWidgetInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.uid_ = 0;
                 if (this.slotListBuilder_ == null) {
                     this.slotList_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
                     this.slotListBuilder_.clear();
                 }
+                this.uid_ = 0;
                 return this;
             }
 
@@ -390,7 +390,6 @@ public final class PlayerWidgetInfoOuterClass {
             public PlayerWidgetInfo buildPartial() {
                 PlayerWidgetInfo result = new PlayerWidgetInfo(this);
                 int i = this.bitField0_;
-                result.uid_ = this.uid_;
                 if (this.slotListBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
                         this.slotList_ = Collections.unmodifiableList(this.slotList_);
@@ -400,6 +399,7 @@ public final class PlayerWidgetInfoOuterClass {
                 } else {
                     result.slotList_ = this.slotListBuilder_.build();
                 }
+                result.uid_ = this.uid_;
                 onBuilt();
                 return result;
             }
@@ -447,9 +447,6 @@ public final class PlayerWidgetInfoOuterClass {
                 if (other == PlayerWidgetInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getUid() != 0) {
-                    setUid(other.getUid());
-                }
                 if (this.slotListBuilder_ == null) {
                     if (!other.slotList_.isEmpty()) {
                         if (this.slotList_.isEmpty()) {
@@ -471,6 +468,9 @@ public final class PlayerWidgetInfoOuterClass {
                     } else {
                         this.slotListBuilder_.addAllMessages(other.slotList_);
                     }
+                }
+                if (other.getUid() != 0) {
+                    setUid(other.getUid());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -502,23 +502,6 @@ public final class PlayerWidgetInfoOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerWidgetInfoOuterClass.PlayerWidgetInfoOrBuilder
-            public int getUid() {
-                return this.uid_;
-            }
-
-            public Builder setUid(int value) {
-                this.uid_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUid() {
-                this.uid_ = 0;
-                onChanged();
-                return this;
             }
 
             private void ensureSlotListIsMutable() {
@@ -695,6 +678,23 @@ public final class PlayerWidgetInfoOuterClass {
                     this.slotList_ = null;
                 }
                 return this.slotListBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerWidgetInfoOuterClass.PlayerWidgetInfoOrBuilder
+            public int getUid() {
+                return this.uid_;
+            }
+
+            public Builder setUid(int value) {
+                this.uid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUid() {
+                this.uid_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

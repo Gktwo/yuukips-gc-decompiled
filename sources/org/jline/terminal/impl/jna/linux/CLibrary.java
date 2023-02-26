@@ -84,7 +84,7 @@ public interface CLibrary extends Library {
     public static final int CBAUD = 4111;
 
     /* renamed from: B0 */
-    public static final int f3245B0 = 0;
+    public static final int f3209B0 = 0;
     public static final int B50 = 1;
     public static final int B75 = 2;
     public static final int B110 = 3;

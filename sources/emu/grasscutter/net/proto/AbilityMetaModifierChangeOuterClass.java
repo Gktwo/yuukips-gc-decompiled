@@ -30,19 +30,21 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityMetaModifierChangeOuterClass.class */
 public final class AbilityMetaModifierChangeOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fAbilityMetaModifierChange.proto\u001a\u001dAbilityAttachedModifier.proto\u001a\u0013AbilityString.proto\u001a\u0014ModifierAction.proto\u001a\u0016ModifierProperty.proto\"¥\u0003\n\u0019AbilityMetaModifierChange\u0012=\n\u001battached_instanced_modifier\u0018\u0003 \u0001(\u000b2\u0018.AbilityAttachedModifier\u0012\"\n\u001ais_attached_parent_ability\u0018\u0005 \u0001(\b\u0012%\n\nproperties\u0018\u000e \u0003(\u000b2\u0011.ModifierProperty\u0012\u0016\n\u000eis_mute_remote\u0018\f \u0001(\b\u0012\u0019\n\u0011modifier_local_id\u0018\u0002 \u0001(\u0005\u0012\u001a\n\u0012is_durability_zero\u0018\b \u0001(\b\u0012+\n\u0013parent_ability_name\u0018\r \u0001(\u000b2\u000e.AbilityString\u0012\u0017\n\u000fserver_buff_uid\u0018\t \u0001(\r\u0012\u0017\n\u000fapply_entity_id\u0018\u0007 \u0001(\r\u0012/\n\u0017parent_ability_override\u0018\u000f \u0001(\u000b2\u000e.AbilityString\u0012\u001f\n\u0006action\u0018\u0004 \u0001(\u000e2\u000f.ModifierActionB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityAttachedModifierOuterClass.getDescriptor(), AbilityStringOuterClass.getDescriptor(), ModifierActionOuterClass.getDescriptor(), ModifierPropertyOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fAbilityMetaModifierChange.proto\u001a\u001dAbilityAttachedModifier.proto\u001a\u0013AbilityString.proto\u001a\u0014ModifierAction.proto\u001a\u0016ModifierProperty.proto\"\u0003\n\u0019AbilityMetaModifierChange\u0012\u0015\n\rapplyEntityId\u0018\b \u0001(\r\u0012;\n\u0019attachedInstancedModifier\u0018\u0007 \u0001(\u000b2\u0018.AbilityAttachedModifier\u0012\u001a\n\u0012is_durability_zero\u0018\u0001 \u0001(\b\u0012%\n\nproperties\u0018\r \u0003(\u000b2\u0011.ModifierProperty\u0012)\n\u0011parentAbilityName\u0018\n \u0001(\u000b2\u000e.AbilityString\u0012-\n\u0015parentAbilityOverride\u0018\u0005 \u0001(\u000b2\u000e.AbilityString\u0012\u0016\n\u000eis_mute_remote\u0018\u000b \u0001(\b\u0012\u001f\n\u0017isAttachedParentAbility\u0018\u0003 \u0001(\b\u0012\u0015\n\rserverBuffUid\u0018\t \u0001(\r\u0012\u0017\n\u000fmodifierLocalId\u0018\u0006 \u0001(\u0005\u0012\u001f\n\u0006action\u0018\u0002 \u0001(\u000e2\u000f.ModifierActionB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityAttachedModifierOuterClass.getDescriptor(), AbilityStringOuterClass.getDescriptor(), ModifierActionOuterClass.getDescriptor(), ModifierPropertyOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AbilityMetaModifierChange_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AbilityMetaModifierChange_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AbilityMetaModifierChange_descriptor, new String[]{"AttachedInstancedModifier", "IsAttachedParentAbility", "Properties", "IsMuteRemote", "ModifierLocalId", "IsDurabilityZero", "ParentAbilityName", "ServerBuffUid", "ApplyEntityId", "ParentAbilityOverride", "Action"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AbilityMetaModifierChange_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AbilityMetaModifierChange_descriptor, new String[]{"ApplyEntityId", "AttachedInstancedModifier", "IsDurabilityZero", "Properties", "ParentAbilityName", "ParentAbilityOverride", "IsMuteRemote", "IsAttachedParentAbility", "ServerBuffUid", "ModifierLocalId", "Action"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityMetaModifierChangeOuterClass$AbilityMetaModifierChangeOrBuilder.class */
     public interface AbilityMetaModifierChangeOrBuilder extends MessageOrBuilder {
+        int getApplyEntityId();
+
         boolean hasAttachedInstancedModifier();
 
         AbilityAttachedModifierOuterClass.AbilityAttachedModifier getAttachedInstancedModifier();
 
         AbilityAttachedModifierOuterClass.AbilityAttachedModifierOrBuilder getAttachedInstancedModifierOrBuilder();
 
-        boolean getIsAttachedParentAbility();
+        boolean getIsDurabilityZero();
 
         List<ModifierPropertyOuterClass.ModifierProperty> getPropertiesList();
 
@@ -54,27 +56,25 @@ public final class AbilityMetaModifierChangeOuterClass {
 
         ModifierPropertyOuterClass.ModifierPropertyOrBuilder getPropertiesOrBuilder(int i);
 
-        boolean getIsMuteRemote();
-
-        int getModifierLocalId();
-
-        boolean getIsDurabilityZero();
-
         boolean hasParentAbilityName();
 
         AbilityStringOuterClass.AbilityString getParentAbilityName();
 
         AbilityStringOuterClass.AbilityStringOrBuilder getParentAbilityNameOrBuilder();
 
-        int getServerBuffUid();
-
-        int getApplyEntityId();
-
         boolean hasParentAbilityOverride();
 
         AbilityStringOuterClass.AbilityString getParentAbilityOverride();
 
         AbilityStringOuterClass.AbilityStringOrBuilder getParentAbilityOverrideOrBuilder();
+
+        boolean getIsMuteRemote();
+
+        boolean getIsAttachedParentAbility();
+
+        int getServerBuffUid();
+
+        int getModifierLocalId();
 
         int getActionValue();
 
@@ -94,27 +94,27 @@ public final class AbilityMetaModifierChangeOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityMetaModifierChangeOuterClass$AbilityMetaModifierChange.class */
     public static final class AbilityMetaModifierChange extends GeneratedMessageV3 implements AbilityMetaModifierChangeOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ATTACHED_INSTANCED_MODIFIER_FIELD_NUMBER = 3;
-        private AbilityAttachedModifierOuterClass.AbilityAttachedModifier attachedInstancedModifier_;
-        public static final int IS_ATTACHED_PARENT_ABILITY_FIELD_NUMBER = 5;
-        private boolean isAttachedParentAbility_;
-        public static final int PROPERTIES_FIELD_NUMBER = 14;
-        private List<ModifierPropertyOuterClass.ModifierProperty> properties_;
-        public static final int IS_MUTE_REMOTE_FIELD_NUMBER = 12;
-        private boolean isMuteRemote_;
-        public static final int MODIFIER_LOCAL_ID_FIELD_NUMBER = 2;
-        private int modifierLocalId_;
-        public static final int IS_DURABILITY_ZERO_FIELD_NUMBER = 8;
-        private boolean isDurabilityZero_;
-        public static final int PARENT_ABILITY_NAME_FIELD_NUMBER = 13;
-        private AbilityStringOuterClass.AbilityString parentAbilityName_;
-        public static final int SERVER_BUFF_UID_FIELD_NUMBER = 9;
-        private int serverBuffUid_;
-        public static final int APPLY_ENTITY_ID_FIELD_NUMBER = 7;
+        public static final int APPLYENTITYID_FIELD_NUMBER = 8;
         private int applyEntityId_;
-        public static final int PARENT_ABILITY_OVERRIDE_FIELD_NUMBER = 15;
+        public static final int ATTACHEDINSTANCEDMODIFIER_FIELD_NUMBER = 7;
+        private AbilityAttachedModifierOuterClass.AbilityAttachedModifier attachedInstancedModifier_;
+        public static final int IS_DURABILITY_ZERO_FIELD_NUMBER = 1;
+        private boolean isDurabilityZero_;
+        public static final int PROPERTIES_FIELD_NUMBER = 13;
+        private List<ModifierPropertyOuterClass.ModifierProperty> properties_;
+        public static final int PARENTABILITYNAME_FIELD_NUMBER = 10;
+        private AbilityStringOuterClass.AbilityString parentAbilityName_;
+        public static final int PARENTABILITYOVERRIDE_FIELD_NUMBER = 5;
         private AbilityStringOuterClass.AbilityString parentAbilityOverride_;
-        public static final int ACTION_FIELD_NUMBER = 4;
+        public static final int IS_MUTE_REMOTE_FIELD_NUMBER = 11;
+        private boolean isMuteRemote_;
+        public static final int ISATTACHEDPARENTABILITY_FIELD_NUMBER = 3;
+        private boolean isAttachedParentAbility_;
+        public static final int SERVERBUFFUID_FIELD_NUMBER = 9;
+        private int serverBuffUid_;
+        public static final int MODIFIERLOCALID_FIELD_NUMBER = 6;
+        private int modifierLocalId_;
+        public static final int ACTION_FIELD_NUMBER = 2;
         private int action_;
         private byte memoizedIsInitialized;
         private static final AbilityMetaModifierChange DEFAULT_INSTANCE = new AbilityMetaModifierChange();
@@ -165,64 +165,64 @@ public final class AbilityMetaModifierChangeOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 16:
-                                this.modifierLocalId_ = input.readInt32();
+                            case 8:
+                                this.isDurabilityZero_ = input.readBool();
                                 break;
-                            case 26:
-                                AbilityAttachedModifierOuterClass.AbilityAttachedModifier.Builder subBuilder = this.attachedInstancedModifier_ != null ? this.attachedInstancedModifier_.toBuilder() : null;
-                                this.attachedInstancedModifier_ = (AbilityAttachedModifierOuterClass.AbilityAttachedModifier) input.readMessage(AbilityAttachedModifierOuterClass.AbilityAttachedModifier.parser(), extensionRegistry);
+                            case 16:
+                                this.action_ = input.readEnum();
+                                break;
+                            case 24:
+                                this.isAttachedParentAbility_ = input.readBool();
+                                break;
+                            case 42:
+                                AbilityStringOuterClass.AbilityString.Builder subBuilder = this.parentAbilityOverride_ != null ? this.parentAbilityOverride_.toBuilder() : null;
+                                this.parentAbilityOverride_ = (AbilityStringOuterClass.AbilityString) input.readMessage(AbilityStringOuterClass.AbilityString.parser(), extensionRegistry);
                                 if (subBuilder == null) {
                                     break;
                                 } else {
-                                    subBuilder.mergeFrom(this.attachedInstancedModifier_);
-                                    this.attachedInstancedModifier_ = subBuilder.buildPartial();
+                                    subBuilder.mergeFrom(this.parentAbilityOverride_);
+                                    this.parentAbilityOverride_ = subBuilder.buildPartial();
                                     break;
                                 }
-                            case 32:
-                                this.action_ = input.readEnum();
+                            case 48:
+                                this.modifierLocalId_ = input.readInt32();
                                 break;
-                            case 40:
-                                this.isAttachedParentAbility_ = input.readBool();
-                                break;
-                            case 56:
-                                this.applyEntityId_ = input.readUInt32();
-                                break;
+                            case 58:
+                                AbilityAttachedModifierOuterClass.AbilityAttachedModifier.Builder subBuilder2 = this.attachedInstancedModifier_ != null ? this.attachedInstancedModifier_.toBuilder() : null;
+                                this.attachedInstancedModifier_ = (AbilityAttachedModifierOuterClass.AbilityAttachedModifier) input.readMessage(AbilityAttachedModifierOuterClass.AbilityAttachedModifier.parser(), extensionRegistry);
+                                if (subBuilder2 == null) {
+                                    break;
+                                } else {
+                                    subBuilder2.mergeFrom(this.attachedInstancedModifier_);
+                                    this.attachedInstancedModifier_ = subBuilder2.buildPartial();
+                                    break;
+                                }
                             case 64:
-                                this.isDurabilityZero_ = input.readBool();
+                                this.applyEntityId_ = input.readUInt32();
                                 break;
                             case 72:
                                 this.serverBuffUid_ = input.readUInt32();
                                 break;
-                            case 96:
+                            case 82:
+                                AbilityStringOuterClass.AbilityString.Builder subBuilder3 = this.parentAbilityName_ != null ? this.parentAbilityName_.toBuilder() : null;
+                                this.parentAbilityName_ = (AbilityStringOuterClass.AbilityString) input.readMessage(AbilityStringOuterClass.AbilityString.parser(), extensionRegistry);
+                                if (subBuilder3 == null) {
+                                    break;
+                                } else {
+                                    subBuilder3.mergeFrom(this.parentAbilityName_);
+                                    this.parentAbilityName_ = subBuilder3.buildPartial();
+                                    break;
+                                }
+                            case 88:
                                 this.isMuteRemote_ = input.readBool();
                                 break;
                             case 106:
-                                AbilityStringOuterClass.AbilityString.Builder subBuilder2 = this.parentAbilityName_ != null ? this.parentAbilityName_.toBuilder() : null;
-                                this.parentAbilityName_ = (AbilityStringOuterClass.AbilityString) input.readMessage(AbilityStringOuterClass.AbilityString.parser(), extensionRegistry);
-                                if (subBuilder2 == null) {
-                                    break;
-                                } else {
-                                    subBuilder2.mergeFrom(this.parentAbilityName_);
-                                    this.parentAbilityName_ = subBuilder2.buildPartial();
-                                    break;
-                                }
-                            case 114:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.properties_ = new ArrayList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.properties_.add((ModifierPropertyOuterClass.ModifierProperty) input.readMessage(ModifierPropertyOuterClass.ModifierProperty.parser(), extensionRegistry));
                                 break;
-                            case 122:
-                                AbilityStringOuterClass.AbilityString.Builder subBuilder3 = this.parentAbilityOverride_ != null ? this.parentAbilityOverride_.toBuilder() : null;
-                                this.parentAbilityOverride_ = (AbilityStringOuterClass.AbilityString) input.readMessage(AbilityStringOuterClass.AbilityString.parser(), extensionRegistry);
-                                if (subBuilder3 == null) {
-                                    break;
-                                } else {
-                                    subBuilder3.mergeFrom(this.parentAbilityOverride_);
-                                    this.parentAbilityOverride_ = subBuilder3.buildPartial();
-                                    break;
-                                }
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                     break;
@@ -256,6 +256,11 @@ public final class AbilityMetaModifierChangeOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
+        public int getApplyEntityId() {
+            return this.applyEntityId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
         public boolean hasAttachedInstancedModifier() {
             return this.attachedInstancedModifier_ != null;
         }
@@ -271,8 +276,8 @@ public final class AbilityMetaModifierChangeOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
-        public boolean getIsAttachedParentAbility() {
-            return this.isAttachedParentAbility_;
+        public boolean getIsDurabilityZero() {
+            return this.isDurabilityZero_;
         }
 
         @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
@@ -301,21 +306,6 @@ public final class AbilityMetaModifierChangeOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
-        public boolean getIsMuteRemote() {
-            return this.isMuteRemote_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
-        public int getModifierLocalId() {
-            return this.modifierLocalId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
-        public boolean getIsDurabilityZero() {
-            return this.isDurabilityZero_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
         public boolean hasParentAbilityName() {
             return this.parentAbilityName_ != null;
         }
@@ -331,16 +321,6 @@ public final class AbilityMetaModifierChangeOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
-        public int getServerBuffUid() {
-            return this.serverBuffUid_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
-        public int getApplyEntityId() {
-            return this.applyEntityId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
         public boolean hasParentAbilityOverride() {
             return this.parentAbilityOverride_ != null;
         }
@@ -353,6 +333,26 @@ public final class AbilityMetaModifierChangeOuterClass {
         @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
         public AbilityStringOuterClass.AbilityStringOrBuilder getParentAbilityOverrideOrBuilder() {
             return getParentAbilityOverride();
+        }
+
+        @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
+        public boolean getIsMuteRemote() {
+            return this.isMuteRemote_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
+        public boolean getIsAttachedParentAbility() {
+            return this.isAttachedParentAbility_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
+        public int getServerBuffUid() {
+            return this.serverBuffUid_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
+        public int getModifierLocalId() {
+            return this.modifierLocalId_;
         }
 
         @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
@@ -381,38 +381,38 @@ public final class AbilityMetaModifierChangeOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.modifierLocalId_ != 0) {
-                output.writeInt32(2, this.modifierLocalId_);
-            }
-            if (this.attachedInstancedModifier_ != null) {
-                output.writeMessage(3, getAttachedInstancedModifier());
+            if (this.isDurabilityZero_) {
+                output.writeBool(1, this.isDurabilityZero_);
             }
             if (this.action_ != ModifierActionOuterClass.ModifierAction.MODIFIER_ACTION_ADDED.getNumber()) {
-                output.writeEnum(4, this.action_);
+                output.writeEnum(2, this.action_);
             }
             if (this.isAttachedParentAbility_) {
-                output.writeBool(5, this.isAttachedParentAbility_);
+                output.writeBool(3, this.isAttachedParentAbility_);
+            }
+            if (this.parentAbilityOverride_ != null) {
+                output.writeMessage(5, getParentAbilityOverride());
+            }
+            if (this.modifierLocalId_ != 0) {
+                output.writeInt32(6, this.modifierLocalId_);
+            }
+            if (this.attachedInstancedModifier_ != null) {
+                output.writeMessage(7, getAttachedInstancedModifier());
             }
             if (this.applyEntityId_ != 0) {
-                output.writeUInt32(7, this.applyEntityId_);
-            }
-            if (this.isDurabilityZero_) {
-                output.writeBool(8, this.isDurabilityZero_);
+                output.writeUInt32(8, this.applyEntityId_);
             }
             if (this.serverBuffUid_ != 0) {
                 output.writeUInt32(9, this.serverBuffUid_);
             }
-            if (this.isMuteRemote_) {
-                output.writeBool(12, this.isMuteRemote_);
-            }
             if (this.parentAbilityName_ != null) {
-                output.writeMessage(13, getParentAbilityName());
+                output.writeMessage(10, getParentAbilityName());
+            }
+            if (this.isMuteRemote_) {
+                output.writeBool(11, this.isMuteRemote_);
             }
             for (int i = 0; i < this.properties_.size(); i++) {
-                output.writeMessage(14, this.properties_.get(i));
-            }
-            if (this.parentAbilityOverride_ != null) {
-                output.writeMessage(15, getParentAbilityOverride());
+                output.writeMessage(13, this.properties_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -424,38 +424,38 @@ public final class AbilityMetaModifierChangeOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.modifierLocalId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(2, this.modifierLocalId_);
-            }
-            if (this.attachedInstancedModifier_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(3, getAttachedInstancedModifier());
+            if (this.isDurabilityZero_) {
+                size2 = 0 + CodedOutputStream.computeBoolSize(1, this.isDurabilityZero_);
             }
             if (this.action_ != ModifierActionOuterClass.ModifierAction.MODIFIER_ACTION_ADDED.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(4, this.action_);
+                size2 += CodedOutputStream.computeEnumSize(2, this.action_);
             }
             if (this.isAttachedParentAbility_) {
-                size2 += CodedOutputStream.computeBoolSize(5, this.isAttachedParentAbility_);
+                size2 += CodedOutputStream.computeBoolSize(3, this.isAttachedParentAbility_);
+            }
+            if (this.parentAbilityOverride_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(5, getParentAbilityOverride());
+            }
+            if (this.modifierLocalId_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(6, this.modifierLocalId_);
+            }
+            if (this.attachedInstancedModifier_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(7, getAttachedInstancedModifier());
             }
             if (this.applyEntityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.applyEntityId_);
-            }
-            if (this.isDurabilityZero_) {
-                size2 += CodedOutputStream.computeBoolSize(8, this.isDurabilityZero_);
+                size2 += CodedOutputStream.computeUInt32Size(8, this.applyEntityId_);
             }
             if (this.serverBuffUid_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(9, this.serverBuffUid_);
             }
-            if (this.isMuteRemote_) {
-                size2 += CodedOutputStream.computeBoolSize(12, this.isMuteRemote_);
-            }
             if (this.parentAbilityName_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(13, getParentAbilityName());
+                size2 += CodedOutputStream.computeMessageSize(10, getParentAbilityName());
+            }
+            if (this.isMuteRemote_) {
+                size2 += CodedOutputStream.computeBoolSize(11, this.isMuteRemote_);
             }
             for (int i = 0; i < this.properties_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(14, this.properties_.get(i));
-            }
-            if (this.parentAbilityOverride_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(15, getParentAbilityOverride());
+                size2 += CodedOutputStream.computeMessageSize(13, this.properties_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -471,14 +471,14 @@ public final class AbilityMetaModifierChangeOuterClass {
                 return equals(obj);
             }
             AbilityMetaModifierChange other = (AbilityMetaModifierChange) obj;
-            if (hasAttachedInstancedModifier() != other.hasAttachedInstancedModifier()) {
+            if (getApplyEntityId() != other.getApplyEntityId() || hasAttachedInstancedModifier() != other.hasAttachedInstancedModifier()) {
                 return false;
             }
-            if ((hasAttachedInstancedModifier() && !getAttachedInstancedModifier().equals(other.getAttachedInstancedModifier())) || getIsAttachedParentAbility() != other.getIsAttachedParentAbility() || !getPropertiesList().equals(other.getPropertiesList()) || getIsMuteRemote() != other.getIsMuteRemote() || getModifierLocalId() != other.getModifierLocalId() || getIsDurabilityZero() != other.getIsDurabilityZero() || hasParentAbilityName() != other.hasParentAbilityName()) {
+            if ((hasAttachedInstancedModifier() && !getAttachedInstancedModifier().equals(other.getAttachedInstancedModifier())) || getIsDurabilityZero() != other.getIsDurabilityZero() || !getPropertiesList().equals(other.getPropertiesList()) || hasParentAbilityName() != other.hasParentAbilityName()) {
                 return false;
             }
-            if ((!hasParentAbilityName() || getParentAbilityName().equals(other.getParentAbilityName())) && getServerBuffUid() == other.getServerBuffUid() && getApplyEntityId() == other.getApplyEntityId() && hasParentAbilityOverride() == other.hasParentAbilityOverride()) {
-                return (!hasParentAbilityOverride() || getParentAbilityOverride().equals(other.getParentAbilityOverride())) && this.action_ == other.action_ && this.unknownFields.equals(other.unknownFields);
+            if ((!hasParentAbilityName() || getParentAbilityName().equals(other.getParentAbilityName())) && hasParentAbilityOverride() == other.hasParentAbilityOverride()) {
+                return (!hasParentAbilityOverride() || getParentAbilityOverride().equals(other.getParentAbilityOverride())) && getIsMuteRemote() == other.getIsMuteRemote() && getIsAttachedParentAbility() == other.getIsAttachedParentAbility() && getServerBuffUid() == other.getServerBuffUid() && getModifierLocalId() == other.getModifierLocalId() && this.action_ == other.action_ && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -488,25 +488,23 @@ public final class AbilityMetaModifierChangeOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getApplyEntityId();
             if (hasAttachedInstancedModifier()) {
-                hash = (53 * ((37 * hash) + 3)) + getAttachedInstancedModifier().hashCode();
+                hash = (53 * ((37 * hash) + 7)) + getAttachedInstancedModifier().hashCode();
             }
-            int hash2 = (53 * ((37 * hash) + 5)) + Internal.hashBoolean(getIsAttachedParentAbility());
+            int hash2 = (53 * ((37 * hash) + 1)) + Internal.hashBoolean(getIsDurabilityZero());
             if (getPropertiesCount() > 0) {
-                hash2 = (53 * ((37 * hash2) + 14)) + getPropertiesList().hashCode();
+                hash2 = (53 * ((37 * hash2) + 13)) + getPropertiesList().hashCode();
             }
-            int hash3 = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash2) + 12)) + Internal.hashBoolean(getIsMuteRemote()))) + 2)) + getModifierLocalId())) + 8)) + Internal.hashBoolean(getIsDurabilityZero());
             if (hasParentAbilityName()) {
-                hash3 = (53 * ((37 * hash3) + 13)) + getParentAbilityName().hashCode();
+                hash2 = (53 * ((37 * hash2) + 10)) + getParentAbilityName().hashCode();
             }
-            int hash4 = (53 * ((37 * ((53 * ((37 * hash3) + 9)) + getServerBuffUid())) + 7)) + getApplyEntityId();
             if (hasParentAbilityOverride()) {
-                hash4 = (53 * ((37 * hash4) + 15)) + getParentAbilityOverride().hashCode();
+                hash2 = (53 * ((37 * hash2) + 5)) + getParentAbilityOverride().hashCode();
             }
-            int hash5 = (29 * ((53 * ((37 * hash4) + 4)) + this.action_)) + this.unknownFields.hashCode();
-            this.memoizedHashCode = hash5;
-            return hash5;
+            int hash3 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash2) + 11)) + Internal.hashBoolean(getIsMuteRemote()))) + 3)) + Internal.hashBoolean(getIsAttachedParentAbility()))) + 9)) + getServerBuffUid())) + 6)) + getModifierLocalId())) + 2)) + this.action_)) + this.unknownFields.hashCode();
+            this.memoizedHashCode = hash3;
+            return hash3;
         }
 
         public static AbilityMetaModifierChange parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
@@ -584,19 +582,19 @@ public final class AbilityMetaModifierChangeOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityMetaModifierChangeOuterClass$AbilityMetaModifierChange$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements AbilityMetaModifierChangeOrBuilder {
             private int bitField0_;
+            private int applyEntityId_;
             private AbilityAttachedModifierOuterClass.AbilityAttachedModifier attachedInstancedModifier_;
             private SingleFieldBuilderV3<AbilityAttachedModifierOuterClass.AbilityAttachedModifier, AbilityAttachedModifierOuterClass.AbilityAttachedModifier.Builder, AbilityAttachedModifierOuterClass.AbilityAttachedModifierOrBuilder> attachedInstancedModifierBuilder_;
-            private boolean isAttachedParentAbility_;
-            private RepeatedFieldBuilderV3<ModifierPropertyOuterClass.ModifierProperty, ModifierPropertyOuterClass.ModifierProperty.Builder, ModifierPropertyOuterClass.ModifierPropertyOrBuilder> propertiesBuilder_;
-            private boolean isMuteRemote_;
-            private int modifierLocalId_;
             private boolean isDurabilityZero_;
+            private RepeatedFieldBuilderV3<ModifierPropertyOuterClass.ModifierProperty, ModifierPropertyOuterClass.ModifierProperty.Builder, ModifierPropertyOuterClass.ModifierPropertyOrBuilder> propertiesBuilder_;
             private AbilityStringOuterClass.AbilityString parentAbilityName_;
             private SingleFieldBuilderV3<AbilityStringOuterClass.AbilityString, AbilityStringOuterClass.AbilityString.Builder, AbilityStringOuterClass.AbilityStringOrBuilder> parentAbilityNameBuilder_;
-            private int serverBuffUid_;
-            private int applyEntityId_;
             private AbilityStringOuterClass.AbilityString parentAbilityOverride_;
             private SingleFieldBuilderV3<AbilityStringOuterClass.AbilityString, AbilityStringOuterClass.AbilityString.Builder, AbilityStringOuterClass.AbilityStringOrBuilder> parentAbilityOverrideBuilder_;
+            private boolean isMuteRemote_;
+            private boolean isAttachedParentAbility_;
+            private int serverBuffUid_;
+            private int modifierLocalId_;
             private List<ModifierPropertyOuterClass.ModifierProperty> properties_ = Collections.emptyList();
             private int action_ = 0;
 
@@ -627,36 +625,36 @@ public final class AbilityMetaModifierChangeOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.applyEntityId_ = 0;
                 if (this.attachedInstancedModifierBuilder_ == null) {
                     this.attachedInstancedModifier_ = null;
                 } else {
                     this.attachedInstancedModifier_ = null;
                     this.attachedInstancedModifierBuilder_ = null;
                 }
-                this.isAttachedParentAbility_ = false;
+                this.isDurabilityZero_ = false;
                 if (this.propertiesBuilder_ == null) {
                     this.properties_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
                     this.propertiesBuilder_.clear();
                 }
-                this.isMuteRemote_ = false;
-                this.modifierLocalId_ = 0;
-                this.isDurabilityZero_ = false;
                 if (this.parentAbilityNameBuilder_ == null) {
                     this.parentAbilityName_ = null;
                 } else {
                     this.parentAbilityName_ = null;
                     this.parentAbilityNameBuilder_ = null;
                 }
-                this.serverBuffUid_ = 0;
-                this.applyEntityId_ = 0;
                 if (this.parentAbilityOverrideBuilder_ == null) {
                     this.parentAbilityOverride_ = null;
                 } else {
                     this.parentAbilityOverride_ = null;
                     this.parentAbilityOverrideBuilder_ = null;
                 }
+                this.isMuteRemote_ = false;
+                this.isAttachedParentAbility_ = false;
+                this.serverBuffUid_ = 0;
+                this.modifierLocalId_ = 0;
                 this.action_ = 0;
                 return this;
             }
@@ -684,12 +682,13 @@ public final class AbilityMetaModifierChangeOuterClass {
             public AbilityMetaModifierChange buildPartial() {
                 AbilityMetaModifierChange result = new AbilityMetaModifierChange(this);
                 int i = this.bitField0_;
+                result.applyEntityId_ = this.applyEntityId_;
                 if (this.attachedInstancedModifierBuilder_ == null) {
                     result.attachedInstancedModifier_ = this.attachedInstancedModifier_;
                 } else {
                     result.attachedInstancedModifier_ = this.attachedInstancedModifierBuilder_.build();
                 }
-                result.isAttachedParentAbility_ = this.isAttachedParentAbility_;
+                result.isDurabilityZero_ = this.isDurabilityZero_;
                 if (this.propertiesBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
                         this.properties_ = Collections.unmodifiableList(this.properties_);
@@ -699,21 +698,20 @@ public final class AbilityMetaModifierChangeOuterClass {
                 } else {
                     result.properties_ = this.propertiesBuilder_.build();
                 }
-                result.isMuteRemote_ = this.isMuteRemote_;
-                result.modifierLocalId_ = this.modifierLocalId_;
-                result.isDurabilityZero_ = this.isDurabilityZero_;
                 if (this.parentAbilityNameBuilder_ == null) {
                     result.parentAbilityName_ = this.parentAbilityName_;
                 } else {
                     result.parentAbilityName_ = this.parentAbilityNameBuilder_.build();
                 }
-                result.serverBuffUid_ = this.serverBuffUid_;
-                result.applyEntityId_ = this.applyEntityId_;
                 if (this.parentAbilityOverrideBuilder_ == null) {
                     result.parentAbilityOverride_ = this.parentAbilityOverride_;
                 } else {
                     result.parentAbilityOverride_ = this.parentAbilityOverrideBuilder_.build();
                 }
+                result.isMuteRemote_ = this.isMuteRemote_;
+                result.isAttachedParentAbility_ = this.isAttachedParentAbility_;
+                result.serverBuffUid_ = this.serverBuffUid_;
+                result.modifierLocalId_ = this.modifierLocalId_;
                 result.action_ = this.action_;
                 onBuilt();
                 return result;
@@ -762,11 +760,14 @@ public final class AbilityMetaModifierChangeOuterClass {
                 if (other == AbilityMetaModifierChange.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getApplyEntityId() != 0) {
+                    setApplyEntityId(other.getApplyEntityId());
+                }
                 if (other.hasAttachedInstancedModifier()) {
                     mergeAttachedInstancedModifier(other.getAttachedInstancedModifier());
                 }
-                if (other.getIsAttachedParentAbility()) {
-                    setIsAttachedParentAbility(other.getIsAttachedParentAbility());
+                if (other.getIsDurabilityZero()) {
+                    setIsDurabilityZero(other.getIsDurabilityZero());
                 }
                 if (this.propertiesBuilder_ == null) {
                     if (!other.properties_.isEmpty()) {
@@ -790,26 +791,23 @@ public final class AbilityMetaModifierChangeOuterClass {
                         this.propertiesBuilder_.addAllMessages(other.properties_);
                     }
                 }
+                if (other.hasParentAbilityName()) {
+                    mergeParentAbilityName(other.getParentAbilityName());
+                }
+                if (other.hasParentAbilityOverride()) {
+                    mergeParentAbilityOverride(other.getParentAbilityOverride());
+                }
                 if (other.getIsMuteRemote()) {
                     setIsMuteRemote(other.getIsMuteRemote());
                 }
-                if (other.getModifierLocalId() != 0) {
-                    setModifierLocalId(other.getModifierLocalId());
-                }
-                if (other.getIsDurabilityZero()) {
-                    setIsDurabilityZero(other.getIsDurabilityZero());
-                }
-                if (other.hasParentAbilityName()) {
-                    mergeParentAbilityName(other.getParentAbilityName());
+                if (other.getIsAttachedParentAbility()) {
+                    setIsAttachedParentAbility(other.getIsAttachedParentAbility());
                 }
                 if (other.getServerBuffUid() != 0) {
                     setServerBuffUid(other.getServerBuffUid());
                 }
-                if (other.getApplyEntityId() != 0) {
-                    setApplyEntityId(other.getApplyEntityId());
-                }
-                if (other.hasParentAbilityOverride()) {
-                    mergeParentAbilityOverride(other.getParentAbilityOverride());
+                if (other.getModifierLocalId() != 0) {
+                    setModifierLocalId(other.getModifierLocalId());
                 }
                 if (other.action_ != 0) {
                     setActionValue(other.getActionValue());
@@ -844,6 +842,23 @@ public final class AbilityMetaModifierChangeOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
+            public int getApplyEntityId() {
+                return this.applyEntityId_;
+            }
+
+            public Builder setApplyEntityId(int value) {
+                this.applyEntityId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearApplyEntityId() {
+                this.applyEntityId_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
@@ -928,18 +943,18 @@ public final class AbilityMetaModifierChangeOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
-            public boolean getIsAttachedParentAbility() {
-                return this.isAttachedParentAbility_;
+            public boolean getIsDurabilityZero() {
+                return this.isDurabilityZero_;
             }
 
-            public Builder setIsAttachedParentAbility(boolean value) {
-                this.isAttachedParentAbility_ = value;
+            public Builder setIsDurabilityZero(boolean value) {
+                this.isDurabilityZero_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearIsAttachedParentAbility() {
-                this.isAttachedParentAbility_ = false;
+            public Builder clearIsDurabilityZero() {
+                this.isDurabilityZero_ = false;
                 onChanged();
                 return this;
             }
@@ -1121,57 +1136,6 @@ public final class AbilityMetaModifierChangeOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
-            public boolean getIsMuteRemote() {
-                return this.isMuteRemote_;
-            }
-
-            public Builder setIsMuteRemote(boolean value) {
-                this.isMuteRemote_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsMuteRemote() {
-                this.isMuteRemote_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
-            public int getModifierLocalId() {
-                return this.modifierLocalId_;
-            }
-
-            public Builder setModifierLocalId(int value) {
-                this.modifierLocalId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearModifierLocalId() {
-                this.modifierLocalId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
-            public boolean getIsDurabilityZero() {
-                return this.isDurabilityZero_;
-            }
-
-            public Builder setIsDurabilityZero(boolean value) {
-                this.isDurabilityZero_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsDurabilityZero() {
-                this.isDurabilityZero_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
             public boolean hasParentAbilityName() {
                 return (this.parentAbilityNameBuilder_ == null && this.parentAbilityName_ == null) ? false : true;
             }
@@ -1253,40 +1217,6 @@ public final class AbilityMetaModifierChangeOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
-            public int getServerBuffUid() {
-                return this.serverBuffUid_;
-            }
-
-            public Builder setServerBuffUid(int value) {
-                this.serverBuffUid_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearServerBuffUid() {
-                this.serverBuffUid_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
-            public int getApplyEntityId() {
-                return this.applyEntityId_;
-            }
-
-            public Builder setApplyEntityId(int value) {
-                this.applyEntityId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearApplyEntityId() {
-                this.applyEntityId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
             public boolean hasParentAbilityOverride() {
                 return (this.parentAbilityOverrideBuilder_ == null && this.parentAbilityOverride_ == null) ? false : true;
             }
@@ -1365,6 +1295,74 @@ public final class AbilityMetaModifierChangeOuterClass {
                     this.parentAbilityOverride_ = null;
                 }
                 return this.parentAbilityOverrideBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
+            public boolean getIsMuteRemote() {
+                return this.isMuteRemote_;
+            }
+
+            public Builder setIsMuteRemote(boolean value) {
+                this.isMuteRemote_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsMuteRemote() {
+                this.isMuteRemote_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
+            public boolean getIsAttachedParentAbility() {
+                return this.isAttachedParentAbility_;
+            }
+
+            public Builder setIsAttachedParentAbility(boolean value) {
+                this.isAttachedParentAbility_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsAttachedParentAbility() {
+                this.isAttachedParentAbility_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
+            public int getServerBuffUid() {
+                return this.serverBuffUid_;
+            }
+
+            public Builder setServerBuffUid(int value) {
+                this.serverBuffUid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearServerBuffUid() {
+                this.serverBuffUid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder
+            public int getModifierLocalId() {
+                return this.modifierLocalId_;
+            }
+
+            public Builder setModifierLocalId(int value) {
+                this.modifierLocalId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearModifierLocalId() {
+                this.modifierLocalId_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChangeOrBuilder

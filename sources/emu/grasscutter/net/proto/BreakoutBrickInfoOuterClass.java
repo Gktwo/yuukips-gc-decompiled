@@ -19,13 +19,13 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BreakoutBrickInfoOuterClass.class */
 public final class BreakoutBrickInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017BreakoutBrickInfo.proto\"5\n\u0011BreakoutBrickInfo\u0012\n\n\u0002hp\u0018\u0001 \u0001(\r\u0012\u0014\n\felement_type\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017BreakoutBrickInfo.proto\"=\n\u0011BreakoutBrickInfo\u0012\u0013\n\u000bcpoenmafigh\u0018\u0001 \u0001(\r\u0012\u0013\n\u000belementType\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_BreakoutBrickInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_BreakoutBrickInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BreakoutBrickInfo_descriptor, new String[]{"Hp", "ElementType"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_BreakoutBrickInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BreakoutBrickInfo_descriptor, new String[]{"Cpoenmafigh", "ElementType"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BreakoutBrickInfoOuterClass$BreakoutBrickInfoOrBuilder.class */
     public interface BreakoutBrickInfoOrBuilder extends MessageOrBuilder {
-        int getHp();
+        int getCpoenmafigh();
 
         int getElementType();
     }
@@ -43,9 +43,9 @@ public final class BreakoutBrickInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BreakoutBrickInfoOuterClass$BreakoutBrickInfo.class */
     public static final class BreakoutBrickInfo extends GeneratedMessageV3 implements BreakoutBrickInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int HP_FIELD_NUMBER = 1;
-        private int hp_;
-        public static final int ELEMENT_TYPE_FIELD_NUMBER = 2;
+        public static final int CPOENMAFIGH_FIELD_NUMBER = 1;
+        private int cpoenmafigh_;
+        public static final int ELEMENTTYPE_FIELD_NUMBER = 2;
         private int elementType_;
         private byte memoizedIsInitialized;
         private static final BreakoutBrickInfo DEFAULT_INSTANCE = new BreakoutBrickInfo();
@@ -93,7 +93,7 @@ public final class BreakoutBrickInfoOuterClass {
                                 done = true;
                                 break;
                             case 8:
-                                this.hp_ = input.readUInt32();
+                                this.cpoenmafigh_ = input.readUInt32();
                                 break;
                             case 16:
                                 this.elementType_ = input.readUInt32();
@@ -128,8 +128,8 @@ public final class BreakoutBrickInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfoOrBuilder
-        public int getHp() {
-            return this.hp_;
+        public int getCpoenmafigh() {
+            return this.cpoenmafigh_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfoOrBuilder
@@ -152,8 +152,8 @@ public final class BreakoutBrickInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.hp_ != 0) {
-                output.writeUInt32(1, this.hp_);
+            if (this.cpoenmafigh_ != 0) {
+                output.writeUInt32(1, this.cpoenmafigh_);
             }
             if (this.elementType_ != 0) {
                 output.writeUInt32(2, this.elementType_);
@@ -168,8 +168,8 @@ public final class BreakoutBrickInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.hp_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.hp_);
+            if (this.cpoenmafigh_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.cpoenmafigh_);
             }
             if (this.elementType_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(2, this.elementType_);
@@ -188,7 +188,7 @@ public final class BreakoutBrickInfoOuterClass {
                 return equals(obj);
             }
             BreakoutBrickInfo other = (BreakoutBrickInfo) obj;
-            return getHp() == other.getHp() && getElementType() == other.getElementType() && this.unknownFields.equals(other.unknownFields);
+            return getCpoenmafigh() == other.getCpoenmafigh() && getElementType() == other.getElementType() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -196,7 +196,7 @@ public final class BreakoutBrickInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getHp())) + 2)) + getElementType())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getCpoenmafigh())) + 2)) + getElementType())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -275,7 +275,7 @@ public final class BreakoutBrickInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BreakoutBrickInfoOuterClass$BreakoutBrickInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements BreakoutBrickInfoOrBuilder {
-            private int hp_;
+            private int cpoenmafigh_;
             private int elementType_;
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -304,7 +304,7 @@ public final class BreakoutBrickInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.hp_ = 0;
+                this.cpoenmafigh_ = 0;
                 this.elementType_ = 0;
                 return this;
             }
@@ -331,7 +331,7 @@ public final class BreakoutBrickInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public BreakoutBrickInfo buildPartial() {
                 BreakoutBrickInfo result = new BreakoutBrickInfo(this);
-                result.hp_ = this.hp_;
+                result.cpoenmafigh_ = this.cpoenmafigh_;
                 result.elementType_ = this.elementType_;
                 onBuilt();
                 return result;
@@ -380,8 +380,8 @@ public final class BreakoutBrickInfoOuterClass {
                 if (other == BreakoutBrickInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getHp() != 0) {
-                    setHp(other.getHp());
+                if (other.getCpoenmafigh() != 0) {
+                    setCpoenmafigh(other.getCpoenmafigh());
                 }
                 if (other.getElementType() != 0) {
                     setElementType(other.getElementType());
@@ -419,18 +419,18 @@ public final class BreakoutBrickInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfoOrBuilder
-            public int getHp() {
-                return this.hp_;
+            public int getCpoenmafigh() {
+                return this.cpoenmafigh_;
             }
 
-            public Builder setHp(int value) {
-                this.hp_ = value;
+            public Builder setCpoenmafigh(int value) {
+                this.cpoenmafigh_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearHp() {
-                this.hp_ = 0;
+            public Builder clearCpoenmafigh() {
+                this.cpoenmafigh_ = 0;
                 onChanged();
                 return this;
             }

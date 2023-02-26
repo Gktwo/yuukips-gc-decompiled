@@ -5,6 +5,7 @@ import emu.grasscutter.data.excels.FurnitureMakeConfigData;
 import emu.grasscutter.game.home.FurnitureMakeSlotItem;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.proto.ItemParamOuterClass;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 import emu.grasscutter.server.packet.send.PacketFurnitureMakeRsp;
@@ -90,6 +91,7 @@ public class FurnitureManager extends BasePlayerManager {
         } else if (!isFastFinish || this.player.getInventory().payItem(107013, 1)) {
             this.player.getInventory().addItem(makeData.getFurnitureItemID(), makeData.getCount());
             this.player.getHome().getFurnitureMakeSlotItemList().remove(slotItem.get());
+            this.player.getInventory().addItem(121, makeData.getExp(), ActionReason.FurnitureMakeTake);
             this.player.getSession().send(new PacketTakeFurnitureMakeRsp(0, makeId, List.of(ItemParamOuterClass.ItemParam.newBuilder().setItemId(makeData.getFurnitureItemID()).setCount(makeData.getCount()).build()), this.player.getHome().getFurnitureMakeSlotItemList().stream().map((v0) -> {
                 return v0.toProto();
             }).toList()));

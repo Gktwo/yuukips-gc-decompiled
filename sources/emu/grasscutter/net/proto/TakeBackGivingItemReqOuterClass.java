@@ -19,13 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeBackGivingItemReqOuterClass.class */
 public final class TakeBackGivingItemReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bTakeBackGivingItemReq.proto\"*\n\u0015TakeBackGivingItemReq\u0012\u0011\n\tgiving_id\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bTakeBackGivingItemReq.proto\":\n\u0015TakeBackGivingItemReq\u0012\u0010\n\bgivingId\u0018\u0003 \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u000b \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_TakeBackGivingItemReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TakeBackGivingItemReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TakeBackGivingItemReq_descriptor, new String[]{"GivingId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TakeBackGivingItemReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TakeBackGivingItemReq_descriptor, new String[]{"GivingId", "Retcode"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeBackGivingItemReqOuterClass$TakeBackGivingItemReqOrBuilder.class */
     public interface TakeBackGivingItemReqOrBuilder extends MessageOrBuilder {
         int getGivingId();
+
+        int getRetcode();
     }
 
     private TakeBackGivingItemReqOuterClass() {
@@ -41,8 +43,10 @@ public final class TakeBackGivingItemReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeBackGivingItemReqOuterClass$TakeBackGivingItemReq.class */
     public static final class TakeBackGivingItemReq extends GeneratedMessageV3 implements TakeBackGivingItemReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int GIVING_ID_FIELD_NUMBER = 2;
+        public static final int GIVINGID_FIELD_NUMBER = 3;
         private int givingId_;
+        public static final int RETCODE_FIELD_NUMBER = 11;
+        private int retcode_;
         private byte memoizedIsInitialized;
         private static final TakeBackGivingItemReq DEFAULT_INSTANCE = new TakeBackGivingItemReq();
         private static final Parser<TakeBackGivingItemReq> PARSER = new AbstractParser<TakeBackGivingItemReq>() { // from class: emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReq.1
@@ -88,8 +92,11 @@ public final class TakeBackGivingItemReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 16:
+                            case 24:
                                 this.givingId_ = input.readUInt32();
+                                break;
+                            case 88:
+                                this.retcode_ = input.readInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -125,6 +132,11 @@ public final class TakeBackGivingItemReqOuterClass {
             return this.givingId_;
         }
 
+        @Override // emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReqOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -141,7 +153,10 @@ public final class TakeBackGivingItemReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.givingId_ != 0) {
-                output.writeUInt32(2, this.givingId_);
+                output.writeUInt32(3, this.givingId_);
+            }
+            if (this.retcode_ != 0) {
+                output.writeInt32(11, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +169,10 @@ public final class TakeBackGivingItemReqOuterClass {
             }
             int size2 = 0;
             if (this.givingId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.givingId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.givingId_);
+            }
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(11, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -170,7 +188,7 @@ public final class TakeBackGivingItemReqOuterClass {
                 return equals(obj);
             }
             TakeBackGivingItemReq other = (TakeBackGivingItemReq) obj;
-            return getGivingId() == other.getGivingId() && this.unknownFields.equals(other.unknownFields);
+            return getGivingId() == other.getGivingId() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -178,7 +196,7 @@ public final class TakeBackGivingItemReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getGivingId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getGivingId())) + 11)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -258,6 +276,7 @@ public final class TakeBackGivingItemReqOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeBackGivingItemReqOuterClass$TakeBackGivingItemReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements TakeBackGivingItemReqOrBuilder {
             private int givingId_;
+            private int retcode_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return TakeBackGivingItemReqOuterClass.internal_static_TakeBackGivingItemReq_descriptor;
@@ -286,6 +305,7 @@ public final class TakeBackGivingItemReqOuterClass {
             public Builder clear() {
                 clear();
                 this.givingId_ = 0;
+                this.retcode_ = 0;
                 return this;
             }
 
@@ -312,6 +332,7 @@ public final class TakeBackGivingItemReqOuterClass {
             public TakeBackGivingItemReq buildPartial() {
                 TakeBackGivingItemReq result = new TakeBackGivingItemReq(this);
                 result.givingId_ = this.givingId_;
+                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -362,6 +383,9 @@ public final class TakeBackGivingItemReqOuterClass {
                 if (other.getGivingId() != 0) {
                     setGivingId(other.getGivingId());
                 }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
+                }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
                 return this;
@@ -407,6 +431,23 @@ public final class TakeBackGivingItemReqOuterClass {
 
             public Builder clearGivingId() {
                 this.givingId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.TakeBackGivingItemReqOuterClass.TakeBackGivingItemReqOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }

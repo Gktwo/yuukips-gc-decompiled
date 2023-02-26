@@ -22,19 +22,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeSeekFurnitureGalleryScoreNotifyOuterClass.class */
 public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n)HomeSeekFurnitureGalleryScoreNotify.proto\u001a\u0017GalleryStopReason.proto\u001a HomeSeekFurnitureOneRecord.proto\"\u0001\n#HomeSeekFurnitureGalleryScoreNotify\u0012\"\n\u0006reason\u0018\u0007 \u0001(\u000e2\u0012.GalleryStopReason\u0012\u0012\n\ngallery_id\u0018\r \u0001(\r\u0012+\n\u0006record\u0018\u0002 \u0001(\u000b2\u001b.HomeSeekFurnitureOneRecordB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{GalleryStopReasonOuterClass.getDescriptor(), HomeSeekFurnitureOneRecordOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n)HomeSeekFurnitureGalleryScoreNotify.proto\u001a\u0017GalleryStopReason.proto\u001a HomeSeekFurnitureOneRecord.proto\"\u0001\n#HomeSeekFurnitureGalleryScoreNotify\u0012\u0011\n\tgalleryId\u0018\u0002 \u0001(\r\u0012\"\n\u0006reason\u0018\t \u0001(\u000e2\u0012.GalleryStopReason\u0012+\n\u0006record\u0018\u0007 \u0001(\u000b2\u001b.HomeSeekFurnitureOneRecordB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{GalleryStopReasonOuterClass.getDescriptor(), HomeSeekFurnitureOneRecordOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_HomeSeekFurnitureGalleryScoreNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_HomeSeekFurnitureGalleryScoreNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f763xb8af3b37 = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeSeekFurnitureGalleryScoreNotify_descriptor, new String[]{"Reason", "GalleryId", "Record"});
+    private static final GeneratedMessageV3.FieldAccessorTable f746xb8af3b37 = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeSeekFurnitureGalleryScoreNotify_descriptor, new String[]{"GalleryId", "Reason", "Record"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeSeekFurnitureGalleryScoreNotifyOuterClass$HomeSeekFurnitureGalleryScoreNotifyOrBuilder.class */
     public interface HomeSeekFurnitureGalleryScoreNotifyOrBuilder extends MessageOrBuilder {
+        int getGalleryId();
+
         int getReasonValue();
 
         GalleryStopReasonOuterClass.GalleryStopReason getReason();
-
-        int getGalleryId();
 
         boolean hasRecord();
 
@@ -56,11 +56,11 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeSeekFurnitureGalleryScoreNotifyOuterClass$HomeSeekFurnitureGalleryScoreNotify.class */
     public static final class HomeSeekFurnitureGalleryScoreNotify extends GeneratedMessageV3 implements HomeSeekFurnitureGalleryScoreNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int REASON_FIELD_NUMBER = 7;
-        private int reason_;
-        public static final int GALLERY_ID_FIELD_NUMBER = 13;
+        public static final int GALLERYID_FIELD_NUMBER = 2;
         private int galleryId_;
-        public static final int RECORD_FIELD_NUMBER = 2;
+        public static final int REASON_FIELD_NUMBER = 9;
+        private int reason_;
+        public static final int RECORD_FIELD_NUMBER = 7;
         private HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord record_;
         private byte memoizedIsInitialized;
         private static final HomeSeekFurnitureGalleryScoreNotify DEFAULT_INSTANCE = new HomeSeekFurnitureGalleryScoreNotify();
@@ -108,7 +108,10 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 18:
+                            case 16:
+                                this.galleryId_ = input.readUInt32();
+                                break;
+                            case 58:
                                 HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord.Builder subBuilder = this.record_ != null ? this.record_.toBuilder() : null;
                                 this.record_ = (HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord) input.readMessage(HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -118,11 +121,8 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
                                     this.record_ = subBuilder.buildPartial();
                                     break;
                                 }
-                            case 56:
+                            case 72:
                                 this.reason_ = input.readEnum();
-                                break;
-                            case 104:
-                                this.galleryId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -150,7 +150,12 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return HomeSeekFurnitureGalleryScoreNotifyOuterClass.f763xb8af3b37.ensureFieldAccessorsInitialized(HomeSeekFurnitureGalleryScoreNotify.class, Builder.class);
+            return HomeSeekFurnitureGalleryScoreNotifyOuterClass.f746xb8af3b37.ensureFieldAccessorsInitialized(HomeSeekFurnitureGalleryScoreNotify.class, Builder.class);
+        }
+
+        @Override // emu.grasscutter.net.proto.HomeSeekFurnitureGalleryScoreNotifyOuterClass.HomeSeekFurnitureGalleryScoreNotifyOrBuilder
+        public int getGalleryId() {
+            return this.galleryId_;
         }
 
         @Override // emu.grasscutter.net.proto.HomeSeekFurnitureGalleryScoreNotifyOuterClass.HomeSeekFurnitureGalleryScoreNotifyOrBuilder
@@ -162,11 +167,6 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
         public GalleryStopReasonOuterClass.GalleryStopReason getReason() {
             GalleryStopReasonOuterClass.GalleryStopReason result = GalleryStopReasonOuterClass.GalleryStopReason.valueOf(this.reason_);
             return result == null ? GalleryStopReasonOuterClass.GalleryStopReason.UNRECOGNIZED : result;
-        }
-
-        @Override // emu.grasscutter.net.proto.HomeSeekFurnitureGalleryScoreNotifyOuterClass.HomeSeekFurnitureGalleryScoreNotifyOrBuilder
-        public int getGalleryId() {
-            return this.galleryId_;
         }
 
         @Override // emu.grasscutter.net.proto.HomeSeekFurnitureGalleryScoreNotifyOuterClass.HomeSeekFurnitureGalleryScoreNotifyOrBuilder
@@ -199,14 +199,14 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.galleryId_ != 0) {
+                output.writeUInt32(2, this.galleryId_);
+            }
             if (this.record_ != null) {
-                output.writeMessage(2, getRecord());
+                output.writeMessage(7, getRecord());
             }
             if (this.reason_ != GalleryStopReasonOuterClass.GalleryStopReason.GALLERY_STOP_REASON_NONE.getNumber()) {
-                output.writeEnum(7, this.reason_);
-            }
-            if (this.galleryId_ != 0) {
-                output.writeUInt32(13, this.galleryId_);
+                output.writeEnum(9, this.reason_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -218,14 +218,14 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.galleryId_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.galleryId_);
+            }
             if (this.record_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(2, getRecord());
+                size2 += CodedOutputStream.computeMessageSize(7, getRecord());
             }
             if (this.reason_ != GalleryStopReasonOuterClass.GalleryStopReason.GALLERY_STOP_REASON_NONE.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(7, this.reason_);
-            }
-            if (this.galleryId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.galleryId_);
+                size2 += CodedOutputStream.computeEnumSize(9, this.reason_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -241,7 +241,7 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
                 return equals(obj);
             }
             HomeSeekFurnitureGalleryScoreNotify other = (HomeSeekFurnitureGalleryScoreNotify) obj;
-            if (this.reason_ == other.reason_ && getGalleryId() == other.getGalleryId() && hasRecord() == other.hasRecord()) {
+            if (getGalleryId() == other.getGalleryId() && this.reason_ == other.reason_ && hasRecord() == other.hasRecord()) {
                 return (!hasRecord() || getRecord().equals(other.getRecord())) && this.unknownFields.equals(other.unknownFields);
             }
             return false;
@@ -252,9 +252,9 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + this.reason_)) + 13)) + getGalleryId();
+            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getGalleryId())) + 9)) + this.reason_;
             if (hasRecord()) {
-                hash = (53 * ((37 * hash) + 2)) + getRecord().hashCode();
+                hash = (53 * ((37 * hash) + 7)) + getRecord().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -335,8 +335,8 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeSeekFurnitureGalleryScoreNotifyOuterClass$HomeSeekFurnitureGalleryScoreNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements HomeSeekFurnitureGalleryScoreNotifyOrBuilder {
-            private int reason_ = 0;
             private int galleryId_;
+            private int reason_ = 0;
             private HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord record_;
             private SingleFieldBuilderV3<HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord, HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord.Builder, HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecordOrBuilder> recordBuilder_;
 
@@ -346,7 +346,7 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return HomeSeekFurnitureGalleryScoreNotifyOuterClass.f763xb8af3b37.ensureFieldAccessorsInitialized(HomeSeekFurnitureGalleryScoreNotify.class, Builder.class);
+                return HomeSeekFurnitureGalleryScoreNotifyOuterClass.f746xb8af3b37.ensureFieldAccessorsInitialized(HomeSeekFurnitureGalleryScoreNotify.class, Builder.class);
             }
 
             private Builder() {
@@ -366,8 +366,8 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.reason_ = 0;
                 this.galleryId_ = 0;
+                this.reason_ = 0;
                 if (this.recordBuilder_ == null) {
                     this.record_ = null;
                 } else {
@@ -399,8 +399,8 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public HomeSeekFurnitureGalleryScoreNotify buildPartial() {
                 HomeSeekFurnitureGalleryScoreNotify result = new HomeSeekFurnitureGalleryScoreNotify(this);
-                result.reason_ = this.reason_;
                 result.galleryId_ = this.galleryId_;
+                result.reason_ = this.reason_;
                 if (this.recordBuilder_ == null) {
                     result.record_ = this.record_;
                 } else {
@@ -453,11 +453,11 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
                 if (other == HomeSeekFurnitureGalleryScoreNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.reason_ != 0) {
-                    setReasonValue(other.getReasonValue());
-                }
                 if (other.getGalleryId() != 0) {
                     setGalleryId(other.getGalleryId());
+                }
+                if (other.reason_ != 0) {
+                    setReasonValue(other.getReasonValue());
                 }
                 if (other.hasRecord()) {
                     mergeRecord(other.getRecord());
@@ -495,6 +495,23 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.HomeSeekFurnitureGalleryScoreNotifyOuterClass.HomeSeekFurnitureGalleryScoreNotifyOrBuilder
+            public int getGalleryId() {
+                return this.galleryId_;
+            }
+
+            public Builder setGalleryId(int value) {
+                this.galleryId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearGalleryId() {
+                this.galleryId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.HomeSeekFurnitureGalleryScoreNotifyOuterClass.HomeSeekFurnitureGalleryScoreNotifyOrBuilder
             public int getReasonValue() {
                 return this.reason_;
             }
@@ -522,23 +539,6 @@ public final class HomeSeekFurnitureGalleryScoreNotifyOuterClass {
 
             public Builder clearReason() {
                 this.reason_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.HomeSeekFurnitureGalleryScoreNotifyOuterClass.HomeSeekFurnitureGalleryScoreNotifyOrBuilder
-            public int getGalleryId() {
-                return this.galleryId_;
-            }
-
-            public Builder setGalleryId(int value) {
-                this.galleryId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearGalleryId() {
-                this.galleryId_ = 0;
                 onChanged();
                 return this;
             }

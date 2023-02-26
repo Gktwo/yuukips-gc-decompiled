@@ -24,14 +24,12 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EquipOuterClass.class */
 public final class EquipOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000bEquip.proto\u001a\u000fReliquary.proto\u001a\fWeapon.proto\"`\n\u0005Equip\u0012\u0011\n\tis_locked\u0018\u0003 \u0001(\b\u0012\u001f\n\treliquary\u0018\u0001 \u0001(\u000b2\n.ReliquaryH��\u0012\u0019\n\u0006weapon\u0018\u0002 \u0001(\u000b2\u0007.WeaponH��B\b\n\u0006detailB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ReliquaryOuterClass.getDescriptor(), WeaponOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000bEquip.proto\u001a\u000fReliquary.proto\u001a\fWeapon.proto\"_\n\u0005Equip\u0012\u001f\n\treliquary\u0018\u0001 \u0001(\u000b2\n.ReliquaryH��\u0012\u0019\n\u0006weapon\u0018\u0002 \u0001(\u000b2\u0007.WeaponH��\u0012\u0010\n\bisLocked\u0018\u0003 \u0001(\bB\b\n\u0006detailB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ReliquaryOuterClass.getDescriptor(), WeaponOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_Equip_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_Equip_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_Equip_descriptor, new String[]{"IsLocked", "Reliquary", "Weapon", "Detail"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_Equip_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_Equip_descriptor, new String[]{"Reliquary", "Weapon", "IsLocked", "Detail"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EquipOuterClass$EquipOrBuilder.class */
     public interface EquipOrBuilder extends MessageOrBuilder {
-        boolean getIsLocked();
-
         boolean hasReliquary();
 
         ReliquaryOuterClass.Reliquary getReliquary();
@@ -43,6 +41,8 @@ public final class EquipOuterClass {
         WeaponOuterClass.Weapon getWeapon();
 
         WeaponOuterClass.WeaponOrBuilder getWeaponOrBuilder();
+
+        boolean getIsLocked();
 
         Equip.DetailCase getDetailCase();
     }
@@ -62,10 +62,10 @@ public final class EquipOuterClass {
         private static final long serialVersionUID = 0;
         private int detailCase_;
         private Object detail_;
-        public static final int IS_LOCKED_FIELD_NUMBER = 3;
-        private boolean isLocked_;
         public static final int RELIQUARY_FIELD_NUMBER = 1;
         public static final int WEAPON_FIELD_NUMBER = 2;
+        public static final int ISLOCKED_FIELD_NUMBER = 3;
+        private boolean isLocked_;
         private byte memoizedIsInitialized;
         private static final Equip DEFAULT_INSTANCE = new Equip();
         private static final Parser<Equip> PARSER = new AbstractParser<Equip>() { // from class: emu.grasscutter.net.proto.EquipOuterClass.Equip.1
@@ -205,11 +205,6 @@ public final class EquipOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.EquipOuterClass.EquipOrBuilder
-        public boolean getIsLocked() {
-            return this.isLocked_;
-        }
-
-        @Override // emu.grasscutter.net.proto.EquipOuterClass.EquipOrBuilder
         public boolean hasReliquary() {
             return this.detailCase_ == 1;
         }
@@ -249,6 +244,11 @@ public final class EquipOuterClass {
                 return (WeaponOuterClass.Weapon) this.detail_;
             }
             return WeaponOuterClass.Weapon.getDefaultInstance();
+        }
+
+        @Override // emu.grasscutter.net.proto.EquipOuterClass.EquipOrBuilder
+        public boolean getIsLocked() {
+            return this.isLocked_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -421,9 +421,9 @@ public final class EquipOuterClass {
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements EquipOrBuilder {
             private int detailCase_ = 0;
             private Object detail_;
-            private boolean isLocked_;
             private SingleFieldBuilderV3<ReliquaryOuterClass.Reliquary, ReliquaryOuterClass.Reliquary.Builder, ReliquaryOuterClass.ReliquaryOrBuilder> reliquaryBuilder_;
             private SingleFieldBuilderV3<WeaponOuterClass.Weapon, WeaponOuterClass.Weapon.Builder, WeaponOuterClass.WeaponOrBuilder> weaponBuilder_;
+            private boolean isLocked_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return EquipOuterClass.internal_static_Equip_descriptor;
@@ -479,7 +479,6 @@ public final class EquipOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Equip buildPartial() {
                 Equip result = new Equip(this);
-                result.isLocked_ = this.isLocked_;
                 if (this.detailCase_ == 1) {
                     if (this.reliquaryBuilder_ == null) {
                         result.detail_ = this.detail_;
@@ -494,6 +493,7 @@ public final class EquipOuterClass {
                         result.detail_ = this.weaponBuilder_.build();
                     }
                 }
+                result.isLocked_ = this.isLocked_;
                 result.detailCase_ = this.detailCase_;
                 onBuilt();
                 return result;
@@ -593,23 +593,6 @@ public final class EquipOuterClass {
             public Builder clearDetail() {
                 this.detailCase_ = 0;
                 this.detail_ = null;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.EquipOuterClass.EquipOrBuilder
-            public boolean getIsLocked() {
-                return this.isLocked_;
-            }
-
-            public Builder setIsLocked(boolean value) {
-                this.isLocked_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsLocked() {
-                this.isLocked_ = false;
                 onChanged();
                 return this;
             }
@@ -820,6 +803,23 @@ public final class EquipOuterClass {
                 this.detailCase_ = 2;
                 onChanged();
                 return this.weaponBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.EquipOuterClass.EquipOrBuilder
+            public boolean getIsLocked() {
+                return this.isLocked_;
+            }
+
+            public Builder setIsLocked(boolean value) {
+                this.isLocked_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsLocked() {
+                this.isLocked_ = false;
+                onChanged();
+                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

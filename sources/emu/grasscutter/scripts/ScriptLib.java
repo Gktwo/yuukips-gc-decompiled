@@ -12,9 +12,7 @@ import emu.grasscutter.game.entity.EntityRegion;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.entity.gadget.GadgetContent;
 import emu.grasscutter.game.entity.gadget.GadgetWorktop;
-import emu.grasscutter.game.entity.platform.EntityPlatform;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.props.ClimateType;
 import emu.grasscutter.game.props.EnterReason;
 import emu.grasscutter.game.props.EntityType;
 import emu.grasscutter.game.quest.GameQuest;
@@ -30,10 +28,12 @@ import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.event.player.PlayerTeleportEvent;
 import emu.grasscutter.server.packet.send.PacketBeginCameraSceneLookNotify;
 import emu.grasscutter.server.packet.send.PacketCanUseSkillNotify;
+import emu.grasscutter.server.packet.send.PacketCutSceneBeginNotify;
 import emu.grasscutter.server.packet.send.PacketDungeonShowReminderNotify;
-import emu.grasscutter.server.packet.send.PacketPlatformStartRouteNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify;
+import emu.grasscutter.server.packet.send.PacketPlayerWorldSceneInfoListNotifyModify;
 import emu.grasscutter.server.packet.send.PacketScenePointUnlockNotify;
+import emu.grasscutter.server.packet.send.PacketServerGlobalValueChangeNotify;
 import emu.grasscutter.server.packet.send.PacketWorktopOptionNotify;
 import emu.grasscutter.utils.Position;
 import java.util.ArrayList;
@@ -201,17 +201,11 @@ public class ScriptLib {
 
     public int SetGadgetStateByConfigId(int configId, int gadgetState) {
         logger.debug("[LUA] Call SetGadgetStateByConfigId with {},{}", Integer.valueOf(configId), Integer.valueOf(gadgetState));
-        Optional<GameEntity> entity = getSceneScriptManager().getScene().getEntities().values().stream().filter(e -> {
-            return e.getConfigId() == configId;
-        }).findFirst();
-        if (entity.isEmpty()) {
+        GameEntity entity = getSceneScriptManager().getScene().getEntityByConfigId(configId);
+        if (!(entity instanceof EntityGadget)) {
             return 1;
         }
-        GameEntity gameEntity = entity.get();
-        if (!(gameEntity instanceof EntityGadget)) {
-            return 1;
-        }
-        ((EntityGadget) gameEntity).updateState(gadgetState);
+        ((EntityGadget) entity).updateState(gadgetState);
         return 0;
     }
 
@@ -363,7 +357,7 @@ public class ScriptLib {
         if (suiteData == null) {
             logger.error("[LUA] Call AddExtraGroupSuite failed because group {} did not find data suiteData", Integer.valueOf(groupId));
             return -1;
-        } else if (getSceneScriptManager().getScene().getChallenge() == null || !getSceneScriptManager().getScene().getChallenge().inProgress() || (id_saat_ini = getSceneScriptManager().getScene().getChallenge().getGroup().f957id) == groupId) {
+        } else if (getSceneScriptManager().getScene().getChallenge() == null || !getSceneScriptManager().getScene().getChallenge().inProgress() || (id_saat_ini = getSceneScriptManager().getScene().getChallenge().getGroup().f922id) == groupId) {
             getSceneScriptManager().addGroupSuite(group, suiteData);
             return 0;
         } else {
@@ -500,7 +494,7 @@ public class ScriptLib {
     private void printLog(String source, String msg) {
         SceneGroup currentGroup = getCurrentGroup().orElseGet(null);
         if (currentGroup != null) {
-            logger.debug("[LUA] {} {} {}", source, Integer.valueOf(currentGroup.f957id), msg);
+            logger.debug("[LUA] {} {} {}", source, Integer.valueOf(currentGroup.f922id), msg);
         } else {
             logger.debug("[LUA] {} {}", source, msg);
         }
@@ -523,7 +517,7 @@ public class ScriptLib {
         logger.debug("[LUA] Call GetGroupMonsterCount ");
         return (int) getSceneScriptManager().getScene().getEntities().values().stream().filter(e -> {
             return (e instanceof EntityMonster) && e.getGroupId() == ((Integer) getCurrentGroup().map(sceneGroup -> {
-                return Integer.valueOf(sceneGroup.f957id);
+                return Integer.valueOf(sceneGroup.f922id);
             }).orElse(-1)).intValue();
         }).count();
     }
@@ -608,7 +602,7 @@ public class ScriptLib {
     }
 
     private GameEntity createGadget(int configId, SceneGroup group) {
-        EntityGadget entity = getSceneScriptManager().createGadget(group.f957id, group.block_id, group.gadgets.get(Integer.valueOf(configId)));
+        EntityGadget entity = getSceneScriptManager().createGadget(group.f922id, group.block_id, group.gadgets.get(Integer.valueOf(configId)));
         getSceneScriptManager().addEntity(entity);
         return entity;
     }
@@ -624,7 +618,7 @@ public class ScriptLib {
     public int GetGadgetStateByConfigId(int groupId, int configId) {
         logger.debug("[LUA] Call GetGadgetStateByConfigId with {},{}", Integer.valueOf(groupId), Integer.valueOf(configId));
         if (groupId == 0) {
-            groupId = getCurrentGroup().get().f957id;
+            groupId = getCurrentGroup().get().f922id;
         }
         Optional<GameEntity> gadget = getSceneScriptManager().getScene().getEntities().values().stream().filter(g -> {
             return (g instanceof EntityGadget) && ((EntityGadget) g).getGroupId() == groupId;
@@ -722,6 +716,18 @@ public class ScriptLib {
 
     public int SetGroupReplaceable(int groupId, boolean var2) {
         logger.debug("[LUA] Call unimplemented SetGroupReplaceable with {} {}", Integer.valueOf(groupId), Boolean.valueOf(var2));
+        return 0;
+    }
+
+    public int DelSceneTag(int sceneId, int sceneTagId) {
+        logger.warn("[LUA] Call unchecked DelSceneTag with sceneId :{} and sceneTagId : {}", Integer.valueOf(sceneId), Integer.valueOf(sceneTagId));
+        getSceneScriptManager().getScene().broadcastPacket(new PacketPlayerWorldSceneInfoListNotifyModify(sceneId, List.of()));
+        return 0;
+    }
+
+    public int AddSceneTag(int sceneId, int sceneTagId) {
+        logger.warn("[LUA] Call unchecked AddSceneTag with sceneId :{} and sceneTagId : {}", Integer.valueOf(sceneId), Integer.valueOf(sceneTagId));
+        getSceneScriptManager().getScene().broadcastPacket(new PacketPlayerWorldSceneInfoListNotifyModify(sceneId, List.of(Integer.valueOf(sceneTagId))));
         return 0;
     }
 
@@ -887,6 +893,16 @@ public class ScriptLib {
         return 0;
     }
 
+    public int RevokePlayerShowTemplateReminder(int context, int value, int value2) {
+        logger.warn("[LUA] unimplemented Call RevokePlayerShowTemplateReminder");
+        return 0;
+    }
+
+    public int IsInRegion() {
+        logger.warn("[LUA] Call unimplemented IsInRegion");
+        return 0;
+    }
+
     public int SetTeamEntityGlobalFloatValue(int[] sceneUidList, String var2, int var3) {
         logger.debug("[LUA] Call unimplemented SetTeamEntityGlobalFloatValue with {} {} {}", sceneUidList, var2, Integer.valueOf(var3));
         return 0;
@@ -1014,9 +1030,17 @@ public class ScriptLib {
         return 0;
     }
 
-    public int PlayCutScene(int var1, int var2) {
-        logger.debug("[LUA] Call unimplemented PlayCutScene with {} {}", Integer.valueOf(var1), Integer.valueOf(var2));
-        return 0;
+    public int PlayCutScene(int cutsceneId, int isWaitOthersBool) {
+        logger.warn("[LUA] Call unimplemented PlayCutScene with {} {}", Integer.valueOf(cutsceneId), Integer.valueOf(isWaitOthersBool));
+        if (isWaitOthersBool == 1) {
+            getSceneScriptManager().getScene().broadcastPacket(new PacketCutSceneBeginNotify(true, cutsceneId));
+            return 0;
+        } else if (isWaitOthersBool != 0) {
+            return 0;
+        } else {
+            getSceneScriptManager().getScene().broadcastPacket(new PacketCutSceneBeginNotify(false, cutsceneId));
+            return 0;
+        }
     }
 
     public int ScenePlaySound(LuaTable var1) {
@@ -1089,10 +1113,7 @@ public class ScriptLib {
     }
 
     public int SetWeatherAreaState(int var1, int var2) {
-        logger.debug("[LUA] Call unimplemented SetWeatherAreaState with {} {}", Integer.valueOf(var1), Integer.valueOf(var2));
-        getSceneScriptManager().getScene().getPlayers().forEach(p -> {
-            p.setWeather(var1, ClimateType.getTypeByValue(var2));
-        });
+        logger.warn("[LUA] Call implemented SetWeatherAreaState with {} {}", Integer.valueOf(var1), Integer.valueOf(var2));
         return 0;
     }
 
@@ -1112,7 +1133,7 @@ public class ScriptLib {
     }
 
     public int CreateChannellerSlabCampRewardGadget(int configId) {
-        logger.warn("[LUA] Call unimplemented CreateChannellerSlabCampRewardGadget {}", Integer.valueOf(configId));
+        logger.debug("[LUA] Call unimplemented CreateChannellerSlabCampRewardGadget {}", Integer.valueOf(configId));
         SceneGroup group = this.currentGroup.getIfExists();
         if (group == null) {
             return 1;
@@ -1319,11 +1340,6 @@ public class ScriptLib {
         return 0;
     }
 
-    public int AddSceneTag(int id_scene, int id_tag) {
-        logger.warn("[LUA] unimplemented Call AddSceneTag with {},{}", Integer.valueOf(id_scene), Integer.valueOf(id_tag));
-        return 0;
-    }
-
     public int GetRegionConfigId(LuaTable config) {
         logger.debug("[LUA] unimplemented Call GetRegionConfigId with {}", config);
         return 0;
@@ -1351,19 +1367,6 @@ public class ScriptLib {
 
     public int StartPlatform(int id_platform) {
         logger.warn("[LUA] unimplemented Call StartPlatform with {}", Integer.valueOf(id_platform));
-        for (Player player : getSceneScriptManager().getScene().getPlayers()) {
-            Scene scene = player.getScene();
-            List<GameEntity> tostart = scene.getEntities().values().stream().filter(gameEntity -> {
-                return gameEntity instanceof EntityPlatform;
-            }).toList();
-            if (tostart.size() == 0) {
-                return 1;
-            }
-            for (GameEntity toadd : tostart) {
-                logger.warn("[LUA] start {},{}", Integer.valueOf(toadd.getConfigId()), Integer.valueOf(toadd.getId()));
-                scene.broadcastPacket(new PacketPlatformStartRouteNotify((EntityPlatform) toadd, scene));
-            }
-        }
         return 0;
     }
 
@@ -1372,8 +1375,10 @@ public class ScriptLib {
         return 0;
     }
 
-    public int SetEntityServerGlobalValueByConfigId(int id, String name, int stats) {
-        logger.warn("[LUA] unimplemented Call SetEntityServerGlobalValueByConfigId with {},{},{}", Integer.valueOf(id), name, Integer.valueOf(stats));
+    public int SetEntityServerGlobalValueByConfigId(int configId, String globalVarName, int val) {
+        int entityId = GetEntityIdByConfigId(configId);
+        getSceneScriptManager().getScene().broadcastPacket(new PacketServerGlobalValueChangeNotify(entityId, val, globalVarName));
+        Grasscutter.getLogger().warn("called SetEntityServerGlobalValueByConfigId with {} {} {} > entityId {}", Integer.valueOf(configId), globalVarName, Integer.valueOf(val), Integer.valueOf(entityId));
         return 0;
     }
 

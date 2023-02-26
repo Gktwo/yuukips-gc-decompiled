@@ -23,7 +23,7 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AiThreatInfoOuterClass.class */
 public final class AiThreatInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012AiThreatInfo.proto\"y\n\fAiThreatInfo\u00125\n\rai_threat_map\u0018\u000b \u0003(\u000b2\u001e.AiThreatInfo.AiThreatMapEntry\u001a2\n\u0010AiThreatMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012AiThreatInfo.proto\"w\n\fAiThreatInfo\u00123\n\u000baiThreatMap\u0018\r \u0003(\u000b2\u001e.AiThreatInfo.AiThreatMapEntry\u001a2\n\u0010AiThreatMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AiThreatInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AiThreatInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AiThreatInfo_descriptor, new String[]{"AiThreatMap"});
     private static final Descriptors.Descriptor internal_static_AiThreatInfo_AiThreatMapEntry_descriptor = internal_static_AiThreatInfo_descriptor.getNestedTypes().get(0);
@@ -58,7 +58,7 @@ public final class AiThreatInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AiThreatInfoOuterClass$AiThreatInfo.class */
     public static final class AiThreatInfo extends GeneratedMessageV3 implements AiThreatInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AI_THREAT_MAP_FIELD_NUMBER = 11;
+        public static final int AITHREATMAP_FIELD_NUMBER = 13;
         private MapField<Integer, Integer> aiThreatMap_;
         private byte memoizedIsInitialized;
         private static final AiThreatInfo DEFAULT_INSTANCE = new AiThreatInfo();
@@ -110,7 +110,7 @@ public final class AiThreatInfoOuterClass {
                 r4 = this;
                 r0 = r5
                 switch(r0) {
-                    case 11: goto L_0x0014;
+                    case 13: goto L_0x0014;
                     default: goto L_0x0019;
                 }
                 r0 = r4
@@ -163,7 +163,7 @@ public final class AiThreatInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 90:
+                            case 106:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.aiThreatMap_ = MapField.newMapField(AiThreatMapDefaultEntryHolder.defaultEntry);
                                     mutable_bitField0_ |= 1;
@@ -267,7 +267,7 @@ public final class AiThreatInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetAiThreatMap(), AiThreatMapDefaultEntryHolder.defaultEntry, 11);
+            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetAiThreatMap(), AiThreatMapDefaultEntryHolder.defaultEntry, 13);
             this.unknownFields.writeTo(output);
         }
 
@@ -279,7 +279,7 @@ public final class AiThreatInfoOuterClass {
             }
             int size2 = 0;
             for (Map.Entry<Integer, Integer> entry : internalGetAiThreatMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(11, AiThreatMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+                size2 += CodedOutputStream.computeMessageSize(13, AiThreatMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -305,7 +305,7 @@ public final class AiThreatInfoOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (!internalGetAiThreatMap().getMap().isEmpty()) {
-                hash = (53 * ((37 * hash) + 11)) + internalGetAiThreatMap().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + internalGetAiThreatMap().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -426,7 +426,7 @@ public final class AiThreatInfoOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 11: goto L_0x0014;
+                        case 13: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -479,7 +479,7 @@ public final class AiThreatInfoOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 11: goto L_0x0014;
+                        case 13: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4

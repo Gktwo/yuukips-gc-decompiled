@@ -15,16 +15,16 @@ public final class UShortArrayKt {
         Intrinsics.checkNotNullParameter(function1, "init");
         short[] sArr = new short[size];
         for (int i = 0; i < size; i++) {
-            sArr[i] = function1.invoke(Integer.valueOf(i)).m7388unboximpl();
+            sArr[i] = function1.invoke(Integer.valueOf(i)).m7385unboximpl();
         }
-        return UShortArray.m7404constructorimpl(sArr);
+        return UShortArray.m7401constructorimpl(sArr);
     }
 
     @SinceKotlin(version = "1.3")
     @ExperimentalUnsignedTypes
     @InlineOnly
     /* renamed from: ushortArrayOf-rL5Bavg  reason: not valid java name */
-    private static final short[] m7409ushortArrayOfrL5Bavg(short... elements) {
+    private static final short[] m7406ushortArrayOfrL5Bavg(short... elements) {
         Intrinsics.checkNotNullParameter(elements, "elements");
         return elements;
     }

@@ -10,27 +10,27 @@ public final class UShortKt {
     @WasExperimental(markerClass = {ExperimentalUnsignedTypes.class})
     @InlineOnly
     private static final short toUShort(byte $this$toUShort) {
-        return UShort.m7386constructorimpl((short) $this$toUShort);
+        return UShort.m7383constructorimpl((short) $this$toUShort);
     }
 
     @SinceKotlin(version = "1.5")
     @WasExperimental(markerClass = {ExperimentalUnsignedTypes.class})
     @InlineOnly
     private static final short toUShort(short $this$toUShort) {
-        return UShort.m7386constructorimpl($this$toUShort);
+        return UShort.m7383constructorimpl($this$toUShort);
     }
 
     @SinceKotlin(version = "1.5")
     @WasExperimental(markerClass = {ExperimentalUnsignedTypes.class})
     @InlineOnly
     private static final short toUShort(int $this$toUShort) {
-        return UShort.m7386constructorimpl((short) $this$toUShort);
+        return UShort.m7383constructorimpl((short) $this$toUShort);
     }
 
     @SinceKotlin(version = "1.5")
     @WasExperimental(markerClass = {ExperimentalUnsignedTypes.class})
     @InlineOnly
     private static final short toUShort(long $this$toUShort) {
-        return UShort.m7386constructorimpl((short) ((int) $this$toUShort));
+        return UShort.m7383constructorimpl((short) ((int) $this$toUShort));
     }
 }

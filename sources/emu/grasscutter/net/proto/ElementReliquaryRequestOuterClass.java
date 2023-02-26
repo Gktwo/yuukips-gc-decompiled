@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ElementReliquaryRequestOuterClass.class */
 public final class ElementReliquaryRequestOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dElementReliquaryRequest.proto\"C\n\u0017ElementReliquaryRequest\u0012\u0012\n\nequip_type\u0018\t \u0001(\r\u0012\u0014\n\felement_type\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dElementReliquaryRequest.proto\"A\n\u0017ElementReliquaryRequest\u0012\u0013\n\u000belementType\u0018\f \u0001(\r\u0012\u0011\n\tequipType\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ElementReliquaryRequest_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ElementReliquaryRequest_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ElementReliquaryRequest_descriptor, new String[]{"EquipType", "ElementType"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ElementReliquaryRequest_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ElementReliquaryRequest_descriptor, new String[]{"ElementType", "EquipType"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ElementReliquaryRequestOuterClass$ElementReliquaryRequestOrBuilder.class */
     public interface ElementReliquaryRequestOrBuilder extends MessageOrBuilder {
-        int getEquipType();
-
         int getElementType();
+
+        int getEquipType();
     }
 
     private ElementReliquaryRequestOuterClass() {
@@ -43,10 +43,10 @@ public final class ElementReliquaryRequestOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ElementReliquaryRequestOuterClass$ElementReliquaryRequest.class */
     public static final class ElementReliquaryRequest extends GeneratedMessageV3 implements ElementReliquaryRequestOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int EQUIP_TYPE_FIELD_NUMBER = 9;
-        private int equipType_;
-        public static final int ELEMENT_TYPE_FIELD_NUMBER = 12;
+        public static final int ELEMENTTYPE_FIELD_NUMBER = 12;
         private int elementType_;
+        public static final int EQUIPTYPE_FIELD_NUMBER = 7;
+        private int equipType_;
         private byte memoizedIsInitialized;
         private static final ElementReliquaryRequest DEFAULT_INSTANCE = new ElementReliquaryRequest();
         private static final Parser<ElementReliquaryRequest> PARSER = new AbstractParser<ElementReliquaryRequest>() { // from class: emu.grasscutter.net.proto.ElementReliquaryRequestOuterClass.ElementReliquaryRequest.1
@@ -92,7 +92,7 @@ public final class ElementReliquaryRequestOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 72:
+                            case 56:
                                 this.equipType_ = input.readUInt32();
                                 break;
                             case 96:
@@ -128,13 +128,13 @@ public final class ElementReliquaryRequestOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ElementReliquaryRequestOuterClass.ElementReliquaryRequestOrBuilder
-        public int getEquipType() {
-            return this.equipType_;
+        public int getElementType() {
+            return this.elementType_;
         }
 
         @Override // emu.grasscutter.net.proto.ElementReliquaryRequestOuterClass.ElementReliquaryRequestOrBuilder
-        public int getElementType() {
-            return this.elementType_;
+        public int getEquipType() {
+            return this.equipType_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -153,7 +153,7 @@ public final class ElementReliquaryRequestOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.equipType_ != 0) {
-                output.writeUInt32(9, this.equipType_);
+                output.writeUInt32(7, this.equipType_);
             }
             if (this.elementType_ != 0) {
                 output.writeUInt32(12, this.elementType_);
@@ -169,7 +169,7 @@ public final class ElementReliquaryRequestOuterClass {
             }
             int size2 = 0;
             if (this.equipType_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(9, this.equipType_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.equipType_);
             }
             if (this.elementType_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(12, this.elementType_);
@@ -188,7 +188,7 @@ public final class ElementReliquaryRequestOuterClass {
                 return equals(obj);
             }
             ElementReliquaryRequest other = (ElementReliquaryRequest) obj;
-            return getEquipType() == other.getEquipType() && getElementType() == other.getElementType() && this.unknownFields.equals(other.unknownFields);
+            return getElementType() == other.getElementType() && getEquipType() == other.getEquipType() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -196,7 +196,7 @@ public final class ElementReliquaryRequestOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getEquipType())) + 12)) + getElementType())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getElementType())) + 7)) + getEquipType())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -275,8 +275,8 @@ public final class ElementReliquaryRequestOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ElementReliquaryRequestOuterClass$ElementReliquaryRequest$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ElementReliquaryRequestOrBuilder {
-            private int equipType_;
             private int elementType_;
+            private int equipType_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ElementReliquaryRequestOuterClass.internal_static_ElementReliquaryRequest_descriptor;
@@ -304,8 +304,8 @@ public final class ElementReliquaryRequestOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.equipType_ = 0;
                 this.elementType_ = 0;
+                this.equipType_ = 0;
                 return this;
             }
 
@@ -331,8 +331,8 @@ public final class ElementReliquaryRequestOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public ElementReliquaryRequest buildPartial() {
                 ElementReliquaryRequest result = new ElementReliquaryRequest(this);
-                result.equipType_ = this.equipType_;
                 result.elementType_ = this.elementType_;
+                result.equipType_ = this.equipType_;
                 onBuilt();
                 return result;
             }
@@ -380,11 +380,11 @@ public final class ElementReliquaryRequestOuterClass {
                 if (other == ElementReliquaryRequest.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getEquipType() != 0) {
-                    setEquipType(other.getEquipType());
-                }
                 if (other.getElementType() != 0) {
                     setElementType(other.getElementType());
+                }
+                if (other.getEquipType() != 0) {
+                    setEquipType(other.getEquipType());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -419,23 +419,6 @@ public final class ElementReliquaryRequestOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ElementReliquaryRequestOuterClass.ElementReliquaryRequestOrBuilder
-            public int getEquipType() {
-                return this.equipType_;
-            }
-
-            public Builder setEquipType(int value) {
-                this.equipType_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearEquipType() {
-                this.equipType_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ElementReliquaryRequestOuterClass.ElementReliquaryRequestOrBuilder
             public int getElementType() {
                 return this.elementType_;
             }
@@ -448,6 +431,23 @@ public final class ElementReliquaryRequestOuterClass {
 
             public Builder clearElementType() {
                 this.elementType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ElementReliquaryRequestOuterClass.ElementReliquaryRequestOrBuilder
+            public int getEquipType() {
+                return this.equipType_;
+            }
+
+            public Builder setEquipType(int value) {
+                this.equipType_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearEquipType() {
+                this.equipType_ = 0;
                 onChanged();
                 return this;
             }

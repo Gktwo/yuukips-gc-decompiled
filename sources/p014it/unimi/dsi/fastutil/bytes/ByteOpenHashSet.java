@@ -22,13 +22,13 @@ public class ByteOpenHashSet extends AbstractByteSet implements Serializable, Cl
     protected transient boolean containsNull;
 
     /* renamed from: n */
-    protected transient int f1296n;
+    protected transient int f1260n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1297f;
+    protected final float f1261f;
 
     public ByteOpenHashSet(int expected, float f) {
         if (f <= 0.0f || f >= 1.0f) {
@@ -36,13 +36,13 @@ public class ByteOpenHashSet extends AbstractByteSet implements Serializable, Cl
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1297f = f;
+            this.f1261f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1296n = arraySize;
+            this.f1260n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1296n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1296n, f);
-            this.key = new byte[this.f1296n + 1];
+            this.mask = this.f1260n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1260n, f);
+            this.key = new byte[this.f1260n + 1];
         }
     }
 
@@ -163,22 +163,22 @@ public class ByteOpenHashSet extends AbstractByteSet implements Serializable, Cl
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1297f);
-        if (needed > this.f1296n) {
+        int needed = HashCommon.arraySize(capacity, this.f1261f);
+        if (needed > this.f1260n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1297f)))));
-        if (needed > this.f1296n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1261f)))));
+        if (needed > this.f1260n) {
             rehash(needed);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteCollection, p014it.unimi.dsi.fastutil.bytes.ByteCollection
     public boolean addAll(ByteCollection c) {
-        if (((double) this.f1297f) <= 0.5d) {
+        if (((double) this.f1261f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -188,7 +188,7 @@ public class ByteOpenHashSet extends AbstractByteSet implements Serializable, Cl
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Byte> c) {
-        if (((double) this.f1297f) <= 0.5d) {
+        if (((double) this.f1261f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -228,7 +228,7 @@ public class ByteOpenHashSet extends AbstractByteSet implements Serializable, Cl
         if (i2 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f1297f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f1261f));
         return true;
     }
 
@@ -264,21 +264,21 @@ public class ByteOpenHashSet extends AbstractByteSet implements Serializable, Cl
     private boolean removeEntry(int pos) {
         this.size--;
         shiftKeys(pos);
-        if (this.f1296n <= this.minN || this.size >= this.maxFill / 4 || this.f1296n <= 16) {
+        if (this.f1260n <= this.minN || this.size >= this.maxFill / 4 || this.f1260n <= 16) {
             return true;
         }
-        rehash(this.f1296n / 2);
+        rehash(this.f1260n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f1296n] = 0;
+        this.key[this.f1260n] = 0;
         this.size--;
-        if (this.f1296n <= this.minN || this.size >= this.maxFill / 4 || this.f1296n <= 16) {
+        if (this.f1260n <= this.minN || this.size >= this.maxFill / 4 || this.f1260n <= 16) {
             return true;
         }
-        rehash(this.f1296n / 2);
+        rehash(this.f1260n / 2);
         return true;
     }
 
@@ -366,20 +366,20 @@ public class ByteOpenHashSet extends AbstractByteSet implements Serializable, Cl
         int last;
 
         /* renamed from: c */
-        int f1298c;
+        int f1262c;
         boolean mustReturnNull;
         ByteArrayList wrapped;
 
         private SetIterator() {
-            this.pos = ByteOpenHashSet.this.f1296n;
+            this.pos = ByteOpenHashSet.this.f1260n;
             this.last = -1;
-            this.f1298c = ByteOpenHashSet.this.size;
+            this.f1262c = ByteOpenHashSet.this.size;
             this.mustReturnNull = ByteOpenHashSet.this.containsNull;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1298c != 0;
+            return this.f1262c != 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
@@ -387,11 +387,11 @@ public class ByteOpenHashSet extends AbstractByteSet implements Serializable, Cl
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f1298c--;
+            this.f1262c--;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = ByteOpenHashSet.this.f1296n;
-                return ByteOpenHashSet.this.key[ByteOpenHashSet.this.f1296n];
+                this.last = ByteOpenHashSet.this.f1260n;
+                return ByteOpenHashSet.this.key[ByteOpenHashSet.this.f1260n];
             }
             byte[] key = ByteOpenHashSet.this.key;
             do {
@@ -450,9 +450,9 @@ public class ByteOpenHashSet extends AbstractByteSet implements Serializable, Cl
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == ByteOpenHashSet.this.f1296n) {
+            if (this.last == ByteOpenHashSet.this.f1260n) {
                 ByteOpenHashSet.this.containsNull = false;
-                ByteOpenHashSet.this.key[ByteOpenHashSet.this.f1296n] = 0;
+                ByteOpenHashSet.this.key[ByteOpenHashSet.this.f1260n] = 0;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -469,22 +469,22 @@ public class ByteOpenHashSet extends AbstractByteSet implements Serializable, Cl
             byte[] key = ByteOpenHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = ByteOpenHashSet.this.f1296n;
-                action.accept(key[ByteOpenHashSet.this.f1296n]);
-                this.f1298c--;
+                this.last = ByteOpenHashSet.this.f1260n;
+                action.accept(key[ByteOpenHashSet.this.f1260n]);
+                this.f1262c--;
             }
-            while (this.f1298c != 0) {
+            while (this.f1262c != 0) {
                 int i = this.pos - 1;
                 this.pos = i;
                 if (i < 0) {
                     this.last = Integer.MIN_VALUE;
                     action.accept(this.wrapped.getByte((-this.pos) - 1));
-                    this.f1298c--;
+                    this.f1262c--;
                 } else if (key[this.pos] != 0) {
                     int i2 = this.pos;
                     this.last = i2;
                     action.accept(key[i2]);
-                    this.f1298c--;
+                    this.f1262c--;
                 }
             }
         }
@@ -505,22 +505,22 @@ public class ByteOpenHashSet extends AbstractByteSet implements Serializable, Cl
         int max;
 
         /* renamed from: c */
-        int f1299c;
+        int f1263c;
         boolean mustReturnNull;
         boolean hasSplit;
 
         SetSpliterator() {
             this.pos = 0;
-            this.max = ByteOpenHashSet.this.f1296n;
-            this.f1299c = 0;
+            this.max = ByteOpenHashSet.this.f1260n;
+            this.f1263c = 0;
             this.mustReturnNull = ByteOpenHashSet.this.containsNull;
             this.hasSplit = false;
         }
 
         SetSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = ByteOpenHashSet.this.f1296n;
-            this.f1299c = 0;
+            this.max = ByteOpenHashSet.this.f1260n;
+            this.f1263c = 0;
             this.mustReturnNull = ByteOpenHashSet.this.containsNull;
             this.hasSplit = false;
             this.pos = pos;
@@ -532,14 +532,14 @@ public class ByteOpenHashSet extends AbstractByteSet implements Serializable, Cl
         public boolean tryAdvance(ByteConsumer action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1299c++;
-                action.accept(ByteOpenHashSet.this.key[ByteOpenHashSet.this.f1296n]);
+                this.f1263c++;
+                action.accept(ByteOpenHashSet.this.key[ByteOpenHashSet.this.f1260n]);
                 return true;
             }
             byte[] key = ByteOpenHashSet.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f1299c++;
+                    this.f1263c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(key[i]);
@@ -554,13 +554,13 @@ public class ByteOpenHashSet extends AbstractByteSet implements Serializable, Cl
             byte[] key = ByteOpenHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                action.accept(key[ByteOpenHashSet.this.f1296n]);
-                this.f1299c++;
+                action.accept(key[ByteOpenHashSet.this.f1260n]);
+                this.f1263c++;
             }
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     action.accept(key[this.pos]);
-                    this.f1299c++;
+                    this.f1263c++;
                 }
                 this.pos++;
             }
@@ -574,9 +574,9 @@ public class ByteOpenHashSet extends AbstractByteSet implements Serializable, Cl
         @Override // java.util.Spliterator
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (ByteOpenHashSet.this.size - this.f1299c);
+                return (long) (ByteOpenHashSet.this.size - this.f1263c);
             }
-            return Math.min((long) (ByteOpenHashSet.this.size - this.f1299c), ((long) ((((double) ByteOpenHashSet.this.realSize()) / ((double) ByteOpenHashSet.this.f1296n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (ByteOpenHashSet.this.size - this.f1263c), ((long) ((((double) ByteOpenHashSet.this.realSize()) / ((double) ByteOpenHashSet.this.f1260n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
@@ -703,10 +703,10 @@ public class ByteOpenHashSet extends AbstractByteSet implements Serializable, Cl
     @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterable
     public void forEach(ByteConsumer action) {
         if (this.containsNull) {
-            action.accept(this.key[this.f1296n]);
+            action.accept(this.key[this.f1260n]);
         }
         byte[] key = this.key;
-        int pos = this.f1296n;
+        int pos = this.f1260n;
         while (true) {
             pos--;
             if (pos == 0) {
@@ -723,8 +723,8 @@ public class ByteOpenHashSet extends AbstractByteSet implements Serializable, Cl
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1297f)));
-        if (l >= this.f1296n || this.size > HashCommon.maxFill(l, this.f1297f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1261f)));
+        if (l >= this.f1260n || this.size > HashCommon.maxFill(l, this.f1261f)) {
             return true;
         }
         try {
@@ -740,7 +740,7 @@ public class ByteOpenHashSet extends AbstractByteSet implements Serializable, Cl
         byte[] key = this.key;
         int mask = newN - 1;
         byte[] newKey = new byte[newN + 1];
-        int i2 = this.f1296n;
+        int i2 = this.f1260n;
         int j = realSize();
         while (true) {
             j--;
@@ -758,9 +758,9 @@ public class ByteOpenHashSet extends AbstractByteSet implements Serializable, Cl
                 }
                 newKey[pos] = key[i2];
             } else {
-                this.f1296n = newN;
+                this.f1260n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f1296n, this.f1297f);
+                this.maxFill = HashCommon.maxFill(this.f1260n, this.f1261f);
                 this.key = newKey;
                 return;
             }
@@ -830,10 +830,10 @@ public class ByteOpenHashSet extends AbstractByteSet implements Serializable, Cl
         int pos;
         int i;
         s.defaultReadObject();
-        this.f1296n = HashCommon.arraySize(this.size, this.f1297f);
-        this.maxFill = HashCommon.maxFill(this.f1296n, this.f1297f);
-        this.mask = this.f1296n - 1;
-        byte[] key = new byte[this.f1296n + 1];
+        this.f1260n = HashCommon.arraySize(this.size, this.f1261f);
+        this.maxFill = HashCommon.maxFill(this.f1260n, this.f1261f);
+        this.mask = this.f1260n - 1;
+        byte[] key = new byte[this.f1260n + 1];
         this.key = key;
         int i2 = this.size;
         while (true) {
@@ -841,7 +841,7 @@ public class ByteOpenHashSet extends AbstractByteSet implements Serializable, Cl
             if (i2 != 0) {
                 byte k = s.readByte();
                 if (k == 0) {
-                    pos = this.f1296n;
+                    pos = this.f1260n;
                     this.containsNull = true;
                 } else {
                     int mix = HashCommon.mix((int) k) & this.mask;

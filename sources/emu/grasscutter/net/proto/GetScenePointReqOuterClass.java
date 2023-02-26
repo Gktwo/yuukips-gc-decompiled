@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetScenePointReqOuterClass.class */
 public final class GetScenePointReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016GetScenePointReq.proto\"8\n\u0010GetScenePointReq\u0012\u0010\n\bscene_id\u0018\r \u0001(\r\u0012\u0012\n\nbelong_uid\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016GetScenePointReq.proto\"6\n\u0010GetScenePointReq\u0012\u000f\n\u0007sceneId\u0018\u000f \u0001(\r\u0012\u0011\n\tbelongUid\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GetScenePointReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetScenePointReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetScenePointReq_descriptor, new String[]{"SceneId", "BelongUid"});
 
@@ -43,9 +43,9 @@ public final class GetScenePointReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetScenePointReqOuterClass$GetScenePointReq.class */
     public static final class GetScenePointReq extends GeneratedMessageV3 implements GetScenePointReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SCENE_ID_FIELD_NUMBER = 13;
+        public static final int SCENEID_FIELD_NUMBER = 15;
         private int sceneId_;
-        public static final int BELONG_UID_FIELD_NUMBER = 5;
+        public static final int BELONGUID_FIELD_NUMBER = 3;
         private int belongUid_;
         private byte memoizedIsInitialized;
         private static final GetScenePointReq DEFAULT_INSTANCE = new GetScenePointReq();
@@ -92,10 +92,10 @@ public final class GetScenePointReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 40:
+                            case 24:
                                 this.belongUid_ = input.readUInt32();
                                 break;
-                            case 104:
+                            case 120:
                                 this.sceneId_ = input.readUInt32();
                                 break;
                             default:
@@ -153,10 +153,10 @@ public final class GetScenePointReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.belongUid_ != 0) {
-                output.writeUInt32(5, this.belongUid_);
+                output.writeUInt32(3, this.belongUid_);
             }
             if (this.sceneId_ != 0) {
-                output.writeUInt32(13, this.sceneId_);
+                output.writeUInt32(15, this.sceneId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class GetScenePointReqOuterClass {
             }
             int size2 = 0;
             if (this.belongUid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.belongUid_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.belongUid_);
             }
             if (this.sceneId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.sceneId_);
+                size2 += CodedOutputStream.computeUInt32Size(15, this.sceneId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class GetScenePointReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + getSceneId())) + 5)) + getBelongUid())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getSceneId())) + 3)) + getBelongUid())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

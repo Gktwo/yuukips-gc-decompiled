@@ -7,7 +7,7 @@ import emu.grasscutter.net.proto.PingReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketPingRsp;
 
-@Opcodes(100)
+@Opcodes(20)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerPingReq.class */
 public class HandlerPingReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

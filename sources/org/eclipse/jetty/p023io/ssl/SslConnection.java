@@ -509,7 +509,7 @@ public class SslConnection extends AbstractConnection implements Connection.Upgr
                     if (SslConnection.this._fillState == FillState.IDLE) {
                         boolean fillable = BufferUtil.hasContent(SslConnection.this._decryptedInput) || (BufferUtil.hasContent(SslConnection.this._encryptedInput) && !SslConnection.this._underflown);
                         SSLEngineResult.HandshakeStatus status = SslConnection.this._sslEngine.getHandshakeStatus();
-                        switch (C56563.$SwitchMap$javax$net$ssl$SSLEngineResult$HandshakeStatus[status.ordinal()]) {
+                        switch (C56483.$SwitchMap$javax$net$ssl$SSLEngineResult$HandshakeStatus[status.ordinal()]) {
                             case 1:
                             case 2:
                                 if (!fillable) {
@@ -640,7 +640,7 @@ public class SslConnection extends AbstractConnection implements Connection.Upgr
                     if (SslConnection.this._flushState == FlushState.IDLE) {
                         while (true) {
                             SSLEngineResult.HandshakeStatus status = SslConnection.this._sslEngine.getHandshakeStatus();
-                            switch (C56563.$SwitchMap$javax$net$ssl$SSLEngineResult$HandshakeStatus[status.ordinal()]) {
+                            switch (C56483.$SwitchMap$javax$net$ssl$SSLEngineResult$HandshakeStatus[status.ordinal()]) {
                                 case 1:
                                     if (!BufferUtil.hasContent(SslConnection.this._encryptedOutput)) {
                                         if (SslConnection.this._fillState == FillState.IDLE) {
@@ -1111,7 +1111,7 @@ public class SslConnection extends AbstractConnection implements Connection.Upgr
     /* access modifiers changed from: package-private */
     /* renamed from: org.eclipse.jetty.io.ssl.SslConnection$3 */
     /* loaded from: grasscutter.jar:org/eclipse/jetty/io/ssl/SslConnection$3.class */
-    public static /* synthetic */ class C56563 {
+    public static /* synthetic */ class C56483 {
         static final /* synthetic */ int[] $SwitchMap$javax$net$ssl$SSLEngineResult$HandshakeStatus;
         static final /* synthetic */ int[] $SwitchMap$javax$net$ssl$SSLEngineResult$Status = new int[SSLEngineResult.Status.values().length];
 

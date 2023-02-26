@@ -72,7 +72,7 @@ public class ProxyFactory {
         }
     };
     public static UniqueName nameGenerator = new UniqueName() { // from class: javassist.util.proxy.ProxyFactory.2
-        private final String sep = "_$$_jvst" + Integer.toHexString(hashCode() & PacketOpcodes.TakeFirstShareRewardRsp) + JavaConstant.Dynamic.DEFAULT_NAME;
+        private final String sep = "_$$_jvst" + Integer.toHexString(hashCode() & PacketOpcodes.ProfilePictureChangeNotify) + JavaConstant.Dynamic.DEFAULT_NAME;
         private int counter = 0;
 
         @Override // javassist.util.proxy.ProxyFactory.UniqueName

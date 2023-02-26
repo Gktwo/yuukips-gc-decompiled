@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 /* loaded from: grasscutter.jar:kotlin/DeepRecursiveKt.class */
 public final class DeepRecursive {
     @NotNull
-    private static final Object UNDEFINED_RESULT = Result.m7062constructorimpl(IntrinsicsKt.getCOROUTINE_SUSPENDED());
+    private static final Object UNDEFINED_RESULT = Result.m7059constructorimpl(IntrinsicsKt.getCOROUTINE_SUSPENDED());
 
     private static /* synthetic */ void getUNDEFINED_RESULT$annotations() {
     }

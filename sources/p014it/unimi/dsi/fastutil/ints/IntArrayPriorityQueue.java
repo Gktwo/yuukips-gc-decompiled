@@ -15,7 +15,7 @@ public class IntArrayPriorityQueue implements IntPriorityQueue, Serializable {
     protected int size;
 
     /* renamed from: c */
-    protected IntComparator f2152c;
+    protected IntComparator f2116c;
     protected transient int firstIndex;
     protected transient boolean firstIndexValid;
 
@@ -24,7 +24,7 @@ public class IntArrayPriorityQueue implements IntPriorityQueue, Serializable {
         if (capacity > 0) {
             this.array = new int[capacity];
         }
-        this.f2152c = c;
+        this.f2116c = c;
     }
 
     public IntArrayPriorityQueue(int capacity) {
@@ -65,12 +65,12 @@ public class IntArrayPriorityQueue implements IntPriorityQueue, Serializable {
         int i = this.size - 1;
         int firstIndex = i;
         int first = this.array[firstIndex];
-        if (this.f2152c != null) {
+        if (this.f2116c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f2152c.compare(this.array[i], first) < 0) {
+                } else if (this.f2116c.compare(this.array[i], first) < 0) {
                     firstIndex = i;
                     first = this.array[i];
                 }
@@ -103,11 +103,11 @@ public class IntArrayPriorityQueue implements IntPriorityQueue, Serializable {
         }
         if (!this.firstIndexValid) {
             this.firstIndexValid = false;
-        } else if (this.f2152c == null) {
+        } else if (this.f2116c == null) {
             if (x < this.array[this.firstIndex]) {
                 this.firstIndex = this.size;
             }
-        } else if (this.f2152c.compare(x, this.array[this.firstIndex]) < 0) {
+        } else if (this.f2116c.compare(x, this.array[this.firstIndex]) < 0) {
             this.firstIndex = this.size;
         }
         int[] iArr = this.array;
@@ -159,7 +159,7 @@ public class IntArrayPriorityQueue implements IntPriorityQueue, Serializable {
     /* Return type fixed from 'it.unimi.dsi.fastutil.ints.IntComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.ints.IntPriorityQueue, p014it.unimi.dsi.fastutil.PriorityQueue
     public Comparator<? super Integer> comparator() {
-        return this.f2152c;
+        return this.f2116c;
     }
 
     private void writeObject(ObjectOutputStream s) throws IOException {

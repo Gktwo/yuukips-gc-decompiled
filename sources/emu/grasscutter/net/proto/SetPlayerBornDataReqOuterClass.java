@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerBornDataReqOuterClass.class */
 public final class SetPlayerBornDataReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aSetPlayerBornDataReq.proto\"<\n\u0014SetPlayerBornDataReq\u0012\u0011\n\tnick_name\u0018\u0004 \u0001(\t\u0012\u0011\n\tavatar_id\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aSetPlayerBornDataReq.proto\":\n\u0014SetPlayerBornDataReq\u0012\u0010\n\bnickName\u0018\n \u0001(\t\u0012\u0010\n\bavatarId\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SetPlayerBornDataReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetPlayerBornDataReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetPlayerBornDataReq_descriptor, new String[]{"NickName", "AvatarId"});
 
@@ -45,9 +45,9 @@ public final class SetPlayerBornDataReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerBornDataReqOuterClass$SetPlayerBornDataReq.class */
     public static final class SetPlayerBornDataReq extends GeneratedMessageV3 implements SetPlayerBornDataReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int NICK_NAME_FIELD_NUMBER = 4;
+        public static final int NICKNAME_FIELD_NUMBER = 10;
         private volatile Object nickName_;
-        public static final int AVATAR_ID_FIELD_NUMBER = 14;
+        public static final int AVATARID_FIELD_NUMBER = 15;
         private int avatarId_;
         private byte memoizedIsInitialized;
         private static final SetPlayerBornDataReq DEFAULT_INSTANCE = new SetPlayerBornDataReq();
@@ -96,10 +96,10 @@ public final class SetPlayerBornDataReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 34:
+                                case 82:
                                     this.nickName_ = input.readStringRequireUtf8();
                                     break;
-                                case 112:
+                                case 120:
                                     this.avatarId_ = input.readUInt32();
                                     break;
                                 default:
@@ -175,10 +175,10 @@ public final class SetPlayerBornDataReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (!GeneratedMessageV3.isStringEmpty(this.nickName_)) {
-                GeneratedMessageV3.writeString(output, 4, this.nickName_);
+                GeneratedMessageV3.writeString(output, 10, this.nickName_);
             }
             if (this.avatarId_ != 0) {
-                output.writeUInt32(14, this.avatarId_);
+                output.writeUInt32(15, this.avatarId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -191,10 +191,10 @@ public final class SetPlayerBornDataReqOuterClass {
             }
             int size2 = 0;
             if (!GeneratedMessageV3.isStringEmpty(this.nickName_)) {
-                size2 = 0 + GeneratedMessageV3.computeStringSize(4, this.nickName_);
+                size2 = 0 + GeneratedMessageV3.computeStringSize(10, this.nickName_);
             }
             if (this.avatarId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.avatarId_);
+                size2 += CodedOutputStream.computeUInt32Size(15, this.avatarId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -218,7 +218,7 @@ public final class SetPlayerBornDataReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getNickName().hashCode())) + 14)) + getAvatarId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getNickName().hashCode())) + 15)) + getAvatarId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

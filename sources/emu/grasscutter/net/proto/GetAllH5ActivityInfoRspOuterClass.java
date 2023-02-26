@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetAllH5ActivityInfoRspOuterClass.class */
 public final class GetAllH5ActivityInfoRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dGetAllH5ActivityInfoRsp.proto\u001a\u0014H5ActivityInfo.proto\"|\n\u0017GetAllH5ActivityInfoRsp\u0012 \n\u0018client_red_dot_timestamp\u0018\u0003 \u0001(\r\u0012.\n\u0015h5_activity_info_list\u0018\u0005 \u0003(\u000b2\u000f.H5ActivityInfo\u0012\u000f\n\u0007retcode\u0018\u000e \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{H5ActivityInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dGetAllH5ActivityInfoRsp.proto\u001a\u0014H5ActivityInfo.proto\"v\n\u0017GetAllH5ActivityInfoRsp\u0012\u001d\n\u0015clientRedDotTimestamp\u0018\u0005 \u0001(\r\u0012+\n\u0012h5ActivityInfoList\u0018\u0006 \u0003(\u000b2\u000f.H5ActivityInfo\u0012\u000f\n\u0007retcode\u0018\u000e \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{H5ActivityInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_GetAllH5ActivityInfoRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetAllH5ActivityInfoRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetAllH5ActivityInfoRsp_descriptor, new String[]{"ClientRedDotTimestamp", "H5ActivityInfoList", "Retcode"});
 
@@ -59,9 +59,9 @@ public final class GetAllH5ActivityInfoRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetAllH5ActivityInfoRspOuterClass$GetAllH5ActivityInfoRsp.class */
     public static final class GetAllH5ActivityInfoRsp extends GeneratedMessageV3 implements GetAllH5ActivityInfoRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CLIENT_RED_DOT_TIMESTAMP_FIELD_NUMBER = 3;
+        public static final int CLIENTREDDOTTIMESTAMP_FIELD_NUMBER = 5;
         private int clientRedDotTimestamp_;
-        public static final int H5_ACTIVITY_INFO_LIST_FIELD_NUMBER = 5;
+        public static final int H5ACTIVITYINFOLIST_FIELD_NUMBER = 6;
         private List<H5ActivityInfoOuterClass.H5ActivityInfo> h5ActivityInfoList_;
         public static final int RETCODE_FIELD_NUMBER = 14;
         private int retcode_;
@@ -113,10 +113,10 @@ public final class GetAllH5ActivityInfoRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 24:
+                            case 40:
                                 this.clientRedDotTimestamp_ = input.readUInt32();
                                 break;
-                            case 42:
+                            case 50:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.h5ActivityInfoList_ = new ArrayList();
                                     mutable_bitField0_ |= 1;
@@ -209,10 +209,10 @@ public final class GetAllH5ActivityInfoRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.clientRedDotTimestamp_ != 0) {
-                output.writeUInt32(3, this.clientRedDotTimestamp_);
+                output.writeUInt32(5, this.clientRedDotTimestamp_);
             }
             for (int i = 0; i < this.h5ActivityInfoList_.size(); i++) {
-                output.writeMessage(5, this.h5ActivityInfoList_.get(i));
+                output.writeMessage(6, this.h5ActivityInfoList_.get(i));
             }
             if (this.retcode_ != 0) {
                 output.writeInt32(14, this.retcode_);
@@ -228,10 +228,10 @@ public final class GetAllH5ActivityInfoRspOuterClass {
             }
             int size2 = 0;
             if (this.clientRedDotTimestamp_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.clientRedDotTimestamp_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.clientRedDotTimestamp_);
             }
             for (int i = 0; i < this.h5ActivityInfoList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(5, this.h5ActivityInfoList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(6, this.h5ActivityInfoList_.get(i));
             }
             if (this.retcode_ != 0) {
                 size2 += CodedOutputStream.computeInt32Size(14, this.retcode_);
@@ -258,9 +258,9 @@ public final class GetAllH5ActivityInfoRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getClientRedDotTimestamp();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getClientRedDotTimestamp();
             if (getH5ActivityInfoListCount() > 0) {
-                hash = (53 * ((37 * hash) + 5)) + getH5ActivityInfoListList().hashCode();
+                hash = (53 * ((37 * hash) + 6)) + getH5ActivityInfoListList().hashCode();
             }
             int hash2 = (29 * ((53 * ((37 * hash) + 14)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

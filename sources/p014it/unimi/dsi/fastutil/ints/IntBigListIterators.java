@@ -173,51 +173,51 @@ public final class IntBigListIterators {
     public static class UnmodifiableBigListIterator implements IntBigListIterator {
 
         /* renamed from: i */
-        protected final IntBigListIterator f2169i;
+        protected final IntBigListIterator f2133i;
 
         public UnmodifiableBigListIterator(IntBigListIterator i) {
-            this.f2169i = i;
+            this.f2133i = i;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2169i.hasNext();
+            return this.f2133i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2169i.hasPrevious();
+            return this.f2133i.hasPrevious();
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntIterator, java.util.PrimitiveIterator.OfInt
         public int nextInt() {
-            return this.f2169i.nextInt();
+            return this.f2133i.nextInt();
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntBidirectionalIterator
         public int previousInt() {
-            return this.f2169i.previousInt();
+            return this.f2133i.previousInt();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long nextIndex() {
-            return this.f2169i.nextIndex();
+            return this.f2133i.nextIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long previousIndex() {
-            return this.f2169i.previousIndex();
+            return this.f2133i.previousIndex();
         }
 
         @Override // java.util.PrimitiveIterator.OfInt
         public void forEachRemaining(IntConsumer action) {
-            this.f2169i.forEachRemaining(action);
+            this.f2133i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntIterator, java.util.PrimitiveIterator.OfInt, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Integer> action) {
-            this.f2169i.forEachRemaining(action);
+            this.f2133i.forEachRemaining(action);
         }
     }
 
@@ -230,10 +230,10 @@ public final class IntBigListIterators {
     public static class BigListIteratorListIterator implements IntBigListIterator {
 
         /* renamed from: i */
-        protected final IntListIterator f2168i;
+        protected final IntListIterator f2132i;
 
         protected BigListIteratorListIterator(IntListIterator i) {
-            this.f2168i = i;
+            this.f2132i = i;
         }
 
         private int intDisplacement(long n) {
@@ -245,78 +245,78 @@ public final class IntBigListIterators {
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntBigListIterator
         public void set(int ok) {
-            this.f2168i.set(ok);
+            this.f2132i.set(ok);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntBigListIterator
         public void add(int ok) {
-            this.f2168i.add(ok);
+            this.f2132i.add(ok);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator
         public int back(int n) {
-            return this.f2168i.back(n);
+            return this.f2132i.back(n);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntBigListIterator
         public long back(long n) {
-            return (long) this.f2168i.back(intDisplacement(n));
+            return (long) this.f2132i.back(intDisplacement(n));
         }
 
         @Override // java.util.Iterator
         public void remove() {
-            this.f2168i.remove();
+            this.f2132i.remove();
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntBigListIterator, p014it.unimi.dsi.fastutil.ints.IntBidirectionalIterator, p014it.unimi.dsi.fastutil.ints.IntIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectIterator
         public int skip(int n) {
-            return this.f2168i.skip(n);
+            return this.f2132i.skip(n);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntBigListIterator
         public long skip(long n) {
-            return (long) this.f2168i.skip(intDisplacement(n));
+            return (long) this.f2132i.skip(intDisplacement(n));
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2168i.hasNext();
+            return this.f2132i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2168i.hasPrevious();
+            return this.f2132i.hasPrevious();
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntIterator, java.util.PrimitiveIterator.OfInt
         public int nextInt() {
-            return this.f2168i.nextInt();
+            return this.f2132i.nextInt();
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntBidirectionalIterator
         public int previousInt() {
-            return this.f2168i.previousInt();
+            return this.f2132i.previousInt();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long nextIndex() {
-            return (long) this.f2168i.nextIndex();
+            return (long) this.f2132i.nextIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long previousIndex() {
-            return (long) this.f2168i.previousIndex();
+            return (long) this.f2132i.previousIndex();
         }
 
         @Override // java.util.PrimitiveIterator.OfInt
         public void forEachRemaining(IntConsumer action) {
-            this.f2168i.forEachRemaining(action);
+            this.f2132i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntIterator, java.util.PrimitiveIterator.OfInt, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Integer> action) {
-            this.f2168i.forEachRemaining(action);
+            this.f2132i.forEachRemaining(action);
         }
     }
 
@@ -520,7 +520,7 @@ public final class IntBigListIterators {
 
         /* JADX DEBUG: Multi-variable search result rejected for r8v0, resolved type: it.unimi.dsi.fastutil.ints.IntBigListIterators$AbstractIndexBasedBigListIterator */
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r3v2, types: [it.unimi.dsi.fastutil.ints.IntBigListIterators$AbstractIndexBasedBigListIterator, long] */
+        /* JADX WARN: Type inference failed for: r3v2, types: [long, it.unimi.dsi.fastutil.ints.IntBigListIterators$AbstractIndexBasedBigListIterator] */
         /* JADX WARNING: Unknown variable types count: 1 */
         @Override // p014it.unimi.dsi.fastutil.ints.IntBidirectionalIterator
         /* Code decompiled incorrectly, please refer to instructions dump. */

@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarChangeElementTypeReqOuterClass.class */
 public final class AvatarChangeElementTypeReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n AvatarChangeElementTypeReq.proto\"?\n\u001aAvatarChangeElementTypeReq\u0012\u000f\n\u0007area_id\u0018\f \u0001(\r\u0012\u0010\n\bscene_id\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n AvatarChangeElementTypeReq.proto\"=\n\u001aAvatarChangeElementTypeReq\u0012\u000f\n\u0007sceneId\u0018\b \u0001(\r\u0012\u000e\n\u0006areaId\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AvatarChangeElementTypeReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarChangeElementTypeReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarChangeElementTypeReq_descriptor, new String[]{"AreaId", "SceneId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarChangeElementTypeReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarChangeElementTypeReq_descriptor, new String[]{"SceneId", "AreaId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarChangeElementTypeReqOuterClass$AvatarChangeElementTypeReqOrBuilder.class */
     public interface AvatarChangeElementTypeReqOrBuilder extends MessageOrBuilder {
-        int getAreaId();
-
         int getSceneId();
+
+        int getAreaId();
     }
 
     private AvatarChangeElementTypeReqOuterClass() {
@@ -43,10 +43,10 @@ public final class AvatarChangeElementTypeReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarChangeElementTypeReqOuterClass$AvatarChangeElementTypeReq.class */
     public static final class AvatarChangeElementTypeReq extends GeneratedMessageV3 implements AvatarChangeElementTypeReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AREA_ID_FIELD_NUMBER = 12;
-        private int areaId_;
-        public static final int SCENE_ID_FIELD_NUMBER = 3;
+        public static final int SCENEID_FIELD_NUMBER = 8;
         private int sceneId_;
+        public static final int AREAID_FIELD_NUMBER = 1;
+        private int areaId_;
         private byte memoizedIsInitialized;
         private static final AvatarChangeElementTypeReq DEFAULT_INSTANCE = new AvatarChangeElementTypeReq();
         private static final Parser<AvatarChangeElementTypeReq> PARSER = new AbstractParser<AvatarChangeElementTypeReq>() { // from class: emu.grasscutter.net.proto.AvatarChangeElementTypeReqOuterClass.AvatarChangeElementTypeReq.1
@@ -92,11 +92,11 @@ public final class AvatarChangeElementTypeReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 24:
-                                this.sceneId_ = input.readUInt32();
-                                break;
-                            case 96:
+                            case 8:
                                 this.areaId_ = input.readUInt32();
+                                break;
+                            case 64:
+                                this.sceneId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -128,13 +128,13 @@ public final class AvatarChangeElementTypeReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AvatarChangeElementTypeReqOuterClass.AvatarChangeElementTypeReqOrBuilder
-        public int getAreaId() {
-            return this.areaId_;
+        public int getSceneId() {
+            return this.sceneId_;
         }
 
         @Override // emu.grasscutter.net.proto.AvatarChangeElementTypeReqOuterClass.AvatarChangeElementTypeReqOrBuilder
-        public int getSceneId() {
-            return this.sceneId_;
+        public int getAreaId() {
+            return this.areaId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -152,11 +152,11 @@ public final class AvatarChangeElementTypeReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.sceneId_ != 0) {
-                output.writeUInt32(3, this.sceneId_);
-            }
             if (this.areaId_ != 0) {
-                output.writeUInt32(12, this.areaId_);
+                output.writeUInt32(1, this.areaId_);
+            }
+            if (this.sceneId_ != 0) {
+                output.writeUInt32(8, this.sceneId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class AvatarChangeElementTypeReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.sceneId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.sceneId_);
-            }
             if (this.areaId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.areaId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.areaId_);
+            }
+            if (this.sceneId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(8, this.sceneId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -188,7 +188,7 @@ public final class AvatarChangeElementTypeReqOuterClass {
                 return equals(obj);
             }
             AvatarChangeElementTypeReq other = (AvatarChangeElementTypeReq) obj;
-            return getAreaId() == other.getAreaId() && getSceneId() == other.getSceneId() && this.unknownFields.equals(other.unknownFields);
+            return getSceneId() == other.getSceneId() && getAreaId() == other.getAreaId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -196,7 +196,7 @@ public final class AvatarChangeElementTypeReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getAreaId())) + 3)) + getSceneId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getSceneId())) + 1)) + getAreaId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -275,8 +275,8 @@ public final class AvatarChangeElementTypeReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarChangeElementTypeReqOuterClass$AvatarChangeElementTypeReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements AvatarChangeElementTypeReqOrBuilder {
-            private int areaId_;
             private int sceneId_;
+            private int areaId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return AvatarChangeElementTypeReqOuterClass.internal_static_AvatarChangeElementTypeReq_descriptor;
@@ -304,8 +304,8 @@ public final class AvatarChangeElementTypeReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.areaId_ = 0;
                 this.sceneId_ = 0;
+                this.areaId_ = 0;
                 return this;
             }
 
@@ -331,8 +331,8 @@ public final class AvatarChangeElementTypeReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public AvatarChangeElementTypeReq buildPartial() {
                 AvatarChangeElementTypeReq result = new AvatarChangeElementTypeReq(this);
-                result.areaId_ = this.areaId_;
                 result.sceneId_ = this.sceneId_;
+                result.areaId_ = this.areaId_;
                 onBuilt();
                 return result;
             }
@@ -380,11 +380,11 @@ public final class AvatarChangeElementTypeReqOuterClass {
                 if (other == AvatarChangeElementTypeReq.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getAreaId() != 0) {
-                    setAreaId(other.getAreaId());
-                }
                 if (other.getSceneId() != 0) {
                     setSceneId(other.getSceneId());
+                }
+                if (other.getAreaId() != 0) {
+                    setAreaId(other.getAreaId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -419,23 +419,6 @@ public final class AvatarChangeElementTypeReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AvatarChangeElementTypeReqOuterClass.AvatarChangeElementTypeReqOrBuilder
-            public int getAreaId() {
-                return this.areaId_;
-            }
-
-            public Builder setAreaId(int value) {
-                this.areaId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearAreaId() {
-                this.areaId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarChangeElementTypeReqOuterClass.AvatarChangeElementTypeReqOrBuilder
             public int getSceneId() {
                 return this.sceneId_;
             }
@@ -448,6 +431,23 @@ public final class AvatarChangeElementTypeReqOuterClass {
 
             public Builder clearSceneId() {
                 this.sceneId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarChangeElementTypeReqOuterClass.AvatarChangeElementTypeReqOrBuilder
+            public int getAreaId() {
+                return this.areaId_;
+            }
+
+            public Builder setAreaId(int value) {
+                this.areaId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearAreaId() {
+                this.areaId_ = 0;
                 onChanged();
                 return this;
             }

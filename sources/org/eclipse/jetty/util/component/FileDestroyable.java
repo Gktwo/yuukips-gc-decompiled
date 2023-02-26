@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.log.Log;
 import org.eclipse.jetty.util.log.Logger;
 import org.eclipse.jetty.util.resource.Resource;
@@ -83,7 +83,7 @@ public class FileDestroyable implements Destroyable {
                 if (LOG.isDebugEnabled()) {
                     LOG.debug("Destroy {}", file);
                 }
-                C5747IO.delete(file);
+                C5739IO.delete(file);
             }
         }
     }

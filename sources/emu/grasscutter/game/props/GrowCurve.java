@@ -45,39 +45,39 @@ public enum GrowCurve {
     GROW_CURVE_ATTACK_102(RetcodeOuterClass.Retcode.RET_DUNGEON_QUIT_FAIL_VALUE),
     GROW_CURVE_ATTACK_103(RetcodeOuterClass.Retcode.RET_DUNGEON_ENTER_EXCEED_DAY_COUNT_VALUE),
     GROW_CURVE_ATTACK_104(RetcodeOuterClass.Retcode.RET_DUNGEON_REVIVE_EXCEED_MAX_COUNT_VALUE),
-    GROW_CURVE_ATTACK_105(RetcodeOuterClass.Retcode.RET_DUNGEON_REVIVE_FAIL_VALUE),
+    GROW_CURVE_ATTACK_105(1105),
     GROW_CURVE_ATTACK_201(RetcodeOuterClass.Retcode.RET_MP_NOT_IN_MY_WORLD_VALUE),
     GROW_CURVE_ATTACK_202(RetcodeOuterClass.Retcode.RET_MP_IN_MP_MODE_VALUE),
     GROW_CURVE_ATTACK_203(RetcodeOuterClass.Retcode.RET_MP_SCENE_IS_FULL_VALUE),
     GROW_CURVE_ATTACK_204(RetcodeOuterClass.Retcode.RET_MP_MODE_NOT_AVAILABLE_VALUE),
-    GROW_CURVE_ATTACK_205(RetcodeOuterClass.Retcode.RET_MP_PLAYER_NOT_ENTERABLE_VALUE),
+    GROW_CURVE_ATTACK_205(1205),
     GROW_CURVE_ATTACK_301(RetcodeOuterClass.Retcode.RET_MAIL_PARA_ERR_VALUE),
     GROW_CURVE_ATTACK_302(RetcodeOuterClass.Retcode.RET_MAIL_MAX_NUM_VALUE),
     GROW_CURVE_ATTACK_303(RetcodeOuterClass.Retcode.RET_MAIL_ITEM_NUM_EXCEED_VALUE),
     GROW_CURVE_ATTACK_304(RetcodeOuterClass.Retcode.RET_MAIL_TITLE_LEN_EXCEED_VALUE),
-    GROW_CURVE_ATTACK_305(RetcodeOuterClass.Retcode.RET_MAIL_CONTENT_LEN_EXCEED_VALUE),
-    GROW_CURVE_CRITICAL_101(PacketOpcodes.SelectAsterMidDifficultyRsp),
-    GROW_CURVE_CRITICAL_102(2102),
-    GROW_CURVE_CRITICAL_103(PacketOpcodes.ActivityUpdateWatcherNotify),
-    GROW_CURVE_CRITICAL_104(2104),
-    GROW_CURVE_CRITICAL_105(PacketOpcodes.SeaLampTakePhaseRewardRsp),
+    GROW_CURVE_ATTACK_305(1305),
+    GROW_CURVE_CRITICAL_101(PacketOpcodes.SeaLampTakeContributionRewardRsp),
+    GROW_CURVE_CRITICAL_102(PacketOpcodes.BlessingGetFriendPicListRsp),
+    GROW_CURVE_CRITICAL_103(PacketOpcodes.SalesmanTakeSpecialRewardRsp),
+    GROW_CURVE_CRITICAL_104(PacketOpcodes.BlessingRedeemRewardRsp),
+    GROW_CURVE_CRITICAL_105(PacketOpcodes.FleurFairMusicGameStartReq),
     GROW_CURVE_CRITICAL_201(2201),
     GROW_CURVE_CRITICAL_202(2202),
     GROW_CURVE_CRITICAL_203(2203),
     GROW_CURVE_CRITICAL_204(2204),
-    GROW_CURVE_CRITICAL_205(PacketOpcodes.GetPushTipsRewardRsp),
+    GROW_CURVE_CRITICAL_205(PacketOpcodes.WatcherAllDataNotify),
     GROW_CURVE_CRITICAL_301(2301),
     GROW_CURVE_CRITICAL_302(2302),
     GROW_CURVE_CRITICAL_303(2303),
-    GROW_CURVE_CRITICAL_304(PacketOpcodes.GMShowNavMeshRsp),
-    GROW_CURVE_CRITICAL_305(2305);
+    GROW_CURVE_CRITICAL_304(2304),
+    GROW_CURVE_CRITICAL_305(PacketOpcodes.QueryPathReq);
     
 
     /* renamed from: id */
     private final int f588id;
     private static final Int2ObjectMap<GrowCurve> map = new Int2ObjectOpenHashMap();
     private static final Map<String, GrowCurve> stringMap = new HashMap();
-    public static final int[] fightProps = {1, 4, 7, 20, 21, 22, 23, 26, 27, 28, 29, 30, 40, 41, 42, 43, 44, 45, 46, 50, 51, 52, 53, 54, 55, 56, PacketOpcodes.SetCoopChapterViewedRsp, RetcodeOuterClass.Retcode.RET_UID_NOT_EXIST_VALUE, 2002, 2003, StatusCode.REQUIRED_EXTENSION};
+    public static final int[] fightProps = {1, 4, 7, 20, 21, 22, 23, 26, 27, 28, 29, 30, 40, 41, 42, 43, 44, 45, 46, 50, 51, 52, 53, 54, 55, 56, 2000, RetcodeOuterClass.Retcode.RET_UID_NOT_EXIST_VALUE, 2002, 2003, StatusCode.REQUIRED_EXTENSION};
 
     static {
         Stream.of((Object[]) values()).forEach(e -> {

@@ -131,7 +131,7 @@ public abstract class PathSegment {
             @Override // p013io.javalin.core.routing.PathSegment
             @NotNull
             public String asGroupedRegexString$javalin() {
-                return PathSegmentKt.access$grouped(asRegexString$javalin());
+                return PathSegmentKt.grouped(asRegexString$javalin());
             }
         }
 
@@ -165,7 +165,7 @@ public abstract class PathSegment {
             @Override // p013io.javalin.core.routing.PathSegment
             @NotNull
             public String asGroupedRegexString$javalin() {
-                return PathSegmentKt.access$grouped(asRegexString$javalin());
+                return PathSegmentKt.grouped(asRegexString$javalin());
             }
         }
     }

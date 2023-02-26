@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QueryFilterOuterClass.class */
 public final class QueryFilterOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0011QueryFilter.proto\"1\n\u000bQueryFilter\u0012\u0011\n\tarea_mask\u0018\u0004 \u0001(\u0005\u0012\u000f\n\u0007type_id\u0018\u0003 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0011QueryFilter.proto\"/\n\u000bQueryFilter\u0012\u0010\n\bareaMask\u0018\t \u0001(\u0005\u0012\u000e\n\u0006typeId\u0018\u0003 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_QueryFilter_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_QueryFilter_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QueryFilter_descriptor, new String[]{"AreaMask", "TypeId"});
 
@@ -43,9 +43,9 @@ public final class QueryFilterOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QueryFilterOuterClass$QueryFilter.class */
     public static final class QueryFilter extends GeneratedMessageV3 implements QueryFilterOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AREA_MASK_FIELD_NUMBER = 4;
+        public static final int AREAMASK_FIELD_NUMBER = 9;
         private int areaMask_;
-        public static final int TYPE_ID_FIELD_NUMBER = 3;
+        public static final int TYPEID_FIELD_NUMBER = 3;
         private int typeId_;
         private byte memoizedIsInitialized;
         private static final QueryFilter DEFAULT_INSTANCE = new QueryFilter();
@@ -95,7 +95,7 @@ public final class QueryFilterOuterClass {
                             case 24:
                                 this.typeId_ = input.readInt32();
                                 break;
-                            case 32:
+                            case 72:
                                 this.areaMask_ = input.readInt32();
                                 break;
                             default:
@@ -156,7 +156,7 @@ public final class QueryFilterOuterClass {
                 output.writeInt32(3, this.typeId_);
             }
             if (this.areaMask_ != 0) {
-                output.writeInt32(4, this.areaMask_);
+                output.writeInt32(9, this.areaMask_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -172,7 +172,7 @@ public final class QueryFilterOuterClass {
                 size2 = 0 + CodedOutputStream.computeInt32Size(3, this.typeId_);
             }
             if (this.areaMask_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(4, this.areaMask_);
+                size2 += CodedOutputStream.computeInt32Size(9, this.areaMask_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class QueryFilterOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getAreaMask())) + 3)) + getTypeId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getAreaMask())) + 3)) + getTypeId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

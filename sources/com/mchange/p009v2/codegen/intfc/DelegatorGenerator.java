@@ -4,7 +4,6 @@ import com.mchange.p006v1.lang.ClassUtils;
 import com.mchange.p009v2.codegen.CodegenUtils;
 import com.mchange.p009v2.codegen.IndentedWriter;
 import dev.morphia.mapping.Mapper;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import java.io.IOException;
 import java.io.Writer;
 import java.lang.reflect.Method;
@@ -19,7 +18,7 @@ import java.util.TreeSet;
 /* renamed from: com.mchange.v2.codegen.intfc.DelegatorGenerator */
 /* loaded from: grasscutter.jar:com/mchange/v2/codegen/intfc/DelegatorGenerator.class */
 public class DelegatorGenerator {
-    int class_modifiers = PacketOpcodes.ProudSkillExtraLevelNotify;
+    int class_modifiers = 1025;
     int method_modifiers = 1;
     int wrapping_ctor_modifiers = 1;
     int default_ctor_modifiers = 1;

@@ -2,12 +2,13 @@ package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.GetActivityInfoReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketGetActivityInfoRsp;
 import java.util.HashSet;
 
-@Opcodes(2011)
+@Opcodes(PacketOpcodes.GetActivityInfoReq)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerGetActivityInfoReq.class */
 public class HandlerGetActivityInfoReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

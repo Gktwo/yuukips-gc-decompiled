@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeSlotOuterClass.class */
 public final class FurnitureMakeSlotOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017FurnitureMakeSlot.proto\u001a\u0017FurnitureMakeData.proto\"I\n\u0011FurnitureMakeSlot\u00124\n\u0018furniture_make_data_list\u0018\u0001 \u0003(\u000b2\u0012.FurnitureMakeDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{FurnitureMakeDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017FurnitureMakeSlot.proto\u001a\u0017FurnitureMakeData.proto\"F\n\u0011FurnitureMakeSlot\u00121\n\u0015furnitureMakeDataList\u0018\u0004 \u0003(\u000b2\u0012.FurnitureMakeDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{FurnitureMakeDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_FurnitureMakeSlot_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_FurnitureMakeSlot_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FurnitureMakeSlot_descriptor, new String[]{"FurnitureMakeDataList"});
 
@@ -55,7 +55,7 @@ public final class FurnitureMakeSlotOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeSlotOuterClass$FurnitureMakeSlot.class */
     public static final class FurnitureMakeSlot extends GeneratedMessageV3 implements FurnitureMakeSlotOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int FURNITURE_MAKE_DATA_LIST_FIELD_NUMBER = 1;
+        public static final int FURNITUREMAKEDATALIST_FIELD_NUMBER = 4;
         private List<FurnitureMakeDataOuterClass.FurnitureMakeData> furnitureMakeDataList_;
         private byte memoizedIsInitialized;
         private static final FurnitureMakeSlot DEFAULT_INSTANCE = new FurnitureMakeSlot();
@@ -106,7 +106,7 @@ public final class FurnitureMakeSlotOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 10:
+                                case 34:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.furnitureMakeDataList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -187,7 +187,7 @@ public final class FurnitureMakeSlotOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.furnitureMakeDataList_.size(); i++) {
-                output.writeMessage(1, this.furnitureMakeDataList_.get(i));
+                output.writeMessage(4, this.furnitureMakeDataList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,7 +200,7 @@ public final class FurnitureMakeSlotOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.furnitureMakeDataList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(1, this.furnitureMakeDataList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(4, this.furnitureMakeDataList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class FurnitureMakeSlotOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getFurnitureMakeDataListCount() > 0) {
-                hash = (53 * ((37 * hash) + 1)) + getFurnitureMakeDataListList().hashCode();
+                hash = (53 * ((37 * hash) + 4)) + getFurnitureMakeDataListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

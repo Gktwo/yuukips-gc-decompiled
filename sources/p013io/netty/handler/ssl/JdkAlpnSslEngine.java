@@ -147,8 +147,9 @@ public class JdkAlpnSslEngine extends JdkSslEngine {
         return verifyProtocolSelection(unwrap(src, dst, offset, len));
     }
 
+    /* access modifiers changed from: package-private */
     @Override // p013io.netty.handler.ssl.JdkSslEngine
-    void setNegotiatedApplicationProtocol(String applicationProtocol) {
+    public void setNegotiatedApplicationProtocol(String applicationProtocol) {
     }
 
     @Override // p013io.netty.handler.ssl.JdkSslEngine, p013io.netty.handler.ssl.ApplicationProtocolAccessor

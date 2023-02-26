@@ -131,7 +131,7 @@ public final class MediaType {
     @JvmName(name = "-deprecated_type")
     @NotNull
     /* renamed from: -deprecated_type */
-    public final String m9234deprecated_type() {
+    public final String m9231deprecated_type() {
         return this.type;
     }
 
@@ -139,7 +139,7 @@ public final class MediaType {
     @JvmName(name = "-deprecated_subtype")
     @NotNull
     /* renamed from: -deprecated_subtype */
-    public final String m9235deprecated_subtype() {
+    public final String m9232deprecated_subtype() {
         return this.subtype;
     }
 
@@ -243,7 +243,7 @@ public final class MediaType {
         @JvmName(name = "-deprecated_get")
         @NotNull
         /* renamed from: -deprecated_get */
-        public final MediaType m9237deprecated_get(@NotNull String mediaType) {
+        public final MediaType m9234deprecated_get(@NotNull String mediaType) {
             Intrinsics.checkNotNullParameter(mediaType, "mediaType");
             return get(mediaType);
         }
@@ -252,7 +252,7 @@ public final class MediaType {
         @JvmName(name = "-deprecated_parse")
         @Nullable
         /* renamed from: -deprecated_parse */
-        public final MediaType m9238deprecated_parse(@NotNull String mediaType) {
+        public final MediaType m9235deprecated_parse(@NotNull String mediaType) {
             Intrinsics.checkNotNullParameter(mediaType, "mediaType");
             return parse(mediaType);
         }

@@ -434,7 +434,7 @@ public final class Cache implements Closeable, Flushable {
     @JvmName(name = "-deprecated_directory")
     @NotNull
     /* renamed from: -deprecated_directory  reason: not valid java name */
-    public final File m9151deprecated_directory() {
+    public final File m9148deprecated_directory() {
         return this.cache.getDirectory();
     }
 

@@ -22,7 +22,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarAddNotifyOuterClass.class */
 public final class AvatarAddNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015AvatarAddNotify.proto\u001a\u0010AvatarInfo.proto\"B\n\u000fAvatarAddNotify\u0012\u001b\n\u0006avatar\u0018\u0001 \u0001(\u000b2\u000b.AvatarInfo\u0012\u0012\n\nis_in_team\u0018\u000f \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015AvatarAddNotify.proto\u001a\u0010AvatarInfo.proto\"@\n\u000fAvatarAddNotify\u0012\u001b\n\u0006avatar\u0018\b \u0001(\u000b2\u000b.AvatarInfo\u0012\u0010\n\bisInTeam\u0018\u000e \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AvatarAddNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarAddNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarAddNotify_descriptor, new String[]{"Avatar", "IsInTeam"});
 
@@ -50,9 +50,9 @@ public final class AvatarAddNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarAddNotifyOuterClass$AvatarAddNotify.class */
     public static final class AvatarAddNotify extends GeneratedMessageV3 implements AvatarAddNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_FIELD_NUMBER = 1;
+        public static final int AVATAR_FIELD_NUMBER = 8;
         private AvatarInfoOuterClass.AvatarInfo avatar_;
-        public static final int IS_IN_TEAM_FIELD_NUMBER = 15;
+        public static final int ISINTEAM_FIELD_NUMBER = 14;
         private boolean isInTeam_;
         private byte memoizedIsInitialized;
         private static final AvatarAddNotify DEFAULT_INSTANCE = new AvatarAddNotify();
@@ -100,7 +100,7 @@ public final class AvatarAddNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 10:
+                                case 66:
                                     AvatarInfoOuterClass.AvatarInfo.Builder subBuilder = this.avatar_ != null ? this.avatar_.toBuilder() : null;
                                     this.avatar_ = (AvatarInfoOuterClass.AvatarInfo) input.readMessage(AvatarInfoOuterClass.AvatarInfo.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -110,7 +110,7 @@ public final class AvatarAddNotifyOuterClass {
                                         this.avatar_ = subBuilder.buildPartial();
                                         break;
                                     }
-                                case 120:
+                                case 112:
                                     this.isInTeam_ = input.readBool();
                                     break;
                                 default:
@@ -179,10 +179,10 @@ public final class AvatarAddNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.avatar_ != null) {
-                output.writeMessage(1, getAvatar());
+                output.writeMessage(8, getAvatar());
             }
             if (this.isInTeam_) {
-                output.writeBool(15, this.isInTeam_);
+                output.writeBool(14, this.isInTeam_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -195,10 +195,10 @@ public final class AvatarAddNotifyOuterClass {
             }
             int size2 = 0;
             if (this.avatar_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(1, getAvatar());
+                size2 = 0 + CodedOutputStream.computeMessageSize(8, getAvatar());
             }
             if (this.isInTeam_) {
-                size2 += CodedOutputStream.computeBoolSize(15, this.isInTeam_);
+                size2 += CodedOutputStream.computeBoolSize(14, this.isInTeam_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -227,9 +227,9 @@ public final class AvatarAddNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasAvatar()) {
-                hash = (53 * ((37 * hash) + 1)) + getAvatar().hashCode();
+                hash = (53 * ((37 * hash) + 8)) + getAvatar().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 15)) + Internal.hashBoolean(getIsInTeam()))) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 14)) + Internal.hashBoolean(getIsInTeam()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

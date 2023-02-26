@@ -23,11 +23,11 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonCandidateTeamChangeAvatarReqOuterClass.class */
 public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n)DungeonCandidateTeamChangeAvatarReq.proto\"?\n#DungeonCandidateTeamChangeAvatarReq\u0012\u0018\n\u0010avatar_guid_list\u0018\u0007 \u0003(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n)DungeonCandidateTeamChangeAvatarReq.proto\"=\n#DungeonCandidateTeamChangeAvatarReq\u0012\u0016\n\u000eavatarGuidList\u0018\u0005 \u0003(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_DungeonCandidateTeamChangeAvatarReq_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_DungeonCandidateTeamChangeAvatarReq_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f684xe398884c = new GeneratedMessageV3.FieldAccessorTable(internal_static_DungeonCandidateTeamChangeAvatarReq_descriptor, new String[]{"AvatarGuidList"});
+    private static final GeneratedMessageV3.FieldAccessorTable f681xe398884c = new GeneratedMessageV3.FieldAccessorTable(internal_static_DungeonCandidateTeamChangeAvatarReq_descriptor, new String[]{"AvatarGuidList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonCandidateTeamChangeAvatarReqOuterClass$DungeonCandidateTeamChangeAvatarReqOrBuilder.class */
     public interface DungeonCandidateTeamChangeAvatarReqOrBuilder extends MessageOrBuilder {
@@ -51,7 +51,7 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonCandidateTeamChangeAvatarReqOuterClass$DungeonCandidateTeamChangeAvatarReq.class */
     public static final class DungeonCandidateTeamChangeAvatarReq extends GeneratedMessageV3 implements DungeonCandidateTeamChangeAvatarReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_GUID_LIST_FIELD_NUMBER = 7;
+        public static final int AVATARGUIDLIST_FIELD_NUMBER = 5;
         private Internal.LongList avatarGuidList_;
         private int avatarGuidListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -105,14 +105,14 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 56:
+                                case 40:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.avatarGuidList_ = newLongList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.avatarGuidList_.addLong(input.readUInt64());
                                     break;
-                                case 58:
+                                case 42:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.avatarGuidList_ = newLongList();
@@ -153,7 +153,7 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return DungeonCandidateTeamChangeAvatarReqOuterClass.f684xe398884c.ensureFieldAccessorsInitialized(DungeonCandidateTeamChangeAvatarReq.class, Builder.class);
+            return DungeonCandidateTeamChangeAvatarReqOuterClass.f681xe398884c.ensureFieldAccessorsInitialized(DungeonCandidateTeamChangeAvatarReq.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.DungeonCandidateTeamChangeAvatarReqOuterClass.DungeonCandidateTeamChangeAvatarReqOrBuilder
@@ -188,7 +188,7 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getAvatarGuidListList().size() > 0) {
-                output.writeUInt32NoTag(58);
+                output.writeUInt32NoTag(42);
                 output.writeUInt32NoTag(this.avatarGuidListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.avatarGuidList_.size(); i++) {
@@ -236,7 +236,7 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getAvatarGuidListCount() > 0) {
-                hash = (53 * ((37 * hash) + 7)) + getAvatarGuidListList().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getAvatarGuidListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -326,7 +326,7 @@ public final class DungeonCandidateTeamChangeAvatarReqOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return DungeonCandidateTeamChangeAvatarReqOuterClass.f684xe398884c.ensureFieldAccessorsInitialized(DungeonCandidateTeamChangeAvatarReq.class, Builder.class);
+                return DungeonCandidateTeamChangeAvatarReqOuterClass.f681xe398884c.ensureFieldAccessorsInitialized(DungeonCandidateTeamChangeAvatarReq.class, Builder.class);
             }
 
             private Builder() {

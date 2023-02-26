@@ -90,30 +90,30 @@ public abstract class AbstractLong2ByteSortedMap extends AbstractLong2ByteMap im
     public static class KeySetIterator implements LongBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Long2ByteMap.Entry> f2223i;
+        protected final ObjectBidirectionalIterator<Long2ByteMap.Entry> f2187i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Long2ByteMap.Entry> i) {
-            this.f2223i = i;
+            this.f2187i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
         public long nextLong() {
-            return ((Long2ByteMap.Entry) this.f2223i.next()).getLongKey();
+            return ((Long2ByteMap.Entry) this.f2187i.next()).getLongKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongBidirectionalIterator
         public long previousLong() {
-            return this.f2223i.previous().getLongKey();
+            return this.f2187i.previous().getLongKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2223i.hasNext();
+            return this.f2187i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2223i.hasPrevious();
+            return this.f2187i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractLong2ByteSortedMap extends AbstractLong2ByteMap im
     public static class ValuesIterator implements ByteIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Long2ByteMap.Entry> f2224i;
+        protected final ObjectBidirectionalIterator<Long2ByteMap.Entry> f2188i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Long2ByteMap.Entry> i) {
-            this.f2224i = i;
+            this.f2188i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
         public byte nextByte() {
-            return ((Long2ByteMap.Entry) this.f2224i.next()).getByteValue();
+            return ((Long2ByteMap.Entry) this.f2188i.next()).getByteValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2224i.hasNext();
+            return this.f2188i.hasNext();
         }
     }
 }

@@ -9,7 +9,7 @@ import java.util.Set;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketCompoundDataNotify.class */
 public class PacketCompoundDataNotify extends BasePacket {
     public PacketCompoundDataNotify(Set<Integer> unlockedCompounds, List<CompoundQueueDataOuterClass.CompoundQueueData> compoundQueueData) {
-        super(164);
+        super(135);
         setData(CompoundDataNotifyOuterClass.CompoundDataNotify.newBuilder().addAllUnlockCompoundList(unlockedCompounds).addAllCompoundQueueDataList(compoundQueueData).build());
     }
 }

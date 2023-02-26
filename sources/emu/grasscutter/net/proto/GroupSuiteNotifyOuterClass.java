@@ -23,13 +23,13 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GroupSuiteNotifyOuterClass.class */
 public final class GroupSuiteNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016GroupSuiteNotify.proto\"w\n\u0010GroupSuiteNotify\u00122\n\tgroup_map\u0018\u0004 \u0003(\u000b2\u001f.GroupSuiteNotify.GroupMapEntry\u001a/\n\rGroupMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016GroupSuiteNotify.proto\"v\n\u0010GroupSuiteNotify\u00121\n\bgroupMap\u0018\f \u0003(\u000b2\u001f.GroupSuiteNotify.GroupMapEntry\u001a/\n\rGroupMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GroupSuiteNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GroupSuiteNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GroupSuiteNotify_descriptor, new String[]{"GroupMap"});
     private static final Descriptors.Descriptor internal_static_GroupSuiteNotify_GroupMapEntry_descriptor = internal_static_GroupSuiteNotify_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_GroupSuiteNotify_GroupMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f752x61289f45 = new GeneratedMessageV3.FieldAccessorTable(internal_static_GroupSuiteNotify_GroupMapEntry_descriptor, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f737x61289f45 = new GeneratedMessageV3.FieldAccessorTable(internal_static_GroupSuiteNotify_GroupMapEntry_descriptor, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GroupSuiteNotifyOuterClass$GroupSuiteNotifyOrBuilder.class */
     public interface GroupSuiteNotifyOrBuilder extends MessageOrBuilder {
@@ -60,7 +60,7 @@ public final class GroupSuiteNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GroupSuiteNotifyOuterClass$GroupSuiteNotify.class */
     public static final class GroupSuiteNotify extends GeneratedMessageV3 implements GroupSuiteNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int GROUP_MAP_FIELD_NUMBER = 4;
+        public static final int GROUPMAP_FIELD_NUMBER = 12;
         private MapField<Integer, Integer> groupMap_;
         private byte memoizedIsInitialized;
         private static final GroupSuiteNotify DEFAULT_INSTANCE = new GroupSuiteNotify();
@@ -112,7 +112,7 @@ public final class GroupSuiteNotifyOuterClass {
                 r4 = this;
                 r0 = r5
                 switch(r0) {
-                    case 4: goto L_0x0014;
+                    case 12: goto L_0x0014;
                     default: goto L_0x0019;
                 }
                 r0 = r4
@@ -165,7 +165,7 @@ public final class GroupSuiteNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 34:
+                            case 98:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.groupMap_ = MapField.newMapField(GroupMapDefaultEntryHolder.defaultEntry);
                                     mutable_bitField0_ |= 1;
@@ -269,7 +269,7 @@ public final class GroupSuiteNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetGroupMap(), GroupMapDefaultEntryHolder.defaultEntry, 4);
+            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetGroupMap(), GroupMapDefaultEntryHolder.defaultEntry, 12);
             this.unknownFields.writeTo(output);
         }
 
@@ -281,7 +281,7 @@ public final class GroupSuiteNotifyOuterClass {
             }
             int size2 = 0;
             for (Map.Entry<Integer, Integer> entry : internalGetGroupMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(4, GroupMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+                size2 += CodedOutputStream.computeMessageSize(12, GroupMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -307,7 +307,7 @@ public final class GroupSuiteNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (!internalGetGroupMap().getMap().isEmpty()) {
-                hash = (53 * ((37 * hash) + 4)) + internalGetGroupMap().hashCode();
+                hash = (53 * ((37 * hash) + 12)) + internalGetGroupMap().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -428,7 +428,7 @@ public final class GroupSuiteNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 4: goto L_0x0014;
+                        case 12: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -481,7 +481,7 @@ public final class GroupSuiteNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 4: goto L_0x0014;
+                        case 12: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4

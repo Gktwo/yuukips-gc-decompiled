@@ -21,7 +21,7 @@ public class DateGenerator {
     private final StringBuilder buf = new StringBuilder(32);
 
     /* renamed from: gc */
-    private final GregorianCalendar f3130gc = new GregorianCalendar(__GMT);
+    private final GregorianCalendar f3094gc = new GregorianCalendar(__GMT);
 
     static {
         __GMT.setID("GMT");
@@ -43,16 +43,16 @@ public class DateGenerator {
 
     public String doFormatDate(long date) {
         this.buf.setLength(0);
-        this.f3130gc.setTimeInMillis(date);
-        int dayOfWeek = this.f3130gc.get(7);
-        int dayOfMonth = this.f3130gc.get(5);
-        int month = this.f3130gc.get(2);
-        int year = this.f3130gc.get(1);
+        this.f3094gc.setTimeInMillis(date);
+        int dayOfWeek = this.f3094gc.get(7);
+        int dayOfMonth = this.f3094gc.get(5);
+        int month = this.f3094gc.get(2);
+        int year = this.f3094gc.get(1);
         int century = year / 100;
         int year2 = year % 100;
-        int hours = this.f3130gc.get(11);
-        int minutes = this.f3130gc.get(12);
-        int seconds = this.f3130gc.get(13);
+        int hours = this.f3094gc.get(11);
+        int minutes = this.f3094gc.get(12);
+        int seconds = this.f3094gc.get(13);
         this.buf.append(DAYS[dayOfWeek]);
         this.buf.append(',');
         this.buf.append(' ');
@@ -73,11 +73,11 @@ public class DateGenerator {
     }
 
     public void doFormatCookieDate(StringBuilder buf, long date) {
-        this.f3130gc.setTimeInMillis(date);
-        int dayOfWeek = this.f3130gc.get(7);
-        int dayOfMonth = this.f3130gc.get(5);
-        int month = this.f3130gc.get(2);
-        int year = this.f3130gc.get(1) % 10000;
+        this.f3094gc.setTimeInMillis(date);
+        int dayOfWeek = this.f3094gc.get(7);
+        int dayOfMonth = this.f3094gc.get(5);
+        int month = this.f3094gc.get(2);
+        int year = this.f3094gc.get(1) % 10000;
         int epoch = (int) ((date / 1000) % DateBuilder.SECONDS_IN_MOST_DAYS);
         int seconds = epoch % 60;
         int epoch2 = epoch / 60;

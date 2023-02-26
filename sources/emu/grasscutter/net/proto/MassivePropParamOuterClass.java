@@ -23,19 +23,19 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MassivePropParamOuterClass.class */
 public final class MassivePropParamOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016MassivePropParam.proto\"c\n\u0010MassivePropParam\u0012\f\n\u0004type\u0018\u0001 \u0001(\u0005\u0012\u001a\n\u0012reaction_info_list\u0018\u0002 \u0003(\r\u0012\u0012\n\nparam_list\u0018\u0003 \u0003(\u0002\u0012\u0011\n\tsync_flag\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016MassivePropParam.proto\"]\n\u0010MassivePropParam\u0012\f\n\u0004type\u0018\u0001 \u0001(\u0005\u0012\u0013\n\u000bbkeclhnchpn\u0018\u0002 \u0003(\r\u0012\u0011\n\tparamList\u0018\u0003 \u0003(\u0002\u0012\u0013\n\u000beejlkopeggc\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_MassivePropParam_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_MassivePropParam_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MassivePropParam_descriptor, new String[]{"Type", "ReactionInfoList", "ParamList", "SyncFlag"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_MassivePropParam_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MassivePropParam_descriptor, new String[]{"Type", "Bkeclhnchpn", "ParamList", "Eejlkopeggc"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MassivePropParamOuterClass$MassivePropParamOrBuilder.class */
     public interface MassivePropParamOrBuilder extends MessageOrBuilder {
         int getType();
 
-        List<Integer> getReactionInfoListList();
+        List<Integer> getBkeclhnchpnList();
 
-        int getReactionInfoListCount();
+        int getBkeclhnchpnCount();
 
-        int getReactionInfoList(int i);
+        int getBkeclhnchpn(int i);
 
         List<Float> getParamListList();
 
@@ -43,7 +43,7 @@ public final class MassivePropParamOuterClass {
 
         float getParamList(int i);
 
-        int getSyncFlag();
+        int getEejlkopeggc();
     }
 
     private MassivePropParamOuterClass() {
@@ -61,14 +61,14 @@ public final class MassivePropParamOuterClass {
         private static final long serialVersionUID = 0;
         public static final int TYPE_FIELD_NUMBER = 1;
         private int type_;
-        public static final int REACTION_INFO_LIST_FIELD_NUMBER = 2;
-        private Internal.IntList reactionInfoList_;
-        private int reactionInfoListMemoizedSerializedSize;
-        public static final int PARAM_LIST_FIELD_NUMBER = 3;
+        public static final int BKECLHNCHPN_FIELD_NUMBER = 2;
+        private Internal.IntList bkeclhnchpn_;
+        private int bkeclhnchpnMemoizedSerializedSize;
+        public static final int PARAMLIST_FIELD_NUMBER = 3;
         private Internal.FloatList paramList_;
         private int paramListMemoizedSerializedSize;
-        public static final int SYNC_FLAG_FIELD_NUMBER = 4;
-        private int syncFlag_;
+        public static final int EEJLKOPEGGC_FIELD_NUMBER = 4;
+        private int eejlkopeggc_;
         private byte memoizedIsInitialized;
         private static final MassivePropParam DEFAULT_INSTANCE = new MassivePropParam();
         private static final Parser<MassivePropParam> PARSER = new AbstractParser<MassivePropParam>() { // from class: emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParam.1
@@ -80,16 +80,16 @@ public final class MassivePropParamOuterClass {
 
         private MassivePropParam(GeneratedMessageV3.Builder<?> builder) {
             super(builder);
-            this.reactionInfoListMemoizedSerializedSize = -1;
+            this.bkeclhnchpnMemoizedSerializedSize = -1;
             this.paramListMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
         }
 
         private MassivePropParam() {
-            this.reactionInfoListMemoizedSerializedSize = -1;
+            this.bkeclhnchpnMemoizedSerializedSize = -1;
             this.paramListMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
-            this.reactionInfoList_ = emptyIntList();
+            this.bkeclhnchpn_ = emptyIntList();
             this.paramList_ = emptyFloatList();
         }
 
@@ -128,19 +128,19 @@ public final class MassivePropParamOuterClass {
                                 break;
                             case 16:
                                 if ((mutable_bitField0_ & 1) == 0) {
-                                    this.reactionInfoList_ = newIntList();
+                                    this.bkeclhnchpn_ = newIntList();
                                     mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                 }
-                                this.reactionInfoList_.addInt(input.readUInt32());
+                                this.bkeclhnchpn_.addInt(input.readUInt32());
                                 break;
                             case 18:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
-                                    this.reactionInfoList_ = newIntList();
+                                    this.bkeclhnchpn_ = newIntList();
                                     mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                 }
                                 while (input.getBytesUntilLimit() > 0) {
-                                    this.reactionInfoList_.addInt(input.readUInt32());
+                                    this.bkeclhnchpn_.addInt(input.readUInt32());
                                 }
                                 input.popLimit(limit);
                                 break;
@@ -163,7 +163,7 @@ public final class MassivePropParamOuterClass {
                                 this.paramList_.addFloat(input.readFloat());
                                 break;
                             case 32:
-                                this.syncFlag_ = input.readUInt32();
+                                this.eejlkopeggc_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -182,7 +182,7 @@ public final class MassivePropParamOuterClass {
                 }
             } finally {
                 if ((mutable_bitField0_ & 1) != 0) {
-                    this.reactionInfoList_.makeImmutable();
+                    this.bkeclhnchpn_.makeImmutable();
                 }
                 if ((mutable_bitField0_ & 2) != 0) {
                     this.paramList_.makeImmutable();
@@ -207,18 +207,18 @@ public final class MassivePropParamOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParamOrBuilder
-        public List<Integer> getReactionInfoListList() {
-            return this.reactionInfoList_;
+        public List<Integer> getBkeclhnchpnList() {
+            return this.bkeclhnchpn_;
         }
 
         @Override // emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParamOrBuilder
-        public int getReactionInfoListCount() {
-            return this.reactionInfoList_.size();
+        public int getBkeclhnchpnCount() {
+            return this.bkeclhnchpn_.size();
         }
 
         @Override // emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParamOrBuilder
-        public int getReactionInfoList(int index) {
-            return this.reactionInfoList_.getInt(index);
+        public int getBkeclhnchpn(int index) {
+            return this.bkeclhnchpn_.getInt(index);
         }
 
         @Override // emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParamOrBuilder
@@ -237,8 +237,8 @@ public final class MassivePropParamOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParamOrBuilder
-        public int getSyncFlag() {
-            return this.syncFlag_;
+        public int getEejlkopeggc() {
+            return this.eejlkopeggc_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -260,12 +260,12 @@ public final class MassivePropParamOuterClass {
             if (this.type_ != 0) {
                 output.writeInt32(1, this.type_);
             }
-            if (getReactionInfoListList().size() > 0) {
+            if (getBkeclhnchpnList().size() > 0) {
                 output.writeUInt32NoTag(18);
-                output.writeUInt32NoTag(this.reactionInfoListMemoizedSerializedSize);
+                output.writeUInt32NoTag(this.bkeclhnchpnMemoizedSerializedSize);
             }
-            for (int i = 0; i < this.reactionInfoList_.size(); i++) {
-                output.writeUInt32NoTag(this.reactionInfoList_.getInt(i));
+            for (int i = 0; i < this.bkeclhnchpn_.size(); i++) {
+                output.writeUInt32NoTag(this.bkeclhnchpn_.getInt(i));
             }
             if (getParamListList().size() > 0) {
                 output.writeUInt32NoTag(26);
@@ -274,8 +274,8 @@ public final class MassivePropParamOuterClass {
             for (int i2 = 0; i2 < this.paramList_.size(); i2++) {
                 output.writeFloatNoTag(this.paramList_.getFloat(i2));
             }
-            if (this.syncFlag_ != 0) {
-                output.writeUInt32(4, this.syncFlag_);
+            if (this.eejlkopeggc_ != 0) {
+                output.writeUInt32(4, this.eejlkopeggc_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -291,22 +291,22 @@ public final class MassivePropParamOuterClass {
                 size2 = 0 + CodedOutputStream.computeInt32Size(1, this.type_);
             }
             int dataSize = 0;
-            for (int i = 0; i < this.reactionInfoList_.size(); i++) {
-                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.reactionInfoList_.getInt(i));
+            for (int i = 0; i < this.bkeclhnchpn_.size(); i++) {
+                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.bkeclhnchpn_.getInt(i));
             }
             int size3 = size2 + dataSize;
-            if (!getReactionInfoListList().isEmpty()) {
+            if (!getBkeclhnchpnList().isEmpty()) {
                 size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
-            this.reactionInfoListMemoizedSerializedSize = dataSize;
+            this.bkeclhnchpnMemoizedSerializedSize = dataSize;
             int dataSize2 = 4 * getParamListList().size();
             int size4 = size3 + dataSize2;
             if (!getParamListList().isEmpty()) {
                 size4 = size4 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize2);
             }
             this.paramListMemoizedSerializedSize = dataSize2;
-            if (this.syncFlag_ != 0) {
-                size4 += CodedOutputStream.computeUInt32Size(4, this.syncFlag_);
+            if (this.eejlkopeggc_ != 0) {
+                size4 += CodedOutputStream.computeUInt32Size(4, this.eejlkopeggc_);
             }
             int size5 = size4 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size5;
@@ -322,7 +322,7 @@ public final class MassivePropParamOuterClass {
                 return equals(obj);
             }
             MassivePropParam other = (MassivePropParam) obj;
-            return getType() == other.getType() && getReactionInfoListList().equals(other.getReactionInfoListList()) && getParamListList().equals(other.getParamListList()) && getSyncFlag() == other.getSyncFlag() && this.unknownFields.equals(other.unknownFields);
+            return getType() == other.getType() && getBkeclhnchpnList().equals(other.getBkeclhnchpnList()) && getParamListList().equals(other.getParamListList()) && getEejlkopeggc() == other.getEejlkopeggc() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -331,13 +331,13 @@ public final class MassivePropParamOuterClass {
                 return this.memoizedHashCode;
             }
             int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getType();
-            if (getReactionInfoListCount() > 0) {
-                hash = (53 * ((37 * hash) + 2)) + getReactionInfoListList().hashCode();
+            if (getBkeclhnchpnCount() > 0) {
+                hash = (53 * ((37 * hash) + 2)) + getBkeclhnchpnList().hashCode();
             }
             if (getParamListCount() > 0) {
                 hash = (53 * ((37 * hash) + 3)) + getParamListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 4)) + getSyncFlag())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 4)) + getEejlkopeggc())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -418,9 +418,9 @@ public final class MassivePropParamOuterClass {
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements MassivePropParamOrBuilder {
             private int bitField0_;
             private int type_;
-            private Internal.IntList reactionInfoList_ = MassivePropParam.emptyIntList();
+            private Internal.IntList bkeclhnchpn_ = MassivePropParam.emptyIntList();
             private Internal.FloatList paramList_ = MassivePropParam.emptyFloatList();
-            private int syncFlag_;
+            private int eejlkopeggc_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return MassivePropParamOuterClass.internal_static_MassivePropParam_descriptor;
@@ -449,11 +449,11 @@ public final class MassivePropParamOuterClass {
             public Builder clear() {
                 clear();
                 this.type_ = 0;
-                this.reactionInfoList_ = MassivePropParam.emptyIntList();
+                this.bkeclhnchpn_ = MassivePropParam.emptyIntList();
                 this.bitField0_ &= -2;
                 this.paramList_ = MassivePropParam.emptyFloatList();
                 this.bitField0_ &= -3;
-                this.syncFlag_ = 0;
+                this.eejlkopeggc_ = 0;
                 return this;
             }
 
@@ -482,16 +482,16 @@ public final class MassivePropParamOuterClass {
                 int i = this.bitField0_;
                 result.type_ = this.type_;
                 if ((this.bitField0_ & 1) != 0) {
-                    this.reactionInfoList_.makeImmutable();
+                    this.bkeclhnchpn_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
-                result.reactionInfoList_ = this.reactionInfoList_;
+                result.bkeclhnchpn_ = this.bkeclhnchpn_;
                 if ((this.bitField0_ & 2) != 0) {
                     this.paramList_.makeImmutable();
                     this.bitField0_ &= -3;
                 }
                 result.paramList_ = this.paramList_;
-                result.syncFlag_ = this.syncFlag_;
+                result.eejlkopeggc_ = this.eejlkopeggc_;
                 onBuilt();
                 return result;
             }
@@ -542,13 +542,13 @@ public final class MassivePropParamOuterClass {
                 if (other.getType() != 0) {
                     setType(other.getType());
                 }
-                if (!other.reactionInfoList_.isEmpty()) {
-                    if (this.reactionInfoList_.isEmpty()) {
-                        this.reactionInfoList_ = other.reactionInfoList_;
+                if (!other.bkeclhnchpn_.isEmpty()) {
+                    if (this.bkeclhnchpn_.isEmpty()) {
+                        this.bkeclhnchpn_ = other.bkeclhnchpn_;
                         this.bitField0_ &= -2;
                     } else {
-                        ensureReactionInfoListIsMutable();
-                        this.reactionInfoList_.addAll(other.reactionInfoList_);
+                        ensureBkeclhnchpnIsMutable();
+                        this.bkeclhnchpn_.addAll(other.bkeclhnchpn_);
                     }
                     onChanged();
                 }
@@ -562,8 +562,8 @@ public final class MassivePropParamOuterClass {
                     }
                     onChanged();
                 }
-                if (other.getSyncFlag() != 0) {
-                    setSyncFlag(other.getSyncFlag());
+                if (other.getEejlkopeggc() != 0) {
+                    setEejlkopeggc(other.getEejlkopeggc());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -614,51 +614,51 @@ public final class MassivePropParamOuterClass {
                 return this;
             }
 
-            private void ensureReactionInfoListIsMutable() {
+            private void ensureBkeclhnchpnIsMutable() {
                 if ((this.bitField0_ & 1) == 0) {
-                    this.reactionInfoList_ = MassivePropParam.mutableCopy(this.reactionInfoList_);
+                    this.bkeclhnchpn_ = MassivePropParam.mutableCopy(this.bkeclhnchpn_);
                     this.bitField0_ |= 1;
                 }
             }
 
             @Override // emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParamOrBuilder
-            public List<Integer> getReactionInfoListList() {
-                return (this.bitField0_ & 1) != 0 ? Collections.unmodifiableList(this.reactionInfoList_) : this.reactionInfoList_;
+            public List<Integer> getBkeclhnchpnList() {
+                return (this.bitField0_ & 1) != 0 ? Collections.unmodifiableList(this.bkeclhnchpn_) : this.bkeclhnchpn_;
             }
 
             @Override // emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParamOrBuilder
-            public int getReactionInfoListCount() {
-                return this.reactionInfoList_.size();
+            public int getBkeclhnchpnCount() {
+                return this.bkeclhnchpn_.size();
             }
 
             @Override // emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParamOrBuilder
-            public int getReactionInfoList(int index) {
-                return this.reactionInfoList_.getInt(index);
+            public int getBkeclhnchpn(int index) {
+                return this.bkeclhnchpn_.getInt(index);
             }
 
-            public Builder setReactionInfoList(int index, int value) {
-                ensureReactionInfoListIsMutable();
-                this.reactionInfoList_.setInt(index, value);
+            public Builder setBkeclhnchpn(int index, int value) {
+                ensureBkeclhnchpnIsMutable();
+                this.bkeclhnchpn_.setInt(index, value);
                 onChanged();
                 return this;
             }
 
-            public Builder addReactionInfoList(int value) {
-                ensureReactionInfoListIsMutable();
-                this.reactionInfoList_.addInt(value);
+            public Builder addBkeclhnchpn(int value) {
+                ensureBkeclhnchpnIsMutable();
+                this.bkeclhnchpn_.addInt(value);
                 onChanged();
                 return this;
             }
 
-            public Builder addAllReactionInfoList(Iterable<? extends Integer> values) {
-                ensureReactionInfoListIsMutable();
-                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.reactionInfoList_);
+            public Builder addAllBkeclhnchpn(Iterable<? extends Integer> values) {
+                ensureBkeclhnchpnIsMutable();
+                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.bkeclhnchpn_);
                 onChanged();
                 return this;
             }
 
-            public Builder clearReactionInfoList() {
-                this.reactionInfoList_ = MassivePropParam.emptyIntList();
+            public Builder clearBkeclhnchpn() {
+                this.bkeclhnchpn_ = MassivePropParam.emptyIntList();
                 this.bitField0_ &= -2;
                 onChanged();
                 return this;
@@ -715,18 +715,18 @@ public final class MassivePropParamOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParamOrBuilder
-            public int getSyncFlag() {
-                return this.syncFlag_;
+            public int getEejlkopeggc() {
+                return this.eejlkopeggc_;
             }
 
-            public Builder setSyncFlag(int value) {
-                this.syncFlag_ = value;
+            public Builder setEejlkopeggc(int value) {
+                this.eejlkopeggc_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearSyncFlag() {
-                this.syncFlag_ = 0;
+            public Builder clearEejlkopeggc() {
+                this.eejlkopeggc_ = 0;
                 onChanged();
                 return this;
             }

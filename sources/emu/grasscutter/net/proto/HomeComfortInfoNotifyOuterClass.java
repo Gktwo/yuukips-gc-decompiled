@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeComfortInfoNotifyOuterClass.class */
 public final class HomeComfortInfoNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bHomeComfortInfoNotify.proto\u001a\u001bHomeModuleComfortInfo.proto\"I\n\u0015HomeComfortInfoNotify\u00120\n\u0010module_info_list\u0018\u0003 \u0003(\u000b2\u0016.HomeModuleComfortInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeModuleComfortInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bHomeComfortInfoNotify.proto\u001a\u001bHomeModuleComfortInfo.proto\"G\n\u0015HomeComfortInfoNotify\u0012.\n\u000emoduleInfoList\u0018\u000b \u0003(\u000b2\u0016.HomeModuleComfortInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeModuleComfortInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_HomeComfortInfoNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeComfortInfoNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeComfortInfoNotify_descriptor, new String[]{"ModuleInfoList"});
 
@@ -55,7 +55,7 @@ public final class HomeComfortInfoNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeComfortInfoNotifyOuterClass$HomeComfortInfoNotify.class */
     public static final class HomeComfortInfoNotify extends GeneratedMessageV3 implements HomeComfortInfoNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MODULE_INFO_LIST_FIELD_NUMBER = 3;
+        public static final int MODULEINFOLIST_FIELD_NUMBER = 11;
         private List<HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo> moduleInfoList_;
         private byte memoizedIsInitialized;
         private static final HomeComfortInfoNotify DEFAULT_INSTANCE = new HomeComfortInfoNotify();
@@ -106,7 +106,7 @@ public final class HomeComfortInfoNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 26:
+                                case 90:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.moduleInfoList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -187,7 +187,7 @@ public final class HomeComfortInfoNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.moduleInfoList_.size(); i++) {
-                output.writeMessage(3, this.moduleInfoList_.get(i));
+                output.writeMessage(11, this.moduleInfoList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,7 +200,7 @@ public final class HomeComfortInfoNotifyOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.moduleInfoList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(3, this.moduleInfoList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(11, this.moduleInfoList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class HomeComfortInfoNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getModuleInfoListCount() > 0) {
-                hash = (53 * ((37 * hash) + 3)) + getModuleInfoListList().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + getModuleInfoListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

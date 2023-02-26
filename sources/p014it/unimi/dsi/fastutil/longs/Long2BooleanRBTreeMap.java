@@ -994,7 +994,7 @@ public class Long2BooleanRBTreeMap extends AbstractLong2BooleanSortedMap impleme
         long from;
 
         /* renamed from: to */
-        long f2274to;
+        long f2238to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Long2BooleanMap.Entry> entries;
@@ -1005,7 +1005,7 @@ public class Long2BooleanRBTreeMap extends AbstractLong2BooleanSortedMap impleme
             if (bottom || top || Long2BooleanRBTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f2274to = to;
+                this.f2238to = to;
                 this.top = top;
                 this.defRetValue = Long2BooleanRBTreeMap.this.defRetValue;
                 return;
@@ -1024,7 +1024,7 @@ public class Long2BooleanRBTreeMap extends AbstractLong2BooleanSortedMap impleme
 
         /* renamed from: in */
         final boolean m690in(long k) {
-            return (this.bottom || Long2BooleanRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Long2BooleanRBTreeMap.this.compare(k, this.f2274to) < 0);
+            return (this.bottom || Long2BooleanRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Long2BooleanRBTreeMap.this.compare(k, this.f2238to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.Long2BooleanMap, p014it.unimi.dsi.fastutil.longs.Long2BooleanSortedMap
@@ -1199,7 +1199,7 @@ public class Long2BooleanRBTreeMap extends AbstractLong2BooleanSortedMap impleme
         public boolean put(long k, boolean v) {
             Long2BooleanRBTreeMap.this.modified = false;
             if (!m690in(k)) {
-                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2274to)) + ")");
+                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2238to)) + ")");
             }
             return Long2BooleanRBTreeMap.this.modified ? this.defRetValue : Long2BooleanRBTreeMap.this.put(k, v);
         }
@@ -1237,7 +1237,7 @@ public class Long2BooleanRBTreeMap extends AbstractLong2BooleanSortedMap impleme
 
         @Override // p014it.unimi.dsi.fastutil.longs.Long2BooleanSortedMap
         public Long2BooleanSortedMap headMap(long to) {
-            if (!this.top && Long2BooleanRBTreeMap.this.compare(to, this.f2274to) >= 0) {
+            if (!this.top && Long2BooleanRBTreeMap.this.compare(to, this.f2238to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1248,7 +1248,7 @@ public class Long2BooleanRBTreeMap extends AbstractLong2BooleanSortedMap impleme
             if (!this.bottom && Long2BooleanRBTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f2274to, this.top);
+            return new Submap(from, false, this.f2238to, this.top);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -1267,7 +1267,7 @@ public class Long2BooleanRBTreeMap extends AbstractLong2BooleanSortedMap impleme
             }
             long to = j2;
             if (!this.top) {
-                to = Long2BooleanRBTreeMap.this.compare(j2, this.f2274to) < 0 ? j2 : this.f2274to;
+                to = Long2BooleanRBTreeMap.this.compare(j2, this.f2238to) < 0 ? j2 : this.f2238to;
             }
             long from = j;
             if (!this.bottom) {
@@ -1275,7 +1275,7 @@ public class Long2BooleanRBTreeMap extends AbstractLong2BooleanSortedMap impleme
             }
             if (!this.top && !this.bottom) {
                 if ((from == 1 ? 1 : 0) == this.from) {
-                    if ((to == 1 ? 1 : 0) == this.f2274to) {
+                    if ((to == 1 ? 1 : 0) == this.f2238to) {
                         return this;
                     }
                 }
@@ -1299,7 +1299,7 @@ public class Long2BooleanRBTreeMap extends AbstractLong2BooleanSortedMap impleme
             if (e == null) {
                 return null;
             }
-            if (this.top || Long2BooleanRBTreeMap.this.compare(e.key, this.f2274to) < 0) {
+            if (this.top || Long2BooleanRBTreeMap.this.compare(e.key, this.f2238to) < 0) {
                 return e;
             }
             return null;
@@ -1313,8 +1313,8 @@ public class Long2BooleanRBTreeMap extends AbstractLong2BooleanSortedMap impleme
             if (this.top) {
                 e = Long2BooleanRBTreeMap.this.lastEntry;
             } else {
-                e = Long2BooleanRBTreeMap.this.locateKey(this.f2274to);
-                if (Long2BooleanRBTreeMap.this.compare(e.key, this.f2274to) >= 0) {
+                e = Long2BooleanRBTreeMap.this.locateKey(this.f2238to);
+                if (Long2BooleanRBTreeMap.this.compare(e.key, this.f2238to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1392,7 +1392,7 @@ public class Long2BooleanRBTreeMap extends AbstractLong2BooleanSortedMap impleme
             @Override // p014it.unimi.dsi.fastutil.longs.Long2BooleanRBTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Long2BooleanRBTreeMap.this.compare(this.next.key, Submap.this.f2274to) >= 0) {
+                if (!Submap.this.top && this.next != null && Long2BooleanRBTreeMap.this.compare(this.next.key, Submap.this.f2238to) >= 0) {
                     this.next = null;
                 }
             }

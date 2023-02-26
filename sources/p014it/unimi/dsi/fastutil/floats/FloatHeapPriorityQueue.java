@@ -17,14 +17,14 @@ public class FloatHeapPriorityQueue implements FloatPriorityQueue, Serializable 
     protected int size;
 
     /* renamed from: c */
-    protected FloatComparator f1941c;
+    protected FloatComparator f1905c;
 
     public FloatHeapPriorityQueue(int capacity, FloatComparator c) {
         this.heap = FloatArrays.EMPTY_ARRAY;
         if (capacity > 0) {
             this.heap = new float[capacity];
         }
-        this.f1941c = c;
+        this.f1905c = c;
     }
 
     public FloatHeapPriorityQueue(int capacity) {
@@ -88,7 +88,7 @@ public class FloatHeapPriorityQueue implements FloatPriorityQueue, Serializable 
         int i = this.size;
         this.size = i + 1;
         fArr[i] = x;
-        FloatHeaps.upHeap(this.heap, this.size, this.size - 1, this.f1941c);
+        FloatHeaps.upHeap(this.heap, this.size, this.size - 1, this.f1905c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.floats.FloatPriorityQueue
@@ -103,7 +103,7 @@ public class FloatHeapPriorityQueue implements FloatPriorityQueue, Serializable 
         this.size = i;
         fArr[0] = fArr2[i];
         if (this.size != 0) {
-            FloatHeaps.downHeap(this.heap, this.size, 0, this.f1941c);
+            FloatHeaps.downHeap(this.heap, this.size, 0, this.f1905c);
         }
         return result;
     }
@@ -118,7 +118,7 @@ public class FloatHeapPriorityQueue implements FloatPriorityQueue, Serializable 
 
     @Override // p014it.unimi.dsi.fastutil.PriorityQueue
     public void changed() {
-        FloatHeaps.downHeap(this.heap, this.size, 0, this.f1941c);
+        FloatHeaps.downHeap(this.heap, this.size, 0, this.f1905c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.PriorityQueue
@@ -138,7 +138,7 @@ public class FloatHeapPriorityQueue implements FloatPriorityQueue, Serializable 
     /* Return type fixed from 'it.unimi.dsi.fastutil.floats.FloatComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.floats.FloatPriorityQueue, p014it.unimi.dsi.fastutil.PriorityQueue
     public Comparator<? super Float> comparator() {
-        return this.f1941c;
+        return this.f1905c;
     }
 
     private void writeObject(ObjectOutputStream s) throws IOException {

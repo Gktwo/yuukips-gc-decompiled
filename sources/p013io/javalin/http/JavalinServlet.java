@@ -502,12 +502,12 @@ public final class JavalinServlet extends HttpServlet {
                 Intrinsics.checkNotNullParameter(handler, "handler");
                 Intrinsics.checkNotNullParameter(set, "roles");
                 this.matcher.add(new HandlerEntry(handlerType, path, this.config.ignoreTrailingSlashes, handlerType.isHttpMethod() ? (v3) -> {
-                    m5824addHandler$lambda0(r0, r1, r2, v3);
+                    m5821addHandler$lambda0(r0, r1, r2, v3);
                 } : handler, handler));
             }
 
             /* renamed from: addHandler$lambda-0  reason: not valid java name */
-            private static final void m5824addHandler$lambda0(JavalinServlet this$0, Handler $handler, Set $roles, Context ctx) {
+            private static final void m5821addHandler$lambda0(JavalinServlet this$0, Handler $handler, Set $roles, Context ctx) {
                 Intrinsics.checkNotNullParameter(this$0, "this$0");
                 Intrinsics.checkNotNullParameter($handler, "$handler");
                 Intrinsics.checkNotNullParameter($roles, "$roles");

@@ -25,16 +25,16 @@ public class DoubleOpenHashBigSet extends AbstractDoubleSet implements Serializa
     protected transient boolean containsNull;
 
     /* renamed from: n */
-    protected transient long f1741n;
+    protected transient long f1705n;
     protected transient long maxFill;
     protected final transient long minN;
 
     /* renamed from: f */
-    protected final float f1742f;
+    protected final float f1706f;
     protected long size;
 
     private void initMasks() {
-        this.mask = this.f1741n - 1;
+        this.mask = this.f1705n - 1;
         this.segmentMask = this.key[0].length - 1;
         this.baseMask = this.key.length - 1;
     }
@@ -42,15 +42,15 @@ public class DoubleOpenHashBigSet extends AbstractDoubleSet implements Serializa
     public DoubleOpenHashBigSet(long expected, float f) {
         if (f <= 0.0f || f > 1.0f) {
             throw new IllegalArgumentException("Load factor must be greater than 0 and smaller than or equal to 1");
-        } else if (this.f1741n < 0) {
+        } else if (this.f1705n < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1742f = f;
+            this.f1706f = f;
             long bigArraySize = HashCommon.bigArraySize(expected, f);
-            this.f1741n = bigArraySize;
+            this.f1705n = bigArraySize;
             this.minN = bigArraySize;
-            this.maxFill = HashCommon.maxFill(this.f1741n, f);
-            this.key = DoubleBigArrays.newBigArray(this.f1741n);
+            this.maxFill = HashCommon.maxFill(this.f1705n, f);
+            this.key = DoubleBigArrays.newBigArray(this.f1705n);
             initMasks();
         }
     }
@@ -144,8 +144,8 @@ public class DoubleOpenHashBigSet extends AbstractDoubleSet implements Serializa
     }
 
     private void ensureCapacity(long capacity) {
-        long needed = HashCommon.bigArraySize(capacity, this.f1742f);
-        if (needed > this.f1741n) {
+        long needed = HashCommon.bigArraySize(capacity, this.f1706f);
+        if (needed > this.f1705n) {
             rehash(needed);
         }
     }
@@ -153,7 +153,7 @@ public class DoubleOpenHashBigSet extends AbstractDoubleSet implements Serializa
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Double> c) {
         long size = Size64.sizeOf(c);
-        if (((double) this.f1742f) <= 0.5d) {
+        if (((double) this.f1706f) <= 0.5d) {
             ensureCapacity(size);
         } else {
             ensureCapacity(size64() + size);
@@ -164,7 +164,7 @@ public class DoubleOpenHashBigSet extends AbstractDoubleSet implements Serializa
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleCollection, p014it.unimi.dsi.fastutil.doubles.DoubleCollection
     public boolean addAll(DoubleCollection c) {
         long size = Size64.sizeOf(c);
-        if (((double) this.f1742f) <= 0.5d) {
+        if (((double) this.f1706f) <= 0.5d) {
             ensureCapacity(size);
         } else {
             ensureCapacity(size64() + size);
@@ -210,7 +210,7 @@ public class DoubleOpenHashBigSet extends AbstractDoubleSet implements Serializa
         if (j < this.maxFill) {
             return true;
         }
-        rehash(2 * this.f1741n);
+        rehash(2 * this.f1705n);
         return true;
     }
 
@@ -244,20 +244,20 @@ public class DoubleOpenHashBigSet extends AbstractDoubleSet implements Serializa
     private boolean removeEntry(int base, int displ) {
         this.size--;
         shiftKeys((((long) base) * 134217728) + ((long) displ));
-        if (this.f1741n <= this.minN || this.size >= this.maxFill / 4 || this.f1741n <= 16) {
+        if (this.f1705n <= this.minN || this.size >= this.maxFill / 4 || this.f1705n <= 16) {
             return true;
         }
-        rehash(this.f1741n / 2);
+        rehash(this.f1705n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
         this.size--;
-        if (this.f1741n <= this.minN || this.size >= this.maxFill / 4 || this.f1741n <= 16) {
+        if (this.f1705n <= this.minN || this.size >= this.maxFill / 4 || this.f1705n <= 16) {
             return true;
         }
-        rehash(this.f1741n / 2);
+        rehash(this.f1705n / 2);
         return true;
     }
 
@@ -348,20 +348,20 @@ public class DoubleOpenHashBigSet extends AbstractDoubleSet implements Serializa
         long last;
 
         /* renamed from: c */
-        long f1743c;
+        long f1707c;
         boolean mustReturnNull;
         DoubleArrayList wrapped;
 
         private SetIterator() {
             this.base = DoubleOpenHashBigSet.this.key.length;
             this.last = -1;
-            this.f1743c = DoubleOpenHashBigSet.this.size;
+            this.f1707c = DoubleOpenHashBigSet.this.size;
             this.mustReturnNull = DoubleOpenHashBigSet.this.containsNull;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1743c != 0;
+            return this.f1707c != 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
@@ -370,10 +370,10 @@ public class DoubleOpenHashBigSet extends AbstractDoubleSet implements Serializa
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f1743c--;
+            this.f1707c--;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = DoubleOpenHashBigSet.this.f1741n;
+                this.last = DoubleOpenHashBigSet.this.f1705n;
                 return 0.0d;
             }
             double[][] key = DoubleOpenHashBigSet.this.key;
@@ -442,7 +442,7 @@ public class DoubleOpenHashBigSet extends AbstractDoubleSet implements Serializa
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == DoubleOpenHashBigSet.this.f1741n) {
+            if (this.last == DoubleOpenHashBigSet.this.f1705n) {
                 DoubleOpenHashBigSet.this.containsNull = false;
             } else if (this.base >= 0) {
                 shiftKeys(this.last);
@@ -470,22 +470,22 @@ public class DoubleOpenHashBigSet extends AbstractDoubleSet implements Serializa
         long max;
 
         /* renamed from: c */
-        long f1744c;
+        long f1708c;
         boolean mustReturnNull;
         boolean hasSplit;
 
         SetSpliterator() {
             this.pos = 0;
-            this.max = DoubleOpenHashBigSet.this.f1741n;
-            this.f1744c = 0;
+            this.max = DoubleOpenHashBigSet.this.f1705n;
+            this.f1708c = 0;
             this.mustReturnNull = DoubleOpenHashBigSet.this.containsNull;
             this.hasSplit = false;
         }
 
         SetSpliterator(long pos, long max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = DoubleOpenHashBigSet.this.f1741n;
-            this.f1744c = 0;
+            this.max = DoubleOpenHashBigSet.this.f1705n;
+            this.f1708c = 0;
             this.mustReturnNull = DoubleOpenHashBigSet.this.containsNull;
             this.hasSplit = false;
             this.pos = pos;
@@ -498,7 +498,7 @@ public class DoubleOpenHashBigSet extends AbstractDoubleSet implements Serializa
         public boolean tryAdvance(DoubleConsumer action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1744c++;
+                this.f1708c++;
                 action.accept(0.0d);
                 return true;
             }
@@ -506,7 +506,7 @@ public class DoubleOpenHashBigSet extends AbstractDoubleSet implements Serializa
             while (this.pos < this.max) {
                 double gotten = BigArrays.get(key, this.pos);
                 if (Double.doubleToLongBits(gotten) != 0) {
-                    this.f1744c++;
+                    this.f1708c++;
                     this.pos++;
                     action.accept(gotten);
                     return true;
@@ -521,14 +521,14 @@ public class DoubleOpenHashBigSet extends AbstractDoubleSet implements Serializa
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
                 action.accept(0.0d);
-                this.f1744c++;
+                this.f1708c++;
             }
             double[][] key = DoubleOpenHashBigSet.this.key;
             while (this.pos < this.max) {
                 double gotten = BigArrays.get(key, this.pos);
                 if (Double.doubleToLongBits(gotten) != 0) {
                     action.accept(gotten);
-                    this.f1744c++;
+                    this.f1708c++;
                 }
                 this.pos++;
             }
@@ -542,9 +542,9 @@ public class DoubleOpenHashBigSet extends AbstractDoubleSet implements Serializa
         @Override // java.util.Spliterator
         public long estimateSize() {
             if (!this.hasSplit) {
-                return DoubleOpenHashBigSet.this.size - this.f1744c;
+                return DoubleOpenHashBigSet.this.size - this.f1708c;
             }
-            return Math.min(DoubleOpenHashBigSet.this.size - this.f1744c, ((long) ((((double) DoubleOpenHashBigSet.this.realSize()) / ((double) DoubleOpenHashBigSet.this.f1741n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min(DoubleOpenHashBigSet.this.size - this.f1708c, ((long) ((((double) DoubleOpenHashBigSet.this.realSize()) / ((double) DoubleOpenHashBigSet.this.f1705n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleSpliterator, java.util.Spliterator.OfDouble, java.util.Spliterator.OfPrimitive, java.util.Spliterator
@@ -678,7 +678,7 @@ public class DoubleOpenHashBigSet extends AbstractDoubleSet implements Serializa
     /* JADX DEBUG: Multi-variable search result rejected for r10v1, resolved type: long */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r10v0 */
-    /* JADX WARN: Type inference failed for: r0v6, types: [double[][], long] */
+    /* JADX WARN: Type inference failed for: r0v6, types: [long, double[][]] */
     /* JADX WARN: Type inference failed for: r10v2, types: [long] */
     /* JADX WARNING: Unknown variable types count: 1 */
     @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterable
@@ -696,7 +696,7 @@ public class DoubleOpenHashBigSet extends AbstractDoubleSet implements Serializa
             r0 = 0
             r10 = r0
             r0 = r8
-            long r0 = r0.f1741n
+            long r0 = r0.f1705n
             r12 = r0
             r0 = r8
             double[][] r0 = r0.key
@@ -735,8 +735,8 @@ public class DoubleOpenHashBigSet extends AbstractDoubleSet implements Serializa
     }
 
     public boolean trim(long n) {
-        long l = HashCommon.bigArraySize(n, this.f1742f);
-        if (l >= this.f1741n || this.size > HashCommon.maxFill(l, this.f1742f)) {
+        long l = HashCommon.bigArraySize(n, this.f1706f);
+        if (l >= this.f1705n || this.size > HashCommon.maxFill(l, this.f1706f)) {
             return true;
         }
         try {
@@ -933,9 +933,9 @@ public class DoubleOpenHashBigSet extends AbstractDoubleSet implements Serializa
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int i;
         s.defaultReadObject();
-        this.f1741n = HashCommon.bigArraySize(this.size, this.f1742f);
-        this.maxFill = HashCommon.maxFill(this.f1741n, this.f1742f);
-        double[][] key = DoubleBigArrays.newBigArray(this.f1741n);
+        this.f1705n = HashCommon.bigArraySize(this.size, this.f1706f);
+        this.maxFill = HashCommon.maxFill(this.f1705n, this.f1706f);
+        double[][] key = DoubleBigArrays.newBigArray(this.f1705n);
         this.key = key;
         initMasks();
         long i2 = this.size;

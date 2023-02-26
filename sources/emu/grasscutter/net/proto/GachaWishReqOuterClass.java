@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GachaWishReqOuterClass.class */
 public final class GachaWishReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012GachaWishReq.proto\"N\n\fGachaWishReq\u0012\u0012\n\ngacha_type\u0018\u0003 \u0001(\r\u0012\u0019\n\u0011gacha_schedule_id\u0018\f \u0001(\r\u0012\u000f\n\u0007item_id\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012GachaWishReq.proto\"J\n\fGachaWishReq\u0012\u0011\n\tgachaType\u0018\u0006 \u0001(\r\u0012\u0017\n\u000fgachaScheduleId\u0018\n \u0001(\r\u0012\u000e\n\u0006itemId\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GachaWishReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GachaWishReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GachaWishReq_descriptor, new String[]{"GachaType", "GachaScheduleId", "ItemId"});
 
@@ -45,11 +45,11 @@ public final class GachaWishReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GachaWishReqOuterClass$GachaWishReq.class */
     public static final class GachaWishReq extends GeneratedMessageV3 implements GachaWishReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int GACHA_TYPE_FIELD_NUMBER = 3;
+        public static final int GACHATYPE_FIELD_NUMBER = 6;
         private int gachaType_;
-        public static final int GACHA_SCHEDULE_ID_FIELD_NUMBER = 12;
+        public static final int GACHASCHEDULEID_FIELD_NUMBER = 10;
         private int gachaScheduleId_;
-        public static final int ITEM_ID_FIELD_NUMBER = 9;
+        public static final int ITEMID_FIELD_NUMBER = 9;
         private int itemId_;
         private byte memoizedIsInitialized;
         private static final GachaWishReq DEFAULT_INSTANCE = new GachaWishReq();
@@ -97,13 +97,13 @@ public final class GachaWishReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 24:
+                                case 48:
                                     this.gachaType_ = input.readUInt32();
                                     break;
                                 case 72:
                                     this.itemId_ = input.readUInt32();
                                     break;
-                                case 96:
+                                case 80:
                                     this.gachaScheduleId_ = input.readUInt32();
                                     break;
                                 default:
@@ -167,13 +167,13 @@ public final class GachaWishReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.gachaType_ != 0) {
-                output.writeUInt32(3, this.gachaType_);
+                output.writeUInt32(6, this.gachaType_);
             }
             if (this.itemId_ != 0) {
                 output.writeUInt32(9, this.itemId_);
             }
             if (this.gachaScheduleId_ != 0) {
-                output.writeUInt32(12, this.gachaScheduleId_);
+                output.writeUInt32(10, this.gachaScheduleId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,13 +186,13 @@ public final class GachaWishReqOuterClass {
             }
             int size2 = 0;
             if (this.gachaType_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.gachaType_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.gachaType_);
             }
             if (this.itemId_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(9, this.itemId_);
             }
             if (this.gachaScheduleId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.gachaScheduleId_);
+                size2 += CodedOutputStream.computeUInt32Size(10, this.gachaScheduleId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -216,7 +216,7 @@ public final class GachaWishReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getGachaType())) + 12)) + getGachaScheduleId())) + 9)) + getItemId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getGachaType())) + 10)) + getGachaScheduleId())) + 9)) + getItemId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

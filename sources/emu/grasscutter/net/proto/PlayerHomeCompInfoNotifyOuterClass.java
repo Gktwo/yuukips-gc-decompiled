@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerHomeCompInfoNotifyOuterClass.class */
 public final class PlayerHomeCompInfoNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001ePlayerHomeCompInfoNotify.proto\u001a\u0018PlayerHomeCompInfo.proto\"B\n\u0018PlayerHomeCompInfoNotify\u0012&\n\tcomp_info\u0018\u0002 \u0001(\u000b2\u0013.PlayerHomeCompInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PlayerHomeCompInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001ePlayerHomeCompInfoNotify.proto\u001a\u0018PlayerHomeCompInfo.proto\"A\n\u0018PlayerHomeCompInfoNotify\u0012%\n\bcompInfo\u0018\u0005 \u0001(\u000b2\u0013.PlayerHomeCompInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PlayerHomeCompInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_PlayerHomeCompInfoNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerHomeCompInfoNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerHomeCompInfoNotify_descriptor, new String[]{"CompInfo"});
 
@@ -47,7 +47,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerHomeCompInfoNotifyOuterClass$PlayerHomeCompInfoNotify.class */
     public static final class PlayerHomeCompInfoNotify extends GeneratedMessageV3 implements PlayerHomeCompInfoNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int COMP_INFO_FIELD_NUMBER = 2;
+        public static final int COMPINFO_FIELD_NUMBER = 5;
         private PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo compInfo_;
         private byte memoizedIsInitialized;
         private static final PlayerHomeCompInfoNotify DEFAULT_INSTANCE = new PlayerHomeCompInfoNotify();
@@ -94,7 +94,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 18:
+                            case 42:
                                 PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo.Builder subBuilder = this.compInfo_ != null ? this.compInfo_.toBuilder() : null;
                                 this.compInfo_ = (PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo) input.readMessage(PlayerHomeCompInfoOuterClass.PlayerHomeCompInfo.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -164,7 +164,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.compInfo_ != null) {
-                output.writeMessage(2, getCompInfo());
+                output.writeMessage(5, getCompInfo());
             }
             this.unknownFields.writeTo(output);
         }
@@ -177,7 +177,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
             }
             int size2 = 0;
             if (this.compInfo_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(2, getCompInfo());
+                size2 = 0 + CodedOutputStream.computeMessageSize(5, getCompInfo());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -206,7 +206,7 @@ public final class PlayerHomeCompInfoNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasCompInfo()) {
-                hash = (53 * ((37 * hash) + 2)) + getCompInfo().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getCompInfo().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

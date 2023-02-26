@@ -42,13 +42,13 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f2557n;
+    protected transient int f2521n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2558f;
+    protected final float f2522f;
     protected transient Object2ByteSortedMap.FastSortedEntrySet<K> entries;
     protected transient ObjectSortedSet<K> keys;
     protected transient ByteCollection values;
@@ -61,15 +61,15 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2558f = f;
+            this.f2522f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2557n = arraySize;
+            this.f2521n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2557n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2557n, f);
-            this.key = (K[]) new Object[this.f2557n + 1];
-            this.value = new byte[this.f2557n + 1];
-            this.link = new long[this.f2557n + 1];
+            this.mask = this.f2521n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2521n, f);
+            this.key = (K[]) new Object[this.f2521n + 1];
+            this.value = new byte[this.f2521n + 1];
+            this.link = new long[this.f2521n + 1];
         }
     }
 
@@ -118,15 +118,15 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2558f);
-        if (needed > this.f2557n) {
+        int needed = HashCommon.arraySize(capacity, this.f2522f);
+        if (needed > this.f2521n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2558f)))));
-        if (needed > this.f2557n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2522f)))));
+        if (needed > this.f2521n) {
             rehash(needed);
         }
     }
@@ -137,8 +137,8 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f2557n > this.minN && this.size < this.maxFill / 4 && this.f2557n > 16) {
-            rehash(this.f2557n / 2);
+        if (this.f2521n > this.minN && this.size < this.maxFill / 4 && this.f2521n > 16) {
+            rehash(this.f2521n / 2);
         }
         return oldValue;
     }
@@ -146,19 +146,19 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
     /* access modifiers changed from: private */
     public byte removeNullEntry() {
         this.containsNullKey = false;
-        this.key[this.f2557n] = null;
-        byte oldValue = this.value[this.f2557n];
+        this.key[this.f2521n] = null;
+        byte oldValue = this.value[this.f2521n];
         this.size--;
-        fixPointers(this.f2557n);
-        if (this.f2557n > this.minN && this.size < this.maxFill / 4 && this.f2557n > 16) {
-            rehash(this.f2557n / 2);
+        fixPointers(this.f2521n);
+        if (this.f2521n > this.minN && this.size < this.maxFill / 4 && this.f2521n > 16) {
+            rehash(this.f2521n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObject2ByteMap, java.util.Map
     public void putAll(Map<? extends K, ? extends Byte> m) {
-        if (((double) this.f2558f) <= 0.5d) {
+        if (((double) this.f2522f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -169,7 +169,7 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
     private int find(K k) {
         K curr;
         if (k == null) {
-            return this.containsNullKey ? this.f2557n : -(this.f2557n + 1);
+            return this.containsNullKey ? this.f2521n : -(this.f2521n + 1);
         }
         K[] key = this.key;
         int mix = HashCommon.mix(k.hashCode()) & this.mask;
@@ -193,7 +193,7 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
     }
 
     private void insert(int pos, K k, byte v) {
-        if (pos == this.f2557n) {
+        if (pos == this.f2521n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -212,7 +212,7 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2558f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2522f));
         }
     }
 
@@ -256,9 +256,9 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f2557n, incr);
+            return addToValue(this.f2521n, incr);
         } else {
-            pos = this.f2557n;
+            pos = this.f2521n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -277,7 +277,7 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2558f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2522f));
         }
         return this.defRetValue;
     }
@@ -359,14 +359,14 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
         }
         this.size--;
         byte v = this.value[pos];
-        if (pos == this.f2557n) {
+        if (pos == this.f2521n) {
             this.containsNullKey = false;
-            this.key[this.f2557n] = null;
+            this.key[this.f2521n] = null;
         } else {
             shiftKeys(pos);
         }
-        if (this.f2557n > this.minN && this.size < this.maxFill / 4 && this.f2557n > 16) {
-            rehash(this.f2557n / 2);
+        if (this.f2521n > this.minN && this.size < this.maxFill / 4 && this.f2521n > 16) {
+            rehash(this.f2521n / 2);
         }
         return v;
     }
@@ -384,14 +384,14 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
         }
         this.size--;
         byte v = this.value[pos];
-        if (pos == this.f2557n) {
+        if (pos == this.f2521n) {
             this.containsNullKey = false;
-            this.key[this.f2557n] = null;
+            this.key[this.f2521n] = null;
         } else {
             shiftKeys(pos);
         }
-        if (this.f2557n > this.minN && this.size < this.maxFill / 4 && this.f2557n > 16) {
-            rehash(this.f2557n / 2);
+        if (this.f2521n > this.minN && this.size < this.maxFill / 4 && this.f2521n > 16) {
+            rehash(this.f2521n / 2);
         }
         return v;
     }
@@ -471,8 +471,8 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
         } else if (!this.containsNullKey) {
             return this.defRetValue;
         } else {
-            moveIndexToFirst(this.f2557n);
-            return this.value[this.f2557n];
+            moveIndexToFirst(this.f2521n);
+            return this.value[this.f2521n];
         }
     }
 
@@ -503,8 +503,8 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
         } else if (!this.containsNullKey) {
             return this.defRetValue;
         } else {
-            moveIndexToLast(this.f2557n);
-            return this.value[this.f2557n];
+            moveIndexToLast(this.f2521n);
+            return this.value[this.f2521n];
         }
     }
 
@@ -532,11 +532,11 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
                 return setValue(pos, v);
             }
         } else if (this.containsNullKey) {
-            moveIndexToFirst(this.f2557n);
-            return setValue(this.f2557n, v);
+            moveIndexToFirst(this.f2521n);
+            return setValue(this.f2521n, v);
         } else {
             this.containsNullKey = true;
-            pos = this.f2557n;
+            pos = this.f2521n;
         }
         this.key[pos] = k;
         this.value[pos] = v;
@@ -554,7 +554,7 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size, this.f2558f));
+            rehash(HashCommon.arraySize(this.size, this.f2522f));
         }
         return this.defRetValue;
     }
@@ -583,11 +583,11 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
                 return setValue(pos, v);
             }
         } else if (this.containsNullKey) {
-            moveIndexToLast(this.f2557n);
-            return setValue(this.f2557n, v);
+            moveIndexToLast(this.f2521n);
+            return setValue(this.f2521n, v);
         } else {
             this.containsNullKey = true;
-            pos = this.f2557n;
+            pos = this.f2521n;
         }
         this.key[pos] = k;
         this.value[pos] = v;
@@ -605,7 +605,7 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size, this.f2558f));
+            rehash(HashCommon.arraySize(this.size, this.f2522f));
         }
         return this.defRetValue;
     }
@@ -614,7 +614,7 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
     public byte getByte(Object k) {
         K curr;
         if (k == null) {
-            return this.containsNullKey ? this.value[this.f2557n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2521n] : this.defRetValue;
         }
         K[] key = this.key;
         int mix = HashCommon.mix(k.hashCode()) & this.mask;
@@ -668,10 +668,10 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
     public boolean containsValue(byte v) {
         byte[] value = this.value;
         K[] key = this.key;
-        if (this.containsNullKey && value[this.f2557n] == v) {
+        if (this.containsNullKey && value[this.f2521n] == v) {
             return true;
         }
-        int i = this.f2557n;
+        int i = this.f2521n;
         while (true) {
             i--;
             if (i == 0) {
@@ -687,7 +687,7 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
     public byte getOrDefault(Object k, byte defaultValue) {
         K curr;
         if (k == null) {
-            return this.containsNullKey ? this.value[this.f2557n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2521n] : defaultValue;
         }
         K[] key = this.key;
         int mix = HashCommon.mix(k.hashCode()) & this.mask;
@@ -747,7 +747,7 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
                 removeEntry(pos);
                 return true;
             }
-        } else if (!this.containsNullKey || v != this.value[this.f2557n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f2521n]) {
             return false;
         } else {
             removeNullEntry();
@@ -1095,8 +1095,8 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
             this.index = -1;
             if (from == null) {
                 if (Object2ByteLinkedOpenHashMap.this.containsNullKey) {
-                    this.next = (int) Object2ByteLinkedOpenHashMap.this.link[Object2ByteLinkedOpenHashMap.this.f2557n];
-                    this.prev = Object2ByteLinkedOpenHashMap.this.f2557n;
+                    this.next = (int) Object2ByteLinkedOpenHashMap.this.link[Object2ByteLinkedOpenHashMap.this.f2521n];
+                    this.prev = Object2ByteLinkedOpenHashMap.this.f2521n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + from + " does not belong to this map.");
@@ -1225,9 +1225,9 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
             }
             int pos = this.curr;
             this.curr = -1;
-            if (pos == Object2ByteLinkedOpenHashMap.this.f2557n) {
+            if (pos == Object2ByteLinkedOpenHashMap.this.f2521n) {
                 Object2ByteLinkedOpenHashMap.this.containsNullKey = false;
-                Object2ByteLinkedOpenHashMap.this.key[Object2ByteLinkedOpenHashMap.this.f2557n] = null;
+                Object2ByteLinkedOpenHashMap.this.key[Object2ByteLinkedOpenHashMap.this.f2521n] = null;
                 return;
             }
             K[] key = Object2ByteLinkedOpenHashMap.this.key;
@@ -1484,7 +1484,7 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
             Object key = e.getKey();
             byte v = ((Byte) e.getValue()).byteValue();
             if (key == null) {
-                return Object2ByteLinkedOpenHashMap.this.containsNullKey && Object2ByteLinkedOpenHashMap.this.value[Object2ByteLinkedOpenHashMap.this.f2557n] == v;
+                return Object2ByteLinkedOpenHashMap.this.containsNullKey && Object2ByteLinkedOpenHashMap.this.value[Object2ByteLinkedOpenHashMap.this.f2521n] == v;
             }
             K[] key2 = Object2ByteLinkedOpenHashMap.this.key;
             int mix = HashCommon.mix(key.hashCode()) & Object2ByteLinkedOpenHashMap.this.mask;
@@ -1545,7 +1545,7 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
                     Object2ByteLinkedOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Object2ByteLinkedOpenHashMap.this.containsNullKey || Object2ByteLinkedOpenHashMap.this.value[Object2ByteLinkedOpenHashMap.this.f2557n] != v) {
+            } else if (!Object2ByteLinkedOpenHashMap.this.containsNullKey || Object2ByteLinkedOpenHashMap.this.value[Object2ByteLinkedOpenHashMap.this.f2521n] != v) {
                 return false;
             } else {
                 Object2ByteLinkedOpenHashMap.this.removeNullEntry();
@@ -1846,8 +1846,8 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2558f)));
-        if (l >= this.f2557n || this.size > HashCommon.maxFill(l, this.f2558f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2522f)));
+        if (l >= this.f2521n || this.size > HashCommon.maxFill(l, this.f2522f)) {
             return true;
         }
         try {
@@ -1908,9 +1908,9 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f2557n = newN;
+        this.f2521n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f2557n, this.f2558f);
+        this.maxFill = HashCommon.maxFill(this.f2521n, this.f2522f);
         this.key = newKey;
         this.value = newValue;
     }
@@ -1954,7 +1954,7 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f2557n];
+            h += this.value[this.f2521n];
         }
         return h;
     }
@@ -1983,14 +1983,14 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2557n = HashCommon.arraySize(this.size, this.f2558f);
-        this.maxFill = HashCommon.maxFill(this.f2557n, this.f2558f);
-        this.mask = this.f2557n - 1;
-        K[] key = (K[]) new Object[this.f2557n + 1];
+        this.f2521n = HashCommon.arraySize(this.size, this.f2522f);
+        this.maxFill = HashCommon.maxFill(this.f2521n, this.f2522f);
+        this.mask = this.f2521n - 1;
+        K[] key = (K[]) new Object[this.f2521n + 1];
         this.key = key;
-        byte[] value = new byte[this.f2557n + 1];
+        byte[] value = new byte[this.f2521n + 1];
         this.value = value;
-        long[] link = new long[this.f2557n + 1];
+        long[] link = new long[this.f2521n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -2015,7 +2015,7 @@ public class Object2ByteLinkedOpenHashMap<K> extends AbstractObject2ByteSortedMa
                     i2 = this.mask;
                 }
             } else {
-                pos = this.f2557n;
+                pos = this.f2521n;
                 this.containsNullKey = true;
             }
             key[pos] = readObject;

@@ -2,7 +2,6 @@ package p001ch.qos.logback.core.pattern.parser;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.eclipse.jetty.websocket.api.StatusCode;
 import p001ch.qos.logback.core.pattern.util.IEscapeUtil;
 import p001ch.qos.logback.core.pattern.util.RegularEscapeUtil;
 import p001ch.qos.logback.core.pattern.util.RestrictedEscapeUtil;
@@ -80,7 +79,7 @@ public class TokenStream {
             case OPTION_STATE:
                 throw new ScanException("Unexpected end of pattern string");
             case KEYWORD_STATE:
-                tokenList.add(new Token(StatusCode.UNDEFINED, buf.toString()));
+                tokenList.add(new Token(1004, buf.toString()));
                 break;
             case RIGHT_PARENTHESIS_STATE:
                 tokenList.add(Token.RIGHT_PARENTHESIS_TOKEN);
@@ -150,20 +149,20 @@ public class TokenStream {
         if (Character.isJavaIdentifierPart(c)) {
             buf.append(c);
         } else if (c == '{') {
-            addValuedToken(StatusCode.UNDEFINED, buf, tokenList);
+            addValuedToken(1004, buf, tokenList);
             this.state = TokenizerState.OPTION_STATE;
         } else if (c == '(') {
             addValuedToken(1005, buf, tokenList);
             this.state = TokenizerState.LITERAL_STATE;
         } else if (c == '%') {
-            addValuedToken(StatusCode.UNDEFINED, buf, tokenList);
+            addValuedToken(1004, buf, tokenList);
             tokenList.add(Token.PERCENT_TOKEN);
             this.state = TokenizerState.FORMAT_MODIFIER_STATE;
         } else if (c == ')') {
-            addValuedToken(StatusCode.UNDEFINED, buf, tokenList);
+            addValuedToken(1004, buf, tokenList);
             this.state = TokenizerState.RIGHT_PARENTHESIS_STATE;
         } else {
-            addValuedToken(StatusCode.UNDEFINED, buf, tokenList);
+            addValuedToken(1004, buf, tokenList);
             if (c != '\\') {
                 buf.append(c);
             } else if (this.pointer < this.patternLength) {

@@ -19,19 +19,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PSPlayerApplyEnterMpRspOuterClass.class */
 public final class PSPlayerApplyEnterMpRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dPSPlayerApplyEnterMpRsp.proto\"P\n\u0017PSPlayerApplyEnterMpRsp\u0012\u0015\n\rtarget_psn_id\u0018\u0003 \u0001(\t\u0012\u000f\n\u0007retcode\u0018\u0005 \u0001(\u0005\u0012\r\n\u0005param\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dPSPlayerApplyEnterMpRsp.proto\"N\n\u0017PSPlayerApplyEnterMpRsp\u0012\r\n\u0005param\u0018\u000e \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0002 \u0001(\u0005\u0012\u0013\n\u000btargetPsnId\u0018\u0003 \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PSPlayerApplyEnterMpRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PSPlayerApplyEnterMpRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PSPlayerApplyEnterMpRsp_descriptor, new String[]{"TargetPsnId", "Retcode", "Param"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PSPlayerApplyEnterMpRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PSPlayerApplyEnterMpRsp_descriptor, new String[]{"Param", "Retcode", "TargetPsnId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PSPlayerApplyEnterMpRspOuterClass$PSPlayerApplyEnterMpRspOrBuilder.class */
     public interface PSPlayerApplyEnterMpRspOrBuilder extends MessageOrBuilder {
-        String getTargetPsnId();
-
-        ByteString getTargetPsnIdBytes();
+        int getParam();
 
         int getRetcode();
 
-        int getParam();
+        String getTargetPsnId();
+
+        ByteString getTargetPsnIdBytes();
     }
 
     private PSPlayerApplyEnterMpRspOuterClass() {
@@ -47,12 +47,12 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PSPlayerApplyEnterMpRspOuterClass$PSPlayerApplyEnterMpRsp.class */
     public static final class PSPlayerApplyEnterMpRsp extends GeneratedMessageV3 implements PSPlayerApplyEnterMpRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TARGET_PSN_ID_FIELD_NUMBER = 3;
-        private volatile Object targetPsnId_;
-        public static final int RETCODE_FIELD_NUMBER = 5;
-        private int retcode_;
-        public static final int PARAM_FIELD_NUMBER = 10;
+        public static final int PARAM_FIELD_NUMBER = 14;
         private int param_;
+        public static final int RETCODE_FIELD_NUMBER = 2;
+        private int retcode_;
+        public static final int TARGETPSNID_FIELD_NUMBER = 3;
+        private volatile Object targetPsnId_;
         private byte memoizedIsInitialized;
         private static final PSPlayerApplyEnterMpRsp DEFAULT_INSTANCE = new PSPlayerApplyEnterMpRsp();
         private static final Parser<PSPlayerApplyEnterMpRsp> PARSER = new AbstractParser<PSPlayerApplyEnterMpRsp>() { // from class: emu.grasscutter.net.proto.PSPlayerApplyEnterMpRspOuterClass.PSPlayerApplyEnterMpRsp.1
@@ -99,13 +99,13 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
+                            case 16:
+                                this.retcode_ = input.readInt32();
+                                break;
                             case 26:
                                 this.targetPsnId_ = input.readStringRequireUtf8();
                                 break;
-                            case 40:
-                                this.retcode_ = input.readInt32();
-                                break;
-                            case 80:
+                            case 112:
                                 this.param_ = input.readUInt32();
                                 break;
                             default:
@@ -138,6 +138,16 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PSPlayerApplyEnterMpRspOuterClass.PSPlayerApplyEnterMpRspOrBuilder
+        public int getParam() {
+            return this.param_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PSPlayerApplyEnterMpRspOuterClass.PSPlayerApplyEnterMpRspOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PSPlayerApplyEnterMpRspOuterClass.PSPlayerApplyEnterMpRspOrBuilder
         public String getTargetPsnId() {
             Object ref = this.targetPsnId_;
             if (ref instanceof String) {
@@ -159,16 +169,6 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
             return b;
         }
 
-        @Override // emu.grasscutter.net.proto.PSPlayerApplyEnterMpRspOuterClass.PSPlayerApplyEnterMpRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PSPlayerApplyEnterMpRspOuterClass.PSPlayerApplyEnterMpRspOrBuilder
-        public int getParam() {
-            return this.param_;
-        }
-
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -184,14 +184,14 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.retcode_ != 0) {
+                output.writeInt32(2, this.retcode_);
+            }
             if (!GeneratedMessageV3.isStringEmpty(this.targetPsnId_)) {
                 GeneratedMessageV3.writeString(output, 3, this.targetPsnId_);
             }
-            if (this.retcode_ != 0) {
-                output.writeInt32(5, this.retcode_);
-            }
             if (this.param_ != 0) {
-                output.writeUInt32(10, this.param_);
+                output.writeUInt32(14, this.param_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -203,14 +203,14 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (!GeneratedMessageV3.isStringEmpty(this.targetPsnId_)) {
-                size2 = 0 + GeneratedMessageV3.computeStringSize(3, this.targetPsnId_);
-            }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(5, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(2, this.retcode_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.targetPsnId_)) {
+                size2 += GeneratedMessageV3.computeStringSize(3, this.targetPsnId_);
             }
             if (this.param_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.param_);
+                size2 += CodedOutputStream.computeUInt32Size(14, this.param_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
                 return equals(obj);
             }
             PSPlayerApplyEnterMpRsp other = (PSPlayerApplyEnterMpRsp) obj;
-            return getTargetPsnId().equals(other.getTargetPsnId()) && getRetcode() == other.getRetcode() && getParam() == other.getParam() && this.unknownFields.equals(other.unknownFields);
+            return getParam() == other.getParam() && getRetcode() == other.getRetcode() && getTargetPsnId().equals(other.getTargetPsnId()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -234,7 +234,7 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getTargetPsnId().hashCode())) + 5)) + getRetcode())) + 10)) + getParam())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getParam())) + 2)) + getRetcode())) + 3)) + getTargetPsnId().hashCode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -313,9 +313,9 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PSPlayerApplyEnterMpRspOuterClass$PSPlayerApplyEnterMpRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements PSPlayerApplyEnterMpRspOrBuilder {
-            private Object targetPsnId_ = "";
-            private int retcode_;
             private int param_;
+            private int retcode_;
+            private Object targetPsnId_ = "";
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return PSPlayerApplyEnterMpRspOuterClass.internal_static_PSPlayerApplyEnterMpRsp_descriptor;
@@ -343,9 +343,9 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.targetPsnId_ = "";
-                this.retcode_ = 0;
                 this.param_ = 0;
+                this.retcode_ = 0;
+                this.targetPsnId_ = "";
                 return this;
             }
 
@@ -371,9 +371,9 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public PSPlayerApplyEnterMpRsp buildPartial() {
                 PSPlayerApplyEnterMpRsp result = new PSPlayerApplyEnterMpRsp(this);
-                result.targetPsnId_ = this.targetPsnId_;
-                result.retcode_ = this.retcode_;
                 result.param_ = this.param_;
+                result.retcode_ = this.retcode_;
+                result.targetPsnId_ = this.targetPsnId_;
                 onBuilt();
                 return result;
             }
@@ -421,15 +421,15 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
                 if (other == PSPlayerApplyEnterMpRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (!other.getTargetPsnId().isEmpty()) {
-                    this.targetPsnId_ = other.targetPsnId_;
-                    onChanged();
+                if (other.getParam() != 0) {
+                    setParam(other.getParam());
                 }
                 if (other.getRetcode() != 0) {
                     setRetcode(other.getRetcode());
                 }
-                if (other.getParam() != 0) {
-                    setParam(other.getParam());
+                if (!other.getTargetPsnId().isEmpty()) {
+                    this.targetPsnId_ = other.targetPsnId_;
+                    onChanged();
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -461,6 +461,40 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.PSPlayerApplyEnterMpRspOuterClass.PSPlayerApplyEnterMpRspOrBuilder
+            public int getParam() {
+                return this.param_;
+            }
+
+            public Builder setParam(int value) {
+                this.param_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearParam() {
+                this.param_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.PSPlayerApplyEnterMpRspOuterClass.PSPlayerApplyEnterMpRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.PSPlayerApplyEnterMpRspOuterClass.PSPlayerApplyEnterMpRspOrBuilder
@@ -506,40 +540,6 @@ public final class PSPlayerApplyEnterMpRspOuterClass {
                 }
                 PSPlayerApplyEnterMpRsp.checkByteStringIsUtf8(value);
                 this.targetPsnId_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PSPlayerApplyEnterMpRspOuterClass.PSPlayerApplyEnterMpRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PSPlayerApplyEnterMpRspOuterClass.PSPlayerApplyEnterMpRspOrBuilder
-            public int getParam() {
-                return this.param_;
-            }
-
-            public Builder setParam(int value) {
-                this.param_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearParam() {
-                this.param_ = 0;
                 onChanged();
                 return this;
             }

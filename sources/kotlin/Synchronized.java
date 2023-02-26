@@ -12,7 +12,7 @@ class Synchronized extends Standard {
     /* JADX INFO: finally extract failed */
     @InlineOnly
     /* renamed from: synchronized  reason: not valid java name */
-    private static final <R> R m7068synchronized(Object lock, Function0<? extends R> function0) {
+    private static final <R> R m7065synchronized(Object lock, Function0<? extends R> function0) {
         R r;
         Intrinsics.checkNotNullParameter(lock, "lock");
         Intrinsics.checkNotNullParameter(function0, "block");

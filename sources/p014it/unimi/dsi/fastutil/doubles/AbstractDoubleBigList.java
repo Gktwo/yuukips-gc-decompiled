@@ -120,32 +120,32 @@ public abstract class AbstractDoubleBigList extends AbstractDoubleCollection imp
     public static final class IndexBasedSpliterator extends DoubleBigSpliterators.LateBindingSizeIndexBasedSpliterator {
 
         /* renamed from: l */
-        final DoubleBigList f1575l;
+        final DoubleBigList f1539l;
 
         IndexBasedSpliterator(DoubleBigList l, long pos) {
             super(pos);
-            this.f1575l = l;
+            this.f1539l = l;
         }
 
         IndexBasedSpliterator(DoubleBigList l, long pos, long maxPos) {
             super(pos, maxPos);
-            this.f1575l = l;
+            this.f1539l = l;
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigSpliterators.LateBindingSizeIndexBasedSpliterator
         protected final long getMaxPosFromBackingStore() {
-            return this.f1575l.size64();
+            return this.f1539l.size64();
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigSpliterators.AbstractIndexBasedSpliterator
         protected final double get(long i) {
-            return this.f1575l.getDouble(i);
+            return this.f1539l.getDouble(i);
         }
 
         /* access modifiers changed from: protected */
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigSpliterators.AbstractIndexBasedSpliterator
         public final IndexBasedSpliterator makeForSplit(long pos, long maxPos) {
-            return new IndexBasedSpliterator(this.f1575l, pos, maxPos);
+            return new IndexBasedSpliterator(this.f1539l, pos, maxPos);
         }
     }
 
@@ -344,7 +344,7 @@ public abstract class AbstractDoubleBigList extends AbstractDoubleCollection imp
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v5, types: [it.unimi.dsi.fastutil.doubles.DoubleBigListIterator] */
     /* JADX WARN: Type inference failed for: r1v4, types: [long] */
-    /* JADX WARN: Type inference failed for: r2v3, types: [double[][], long] */
+    /* JADX WARN: Type inference failed for: r2v3, types: [long, double[][]] */
     /* JADX WARN: Type inference failed for: r1v10, types: [long] */
     /* JADX WARNING: Unknown variable types count: 2 */
     @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigList
@@ -422,7 +422,7 @@ public abstract class AbstractDoubleBigList extends AbstractDoubleCollection imp
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r11v0, types: [it.unimi.dsi.fastutil.doubles.AbstractDoubleBigList, long] */
+    /* JADX WARN: Type inference failed for: r11v0, types: [long, it.unimi.dsi.fastutil.doubles.AbstractDoubleBigList] */
     /* JADX WARN: Type inference failed for: r12v0, types: [long] */
     /* JADX WARN: Type inference failed for: r17v0, types: [long] */
     /* JADX WARN: Type inference failed for: r0v8, types: [it.unimi.dsi.fastutil.doubles.DoubleBigListIterator] */
@@ -535,7 +535,7 @@ public abstract class AbstractDoubleBigList extends AbstractDoubleCollection imp
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r15v0, types: [double[][], long] */
+    /* JADX WARN: Type inference failed for: r15v0, types: [long, double[][]] */
     /* JADX WARN: Type inference failed for: r0v8, types: [it.unimi.dsi.fastutil.doubles.DoubleBigListIterator] */
     /* JADX WARN: Type inference failed for: r20v0 */
     /* JADX WARN: Type inference failed for: r20v1, types: [long] */
@@ -1008,11 +1008,11 @@ public abstract class AbstractDoubleBigList extends AbstractDoubleCollection imp
         private static final long serialVersionUID = -7046029254386353129L;
 
         /* renamed from: l */
-        protected final DoubleBigList f1573l;
+        protected final DoubleBigList f1537l;
         protected final long from;
 
         /* renamed from: to */
-        protected long f1574to;
+        protected long f1538to;
         static final /* synthetic */ boolean $assertionsDisabled;
 
         /* Return type fixed from 'it.unimi.dsi.fastutil.BigListIterator' to match base method */
@@ -1089,18 +1089,18 @@ public abstract class AbstractDoubleBigList extends AbstractDoubleCollection imp
         }
 
         public DoubleSubList(DoubleBigList l, long from, long to) {
-            this.f1573l = l;
+            this.f1537l = l;
             this.from = from;
-            this.f1574to = to;
+            this.f1538to = to;
         }
 
         /* access modifiers changed from: private */
         public boolean assertRange() {
-            if (!$assertionsDisabled && this.from > this.f1573l.size64()) {
+            if (!$assertionsDisabled && this.from > this.f1537l.size64()) {
                 throw new AssertionError();
-            } else if (!$assertionsDisabled && this.f1574to > this.f1573l.size64()) {
+            } else if (!$assertionsDisabled && this.f1538to > this.f1537l.size64()) {
                 throw new AssertionError();
-            } else if ($assertionsDisabled || this.f1574to >= this.from) {
+            } else if ($assertionsDisabled || this.f1538to >= this.from) {
                 return true;
             } else {
                 throw new AssertionError();
@@ -1109,8 +1109,8 @@ public abstract class AbstractDoubleBigList extends AbstractDoubleCollection imp
 
         @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleBigList, p014it.unimi.dsi.fastutil.doubles.AbstractDoubleCollection, p014it.unimi.dsi.fastutil.doubles.DoubleCollection
         public boolean add(double k) {
-            this.f1573l.add(this.f1574to, k);
-            this.f1574to++;
+            this.f1537l.add(this.f1538to, k);
+            this.f1538to++;
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }
@@ -1120,8 +1120,8 @@ public abstract class AbstractDoubleBigList extends AbstractDoubleCollection imp
         @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleBigList, p014it.unimi.dsi.fastutil.doubles.DoubleBigList
         public void add(long index, double k) {
             ensureIndex(index);
-            this.f1573l.add(this.from + index, k);
-            this.f1574to++;
+            this.f1537l.add(this.from + index, k);
+            this.f1538to++;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1130,32 +1130,32 @@ public abstract class AbstractDoubleBigList extends AbstractDoubleCollection imp
         @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleBigList, p014it.unimi.dsi.fastutil.BigList
         public boolean addAll(long index, Collection<? extends Double> c) {
             ensureIndex(index);
-            this.f1574to += (long) c.size();
-            return this.f1573l.addAll(this.from + index, c);
+            this.f1538to += (long) c.size();
+            return this.f1537l.addAll(this.from + index, c);
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigList
         public double getDouble(long index) {
             ensureRestrictedIndex(index);
-            return this.f1573l.getDouble(this.from + index);
+            return this.f1537l.getDouble(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleBigList, p014it.unimi.dsi.fastutil.doubles.DoubleBigList
         public double removeDouble(long index) {
             ensureRestrictedIndex(index);
-            this.f1574to--;
-            return this.f1573l.removeDouble(this.from + index);
+            this.f1538to--;
+            return this.f1537l.removeDouble(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleBigList, p014it.unimi.dsi.fastutil.doubles.DoubleBigList
         public double set(long index, double k) {
             ensureRestrictedIndex(index);
-            return this.f1573l.set(this.from + index, k);
+            return this.f1537l.set(this.from + index, k);
         }
 
         @Override // p014it.unimi.dsi.fastutil.Size64
         public long size64() {
-            return this.f1574to - this.from;
+            return this.f1538to - this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleBigList, p014it.unimi.dsi.fastutil.doubles.DoubleBigList
@@ -1164,15 +1164,15 @@ public abstract class AbstractDoubleBigList extends AbstractDoubleCollection imp
             if (from + length > size64()) {
                 throw new IndexOutOfBoundsException("End index (" + from + length + ") is greater than list size (" + size64() + ")");
             }
-            this.f1573l.getElements(this.from + from, a, offset, length);
+            this.f1537l.getElements(this.from + from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleBigList, p014it.unimi.dsi.fastutil.doubles.DoubleBigList
         public void removeElements(long from, long to) {
             ensureIndex(from);
             ensureIndex(to);
-            this.f1573l.removeElements(this.from + from, this.from + to);
-            this.f1574to -= to - from;
+            this.f1537l.removeElements(this.from + from, this.from + to);
+            this.f1538to -= to - from;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1181,8 +1181,8 @@ public abstract class AbstractDoubleBigList extends AbstractDoubleCollection imp
         @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleBigList, p014it.unimi.dsi.fastutil.doubles.DoubleBigList
         public void addElements(long index, double[][] a, long offset, long length) {
             ensureIndex(index);
-            this.f1573l.addElements(this.from + index, a, offset, length);
-            this.f1574to += length;
+            this.f1537l.addElements(this.from + index, a, offset, length);
+            this.f1538to += length;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1204,7 +1204,7 @@ public abstract class AbstractDoubleBigList extends AbstractDoubleCollection imp
 
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigListIterators.AbstractIndexBasedBigIterator
             protected final double get(long i) {
-                return DoubleSubList.this.f1573l.getDouble(DoubleSubList.this.from + i);
+                return DoubleSubList.this.f1537l.getDouble(DoubleSubList.this.from + i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigListIterators.AbstractIndexBasedBigListIterator
@@ -1224,7 +1224,7 @@ public abstract class AbstractDoubleBigList extends AbstractDoubleCollection imp
 
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigListIterators.AbstractIndexBasedBigIterator
             protected final long getMaxPos() {
-                return DoubleSubList.this.f1574to - DoubleSubList.this.from;
+                return DoubleSubList.this.f1538to - DoubleSubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBigListIterators.AbstractIndexBasedBigListIterator, p014it.unimi.dsi.fastutil.doubles.DoubleBigListIterator
@@ -1266,7 +1266,7 @@ public abstract class AbstractDoubleBigList extends AbstractDoubleCollection imp
 
             @Override // java.util.Iterator
             public boolean hasNext() {
-                return this.parent.nextIndex() < DoubleSubList.this.f1574to;
+                return this.parent.nextIndex() < DoubleSubList.this.f1538to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -1329,10 +1329,10 @@ public abstract class AbstractDoubleBigList extends AbstractDoubleCollection imp
                 }
                 long currentPos = this.parent.nextIndex();
                 char c = currentPos + n;
-                int i = (c > DoubleSubList.this.f1574to ? 1 : (c == DoubleSubList.this.f1574to ? 0 : -1));
+                int i = (c > DoubleSubList.this.f1538to ? 1 : (c == DoubleSubList.this.f1538to ? 0 : -1));
                 long parentNewPos = c;
                 if (i > 0) {
-                    parentNewPos = DoubleSubList.this.f1574to;
+                    parentNewPos = DoubleSubList.this.f1538to;
                 }
                 return this.parent.skip((parentNewPos == 1 ? 1 : 0) - currentPos);
             }
@@ -1343,12 +1343,12 @@ public abstract class AbstractDoubleBigList extends AbstractDoubleCollection imp
         @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleBigList, p014it.unimi.dsi.fastutil.doubles.DoubleBigList, p014it.unimi.dsi.fastutil.BigList
         public BigListIterator<Double> listIterator(long index) {
             ensureIndex(index);
-            return this.f1573l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f1573l.listIterator(index + this.from));
+            return this.f1537l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f1537l.listIterator(index + this.from));
         }
 
         @Override // java.util.Collection, java.lang.Iterable, p014it.unimi.dsi.fastutil.doubles.DoubleCollection, p014it.unimi.dsi.fastutil.doubles.DoubleIterable
         public DoubleSpliterator spliterator() {
-            return this.f1573l instanceof RandomAccess ? new IndexBasedSpliterator(this.f1573l, this.from, this.f1574to) : spliterator();
+            return this.f1537l instanceof RandomAccess ? new IndexBasedSpliterator(this.f1537l, this.from, this.f1538to) : spliterator();
         }
 
         /* Return type fixed from 'it.unimi.dsi.fastutil.doubles.DoubleBigList' to match base method */
@@ -1368,8 +1368,8 @@ public abstract class AbstractDoubleBigList extends AbstractDoubleCollection imp
             if (index == -1) {
                 return false;
             }
-            this.f1574to--;
-            this.f1573l.removeDouble(this.from + index);
+            this.f1538to--;
+            this.f1537l.removeDouble(this.from + index);
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }

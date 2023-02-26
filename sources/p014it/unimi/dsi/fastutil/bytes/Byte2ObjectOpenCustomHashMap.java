@@ -38,13 +38,13 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
     protected ByteHash.Strategy strategy;
 
     /* renamed from: n */
-    protected transient int f1212n;
+    protected transient int f1176n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1213f;
+    protected final float f1177f;
     protected transient Byte2ObjectMap.FastEntrySet<V> entries;
     protected transient ByteSet keys;
     protected transient ObjectCollection<V> values;
@@ -56,14 +56,14 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1213f = f;
+            this.f1177f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1212n = arraySize;
+            this.f1176n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1212n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1212n, f);
-            this.key = new byte[this.f1212n + 1];
-            this.value = (V[]) new Object[this.f1212n + 1];
+            this.mask = this.f1176n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1176n, f);
+            this.key = new byte[this.f1176n + 1];
+            this.value = (V[]) new Object[this.f1176n + 1];
         }
     }
 
@@ -117,15 +117,15 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1213f);
-        if (needed > this.f1212n) {
+        int needed = HashCommon.arraySize(capacity, this.f1177f);
+        if (needed > this.f1176n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1213f)))));
-        if (needed > this.f1212n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1177f)))));
+        if (needed > this.f1176n) {
             rehash(needed);
         }
     }
@@ -136,8 +136,8 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
         this.value[pos] = null;
         this.size--;
         shiftKeys(pos);
-        if (this.f1212n > this.minN && this.size < this.maxFill / 4 && this.f1212n > 16) {
-            rehash(this.f1212n / 2);
+        if (this.f1176n > this.minN && this.size < this.maxFill / 4 && this.f1176n > 16) {
+            rehash(this.f1176n / 2);
         }
         return oldValue;
     }
@@ -145,18 +145,18 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
     /* access modifiers changed from: private */
     public V removeNullEntry() {
         this.containsNullKey = false;
-        V oldValue = this.value[this.f1212n];
-        this.value[this.f1212n] = null;
+        V oldValue = this.value[this.f1176n];
+        this.value[this.f1176n] = null;
         this.size--;
-        if (this.f1212n > this.minN && this.size < this.maxFill / 4 && this.f1212n > 16) {
-            rehash(this.f1212n / 2);
+        if (this.f1176n > this.minN && this.size < this.maxFill / 4 && this.f1176n > 16) {
+            rehash(this.f1176n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByte2ObjectMap, java.util.Map
     public void putAll(Map<? extends Byte, ? extends V> m) {
-        if (((double) this.f1213f) <= 0.5d) {
+        if (((double) this.f1177f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -167,7 +167,7 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
     private int find(byte k) {
         byte curr;
         if (this.strategy.equals(k, (byte) 0)) {
-            return this.containsNullKey ? this.f1212n : -(this.f1212n + 1);
+            return this.containsNullKey ? this.f1176n : -(this.f1176n + 1);
         }
         byte[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -191,7 +191,7 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
     }
 
     private void insert(int pos, byte k, V v) {
-        if (pos == this.f1212n) {
+        if (pos == this.f1176n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -199,7 +199,7 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f1213f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f1177f));
         }
     }
 
@@ -277,7 +277,7 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
     public V get(byte k) {
         byte curr;
         if (this.strategy.equals(k, (byte) 0)) {
-            return this.containsNullKey ? this.value[this.f1212n] : (V) this.defRetValue;
+            return this.containsNullKey ? this.value[this.f1176n] : (V) this.defRetValue;
         }
         byte[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -331,10 +331,10 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
     public boolean containsValue(Object v) {
         V[] value = this.value;
         byte[] key = this.key;
-        if (this.containsNullKey && Objects.equals(value[this.f1212n], v)) {
+        if (this.containsNullKey && Objects.equals(value[this.f1176n], v)) {
             return true;
         }
-        int i = this.f1212n;
+        int i = this.f1176n;
         while (true) {
             i--;
             if (i == 0) {
@@ -350,7 +350,7 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
     public V getOrDefault(byte k, V defaultValue) {
         byte curr;
         if (this.strategy.equals(k, (byte) 0)) {
-            return this.containsNullKey ? this.value[this.f1212n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f1176n] : defaultValue;
         }
         byte[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -410,7 +410,7 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
                 removeEntry(pos);
                 return true;
             }
-        } else if (!this.containsNullKey || !Objects.equals(v, this.value[this.f1212n])) {
+        } else if (!this.containsNullKey || !Objects.equals(v, this.value[this.f1176n])) {
             return false;
         } else {
             removeNullEntry();
@@ -634,31 +634,31 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
         int last;
 
         /* renamed from: c */
-        int f1214c;
+        int f1178c;
         boolean mustReturnNullKey;
         ByteArrayList wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Byte2ObjectOpenCustomHashMap.this.f1212n;
+            this.pos = Byte2ObjectOpenCustomHashMap.this.f1176n;
             this.last = -1;
-            this.f1214c = Byte2ObjectOpenCustomHashMap.this.size;
+            this.f1178c = Byte2ObjectOpenCustomHashMap.this.size;
             this.mustReturnNullKey = Byte2ObjectOpenCustomHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f1214c != 0;
+            return this.f1178c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f1214c--;
+            this.f1178c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Byte2ObjectOpenCustomHashMap.this.f1212n;
+                int i = Byte2ObjectOpenCustomHashMap.this.f1176n;
                 this.last = i;
                 return i;
             }
@@ -690,13 +690,13 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Byte2ObjectOpenCustomHashMap.this.f1212n;
+                int i = Byte2ObjectOpenCustomHashMap.this.f1176n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f1214c--;
+                this.f1178c--;
             }
             byte[] key = Byte2ObjectOpenCustomHashMap.this.key;
-            while (this.f1214c != 0) {
+            while (this.f1178c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -713,12 +713,12 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
                         i3 = Byte2ObjectOpenCustomHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f1214c--;
+                    this.f1178c--;
                 } else if (key[this.pos] != 0) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f1214c--;
+                    this.f1178c--;
                 }
             }
         }
@@ -768,9 +768,9 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Byte2ObjectOpenCustomHashMap.this.f1212n) {
+            if (this.last == Byte2ObjectOpenCustomHashMap.this.f1176n) {
                 Byte2ObjectOpenCustomHashMap.this.containsNullKey = false;
-                Byte2ObjectOpenCustomHashMap.this.value[Byte2ObjectOpenCustomHashMap.this.f1212n] = null;
+                Byte2ObjectOpenCustomHashMap.this.value[Byte2ObjectOpenCustomHashMap.this.f1176n] = null;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -874,7 +874,7 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
         int max;
 
         /* renamed from: c */
-        int f1215c;
+        int f1179c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -884,16 +884,16 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Byte2ObjectOpenCustomHashMap.this.f1212n;
-            this.f1215c = 0;
+            this.max = Byte2ObjectOpenCustomHashMap.this.f1176n;
+            this.f1179c = 0;
             this.mustReturnNull = Byte2ObjectOpenCustomHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Byte2ObjectOpenCustomHashMap.this.f1212n;
-            this.f1215c = 0;
+            this.max = Byte2ObjectOpenCustomHashMap.this.f1176n;
+            this.f1179c = 0;
             this.mustReturnNull = Byte2ObjectOpenCustomHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -905,14 +905,14 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1215c++;
-                acceptOnIndex(action, Byte2ObjectOpenCustomHashMap.this.f1212n);
+                this.f1179c++;
+                acceptOnIndex(action, Byte2ObjectOpenCustomHashMap.this.f1176n);
                 return true;
             }
             byte[] key = Byte2ObjectOpenCustomHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f1215c++;
+                    this.f1179c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -926,14 +926,14 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1215c++;
-                acceptOnIndex(action, Byte2ObjectOpenCustomHashMap.this.f1212n);
+                this.f1179c++;
+                acceptOnIndex(action, Byte2ObjectOpenCustomHashMap.this.f1176n);
             }
             byte[] key = Byte2ObjectOpenCustomHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     acceptOnIndex(action, this.pos);
-                    this.f1215c++;
+                    this.f1179c++;
                 }
                 this.pos++;
             }
@@ -941,9 +941,9 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Byte2ObjectOpenCustomHashMap.this.size - this.f1215c);
+                return (long) (Byte2ObjectOpenCustomHashMap.this.size - this.f1179c);
             }
-            return Math.min((long) (Byte2ObjectOpenCustomHashMap.this.size - this.f1215c), ((long) ((((double) Byte2ObjectOpenCustomHashMap.this.realSize()) / ((double) Byte2ObjectOpenCustomHashMap.this.f1212n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Byte2ObjectOpenCustomHashMap.this.size - this.f1179c), ((long) ((((double) Byte2ObjectOpenCustomHashMap.this.realSize()) / ((double) Byte2ObjectOpenCustomHashMap.this.f1176n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1140,7 +1140,7 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
             byte k = ((Byte) e.getKey()).byteValue();
             Object value = e.getValue();
             if (Byte2ObjectOpenCustomHashMap.this.strategy.equals(k, (byte) 0)) {
-                return Byte2ObjectOpenCustomHashMap.this.containsNullKey && Objects.equals(Byte2ObjectOpenCustomHashMap.this.value[Byte2ObjectOpenCustomHashMap.this.f1212n], value);
+                return Byte2ObjectOpenCustomHashMap.this.containsNullKey && Objects.equals(Byte2ObjectOpenCustomHashMap.this.value[Byte2ObjectOpenCustomHashMap.this.f1176n], value);
             }
             byte[] key = Byte2ObjectOpenCustomHashMap.this.key;
             int mix = HashCommon.mix(Byte2ObjectOpenCustomHashMap.this.strategy.hashCode(k)) & Byte2ObjectOpenCustomHashMap.this.mask;
@@ -1201,7 +1201,7 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
                     Byte2ObjectOpenCustomHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Byte2ObjectOpenCustomHashMap.this.containsNullKey || !Objects.equals(Byte2ObjectOpenCustomHashMap.this.value[Byte2ObjectOpenCustomHashMap.this.f1212n], value)) {
+            } else if (!Byte2ObjectOpenCustomHashMap.this.containsNullKey || !Objects.equals(Byte2ObjectOpenCustomHashMap.this.value[Byte2ObjectOpenCustomHashMap.this.f1176n], value)) {
                 return false;
             } else {
                 Byte2ObjectOpenCustomHashMap.this.removeNullEntry();
@@ -1222,9 +1222,9 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Byte2ObjectMap.Entry<V>> consumer) {
             if (Byte2ObjectOpenCustomHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractByte2ObjectMap.BasicEntry(Byte2ObjectOpenCustomHashMap.this.key[Byte2ObjectOpenCustomHashMap.this.f1212n], Byte2ObjectOpenCustomHashMap.this.value[Byte2ObjectOpenCustomHashMap.this.f1212n]));
+                consumer.accept(new AbstractByte2ObjectMap.BasicEntry(Byte2ObjectOpenCustomHashMap.this.key[Byte2ObjectOpenCustomHashMap.this.f1176n], Byte2ObjectOpenCustomHashMap.this.value[Byte2ObjectOpenCustomHashMap.this.f1176n]));
             }
-            int pos = Byte2ObjectOpenCustomHashMap.this.f1212n;
+            int pos = Byte2ObjectOpenCustomHashMap.this.f1176n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1240,11 +1240,11 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
         public void fastForEach(Consumer<? super Byte2ObjectMap.Entry<V>> consumer) {
             AbstractByte2ObjectMap.BasicEntry<V> entry = new AbstractByte2ObjectMap.BasicEntry<>();
             if (Byte2ObjectOpenCustomHashMap.this.containsNullKey) {
-                entry.key = Byte2ObjectOpenCustomHashMap.this.key[Byte2ObjectOpenCustomHashMap.this.f1212n];
-                entry.value = Byte2ObjectOpenCustomHashMap.this.value[Byte2ObjectOpenCustomHashMap.this.f1212n];
+                entry.key = Byte2ObjectOpenCustomHashMap.this.key[Byte2ObjectOpenCustomHashMap.this.f1176n];
+                entry.value = Byte2ObjectOpenCustomHashMap.this.value[Byte2ObjectOpenCustomHashMap.this.f1176n];
                 consumer.accept(entry);
             }
-            int pos = Byte2ObjectOpenCustomHashMap.this.f1212n;
+            int pos = Byte2ObjectOpenCustomHashMap.this.f1176n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1344,9 +1344,9 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterable
         public void forEach(ByteConsumer consumer) {
             if (Byte2ObjectOpenCustomHashMap.this.containsNullKey) {
-                consumer.accept(Byte2ObjectOpenCustomHashMap.this.key[Byte2ObjectOpenCustomHashMap.this.f1212n]);
+                consumer.accept(Byte2ObjectOpenCustomHashMap.this.key[Byte2ObjectOpenCustomHashMap.this.f1176n]);
             }
-            int pos = Byte2ObjectOpenCustomHashMap.this.f1212n;
+            int pos = Byte2ObjectOpenCustomHashMap.this.f1176n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1482,9 +1482,9 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
                 @Override // java.lang.Iterable
                 public void forEach(Consumer<? super V> consumer) {
                     if (Byte2ObjectOpenCustomHashMap.this.containsNullKey) {
-                        consumer.accept((Object) Byte2ObjectOpenCustomHashMap.this.value[Byte2ObjectOpenCustomHashMap.this.f1212n]);
+                        consumer.accept((Object) Byte2ObjectOpenCustomHashMap.this.value[Byte2ObjectOpenCustomHashMap.this.f1176n]);
                     }
-                    int pos = Byte2ObjectOpenCustomHashMap.this.f1212n;
+                    int pos = Byte2ObjectOpenCustomHashMap.this.f1176n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1520,8 +1520,8 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1213f)));
-        if (l >= this.f1212n || this.size > HashCommon.maxFill(l, this.f1213f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1177f)));
+        if (l >= this.f1176n || this.size > HashCommon.maxFill(l, this.f1177f)) {
             return true;
         }
         try {
@@ -1539,7 +1539,7 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
         int mask = newN - 1;
         byte[] newKey = new byte[newN + 1];
         V[] newValue = (V[]) new Object[newN + 1];
-        int i2 = this.f1212n;
+        int i2 = this.f1176n;
         int j = realSize();
         while (true) {
             j--;
@@ -1558,10 +1558,10 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f1212n];
-                this.f1212n = newN;
+                newValue[newN] = value[this.f1176n];
+                this.f1176n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f1212n, this.f1213f);
+                this.maxFill = HashCommon.maxFill(this.f1176n, this.f1177f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1607,7 +1607,7 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f1212n] == null ? 0 : this.value[this.f1212n].hashCode();
+            h += this.value[this.f1176n] == null ? 0 : this.value[this.f1176n].hashCode();
         }
         return h;
     }
@@ -1635,12 +1635,12 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f1212n = HashCommon.arraySize(this.size, this.f1213f);
-        this.maxFill = HashCommon.maxFill(this.f1212n, this.f1213f);
-        this.mask = this.f1212n - 1;
-        byte[] key = new byte[this.f1212n + 1];
+        this.f1176n = HashCommon.arraySize(this.size, this.f1177f);
+        this.maxFill = HashCommon.maxFill(this.f1176n, this.f1177f);
+        this.mask = this.f1176n - 1;
+        byte[] key = new byte[this.f1176n + 1];
         this.key = key;
-        V[] value = (V[]) new Object[this.f1212n + 1];
+        V[] value = (V[]) new Object[this.f1176n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1649,7 +1649,7 @@ public class Byte2ObjectOpenCustomHashMap<V> extends AbstractByte2ObjectMap<V> i
                 byte k = s.readByte();
                 Object readObject = s.readObject();
                 if (this.strategy.equals(k, (byte) 0)) {
-                    pos = this.f1212n;
+                    pos = this.f1176n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix(this.strategy.hashCode(k));

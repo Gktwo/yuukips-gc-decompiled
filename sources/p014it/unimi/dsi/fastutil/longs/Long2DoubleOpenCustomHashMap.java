@@ -41,13 +41,13 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
     protected LongHash.Strategy strategy;
 
     /* renamed from: n */
-    protected transient int f2302n;
+    protected transient int f2266n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2303f;
+    protected final float f2267f;
     protected transient Long2DoubleMap.FastEntrySet entries;
     protected transient LongSet keys;
     protected transient DoubleCollection values;
@@ -125,14 +125,14 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2303f = f;
+            this.f2267f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2302n = arraySize;
+            this.f2266n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2302n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2302n, f);
-            this.key = new long[this.f2302n + 1];
-            this.value = new double[this.f2302n + 1];
+            this.mask = this.f2266n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2266n, f);
+            this.key = new long[this.f2266n + 1];
+            this.value = new double[this.f2266n + 1];
         }
     }
 
@@ -186,15 +186,15 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2303f);
-        if (needed > this.f2302n) {
+        int needed = HashCommon.arraySize(capacity, this.f2267f);
+        if (needed > this.f2266n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2303f)))));
-        if (needed > this.f2302n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2267f)))));
+        if (needed > this.f2266n) {
             rehash(needed);
         }
     }
@@ -204,8 +204,8 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
         double oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f2302n > this.minN && this.size < this.maxFill / 4 && this.f2302n > 16) {
-            rehash(this.f2302n / 2);
+        if (this.f2266n > this.minN && this.size < this.maxFill / 4 && this.f2266n > 16) {
+            rehash(this.f2266n / 2);
         }
         return oldValue;
     }
@@ -213,17 +213,17 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
     /* access modifiers changed from: private */
     public double removeNullEntry() {
         this.containsNullKey = false;
-        double oldValue = this.value[this.f2302n];
+        double oldValue = this.value[this.f2266n];
         this.size--;
-        if (this.f2302n > this.minN && this.size < this.maxFill / 4 && this.f2302n > 16) {
-            rehash(this.f2302n / 2);
+        if (this.f2266n > this.minN && this.size < this.maxFill / 4 && this.f2266n > 16) {
+            rehash(this.f2266n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLong2DoubleMap, java.util.Map
     public void putAll(Map<? extends Long, ? extends Double> m) {
-        if (((double) this.f2303f) <= 0.5d) {
+        if (((double) this.f2267f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -234,7 +234,7 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
     private int find(long k) {
         int i;
         if (this.strategy.equals(k, 0)) {
-            return this.containsNullKey ? this.f2302n : -(this.f2302n + 1);
+            return this.containsNullKey ? this.f2266n : -(this.f2266n + 1);
         }
         long[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -256,7 +256,7 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
     }
 
     private void insert(int pos, long k, double v) {
-        if (pos == this.f2302n) {
+        if (pos == this.f2266n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -264,7 +264,7 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2303f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2267f));
         }
     }
 
@@ -308,9 +308,9 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f2302n, incr);
+            return addToValue(this.f2266n, incr);
         } else {
-            pos = this.f2302n;
+            pos = this.f2266n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -318,7 +318,7 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2303f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2267f));
         }
         return this.defRetValue;
     }
@@ -382,7 +382,7 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
     public double get(long k) {
         int i;
         if (this.strategy.equals(k, 0)) {
-            return this.containsNullKey ? this.value[this.f2302n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2266n] : this.defRetValue;
         }
         long[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -432,10 +432,10 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
     public boolean containsValue(double v) {
         double[] value = this.value;
         long[] key = this.key;
-        if (this.containsNullKey && Double.doubleToLongBits(value[this.f2302n]) == Double.doubleToLongBits(v)) {
+        if (this.containsNullKey && Double.doubleToLongBits(value[this.f2266n]) == Double.doubleToLongBits(v)) {
             return true;
         }
-        int i = this.f2302n;
+        int i = this.f2266n;
         while (true) {
             i--;
             if (i == 0) {
@@ -451,7 +451,7 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
     public double getOrDefault(long k, double defaultValue) {
         int i;
         if (this.strategy.equals(k, 0)) {
-            return this.containsNullKey ? this.value[this.f2302n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2266n] : defaultValue;
         }
         long[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -507,7 +507,7 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
                 removeEntry(pos);
                 return true;
             }
-        } else if (!this.containsNullKey || Double.doubleToLongBits(v) != Double.doubleToLongBits(this.value[this.f2302n])) {
+        } else if (!this.containsNullKey || Double.doubleToLongBits(v) != Double.doubleToLongBits(this.value[this.f2266n])) {
             return false;
         } else {
             removeNullEntry();
@@ -689,31 +689,31 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
         int last;
 
         /* renamed from: c */
-        int f2304c;
+        int f2268c;
         boolean mustReturnNullKey;
         LongArrayList wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Long2DoubleOpenCustomHashMap.this.f2302n;
+            this.pos = Long2DoubleOpenCustomHashMap.this.f2266n;
             this.last = -1;
-            this.f2304c = Long2DoubleOpenCustomHashMap.this.size;
+            this.f2268c = Long2DoubleOpenCustomHashMap.this.size;
             this.mustReturnNullKey = Long2DoubleOpenCustomHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f2304c != 0;
+            return this.f2268c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2304c--;
+            this.f2268c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Long2DoubleOpenCustomHashMap.this.f2302n;
+                int i = Long2DoubleOpenCustomHashMap.this.f2266n;
                 this.last = i;
                 return i;
             }
@@ -745,13 +745,13 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Long2DoubleOpenCustomHashMap.this.f2302n;
+                int i = Long2DoubleOpenCustomHashMap.this.f2266n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f2304c--;
+                this.f2268c--;
             }
             long[] key = Long2DoubleOpenCustomHashMap.this.key;
-            while (this.f2304c != 0) {
+            while (this.f2268c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -768,12 +768,12 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
                         i3 = Long2DoubleOpenCustomHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f2304c--;
+                    this.f2268c--;
                 } else if (key[this.pos] != 0) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f2304c--;
+                    this.f2268c--;
                 }
             }
         }
@@ -822,7 +822,7 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Long2DoubleOpenCustomHashMap.this.f2302n) {
+            if (this.last == Long2DoubleOpenCustomHashMap.this.f2266n) {
                 Long2DoubleOpenCustomHashMap.this.containsNullKey = false;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
@@ -919,7 +919,7 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
         int max;
 
         /* renamed from: c */
-        int f2305c;
+        int f2269c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -929,16 +929,16 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Long2DoubleOpenCustomHashMap.this.f2302n;
-            this.f2305c = 0;
+            this.max = Long2DoubleOpenCustomHashMap.this.f2266n;
+            this.f2269c = 0;
             this.mustReturnNull = Long2DoubleOpenCustomHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Long2DoubleOpenCustomHashMap.this.f2302n;
-            this.f2305c = 0;
+            this.max = Long2DoubleOpenCustomHashMap.this.f2266n;
+            this.f2269c = 0;
             this.mustReturnNull = Long2DoubleOpenCustomHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -950,14 +950,14 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2305c++;
-                acceptOnIndex(action, Long2DoubleOpenCustomHashMap.this.f2302n);
+                this.f2269c++;
+                acceptOnIndex(action, Long2DoubleOpenCustomHashMap.this.f2266n);
                 return true;
             }
             long[] key = Long2DoubleOpenCustomHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f2305c++;
+                    this.f2269c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -971,14 +971,14 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2305c++;
-                acceptOnIndex(action, Long2DoubleOpenCustomHashMap.this.f2302n);
+                this.f2269c++;
+                acceptOnIndex(action, Long2DoubleOpenCustomHashMap.this.f2266n);
             }
             long[] key = Long2DoubleOpenCustomHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     acceptOnIndex(action, this.pos);
-                    this.f2305c++;
+                    this.f2269c++;
                 }
                 this.pos++;
             }
@@ -986,9 +986,9 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Long2DoubleOpenCustomHashMap.this.size - this.f2305c);
+                return (long) (Long2DoubleOpenCustomHashMap.this.size - this.f2269c);
             }
-            return Math.min((long) (Long2DoubleOpenCustomHashMap.this.size - this.f2305c), ((long) ((((double) Long2DoubleOpenCustomHashMap.this.realSize()) / ((double) Long2DoubleOpenCustomHashMap.this.f2302n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Long2DoubleOpenCustomHashMap.this.size - this.f2269c), ((long) ((((double) Long2DoubleOpenCustomHashMap.this.realSize()) / ((double) Long2DoubleOpenCustomHashMap.this.f2266n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1183,7 +1183,7 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
             long k = ((Long) e.getKey()).longValue();
             double v = ((Double) e.getValue()).doubleValue();
             if (Long2DoubleOpenCustomHashMap.this.strategy.equals(k, 0)) {
-                return Long2DoubleOpenCustomHashMap.this.containsNullKey && Double.doubleToLongBits(Long2DoubleOpenCustomHashMap.this.value[Long2DoubleOpenCustomHashMap.this.f2302n]) == Double.doubleToLongBits(v);
+                return Long2DoubleOpenCustomHashMap.this.containsNullKey && Double.doubleToLongBits(Long2DoubleOpenCustomHashMap.this.value[Long2DoubleOpenCustomHashMap.this.f2266n]) == Double.doubleToLongBits(v);
             }
             long[] key = Long2DoubleOpenCustomHashMap.this.key;
             int mix = HashCommon.mix(Long2DoubleOpenCustomHashMap.this.strategy.hashCode(k)) & Long2DoubleOpenCustomHashMap.this.mask;
@@ -1240,7 +1240,7 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
                     Long2DoubleOpenCustomHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Long2DoubleOpenCustomHashMap.this.containsNullKey || Double.doubleToLongBits(Long2DoubleOpenCustomHashMap.this.value[Long2DoubleOpenCustomHashMap.this.f2302n]) != Double.doubleToLongBits(v)) {
+            } else if (!Long2DoubleOpenCustomHashMap.this.containsNullKey || Double.doubleToLongBits(Long2DoubleOpenCustomHashMap.this.value[Long2DoubleOpenCustomHashMap.this.f2266n]) != Double.doubleToLongBits(v)) {
                 return false;
             } else {
                 Long2DoubleOpenCustomHashMap.this.removeNullEntry();
@@ -1261,9 +1261,9 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Long2DoubleMap.Entry> consumer) {
             if (Long2DoubleOpenCustomHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractLong2DoubleMap.BasicEntry(Long2DoubleOpenCustomHashMap.this.key[Long2DoubleOpenCustomHashMap.this.f2302n], Long2DoubleOpenCustomHashMap.this.value[Long2DoubleOpenCustomHashMap.this.f2302n]));
+                consumer.accept(new AbstractLong2DoubleMap.BasicEntry(Long2DoubleOpenCustomHashMap.this.key[Long2DoubleOpenCustomHashMap.this.f2266n], Long2DoubleOpenCustomHashMap.this.value[Long2DoubleOpenCustomHashMap.this.f2266n]));
             }
-            int pos = Long2DoubleOpenCustomHashMap.this.f2302n;
+            int pos = Long2DoubleOpenCustomHashMap.this.f2266n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1279,11 +1279,11 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
         public void fastForEach(Consumer<? super Long2DoubleMap.Entry> consumer) {
             AbstractLong2DoubleMap.BasicEntry entry = new AbstractLong2DoubleMap.BasicEntry();
             if (Long2DoubleOpenCustomHashMap.this.containsNullKey) {
-                entry.key = Long2DoubleOpenCustomHashMap.this.key[Long2DoubleOpenCustomHashMap.this.f2302n];
-                entry.value = Long2DoubleOpenCustomHashMap.this.value[Long2DoubleOpenCustomHashMap.this.f2302n];
+                entry.key = Long2DoubleOpenCustomHashMap.this.key[Long2DoubleOpenCustomHashMap.this.f2266n];
+                entry.value = Long2DoubleOpenCustomHashMap.this.value[Long2DoubleOpenCustomHashMap.this.f2266n];
                 consumer.accept(entry);
             }
-            int pos = Long2DoubleOpenCustomHashMap.this.f2302n;
+            int pos = Long2DoubleOpenCustomHashMap.this.f2266n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1391,9 +1391,9 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
         @Override // p014it.unimi.dsi.fastutil.longs.LongIterable
         public void forEach(LongConsumer consumer) {
             if (Long2DoubleOpenCustomHashMap.this.containsNullKey) {
-                consumer.accept(Long2DoubleOpenCustomHashMap.this.key[Long2DoubleOpenCustomHashMap.this.f2302n]);
+                consumer.accept(Long2DoubleOpenCustomHashMap.this.key[Long2DoubleOpenCustomHashMap.this.f2266n]);
             }
-            int pos = Long2DoubleOpenCustomHashMap.this.f2302n;
+            int pos = Long2DoubleOpenCustomHashMap.this.f2266n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1522,9 +1522,9 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
                 @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterable
                 public void forEach(DoubleConsumer consumer) {
                     if (Long2DoubleOpenCustomHashMap.this.containsNullKey) {
-                        consumer.accept(Long2DoubleOpenCustomHashMap.this.value[Long2DoubleOpenCustomHashMap.this.f2302n]);
+                        consumer.accept(Long2DoubleOpenCustomHashMap.this.value[Long2DoubleOpenCustomHashMap.this.f2266n]);
                     }
-                    int pos = Long2DoubleOpenCustomHashMap.this.f2302n;
+                    int pos = Long2DoubleOpenCustomHashMap.this.f2266n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1560,8 +1560,8 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2303f)));
-        if (l >= this.f2302n || this.size > HashCommon.maxFill(l, this.f2303f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2267f)));
+        if (l >= this.f2266n || this.size > HashCommon.maxFill(l, this.f2267f)) {
             return true;
         }
         try {
@@ -1579,7 +1579,7 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
         int mask = newN - 1;
         long[] newKey = new long[newN + 1];
         double[] newValue = new double[newN + 1];
-        int i2 = this.f2302n;
+        int i2 = this.f2266n;
         int j = realSize();
         while (true) {
             j--;
@@ -1598,10 +1598,10 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f2302n];
-                this.f2302n = newN;
+                newValue[newN] = value[this.f2266n];
+                this.f2266n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2302n, this.f2303f);
+                this.maxFill = HashCommon.maxFill(this.f2266n, this.f2267f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1643,7 +1643,7 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
             i++;
         }
         if (this.containsNullKey) {
-            h += HashCommon.double2int(this.value[this.f2302n]);
+            h += HashCommon.double2int(this.value[this.f2266n]);
         }
         return h;
     }
@@ -1669,12 +1669,12 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2302n = HashCommon.arraySize(this.size, this.f2303f);
-        this.maxFill = HashCommon.maxFill(this.f2302n, this.f2303f);
-        this.mask = this.f2302n - 1;
-        long[] key = new long[this.f2302n + 1];
+        this.f2266n = HashCommon.arraySize(this.size, this.f2267f);
+        this.maxFill = HashCommon.maxFill(this.f2266n, this.f2267f);
+        this.mask = this.f2266n - 1;
+        long[] key = new long[this.f2266n + 1];
         this.key = key;
-        double[] value = new double[this.f2302n + 1];
+        double[] value = new double[this.f2266n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1683,7 +1683,7 @@ public class Long2DoubleOpenCustomHashMap extends AbstractLong2DoubleMap impleme
                 long k = s.readLong();
                 double v = s.readDouble();
                 if (this.strategy.equals(k, 0)) {
-                    pos = this.f2302n;
+                    pos = this.f2266n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix(this.strategy.hashCode(k));

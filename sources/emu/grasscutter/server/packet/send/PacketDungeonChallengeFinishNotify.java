@@ -49,7 +49,7 @@ public class PacketDungeonChallengeFinishNotify extends BasePacket {
         /*
             r5 = this;
             r0 = r5
-            r1 = 916(0x394, float:1.284E-42)
+            r1 = 946(0x3b2, float:1.326E-42)
             r2 = 1
             r0.<init>(r1, r2)
             ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()

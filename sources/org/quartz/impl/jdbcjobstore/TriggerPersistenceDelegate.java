@@ -28,18 +28,18 @@ public interface TriggerPersistenceDelegate {
     public static class TriggerPropertyBundle {
 
         /* renamed from: sb */
-        private ScheduleBuilder<?> f3372sb;
+        private ScheduleBuilder<?> f3336sb;
         private String[] statePropertyNames;
         private Object[] statePropertyValues;
 
         public TriggerPropertyBundle(ScheduleBuilder<?> sb, String[] statePropertyNames, Object[] statePropertyValues) {
-            this.f3372sb = sb;
+            this.f3336sb = sb;
             this.statePropertyNames = statePropertyNames;
             this.statePropertyValues = statePropertyValues;
         }
 
         public ScheduleBuilder<?> getScheduleBuilder() {
-            return this.f3372sb;
+            return this.f3336sb;
         }
 
         public String[] getStatePropertyNames() {

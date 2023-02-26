@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerLevelStarCondDataOuterClass.class */
 public final class TowerLevelStarCondDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cTowerLevelStarCondData.proto\"\u0001\n\u0016TowerLevelStarCondData\u0012\u001b\n\u0013Unk3300_KBCFDFOAJMM\u0018\u000e \u0001(\b\u0012\u001b\n\u0013Unk3300_CPBCNACKAAK\u0018\u0005 \u0001(\b\u0012\u001b\n\u0013Unk3300_JGOLBFMJBCL\u0018\u000b \u0001(\r\u0012\u0012\n\ncond_value\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cTowerLevelStarCondData.proto\"\u0001\n\u0016TowerLevelStarCondData\u0012\u001b\n\u0013Unk3300_JGOLBFMJBCL\u0018\u0005 \u0001(\r\u0012\u001b\n\u0013Unk3300_KBCFDFOAJMM\u0018\u0001 \u0001(\b\u0012\u001b\n\u0013Unk3300_CPBCNACKAAK\u0018\u0002 \u0001(\b\u0012\u0011\n\tcondValue\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_TowerLevelStarCondData_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TowerLevelStarCondData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TowerLevelStarCondData_descriptor, new String[]{"Unk3300KBCFDFOAJMM", "Unk3300CPBCNACKAAK", "Unk3300JGOLBFMJBCL", "CondValue"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TowerLevelStarCondData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TowerLevelStarCondData_descriptor, new String[]{"Unk3300JGOLBFMJBCL", "Unk3300KBCFDFOAJMM", "Unk3300CPBCNACKAAK", "CondValue"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerLevelStarCondDataOuterClass$TowerLevelStarCondDataOrBuilder.class */
     public interface TowerLevelStarCondDataOrBuilder extends MessageOrBuilder {
+        int getUnk3300JGOLBFMJBCL();
+
         boolean getUnk3300KBCFDFOAJMM();
 
         boolean getUnk3300CPBCNACKAAK();
-
-        int getUnk3300JGOLBFMJBCL();
 
         int getCondValue();
     }
@@ -48,13 +48,13 @@ public final class TowerLevelStarCondDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerLevelStarCondDataOuterClass$TowerLevelStarCondData.class */
     public static final class TowerLevelStarCondData extends GeneratedMessageV3 implements TowerLevelStarCondDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int UNK3300_KBCFDFOAJMM_FIELD_NUMBER = 14;
-        private boolean unk3300KBCFDFOAJMM_;
-        public static final int UNK3300_CPBCNACKAAK_FIELD_NUMBER = 5;
-        private boolean unk3300CPBCNACKAAK_;
-        public static final int UNK3300_JGOLBFMJBCL_FIELD_NUMBER = 11;
+        public static final int UNK3300_JGOLBFMJBCL_FIELD_NUMBER = 5;
         private int unk3300JGOLBFMJBCL_;
-        public static final int COND_VALUE_FIELD_NUMBER = 12;
+        public static final int UNK3300_KBCFDFOAJMM_FIELD_NUMBER = 1;
+        private boolean unk3300KBCFDFOAJMM_;
+        public static final int UNK3300_CPBCNACKAAK_FIELD_NUMBER = 2;
+        private boolean unk3300CPBCNACKAAK_;
+        public static final int CONDVALUE_FIELD_NUMBER = 8;
         private int condValue_;
         private byte memoizedIsInitialized;
         private static final TowerLevelStarCondData DEFAULT_INSTANCE = new TowerLevelStarCondData();
@@ -102,17 +102,17 @@ public final class TowerLevelStarCondDataOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 40:
+                                case 8:
+                                    this.unk3300KBCFDFOAJMM_ = input.readBool();
+                                    break;
+                                case 16:
                                     this.unk3300CPBCNACKAAK_ = input.readBool();
                                     break;
-                                case 88:
+                                case 40:
                                     this.unk3300JGOLBFMJBCL_ = input.readUInt32();
                                     break;
-                                case 96:
+                                case 64:
                                     this.condValue_ = input.readUInt32();
-                                    break;
-                                case 112:
-                                    this.unk3300KBCFDFOAJMM_ = input.readBool();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -145,6 +145,11 @@ public final class TowerLevelStarCondDataOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondDataOrBuilder
+        public int getUnk3300JGOLBFMJBCL() {
+            return this.unk3300JGOLBFMJBCL_;
+        }
+
+        @Override // emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondDataOrBuilder
         public boolean getUnk3300KBCFDFOAJMM() {
             return this.unk3300KBCFDFOAJMM_;
         }
@@ -152,11 +157,6 @@ public final class TowerLevelStarCondDataOuterClass {
         @Override // emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondDataOrBuilder
         public boolean getUnk3300CPBCNACKAAK() {
             return this.unk3300CPBCNACKAAK_;
-        }
-
-        @Override // emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondDataOrBuilder
-        public int getUnk3300JGOLBFMJBCL() {
-            return this.unk3300JGOLBFMJBCL_;
         }
 
         @Override // emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondDataOrBuilder
@@ -179,17 +179,17 @@ public final class TowerLevelStarCondDataOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.unk3300KBCFDFOAJMM_) {
+                output.writeBool(1, this.unk3300KBCFDFOAJMM_);
+            }
             if (this.unk3300CPBCNACKAAK_) {
-                output.writeBool(5, this.unk3300CPBCNACKAAK_);
+                output.writeBool(2, this.unk3300CPBCNACKAAK_);
             }
             if (this.unk3300JGOLBFMJBCL_ != 0) {
-                output.writeUInt32(11, this.unk3300JGOLBFMJBCL_);
+                output.writeUInt32(5, this.unk3300JGOLBFMJBCL_);
             }
             if (this.condValue_ != 0) {
-                output.writeUInt32(12, this.condValue_);
-            }
-            if (this.unk3300KBCFDFOAJMM_) {
-                output.writeBool(14, this.unk3300KBCFDFOAJMM_);
+                output.writeUInt32(8, this.condValue_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -201,17 +201,17 @@ public final class TowerLevelStarCondDataOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.unk3300KBCFDFOAJMM_) {
+                size2 = 0 + CodedOutputStream.computeBoolSize(1, this.unk3300KBCFDFOAJMM_);
+            }
             if (this.unk3300CPBCNACKAAK_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(5, this.unk3300CPBCNACKAAK_);
+                size2 += CodedOutputStream.computeBoolSize(2, this.unk3300CPBCNACKAAK_);
             }
             if (this.unk3300JGOLBFMJBCL_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.unk3300JGOLBFMJBCL_);
+                size2 += CodedOutputStream.computeUInt32Size(5, this.unk3300JGOLBFMJBCL_);
             }
             if (this.condValue_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.condValue_);
-            }
-            if (this.unk3300KBCFDFOAJMM_) {
-                size2 += CodedOutputStream.computeBoolSize(14, this.unk3300KBCFDFOAJMM_);
+                size2 += CodedOutputStream.computeUInt32Size(8, this.condValue_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -227,7 +227,7 @@ public final class TowerLevelStarCondDataOuterClass {
                 return equals(obj);
             }
             TowerLevelStarCondData other = (TowerLevelStarCondData) obj;
-            return getUnk3300KBCFDFOAJMM() == other.getUnk3300KBCFDFOAJMM() && getUnk3300CPBCNACKAAK() == other.getUnk3300CPBCNACKAAK() && getUnk3300JGOLBFMJBCL() == other.getUnk3300JGOLBFMJBCL() && getCondValue() == other.getCondValue() && this.unknownFields.equals(other.unknownFields);
+            return getUnk3300JGOLBFMJBCL() == other.getUnk3300JGOLBFMJBCL() && getUnk3300KBCFDFOAJMM() == other.getUnk3300KBCFDFOAJMM() && getUnk3300CPBCNACKAAK() == other.getUnk3300CPBCNACKAAK() && getCondValue() == other.getCondValue() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -235,7 +235,7 @@ public final class TowerLevelStarCondDataOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + Internal.hashBoolean(getUnk3300KBCFDFOAJMM()))) + 5)) + Internal.hashBoolean(getUnk3300CPBCNACKAAK()))) + 11)) + getUnk3300JGOLBFMJBCL())) + 12)) + getCondValue())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getUnk3300JGOLBFMJBCL())) + 1)) + Internal.hashBoolean(getUnk3300KBCFDFOAJMM()))) + 2)) + Internal.hashBoolean(getUnk3300CPBCNACKAAK()))) + 8)) + getCondValue())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -314,9 +314,9 @@ public final class TowerLevelStarCondDataOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerLevelStarCondDataOuterClass$TowerLevelStarCondData$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements TowerLevelStarCondDataOrBuilder {
+            private int unk3300JGOLBFMJBCL_;
             private boolean unk3300KBCFDFOAJMM_;
             private boolean unk3300CPBCNACKAAK_;
-            private int unk3300JGOLBFMJBCL_;
             private int condValue_;
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -345,9 +345,9 @@ public final class TowerLevelStarCondDataOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.unk3300JGOLBFMJBCL_ = 0;
                 this.unk3300KBCFDFOAJMM_ = false;
                 this.unk3300CPBCNACKAAK_ = false;
-                this.unk3300JGOLBFMJBCL_ = 0;
                 this.condValue_ = 0;
                 return this;
             }
@@ -374,9 +374,9 @@ public final class TowerLevelStarCondDataOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public TowerLevelStarCondData buildPartial() {
                 TowerLevelStarCondData result = new TowerLevelStarCondData(this);
+                result.unk3300JGOLBFMJBCL_ = this.unk3300JGOLBFMJBCL_;
                 result.unk3300KBCFDFOAJMM_ = this.unk3300KBCFDFOAJMM_;
                 result.unk3300CPBCNACKAAK_ = this.unk3300CPBCNACKAAK_;
-                result.unk3300JGOLBFMJBCL_ = this.unk3300JGOLBFMJBCL_;
                 result.condValue_ = this.condValue_;
                 onBuilt();
                 return result;
@@ -425,14 +425,14 @@ public final class TowerLevelStarCondDataOuterClass {
                 if (other == TowerLevelStarCondData.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getUnk3300JGOLBFMJBCL() != 0) {
+                    setUnk3300JGOLBFMJBCL(other.getUnk3300JGOLBFMJBCL());
+                }
                 if (other.getUnk3300KBCFDFOAJMM()) {
                     setUnk3300KBCFDFOAJMM(other.getUnk3300KBCFDFOAJMM());
                 }
                 if (other.getUnk3300CPBCNACKAAK()) {
                     setUnk3300CPBCNACKAAK(other.getUnk3300CPBCNACKAAK());
-                }
-                if (other.getUnk3300JGOLBFMJBCL() != 0) {
-                    setUnk3300JGOLBFMJBCL(other.getUnk3300JGOLBFMJBCL());
                 }
                 if (other.getCondValue() != 0) {
                     setCondValue(other.getCondValue());
@@ -470,6 +470,23 @@ public final class TowerLevelStarCondDataOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondDataOrBuilder
+            public int getUnk3300JGOLBFMJBCL() {
+                return this.unk3300JGOLBFMJBCL_;
+            }
+
+            public Builder setUnk3300JGOLBFMJBCL(int value) {
+                this.unk3300JGOLBFMJBCL_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300JGOLBFMJBCL() {
+                this.unk3300JGOLBFMJBCL_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondDataOrBuilder
             public boolean getUnk3300KBCFDFOAJMM() {
                 return this.unk3300KBCFDFOAJMM_;
             }
@@ -499,23 +516,6 @@ public final class TowerLevelStarCondDataOuterClass {
 
             public Builder clearUnk3300CPBCNACKAAK() {
                 this.unk3300CPBCNACKAAK_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.TowerLevelStarCondDataOuterClass.TowerLevelStarCondDataOrBuilder
-            public int getUnk3300JGOLBFMJBCL() {
-                return this.unk3300JGOLBFMJBCL_;
-            }
-
-            public Builder setUnk3300JGOLBFMJBCL(int value) {
-                this.unk3300JGOLBFMJBCL_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk3300JGOLBFMJBCL() {
-                this.unk3300JGOLBFMJBCL_ = 0;
                 onChanged();
                 return this;
             }

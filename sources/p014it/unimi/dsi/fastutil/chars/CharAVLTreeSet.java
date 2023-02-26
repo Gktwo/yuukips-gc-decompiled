@@ -987,7 +987,7 @@ public class CharAVLTreeSet extends AbstractCharSortedSet implements Serializabl
         char from;
 
         /* renamed from: to */
-        char f1472to;
+        char f1436to;
         boolean bottom;
         boolean top;
 
@@ -995,7 +995,7 @@ public class CharAVLTreeSet extends AbstractCharSortedSet implements Serializabl
             if (bottom || top || CharAVLTreeSet.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f1472to = to;
+                this.f1436to = to;
                 this.top = top;
                 return;
             }
@@ -1013,7 +1013,7 @@ public class CharAVLTreeSet extends AbstractCharSortedSet implements Serializabl
 
         /* renamed from: in */
         final boolean m1009in(char k) {
-            return (this.bottom || CharAVLTreeSet.this.compare(k, this.from) >= 0) && (this.top || CharAVLTreeSet.this.compare(k, this.f1472to) < 0);
+            return (this.bottom || CharAVLTreeSet.this.compare(k, this.from) >= 0) && (this.top || CharAVLTreeSet.this.compare(k, this.f1436to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharCollection, p014it.unimi.dsi.fastutil.chars.CharCollection
@@ -1026,7 +1026,7 @@ public class CharAVLTreeSet extends AbstractCharSortedSet implements Serializabl
             if (m1009in(k)) {
                 return CharAVLTreeSet.this.add(k);
             }
-            throw new IllegalArgumentException("Element (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1472to)) + ")");
+            throw new IllegalArgumentException("Element (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1436to)) + ")");
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharSet, p014it.unimi.dsi.fastutil.chars.CharSet
@@ -1071,7 +1071,7 @@ public class CharAVLTreeSet extends AbstractCharSortedSet implements Serializabl
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharSortedSet
         public CharSortedSet headSet(char to) {
-            if (!this.top && CharAVLTreeSet.this.compare(to, this.f1472to) >= 0) {
+            if (!this.top && CharAVLTreeSet.this.compare(to, this.f1436to) >= 0) {
                 return this;
             }
             return new Subset(this.from, this.bottom, to, false);
@@ -1082,7 +1082,7 @@ public class CharAVLTreeSet extends AbstractCharSortedSet implements Serializabl
             if (!this.bottom && CharAVLTreeSet.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Subset(from, false, this.f1472to, this.top);
+            return new Subset(from, false, this.f1436to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharSortedSet
@@ -1091,12 +1091,12 @@ public class CharAVLTreeSet extends AbstractCharSortedSet implements Serializabl
                 return new Subset(from, false, to, false);
             }
             if (!this.top) {
-                to = CharAVLTreeSet.this.compare(to, this.f1472to) < 0 ? to : this.f1472to;
+                to = CharAVLTreeSet.this.compare(to, this.f1436to) < 0 ? to : this.f1436to;
             }
             if (!this.bottom) {
                 from = CharAVLTreeSet.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f1472to) ? new Subset(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f1436to) ? new Subset(from, false, to, false) : this;
         }
 
         public Entry firstEntry() {
@@ -1115,7 +1115,7 @@ public class CharAVLTreeSet extends AbstractCharSortedSet implements Serializabl
             if (e == null) {
                 return null;
             }
-            if (this.top || CharAVLTreeSet.this.compare(e.key, this.f1472to) < 0) {
+            if (this.top || CharAVLTreeSet.this.compare(e.key, this.f1436to) < 0) {
                 return e;
             }
             return null;
@@ -1129,8 +1129,8 @@ public class CharAVLTreeSet extends AbstractCharSortedSet implements Serializabl
             if (this.top) {
                 e = CharAVLTreeSet.this.lastEntry;
             } else {
-                e = CharAVLTreeSet.this.locateKey(this.f1472to);
-                if (CharAVLTreeSet.this.compare(e.key, this.f1472to) >= 0) {
+                e = CharAVLTreeSet.this.locateKey(this.f1436to);
+                if (CharAVLTreeSet.this.compare(e.key, this.f1436to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1208,7 +1208,7 @@ public class CharAVLTreeSet extends AbstractCharSortedSet implements Serializabl
             @Override // p014it.unimi.dsi.fastutil.chars.CharAVLTreeSet.SetIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Subset.this.top && this.next != null && CharAVLTreeSet.this.compare(this.next.key, Subset.this.f1472to) >= 0) {
+                if (!Subset.this.top && this.next != null && CharAVLTreeSet.this.compare(this.next.key, Subset.this.f1436to) >= 0) {
                     this.next = null;
                 }
             }

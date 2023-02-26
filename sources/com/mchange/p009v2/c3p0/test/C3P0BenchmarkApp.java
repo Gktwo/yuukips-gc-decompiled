@@ -51,7 +51,7 @@ public final class C3P0BenchmarkApp {
             l.add(new FiveThreadPSQueryTestTest());
             int len = l.size();
             for (int i = 0; i < len; i++) {
-                ((Test) l.get(i)).perform(ds_unpooled, ds_pooled, 2000);
+                ((Test) l.get(i)).perform(ds_unpooled, ds_pooled, NUM_ITERATIONS);
             }
             try {
                 drop(ds_pooled);
@@ -101,7 +101,7 @@ public final class C3P0BenchmarkApp {
             ps3 = con.prepareStatement(N_ENTRY_TABLE_INSERT);
             ps1.executeUpdate();
             ps2.executeUpdate();
-            for (int i = 0; i < 2000; i++) {
+            for (int i = 0; i < NUM_ITERATIONS; i++) {
                 ps3.setInt(1, i);
                 ps3.executeUpdate();
                 System.err.print('.');

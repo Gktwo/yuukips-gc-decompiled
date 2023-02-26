@@ -9,6 +9,7 @@ import com.google.common.primitives.UnsignedLongs;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 import java.math.RoundingMode;
+import javassist.compiler.TokenId;
 import kotlin.jvm.internal.LongCompanionObject;
 import okhttp3.internal.connection.RealConnection;
 import p001ch.qos.logback.core.spi.AbstractComponentTracker;
@@ -32,9 +33,9 @@ public final class LongMath {
     @GwtIncompatible
     static final long[] halfPowersOf10 = {3, 31, 316, 3162, 31622, 316227, 3162277, 31622776, 316227766, 3162277660L, 31622776601L, 316227766016L, 3162277660168L, 31622776601683L, 316227766016837L, 3162277660168379L, 31622776601683793L, 316227766016837933L, 3162277660168379331L};
     static final long[] factorials = {1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800, 479001600, 6227020800L, 87178291200L, 1307674368000L, 20922789888000L, 355687428096000L, 6402373705728000L, 121645100408832000L, 2432902008176640000L};
-    static final int[] biggestBinomials = {Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, 3810779, 121977, 16175, 4337, 1733, 887, 534, 361, PacketOpcodes.SealBattleProgressNotify, 206, 169, 143, 125, 111, 101, 94, 88, 83, 79, 76, 74, 72, 70, 69, 68, 67, 67, 66, 66, 66, 66};
+    static final int[] biggestBinomials = {Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, 3810779, 121977, 16175, PacketOpcodes.HuntingGiveUpReq, 1733, PacketOpcodes.GadgetStateNotify, 534, TokenId.OR_E, PacketOpcodes.SealBattleEndNotify, 206, 169, 143, 125, 111, 101, 94, 88, 83, 79, 76, 74, 72, 70, 69, 68, 67, 67, 66, 66, 66, 66};
     @VisibleForTesting
-    static final int[] biggestSimpleBinomials = {Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, 2642246, 86251, 11724, 3218, RetcodeOuterClass.Retcode.RET_MAIL_SCOIN_EXCEED_LIMIT_VALUE, RetcodeOuterClass.Retcode.RET_INVALID_WIDGET_MATERIAL_ID_VALUE, PacketOpcodes.FinishedParentQuestNotify, 287, PacketOpcodes.SetSceneWeatherAreaReq, 169, 139, 119, 105, 95, 87, 81, 76, 73, 70, 68, 66, 64, 63, 62, 62, 61, 61, 61};
+    static final int[] biggestSimpleBinomials = {Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, 2642246, 86251, 11724, 3218, RetcodeOuterClass.Retcode.RET_MAIL_SCOIN_EXCEED_LIMIT_VALUE, 684, 419, 287, PacketOpcodes.SceneAvatarStaminaStepReq, 169, 139, 119, 105, 95, 87, 81, 76, 73, 70, 68, 66, 64, 63, 62, 62, 61, 61, 61};
     private static final long[][] millerRabinBaseSets = {new long[]{291830, 126401071349994536L}, new long[]{885594168, 725270293939359937L, 3569819667048198375L}, new long[]{273919523040L, 15, 7363882082L, 992620450144556L}, new long[]{47636622961200L, 2, 2570940, 211991001, 3749873356L}, new long[]{7999252175582850L, 2, 4130806001517L, 149795463772692060L, 186635894390467037L, 3967304179347715805L}, new long[]{585226005592931976L, 2, 123635709730000L, 9233062284813009L, 43835965440333360L, 761179012939631437L, 1263739024124850375L}, new long[]{LongCompanionObject.MAX_VALUE, 2, 325, 9375, 28178, 450775, 9780504, 1795265022}};
 
     @Beta

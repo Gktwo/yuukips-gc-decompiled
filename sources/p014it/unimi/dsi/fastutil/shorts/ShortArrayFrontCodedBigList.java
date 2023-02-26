@@ -19,12 +19,12 @@ public class ShortArrayFrontCodedBigList extends AbstractObjectBigList<short[]> 
     private static final long serialVersionUID = 1;
 
     /* renamed from: n */
-    protected final long f3014n;
+    protected final long f2978n;
     protected final int ratio;
     protected final short[][] array;
 
     /* renamed from: p */
-    protected transient long[][] f3015p;
+    protected transient long[][] f2979p;
 
     /* JADX WARN: Type inference failed for: r0v23, types: [long] */
     /* JADX WARN: Type inference failed for: r0v27, types: [long] */
@@ -66,10 +66,10 @@ public class ShortArrayFrontCodedBigList extends AbstractObjectBigList<short[]> 
             b = 1 - b;
             c3 += serialVersionUID;
         }
-        this.f3014n = c3;
+        this.f2978n = c3;
         this.ratio = ratio;
         this.array = BigArrays.trim(array, (long) c2);
-        this.f3015p = BigArrays.trim(p, ((c3 + ((long) ratio)) - serialVersionUID) / ((long) ratio));
+        this.f2979p = BigArrays.trim(p, ((c3 + ((long) ratio)) - serialVersionUID) / ((long) ratio));
     }
 
     public ShortArrayFrontCodedBigList(Collection<short[]> c, int ratio) {
@@ -86,7 +86,7 @@ public class ShortArrayFrontCodedBigList extends AbstractObjectBigList<short[]> 
     public int length(long index) {
         short[][] array = this.array;
         int delta = (int) (index % ((long) this.ratio));
-        long pos = BigArrays.get(this.f3015p, index / ((long) this.ratio));
+        long pos = BigArrays.get(this.f2979p, index / ((long) this.ratio));
         int length = ShortArrayFrontCodedList.readInt(array, pos);
         if (delta == 0) {
             return length;
@@ -145,7 +145,7 @@ public class ShortArrayFrontCodedBigList extends AbstractObjectBigList<short[]> 
 
     @Override // p014it.unimi.dsi.fastutil.Size64
     public long size64() {
-        return this.f3014n;
+        return this.f2978n;
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, p014it.unimi.dsi.fastutil.objects.ObjectBigList, p014it.unimi.dsi.fastutil.BigList
@@ -154,27 +154,27 @@ public class ShortArrayFrontCodedBigList extends AbstractObjectBigList<short[]> 
         return new ObjectBigListIterator<short[]>() { // from class: it.unimi.dsi.fastutil.shorts.ShortArrayFrontCodedBigList.1
 
             /* renamed from: s */
-            short[] f3016s = ShortArrays.EMPTY_ARRAY;
+            short[] f2980s = ShortArrays.EMPTY_ARRAY;
 
             /* renamed from: i */
-            long f3017i;
+            long f2981i;
             long pos;
             boolean inSync;
 
             /* JADX WARN: Incorrect args count in method signature: ()V */
             {
-                this.f3017i = 0;
+                this.f2981i = 0;
                 this.pos = 0;
                 if (start == 0) {
                     return;
                 }
-                if (start == ShortArrayFrontCodedBigList.this.f3014n) {
-                    this.f3017i = start;
+                if (start == ShortArrayFrontCodedBigList.this.f2978n) {
+                    this.f2981i = start;
                     return;
                 }
-                this.pos = BigArrays.get(ShortArrayFrontCodedBigList.this.f3015p, start / ((long) ShortArrayFrontCodedBigList.this.ratio));
+                this.pos = BigArrays.get(ShortArrayFrontCodedBigList.this.f2979p, start / ((long) ShortArrayFrontCodedBigList.this.ratio));
                 int j = (int) (start % ((long) ShortArrayFrontCodedBigList.this.ratio));
-                this.f3017i = start - ((long) j);
+                this.f2981i = start - ((long) j);
                 while (true) {
                     j--;
                     if (j != 0) {
@@ -187,22 +187,22 @@ public class ShortArrayFrontCodedBigList extends AbstractObjectBigList<short[]> 
 
             @Override // java.util.Iterator
             public boolean hasNext() {
-                return this.f3017i < ShortArrayFrontCodedBigList.this.f3014n;
+                return this.f2981i < ShortArrayFrontCodedBigList.this.f2978n;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
             public boolean hasPrevious() {
-                return this.f3017i > 0;
+                return this.f2981i > 0;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BigListIterator
             public long previousIndex() {
-                return this.f3017i - ShortArrayFrontCodedBigList.serialVersionUID;
+                return this.f2981i - ShortArrayFrontCodedBigList.serialVersionUID;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BigListIterator
             public long nextIndex() {
-                return this.f3017i;
+                return this.f2981i;
             }
 
             @Override // java.util.Iterator
@@ -211,29 +211,29 @@ public class ShortArrayFrontCodedBigList extends AbstractObjectBigList<short[]> 
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                if (this.f3017i % ((long) ShortArrayFrontCodedBigList.this.ratio) == 0) {
-                    this.pos = BigArrays.get(ShortArrayFrontCodedBigList.this.f3015p, this.f3017i / ((long) ShortArrayFrontCodedBigList.this.ratio));
+                if (this.f2981i % ((long) ShortArrayFrontCodedBigList.this.ratio) == 0) {
+                    this.pos = BigArrays.get(ShortArrayFrontCodedBigList.this.f2979p, this.f2981i / ((long) ShortArrayFrontCodedBigList.this.ratio));
                     length = ShortArrayFrontCodedList.readInt(ShortArrayFrontCodedBigList.this.array, this.pos);
-                    this.f3016s = ShortArrays.ensureCapacity(this.f3016s, length, 0);
-                    BigArrays.copyFromBig(ShortArrayFrontCodedBigList.this.array, this.pos + ((long) ShortArrayFrontCodedList.count(length)), this.f3016s, 0, length);
+                    this.f2980s = ShortArrays.ensureCapacity(this.f2980s, length, 0);
+                    BigArrays.copyFromBig(ShortArrayFrontCodedBigList.this.array, this.pos + ((long) ShortArrayFrontCodedList.count(length)), this.f2980s, 0, length);
                     this.pos += (long) (length + ShortArrayFrontCodedList.count(length));
                     this.inSync = true;
                 } else if (this.inSync) {
                     int length2 = ShortArrayFrontCodedList.readInt(ShortArrayFrontCodedBigList.this.array, this.pos);
                     int common = ShortArrayFrontCodedList.readInt(ShortArrayFrontCodedBigList.this.array, this.pos + ((long) ShortArrayFrontCodedList.count(length2)));
-                    this.f3016s = ShortArrays.ensureCapacity(this.f3016s, length2 + common, common);
-                    BigArrays.copyFromBig(ShortArrayFrontCodedBigList.this.array, this.pos + ((long) ShortArrayFrontCodedList.count(length2)) + ((long) ShortArrayFrontCodedList.count(common)), this.f3016s, common, length2);
+                    this.f2980s = ShortArrays.ensureCapacity(this.f2980s, length2 + common, common);
+                    BigArrays.copyFromBig(ShortArrayFrontCodedBigList.this.array, this.pos + ((long) ShortArrayFrontCodedList.count(length2)) + ((long) ShortArrayFrontCodedList.count(common)), this.f2980s, common, length2);
                     this.pos += (long) (ShortArrayFrontCodedList.count(length2) + ShortArrayFrontCodedList.count(common) + length2);
                     length = length2 + common;
                 } else {
-                    short[] sArr = this.f3016s;
-                    int length3 = ShortArrayFrontCodedBigList.this.length(this.f3017i);
+                    short[] sArr = this.f2980s;
+                    int length3 = ShortArrayFrontCodedBigList.this.length(this.f2981i);
                     length = length3;
-                    this.f3016s = ShortArrays.ensureCapacity(sArr, length3, 0);
-                    ShortArrayFrontCodedBigList.this.extract(this.f3017i, this.f3016s, 0, length);
+                    this.f2980s = ShortArrays.ensureCapacity(sArr, length3, 0);
+                    ShortArrayFrontCodedBigList.this.extract(this.f2981i, this.f2980s, 0, length);
                 }
-                this.f3017i += ShortArrayFrontCodedBigList.serialVersionUID;
-                return ShortArrays.copy(this.f3016s, 0, length);
+                this.f2981i += ShortArrayFrontCodedBigList.serialVersionUID;
+                return ShortArrays.copy(this.f2980s, 0, length);
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -243,8 +243,8 @@ public class ShortArrayFrontCodedBigList extends AbstractObjectBigList<short[]> 
                 }
                 this.inSync = false;
                 ShortArrayFrontCodedBigList shortArrayFrontCodedBigList = ShortArrayFrontCodedBigList.this;
-                long j = this.f3017i - ShortArrayFrontCodedBigList.serialVersionUID;
-                this.f3017i = j;
+                long j = this.f2981i - ShortArrayFrontCodedBigList.serialVersionUID;
+                this.f2981i = j;
                 return shortArrayFrontCodedBigList.getArray(j);
             }
         };
@@ -259,7 +259,7 @@ public class ShortArrayFrontCodedBigList extends AbstractObjectBigList<short[]> 
     public String toString() {
         StringBuffer s = new StringBuffer();
         s.append("[");
-        for (long i = 0; i < this.f3014n; i += serialVersionUID) {
+        for (long i = 0; i < this.f2978n; i += serialVersionUID) {
             if (i != 0) {
                 s.append(", ");
             }
@@ -276,13 +276,13 @@ public class ShortArrayFrontCodedBigList extends AbstractObjectBigList<short[]> 
     protected long[][] rebuildPointerArray() {
         int i;
         char c;
-        long[][] p = LongBigArrays.newBigArray(((this.f3014n + ((long) this.ratio)) - serialVersionUID) / ((long) this.ratio));
+        long[][] p = LongBigArrays.newBigArray(((this.f2978n + ((long) this.ratio)) - serialVersionUID) / ((long) this.ratio));
         short[][] a = this.array;
         char c2 = 0;
         int skip = this.ratio - 1;
         char c3 = 0;
         long j = 0;
-        while (c3 < this.f3014n) {
+        while (c3 < this.f2978n) {
             int length = ShortArrayFrontCodedList.readInt(a, c2 == 1 ? 1 : 0);
             int count = ShortArrayFrontCodedList.count(length);
             skip++;
@@ -309,7 +309,7 @@ public class ShortArrayFrontCodedBigList extends AbstractObjectBigList<short[]> 
                 array.writeShort(e);
             }
         }
-        long[][] jArr = this.f3015p;
+        long[][] jArr = this.f2979p;
         for (long[] s2 : jArr) {
             for (long e2 : s2) {
                 pointers.writeLong(e2);
@@ -319,6 +319,6 @@ public class ShortArrayFrontCodedBigList extends AbstractObjectBigList<short[]> 
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f3015p = rebuildPointerArray();
+        this.f2979p = rebuildPointerArray();
     }
 }

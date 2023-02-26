@@ -2,6 +2,7 @@ package emu.grasscutter.game.entity.platform;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.binout.ConfigGadget;
+import emu.grasscutter.data.binout.ConfigGadgetCombat;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntitySolarIsotomaClientGadget;
 import emu.grasscutter.game.entity.GameEntity;
@@ -32,8 +33,9 @@ public class EntitySolarIsotomaElevatorPlatform extends EntityPlatform {
     /* access modifiers changed from: protected */
     @Override // emu.grasscutter.game.entity.EntityBaseGadget
     public void fillFightProps(ConfigGadget configGadget) {
-        if (configGadget != null && configGadget.getCombat() != null) {
-            if (configGadget.getCombat().getProperty().isUseCreatorProperty()) {
+        ConfigGadgetCombat combatData;
+        if (configGadget != null && (combatData = configGadget.getCombat()) != null) {
+            if (combatData.getProperty().isUseCreatorProperty()) {
                 GameEntity ownerAvatar = getScene().getEntityById(getGadget().getOwnerEntityId());
                 if (ownerAvatar != null) {
                     getFightProperties().putAll(ownerAvatar.getFightProperties());

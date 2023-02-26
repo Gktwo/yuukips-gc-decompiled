@@ -306,7 +306,7 @@ public final class Tools {
 
     /* renamed from: emu.grasscutter.tools.Tools$2 */
     /* loaded from: grasscutter.jar:emu/grasscutter/tools/Tools$2.class */
-    static /* synthetic */ class C27082 {
+    static /* synthetic */ class C27002 {
         static final /* synthetic */ int[] $SwitchMap$emu$grasscutter$game$inventory$MaterialType = new int[MaterialType.values().length];
 
         static {

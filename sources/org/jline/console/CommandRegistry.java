@@ -49,12 +49,12 @@ public interface CommandRegistry {
         private final Terminal terminal;
 
         /* renamed from: in */
-        private final InputStream f3227in;
+        private final InputStream f3191in;
         private final PrintStream out;
         private final PrintStream err;
 
         public CommandSession() {
-            this.f3227in = System.in;
+            this.f3191in = System.in;
             this.out = System.out;
             this.err = System.err;
             this.terminal = null;
@@ -66,7 +66,7 @@ public interface CommandRegistry {
 
         public CommandSession(Terminal terminal, InputStream in, PrintStream out, PrintStream err) {
             this.terminal = terminal;
-            this.f3227in = in;
+            this.f3191in = in;
             this.out = out;
             this.err = err;
         }
@@ -77,7 +77,7 @@ public interface CommandRegistry {
 
         /* renamed from: in */
         public InputStream m28in() {
-            return this.f3227in;
+            return this.f3191in;
         }
 
         public PrintStream out() {

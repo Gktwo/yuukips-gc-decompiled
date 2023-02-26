@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetPlayerSocialDetailRspOuterClass.class */
 public final class GetPlayerSocialDetailRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eGetPlayerSocialDetailRsp.proto\u001a\u0012SocialDetail.proto\"O\n\u0018GetPlayerSocialDetailRsp\u0012\"\n\u000bdetail_data\u0018\u0006 \u0001(\u000b2\r.SocialDetail\u0012\u000f\n\u0007retcode\u0018\u000e \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{SocialDetailOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eGetPlayerSocialDetailRsp.proto\u001a\u0012SocialDetail.proto\"N\n\u0018GetPlayerSocialDetailRsp\u0012!\n\ndetailData\u0018\u000f \u0001(\u000b2\r.SocialDetail\u0012\u000f\n\u0007retcode\u0018\u000e \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{SocialDetailOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_GetPlayerSocialDetailRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetPlayerSocialDetailRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetPlayerSocialDetailRsp_descriptor, new String[]{"DetailData", "Retcode"});
 
@@ -49,7 +49,7 @@ public final class GetPlayerSocialDetailRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetPlayerSocialDetailRspOuterClass$GetPlayerSocialDetailRsp.class */
     public static final class GetPlayerSocialDetailRsp extends GeneratedMessageV3 implements GetPlayerSocialDetailRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int DETAIL_DATA_FIELD_NUMBER = 6;
+        public static final int DETAILDATA_FIELD_NUMBER = 15;
         private SocialDetailOuterClass.SocialDetail detailData_;
         public static final int RETCODE_FIELD_NUMBER = 14;
         private int retcode_;
@@ -99,7 +99,10 @@ public final class GetPlayerSocialDetailRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 50:
+                                case 112:
+                                    this.retcode_ = input.readInt32();
+                                    break;
+                                case 122:
                                     SocialDetailOuterClass.SocialDetail.Builder subBuilder = this.detailData_ != null ? this.detailData_.toBuilder() : null;
                                     this.detailData_ = (SocialDetailOuterClass.SocialDetail) input.readMessage(SocialDetailOuterClass.SocialDetail.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -109,9 +112,6 @@ public final class GetPlayerSocialDetailRspOuterClass {
                                         this.detailData_ = subBuilder.buildPartial();
                                         break;
                                     }
-                                case 112:
-                                    this.retcode_ = input.readInt32();
-                                    break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                         break;
@@ -177,11 +177,11 @@ public final class GetPlayerSocialDetailRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.detailData_ != null) {
-                output.writeMessage(6, getDetailData());
-            }
             if (this.retcode_ != 0) {
                 output.writeInt32(14, this.retcode_);
+            }
+            if (this.detailData_ != null) {
+                output.writeMessage(15, getDetailData());
             }
             this.unknownFields.writeTo(output);
         }
@@ -193,11 +193,11 @@ public final class GetPlayerSocialDetailRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.detailData_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(6, getDetailData());
-            }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(14, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(14, this.retcode_);
+            }
+            if (this.detailData_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(15, getDetailData());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class GetPlayerSocialDetailRspOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasDetailData()) {
-                hash = (53 * ((37 * hash) + 6)) + getDetailData().hashCode();
+                hash = (53 * ((37 * hash) + 15)) + getDetailData().hashCode();
             }
             int hash2 = (29 * ((53 * ((37 * hash) + 14)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

@@ -355,7 +355,7 @@ class _Maps extends Maps {
     @OverloadResolutionByLambdaReturnType
     @InlineOnly
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final <K, V> float m7512maxOf(Map<? extends K, ? extends V> map, Function1<? super Map.Entry<? extends K, ? extends V>, Float> function1) {
+    private static final <K, V> float m7509maxOf(Map<? extends K, ? extends V> map, Function1<? super Map.Entry<? extends K, ? extends V>, Float> function1) {
         Intrinsics.checkNotNullParameter(map, "<this>");
         Intrinsics.checkNotNullParameter(function1, "selector");
         Iterator<T> it = map.entrySet().iterator();
@@ -380,7 +380,7 @@ class _Maps extends Maps {
     @kotlin.internal.InlineOnly
     /* renamed from: maxOf  reason: collision with other method in class */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    private static final <K, V, R extends java.lang.Comparable<? super R>> R m7513maxOf(java.util.Map<? extends K, ? extends V> r3, kotlin.jvm.functions.Function1<? super java.util.Map.Entry<? extends K, ? extends V>, ? extends R> r4) {
+    private static final <K, V, R extends java.lang.Comparable<? super R>> R m7510maxOf(java.util.Map<? extends K, ? extends V> r3, kotlin.jvm.functions.Function1<? super java.util.Map.Entry<? extends K, ? extends V>, ? extends R> r4) {
         /*
             r0 = r3
             java.lang.String r1 = "<this>"
@@ -428,7 +428,7 @@ class _Maps extends Maps {
             r0 = r6
             return r0
         */
-        throw new UnsupportedOperationException("Method not decompiled: kotlin.collections._Maps.m7513maxOf(java.util.Map, kotlin.jvm.functions.Function1):java.lang.Comparable");
+        throw new UnsupportedOperationException("Method not decompiled: kotlin.collections._Maps.m7510maxOf(java.util.Map, kotlin.jvm.functions.Function1):java.lang.Comparable");
     }
 
     @SinceKotlin(version = "1.4")
@@ -452,7 +452,7 @@ class _Maps extends Maps {
     @OverloadResolutionByLambdaReturnType
     @InlineOnly
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final <K, V> Float m7514maxOfOrNull(Map<? extends K, ? extends V> map, Function1<? super Map.Entry<? extends K, ? extends V>, Float> function1) {
+    private static final <K, V> Float m7511maxOfOrNull(Map<? extends K, ? extends V> map, Function1<? super Map.Entry<? extends K, ? extends V>, Float> function1) {
         Intrinsics.checkNotNullParameter(map, "<this>");
         Intrinsics.checkNotNullParameter(function1, "selector");
         Iterator<T> it = map.entrySet().iterator();
@@ -477,7 +477,7 @@ class _Maps extends Maps {
     @kotlin.internal.InlineOnly
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    private static final <K, V, R extends java.lang.Comparable<? super R>> R m7515maxOfOrNull(java.util.Map<? extends K, ? extends V> r3, kotlin.jvm.functions.Function1<? super java.util.Map.Entry<? extends K, ? extends V>, ? extends R> r4) {
+    private static final <K, V, R extends java.lang.Comparable<? super R>> R m7512maxOfOrNull(java.util.Map<? extends K, ? extends V> r3, kotlin.jvm.functions.Function1<? super java.util.Map.Entry<? extends K, ? extends V>, ? extends R> r4) {
         /*
             r0 = r3
             java.lang.String r1 = "<this>"
@@ -524,7 +524,7 @@ class _Maps extends Maps {
         L_0x0064:
             return r0
         */
-        throw new UnsupportedOperationException("Method not decompiled: kotlin.collections._Maps.m7515maxOfOrNull(java.util.Map, kotlin.jvm.functions.Function1):java.lang.Comparable");
+        throw new UnsupportedOperationException("Method not decompiled: kotlin.collections._Maps.m7512maxOfOrNull(java.util.Map, kotlin.jvm.functions.Function1):java.lang.Comparable");
     }
 
     /* JADX DEBUG: Failed to insert an additional move for type inference into block B:16:0x0041 */
@@ -691,7 +691,7 @@ class _Maps extends Maps {
     @OverloadResolutionByLambdaReturnType
     @InlineOnly
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final <K, V> float m7516minOf(Map<? extends K, ? extends V> map, Function1<? super Map.Entry<? extends K, ? extends V>, Float> function1) {
+    private static final <K, V> float m7513minOf(Map<? extends K, ? extends V> map, Function1<? super Map.Entry<? extends K, ? extends V>, Float> function1) {
         Intrinsics.checkNotNullParameter(map, "<this>");
         Intrinsics.checkNotNullParameter(function1, "selector");
         Iterator<T> it = map.entrySet().iterator();
@@ -716,7 +716,7 @@ class _Maps extends Maps {
     @kotlin.internal.InlineOnly
     /* renamed from: minOf  reason: collision with other method in class */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    private static final <K, V, R extends java.lang.Comparable<? super R>> R m7517minOf(java.util.Map<? extends K, ? extends V> r3, kotlin.jvm.functions.Function1<? super java.util.Map.Entry<? extends K, ? extends V>, ? extends R> r4) {
+    private static final <K, V, R extends java.lang.Comparable<? super R>> R m7514minOf(java.util.Map<? extends K, ? extends V> r3, kotlin.jvm.functions.Function1<? super java.util.Map.Entry<? extends K, ? extends V>, ? extends R> r4) {
         /*
             r0 = r3
             java.lang.String r1 = "<this>"
@@ -764,7 +764,7 @@ class _Maps extends Maps {
             r0 = r6
             return r0
         */
-        throw new UnsupportedOperationException("Method not decompiled: kotlin.collections._Maps.m7517minOf(java.util.Map, kotlin.jvm.functions.Function1):java.lang.Comparable");
+        throw new UnsupportedOperationException("Method not decompiled: kotlin.collections._Maps.m7514minOf(java.util.Map, kotlin.jvm.functions.Function1):java.lang.Comparable");
     }
 
     @SinceKotlin(version = "1.4")
@@ -788,7 +788,7 @@ class _Maps extends Maps {
     @OverloadResolutionByLambdaReturnType
     @InlineOnly
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final <K, V> Float m7518minOfOrNull(Map<? extends K, ? extends V> map, Function1<? super Map.Entry<? extends K, ? extends V>, Float> function1) {
+    private static final <K, V> Float m7515minOfOrNull(Map<? extends K, ? extends V> map, Function1<? super Map.Entry<? extends K, ? extends V>, Float> function1) {
         Intrinsics.checkNotNullParameter(map, "<this>");
         Intrinsics.checkNotNullParameter(function1, "selector");
         Iterator<T> it = map.entrySet().iterator();
@@ -813,7 +813,7 @@ class _Maps extends Maps {
     @kotlin.internal.InlineOnly
     /* renamed from: minOfOrNull  reason: collision with other method in class */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    private static final <K, V, R extends java.lang.Comparable<? super R>> R m7519minOfOrNull(java.util.Map<? extends K, ? extends V> r3, kotlin.jvm.functions.Function1<? super java.util.Map.Entry<? extends K, ? extends V>, ? extends R> r4) {
+    private static final <K, V, R extends java.lang.Comparable<? super R>> R m7516minOfOrNull(java.util.Map<? extends K, ? extends V> r3, kotlin.jvm.functions.Function1<? super java.util.Map.Entry<? extends K, ? extends V>, ? extends R> r4) {
         /*
             r0 = r3
             java.lang.String r1 = "<this>"
@@ -860,7 +860,7 @@ class _Maps extends Maps {
         L_0x0064:
             return r0
         */
-        throw new UnsupportedOperationException("Method not decompiled: kotlin.collections._Maps.m7519minOfOrNull(java.util.Map, kotlin.jvm.functions.Function1):java.lang.Comparable");
+        throw new UnsupportedOperationException("Method not decompiled: kotlin.collections._Maps.m7516minOfOrNull(java.util.Map, kotlin.jvm.functions.Function1):java.lang.Comparable");
     }
 
     /* JADX DEBUG: Failed to insert an additional move for type inference into block B:16:0x0041 */

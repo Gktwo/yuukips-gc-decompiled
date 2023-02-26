@@ -21,7 +21,6 @@ import com.fasterxml.jackson.databind.type.ReferenceType;
 import com.fasterxml.jackson.databind.util.ClassUtil;
 import com.fasterxml.jackson.databind.util.Converter;
 import com.fasterxml.jackson.databind.util.LRUMap;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import java.io.Serializable;
 import java.util.HashMap;
 
@@ -32,7 +31,7 @@ public final class DeserializerCache implements Serializable {
     protected final HashMap<JavaType, JsonDeserializer<Object>> _incompleteDeserializers;
 
     public DeserializerCache() {
-        this(PacketOpcodes.SetCoopChapterViewedRsp);
+        this(2000);
     }
 
     public DeserializerCache(int maxSize) {

@@ -11,25 +11,25 @@ import org.jetbrains.annotations.NotNull;
 /* loaded from: grasscutter.jar:kotlin/time/TimeMark.class */
 public abstract class TimeMark {
     /* renamed from: elapsedNow-UwyO8pc */
-    public abstract long mo8444elapsedNowUwyO8pc();
+    public abstract long mo8441elapsedNowUwyO8pc();
 
     @NotNull
     /* renamed from: plus-LRDsOJo */
-    public TimeMark mo8445plusLRDsOJo(long duration) {
+    public TimeMark mo8442plusLRDsOJo(long duration) {
         return new AdjustedTimeMark(this, duration, null);
     }
 
     @NotNull
     /* renamed from: minus-LRDsOJo  reason: not valid java name */
-    public TimeMark m8586minusLRDsOJo(long duration) {
-        return mo8445plusLRDsOJo(Duration.m8452unaryMinusUwyO8pc(duration));
+    public TimeMark m8583minusLRDsOJo(long duration) {
+        return mo8442plusLRDsOJo(Duration.m8449unaryMinusUwyO8pc(duration));
     }
 
     public final boolean hasPassedNow() {
-        return !Duration.m8461isNegativeimpl(mo8444elapsedNowUwyO8pc());
+        return !Duration.m8458isNegativeimpl(mo8441elapsedNowUwyO8pc());
     }
 
     public final boolean hasNotPassedNow() {
-        return Duration.m8461isNegativeimpl(mo8444elapsedNowUwyO8pc());
+        return Duration.m8458isNegativeimpl(mo8441elapsedNowUwyO8pc());
     }
 }

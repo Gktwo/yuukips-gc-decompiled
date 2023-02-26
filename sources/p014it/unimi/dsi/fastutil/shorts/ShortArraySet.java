@@ -16,7 +16,7 @@ public class ShortArraySet extends AbstractShortSet implements Serializable, Clo
     private static final long serialVersionUID = 1;
 
     /* renamed from: a */
-    private transient short[] f3025a;
+    private transient short[] f2989a;
     private int size;
 
     static /* synthetic */ int access$010(ShortArraySet x0) {
@@ -26,16 +26,16 @@ public class ShortArraySet extends AbstractShortSet implements Serializable, Clo
     }
 
     public ShortArraySet(short[] a) {
-        this.f3025a = a;
+        this.f2989a = a;
         this.size = a.length;
     }
 
     public ShortArraySet() {
-        this.f3025a = ShortArrays.EMPTY_ARRAY;
+        this.f2989a = ShortArrays.EMPTY_ARRAY;
     }
 
     public ShortArraySet(int capacity) {
-        this.f3025a = new short[capacity];
+        this.f2989a = new short[capacity];
     }
 
     public ShortArraySet(ShortCollection c) {
@@ -53,7 +53,7 @@ public class ShortArraySet extends AbstractShortSet implements Serializable, Clo
         int i = 0;
         ShortIterator it = c.iterator();
         while (it.hasNext()) {
-            this.f3025a[i] = it.next().shortValue();
+            this.f2989a[i] = it.next().shortValue();
             i++;
         }
         this.size = i;
@@ -63,14 +63,14 @@ public class ShortArraySet extends AbstractShortSet implements Serializable, Clo
         this(c.size());
         int i = 0;
         for (Short x : c) {
-            this.f3025a[i] = x.shortValue();
+            this.f2989a[i] = x.shortValue();
             i++;
         }
         this.size = i;
     }
 
     public ShortArraySet(short[] a, int size) {
-        this.f3025a = a;
+        this.f2989a = a;
         this.size = size;
         if (size > a.length) {
             throw new IllegalArgumentException("The provided size (" + size + ") is larger than or equal to the array size (" + a.length + ")");
@@ -114,7 +114,7 @@ public class ShortArraySet extends AbstractShortSet implements Serializable, Clo
             if (i == 0) {
                 return -1;
             }
-        } while (this.f3025a[i] != o);
+        } while (this.f2989a[i] != o);
         return i;
     }
 
@@ -133,7 +133,7 @@ public class ShortArraySet extends AbstractShortSet implements Serializable, Clo
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                short[] sArr = ShortArraySet.this.f3025a;
+                short[] sArr = ShortArraySet.this.f2989a;
                 int i = this.next;
                 this.next = i + 1;
                 return sArr[i];
@@ -144,7 +144,7 @@ public class ShortArraySet extends AbstractShortSet implements Serializable, Clo
                 int access$010 = ShortArraySet.access$010(ShortArraySet.this);
                 int i = this.next;
                 this.next = i - 1;
-                System.arraycopy(ShortArraySet.this.f3025a, this.next + 1, ShortArraySet.this.f3025a, this.next, access$010 - i);
+                System.arraycopy(ShortArraySet.this.f2989a, this.next + 1, ShortArraySet.this.f2989a, this.next, access$010 - i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectIterator
@@ -209,7 +209,7 @@ public class ShortArraySet extends AbstractShortSet implements Serializable, Clo
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            short[] sArr = ShortArraySet.this.f3025a;
+            short[] sArr = ShortArraySet.this.f2989a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(sArr[i]);
@@ -219,7 +219,7 @@ public class ShortArraySet extends AbstractShortSet implements Serializable, Clo
         public void forEachRemaining(ShortConsumer action) {
             int max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(ShortArraySet.this.f3025a[this.pos]);
+                action.accept(ShortArraySet.this.f2989a[this.pos]);
                 this.pos++;
             }
         }
@@ -282,7 +282,7 @@ public class ShortArraySet extends AbstractShortSet implements Serializable, Clo
         }
         int tail = (this.size - pos) - 1;
         for (int i = 0; i < tail; i++) {
-            this.f3025a[pos + i] = this.f3025a[pos + i + 1];
+            this.f2989a[pos + i] = this.f2989a[pos + i + 1];
         }
         this.size--;
         return true;
@@ -293,7 +293,7 @@ public class ShortArraySet extends AbstractShortSet implements Serializable, Clo
         if (findKey(k) != -1) {
             return false;
         }
-        if (this.size == this.f3025a.length) {
+        if (this.size == this.f2989a.length) {
             short[] b = new short[this.size == 0 ? 2 : this.size * 2];
             int i = this.size;
             while (true) {
@@ -301,11 +301,11 @@ public class ShortArraySet extends AbstractShortSet implements Serializable, Clo
                 if (i == 0) {
                     break;
                 }
-                b[i] = this.f3025a[i];
+                b[i] = this.f2989a[i];
             }
-            this.f3025a = b;
+            this.f2989a = b;
         }
-        short[] sArr = this.f3025a;
+        short[] sArr = this.f2989a;
         int i2 = this.size;
         this.size = i2 + 1;
         sArr[i2] = k;
@@ -324,7 +324,7 @@ public class ShortArraySet extends AbstractShortSet implements Serializable, Clo
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortCollection, p014it.unimi.dsi.fastutil.shorts.ShortCollection
     public short[] toShortArray() {
-        return Arrays.copyOf(this.f3025a, this.size);
+        return Arrays.copyOf(this.f2989a, this.size);
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortCollection, p014it.unimi.dsi.fastutil.shorts.ShortCollection
@@ -332,7 +332,7 @@ public class ShortArraySet extends AbstractShortSet implements Serializable, Clo
         if (a == null || a.length < this.size) {
             a = new short[this.size];
         }
-        System.arraycopy(this.f3025a, 0, a, 0, this.size);
+        System.arraycopy(this.f2989a, 0, a, 0, this.size);
         return a;
     }
 
@@ -340,7 +340,7 @@ public class ShortArraySet extends AbstractShortSet implements Serializable, Clo
     public ShortArraySet clone() {
         try {
             ShortArraySet c = (ShortArraySet) clone();
-            c.f3025a = (short[]) this.f3025a.clone();
+            c.f2989a = (short[]) this.f2989a.clone();
             return c;
         } catch (CloneNotSupportedException e) {
             throw new InternalError();
@@ -350,15 +350,15 @@ public class ShortArraySet extends AbstractShortSet implements Serializable, Clo
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; i < this.size; i++) {
-            s.writeShort(this.f3025a[i]);
+            s.writeShort(this.f2989a[i]);
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f3025a = new short[this.size];
+        this.f2989a = new short[this.size];
         for (int i = 0; i < this.size; i++) {
-            this.f3025a[i] = s.readShort();
+            this.f2989a[i] = s.readShort();
         }
     }
 }

@@ -19,17 +19,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerNameRspOuterClass.class */
 public final class SetPlayerNameRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016SetPlayerNameRsp.proto\"6\n\u0010SetPlayerNameRsp\u0012\u0011\n\tnick_name\u0018\u0004 \u0001(\t\u0012\u000f\n\u0007retcode\u0018\u000b \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016SetPlayerNameRsp.proto\"5\n\u0010SetPlayerNameRsp\u0012\u000f\n\u0007retcode\u0018\u000b \u0001(\u0005\u0012\u0010\n\bnickName\u0018\r \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SetPlayerNameRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetPlayerNameRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetPlayerNameRsp_descriptor, new String[]{"NickName", "Retcode"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetPlayerNameRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetPlayerNameRsp_descriptor, new String[]{"Retcode", "NickName"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerNameRspOuterClass$SetPlayerNameRspOrBuilder.class */
     public interface SetPlayerNameRspOrBuilder extends MessageOrBuilder {
+        int getRetcode();
+
         String getNickName();
 
         ByteString getNickNameBytes();
-
-        int getRetcode();
     }
 
     private SetPlayerNameRspOuterClass() {
@@ -45,10 +45,10 @@ public final class SetPlayerNameRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerNameRspOuterClass$SetPlayerNameRsp.class */
     public static final class SetPlayerNameRsp extends GeneratedMessageV3 implements SetPlayerNameRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int NICK_NAME_FIELD_NUMBER = 4;
-        private volatile Object nickName_;
         public static final int RETCODE_FIELD_NUMBER = 11;
         private int retcode_;
+        public static final int NICKNAME_FIELD_NUMBER = 13;
+        private volatile Object nickName_;
         private byte memoizedIsInitialized;
         private static final SetPlayerNameRsp DEFAULT_INSTANCE = new SetPlayerNameRsp();
         private static final Parser<SetPlayerNameRsp> PARSER = new AbstractParser<SetPlayerNameRsp>() { // from class: emu.grasscutter.net.proto.SetPlayerNameRspOuterClass.SetPlayerNameRsp.1
@@ -96,11 +96,11 @@ public final class SetPlayerNameRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 34:
-                                    this.nickName_ = input.readStringRequireUtf8();
-                                    break;
                                 case 88:
                                     this.retcode_ = input.readInt32();
+                                    break;
+                                case 106:
+                                    this.nickName_ = input.readStringRequireUtf8();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -133,6 +133,11 @@ public final class SetPlayerNameRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SetPlayerNameRspOuterClass.SetPlayerNameRspOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
+        }
+
+        @Override // emu.grasscutter.net.proto.SetPlayerNameRspOuterClass.SetPlayerNameRspOrBuilder
         public String getNickName() {
             Object ref = this.nickName_;
             if (ref instanceof String) {
@@ -154,11 +159,6 @@ public final class SetPlayerNameRspOuterClass {
             return b;
         }
 
-        @Override // emu.grasscutter.net.proto.SetPlayerNameRspOuterClass.SetPlayerNameRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
-        }
-
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -174,11 +174,11 @@ public final class SetPlayerNameRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (!GeneratedMessageV3.isStringEmpty(this.nickName_)) {
-                GeneratedMessageV3.writeString(output, 4, this.nickName_);
-            }
             if (this.retcode_ != 0) {
                 output.writeInt32(11, this.retcode_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.nickName_)) {
+                GeneratedMessageV3.writeString(output, 13, this.nickName_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -190,11 +190,11 @@ public final class SetPlayerNameRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (!GeneratedMessageV3.isStringEmpty(this.nickName_)) {
-                size2 = 0 + GeneratedMessageV3.computeStringSize(4, this.nickName_);
-            }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(11, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(11, this.retcode_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.nickName_)) {
+                size2 += GeneratedMessageV3.computeStringSize(13, this.nickName_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -210,7 +210,7 @@ public final class SetPlayerNameRspOuterClass {
                 return equals(obj);
             }
             SetPlayerNameRsp other = (SetPlayerNameRsp) obj;
-            return getNickName().equals(other.getNickName()) && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
+            return getRetcode() == other.getRetcode() && getNickName().equals(other.getNickName()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -218,7 +218,7 @@ public final class SetPlayerNameRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getNickName().hashCode())) + 11)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getRetcode())) + 13)) + getNickName().hashCode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -297,8 +297,8 @@ public final class SetPlayerNameRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerNameRspOuterClass$SetPlayerNameRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SetPlayerNameRspOrBuilder {
-            private Object nickName_ = "";
             private int retcode_;
+            private Object nickName_ = "";
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return SetPlayerNameRspOuterClass.internal_static_SetPlayerNameRsp_descriptor;
@@ -326,8 +326,8 @@ public final class SetPlayerNameRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.nickName_ = "";
                 this.retcode_ = 0;
+                this.nickName_ = "";
                 return this;
             }
 
@@ -353,8 +353,8 @@ public final class SetPlayerNameRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public SetPlayerNameRsp buildPartial() {
                 SetPlayerNameRsp result = new SetPlayerNameRsp(this);
-                result.nickName_ = this.nickName_;
                 result.retcode_ = this.retcode_;
+                result.nickName_ = this.nickName_;
                 onBuilt();
                 return result;
             }
@@ -402,12 +402,12 @@ public final class SetPlayerNameRspOuterClass {
                 if (other == SetPlayerNameRsp.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
+                }
                 if (!other.getNickName().isEmpty()) {
                     this.nickName_ = other.nickName_;
                     onChanged();
-                }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -439,6 +439,23 @@ public final class SetPlayerNameRspOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.SetPlayerNameRspOuterClass.SetPlayerNameRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.SetPlayerNameRspOuterClass.SetPlayerNameRspOrBuilder
@@ -484,23 +501,6 @@ public final class SetPlayerNameRspOuterClass {
                 }
                 SetPlayerNameRsp.checkByteStringIsUtf8(value);
                 this.nickName_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.SetPlayerNameRspOuterClass.SetPlayerNameRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
                 onChanged();
                 return this;
             }

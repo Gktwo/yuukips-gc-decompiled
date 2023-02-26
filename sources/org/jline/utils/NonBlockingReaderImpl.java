@@ -12,13 +12,13 @@ public class NonBlockingReaderImpl extends NonBlockingReader {
     public static final int READ_EXPIRED = -2;
 
     /* renamed from: in */
-    private Reader f3272in;
+    private Reader f3236in;
     private String name;
     private Thread thread;
     static final /* synthetic */ boolean $assertionsDisabled;
 
     /* renamed from: ch */
-    private int f3273ch = -2;
+    private int f3237ch = -2;
     private boolean threadIsReading = false;
     private IOException exception = null;
     private long threadDelay = 60000;
@@ -28,7 +28,7 @@ public class NonBlockingReaderImpl extends NonBlockingReader {
     }
 
     public NonBlockingReaderImpl(String name, Reader in) {
-        this.f3272in = in;
+        this.f3236in = in;
         this.name = name;
     }
 
@@ -50,13 +50,13 @@ public class NonBlockingReaderImpl extends NonBlockingReader {
 
     @Override // java.io.Reader, java.io.Closeable, java.lang.AutoCloseable
     public void close() throws IOException {
-        this.f3272in.close();
+        this.f3236in.close();
         shutdown();
     }
 
     @Override // java.io.Reader
     public synchronized boolean ready() throws IOException {
-        return this.f3273ch >= 0 || this.f3272in.ready();
+        return this.f3237ch >= 0 || this.f3236in.ready();
     }
 
     @Override // org.jline.utils.NonBlockingReader
@@ -67,18 +67,18 @@ public class NonBlockingReaderImpl extends NonBlockingReader {
             return 0;
         } else {
             if (this.exception != null) {
-                if ($assertionsDisabled || this.f3273ch == -2) {
+                if ($assertionsDisabled || this.f3237ch == -2) {
                     IOException toBeThrown = this.exception;
                     this.exception = null;
                     throw toBeThrown;
                 }
                 throw new AssertionError();
-            } else if (this.f3273ch >= -1) {
-                b[0] = (char) this.f3273ch;
-                this.f3273ch = -2;
+            } else if (this.f3237ch >= -1) {
+                b[0] = (char) this.f3237ch;
+                this.f3237ch = -2;
                 return 1;
             } else if (!this.threadIsReading) {
-                return this.f3272in.read(b);
+                return this.f3236in.read(b);
             } else {
                 int c = read(-1, false);
                 if (c < 0) {
@@ -102,7 +102,7 @@ public class NonBlockingReaderImpl extends NonBlockingReader {
     @Override // org.jline.utils.NonBlockingReader
     protected synchronized int read(long j, boolean isPeek) throws IOException {
         if (this.exception == null) {
-            if (this.f3273ch >= -1) {
+            if (this.f3237ch >= -1) {
                 if (!$assertionsDisabled && this.exception != null) {
                     throw new AssertionError();
                 }
@@ -128,7 +128,7 @@ public class NonBlockingReaderImpl extends NonBlockingReader {
                     }
                     wait(j);
                     if (this.exception != null) {
-                        if ($assertionsDisabled || this.f3273ch == -2) {
+                        if ($assertionsDisabled || this.f3237ch == -2) {
                             IOException toBeThrown = this.exception;
                             if (!isPeek) {
                                 this.exception = null;
@@ -136,7 +136,7 @@ public class NonBlockingReaderImpl extends NonBlockingReader {
                             throw toBeThrown;
                         }
                         throw new AssertionError();
-                    } else if (this.f3273ch >= -1) {
+                    } else if (this.f3237ch >= -1) {
                         if (!$assertionsDisabled && this.exception != null) {
                             throw new AssertionError();
                         }
@@ -145,14 +145,14 @@ public class NonBlockingReaderImpl extends NonBlockingReader {
                     }
                 }
             } else {
-                this.f3273ch = this.f3272in.read();
+                this.f3237ch = this.f3236in.read();
             }
-            int ret = this.f3273ch;
+            int ret = this.f3237ch;
             if (!isPeek) {
-                this.f3273ch = -2;
+                this.f3237ch = -2;
             }
             return ret;
-        } else if ($assertionsDisabled || this.f3273ch == -2) {
+        } else if ($assertionsDisabled || this.f3237ch == -2) {
             IOException toBeThrown2 = this.exception;
             if (!isPeek) {
                 this.exception = null;

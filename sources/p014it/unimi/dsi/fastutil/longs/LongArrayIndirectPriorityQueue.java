@@ -12,7 +12,7 @@ public class LongArrayIndirectPriorityQueue implements LongIndirectPriorityQueue
     protected int size;
 
     /* renamed from: c */
-    protected LongComparator f2392c;
+    protected LongComparator f2356c;
     protected int firstIndex;
     protected boolean firstIndexValid;
 
@@ -22,7 +22,7 @@ public class LongArrayIndirectPriorityQueue implements LongIndirectPriorityQueue
             this.array = new int[capacity];
         }
         this.refArray = refArray;
-        this.f2392c = c;
+        this.f2356c = c;
     }
 
     public LongArrayIndirectPriorityQueue(long[] refArray, int capacity) {
@@ -63,12 +63,12 @@ public class LongArrayIndirectPriorityQueue implements LongIndirectPriorityQueue
         int i = this.size - 1;
         int firstIndex = i;
         long first = this.refArray[this.array[firstIndex]];
-        if (this.f2392c != null) {
+        if (this.f2356c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f2392c.compare(this.refArray[this.array[i]], first) < 0) {
+                } else if (this.f2356c.compare(this.refArray[this.array[i]], first) < 0) {
                     firstIndex = i;
                     first = this.refArray[this.array[i]];
                 }
@@ -92,12 +92,12 @@ public class LongArrayIndirectPriorityQueue implements LongIndirectPriorityQueue
         int i = this.size - 1;
         int lastIndex = i;
         long last = this.refArray[this.array[lastIndex]];
-        if (this.f2392c != null) {
+        if (this.f2356c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f2392c.compare(last, this.refArray[this.array[i]]) < 0) {
+                } else if (this.f2356c.compare(last, this.refArray[this.array[i]]) < 0) {
                     lastIndex = i;
                     last = this.refArray[this.array[i]];
                 }
@@ -138,11 +138,11 @@ public class LongArrayIndirectPriorityQueue implements LongIndirectPriorityQueue
         }
         if (!this.firstIndexValid) {
             this.firstIndexValid = false;
-        } else if (this.f2392c == null) {
+        } else if (this.f2356c == null) {
             if (this.refArray[x] < this.refArray[this.array[this.firstIndex]]) {
                 this.firstIndex = this.size;
             }
-        } else if (this.f2392c.compare(this.refArray[x], this.refArray[this.array[this.firstIndex]]) < 0) {
+        } else if (this.f2356c.compare(this.refArray[x], this.refArray[this.array[this.firstIndex]]) < 0) {
             this.firstIndex = this.size;
         }
         int[] iArr = this.array;
@@ -255,7 +255,7 @@ public class LongArrayIndirectPriorityQueue implements LongIndirectPriorityQueue
     /* Return type fixed from 'it.unimi.dsi.fastutil.longs.LongComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.longs.LongIndirectPriorityQueue, p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public Comparator<? super Long> comparator() {
-        return this.f2392c;
+        return this.f2356c;
     }
 
     public String toString() {

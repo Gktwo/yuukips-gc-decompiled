@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BonusActivityInfoOuterClass.class */
 public final class BonusActivityInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017BonusActivityInfo.proto\"=\n\u0011BonusActivityInfo\u0012\u0019\n\u0011bonus_activity_id\u0018\u000e \u0001(\r\u0012\r\n\u0005state\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017BonusActivityInfo.proto\";\n\u0011BonusActivityInfo\u0012\u0017\n\u000fbonusActivityId\u0018\u0005 \u0001(\r\u0012\r\n\u0005state\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_BonusActivityInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_BonusActivityInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BonusActivityInfo_descriptor, new String[]{"BonusActivityId", "State"});
 
@@ -43,9 +43,9 @@ public final class BonusActivityInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BonusActivityInfoOuterClass$BonusActivityInfo.class */
     public static final class BonusActivityInfo extends GeneratedMessageV3 implements BonusActivityInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int BONUS_ACTIVITY_ID_FIELD_NUMBER = 14;
+        public static final int BONUSACTIVITYID_FIELD_NUMBER = 5;
         private int bonusActivityId_;
-        public static final int STATE_FIELD_NUMBER = 8;
+        public static final int STATE_FIELD_NUMBER = 4;
         private int state_;
         private byte memoizedIsInitialized;
         private static final BonusActivityInfo DEFAULT_INSTANCE = new BonusActivityInfo();
@@ -92,10 +92,10 @@ public final class BonusActivityInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 64:
+                            case 32:
                                 this.state_ = input.readUInt32();
                                 break;
-                            case 112:
+                            case 40:
                                 this.bonusActivityId_ = input.readUInt32();
                                 break;
                             default:
@@ -153,10 +153,10 @@ public final class BonusActivityInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.state_ != 0) {
-                output.writeUInt32(8, this.state_);
+                output.writeUInt32(4, this.state_);
             }
             if (this.bonusActivityId_ != 0) {
-                output.writeUInt32(14, this.bonusActivityId_);
+                output.writeUInt32(5, this.bonusActivityId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class BonusActivityInfoOuterClass {
             }
             int size2 = 0;
             if (this.state_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(8, this.state_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.state_);
             }
             if (this.bonusActivityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.bonusActivityId_);
+                size2 += CodedOutputStream.computeUInt32Size(5, this.bonusActivityId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class BonusActivityInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getBonusActivityId())) + 8)) + getState())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getBonusActivityId())) + 4)) + getState())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

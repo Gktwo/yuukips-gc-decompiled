@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GadgetGeneralRewardInfoOuterClass.class */
 public final class GadgetGeneralRewardInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dGadgetGeneralRewardInfo.proto\u001a\u000fItemParam.proto\"\u0001\n\u0017GadgetGeneralRewardInfo\u0012\r\n\u0005resin\u0018\u0001 \u0001(\r\u0012\u0011\n\tdead_time\u0018\u0002 \u0001(\r\u0012\u0017\n\u000fremain_uid_list\u0018\u0003 \u0003(\r\u0012\u0018\n\u0010qualify_uid_list\u0018\u0004 \u0003(\r\u0012\u001e\n\nitem_param\u0018\u0005 \u0001(\u000b2\n.ItemParamB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dGadgetGeneralRewardInfo.proto\u001a\u000fItemParam.proto\"\u0001\n\u0017GadgetGeneralRewardInfo\u0012\r\n\u0005resin\u0018\u0001 \u0001(\r\u0012\u0010\n\bdeadTime\u0018\u0002 \u0001(\r\u0012\u0015\n\rremainUidList\u0018\u0003 \u0003(\r\u0012\u0016\n\u000equalifyUidList\u0018\u0004 \u0003(\r\u0012\u001d\n\titemParam\u0018\u0005 \u0001(\u000b2\n.ItemParamB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_GadgetGeneralRewardInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GadgetGeneralRewardInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GadgetGeneralRewardInfo_descriptor, new String[]{"Resin", "DeadTime", "RemainUidList", "QualifyUidList", "ItemParam"});
 
@@ -69,15 +69,15 @@ public final class GadgetGeneralRewardInfoOuterClass {
         private static final long serialVersionUID = 0;
         public static final int RESIN_FIELD_NUMBER = 1;
         private int resin_;
-        public static final int DEAD_TIME_FIELD_NUMBER = 2;
+        public static final int DEADTIME_FIELD_NUMBER = 2;
         private int deadTime_;
-        public static final int REMAIN_UID_LIST_FIELD_NUMBER = 3;
+        public static final int REMAINUIDLIST_FIELD_NUMBER = 3;
         private Internal.IntList remainUidList_;
         private int remainUidListMemoizedSerializedSize;
-        public static final int QUALIFY_UID_LIST_FIELD_NUMBER = 4;
+        public static final int QUALIFYUIDLIST_FIELD_NUMBER = 4;
         private Internal.IntList qualifyUidList_;
         private int qualifyUidListMemoizedSerializedSize;
-        public static final int ITEM_PARAM_FIELD_NUMBER = 5;
+        public static final int ITEMPARAM_FIELD_NUMBER = 5;
         private ItemParamOuterClass.ItemParam itemParam_;
         private byte memoizedIsInitialized;
         private static final GadgetGeneralRewardInfo DEFAULT_INSTANCE = new GadgetGeneralRewardInfo();

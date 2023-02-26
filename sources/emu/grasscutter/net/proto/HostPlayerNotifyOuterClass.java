@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HostPlayerNotifyOuterClass.class */
 public final class HostPlayerNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016HostPlayerNotify.proto\":\n\u0010HostPlayerNotify\u0012\u0014\n\fhost_peer_id\u0018\f \u0001(\r\u0012\u0010\n\bhost_uid\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016HostPlayerNotify.proto\"7\n\u0010HostPlayerNotify\u0012\u000f\n\u0007hostUid\u0018\u0004 \u0001(\r\u0012\u0012\n\nhostPeerId\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_HostPlayerNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_HostPlayerNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HostPlayerNotify_descriptor, new String[]{"HostPeerId", "HostUid"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_HostPlayerNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HostPlayerNotify_descriptor, new String[]{"HostUid", "HostPeerId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HostPlayerNotifyOuterClass$HostPlayerNotifyOrBuilder.class */
     public interface HostPlayerNotifyOrBuilder extends MessageOrBuilder {
-        int getHostPeerId();
-
         int getHostUid();
+
+        int getHostPeerId();
     }
 
     private HostPlayerNotifyOuterClass() {
@@ -43,10 +43,10 @@ public final class HostPlayerNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HostPlayerNotifyOuterClass$HostPlayerNotify.class */
     public static final class HostPlayerNotify extends GeneratedMessageV3 implements HostPlayerNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int HOST_PEER_ID_FIELD_NUMBER = 12;
-        private int hostPeerId_;
-        public static final int HOST_UID_FIELD_NUMBER = 14;
+        public static final int HOSTUID_FIELD_NUMBER = 4;
         private int hostUid_;
+        public static final int HOSTPEERID_FIELD_NUMBER = 5;
+        private int hostPeerId_;
         private byte memoizedIsInitialized;
         private static final HostPlayerNotify DEFAULT_INSTANCE = new HostPlayerNotify();
         private static final Parser<HostPlayerNotify> PARSER = new AbstractParser<HostPlayerNotify>() { // from class: emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotify.1
@@ -92,11 +92,11 @@ public final class HostPlayerNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 96:
-                                this.hostPeerId_ = input.readUInt32();
-                                break;
-                            case 112:
+                            case 32:
                                 this.hostUid_ = input.readUInt32();
+                                break;
+                            case 40:
+                                this.hostPeerId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -128,13 +128,13 @@ public final class HostPlayerNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotifyOrBuilder
-        public int getHostPeerId() {
-            return this.hostPeerId_;
+        public int getHostUid() {
+            return this.hostUid_;
         }
 
         @Override // emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotifyOrBuilder
-        public int getHostUid() {
-            return this.hostUid_;
+        public int getHostPeerId() {
+            return this.hostPeerId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -152,11 +152,11 @@ public final class HostPlayerNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.hostPeerId_ != 0) {
-                output.writeUInt32(12, this.hostPeerId_);
-            }
             if (this.hostUid_ != 0) {
-                output.writeUInt32(14, this.hostUid_);
+                output.writeUInt32(4, this.hostUid_);
+            }
+            if (this.hostPeerId_ != 0) {
+                output.writeUInt32(5, this.hostPeerId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class HostPlayerNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.hostPeerId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(12, this.hostPeerId_);
-            }
             if (this.hostUid_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.hostUid_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.hostUid_);
+            }
+            if (this.hostPeerId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(5, this.hostPeerId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -188,7 +188,7 @@ public final class HostPlayerNotifyOuterClass {
                 return equals(obj);
             }
             HostPlayerNotify other = (HostPlayerNotify) obj;
-            return getHostPeerId() == other.getHostPeerId() && getHostUid() == other.getHostUid() && this.unknownFields.equals(other.unknownFields);
+            return getHostUid() == other.getHostUid() && getHostPeerId() == other.getHostPeerId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -196,7 +196,7 @@ public final class HostPlayerNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getHostPeerId())) + 14)) + getHostUid())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getHostUid())) + 5)) + getHostPeerId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -275,8 +275,8 @@ public final class HostPlayerNotifyOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HostPlayerNotifyOuterClass$HostPlayerNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements HostPlayerNotifyOrBuilder {
-            private int hostPeerId_;
             private int hostUid_;
+            private int hostPeerId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return HostPlayerNotifyOuterClass.internal_static_HostPlayerNotify_descriptor;
@@ -304,8 +304,8 @@ public final class HostPlayerNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.hostPeerId_ = 0;
                 this.hostUid_ = 0;
+                this.hostPeerId_ = 0;
                 return this;
             }
 
@@ -331,8 +331,8 @@ public final class HostPlayerNotifyOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public HostPlayerNotify buildPartial() {
                 HostPlayerNotify result = new HostPlayerNotify(this);
-                result.hostPeerId_ = this.hostPeerId_;
                 result.hostUid_ = this.hostUid_;
+                result.hostPeerId_ = this.hostPeerId_;
                 onBuilt();
                 return result;
             }
@@ -380,11 +380,11 @@ public final class HostPlayerNotifyOuterClass {
                 if (other == HostPlayerNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getHostPeerId() != 0) {
-                    setHostPeerId(other.getHostPeerId());
-                }
                 if (other.getHostUid() != 0) {
                     setHostUid(other.getHostUid());
+                }
+                if (other.getHostPeerId() != 0) {
+                    setHostPeerId(other.getHostPeerId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -419,23 +419,6 @@ public final class HostPlayerNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotifyOrBuilder
-            public int getHostPeerId() {
-                return this.hostPeerId_;
-            }
-
-            public Builder setHostPeerId(int value) {
-                this.hostPeerId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearHostPeerId() {
-                this.hostPeerId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotifyOrBuilder
             public int getHostUid() {
                 return this.hostUid_;
             }
@@ -448,6 +431,23 @@ public final class HostPlayerNotifyOuterClass {
 
             public Builder clearHostUid() {
                 this.hostUid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.HostPlayerNotifyOuterClass.HostPlayerNotifyOrBuilder
+            public int getHostPeerId() {
+                return this.hostPeerId_;
+            }
+
+            public Builder setHostPeerId(int value) {
+                this.hostPeerId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearHostPeerId() {
+                this.hostPeerId_ = 0;
                 onChanged();
                 return this;
             }

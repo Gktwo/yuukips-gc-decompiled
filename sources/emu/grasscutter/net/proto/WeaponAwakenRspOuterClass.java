@@ -24,38 +24,27 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WeaponAwakenRspOuterClass.class */
 public final class WeaponAwakenRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015WeaponAwakenRsp.proto\"ó\u0002\n\u000fWeaponAwakenRsp\u0012C\n\u0013cur_affix_level_map\u0018\u0003 \u0003(\u000b2&.WeaponAwakenRsp.CurAffixLevelMapEntry\u0012\u0013\n\u000bavatar_guid\u0018\b \u0001(\u0004\u0012\u000f\n\u0007retcode\u0018\t \u0001(\u0005\u0012\u001a\n\u0012target_weapon_guid\u0018\u000e \u0001(\u0004\u0012C\n\u0013old_affix_level_map\u0018\u000f \u0003(\u000b2&.WeaponAwakenRsp.OldAffixLevelMapEntry\u0012\"\n\u001atarget_weapon_awaken_level\u0018\u0002 \u0001(\r\u001a7\n\u0015CurAffixLevelMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001\u001a7\n\u0015OldAffixLevelMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015WeaponAwakenRsp.proto\"ç\u0002\n\u000fWeaponAwakenRsp\u0012\u000f\n\u0007retcode\u0018\u000b \u0001(\u0005\u0012\u001f\n\u0017targetWeaponAwakenLevel\u0018\u0003 \u0001(\r\u0012\u0018\n\u0010targetWeaponGuid\u0018\u0002 \u0001(\u0004\u0012\u0012\n\navatarGuid\u0018\u0005 \u0001(\u0004\u0012@\n\u0010oldAffixLevelMap\u0018\u0006 \u0003(\u000b2&.WeaponAwakenRsp.OldAffixLevelMapEntry\u0012@\n\u0010curAffixLevelMap\u0018\f \u0003(\u000b2&.WeaponAwakenRsp.CurAffixLevelMapEntry\u001a7\n\u0015OldAffixLevelMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001\u001a7\n\u0015CurAffixLevelMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_WeaponAwakenRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_WeaponAwakenRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WeaponAwakenRsp_descriptor, new String[]{"CurAffixLevelMap", "AvatarGuid", "Retcode", "TargetWeaponGuid", "OldAffixLevelMap", "TargetWeaponAwakenLevel"});
-    private static final Descriptors.Descriptor internal_static_WeaponAwakenRsp_CurAffixLevelMapEntry_descriptor = internal_static_WeaponAwakenRsp_descriptor.getNestedTypes().get(0);
-
-    /* renamed from: internal_static_WeaponAwakenRsp_CurAffixLevelMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f939x67bcdb86 = new GeneratedMessageV3.FieldAccessorTable(internal_static_WeaponAwakenRsp_CurAffixLevelMapEntry_descriptor, new String[]{"Key", "Value"});
-    private static final Descriptors.Descriptor internal_static_WeaponAwakenRsp_OldAffixLevelMapEntry_descriptor = internal_static_WeaponAwakenRsp_descriptor.getNestedTypes().get(1);
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_WeaponAwakenRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WeaponAwakenRsp_descriptor, new String[]{"Retcode", "TargetWeaponAwakenLevel", "TargetWeaponGuid", "AvatarGuid", "OldAffixLevelMap", "CurAffixLevelMap"});
+    private static final Descriptors.Descriptor internal_static_WeaponAwakenRsp_OldAffixLevelMapEntry_descriptor = internal_static_WeaponAwakenRsp_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_WeaponAwakenRsp_OldAffixLevelMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f940x1996e3ff = new GeneratedMessageV3.FieldAccessorTable(internal_static_WeaponAwakenRsp_OldAffixLevelMapEntry_descriptor, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f904x1996e3ff = new GeneratedMessageV3.FieldAccessorTable(internal_static_WeaponAwakenRsp_OldAffixLevelMapEntry_descriptor, new String[]{"Key", "Value"});
+    private static final Descriptors.Descriptor internal_static_WeaponAwakenRsp_CurAffixLevelMapEntry_descriptor = internal_static_WeaponAwakenRsp_descriptor.getNestedTypes().get(1);
+
+    /* renamed from: internal_static_WeaponAwakenRsp_CurAffixLevelMapEntry_fieldAccessorTable */
+    private static final GeneratedMessageV3.FieldAccessorTable f905x67bcdb86 = new GeneratedMessageV3.FieldAccessorTable(internal_static_WeaponAwakenRsp_CurAffixLevelMapEntry_descriptor, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WeaponAwakenRspOuterClass$WeaponAwakenRspOrBuilder.class */
     public interface WeaponAwakenRspOrBuilder extends MessageOrBuilder {
-        int getCurAffixLevelMapCount();
-
-        boolean containsCurAffixLevelMap(int i);
-
-        @Deprecated
-        Map<Integer, Integer> getCurAffixLevelMap();
-
-        Map<Integer, Integer> getCurAffixLevelMapMap();
-
-        int getCurAffixLevelMapOrDefault(int i, int i2);
-
-        int getCurAffixLevelMapOrThrow(int i);
-
-        long getAvatarGuid();
-
         int getRetcode();
 
+        int getTargetWeaponAwakenLevel();
+
         long getTargetWeaponGuid();
+
+        long getAvatarGuid();
 
         int getOldAffixLevelMapCount();
 
@@ -70,7 +59,18 @@ public final class WeaponAwakenRspOuterClass {
 
         int getOldAffixLevelMapOrThrow(int i);
 
-        int getTargetWeaponAwakenLevel();
+        int getCurAffixLevelMapCount();
+
+        boolean containsCurAffixLevelMap(int i);
+
+        @Deprecated
+        Map<Integer, Integer> getCurAffixLevelMap();
+
+        Map<Integer, Integer> getCurAffixLevelMapMap();
+
+        int getCurAffixLevelMapOrDefault(int i, int i2);
+
+        int getCurAffixLevelMapOrThrow(int i);
     }
 
     private WeaponAwakenRspOuterClass() {
@@ -86,18 +86,18 @@ public final class WeaponAwakenRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WeaponAwakenRspOuterClass$WeaponAwakenRsp.class */
     public static final class WeaponAwakenRsp extends GeneratedMessageV3 implements WeaponAwakenRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CUR_AFFIX_LEVEL_MAP_FIELD_NUMBER = 3;
-        private MapField<Integer, Integer> curAffixLevelMap_;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 8;
-        private long avatarGuid_;
-        public static final int RETCODE_FIELD_NUMBER = 9;
+        public static final int RETCODE_FIELD_NUMBER = 11;
         private int retcode_;
-        public static final int TARGET_WEAPON_GUID_FIELD_NUMBER = 14;
-        private long targetWeaponGuid_;
-        public static final int OLD_AFFIX_LEVEL_MAP_FIELD_NUMBER = 15;
-        private MapField<Integer, Integer> oldAffixLevelMap_;
-        public static final int TARGET_WEAPON_AWAKEN_LEVEL_FIELD_NUMBER = 2;
+        public static final int TARGETWEAPONAWAKENLEVEL_FIELD_NUMBER = 3;
         private int targetWeaponAwakenLevel_;
+        public static final int TARGETWEAPONGUID_FIELD_NUMBER = 2;
+        private long targetWeaponGuid_;
+        public static final int AVATARGUID_FIELD_NUMBER = 5;
+        private long avatarGuid_;
+        public static final int OLDAFFIXLEVELMAP_FIELD_NUMBER = 6;
+        private MapField<Integer, Integer> oldAffixLevelMap_;
+        public static final int CURAFFIXLEVELMAP_FIELD_NUMBER = 12;
+        private MapField<Integer, Integer> curAffixLevelMap_;
         private byte memoizedIsInitialized;
         private static final WeaponAwakenRsp DEFAULT_INSTANCE = new WeaponAwakenRsp();
         private static final Parser<WeaponAwakenRsp> PARSER = new AbstractParser<WeaponAwakenRsp>() { // from class: emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRsp.1
@@ -148,15 +148,15 @@ public final class WeaponAwakenRspOuterClass {
                 r4 = this;
                 r0 = r5
                 switch(r0) {
-                    case 3: goto L_0x001c;
-                    case 15: goto L_0x0021;
+                    case 6: goto L_0x001c;
+                    case 12: goto L_0x0021;
                     default: goto L_0x0026;
                 }
                 r0 = r4
-                com.google.protobuf.MapField r0 = r0.internalGetCurAffixLevelMap()
+                com.google.protobuf.MapField r0 = r0.internalGetOldAffixLevelMap()
                 return r0
                 r0 = r4
-                com.google.protobuf.MapField r0 = r0.internalGetOldAffixLevelMap()
+                com.google.protobuf.MapField r0 = r0.internalGetCurAffixLevelMap()
                 return r0
                 java.lang.RuntimeException r0 = new java.lang.RuntimeException
                 r1 = r0
@@ -206,32 +206,32 @@ public final class WeaponAwakenRspOuterClass {
                                 done = true;
                                 break;
                             case 16:
-                                this.targetWeaponAwakenLevel_ = input.readUInt32();
-                                break;
-                            case 26:
-                                if ((mutable_bitField0_ & 1) == 0) {
-                                    this.curAffixLevelMap_ = MapField.newMapField(CurAffixLevelMapDefaultEntryHolder.defaultEntry);
-                                    mutable_bitField0_ |= 1;
-                                }
-                                MapEntry<Integer, Integer> curAffixLevelMap__ = (MapEntry) input.readMessage(CurAffixLevelMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                                this.curAffixLevelMap_.getMutableMap().put(curAffixLevelMap__.getKey(), curAffixLevelMap__.getValue());
-                                break;
-                            case 64:
-                                this.avatarGuid_ = input.readUInt64();
-                                break;
-                            case 72:
-                                this.retcode_ = input.readInt32();
-                                break;
-                            case 112:
                                 this.targetWeaponGuid_ = input.readUInt64();
                                 break;
-                            case 122:
-                                if ((mutable_bitField0_ & 2) == 0) {
+                            case 24:
+                                this.targetWeaponAwakenLevel_ = input.readUInt32();
+                                break;
+                            case 40:
+                                this.avatarGuid_ = input.readUInt64();
+                                break;
+                            case 50:
+                                if ((mutable_bitField0_ & 1) == 0) {
                                     this.oldAffixLevelMap_ = MapField.newMapField(OldAffixLevelMapDefaultEntryHolder.defaultEntry);
-                                    mutable_bitField0_ |= 2;
+                                    mutable_bitField0_ |= 1;
                                 }
                                 MapEntry<Integer, Integer> oldAffixLevelMap__ = (MapEntry) input.readMessage(OldAffixLevelMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                                 this.oldAffixLevelMap_.getMutableMap().put(oldAffixLevelMap__.getKey(), oldAffixLevelMap__.getValue());
+                                break;
+                            case 88:
+                                this.retcode_ = input.readInt32();
+                                break;
+                            case 98:
+                                if ((mutable_bitField0_ & 2) == 0) {
+                                    this.curAffixLevelMap_ = MapField.newMapField(CurAffixLevelMapDefaultEntryHolder.defaultEntry);
+                                    mutable_bitField0_ |= 2;
+                                }
+                                MapEntry<Integer, Integer> curAffixLevelMap__ = (MapEntry) input.readMessage(CurAffixLevelMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                                this.curAffixLevelMap_.getMutableMap().put(curAffixLevelMap__.getKey(), curAffixLevelMap__.getValue());
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -262,71 +262,24 @@ public final class WeaponAwakenRspOuterClass {
             return WeaponAwakenRspOuterClass.internal_static_WeaponAwakenRsp_fieldAccessorTable.ensureFieldAccessorsInitialized(WeaponAwakenRsp.class, Builder.class);
         }
 
-        /* access modifiers changed from: private */
-        /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WeaponAwakenRspOuterClass$WeaponAwakenRsp$CurAffixLevelMapDefaultEntryHolder.class */
-        public static final class CurAffixLevelMapDefaultEntryHolder {
-            static final MapEntry<Integer, Integer> defaultEntry = MapEntry.newDefaultInstance(WeaponAwakenRspOuterClass.internal_static_WeaponAwakenRsp_CurAffixLevelMapEntry_descriptor, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.UINT32, 0);
-
-            private CurAffixLevelMapDefaultEntryHolder() {
-            }
-        }
-
-        private MapField<Integer, Integer> internalGetCurAffixLevelMap() {
-            if (this.curAffixLevelMap_ == null) {
-                return MapField.emptyMapField(CurAffixLevelMapDefaultEntryHolder.defaultEntry);
-            }
-            return this.curAffixLevelMap_;
-        }
-
-        @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
-        public int getCurAffixLevelMapCount() {
-            return internalGetCurAffixLevelMap().getMap().size();
-        }
-
-        @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
-        public boolean containsCurAffixLevelMap(int key) {
-            return internalGetCurAffixLevelMap().getMap().containsKey(Integer.valueOf(key));
-        }
-
-        @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
-        @Deprecated
-        public Map<Integer, Integer> getCurAffixLevelMap() {
-            return getCurAffixLevelMapMap();
-        }
-
-        @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
-        public Map<Integer, Integer> getCurAffixLevelMapMap() {
-            return internalGetCurAffixLevelMap().getMap();
-        }
-
-        @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
-        public int getCurAffixLevelMapOrDefault(int key, int defaultValue) {
-            Map<Integer, Integer> map = internalGetCurAffixLevelMap().getMap();
-            return map.containsKey(Integer.valueOf(key)) ? map.get(Integer.valueOf(key)).intValue() : defaultValue;
-        }
-
-        @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
-        public int getCurAffixLevelMapOrThrow(int key) {
-            Map<Integer, Integer> map = internalGetCurAffixLevelMap().getMap();
-            if (map.containsKey(Integer.valueOf(key))) {
-                return map.get(Integer.valueOf(key)).intValue();
-            }
-            throw new IllegalArgumentException();
-        }
-
-        @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
-        public long getAvatarGuid() {
-            return this.avatarGuid_;
-        }
-
         @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
         public int getRetcode() {
             return this.retcode_;
         }
 
         @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
+        public int getTargetWeaponAwakenLevel() {
+            return this.targetWeaponAwakenLevel_;
+        }
+
+        @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
         public long getTargetWeaponGuid() {
             return this.targetWeaponGuid_;
+        }
+
+        @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
+        public long getAvatarGuid() {
+            return this.avatarGuid_;
         }
 
         /* access modifiers changed from: private */
@@ -381,9 +334,56 @@ public final class WeaponAwakenRspOuterClass {
             throw new IllegalArgumentException();
         }
 
+        /* access modifiers changed from: private */
+        /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WeaponAwakenRspOuterClass$WeaponAwakenRsp$CurAffixLevelMapDefaultEntryHolder.class */
+        public static final class CurAffixLevelMapDefaultEntryHolder {
+            static final MapEntry<Integer, Integer> defaultEntry = MapEntry.newDefaultInstance(WeaponAwakenRspOuterClass.internal_static_WeaponAwakenRsp_CurAffixLevelMapEntry_descriptor, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.UINT32, 0);
+
+            private CurAffixLevelMapDefaultEntryHolder() {
+            }
+        }
+
+        private MapField<Integer, Integer> internalGetCurAffixLevelMap() {
+            if (this.curAffixLevelMap_ == null) {
+                return MapField.emptyMapField(CurAffixLevelMapDefaultEntryHolder.defaultEntry);
+            }
+            return this.curAffixLevelMap_;
+        }
+
         @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
-        public int getTargetWeaponAwakenLevel() {
-            return this.targetWeaponAwakenLevel_;
+        public int getCurAffixLevelMapCount() {
+            return internalGetCurAffixLevelMap().getMap().size();
+        }
+
+        @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
+        public boolean containsCurAffixLevelMap(int key) {
+            return internalGetCurAffixLevelMap().getMap().containsKey(Integer.valueOf(key));
+        }
+
+        @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
+        @Deprecated
+        public Map<Integer, Integer> getCurAffixLevelMap() {
+            return getCurAffixLevelMapMap();
+        }
+
+        @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
+        public Map<Integer, Integer> getCurAffixLevelMapMap() {
+            return internalGetCurAffixLevelMap().getMap();
+        }
+
+        @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
+        public int getCurAffixLevelMapOrDefault(int key, int defaultValue) {
+            Map<Integer, Integer> map = internalGetCurAffixLevelMap().getMap();
+            return map.containsKey(Integer.valueOf(key)) ? map.get(Integer.valueOf(key)).intValue() : defaultValue;
+        }
+
+        @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
+        public int getCurAffixLevelMapOrThrow(int key) {
+            Map<Integer, Integer> map = internalGetCurAffixLevelMap().getMap();
+            if (map.containsKey(Integer.valueOf(key))) {
+                return map.get(Integer.valueOf(key)).intValue();
+            }
+            throw new IllegalArgumentException();
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -401,20 +401,20 @@ public final class WeaponAwakenRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.targetWeaponAwakenLevel_ != 0) {
-                output.writeUInt32(2, this.targetWeaponAwakenLevel_);
-            }
-            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetCurAffixLevelMap(), CurAffixLevelMapDefaultEntryHolder.defaultEntry, 3);
-            if (this.avatarGuid_ != 0) {
-                output.writeUInt64(8, this.avatarGuid_);
-            }
-            if (this.retcode_ != 0) {
-                output.writeInt32(9, this.retcode_);
-            }
             if (this.targetWeaponGuid_ != 0) {
-                output.writeUInt64(14, this.targetWeaponGuid_);
+                output.writeUInt64(2, this.targetWeaponGuid_);
             }
-            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetOldAffixLevelMap(), OldAffixLevelMapDefaultEntryHolder.defaultEntry, 15);
+            if (this.targetWeaponAwakenLevel_ != 0) {
+                output.writeUInt32(3, this.targetWeaponAwakenLevel_);
+            }
+            if (this.avatarGuid_ != 0) {
+                output.writeUInt64(5, this.avatarGuid_);
+            }
+            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetOldAffixLevelMap(), OldAffixLevelMapDefaultEntryHolder.defaultEntry, 6);
+            if (this.retcode_ != 0) {
+                output.writeInt32(11, this.retcode_);
+            }
+            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetCurAffixLevelMap(), CurAffixLevelMapDefaultEntryHolder.defaultEntry, 12);
             this.unknownFields.writeTo(output);
         }
 
@@ -425,23 +425,23 @@ public final class WeaponAwakenRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.targetWeaponAwakenLevel_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.targetWeaponAwakenLevel_);
+            if (this.targetWeaponGuid_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt64Size(2, this.targetWeaponGuid_);
             }
-            for (Map.Entry<Integer, Integer> entry : internalGetCurAffixLevelMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(3, CurAffixLevelMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+            if (this.targetWeaponAwakenLevel_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(3, this.targetWeaponAwakenLevel_);
             }
             if (this.avatarGuid_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(8, this.avatarGuid_);
+                size2 += CodedOutputStream.computeUInt64Size(5, this.avatarGuid_);
+            }
+            for (Map.Entry<Integer, Integer> entry : internalGetOldAffixLevelMap().getMap().entrySet()) {
+                size2 += CodedOutputStream.computeMessageSize(6, OldAffixLevelMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
             }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(9, this.retcode_);
+                size2 += CodedOutputStream.computeInt32Size(11, this.retcode_);
             }
-            if (this.targetWeaponGuid_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(14, this.targetWeaponGuid_);
-            }
-            for (Map.Entry<Integer, Integer> entry2 : internalGetOldAffixLevelMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(15, OldAffixLevelMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry2.getKey()).setValue(entry2.getValue()).build());
+            for (Map.Entry<Integer, Integer> entry2 : internalGetCurAffixLevelMap().getMap().entrySet()) {
+                size2 += CodedOutputStream.computeMessageSize(12, CurAffixLevelMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry2.getKey()).setValue(entry2.getValue()).build());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -457,7 +457,7 @@ public final class WeaponAwakenRspOuterClass {
                 return equals(obj);
             }
             WeaponAwakenRsp other = (WeaponAwakenRsp) obj;
-            return internalGetCurAffixLevelMap().equals(other.internalGetCurAffixLevelMap()) && getAvatarGuid() == other.getAvatarGuid() && getRetcode() == other.getRetcode() && getTargetWeaponGuid() == other.getTargetWeaponGuid() && internalGetOldAffixLevelMap().equals(other.internalGetOldAffixLevelMap()) && getTargetWeaponAwakenLevel() == other.getTargetWeaponAwakenLevel() && this.unknownFields.equals(other.unknownFields);
+            return getRetcode() == other.getRetcode() && getTargetWeaponAwakenLevel() == other.getTargetWeaponAwakenLevel() && getTargetWeaponGuid() == other.getTargetWeaponGuid() && getAvatarGuid() == other.getAvatarGuid() && internalGetOldAffixLevelMap().equals(other.internalGetOldAffixLevelMap()) && internalGetCurAffixLevelMap().equals(other.internalGetCurAffixLevelMap()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -465,17 +465,16 @@ public final class WeaponAwakenRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
-            if (!internalGetCurAffixLevelMap().getMap().isEmpty()) {
-                hash = (53 * ((37 * hash) + 3)) + internalGetCurAffixLevelMap().hashCode();
-            }
-            int hash2 = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 8)) + Internal.hashLong(getAvatarGuid()))) + 9)) + getRetcode())) + 14)) + Internal.hashLong(getTargetWeaponGuid());
+            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getRetcode())) + 3)) + getTargetWeaponAwakenLevel())) + 2)) + Internal.hashLong(getTargetWeaponGuid()))) + 5)) + Internal.hashLong(getAvatarGuid());
             if (!internalGetOldAffixLevelMap().getMap().isEmpty()) {
-                hash2 = (53 * ((37 * hash2) + 15)) + internalGetOldAffixLevelMap().hashCode();
+                hash = (53 * ((37 * hash) + 6)) + internalGetOldAffixLevelMap().hashCode();
             }
-            int hash3 = (29 * ((53 * ((37 * hash2) + 2)) + getTargetWeaponAwakenLevel())) + this.unknownFields.hashCode();
-            this.memoizedHashCode = hash3;
-            return hash3;
+            if (!internalGetCurAffixLevelMap().getMap().isEmpty()) {
+                hash = (53 * ((37 * hash) + 12)) + internalGetCurAffixLevelMap().hashCode();
+            }
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            this.memoizedHashCode = hash2;
+            return hash2;
         }
 
         public static WeaponAwakenRsp parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
@@ -553,12 +552,12 @@ public final class WeaponAwakenRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WeaponAwakenRspOuterClass$WeaponAwakenRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements WeaponAwakenRspOrBuilder {
             private int bitField0_;
-            private MapField<Integer, Integer> curAffixLevelMap_;
-            private long avatarGuid_;
             private int retcode_;
-            private long targetWeaponGuid_;
-            private MapField<Integer, Integer> oldAffixLevelMap_;
             private int targetWeaponAwakenLevel_;
+            private long targetWeaponGuid_;
+            private long avatarGuid_;
+            private MapField<Integer, Integer> oldAffixLevelMap_;
+            private MapField<Integer, Integer> curAffixLevelMap_;
 
             /*  JADX ERROR: Dependency scan failed at insn: 0x002B: INVOKE_CUSTOM r0
                 java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
@@ -597,15 +596,15 @@ public final class WeaponAwakenRspOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 3: goto L_0x001c;
-                        case 15: goto L_0x0021;
+                        case 6: goto L_0x001c;
+                        case 12: goto L_0x0021;
                         default: goto L_0x0026;
                     }
                     r0 = r4
-                    com.google.protobuf.MapField r0 = r0.internalGetCurAffixLevelMap()
+                    com.google.protobuf.MapField r0 = r0.internalGetOldAffixLevelMap()
                     return r0
                     r0 = r4
-                    com.google.protobuf.MapField r0 = r0.internalGetOldAffixLevelMap()
+                    com.google.protobuf.MapField r0 = r0.internalGetCurAffixLevelMap()
                     return r0
                     java.lang.RuntimeException r0 = new java.lang.RuntimeException
                     r1 = r0
@@ -654,15 +653,15 @@ public final class WeaponAwakenRspOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 3: goto L_0x001c;
-                        case 15: goto L_0x0021;
+                        case 6: goto L_0x001c;
+                        case 12: goto L_0x0021;
                         default: goto L_0x0026;
                     }
                     r0 = r4
-                    com.google.protobuf.MapField r0 = r0.internalGetMutableCurAffixLevelMap()
+                    com.google.protobuf.MapField r0 = r0.internalGetMutableOldAffixLevelMap()
                     return r0
                     r0 = r4
-                    com.google.protobuf.MapField r0 = r0.internalGetMutableOldAffixLevelMap()
+                    com.google.protobuf.MapField r0 = r0.internalGetMutableCurAffixLevelMap()
                     return r0
                     java.lang.RuntimeException r0 = new java.lang.RuntimeException
                     r1 = r0
@@ -700,12 +699,12 @@ public final class WeaponAwakenRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                internalGetMutableCurAffixLevelMap().clear();
-                this.avatarGuid_ = 0;
                 this.retcode_ = 0;
-                this.targetWeaponGuid_ = 0;
-                internalGetMutableOldAffixLevelMap().clear();
                 this.targetWeaponAwakenLevel_ = 0;
+                this.targetWeaponGuid_ = 0;
+                this.avatarGuid_ = 0;
+                internalGetMutableOldAffixLevelMap().clear();
+                internalGetMutableCurAffixLevelMap().clear();
                 return this;
             }
 
@@ -732,14 +731,14 @@ public final class WeaponAwakenRspOuterClass {
             public WeaponAwakenRsp buildPartial() {
                 WeaponAwakenRsp result = new WeaponAwakenRsp(this);
                 int i = this.bitField0_;
-                result.curAffixLevelMap_ = internalGetCurAffixLevelMap();
-                result.curAffixLevelMap_.makeImmutable();
-                result.avatarGuid_ = this.avatarGuid_;
                 result.retcode_ = this.retcode_;
+                result.targetWeaponAwakenLevel_ = this.targetWeaponAwakenLevel_;
                 result.targetWeaponGuid_ = this.targetWeaponGuid_;
+                result.avatarGuid_ = this.avatarGuid_;
                 result.oldAffixLevelMap_ = internalGetOldAffixLevelMap();
                 result.oldAffixLevelMap_.makeImmutable();
-                result.targetWeaponAwakenLevel_ = this.targetWeaponAwakenLevel_;
+                result.curAffixLevelMap_ = internalGetCurAffixLevelMap();
+                result.curAffixLevelMap_.makeImmutable();
                 onBuilt();
                 return result;
             }
@@ -787,20 +786,20 @@ public final class WeaponAwakenRspOuterClass {
                 if (other == WeaponAwakenRsp.getDefaultInstance()) {
                     return this;
                 }
-                internalGetMutableCurAffixLevelMap().mergeFrom(other.internalGetCurAffixLevelMap());
-                if (other.getAvatarGuid() != 0) {
-                    setAvatarGuid(other.getAvatarGuid());
-                }
                 if (other.getRetcode() != 0) {
                     setRetcode(other.getRetcode());
+                }
+                if (other.getTargetWeaponAwakenLevel() != 0) {
+                    setTargetWeaponAwakenLevel(other.getTargetWeaponAwakenLevel());
                 }
                 if (other.getTargetWeaponGuid() != 0) {
                     setTargetWeaponGuid(other.getTargetWeaponGuid());
                 }
-                internalGetMutableOldAffixLevelMap().mergeFrom(other.internalGetOldAffixLevelMap());
-                if (other.getTargetWeaponAwakenLevel() != 0) {
-                    setTargetWeaponAwakenLevel(other.getTargetWeaponAwakenLevel());
+                if (other.getAvatarGuid() != 0) {
+                    setAvatarGuid(other.getAvatarGuid());
                 }
+                internalGetMutableOldAffixLevelMap().mergeFrom(other.internalGetOldAffixLevelMap());
+                internalGetMutableCurAffixLevelMap().mergeFrom(other.internalGetCurAffixLevelMap());
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
                 return this;
@@ -833,102 +832,6 @@ public final class WeaponAwakenRspOuterClass {
                 }
             }
 
-            private MapField<Integer, Integer> internalGetCurAffixLevelMap() {
-                if (this.curAffixLevelMap_ == null) {
-                    return MapField.emptyMapField(CurAffixLevelMapDefaultEntryHolder.defaultEntry);
-                }
-                return this.curAffixLevelMap_;
-            }
-
-            private MapField<Integer, Integer> internalGetMutableCurAffixLevelMap() {
-                onChanged();
-                if (this.curAffixLevelMap_ == null) {
-                    this.curAffixLevelMap_ = MapField.newMapField(CurAffixLevelMapDefaultEntryHolder.defaultEntry);
-                }
-                if (!this.curAffixLevelMap_.isMutable()) {
-                    this.curAffixLevelMap_ = this.curAffixLevelMap_.copy();
-                }
-                return this.curAffixLevelMap_;
-            }
-
-            @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
-            public int getCurAffixLevelMapCount() {
-                return internalGetCurAffixLevelMap().getMap().size();
-            }
-
-            @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
-            public boolean containsCurAffixLevelMap(int key) {
-                return internalGetCurAffixLevelMap().getMap().containsKey(Integer.valueOf(key));
-            }
-
-            @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
-            @Deprecated
-            public Map<Integer, Integer> getCurAffixLevelMap() {
-                return getCurAffixLevelMapMap();
-            }
-
-            @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
-            public Map<Integer, Integer> getCurAffixLevelMapMap() {
-                return internalGetCurAffixLevelMap().getMap();
-            }
-
-            @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
-            public int getCurAffixLevelMapOrDefault(int key, int defaultValue) {
-                Map<Integer, Integer> map = internalGetCurAffixLevelMap().getMap();
-                return map.containsKey(Integer.valueOf(key)) ? map.get(Integer.valueOf(key)).intValue() : defaultValue;
-            }
-
-            @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
-            public int getCurAffixLevelMapOrThrow(int key) {
-                Map<Integer, Integer> map = internalGetCurAffixLevelMap().getMap();
-                if (map.containsKey(Integer.valueOf(key))) {
-                    return map.get(Integer.valueOf(key)).intValue();
-                }
-                throw new IllegalArgumentException();
-            }
-
-            public Builder clearCurAffixLevelMap() {
-                internalGetMutableCurAffixLevelMap().getMutableMap().clear();
-                return this;
-            }
-
-            public Builder removeCurAffixLevelMap(int key) {
-                internalGetMutableCurAffixLevelMap().getMutableMap().remove(Integer.valueOf(key));
-                return this;
-            }
-
-            @Deprecated
-            public Map<Integer, Integer> getMutableCurAffixLevelMap() {
-                return internalGetMutableCurAffixLevelMap().getMutableMap();
-            }
-
-            public Builder putCurAffixLevelMap(int key, int value) {
-                internalGetMutableCurAffixLevelMap().getMutableMap().put(Integer.valueOf(key), Integer.valueOf(value));
-                return this;
-            }
-
-            public Builder putAllCurAffixLevelMap(Map<Integer, Integer> values) {
-                internalGetMutableCurAffixLevelMap().getMutableMap().putAll(values);
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
-            public long getAvatarGuid() {
-                return this.avatarGuid_;
-            }
-
-            public Builder setAvatarGuid(long value) {
-                this.avatarGuid_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearAvatarGuid() {
-                this.avatarGuid_ = 0;
-                onChanged();
-                return this;
-            }
-
             @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
             public int getRetcode() {
                 return this.retcode_;
@@ -947,6 +850,23 @@ public final class WeaponAwakenRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
+            public int getTargetWeaponAwakenLevel() {
+                return this.targetWeaponAwakenLevel_;
+            }
+
+            public Builder setTargetWeaponAwakenLevel(int value) {
+                this.targetWeaponAwakenLevel_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearTargetWeaponAwakenLevel() {
+                this.targetWeaponAwakenLevel_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
             public long getTargetWeaponGuid() {
                 return this.targetWeaponGuid_;
             }
@@ -959,6 +879,23 @@ public final class WeaponAwakenRspOuterClass {
 
             public Builder clearTargetWeaponGuid() {
                 this.targetWeaponGuid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
+            public long getAvatarGuid() {
+                return this.avatarGuid_;
+            }
+
+            public Builder setAvatarGuid(long value) {
+                this.avatarGuid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearAvatarGuid() {
+                this.avatarGuid_ = 0;
                 onChanged();
                 return this;
             }
@@ -1042,20 +979,82 @@ public final class WeaponAwakenRspOuterClass {
                 return this;
             }
 
-            @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
-            public int getTargetWeaponAwakenLevel() {
-                return this.targetWeaponAwakenLevel_;
+            private MapField<Integer, Integer> internalGetCurAffixLevelMap() {
+                if (this.curAffixLevelMap_ == null) {
+                    return MapField.emptyMapField(CurAffixLevelMapDefaultEntryHolder.defaultEntry);
+                }
+                return this.curAffixLevelMap_;
             }
 
-            public Builder setTargetWeaponAwakenLevel(int value) {
-                this.targetWeaponAwakenLevel_ = value;
+            private MapField<Integer, Integer> internalGetMutableCurAffixLevelMap() {
                 onChanged();
+                if (this.curAffixLevelMap_ == null) {
+                    this.curAffixLevelMap_ = MapField.newMapField(CurAffixLevelMapDefaultEntryHolder.defaultEntry);
+                }
+                if (!this.curAffixLevelMap_.isMutable()) {
+                    this.curAffixLevelMap_ = this.curAffixLevelMap_.copy();
+                }
+                return this.curAffixLevelMap_;
+            }
+
+            @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
+            public int getCurAffixLevelMapCount() {
+                return internalGetCurAffixLevelMap().getMap().size();
+            }
+
+            @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
+            public boolean containsCurAffixLevelMap(int key) {
+                return internalGetCurAffixLevelMap().getMap().containsKey(Integer.valueOf(key));
+            }
+
+            @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
+            @Deprecated
+            public Map<Integer, Integer> getCurAffixLevelMap() {
+                return getCurAffixLevelMapMap();
+            }
+
+            @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
+            public Map<Integer, Integer> getCurAffixLevelMapMap() {
+                return internalGetCurAffixLevelMap().getMap();
+            }
+
+            @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
+            public int getCurAffixLevelMapOrDefault(int key, int defaultValue) {
+                Map<Integer, Integer> map = internalGetCurAffixLevelMap().getMap();
+                return map.containsKey(Integer.valueOf(key)) ? map.get(Integer.valueOf(key)).intValue() : defaultValue;
+            }
+
+            @Override // emu.grasscutter.net.proto.WeaponAwakenRspOuterClass.WeaponAwakenRspOrBuilder
+            public int getCurAffixLevelMapOrThrow(int key) {
+                Map<Integer, Integer> map = internalGetCurAffixLevelMap().getMap();
+                if (map.containsKey(Integer.valueOf(key))) {
+                    return map.get(Integer.valueOf(key)).intValue();
+                }
+                throw new IllegalArgumentException();
+            }
+
+            public Builder clearCurAffixLevelMap() {
+                internalGetMutableCurAffixLevelMap().getMutableMap().clear();
                 return this;
             }
 
-            public Builder clearTargetWeaponAwakenLevel() {
-                this.targetWeaponAwakenLevel_ = 0;
-                onChanged();
+            public Builder removeCurAffixLevelMap(int key) {
+                internalGetMutableCurAffixLevelMap().getMutableMap().remove(Integer.valueOf(key));
+                return this;
+            }
+
+            @Deprecated
+            public Map<Integer, Integer> getMutableCurAffixLevelMap() {
+                return internalGetMutableCurAffixLevelMap().getMutableMap();
+            }
+
+            public Builder putCurAffixLevelMap(int key, int value) {
+                internalGetMutableCurAffixLevelMap().getMutableMap().put(Integer.valueOf(key), Integer.valueOf(value));
+                return this;
+            }
+
+            public Builder putAllCurAffixLevelMap(Map<Integer, Integer> values) {
+                internalGetMutableCurAffixLevelMap().getMutableMap().putAll(values);
                 return this;
             }
 

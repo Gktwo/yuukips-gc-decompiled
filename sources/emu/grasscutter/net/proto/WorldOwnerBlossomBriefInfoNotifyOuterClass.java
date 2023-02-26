@@ -25,11 +25,11 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WorldOwnerBlossomBriefInfoNotifyOuterClass.class */
 public final class WorldOwnerBlossomBriefInfoNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n&WorldOwnerBlossomBriefInfoNotify.proto\u001a\u0016BlossomBriefInfo.proto\"N\n WorldOwnerBlossomBriefInfoNotify\u0012*\n\u000fbrief_info_list\u0018\u000e \u0003(\u000b2\u0011.BlossomBriefInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BlossomBriefInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n&WorldOwnerBlossomBriefInfoNotify.proto\u001a\u0016BlossomBriefInfo.proto\"L\n WorldOwnerBlossomBriefInfoNotify\u0012(\n\rbriefInfoList\u0018\u000b \u0003(\u000b2\u0011.BlossomBriefInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BlossomBriefInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_WorldOwnerBlossomBriefInfoNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_WorldOwnerBlossomBriefInfoNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f953xd20edcce = new GeneratedMessageV3.FieldAccessorTable(internal_static_WorldOwnerBlossomBriefInfoNotify_descriptor, new String[]{"BriefInfoList"});
+    private static final GeneratedMessageV3.FieldAccessorTable f918xd20edcce = new GeneratedMessageV3.FieldAccessorTable(internal_static_WorldOwnerBlossomBriefInfoNotify_descriptor, new String[]{"BriefInfoList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WorldOwnerBlossomBriefInfoNotifyOuterClass$WorldOwnerBlossomBriefInfoNotifyOrBuilder.class */
     public interface WorldOwnerBlossomBriefInfoNotifyOrBuilder extends MessageOrBuilder {
@@ -57,7 +57,7 @@ public final class WorldOwnerBlossomBriefInfoNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WorldOwnerBlossomBriefInfoNotifyOuterClass$WorldOwnerBlossomBriefInfoNotify.class */
     public static final class WorldOwnerBlossomBriefInfoNotify extends GeneratedMessageV3 implements WorldOwnerBlossomBriefInfoNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int BRIEF_INFO_LIST_FIELD_NUMBER = 14;
+        public static final int BRIEFINFOLIST_FIELD_NUMBER = 11;
         private List<BlossomBriefInfoOuterClass.BlossomBriefInfo> briefInfoList_;
         private byte memoizedIsInitialized;
         private static final WorldOwnerBlossomBriefInfoNotify DEFAULT_INSTANCE = new WorldOwnerBlossomBriefInfoNotify();
@@ -108,7 +108,7 @@ public final class WorldOwnerBlossomBriefInfoNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 114:
+                                case 90:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.briefInfoList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -145,7 +145,7 @@ public final class WorldOwnerBlossomBriefInfoNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return WorldOwnerBlossomBriefInfoNotifyOuterClass.f953xd20edcce.ensureFieldAccessorsInitialized(WorldOwnerBlossomBriefInfoNotify.class, Builder.class);
+            return WorldOwnerBlossomBriefInfoNotifyOuterClass.f918xd20edcce.ensureFieldAccessorsInitialized(WorldOwnerBlossomBriefInfoNotify.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.WorldOwnerBlossomBriefInfoNotifyOuterClass.WorldOwnerBlossomBriefInfoNotifyOrBuilder
@@ -189,7 +189,7 @@ public final class WorldOwnerBlossomBriefInfoNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.briefInfoList_.size(); i++) {
-                output.writeMessage(14, this.briefInfoList_.get(i));
+                output.writeMessage(11, this.briefInfoList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -202,7 +202,7 @@ public final class WorldOwnerBlossomBriefInfoNotifyOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.briefInfoList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(14, this.briefInfoList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(11, this.briefInfoList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -228,7 +228,7 @@ public final class WorldOwnerBlossomBriefInfoNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getBriefInfoListCount() > 0) {
-                hash = (53 * ((37 * hash) + 14)) + getBriefInfoListList().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + getBriefInfoListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -319,7 +319,7 @@ public final class WorldOwnerBlossomBriefInfoNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return WorldOwnerBlossomBriefInfoNotifyOuterClass.f953xd20edcce.ensureFieldAccessorsInitialized(WorldOwnerBlossomBriefInfoNotify.class, Builder.class);
+                return WorldOwnerBlossomBriefInfoNotifyOuterClass.f918xd20edcce.ensureFieldAccessorsInitialized(WorldOwnerBlossomBriefInfoNotify.class, Builder.class);
             }
 
             private Builder() {

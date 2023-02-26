@@ -498,36 +498,36 @@ public final class CharIterators {
     private static class IteratorWrapper implements CharIterator {
 
         /* renamed from: i */
-        final Iterator<Character> f1508i;
+        final Iterator<Character> f1472i;
 
         public IteratorWrapper(Iterator<Character> i) {
-            this.f1508i = i;
+            this.f1472i = i;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1508i.hasNext();
+            return this.f1472i.hasNext();
         }
 
         @Override // java.util.Iterator
         public void remove() {
-            this.f1508i.remove();
+            this.f1472i.remove();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public char nextChar() {
-            return this.f1508i.next().charValue();
+            return this.f1472i.next().charValue();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public void forEachRemaining(CharConsumer action) {
-            this.f1508i.forEachRemaining(action);
+            this.f1472i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Character> action) {
-            this.f1508i.forEachRemaining(action);
+            this.f1472i.forEachRemaining(action);
         }
     }
 
@@ -536,30 +536,30 @@ public final class CharIterators {
     private static class PrimitiveIteratorWrapper implements CharIterator {
 
         /* renamed from: i */
-        final PrimitiveIterator.OfInt f1510i;
+        final PrimitiveIterator.OfInt f1474i;
 
         public PrimitiveIteratorWrapper(PrimitiveIterator.OfInt i) {
-            this.f1510i = i;
+            this.f1474i = i;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1510i.hasNext();
+            return this.f1474i.hasNext();
         }
 
         @Override // java.util.Iterator
         public void remove() {
-            this.f1510i.remove();
+            this.f1474i.remove();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public char nextChar() {
-            return (char) this.f1510i.nextInt();
+            return (char) this.f1474i.nextInt();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public void forEachRemaining(CharConsumer action) {
-            this.f1510i.forEachRemaining((IntConsumer) action);
+            this.f1474i.forEachRemaining((IntConsumer) action);
         }
     }
 
@@ -572,12 +572,12 @@ public final class CharIterators {
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterators.PrimitiveIteratorWrapper, p014it.unimi.dsi.fastutil.chars.CharIterator
         public char nextChar() {
-            return SafeMath.safeIntToChar(this.f1510i.nextInt());
+            return SafeMath.safeIntToChar(this.f1474i.nextInt());
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterators.PrimitiveIteratorWrapper, p014it.unimi.dsi.fastutil.chars.CharIterator
         public void forEachRemaining(CharConsumer action) {
-            this.f1510i.forEachRemaining(value -> {
+            this.f1474i.forEachRemaining(value -> {
                 action.accept(SafeMath.safeIntToChar(value));
             });
         }
@@ -604,66 +604,66 @@ public final class CharIterators {
     private static class ListIteratorWrapper implements CharListIterator {
 
         /* renamed from: i */
-        final ListIterator<Character> f1509i;
+        final ListIterator<Character> f1473i;
 
         public ListIteratorWrapper(ListIterator<Character> i) {
-            this.f1509i = i;
+            this.f1473i = i;
         }
 
         @Override // java.util.Iterator, java.util.ListIterator
         public boolean hasNext() {
-            return this.f1509i.hasNext();
+            return this.f1473i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1509i.hasPrevious();
+            return this.f1473i.hasPrevious();
         }
 
         @Override // java.util.ListIterator
         public int nextIndex() {
-            return this.f1509i.nextIndex();
+            return this.f1473i.nextIndex();
         }
 
         @Override // java.util.ListIterator
         public int previousIndex() {
-            return this.f1509i.previousIndex();
+            return this.f1473i.previousIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharListIterator
         public void set(char k) {
-            this.f1509i.set(Character.valueOf(k));
+            this.f1473i.set(Character.valueOf(k));
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharListIterator
         public void add(char k) {
-            this.f1509i.add(Character.valueOf(k));
+            this.f1473i.add(Character.valueOf(k));
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharListIterator, java.util.Iterator, java.util.ListIterator
         public void remove() {
-            this.f1509i.remove();
+            this.f1473i.remove();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public char nextChar() {
-            return this.f1509i.next().charValue();
+            return this.f1473i.next().charValue();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharBidirectionalIterator
         public char previousChar() {
-            return this.f1509i.previous().charValue();
+            return this.f1473i.previous().charValue();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public void forEachRemaining(CharConsumer action) {
-            this.f1509i.forEachRemaining(action);
+            this.f1473i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Character> action) {
-            this.f1509i.forEachRemaining(action);
+            this.f1473i.forEachRemaining(action);
         }
     }
 
@@ -888,18 +888,18 @@ public final class CharIterators {
         private final char from;
 
         /* renamed from: to */
-        private final char f1506to;
+        private final char f1470to;
         char curr;
 
         public IntervalIterator(char from, char to) {
             this.curr = from;
             this.from = from;
-            this.f1506to = to;
+            this.f1470to = to;
         }
 
         @Override // java.util.Iterator, java.util.ListIterator
         public boolean hasNext() {
-            return this.curr < this.f1506to;
+            return this.curr < this.f1470to;
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -930,7 +930,7 @@ public final class CharIterators {
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public void forEachRemaining(CharConsumer action) {
             Objects.requireNonNull(action);
-            while (this.curr < this.f1506to) {
+            while (this.curr < this.f1470to) {
                 action.accept(this.curr);
                 this.curr = (char) (this.curr + 1);
             }
@@ -950,12 +950,12 @@ public final class CharIterators {
         public int skip(int n) {
             if (n < 0) {
                 throw new IllegalArgumentException("Argument must be nonnegative: " + n);
-            } else if (this.curr + n <= this.f1506to) {
+            } else if (this.curr + n <= this.f1470to) {
                 this.curr = (char) (this.curr + n);
                 return n;
             } else {
-                int n2 = this.f1506to - this.curr;
-                this.curr = this.f1506to;
+                int n2 = this.f1470to - this.curr;
+                this.curr = this.f1470to;
                 return n2;
             }
         }
@@ -982,20 +982,20 @@ public final class CharIterators {
     public static class IteratorConcatenator implements CharIterator {
 
         /* renamed from: a */
-        final CharIterator[] f1507a;
+        final CharIterator[] f1471a;
         int offset;
         int length;
         int lastOffset = -1;
 
         public IteratorConcatenator(CharIterator[] a, int offset, int length) {
-            this.f1507a = a;
+            this.f1471a = a;
             this.offset = offset;
             this.length = length;
             advance();
         }
 
         private void advance() {
-            while (this.length != 0 && !this.f1507a[this.offset].hasNext()) {
+            while (this.length != 0 && !this.f1471a[this.offset].hasNext()) {
                 this.length--;
                 this.offset++;
             }
@@ -1011,7 +1011,7 @@ public final class CharIterators {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            CharIterator[] charIteratorArr = this.f1507a;
+            CharIterator[] charIteratorArr = this.f1471a;
             int i = this.offset;
             this.lastOffset = i;
             char next = charIteratorArr[i].nextChar();
@@ -1022,7 +1022,7 @@ public final class CharIterators {
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public void forEachRemaining(CharConsumer action) {
             while (this.length > 0) {
-                CharIterator[] charIteratorArr = this.f1507a;
+                CharIterator[] charIteratorArr = this.f1471a;
                 int i = this.offset;
                 this.lastOffset = i;
                 charIteratorArr[i].forEachRemaining(action);
@@ -1034,7 +1034,7 @@ public final class CharIterators {
         @Deprecated
         public void forEachRemaining(Consumer<? super Character> action) {
             while (this.length > 0) {
-                CharIterator[] charIteratorArr = this.f1507a;
+                CharIterator[] charIteratorArr = this.f1471a;
                 int i = this.offset;
                 this.lastOffset = i;
                 charIteratorArr[i].forEachRemaining(action);
@@ -1047,7 +1047,7 @@ public final class CharIterators {
             if (this.lastOffset == -1) {
                 throw new IllegalStateException();
             }
-            this.f1507a[this.lastOffset].remove();
+            this.f1471a[this.lastOffset].remove();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectIterator
@@ -1058,8 +1058,8 @@ public final class CharIterators {
             this.lastOffset = -1;
             int skipped = 0;
             while (skipped < n && this.length != 0) {
-                skipped += this.f1507a[this.offset].skip(n - skipped);
-                if (this.f1507a[this.offset].hasNext()) {
+                skipped += this.f1471a[this.offset].skip(n - skipped);
+                if (this.f1471a[this.offset].hasNext()) {
                     break;
                 }
                 this.length--;
@@ -1082,31 +1082,31 @@ public final class CharIterators {
     public static class UnmodifiableIterator implements CharIterator {
 
         /* renamed from: i */
-        protected final CharIterator f1512i;
+        protected final CharIterator f1476i;
 
         public UnmodifiableIterator(CharIterator i) {
-            this.f1512i = i;
+            this.f1476i = i;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1512i.hasNext();
+            return this.f1476i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public char nextChar() {
-            return this.f1512i.nextChar();
+            return this.f1476i.nextChar();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public void forEachRemaining(CharConsumer action) {
-            this.f1512i.forEachRemaining(action);
+            this.f1476i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Character> action) {
-            this.f1512i.forEachRemaining(action);
+            this.f1476i.forEachRemaining(action);
         }
     }
 
@@ -1119,41 +1119,41 @@ public final class CharIterators {
     public static class UnmodifiableBidirectionalIterator implements CharBidirectionalIterator {
 
         /* renamed from: i */
-        protected final CharBidirectionalIterator f1511i;
+        protected final CharBidirectionalIterator f1475i;
 
         public UnmodifiableBidirectionalIterator(CharBidirectionalIterator i) {
-            this.f1511i = i;
+            this.f1475i = i;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1511i.hasNext();
+            return this.f1475i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1511i.hasPrevious();
+            return this.f1475i.hasPrevious();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public char nextChar() {
-            return this.f1511i.nextChar();
+            return this.f1475i.nextChar();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharBidirectionalIterator
         public char previousChar() {
-            return this.f1511i.previousChar();
+            return this.f1475i.previousChar();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public void forEachRemaining(CharConsumer action) {
-            this.f1511i.forEachRemaining(action);
+            this.f1475i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Character> action) {
-            this.f1511i.forEachRemaining(action);
+            this.f1475i.forEachRemaining(action);
         }
     }
 
@@ -1166,51 +1166,51 @@ public final class CharIterators {
     public static class UnmodifiableListIterator implements CharListIterator {
 
         /* renamed from: i */
-        protected final CharListIterator f1513i;
+        protected final CharListIterator f1477i;
 
         public UnmodifiableListIterator(CharListIterator i) {
-            this.f1513i = i;
+            this.f1477i = i;
         }
 
         @Override // java.util.Iterator, java.util.ListIterator
         public boolean hasNext() {
-            return this.f1513i.hasNext();
+            return this.f1477i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1513i.hasPrevious();
+            return this.f1477i.hasPrevious();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public char nextChar() {
-            return this.f1513i.nextChar();
+            return this.f1477i.nextChar();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharBidirectionalIterator
         public char previousChar() {
-            return this.f1513i.previousChar();
+            return this.f1477i.previousChar();
         }
 
         @Override // java.util.ListIterator
         public int nextIndex() {
-            return this.f1513i.nextIndex();
+            return this.f1477i.nextIndex();
         }
 
         @Override // java.util.ListIterator
         public int previousIndex() {
-            return this.f1513i.previousIndex();
+            return this.f1477i.previousIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public void forEachRemaining(CharConsumer action) {
-            this.f1513i.forEachRemaining(action);
+            this.f1477i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Character> action) {
-            this.f1513i.forEachRemaining(action);
+            this.f1477i.forEachRemaining(action);
         }
     }
 

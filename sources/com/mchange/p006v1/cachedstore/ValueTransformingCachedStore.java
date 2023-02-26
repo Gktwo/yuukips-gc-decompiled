@@ -2,9 +2,10 @@ package com.mchange.p006v1.cachedstore;
 
 import com.mchange.p006v1.cachedstore.CachedStore;
 
+/* access modifiers changed from: package-private */
 /* renamed from: com.mchange.v1.cachedstore.ValueTransformingCachedStore */
 /* loaded from: grasscutter.jar:com/mchange/v1/cachedstore/ValueTransformingCachedStore.class */
-abstract class ValueTransformingCachedStore extends NoCleanupCachedStore {
+public abstract class ValueTransformingCachedStore extends NoCleanupCachedStore {
     /* access modifiers changed from: protected */
     public ValueTransformingCachedStore(CachedStore.Manager manager) {
         super(manager);

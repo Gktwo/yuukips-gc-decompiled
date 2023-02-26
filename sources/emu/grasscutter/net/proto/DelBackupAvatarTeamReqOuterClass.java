@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DelBackupAvatarTeamReqOuterClass.class */
 public final class DelBackupAvatarTeamReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cDelBackupAvatarTeamReq.proto\"7\n\u0016DelBackupAvatarTeamReq\u0012\u001d\n\u0015backup_avatar_team_id\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cDelBackupAvatarTeamReq.proto\"4\n\u0016DelBackupAvatarTeamReq\u0012\u001a\n\u0012backupAvatarTeamId\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_DelBackupAvatarTeamReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_DelBackupAvatarTeamReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DelBackupAvatarTeamReq_descriptor, new String[]{"BackupAvatarTeamId"});
 
@@ -41,7 +41,7 @@ public final class DelBackupAvatarTeamReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DelBackupAvatarTeamReqOuterClass$DelBackupAvatarTeamReq.class */
     public static final class DelBackupAvatarTeamReq extends GeneratedMessageV3 implements DelBackupAvatarTeamReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int BACKUP_AVATAR_TEAM_ID_FIELD_NUMBER = 10;
+        public static final int BACKUPAVATARTEAMID_FIELD_NUMBER = 4;
         private int backupAvatarTeamId_;
         private byte memoizedIsInitialized;
         private static final DelBackupAvatarTeamReq DEFAULT_INSTANCE = new DelBackupAvatarTeamReq();
@@ -88,7 +88,7 @@ public final class DelBackupAvatarTeamReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 80:
+                            case 32:
                                 this.backupAvatarTeamId_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class DelBackupAvatarTeamReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.backupAvatarTeamId_ != 0) {
-                output.writeUInt32(10, this.backupAvatarTeamId_);
+                output.writeUInt32(4, this.backupAvatarTeamId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class DelBackupAvatarTeamReqOuterClass {
             }
             int size2 = 0;
             if (this.backupAvatarTeamId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(10, this.backupAvatarTeamId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.backupAvatarTeamId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class DelBackupAvatarTeamReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getBackupAvatarTeamId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getBackupAvatarTeamId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

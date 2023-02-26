@@ -4,7 +4,7 @@ package org.eclipse.jetty.websocket.api;
 public class WebSocketPolicy {
 
     /* renamed from: KB */
-    private static final int f3176KB = 1024;
+    private static final int f3140KB = 1024;
     private int maxTextMessageSize = 65536;
     private int maxTextMessageBufferSize = 32768;
     private int maxBinaryMessageSize = 65536;

@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SelectWorktopOptionReqOuterClass.class */
 public final class SelectWorktopOptionReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cSelectWorktopOptionReq.proto\"E\n\u0016SelectWorktopOptionReq\u0012\u0011\n\toption_id\u0018\u0007 \u0001(\r\u0012\u0018\n\u0010gadget_entity_id\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cSelectWorktopOptionReq.proto\"B\n\u0016SelectWorktopOptionReq\u0012\u0010\n\boptionId\u0018\u0001 \u0001(\r\u0012\u0016\n\u000egadgetEntityId\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SelectWorktopOptionReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SelectWorktopOptionReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SelectWorktopOptionReq_descriptor, new String[]{"OptionId", "GadgetEntityId"});
 
@@ -43,9 +43,9 @@ public final class SelectWorktopOptionReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SelectWorktopOptionReqOuterClass$SelectWorktopOptionReq.class */
     public static final class SelectWorktopOptionReq extends GeneratedMessageV3 implements SelectWorktopOptionReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int OPTION_ID_FIELD_NUMBER = 7;
+        public static final int OPTIONID_FIELD_NUMBER = 1;
         private int optionId_;
-        public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 5;
+        public static final int GADGETENTITYID_FIELD_NUMBER = 15;
         private int gadgetEntityId_;
         private byte memoizedIsInitialized;
         private static final SelectWorktopOptionReq DEFAULT_INSTANCE = new SelectWorktopOptionReq();
@@ -92,11 +92,11 @@ public final class SelectWorktopOptionReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 40:
-                                this.gadgetEntityId_ = input.readUInt32();
-                                break;
-                            case 56:
+                            case 8:
                                 this.optionId_ = input.readUInt32();
+                                break;
+                            case 120:
+                                this.gadgetEntityId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -152,11 +152,11 @@ public final class SelectWorktopOptionReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.gadgetEntityId_ != 0) {
-                output.writeUInt32(5, this.gadgetEntityId_);
-            }
             if (this.optionId_ != 0) {
-                output.writeUInt32(7, this.optionId_);
+                output.writeUInt32(1, this.optionId_);
+            }
+            if (this.gadgetEntityId_ != 0) {
+                output.writeUInt32(15, this.gadgetEntityId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class SelectWorktopOptionReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.gadgetEntityId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.gadgetEntityId_);
-            }
             if (this.optionId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.optionId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.optionId_);
+            }
+            if (this.gadgetEntityId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.gadgetEntityId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class SelectWorktopOptionReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getOptionId())) + 5)) + getGadgetEntityId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getOptionId())) + 15)) + getGadgetEntityId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

@@ -22,7 +22,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MailItemOuterClass.class */
 public final class MailItemOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000eMailItem.proto\u001a\u0010EquipParam.proto\u001a\u0018MaterialDeleteInfo.proto\"V\n\bMailItem\u0012 \n\u000bequip_param\u0018\u0001 \u0001(\u000b2\u000b.EquipParam\u0012(\n\u000bdelete_info\u0018\u0002 \u0001(\u000b2\u0013.MaterialDeleteInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{EquipParamOuterClass.getDescriptor(), MaterialDeleteInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000eMailItem.proto\u001a\u0010EquipParam.proto\u001a\u0018MaterialDeleteInfo.proto\"T\n\bMailItem\u0012\u001f\n\nequipParam\u0018\u0001 \u0001(\u000b2\u000b.EquipParam\u0012'\n\ndeleteInfo\u0018\u0002 \u0001(\u000b2\u0013.MaterialDeleteInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{EquipParamOuterClass.getDescriptor(), MaterialDeleteInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_MailItem_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_MailItem_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MailItem_descriptor, new String[]{"EquipParam", "DeleteInfo"});
 
@@ -54,9 +54,9 @@ public final class MailItemOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MailItemOuterClass$MailItem.class */
     public static final class MailItem extends GeneratedMessageV3 implements MailItemOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int EQUIP_PARAM_FIELD_NUMBER = 1;
+        public static final int EQUIPPARAM_FIELD_NUMBER = 1;
         private EquipParamOuterClass.EquipParam equipParam_;
-        public static final int DELETE_INFO_FIELD_NUMBER = 2;
+        public static final int DELETEINFO_FIELD_NUMBER = 2;
         private MaterialDeleteInfoOuterClass.MaterialDeleteInfo deleteInfo_;
         private byte memoizedIsInitialized;
         private static final MailItem DEFAULT_INSTANCE = new MailItem();

@@ -1,8 +1,9 @@
 package org.jctools.queues.atomic;
 
 /* compiled from: MpscAtomicArrayQueue.java */
+/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:org/jctools/queues/atomic/MpscAtomicArrayQueueL3Pad.class */
-abstract class MpscAtomicArrayQueueL3Pad<E> extends MpscAtomicArrayQueueConsumerIndexField<E> {
+public abstract class MpscAtomicArrayQueueL3Pad<E> extends MpscAtomicArrayQueueConsumerIndexField<E> {
     byte b000;
     byte b001;
     byte b002;

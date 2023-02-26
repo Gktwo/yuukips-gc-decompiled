@@ -27,13 +27,13 @@ public class CharLinkedOpenHashSet extends AbstractCharSortedSet implements Seri
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f1516n;
+    protected transient int f1480n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1517f;
+    protected final float f1481f;
     private static final int SPLITERATOR_CHARACTERISTICS = 337;
 
     public CharLinkedOpenHashSet(int expected, float f) {
@@ -44,14 +44,14 @@ public class CharLinkedOpenHashSet extends AbstractCharSortedSet implements Seri
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1517f = f;
+            this.f1481f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1516n = arraySize;
+            this.f1480n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1516n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1516n, f);
-            this.key = new char[this.f1516n + 1];
-            this.link = new long[this.f1516n + 1];
+            this.mask = this.f1480n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1480n, f);
+            this.key = new char[this.f1480n + 1];
+            this.link = new long[this.f1480n + 1];
         }
     }
 
@@ -171,22 +171,22 @@ public class CharLinkedOpenHashSet extends AbstractCharSortedSet implements Seri
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1517f);
-        if (needed > this.f1516n) {
+        int needed = HashCommon.arraySize(capacity, this.f1481f);
+        if (needed > this.f1480n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1517f)))));
-        if (needed > this.f1516n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1481f)))));
+        if (needed > this.f1480n) {
             rehash(needed);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharCollection, p014it.unimi.dsi.fastutil.chars.CharCollection
     public boolean addAll(CharCollection c) {
-        if (((double) this.f1517f) <= 0.5d) {
+        if (((double) this.f1481f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -196,7 +196,7 @@ public class CharLinkedOpenHashSet extends AbstractCharSortedSet implements Seri
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Character> c) {
-        if (((double) this.f1517f) <= 0.5d) {
+        if (((double) this.f1481f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -230,7 +230,7 @@ public class CharLinkedOpenHashSet extends AbstractCharSortedSet implements Seri
         } else if (this.containsNull) {
             return false;
         } else {
-            pos = this.f1516n;
+            pos = this.f1480n;
             this.containsNull = true;
         }
         if (this.size == 0) {
@@ -249,7 +249,7 @@ public class CharLinkedOpenHashSet extends AbstractCharSortedSet implements Seri
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f1517f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f1481f));
         return true;
     }
 
@@ -287,22 +287,22 @@ public class CharLinkedOpenHashSet extends AbstractCharSortedSet implements Seri
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f1516n <= this.minN || this.size >= this.maxFill / 4 || this.f1516n <= 16) {
+        if (this.f1480n <= this.minN || this.size >= this.maxFill / 4 || this.f1480n <= 16) {
             return true;
         }
-        rehash(this.f1516n / 2);
+        rehash(this.f1480n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f1516n] = 0;
+        this.key[this.f1480n] = 0;
         this.size--;
-        fixPointers(this.f1516n);
-        if (this.f1516n <= this.minN || this.size >= this.maxFill / 4 || this.f1516n <= 16) {
+        fixPointers(this.f1480n);
+        if (this.f1480n <= this.minN || this.size >= this.maxFill / 4 || this.f1480n <= 16) {
             return true;
         }
-        rehash(this.f1516n / 2);
+        rehash(this.f1480n / 2);
         return true;
     }
 
@@ -378,12 +378,12 @@ public class CharLinkedOpenHashSet extends AbstractCharSortedSet implements Seri
         this.size--;
         if (k == 0) {
             this.containsNull = false;
-            this.key[this.f1516n] = 0;
+            this.key[this.f1480n] = 0;
         } else {
             shiftKeys(pos);
         }
-        if (this.f1516n > this.minN && this.size < this.maxFill / 4 && this.f1516n > 16) {
-            rehash(this.f1516n / 2);
+        if (this.f1480n > this.minN && this.size < this.maxFill / 4 && this.f1480n > 16) {
+            rehash(this.f1480n / 2);
         }
         return k;
     }
@@ -403,12 +403,12 @@ public class CharLinkedOpenHashSet extends AbstractCharSortedSet implements Seri
         this.size--;
         if (k == 0) {
             this.containsNull = false;
-            this.key[this.f1516n] = 0;
+            this.key[this.f1480n] = 0;
         } else {
             shiftKeys(pos);
         }
-        if (this.f1516n > this.minN && this.size < this.maxFill / 4 && this.f1516n > 16) {
-            rehash(this.f1516n / 2);
+        if (this.f1480n > this.minN && this.size < this.maxFill / 4 && this.f1480n > 16) {
+            rehash(this.f1480n / 2);
         }
         return k;
     }
@@ -480,11 +480,11 @@ public class CharLinkedOpenHashSet extends AbstractCharSortedSet implements Seri
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToFirst(this.f1516n);
+            moveIndexToFirst(this.f1480n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f1516n;
+            pos = this.f1480n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -503,7 +503,7 @@ public class CharLinkedOpenHashSet extends AbstractCharSortedSet implements Seri
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f1517f));
+        rehash(HashCommon.arraySize(this.size, this.f1481f));
         return true;
     }
 
@@ -526,11 +526,11 @@ public class CharLinkedOpenHashSet extends AbstractCharSortedSet implements Seri
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToLast(this.f1516n);
+            moveIndexToLast(this.f1480n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f1516n;
+            pos = this.f1480n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -549,7 +549,7 @@ public class CharLinkedOpenHashSet extends AbstractCharSortedSet implements Seri
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f1517f));
+        rehash(HashCommon.arraySize(this.size, this.f1481f));
         return true;
     }
 
@@ -694,8 +694,8 @@ public class CharLinkedOpenHashSet extends AbstractCharSortedSet implements Seri
             this.index = -1;
             if (from == 0) {
                 if (CharLinkedOpenHashSet.this.containsNull) {
-                    this.next = (int) CharLinkedOpenHashSet.this.link[CharLinkedOpenHashSet.this.f1516n];
-                    this.prev = CharLinkedOpenHashSet.this.f1516n;
+                    this.next = (int) CharLinkedOpenHashSet.this.link[CharLinkedOpenHashSet.this.f1480n];
+                    this.prev = CharLinkedOpenHashSet.this.f1480n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + from + " does not belong to this set.");
@@ -834,9 +834,9 @@ public class CharLinkedOpenHashSet extends AbstractCharSortedSet implements Seri
             }
             int pos = this.curr;
             this.curr = -1;
-            if (pos == CharLinkedOpenHashSet.this.f1516n) {
+            if (pos == CharLinkedOpenHashSet.this.f1480n) {
                 CharLinkedOpenHashSet.this.containsNull = false;
-                CharLinkedOpenHashSet.this.key[CharLinkedOpenHashSet.this.f1516n] = 0;
+                CharLinkedOpenHashSet.this.key[CharLinkedOpenHashSet.this.f1480n] = 0;
                 return;
             }
             char[] key = CharLinkedOpenHashSet.this.key;
@@ -906,8 +906,8 @@ public class CharLinkedOpenHashSet extends AbstractCharSortedSet implements Seri
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1517f)));
-        if (l >= this.f1516n || this.size > HashCommon.maxFill(l, this.f1517f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1481f)));
+        if (l >= this.f1480n || this.size > HashCommon.maxFill(l, this.f1481f)) {
             return true;
         }
         try {
@@ -965,9 +965,9 @@ public class CharLinkedOpenHashSet extends AbstractCharSortedSet implements Seri
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f1516n = newN;
+        this.f1480n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f1516n, this.f1517f);
+        this.maxFill = HashCommon.maxFill(this.f1480n, this.f1481f);
         this.key = newKey;
     }
 
@@ -1021,12 +1021,12 @@ public class CharLinkedOpenHashSet extends AbstractCharSortedSet implements Seri
         int pos;
         int i;
         s.defaultReadObject();
-        this.f1516n = HashCommon.arraySize(this.size, this.f1517f);
-        this.maxFill = HashCommon.maxFill(this.f1516n, this.f1517f);
-        this.mask = this.f1516n - 1;
-        char[] key = new char[this.f1516n + 1];
+        this.f1480n = HashCommon.arraySize(this.size, this.f1481f);
+        this.maxFill = HashCommon.maxFill(this.f1480n, this.f1481f);
+        this.mask = this.f1480n - 1;
+        char[] key = new char[this.f1480n + 1];
         this.key = key;
-        long[] link = new long[this.f1516n + 1];
+        long[] link = new long[this.f1480n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -1039,7 +1039,7 @@ public class CharLinkedOpenHashSet extends AbstractCharSortedSet implements Seri
             }
             char k = s.readChar();
             if (k == 0) {
-                pos = this.f1516n;
+                pos = this.f1480n;
                 this.containsNull = true;
             } else {
                 int mix = HashCommon.mix((int) k) & this.mask;

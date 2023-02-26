@@ -26,25 +26,25 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SalvageStageInfoOuterClass.class */
 public final class SalvageStageInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016SalvageStageInfo.proto\u001a\u001aSalvageChallengeInfo.proto\"i\n\u0010SalvageStageInfo\u0012\u0010\n\bstage_id\u0018\r \u0001(\r\u00122\n\u0013challenge_info_list\u0018\u0003 \u0003(\u000b2\u0015.SalvageChallengeInfo\u0012\u000f\n\u0007is_open\u0018\u0007 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{SalvageChallengeInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016SalvageStageInfo.proto\u001a\u001aSalvageChallengeInfo.proto\"h\n\u0010SalvageStageInfo\u0012\u000e\n\u0006isOpen\u0018\n \u0001(\b\u0012\u000f\n\u0007stageId\u0018\u000f \u0001(\r\u00123\n\u0014exceededItemTypeList\u0018\u0006 \u0003(\u000b2\u0015.SalvageChallengeInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{SalvageChallengeInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SalvageStageInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SalvageStageInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SalvageStageInfo_descriptor, new String[]{"StageId", "ChallengeInfoList", "IsOpen"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SalvageStageInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SalvageStageInfo_descriptor, new String[]{"IsOpen", "StageId", "ExceededItemTypeList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SalvageStageInfoOuterClass$SalvageStageInfoOrBuilder.class */
     public interface SalvageStageInfoOrBuilder extends MessageOrBuilder {
+        boolean getIsOpen();
+
         int getStageId();
 
-        List<SalvageChallengeInfoOuterClass.SalvageChallengeInfo> getChallengeInfoListList();
+        List<SalvageChallengeInfoOuterClass.SalvageChallengeInfo> getExceededItemTypeListList();
 
-        SalvageChallengeInfoOuterClass.SalvageChallengeInfo getChallengeInfoList(int i);
+        SalvageChallengeInfoOuterClass.SalvageChallengeInfo getExceededItemTypeList(int i);
 
-        int getChallengeInfoListCount();
+        int getExceededItemTypeListCount();
 
-        List<? extends SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder> getChallengeInfoListOrBuilderList();
+        List<? extends SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder> getExceededItemTypeListOrBuilderList();
 
-        SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder getChallengeInfoListOrBuilder(int i);
-
-        boolean getIsOpen();
+        SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder getExceededItemTypeListOrBuilder(int i);
     }
 
     private SalvageStageInfoOuterClass() {
@@ -60,12 +60,12 @@ public final class SalvageStageInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SalvageStageInfoOuterClass$SalvageStageInfo.class */
     public static final class SalvageStageInfo extends GeneratedMessageV3 implements SalvageStageInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int STAGE_ID_FIELD_NUMBER = 13;
-        private int stageId_;
-        public static final int CHALLENGE_INFO_LIST_FIELD_NUMBER = 3;
-        private List<SalvageChallengeInfoOuterClass.SalvageChallengeInfo> challengeInfoList_;
-        public static final int IS_OPEN_FIELD_NUMBER = 7;
+        public static final int ISOPEN_FIELD_NUMBER = 10;
         private boolean isOpen_;
+        public static final int STAGEID_FIELD_NUMBER = 15;
+        private int stageId_;
+        public static final int EXCEEDEDITEMTYPELIST_FIELD_NUMBER = 6;
+        private List<SalvageChallengeInfoOuterClass.SalvageChallengeInfo> exceededItemTypeList_;
         private byte memoizedIsInitialized;
         private static final SalvageStageInfo DEFAULT_INSTANCE = new SalvageStageInfo();
         private static final Parser<SalvageStageInfo> PARSER = new AbstractParser<SalvageStageInfo>() { // from class: emu.grasscutter.net.proto.SalvageStageInfoOuterClass.SalvageStageInfo.1
@@ -82,7 +82,7 @@ public final class SalvageStageInfoOuterClass {
 
         private SalvageStageInfo() {
             this.memoizedIsInitialized = -1;
-            this.challengeInfoList_ = Collections.emptyList();
+            this.exceededItemTypeList_ = Collections.emptyList();
         }
 
         /* access modifiers changed from: protected */
@@ -114,17 +114,17 @@ public final class SalvageStageInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 26:
+                            case 50:
                                 if ((mutable_bitField0_ & 1) == 0) {
-                                    this.challengeInfoList_ = new ArrayList();
+                                    this.exceededItemTypeList_ = new ArrayList();
                                     mutable_bitField0_ |= 1;
                                 }
-                                this.challengeInfoList_.add((SalvageChallengeInfoOuterClass.SalvageChallengeInfo) input.readMessage(SalvageChallengeInfoOuterClass.SalvageChallengeInfo.parser(), extensionRegistry));
+                                this.exceededItemTypeList_.add((SalvageChallengeInfoOuterClass.SalvageChallengeInfo) input.readMessage(SalvageChallengeInfoOuterClass.SalvageChallengeInfo.parser(), extensionRegistry));
                                 break;
-                            case 56:
+                            case 80:
                                 this.isOpen_ = input.readBool();
                                 break;
-                            case 104:
+                            case 120:
                                 this.stageId_ = input.readUInt32();
                                 break;
                             default:
@@ -143,7 +143,7 @@ public final class SalvageStageInfoOuterClass {
                 }
             } finally {
                 if ((mutable_bitField0_ & 1) != 0) {
-                    this.challengeInfoList_ = Collections.unmodifiableList(this.challengeInfoList_);
+                    this.exceededItemTypeList_ = Collections.unmodifiableList(this.exceededItemTypeList_);
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -160,38 +160,38 @@ public final class SalvageStageInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SalvageStageInfoOuterClass.SalvageStageInfoOrBuilder
+        public boolean getIsOpen() {
+            return this.isOpen_;
+        }
+
+        @Override // emu.grasscutter.net.proto.SalvageStageInfoOuterClass.SalvageStageInfoOrBuilder
         public int getStageId() {
             return this.stageId_;
         }
 
         @Override // emu.grasscutter.net.proto.SalvageStageInfoOuterClass.SalvageStageInfoOrBuilder
-        public List<SalvageChallengeInfoOuterClass.SalvageChallengeInfo> getChallengeInfoListList() {
-            return this.challengeInfoList_;
+        public List<SalvageChallengeInfoOuterClass.SalvageChallengeInfo> getExceededItemTypeListList() {
+            return this.exceededItemTypeList_;
         }
 
         @Override // emu.grasscutter.net.proto.SalvageStageInfoOuterClass.SalvageStageInfoOrBuilder
-        public List<? extends SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder> getChallengeInfoListOrBuilderList() {
-            return this.challengeInfoList_;
+        public List<? extends SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder> getExceededItemTypeListOrBuilderList() {
+            return this.exceededItemTypeList_;
         }
 
         @Override // emu.grasscutter.net.proto.SalvageStageInfoOuterClass.SalvageStageInfoOrBuilder
-        public int getChallengeInfoListCount() {
-            return this.challengeInfoList_.size();
+        public int getExceededItemTypeListCount() {
+            return this.exceededItemTypeList_.size();
         }
 
         @Override // emu.grasscutter.net.proto.SalvageStageInfoOuterClass.SalvageStageInfoOrBuilder
-        public SalvageChallengeInfoOuterClass.SalvageChallengeInfo getChallengeInfoList(int index) {
-            return this.challengeInfoList_.get(index);
+        public SalvageChallengeInfoOuterClass.SalvageChallengeInfo getExceededItemTypeList(int index) {
+            return this.exceededItemTypeList_.get(index);
         }
 
         @Override // emu.grasscutter.net.proto.SalvageStageInfoOuterClass.SalvageStageInfoOrBuilder
-        public SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder getChallengeInfoListOrBuilder(int index) {
-            return this.challengeInfoList_.get(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.SalvageStageInfoOuterClass.SalvageStageInfoOrBuilder
-        public boolean getIsOpen() {
-            return this.isOpen_;
+        public SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder getExceededItemTypeListOrBuilder(int index) {
+            return this.exceededItemTypeList_.get(index);
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -209,14 +209,14 @@ public final class SalvageStageInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            for (int i = 0; i < this.challengeInfoList_.size(); i++) {
-                output.writeMessage(3, this.challengeInfoList_.get(i));
+            for (int i = 0; i < this.exceededItemTypeList_.size(); i++) {
+                output.writeMessage(6, this.exceededItemTypeList_.get(i));
             }
             if (this.isOpen_) {
-                output.writeBool(7, this.isOpen_);
+                output.writeBool(10, this.isOpen_);
             }
             if (this.stageId_ != 0) {
-                output.writeUInt32(13, this.stageId_);
+                output.writeUInt32(15, this.stageId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -228,14 +228,14 @@ public final class SalvageStageInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            for (int i = 0; i < this.challengeInfoList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(3, this.challengeInfoList_.get(i));
+            for (int i = 0; i < this.exceededItemTypeList_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(6, this.exceededItemTypeList_.get(i));
             }
             if (this.isOpen_) {
-                size2 += CodedOutputStream.computeBoolSize(7, this.isOpen_);
+                size2 += CodedOutputStream.computeBoolSize(10, this.isOpen_);
             }
             if (this.stageId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.stageId_);
+                size2 += CodedOutputStream.computeUInt32Size(15, this.stageId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -251,7 +251,7 @@ public final class SalvageStageInfoOuterClass {
                 return equals(obj);
             }
             SalvageStageInfo other = (SalvageStageInfo) obj;
-            return getStageId() == other.getStageId() && getChallengeInfoListList().equals(other.getChallengeInfoListList()) && getIsOpen() == other.getIsOpen() && this.unknownFields.equals(other.unknownFields);
+            return getIsOpen() == other.getIsOpen() && getStageId() == other.getStageId() && getExceededItemTypeListList().equals(other.getExceededItemTypeListList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -259,11 +259,11 @@ public final class SalvageStageInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + getStageId();
-            if (getChallengeInfoListCount() > 0) {
-                hash = (53 * ((37 * hash) + 3)) + getChallengeInfoListList().hashCode();
+            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + Internal.hashBoolean(getIsOpen()))) + 15)) + getStageId();
+            if (getExceededItemTypeListCount() > 0) {
+                hash = (53 * ((37 * hash) + 6)) + getExceededItemTypeListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 7)) + Internal.hashBoolean(getIsOpen()))) + this.unknownFields.hashCode();
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -343,10 +343,10 @@ public final class SalvageStageInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SalvageStageInfoOuterClass$SalvageStageInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SalvageStageInfoOrBuilder {
             private int bitField0_;
-            private int stageId_;
-            private List<SalvageChallengeInfoOuterClass.SalvageChallengeInfo> challengeInfoList_ = Collections.emptyList();
-            private RepeatedFieldBuilderV3<SalvageChallengeInfoOuterClass.SalvageChallengeInfo, SalvageChallengeInfoOuterClass.SalvageChallengeInfo.Builder, SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder> challengeInfoListBuilder_;
             private boolean isOpen_;
+            private int stageId_;
+            private List<SalvageChallengeInfoOuterClass.SalvageChallengeInfo> exceededItemTypeList_ = Collections.emptyList();
+            private RepeatedFieldBuilderV3<SalvageChallengeInfoOuterClass.SalvageChallengeInfo, SalvageChallengeInfoOuterClass.SalvageChallengeInfo.Builder, SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder> exceededItemTypeListBuilder_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return SalvageStageInfoOuterClass.internal_static_SalvageStageInfo_descriptor;
@@ -368,21 +368,21 @@ public final class SalvageStageInfoOuterClass {
 
             private void maybeForceBuilderInitialization() {
                 if (SalvageStageInfo.alwaysUseFieldBuilders) {
-                    getChallengeInfoListFieldBuilder();
+                    getExceededItemTypeListFieldBuilder();
                 }
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.isOpen_ = false;
                 this.stageId_ = 0;
-                if (this.challengeInfoListBuilder_ == null) {
-                    this.challengeInfoList_ = Collections.emptyList();
+                if (this.exceededItemTypeListBuilder_ == null) {
+                    this.exceededItemTypeList_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
-                    this.challengeInfoListBuilder_.clear();
+                    this.exceededItemTypeListBuilder_.clear();
                 }
-                this.isOpen_ = false;
                 return this;
             }
 
@@ -409,17 +409,17 @@ public final class SalvageStageInfoOuterClass {
             public SalvageStageInfo buildPartial() {
                 SalvageStageInfo result = new SalvageStageInfo(this);
                 int i = this.bitField0_;
+                result.isOpen_ = this.isOpen_;
                 result.stageId_ = this.stageId_;
-                if (this.challengeInfoListBuilder_ == null) {
+                if (this.exceededItemTypeListBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
-                        this.challengeInfoList_ = Collections.unmodifiableList(this.challengeInfoList_);
+                        this.exceededItemTypeList_ = Collections.unmodifiableList(this.exceededItemTypeList_);
                         this.bitField0_ &= -2;
                     }
-                    result.challengeInfoList_ = this.challengeInfoList_;
+                    result.exceededItemTypeList_ = this.exceededItemTypeList_;
                 } else {
-                    result.challengeInfoList_ = this.challengeInfoListBuilder_.build();
+                    result.exceededItemTypeList_ = this.exceededItemTypeListBuilder_.build();
                 }
-                result.isOpen_ = this.isOpen_;
                 onBuilt();
                 return result;
             }
@@ -467,33 +467,33 @@ public final class SalvageStageInfoOuterClass {
                 if (other == SalvageStageInfo.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getIsOpen()) {
+                    setIsOpen(other.getIsOpen());
+                }
                 if (other.getStageId() != 0) {
                     setStageId(other.getStageId());
                 }
-                if (this.challengeInfoListBuilder_ == null) {
-                    if (!other.challengeInfoList_.isEmpty()) {
-                        if (this.challengeInfoList_.isEmpty()) {
-                            this.challengeInfoList_ = other.challengeInfoList_;
+                if (this.exceededItemTypeListBuilder_ == null) {
+                    if (!other.exceededItemTypeList_.isEmpty()) {
+                        if (this.exceededItemTypeList_.isEmpty()) {
+                            this.exceededItemTypeList_ = other.exceededItemTypeList_;
                             this.bitField0_ &= -2;
                         } else {
-                            ensureChallengeInfoListIsMutable();
-                            this.challengeInfoList_.addAll(other.challengeInfoList_);
+                            ensureExceededItemTypeListIsMutable();
+                            this.exceededItemTypeList_.addAll(other.exceededItemTypeList_);
                         }
                         onChanged();
                     }
-                } else if (!other.challengeInfoList_.isEmpty()) {
-                    if (this.challengeInfoListBuilder_.isEmpty()) {
-                        this.challengeInfoListBuilder_.dispose();
-                        this.challengeInfoListBuilder_ = null;
-                        this.challengeInfoList_ = other.challengeInfoList_;
+                } else if (!other.exceededItemTypeList_.isEmpty()) {
+                    if (this.exceededItemTypeListBuilder_.isEmpty()) {
+                        this.exceededItemTypeListBuilder_.dispose();
+                        this.exceededItemTypeListBuilder_ = null;
+                        this.exceededItemTypeList_ = other.exceededItemTypeList_;
                         this.bitField0_ &= -2;
-                        this.challengeInfoListBuilder_ = SalvageStageInfo.alwaysUseFieldBuilders ? getChallengeInfoListFieldBuilder() : null;
+                        this.exceededItemTypeListBuilder_ = SalvageStageInfo.alwaysUseFieldBuilders ? getExceededItemTypeListFieldBuilder() : null;
                     } else {
-                        this.challengeInfoListBuilder_.addAllMessages(other.challengeInfoList_);
+                        this.exceededItemTypeListBuilder_.addAllMessages(other.exceededItemTypeList_);
                     }
-                }
-                if (other.getIsOpen()) {
-                    setIsOpen(other.getIsOpen());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -528,6 +528,23 @@ public final class SalvageStageInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.SalvageStageInfoOuterClass.SalvageStageInfoOrBuilder
+            public boolean getIsOpen() {
+                return this.isOpen_;
+            }
+
+            public Builder setIsOpen(boolean value) {
+                this.isOpen_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsOpen() {
+                this.isOpen_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SalvageStageInfoOuterClass.SalvageStageInfoOrBuilder
             public int getStageId() {
                 return this.stageId_;
             }
@@ -544,197 +561,180 @@ public final class SalvageStageInfoOuterClass {
                 return this;
             }
 
-            private void ensureChallengeInfoListIsMutable() {
+            private void ensureExceededItemTypeListIsMutable() {
                 if ((this.bitField0_ & 1) == 0) {
-                    this.challengeInfoList_ = new ArrayList(this.challengeInfoList_);
+                    this.exceededItemTypeList_ = new ArrayList(this.exceededItemTypeList_);
                     this.bitField0_ |= 1;
                 }
             }
 
             @Override // emu.grasscutter.net.proto.SalvageStageInfoOuterClass.SalvageStageInfoOrBuilder
-            public List<SalvageChallengeInfoOuterClass.SalvageChallengeInfo> getChallengeInfoListList() {
-                if (this.challengeInfoListBuilder_ == null) {
-                    return Collections.unmodifiableList(this.challengeInfoList_);
+            public List<SalvageChallengeInfoOuterClass.SalvageChallengeInfo> getExceededItemTypeListList() {
+                if (this.exceededItemTypeListBuilder_ == null) {
+                    return Collections.unmodifiableList(this.exceededItemTypeList_);
                 }
-                return this.challengeInfoListBuilder_.getMessageList();
+                return this.exceededItemTypeListBuilder_.getMessageList();
             }
 
             @Override // emu.grasscutter.net.proto.SalvageStageInfoOuterClass.SalvageStageInfoOrBuilder
-            public int getChallengeInfoListCount() {
-                if (this.challengeInfoListBuilder_ == null) {
-                    return this.challengeInfoList_.size();
+            public int getExceededItemTypeListCount() {
+                if (this.exceededItemTypeListBuilder_ == null) {
+                    return this.exceededItemTypeList_.size();
                 }
-                return this.challengeInfoListBuilder_.getCount();
+                return this.exceededItemTypeListBuilder_.getCount();
             }
 
             @Override // emu.grasscutter.net.proto.SalvageStageInfoOuterClass.SalvageStageInfoOrBuilder
-            public SalvageChallengeInfoOuterClass.SalvageChallengeInfo getChallengeInfoList(int index) {
-                if (this.challengeInfoListBuilder_ == null) {
-                    return this.challengeInfoList_.get(index);
+            public SalvageChallengeInfoOuterClass.SalvageChallengeInfo getExceededItemTypeList(int index) {
+                if (this.exceededItemTypeListBuilder_ == null) {
+                    return this.exceededItemTypeList_.get(index);
                 }
-                return this.challengeInfoListBuilder_.getMessage(index);
+                return this.exceededItemTypeListBuilder_.getMessage(index);
             }
 
-            public Builder setChallengeInfoList(int index, SalvageChallengeInfoOuterClass.SalvageChallengeInfo value) {
-                if (this.challengeInfoListBuilder_ != null) {
-                    this.challengeInfoListBuilder_.setMessage(index, value);
+            public Builder setExceededItemTypeList(int index, SalvageChallengeInfoOuterClass.SalvageChallengeInfo value) {
+                if (this.exceededItemTypeListBuilder_ != null) {
+                    this.exceededItemTypeListBuilder_.setMessage(index, value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureChallengeInfoListIsMutable();
-                    this.challengeInfoList_.set(index, value);
+                    ensureExceededItemTypeListIsMutable();
+                    this.exceededItemTypeList_.set(index, value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder setChallengeInfoList(int index, SalvageChallengeInfoOuterClass.SalvageChallengeInfo.Builder builderForValue) {
-                if (this.challengeInfoListBuilder_ == null) {
-                    ensureChallengeInfoListIsMutable();
-                    this.challengeInfoList_.set(index, builderForValue.build());
+            public Builder setExceededItemTypeList(int index, SalvageChallengeInfoOuterClass.SalvageChallengeInfo.Builder builderForValue) {
+                if (this.exceededItemTypeListBuilder_ == null) {
+                    ensureExceededItemTypeListIsMutable();
+                    this.exceededItemTypeList_.set(index, builderForValue.build());
                     onChanged();
                 } else {
-                    this.challengeInfoListBuilder_.setMessage(index, builderForValue.build());
+                    this.exceededItemTypeListBuilder_.setMessage(index, builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder addChallengeInfoList(SalvageChallengeInfoOuterClass.SalvageChallengeInfo value) {
-                if (this.challengeInfoListBuilder_ != null) {
-                    this.challengeInfoListBuilder_.addMessage(value);
+            public Builder addExceededItemTypeList(SalvageChallengeInfoOuterClass.SalvageChallengeInfo value) {
+                if (this.exceededItemTypeListBuilder_ != null) {
+                    this.exceededItemTypeListBuilder_.addMessage(value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureChallengeInfoListIsMutable();
-                    this.challengeInfoList_.add(value);
+                    ensureExceededItemTypeListIsMutable();
+                    this.exceededItemTypeList_.add(value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder addChallengeInfoList(int index, SalvageChallengeInfoOuterClass.SalvageChallengeInfo value) {
-                if (this.challengeInfoListBuilder_ != null) {
-                    this.challengeInfoListBuilder_.addMessage(index, value);
+            public Builder addExceededItemTypeList(int index, SalvageChallengeInfoOuterClass.SalvageChallengeInfo value) {
+                if (this.exceededItemTypeListBuilder_ != null) {
+                    this.exceededItemTypeListBuilder_.addMessage(index, value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureChallengeInfoListIsMutable();
-                    this.challengeInfoList_.add(index, value);
+                    ensureExceededItemTypeListIsMutable();
+                    this.exceededItemTypeList_.add(index, value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder addChallengeInfoList(SalvageChallengeInfoOuterClass.SalvageChallengeInfo.Builder builderForValue) {
-                if (this.challengeInfoListBuilder_ == null) {
-                    ensureChallengeInfoListIsMutable();
-                    this.challengeInfoList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    this.challengeInfoListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addChallengeInfoList(int index, SalvageChallengeInfoOuterClass.SalvageChallengeInfo.Builder builderForValue) {
-                if (this.challengeInfoListBuilder_ == null) {
-                    ensureChallengeInfoListIsMutable();
-                    this.challengeInfoList_.add(index, builderForValue.build());
+            public Builder addExceededItemTypeList(SalvageChallengeInfoOuterClass.SalvageChallengeInfo.Builder builderForValue) {
+                if (this.exceededItemTypeListBuilder_ == null) {
+                    ensureExceededItemTypeListIsMutable();
+                    this.exceededItemTypeList_.add(builderForValue.build());
                     onChanged();
                 } else {
-                    this.challengeInfoListBuilder_.addMessage(index, builderForValue.build());
+                    this.exceededItemTypeListBuilder_.addMessage(builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder addAllChallengeInfoList(Iterable<? extends SalvageChallengeInfoOuterClass.SalvageChallengeInfo> values) {
-                if (this.challengeInfoListBuilder_ == null) {
-                    ensureChallengeInfoListIsMutable();
-                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.challengeInfoList_);
+            public Builder addExceededItemTypeList(int index, SalvageChallengeInfoOuterClass.SalvageChallengeInfo.Builder builderForValue) {
+                if (this.exceededItemTypeListBuilder_ == null) {
+                    ensureExceededItemTypeListIsMutable();
+                    this.exceededItemTypeList_.add(index, builderForValue.build());
                     onChanged();
                 } else {
-                    this.challengeInfoListBuilder_.addAllMessages(values);
+                    this.exceededItemTypeListBuilder_.addMessage(index, builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder clearChallengeInfoList() {
-                if (this.challengeInfoListBuilder_ == null) {
-                    this.challengeInfoList_ = Collections.emptyList();
+            public Builder addAllExceededItemTypeList(Iterable<? extends SalvageChallengeInfoOuterClass.SalvageChallengeInfo> values) {
+                if (this.exceededItemTypeListBuilder_ == null) {
+                    ensureExceededItemTypeListIsMutable();
+                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.exceededItemTypeList_);
+                    onChanged();
+                } else {
+                    this.exceededItemTypeListBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            public Builder clearExceededItemTypeList() {
+                if (this.exceededItemTypeListBuilder_ == null) {
+                    this.exceededItemTypeList_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                     onChanged();
                 } else {
-                    this.challengeInfoListBuilder_.clear();
+                    this.exceededItemTypeListBuilder_.clear();
                 }
                 return this;
             }
 
-            public Builder removeChallengeInfoList(int index) {
-                if (this.challengeInfoListBuilder_ == null) {
-                    ensureChallengeInfoListIsMutable();
-                    this.challengeInfoList_.remove(index);
+            public Builder removeExceededItemTypeList(int index) {
+                if (this.exceededItemTypeListBuilder_ == null) {
+                    ensureExceededItemTypeListIsMutable();
+                    this.exceededItemTypeList_.remove(index);
                     onChanged();
                 } else {
-                    this.challengeInfoListBuilder_.remove(index);
+                    this.exceededItemTypeListBuilder_.remove(index);
                 }
                 return this;
             }
 
-            public SalvageChallengeInfoOuterClass.SalvageChallengeInfo.Builder getChallengeInfoListBuilder(int index) {
-                return getChallengeInfoListFieldBuilder().getBuilder(index);
+            public SalvageChallengeInfoOuterClass.SalvageChallengeInfo.Builder getExceededItemTypeListBuilder(int index) {
+                return getExceededItemTypeListFieldBuilder().getBuilder(index);
             }
 
             @Override // emu.grasscutter.net.proto.SalvageStageInfoOuterClass.SalvageStageInfoOrBuilder
-            public SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder getChallengeInfoListOrBuilder(int index) {
-                if (this.challengeInfoListBuilder_ == null) {
-                    return this.challengeInfoList_.get(index);
+            public SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder getExceededItemTypeListOrBuilder(int index) {
+                if (this.exceededItemTypeListBuilder_ == null) {
+                    return this.exceededItemTypeList_.get(index);
                 }
-                return this.challengeInfoListBuilder_.getMessageOrBuilder(index);
+                return this.exceededItemTypeListBuilder_.getMessageOrBuilder(index);
             }
 
             @Override // emu.grasscutter.net.proto.SalvageStageInfoOuterClass.SalvageStageInfoOrBuilder
-            public List<? extends SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder> getChallengeInfoListOrBuilderList() {
-                if (this.challengeInfoListBuilder_ != null) {
-                    return this.challengeInfoListBuilder_.getMessageOrBuilderList();
+            public List<? extends SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder> getExceededItemTypeListOrBuilderList() {
+                if (this.exceededItemTypeListBuilder_ != null) {
+                    return this.exceededItemTypeListBuilder_.getMessageOrBuilderList();
                 }
-                return Collections.unmodifiableList(this.challengeInfoList_);
+                return Collections.unmodifiableList(this.exceededItemTypeList_);
             }
 
-            public SalvageChallengeInfoOuterClass.SalvageChallengeInfo.Builder addChallengeInfoListBuilder() {
-                return getChallengeInfoListFieldBuilder().addBuilder(SalvageChallengeInfoOuterClass.SalvageChallengeInfo.getDefaultInstance());
+            public SalvageChallengeInfoOuterClass.SalvageChallengeInfo.Builder addExceededItemTypeListBuilder() {
+                return getExceededItemTypeListFieldBuilder().addBuilder(SalvageChallengeInfoOuterClass.SalvageChallengeInfo.getDefaultInstance());
             }
 
-            public SalvageChallengeInfoOuterClass.SalvageChallengeInfo.Builder addChallengeInfoListBuilder(int index) {
-                return getChallengeInfoListFieldBuilder().addBuilder(index, SalvageChallengeInfoOuterClass.SalvageChallengeInfo.getDefaultInstance());
+            public SalvageChallengeInfoOuterClass.SalvageChallengeInfo.Builder addExceededItemTypeListBuilder(int index) {
+                return getExceededItemTypeListFieldBuilder().addBuilder(index, SalvageChallengeInfoOuterClass.SalvageChallengeInfo.getDefaultInstance());
             }
 
-            public List<SalvageChallengeInfoOuterClass.SalvageChallengeInfo.Builder> getChallengeInfoListBuilderList() {
-                return getChallengeInfoListFieldBuilder().getBuilderList();
+            public List<SalvageChallengeInfoOuterClass.SalvageChallengeInfo.Builder> getExceededItemTypeListBuilderList() {
+                return getExceededItemTypeListFieldBuilder().getBuilderList();
             }
 
-            private RepeatedFieldBuilderV3<SalvageChallengeInfoOuterClass.SalvageChallengeInfo, SalvageChallengeInfoOuterClass.SalvageChallengeInfo.Builder, SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder> getChallengeInfoListFieldBuilder() {
-                if (this.challengeInfoListBuilder_ == null) {
-                    this.challengeInfoListBuilder_ = new RepeatedFieldBuilderV3<>(this.challengeInfoList_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
-                    this.challengeInfoList_ = null;
+            private RepeatedFieldBuilderV3<SalvageChallengeInfoOuterClass.SalvageChallengeInfo, SalvageChallengeInfoOuterClass.SalvageChallengeInfo.Builder, SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder> getExceededItemTypeListFieldBuilder() {
+                if (this.exceededItemTypeListBuilder_ == null) {
+                    this.exceededItemTypeListBuilder_ = new RepeatedFieldBuilderV3<>(this.exceededItemTypeList_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
+                    this.exceededItemTypeList_ = null;
                 }
-                return this.challengeInfoListBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.SalvageStageInfoOuterClass.SalvageStageInfoOrBuilder
-            public boolean getIsOpen() {
-                return this.isOpen_;
-            }
-
-            public Builder setIsOpen(boolean value) {
-                this.isOpen_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsOpen() {
-                this.isOpen_ = false;
-                onChanged();
-                return this;
+                return this.exceededItemTypeListBuilder_;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

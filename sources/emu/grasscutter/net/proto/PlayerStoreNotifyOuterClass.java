@@ -26,18 +26,12 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerStoreNotifyOuterClass.class */
 public final class PlayerStoreNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017PlayerStoreNotify.proto\u001a\nItem.proto\u001a\u000fStoreType.proto\"c\n\u0011PlayerStoreNotify\u0012\u001e\n\nstore_type\u0018\u0001 \u0001(\u000e2\n.StoreType\u0012\u0014\n\fweight_limit\u0018\u000e \u0001(\r\u0012\u0018\n\titem_list\u0018\n \u0003(\u000b2\u0005.ItemB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemOuterClass.getDescriptor(), StoreTypeOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017PlayerStoreNotify.proto\u001a\u000fStoreType.proto\u001a\nItem.proto\"`\n\u0011PlayerStoreNotify\u0012\u0017\n\bitemList\u0018\u0005 \u0003(\u000b2\u0005.Item\u0012\u0013\n\u000bweightLimit\u0018\u0006 \u0001(\r\u0012\u001d\n\tstoreType\u0018\n \u0001(\u000e2\n.StoreTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{StoreTypeOuterClass.getDescriptor(), ItemOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_PlayerStoreNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerStoreNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerStoreNotify_descriptor, new String[]{"StoreType", "WeightLimit", "ItemList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerStoreNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerStoreNotify_descriptor, new String[]{"ItemList", "WeightLimit", "StoreType"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerStoreNotifyOuterClass$PlayerStoreNotifyOrBuilder.class */
     public interface PlayerStoreNotifyOrBuilder extends MessageOrBuilder {
-        int getStoreTypeValue();
-
-        StoreTypeOuterClass.StoreType getStoreType();
-
-        int getWeightLimit();
-
         List<ItemOuterClass.Item> getItemListList();
 
         ItemOuterClass.Item getItemList(int i);
@@ -47,6 +41,12 @@ public final class PlayerStoreNotifyOuterClass {
         List<? extends ItemOuterClass.ItemOrBuilder> getItemListOrBuilderList();
 
         ItemOuterClass.ItemOrBuilder getItemListOrBuilder(int i);
+
+        int getWeightLimit();
+
+        int getStoreTypeValue();
+
+        StoreTypeOuterClass.StoreType getStoreType();
     }
 
     private PlayerStoreNotifyOuterClass() {
@@ -62,12 +62,12 @@ public final class PlayerStoreNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerStoreNotifyOuterClass$PlayerStoreNotify.class */
     public static final class PlayerStoreNotify extends GeneratedMessageV3 implements PlayerStoreNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int STORE_TYPE_FIELD_NUMBER = 1;
-        private int storeType_;
-        public static final int WEIGHT_LIMIT_FIELD_NUMBER = 14;
-        private int weightLimit_;
-        public static final int ITEM_LIST_FIELD_NUMBER = 10;
+        public static final int ITEMLIST_FIELD_NUMBER = 5;
         private List<ItemOuterClass.Item> itemList_;
+        public static final int WEIGHTLIMIT_FIELD_NUMBER = 6;
+        private int weightLimit_;
+        public static final int STORETYPE_FIELD_NUMBER = 10;
+        private int storeType_;
         private byte memoizedIsInitialized;
         private static final PlayerStoreNotify DEFAULT_INSTANCE = new PlayerStoreNotify();
         private static final Parser<PlayerStoreNotify> PARSER = new AbstractParser<PlayerStoreNotify>() { // from class: emu.grasscutter.net.proto.PlayerStoreNotifyOuterClass.PlayerStoreNotify.1
@@ -84,8 +84,8 @@ public final class PlayerStoreNotifyOuterClass {
 
         private PlayerStoreNotify() {
             this.memoizedIsInitialized = -1;
-            this.storeType_ = 0;
             this.itemList_ = Collections.emptyList();
+            this.storeType_ = 0;
         }
 
         /* access modifiers changed from: protected */
@@ -117,18 +117,18 @@ public final class PlayerStoreNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
-                                this.storeType_ = input.readEnum();
-                                break;
-                            case 82:
+                            case 42:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.itemList_ = new ArrayList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.itemList_.add((ItemOuterClass.Item) input.readMessage(ItemOuterClass.Item.parser(), extensionRegistry));
                                 break;
-                            case 112:
+                            case 48:
                                 this.weightLimit_ = input.readUInt32();
+                                break;
+                            case 80:
+                                this.storeType_ = input.readEnum();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -163,22 +163,6 @@ public final class PlayerStoreNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PlayerStoreNotifyOuterClass.PlayerStoreNotifyOrBuilder
-        public int getStoreTypeValue() {
-            return this.storeType_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerStoreNotifyOuterClass.PlayerStoreNotifyOrBuilder
-        public StoreTypeOuterClass.StoreType getStoreType() {
-            StoreTypeOuterClass.StoreType result = StoreTypeOuterClass.StoreType.valueOf(this.storeType_);
-            return result == null ? StoreTypeOuterClass.StoreType.UNRECOGNIZED : result;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerStoreNotifyOuterClass.PlayerStoreNotifyOrBuilder
-        public int getWeightLimit() {
-            return this.weightLimit_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerStoreNotifyOuterClass.PlayerStoreNotifyOrBuilder
         public List<ItemOuterClass.Item> getItemListList() {
             return this.itemList_;
         }
@@ -203,6 +187,22 @@ public final class PlayerStoreNotifyOuterClass {
             return this.itemList_.get(index);
         }
 
+        @Override // emu.grasscutter.net.proto.PlayerStoreNotifyOuterClass.PlayerStoreNotifyOrBuilder
+        public int getWeightLimit() {
+            return this.weightLimit_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerStoreNotifyOuterClass.PlayerStoreNotifyOrBuilder
+        public int getStoreTypeValue() {
+            return this.storeType_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerStoreNotifyOuterClass.PlayerStoreNotifyOrBuilder
+        public StoreTypeOuterClass.StoreType getStoreType() {
+            StoreTypeOuterClass.StoreType result = StoreTypeOuterClass.StoreType.valueOf(this.storeType_);
+            return result == null ? StoreTypeOuterClass.StoreType.UNRECOGNIZED : result;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -218,14 +218,14 @@ public final class PlayerStoreNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.storeType_ != StoreTypeOuterClass.StoreType.STORE_TYPE_NONE.getNumber()) {
-                output.writeEnum(1, this.storeType_);
-            }
             for (int i = 0; i < this.itemList_.size(); i++) {
-                output.writeMessage(10, this.itemList_.get(i));
+                output.writeMessage(5, this.itemList_.get(i));
             }
             if (this.weightLimit_ != 0) {
-                output.writeUInt32(14, this.weightLimit_);
+                output.writeUInt32(6, this.weightLimit_);
+            }
+            if (this.storeType_ != StoreTypeOuterClass.StoreType.STORE_TYPE_NONE.getNumber()) {
+                output.writeEnum(10, this.storeType_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -237,14 +237,14 @@ public final class PlayerStoreNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.storeType_ != StoreTypeOuterClass.StoreType.STORE_TYPE_NONE.getNumber()) {
-                size2 = 0 + CodedOutputStream.computeEnumSize(1, this.storeType_);
-            }
             for (int i = 0; i < this.itemList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(10, this.itemList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(5, this.itemList_.get(i));
             }
             if (this.weightLimit_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.weightLimit_);
+                size2 += CodedOutputStream.computeUInt32Size(6, this.weightLimit_);
+            }
+            if (this.storeType_ != StoreTypeOuterClass.StoreType.STORE_TYPE_NONE.getNumber()) {
+                size2 += CodedOutputStream.computeEnumSize(10, this.storeType_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -260,7 +260,7 @@ public final class PlayerStoreNotifyOuterClass {
                 return equals(obj);
             }
             PlayerStoreNotify other = (PlayerStoreNotify) obj;
-            return this.storeType_ == other.storeType_ && getWeightLimit() == other.getWeightLimit() && getItemListList().equals(other.getItemListList()) && this.unknownFields.equals(other.unknownFields);
+            return getItemListList().equals(other.getItemListList()) && getWeightLimit() == other.getWeightLimit() && this.storeType_ == other.storeType_ && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -268,11 +268,11 @@ public final class PlayerStoreNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + this.storeType_)) + 14)) + getWeightLimit();
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (getItemListCount() > 0) {
-                hash = (53 * ((37 * hash) + 10)) + getItemListList().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getItemListList().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 6)) + getWeightLimit())) + 10)) + this.storeType_)) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -352,10 +352,10 @@ public final class PlayerStoreNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerStoreNotifyOuterClass$PlayerStoreNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements PlayerStoreNotifyOrBuilder {
             private int bitField0_;
-            private int weightLimit_;
             private RepeatedFieldBuilderV3<ItemOuterClass.Item, ItemOuterClass.Item.Builder, ItemOuterClass.ItemOrBuilder> itemListBuilder_;
-            private int storeType_ = 0;
+            private int weightLimit_;
             private List<ItemOuterClass.Item> itemList_ = Collections.emptyList();
+            private int storeType_ = 0;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return PlayerStoreNotifyOuterClass.internal_static_PlayerStoreNotify_descriptor;
@@ -384,14 +384,14 @@ public final class PlayerStoreNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.storeType_ = 0;
-                this.weightLimit_ = 0;
                 if (this.itemListBuilder_ == null) {
                     this.itemList_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
                     this.itemListBuilder_.clear();
                 }
+                this.weightLimit_ = 0;
+                this.storeType_ = 0;
                 return this;
             }
 
@@ -418,8 +418,6 @@ public final class PlayerStoreNotifyOuterClass {
             public PlayerStoreNotify buildPartial() {
                 PlayerStoreNotify result = new PlayerStoreNotify(this);
                 int i = this.bitField0_;
-                result.storeType_ = this.storeType_;
-                result.weightLimit_ = this.weightLimit_;
                 if (this.itemListBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
                         this.itemList_ = Collections.unmodifiableList(this.itemList_);
@@ -429,6 +427,8 @@ public final class PlayerStoreNotifyOuterClass {
                 } else {
                     result.itemList_ = this.itemListBuilder_.build();
                 }
+                result.weightLimit_ = this.weightLimit_;
+                result.storeType_ = this.storeType_;
                 onBuilt();
                 return result;
             }
@@ -476,12 +476,6 @@ public final class PlayerStoreNotifyOuterClass {
                 if (other == PlayerStoreNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.storeType_ != 0) {
-                    setStoreTypeValue(other.getStoreTypeValue());
-                }
-                if (other.getWeightLimit() != 0) {
-                    setWeightLimit(other.getWeightLimit());
-                }
                 if (this.itemListBuilder_ == null) {
                     if (!other.itemList_.isEmpty()) {
                         if (this.itemList_.isEmpty()) {
@@ -503,6 +497,12 @@ public final class PlayerStoreNotifyOuterClass {
                     } else {
                         this.itemListBuilder_.addAllMessages(other.itemList_);
                     }
+                }
+                if (other.getWeightLimit() != 0) {
+                    setWeightLimit(other.getWeightLimit());
+                }
+                if (other.storeType_ != 0) {
+                    setStoreTypeValue(other.getStoreTypeValue());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -534,55 +534,6 @@ public final class PlayerStoreNotifyOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerStoreNotifyOuterClass.PlayerStoreNotifyOrBuilder
-            public int getStoreTypeValue() {
-                return this.storeType_;
-            }
-
-            public Builder setStoreTypeValue(int value) {
-                this.storeType_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerStoreNotifyOuterClass.PlayerStoreNotifyOrBuilder
-            public StoreTypeOuterClass.StoreType getStoreType() {
-                StoreTypeOuterClass.StoreType result = StoreTypeOuterClass.StoreType.valueOf(this.storeType_);
-                return result == null ? StoreTypeOuterClass.StoreType.UNRECOGNIZED : result;
-            }
-
-            public Builder setStoreType(StoreTypeOuterClass.StoreType value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.storeType_ = value.getNumber();
-                onChanged();
-                return this;
-            }
-
-            public Builder clearStoreType() {
-                this.storeType_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerStoreNotifyOuterClass.PlayerStoreNotifyOrBuilder
-            public int getWeightLimit() {
-                return this.weightLimit_;
-            }
-
-            public Builder setWeightLimit(int value) {
-                this.weightLimit_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearWeightLimit() {
-                this.weightLimit_ = 0;
-                onChanged();
-                return this;
             }
 
             private void ensureItemListIsMutable() {
@@ -761,6 +712,55 @@ public final class PlayerStoreNotifyOuterClass {
                 return this.itemListBuilder_;
             }
 
+            @Override // emu.grasscutter.net.proto.PlayerStoreNotifyOuterClass.PlayerStoreNotifyOrBuilder
+            public int getWeightLimit() {
+                return this.weightLimit_;
+            }
+
+            public Builder setWeightLimit(int value) {
+                this.weightLimit_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearWeightLimit() {
+                this.weightLimit_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerStoreNotifyOuterClass.PlayerStoreNotifyOrBuilder
+            public int getStoreTypeValue() {
+                return this.storeType_;
+            }
+
+            public Builder setStoreTypeValue(int value) {
+                this.storeType_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerStoreNotifyOuterClass.PlayerStoreNotifyOrBuilder
+            public StoreTypeOuterClass.StoreType getStoreType() {
+                StoreTypeOuterClass.StoreType result = StoreTypeOuterClass.StoreType.valueOf(this.storeType_);
+                return result == null ? StoreTypeOuterClass.StoreType.UNRECOGNIZED : result;
+            }
+
+            public Builder setStoreType(StoreTypeOuterClass.StoreType value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.storeType_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+
+            public Builder clearStoreType() {
+                this.storeType_ = 0;
+                onChanged();
+                return this;
+            }
+
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
             public final Builder setUnknownFields(UnknownFieldSet unknownFields) {
                 return setUnknownFields(unknownFields);
@@ -796,7 +796,7 @@ public final class PlayerStoreNotifyOuterClass {
     }
 
     static {
-        ItemOuterClass.getDescriptor();
         StoreTypeOuterClass.getDescriptor();
+        ItemOuterClass.getDescriptor();
     }
 }

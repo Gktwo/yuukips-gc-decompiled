@@ -1,7 +1,6 @@
 package org.eclipse.jetty.xml;
 
 import dev.morphia.mapping.Mapper;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.annotation.Annotation;
@@ -487,7 +486,7 @@ public class XmlConfiguration {
                                     break;
                                 }
                                 break;
-                            case PacketOpcodes.GMShowNavMeshReq:
+                            case 2363:
                                 if (tag.equals("Id")) {
                                     c = 2;
                                     break;

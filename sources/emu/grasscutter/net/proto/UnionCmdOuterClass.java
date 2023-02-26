@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnionCmdOuterClass.class */
 public final class UnionCmdOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000eUnionCmd.proto\",\n\bUnionCmd\u0012\f\n\u0004body\u0018\u0003 \u0001(\f\u0012\u0012\n\nmessage_id\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000eUnionCmd.proto\"+\n\bUnionCmd\u0012\u0011\n\tmessageId\u0018\u0003 \u0001(\r\u0012\f\n\u0004body\u0018\u0005 \u0001(\fB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_UnionCmd_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_UnionCmd_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_UnionCmd_descriptor, new String[]{"Body", "MessageId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_UnionCmd_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_UnionCmd_descriptor, new String[]{"MessageId", "Body"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnionCmdOuterClass$UnionCmdOrBuilder.class */
     public interface UnionCmdOrBuilder extends MessageOrBuilder {
-        ByteString getBody();
-
         int getMessageId();
+
+        ByteString getBody();
     }
 
     private UnionCmdOuterClass() {
@@ -43,10 +43,10 @@ public final class UnionCmdOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnionCmdOuterClass$UnionCmd.class */
     public static final class UnionCmd extends GeneratedMessageV3 implements UnionCmdOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int BODY_FIELD_NUMBER = 3;
-        private ByteString body_;
-        public static final int MESSAGE_ID_FIELD_NUMBER = 4;
+        public static final int MESSAGEID_FIELD_NUMBER = 3;
         private int messageId_;
+        public static final int BODY_FIELD_NUMBER = 5;
+        private ByteString body_;
         private byte memoizedIsInitialized;
         private static final UnionCmd DEFAULT_INSTANCE = new UnionCmd();
         private static final Parser<UnionCmd> PARSER = new AbstractParser<UnionCmd>() { // from class: emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmd.1
@@ -93,11 +93,11 @@ public final class UnionCmdOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 26:
-                                this.body_ = input.readBytes();
-                                break;
-                            case 32:
+                            case 24:
                                 this.messageId_ = input.readUInt32();
+                                break;
+                            case 42:
+                                this.body_ = input.readBytes();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -129,13 +129,13 @@ public final class UnionCmdOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmdOrBuilder
-        public ByteString getBody() {
-            return this.body_;
+        public int getMessageId() {
+            return this.messageId_;
         }
 
         @Override // emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmdOrBuilder
-        public int getMessageId() {
-            return this.messageId_;
+        public ByteString getBody() {
+            return this.body_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -153,11 +153,11 @@ public final class UnionCmdOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (!this.body_.isEmpty()) {
-                output.writeBytes(3, this.body_);
-            }
             if (this.messageId_ != 0) {
-                output.writeUInt32(4, this.messageId_);
+                output.writeUInt32(3, this.messageId_);
+            }
+            if (!this.body_.isEmpty()) {
+                output.writeBytes(5, this.body_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,11 +169,11 @@ public final class UnionCmdOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (!this.body_.isEmpty()) {
-                size2 = 0 + CodedOutputStream.computeBytesSize(3, this.body_);
-            }
             if (this.messageId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(4, this.messageId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.messageId_);
+            }
+            if (!this.body_.isEmpty()) {
+                size2 += CodedOutputStream.computeBytesSize(5, this.body_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -189,7 +189,7 @@ public final class UnionCmdOuterClass {
                 return equals(obj);
             }
             UnionCmd other = (UnionCmd) obj;
-            return getBody().equals(other.getBody()) && getMessageId() == other.getMessageId() && this.unknownFields.equals(other.unknownFields);
+            return getMessageId() == other.getMessageId() && getBody().equals(other.getBody()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -197,7 +197,7 @@ public final class UnionCmdOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getBody().hashCode())) + 4)) + getMessageId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getMessageId())) + 5)) + getBody().hashCode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -276,8 +276,8 @@ public final class UnionCmdOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnionCmdOuterClass$UnionCmd$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements UnionCmdOrBuilder {
-            private ByteString body_ = ByteString.EMPTY;
             private int messageId_;
+            private ByteString body_ = ByteString.EMPTY;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return UnionCmdOuterClass.internal_static_UnionCmd_descriptor;
@@ -305,8 +305,8 @@ public final class UnionCmdOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.body_ = ByteString.EMPTY;
                 this.messageId_ = 0;
+                this.body_ = ByteString.EMPTY;
                 return this;
             }
 
@@ -332,8 +332,8 @@ public final class UnionCmdOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public UnionCmd buildPartial() {
                 UnionCmd result = new UnionCmd(this);
-                result.body_ = this.body_;
                 result.messageId_ = this.messageId_;
+                result.body_ = this.body_;
                 onBuilt();
                 return result;
             }
@@ -381,11 +381,11 @@ public final class UnionCmdOuterClass {
                 if (other == UnionCmd.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getBody() != ByteString.EMPTY) {
-                    setBody(other.getBody());
-                }
                 if (other.getMessageId() != 0) {
                     setMessageId(other.getMessageId());
+                }
+                if (other.getBody() != ByteString.EMPTY) {
+                    setBody(other.getBody());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -420,6 +420,23 @@ public final class UnionCmdOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmdOrBuilder
+            public int getMessageId() {
+                return this.messageId_;
+            }
+
+            public Builder setMessageId(int value) {
+                this.messageId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearMessageId() {
+                this.messageId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmdOrBuilder
             public ByteString getBody() {
                 return this.body_;
             }
@@ -435,23 +452,6 @@ public final class UnionCmdOuterClass {
 
             public Builder clearBody() {
                 this.body_ = UnionCmd.getDefaultInstance().getBody();
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.UnionCmdOuterClass.UnionCmdOrBuilder
-            public int getMessageId() {
-                return this.messageId_;
-            }
-
-            public Builder setMessageId(int value) {
-                this.messageId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearMessageId() {
-                this.messageId_ = 0;
                 onChanged();
                 return this;
             }

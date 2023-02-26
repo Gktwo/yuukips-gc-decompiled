@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ClientAbilityInitFinishNotifyOuterClass.class */
 public final class ClientAbilityInitFinishNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#ClientAbilityInitFinishNotify.proto\u001a\u0018AbilityInvokeEntry.proto\"X\n\u001dClientAbilityInitFinishNotify\u0012\u0011\n\tentity_id\u0018\u000b \u0001(\r\u0012$\n\u0007invokes\u0018\t \u0003(\u000b2\u0013.AbilityInvokeEntryB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityInvokeEntryOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#ClientAbilityInitFinishNotify.proto\u001a\u0018AbilityInvokeEntry.proto\"W\n\u001dClientAbilityInitFinishNotify\u0012\u0010\n\bentityId\u0018\u0001 \u0001(\r\u0012$\n\u0007invokes\u0018\u000e \u0003(\u000b2\u0013.AbilityInvokeEntryB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityInvokeEntryOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ClientAbilityInitFinishNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ClientAbilityInitFinishNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ClientAbilityInitFinishNotify_descriptor, new String[]{"EntityId", "Invokes"});
 
@@ -57,9 +57,9 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ClientAbilityInitFinishNotifyOuterClass$ClientAbilityInitFinishNotify.class */
     public static final class ClientAbilityInitFinishNotify extends GeneratedMessageV3 implements ClientAbilityInitFinishNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTITY_ID_FIELD_NUMBER = 11;
+        public static final int ENTITYID_FIELD_NUMBER = 1;
         private int entityId_;
-        public static final int INVOKES_FIELD_NUMBER = 9;
+        public static final int INVOKES_FIELD_NUMBER = 14;
         private List<AbilityInvokeEntryOuterClass.AbilityInvokeEntry> invokes_;
         private byte memoizedIsInitialized;
         private static final ClientAbilityInitFinishNotify DEFAULT_INSTANCE = new ClientAbilityInitFinishNotify();
@@ -110,15 +110,15 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 74:
+                                case 8:
+                                    this.entityId_ = input.readUInt32();
+                                    break;
+                                case 114:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.invokes_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.invokes_.add((AbilityInvokeEntryOuterClass.AbilityInvokeEntry) input.readMessage(AbilityInvokeEntryOuterClass.AbilityInvokeEntry.parser(), extensionRegistry));
-                                    break;
-                                case 88:
-                                    this.entityId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -198,11 +198,11 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            for (int i = 0; i < this.invokes_.size(); i++) {
-                output.writeMessage(9, this.invokes_.get(i));
-            }
             if (this.entityId_ != 0) {
-                output.writeUInt32(11, this.entityId_);
+                output.writeUInt32(1, this.entityId_);
+            }
+            for (int i = 0; i < this.invokes_.size(); i++) {
+                output.writeMessage(14, this.invokes_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -214,11 +214,11 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            for (int i = 0; i < this.invokes_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(9, this.invokes_.get(i));
-            }
             if (this.entityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.entityId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.entityId_);
+            }
+            for (int i = 0; i < this.invokes_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(14, this.invokes_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -242,9 +242,9 @@ public final class ClientAbilityInitFinishNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getEntityId();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getEntityId();
             if (getInvokesCount() > 0) {
-                hash = (53 * ((37 * hash) + 9)) + getInvokesList().hashCode();
+                hash = (53 * ((37 * hash) + 14)) + getInvokesList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VintageMarketDeliverItemRspOuterClass.class */
 public final class VintageMarketDeliverItemRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!VintageMarketDeliverItemRsp.proto\"A\n\u001bVintageMarketDeliverItemRsp\u0012\u000f\n\u0007retcode\u0018\t \u0001(\u0005\u0012\u0011\n\ttrader_id\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!VintageMarketDeliverItemRsp.proto\"@\n\u001bVintageMarketDeliverItemRsp\u0012\u0010\n\btraderId\u0018\u000e \u0001(\r\u0012\u000f\n\u0007retcode\u0018\n \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_VintageMarketDeliverItemRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_VintageMarketDeliverItemRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_VintageMarketDeliverItemRsp_descriptor, new String[]{"Retcode", "TraderId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_VintageMarketDeliverItemRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_VintageMarketDeliverItemRsp_descriptor, new String[]{"TraderId", "Retcode"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VintageMarketDeliverItemRspOuterClass$VintageMarketDeliverItemRspOrBuilder.class */
     public interface VintageMarketDeliverItemRspOrBuilder extends MessageOrBuilder {
-        int getRetcode();
-
         int getTraderId();
+
+        int getRetcode();
     }
 
     private VintageMarketDeliverItemRspOuterClass() {
@@ -43,10 +43,10 @@ public final class VintageMarketDeliverItemRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VintageMarketDeliverItemRspOuterClass$VintageMarketDeliverItemRsp.class */
     public static final class VintageMarketDeliverItemRsp extends GeneratedMessageV3 implements VintageMarketDeliverItemRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 9;
-        private int retcode_;
-        public static final int TRADER_ID_FIELD_NUMBER = 6;
+        public static final int TRADERID_FIELD_NUMBER = 14;
         private int traderId_;
+        public static final int RETCODE_FIELD_NUMBER = 10;
+        private int retcode_;
         private byte memoizedIsInitialized;
         private static final VintageMarketDeliverItemRsp DEFAULT_INSTANCE = new VintageMarketDeliverItemRsp();
         private static final Parser<VintageMarketDeliverItemRsp> PARSER = new AbstractParser<VintageMarketDeliverItemRsp>() { // from class: emu.grasscutter.net.proto.VintageMarketDeliverItemRspOuterClass.VintageMarketDeliverItemRsp.1
@@ -92,11 +92,11 @@ public final class VintageMarketDeliverItemRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 48:
-                                this.traderId_ = input.readUInt32();
-                                break;
-                            case 72:
+                            case 80:
                                 this.retcode_ = input.readInt32();
+                                break;
+                            case 112:
+                                this.traderId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -128,13 +128,13 @@ public final class VintageMarketDeliverItemRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.VintageMarketDeliverItemRspOuterClass.VintageMarketDeliverItemRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
+        public int getTraderId() {
+            return this.traderId_;
         }
 
         @Override // emu.grasscutter.net.proto.VintageMarketDeliverItemRspOuterClass.VintageMarketDeliverItemRspOrBuilder
-        public int getTraderId() {
-            return this.traderId_;
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -152,11 +152,11 @@ public final class VintageMarketDeliverItemRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.traderId_ != 0) {
-                output.writeUInt32(6, this.traderId_);
-            }
             if (this.retcode_ != 0) {
-                output.writeInt32(9, this.retcode_);
+                output.writeInt32(10, this.retcode_);
+            }
+            if (this.traderId_ != 0) {
+                output.writeUInt32(14, this.traderId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class VintageMarketDeliverItemRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.traderId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.traderId_);
-            }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(9, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(10, this.retcode_);
+            }
+            if (this.traderId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(14, this.traderId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -188,7 +188,7 @@ public final class VintageMarketDeliverItemRspOuterClass {
                 return equals(obj);
             }
             VintageMarketDeliverItemRsp other = (VintageMarketDeliverItemRsp) obj;
-            return getRetcode() == other.getRetcode() && getTraderId() == other.getTraderId() && this.unknownFields.equals(other.unknownFields);
+            return getTraderId() == other.getTraderId() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -196,7 +196,7 @@ public final class VintageMarketDeliverItemRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getRetcode())) + 6)) + getTraderId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getTraderId())) + 10)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -275,8 +275,8 @@ public final class VintageMarketDeliverItemRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VintageMarketDeliverItemRspOuterClass$VintageMarketDeliverItemRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements VintageMarketDeliverItemRspOrBuilder {
-            private int retcode_;
             private int traderId_;
+            private int retcode_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return VintageMarketDeliverItemRspOuterClass.internal_static_VintageMarketDeliverItemRsp_descriptor;
@@ -304,8 +304,8 @@ public final class VintageMarketDeliverItemRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.retcode_ = 0;
                 this.traderId_ = 0;
+                this.retcode_ = 0;
                 return this;
             }
 
@@ -331,8 +331,8 @@ public final class VintageMarketDeliverItemRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public VintageMarketDeliverItemRsp buildPartial() {
                 VintageMarketDeliverItemRsp result = new VintageMarketDeliverItemRsp(this);
-                result.retcode_ = this.retcode_;
                 result.traderId_ = this.traderId_;
+                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -380,11 +380,11 @@ public final class VintageMarketDeliverItemRspOuterClass {
                 if (other == VintageMarketDeliverItemRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
                 if (other.getTraderId() != 0) {
                     setTraderId(other.getTraderId());
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -419,23 +419,6 @@ public final class VintageMarketDeliverItemRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.VintageMarketDeliverItemRspOuterClass.VintageMarketDeliverItemRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.VintageMarketDeliverItemRspOuterClass.VintageMarketDeliverItemRspOrBuilder
             public int getTraderId() {
                 return this.traderId_;
             }
@@ -448,6 +431,23 @@ public final class VintageMarketDeliverItemRspOuterClass {
 
             public Builder clearTraderId() {
                 this.traderId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.VintageMarketDeliverItemRspOuterClass.VintageMarketDeliverItemRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }

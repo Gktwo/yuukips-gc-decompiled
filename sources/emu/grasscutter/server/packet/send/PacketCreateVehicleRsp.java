@@ -10,7 +10,7 @@ import emu.grasscutter.utils.Position;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketCreateVehicleRsp.class */
 public class PacketCreateVehicleRsp extends BasePacket {
     public PacketCreateVehicleRsp(Player player, int vehicleId, int pointId, Position pos, Position rot) {
-        super(817);
+        super(818);
         CreateVehicleRspOuterClass.CreateVehicleRsp.Builder proto = CreateVehicleRspOuterClass.CreateVehicleRsp.newBuilder();
         player.getScene().getEntities().values().stream().filter(entity -> {
             return (entity instanceof EntityVehicle) && ((EntityVehicle) entity).getGadgetId() == vehicleId && ((EntityVehicle) entity).getOwner().equals(player);

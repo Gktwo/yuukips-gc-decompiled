@@ -19,19 +19,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PotionLevelDataOuterClass.class */
 public final class PotionLevelDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015PotionLevelData.proto\"]\n\u000fPotionLevelData\u0012\u0018\n\u0010difficulty_level\u0018\u0003 \u0001(\r\u0012\u000f\n\u0007mode_id\u0018\u0007 \u0001(\r\u0012\r\n\u0005score\u0018\u0001 \u0001(\r\u0012\u0010\n\blevel_id\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015PotionLevelData.proto\"Z\n\u000fPotionLevelData\u0012\r\n\u0005score\u0018\f \u0001(\r\u0012\u000f\n\u0007levelId\u0018\u0006 \u0001(\r\u0012\u0017\n\u000fdifficultyLevel\u0018\n \u0001(\r\u0012\u000e\n\u0006modeId\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PotionLevelData_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PotionLevelData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PotionLevelData_descriptor, new String[]{"DifficultyLevel", "ModeId", "Score", "LevelId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PotionLevelData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PotionLevelData_descriptor, new String[]{"Score", "LevelId", "DifficultyLevel", "ModeId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PotionLevelDataOuterClass$PotionLevelDataOrBuilder.class */
     public interface PotionLevelDataOrBuilder extends MessageOrBuilder {
-        int getDifficultyLevel();
-
-        int getModeId();
-
         int getScore();
 
         int getLevelId();
+
+        int getDifficultyLevel();
+
+        int getModeId();
     }
 
     private PotionLevelDataOuterClass() {
@@ -47,14 +47,14 @@ public final class PotionLevelDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PotionLevelDataOuterClass$PotionLevelData.class */
     public static final class PotionLevelData extends GeneratedMessageV3 implements PotionLevelDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int DIFFICULTY_LEVEL_FIELD_NUMBER = 3;
-        private int difficultyLevel_;
-        public static final int MODE_ID_FIELD_NUMBER = 7;
-        private int modeId_;
-        public static final int SCORE_FIELD_NUMBER = 1;
+        public static final int SCORE_FIELD_NUMBER = 12;
         private int score_;
-        public static final int LEVEL_ID_FIELD_NUMBER = 9;
+        public static final int LEVELID_FIELD_NUMBER = 6;
         private int levelId_;
+        public static final int DIFFICULTYLEVEL_FIELD_NUMBER = 10;
+        private int difficultyLevel_;
+        public static final int MODEID_FIELD_NUMBER = 11;
+        private int modeId_;
         private byte memoizedIsInitialized;
         private static final PotionLevelData DEFAULT_INSTANCE = new PotionLevelData();
         private static final Parser<PotionLevelData> PARSER = new AbstractParser<PotionLevelData>() { // from class: emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelData.1
@@ -101,17 +101,17 @@ public final class PotionLevelDataOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
-                                    this.score_ = input.readUInt32();
+                                case 48:
+                                    this.levelId_ = input.readUInt32();
                                     break;
-                                case 24:
+                                case 80:
                                     this.difficultyLevel_ = input.readUInt32();
                                     break;
-                                case 56:
+                                case 88:
                                     this.modeId_ = input.readUInt32();
                                     break;
-                                case 72:
-                                    this.levelId_ = input.readUInt32();
+                                case 96:
+                                    this.score_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -144,16 +144,6 @@ public final class PotionLevelDataOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelDataOrBuilder
-        public int getDifficultyLevel() {
-            return this.difficultyLevel_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelDataOrBuilder
-        public int getModeId() {
-            return this.modeId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelDataOrBuilder
         public int getScore() {
             return this.score_;
         }
@@ -161,6 +151,16 @@ public final class PotionLevelDataOuterClass {
         @Override // emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelDataOrBuilder
         public int getLevelId() {
             return this.levelId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelDataOrBuilder
+        public int getDifficultyLevel() {
+            return this.difficultyLevel_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelDataOrBuilder
+        public int getModeId() {
+            return this.modeId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -178,17 +178,17 @@ public final class PotionLevelDataOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.score_ != 0) {
-                output.writeUInt32(1, this.score_);
+            if (this.levelId_ != 0) {
+                output.writeUInt32(6, this.levelId_);
             }
             if (this.difficultyLevel_ != 0) {
-                output.writeUInt32(3, this.difficultyLevel_);
+                output.writeUInt32(10, this.difficultyLevel_);
             }
             if (this.modeId_ != 0) {
-                output.writeUInt32(7, this.modeId_);
+                output.writeUInt32(11, this.modeId_);
             }
-            if (this.levelId_ != 0) {
-                output.writeUInt32(9, this.levelId_);
+            if (this.score_ != 0) {
+                output.writeUInt32(12, this.score_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,17 +200,17 @@ public final class PotionLevelDataOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.score_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.score_);
+            if (this.levelId_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.levelId_);
             }
             if (this.difficultyLevel_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(3, this.difficultyLevel_);
+                size2 += CodedOutputStream.computeUInt32Size(10, this.difficultyLevel_);
             }
             if (this.modeId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.modeId_);
+                size2 += CodedOutputStream.computeUInt32Size(11, this.modeId_);
             }
-            if (this.levelId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.levelId_);
+            if (this.score_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(12, this.score_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class PotionLevelDataOuterClass {
                 return equals(obj);
             }
             PotionLevelData other = (PotionLevelData) obj;
-            return getDifficultyLevel() == other.getDifficultyLevel() && getModeId() == other.getModeId() && getScore() == other.getScore() && getLevelId() == other.getLevelId() && this.unknownFields.equals(other.unknownFields);
+            return getScore() == other.getScore() && getLevelId() == other.getLevelId() && getDifficultyLevel() == other.getDifficultyLevel() && getModeId() == other.getModeId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -234,7 +234,7 @@ public final class PotionLevelDataOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getDifficultyLevel())) + 7)) + getModeId())) + 1)) + getScore())) + 9)) + getLevelId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getScore())) + 6)) + getLevelId())) + 10)) + getDifficultyLevel())) + 11)) + getModeId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -313,10 +313,10 @@ public final class PotionLevelDataOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PotionLevelDataOuterClass$PotionLevelData$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements PotionLevelDataOrBuilder {
-            private int difficultyLevel_;
-            private int modeId_;
             private int score_;
             private int levelId_;
+            private int difficultyLevel_;
+            private int modeId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return PotionLevelDataOuterClass.internal_static_PotionLevelData_descriptor;
@@ -344,10 +344,10 @@ public final class PotionLevelDataOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.difficultyLevel_ = 0;
-                this.modeId_ = 0;
                 this.score_ = 0;
                 this.levelId_ = 0;
+                this.difficultyLevel_ = 0;
+                this.modeId_ = 0;
                 return this;
             }
 
@@ -373,10 +373,10 @@ public final class PotionLevelDataOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public PotionLevelData buildPartial() {
                 PotionLevelData result = new PotionLevelData(this);
-                result.difficultyLevel_ = this.difficultyLevel_;
-                result.modeId_ = this.modeId_;
                 result.score_ = this.score_;
                 result.levelId_ = this.levelId_;
+                result.difficultyLevel_ = this.difficultyLevel_;
+                result.modeId_ = this.modeId_;
                 onBuilt();
                 return result;
             }
@@ -424,17 +424,17 @@ public final class PotionLevelDataOuterClass {
                 if (other == PotionLevelData.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getDifficultyLevel() != 0) {
-                    setDifficultyLevel(other.getDifficultyLevel());
-                }
-                if (other.getModeId() != 0) {
-                    setModeId(other.getModeId());
-                }
                 if (other.getScore() != 0) {
                     setScore(other.getScore());
                 }
                 if (other.getLevelId() != 0) {
                     setLevelId(other.getLevelId());
+                }
+                if (other.getDifficultyLevel() != 0) {
+                    setDifficultyLevel(other.getDifficultyLevel());
+                }
+                if (other.getModeId() != 0) {
+                    setModeId(other.getModeId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -469,40 +469,6 @@ public final class PotionLevelDataOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelDataOrBuilder
-            public int getDifficultyLevel() {
-                return this.difficultyLevel_;
-            }
-
-            public Builder setDifficultyLevel(int value) {
-                this.difficultyLevel_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearDifficultyLevel() {
-                this.difficultyLevel_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelDataOrBuilder
-            public int getModeId() {
-                return this.modeId_;
-            }
-
-            public Builder setModeId(int value) {
-                this.modeId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearModeId() {
-                this.modeId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelDataOrBuilder
             public int getScore() {
                 return this.score_;
             }
@@ -532,6 +498,40 @@ public final class PotionLevelDataOuterClass {
 
             public Builder clearLevelId() {
                 this.levelId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelDataOrBuilder
+            public int getDifficultyLevel() {
+                return this.difficultyLevel_;
+            }
+
+            public Builder setDifficultyLevel(int value) {
+                this.difficultyLevel_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearDifficultyLevel() {
+                this.difficultyLevel_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelDataOrBuilder
+            public int getModeId() {
+                return this.modeId_;
+            }
+
+            public Builder setModeId(int value) {
+                this.modeId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearModeId() {
+                this.modeId_ = 0;
                 onChanged();
                 return this;
             }

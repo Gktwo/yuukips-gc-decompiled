@@ -25,14 +25,12 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WinterCampGiveFriendItemReqOuterClass.class */
 public final class WinterCampGiveFriendItemReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!WinterCampGiveFriendItemReq.proto\u001a\u000fItemParam.proto\"I\n\u001bWinterCampGiveFriendItemReq\u0012\u000b\n\u0003uid\u0018\u000b \u0001(\r\u0012\u001d\n\titem_list\u0018\u0003 \u0003(\u000b2\n.ItemParamB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!WinterCampGiveFriendItemReq.proto\u001a\u000fItemParam.proto\"H\n\u001bWinterCampGiveFriendItemReq\u0012\u001c\n\bitemList\u0018\u0005 \u0003(\u000b2\n.ItemParam\u0012\u000b\n\u0003uid\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_WinterCampGiveFriendItemReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_WinterCampGiveFriendItemReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WinterCampGiveFriendItemReq_descriptor, new String[]{"Uid", "ItemList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_WinterCampGiveFriendItemReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WinterCampGiveFriendItemReq_descriptor, new String[]{"ItemList", "Uid"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WinterCampGiveFriendItemReqOuterClass$WinterCampGiveFriendItemReqOrBuilder.class */
     public interface WinterCampGiveFriendItemReqOrBuilder extends MessageOrBuilder {
-        int getUid();
-
         List<ItemParamOuterClass.ItemParam> getItemListList();
 
         ItemParamOuterClass.ItemParam getItemList(int i);
@@ -42,6 +40,8 @@ public final class WinterCampGiveFriendItemReqOuterClass {
         List<? extends ItemParamOuterClass.ItemParamOrBuilder> getItemListOrBuilderList();
 
         ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(int i);
+
+        int getUid();
     }
 
     private WinterCampGiveFriendItemReqOuterClass() {
@@ -57,10 +57,10 @@ public final class WinterCampGiveFriendItemReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WinterCampGiveFriendItemReqOuterClass$WinterCampGiveFriendItemReq.class */
     public static final class WinterCampGiveFriendItemReq extends GeneratedMessageV3 implements WinterCampGiveFriendItemReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int UID_FIELD_NUMBER = 11;
-        private int uid_;
-        public static final int ITEM_LIST_FIELD_NUMBER = 3;
+        public static final int ITEMLIST_FIELD_NUMBER = 5;
         private List<ItemParamOuterClass.ItemParam> itemList_;
+        public static final int UID_FIELD_NUMBER = 2;
+        private int uid_;
         private byte memoizedIsInitialized;
         private static final WinterCampGiveFriendItemReq DEFAULT_INSTANCE = new WinterCampGiveFriendItemReq();
         private static final Parser<WinterCampGiveFriendItemReq> PARSER = new AbstractParser<WinterCampGiveFriendItemReq>() { // from class: emu.grasscutter.net.proto.WinterCampGiveFriendItemReqOuterClass.WinterCampGiveFriendItemReq.1
@@ -110,15 +110,15 @@ public final class WinterCampGiveFriendItemReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 26:
+                                case 16:
+                                    this.uid_ = input.readUInt32();
+                                    break;
+                                case 42:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.itemList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.itemList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-                                    break;
-                                case 88:
-                                    this.uid_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -154,11 +154,6 @@ public final class WinterCampGiveFriendItemReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.WinterCampGiveFriendItemReqOuterClass.WinterCampGiveFriendItemReqOrBuilder
-        public int getUid() {
-            return this.uid_;
-        }
-
-        @Override // emu.grasscutter.net.proto.WinterCampGiveFriendItemReqOuterClass.WinterCampGiveFriendItemReqOrBuilder
         public List<ItemParamOuterClass.ItemParam> getItemListList() {
             return this.itemList_;
         }
@@ -183,6 +178,11 @@ public final class WinterCampGiveFriendItemReqOuterClass {
             return this.itemList_.get(index);
         }
 
+        @Override // emu.grasscutter.net.proto.WinterCampGiveFriendItemReqOuterClass.WinterCampGiveFriendItemReqOrBuilder
+        public int getUid() {
+            return this.uid_;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -198,11 +198,11 @@ public final class WinterCampGiveFriendItemReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            for (int i = 0; i < this.itemList_.size(); i++) {
-                output.writeMessage(3, this.itemList_.get(i));
-            }
             if (this.uid_ != 0) {
-                output.writeUInt32(11, this.uid_);
+                output.writeUInt32(2, this.uid_);
+            }
+            for (int i = 0; i < this.itemList_.size(); i++) {
+                output.writeMessage(5, this.itemList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -214,11 +214,11 @@ public final class WinterCampGiveFriendItemReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            for (int i = 0; i < this.itemList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(3, this.itemList_.get(i));
-            }
             if (this.uid_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.uid_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.uid_);
+            }
+            for (int i = 0; i < this.itemList_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(5, this.itemList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -234,7 +234,7 @@ public final class WinterCampGiveFriendItemReqOuterClass {
                 return equals(obj);
             }
             WinterCampGiveFriendItemReq other = (WinterCampGiveFriendItemReq) obj;
-            return getUid() == other.getUid() && getItemListList().equals(other.getItemListList()) && this.unknownFields.equals(other.unknownFields);
+            return getItemListList().equals(other.getItemListList()) && getUid() == other.getUid() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -242,11 +242,11 @@ public final class WinterCampGiveFriendItemReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getUid();
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (getItemListCount() > 0) {
-                hash = (53 * ((37 * hash) + 3)) + getItemListList().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getItemListList().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 2)) + getUid())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -326,9 +326,9 @@ public final class WinterCampGiveFriendItemReqOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WinterCampGiveFriendItemReqOuterClass$WinterCampGiveFriendItemReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements WinterCampGiveFriendItemReqOrBuilder {
             private int bitField0_;
-            private int uid_;
             private List<ItemParamOuterClass.ItemParam> itemList_ = Collections.emptyList();
             private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> itemListBuilder_;
+            private int uid_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return WinterCampGiveFriendItemReqOuterClass.internal_static_WinterCampGiveFriendItemReq_descriptor;
@@ -357,13 +357,13 @@ public final class WinterCampGiveFriendItemReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.uid_ = 0;
                 if (this.itemListBuilder_ == null) {
                     this.itemList_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
                     this.itemListBuilder_.clear();
                 }
+                this.uid_ = 0;
                 return this;
             }
 
@@ -390,7 +390,6 @@ public final class WinterCampGiveFriendItemReqOuterClass {
             public WinterCampGiveFriendItemReq buildPartial() {
                 WinterCampGiveFriendItemReq result = new WinterCampGiveFriendItemReq(this);
                 int i = this.bitField0_;
-                result.uid_ = this.uid_;
                 if (this.itemListBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
                         this.itemList_ = Collections.unmodifiableList(this.itemList_);
@@ -400,6 +399,7 @@ public final class WinterCampGiveFriendItemReqOuterClass {
                 } else {
                     result.itemList_ = this.itemListBuilder_.build();
                 }
+                result.uid_ = this.uid_;
                 onBuilt();
                 return result;
             }
@@ -447,9 +447,6 @@ public final class WinterCampGiveFriendItemReqOuterClass {
                 if (other == WinterCampGiveFriendItemReq.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getUid() != 0) {
-                    setUid(other.getUid());
-                }
                 if (this.itemListBuilder_ == null) {
                     if (!other.itemList_.isEmpty()) {
                         if (this.itemList_.isEmpty()) {
@@ -471,6 +468,9 @@ public final class WinterCampGiveFriendItemReqOuterClass {
                     } else {
                         this.itemListBuilder_.addAllMessages(other.itemList_);
                     }
+                }
+                if (other.getUid() != 0) {
+                    setUid(other.getUid());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -502,23 +502,6 @@ public final class WinterCampGiveFriendItemReqOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.WinterCampGiveFriendItemReqOuterClass.WinterCampGiveFriendItemReqOrBuilder
-            public int getUid() {
-                return this.uid_;
-            }
-
-            public Builder setUid(int value) {
-                this.uid_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUid() {
-                this.uid_ = 0;
-                onChanged();
-                return this;
             }
 
             private void ensureItemListIsMutable() {
@@ -695,6 +678,23 @@ public final class WinterCampGiveFriendItemReqOuterClass {
                     this.itemList_ = null;
                 }
                 return this.itemListBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.WinterCampGiveFriendItemReqOuterClass.WinterCampGiveFriendItemReqOrBuilder
+            public int getUid() {
+                return this.uid_;
+            }
+
+            public Builder setUid(int value) {
+                this.uid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUid() {
+                this.uid_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

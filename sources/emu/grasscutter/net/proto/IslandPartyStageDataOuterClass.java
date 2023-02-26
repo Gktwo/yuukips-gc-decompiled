@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IslandPartyStageDataOuterClass.class */
 public final class IslandPartyStageDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aIslandPartyStageData.proto\"M\n\u0014IslandPartyStageData\u0012\u0012\n\nbest_score\u0018\u000e \u0001(\r\u0012\u0010\n\bstage_id\u0018\u0003 \u0001(\r\u0012\u000f\n\u0007is_open\u0018\t \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aIslandPartyStageData.proto\"J\n\u0014IslandPartyStageData\u0012\u0011\n\tbestScore\u0018\u0005 \u0001(\r\u0012\u000f\n\u0007stageId\u0018\u0002 \u0001(\r\u0012\u000e\n\u0006isOpen\u0018\u0001 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_IslandPartyStageData_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_IslandPartyStageData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_IslandPartyStageData_descriptor, new String[]{"BestScore", "StageId", "IsOpen"});
 
@@ -46,11 +46,11 @@ public final class IslandPartyStageDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IslandPartyStageDataOuterClass$IslandPartyStageData.class */
     public static final class IslandPartyStageData extends GeneratedMessageV3 implements IslandPartyStageDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int BEST_SCORE_FIELD_NUMBER = 14;
+        public static final int BESTSCORE_FIELD_NUMBER = 5;
         private int bestScore_;
-        public static final int STAGE_ID_FIELD_NUMBER = 3;
+        public static final int STAGEID_FIELD_NUMBER = 2;
         private int stageId_;
-        public static final int IS_OPEN_FIELD_NUMBER = 9;
+        public static final int ISOPEN_FIELD_NUMBER = 1;
         private boolean isOpen_;
         private byte memoizedIsInitialized;
         private static final IslandPartyStageData DEFAULT_INSTANCE = new IslandPartyStageData();
@@ -98,13 +98,13 @@ public final class IslandPartyStageDataOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 24:
-                                    this.stageId_ = input.readUInt32();
-                                    break;
-                                case 72:
+                                case 8:
                                     this.isOpen_ = input.readBool();
                                     break;
-                                case 112:
+                                case 16:
+                                    this.stageId_ = input.readUInt32();
+                                    break;
+                                case 40:
                                     this.bestScore_ = input.readUInt32();
                                     break;
                                 default:
@@ -167,14 +167,14 @@ public final class IslandPartyStageDataOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.stageId_ != 0) {
-                output.writeUInt32(3, this.stageId_);
-            }
             if (this.isOpen_) {
-                output.writeBool(9, this.isOpen_);
+                output.writeBool(1, this.isOpen_);
+            }
+            if (this.stageId_ != 0) {
+                output.writeUInt32(2, this.stageId_);
             }
             if (this.bestScore_ != 0) {
-                output.writeUInt32(14, this.bestScore_);
+                output.writeUInt32(5, this.bestScore_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class IslandPartyStageDataOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.stageId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.stageId_);
-            }
             if (this.isOpen_) {
-                size2 += CodedOutputStream.computeBoolSize(9, this.isOpen_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(1, this.isOpen_);
+            }
+            if (this.stageId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(2, this.stageId_);
             }
             if (this.bestScore_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.bestScore_);
+                size2 += CodedOutputStream.computeUInt32Size(5, this.bestScore_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -217,7 +217,7 @@ public final class IslandPartyStageDataOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getBestScore())) + 3)) + getStageId())) + 9)) + Internal.hashBoolean(getIsOpen()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getBestScore())) + 2)) + getStageId())) + 1)) + Internal.hashBoolean(getIsOpen()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

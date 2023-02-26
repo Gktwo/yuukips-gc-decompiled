@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ServerBuffOuterClass.class */
 public final class ServerBuffOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010ServerBuff.proto\"\u0001\n\nServerBuff\u0012\u0017\n\u000fserver_buff_uid\u0018\u0001 \u0001(\r\u0012\u0016\n\u000eserver_buff_id\u0018\u0002 \u0001(\r\u0012\u0018\n\u0010server_buff_type\u0018\u0003 \u0001(\r\u0012\u001d\n\u0015instanced_modifier_id\u0018\u0004 \u0001(\r\u0012\u0019\n\u0011is_modifier_added\u0018\u0005 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010ServerBuff.proto\"\u0001\n\nServerBuff\u0012\u0015\n\rserverBuffUid\u0018\u0001 \u0001(\r\u0012\u0014\n\fserverBuffId\u0018\u0002 \u0001(\r\u0012\u0016\n\u000eserverBuffType\u0018\u0003 \u0001(\r\u0012\u001b\n\u0013instancedModifierId\u0018\u0004 \u0001(\r\u0012\u0017\n\u000fisModifierAdded\u0018\u0005 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ServerBuff_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ServerBuff_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ServerBuff_descriptor, new String[]{"ServerBuffUid", "ServerBuffId", "ServerBuffType", "InstancedModifierId", "IsModifierAdded"});
 
@@ -50,15 +50,15 @@ public final class ServerBuffOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ServerBuffOuterClass$ServerBuff.class */
     public static final class ServerBuff extends GeneratedMessageV3 implements ServerBuffOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SERVER_BUFF_UID_FIELD_NUMBER = 1;
+        public static final int SERVERBUFFUID_FIELD_NUMBER = 1;
         private int serverBuffUid_;
-        public static final int SERVER_BUFF_ID_FIELD_NUMBER = 2;
+        public static final int SERVERBUFFID_FIELD_NUMBER = 2;
         private int serverBuffId_;
-        public static final int SERVER_BUFF_TYPE_FIELD_NUMBER = 3;
+        public static final int SERVERBUFFTYPE_FIELD_NUMBER = 3;
         private int serverBuffType_;
-        public static final int INSTANCED_MODIFIER_ID_FIELD_NUMBER = 4;
+        public static final int INSTANCEDMODIFIERID_FIELD_NUMBER = 4;
         private int instancedModifierId_;
-        public static final int IS_MODIFIER_ADDED_FIELD_NUMBER = 5;
+        public static final int ISMODIFIERADDED_FIELD_NUMBER = 5;
         private boolean isModifierAdded_;
         private byte memoizedIsInitialized;
         private static final ServerBuff DEFAULT_INSTANCE = new ServerBuff();

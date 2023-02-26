@@ -15,7 +15,7 @@ public class ByteArrayPriorityQueue implements BytePriorityQueue, Serializable {
     protected int size;
 
     /* renamed from: c */
-    protected ByteComparator f1256c;
+    protected ByteComparator f1220c;
     protected transient int firstIndex;
     protected transient boolean firstIndexValid;
 
@@ -24,7 +24,7 @@ public class ByteArrayPriorityQueue implements BytePriorityQueue, Serializable {
         if (capacity > 0) {
             this.array = new byte[capacity];
         }
-        this.f1256c = c;
+        this.f1220c = c;
     }
 
     public ByteArrayPriorityQueue(int capacity) {
@@ -65,12 +65,12 @@ public class ByteArrayPriorityQueue implements BytePriorityQueue, Serializable {
         int i = this.size - 1;
         int firstIndex = i;
         byte first = this.array[firstIndex];
-        if (this.f1256c != null) {
+        if (this.f1220c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f1256c.compare(this.array[i], first) < 0) {
+                } else if (this.f1220c.compare(this.array[i], first) < 0) {
                     firstIndex = i;
                     first = this.array[i];
                 }
@@ -103,11 +103,11 @@ public class ByteArrayPriorityQueue implements BytePriorityQueue, Serializable {
         }
         if (!this.firstIndexValid) {
             this.firstIndexValid = false;
-        } else if (this.f1256c == null) {
+        } else if (this.f1220c == null) {
             if (x < this.array[this.firstIndex]) {
                 this.firstIndex = this.size;
             }
-        } else if (this.f1256c.compare(x, this.array[this.firstIndex]) < 0) {
+        } else if (this.f1220c.compare(x, this.array[this.firstIndex]) < 0) {
             this.firstIndex = this.size;
         }
         byte[] bArr = this.array;
@@ -159,7 +159,7 @@ public class ByteArrayPriorityQueue implements BytePriorityQueue, Serializable {
     /* Return type fixed from 'it.unimi.dsi.fastutil.bytes.ByteComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.bytes.BytePriorityQueue, p014it.unimi.dsi.fastutil.PriorityQueue
     public Comparator<? super Byte> comparator() {
-        return this.f1256c;
+        return this.f1220c;
     }
 
     private void writeObject(ObjectOutputStream s) throws IOException {

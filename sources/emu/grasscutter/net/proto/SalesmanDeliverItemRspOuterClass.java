@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SalesmanDeliverItemRspOuterClass.class */
 public final class SalesmanDeliverItemRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cSalesmanDeliverItemRsp.proto\">\n\u0016SalesmanDeliverItemRsp\u0012\u000f\n\u0007retcode\u0018\u0004 \u0001(\u0005\u0012\u0013\n\u000bschedule_id\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cSalesmanDeliverItemRsp.proto\"=\n\u0016SalesmanDeliverItemRsp\u0012\u0012\n\nscheduleId\u0018\u0001 \u0001(\r\u0012\u000f\n\u0007retcode\u0018\n \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SalesmanDeliverItemRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SalesmanDeliverItemRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SalesmanDeliverItemRsp_descriptor, new String[]{"Retcode", "ScheduleId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SalesmanDeliverItemRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SalesmanDeliverItemRsp_descriptor, new String[]{"ScheduleId", "Retcode"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SalesmanDeliverItemRspOuterClass$SalesmanDeliverItemRspOrBuilder.class */
     public interface SalesmanDeliverItemRspOrBuilder extends MessageOrBuilder {
-        int getRetcode();
-
         int getScheduleId();
+
+        int getRetcode();
     }
 
     private SalesmanDeliverItemRspOuterClass() {
@@ -43,10 +43,10 @@ public final class SalesmanDeliverItemRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SalesmanDeliverItemRspOuterClass$SalesmanDeliverItemRsp.class */
     public static final class SalesmanDeliverItemRsp extends GeneratedMessageV3 implements SalesmanDeliverItemRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 4;
-        private int retcode_;
-        public static final int SCHEDULE_ID_FIELD_NUMBER = 8;
+        public static final int SCHEDULEID_FIELD_NUMBER = 1;
         private int scheduleId_;
+        public static final int RETCODE_FIELD_NUMBER = 10;
+        private int retcode_;
         private byte memoizedIsInitialized;
         private static final SalesmanDeliverItemRsp DEFAULT_INSTANCE = new SalesmanDeliverItemRsp();
         private static final Parser<SalesmanDeliverItemRsp> PARSER = new AbstractParser<SalesmanDeliverItemRsp>() { // from class: emu.grasscutter.net.proto.SalesmanDeliverItemRspOuterClass.SalesmanDeliverItemRsp.1
@@ -92,11 +92,11 @@ public final class SalesmanDeliverItemRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 32:
-                                this.retcode_ = input.readInt32();
-                                break;
-                            case 64:
+                            case 8:
                                 this.scheduleId_ = input.readUInt32();
+                                break;
+                            case 80:
+                                this.retcode_ = input.readInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -128,13 +128,13 @@ public final class SalesmanDeliverItemRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SalesmanDeliverItemRspOuterClass.SalesmanDeliverItemRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
+        public int getScheduleId() {
+            return this.scheduleId_;
         }
 
         @Override // emu.grasscutter.net.proto.SalesmanDeliverItemRspOuterClass.SalesmanDeliverItemRspOrBuilder
-        public int getScheduleId() {
-            return this.scheduleId_;
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -152,11 +152,11 @@ public final class SalesmanDeliverItemRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.retcode_ != 0) {
-                output.writeInt32(4, this.retcode_);
-            }
             if (this.scheduleId_ != 0) {
-                output.writeUInt32(8, this.scheduleId_);
+                output.writeUInt32(1, this.scheduleId_);
+            }
+            if (this.retcode_ != 0) {
+                output.writeInt32(10, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class SalesmanDeliverItemRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(4, this.retcode_);
-            }
             if (this.scheduleId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.scheduleId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.scheduleId_);
+            }
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(10, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -188,7 +188,7 @@ public final class SalesmanDeliverItemRspOuterClass {
                 return equals(obj);
             }
             SalesmanDeliverItemRsp other = (SalesmanDeliverItemRsp) obj;
-            return getRetcode() == other.getRetcode() && getScheduleId() == other.getScheduleId() && this.unknownFields.equals(other.unknownFields);
+            return getScheduleId() == other.getScheduleId() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -196,7 +196,7 @@ public final class SalesmanDeliverItemRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getRetcode())) + 8)) + getScheduleId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getScheduleId())) + 10)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -275,8 +275,8 @@ public final class SalesmanDeliverItemRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SalesmanDeliverItemRspOuterClass$SalesmanDeliverItemRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SalesmanDeliverItemRspOrBuilder {
-            private int retcode_;
             private int scheduleId_;
+            private int retcode_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return SalesmanDeliverItemRspOuterClass.internal_static_SalesmanDeliverItemRsp_descriptor;
@@ -304,8 +304,8 @@ public final class SalesmanDeliverItemRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.retcode_ = 0;
                 this.scheduleId_ = 0;
+                this.retcode_ = 0;
                 return this;
             }
 
@@ -331,8 +331,8 @@ public final class SalesmanDeliverItemRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public SalesmanDeliverItemRsp buildPartial() {
                 SalesmanDeliverItemRsp result = new SalesmanDeliverItemRsp(this);
-                result.retcode_ = this.retcode_;
                 result.scheduleId_ = this.scheduleId_;
+                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -380,11 +380,11 @@ public final class SalesmanDeliverItemRspOuterClass {
                 if (other == SalesmanDeliverItemRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
                 if (other.getScheduleId() != 0) {
                     setScheduleId(other.getScheduleId());
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -419,23 +419,6 @@ public final class SalesmanDeliverItemRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.SalesmanDeliverItemRspOuterClass.SalesmanDeliverItemRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.SalesmanDeliverItemRspOuterClass.SalesmanDeliverItemRspOrBuilder
             public int getScheduleId() {
                 return this.scheduleId_;
             }
@@ -448,6 +431,23 @@ public final class SalesmanDeliverItemRspOuterClass {
 
             public Builder clearScheduleId() {
                 this.scheduleId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SalesmanDeliverItemRspOuterClass.SalesmanDeliverItemRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }

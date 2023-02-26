@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerPropReqOuterClass.class */
 public final class SetPlayerPropReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016SetPlayerPropReq.proto\u001a\u000fPropValue.proto\"1\n\u0010SetPlayerPropReq\u0012\u001d\n\tprop_list\u0018\u0003 \u0003(\u000b2\n.PropValueB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PropValueOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016SetPlayerPropReq.proto\u001a\u000fPropValue.proto\"0\n\u0010SetPlayerPropReq\u0012\u001c\n\bpropList\u0018\b \u0003(\u000b2\n.PropValueB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PropValueOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SetPlayerPropReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetPlayerPropReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetPlayerPropReq_descriptor, new String[]{"PropList"});
 
@@ -55,7 +55,7 @@ public final class SetPlayerPropReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerPropReqOuterClass$SetPlayerPropReq.class */
     public static final class SetPlayerPropReq extends GeneratedMessageV3 implements SetPlayerPropReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PROP_LIST_FIELD_NUMBER = 3;
+        public static final int PROPLIST_FIELD_NUMBER = 8;
         private List<PropValueOuterClass.PropValue> propList_;
         private byte memoizedIsInitialized;
         private static final SetPlayerPropReq DEFAULT_INSTANCE = new SetPlayerPropReq();
@@ -106,7 +106,7 @@ public final class SetPlayerPropReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 26:
+                                case 66:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.propList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -187,7 +187,7 @@ public final class SetPlayerPropReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.propList_.size(); i++) {
-                output.writeMessage(3, this.propList_.get(i));
+                output.writeMessage(8, this.propList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,7 +200,7 @@ public final class SetPlayerPropReqOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.propList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(3, this.propList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(8, this.propList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class SetPlayerPropReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getPropListCount() > 0) {
-                hash = (53 * ((37 * hash) + 3)) + getPropListList().hashCode();
+                hash = (53 * ((37 * hash) + 8)) + getPropListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

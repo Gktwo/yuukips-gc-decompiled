@@ -25,11 +25,11 @@ public abstract class Exp extends SyntaxElement {
         public final Exp rhs;
 
         /* renamed from: op */
-        public final int f3305op;
+        public final int f3269op;
 
         public BinopExp(Exp exp, int i, Exp exp2) {
             this.lhs = exp;
-            this.f3305op = i;
+            this.f3269op = i;
             this.rhs = exp2;
         }
 
@@ -181,11 +181,11 @@ public abstract class Exp extends SyntaxElement {
     public static class UnopExp extends Exp {
 
         /* renamed from: op */
-        public final int f3306op;
+        public final int f3270op;
         public final Exp rhs;
 
         public UnopExp(int i, Exp exp) {
-            this.f3306op = i;
+            this.f3270op = i;
             this.rhs = exp;
         }
 
@@ -240,8 +240,8 @@ public abstract class Exp extends SyntaxElement {
     public static Exp unaryexp(int i, Exp exp) {
         if (exp instanceof BinopExp) {
             BinopExp binopExp = (BinopExp) exp;
-            if (precedence(i) > precedence(binopExp.f3305op)) {
-                return binaryexp(unaryexp(i, binopExp.lhs), binopExp.f3305op, binopExp.rhs);
+            if (precedence(i) > precedence(binopExp.f3269op)) {
+                return binaryexp(unaryexp(i, binopExp.lhs), binopExp.f3269op, binopExp.rhs);
             }
         }
         return new UnopExp(i, exp);
@@ -250,20 +250,20 @@ public abstract class Exp extends SyntaxElement {
     public static Exp binaryexp(Exp exp, int i, Exp exp2) {
         if (exp instanceof UnopExp) {
             UnopExp unopExp = (UnopExp) exp;
-            if (precedence(i) > precedence(unopExp.f3306op)) {
-                return unaryexp(unopExp.f3306op, binaryexp(unopExp.rhs, i, exp2));
+            if (precedence(i) > precedence(unopExp.f3270op)) {
+                return unaryexp(unopExp.f3270op, binaryexp(unopExp.rhs, i, exp2));
             }
         }
         if (exp instanceof BinopExp) {
             BinopExp binopExp = (BinopExp) exp;
-            if (precedence(i) > precedence(binopExp.f3305op) || (precedence(i) == precedence(binopExp.f3305op) && isrightassoc(i))) {
-                return binaryexp(binopExp.lhs, binopExp.f3305op, binaryexp(binopExp.rhs, i, exp2));
+            if (precedence(i) > precedence(binopExp.f3269op) || (precedence(i) == precedence(binopExp.f3269op) && isrightassoc(i))) {
+                return binaryexp(binopExp.lhs, binopExp.f3269op, binaryexp(binopExp.rhs, i, exp2));
             }
         }
         if (exp2 instanceof BinopExp) {
             BinopExp binopExp2 = (BinopExp) exp2;
-            if (precedence(i) > precedence(binopExp2.f3305op) || (precedence(i) == precedence(binopExp2.f3305op) && !isrightassoc(i))) {
-                return binaryexp(binaryexp(exp, i, binopExp2.lhs), binopExp2.f3305op, binopExp2.rhs);
+            if (precedence(i) > precedence(binopExp2.f3269op) || (precedence(i) == precedence(binopExp2.f3269op) && !isrightassoc(i))) {
+                return binaryexp(binaryexp(exp, i, binopExp2.lhs), binopExp2.f3269op, binopExp2.rhs);
             }
         }
         return new BinopExp(exp, i, exp2);

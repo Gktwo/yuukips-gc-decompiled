@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeInfoOuterClass.class */
 public final class FurnitureMakeInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017FurnitureMakeInfo.proto\"=\n\u0011FurnitureMakeInfo\u0012\u0012\n\nmake_count\u0018\u000f \u0001(\r\u0012\u0014\n\ffurniture_id\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017FurnitureMakeInfo.proto\";\n\u0011FurnitureMakeInfo\u0012\u0011\n\tmakeCount\u0018\t \u0001(\r\u0012\u0013\n\u000bfurnitureId\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_FurnitureMakeInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_FurnitureMakeInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FurnitureMakeInfo_descriptor, new String[]{"MakeCount", "FurnitureId"});
 
@@ -43,9 +43,9 @@ public final class FurnitureMakeInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeInfoOuterClass$FurnitureMakeInfo.class */
     public static final class FurnitureMakeInfo extends GeneratedMessageV3 implements FurnitureMakeInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MAKE_COUNT_FIELD_NUMBER = 15;
+        public static final int MAKECOUNT_FIELD_NUMBER = 9;
         private int makeCount_;
-        public static final int FURNITURE_ID_FIELD_NUMBER = 9;
+        public static final int FURNITUREID_FIELD_NUMBER = 7;
         private int furnitureId_;
         private byte memoizedIsInitialized;
         private static final FurnitureMakeInfo DEFAULT_INSTANCE = new FurnitureMakeInfo();
@@ -92,10 +92,10 @@ public final class FurnitureMakeInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 72:
+                            case 56:
                                 this.furnitureId_ = input.readUInt32();
                                 break;
-                            case 120:
+                            case 72:
                                 this.makeCount_ = input.readUInt32();
                                 break;
                             default:
@@ -153,10 +153,10 @@ public final class FurnitureMakeInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.furnitureId_ != 0) {
-                output.writeUInt32(9, this.furnitureId_);
+                output.writeUInt32(7, this.furnitureId_);
             }
             if (this.makeCount_ != 0) {
-                output.writeUInt32(15, this.makeCount_);
+                output.writeUInt32(9, this.makeCount_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class FurnitureMakeInfoOuterClass {
             }
             int size2 = 0;
             if (this.furnitureId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(9, this.furnitureId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.furnitureId_);
             }
             if (this.makeCount_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.makeCount_);
+                size2 += CodedOutputStream.computeUInt32Size(9, this.makeCount_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class FurnitureMakeInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getMakeCount())) + 9)) + getFurnitureId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getMakeCount())) + 7)) + getFurnitureId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

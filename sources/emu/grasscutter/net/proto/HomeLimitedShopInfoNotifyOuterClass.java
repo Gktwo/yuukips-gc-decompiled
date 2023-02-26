@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeLimitedShopInfoNotifyOuterClass.class */
 public final class HomeLimitedShopInfoNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fHomeLimitedShopInfoNotify.proto\u001a\u0019HomeLimitedShopInfo.proto\"D\n\u0019HomeLimitedShopInfoNotify\u0012'\n\tshop_info\u0018\u0007 \u0001(\u000b2\u0014.HomeLimitedShopInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeLimitedShopInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fHomeLimitedShopInfoNotify.proto\u001a\u0019HomeLimitedShopInfo.proto\"C\n\u0019HomeLimitedShopInfoNotify\u0012&\n\bshopInfo\u0018\r \u0001(\u000b2\u0014.HomeLimitedShopInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeLimitedShopInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_HomeLimitedShopInfoNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeLimitedShopInfoNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeLimitedShopInfoNotify_descriptor, new String[]{"ShopInfo"});
 
@@ -47,7 +47,7 @@ public final class HomeLimitedShopInfoNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeLimitedShopInfoNotifyOuterClass$HomeLimitedShopInfoNotify.class */
     public static final class HomeLimitedShopInfoNotify extends GeneratedMessageV3 implements HomeLimitedShopInfoNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SHOP_INFO_FIELD_NUMBER = 7;
+        public static final int SHOPINFO_FIELD_NUMBER = 13;
         private HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo shopInfo_;
         private byte memoizedIsInitialized;
         private static final HomeLimitedShopInfoNotify DEFAULT_INSTANCE = new HomeLimitedShopInfoNotify();
@@ -94,7 +94,7 @@ public final class HomeLimitedShopInfoNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 58:
+                            case 106:
                                 HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.Builder subBuilder = this.shopInfo_ != null ? this.shopInfo_.toBuilder() : null;
                                 this.shopInfo_ = (HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo) input.readMessage(HomeLimitedShopInfoOuterClass.HomeLimitedShopInfo.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -164,7 +164,7 @@ public final class HomeLimitedShopInfoNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.shopInfo_ != null) {
-                output.writeMessage(7, getShopInfo());
+                output.writeMessage(13, getShopInfo());
             }
             this.unknownFields.writeTo(output);
         }
@@ -177,7 +177,7 @@ public final class HomeLimitedShopInfoNotifyOuterClass {
             }
             int size2 = 0;
             if (this.shopInfo_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(7, getShopInfo());
+                size2 = 0 + CodedOutputStream.computeMessageSize(13, getShopInfo());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -206,7 +206,7 @@ public final class HomeLimitedShopInfoNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasShopInfo()) {
-                hash = (53 * ((37 * hash) + 7)) + getShopInfo().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getShopInfo().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

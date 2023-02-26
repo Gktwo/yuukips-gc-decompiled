@@ -17,7 +17,7 @@ public final class InsecureTrustManagerFactory extends SimpleTrustManagerFactory
     public static final TrustManagerFactory INSTANCE = new InsecureTrustManagerFactory();
 
     /* renamed from: tm */
-    private static final TrustManager f1028tm = new X509TrustManager() { // from class: io.netty.handler.ssl.util.InsecureTrustManagerFactory.1
+    private static final TrustManager f992tm = new X509TrustManager() { // from class: io.netty.handler.ssl.util.InsecureTrustManagerFactory.1
         @Override // javax.net.ssl.X509TrustManager
         public void checkClientTrusted(X509Certificate[] chain, String s) {
             if (InsecureTrustManagerFactory.logger.isDebugEnabled()) {
@@ -51,6 +51,6 @@ public final class InsecureTrustManagerFactory extends SimpleTrustManagerFactory
 
     @Override // p013io.netty.handler.ssl.util.SimpleTrustManagerFactory
     protected TrustManager[] engineGetTrustManagers() {
-        return new TrustManager[]{f1028tm};
+        return new TrustManager[]{f992tm};
     }
 }

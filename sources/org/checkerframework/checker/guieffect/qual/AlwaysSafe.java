@@ -12,7 +12,7 @@ import org.checkerframework.framework.qual.SubtypeOf;
 
 @Target({ElementType.TYPE_USE, ElementType.TYPE_PARAMETER})
 @ImplicitFor(literals = {LiteralKind.NULL})
-@SubtypeOf({AbstractC5562UI.class})
+@SubtypeOf({AbstractC5554UI.class})
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @DefaultQualifierInHierarchy

@@ -16,6 +16,7 @@ import com.google.protobuf.MessageOrBuilder;
 import com.google.protobuf.Parser;
 import com.google.protobuf.SingleFieldBuilderV3;
 import com.google.protobuf.UnknownFieldSet;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.MusicBeatmapOuterClass;
 import emu.grasscutter.net.proto.MusicBriefInfoOuterClass;
 import emu.grasscutter.net.proto.MusicGameUnknown1EnumOuterClass;
@@ -136,14 +137,14 @@ public final class MusicGameCreateBeatmapReqOuterClass {
                                 case 96:
                                     this.unknownEnum1_ = input.readEnum();
                                     break;
-                                case 8170:
+                                case PacketOpcodes.WinterCampEditSnowmanCombinationReq:
                                     MusicBriefInfoOuterClass.MusicBriefInfo.Builder subBuilder2 = this.briefInfoCase_ == 1021 ? ((MusicBriefInfoOuterClass.MusicBriefInfo) this.briefInfo_).toBuilder() : null;
                                     this.briefInfo_ = input.readMessage(MusicBriefInfoOuterClass.MusicBriefInfo.parser(), extensionRegistry);
                                     if (subBuilder2 != null) {
                                         subBuilder2.mergeFrom((MusicBriefInfoOuterClass.MusicBriefInfo) this.briefInfo_);
                                         this.briefInfo_ = subBuilder2.buildPartial();
                                     }
-                                    this.briefInfoCase_ = MUSIC_BRIEF_INFO_FIELD_NUMBER;
+                                    this.briefInfoCase_ = 1021;
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -215,7 +216,7 @@ public final class MusicGameCreateBeatmapReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MusicGameCreateBeatmapReqOuterClass$MusicGameCreateBeatmapReq$BriefInfoCase.class */
         public enum BriefInfoCase implements Internal.EnumLite, AbstractMessageLite.InternalOneOfEnum {
-            MUSIC_BRIEF_INFO(MusicGameCreateBeatmapReq.MUSIC_BRIEF_INFO_FIELD_NUMBER),
+            MUSIC_BRIEF_INFO(1021),
             BRIEFINFO_NOT_SET(0);
             
             private final int value;
@@ -233,7 +234,7 @@ public final class MusicGameCreateBeatmapReqOuterClass {
                 switch (value) {
                     case 0:
                         return BRIEFINFO_NOT_SET;
-                    case MusicGameCreateBeatmapReq.MUSIC_BRIEF_INFO_FIELD_NUMBER /* 1021 */:
+                    case 1021:
                         return MUSIC_BRIEF_INFO;
                     default:
                         return null;
@@ -326,7 +327,7 @@ public final class MusicGameCreateBeatmapReqOuterClass {
                 output.writeEnum(12, this.unknownEnum1_);
             }
             if (this.briefInfoCase_ == 1021) {
-                output.writeMessage(MUSIC_BRIEF_INFO_FIELD_NUMBER, (MusicBriefInfoOuterClass.MusicBriefInfo) this.briefInfo_);
+                output.writeMessage(1021, (MusicBriefInfoOuterClass.MusicBriefInfo) this.briefInfo_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -345,7 +346,7 @@ public final class MusicGameCreateBeatmapReqOuterClass {
                 size2 += CodedOutputStream.computeEnumSize(12, this.unknownEnum1_);
             }
             if (this.briefInfoCase_ == 1021) {
-                size2 += CodedOutputStream.computeMessageSize(MUSIC_BRIEF_INFO_FIELD_NUMBER, (MusicBriefInfoOuterClass.MusicBriefInfo) this.briefInfo_);
+                size2 += CodedOutputStream.computeMessageSize(1021, (MusicBriefInfoOuterClass.MusicBriefInfo) this.briefInfo_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -375,7 +376,7 @@ public final class MusicGameCreateBeatmapReqOuterClass {
                 return false;
             }
             switch (this.briefInfoCase_) {
-                case MUSIC_BRIEF_INFO_FIELD_NUMBER /* 1021 */:
+                case 1021:
                     if (!getMusicBriefInfo().equals(other.getMusicBriefInfo())) {
                         return false;
                     }
@@ -396,8 +397,8 @@ public final class MusicGameCreateBeatmapReqOuterClass {
                     break;
             }
             switch (this.briefInfoCase_) {
-                case MUSIC_BRIEF_INFO_FIELD_NUMBER /* 1021 */:
-                    hash = (53 * ((37 * hash) + MUSIC_BRIEF_INFO_FIELD_NUMBER)) + getMusicBriefInfo().hashCode();
+                case 1021:
+                    hash = (53 * ((37 * hash) + 1021)) + getMusicBriefInfo().hashCode();
                     break;
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
@@ -840,7 +841,7 @@ public final class MusicGameCreateBeatmapReqOuterClass {
                     this.briefInfo_ = value;
                     onChanged();
                 }
-                this.briefInfoCase_ = MusicGameCreateBeatmapReq.MUSIC_BRIEF_INFO_FIELD_NUMBER;
+                this.briefInfoCase_ = 1021;
                 return this;
             }
 
@@ -851,7 +852,7 @@ public final class MusicGameCreateBeatmapReqOuterClass {
                 } else {
                     this.musicBriefInfoBuilder_.setMessage(builderForValue.build());
                 }
-                this.briefInfoCase_ = MusicGameCreateBeatmapReq.MUSIC_BRIEF_INFO_FIELD_NUMBER;
+                this.briefInfoCase_ = 1021;
                 return this;
             }
 
@@ -869,7 +870,7 @@ public final class MusicGameCreateBeatmapReqOuterClass {
                     }
                     this.musicBriefInfoBuilder_.setMessage(value);
                 }
-                this.briefInfoCase_ = MusicGameCreateBeatmapReq.MUSIC_BRIEF_INFO_FIELD_NUMBER;
+                this.briefInfoCase_ = 1021;
                 return this;
             }
 
@@ -911,7 +912,7 @@ public final class MusicGameCreateBeatmapReqOuterClass {
                     this.musicBriefInfoBuilder_ = new SingleFieldBuilderV3<>((MusicBriefInfoOuterClass.MusicBriefInfo) this.briefInfo_, getParentForChildren(), isClean());
                     this.briefInfo_ = null;
                 }
-                this.briefInfoCase_ = MusicGameCreateBeatmapReq.MUSIC_BRIEF_INFO_FIELD_NUMBER;
+                this.briefInfoCase_ = 1021;
                 onChanged();
                 return this.musicBriefInfoBuilder_;
             }

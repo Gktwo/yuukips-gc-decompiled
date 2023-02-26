@@ -307,7 +307,7 @@ public interface ModifierReviewable {
                     return MethodManifestation.FINAL_BRIDGE;
                 case 256:
                     return MethodManifestation.NATIVE;
-                case PacketOpcodes.SceneCreateEntityRsp:
+                case PacketOpcodes.HitClientTrivialNotify:
                     return MethodManifestation.FINAL_NATIVE;
                 case 1024:
                     return MethodManifestation.ABSTRACT;

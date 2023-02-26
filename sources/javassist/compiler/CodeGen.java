@@ -55,9 +55,9 @@ public abstract class CodeGen extends Visitor implements Opcode, TokenId {
     private static final int P_LONG = 2;
     private static final int P_INT = 3;
     private static final int P_OTHER = -1;
-    static final int[] binOp = {43, 99, 98, 97, 96, 45, 103, 102, 101, 100, 42, 107, 106, 105, 104, 47, 111, 110, 109, 108, 37, 115, 114, 113, 112, 124, 0, 0, 129, 128, 94, 0, 0, 131, 130, 38, 0, 0, 127, 126, 364, 0, 0, 121, 120, 366, 0, 0, 123, 122, 370, 0, 0, 125, 124};
-    private static final int[] ifOp = {TokenId.f3079EQ, 159, 160, 350, 160, 159, 357, 164, 163, TokenId.f3080GE, 162, 161, 60, 161, 162, 62, 163, 164};
-    private static final int[] ifOp2 = {TokenId.f3079EQ, 153, 154, 350, 154, 153, 357, 158, 157, TokenId.f3080GE, 156, 155, 60, 155, 156, 62, 157, 158};
+    static final int[] binOp = {43, 99, 98, 97, 96, 45, 103, 102, 101, 100, 42, 107, 106, 105, 104, 47, 111, 110, 109, 108, 37, 115, 114, 113, 112, 124, 0, 0, 129, 128, 94, 0, 0, 131, 130, 38, 0, 0, 127, 126, 364, 0, 0, 121, 120, TokenId.RSHIFT, 0, 0, 123, 122, 370, 0, 0, 125, 124};
+    private static final int[] ifOp = {358, 159, 160, 350, 160, 159, TokenId.f3042LE, 164, 163, TokenId.f3044GE, 162, 161, 60, 161, 162, 62, 163, 164};
+    private static final int[] ifOp2 = {358, 153, 154, 350, 154, 153, TokenId.f3042LE, 158, 157, TokenId.f3044GE, 156, 155, 60, 155, 156, 62, 157, 158};
     private static final int[] castOp = {0, 144, 143, 142, 141, 0, 140, 139, 138, 137, 0, 136, 135, 134, 133, 0};
 
     protected abstract String getThisName();
@@ -188,10 +188,10 @@ public abstract class CodeGen extends Visitor implements Opcode, TokenId {
             case 303:
                 c = 'B';
                 break;
-            case TokenId.CHAR /* 306 */:
+            case TokenId.CHAR:
                 c = 'C';
                 break;
-            case TokenId.DOUBLE /* 312 */:
+            case TokenId.DOUBLE:
                 c = 'D';
                 break;
             case 317:
@@ -200,13 +200,13 @@ public abstract class CodeGen extends Visitor implements Opcode, TokenId {
             case 324:
                 c = 'I';
                 break;
-            case TokenId.LONG /* 326 */:
+            case TokenId.LONG:
                 c = 'J';
                 break;
-            case 334:
+            case TokenId.SHORT:
                 c = 'S';
                 break;
-            case 344:
+            case TokenId.VOID:
                 c = 'V';
                 break;
         }
@@ -846,7 +846,7 @@ public abstract class CodeGen extends Visitor implements Opcode, TokenId {
                 badAssign(expr);
             }
             if (op != 61) {
-                int token = assignOps[op - TokenId.MOD_E];
+                int token = assignOps[op - 351];
                 int k = lookupBinOp(token);
                 if (k < 0) {
                     fatal();
@@ -1083,7 +1083,7 @@ public abstract class CodeGen extends Visitor implements Opcode, TokenId {
         if (!(bexpr instanceof BinExpr) || token == 368 || token == 369 || token == 38 || token == 124) {
             return token;
         }
-        return TokenId.f3079EQ;
+        return 358;
     }
 
     private int compileOprands(BinExpr expr) throws CompileError {
@@ -1477,7 +1477,7 @@ public abstract class CodeGen extends Visitor implements Opcode, TokenId {
                 return 46;
             case TokenId.LONG:
                 return 47;
-            case 334:
+            case TokenId.SHORT:
                 return 53;
             default:
                 return 50;
@@ -1502,7 +1502,7 @@ public abstract class CodeGen extends Visitor implements Opcode, TokenId {
                 return 79;
             case TokenId.LONG:
                 return 80;
-            case 334:
+            case TokenId.SHORT:
                 return 86;
             default:
                 return 83;
@@ -1663,8 +1663,8 @@ public abstract class CodeGen extends Visitor implements Opcode, TokenId {
         this.arrayDim = 0;
         int token = k.get();
         switch (token) {
-            case TokenId.SUPER:
-            case 339:
+            case 336:
+            case TokenId.THIS:
                 if (this.inStaticMethod) {
                     throw new CompileError("not-available: " + (token == 339 ? "this" : "super"));
                 }

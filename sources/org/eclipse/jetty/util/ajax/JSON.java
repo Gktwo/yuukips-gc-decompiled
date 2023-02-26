@@ -16,7 +16,7 @@ import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import java.util.stream.IntStream;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.Loader;
 import org.eclipse.jetty.util.log.Log;
 import org.eclipse.jetty.util.log.Logger;
@@ -135,12 +135,12 @@ public class JSON {
 
     @Deprecated
     public static Object parse(InputStream in) throws IOException {
-        return DEFAULT.parse((Source) new StringSource(C5747IO.toString(in)), false);
+        return DEFAULT.parse((Source) new StringSource(C5739IO.toString(in)), false);
     }
 
     @Deprecated
     public static Object parse(InputStream in, boolean stripOuterComment) throws IOException {
-        return DEFAULT.parse(new StringSource(C5747IO.toString(in)), stripOuterComment);
+        return DEFAULT.parse(new StringSource(C5739IO.toString(in)), stripOuterComment);
     }
 
     /* access modifiers changed from: private */
@@ -1070,18 +1070,18 @@ public class JSON {
         private final Appendable _buffer;
 
         /* renamed from: c */
-        char f3166c;
+        char f3130c;
 
         private ConvertableOutput(Appendable buffer) {
-            this.f3166c = '{';
+            this.f3130c = '{';
             this._buffer = buffer;
         }
 
         public void complete() {
             try {
-                if (this.f3166c == '{') {
+                if (this.f3130c == '{') {
                     this._buffer.append("{}");
-                } else if (this.f3166c != 0) {
+                } else if (this.f3130c != 0) {
                     this._buffer.append("}");
                 }
             } catch (IOException e) {
@@ -1091,23 +1091,23 @@ public class JSON {
 
         @Override // org.eclipse.jetty.util.ajax.JSON.Output
         public void add(Object obj) {
-            if (this.f3166c == 0) {
+            if (this.f3130c == 0) {
                 throw new IllegalStateException();
             }
             JSON.this.append(this._buffer, obj);
-            this.f3166c = 0;
+            this.f3130c = 0;
         }
 
         @Override // org.eclipse.jetty.util.ajax.JSON.Output
         public void addClass(Class type) {
             try {
-                if (this.f3166c == 0) {
+                if (this.f3130c == 0) {
                     throw new IllegalStateException();
                 }
-                this._buffer.append(this.f3166c);
+                this._buffer.append(this.f3130c);
                 this._buffer.append("\"class\":");
                 JSON.this.append(this._buffer, type.getName());
-                this.f3166c = ',';
+                this.f3130c = ',';
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -1116,14 +1116,14 @@ public class JSON {
         @Override // org.eclipse.jetty.util.ajax.JSON.Output
         public void add(String name, Object value) {
             try {
-                if (this.f3166c == 0) {
+                if (this.f3130c == 0) {
                     throw new IllegalStateException();
                 }
-                this._buffer.append(this.f3166c);
+                this._buffer.append(this.f3130c);
                 JSON.this.quotedEscape(this._buffer, name);
                 this._buffer.append(':');
                 JSON.this.append(this._buffer, value);
-                this.f3166c = ',';
+                this.f3130c = ',';
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -1132,14 +1132,14 @@ public class JSON {
         @Override // org.eclipse.jetty.util.ajax.JSON.Output
         public void add(String name, double value) {
             try {
-                if (this.f3166c == 0) {
+                if (this.f3130c == 0) {
                     throw new IllegalStateException();
                 }
-                this._buffer.append(this.f3166c);
+                this._buffer.append(this.f3130c);
                 JSON.this.quotedEscape(this._buffer, name);
                 this._buffer.append(':');
                 JSON.this.appendNumber(this._buffer, Double.valueOf(value));
-                this.f3166c = ',';
+                this.f3130c = ',';
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -1148,14 +1148,14 @@ public class JSON {
         @Override // org.eclipse.jetty.util.ajax.JSON.Output
         public void add(String name, long value) {
             try {
-                if (this.f3166c == 0) {
+                if (this.f3130c == 0) {
                     throw new IllegalStateException();
                 }
-                this._buffer.append(this.f3166c);
+                this._buffer.append(this.f3130c);
                 JSON.this.quotedEscape(this._buffer, name);
                 this._buffer.append(':');
                 JSON.this.appendNumber(this._buffer, Long.valueOf(value));
-                this.f3166c = ',';
+                this.f3130c = ',';
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -1164,14 +1164,14 @@ public class JSON {
         @Override // org.eclipse.jetty.util.ajax.JSON.Output
         public void add(String name, boolean value) {
             try {
-                if (this.f3166c == 0) {
+                if (this.f3130c == 0) {
                     throw new IllegalStateException();
                 }
-                this._buffer.append(this.f3166c);
+                this._buffer.append(this.f3130c);
                 JSON.this.quotedEscape(this._buffer, name);
                 this._buffer.append(':');
                 JSON.this.appendBoolean(this._buffer, value ? Boolean.TRUE : Boolean.FALSE);
-                this.f3166c = ',';
+                this.f3130c = ',';
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

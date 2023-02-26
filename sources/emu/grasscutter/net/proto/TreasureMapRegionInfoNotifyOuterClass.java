@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TreasureMapRegionInfoNotifyOuterClass.class */
 public final class TreasureMapRegionInfoNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!TreasureMapRegionInfoNotify.proto\u001a\u001bTreasureMapRegionInfo.proto\"J\n\u001bTreasureMapRegionInfoNotify\u0012+\n\u000bregion_info\u0018\u0007 \u0001(\u000b2\u0016.TreasureMapRegionInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{TreasureMapRegionInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!TreasureMapRegionInfoNotify.proto\u001a\u001bTreasureMapRegionInfo.proto\"I\n\u001bTreasureMapRegionInfoNotify\u0012*\n\nregionInfo\u0018\u0006 \u0001(\u000b2\u0016.TreasureMapRegionInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{TreasureMapRegionInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_TreasureMapRegionInfoNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_TreasureMapRegionInfoNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TreasureMapRegionInfoNotify_descriptor, new String[]{"RegionInfo"});
 
@@ -47,7 +47,7 @@ public final class TreasureMapRegionInfoNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TreasureMapRegionInfoNotifyOuterClass$TreasureMapRegionInfoNotify.class */
     public static final class TreasureMapRegionInfoNotify extends GeneratedMessageV3 implements TreasureMapRegionInfoNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int REGION_INFO_FIELD_NUMBER = 7;
+        public static final int REGIONINFO_FIELD_NUMBER = 6;
         private TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo regionInfo_;
         private byte memoizedIsInitialized;
         private static final TreasureMapRegionInfoNotify DEFAULT_INSTANCE = new TreasureMapRegionInfoNotify();
@@ -94,7 +94,7 @@ public final class TreasureMapRegionInfoNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 58:
+                            case 50:
                                 TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo.Builder subBuilder = this.regionInfo_ != null ? this.regionInfo_.toBuilder() : null;
                                 this.regionInfo_ = (TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo) input.readMessage(TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -164,7 +164,7 @@ public final class TreasureMapRegionInfoNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.regionInfo_ != null) {
-                output.writeMessage(7, getRegionInfo());
+                output.writeMessage(6, getRegionInfo());
             }
             this.unknownFields.writeTo(output);
         }
@@ -177,7 +177,7 @@ public final class TreasureMapRegionInfoNotifyOuterClass {
             }
             int size2 = 0;
             if (this.regionInfo_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(7, getRegionInfo());
+                size2 = 0 + CodedOutputStream.computeMessageSize(6, getRegionInfo());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -206,7 +206,7 @@ public final class TreasureMapRegionInfoNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasRegionInfo()) {
-                hash = (53 * ((37 * hash) + 7)) + getRegionInfo().hashCode();
+                hash = (53 * ((37 * hash) + 6)) + getRegionInfo().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

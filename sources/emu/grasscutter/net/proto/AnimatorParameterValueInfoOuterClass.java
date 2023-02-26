@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AnimatorParameterValueInfoOuterClass.class */
 public final class AnimatorParameterValueInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n AnimatorParameterValueInfo.proto\"w\n\u001aAnimatorParameterValueInfo\u0012\u0011\n\tpara_type\u0018\u0001 \u0001(\r\u0012\u0011\n\u0007int_val\u0018\u0002 \u0001(\u0005H��\u0012\u0013\n\tfloat_val\u0018\u0003 \u0001(\u0002H��\u0012\u0012\n\bbool_val\u0018\u0004 \u0001(\bH��B\n\n\bpara_valB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n AnimatorParameterValueInfo.proto\"v\n\u001aAnimatorParameterValueInfo\u0012\u0010\n\bparaType\u0018\u0001 \u0001(\r\u0012\u0011\n\u0007int_val\u0018\u0002 \u0001(\u0005H��\u0012\u0013\n\tfloat_val\u0018\u0003 \u0001(\u0002H��\u0012\u0012\n\bbool_val\u0018\u0004 \u0001(\bH��B\n\n\bpara_valB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AnimatorParameterValueInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AnimatorParameterValueInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AnimatorParameterValueInfo_descriptor, new String[]{"ParaType", "IntVal", "FloatVal", "BoolVal", "ParaVal"});
 
@@ -59,7 +59,7 @@ public final class AnimatorParameterValueInfoOuterClass {
         private static final long serialVersionUID = 0;
         private int paraValCase_;
         private Object paraVal_;
-        public static final int PARA_TYPE_FIELD_NUMBER = 1;
+        public static final int PARATYPE_FIELD_NUMBER = 1;
         private int paraType_;
         public static final int INT_VAL_FIELD_NUMBER = 2;
         public static final int FLOAT_VAL_FIELD_NUMBER = 3;

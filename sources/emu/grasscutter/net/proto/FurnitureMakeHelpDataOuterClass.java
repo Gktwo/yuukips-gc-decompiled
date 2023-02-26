@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeHelpDataOuterClass.class */
 public final class FurnitureMakeHelpDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bFurnitureMakeHelpData.proto\"3\n\u0015FurnitureMakeHelpData\u0012\r\n\u0005times\u0018\f \u0001(\r\u0012\u000b\n\u0003uid\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bFurnitureMakeHelpData.proto\"3\n\u0015FurnitureMakeHelpData\u0012\r\n\u0005times\u0018\u0002 \u0001(\r\u0012\u000b\n\u0003uid\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_FurnitureMakeHelpData_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_FurnitureMakeHelpData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FurnitureMakeHelpData_descriptor, new String[]{"Times", "Uid"});
 
@@ -43,9 +43,9 @@ public final class FurnitureMakeHelpDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeHelpDataOuterClass$FurnitureMakeHelpData.class */
     public static final class FurnitureMakeHelpData extends GeneratedMessageV3 implements FurnitureMakeHelpDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TIMES_FIELD_NUMBER = 12;
+        public static final int TIMES_FIELD_NUMBER = 2;
         private int times_;
-        public static final int UID_FIELD_NUMBER = 2;
+        public static final int UID_FIELD_NUMBER = 6;
         private int uid_;
         private byte memoizedIsInitialized;
         private static final FurnitureMakeHelpData DEFAULT_INSTANCE = new FurnitureMakeHelpData();
@@ -93,10 +93,10 @@ public final class FurnitureMakeHelpDataOuterClass {
                                 done = true;
                                 break;
                             case 16:
-                                this.uid_ = input.readUInt32();
-                                break;
-                            case 96:
                                 this.times_ = input.readUInt32();
+                                break;
+                            case 48:
+                                this.uid_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -152,11 +152,11 @@ public final class FurnitureMakeHelpDataOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.uid_ != 0) {
-                output.writeUInt32(2, this.uid_);
-            }
             if (this.times_ != 0) {
-                output.writeUInt32(12, this.times_);
+                output.writeUInt32(2, this.times_);
+            }
+            if (this.uid_ != 0) {
+                output.writeUInt32(6, this.uid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class FurnitureMakeHelpDataOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.uid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.uid_);
-            }
             if (this.times_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.times_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.times_);
+            }
+            if (this.uid_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(6, this.uid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class FurnitureMakeHelpDataOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getTimes())) + 2)) + getUid())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getTimes())) + 6)) + getUid())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

@@ -17,7 +17,7 @@ import emu.grasscutter.server.event.entity.EntityMoveEvent;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.utils.Position;
 
-@Opcodes(354)
+@Opcodes(323)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerCombatInvocationsNotify.class */
 public class HandlerCombatInvocationsNotify extends PacketHandler {
     private float cachedLandingSpeed = 0.0f;

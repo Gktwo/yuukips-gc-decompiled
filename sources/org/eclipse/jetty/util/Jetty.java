@@ -24,7 +24,7 @@ public class Jetty {
         /*
         // Method dump skipped, instructions count: 235
         */
-        throw new UnsupportedOperationException("Method not decompiled: org.eclipse.jetty.util.Jetty.m9791clinit():void");
+        throw new UnsupportedOperationException("Method not decompiled: org.eclipse.jetty.util.Jetty.m9788clinit():void");
     }
 
     private Jetty() {

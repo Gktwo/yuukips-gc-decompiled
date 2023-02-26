@@ -24,10 +24,10 @@ import p001ch.qos.logback.core.CoreConstants;
 public class TypeUtil {
 
     /* renamed from: CR */
-    public static final int f3164CR = 13;
+    public static final int f3128CR = 13;
 
     /* renamed from: LF */
-    public static final int f3165LF = 10;
+    public static final int f3129LF = 10;
     private static final List<Function<Class<?>, URI>> LOCATION_METHODS;
     private static final Function<Class<?>, URI> MODULE_LOCATION;
     private static final Logger LOG = Log.getLogger(TypeUtil.class);

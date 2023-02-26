@@ -19,17 +19,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChallengeDataNotifyOuterClass.class */
 public final class ChallengeDataNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019ChallengeDataNotify.proto\"R\n\u0013ChallengeDataNotify\u0012\u0013\n\u000bparam_index\u0018\u0004 \u0001(\r\u0012\u0017\n\u000fchallenge_index\u0018\u0002 \u0001(\r\u0012\r\n\u0005value\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019ChallengeDataNotify.proto\"P\n\u0013ChallengeDataNotify\u0012\u0012\n\nparamIndex\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u000b \u0001(\r\u0012\u0016\n\u000echallengeIndex\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ChallengeDataNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChallengeDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChallengeDataNotify_descriptor, new String[]{"ParamIndex", "ChallengeIndex", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChallengeDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChallengeDataNotify_descriptor, new String[]{"ParamIndex", "Value", "ChallengeIndex"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChallengeDataNotifyOuterClass$ChallengeDataNotifyOrBuilder.class */
     public interface ChallengeDataNotifyOrBuilder extends MessageOrBuilder {
         int getParamIndex();
 
-        int getChallengeIndex();
-
         int getValue();
+
+        int getChallengeIndex();
     }
 
     private ChallengeDataNotifyOuterClass() {
@@ -45,12 +45,12 @@ public final class ChallengeDataNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChallengeDataNotifyOuterClass$ChallengeDataNotify.class */
     public static final class ChallengeDataNotify extends GeneratedMessageV3 implements ChallengeDataNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PARAM_INDEX_FIELD_NUMBER = 4;
+        public static final int PARAMINDEX_FIELD_NUMBER = 1;
         private int paramIndex_;
-        public static final int CHALLENGE_INDEX_FIELD_NUMBER = 2;
-        private int challengeIndex_;
-        public static final int VALUE_FIELD_NUMBER = 3;
+        public static final int VALUE_FIELD_NUMBER = 11;
         private int value_;
+        public static final int CHALLENGEINDEX_FIELD_NUMBER = 8;
+        private int challengeIndex_;
         private byte memoizedIsInitialized;
         private static final ChallengeDataNotify DEFAULT_INSTANCE = new ChallengeDataNotify();
         private static final Parser<ChallengeDataNotify> PARSER = new AbstractParser<ChallengeDataNotify>() { // from class: emu.grasscutter.net.proto.ChallengeDataNotifyOuterClass.ChallengeDataNotify.1
@@ -97,14 +97,14 @@ public final class ChallengeDataNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
+                                case 8:
+                                    this.paramIndex_ = input.readUInt32();
+                                    break;
+                                case 64:
                                     this.challengeIndex_ = input.readUInt32();
                                     break;
-                                case 24:
+                                case 88:
                                     this.value_ = input.readUInt32();
-                                    break;
-                                case 32:
-                                    this.paramIndex_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -142,13 +142,13 @@ public final class ChallengeDataNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ChallengeDataNotifyOuterClass.ChallengeDataNotifyOrBuilder
-        public int getChallengeIndex() {
-            return this.challengeIndex_;
+        public int getValue() {
+            return this.value_;
         }
 
         @Override // emu.grasscutter.net.proto.ChallengeDataNotifyOuterClass.ChallengeDataNotifyOrBuilder
-        public int getValue() {
-            return this.value_;
+        public int getChallengeIndex() {
+            return this.challengeIndex_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -166,14 +166,14 @@ public final class ChallengeDataNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.paramIndex_ != 0) {
+                output.writeUInt32(1, this.paramIndex_);
+            }
             if (this.challengeIndex_ != 0) {
-                output.writeUInt32(2, this.challengeIndex_);
+                output.writeUInt32(8, this.challengeIndex_);
             }
             if (this.value_ != 0) {
-                output.writeUInt32(3, this.value_);
-            }
-            if (this.paramIndex_ != 0) {
-                output.writeUInt32(4, this.paramIndex_);
+                output.writeUInt32(11, this.value_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -185,14 +185,14 @@ public final class ChallengeDataNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.paramIndex_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.paramIndex_);
+            }
             if (this.challengeIndex_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.challengeIndex_);
+                size2 += CodedOutputStream.computeUInt32Size(8, this.challengeIndex_);
             }
             if (this.value_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(3, this.value_);
-            }
-            if (this.paramIndex_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(4, this.paramIndex_);
+                size2 += CodedOutputStream.computeUInt32Size(11, this.value_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -208,7 +208,7 @@ public final class ChallengeDataNotifyOuterClass {
                 return equals(obj);
             }
             ChallengeDataNotify other = (ChallengeDataNotify) obj;
-            return getParamIndex() == other.getParamIndex() && getChallengeIndex() == other.getChallengeIndex() && getValue() == other.getValue() && this.unknownFields.equals(other.unknownFields);
+            return getParamIndex() == other.getParamIndex() && getValue() == other.getValue() && getChallengeIndex() == other.getChallengeIndex() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -216,7 +216,7 @@ public final class ChallengeDataNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getParamIndex())) + 2)) + getChallengeIndex())) + 3)) + getValue())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getParamIndex())) + 11)) + getValue())) + 8)) + getChallengeIndex())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -296,8 +296,8 @@ public final class ChallengeDataNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChallengeDataNotifyOuterClass$ChallengeDataNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ChallengeDataNotifyOrBuilder {
             private int paramIndex_;
-            private int challengeIndex_;
             private int value_;
+            private int challengeIndex_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ChallengeDataNotifyOuterClass.internal_static_ChallengeDataNotify_descriptor;
@@ -326,8 +326,8 @@ public final class ChallengeDataNotifyOuterClass {
             public Builder clear() {
                 clear();
                 this.paramIndex_ = 0;
-                this.challengeIndex_ = 0;
                 this.value_ = 0;
+                this.challengeIndex_ = 0;
                 return this;
             }
 
@@ -354,8 +354,8 @@ public final class ChallengeDataNotifyOuterClass {
             public ChallengeDataNotify buildPartial() {
                 ChallengeDataNotify result = new ChallengeDataNotify(this);
                 result.paramIndex_ = this.paramIndex_;
-                result.challengeIndex_ = this.challengeIndex_;
                 result.value_ = this.value_;
+                result.challengeIndex_ = this.challengeIndex_;
                 onBuilt();
                 return result;
             }
@@ -406,11 +406,11 @@ public final class ChallengeDataNotifyOuterClass {
                 if (other.getParamIndex() != 0) {
                     setParamIndex(other.getParamIndex());
                 }
-                if (other.getChallengeIndex() != 0) {
-                    setChallengeIndex(other.getChallengeIndex());
-                }
                 if (other.getValue() != 0) {
                     setValue(other.getValue());
+                }
+                if (other.getChallengeIndex() != 0) {
+                    setChallengeIndex(other.getChallengeIndex());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -462,23 +462,6 @@ public final class ChallengeDataNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ChallengeDataNotifyOuterClass.ChallengeDataNotifyOrBuilder
-            public int getChallengeIndex() {
-                return this.challengeIndex_;
-            }
-
-            public Builder setChallengeIndex(int value) {
-                this.challengeIndex_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearChallengeIndex() {
-                this.challengeIndex_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ChallengeDataNotifyOuterClass.ChallengeDataNotifyOrBuilder
             public int getValue() {
                 return this.value_;
             }
@@ -491,6 +474,23 @@ public final class ChallengeDataNotifyOuterClass {
 
             public Builder clearValue() {
                 this.value_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ChallengeDataNotifyOuterClass.ChallengeDataNotifyOrBuilder
+            public int getChallengeIndex() {
+                return this.challengeIndex_;
+            }
+
+            public Builder setChallengeIndex(int value) {
+                this.challengeIndex_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearChallengeIndex() {
+                this.challengeIndex_ = 0;
                 onChanged();
                 return this;
             }

@@ -23,12 +23,14 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ProudSkillChangeNotifyOuterClass.class */
 public final class ProudSkillChangeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cProudSkillChangeNotify.proto\"r\n\u0016ProudSkillChangeNotify\u0012\u0013\n\u000bavatar_guid\u0018\r \u0001(\u0004\u0012\u0018\n\u0010proud_skill_list\u0018\u0005 \u0003(\r\u0012\u0016\n\u000eskill_depot_id\u0018\f \u0001(\r\u0012\u0011\n\tentity_id\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cProudSkillChangeNotify.proto\"l\n\u0016ProudSkillChangeNotify\u0012\u0010\n\bentityId\u0018\u000e \u0001(\r\u0012\u0012\n\navatarGuid\u0018\u0006 \u0001(\u0004\u0012\u0016\n\u000eproudSkillList\u0018\n \u0003(\r\u0012\u0014\n\fskillDepotId\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ProudSkillChangeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ProudSkillChangeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ProudSkillChangeNotify_descriptor, new String[]{"AvatarGuid", "ProudSkillList", "SkillDepotId", "EntityId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ProudSkillChangeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ProudSkillChangeNotify_descriptor, new String[]{"EntityId", "AvatarGuid", "ProudSkillList", "SkillDepotId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ProudSkillChangeNotifyOuterClass$ProudSkillChangeNotifyOrBuilder.class */
     public interface ProudSkillChangeNotifyOrBuilder extends MessageOrBuilder {
+        int getEntityId();
+
         long getAvatarGuid();
 
         List<Integer> getProudSkillListList();
@@ -38,8 +40,6 @@ public final class ProudSkillChangeNotifyOuterClass {
         int getProudSkillList(int i);
 
         int getSkillDepotId();
-
-        int getEntityId();
     }
 
     private ProudSkillChangeNotifyOuterClass() {
@@ -55,15 +55,15 @@ public final class ProudSkillChangeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ProudSkillChangeNotifyOuterClass$ProudSkillChangeNotify.class */
     public static final class ProudSkillChangeNotify extends GeneratedMessageV3 implements ProudSkillChangeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 13;
+        public static final int ENTITYID_FIELD_NUMBER = 14;
+        private int entityId_;
+        public static final int AVATARGUID_FIELD_NUMBER = 6;
         private long avatarGuid_;
-        public static final int PROUD_SKILL_LIST_FIELD_NUMBER = 5;
+        public static final int PROUDSKILLLIST_FIELD_NUMBER = 10;
         private Internal.IntList proudSkillList_;
         private int proudSkillListMemoizedSerializedSize;
-        public static final int SKILL_DEPOT_ID_FIELD_NUMBER = 12;
+        public static final int SKILLDEPOTID_FIELD_NUMBER = 15;
         private int skillDepotId_;
-        public static final int ENTITY_ID_FIELD_NUMBER = 3;
-        private int entityId_;
         private byte memoizedIsInitialized;
         private static final ProudSkillChangeNotify DEFAULT_INSTANCE = new ProudSkillChangeNotify();
         private static final Parser<ProudSkillChangeNotify> PARSER = new AbstractParser<ProudSkillChangeNotify>() { // from class: emu.grasscutter.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify.1
@@ -114,17 +114,17 @@ public final class ProudSkillChangeNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 24:
-                                this.entityId_ = input.readUInt32();
+                            case 48:
+                                this.avatarGuid_ = input.readUInt64();
                                 break;
-                            case 40:
+                            case 80:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.proudSkillList_ = newIntList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.proudSkillList_.addInt(input.readUInt32());
                                 break;
-                            case 42:
+                            case 82:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.proudSkillList_ = newIntList();
@@ -135,11 +135,11 @@ public final class ProudSkillChangeNotifyOuterClass {
                                 }
                                 input.popLimit(limit);
                                 break;
-                            case 96:
-                                this.skillDepotId_ = input.readUInt32();
+                            case 112:
+                                this.entityId_ = input.readUInt32();
                                 break;
-                            case 104:
-                                this.avatarGuid_ = input.readUInt64();
+                            case 120:
+                                this.skillDepotId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -174,6 +174,11 @@ public final class ProudSkillChangeNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotifyOrBuilder
+        public int getEntityId() {
+            return this.entityId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotifyOrBuilder
         public long getAvatarGuid() {
             return this.avatarGuid_;
         }
@@ -198,11 +203,6 @@ public final class ProudSkillChangeNotifyOuterClass {
             return this.skillDepotId_;
         }
 
-        @Override // emu.grasscutter.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotifyOrBuilder
-        public int getEntityId() {
-            return this.entityId_;
-        }
-
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -219,21 +219,21 @@ public final class ProudSkillChangeNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (this.entityId_ != 0) {
-                output.writeUInt32(3, this.entityId_);
+            if (this.avatarGuid_ != 0) {
+                output.writeUInt64(6, this.avatarGuid_);
             }
             if (getProudSkillListList().size() > 0) {
-                output.writeUInt32NoTag(42);
+                output.writeUInt32NoTag(82);
                 output.writeUInt32NoTag(this.proudSkillListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.proudSkillList_.size(); i++) {
                 output.writeUInt32NoTag(this.proudSkillList_.getInt(i));
             }
-            if (this.skillDepotId_ != 0) {
-                output.writeUInt32(12, this.skillDepotId_);
+            if (this.entityId_ != 0) {
+                output.writeUInt32(14, this.entityId_);
             }
-            if (this.avatarGuid_ != 0) {
-                output.writeUInt64(13, this.avatarGuid_);
+            if (this.skillDepotId_ != 0) {
+                output.writeUInt32(15, this.skillDepotId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -245,8 +245,8 @@ public final class ProudSkillChangeNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.entityId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.entityId_);
+            if (this.avatarGuid_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt64Size(6, this.avatarGuid_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.proudSkillList_.size(); i++) {
@@ -257,11 +257,11 @@ public final class ProudSkillChangeNotifyOuterClass {
                 size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.proudSkillListMemoizedSerializedSize = dataSize;
-            if (this.skillDepotId_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(12, this.skillDepotId_);
+            if (this.entityId_ != 0) {
+                size3 += CodedOutputStream.computeUInt32Size(14, this.entityId_);
             }
-            if (this.avatarGuid_ != 0) {
-                size3 += CodedOutputStream.computeUInt64Size(13, this.avatarGuid_);
+            if (this.skillDepotId_ != 0) {
+                size3 += CodedOutputStream.computeUInt32Size(15, this.skillDepotId_);
             }
             int size4 = size3 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size4;
@@ -277,7 +277,7 @@ public final class ProudSkillChangeNotifyOuterClass {
                 return equals(obj);
             }
             ProudSkillChangeNotify other = (ProudSkillChangeNotify) obj;
-            return getAvatarGuid() == other.getAvatarGuid() && getProudSkillListList().equals(other.getProudSkillListList()) && getSkillDepotId() == other.getSkillDepotId() && getEntityId() == other.getEntityId() && this.unknownFields.equals(other.unknownFields);
+            return getEntityId() == other.getEntityId() && getAvatarGuid() == other.getAvatarGuid() && getProudSkillListList().equals(other.getProudSkillListList()) && getSkillDepotId() == other.getSkillDepotId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -285,11 +285,11 @@ public final class ProudSkillChangeNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + Internal.hashLong(getAvatarGuid());
+            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getEntityId())) + 6)) + Internal.hashLong(getAvatarGuid());
             if (getProudSkillListCount() > 0) {
-                hash = (53 * ((37 * hash) + 5)) + getProudSkillListList().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getProudSkillListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 12)) + getSkillDepotId())) + 3)) + getEntityId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 15)) + getSkillDepotId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -369,10 +369,10 @@ public final class ProudSkillChangeNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ProudSkillChangeNotifyOuterClass$ProudSkillChangeNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ProudSkillChangeNotifyOrBuilder {
             private int bitField0_;
+            private int entityId_;
             private long avatarGuid_;
             private Internal.IntList proudSkillList_ = ProudSkillChangeNotify.emptyIntList();
             private int skillDepotId_;
-            private int entityId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ProudSkillChangeNotifyOuterClass.internal_static_ProudSkillChangeNotify_descriptor;
@@ -400,11 +400,11 @@ public final class ProudSkillChangeNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.entityId_ = 0;
                 this.avatarGuid_ = 0;
                 this.proudSkillList_ = ProudSkillChangeNotify.emptyIntList();
                 this.bitField0_ &= -2;
                 this.skillDepotId_ = 0;
-                this.entityId_ = 0;
                 return this;
             }
 
@@ -431,6 +431,7 @@ public final class ProudSkillChangeNotifyOuterClass {
             public ProudSkillChangeNotify buildPartial() {
                 ProudSkillChangeNotify result = new ProudSkillChangeNotify(this);
                 int i = this.bitField0_;
+                result.entityId_ = this.entityId_;
                 result.avatarGuid_ = this.avatarGuid_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.proudSkillList_.makeImmutable();
@@ -438,7 +439,6 @@ public final class ProudSkillChangeNotifyOuterClass {
                 }
                 result.proudSkillList_ = this.proudSkillList_;
                 result.skillDepotId_ = this.skillDepotId_;
-                result.entityId_ = this.entityId_;
                 onBuilt();
                 return result;
             }
@@ -486,6 +486,9 @@ public final class ProudSkillChangeNotifyOuterClass {
                 if (other == ProudSkillChangeNotify.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getEntityId() != 0) {
+                    setEntityId(other.getEntityId());
+                }
                 if (other.getAvatarGuid() != 0) {
                     setAvatarGuid(other.getAvatarGuid());
                 }
@@ -501,9 +504,6 @@ public final class ProudSkillChangeNotifyOuterClass {
                 }
                 if (other.getSkillDepotId() != 0) {
                     setSkillDepotId(other.getSkillDepotId());
-                }
-                if (other.getEntityId() != 0) {
-                    setEntityId(other.getEntityId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -535,6 +535,23 @@ public final class ProudSkillChangeNotifyOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotifyOrBuilder
+            public int getEntityId() {
+                return this.entityId_;
+            }
+
+            public Builder setEntityId(int value) {
+                this.entityId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearEntityId() {
+                this.entityId_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotifyOrBuilder
@@ -617,23 +634,6 @@ public final class ProudSkillChangeNotifyOuterClass {
 
             public Builder clearSkillDepotId() {
                 this.skillDepotId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotifyOrBuilder
-            public int getEntityId() {
-                return this.entityId_;
-            }
-
-            public Builder setEntityId(int value) {
-                this.entityId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearEntityId() {
-                this.entityId_ = 0;
                 onChanged();
                 return this;
             }

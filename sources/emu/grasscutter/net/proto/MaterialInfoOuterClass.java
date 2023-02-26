@@ -20,15 +20,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MaterialInfoOuterClass.class */
 public final class MaterialInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012MaterialInfo.proto\"+\n\fMaterialInfo\u0012\f\n\u0004guid\u0018\u0001 \u0001(\u0004\u0012\r\n\u0005count\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012MaterialInfo.proto\"+\n\fMaterialInfo\u0012\r\n\u0005count\u0018\u0003 \u0001(\r\u0012\f\n\u0004guid\u0018\f \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_MaterialInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_MaterialInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MaterialInfo_descriptor, new String[]{"Guid", "Count"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_MaterialInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MaterialInfo_descriptor, new String[]{"Count", "Guid"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MaterialInfoOuterClass$MaterialInfoOrBuilder.class */
     public interface MaterialInfoOrBuilder extends MessageOrBuilder {
-        long getGuid();
-
         int getCount();
+
+        long getGuid();
     }
 
     private MaterialInfoOuterClass() {
@@ -44,10 +44,10 @@ public final class MaterialInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MaterialInfoOuterClass$MaterialInfo.class */
     public static final class MaterialInfo extends GeneratedMessageV3 implements MaterialInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int GUID_FIELD_NUMBER = 1;
-        private long guid_;
-        public static final int COUNT_FIELD_NUMBER = 13;
+        public static final int COUNT_FIELD_NUMBER = 3;
         private int count_;
+        public static final int GUID_FIELD_NUMBER = 12;
+        private long guid_;
         private byte memoizedIsInitialized;
         private static final MaterialInfo DEFAULT_INSTANCE = new MaterialInfo();
         private static final Parser<MaterialInfo> PARSER = new AbstractParser<MaterialInfo>() { // from class: emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfo.1
@@ -93,11 +93,11 @@ public final class MaterialInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
-                                this.guid_ = input.readUInt64();
-                                break;
-                            case 104:
+                            case 24:
                                 this.count_ = input.readUInt32();
+                                break;
+                            case 96:
+                                this.guid_ = input.readUInt64();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -129,13 +129,13 @@ public final class MaterialInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfoOrBuilder
-        public long getGuid() {
-            return this.guid_;
+        public int getCount() {
+            return this.count_;
         }
 
         @Override // emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfoOrBuilder
-        public int getCount() {
-            return this.count_;
+        public long getGuid() {
+            return this.guid_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -153,11 +153,11 @@ public final class MaterialInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.guid_ != 0) {
-                output.writeUInt64(1, this.guid_);
-            }
             if (this.count_ != 0) {
-                output.writeUInt32(13, this.count_);
+                output.writeUInt32(3, this.count_);
+            }
+            if (this.guid_ != 0) {
+                output.writeUInt64(12, this.guid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,11 +169,11 @@ public final class MaterialInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.guid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(1, this.guid_);
-            }
             if (this.count_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.count_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.count_);
+            }
+            if (this.guid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(12, this.guid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -189,7 +189,7 @@ public final class MaterialInfoOuterClass {
                 return equals(obj);
             }
             MaterialInfo other = (MaterialInfo) obj;
-            return getGuid() == other.getGuid() && getCount() == other.getCount() && this.unknownFields.equals(other.unknownFields);
+            return getCount() == other.getCount() && getGuid() == other.getGuid() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -197,7 +197,7 @@ public final class MaterialInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + Internal.hashLong(getGuid()))) + 13)) + getCount())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getCount())) + 12)) + Internal.hashLong(getGuid()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -276,8 +276,8 @@ public final class MaterialInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MaterialInfoOuterClass$MaterialInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements MaterialInfoOrBuilder {
-            private long guid_;
             private int count_;
+            private long guid_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return MaterialInfoOuterClass.internal_static_MaterialInfo_descriptor;
@@ -305,8 +305,8 @@ public final class MaterialInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.guid_ = 0;
                 this.count_ = 0;
+                this.guid_ = 0;
                 return this;
             }
 
@@ -332,8 +332,8 @@ public final class MaterialInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public MaterialInfo buildPartial() {
                 MaterialInfo result = new MaterialInfo(this);
-                result.guid_ = this.guid_;
                 result.count_ = this.count_;
+                result.guid_ = this.guid_;
                 onBuilt();
                 return result;
             }
@@ -381,11 +381,11 @@ public final class MaterialInfoOuterClass {
                 if (other == MaterialInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getGuid() != 0) {
-                    setGuid(other.getGuid());
-                }
                 if (other.getCount() != 0) {
                     setCount(other.getCount());
+                }
+                if (other.getGuid() != 0) {
+                    setGuid(other.getGuid());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -420,23 +420,6 @@ public final class MaterialInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfoOrBuilder
-            public long getGuid() {
-                return this.guid_;
-            }
-
-            public Builder setGuid(long value) {
-                this.guid_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearGuid() {
-                this.guid_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfoOrBuilder
             public int getCount() {
                 return this.count_;
             }
@@ -449,6 +432,23 @@ public final class MaterialInfoOuterClass {
 
             public Builder clearCount() {
                 this.count_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfoOrBuilder
+            public long getGuid() {
+                return this.guid_;
+            }
+
+            public Builder setGuid(long value) {
+                this.guid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearGuid() {
+                this.guid_ = 0;
                 onChanged();
                 return this;
             }

@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetFriendShowAvatarInfoReqOuterClass.class */
 public final class GetFriendShowAvatarInfoReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n GetFriendShowAvatarInfoReq.proto\")\n\u001aGetFriendShowAvatarInfoReq\u0012\u000b\n\u0003uid\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n GetFriendShowAvatarInfoReq.proto\")\n\u001aGetFriendShowAvatarInfoReq\u0012\u000b\n\u0003uid\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GetFriendShowAvatarInfoReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetFriendShowAvatarInfoReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetFriendShowAvatarInfoReq_descriptor, new String[]{"Uid"});
 
@@ -41,7 +41,7 @@ public final class GetFriendShowAvatarInfoReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetFriendShowAvatarInfoReqOuterClass$GetFriendShowAvatarInfoReq.class */
     public static final class GetFriendShowAvatarInfoReq extends GeneratedMessageV3 implements GetFriendShowAvatarInfoReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int UID_FIELD_NUMBER = 1;
+        public static final int UID_FIELD_NUMBER = 2;
         private int uid_;
         private byte memoizedIsInitialized;
         private static final GetFriendShowAvatarInfoReq DEFAULT_INSTANCE = new GetFriendShowAvatarInfoReq();
@@ -88,7 +88,7 @@ public final class GetFriendShowAvatarInfoReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
+                            case 16:
                                 this.uid_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class GetFriendShowAvatarInfoReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.uid_ != 0) {
-                output.writeUInt32(1, this.uid_);
+                output.writeUInt32(2, this.uid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class GetFriendShowAvatarInfoReqOuterClass {
             }
             int size2 = 0;
             if (this.uid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.uid_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.uid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class GetFriendShowAvatarInfoReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getUid())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getUid())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

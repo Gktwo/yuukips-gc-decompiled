@@ -22,7 +22,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RogueDiaryStageInfoOuterClass.class */
 public final class RogueDiaryStageInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019RogueDiaryStageInfo.proto\u001a\u001dRogueDiaryDungeonRecord.proto\"k\n\u0013RogueDiaryStageInfo\u0012\u0010\n\bstage_id\u0018\u000f \u0001(\r\u0012-\n\u000bbest_record\u0018\t \u0001(\u000b2\u0018.RogueDiaryDungeonRecord\u0012\u0013\n\u000bis_have_try\u0018\u000b \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{RogueDiaryDungeonRecordOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019RogueDiaryStageInfo.proto\u001a\u001dRogueDiaryDungeonRecord.proto\"g\n\u0013RogueDiaryStageInfo\u0012\u000f\n\u0007stageId\u0018\u0003 \u0001(\r\u0012,\n\nbestRecord\u0018\u0004 \u0001(\u000b2\u0018.RogueDiaryDungeonRecord\u0012\u0011\n\tisHaveTry\u0018\t \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{RogueDiaryDungeonRecordOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_RogueDiaryStageInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_RogueDiaryStageInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_RogueDiaryStageInfo_descriptor, new String[]{"StageId", "BestRecord", "IsHaveTry"});
 
@@ -52,11 +52,11 @@ public final class RogueDiaryStageInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RogueDiaryStageInfoOuterClass$RogueDiaryStageInfo.class */
     public static final class RogueDiaryStageInfo extends GeneratedMessageV3 implements RogueDiaryStageInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int STAGE_ID_FIELD_NUMBER = 15;
+        public static final int STAGEID_FIELD_NUMBER = 3;
         private int stageId_;
-        public static final int BEST_RECORD_FIELD_NUMBER = 9;
+        public static final int BESTRECORD_FIELD_NUMBER = 4;
         private RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord bestRecord_;
-        public static final int IS_HAVE_TRY_FIELD_NUMBER = 11;
+        public static final int ISHAVETRY_FIELD_NUMBER = 9;
         private boolean isHaveTry_;
         private byte memoizedIsInitialized;
         private static final RogueDiaryStageInfo DEFAULT_INSTANCE = new RogueDiaryStageInfo();
@@ -104,7 +104,10 @@ public final class RogueDiaryStageInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 74:
+                                case 24:
+                                    this.stageId_ = input.readUInt32();
+                                    break;
+                                case 34:
                                     RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord.Builder subBuilder = this.bestRecord_ != null ? this.bestRecord_.toBuilder() : null;
                                     this.bestRecord_ = (RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord) input.readMessage(RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -114,11 +117,8 @@ public final class RogueDiaryStageInfoOuterClass {
                                         this.bestRecord_ = subBuilder.buildPartial();
                                         break;
                                     }
-                                case 88:
+                                case 72:
                                     this.isHaveTry_ = input.readBool();
-                                    break;
-                                case 120:
-                                    this.stageId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -190,14 +190,14 @@ public final class RogueDiaryStageInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.stageId_ != 0) {
+                output.writeUInt32(3, this.stageId_);
+            }
             if (this.bestRecord_ != null) {
-                output.writeMessage(9, getBestRecord());
+                output.writeMessage(4, getBestRecord());
             }
             if (this.isHaveTry_) {
-                output.writeBool(11, this.isHaveTry_);
-            }
-            if (this.stageId_ != 0) {
-                output.writeUInt32(15, this.stageId_);
+                output.writeBool(9, this.isHaveTry_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -209,14 +209,14 @@ public final class RogueDiaryStageInfoOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.stageId_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.stageId_);
+            }
             if (this.bestRecord_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(9, getBestRecord());
+                size2 += CodedOutputStream.computeMessageSize(4, getBestRecord());
             }
             if (this.isHaveTry_) {
-                size2 += CodedOutputStream.computeBoolSize(11, this.isHaveTry_);
-            }
-            if (this.stageId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.stageId_);
+                size2 += CodedOutputStream.computeBoolSize(9, this.isHaveTry_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -243,11 +243,11 @@ public final class RogueDiaryStageInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getStageId();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getStageId();
             if (hasBestRecord()) {
-                hash = (53 * ((37 * hash) + 9)) + getBestRecord().hashCode();
+                hash = (53 * ((37 * hash) + 4)) + getBestRecord().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 11)) + Internal.hashBoolean(getIsHaveTry()))) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 9)) + Internal.hashBoolean(getIsHaveTry()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

@@ -55,7 +55,7 @@ public class StdSchedulerFactory implements SchedulerFactory {
     public static final String PROP_SCHED_MAKE_SCHEDULER_THREAD_DAEMON = "org.quartz.scheduler.makeSchedulerThreadDaemon";
 
     /* renamed from: PROP_SCHED_SCHEDULER_THREADS_INHERIT_CONTEXT_CLASS_LOADER_OF_INITIALIZING_THREAD */
-    public static final String f3370xbc3ceae7 = "org.quartz.scheduler.threadsInheritContextClassLoaderOfInitializer";
+    public static final String f3334xbc3ceae7 = "org.quartz.scheduler.threadsInheritContextClassLoaderOfInitializer";
     public static final String PROP_SCHED_CLASS_LOAD_HELPER_CLASS = "org.quartz.scheduler.classLoadHelper.class";
     public static final String PROP_SCHED_JOB_FACTORY_CLASS = "org.quartz.scheduler.jobFactory.class";
     public static final String PROP_SCHED_JOB_FACTORY_PREFIX = "org.quartz.scheduler.jobFactory";

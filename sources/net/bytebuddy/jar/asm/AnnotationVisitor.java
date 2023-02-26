@@ -5,7 +5,7 @@ public abstract class AnnotationVisitor {
     protected final int api;
 
     /* renamed from: av */
-    protected AnnotationVisitor f3100av;
+    protected AnnotationVisitor f3064av;
 
     public AnnotationVisitor(int api) {
         this(api, null);
@@ -17,41 +17,41 @@ public abstract class AnnotationVisitor {
                 Constants.checkAsmExperimental(this);
             }
             this.api = api;
-            this.f3100av = annotationVisitor;
+            this.f3064av = annotationVisitor;
             return;
         }
         throw new IllegalArgumentException("Unsupported api " + api);
     }
 
     public void visit(String name, Object value) {
-        if (this.f3100av != null) {
-            this.f3100av.visit(name, value);
+        if (this.f3064av != null) {
+            this.f3064av.visit(name, value);
         }
     }
 
     public void visitEnum(String name, String descriptor, String value) {
-        if (this.f3100av != null) {
-            this.f3100av.visitEnum(name, descriptor, value);
+        if (this.f3064av != null) {
+            this.f3064av.visitEnum(name, descriptor, value);
         }
     }
 
     public AnnotationVisitor visitAnnotation(String name, String descriptor) {
-        if (this.f3100av != null) {
-            return this.f3100av.visitAnnotation(name, descriptor);
+        if (this.f3064av != null) {
+            return this.f3064av.visitAnnotation(name, descriptor);
         }
         return null;
     }
 
     public AnnotationVisitor visitArray(String name) {
-        if (this.f3100av != null) {
-            return this.f3100av.visitArray(name);
+        if (this.f3064av != null) {
+            return this.f3064av.visitArray(name);
         }
         return null;
     }
 
     public void visitEnd() {
-        if (this.f3100av != null) {
-            this.f3100av.visitEnd();
+        if (this.f3064av != null) {
+            this.f3064av.visitEnd();
         }
     }
 }

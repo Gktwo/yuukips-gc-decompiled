@@ -20,15 +20,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/InstableSprayAvatarInfoOuterClass.class */
 public final class InstableSprayAvatarInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dInstableSprayAvatarInfo.proto\">\n\u0017InstableSprayAvatarInfo\u0012\u0011\n\tavatar_id\u0018\n \u0001(\u0004\u0012\u0010\n\bis_trial\u0018\f \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dInstableSprayAvatarInfo.proto\"<\n\u0017InstableSprayAvatarInfo\u0012\u000f\n\u0007isTrial\u0018\u0002 \u0001(\b\u0012\u0010\n\bavatarId\u0018\f \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_InstableSprayAvatarInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_InstableSprayAvatarInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_InstableSprayAvatarInfo_descriptor, new String[]{"AvatarId", "IsTrial"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_InstableSprayAvatarInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_InstableSprayAvatarInfo_descriptor, new String[]{"IsTrial", "AvatarId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/InstableSprayAvatarInfoOuterClass$InstableSprayAvatarInfoOrBuilder.class */
     public interface InstableSprayAvatarInfoOrBuilder extends MessageOrBuilder {
-        long getAvatarId();
-
         boolean getIsTrial();
+
+        long getAvatarId();
     }
 
     private InstableSprayAvatarInfoOuterClass() {
@@ -44,10 +44,10 @@ public final class InstableSprayAvatarInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/InstableSprayAvatarInfoOuterClass$InstableSprayAvatarInfo.class */
     public static final class InstableSprayAvatarInfo extends GeneratedMessageV3 implements InstableSprayAvatarInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_ID_FIELD_NUMBER = 10;
-        private long avatarId_;
-        public static final int IS_TRIAL_FIELD_NUMBER = 12;
+        public static final int ISTRIAL_FIELD_NUMBER = 2;
         private boolean isTrial_;
+        public static final int AVATARID_FIELD_NUMBER = 12;
+        private long avatarId_;
         private byte memoizedIsInitialized;
         private static final InstableSprayAvatarInfo DEFAULT_INSTANCE = new InstableSprayAvatarInfo();
         private static final Parser<InstableSprayAvatarInfo> PARSER = new AbstractParser<InstableSprayAvatarInfo>() { // from class: emu.grasscutter.net.proto.InstableSprayAvatarInfoOuterClass.InstableSprayAvatarInfo.1
@@ -93,11 +93,11 @@ public final class InstableSprayAvatarInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 80:
-                                this.avatarId_ = input.readUInt64();
+                            case 16:
+                                this.isTrial_ = input.readBool();
                                 break;
                             case 96:
-                                this.isTrial_ = input.readBool();
+                                this.avatarId_ = input.readUInt64();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -129,13 +129,13 @@ public final class InstableSprayAvatarInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.InstableSprayAvatarInfoOuterClass.InstableSprayAvatarInfoOrBuilder
-        public long getAvatarId() {
-            return this.avatarId_;
+        public boolean getIsTrial() {
+            return this.isTrial_;
         }
 
         @Override // emu.grasscutter.net.proto.InstableSprayAvatarInfoOuterClass.InstableSprayAvatarInfoOrBuilder
-        public boolean getIsTrial() {
-            return this.isTrial_;
+        public long getAvatarId() {
+            return this.avatarId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -153,11 +153,11 @@ public final class InstableSprayAvatarInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.avatarId_ != 0) {
-                output.writeUInt64(10, this.avatarId_);
-            }
             if (this.isTrial_) {
-                output.writeBool(12, this.isTrial_);
+                output.writeBool(2, this.isTrial_);
+            }
+            if (this.avatarId_ != 0) {
+                output.writeUInt64(12, this.avatarId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,11 +169,11 @@ public final class InstableSprayAvatarInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.avatarId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(10, this.avatarId_);
-            }
             if (this.isTrial_) {
-                size2 += CodedOutputStream.computeBoolSize(12, this.isTrial_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(2, this.isTrial_);
+            }
+            if (this.avatarId_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(12, this.avatarId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -189,7 +189,7 @@ public final class InstableSprayAvatarInfoOuterClass {
                 return equals(obj);
             }
             InstableSprayAvatarInfo other = (InstableSprayAvatarInfo) obj;
-            return getAvatarId() == other.getAvatarId() && getIsTrial() == other.getIsTrial() && this.unknownFields.equals(other.unknownFields);
+            return getIsTrial() == other.getIsTrial() && getAvatarId() == other.getAvatarId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -197,7 +197,7 @@ public final class InstableSprayAvatarInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + Internal.hashLong(getAvatarId()))) + 12)) + Internal.hashBoolean(getIsTrial()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + Internal.hashBoolean(getIsTrial()))) + 12)) + Internal.hashLong(getAvatarId()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -276,8 +276,8 @@ public final class InstableSprayAvatarInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/InstableSprayAvatarInfoOuterClass$InstableSprayAvatarInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements InstableSprayAvatarInfoOrBuilder {
-            private long avatarId_;
             private boolean isTrial_;
+            private long avatarId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return InstableSprayAvatarInfoOuterClass.internal_static_InstableSprayAvatarInfo_descriptor;
@@ -305,8 +305,8 @@ public final class InstableSprayAvatarInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.avatarId_ = 0;
                 this.isTrial_ = false;
+                this.avatarId_ = 0;
                 return this;
             }
 
@@ -332,8 +332,8 @@ public final class InstableSprayAvatarInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public InstableSprayAvatarInfo buildPartial() {
                 InstableSprayAvatarInfo result = new InstableSprayAvatarInfo(this);
-                result.avatarId_ = this.avatarId_;
                 result.isTrial_ = this.isTrial_;
+                result.avatarId_ = this.avatarId_;
                 onBuilt();
                 return result;
             }
@@ -381,11 +381,11 @@ public final class InstableSprayAvatarInfoOuterClass {
                 if (other == InstableSprayAvatarInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getAvatarId() != 0) {
-                    setAvatarId(other.getAvatarId());
-                }
                 if (other.getIsTrial()) {
                     setIsTrial(other.getIsTrial());
+                }
+                if (other.getAvatarId() != 0) {
+                    setAvatarId(other.getAvatarId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -420,23 +420,6 @@ public final class InstableSprayAvatarInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.InstableSprayAvatarInfoOuterClass.InstableSprayAvatarInfoOrBuilder
-            public long getAvatarId() {
-                return this.avatarId_;
-            }
-
-            public Builder setAvatarId(long value) {
-                this.avatarId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearAvatarId() {
-                this.avatarId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.InstableSprayAvatarInfoOuterClass.InstableSprayAvatarInfoOrBuilder
             public boolean getIsTrial() {
                 return this.isTrial_;
             }
@@ -449,6 +432,23 @@ public final class InstableSprayAvatarInfoOuterClass {
 
             public Builder clearIsTrial() {
                 this.isTrial_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.InstableSprayAvatarInfoOuterClass.InstableSprayAvatarInfoOrBuilder
+            public long getAvatarId() {
+                return this.avatarId_;
+            }
+
+            public Builder setAvatarId(long value) {
+                this.avatarId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearAvatarId() {
+                this.avatarId_ = 0;
                 onChanged();
                 return this;
             }

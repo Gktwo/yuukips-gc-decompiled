@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityControlBlockOuterClass.class */
 public final class AbilityControlBlockOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019AbilityControlBlock.proto\u001a\u0013AbilityEmbryo.proto\"B\n\u0013AbilityControlBlock\u0012+\n\u0013ability_embryo_list\u0018\u0001 \u0003(\u000b2\u000e.AbilityEmbryoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityEmbryoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019AbilityControlBlock.proto\u001a\u0013AbilityEmbryo.proto\"@\n\u0013AbilityControlBlock\u0012)\n\u0011abilityEmbryoList\u0018\u0001 \u0003(\u000b2\u000e.AbilityEmbryoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityEmbryoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AbilityControlBlock_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AbilityControlBlock_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AbilityControlBlock_descriptor, new String[]{"AbilityEmbryoList"});
 
@@ -55,7 +55,7 @@ public final class AbilityControlBlockOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityControlBlockOuterClass$AbilityControlBlock.class */
     public static final class AbilityControlBlock extends GeneratedMessageV3 implements AbilityControlBlockOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ABILITY_EMBRYO_LIST_FIELD_NUMBER = 1;
+        public static final int ABILITYEMBRYOLIST_FIELD_NUMBER = 1;
         private List<AbilityEmbryoOuterClass.AbilityEmbryo> abilityEmbryoList_;
         private byte memoizedIsInitialized;
         private static final AbilityControlBlock DEFAULT_INSTANCE = new AbilityControlBlock();

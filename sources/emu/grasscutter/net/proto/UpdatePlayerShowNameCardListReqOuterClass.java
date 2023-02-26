@@ -23,11 +23,11 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UpdatePlayerShowNameCardListReqOuterClass.class */
 public final class UpdatePlayerShowNameCardListReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n%UpdatePlayerShowNameCardListReq.proto\"A\n\u001fUpdatePlayerShowNameCardListReq\u0012\u001e\n\u0016show_name_card_id_list\u0018\u000b \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n%UpdatePlayerShowNameCardListReq.proto\"=\n\u001fUpdatePlayerShowNameCardListReq\u0012\u001a\n\u0012showNameCardIdList\u0018\u000e \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_UpdatePlayerShowNameCardListReq_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_UpdatePlayerShowNameCardListReq_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f905xa6a1931d = new GeneratedMessageV3.FieldAccessorTable(internal_static_UpdatePlayerShowNameCardListReq_descriptor, new String[]{"ShowNameCardIdList"});
+    private static final GeneratedMessageV3.FieldAccessorTable f874xa6a1931d = new GeneratedMessageV3.FieldAccessorTable(internal_static_UpdatePlayerShowNameCardListReq_descriptor, new String[]{"ShowNameCardIdList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UpdatePlayerShowNameCardListReqOuterClass$UpdatePlayerShowNameCardListReqOrBuilder.class */
     public interface UpdatePlayerShowNameCardListReqOrBuilder extends MessageOrBuilder {
@@ -51,7 +51,7 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UpdatePlayerShowNameCardListReqOuterClass$UpdatePlayerShowNameCardListReq.class */
     public static final class UpdatePlayerShowNameCardListReq extends GeneratedMessageV3 implements UpdatePlayerShowNameCardListReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SHOW_NAME_CARD_ID_LIST_FIELD_NUMBER = 11;
+        public static final int SHOWNAMECARDIDLIST_FIELD_NUMBER = 14;
         private Internal.IntList showNameCardIdList_;
         private int showNameCardIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -105,14 +105,14 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 88:
+                                case 112:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.showNameCardIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.showNameCardIdList_.addInt(input.readUInt32());
                                     break;
-                                case 90:
+                                case 114:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.showNameCardIdList_ = newIntList();
@@ -153,7 +153,7 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return UpdatePlayerShowNameCardListReqOuterClass.f905xa6a1931d.ensureFieldAccessorsInitialized(UpdatePlayerShowNameCardListReq.class, Builder.class);
+            return UpdatePlayerShowNameCardListReqOuterClass.f874xa6a1931d.ensureFieldAccessorsInitialized(UpdatePlayerShowNameCardListReq.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.UpdatePlayerShowNameCardListReqOuterClass.UpdatePlayerShowNameCardListReqOrBuilder
@@ -188,7 +188,7 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getShowNameCardIdListList().size() > 0) {
-                output.writeUInt32NoTag(90);
+                output.writeUInt32NoTag(114);
                 output.writeUInt32NoTag(this.showNameCardIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.showNameCardIdList_.size(); i++) {
@@ -236,7 +236,7 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getShowNameCardIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 11)) + getShowNameCardIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 14)) + getShowNameCardIdListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -326,7 +326,7 @@ public final class UpdatePlayerShowNameCardListReqOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return UpdatePlayerShowNameCardListReqOuterClass.f905xa6a1931d.ensureFieldAccessorsInitialized(UpdatePlayerShowNameCardListReq.class, Builder.class);
+                return UpdatePlayerShowNameCardListReqOuterClass.f874xa6a1931d.ensureFieldAccessorsInitialized(UpdatePlayerShowNameCardListReq.class, Builder.class);
             }
 
             private Builder() {

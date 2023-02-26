@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SummerTimeStageInfoOuterClass.class */
 public final class SummerTimeStageInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019SummerTimeStageInfo.proto\"K\n\u0013SummerTimeStageInfo\u0012\u0011\n\topen_time\u0018\u000b \u0001(\r\u0012\u0010\n\bstage_id\u0018\u0002 \u0001(\r\u0012\u000f\n\u0007is_open\u0018\u000e \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019SummerTimeStageInfo.proto\"H\n\u0013SummerTimeStageInfo\u0012\u0010\n\bopenTime\u0018\u0006 \u0001(\r\u0012\u000e\n\u0006isOpen\u0018\u0003 \u0001(\b\u0012\u000f\n\u0007stageId\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SummerTimeStageInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SummerTimeStageInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SummerTimeStageInfo_descriptor, new String[]{"OpenTime", "StageId", "IsOpen"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SummerTimeStageInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SummerTimeStageInfo_descriptor, new String[]{"OpenTime", "IsOpen", "StageId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SummerTimeStageInfoOuterClass$SummerTimeStageInfoOrBuilder.class */
     public interface SummerTimeStageInfoOrBuilder extends MessageOrBuilder {
         int getOpenTime();
 
-        int getStageId();
-
         boolean getIsOpen();
+
+        int getStageId();
     }
 
     private SummerTimeStageInfoOuterClass() {
@@ -46,12 +46,12 @@ public final class SummerTimeStageInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SummerTimeStageInfoOuterClass$SummerTimeStageInfo.class */
     public static final class SummerTimeStageInfo extends GeneratedMessageV3 implements SummerTimeStageInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int OPEN_TIME_FIELD_NUMBER = 11;
+        public static final int OPENTIME_FIELD_NUMBER = 6;
         private int openTime_;
-        public static final int STAGE_ID_FIELD_NUMBER = 2;
-        private int stageId_;
-        public static final int IS_OPEN_FIELD_NUMBER = 14;
+        public static final int ISOPEN_FIELD_NUMBER = 3;
         private boolean isOpen_;
+        public static final int STAGEID_FIELD_NUMBER = 4;
+        private int stageId_;
         private byte memoizedIsInitialized;
         private static final SummerTimeStageInfo DEFAULT_INSTANCE = new SummerTimeStageInfo();
         private static final Parser<SummerTimeStageInfo> PARSER = new AbstractParser<SummerTimeStageInfo>() { // from class: emu.grasscutter.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo.1
@@ -98,14 +98,14 @@ public final class SummerTimeStageInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
+                                case 24:
+                                    this.isOpen_ = input.readBool();
+                                    break;
+                                case 32:
                                     this.stageId_ = input.readUInt32();
                                     break;
-                                case 88:
+                                case 48:
                                     this.openTime_ = input.readUInt32();
-                                    break;
-                                case 112:
-                                    this.isOpen_ = input.readBool();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -143,13 +143,13 @@ public final class SummerTimeStageInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfoOrBuilder
-        public int getStageId() {
-            return this.stageId_;
+        public boolean getIsOpen() {
+            return this.isOpen_;
         }
 
         @Override // emu.grasscutter.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfoOrBuilder
-        public boolean getIsOpen() {
-            return this.isOpen_;
+        public int getStageId() {
+            return this.stageId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,14 +167,14 @@ public final class SummerTimeStageInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.isOpen_) {
+                output.writeBool(3, this.isOpen_);
+            }
             if (this.stageId_ != 0) {
-                output.writeUInt32(2, this.stageId_);
+                output.writeUInt32(4, this.stageId_);
             }
             if (this.openTime_ != 0) {
-                output.writeUInt32(11, this.openTime_);
-            }
-            if (this.isOpen_) {
-                output.writeBool(14, this.isOpen_);
+                output.writeUInt32(6, this.openTime_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class SummerTimeStageInfoOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.isOpen_) {
+                size2 = 0 + CodedOutputStream.computeBoolSize(3, this.isOpen_);
+            }
             if (this.stageId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.stageId_);
+                size2 += CodedOutputStream.computeUInt32Size(4, this.stageId_);
             }
             if (this.openTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.openTime_);
-            }
-            if (this.isOpen_) {
-                size2 += CodedOutputStream.computeBoolSize(14, this.isOpen_);
+                size2 += CodedOutputStream.computeUInt32Size(6, this.openTime_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class SummerTimeStageInfoOuterClass {
                 return equals(obj);
             }
             SummerTimeStageInfo other = (SummerTimeStageInfo) obj;
-            return getOpenTime() == other.getOpenTime() && getStageId() == other.getStageId() && getIsOpen() == other.getIsOpen() && this.unknownFields.equals(other.unknownFields);
+            return getOpenTime() == other.getOpenTime() && getIsOpen() == other.getIsOpen() && getStageId() == other.getStageId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class SummerTimeStageInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getOpenTime())) + 2)) + getStageId())) + 14)) + Internal.hashBoolean(getIsOpen()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getOpenTime())) + 3)) + Internal.hashBoolean(getIsOpen()))) + 4)) + getStageId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -297,8 +297,8 @@ public final class SummerTimeStageInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SummerTimeStageInfoOuterClass$SummerTimeStageInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SummerTimeStageInfoOrBuilder {
             private int openTime_;
-            private int stageId_;
             private boolean isOpen_;
+            private int stageId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return SummerTimeStageInfoOuterClass.internal_static_SummerTimeStageInfo_descriptor;
@@ -327,8 +327,8 @@ public final class SummerTimeStageInfoOuterClass {
             public Builder clear() {
                 clear();
                 this.openTime_ = 0;
-                this.stageId_ = 0;
                 this.isOpen_ = false;
+                this.stageId_ = 0;
                 return this;
             }
 
@@ -355,8 +355,8 @@ public final class SummerTimeStageInfoOuterClass {
             public SummerTimeStageInfo buildPartial() {
                 SummerTimeStageInfo result = new SummerTimeStageInfo(this);
                 result.openTime_ = this.openTime_;
-                result.stageId_ = this.stageId_;
                 result.isOpen_ = this.isOpen_;
+                result.stageId_ = this.stageId_;
                 onBuilt();
                 return result;
             }
@@ -407,11 +407,11 @@ public final class SummerTimeStageInfoOuterClass {
                 if (other.getOpenTime() != 0) {
                     setOpenTime(other.getOpenTime());
                 }
-                if (other.getStageId() != 0) {
-                    setStageId(other.getStageId());
-                }
                 if (other.getIsOpen()) {
                     setIsOpen(other.getIsOpen());
+                }
+                if (other.getStageId() != 0) {
+                    setStageId(other.getStageId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -463,23 +463,6 @@ public final class SummerTimeStageInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfoOrBuilder
-            public int getStageId() {
-                return this.stageId_;
-            }
-
-            public Builder setStageId(int value) {
-                this.stageId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearStageId() {
-                this.stageId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfoOrBuilder
             public boolean getIsOpen() {
                 return this.isOpen_;
             }
@@ -492,6 +475,23 @@ public final class SummerTimeStageInfoOuterClass {
 
             public Builder clearIsOpen() {
                 this.isOpen_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfoOrBuilder
+            public int getStageId() {
+                return this.stageId_;
+            }
+
+            public Builder setStageId(int value) {
+                this.stageId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearStageId() {
+                this.stageId_ = 0;
                 onChanged();
                 return this;
             }

@@ -32,7 +32,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MailDataOuterClass.class */
 public final class MailDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000eMailData.proto\u001a\u0016MailCollectState.proto\u001a\u000eMailItem.proto\u001a\u0015MailTextContent.proto\"¢\u0002\n\bMailData\u0012\u000f\n\u0007mail_id\u0018\u0001 \u0001(\r\u0012+\n\u0011mail_text_content\u0018\u0004 \u0001(\u000b2\u0010.MailTextContent\u0012\u001c\n\titem_list\u0018\u0007 \u0003(\u000b2\t.MailItem\u0012\u0011\n\tsend_time\u0018\b \u0001(\r\u0012\u0013\n\u000bexpire_time\u0018\t \u0001(\r\u0012\u0012\n\nimportance\u0018\n \u0001(\r\u0012\u000f\n\u0007is_read\u0018\u000b \u0001(\b\u0012\u0019\n\u0011is_attachment_got\u0018\f \u0001(\b\u0012\u0011\n\tconfig_id\u0018\r \u0001(\r\u0012\u0015\n\rargument_list\u0018\u000e \u0003(\t\u0012(\n\rcollect_state\u0018\u000f \u0001(\u000e2\u0011.MailCollectStateB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MailCollectStateOuterClass.getDescriptor(), MailItemOuterClass.getDescriptor(), MailTextContentOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000eMailData.proto\u001a\u0015MailTextContent.proto\u001a\u0016MailCollectState.proto\u001a\u000eMailItem.proto\"\u0002\n\bMailData\u0012\u000e\n\u0006mailId\u0018\u0001 \u0001(\r\u0012)\n\u000fmailTextContent\u0018\u0004 \u0001(\u000b2\u0010.MailTextContent\u0012\u001b\n\bitemList\u0018\u0007 \u0003(\u000b2\t.MailItem\u0012\u0010\n\bsendTime\u0018\b \u0001(\r\u0012\u0012\n\nexpireTime\u0018\t \u0001(\r\u0012\u0012\n\nimportance\u0018\n \u0001(\r\u0012\u000e\n\u0006isRead\u0018\u000b \u0001(\b\u0012\u0017\n\u000fisAttachmentGot\u0018\f \u0001(\b\u0012\u0010\n\bconfigId\u0018\r \u0001(\r\u0012\u0014\n\fargumentList\u0018\u000e \u0003(\t\u0012'\n\fcollectState\u0018\u000f \u0001(\u000e2\u0011.MailCollectStateB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MailTextContentOuterClass.getDescriptor(), MailCollectStateOuterClass.getDescriptor(), MailItemOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_MailData_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_MailData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MailData_descriptor, new String[]{"MailId", "MailTextContent", "ItemList", "SendTime", "ExpireTime", "Importance", "IsRead", "IsAttachmentGot", "ConfigId", "ArgumentList", "CollectState"});
 
@@ -94,27 +94,27 @@ public final class MailDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MailDataOuterClass$MailData.class */
     public static final class MailData extends GeneratedMessageV3 implements MailDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MAIL_ID_FIELD_NUMBER = 1;
+        public static final int MAILID_FIELD_NUMBER = 1;
         private int mailId_;
-        public static final int MAIL_TEXT_CONTENT_FIELD_NUMBER = 4;
+        public static final int MAILTEXTCONTENT_FIELD_NUMBER = 4;
         private MailTextContentOuterClass.MailTextContent mailTextContent_;
-        public static final int ITEM_LIST_FIELD_NUMBER = 7;
+        public static final int ITEMLIST_FIELD_NUMBER = 7;
         private List<MailItemOuterClass.MailItem> itemList_;
-        public static final int SEND_TIME_FIELD_NUMBER = 8;
+        public static final int SENDTIME_FIELD_NUMBER = 8;
         private int sendTime_;
-        public static final int EXPIRE_TIME_FIELD_NUMBER = 9;
+        public static final int EXPIRETIME_FIELD_NUMBER = 9;
         private int expireTime_;
         public static final int IMPORTANCE_FIELD_NUMBER = 10;
         private int importance_;
-        public static final int IS_READ_FIELD_NUMBER = 11;
+        public static final int ISREAD_FIELD_NUMBER = 11;
         private boolean isRead_;
-        public static final int IS_ATTACHMENT_GOT_FIELD_NUMBER = 12;
+        public static final int ISATTACHMENTGOT_FIELD_NUMBER = 12;
         private boolean isAttachmentGot_;
-        public static final int CONFIG_ID_FIELD_NUMBER = 13;
+        public static final int CONFIGID_FIELD_NUMBER = 13;
         private int configId_;
-        public static final int ARGUMENT_LIST_FIELD_NUMBER = 14;
+        public static final int ARGUMENTLIST_FIELD_NUMBER = 14;
         private LazyStringList argumentList_;
-        public static final int COLLECT_STATE_FIELD_NUMBER = 15;
+        public static final int COLLECTSTATE_FIELD_NUMBER = 15;
         private int collectState_;
         private byte memoizedIsInitialized;
         private static final MailData DEFAULT_INSTANCE = new MailData();
@@ -1336,8 +1336,8 @@ public final class MailDataOuterClass {
     }
 
     static {
+        MailTextContentOuterClass.getDescriptor();
         MailCollectStateOuterClass.getDescriptor();
         MailItemOuterClass.getDescriptor();
-        MailTextContentOuterClass.getDescriptor();
     }
 }

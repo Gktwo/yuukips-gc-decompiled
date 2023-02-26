@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FishPoolInfoOuterClass.class */
 public final class FishPoolInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012FishPoolInfo.proto\"O\n\fFishPoolInfo\u0012\u000f\n\u0007pool_id\u0018\u0001 \u0001(\r\u0012\u0016\n\u000efish_area_list\u0018\u0002 \u0003(\r\u0012\u0016\n\u000etoday_fish_num\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012FishPoolInfo.proto\"J\n\fFishPoolInfo\u0012\u000e\n\u0006poolId\u0018\u0001 \u0001(\r\u0012\u0014\n\ffishAreaList\u0018\u0002 \u0003(\r\u0012\u0014\n\ftodayFishNum\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_FishPoolInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_FishPoolInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FishPoolInfo_descriptor, new String[]{"PoolId", "FishAreaList", "TodayFishNum"});
 
@@ -53,12 +53,12 @@ public final class FishPoolInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FishPoolInfoOuterClass$FishPoolInfo.class */
     public static final class FishPoolInfo extends GeneratedMessageV3 implements FishPoolInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int POOL_ID_FIELD_NUMBER = 1;
+        public static final int POOLID_FIELD_NUMBER = 1;
         private int poolId_;
-        public static final int FISH_AREA_LIST_FIELD_NUMBER = 2;
+        public static final int FISHAREALIST_FIELD_NUMBER = 2;
         private Internal.IntList fishAreaList_;
         private int fishAreaListMemoizedSerializedSize;
-        public static final int TODAY_FISH_NUM_FIELD_NUMBER = 3;
+        public static final int TODAYFISHNUM_FIELD_NUMBER = 3;
         private int todayFishNum_;
         private byte memoizedIsInitialized;
         private static final FishPoolInfo DEFAULT_INSTANCE = new FishPoolInfo();

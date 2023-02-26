@@ -11,7 +11,7 @@ public class IntArrayIndirectPriorityQueue implements IntIndirectPriorityQueue {
     protected int size;
 
     /* renamed from: c */
-    protected IntComparator f2150c;
+    protected IntComparator f2114c;
     protected int firstIndex;
     protected boolean firstIndexValid;
 
@@ -21,7 +21,7 @@ public class IntArrayIndirectPriorityQueue implements IntIndirectPriorityQueue {
             this.array = new int[capacity];
         }
         this.refArray = refArray;
-        this.f2150c = c;
+        this.f2114c = c;
     }
 
     public IntArrayIndirectPriorityQueue(int[] refArray, int capacity) {
@@ -62,12 +62,12 @@ public class IntArrayIndirectPriorityQueue implements IntIndirectPriorityQueue {
         int i = this.size - 1;
         int firstIndex = i;
         int first = this.refArray[this.array[firstIndex]];
-        if (this.f2150c != null) {
+        if (this.f2114c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f2150c.compare(this.refArray[this.array[i]], first) < 0) {
+                } else if (this.f2114c.compare(this.refArray[this.array[i]], first) < 0) {
                     firstIndex = i;
                     first = this.refArray[this.array[i]];
                 }
@@ -91,12 +91,12 @@ public class IntArrayIndirectPriorityQueue implements IntIndirectPriorityQueue {
         int i = this.size - 1;
         int lastIndex = i;
         int last = this.refArray[this.array[lastIndex]];
-        if (this.f2150c != null) {
+        if (this.f2114c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f2150c.compare(last, this.refArray[this.array[i]]) < 0) {
+                } else if (this.f2114c.compare(last, this.refArray[this.array[i]]) < 0) {
                     lastIndex = i;
                     last = this.refArray[this.array[i]];
                 }
@@ -137,11 +137,11 @@ public class IntArrayIndirectPriorityQueue implements IntIndirectPriorityQueue {
         }
         if (!this.firstIndexValid) {
             this.firstIndexValid = false;
-        } else if (this.f2150c == null) {
+        } else if (this.f2114c == null) {
             if (this.refArray[x] < this.refArray[this.array[this.firstIndex]]) {
                 this.firstIndex = this.size;
             }
-        } else if (this.f2150c.compare(this.refArray[x], this.refArray[this.array[this.firstIndex]]) < 0) {
+        } else if (this.f2114c.compare(this.refArray[x], this.refArray[this.array[this.firstIndex]]) < 0) {
             this.firstIndex = this.size;
         }
         int[] iArr = this.array;
@@ -254,7 +254,7 @@ public class IntArrayIndirectPriorityQueue implements IntIndirectPriorityQueue {
     /* Return type fixed from 'it.unimi.dsi.fastutil.ints.IntComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.ints.IntIndirectPriorityQueue, p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public Comparator<? super Integer> comparator() {
-        return this.f2150c;
+        return this.f2114c;
     }
 
     public String toString() {

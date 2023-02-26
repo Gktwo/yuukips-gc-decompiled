@@ -570,7 +570,7 @@ public class FloatRBTreeSet extends AbstractFloatSortedSet implements Serializab
         float from;
 
         /* renamed from: to */
-        float f1971to;
+        float f1935to;
         boolean bottom;
         boolean top;
 
@@ -578,7 +578,7 @@ public class FloatRBTreeSet extends AbstractFloatSortedSet implements Serializab
             if (bottom || top || FloatRBTreeSet.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f1971to = to;
+                this.f1935to = to;
                 this.top = top;
                 return;
             }
@@ -596,7 +596,7 @@ public class FloatRBTreeSet extends AbstractFloatSortedSet implements Serializab
 
         /* renamed from: in */
         final boolean m788in(float k) {
-            return (this.bottom || FloatRBTreeSet.this.compare(k, this.from) >= 0) && (this.top || FloatRBTreeSet.this.compare(k, this.f1971to) < 0);
+            return (this.bottom || FloatRBTreeSet.this.compare(k, this.from) >= 0) && (this.top || FloatRBTreeSet.this.compare(k, this.f1935to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatCollection, p014it.unimi.dsi.fastutil.floats.FloatCollection
@@ -609,7 +609,7 @@ public class FloatRBTreeSet extends AbstractFloatSortedSet implements Serializab
             if (m788in(k)) {
                 return FloatRBTreeSet.this.add(k);
             }
-            throw new IllegalArgumentException("Element (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1971to)) + ")");
+            throw new IllegalArgumentException("Element (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1935to)) + ")");
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatSet, p014it.unimi.dsi.fastutil.floats.FloatSet
@@ -654,7 +654,7 @@ public class FloatRBTreeSet extends AbstractFloatSortedSet implements Serializab
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatSortedSet
         public FloatSortedSet headSet(float to) {
-            if (!this.top && FloatRBTreeSet.this.compare(to, this.f1971to) >= 0) {
+            if (!this.top && FloatRBTreeSet.this.compare(to, this.f1935to) >= 0) {
                 return this;
             }
             return new Subset(this.from, this.bottom, to, false);
@@ -665,7 +665,7 @@ public class FloatRBTreeSet extends AbstractFloatSortedSet implements Serializab
             if (!this.bottom && FloatRBTreeSet.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Subset(from, false, this.f1971to, this.top);
+            return new Subset(from, false, this.f1935to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatSortedSet
@@ -674,12 +674,12 @@ public class FloatRBTreeSet extends AbstractFloatSortedSet implements Serializab
                 return new Subset(from, false, to, false);
             }
             if (!this.top) {
-                to = FloatRBTreeSet.this.compare(to, this.f1971to) < 0 ? to : this.f1971to;
+                to = FloatRBTreeSet.this.compare(to, this.f1935to) < 0 ? to : this.f1935to;
             }
             if (!this.bottom) {
                 from = FloatRBTreeSet.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f1971to) ? new Subset(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f1935to) ? new Subset(from, false, to, false) : this;
         }
 
         public Entry firstEntry() {
@@ -698,7 +698,7 @@ public class FloatRBTreeSet extends AbstractFloatSortedSet implements Serializab
             if (e == null) {
                 return null;
             }
-            if (this.top || FloatRBTreeSet.this.compare(e.key, this.f1971to) < 0) {
+            if (this.top || FloatRBTreeSet.this.compare(e.key, this.f1935to) < 0) {
                 return e;
             }
             return null;
@@ -712,8 +712,8 @@ public class FloatRBTreeSet extends AbstractFloatSortedSet implements Serializab
             if (this.top) {
                 e = FloatRBTreeSet.this.lastEntry;
             } else {
-                e = FloatRBTreeSet.this.locateKey(this.f1971to);
-                if (FloatRBTreeSet.this.compare(e.key, this.f1971to) >= 0) {
+                e = FloatRBTreeSet.this.locateKey(this.f1935to);
+                if (FloatRBTreeSet.this.compare(e.key, this.f1935to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -791,7 +791,7 @@ public class FloatRBTreeSet extends AbstractFloatSortedSet implements Serializab
             @Override // p014it.unimi.dsi.fastutil.floats.FloatRBTreeSet.SetIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Subset.this.top && this.next != null && FloatRBTreeSet.this.compare(this.next.key, Subset.this.f1971to) >= 0) {
+                if (!Subset.this.top && this.next != null && FloatRBTreeSet.this.compare(this.next.key, Subset.this.f1935to) >= 0) {
                     this.next = null;
                 }
             }

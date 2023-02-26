@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarChangeCostumeNotifyOuterClass.class */
 public final class AvatarChangeCostumeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fAvatarChangeCostumeNotify.proto\u001a\u0015SceneEntityInfo.proto\"B\n\u0019AvatarChangeCostumeNotify\u0012%\n\u000bentity_info\u0018\u000b \u0001(\u000b2\u0010.SceneEntityInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{SceneEntityInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fAvatarChangeCostumeNotify.proto\u001a\u0015SceneEntityInfo.proto\"A\n\u0019AvatarChangeCostumeNotify\u0012$\n\nentityInfo\u0018\r \u0001(\u000b2\u0010.SceneEntityInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{SceneEntityInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AvatarChangeCostumeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarChangeCostumeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarChangeCostumeNotify_descriptor, new String[]{"EntityInfo"});
 
@@ -47,7 +47,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarChangeCostumeNotifyOuterClass$AvatarChangeCostumeNotify.class */
     public static final class AvatarChangeCostumeNotify extends GeneratedMessageV3 implements AvatarChangeCostumeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTITY_INFO_FIELD_NUMBER = 11;
+        public static final int ENTITYINFO_FIELD_NUMBER = 13;
         private SceneEntityInfoOuterClass.SceneEntityInfo entityInfo_;
         private byte memoizedIsInitialized;
         private static final AvatarChangeCostumeNotify DEFAULT_INSTANCE = new AvatarChangeCostumeNotify();
@@ -94,7 +94,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 90:
+                            case 106:
                                 SceneEntityInfoOuterClass.SceneEntityInfo.Builder subBuilder = this.entityInfo_ != null ? this.entityInfo_.toBuilder() : null;
                                 this.entityInfo_ = (SceneEntityInfoOuterClass.SceneEntityInfo) input.readMessage(SceneEntityInfoOuterClass.SceneEntityInfo.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -164,7 +164,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.entityInfo_ != null) {
-                output.writeMessage(11, getEntityInfo());
+                output.writeMessage(13, getEntityInfo());
             }
             this.unknownFields.writeTo(output);
         }
@@ -177,7 +177,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
             }
             int size2 = 0;
             if (this.entityInfo_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(11, getEntityInfo());
+                size2 = 0 + CodedOutputStream.computeMessageSize(13, getEntityInfo());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -206,7 +206,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasEntityInfo()) {
-                hash = (53 * ((37 * hash) + 11)) + getEntityInfo().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getEntityInfo().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

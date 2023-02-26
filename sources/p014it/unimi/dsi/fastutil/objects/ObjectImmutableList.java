@@ -23,7 +23,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
     private static final long serialVersionUID = 0;
 
     /* renamed from: a */
-    private final K[] f2703a;
+    private final K[] f2667a;
     static final ObjectImmutableList EMPTY = new ObjectImmutableList(ObjectArrays.EMPTY_ARRAY);
     private static final Collector<Object, ?, ObjectImmutableList<Object>> TO_LIST_COLLECTOR = Collector.of(ObjectArrayList::new, (v0, v1) -> {
         v0.add(v1);
@@ -41,7 +41,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
     }
 
     public ObjectImmutableList(K[] a) {
-        this.f2703a = a;
+        this.f2667a = a;
     }
 
     public ObjectImmutableList(Collection<? extends K> c) {
@@ -54,12 +54,12 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
 
     public ObjectImmutableList(ObjectList<? extends K> l) {
         this(l.isEmpty() ? emptyArray() : new Object[l.size()]);
-        l.getElements(0, this.f2703a, 0, l.size());
+        l.getElements(0, this.f2667a, 0, l.size());
     }
 
     public ObjectImmutableList(K[] a, int offset, int length) {
         this(length == 0 ? emptyArray() : new Object[length]);
-        System.arraycopy(a, offset, this.f2703a, 0, length);
+        System.arraycopy(a, offset, this.f2667a, 0, length);
     }
 
     public ObjectImmutableList(ObjectIterator<? extends K> i) {
@@ -109,17 +109,17 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
 
     @Override // java.util.List
     public K get(int index) {
-        if (index < this.f2703a.length) {
-            return this.f2703a[index];
+        if (index < this.f2667a.length) {
+            return this.f2667a[index];
         }
-        throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.f2703a.length + ")");
+        throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.f2667a.length + ")");
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, java.util.List
     public int indexOf(Object k) {
-        int size = this.f2703a.length;
+        int size = this.f2667a.length;
         for (int i = 0; i < size; i++) {
-            if (Objects.equals(k, this.f2703a[i])) {
+            if (Objects.equals(k, this.f2667a[i])) {
                 return i;
             }
         }
@@ -128,45 +128,45 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, java.util.List
     public int lastIndexOf(Object k) {
-        int i = this.f2703a.length;
+        int i = this.f2667a.length;
         do {
             i--;
             if (i == 0) {
                 return -1;
             }
-        } while (!Objects.equals(k, this.f2703a[i]));
+        } while (!Objects.equals(k, this.f2667a[i]));
         return i;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public int size() {
-        return this.f2703a.length;
+        return this.f2667a.length;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List, p014it.unimi.dsi.fastutil.Stack
     public boolean isEmpty() {
-        return this.f2703a.length == 0;
+        return this.f2667a.length == 0;
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, p014it.unimi.dsi.fastutil.objects.ObjectList
     public void getElements(int from, Object[] a, int offset, int length) {
         ObjectArrays.ensureOffsetLength(a, offset, length);
-        System.arraycopy(this.f2703a, from, a, offset, length);
+        System.arraycopy(this.f2667a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, java.lang.Iterable
     public void forEach(Consumer<? super K> action) {
-        for (int i = 0; i < this.f2703a.length; i++) {
-            action.accept((Object) this.f2703a[i]);
+        for (int i = 0; i < this.f2667a.length; i++) {
+            action.accept((Object) this.f2667a[i]);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public Object[] toArray() {
-        if (this.f2703a.getClass().equals(Object[].class)) {
-            return (Object[]) this.f2703a.clone();
+        if (this.f2667a.getClass().equals(Object[].class)) {
+            return (Object[]) this.f2667a.clone();
         }
-        return Arrays.copyOf(this.f2703a, this.f2703a.length, Object[].class);
+        return Arrays.copyOf(this.f2667a, this.f2667a.length, Object[].class);
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -176,7 +176,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
         } else if (a.length < size()) {
             a = (K[]) ((Object[]) Array.newInstance(a.getClass().getComponentType(), size()));
         }
-        System.arraycopy(this.f2703a, 0, a, 0, size());
+        System.arraycopy(this.f2667a, 0, a, 0, size());
         if (a.length > size()) {
             a[size()] = null;
         }
@@ -196,7 +196,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
 
             @Override // java.util.Iterator, java.util.ListIterator
             public boolean hasNext() {
-                return this.pos < ObjectImmutableList.this.f2703a.length;
+                return this.pos < ObjectImmutableList.this.f2667a.length;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -209,7 +209,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                Object[] objArr = ObjectImmutableList.this.f2703a;
+                Object[] objArr = ObjectImmutableList.this.f2667a;
                 int i = this.pos;
                 this.pos = i + 1;
                 return (K) objArr[i];
@@ -220,7 +220,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                Object[] objArr = ObjectImmutableList.this.f2703a;
+                Object[] objArr = ObjectImmutableList.this.f2667a;
                 int i = this.pos - 1;
                 this.pos = i;
                 return (K) objArr[i];
@@ -238,8 +238,8 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
 
             @Override // java.util.Iterator
             public void forEachRemaining(Consumer<? super K> action) {
-                while (this.pos < ObjectImmutableList.this.f2703a.length) {
-                    Object[] objArr = ObjectImmutableList.this.f2703a;
+                while (this.pos < ObjectImmutableList.this.f2667a.length) {
+                    Object[] objArr = ObjectImmutableList.this.f2667a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(objArr[i]);
@@ -266,7 +266,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
                 if (n < 0) {
                     throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                 }
-                int remaining = ObjectImmutableList.this.f2703a.length - this.pos;
+                int remaining = ObjectImmutableList.this.f2667a.length - this.pos;
                 if (n < remaining) {
                     this.pos -= n;
                 } else {
@@ -281,12 +281,12 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
                 if (n < 0) {
                     throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                 }
-                int remaining = ObjectImmutableList.this.f2703a.length - this.pos;
+                int remaining = ObjectImmutableList.this.f2667a.length - this.pos;
                 if (n < remaining) {
                     this.pos += n;
                 } else {
                     n = remaining;
-                    this.pos = ObjectImmutableList.this.f2703a.length;
+                    this.pos = ObjectImmutableList.this.f2667a.length;
                 }
                 return n;
             }
@@ -306,7 +306,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
         }
 
         public Spliterator(ObjectImmutableList objectImmutableList) {
-            this(0, objectImmutableList.f2703a.length);
+            this(0, objectImmutableList.f2667a.length);
         }
 
         private Spliterator(int pos, int max) {
@@ -333,7 +333,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
             if (this.pos >= this.max) {
                 return false;
             }
-            Object[] objArr = ObjectImmutableList.this.f2703a;
+            Object[] objArr = ObjectImmutableList.this.f2667a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(objArr[i]);
@@ -343,7 +343,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
         @Override // java.util.Spliterator
         public void forEachRemaining(Consumer<? super K> action) {
             while (this.pos < this.max) {
-                action.accept(ObjectImmutableList.this.f2703a[this.pos]);
+                action.accept(ObjectImmutableList.this.f2667a[this.pos]);
                 this.pos++;
             }
         }
@@ -393,10 +393,10 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
         final int from;
 
         /* renamed from: to */
-        final int f2704to;
+        final int f2668to;
 
         /* renamed from: a */
-        final transient K[] f2705a;
+        final transient K[] f2669a;
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, java.lang.Comparable
         public /* bridge */ /* synthetic */ int compareTo(Object obj) {
@@ -406,20 +406,20 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
         ImmutableSubList(ObjectImmutableList<K> innerList, int from, int to) {
             this.innerList = innerList;
             this.from = from;
-            this.f2704to = to;
-            this.f2705a = (K[]) ((ObjectImmutableList) innerList).f2703a;
+            this.f2668to = to;
+            this.f2669a = (K[]) ((ObjectImmutableList) innerList).f2667a;
         }
 
         @Override // java.util.List
         public K get(int index) {
             ensureRestrictedIndex(index);
-            return this.f2705a[index + this.from];
+            return this.f2669a[index + this.from];
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, java.util.List
         public int indexOf(Object k) {
-            for (int i = this.from; i < this.f2704to; i++) {
-                if (Objects.equals(k, this.f2705a[i])) {
+            for (int i = this.from; i < this.f2668to; i++) {
+                if (Objects.equals(k, this.f2669a[i])) {
                     return i - this.from;
                 }
             }
@@ -428,46 +428,46 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, java.util.List
         public int lastIndexOf(Object k) {
-            int i = this.f2704to;
+            int i = this.f2668to;
             do {
                 i--;
                 if (i == this.from) {
                     return -1;
                 }
-            } while (!Objects.equals(k, this.f2705a[i]));
+            } while (!Objects.equals(k, this.f2669a[i]));
             return i - this.from;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public int size() {
-            return this.f2704to - this.from;
+            return this.f2668to - this.from;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List, p014it.unimi.dsi.fastutil.Stack
         public boolean isEmpty() {
-            return this.f2704to <= this.from;
+            return this.f2668to <= this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, p014it.unimi.dsi.fastutil.objects.ObjectList
         public void getElements(int fromSublistIndex, Object[] a, int offset, int length) {
             ObjectArrays.ensureOffsetLength(a, offset, length);
             ensureRestrictedIndex(fromSublistIndex);
-            if (this.from + length > this.f2704to) {
+            if (this.from + length > this.f2668to) {
                 throw new IndexOutOfBoundsException("Final index " + (this.from + length) + " (startingIndex: " + this.from + " + length: " + length + ") is greater then list length " + size());
             }
-            System.arraycopy(this.f2705a, fromSublistIndex + this.from, a, offset, length);
+            System.arraycopy(this.f2669a, fromSublistIndex + this.from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, java.lang.Iterable
         public void forEach(Consumer<? super K> action) {
-            for (int i = this.from; i < this.f2704to; i++) {
-                action.accept((Object) this.f2705a[i]);
+            for (int i = this.from; i < this.f2668to; i++) {
+                action.accept((Object) this.f2669a[i]);
             }
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, java.util.AbstractCollection, java.util.Collection, java.util.List
         public Object[] toArray() {
-            return Arrays.copyOfRange(this.f2705a, this.from, this.f2704to, Object[].class);
+            return Arrays.copyOfRange(this.f2669a, this.from, this.f2668to, Object[].class);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -480,7 +480,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
             } else if (a.length < size) {
                 a = (K[]) ((Object[]) Array.newInstance(a.getClass().getComponentType(), size));
             }
-            System.arraycopy(this.f2705a, this.from, a, 0, size);
+            System.arraycopy(this.f2669a, this.from, a, 0, size);
             if (a.length > size) {
                 a[size] = null;
             }
@@ -500,7 +500,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
 
                 @Override // java.util.Iterator, java.util.ListIterator
                 public boolean hasNext() {
-                    return this.pos < ImmutableSubList.this.f2704to;
+                    return this.pos < ImmutableSubList.this.f2668to;
                 }
 
                 @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -513,7 +513,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
                     if (!hasNext()) {
                         throw new NoSuchElementException();
                     }
-                    K[] kArr = ImmutableSubList.this.f2705a;
+                    K[] kArr = ImmutableSubList.this.f2669a;
                     int i = this.pos;
                     this.pos = i + 1;
                     return kArr[i + ImmutableSubList.this.from];
@@ -524,7 +524,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
                     if (!hasPrevious()) {
                         throw new NoSuchElementException();
                     }
-                    K[] kArr = ImmutableSubList.this.f2705a;
+                    K[] kArr = ImmutableSubList.this.f2669a;
                     int i = this.pos - 1;
                     this.pos = i;
                     return kArr[i + ImmutableSubList.this.from];
@@ -542,10 +542,10 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
 
                 @Override // java.util.Iterator
                 public void forEachRemaining(Consumer<? super K> action) {
-                    while (this.pos < ImmutableSubList.this.f2704to) {
+                    while (this.pos < ImmutableSubList.this.f2668to) {
                         int i = this.pos;
                         this.pos = i + 1;
-                        action.accept((Object) ImmutableSubList.this.f2705a[i + ImmutableSubList.this.from]);
+                        action.accept((Object) ImmutableSubList.this.f2669a[i + ImmutableSubList.this.from]);
                     }
                 }
 
@@ -569,7 +569,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
                     if (n < 0) {
                         throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                     }
-                    int remaining = ImmutableSubList.this.f2704to - this.pos;
+                    int remaining = ImmutableSubList.this.f2668to - this.pos;
                     if (n < remaining) {
                         this.pos -= n;
                     } else {
@@ -584,12 +584,12 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
                     if (n < 0) {
                         throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                     }
-                    int remaining = ImmutableSubList.this.f2704to - this.pos;
+                    int remaining = ImmutableSubList.this.f2668to - this.pos;
                     if (n < remaining) {
                         this.pos += n;
                     } else {
                         n = remaining;
-                        this.pos = ImmutableSubList.this.f2704to;
+                        this.pos = ImmutableSubList.this.f2668to;
                     }
                     return n;
                 }
@@ -601,7 +601,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
         /* loaded from: grasscutter.jar:it/unimi/dsi/fastutil/objects/ObjectImmutableList$ImmutableSubList$SubListSpliterator.class */
         public final class SubListSpliterator extends ObjectSpliterators.EarlyBindingSizeIndexBasedSpliterator<K> {
             SubListSpliterator() {
-                super(ImmutableSubList.this.from, ImmutableSubList.this.f2704to);
+                super(ImmutableSubList.this.from, ImmutableSubList.this.f2668to);
             }
 
             private SubListSpliterator(int pos, int maxPos) {
@@ -610,7 +610,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterators.AbstractIndexBasedSpliterator
             protected final K get(int i) {
-                return ImmutableSubList.this.f2705a[i];
+                return ImmutableSubList.this.f2669a[i];
             }
 
             /* access modifiers changed from: protected */
@@ -626,7 +626,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
                 }
                 int i = this.pos;
                 this.pos = i + 1;
-                action.accept((Object) ImmutableSubList.this.f2705a[i]);
+                action.accept((Object) ImmutableSubList.this.f2669a[i]);
                 return true;
             }
 
@@ -636,7 +636,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
                 while (this.pos < max) {
                     int i = this.pos;
                     this.pos = i + 1;
-                    action.accept((Object) ImmutableSubList.this.f2705a[i]);
+                    action.accept((Object) ImmutableSubList.this.f2669a[i]);
                 }
             }
 
@@ -652,7 +652,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
         }
 
         boolean contentsEquals(K[] otherA, int otherAFrom, int otherATo) {
-            if (this.f2705a == otherA && this.from == otherAFrom && this.f2704to == otherATo) {
+            if (this.f2669a == otherA && this.from == otherAFrom && this.f2668to == otherATo) {
                 return true;
             }
             if (otherATo - otherAFrom != size()) {
@@ -660,10 +660,10 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
             }
             int pos = this.from;
             int otherPos = otherAFrom;
-            while (pos < this.f2704to) {
+            while (pos < this.f2668to) {
                 pos++;
                 otherPos++;
-                if (!Objects.equals(this.f2705a[pos], otherA[otherPos])) {
+                if (!Objects.equals(this.f2669a[pos], otherA[otherPos])) {
                     return false;
                 }
             }
@@ -682,20 +682,20 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
             }
             if (o instanceof ObjectImmutableList) {
                 ObjectImmutableList<K> other = (ObjectImmutableList) o;
-                return contentsEquals(((ObjectImmutableList) other).f2703a, 0, other.size());
+                return contentsEquals(((ObjectImmutableList) other).f2667a, 0, other.size());
             } else if (!(o instanceof ImmutableSubList)) {
                 return equals(o);
             } else {
                 ImmutableSubList<K> other2 = (ImmutableSubList) o;
-                return contentsEquals(other2.f2705a, other2.from, other2.f2704to);
+                return contentsEquals(other2.f2669a, other2.from, other2.f2668to);
             }
         }
 
         int contentsCompareTo(K[] otherA, int otherAFrom, int otherATo) {
             int i = this.from;
             int j = otherAFrom;
-            while (i < this.f2704to && i < otherATo) {
-                int r = ((Comparable) this.f2705a[i]).compareTo(otherA[j]);
+            while (i < this.f2668to && i < otherATo) {
+                int r = ((Comparable) this.f2669a[i]).compareTo(otherA[j]);
                 if (r != 0) {
                     return r;
                 }
@@ -705,7 +705,7 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
             if (i < otherATo) {
                 return -1;
             }
-            return i < this.f2704to ? 1 : 0;
+            return i < this.f2668to ? 1 : 0;
         }
 
         /* JADX DEBUG: Multi-variable search result rejected for r5v0, resolved type: it.unimi.dsi.fastutil.objects.ObjectImmutableList$ImmutableSubList<K> */
@@ -714,18 +714,18 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
         public int compareTo(List<? extends K> l) {
             if (l instanceof ObjectImmutableList) {
                 ObjectImmutableList<K> other = (ObjectImmutableList) l;
-                return contentsCompareTo(((ObjectImmutableList) other).f2703a, 0, other.size());
+                return contentsCompareTo(((ObjectImmutableList) other).f2667a, 0, other.size());
             } else if (!(l instanceof ImmutableSubList)) {
                 return compareTo((List) l);
             } else {
                 ImmutableSubList<K> other2 = (ImmutableSubList) l;
-                return contentsCompareTo(other2.f2705a, other2.from, other2.f2704to);
+                return contentsCompareTo(other2.f2669a, other2.from, other2.f2668to);
             }
         }
 
         private Object readResolve() throws ObjectStreamException {
             try {
-                return this.innerList.subList(this.from, this.f2704to);
+                return this.innerList.subList(this.from, this.f2668to);
             } catch (IllegalArgumentException | IndexOutOfBoundsException ex) {
                 throw ((InvalidObjectException) new InvalidObjectException(ex.getMessage()).initCause(ex));
             }
@@ -767,13 +767,13 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
     }
 
     public boolean equals(ObjectImmutableList<K> l) {
-        if (l == this || this.f2703a == l.f2703a) {
+        if (l == this || this.f2667a == l.f2667a) {
             return true;
         }
         if (size() != l.size()) {
             return false;
         }
-        return Arrays.equals(this.f2703a, l.f2703a);
+        return Arrays.equals(this.f2667a, l.f2667a);
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, java.util.Collection, java.lang.Object, java.util.List
@@ -796,8 +796,8 @@ public class ObjectImmutableList<K> extends ObjectLists.ImmutableListBase<K> imp
     public int compareTo(ObjectImmutableList<? extends K> l) {
         int s1 = size();
         int s2 = l.size();
-        K[] a1 = this.f2703a;
-        Object[] objArr = l.f2703a;
+        K[] a1 = this.f2667a;
+        Object[] objArr = l.f2667a;
         int i = 0;
         while (i < s1 && i < s2) {
             int r = ((Comparable) a1[i]).compareTo(objArr[i]);

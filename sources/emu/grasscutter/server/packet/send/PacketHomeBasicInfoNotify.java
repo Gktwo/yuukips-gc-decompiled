@@ -13,9 +13,9 @@ public class PacketHomeBasicInfoNotify extends BasePacket {
         super(PacketOpcodes.HomeBasicInfoNotify);
         if (player.getCurrentRealmId() > 0) {
             HomeBasicInfoNotifyOuterClass.HomeBasicInfoNotify.Builder proto = HomeBasicInfoNotifyOuterClass.HomeBasicInfoNotify.newBuilder();
-            HomeSceneItem homeScene = player.getHome().getHomeSceneItem(PacketOpcodes.SetCoopChapterViewedRsp + player.getCurrentRealmId());
+            HomeSceneItem homeScene = player.getHome().getHomeSceneItem(2000 + player.getCurrentRealmId());
             if (homeScene != null) {
-                proto.setBasicInfo(HomeBasicInfoOuterClass.HomeBasicInfo.newBuilder().setCurModuleId(player.getCurrentRealmId()).setCurRoomSceneId(homeScene.getRoomSceneId()).setIsInEditMode(editMode).setHomeOwnerUid(player.getUid()).setLevel(player.getHome().getLevel()).setOwnerNickName(player.getNickname()).build());
+                proto.setBasicInfo(HomeBasicInfoOuterClass.HomeBasicInfo.newBuilder().setCurModuleId(player.getCurrentRealmId()).setCurRoomSceneId(homeScene.getRoomSceneId()).setIsInEditMode(editMode).setHomeOwnerUid(player.getUid()).setExp((long) player.getHome().getExp()).setLevel(player.getHome().getLevel()).setOwnerNickName(player.getNickname()).build());
                 setData(proto);
             }
         }

@@ -294,50 +294,50 @@ public final class CharSpliterators {
     private static class SpliteratorWrapper implements CharSpliterator {
 
         /* renamed from: i */
-        final Spliterator<Character> f1532i;
+        final Spliterator<Character> f1496i;
 
         public SpliteratorWrapper(Spliterator<Character> i) {
-            this.f1532i = i;
+            this.f1496i = i;
         }
 
         public boolean tryAdvance(CharConsumer action) {
-            return this.f1532i.tryAdvance(action);
+            return this.f1496i.tryAdvance(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharSpliterator, java.util.Spliterator
         @Deprecated
         public boolean tryAdvance(Consumer<? super Character> action) {
-            return this.f1532i.tryAdvance(action);
+            return this.f1496i.tryAdvance(action);
         }
 
         public void forEachRemaining(CharConsumer action) {
-            this.f1532i.forEachRemaining(action);
+            this.f1496i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharSpliterator, java.util.Spliterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Character> action) {
-            this.f1532i.forEachRemaining(action);
+            this.f1496i.forEachRemaining(action);
         }
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return this.f1532i.estimateSize();
+            return this.f1496i.estimateSize();
         }
 
         @Override // java.util.Spliterator
         public int characteristics() {
-            return this.f1532i.characteristics();
+            return this.f1496i.characteristics();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharSpliterator, java.util.Spliterator
         public CharComparator getComparator() {
-            return CharComparators.asCharComparator(this.f1532i.getComparator());
+            return CharComparators.asCharComparator(this.f1496i.getComparator());
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public CharSpliterator trySplit() {
-            Spliterator<Character> innerSplit = this.f1532i.trySplit();
+            Spliterator<Character> innerSplit = this.f1496i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -362,7 +362,7 @@ public final class CharSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharSpliterators.SpliteratorWrapper, p014it.unimi.dsi.fastutil.chars.CharSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public CharSpliterator trySplit() {
-            Spliterator<Character> innerSplit = this.f1532i.trySplit();
+            Spliterator<Character> innerSplit = this.f1496i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -375,33 +375,33 @@ public final class CharSpliterators {
     private static class PrimitiveSpliteratorWrapper implements CharSpliterator {
 
         /* renamed from: i */
-        final Spliterator.OfInt f1530i;
+        final Spliterator.OfInt f1494i;
 
         public PrimitiveSpliteratorWrapper(Spliterator.OfInt i) {
-            this.f1530i = i;
+            this.f1494i = i;
         }
 
         public boolean tryAdvance(CharConsumer action) {
-            return this.f1530i.tryAdvance((IntConsumer) action);
+            return this.f1494i.tryAdvance((IntConsumer) action);
         }
 
         public void forEachRemaining(CharConsumer action) {
-            this.f1530i.forEachRemaining((IntConsumer) action);
+            this.f1494i.forEachRemaining((IntConsumer) action);
         }
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return this.f1530i.estimateSize();
+            return this.f1494i.estimateSize();
         }
 
         @Override // java.util.Spliterator
         public int characteristics() {
-            return this.f1530i.characteristics();
+            return this.f1494i.characteristics();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharSpliterator, java.util.Spliterator
         public CharComparator getComparator() {
-            Comparator<? super Integer> comp = this.f1530i.getComparator();
+            Comparator<? super Integer> comp = this.f1494i.getComparator();
             return left, right -> {
                 return comp.compare(Integer.valueOf(left), Integer.valueOf(right));
             };
@@ -409,7 +409,7 @@ public final class CharSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public CharSpliterator trySplit() {
-            Spliterator.OfInt innerSplit = this.f1530i.trySplit();
+            Spliterator.OfInt innerSplit = this.f1494i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -434,7 +434,7 @@ public final class CharSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharSpliterators.PrimitiveSpliteratorWrapper, p014it.unimi.dsi.fastutil.chars.CharSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public CharSpliterator trySplit() {
-            Spliterator.OfInt innerSplit = this.f1530i.trySplit();
+            Spliterator.OfInt innerSplit = this.f1494i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -633,15 +633,15 @@ public final class CharSpliterators {
         private char curr;
 
         /* renamed from: to */
-        private char f1529to;
+        private char f1493to;
 
         public IntervalSpliterator(char from, char to) {
             this.curr = from;
-            this.f1529to = to;
+            this.f1493to = to;
         }
 
         public boolean tryAdvance(CharConsumer action) {
-            if (this.curr >= this.f1529to) {
+            if (this.curr >= this.f1493to) {
                 return false;
             }
             char c = this.curr;
@@ -652,7 +652,7 @@ public final class CharSpliterators {
 
         public void forEachRemaining(CharConsumer action) {
             Objects.requireNonNull(action);
-            while (this.curr < this.f1529to) {
+            while (this.curr < this.f1493to) {
                 action.accept(this.curr);
                 this.curr = (char) (this.curr + 1);
             }
@@ -660,7 +660,7 @@ public final class CharSpliterators {
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return (long) (this.f1529to - this.curr);
+            return (long) (this.f1493to - this.curr);
         }
 
         @Override // java.util.Spliterator
@@ -675,7 +675,7 @@ public final class CharSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public CharSpliterator trySplit() {
-            int remaining = this.f1529to - this.curr;
+            int remaining = this.f1493to - this.curr;
             char mid = (char) (this.curr + (remaining >> 1));
             if (remaining >= 0 && remaining <= 2) {
                 return null;
@@ -689,13 +689,13 @@ public final class CharSpliterators {
         public long skip(long n) {
             if (n < 0) {
                 throw new IllegalArgumentException("Argument must be nonnegative: " + n);
-            } else if (this.curr >= this.f1529to) {
+            } else if (this.curr >= this.f1493to) {
                 return 0;
             } else {
                 long newCurr = ((long) this.curr) + n;
-                if (newCurr > ((long) this.f1529to) || newCurr < ((long) this.curr)) {
-                    long n2 = (long) (this.f1529to - this.curr);
-                    this.curr = this.f1529to;
+                if (newCurr > ((long) this.f1493to) || newCurr < ((long) this.curr)) {
+                    long n2 = (long) (this.f1493to - this.curr);
+                    this.curr = this.f1493to;
                     return n2;
                 }
                 this.curr = SafeMath.safeLongToChar(newCurr);
@@ -716,7 +716,7 @@ public final class CharSpliterators {
         private static final int CHARACTERISTICS_NOT_SUPPORTED_WHILE_MULTIPLE = 5;
 
         /* renamed from: a */
-        final CharSpliterator[] f1531a;
+        final CharSpliterator[] f1495a;
         int offset;
         int length;
         long remainingEstimatedExceptCurrent;
@@ -725,7 +725,7 @@ public final class CharSpliterators {
         public SpliteratorConcatenator(CharSpliterator[] a, int offset, int length) {
             this.remainingEstimatedExceptCurrent = LongCompanionObject.MAX_VALUE;
             this.characteristics = 0;
-            this.f1531a = a;
+            this.f1495a = a;
             this.offset = offset;
             this.length = length;
             this.remainingEstimatedExceptCurrent = recomputeRemaining();
@@ -754,7 +754,7 @@ public final class CharSpliterators {
                 r0 = r6
                 if (r0 <= 0) goto L_0x004e
                 r0 = r5
-                it.unimi.dsi.fastutil.chars.CharSpliterator[] r0 = r0.f1531a
+                it.unimi.dsi.fastutil.chars.CharSpliterator[] r0 = r0.f1495a
                 r1 = r7
                 int r7 = r7 + 1
                 r0 = r0[r1]
@@ -804,7 +804,7 @@ public final class CharSpliterators {
             }
             while (curLength > 0) {
                 curOffset++;
-                current &= this.f1531a[curOffset].characteristics();
+                current &= this.f1495a[curOffset].characteristics();
                 curLength--;
             }
             return current;
@@ -824,7 +824,7 @@ public final class CharSpliterators {
             while (true) {
                 if (this.length <= 0) {
                     break;
-                } else if (this.f1531a[this.offset].tryAdvance((CharSpliterator) action)) {
+                } else if (this.f1495a[this.offset].tryAdvance((CharSpliterator) action)) {
                     any = true;
                     break;
                 } else {
@@ -836,7 +836,7 @@ public final class CharSpliterators {
 
         public void forEachRemaining(CharConsumer action) {
             while (this.length > 0) {
-                this.f1531a[this.offset].forEachRemaining((CharSpliterator) action);
+                this.f1495a[this.offset].forEachRemaining((CharSpliterator) action);
                 advanceNextSpliterator();
             }
         }
@@ -845,7 +845,7 @@ public final class CharSpliterators {
         @Deprecated
         public void forEachRemaining(Consumer<? super Character> action) {
             while (this.length > 0) {
-                this.f1531a[this.offset].forEachRemaining(action);
+                this.f1495a[this.offset].forEachRemaining(action);
                 advanceNextSpliterator();
             }
         }
@@ -855,7 +855,7 @@ public final class CharSpliterators {
             if (this.length <= 0) {
                 return 0;
             }
-            long est = this.f1531a[this.offset].estimateSize() + this.remainingEstimatedExceptCurrent;
+            long est = this.f1495a[this.offset].estimateSize() + this.remainingEstimatedExceptCurrent;
             if (est < 0) {
                 return LongCompanionObject.MAX_VALUE;
             }
@@ -870,7 +870,7 @@ public final class CharSpliterators {
         @Override // p014it.unimi.dsi.fastutil.chars.CharSpliterator, java.util.Spliterator
         public CharComparator getComparator() {
             if (this.length == 1 && (this.characteristics & 4) != 0) {
-                return this.f1531a[this.offset].getComparator();
+                return this.f1495a[this.offset].getComparator();
             }
             throw new IllegalStateException();
         }
@@ -881,16 +881,16 @@ public final class CharSpliterators {
                 case 0:
                     return null;
                 case 1:
-                    CharSpliterator split = this.f1531a[this.offset].trySplit();
-                    this.characteristics = this.f1531a[this.offset].characteristics();
+                    CharSpliterator split = this.f1495a[this.offset].trySplit();
+                    this.characteristics = this.f1495a[this.offset].characteristics();
                     return split;
                 case 2:
-                    CharSpliterator[] charSpliteratorArr = this.f1531a;
+                    CharSpliterator[] charSpliteratorArr = this.f1495a;
                     int i = this.offset;
                     this.offset = i + 1;
                     CharSpliterator split2 = charSpliteratorArr[i];
                     this.length--;
-                    this.characteristics = this.f1531a[this.offset].characteristics();
+                    this.characteristics = this.f1495a[this.offset].characteristics();
                     this.remainingEstimatedExceptCurrent = 0;
                     return split2;
                 default:
@@ -900,7 +900,7 @@ public final class CharSpliterators {
                     this.length -= mid;
                     this.remainingEstimatedExceptCurrent = recomputeRemaining();
                     this.characteristics = computeCharacteristics();
-                    return new SpliteratorConcatenator(this.f1531a, ret_offset, mid);
+                    return new SpliteratorConcatenator(this.f1495a, ret_offset, mid);
             }
         }
 
@@ -912,7 +912,7 @@ public final class CharSpliterators {
                 return 0;
             }
             while (c < n && this.length >= 0) {
-                c += this.f1531a[this.offset].skip(n - c);
+                c += this.f1495a[this.offset].skip(n - c);
                 if (c < n) {
                     advanceNextSpliterator();
                 }
@@ -929,9 +929,10 @@ public final class CharSpliterators {
         return new SpliteratorConcatenator(a, offset, length);
     }
 
+    /* access modifiers changed from: private */
     /* renamed from: it.unimi.dsi.fastutil.chars.CharSpliterators$SpliteratorFromIterator */
     /* loaded from: grasscutter.jar:it/unimi/dsi/fastutil/chars/CharSpliterators$SpliteratorFromIterator.class */
-    private static class SpliteratorFromIterator implements CharSpliterator {
+    public static class SpliteratorFromIterator implements CharSpliterator {
         private static final int BATCH_INCREMENT_SIZE = 1024;
         private static final int BATCH_MAX_SIZE = 33554432;
         private final CharIterator iter;

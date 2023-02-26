@@ -19,19 +19,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetAuthkeyReqOuterClass.class */
 public final class GetAuthkeyReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013GetAuthkeyReq.proto\"K\n\rGetAuthkeyReq\u0012\u0011\n\tsign_type\u0018\u0006 \u0001(\r\u0012\u0012\n\nauth_appid\u0018\r \u0001(\t\u0012\u0013\n\u000bauthkey_ver\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013GetAuthkeyReq.proto\"H\n\rGetAuthkeyReq\u0012\u0012\n\nauthkeyVer\u0018\u0006 \u0001(\r\u0012\u0011\n\tauthAppid\u0018\u000e \u0001(\t\u0012\u0010\n\bsignType\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GetAuthkeyReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetAuthkeyReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetAuthkeyReq_descriptor, new String[]{"SignType", "AuthAppid", "AuthkeyVer"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetAuthkeyReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetAuthkeyReq_descriptor, new String[]{"AuthkeyVer", "AuthAppid", "SignType"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetAuthkeyReqOuterClass$GetAuthkeyReqOrBuilder.class */
     public interface GetAuthkeyReqOrBuilder extends MessageOrBuilder {
-        int getSignType();
+        int getAuthkeyVer();
 
         String getAuthAppid();
 
         ByteString getAuthAppidBytes();
 
-        int getAuthkeyVer();
+        int getSignType();
     }
 
     private GetAuthkeyReqOuterClass() {
@@ -47,12 +47,12 @@ public final class GetAuthkeyReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetAuthkeyReqOuterClass$GetAuthkeyReq.class */
     public static final class GetAuthkeyReq extends GeneratedMessageV3 implements GetAuthkeyReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SIGN_TYPE_FIELD_NUMBER = 6;
-        private int signType_;
-        public static final int AUTH_APPID_FIELD_NUMBER = 13;
-        private volatile Object authAppid_;
-        public static final int AUTHKEY_VER_FIELD_NUMBER = 15;
+        public static final int AUTHKEYVER_FIELD_NUMBER = 6;
         private int authkeyVer_;
+        public static final int AUTHAPPID_FIELD_NUMBER = 14;
+        private volatile Object authAppid_;
+        public static final int SIGNTYPE_FIELD_NUMBER = 8;
+        private int signType_;
         private byte memoizedIsInitialized;
         private static final GetAuthkeyReq DEFAULT_INSTANCE = new GetAuthkeyReq();
         private static final Parser<GetAuthkeyReq> PARSER = new AbstractParser<GetAuthkeyReq>() { // from class: emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReq.1
@@ -100,13 +100,13 @@ public final class GetAuthkeyReqOuterClass {
                                 done = true;
                                 break;
                             case 48:
+                                this.authkeyVer_ = input.readUInt32();
+                                break;
+                            case 64:
                                 this.signType_ = input.readUInt32();
                                 break;
-                            case 106:
+                            case 114:
                                 this.authAppid_ = input.readStringRequireUtf8();
-                                break;
-                            case 120:
-                                this.authkeyVer_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -138,8 +138,8 @@ public final class GetAuthkeyReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReqOrBuilder
-        public int getSignType() {
-            return this.signType_;
+        public int getAuthkeyVer() {
+            return this.authkeyVer_;
         }
 
         @Override // emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReqOrBuilder
@@ -165,8 +165,8 @@ public final class GetAuthkeyReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReqOrBuilder
-        public int getAuthkeyVer() {
-            return this.authkeyVer_;
+        public int getSignType() {
+            return this.signType_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -184,14 +184,14 @@ public final class GetAuthkeyReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.authkeyVer_ != 0) {
+                output.writeUInt32(6, this.authkeyVer_);
+            }
             if (this.signType_ != 0) {
-                output.writeUInt32(6, this.signType_);
+                output.writeUInt32(8, this.signType_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.authAppid_)) {
-                GeneratedMessageV3.writeString(output, 13, this.authAppid_);
-            }
-            if (this.authkeyVer_ != 0) {
-                output.writeUInt32(15, this.authkeyVer_);
+                GeneratedMessageV3.writeString(output, 14, this.authAppid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -203,14 +203,14 @@ public final class GetAuthkeyReqOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.authkeyVer_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.authkeyVer_);
+            }
             if (this.signType_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.signType_);
+                size2 += CodedOutputStream.computeUInt32Size(8, this.signType_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.authAppid_)) {
-                size2 += GeneratedMessageV3.computeStringSize(13, this.authAppid_);
-            }
-            if (this.authkeyVer_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.authkeyVer_);
+                size2 += GeneratedMessageV3.computeStringSize(14, this.authAppid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class GetAuthkeyReqOuterClass {
                 return equals(obj);
             }
             GetAuthkeyReq other = (GetAuthkeyReq) obj;
-            return getSignType() == other.getSignType() && getAuthAppid().equals(other.getAuthAppid()) && getAuthkeyVer() == other.getAuthkeyVer() && this.unknownFields.equals(other.unknownFields);
+            return getAuthkeyVer() == other.getAuthkeyVer() && getAuthAppid().equals(other.getAuthAppid()) && getSignType() == other.getSignType() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -234,7 +234,7 @@ public final class GetAuthkeyReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getSignType())) + 13)) + getAuthAppid().hashCode())) + 15)) + getAuthkeyVer())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getAuthkeyVer())) + 14)) + getAuthAppid().hashCode())) + 8)) + getSignType())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -313,9 +313,9 @@ public final class GetAuthkeyReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetAuthkeyReqOuterClass$GetAuthkeyReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements GetAuthkeyReqOrBuilder {
-            private int signType_;
-            private Object authAppid_ = "";
             private int authkeyVer_;
+            private Object authAppid_ = "";
+            private int signType_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return GetAuthkeyReqOuterClass.internal_static_GetAuthkeyReq_descriptor;
@@ -343,9 +343,9 @@ public final class GetAuthkeyReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.signType_ = 0;
-                this.authAppid_ = "";
                 this.authkeyVer_ = 0;
+                this.authAppid_ = "";
+                this.signType_ = 0;
                 return this;
             }
 
@@ -371,9 +371,9 @@ public final class GetAuthkeyReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public GetAuthkeyReq buildPartial() {
                 GetAuthkeyReq result = new GetAuthkeyReq(this);
-                result.signType_ = this.signType_;
-                result.authAppid_ = this.authAppid_;
                 result.authkeyVer_ = this.authkeyVer_;
+                result.authAppid_ = this.authAppid_;
+                result.signType_ = this.signType_;
                 onBuilt();
                 return result;
             }
@@ -421,15 +421,15 @@ public final class GetAuthkeyReqOuterClass {
                 if (other == GetAuthkeyReq.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getSignType() != 0) {
-                    setSignType(other.getSignType());
+                if (other.getAuthkeyVer() != 0) {
+                    setAuthkeyVer(other.getAuthkeyVer());
                 }
                 if (!other.getAuthAppid().isEmpty()) {
                     this.authAppid_ = other.authAppid_;
                     onChanged();
                 }
-                if (other.getAuthkeyVer() != 0) {
-                    setAuthkeyVer(other.getAuthkeyVer());
+                if (other.getSignType() != 0) {
+                    setSignType(other.getSignType());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -464,18 +464,18 @@ public final class GetAuthkeyReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReqOrBuilder
-            public int getSignType() {
-                return this.signType_;
+            public int getAuthkeyVer() {
+                return this.authkeyVer_;
             }
 
-            public Builder setSignType(int value) {
-                this.signType_ = value;
+            public Builder setAuthkeyVer(int value) {
+                this.authkeyVer_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearSignType() {
-                this.signType_ = 0;
+            public Builder clearAuthkeyVer() {
+                this.authkeyVer_ = 0;
                 onChanged();
                 return this;
             }
@@ -528,18 +528,18 @@ public final class GetAuthkeyReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.GetAuthkeyReqOuterClass.GetAuthkeyReqOrBuilder
-            public int getAuthkeyVer() {
-                return this.authkeyVer_;
+            public int getSignType() {
+                return this.signType_;
             }
 
-            public Builder setAuthkeyVer(int value) {
-                this.authkeyVer_ = value;
+            public Builder setSignType(int value) {
+                this.signType_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearAuthkeyVer() {
-                this.authkeyVer_ = 0;
+            public Builder clearSignType() {
+                this.signType_ = 0;
                 onChanged();
                 return this;
             }

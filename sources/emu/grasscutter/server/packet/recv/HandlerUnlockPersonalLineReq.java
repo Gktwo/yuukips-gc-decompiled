@@ -4,11 +4,12 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.PersonalLineData;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.UnlockPersonalLineReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketUnlockPersonalLineRsp;
 
-@Opcodes(415)
+@Opcodes(PacketOpcodes.UnlockPersonalLineReq)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerUnlockPersonalLineReq.class */
 public class HandlerUnlockPersonalLineReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

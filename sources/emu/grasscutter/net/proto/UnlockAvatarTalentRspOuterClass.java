@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnlockAvatarTalentRspOuterClass.class */
 public final class UnlockAvatarTalentRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bUnlockAvatarTalentRsp.proto\"P\n\u0015UnlockAvatarTalentRsp\u0012\u0011\n\ttalent_id\u0018\u000e \u0001(\r\u0012\u0013\n\u000bavatar_guid\u0018\u0001 \u0001(\u0004\u0012\u000f\n\u0007retcode\u0018\u0003 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bUnlockAvatarTalentRsp.proto\"N\n\u0015UnlockAvatarTalentRsp\u0012\u000f\n\u0007retcode\u0018\u0001 \u0001(\u0005\u0012\u0012\n\navatarGuid\u0018\r \u0001(\u0004\u0012\u0010\n\btalentId\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_UnlockAvatarTalentRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_UnlockAvatarTalentRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_UnlockAvatarTalentRsp_descriptor, new String[]{"TalentId", "AvatarGuid", "Retcode"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_UnlockAvatarTalentRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_UnlockAvatarTalentRsp_descriptor, new String[]{"Retcode", "AvatarGuid", "TalentId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnlockAvatarTalentRspOuterClass$UnlockAvatarTalentRspOrBuilder.class */
     public interface UnlockAvatarTalentRspOrBuilder extends MessageOrBuilder {
-        int getTalentId();
+        int getRetcode();
 
         long getAvatarGuid();
 
-        int getRetcode();
+        int getTalentId();
     }
 
     private UnlockAvatarTalentRspOuterClass() {
@@ -46,12 +46,12 @@ public final class UnlockAvatarTalentRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnlockAvatarTalentRspOuterClass$UnlockAvatarTalentRsp.class */
     public static final class UnlockAvatarTalentRsp extends GeneratedMessageV3 implements UnlockAvatarTalentRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TALENT_ID_FIELD_NUMBER = 14;
-        private int talentId_;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 1;
-        private long avatarGuid_;
-        public static final int RETCODE_FIELD_NUMBER = 3;
+        public static final int RETCODE_FIELD_NUMBER = 1;
         private int retcode_;
+        public static final int AVATARGUID_FIELD_NUMBER = 13;
+        private long avatarGuid_;
+        public static final int TALENTID_FIELD_NUMBER = 2;
+        private int talentId_;
         private byte memoizedIsInitialized;
         private static final UnlockAvatarTalentRsp DEFAULT_INSTANCE = new UnlockAvatarTalentRsp();
         private static final Parser<UnlockAvatarTalentRsp> PARSER = new AbstractParser<UnlockAvatarTalentRsp>() { // from class: emu.grasscutter.net.proto.UnlockAvatarTalentRspOuterClass.UnlockAvatarTalentRsp.1
@@ -99,13 +99,13 @@ public final class UnlockAvatarTalentRspOuterClass {
                                     done = true;
                                     break;
                                 case 8:
-                                    this.avatarGuid_ = input.readUInt64();
-                                    break;
-                                case 24:
                                     this.retcode_ = input.readInt32();
                                     break;
-                                case 112:
+                                case 16:
                                     this.talentId_ = input.readUInt32();
+                                    break;
+                                case 104:
+                                    this.avatarGuid_ = input.readUInt64();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -138,8 +138,8 @@ public final class UnlockAvatarTalentRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.UnlockAvatarTalentRspOuterClass.UnlockAvatarTalentRspOrBuilder
-        public int getTalentId() {
-            return this.talentId_;
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // emu.grasscutter.net.proto.UnlockAvatarTalentRspOuterClass.UnlockAvatarTalentRspOrBuilder
@@ -148,8 +148,8 @@ public final class UnlockAvatarTalentRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.UnlockAvatarTalentRspOuterClass.UnlockAvatarTalentRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
+        public int getTalentId() {
+            return this.talentId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,14 +167,14 @@ public final class UnlockAvatarTalentRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.avatarGuid_ != 0) {
-                output.writeUInt64(1, this.avatarGuid_);
-            }
             if (this.retcode_ != 0) {
-                output.writeInt32(3, this.retcode_);
+                output.writeInt32(1, this.retcode_);
             }
             if (this.talentId_ != 0) {
-                output.writeUInt32(14, this.talentId_);
+                output.writeUInt32(2, this.talentId_);
+            }
+            if (this.avatarGuid_ != 0) {
+                output.writeUInt64(13, this.avatarGuid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class UnlockAvatarTalentRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.avatarGuid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(1, this.avatarGuid_);
-            }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(3, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(1, this.retcode_);
             }
             if (this.talentId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.talentId_);
+                size2 += CodedOutputStream.computeUInt32Size(2, this.talentId_);
+            }
+            if (this.avatarGuid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(13, this.avatarGuid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class UnlockAvatarTalentRspOuterClass {
                 return equals(obj);
             }
             UnlockAvatarTalentRsp other = (UnlockAvatarTalentRsp) obj;
-            return getTalentId() == other.getTalentId() && getAvatarGuid() == other.getAvatarGuid() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
+            return getRetcode() == other.getRetcode() && getAvatarGuid() == other.getAvatarGuid() && getTalentId() == other.getTalentId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class UnlockAvatarTalentRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getTalentId())) + 1)) + Internal.hashLong(getAvatarGuid()))) + 3)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getRetcode())) + 13)) + Internal.hashLong(getAvatarGuid()))) + 2)) + getTalentId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -296,9 +296,9 @@ public final class UnlockAvatarTalentRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnlockAvatarTalentRspOuterClass$UnlockAvatarTalentRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements UnlockAvatarTalentRspOrBuilder {
-            private int talentId_;
-            private long avatarGuid_;
             private int retcode_;
+            private long avatarGuid_;
+            private int talentId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return UnlockAvatarTalentRspOuterClass.internal_static_UnlockAvatarTalentRsp_descriptor;
@@ -326,9 +326,9 @@ public final class UnlockAvatarTalentRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.talentId_ = 0;
-                this.avatarGuid_ = 0;
                 this.retcode_ = 0;
+                this.avatarGuid_ = 0;
+                this.talentId_ = 0;
                 return this;
             }
 
@@ -354,9 +354,9 @@ public final class UnlockAvatarTalentRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public UnlockAvatarTalentRsp buildPartial() {
                 UnlockAvatarTalentRsp result = new UnlockAvatarTalentRsp(this);
-                result.talentId_ = this.talentId_;
-                result.avatarGuid_ = this.avatarGuid_;
                 result.retcode_ = this.retcode_;
+                result.avatarGuid_ = this.avatarGuid_;
+                result.talentId_ = this.talentId_;
                 onBuilt();
                 return result;
             }
@@ -404,14 +404,14 @@ public final class UnlockAvatarTalentRspOuterClass {
                 if (other == UnlockAvatarTalentRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getTalentId() != 0) {
-                    setTalentId(other.getTalentId());
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 if (other.getAvatarGuid() != 0) {
                     setAvatarGuid(other.getAvatarGuid());
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
+                if (other.getTalentId() != 0) {
+                    setTalentId(other.getTalentId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -446,18 +446,18 @@ public final class UnlockAvatarTalentRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.UnlockAvatarTalentRspOuterClass.UnlockAvatarTalentRspOrBuilder
-            public int getTalentId() {
-                return this.talentId_;
+            public int getRetcode() {
+                return this.retcode_;
             }
 
-            public Builder setTalentId(int value) {
-                this.talentId_ = value;
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearTalentId() {
-                this.talentId_ = 0;
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }
@@ -480,18 +480,18 @@ public final class UnlockAvatarTalentRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.UnlockAvatarTalentRspOuterClass.UnlockAvatarTalentRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
+            public int getTalentId() {
+                return this.talentId_;
             }
 
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
+            public Builder setTalentId(int value) {
+                this.talentId_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
+            public Builder clearTalentId() {
+                this.talentId_ = 0;
                 onChanged();
                 return this;
             }

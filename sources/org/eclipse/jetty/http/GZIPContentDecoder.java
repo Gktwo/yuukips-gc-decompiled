@@ -113,7 +113,7 @@ public class GZIPContentDecoder implements Destroyable {
     /* access modifiers changed from: package-private */
     /* renamed from: org.eclipse.jetty.http.GZIPContentDecoder$1 */
     /* loaded from: grasscutter.jar:org/eclipse/jetty/http/GZIPContentDecoder$1.class */
-    public static /* synthetic */ class C56211 {
+    public static /* synthetic */ class C56131 {
         static final /* synthetic */ int[] $SwitchMap$org$eclipse$jetty$http$GZIPContentDecoder$State = new int[State.values().length];
 
         static {

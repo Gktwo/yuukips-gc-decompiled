@@ -20,7 +20,7 @@ import java.nio.charset.UnmappableCharacterException;
 public class InputStreamReader extends Reader {
 
     /* renamed from: in */
-    private InputStream f3269in;
+    private InputStream f3233in;
     private static final int BUFFER_SIZE = 4;
     private boolean endOfInput;
     CharsetDecoder decoder;
@@ -32,7 +32,7 @@ public class InputStreamReader extends Reader {
         this.endOfInput = false;
         this.bytes = ByteBuffer.allocate(4);
         this.pending = 65535;
-        this.f3269in = in;
+        this.f3233in = in;
         this.decoder = Charset.defaultCharset().newDecoder().onMalformedInput(CodingErrorAction.REPLACE).onUnmappableCharacter(CodingErrorAction.REPLACE);
         this.bytes.limit(0);
     }
@@ -45,7 +45,7 @@ public class InputStreamReader extends Reader {
         if (enc == null) {
             throw new NullPointerException();
         }
-        this.f3269in = in;
+        this.f3233in = in;
         try {
             this.decoder = Charset.forName(enc).newDecoder().onMalformedInput(CodingErrorAction.REPLACE).onUnmappableCharacter(CodingErrorAction.REPLACE);
             this.bytes.limit(0);
@@ -60,7 +60,7 @@ public class InputStreamReader extends Reader {
         this.bytes = ByteBuffer.allocate(4);
         this.pending = 65535;
         dec.averageCharsPerByte();
-        this.f3269in = in;
+        this.f3233in = in;
         this.decoder = dec;
         this.bytes.limit(0);
     }
@@ -70,7 +70,7 @@ public class InputStreamReader extends Reader {
         this.endOfInput = false;
         this.bytes = ByteBuffer.allocate(4);
         this.pending = 65535;
-        this.f3269in = in;
+        this.f3233in = in;
         this.decoder = charset.newDecoder().onMalformedInput(CodingErrorAction.REPLACE).onUnmappableCharacter(CodingErrorAction.REPLACE);
         this.bytes.limit(0);
     }
@@ -79,9 +79,9 @@ public class InputStreamReader extends Reader {
     public void close() throws IOException {
         synchronized (this.lock) {
             this.decoder = null;
-            if (this.f3269in != null) {
-                this.f3269in.close();
-                this.f3269in = null;
+            if (this.f3233in != null) {
+                this.f3233in.close();
+                this.f3233in = null;
             }
         }
     }
@@ -132,7 +132,7 @@ public class InputStreamReader extends Reader {
                 while (true) {
                     if (out.position() == offset) {
                         if (needInput) {
-                            if (this.f3269in.available() == 0) {
+                            if (this.f3233in.available() == 0) {
                                 try {
                                     if (out.position() > offset) {
                                         break;
@@ -140,7 +140,7 @@ public class InputStreamReader extends Reader {
                                 } catch (IOException e) {
                                 }
                             }
-                            int was_red = this.f3269in.read(this.bytes.array(), this.bytes.arrayOffset() + this.bytes.limit(), 1);
+                            int was_red = this.f3233in.read(this.bytes.array(), this.bytes.arrayOffset() + this.bytes.limit(), 1);
                             if (was_red == -1) {
                                 this.endOfInput = true;
                                 break;
@@ -181,7 +181,7 @@ public class InputStreamReader extends Reader {
     }
 
     private boolean isOpen() {
-        return this.f3269in != null;
+        return this.f3233in != null;
     }
 
     /*  JADX ERROR: JadxRuntimeException in pass: BlockProcessor
@@ -200,7 +200,7 @@ public class InputStreamReader extends Reader {
             r5 = r1
             monitor-enter(r0)
             r0 = r4
-            java.io.InputStream r0 = r0.f3269in     // Catch: all -> 0x0039
+            java.io.InputStream r0 = r0.f3233in     // Catch: all -> 0x0039
             if (r0 != 0) goto L_0x0018
             java.io.IOException r0 = new java.io.IOException     // Catch: all -> 0x0039
             r1 = r0
@@ -213,7 +213,7 @@ public class InputStreamReader extends Reader {
             boolean r0 = r0.hasRemaining()     // Catch: all -> 0x0039, IOException -> 0x0034
             if (r0 != 0) goto L_0x002c
             r0 = r4
-            java.io.InputStream r0 = r0.f3269in     // Catch: all -> 0x0039, IOException -> 0x0034
+            java.io.InputStream r0 = r0.f3233in     // Catch: all -> 0x0039, IOException -> 0x0034
             int r0 = r0.available()     // Catch: all -> 0x0039, IOException -> 0x0034
             if (r0 <= 0) goto L_0x0030
         L_0x002c:

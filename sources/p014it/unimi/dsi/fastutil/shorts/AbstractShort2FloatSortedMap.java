@@ -90,30 +90,30 @@ public abstract class AbstractShort2FloatSortedMap extends AbstractShort2FloatMa
     public static class KeySetIterator implements ShortBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Short2FloatMap.Entry> f2865i;
+        protected final ObjectBidirectionalIterator<Short2FloatMap.Entry> f2829i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Short2FloatMap.Entry> i) {
-            this.f2865i = i;
+            this.f2829i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
         public short nextShort() {
-            return ((Short2FloatMap.Entry) this.f2865i.next()).getShortKey();
+            return ((Short2FloatMap.Entry) this.f2829i.next()).getShortKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortBidirectionalIterator
         public short previousShort() {
-            return this.f2865i.previous().getShortKey();
+            return this.f2829i.previous().getShortKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2865i.hasNext();
+            return this.f2829i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2865i.hasPrevious();
+            return this.f2829i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractShort2FloatSortedMap extends AbstractShort2FloatMa
     public static class ValuesIterator implements FloatIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Short2FloatMap.Entry> f2866i;
+        protected final ObjectBidirectionalIterator<Short2FloatMap.Entry> f2830i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Short2FloatMap.Entry> i) {
-            this.f2866i = i;
+            this.f2830i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
         public float nextFloat() {
-            return ((Short2FloatMap.Entry) this.f2866i.next()).getFloatValue();
+            return ((Short2FloatMap.Entry) this.f2830i.next()).getFloatValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2866i.hasNext();
+            return this.f2830i.hasNext();
         }
     }
 }

@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RogueAvatarInfoOuterClass.class */
 public final class RogueAvatarInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015RogueAvatarInfo.proto\"J\n\u000fRogueAvatarInfo\u0012\u0012\n\nis_onstage\u0018\u0002 \u0001(\b\u0012\u0010\n\bis_alive\u0018\b \u0001(\b\u0012\u0011\n\tavatar_id\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015RogueAvatarInfo.proto\"I\n\u000fRogueAvatarInfo\u0012\u0010\n\bavatarId\u0018\u000f \u0001(\r\u0012\u000f\n\u0007isAlive\u0018\u0005 \u0001(\b\u0012\u0013\n\u000begkmacmbgbe\u0018\u0001 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_RogueAvatarInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_RogueAvatarInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_RogueAvatarInfo_descriptor, new String[]{"IsOnstage", "IsAlive", "AvatarId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_RogueAvatarInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_RogueAvatarInfo_descriptor, new String[]{"AvatarId", "IsAlive", "Egkmacmbgbe"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RogueAvatarInfoOuterClass$RogueAvatarInfoOrBuilder.class */
     public interface RogueAvatarInfoOrBuilder extends MessageOrBuilder {
-        boolean getIsOnstage();
+        int getAvatarId();
 
         boolean getIsAlive();
 
-        int getAvatarId();
+        boolean getEgkmacmbgbe();
     }
 
     private RogueAvatarInfoOuterClass() {
@@ -46,12 +46,12 @@ public final class RogueAvatarInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RogueAvatarInfoOuterClass$RogueAvatarInfo.class */
     public static final class RogueAvatarInfo extends GeneratedMessageV3 implements RogueAvatarInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_ONSTAGE_FIELD_NUMBER = 2;
-        private boolean isOnstage_;
-        public static final int IS_ALIVE_FIELD_NUMBER = 8;
-        private boolean isAlive_;
-        public static final int AVATAR_ID_FIELD_NUMBER = 5;
+        public static final int AVATARID_FIELD_NUMBER = 15;
         private int avatarId_;
+        public static final int ISALIVE_FIELD_NUMBER = 5;
+        private boolean isAlive_;
+        public static final int EGKMACMBGBE_FIELD_NUMBER = 1;
+        private boolean egkmacmbgbe_;
         private byte memoizedIsInitialized;
         private static final RogueAvatarInfo DEFAULT_INSTANCE = new RogueAvatarInfo();
         private static final Parser<RogueAvatarInfo> PARSER = new AbstractParser<RogueAvatarInfo>() { // from class: emu.grasscutter.net.proto.RogueAvatarInfoOuterClass.RogueAvatarInfo.1
@@ -98,14 +98,14 @@ public final class RogueAvatarInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
-                                    this.isOnstage_ = input.readBool();
+                                case 8:
+                                    this.egkmacmbgbe_ = input.readBool();
                                     break;
                                 case 40:
-                                    this.avatarId_ = input.readUInt32();
-                                    break;
-                                case 64:
                                     this.isAlive_ = input.readBool();
+                                    break;
+                                case 120:
+                                    this.avatarId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -138,8 +138,8 @@ public final class RogueAvatarInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.RogueAvatarInfoOuterClass.RogueAvatarInfoOrBuilder
-        public boolean getIsOnstage() {
-            return this.isOnstage_;
+        public int getAvatarId() {
+            return this.avatarId_;
         }
 
         @Override // emu.grasscutter.net.proto.RogueAvatarInfoOuterClass.RogueAvatarInfoOrBuilder
@@ -148,8 +148,8 @@ public final class RogueAvatarInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.RogueAvatarInfoOuterClass.RogueAvatarInfoOrBuilder
-        public int getAvatarId() {
-            return this.avatarId_;
+        public boolean getEgkmacmbgbe() {
+            return this.egkmacmbgbe_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,14 +167,14 @@ public final class RogueAvatarInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.isOnstage_) {
-                output.writeBool(2, this.isOnstage_);
-            }
-            if (this.avatarId_ != 0) {
-                output.writeUInt32(5, this.avatarId_);
+            if (this.egkmacmbgbe_) {
+                output.writeBool(1, this.egkmacmbgbe_);
             }
             if (this.isAlive_) {
-                output.writeBool(8, this.isAlive_);
+                output.writeBool(5, this.isAlive_);
+            }
+            if (this.avatarId_ != 0) {
+                output.writeUInt32(15, this.avatarId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class RogueAvatarInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.isOnstage_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(2, this.isOnstage_);
-            }
-            if (this.avatarId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.avatarId_);
+            if (this.egkmacmbgbe_) {
+                size2 = 0 + CodedOutputStream.computeBoolSize(1, this.egkmacmbgbe_);
             }
             if (this.isAlive_) {
-                size2 += CodedOutputStream.computeBoolSize(8, this.isAlive_);
+                size2 += CodedOutputStream.computeBoolSize(5, this.isAlive_);
+            }
+            if (this.avatarId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.avatarId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class RogueAvatarInfoOuterClass {
                 return equals(obj);
             }
             RogueAvatarInfo other = (RogueAvatarInfo) obj;
-            return getIsOnstage() == other.getIsOnstage() && getIsAlive() == other.getIsAlive() && getAvatarId() == other.getAvatarId() && this.unknownFields.equals(other.unknownFields);
+            return getAvatarId() == other.getAvatarId() && getIsAlive() == other.getIsAlive() && getEgkmacmbgbe() == other.getEgkmacmbgbe() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class RogueAvatarInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + Internal.hashBoolean(getIsOnstage()))) + 8)) + Internal.hashBoolean(getIsAlive()))) + 5)) + getAvatarId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getAvatarId())) + 5)) + Internal.hashBoolean(getIsAlive()))) + 1)) + Internal.hashBoolean(getEgkmacmbgbe()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -296,9 +296,9 @@ public final class RogueAvatarInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RogueAvatarInfoOuterClass$RogueAvatarInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements RogueAvatarInfoOrBuilder {
-            private boolean isOnstage_;
-            private boolean isAlive_;
             private int avatarId_;
+            private boolean isAlive_;
+            private boolean egkmacmbgbe_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return RogueAvatarInfoOuterClass.internal_static_RogueAvatarInfo_descriptor;
@@ -326,9 +326,9 @@ public final class RogueAvatarInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.isOnstage_ = false;
-                this.isAlive_ = false;
                 this.avatarId_ = 0;
+                this.isAlive_ = false;
+                this.egkmacmbgbe_ = false;
                 return this;
             }
 
@@ -354,9 +354,9 @@ public final class RogueAvatarInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public RogueAvatarInfo buildPartial() {
                 RogueAvatarInfo result = new RogueAvatarInfo(this);
-                result.isOnstage_ = this.isOnstage_;
-                result.isAlive_ = this.isAlive_;
                 result.avatarId_ = this.avatarId_;
+                result.isAlive_ = this.isAlive_;
+                result.egkmacmbgbe_ = this.egkmacmbgbe_;
                 onBuilt();
                 return result;
             }
@@ -404,14 +404,14 @@ public final class RogueAvatarInfoOuterClass {
                 if (other == RogueAvatarInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getIsOnstage()) {
-                    setIsOnstage(other.getIsOnstage());
+                if (other.getAvatarId() != 0) {
+                    setAvatarId(other.getAvatarId());
                 }
                 if (other.getIsAlive()) {
                     setIsAlive(other.getIsAlive());
                 }
-                if (other.getAvatarId() != 0) {
-                    setAvatarId(other.getAvatarId());
+                if (other.getEgkmacmbgbe()) {
+                    setEgkmacmbgbe(other.getEgkmacmbgbe());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -446,18 +446,18 @@ public final class RogueAvatarInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.RogueAvatarInfoOuterClass.RogueAvatarInfoOrBuilder
-            public boolean getIsOnstage() {
-                return this.isOnstage_;
+            public int getAvatarId() {
+                return this.avatarId_;
             }
 
-            public Builder setIsOnstage(boolean value) {
-                this.isOnstage_ = value;
+            public Builder setAvatarId(int value) {
+                this.avatarId_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearIsOnstage() {
-                this.isOnstage_ = false;
+            public Builder clearAvatarId() {
+                this.avatarId_ = 0;
                 onChanged();
                 return this;
             }
@@ -480,18 +480,18 @@ public final class RogueAvatarInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.RogueAvatarInfoOuterClass.RogueAvatarInfoOrBuilder
-            public int getAvatarId() {
-                return this.avatarId_;
+            public boolean getEgkmacmbgbe() {
+                return this.egkmacmbgbe_;
             }
 
-            public Builder setAvatarId(int value) {
-                this.avatarId_ = value;
+            public Builder setEgkmacmbgbe(boolean value) {
+                this.egkmacmbgbe_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearAvatarId() {
-                this.avatarId_ = 0;
+            public Builder clearEgkmacmbgbe() {
+                this.egkmacmbgbe_ = false;
                 onChanged();
                 return this;
             }

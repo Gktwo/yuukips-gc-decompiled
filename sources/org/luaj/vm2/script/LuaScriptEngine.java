@@ -97,7 +97,7 @@ public class LuaScriptEngine extends AbstractScriptEngine implements ScriptEngin
             globals.setmetatable(new BindingsMetatable(bindings));
             LuaFunction luaFunction2 = this.function;
             if (luaFunction2.isclosure()) {
-                luaFunction = new LuaClosure(luaFunction2.checkclosure().f3287p, globals);
+                luaFunction = new LuaClosure(luaFunction2.checkclosure().f3251p, globals);
             } else {
                 try {
                     luaFunction = (LuaFunction) luaFunction2.getClass().newInstance();
@@ -115,44 +115,44 @@ public class LuaScriptEngine extends AbstractScriptEngine implements ScriptEngin
     public final class Utf8Encoder extends InputStream {
 
         /* renamed from: r */
-        private final Reader f3359r;
+        private final Reader f3323r;
         private final int[] buf;
 
         /* renamed from: n */
-        private int f3360n;
+        private int f3324n;
 
         private Utf8Encoder(Reader reader) {
             this.buf = new int[2];
-            this.f3359r = reader;
+            this.f3323r = reader;
         }
 
         @Override // java.io.InputStream
         public int read() throws IOException {
-            if (this.f3360n > 0) {
+            if (this.f3324n > 0) {
                 int[] iArr = this.buf;
-                int i = this.f3360n - 1;
-                this.f3360n = i;
+                int i = this.f3324n - 1;
+                this.f3324n = i;
                 return iArr[i];
             }
-            int read = this.f3359r.read();
+            int read = this.f3323r.read();
             if (read < 128) {
                 return read;
             }
-            this.f3360n = 0;
+            this.f3324n = 0;
             if (read < 2048) {
                 int[] iArr2 = this.buf;
-                int i2 = this.f3360n;
-                this.f3360n = i2 + 1;
+                int i2 = this.f3324n;
+                this.f3324n = i2 + 1;
                 iArr2[i2] = 128 | (read & 63);
                 return 192 | ((read >> 6) & 31);
             }
             int[] iArr3 = this.buf;
-            int i3 = this.f3360n;
-            this.f3360n = i3 + 1;
+            int i3 = this.f3324n;
+            this.f3324n = i3 + 1;
             iArr3[i3] = 128 | (read & 63);
             int[] iArr4 = this.buf;
-            int i4 = this.f3360n;
-            this.f3360n = i4 + 1;
+            int i4 = this.f3324n;
+            this.f3324n = i4 + 1;
             iArr4[i4] = 128 | ((read >> 6) & 63);
             return 224 | ((read >> 12) & 15);
         }

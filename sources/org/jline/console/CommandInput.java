@@ -13,7 +13,7 @@ public class CommandInput {
     Terminal terminal;
 
     /* renamed from: in */
-    InputStream f3226in;
+    InputStream f3190in;
     PrintStream out;
     PrintStream err;
 
@@ -27,7 +27,7 @@ public class CommandInput {
         }
         this.command = command;
         this.terminal = session.terminal();
-        this.f3226in = session.m28in();
+        this.f3190in = session.m28in();
         this.out = session.out();
         this.err = session.err();
     }
@@ -54,7 +54,7 @@ public class CommandInput {
 
     /* renamed from: in */
     public InputStream m29in() {
-        return this.f3226in;
+        return this.f3190in;
     }
 
     public PrintStream out() {
@@ -66,6 +66,6 @@ public class CommandInput {
     }
 
     public CommandRegistry.CommandSession session() {
-        return new CommandRegistry.CommandSession(this.terminal, this.f3226in, this.out, this.err);
+        return new CommandRegistry.CommandSession(this.terminal, this.f3190in, this.out, this.err);
     }
 }

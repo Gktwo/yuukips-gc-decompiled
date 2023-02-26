@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerTeamOuterClass.class */
 public final class TowerTeamOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000fTowerTeam.proto\"<\n\tTowerTeam\u0012\u0018\n\u0010avatar_guid_list\u0018\u0005 \u0003(\u0004\u0012\u0015\n\rtower_team_id\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000fTowerTeam.proto\"8\n\tTowerTeam\u0012\u0016\n\u000eavatarGuidList\u0018\u0004 \u0003(\u0004\u0012\u0013\n\u000btowerTeamId\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_TowerTeam_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_TowerTeam_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TowerTeam_descriptor, new String[]{"AvatarGuidList", "TowerTeamId"});
 
@@ -51,10 +51,10 @@ public final class TowerTeamOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerTeamOuterClass$TowerTeam.class */
     public static final class TowerTeam extends GeneratedMessageV3 implements TowerTeamOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_GUID_LIST_FIELD_NUMBER = 5;
+        public static final int AVATARGUIDLIST_FIELD_NUMBER = 4;
         private Internal.LongList avatarGuidList_;
         private int avatarGuidListMemoizedSerializedSize;
-        public static final int TOWER_TEAM_ID_FIELD_NUMBER = 14;
+        public static final int TOWERTEAMID_FIELD_NUMBER = 10;
         private int towerTeamId_;
         private byte memoizedIsInitialized;
         private static final TowerTeam DEFAULT_INSTANCE = new TowerTeam();
@@ -107,14 +107,14 @@ public final class TowerTeamOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 40:
+                                case 32:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.avatarGuidList_ = newLongList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.avatarGuidList_.addLong(input.readUInt64());
                                     break;
-                                case 42:
+                                case 34:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.avatarGuidList_ = newLongList();
@@ -125,7 +125,7 @@ public final class TowerTeamOuterClass {
                                     }
                                     input.popLimit(limit);
                                     break;
-                                case 112:
+                                case 80:
                                     this.towerTeamId_ = input.readUInt32();
                                     break;
                                 default:
@@ -198,14 +198,14 @@ public final class TowerTeamOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getAvatarGuidListList().size() > 0) {
-                output.writeUInt32NoTag(42);
+                output.writeUInt32NoTag(34);
                 output.writeUInt32NoTag(this.avatarGuidListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.avatarGuidList_.size(); i++) {
                 output.writeUInt64NoTag(this.avatarGuidList_.getLong(i));
             }
             if (this.towerTeamId_ != 0) {
-                output.writeUInt32(14, this.towerTeamId_);
+                output.writeUInt32(10, this.towerTeamId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -226,7 +226,7 @@ public final class TowerTeamOuterClass {
             }
             this.avatarGuidListMemoizedSerializedSize = dataSize;
             if (this.towerTeamId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.towerTeamId_);
+                size2 += CodedOutputStream.computeUInt32Size(10, this.towerTeamId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -252,9 +252,9 @@ public final class TowerTeamOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getAvatarGuidListCount() > 0) {
-                hash = (53 * ((37 * hash) + 5)) + getAvatarGuidListList().hashCode();
+                hash = (53 * ((37 * hash) + 4)) + getAvatarGuidListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 14)) + getTowerTeamId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 10)) + getTowerTeamId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

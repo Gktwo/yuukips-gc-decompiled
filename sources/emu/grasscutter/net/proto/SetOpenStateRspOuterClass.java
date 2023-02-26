@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetOpenStateRspOuterClass.class */
 public final class SetOpenStateRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015SetOpenStateRsp.proto\">\n\u000fSetOpenStateRsp\u0012\u000f\n\u0007retcode\u0018\u0004 \u0001(\u0005\u0012\r\n\u0005value\u0018\u0005 \u0001(\r\u0012\u000b\n\u0003key\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015SetOpenStateRsp.proto\">\n\u000fSetOpenStateRsp\u0012\u000f\n\u0007retcode\u0018\t \u0001(\u0005\u0012\r\n\u0005value\u0018\u000f \u0001(\r\u0012\u000b\n\u0003key\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SetOpenStateRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetOpenStateRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetOpenStateRsp_descriptor, new String[]{"Retcode", "Value", "Key"});
 
@@ -45,11 +45,11 @@ public final class SetOpenStateRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetOpenStateRspOuterClass$SetOpenStateRsp.class */
     public static final class SetOpenStateRsp extends GeneratedMessageV3 implements SetOpenStateRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 4;
+        public static final int RETCODE_FIELD_NUMBER = 9;
         private int retcode_;
-        public static final int VALUE_FIELD_NUMBER = 5;
+        public static final int VALUE_FIELD_NUMBER = 15;
         private int value_;
-        public static final int KEY_FIELD_NUMBER = 12;
+        public static final int KEY_FIELD_NUMBER = 10;
         private int key_;
         private byte memoizedIsInitialized;
         private static final SetOpenStateRsp DEFAULT_INSTANCE = new SetOpenStateRsp();
@@ -97,14 +97,14 @@ public final class SetOpenStateRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 32:
+                                case 72:
                                     this.retcode_ = input.readInt32();
                                     break;
-                                case 40:
-                                    this.value_ = input.readUInt32();
-                                    break;
-                                case 96:
+                                case 80:
                                     this.key_ = input.readUInt32();
+                                    break;
+                                case 120:
+                                    this.value_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -167,13 +167,13 @@ public final class SetOpenStateRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.retcode_ != 0) {
-                output.writeInt32(4, this.retcode_);
-            }
-            if (this.value_ != 0) {
-                output.writeUInt32(5, this.value_);
+                output.writeInt32(9, this.retcode_);
             }
             if (this.key_ != 0) {
-                output.writeUInt32(12, this.key_);
+                output.writeUInt32(10, this.key_);
+            }
+            if (this.value_ != 0) {
+                output.writeUInt32(15, this.value_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,13 +186,13 @@ public final class SetOpenStateRspOuterClass {
             }
             int size2 = 0;
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(4, this.retcode_);
-            }
-            if (this.value_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.value_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(9, this.retcode_);
             }
             if (this.key_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.key_);
+                size2 += CodedOutputStream.computeUInt32Size(10, this.key_);
+            }
+            if (this.value_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.value_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -216,7 +216,7 @@ public final class SetOpenStateRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getRetcode())) + 5)) + getValue())) + 12)) + getKey())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getRetcode())) + 15)) + getValue())) + 10)) + getKey())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

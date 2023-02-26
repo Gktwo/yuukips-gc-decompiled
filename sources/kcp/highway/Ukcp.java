@@ -24,7 +24,7 @@ public class Ukcp {
     private static final InternalLogger log = InternalLoggerFactory.getInstance(Ukcp.class);
 
     /* renamed from: kcp  reason: collision with root package name */
-    private final IKcp f3387kcp;
+    private final IKcp f3351kcp;
     private IFecEncode fecEncode;
     private IFecDecode fecDecode;
     private final IMessageExecutor iMessageExecutor;
@@ -84,10 +84,10 @@ public class Ukcp {
         /*
             r5 = this;
             r0 = r5
-            kcp.highway.IKcp r0 = r0.f3387kcp
+            kcp.highway.IKcp r0 = r0.f3351kcp
             long r0 = r0.getConv()
             r1 = r5
-            kcp.highway.IKcp r1 = r1.f3387kcp
+            kcp.highway.IKcp r1 = r1.f3351kcp
             int r1 = r1.getState()
             r2 = r5
             boolean r2 = r2.active
@@ -103,7 +103,7 @@ public class Ukcp {
         this.controlReadBufferSize = false;
         this.controlWriteBufferSize = false;
         this.timeoutMillis = channelConfig.getTimeoutMillis();
-        this.f3387kcp = new Kcp(channelConfig.getConv(), output);
+        this.f3351kcp = new Kcp(channelConfig.getConv(), output);
         this.kcpListener = kcpListener;
         this.iMessageExecutor = iMessageExecutor;
         this.channelManager = channelManager;
@@ -119,35 +119,35 @@ public class Ukcp {
         FecAdapt fecAdapt = channelConfig.getFecAdapt();
         headerSize = channelConfig.isCrc32Check() ? 0 + 4 : headerSize;
         if (fecAdapt != null) {
-            KcpOutput kcpOutput = this.f3387kcp.getOutput();
+            KcpOutput kcpOutput = this.f3351kcp.getOutput();
             this.fecEncode = fecAdapt.fecEncode(headerSize, channelConfig.getMtu());
             this.fecDecode = fecAdapt.fecDecode(channelConfig.getMtu());
-            this.f3387kcp.setOutput(new FecOutPut(kcpOutput, this.fecEncode));
+            this.f3351kcp.setOutput(new FecOutPut(kcpOutput, this.fecEncode));
             headerSize += Fec.fecHeaderSizePlus2;
         }
-        this.f3387kcp.setReserved(headerSize);
+        this.f3351kcp.setReserved(headerSize);
         initKcpConfig(channelConfig);
     }
 
     private void initKcpConfig(ChannelConfig channelConfig) {
-        this.f3387kcp.nodelay(channelConfig.isNodelay(), channelConfig.getInterval(), channelConfig.getFastresend(), channelConfig.isNocwnd());
-        this.f3387kcp.setSndWnd(channelConfig.getSndwnd());
-        this.f3387kcp.setRcvWnd(channelConfig.getRcvwnd());
-        this.f3387kcp.setMtu(channelConfig.getMtu());
-        this.f3387kcp.setStream(channelConfig.isStream());
-        this.f3387kcp.setAckNoDelay(channelConfig.isAckNoDelay());
-        this.f3387kcp.setAckMaskSize(channelConfig.getAckMaskSize());
+        this.f3351kcp.nodelay(channelConfig.isNodelay(), channelConfig.getInterval(), channelConfig.getFastresend(), channelConfig.isNocwnd());
+        this.f3351kcp.setSndWnd(channelConfig.getSndwnd());
+        this.f3351kcp.setRcvWnd(channelConfig.getRcvwnd());
+        this.f3351kcp.setMtu(channelConfig.getMtu());
+        this.f3351kcp.setStream(channelConfig.isStream());
+        this.f3351kcp.setAckNoDelay(channelConfig.isAckNoDelay());
+        this.f3351kcp.setAckMaskSize(channelConfig.getAckMaskSize());
         this.fastFlush = channelConfig.isFastFlush();
     }
 
     /* access modifiers changed from: protected */
     public void receive(List<ByteBuf> bufList) {
-        this.f3387kcp.recv(bufList);
+        this.f3351kcp.recv(bufList);
     }
 
     /* access modifiers changed from: protected */
     public ByteBuf mergeReceive() {
-        return this.f3387kcp.mergeRecv();
+        return this.f3351kcp.mergeRecv();
     }
 
     /* access modifiers changed from: protected */
@@ -175,7 +175,7 @@ public class Ukcp {
     }
 
     private void input(ByteBuf data, boolean regular, long current) throws IOException {
-        switch (this.f3387kcp.input(data, regular, current)) {
+        switch (this.f3351kcp.input(data, regular, current)) {
             case -4:
                 throw new IOException("Conv inconsistency");
             case SelectStrategy.BUSY_WAIT:
@@ -191,14 +191,14 @@ public class Ukcp {
 
     /* access modifiers changed from: package-private */
     public void send(ByteBuf buf) throws IOException {
-        if (this.f3387kcp.send(buf) == -2) {
+        if (this.f3351kcp.send(buf) == -2) {
             throw new IOException("Too many fragments");
         }
     }
 
     /* access modifiers changed from: protected */
     public boolean canRecv() {
-        return this.f3387kcp.canRecv();
+        return this.f3351kcp.canRecv();
     }
 
     /* access modifiers changed from: protected */
@@ -213,13 +213,13 @@ public class Ukcp {
 
     /* access modifiers changed from: protected */
     public boolean canSend(boolean curCanSend) {
-        int max = this.f3387kcp.getSndWnd() * 2;
-        int waitSnd = this.f3387kcp.waitSnd();
+        int max = this.f3351kcp.getSndWnd() * 2;
+        int waitSnd = this.f3351kcp.waitSnd();
         return curCanSend ? waitSnd < max : waitSnd < Math.max(1, max / 2);
     }
 
     protected long update(long current) {
-        this.f3387kcp.update(current);
+        this.f3351kcp.update(current);
         long nextTsUp = check(current);
         setTsUpdate(nextTsUp);
         return nextTsUp;
@@ -227,38 +227,38 @@ public class Ukcp {
 
     /* access modifiers changed from: protected */
     public long flush(long current) {
-        return this.f3387kcp.flush(false, current);
+        return this.f3351kcp.flush(false, current);
     }
 
     protected long check(long current) {
-        return this.f3387kcp.check(current);
+        return this.f3351kcp.check(current);
     }
 
     /* access modifiers changed from: protected */
     public boolean checkFlush() {
-        return this.f3387kcp.checkFlush();
+        return this.f3351kcp.checkFlush();
     }
 
     public long getConv() {
-        return this.f3387kcp.getConv();
+        return this.f3351kcp.getConv();
     }
 
     public void setConv(long conv) {
-        this.f3387kcp.setConv(conv);
+        this.f3351kcp.setConv(conv);
     }
 
     /* access modifiers changed from: protected */
     public int getInterval() {
-        return this.f3387kcp.getInterval();
+        return this.f3351kcp.getInterval();
     }
 
     /* access modifiers changed from: protected */
     public boolean isStream() {
-        return this.f3387kcp.isStream();
+        return this.f3351kcp.isStream();
     }
 
     public Ukcp setByteBufAllocator(ByteBufAllocator allocator) {
-        this.f3387kcp.setByteBufAllocator(allocator);
+        this.f3351kcp.setByteBufAllocator(allocator);
         return this;
     }
 
@@ -360,15 +360,15 @@ public class Ukcp {
             notifyReadEvent();
             this.kcpListener.handleClose(this);
             notifyWriteEvent();
-            this.f3387kcp.flush(false, System.currentTimeMillis());
+            this.f3351kcp.flush(false, System.currentTimeMillis());
             this.channelManager.del(this);
             release();
         }
     }
 
     void release() {
-        this.f3387kcp.setState(-1);
-        this.f3387kcp.release();
+        this.f3351kcp.setState(-1);
+        this.f3351kcp.release();
         while (true) {
             ByteBuf byteBuf = this.writeBuffer.poll();
             if (byteBuf == null) {
@@ -427,16 +427,16 @@ public class Ukcp {
     }
 
     public User user() {
-        return (User) this.f3387kcp.getUser();
+        return (User) this.f3351kcp.getUser();
     }
 
     public int srtt() {
-        return this.f3387kcp.getSrtt();
+        return this.f3351kcp.getSrtt();
     }
 
     /* access modifiers changed from: protected */
     public Ukcp user(User user) {
-        this.f3387kcp.setUser(user);
+        this.f3351kcp.setUser(user);
         return this;
     }
 }

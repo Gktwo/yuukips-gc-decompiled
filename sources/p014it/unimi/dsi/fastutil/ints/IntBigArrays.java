@@ -591,15 +591,15 @@ public final class IntBigArrays {
         private final long from;
 
         /* renamed from: to */
-        private final long f2164to;
+        private final long f2128to;
 
         /* renamed from: x */
-        private final int[][] f2165x;
+        private final int[][] f2129x;
 
         public ForkJoinQuickSort(int[][] x, long from, long to) {
             this.from = from;
-            this.f2164to = to;
-            this.f2165x = x;
+            this.f2128to = to;
+            this.f2129x = x;
         }
 
         /* JADX DEBUG: Failed to insert an additional move for type inference into block B:40:0x00ad */
@@ -665,16 +665,16 @@ public final class IntBigArrays {
         private final long from;
 
         /* renamed from: to */
-        private final long f2166to;
+        private final long f2130to;
 
         /* renamed from: x */
-        private final int[][] f2167x;
+        private final int[][] f2131x;
         private final IntComparator comp;
 
         public ForkJoinQuickSortComp(int[][] x, long from, long to, IntComparator comp) {
             this.from = from;
-            this.f2166to = to;
-            this.f2167x = x;
+            this.f2130to = to;
+            this.f2131x = x;
             this.comp = comp;
         }
 

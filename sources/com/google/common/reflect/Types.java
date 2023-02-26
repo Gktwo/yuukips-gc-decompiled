@@ -558,8 +558,9 @@ public final class Types {
         }
     }
 
+    /* access modifiers changed from: package-private */
     /* loaded from: grasscutter.jar:com/google/common/reflect/Types$NativeTypeVariableEquals.class */
-    static final class NativeTypeVariableEquals<X> {
+    public static final class NativeTypeVariableEquals<X> {
         static final boolean NATIVE_TYPE_VARIABLE_ONLY;
 
         NativeTypeVariableEquals() {

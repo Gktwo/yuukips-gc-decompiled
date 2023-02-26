@@ -43,19 +43,19 @@ public class EnumMemberValue extends MemberValue {
     }
 
     public String getType() {
-        return Descriptor.toClassName(this.f3074cp.getUtf8Info(this.typeIndex));
+        return Descriptor.toClassName(this.f3038cp.getUtf8Info(this.typeIndex));
     }
 
     public void setType(String typename) {
-        this.typeIndex = this.f3074cp.addUtf8Info(Descriptor.m380of(typename));
+        this.typeIndex = this.f3038cp.addUtf8Info(Descriptor.m380of(typename));
     }
 
     public String getValue() {
-        return this.f3074cp.getUtf8Info(this.valueIndex);
+        return this.f3038cp.getUtf8Info(this.valueIndex);
     }
 
     public void setValue(String name) {
-        this.valueIndex = this.f3074cp.addUtf8Info(name);
+        this.valueIndex = this.f3038cp.addUtf8Info(name);
     }
 
     public String toString() {
@@ -64,7 +64,7 @@ public class EnumMemberValue extends MemberValue {
 
     @Override // javassist.bytecode.annotation.MemberValue
     public void write(AnnotationsWriter writer) throws IOException {
-        writer.enumConstValue(this.f3074cp.getUtf8Info(this.typeIndex), getValue());
+        writer.enumConstValue(this.f3038cp.getUtf8Info(this.typeIndex), getValue());
     }
 
     @Override // javassist.bytecode.annotation.MemberValue

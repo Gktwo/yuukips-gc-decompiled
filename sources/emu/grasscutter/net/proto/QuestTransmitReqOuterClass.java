@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestTransmitReqOuterClass.class */
 public final class QuestTransmitReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016QuestTransmitReq.proto\"6\n\u0010QuestTransmitReq\u0012\u0010\n\bquest_id\u0018\f \u0001(\r\u0012\u0010\n\bpoint_id\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016QuestTransmitReq.proto\"4\n\u0010QuestTransmitReq\u0012\u000f\n\u0007questId\u0018\n \u0001(\r\u0012\u000f\n\u0007pointId\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_QuestTransmitReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_QuestTransmitReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QuestTransmitReq_descriptor, new String[]{"QuestId", "PointId"});
 
@@ -43,9 +43,9 @@ public final class QuestTransmitReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestTransmitReqOuterClass$QuestTransmitReq.class */
     public static final class QuestTransmitReq extends GeneratedMessageV3 implements QuestTransmitReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int QUEST_ID_FIELD_NUMBER = 12;
+        public static final int QUESTID_FIELD_NUMBER = 10;
         private int questId_;
-        public static final int POINT_ID_FIELD_NUMBER = 1;
+        public static final int POINTID_FIELD_NUMBER = 3;
         private int pointId_;
         private byte memoizedIsInitialized;
         private static final QuestTransmitReq DEFAULT_INSTANCE = new QuestTransmitReq();
@@ -92,10 +92,10 @@ public final class QuestTransmitReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
+                            case 24:
                                 this.pointId_ = input.readUInt32();
                                 break;
-                            case 96:
+                            case 80:
                                 this.questId_ = input.readUInt32();
                                 break;
                             default:
@@ -153,10 +153,10 @@ public final class QuestTransmitReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.pointId_ != 0) {
-                output.writeUInt32(1, this.pointId_);
+                output.writeUInt32(3, this.pointId_);
             }
             if (this.questId_ != 0) {
-                output.writeUInt32(12, this.questId_);
+                output.writeUInt32(10, this.questId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class QuestTransmitReqOuterClass {
             }
             int size2 = 0;
             if (this.pointId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.pointId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.pointId_);
             }
             if (this.questId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.questId_);
+                size2 += CodedOutputStream.computeUInt32Size(10, this.questId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class QuestTransmitReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getQuestId())) + 1)) + getPointId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getQuestId())) + 3)) + getPointId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

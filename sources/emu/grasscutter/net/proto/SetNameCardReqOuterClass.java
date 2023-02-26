@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetNameCardReqOuterClass.class */
 public final class SetNameCardReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014SetNameCardReq.proto\"&\n\u000eSetNameCardReq\u0012\u0014\n\fname_card_id\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014SetNameCardReq.proto\"$\n\u000eSetNameCardReq\u0012\u0012\n\nnameCardId\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SetNameCardReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetNameCardReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetNameCardReq_descriptor, new String[]{"NameCardId"});
 
@@ -41,7 +41,7 @@ public final class SetNameCardReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetNameCardReqOuterClass$SetNameCardReq.class */
     public static final class SetNameCardReq extends GeneratedMessageV3 implements SetNameCardReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int NAME_CARD_ID_FIELD_NUMBER = 11;
+        public static final int NAMECARDID_FIELD_NUMBER = 7;
         private int nameCardId_;
         private byte memoizedIsInitialized;
         private static final SetNameCardReq DEFAULT_INSTANCE = new SetNameCardReq();
@@ -88,7 +88,7 @@ public final class SetNameCardReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 88:
+                            case 56:
                                 this.nameCardId_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class SetNameCardReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.nameCardId_ != 0) {
-                output.writeUInt32(11, this.nameCardId_);
+                output.writeUInt32(7, this.nameCardId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class SetNameCardReqOuterClass {
             }
             int size2 = 0;
             if (this.nameCardId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(11, this.nameCardId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.nameCardId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class SetNameCardReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getNameCardId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getNameCardId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

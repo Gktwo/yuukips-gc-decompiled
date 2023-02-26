@@ -491,36 +491,36 @@ public final class BooleanIterators {
     private static class IteratorWrapper implements BooleanIterator {
 
         /* renamed from: i */
-        final Iterator<Boolean> f1068i;
+        final Iterator<Boolean> f1032i;
 
         public IteratorWrapper(Iterator<Boolean> i) {
-            this.f1068i = i;
+            this.f1032i = i;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1068i.hasNext();
+            return this.f1032i.hasNext();
         }
 
         @Override // java.util.Iterator
         public void remove() {
-            this.f1068i.remove();
+            this.f1032i.remove();
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
         public boolean nextBoolean() {
-            return this.f1068i.next().booleanValue();
+            return this.f1032i.next().booleanValue();
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
         public void forEachRemaining(BooleanConsumer action) {
-            this.f1068i.forEachRemaining(action);
+            this.f1032i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Boolean> action) {
-            this.f1068i.forEachRemaining(action);
+            this.f1032i.forEachRemaining(action);
         }
     }
 
@@ -533,66 +533,66 @@ public final class BooleanIterators {
     private static class ListIteratorWrapper implements BooleanListIterator {
 
         /* renamed from: i */
-        final ListIterator<Boolean> f1069i;
+        final ListIterator<Boolean> f1033i;
 
         public ListIteratorWrapper(ListIterator<Boolean> i) {
-            this.f1069i = i;
+            this.f1033i = i;
         }
 
         @Override // java.util.Iterator, java.util.ListIterator
         public boolean hasNext() {
-            return this.f1069i.hasNext();
+            return this.f1033i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1069i.hasPrevious();
+            return this.f1033i.hasPrevious();
         }
 
         @Override // java.util.ListIterator
         public int nextIndex() {
-            return this.f1069i.nextIndex();
+            return this.f1033i.nextIndex();
         }
 
         @Override // java.util.ListIterator
         public int previousIndex() {
-            return this.f1069i.previousIndex();
+            return this.f1033i.previousIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanListIterator
         public void set(boolean k) {
-            this.f1069i.set(Boolean.valueOf(k));
+            this.f1033i.set(Boolean.valueOf(k));
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanListIterator
         public void add(boolean k) {
-            this.f1069i.add(Boolean.valueOf(k));
+            this.f1033i.add(Boolean.valueOf(k));
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanListIterator, java.util.Iterator, java.util.ListIterator
         public void remove() {
-            this.f1069i.remove();
+            this.f1033i.remove();
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
         public boolean nextBoolean() {
-            return this.f1069i.next().booleanValue();
+            return this.f1033i.next().booleanValue();
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanBidirectionalIterator
         public boolean previousBoolean() {
-            return this.f1069i.previous().booleanValue();
+            return this.f1033i.previous().booleanValue();
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
         public void forEachRemaining(BooleanConsumer action) {
-            this.f1069i.forEachRemaining(action);
+            this.f1033i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Boolean> action) {
-            this.f1069i.forEachRemaining(action);
+            this.f1033i.forEachRemaining(action);
         }
     }
 
@@ -777,20 +777,20 @@ public final class BooleanIterators {
     public static class IteratorConcatenator implements BooleanIterator {
 
         /* renamed from: a */
-        final BooleanIterator[] f1067a;
+        final BooleanIterator[] f1031a;
         int offset;
         int length;
         int lastOffset = -1;
 
         public IteratorConcatenator(BooleanIterator[] a, int offset, int length) {
-            this.f1067a = a;
+            this.f1031a = a;
             this.offset = offset;
             this.length = length;
             advance();
         }
 
         private void advance() {
-            while (this.length != 0 && !this.f1067a[this.offset].hasNext()) {
+            while (this.length != 0 && !this.f1031a[this.offset].hasNext()) {
                 this.length--;
                 this.offset++;
             }
@@ -806,7 +806,7 @@ public final class BooleanIterators {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            BooleanIterator[] booleanIteratorArr = this.f1067a;
+            BooleanIterator[] booleanIteratorArr = this.f1031a;
             int i = this.offset;
             this.lastOffset = i;
             boolean next = booleanIteratorArr[i].nextBoolean();
@@ -817,7 +817,7 @@ public final class BooleanIterators {
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
         public void forEachRemaining(BooleanConsumer action) {
             while (this.length > 0) {
-                BooleanIterator[] booleanIteratorArr = this.f1067a;
+                BooleanIterator[] booleanIteratorArr = this.f1031a;
                 int i = this.offset;
                 this.lastOffset = i;
                 booleanIteratorArr[i].forEachRemaining(action);
@@ -829,7 +829,7 @@ public final class BooleanIterators {
         @Deprecated
         public void forEachRemaining(Consumer<? super Boolean> action) {
             while (this.length > 0) {
-                BooleanIterator[] booleanIteratorArr = this.f1067a;
+                BooleanIterator[] booleanIteratorArr = this.f1031a;
                 int i = this.offset;
                 this.lastOffset = i;
                 booleanIteratorArr[i].forEachRemaining(action);
@@ -842,7 +842,7 @@ public final class BooleanIterators {
             if (this.lastOffset == -1) {
                 throw new IllegalStateException();
             }
-            this.f1067a[this.lastOffset].remove();
+            this.f1031a[this.lastOffset].remove();
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectIterator
@@ -853,8 +853,8 @@ public final class BooleanIterators {
             this.lastOffset = -1;
             int skipped = 0;
             while (skipped < n && this.length != 0) {
-                skipped += this.f1067a[this.offset].skip(n - skipped);
-                if (this.f1067a[this.offset].hasNext()) {
+                skipped += this.f1031a[this.offset].skip(n - skipped);
+                if (this.f1031a[this.offset].hasNext()) {
                     break;
                 }
                 this.length--;
@@ -877,31 +877,31 @@ public final class BooleanIterators {
     public static class UnmodifiableIterator implements BooleanIterator {
 
         /* renamed from: i */
-        protected final BooleanIterator f1071i;
+        protected final BooleanIterator f1035i;
 
         public UnmodifiableIterator(BooleanIterator i) {
-            this.f1071i = i;
+            this.f1035i = i;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1071i.hasNext();
+            return this.f1035i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
         public boolean nextBoolean() {
-            return this.f1071i.nextBoolean();
+            return this.f1035i.nextBoolean();
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
         public void forEachRemaining(BooleanConsumer action) {
-            this.f1071i.forEachRemaining(action);
+            this.f1035i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Boolean> action) {
-            this.f1071i.forEachRemaining(action);
+            this.f1035i.forEachRemaining(action);
         }
     }
 
@@ -914,41 +914,41 @@ public final class BooleanIterators {
     public static class UnmodifiableBidirectionalIterator implements BooleanBidirectionalIterator {
 
         /* renamed from: i */
-        protected final BooleanBidirectionalIterator f1070i;
+        protected final BooleanBidirectionalIterator f1034i;
 
         public UnmodifiableBidirectionalIterator(BooleanBidirectionalIterator i) {
-            this.f1070i = i;
+            this.f1034i = i;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1070i.hasNext();
+            return this.f1034i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1070i.hasPrevious();
+            return this.f1034i.hasPrevious();
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
         public boolean nextBoolean() {
-            return this.f1070i.nextBoolean();
+            return this.f1034i.nextBoolean();
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanBidirectionalIterator
         public boolean previousBoolean() {
-            return this.f1070i.previousBoolean();
+            return this.f1034i.previousBoolean();
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
         public void forEachRemaining(BooleanConsumer action) {
-            this.f1070i.forEachRemaining(action);
+            this.f1034i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Boolean> action) {
-            this.f1070i.forEachRemaining(action);
+            this.f1034i.forEachRemaining(action);
         }
     }
 
@@ -961,51 +961,51 @@ public final class BooleanIterators {
     public static class UnmodifiableListIterator implements BooleanListIterator {
 
         /* renamed from: i */
-        protected final BooleanListIterator f1072i;
+        protected final BooleanListIterator f1036i;
 
         public UnmodifiableListIterator(BooleanListIterator i) {
-            this.f1072i = i;
+            this.f1036i = i;
         }
 
         @Override // java.util.Iterator, java.util.ListIterator
         public boolean hasNext() {
-            return this.f1072i.hasNext();
+            return this.f1036i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1072i.hasPrevious();
+            return this.f1036i.hasPrevious();
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
         public boolean nextBoolean() {
-            return this.f1072i.nextBoolean();
+            return this.f1036i.nextBoolean();
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanBidirectionalIterator
         public boolean previousBoolean() {
-            return this.f1072i.previousBoolean();
+            return this.f1036i.previousBoolean();
         }
 
         @Override // java.util.ListIterator
         public int nextIndex() {
-            return this.f1072i.nextIndex();
+            return this.f1036i.nextIndex();
         }
 
         @Override // java.util.ListIterator
         public int previousIndex() {
-            return this.f1072i.previousIndex();
+            return this.f1036i.previousIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
         public void forEachRemaining(BooleanConsumer action) {
-            this.f1072i.forEachRemaining(action);
+            this.f1036i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Boolean> action) {
-            this.f1072i.forEachRemaining(action);
+            this.f1036i.forEachRemaining(action);
         }
     }
 

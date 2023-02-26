@@ -46,7 +46,7 @@ public final class MicrometerPlugin implements Plugin {
     @NotNull
     public static final Companion Companion = new Companion(null);
     @NotNull
-    private static ExceptionHandler<Exception> EXCEPTION_HANDLER = MicrometerPlugin::m5870EXCEPTION_HANDLER$lambda4;
+    private static ExceptionHandler<Exception> EXCEPTION_HANDLER = MicrometerPlugin::m5867EXCEPTION_HANDLER$lambda4;
 
     /* JADX INFO: 'this' call moved to the top of the method (can break code semantics) */
     @JvmOverloads
@@ -291,22 +291,22 @@ public final class MicrometerPlugin implements Plugin {
             }));
             new JettyServerThreadPoolMetrics(server.getThreadPool(), this.tags).bindTo(this.registry);
             app.events((v2) -> {
-                m5869apply$lambda2$lambda1(r1, r2, v2);
+                m5866apply$lambda2$lambda1(r1, r2, v2);
             });
         }
     }
 
     /* renamed from: apply$lambda-2$lambda-1  reason: not valid java name */
-    private static final void m5869apply$lambda2$lambda1(Server $server, MicrometerPlugin this$0, EventListener it) {
+    private static final void m5866apply$lambda2$lambda1(Server $server, MicrometerPlugin this$0, EventListener it) {
         Intrinsics.checkNotNullParameter($server, "$server");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         it.serverStarted(() -> {
-            m5868apply$lambda2$lambda1$lambda0(r1, r2);
+            m5865apply$lambda2$lambda1$lambda0(r1, r2);
         });
     }
 
     /* renamed from: apply$lambda-2$lambda-1$lambda-0  reason: not valid java name */
-    private static final void m5868apply$lambda2$lambda1$lambda0(Server $server, MicrometerPlugin this$0) {
+    private static final void m5865apply$lambda2$lambda1$lambda0(Server $server, MicrometerPlugin this$0) {
         Intrinsics.checkNotNullParameter($server, "$server");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         JettyConnectionMetrics.addToAllConnectors($server, this$0.registry, this$0.tags);
@@ -336,7 +336,7 @@ public final class MicrometerPlugin implements Plugin {
     }
 
     /* renamed from: EXCEPTION_HANDLER$lambda-4  reason: not valid java name */
-    private static final void m5870EXCEPTION_HANDLER$lambda4(Exception e, Context ctx) {
+    private static final void m5867EXCEPTION_HANDLER$lambda4(Exception e, Context ctx) {
         String str;
         Intrinsics.checkNotNullParameter(e, "e");
         Intrinsics.checkNotNullParameter(ctx, "ctx");

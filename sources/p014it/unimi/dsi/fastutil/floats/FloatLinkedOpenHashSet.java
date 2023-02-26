@@ -27,13 +27,13 @@ public class FloatLinkedOpenHashSet extends AbstractFloatSortedSet implements Se
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f1955n;
+    protected transient int f1919n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1956f;
+    protected final float f1920f;
     private static final int SPLITERATOR_CHARACTERISTICS = 337;
 
     public FloatLinkedOpenHashSet(int expected, float f) {
@@ -44,14 +44,14 @@ public class FloatLinkedOpenHashSet extends AbstractFloatSortedSet implements Se
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1956f = f;
+            this.f1920f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1955n = arraySize;
+            this.f1919n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1955n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1955n, f);
-            this.key = new float[this.f1955n + 1];
-            this.link = new long[this.f1955n + 1];
+            this.mask = this.f1919n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1919n, f);
+            this.key = new float[this.f1919n + 1];
+            this.link = new long[this.f1919n + 1];
         }
     }
 
@@ -171,22 +171,22 @@ public class FloatLinkedOpenHashSet extends AbstractFloatSortedSet implements Se
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1956f);
-        if (needed > this.f1955n) {
+        int needed = HashCommon.arraySize(capacity, this.f1920f);
+        if (needed > this.f1919n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1956f)))));
-        if (needed > this.f1955n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1920f)))));
+        if (needed > this.f1919n) {
             rehash(needed);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatCollection, p014it.unimi.dsi.fastutil.floats.FloatCollection
     public boolean addAll(FloatCollection c) {
-        if (((double) this.f1956f) <= 0.5d) {
+        if (((double) this.f1920f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -196,7 +196,7 @@ public class FloatLinkedOpenHashSet extends AbstractFloatSortedSet implements Se
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Float> c) {
-        if (((double) this.f1956f) <= 0.5d) {
+        if (((double) this.f1920f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -230,7 +230,7 @@ public class FloatLinkedOpenHashSet extends AbstractFloatSortedSet implements Se
         } else if (this.containsNull) {
             return false;
         } else {
-            pos = this.f1955n;
+            pos = this.f1919n;
             this.containsNull = true;
         }
         if (this.size == 0) {
@@ -249,7 +249,7 @@ public class FloatLinkedOpenHashSet extends AbstractFloatSortedSet implements Se
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f1956f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f1920f));
         return true;
     }
 
@@ -287,22 +287,22 @@ public class FloatLinkedOpenHashSet extends AbstractFloatSortedSet implements Se
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f1955n <= this.minN || this.size >= this.maxFill / 4 || this.f1955n <= 16) {
+        if (this.f1919n <= this.minN || this.size >= this.maxFill / 4 || this.f1919n <= 16) {
             return true;
         }
-        rehash(this.f1955n / 2);
+        rehash(this.f1919n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f1955n] = 0.0f;
+        this.key[this.f1919n] = 0.0f;
         this.size--;
-        fixPointers(this.f1955n);
-        if (this.f1955n <= this.minN || this.size >= this.maxFill / 4 || this.f1955n <= 16) {
+        fixPointers(this.f1919n);
+        if (this.f1919n <= this.minN || this.size >= this.maxFill / 4 || this.f1919n <= 16) {
             return true;
         }
-        rehash(this.f1955n / 2);
+        rehash(this.f1919n / 2);
         return true;
     }
 
@@ -378,12 +378,12 @@ public class FloatLinkedOpenHashSet extends AbstractFloatSortedSet implements Se
         this.size--;
         if (Float.floatToIntBits(k) == 0) {
             this.containsNull = false;
-            this.key[this.f1955n] = 0.0f;
+            this.key[this.f1919n] = 0.0f;
         } else {
             shiftKeys(pos);
         }
-        if (this.f1955n > this.minN && this.size < this.maxFill / 4 && this.f1955n > 16) {
-            rehash(this.f1955n / 2);
+        if (this.f1919n > this.minN && this.size < this.maxFill / 4 && this.f1919n > 16) {
+            rehash(this.f1919n / 2);
         }
         return k;
     }
@@ -403,12 +403,12 @@ public class FloatLinkedOpenHashSet extends AbstractFloatSortedSet implements Se
         this.size--;
         if (Float.floatToIntBits(k) == 0) {
             this.containsNull = false;
-            this.key[this.f1955n] = 0.0f;
+            this.key[this.f1919n] = 0.0f;
         } else {
             shiftKeys(pos);
         }
-        if (this.f1955n > this.minN && this.size < this.maxFill / 4 && this.f1955n > 16) {
-            rehash(this.f1955n / 2);
+        if (this.f1919n > this.minN && this.size < this.maxFill / 4 && this.f1919n > 16) {
+            rehash(this.f1919n / 2);
         }
         return k;
     }
@@ -480,11 +480,11 @@ public class FloatLinkedOpenHashSet extends AbstractFloatSortedSet implements Se
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToFirst(this.f1955n);
+            moveIndexToFirst(this.f1919n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f1955n;
+            pos = this.f1919n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -503,7 +503,7 @@ public class FloatLinkedOpenHashSet extends AbstractFloatSortedSet implements Se
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f1956f));
+        rehash(HashCommon.arraySize(this.size, this.f1920f));
         return true;
     }
 
@@ -526,11 +526,11 @@ public class FloatLinkedOpenHashSet extends AbstractFloatSortedSet implements Se
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToLast(this.f1955n);
+            moveIndexToLast(this.f1919n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f1955n;
+            pos = this.f1919n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -549,7 +549,7 @@ public class FloatLinkedOpenHashSet extends AbstractFloatSortedSet implements Se
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f1956f));
+        rehash(HashCommon.arraySize(this.size, this.f1920f));
         return true;
     }
 
@@ -694,8 +694,8 @@ public class FloatLinkedOpenHashSet extends AbstractFloatSortedSet implements Se
             this.index = -1;
             if (Float.floatToIntBits(from) == 0) {
                 if (FloatLinkedOpenHashSet.this.containsNull) {
-                    this.next = (int) FloatLinkedOpenHashSet.this.link[FloatLinkedOpenHashSet.this.f1955n];
-                    this.prev = FloatLinkedOpenHashSet.this.f1955n;
+                    this.next = (int) FloatLinkedOpenHashSet.this.link[FloatLinkedOpenHashSet.this.f1919n];
+                    this.prev = FloatLinkedOpenHashSet.this.f1919n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + from + " does not belong to this set.");
@@ -834,9 +834,9 @@ public class FloatLinkedOpenHashSet extends AbstractFloatSortedSet implements Se
             }
             int pos = this.curr;
             this.curr = -1;
-            if (pos == FloatLinkedOpenHashSet.this.f1955n) {
+            if (pos == FloatLinkedOpenHashSet.this.f1919n) {
                 FloatLinkedOpenHashSet.this.containsNull = false;
-                FloatLinkedOpenHashSet.this.key[FloatLinkedOpenHashSet.this.f1955n] = 0.0f;
+                FloatLinkedOpenHashSet.this.key[FloatLinkedOpenHashSet.this.f1919n] = 0.0f;
                 return;
             }
             float[] key = FloatLinkedOpenHashSet.this.key;
@@ -906,8 +906,8 @@ public class FloatLinkedOpenHashSet extends AbstractFloatSortedSet implements Se
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1956f)));
-        if (l >= this.f1955n || this.size > HashCommon.maxFill(l, this.f1956f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1920f)));
+        if (l >= this.f1919n || this.size > HashCommon.maxFill(l, this.f1920f)) {
             return true;
         }
         try {
@@ -965,9 +965,9 @@ public class FloatLinkedOpenHashSet extends AbstractFloatSortedSet implements Se
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f1955n = newN;
+        this.f1919n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f1955n, this.f1956f);
+        this.maxFill = HashCommon.maxFill(this.f1919n, this.f1920f);
         this.key = newKey;
     }
 
@@ -1020,12 +1020,12 @@ public class FloatLinkedOpenHashSet extends AbstractFloatSortedSet implements Se
         int pos;
         int i;
         s.defaultReadObject();
-        this.f1955n = HashCommon.arraySize(this.size, this.f1956f);
-        this.maxFill = HashCommon.maxFill(this.f1955n, this.f1956f);
-        this.mask = this.f1955n - 1;
-        float[] key = new float[this.f1955n + 1];
+        this.f1919n = HashCommon.arraySize(this.size, this.f1920f);
+        this.maxFill = HashCommon.maxFill(this.f1919n, this.f1920f);
+        this.mask = this.f1919n - 1;
+        float[] key = new float[this.f1919n + 1];
         this.key = key;
-        long[] link = new long[this.f1955n + 1];
+        long[] link = new long[this.f1919n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -1038,7 +1038,7 @@ public class FloatLinkedOpenHashSet extends AbstractFloatSortedSet implements Se
             }
             float k = s.readFloat();
             if (Float.floatToIntBits(k) == 0) {
-                pos = this.f1955n;
+                pos = this.f1919n;
                 this.containsNull = true;
             } else {
                 int mix = HashCommon.mix(HashCommon.float2int(k)) & this.mask;

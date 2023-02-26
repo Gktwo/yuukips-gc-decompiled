@@ -11,7 +11,7 @@ public final class PlayerTeleportEvent extends PlayerEvent implements Cancellabl
     private final Position from;
 
     /* renamed from: to */
-    private Position f959to;
+    private Position f924to;
 
     /* loaded from: grasscutter.jar:emu/grasscutter/server/event/player/PlayerTeleportEvent$TeleportType.class */
     public enum TeleportType {
@@ -28,7 +28,7 @@ public final class PlayerTeleportEvent extends PlayerEvent implements Cancellabl
         super(player);
         this.type = type;
         this.from = from;
-        this.f959to = to;
+        this.f924to = to;
     }
 
     public TeleportType getTeleportType() {
@@ -40,10 +40,10 @@ public final class PlayerTeleportEvent extends PlayerEvent implements Cancellabl
     }
 
     public Position getDestination() {
-        return this.f959to;
+        return this.f924to;
     }
 
     public void setDestination(Position to) {
-        this.f959to = to;
+        this.f924to = to;
     }
 }

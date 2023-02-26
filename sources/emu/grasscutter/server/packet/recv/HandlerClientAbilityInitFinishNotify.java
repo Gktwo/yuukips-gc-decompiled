@@ -7,7 +7,7 @@ import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass;
 import emu.grasscutter.net.proto.ClientAbilityInitFinishNotifyOuterClass;
 import emu.grasscutter.server.game.GameSession;
 
-@Opcodes(1119)
+@Opcodes(1198)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerClientAbilityInitFinishNotify.class */
 public class HandlerClientAbilityInitFinishNotify extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

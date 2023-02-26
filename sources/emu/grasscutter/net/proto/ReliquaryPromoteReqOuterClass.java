@@ -20,15 +20,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ReliquaryPromoteReqOuterClass.class */
 public final class ReliquaryPromoteReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019ReliquaryPromoteReq.proto\"=\n\u0013ReliquaryPromoteReq\u0012\u0013\n\u000btarget_guid\u0018\u0003 \u0001(\u0004\u0012\u0011\n\titem_guid\u0018\u0002 \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019ReliquaryPromoteReq.proto\";\n\u0013ReliquaryPromoteReq\u0012\u0010\n\bitemGuid\u0018\n \u0001(\u0004\u0012\u0012\n\ntargetGuid\u0018\f \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ReliquaryPromoteReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ReliquaryPromoteReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ReliquaryPromoteReq_descriptor, new String[]{"TargetGuid", "ItemGuid"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ReliquaryPromoteReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ReliquaryPromoteReq_descriptor, new String[]{"ItemGuid", "TargetGuid"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ReliquaryPromoteReqOuterClass$ReliquaryPromoteReqOrBuilder.class */
     public interface ReliquaryPromoteReqOrBuilder extends MessageOrBuilder {
-        long getTargetGuid();
-
         long getItemGuid();
+
+        long getTargetGuid();
     }
 
     private ReliquaryPromoteReqOuterClass() {
@@ -44,10 +44,10 @@ public final class ReliquaryPromoteReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ReliquaryPromoteReqOuterClass$ReliquaryPromoteReq.class */
     public static final class ReliquaryPromoteReq extends GeneratedMessageV3 implements ReliquaryPromoteReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TARGET_GUID_FIELD_NUMBER = 3;
-        private long targetGuid_;
-        public static final int ITEM_GUID_FIELD_NUMBER = 2;
+        public static final int ITEMGUID_FIELD_NUMBER = 10;
         private long itemGuid_;
+        public static final int TARGETGUID_FIELD_NUMBER = 12;
+        private long targetGuid_;
         private byte memoizedIsInitialized;
         private static final ReliquaryPromoteReq DEFAULT_INSTANCE = new ReliquaryPromoteReq();
         private static final Parser<ReliquaryPromoteReq> PARSER = new AbstractParser<ReliquaryPromoteReq>() { // from class: emu.grasscutter.net.proto.ReliquaryPromoteReqOuterClass.ReliquaryPromoteReq.1
@@ -93,10 +93,10 @@ public final class ReliquaryPromoteReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 16:
+                            case 80:
                                 this.itemGuid_ = input.readUInt64();
                                 break;
-                            case 24:
+                            case 96:
                                 this.targetGuid_ = input.readUInt64();
                                 break;
                             default:
@@ -129,13 +129,13 @@ public final class ReliquaryPromoteReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ReliquaryPromoteReqOuterClass.ReliquaryPromoteReqOrBuilder
-        public long getTargetGuid() {
-            return this.targetGuid_;
+        public long getItemGuid() {
+            return this.itemGuid_;
         }
 
         @Override // emu.grasscutter.net.proto.ReliquaryPromoteReqOuterClass.ReliquaryPromoteReqOrBuilder
-        public long getItemGuid() {
-            return this.itemGuid_;
+        public long getTargetGuid() {
+            return this.targetGuid_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -154,10 +154,10 @@ public final class ReliquaryPromoteReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.itemGuid_ != 0) {
-                output.writeUInt64(2, this.itemGuid_);
+                output.writeUInt64(10, this.itemGuid_);
             }
             if (this.targetGuid_ != 0) {
-                output.writeUInt64(3, this.targetGuid_);
+                output.writeUInt64(12, this.targetGuid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -170,10 +170,10 @@ public final class ReliquaryPromoteReqOuterClass {
             }
             int size2 = 0;
             if (this.itemGuid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(2, this.itemGuid_);
+                size2 = 0 + CodedOutputStream.computeUInt64Size(10, this.itemGuid_);
             }
             if (this.targetGuid_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(3, this.targetGuid_);
+                size2 += CodedOutputStream.computeUInt64Size(12, this.targetGuid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -189,7 +189,7 @@ public final class ReliquaryPromoteReqOuterClass {
                 return equals(obj);
             }
             ReliquaryPromoteReq other = (ReliquaryPromoteReq) obj;
-            return getTargetGuid() == other.getTargetGuid() && getItemGuid() == other.getItemGuid() && this.unknownFields.equals(other.unknownFields);
+            return getItemGuid() == other.getItemGuid() && getTargetGuid() == other.getTargetGuid() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -197,7 +197,7 @@ public final class ReliquaryPromoteReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + Internal.hashLong(getTargetGuid()))) + 2)) + Internal.hashLong(getItemGuid()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + Internal.hashLong(getItemGuid()))) + 12)) + Internal.hashLong(getTargetGuid()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -276,8 +276,8 @@ public final class ReliquaryPromoteReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ReliquaryPromoteReqOuterClass$ReliquaryPromoteReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ReliquaryPromoteReqOrBuilder {
-            private long targetGuid_;
             private long itemGuid_;
+            private long targetGuid_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ReliquaryPromoteReqOuterClass.internal_static_ReliquaryPromoteReq_descriptor;
@@ -305,8 +305,8 @@ public final class ReliquaryPromoteReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.targetGuid_ = 0;
                 this.itemGuid_ = 0;
+                this.targetGuid_ = 0;
                 return this;
             }
 
@@ -332,8 +332,8 @@ public final class ReliquaryPromoteReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public ReliquaryPromoteReq buildPartial() {
                 ReliquaryPromoteReq result = new ReliquaryPromoteReq(this);
-                result.targetGuid_ = this.targetGuid_;
                 result.itemGuid_ = this.itemGuid_;
+                result.targetGuid_ = this.targetGuid_;
                 onBuilt();
                 return result;
             }
@@ -381,11 +381,11 @@ public final class ReliquaryPromoteReqOuterClass {
                 if (other == ReliquaryPromoteReq.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getTargetGuid() != 0) {
-                    setTargetGuid(other.getTargetGuid());
-                }
                 if (other.getItemGuid() != 0) {
                     setItemGuid(other.getItemGuid());
+                }
+                if (other.getTargetGuid() != 0) {
+                    setTargetGuid(other.getTargetGuid());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -420,23 +420,6 @@ public final class ReliquaryPromoteReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ReliquaryPromoteReqOuterClass.ReliquaryPromoteReqOrBuilder
-            public long getTargetGuid() {
-                return this.targetGuid_;
-            }
-
-            public Builder setTargetGuid(long value) {
-                this.targetGuid_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearTargetGuid() {
-                this.targetGuid_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ReliquaryPromoteReqOuterClass.ReliquaryPromoteReqOrBuilder
             public long getItemGuid() {
                 return this.itemGuid_;
             }
@@ -449,6 +432,23 @@ public final class ReliquaryPromoteReqOuterClass {
 
             public Builder clearItemGuid() {
                 this.itemGuid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ReliquaryPromoteReqOuterClass.ReliquaryPromoteReqOrBuilder
+            public long getTargetGuid() {
+                return this.targetGuid_;
+            }
+
+            public Builder setTargetGuid(long value) {
+                this.targetGuid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearTargetGuid() {
+                this.targetGuid_ = 0;
                 onChanged();
                 return this;
             }

@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnlockTransPointReqOuterClass.class */
 public final class UnlockTransPointReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019UnlockTransPointReq.proto\"9\n\u0013UnlockTransPointReq\u0012\u0010\n\bscene_id\u0018\n \u0001(\r\u0012\u0010\n\bpoint_id\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019UnlockTransPointReq.proto\"7\n\u0013UnlockTransPointReq\u0012\u000f\n\u0007pointId\u0018\u0004 \u0001(\r\u0012\u000f\n\u0007sceneId\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_UnlockTransPointReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_UnlockTransPointReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_UnlockTransPointReq_descriptor, new String[]{"SceneId", "PointId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_UnlockTransPointReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_UnlockTransPointReq_descriptor, new String[]{"PointId", "SceneId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnlockTransPointReqOuterClass$UnlockTransPointReqOrBuilder.class */
     public interface UnlockTransPointReqOrBuilder extends MessageOrBuilder {
-        int getSceneId();
-
         int getPointId();
+
+        int getSceneId();
     }
 
     private UnlockTransPointReqOuterClass() {
@@ -43,10 +43,10 @@ public final class UnlockTransPointReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnlockTransPointReqOuterClass$UnlockTransPointReq.class */
     public static final class UnlockTransPointReq extends GeneratedMessageV3 implements UnlockTransPointReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SCENE_ID_FIELD_NUMBER = 10;
-        private int sceneId_;
-        public static final int POINT_ID_FIELD_NUMBER = 2;
+        public static final int POINTID_FIELD_NUMBER = 4;
         private int pointId_;
+        public static final int SCENEID_FIELD_NUMBER = 6;
+        private int sceneId_;
         private byte memoizedIsInitialized;
         private static final UnlockTransPointReq DEFAULT_INSTANCE = new UnlockTransPointReq();
         private static final Parser<UnlockTransPointReq> PARSER = new AbstractParser<UnlockTransPointReq>() { // from class: emu.grasscutter.net.proto.UnlockTransPointReqOuterClass.UnlockTransPointReq.1
@@ -92,10 +92,10 @@ public final class UnlockTransPointReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 16:
+                            case 32:
                                 this.pointId_ = input.readUInt32();
                                 break;
-                            case 80:
+                            case 48:
                                 this.sceneId_ = input.readUInt32();
                                 break;
                             default:
@@ -128,13 +128,13 @@ public final class UnlockTransPointReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.UnlockTransPointReqOuterClass.UnlockTransPointReqOrBuilder
-        public int getSceneId() {
-            return this.sceneId_;
+        public int getPointId() {
+            return this.pointId_;
         }
 
         @Override // emu.grasscutter.net.proto.UnlockTransPointReqOuterClass.UnlockTransPointReqOrBuilder
-        public int getPointId() {
-            return this.pointId_;
+        public int getSceneId() {
+            return this.sceneId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -153,10 +153,10 @@ public final class UnlockTransPointReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.pointId_ != 0) {
-                output.writeUInt32(2, this.pointId_);
+                output.writeUInt32(4, this.pointId_);
             }
             if (this.sceneId_ != 0) {
-                output.writeUInt32(10, this.sceneId_);
+                output.writeUInt32(6, this.sceneId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class UnlockTransPointReqOuterClass {
             }
             int size2 = 0;
             if (this.pointId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.pointId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.pointId_);
             }
             if (this.sceneId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.sceneId_);
+                size2 += CodedOutputStream.computeUInt32Size(6, this.sceneId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -188,7 +188,7 @@ public final class UnlockTransPointReqOuterClass {
                 return equals(obj);
             }
             UnlockTransPointReq other = (UnlockTransPointReq) obj;
-            return getSceneId() == other.getSceneId() && getPointId() == other.getPointId() && this.unknownFields.equals(other.unknownFields);
+            return getPointId() == other.getPointId() && getSceneId() == other.getSceneId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -196,7 +196,7 @@ public final class UnlockTransPointReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getSceneId())) + 2)) + getPointId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getPointId())) + 6)) + getSceneId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -275,8 +275,8 @@ public final class UnlockTransPointReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnlockTransPointReqOuterClass$UnlockTransPointReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements UnlockTransPointReqOrBuilder {
-            private int sceneId_;
             private int pointId_;
+            private int sceneId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return UnlockTransPointReqOuterClass.internal_static_UnlockTransPointReq_descriptor;
@@ -304,8 +304,8 @@ public final class UnlockTransPointReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.sceneId_ = 0;
                 this.pointId_ = 0;
+                this.sceneId_ = 0;
                 return this;
             }
 
@@ -331,8 +331,8 @@ public final class UnlockTransPointReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public UnlockTransPointReq buildPartial() {
                 UnlockTransPointReq result = new UnlockTransPointReq(this);
-                result.sceneId_ = this.sceneId_;
                 result.pointId_ = this.pointId_;
+                result.sceneId_ = this.sceneId_;
                 onBuilt();
                 return result;
             }
@@ -380,11 +380,11 @@ public final class UnlockTransPointReqOuterClass {
                 if (other == UnlockTransPointReq.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getSceneId() != 0) {
-                    setSceneId(other.getSceneId());
-                }
                 if (other.getPointId() != 0) {
                     setPointId(other.getPointId());
+                }
+                if (other.getSceneId() != 0) {
+                    setSceneId(other.getSceneId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -419,23 +419,6 @@ public final class UnlockTransPointReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.UnlockTransPointReqOuterClass.UnlockTransPointReqOrBuilder
-            public int getSceneId() {
-                return this.sceneId_;
-            }
-
-            public Builder setSceneId(int value) {
-                this.sceneId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearSceneId() {
-                this.sceneId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.UnlockTransPointReqOuterClass.UnlockTransPointReqOrBuilder
             public int getPointId() {
                 return this.pointId_;
             }
@@ -448,6 +431,23 @@ public final class UnlockTransPointReqOuterClass {
 
             public Builder clearPointId() {
                 this.pointId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.UnlockTransPointReqOuterClass.UnlockTransPointReqOrBuilder
+            public int getSceneId() {
+                return this.sceneId_;
+            }
+
+            public Builder setSceneId(int value) {
+                this.sceneId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearSceneId() {
+                this.sceneId_ = 0;
                 onChanged();
                 return this;
             }

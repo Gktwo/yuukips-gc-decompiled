@@ -723,7 +723,7 @@ public class LuaString extends LuaValue {
             switch (224 & bArr[i4]) {
                 case 192:
                     break;
-                case PacketOpcodes.WorldPlayerLocationNotify:
+                case PacketOpcodes.SceneAvatarStaminaStepRsp:
                     i4++;
                     break;
                 default:

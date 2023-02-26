@@ -143,14 +143,14 @@ public class SendMailJob implements Job {
         private String smtpHost;
 
         /* renamed from: to */
-        private String f3374to;
+        private String f3338to;
         private String from;
         private String subject;
         private String message;
         private String replyTo;
 
         /* renamed from: cc */
-        private String f3375cc;
+        private String f3339cc;
         private String contentType;
         private String username;
         private String password;
@@ -164,11 +164,11 @@ public class SendMailJob implements Job {
         }
 
         public String getCc() {
-            return this.f3375cc;
+            return this.f3339cc;
         }
 
         public void setCc(String cc) {
-            this.f3375cc = cc;
+            this.f3339cc = cc;
         }
 
         public String getContentType() {
@@ -220,11 +220,11 @@ public class SendMailJob implements Job {
         }
 
         public String getTo() {
-            return this.f3374to;
+            return this.f3338to;
         }
 
         public void setTo(String to) {
-            this.f3374to = to;
+            this.f3338to = to;
         }
 
         public Properties getSmtpProperties() {

@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetEntityClientDataNotifyOuterClass.class */
 public final class SetEntityClientDataNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fSetEntityClientDataNotify.proto\u001a\u0016EntityClientData.proto\"]\n\u0019SetEntityClientDataNotify\u0012\u0011\n\tentity_id\u0018\u000f \u0001(\r\u0012-\n\u0012entity_client_data\u0018\u0005 \u0001(\u000b2\u0011.EntityClientDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{EntityClientDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fSetEntityClientDataNotify.proto\u001a\u0016EntityClientData.proto\"Z\n\u0019SetEntityClientDataNotify\u0012\u0010\n\bentityId\u0018\u000f \u0001(\r\u0012+\n\u0010entityClientData\u0018\r \u0001(\u000b2\u0011.EntityClientDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{EntityClientDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SetEntityClientDataNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetEntityClientDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetEntityClientDataNotify_descriptor, new String[]{"EntityId", "EntityClientData"});
 
@@ -49,9 +49,9 @@ public final class SetEntityClientDataNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetEntityClientDataNotifyOuterClass$SetEntityClientDataNotify.class */
     public static final class SetEntityClientDataNotify extends GeneratedMessageV3 implements SetEntityClientDataNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTITY_ID_FIELD_NUMBER = 15;
+        public static final int ENTITYID_FIELD_NUMBER = 15;
         private int entityId_;
-        public static final int ENTITY_CLIENT_DATA_FIELD_NUMBER = 5;
+        public static final int ENTITYCLIENTDATA_FIELD_NUMBER = 13;
         private EntityClientDataOuterClass.EntityClientData entityClientData_;
         private byte memoizedIsInitialized;
         private static final SetEntityClientDataNotify DEFAULT_INSTANCE = new SetEntityClientDataNotify();
@@ -99,7 +99,7 @@ public final class SetEntityClientDataNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 42:
+                                case 106:
                                     EntityClientDataOuterClass.EntityClientData.Builder subBuilder = this.entityClientData_ != null ? this.entityClientData_.toBuilder() : null;
                                     this.entityClientData_ = (EntityClientDataOuterClass.EntityClientData) input.readMessage(EntityClientDataOuterClass.EntityClientData.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -178,7 +178,7 @@ public final class SetEntityClientDataNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.entityClientData_ != null) {
-                output.writeMessage(5, getEntityClientData());
+                output.writeMessage(13, getEntityClientData());
             }
             if (this.entityId_ != 0) {
                 output.writeUInt32(15, this.entityId_);
@@ -194,7 +194,7 @@ public final class SetEntityClientDataNotifyOuterClass {
             }
             int size2 = 0;
             if (this.entityClientData_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(5, getEntityClientData());
+                size2 = 0 + CodedOutputStream.computeMessageSize(13, getEntityClientData());
             }
             if (this.entityId_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(15, this.entityId_);
@@ -226,7 +226,7 @@ public final class SetEntityClientDataNotifyOuterClass {
             }
             int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getEntityId();
             if (hasEntityClientData()) {
-                hash = (53 * ((37 * hash) + 5)) + getEntityClientData().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getEntityClientData().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

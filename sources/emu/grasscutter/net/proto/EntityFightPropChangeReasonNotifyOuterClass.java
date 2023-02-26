@@ -26,27 +26,27 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityFightPropChangeReasonNotifyOuterClass.class */
 public final class EntityFightPropChangeReasonNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n'EntityFightPropChangeReasonNotify.proto\u001a\u0018ChangeEnergyReason.proto\u001a\u0014ChangeHpReason.proto\u001a\u0016PropChangeReason.proto\"ò\u0001\n!EntityFightPropChangeReasonNotify\u0012\u0011\n\tprop_type\u0018\u0005 \u0001(\r\u0012\u0012\n\nparam_list\u0018\u0007 \u0003(\r\u0012\u0011\n\tentity_id\u0018\b \u0001(\r\u0012!\n\u0006reason\u0018\u0002 \u0001(\u000e2\u0011.PropChangeReason\u0012)\n\u0010change_hp_reason\u0018\t \u0001(\u000e2\u000f.ChangeHpReason\u00121\n\u0014change_energy_reason\u0018\f \u0001(\u000e2\u0013.ChangeEnergyReason\u0012\u0012\n\nprop_delta\u0018\n \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ChangeEnergyReasonOuterClass.getDescriptor(), ChangeHpReasonOuterClass.getDescriptor(), PropChangeReasonOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n'EntityFightPropChangeReasonNotify.proto\u001a\u0016PropChangeReason.proto\u001a\u0014ChangeHpReason.proto\u001a\u0018ChangeEnergyReason.proto\"ê\u0001\n!EntityFightPropChangeReasonNotify\u0012\u0011\n\tpropDelta\u0018\u0004 \u0001(\u0002\u0012!\n\u0006reason\u0018\r \u0001(\u000e2\u0011.PropChangeReason\u0012\u0010\n\bentityId\u0018\f \u0001(\r\u0012\u0011\n\tparamList\u0018\u0001 \u0003(\r\u0012'\n\u000echangeHpReason\u0018\u0006 \u0001(\u000e2\u000f.ChangeHpReason\u0012/\n\u0012changeEnergyReason\u0018\u0003 \u0001(\u000e2\u0013.ChangeEnergyReason\u0012\u0010\n\bpropType\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PropChangeReasonOuterClass.getDescriptor(), ChangeHpReasonOuterClass.getDescriptor(), ChangeEnergyReasonOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_EntityFightPropChangeReasonNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_EntityFightPropChangeReasonNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f696x7ed449ae = new GeneratedMessageV3.FieldAccessorTable(internal_static_EntityFightPropChangeReasonNotify_descriptor, new String[]{"PropType", "ParamList", "EntityId", "Reason", "ChangeHpReason", "ChangeEnergyReason", "PropDelta"});
+    private static final GeneratedMessageV3.FieldAccessorTable f693x7ed449ae = new GeneratedMessageV3.FieldAccessorTable(internal_static_EntityFightPropChangeReasonNotify_descriptor, new String[]{"PropDelta", "Reason", "EntityId", "ParamList", "ChangeHpReason", "ChangeEnergyReason", "PropType"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityFightPropChangeReasonNotifyOuterClass$EntityFightPropChangeReasonNotifyOrBuilder.class */
     public interface EntityFightPropChangeReasonNotifyOrBuilder extends MessageOrBuilder {
-        int getPropType();
+        float getPropDelta();
+
+        int getReasonValue();
+
+        PropChangeReasonOuterClass.PropChangeReason getReason();
+
+        int getEntityId();
 
         List<Integer> getParamListList();
 
         int getParamListCount();
 
         int getParamList(int i);
-
-        int getEntityId();
-
-        int getReasonValue();
-
-        PropChangeReasonOuterClass.PropChangeReason getReason();
 
         int getChangeHpReasonValue();
 
@@ -56,7 +56,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
 
         ChangeEnergyReasonOuterClass.ChangeEnergyReason getChangeEnergyReason();
 
-        float getPropDelta();
+        int getPropType();
     }
 
     private EntityFightPropChangeReasonNotifyOuterClass() {
@@ -72,21 +72,21 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityFightPropChangeReasonNotifyOuterClass$EntityFightPropChangeReasonNotify.class */
     public static final class EntityFightPropChangeReasonNotify extends GeneratedMessageV3 implements EntityFightPropChangeReasonNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PROP_TYPE_FIELD_NUMBER = 5;
-        private int propType_;
-        public static final int PARAM_LIST_FIELD_NUMBER = 7;
+        public static final int PROPDELTA_FIELD_NUMBER = 4;
+        private float propDelta_;
+        public static final int REASON_FIELD_NUMBER = 13;
+        private int reason_;
+        public static final int ENTITYID_FIELD_NUMBER = 12;
+        private int entityId_;
+        public static final int PARAMLIST_FIELD_NUMBER = 1;
         private Internal.IntList paramList_;
         private int paramListMemoizedSerializedSize;
-        public static final int ENTITY_ID_FIELD_NUMBER = 8;
-        private int entityId_;
-        public static final int REASON_FIELD_NUMBER = 2;
-        private int reason_;
-        public static final int CHANGE_HP_REASON_FIELD_NUMBER = 9;
+        public static final int CHANGEHPREASON_FIELD_NUMBER = 6;
         private int changeHpReason_;
-        public static final int CHANGE_ENERGY_REASON_FIELD_NUMBER = 12;
+        public static final int CHANGEENERGYREASON_FIELD_NUMBER = 3;
         private int changeEnergyReason_;
-        public static final int PROP_DELTA_FIELD_NUMBER = 10;
-        private float propDelta_;
+        public static final int PROPTYPE_FIELD_NUMBER = 14;
+        private int propType_;
         private byte memoizedIsInitialized;
         private static final EntityFightPropChangeReasonNotify DEFAULT_INSTANCE = new EntityFightPropChangeReasonNotify();
         private static final Parser<EntityFightPropChangeReasonNotify> PARSER = new AbstractParser<EntityFightPropChangeReasonNotify>() { // from class: emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotify.1
@@ -105,8 +105,8 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
         private EntityFightPropChangeReasonNotify() {
             this.paramListMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
-            this.paramList_ = emptyIntList();
             this.reason_ = 0;
+            this.paramList_ = emptyIntList();
             this.changeHpReason_ = 0;
             this.changeEnergyReason_ = 0;
         }
@@ -140,20 +140,14 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 16:
-                                this.reason_ = input.readEnum();
-                                break;
-                            case 40:
-                                this.propType_ = input.readUInt32();
-                                break;
-                            case 56:
+                            case 8:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.paramList_ = newIntList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.paramList_.addInt(input.readUInt32());
                                 break;
-                            case 58:
+                            case 10:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.paramList_ = newIntList();
@@ -164,17 +158,23 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
                                 }
                                 input.popLimit(limit);
                                 break;
-                            case 64:
-                                this.entityId_ = input.readUInt32();
+                            case 24:
+                                this.changeEnergyReason_ = input.readEnum();
                                 break;
-                            case 72:
-                                this.changeHpReason_ = input.readEnum();
-                                break;
-                            case 85:
+                            case 37:
                                 this.propDelta_ = input.readFloat();
                                 break;
+                            case 48:
+                                this.changeHpReason_ = input.readEnum();
+                                break;
                             case 96:
-                                this.changeEnergyReason_ = input.readEnum();
+                                this.entityId_ = input.readUInt32();
+                                break;
+                            case 104:
+                                this.reason_ = input.readEnum();
+                                break;
+                            case 112:
+                                this.propType_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -205,12 +205,28 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return EntityFightPropChangeReasonNotifyOuterClass.f696x7ed449ae.ensureFieldAccessorsInitialized(EntityFightPropChangeReasonNotify.class, Builder.class);
+            return EntityFightPropChangeReasonNotifyOuterClass.f693x7ed449ae.ensureFieldAccessorsInitialized(EntityFightPropChangeReasonNotify.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotifyOrBuilder
-        public int getPropType() {
-            return this.propType_;
+        public float getPropDelta() {
+            return this.propDelta_;
+        }
+
+        @Override // emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotifyOrBuilder
+        public int getReasonValue() {
+            return this.reason_;
+        }
+
+        @Override // emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotifyOrBuilder
+        public PropChangeReasonOuterClass.PropChangeReason getReason() {
+            PropChangeReasonOuterClass.PropChangeReason result = PropChangeReasonOuterClass.PropChangeReason.valueOf(this.reason_);
+            return result == null ? PropChangeReasonOuterClass.PropChangeReason.UNRECOGNIZED : result;
+        }
+
+        @Override // emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotifyOrBuilder
+        public int getEntityId() {
+            return this.entityId_;
         }
 
         @Override // emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotifyOrBuilder
@@ -226,22 +242,6 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
         @Override // emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotifyOrBuilder
         public int getParamList(int index) {
             return this.paramList_.getInt(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotifyOrBuilder
-        public int getEntityId() {
-            return this.entityId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotifyOrBuilder
-        public int getReasonValue() {
-            return this.reason_;
-        }
-
-        @Override // emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotifyOrBuilder
-        public PropChangeReasonOuterClass.PropChangeReason getReason() {
-            PropChangeReasonOuterClass.PropChangeReason result = PropChangeReasonOuterClass.PropChangeReason.valueOf(this.reason_);
-            return result == null ? PropChangeReasonOuterClass.PropChangeReason.UNRECOGNIZED : result;
         }
 
         @Override // emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotifyOrBuilder
@@ -267,8 +267,8 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotifyOrBuilder
-        public float getPropDelta() {
-            return this.propDelta_;
+        public int getPropType() {
+            return this.propType_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -287,30 +287,30 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (this.reason_ != PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_NONE.getNumber()) {
-                output.writeEnum(2, this.reason_);
-            }
-            if (this.propType_ != 0) {
-                output.writeUInt32(5, this.propType_);
-            }
             if (getParamListList().size() > 0) {
-                output.writeUInt32NoTag(58);
+                output.writeUInt32NoTag(10);
                 output.writeUInt32NoTag(this.paramListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.paramList_.size(); i++) {
                 output.writeUInt32NoTag(this.paramList_.getInt(i));
             }
-            if (this.entityId_ != 0) {
-                output.writeUInt32(8, this.entityId_);
-            }
-            if (this.changeHpReason_ != ChangeHpReasonOuterClass.ChangeHpReason.CHANGE_HP_REASON_NONE.getNumber()) {
-                output.writeEnum(9, this.changeHpReason_);
+            if (this.changeEnergyReason_ != ChangeEnergyReasonOuterClass.ChangeEnergyReason.CHANGE_ENERGY_REASON_NONE.getNumber()) {
+                output.writeEnum(3, this.changeEnergyReason_);
             }
             if (this.propDelta_ != 0.0f) {
-                output.writeFloat(10, this.propDelta_);
+                output.writeFloat(4, this.propDelta_);
             }
-            if (this.changeEnergyReason_ != ChangeEnergyReasonOuterClass.ChangeEnergyReason.CHANGE_ENERGY_REASON_NONE.getNumber()) {
-                output.writeEnum(12, this.changeEnergyReason_);
+            if (this.changeHpReason_ != ChangeHpReasonOuterClass.ChangeHpReason.CHANGE_HP_REASON_NONE.getNumber()) {
+                output.writeEnum(6, this.changeHpReason_);
+            }
+            if (this.entityId_ != 0) {
+                output.writeUInt32(12, this.entityId_);
+            }
+            if (this.reason_ != PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_NONE.getNumber()) {
+                output.writeEnum(13, this.reason_);
+            }
+            if (this.propType_ != 0) {
+                output.writeUInt32(14, this.propType_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -321,37 +321,36 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
             if (size != -1) {
                 return size;
             }
-            int size2 = 0;
-            if (this.reason_ != PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_NONE.getNumber()) {
-                size2 = 0 + CodedOutputStream.computeEnumSize(2, this.reason_);
-            }
-            if (this.propType_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.propType_);
-            }
             int dataSize = 0;
             for (int i = 0; i < this.paramList_.size(); i++) {
                 dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.paramList_.getInt(i));
             }
-            int size3 = size2 + dataSize;
+            int size2 = 0 + dataSize;
             if (!getParamListList().isEmpty()) {
-                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.paramListMemoizedSerializedSize = dataSize;
-            if (this.entityId_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(8, this.entityId_);
-            }
-            if (this.changeHpReason_ != ChangeHpReasonOuterClass.ChangeHpReason.CHANGE_HP_REASON_NONE.getNumber()) {
-                size3 += CodedOutputStream.computeEnumSize(9, this.changeHpReason_);
+            if (this.changeEnergyReason_ != ChangeEnergyReasonOuterClass.ChangeEnergyReason.CHANGE_ENERGY_REASON_NONE.getNumber()) {
+                size2 += CodedOutputStream.computeEnumSize(3, this.changeEnergyReason_);
             }
             if (this.propDelta_ != 0.0f) {
-                size3 += CodedOutputStream.computeFloatSize(10, this.propDelta_);
+                size2 += CodedOutputStream.computeFloatSize(4, this.propDelta_);
             }
-            if (this.changeEnergyReason_ != ChangeEnergyReasonOuterClass.ChangeEnergyReason.CHANGE_ENERGY_REASON_NONE.getNumber()) {
-                size3 += CodedOutputStream.computeEnumSize(12, this.changeEnergyReason_);
+            if (this.changeHpReason_ != ChangeHpReasonOuterClass.ChangeHpReason.CHANGE_HP_REASON_NONE.getNumber()) {
+                size2 += CodedOutputStream.computeEnumSize(6, this.changeHpReason_);
             }
-            int size4 = size3 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size4;
-            return size4;
+            if (this.entityId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(12, this.entityId_);
+            }
+            if (this.reason_ != PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_NONE.getNumber()) {
+                size2 += CodedOutputStream.computeEnumSize(13, this.reason_);
+            }
+            if (this.propType_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(14, this.propType_);
+            }
+            int size3 = size2 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size3;
+            return size3;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -363,7 +362,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
                 return equals(obj);
             }
             EntityFightPropChangeReasonNotify other = (EntityFightPropChangeReasonNotify) obj;
-            return getPropType() == other.getPropType() && getParamListList().equals(other.getParamListList()) && getEntityId() == other.getEntityId() && this.reason_ == other.reason_ && this.changeHpReason_ == other.changeHpReason_ && this.changeEnergyReason_ == other.changeEnergyReason_ && Float.floatToIntBits(getPropDelta()) == Float.floatToIntBits(other.getPropDelta()) && this.unknownFields.equals(other.unknownFields);
+            return Float.floatToIntBits(getPropDelta()) == Float.floatToIntBits(other.getPropDelta()) && this.reason_ == other.reason_ && getEntityId() == other.getEntityId() && getParamListList().equals(other.getParamListList()) && this.changeHpReason_ == other.changeHpReason_ && this.changeEnergyReason_ == other.changeEnergyReason_ && getPropType() == other.getPropType() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -371,11 +370,11 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getPropType();
+            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + Float.floatToIntBits(getPropDelta()))) + 13)) + this.reason_)) + 12)) + getEntityId();
             if (getParamListCount() > 0) {
-                hash = (53 * ((37 * hash) + 7)) + getParamListList().hashCode();
+                hash = (53 * ((37 * hash) + 1)) + getParamListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 8)) + getEntityId())) + 2)) + this.reason_)) + 9)) + this.changeHpReason_)) + 12)) + this.changeEnergyReason_)) + 10)) + Float.floatToIntBits(getPropDelta()))) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 6)) + this.changeHpReason_)) + 3)) + this.changeEnergyReason_)) + 14)) + getPropType())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -455,11 +454,11 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityFightPropChangeReasonNotifyOuterClass$EntityFightPropChangeReasonNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements EntityFightPropChangeReasonNotifyOrBuilder {
             private int bitField0_;
-            private int propType_;
-            private int entityId_;
             private float propDelta_;
-            private Internal.IntList paramList_ = EntityFightPropChangeReasonNotify.emptyIntList();
+            private int entityId_;
+            private int propType_;
             private int reason_ = 0;
+            private Internal.IntList paramList_ = EntityFightPropChangeReasonNotify.emptyIntList();
             private int changeHpReason_ = 0;
             private int changeEnergyReason_ = 0;
 
@@ -469,7 +468,7 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return EntityFightPropChangeReasonNotifyOuterClass.f696x7ed449ae.ensureFieldAccessorsInitialized(EntityFightPropChangeReasonNotify.class, Builder.class);
+                return EntityFightPropChangeReasonNotifyOuterClass.f693x7ed449ae.ensureFieldAccessorsInitialized(EntityFightPropChangeReasonNotify.class, Builder.class);
             }
 
             private Builder() {
@@ -489,14 +488,14 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.propType_ = 0;
+                this.propDelta_ = 0.0f;
+                this.reason_ = 0;
+                this.entityId_ = 0;
                 this.paramList_ = EntityFightPropChangeReasonNotify.emptyIntList();
                 this.bitField0_ &= -2;
-                this.entityId_ = 0;
-                this.reason_ = 0;
                 this.changeHpReason_ = 0;
                 this.changeEnergyReason_ = 0;
-                this.propDelta_ = 0.0f;
+                this.propType_ = 0;
                 return this;
             }
 
@@ -523,17 +522,17 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
             public EntityFightPropChangeReasonNotify buildPartial() {
                 EntityFightPropChangeReasonNotify result = new EntityFightPropChangeReasonNotify(this);
                 int i = this.bitField0_;
-                result.propType_ = this.propType_;
+                result.propDelta_ = this.propDelta_;
+                result.reason_ = this.reason_;
+                result.entityId_ = this.entityId_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.paramList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.paramList_ = this.paramList_;
-                result.entityId_ = this.entityId_;
-                result.reason_ = this.reason_;
                 result.changeHpReason_ = this.changeHpReason_;
                 result.changeEnergyReason_ = this.changeEnergyReason_;
-                result.propDelta_ = this.propDelta_;
+                result.propType_ = this.propType_;
                 onBuilt();
                 return result;
             }
@@ -581,8 +580,14 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
                 if (other == EntityFightPropChangeReasonNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getPropType() != 0) {
-                    setPropType(other.getPropType());
+                if (other.getPropDelta() != 0.0f) {
+                    setPropDelta(other.getPropDelta());
+                }
+                if (other.reason_ != 0) {
+                    setReasonValue(other.getReasonValue());
+                }
+                if (other.getEntityId() != 0) {
+                    setEntityId(other.getEntityId());
                 }
                 if (!other.paramList_.isEmpty()) {
                     if (this.paramList_.isEmpty()) {
@@ -594,20 +599,14 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
                     }
                     onChanged();
                 }
-                if (other.getEntityId() != 0) {
-                    setEntityId(other.getEntityId());
-                }
-                if (other.reason_ != 0) {
-                    setReasonValue(other.getReasonValue());
-                }
                 if (other.changeHpReason_ != 0) {
                     setChangeHpReasonValue(other.getChangeHpReasonValue());
                 }
                 if (other.changeEnergyReason_ != 0) {
                     setChangeEnergyReasonValue(other.getChangeEnergyReasonValue());
                 }
-                if (other.getPropDelta() != 0.0f) {
-                    setPropDelta(other.getPropDelta());
+                if (other.getPropType() != 0) {
+                    setPropType(other.getPropType());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -642,18 +641,67 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotifyOrBuilder
-            public int getPropType() {
-                return this.propType_;
+            public float getPropDelta() {
+                return this.propDelta_;
             }
 
-            public Builder setPropType(int value) {
-                this.propType_ = value;
+            public Builder setPropDelta(float value) {
+                this.propDelta_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearPropType() {
-                this.propType_ = 0;
+            public Builder clearPropDelta() {
+                this.propDelta_ = 0.0f;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotifyOrBuilder
+            public int getReasonValue() {
+                return this.reason_;
+            }
+
+            public Builder setReasonValue(int value) {
+                this.reason_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotifyOrBuilder
+            public PropChangeReasonOuterClass.PropChangeReason getReason() {
+                PropChangeReasonOuterClass.PropChangeReason result = PropChangeReasonOuterClass.PropChangeReason.valueOf(this.reason_);
+                return result == null ? PropChangeReasonOuterClass.PropChangeReason.UNRECOGNIZED : result;
+            }
+
+            public Builder setReason(PropChangeReasonOuterClass.PropChangeReason value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.reason_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+
+            public Builder clearReason() {
+                this.reason_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotifyOrBuilder
+            public int getEntityId() {
+                return this.entityId_;
+            }
+
+            public Builder setEntityId(int value) {
+                this.entityId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearEntityId() {
+                this.entityId_ = 0;
                 onChanged();
                 return this;
             }
@@ -704,55 +752,6 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
             public Builder clearParamList() {
                 this.paramList_ = EntityFightPropChangeReasonNotify.emptyIntList();
                 this.bitField0_ &= -2;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotifyOrBuilder
-            public int getEntityId() {
-                return this.entityId_;
-            }
-
-            public Builder setEntityId(int value) {
-                this.entityId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearEntityId() {
-                this.entityId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotifyOrBuilder
-            public int getReasonValue() {
-                return this.reason_;
-            }
-
-            public Builder setReasonValue(int value) {
-                this.reason_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotifyOrBuilder
-            public PropChangeReasonOuterClass.PropChangeReason getReason() {
-                PropChangeReasonOuterClass.PropChangeReason result = PropChangeReasonOuterClass.PropChangeReason.valueOf(this.reason_);
-                return result == null ? PropChangeReasonOuterClass.PropChangeReason.UNRECOGNIZED : result;
-            }
-
-            public Builder setReason(PropChangeReasonOuterClass.PropChangeReason value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.reason_ = value.getNumber();
-                onChanged();
-                return this;
-            }
-
-            public Builder clearReason() {
-                this.reason_ = 0;
                 onChanged();
                 return this;
             }
@@ -822,18 +821,18 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.EntityFightPropChangeReasonNotifyOuterClass.EntityFightPropChangeReasonNotifyOrBuilder
-            public float getPropDelta() {
-                return this.propDelta_;
+            public int getPropType() {
+                return this.propType_;
             }
 
-            public Builder setPropDelta(float value) {
-                this.propDelta_ = value;
+            public Builder setPropType(int value) {
+                this.propType_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearPropDelta() {
-                this.propDelta_ = 0.0f;
+            public Builder clearPropType() {
+                this.propType_ = 0;
                 onChanged();
                 return this;
             }
@@ -873,8 +872,8 @@ public final class EntityFightPropChangeReasonNotifyOuterClass {
     }
 
     static {
-        ChangeEnergyReasonOuterClass.getDescriptor();
-        ChangeHpReasonOuterClass.getDescriptor();
         PropChangeReasonOuterClass.getDescriptor();
+        ChangeHpReasonOuterClass.getDescriptor();
+        ChangeEnergyReasonOuterClass.getDescriptor();
     }
 }

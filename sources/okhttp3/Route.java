@@ -54,7 +54,7 @@ public final class Route {
     @JvmName(name = "-deprecated_address")
     @NotNull
     /* renamed from: -deprecated_address  reason: not valid java name */
-    public final Address m9299deprecated_address() {
+    public final Address m9296deprecated_address() {
         return this.address;
     }
 
@@ -62,7 +62,7 @@ public final class Route {
     @JvmName(name = "-deprecated_proxy")
     @NotNull
     /* renamed from: -deprecated_proxy  reason: not valid java name */
-    public final Proxy m9300deprecated_proxy() {
+    public final Proxy m9297deprecated_proxy() {
         return this.proxy;
     }
 
@@ -70,7 +70,7 @@ public final class Route {
     @JvmName(name = "-deprecated_socketAddress")
     @NotNull
     /* renamed from: -deprecated_socketAddress  reason: not valid java name */
-    public final InetSocketAddress m9301deprecated_socketAddress() {
+    public final InetSocketAddress m9298deprecated_socketAddress() {
         return this.socketAddress;
     }
 

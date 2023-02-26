@@ -106,7 +106,7 @@ public abstract class Recycler<T> {
             }
 
             protected void onRemoval(LocalPool<T> value) throws Exception {
-                onRemoval((C31072) value);
+                onRemoval((C30992) value);
                 MessagePassingQueue<DefaultHandle<T>> handles = ((LocalPool) value).pooledHandles;
                 ((LocalPool) value).pooledHandles = null;
                 handles.clear();

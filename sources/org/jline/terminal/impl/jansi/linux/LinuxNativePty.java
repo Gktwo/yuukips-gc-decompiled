@@ -79,7 +79,7 @@ public class LinuxNativePty extends JansiNativePty {
     private static final int CBAUD = 4111;
 
     /* renamed from: B0 */
-    private static final int f3243B0 = 0;
+    private static final int f3207B0 = 0;
     private static final int B50 = 1;
     private static final int B75 = 2;
     private static final int B110 = 3;

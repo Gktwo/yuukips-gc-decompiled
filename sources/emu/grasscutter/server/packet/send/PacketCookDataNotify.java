@@ -8,7 +8,7 @@ import java.util.List;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketCookDataNotify.class */
 public class PacketCookDataNotify extends BasePacket {
     public PacketCookDataNotify(List<CookRecipeDataOuterClass.CookRecipeData> recipes) {
-        super(133);
+        super(145);
         setData(CookDataNotifyOuterClass.CookDataNotify.newBuilder().addAllRecipeDataList(recipes).build());
     }
 }

@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FinishedParentQuestNotifyOuterClass.class */
 public final class FinishedParentQuestNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fFinishedParentQuestNotify.proto\u001a\u0011ParentQuest.proto\"D\n\u0019FinishedParentQuestNotify\u0012'\n\u0011parent_quest_list\u0018\r \u0003(\u000b2\f.ParentQuestB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ParentQuestOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fFinishedParentQuestNotify.proto\u001a\u0011ParentQuest.proto\"B\n\u0019FinishedParentQuestNotify\u0012%\n\u000fparentQuestList\u0018\u0003 \u0003(\u000b2\f.ParentQuestB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ParentQuestOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_FinishedParentQuestNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_FinishedParentQuestNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FinishedParentQuestNotify_descriptor, new String[]{"ParentQuestList"});
 
@@ -55,7 +55,7 @@ public final class FinishedParentQuestNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FinishedParentQuestNotifyOuterClass$FinishedParentQuestNotify.class */
     public static final class FinishedParentQuestNotify extends GeneratedMessageV3 implements FinishedParentQuestNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PARENT_QUEST_LIST_FIELD_NUMBER = 13;
+        public static final int PARENTQUESTLIST_FIELD_NUMBER = 3;
         private List<ParentQuestOuterClass.ParentQuest> parentQuestList_;
         private byte memoizedIsInitialized;
         private static final FinishedParentQuestNotify DEFAULT_INSTANCE = new FinishedParentQuestNotify();
@@ -106,7 +106,7 @@ public final class FinishedParentQuestNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 106:
+                                case 26:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.parentQuestList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -187,7 +187,7 @@ public final class FinishedParentQuestNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.parentQuestList_.size(); i++) {
-                output.writeMessage(13, this.parentQuestList_.get(i));
+                output.writeMessage(3, this.parentQuestList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,7 +200,7 @@ public final class FinishedParentQuestNotifyOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.parentQuestList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(13, this.parentQuestList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(3, this.parentQuestList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class FinishedParentQuestNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getParentQuestListCount() > 0) {
-                hash = (53 * ((37 * hash) + 13)) + getParentQuestListList().hashCode();
+                hash = (53 * ((37 * hash) + 3)) + getParentQuestListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

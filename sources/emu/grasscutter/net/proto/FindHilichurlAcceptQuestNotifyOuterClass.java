@@ -23,7 +23,7 @@ public final class FindHilichurlAcceptQuestNotifyOuterClass {
     private static final Descriptors.Descriptor internal_static_FindHilichurlAcceptQuestNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_FindHilichurlAcceptQuestNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f708x9d0d33ed = new GeneratedMessageV3.FieldAccessorTable(internal_static_FindHilichurlAcceptQuestNotify_descriptor, new String[0]);
+    private static final GeneratedMessageV3.FieldAccessorTable f706x9d0d33ed = new GeneratedMessageV3.FieldAccessorTable(internal_static_FindHilichurlAcceptQuestNotify_descriptor, new String[0]);
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FindHilichurlAcceptQuestNotifyOuterClass$FindHilichurlAcceptQuestNotifyOrBuilder.class */
     public interface FindHilichurlAcceptQuestNotifyOrBuilder extends MessageOrBuilder {
@@ -113,7 +113,7 @@ public final class FindHilichurlAcceptQuestNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return FindHilichurlAcceptQuestNotifyOuterClass.f708x9d0d33ed.ensureFieldAccessorsInitialized(FindHilichurlAcceptQuestNotify.class, Builder.class);
+            return FindHilichurlAcceptQuestNotifyOuterClass.f706x9d0d33ed.ensureFieldAccessorsInitialized(FindHilichurlAcceptQuestNotify.class, Builder.class);
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -246,7 +246,7 @@ public final class FindHilichurlAcceptQuestNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return FindHilichurlAcceptQuestNotifyOuterClass.f708x9d0d33ed.ensureFieldAccessorsInitialized(FindHilichurlAcceptQuestNotify.class, Builder.class);
+                return FindHilichurlAcceptQuestNotifyOuterClass.f706x9d0d33ed.ensureFieldAccessorsInitialized(FindHilichurlAcceptQuestNotify.class, Builder.class);
             }
 
             private Builder() {

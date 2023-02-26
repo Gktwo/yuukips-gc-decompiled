@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ServerAnnounceNotifyOuterClass.class */
 public final class ServerAnnounceNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aServerAnnounceNotify.proto\u001a\u0012AnnounceData.proto\"A\n\u0014ServerAnnounceNotify\u0012)\n\u0012announce_data_list\u0018\u000e \u0003(\u000b2\r.AnnounceDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AnnounceDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aServerAnnounceNotify.proto\u001a\u0012AnnounceData.proto\"?\n\u0014ServerAnnounceNotify\u0012'\n\u0010announceDataList\u0018\u0001 \u0003(\u000b2\r.AnnounceDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AnnounceDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ServerAnnounceNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ServerAnnounceNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ServerAnnounceNotify_descriptor, new String[]{"AnnounceDataList"});
 
@@ -55,7 +55,7 @@ public final class ServerAnnounceNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ServerAnnounceNotifyOuterClass$ServerAnnounceNotify.class */
     public static final class ServerAnnounceNotify extends GeneratedMessageV3 implements ServerAnnounceNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ANNOUNCE_DATA_LIST_FIELD_NUMBER = 14;
+        public static final int ANNOUNCEDATALIST_FIELD_NUMBER = 1;
         private List<AnnounceDataOuterClass.AnnounceData> announceDataList_;
         private byte memoizedIsInitialized;
         private static final ServerAnnounceNotify DEFAULT_INSTANCE = new ServerAnnounceNotify();
@@ -106,7 +106,7 @@ public final class ServerAnnounceNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 114:
+                                case 10:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.announceDataList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -187,7 +187,7 @@ public final class ServerAnnounceNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.announceDataList_.size(); i++) {
-                output.writeMessage(14, this.announceDataList_.get(i));
+                output.writeMessage(1, this.announceDataList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,7 +200,7 @@ public final class ServerAnnounceNotifyOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.announceDataList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(14, this.announceDataList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(1, this.announceDataList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class ServerAnnounceNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getAnnounceDataListCount() > 0) {
-                hash = (53 * ((37 * hash) + 14)) + getAnnounceDataListList().hashCode();
+                hash = (53 * ((37 * hash) + 1)) + getAnnounceDataListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

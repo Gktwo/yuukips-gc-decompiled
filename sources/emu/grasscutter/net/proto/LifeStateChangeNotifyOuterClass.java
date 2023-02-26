@@ -26,17 +26,13 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/LifeStateChangeNotifyOuterClass.class */
 public final class LifeStateChangeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bLifeStateChangeNotify.proto\u001a\u0013PlayerDieType.proto\u001a\u0010ServerBuff.proto\"Ð\u0001\n\u0015LifeStateChangeNotify\u0012\u0019\n\u0011move_reliable_seq\u0018\u0007 \u0001(\r\u0012\u0011\n\tentity_id\u0018\b \u0001(\r\u0012\u0012\n\nlife_state\u0018\n \u0001(\r\u0012%\n\u0010server_buff_list\u0018\u000f \u0003(\u000b2\u000b.ServerBuff\u0012\u0018\n\u0010source_entity_id\u0018\u000b \u0001(\r\u0012 \n\bdie_type\u0018\u0004 \u0001(\u000e2\u000e.PlayerDieType\u0012\u0012\n\nattack_tag\u0018\r \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PlayerDieTypeOuterClass.getDescriptor(), ServerBuffOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bLifeStateChangeNotify.proto\u001a\u0013PlayerDieType.proto\u001a\u0010ServerBuff.proto\"Æ\u0001\n\u0015LifeStateChangeNotify\u0012\u0010\n\bentityId\u0018\u0007 \u0001(\r\u0012#\n\u000eserverBuffList\u0018\u0002 \u0003(\u000b2\u000b.ServerBuff\u0012\u0017\n\u000fmoveReliableSeq\u0018\u0005 \u0001(\r\u0012\u0011\n\tattackTag\u0018\r \u0001(\t\u0012\u0016\n\u000esourceEntityId\u0018\u000f \u0001(\r\u0012\u0011\n\tlifeState\u0018\t \u0001(\r\u0012\u001f\n\u0007dieType\u0018\u0006 \u0001(\u000e2\u000e.PlayerDieTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PlayerDieTypeOuterClass.getDescriptor(), ServerBuffOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_LifeStateChangeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_LifeStateChangeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_LifeStateChangeNotify_descriptor, new String[]{"MoveReliableSeq", "EntityId", "LifeState", "ServerBuffList", "SourceEntityId", "DieType", "AttackTag"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_LifeStateChangeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_LifeStateChangeNotify_descriptor, new String[]{"EntityId", "ServerBuffList", "MoveReliableSeq", "AttackTag", "SourceEntityId", "LifeState", "DieType"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/LifeStateChangeNotifyOuterClass$LifeStateChangeNotifyOrBuilder.class */
     public interface LifeStateChangeNotifyOrBuilder extends MessageOrBuilder {
-        int getMoveReliableSeq();
-
         int getEntityId();
-
-        int getLifeState();
 
         List<ServerBuffOuterClass.ServerBuff> getServerBuffListList();
 
@@ -48,15 +44,19 @@ public final class LifeStateChangeNotifyOuterClass {
 
         ServerBuffOuterClass.ServerBuffOrBuilder getServerBuffListOrBuilder(int i);
 
-        int getSourceEntityId();
-
-        int getDieTypeValue();
-
-        PlayerDieTypeOuterClass.PlayerDieType getDieType();
+        int getMoveReliableSeq();
 
         String getAttackTag();
 
         ByteString getAttackTagBytes();
+
+        int getSourceEntityId();
+
+        int getLifeState();
+
+        int getDieTypeValue();
+
+        PlayerDieTypeOuterClass.PlayerDieType getDieType();
     }
 
     private LifeStateChangeNotifyOuterClass() {
@@ -72,20 +72,20 @@ public final class LifeStateChangeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/LifeStateChangeNotifyOuterClass$LifeStateChangeNotify.class */
     public static final class LifeStateChangeNotify extends GeneratedMessageV3 implements LifeStateChangeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MOVE_RELIABLE_SEQ_FIELD_NUMBER = 7;
-        private int moveReliableSeq_;
-        public static final int ENTITY_ID_FIELD_NUMBER = 8;
+        public static final int ENTITYID_FIELD_NUMBER = 7;
         private int entityId_;
-        public static final int LIFE_STATE_FIELD_NUMBER = 10;
-        private int lifeState_;
-        public static final int SERVER_BUFF_LIST_FIELD_NUMBER = 15;
+        public static final int SERVERBUFFLIST_FIELD_NUMBER = 2;
         private List<ServerBuffOuterClass.ServerBuff> serverBuffList_;
-        public static final int SOURCE_ENTITY_ID_FIELD_NUMBER = 11;
-        private int sourceEntityId_;
-        public static final int DIE_TYPE_FIELD_NUMBER = 4;
-        private int dieType_;
-        public static final int ATTACK_TAG_FIELD_NUMBER = 13;
+        public static final int MOVERELIABLESEQ_FIELD_NUMBER = 5;
+        private int moveReliableSeq_;
+        public static final int ATTACKTAG_FIELD_NUMBER = 13;
         private volatile Object attackTag_;
+        public static final int SOURCEENTITYID_FIELD_NUMBER = 15;
+        private int sourceEntityId_;
+        public static final int LIFESTATE_FIELD_NUMBER = 9;
+        private int lifeState_;
+        public static final int DIETYPE_FIELD_NUMBER = 6;
+        private int dieType_;
         private byte memoizedIsInitialized;
         private static final LifeStateChangeNotify DEFAULT_INSTANCE = new LifeStateChangeNotify();
         private static final Parser<LifeStateChangeNotify> PARSER = new AbstractParser<LifeStateChangeNotify>() { // from class: emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify.1
@@ -103,8 +103,8 @@ public final class LifeStateChangeNotifyOuterClass {
         private LifeStateChangeNotify() {
             this.memoizedIsInitialized = -1;
             this.serverBuffList_ = Collections.emptyList();
-            this.dieType_ = 0;
             this.attackTag_ = "";
+            this.dieType_ = 0;
         }
 
         /* access modifiers changed from: protected */
@@ -136,30 +136,30 @@ public final class LifeStateChangeNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 32:
-                                this.dieType_ = input.readEnum();
-                                break;
-                            case 56:
-                                this.moveReliableSeq_ = input.readUInt32();
-                                break;
-                            case 64:
-                                this.entityId_ = input.readUInt32();
-                                break;
-                            case 80:
-                                this.lifeState_ = input.readUInt32();
-                                break;
-                            case 88:
-                                this.sourceEntityId_ = input.readUInt32();
-                                break;
-                            case 106:
-                                this.attackTag_ = input.readStringRequireUtf8();
-                                break;
-                            case 122:
+                            case 18:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.serverBuffList_ = new ArrayList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.serverBuffList_.add((ServerBuffOuterClass.ServerBuff) input.readMessage(ServerBuffOuterClass.ServerBuff.parser(), extensionRegistry));
+                                break;
+                            case 40:
+                                this.moveReliableSeq_ = input.readUInt32();
+                                break;
+                            case 48:
+                                this.dieType_ = input.readEnum();
+                                break;
+                            case 56:
+                                this.entityId_ = input.readUInt32();
+                                break;
+                            case 72:
+                                this.lifeState_ = input.readUInt32();
+                                break;
+                            case 106:
+                                this.attackTag_ = input.readStringRequireUtf8();
+                                break;
+                            case 120:
+                                this.sourceEntityId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -194,18 +194,8 @@ public final class LifeStateChangeNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
-        public int getMoveReliableSeq() {
-            return this.moveReliableSeq_;
-        }
-
-        @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
         public int getEntityId() {
             return this.entityId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
-        public int getLifeState() {
-            return this.lifeState_;
         }
 
         @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
@@ -234,19 +224,8 @@ public final class LifeStateChangeNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
-        public int getSourceEntityId() {
-            return this.sourceEntityId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
-        public int getDieTypeValue() {
-            return this.dieType_;
-        }
-
-        @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
-        public PlayerDieTypeOuterClass.PlayerDieType getDieType() {
-            PlayerDieTypeOuterClass.PlayerDieType result = PlayerDieTypeOuterClass.PlayerDieType.valueOf(this.dieType_);
-            return result == null ? PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED : result;
+        public int getMoveReliableSeq() {
+            return this.moveReliableSeq_;
         }
 
         @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
@@ -271,6 +250,27 @@ public final class LifeStateChangeNotifyOuterClass {
             return b;
         }
 
+        @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
+        public int getSourceEntityId() {
+            return this.sourceEntityId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
+        public int getLifeState() {
+            return this.lifeState_;
+        }
+
+        @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
+        public int getDieTypeValue() {
+            return this.dieType_;
+        }
+
+        @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
+        public PlayerDieTypeOuterClass.PlayerDieType getDieType() {
+            PlayerDieTypeOuterClass.PlayerDieType result = PlayerDieTypeOuterClass.PlayerDieType.valueOf(this.dieType_);
+            return result == null ? PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED : result;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -286,26 +286,26 @@ public final class LifeStateChangeNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.dieType_ != PlayerDieTypeOuterClass.PlayerDieType.PLAYER_DIE_TYPE_NONE.getNumber()) {
-                output.writeEnum(4, this.dieType_);
+            for (int i = 0; i < this.serverBuffList_.size(); i++) {
+                output.writeMessage(2, this.serverBuffList_.get(i));
             }
             if (this.moveReliableSeq_ != 0) {
-                output.writeUInt32(7, this.moveReliableSeq_);
+                output.writeUInt32(5, this.moveReliableSeq_);
+            }
+            if (this.dieType_ != PlayerDieTypeOuterClass.PlayerDieType.PLAYER_DIE_TYPE_NONE.getNumber()) {
+                output.writeEnum(6, this.dieType_);
             }
             if (this.entityId_ != 0) {
-                output.writeUInt32(8, this.entityId_);
+                output.writeUInt32(7, this.entityId_);
             }
             if (this.lifeState_ != 0) {
-                output.writeUInt32(10, this.lifeState_);
-            }
-            if (this.sourceEntityId_ != 0) {
-                output.writeUInt32(11, this.sourceEntityId_);
+                output.writeUInt32(9, this.lifeState_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.attackTag_)) {
                 GeneratedMessageV3.writeString(output, 13, this.attackTag_);
             }
-            for (int i = 0; i < this.serverBuffList_.size(); i++) {
-                output.writeMessage(15, this.serverBuffList_.get(i));
+            if (this.sourceEntityId_ != 0) {
+                output.writeUInt32(15, this.sourceEntityId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -317,26 +317,26 @@ public final class LifeStateChangeNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.dieType_ != PlayerDieTypeOuterClass.PlayerDieType.PLAYER_DIE_TYPE_NONE.getNumber()) {
-                size2 = 0 + CodedOutputStream.computeEnumSize(4, this.dieType_);
+            for (int i = 0; i < this.serverBuffList_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(2, this.serverBuffList_.get(i));
             }
             if (this.moveReliableSeq_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.moveReliableSeq_);
+                size2 += CodedOutputStream.computeUInt32Size(5, this.moveReliableSeq_);
+            }
+            if (this.dieType_ != PlayerDieTypeOuterClass.PlayerDieType.PLAYER_DIE_TYPE_NONE.getNumber()) {
+                size2 += CodedOutputStream.computeEnumSize(6, this.dieType_);
             }
             if (this.entityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.entityId_);
+                size2 += CodedOutputStream.computeUInt32Size(7, this.entityId_);
             }
             if (this.lifeState_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.lifeState_);
-            }
-            if (this.sourceEntityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.sourceEntityId_);
+                size2 += CodedOutputStream.computeUInt32Size(9, this.lifeState_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.attackTag_)) {
                 size2 += GeneratedMessageV3.computeStringSize(13, this.attackTag_);
             }
-            for (int i = 0; i < this.serverBuffList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(15, this.serverBuffList_.get(i));
+            if (this.sourceEntityId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.sourceEntityId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -352,7 +352,7 @@ public final class LifeStateChangeNotifyOuterClass {
                 return equals(obj);
             }
             LifeStateChangeNotify other = (LifeStateChangeNotify) obj;
-            return getMoveReliableSeq() == other.getMoveReliableSeq() && getEntityId() == other.getEntityId() && getLifeState() == other.getLifeState() && getServerBuffListList().equals(other.getServerBuffListList()) && getSourceEntityId() == other.getSourceEntityId() && this.dieType_ == other.dieType_ && getAttackTag().equals(other.getAttackTag()) && this.unknownFields.equals(other.unknownFields);
+            return getEntityId() == other.getEntityId() && getServerBuffListList().equals(other.getServerBuffListList()) && getMoveReliableSeq() == other.getMoveReliableSeq() && getAttackTag().equals(other.getAttackTag()) && getSourceEntityId() == other.getSourceEntityId() && getLifeState() == other.getLifeState() && this.dieType_ == other.dieType_ && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -360,11 +360,11 @@ public final class LifeStateChangeNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getMoveReliableSeq())) + 8)) + getEntityId())) + 10)) + getLifeState();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getEntityId();
             if (getServerBuffListCount() > 0) {
-                hash = (53 * ((37 * hash) + 15)) + getServerBuffListList().hashCode();
+                hash = (53 * ((37 * hash) + 2)) + getServerBuffListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 11)) + getSourceEntityId())) + 4)) + this.dieType_)) + 13)) + getAttackTag().hashCode())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 5)) + getMoveReliableSeq())) + 13)) + getAttackTag().hashCode())) + 15)) + getSourceEntityId())) + 9)) + getLifeState())) + 6)) + this.dieType_)) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -444,14 +444,14 @@ public final class LifeStateChangeNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/LifeStateChangeNotifyOuterClass$LifeStateChangeNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements LifeStateChangeNotifyOrBuilder {
             private int bitField0_;
-            private int moveReliableSeq_;
             private int entityId_;
-            private int lifeState_;
             private RepeatedFieldBuilderV3<ServerBuffOuterClass.ServerBuff, ServerBuffOuterClass.ServerBuff.Builder, ServerBuffOuterClass.ServerBuffOrBuilder> serverBuffListBuilder_;
+            private int moveReliableSeq_;
             private int sourceEntityId_;
+            private int lifeState_;
             private List<ServerBuffOuterClass.ServerBuff> serverBuffList_ = Collections.emptyList();
-            private int dieType_ = 0;
             private Object attackTag_ = "";
+            private int dieType_ = 0;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return LifeStateChangeNotifyOuterClass.internal_static_LifeStateChangeNotify_descriptor;
@@ -480,18 +480,18 @@ public final class LifeStateChangeNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.moveReliableSeq_ = 0;
                 this.entityId_ = 0;
-                this.lifeState_ = 0;
                 if (this.serverBuffListBuilder_ == null) {
                     this.serverBuffList_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
                     this.serverBuffListBuilder_.clear();
                 }
-                this.sourceEntityId_ = 0;
-                this.dieType_ = 0;
+                this.moveReliableSeq_ = 0;
                 this.attackTag_ = "";
+                this.sourceEntityId_ = 0;
+                this.lifeState_ = 0;
+                this.dieType_ = 0;
                 return this;
             }
 
@@ -518,9 +518,7 @@ public final class LifeStateChangeNotifyOuterClass {
             public LifeStateChangeNotify buildPartial() {
                 LifeStateChangeNotify result = new LifeStateChangeNotify(this);
                 int i = this.bitField0_;
-                result.moveReliableSeq_ = this.moveReliableSeq_;
                 result.entityId_ = this.entityId_;
-                result.lifeState_ = this.lifeState_;
                 if (this.serverBuffListBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
                         this.serverBuffList_ = Collections.unmodifiableList(this.serverBuffList_);
@@ -530,9 +528,11 @@ public final class LifeStateChangeNotifyOuterClass {
                 } else {
                     result.serverBuffList_ = this.serverBuffListBuilder_.build();
                 }
-                result.sourceEntityId_ = this.sourceEntityId_;
-                result.dieType_ = this.dieType_;
+                result.moveReliableSeq_ = this.moveReliableSeq_;
                 result.attackTag_ = this.attackTag_;
+                result.sourceEntityId_ = this.sourceEntityId_;
+                result.lifeState_ = this.lifeState_;
+                result.dieType_ = this.dieType_;
                 onBuilt();
                 return result;
             }
@@ -580,14 +580,8 @@ public final class LifeStateChangeNotifyOuterClass {
                 if (other == LifeStateChangeNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getMoveReliableSeq() != 0) {
-                    setMoveReliableSeq(other.getMoveReliableSeq());
-                }
                 if (other.getEntityId() != 0) {
                     setEntityId(other.getEntityId());
-                }
-                if (other.getLifeState() != 0) {
-                    setLifeState(other.getLifeState());
                 }
                 if (this.serverBuffListBuilder_ == null) {
                     if (!other.serverBuffList_.isEmpty()) {
@@ -611,15 +605,21 @@ public final class LifeStateChangeNotifyOuterClass {
                         this.serverBuffListBuilder_.addAllMessages(other.serverBuffList_);
                     }
                 }
-                if (other.getSourceEntityId() != 0) {
-                    setSourceEntityId(other.getSourceEntityId());
-                }
-                if (other.dieType_ != 0) {
-                    setDieTypeValue(other.getDieTypeValue());
+                if (other.getMoveReliableSeq() != 0) {
+                    setMoveReliableSeq(other.getMoveReliableSeq());
                 }
                 if (!other.getAttackTag().isEmpty()) {
                     this.attackTag_ = other.attackTag_;
                     onChanged();
+                }
+                if (other.getSourceEntityId() != 0) {
+                    setSourceEntityId(other.getSourceEntityId());
+                }
+                if (other.getLifeState() != 0) {
+                    setLifeState(other.getLifeState());
+                }
+                if (other.dieType_ != 0) {
+                    setDieTypeValue(other.getDieTypeValue());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -654,23 +654,6 @@ public final class LifeStateChangeNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
-            public int getMoveReliableSeq() {
-                return this.moveReliableSeq_;
-            }
-
-            public Builder setMoveReliableSeq(int value) {
-                this.moveReliableSeq_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearMoveReliableSeq() {
-                this.moveReliableSeq_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
             public int getEntityId() {
                 return this.entityId_;
             }
@@ -683,23 +666,6 @@ public final class LifeStateChangeNotifyOuterClass {
 
             public Builder clearEntityId() {
                 this.entityId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
-            public int getLifeState() {
-                return this.lifeState_;
-            }
-
-            public Builder setLifeState(int value) {
-                this.lifeState_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearLifeState() {
-                this.lifeState_ = 0;
                 onChanged();
                 return this;
             }
@@ -881,50 +847,18 @@ public final class LifeStateChangeNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
-            public int getSourceEntityId() {
-                return this.sourceEntityId_;
+            public int getMoveReliableSeq() {
+                return this.moveReliableSeq_;
             }
 
-            public Builder setSourceEntityId(int value) {
-                this.sourceEntityId_ = value;
+            public Builder setMoveReliableSeq(int value) {
+                this.moveReliableSeq_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearSourceEntityId() {
-                this.sourceEntityId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
-            public int getDieTypeValue() {
-                return this.dieType_;
-            }
-
-            public Builder setDieTypeValue(int value) {
-                this.dieType_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
-            public PlayerDieTypeOuterClass.PlayerDieType getDieType() {
-                PlayerDieTypeOuterClass.PlayerDieType result = PlayerDieTypeOuterClass.PlayerDieType.valueOf(this.dieType_);
-                return result == null ? PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED : result;
-            }
-
-            public Builder setDieType(PlayerDieTypeOuterClass.PlayerDieType value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.dieType_ = value.getNumber();
-                onChanged();
-                return this;
-            }
-
-            public Builder clearDieType() {
-                this.dieType_ = 0;
+            public Builder clearMoveReliableSeq() {
+                this.moveReliableSeq_ = 0;
                 onChanged();
                 return this;
             }
@@ -972,6 +906,72 @@ public final class LifeStateChangeNotifyOuterClass {
                 }
                 LifeStateChangeNotify.checkByteStringIsUtf8(value);
                 this.attackTag_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
+            public int getSourceEntityId() {
+                return this.sourceEntityId_;
+            }
+
+            public Builder setSourceEntityId(int value) {
+                this.sourceEntityId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearSourceEntityId() {
+                this.sourceEntityId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
+            public int getLifeState() {
+                return this.lifeState_;
+            }
+
+            public Builder setLifeState(int value) {
+                this.lifeState_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearLifeState() {
+                this.lifeState_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
+            public int getDieTypeValue() {
+                return this.dieType_;
+            }
+
+            public Builder setDieTypeValue(int value) {
+                this.dieType_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotifyOrBuilder
+            public PlayerDieTypeOuterClass.PlayerDieType getDieType() {
+                PlayerDieTypeOuterClass.PlayerDieType result = PlayerDieTypeOuterClass.PlayerDieType.valueOf(this.dieType_);
+                return result == null ? PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED : result;
+            }
+
+            public Builder setDieType(PlayerDieTypeOuterClass.PlayerDieType value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.dieType_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+
+            public Builder clearDieType() {
+                this.dieType_ = 0;
                 onChanged();
                 return this;
             }

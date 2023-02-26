@@ -13,15 +13,15 @@ public class Position implements Serializable {
     @SerializedName(value = "x", alternate = {"_x", "X"})
 
     /* renamed from: x */
-    private float f968x;
+    private float f932x;
     @SerializedName(value = "y", alternate = {"_y", "Y"})
 
     /* renamed from: y */
-    private float f969y;
+    private float f933y;
     @SerializedName(value = "z", alternate = {"_z", "Z"})
 
     /* renamed from: z */
-    private float f970z;
+    private float f934z;
 
     /*  JADX ERROR: Dependency scan failed at insn: 0x0015: INVOKE_CUSTOM r-3, r-2, r-1
         java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
@@ -77,27 +77,27 @@ public class Position implements Serializable {
     }
 
     public float getX() {
-        return this.f968x;
+        return this.f932x;
     }
 
     public void setX(float x) {
-        this.f968x = x;
+        this.f932x = x;
     }
 
     public float getY() {
-        return this.f969y;
+        return this.f933y;
     }
 
     public void setY(float y) {
-        this.f969y = y;
+        this.f933y = y;
     }
 
     public float getZ() {
-        return this.f970z;
+        return this.f934z;
     }
 
     public void setZ(float z) {
-        this.f970z = z;
+        this.f934z = z;
     }
 
     public Position() {
@@ -114,11 +114,11 @@ public class Position implements Serializable {
     public Position(String p) {
         String[] split = p.split(",");
         if (split.length >= 2) {
-            this.f968x = Float.parseFloat(split[0]);
-            this.f969y = Float.parseFloat(split[1]);
+            this.f932x = Float.parseFloat(split[0]);
+            this.f933y = Float.parseFloat(split[1]);
         }
         if (split.length >= 3) {
-            this.f970z = Float.parseFloat(split[2]);
+            this.f934z = Float.parseFloat(split[2]);
         }
     }
 
@@ -131,8 +131,8 @@ public class Position implements Serializable {
     }
 
     public Position set(float x, float y) {
-        this.f968x = x;
-        this.f969y = y;
+        this.f932x = x;
+        this.f933y = y;
         return this;
     }
 
@@ -145,44 +145,44 @@ public class Position implements Serializable {
     }
 
     public Position set(float x, float y, float z) {
-        this.f968x = x;
-        this.f969y = y;
-        this.f970z = z;
+        this.f932x = x;
+        this.f933y = y;
+        this.f934z = z;
         return this;
     }
 
     public Position add(Position add) {
-        this.f968x += add.getX();
-        this.f969y += add.getY();
-        this.f970z += add.getZ();
+        this.f932x += add.getX();
+        this.f933y += add.getY();
+        this.f934z += add.getZ();
         return this;
     }
 
     public Position addX(float d) {
-        this.f968x += d;
+        this.f932x += d;
         return this;
     }
 
     public Position addY(float d) {
-        this.f969y += d;
+        this.f933y += d;
         return this;
     }
 
     public Position addZ(float d) {
-        this.f970z += d;
+        this.f934z += d;
         return this;
     }
 
     public Position subtract(Position sub) {
-        this.f968x -= sub.getX();
-        this.f969y -= sub.getY();
-        this.f970z -= sub.getZ();
+        this.f932x -= sub.getX();
+        this.f933y -= sub.getY();
+        this.f934z -= sub.getZ();
         return this;
     }
 
     public Position translate(float dist, float angle) {
-        this.f968x = (float) (((double) this.f968x) + (((double) dist) * Math.sin((double) angle)));
-        this.f969y = (float) (((double) this.f969y) + (((double) dist) * Math.cos((double) angle)));
+        this.f932x = (float) (((double) this.f932x) + (((double) dist) * Math.sin((double) angle)));
+        this.f933y = (float) (((double) this.f933y) + (((double) dist) * Math.cos((double) angle)));
         return this;
     }
 
@@ -207,8 +207,8 @@ public class Position implements Serializable {
 
     public Position nearby2d(int range) {
         Position position = clone();
-        position.f970z += Utils.randomFloatRange((float) (-range), (float) range);
-        position.f968x += Utils.randomFloatRange((float) (-range), (float) range);
+        position.f934z += Utils.randomFloatRange((float) (-range), (float) range);
+        position.f932x += Utils.randomFloatRange((float) (-range), (float) range);
         return position;
     }
 
@@ -218,14 +218,14 @@ public class Position implements Serializable {
 
     public Position translateWithDegrees(float dist, float angle) {
         float angle2 = (float) Math.toRadians((double) angle);
-        this.f968x = (float) (((double) this.f968x) + (((double) dist) * Math.sin((double) angle2)));
-        this.f969y = (float) (((double) this.f969y) + (((double) (-dist)) * Math.cos((double) angle2)));
+        this.f932x = (float) (((double) this.f932x) + (((double) dist) * Math.sin((double) angle2)));
+        this.f933y = (float) (((double) this.f933y) + (((double) (-dist)) * Math.cos((double) angle2)));
         return this;
     }
 
     @Override // java.lang.Object
     public Position clone() {
-        return new Position(this.f968x, this.f969y, this.f970z);
+        return new Position(this.f932x, this.f933y, this.f934z);
     }
 
     public VectorOuterClass.Vector toProto() {
@@ -233,14 +233,14 @@ public class Position implements Serializable {
     }
 
     public Point toPoint() {
-        return Point.create((double) this.f968x, (double) this.f969y, (double) this.f970z);
+        return Point.create((double) this.f932x, (double) this.f933y, (double) this.f934z);
     }
 
     public double[] toDoubleArray() {
-        return new double[]{(double) this.f968x, (double) this.f969y, (double) this.f970z};
+        return new double[]{(double) this.f932x, (double) this.f933y, (double) this.f934z};
     }
 
     public double[] toXZDoubleArray() {
-        return new double[]{(double) this.f968x, (double) this.f970z};
+        return new double[]{(double) this.f932x, (double) this.f934z};
     }
 }

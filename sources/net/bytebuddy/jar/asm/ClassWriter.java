@@ -199,7 +199,7 @@ public class ClassWriter extends ClassVisitor {
         if (this.firstField == null) {
             this.firstField = fieldWriter;
         } else {
-            this.lastField.f3103fv = fieldWriter;
+            this.lastField.f3067fv = fieldWriter;
         }
         this.lastField = fieldWriter;
         return fieldWriter;
@@ -211,7 +211,7 @@ public class ClassWriter extends ClassVisitor {
         if (this.firstMethod == null) {
             this.firstMethod = methodWriter;
         } else {
-            this.lastMethod.f3104mv = methodWriter;
+            this.lastMethod.f3068mv = methodWriter;
         }
         this.lastMethod = methodWriter;
         return methodWriter;
@@ -224,12 +224,12 @@ public class ClassWriter extends ClassVisitor {
     public byte[] toByteArray() {
         int size = 24 + (2 * this.interfaceCount);
         int fieldsCount = 0;
-        for (FieldWriter fieldWriter = this.firstField; fieldWriter != null; fieldWriter = (FieldWriter) fieldWriter.f3103fv) {
+        for (FieldWriter fieldWriter = this.firstField; fieldWriter != null; fieldWriter = (FieldWriter) fieldWriter.f3067fv) {
             fieldsCount++;
             size += fieldWriter.computeFieldInfoSize();
         }
         int methodsCount = 0;
-        for (MethodWriter methodWriter = this.firstMethod; methodWriter != null; methodWriter = (MethodWriter) methodWriter.f3104mv) {
+        for (MethodWriter methodWriter = this.firstMethod; methodWriter != null; methodWriter = (MethodWriter) methodWriter.f3068mv) {
             methodsCount++;
             size += methodWriter.computeMethodInfoSize();
         }
@@ -337,13 +337,13 @@ public class ClassWriter extends ClassVisitor {
             result.putShort(this.interfaces[i]);
         }
         result.putShort(fieldsCount);
-        for (FieldWriter fieldWriter2 = this.firstField; fieldWriter2 != null; fieldWriter2 = (FieldWriter) fieldWriter2.f3103fv) {
+        for (FieldWriter fieldWriter2 = this.firstField; fieldWriter2 != null; fieldWriter2 = (FieldWriter) fieldWriter2.f3067fv) {
             fieldWriter2.putFieldInfo(result);
         }
         result.putShort(methodsCount);
         boolean hasFrames = false;
         boolean hasAsmInstructions = false;
-        for (MethodWriter methodWriter2 = this.firstMethod; methodWriter2 != null; methodWriter2 = (MethodWriter) methodWriter2.f3104mv) {
+        for (MethodWriter methodWriter2 = this.firstMethod; methodWriter2 != null; methodWriter2 = (MethodWriter) methodWriter2.f3068mv) {
             hasFrames |= methodWriter2.hasFrames();
             hasAsmInstructions |= methodWriter2.hasAsmInstructions();
             methodWriter2.putMethodInfo(result);
@@ -427,10 +427,10 @@ public class ClassWriter extends ClassVisitor {
     private Attribute[] getAttributePrototypes() {
         Attribute.Set attributePrototypes = new Attribute.Set();
         attributePrototypes.addAttributes(this.firstAttribute);
-        for (FieldWriter fieldWriter = this.firstField; fieldWriter != null; fieldWriter = (FieldWriter) fieldWriter.f3103fv) {
+        for (FieldWriter fieldWriter = this.firstField; fieldWriter != null; fieldWriter = (FieldWriter) fieldWriter.f3067fv) {
             fieldWriter.collectAttributePrototypes(attributePrototypes);
         }
-        for (MethodWriter methodWriter = this.firstMethod; methodWriter != null; methodWriter = (MethodWriter) methodWriter.f3104mv) {
+        for (MethodWriter methodWriter = this.firstMethod; methodWriter != null; methodWriter = (MethodWriter) methodWriter.f3068mv) {
             methodWriter.collectAttributePrototypes(attributePrototypes);
         }
         for (RecordComponentWriter recordComponentWriter = this.firstRecordComponent; recordComponentWriter != null; recordComponentWriter = (RecordComponentWriter) recordComponentWriter.delegate) {

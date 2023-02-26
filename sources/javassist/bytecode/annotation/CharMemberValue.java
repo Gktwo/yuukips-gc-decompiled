@@ -37,11 +37,11 @@ public class CharMemberValue extends MemberValue {
     }
 
     public char getValue() {
-        return (char) this.f3074cp.getIntegerInfo(this.valueIndex);
+        return (char) this.f3038cp.getIntegerInfo(this.valueIndex);
     }
 
     public void setValue(char newValue) {
-        this.valueIndex = this.f3074cp.addIntegerInfo(newValue);
+        this.valueIndex = this.f3038cp.addIntegerInfo(newValue);
     }
 
     public String toString() {

@@ -20,15 +20,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PotionAvatarInfoOuterClass.class */
 public final class PotionAvatarInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016PotionAvatarInfo.proto\"7\n\u0010PotionAvatarInfo\u0012\u0010\n\bis_trial\u0018\u000f \u0001(\b\u0012\u0011\n\tavatar_id\u0018\u0001 \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016PotionAvatarInfo.proto\"5\n\u0010PotionAvatarInfo\u0012\u0010\n\bavatarId\u0018\n \u0001(\u0004\u0012\u000f\n\u0007isTrial\u0018\u0003 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PotionAvatarInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PotionAvatarInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PotionAvatarInfo_descriptor, new String[]{"IsTrial", "AvatarId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PotionAvatarInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PotionAvatarInfo_descriptor, new String[]{"AvatarId", "IsTrial"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PotionAvatarInfoOuterClass$PotionAvatarInfoOrBuilder.class */
     public interface PotionAvatarInfoOrBuilder extends MessageOrBuilder {
-        boolean getIsTrial();
-
         long getAvatarId();
+
+        boolean getIsTrial();
     }
 
     private PotionAvatarInfoOuterClass() {
@@ -44,10 +44,10 @@ public final class PotionAvatarInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PotionAvatarInfoOuterClass$PotionAvatarInfo.class */
     public static final class PotionAvatarInfo extends GeneratedMessageV3 implements PotionAvatarInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_TRIAL_FIELD_NUMBER = 15;
-        private boolean isTrial_;
-        public static final int AVATAR_ID_FIELD_NUMBER = 1;
+        public static final int AVATARID_FIELD_NUMBER = 10;
         private long avatarId_;
+        public static final int ISTRIAL_FIELD_NUMBER = 3;
+        private boolean isTrial_;
         private byte memoizedIsInitialized;
         private static final PotionAvatarInfo DEFAULT_INSTANCE = new PotionAvatarInfo();
         private static final Parser<PotionAvatarInfo> PARSER = new AbstractParser<PotionAvatarInfo>() { // from class: emu.grasscutter.net.proto.PotionAvatarInfoOuterClass.PotionAvatarInfo.1
@@ -93,11 +93,11 @@ public final class PotionAvatarInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
-                                this.avatarId_ = input.readUInt64();
-                                break;
-                            case 120:
+                            case 24:
                                 this.isTrial_ = input.readBool();
+                                break;
+                            case 80:
+                                this.avatarId_ = input.readUInt64();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -129,13 +129,13 @@ public final class PotionAvatarInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PotionAvatarInfoOuterClass.PotionAvatarInfoOrBuilder
-        public boolean getIsTrial() {
-            return this.isTrial_;
+        public long getAvatarId() {
+            return this.avatarId_;
         }
 
         @Override // emu.grasscutter.net.proto.PotionAvatarInfoOuterClass.PotionAvatarInfoOrBuilder
-        public long getAvatarId() {
-            return this.avatarId_;
+        public boolean getIsTrial() {
+            return this.isTrial_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -153,11 +153,11 @@ public final class PotionAvatarInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.avatarId_ != 0) {
-                output.writeUInt64(1, this.avatarId_);
-            }
             if (this.isTrial_) {
-                output.writeBool(15, this.isTrial_);
+                output.writeBool(3, this.isTrial_);
+            }
+            if (this.avatarId_ != 0) {
+                output.writeUInt64(10, this.avatarId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,11 +169,11 @@ public final class PotionAvatarInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.avatarId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(1, this.avatarId_);
-            }
             if (this.isTrial_) {
-                size2 += CodedOutputStream.computeBoolSize(15, this.isTrial_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(3, this.isTrial_);
+            }
+            if (this.avatarId_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(10, this.avatarId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -189,7 +189,7 @@ public final class PotionAvatarInfoOuterClass {
                 return equals(obj);
             }
             PotionAvatarInfo other = (PotionAvatarInfo) obj;
-            return getIsTrial() == other.getIsTrial() && getAvatarId() == other.getAvatarId() && this.unknownFields.equals(other.unknownFields);
+            return getAvatarId() == other.getAvatarId() && getIsTrial() == other.getIsTrial() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -197,7 +197,7 @@ public final class PotionAvatarInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + Internal.hashBoolean(getIsTrial()))) + 1)) + Internal.hashLong(getAvatarId()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + Internal.hashLong(getAvatarId()))) + 3)) + Internal.hashBoolean(getIsTrial()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -276,8 +276,8 @@ public final class PotionAvatarInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PotionAvatarInfoOuterClass$PotionAvatarInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements PotionAvatarInfoOrBuilder {
-            private boolean isTrial_;
             private long avatarId_;
+            private boolean isTrial_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return PotionAvatarInfoOuterClass.internal_static_PotionAvatarInfo_descriptor;
@@ -305,8 +305,8 @@ public final class PotionAvatarInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.isTrial_ = false;
                 this.avatarId_ = 0;
+                this.isTrial_ = false;
                 return this;
             }
 
@@ -332,8 +332,8 @@ public final class PotionAvatarInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public PotionAvatarInfo buildPartial() {
                 PotionAvatarInfo result = new PotionAvatarInfo(this);
-                result.isTrial_ = this.isTrial_;
                 result.avatarId_ = this.avatarId_;
+                result.isTrial_ = this.isTrial_;
                 onBuilt();
                 return result;
             }
@@ -381,11 +381,11 @@ public final class PotionAvatarInfoOuterClass {
                 if (other == PotionAvatarInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getIsTrial()) {
-                    setIsTrial(other.getIsTrial());
-                }
                 if (other.getAvatarId() != 0) {
                     setAvatarId(other.getAvatarId());
+                }
+                if (other.getIsTrial()) {
+                    setIsTrial(other.getIsTrial());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -420,23 +420,6 @@ public final class PotionAvatarInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.PotionAvatarInfoOuterClass.PotionAvatarInfoOrBuilder
-            public boolean getIsTrial() {
-                return this.isTrial_;
-            }
-
-            public Builder setIsTrial(boolean value) {
-                this.isTrial_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsTrial() {
-                this.isTrial_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PotionAvatarInfoOuterClass.PotionAvatarInfoOrBuilder
             public long getAvatarId() {
                 return this.avatarId_;
             }
@@ -449,6 +432,23 @@ public final class PotionAvatarInfoOuterClass {
 
             public Builder clearAvatarId() {
                 this.avatarId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.PotionAvatarInfoOuterClass.PotionAvatarInfoOrBuilder
+            public boolean getIsTrial() {
+                return this.isTrial_;
+            }
+
+            public Builder setIsTrial(boolean value) {
+                this.isTrial_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsTrial() {
+                this.isTrial_ = false;
                 onChanged();
                 return this;
             }

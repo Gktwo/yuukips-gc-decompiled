@@ -417,7 +417,7 @@ public final class Pipe {
     @JvmName(name = "-deprecated_sink")
     @NotNull
     /* renamed from: -deprecated_sink  reason: not valid java name */
-    public final Sink m9401deprecated_sink() {
+    public final Sink m9398deprecated_sink() {
         return this.sink;
     }
 
@@ -425,7 +425,7 @@ public final class Pipe {
     @JvmName(name = "-deprecated_source")
     @NotNull
     /* renamed from: -deprecated_source  reason: not valid java name */
-    public final Source m9402deprecated_source() {
+    public final Source m9399deprecated_source() {
         return this.source;
     }
 

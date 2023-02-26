@@ -1,5 +1,6 @@
 package emu.grasscutter.game.managers.mapmark;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.config.Configuration;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
@@ -90,6 +91,9 @@ public class MapMarksManager extends BasePlayerManager {
                 break;
             case OPERATION_DEL:
                 removeMapMark(new MapMark(req.getMark()).getPosition());
+                break;
+            default:
+                Grasscutter.getLogger().debug("handleMapMarkReq UK: {}", op.toString());
                 break;
         }
         if (op != MarkMapReqOuterClass.MarkMapReq.Operation.OPERATION_GET) {

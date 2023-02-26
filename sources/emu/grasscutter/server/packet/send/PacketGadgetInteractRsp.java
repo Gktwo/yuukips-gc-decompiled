@@ -2,6 +2,7 @@ package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.game.entity.EntityBaseGadget;
 import emu.grasscutter.net.packet.BasePacket;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.GadgetInteractRspOuterClass;
 import emu.grasscutter.net.proto.InterOpTypeOuterClass;
 import emu.grasscutter.net.proto.InteractTypeOuterClass;
@@ -13,7 +14,7 @@ public class PacketGadgetInteractRsp extends BasePacket {
     }
 
     public PacketGadgetInteractRsp(EntityBaseGadget gadget, InteractTypeOuterClass.InteractType interact, InterOpTypeOuterClass.InterOpType opType) {
-        super(830);
+        super(PacketOpcodes.GadgetInteractRsp);
         GadgetInteractRspOuterClass.GadgetInteractRsp.Builder proto = GadgetInteractRspOuterClass.GadgetInteractRsp.newBuilder().setGadgetEntityId(gadget.getId()).setInteractType(interact).setGadgetId(gadget.getGadgetId());
         if (opType != null) {
             proto.setOpType(opType);
@@ -22,7 +23,7 @@ public class PacketGadgetInteractRsp extends BasePacket {
     }
 
     public PacketGadgetInteractRsp() {
-        super(830);
+        super(PacketOpcodes.GadgetInteractRsp);
         setData(GadgetInteractRspOuterClass.GadgetInteractRsp.newBuilder().setRetcode(1).build());
     }
 }

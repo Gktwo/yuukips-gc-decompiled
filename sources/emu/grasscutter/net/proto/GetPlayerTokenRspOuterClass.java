@@ -16,36 +16,28 @@ import com.google.protobuf.MessageOrBuilder;
 import com.google.protobuf.Parser;
 import com.google.protobuf.SingleFieldBuilderV3;
 import com.google.protobuf.UnknownFieldSet;
-import emu.grasscutter.net.packet.PacketOpcodes;
-import emu.grasscutter.net.proto.StopServerInfoOuterClass;
+import emu.grasscutter.net.proto.StopServerOuterClass;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.Collections;
 import java.util.List;
-import org.eclipse.jetty.websocket.api.StatusCode;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetPlayerTokenRspOuterClass.class */
 public final class GetPlayerTokenRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017GetPlayerTokenRsp.proto\u001a\u0014StopServerInfo.proto\"ñ\u0005\n\u0011GetPlayerTokenRsp\u0012\u001b\n\u0013security_cmd_buffer\u0018\u0006 \u0001(\f\u0012\u000e\n\u0006gm_uid\u0018\u0007 \u0001(\r\u0012\u0010\n\bis_guest\u0018\u000b \u0001(\b\u0012\u001b\n\u0013Unk3300_AJBBIPFMBEL\u0018~ \u0001(\b\u0012\u000f\n\u0006key_id\u0018\u0001 \u0001(\r\u0012\r\n\u0004sign\u0018\r \u0001(\t\u0012\u0012\n\nsecret_key\u0018\u000f \u0001(\t\u0012\u0014\n\faccount_type\u0018\b \u0001(\r\u0012\u0013\n\nchannel_id\u0018¤\u0005 \u0001(\r\u0012\u0016\n\u000eextra_bin_data\u0018\u0005 \u0001(\f\u0012\u0017\n\u000fsecret_key_seed\u0018\u0003 \u0001(\u0004\u0012\r\n\u0005token\u0018\r \u0001(\t\u0012\u0018\n\u000fserver_rand_key\u0018¤\t \u0001(\t\u0012\u0018\n\u000fcloud_client_ip\u0018\r \u0001(\r\u0012\u0011\n\bbirthday\u0018·\u000e \u0001(\t\u0012\f\n\u0003tag\u0018Ë\b \u0001(\r\u0012\u0016\n\rclient_ip_str\u0018æ\n \u0001(\t\u0012\u0017\n\u000esub_channel_id\u0018\b \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0002 \u0001(\u0005\u0012\"\n\u0019client_version_random_key\u0018\t \u0001(\t\u0012\u000f\n\u0006psn_id\u0018ò\u0001 \u0001(\t\u0012\u001c\n\u0014is_proficient_player\u0018\t \u0001(\b\u0012\u0015\n\rplatform_type\u0018\n \u0001(\r\u0012\u0015\n\freg_platform\u0018\u0005 \u0001(\r\u0012%\n\u000bstop_server\u0018é\u000e \u0001(\u000b2\u000f.StopServerInfo\u0012\u001a\n\u0012black_uid_end_time\u0018\f \u0001(\r\u0012\u001c\n\u0013Unk3300_CFBHAHOHDKC\u0018ê\u0005 \u0001(\b\u0012\u0013\n\u000baccount_uid\u0018\u0001 \u0001(\t\u0012\"\n\u0019finish_collection_id_list\u0018æ\r \u0003(\r\u0012\u000b\n\u0003msg\u0018\u0004 \u0001(\t\u0012\u0015\n\fcountry_code\u0018õ\u0001 \u0001(\t\u0012\u000b\n\u0003uid\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{StopServerInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017GetPlayerTokenRsp.proto\u001a\u0010StopServer.proto\"È\u0005\n\u0011GetPlayerTokenRsp\u0012\u0015\n\fsubChannelId\u0018û\u0006 \u0001(\r\u0012\r\n\u0005token\u0018\u0006 \u0001(\t\u0012\u000b\n\u0003uid\u0018\u0001 \u0001(\r\u0012\u0011\n\tsecretKey\u0018\f \u0001(\t\u0012\u0013\n\u000baccountType\u0018\u0003 \u0001(\r\u0012\u000b\n\u0003msg\u0018\n \u0001(\t\u0012\u001c\n\u0013Unk3300_AJBBIPFMBEL\u0018\u0005 \u0001(\b\u0012\u0019\n\u0011securityCmdBuffer\u0018\r \u0001(\f\u0012\u000f\n\u0007retcode\u0018\u000f \u0001(\u0005\u0012\u0014\n\fextraBinData\u0018\u000e \u0001(\f\u0012\u001f\n\u0016clientVersionRandomKey\u0018\f \u0001(\t\u0012\u0014\n\u000bcountryCode\u0018¨\u000f \u0001(\t\u0012\u000e\n\u0005keyId\u0018Ó\u000f \u0001(\r\u0012\u0011\n\bbirthday\u0018³\u000b \u0001(\t\u0012\r\n\u0005gmUid\u0018\u0005 \u0001(\r\u0012\u0015\n\rsecretKeySeed\u0018\b \u0001(\u0004\u0012\u0017\n\u000fblackUidEndTime\u0018\u0002 \u0001(\r\u0012\u0012\n\tchannelId\u0018Ì\n \u0001(\r\u0012\u0014\n\u000bregPlatform\u0018Î\f \u0001(\r\u0012\u0014\n\fplatformType\u0018\u000b \u0001(\r\u0012\u000f\n\u0007isGuest\u0018\u0004 \u0001(\b\u0012\u001f\n\u0016finishCollectionIdList\u0018¶\u000e \u0003(\r\u0012\f\n\u0003tag\u0018À\n \u0001(\r\u0012\u0012\n\naccountUid\u0018\t \u0001(\t\u0012\u001a\n\u0012isProficientPlayer\u0018\u0007 \u0001(\b\u0012\r\n\u0004sign\u0018É\u000f \u0001(\t\u0012 \n\nstopServer\u0018Û\u0002 \u0001(\u000b2\u000b.StopServer\u0012\u000e\n\u0005psnId\u0018\n \u0001(\t\u0012\u0016\n\rcloudClientIp\u0018É\u000b \u0001(\r\u0012\u0013\n\u000bclientIpStr\u0018@ \u0001(\t\u0012\u0016\n\rserverRandKey\u0018\u000b \u0001(\t\u0012\u001c\n\u0013Unk3300_CFBHAHOHDKC\u0018ÿ\f \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{StopServerOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_GetPlayerTokenRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetPlayerTokenRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetPlayerTokenRsp_descriptor, new String[]{"SecurityCmdBuffer", "GmUid", "IsGuest", "Unk3300AJBBIPFMBEL", "KeyId", "Sign", "SecretKey", "AccountType", "ChannelId", "ExtraBinData", "SecretKeySeed", "Token", "ServerRandKey", "CloudClientIp", "Birthday", "Tag", "ClientIpStr", "SubChannelId", "Retcode", "ClientVersionRandomKey", "PsnId", "IsProficientPlayer", "PlatformType", "RegPlatform", "StopServer", "BlackUidEndTime", "Unk3300CFBHAHOHDKC", "AccountUid", "FinishCollectionIdList", "Msg", "CountryCode", "Uid"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetPlayerTokenRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetPlayerTokenRsp_descriptor, new String[]{"SubChannelId", "Token", "Uid", "SecretKey", "AccountType", "Msg", "Unk3300AJBBIPFMBEL", "SecurityCmdBuffer", "Retcode", "ExtraBinData", "ClientVersionRandomKey", "CountryCode", "KeyId", "Birthday", "GmUid", "SecretKeySeed", "BlackUidEndTime", "ChannelId", "RegPlatform", "PlatformType", "IsGuest", "FinishCollectionIdList", "Tag", "AccountUid", "IsProficientPlayer", "Sign", "StopServer", "PsnId", "CloudClientIp", "ClientIpStr", "ServerRandKey", "Unk3300CFBHAHOHDKC"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetPlayerTokenRspOuterClass$GetPlayerTokenRspOrBuilder.class */
     public interface GetPlayerTokenRspOrBuilder extends MessageOrBuilder {
-        ByteString getSecurityCmdBuffer();
+        int getSubChannelId();
 
-        int getGmUid();
+        String getToken();
 
-        boolean getIsGuest();
+        ByteString getTokenBytes();
 
-        boolean getUnk3300AJBBIPFMBEL();
-
-        int getKeyId();
-
-        String getSign();
-
-        ByteString getSignBytes();
+        int getUid();
 
         String getSecretKey();
 
@@ -53,63 +45,45 @@ public final class GetPlayerTokenRspOuterClass {
 
         int getAccountType();
 
-        int getChannelId();
+        String getMsg();
 
-        ByteString getExtraBinData();
+        ByteString getMsgBytes();
 
-        long getSecretKeySeed();
+        boolean getUnk3300AJBBIPFMBEL();
 
-        String getToken();
-
-        ByteString getTokenBytes();
-
-        String getServerRandKey();
-
-        ByteString getServerRandKeyBytes();
-
-        int getCloudClientIp();
-
-        String getBirthday();
-
-        ByteString getBirthdayBytes();
-
-        int getTag();
-
-        String getClientIpStr();
-
-        ByteString getClientIpStrBytes();
-
-        int getSubChannelId();
+        ByteString getSecurityCmdBuffer();
 
         int getRetcode();
+
+        ByteString getExtraBinData();
 
         String getClientVersionRandomKey();
 
         ByteString getClientVersionRandomKeyBytes();
 
-        String getPsnId();
+        String getCountryCode();
 
-        ByteString getPsnIdBytes();
+        ByteString getCountryCodeBytes();
 
-        boolean getIsProficientPlayer();
+        int getKeyId();
 
-        int getPlatformType();
+        String getBirthday();
 
-        int getRegPlatform();
+        ByteString getBirthdayBytes();
 
-        boolean hasStopServer();
+        int getGmUid();
 
-        StopServerInfoOuterClass.StopServerInfo getStopServer();
-
-        StopServerInfoOuterClass.StopServerInfoOrBuilder getStopServerOrBuilder();
+        long getSecretKeySeed();
 
         int getBlackUidEndTime();
 
-        boolean getUnk3300CFBHAHOHDKC();
+        int getChannelId();
 
-        String getAccountUid();
+        int getRegPlatform();
 
-        ByteString getAccountUidBytes();
+        int getPlatformType();
+
+        boolean getIsGuest();
 
         List<Integer> getFinishCollectionIdListList();
 
@@ -117,15 +91,39 @@ public final class GetPlayerTokenRspOuterClass {
 
         int getFinishCollectionIdList(int i);
 
-        String getMsg();
+        int getTag();
 
-        ByteString getMsgBytes();
+        String getAccountUid();
 
-        String getCountryCode();
+        ByteString getAccountUidBytes();
 
-        ByteString getCountryCodeBytes();
+        boolean getIsProficientPlayer();
 
-        int getUid();
+        String getSign();
+
+        ByteString getSignBytes();
+
+        boolean hasStopServer();
+
+        StopServerOuterClass.StopServer getStopServer();
+
+        StopServerOuterClass.StopServerOrBuilder getStopServerOrBuilder();
+
+        String getPsnId();
+
+        ByteString getPsnIdBytes();
+
+        int getCloudClientIp();
+
+        String getClientIpStr();
+
+        ByteString getClientIpStrBytes();
+
+        String getServerRandKey();
+
+        ByteString getServerRandKeyBytes();
+
+        boolean getUnk3300CFBHAHOHDKC();
     }
 
     private GetPlayerTokenRspOuterClass() {
@@ -141,71 +139,71 @@ public final class GetPlayerTokenRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetPlayerTokenRspOuterClass$GetPlayerTokenRsp.class */
     public static final class GetPlayerTokenRsp extends GeneratedMessageV3 implements GetPlayerTokenRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SECURITY_CMD_BUFFER_FIELD_NUMBER = 6;
-        private ByteString securityCmdBuffer_;
-        public static final int GM_UID_FIELD_NUMBER = 7;
-        private int gmUid_;
-        public static final int IS_GUEST_FIELD_NUMBER = 11;
-        private boolean isGuest_;
-        public static final int UNK3300_AJBBIPFMBEL_FIELD_NUMBER = 126;
-        private boolean unk3300AJBBIPFMBEL_;
-        public static final int KEY_ID_FIELD_NUMBER = 134;
-        private int keyId_;
-        public static final int SIGN_FIELD_NUMBER = 1666;
-        private volatile Object sign_;
-        public static final int SECRET_KEY_FIELD_NUMBER = 15;
-        private volatile Object secretKey_;
-        public static final int ACCOUNT_TYPE_FIELD_NUMBER = 8;
-        private int accountType_;
-        public static final int CHANNEL_ID_FIELD_NUMBER = 676;
-        private int channelId_;
-        public static final int EXTRA_BIN_DATA_FIELD_NUMBER = 5;
-        private ByteString extraBinData_;
-        public static final int SECRET_KEY_SEED_FIELD_NUMBER = 3;
-        private long secretKeySeed_;
-        public static final int TOKEN_FIELD_NUMBER = 13;
-        private volatile Object token_;
-        public static final int SERVER_RAND_KEY_FIELD_NUMBER = 1188;
-        private volatile Object serverRandKey_;
-        public static final int CLOUD_CLIENT_IP_FIELD_NUMBER = 1670;
-        private int cloudClientIp_;
-        public static final int BIRTHDAY_FIELD_NUMBER = 1847;
-        private volatile Object birthday_;
-        public static final int TAG_FIELD_NUMBER = 1099;
-        private int tag_;
-        public static final int CLIENT_IP_STR_FIELD_NUMBER = 1382;
-        private volatile Object clientIpStr_;
-        public static final int SUB_CHANNEL_ID_FIELD_NUMBER = 1038;
+        public static final int SUBCHANNELID_FIELD_NUMBER = 891;
         private int subChannelId_;
-        public static final int RETCODE_FIELD_NUMBER = 2;
+        public static final int TOKEN_FIELD_NUMBER = 6;
+        private volatile Object token_;
+        public static final int UID_FIELD_NUMBER = 1;
+        private int uid_;
+        public static final int SECRETKEY_FIELD_NUMBER = 12;
+        private volatile Object secretKey_;
+        public static final int ACCOUNTTYPE_FIELD_NUMBER = 3;
+        private int accountType_;
+        public static final int MSG_FIELD_NUMBER = 10;
+        private volatile Object msg_;
+        public static final int UNK3300_AJBBIPFMBEL_FIELD_NUMBER = 661;
+        private boolean unk3300AJBBIPFMBEL_;
+        public static final int SECURITYCMDBUFFER_FIELD_NUMBER = 13;
+        private ByteString securityCmdBuffer_;
+        public static final int RETCODE_FIELD_NUMBER = 15;
         private int retcode_;
-        public static final int CLIENT_VERSION_RANDOM_KEY_FIELD_NUMBER = 1152;
+        public static final int EXTRABINDATA_FIELD_NUMBER = 14;
+        private ByteString extraBinData_;
+        public static final int CLIENTVERSIONRANDOMKEY_FIELD_NUMBER = 1558;
         private volatile Object clientVersionRandomKey_;
-        public static final int PSN_ID_FIELD_NUMBER = 242;
-        private volatile Object psnId_;
-        public static final int IS_PROFICIENT_PLAYER_FIELD_NUMBER = 9;
-        private boolean isProficientPlayer_;
-        public static final int PLATFORM_TYPE_FIELD_NUMBER = 10;
-        private int platformType_;
-        public static final int REG_PLATFORM_FIELD_NUMBER = 646;
-        private int regPlatform_;
-        public static final int STOP_SERVER_FIELD_NUMBER = 1897;
-        private StopServerInfoOuterClass.StopServerInfo stopServer_;
-        public static final int BLACK_UID_END_TIME_FIELD_NUMBER = 12;
+        public static final int COUNTRYCODE_FIELD_NUMBER = 1960;
+        private volatile Object countryCode_;
+        public static final int KEYID_FIELD_NUMBER = 2003;
+        private int keyId_;
+        public static final int BIRTHDAY_FIELD_NUMBER = 1459;
+        private volatile Object birthday_;
+        public static final int GMUID_FIELD_NUMBER = 5;
+        private int gmUid_;
+        public static final int SECRETKEYSEED_FIELD_NUMBER = 8;
+        private long secretKeySeed_;
+        public static final int BLACKUIDENDTIME_FIELD_NUMBER = 2;
         private int blackUidEndTime_;
-        public static final int UNK3300_CFBHAHOHDKC_FIELD_NUMBER = 746;
-        private boolean unk3300CFBHAHOHDKC_;
-        public static final int ACCOUNT_UID_FIELD_NUMBER = 1;
-        private volatile Object accountUid_;
-        public static final int FINISH_COLLECTION_ID_LIST_FIELD_NUMBER = 1766;
+        public static final int CHANNELID_FIELD_NUMBER = 1356;
+        private int channelId_;
+        public static final int REGPLATFORM_FIELD_NUMBER = 1614;
+        private int regPlatform_;
+        public static final int PLATFORMTYPE_FIELD_NUMBER = 11;
+        private int platformType_;
+        public static final int ISGUEST_FIELD_NUMBER = 4;
+        private boolean isGuest_;
+        public static final int FINISHCOLLECTIONIDLIST_FIELD_NUMBER = 1846;
         private Internal.IntList finishCollectionIdList_;
         private int finishCollectionIdListMemoizedSerializedSize;
-        public static final int MSG_FIELD_NUMBER = 4;
-        private volatile Object msg_;
-        public static final int COUNTRY_CODE_FIELD_NUMBER = 245;
-        private volatile Object countryCode_;
-        public static final int UID_FIELD_NUMBER = 14;
-        private int uid_;
+        public static final int TAG_FIELD_NUMBER = 1344;
+        private int tag_;
+        public static final int ACCOUNTUID_FIELD_NUMBER = 9;
+        private volatile Object accountUid_;
+        public static final int ISPROFICIENTPLAYER_FIELD_NUMBER = 7;
+        private boolean isProficientPlayer_;
+        public static final int SIGN_FIELD_NUMBER = 1993;
+        private volatile Object sign_;
+        public static final int STOPSERVER_FIELD_NUMBER = 347;
+        private StopServerOuterClass.StopServer stopServer_;
+        public static final int PSNID_FIELD_NUMBER = 1285;
+        private volatile Object psnId_;
+        public static final int CLOUDCLIENTIP_FIELD_NUMBER = 1481;
+        private int cloudClientIp_;
+        public static final int CLIENTIPSTR_FIELD_NUMBER = 64;
+        private volatile Object clientIpStr_;
+        public static final int SERVERRANDKEY_FIELD_NUMBER = 1420;
+        private volatile Object serverRandKey_;
+        public static final int UNK3300_CFBHAHOHDKC_FIELD_NUMBER = 1663;
+        private boolean unk3300CFBHAHOHDKC_;
         private byte memoizedIsInitialized;
         private static final GetPlayerTokenRsp DEFAULT_INSTANCE = new GetPlayerTokenRsp();
         private static final Parser<GetPlayerTokenRsp> PARSER = new AbstractParser<GetPlayerTokenRsp>() { // from class: emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRsp.1
@@ -224,20 +222,20 @@ public final class GetPlayerTokenRspOuterClass {
         private GetPlayerTokenRsp() {
             this.finishCollectionIdListMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
-            this.securityCmdBuffer_ = ByteString.EMPTY;
-            this.sign_ = "";
-            this.secretKey_ = "";
-            this.extraBinData_ = ByteString.EMPTY;
             this.token_ = "";
-            this.serverRandKey_ = "";
-            this.birthday_ = "";
-            this.clientIpStr_ = "";
-            this.clientVersionRandomKey_ = "";
-            this.psnId_ = "";
-            this.accountUid_ = "";
-            this.finishCollectionIdList_ = emptyIntList();
+            this.secretKey_ = "";
             this.msg_ = "";
+            this.securityCmdBuffer_ = ByteString.EMPTY;
+            this.extraBinData_ = ByteString.EMPTY;
+            this.clientVersionRandomKey_ = "";
             this.countryCode_ = "";
+            this.birthday_ = "";
+            this.finishCollectionIdList_ = emptyIntList();
+            this.accountUid_ = "";
+            this.sign_ = "";
+            this.psnId_ = "";
+            this.clientIpStr_ = "";
+            this.serverRandKey_ = "";
         }
 
         /* access modifiers changed from: protected */
@@ -269,101 +267,105 @@ public final class GetPlayerTokenRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 10:
-                                this.accountUid_ = input.readStringRequireUtf8();
-                                break;
-                            case 16:
-                                this.retcode_ = input.readInt32();
-                                break;
-                            case 24:
-                                this.secretKeySeed_ = input.readUInt64();
-                                break;
-                            case 34:
-                                this.msg_ = input.readStringRequireUtf8();
-                                break;
-                            case 42:
-                                this.extraBinData_ = input.readBytes();
-                                break;
-                            case 50:
-                                this.securityCmdBuffer_ = input.readBytes();
-                                break;
-                            case 56:
-                                this.gmUid_ = input.readUInt32();
-                                break;
-                            case 64:
-                                this.accountType_ = input.readUInt32();
-                                break;
-                            case 72:
-                                this.isProficientPlayer_ = input.readBool();
-                                break;
-                            case 80:
-                                this.platformType_ = input.readUInt32();
-                                break;
-                            case 88:
-                                this.isGuest_ = input.readBool();
-                                break;
-                            case 96:
-                                this.blackUidEndTime_ = input.readUInt32();
-                                break;
-                            case 106:
-                                this.token_ = input.readStringRequireUtf8();
-                                break;
-                            case 112:
+                            case 8:
                                 this.uid_ = input.readUInt32();
                                 break;
-                            case 122:
+                            case 16:
+                                this.blackUidEndTime_ = input.readUInt32();
+                                break;
+                            case 24:
+                                this.accountType_ = input.readUInt32();
+                                break;
+                            case 32:
+                                this.isGuest_ = input.readBool();
+                                break;
+                            case 40:
+                                this.gmUid_ = input.readUInt32();
+                                break;
+                            case 50:
+                                this.token_ = input.readStringRequireUtf8();
+                                break;
+                            case 56:
+                                this.isProficientPlayer_ = input.readBool();
+                                break;
+                            case 64:
+                                this.secretKeySeed_ = input.readUInt64();
+                                break;
+                            case 74:
+                                this.accountUid_ = input.readStringRequireUtf8();
+                                break;
+                            case 82:
+                                this.msg_ = input.readStringRequireUtf8();
+                                break;
+                            case 88:
+                                this.platformType_ = input.readUInt32();
+                                break;
+                            case 98:
                                 this.secretKey_ = input.readStringRequireUtf8();
                                 break;
-                            case StatusCode.POLICY_VIOLATION /* 1008 */:
-                                this.unk3300AJBBIPFMBEL_ = input.readBool();
+                            case 106:
+                                this.securityCmdBuffer_ = input.readBytes();
                                 break;
-                            case 1072:
-                                this.keyId_ = input.readUInt32();
+                            case 114:
+                                this.extraBinData_ = input.readBytes();
                                 break;
-                            case 1938:
-                                this.psnId_ = input.readStringRequireUtf8();
+                            case 120:
+                                this.retcode_ = input.readInt32();
                                 break;
-                            case 1962:
-                                this.countryCode_ = input.readStringRequireUtf8();
-                                break;
-                            case 5168:
-                                this.regPlatform_ = input.readUInt32();
-                                break;
-                            case 5408:
-                                this.channelId_ = input.readUInt32();
-                                break;
-                            case 5968:
-                                this.unk3300CFBHAHOHDKC_ = input.readBool();
-                                break;
-                            case 8304:
-                                this.subChannelId_ = input.readUInt32();
-                                break;
-                            case PacketOpcodes.IrodoriMasterGallerySettleNotify:
-                                this.tag_ = input.readUInt32();
-                                break;
-                            case 9218:
-                                this.clientVersionRandomKey_ = input.readStringRequireUtf8();
-                                break;
-                            case 9506:
-                                this.serverRandKey_ = input.readStringRequireUtf8();
-                                break;
-                            case RET_CUSTOM_DUNGEON_INTERNAL_FAIL_VALUE:
+                            case 514:
                                 this.clientIpStr_ = input.readStringRequireUtf8();
                                 break;
-                            case 13330:
-                                this.sign_ = input.readStringRequireUtf8();
+                            case 2778:
+                                StopServerOuterClass.StopServer.Builder subBuilder = this.stopServer_ != null ? this.stopServer_.toBuilder() : null;
+                                this.stopServer_ = (StopServerOuterClass.StopServer) input.readMessage(StopServerOuterClass.StopServer.parser(), extensionRegistry);
+                                if (subBuilder == null) {
+                                    break;
+                                } else {
+                                    subBuilder.mergeFrom(this.stopServer_);
+                                    this.stopServer_ = subBuilder.buildPartial();
+                                    break;
+                                }
+                            case 5288:
+                                this.unk3300AJBBIPFMBEL_ = input.readBool();
                                 break;
-                            case 13360:
+                            case RET_MECHANICUS_DIFFICULT_NOT_SUPPORT_VALUE:
+                                this.subChannelId_ = input.readUInt32();
+                                break;
+                            case 10282:
+                                this.psnId_ = input.readStringRequireUtf8();
+                                break;
+                            case 10752:
+                                this.tag_ = input.readUInt32();
+                                break;
+                            case 10848:
+                                this.channelId_ = input.readUInt32();
+                                break;
+                            case 11362:
+                                this.serverRandKey_ = input.readStringRequireUtf8();
+                                break;
+                            case 11674:
+                                this.birthday_ = input.readStringRequireUtf8();
+                                break;
+                            case 11848:
                                 this.cloudClientIp_ = input.readUInt32();
                                 break;
-                            case 14128:
+                            case 12466:
+                                this.clientVersionRandomKey_ = input.readStringRequireUtf8();
+                                break;
+                            case 12912:
+                                this.regPlatform_ = input.readUInt32();
+                                break;
+                            case 13304:
+                                this.unk3300CFBHAHOHDKC_ = input.readBool();
+                                break;
+                            case 14768:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.finishCollectionIdList_ = newIntList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.finishCollectionIdList_.addInt(input.readUInt32());
                                 break;
-                            case 14130:
+                            case 14770:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.finishCollectionIdList_ = newIntList();
@@ -374,19 +376,15 @@ public final class GetPlayerTokenRspOuterClass {
                                 }
                                 input.popLimit(limit);
                                 break;
-                            case 14778:
-                                this.birthday_ = input.readStringRequireUtf8();
+                            case 15682:
+                                this.countryCode_ = input.readStringRequireUtf8();
                                 break;
-                            case 15178:
-                                StopServerInfoOuterClass.StopServerInfo.Builder subBuilder = this.stopServer_ != null ? this.stopServer_.toBuilder() : null;
-                                this.stopServer_ = (StopServerInfoOuterClass.StopServerInfo) input.readMessage(StopServerInfoOuterClass.StopServerInfo.parser(), extensionRegistry);
-                                if (subBuilder == null) {
-                                    break;
-                                } else {
-                                    subBuilder.mergeFrom(this.stopServer_);
-                                    this.stopServer_ = subBuilder.buildPartial();
-                                    break;
-                                }
+                            case 15946:
+                                this.sign_ = input.readStringRequireUtf8();
+                                break;
+                            case 16024:
+                                this.keyId_ = input.readUInt32();
+                                break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                     break;
@@ -420,50 +418,35 @@ public final class GetPlayerTokenRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public ByteString getSecurityCmdBuffer() {
-            return this.securityCmdBuffer_;
+        public int getSubChannelId() {
+            return this.subChannelId_;
         }
 
         @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public int getGmUid() {
-            return this.gmUid_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public boolean getIsGuest() {
-            return this.isGuest_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public boolean getUnk3300AJBBIPFMBEL() {
-            return this.unk3300AJBBIPFMBEL_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public int getKeyId() {
-            return this.keyId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public String getSign() {
-            Object ref = this.sign_;
+        public String getToken() {
+            Object ref = this.token_;
             if (ref instanceof String) {
                 return (String) ref;
             }
             String s = ((ByteString) ref).toStringUtf8();
-            this.sign_ = s;
+            this.token_ = s;
             return s;
         }
 
         @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public ByteString getSignBytes() {
-            Object ref = this.sign_;
+        public ByteString getTokenBytes() {
+            Object ref = this.token_;
             if (!(ref instanceof String)) {
                 return (ByteString) ref;
             }
             ByteString b = ByteString.copyFromUtf8((String) ref);
-            this.sign_ = b;
+            this.token_ = b;
             return b;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public int getUid() {
+            return this.uid_;
         }
 
         @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
@@ -494,126 +477,45 @@ public final class GetPlayerTokenRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public int getChannelId() {
-            return this.channelId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public ByteString getExtraBinData() {
-            return this.extraBinData_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public long getSecretKeySeed() {
-            return this.secretKeySeed_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public String getToken() {
-            Object ref = this.token_;
+        public String getMsg() {
+            Object ref = this.msg_;
             if (ref instanceof String) {
                 return (String) ref;
             }
             String s = ((ByteString) ref).toStringUtf8();
-            this.token_ = s;
+            this.msg_ = s;
             return s;
         }
 
         @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public ByteString getTokenBytes() {
-            Object ref = this.token_;
+        public ByteString getMsgBytes() {
+            Object ref = this.msg_;
             if (!(ref instanceof String)) {
                 return (ByteString) ref;
             }
             ByteString b = ByteString.copyFromUtf8((String) ref);
-            this.token_ = b;
+            this.msg_ = b;
             return b;
         }
 
         @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public String getServerRandKey() {
-            Object ref = this.serverRandKey_;
-            if (ref instanceof String) {
-                return (String) ref;
-            }
-            String s = ((ByteString) ref).toStringUtf8();
-            this.serverRandKey_ = s;
-            return s;
+        public boolean getUnk3300AJBBIPFMBEL() {
+            return this.unk3300AJBBIPFMBEL_;
         }
 
         @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public ByteString getServerRandKeyBytes() {
-            Object ref = this.serverRandKey_;
-            if (!(ref instanceof String)) {
-                return (ByteString) ref;
-            }
-            ByteString b = ByteString.copyFromUtf8((String) ref);
-            this.serverRandKey_ = b;
-            return b;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public int getCloudClientIp() {
-            return this.cloudClientIp_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public String getBirthday() {
-            Object ref = this.birthday_;
-            if (ref instanceof String) {
-                return (String) ref;
-            }
-            String s = ((ByteString) ref).toStringUtf8();
-            this.birthday_ = s;
-            return s;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public ByteString getBirthdayBytes() {
-            Object ref = this.birthday_;
-            if (!(ref instanceof String)) {
-                return (ByteString) ref;
-            }
-            ByteString b = ByteString.copyFromUtf8((String) ref);
-            this.birthday_ = b;
-            return b;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public int getTag() {
-            return this.tag_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public String getClientIpStr() {
-            Object ref = this.clientIpStr_;
-            if (ref instanceof String) {
-                return (String) ref;
-            }
-            String s = ((ByteString) ref).toStringUtf8();
-            this.clientIpStr_ = s;
-            return s;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public ByteString getClientIpStrBytes() {
-            Object ref = this.clientIpStr_;
-            if (!(ref instanceof String)) {
-                return (ByteString) ref;
-            }
-            ByteString b = ByteString.copyFromUtf8((String) ref);
-            this.clientIpStr_ = b;
-            return b;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public int getSubChannelId() {
-            return this.subChannelId_;
+        public ByteString getSecurityCmdBuffer() {
+            return this.securityCmdBuffer_;
         }
 
         @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
         public int getRetcode() {
             return this.retcode_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public ByteString getExtraBinData() {
+            return this.extraBinData_;
         }
 
         @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
@@ -635,127 +537,6 @@ public final class GetPlayerTokenRspOuterClass {
             }
             ByteString b = ByteString.copyFromUtf8((String) ref);
             this.clientVersionRandomKey_ = b;
-            return b;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public String getPsnId() {
-            Object ref = this.psnId_;
-            if (ref instanceof String) {
-                return (String) ref;
-            }
-            String s = ((ByteString) ref).toStringUtf8();
-            this.psnId_ = s;
-            return s;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public ByteString getPsnIdBytes() {
-            Object ref = this.psnId_;
-            if (!(ref instanceof String)) {
-                return (ByteString) ref;
-            }
-            ByteString b = ByteString.copyFromUtf8((String) ref);
-            this.psnId_ = b;
-            return b;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public boolean getIsProficientPlayer() {
-            return this.isProficientPlayer_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public int getPlatformType() {
-            return this.platformType_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public int getRegPlatform() {
-            return this.regPlatform_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public boolean hasStopServer() {
-            return this.stopServer_ != null;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public StopServerInfoOuterClass.StopServerInfo getStopServer() {
-            return this.stopServer_ == null ? StopServerInfoOuterClass.StopServerInfo.getDefaultInstance() : this.stopServer_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public StopServerInfoOuterClass.StopServerInfoOrBuilder getStopServerOrBuilder() {
-            return getStopServer();
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public int getBlackUidEndTime() {
-            return this.blackUidEndTime_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public boolean getUnk3300CFBHAHOHDKC() {
-            return this.unk3300CFBHAHOHDKC_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public String getAccountUid() {
-            Object ref = this.accountUid_;
-            if (ref instanceof String) {
-                return (String) ref;
-            }
-            String s = ((ByteString) ref).toStringUtf8();
-            this.accountUid_ = s;
-            return s;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public ByteString getAccountUidBytes() {
-            Object ref = this.accountUid_;
-            if (!(ref instanceof String)) {
-                return (ByteString) ref;
-            }
-            ByteString b = ByteString.copyFromUtf8((String) ref);
-            this.accountUid_ = b;
-            return b;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public List<Integer> getFinishCollectionIdListList() {
-            return this.finishCollectionIdList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public int getFinishCollectionIdListCount() {
-            return this.finishCollectionIdList_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public int getFinishCollectionIdList(int index) {
-            return this.finishCollectionIdList_.getInt(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public String getMsg() {
-            Object ref = this.msg_;
-            if (ref instanceof String) {
-                return (String) ref;
-            }
-            String s = ((ByteString) ref).toStringUtf8();
-            this.msg_ = s;
-            return s;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public ByteString getMsgBytes() {
-            Object ref = this.msg_;
-            if (!(ref instanceof String)) {
-                return (ByteString) ref;
-            }
-            ByteString b = ByteString.copyFromUtf8((String) ref);
-            this.msg_ = b;
             return b;
         }
 
@@ -782,8 +563,225 @@ public final class GetPlayerTokenRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-        public int getUid() {
-            return this.uid_;
+        public int getKeyId() {
+            return this.keyId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public String getBirthday() {
+            Object ref = this.birthday_;
+            if (ref instanceof String) {
+                return (String) ref;
+            }
+            String s = ((ByteString) ref).toStringUtf8();
+            this.birthday_ = s;
+            return s;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public ByteString getBirthdayBytes() {
+            Object ref = this.birthday_;
+            if (!(ref instanceof String)) {
+                return (ByteString) ref;
+            }
+            ByteString b = ByteString.copyFromUtf8((String) ref);
+            this.birthday_ = b;
+            return b;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public int getGmUid() {
+            return this.gmUid_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public long getSecretKeySeed() {
+            return this.secretKeySeed_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public int getBlackUidEndTime() {
+            return this.blackUidEndTime_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public int getChannelId() {
+            return this.channelId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public int getRegPlatform() {
+            return this.regPlatform_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public int getPlatformType() {
+            return this.platformType_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public boolean getIsGuest() {
+            return this.isGuest_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public List<Integer> getFinishCollectionIdListList() {
+            return this.finishCollectionIdList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public int getFinishCollectionIdListCount() {
+            return this.finishCollectionIdList_.size();
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public int getFinishCollectionIdList(int index) {
+            return this.finishCollectionIdList_.getInt(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public int getTag() {
+            return this.tag_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public String getAccountUid() {
+            Object ref = this.accountUid_;
+            if (ref instanceof String) {
+                return (String) ref;
+            }
+            String s = ((ByteString) ref).toStringUtf8();
+            this.accountUid_ = s;
+            return s;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public ByteString getAccountUidBytes() {
+            Object ref = this.accountUid_;
+            if (!(ref instanceof String)) {
+                return (ByteString) ref;
+            }
+            ByteString b = ByteString.copyFromUtf8((String) ref);
+            this.accountUid_ = b;
+            return b;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public boolean getIsProficientPlayer() {
+            return this.isProficientPlayer_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public String getSign() {
+            Object ref = this.sign_;
+            if (ref instanceof String) {
+                return (String) ref;
+            }
+            String s = ((ByteString) ref).toStringUtf8();
+            this.sign_ = s;
+            return s;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public ByteString getSignBytes() {
+            Object ref = this.sign_;
+            if (!(ref instanceof String)) {
+                return (ByteString) ref;
+            }
+            ByteString b = ByteString.copyFromUtf8((String) ref);
+            this.sign_ = b;
+            return b;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public boolean hasStopServer() {
+            return this.stopServer_ != null;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public StopServerOuterClass.StopServer getStopServer() {
+            return this.stopServer_ == null ? StopServerOuterClass.StopServer.getDefaultInstance() : this.stopServer_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public StopServerOuterClass.StopServerOrBuilder getStopServerOrBuilder() {
+            return getStopServer();
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public String getPsnId() {
+            Object ref = this.psnId_;
+            if (ref instanceof String) {
+                return (String) ref;
+            }
+            String s = ((ByteString) ref).toStringUtf8();
+            this.psnId_ = s;
+            return s;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public ByteString getPsnIdBytes() {
+            Object ref = this.psnId_;
+            if (!(ref instanceof String)) {
+                return (ByteString) ref;
+            }
+            ByteString b = ByteString.copyFromUtf8((String) ref);
+            this.psnId_ = b;
+            return b;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public int getCloudClientIp() {
+            return this.cloudClientIp_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public String getClientIpStr() {
+            Object ref = this.clientIpStr_;
+            if (ref instanceof String) {
+                return (String) ref;
+            }
+            String s = ((ByteString) ref).toStringUtf8();
+            this.clientIpStr_ = s;
+            return s;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public ByteString getClientIpStrBytes() {
+            Object ref = this.clientIpStr_;
+            if (!(ref instanceof String)) {
+                return (ByteString) ref;
+            }
+            ByteString b = ByteString.copyFromUtf8((String) ref);
+            this.clientIpStr_ = b;
+            return b;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public String getServerRandKey() {
+            Object ref = this.serverRandKey_;
+            if (ref instanceof String) {
+                return (String) ref;
+            }
+            String s = ((ByteString) ref).toStringUtf8();
+            this.serverRandKey_ = s;
+            return s;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public ByteString getServerRandKeyBytes() {
+            Object ref = this.serverRandKey_;
+            if (!(ref instanceof String)) {
+                return (ByteString) ref;
+            }
+            ByteString b = ByteString.copyFromUtf8((String) ref);
+            this.serverRandKey_ = b;
+            return b;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+        public boolean getUnk3300CFBHAHOHDKC() {
+            return this.unk3300CFBHAHOHDKC_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -802,105 +800,105 @@ public final class GetPlayerTokenRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (!GeneratedMessageV3.isStringEmpty(this.accountUid_)) {
-                GeneratedMessageV3.writeString(output, 1, this.accountUid_);
-            }
-            if (this.retcode_ != 0) {
-                output.writeInt32(2, this.retcode_);
-            }
-            if (this.secretKeySeed_ != 0) {
-                output.writeUInt64(3, this.secretKeySeed_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.msg_)) {
-                GeneratedMessageV3.writeString(output, 4, this.msg_);
-            }
-            if (!this.extraBinData_.isEmpty()) {
-                output.writeBytes(5, this.extraBinData_);
-            }
-            if (!this.securityCmdBuffer_.isEmpty()) {
-                output.writeBytes(6, this.securityCmdBuffer_);
-            }
-            if (this.gmUid_ != 0) {
-                output.writeUInt32(7, this.gmUid_);
-            }
-            if (this.accountType_ != 0) {
-                output.writeUInt32(8, this.accountType_);
-            }
-            if (this.isProficientPlayer_) {
-                output.writeBool(9, this.isProficientPlayer_);
-            }
-            if (this.platformType_ != 0) {
-                output.writeUInt32(10, this.platformType_);
-            }
-            if (this.isGuest_) {
-                output.writeBool(11, this.isGuest_);
+            if (this.uid_ != 0) {
+                output.writeUInt32(1, this.uid_);
             }
             if (this.blackUidEndTime_ != 0) {
-                output.writeUInt32(12, this.blackUidEndTime_);
+                output.writeUInt32(2, this.blackUidEndTime_);
+            }
+            if (this.accountType_ != 0) {
+                output.writeUInt32(3, this.accountType_);
+            }
+            if (this.isGuest_) {
+                output.writeBool(4, this.isGuest_);
+            }
+            if (this.gmUid_ != 0) {
+                output.writeUInt32(5, this.gmUid_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.token_)) {
-                GeneratedMessageV3.writeString(output, 13, this.token_);
+                GeneratedMessageV3.writeString(output, 6, this.token_);
             }
-            if (this.uid_ != 0) {
-                output.writeUInt32(14, this.uid_);
+            if (this.isProficientPlayer_) {
+                output.writeBool(7, this.isProficientPlayer_);
+            }
+            if (this.secretKeySeed_ != 0) {
+                output.writeUInt64(8, this.secretKeySeed_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.accountUid_)) {
+                GeneratedMessageV3.writeString(output, 9, this.accountUid_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.msg_)) {
+                GeneratedMessageV3.writeString(output, 10, this.msg_);
+            }
+            if (this.platformType_ != 0) {
+                output.writeUInt32(11, this.platformType_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.secretKey_)) {
-                GeneratedMessageV3.writeString(output, 15, this.secretKey_);
+                GeneratedMessageV3.writeString(output, 12, this.secretKey_);
             }
-            if (this.unk3300AJBBIPFMBEL_) {
-                output.writeBool(126, this.unk3300AJBBIPFMBEL_);
+            if (!this.securityCmdBuffer_.isEmpty()) {
+                output.writeBytes(13, this.securityCmdBuffer_);
             }
-            if (this.keyId_ != 0) {
-                output.writeUInt32(134, this.keyId_);
+            if (!this.extraBinData_.isEmpty()) {
+                output.writeBytes(14, this.extraBinData_);
             }
-            if (!GeneratedMessageV3.isStringEmpty(this.psnId_)) {
-                GeneratedMessageV3.writeString(output, 242, this.psnId_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.countryCode_)) {
-                GeneratedMessageV3.writeString(output, 245, this.countryCode_);
-            }
-            if (this.regPlatform_ != 0) {
-                output.writeUInt32(646, this.regPlatform_);
-            }
-            if (this.channelId_ != 0) {
-                output.writeUInt32(676, this.channelId_);
-            }
-            if (this.unk3300CFBHAHOHDKC_) {
-                output.writeBool(UNK3300_CFBHAHOHDKC_FIELD_NUMBER, this.unk3300CFBHAHOHDKC_);
-            }
-            if (this.subChannelId_ != 0) {
-                output.writeUInt32(SUB_CHANNEL_ID_FIELD_NUMBER, this.subChannelId_);
-            }
-            if (this.tag_ != 0) {
-                output.writeUInt32(1099, this.tag_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.clientVersionRandomKey_)) {
-                GeneratedMessageV3.writeString(output, CLIENT_VERSION_RANDOM_KEY_FIELD_NUMBER, this.clientVersionRandomKey_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.serverRandKey_)) {
-                GeneratedMessageV3.writeString(output, SERVER_RAND_KEY_FIELD_NUMBER, this.serverRandKey_);
+            if (this.retcode_ != 0) {
+                output.writeInt32(15, this.retcode_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.clientIpStr_)) {
-                GeneratedMessageV3.writeString(output, CLIENT_IP_STR_FIELD_NUMBER, this.clientIpStr_);
+                GeneratedMessageV3.writeString(output, 64, this.clientIpStr_);
             }
-            if (!GeneratedMessageV3.isStringEmpty(this.sign_)) {
-                GeneratedMessageV3.writeString(output, 1666, this.sign_);
+            if (this.stopServer_ != null) {
+                output.writeMessage(347, getStopServer());
+            }
+            if (this.unk3300AJBBIPFMBEL_) {
+                output.writeBool(661, this.unk3300AJBBIPFMBEL_);
+            }
+            if (this.subChannelId_ != 0) {
+                output.writeUInt32(891, this.subChannelId_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.psnId_)) {
+                GeneratedMessageV3.writeString(output, PSNID_FIELD_NUMBER, this.psnId_);
+            }
+            if (this.tag_ != 0) {
+                output.writeUInt32(TAG_FIELD_NUMBER, this.tag_);
+            }
+            if (this.channelId_ != 0) {
+                output.writeUInt32(CHANNELID_FIELD_NUMBER, this.channelId_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.serverRandKey_)) {
+                GeneratedMessageV3.writeString(output, 1420, this.serverRandKey_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.birthday_)) {
+                GeneratedMessageV3.writeString(output, BIRTHDAY_FIELD_NUMBER, this.birthday_);
             }
             if (this.cloudClientIp_ != 0) {
-                output.writeUInt32(CLOUD_CLIENT_IP_FIELD_NUMBER, this.cloudClientIp_);
+                output.writeUInt32(CLOUDCLIENTIP_FIELD_NUMBER, this.cloudClientIp_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.clientVersionRandomKey_)) {
+                GeneratedMessageV3.writeString(output, CLIENTVERSIONRANDOMKEY_FIELD_NUMBER, this.clientVersionRandomKey_);
+            }
+            if (this.regPlatform_ != 0) {
+                output.writeUInt32(REGPLATFORM_FIELD_NUMBER, this.regPlatform_);
+            }
+            if (this.unk3300CFBHAHOHDKC_) {
+                output.writeBool(1663, this.unk3300CFBHAHOHDKC_);
             }
             if (getFinishCollectionIdListList().size() > 0) {
-                output.writeUInt32NoTag(14130);
+                output.writeUInt32NoTag(14770);
                 output.writeUInt32NoTag(this.finishCollectionIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.finishCollectionIdList_.size(); i++) {
                 output.writeUInt32NoTag(this.finishCollectionIdList_.getInt(i));
             }
-            if (!GeneratedMessageV3.isStringEmpty(this.birthday_)) {
-                GeneratedMessageV3.writeString(output, BIRTHDAY_FIELD_NUMBER, this.birthday_);
+            if (!GeneratedMessageV3.isStringEmpty(this.countryCode_)) {
+                GeneratedMessageV3.writeString(output, 1960, this.countryCode_);
             }
-            if (this.stopServer_ != null) {
-                output.writeMessage(STOP_SERVER_FIELD_NUMBER, getStopServer());
+            if (!GeneratedMessageV3.isStringEmpty(this.sign_)) {
+                GeneratedMessageV3.writeString(output, 1993, this.sign_);
+            }
+            if (this.keyId_ != 0) {
+                output.writeUInt32(2003, this.keyId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -912,92 +910,89 @@ public final class GetPlayerTokenRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (!GeneratedMessageV3.isStringEmpty(this.accountUid_)) {
-                size2 = 0 + GeneratedMessageV3.computeStringSize(1, this.accountUid_);
-            }
-            if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(2, this.retcode_);
-            }
-            if (this.secretKeySeed_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(3, this.secretKeySeed_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.msg_)) {
-                size2 += GeneratedMessageV3.computeStringSize(4, this.msg_);
-            }
-            if (!this.extraBinData_.isEmpty()) {
-                size2 += CodedOutputStream.computeBytesSize(5, this.extraBinData_);
-            }
-            if (!this.securityCmdBuffer_.isEmpty()) {
-                size2 += CodedOutputStream.computeBytesSize(6, this.securityCmdBuffer_);
-            }
-            if (this.gmUid_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.gmUid_);
-            }
-            if (this.accountType_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.accountType_);
-            }
-            if (this.isProficientPlayer_) {
-                size2 += CodedOutputStream.computeBoolSize(9, this.isProficientPlayer_);
-            }
-            if (this.platformType_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.platformType_);
-            }
-            if (this.isGuest_) {
-                size2 += CodedOutputStream.computeBoolSize(11, this.isGuest_);
+            if (this.uid_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.uid_);
             }
             if (this.blackUidEndTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.blackUidEndTime_);
+                size2 += CodedOutputStream.computeUInt32Size(2, this.blackUidEndTime_);
+            }
+            if (this.accountType_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(3, this.accountType_);
+            }
+            if (this.isGuest_) {
+                size2 += CodedOutputStream.computeBoolSize(4, this.isGuest_);
+            }
+            if (this.gmUid_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(5, this.gmUid_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.token_)) {
-                size2 += GeneratedMessageV3.computeStringSize(13, this.token_);
+                size2 += GeneratedMessageV3.computeStringSize(6, this.token_);
             }
-            if (this.uid_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.uid_);
+            if (this.isProficientPlayer_) {
+                size2 += CodedOutputStream.computeBoolSize(7, this.isProficientPlayer_);
+            }
+            if (this.secretKeySeed_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(8, this.secretKeySeed_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.accountUid_)) {
+                size2 += GeneratedMessageV3.computeStringSize(9, this.accountUid_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.msg_)) {
+                size2 += GeneratedMessageV3.computeStringSize(10, this.msg_);
+            }
+            if (this.platformType_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(11, this.platformType_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.secretKey_)) {
-                size2 += GeneratedMessageV3.computeStringSize(15, this.secretKey_);
+                size2 += GeneratedMessageV3.computeStringSize(12, this.secretKey_);
             }
-            if (this.unk3300AJBBIPFMBEL_) {
-                size2 += CodedOutputStream.computeBoolSize(126, this.unk3300AJBBIPFMBEL_);
+            if (!this.securityCmdBuffer_.isEmpty()) {
+                size2 += CodedOutputStream.computeBytesSize(13, this.securityCmdBuffer_);
             }
-            if (this.keyId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(134, this.keyId_);
+            if (!this.extraBinData_.isEmpty()) {
+                size2 += CodedOutputStream.computeBytesSize(14, this.extraBinData_);
             }
-            if (!GeneratedMessageV3.isStringEmpty(this.psnId_)) {
-                size2 += GeneratedMessageV3.computeStringSize(242, this.psnId_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.countryCode_)) {
-                size2 += GeneratedMessageV3.computeStringSize(245, this.countryCode_);
-            }
-            if (this.regPlatform_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(646, this.regPlatform_);
-            }
-            if (this.channelId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(676, this.channelId_);
-            }
-            if (this.unk3300CFBHAHOHDKC_) {
-                size2 += CodedOutputStream.computeBoolSize(UNK3300_CFBHAHOHDKC_FIELD_NUMBER, this.unk3300CFBHAHOHDKC_);
-            }
-            if (this.subChannelId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(SUB_CHANNEL_ID_FIELD_NUMBER, this.subChannelId_);
-            }
-            if (this.tag_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(1099, this.tag_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.clientVersionRandomKey_)) {
-                size2 += GeneratedMessageV3.computeStringSize(CLIENT_VERSION_RANDOM_KEY_FIELD_NUMBER, this.clientVersionRandomKey_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.serverRandKey_)) {
-                size2 += GeneratedMessageV3.computeStringSize(SERVER_RAND_KEY_FIELD_NUMBER, this.serverRandKey_);
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(15, this.retcode_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.clientIpStr_)) {
-                size2 += GeneratedMessageV3.computeStringSize(CLIENT_IP_STR_FIELD_NUMBER, this.clientIpStr_);
+                size2 += GeneratedMessageV3.computeStringSize(64, this.clientIpStr_);
             }
-            if (!GeneratedMessageV3.isStringEmpty(this.sign_)) {
-                size2 += GeneratedMessageV3.computeStringSize(1666, this.sign_);
+            if (this.stopServer_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(347, getStopServer());
+            }
+            if (this.unk3300AJBBIPFMBEL_) {
+                size2 += CodedOutputStream.computeBoolSize(661, this.unk3300AJBBIPFMBEL_);
+            }
+            if (this.subChannelId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(891, this.subChannelId_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.psnId_)) {
+                size2 += GeneratedMessageV3.computeStringSize(PSNID_FIELD_NUMBER, this.psnId_);
+            }
+            if (this.tag_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(TAG_FIELD_NUMBER, this.tag_);
+            }
+            if (this.channelId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(CHANNELID_FIELD_NUMBER, this.channelId_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.serverRandKey_)) {
+                size2 += GeneratedMessageV3.computeStringSize(1420, this.serverRandKey_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.birthday_)) {
+                size2 += GeneratedMessageV3.computeStringSize(BIRTHDAY_FIELD_NUMBER, this.birthday_);
             }
             if (this.cloudClientIp_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(CLOUD_CLIENT_IP_FIELD_NUMBER, this.cloudClientIp_);
+                size2 += CodedOutputStream.computeUInt32Size(CLOUDCLIENTIP_FIELD_NUMBER, this.cloudClientIp_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.clientVersionRandomKey_)) {
+                size2 += GeneratedMessageV3.computeStringSize(CLIENTVERSIONRANDOMKEY_FIELD_NUMBER, this.clientVersionRandomKey_);
+            }
+            if (this.regPlatform_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(REGPLATFORM_FIELD_NUMBER, this.regPlatform_);
+            }
+            if (this.unk3300CFBHAHOHDKC_) {
+                size2 += CodedOutputStream.computeBoolSize(1663, this.unk3300CFBHAHOHDKC_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.finishCollectionIdList_.size(); i++) {
@@ -1008,11 +1003,14 @@ public final class GetPlayerTokenRspOuterClass {
                 size3 = size3 + 2 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.finishCollectionIdListMemoizedSerializedSize = dataSize;
-            if (!GeneratedMessageV3.isStringEmpty(this.birthday_)) {
-                size3 += GeneratedMessageV3.computeStringSize(BIRTHDAY_FIELD_NUMBER, this.birthday_);
+            if (!GeneratedMessageV3.isStringEmpty(this.countryCode_)) {
+                size3 += GeneratedMessageV3.computeStringSize(1960, this.countryCode_);
             }
-            if (this.stopServer_ != null) {
-                size3 += CodedOutputStream.computeMessageSize(STOP_SERVER_FIELD_NUMBER, getStopServer());
+            if (!GeneratedMessageV3.isStringEmpty(this.sign_)) {
+                size3 += GeneratedMessageV3.computeStringSize(1993, this.sign_);
+            }
+            if (this.keyId_ != 0) {
+                size3 += CodedOutputStream.computeUInt32Size(2003, this.keyId_);
             }
             int size4 = size3 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size4;
@@ -1028,8 +1026,8 @@ public final class GetPlayerTokenRspOuterClass {
                 return equals(obj);
             }
             GetPlayerTokenRsp other = (GetPlayerTokenRsp) obj;
-            if (getSecurityCmdBuffer().equals(other.getSecurityCmdBuffer()) && getGmUid() == other.getGmUid() && getIsGuest() == other.getIsGuest() && getUnk3300AJBBIPFMBEL() == other.getUnk3300AJBBIPFMBEL() && getKeyId() == other.getKeyId() && getSign().equals(other.getSign()) && getSecretKey().equals(other.getSecretKey()) && getAccountType() == other.getAccountType() && getChannelId() == other.getChannelId() && getExtraBinData().equals(other.getExtraBinData()) && getSecretKeySeed() == other.getSecretKeySeed() && getToken().equals(other.getToken()) && getServerRandKey().equals(other.getServerRandKey()) && getCloudClientIp() == other.getCloudClientIp() && getBirthday().equals(other.getBirthday()) && getTag() == other.getTag() && getClientIpStr().equals(other.getClientIpStr()) && getSubChannelId() == other.getSubChannelId() && getRetcode() == other.getRetcode() && getClientVersionRandomKey().equals(other.getClientVersionRandomKey()) && getPsnId().equals(other.getPsnId()) && getIsProficientPlayer() == other.getIsProficientPlayer() && getPlatformType() == other.getPlatformType() && getRegPlatform() == other.getRegPlatform() && hasStopServer() == other.hasStopServer()) {
-                return (!hasStopServer() || getStopServer().equals(other.getStopServer())) && getBlackUidEndTime() == other.getBlackUidEndTime() && getUnk3300CFBHAHOHDKC() == other.getUnk3300CFBHAHOHDKC() && getAccountUid().equals(other.getAccountUid()) && getFinishCollectionIdListList().equals(other.getFinishCollectionIdListList()) && getMsg().equals(other.getMsg()) && getCountryCode().equals(other.getCountryCode()) && getUid() == other.getUid() && this.unknownFields.equals(other.unknownFields);
+            if (getSubChannelId() == other.getSubChannelId() && getToken().equals(other.getToken()) && getUid() == other.getUid() && getSecretKey().equals(other.getSecretKey()) && getAccountType() == other.getAccountType() && getMsg().equals(other.getMsg()) && getUnk3300AJBBIPFMBEL() == other.getUnk3300AJBBIPFMBEL() && getSecurityCmdBuffer().equals(other.getSecurityCmdBuffer()) && getRetcode() == other.getRetcode() && getExtraBinData().equals(other.getExtraBinData()) && getClientVersionRandomKey().equals(other.getClientVersionRandomKey()) && getCountryCode().equals(other.getCountryCode()) && getKeyId() == other.getKeyId() && getBirthday().equals(other.getBirthday()) && getGmUid() == other.getGmUid() && getSecretKeySeed() == other.getSecretKeySeed() && getBlackUidEndTime() == other.getBlackUidEndTime() && getChannelId() == other.getChannelId() && getRegPlatform() == other.getRegPlatform() && getPlatformType() == other.getPlatformType() && getIsGuest() == other.getIsGuest() && getFinishCollectionIdListList().equals(other.getFinishCollectionIdListList()) && getTag() == other.getTag() && getAccountUid().equals(other.getAccountUid()) && getIsProficientPlayer() == other.getIsProficientPlayer() && getSign().equals(other.getSign()) && hasStopServer() == other.hasStopServer()) {
+                return (!hasStopServer() || getStopServer().equals(other.getStopServer())) && getPsnId().equals(other.getPsnId()) && getCloudClientIp() == other.getCloudClientIp() && getClientIpStr().equals(other.getClientIpStr()) && getServerRandKey().equals(other.getServerRandKey()) && getUnk3300CFBHAHOHDKC() == other.getUnk3300CFBHAHOHDKC() && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -1039,15 +1037,15 @@ public final class GetPlayerTokenRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getSecurityCmdBuffer().hashCode())) + 7)) + getGmUid())) + 11)) + Internal.hashBoolean(getIsGuest()))) + 126)) + Internal.hashBoolean(getUnk3300AJBBIPFMBEL()))) + 134)) + getKeyId())) + 1666)) + getSign().hashCode())) + 15)) + getSecretKey().hashCode())) + 8)) + getAccountType())) + 676)) + getChannelId())) + 5)) + getExtraBinData().hashCode())) + 3)) + Internal.hashLong(getSecretKeySeed()))) + 13)) + getToken().hashCode())) + SERVER_RAND_KEY_FIELD_NUMBER)) + getServerRandKey().hashCode())) + CLOUD_CLIENT_IP_FIELD_NUMBER)) + getCloudClientIp())) + BIRTHDAY_FIELD_NUMBER)) + getBirthday().hashCode())) + 1099)) + getTag())) + CLIENT_IP_STR_FIELD_NUMBER)) + getClientIpStr().hashCode())) + SUB_CHANNEL_ID_FIELD_NUMBER)) + getSubChannelId())) + 2)) + getRetcode())) + CLIENT_VERSION_RANDOM_KEY_FIELD_NUMBER)) + getClientVersionRandomKey().hashCode())) + 242)) + getPsnId().hashCode())) + 9)) + Internal.hashBoolean(getIsProficientPlayer()))) + 10)) + getPlatformType())) + 646)) + getRegPlatform();
-            if (hasStopServer()) {
-                hash = (53 * ((37 * hash) + STOP_SERVER_FIELD_NUMBER)) + getStopServer().hashCode();
-            }
-            int hash2 = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 12)) + getBlackUidEndTime())) + UNK3300_CFBHAHOHDKC_FIELD_NUMBER)) + Internal.hashBoolean(getUnk3300CFBHAHOHDKC()))) + 1)) + getAccountUid().hashCode();
+            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 891)) + getSubChannelId())) + 6)) + getToken().hashCode())) + 1)) + getUid())) + 12)) + getSecretKey().hashCode())) + 3)) + getAccountType())) + 10)) + getMsg().hashCode())) + 661)) + Internal.hashBoolean(getUnk3300AJBBIPFMBEL()))) + 13)) + getSecurityCmdBuffer().hashCode())) + 15)) + getRetcode())) + 14)) + getExtraBinData().hashCode())) + CLIENTVERSIONRANDOMKEY_FIELD_NUMBER)) + getClientVersionRandomKey().hashCode())) + 1960)) + getCountryCode().hashCode())) + 2003)) + getKeyId())) + BIRTHDAY_FIELD_NUMBER)) + getBirthday().hashCode())) + 5)) + getGmUid())) + 8)) + Internal.hashLong(getSecretKeySeed()))) + 2)) + getBlackUidEndTime())) + CHANNELID_FIELD_NUMBER)) + getChannelId())) + REGPLATFORM_FIELD_NUMBER)) + getRegPlatform())) + 11)) + getPlatformType())) + 4)) + Internal.hashBoolean(getIsGuest());
             if (getFinishCollectionIdListCount() > 0) {
-                hash2 = (53 * ((37 * hash2) + 1766)) + getFinishCollectionIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 1846)) + getFinishCollectionIdListList().hashCode();
             }
-            int hash3 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash2) + 4)) + getMsg().hashCode())) + 245)) + getCountryCode().hashCode())) + 14)) + getUid())) + this.unknownFields.hashCode();
+            int hash2 = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + TAG_FIELD_NUMBER)) + getTag())) + 9)) + getAccountUid().hashCode())) + 7)) + Internal.hashBoolean(getIsProficientPlayer()))) + 1993)) + getSign().hashCode();
+            if (hasStopServer()) {
+                hash2 = (53 * ((37 * hash2) + 347)) + getStopServer().hashCode();
+            }
+            int hash3 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash2) + PSNID_FIELD_NUMBER)) + getPsnId().hashCode())) + CLOUDCLIENTIP_FIELD_NUMBER)) + getCloudClientIp())) + 64)) + getClientIpStr().hashCode())) + 1420)) + getServerRandKey().hashCode())) + 1663)) + Internal.hashBoolean(getUnk3300CFBHAHOHDKC()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash3;
             return hash3;
         }
@@ -1127,39 +1125,39 @@ public final class GetPlayerTokenRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetPlayerTokenRspOuterClass$GetPlayerTokenRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements GetPlayerTokenRspOrBuilder {
             private int bitField0_;
-            private int gmUid_;
-            private boolean isGuest_;
-            private boolean unk3300AJBBIPFMBEL_;
-            private int keyId_;
-            private int accountType_;
-            private int channelId_;
-            private long secretKeySeed_;
-            private int cloudClientIp_;
-            private int tag_;
             private int subChannelId_;
-            private int retcode_;
-            private boolean isProficientPlayer_;
-            private int platformType_;
-            private int regPlatform_;
-            private StopServerInfoOuterClass.StopServerInfo stopServer_;
-            private SingleFieldBuilderV3<StopServerInfoOuterClass.StopServerInfo, StopServerInfoOuterClass.StopServerInfo.Builder, StopServerInfoOuterClass.StopServerInfoOrBuilder> stopServerBuilder_;
-            private int blackUidEndTime_;
-            private boolean unk3300CFBHAHOHDKC_;
             private int uid_;
-            private ByteString securityCmdBuffer_ = ByteString.EMPTY;
-            private Object sign_ = "";
-            private Object secretKey_ = "";
-            private ByteString extraBinData_ = ByteString.EMPTY;
+            private int accountType_;
+            private boolean unk3300AJBBIPFMBEL_;
+            private int retcode_;
+            private int keyId_;
+            private int gmUid_;
+            private long secretKeySeed_;
+            private int blackUidEndTime_;
+            private int channelId_;
+            private int regPlatform_;
+            private int platformType_;
+            private boolean isGuest_;
+            private int tag_;
+            private boolean isProficientPlayer_;
+            private StopServerOuterClass.StopServer stopServer_;
+            private SingleFieldBuilderV3<StopServerOuterClass.StopServer, StopServerOuterClass.StopServer.Builder, StopServerOuterClass.StopServerOrBuilder> stopServerBuilder_;
+            private int cloudClientIp_;
+            private boolean unk3300CFBHAHOHDKC_;
             private Object token_ = "";
-            private Object serverRandKey_ = "";
-            private Object birthday_ = "";
-            private Object clientIpStr_ = "";
-            private Object clientVersionRandomKey_ = "";
-            private Object psnId_ = "";
-            private Object accountUid_ = "";
-            private Internal.IntList finishCollectionIdList_ = GetPlayerTokenRsp.emptyIntList();
+            private Object secretKey_ = "";
             private Object msg_ = "";
+            private ByteString securityCmdBuffer_ = ByteString.EMPTY;
+            private ByteString extraBinData_ = ByteString.EMPTY;
+            private Object clientVersionRandomKey_ = "";
             private Object countryCode_ = "";
+            private Object birthday_ = "";
+            private Internal.IntList finishCollectionIdList_ = GetPlayerTokenRsp.emptyIntList();
+            private Object accountUid_ = "";
+            private Object sign_ = "";
+            private Object psnId_ = "";
+            private Object clientIpStr_ = "";
+            private Object serverRandKey_ = "";
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return GetPlayerTokenRspOuterClass.internal_static_GetPlayerTokenRsp_descriptor;
@@ -1187,44 +1185,44 @@ public final class GetPlayerTokenRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.securityCmdBuffer_ = ByteString.EMPTY;
-                this.gmUid_ = 0;
-                this.isGuest_ = false;
-                this.unk3300AJBBIPFMBEL_ = false;
-                this.keyId_ = 0;
-                this.sign_ = "";
+                this.subChannelId_ = 0;
+                this.token_ = "";
+                this.uid_ = 0;
                 this.secretKey_ = "";
                 this.accountType_ = 0;
-                this.channelId_ = 0;
-                this.extraBinData_ = ByteString.EMPTY;
-                this.secretKeySeed_ = 0;
-                this.token_ = "";
-                this.serverRandKey_ = "";
-                this.cloudClientIp_ = 0;
-                this.birthday_ = "";
-                this.tag_ = 0;
-                this.clientIpStr_ = "";
-                this.subChannelId_ = 0;
+                this.msg_ = "";
+                this.unk3300AJBBIPFMBEL_ = false;
+                this.securityCmdBuffer_ = ByteString.EMPTY;
                 this.retcode_ = 0;
+                this.extraBinData_ = ByteString.EMPTY;
                 this.clientVersionRandomKey_ = "";
-                this.psnId_ = "";
-                this.isProficientPlayer_ = false;
-                this.platformType_ = 0;
+                this.countryCode_ = "";
+                this.keyId_ = 0;
+                this.birthday_ = "";
+                this.gmUid_ = 0;
+                this.secretKeySeed_ = 0;
+                this.blackUidEndTime_ = 0;
+                this.channelId_ = 0;
                 this.regPlatform_ = 0;
+                this.platformType_ = 0;
+                this.isGuest_ = false;
+                this.finishCollectionIdList_ = GetPlayerTokenRsp.emptyIntList();
+                this.bitField0_ &= -2;
+                this.tag_ = 0;
+                this.accountUid_ = "";
+                this.isProficientPlayer_ = false;
+                this.sign_ = "";
                 if (this.stopServerBuilder_ == null) {
                     this.stopServer_ = null;
                 } else {
                     this.stopServer_ = null;
                     this.stopServerBuilder_ = null;
                 }
-                this.blackUidEndTime_ = 0;
+                this.psnId_ = "";
+                this.cloudClientIp_ = 0;
+                this.clientIpStr_ = "";
+                this.serverRandKey_ = "";
                 this.unk3300CFBHAHOHDKC_ = false;
-                this.accountUid_ = "";
-                this.finishCollectionIdList_ = GetPlayerTokenRsp.emptyIntList();
-                this.bitField0_ &= -2;
-                this.msg_ = "";
-                this.countryCode_ = "";
-                this.uid_ = 0;
                 return this;
             }
 
@@ -1251,46 +1249,46 @@ public final class GetPlayerTokenRspOuterClass {
             public GetPlayerTokenRsp buildPartial() {
                 GetPlayerTokenRsp result = new GetPlayerTokenRsp(this);
                 int i = this.bitField0_;
-                result.securityCmdBuffer_ = this.securityCmdBuffer_;
-                result.gmUid_ = this.gmUid_;
-                result.isGuest_ = this.isGuest_;
-                result.unk3300AJBBIPFMBEL_ = this.unk3300AJBBIPFMBEL_;
-                result.keyId_ = this.keyId_;
-                result.sign_ = this.sign_;
+                result.subChannelId_ = this.subChannelId_;
+                result.token_ = this.token_;
+                result.uid_ = this.uid_;
                 result.secretKey_ = this.secretKey_;
                 result.accountType_ = this.accountType_;
-                result.channelId_ = this.channelId_;
-                result.extraBinData_ = this.extraBinData_;
-                result.secretKeySeed_ = this.secretKeySeed_;
-                result.token_ = this.token_;
-                result.serverRandKey_ = this.serverRandKey_;
-                result.cloudClientIp_ = this.cloudClientIp_;
-                result.birthday_ = this.birthday_;
-                result.tag_ = this.tag_;
-                result.clientIpStr_ = this.clientIpStr_;
-                result.subChannelId_ = this.subChannelId_;
+                result.msg_ = this.msg_;
+                result.unk3300AJBBIPFMBEL_ = this.unk3300AJBBIPFMBEL_;
+                result.securityCmdBuffer_ = this.securityCmdBuffer_;
                 result.retcode_ = this.retcode_;
+                result.extraBinData_ = this.extraBinData_;
                 result.clientVersionRandomKey_ = this.clientVersionRandomKey_;
-                result.psnId_ = this.psnId_;
-                result.isProficientPlayer_ = this.isProficientPlayer_;
-                result.platformType_ = this.platformType_;
-                result.regPlatform_ = this.regPlatform_;
-                if (this.stopServerBuilder_ == null) {
-                    result.stopServer_ = this.stopServer_;
-                } else {
-                    result.stopServer_ = this.stopServerBuilder_.build();
-                }
+                result.countryCode_ = this.countryCode_;
+                result.keyId_ = this.keyId_;
+                result.birthday_ = this.birthday_;
+                result.gmUid_ = this.gmUid_;
+                result.secretKeySeed_ = this.secretKeySeed_;
                 result.blackUidEndTime_ = this.blackUidEndTime_;
-                result.unk3300CFBHAHOHDKC_ = this.unk3300CFBHAHOHDKC_;
-                result.accountUid_ = this.accountUid_;
+                result.channelId_ = this.channelId_;
+                result.regPlatform_ = this.regPlatform_;
+                result.platformType_ = this.platformType_;
+                result.isGuest_ = this.isGuest_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.finishCollectionIdList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.finishCollectionIdList_ = this.finishCollectionIdList_;
-                result.msg_ = this.msg_;
-                result.countryCode_ = this.countryCode_;
-                result.uid_ = this.uid_;
+                result.tag_ = this.tag_;
+                result.accountUid_ = this.accountUid_;
+                result.isProficientPlayer_ = this.isProficientPlayer_;
+                result.sign_ = this.sign_;
+                if (this.stopServerBuilder_ == null) {
+                    result.stopServer_ = this.stopServer_;
+                } else {
+                    result.stopServer_ = this.stopServerBuilder_.build();
+                }
+                result.psnId_ = this.psnId_;
+                result.cloudClientIp_ = this.cloudClientIp_;
+                result.clientIpStr_ = this.clientIpStr_;
+                result.serverRandKey_ = this.serverRandKey_;
+                result.unk3300CFBHAHOHDKC_ = this.unk3300CFBHAHOHDKC_;
                 onBuilt();
                 return result;
             }
@@ -1338,24 +1336,15 @@ public final class GetPlayerTokenRspOuterClass {
                 if (other == GetPlayerTokenRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getSecurityCmdBuffer() != ByteString.EMPTY) {
-                    setSecurityCmdBuffer(other.getSecurityCmdBuffer());
+                if (other.getSubChannelId() != 0) {
+                    setSubChannelId(other.getSubChannelId());
                 }
-                if (other.getGmUid() != 0) {
-                    setGmUid(other.getGmUid());
-                }
-                if (other.getIsGuest()) {
-                    setIsGuest(other.getIsGuest());
-                }
-                if (other.getUnk3300AJBBIPFMBEL()) {
-                    setUnk3300AJBBIPFMBEL(other.getUnk3300AJBBIPFMBEL());
-                }
-                if (other.getKeyId() != 0) {
-                    setKeyId(other.getKeyId());
-                }
-                if (!other.getSign().isEmpty()) {
-                    this.sign_ = other.sign_;
+                if (!other.getToken().isEmpty()) {
+                    this.token_ = other.token_;
                     onChanged();
+                }
+                if (other.getUid() != 0) {
+                    setUid(other.getUid());
                 }
                 if (!other.getSecretKey().isEmpty()) {
                     this.secretKey_ = other.secretKey_;
@@ -1364,72 +1353,57 @@ public final class GetPlayerTokenRspOuterClass {
                 if (other.getAccountType() != 0) {
                     setAccountType(other.getAccountType());
                 }
-                if (other.getChannelId() != 0) {
-                    setChannelId(other.getChannelId());
-                }
-                if (other.getExtraBinData() != ByteString.EMPTY) {
-                    setExtraBinData(other.getExtraBinData());
-                }
-                if (other.getSecretKeySeed() != 0) {
-                    setSecretKeySeed(other.getSecretKeySeed());
-                }
-                if (!other.getToken().isEmpty()) {
-                    this.token_ = other.token_;
+                if (!other.getMsg().isEmpty()) {
+                    this.msg_ = other.msg_;
                     onChanged();
                 }
-                if (!other.getServerRandKey().isEmpty()) {
-                    this.serverRandKey_ = other.serverRandKey_;
-                    onChanged();
+                if (other.getUnk3300AJBBIPFMBEL()) {
+                    setUnk3300AJBBIPFMBEL(other.getUnk3300AJBBIPFMBEL());
                 }
-                if (other.getCloudClientIp() != 0) {
-                    setCloudClientIp(other.getCloudClientIp());
-                }
-                if (!other.getBirthday().isEmpty()) {
-                    this.birthday_ = other.birthday_;
-                    onChanged();
-                }
-                if (other.getTag() != 0) {
-                    setTag(other.getTag());
-                }
-                if (!other.getClientIpStr().isEmpty()) {
-                    this.clientIpStr_ = other.clientIpStr_;
-                    onChanged();
-                }
-                if (other.getSubChannelId() != 0) {
-                    setSubChannelId(other.getSubChannelId());
+                if (other.getSecurityCmdBuffer() != ByteString.EMPTY) {
+                    setSecurityCmdBuffer(other.getSecurityCmdBuffer());
                 }
                 if (other.getRetcode() != 0) {
                     setRetcode(other.getRetcode());
+                }
+                if (other.getExtraBinData() != ByteString.EMPTY) {
+                    setExtraBinData(other.getExtraBinData());
                 }
                 if (!other.getClientVersionRandomKey().isEmpty()) {
                     this.clientVersionRandomKey_ = other.clientVersionRandomKey_;
                     onChanged();
                 }
-                if (!other.getPsnId().isEmpty()) {
-                    this.psnId_ = other.psnId_;
+                if (!other.getCountryCode().isEmpty()) {
+                    this.countryCode_ = other.countryCode_;
                     onChanged();
                 }
-                if (other.getIsProficientPlayer()) {
-                    setIsProficientPlayer(other.getIsProficientPlayer());
+                if (other.getKeyId() != 0) {
+                    setKeyId(other.getKeyId());
                 }
-                if (other.getPlatformType() != 0) {
-                    setPlatformType(other.getPlatformType());
+                if (!other.getBirthday().isEmpty()) {
+                    this.birthday_ = other.birthday_;
+                    onChanged();
                 }
-                if (other.getRegPlatform() != 0) {
-                    setRegPlatform(other.getRegPlatform());
+                if (other.getGmUid() != 0) {
+                    setGmUid(other.getGmUid());
                 }
-                if (other.hasStopServer()) {
-                    mergeStopServer(other.getStopServer());
+                if (other.getSecretKeySeed() != 0) {
+                    setSecretKeySeed(other.getSecretKeySeed());
                 }
                 if (other.getBlackUidEndTime() != 0) {
                     setBlackUidEndTime(other.getBlackUidEndTime());
                 }
-                if (other.getUnk3300CFBHAHOHDKC()) {
-                    setUnk3300CFBHAHOHDKC(other.getUnk3300CFBHAHOHDKC());
+                if (other.getChannelId() != 0) {
+                    setChannelId(other.getChannelId());
                 }
-                if (!other.getAccountUid().isEmpty()) {
-                    this.accountUid_ = other.accountUid_;
-                    onChanged();
+                if (other.getRegPlatform() != 0) {
+                    setRegPlatform(other.getRegPlatform());
+                }
+                if (other.getPlatformType() != 0) {
+                    setPlatformType(other.getPlatformType());
+                }
+                if (other.getIsGuest()) {
+                    setIsGuest(other.getIsGuest());
                 }
                 if (!other.finishCollectionIdList_.isEmpty()) {
                     if (this.finishCollectionIdList_.isEmpty()) {
@@ -1441,16 +1415,40 @@ public final class GetPlayerTokenRspOuterClass {
                     }
                     onChanged();
                 }
-                if (!other.getMsg().isEmpty()) {
-                    this.msg_ = other.msg_;
+                if (other.getTag() != 0) {
+                    setTag(other.getTag());
+                }
+                if (!other.getAccountUid().isEmpty()) {
+                    this.accountUid_ = other.accountUid_;
                     onChanged();
                 }
-                if (!other.getCountryCode().isEmpty()) {
-                    this.countryCode_ = other.countryCode_;
+                if (other.getIsProficientPlayer()) {
+                    setIsProficientPlayer(other.getIsProficientPlayer());
+                }
+                if (!other.getSign().isEmpty()) {
+                    this.sign_ = other.sign_;
                     onChanged();
                 }
-                if (other.getUid() != 0) {
-                    setUid(other.getUid());
+                if (other.hasStopServer()) {
+                    mergeStopServer(other.getStopServer());
+                }
+                if (!other.getPsnId().isEmpty()) {
+                    this.psnId_ = other.psnId_;
+                    onChanged();
+                }
+                if (other.getCloudClientIp() != 0) {
+                    setCloudClientIp(other.getCloudClientIp());
+                }
+                if (!other.getClientIpStr().isEmpty()) {
+                    this.clientIpStr_ = other.clientIpStr_;
+                    onChanged();
+                }
+                if (!other.getServerRandKey().isEmpty()) {
+                    this.serverRandKey_ = other.serverRandKey_;
+                    onChanged();
+                }
+                if (other.getUnk3300CFBHAHOHDKC()) {
+                    setUnk3300CFBHAHOHDKC(other.getUnk3300CFBHAHOHDKC());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -1485,136 +1483,82 @@ public final class GetPlayerTokenRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public ByteString getSecurityCmdBuffer() {
-                return this.securityCmdBuffer_;
+            public int getSubChannelId() {
+                return this.subChannelId_;
             }
 
-            public Builder setSecurityCmdBuffer(ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.securityCmdBuffer_ = value;
+            public Builder setSubChannelId(int value) {
+                this.subChannelId_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearSecurityCmdBuffer() {
-                this.securityCmdBuffer_ = GetPlayerTokenRsp.getDefaultInstance().getSecurityCmdBuffer();
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public int getGmUid() {
-                return this.gmUid_;
-            }
-
-            public Builder setGmUid(int value) {
-                this.gmUid_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearGmUid() {
-                this.gmUid_ = 0;
+            public Builder clearSubChannelId() {
+                this.subChannelId_ = 0;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public boolean getIsGuest() {
-                return this.isGuest_;
-            }
-
-            public Builder setIsGuest(boolean value) {
-                this.isGuest_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsGuest() {
-                this.isGuest_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public boolean getUnk3300AJBBIPFMBEL() {
-                return this.unk3300AJBBIPFMBEL_;
-            }
-
-            public Builder setUnk3300AJBBIPFMBEL(boolean value) {
-                this.unk3300AJBBIPFMBEL_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk3300AJBBIPFMBEL() {
-                this.unk3300AJBBIPFMBEL_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public int getKeyId() {
-                return this.keyId_;
-            }
-
-            public Builder setKeyId(int value) {
-                this.keyId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearKeyId() {
-                this.keyId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public String getSign() {
-                Object ref = this.sign_;
+            public String getToken() {
+                Object ref = this.token_;
                 if (ref instanceof String) {
                     return (String) ref;
                 }
                 String s = ((ByteString) ref).toStringUtf8();
-                this.sign_ = s;
+                this.token_ = s;
                 return s;
             }
 
             @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public ByteString getSignBytes() {
-                Object ref = this.sign_;
+            public ByteString getTokenBytes() {
+                Object ref = this.token_;
                 if (!(ref instanceof String)) {
                     return (ByteString) ref;
                 }
                 ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.sign_ = b;
+                this.token_ = b;
                 return b;
             }
 
-            public Builder setSign(String value) {
+            public Builder setToken(String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
-                this.sign_ = value;
+                this.token_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearSign() {
-                this.sign_ = GetPlayerTokenRsp.getDefaultInstance().getSign();
+            public Builder clearToken() {
+                this.token_ = GetPlayerTokenRsp.getDefaultInstance().getToken();
                 onChanged();
                 return this;
             }
 
-            public Builder setSignBytes(ByteString value) {
+            public Builder setTokenBytes(ByteString value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
                 GetPlayerTokenRsp.checkByteStringIsUtf8(value);
-                this.sign_ = value;
+                this.token_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public int getUid() {
+                return this.uid_;
+            }
+
+            public Builder setUid(int value) {
+                this.uid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUid() {
+                this.uid_ = 0;
                 onChanged();
                 return this;
             }
@@ -1684,18 +1628,102 @@ public final class GetPlayerTokenRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public int getChannelId() {
-                return this.channelId_;
+            public String getMsg() {
+                Object ref = this.msg_;
+                if (ref instanceof String) {
+                    return (String) ref;
+                }
+                String s = ((ByteString) ref).toStringUtf8();
+                this.msg_ = s;
+                return s;
             }
 
-            public Builder setChannelId(int value) {
-                this.channelId_ = value;
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public ByteString getMsgBytes() {
+                Object ref = this.msg_;
+                if (!(ref instanceof String)) {
+                    return (ByteString) ref;
+                }
+                ByteString b = ByteString.copyFromUtf8((String) ref);
+                this.msg_ = b;
+                return b;
+            }
+
+            public Builder setMsg(String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.msg_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearChannelId() {
-                this.channelId_ = 0;
+            public Builder clearMsg() {
+                this.msg_ = GetPlayerTokenRsp.getDefaultInstance().getMsg();
+                onChanged();
+                return this;
+            }
+
+            public Builder setMsgBytes(ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                GetPlayerTokenRsp.checkByteStringIsUtf8(value);
+                this.msg_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public boolean getUnk3300AJBBIPFMBEL() {
+                return this.unk3300AJBBIPFMBEL_;
+            }
+
+            public Builder setUnk3300AJBBIPFMBEL(boolean value) {
+                this.unk3300AJBBIPFMBEL_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300AJBBIPFMBEL() {
+                this.unk3300AJBBIPFMBEL_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public ByteString getSecurityCmdBuffer() {
+                return this.securityCmdBuffer_;
+            }
+
+            public Builder setSecurityCmdBuffer(ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.securityCmdBuffer_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearSecurityCmdBuffer() {
+                this.securityCmdBuffer_ = GetPlayerTokenRsp.getDefaultInstance().getSecurityCmdBuffer();
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }
@@ -1716,279 +1744,6 @@ public final class GetPlayerTokenRspOuterClass {
 
             public Builder clearExtraBinData() {
                 this.extraBinData_ = GetPlayerTokenRsp.getDefaultInstance().getExtraBinData();
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public long getSecretKeySeed() {
-                return this.secretKeySeed_;
-            }
-
-            public Builder setSecretKeySeed(long value) {
-                this.secretKeySeed_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearSecretKeySeed() {
-                this.secretKeySeed_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public String getToken() {
-                Object ref = this.token_;
-                if (ref instanceof String) {
-                    return (String) ref;
-                }
-                String s = ((ByteString) ref).toStringUtf8();
-                this.token_ = s;
-                return s;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public ByteString getTokenBytes() {
-                Object ref = this.token_;
-                if (!(ref instanceof String)) {
-                    return (ByteString) ref;
-                }
-                ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.token_ = b;
-                return b;
-            }
-
-            public Builder setToken(String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.token_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearToken() {
-                this.token_ = GetPlayerTokenRsp.getDefaultInstance().getToken();
-                onChanged();
-                return this;
-            }
-
-            public Builder setTokenBytes(ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                GetPlayerTokenRsp.checkByteStringIsUtf8(value);
-                this.token_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public String getServerRandKey() {
-                Object ref = this.serverRandKey_;
-                if (ref instanceof String) {
-                    return (String) ref;
-                }
-                String s = ((ByteString) ref).toStringUtf8();
-                this.serverRandKey_ = s;
-                return s;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public ByteString getServerRandKeyBytes() {
-                Object ref = this.serverRandKey_;
-                if (!(ref instanceof String)) {
-                    return (ByteString) ref;
-                }
-                ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.serverRandKey_ = b;
-                return b;
-            }
-
-            public Builder setServerRandKey(String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.serverRandKey_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearServerRandKey() {
-                this.serverRandKey_ = GetPlayerTokenRsp.getDefaultInstance().getServerRandKey();
-                onChanged();
-                return this;
-            }
-
-            public Builder setServerRandKeyBytes(ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                GetPlayerTokenRsp.checkByteStringIsUtf8(value);
-                this.serverRandKey_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public int getCloudClientIp() {
-                return this.cloudClientIp_;
-            }
-
-            public Builder setCloudClientIp(int value) {
-                this.cloudClientIp_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearCloudClientIp() {
-                this.cloudClientIp_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public String getBirthday() {
-                Object ref = this.birthday_;
-                if (ref instanceof String) {
-                    return (String) ref;
-                }
-                String s = ((ByteString) ref).toStringUtf8();
-                this.birthday_ = s;
-                return s;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public ByteString getBirthdayBytes() {
-                Object ref = this.birthday_;
-                if (!(ref instanceof String)) {
-                    return (ByteString) ref;
-                }
-                ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.birthday_ = b;
-                return b;
-            }
-
-            public Builder setBirthday(String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.birthday_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearBirthday() {
-                this.birthday_ = GetPlayerTokenRsp.getDefaultInstance().getBirthday();
-                onChanged();
-                return this;
-            }
-
-            public Builder setBirthdayBytes(ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                GetPlayerTokenRsp.checkByteStringIsUtf8(value);
-                this.birthday_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public int getTag() {
-                return this.tag_;
-            }
-
-            public Builder setTag(int value) {
-                this.tag_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearTag() {
-                this.tag_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public String getClientIpStr() {
-                Object ref = this.clientIpStr_;
-                if (ref instanceof String) {
-                    return (String) ref;
-                }
-                String s = ((ByteString) ref).toStringUtf8();
-                this.clientIpStr_ = s;
-                return s;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public ByteString getClientIpStrBytes() {
-                Object ref = this.clientIpStr_;
-                if (!(ref instanceof String)) {
-                    return (ByteString) ref;
-                }
-                ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.clientIpStr_ = b;
-                return b;
-            }
-
-            public Builder setClientIpStr(String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.clientIpStr_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearClientIpStr() {
-                this.clientIpStr_ = GetPlayerTokenRsp.getDefaultInstance().getClientIpStr();
-                onChanged();
-                return this;
-            }
-
-            public Builder setClientIpStrBytes(ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                GetPlayerTokenRsp.checkByteStringIsUtf8(value);
-                this.clientIpStr_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public int getSubChannelId() {
-                return this.subChannelId_;
-            }
-
-            public Builder setSubChannelId(int value) {
-                this.subChannelId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearSubChannelId() {
-                this.subChannelId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
                 onChanged();
                 return this;
             }
@@ -2041,82 +1796,180 @@ public final class GetPlayerTokenRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public String getPsnId() {
-                Object ref = this.psnId_;
+            public String getCountryCode() {
+                Object ref = this.countryCode_;
                 if (ref instanceof String) {
                     return (String) ref;
                 }
                 String s = ((ByteString) ref).toStringUtf8();
-                this.psnId_ = s;
+                this.countryCode_ = s;
                 return s;
             }
 
             @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public ByteString getPsnIdBytes() {
-                Object ref = this.psnId_;
+            public ByteString getCountryCodeBytes() {
+                Object ref = this.countryCode_;
                 if (!(ref instanceof String)) {
                     return (ByteString) ref;
                 }
                 ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.psnId_ = b;
+                this.countryCode_ = b;
                 return b;
             }
 
-            public Builder setPsnId(String value) {
+            public Builder setCountryCode(String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
-                this.psnId_ = value;
+                this.countryCode_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearPsnId() {
-                this.psnId_ = GetPlayerTokenRsp.getDefaultInstance().getPsnId();
+            public Builder clearCountryCode() {
+                this.countryCode_ = GetPlayerTokenRsp.getDefaultInstance().getCountryCode();
                 onChanged();
                 return this;
             }
 
-            public Builder setPsnIdBytes(ByteString value) {
+            public Builder setCountryCodeBytes(ByteString value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
                 GetPlayerTokenRsp.checkByteStringIsUtf8(value);
-                this.psnId_ = value;
+                this.countryCode_ = value;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public boolean getIsProficientPlayer() {
-                return this.isProficientPlayer_;
+            public int getKeyId() {
+                return this.keyId_;
             }
 
-            public Builder setIsProficientPlayer(boolean value) {
-                this.isProficientPlayer_ = value;
+            public Builder setKeyId(int value) {
+                this.keyId_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearIsProficientPlayer() {
-                this.isProficientPlayer_ = false;
+            public Builder clearKeyId() {
+                this.keyId_ = 0;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public int getPlatformType() {
-                return this.platformType_;
+            public String getBirthday() {
+                Object ref = this.birthday_;
+                if (ref instanceof String) {
+                    return (String) ref;
+                }
+                String s = ((ByteString) ref).toStringUtf8();
+                this.birthday_ = s;
+                return s;
             }
 
-            public Builder setPlatformType(int value) {
-                this.platformType_ = value;
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public ByteString getBirthdayBytes() {
+                Object ref = this.birthday_;
+                if (!(ref instanceof String)) {
+                    return (ByteString) ref;
+                }
+                ByteString b = ByteString.copyFromUtf8((String) ref);
+                this.birthday_ = b;
+                return b;
+            }
+
+            public Builder setBirthday(String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.birthday_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearPlatformType() {
-                this.platformType_ = 0;
+            public Builder clearBirthday() {
+                this.birthday_ = GetPlayerTokenRsp.getDefaultInstance().getBirthday();
+                onChanged();
+                return this;
+            }
+
+            public Builder setBirthdayBytes(ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                GetPlayerTokenRsp.checkByteStringIsUtf8(value);
+                this.birthday_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public int getGmUid() {
+                return this.gmUid_;
+            }
+
+            public Builder setGmUid(int value) {
+                this.gmUid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearGmUid() {
+                this.gmUid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public long getSecretKeySeed() {
+                return this.secretKeySeed_;
+            }
+
+            public Builder setSecretKeySeed(long value) {
+                this.secretKeySeed_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearSecretKeySeed() {
+                this.secretKeySeed_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public int getBlackUidEndTime() {
+                return this.blackUidEndTime_;
+            }
+
+            public Builder setBlackUidEndTime(int value) {
+                this.blackUidEndTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearBlackUidEndTime() {
+                this.blackUidEndTime_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public int getChannelId() {
+                return this.channelId_;
+            }
+
+            public Builder setChannelId(int value) {
+                this.channelId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearChannelId() {
+                this.channelId_ = 0;
                 onChanged();
                 return this;
             }
@@ -2139,163 +1992,35 @@ public final class GetPlayerTokenRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public boolean hasStopServer() {
-                return (this.stopServerBuilder_ == null && this.stopServer_ == null) ? false : true;
+            public int getPlatformType() {
+                return this.platformType_;
             }
 
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public StopServerInfoOuterClass.StopServerInfo getStopServer() {
-                if (this.stopServerBuilder_ == null) {
-                    return this.stopServer_ == null ? StopServerInfoOuterClass.StopServerInfo.getDefaultInstance() : this.stopServer_;
-                }
-                return this.stopServerBuilder_.getMessage();
-            }
-
-            public Builder setStopServer(StopServerInfoOuterClass.StopServerInfo value) {
-                if (this.stopServerBuilder_ != null) {
-                    this.stopServerBuilder_.setMessage(value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    this.stopServer_ = value;
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder setStopServer(StopServerInfoOuterClass.StopServerInfo.Builder builderForValue) {
-                if (this.stopServerBuilder_ == null) {
-                    this.stopServer_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    this.stopServerBuilder_.setMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder mergeStopServer(StopServerInfoOuterClass.StopServerInfo value) {
-                if (this.stopServerBuilder_ == null) {
-                    if (this.stopServer_ != null) {
-                        this.stopServer_ = StopServerInfoOuterClass.StopServerInfo.newBuilder(this.stopServer_).mergeFrom(value).buildPartial();
-                    } else {
-                        this.stopServer_ = value;
-                    }
-                    onChanged();
-                } else {
-                    this.stopServerBuilder_.mergeFrom(value);
-                }
-                return this;
-            }
-
-            public Builder clearStopServer() {
-                if (this.stopServerBuilder_ == null) {
-                    this.stopServer_ = null;
-                    onChanged();
-                } else {
-                    this.stopServer_ = null;
-                    this.stopServerBuilder_ = null;
-                }
-                return this;
-            }
-
-            public StopServerInfoOuterClass.StopServerInfo.Builder getStopServerBuilder() {
-                onChanged();
-                return getStopServerFieldBuilder().getBuilder();
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public StopServerInfoOuterClass.StopServerInfoOrBuilder getStopServerOrBuilder() {
-                if (this.stopServerBuilder_ != null) {
-                    return this.stopServerBuilder_.getMessageOrBuilder();
-                }
-                return this.stopServer_ == null ? StopServerInfoOuterClass.StopServerInfo.getDefaultInstance() : this.stopServer_;
-            }
-
-            private SingleFieldBuilderV3<StopServerInfoOuterClass.StopServerInfo, StopServerInfoOuterClass.StopServerInfo.Builder, StopServerInfoOuterClass.StopServerInfoOrBuilder> getStopServerFieldBuilder() {
-                if (this.stopServerBuilder_ == null) {
-                    this.stopServerBuilder_ = new SingleFieldBuilderV3<>(getStopServer(), getParentForChildren(), isClean());
-                    this.stopServer_ = null;
-                }
-                return this.stopServerBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public int getBlackUidEndTime() {
-                return this.blackUidEndTime_;
-            }
-
-            public Builder setBlackUidEndTime(int value) {
-                this.blackUidEndTime_ = value;
+            public Builder setPlatformType(int value) {
+                this.platformType_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearBlackUidEndTime() {
-                this.blackUidEndTime_ = 0;
+            public Builder clearPlatformType() {
+                this.platformType_ = 0;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public boolean getUnk3300CFBHAHOHDKC() {
-                return this.unk3300CFBHAHOHDKC_;
+            public boolean getIsGuest() {
+                return this.isGuest_;
             }
 
-            public Builder setUnk3300CFBHAHOHDKC(boolean value) {
-                this.unk3300CFBHAHOHDKC_ = value;
+            public Builder setIsGuest(boolean value) {
+                this.isGuest_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearUnk3300CFBHAHOHDKC() {
-                this.unk3300CFBHAHOHDKC_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public String getAccountUid() {
-                Object ref = this.accountUid_;
-                if (ref instanceof String) {
-                    return (String) ref;
-                }
-                String s = ((ByteString) ref).toStringUtf8();
-                this.accountUid_ = s;
-                return s;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public ByteString getAccountUidBytes() {
-                Object ref = this.accountUid_;
-                if (!(ref instanceof String)) {
-                    return (ByteString) ref;
-                }
-                ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.accountUid_ = b;
-                return b;
-            }
-
-            public Builder setAccountUid(String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.accountUid_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearAccountUid() {
-                this.accountUid_ = GetPlayerTokenRsp.getDefaultInstance().getAccountUid();
-                onChanged();
-                return this;
-            }
-
-            public Builder setAccountUidBytes(ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                GetPlayerTokenRsp.checkByteStringIsUtf8(value);
-                this.accountUid_ = value;
+            public Builder clearIsGuest() {
+                this.isGuest_ = false;
                 onChanged();
                 return this;
             }
@@ -2351,112 +2076,385 @@ public final class GetPlayerTokenRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public String getMsg() {
-                Object ref = this.msg_;
+            public int getTag() {
+                return this.tag_;
+            }
+
+            public Builder setTag(int value) {
+                this.tag_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearTag() {
+                this.tag_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public String getAccountUid() {
+                Object ref = this.accountUid_;
                 if (ref instanceof String) {
                     return (String) ref;
                 }
                 String s = ((ByteString) ref).toStringUtf8();
-                this.msg_ = s;
+                this.accountUid_ = s;
                 return s;
             }
 
             @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public ByteString getMsgBytes() {
-                Object ref = this.msg_;
+            public ByteString getAccountUidBytes() {
+                Object ref = this.accountUid_;
                 if (!(ref instanceof String)) {
                     return (ByteString) ref;
                 }
                 ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.msg_ = b;
+                this.accountUid_ = b;
                 return b;
             }
 
-            public Builder setMsg(String value) {
+            public Builder setAccountUid(String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
-                this.msg_ = value;
+                this.accountUid_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearMsg() {
-                this.msg_ = GetPlayerTokenRsp.getDefaultInstance().getMsg();
+            public Builder clearAccountUid() {
+                this.accountUid_ = GetPlayerTokenRsp.getDefaultInstance().getAccountUid();
                 onChanged();
                 return this;
             }
 
-            public Builder setMsgBytes(ByteString value) {
+            public Builder setAccountUidBytes(ByteString value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
                 GetPlayerTokenRsp.checkByteStringIsUtf8(value);
-                this.msg_ = value;
+                this.accountUid_ = value;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public String getCountryCode() {
-                Object ref = this.countryCode_;
+            public boolean getIsProficientPlayer() {
+                return this.isProficientPlayer_;
+            }
+
+            public Builder setIsProficientPlayer(boolean value) {
+                this.isProficientPlayer_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsProficientPlayer() {
+                this.isProficientPlayer_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public String getSign() {
+                Object ref = this.sign_;
                 if (ref instanceof String) {
                     return (String) ref;
                 }
                 String s = ((ByteString) ref).toStringUtf8();
-                this.countryCode_ = s;
+                this.sign_ = s;
                 return s;
             }
 
             @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public ByteString getCountryCodeBytes() {
-                Object ref = this.countryCode_;
+            public ByteString getSignBytes() {
+                Object ref = this.sign_;
                 if (!(ref instanceof String)) {
                     return (ByteString) ref;
                 }
                 ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.countryCode_ = b;
+                this.sign_ = b;
                 return b;
             }
 
-            public Builder setCountryCode(String value) {
+            public Builder setSign(String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
-                this.countryCode_ = value;
+                this.sign_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearCountryCode() {
-                this.countryCode_ = GetPlayerTokenRsp.getDefaultInstance().getCountryCode();
+            public Builder clearSign() {
+                this.sign_ = GetPlayerTokenRsp.getDefaultInstance().getSign();
                 onChanged();
                 return this;
             }
 
-            public Builder setCountryCodeBytes(ByteString value) {
+            public Builder setSignBytes(ByteString value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
                 GetPlayerTokenRsp.checkByteStringIsUtf8(value);
-                this.countryCode_ = value;
+                this.sign_ = value;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
-            public int getUid() {
-                return this.uid_;
+            public boolean hasStopServer() {
+                return (this.stopServerBuilder_ == null && this.stopServer_ == null) ? false : true;
             }
 
-            public Builder setUid(int value) {
-                this.uid_ = value;
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public StopServerOuterClass.StopServer getStopServer() {
+                if (this.stopServerBuilder_ == null) {
+                    return this.stopServer_ == null ? StopServerOuterClass.StopServer.getDefaultInstance() : this.stopServer_;
+                }
+                return this.stopServerBuilder_.getMessage();
+            }
+
+            public Builder setStopServer(StopServerOuterClass.StopServer value) {
+                if (this.stopServerBuilder_ != null) {
+                    this.stopServerBuilder_.setMessage(value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    this.stopServer_ = value;
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder setStopServer(StopServerOuterClass.StopServer.Builder builderForValue) {
+                if (this.stopServerBuilder_ == null) {
+                    this.stopServer_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    this.stopServerBuilder_.setMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder mergeStopServer(StopServerOuterClass.StopServer value) {
+                if (this.stopServerBuilder_ == null) {
+                    if (this.stopServer_ != null) {
+                        this.stopServer_ = StopServerOuterClass.StopServer.newBuilder(this.stopServer_).mergeFrom(value).buildPartial();
+                    } else {
+                        this.stopServer_ = value;
+                    }
+                    onChanged();
+                } else {
+                    this.stopServerBuilder_.mergeFrom(value);
+                }
+                return this;
+            }
+
+            public Builder clearStopServer() {
+                if (this.stopServerBuilder_ == null) {
+                    this.stopServer_ = null;
+                    onChanged();
+                } else {
+                    this.stopServer_ = null;
+                    this.stopServerBuilder_ = null;
+                }
+                return this;
+            }
+
+            public StopServerOuterClass.StopServer.Builder getStopServerBuilder() {
+                onChanged();
+                return getStopServerFieldBuilder().getBuilder();
+            }
+
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public StopServerOuterClass.StopServerOrBuilder getStopServerOrBuilder() {
+                if (this.stopServerBuilder_ != null) {
+                    return this.stopServerBuilder_.getMessageOrBuilder();
+                }
+                return this.stopServer_ == null ? StopServerOuterClass.StopServer.getDefaultInstance() : this.stopServer_;
+            }
+
+            private SingleFieldBuilderV3<StopServerOuterClass.StopServer, StopServerOuterClass.StopServer.Builder, StopServerOuterClass.StopServerOrBuilder> getStopServerFieldBuilder() {
+                if (this.stopServerBuilder_ == null) {
+                    this.stopServerBuilder_ = new SingleFieldBuilderV3<>(getStopServer(), getParentForChildren(), isClean());
+                    this.stopServer_ = null;
+                }
+                return this.stopServerBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public String getPsnId() {
+                Object ref = this.psnId_;
+                if (ref instanceof String) {
+                    return (String) ref;
+                }
+                String s = ((ByteString) ref).toStringUtf8();
+                this.psnId_ = s;
+                return s;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public ByteString getPsnIdBytes() {
+                Object ref = this.psnId_;
+                if (!(ref instanceof String)) {
+                    return (ByteString) ref;
+                }
+                ByteString b = ByteString.copyFromUtf8((String) ref);
+                this.psnId_ = b;
+                return b;
+            }
+
+            public Builder setPsnId(String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.psnId_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearUid() {
-                this.uid_ = 0;
+            public Builder clearPsnId() {
+                this.psnId_ = GetPlayerTokenRsp.getDefaultInstance().getPsnId();
+                onChanged();
+                return this;
+            }
+
+            public Builder setPsnIdBytes(ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                GetPlayerTokenRsp.checkByteStringIsUtf8(value);
+                this.psnId_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public int getCloudClientIp() {
+                return this.cloudClientIp_;
+            }
+
+            public Builder setCloudClientIp(int value) {
+                this.cloudClientIp_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearCloudClientIp() {
+                this.cloudClientIp_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public String getClientIpStr() {
+                Object ref = this.clientIpStr_;
+                if (ref instanceof String) {
+                    return (String) ref;
+                }
+                String s = ((ByteString) ref).toStringUtf8();
+                this.clientIpStr_ = s;
+                return s;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public ByteString getClientIpStrBytes() {
+                Object ref = this.clientIpStr_;
+                if (!(ref instanceof String)) {
+                    return (ByteString) ref;
+                }
+                ByteString b = ByteString.copyFromUtf8((String) ref);
+                this.clientIpStr_ = b;
+                return b;
+            }
+
+            public Builder setClientIpStr(String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.clientIpStr_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearClientIpStr() {
+                this.clientIpStr_ = GetPlayerTokenRsp.getDefaultInstance().getClientIpStr();
+                onChanged();
+                return this;
+            }
+
+            public Builder setClientIpStrBytes(ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                GetPlayerTokenRsp.checkByteStringIsUtf8(value);
+                this.clientIpStr_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public String getServerRandKey() {
+                Object ref = this.serverRandKey_;
+                if (ref instanceof String) {
+                    return (String) ref;
+                }
+                String s = ((ByteString) ref).toStringUtf8();
+                this.serverRandKey_ = s;
+                return s;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public ByteString getServerRandKeyBytes() {
+                Object ref = this.serverRandKey_;
+                if (!(ref instanceof String)) {
+                    return (ByteString) ref;
+                }
+                ByteString b = ByteString.copyFromUtf8((String) ref);
+                this.serverRandKey_ = b;
+                return b;
+            }
+
+            public Builder setServerRandKey(String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.serverRandKey_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearServerRandKey() {
+                this.serverRandKey_ = GetPlayerTokenRsp.getDefaultInstance().getServerRandKey();
+                onChanged();
+                return this;
+            }
+
+            public Builder setServerRandKeyBytes(ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                GetPlayerTokenRsp.checkByteStringIsUtf8(value);
+                this.serverRandKey_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRspOrBuilder
+            public boolean getUnk3300CFBHAHOHDKC() {
+                return this.unk3300CFBHAHOHDKC_;
+            }
+
+            public Builder setUnk3300CFBHAHOHDKC(boolean value) {
+                this.unk3300CFBHAHOHDKC_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300CFBHAHOHDKC() {
+                this.unk3300CFBHAHOHDKC_ = false;
                 onChanged();
                 return this;
             }
@@ -2496,6 +2494,6 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     static {
-        StopServerInfoOuterClass.getDescriptor();
+        StopServerOuterClass.getDescriptor();
     }
 }

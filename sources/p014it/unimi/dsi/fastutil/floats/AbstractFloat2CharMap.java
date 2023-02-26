@@ -196,30 +196,30 @@ public abstract class AbstractFloat2CharMap extends AbstractFloat2CharFunction i
                 return new FloatIterator() { // from class: it.unimi.dsi.fastutil.floats.AbstractFloat2CharMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Float2CharMap.Entry> f1762i;
+                    private final ObjectIterator<Float2CharMap.Entry> f1726i;
 
                     {
-                        this.f1762i = Float2CharMaps.fastIterator(AbstractFloat2CharMap.this);
+                        this.f1726i = Float2CharMaps.fastIterator(AbstractFloat2CharMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
                     public float nextFloat() {
-                        return this.f1762i.next().getFloatKey();
+                        return this.f1726i.next().getFloatKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1762i.hasNext();
+                        return this.f1726i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1762i.remove();
+                        this.f1726i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
                     public void forEachRemaining(FloatConsumer action) {
-                        this.f1762i.forEachRemaining(entry -> {
+                        this.f1726i.forEachRemaining(entry -> {
                             action.accept(entry.getFloatKey());
                         });
                     }
@@ -257,30 +257,30 @@ public abstract class AbstractFloat2CharMap extends AbstractFloat2CharFunction i
                 return new CharIterator() { // from class: it.unimi.dsi.fastutil.floats.AbstractFloat2CharMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Float2CharMap.Entry> f1763i;
+                    private final ObjectIterator<Float2CharMap.Entry> f1727i;
 
                     {
-                        this.f1763i = Float2CharMaps.fastIterator(AbstractFloat2CharMap.this);
+                        this.f1727i = Float2CharMaps.fastIterator(AbstractFloat2CharMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
                     public char nextChar() {
-                        return this.f1763i.next().getCharValue();
+                        return this.f1727i.next().getCharValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1763i.hasNext();
+                        return this.f1727i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1763i.remove();
+                        this.f1727i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
                     public void forEachRemaining(CharConsumer action) {
-                        this.f1763i.forEachRemaining(entry -> {
+                        this.f1727i.forEachRemaining(entry -> {
                             action.accept(entry.getCharValue());
                         });
                     }

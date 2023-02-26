@@ -26,18 +26,12 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ObstacleModifyNotifyOuterClass.class */
 public final class ObstacleModifyNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aObstacleModifyNotify.proto\u001a\u0012ObstacleInfo.proto\"k\n\u0014ObstacleModifyNotify\u0012\u001b\n\u0013remove_obstacle_ids\u0018\u0007 \u0003(\u0005\u0012$\n\radd_obstacles\u0018\u000f \u0003(\u000b2\r.ObstacleInfo\u0012\u0010\n\bscene_id\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ObstacleInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aObstacleModifyNotify.proto\u001a\u0012ObstacleInfo.proto\"g\n\u0014ObstacleModifyNotify\u0012#\n\faddObstacles\u0018\u000e \u0003(\u000b2\r.ObstacleInfo\u0012\u0019\n\u0011removeObstacleIds\u0018\u0007 \u0003(\u0005\u0012\u000f\n\u0007sceneId\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ObstacleInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ObstacleModifyNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ObstacleModifyNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ObstacleModifyNotify_descriptor, new String[]{"RemoveObstacleIds", "AddObstacles", "SceneId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ObstacleModifyNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ObstacleModifyNotify_descriptor, new String[]{"AddObstacles", "RemoveObstacleIds", "SceneId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ObstacleModifyNotifyOuterClass$ObstacleModifyNotifyOrBuilder.class */
     public interface ObstacleModifyNotifyOrBuilder extends MessageOrBuilder {
-        List<Integer> getRemoveObstacleIdsList();
-
-        int getRemoveObstacleIdsCount();
-
-        int getRemoveObstacleIds(int i);
-
         List<ObstacleInfoOuterClass.ObstacleInfo> getAddObstaclesList();
 
         ObstacleInfoOuterClass.ObstacleInfo getAddObstacles(int i);
@@ -47,6 +41,12 @@ public final class ObstacleModifyNotifyOuterClass {
         List<? extends ObstacleInfoOuterClass.ObstacleInfoOrBuilder> getAddObstaclesOrBuilderList();
 
         ObstacleInfoOuterClass.ObstacleInfoOrBuilder getAddObstaclesOrBuilder(int i);
+
+        List<Integer> getRemoveObstacleIdsList();
+
+        int getRemoveObstacleIdsCount();
+
+        int getRemoveObstacleIds(int i);
 
         int getSceneId();
     }
@@ -64,12 +64,12 @@ public final class ObstacleModifyNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ObstacleModifyNotifyOuterClass$ObstacleModifyNotify.class */
     public static final class ObstacleModifyNotify extends GeneratedMessageV3 implements ObstacleModifyNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int REMOVE_OBSTACLE_IDS_FIELD_NUMBER = 7;
+        public static final int ADDOBSTACLES_FIELD_NUMBER = 14;
+        private List<ObstacleInfoOuterClass.ObstacleInfo> addObstacles_;
+        public static final int REMOVEOBSTACLEIDS_FIELD_NUMBER = 7;
         private Internal.IntList removeObstacleIds_;
         private int removeObstacleIdsMemoizedSerializedSize;
-        public static final int ADD_OBSTACLES_FIELD_NUMBER = 15;
-        private List<ObstacleInfoOuterClass.ObstacleInfo> addObstacles_;
-        public static final int SCENE_ID_FIELD_NUMBER = 12;
+        public static final int SCENEID_FIELD_NUMBER = 9;
         private int sceneId_;
         private byte memoizedIsInitialized;
         private static final ObstacleModifyNotify DEFAULT_INSTANCE = new ObstacleModifyNotify();
@@ -89,8 +89,8 @@ public final class ObstacleModifyNotifyOuterClass {
         private ObstacleModifyNotify() {
             this.removeObstacleIdsMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
-            this.removeObstacleIds_ = emptyIntList();
             this.addObstacles_ = Collections.emptyList();
+            this.removeObstacleIds_ = emptyIntList();
         }
 
         /* access modifiers changed from: protected */
@@ -124,30 +124,30 @@ public final class ObstacleModifyNotifyOuterClass {
                                 done = true;
                                 break;
                             case 56:
-                                if ((mutable_bitField0_ & 1) == 0) {
+                                if ((mutable_bitField0_ & 2) == 0) {
                                     this.removeObstacleIds_ = newIntList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
                                 }
                                 this.removeObstacleIds_.addInt(input.readInt32());
                                 break;
                             case 58:
                                 int limit = input.pushLimit(input.readRawVarint32());
-                                if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
+                                if ((mutable_bitField0_ & 2) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.removeObstacleIds_ = newIntList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
                                 }
                                 while (input.getBytesUntilLimit() > 0) {
                                     this.removeObstacleIds_.addInt(input.readInt32());
                                 }
                                 input.popLimit(limit);
                                 break;
-                            case 96:
+                            case 72:
                                 this.sceneId_ = input.readUInt32();
                                 break;
-                            case 122:
-                                if ((mutable_bitField0_ & 2) == 0) {
+                            case 114:
+                                if ((mutable_bitField0_ & 1) == 0) {
                                     this.addObstacles_ = new ArrayList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                 }
                                 this.addObstacles_.add((ObstacleInfoOuterClass.ObstacleInfo) input.readMessage(ObstacleInfoOuterClass.ObstacleInfo.parser(), extensionRegistry));
                                 break;
@@ -167,10 +167,10 @@ public final class ObstacleModifyNotifyOuterClass {
                     }
                 }
             } finally {
-                if ((mutable_bitField0_ & 1) != 0) {
+                if ((mutable_bitField0_ & 2) != 0) {
                     this.removeObstacleIds_.makeImmutable();
                 }
-                if ((mutable_bitField0_ & 2) != 0) {
+                if ((mutable_bitField0_ & 1) != 0) {
                     this.addObstacles_ = Collections.unmodifiableList(this.addObstacles_);
                 }
                 this.unknownFields = unknownFields.build();
@@ -185,21 +185,6 @@ public final class ObstacleModifyNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return ObstacleModifyNotifyOuterClass.internal_static_ObstacleModifyNotify_fieldAccessorTable.ensureFieldAccessorsInitialized(ObstacleModifyNotify.class, Builder.class);
-        }
-
-        @Override // emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotifyOrBuilder
-        public List<Integer> getRemoveObstacleIdsList() {
-            return this.removeObstacleIds_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotifyOrBuilder
-        public int getRemoveObstacleIdsCount() {
-            return this.removeObstacleIds_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotifyOrBuilder
-        public int getRemoveObstacleIds(int index) {
-            return this.removeObstacleIds_.getInt(index);
         }
 
         @Override // emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotifyOrBuilder
@@ -225,6 +210,21 @@ public final class ObstacleModifyNotifyOuterClass {
         @Override // emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotifyOrBuilder
         public ObstacleInfoOuterClass.ObstacleInfoOrBuilder getAddObstaclesOrBuilder(int index) {
             return this.addObstacles_.get(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotifyOrBuilder
+        public List<Integer> getRemoveObstacleIdsList() {
+            return this.removeObstacleIds_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotifyOrBuilder
+        public int getRemoveObstacleIdsCount() {
+            return this.removeObstacleIds_.size();
+        }
+
+        @Override // emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotifyOrBuilder
+        public int getRemoveObstacleIds(int index) {
+            return this.removeObstacleIds_.getInt(index);
         }
 
         @Override // emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotifyOrBuilder
@@ -256,10 +256,10 @@ public final class ObstacleModifyNotifyOuterClass {
                 output.writeInt32NoTag(this.removeObstacleIds_.getInt(i));
             }
             if (this.sceneId_ != 0) {
-                output.writeUInt32(12, this.sceneId_);
+                output.writeUInt32(9, this.sceneId_);
             }
             for (int i2 = 0; i2 < this.addObstacles_.size(); i2++) {
-                output.writeMessage(15, this.addObstacles_.get(i2));
+                output.writeMessage(14, this.addObstacles_.get(i2));
             }
             this.unknownFields.writeTo(output);
         }
@@ -280,10 +280,10 @@ public final class ObstacleModifyNotifyOuterClass {
             }
             this.removeObstacleIdsMemoizedSerializedSize = dataSize;
             if (this.sceneId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.sceneId_);
+                size2 += CodedOutputStream.computeUInt32Size(9, this.sceneId_);
             }
             for (int i2 = 0; i2 < this.addObstacles_.size(); i2++) {
-                size2 += CodedOutputStream.computeMessageSize(15, this.addObstacles_.get(i2));
+                size2 += CodedOutputStream.computeMessageSize(14, this.addObstacles_.get(i2));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -299,7 +299,7 @@ public final class ObstacleModifyNotifyOuterClass {
                 return equals(obj);
             }
             ObstacleModifyNotify other = (ObstacleModifyNotify) obj;
-            return getRemoveObstacleIdsList().equals(other.getRemoveObstacleIdsList()) && getAddObstaclesList().equals(other.getAddObstaclesList()) && getSceneId() == other.getSceneId() && this.unknownFields.equals(other.unknownFields);
+            return getAddObstaclesList().equals(other.getAddObstaclesList()) && getRemoveObstacleIdsList().equals(other.getRemoveObstacleIdsList()) && getSceneId() == other.getSceneId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -308,13 +308,13 @@ public final class ObstacleModifyNotifyOuterClass {
                 return this.memoizedHashCode;
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
+            if (getAddObstaclesCount() > 0) {
+                hash = (53 * ((37 * hash) + 14)) + getAddObstaclesList().hashCode();
+            }
             if (getRemoveObstacleIdsCount() > 0) {
                 hash = (53 * ((37 * hash) + 7)) + getRemoveObstacleIdsList().hashCode();
             }
-            if (getAddObstaclesCount() > 0) {
-                hash = (53 * ((37 * hash) + 15)) + getAddObstaclesList().hashCode();
-            }
-            int hash2 = (29 * ((53 * ((37 * hash) + 12)) + getSceneId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 9)) + getSceneId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -394,10 +394,10 @@ public final class ObstacleModifyNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ObstacleModifyNotifyOuterClass$ObstacleModifyNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ObstacleModifyNotifyOrBuilder {
             private int bitField0_;
-            private Internal.IntList removeObstacleIds_ = ObstacleModifyNotify.emptyIntList();
-            private List<ObstacleInfoOuterClass.ObstacleInfo> addObstacles_ = Collections.emptyList();
             private RepeatedFieldBuilderV3<ObstacleInfoOuterClass.ObstacleInfo, ObstacleInfoOuterClass.ObstacleInfo.Builder, ObstacleInfoOuterClass.ObstacleInfoOrBuilder> addObstaclesBuilder_;
             private int sceneId_;
+            private List<ObstacleInfoOuterClass.ObstacleInfo> addObstacles_ = Collections.emptyList();
+            private Internal.IntList removeObstacleIds_ = ObstacleModifyNotify.emptyIntList();
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ObstacleModifyNotifyOuterClass.internal_static_ObstacleModifyNotify_descriptor;
@@ -426,14 +426,14 @@ public final class ObstacleModifyNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.removeObstacleIds_ = ObstacleModifyNotify.emptyIntList();
-                this.bitField0_ &= -2;
                 if (this.addObstaclesBuilder_ == null) {
                     this.addObstacles_ = Collections.emptyList();
-                    this.bitField0_ &= -3;
+                    this.bitField0_ &= -2;
                 } else {
                     this.addObstaclesBuilder_.clear();
                 }
+                this.removeObstacleIds_ = ObstacleModifyNotify.emptyIntList();
+                this.bitField0_ &= -3;
                 this.sceneId_ = 0;
                 return this;
             }
@@ -461,20 +461,20 @@ public final class ObstacleModifyNotifyOuterClass {
             public ObstacleModifyNotify buildPartial() {
                 ObstacleModifyNotify result = new ObstacleModifyNotify(this);
                 int i = this.bitField0_;
-                if ((this.bitField0_ & 1) != 0) {
-                    this.removeObstacleIds_.makeImmutable();
-                    this.bitField0_ &= -2;
-                }
-                result.removeObstacleIds_ = this.removeObstacleIds_;
                 if (this.addObstaclesBuilder_ == null) {
-                    if ((this.bitField0_ & 2) != 0) {
+                    if ((this.bitField0_ & 1) != 0) {
                         this.addObstacles_ = Collections.unmodifiableList(this.addObstacles_);
-                        this.bitField0_ &= -3;
+                        this.bitField0_ &= -2;
                     }
                     result.addObstacles_ = this.addObstacles_;
                 } else {
                     result.addObstacles_ = this.addObstaclesBuilder_.build();
                 }
+                if ((this.bitField0_ & 2) != 0) {
+                    this.removeObstacleIds_.makeImmutable();
+                    this.bitField0_ &= -3;
+                }
+                result.removeObstacleIds_ = this.removeObstacleIds_;
                 result.sceneId_ = this.sceneId_;
                 onBuilt();
                 return result;
@@ -523,21 +523,11 @@ public final class ObstacleModifyNotifyOuterClass {
                 if (other == ObstacleModifyNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (!other.removeObstacleIds_.isEmpty()) {
-                    if (this.removeObstacleIds_.isEmpty()) {
-                        this.removeObstacleIds_ = other.removeObstacleIds_;
-                        this.bitField0_ &= -2;
-                    } else {
-                        ensureRemoveObstacleIdsIsMutable();
-                        this.removeObstacleIds_.addAll(other.removeObstacleIds_);
-                    }
-                    onChanged();
-                }
                 if (this.addObstaclesBuilder_ == null) {
                     if (!other.addObstacles_.isEmpty()) {
                         if (this.addObstacles_.isEmpty()) {
                             this.addObstacles_ = other.addObstacles_;
-                            this.bitField0_ &= -3;
+                            this.bitField0_ &= -2;
                         } else {
                             ensureAddObstaclesIsMutable();
                             this.addObstacles_.addAll(other.addObstacles_);
@@ -549,11 +539,21 @@ public final class ObstacleModifyNotifyOuterClass {
                         this.addObstaclesBuilder_.dispose();
                         this.addObstaclesBuilder_ = null;
                         this.addObstacles_ = other.addObstacles_;
-                        this.bitField0_ &= -3;
+                        this.bitField0_ &= -2;
                         this.addObstaclesBuilder_ = ObstacleModifyNotify.alwaysUseFieldBuilders ? getAddObstaclesFieldBuilder() : null;
                     } else {
                         this.addObstaclesBuilder_.addAllMessages(other.addObstacles_);
                     }
+                }
+                if (!other.removeObstacleIds_.isEmpty()) {
+                    if (this.removeObstacleIds_.isEmpty()) {
+                        this.removeObstacleIds_ = other.removeObstacleIds_;
+                        this.bitField0_ &= -3;
+                    } else {
+                        ensureRemoveObstacleIdsIsMutable();
+                        this.removeObstacleIds_.addAll(other.removeObstacleIds_);
+                    }
+                    onChanged();
                 }
                 if (other.getSceneId() != 0) {
                     setSceneId(other.getSceneId());
@@ -590,60 +590,10 @@ public final class ObstacleModifyNotifyOuterClass {
                 }
             }
 
-            private void ensureRemoveObstacleIdsIsMutable() {
-                if ((this.bitField0_ & 1) == 0) {
-                    this.removeObstacleIds_ = ObstacleModifyNotify.mutableCopy(this.removeObstacleIds_);
-                    this.bitField0_ |= 1;
-                }
-            }
-
-            @Override // emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotifyOrBuilder
-            public List<Integer> getRemoveObstacleIdsList() {
-                return (this.bitField0_ & 1) != 0 ? Collections.unmodifiableList(this.removeObstacleIds_) : this.removeObstacleIds_;
-            }
-
-            @Override // emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotifyOrBuilder
-            public int getRemoveObstacleIdsCount() {
-                return this.removeObstacleIds_.size();
-            }
-
-            @Override // emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotifyOrBuilder
-            public int getRemoveObstacleIds(int index) {
-                return this.removeObstacleIds_.getInt(index);
-            }
-
-            public Builder setRemoveObstacleIds(int index, int value) {
-                ensureRemoveObstacleIdsIsMutable();
-                this.removeObstacleIds_.setInt(index, value);
-                onChanged();
-                return this;
-            }
-
-            public Builder addRemoveObstacleIds(int value) {
-                ensureRemoveObstacleIdsIsMutable();
-                this.removeObstacleIds_.addInt(value);
-                onChanged();
-                return this;
-            }
-
-            public Builder addAllRemoveObstacleIds(Iterable<? extends Integer> values) {
-                ensureRemoveObstacleIdsIsMutable();
-                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.removeObstacleIds_);
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRemoveObstacleIds() {
-                this.removeObstacleIds_ = ObstacleModifyNotify.emptyIntList();
-                this.bitField0_ &= -2;
-                onChanged();
-                return this;
-            }
-
             private void ensureAddObstaclesIsMutable() {
-                if ((this.bitField0_ & 2) == 0) {
+                if ((this.bitField0_ & 1) == 0) {
                     this.addObstacles_ = new ArrayList(this.addObstacles_);
-                    this.bitField0_ |= 2;
+                    this.bitField0_ |= 1;
                 }
             }
 
@@ -757,7 +707,7 @@ public final class ObstacleModifyNotifyOuterClass {
             public Builder clearAddObstacles() {
                 if (this.addObstaclesBuilder_ == null) {
                     this.addObstacles_ = Collections.emptyList();
-                    this.bitField0_ &= -3;
+                    this.bitField0_ &= -2;
                     onChanged();
                 } else {
                     this.addObstaclesBuilder_.clear();
@@ -810,10 +760,60 @@ public final class ObstacleModifyNotifyOuterClass {
 
             private RepeatedFieldBuilderV3<ObstacleInfoOuterClass.ObstacleInfo, ObstacleInfoOuterClass.ObstacleInfo.Builder, ObstacleInfoOuterClass.ObstacleInfoOrBuilder> getAddObstaclesFieldBuilder() {
                 if (this.addObstaclesBuilder_ == null) {
-                    this.addObstaclesBuilder_ = new RepeatedFieldBuilderV3<>(this.addObstacles_, (this.bitField0_ & 2) != 0, getParentForChildren(), isClean());
+                    this.addObstaclesBuilder_ = new RepeatedFieldBuilderV3<>(this.addObstacles_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
                     this.addObstacles_ = null;
                 }
                 return this.addObstaclesBuilder_;
+            }
+
+            private void ensureRemoveObstacleIdsIsMutable() {
+                if ((this.bitField0_ & 2) == 0) {
+                    this.removeObstacleIds_ = ObstacleModifyNotify.mutableCopy(this.removeObstacleIds_);
+                    this.bitField0_ |= 2;
+                }
+            }
+
+            @Override // emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotifyOrBuilder
+            public List<Integer> getRemoveObstacleIdsList() {
+                return (this.bitField0_ & 2) != 0 ? Collections.unmodifiableList(this.removeObstacleIds_) : this.removeObstacleIds_;
+            }
+
+            @Override // emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotifyOrBuilder
+            public int getRemoveObstacleIdsCount() {
+                return this.removeObstacleIds_.size();
+            }
+
+            @Override // emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotifyOrBuilder
+            public int getRemoveObstacleIds(int index) {
+                return this.removeObstacleIds_.getInt(index);
+            }
+
+            public Builder setRemoveObstacleIds(int index, int value) {
+                ensureRemoveObstacleIdsIsMutable();
+                this.removeObstacleIds_.setInt(index, value);
+                onChanged();
+                return this;
+            }
+
+            public Builder addRemoveObstacleIds(int value) {
+                ensureRemoveObstacleIdsIsMutable();
+                this.removeObstacleIds_.addInt(value);
+                onChanged();
+                return this;
+            }
+
+            public Builder addAllRemoveObstacleIds(Iterable<? extends Integer> values) {
+                ensureRemoveObstacleIdsIsMutable();
+                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.removeObstacleIds_);
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRemoveObstacleIds() {
+                this.removeObstacleIds_ = ObstacleModifyNotify.emptyIntList();
+                this.bitField0_ &= -3;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.ObstacleModifyNotifyOuterClass.ObstacleModifyNotifyOrBuilder

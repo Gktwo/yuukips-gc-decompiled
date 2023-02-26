@@ -88,25 +88,25 @@ public interface History extends Iterable<Entry> {
         return new Iterator<Entry>() { // from class: org.jline.reader.History.1
 
             /* renamed from: it */
-            private final ListIterator<Entry> f3229it;
+            private final ListIterator<Entry> f3193it;
 
             {
-                this.f3229it = History.this.iterator(index + 1);
+                this.f3193it = History.this.iterator(index + 1);
             }
 
             @Override // java.util.Iterator
             public boolean hasNext() {
-                return this.f3229it.hasPrevious();
+                return this.f3193it.hasPrevious();
             }
 
             @Override // java.util.Iterator
             public Entry next() {
-                return this.f3229it.previous();
+                return this.f3193it.previous();
             }
 
             @Override // java.util.Iterator
             public void remove() {
-                this.f3229it.remove();
+                this.f3193it.remove();
                 History.this.resetIndex();
             }
         };

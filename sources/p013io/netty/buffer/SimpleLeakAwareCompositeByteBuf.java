@@ -4,9 +4,10 @@ import java.nio.ByteOrder;
 import p013io.netty.util.ResourceLeakTracker;
 import p013io.netty.util.internal.ObjectUtil;
 
+/* access modifiers changed from: package-private */
 /* renamed from: io.netty.buffer.SimpleLeakAwareCompositeByteBuf */
 /* loaded from: grasscutter.jar:io/netty/buffer/SimpleLeakAwareCompositeByteBuf.class */
-class SimpleLeakAwareCompositeByteBuf extends WrappedCompositeByteBuf {
+public class SimpleLeakAwareCompositeByteBuf extends WrappedCompositeByteBuf {
     final ResourceLeakTracker<ByteBuf> leak;
     static final /* synthetic */ boolean $assertionsDisabled;
 

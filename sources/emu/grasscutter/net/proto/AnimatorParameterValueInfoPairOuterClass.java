@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AnimatorParameterValueInfoPairOuterClass.class */
 public final class AnimatorParameterValueInfoPairOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n$AnimatorParameterValueInfoPair.proto\u001a AnimatorParameterValueInfo.proto\"e\n\u001eAnimatorParameterValueInfoPair\u0012\u000f\n\u0007name_id\u0018\u0001 \u0001(\u0005\u00122\n\ranimator_para\u0018\u0002 \u0001(\u000b2\u001b.AnimatorParameterValueInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AnimatorParameterValueInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n$AnimatorParameterValueInfoPair.proto\u001a AnimatorParameterValueInfo.proto\"c\n\u001eAnimatorParameterValueInfoPair\u0012\u000e\n\u0006nameId\u0018\u0001 \u0001(\u0005\u00121\n\fanimatorPara\u0018\u0002 \u0001(\u000b2\u001b.AnimatorParameterValueInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AnimatorParameterValueInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AnimatorParameterValueInfoPair_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_AnimatorParameterValueInfoPair_fieldAccessorTable */
@@ -51,9 +51,9 @@ public final class AnimatorParameterValueInfoPairOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AnimatorParameterValueInfoPairOuterClass$AnimatorParameterValueInfoPair.class */
     public static final class AnimatorParameterValueInfoPair extends GeneratedMessageV3 implements AnimatorParameterValueInfoPairOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int NAME_ID_FIELD_NUMBER = 1;
+        public static final int NAMEID_FIELD_NUMBER = 1;
         private int nameId_;
-        public static final int ANIMATOR_PARA_FIELD_NUMBER = 2;
+        public static final int ANIMATORPARA_FIELD_NUMBER = 2;
         private AnimatorParameterValueInfoOuterClass.AnimatorParameterValueInfo animatorPara_;
         private byte memoizedIsInitialized;
         private static final AnimatorParameterValueInfoPair DEFAULT_INSTANCE = new AnimatorParameterValueInfoPair();

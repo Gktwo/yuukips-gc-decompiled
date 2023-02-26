@@ -26,18 +26,12 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PotionStageDataOuterClass.class */
 public final class PotionStageDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015PotionStageData.proto\u001a\u0015PotionLevelData.proto\"\u0001\n\u000fPotionStageData\u0012\u001b\n\u0013Unk3300_BMEHJHFCPMA\u0018\u0007 \u0003(\r\u0012\u001b\n\u0013Unk3300_NLMEPPPMCKI\u0018\t \u0003(\r\u0012\u0010\n\bstage_id\u0018\r \u0001(\r\u0012\u000f\n\u0007is_open\u0018\b \u0001(\b\u0012$\n\nlevel_list\u0018\u000b \u0003(\u000b2\u0010.PotionLevelDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PotionLevelDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015PotionStageData.proto\u001a\u0015PotionLevelData.proto\"\u0001\n\u000fPotionStageData\u0012\u001b\n\u0013Unk3300_NLMEPPPMCKI\u0018\t \u0003(\r\u0012\u000f\n\u0007stageId\u0018\u000e \u0001(\r\u0012\u001b\n\u0013Unk3300_BMEHJHFCPMA\u0018\f \u0003(\r\u0012#\n\tlevelList\u0018\u0001 \u0003(\u000b2\u0010.PotionLevelData\u0012\u000e\n\u0006isOpen\u0018\u000f \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PotionLevelDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_PotionStageData_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PotionStageData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PotionStageData_descriptor, new String[]{"Unk3300BMEHJHFCPMA", "Unk3300NLMEPPPMCKI", "StageId", "IsOpen", "LevelList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PotionStageData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PotionStageData_descriptor, new String[]{"Unk3300NLMEPPPMCKI", "StageId", "Unk3300BMEHJHFCPMA", "LevelList", "IsOpen"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PotionStageDataOuterClass$PotionStageDataOrBuilder.class */
     public interface PotionStageDataOrBuilder extends MessageOrBuilder {
-        List<Integer> getUnk3300BMEHJHFCPMAList();
-
-        int getUnk3300BMEHJHFCPMACount();
-
-        int getUnk3300BMEHJHFCPMA(int i);
-
         List<Integer> getUnk3300NLMEPPPMCKIList();
 
         int getUnk3300NLMEPPPMCKICount();
@@ -46,7 +40,11 @@ public final class PotionStageDataOuterClass {
 
         int getStageId();
 
-        boolean getIsOpen();
+        List<Integer> getUnk3300BMEHJHFCPMAList();
+
+        int getUnk3300BMEHJHFCPMACount();
+
+        int getUnk3300BMEHJHFCPMA(int i);
 
         List<PotionLevelDataOuterClass.PotionLevelData> getLevelListList();
 
@@ -57,6 +55,8 @@ public final class PotionStageDataOuterClass {
         List<? extends PotionLevelDataOuterClass.PotionLevelDataOrBuilder> getLevelListOrBuilderList();
 
         PotionLevelDataOuterClass.PotionLevelDataOrBuilder getLevelListOrBuilder(int i);
+
+        boolean getIsOpen();
     }
 
     private PotionStageDataOuterClass() {
@@ -72,18 +72,18 @@ public final class PotionStageDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PotionStageDataOuterClass$PotionStageData.class */
     public static final class PotionStageData extends GeneratedMessageV3 implements PotionStageDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int UNK3300_BMEHJHFCPMA_FIELD_NUMBER = 7;
-        private Internal.IntList unk3300BMEHJHFCPMA_;
-        private int unk3300BMEHJHFCPMAMemoizedSerializedSize;
         public static final int UNK3300_NLMEPPPMCKI_FIELD_NUMBER = 9;
         private Internal.IntList unk3300NLMEPPPMCKI_;
         private int unk3300NLMEPPPMCKIMemoizedSerializedSize;
-        public static final int STAGE_ID_FIELD_NUMBER = 13;
+        public static final int STAGEID_FIELD_NUMBER = 14;
         private int stageId_;
-        public static final int IS_OPEN_FIELD_NUMBER = 8;
-        private boolean isOpen_;
-        public static final int LEVEL_LIST_FIELD_NUMBER = 11;
+        public static final int UNK3300_BMEHJHFCPMA_FIELD_NUMBER = 12;
+        private Internal.IntList unk3300BMEHJHFCPMA_;
+        private int unk3300BMEHJHFCPMAMemoizedSerializedSize;
+        public static final int LEVELLIST_FIELD_NUMBER = 1;
         private List<PotionLevelDataOuterClass.PotionLevelData> levelList_;
+        public static final int ISOPEN_FIELD_NUMBER = 15;
+        private boolean isOpen_;
         private byte memoizedIsInitialized;
         private static final PotionStageData DEFAULT_INSTANCE = new PotionStageData();
         private static final Parser<PotionStageData> PARSER = new AbstractParser<PotionStageData>() { // from class: emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData.1
@@ -95,17 +95,17 @@ public final class PotionStageDataOuterClass {
 
         private PotionStageData(GeneratedMessageV3.Builder<?> builder) {
             super(builder);
-            this.unk3300BMEHJHFCPMAMemoizedSerializedSize = -1;
             this.unk3300NLMEPPPMCKIMemoizedSerializedSize = -1;
+            this.unk3300BMEHJHFCPMAMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
         }
 
         private PotionStageData() {
-            this.unk3300BMEHJHFCPMAMemoizedSerializedSize = -1;
             this.unk3300NLMEPPPMCKIMemoizedSerializedSize = -1;
+            this.unk3300BMEHJHFCPMAMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
-            this.unk3300BMEHJHFCPMA_ = emptyIntList();
             this.unk3300NLMEPPPMCKI_ = emptyIntList();
+            this.unk3300BMEHJHFCPMA_ = emptyIntList();
             this.levelList_ = Collections.emptyList();
         }
 
@@ -140,54 +140,54 @@ public final class PotionStageDataOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 56:
-                                    if ((mutable_bitField0_ & 1) == 0) {
-                                        this.unk3300BMEHJHFCPMA_ = newIntList();
-                                        mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
-                                    }
-                                    this.unk3300BMEHJHFCPMA_.addInt(input.readUInt32());
-                                    break;
-                                case 58:
-                                    int limit = input.pushLimit(input.readRawVarint32());
-                                    if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
-                                        this.unk3300BMEHJHFCPMA_ = newIntList();
-                                        mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
-                                    }
-                                    while (input.getBytesUntilLimit() > 0) {
-                                        this.unk3300BMEHJHFCPMA_.addInt(input.readUInt32());
-                                    }
-                                    input.popLimit(limit);
-                                    break;
-                                case 64:
-                                    this.isOpen_ = input.readBool();
-                                    break;
-                                case 72:
-                                    if ((mutable_bitField0_ & 2) == 0) {
-                                        this.unk3300NLMEPPPMCKI_ = newIntList();
-                                        mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
-                                    }
-                                    this.unk3300NLMEPPPMCKI_.addInt(input.readUInt32());
-                                    break;
-                                case 74:
-                                    int limit2 = input.pushLimit(input.readRawVarint32());
-                                    if ((mutable_bitField0_ & 2) == 0 && input.getBytesUntilLimit() > 0) {
-                                        this.unk3300NLMEPPPMCKI_ = newIntList();
-                                        mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
-                                    }
-                                    while (input.getBytesUntilLimit() > 0) {
-                                        this.unk3300NLMEPPPMCKI_.addInt(input.readUInt32());
-                                    }
-                                    input.popLimit(limit2);
-                                    break;
-                                case 90:
+                                case 10:
                                     if ((mutable_bitField0_ & 4) == 0) {
                                         this.levelList_ = new ArrayList();
                                         mutable_bitField0_ = (mutable_bitField0_ | 4) == 1 ? 1 : 0;
                                     }
                                     this.levelList_.add((PotionLevelDataOuterClass.PotionLevelData) input.readMessage(PotionLevelDataOuterClass.PotionLevelData.parser(), extensionRegistry));
                                     break;
-                                case 104:
+                                case 72:
+                                    if ((mutable_bitField0_ & 1) == 0) {
+                                        this.unk3300NLMEPPPMCKI_ = newIntList();
+                                        mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                    }
+                                    this.unk3300NLMEPPPMCKI_.addInt(input.readUInt32());
+                                    break;
+                                case 74:
+                                    int limit = input.pushLimit(input.readRawVarint32());
+                                    if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
+                                        this.unk3300NLMEPPPMCKI_ = newIntList();
+                                        mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                    }
+                                    while (input.getBytesUntilLimit() > 0) {
+                                        this.unk3300NLMEPPPMCKI_.addInt(input.readUInt32());
+                                    }
+                                    input.popLimit(limit);
+                                    break;
+                                case 96:
+                                    if ((mutable_bitField0_ & 2) == 0) {
+                                        this.unk3300BMEHJHFCPMA_ = newIntList();
+                                        mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                    }
+                                    this.unk3300BMEHJHFCPMA_.addInt(input.readUInt32());
+                                    break;
+                                case 98:
+                                    int limit2 = input.pushLimit(input.readRawVarint32());
+                                    if ((mutable_bitField0_ & 2) == 0 && input.getBytesUntilLimit() > 0) {
+                                        this.unk3300BMEHJHFCPMA_ = newIntList();
+                                        mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                    }
+                                    while (input.getBytesUntilLimit() > 0) {
+                                        this.unk3300BMEHJHFCPMA_.addInt(input.readUInt32());
+                                    }
+                                    input.popLimit(limit2);
+                                    break;
+                                case 112:
                                     this.stageId_ = input.readUInt32();
+                                    break;
+                                case 120:
+                                    this.isOpen_ = input.readBool();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -206,14 +206,14 @@ public final class PotionStageDataOuterClass {
                     }
                 }
             } finally {
-                if ((mutable_bitField0_ & 1) != 0) {
-                    this.unk3300BMEHJHFCPMA_.makeImmutable();
-                }
-                if ((mutable_bitField0_ & 2) != 0) {
-                    this.unk3300NLMEPPPMCKI_.makeImmutable();
-                }
                 if ((mutable_bitField0_ & 4) != 0) {
                     this.levelList_ = Collections.unmodifiableList(this.levelList_);
+                }
+                if ((mutable_bitField0_ & 1) != 0) {
+                    this.unk3300NLMEPPPMCKI_.makeImmutable();
+                }
+                if ((mutable_bitField0_ & 2) != 0) {
+                    this.unk3300BMEHJHFCPMA_.makeImmutable();
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -227,21 +227,6 @@ public final class PotionStageDataOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return PotionStageDataOuterClass.internal_static_PotionStageData_fieldAccessorTable.ensureFieldAccessorsInitialized(PotionStageData.class, Builder.class);
-        }
-
-        @Override // emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder
-        public List<Integer> getUnk3300BMEHJHFCPMAList() {
-            return this.unk3300BMEHJHFCPMA_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder
-        public int getUnk3300BMEHJHFCPMACount() {
-            return this.unk3300BMEHJHFCPMA_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder
-        public int getUnk3300BMEHJHFCPMA(int index) {
-            return this.unk3300BMEHJHFCPMA_.getInt(index);
         }
 
         @Override // emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder
@@ -265,8 +250,18 @@ public final class PotionStageDataOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder
-        public boolean getIsOpen() {
-            return this.isOpen_;
+        public List<Integer> getUnk3300BMEHJHFCPMAList() {
+            return this.unk3300BMEHJHFCPMA_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder
+        public int getUnk3300BMEHJHFCPMACount() {
+            return this.unk3300BMEHJHFCPMA_.size();
+        }
+
+        @Override // emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder
+        public int getUnk3300BMEHJHFCPMA(int index) {
+            return this.unk3300BMEHJHFCPMA_.getInt(index);
         }
 
         @Override // emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder
@@ -294,6 +289,11 @@ public final class PotionStageDataOuterClass {
             return this.levelList_.get(index);
         }
 
+        @Override // emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder
+        public boolean getIsOpen() {
+            return this.isOpen_;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -310,15 +310,8 @@ public final class PotionStageDataOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (getUnk3300BMEHJHFCPMAList().size() > 0) {
-                output.writeUInt32NoTag(58);
-                output.writeUInt32NoTag(this.unk3300BMEHJHFCPMAMemoizedSerializedSize);
-            }
-            for (int i = 0; i < this.unk3300BMEHJHFCPMA_.size(); i++) {
-                output.writeUInt32NoTag(this.unk3300BMEHJHFCPMA_.getInt(i));
-            }
-            if (this.isOpen_) {
-                output.writeBool(8, this.isOpen_);
+            for (int i = 0; i < this.levelList_.size(); i++) {
+                output.writeMessage(1, this.levelList_.get(i));
             }
             if (getUnk3300NLMEPPPMCKIList().size() > 0) {
                 output.writeUInt32NoTag(74);
@@ -327,11 +320,18 @@ public final class PotionStageDataOuterClass {
             for (int i2 = 0; i2 < this.unk3300NLMEPPPMCKI_.size(); i2++) {
                 output.writeUInt32NoTag(this.unk3300NLMEPPPMCKI_.getInt(i2));
             }
-            for (int i3 = 0; i3 < this.levelList_.size(); i3++) {
-                output.writeMessage(11, this.levelList_.get(i3));
+            if (getUnk3300BMEHJHFCPMAList().size() > 0) {
+                output.writeUInt32NoTag(98);
+                output.writeUInt32NoTag(this.unk3300BMEHJHFCPMAMemoizedSerializedSize);
+            }
+            for (int i3 = 0; i3 < this.unk3300BMEHJHFCPMA_.size(); i3++) {
+                output.writeUInt32NoTag(this.unk3300BMEHJHFCPMA_.getInt(i3));
             }
             if (this.stageId_ != 0) {
-                output.writeUInt32(13, this.stageId_);
+                output.writeUInt32(14, this.stageId_);
+            }
+            if (this.isOpen_) {
+                output.writeBool(15, this.isOpen_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -342,36 +342,37 @@ public final class PotionStageDataOuterClass {
             if (size != -1) {
                 return size;
             }
+            int size2 = 0;
+            for (int i = 0; i < this.levelList_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(1, this.levelList_.get(i));
+            }
             int dataSize = 0;
-            for (int i = 0; i < this.unk3300BMEHJHFCPMA_.size(); i++) {
-                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.unk3300BMEHJHFCPMA_.getInt(i));
-            }
-            int size2 = 0 + dataSize;
-            if (!getUnk3300BMEHJHFCPMAList().isEmpty()) {
-                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
-            }
-            this.unk3300BMEHJHFCPMAMemoizedSerializedSize = dataSize;
-            if (this.isOpen_) {
-                size2 += CodedOutputStream.computeBoolSize(8, this.isOpen_);
-            }
-            int dataSize2 = 0;
             for (int i2 = 0; i2 < this.unk3300NLMEPPPMCKI_.size(); i2++) {
-                dataSize2 += CodedOutputStream.computeUInt32SizeNoTag(this.unk3300NLMEPPPMCKI_.getInt(i2));
+                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.unk3300NLMEPPPMCKI_.getInt(i2));
             }
-            int size3 = size2 + dataSize2;
+            int size3 = size2 + dataSize;
             if (!getUnk3300NLMEPPPMCKIList().isEmpty()) {
-                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize2);
+                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
-            this.unk3300NLMEPPPMCKIMemoizedSerializedSize = dataSize2;
-            for (int i3 = 0; i3 < this.levelList_.size(); i3++) {
-                size3 += CodedOutputStream.computeMessageSize(11, this.levelList_.get(i3));
+            this.unk3300NLMEPPPMCKIMemoizedSerializedSize = dataSize;
+            int dataSize2 = 0;
+            for (int i3 = 0; i3 < this.unk3300BMEHJHFCPMA_.size(); i3++) {
+                dataSize2 += CodedOutputStream.computeUInt32SizeNoTag(this.unk3300BMEHJHFCPMA_.getInt(i3));
             }
+            int size4 = size3 + dataSize2;
+            if (!getUnk3300BMEHJHFCPMAList().isEmpty()) {
+                size4 = size4 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize2);
+            }
+            this.unk3300BMEHJHFCPMAMemoizedSerializedSize = dataSize2;
             if (this.stageId_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(13, this.stageId_);
+                size4 += CodedOutputStream.computeUInt32Size(14, this.stageId_);
             }
-            int size4 = size3 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size4;
-            return size4;
+            if (this.isOpen_) {
+                size4 += CodedOutputStream.computeBoolSize(15, this.isOpen_);
+            }
+            int size5 = size4 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size5;
+            return size5;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -383,7 +384,7 @@ public final class PotionStageDataOuterClass {
                 return equals(obj);
             }
             PotionStageData other = (PotionStageData) obj;
-            return getUnk3300BMEHJHFCPMAList().equals(other.getUnk3300BMEHJHFCPMAList()) && getUnk3300NLMEPPPMCKIList().equals(other.getUnk3300NLMEPPPMCKIList()) && getStageId() == other.getStageId() && getIsOpen() == other.getIsOpen() && getLevelListList().equals(other.getLevelListList()) && this.unknownFields.equals(other.unknownFields);
+            return getUnk3300NLMEPPPMCKIList().equals(other.getUnk3300NLMEPPPMCKIList()) && getStageId() == other.getStageId() && getUnk3300BMEHJHFCPMAList().equals(other.getUnk3300BMEHJHFCPMAList()) && getLevelListList().equals(other.getLevelListList()) && getIsOpen() == other.getIsOpen() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -392,17 +393,17 @@ public final class PotionStageDataOuterClass {
                 return this.memoizedHashCode;
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
-            if (getUnk3300BMEHJHFCPMACount() > 0) {
-                hash = (53 * ((37 * hash) + 7)) + getUnk3300BMEHJHFCPMAList().hashCode();
-            }
             if (getUnk3300NLMEPPPMCKICount() > 0) {
                 hash = (53 * ((37 * hash) + 9)) + getUnk3300NLMEPPPMCKIList().hashCode();
             }
-            int hash2 = (53 * ((37 * ((53 * ((37 * hash) + 13)) + getStageId())) + 8)) + Internal.hashBoolean(getIsOpen());
-            if (getLevelListCount() > 0) {
-                hash2 = (53 * ((37 * hash2) + 11)) + getLevelListList().hashCode();
+            int hash2 = (53 * ((37 * hash) + 14)) + getStageId();
+            if (getUnk3300BMEHJHFCPMACount() > 0) {
+                hash2 = (53 * ((37 * hash2) + 12)) + getUnk3300BMEHJHFCPMAList().hashCode();
             }
-            int hash3 = (29 * hash2) + this.unknownFields.hashCode();
+            if (getLevelListCount() > 0) {
+                hash2 = (53 * ((37 * hash2) + 1)) + getLevelListList().hashCode();
+            }
+            int hash3 = (29 * ((53 * ((37 * hash2) + 15)) + Internal.hashBoolean(getIsOpen()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash3;
             return hash3;
         }
@@ -483,10 +484,10 @@ public final class PotionStageDataOuterClass {
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements PotionStageDataOrBuilder {
             private int bitField0_;
             private int stageId_;
-            private boolean isOpen_;
             private RepeatedFieldBuilderV3<PotionLevelDataOuterClass.PotionLevelData, PotionLevelDataOuterClass.PotionLevelData.Builder, PotionLevelDataOuterClass.PotionLevelDataOrBuilder> levelListBuilder_;
-            private Internal.IntList unk3300BMEHJHFCPMA_ = PotionStageData.emptyIntList();
+            private boolean isOpen_;
             private Internal.IntList unk3300NLMEPPPMCKI_ = PotionStageData.emptyIntList();
+            private Internal.IntList unk3300BMEHJHFCPMA_ = PotionStageData.emptyIntList();
             private List<PotionLevelDataOuterClass.PotionLevelData> levelList_ = Collections.emptyList();
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -516,18 +517,18 @@ public final class PotionStageDataOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.unk3300BMEHJHFCPMA_ = PotionStageData.emptyIntList();
-                this.bitField0_ &= -2;
                 this.unk3300NLMEPPPMCKI_ = PotionStageData.emptyIntList();
-                this.bitField0_ &= -3;
+                this.bitField0_ &= -2;
                 this.stageId_ = 0;
-                this.isOpen_ = false;
+                this.unk3300BMEHJHFCPMA_ = PotionStageData.emptyIntList();
+                this.bitField0_ &= -3;
                 if (this.levelListBuilder_ == null) {
                     this.levelList_ = Collections.emptyList();
                     this.bitField0_ &= -5;
                 } else {
                     this.levelListBuilder_.clear();
                 }
+                this.isOpen_ = false;
                 return this;
             }
 
@@ -555,17 +556,16 @@ public final class PotionStageDataOuterClass {
                 PotionStageData result = new PotionStageData(this);
                 int i = this.bitField0_;
                 if ((this.bitField0_ & 1) != 0) {
-                    this.unk3300BMEHJHFCPMA_.makeImmutable();
-                    this.bitField0_ &= -2;
-                }
-                result.unk3300BMEHJHFCPMA_ = this.unk3300BMEHJHFCPMA_;
-                if ((this.bitField0_ & 2) != 0) {
                     this.unk3300NLMEPPPMCKI_.makeImmutable();
-                    this.bitField0_ &= -3;
+                    this.bitField0_ &= -2;
                 }
                 result.unk3300NLMEPPPMCKI_ = this.unk3300NLMEPPPMCKI_;
                 result.stageId_ = this.stageId_;
-                result.isOpen_ = this.isOpen_;
+                if ((this.bitField0_ & 2) != 0) {
+                    this.unk3300BMEHJHFCPMA_.makeImmutable();
+                    this.bitField0_ &= -3;
+                }
+                result.unk3300BMEHJHFCPMA_ = this.unk3300BMEHJHFCPMA_;
                 if (this.levelListBuilder_ == null) {
                     if ((this.bitField0_ & 4) != 0) {
                         this.levelList_ = Collections.unmodifiableList(this.levelList_);
@@ -575,6 +575,7 @@ public final class PotionStageDataOuterClass {
                 } else {
                     result.levelList_ = this.levelListBuilder_.build();
                 }
+                result.isOpen_ = this.isOpen_;
                 onBuilt();
                 return result;
             }
@@ -622,20 +623,10 @@ public final class PotionStageDataOuterClass {
                 if (other == PotionStageData.getDefaultInstance()) {
                     return this;
                 }
-                if (!other.unk3300BMEHJHFCPMA_.isEmpty()) {
-                    if (this.unk3300BMEHJHFCPMA_.isEmpty()) {
-                        this.unk3300BMEHJHFCPMA_ = other.unk3300BMEHJHFCPMA_;
-                        this.bitField0_ &= -2;
-                    } else {
-                        ensureUnk3300BMEHJHFCPMAIsMutable();
-                        this.unk3300BMEHJHFCPMA_.addAll(other.unk3300BMEHJHFCPMA_);
-                    }
-                    onChanged();
-                }
                 if (!other.unk3300NLMEPPPMCKI_.isEmpty()) {
                     if (this.unk3300NLMEPPPMCKI_.isEmpty()) {
                         this.unk3300NLMEPPPMCKI_ = other.unk3300NLMEPPPMCKI_;
-                        this.bitField0_ &= -3;
+                        this.bitField0_ &= -2;
                     } else {
                         ensureUnk3300NLMEPPPMCKIIsMutable();
                         this.unk3300NLMEPPPMCKI_.addAll(other.unk3300NLMEPPPMCKI_);
@@ -645,8 +636,15 @@ public final class PotionStageDataOuterClass {
                 if (other.getStageId() != 0) {
                     setStageId(other.getStageId());
                 }
-                if (other.getIsOpen()) {
-                    setIsOpen(other.getIsOpen());
+                if (!other.unk3300BMEHJHFCPMA_.isEmpty()) {
+                    if (this.unk3300BMEHJHFCPMA_.isEmpty()) {
+                        this.unk3300BMEHJHFCPMA_ = other.unk3300BMEHJHFCPMA_;
+                        this.bitField0_ &= -3;
+                    } else {
+                        ensureUnk3300BMEHJHFCPMAIsMutable();
+                        this.unk3300BMEHJHFCPMA_.addAll(other.unk3300BMEHJHFCPMA_);
+                    }
+                    onChanged();
                 }
                 if (this.levelListBuilder_ == null) {
                     if (!other.levelList_.isEmpty()) {
@@ -669,6 +667,9 @@ public final class PotionStageDataOuterClass {
                     } else {
                         this.levelListBuilder_.addAllMessages(other.levelList_);
                     }
+                }
+                if (other.getIsOpen()) {
+                    setIsOpen(other.getIsOpen());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -702,66 +703,16 @@ public final class PotionStageDataOuterClass {
                 }
             }
 
-            private void ensureUnk3300BMEHJHFCPMAIsMutable() {
+            private void ensureUnk3300NLMEPPPMCKIIsMutable() {
                 if ((this.bitField0_ & 1) == 0) {
-                    this.unk3300BMEHJHFCPMA_ = PotionStageData.mutableCopy(this.unk3300BMEHJHFCPMA_);
+                    this.unk3300NLMEPPPMCKI_ = PotionStageData.mutableCopy(this.unk3300NLMEPPPMCKI_);
                     this.bitField0_ |= 1;
                 }
             }
 
             @Override // emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder
-            public List<Integer> getUnk3300BMEHJHFCPMAList() {
-                return (this.bitField0_ & 1) != 0 ? Collections.unmodifiableList(this.unk3300BMEHJHFCPMA_) : this.unk3300BMEHJHFCPMA_;
-            }
-
-            @Override // emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder
-            public int getUnk3300BMEHJHFCPMACount() {
-                return this.unk3300BMEHJHFCPMA_.size();
-            }
-
-            @Override // emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder
-            public int getUnk3300BMEHJHFCPMA(int index) {
-                return this.unk3300BMEHJHFCPMA_.getInt(index);
-            }
-
-            public Builder setUnk3300BMEHJHFCPMA(int index, int value) {
-                ensureUnk3300BMEHJHFCPMAIsMutable();
-                this.unk3300BMEHJHFCPMA_.setInt(index, value);
-                onChanged();
-                return this;
-            }
-
-            public Builder addUnk3300BMEHJHFCPMA(int value) {
-                ensureUnk3300BMEHJHFCPMAIsMutable();
-                this.unk3300BMEHJHFCPMA_.addInt(value);
-                onChanged();
-                return this;
-            }
-
-            public Builder addAllUnk3300BMEHJHFCPMA(Iterable<? extends Integer> values) {
-                ensureUnk3300BMEHJHFCPMAIsMutable();
-                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.unk3300BMEHJHFCPMA_);
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk3300BMEHJHFCPMA() {
-                this.unk3300BMEHJHFCPMA_ = PotionStageData.emptyIntList();
-                this.bitField0_ &= -2;
-                onChanged();
-                return this;
-            }
-
-            private void ensureUnk3300NLMEPPPMCKIIsMutable() {
-                if ((this.bitField0_ & 2) == 0) {
-                    this.unk3300NLMEPPPMCKI_ = PotionStageData.mutableCopy(this.unk3300NLMEPPPMCKI_);
-                    this.bitField0_ |= 2;
-                }
-            }
-
-            @Override // emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder
             public List<Integer> getUnk3300NLMEPPPMCKIList() {
-                return (this.bitField0_ & 2) != 0 ? Collections.unmodifiableList(this.unk3300NLMEPPPMCKI_) : this.unk3300NLMEPPPMCKI_;
+                return (this.bitField0_ & 1) != 0 ? Collections.unmodifiableList(this.unk3300NLMEPPPMCKI_) : this.unk3300NLMEPPPMCKI_;
             }
 
             @Override // emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder
@@ -797,7 +748,7 @@ public final class PotionStageDataOuterClass {
 
             public Builder clearUnk3300NLMEPPPMCKI() {
                 this.unk3300NLMEPPPMCKI_ = PotionStageData.emptyIntList();
-                this.bitField0_ &= -3;
+                this.bitField0_ &= -2;
                 onChanged();
                 return this;
             }
@@ -819,19 +770,52 @@ public final class PotionStageDataOuterClass {
                 return this;
             }
 
-            @Override // emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder
-            public boolean getIsOpen() {
-                return this.isOpen_;
+            private void ensureUnk3300BMEHJHFCPMAIsMutable() {
+                if ((this.bitField0_ & 2) == 0) {
+                    this.unk3300BMEHJHFCPMA_ = PotionStageData.mutableCopy(this.unk3300BMEHJHFCPMA_);
+                    this.bitField0_ |= 2;
+                }
             }
 
-            public Builder setIsOpen(boolean value) {
-                this.isOpen_ = value;
+            @Override // emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder
+            public List<Integer> getUnk3300BMEHJHFCPMAList() {
+                return (this.bitField0_ & 2) != 0 ? Collections.unmodifiableList(this.unk3300BMEHJHFCPMA_) : this.unk3300BMEHJHFCPMA_;
+            }
+
+            @Override // emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder
+            public int getUnk3300BMEHJHFCPMACount() {
+                return this.unk3300BMEHJHFCPMA_.size();
+            }
+
+            @Override // emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder
+            public int getUnk3300BMEHJHFCPMA(int index) {
+                return this.unk3300BMEHJHFCPMA_.getInt(index);
+            }
+
+            public Builder setUnk3300BMEHJHFCPMA(int index, int value) {
+                ensureUnk3300BMEHJHFCPMAIsMutable();
+                this.unk3300BMEHJHFCPMA_.setInt(index, value);
                 onChanged();
                 return this;
             }
 
-            public Builder clearIsOpen() {
-                this.isOpen_ = false;
+            public Builder addUnk3300BMEHJHFCPMA(int value) {
+                ensureUnk3300BMEHJHFCPMAIsMutable();
+                this.unk3300BMEHJHFCPMA_.addInt(value);
+                onChanged();
+                return this;
+            }
+
+            public Builder addAllUnk3300BMEHJHFCPMA(Iterable<? extends Integer> values) {
+                ensureUnk3300BMEHJHFCPMAIsMutable();
+                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.unk3300BMEHJHFCPMA_);
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300BMEHJHFCPMA() {
+                this.unk3300BMEHJHFCPMA_ = PotionStageData.emptyIntList();
+                this.bitField0_ &= -3;
                 onChanged();
                 return this;
             }
@@ -1010,6 +994,23 @@ public final class PotionStageDataOuterClass {
                     this.levelList_ = null;
                 }
                 return this.levelListBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageDataOrBuilder
+            public boolean getIsOpen() {
+                return this.isOpen_;
+            }
+
+            public Builder setIsOpen(boolean value) {
+                this.isOpen_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsOpen() {
+                this.isOpen_ = false;
+                onChanged();
+                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

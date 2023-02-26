@@ -25,16 +25,16 @@ public class IntOpenHashBigSet extends AbstractIntSet implements Serializable, C
     protected transient boolean containsNull;
 
     /* renamed from: n */
-    protected transient long f2192n;
+    protected transient long f2156n;
     protected transient long maxFill;
     protected final transient long minN;
 
     /* renamed from: f */
-    protected final float f2193f;
+    protected final float f2157f;
     protected long size;
 
     private void initMasks() {
-        this.mask = this.f2192n - 1;
+        this.mask = this.f2156n - 1;
         this.segmentMask = this.key[0].length - 1;
         this.baseMask = this.key.length - 1;
     }
@@ -42,15 +42,15 @@ public class IntOpenHashBigSet extends AbstractIntSet implements Serializable, C
     public IntOpenHashBigSet(long expected, float f) {
         if (f <= 0.0f || f > 1.0f) {
             throw new IllegalArgumentException("Load factor must be greater than 0 and smaller than or equal to 1");
-        } else if (this.f2192n < 0) {
+        } else if (this.f2156n < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2193f = f;
+            this.f2157f = f;
             long bigArraySize = HashCommon.bigArraySize(expected, f);
-            this.f2192n = bigArraySize;
+            this.f2156n = bigArraySize;
             this.minN = bigArraySize;
-            this.maxFill = HashCommon.maxFill(this.f2192n, f);
-            this.key = IntBigArrays.newBigArray(this.f2192n);
+            this.maxFill = HashCommon.maxFill(this.f2156n, f);
+            this.key = IntBigArrays.newBigArray(this.f2156n);
             initMasks();
         }
     }
@@ -144,8 +144,8 @@ public class IntOpenHashBigSet extends AbstractIntSet implements Serializable, C
     }
 
     private void ensureCapacity(long capacity) {
-        long needed = HashCommon.bigArraySize(capacity, this.f2193f);
-        if (needed > this.f2192n) {
+        long needed = HashCommon.bigArraySize(capacity, this.f2157f);
+        if (needed > this.f2156n) {
             rehash(needed);
         }
     }
@@ -153,7 +153,7 @@ public class IntOpenHashBigSet extends AbstractIntSet implements Serializable, C
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Integer> c) {
         long size = Size64.sizeOf(c);
-        if (((double) this.f2193f) <= 0.5d) {
+        if (((double) this.f2157f) <= 0.5d) {
             ensureCapacity(size);
         } else {
             ensureCapacity(size64() + size);
@@ -164,7 +164,7 @@ public class IntOpenHashBigSet extends AbstractIntSet implements Serializable, C
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntCollection, p014it.unimi.dsi.fastutil.ints.IntCollection
     public boolean addAll(IntCollection c) {
         long size = Size64.sizeOf(c);
-        if (((double) this.f2193f) <= 0.5d) {
+        if (((double) this.f2157f) <= 0.5d) {
             ensureCapacity(size);
         } else {
             ensureCapacity(size64() + size);
@@ -210,7 +210,7 @@ public class IntOpenHashBigSet extends AbstractIntSet implements Serializable, C
         if (j < this.maxFill) {
             return true;
         }
-        rehash(2 * this.f2192n);
+        rehash(2 * this.f2156n);
         return true;
     }
 
@@ -244,20 +244,20 @@ public class IntOpenHashBigSet extends AbstractIntSet implements Serializable, C
     private boolean removeEntry(int base, int displ) {
         this.size--;
         shiftKeys((((long) base) * 134217728) + ((long) displ));
-        if (this.f2192n <= this.minN || this.size >= this.maxFill / 4 || this.f2192n <= 16) {
+        if (this.f2156n <= this.minN || this.size >= this.maxFill / 4 || this.f2156n <= 16) {
             return true;
         }
-        rehash(this.f2192n / 2);
+        rehash(this.f2156n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
         this.size--;
-        if (this.f2192n <= this.minN || this.size >= this.maxFill / 4 || this.f2192n <= 16) {
+        if (this.f2156n <= this.minN || this.size >= this.maxFill / 4 || this.f2156n <= 16) {
             return true;
         }
-        rehash(this.f2192n / 2);
+        rehash(this.f2156n / 2);
         return true;
     }
 
@@ -348,20 +348,20 @@ public class IntOpenHashBigSet extends AbstractIntSet implements Serializable, C
         long last;
 
         /* renamed from: c */
-        long f2194c;
+        long f2158c;
         boolean mustReturnNull;
         IntArrayList wrapped;
 
         private SetIterator() {
             this.base = IntOpenHashBigSet.this.key.length;
             this.last = -1;
-            this.f2194c = IntOpenHashBigSet.this.size;
+            this.f2158c = IntOpenHashBigSet.this.size;
             this.mustReturnNull = IntOpenHashBigSet.this.containsNull;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2194c != 0;
+            return this.f2158c != 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntIterator, java.util.PrimitiveIterator.OfInt
@@ -370,10 +370,10 @@ public class IntOpenHashBigSet extends AbstractIntSet implements Serializable, C
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2194c--;
+            this.f2158c--;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = IntOpenHashBigSet.this.f2192n;
+                this.last = IntOpenHashBigSet.this.f2156n;
                 return 0;
             }
             int[][] key = IntOpenHashBigSet.this.key;
@@ -442,7 +442,7 @@ public class IntOpenHashBigSet extends AbstractIntSet implements Serializable, C
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == IntOpenHashBigSet.this.f2192n) {
+            if (this.last == IntOpenHashBigSet.this.f2156n) {
                 IntOpenHashBigSet.this.containsNull = false;
             } else if (this.base >= 0) {
                 shiftKeys(this.last);
@@ -470,22 +470,22 @@ public class IntOpenHashBigSet extends AbstractIntSet implements Serializable, C
         long max;
 
         /* renamed from: c */
-        long f2195c;
+        long f2159c;
         boolean mustReturnNull;
         boolean hasSplit;
 
         SetSpliterator() {
             this.pos = 0;
-            this.max = IntOpenHashBigSet.this.f2192n;
-            this.f2195c = 0;
+            this.max = IntOpenHashBigSet.this.f2156n;
+            this.f2159c = 0;
             this.mustReturnNull = IntOpenHashBigSet.this.containsNull;
             this.hasSplit = false;
         }
 
         SetSpliterator(long pos, long max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = IntOpenHashBigSet.this.f2192n;
-            this.f2195c = 0;
+            this.max = IntOpenHashBigSet.this.f2156n;
+            this.f2159c = 0;
             this.mustReturnNull = IntOpenHashBigSet.this.containsNull;
             this.hasSplit = false;
             this.pos = pos;
@@ -498,7 +498,7 @@ public class IntOpenHashBigSet extends AbstractIntSet implements Serializable, C
         public boolean tryAdvance(IntConsumer action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2195c++;
+                this.f2159c++;
                 action.accept(0);
                 return true;
             }
@@ -506,7 +506,7 @@ public class IntOpenHashBigSet extends AbstractIntSet implements Serializable, C
             while (this.pos < this.max) {
                 int gotten = BigArrays.get(key, this.pos);
                 if (gotten != 0) {
-                    this.f2195c++;
+                    this.f2159c++;
                     this.pos++;
                     action.accept(gotten);
                     return true;
@@ -521,14 +521,14 @@ public class IntOpenHashBigSet extends AbstractIntSet implements Serializable, C
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
                 action.accept(0);
-                this.f2195c++;
+                this.f2159c++;
             }
             int[][] key = IntOpenHashBigSet.this.key;
             while (this.pos < this.max) {
                 int gotten = BigArrays.get(key, this.pos);
                 if (gotten != 0) {
                     action.accept(gotten);
-                    this.f2195c++;
+                    this.f2159c++;
                 }
                 this.pos++;
             }
@@ -542,9 +542,9 @@ public class IntOpenHashBigSet extends AbstractIntSet implements Serializable, C
         @Override // java.util.Spliterator
         public long estimateSize() {
             if (!this.hasSplit) {
-                return IntOpenHashBigSet.this.size - this.f2195c;
+                return IntOpenHashBigSet.this.size - this.f2159c;
             }
-            return Math.min(IntOpenHashBigSet.this.size - this.f2195c, ((long) ((((double) IntOpenHashBigSet.this.realSize()) / ((double) IntOpenHashBigSet.this.f2192n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min(IntOpenHashBigSet.this.size - this.f2159c, ((long) ((((double) IntOpenHashBigSet.this.realSize()) / ((double) IntOpenHashBigSet.this.f2156n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntSpliterator, java.util.Spliterator.OfInt, java.util.Spliterator.OfPrimitive, java.util.Spliterator
@@ -693,7 +693,7 @@ public class IntOpenHashBigSet extends AbstractIntSet implements Serializable, C
             r0 = 0
             r10 = r0
             r0 = r8
-            long r0 = r0.f2192n
+            long r0 = r0.f2156n
             r12 = r0
             r0 = r8
             int[][] r0 = r0.key
@@ -729,8 +729,8 @@ public class IntOpenHashBigSet extends AbstractIntSet implements Serializable, C
     }
 
     public boolean trim(long n) {
-        long l = HashCommon.bigArraySize(n, this.f2193f);
-        if (l >= this.f2192n || this.size > HashCommon.maxFill(l, this.f2193f)) {
+        long l = HashCommon.bigArraySize(n, this.f2157f);
+        if (l >= this.f2156n || this.size > HashCommon.maxFill(l, this.f2157f)) {
             return true;
         }
         try {
@@ -923,9 +923,9 @@ public class IntOpenHashBigSet extends AbstractIntSet implements Serializable, C
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int i;
         s.defaultReadObject();
-        this.f2192n = HashCommon.bigArraySize(this.size, this.f2193f);
-        this.maxFill = HashCommon.maxFill(this.f2192n, this.f2193f);
-        int[][] key = IntBigArrays.newBigArray(this.f2192n);
+        this.f2156n = HashCommon.bigArraySize(this.size, this.f2157f);
+        this.maxFill = HashCommon.maxFill(this.f2156n, this.f2157f);
+        int[][] key = IntBigArrays.newBigArray(this.f2156n);
         this.key = key;
         initMasks();
         long i2 = this.size;

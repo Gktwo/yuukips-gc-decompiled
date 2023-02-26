@@ -19,19 +19,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GameplayRecommendationReliquaryMainPropDataOuterClass.class */
 public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n1GameplayRecommendationReliquaryMainPropData.proto\"W\n+GameplayRecommendationReliquaryMainPropData\u0012\u0012\n\npermillage\u0018\u0005 \u0001(\r\u0012\u0014\n\fmain_prop_id\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n1GameplayRecommendationReliquaryMainPropData.proto\"V\n+GameplayRecommendationReliquaryMainPropData\u0012\u0012\n\nmainPropId\u0018\u0006 \u0001(\r\u0012\u0013\n\u000bkhfnbgnaclh\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
 
     /* renamed from: internal_static_GameplayRecommendationReliquaryMainPropData_descriptor */
-    private static final Descriptors.Descriptor f737xd25aba02 = getDescriptor().getMessageTypes().get(0);
+    private static final Descriptors.Descriptor f723xd25aba02 = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_GameplayRecommendationReliquaryMainPropData_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f738xdcf8be80 = new GeneratedMessageV3.FieldAccessorTable(f737xd25aba02, new String[]{"Permillage", "MainPropId"});
+    private static final GeneratedMessageV3.FieldAccessorTable f724xdcf8be80 = new GeneratedMessageV3.FieldAccessorTable(f723xd25aba02, new String[]{"MainPropId", "Khfnbgnaclh"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GameplayRecommendationReliquaryMainPropDataOuterClass$GameplayRecommendationReliquaryMainPropDataOrBuilder.class */
     public interface GameplayRecommendationReliquaryMainPropDataOrBuilder extends MessageOrBuilder {
-        int getPermillage();
-
         int getMainPropId();
+
+        int getKhfnbgnaclh();
     }
 
     private GameplayRecommendationReliquaryMainPropDataOuterClass() {
@@ -47,10 +47,10 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GameplayRecommendationReliquaryMainPropDataOuterClass$GameplayRecommendationReliquaryMainPropData.class */
     public static final class GameplayRecommendationReliquaryMainPropData extends GeneratedMessageV3 implements GameplayRecommendationReliquaryMainPropDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PERMILLAGE_FIELD_NUMBER = 5;
-        private int permillage_;
-        public static final int MAIN_PROP_ID_FIELD_NUMBER = 10;
+        public static final int MAINPROPID_FIELD_NUMBER = 6;
         private int mainPropId_;
+        public static final int KHFNBGNACLH_FIELD_NUMBER = 9;
+        private int khfnbgnaclh_;
         private byte memoizedIsInitialized;
         private static final GameplayRecommendationReliquaryMainPropData DEFAULT_INSTANCE = new GameplayRecommendationReliquaryMainPropData();
         private static final Parser<GameplayRecommendationReliquaryMainPropData> PARSER = new AbstractParser<GameplayRecommendationReliquaryMainPropData>() { // from class: emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropData.1
@@ -96,11 +96,11 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 40:
-                                this.permillage_ = input.readUInt32();
-                                break;
-                            case 80:
+                            case 48:
                                 this.mainPropId_ = input.readUInt32();
+                                break;
+                            case 72:
+                                this.khfnbgnaclh_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -123,22 +123,22 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
         }
 
         public static final Descriptors.Descriptor getDescriptor() {
-            return GameplayRecommendationReliquaryMainPropDataOuterClass.f737xd25aba02;
+            return GameplayRecommendationReliquaryMainPropDataOuterClass.f723xd25aba02;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return GameplayRecommendationReliquaryMainPropDataOuterClass.f738xdcf8be80.ensureFieldAccessorsInitialized(GameplayRecommendationReliquaryMainPropData.class, Builder.class);
-        }
-
-        @Override // emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder
-        public int getPermillage() {
-            return this.permillage_;
+            return GameplayRecommendationReliquaryMainPropDataOuterClass.f724xdcf8be80.ensureFieldAccessorsInitialized(GameplayRecommendationReliquaryMainPropData.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder
         public int getMainPropId() {
             return this.mainPropId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder
+        public int getKhfnbgnaclh() {
+            return this.khfnbgnaclh_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -156,11 +156,11 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.permillage_ != 0) {
-                output.writeUInt32(5, this.permillage_);
-            }
             if (this.mainPropId_ != 0) {
-                output.writeUInt32(10, this.mainPropId_);
+                output.writeUInt32(6, this.mainPropId_);
+            }
+            if (this.khfnbgnaclh_ != 0) {
+                output.writeUInt32(9, this.khfnbgnaclh_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -172,11 +172,11 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.permillage_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.permillage_);
-            }
             if (this.mainPropId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.mainPropId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.mainPropId_);
+            }
+            if (this.khfnbgnaclh_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(9, this.khfnbgnaclh_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -192,7 +192,7 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
                 return equals(obj);
             }
             GameplayRecommendationReliquaryMainPropData other = (GameplayRecommendationReliquaryMainPropData) obj;
-            return getPermillage() == other.getPermillage() && getMainPropId() == other.getMainPropId() && this.unknownFields.equals(other.unknownFields);
+            return getMainPropId() == other.getMainPropId() && getKhfnbgnaclh() == other.getKhfnbgnaclh() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -200,7 +200,7 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getPermillage())) + 10)) + getMainPropId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getMainPropId())) + 9)) + getKhfnbgnaclh())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -279,16 +279,16 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GameplayRecommendationReliquaryMainPropDataOuterClass$GameplayRecommendationReliquaryMainPropData$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements GameplayRecommendationReliquaryMainPropDataOrBuilder {
-            private int permillage_;
             private int mainPropId_;
+            private int khfnbgnaclh_;
 
             public static final Descriptors.Descriptor getDescriptor() {
-                return GameplayRecommendationReliquaryMainPropDataOuterClass.f737xd25aba02;
+                return GameplayRecommendationReliquaryMainPropDataOuterClass.f723xd25aba02;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return GameplayRecommendationReliquaryMainPropDataOuterClass.f738xdcf8be80.ensureFieldAccessorsInitialized(GameplayRecommendationReliquaryMainPropData.class, Builder.class);
+                return GameplayRecommendationReliquaryMainPropDataOuterClass.f724xdcf8be80.ensureFieldAccessorsInitialized(GameplayRecommendationReliquaryMainPropData.class, Builder.class);
             }
 
             private Builder() {
@@ -308,14 +308,14 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.permillage_ = 0;
                 this.mainPropId_ = 0;
+                this.khfnbgnaclh_ = 0;
                 return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
-                return GameplayRecommendationReliquaryMainPropDataOuterClass.f737xd25aba02;
+                return GameplayRecommendationReliquaryMainPropDataOuterClass.f723xd25aba02;
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -335,8 +335,8 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public GameplayRecommendationReliquaryMainPropData buildPartial() {
                 GameplayRecommendationReliquaryMainPropData result = new GameplayRecommendationReliquaryMainPropData(this);
-                result.permillage_ = this.permillage_;
                 result.mainPropId_ = this.mainPropId_;
+                result.khfnbgnaclh_ = this.khfnbgnaclh_;
                 onBuilt();
                 return result;
             }
@@ -384,11 +384,11 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
                 if (other == GameplayRecommendationReliquaryMainPropData.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getPermillage() != 0) {
-                    setPermillage(other.getPermillage());
-                }
                 if (other.getMainPropId() != 0) {
                     setMainPropId(other.getMainPropId());
+                }
+                if (other.getKhfnbgnaclh() != 0) {
+                    setKhfnbgnaclh(other.getKhfnbgnaclh());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -423,23 +423,6 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder
-            public int getPermillage() {
-                return this.permillage_;
-            }
-
-            public Builder setPermillage(int value) {
-                this.permillage_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearPermillage() {
-                this.permillage_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder
             public int getMainPropId() {
                 return this.mainPropId_;
             }
@@ -452,6 +435,23 @@ public final class GameplayRecommendationReliquaryMainPropDataOuterClass {
 
             public Builder clearMainPropId() {
                 this.mainPropId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GameplayRecommendationReliquaryMainPropDataOuterClass.GameplayRecommendationReliquaryMainPropDataOrBuilder
+            public int getKhfnbgnaclh() {
+                return this.khfnbgnaclh_;
+            }
+
+            public Builder setKhfnbgnaclh(int value) {
+                this.khfnbgnaclh_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearKhfnbgnaclh() {
+                this.khfnbgnaclh_ = 0;
                 onChanged();
                 return this;
             }

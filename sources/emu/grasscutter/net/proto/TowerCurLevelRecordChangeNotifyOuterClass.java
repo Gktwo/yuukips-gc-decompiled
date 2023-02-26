@@ -21,11 +21,11 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerCurLevelRecordChangeNotifyOuterClass.class */
 public final class TowerCurLevelRecordChangeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n%TowerCurLevelRecordChangeNotify.proto\u001a\u0019TowerCurLevelRecord.proto\"Q\n\u001fTowerCurLevelRecordChangeNotify\u0012.\n\u0010cur_level_record\u0018\u0001 \u0001(\u000b2\u0014.TowerCurLevelRecordB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{TowerCurLevelRecordOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n%TowerCurLevelRecordChangeNotify.proto\u001a\u0019TowerCurLevelRecord.proto\"O\n\u001fTowerCurLevelRecordChangeNotify\u0012,\n\u000ecurLevelRecord\u0018\u0005 \u0001(\u000b2\u0014.TowerCurLevelRecordB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{TowerCurLevelRecordOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_TowerCurLevelRecordChangeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_TowerCurLevelRecordChangeNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f891xf8627a84 = new GeneratedMessageV3.FieldAccessorTable(internal_static_TowerCurLevelRecordChangeNotify_descriptor, new String[]{"CurLevelRecord"});
+    private static final GeneratedMessageV3.FieldAccessorTable f861xf8627a84 = new GeneratedMessageV3.FieldAccessorTable(internal_static_TowerCurLevelRecordChangeNotify_descriptor, new String[]{"CurLevelRecord"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerCurLevelRecordChangeNotifyOuterClass$TowerCurLevelRecordChangeNotifyOrBuilder.class */
     public interface TowerCurLevelRecordChangeNotifyOrBuilder extends MessageOrBuilder {
@@ -49,7 +49,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerCurLevelRecordChangeNotifyOuterClass$TowerCurLevelRecordChangeNotify.class */
     public static final class TowerCurLevelRecordChangeNotify extends GeneratedMessageV3 implements TowerCurLevelRecordChangeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CUR_LEVEL_RECORD_FIELD_NUMBER = 1;
+        public static final int CURLEVELRECORD_FIELD_NUMBER = 5;
         private TowerCurLevelRecordOuterClass.TowerCurLevelRecord curLevelRecord_;
         private byte memoizedIsInitialized;
         private static final TowerCurLevelRecordChangeNotify DEFAULT_INSTANCE = new TowerCurLevelRecordChangeNotify();
@@ -96,7 +96,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 10:
+                            case 42:
                                 TowerCurLevelRecordOuterClass.TowerCurLevelRecord.Builder subBuilder = this.curLevelRecord_ != null ? this.curLevelRecord_.toBuilder() : null;
                                 this.curLevelRecord_ = (TowerCurLevelRecordOuterClass.TowerCurLevelRecord) input.readMessage(TowerCurLevelRecordOuterClass.TowerCurLevelRecord.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -132,7 +132,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return TowerCurLevelRecordChangeNotifyOuterClass.f891xf8627a84.ensureFieldAccessorsInitialized(TowerCurLevelRecordChangeNotify.class, Builder.class);
+            return TowerCurLevelRecordChangeNotifyOuterClass.f861xf8627a84.ensureFieldAccessorsInitialized(TowerCurLevelRecordChangeNotify.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.TowerCurLevelRecordChangeNotifyOuterClass.TowerCurLevelRecordChangeNotifyOrBuilder
@@ -166,7 +166,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.curLevelRecord_ != null) {
-                output.writeMessage(1, getCurLevelRecord());
+                output.writeMessage(5, getCurLevelRecord());
             }
             this.unknownFields.writeTo(output);
         }
@@ -179,7 +179,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
             }
             int size2 = 0;
             if (this.curLevelRecord_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(1, getCurLevelRecord());
+                size2 = 0 + CodedOutputStream.computeMessageSize(5, getCurLevelRecord());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -208,7 +208,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasCurLevelRecord()) {
-                hash = (53 * ((37 * hash) + 1)) + getCurLevelRecord().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getCurLevelRecord().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -298,7 +298,7 @@ public final class TowerCurLevelRecordChangeNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return TowerCurLevelRecordChangeNotifyOuterClass.f891xf8627a84.ensureFieldAccessorsInitialized(TowerCurLevelRecordChangeNotify.class, Builder.class);
+                return TowerCurLevelRecordChangeNotifyOuterClass.f861xf8627a84.ensureFieldAccessorsInitialized(TowerCurLevelRecordChangeNotify.class, Builder.class);
             }
 
             private Builder() {

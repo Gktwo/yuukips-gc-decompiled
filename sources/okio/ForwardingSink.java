@@ -64,7 +64,7 @@ public abstract class ForwardingSink implements Sink {
     @JvmName(name = "-deprecated_delegate")
     @NotNull
     /* renamed from: -deprecated_delegate  reason: not valid java name */
-    public final Sink m9391deprecated_delegate() {
+    public final Sink m9388deprecated_delegate() {
         return this.delegate;
     }
 }

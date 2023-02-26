@@ -10,28 +10,28 @@ public final class ULongKt {
     @WasExperimental(markerClass = {ExperimentalUnsignedTypes.class})
     @InlineOnly
     private static final long toULong(byte $this$toULong) {
-        return ULong.m7280constructorimpl((long) $this$toULong);
+        return ULong.m7277constructorimpl((long) $this$toULong);
     }
 
     @SinceKotlin(version = "1.5")
     @WasExperimental(markerClass = {ExperimentalUnsignedTypes.class})
     @InlineOnly
     private static final long toULong(short $this$toULong) {
-        return ULong.m7280constructorimpl((long) $this$toULong);
+        return ULong.m7277constructorimpl((long) $this$toULong);
     }
 
     @SinceKotlin(version = "1.5")
     @WasExperimental(markerClass = {ExperimentalUnsignedTypes.class})
     @InlineOnly
     private static final long toULong(int $this$toULong) {
-        return ULong.m7280constructorimpl((long) $this$toULong);
+        return ULong.m7277constructorimpl((long) $this$toULong);
     }
 
     @SinceKotlin(version = "1.5")
     @WasExperimental(markerClass = {ExperimentalUnsignedTypes.class})
     @InlineOnly
     private static final long toULong(long $this$toULong) {
-        return ULong.m7280constructorimpl($this$toULong);
+        return ULong.m7277constructorimpl($this$toULong);
     }
 
     @SinceKotlin(version = "1.5")

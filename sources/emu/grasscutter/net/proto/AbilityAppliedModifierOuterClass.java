@@ -24,7 +24,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityAppliedModifierOuterClass.class */
 public final class AbilityAppliedModifierOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cAbilityAppliedModifier.proto\u001a\u001dAbilityAttachedModifier.proto\u001a\u0013AbilityString.proto\u001a\u0018ModifierDurability.proto\"é\u0003\n\u0016AbilityAppliedModifier\u0012\u0019\n\u0011modifier_local_id\u0018\u0001 \u0001(\u0005\u0012 \n\u0018parent_ability_entity_id\u0018\u0002 \u0001(\r\u0012+\n\u0013parent_ability_name\u0018\u0003 \u0001(\u000b2\u000e.AbilityString\u0012/\n\u0017parent_ability_override\u0018\u0004 \u0001(\u000b2\u000e.AbilityString\u0012\u001c\n\u0014instanced_ability_id\u0018\u0005 \u0001(\r\u0012\u001d\n\u0015instanced_modifier_id\u0018\u0006 \u0001(\r\u0012\u0016\n\u000eexist_duration\u0018\u0007 \u0001(\u0002\u0012=\n\u001battached_instanced_modifier\u0018\b \u0001(\u000b2\u0018.AbilityAttachedModifier\u0012\u0017\n\u000fapply_entity_id\u0018\t \u0001(\r\u0012\"\n\u001ais_attached_parent_ability\u0018\n \u0001(\b\u00120\n\u0013modifier_durability\u0018\u000b \u0001(\u000b2\u0013.ModifierDurability\u0012\u0011\n\tsbuff_uid\u0018\f \u0001(\r\u0012\u001e\n\u0016is_serverbuff_modifier\u0018\r \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityAttachedModifierOuterClass.getDescriptor(), AbilityStringOuterClass.getDescriptor(), ModifierDurabilityOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cAbilityAppliedModifier.proto\u001a\u0013AbilityString.proto\u001a\u001dAbilityAttachedModifier.proto\u001a\u0018ModifierDurability.proto\"Ð\u0003\n\u0016AbilityAppliedModifier\u0012\u0017\n\u000fmodifierLocalId\u0018\u0001 \u0001(\u0005\u0012\u001d\n\u0015parentAbilityEntityId\u0018\u0002 \u0001(\r\u0012)\n\u0011parentAbilityName\u0018\u0003 \u0001(\u000b2\u000e.AbilityString\u0012-\n\u0015parentAbilityOverride\u0018\u0004 \u0001(\u000b2\u000e.AbilityString\u0012\u001a\n\u0012instancedAbilityId\u0018\u0005 \u0001(\r\u0012\u001b\n\u0013instancedModifierId\u0018\u0006 \u0001(\r\u0012\u0015\n\rexistDuration\u0018\u0007 \u0001(\u0002\u0012;\n\u0019attachedInstancedModifier\u0018\b \u0001(\u000b2\u0018.AbilityAttachedModifier\u0012\u0015\n\rapplyEntityId\u0018\t \u0001(\r\u0012\u001f\n\u0017isAttachedParentAbility\u0018\n \u0001(\b\u0012/\n\u0012modifierDurability\u0018\u000b \u0001(\u000b2\u0013.ModifierDurability\u0012\u0010\n\bsbuffUid\u0018\f \u0001(\r\u0012\u001c\n\u0014isServerbuffModifier\u0018\r \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityStringOuterClass.getDescriptor(), AbilityAttachedModifierOuterClass.getDescriptor(), ModifierDurabilityOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AbilityAppliedModifier_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AbilityAppliedModifier_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AbilityAppliedModifier_descriptor, new String[]{"ModifierLocalId", "ParentAbilityEntityId", "ParentAbilityName", "ParentAbilityOverride", "InstancedAbilityId", "InstancedModifierId", "ExistDuration", "AttachedInstancedModifier", "ApplyEntityId", "IsAttachedParentAbility", "ModifierDurability", "SbuffUid", "IsServerbuffModifier"});
 
@@ -86,31 +86,31 @@ public final class AbilityAppliedModifierOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityAppliedModifierOuterClass$AbilityAppliedModifier.class */
     public static final class AbilityAppliedModifier extends GeneratedMessageV3 implements AbilityAppliedModifierOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MODIFIER_LOCAL_ID_FIELD_NUMBER = 1;
+        public static final int MODIFIERLOCALID_FIELD_NUMBER = 1;
         private int modifierLocalId_;
-        public static final int PARENT_ABILITY_ENTITY_ID_FIELD_NUMBER = 2;
+        public static final int PARENTABILITYENTITYID_FIELD_NUMBER = 2;
         private int parentAbilityEntityId_;
-        public static final int PARENT_ABILITY_NAME_FIELD_NUMBER = 3;
+        public static final int PARENTABILITYNAME_FIELD_NUMBER = 3;
         private AbilityStringOuterClass.AbilityString parentAbilityName_;
-        public static final int PARENT_ABILITY_OVERRIDE_FIELD_NUMBER = 4;
+        public static final int PARENTABILITYOVERRIDE_FIELD_NUMBER = 4;
         private AbilityStringOuterClass.AbilityString parentAbilityOverride_;
-        public static final int INSTANCED_ABILITY_ID_FIELD_NUMBER = 5;
+        public static final int INSTANCEDABILITYID_FIELD_NUMBER = 5;
         private int instancedAbilityId_;
-        public static final int INSTANCED_MODIFIER_ID_FIELD_NUMBER = 6;
+        public static final int INSTANCEDMODIFIERID_FIELD_NUMBER = 6;
         private int instancedModifierId_;
-        public static final int EXIST_DURATION_FIELD_NUMBER = 7;
+        public static final int EXISTDURATION_FIELD_NUMBER = 7;
         private float existDuration_;
-        public static final int ATTACHED_INSTANCED_MODIFIER_FIELD_NUMBER = 8;
+        public static final int ATTACHEDINSTANCEDMODIFIER_FIELD_NUMBER = 8;
         private AbilityAttachedModifierOuterClass.AbilityAttachedModifier attachedInstancedModifier_;
-        public static final int APPLY_ENTITY_ID_FIELD_NUMBER = 9;
+        public static final int APPLYENTITYID_FIELD_NUMBER = 9;
         private int applyEntityId_;
-        public static final int IS_ATTACHED_PARENT_ABILITY_FIELD_NUMBER = 10;
+        public static final int ISATTACHEDPARENTABILITY_FIELD_NUMBER = 10;
         private boolean isAttachedParentAbility_;
-        public static final int MODIFIER_DURABILITY_FIELD_NUMBER = 11;
+        public static final int MODIFIERDURABILITY_FIELD_NUMBER = 11;
         private ModifierDurabilityOuterClass.ModifierDurability modifierDurability_;
-        public static final int SBUFF_UID_FIELD_NUMBER = 12;
+        public static final int SBUFFUID_FIELD_NUMBER = 12;
         private int sbuffUid_;
-        public static final int IS_SERVERBUFF_MODIFIER_FIELD_NUMBER = 13;
+        public static final int ISSERVERBUFFMODIFIER_FIELD_NUMBER = 13;
         private boolean isServerbuffModifier_;
         private byte memoizedIsInitialized;
         private static final AbilityAppliedModifier DEFAULT_INSTANCE = new AbilityAppliedModifier();
@@ -1350,8 +1350,8 @@ public final class AbilityAppliedModifierOuterClass {
     }
 
     static {
-        AbilityAttachedModifierOuterClass.getDescriptor();
         AbilityStringOuterClass.getDescriptor();
+        AbilityAttachedModifierOuterClass.getDescriptor();
         ModifierDurabilityOuterClass.getDescriptor();
     }
 }

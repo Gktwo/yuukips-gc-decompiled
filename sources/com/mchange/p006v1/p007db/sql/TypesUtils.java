@@ -1,7 +1,6 @@
 package com.mchange.p006v1.p007db.sql;
 
 import dev.morphia.mapping.codec.reader.ArrayState;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import org.quartz.impl.jdbcjobstore.Constants;
 import p001ch.qos.logback.core.joran.action.ActionConst;
 import p013io.netty.channel.SelectStrategy;
@@ -53,13 +52,13 @@ public final class TypesUtils {
                 return "TIMESTAMP";
             case RET_DUNGEON_CANDIDATE_TEAM_NOT_ALL_READY_VALUE:
                 throw new UnsupportedTypeException("Type OTHER cannot be represented as a String.");
-            case PacketOpcodes.SetCoopChapterViewedRsp /* 2000 */:
+            case 2000:
                 throw new UnsupportedTypeException("Type JAVA_OBJECT cannot be represented as a String.");
             case 2002:
                 return "STRUCT";
             case 2003:
                 return ArrayState.NAME;
-            case RET_ORDER_INFO_NOT_EXIST_VALUE:
+            case 2004:
                 return Constants.TTYPE_BLOB;
             case 2005:
                 return "CLOB";

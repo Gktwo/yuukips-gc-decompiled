@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChangeTeamNameRspOuterClass.class */
 public final class ChangeTeamNameRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017ChangeTeamNameRsp.proto\"H\n\u0011ChangeTeamNameRsp\u0012\u000f\n\u0007retcode\u0018\u0002 \u0001(\u0005\u0012\u0011\n\tteam_name\u0018\u000f \u0001(\t\u0012\u000f\n\u0007team_id\u0018\u0005 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017ChangeTeamNameRsp.proto\"F\n\u0011ChangeTeamNameRsp\u0012\u000f\n\u0007retcode\u0018\u000e \u0001(\u0005\u0012\u0010\n\bteamName\u0018\u0002 \u0001(\t\u0012\u000e\n\u0006teamId\u0018\u0003 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ChangeTeamNameRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChangeTeamNameRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChangeTeamNameRsp_descriptor, new String[]{"Retcode", "TeamName", "TeamId"});
 
@@ -47,11 +47,11 @@ public final class ChangeTeamNameRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChangeTeamNameRspOuterClass$ChangeTeamNameRsp.class */
     public static final class ChangeTeamNameRsp extends GeneratedMessageV3 implements ChangeTeamNameRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 2;
+        public static final int RETCODE_FIELD_NUMBER = 14;
         private int retcode_;
-        public static final int TEAM_NAME_FIELD_NUMBER = 15;
+        public static final int TEAMNAME_FIELD_NUMBER = 2;
         private volatile Object teamName_;
-        public static final int TEAM_ID_FIELD_NUMBER = 5;
+        public static final int TEAMID_FIELD_NUMBER = 3;
         private int teamId_;
         private byte memoizedIsInitialized;
         private static final ChangeTeamNameRsp DEFAULT_INSTANCE = new ChangeTeamNameRsp();
@@ -99,14 +99,14 @@ public final class ChangeTeamNameRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 16:
-                                this.retcode_ = input.readInt32();
+                            case 18:
+                                this.teamName_ = input.readStringRequireUtf8();
                                 break;
-                            case 40:
+                            case 24:
                                 this.teamId_ = input.readInt32();
                                 break;
-                            case 122:
-                                this.teamName_ = input.readStringRequireUtf8();
+                            case 112:
+                                this.retcode_ = input.readInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -184,14 +184,14 @@ public final class ChangeTeamNameRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.retcode_ != 0) {
-                output.writeInt32(2, this.retcode_);
+            if (!GeneratedMessageV3.isStringEmpty(this.teamName_)) {
+                GeneratedMessageV3.writeString(output, 2, this.teamName_);
             }
             if (this.teamId_ != 0) {
-                output.writeInt32(5, this.teamId_);
+                output.writeInt32(3, this.teamId_);
             }
-            if (!GeneratedMessageV3.isStringEmpty(this.teamName_)) {
-                GeneratedMessageV3.writeString(output, 15, this.teamName_);
+            if (this.retcode_ != 0) {
+                output.writeInt32(14, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -203,14 +203,14 @@ public final class ChangeTeamNameRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(2, this.retcode_);
+            if (!GeneratedMessageV3.isStringEmpty(this.teamName_)) {
+                size2 = 0 + GeneratedMessageV3.computeStringSize(2, this.teamName_);
             }
             if (this.teamId_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(5, this.teamId_);
+                size2 += CodedOutputStream.computeInt32Size(3, this.teamId_);
             }
-            if (!GeneratedMessageV3.isStringEmpty(this.teamName_)) {
-                size2 += GeneratedMessageV3.computeStringSize(15, this.teamName_);
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(14, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -234,7 +234,7 @@ public final class ChangeTeamNameRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getRetcode())) + 15)) + getTeamName().hashCode())) + 5)) + getTeamId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getRetcode())) + 2)) + getTeamName().hashCode())) + 3)) + getTeamId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

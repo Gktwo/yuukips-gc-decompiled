@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AddQuestContentProgressRspOuterClass.class */
 public final class AddQuestContentProgressRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n AddQuestContentProgressRsp.proto\"C\n\u001aAddQuestContentProgressRsp\u0012\u0014\n\fcontent_type\u0018\u0007 \u0001(\r\u0012\u000f\n\u0007retcode\u0018\f \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n AddQuestContentProgressRsp.proto\"B\n\u001aAddQuestContentProgressRsp\u0012\u0013\n\u000bcontentType\u0018\r \u0001(\r\u0012\u000f\n\u0007retcode\u0018\b \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AddQuestContentProgressRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AddQuestContentProgressRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AddQuestContentProgressRsp_descriptor, new String[]{"ContentType", "Retcode"});
 
@@ -43,9 +43,9 @@ public final class AddQuestContentProgressRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AddQuestContentProgressRspOuterClass$AddQuestContentProgressRsp.class */
     public static final class AddQuestContentProgressRsp extends GeneratedMessageV3 implements AddQuestContentProgressRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CONTENT_TYPE_FIELD_NUMBER = 7;
+        public static final int CONTENTTYPE_FIELD_NUMBER = 13;
         private int contentType_;
-        public static final int RETCODE_FIELD_NUMBER = 12;
+        public static final int RETCODE_FIELD_NUMBER = 8;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final AddQuestContentProgressRsp DEFAULT_INSTANCE = new AddQuestContentProgressRsp();
@@ -92,11 +92,11 @@ public final class AddQuestContentProgressRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 56:
-                                this.contentType_ = input.readUInt32();
-                                break;
-                            case 96:
+                            case 64:
                                 this.retcode_ = input.readInt32();
+                                break;
+                            case 104:
+                                this.contentType_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -152,11 +152,11 @@ public final class AddQuestContentProgressRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.contentType_ != 0) {
-                output.writeUInt32(7, this.contentType_);
-            }
             if (this.retcode_ != 0) {
-                output.writeInt32(12, this.retcode_);
+                output.writeInt32(8, this.retcode_);
+            }
+            if (this.contentType_ != 0) {
+                output.writeUInt32(13, this.contentType_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class AddQuestContentProgressRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.contentType_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.contentType_);
-            }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(12, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(8, this.retcode_);
+            }
+            if (this.contentType_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(13, this.contentType_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class AddQuestContentProgressRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getContentType())) + 12)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + getContentType())) + 8)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

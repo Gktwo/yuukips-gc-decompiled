@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityClientDataOuterClass.class */
 public final class EntityClientDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016EntityClientData.proto\"q\n\u0010EntityClientData\u0012\u001e\n\u0016wind_change_scene_time\u0018\u0001 \u0001(\r\u0012\u001b\n\u0013windmill_sync_angle\u0018\u0002 \u0001(\u0002\u0012 \n\u0018wind_change_target_level\u0018\u0003 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016EntityClientData.proto\"i\n\u0010EntityClientData\u0012\u001b\n\u0013windChangeSceneTime\u0018\u0001 \u0001(\r\u0012\u0019\n\u0011windmillSyncAngle\u0018\u0002 \u0001(\u0002\u0012\u001d\n\u0015windChangeTargetLevel\u0018\u0003 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_EntityClientData_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_EntityClientData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EntityClientData_descriptor, new String[]{"WindChangeSceneTime", "WindmillSyncAngle", "WindChangeTargetLevel"});
 
@@ -45,11 +45,11 @@ public final class EntityClientDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityClientDataOuterClass$EntityClientData.class */
     public static final class EntityClientData extends GeneratedMessageV3 implements EntityClientDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int WIND_CHANGE_SCENE_TIME_FIELD_NUMBER = 1;
+        public static final int WINDCHANGESCENETIME_FIELD_NUMBER = 1;
         private int windChangeSceneTime_;
-        public static final int WINDMILL_SYNC_ANGLE_FIELD_NUMBER = 2;
+        public static final int WINDMILLSYNCANGLE_FIELD_NUMBER = 2;
         private float windmillSyncAngle_;
-        public static final int WIND_CHANGE_TARGET_LEVEL_FIELD_NUMBER = 3;
+        public static final int WINDCHANGETARGETLEVEL_FIELD_NUMBER = 3;
         private int windChangeTargetLevel_;
         private byte memoizedIsInitialized;
         private static final EntityClientData DEFAULT_INSTANCE = new EntityClientData();

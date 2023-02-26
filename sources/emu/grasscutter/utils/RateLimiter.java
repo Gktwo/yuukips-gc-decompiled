@@ -6,7 +6,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
-import org.eclipse.jetty.http.HttpStatus;
 import p013io.javalin.http.HttpResponseException;
 
 /*  JADX ERROR: NullPointerException in pass: ExtractFieldInit
@@ -118,7 +117,7 @@ public class RateLimiter {
 
     public static void rateLimit(String name, String key, long decrementDelay, TimeUnit unit, long limit) {
         if (getRateLimiter(name, decrementDelay, unit, limit).rateLimit(key)) {
-            throw new HttpResponseException(HttpStatus.TOO_MANY_REQUESTS_429, "Rate limit exceeded", Map.of());
+            throw new HttpResponseException(429, "Rate limit exceeded", Map.of());
         }
     }
 }

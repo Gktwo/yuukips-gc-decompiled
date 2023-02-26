@@ -37,11 +37,11 @@ public class StringMemberValue extends MemberValue {
     }
 
     public String getValue() {
-        return this.f3074cp.getUtf8Info(this.valueIndex);
+        return this.f3038cp.getUtf8Info(this.valueIndex);
     }
 
     public void setValue(String newValue) {
-        this.valueIndex = this.f3074cp.addUtf8Info(newValue);
+        this.valueIndex = this.f3038cp.addUtf8Info(newValue);
     }
 
     public String toString() {

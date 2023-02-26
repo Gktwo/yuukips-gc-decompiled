@@ -24,9 +24,9 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RoutePointOuterClass.class */
 public final class RoutePointOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010RoutePoint.proto\u001a\u0014MathQuaternion.proto\u001a\fVector.proto\"\u0002\n\nRoutePoint\u0012\u0019\n\bposition\u0018\u0001 \u0001(\u000b2\u0007.Vector\u0012\u0014\n\farrive_range\u0018\u0002 \u0001(\u0002\u0012\u0017\n\u000fhas_reach_event\u0018\u0003 \u0001(\b\u0012\u0012\n\bvelocity\u0018\u000b \u0001(\u0002H��\u0012\u000e\n\u0004time\u0018\f \u0001(\u0002H��\u0012\u001b\n\brotation\u0018\u0015 \u0001(\u000b2\u0007.VectorH\u0001\u0012)\n\u000erotation_speed\u0018\u0016 \u0001(\u000b2\u000f.MathQuaternionH\u0001\u0012%\n\naxis_speed\u0018\u0017 \u0001(\u000b2\u000f.MathQuaternionH\u0001B\r\n\u000bmove_paramsB\u000f\n\rrotate_paramsB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MathQuaternionOuterClass.getDescriptor(), VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010RoutePoint.proto\u001a\fVector.proto\u001a\u0014MathQuaternion.proto\"\u0002\n\nRoutePoint\u0012\u0019\n\bposition\u0018\u0001 \u0001(\u000b2\u0007.Vector\u0012\u0013\n\u000barriveRange\u0018\u0002 \u0001(\u0002\u0012\u0015\n\rhasReachEvent\u0018\u0003 \u0001(\b\u0012\u0012\n\bvelocity\u0018\u000b \u0001(\u0002H��\u0012\u000e\n\u0004time\u0018\f \u0001(\u0002H��\u0012\u0019\n\u0006Vector\u0018\u0015 \u0001(\u000b2\u0007.VectorH\u0001\u0012)\n\u000erotation_speed\u0018\u0016 \u0001(\u000b2\u000f.MathQuaternionH\u0001\u0012%\n\naxis_speed\u0018\u0017 \u0001(\u000b2\u000f.MathQuaternionH\u0001B\r\n\u000bmove_paramsB\u000f\n\rrotate_paramsB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor(), MathQuaternionOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_RoutePoint_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_RoutePoint_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_RoutePoint_descriptor, new String[]{"Position", "ArriveRange", "HasReachEvent", "Velocity", "Time", "Rotation", "RotationSpeed", "AxisSpeed", "MoveParams", "RotateParams"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_RoutePoint_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_RoutePoint_descriptor, new String[]{"Position", "ArriveRange", "HasReachEvent", "Velocity", "Time", "Vector", "RotationSpeed", "AxisSpeed", "MoveParams", "RotateParams"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RoutePointOuterClass$RoutePointOrBuilder.class */
     public interface RoutePointOrBuilder extends MessageOrBuilder {
@@ -48,11 +48,11 @@ public final class RoutePointOuterClass {
 
         float getTime();
 
-        boolean hasRotation();
+        boolean hasVector();
 
-        VectorOuterClass.Vector getRotation();
+        VectorOuterClass.Vector getVector();
 
-        VectorOuterClass.VectorOrBuilder getRotationOrBuilder();
+        VectorOuterClass.VectorOrBuilder getVectorOrBuilder();
 
         boolean hasRotationSpeed();
 
@@ -90,13 +90,13 @@ public final class RoutePointOuterClass {
         private Object rotateParams_;
         public static final int POSITION_FIELD_NUMBER = 1;
         private VectorOuterClass.Vector position_;
-        public static final int ARRIVE_RANGE_FIELD_NUMBER = 2;
+        public static final int ARRIVERANGE_FIELD_NUMBER = 2;
         private float arriveRange_;
-        public static final int HAS_REACH_EVENT_FIELD_NUMBER = 3;
+        public static final int HASREACHEVENT_FIELD_NUMBER = 3;
         private boolean hasReachEvent_;
         public static final int VELOCITY_FIELD_NUMBER = 11;
         public static final int TIME_FIELD_NUMBER = 12;
-        public static final int ROTATION_FIELD_NUMBER = 21;
+        public static final int VECTOR_FIELD_NUMBER = 21;
         public static final int ROTATION_SPEED_FIELD_NUMBER = 22;
         public static final int AXIS_SPEED_FIELD_NUMBER = 23;
         private byte memoizedIsInitialized;
@@ -271,7 +271,7 @@ public final class RoutePointOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RoutePointOuterClass$RoutePoint$RotateParamsCase.class */
         public enum RotateParamsCase implements Internal.EnumLite, AbstractMessageLite.InternalOneOfEnum {
-            ROTATION(21),
+            VECTOR(21),
             ROTATION_SPEED(22),
             AXIS_SPEED(23),
             ROTATEPARAMS_NOT_SET(0);
@@ -292,7 +292,7 @@ public final class RoutePointOuterClass {
                     case 0:
                         return ROTATEPARAMS_NOT_SET;
                     case 21:
-                        return ROTATION;
+                        return VECTOR;
                     case 22:
                         return ROTATION_SPEED;
                     case 23:
@@ -365,12 +365,12 @@ public final class RoutePointOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.RoutePointOuterClass.RoutePointOrBuilder
-        public boolean hasRotation() {
+        public boolean hasVector() {
             return this.rotateParamsCase_ == 21;
         }
 
         @Override // emu.grasscutter.net.proto.RoutePointOuterClass.RoutePointOrBuilder
-        public VectorOuterClass.Vector getRotation() {
+        public VectorOuterClass.Vector getVector() {
             if (this.rotateParamsCase_ == 21) {
                 return (VectorOuterClass.Vector) this.rotateParams_;
             }
@@ -378,7 +378,7 @@ public final class RoutePointOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.RoutePointOuterClass.RoutePointOrBuilder
-        public VectorOuterClass.VectorOrBuilder getRotationOrBuilder() {
+        public VectorOuterClass.VectorOrBuilder getVectorOrBuilder() {
             if (this.rotateParamsCase_ == 21) {
                 return (VectorOuterClass.Vector) this.rotateParams_;
             }
@@ -537,7 +537,7 @@ public final class RoutePointOuterClass {
             }
             switch (this.rotateParamsCase_) {
                 case 21:
-                    if (!getRotation().equals(other.getRotation())) {
+                    if (!getVector().equals(other.getVector())) {
                         return false;
                     }
                     break;
@@ -575,7 +575,7 @@ public final class RoutePointOuterClass {
             }
             switch (this.rotateParamsCase_) {
                 case 21:
-                    hash2 = (53 * ((37 * hash2) + 21)) + getRotation().hashCode();
+                    hash2 = (53 * ((37 * hash2) + 21)) + getVector().hashCode();
                     break;
                 case 22:
                     hash2 = (53 * ((37 * hash2) + 22)) + getRotationSpeed().hashCode();
@@ -669,7 +669,7 @@ public final class RoutePointOuterClass {
             private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> positionBuilder_;
             private float arriveRange_;
             private boolean hasReachEvent_;
-            private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> rotationBuilder_;
+            private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> vectorBuilder_;
             private SingleFieldBuilderV3<MathQuaternionOuterClass.MathQuaternion, MathQuaternionOuterClass.MathQuaternion.Builder, MathQuaternionOuterClass.MathQuaternionOrBuilder> rotationSpeedBuilder_;
             private SingleFieldBuilderV3<MathQuaternionOuterClass.MathQuaternion, MathQuaternionOuterClass.MathQuaternion.Builder, MathQuaternionOuterClass.MathQuaternionOrBuilder> axisSpeedBuilder_;
             private int moveParamsCase_ = 0;
@@ -752,10 +752,10 @@ public final class RoutePointOuterClass {
                     result.moveParams_ = this.moveParams_;
                 }
                 if (this.rotateParamsCase_ == 21) {
-                    if (this.rotationBuilder_ == null) {
+                    if (this.vectorBuilder_ == null) {
                         result.rotateParams_ = this.rotateParams_;
                     } else {
-                        result.rotateParams_ = this.rotationBuilder_.build();
+                        result.rotateParams_ = this.vectorBuilder_.build();
                     }
                 }
                 if (this.rotateParamsCase_ == 22) {
@@ -839,8 +839,8 @@ public final class RoutePointOuterClass {
                         break;
                 }
                 switch (other.getRotateParamsCase()) {
-                    case ROTATION:
-                        mergeRotation(other.getRotation());
+                    case VECTOR:
+                        mergeVector(other.getVector());
                         break;
                     case ROTATION_SPEED:
                         mergeRotationSpeed(other.getRotationSpeed());
@@ -1079,27 +1079,27 @@ public final class RoutePointOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.RoutePointOuterClass.RoutePointOrBuilder
-            public boolean hasRotation() {
+            public boolean hasVector() {
                 return this.rotateParamsCase_ == 21;
             }
 
             @Override // emu.grasscutter.net.proto.RoutePointOuterClass.RoutePointOrBuilder
-            public VectorOuterClass.Vector getRotation() {
-                if (this.rotationBuilder_ == null) {
+            public VectorOuterClass.Vector getVector() {
+                if (this.vectorBuilder_ == null) {
                     if (this.rotateParamsCase_ == 21) {
                         return (VectorOuterClass.Vector) this.rotateParams_;
                     }
                     return VectorOuterClass.Vector.getDefaultInstance();
                 } else if (this.rotateParamsCase_ == 21) {
-                    return this.rotationBuilder_.getMessage();
+                    return this.vectorBuilder_.getMessage();
                 } else {
                     return VectorOuterClass.Vector.getDefaultInstance();
                 }
             }
 
-            public Builder setRotation(VectorOuterClass.Vector value) {
-                if (this.rotationBuilder_ != null) {
-                    this.rotationBuilder_.setMessage(value);
+            public Builder setVector(VectorOuterClass.Vector value) {
+                if (this.vectorBuilder_ != null) {
+                    this.vectorBuilder_.setMessage(value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
@@ -1110,19 +1110,19 @@ public final class RoutePointOuterClass {
                 return this;
             }
 
-            public Builder setRotation(VectorOuterClass.Vector.Builder builderForValue) {
-                if (this.rotationBuilder_ == null) {
+            public Builder setVector(VectorOuterClass.Vector.Builder builderForValue) {
+                if (this.vectorBuilder_ == null) {
                     this.rotateParams_ = builderForValue.build();
                     onChanged();
                 } else {
-                    this.rotationBuilder_.setMessage(builderForValue.build());
+                    this.vectorBuilder_.setMessage(builderForValue.build());
                 }
                 this.rotateParamsCase_ = 21;
                 return this;
             }
 
-            public Builder mergeRotation(VectorOuterClass.Vector value) {
-                if (this.rotationBuilder_ == null) {
+            public Builder mergeVector(VectorOuterClass.Vector value) {
+                if (this.vectorBuilder_ == null) {
                     if (this.rotateParamsCase_ != 21 || this.rotateParams_ == VectorOuterClass.Vector.getDefaultInstance()) {
                         this.rotateParams_ = value;
                     } else {
@@ -1131,21 +1131,21 @@ public final class RoutePointOuterClass {
                     onChanged();
                 } else {
                     if (this.rotateParamsCase_ == 21) {
-                        this.rotationBuilder_.mergeFrom(value);
+                        this.vectorBuilder_.mergeFrom(value);
                     }
-                    this.rotationBuilder_.setMessage(value);
+                    this.vectorBuilder_.setMessage(value);
                 }
                 this.rotateParamsCase_ = 21;
                 return this;
             }
 
-            public Builder clearRotation() {
-                if (this.rotationBuilder_ != null) {
+            public Builder clearVector() {
+                if (this.vectorBuilder_ != null) {
                     if (this.rotateParamsCase_ == 21) {
                         this.rotateParamsCase_ = 0;
                         this.rotateParams_ = null;
                     }
-                    this.rotationBuilder_.clear();
+                    this.vectorBuilder_.clear();
                 } else if (this.rotateParamsCase_ == 21) {
                     this.rotateParamsCase_ = 0;
                     this.rotateParams_ = null;
@@ -1154,14 +1154,14 @@ public final class RoutePointOuterClass {
                 return this;
             }
 
-            public VectorOuterClass.Vector.Builder getRotationBuilder() {
-                return getRotationFieldBuilder().getBuilder();
+            public VectorOuterClass.Vector.Builder getVectorBuilder() {
+                return getVectorFieldBuilder().getBuilder();
             }
 
             @Override // emu.grasscutter.net.proto.RoutePointOuterClass.RoutePointOrBuilder
-            public VectorOuterClass.VectorOrBuilder getRotationOrBuilder() {
-                if (this.rotateParamsCase_ == 21 && this.rotationBuilder_ != null) {
-                    return this.rotationBuilder_.getMessageOrBuilder();
+            public VectorOuterClass.VectorOrBuilder getVectorOrBuilder() {
+                if (this.rotateParamsCase_ == 21 && this.vectorBuilder_ != null) {
+                    return this.vectorBuilder_.getMessageOrBuilder();
                 }
                 if (this.rotateParamsCase_ == 21) {
                     return (VectorOuterClass.Vector) this.rotateParams_;
@@ -1169,17 +1169,17 @@ public final class RoutePointOuterClass {
                 return VectorOuterClass.Vector.getDefaultInstance();
             }
 
-            private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> getRotationFieldBuilder() {
-                if (this.rotationBuilder_ == null) {
+            private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> getVectorFieldBuilder() {
+                if (this.vectorBuilder_ == null) {
                     if (this.rotateParamsCase_ != 21) {
                         this.rotateParams_ = VectorOuterClass.Vector.getDefaultInstance();
                     }
-                    this.rotationBuilder_ = new SingleFieldBuilderV3<>((VectorOuterClass.Vector) this.rotateParams_, getParentForChildren(), isClean());
+                    this.vectorBuilder_ = new SingleFieldBuilderV3<>((VectorOuterClass.Vector) this.rotateParams_, getParentForChildren(), isClean());
                     this.rotateParams_ = null;
                 }
                 this.rotateParamsCase_ = 21;
                 onChanged();
-                return this.rotationBuilder_;
+                return this.vectorBuilder_;
             }
 
             @Override // emu.grasscutter.net.proto.RoutePointOuterClass.RoutePointOrBuilder
@@ -1425,7 +1425,7 @@ public final class RoutePointOuterClass {
     }
 
     static {
-        MathQuaternionOuterClass.getDescriptor();
         VectorOuterClass.getDescriptor();
+        MathQuaternionOuterClass.getDescriptor();
     }
 }

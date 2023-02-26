@@ -36,6 +36,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
+import kotlin.text.Typography;
 import net.bytebuddy.utility.JavaConstant;
 import org.jline.keymap.BindingReader;
 import org.jline.keymap.KeyMap;
@@ -2731,22 +2732,22 @@ public class LineReaderImpl implements LineReader, Flushable {
         public static class Pair<U, V> {
 
             /* renamed from: u */
-            final U f3232u;
+            final U f3196u;
 
             /* renamed from: v */
-            final V f3233v;
+            final V f3197v;
 
             public Pair(U u, V v) {
-                this.f3232u = u;
-                this.f3233v = v;
+                this.f3196u = u;
+                this.f3197v = v;
             }
 
             public U getU() {
-                return this.f3232u;
+                return this.f3196u;
             }
 
             public V getV() {
-                return this.f3233v;
+                return this.f3197v;
             }
         }
 
@@ -2851,7 +2852,7 @@ public class LineReaderImpl implements LineReader, Flushable {
                             Pattern pat = Pattern.compile(pattern, isSet(LineReader.Option.CASE_INSENSITIVE_SEARCH) ? 66 : 64);
                             if (this.searchBackward) {
                                 pair = matches(pat, this.buf.toString(), this.searchIndex).stream().filter(p -> {
-                                    return nextOnly ? ((Integer) next.f3233v).intValue() < this.buf.cursor() : ((Integer) next.f3233v).intValue() <= this.buf.cursor();
+                                    return nextOnly ? ((Integer) next.f3197v).intValue() < this.buf.cursor() : ((Integer) next.f3197v).intValue() <= this.buf.cursor();
                                 }).max(Comparator.comparing((v0) -> {
                                     return v0.getV();
                                 })).orElse(null);
@@ -2862,7 +2863,7 @@ public class LineReaderImpl implements LineReader, Flushable {
                                 }
                             } else {
                                 pair = matches(pat, this.buf.toString(), this.searchIndex).stream().filter(p -> {
-                                    return nextOnly ? ((Integer) next.f3233v).intValue() > this.buf.cursor() : ((Integer) next.f3233v).intValue() >= this.buf.cursor();
+                                    return nextOnly ? ((Integer) next.f3197v).intValue() > this.buf.cursor() : ((Integer) next.f3197v).intValue() >= this.buf.cursor();
                                 }).min(Comparator.comparing((v0) -> {
                                     return v0.getV();
                                 })).orElse(null);
@@ -2878,14 +2879,14 @@ public class LineReaderImpl implements LineReader, Flushable {
                                 }
                             }
                             if (pair != null) {
-                                this.searchIndex = pair.f3232u.intValue();
+                                this.searchIndex = pair.f3196u.intValue();
                                 this.buf.clear();
                                 if (this.searchIndex >= 0) {
                                     this.buf.write(this.history.get(this.searchIndex));
                                 } else {
                                     this.buf.write(originalBuffer.toString());
                                 }
-                                this.buf.cursor(pair.f3233v.intValue());
+                                this.buf.cursor(pair.f3197v.intValue());
                                 this.searchFailing = false;
                             } else {
                                 this.searchFailing = true;
@@ -4101,7 +4102,7 @@ public class LineReaderImpl implements LineReader, Flushable {
                 }
                 concat(new AttributedString(line).columnSplitLength(Integer.MAX_VALUE), sb3);
                 AttributedString toCursor = sb3.toAttributedString();
-                int w = WCWidth.wcwidth(8230);
+                int w = WCWidth.wcwidth(Typography.ellipsis);
                 int width = this.size.getColumns();
                 int cursor = toCursor.columnLength();
                 int inc = (width / 2) + 1;
@@ -5455,7 +5456,7 @@ public class LineReaderImpl implements LineReader, Flushable {
                                         int rem = maxWidth2 - (((lw + 1) + DESC_PREFIX.length()) + DESC_SUFFIX.length());
                                         int rw2 = right.columnLength();
                                         if (rw2 > rem) {
-                                            right = AttributedStringBuilder.append(right.columnSubSequence(0, rem - WCWidth.wcwidth(8230)), "…");
+                                            right = AttributedStringBuilder.append(right.columnSubSequence(0, rem - WCWidth.wcwidth(Typography.ellipsis)), "…");
                                             rw2 = right.columnLength();
                                         }
                                         right = AttributedStringBuilder.append(DESC_PREFIX, right, DESC_SUFFIX);

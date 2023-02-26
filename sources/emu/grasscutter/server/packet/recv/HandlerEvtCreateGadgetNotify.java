@@ -7,7 +7,7 @@ import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.EvtCreateGadgetNotifyOuterClass;
 import emu.grasscutter.server.game.GameSession;
 
-@Opcodes(400)
+@Opcodes(320)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerEvtCreateGadgetNotify.class */
 public class HandlerEvtCreateGadgetNotify extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

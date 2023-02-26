@@ -3,10 +3,10 @@ package emu.grasscutter.server.packet.recv;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 
-@Opcodes(156)
+@Opcodes(187)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerPlayerLoginReq.class */
 public class HandlerPlayerLoginReq extends PacketHandler {
-    /*  JADX ERROR: Dependency scan failed at insn: 0x00AD: INVOKE_CUSTOM r-21, r-20, r-19
+    /*  JADX ERROR: Dependency scan failed at insn: 0x0095: INVOKE_CUSTOM r-17, r-16, r-15
         java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
         	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
         	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
@@ -22,7 +22,7 @@ public class HandlerPlayerLoginReq extends PacketHandler {
         	at jadx.core.dex.visitors.usage.UsageInfoVisitor.init(UsageInfoVisitor.java:36)
         	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:267)
         */
-    /*  JADX ERROR: Failed to decode insn: 0x00AD: INVOKE_CUSTOM r1, r2, r3, method: emu.grasscutter.server.packet.recv.HandlerPlayerLoginReq.handle(emu.grasscutter.server.game.GameSession, byte[], byte[]):void
+    /*  JADX ERROR: Failed to decode insn: 0x0095: INVOKE_CUSTOM r1, r2, r3, method: emu.grasscutter.server.packet.recv.HandlerPlayerLoginReq.handle(emu.grasscutter.server.game.GameSession, byte[], byte[]):void
         jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (Ljava/lang/String;, Z, Ljava/lang/String;)Ljava/lang/String;}, Account  has successfully login (new |) ]}
         	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:55)
         	at jadx.core.dex.instructions.InsnDecoder.invoke(InsnDecoder.java:568)
@@ -43,7 +43,7 @@ public class HandlerPlayerLoginReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler
     public void handle(emu.grasscutter.server.game.GameSession r6, byte[] r7, byte[] r8) throws java.lang.Exception {
         /*
-        // Method dump skipped, instructions count: 224
+        // Method dump skipped, instructions count: 220
         */
         throw new UnsupportedOperationException("Method not decompiled: emu.grasscutter.server.packet.recv.HandlerPlayerLoginReq.handle(emu.grasscutter.server.game.GameSession, byte[], byte[]):void");
     }

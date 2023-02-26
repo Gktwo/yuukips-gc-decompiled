@@ -25,13 +25,15 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestUpdateQuestVarReqOuterClass.class */
 public final class QuestUpdateQuestVarReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cQuestUpdateQuestVarReq.proto\u001a\u0010QuestVarOp.proto\"\u0001\n\u0016QuestUpdateQuestVarReq\u0012\u001c\n\u0014parent_quest_var_seq\u0018\u0007 \u0001(\r\u0012&\n\u0011quest_var_op_list\u0018\u000b \u0003(\u000b2\u000b.QuestVarOp\u0012\u0010\n\bquest_id\u0018\u0005 \u0001(\r\u0012\u0017\n\u000fparent_quest_id\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{QuestVarOpOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cQuestUpdateQuestVarReq.proto\u001a\u0010QuestVarOp.proto\"\u0001\n\u0016QuestUpdateQuestVarReq\u0012\u0019\n\u0011parentQuestVarSeq\u0018\t \u0001(\r\u0012\u0015\n\rparentQuestId\u0018\f \u0001(\r\u0012#\n\u000equestVarOpList\u0018\u0004 \u0003(\u000b2\u000b.QuestVarOp\u0012\u000f\n\u0007questId\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{QuestVarOpOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_QuestUpdateQuestVarReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_QuestUpdateQuestVarReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QuestUpdateQuestVarReq_descriptor, new String[]{"ParentQuestVarSeq", "QuestVarOpList", "QuestId", "ParentQuestId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_QuestUpdateQuestVarReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QuestUpdateQuestVarReq_descriptor, new String[]{"ParentQuestVarSeq", "ParentQuestId", "QuestVarOpList", "QuestId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestUpdateQuestVarReqOuterClass$QuestUpdateQuestVarReqOrBuilder.class */
     public interface QuestUpdateQuestVarReqOrBuilder extends MessageOrBuilder {
         int getParentQuestVarSeq();
+
+        int getParentQuestId();
 
         List<QuestVarOpOuterClass.QuestVarOp> getQuestVarOpListList();
 
@@ -44,8 +46,6 @@ public final class QuestUpdateQuestVarReqOuterClass {
         QuestVarOpOuterClass.QuestVarOpOrBuilder getQuestVarOpListOrBuilder(int i);
 
         int getQuestId();
-
-        int getParentQuestId();
     }
 
     private QuestUpdateQuestVarReqOuterClass() {
@@ -61,14 +61,14 @@ public final class QuestUpdateQuestVarReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestUpdateQuestVarReqOuterClass$QuestUpdateQuestVarReq.class */
     public static final class QuestUpdateQuestVarReq extends GeneratedMessageV3 implements QuestUpdateQuestVarReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PARENT_QUEST_VAR_SEQ_FIELD_NUMBER = 7;
+        public static final int PARENTQUESTVARSEQ_FIELD_NUMBER = 9;
         private int parentQuestVarSeq_;
-        public static final int QUEST_VAR_OP_LIST_FIELD_NUMBER = 11;
-        private List<QuestVarOpOuterClass.QuestVarOp> questVarOpList_;
-        public static final int QUEST_ID_FIELD_NUMBER = 5;
-        private int questId_;
-        public static final int PARENT_QUEST_ID_FIELD_NUMBER = 2;
+        public static final int PARENTQUESTID_FIELD_NUMBER = 12;
         private int parentQuestId_;
+        public static final int QUESTVAROPLIST_FIELD_NUMBER = 4;
+        private List<QuestVarOpOuterClass.QuestVarOp> questVarOpList_;
+        public static final int QUESTID_FIELD_NUMBER = 3;
+        private int questId_;
         private byte memoizedIsInitialized;
         private static final QuestUpdateQuestVarReq DEFAULT_INSTANCE = new QuestUpdateQuestVarReq();
         private static final Parser<QuestUpdateQuestVarReq> PARSER = new AbstractParser<QuestUpdateQuestVarReq>() { // from class: emu.grasscutter.net.proto.QuestUpdateQuestVarReqOuterClass.QuestUpdateQuestVarReq.1
@@ -117,21 +117,21 @@ public final class QuestUpdateQuestVarReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 16:
-                                this.parentQuestId_ = input.readUInt32();
-                                break;
-                            case 40:
+                            case 24:
                                 this.questId_ = input.readUInt32();
                                 break;
-                            case 56:
-                                this.parentQuestVarSeq_ = input.readUInt32();
-                                break;
-                            case 90:
+                            case 34:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.questVarOpList_ = new ArrayList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.questVarOpList_.add((QuestVarOpOuterClass.QuestVarOp) input.readMessage(QuestVarOpOuterClass.QuestVarOp.parser(), extensionRegistry));
+                                break;
+                            case 72:
+                                this.parentQuestVarSeq_ = input.readUInt32();
+                                break;
+                            case 96:
+                                this.parentQuestId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -171,6 +171,11 @@ public final class QuestUpdateQuestVarReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.QuestUpdateQuestVarReqOuterClass.QuestUpdateQuestVarReqOrBuilder
+        public int getParentQuestId() {
+            return this.parentQuestId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.QuestUpdateQuestVarReqOuterClass.QuestUpdateQuestVarReqOrBuilder
         public List<QuestVarOpOuterClass.QuestVarOp> getQuestVarOpListList() {
             return this.questVarOpList_;
         }
@@ -200,11 +205,6 @@ public final class QuestUpdateQuestVarReqOuterClass {
             return this.questId_;
         }
 
-        @Override // emu.grasscutter.net.proto.QuestUpdateQuestVarReqOuterClass.QuestUpdateQuestVarReqOrBuilder
-        public int getParentQuestId() {
-            return this.parentQuestId_;
-        }
-
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -220,17 +220,17 @@ public final class QuestUpdateQuestVarReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.parentQuestId_ != 0) {
-                output.writeUInt32(2, this.parentQuestId_);
-            }
             if (this.questId_ != 0) {
-                output.writeUInt32(5, this.questId_);
-            }
-            if (this.parentQuestVarSeq_ != 0) {
-                output.writeUInt32(7, this.parentQuestVarSeq_);
+                output.writeUInt32(3, this.questId_);
             }
             for (int i = 0; i < this.questVarOpList_.size(); i++) {
-                output.writeMessage(11, this.questVarOpList_.get(i));
+                output.writeMessage(4, this.questVarOpList_.get(i));
+            }
+            if (this.parentQuestVarSeq_ != 0) {
+                output.writeUInt32(9, this.parentQuestVarSeq_);
+            }
+            if (this.parentQuestId_ != 0) {
+                output.writeUInt32(12, this.parentQuestId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -242,17 +242,17 @@ public final class QuestUpdateQuestVarReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.parentQuestId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.parentQuestId_);
-            }
             if (this.questId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.questId_);
-            }
-            if (this.parentQuestVarSeq_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.parentQuestVarSeq_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.questId_);
             }
             for (int i = 0; i < this.questVarOpList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(11, this.questVarOpList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(4, this.questVarOpList_.get(i));
+            }
+            if (this.parentQuestVarSeq_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(9, this.parentQuestVarSeq_);
+            }
+            if (this.parentQuestId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(12, this.parentQuestId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -268,7 +268,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
                 return equals(obj);
             }
             QuestUpdateQuestVarReq other = (QuestUpdateQuestVarReq) obj;
-            return getParentQuestVarSeq() == other.getParentQuestVarSeq() && getQuestVarOpListList().equals(other.getQuestVarOpListList()) && getQuestId() == other.getQuestId() && getParentQuestId() == other.getParentQuestId() && this.unknownFields.equals(other.unknownFields);
+            return getParentQuestVarSeq() == other.getParentQuestVarSeq() && getParentQuestId() == other.getParentQuestId() && getQuestVarOpListList().equals(other.getQuestVarOpListList()) && getQuestId() == other.getQuestId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -276,11 +276,11 @@ public final class QuestUpdateQuestVarReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getParentQuestVarSeq();
+            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getParentQuestVarSeq())) + 12)) + getParentQuestId();
             if (getQuestVarOpListCount() > 0) {
-                hash = (53 * ((37 * hash) + 11)) + getQuestVarOpListList().hashCode();
+                hash = (53 * ((37 * hash) + 4)) + getQuestVarOpListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 5)) + getQuestId())) + 2)) + getParentQuestId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 3)) + getQuestId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -361,10 +361,10 @@ public final class QuestUpdateQuestVarReqOuterClass {
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements QuestUpdateQuestVarReqOrBuilder {
             private int bitField0_;
             private int parentQuestVarSeq_;
+            private int parentQuestId_;
             private List<QuestVarOpOuterClass.QuestVarOp> questVarOpList_ = Collections.emptyList();
             private RepeatedFieldBuilderV3<QuestVarOpOuterClass.QuestVarOp, QuestVarOpOuterClass.QuestVarOp.Builder, QuestVarOpOuterClass.QuestVarOpOrBuilder> questVarOpListBuilder_;
             private int questId_;
-            private int parentQuestId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return QuestUpdateQuestVarReqOuterClass.internal_static_QuestUpdateQuestVarReq_descriptor;
@@ -394,6 +394,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
             public Builder clear() {
                 clear();
                 this.parentQuestVarSeq_ = 0;
+                this.parentQuestId_ = 0;
                 if (this.questVarOpListBuilder_ == null) {
                     this.questVarOpList_ = Collections.emptyList();
                     this.bitField0_ &= -2;
@@ -401,7 +402,6 @@ public final class QuestUpdateQuestVarReqOuterClass {
                     this.questVarOpListBuilder_.clear();
                 }
                 this.questId_ = 0;
-                this.parentQuestId_ = 0;
                 return this;
             }
 
@@ -429,6 +429,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
                 QuestUpdateQuestVarReq result = new QuestUpdateQuestVarReq(this);
                 int i = this.bitField0_;
                 result.parentQuestVarSeq_ = this.parentQuestVarSeq_;
+                result.parentQuestId_ = this.parentQuestId_;
                 if (this.questVarOpListBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
                         this.questVarOpList_ = Collections.unmodifiableList(this.questVarOpList_);
@@ -439,7 +440,6 @@ public final class QuestUpdateQuestVarReqOuterClass {
                     result.questVarOpList_ = this.questVarOpListBuilder_.build();
                 }
                 result.questId_ = this.questId_;
-                result.parentQuestId_ = this.parentQuestId_;
                 onBuilt();
                 return result;
             }
@@ -490,6 +490,9 @@ public final class QuestUpdateQuestVarReqOuterClass {
                 if (other.getParentQuestVarSeq() != 0) {
                     setParentQuestVarSeq(other.getParentQuestVarSeq());
                 }
+                if (other.getParentQuestId() != 0) {
+                    setParentQuestId(other.getParentQuestId());
+                }
                 if (this.questVarOpListBuilder_ == null) {
                     if (!other.questVarOpList_.isEmpty()) {
                         if (this.questVarOpList_.isEmpty()) {
@@ -514,9 +517,6 @@ public final class QuestUpdateQuestVarReqOuterClass {
                 }
                 if (other.getQuestId() != 0) {
                     setQuestId(other.getQuestId());
-                }
-                if (other.getParentQuestId() != 0) {
-                    setParentQuestId(other.getParentQuestId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -563,6 +563,23 @@ public final class QuestUpdateQuestVarReqOuterClass {
 
             public Builder clearParentQuestVarSeq() {
                 this.parentQuestVarSeq_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.QuestUpdateQuestVarReqOuterClass.QuestUpdateQuestVarReqOrBuilder
+            public int getParentQuestId() {
+                return this.parentQuestId_;
+            }
+
+            public Builder setParentQuestId(int value) {
+                this.parentQuestId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearParentQuestId() {
+                this.parentQuestId_ = 0;
                 onChanged();
                 return this;
             }
@@ -756,23 +773,6 @@ public final class QuestUpdateQuestVarReqOuterClass {
 
             public Builder clearQuestId() {
                 this.questId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.QuestUpdateQuestVarReqOuterClass.QuestUpdateQuestVarReqOrBuilder
-            public int getParentQuestId() {
-                return this.parentQuestId_;
-            }
-
-            public Builder setParentQuestId(int value) {
-                this.parentQuestId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearParentQuestId() {
-                this.parentQuestId_ = 0;
                 onChanged();
                 return this;
             }

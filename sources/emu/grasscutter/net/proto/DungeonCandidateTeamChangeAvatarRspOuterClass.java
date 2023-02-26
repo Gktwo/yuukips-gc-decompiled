@@ -19,11 +19,11 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonCandidateTeamChangeAvatarRspOuterClass.class */
 public final class DungeonCandidateTeamChangeAvatarRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n)DungeonCandidateTeamChangeAvatarRsp.proto\"6\n#DungeonCandidateTeamChangeAvatarRsp\u0012\u000f\n\u0007retcode\u0018\u000b \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n)DungeonCandidateTeamChangeAvatarRsp.proto\"6\n#DungeonCandidateTeamChangeAvatarRsp\u0012\u000f\n\u0007retcode\u0018\n \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_DungeonCandidateTeamChangeAvatarRsp_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_DungeonCandidateTeamChangeAvatarRsp_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f685xac541efb = new GeneratedMessageV3.FieldAccessorTable(internal_static_DungeonCandidateTeamChangeAvatarRsp_descriptor, new String[]{"Retcode"});
+    private static final GeneratedMessageV3.FieldAccessorTable f682xac541efb = new GeneratedMessageV3.FieldAccessorTable(internal_static_DungeonCandidateTeamChangeAvatarRsp_descriptor, new String[]{"Retcode"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonCandidateTeamChangeAvatarRspOuterClass$DungeonCandidateTeamChangeAvatarRspOrBuilder.class */
     public interface DungeonCandidateTeamChangeAvatarRspOrBuilder extends MessageOrBuilder {
@@ -43,7 +43,7 @@ public final class DungeonCandidateTeamChangeAvatarRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonCandidateTeamChangeAvatarRspOuterClass$DungeonCandidateTeamChangeAvatarRsp.class */
     public static final class DungeonCandidateTeamChangeAvatarRsp extends GeneratedMessageV3 implements DungeonCandidateTeamChangeAvatarRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 11;
+        public static final int RETCODE_FIELD_NUMBER = 10;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final DungeonCandidateTeamChangeAvatarRsp DEFAULT_INSTANCE = new DungeonCandidateTeamChangeAvatarRsp();
@@ -90,7 +90,7 @@ public final class DungeonCandidateTeamChangeAvatarRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 88:
+                            case 80:
                                 this.retcode_ = input.readInt32();
                                 break;
                             default:
@@ -119,7 +119,7 @@ public final class DungeonCandidateTeamChangeAvatarRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return DungeonCandidateTeamChangeAvatarRspOuterClass.f685xac541efb.ensureFieldAccessorsInitialized(DungeonCandidateTeamChangeAvatarRsp.class, Builder.class);
+            return DungeonCandidateTeamChangeAvatarRspOuterClass.f682xac541efb.ensureFieldAccessorsInitialized(DungeonCandidateTeamChangeAvatarRsp.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.DungeonCandidateTeamChangeAvatarRspOuterClass.DungeonCandidateTeamChangeAvatarRspOrBuilder
@@ -143,7 +143,7 @@ public final class DungeonCandidateTeamChangeAvatarRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.retcode_ != 0) {
-                output.writeInt32(11, this.retcode_);
+                output.writeInt32(10, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -156,7 +156,7 @@ public final class DungeonCandidateTeamChangeAvatarRspOuterClass {
             }
             int size2 = 0;
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(11, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(10, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -180,7 +180,7 @@ public final class DungeonCandidateTeamChangeAvatarRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -267,7 +267,7 @@ public final class DungeonCandidateTeamChangeAvatarRspOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return DungeonCandidateTeamChangeAvatarRspOuterClass.f685xac541efb.ensureFieldAccessorsInitialized(DungeonCandidateTeamChangeAvatarRsp.class, Builder.class);
+                return DungeonCandidateTeamChangeAvatarRspOuterClass.f682xac541efb.ensureFieldAccessorsInitialized(DungeonCandidateTeamChangeAvatarRsp.class, Builder.class);
             }
 
             private Builder() {

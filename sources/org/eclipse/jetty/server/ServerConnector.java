@@ -20,7 +20,7 @@ import org.eclipse.jetty.p023io.EndPoint;
 import org.eclipse.jetty.p023io.ManagedSelector;
 import org.eclipse.jetty.p023io.SelectorManager;
 import org.eclipse.jetty.p023io.SocketChannelEndPoint;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.annotation.ManagedAttribute;
 import org.eclipse.jetty.util.annotation.ManagedObject;
 import org.eclipse.jetty.util.annotation.Name;
@@ -164,7 +164,7 @@ public class ServerConnector extends AbstractNetworkConnector {
                 serverChannel.socket().setReuseAddress(getReuseAddress());
                 serverChannel.socket().bind(bindAddress, getAcceptQueueSize());
             } catch (Throwable e) {
-                C5747IO.close(serverChannel);
+                C5739IO.close(serverChannel);
                 throw new IOException("Failed to bind to " + bindAddress, e);
             }
         }

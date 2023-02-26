@@ -17,7 +17,7 @@ import org.eclipse.jetty.http.HttpContent;
 import org.eclipse.jetty.p023io.ByteBufferPool;
 import org.eclipse.jetty.p023io.EofException;
 import org.eclipse.jetty.util.BufferUtil;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.Callback;
 import org.eclipse.jetty.util.IteratingCallback;
 import org.eclipse.jetty.util.SharedBlockingCallback;
@@ -1009,9 +1009,9 @@ public class HttpOutput extends ServletOutputStream implements Runnable {
                 LOG.debug("onError", error);
             }
             this._writeListener.onError(error);
-            C5747IO.close((OutputStream) this);
+            C5739IO.close((OutputStream) this);
         } catch (Throwable th) {
-            C5747IO.close((OutputStream) this);
+            C5739IO.close((OutputStream) this);
             throw th;
         }
     }
@@ -1201,7 +1201,7 @@ public class HttpOutput extends ServletOutputStream implements Runnable {
                 if (!this._closed) {
                     this._closed = true;
                     HttpOutput.this._channel.getByteBufferPool().release(this._buffer);
-                    C5747IO.close(this._in);
+                    C5739IO.close(this._in);
                 }
                 return IteratingCallback.Action.SUCCEEDED;
             }
@@ -1254,7 +1254,7 @@ public class HttpOutput extends ServletOutputStream implements Runnable {
                 if (!this._closed) {
                     this._closed = true;
                     HttpOutput.this._channel.getByteBufferPool().release(this._buffer);
-                    C5747IO.close(this._in);
+                    C5739IO.close(this._in);
                 }
                 return IteratingCallback.Action.SUCCEEDED;
             }
@@ -1271,7 +1271,7 @@ public class HttpOutput extends ServletOutputStream implements Runnable {
         @Override // org.eclipse.jetty.server.HttpOutput.NestedChannelWriteCB, org.eclipse.jetty.server.HttpOutput.ChannelWriteCB, org.eclipse.jetty.util.IteratingCallback
         public void onCompleteFailure(Throwable x) {
             HttpOutput.this._channel.getByteBufferPool().release(this._buffer);
-            C5747IO.close(this._in);
+            C5739IO.close(this._in);
             onCompleteFailure(x);
         }
     }

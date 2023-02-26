@@ -16,7 +16,7 @@ public final class ContextResolver {
     @NotNull
 
     /* renamed from: ip */
-    public Function1<? super Context, String> f974ip = ContextResolver$ip$1.INSTANCE;
+    public Function1<? super Context, String> f938ip = ContextResolver$ip$1.INSTANCE;
     @JvmField
     @NotNull
     public Function1<? super Context, String> host = ContextResolver$host$1.INSTANCE;

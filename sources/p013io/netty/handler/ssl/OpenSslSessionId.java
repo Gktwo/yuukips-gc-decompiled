@@ -9,13 +9,13 @@ import p013io.netty.util.internal.EmptyArrays;
 public final class OpenSslSessionId {
 
     /* renamed from: id */
-    private final byte[] f1018id;
+    private final byte[] f982id;
     private final int hashCode;
     static final OpenSslSessionId NULL_ID = new OpenSslSessionId(EmptyArrays.EMPTY_BYTES);
 
     /* access modifiers changed from: package-private */
     public OpenSslSessionId(byte[] id) {
-        this.f1018id = id;
+        this.f982id = id;
         this.hashCode = Arrays.hashCode(id);
     }
 
@@ -26,11 +26,11 @@ public final class OpenSslSessionId {
         if (!(o instanceof OpenSslSessionId)) {
             return false;
         }
-        return Arrays.equals(this.f1018id, ((OpenSslSessionId) o).f1018id);
+        return Arrays.equals(this.f982id, ((OpenSslSessionId) o).f982id);
     }
 
     public String toString() {
-        return "OpenSslSessionId{id=" + Arrays.toString(this.f1018id) + '}';
+        return "OpenSslSessionId{id=" + Arrays.toString(this.f982id) + '}';
     }
 
     public int hashCode() {
@@ -39,6 +39,6 @@ public final class OpenSslSessionId {
 
     /* access modifiers changed from: package-private */
     public byte[] cloneBytes() {
-        return (byte[]) this.f1018id.clone();
+        return (byte[]) this.f982id.clone();
     }
 }

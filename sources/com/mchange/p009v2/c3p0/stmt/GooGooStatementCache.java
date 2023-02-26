@@ -480,10 +480,9 @@ public abstract class GooGooStatementCache {
         }
     }
 
-    /* access modifiers changed from: protected */
     /* renamed from: com.mchange.v2.c3p0.stmt.GooGooStatementCache$Deathmarch */
     /* loaded from: grasscutter.jar:com/mchange/v2/c3p0/stmt/GooGooStatementCache$Deathmarch.class */
-    public class Deathmarch {
+    protected class Deathmarch {
         TreeMap longsToStmts = new TreeMap();
         HashMap stmtsToLongs = new HashMap();
         long last_long = -1;

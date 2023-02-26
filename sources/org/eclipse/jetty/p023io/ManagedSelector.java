@@ -24,7 +24,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.annotation.ManagedAttribute;
 import org.eclipse.jetty.util.annotation.ManagedOperation;
 import org.eclipse.jetty.util.component.ContainerLifeCycle;
@@ -193,16 +193,16 @@ public class ManagedSelector extends ContainerLifeCycle implements Dumpable {
                     if (LOG.isDebugEnabled()) {
                         LOG.debug("Could not transfer {}", channel, t);
                     }
-                    C5747IO.close(channel);
+                    C5739IO.close(channel);
                 }
             } else {
                 if (LOG.isDebugEnabled()) {
                     LOG.debug("Invalid interestOps for {}", channel);
                 }
-                C5747IO.close(channel);
+                C5739IO.close(channel);
             }
         }
-        C5747IO.close(selector);
+        C5739IO.close(selector);
         this._selector = newSelector;
     }
 
@@ -264,7 +264,7 @@ public class ManagedSelector extends ContainerLifeCycle implements Dumpable {
             this._selectorManager.execute(task);
         } catch (RejectedExecutionException e) {
             if (task instanceof Closeable) {
-                C5747IO.close((Closeable) task);
+                C5739IO.close((Closeable) task);
             }
         }
     }
@@ -496,7 +496,7 @@ public class ManagedSelector extends ContainerLifeCycle implements Dumpable {
                 ManagedSelector.LOG.debug("Selector {} processing {} keys, {} updates", selector2, Integer.valueOf(selectedKeys), Integer.valueOf(updates));
                 return true;
             } catch (Throwable x) {
-                C5747IO.close(ManagedSelector.this._selector);
+                C5739IO.close(ManagedSelector.this._selector);
                 ManagedSelector.this._selector = null;
                 if (ManagedSelector.this.isRunning()) {
                     ManagedSelector.LOG.warn("Fatal select() failure", x);
@@ -538,16 +538,16 @@ public class ManagedSelector extends ContainerLifeCycle implements Dumpable {
                         if (ManagedSelector.LOG.isDebugEnabled()) {
                             ManagedSelector.LOG.debug("Ignoring cancelled key for channel {}", channel);
                         }
-                        C5747IO.close(attachment instanceof EndPoint ? (EndPoint) attachment : channel);
+                        C5739IO.close(attachment instanceof EndPoint ? (EndPoint) attachment : channel);
                     } catch (Throwable x) {
                         ManagedSelector.LOG.warn("Could not process key for channel {}", channel, x);
-                        C5747IO.close(attachment instanceof EndPoint ? (EndPoint) attachment : channel);
+                        C5739IO.close(attachment instanceof EndPoint ? (EndPoint) attachment : channel);
                     }
                 } else {
                     if (ManagedSelector.LOG.isDebugEnabled()) {
                         ManagedSelector.LOG.debug("Selector loop ignoring invalid key for channel {}", channel);
                     }
-                    C5747IO.close(attachment instanceof EndPoint ? (EndPoint) attachment : channel);
+                    C5739IO.close(attachment instanceof EndPoint ? (EndPoint) attachment : channel);
                 }
             }
             return null;
@@ -637,7 +637,7 @@ public class ManagedSelector extends ContainerLifeCycle implements Dumpable {
                     ManagedSelector.LOG.debug("{} acceptor={}", this, this._channel);
                 }
             } catch (Throwable x) {
-                C5747IO.close(this._channel);
+                C5739IO.close(this._channel);
                 ManagedSelector.LOG.warn(x);
             }
         }
@@ -654,7 +654,7 @@ public class ManagedSelector extends ContainerLifeCycle implements Dumpable {
                     ManagedSelector.this._selectorManager.accepted(channel);
                 } catch (Throwable x) {
                     ManagedSelector.LOG.warn("Accept failed for channel {}", channel, x);
-                    C5747IO.close(channel);
+                    C5739IO.close(channel);
                     return null;
                 }
             }
@@ -696,7 +696,7 @@ public class ManagedSelector extends ContainerLifeCycle implements Dumpable {
             if (ManagedSelector.LOG.isDebugEnabled()) {
                 ManagedSelector.LOG.debug("closed accept of {}", this.channel);
             }
-            C5747IO.close(this.channel);
+            C5739IO.close(this.channel);
         }
 
         @Override // org.eclipse.jetty.p023io.ManagedSelector.SelectorUpdate
@@ -705,7 +705,7 @@ public class ManagedSelector extends ContainerLifeCycle implements Dumpable {
                 this.key = this.channel.register(selector, 0, this.attachment);
                 ManagedSelector.this.execute(this);
             } catch (Throwable x) {
-                C5747IO.close(this.channel);
+                C5739IO.close(this.channel);
                 ManagedSelector.this._selectorManager.onAcceptFailed(this.channel, x);
                 if (ManagedSelector.LOG.isDebugEnabled()) {
                     ManagedSelector.LOG.debug(x);
@@ -727,7 +727,7 @@ public class ManagedSelector extends ContainerLifeCycle implements Dumpable {
         }
 
         protected void failed(Throwable failure) {
-            C5747IO.close(this.channel);
+            C5739IO.close(this.channel);
             ManagedSelector.LOG.warn(String.valueOf(failure), new Object[0]);
             if (ManagedSelector.LOG.isDebugEnabled()) {
                 ManagedSelector.LOG.debug(failure);
@@ -786,7 +786,7 @@ public class ManagedSelector extends ContainerLifeCycle implements Dumpable {
                 if (this.timeout != null) {
                     this.timeout.cancel();
                 }
-                C5747IO.close(this.channel);
+                C5739IO.close(this.channel);
                 ManagedSelector.this._selectorManager.connectionFailed(this.channel, failure, this.attachment);
             }
         }
@@ -832,10 +832,10 @@ public class ManagedSelector extends ContainerLifeCycle implements Dumpable {
                     }
                     if (closeable != null) {
                         if (this._closed == null) {
-                            C5747IO.close(closeable);
+                            C5739IO.close(closeable);
                         } else if (!this._closed.contains(closeable)) {
                             this._closed.add(closeable);
-                            C5747IO.close(closeable);
+                            C5739IO.close(closeable);
                         }
                     }
                 }
@@ -859,12 +859,12 @@ public class ManagedSelector extends ContainerLifeCycle implements Dumpable {
                 if (key != null) {
                     Object attachment = key.attachment();
                     if (attachment instanceof Closeable) {
-                        C5747IO.close((Closeable) attachment);
+                        C5739IO.close((Closeable) attachment);
                     }
                 }
             }
             ManagedSelector.this._selector = null;
-            C5747IO.close(selector);
+            C5739IO.close(selector);
             this._stopped.countDown();
         }
     }
@@ -886,7 +886,7 @@ public class ManagedSelector extends ContainerLifeCycle implements Dumpable {
             try {
                 ManagedSelector.this.createEndPoint(this._connect.channel, this._key);
             } catch (Throwable failure) {
-                C5747IO.close(this._connect.channel);
+                C5739IO.close(this._connect.channel);
                 ManagedSelector.LOG.warn(String.valueOf(failure), new Object[0]);
                 if (ManagedSelector.LOG.isDebugEnabled()) {
                     ManagedSelector.LOG.debug(failure);

@@ -26,16 +26,12 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/StoreItemChangeNotifyOuterClass.class */
 public final class StoreItemChangeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bStoreItemChangeNotify.proto\u001a\nItem.proto\u001a\u000fStoreType.proto\"Q\n\u0015StoreItemChangeNotify\u0012\u001e\n\nstore_type\u0018\u0004 \u0001(\u000e2\n.StoreType\u0012\u0018\n\titem_list\u0018\u0005 \u0003(\u000b2\u0005.ItemB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemOuterClass.getDescriptor(), StoreTypeOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bStoreItemChangeNotify.proto\u001a\u000fStoreType.proto\u001a\nItem.proto\"O\n\u0015StoreItemChangeNotify\u0012\u0017\n\bitemList\u0018\r \u0003(\u000b2\u0005.Item\u0012\u001d\n\tstoreType\u0018\u0005 \u0001(\u000e2\n.StoreTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{StoreTypeOuterClass.getDescriptor(), ItemOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_StoreItemChangeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_StoreItemChangeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_StoreItemChangeNotify_descriptor, new String[]{"StoreType", "ItemList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_StoreItemChangeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_StoreItemChangeNotify_descriptor, new String[]{"ItemList", "StoreType"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/StoreItemChangeNotifyOuterClass$StoreItemChangeNotifyOrBuilder.class */
     public interface StoreItemChangeNotifyOrBuilder extends MessageOrBuilder {
-        int getStoreTypeValue();
-
-        StoreTypeOuterClass.StoreType getStoreType();
-
         List<ItemOuterClass.Item> getItemListList();
 
         ItemOuterClass.Item getItemList(int i);
@@ -45,6 +41,10 @@ public final class StoreItemChangeNotifyOuterClass {
         List<? extends ItemOuterClass.ItemOrBuilder> getItemListOrBuilderList();
 
         ItemOuterClass.ItemOrBuilder getItemListOrBuilder(int i);
+
+        int getStoreTypeValue();
+
+        StoreTypeOuterClass.StoreType getStoreType();
     }
 
     private StoreItemChangeNotifyOuterClass() {
@@ -60,10 +60,10 @@ public final class StoreItemChangeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/StoreItemChangeNotifyOuterClass$StoreItemChangeNotify.class */
     public static final class StoreItemChangeNotify extends GeneratedMessageV3 implements StoreItemChangeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int STORE_TYPE_FIELD_NUMBER = 4;
-        private int storeType_;
-        public static final int ITEM_LIST_FIELD_NUMBER = 5;
+        public static final int ITEMLIST_FIELD_NUMBER = 13;
         private List<ItemOuterClass.Item> itemList_;
+        public static final int STORETYPE_FIELD_NUMBER = 5;
+        private int storeType_;
         private byte memoizedIsInitialized;
         private static final StoreItemChangeNotify DEFAULT_INSTANCE = new StoreItemChangeNotify();
         private static final Parser<StoreItemChangeNotify> PARSER = new AbstractParser<StoreItemChangeNotify>() { // from class: emu.grasscutter.net.proto.StoreItemChangeNotifyOuterClass.StoreItemChangeNotify.1
@@ -80,8 +80,8 @@ public final class StoreItemChangeNotifyOuterClass {
 
         private StoreItemChangeNotify() {
             this.memoizedIsInitialized = -1;
-            this.storeType_ = 0;
             this.itemList_ = Collections.emptyList();
+            this.storeType_ = 0;
         }
 
         /* access modifiers changed from: protected */
@@ -113,10 +113,10 @@ public final class StoreItemChangeNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 32:
+                            case 40:
                                 this.storeType_ = input.readEnum();
                                 break;
-                            case 42:
+                            case 106:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.itemList_ = new ArrayList();
                                     mutable_bitField0_ |= 1;
@@ -156,17 +156,6 @@ public final class StoreItemChangeNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.StoreItemChangeNotifyOuterClass.StoreItemChangeNotifyOrBuilder
-        public int getStoreTypeValue() {
-            return this.storeType_;
-        }
-
-        @Override // emu.grasscutter.net.proto.StoreItemChangeNotifyOuterClass.StoreItemChangeNotifyOrBuilder
-        public StoreTypeOuterClass.StoreType getStoreType() {
-            StoreTypeOuterClass.StoreType result = StoreTypeOuterClass.StoreType.valueOf(this.storeType_);
-            return result == null ? StoreTypeOuterClass.StoreType.UNRECOGNIZED : result;
-        }
-
-        @Override // emu.grasscutter.net.proto.StoreItemChangeNotifyOuterClass.StoreItemChangeNotifyOrBuilder
         public List<ItemOuterClass.Item> getItemListList() {
             return this.itemList_;
         }
@@ -191,6 +180,17 @@ public final class StoreItemChangeNotifyOuterClass {
             return this.itemList_.get(index);
         }
 
+        @Override // emu.grasscutter.net.proto.StoreItemChangeNotifyOuterClass.StoreItemChangeNotifyOrBuilder
+        public int getStoreTypeValue() {
+            return this.storeType_;
+        }
+
+        @Override // emu.grasscutter.net.proto.StoreItemChangeNotifyOuterClass.StoreItemChangeNotifyOrBuilder
+        public StoreTypeOuterClass.StoreType getStoreType() {
+            StoreTypeOuterClass.StoreType result = StoreTypeOuterClass.StoreType.valueOf(this.storeType_);
+            return result == null ? StoreTypeOuterClass.StoreType.UNRECOGNIZED : result;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -207,10 +207,10 @@ public final class StoreItemChangeNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.storeType_ != StoreTypeOuterClass.StoreType.STORE_TYPE_NONE.getNumber()) {
-                output.writeEnum(4, this.storeType_);
+                output.writeEnum(5, this.storeType_);
             }
             for (int i = 0; i < this.itemList_.size(); i++) {
-                output.writeMessage(5, this.itemList_.get(i));
+                output.writeMessage(13, this.itemList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -223,10 +223,10 @@ public final class StoreItemChangeNotifyOuterClass {
             }
             int size2 = 0;
             if (this.storeType_ != StoreTypeOuterClass.StoreType.STORE_TYPE_NONE.getNumber()) {
-                size2 = 0 + CodedOutputStream.computeEnumSize(4, this.storeType_);
+                size2 = 0 + CodedOutputStream.computeEnumSize(5, this.storeType_);
             }
             for (int i = 0; i < this.itemList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(5, this.itemList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(13, this.itemList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -242,7 +242,7 @@ public final class StoreItemChangeNotifyOuterClass {
                 return equals(obj);
             }
             StoreItemChangeNotify other = (StoreItemChangeNotify) obj;
-            return this.storeType_ == other.storeType_ && getItemListList().equals(other.getItemListList()) && this.unknownFields.equals(other.unknownFields);
+            return getItemListList().equals(other.getItemListList()) && this.storeType_ == other.storeType_ && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -250,11 +250,11 @@ public final class StoreItemChangeNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + this.storeType_;
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (getItemListCount() > 0) {
-                hash = (53 * ((37 * hash) + 5)) + getItemListList().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getItemListList().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 5)) + this.storeType_)) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -334,9 +334,9 @@ public final class StoreItemChangeNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/StoreItemChangeNotifyOuterClass$StoreItemChangeNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements StoreItemChangeNotifyOrBuilder {
             private int bitField0_;
-            private int storeType_ = 0;
-            private List<ItemOuterClass.Item> itemList_ = Collections.emptyList();
             private RepeatedFieldBuilderV3<ItemOuterClass.Item, ItemOuterClass.Item.Builder, ItemOuterClass.ItemOrBuilder> itemListBuilder_;
+            private List<ItemOuterClass.Item> itemList_ = Collections.emptyList();
+            private int storeType_ = 0;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return StoreItemChangeNotifyOuterClass.internal_static_StoreItemChangeNotify_descriptor;
@@ -365,13 +365,13 @@ public final class StoreItemChangeNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.storeType_ = 0;
                 if (this.itemListBuilder_ == null) {
                     this.itemList_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
                     this.itemListBuilder_.clear();
                 }
+                this.storeType_ = 0;
                 return this;
             }
 
@@ -398,7 +398,6 @@ public final class StoreItemChangeNotifyOuterClass {
             public StoreItemChangeNotify buildPartial() {
                 StoreItemChangeNotify result = new StoreItemChangeNotify(this);
                 int i = this.bitField0_;
-                result.storeType_ = this.storeType_;
                 if (this.itemListBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
                         this.itemList_ = Collections.unmodifiableList(this.itemList_);
@@ -408,6 +407,7 @@ public final class StoreItemChangeNotifyOuterClass {
                 } else {
                     result.itemList_ = this.itemListBuilder_.build();
                 }
+                result.storeType_ = this.storeType_;
                 onBuilt();
                 return result;
             }
@@ -455,9 +455,6 @@ public final class StoreItemChangeNotifyOuterClass {
                 if (other == StoreItemChangeNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.storeType_ != 0) {
-                    setStoreTypeValue(other.getStoreTypeValue());
-                }
                 if (this.itemListBuilder_ == null) {
                     if (!other.itemList_.isEmpty()) {
                         if (this.itemList_.isEmpty()) {
@@ -479,6 +476,9 @@ public final class StoreItemChangeNotifyOuterClass {
                     } else {
                         this.itemListBuilder_.addAllMessages(other.itemList_);
                     }
+                }
+                if (other.storeType_ != 0) {
+                    setStoreTypeValue(other.getStoreTypeValue());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -510,38 +510,6 @@ public final class StoreItemChangeNotifyOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.StoreItemChangeNotifyOuterClass.StoreItemChangeNotifyOrBuilder
-            public int getStoreTypeValue() {
-                return this.storeType_;
-            }
-
-            public Builder setStoreTypeValue(int value) {
-                this.storeType_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.StoreItemChangeNotifyOuterClass.StoreItemChangeNotifyOrBuilder
-            public StoreTypeOuterClass.StoreType getStoreType() {
-                StoreTypeOuterClass.StoreType result = StoreTypeOuterClass.StoreType.valueOf(this.storeType_);
-                return result == null ? StoreTypeOuterClass.StoreType.UNRECOGNIZED : result;
-            }
-
-            public Builder setStoreType(StoreTypeOuterClass.StoreType value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.storeType_ = value.getNumber();
-                onChanged();
-                return this;
-            }
-
-            public Builder clearStoreType() {
-                this.storeType_ = 0;
-                onChanged();
-                return this;
             }
 
             private void ensureItemListIsMutable() {
@@ -720,6 +688,38 @@ public final class StoreItemChangeNotifyOuterClass {
                 return this.itemListBuilder_;
             }
 
+            @Override // emu.grasscutter.net.proto.StoreItemChangeNotifyOuterClass.StoreItemChangeNotifyOrBuilder
+            public int getStoreTypeValue() {
+                return this.storeType_;
+            }
+
+            public Builder setStoreTypeValue(int value) {
+                this.storeType_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.StoreItemChangeNotifyOuterClass.StoreItemChangeNotifyOrBuilder
+            public StoreTypeOuterClass.StoreType getStoreType() {
+                StoreTypeOuterClass.StoreType result = StoreTypeOuterClass.StoreType.valueOf(this.storeType_);
+                return result == null ? StoreTypeOuterClass.StoreType.UNRECOGNIZED : result;
+            }
+
+            public Builder setStoreType(StoreTypeOuterClass.StoreType value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.storeType_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+
+            public Builder clearStoreType() {
+                this.storeType_ = 0;
+                onChanged();
+                return this;
+            }
+
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
             public final Builder setUnknownFields(UnknownFieldSet unknownFields) {
                 return setUnknownFields(unknownFields);
@@ -755,7 +755,7 @@ public final class StoreItemChangeNotifyOuterClass {
     }
 
     static {
-        ItemOuterClass.getDescriptor();
         StoreTypeOuterClass.getDescriptor();
+        ItemOuterClass.getDescriptor();
     }
 }

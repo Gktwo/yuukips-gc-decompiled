@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonWayPointActivateRspOuterClass.class */
 public final class DungeonWayPointActivateRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n DungeonWayPointActivateRsp.proto\"C\n\u001aDungeonWayPointActivateRsp\u0012\u000f\n\u0007retcode\u0018\u0001 \u0001(\u0005\u0012\u0014\n\fway_point_id\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n DungeonWayPointActivateRsp.proto\"A\n\u001aDungeonWayPointActivateRsp\u0012\u0012\n\nwayPointId\u0018\n \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0003 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_DungeonWayPointActivateRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_DungeonWayPointActivateRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DungeonWayPointActivateRsp_descriptor, new String[]{"Retcode", "WayPointId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_DungeonWayPointActivateRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DungeonWayPointActivateRsp_descriptor, new String[]{"WayPointId", "Retcode"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonWayPointActivateRspOuterClass$DungeonWayPointActivateRspOrBuilder.class */
     public interface DungeonWayPointActivateRspOrBuilder extends MessageOrBuilder {
-        int getRetcode();
-
         int getWayPointId();
+
+        int getRetcode();
     }
 
     private DungeonWayPointActivateRspOuterClass() {
@@ -43,10 +43,10 @@ public final class DungeonWayPointActivateRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonWayPointActivateRspOuterClass$DungeonWayPointActivateRsp.class */
     public static final class DungeonWayPointActivateRsp extends GeneratedMessageV3 implements DungeonWayPointActivateRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 1;
-        private int retcode_;
-        public static final int WAY_POINT_ID_FIELD_NUMBER = 10;
+        public static final int WAYPOINTID_FIELD_NUMBER = 10;
         private int wayPointId_;
+        public static final int RETCODE_FIELD_NUMBER = 3;
+        private int retcode_;
         private byte memoizedIsInitialized;
         private static final DungeonWayPointActivateRsp DEFAULT_INSTANCE = new DungeonWayPointActivateRsp();
         private static final Parser<DungeonWayPointActivateRsp> PARSER = new AbstractParser<DungeonWayPointActivateRsp>() { // from class: emu.grasscutter.net.proto.DungeonWayPointActivateRspOuterClass.DungeonWayPointActivateRsp.1
@@ -92,7 +92,7 @@ public final class DungeonWayPointActivateRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
+                            case 24:
                                 this.retcode_ = input.readInt32();
                                 break;
                             case 80:
@@ -128,13 +128,13 @@ public final class DungeonWayPointActivateRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.DungeonWayPointActivateRspOuterClass.DungeonWayPointActivateRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
+        public int getWayPointId() {
+            return this.wayPointId_;
         }
 
         @Override // emu.grasscutter.net.proto.DungeonWayPointActivateRspOuterClass.DungeonWayPointActivateRspOrBuilder
-        public int getWayPointId() {
-            return this.wayPointId_;
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -153,7 +153,7 @@ public final class DungeonWayPointActivateRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.retcode_ != 0) {
-                output.writeInt32(1, this.retcode_);
+                output.writeInt32(3, this.retcode_);
             }
             if (this.wayPointId_ != 0) {
                 output.writeUInt32(10, this.wayPointId_);
@@ -169,7 +169,7 @@ public final class DungeonWayPointActivateRspOuterClass {
             }
             int size2 = 0;
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(1, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(3, this.retcode_);
             }
             if (this.wayPointId_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(10, this.wayPointId_);
@@ -188,7 +188,7 @@ public final class DungeonWayPointActivateRspOuterClass {
                 return equals(obj);
             }
             DungeonWayPointActivateRsp other = (DungeonWayPointActivateRsp) obj;
-            return getRetcode() == other.getRetcode() && getWayPointId() == other.getWayPointId() && this.unknownFields.equals(other.unknownFields);
+            return getWayPointId() == other.getWayPointId() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -196,7 +196,7 @@ public final class DungeonWayPointActivateRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getRetcode())) + 10)) + getWayPointId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getWayPointId())) + 3)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -275,8 +275,8 @@ public final class DungeonWayPointActivateRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonWayPointActivateRspOuterClass$DungeonWayPointActivateRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements DungeonWayPointActivateRspOrBuilder {
-            private int retcode_;
             private int wayPointId_;
+            private int retcode_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return DungeonWayPointActivateRspOuterClass.internal_static_DungeonWayPointActivateRsp_descriptor;
@@ -304,8 +304,8 @@ public final class DungeonWayPointActivateRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.retcode_ = 0;
                 this.wayPointId_ = 0;
+                this.retcode_ = 0;
                 return this;
             }
 
@@ -331,8 +331,8 @@ public final class DungeonWayPointActivateRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public DungeonWayPointActivateRsp buildPartial() {
                 DungeonWayPointActivateRsp result = new DungeonWayPointActivateRsp(this);
-                result.retcode_ = this.retcode_;
                 result.wayPointId_ = this.wayPointId_;
+                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -380,11 +380,11 @@ public final class DungeonWayPointActivateRspOuterClass {
                 if (other == DungeonWayPointActivateRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
                 if (other.getWayPointId() != 0) {
                     setWayPointId(other.getWayPointId());
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -419,23 +419,6 @@ public final class DungeonWayPointActivateRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.DungeonWayPointActivateRspOuterClass.DungeonWayPointActivateRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.DungeonWayPointActivateRspOuterClass.DungeonWayPointActivateRspOrBuilder
             public int getWayPointId() {
                 return this.wayPointId_;
             }
@@ -448,6 +431,23 @@ public final class DungeonWayPointActivateRspOuterClass {
 
             public Builder clearWayPointId() {
                 this.wayPointId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.DungeonWayPointActivateRspOuterClass.DungeonWayPointActivateRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }

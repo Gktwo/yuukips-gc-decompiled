@@ -20,17 +20,17 @@ import javassist.bytecode.SignatureAttribute;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerSignatureRspOuterClass.class */
 public final class SetPlayerSignatureRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bSetPlayerSignatureRsp.proto\";\n\u0015SetPlayerSignatureRsp\u0012\u000f\n\u0007retcode\u0018\u0006 \u0001(\u0005\u0012\u0011\n\tsignature\u0018\f \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bSetPlayerSignatureRsp.proto\";\n\u0015SetPlayerSignatureRsp\u0012\u0011\n\tsignature\u0018\r \u0001(\t\u0012\u000f\n\u0007retcode\u0018\n \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SetPlayerSignatureRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetPlayerSignatureRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetPlayerSignatureRsp_descriptor, new String[]{"Retcode", SignatureAttribute.tag});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetPlayerSignatureRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetPlayerSignatureRsp_descriptor, new String[]{SignatureAttribute.tag, "Retcode"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerSignatureRspOuterClass$SetPlayerSignatureRspOrBuilder.class */
     public interface SetPlayerSignatureRspOrBuilder extends MessageOrBuilder {
-        int getRetcode();
-
         String getSignature();
 
         ByteString getSignatureBytes();
+
+        int getRetcode();
     }
 
     private SetPlayerSignatureRspOuterClass() {
@@ -46,10 +46,10 @@ public final class SetPlayerSignatureRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerSignatureRspOuterClass$SetPlayerSignatureRsp.class */
     public static final class SetPlayerSignatureRsp extends GeneratedMessageV3 implements SetPlayerSignatureRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 6;
-        private int retcode_;
-        public static final int SIGNATURE_FIELD_NUMBER = 12;
+        public static final int SIGNATURE_FIELD_NUMBER = 13;
         private volatile Object signature_;
+        public static final int RETCODE_FIELD_NUMBER = 10;
+        private int retcode_;
         private byte memoizedIsInitialized;
         private static final SetPlayerSignatureRsp DEFAULT_INSTANCE = new SetPlayerSignatureRsp();
         private static final Parser<SetPlayerSignatureRsp> PARSER = new AbstractParser<SetPlayerSignatureRsp>() { // from class: emu.grasscutter.net.proto.SetPlayerSignatureRspOuterClass.SetPlayerSignatureRsp.1
@@ -97,10 +97,10 @@ public final class SetPlayerSignatureRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 48:
+                                case 80:
                                     this.retcode_ = input.readInt32();
                                     break;
-                                case 98:
+                                case 106:
                                     this.signature_ = input.readStringRequireUtf8();
                                     break;
                                 default:
@@ -134,11 +134,6 @@ public final class SetPlayerSignatureRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SetPlayerSignatureRspOuterClass.SetPlayerSignatureRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
-        }
-
-        @Override // emu.grasscutter.net.proto.SetPlayerSignatureRspOuterClass.SetPlayerSignatureRspOrBuilder
         public String getSignature() {
             Object ref = this.signature_;
             if (ref instanceof String) {
@@ -160,6 +155,11 @@ public final class SetPlayerSignatureRspOuterClass {
             return b;
         }
 
+        @Override // emu.grasscutter.net.proto.SetPlayerSignatureRspOuterClass.SetPlayerSignatureRspOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -176,10 +176,10 @@ public final class SetPlayerSignatureRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.retcode_ != 0) {
-                output.writeInt32(6, this.retcode_);
+                output.writeInt32(10, this.retcode_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.signature_)) {
-                GeneratedMessageV3.writeString(output, 12, this.signature_);
+                GeneratedMessageV3.writeString(output, 13, this.signature_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -192,10 +192,10 @@ public final class SetPlayerSignatureRspOuterClass {
             }
             int size2 = 0;
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(6, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(10, this.retcode_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.signature_)) {
-                size2 += GeneratedMessageV3.computeStringSize(12, this.signature_);
+                size2 += GeneratedMessageV3.computeStringSize(13, this.signature_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -211,7 +211,7 @@ public final class SetPlayerSignatureRspOuterClass {
                 return equals(obj);
             }
             SetPlayerSignatureRsp other = (SetPlayerSignatureRsp) obj;
-            return getRetcode() == other.getRetcode() && getSignature().equals(other.getSignature()) && this.unknownFields.equals(other.unknownFields);
+            return getSignature().equals(other.getSignature()) && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -219,7 +219,7 @@ public final class SetPlayerSignatureRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getRetcode())) + 12)) + getSignature().hashCode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + getSignature().hashCode())) + 10)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -298,8 +298,8 @@ public final class SetPlayerSignatureRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerSignatureRspOuterClass$SetPlayerSignatureRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SetPlayerSignatureRspOrBuilder {
-            private int retcode_;
             private Object signature_ = "";
+            private int retcode_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return SetPlayerSignatureRspOuterClass.internal_static_SetPlayerSignatureRsp_descriptor;
@@ -327,8 +327,8 @@ public final class SetPlayerSignatureRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.retcode_ = 0;
                 this.signature_ = "";
+                this.retcode_ = 0;
                 return this;
             }
 
@@ -354,8 +354,8 @@ public final class SetPlayerSignatureRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public SetPlayerSignatureRsp buildPartial() {
                 SetPlayerSignatureRsp result = new SetPlayerSignatureRsp(this);
-                result.retcode_ = this.retcode_;
                 result.signature_ = this.signature_;
+                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -403,12 +403,12 @@ public final class SetPlayerSignatureRspOuterClass {
                 if (other == SetPlayerSignatureRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
                 if (!other.getSignature().isEmpty()) {
                     this.signature_ = other.signature_;
                     onChanged();
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -440,23 +440,6 @@ public final class SetPlayerSignatureRspOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.SetPlayerSignatureRspOuterClass.SetPlayerSignatureRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // emu.grasscutter.net.proto.SetPlayerSignatureRspOuterClass.SetPlayerSignatureRspOrBuilder
@@ -502,6 +485,23 @@ public final class SetPlayerSignatureRspOuterClass {
                 }
                 SetPlayerSignatureRsp.checkByteStringIsUtf8(value);
                 this.signature_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SetPlayerSignatureRspOuterClass.SetPlayerSignatureRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }

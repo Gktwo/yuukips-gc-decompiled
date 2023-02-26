@@ -917,51 +917,51 @@ public abstract class SingleThreadEventExecutor extends AbstractScheduledEventEx
     private static final class DefaultThreadProperties implements ThreadProperties {
 
         /* renamed from: t */
-        private final Thread f1036t;
+        private final Thread f1000t;
 
         DefaultThreadProperties(Thread t) {
-            this.f1036t = t;
+            this.f1000t = t;
         }
 
         @Override // p013io.netty.util.concurrent.ThreadProperties
         public Thread.State state() {
-            return this.f1036t.getState();
+            return this.f1000t.getState();
         }
 
         @Override // p013io.netty.util.concurrent.ThreadProperties
         public int priority() {
-            return this.f1036t.getPriority();
+            return this.f1000t.getPriority();
         }
 
         @Override // p013io.netty.util.concurrent.ThreadProperties
         public boolean isInterrupted() {
-            return this.f1036t.isInterrupted();
+            return this.f1000t.isInterrupted();
         }
 
         @Override // p013io.netty.util.concurrent.ThreadProperties
         public boolean isDaemon() {
-            return this.f1036t.isDaemon();
+            return this.f1000t.isDaemon();
         }
 
         @Override // p013io.netty.util.concurrent.ThreadProperties
         public String name() {
-            return this.f1036t.getName();
+            return this.f1000t.getName();
         }
 
         @Override // p013io.netty.util.concurrent.ThreadProperties
         /* renamed from: id */
         public long mo1172id() {
-            return this.f1036t.getId();
+            return this.f1000t.getId();
         }
 
         @Override // p013io.netty.util.concurrent.ThreadProperties
         public StackTraceElement[] stackTrace() {
-            return this.f1036t.getStackTrace();
+            return this.f1000t.getStackTrace();
         }
 
         @Override // p013io.netty.util.concurrent.ThreadProperties
         public boolean isAlive() {
-            return this.f1036t.isAlive();
+            return this.f1000t.isAlive();
         }
     }
 }

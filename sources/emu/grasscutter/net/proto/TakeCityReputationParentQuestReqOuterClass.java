@@ -23,21 +23,21 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeCityReputationParentQuestReqOuterClass.class */
 public final class TakeCityReputationParentQuestReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n&TakeCityReputationParentQuestReq.proto\"N\n TakeCityReputationParentQuestReq\u0012\u000f\n\u0007city_id\u0018\b \u0001(\r\u0012\u0019\n\u0011parent_quest_list\u0018\t \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n&TakeCityReputationParentQuestReq.proto\"K\n TakeCityReputationParentQuestReq\u0012\u0017\n\u000fparentQuestList\u0018\u0001 \u0003(\r\u0012\u000e\n\u0006cityId\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_TakeCityReputationParentQuestReq_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_TakeCityReputationParentQuestReq_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f884xac76548c = new GeneratedMessageV3.FieldAccessorTable(internal_static_TakeCityReputationParentQuestReq_descriptor, new String[]{"CityId", "ParentQuestList"});
+    private static final GeneratedMessageV3.FieldAccessorTable f855xac76548c = new GeneratedMessageV3.FieldAccessorTable(internal_static_TakeCityReputationParentQuestReq_descriptor, new String[]{"ParentQuestList", "CityId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeCityReputationParentQuestReqOuterClass$TakeCityReputationParentQuestReqOrBuilder.class */
     public interface TakeCityReputationParentQuestReqOrBuilder extends MessageOrBuilder {
-        int getCityId();
-
         List<Integer> getParentQuestListList();
 
         int getParentQuestListCount();
 
         int getParentQuestList(int i);
+
+        int getCityId();
     }
 
     private TakeCityReputationParentQuestReqOuterClass() {
@@ -53,11 +53,11 @@ public final class TakeCityReputationParentQuestReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeCityReputationParentQuestReqOuterClass$TakeCityReputationParentQuestReq.class */
     public static final class TakeCityReputationParentQuestReq extends GeneratedMessageV3 implements TakeCityReputationParentQuestReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CITY_ID_FIELD_NUMBER = 8;
-        private int cityId_;
-        public static final int PARENT_QUEST_LIST_FIELD_NUMBER = 9;
+        public static final int PARENTQUESTLIST_FIELD_NUMBER = 1;
         private Internal.IntList parentQuestList_;
         private int parentQuestListMemoizedSerializedSize;
+        public static final int CITYID_FIELD_NUMBER = 9;
+        private int cityId_;
         private byte memoizedIsInitialized;
         private static final TakeCityReputationParentQuestReq DEFAULT_INSTANCE = new TakeCityReputationParentQuestReq();
         private static final Parser<TakeCityReputationParentQuestReq> PARSER = new AbstractParser<TakeCityReputationParentQuestReq>() { // from class: emu.grasscutter.net.proto.TakeCityReputationParentQuestReqOuterClass.TakeCityReputationParentQuestReq.1
@@ -109,17 +109,14 @@ public final class TakeCityReputationParentQuestReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 64:
-                                    this.cityId_ = input.readUInt32();
-                                    break;
-                                case 72:
+                                case 8:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.parentQuestList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.parentQuestList_.addInt(input.readUInt32());
                                     break;
-                                case 74:
+                                case 10:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.parentQuestList_ = newIntList();
@@ -129,6 +126,9 @@ public final class TakeCityReputationParentQuestReqOuterClass {
                                         this.parentQuestList_.addInt(input.readUInt32());
                                     }
                                     input.popLimit(limit);
+                                    break;
+                                case 72:
+                                    this.cityId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -160,12 +160,7 @@ public final class TakeCityReputationParentQuestReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return TakeCityReputationParentQuestReqOuterClass.f884xac76548c.ensureFieldAccessorsInitialized(TakeCityReputationParentQuestReq.class, Builder.class);
-        }
-
-        @Override // emu.grasscutter.net.proto.TakeCityReputationParentQuestReqOuterClass.TakeCityReputationParentQuestReqOrBuilder
-        public int getCityId() {
-            return this.cityId_;
+            return TakeCityReputationParentQuestReqOuterClass.f855xac76548c.ensureFieldAccessorsInitialized(TakeCityReputationParentQuestReq.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.TakeCityReputationParentQuestReqOuterClass.TakeCityReputationParentQuestReqOrBuilder
@@ -181,6 +176,11 @@ public final class TakeCityReputationParentQuestReqOuterClass {
         @Override // emu.grasscutter.net.proto.TakeCityReputationParentQuestReqOuterClass.TakeCityReputationParentQuestReqOrBuilder
         public int getParentQuestList(int index) {
             return this.parentQuestList_.getInt(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.TakeCityReputationParentQuestReqOuterClass.TakeCityReputationParentQuestReqOrBuilder
+        public int getCityId() {
+            return this.cityId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -199,15 +199,15 @@ public final class TakeCityReputationParentQuestReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (this.cityId_ != 0) {
-                output.writeUInt32(8, this.cityId_);
-            }
             if (getParentQuestListList().size() > 0) {
-                output.writeUInt32NoTag(74);
+                output.writeUInt32NoTag(10);
                 output.writeUInt32NoTag(this.parentQuestListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.parentQuestList_.size(); i++) {
                 output.writeUInt32NoTag(this.parentQuestList_.getInt(i));
+            }
+            if (this.cityId_ != 0) {
+                output.writeUInt32(9, this.cityId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -218,22 +218,21 @@ public final class TakeCityReputationParentQuestReqOuterClass {
             if (size != -1) {
                 return size;
             }
-            int size2 = 0;
-            if (this.cityId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(8, this.cityId_);
-            }
             int dataSize = 0;
             for (int i = 0; i < this.parentQuestList_.size(); i++) {
                 dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.parentQuestList_.getInt(i));
             }
-            int size3 = size2 + dataSize;
+            int size2 = 0 + dataSize;
             if (!getParentQuestListList().isEmpty()) {
-                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.parentQuestListMemoizedSerializedSize = dataSize;
-            int size4 = size3 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size4;
-            return size4;
+            if (this.cityId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(9, this.cityId_);
+            }
+            int size3 = size2 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size3;
+            return size3;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -245,7 +244,7 @@ public final class TakeCityReputationParentQuestReqOuterClass {
                 return equals(obj);
             }
             TakeCityReputationParentQuestReq other = (TakeCityReputationParentQuestReq) obj;
-            return getCityId() == other.getCityId() && getParentQuestListList().equals(other.getParentQuestListList()) && this.unknownFields.equals(other.unknownFields);
+            return getParentQuestListList().equals(other.getParentQuestListList()) && getCityId() == other.getCityId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -253,11 +252,11 @@ public final class TakeCityReputationParentQuestReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getCityId();
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (getParentQuestListCount() > 0) {
-                hash = (53 * ((37 * hash) + 9)) + getParentQuestListList().hashCode();
+                hash = (53 * ((37 * hash) + 1)) + getParentQuestListList().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 9)) + getCityId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -337,8 +336,8 @@ public final class TakeCityReputationParentQuestReqOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeCityReputationParentQuestReqOuterClass$TakeCityReputationParentQuestReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements TakeCityReputationParentQuestReqOrBuilder {
             private int bitField0_;
-            private int cityId_;
             private Internal.IntList parentQuestList_ = TakeCityReputationParentQuestReq.emptyIntList();
+            private int cityId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return TakeCityReputationParentQuestReqOuterClass.internal_static_TakeCityReputationParentQuestReq_descriptor;
@@ -346,7 +345,7 @@ public final class TakeCityReputationParentQuestReqOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return TakeCityReputationParentQuestReqOuterClass.f884xac76548c.ensureFieldAccessorsInitialized(TakeCityReputationParentQuestReq.class, Builder.class);
+                return TakeCityReputationParentQuestReqOuterClass.f855xac76548c.ensureFieldAccessorsInitialized(TakeCityReputationParentQuestReq.class, Builder.class);
             }
 
             private Builder() {
@@ -366,9 +365,9 @@ public final class TakeCityReputationParentQuestReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.cityId_ = 0;
                 this.parentQuestList_ = TakeCityReputationParentQuestReq.emptyIntList();
                 this.bitField0_ &= -2;
+                this.cityId_ = 0;
                 return this;
             }
 
@@ -395,12 +394,12 @@ public final class TakeCityReputationParentQuestReqOuterClass {
             public TakeCityReputationParentQuestReq buildPartial() {
                 TakeCityReputationParentQuestReq result = new TakeCityReputationParentQuestReq(this);
                 int i = this.bitField0_;
-                result.cityId_ = this.cityId_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.parentQuestList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.parentQuestList_ = this.parentQuestList_;
+                result.cityId_ = this.cityId_;
                 onBuilt();
                 return result;
             }
@@ -448,9 +447,6 @@ public final class TakeCityReputationParentQuestReqOuterClass {
                 if (other == TakeCityReputationParentQuestReq.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getCityId() != 0) {
-                    setCityId(other.getCityId());
-                }
                 if (!other.parentQuestList_.isEmpty()) {
                     if (this.parentQuestList_.isEmpty()) {
                         this.parentQuestList_ = other.parentQuestList_;
@@ -460,6 +456,9 @@ public final class TakeCityReputationParentQuestReqOuterClass {
                         this.parentQuestList_.addAll(other.parentQuestList_);
                     }
                     onChanged();
+                }
+                if (other.getCityId() != 0) {
+                    setCityId(other.getCityId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -491,23 +490,6 @@ public final class TakeCityReputationParentQuestReqOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.TakeCityReputationParentQuestReqOuterClass.TakeCityReputationParentQuestReqOrBuilder
-            public int getCityId() {
-                return this.cityId_;
-            }
-
-            public Builder setCityId(int value) {
-                this.cityId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearCityId() {
-                this.cityId_ = 0;
-                onChanged();
-                return this;
             }
 
             private void ensureParentQuestListIsMutable() {
@@ -556,6 +538,23 @@ public final class TakeCityReputationParentQuestReqOuterClass {
             public Builder clearParentQuestList() {
                 this.parentQuestList_ = TakeCityReputationParentQuestReq.emptyIntList();
                 this.bitField0_ &= -2;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.TakeCityReputationParentQuestReqOuterClass.TakeCityReputationParentQuestReqOrBuilder
+            public int getCityId() {
+                return this.cityId_;
+            }
+
+            public Builder setCityId(int value) {
+                this.cityId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearCityId() {
+                this.cityId_ = 0;
                 onChanged();
                 return this;
             }

@@ -246,7 +246,7 @@ public class ClassReloadingStrategy implements ClassLoadingStrategy<ClassLoader>
                     r0.assertTransformation()
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: net.bytebuddy.dynamic.loading.ClassReloadingStrategy.Strategy.C53432.apply(java.lang.instrument.Instrumentation, java.util.Map):void");
+                throw new UnsupportedOperationException("Method not decompiled: net.bytebuddy.dynamic.loading.ClassReloadingStrategy.Strategy.C53352.apply(java.lang.instrument.Instrumentation, java.util.Map):void");
             }
 
             @Override // net.bytebuddy.dynamic.loading.ClassReloadingStrategy.Strategy

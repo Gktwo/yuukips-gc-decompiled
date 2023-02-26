@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PullRecentChatRspOuterClass.class */
 public final class PullRecentChatRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017PullRecentChatRsp.proto\u001a\u000eChatInfo.proto\"B\n\u0011PullRecentChatRsp\u0012\u001c\n\tchat_info\u0018\r \u0003(\u000b2\t.ChatInfo\u0012\u000f\n\u0007retcode\u0018\u000b \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ChatInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017PullRecentChatRsp.proto\u001a\u000eChatInfo.proto\"A\n\u0011PullRecentChatRsp\u0012\u001b\n\bchatInfo\u0018\u0006 \u0003(\u000b2\t.ChatInfo\u0012\u000f\n\u0007retcode\u0018\f \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ChatInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_PullRecentChatRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PullRecentChatRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PullRecentChatRsp_descriptor, new String[]{"ChatInfo", "Retcode"});
 
@@ -57,9 +57,9 @@ public final class PullRecentChatRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PullRecentChatRspOuterClass$PullRecentChatRsp.class */
     public static final class PullRecentChatRsp extends GeneratedMessageV3 implements PullRecentChatRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CHAT_INFO_FIELD_NUMBER = 13;
+        public static final int CHATINFO_FIELD_NUMBER = 6;
         private List<ChatInfoOuterClass.ChatInfo> chatInfo_;
-        public static final int RETCODE_FIELD_NUMBER = 11;
+        public static final int RETCODE_FIELD_NUMBER = 12;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final PullRecentChatRsp DEFAULT_INSTANCE = new PullRecentChatRsp();
@@ -110,15 +110,15 @@ public final class PullRecentChatRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 88:
-                                    this.retcode_ = input.readInt32();
-                                    break;
-                                case 106:
+                                case 50:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.chatInfo_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.chatInfo_.add((ChatInfoOuterClass.ChatInfo) input.readMessage(ChatInfoOuterClass.ChatInfo.parser(), extensionRegistry));
+                                    break;
+                                case 96:
+                                    this.retcode_ = input.readInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -198,11 +198,11 @@ public final class PullRecentChatRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.retcode_ != 0) {
-                output.writeInt32(11, this.retcode_);
-            }
             for (int i = 0; i < this.chatInfo_.size(); i++) {
-                output.writeMessage(13, this.chatInfo_.get(i));
+                output.writeMessage(6, this.chatInfo_.get(i));
+            }
+            if (this.retcode_ != 0) {
+                output.writeInt32(12, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -214,11 +214,11 @@ public final class PullRecentChatRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(11, this.retcode_);
-            }
             for (int i = 0; i < this.chatInfo_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(13, this.chatInfo_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(6, this.chatInfo_.get(i));
+            }
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(12, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -244,9 +244,9 @@ public final class PullRecentChatRspOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getChatInfoCount() > 0) {
-                hash = (53 * ((37 * hash) + 13)) + getChatInfoList().hashCode();
+                hash = (53 * ((37 * hash) + 6)) + getChatInfoList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 11)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 12)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

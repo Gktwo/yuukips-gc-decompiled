@@ -46,7 +46,7 @@ public final class TakeWhileSequence<T> implements Sequence<T> {
             /* access modifiers changed from: package-private */
             {
                 this.this$0 = r4;
-                this.iterator = TakeWhileSequence.access$getSequence$p(r4).iterator();
+                this.iterator = r4.sequence.iterator();
             }
 
             @NotNull

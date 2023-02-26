@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WearEquipRspOuterClass.class */
 public final class WearEquipRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012WearEquipRsp.proto\"H\n\fWearEquipRsp\u0012\u000f\n\u0007retcode\u0018\u0003 \u0001(\u0005\u0012\u0012\n\nequip_guid\u0018\u0001 \u0001(\u0004\u0012\u0013\n\u000bavatar_guid\u0018\u000e \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012WearEquipRsp.proto\"F\n\fWearEquipRsp\u0012\u000f\n\u0007retcode\u0018\t \u0001(\u0005\u0012\u0012\n\navatarGuid\u0018\u0006 \u0001(\u0004\u0012\u0011\n\tequipGuid\u0018\r \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_WearEquipRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_WearEquipRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WearEquipRsp_descriptor, new String[]{"Retcode", "EquipGuid", "AvatarGuid"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_WearEquipRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WearEquipRsp_descriptor, new String[]{"Retcode", "AvatarGuid", "EquipGuid"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WearEquipRspOuterClass$WearEquipRspOrBuilder.class */
     public interface WearEquipRspOrBuilder extends MessageOrBuilder {
         int getRetcode();
 
-        long getEquipGuid();
-
         long getAvatarGuid();
+
+        long getEquipGuid();
     }
 
     private WearEquipRspOuterClass() {
@@ -46,12 +46,12 @@ public final class WearEquipRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WearEquipRspOuterClass$WearEquipRsp.class */
     public static final class WearEquipRsp extends GeneratedMessageV3 implements WearEquipRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 3;
+        public static final int RETCODE_FIELD_NUMBER = 9;
         private int retcode_;
-        public static final int EQUIP_GUID_FIELD_NUMBER = 1;
-        private long equipGuid_;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 14;
+        public static final int AVATARGUID_FIELD_NUMBER = 6;
         private long avatarGuid_;
+        public static final int EQUIPGUID_FIELD_NUMBER = 13;
+        private long equipGuid_;
         private byte memoizedIsInitialized;
         private static final WearEquipRsp DEFAULT_INSTANCE = new WearEquipRsp();
         private static final Parser<WearEquipRsp> PARSER = new AbstractParser<WearEquipRsp>() { // from class: emu.grasscutter.net.proto.WearEquipRspOuterClass.WearEquipRsp.1
@@ -98,14 +98,14 @@ public final class WearEquipRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
-                                    this.equipGuid_ = input.readUInt64();
+                                case 48:
+                                    this.avatarGuid_ = input.readUInt64();
                                     break;
-                                case 24:
+                                case 72:
                                     this.retcode_ = input.readInt32();
                                     break;
-                                case 112:
-                                    this.avatarGuid_ = input.readUInt64();
+                                case 104:
+                                    this.equipGuid_ = input.readUInt64();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -143,13 +143,13 @@ public final class WearEquipRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.WearEquipRspOuterClass.WearEquipRspOrBuilder
-        public long getEquipGuid() {
-            return this.equipGuid_;
+        public long getAvatarGuid() {
+            return this.avatarGuid_;
         }
 
         @Override // emu.grasscutter.net.proto.WearEquipRspOuterClass.WearEquipRspOrBuilder
-        public long getAvatarGuid() {
-            return this.avatarGuid_;
+        public long getEquipGuid() {
+            return this.equipGuid_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,14 +167,14 @@ public final class WearEquipRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.equipGuid_ != 0) {
-                output.writeUInt64(1, this.equipGuid_);
+            if (this.avatarGuid_ != 0) {
+                output.writeUInt64(6, this.avatarGuid_);
             }
             if (this.retcode_ != 0) {
-                output.writeInt32(3, this.retcode_);
+                output.writeInt32(9, this.retcode_);
             }
-            if (this.avatarGuid_ != 0) {
-                output.writeUInt64(14, this.avatarGuid_);
+            if (this.equipGuid_ != 0) {
+                output.writeUInt64(13, this.equipGuid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class WearEquipRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.equipGuid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(1, this.equipGuid_);
+            if (this.avatarGuid_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt64Size(6, this.avatarGuid_);
             }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(3, this.retcode_);
+                size2 += CodedOutputStream.computeInt32Size(9, this.retcode_);
             }
-            if (this.avatarGuid_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(14, this.avatarGuid_);
+            if (this.equipGuid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(13, this.equipGuid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class WearEquipRspOuterClass {
                 return equals(obj);
             }
             WearEquipRsp other = (WearEquipRsp) obj;
-            return getRetcode() == other.getRetcode() && getEquipGuid() == other.getEquipGuid() && getAvatarGuid() == other.getAvatarGuid() && this.unknownFields.equals(other.unknownFields);
+            return getRetcode() == other.getRetcode() && getAvatarGuid() == other.getAvatarGuid() && getEquipGuid() == other.getEquipGuid() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class WearEquipRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getRetcode())) + 1)) + Internal.hashLong(getEquipGuid()))) + 14)) + Internal.hashLong(getAvatarGuid()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getRetcode())) + 6)) + Internal.hashLong(getAvatarGuid()))) + 13)) + Internal.hashLong(getEquipGuid()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -297,8 +297,8 @@ public final class WearEquipRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WearEquipRspOuterClass$WearEquipRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements WearEquipRspOrBuilder {
             private int retcode_;
-            private long equipGuid_;
             private long avatarGuid_;
+            private long equipGuid_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return WearEquipRspOuterClass.internal_static_WearEquipRsp_descriptor;
@@ -327,8 +327,8 @@ public final class WearEquipRspOuterClass {
             public Builder clear() {
                 clear();
                 this.retcode_ = 0;
-                this.equipGuid_ = 0;
                 this.avatarGuid_ = 0;
+                this.equipGuid_ = 0;
                 return this;
             }
 
@@ -355,8 +355,8 @@ public final class WearEquipRspOuterClass {
             public WearEquipRsp buildPartial() {
                 WearEquipRsp result = new WearEquipRsp(this);
                 result.retcode_ = this.retcode_;
-                result.equipGuid_ = this.equipGuid_;
                 result.avatarGuid_ = this.avatarGuid_;
+                result.equipGuid_ = this.equipGuid_;
                 onBuilt();
                 return result;
             }
@@ -407,11 +407,11 @@ public final class WearEquipRspOuterClass {
                 if (other.getRetcode() != 0) {
                     setRetcode(other.getRetcode());
                 }
-                if (other.getEquipGuid() != 0) {
-                    setEquipGuid(other.getEquipGuid());
-                }
                 if (other.getAvatarGuid() != 0) {
                     setAvatarGuid(other.getAvatarGuid());
+                }
+                if (other.getEquipGuid() != 0) {
+                    setEquipGuid(other.getEquipGuid());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -463,23 +463,6 @@ public final class WearEquipRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.WearEquipRspOuterClass.WearEquipRspOrBuilder
-            public long getEquipGuid() {
-                return this.equipGuid_;
-            }
-
-            public Builder setEquipGuid(long value) {
-                this.equipGuid_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearEquipGuid() {
-                this.equipGuid_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.WearEquipRspOuterClass.WearEquipRspOrBuilder
             public long getAvatarGuid() {
                 return this.avatarGuid_;
             }
@@ -492,6 +475,23 @@ public final class WearEquipRspOuterClass {
 
             public Builder clearAvatarGuid() {
                 this.avatarGuid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.WearEquipRspOuterClass.WearEquipRspOrBuilder
+            public long getEquipGuid() {
+                return this.equipGuid_;
+            }
+
+            public Builder setEquipGuid(long value) {
+                this.equipGuid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearEquipGuid() {
+                this.equipGuid_ = 0;
                 onChanged();
                 return this;
             }

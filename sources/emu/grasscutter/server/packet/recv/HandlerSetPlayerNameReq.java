@@ -6,7 +6,7 @@ import emu.grasscutter.net.proto.SetPlayerNameReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketSetPlayerNameRsp;
 
-@Opcodes(173)
+@Opcodes(200)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerSetPlayerNameReq.class */
 public class HandlerSetPlayerNameReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

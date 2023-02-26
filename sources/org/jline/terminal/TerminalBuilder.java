@@ -48,7 +48,7 @@ public final class TerminalBuilder {
     private String name;
 
     /* renamed from: in */
-    private InputStream f3238in;
+    private InputStream f3202in;
     private OutputStream out;
     private String type;
     private Charset encoding;
@@ -82,7 +82,7 @@ public final class TerminalBuilder {
     }
 
     public TerminalBuilder streams(InputStream in, OutputStream out) {
-        this.f3238in = in;
+        this.f3202in = in;
         this.out = out;
         return this;
     }
@@ -219,23 +219,23 @@ public final class TerminalBuilder {
         if (dumb == null) {
             dumb = getBoolean("org.jline.terminal.dumb", null);
         }
-        if ((this.system == null || !this.system.booleanValue()) && !(this.system == null && this.f3238in == null && this.out == null)) {
+        if ((this.system == null || !this.system.booleanValue()) && !(this.system == null && this.f3202in == null && this.out == null)) {
             if (jna.booleanValue()) {
                 try {
-                    return new PosixPtyTerminal(name, type, ((JnaSupport) load(JnaSupport.class)).open(this.attributes, this.size), this.f3238in, this.out, encoding, this.signalHandler, this.paused);
+                    return new PosixPtyTerminal(name, type, ((JnaSupport) load(JnaSupport.class)).open(this.attributes, this.size), this.f3202in, this.out, encoding, this.signalHandler, this.paused);
                 } catch (Throwable t) {
                     Log.debug("Error creating JNA based terminal: ", t.getMessage(), t);
                 }
             }
             if (jansi.booleanValue()) {
                 try {
-                    return new PosixPtyTerminal(name, type, ((JansiSupport) load(JansiSupport.class)).open(this.attributes, this.size), this.f3238in, this.out, encoding, this.signalHandler, this.paused);
+                    return new PosixPtyTerminal(name, type, ((JansiSupport) load(JansiSupport.class)).open(this.attributes, this.size), this.f3202in, this.out, encoding, this.signalHandler, this.paused);
                 } catch (Throwable t2) {
                     Log.debug("Error creating JANSI based terminal: ", t2.getMessage(), t2);
                 }
             }
-            return new ExternalTerminal(name, type, this.f3238in, this.out, encoding, this.signalHandler, this.paused, this.attributes, this.size);
-        } else if (this.system == null || ((this.f3238in == null || this.f3238in.equals(System.in)) && (this.out == null || this.out.equals(System.out)))) {
+            return new ExternalTerminal(name, type, this.f3202in, this.out, encoding, this.signalHandler, this.paused, this.attributes, this.size);
+        } else if (this.system == null || ((this.f3202in == null || this.f3202in.equals(System.in)) && (this.out == null || this.out.equals(System.out)))) {
             Terminal terminal = null;
             IllegalStateException exception = new IllegalStateException("Unable to create a system terminal");
             TerminalBuilderSupport tbs = new TerminalBuilderSupport(jna.booleanValue(), jansi.booleanValue());

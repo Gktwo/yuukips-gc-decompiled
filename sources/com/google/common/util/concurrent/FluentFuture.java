@@ -18,8 +18,9 @@ import java.util.concurrent.TimeoutException;
 /* loaded from: grasscutter.jar:com/google/common/util/concurrent/FluentFuture.class */
 public abstract class FluentFuture<V> extends GwtFluentFutureCatchingSpecialization<V> {
 
+    /* access modifiers changed from: package-private */
     /* loaded from: grasscutter.jar:com/google/common/util/concurrent/FluentFuture$TrustedFuture.class */
-    static abstract class TrustedFuture<V> extends FluentFuture<V> implements AbstractFuture.Trusted<V> {
+    public static abstract class TrustedFuture<V> extends FluentFuture<V> implements AbstractFuture.Trusted<V> {
         @Override // com.google.common.util.concurrent.AbstractFuture, java.util.concurrent.Future
         @CanIgnoreReturnValue
         public final V get() throws InterruptedException, ExecutionException {

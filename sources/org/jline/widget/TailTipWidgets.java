@@ -703,22 +703,22 @@ public class TailTipWidgets extends Widgets {
     public static class Pair<U, V> {
 
         /* renamed from: u */
-        final U f3274u;
+        final U f3238u;
 
         /* renamed from: v */
-        final V f3275v;
+        final V f3239v;
 
         public Pair(U u, V v) {
-            this.f3274u = u;
-            this.f3275v = v;
+            this.f3238u = u;
+            this.f3239v = v;
         }
 
         public U getU() {
-            return this.f3274u;
+            return this.f3238u;
         }
 
         public V getV() {
-            return this.f3275v;
+            return this.f3239v;
         }
     }
 }

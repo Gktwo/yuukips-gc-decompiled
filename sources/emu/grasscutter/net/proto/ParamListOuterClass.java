@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ParamListOuterClass.class */
 public final class ParamListOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000fParamList.proto\"\u001f\n\tParamList\u0012\u0012\n\nparam_list\u0018\u0001 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000fParamList.proto\"\u001e\n\tParamList\u0012\u0011\n\tparamList\u0018\u0001 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ParamList_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ParamList_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ParamList_descriptor, new String[]{"ParamList"});
 
@@ -49,7 +49,7 @@ public final class ParamListOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ParamListOuterClass$ParamList.class */
     public static final class ParamList extends GeneratedMessageV3 implements ParamListOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PARAM_LIST_FIELD_NUMBER = 1;
+        public static final int PARAMLIST_FIELD_NUMBER = 1;
         private Internal.IntList paramList_;
         private int paramListMemoizedSerializedSize;
         private byte memoizedIsInitialized;

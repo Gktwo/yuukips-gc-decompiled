@@ -5,7 +5,7 @@ import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.GetCompoundDataReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 
-@Opcodes(167)
+@Opcodes(107)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerGetCompoundDataReq.class */
 public class HandlerGetCompoundDataReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

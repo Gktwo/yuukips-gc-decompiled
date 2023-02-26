@@ -6,7 +6,7 @@ import emu.grasscutter.net.proto.DailyTaskFilterCityReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketDailyTaskFilterRsp;
 
-@Opcodes(101)
+@Opcodes(182)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerDailyTaskFilterReq.class */
 public class HandlerDailyTaskFilterReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

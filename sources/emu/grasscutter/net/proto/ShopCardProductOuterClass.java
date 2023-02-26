@@ -27,7 +27,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ShopCardProductOuterClass.class */
 public final class ShopCardProductOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015ShopCardProduct.proto\u001a\u000fItemParam.proto\"Æ\u0002\n\u000fShopCardProduct\u0012\u0012\n\nproduct_id\u0018\u0001 \u0001(\t\u0012\u0012\n\nprice_tier\u0018\u0002 \u0001(\t\u0012\u0012\n\nmcoin_base\u0018\u0003 \u0001(\r\u0012\u0015\n\rhcoin_per_day\u0018\u0004 \u0001(\r\u0012\f\n\u0004days\u0018\u0005 \u0001(\r\u0012\u001a\n\u0012remain_reward_days\u0018\u0006 \u0001(\r\u0012\u0019\n\u0011card_product_type\u0018\u0007 \u0001(\r\u00120\n\nresin_card\u0018e \u0001(\u000b2\u001a.ShopCardProduct.ResinCardH��\u001aV\n\tResinCard\u0012\"\n\u000ebase_item_list\u0018\u0001 \u0003(\u000b2\n.ItemParam\u0012%\n\u0011per_day_item_list\u0018\u0002 \u0003(\u000b2\n.ItemParamB\u0011\n\u000fextra_card_dataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015ShopCardProduct.proto\u001a\u000fItemParam.proto\"¸\u0002\n\u000fShopCardProduct\u0012\u0011\n\tproductId\u0018\u0001 \u0001(\t\u0012\u0011\n\tpriceTier\u0018\u0002 \u0001(\t\u0012\u0011\n\tmcoinBase\u0018\u0003 \u0001(\r\u0012\u0013\n\u000bhcoinPerDay\u0018\u0004 \u0001(\r\u0012\f\n\u0004days\u0018\u0005 \u0001(\r\u0012\u0018\n\u0010remainRewardDays\u0018\u0006 \u0001(\r\u0012\u0017\n\u000fcardProductType\u0018\u0007 \u0001(\r\u00120\n\nresin_card\u0018e \u0001(\u000b2\u001a.ShopCardProduct.ResinCardH��\u001aQ\n\tResinCard\u0012 \n\fbaseItemList\u0018\u0001 \u0003(\u000b2\n.ItemParam\u0012\"\n\u000eperDayItemList\u0018\u0002 \u0003(\u000b2\n.ItemParamB\u0011\n\u000fextra_card_dataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ShopCardProduct_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ShopCardProduct_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ShopCardProduct_descriptor, new String[]{"ProductId", "PriceTier", "McoinBase", "HcoinPerDay", "Days", "RemainRewardDays", "CardProductType", "ResinCard", "ExtraCardData"});
     private static final Descriptors.Descriptor internal_static_ShopCardProduct_ResinCard_descriptor = internal_static_ShopCardProduct_descriptor.getNestedTypes().get(0);
@@ -77,19 +77,19 @@ public final class ShopCardProductOuterClass {
         private static final long serialVersionUID = 0;
         private int extraCardDataCase_;
         private Object extraCardData_;
-        public static final int PRODUCT_ID_FIELD_NUMBER = 1;
+        public static final int PRODUCTID_FIELD_NUMBER = 1;
         private volatile Object productId_;
-        public static final int PRICE_TIER_FIELD_NUMBER = 2;
+        public static final int PRICETIER_FIELD_NUMBER = 2;
         private volatile Object priceTier_;
-        public static final int MCOIN_BASE_FIELD_NUMBER = 3;
+        public static final int MCOINBASE_FIELD_NUMBER = 3;
         private int mcoinBase_;
-        public static final int HCOIN_PER_DAY_FIELD_NUMBER = 4;
+        public static final int HCOINPERDAY_FIELD_NUMBER = 4;
         private int hcoinPerDay_;
         public static final int DAYS_FIELD_NUMBER = 5;
         private int days_;
-        public static final int REMAIN_REWARD_DAYS_FIELD_NUMBER = 6;
+        public static final int REMAINREWARDDAYS_FIELD_NUMBER = 6;
         private int remainRewardDays_;
-        public static final int CARD_PRODUCT_TYPE_FIELD_NUMBER = 7;
+        public static final int CARDPRODUCTTYPE_FIELD_NUMBER = 7;
         private int cardProductType_;
         public static final int RESIN_CARD_FIELD_NUMBER = 101;
         private byte memoizedIsInitialized;
@@ -185,7 +185,7 @@ public final class ShopCardProductOuterClass {
                             case 56:
                                 this.cardProductType_ = input.readUInt32();
                                 break;
-                            case 810:
+                            case RET_BOSS_CHEST_LIFE_TIME_OVER_VALUE:
                                 ResinCard.Builder subBuilder = this.extraCardDataCase_ == 101 ? ((ResinCard) this.extraCardData_).toBuilder() : null;
                                 this.extraCardData_ = input.readMessage(ResinCard.parser(), extensionRegistry);
                                 if (subBuilder != null) {
@@ -226,9 +226,9 @@ public final class ShopCardProductOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ShopCardProductOuterClass$ShopCardProduct$ResinCard.class */
         public static final class ResinCard extends GeneratedMessageV3 implements ResinCardOrBuilder {
             private static final long serialVersionUID = 0;
-            public static final int BASE_ITEM_LIST_FIELD_NUMBER = 1;
+            public static final int BASEITEMLIST_FIELD_NUMBER = 1;
             private List<ItemParamOuterClass.ItemParam> baseItemList_;
-            public static final int PER_DAY_ITEM_LIST_FIELD_NUMBER = 2;
+            public static final int PERDAYITEMLIST_FIELD_NUMBER = 2;
             private List<ItemParamOuterClass.ItemParam> perDayItemList_;
             private byte memoizedIsInitialized;
             private static final ResinCard DEFAULT_INSTANCE = new ResinCard();

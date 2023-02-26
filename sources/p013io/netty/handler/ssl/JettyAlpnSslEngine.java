@@ -45,9 +45,10 @@ abstract class JettyAlpnSslEngine extends JdkSslEngine {
         super(engine);
     }
 
+    /* access modifiers changed from: private */
     /* renamed from: io.netty.handler.ssl.JettyAlpnSslEngine$ClientEngine */
     /* loaded from: grasscutter.jar:io/netty/handler/ssl/JettyAlpnSslEngine$ClientEngine.class */
-    private static final class ClientEngine extends JettyAlpnSslEngine {
+    public static final class ClientEngine extends JettyAlpnSslEngine {
         ClientEngine(SSLEngine engine, final JdkApplicationProtocolNegotiator applicationNegotiator) {
             super(engine);
             ObjectUtil.checkNotNull(applicationNegotiator, "applicationNegotiator");
@@ -90,9 +91,10 @@ abstract class JettyAlpnSslEngine extends JdkSslEngine {
         }
     }
 
+    /* access modifiers changed from: private */
     /* renamed from: io.netty.handler.ssl.JettyAlpnSslEngine$ServerEngine */
     /* loaded from: grasscutter.jar:io/netty/handler/ssl/JettyAlpnSslEngine$ServerEngine.class */
-    private static final class ServerEngine extends JettyAlpnSslEngine {
+    public static final class ServerEngine extends JettyAlpnSslEngine {
         ServerEngine(SSLEngine engine, JdkApplicationProtocolNegotiator applicationNegotiator) {
             super(engine);
             ObjectUtil.checkNotNull(applicationNegotiator, "applicationNegotiator");

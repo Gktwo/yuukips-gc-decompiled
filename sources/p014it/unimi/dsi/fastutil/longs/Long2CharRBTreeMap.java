@@ -1000,7 +1000,7 @@ public class Long2CharRBTreeMap extends AbstractLong2CharSortedMap implements Se
         long from;
 
         /* renamed from: to */
-        long f2298to;
+        long f2262to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Long2CharMap.Entry> entries;
@@ -1011,7 +1011,7 @@ public class Long2CharRBTreeMap extends AbstractLong2CharSortedMap implements Se
             if (bottom || top || Long2CharRBTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f2298to = to;
+                this.f2262to = to;
                 this.top = top;
                 this.defRetValue = Long2CharRBTreeMap.this.defRetValue;
                 return;
@@ -1030,7 +1030,7 @@ public class Long2CharRBTreeMap extends AbstractLong2CharSortedMap implements Se
 
         /* renamed from: in */
         final boolean m686in(long k) {
-            return (this.bottom || Long2CharRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Long2CharRBTreeMap.this.compare(k, this.f2298to) < 0);
+            return (this.bottom || Long2CharRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Long2CharRBTreeMap.this.compare(k, this.f2262to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.Long2CharMap, p014it.unimi.dsi.fastutil.longs.Long2CharSortedMap
@@ -1205,7 +1205,7 @@ public class Long2CharRBTreeMap extends AbstractLong2CharSortedMap implements Se
         public char put(long k, char v) {
             Long2CharRBTreeMap.this.modified = false;
             if (!m686in(k)) {
-                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2298to)) + ")");
+                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2262to)) + ")");
             }
             return Long2CharRBTreeMap.this.modified ? this.defRetValue : Long2CharRBTreeMap.this.put(k, v);
         }
@@ -1243,7 +1243,7 @@ public class Long2CharRBTreeMap extends AbstractLong2CharSortedMap implements Se
 
         @Override // p014it.unimi.dsi.fastutil.longs.Long2CharSortedMap
         public Long2CharSortedMap headMap(long to) {
-            if (!this.top && Long2CharRBTreeMap.this.compare(to, this.f2298to) >= 0) {
+            if (!this.top && Long2CharRBTreeMap.this.compare(to, this.f2262to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1254,7 +1254,7 @@ public class Long2CharRBTreeMap extends AbstractLong2CharSortedMap implements Se
             if (!this.bottom && Long2CharRBTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f2298to, this.top);
+            return new Submap(from, false, this.f2262to, this.top);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -1273,7 +1273,7 @@ public class Long2CharRBTreeMap extends AbstractLong2CharSortedMap implements Se
             }
             long to = j2;
             if (!this.top) {
-                to = Long2CharRBTreeMap.this.compare(j2, this.f2298to) < 0 ? j2 : this.f2298to;
+                to = Long2CharRBTreeMap.this.compare(j2, this.f2262to) < 0 ? j2 : this.f2262to;
             }
             long from = j;
             if (!this.bottom) {
@@ -1281,7 +1281,7 @@ public class Long2CharRBTreeMap extends AbstractLong2CharSortedMap implements Se
             }
             if (!this.top && !this.bottom) {
                 if ((from == 1 ? 1 : 0) == this.from) {
-                    if ((to == 1 ? 1 : 0) == this.f2298to) {
+                    if ((to == 1 ? 1 : 0) == this.f2262to) {
                         return this;
                     }
                 }
@@ -1305,7 +1305,7 @@ public class Long2CharRBTreeMap extends AbstractLong2CharSortedMap implements Se
             if (e == null) {
                 return null;
             }
-            if (this.top || Long2CharRBTreeMap.this.compare(e.key, this.f2298to) < 0) {
+            if (this.top || Long2CharRBTreeMap.this.compare(e.key, this.f2262to) < 0) {
                 return e;
             }
             return null;
@@ -1319,8 +1319,8 @@ public class Long2CharRBTreeMap extends AbstractLong2CharSortedMap implements Se
             if (this.top) {
                 e = Long2CharRBTreeMap.this.lastEntry;
             } else {
-                e = Long2CharRBTreeMap.this.locateKey(this.f2298to);
-                if (Long2CharRBTreeMap.this.compare(e.key, this.f2298to) >= 0) {
+                e = Long2CharRBTreeMap.this.locateKey(this.f2262to);
+                if (Long2CharRBTreeMap.this.compare(e.key, this.f2262to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1398,7 +1398,7 @@ public class Long2CharRBTreeMap extends AbstractLong2CharSortedMap implements Se
             @Override // p014it.unimi.dsi.fastutil.longs.Long2CharRBTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Long2CharRBTreeMap.this.compare(this.next.key, Submap.this.f2298to) >= 0) {
+                if (!Submap.this.top && this.next != null && Long2CharRBTreeMap.this.compare(this.next.key, Submap.this.f2262to) >= 0) {
                     this.next = null;
                 }
             }

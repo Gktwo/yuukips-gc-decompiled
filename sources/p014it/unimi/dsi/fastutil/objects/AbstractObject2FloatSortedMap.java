@@ -88,30 +88,30 @@ public abstract class AbstractObject2FloatSortedMap<K> extends AbstractObject2Fl
     public static class KeySetIterator<K> implements ObjectBidirectionalIterator<K> {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Object2FloatMap.Entry<K>> f2466i;
+        protected final ObjectBidirectionalIterator<Object2FloatMap.Entry<K>> f2430i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Object2FloatMap.Entry<K>> i) {
-            this.f2466i = i;
+            this.f2430i = i;
         }
 
         @Override // java.util.Iterator
         public K next() {
-            return ((Object2FloatMap.Entry) this.f2466i.next()).getKey();
+            return ((Object2FloatMap.Entry) this.f2430i.next()).getKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public K previous() {
-            return this.f2466i.previous().getKey();
+            return this.f2430i.previous().getKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2466i.hasNext();
+            return this.f2430i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2466i.hasPrevious();
+            return this.f2430i.hasPrevious();
         }
     }
 
@@ -154,20 +154,20 @@ public abstract class AbstractObject2FloatSortedMap<K> extends AbstractObject2Fl
     public static class ValuesIterator<K> implements FloatIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Object2FloatMap.Entry<K>> f2467i;
+        protected final ObjectBidirectionalIterator<Object2FloatMap.Entry<K>> f2431i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Object2FloatMap.Entry<K>> i) {
-            this.f2467i = i;
+            this.f2431i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
         public float nextFloat() {
-            return ((Object2FloatMap.Entry) this.f2467i.next()).getFloatValue();
+            return ((Object2FloatMap.Entry) this.f2431i.next()).getFloatValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2467i.hasNext();
+            return this.f2431i.hasNext();
         }
     }
 }

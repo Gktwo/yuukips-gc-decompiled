@@ -35,13 +35,13 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
     protected transient boolean containsNullKey;
 
     /* renamed from: n */
-    protected transient int f2777n;
+    protected transient int f2741n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2778f;
+    protected final float f2742f;
     protected transient Reference2FloatMap.FastEntrySet<K> entries;
     protected transient ReferenceSet<K> keys;
     protected transient FloatCollection values;
@@ -52,14 +52,14 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2778f = f;
+            this.f2742f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2777n = arraySize;
+            this.f2741n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2777n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2777n, f);
-            this.key = (K[]) new Object[this.f2777n + 1];
-            this.value = new float[this.f2777n + 1];
+            this.mask = this.f2741n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2741n, f);
+            this.key = (K[]) new Object[this.f2741n + 1];
+            this.value = new float[this.f2741n + 1];
         }
     }
 
@@ -109,15 +109,15 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2778f);
-        if (needed > this.f2777n) {
+        int needed = HashCommon.arraySize(capacity, this.f2742f);
+        if (needed > this.f2741n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2778f)))));
-        if (needed > this.f2777n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2742f)))));
+        if (needed > this.f2741n) {
             rehash(needed);
         }
     }
@@ -127,8 +127,8 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
         float oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f2777n > this.minN && this.size < this.maxFill / 4 && this.f2777n > 16) {
-            rehash(this.f2777n / 2);
+        if (this.f2741n > this.minN && this.size < this.maxFill / 4 && this.f2741n > 16) {
+            rehash(this.f2741n / 2);
         }
         return oldValue;
     }
@@ -136,18 +136,18 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
     /* access modifiers changed from: private */
     public float removeNullEntry() {
         this.containsNullKey = false;
-        this.key[this.f2777n] = null;
-        float oldValue = this.value[this.f2777n];
+        this.key[this.f2741n] = null;
+        float oldValue = this.value[this.f2741n];
         this.size--;
-        if (this.f2777n > this.minN && this.size < this.maxFill / 4 && this.f2777n > 16) {
-            rehash(this.f2777n / 2);
+        if (this.f2741n > this.minN && this.size < this.maxFill / 4 && this.f2741n > 16) {
+            rehash(this.f2741n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractReference2FloatMap, java.util.Map
     public void putAll(Map<? extends K, ? extends Float> m) {
-        if (((double) this.f2778f) <= 0.5d) {
+        if (((double) this.f2742f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -158,7 +158,7 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
     private int find(K k) {
         K curr;
         if (k == null) {
-            return this.containsNullKey ? this.f2777n : -(this.f2777n + 1);
+            return this.containsNullKey ? this.f2741n : -(this.f2741n + 1);
         }
         K[] key = this.key;
         int mix = HashCommon.mix(System.identityHashCode(k)) & this.mask;
@@ -182,7 +182,7 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
     }
 
     private void insert(int pos, K k, float v) {
-        if (pos == this.f2777n) {
+        if (pos == this.f2741n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -190,7 +190,7 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2778f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2742f));
         }
     }
 
@@ -234,9 +234,9 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f2777n, incr);
+            return addToValue(this.f2741n, incr);
         } else {
-            pos = this.f2777n;
+            pos = this.f2741n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -244,7 +244,7 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2778f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2742f));
         }
         return this.defRetValue;
     }
@@ -310,7 +310,7 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
     public float getFloat(Object k) {
         K curr;
         if (k == null) {
-            return this.containsNullKey ? this.value[this.f2777n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2741n] : this.defRetValue;
         }
         K[] key = this.key;
         int mix = HashCommon.mix(System.identityHashCode(k)) & this.mask;
@@ -364,10 +364,10 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
     public boolean containsValue(float v) {
         float[] value = this.value;
         K[] key = this.key;
-        if (this.containsNullKey && Float.floatToIntBits(value[this.f2777n]) == Float.floatToIntBits(v)) {
+        if (this.containsNullKey && Float.floatToIntBits(value[this.f2741n]) == Float.floatToIntBits(v)) {
             return true;
         }
-        int i = this.f2777n;
+        int i = this.f2741n;
         while (true) {
             i--;
             if (i == 0) {
@@ -383,7 +383,7 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
     public float getOrDefault(Object k, float defaultValue) {
         K curr;
         if (k == null) {
-            return this.containsNullKey ? this.value[this.f2777n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2741n] : defaultValue;
         }
         K[] key = this.key;
         int mix = HashCommon.mix(System.identityHashCode(k)) & this.mask;
@@ -442,7 +442,7 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
                     return true;
                 }
             }
-        } else if (!this.containsNullKey || Float.floatToIntBits(v) != Float.floatToIntBits(this.value[this.f2777n])) {
+        } else if (!this.containsNullKey || Float.floatToIntBits(v) != Float.floatToIntBits(this.value[this.f2741n])) {
             return false;
         } else {
             removeNullEntry();
@@ -675,31 +675,31 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
         int last;
 
         /* renamed from: c */
-        int f2779c;
+        int f2743c;
         boolean mustReturnNullKey;
         ReferenceArrayList<K> wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Reference2FloatOpenHashMap.this.f2777n;
+            this.pos = Reference2FloatOpenHashMap.this.f2741n;
             this.last = -1;
-            this.f2779c = Reference2FloatOpenHashMap.this.size;
+            this.f2743c = Reference2FloatOpenHashMap.this.size;
             this.mustReturnNullKey = Reference2FloatOpenHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f2779c != 0;
+            return this.f2743c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2779c--;
+            this.f2743c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Reference2FloatOpenHashMap.this.f2777n;
+                int i = Reference2FloatOpenHashMap.this.f2741n;
                 this.last = i;
                 return i;
             }
@@ -731,13 +731,13 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Reference2FloatOpenHashMap.this.f2777n;
+                int i = Reference2FloatOpenHashMap.this.f2741n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f2779c--;
+                this.f2743c--;
             }
             K[] key = Reference2FloatOpenHashMap.this.key;
-            while (this.f2779c != 0) {
+            while (this.f2743c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -754,12 +754,12 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
                         i3 = Reference2FloatOpenHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f2779c--;
+                    this.f2743c--;
                 } else if (key[this.pos] != null) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f2779c--;
+                    this.f2743c--;
                 }
             }
         }
@@ -808,9 +808,9 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Reference2FloatOpenHashMap.this.f2777n) {
+            if (this.last == Reference2FloatOpenHashMap.this.f2741n) {
                 Reference2FloatOpenHashMap.this.containsNullKey = false;
-                Reference2FloatOpenHashMap.this.key[Reference2FloatOpenHashMap.this.f2777n] = null;
+                Reference2FloatOpenHashMap.this.key[Reference2FloatOpenHashMap.this.f2741n] = null;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -914,7 +914,7 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
         int max;
 
         /* renamed from: c */
-        int f2780c;
+        int f2744c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -924,16 +924,16 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Reference2FloatOpenHashMap.this.f2777n;
-            this.f2780c = 0;
+            this.max = Reference2FloatOpenHashMap.this.f2741n;
+            this.f2744c = 0;
             this.mustReturnNull = Reference2FloatOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Reference2FloatOpenHashMap.this.f2777n;
-            this.f2780c = 0;
+            this.max = Reference2FloatOpenHashMap.this.f2741n;
+            this.f2744c = 0;
             this.mustReturnNull = Reference2FloatOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -945,14 +945,14 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2780c++;
-                acceptOnIndex(action, Reference2FloatOpenHashMap.this.f2777n);
+                this.f2744c++;
+                acceptOnIndex(action, Reference2FloatOpenHashMap.this.f2741n);
                 return true;
             }
             K[] key = Reference2FloatOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != null) {
-                    this.f2780c++;
+                    this.f2744c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -966,14 +966,14 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2780c++;
-                acceptOnIndex(action, Reference2FloatOpenHashMap.this.f2777n);
+                this.f2744c++;
+                acceptOnIndex(action, Reference2FloatOpenHashMap.this.f2741n);
             }
             K[] key = Reference2FloatOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != null) {
                     acceptOnIndex(action, this.pos);
-                    this.f2780c++;
+                    this.f2744c++;
                 }
                 this.pos++;
             }
@@ -981,9 +981,9 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Reference2FloatOpenHashMap.this.size - this.f2780c);
+                return (long) (Reference2FloatOpenHashMap.this.size - this.f2744c);
             }
-            return Math.min((long) (Reference2FloatOpenHashMap.this.size - this.f2780c), ((long) ((((double) Reference2FloatOpenHashMap.this.realSize()) / ((double) Reference2FloatOpenHashMap.this.f2777n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Reference2FloatOpenHashMap.this.size - this.f2744c), ((long) ((((double) Reference2FloatOpenHashMap.this.realSize()) / ((double) Reference2FloatOpenHashMap.this.f2741n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1181,7 +1181,7 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
             Object key = e.getKey();
             float v = ((Float) e.getValue()).floatValue();
             if (key == null) {
-                return Reference2FloatOpenHashMap.this.containsNullKey && Float.floatToIntBits(Reference2FloatOpenHashMap.this.value[Reference2FloatOpenHashMap.this.f2777n]) == Float.floatToIntBits(v);
+                return Reference2FloatOpenHashMap.this.containsNullKey && Float.floatToIntBits(Reference2FloatOpenHashMap.this.value[Reference2FloatOpenHashMap.this.f2741n]) == Float.floatToIntBits(v);
             }
             K[] key2 = Reference2FloatOpenHashMap.this.key;
             int mix = HashCommon.mix(System.identityHashCode(key)) & Reference2FloatOpenHashMap.this.mask;
@@ -1242,7 +1242,7 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
                     Reference2FloatOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Reference2FloatOpenHashMap.this.containsNullKey || Float.floatToIntBits(Reference2FloatOpenHashMap.this.value[Reference2FloatOpenHashMap.this.f2777n]) != Float.floatToIntBits(v)) {
+            } else if (!Reference2FloatOpenHashMap.this.containsNullKey || Float.floatToIntBits(Reference2FloatOpenHashMap.this.value[Reference2FloatOpenHashMap.this.f2741n]) != Float.floatToIntBits(v)) {
                 return false;
             } else {
                 Reference2FloatOpenHashMap.this.removeNullEntry();
@@ -1263,9 +1263,9 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Reference2FloatMap.Entry<K>> consumer) {
             if (Reference2FloatOpenHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractReference2FloatMap.BasicEntry(Reference2FloatOpenHashMap.this.key[Reference2FloatOpenHashMap.this.f2777n], Reference2FloatOpenHashMap.this.value[Reference2FloatOpenHashMap.this.f2777n]));
+                consumer.accept(new AbstractReference2FloatMap.BasicEntry(Reference2FloatOpenHashMap.this.key[Reference2FloatOpenHashMap.this.f2741n], Reference2FloatOpenHashMap.this.value[Reference2FloatOpenHashMap.this.f2741n]));
             }
-            int pos = Reference2FloatOpenHashMap.this.f2777n;
+            int pos = Reference2FloatOpenHashMap.this.f2741n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1281,11 +1281,11 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
         public void fastForEach(Consumer<? super Reference2FloatMap.Entry<K>> consumer) {
             AbstractReference2FloatMap.BasicEntry<K> entry = new AbstractReference2FloatMap.BasicEntry<>();
             if (Reference2FloatOpenHashMap.this.containsNullKey) {
-                entry.key = Reference2FloatOpenHashMap.this.key[Reference2FloatOpenHashMap.this.f2777n];
-                entry.value = Reference2FloatOpenHashMap.this.value[Reference2FloatOpenHashMap.this.f2777n];
+                entry.key = Reference2FloatOpenHashMap.this.key[Reference2FloatOpenHashMap.this.f2741n];
+                entry.value = Reference2FloatOpenHashMap.this.value[Reference2FloatOpenHashMap.this.f2741n];
                 consumer.accept(entry);
             }
-            int pos = Reference2FloatOpenHashMap.this.f2777n;
+            int pos = Reference2FloatOpenHashMap.this.f2741n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1401,9 +1401,9 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super K> consumer) {
             if (Reference2FloatOpenHashMap.this.containsNullKey) {
-                consumer.accept((Object) Reference2FloatOpenHashMap.this.key[Reference2FloatOpenHashMap.this.f2777n]);
+                consumer.accept((Object) Reference2FloatOpenHashMap.this.key[Reference2FloatOpenHashMap.this.f2741n]);
             }
-            int pos = Reference2FloatOpenHashMap.this.f2777n;
+            int pos = Reference2FloatOpenHashMap.this.f2741n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1521,9 +1521,9 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
                 @Override // p014it.unimi.dsi.fastutil.floats.FloatIterable
                 public void forEach(FloatConsumer consumer) {
                     if (Reference2FloatOpenHashMap.this.containsNullKey) {
-                        consumer.accept(Reference2FloatOpenHashMap.this.value[Reference2FloatOpenHashMap.this.f2777n]);
+                        consumer.accept(Reference2FloatOpenHashMap.this.value[Reference2FloatOpenHashMap.this.f2741n]);
                     }
-                    int pos = Reference2FloatOpenHashMap.this.f2777n;
+                    int pos = Reference2FloatOpenHashMap.this.f2741n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1559,8 +1559,8 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2778f)));
-        if (l >= this.f2777n || this.size > HashCommon.maxFill(l, this.f2778f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2742f)));
+        if (l >= this.f2741n || this.size > HashCommon.maxFill(l, this.f2742f)) {
             return true;
         }
         try {
@@ -1578,7 +1578,7 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
         int mask = newN - 1;
         K[] newKey = (K[]) new Object[newN + 1];
         float[] newValue = new float[newN + 1];
-        int i2 = this.f2777n;
+        int i2 = this.f2741n;
         int j = realSize();
         while (true) {
             j--;
@@ -1597,10 +1597,10 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f2777n];
-                this.f2777n = newN;
+                newValue[newN] = value[this.f2741n];
+                this.f2741n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2777n, this.f2778f);
+                this.maxFill = HashCommon.maxFill(this.f2741n, this.f2742f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1646,7 +1646,7 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
             i++;
         }
         if (this.containsNullKey) {
-            h += HashCommon.float2int(this.value[this.f2777n]);
+            h += HashCommon.float2int(this.value[this.f2741n]);
         }
         return h;
     }
@@ -1675,12 +1675,12 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2777n = HashCommon.arraySize(this.size, this.f2778f);
-        this.maxFill = HashCommon.maxFill(this.f2777n, this.f2778f);
-        this.mask = this.f2777n - 1;
-        K[] key = (K[]) new Object[this.f2777n + 1];
+        this.f2741n = HashCommon.arraySize(this.size, this.f2742f);
+        this.maxFill = HashCommon.maxFill(this.f2741n, this.f2742f);
+        this.mask = this.f2741n - 1;
+        K[] key = (K[]) new Object[this.f2741n + 1];
         this.key = key;
-        float[] value = new float[this.f2777n + 1];
+        float[] value = new float[this.f2741n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1689,7 +1689,7 @@ public class Reference2FloatOpenHashMap<K> extends AbstractReference2FloatMap<K>
                 Object readObject = s.readObject();
                 float v = s.readFloat();
                 if (readObject == null) {
-                    pos = this.f2777n;
+                    pos = this.f2741n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix(System.identityHashCode(readObject));

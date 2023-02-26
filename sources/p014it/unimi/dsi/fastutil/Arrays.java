@@ -169,13 +169,13 @@ public class Arrays {
         private final int from;
 
         /* renamed from: to */
-        private final int f1037to;
+        private final int f1001to;
         private final IntComparator comp;
         private final Swapper swapper;
 
         public ForkJoinGenericQuickSort(int from, int to, IntComparator comp, Swapper swapper) {
             this.from = from;
-            this.f1037to = to;
+            this.f1001to = to;
             this.comp = comp;
             this.swapper = swapper;
         }
@@ -184,19 +184,19 @@ public class Arrays {
         protected void compute() {
             int comparison;
             int comparison2;
-            int len = this.f1037to - this.from;
+            int len = this.f1001to - this.from;
             if (len < 8192) {
-                Arrays.quickSort(this.from, this.f1037to, this.comp, this.swapper);
+                Arrays.quickSort(this.from, this.f1001to, this.comp, this.swapper);
                 return;
             }
             int m = this.from + (len / 2);
             int l = this.from;
-            int n = this.f1037to - 1;
+            int n = this.f1001to - 1;
             int s = len / 8;
             int m2 = Arrays.med3(Arrays.med3(l, l + s, l + (2 * s), this.comp), Arrays.med3(m - s, m, m + s, this.comp), Arrays.med3(n - (2 * s), n - s, n, this.comp), this.comp);
             int a = this.from;
             int b = a;
-            int c = this.f1037to - 1;
+            int c = this.f1001to - 1;
             int d = c;
             while (true) {
                 if (b > c || (comparison2 = this.comp.compare(b, m2)) > 0) {
@@ -238,16 +238,16 @@ public class Arrays {
             }
             int s2 = Math.min(a - this.from, b - a);
             Arrays.swap(this.swapper, this.from, b - s2, s2);
-            int s3 = Math.min(d - c, (this.f1037to - d) - 1);
-            Arrays.swap(this.swapper, b, this.f1037to - s3, s3);
+            int s3 = Math.min(d - c, (this.f1001to - d) - 1);
+            Arrays.swap(this.swapper, b, this.f1001to - s3, s3);
             int s4 = b - a;
             int t = d - c;
             if (s4 > 1 && t > 1) {
-                invokeAll(new ForkJoinGenericQuickSort(this.from, this.from + s4, this.comp, this.swapper), new ForkJoinGenericQuickSort(this.f1037to - t, this.f1037to, this.comp, this.swapper));
+                invokeAll(new ForkJoinGenericQuickSort(this.from, this.from + s4, this.comp, this.swapper), new ForkJoinGenericQuickSort(this.f1001to - t, this.f1001to, this.comp, this.swapper));
             } else if (s4 > 1) {
                 invokeAll(new ForkJoinTask[]{new ForkJoinGenericQuickSort(this.from, this.from + s4, this.comp, this.swapper)});
             } else {
-                invokeAll(new ForkJoinTask[]{new ForkJoinGenericQuickSort(this.f1037to - t, this.f1037to, this.comp, this.swapper)});
+                invokeAll(new ForkJoinTask[]{new ForkJoinGenericQuickSort(this.f1001to - t, this.f1001to, this.comp, this.swapper)});
             }
         }
     }

@@ -134,7 +134,7 @@ public final class FileInliner {
             }
 
             /* renamed from: invoke$lambda-1  reason: not valid java name */
-            private static final String m5894invoke$lambda1(Lazy<String> lazy) {
+            private static final String m5891invoke$lambda1(Lazy<String> lazy) {
                 return lazy.getValue();
             }
         }, 30, null);

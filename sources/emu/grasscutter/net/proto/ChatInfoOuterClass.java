@@ -14,7 +14,6 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Message;
 import com.google.protobuf.MessageOrBuilder;
 import com.google.protobuf.Parser;
-import com.google.protobuf.ProtocolMessageEnum;
 import com.google.protobuf.SingleFieldBuilderV3;
 import com.google.protobuf.UnknownFieldSet;
 import java.io.IOException;
@@ -23,9 +22,9 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChatInfoOuterClass.class */
 public final class ChatInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000eChatInfo.proto\"Ï\u0002\n\bChatInfo\u0012\u000f\n\u0007is_read\u0018\u0003 \u0001(\b\u0012\f\n\u0004time\u0018\u0001 \u0001(\r\u0012\u000e\n\u0006to_uid\u0018\n \u0001(\r\u0012\u000b\n\u0003uid\u0018\u000b \u0001(\r\u0012\u0010\n\bsequence\u0018\u0005 \u0001(\r\u0012\u000f\n\u0004text\u0018\u0007 \u0001(\tH��\u0012\u000f\n\u0004icon\u0018Þ\u0007 \u0001(\rH��\u0012,\n\u000bsystem_hint\u0018\u0006 \u0001(\u000b2\u0014.ChatInfo.SystemHintH��\u001a\u001a\n\nSystemHint\u0012\f\n\u0004type\u0018\u000f \u0001(\r\"~\n\u000eSystemHintType\u0012\u001e\n\u001aSYSTEM_HINT_TYPE_CHAT_NONE\u0010��\u0012%\n!SYSTEM_HINT_TYPE_CHAT_ENTER_WORLD\u0010\u0001\u0012%\n!SYSTEM_HINT_TYPE_CHAT_LEAVE_WORLD\u0010\u0002B\t\n\u0007contentB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000eChatInfo.proto\"Í\u0001\n\bChatInfo\u0012\u000e\n\u0006isRead\u0018\u0006 \u0001(\b\u0012\u000b\n\u0003uid\u0018\u000f \u0001(\r\u0012\r\n\u0005toUid\u0018\u0003 \u0001(\r\u0012\u000f\n\u0004text\u0018\u000e \u0001(\tH��\u0012\u000f\n\u0004icon\u0018\t \u0001(\rH��\u0012,\n\u000bsystem_hint\u0018\u0004 \u0001(\u000b2\u0014.ChatInfo.SystemHintH��\u0012\u0010\n\bsequence\u0018\u0002 \u0001(\r\u0012\f\n\u0004time\u0018\u000b \u0001(\r\u001a\u001a\n\nSystemHint\u0012\f\n\u0004type\u0018\u000e \u0001(\rB\t\n\u0007contentB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ChatInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChatInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChatInfo_descriptor, new String[]{"IsRead", "Time", "ToUid", "Uid", "Sequence", "Text", "Icon", "SystemHint", "Content"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChatInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChatInfo_descriptor, new String[]{"IsRead", "Uid", "ToUid", "Text", "Icon", "SystemHint", "Sequence", "Time", "Content"});
     private static final Descriptors.Descriptor internal_static_ChatInfo_SystemHint_descriptor = internal_static_ChatInfo_descriptor.getNestedTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChatInfo_SystemHint_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChatInfo_SystemHint_descriptor, new String[]{"Type"});
 
@@ -33,13 +32,9 @@ public final class ChatInfoOuterClass {
     public interface ChatInfoOrBuilder extends MessageOrBuilder {
         boolean getIsRead();
 
-        int getTime();
-
-        int getToUid();
-
         int getUid();
 
-        int getSequence();
+        int getToUid();
 
         boolean hasText();
 
@@ -56,6 +51,10 @@ public final class ChatInfoOuterClass {
         ChatInfo.SystemHint getSystemHint();
 
         ChatInfo.SystemHintOrBuilder getSystemHintOrBuilder();
+
+        int getSequence();
+
+        int getTime();
 
         ChatInfo.ContentCase getContentCase();
     }
@@ -75,19 +74,19 @@ public final class ChatInfoOuterClass {
         private static final long serialVersionUID = 0;
         private int contentCase_;
         private Object content_;
-        public static final int IS_READ_FIELD_NUMBER = 3;
+        public static final int ISREAD_FIELD_NUMBER = 6;
         private boolean isRead_;
-        public static final int TIME_FIELD_NUMBER = 1;
-        private int time_;
-        public static final int TO_UID_FIELD_NUMBER = 10;
-        private int toUid_;
-        public static final int UID_FIELD_NUMBER = 11;
+        public static final int UID_FIELD_NUMBER = 15;
         private int uid_;
-        public static final int SEQUENCE_FIELD_NUMBER = 5;
+        public static final int TOUID_FIELD_NUMBER = 3;
+        private int toUid_;
+        public static final int TEXT_FIELD_NUMBER = 1809;
+        public static final int ICON_FIELD_NUMBER = 1168;
+        public static final int SYSTEM_HINT_FIELD_NUMBER = 523;
+        public static final int SEQUENCE_FIELD_NUMBER = 2;
         private int sequence_;
-        public static final int TEXT_FIELD_NUMBER = 909;
-        public static final int ICON_FIELD_NUMBER = 990;
-        public static final int SYSTEM_HINT_FIELD_NUMBER = 799;
+        public static final int TIME_FIELD_NUMBER = 11;
+        private int time_;
         private byte memoizedIsInitialized;
         private static final ChatInfo DEFAULT_INSTANCE = new ChatInfo();
         private static final Parser<ChatInfo> PARSER = new AbstractParser<ChatInfo>() { // from class: emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.1
@@ -141,38 +140,38 @@ public final class ChatInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
-                                    this.time_ = input.readUInt32();
-                                    break;
-                                case 24:
-                                    this.isRead_ = input.readBool();
-                                    break;
-                                case 40:
+                                case 16:
                                     this.sequence_ = input.readUInt32();
                                     break;
-                                case 80:
+                                case 24:
                                     this.toUid_ = input.readUInt32();
                                     break;
+                                case 48:
+                                    this.isRead_ = input.readBool();
+                                    break;
                                 case 88:
+                                    this.time_ = input.readUInt32();
+                                    break;
+                                case 120:
                                     this.uid_ = input.readUInt32();
                                     break;
-                                case 6394:
-                                    SystemHint.Builder subBuilder = this.contentCase_ == 799 ? ((SystemHint) this.content_).toBuilder() : null;
+                                case 4186:
+                                    SystemHint.Builder subBuilder = this.contentCase_ == 523 ? ((SystemHint) this.content_).toBuilder() : null;
                                     this.content_ = input.readMessage(SystemHint.parser(), extensionRegistry);
                                     if (subBuilder != null) {
                                         subBuilder.mergeFrom((SystemHint) this.content_);
                                         this.content_ = subBuilder.buildPartial();
                                     }
-                                    this.contentCase_ = 799;
+                                    this.contentCase_ = 523;
                                     break;
-                                case 7274:
-                                    String s = input.readStringRequireUtf8();
-                                    this.contentCase_ = 909;
-                                    this.content_ = s;
-                                    break;
-                                case 7920:
-                                    this.contentCase_ = 990;
+                                case 9344:
+                                    this.contentCase_ = ICON_FIELD_NUMBER;
                                     this.content_ = Integer.valueOf(input.readUInt32());
+                                    break;
+                                case 14474:
+                                    String s = input.readStringRequireUtf8();
+                                    this.contentCase_ = TEXT_FIELD_NUMBER;
+                                    this.content_ = s;
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -204,91 +203,10 @@ public final class ChatInfoOuterClass {
             return ChatInfoOuterClass.internal_static_ChatInfo_fieldAccessorTable.ensureFieldAccessorsInitialized(ChatInfo.class, Builder.class);
         }
 
-        /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChatInfoOuterClass$ChatInfo$SystemHintType.class */
-        public enum SystemHintType implements ProtocolMessageEnum {
-            SYSTEM_HINT_TYPE_CHAT_NONE(0),
-            SYSTEM_HINT_TYPE_CHAT_ENTER_WORLD(1),
-            SYSTEM_HINT_TYPE_CHAT_LEAVE_WORLD(2),
-            UNRECOGNIZED(-1);
-            
-            public static final int SYSTEM_HINT_TYPE_CHAT_NONE_VALUE = 0;
-            public static final int SYSTEM_HINT_TYPE_CHAT_ENTER_WORLD_VALUE = 1;
-            public static final int SYSTEM_HINT_TYPE_CHAT_LEAVE_WORLD_VALUE = 2;
-            private static final Internal.EnumLiteMap<SystemHintType> internalValueMap = new Internal.EnumLiteMap<SystemHintType>() { // from class: emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfo.SystemHintType.1
-                @Override // com.google.protobuf.Internal.EnumLiteMap
-                public SystemHintType findValueByNumber(int number) {
-                    return SystemHintType.forNumber(number);
-                }
-            };
-            private static final SystemHintType[] VALUES = values();
-            private final int value;
-
-            @Override // com.google.protobuf.ProtocolMessageEnum, com.google.protobuf.Internal.EnumLite
-            public final int getNumber() {
-                if (this != UNRECOGNIZED) {
-                    return this.value;
-                }
-                throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
-            }
-
-            @Deprecated
-            public static SystemHintType valueOf(int value) {
-                return forNumber(value);
-            }
-
-            public static SystemHintType forNumber(int value) {
-                switch (value) {
-                    case 0:
-                        return SYSTEM_HINT_TYPE_CHAT_NONE;
-                    case 1:
-                        return SYSTEM_HINT_TYPE_CHAT_ENTER_WORLD;
-                    case 2:
-                        return SYSTEM_HINT_TYPE_CHAT_LEAVE_WORLD;
-                    default:
-                        return null;
-                }
-            }
-
-            public static Internal.EnumLiteMap<SystemHintType> internalGetValueMap() {
-                return internalValueMap;
-            }
-
-            @Override // com.google.protobuf.ProtocolMessageEnum
-            public final Descriptors.EnumValueDescriptor getValueDescriptor() {
-                if (this != UNRECOGNIZED) {
-                    return getDescriptor().getValues().get(ordinal());
-                }
-                throw new IllegalStateException("Can't get the descriptor of an unrecognized enum value.");
-            }
-
-            @Override // com.google.protobuf.ProtocolMessageEnum
-            public final Descriptors.EnumDescriptor getDescriptorForType() {
-                return getDescriptor();
-            }
-
-            public static final Descriptors.EnumDescriptor getDescriptor() {
-                return ChatInfo.getDescriptor().getEnumTypes().get(0);
-            }
-
-            public static SystemHintType valueOf(Descriptors.EnumValueDescriptor desc) {
-                if (desc.getType() != getDescriptor()) {
-                    throw new IllegalArgumentException("EnumValueDescriptor is not for this type.");
-                } else if (desc.getIndex() == -1) {
-                    return UNRECOGNIZED;
-                } else {
-                    return VALUES[desc.getIndex()];
-                }
-            }
-
-            SystemHintType(int value) {
-                this.value = value;
-            }
-        }
-
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChatInfoOuterClass$ChatInfo$SystemHint.class */
         public static final class SystemHint extends GeneratedMessageV3 implements SystemHintOrBuilder {
             private static final long serialVersionUID = 0;
-            public static final int TYPE_FIELD_NUMBER = 15;
+            public static final int TYPE_FIELD_NUMBER = 14;
             private int type_;
             private byte memoizedIsInitialized;
             private static final SystemHint DEFAULT_INSTANCE = new SystemHint();
@@ -335,7 +253,7 @@ public final class ChatInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 120:
+                                case 112:
                                     this.type_ = input.readUInt32();
                                     break;
                                 default:
@@ -388,7 +306,7 @@ public final class ChatInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
             public void writeTo(CodedOutputStream output) throws IOException {
                 if (this.type_ != 0) {
-                    output.writeUInt32(15, this.type_);
+                    output.writeUInt32(14, this.type_);
                 }
                 this.unknownFields.writeTo(output);
             }
@@ -401,7 +319,7 @@ public final class ChatInfoOuterClass {
                 }
                 int size2 = 0;
                 if (this.type_ != 0) {
-                    size2 = 0 + CodedOutputStream.computeUInt32Size(15, this.type_);
+                    size2 = 0 + CodedOutputStream.computeUInt32Size(14, this.type_);
                 }
                 int size3 = size2 + this.unknownFields.getSerializedSize();
                 this.memoizedSize = size3;
@@ -425,7 +343,7 @@ public final class ChatInfoOuterClass {
                 if (this.memoizedHashCode != 0) {
                     return this.memoizedHashCode;
                 }
-                int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getType())) + this.unknownFields.hashCode();
+                int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getType())) + this.unknownFields.hashCode();
                 this.memoizedHashCode = hash;
                 return hash;
             }
@@ -690,9 +608,9 @@ public final class ChatInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChatInfoOuterClass$ChatInfo$ContentCase.class */
         public enum ContentCase implements Internal.EnumLite, AbstractMessageLite.InternalOneOfEnum {
-            TEXT(909),
-            ICON(990),
-            SYSTEM_HINT(799),
+            TEXT(ChatInfo.TEXT_FIELD_NUMBER),
+            ICON(ChatInfo.ICON_FIELD_NUMBER),
+            SYSTEM_HINT(523),
             CONTENT_NOT_SET(0);
             
             private final int value;
@@ -710,12 +628,12 @@ public final class ChatInfoOuterClass {
                 switch (value) {
                     case 0:
                         return CONTENT_NOT_SET;
-                    case 799:
+                    case 523:
                         return SYSTEM_HINT;
-                    case 909:
-                        return TEXT;
-                    case 990:
+                    case ChatInfo.ICON_FIELD_NUMBER /* 1168 */:
                         return ICON;
+                    case ChatInfo.TEXT_FIELD_NUMBER /* 1809 */:
+                        return TEXT;
                     default:
                         return null;
                 }
@@ -738,8 +656,8 @@ public final class ChatInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
-        public int getTime() {
-            return this.time_;
+        public int getUid() {
+            return this.uid_;
         }
 
         @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
@@ -748,31 +666,21 @@ public final class ChatInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
-        public int getUid() {
-            return this.uid_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
-        public int getSequence() {
-            return this.sequence_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
         public boolean hasText() {
-            return this.contentCase_ == 909;
+            return this.contentCase_ == 1809;
         }
 
         @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
         public String getText() {
             Object ref = "";
-            if (this.contentCase_ == 909) {
+            if (this.contentCase_ == 1809) {
                 ref = this.content_;
             }
             if (ref instanceof String) {
                 return (String) ref;
             }
             String s = ((ByteString) ref).toStringUtf8();
-            if (this.contentCase_ == 909) {
+            if (this.contentCase_ == 1809) {
                 this.content_ = s;
             }
             return s;
@@ -781,14 +689,14 @@ public final class ChatInfoOuterClass {
         @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
         public ByteString getTextBytes() {
             Object ref = "";
-            if (this.contentCase_ == 909) {
+            if (this.contentCase_ == 1809) {
                 ref = this.content_;
             }
             if (!(ref instanceof String)) {
                 return (ByteString) ref;
             }
             ByteString b = ByteString.copyFromUtf8((String) ref);
-            if (this.contentCase_ == 909) {
+            if (this.contentCase_ == 1809) {
                 this.content_ = b;
             }
             return b;
@@ -796,12 +704,12 @@ public final class ChatInfoOuterClass {
 
         @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
         public boolean hasIcon() {
-            return this.contentCase_ == 990;
+            return this.contentCase_ == 1168;
         }
 
         @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
         public int getIcon() {
-            if (this.contentCase_ == 990) {
+            if (this.contentCase_ == 1168) {
                 return ((Integer) this.content_).intValue();
             }
             return 0;
@@ -809,12 +717,12 @@ public final class ChatInfoOuterClass {
 
         @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
         public boolean hasSystemHint() {
-            return this.contentCase_ == 799;
+            return this.contentCase_ == 523;
         }
 
         @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
         public SystemHint getSystemHint() {
-            if (this.contentCase_ == 799) {
+            if (this.contentCase_ == 523) {
                 return (SystemHint) this.content_;
             }
             return SystemHint.getDefaultInstance();
@@ -822,10 +730,20 @@ public final class ChatInfoOuterClass {
 
         @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
         public SystemHintOrBuilder getSystemHintOrBuilder() {
-            if (this.contentCase_ == 799) {
+            if (this.contentCase_ == 523) {
                 return (SystemHint) this.content_;
             }
             return SystemHint.getDefaultInstance();
+        }
+
+        @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
+        public int getSequence() {
+            return this.sequence_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
+        public int getTime() {
+            return this.time_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -843,29 +761,29 @@ public final class ChatInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.time_ != 0) {
-                output.writeUInt32(1, this.time_);
-            }
-            if (this.isRead_) {
-                output.writeBool(3, this.isRead_);
-            }
             if (this.sequence_ != 0) {
-                output.writeUInt32(5, this.sequence_);
+                output.writeUInt32(2, this.sequence_);
             }
             if (this.toUid_ != 0) {
-                output.writeUInt32(10, this.toUid_);
+                output.writeUInt32(3, this.toUid_);
+            }
+            if (this.isRead_) {
+                output.writeBool(6, this.isRead_);
+            }
+            if (this.time_ != 0) {
+                output.writeUInt32(11, this.time_);
             }
             if (this.uid_ != 0) {
-                output.writeUInt32(11, this.uid_);
+                output.writeUInt32(15, this.uid_);
             }
-            if (this.contentCase_ == 799) {
-                output.writeMessage(799, (SystemHint) this.content_);
+            if (this.contentCase_ == 523) {
+                output.writeMessage(523, (SystemHint) this.content_);
             }
-            if (this.contentCase_ == 909) {
-                GeneratedMessageV3.writeString(output, 909, this.content_);
+            if (this.contentCase_ == 1168) {
+                output.writeUInt32(ICON_FIELD_NUMBER, ((Integer) this.content_).intValue());
             }
-            if (this.contentCase_ == 990) {
-                output.writeUInt32(990, ((Integer) this.content_).intValue());
+            if (this.contentCase_ == 1809) {
+                GeneratedMessageV3.writeString(output, TEXT_FIELD_NUMBER, this.content_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -877,29 +795,29 @@ public final class ChatInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.time_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.time_);
-            }
-            if (this.isRead_) {
-                size2 += CodedOutputStream.computeBoolSize(3, this.isRead_);
-            }
             if (this.sequence_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.sequence_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.sequence_);
             }
             if (this.toUid_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.toUid_);
+                size2 += CodedOutputStream.computeUInt32Size(3, this.toUid_);
+            }
+            if (this.isRead_) {
+                size2 += CodedOutputStream.computeBoolSize(6, this.isRead_);
+            }
+            if (this.time_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(11, this.time_);
             }
             if (this.uid_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.uid_);
+                size2 += CodedOutputStream.computeUInt32Size(15, this.uid_);
             }
-            if (this.contentCase_ == 799) {
-                size2 += CodedOutputStream.computeMessageSize(799, (SystemHint) this.content_);
+            if (this.contentCase_ == 523) {
+                size2 += CodedOutputStream.computeMessageSize(523, (SystemHint) this.content_);
             }
-            if (this.contentCase_ == 909) {
-                size2 += GeneratedMessageV3.computeStringSize(909, this.content_);
+            if (this.contentCase_ == 1168) {
+                size2 += CodedOutputStream.computeUInt32Size(ICON_FIELD_NUMBER, ((Integer) this.content_).intValue());
             }
-            if (this.contentCase_ == 990) {
-                size2 += CodedOutputStream.computeUInt32Size(990, ((Integer) this.content_).intValue());
+            if (this.contentCase_ == 1809) {
+                size2 += GeneratedMessageV3.computeStringSize(TEXT_FIELD_NUMBER, this.content_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -915,22 +833,22 @@ public final class ChatInfoOuterClass {
                 return equals(obj);
             }
             ChatInfo other = (ChatInfo) obj;
-            if (getIsRead() != other.getIsRead() || getTime() != other.getTime() || getToUid() != other.getToUid() || getUid() != other.getUid() || getSequence() != other.getSequence() || !getContentCase().equals(other.getContentCase())) {
+            if (getIsRead() != other.getIsRead() || getUid() != other.getUid() || getToUid() != other.getToUid() || getSequence() != other.getSequence() || getTime() != other.getTime() || !getContentCase().equals(other.getContentCase())) {
                 return false;
             }
             switch (this.contentCase_) {
-                case 799:
+                case 523:
                     if (!getSystemHint().equals(other.getSystemHint())) {
                         return false;
                     }
                     break;
-                case 909:
-                    if (!getText().equals(other.getText())) {
+                case ICON_FIELD_NUMBER /* 1168 */:
+                    if (getIcon() != other.getIcon()) {
                         return false;
                     }
                     break;
-                case 990:
-                    if (getIcon() != other.getIcon()) {
+                case TEXT_FIELD_NUMBER /* 1809 */:
+                    if (!getText().equals(other.getText())) {
                         return false;
                     }
                     break;
@@ -943,16 +861,16 @@ public final class ChatInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + Internal.hashBoolean(getIsRead()))) + 1)) + getTime())) + 10)) + getToUid())) + 11)) + getUid())) + 5)) + getSequence();
+            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + Internal.hashBoolean(getIsRead()))) + 15)) + getUid())) + 3)) + getToUid())) + 2)) + getSequence())) + 11)) + getTime();
             switch (this.contentCase_) {
-                case 799:
-                    hash = (53 * ((37 * hash) + 799)) + getSystemHint().hashCode();
+                case 523:
+                    hash = (53 * ((37 * hash) + 523)) + getSystemHint().hashCode();
                     break;
-                case 909:
-                    hash = (53 * ((37 * hash) + 909)) + getText().hashCode();
+                case ICON_FIELD_NUMBER /* 1168 */:
+                    hash = (53 * ((37 * hash) + ICON_FIELD_NUMBER)) + getIcon();
                     break;
-                case 990:
-                    hash = (53 * ((37 * hash) + 990)) + getIcon();
+                case TEXT_FIELD_NUMBER /* 1809 */:
+                    hash = (53 * ((37 * hash) + TEXT_FIELD_NUMBER)) + getText().hashCode();
                     break;
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
@@ -1037,11 +955,11 @@ public final class ChatInfoOuterClass {
             private int contentCase_ = 0;
             private Object content_;
             private boolean isRead_;
-            private int time_;
-            private int toUid_;
             private int uid_;
-            private int sequence_;
+            private int toUid_;
             private SingleFieldBuilderV3<SystemHint, SystemHint.Builder, SystemHintOrBuilder> systemHintBuilder_;
+            private int sequence_;
+            private int time_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ChatInfoOuterClass.internal_static_ChatInfo_descriptor;
@@ -1070,10 +988,10 @@ public final class ChatInfoOuterClass {
             public Builder clear() {
                 clear();
                 this.isRead_ = false;
-                this.time_ = 0;
-                this.toUid_ = 0;
                 this.uid_ = 0;
+                this.toUid_ = 0;
                 this.sequence_ = 0;
+                this.time_ = 0;
                 this.contentCase_ = 0;
                 this.content_ = null;
                 return this;
@@ -1102,23 +1020,23 @@ public final class ChatInfoOuterClass {
             public ChatInfo buildPartial() {
                 ChatInfo result = new ChatInfo(this);
                 result.isRead_ = this.isRead_;
-                result.time_ = this.time_;
-                result.toUid_ = this.toUid_;
                 result.uid_ = this.uid_;
-                result.sequence_ = this.sequence_;
-                if (this.contentCase_ == 909) {
+                result.toUid_ = this.toUid_;
+                if (this.contentCase_ == 1809) {
                     result.content_ = this.content_;
                 }
-                if (this.contentCase_ == 990) {
+                if (this.contentCase_ == 1168) {
                     result.content_ = this.content_;
                 }
-                if (this.contentCase_ == 799) {
+                if (this.contentCase_ == 523) {
                     if (this.systemHintBuilder_ == null) {
                         result.content_ = this.content_;
                     } else {
                         result.content_ = this.systemHintBuilder_.build();
                     }
                 }
+                result.sequence_ = this.sequence_;
+                result.time_ = this.time_;
                 result.contentCase_ = this.contentCase_;
                 onBuilt();
                 return result;
@@ -1170,21 +1088,21 @@ public final class ChatInfoOuterClass {
                 if (other.getIsRead()) {
                     setIsRead(other.getIsRead());
                 }
-                if (other.getTime() != 0) {
-                    setTime(other.getTime());
+                if (other.getUid() != 0) {
+                    setUid(other.getUid());
                 }
                 if (other.getToUid() != 0) {
                     setToUid(other.getToUid());
                 }
-                if (other.getUid() != 0) {
-                    setUid(other.getUid());
-                }
                 if (other.getSequence() != 0) {
                     setSequence(other.getSequence());
                 }
+                if (other.getTime() != 0) {
+                    setTime(other.getTime());
+                }
                 switch (other.getContentCase()) {
                     case TEXT:
-                        this.contentCase_ = 909;
+                        this.contentCase_ = ChatInfo.TEXT_FIELD_NUMBER;
                         this.content_ = other.content_;
                         onChanged();
                         break;
@@ -1257,18 +1175,18 @@ public final class ChatInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
-            public int getTime() {
-                return this.time_;
+            public int getUid() {
+                return this.uid_;
             }
 
-            public Builder setTime(int value) {
-                this.time_ = value;
+            public Builder setUid(int value) {
+                this.uid_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearTime() {
-                this.time_ = 0;
+            public Builder clearUid() {
+                this.uid_ = 0;
                 onChanged();
                 return this;
             }
@@ -1291,20 +1209,203 @@ public final class ChatInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
-            public int getUid() {
-                return this.uid_;
+            public boolean hasText() {
+                return this.contentCase_ == 1809;
             }
 
-            public Builder setUid(int value) {
-                this.uid_ = value;
+            @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
+            public String getText() {
+                Object ref = "";
+                if (this.contentCase_ == 1809) {
+                    ref = this.content_;
+                }
+                if (ref instanceof String) {
+                    return (String) ref;
+                }
+                String s = ((ByteString) ref).toStringUtf8();
+                if (this.contentCase_ == 1809) {
+                    this.content_ = s;
+                }
+                return s;
+            }
+
+            @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
+            public ByteString getTextBytes() {
+                Object ref = "";
+                if (this.contentCase_ == 1809) {
+                    ref = this.content_;
+                }
+                if (!(ref instanceof String)) {
+                    return (ByteString) ref;
+                }
+                ByteString b = ByteString.copyFromUtf8((String) ref);
+                if (this.contentCase_ == 1809) {
+                    this.content_ = b;
+                }
+                return b;
+            }
+
+            public Builder setText(String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.contentCase_ = ChatInfo.TEXT_FIELD_NUMBER;
+                this.content_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearUid() {
-                this.uid_ = 0;
+            public Builder clearText() {
+                if (this.contentCase_ == 1809) {
+                    this.contentCase_ = 0;
+                    this.content_ = null;
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder setTextBytes(ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                ChatInfo.checkByteStringIsUtf8(value);
+                this.contentCase_ = ChatInfo.TEXT_FIELD_NUMBER;
+                this.content_ = value;
                 onChanged();
                 return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
+            public boolean hasIcon() {
+                return this.contentCase_ == 1168;
+            }
+
+            @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
+            public int getIcon() {
+                if (this.contentCase_ == 1168) {
+                    return ((Integer) this.content_).intValue();
+                }
+                return 0;
+            }
+
+            public Builder setIcon(int value) {
+                this.contentCase_ = ChatInfo.ICON_FIELD_NUMBER;
+                this.content_ = Integer.valueOf(value);
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIcon() {
+                if (this.contentCase_ == 1168) {
+                    this.contentCase_ = 0;
+                    this.content_ = null;
+                    onChanged();
+                }
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
+            public boolean hasSystemHint() {
+                return this.contentCase_ == 523;
+            }
+
+            @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
+            public SystemHint getSystemHint() {
+                if (this.systemHintBuilder_ == null) {
+                    if (this.contentCase_ == 523) {
+                        return (SystemHint) this.content_;
+                    }
+                    return SystemHint.getDefaultInstance();
+                } else if (this.contentCase_ == 523) {
+                    return this.systemHintBuilder_.getMessage();
+                } else {
+                    return SystemHint.getDefaultInstance();
+                }
+            }
+
+            public Builder setSystemHint(SystemHint value) {
+                if (this.systemHintBuilder_ != null) {
+                    this.systemHintBuilder_.setMessage(value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    this.content_ = value;
+                    onChanged();
+                }
+                this.contentCase_ = 523;
+                return this;
+            }
+
+            public Builder setSystemHint(SystemHint.Builder builderForValue) {
+                if (this.systemHintBuilder_ == null) {
+                    this.content_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    this.systemHintBuilder_.setMessage(builderForValue.build());
+                }
+                this.contentCase_ = 523;
+                return this;
+            }
+
+            public Builder mergeSystemHint(SystemHint value) {
+                if (this.systemHintBuilder_ == null) {
+                    if (this.contentCase_ != 523 || this.content_ == SystemHint.getDefaultInstance()) {
+                        this.content_ = value;
+                    } else {
+                        this.content_ = SystemHint.newBuilder((SystemHint) this.content_).mergeFrom(value).buildPartial();
+                    }
+                    onChanged();
+                } else {
+                    if (this.contentCase_ == 523) {
+                        this.systemHintBuilder_.mergeFrom(value);
+                    }
+                    this.systemHintBuilder_.setMessage(value);
+                }
+                this.contentCase_ = 523;
+                return this;
+            }
+
+            public Builder clearSystemHint() {
+                if (this.systemHintBuilder_ != null) {
+                    if (this.contentCase_ == 523) {
+                        this.contentCase_ = 0;
+                        this.content_ = null;
+                    }
+                    this.systemHintBuilder_.clear();
+                } else if (this.contentCase_ == 523) {
+                    this.contentCase_ = 0;
+                    this.content_ = null;
+                    onChanged();
+                }
+                return this;
+            }
+
+            public SystemHint.Builder getSystemHintBuilder() {
+                return getSystemHintFieldBuilder().getBuilder();
+            }
+
+            @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
+            public SystemHintOrBuilder getSystemHintOrBuilder() {
+                if (this.contentCase_ == 523 && this.systemHintBuilder_ != null) {
+                    return this.systemHintBuilder_.getMessageOrBuilder();
+                }
+                if (this.contentCase_ == 523) {
+                    return (SystemHint) this.content_;
+                }
+                return SystemHint.getDefaultInstance();
+            }
+
+            private SingleFieldBuilderV3<SystemHint, SystemHint.Builder, SystemHintOrBuilder> getSystemHintFieldBuilder() {
+                if (this.systemHintBuilder_ == null) {
+                    if (this.contentCase_ != 523) {
+                        this.content_ = SystemHint.getDefaultInstance();
+                    }
+                    this.systemHintBuilder_ = new SingleFieldBuilderV3<>((SystemHint) this.content_, getParentForChildren(), isClean());
+                    this.content_ = null;
+                }
+                this.contentCase_ = 523;
+                onChanged();
+                return this.systemHintBuilder_;
             }
 
             @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
@@ -1325,203 +1426,20 @@ public final class ChatInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
-            public boolean hasText() {
-                return this.contentCase_ == 909;
+            public int getTime() {
+                return this.time_;
             }
 
-            @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
-            public String getText() {
-                Object ref = "";
-                if (this.contentCase_ == 909) {
-                    ref = this.content_;
-                }
-                if (ref instanceof String) {
-                    return (String) ref;
-                }
-                String s = ((ByteString) ref).toStringUtf8();
-                if (this.contentCase_ == 909) {
-                    this.content_ = s;
-                }
-                return s;
-            }
-
-            @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
-            public ByteString getTextBytes() {
-                Object ref = "";
-                if (this.contentCase_ == 909) {
-                    ref = this.content_;
-                }
-                if (!(ref instanceof String)) {
-                    return (ByteString) ref;
-                }
-                ByteString b = ByteString.copyFromUtf8((String) ref);
-                if (this.contentCase_ == 909) {
-                    this.content_ = b;
-                }
-                return b;
-            }
-
-            public Builder setText(String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.contentCase_ = 909;
-                this.content_ = value;
+            public Builder setTime(int value) {
+                this.time_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearText() {
-                if (this.contentCase_ == 909) {
-                    this.contentCase_ = 0;
-                    this.content_ = null;
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder setTextBytes(ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                ChatInfo.checkByteStringIsUtf8(value);
-                this.contentCase_ = 909;
-                this.content_ = value;
+            public Builder clearTime() {
+                this.time_ = 0;
                 onChanged();
                 return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
-            public boolean hasIcon() {
-                return this.contentCase_ == 990;
-            }
-
-            @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
-            public int getIcon() {
-                if (this.contentCase_ == 990) {
-                    return ((Integer) this.content_).intValue();
-                }
-                return 0;
-            }
-
-            public Builder setIcon(int value) {
-                this.contentCase_ = 990;
-                this.content_ = Integer.valueOf(value);
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIcon() {
-                if (this.contentCase_ == 990) {
-                    this.contentCase_ = 0;
-                    this.content_ = null;
-                    onChanged();
-                }
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
-            public boolean hasSystemHint() {
-                return this.contentCase_ == 799;
-            }
-
-            @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
-            public SystemHint getSystemHint() {
-                if (this.systemHintBuilder_ == null) {
-                    if (this.contentCase_ == 799) {
-                        return (SystemHint) this.content_;
-                    }
-                    return SystemHint.getDefaultInstance();
-                } else if (this.contentCase_ == 799) {
-                    return this.systemHintBuilder_.getMessage();
-                } else {
-                    return SystemHint.getDefaultInstance();
-                }
-            }
-
-            public Builder setSystemHint(SystemHint value) {
-                if (this.systemHintBuilder_ != null) {
-                    this.systemHintBuilder_.setMessage(value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    this.content_ = value;
-                    onChanged();
-                }
-                this.contentCase_ = 799;
-                return this;
-            }
-
-            public Builder setSystemHint(SystemHint.Builder builderForValue) {
-                if (this.systemHintBuilder_ == null) {
-                    this.content_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    this.systemHintBuilder_.setMessage(builderForValue.build());
-                }
-                this.contentCase_ = 799;
-                return this;
-            }
-
-            public Builder mergeSystemHint(SystemHint value) {
-                if (this.systemHintBuilder_ == null) {
-                    if (this.contentCase_ != 799 || this.content_ == SystemHint.getDefaultInstance()) {
-                        this.content_ = value;
-                    } else {
-                        this.content_ = SystemHint.newBuilder((SystemHint) this.content_).mergeFrom(value).buildPartial();
-                    }
-                    onChanged();
-                } else {
-                    if (this.contentCase_ == 799) {
-                        this.systemHintBuilder_.mergeFrom(value);
-                    }
-                    this.systemHintBuilder_.setMessage(value);
-                }
-                this.contentCase_ = 799;
-                return this;
-            }
-
-            public Builder clearSystemHint() {
-                if (this.systemHintBuilder_ != null) {
-                    if (this.contentCase_ == 799) {
-                        this.contentCase_ = 0;
-                        this.content_ = null;
-                    }
-                    this.systemHintBuilder_.clear();
-                } else if (this.contentCase_ == 799) {
-                    this.contentCase_ = 0;
-                    this.content_ = null;
-                    onChanged();
-                }
-                return this;
-            }
-
-            public SystemHint.Builder getSystemHintBuilder() {
-                return getSystemHintFieldBuilder().getBuilder();
-            }
-
-            @Override // emu.grasscutter.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder
-            public SystemHintOrBuilder getSystemHintOrBuilder() {
-                if (this.contentCase_ == 799 && this.systemHintBuilder_ != null) {
-                    return this.systemHintBuilder_.getMessageOrBuilder();
-                }
-                if (this.contentCase_ == 799) {
-                    return (SystemHint) this.content_;
-                }
-                return SystemHint.getDefaultInstance();
-            }
-
-            private SingleFieldBuilderV3<SystemHint, SystemHint.Builder, SystemHintOrBuilder> getSystemHintFieldBuilder() {
-                if (this.systemHintBuilder_ == null) {
-                    if (this.contentCase_ != 799) {
-                        this.content_ = SystemHint.getDefaultInstance();
-                    }
-                    this.systemHintBuilder_ = new SingleFieldBuilderV3<>((SystemHint) this.content_, getParentForChildren(), isClean());
-                    this.content_ = null;
-                }
-                this.contentCase_ = 799;
-                onChanged();
-                return this.systemHintBuilder_;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

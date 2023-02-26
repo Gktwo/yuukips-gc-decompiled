@@ -77,7 +77,7 @@ public final class LoomUtil {
             p013io.javalin.core.LoomUtil.loomAvailable = r0
             return
         */
-        throw new UnsupportedOperationException("Method not decompiled: p013io.javalin.core.LoomUtil.m5740clinit():void");
+        throw new UnsupportedOperationException("Method not decompiled: p013io.javalin.core.LoomUtil.m5737clinit():void");
     }
 
     public final boolean getLoomAvailable() {

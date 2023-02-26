@@ -18,7 +18,7 @@ import org.eclipse.jetty.security.ServerAuthException;
 import org.eclipse.jetty.security.UserAuthentication;
 import org.eclipse.jetty.server.Authentication;
 import org.eclipse.jetty.server.UserIdentity;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.log.Log;
 import org.eclipse.jetty.util.log.Logger;
 
@@ -132,7 +132,7 @@ public class DeferredAuthentication implements Authentication.Deferred {
 
         @Override // javax.servlet.ServletResponse
         public PrintWriter getWriter() throws IOException {
-            return C5747IO.getNullPrintWriter();
+            return C5739IO.getNullPrintWriter();
         }
 
         @Override // javax.servlet.ServletResponse

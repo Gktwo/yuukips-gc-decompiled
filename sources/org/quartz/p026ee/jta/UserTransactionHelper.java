@@ -40,9 +40,10 @@ public class UserTransactionHelper {
         }
     }
 
+    /* access modifiers changed from: private */
     /* renamed from: org.quartz.ee.jta.UserTransactionHelper$UserTransactionWithContext */
     /* loaded from: grasscutter.jar:org/quartz/ee/jta/UserTransactionHelper$UserTransactionWithContext.class */
-    private static class UserTransactionWithContext implements UserTransaction {
+    public static class UserTransactionWithContext implements UserTransaction {
         InitialContext context;
         UserTransaction userTransaction;
 

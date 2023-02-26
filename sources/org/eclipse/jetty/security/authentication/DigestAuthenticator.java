@@ -118,7 +118,7 @@ public class DigestAuthenticator extends LoginAuthenticator {
                                 } else if ("nonce".equalsIgnoreCase(name)) {
                                     digest.nonce = tok;
                                 } else if ("nc".equalsIgnoreCase(name)) {
-                                    digest.f3145nc = tok;
+                                    digest.f3109nc = tok;
                                 } else if ("cnonce".equalsIgnoreCase(name)) {
                                     digest.cnonce = tok;
                                 } else if ("qop".equalsIgnoreCase(name)) {
@@ -190,7 +190,7 @@ public class DigestAuthenticator extends LoginAuthenticator {
                     if (nonce2 == null) {
                         return 0;
                     }
-                    long count = Long.parseLong(digest.f3145nc, 16);
+                    long count = Long.parseLong(digest.f3109nc, 16);
                     if (count >= ((long) this._maxNC)) {
                         return 0;
                     }
@@ -245,7 +245,7 @@ public class DigestAuthenticator extends LoginAuthenticator {
         String nonce = "";
 
         /* renamed from: nc */
-        String f3145nc = "";
+        String f3109nc = "";
         String cnonce = "";
         String qop = "";
         String uri = "";
@@ -283,7 +283,7 @@ public class DigestAuthenticator extends LoginAuthenticator {
                 md.update((byte) 58);
                 md.update(this.nonce.getBytes(StandardCharsets.ISO_8859_1));
                 md.update((byte) 58);
-                md.update(this.f3145nc.getBytes(StandardCharsets.ISO_8859_1));
+                md.update(this.f3109nc.getBytes(StandardCharsets.ISO_8859_1));
                 md.update((byte) 58);
                 md.update(this.cnonce.getBytes(StandardCharsets.ISO_8859_1));
                 md.update((byte) 58);

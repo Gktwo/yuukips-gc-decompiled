@@ -88,10 +88,10 @@ public class ConfigurableHandler extends ResourceHandler {
             Resource resource = newClassPathResource == null ? EmptyResource.INSTANCE : newClassPathResource;
             Intrinsics.checkNotNullExpressionValue(resource, "Resource.newClassPathRes…?: EmptyResource.INSTANCE");
             return resource;
-        } else if (this.config.aliasCheck != null && m5857getResource$lambda0(aliasResource$delegate).isAlias()) {
+        } else if (this.config.aliasCheck != null && m5854getResource$lambda0(aliasResource$delegate).isAlias()) {
             ContextHandler.AliasCheck aliasCheck = this.config.aliasCheck;
-            if (aliasCheck == null ? false : aliasCheck.check(path, m5857getResource$lambda0(aliasResource$delegate))) {
-                Resource r0 = m5857getResource$lambda0(aliasResource$delegate);
+            if (aliasCheck == null ? false : aliasCheck.check(path, m5854getResource$lambda0(aliasResource$delegate))) {
+                Resource r0 = m5854getResource$lambda0(aliasResource$delegate);
                 Intrinsics.checkNotNullExpressionValue(r0, "if (config.aliasCheck?.c…ion(\"Failed alias check\")");
                 return r0;
             }
@@ -112,7 +112,7 @@ public class ConfigurableHandler extends ResourceHandler {
     }
 
     /* renamed from: getResource$lambda-0  reason: not valid java name */
-    private static final Resource m5857getResource$lambda0(Lazy<? extends Resource> lazy) {
+    private static final Resource m5854getResource$lambda0(Lazy<? extends Resource> lazy) {
         return (Resource) lazy.getValue();
     }
 

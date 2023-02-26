@@ -29,8 +29,8 @@ public abstract class ProxyProtocolClientConnectionFactory implements ClientConn
 
     /* renamed from: org.eclipse.jetty.client.ProxyProtocolClientConnectionFactory$V1 */
     /* loaded from: grasscutter.jar:org/eclipse/jetty/client/ProxyProtocolClientConnectionFactory$V1.class */
-    public static class C5605V1 extends ProxyProtocolClientConnectionFactory {
-        public C5605V1(ClientConnectionFactory factory) {
+    public static class C5597V1 extends ProxyProtocolClientConnectionFactory {
+        public C5597V1(ClientConnectionFactory factory) {
             super(factory);
         }
 
@@ -95,7 +95,7 @@ public abstract class ProxyProtocolClientConnectionFactory implements ClientConn
 
             @Override // org.eclipse.jetty.p023io.ClientConnectionFactory.Decorator
             public ClientConnectionFactory apply(ClientConnectionFactory factory) {
-                return new C5605V1(factory);
+                return new C5597V1(factory);
             }
 
             public boolean equals(Object obj) {
@@ -117,8 +117,8 @@ public abstract class ProxyProtocolClientConnectionFactory implements ClientConn
 
     /* renamed from: org.eclipse.jetty.client.ProxyProtocolClientConnectionFactory$V2 */
     /* loaded from: grasscutter.jar:org/eclipse/jetty/client/ProxyProtocolClientConnectionFactory$V2.class */
-    public static class C5606V2 extends ProxyProtocolClientConnectionFactory {
-        public C5606V2(ClientConnectionFactory factory) {
+    public static class C5598V2 extends ProxyProtocolClientConnectionFactory {
+        public C5598V2(ClientConnectionFactory factory) {
             super(factory);
         }
 
@@ -229,7 +229,7 @@ public abstract class ProxyProtocolClientConnectionFactory implements ClientConn
 
             @Override // org.eclipse.jetty.p023io.ClientConnectionFactory.Decorator
             public ClientConnectionFactory apply(ClientConnectionFactory factory) {
-                return new C5606V2(factory);
+                return new C5598V2(factory);
             }
 
             public boolean equals(Object obj) {
@@ -355,9 +355,9 @@ public abstract class ProxyProtocolClientConnectionFactory implements ClientConn
 
     /* loaded from: grasscutter.jar:org/eclipse/jetty/client/ProxyProtocolClientConnectionFactory$ProxyProtocolConnectionV1.class */
     private static class ProxyProtocolConnectionV1 extends ProxyProtocolConnection {
-        private final C5605V1.Tag tag;
+        private final C5597V1.Tag tag;
 
-        public ProxyProtocolConnectionV1(EndPoint endPoint, Executor executor, ClientConnectionFactory factory, Map<String, Object> context, C5605V1.Tag tag) {
+        public ProxyProtocolConnectionV1(EndPoint endPoint, Executor executor, ClientConnectionFactory factory, Map<String, Object> context, C5597V1.Tag tag) {
             super(endPoint, executor, factory, context);
             this.tag = tag;
         }
@@ -412,9 +412,9 @@ public abstract class ProxyProtocolClientConnectionFactory implements ClientConn
     /* loaded from: grasscutter.jar:org/eclipse/jetty/client/ProxyProtocolClientConnectionFactory$ProxyProtocolConnectionV2.class */
     private static class ProxyProtocolConnectionV2 extends ProxyProtocolConnection {
         private static final byte[] MAGIC = {13, 10, 13, 10, 0, 13, 10, 81, 85, 73, 84, 10};
-        private final C5606V2.Tag tag;
+        private final C5598V2.Tag tag;
 
-        public ProxyProtocolConnectionV2(EndPoint endPoint, Executor executor, ClientConnectionFactory factory, Map<String, Object> context, C5606V2.Tag tag) {
+        public ProxyProtocolConnectionV2(EndPoint endPoint, Executor executor, ClientConnectionFactory factory, Map<String, Object> context, C5598V2.Tag tag) {
             super(endPoint, executor, factory, context);
             this.tag = tag;
         }
@@ -423,14 +423,14 @@ public abstract class ProxyProtocolClientConnectionFactory implements ClientConn
         protected void writePROXYBytes(EndPoint endPoint, Callback callback) {
             try {
                 int capacity = MAGIC.length + 1 + 1 + 2 + 216;
-                List<C5606V2.Tag.TLV> tlvs = this.tag.getTLVs();
+                List<C5598V2.Tag.TLV> tlvs = this.tag.getTLVs();
                 int vectorsLength = tlvs == null ? 0 : tlvs.stream().mapToInt(tlv -> {
                     return 3 + tlv.getValue().length;
                 }).sum();
                 ByteBuffer buffer = ByteBuffer.allocateDirect(capacity + vectorsLength);
                 buffer.put(MAGIC);
                 buffer.put((byte) (32 | (this.tag.getCommand().ordinal() & 15)));
-                C5606V2.Tag.Family family = this.tag.getFamily();
+                C5598V2.Tag.Family family = this.tag.getFamily();
                 String srcAddr = this.tag.getSourceAddress();
                 if (srcAddr == null) {
                     srcAddr = endPoint.getLocalAddress().getAddress().getHostAddress();
@@ -440,11 +440,11 @@ public abstract class ProxyProtocolClientConnectionFactory implements ClientConn
                     srcPort = endPoint.getLocalAddress().getPort();
                 }
                 if (family == null) {
-                    family = InetAddress.getByName(srcAddr) instanceof Inet4Address ? C5606V2.Tag.Family.INET4 : C5606V2.Tag.Family.INET6;
+                    family = InetAddress.getByName(srcAddr) instanceof Inet4Address ? C5598V2.Tag.Family.INET4 : C5598V2.Tag.Family.INET6;
                 }
-                C5606V2.Tag.Protocol protocol = this.tag.getProtocol();
+                C5598V2.Tag.Protocol protocol = this.tag.getProtocol();
                 if (protocol == null) {
-                    protocol = C5606V2.Tag.Protocol.STREAM;
+                    protocol = C5598V2.Tag.Protocol.STREAM;
                 }
                 buffer.put((byte) ((family.ordinal() << 4) | protocol.ordinal()));
                 int length = 0;
@@ -492,7 +492,7 @@ public abstract class ProxyProtocolClientConnectionFactory implements ClientConn
                         throw new IllegalStateException();
                 }
                 if (tlvs != null) {
-                    for (C5606V2.Tag.TLV tlv : tlvs) {
+                    for (C5598V2.Tag.TLV tlv : tlvs) {
                         buffer.put((byte) tlv.getType());
                         byte[] data = tlv.getValue();
                         buffer.putShort((short) data.length);

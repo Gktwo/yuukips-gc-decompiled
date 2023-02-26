@@ -19,23 +19,23 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TriggerCreateGadgetToEquipPartNotifyOuterClass.class */
 public final class TriggerCreateGadgetToEquipPartNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n*TriggerCreateGadgetToEquipPartNotify.proto\"z\n$TriggerCreateGadgetToEquipPartNotify\u0012\u0018\n\u0010gadget_entity_id\u0018\u0001 \u0001(\r\u0012\u0012\n\nequip_part\u0018\f \u0001(\t\u0012\u0011\n\tentity_id\u0018\u0006 \u0001(\r\u0012\u0011\n\tgadget_id\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n*TriggerCreateGadgetToEquipPartNotify.proto\"u\n$TriggerCreateGadgetToEquipPartNotify\u0012\u0010\n\bentityId\u0018\u0003 \u0001(\r\u0012\u0010\n\bgadgetId\u0018\u0005 \u0001(\r\u0012\u0016\n\u000egadgetEntityId\u0018\u0004 \u0001(\r\u0012\u0011\n\tequipPart\u0018\u0007 \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_TriggerCreateGadgetToEquipPartNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_TriggerCreateGadgetToEquipPartNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f899xffc3fdac = new GeneratedMessageV3.FieldAccessorTable(internal_static_TriggerCreateGadgetToEquipPartNotify_descriptor, new String[]{"GadgetEntityId", "EquipPart", "EntityId", "GadgetId"});
+    private static final GeneratedMessageV3.FieldAccessorTable f868xffc3fdac = new GeneratedMessageV3.FieldAccessorTable(internal_static_TriggerCreateGadgetToEquipPartNotify_descriptor, new String[]{"EntityId", "GadgetId", "GadgetEntityId", "EquipPart"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TriggerCreateGadgetToEquipPartNotifyOuterClass$TriggerCreateGadgetToEquipPartNotifyOrBuilder.class */
     public interface TriggerCreateGadgetToEquipPartNotifyOrBuilder extends MessageOrBuilder {
+        int getEntityId();
+
+        int getGadgetId();
+
         int getGadgetEntityId();
 
         String getEquipPart();
 
         ByteString getEquipPartBytes();
-
-        int getEntityId();
-
-        int getGadgetId();
     }
 
     private TriggerCreateGadgetToEquipPartNotifyOuterClass() {
@@ -51,14 +51,14 @@ public final class TriggerCreateGadgetToEquipPartNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TriggerCreateGadgetToEquipPartNotifyOuterClass$TriggerCreateGadgetToEquipPartNotify.class */
     public static final class TriggerCreateGadgetToEquipPartNotify extends GeneratedMessageV3 implements TriggerCreateGadgetToEquipPartNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 1;
-        private int gadgetEntityId_;
-        public static final int EQUIP_PART_FIELD_NUMBER = 12;
-        private volatile Object equipPart_;
-        public static final int ENTITY_ID_FIELD_NUMBER = 6;
+        public static final int ENTITYID_FIELD_NUMBER = 3;
         private int entityId_;
-        public static final int GADGET_ID_FIELD_NUMBER = 11;
+        public static final int GADGETID_FIELD_NUMBER = 5;
         private int gadgetId_;
+        public static final int GADGETENTITYID_FIELD_NUMBER = 4;
+        private int gadgetEntityId_;
+        public static final int EQUIPPART_FIELD_NUMBER = 7;
+        private volatile Object equipPart_;
         private byte memoizedIsInitialized;
         private static final TriggerCreateGadgetToEquipPartNotify DEFAULT_INSTANCE = new TriggerCreateGadgetToEquipPartNotify();
         private static final Parser<TriggerCreateGadgetToEquipPartNotify> PARSER = new AbstractParser<TriggerCreateGadgetToEquipPartNotify>() { // from class: emu.grasscutter.net.proto.TriggerCreateGadgetToEquipPartNotifyOuterClass.TriggerCreateGadgetToEquipPartNotify.1
@@ -105,16 +105,16 @@ public final class TriggerCreateGadgetToEquipPartNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
-                                this.gadgetEntityId_ = input.readUInt32();
-                                break;
-                            case 48:
+                            case 24:
                                 this.entityId_ = input.readUInt32();
                                 break;
-                            case 88:
+                            case 32:
+                                this.gadgetEntityId_ = input.readUInt32();
+                                break;
+                            case 40:
                                 this.gadgetId_ = input.readUInt32();
                                 break;
-                            case 98:
+                            case 58:
                                 this.equipPart_ = input.readStringRequireUtf8();
                                 break;
                             default:
@@ -143,7 +143,17 @@ public final class TriggerCreateGadgetToEquipPartNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return TriggerCreateGadgetToEquipPartNotifyOuterClass.f899xffc3fdac.ensureFieldAccessorsInitialized(TriggerCreateGadgetToEquipPartNotify.class, Builder.class);
+            return TriggerCreateGadgetToEquipPartNotifyOuterClass.f868xffc3fdac.ensureFieldAccessorsInitialized(TriggerCreateGadgetToEquipPartNotify.class, Builder.class);
+        }
+
+        @Override // emu.grasscutter.net.proto.TriggerCreateGadgetToEquipPartNotifyOuterClass.TriggerCreateGadgetToEquipPartNotifyOrBuilder
+        public int getEntityId() {
+            return this.entityId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.TriggerCreateGadgetToEquipPartNotifyOuterClass.TriggerCreateGadgetToEquipPartNotifyOrBuilder
+        public int getGadgetId() {
+            return this.gadgetId_;
         }
 
         @Override // emu.grasscutter.net.proto.TriggerCreateGadgetToEquipPartNotifyOuterClass.TriggerCreateGadgetToEquipPartNotifyOrBuilder
@@ -173,16 +183,6 @@ public final class TriggerCreateGadgetToEquipPartNotifyOuterClass {
             return b;
         }
 
-        @Override // emu.grasscutter.net.proto.TriggerCreateGadgetToEquipPartNotifyOuterClass.TriggerCreateGadgetToEquipPartNotifyOrBuilder
-        public int getEntityId() {
-            return this.entityId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.TriggerCreateGadgetToEquipPartNotifyOuterClass.TriggerCreateGadgetToEquipPartNotifyOrBuilder
-        public int getGadgetId() {
-            return this.gadgetId_;
-        }
-
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -198,17 +198,17 @@ public final class TriggerCreateGadgetToEquipPartNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.gadgetEntityId_ != 0) {
-                output.writeUInt32(1, this.gadgetEntityId_);
-            }
             if (this.entityId_ != 0) {
-                output.writeUInt32(6, this.entityId_);
+                output.writeUInt32(3, this.entityId_);
+            }
+            if (this.gadgetEntityId_ != 0) {
+                output.writeUInt32(4, this.gadgetEntityId_);
             }
             if (this.gadgetId_ != 0) {
-                output.writeUInt32(11, this.gadgetId_);
+                output.writeUInt32(5, this.gadgetId_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.equipPart_)) {
-                GeneratedMessageV3.writeString(output, 12, this.equipPart_);
+                GeneratedMessageV3.writeString(output, 7, this.equipPart_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -220,17 +220,17 @@ public final class TriggerCreateGadgetToEquipPartNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.gadgetEntityId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.gadgetEntityId_);
-            }
             if (this.entityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(6, this.entityId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.entityId_);
+            }
+            if (this.gadgetEntityId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(4, this.gadgetEntityId_);
             }
             if (this.gadgetId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.gadgetId_);
+                size2 += CodedOutputStream.computeUInt32Size(5, this.gadgetId_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.equipPart_)) {
-                size2 += GeneratedMessageV3.computeStringSize(12, this.equipPart_);
+                size2 += GeneratedMessageV3.computeStringSize(7, this.equipPart_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -246,7 +246,7 @@ public final class TriggerCreateGadgetToEquipPartNotifyOuterClass {
                 return equals(obj);
             }
             TriggerCreateGadgetToEquipPartNotify other = (TriggerCreateGadgetToEquipPartNotify) obj;
-            return getGadgetEntityId() == other.getGadgetEntityId() && getEquipPart().equals(other.getEquipPart()) && getEntityId() == other.getEntityId() && getGadgetId() == other.getGadgetId() && this.unknownFields.equals(other.unknownFields);
+            return getEntityId() == other.getEntityId() && getGadgetId() == other.getGadgetId() && getGadgetEntityId() == other.getGadgetEntityId() && getEquipPart().equals(other.getEquipPart()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -254,7 +254,7 @@ public final class TriggerCreateGadgetToEquipPartNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getGadgetEntityId())) + 12)) + getEquipPart().hashCode())) + 6)) + getEntityId())) + 11)) + getGadgetId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getEntityId())) + 5)) + getGadgetId())) + 4)) + getGadgetEntityId())) + 7)) + getEquipPart().hashCode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -333,10 +333,10 @@ public final class TriggerCreateGadgetToEquipPartNotifyOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TriggerCreateGadgetToEquipPartNotifyOuterClass$TriggerCreateGadgetToEquipPartNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements TriggerCreateGadgetToEquipPartNotifyOrBuilder {
-            private int gadgetEntityId_;
-            private Object equipPart_ = "";
             private int entityId_;
             private int gadgetId_;
+            private int gadgetEntityId_;
+            private Object equipPart_ = "";
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return TriggerCreateGadgetToEquipPartNotifyOuterClass.internal_static_TriggerCreateGadgetToEquipPartNotify_descriptor;
@@ -344,7 +344,7 @@ public final class TriggerCreateGadgetToEquipPartNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return TriggerCreateGadgetToEquipPartNotifyOuterClass.f899xffc3fdac.ensureFieldAccessorsInitialized(TriggerCreateGadgetToEquipPartNotify.class, Builder.class);
+                return TriggerCreateGadgetToEquipPartNotifyOuterClass.f868xffc3fdac.ensureFieldAccessorsInitialized(TriggerCreateGadgetToEquipPartNotify.class, Builder.class);
             }
 
             private Builder() {
@@ -364,10 +364,10 @@ public final class TriggerCreateGadgetToEquipPartNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.gadgetEntityId_ = 0;
-                this.equipPart_ = "";
                 this.entityId_ = 0;
                 this.gadgetId_ = 0;
+                this.gadgetEntityId_ = 0;
+                this.equipPart_ = "";
                 return this;
             }
 
@@ -393,10 +393,10 @@ public final class TriggerCreateGadgetToEquipPartNotifyOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public TriggerCreateGadgetToEquipPartNotify buildPartial() {
                 TriggerCreateGadgetToEquipPartNotify result = new TriggerCreateGadgetToEquipPartNotify(this);
-                result.gadgetEntityId_ = this.gadgetEntityId_;
-                result.equipPart_ = this.equipPart_;
                 result.entityId_ = this.entityId_;
                 result.gadgetId_ = this.gadgetId_;
+                result.gadgetEntityId_ = this.gadgetEntityId_;
+                result.equipPart_ = this.equipPart_;
                 onBuilt();
                 return result;
             }
@@ -444,18 +444,18 @@ public final class TriggerCreateGadgetToEquipPartNotifyOuterClass {
                 if (other == TriggerCreateGadgetToEquipPartNotify.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getEntityId() != 0) {
+                    setEntityId(other.getEntityId());
+                }
+                if (other.getGadgetId() != 0) {
+                    setGadgetId(other.getGadgetId());
+                }
                 if (other.getGadgetEntityId() != 0) {
                     setGadgetEntityId(other.getGadgetEntityId());
                 }
                 if (!other.getEquipPart().isEmpty()) {
                     this.equipPart_ = other.equipPart_;
                     onChanged();
-                }
-                if (other.getEntityId() != 0) {
-                    setEntityId(other.getEntityId());
-                }
-                if (other.getGadgetId() != 0) {
-                    setGadgetId(other.getGadgetId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -487,6 +487,40 @@ public final class TriggerCreateGadgetToEquipPartNotifyOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.TriggerCreateGadgetToEquipPartNotifyOuterClass.TriggerCreateGadgetToEquipPartNotifyOrBuilder
+            public int getEntityId() {
+                return this.entityId_;
+            }
+
+            public Builder setEntityId(int value) {
+                this.entityId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearEntityId() {
+                this.entityId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.TriggerCreateGadgetToEquipPartNotifyOuterClass.TriggerCreateGadgetToEquipPartNotifyOrBuilder
+            public int getGadgetId() {
+                return this.gadgetId_;
+            }
+
+            public Builder setGadgetId(int value) {
+                this.gadgetId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearGadgetId() {
+                this.gadgetId_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.TriggerCreateGadgetToEquipPartNotifyOuterClass.TriggerCreateGadgetToEquipPartNotifyOrBuilder
@@ -549,40 +583,6 @@ public final class TriggerCreateGadgetToEquipPartNotifyOuterClass {
                 }
                 TriggerCreateGadgetToEquipPartNotify.checkByteStringIsUtf8(value);
                 this.equipPart_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.TriggerCreateGadgetToEquipPartNotifyOuterClass.TriggerCreateGadgetToEquipPartNotifyOrBuilder
-            public int getEntityId() {
-                return this.entityId_;
-            }
-
-            public Builder setEntityId(int value) {
-                this.entityId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearEntityId() {
-                this.entityId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.TriggerCreateGadgetToEquipPartNotifyOuterClass.TriggerCreateGadgetToEquipPartNotifyOrBuilder
-            public int getGadgetId() {
-                return this.gadgetId_;
-            }
-
-            public Builder setGadgetId(int value) {
-                this.gadgetId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearGadgetId() {
-                this.gadgetId_ = 0;
                 onChanged();
                 return this;
             }

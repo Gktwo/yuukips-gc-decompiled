@@ -2,9 +2,10 @@ package com.mchange.p009v2.encounter;
 
 import java.util.Map;
 
+/* access modifiers changed from: package-private */
 /* renamed from: com.mchange.v2.encounter.AbstractEncounterCounter */
 /* loaded from: grasscutter.jar:com/mchange/v2/encounter/AbstractEncounterCounter.class */
-class AbstractEncounterCounter implements EncounterCounter {
+public class AbstractEncounterCounter implements EncounterCounter {
     static final Long ONE = new Long(1);
 
     /* renamed from: m */

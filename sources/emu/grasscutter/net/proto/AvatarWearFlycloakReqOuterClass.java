@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarWearFlycloakReqOuterClass.class */
 public final class AvatarWearFlycloakReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bAvatarWearFlycloakReq.proto\"A\n\u0015AvatarWearFlycloakReq\u0012\u0013\n\u000bavatar_guid\u0018\u000b \u0001(\u0004\u0012\u0013\n\u000bflycloak_id\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bAvatarWearFlycloakReq.proto\"?\n\u0015AvatarWearFlycloakReq\u0012\u0012\n\navatarGuid\u0018\r \u0001(\u0004\u0012\u0012\n\nflycloakId\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AvatarWearFlycloakReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarWearFlycloakReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarWearFlycloakReq_descriptor, new String[]{"AvatarGuid", "FlycloakId"});
 
@@ -44,9 +44,9 @@ public final class AvatarWearFlycloakReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarWearFlycloakReqOuterClass$AvatarWearFlycloakReq.class */
     public static final class AvatarWearFlycloakReq extends GeneratedMessageV3 implements AvatarWearFlycloakReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 11;
+        public static final int AVATARGUID_FIELD_NUMBER = 13;
         private long avatarGuid_;
-        public static final int FLYCLOAK_ID_FIELD_NUMBER = 15;
+        public static final int FLYCLOAKID_FIELD_NUMBER = 14;
         private int flycloakId_;
         private byte memoizedIsInitialized;
         private static final AvatarWearFlycloakReq DEFAULT_INSTANCE = new AvatarWearFlycloakReq();
@@ -93,10 +93,10 @@ public final class AvatarWearFlycloakReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 88:
+                            case 104:
                                 this.avatarGuid_ = input.readUInt64();
                                 break;
-                            case 120:
+                            case 112:
                                 this.flycloakId_ = input.readUInt32();
                                 break;
                             default:
@@ -154,10 +154,10 @@ public final class AvatarWearFlycloakReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.avatarGuid_ != 0) {
-                output.writeUInt64(11, this.avatarGuid_);
+                output.writeUInt64(13, this.avatarGuid_);
             }
             if (this.flycloakId_ != 0) {
-                output.writeUInt32(15, this.flycloakId_);
+                output.writeUInt32(14, this.flycloakId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -170,10 +170,10 @@ public final class AvatarWearFlycloakReqOuterClass {
             }
             int size2 = 0;
             if (this.avatarGuid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(11, this.avatarGuid_);
+                size2 = 0 + CodedOutputStream.computeUInt64Size(13, this.avatarGuid_);
             }
             if (this.flycloakId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.flycloakId_);
+                size2 += CodedOutputStream.computeUInt32Size(14, this.flycloakId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -197,7 +197,7 @@ public final class AvatarWearFlycloakReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + Internal.hashLong(getAvatarGuid()))) + 15)) + getFlycloakId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + Internal.hashLong(getAvatarGuid()))) + 14)) + getFlycloakId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

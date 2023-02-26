@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AiSyncInfoOuterClass.class */
 public final class AiSyncInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010AiSyncInfo.proto\"T\n\nAiSyncInfo\u0012\u0011\n\tentity_id\u0018\u0002 \u0001(\r\u0012\u001a\n\u0012has_path_to_target\u0018\u0004 \u0001(\b\u0012\u0017\n\u000fis_self_killing\u0018\u000e \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010AiSyncInfo.proto\"S\n\nAiSyncInfo\u0012\u0010\n\bentityId\u0018\u0001 \u0001(\r\u0012\u0017\n\u000fis_self_killing\u0018\u0002 \u0001(\b\u0012\u001a\n\u0012has_path_to_target\u0018\n \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AiSyncInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AiSyncInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AiSyncInfo_descriptor, new String[]{"EntityId", "HasPathToTarget", "IsSelfKilling"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AiSyncInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AiSyncInfo_descriptor, new String[]{"EntityId", "IsSelfKilling", "HasPathToTarget"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AiSyncInfoOuterClass$AiSyncInfoOrBuilder.class */
     public interface AiSyncInfoOrBuilder extends MessageOrBuilder {
         int getEntityId();
 
-        boolean getHasPathToTarget();
-
         boolean getIsSelfKilling();
+
+        boolean getHasPathToTarget();
     }
 
     private AiSyncInfoOuterClass() {
@@ -46,12 +46,12 @@ public final class AiSyncInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AiSyncInfoOuterClass$AiSyncInfo.class */
     public static final class AiSyncInfo extends GeneratedMessageV3 implements AiSyncInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTITY_ID_FIELD_NUMBER = 2;
+        public static final int ENTITYID_FIELD_NUMBER = 1;
         private int entityId_;
-        public static final int HAS_PATH_TO_TARGET_FIELD_NUMBER = 4;
-        private boolean hasPathToTarget_;
-        public static final int IS_SELF_KILLING_FIELD_NUMBER = 14;
+        public static final int IS_SELF_KILLING_FIELD_NUMBER = 2;
         private boolean isSelfKilling_;
+        public static final int HAS_PATH_TO_TARGET_FIELD_NUMBER = 10;
+        private boolean hasPathToTarget_;
         private byte memoizedIsInitialized;
         private static final AiSyncInfo DEFAULT_INSTANCE = new AiSyncInfo();
         private static final Parser<AiSyncInfo> PARSER = new AbstractParser<AiSyncInfo>() { // from class: emu.grasscutter.net.proto.AiSyncInfoOuterClass.AiSyncInfo.1
@@ -98,14 +98,14 @@ public final class AiSyncInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
+                                case 8:
                                     this.entityId_ = input.readUInt32();
                                     break;
-                                case 32:
-                                    this.hasPathToTarget_ = input.readBool();
-                                    break;
-                                case 112:
+                                case 16:
                                     this.isSelfKilling_ = input.readBool();
+                                    break;
+                                case 80:
+                                    this.hasPathToTarget_ = input.readBool();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -143,13 +143,13 @@ public final class AiSyncInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AiSyncInfoOuterClass.AiSyncInfoOrBuilder
-        public boolean getHasPathToTarget() {
-            return this.hasPathToTarget_;
+        public boolean getIsSelfKilling() {
+            return this.isSelfKilling_;
         }
 
         @Override // emu.grasscutter.net.proto.AiSyncInfoOuterClass.AiSyncInfoOrBuilder
-        public boolean getIsSelfKilling() {
-            return this.isSelfKilling_;
+        public boolean getHasPathToTarget() {
+            return this.hasPathToTarget_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -168,13 +168,13 @@ public final class AiSyncInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.entityId_ != 0) {
-                output.writeUInt32(2, this.entityId_);
-            }
-            if (this.hasPathToTarget_) {
-                output.writeBool(4, this.hasPathToTarget_);
+                output.writeUInt32(1, this.entityId_);
             }
             if (this.isSelfKilling_) {
-                output.writeBool(14, this.isSelfKilling_);
+                output.writeBool(2, this.isSelfKilling_);
+            }
+            if (this.hasPathToTarget_) {
+                output.writeBool(10, this.hasPathToTarget_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -187,13 +187,13 @@ public final class AiSyncInfoOuterClass {
             }
             int size2 = 0;
             if (this.entityId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.entityId_);
-            }
-            if (this.hasPathToTarget_) {
-                size2 += CodedOutputStream.computeBoolSize(4, this.hasPathToTarget_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.entityId_);
             }
             if (this.isSelfKilling_) {
-                size2 += CodedOutputStream.computeBoolSize(14, this.isSelfKilling_);
+                size2 += CodedOutputStream.computeBoolSize(2, this.isSelfKilling_);
+            }
+            if (this.hasPathToTarget_) {
+                size2 += CodedOutputStream.computeBoolSize(10, this.hasPathToTarget_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class AiSyncInfoOuterClass {
                 return equals(obj);
             }
             AiSyncInfo other = (AiSyncInfo) obj;
-            return getEntityId() == other.getEntityId() && getHasPathToTarget() == other.getHasPathToTarget() && getIsSelfKilling() == other.getIsSelfKilling() && this.unknownFields.equals(other.unknownFields);
+            return getEntityId() == other.getEntityId() && getIsSelfKilling() == other.getIsSelfKilling() && getHasPathToTarget() == other.getHasPathToTarget() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class AiSyncInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getEntityId())) + 4)) + Internal.hashBoolean(getHasPathToTarget()))) + 14)) + Internal.hashBoolean(getIsSelfKilling()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getEntityId())) + 2)) + Internal.hashBoolean(getIsSelfKilling()))) + 10)) + Internal.hashBoolean(getHasPathToTarget()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -297,8 +297,8 @@ public final class AiSyncInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AiSyncInfoOuterClass$AiSyncInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements AiSyncInfoOrBuilder {
             private int entityId_;
-            private boolean hasPathToTarget_;
             private boolean isSelfKilling_;
+            private boolean hasPathToTarget_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return AiSyncInfoOuterClass.internal_static_AiSyncInfo_descriptor;
@@ -327,8 +327,8 @@ public final class AiSyncInfoOuterClass {
             public Builder clear() {
                 clear();
                 this.entityId_ = 0;
-                this.hasPathToTarget_ = false;
                 this.isSelfKilling_ = false;
+                this.hasPathToTarget_ = false;
                 return this;
             }
 
@@ -355,8 +355,8 @@ public final class AiSyncInfoOuterClass {
             public AiSyncInfo buildPartial() {
                 AiSyncInfo result = new AiSyncInfo(this);
                 result.entityId_ = this.entityId_;
-                result.hasPathToTarget_ = this.hasPathToTarget_;
                 result.isSelfKilling_ = this.isSelfKilling_;
+                result.hasPathToTarget_ = this.hasPathToTarget_;
                 onBuilt();
                 return result;
             }
@@ -407,11 +407,11 @@ public final class AiSyncInfoOuterClass {
                 if (other.getEntityId() != 0) {
                     setEntityId(other.getEntityId());
                 }
-                if (other.getHasPathToTarget()) {
-                    setHasPathToTarget(other.getHasPathToTarget());
-                }
                 if (other.getIsSelfKilling()) {
                     setIsSelfKilling(other.getIsSelfKilling());
+                }
+                if (other.getHasPathToTarget()) {
+                    setHasPathToTarget(other.getHasPathToTarget());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -463,23 +463,6 @@ public final class AiSyncInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AiSyncInfoOuterClass.AiSyncInfoOrBuilder
-            public boolean getHasPathToTarget() {
-                return this.hasPathToTarget_;
-            }
-
-            public Builder setHasPathToTarget(boolean value) {
-                this.hasPathToTarget_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearHasPathToTarget() {
-                this.hasPathToTarget_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AiSyncInfoOuterClass.AiSyncInfoOrBuilder
             public boolean getIsSelfKilling() {
                 return this.isSelfKilling_;
             }
@@ -492,6 +475,23 @@ public final class AiSyncInfoOuterClass {
 
             public Builder clearIsSelfKilling() {
                 this.isSelfKilling_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AiSyncInfoOuterClass.AiSyncInfoOrBuilder
+            public boolean getHasPathToTarget() {
+                return this.hasPathToTarget_;
+            }
+
+            public Builder setHasPathToTarget(boolean value) {
+                this.hasPathToTarget_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearHasPathToTarget() {
+                this.hasPathToTarget_ = false;
                 onChanged();
                 return this;
             }

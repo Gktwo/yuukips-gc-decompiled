@@ -188,30 +188,30 @@ public abstract class AbstractShort2ReferenceMap<V> extends AbstractShort2Refere
                 return new ShortIterator() { // from class: it.unimi.dsi.fastutil.shorts.AbstractShort2ReferenceMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Short2ReferenceMap.Entry<V>> f2879i;
+                    private final ObjectIterator<Short2ReferenceMap.Entry<V>> f2843i;
 
                     {
-                        this.f2879i = Short2ReferenceMaps.fastIterator(AbstractShort2ReferenceMap.this);
+                        this.f2843i = Short2ReferenceMaps.fastIterator(AbstractShort2ReferenceMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
                     public short nextShort() {
-                        return this.f2879i.next().getShortKey();
+                        return this.f2843i.next().getShortKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2879i.hasNext();
+                        return this.f2843i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2879i.remove();
+                        this.f2843i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
                     public void forEachRemaining(ShortConsumer action) {
-                        this.f2879i.forEachRemaining(entry -> {
+                        this.f2843i.forEachRemaining(entry -> {
                             action.accept(entry.getShortKey());
                         });
                     }
@@ -248,30 +248,30 @@ public abstract class AbstractShort2ReferenceMap<V> extends AbstractShort2Refere
                 return new ObjectIterator<V>() { // from class: it.unimi.dsi.fastutil.shorts.AbstractShort2ReferenceMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Short2ReferenceMap.Entry<V>> f2880i;
+                    private final ObjectIterator<Short2ReferenceMap.Entry<V>> f2844i;
 
                     {
-                        this.f2880i = Short2ReferenceMaps.fastIterator(AbstractShort2ReferenceMap.this);
+                        this.f2844i = Short2ReferenceMaps.fastIterator(AbstractShort2ReferenceMap.this);
                     }
 
                     @Override // java.util.Iterator
                     public V next() {
-                        return this.f2880i.next().getValue();
+                        return this.f2844i.next().getValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2880i.hasNext();
+                        return this.f2844i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2880i.remove();
+                        this.f2844i.remove();
                     }
 
                     @Override // java.util.Iterator
                     public void forEachRemaining(Consumer<? super V> action) {
-                        this.f2880i.forEachRemaining(entry -> {
+                        this.f2844i.forEachRemaining(entry -> {
                             action.accept(entry.getValue());
                         });
                     }

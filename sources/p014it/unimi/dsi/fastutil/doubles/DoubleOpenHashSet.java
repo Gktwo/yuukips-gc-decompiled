@@ -25,13 +25,13 @@ public class DoubleOpenHashSet extends AbstractDoubleSet implements Serializable
     protected transient boolean containsNull;
 
     /* renamed from: n */
-    protected transient int f1745n;
+    protected transient int f1709n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1746f;
+    protected final float f1710f;
 
     public DoubleOpenHashSet(int expected, float f) {
         if (f <= 0.0f || f >= 1.0f) {
@@ -39,13 +39,13 @@ public class DoubleOpenHashSet extends AbstractDoubleSet implements Serializable
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1746f = f;
+            this.f1710f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1745n = arraySize;
+            this.f1709n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1745n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1745n, f);
-            this.key = new double[this.f1745n + 1];
+            this.mask = this.f1709n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1709n, f);
+            this.key = new double[this.f1709n + 1];
         }
     }
 
@@ -187,22 +187,22 @@ public class DoubleOpenHashSet extends AbstractDoubleSet implements Serializable
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1746f);
-        if (needed > this.f1745n) {
+        int needed = HashCommon.arraySize(capacity, this.f1710f);
+        if (needed > this.f1709n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1746f)))));
-        if (needed > this.f1745n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1710f)))));
+        if (needed > this.f1709n) {
             rehash(needed);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleCollection, p014it.unimi.dsi.fastutil.doubles.DoubleCollection
     public boolean addAll(DoubleCollection c) {
-        if (((double) this.f1746f) <= 0.5d) {
+        if (((double) this.f1710f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -212,7 +212,7 @@ public class DoubleOpenHashSet extends AbstractDoubleSet implements Serializable
 
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Double> c) {
-        if (((double) this.f1746f) <= 0.5d) {
+        if (((double) this.f1710f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -252,7 +252,7 @@ public class DoubleOpenHashSet extends AbstractDoubleSet implements Serializable
         if (i2 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f1746f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f1710f));
         return true;
     }
 
@@ -288,21 +288,21 @@ public class DoubleOpenHashSet extends AbstractDoubleSet implements Serializable
     private boolean removeEntry(int pos) {
         this.size--;
         shiftKeys(pos);
-        if (this.f1745n <= this.minN || this.size >= this.maxFill / 4 || this.f1745n <= 16) {
+        if (this.f1709n <= this.minN || this.size >= this.maxFill / 4 || this.f1709n <= 16) {
             return true;
         }
-        rehash(this.f1745n / 2);
+        rehash(this.f1709n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f1745n] = 0.0d;
+        this.key[this.f1709n] = 0.0d;
         this.size--;
-        if (this.f1745n <= this.minN || this.size >= this.maxFill / 4 || this.f1745n <= 16) {
+        if (this.f1709n <= this.minN || this.size >= this.maxFill / 4 || this.f1709n <= 16) {
             return true;
         }
-        rehash(this.f1745n / 2);
+        rehash(this.f1709n / 2);
         return true;
     }
 
@@ -390,20 +390,20 @@ public class DoubleOpenHashSet extends AbstractDoubleSet implements Serializable
         int last;
 
         /* renamed from: c */
-        int f1747c;
+        int f1711c;
         boolean mustReturnNull;
         DoubleArrayList wrapped;
 
         private SetIterator() {
-            this.pos = DoubleOpenHashSet.this.f1745n;
+            this.pos = DoubleOpenHashSet.this.f1709n;
             this.last = -1;
-            this.f1747c = DoubleOpenHashSet.this.size;
+            this.f1711c = DoubleOpenHashSet.this.size;
             this.mustReturnNull = DoubleOpenHashSet.this.containsNull;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1747c != 0;
+            return this.f1711c != 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
@@ -411,11 +411,11 @@ public class DoubleOpenHashSet extends AbstractDoubleSet implements Serializable
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f1747c--;
+            this.f1711c--;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = DoubleOpenHashSet.this.f1745n;
-                return DoubleOpenHashSet.this.key[DoubleOpenHashSet.this.f1745n];
+                this.last = DoubleOpenHashSet.this.f1709n;
+                return DoubleOpenHashSet.this.key[DoubleOpenHashSet.this.f1709n];
             }
             double[] key = DoubleOpenHashSet.this.key;
             do {
@@ -474,9 +474,9 @@ public class DoubleOpenHashSet extends AbstractDoubleSet implements Serializable
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == DoubleOpenHashSet.this.f1745n) {
+            if (this.last == DoubleOpenHashSet.this.f1709n) {
                 DoubleOpenHashSet.this.containsNull = false;
-                DoubleOpenHashSet.this.key[DoubleOpenHashSet.this.f1745n] = 0.0d;
+                DoubleOpenHashSet.this.key[DoubleOpenHashSet.this.f1709n] = 0.0d;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -493,22 +493,22 @@ public class DoubleOpenHashSet extends AbstractDoubleSet implements Serializable
             double[] key = DoubleOpenHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = DoubleOpenHashSet.this.f1745n;
-                action.accept(key[DoubleOpenHashSet.this.f1745n]);
-                this.f1747c--;
+                this.last = DoubleOpenHashSet.this.f1709n;
+                action.accept(key[DoubleOpenHashSet.this.f1709n]);
+                this.f1711c--;
             }
-            while (this.f1747c != 0) {
+            while (this.f1711c != 0) {
                 int i = this.pos - 1;
                 this.pos = i;
                 if (i < 0) {
                     this.last = Integer.MIN_VALUE;
                     action.accept(this.wrapped.getDouble((-this.pos) - 1));
-                    this.f1747c--;
+                    this.f1711c--;
                 } else if (Double.doubleToLongBits(key[this.pos]) != 0) {
                     int i2 = this.pos;
                     this.last = i2;
                     action.accept(key[i2]);
-                    this.f1747c--;
+                    this.f1711c--;
                 }
             }
         }
@@ -528,22 +528,22 @@ public class DoubleOpenHashSet extends AbstractDoubleSet implements Serializable
         int max;
 
         /* renamed from: c */
-        int f1748c;
+        int f1712c;
         boolean mustReturnNull;
         boolean hasSplit;
 
         SetSpliterator() {
             this.pos = 0;
-            this.max = DoubleOpenHashSet.this.f1745n;
-            this.f1748c = 0;
+            this.max = DoubleOpenHashSet.this.f1709n;
+            this.f1712c = 0;
             this.mustReturnNull = DoubleOpenHashSet.this.containsNull;
             this.hasSplit = false;
         }
 
         SetSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = DoubleOpenHashSet.this.f1745n;
-            this.f1748c = 0;
+            this.max = DoubleOpenHashSet.this.f1709n;
+            this.f1712c = 0;
             this.mustReturnNull = DoubleOpenHashSet.this.containsNull;
             this.hasSplit = false;
             this.pos = pos;
@@ -556,14 +556,14 @@ public class DoubleOpenHashSet extends AbstractDoubleSet implements Serializable
         public boolean tryAdvance(DoubleConsumer action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1748c++;
-                action.accept(DoubleOpenHashSet.this.key[DoubleOpenHashSet.this.f1745n]);
+                this.f1712c++;
+                action.accept(DoubleOpenHashSet.this.key[DoubleOpenHashSet.this.f1709n]);
                 return true;
             }
             double[] key = DoubleOpenHashSet.this.key;
             while (this.pos < this.max) {
                 if (Double.doubleToLongBits(key[this.pos]) != 0) {
-                    this.f1748c++;
+                    this.f1712c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(key[i]);
@@ -579,13 +579,13 @@ public class DoubleOpenHashSet extends AbstractDoubleSet implements Serializable
             double[] key = DoubleOpenHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                action.accept(key[DoubleOpenHashSet.this.f1745n]);
-                this.f1748c++;
+                action.accept(key[DoubleOpenHashSet.this.f1709n]);
+                this.f1712c++;
             }
             while (this.pos < this.max) {
                 if (Double.doubleToLongBits(key[this.pos]) != 0) {
                     action.accept(key[this.pos]);
-                    this.f1748c++;
+                    this.f1712c++;
                 }
                 this.pos++;
             }
@@ -599,9 +599,9 @@ public class DoubleOpenHashSet extends AbstractDoubleSet implements Serializable
         @Override // java.util.Spliterator
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (DoubleOpenHashSet.this.size - this.f1748c);
+                return (long) (DoubleOpenHashSet.this.size - this.f1712c);
             }
-            return Math.min((long) (DoubleOpenHashSet.this.size - this.f1748c), ((long) ((((double) DoubleOpenHashSet.this.realSize()) / ((double) DoubleOpenHashSet.this.f1745n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (DoubleOpenHashSet.this.size - this.f1712c), ((long) ((((double) DoubleOpenHashSet.this.realSize()) / ((double) DoubleOpenHashSet.this.f1709n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleSpliterator, java.util.Spliterator.OfDouble, java.util.Spliterator.OfPrimitive, java.util.Spliterator
@@ -730,10 +730,10 @@ public class DoubleOpenHashSet extends AbstractDoubleSet implements Serializable
     @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterable
     public void forEach(DoubleConsumer action) {
         if (this.containsNull) {
-            action.accept(this.key[this.f1745n]);
+            action.accept(this.key[this.f1709n]);
         }
         double[] key = this.key;
-        int pos = this.f1745n;
+        int pos = this.f1709n;
         while (true) {
             pos--;
             if (pos == 0) {
@@ -750,8 +750,8 @@ public class DoubleOpenHashSet extends AbstractDoubleSet implements Serializable
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1746f)));
-        if (l >= this.f1745n || this.size > HashCommon.maxFill(l, this.f1746f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1710f)));
+        if (l >= this.f1709n || this.size > HashCommon.maxFill(l, this.f1710f)) {
             return true;
         }
         try {
@@ -767,7 +767,7 @@ public class DoubleOpenHashSet extends AbstractDoubleSet implements Serializable
         double[] key = this.key;
         int mask = newN - 1;
         double[] newKey = new double[newN + 1];
-        int i2 = this.f1745n;
+        int i2 = this.f1709n;
         int j = realSize();
         while (true) {
             j--;
@@ -785,9 +785,9 @@ public class DoubleOpenHashSet extends AbstractDoubleSet implements Serializable
                 }
                 newKey[pos] = key[i2];
             } else {
-                this.f1745n = newN;
+                this.f1709n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f1745n, this.f1746f);
+                this.maxFill = HashCommon.maxFill(this.f1709n, this.f1710f);
                 this.key = newKey;
                 return;
             }
@@ -842,10 +842,10 @@ public class DoubleOpenHashSet extends AbstractDoubleSet implements Serializable
         int pos;
         int i;
         s.defaultReadObject();
-        this.f1745n = HashCommon.arraySize(this.size, this.f1746f);
-        this.maxFill = HashCommon.maxFill(this.f1745n, this.f1746f);
-        this.mask = this.f1745n - 1;
-        double[] key = new double[this.f1745n + 1];
+        this.f1709n = HashCommon.arraySize(this.size, this.f1710f);
+        this.maxFill = HashCommon.maxFill(this.f1709n, this.f1710f);
+        this.mask = this.f1709n - 1;
+        double[] key = new double[this.f1709n + 1];
         this.key = key;
         int i2 = this.size;
         while (true) {
@@ -853,7 +853,7 @@ public class DoubleOpenHashSet extends AbstractDoubleSet implements Serializable
             if (i2 != 0) {
                 double k = s.readDouble();
                 if (Double.doubleToLongBits(k) == 0) {
-                    pos = this.f1745n;
+                    pos = this.f1709n;
                     this.containsNull = true;
                 } else {
                     int mix = ((int) HashCommon.mix(Double.doubleToRawLongBits(k))) & this.mask;

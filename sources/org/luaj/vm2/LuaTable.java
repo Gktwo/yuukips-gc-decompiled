@@ -14,12 +14,12 @@ public class LuaTable extends LuaValue implements Metatable {
     protected Metatable m_metatable;
 
     /* renamed from: N */
-    private static final LuaString f3290N = valueOf("n");
+    private static final LuaString f3254N = valueOf("n");
     private static final Slot[] NOBUCKETS = new Slot[0];
 
     /* renamed from: org.luaj.vm2.LuaTable$1 */
     /* loaded from: grasscutter.jar:org/luaj/vm2/LuaTable$1.class */
-    static class C58641 {
+    static class C58561 {
     }
 
     /* loaded from: grasscutter.jar:org/luaj/vm2/LuaTable$DeadSlot.class */
@@ -112,7 +112,7 @@ public class LuaTable extends LuaValue implements Metatable {
             return stringBuffer.toString();
         }
 
-        DeadSlot(LuaValue luaValue, Slot slot, C58641 r7) {
+        DeadSlot(LuaValue luaValue, Slot slot, C58561 r7) {
             this(luaValue, slot);
         }
     }
@@ -522,7 +522,7 @@ public class LuaTable extends LuaValue implements Metatable {
         int i2 = i - 1;
         int max = Math.max(varargs.narg() - i2, 0);
         presize(max, 1);
-        set(f3290N, valueOf(max));
+        set(f3254N, valueOf(max));
         for (int i3 = 1; i3 <= max; i3++) {
             set(i3, varargs.arg(i3 + i2));
         }
@@ -981,7 +981,7 @@ public class LuaTable extends LuaValue implements Metatable {
             i2 += 8;
             i3 >>>= 8;
         }
-        if ((i3 & PacketOpcodes.ExecuteGadgetLuaRsp) != 0) {
+        if ((i3 & PacketOpcodes.SceneKickPlayerRsp) != 0) {
             i2 += 4;
             i3 >>>= 4;
         }

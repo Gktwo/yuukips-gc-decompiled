@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DeleteFriendNotifyOuterClass.class */
 public final class DeleteFriendNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018DeleteFriendNotify.proto\"(\n\u0012DeleteFriendNotify\u0012\u0012\n\ntarget_uid\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018DeleteFriendNotify.proto\"'\n\u0012DeleteFriendNotify\u0012\u0011\n\ttargetUid\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_DeleteFriendNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_DeleteFriendNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DeleteFriendNotify_descriptor, new String[]{"TargetUid"});
 
@@ -41,7 +41,7 @@ public final class DeleteFriendNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DeleteFriendNotifyOuterClass$DeleteFriendNotify.class */
     public static final class DeleteFriendNotify extends GeneratedMessageV3 implements DeleteFriendNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TARGET_UID_FIELD_NUMBER = 5;
+        public static final int TARGETUID_FIELD_NUMBER = 8;
         private int targetUid_;
         private byte memoizedIsInitialized;
         private static final DeleteFriendNotify DEFAULT_INSTANCE = new DeleteFriendNotify();
@@ -88,7 +88,7 @@ public final class DeleteFriendNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 40:
+                            case 64:
                                 this.targetUid_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class DeleteFriendNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.targetUid_ != 0) {
-                output.writeUInt32(5, this.targetUid_);
+                output.writeUInt32(8, this.targetUid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class DeleteFriendNotifyOuterClass {
             }
             int size2 = 0;
             if (this.targetUid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.targetUid_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(8, this.targetUid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class DeleteFriendNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getTargetUid())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getTargetUid())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

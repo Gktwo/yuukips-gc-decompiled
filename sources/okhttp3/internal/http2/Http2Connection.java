@@ -142,12 +142,12 @@ public final class Http2Connection implements Closeable {
                         if (this.this$0.intervalPongsReceived < this.this$0.intervalPingsSent) {
                             failDueToMissingPong = true;
                         } else {
-                            this.this$0.intervalPingsSent++;
+                            this.this$0.intervalPingsSent = this.this$0.intervalPingsSent + 1;
                             failDueToMissingPong = false;
                         }
                     }
                     if (failDueToMissingPong) {
-                        Http2Connection.access$failConnection(this.this$0, null);
+                        this.this$0.failConnection(null);
                         return -1;
                     }
                     this.this$0.writePing(false, 1, 0);
@@ -155,10 +155,6 @@ public final class Http2Connection implements Closeable {
                 }
             }, pingIntervalNanos);
         }
-    }
-
-    public static final /* synthetic */ void access$failConnection(Http2Connection $this, IOException e) {
-        $this.failConnection(e);
     }
 
     public final boolean getClient$okhttp() {
@@ -373,7 +369,7 @@ public final class Http2Connection implements Closeable {
                     this.this$0.writeSynReset$okhttp(this.$streamId$inlined, this.$errorCode$inlined);
                     return -1;
                 } catch (IOException e) {
-                    Http2Connection.access$failConnection(this.this$0, e);
+                    this.this$0.failConnection(e);
                     return -1;
                 }
             }
@@ -407,7 +403,7 @@ public final class Http2Connection implements Closeable {
                     this.this$0.getWriter().windowUpdate(this.$streamId$inlined, this.$unacknowledgedBytesRead$inlined);
                     return -1;
                 } catch (IOException e) {
-                    Http2Connection.access$failConnection(this.this$0, e);
+                    this.this$0.failConnection(e);
                     return -1;
                 }
             }
@@ -511,7 +507,7 @@ public final class Http2Connection implements Closeable {
         throw new AssertionError("Thread " + ((Object) Thread.currentThread().getName()) + " MUST NOT hold lock on " + this);
     }
 
-    private final void failConnection(IOException e) {
+    public final void failConnection(IOException e) {
         close$okhttp(ErrorCode.PROTOCOL_ERROR, ErrorCode.PROTOCOL_ERROR, e);
     }
 
@@ -878,7 +874,7 @@ public final class Http2Connection implements Closeable {
                             Http2Stream newStream = new Http2Stream(streamId, http2Connection2, false, inFinished, Util.toHeaders(list));
                             http2Connection2.setLastGoodStreamId$okhttp(streamId);
                             http2Connection2.getStreams$okhttp().put(Integer.valueOf(streamId), newStream);
-                            http2Connection2.taskRunner.newQueue().schedule(new C5522x74e0874(http2Connection2.getConnectionName$okhttp() + '[' + streamId + "] onStream", true, http2Connection2, newStream), 0);
+                            http2Connection2.taskRunner.newQueue().schedule(new C5514x74e0874(http2Connection2.getConnectionName$okhttp() + '[' + streamId + "] onStream", true, http2Connection2, newStream), 0);
                         }
                     }
                 }
@@ -901,7 +897,7 @@ public final class Http2Connection implements Closeable {
         @Override // okhttp3.internal.http2.Http2Reader.Handler
         public void settings(boolean clearPrevious, @NotNull Settings settings) {
             Intrinsics.checkNotNullParameter(settings, "settings");
-            this.this$0.writerQueue.schedule(new C5523x8b30c3bb(Intrinsics.stringPlus(this.this$0.getConnectionName$okhttp(), " applyAndAckSettings"), true, this, clearPrevious, settings), 0);
+            this.this$0.writerQueue.schedule(new C5515x8b30c3bb(Intrinsics.stringPlus(this.this$0.getConnectionName$okhttp(), " applyAndAckSettings"), true, this, clearPrevious, settings), 0);
         }
 
         /*  JADX ERROR: JadxRuntimeException in pass: BlockProcessor

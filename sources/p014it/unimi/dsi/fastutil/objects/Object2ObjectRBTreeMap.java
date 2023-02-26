@@ -864,7 +864,7 @@ public class Object2ObjectRBTreeMap<K, V> extends AbstractObject2ObjectSortedMap
         K from;
 
         /* renamed from: to */
-        K f2651to;
+        K f2615to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Object2ObjectMap.Entry<K, V>> entries;
@@ -875,7 +875,7 @@ public class Object2ObjectRBTreeMap<K, V> extends AbstractObject2ObjectSortedMap
             if (bottom || top || Object2ObjectRBTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f2651to = to;
+                this.f2615to = to;
                 this.top = top;
                 this.defRetValue = Object2ObjectRBTreeMap.this.defRetValue;
                 return;
@@ -894,7 +894,7 @@ public class Object2ObjectRBTreeMap<K, V> extends AbstractObject2ObjectSortedMap
 
         /* renamed from: in */
         final boolean m591in(K k) {
-            return (this.bottom || Object2ObjectRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Object2ObjectRBTreeMap.this.compare(k, this.f2651to) < 0);
+            return (this.bottom || Object2ObjectRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Object2ObjectRBTreeMap.this.compare(k, this.f2615to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.Object2ObjectMap, p014it.unimi.dsi.fastutil.objects.Object2ObjectSortedMap
@@ -1076,7 +1076,7 @@ public class Object2ObjectRBTreeMap<K, V> extends AbstractObject2ObjectSortedMap
         public V put(K k, V v) {
             Object2ObjectRBTreeMap.this.modified = false;
             if (!m591in(k)) {
-                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2651to)) + ")");
+                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2615to)) + ")");
             }
             return Object2ObjectRBTreeMap.this.modified ? (V) this.defRetValue : (V) Object2ObjectRBTreeMap.this.put(k, v);
         }
@@ -1113,7 +1113,7 @@ public class Object2ObjectRBTreeMap<K, V> extends AbstractObject2ObjectSortedMap
 
         @Override // p014it.unimi.dsi.fastutil.objects.Object2ObjectSortedMap, java.util.SortedMap
         public Object2ObjectSortedMap<K, V> headMap(K to) {
-            if (!this.top && Object2ObjectRBTreeMap.this.compare(to, this.f2651to) >= 0) {
+            if (!this.top && Object2ObjectRBTreeMap.this.compare(to, this.f2615to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1124,7 +1124,7 @@ public class Object2ObjectRBTreeMap<K, V> extends AbstractObject2ObjectSortedMap
             if (!this.bottom && Object2ObjectRBTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f2651to, this.top);
+            return new Submap(from, false, this.f2615to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.Object2ObjectSortedMap, java.util.SortedMap
@@ -1133,12 +1133,12 @@ public class Object2ObjectRBTreeMap<K, V> extends AbstractObject2ObjectSortedMap
                 return new Submap(from, false, to, false);
             }
             if (!this.top) {
-                to = Object2ObjectRBTreeMap.this.compare(to, this.f2651to) < 0 ? to : this.f2651to;
+                to = Object2ObjectRBTreeMap.this.compare(to, this.f2615to) < 0 ? to : this.f2615to;
             }
             if (!this.bottom) {
                 from = Object2ObjectRBTreeMap.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f2651to) ? new Submap(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f2615to) ? new Submap(from, false, to, false) : this;
         }
 
         /* JADX DEBUG: Multi-variable search result rejected for r0v11, resolved type: it.unimi.dsi.fastutil.objects.Object2ObjectRBTreeMap */
@@ -1160,7 +1160,7 @@ public class Object2ObjectRBTreeMap<K, V> extends AbstractObject2ObjectSortedMap
             if (e == null) {
                 return null;
             }
-            if (this.top || Object2ObjectRBTreeMap.this.compare(e.key, this.f2651to) < 0) {
+            if (this.top || Object2ObjectRBTreeMap.this.compare(e.key, this.f2615to) < 0) {
                 return e;
             }
             return null;
@@ -1177,8 +1177,8 @@ public class Object2ObjectRBTreeMap<K, V> extends AbstractObject2ObjectSortedMap
             if (this.top) {
                 e = Object2ObjectRBTreeMap.this.lastEntry;
             } else {
-                e = Object2ObjectRBTreeMap.this.locateKey(this.f2651to);
-                if (Object2ObjectRBTreeMap.this.compare(e.key, this.f2651to) >= 0) {
+                e = Object2ObjectRBTreeMap.this.locateKey(this.f2615to);
+                if (Object2ObjectRBTreeMap.this.compare(e.key, this.f2615to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1264,7 +1264,7 @@ public class Object2ObjectRBTreeMap<K, V> extends AbstractObject2ObjectSortedMap
             @Override // p014it.unimi.dsi.fastutil.objects.Object2ObjectRBTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Object2ObjectRBTreeMap.this.compare(this.next.key, Submap.this.f2651to) >= 0) {
+                if (!Submap.this.top && this.next != null && Object2ObjectRBTreeMap.this.compare(this.next.key, Submap.this.f2615to) >= 0) {
                     this.next = null;
                 }
             }

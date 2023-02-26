@@ -19,12 +19,12 @@ public class ByteArrayFrontCodedBigList extends AbstractObjectBigList<byte[]> im
     private static final long serialVersionUID = 1;
 
     /* renamed from: n */
-    protected final long f1246n;
+    protected final long f1210n;
     protected final int ratio;
     protected final byte[][] array;
 
     /* renamed from: p */
-    protected transient long[][] f1247p;
+    protected transient long[][] f1211p;
 
     /* JADX WARN: Type inference failed for: r0v23, types: [long] */
     /* JADX WARN: Type inference failed for: r0v27, types: [long] */
@@ -66,10 +66,10 @@ public class ByteArrayFrontCodedBigList extends AbstractObjectBigList<byte[]> im
             b = 1 - b;
             c3 += serialVersionUID;
         }
-        this.f1246n = c3;
+        this.f1210n = c3;
         this.ratio = ratio;
         this.array = BigArrays.trim(array, (long) c2);
-        this.f1247p = BigArrays.trim(p, ((c3 + ((long) ratio)) - serialVersionUID) / ((long) ratio));
+        this.f1211p = BigArrays.trim(p, ((c3 + ((long) ratio)) - serialVersionUID) / ((long) ratio));
     }
 
     public ByteArrayFrontCodedBigList(Collection<byte[]> c, int ratio) {
@@ -86,7 +86,7 @@ public class ByteArrayFrontCodedBigList extends AbstractObjectBigList<byte[]> im
     public int length(long index) {
         byte[][] array = this.array;
         int delta = (int) (index % ((long) this.ratio));
-        long pos = BigArrays.get(this.f1247p, index / ((long) this.ratio));
+        long pos = BigArrays.get(this.f1211p, index / ((long) this.ratio));
         int length = ByteArrayFrontCodedList.readInt(array, pos);
         if (delta == 0) {
             return length;
@@ -145,7 +145,7 @@ public class ByteArrayFrontCodedBigList extends AbstractObjectBigList<byte[]> im
 
     @Override // p014it.unimi.dsi.fastutil.Size64
     public long size64() {
-        return this.f1246n;
+        return this.f1210n;
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, p014it.unimi.dsi.fastutil.objects.ObjectBigList, p014it.unimi.dsi.fastutil.BigList
@@ -154,27 +154,27 @@ public class ByteArrayFrontCodedBigList extends AbstractObjectBigList<byte[]> im
         return new ObjectBigListIterator<byte[]>() { // from class: it.unimi.dsi.fastutil.bytes.ByteArrayFrontCodedBigList.1
 
             /* renamed from: s */
-            byte[] f1248s = ByteArrays.EMPTY_ARRAY;
+            byte[] f1212s = ByteArrays.EMPTY_ARRAY;
 
             /* renamed from: i */
-            long f1249i;
+            long f1213i;
             long pos;
             boolean inSync;
 
             /* JADX WARN: Incorrect args count in method signature: ()V */
             {
-                this.f1249i = 0;
+                this.f1213i = 0;
                 this.pos = 0;
                 if (start == 0) {
                     return;
                 }
-                if (start == ByteArrayFrontCodedBigList.this.f1246n) {
-                    this.f1249i = start;
+                if (start == ByteArrayFrontCodedBigList.this.f1210n) {
+                    this.f1213i = start;
                     return;
                 }
-                this.pos = BigArrays.get(ByteArrayFrontCodedBigList.this.f1247p, start / ((long) ByteArrayFrontCodedBigList.this.ratio));
+                this.pos = BigArrays.get(ByteArrayFrontCodedBigList.this.f1211p, start / ((long) ByteArrayFrontCodedBigList.this.ratio));
                 int j = (int) (start % ((long) ByteArrayFrontCodedBigList.this.ratio));
-                this.f1249i = start - ((long) j);
+                this.f1213i = start - ((long) j);
                 while (true) {
                     j--;
                     if (j != 0) {
@@ -187,22 +187,22 @@ public class ByteArrayFrontCodedBigList extends AbstractObjectBigList<byte[]> im
 
             @Override // java.util.Iterator
             public boolean hasNext() {
-                return this.f1249i < ByteArrayFrontCodedBigList.this.f1246n;
+                return this.f1213i < ByteArrayFrontCodedBigList.this.f1210n;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
             public boolean hasPrevious() {
-                return this.f1249i > 0;
+                return this.f1213i > 0;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BigListIterator
             public long previousIndex() {
-                return this.f1249i - ByteArrayFrontCodedBigList.serialVersionUID;
+                return this.f1213i - ByteArrayFrontCodedBigList.serialVersionUID;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BigListIterator
             public long nextIndex() {
-                return this.f1249i;
+                return this.f1213i;
             }
 
             @Override // java.util.Iterator
@@ -211,29 +211,29 @@ public class ByteArrayFrontCodedBigList extends AbstractObjectBigList<byte[]> im
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                if (this.f1249i % ((long) ByteArrayFrontCodedBigList.this.ratio) == 0) {
-                    this.pos = BigArrays.get(ByteArrayFrontCodedBigList.this.f1247p, this.f1249i / ((long) ByteArrayFrontCodedBigList.this.ratio));
+                if (this.f1213i % ((long) ByteArrayFrontCodedBigList.this.ratio) == 0) {
+                    this.pos = BigArrays.get(ByteArrayFrontCodedBigList.this.f1211p, this.f1213i / ((long) ByteArrayFrontCodedBigList.this.ratio));
                     length = ByteArrayFrontCodedList.readInt(ByteArrayFrontCodedBigList.this.array, this.pos);
-                    this.f1248s = ByteArrays.ensureCapacity(this.f1248s, length, 0);
-                    BigArrays.copyFromBig(ByteArrayFrontCodedBigList.this.array, this.pos + ((long) ByteArrayFrontCodedList.count(length)), this.f1248s, 0, length);
+                    this.f1212s = ByteArrays.ensureCapacity(this.f1212s, length, 0);
+                    BigArrays.copyFromBig(ByteArrayFrontCodedBigList.this.array, this.pos + ((long) ByteArrayFrontCodedList.count(length)), this.f1212s, 0, length);
                     this.pos += (long) (length + ByteArrayFrontCodedList.count(length));
                     this.inSync = true;
                 } else if (this.inSync) {
                     int length2 = ByteArrayFrontCodedList.readInt(ByteArrayFrontCodedBigList.this.array, this.pos);
                     int common = ByteArrayFrontCodedList.readInt(ByteArrayFrontCodedBigList.this.array, this.pos + ((long) ByteArrayFrontCodedList.count(length2)));
-                    this.f1248s = ByteArrays.ensureCapacity(this.f1248s, length2 + common, common);
-                    BigArrays.copyFromBig(ByteArrayFrontCodedBigList.this.array, this.pos + ((long) ByteArrayFrontCodedList.count(length2)) + ((long) ByteArrayFrontCodedList.count(common)), this.f1248s, common, length2);
+                    this.f1212s = ByteArrays.ensureCapacity(this.f1212s, length2 + common, common);
+                    BigArrays.copyFromBig(ByteArrayFrontCodedBigList.this.array, this.pos + ((long) ByteArrayFrontCodedList.count(length2)) + ((long) ByteArrayFrontCodedList.count(common)), this.f1212s, common, length2);
                     this.pos += (long) (ByteArrayFrontCodedList.count(length2) + ByteArrayFrontCodedList.count(common) + length2);
                     length = length2 + common;
                 } else {
-                    byte[] bArr = this.f1248s;
-                    int length3 = ByteArrayFrontCodedBigList.this.length(this.f1249i);
+                    byte[] bArr = this.f1212s;
+                    int length3 = ByteArrayFrontCodedBigList.this.length(this.f1213i);
                     length = length3;
-                    this.f1248s = ByteArrays.ensureCapacity(bArr, length3, 0);
-                    ByteArrayFrontCodedBigList.this.extract(this.f1249i, this.f1248s, 0, length);
+                    this.f1212s = ByteArrays.ensureCapacity(bArr, length3, 0);
+                    ByteArrayFrontCodedBigList.this.extract(this.f1213i, this.f1212s, 0, length);
                 }
-                this.f1249i += ByteArrayFrontCodedBigList.serialVersionUID;
-                return ByteArrays.copy(this.f1248s, 0, length);
+                this.f1213i += ByteArrayFrontCodedBigList.serialVersionUID;
+                return ByteArrays.copy(this.f1212s, 0, length);
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -243,8 +243,8 @@ public class ByteArrayFrontCodedBigList extends AbstractObjectBigList<byte[]> im
                 }
                 this.inSync = false;
                 ByteArrayFrontCodedBigList byteArrayFrontCodedBigList = ByteArrayFrontCodedBigList.this;
-                long j = this.f1249i - ByteArrayFrontCodedBigList.serialVersionUID;
-                this.f1249i = j;
+                long j = this.f1213i - ByteArrayFrontCodedBigList.serialVersionUID;
+                this.f1213i = j;
                 return byteArrayFrontCodedBigList.getArray(j);
             }
         };
@@ -259,7 +259,7 @@ public class ByteArrayFrontCodedBigList extends AbstractObjectBigList<byte[]> im
     public String toString() {
         StringBuffer s = new StringBuffer();
         s.append("[");
-        for (long i = 0; i < this.f1246n; i += serialVersionUID) {
+        for (long i = 0; i < this.f1210n; i += serialVersionUID) {
             if (i != 0) {
                 s.append(", ");
             }
@@ -276,13 +276,13 @@ public class ByteArrayFrontCodedBigList extends AbstractObjectBigList<byte[]> im
     protected long[][] rebuildPointerArray() {
         int i;
         char c;
-        long[][] p = LongBigArrays.newBigArray(((this.f1246n + ((long) this.ratio)) - serialVersionUID) / ((long) this.ratio));
+        long[][] p = LongBigArrays.newBigArray(((this.f1210n + ((long) this.ratio)) - serialVersionUID) / ((long) this.ratio));
         byte[][] a = this.array;
         char c2 = 0;
         int skip = this.ratio - 1;
         char c3 = 0;
         long j = 0;
-        while (c3 < this.f1246n) {
+        while (c3 < this.f1210n) {
             int length = ByteArrayFrontCodedList.readInt(a, c2 == 1 ? 1 : 0);
             int count = ByteArrayFrontCodedList.count(length);
             skip++;
@@ -309,7 +309,7 @@ public class ByteArrayFrontCodedBigList extends AbstractObjectBigList<byte[]> im
                 array.writeByte(e);
             }
         }
-        long[][] jArr = this.f1247p;
+        long[][] jArr = this.f1211p;
         for (long[] s2 : jArr) {
             for (long e2 : s2) {
                 pointers.writeLong(e2);
@@ -319,6 +319,6 @@ public class ByteArrayFrontCodedBigList extends AbstractObjectBigList<byte[]> im
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f1247p = rebuildPointerArray();
+        this.f1211p = rebuildPointerArray();
     }
 }

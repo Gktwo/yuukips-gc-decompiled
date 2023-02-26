@@ -23,7 +23,7 @@ public final class WinterCampGetCanGiveFriendItemReqOuterClass {
     private static final Descriptors.Descriptor internal_static_WinterCampGetCanGiveFriendItemReq_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_WinterCampGetCanGiveFriendItemReq_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f950xb03b299f = new GeneratedMessageV3.FieldAccessorTable(internal_static_WinterCampGetCanGiveFriendItemReq_descriptor, new String[0]);
+    private static final GeneratedMessageV3.FieldAccessorTable f915xb03b299f = new GeneratedMessageV3.FieldAccessorTable(internal_static_WinterCampGetCanGiveFriendItemReq_descriptor, new String[0]);
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WinterCampGetCanGiveFriendItemReqOuterClass$WinterCampGetCanGiveFriendItemReqOrBuilder.class */
     public interface WinterCampGetCanGiveFriendItemReqOrBuilder extends MessageOrBuilder {
@@ -113,7 +113,7 @@ public final class WinterCampGetCanGiveFriendItemReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return WinterCampGetCanGiveFriendItemReqOuterClass.f950xb03b299f.ensureFieldAccessorsInitialized(WinterCampGetCanGiveFriendItemReq.class, Builder.class);
+            return WinterCampGetCanGiveFriendItemReqOuterClass.f915xb03b299f.ensureFieldAccessorsInitialized(WinterCampGetCanGiveFriendItemReq.class, Builder.class);
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -246,7 +246,7 @@ public final class WinterCampGetCanGiveFriendItemReqOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return WinterCampGetCanGiveFriendItemReqOuterClass.f950xb03b299f.ensureFieldAccessorsInitialized(WinterCampGetCanGiveFriendItemReq.class, Builder.class);
+                return WinterCampGetCanGiveFriendItemReqOuterClass.f915xb03b299f.ensureFieldAccessorsInitialized(WinterCampGetCanGiveFriendItemReq.class, Builder.class);
             }
 
             private Builder() {

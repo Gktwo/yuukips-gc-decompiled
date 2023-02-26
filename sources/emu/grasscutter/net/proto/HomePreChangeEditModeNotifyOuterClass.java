@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomePreChangeEditModeNotifyOuterClass.class */
 public final class HomePreChangeEditModeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!HomePreChangeEditModeNotify.proto\"9\n\u001bHomePreChangeEditModeNotify\u0012\u001a\n\u0012is_enter_edit_mode\u0018\n \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!HomePreChangeEditModeNotify.proto\"6\n\u001bHomePreChangeEditModeNotify\u0012\u0017\n\u000fisEnterEditMode\u0018\u0003 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_HomePreChangeEditModeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomePreChangeEditModeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomePreChangeEditModeNotify_descriptor, new String[]{"IsEnterEditMode"});
 
@@ -42,7 +42,7 @@ public final class HomePreChangeEditModeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomePreChangeEditModeNotifyOuterClass$HomePreChangeEditModeNotify.class */
     public static final class HomePreChangeEditModeNotify extends GeneratedMessageV3 implements HomePreChangeEditModeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_ENTER_EDIT_MODE_FIELD_NUMBER = 10;
+        public static final int ISENTEREDITMODE_FIELD_NUMBER = 3;
         private boolean isEnterEditMode_;
         private byte memoizedIsInitialized;
         private static final HomePreChangeEditModeNotify DEFAULT_INSTANCE = new HomePreChangeEditModeNotify();
@@ -89,7 +89,7 @@ public final class HomePreChangeEditModeNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 80:
+                            case 24:
                                 this.isEnterEditMode_ = input.readBool();
                                 break;
                             default:
@@ -142,7 +142,7 @@ public final class HomePreChangeEditModeNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.isEnterEditMode_) {
-                output.writeBool(10, this.isEnterEditMode_);
+                output.writeBool(3, this.isEnterEditMode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -155,7 +155,7 @@ public final class HomePreChangeEditModeNotifyOuterClass {
             }
             int size2 = 0;
             if (this.isEnterEditMode_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(10, this.isEnterEditMode_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(3, this.isEnterEditMode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -179,7 +179,7 @@ public final class HomePreChangeEditModeNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + Internal.hashBoolean(getIsEnterEditMode()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + Internal.hashBoolean(getIsEnterEditMode()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

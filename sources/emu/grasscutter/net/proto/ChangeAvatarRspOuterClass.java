@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChangeAvatarRspOuterClass.class */
 public final class ChangeAvatarRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015ChangeAvatarRsp.proto\"F\n\u000fChangeAvatarRsp\u0012\u0010\n\bcur_guid\u0018\n \u0001(\u0004\u0012\u0010\n\bskill_id\u0018\u0001 \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0005 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015ChangeAvatarRsp.proto\"D\n\u000fChangeAvatarRsp\u0012\u000f\n\u0007curGuid\u0018\u000e \u0001(\u0004\u0012\u000f\n\u0007skillId\u0018\u0006 \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u000f \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ChangeAvatarRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChangeAvatarRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChangeAvatarRsp_descriptor, new String[]{"CurGuid", "SkillId", "Retcode"});
 
@@ -46,11 +46,11 @@ public final class ChangeAvatarRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChangeAvatarRspOuterClass$ChangeAvatarRsp.class */
     public static final class ChangeAvatarRsp extends GeneratedMessageV3 implements ChangeAvatarRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CUR_GUID_FIELD_NUMBER = 10;
+        public static final int CURGUID_FIELD_NUMBER = 14;
         private long curGuid_;
-        public static final int SKILL_ID_FIELD_NUMBER = 1;
+        public static final int SKILLID_FIELD_NUMBER = 6;
         private int skillId_;
-        public static final int RETCODE_FIELD_NUMBER = 5;
+        public static final int RETCODE_FIELD_NUMBER = 15;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final ChangeAvatarRsp DEFAULT_INSTANCE = new ChangeAvatarRsp();
@@ -98,14 +98,14 @@ public final class ChangeAvatarRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
+                                case 48:
                                     this.skillId_ = input.readUInt32();
                                     break;
-                                case 40:
-                                    this.retcode_ = input.readInt32();
-                                    break;
-                                case 80:
+                                case 112:
                                     this.curGuid_ = input.readUInt64();
+                                    break;
+                                case 120:
+                                    this.retcode_ = input.readInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -168,13 +168,13 @@ public final class ChangeAvatarRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.skillId_ != 0) {
-                output.writeUInt32(1, this.skillId_);
-            }
-            if (this.retcode_ != 0) {
-                output.writeInt32(5, this.retcode_);
+                output.writeUInt32(6, this.skillId_);
             }
             if (this.curGuid_ != 0) {
-                output.writeUInt64(10, this.curGuid_);
+                output.writeUInt64(14, this.curGuid_);
+            }
+            if (this.retcode_ != 0) {
+                output.writeInt32(15, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -187,13 +187,13 @@ public final class ChangeAvatarRspOuterClass {
             }
             int size2 = 0;
             if (this.skillId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.skillId_);
-            }
-            if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(5, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.skillId_);
             }
             if (this.curGuid_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(10, this.curGuid_);
+                size2 += CodedOutputStream.computeUInt64Size(14, this.curGuid_);
+            }
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(15, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -217,7 +217,7 @@ public final class ChangeAvatarRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + Internal.hashLong(getCurGuid()))) + 1)) + getSkillId())) + 5)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + Internal.hashLong(getCurGuid()))) + 6)) + getSkillId())) + 15)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

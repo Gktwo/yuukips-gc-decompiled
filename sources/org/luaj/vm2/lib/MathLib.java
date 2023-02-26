@@ -1,5 +1,6 @@
 package org.luaj.vm2.lib;
 
+import emu.grasscutter.net.packet.PacketOpcodes;
 import java.util.Random;
 import org.luaj.vm2.LuaDouble;
 import org.luaj.vm2.LuaTable;
@@ -123,7 +124,7 @@ public class MathLib extends TwoArgFunction {
                 return varargsOf(ZERO, ZERO);
             }
             long doubleToLongBits = Double.doubleToLongBits(checkdouble);
-            return varargsOf(valueOf(((double) ((doubleToLongBits & 4503599627370495L) + 4503599627370496L)) * (doubleToLongBits >= 0 ? 1.1102230246251565E-16d : -1.1102230246251565E-16d)), valueOf((double) ((((int) (doubleToLongBits >> 52)) & 2047) - 1022)));
+            return varargsOf(valueOf(((double) ((doubleToLongBits & 4503599627370495L) + 4503599627370496L)) * (doubleToLongBits >= 0 ? 1.1102230246251565E-16d : -1.1102230246251565E-16d)), valueOf((double) ((((int) (doubleToLongBits >> 52)) & PacketOpcodes.ActivityScheduleInfoNotify) - 1022)));
         }
     }
 
@@ -207,10 +208,10 @@ public class MathLib extends TwoArgFunction {
 
     /* renamed from: org.luaj.vm2.lib.MathLib$random */
     /* loaded from: grasscutter.jar:org/luaj/vm2/lib/MathLib$random.class */
-    static class C5872random extends LibFunction {
+    static class C5864random extends LibFunction {
         Random random = new Random();
 
-        C5872random() {
+        C5864random() {
         }
 
         @Override // org.luaj.vm2.lib.LibFunction, org.luaj.vm2.LuaValue
@@ -240,9 +241,9 @@ public class MathLib extends TwoArgFunction {
 
     /* loaded from: grasscutter.jar:org/luaj/vm2/lib/MathLib$randomseed.class */
     static class randomseed extends OneArgFunction {
-        final C5872random random;
+        final C5864random random;
 
-        randomseed(C5872random random) {
+        randomseed(C5864random random) {
             this.random = random;
         }
 
@@ -309,7 +310,7 @@ public class MathLib extends TwoArgFunction {
         luaTable.set("modf", new modf());
         luaTable.set("pi", 3.141592653589793d);
         luaTable.set("pow", new pow());
-        C5872random random = new C5872random();
+        C5864random random = new C5864random();
         luaTable.set("random", random);
         luaTable.set("randomseed", new randomseed(random));
         luaTable.set("rad", new rad());

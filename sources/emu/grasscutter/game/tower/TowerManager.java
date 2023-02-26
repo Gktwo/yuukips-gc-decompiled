@@ -91,8 +91,8 @@ public class TowerManager extends BasePlayerManager {
         getTowerData().currentLevel++;
         if (!hasNextLevel()) {
             int nextFloorId = getNextFloorId();
-            recordMap.computeIfAbsent(Integer.valueOf(nextFloorId), (v1) -> {
-                return new TowerLevelRecord(v1);
+            recordMap.computeIfAbsent(Integer.valueOf(nextFloorId), arg0 -> {
+                return new TowerLevelRecord(arg0.intValue());
             });
             this.player.getSession().send(new PacketTowerCurLevelRecordChangeNotify(nextFloorId, 1));
             return;

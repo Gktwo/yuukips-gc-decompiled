@@ -25,23 +25,23 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VintageMarketTraderInfoOuterClass.class */
 public final class VintageMarketTraderInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dVintageMarketTraderInfo.proto\u001a\u000fItemParam.proto\"U\n\u0017VintageMarketTraderInfo\u0012\u0011\n\ttrader_id\u0018\u0004 \u0001(\r\u0012'\n\u0013available_item_list\u0018\u000f \u0003(\u000b2\n.ItemParamB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dVintageMarketTraderInfo.proto\u001a\u000fItemParam.proto\"L\n\u0017VintageMarketTraderInfo\u0012\u001f\n\u000bhiiflfhdkkg\u0018\n \u0003(\u000b2\n.ItemParam\u0012\u0010\n\btraderId\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_VintageMarketTraderInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_VintageMarketTraderInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_VintageMarketTraderInfo_descriptor, new String[]{"TraderId", "AvailableItemList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_VintageMarketTraderInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_VintageMarketTraderInfo_descriptor, new String[]{"Hiiflfhdkkg", "TraderId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VintageMarketTraderInfoOuterClass$VintageMarketTraderInfoOrBuilder.class */
     public interface VintageMarketTraderInfoOrBuilder extends MessageOrBuilder {
+        List<ItemParamOuterClass.ItemParam> getHiiflfhdkkgList();
+
+        ItemParamOuterClass.ItemParam getHiiflfhdkkg(int i);
+
+        int getHiiflfhdkkgCount();
+
+        List<? extends ItemParamOuterClass.ItemParamOrBuilder> getHiiflfhdkkgOrBuilderList();
+
+        ItemParamOuterClass.ItemParamOrBuilder getHiiflfhdkkgOrBuilder(int i);
+
         int getTraderId();
-
-        List<ItemParamOuterClass.ItemParam> getAvailableItemListList();
-
-        ItemParamOuterClass.ItemParam getAvailableItemList(int i);
-
-        int getAvailableItemListCount();
-
-        List<? extends ItemParamOuterClass.ItemParamOrBuilder> getAvailableItemListOrBuilderList();
-
-        ItemParamOuterClass.ItemParamOrBuilder getAvailableItemListOrBuilder(int i);
     }
 
     private VintageMarketTraderInfoOuterClass() {
@@ -57,10 +57,10 @@ public final class VintageMarketTraderInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VintageMarketTraderInfoOuterClass$VintageMarketTraderInfo.class */
     public static final class VintageMarketTraderInfo extends GeneratedMessageV3 implements VintageMarketTraderInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TRADER_ID_FIELD_NUMBER = 4;
+        public static final int HIIFLFHDKKG_FIELD_NUMBER = 10;
+        private List<ItemParamOuterClass.ItemParam> hiiflfhdkkg_;
+        public static final int TRADERID_FIELD_NUMBER = 6;
         private int traderId_;
-        public static final int AVAILABLE_ITEM_LIST_FIELD_NUMBER = 15;
-        private List<ItemParamOuterClass.ItemParam> availableItemList_;
         private byte memoizedIsInitialized;
         private static final VintageMarketTraderInfo DEFAULT_INSTANCE = new VintageMarketTraderInfo();
         private static final Parser<VintageMarketTraderInfo> PARSER = new AbstractParser<VintageMarketTraderInfo>() { // from class: emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfo.1
@@ -77,7 +77,7 @@ public final class VintageMarketTraderInfoOuterClass {
 
         private VintageMarketTraderInfo() {
             this.memoizedIsInitialized = -1;
-            this.availableItemList_ = Collections.emptyList();
+            this.hiiflfhdkkg_ = Collections.emptyList();
         }
 
         /* access modifiers changed from: protected */
@@ -110,15 +110,15 @@ public final class VintageMarketTraderInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 32:
+                                case 48:
                                     this.traderId_ = input.readUInt32();
                                     break;
-                                case 122:
+                                case 82:
                                     if ((mutable_bitField0_ & 1) == 0) {
-                                        this.availableItemList_ = new ArrayList();
+                                        this.hiiflfhdkkg_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
                                     }
-                                    this.availableItemList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+                                    this.hiiflfhdkkg_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -137,7 +137,7 @@ public final class VintageMarketTraderInfoOuterClass {
                 }
             } finally {
                 if ((mutable_bitField0_ & 1) != 0) {
-                    this.availableItemList_ = Collections.unmodifiableList(this.availableItemList_);
+                    this.hiiflfhdkkg_ = Collections.unmodifiableList(this.hiiflfhdkkg_);
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -154,33 +154,33 @@ public final class VintageMarketTraderInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
+        public List<ItemParamOuterClass.ItemParam> getHiiflfhdkkgList() {
+            return this.hiiflfhdkkg_;
+        }
+
+        @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
+        public List<? extends ItemParamOuterClass.ItemParamOrBuilder> getHiiflfhdkkgOrBuilderList() {
+            return this.hiiflfhdkkg_;
+        }
+
+        @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
+        public int getHiiflfhdkkgCount() {
+            return this.hiiflfhdkkg_.size();
+        }
+
+        @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
+        public ItemParamOuterClass.ItemParam getHiiflfhdkkg(int index) {
+            return this.hiiflfhdkkg_.get(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
+        public ItemParamOuterClass.ItemParamOrBuilder getHiiflfhdkkgOrBuilder(int index) {
+            return this.hiiflfhdkkg_.get(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
         public int getTraderId() {
             return this.traderId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
-        public List<ItemParamOuterClass.ItemParam> getAvailableItemListList() {
-            return this.availableItemList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
-        public List<? extends ItemParamOuterClass.ItemParamOrBuilder> getAvailableItemListOrBuilderList() {
-            return this.availableItemList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
-        public int getAvailableItemListCount() {
-            return this.availableItemList_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
-        public ItemParamOuterClass.ItemParam getAvailableItemList(int index) {
-            return this.availableItemList_.get(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
-        public ItemParamOuterClass.ItemParamOrBuilder getAvailableItemListOrBuilder(int index) {
-            return this.availableItemList_.get(index);
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -199,10 +199,10 @@ public final class VintageMarketTraderInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.traderId_ != 0) {
-                output.writeUInt32(4, this.traderId_);
+                output.writeUInt32(6, this.traderId_);
             }
-            for (int i = 0; i < this.availableItemList_.size(); i++) {
-                output.writeMessage(15, this.availableItemList_.get(i));
+            for (int i = 0; i < this.hiiflfhdkkg_.size(); i++) {
+                output.writeMessage(10, this.hiiflfhdkkg_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -215,10 +215,10 @@ public final class VintageMarketTraderInfoOuterClass {
             }
             int size2 = 0;
             if (this.traderId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.traderId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.traderId_);
             }
-            for (int i = 0; i < this.availableItemList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(15, this.availableItemList_.get(i));
+            for (int i = 0; i < this.hiiflfhdkkg_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(10, this.hiiflfhdkkg_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -234,7 +234,7 @@ public final class VintageMarketTraderInfoOuterClass {
                 return equals(obj);
             }
             VintageMarketTraderInfo other = (VintageMarketTraderInfo) obj;
-            return getTraderId() == other.getTraderId() && getAvailableItemListList().equals(other.getAvailableItemListList()) && this.unknownFields.equals(other.unknownFields);
+            return getHiiflfhdkkgList().equals(other.getHiiflfhdkkgList()) && getTraderId() == other.getTraderId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -242,11 +242,11 @@ public final class VintageMarketTraderInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getTraderId();
-            if (getAvailableItemListCount() > 0) {
-                hash = (53 * ((37 * hash) + 15)) + getAvailableItemListList().hashCode();
+            int hash = (19 * 41) + getDescriptor().hashCode();
+            if (getHiiflfhdkkgCount() > 0) {
+                hash = (53 * ((37 * hash) + 10)) + getHiiflfhdkkgList().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 6)) + getTraderId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -326,9 +326,9 @@ public final class VintageMarketTraderInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VintageMarketTraderInfoOuterClass$VintageMarketTraderInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements VintageMarketTraderInfoOrBuilder {
             private int bitField0_;
+            private List<ItemParamOuterClass.ItemParam> hiiflfhdkkg_ = Collections.emptyList();
+            private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> hiiflfhdkkgBuilder_;
             private int traderId_;
-            private List<ItemParamOuterClass.ItemParam> availableItemList_ = Collections.emptyList();
-            private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> availableItemListBuilder_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return VintageMarketTraderInfoOuterClass.internal_static_VintageMarketTraderInfo_descriptor;
@@ -350,20 +350,20 @@ public final class VintageMarketTraderInfoOuterClass {
 
             private void maybeForceBuilderInitialization() {
                 if (VintageMarketTraderInfo.alwaysUseFieldBuilders) {
-                    getAvailableItemListFieldBuilder();
+                    getHiiflfhdkkgFieldBuilder();
                 }
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.traderId_ = 0;
-                if (this.availableItemListBuilder_ == null) {
-                    this.availableItemList_ = Collections.emptyList();
+                if (this.hiiflfhdkkgBuilder_ == null) {
+                    this.hiiflfhdkkg_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
-                    this.availableItemListBuilder_.clear();
+                    this.hiiflfhdkkgBuilder_.clear();
                 }
+                this.traderId_ = 0;
                 return this;
             }
 
@@ -390,16 +390,16 @@ public final class VintageMarketTraderInfoOuterClass {
             public VintageMarketTraderInfo buildPartial() {
                 VintageMarketTraderInfo result = new VintageMarketTraderInfo(this);
                 int i = this.bitField0_;
-                result.traderId_ = this.traderId_;
-                if (this.availableItemListBuilder_ == null) {
+                if (this.hiiflfhdkkgBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
-                        this.availableItemList_ = Collections.unmodifiableList(this.availableItemList_);
+                        this.hiiflfhdkkg_ = Collections.unmodifiableList(this.hiiflfhdkkg_);
                         this.bitField0_ &= -2;
                     }
-                    result.availableItemList_ = this.availableItemList_;
+                    result.hiiflfhdkkg_ = this.hiiflfhdkkg_;
                 } else {
-                    result.availableItemList_ = this.availableItemListBuilder_.build();
+                    result.hiiflfhdkkg_ = this.hiiflfhdkkgBuilder_.build();
                 }
+                result.traderId_ = this.traderId_;
                 onBuilt();
                 return result;
             }
@@ -447,30 +447,30 @@ public final class VintageMarketTraderInfoOuterClass {
                 if (other == VintageMarketTraderInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getTraderId() != 0) {
-                    setTraderId(other.getTraderId());
-                }
-                if (this.availableItemListBuilder_ == null) {
-                    if (!other.availableItemList_.isEmpty()) {
-                        if (this.availableItemList_.isEmpty()) {
-                            this.availableItemList_ = other.availableItemList_;
+                if (this.hiiflfhdkkgBuilder_ == null) {
+                    if (!other.hiiflfhdkkg_.isEmpty()) {
+                        if (this.hiiflfhdkkg_.isEmpty()) {
+                            this.hiiflfhdkkg_ = other.hiiflfhdkkg_;
                             this.bitField0_ &= -2;
                         } else {
-                            ensureAvailableItemListIsMutable();
-                            this.availableItemList_.addAll(other.availableItemList_);
+                            ensureHiiflfhdkkgIsMutable();
+                            this.hiiflfhdkkg_.addAll(other.hiiflfhdkkg_);
                         }
                         onChanged();
                     }
-                } else if (!other.availableItemList_.isEmpty()) {
-                    if (this.availableItemListBuilder_.isEmpty()) {
-                        this.availableItemListBuilder_.dispose();
-                        this.availableItemListBuilder_ = null;
-                        this.availableItemList_ = other.availableItemList_;
+                } else if (!other.hiiflfhdkkg_.isEmpty()) {
+                    if (this.hiiflfhdkkgBuilder_.isEmpty()) {
+                        this.hiiflfhdkkgBuilder_.dispose();
+                        this.hiiflfhdkkgBuilder_ = null;
+                        this.hiiflfhdkkg_ = other.hiiflfhdkkg_;
                         this.bitField0_ &= -2;
-                        this.availableItemListBuilder_ = VintageMarketTraderInfo.alwaysUseFieldBuilders ? getAvailableItemListFieldBuilder() : null;
+                        this.hiiflfhdkkgBuilder_ = VintageMarketTraderInfo.alwaysUseFieldBuilders ? getHiiflfhdkkgFieldBuilder() : null;
                     } else {
-                        this.availableItemListBuilder_.addAllMessages(other.availableItemList_);
+                        this.hiiflfhdkkgBuilder_.addAllMessages(other.hiiflfhdkkg_);
                     }
+                }
+                if (other.getTraderId() != 0) {
+                    setTraderId(other.getTraderId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -504,6 +504,182 @@ public final class VintageMarketTraderInfoOuterClass {
                 }
             }
 
+            private void ensureHiiflfhdkkgIsMutable() {
+                if ((this.bitField0_ & 1) == 0) {
+                    this.hiiflfhdkkg_ = new ArrayList(this.hiiflfhdkkg_);
+                    this.bitField0_ |= 1;
+                }
+            }
+
+            @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
+            public List<ItemParamOuterClass.ItemParam> getHiiflfhdkkgList() {
+                if (this.hiiflfhdkkgBuilder_ == null) {
+                    return Collections.unmodifiableList(this.hiiflfhdkkg_);
+                }
+                return this.hiiflfhdkkgBuilder_.getMessageList();
+            }
+
+            @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
+            public int getHiiflfhdkkgCount() {
+                if (this.hiiflfhdkkgBuilder_ == null) {
+                    return this.hiiflfhdkkg_.size();
+                }
+                return this.hiiflfhdkkgBuilder_.getCount();
+            }
+
+            @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
+            public ItemParamOuterClass.ItemParam getHiiflfhdkkg(int index) {
+                if (this.hiiflfhdkkgBuilder_ == null) {
+                    return this.hiiflfhdkkg_.get(index);
+                }
+                return this.hiiflfhdkkgBuilder_.getMessage(index);
+            }
+
+            public Builder setHiiflfhdkkg(int index, ItemParamOuterClass.ItemParam value) {
+                if (this.hiiflfhdkkgBuilder_ != null) {
+                    this.hiiflfhdkkgBuilder_.setMessage(index, value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    ensureHiiflfhdkkgIsMutable();
+                    this.hiiflfhdkkg_.set(index, value);
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder setHiiflfhdkkg(int index, ItemParamOuterClass.ItemParam.Builder builderForValue) {
+                if (this.hiiflfhdkkgBuilder_ == null) {
+                    ensureHiiflfhdkkgIsMutable();
+                    this.hiiflfhdkkg_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    this.hiiflfhdkkgBuilder_.setMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder addHiiflfhdkkg(ItemParamOuterClass.ItemParam value) {
+                if (this.hiiflfhdkkgBuilder_ != null) {
+                    this.hiiflfhdkkgBuilder_.addMessage(value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    ensureHiiflfhdkkgIsMutable();
+                    this.hiiflfhdkkg_.add(value);
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder addHiiflfhdkkg(int index, ItemParamOuterClass.ItemParam value) {
+                if (this.hiiflfhdkkgBuilder_ != null) {
+                    this.hiiflfhdkkgBuilder_.addMessage(index, value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    ensureHiiflfhdkkgIsMutable();
+                    this.hiiflfhdkkg_.add(index, value);
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder addHiiflfhdkkg(ItemParamOuterClass.ItemParam.Builder builderForValue) {
+                if (this.hiiflfhdkkgBuilder_ == null) {
+                    ensureHiiflfhdkkgIsMutable();
+                    this.hiiflfhdkkg_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    this.hiiflfhdkkgBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder addHiiflfhdkkg(int index, ItemParamOuterClass.ItemParam.Builder builderForValue) {
+                if (this.hiiflfhdkkgBuilder_ == null) {
+                    ensureHiiflfhdkkgIsMutable();
+                    this.hiiflfhdkkg_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    this.hiiflfhdkkgBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder addAllHiiflfhdkkg(Iterable<? extends ItemParamOuterClass.ItemParam> values) {
+                if (this.hiiflfhdkkgBuilder_ == null) {
+                    ensureHiiflfhdkkgIsMutable();
+                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.hiiflfhdkkg_);
+                    onChanged();
+                } else {
+                    this.hiiflfhdkkgBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            public Builder clearHiiflfhdkkg() {
+                if (this.hiiflfhdkkgBuilder_ == null) {
+                    this.hiiflfhdkkg_ = Collections.emptyList();
+                    this.bitField0_ &= -2;
+                    onChanged();
+                } else {
+                    this.hiiflfhdkkgBuilder_.clear();
+                }
+                return this;
+            }
+
+            public Builder removeHiiflfhdkkg(int index) {
+                if (this.hiiflfhdkkgBuilder_ == null) {
+                    ensureHiiflfhdkkgIsMutable();
+                    this.hiiflfhdkkg_.remove(index);
+                    onChanged();
+                } else {
+                    this.hiiflfhdkkgBuilder_.remove(index);
+                }
+                return this;
+            }
+
+            public ItemParamOuterClass.ItemParam.Builder getHiiflfhdkkgBuilder(int index) {
+                return getHiiflfhdkkgFieldBuilder().getBuilder(index);
+            }
+
+            @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
+            public ItemParamOuterClass.ItemParamOrBuilder getHiiflfhdkkgOrBuilder(int index) {
+                if (this.hiiflfhdkkgBuilder_ == null) {
+                    return this.hiiflfhdkkg_.get(index);
+                }
+                return this.hiiflfhdkkgBuilder_.getMessageOrBuilder(index);
+            }
+
+            @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
+            public List<? extends ItemParamOuterClass.ItemParamOrBuilder> getHiiflfhdkkgOrBuilderList() {
+                if (this.hiiflfhdkkgBuilder_ != null) {
+                    return this.hiiflfhdkkgBuilder_.getMessageOrBuilderList();
+                }
+                return Collections.unmodifiableList(this.hiiflfhdkkg_);
+            }
+
+            public ItemParamOuterClass.ItemParam.Builder addHiiflfhdkkgBuilder() {
+                return getHiiflfhdkkgFieldBuilder().addBuilder(ItemParamOuterClass.ItemParam.getDefaultInstance());
+            }
+
+            public ItemParamOuterClass.ItemParam.Builder addHiiflfhdkkgBuilder(int index) {
+                return getHiiflfhdkkgFieldBuilder().addBuilder(index, ItemParamOuterClass.ItemParam.getDefaultInstance());
+            }
+
+            public List<ItemParamOuterClass.ItemParam.Builder> getHiiflfhdkkgBuilderList() {
+                return getHiiflfhdkkgFieldBuilder().getBuilderList();
+            }
+
+            private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> getHiiflfhdkkgFieldBuilder() {
+                if (this.hiiflfhdkkgBuilder_ == null) {
+                    this.hiiflfhdkkgBuilder_ = new RepeatedFieldBuilderV3<>(this.hiiflfhdkkg_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
+                    this.hiiflfhdkkg_ = null;
+                }
+                return this.hiiflfhdkkgBuilder_;
+            }
+
             @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
             public int getTraderId() {
                 return this.traderId_;
@@ -519,182 +695,6 @@ public final class VintageMarketTraderInfoOuterClass {
                 this.traderId_ = 0;
                 onChanged();
                 return this;
-            }
-
-            private void ensureAvailableItemListIsMutable() {
-                if ((this.bitField0_ & 1) == 0) {
-                    this.availableItemList_ = new ArrayList(this.availableItemList_);
-                    this.bitField0_ |= 1;
-                }
-            }
-
-            @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
-            public List<ItemParamOuterClass.ItemParam> getAvailableItemListList() {
-                if (this.availableItemListBuilder_ == null) {
-                    return Collections.unmodifiableList(this.availableItemList_);
-                }
-                return this.availableItemListBuilder_.getMessageList();
-            }
-
-            @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
-            public int getAvailableItemListCount() {
-                if (this.availableItemListBuilder_ == null) {
-                    return this.availableItemList_.size();
-                }
-                return this.availableItemListBuilder_.getCount();
-            }
-
-            @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
-            public ItemParamOuterClass.ItemParam getAvailableItemList(int index) {
-                if (this.availableItemListBuilder_ == null) {
-                    return this.availableItemList_.get(index);
-                }
-                return this.availableItemListBuilder_.getMessage(index);
-            }
-
-            public Builder setAvailableItemList(int index, ItemParamOuterClass.ItemParam value) {
-                if (this.availableItemListBuilder_ != null) {
-                    this.availableItemListBuilder_.setMessage(index, value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    ensureAvailableItemListIsMutable();
-                    this.availableItemList_.set(index, value);
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder setAvailableItemList(int index, ItemParamOuterClass.ItemParam.Builder builderForValue) {
-                if (this.availableItemListBuilder_ == null) {
-                    ensureAvailableItemListIsMutable();
-                    this.availableItemList_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    this.availableItemListBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addAvailableItemList(ItemParamOuterClass.ItemParam value) {
-                if (this.availableItemListBuilder_ != null) {
-                    this.availableItemListBuilder_.addMessage(value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    ensureAvailableItemListIsMutable();
-                    this.availableItemList_.add(value);
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder addAvailableItemList(int index, ItemParamOuterClass.ItemParam value) {
-                if (this.availableItemListBuilder_ != null) {
-                    this.availableItemListBuilder_.addMessage(index, value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    ensureAvailableItemListIsMutable();
-                    this.availableItemList_.add(index, value);
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder addAvailableItemList(ItemParamOuterClass.ItemParam.Builder builderForValue) {
-                if (this.availableItemListBuilder_ == null) {
-                    ensureAvailableItemListIsMutable();
-                    this.availableItemList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    this.availableItemListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addAvailableItemList(int index, ItemParamOuterClass.ItemParam.Builder builderForValue) {
-                if (this.availableItemListBuilder_ == null) {
-                    ensureAvailableItemListIsMutable();
-                    this.availableItemList_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    this.availableItemListBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addAllAvailableItemList(Iterable<? extends ItemParamOuterClass.ItemParam> values) {
-                if (this.availableItemListBuilder_ == null) {
-                    ensureAvailableItemListIsMutable();
-                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.availableItemList_);
-                    onChanged();
-                } else {
-                    this.availableItemListBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-
-            public Builder clearAvailableItemList() {
-                if (this.availableItemListBuilder_ == null) {
-                    this.availableItemList_ = Collections.emptyList();
-                    this.bitField0_ &= -2;
-                    onChanged();
-                } else {
-                    this.availableItemListBuilder_.clear();
-                }
-                return this;
-            }
-
-            public Builder removeAvailableItemList(int index) {
-                if (this.availableItemListBuilder_ == null) {
-                    ensureAvailableItemListIsMutable();
-                    this.availableItemList_.remove(index);
-                    onChanged();
-                } else {
-                    this.availableItemListBuilder_.remove(index);
-                }
-                return this;
-            }
-
-            public ItemParamOuterClass.ItemParam.Builder getAvailableItemListBuilder(int index) {
-                return getAvailableItemListFieldBuilder().getBuilder(index);
-            }
-
-            @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
-            public ItemParamOuterClass.ItemParamOrBuilder getAvailableItemListOrBuilder(int index) {
-                if (this.availableItemListBuilder_ == null) {
-                    return this.availableItemList_.get(index);
-                }
-                return this.availableItemListBuilder_.getMessageOrBuilder(index);
-            }
-
-            @Override // emu.grasscutter.net.proto.VintageMarketTraderInfoOuterClass.VintageMarketTraderInfoOrBuilder
-            public List<? extends ItemParamOuterClass.ItemParamOrBuilder> getAvailableItemListOrBuilderList() {
-                if (this.availableItemListBuilder_ != null) {
-                    return this.availableItemListBuilder_.getMessageOrBuilderList();
-                }
-                return Collections.unmodifiableList(this.availableItemList_);
-            }
-
-            public ItemParamOuterClass.ItemParam.Builder addAvailableItemListBuilder() {
-                return getAvailableItemListFieldBuilder().addBuilder(ItemParamOuterClass.ItemParam.getDefaultInstance());
-            }
-
-            public ItemParamOuterClass.ItemParam.Builder addAvailableItemListBuilder(int index) {
-                return getAvailableItemListFieldBuilder().addBuilder(index, ItemParamOuterClass.ItemParam.getDefaultInstance());
-            }
-
-            public List<ItemParamOuterClass.ItemParam.Builder> getAvailableItemListBuilderList() {
-                return getAvailableItemListFieldBuilder().getBuilderList();
-            }
-
-            private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> getAvailableItemListFieldBuilder() {
-                if (this.availableItemListBuilder_ == null) {
-                    this.availableItemListBuilder_ = new RepeatedFieldBuilderV3<>(this.availableItemList_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
-                    this.availableItemList_ = null;
-                }
-                return this.availableItemListBuilder_;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

@@ -8,12 +8,12 @@ import java.util.Iterator;
 public class NonBlockingHashSet<E> extends AbstractSet<E> implements Serializable {
 
     /* renamed from: V */
-    private static final Object f3191V = "";
+    private static final Object f3155V = "";
     private final NonBlockingHashMap<E, Object> _map = new NonBlockingHashMap<>();
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public boolean add(E o) {
-        return this._map.putIfAbsent(o, f3191V) == null;
+        return this._map.putIfAbsent(o, f3155V) == null;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
@@ -27,7 +27,7 @@ public class NonBlockingHashSet<E> extends AbstractSet<E> implements Serializabl
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public boolean remove(Object o) {
-        return this._map.remove(o) == f3191V;
+        return this._map.remove(o) == f3155V;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set

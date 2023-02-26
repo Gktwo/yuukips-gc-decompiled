@@ -129,7 +129,7 @@ public final class Header {
     @NotNull
 
     /* renamed from: TE */
-    public static final String f973TE = "TE";
+    public static final String f937TE = "TE";
     @NotNull
     public static final String TRAILER = "Trailer";
     @NotNull

@@ -14,7 +14,7 @@ public class JseProcess {
     /* access modifiers changed from: package-private */
     /* renamed from: org.luaj.vm2.lib.jse.JseProcess$1 */
     /* loaded from: grasscutter.jar:org/luaj/vm2/lib/jse/JseProcess$1.class */
-    public static class C58781 {
+    public static class C58701 {
     }
 
     /* access modifiers changed from: private */
@@ -105,7 +105,7 @@ public class JseProcess {
             throw new UnsupportedOperationException("Method not decompiled: org.luaj.vm2.lib.jse.JseProcess.CopyThread.run():void");
         }
 
-        CopyThread(OutputStream outputStream, OutputStream outputStream2, InputStream inputStream, InputStream inputStream2, C58781 r11) {
+        CopyThread(OutputStream outputStream, OutputStream outputStream2, InputStream inputStream, InputStream inputStream2, C58701 r11) {
             this(outputStream, outputStream2, inputStream, inputStream2);
         }
     }

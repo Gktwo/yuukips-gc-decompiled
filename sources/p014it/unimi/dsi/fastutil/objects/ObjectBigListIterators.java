@@ -168,45 +168,45 @@ public final class ObjectBigListIterators {
     public static class UnmodifiableBigListIterator<K> implements ObjectBigListIterator<K> {
 
         /* renamed from: i */
-        protected final ObjectBigListIterator<? extends K> f2700i;
+        protected final ObjectBigListIterator<? extends K> f2664i;
 
         public UnmodifiableBigListIterator(ObjectBigListIterator<? extends K> i) {
-            this.f2700i = i;
+            this.f2664i = i;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2700i.hasNext();
+            return this.f2664i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2700i.hasPrevious();
+            return this.f2664i.hasPrevious();
         }
 
         @Override // java.util.Iterator
         public K next() {
-            return (K) this.f2700i.next();
+            return (K) this.f2664i.next();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public K previous() {
-            return (K) this.f2700i.previous();
+            return (K) this.f2664i.previous();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long nextIndex() {
-            return this.f2700i.nextIndex();
+            return this.f2664i.nextIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long previousIndex() {
-            return this.f2700i.previousIndex();
+            return this.f2664i.previousIndex();
         }
 
         @Override // java.util.Iterator
         public void forEachRemaining(Consumer<? super K> action) {
-            this.f2700i.forEachRemaining(action);
+            this.f2664i.forEachRemaining(action);
         }
     }
 
@@ -219,10 +219,10 @@ public final class ObjectBigListIterators {
     public static class BigListIteratorListIterator<K> implements ObjectBigListIterator<K> {
 
         /* renamed from: i */
-        protected final ObjectListIterator<K> f2699i;
+        protected final ObjectListIterator<K> f2663i;
 
         protected BigListIteratorListIterator(ObjectListIterator<K> i) {
-            this.f2699i = i;
+            this.f2663i = i;
         }
 
         private int intDisplacement(long n) {
@@ -234,72 +234,72 @@ public final class ObjectBigListIterators {
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigListIterator, p014it.unimi.dsi.fastutil.BigListIterator
         public void set(K ok) {
-            this.f2699i.set(ok);
+            this.f2663i.set(ok);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigListIterator, p014it.unimi.dsi.fastutil.BigListIterator
         public void add(K ok) {
-            this.f2699i.add(ok);
+            this.f2663i.add(ok);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator
         public int back(int n) {
-            return this.f2699i.back(n);
+            return this.f2663i.back(n);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigListIterator
         public long back(long n) {
-            return (long) this.f2699i.back(intDisplacement(n));
+            return (long) this.f2663i.back(intDisplacement(n));
         }
 
         @Override // java.util.Iterator
         public void remove() {
-            this.f2699i.remove();
+            this.f2663i.remove();
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigListIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectIterator
         public int skip(int n) {
-            return this.f2699i.skip(n);
+            return this.f2663i.skip(n);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigListIterator
         public long skip(long n) {
-            return (long) this.f2699i.skip(intDisplacement(n));
+            return (long) this.f2663i.skip(intDisplacement(n));
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2699i.hasNext();
+            return this.f2663i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2699i.hasPrevious();
+            return this.f2663i.hasPrevious();
         }
 
         @Override // java.util.Iterator
         public K next() {
-            return this.f2699i.next();
+            return this.f2663i.next();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public K previous() {
-            return this.f2699i.previous();
+            return this.f2663i.previous();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long nextIndex() {
-            return (long) this.f2699i.nextIndex();
+            return (long) this.f2663i.nextIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long previousIndex() {
-            return (long) this.f2699i.previousIndex();
+            return (long) this.f2663i.previousIndex();
         }
 
         @Override // java.util.Iterator
         public void forEachRemaining(Consumer<? super K> action) {
-            this.f2699i.forEachRemaining(action);
+            this.f2663i.forEachRemaining(action);
         }
     }
 
@@ -503,7 +503,7 @@ public final class ObjectBigListIterators {
 
         /* JADX DEBUG: Multi-variable search result rejected for r8v0, resolved type: it.unimi.dsi.fastutil.objects.ObjectBigListIterators$AbstractIndexBasedBigListIterator<K> */
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r3v2, types: [it.unimi.dsi.fastutil.objects.ObjectBigListIterators$AbstractIndexBasedBigListIterator, long] */
+        /* JADX WARN: Type inference failed for: r3v2, types: [long, it.unimi.dsi.fastutil.objects.ObjectBigListIterators$AbstractIndexBasedBigListIterator] */
         /* JADX WARNING: Unknown variable types count: 1 */
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         /* Code decompiled incorrectly, please refer to instructions dump. */

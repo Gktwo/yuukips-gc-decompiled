@@ -242,7 +242,7 @@ public interface AnnotationAppender {
 
         @Override // net.bytebuddy.implementation.attribute.AnnotationAppender
         public AnnotationAppender append(AnnotationDescription annotationDescription, AnnotationValueFilter annotationValueFilter) {
-            switch (C54431.$SwitchMap$java$lang$annotation$RetentionPolicy[annotationDescription.getRetention().ordinal()]) {
+            switch (C54351.$SwitchMap$java$lang$annotation$RetentionPolicy[annotationDescription.getRetention().ordinal()]) {
                 case 1:
                     doAppend(annotationDescription, true, annotationValueFilter);
                     break;
@@ -266,7 +266,7 @@ public interface AnnotationAppender {
 
         @Override // net.bytebuddy.implementation.attribute.AnnotationAppender
         public AnnotationAppender append(AnnotationDescription annotationDescription, AnnotationValueFilter annotationValueFilter, int typeReference, String typePath) {
-            switch (C54431.$SwitchMap$java$lang$annotation$RetentionPolicy[annotationDescription.getRetention().ordinal()]) {
+            switch (C54351.$SwitchMap$java$lang$annotation$RetentionPolicy[annotationDescription.getRetention().ordinal()]) {
                 case 1:
                     doAppend(annotationDescription, true, annotationValueFilter, typeReference, typePath);
                     break;
@@ -291,7 +291,7 @@ public interface AnnotationAppender {
 
     /* renamed from: net.bytebuddy.implementation.attribute.AnnotationAppender$1 */
     /* loaded from: grasscutter.jar:net/bytebuddy/implementation/attribute/AnnotationAppender$1.class */
-    static /* synthetic */ class C54431 {
+    static /* synthetic */ class C54351 {
         static final /* synthetic */ int[] $SwitchMap$java$lang$annotation$RetentionPolicy = new int[RetentionPolicy.values().length];
 
         static {

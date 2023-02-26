@@ -1317,7 +1317,7 @@ public class MemberSubstitution implements AsmVisitorWrapper.ForDeclaredMethods.
                             default:
                                 throw new IllegalStateException("Unexpected opcode: " + opcode);
                         }
-                        this.stackSizeBuffer = Math.max(this.stackSizeBuffer, binding.make(parameters, result, getFreeOffset()).apply(new LocalVariableTracingMethodVisitor(this.f3104mv), this.implementationContext).getMaximalSize() - result.getStackSize().getSize());
+                        this.stackSizeBuffer = Math.max(this.stackSizeBuffer, binding.make(parameters, result, getFreeOffset()).apply(new LocalVariableTracingMethodVisitor(this.f3068mv), this.implementationContext).getMaximalSize() - result.getStackSize().getSize());
                         return;
                     }
                 } else if (this.strict) {
@@ -1397,9 +1397,9 @@ public class MemberSubstitution implements AsmVisitorWrapper.ForDeclaredMethods.
                         } else {
                             generic2 = ((MethodDescription) candidates.getOnly()).getReturnType();
                         }
-                        this.stackSizeBuffer = Math.max(i, binding.make(generic, generic2, getFreeOffset()).apply(new LocalVariableTracingMethodVisitor(this.f3104mv), this.implementationContext).getMaximalSize() - (((MethodDescription) candidates.getOnly()).isConstructor() ? StackSize.SINGLE : ((MethodDescription) candidates.getOnly()).getReturnType().getStackSize()).getSize());
+                        this.stackSizeBuffer = Math.max(i, binding.make(generic, generic2, getFreeOffset()).apply(new LocalVariableTracingMethodVisitor(this.f3068mv), this.implementationContext).getMaximalSize() - (((MethodDescription) candidates.getOnly()).isConstructor() ? StackSize.SINGLE : ((MethodDescription) candidates.getOnly()).getReturnType().getStackSize()).getSize());
                         if (((MethodDescription) candidates.getOnly()).isConstructor()) {
-                            this.stackSizeBuffer = Math.max(this.stackSizeBuffer, new StackManipulation.Compound(Duplication.SINGLE.flipOver(TypeDescription.OBJECT), Removal.SINGLE, Removal.SINGLE, Duplication.SINGLE.flipOver(TypeDescription.OBJECT), Removal.SINGLE, Removal.SINGLE).apply(this.f3104mv, this.implementationContext).getMaximalSize() + StackSize.SINGLE.getSize());
+                            this.stackSizeBuffer = Math.max(this.stackSizeBuffer, new StackManipulation.Compound(Duplication.SINGLE.flipOver(TypeDescription.OBJECT), Removal.SINGLE, Removal.SINGLE, Duplication.SINGLE.flipOver(TypeDescription.OBJECT), Removal.SINGLE, Removal.SINGLE).apply(this.f3068mv, this.implementationContext).getMaximalSize() + StackSize.SINGLE.getSize());
                             return;
                         }
                         return;

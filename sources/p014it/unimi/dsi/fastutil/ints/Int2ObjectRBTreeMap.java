@@ -854,7 +854,7 @@ public class Int2ObjectRBTreeMap<V> extends AbstractInt2ObjectSortedMap<V> imple
         int from;
 
         /* renamed from: to */
-        int f2116to;
+        int f2080to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Int2ObjectMap.Entry<V>> entries;
@@ -865,7 +865,7 @@ public class Int2ObjectRBTreeMap<V> extends AbstractInt2ObjectSortedMap<V> imple
             if (bottom || top || Int2ObjectRBTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f2116to = to;
+                this.f2080to = to;
                 this.top = top;
                 this.defRetValue = Int2ObjectRBTreeMap.this.defRetValue;
                 return;
@@ -884,7 +884,7 @@ public class Int2ObjectRBTreeMap<V> extends AbstractInt2ObjectSortedMap<V> imple
 
         /* renamed from: in */
         final boolean m761in(int k) {
-            return (this.bottom || Int2ObjectRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Int2ObjectRBTreeMap.this.compare(k, this.f2116to) < 0);
+            return (this.bottom || Int2ObjectRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Int2ObjectRBTreeMap.this.compare(k, this.f2080to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.Int2ObjectMap, p014it.unimi.dsi.fastutil.ints.Int2ObjectSortedMap
@@ -1064,7 +1064,7 @@ public class Int2ObjectRBTreeMap<V> extends AbstractInt2ObjectSortedMap<V> imple
         public V put(int k, V v) {
             Int2ObjectRBTreeMap.this.modified = false;
             if (!m761in(k)) {
-                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2116to)) + ")");
+                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2080to)) + ")");
             }
             return Int2ObjectRBTreeMap.this.modified ? (V) this.defRetValue : (V) Int2ObjectRBTreeMap.this.put(k, (int) v);
         }
@@ -1102,7 +1102,7 @@ public class Int2ObjectRBTreeMap<V> extends AbstractInt2ObjectSortedMap<V> imple
 
         @Override // p014it.unimi.dsi.fastutil.ints.Int2ObjectSortedMap
         public Int2ObjectSortedMap<V> headMap(int to) {
-            if (!this.top && Int2ObjectRBTreeMap.this.compare(to, this.f2116to) >= 0) {
+            if (!this.top && Int2ObjectRBTreeMap.this.compare(to, this.f2080to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1113,7 +1113,7 @@ public class Int2ObjectRBTreeMap<V> extends AbstractInt2ObjectSortedMap<V> imple
             if (!this.bottom && Int2ObjectRBTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f2116to, this.top);
+            return new Submap(from, false, this.f2080to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.Int2ObjectSortedMap
@@ -1122,12 +1122,12 @@ public class Int2ObjectRBTreeMap<V> extends AbstractInt2ObjectSortedMap<V> imple
                 return new Submap(from, false, to, false);
             }
             if (!this.top) {
-                to = Int2ObjectRBTreeMap.this.compare(to, this.f2116to) < 0 ? to : this.f2116to;
+                to = Int2ObjectRBTreeMap.this.compare(to, this.f2080to) < 0 ? to : this.f2080to;
             }
             if (!this.bottom) {
                 from = Int2ObjectRBTreeMap.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f2116to) ? new Submap(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f2080to) ? new Submap(from, false, to, false) : this;
         }
 
         public Entry<V> firstEntry() {
@@ -1146,7 +1146,7 @@ public class Int2ObjectRBTreeMap<V> extends AbstractInt2ObjectSortedMap<V> imple
             if (e == null) {
                 return null;
             }
-            if (this.top || Int2ObjectRBTreeMap.this.compare(e.key, this.f2116to) < 0) {
+            if (this.top || Int2ObjectRBTreeMap.this.compare(e.key, this.f2080to) < 0) {
                 return e;
             }
             return null;
@@ -1160,8 +1160,8 @@ public class Int2ObjectRBTreeMap<V> extends AbstractInt2ObjectSortedMap<V> imple
             if (this.top) {
                 e = Int2ObjectRBTreeMap.this.lastEntry;
             } else {
-                e = Int2ObjectRBTreeMap.this.locateKey(this.f2116to);
-                if (Int2ObjectRBTreeMap.this.compare(e.key, this.f2116to) >= 0) {
+                e = Int2ObjectRBTreeMap.this.locateKey(this.f2080to);
+                if (Int2ObjectRBTreeMap.this.compare(e.key, this.f2080to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1239,7 +1239,7 @@ public class Int2ObjectRBTreeMap<V> extends AbstractInt2ObjectSortedMap<V> imple
             @Override // p014it.unimi.dsi.fastutil.ints.Int2ObjectRBTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Int2ObjectRBTreeMap.this.compare(this.next.key, Submap.this.f2116to) >= 0) {
+                if (!Submap.this.top && this.next != null && Int2ObjectRBTreeMap.this.compare(this.next.key, Submap.this.f2080to) >= 0) {
                     this.next = null;
                 }
             }

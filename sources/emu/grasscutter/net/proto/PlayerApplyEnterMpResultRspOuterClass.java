@@ -20,19 +20,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerApplyEnterMpResultRspOuterClass.class */
 public final class PlayerApplyEnterMpResultRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!PlayerApplyEnterMpResultRsp.proto\"c\n\u001bPlayerApplyEnterMpResultRsp\u0012\u0011\n\tapply_uid\u0018\b \u0001(\r\u0012\r\n\u0005param\u0018\t \u0001(\r\u0012\u0011\n\tis_agreed\u0018\r \u0001(\b\u0012\u000f\n\u0007retcode\u0018\u000f \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!PlayerApplyEnterMpResultRsp.proto\"a\n\u001bPlayerApplyEnterMpResultRsp\u0012\u0010\n\bapplyUid\u0018\n \u0001(\r\u0012\u0010\n\bisAgreed\u0018\t \u0001(\b\u0012\u000f\n\u0007retcode\u0018\u0002 \u0001(\u0005\u0012\r\n\u0005param\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PlayerApplyEnterMpResultRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerApplyEnterMpResultRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerApplyEnterMpResultRsp_descriptor, new String[]{"ApplyUid", "Param", "IsAgreed", "Retcode"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerApplyEnterMpResultRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerApplyEnterMpResultRsp_descriptor, new String[]{"ApplyUid", "IsAgreed", "Retcode", "Param"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerApplyEnterMpResultRspOuterClass$PlayerApplyEnterMpResultRspOrBuilder.class */
     public interface PlayerApplyEnterMpResultRspOrBuilder extends MessageOrBuilder {
         int getApplyUid();
 
-        int getParam();
-
         boolean getIsAgreed();
 
         int getRetcode();
+
+        int getParam();
     }
 
     private PlayerApplyEnterMpResultRspOuterClass() {
@@ -48,14 +48,14 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerApplyEnterMpResultRspOuterClass$PlayerApplyEnterMpResultRsp.class */
     public static final class PlayerApplyEnterMpResultRsp extends GeneratedMessageV3 implements PlayerApplyEnterMpResultRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int APPLY_UID_FIELD_NUMBER = 8;
+        public static final int APPLYUID_FIELD_NUMBER = 10;
         private int applyUid_;
-        public static final int PARAM_FIELD_NUMBER = 9;
-        private int param_;
-        public static final int IS_AGREED_FIELD_NUMBER = 13;
+        public static final int ISAGREED_FIELD_NUMBER = 9;
         private boolean isAgreed_;
-        public static final int RETCODE_FIELD_NUMBER = 15;
+        public static final int RETCODE_FIELD_NUMBER = 2;
         private int retcode_;
+        public static final int PARAM_FIELD_NUMBER = 4;
+        private int param_;
         private byte memoizedIsInitialized;
         private static final PlayerApplyEnterMpResultRsp DEFAULT_INSTANCE = new PlayerApplyEnterMpResultRsp();
         private static final Parser<PlayerApplyEnterMpResultRsp> PARSER = new AbstractParser<PlayerApplyEnterMpResultRsp>() { // from class: emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRsp.1
@@ -102,17 +102,17 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 64:
-                                    this.applyUid_ = input.readUInt32();
+                                case 16:
+                                    this.retcode_ = input.readInt32();
                                     break;
-                                case 72:
+                                case 32:
                                     this.param_ = input.readUInt32();
                                     break;
-                                case 104:
+                                case 72:
                                     this.isAgreed_ = input.readBool();
                                     break;
-                                case 120:
-                                    this.retcode_ = input.readInt32();
+                                case 80:
+                                    this.applyUid_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -150,11 +150,6 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRspOrBuilder
-        public int getParam() {
-            return this.param_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRspOrBuilder
         public boolean getIsAgreed() {
             return this.isAgreed_;
         }
@@ -162,6 +157,11 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
         @Override // emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRspOrBuilder
         public int getRetcode() {
             return this.retcode_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRspOrBuilder
+        public int getParam() {
+            return this.param_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -179,17 +179,17 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.applyUid_ != 0) {
-                output.writeUInt32(8, this.applyUid_);
+            if (this.retcode_ != 0) {
+                output.writeInt32(2, this.retcode_);
             }
             if (this.param_ != 0) {
-                output.writeUInt32(9, this.param_);
+                output.writeUInt32(4, this.param_);
             }
             if (this.isAgreed_) {
-                output.writeBool(13, this.isAgreed_);
+                output.writeBool(9, this.isAgreed_);
             }
-            if (this.retcode_ != 0) {
-                output.writeInt32(15, this.retcode_);
+            if (this.applyUid_ != 0) {
+                output.writeUInt32(10, this.applyUid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -201,17 +201,17 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.applyUid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(8, this.applyUid_);
+            if (this.retcode_ != 0) {
+                size2 = 0 + CodedOutputStream.computeInt32Size(2, this.retcode_);
             }
             if (this.param_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.param_);
+                size2 += CodedOutputStream.computeUInt32Size(4, this.param_);
             }
             if (this.isAgreed_) {
-                size2 += CodedOutputStream.computeBoolSize(13, this.isAgreed_);
+                size2 += CodedOutputStream.computeBoolSize(9, this.isAgreed_);
             }
-            if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(15, this.retcode_);
+            if (this.applyUid_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(10, this.applyUid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -227,7 +227,7 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
                 return equals(obj);
             }
             PlayerApplyEnterMpResultRsp other = (PlayerApplyEnterMpResultRsp) obj;
-            return getApplyUid() == other.getApplyUid() && getParam() == other.getParam() && getIsAgreed() == other.getIsAgreed() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
+            return getApplyUid() == other.getApplyUid() && getIsAgreed() == other.getIsAgreed() && getRetcode() == other.getRetcode() && getParam() == other.getParam() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -235,7 +235,7 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getApplyUid())) + 9)) + getParam())) + 13)) + Internal.hashBoolean(getIsAgreed()))) + 15)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getApplyUid())) + 9)) + Internal.hashBoolean(getIsAgreed()))) + 2)) + getRetcode())) + 4)) + getParam())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -315,9 +315,9 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerApplyEnterMpResultRspOuterClass$PlayerApplyEnterMpResultRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements PlayerApplyEnterMpResultRspOrBuilder {
             private int applyUid_;
-            private int param_;
             private boolean isAgreed_;
             private int retcode_;
+            private int param_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return PlayerApplyEnterMpResultRspOuterClass.internal_static_PlayerApplyEnterMpResultRsp_descriptor;
@@ -346,9 +346,9 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
             public Builder clear() {
                 clear();
                 this.applyUid_ = 0;
-                this.param_ = 0;
                 this.isAgreed_ = false;
                 this.retcode_ = 0;
+                this.param_ = 0;
                 return this;
             }
 
@@ -375,9 +375,9 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
             public PlayerApplyEnterMpResultRsp buildPartial() {
                 PlayerApplyEnterMpResultRsp result = new PlayerApplyEnterMpResultRsp(this);
                 result.applyUid_ = this.applyUid_;
-                result.param_ = this.param_;
                 result.isAgreed_ = this.isAgreed_;
                 result.retcode_ = this.retcode_;
+                result.param_ = this.param_;
                 onBuilt();
                 return result;
             }
@@ -428,14 +428,14 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
                 if (other.getApplyUid() != 0) {
                     setApplyUid(other.getApplyUid());
                 }
-                if (other.getParam() != 0) {
-                    setParam(other.getParam());
-                }
                 if (other.getIsAgreed()) {
                     setIsAgreed(other.getIsAgreed());
                 }
                 if (other.getRetcode() != 0) {
                     setRetcode(other.getRetcode());
+                }
+                if (other.getParam() != 0) {
+                    setParam(other.getParam());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -487,23 +487,6 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRspOrBuilder
-            public int getParam() {
-                return this.param_;
-            }
-
-            public Builder setParam(int value) {
-                this.param_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearParam() {
-                this.param_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRspOrBuilder
             public boolean getIsAgreed() {
                 return this.isAgreed_;
             }
@@ -533,6 +516,23 @@ public final class PlayerApplyEnterMpResultRspOuterClass {
 
             public Builder clearRetcode() {
                 this.retcode_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerApplyEnterMpResultRspOuterClass.PlayerApplyEnterMpResultRspOrBuilder
+            public int getParam() {
+                return this.param_;
+            }
+
+            public Builder setParam(int value) {
+                this.param_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearParam() {
+                this.param_ = 0;
                 onChanged();
                 return this;
             }

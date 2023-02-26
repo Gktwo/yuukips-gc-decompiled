@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SeekFurnitureGalleryInfoOuterClass.class */
 public final class SeekFurnitureGalleryInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eSeekFurnitureGalleryInfo.proto\u001a HomeSeekFurnitureOneRecord.proto\"L\n\u0018SeekFurnitureGalleryInfo\u00120\n\u000brecord_list\u0018\u0005 \u0003(\u000b2\u001b.HomeSeekFurnitureOneRecordB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeSeekFurnitureOneRecordOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eSeekFurnitureGalleryInfo.proto\u001a HomeSeekFurnitureOneRecord.proto\"K\n\u0018SeekFurnitureGalleryInfo\u0012/\n\nrecordList\u0018\u0005 \u0003(\u000b2\u001b.HomeSeekFurnitureOneRecordB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeSeekFurnitureOneRecordOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SeekFurnitureGalleryInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SeekFurnitureGalleryInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SeekFurnitureGalleryInfo_descriptor, new String[]{"RecordList"});
 
@@ -55,7 +55,7 @@ public final class SeekFurnitureGalleryInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SeekFurnitureGalleryInfoOuterClass$SeekFurnitureGalleryInfo.class */
     public static final class SeekFurnitureGalleryInfo extends GeneratedMessageV3 implements SeekFurnitureGalleryInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RECORD_LIST_FIELD_NUMBER = 5;
+        public static final int RECORDLIST_FIELD_NUMBER = 5;
         private List<HomeSeekFurnitureOneRecordOuterClass.HomeSeekFurnitureOneRecord> recordList_;
         private byte memoizedIsInitialized;
         private static final SeekFurnitureGalleryInfo DEFAULT_INSTANCE = new SeekFurnitureGalleryInfo();

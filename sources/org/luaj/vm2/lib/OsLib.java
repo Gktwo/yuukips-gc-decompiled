@@ -32,8 +32,8 @@ public class OsLib extends TwoArgFunction {
     private static final String[] NAMES = {"clock", "date", "difftime", "execute", "exit", "getenv", "remove", "rename", "setlocale", "time", "tmpname"};
 
     /* renamed from: t0 */
-    private static final long f3339t0 = System.currentTimeMillis();
-    private static long tmpnames = f3339t0;
+    private static final long f3303t0 = System.currentTimeMillis();
+    private static long tmpnames = f3303t0;
     private static final String[] WeekdayNameAbbrev = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
     private static final String[] WeekdayName = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
     private static final String[] MonthNameAbbrev = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
@@ -122,7 +122,7 @@ public class OsLib extends TwoArgFunction {
     }
 
     protected double clock() {
-        return ((double) (System.currentTimeMillis() - f3339t0)) / 1000.0d;
+        return ((double) (System.currentTimeMillis() - f3303t0)) / 1000.0d;
     }
 
     protected double difftime(double d, double d2) {

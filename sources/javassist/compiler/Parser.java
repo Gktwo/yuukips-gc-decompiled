@@ -51,7 +51,7 @@ public final class Parser implements TokenId {
         ASTList mods = parseMemberMods();
         boolean isConstructor = false;
         if (this.lex.lookAhead() == 400 && this.lex.lookAhead(1) == 40) {
-            d = new Declarator(344, 0);
+            d = new Declarator((int) TokenId.VOID, 0);
             isConstructor = true;
         } else {
             d = parseFormalType(tbl);
@@ -630,7 +630,7 @@ public final class Parser implements TokenId {
             case 43:
             case 45:
             case 126:
-            case TokenId.PLUSPLUS:
+            case 362:
             case 363:
                 int t = this.lex.get();
                 if (t == 45) {
@@ -846,10 +846,10 @@ public final class Parser implements TokenId {
             case TokenId.LONG:
                 cname = "java.lang.Long";
                 break;
-            case 334:
+            case TokenId.SHORT:
                 cname = "java.lang.Short";
                 break;
-            case 344:
+            case TokenId.VOID:
                 cname = "java.lang.Void";
                 break;
             default:
@@ -903,10 +903,10 @@ public final class Parser implements TokenId {
                     return expr;
                 }
                 throw new CompileError(") is missing", this.lex);
-            case TokenId.NEW:
+            case 328:
                 return parseNew(tbl);
-            case TokenId.SUPER:
-            case 339:
+            case 336:
+            case TokenId.THIS:
             case 410:
             case 411:
             case 412:

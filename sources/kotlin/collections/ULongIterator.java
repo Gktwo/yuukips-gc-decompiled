@@ -16,7 +16,7 @@ import org.jline.builtins.Tmux;
 /* loaded from: grasscutter.jar:kotlin/collections/ULongIterator.class */
 public abstract class ULongIterator implements Iterator<ULong>, KMappedMarker {
     /* renamed from: nextULong-s-VKNKU */
-    public abstract long mo7302nextULongsVKNKU();
+    public abstract long mo7299nextULongsVKNKU();
 
     @Override // java.util.Iterator
     public void remove() {
@@ -26,11 +26,11 @@ public abstract class ULongIterator implements Iterator<ULong>, KMappedMarker {
     /* Return type fixed from 'java.lang.Object' to match base method */
     @Override // java.util.Iterator
     public /* bridge */ /* synthetic */ ULong next() {
-        return ULong.m7281boximpl(m7535nextsVKNKU());
+        return ULong.m7278boximpl(m7532nextsVKNKU());
     }
 
     /* renamed from: next-s-VKNKU  reason: not valid java name */
-    public final long m7535nextsVKNKU() {
-        return mo7302nextULongsVKNKU();
+    public final long m7532nextsVKNKU() {
+        return mo7299nextULongsVKNKU();
     }
 }

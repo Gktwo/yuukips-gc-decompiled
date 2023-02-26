@@ -5,7 +5,7 @@ import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketGetOnlinePlayerListRsp;
 
-@Opcodes(47)
+@Opcodes(70)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerGetOnlinePlayerListReq.class */
 public class HandlerGetOnlinePlayerListReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

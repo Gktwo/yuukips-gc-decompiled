@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneFishInfoOuterClass.class */
 public final class SceneFishInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013SceneFishInfo.proto\u001a\fVector.proto\"\u0001\n\rSceneFishInfo\u0012\u000f\n\u0007fish_id\u0018\u0001 \u0001(\r\u0012\u001b\n\u0013fish_pool_entity_id\u0018\u0002 \u0001(\r\u0012\u001e\n\rfish_pool_pos\u0018\u0003 \u0001(\u000b2\u0007.Vector\u0012\u001b\n\u0013fish_pool_gadget_id\u0018\u0004 \u0001(\r\u0012\u0017\n\u000flast_shock_time\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013SceneFishInfo.proto\u001a\fVector.proto\"\u0001\n\rSceneFishInfo\u0012\u000e\n\u0006fishId\u0018\u0001 \u0001(\r\u0012\u0018\n\u0010fishPoolEntityId\u0018\u0002 \u0001(\r\u0012\u001c\n\u000bfishPoolPos\u0018\u0003 \u0001(\u000b2\u0007.Vector\u0012\u0018\n\u0010fishPoolGadgetId\u0018\u0004 \u0001(\r\u0012\u0015\n\rlastShockTime\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SceneFishInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SceneFishInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneFishInfo_descriptor, new String[]{"FishId", "FishPoolEntityId", "FishPoolPos", "FishPoolGadgetId", "LastShockTime"});
 
@@ -55,15 +55,15 @@ public final class SceneFishInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneFishInfoOuterClass$SceneFishInfo.class */
     public static final class SceneFishInfo extends GeneratedMessageV3 implements SceneFishInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int FISH_ID_FIELD_NUMBER = 1;
+        public static final int FISHID_FIELD_NUMBER = 1;
         private int fishId_;
-        public static final int FISH_POOL_ENTITY_ID_FIELD_NUMBER = 2;
+        public static final int FISHPOOLENTITYID_FIELD_NUMBER = 2;
         private int fishPoolEntityId_;
-        public static final int FISH_POOL_POS_FIELD_NUMBER = 3;
+        public static final int FISHPOOLPOS_FIELD_NUMBER = 3;
         private VectorOuterClass.Vector fishPoolPos_;
-        public static final int FISH_POOL_GADGET_ID_FIELD_NUMBER = 4;
+        public static final int FISHPOOLGADGETID_FIELD_NUMBER = 4;
         private int fishPoolGadgetId_;
-        public static final int LAST_SHOCK_TIME_FIELD_NUMBER = 5;
+        public static final int LASTSHOCKTIME_FIELD_NUMBER = 5;
         private int lastShockTime_;
         private byte memoizedIsInitialized;
         private static final SceneFishInfo DEFAULT_INSTANCE = new SceneFishInfo();

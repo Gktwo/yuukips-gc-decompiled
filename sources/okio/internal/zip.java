@@ -1,6 +1,5 @@
 package okio.internal;
 
-import emu.grasscutter.net.packet.PacketOpcodes;
 import java.io.IOException;
 import java.util.Comparator;
 import java.util.GregorianCalendar;
@@ -252,7 +251,7 @@ public final class zip {
         }
         GregorianCalendar cal = new GregorianCalendar();
         cal.set(14, 0);
-        cal.set(PacketOpcodes.TakeCoopRewardReq + ((date >> 9) & 127), ((date >> 5) & 15) - 1, date & 31, (time >> 11) & 31, (time >> 5) & 63, (time & 31) << 1);
+        cal.set(1980 + ((date >> 9) & 127), ((date >> 5) & 15) - 1, date & 31, (time >> 11) & 31, (time >> 5) & 63, (time & 31) << 1);
         return Long.valueOf(cal.getTime().getTime());
     }
 

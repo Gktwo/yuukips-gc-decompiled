@@ -86,7 +86,7 @@ public final class ConnectionSpec {
     @JvmName(name = "-deprecated_cipherSuites")
     @Nullable
     /* renamed from: -deprecated_cipherSuites  reason: not valid java name */
-    public final List<CipherSuite> m9172deprecated_cipherSuites() {
+    public final List<CipherSuite> m9169deprecated_cipherSuites() {
         return cipherSuites();
     }
 
@@ -108,14 +108,14 @@ public final class ConnectionSpec {
     @JvmName(name = "-deprecated_tlsVersions")
     @Nullable
     /* renamed from: -deprecated_tlsVersions  reason: not valid java name */
-    public final List<TlsVersion> m9173deprecated_tlsVersions() {
+    public final List<TlsVersion> m9170deprecated_tlsVersions() {
         return tlsVersions();
     }
 
     @Deprecated(message = "moved to val", replaceWith = @ReplaceWith(expression = "supportsTlsExtensions", imports = {}), level = DeprecationLevel.ERROR)
     @JvmName(name = "-deprecated_supportsTlsExtensions")
     /* renamed from: -deprecated_supportsTlsExtensions  reason: not valid java name */
-    public final boolean m9174deprecated_supportsTlsExtensions() {
+    public final boolean m9171deprecated_supportsTlsExtensions() {
         return this.supportsTlsExtensions;
     }
 

@@ -9,7 +9,7 @@ import java.util.Map;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketForgeGetQueueDataRsp.class */
 public class PacketForgeGetQueueDataRsp extends BasePacket {
     public PacketForgeGetQueueDataRsp(RetcodeOuterClass.Retcode retcode, int numQueues, Map<Integer, ForgeQueueDataOuterClass.ForgeQueueData> queueData) {
-        super(667);
+        super(607);
         ForgeGetQueueDataRspOuterClass.ForgeGetQueueDataRsp.Builder builder = ForgeGetQueueDataRspOuterClass.ForgeGetQueueDataRsp.newBuilder().setRetcode(retcode.getNumber()).setMaxQueueNum(numQueues);
         for (Integer num : queueData.keySet()) {
             int queueId = num.intValue();

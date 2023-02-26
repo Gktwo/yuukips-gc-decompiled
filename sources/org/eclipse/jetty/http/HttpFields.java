@@ -489,11 +489,11 @@ public class HttpFields implements Iterable<HttpField> {
                     HttpField field;
 
                     /* renamed from: i */
-                    int f3134i;
+                    int f3098i;
 
                     {
                         this.field = f;
-                        this.f3134i = i + 1;
+                        this.f3098i = i + 1;
                     }
 
                     @Override // java.util.Enumeration
@@ -501,10 +501,10 @@ public class HttpFields implements Iterable<HttpField> {
                         if (this.field != null) {
                             return true;
                         }
-                        while (this.f3134i < HttpFields.this._size) {
+                        while (this.f3098i < HttpFields.this._size) {
                             HttpField[] httpFieldArr = HttpFields.this._fields;
-                            int i2 = this.f3134i;
-                            this.f3134i = i2 + 1;
+                            int i2 = this.f3098i;
+                            this.f3098i = i2 + 1;
                             this.field = httpFieldArr[i2];
                             if (this.field.m43is(name) && this.field.getValue() != null) {
                                 return true;

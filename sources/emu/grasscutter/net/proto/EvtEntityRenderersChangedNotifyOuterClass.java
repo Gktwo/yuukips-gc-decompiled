@@ -23,11 +23,11 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EvtEntityRenderersChangedNotifyOuterClass.class */
 public final class EvtEntityRenderersChangedNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n%EvtEntityRenderersChangedNotify.proto\u001a\u001fEntityRendererChangedInfo.proto\u001a\u0011ForwardType.proto\"¬\u0001\n\u001fEvtEntityRenderersChangedNotify\u0012\"\n\fforward_type\u0018\u0005 \u0001(\u000e2\f.ForwardType\u0012\u0011\n\tentity_id\u0018\u0001 \u0001(\r\u0012\u0017\n\u000fis_server_cache\u0018\u0003 \u0001(\b\u00129\n\u0015renderer_changed_info\u0018\u000f \u0001(\u000b2\u001a.EntityRendererChangedInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{EntityRendererChangedInfoOuterClass.getDescriptor(), ForwardTypeOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n%EvtEntityRenderersChangedNotify.proto\u001a\u0011ForwardType.proto\u001a\u001fEntityRendererChangedInfo.proto\"¦\u0001\n\u001fEvtEntityRenderersChangedNotify\u0012!\n\u000bforwardType\u0018\n \u0001(\u000e2\f.ForwardType\u0012\u0010\n\bentityId\u0018\u0004 \u0001(\r\u0012\u0015\n\risServerCache\u0018\b \u0001(\b\u00127\n\u0013rendererChangedInfo\u0018\r \u0001(\u000b2\u001a.EntityRendererChangedInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ForwardTypeOuterClass.getDescriptor(), EntityRendererChangedInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_EvtEntityRenderersChangedNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_EvtEntityRenderersChangedNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f706xc5663908 = new GeneratedMessageV3.FieldAccessorTable(internal_static_EvtEntityRenderersChangedNotify_descriptor, new String[]{"ForwardType", "EntityId", "IsServerCache", "RendererChangedInfo"});
+    private static final GeneratedMessageV3.FieldAccessorTable f703xc5663908 = new GeneratedMessageV3.FieldAccessorTable(internal_static_EvtEntityRenderersChangedNotify_descriptor, new String[]{"ForwardType", "EntityId", "IsServerCache", "RendererChangedInfo"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EvtEntityRenderersChangedNotifyOuterClass$EvtEntityRenderersChangedNotifyOrBuilder.class */
     public interface EvtEntityRenderersChangedNotifyOrBuilder extends MessageOrBuilder {
@@ -59,13 +59,13 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EvtEntityRenderersChangedNotifyOuterClass$EvtEntityRenderersChangedNotify.class */
     public static final class EvtEntityRenderersChangedNotify extends GeneratedMessageV3 implements EvtEntityRenderersChangedNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int FORWARD_TYPE_FIELD_NUMBER = 5;
+        public static final int FORWARDTYPE_FIELD_NUMBER = 10;
         private int forwardType_;
-        public static final int ENTITY_ID_FIELD_NUMBER = 1;
+        public static final int ENTITYID_FIELD_NUMBER = 4;
         private int entityId_;
-        public static final int IS_SERVER_CACHE_FIELD_NUMBER = 3;
+        public static final int ISSERVERCACHE_FIELD_NUMBER = 8;
         private boolean isServerCache_;
-        public static final int RENDERER_CHANGED_INFO_FIELD_NUMBER = 15;
+        public static final int RENDERERCHANGEDINFO_FIELD_NUMBER = 13;
         private EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo rendererChangedInfo_;
         private byte memoizedIsInitialized;
         private static final EvtEntityRenderersChangedNotify DEFAULT_INSTANCE = new EvtEntityRenderersChangedNotify();
@@ -113,16 +113,16 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
+                            case 32:
                                 this.entityId_ = input.readUInt32();
                                 break;
-                            case 24:
+                            case 64:
                                 this.isServerCache_ = input.readBool();
                                 break;
-                            case 40:
+                            case 80:
                                 this.forwardType_ = input.readEnum();
                                 break;
-                            case 122:
+                            case 106:
                                 EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.Builder subBuilder = this.rendererChangedInfo_ != null ? this.rendererChangedInfo_.toBuilder() : null;
                                 this.rendererChangedInfo_ = (EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo) input.readMessage(EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -158,7 +158,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return EvtEntityRenderersChangedNotifyOuterClass.f706xc5663908.ensureFieldAccessorsInitialized(EvtEntityRenderersChangedNotify.class, Builder.class);
+            return EvtEntityRenderersChangedNotifyOuterClass.f703xc5663908.ensureFieldAccessorsInitialized(EvtEntityRenderersChangedNotify.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.EvtEntityRenderersChangedNotifyOuterClass.EvtEntityRenderersChangedNotifyOrBuilder
@@ -213,16 +213,16 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.entityId_ != 0) {
-                output.writeUInt32(1, this.entityId_);
+                output.writeUInt32(4, this.entityId_);
             }
             if (this.isServerCache_) {
-                output.writeBool(3, this.isServerCache_);
+                output.writeBool(8, this.isServerCache_);
             }
             if (this.forwardType_ != ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
-                output.writeEnum(5, this.forwardType_);
+                output.writeEnum(10, this.forwardType_);
             }
             if (this.rendererChangedInfo_ != null) {
-                output.writeMessage(15, getRendererChangedInfo());
+                output.writeMessage(13, getRendererChangedInfo());
             }
             this.unknownFields.writeTo(output);
         }
@@ -235,16 +235,16 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
             }
             int size2 = 0;
             if (this.entityId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.entityId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.entityId_);
             }
             if (this.isServerCache_) {
-                size2 += CodedOutputStream.computeBoolSize(3, this.isServerCache_);
+                size2 += CodedOutputStream.computeBoolSize(8, this.isServerCache_);
             }
             if (this.forwardType_ != ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(5, this.forwardType_);
+                size2 += CodedOutputStream.computeEnumSize(10, this.forwardType_);
             }
             if (this.rendererChangedInfo_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(15, getRendererChangedInfo());
+                size2 += CodedOutputStream.computeMessageSize(13, getRendererChangedInfo());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -271,9 +271,9 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + this.forwardType_)) + 1)) + getEntityId())) + 3)) + Internal.hashBoolean(getIsServerCache());
+            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + this.forwardType_)) + 4)) + getEntityId())) + 8)) + Internal.hashBoolean(getIsServerCache());
             if (hasRendererChangedInfo()) {
-                hash = (53 * ((37 * hash) + 15)) + getRendererChangedInfo().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getRendererChangedInfo().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -366,7 +366,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return EvtEntityRenderersChangedNotifyOuterClass.f706xc5663908.ensureFieldAccessorsInitialized(EvtEntityRenderersChangedNotify.class, Builder.class);
+                return EvtEntityRenderersChangedNotifyOuterClass.f703xc5663908.ensureFieldAccessorsInitialized(EvtEntityRenderersChangedNotify.class, Builder.class);
             }
 
             private Builder() {
@@ -701,7 +701,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
     }
 
     static {
-        EntityRendererChangedInfoOuterClass.getDescriptor();
         ForwardTypeOuterClass.getDescriptor();
+        EntityRendererChangedInfoOuterClass.getDescriptor();
     }
 }

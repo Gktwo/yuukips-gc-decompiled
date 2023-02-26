@@ -90,30 +90,30 @@ public abstract class AbstractShort2IntSortedMap extends AbstractShort2IntMap im
     public static class KeySetIterator implements ShortBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Short2IntMap.Entry> f2869i;
+        protected final ObjectBidirectionalIterator<Short2IntMap.Entry> f2833i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Short2IntMap.Entry> i) {
-            this.f2869i = i;
+            this.f2833i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
         public short nextShort() {
-            return ((Short2IntMap.Entry) this.f2869i.next()).getShortKey();
+            return ((Short2IntMap.Entry) this.f2833i.next()).getShortKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortBidirectionalIterator
         public short previousShort() {
-            return this.f2869i.previous().getShortKey();
+            return this.f2833i.previous().getShortKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2869i.hasNext();
+            return this.f2833i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2869i.hasPrevious();
+            return this.f2833i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractShort2IntSortedMap extends AbstractShort2IntMap im
     public static class ValuesIterator implements IntIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Short2IntMap.Entry> f2870i;
+        protected final ObjectBidirectionalIterator<Short2IntMap.Entry> f2834i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Short2IntMap.Entry> i) {
-            this.f2870i = i;
+            this.f2834i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntIterator, java.util.PrimitiveIterator.OfInt
         public int nextInt() {
-            return ((Short2IntMap.Entry) this.f2870i.next()).getIntValue();
+            return ((Short2IntMap.Entry) this.f2834i.next()).getIntValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2870i.hasNext();
+            return this.f2834i.hasNext();
         }
     }
 }

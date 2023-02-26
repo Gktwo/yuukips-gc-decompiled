@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VehicleInfoOuterClass.class */
 public final class VehicleInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0011VehicleInfo.proto\u001a\u0013VehicleMember.proto\"Z\n\u000bVehicleInfo\u0012#\n\u000bmember_list\u0018\u0001 \u0003(\u000b2\u000e.VehicleMember\u0012\u0011\n\towner_uid\u0018\u0002 \u0001(\r\u0012\u0013\n\u000bcur_stamina\u0018\u0003 \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VehicleMemberOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0011VehicleInfo.proto\u001a\u0013VehicleMember.proto\"W\n\u000bVehicleInfo\u0012\"\n\nmemberList\u0018\u0001 \u0003(\u000b2\u000e.VehicleMember\u0012\u0010\n\bownerUid\u0018\u0002 \u0001(\r\u0012\u0012\n\ncurStamina\u0018\u0003 \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VehicleMemberOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_VehicleInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_VehicleInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_VehicleInfo_descriptor, new String[]{"MemberList", "OwnerUid", "CurStamina"});
 
@@ -59,11 +59,11 @@ public final class VehicleInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VehicleInfoOuterClass$VehicleInfo.class */
     public static final class VehicleInfo extends GeneratedMessageV3 implements VehicleInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MEMBER_LIST_FIELD_NUMBER = 1;
+        public static final int MEMBERLIST_FIELD_NUMBER = 1;
         private List<VehicleMemberOuterClass.VehicleMember> memberList_;
-        public static final int OWNER_UID_FIELD_NUMBER = 2;
+        public static final int OWNERUID_FIELD_NUMBER = 2;
         private int ownerUid_;
-        public static final int CUR_STAMINA_FIELD_NUMBER = 3;
+        public static final int CURSTAMINA_FIELD_NUMBER = 3;
         private float curStamina_;
         private byte memoizedIsInitialized;
         private static final VehicleInfo DEFAULT_INSTANCE = new VehicleInfo();

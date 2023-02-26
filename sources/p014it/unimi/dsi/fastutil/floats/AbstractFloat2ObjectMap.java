@@ -190,30 +190,30 @@ public abstract class AbstractFloat2ObjectMap<V> extends AbstractFloat2ObjectFun
                 return new FloatIterator() { // from class: it.unimi.dsi.fastutil.floats.AbstractFloat2ObjectMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Float2ObjectMap.Entry<V>> f1782i;
+                    private final ObjectIterator<Float2ObjectMap.Entry<V>> f1746i;
 
                     {
-                        this.f1782i = Float2ObjectMaps.fastIterator(AbstractFloat2ObjectMap.this);
+                        this.f1746i = Float2ObjectMaps.fastIterator(AbstractFloat2ObjectMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
                     public float nextFloat() {
-                        return this.f1782i.next().getFloatKey();
+                        return this.f1746i.next().getFloatKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1782i.hasNext();
+                        return this.f1746i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1782i.remove();
+                        this.f1746i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
                     public void forEachRemaining(FloatConsumer action) {
-                        this.f1782i.forEachRemaining(entry -> {
+                        this.f1746i.forEachRemaining(entry -> {
                             action.accept(entry.getFloatKey());
                         });
                     }
@@ -250,30 +250,30 @@ public abstract class AbstractFloat2ObjectMap<V> extends AbstractFloat2ObjectFun
                 return new ObjectIterator<V>() { // from class: it.unimi.dsi.fastutil.floats.AbstractFloat2ObjectMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Float2ObjectMap.Entry<V>> f1783i;
+                    private final ObjectIterator<Float2ObjectMap.Entry<V>> f1747i;
 
                     {
-                        this.f1783i = Float2ObjectMaps.fastIterator(AbstractFloat2ObjectMap.this);
+                        this.f1747i = Float2ObjectMaps.fastIterator(AbstractFloat2ObjectMap.this);
                     }
 
                     @Override // java.util.Iterator
                     public V next() {
-                        return this.f1783i.next().getValue();
+                        return this.f1747i.next().getValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1783i.hasNext();
+                        return this.f1747i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1783i.remove();
+                        this.f1747i.remove();
                     }
 
                     @Override // java.util.Iterator
                     public void forEachRemaining(Consumer<? super V> action) {
-                        this.f1783i.forEachRemaining(entry -> {
+                        this.f1747i.forEachRemaining(entry -> {
                             action.accept(entry.getValue());
                         });
                     }

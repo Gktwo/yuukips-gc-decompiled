@@ -90,30 +90,30 @@ public abstract class AbstractByte2DoubleSortedMap extends AbstractByte2DoubleMa
     public static class KeySetIterator implements ByteBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Byte2DoubleMap.Entry> f1093i;
+        protected final ObjectBidirectionalIterator<Byte2DoubleMap.Entry> f1057i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Byte2DoubleMap.Entry> i) {
-            this.f1093i = i;
+            this.f1057i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
         public byte nextByte() {
-            return ((Byte2DoubleMap.Entry) this.f1093i.next()).getByteKey();
+            return ((Byte2DoubleMap.Entry) this.f1057i.next()).getByteKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteBidirectionalIterator
         public byte previousByte() {
-            return this.f1093i.previous().getByteKey();
+            return this.f1057i.previous().getByteKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1093i.hasNext();
+            return this.f1057i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1093i.hasPrevious();
+            return this.f1057i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractByte2DoubleSortedMap extends AbstractByte2DoubleMa
     public static class ValuesIterator implements DoubleIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Byte2DoubleMap.Entry> f1094i;
+        protected final ObjectBidirectionalIterator<Byte2DoubleMap.Entry> f1058i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Byte2DoubleMap.Entry> i) {
-            this.f1094i = i;
+            this.f1058i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
         public double nextDouble() {
-            return ((Byte2DoubleMap.Entry) this.f1094i.next()).getDoubleValue();
+            return ((Byte2DoubleMap.Entry) this.f1058i.next()).getDoubleValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1094i.hasNext();
+            return this.f1058i.hasNext();
         }
     }
 }

@@ -4,7 +4,7 @@ import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.server.game.GameSession;
 
-@Opcodes(664)
+@Opcodes(635)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerForgeGetQueueDataReq.class */
 public class HandlerForgeGetQueueDataReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

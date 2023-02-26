@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarGainCostumeNotifyOuterClass.class */
 public final class AvatarGainCostumeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dAvatarGainCostumeNotify.proto\"-\n\u0017AvatarGainCostumeNotify\u0012\u0012\n\ncostume_id\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dAvatarGainCostumeNotify.proto\",\n\u0017AvatarGainCostumeNotify\u0012\u0011\n\tcostumeId\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AvatarGainCostumeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarGainCostumeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarGainCostumeNotify_descriptor, new String[]{"CostumeId"});
 
@@ -41,7 +41,7 @@ public final class AvatarGainCostumeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarGainCostumeNotifyOuterClass$AvatarGainCostumeNotify.class */
     public static final class AvatarGainCostumeNotify extends GeneratedMessageV3 implements AvatarGainCostumeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int COSTUME_ID_FIELD_NUMBER = 10;
+        public static final int COSTUMEID_FIELD_NUMBER = 6;
         private int costumeId_;
         private byte memoizedIsInitialized;
         private static final AvatarGainCostumeNotify DEFAULT_INSTANCE = new AvatarGainCostumeNotify();
@@ -88,7 +88,7 @@ public final class AvatarGainCostumeNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 80:
+                            case 48:
                                 this.costumeId_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class AvatarGainCostumeNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.costumeId_ != 0) {
-                output.writeUInt32(10, this.costumeId_);
+                output.writeUInt32(6, this.costumeId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class AvatarGainCostumeNotifyOuterClass {
             }
             int size2 = 0;
             if (this.costumeId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(10, this.costumeId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.costumeId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class AvatarGainCostumeNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getCostumeId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getCostumeId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

@@ -25,7 +25,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ItemOuterClass.class */
 public final class ItemOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\nItem.proto\u001a\u000bEquip.proto\u001a\u000fFurniture.proto\u001a\u000eMaterial.proto\"\u0001\n\u0004Item\u0012\u000f\n\u0007item_id\u0018\u0001 \u0001(\r\u0012\f\n\u0004guid\u0018\u0002 \u0001(\u0004\u0012\u001d\n\bmaterial\u0018\u0005 \u0001(\u000b2\t.MaterialH��\u0012\u0017\n\u0005equip\u0018\u0006 \u0001(\u000b2\u0006.EquipH��\u0012\u001f\n\tfurniture\u0018\u0007 \u0001(\u000b2\n.FurnitureH��B\b\n\u0006detailB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{EquipOuterClass.getDescriptor(), FurnitureOuterClass.getDescriptor(), MaterialOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\nItem.proto\u001a\u000eMaterial.proto\u001a\u000bEquip.proto\u001a\u000fFurniture.proto\"\u0001\n\u0004Item\u0012\u000e\n\u0006itemId\u0018\u0001 \u0001(\r\u0012\f\n\u0004guid\u0018\u0002 \u0001(\u0004\u0012\u001d\n\bmaterial\u0018\u0005 \u0001(\u000b2\t.MaterialH��\u0012\u0017\n\u0005equip\u0018\u0006 \u0001(\u000b2\u0006.EquipH��\u0012\u001f\n\tfurniture\u0018\u0007 \u0001(\u000b2\n.FurnitureH��B\b\n\u0006detailB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MaterialOuterClass.getDescriptor(), EquipOuterClass.getDescriptor(), FurnitureOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_Item_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_Item_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_Item_descriptor, new String[]{"ItemId", "Guid", "Material", "Equip", "Furniture", "Detail"});
 
@@ -71,7 +71,7 @@ public final class ItemOuterClass {
         private static final long serialVersionUID = 0;
         private int detailCase_;
         private Object detail_;
-        public static final int ITEM_ID_FIELD_NUMBER = 1;
+        public static final int ITEMID_FIELD_NUMBER = 1;
         private int itemId_;
         public static final int GUID_FIELD_NUMBER = 2;
         private long guid_;
@@ -1072,8 +1072,8 @@ public final class ItemOuterClass {
     }
 
     static {
+        MaterialOuterClass.getDescriptor();
         EquipOuterClass.getDescriptor();
         FurnitureOuterClass.getDescriptor();
-        MaterialOuterClass.getDescriptor();
     }
 }

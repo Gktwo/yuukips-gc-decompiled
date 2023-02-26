@@ -17,6 +17,7 @@ import com.google.protobuf.Parser;
 import com.google.protobuf.RepeatedFieldBuilderV3;
 import com.google.protobuf.SingleFieldBuilderV3;
 import com.google.protobuf.UnknownFieldSet;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.BirthdayOuterClass;
 import emu.grasscutter.net.proto.FriendEnterHomeOptionOuterClass;
 import emu.grasscutter.net.proto.FriendOnlineStateOuterClass;
@@ -32,9 +33,9 @@ import javassist.bytecode.SignatureAttribute;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SocialDetailOuterClass.class */
 public final class SocialDetailOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012SocialDetail.proto\u001a\u000eBirthday.proto\u001a\u001bFriendEnterHomeOption.proto\u001a\u0017FriendOnlineState.proto\u001a\u0014ProfilePicture.proto\u001a\u001aSocialShowAvatarInfo.proto\"°\u0005\n\fSocialDetail\u0012\u000b\n\u0003uid\u0018\u0001 \u0001(\r\u0012\u0010\n\bnickname\u0018\u0002 \u0001(\t\u0012\r\n\u0005level\u0018\u0003 \u0001(\r\u0012\u0011\n\tavatar_id\u0018\u0004 \u0001(\r\u0012\u0011\n\tsignature\u0018\u0005 \u0001(\t\u0012\u001b\n\bbirthday\u0018\u0006 \u0001(\u000b2\t.Birthday\u0012\u0013\n\u000bworld_level\u0018\u0007 \u0001(\r\u0012\u0015\n\rreserved_list\u0018\b \u0003(\r\u0012(\n\fonline_state\u0018\t \u0001(\u000e2\u0012.FriendOnlineState\u0012\r\n\u0005param\u0018\n \u0001(\r\u0012\u0011\n\tis_friend\u0018\u000b \u0001(\b\u0012\u001c\n\u0014is_mp_mode_available\u0018\f \u0001(\b\u0012\u0011\n\tonline_id\u0018\r \u0001(\t\u0012\u0014\n\fname_card_id\u0018\u000e \u0001(\r\u0012\u0017\n\u000fis_in_blacklist\u0018\u000f \u0001(\b\u0012\u001a\n\u0012is_chat_no_disturb\u0018\u0010 \u0001(\b\u0012\u0013\n\u000bremark_name\u0018\u0011 \u0001(\t\u0012\u001e\n\u0016finish_achievement_num\u0018\u0012 \u0001(\r\u0012\u0019\n\u0011tower_floor_index\u0018\u0013 \u0001(\r\u0012\u0019\n\u0011tower_level_index\u0018\u0014 \u0001(\r\u0012\u0016\n\u000eis_show_avatar\u0018\u0015 \u0001(\b\u00124\n\u0015show_avatar_info_list\u0018\u0016 \u0003(\u000b2\u0015.SocialShowAvatarInfo\u0012\u001e\n\u0016show_name_card_id_list\u0018\u0017 \u0003(\r\u00128\n\u0018friend_enter_home_option\u0018\u0018 \u0001(\u000e2\u0016.FriendEnterHomeOption\u0012(\n\u000fprofile_picture\u0018\u0019 \u0001(\u000b2\u000f.ProfilePictureB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BirthdayOuterClass.getDescriptor(), FriendEnterHomeOptionOuterClass.getDescriptor(), FriendOnlineStateOuterClass.getDescriptor(), ProfilePictureOuterClass.getDescriptor(), SocialShowAvatarInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012SocialDetail.proto\u001a\u000eBirthday.proto\u001a\u0017FriendOnlineState.proto\u001a\u001bFriendEnterHomeOption.proto\u001a\u0014ProfilePicture.proto\u001a\u001aSocialShowAvatarInfo.proto\"¡\u0005\n\fSocialDetail\u0012\u000b\n\u0003uid\u0018\u0001 \u0001(\r\u0012\u0010\n\bnickname\u0018\u0002 \u0001(\t\u0012\r\n\u0005level\u0018\u0003 \u0001(\r\u0012\u0010\n\bavatarId\u0018\u0004 \u0001(\r\u0012\u0011\n\tsignature\u0018\u0005 \u0001(\t\u0012\u001b\n\bbirthday\u0018\u0006 \u0001(\u000b2\t.Birthday\u0012\u0012\n\nworldLevel\u0018\u0007 \u0001(\r\u0012\u0014\n\freservedList\u0018\b \u0003(\r\u0012'\n\u000bonlineState\u0018\t \u0001(\u000e2\u0012.FriendOnlineState\u0012\r\n\u0005param\u0018\n \u0001(\r\u0012\u0010\n\bisFriend\u0018\u000b \u0001(\b\u0012\u0019\n\u0011isMpModeAvailable\u0018\f \u0001(\b\u0012\u0010\n\bonlineId\u0018\r \u0001(\t\u0012\u0012\n\nnameCardId\u0018\u000e \u0001(\r\u0012\u0015\n\risInBlacklist\u0018\u000f \u0001(\b\u0012\u0017\n\u000fisChatNoDisturb\u0018\u0010 \u0001(\b\u0012\u0012\n\nremarkName\u0018\u0011 \u0001(\t\u0012\u001c\n\u0014finishAchievementNum\u0018\u0012 \u0001(\r\u0012\u0017\n\u000ftowerFloorIndex\u0018\u0013 \u0001(\r\u0012\u0017\n\u000ftowerLevelIndex\u0018\u0014 \u0001(\r\u0012\u0014\n\fisShowAvatar\u0018\u0015 \u0001(\b\u00121\n\u0012showAvatarInfoList\u0018\u0016 \u0003(\u000b2\u0015.SocialShowAvatarInfo\u0012\u001a\n\u0012showNameCardIdList\u0018\u0017 \u0003(\r\u00125\n\u0015friendEnterHomeOption\u0018\u0018 \u0001(\u000e2\u0016.FriendEnterHomeOption\u0012'\n\u000eprofilePicture\u0018\u0019 \u0001(\u000b2\u000f.ProfilePicture\u0012\u0013\n\u000bgpbkdlaodce\u0018\u001a \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BirthdayOuterClass.getDescriptor(), FriendOnlineStateOuterClass.getDescriptor(), FriendEnterHomeOptionOuterClass.getDescriptor(), ProfilePictureOuterClass.getDescriptor(), SocialShowAvatarInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SocialDetail_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SocialDetail_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SocialDetail_descriptor, new String[]{"Uid", "Nickname", "Level", "AvatarId", SignatureAttribute.tag, "Birthday", "WorldLevel", "ReservedList", "OnlineState", "Param", "IsFriend", "IsMpModeAvailable", "OnlineId", "NameCardId", "IsInBlacklist", "IsChatNoDisturb", "RemarkName", "FinishAchievementNum", "TowerFloorIndex", "TowerLevelIndex", "IsShowAvatar", "ShowAvatarInfoList", "ShowNameCardIdList", "FriendEnterHomeOption", "ProfilePicture"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SocialDetail_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SocialDetail_descriptor, new String[]{"Uid", "Nickname", "Level", "AvatarId", SignatureAttribute.tag, "Birthday", "WorldLevel", "ReservedList", "OnlineState", "Param", "IsFriend", "IsMpModeAvailable", "OnlineId", "NameCardId", "IsInBlacklist", "IsChatNoDisturb", "RemarkName", "FinishAchievementNum", "TowerFloorIndex", "TowerLevelIndex", "IsShowAvatar", "ShowAvatarInfoList", "ShowNameCardIdList", "FriendEnterHomeOption", "ProfilePicture", "Gpbkdlaodce"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SocialDetailOuterClass$SocialDetailOrBuilder.class */
     public interface SocialDetailOrBuilder extends MessageOrBuilder {
@@ -123,6 +124,10 @@ public final class SocialDetailOuterClass {
         ProfilePictureOuterClass.ProfilePicture getProfilePicture();
 
         ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder();
+
+        String getGpbkdlaodce();
+
+        ByteString getGpbkdlaodceBytes();
     }
 
     private SocialDetailOuterClass() {
@@ -144,52 +149,54 @@ public final class SocialDetailOuterClass {
         private volatile Object nickname_;
         public static final int LEVEL_FIELD_NUMBER = 3;
         private int level_;
-        public static final int AVATAR_ID_FIELD_NUMBER = 4;
+        public static final int AVATARID_FIELD_NUMBER = 4;
         private int avatarId_;
         public static final int SIGNATURE_FIELD_NUMBER = 5;
         private volatile Object signature_;
         public static final int BIRTHDAY_FIELD_NUMBER = 6;
         private BirthdayOuterClass.Birthday birthday_;
-        public static final int WORLD_LEVEL_FIELD_NUMBER = 7;
+        public static final int WORLDLEVEL_FIELD_NUMBER = 7;
         private int worldLevel_;
-        public static final int RESERVED_LIST_FIELD_NUMBER = 8;
+        public static final int RESERVEDLIST_FIELD_NUMBER = 8;
         private Internal.IntList reservedList_;
         private int reservedListMemoizedSerializedSize;
-        public static final int ONLINE_STATE_FIELD_NUMBER = 9;
+        public static final int ONLINESTATE_FIELD_NUMBER = 9;
         private int onlineState_;
         public static final int PARAM_FIELD_NUMBER = 10;
         private int param_;
-        public static final int IS_FRIEND_FIELD_NUMBER = 11;
+        public static final int ISFRIEND_FIELD_NUMBER = 11;
         private boolean isFriend_;
-        public static final int IS_MP_MODE_AVAILABLE_FIELD_NUMBER = 12;
+        public static final int ISMPMODEAVAILABLE_FIELD_NUMBER = 12;
         private boolean isMpModeAvailable_;
-        public static final int ONLINE_ID_FIELD_NUMBER = 13;
+        public static final int ONLINEID_FIELD_NUMBER = 13;
         private volatile Object onlineId_;
-        public static final int NAME_CARD_ID_FIELD_NUMBER = 14;
+        public static final int NAMECARDID_FIELD_NUMBER = 14;
         private int nameCardId_;
-        public static final int IS_IN_BLACKLIST_FIELD_NUMBER = 15;
+        public static final int ISINBLACKLIST_FIELD_NUMBER = 15;
         private boolean isInBlacklist_;
-        public static final int IS_CHAT_NO_DISTURB_FIELD_NUMBER = 16;
+        public static final int ISCHATNODISTURB_FIELD_NUMBER = 16;
         private boolean isChatNoDisturb_;
-        public static final int REMARK_NAME_FIELD_NUMBER = 17;
+        public static final int REMARKNAME_FIELD_NUMBER = 17;
         private volatile Object remarkName_;
-        public static final int FINISH_ACHIEVEMENT_NUM_FIELD_NUMBER = 18;
+        public static final int FINISHACHIEVEMENTNUM_FIELD_NUMBER = 18;
         private int finishAchievementNum_;
-        public static final int TOWER_FLOOR_INDEX_FIELD_NUMBER = 19;
+        public static final int TOWERFLOORINDEX_FIELD_NUMBER = 19;
         private int towerFloorIndex_;
-        public static final int TOWER_LEVEL_INDEX_FIELD_NUMBER = 20;
+        public static final int TOWERLEVELINDEX_FIELD_NUMBER = 20;
         private int towerLevelIndex_;
-        public static final int IS_SHOW_AVATAR_FIELD_NUMBER = 21;
+        public static final int ISSHOWAVATAR_FIELD_NUMBER = 21;
         private boolean isShowAvatar_;
-        public static final int SHOW_AVATAR_INFO_LIST_FIELD_NUMBER = 22;
+        public static final int SHOWAVATARINFOLIST_FIELD_NUMBER = 22;
         private List<SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo> showAvatarInfoList_;
-        public static final int SHOW_NAME_CARD_ID_LIST_FIELD_NUMBER = 23;
+        public static final int SHOWNAMECARDIDLIST_FIELD_NUMBER = 23;
         private Internal.IntList showNameCardIdList_;
         private int showNameCardIdListMemoizedSerializedSize;
-        public static final int FRIEND_ENTER_HOME_OPTION_FIELD_NUMBER = 24;
+        public static final int FRIENDENTERHOMEOPTION_FIELD_NUMBER = 24;
         private int friendEnterHomeOption_;
-        public static final int PROFILE_PICTURE_FIELD_NUMBER = 25;
+        public static final int PROFILEPICTURE_FIELD_NUMBER = 25;
         private ProfilePictureOuterClass.ProfilePicture profilePicture_;
+        public static final int GPBKDLAODCE_FIELD_NUMBER = 26;
+        private volatile Object gpbkdlaodce_;
         private byte memoizedIsInitialized;
         private static final SocialDetail DEFAULT_INSTANCE = new SocialDetail();
         private static final Parser<SocialDetail> PARSER = new AbstractParser<SocialDetail>() { // from class: emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail.1
@@ -219,6 +226,7 @@ public final class SocialDetailOuterClass {
             this.showAvatarInfoList_ = Collections.emptyList();
             this.showNameCardIdList_ = emptyIntList();
             this.friendEnterHomeOption_ = 0;
+            this.gpbkdlaodce_ = "";
         }
 
         /* access modifiers changed from: protected */
@@ -232,7 +240,7 @@ public final class SocialDetailOuterClass {
             return this.unknownFields;
         }
 
-        /* JADX DEBUG: Failed to insert an additional move for type inference into block B:145:0x038f */
+        /* JADX DEBUG: Failed to insert an additional move for type inference into block B:147:0x03a6 */
         private SocialDetail(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
             this();
             int mutable_bitField0_;
@@ -246,145 +254,150 @@ public final class SocialDetailOuterClass {
                 boolean done = false;
                 while (!done) {
                     try {
-                        int tag = input.readTag();
-                        switch (tag) {
-                            case 0:
-                                done = true;
-                                break;
-                            case 8:
-                                this.uid_ = input.readUInt32();
-                                break;
-                            case 18:
-                                this.nickname_ = input.readStringRequireUtf8();
-                                break;
-                            case 24:
-                                this.level_ = input.readUInt32();
-                                break;
-                            case 32:
-                                this.avatarId_ = input.readUInt32();
-                                break;
-                            case 42:
-                                this.signature_ = input.readStringRequireUtf8();
-                                break;
-                            case 50:
-                                BirthdayOuterClass.Birthday.Builder subBuilder = this.birthday_ != null ? this.birthday_.toBuilder() : null;
-                                this.birthday_ = (BirthdayOuterClass.Birthday) input.readMessage(BirthdayOuterClass.Birthday.parser(), extensionRegistry);
-                                if (subBuilder == null) {
-                                    break;
-                                } else {
-                                    subBuilder.mergeFrom(this.birthday_);
-                                    this.birthday_ = subBuilder.buildPartial();
-                                    break;
-                                }
-                            case 56:
-                                this.worldLevel_ = input.readUInt32();
-                                break;
-                            case 64:
-                                if ((mutable_bitField0_ & 1) == 0) {
-                                    this.reservedList_ = newIntList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
-                                }
-                                this.reservedList_.addInt(input.readUInt32());
-                                break;
-                            case 66:
-                                int limit = input.pushLimit(input.readRawVarint32());
-                                if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
-                                    this.reservedList_ = newIntList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
-                                }
-                                while (input.getBytesUntilLimit() > 0) {
-                                    this.reservedList_.addInt(input.readUInt32());
-                                }
-                                input.popLimit(limit);
-                                break;
-                            case 72:
-                                this.onlineState_ = input.readEnum();
-                                break;
-                            case 80:
-                                this.param_ = input.readUInt32();
-                                break;
-                            case 88:
-                                this.isFriend_ = input.readBool();
-                                break;
-                            case 96:
-                                this.isMpModeAvailable_ = input.readBool();
-                                break;
-                            case 106:
-                                this.onlineId_ = input.readStringRequireUtf8();
-                                break;
-                            case 112:
-                                this.nameCardId_ = input.readUInt32();
-                                break;
-                            case 120:
-                                this.isInBlacklist_ = input.readBool();
-                                break;
-                            case 128:
-                                this.isChatNoDisturb_ = input.readBool();
-                                break;
-                            case 138:
-                                this.remarkName_ = input.readStringRequireUtf8();
-                                break;
-                            case 144:
-                                this.finishAchievementNum_ = input.readUInt32();
-                                break;
-                            case 152:
-                                this.towerFloorIndex_ = input.readUInt32();
-                                break;
-                            case 160:
-                                this.towerLevelIndex_ = input.readUInt32();
-                                break;
-                            case 168:
-                                this.isShowAvatar_ = input.readBool();
-                                break;
-                            case 178:
-                                if ((mutable_bitField0_ & 2) == 0) {
-                                    this.showAvatarInfoList_ = new ArrayList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
-                                }
-                                this.showAvatarInfoList_.add((SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo) input.readMessage(SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.parser(), extensionRegistry));
-                                break;
-                            case 184:
-                                if ((mutable_bitField0_ & 4) == 0) {
-                                    this.showNameCardIdList_ = newIntList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 4) == 1 ? 1 : 0;
-                                }
-                                this.showNameCardIdList_.addInt(input.readUInt32());
-                                break;
-                            case 186:
-                                int limit2 = input.pushLimit(input.readRawVarint32());
-                                if ((mutable_bitField0_ & 4) == 0 && input.getBytesUntilLimit() > 0) {
-                                    this.showNameCardIdList_ = newIntList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 4) == 1 ? 1 : 0;
-                                }
-                                while (input.getBytesUntilLimit() > 0) {
-                                    this.showNameCardIdList_.addInt(input.readUInt32());
-                                }
-                                input.popLimit(limit2);
-                                break;
-                            case 192:
-                                this.friendEnterHomeOption_ = input.readEnum();
-                                break;
-                            case 202:
-                                ProfilePictureOuterClass.ProfilePicture.Builder subBuilder2 = this.profilePicture_ != null ? this.profilePicture_.toBuilder() : null;
-                                this.profilePicture_ = (ProfilePictureOuterClass.ProfilePicture) input.readMessage(ProfilePictureOuterClass.ProfilePicture.parser(), extensionRegistry);
-                                if (subBuilder2 == null) {
-                                    break;
-                                } else {
-                                    subBuilder2.mergeFrom(this.profilePicture_);
-                                    this.profilePicture_ = subBuilder2.buildPartial();
-                                    break;
-                                }
-                            default:
-                                if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                                    break;
-                                } else {
+                        try {
+                            int tag = input.readTag();
+                            switch (tag) {
+                                case 0:
                                     done = true;
                                     break;
-                                }
+                                case 8:
+                                    this.uid_ = input.readUInt32();
+                                    break;
+                                case 18:
+                                    this.nickname_ = input.readStringRequireUtf8();
+                                    break;
+                                case 24:
+                                    this.level_ = input.readUInt32();
+                                    break;
+                                case 32:
+                                    this.avatarId_ = input.readUInt32();
+                                    break;
+                                case 42:
+                                    this.signature_ = input.readStringRequireUtf8();
+                                    break;
+                                case 50:
+                                    BirthdayOuterClass.Birthday.Builder subBuilder = this.birthday_ != null ? this.birthday_.toBuilder() : null;
+                                    this.birthday_ = (BirthdayOuterClass.Birthday) input.readMessage(BirthdayOuterClass.Birthday.parser(), extensionRegistry);
+                                    if (subBuilder == null) {
+                                        break;
+                                    } else {
+                                        subBuilder.mergeFrom(this.birthday_);
+                                        this.birthday_ = subBuilder.buildPartial();
+                                        break;
+                                    }
+                                case 56:
+                                    this.worldLevel_ = input.readUInt32();
+                                    break;
+                                case 64:
+                                    if ((mutable_bitField0_ & 1) == 0) {
+                                        this.reservedList_ = newIntList();
+                                        mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                    }
+                                    this.reservedList_.addInt(input.readUInt32());
+                                    break;
+                                case 66:
+                                    int limit = input.pushLimit(input.readRawVarint32());
+                                    if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
+                                        this.reservedList_ = newIntList();
+                                        mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                    }
+                                    while (input.getBytesUntilLimit() > 0) {
+                                        this.reservedList_.addInt(input.readUInt32());
+                                    }
+                                    input.popLimit(limit);
+                                    break;
+                                case 72:
+                                    this.onlineState_ = input.readEnum();
+                                    break;
+                                case 80:
+                                    this.param_ = input.readUInt32();
+                                    break;
+                                case 88:
+                                    this.isFriend_ = input.readBool();
+                                    break;
+                                case 96:
+                                    this.isMpModeAvailable_ = input.readBool();
+                                    break;
+                                case 106:
+                                    this.onlineId_ = input.readStringRequireUtf8();
+                                    break;
+                                case 112:
+                                    this.nameCardId_ = input.readUInt32();
+                                    break;
+                                case 120:
+                                    this.isInBlacklist_ = input.readBool();
+                                    break;
+                                case 128:
+                                    this.isChatNoDisturb_ = input.readBool();
+                                    break;
+                                case 138:
+                                    this.remarkName_ = input.readStringRequireUtf8();
+                                    break;
+                                case 144:
+                                    this.finishAchievementNum_ = input.readUInt32();
+                                    break;
+                                case 152:
+                                    this.towerFloorIndex_ = input.readUInt32();
+                                    break;
+                                case 160:
+                                    this.towerLevelIndex_ = input.readUInt32();
+                                    break;
+                                case 168:
+                                    this.isShowAvatar_ = input.readBool();
+                                    break;
+                                case 178:
+                                    if ((mutable_bitField0_ & 2) == 0) {
+                                        this.showAvatarInfoList_ = new ArrayList();
+                                        mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                    }
+                                    this.showAvatarInfoList_.add((SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo) input.readMessage(SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.parser(), extensionRegistry));
+                                    break;
+                                case 184:
+                                    if ((mutable_bitField0_ & 4) == 0) {
+                                        this.showNameCardIdList_ = newIntList();
+                                        mutable_bitField0_ = (mutable_bitField0_ | 4) == 1 ? 1 : 0;
+                                    }
+                                    this.showNameCardIdList_.addInt(input.readUInt32());
+                                    break;
+                                case 186:
+                                    int limit2 = input.pushLimit(input.readRawVarint32());
+                                    if ((mutable_bitField0_ & 4) == 0 && input.getBytesUntilLimit() > 0) {
+                                        this.showNameCardIdList_ = newIntList();
+                                        mutable_bitField0_ = (mutable_bitField0_ | 4) == 1 ? 1 : 0;
+                                    }
+                                    while (input.getBytesUntilLimit() > 0) {
+                                        this.showNameCardIdList_.addInt(input.readUInt32());
+                                    }
+                                    input.popLimit(limit2);
+                                    break;
+                                case 192:
+                                    this.friendEnterHomeOption_ = input.readEnum();
+                                    break;
+                                case 202:
+                                    ProfilePictureOuterClass.ProfilePicture.Builder subBuilder2 = this.profilePicture_ != null ? this.profilePicture_.toBuilder() : null;
+                                    this.profilePicture_ = (ProfilePictureOuterClass.ProfilePicture) input.readMessage(ProfilePictureOuterClass.ProfilePicture.parser(), extensionRegistry);
+                                    if (subBuilder2 == null) {
+                                        break;
+                                    } else {
+                                        subBuilder2.mergeFrom(this.profilePicture_);
+                                        this.profilePicture_ = subBuilder2.buildPartial();
+                                        break;
+                                    }
+                                case PacketOpcodes.ExecuteGadgetLuaReq:
+                                    this.gpbkdlaodce_ = input.readStringRequireUtf8();
+                                    break;
+                                default:
+                                    if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                                        break;
+                                    } else {
+                                        done = true;
+                                        break;
+                                    }
+                            }
+                            done = done;
+                        } catch (InvalidProtocolBufferException e) {
+                            throw e.setUnfinishedMessage(this);
                         }
-                        done = done;
-                    } catch (InvalidProtocolBufferException e) {
-                        throw e.setUnfinishedMessage(this);
                     } catch (IOException e2) {
                         throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
                     }
@@ -678,6 +691,28 @@ public final class SocialDetailOuterClass {
             return getProfilePicture();
         }
 
+        @Override // emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetailOrBuilder
+        public String getGpbkdlaodce() {
+            Object ref = this.gpbkdlaodce_;
+            if (ref instanceof String) {
+                return (String) ref;
+            }
+            String s = ((ByteString) ref).toStringUtf8();
+            this.gpbkdlaodce_ = s;
+            return s;
+        }
+
+        @Override // emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetailOrBuilder
+        public ByteString getGpbkdlaodceBytes() {
+            Object ref = this.gpbkdlaodce_;
+            if (!(ref instanceof String)) {
+                return (ByteString) ref;
+            }
+            ByteString b = ByteString.copyFromUtf8((String) ref);
+            this.gpbkdlaodce_ = b;
+            return b;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -777,6 +812,9 @@ public final class SocialDetailOuterClass {
             if (this.profilePicture_ != null) {
                 output.writeMessage(25, getProfilePicture());
             }
+            if (!GeneratedMessageV3.isStringEmpty(this.gpbkdlaodce_)) {
+                GeneratedMessageV3.writeString(output, 26, this.gpbkdlaodce_);
+            }
             this.unknownFields.writeTo(output);
         }
 
@@ -874,6 +912,9 @@ public final class SocialDetailOuterClass {
             if (this.profilePicture_ != null) {
                 size4 += CodedOutputStream.computeMessageSize(25, getProfilePicture());
             }
+            if (!GeneratedMessageV3.isStringEmpty(this.gpbkdlaodce_)) {
+                size4 += GeneratedMessageV3.computeStringSize(26, this.gpbkdlaodce_);
+            }
             int size5 = size4 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size5;
             return size5;
@@ -892,7 +933,7 @@ public final class SocialDetailOuterClass {
                 return false;
             }
             if ((!hasBirthday() || getBirthday().equals(other.getBirthday())) && getWorldLevel() == other.getWorldLevel() && getReservedListList().equals(other.getReservedListList()) && this.onlineState_ == other.onlineState_ && getParam() == other.getParam() && getIsFriend() == other.getIsFriend() && getIsMpModeAvailable() == other.getIsMpModeAvailable() && getOnlineId().equals(other.getOnlineId()) && getNameCardId() == other.getNameCardId() && getIsInBlacklist() == other.getIsInBlacklist() && getIsChatNoDisturb() == other.getIsChatNoDisturb() && getRemarkName().equals(other.getRemarkName()) && getFinishAchievementNum() == other.getFinishAchievementNum() && getTowerFloorIndex() == other.getTowerFloorIndex() && getTowerLevelIndex() == other.getTowerLevelIndex() && getIsShowAvatar() == other.getIsShowAvatar() && getShowAvatarInfoListList().equals(other.getShowAvatarInfoListList()) && getShowNameCardIdListList().equals(other.getShowNameCardIdListList()) && this.friendEnterHomeOption_ == other.friendEnterHomeOption_ && hasProfilePicture() == other.hasProfilePicture()) {
-                return (!hasProfilePicture() || getProfilePicture().equals(other.getProfilePicture())) && this.unknownFields.equals(other.unknownFields);
+                return (!hasProfilePicture() || getProfilePicture().equals(other.getProfilePicture())) && getGpbkdlaodce().equals(other.getGpbkdlaodce()) && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -921,7 +962,7 @@ public final class SocialDetailOuterClass {
             if (hasProfilePicture()) {
                 hash4 = (53 * ((37 * hash4) + 25)) + getProfilePicture().hashCode();
             }
-            int hash5 = (29 * hash4) + this.unknownFields.hashCode();
+            int hash5 = (29 * ((53 * ((37 * hash4) + 26)) + getGpbkdlaodce().hashCode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash5;
             return hash5;
         }
@@ -1029,6 +1070,7 @@ public final class SocialDetailOuterClass {
             private List<SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo> showAvatarInfoList_ = Collections.emptyList();
             private Internal.IntList showNameCardIdList_ = SocialDetail.emptyIntList();
             private int friendEnterHomeOption_ = 0;
+            private Object gpbkdlaodce_ = "";
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return SocialDetailOuterClass.internal_static_SocialDetail_descriptor;
@@ -1099,6 +1141,7 @@ public final class SocialDetailOuterClass {
                     this.profilePicture_ = null;
                     this.profilePictureBuilder_ = null;
                 }
+                this.gpbkdlaodce_ = "";
                 return this;
             }
 
@@ -1174,6 +1217,7 @@ public final class SocialDetailOuterClass {
                 } else {
                     result.profilePicture_ = this.profilePictureBuilder_.build();
                 }
+                result.gpbkdlaodce_ = this.gpbkdlaodce_;
                 onBuilt();
                 return result;
             }
@@ -1332,6 +1376,10 @@ public final class SocialDetailOuterClass {
                 }
                 if (other.hasProfilePicture()) {
                     mergeProfilePicture(other.getProfilePicture());
+                }
+                if (!other.getGpbkdlaodce().isEmpty()) {
+                    this.gpbkdlaodce_ = other.gpbkdlaodce_;
+                    onChanged();
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -2293,6 +2341,53 @@ public final class SocialDetailOuterClass {
                 return this.profilePictureBuilder_;
             }
 
+            @Override // emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetailOrBuilder
+            public String getGpbkdlaodce() {
+                Object ref = this.gpbkdlaodce_;
+                if (ref instanceof String) {
+                    return (String) ref;
+                }
+                String s = ((ByteString) ref).toStringUtf8();
+                this.gpbkdlaodce_ = s;
+                return s;
+            }
+
+            @Override // emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetailOrBuilder
+            public ByteString getGpbkdlaodceBytes() {
+                Object ref = this.gpbkdlaodce_;
+                if (!(ref instanceof String)) {
+                    return (ByteString) ref;
+                }
+                ByteString b = ByteString.copyFromUtf8((String) ref);
+                this.gpbkdlaodce_ = b;
+                return b;
+            }
+
+            public Builder setGpbkdlaodce(String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.gpbkdlaodce_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearGpbkdlaodce() {
+                this.gpbkdlaodce_ = SocialDetail.getDefaultInstance().getGpbkdlaodce();
+                onChanged();
+                return this;
+            }
+
+            public Builder setGpbkdlaodceBytes(ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                SocialDetail.checkByteStringIsUtf8(value);
+                this.gpbkdlaodce_ = value;
+                onChanged();
+                return this;
+            }
+
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
             public final Builder setUnknownFields(UnknownFieldSet unknownFields) {
                 return setUnknownFields(unknownFields);
@@ -2329,8 +2424,8 @@ public final class SocialDetailOuterClass {
 
     static {
         BirthdayOuterClass.getDescriptor();
-        FriendEnterHomeOptionOuterClass.getDescriptor();
         FriendOnlineStateOuterClass.getDescriptor();
+        FriendEnterHomeOptionOuterClass.getDescriptor();
         ProfilePictureOuterClass.getDescriptor();
         SocialShowAvatarInfoOuterClass.getDescriptor();
     }

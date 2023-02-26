@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ServerTimeNotifyOuterClass.class */
 public final class ServerTimeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016ServerTimeNotify.proto\"'\n\u0010ServerTimeNotify\u0012\u0013\n\u000bserver_time\u0018\r \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016ServerTimeNotify.proto\"&\n\u0010ServerTimeNotify\u0012\u0012\n\nserverTime\u0018\f \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ServerTimeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ServerTimeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ServerTimeNotify_descriptor, new String[]{"ServerTime"});
 
@@ -42,7 +42,7 @@ public final class ServerTimeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ServerTimeNotifyOuterClass$ServerTimeNotify.class */
     public static final class ServerTimeNotify extends GeneratedMessageV3 implements ServerTimeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SERVER_TIME_FIELD_NUMBER = 13;
+        public static final int SERVERTIME_FIELD_NUMBER = 12;
         private long serverTime_;
         private byte memoizedIsInitialized;
         private static final ServerTimeNotify DEFAULT_INSTANCE = new ServerTimeNotify();
@@ -89,7 +89,7 @@ public final class ServerTimeNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 104:
+                            case 96:
                                 this.serverTime_ = input.readUInt64();
                                 break;
                             default:
@@ -142,7 +142,7 @@ public final class ServerTimeNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.serverTime_ != 0) {
-                output.writeUInt64(13, this.serverTime_);
+                output.writeUInt64(12, this.serverTime_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -155,7 +155,7 @@ public final class ServerTimeNotifyOuterClass {
             }
             int size2 = 0;
             if (this.serverTime_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(13, this.serverTime_);
+                size2 = 0 + CodedOutputStream.computeUInt64Size(12, this.serverTime_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -179,7 +179,7 @@ public final class ServerTimeNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + Internal.hashLong(getServerTime()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + Internal.hashLong(getServerTime()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

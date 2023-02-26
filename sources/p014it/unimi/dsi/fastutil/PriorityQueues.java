@@ -96,23 +96,23 @@ public class PriorityQueues {
         public static final long serialVersionUID = -7046029254386353129L;
 
         /* renamed from: q */
-        protected final PriorityQueue<K> f1039q;
+        protected final PriorityQueue<K> f1003q;
         protected final Object sync;
 
         protected SynchronizedPriorityQueue(PriorityQueue<K> q, Object sync) {
-            this.f1039q = q;
+            this.f1003q = q;
             this.sync = sync;
         }
 
         protected SynchronizedPriorityQueue(PriorityQueue<K> q) {
-            this.f1039q = q;
+            this.f1003q = q;
             this.sync = this;
         }
 
         @Override // p014it.unimi.dsi.fastutil.PriorityQueue
         public void enqueue(K x) {
             synchronized (this.sync) {
-                this.f1039q.enqueue(x);
+                this.f1003q.enqueue(x);
             }
         }
 
@@ -120,7 +120,7 @@ public class PriorityQueues {
         public K dequeue() {
             K dequeue;
             synchronized (this.sync) {
-                dequeue = this.f1039q.dequeue();
+                dequeue = this.f1003q.dequeue();
             }
             return dequeue;
         }
@@ -129,7 +129,7 @@ public class PriorityQueues {
         public K first() {
             K first;
             synchronized (this.sync) {
-                first = this.f1039q.first();
+                first = this.f1003q.first();
             }
             return first;
         }
@@ -138,7 +138,7 @@ public class PriorityQueues {
         public K last() {
             K last;
             synchronized (this.sync) {
-                last = this.f1039q.last();
+                last = this.f1003q.last();
             }
             return last;
         }
@@ -147,7 +147,7 @@ public class PriorityQueues {
         public boolean isEmpty() {
             boolean isEmpty;
             synchronized (this.sync) {
-                isEmpty = this.f1039q.isEmpty();
+                isEmpty = this.f1003q.isEmpty();
             }
             return isEmpty;
         }
@@ -156,7 +156,7 @@ public class PriorityQueues {
         public int size() {
             int size;
             synchronized (this.sync) {
-                size = this.f1039q.size();
+                size = this.f1003q.size();
             }
             return size;
         }
@@ -164,14 +164,14 @@ public class PriorityQueues {
         @Override // p014it.unimi.dsi.fastutil.PriorityQueue
         public void clear() {
             synchronized (this.sync) {
-                this.f1039q.clear();
+                this.f1003q.clear();
             }
         }
 
         @Override // p014it.unimi.dsi.fastutil.PriorityQueue
         public void changed() {
             synchronized (this.sync) {
-                this.f1039q.changed();
+                this.f1003q.changed();
             }
         }
 
@@ -179,7 +179,7 @@ public class PriorityQueues {
         public Comparator<? super K> comparator() {
             Comparator<? super K> comparator;
             synchronized (this.sync) {
-                comparator = this.f1039q.comparator();
+                comparator = this.f1003q.comparator();
             }
             return comparator;
         }
@@ -188,7 +188,7 @@ public class PriorityQueues {
         public String toString() {
             String obj;
             synchronized (this.sync) {
-                obj = this.f1039q.toString();
+                obj = this.f1003q.toString();
             }
             return obj;
         }
@@ -197,7 +197,7 @@ public class PriorityQueues {
         public int hashCode() {
             int hashCode;
             synchronized (this.sync) {
-                hashCode = this.f1039q.hashCode();
+                hashCode = this.f1003q.hashCode();
             }
             return hashCode;
         }
@@ -209,7 +209,7 @@ public class PriorityQueues {
                 return true;
             }
             synchronized (this.sync) {
-                equals = this.f1039q.equals(o);
+                equals = this.f1003q.equals(o);
             }
             return equals;
         }

@@ -12,22 +12,26 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Message;
 import com.google.protobuf.MessageOrBuilder;
 import com.google.protobuf.Parser;
+import com.google.protobuf.SingleFieldBuilderV3;
 import com.google.protobuf.UnknownFieldSet;
+import emu.grasscutter.net.proto.ContentAuditInfoOuterClass;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeBackGivingItemRspOuterClass.class */
 public final class TakeBackGivingItemRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bTakeBackGivingItemRsp.proto\";\n\u0015TakeBackGivingItemRsp\u0012\u0011\n\tgiving_id\u0018\u0006 \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u000f \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bTakeBackGivingItemRsp.proto\u001a\u0016ContentAuditInfo.proto\"8\n\u0015TakeBackGivingItemRsp\u0012\u001f\n\u0004info\u0018\r \u0001(\u000b2\u0011.ContentAuditInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ContentAuditInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_TakeBackGivingItemRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TakeBackGivingItemRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TakeBackGivingItemRsp_descriptor, new String[]{"GivingId", "Retcode"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TakeBackGivingItemRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TakeBackGivingItemRsp_descriptor, new String[]{"Info"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeBackGivingItemRspOuterClass$TakeBackGivingItemRspOrBuilder.class */
     public interface TakeBackGivingItemRspOrBuilder extends MessageOrBuilder {
-        int getGivingId();
+        boolean hasInfo();
 
-        int getRetcode();
+        ContentAuditInfoOuterClass.ContentAuditInfo getInfo();
+
+        ContentAuditInfoOuterClass.ContentAuditInfoOrBuilder getInfoOrBuilder();
     }
 
     private TakeBackGivingItemRspOuterClass() {
@@ -43,10 +47,8 @@ public final class TakeBackGivingItemRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeBackGivingItemRspOuterClass$TakeBackGivingItemRsp.class */
     public static final class TakeBackGivingItemRsp extends GeneratedMessageV3 implements TakeBackGivingItemRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int GIVING_ID_FIELD_NUMBER = 6;
-        private int givingId_;
-        public static final int RETCODE_FIELD_NUMBER = 15;
-        private int retcode_;
+        public static final int INFO_FIELD_NUMBER = 13;
+        private ContentAuditInfoOuterClass.ContentAuditInfo info_;
         private byte memoizedIsInitialized;
         private static final TakeBackGivingItemRsp DEFAULT_INSTANCE = new TakeBackGivingItemRsp();
         private static final Parser<TakeBackGivingItemRsp> PARSER = new AbstractParser<TakeBackGivingItemRsp>() { // from class: emu.grasscutter.net.proto.TakeBackGivingItemRspOuterClass.TakeBackGivingItemRsp.1
@@ -92,12 +94,16 @@ public final class TakeBackGivingItemRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 48:
-                                this.givingId_ = input.readUInt32();
-                                break;
-                            case 120:
-                                this.retcode_ = input.readInt32();
-                                break;
+                            case 106:
+                                ContentAuditInfoOuterClass.ContentAuditInfo.Builder subBuilder = this.info_ != null ? this.info_.toBuilder() : null;
+                                this.info_ = (ContentAuditInfoOuterClass.ContentAuditInfo) input.readMessage(ContentAuditInfoOuterClass.ContentAuditInfo.parser(), extensionRegistry);
+                                if (subBuilder == null) {
+                                    break;
+                                } else {
+                                    subBuilder.mergeFrom(this.info_);
+                                    this.info_ = subBuilder.buildPartial();
+                                    break;
+                                }
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                     break;
@@ -128,13 +134,18 @@ public final class TakeBackGivingItemRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.TakeBackGivingItemRspOuterClass.TakeBackGivingItemRspOrBuilder
-        public int getGivingId() {
-            return this.givingId_;
+        public boolean hasInfo() {
+            return this.info_ != null;
         }
 
         @Override // emu.grasscutter.net.proto.TakeBackGivingItemRspOuterClass.TakeBackGivingItemRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
+        public ContentAuditInfoOuterClass.ContentAuditInfo getInfo() {
+            return this.info_ == null ? ContentAuditInfoOuterClass.ContentAuditInfo.getDefaultInstance() : this.info_;
+        }
+
+        @Override // emu.grasscutter.net.proto.TakeBackGivingItemRspOuterClass.TakeBackGivingItemRspOrBuilder
+        public ContentAuditInfoOuterClass.ContentAuditInfoOrBuilder getInfoOrBuilder() {
+            return getInfo();
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -152,11 +163,8 @@ public final class TakeBackGivingItemRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.givingId_ != 0) {
-                output.writeUInt32(6, this.givingId_);
-            }
-            if (this.retcode_ != 0) {
-                output.writeInt32(15, this.retcode_);
+            if (this.info_ != null) {
+                output.writeMessage(13, getInfo());
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +176,8 @@ public final class TakeBackGivingItemRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.givingId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.givingId_);
-            }
-            if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(15, this.retcode_);
+            if (this.info_ != null) {
+                size2 = 0 + CodedOutputStream.computeMessageSize(13, getInfo());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -188,7 +193,10 @@ public final class TakeBackGivingItemRspOuterClass {
                 return equals(obj);
             }
             TakeBackGivingItemRsp other = (TakeBackGivingItemRsp) obj;
-            return getGivingId() == other.getGivingId() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
+            if (hasInfo() != other.hasInfo()) {
+                return false;
+            }
+            return (!hasInfo() || getInfo().equals(other.getInfo())) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -196,9 +204,13 @@ public final class TakeBackGivingItemRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getGivingId())) + 15)) + getRetcode())) + this.unknownFields.hashCode();
-            this.memoizedHashCode = hash;
-            return hash;
+            int hash = (19 * 41) + getDescriptor().hashCode();
+            if (hasInfo()) {
+                hash = (53 * ((37 * hash) + 13)) + getInfo().hashCode();
+            }
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            this.memoizedHashCode = hash2;
+            return hash2;
         }
 
         public static TakeBackGivingItemRsp parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
@@ -275,8 +287,8 @@ public final class TakeBackGivingItemRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeBackGivingItemRspOuterClass$TakeBackGivingItemRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements TakeBackGivingItemRspOrBuilder {
-            private int givingId_;
-            private int retcode_;
+            private ContentAuditInfoOuterClass.ContentAuditInfo info_;
+            private SingleFieldBuilderV3<ContentAuditInfoOuterClass.ContentAuditInfo, ContentAuditInfoOuterClass.ContentAuditInfo.Builder, ContentAuditInfoOuterClass.ContentAuditInfoOrBuilder> infoBuilder_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return TakeBackGivingItemRspOuterClass.internal_static_TakeBackGivingItemRsp_descriptor;
@@ -304,8 +316,12 @@ public final class TakeBackGivingItemRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.givingId_ = 0;
-                this.retcode_ = 0;
+                if (this.infoBuilder_ == null) {
+                    this.info_ = null;
+                } else {
+                    this.info_ = null;
+                    this.infoBuilder_ = null;
+                }
                 return this;
             }
 
@@ -331,8 +347,11 @@ public final class TakeBackGivingItemRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public TakeBackGivingItemRsp buildPartial() {
                 TakeBackGivingItemRsp result = new TakeBackGivingItemRsp(this);
-                result.givingId_ = this.givingId_;
-                result.retcode_ = this.retcode_;
+                if (this.infoBuilder_ == null) {
+                    result.info_ = this.info_;
+                } else {
+                    result.info_ = this.infoBuilder_.build();
+                }
                 onBuilt();
                 return result;
             }
@@ -380,11 +399,8 @@ public final class TakeBackGivingItemRspOuterClass {
                 if (other == TakeBackGivingItemRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getGivingId() != 0) {
-                    setGivingId(other.getGivingId());
-                }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
+                if (other.hasInfo()) {
+                    mergeInfo(other.getInfo());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -419,37 +435,84 @@ public final class TakeBackGivingItemRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.TakeBackGivingItemRspOuterClass.TakeBackGivingItemRspOrBuilder
-            public int getGivingId() {
-                return this.givingId_;
-            }
-
-            public Builder setGivingId(int value) {
-                this.givingId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearGivingId() {
-                this.givingId_ = 0;
-                onChanged();
-                return this;
+            public boolean hasInfo() {
+                return (this.infoBuilder_ == null && this.info_ == null) ? false : true;
             }
 
             @Override // emu.grasscutter.net.proto.TakeBackGivingItemRspOuterClass.TakeBackGivingItemRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
+            public ContentAuditInfoOuterClass.ContentAuditInfo getInfo() {
+                if (this.infoBuilder_ == null) {
+                    return this.info_ == null ? ContentAuditInfoOuterClass.ContentAuditInfo.getDefaultInstance() : this.info_;
+                }
+                return this.infoBuilder_.getMessage();
             }
 
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
+            public Builder setInfo(ContentAuditInfoOuterClass.ContentAuditInfo value) {
+                if (this.infoBuilder_ != null) {
+                    this.infoBuilder_.setMessage(value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    this.info_ = value;
+                    onChanged();
+                }
                 return this;
             }
 
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
+            public Builder setInfo(ContentAuditInfoOuterClass.ContentAuditInfo.Builder builderForValue) {
+                if (this.infoBuilder_ == null) {
+                    this.info_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    this.infoBuilder_.setMessage(builderForValue.build());
+                }
                 return this;
+            }
+
+            public Builder mergeInfo(ContentAuditInfoOuterClass.ContentAuditInfo value) {
+                if (this.infoBuilder_ == null) {
+                    if (this.info_ != null) {
+                        this.info_ = ContentAuditInfoOuterClass.ContentAuditInfo.newBuilder(this.info_).mergeFrom(value).buildPartial();
+                    } else {
+                        this.info_ = value;
+                    }
+                    onChanged();
+                } else {
+                    this.infoBuilder_.mergeFrom(value);
+                }
+                return this;
+            }
+
+            public Builder clearInfo() {
+                if (this.infoBuilder_ == null) {
+                    this.info_ = null;
+                    onChanged();
+                } else {
+                    this.info_ = null;
+                    this.infoBuilder_ = null;
+                }
+                return this;
+            }
+
+            public ContentAuditInfoOuterClass.ContentAuditInfo.Builder getInfoBuilder() {
+                onChanged();
+                return getInfoFieldBuilder().getBuilder();
+            }
+
+            @Override // emu.grasscutter.net.proto.TakeBackGivingItemRspOuterClass.TakeBackGivingItemRspOrBuilder
+            public ContentAuditInfoOuterClass.ContentAuditInfoOrBuilder getInfoOrBuilder() {
+                if (this.infoBuilder_ != null) {
+                    return this.infoBuilder_.getMessageOrBuilder();
+                }
+                return this.info_ == null ? ContentAuditInfoOuterClass.ContentAuditInfo.getDefaultInstance() : this.info_;
+            }
+
+            private SingleFieldBuilderV3<ContentAuditInfoOuterClass.ContentAuditInfo, ContentAuditInfoOuterClass.ContentAuditInfo.Builder, ContentAuditInfoOuterClass.ContentAuditInfoOrBuilder> getInfoFieldBuilder() {
+                if (this.infoBuilder_ == null) {
+                    this.infoBuilder_ = new SingleFieldBuilderV3<>(getInfo(), getParentForChildren(), isClean());
+                    this.info_ = null;
+                }
+                return this.infoBuilder_;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
@@ -484,5 +547,9 @@ public final class TakeBackGivingItemRspOuterClass {
 
     public static Descriptors.FileDescriptor getDescriptor() {
         return descriptor;
+    }
+
+    static {
+        ContentAuditInfoOuterClass.getDescriptor();
     }
 }

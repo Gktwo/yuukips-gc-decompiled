@@ -738,7 +738,7 @@ public class DoubleAVLTreeSet extends AbstractDoubleSortedSet implements Seriali
         double from;
 
         /* renamed from: to */
-        double f1699to;
+        double f1663to;
         boolean bottom;
         boolean top;
 
@@ -746,7 +746,7 @@ public class DoubleAVLTreeSet extends AbstractDoubleSortedSet implements Seriali
             if (bottom || top || DoubleAVLTreeSet.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f1699to = to;
+                this.f1663to = to;
                 this.top = top;
                 return;
             }
@@ -764,7 +764,7 @@ public class DoubleAVLTreeSet extends AbstractDoubleSortedSet implements Seriali
 
         /* renamed from: in */
         final boolean m924in(double k) {
-            return (this.bottom || DoubleAVLTreeSet.this.compare(k, this.from) >= 0) && (this.top || DoubleAVLTreeSet.this.compare(k, this.f1699to) < 0);
+            return (this.bottom || DoubleAVLTreeSet.this.compare(k, this.from) >= 0) && (this.top || DoubleAVLTreeSet.this.compare(k, this.f1663to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleCollection, p014it.unimi.dsi.fastutil.doubles.DoubleCollection
@@ -777,7 +777,7 @@ public class DoubleAVLTreeSet extends AbstractDoubleSortedSet implements Seriali
             if (m924in(k)) {
                 return DoubleAVLTreeSet.this.add(k);
             }
-            throw new IllegalArgumentException("Element (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1699to)) + ")");
+            throw new IllegalArgumentException("Element (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1663to)) + ")");
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleSet, p014it.unimi.dsi.fastutil.doubles.DoubleSet
@@ -822,7 +822,7 @@ public class DoubleAVLTreeSet extends AbstractDoubleSortedSet implements Seriali
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleSortedSet
         public DoubleSortedSet headSet(double to) {
-            if (!this.top && DoubleAVLTreeSet.this.compare(to, this.f1699to) >= 0) {
+            if (!this.top && DoubleAVLTreeSet.this.compare(to, this.f1663to) >= 0) {
                 return this;
             }
             return new Subset(this.from, this.bottom, to, false);
@@ -833,7 +833,7 @@ public class DoubleAVLTreeSet extends AbstractDoubleSortedSet implements Seriali
             if (!this.bottom && DoubleAVLTreeSet.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Subset(from, false, this.f1699to, this.top);
+            return new Subset(from, false, this.f1663to, this.top);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -852,7 +852,7 @@ public class DoubleAVLTreeSet extends AbstractDoubleSortedSet implements Seriali
             }
             double to = d2;
             if (!this.top) {
-                to = DoubleAVLTreeSet.this.compare(d2, this.f1699to) < 0 ? d2 : this.f1699to;
+                to = DoubleAVLTreeSet.this.compare(d2, this.f1663to) < 0 ? d2 : this.f1663to;
             }
             double from = d;
             if (!this.bottom) {
@@ -860,7 +860,7 @@ public class DoubleAVLTreeSet extends AbstractDoubleSortedSet implements Seriali
             }
             if (!this.top && !this.bottom) {
                 if ((from == Double.MIN_VALUE ? 1.0d : 0.0d) == this.from) {
-                    if ((to == Double.MIN_VALUE ? 1.0d : 0.0d) == this.f1699to) {
+                    if ((to == Double.MIN_VALUE ? 1.0d : 0.0d) == this.f1663to) {
                         return this;
                     }
                 }
@@ -884,7 +884,7 @@ public class DoubleAVLTreeSet extends AbstractDoubleSortedSet implements Seriali
             if (e == null) {
                 return null;
             }
-            if (this.top || DoubleAVLTreeSet.this.compare(e.key, this.f1699to) < 0) {
+            if (this.top || DoubleAVLTreeSet.this.compare(e.key, this.f1663to) < 0) {
                 return e;
             }
             return null;
@@ -898,8 +898,8 @@ public class DoubleAVLTreeSet extends AbstractDoubleSortedSet implements Seriali
             if (this.top) {
                 e = DoubleAVLTreeSet.this.lastEntry;
             } else {
-                e = DoubleAVLTreeSet.this.locateKey(this.f1699to);
-                if (DoubleAVLTreeSet.this.compare(e.key, this.f1699to) >= 0) {
+                e = DoubleAVLTreeSet.this.locateKey(this.f1663to);
+                if (DoubleAVLTreeSet.this.compare(e.key, this.f1663to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -977,7 +977,7 @@ public class DoubleAVLTreeSet extends AbstractDoubleSortedSet implements Seriali
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleAVLTreeSet.SetIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Subset.this.top && this.next != null && DoubleAVLTreeSet.this.compare(this.next.key, Subset.this.f1699to) >= 0) {
+                if (!Subset.this.top && this.next != null && DoubleAVLTreeSet.this.compare(this.next.key, Subset.this.f1663to) >= 0) {
                     this.next = null;
                 }
             }

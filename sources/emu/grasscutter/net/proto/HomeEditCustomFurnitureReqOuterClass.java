@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeEditCustomFurnitureReqOuterClass.class */
 public final class HomeEditCustomFurnitureReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n HomeEditCustomFurnitureReq.proto\u001a\u001dHomeCustomFurnitureInfo.proto\"U\n\u001aHomeEditCustomFurnitureReq\u00127\n\u0015custom_furniture_info\u0018\t \u0001(\u000b2\u0018.HomeCustomFurnitureInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeCustomFurnitureInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n HomeEditCustomFurnitureReq.proto\u001a\u001dHomeCustomFurnitureInfo.proto\"S\n\u001aHomeEditCustomFurnitureReq\u00125\n\u0013customFurnitureInfo\u0018\u0005 \u0001(\u000b2\u0018.HomeCustomFurnitureInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeCustomFurnitureInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_HomeEditCustomFurnitureReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeEditCustomFurnitureReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeEditCustomFurnitureReq_descriptor, new String[]{"CustomFurnitureInfo"});
 
@@ -47,7 +47,7 @@ public final class HomeEditCustomFurnitureReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeEditCustomFurnitureReqOuterClass$HomeEditCustomFurnitureReq.class */
     public static final class HomeEditCustomFurnitureReq extends GeneratedMessageV3 implements HomeEditCustomFurnitureReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CUSTOM_FURNITURE_INFO_FIELD_NUMBER = 9;
+        public static final int CUSTOMFURNITUREINFO_FIELD_NUMBER = 5;
         private HomeCustomFurnitureInfoOuterClass.HomeCustomFurnitureInfo customFurnitureInfo_;
         private byte memoizedIsInitialized;
         private static final HomeEditCustomFurnitureReq DEFAULT_INSTANCE = new HomeEditCustomFurnitureReq();
@@ -94,7 +94,7 @@ public final class HomeEditCustomFurnitureReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 74:
+                            case 42:
                                 HomeCustomFurnitureInfoOuterClass.HomeCustomFurnitureInfo.Builder subBuilder = this.customFurnitureInfo_ != null ? this.customFurnitureInfo_.toBuilder() : null;
                                 this.customFurnitureInfo_ = (HomeCustomFurnitureInfoOuterClass.HomeCustomFurnitureInfo) input.readMessage(HomeCustomFurnitureInfoOuterClass.HomeCustomFurnitureInfo.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -164,7 +164,7 @@ public final class HomeEditCustomFurnitureReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.customFurnitureInfo_ != null) {
-                output.writeMessage(9, getCustomFurnitureInfo());
+                output.writeMessage(5, getCustomFurnitureInfo());
             }
             this.unknownFields.writeTo(output);
         }
@@ -177,7 +177,7 @@ public final class HomeEditCustomFurnitureReqOuterClass {
             }
             int size2 = 0;
             if (this.customFurnitureInfo_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(9, getCustomFurnitureInfo());
+                size2 = 0 + CodedOutputStream.computeMessageSize(5, getCustomFurnitureInfo());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -206,7 +206,7 @@ public final class HomeEditCustomFurnitureReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasCustomFurnitureInfo()) {
-                hash = (53 * ((37 * hash) + 9)) + getCustomFurnitureInfo().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getCustomFurnitureInfo().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

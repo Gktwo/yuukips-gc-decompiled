@@ -43,13 +43,13 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f2541n;
+    protected transient int f2505n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2542f;
+    protected final float f2506f;
     protected transient Object2BooleanSortedMap.FastSortedEntrySet<K> entries;
     protected transient ObjectSortedSet<K> keys;
     protected transient BooleanCollection values;
@@ -63,15 +63,15 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2542f = f;
+            this.f2506f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2541n = arraySize;
+            this.f2505n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2541n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2541n, f);
-            this.key = (K[]) new Object[this.f2541n + 1];
-            this.value = new boolean[this.f2541n + 1];
-            this.link = new long[this.f2541n + 1];
+            this.mask = this.f2505n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2505n, f);
+            this.key = (K[]) new Object[this.f2505n + 1];
+            this.value = new boolean[this.f2505n + 1];
+            this.link = new long[this.f2505n + 1];
         }
     }
 
@@ -124,15 +124,15 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2542f);
-        if (needed > this.f2541n) {
+        int needed = HashCommon.arraySize(capacity, this.f2506f);
+        if (needed > this.f2505n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2542f)))));
-        if (needed > this.f2541n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2506f)))));
+        if (needed > this.f2505n) {
             rehash(needed);
         }
     }
@@ -143,8 +143,8 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f2541n > this.minN && this.size < this.maxFill / 4 && this.f2541n > 16) {
-            rehash(this.f2541n / 2);
+        if (this.f2505n > this.minN && this.size < this.maxFill / 4 && this.f2505n > 16) {
+            rehash(this.f2505n / 2);
         }
         return oldValue;
     }
@@ -152,19 +152,19 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
     /* access modifiers changed from: private */
     public boolean removeNullEntry() {
         this.containsNullKey = false;
-        this.key[this.f2541n] = null;
-        boolean oldValue = this.value[this.f2541n];
+        this.key[this.f2505n] = null;
+        boolean oldValue = this.value[this.f2505n];
         this.size--;
-        fixPointers(this.f2541n);
-        if (this.f2541n > this.minN && this.size < this.maxFill / 4 && this.f2541n > 16) {
-            rehash(this.f2541n / 2);
+        fixPointers(this.f2505n);
+        if (this.f2505n > this.minN && this.size < this.maxFill / 4 && this.f2505n > 16) {
+            rehash(this.f2505n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObject2BooleanMap, java.util.Map
     public void putAll(Map<? extends K, ? extends Boolean> m) {
-        if (((double) this.f2542f) <= 0.5d) {
+        if (((double) this.f2506f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -175,7 +175,7 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
     private int find(K k) {
         K curr;
         if (this.strategy.equals(k, null)) {
-            return this.containsNullKey ? this.f2541n : -(this.f2541n + 1);
+            return this.containsNullKey ? this.f2505n : -(this.f2505n + 1);
         }
         K[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -199,7 +199,7 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
     }
 
     private void insert(int pos, K k, boolean v) {
-        if (pos == this.f2541n) {
+        if (pos == this.f2505n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -218,7 +218,7 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2542f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2506f));
         }
     }
 
@@ -311,14 +311,14 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
         }
         this.size--;
         boolean v = this.value[pos];
-        if (pos == this.f2541n) {
+        if (pos == this.f2505n) {
             this.containsNullKey = false;
-            this.key[this.f2541n] = null;
+            this.key[this.f2505n] = null;
         } else {
             shiftKeys(pos);
         }
-        if (this.f2541n > this.minN && this.size < this.maxFill / 4 && this.f2541n > 16) {
-            rehash(this.f2541n / 2);
+        if (this.f2505n > this.minN && this.size < this.maxFill / 4 && this.f2505n > 16) {
+            rehash(this.f2505n / 2);
         }
         return v;
     }
@@ -336,14 +336,14 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
         }
         this.size--;
         boolean v = this.value[pos];
-        if (pos == this.f2541n) {
+        if (pos == this.f2505n) {
             this.containsNullKey = false;
-            this.key[this.f2541n] = null;
+            this.key[this.f2505n] = null;
         } else {
             shiftKeys(pos);
         }
-        if (this.f2541n > this.minN && this.size < this.maxFill / 4 && this.f2541n > 16) {
-            rehash(this.f2541n / 2);
+        if (this.f2505n > this.minN && this.size < this.maxFill / 4 && this.f2505n > 16) {
+            rehash(this.f2505n / 2);
         }
         return v;
     }
@@ -423,8 +423,8 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
         } else if (!this.containsNullKey) {
             return this.defRetValue;
         } else {
-            moveIndexToFirst(this.f2541n);
-            return this.value[this.f2541n];
+            moveIndexToFirst(this.f2505n);
+            return this.value[this.f2505n];
         }
     }
 
@@ -455,8 +455,8 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
         } else if (!this.containsNullKey) {
             return this.defRetValue;
         } else {
-            moveIndexToLast(this.f2541n);
-            return this.value[this.f2541n];
+            moveIndexToLast(this.f2505n);
+            return this.value[this.f2505n];
         }
     }
 
@@ -484,11 +484,11 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
                 return setValue(pos, v);
             }
         } else if (this.containsNullKey) {
-            moveIndexToFirst(this.f2541n);
-            return setValue(this.f2541n, v);
+            moveIndexToFirst(this.f2505n);
+            return setValue(this.f2505n, v);
         } else {
             this.containsNullKey = true;
-            pos = this.f2541n;
+            pos = this.f2505n;
         }
         this.key[pos] = k;
         this.value[pos] = v;
@@ -506,7 +506,7 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size, this.f2542f));
+            rehash(HashCommon.arraySize(this.size, this.f2506f));
         }
         return this.defRetValue;
     }
@@ -535,11 +535,11 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
                 return setValue(pos, v);
             }
         } else if (this.containsNullKey) {
-            moveIndexToLast(this.f2541n);
-            return setValue(this.f2541n, v);
+            moveIndexToLast(this.f2505n);
+            return setValue(this.f2505n, v);
         } else {
             this.containsNullKey = true;
-            pos = this.f2541n;
+            pos = this.f2505n;
         }
         this.key[pos] = k;
         this.value[pos] = v;
@@ -557,7 +557,7 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size, this.f2542f));
+            rehash(HashCommon.arraySize(this.size, this.f2506f));
         }
         return this.defRetValue;
     }
@@ -566,7 +566,7 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
     public boolean getBoolean(Object k) {
         K curr;
         if (this.strategy.equals(k, null)) {
-            return this.containsNullKey ? this.value[this.f2541n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2505n] : this.defRetValue;
         }
         K[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -620,10 +620,10 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
     public boolean containsValue(boolean v) {
         boolean[] value = this.value;
         K[] key = this.key;
-        if (this.containsNullKey && value[this.f2541n] == v) {
+        if (this.containsNullKey && value[this.f2505n] == v) {
             return true;
         }
-        int i = this.f2541n;
+        int i = this.f2505n;
         while (true) {
             i--;
             if (i == 0) {
@@ -639,7 +639,7 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
     public boolean getOrDefault(Object k, boolean defaultValue) {
         K curr;
         if (this.strategy.equals(k, null)) {
-            return this.containsNullKey ? this.value[this.f2541n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2505n] : defaultValue;
         }
         K[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -699,7 +699,7 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
                 removeEntry(pos);
                 return true;
             }
-        } else if (!this.containsNullKey || v != this.value[this.f2541n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f2505n]) {
             return false;
         } else {
             removeNullEntry();
@@ -1047,8 +1047,8 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
             this.index = -1;
             if (Object2BooleanLinkedOpenCustomHashMap.this.strategy.equals(from, null)) {
                 if (Object2BooleanLinkedOpenCustomHashMap.this.containsNullKey) {
-                    this.next = (int) Object2BooleanLinkedOpenCustomHashMap.this.link[Object2BooleanLinkedOpenCustomHashMap.this.f2541n];
-                    this.prev = Object2BooleanLinkedOpenCustomHashMap.this.f2541n;
+                    this.next = (int) Object2BooleanLinkedOpenCustomHashMap.this.link[Object2BooleanLinkedOpenCustomHashMap.this.f2505n];
+                    this.prev = Object2BooleanLinkedOpenCustomHashMap.this.f2505n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + from + " does not belong to this map.");
@@ -1177,9 +1177,9 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
             }
             int pos = this.curr;
             this.curr = -1;
-            if (pos == Object2BooleanLinkedOpenCustomHashMap.this.f2541n) {
+            if (pos == Object2BooleanLinkedOpenCustomHashMap.this.f2505n) {
                 Object2BooleanLinkedOpenCustomHashMap.this.containsNullKey = false;
-                Object2BooleanLinkedOpenCustomHashMap.this.key[Object2BooleanLinkedOpenCustomHashMap.this.f2541n] = null;
+                Object2BooleanLinkedOpenCustomHashMap.this.key[Object2BooleanLinkedOpenCustomHashMap.this.f2505n] = null;
                 return;
             }
             K[] key = Object2BooleanLinkedOpenCustomHashMap.this.key;
@@ -1436,7 +1436,7 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
             Object key = e.getKey();
             boolean v = ((Boolean) e.getValue()).booleanValue();
             if (Object2BooleanLinkedOpenCustomHashMap.this.strategy.equals(key, null)) {
-                return Object2BooleanLinkedOpenCustomHashMap.this.containsNullKey && Object2BooleanLinkedOpenCustomHashMap.this.value[Object2BooleanLinkedOpenCustomHashMap.this.f2541n] == v;
+                return Object2BooleanLinkedOpenCustomHashMap.this.containsNullKey && Object2BooleanLinkedOpenCustomHashMap.this.value[Object2BooleanLinkedOpenCustomHashMap.this.f2505n] == v;
             }
             K[] key2 = Object2BooleanLinkedOpenCustomHashMap.this.key;
             int mix = HashCommon.mix(Object2BooleanLinkedOpenCustomHashMap.this.strategy.hashCode(key)) & Object2BooleanLinkedOpenCustomHashMap.this.mask;
@@ -1497,7 +1497,7 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
                     Object2BooleanLinkedOpenCustomHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Object2BooleanLinkedOpenCustomHashMap.this.containsNullKey || Object2BooleanLinkedOpenCustomHashMap.this.value[Object2BooleanLinkedOpenCustomHashMap.this.f2541n] != v) {
+            } else if (!Object2BooleanLinkedOpenCustomHashMap.this.containsNullKey || Object2BooleanLinkedOpenCustomHashMap.this.value[Object2BooleanLinkedOpenCustomHashMap.this.f2505n] != v) {
                 return false;
             } else {
                 Object2BooleanLinkedOpenCustomHashMap.this.removeNullEntry();
@@ -1798,8 +1798,8 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2542f)));
-        if (l >= this.f2541n || this.size > HashCommon.maxFill(l, this.f2542f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2506f)));
+        if (l >= this.f2505n || this.size > HashCommon.maxFill(l, this.f2506f)) {
             return true;
         }
         try {
@@ -1860,9 +1860,9 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f2541n = newN;
+        this.f2505n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f2541n, this.f2542f);
+        this.maxFill = HashCommon.maxFill(this.f2505n, this.f2506f);
         this.key = newKey;
         this.value = newValue;
     }
@@ -1907,7 +1907,7 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f2541n] ? RetcodeOuterClass.Retcode.RET_MP_OTHER_DATA_VERSION_NOT_LATEST_VALUE : RetcodeOuterClass.Retcode.RET_MP_MATCH_FULL_VALUE;
+            h += this.value[this.f2505n] ? RetcodeOuterClass.Retcode.RET_MP_OTHER_DATA_VERSION_NOT_LATEST_VALUE : RetcodeOuterClass.Retcode.RET_MP_MATCH_FULL_VALUE;
         }
         return h;
     }
@@ -1936,14 +1936,14 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2541n = HashCommon.arraySize(this.size, this.f2542f);
-        this.maxFill = HashCommon.maxFill(this.f2541n, this.f2542f);
-        this.mask = this.f2541n - 1;
-        K[] key = (K[]) new Object[this.f2541n + 1];
+        this.f2505n = HashCommon.arraySize(this.size, this.f2506f);
+        this.maxFill = HashCommon.maxFill(this.f2505n, this.f2506f);
+        this.mask = this.f2505n - 1;
+        K[] key = (K[]) new Object[this.f2505n + 1];
         this.key = key;
-        boolean[] value = new boolean[this.f2541n + 1];
+        boolean[] value = new boolean[this.f2505n + 1];
         this.value = value;
-        long[] link = new long[this.f2541n + 1];
+        long[] link = new long[this.f2505n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -1968,7 +1968,7 @@ public class Object2BooleanLinkedOpenCustomHashMap<K> extends AbstractObject2Boo
                     i2 = this.mask;
                 }
             } else {
-                pos = this.f2541n;
+                pos = this.f2505n;
                 this.containsNullKey = true;
             }
             key[pos] = readObject;

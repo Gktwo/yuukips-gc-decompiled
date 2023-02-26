@@ -25,6 +25,7 @@ import javassist.bytecode.StackMap;
 import javassist.bytecode.StackMapTable;
 import javassist.bytecode.SyntheticAttribute;
 import javassist.bytecode.TypeAnnotationsAttribute;
+import kotlin.text.Typography;
 
 /* loaded from: grasscutter.jar:net/bytebuddy/jar/asm/ClassReader.class */
 public class ClassReader {
@@ -37,7 +38,7 @@ public class ClassReader {
     @Deprecated
 
     /* renamed from: b */
-    public final byte[] f3101b;
+    public final byte[] f3065b;
     public final int header;
     final byte[] classFileBuffer;
     private final int[] cpInfoOffsets;
@@ -58,7 +59,7 @@ public class ClassReader {
     public ClassReader(byte[] classFileBuffer, int classFileOffset, boolean checkClassVersion) {
         int cpInfoSize;
         this.classFileBuffer = classFileBuffer;
-        this.f3101b = classFileBuffer;
+        this.f3065b = classFileBuffer;
         if (!checkClassVersion || readShort(classFileOffset + 6) <= 61) {
             int constantPoolCount = readUnsignedShort(classFileOffset + 8);
             this.cpInfoOffsets = new int[constantPoolCount];
@@ -1169,7 +1170,7 @@ public class ClassReader {
                     break;
                 case 200:
                 case 201:
-                case 220:
+                case PacketOpcodes.SceneInitFinishRsp:
                     createLabel(bytecodeOffset + readInt(currentOffset + 1), labels);
                     currentOffset += 5;
                     break;
@@ -1179,18 +1180,18 @@ public class ClassReader {
                 case 205:
                 case 206:
                 case 207:
-                case PacketOpcodes.PlatformStartRouteNotify:
-                case PacketOpcodes.PlatformStopRouteNotify:
-                case PacketOpcodes.SceneForceUnlockNotify:
-                case PacketOpcodes.ExitSceneWeatherAreaNotify:
-                case PacketOpcodes.SceneKickPlayerReq:
-                case PacketOpcodes.AddSeenMonsterNotify:
                 case PacketOpcodes.SetSceneWeatherAreaReq:
-                case 215:
+                case PacketOpcodes.ExecuteGadgetLuaRsp:
+                case PacketOpcodes.ExecuteGadgetLuaReq:
+                case PacketOpcodes.PlatformChangeRouteNotify:
+                case PacketOpcodes.PlayerEnterSceneInfoNotify:
+                case PacketOpcodes.GetScenePointRsp:
+                case PacketOpcodes.SceneAvatarStaminaStepReq:
+                case Typography.times:
                 case 216:
+                case PacketOpcodes.CutSceneBeginNotify:
                 case PacketOpcodes.SceneEntityDrownReq:
-                case PacketOpcodes.BackMyWorldRsp:
-                case PacketOpcodes.SceneInitFinishReq:
+                case PacketOpcodes.WorldPlayerReviveReq:
                     createLabel(bytecodeOffset + readUnsignedShort(currentOffset + 1), labels);
                     currentOffset += 3;
                     break;
@@ -1647,18 +1648,18 @@ public class ClassReader {
                                 case 205:
                                 case 206:
                                 case 207:
-                                case PacketOpcodes.PlatformStartRouteNotify:
-                                case PacketOpcodes.PlatformStopRouteNotify:
-                                case PacketOpcodes.SceneForceUnlockNotify:
-                                case PacketOpcodes.ExitSceneWeatherAreaNotify:
-                                case PacketOpcodes.SceneKickPlayerReq:
-                                case PacketOpcodes.AddSeenMonsterNotify:
                                 case PacketOpcodes.SetSceneWeatherAreaReq:
-                                case 215:
+                                case PacketOpcodes.ExecuteGadgetLuaRsp:
+                                case PacketOpcodes.ExecuteGadgetLuaReq:
+                                case PacketOpcodes.PlatformChangeRouteNotify:
+                                case PacketOpcodes.PlayerEnterSceneInfoNotify:
+                                case PacketOpcodes.GetScenePointRsp:
+                                case PacketOpcodes.SceneAvatarStaminaStepReq:
+                                case Typography.times:
                                 case 216:
+                                case PacketOpcodes.CutSceneBeginNotify:
                                 case PacketOpcodes.SceneEntityDrownReq:
-                                case PacketOpcodes.BackMyWorldRsp:
-                                case PacketOpcodes.SceneInitFinishReq:
+                                case PacketOpcodes.WorldPlayerReviveReq:
                                     if (opcode2 < 218) {
                                         opcode = opcode2 - 49;
                                     } else {
@@ -1674,7 +1675,7 @@ public class ClassReader {
                                     }
                                     currentOffset6 += 3;
                                     break;
-                                case 220:
+                                case PacketOpcodes.SceneInitFinishRsp:
                                     methodVisitor.visitJumpInsn(200, labels[currentBytecodeOffset + readInt(currentOffset6 + 1)]);
                                     insertFrame = true;
                                     currentOffset6 += 5;
@@ -2402,7 +2403,7 @@ public class ClassReader {
                 context.currentFrameStackCount = 1;
             } else if (frameType >= 248 && frameType < 251) {
                 context.currentFrameType = 2;
-                context.currentFrameLocalCountDelta = PacketOpcodes.EnterSceneReadyRsp - frameType;
+                context.currentFrameLocalCountDelta = PacketOpcodes.SceneForceLockNotify - frameType;
                 context.currentFrameLocalCount -= context.currentFrameLocalCountDelta;
                 context.currentFrameStackCount = 0;
             } else if (frameType == 251) {
@@ -2410,12 +2411,12 @@ public class ClassReader {
                 context.currentFrameStackCount = 0;
             } else if (frameType < 255) {
                 int local = expand ? context.currentFrameLocalCount : 0;
-                for (int k = frameType - PacketOpcodes.EnterSceneReadyRsp; k > 0; k--) {
+                for (int k = frameType - PacketOpcodes.SceneForceLockNotify; k > 0; k--) {
                     local++;
                     currentOffset = readVerificationTypeInfo(currentOffset, context.currentFrameLocalTypes, local, charBuffer, labels);
                 }
                 context.currentFrameType = 1;
-                context.currentFrameLocalCountDelta = frameType - PacketOpcodes.EnterSceneReadyRsp;
+                context.currentFrameLocalCountDelta = frameType - PacketOpcodes.SceneForceLockNotify;
                 context.currentFrameLocalCount += context.currentFrameLocalCountDelta;
                 context.currentFrameStackCount = 0;
             } else {

@@ -1,5 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.quest.QuestManager;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
 import emu.grasscutter.net.packet.Opcodes;
@@ -22,6 +23,9 @@ public class HandlerPostEnterSceneReq extends PacketHandler {
             case SCENE_WORLD:
                 questManager.queueEvent(QuestTrigger.QUEST_CONTENT_ENTER_MY_WORLD, sceneId);
                 questManager.queueEvent(QuestTrigger.QUEST_CONTENT_ENTER_MY_WORLD_SCENE, sceneId);
+                break;
+            default:
+                Grasscutter.getLogger().debug("PostEnterSceneReq UK: {}", session.getPlayer().getScene().getSceneType().toString());
                 break;
         }
         session.send(new PacketPostEnterSceneRsp(session.getPlayer()));

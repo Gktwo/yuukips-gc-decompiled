@@ -46,7 +46,7 @@ public enum TlsVersion {
     @JvmName(name = "-deprecated_javaName")
     @NotNull
     /* renamed from: -deprecated_javaName  reason: not valid java name */
-    public final String m9302deprecated_javaName() {
+    public final String m9299deprecated_javaName() {
         return this.javaName;
     }
 

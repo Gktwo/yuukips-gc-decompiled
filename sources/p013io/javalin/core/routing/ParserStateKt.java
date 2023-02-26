@@ -92,7 +92,7 @@ public final class ParserStateKt {
                 return Integer.valueOf(count$iv);
             }
         });
-        if (m5748convertSegment$lambda0(bracketsCount$delegate) % 2 != 0) {
+        if (m5745convertSegment$lambda0(bracketsCount$delegate) % 2 != 0) {
             throw new MissingBracketsException(segment, rawPath);
         }
         Iterable $this$any$iv = adjacentViolations;
@@ -112,18 +112,18 @@ public final class ParserStateKt {
             z = false;
         }
         if (!z) {
-            return Intrinsics.areEqual(segment, "*") ? PathSegment.Wildcard.INSTANCE : (m5748convertSegment$lambda0(bracketsCount$delegate) == 0 && m5749convertSegment$lambda1(wildcardCount$delegate) == 0) ? PathSegmentKt.createNormal$default(segment, false, 2, null) : (m5748convertSegment$lambda0(bracketsCount$delegate) != 2 || !isEnclosedBy(segment, '{', '}')) ? (m5748convertSegment$lambda0(bracketsCount$delegate) != 2 || !isEnclosedBy(segment, '<', '>')) ? parseAsPathSegment(segment, rawPath) : PathSegmentKt.createSlashAcceptingParam(stripEnclosing(segment, '<', '>')) : PathSegmentKt.createSlashIgnoringParam(stripEnclosing(segment, '{', '}'));
+            return Intrinsics.areEqual(segment, "*") ? PathSegment.Wildcard.INSTANCE : (m5745convertSegment$lambda0(bracketsCount$delegate) == 0 && m5746convertSegment$lambda1(wildcardCount$delegate) == 0) ? PathSegmentKt.createNormal$default(segment, false, 2, null) : (m5745convertSegment$lambda0(bracketsCount$delegate) != 2 || !isEnclosedBy(segment, '{', '}')) ? (m5745convertSegment$lambda0(bracketsCount$delegate) != 2 || !isEnclosedBy(segment, '<', '>')) ? parseAsPathSegment(segment, rawPath) : PathSegmentKt.createSlashAcceptingParam(stripEnclosing(segment, '<', '>')) : PathSegmentKt.createSlashIgnoringParam(stripEnclosing(segment, '{', '}'));
         }
         throw new WildcardBracketAdjacentException(segment, rawPath);
     }
 
     /* renamed from: convertSegment$lambda-0  reason: not valid java name */
-    private static final int m5748convertSegment$lambda0(Lazy<Integer> lazy) {
+    private static final int m5745convertSegment$lambda0(Lazy<Integer> lazy) {
         return lazy.getValue().intValue();
     }
 
     /* renamed from: convertSegment$lambda-1  reason: not valid java name */
-    private static final int m5749convertSegment$lambda1(Lazy<Integer> lazy) {
+    private static final int m5746convertSegment$lambda1(Lazy<Integer> lazy) {
         return lazy.getValue().intValue();
     }
 

@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 public class QuartzSchedulerThread extends Thread {
 
     /* renamed from: qs */
-    private QuartzScheduler f3367qs;
+    private QuartzScheduler f3331qs;
     private QuartzSchedulerResources qsRsrcs;
     private final Object sigLock;
     private boolean signaled;
@@ -40,7 +40,7 @@ public class QuartzSchedulerThread extends Thread {
         this.idleWaitTime = DEFAULT_IDLE_WAIT_TIME;
         this.idleWaitVariablness = Kcp.IKCP_PROBE_INIT;
         this.log = LoggerFactory.getLogger(getClass());
-        this.f3367qs = qs;
+        this.f3331qs = qs;
         this.qsRsrcs = qsRsrcs;
         setDaemon(setDaemon);
         if (qsRsrcs.isThreadsInheritInitializersClassLoadContext()) {

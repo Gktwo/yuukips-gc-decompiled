@@ -8,8 +8,8 @@ import p014it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/packet/PacketOpcodesUtils.class */
 public class PacketOpcodesUtils {
-    public static final Set<Integer> BANNED_PACKETS = Set.of(Integer.valueOf((int) PacketOpcodes.WindSeedClientNotify), 166);
-    public static final Set<Integer> LOOP_PACKETS = Set.of(100, 43, 37, 42, Integer.valueOf((int) PacketOpcodes.QueryPathReq));
+    public static final Set<Integer> BANNED_PACKETS = Set.of(1114, 191);
+    public static final Set<Integer> LOOP_PACKETS = Set.of(20, 74, 92, 69, Integer.valueOf((int) PacketOpcodes.QueryPathReq));
     private static Int2ObjectMap<String> opcodeMap = new Int2ObjectOpenHashMap();
 
     /*  JADX ERROR: Dependency scan failed at insn: 0x000A: INVOKE_CUSTOM r1

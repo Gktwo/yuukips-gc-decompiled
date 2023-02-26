@@ -318,24 +318,24 @@ public class SerializedToolkitStore<K, V extends Serializable> implements Toolki
     public static class ToolkitMapEntry<K, V> implements Map.Entry<K, V> {
 
         /* renamed from: k */
-        private final K f3381k;
+        private final K f3345k;
 
         /* renamed from: v */
-        private final V f3382v;
+        private final V f3346v;
 
         public ToolkitMapEntry(K k, V v) {
-            this.f3381k = k;
-            this.f3382v = v;
+            this.f3345k = k;
+            this.f3346v = v;
         }
 
         @Override // java.util.Map.Entry
         public K getKey() {
-            return this.f3381k;
+            return this.f3345k;
         }
 
         @Override // java.util.Map.Entry
         public V getValue() {
-            return this.f3382v;
+            return this.f3346v;
         }
 
         @Override // java.util.Map.Entry

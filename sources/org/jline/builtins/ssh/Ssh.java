@@ -40,7 +40,7 @@ public class Ssh {
     private int port;
 
     /* renamed from: ip */
-    private String f3211ip;
+    private String f3175ip;
 
     /* loaded from: grasscutter.jar:org/jline/builtins/ssh/Ssh$ShellParams.class */
     public static class ShellParams {
@@ -80,7 +80,7 @@ public class Ssh {
         private final ServerSession session;
 
         /* renamed from: in */
-        private final InputStream f3212in;
+        private final InputStream f3176in;
         private final OutputStream out;
         private final OutputStream err;
 
@@ -88,7 +88,7 @@ public class Ssh {
             this.command = command;
             this.session = session;
             this.env = env;
-            this.f3212in = in;
+            this.f3176in = in;
             this.out = out;
             this.err = err;
         }
@@ -106,7 +106,7 @@ public class Ssh {
         }
 
         public InputStream getIn() {
-            return this.f3212in;
+            return this.f3176in;
         }
 
         public OutputStream getOut() {
@@ -182,7 +182,7 @@ public class Ssh {
             if (this.server != null) {
                 throw new IllegalStateException("sshd is already running on port " + this.port);
             }
-            this.f3211ip = opt.get("ip");
+            this.f3175ip = opt.get("ip");
             this.port = opt.getNumber("port");
             start();
             status(stdout);
@@ -200,7 +200,7 @@ public class Ssh {
 
     private void status(PrintStream stdout) {
         if (this.server != null) {
-            stdout.println("sshd is running on " + this.f3211ip + EmitterKt.COMMENT_PREFIX + this.port);
+            stdout.println("sshd is running on " + this.f3175ip + EmitterKt.COMMENT_PREFIX + this.port);
         } else {
             stdout.println("sshd is not running.");
         }
@@ -209,7 +209,7 @@ public class Ssh {
     private void start() throws IOException {
         this.server = this.serverBuilder.get();
         this.server.setPort(this.port);
-        this.server.setHost(this.f3211ip);
+        this.server.setHost(this.f3175ip);
         this.server.setShellFactory(new ShellFactoryImpl(this.shell));
         this.server.setCommandFactory(new ScpCommandFactory.Builder().withDelegate(channel, command -> {
             return new ShellCommand(this.execute, command);

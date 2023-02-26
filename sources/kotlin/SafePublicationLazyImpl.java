@@ -20,7 +20,7 @@ final class SafePublicationLazyImpl<T> implements Lazy<T>, Serializable {
     @NotNull
 
     /* renamed from: final  reason: not valid java name */
-    private final Object f3383final = UNINITIALIZED_VALUE.INSTANCE;
+    private final Object f3347final = UNINITIALIZED_VALUE.INSTANCE;
     @NotNull
     public static final Companion Companion = new Companion(null);
     private static final AtomicReferenceFieldUpdater<SafePublicationLazyImpl<?>, Object> valueUpdater = AtomicReferenceFieldUpdater.newUpdater(SafePublicationLazyImpl.class, Object.class, "_value");

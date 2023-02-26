@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestGlobalVarNotifyOuterClass.class */
 public final class QuestGlobalVarNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aQuestGlobalVarNotify.proto\u001a\u0014QuestGlobalVar.proto\"9\n\u0014QuestGlobalVarNotify\u0012!\n\bvar_list\u0018\b \u0003(\u000b2\u000f.QuestGlobalVarB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{QuestGlobalVarOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aQuestGlobalVarNotify.proto\u001a\u0014QuestGlobalVar.proto\"8\n\u0014QuestGlobalVarNotify\u0012 \n\u0007varList\u0018\f \u0003(\u000b2\u000f.QuestGlobalVarB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{QuestGlobalVarOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_QuestGlobalVarNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_QuestGlobalVarNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QuestGlobalVarNotify_descriptor, new String[]{"VarList"});
 
@@ -55,7 +55,7 @@ public final class QuestGlobalVarNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestGlobalVarNotifyOuterClass$QuestGlobalVarNotify.class */
     public static final class QuestGlobalVarNotify extends GeneratedMessageV3 implements QuestGlobalVarNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int VAR_LIST_FIELD_NUMBER = 8;
+        public static final int VARLIST_FIELD_NUMBER = 12;
         private List<QuestGlobalVarOuterClass.QuestGlobalVar> varList_;
         private byte memoizedIsInitialized;
         private static final QuestGlobalVarNotify DEFAULT_INSTANCE = new QuestGlobalVarNotify();
@@ -106,7 +106,7 @@ public final class QuestGlobalVarNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 66:
+                                case 98:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.varList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -187,7 +187,7 @@ public final class QuestGlobalVarNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.varList_.size(); i++) {
-                output.writeMessage(8, this.varList_.get(i));
+                output.writeMessage(12, this.varList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,7 +200,7 @@ public final class QuestGlobalVarNotifyOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.varList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(8, this.varList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(12, this.varList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class QuestGlobalVarNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getVarListCount() > 0) {
-                hash = (53 * ((37 * hash) + 8)) + getVarListList().hashCode();
+                hash = (53 * ((37 * hash) + 12)) + getVarListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

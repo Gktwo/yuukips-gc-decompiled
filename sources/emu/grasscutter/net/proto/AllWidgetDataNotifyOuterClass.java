@@ -19,8 +19,8 @@ import com.google.protobuf.SingleFieldBuilderV3;
 import com.google.protobuf.UnknownFieldSet;
 import emu.grasscutter.net.proto.AnchorPointDataOuterClass;
 import emu.grasscutter.net.proto.ClientCollectorDataOuterClass;
+import emu.grasscutter.net.proto.DetectorDataOuterClass;
 import emu.grasscutter.net.proto.LunchBoxDataOuterClass;
-import emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass;
 import emu.grasscutter.net.proto.SkyCrystalDetectorDataOuterClass;
 import emu.grasscutter.net.proto.WeatherWizardDataOuterClass;
 import emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass;
@@ -34,29 +34,27 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AllWidgetDataNotifyOuterClass.class */
 public final class AllWidgetDataNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019AllWidgetDataNotify.proto\u001a\u0015AnchorPointData.proto\u001a\u0019ClientCollectorData.proto\u001a\u0012LunchBoxData.proto\u001a#OneoffGatherPointDetectorData.proto\u001a\u001cSkyCrystalDetectorData.proto\u001a\u0017WeatherWizardData.proto\u001a\u0018WidgetCoolDownData.proto\u001a\u0014WidgetSlotData.proto\"Ã\u0004\n\u0013AllWidgetDataNotify\u0012%\n\u001dnext_anchor_point_usable_time\u0018\u0005 \u0001(\r\u0012%\n\u000elunch_box_data\u0018\u0001 \u0001(\u000b2\r.LunchBoxData\u0012N\n&oneoff_gather_point_detector_data_list\u0018\u000e \u0003(\u000b2\u001e.OneoffGatherPointDetectorData\u0012\"\n\tslot_list\u0018\u0006 \u0003(\u000b2\u000f.WidgetSlotData\u0012%\n\u001dbackground_active_widget_list\u0018\t \u0003(\r\u00126\n\u0019cool_down_group_data_list\u0018\u0003 \u0003(\u000b2\u0013.WidgetCoolDownData\u0012:\n\u0019sky_crystal_detector_data\u0018\u0004 \u0001(\u000b2\u0017.SkyCrystalDetectorData\u00128\n\u001aclient_collector_data_list\u0018\u0007 \u0003(\u000b2\u0014.ClientCollectorData\u0012/\n\u0013weather_wizard_data\u0018\u000f \u0001(\u000b2\u0012.WeatherWizardData\u00127\n\u001anormal_cool_down_data_list\u0018\n \u0003(\u000b2\u0013.WidgetCoolDownData\u0012+\n\u0011anchor_point_list\u0018\r \u0003(\u000b2\u0010.AnchorPointDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AnchorPointDataOuterClass.getDescriptor(), ClientCollectorDataOuterClass.getDescriptor(), LunchBoxDataOuterClass.getDescriptor(), OneoffGatherPointDetectorDataOuterClass.getDescriptor(), SkyCrystalDetectorDataOuterClass.getDescriptor(), WeatherWizardDataOuterClass.getDescriptor(), WidgetCoolDownDataOuterClass.getDescriptor(), WidgetSlotDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019AllWidgetDataNotify.proto\u001a\u001cSkyCrystalDetectorData.proto\u001a\u0017WeatherWizardData.proto\u001a\u0012LunchBoxData.proto\u001a\u0018WidgetCoolDownData.proto\u001a\u0014WidgetSlotData.proto\u001a\u0015AnchorPointData.proto\u001a\u0019ClientCollectorData.proto\u001a\u0012DetectorData.proto\"\u0004\n\u0013AllWidgetDataNotify\u00127\n\u0016skyCrystalDetectorData\u0018\u0002 \u0001(\u000b2\u0017.SkyCrystalDetectorData\u00123\n\u0016normalCoolDownDataList\u0018\u0004 \u0003(\u000b2\u0013.WidgetCoolDownData\u0012!\n\bslotList\u0018\u000e \u0003(\u000b2\u000f.WidgetSlotData\u0012\"\n\u001abackgroundActiveWidgetList\u0018\u0005 \u0003(\r\u0012)\n\u000fanchorPointList\u0018\u000b \u0003(\u000b2\u0010.AnchorPointData\u0012-\n\u0011weatherWizardData\u0018\r \u0001(\u000b2\u0012.WeatherWizardData\u0012!\n\u0019nextAnchorPointUsableTime\u0018\u000f \u0001(\r\u00125\n\u0017clientCollectorDataList\u0018\u0007 \u0003(\u000b2\u0014.ClientCollectorData\u00122\n\u0015coolDownGroupDataList\u0018\u0006 \u0003(\u000b2\u0013.WidgetCoolDownData\u00128\n!oneoffGatherPointDetectorDataList\u0018\b \u0003(\u000b2\r.DetectorData\u0012#\n\flunchBoxData\u0018\u0001 \u0001(\u000b2\r.LunchBoxDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{SkyCrystalDetectorDataOuterClass.getDescriptor(), WeatherWizardDataOuterClass.getDescriptor(), LunchBoxDataOuterClass.getDescriptor(), WidgetCoolDownDataOuterClass.getDescriptor(), WidgetSlotDataOuterClass.getDescriptor(), AnchorPointDataOuterClass.getDescriptor(), ClientCollectorDataOuterClass.getDescriptor(), DetectorDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AllWidgetDataNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AllWidgetDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AllWidgetDataNotify_descriptor, new String[]{"NextAnchorPointUsableTime", "LunchBoxData", "OneoffGatherPointDetectorDataList", "SlotList", "BackgroundActiveWidgetList", "CoolDownGroupDataList", "SkyCrystalDetectorData", "ClientCollectorDataList", "WeatherWizardData", "NormalCoolDownDataList", "AnchorPointList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AllWidgetDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AllWidgetDataNotify_descriptor, new String[]{"SkyCrystalDetectorData", "NormalCoolDownDataList", "SlotList", "BackgroundActiveWidgetList", "AnchorPointList", "WeatherWizardData", "NextAnchorPointUsableTime", "ClientCollectorDataList", "CoolDownGroupDataList", "OneoffGatherPointDetectorDataList", "LunchBoxData"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AllWidgetDataNotifyOuterClass$AllWidgetDataNotifyOrBuilder.class */
     public interface AllWidgetDataNotifyOrBuilder extends MessageOrBuilder {
-        int getNextAnchorPointUsableTime();
+        boolean hasSkyCrystalDetectorData();
 
-        boolean hasLunchBoxData();
+        SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData getSkyCrystalDetectorData();
 
-        LunchBoxDataOuterClass.LunchBoxData getLunchBoxData();
+        SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorDataOrBuilder getSkyCrystalDetectorDataOrBuilder();
 
-        LunchBoxDataOuterClass.LunchBoxDataOrBuilder getLunchBoxDataOrBuilder();
+        List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> getNormalCoolDownDataListList();
 
-        List<OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> getOneoffGatherPointDetectorDataListList();
+        WidgetCoolDownDataOuterClass.WidgetCoolDownData getNormalCoolDownDataList(int i);
 
-        OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData getOneoffGatherPointDetectorDataList(int i);
+        int getNormalCoolDownDataListCount();
 
-        int getOneoffGatherPointDetectorDataListCount();
+        List<? extends WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> getNormalCoolDownDataListOrBuilderList();
 
-        List<? extends OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder> getOneoffGatherPointDetectorDataListOrBuilderList();
-
-        OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder getOneoffGatherPointDetectorDataListOrBuilder(int i);
+        WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getNormalCoolDownDataListOrBuilder(int i);
 
         List<WidgetSlotDataOuterClass.WidgetSlotData> getSlotListList();
 
@@ -74,21 +72,23 @@ public final class AllWidgetDataNotifyOuterClass {
 
         int getBackgroundActiveWidgetList(int i);
 
-        List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> getCoolDownGroupDataListList();
+        List<AnchorPointDataOuterClass.AnchorPointData> getAnchorPointListList();
 
-        WidgetCoolDownDataOuterClass.WidgetCoolDownData getCoolDownGroupDataList(int i);
+        AnchorPointDataOuterClass.AnchorPointData getAnchorPointList(int i);
 
-        int getCoolDownGroupDataListCount();
+        int getAnchorPointListCount();
 
-        List<? extends WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> getCoolDownGroupDataListOrBuilderList();
+        List<? extends AnchorPointDataOuterClass.AnchorPointDataOrBuilder> getAnchorPointListOrBuilderList();
 
-        WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getCoolDownGroupDataListOrBuilder(int i);
+        AnchorPointDataOuterClass.AnchorPointDataOrBuilder getAnchorPointListOrBuilder(int i);
 
-        boolean hasSkyCrystalDetectorData();
+        boolean hasWeatherWizardData();
 
-        SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData getSkyCrystalDetectorData();
+        WeatherWizardDataOuterClass.WeatherWizardData getWeatherWizardData();
 
-        SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorDataOrBuilder getSkyCrystalDetectorDataOrBuilder();
+        WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder getWeatherWizardDataOrBuilder();
+
+        int getNextAnchorPointUsableTime();
 
         List<ClientCollectorDataOuterClass.ClientCollectorData> getClientCollectorDataListList();
 
@@ -100,31 +100,31 @@ public final class AllWidgetDataNotifyOuterClass {
 
         ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder getClientCollectorDataListOrBuilder(int i);
 
-        boolean hasWeatherWizardData();
+        List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> getCoolDownGroupDataListList();
 
-        WeatherWizardDataOuterClass.WeatherWizardData getWeatherWizardData();
+        WidgetCoolDownDataOuterClass.WidgetCoolDownData getCoolDownGroupDataList(int i);
 
-        WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder getWeatherWizardDataOrBuilder();
+        int getCoolDownGroupDataListCount();
 
-        List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> getNormalCoolDownDataListList();
+        List<? extends WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> getCoolDownGroupDataListOrBuilderList();
 
-        WidgetCoolDownDataOuterClass.WidgetCoolDownData getNormalCoolDownDataList(int i);
+        WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getCoolDownGroupDataListOrBuilder(int i);
 
-        int getNormalCoolDownDataListCount();
+        List<DetectorDataOuterClass.DetectorData> getOneoffGatherPointDetectorDataListList();
 
-        List<? extends WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> getNormalCoolDownDataListOrBuilderList();
+        DetectorDataOuterClass.DetectorData getOneoffGatherPointDetectorDataList(int i);
 
-        WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getNormalCoolDownDataListOrBuilder(int i);
+        int getOneoffGatherPointDetectorDataListCount();
 
-        List<AnchorPointDataOuterClass.AnchorPointData> getAnchorPointListList();
+        List<? extends DetectorDataOuterClass.DetectorDataOrBuilder> getOneoffGatherPointDetectorDataListOrBuilderList();
 
-        AnchorPointDataOuterClass.AnchorPointData getAnchorPointList(int i);
+        DetectorDataOuterClass.DetectorDataOrBuilder getOneoffGatherPointDetectorDataListOrBuilder(int i);
 
-        int getAnchorPointListCount();
+        boolean hasLunchBoxData();
 
-        List<? extends AnchorPointDataOuterClass.AnchorPointDataOrBuilder> getAnchorPointListOrBuilderList();
+        LunchBoxDataOuterClass.LunchBoxData getLunchBoxData();
 
-        AnchorPointDataOuterClass.AnchorPointDataOrBuilder getAnchorPointListOrBuilder(int i);
+        LunchBoxDataOuterClass.LunchBoxDataOrBuilder getLunchBoxDataOrBuilder();
     }
 
     private AllWidgetDataNotifyOuterClass() {
@@ -140,29 +140,29 @@ public final class AllWidgetDataNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AllWidgetDataNotifyOuterClass$AllWidgetDataNotify.class */
     public static final class AllWidgetDataNotify extends GeneratedMessageV3 implements AllWidgetDataNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int NEXT_ANCHOR_POINT_USABLE_TIME_FIELD_NUMBER = 5;
-        private int nextAnchorPointUsableTime_;
-        public static final int LUNCH_BOX_DATA_FIELD_NUMBER = 1;
-        private LunchBoxDataOuterClass.LunchBoxData lunchBoxData_;
-        public static final int ONEOFF_GATHER_POINT_DETECTOR_DATA_LIST_FIELD_NUMBER = 14;
-        private List<OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> oneoffGatherPointDetectorDataList_;
-        public static final int SLOT_LIST_FIELD_NUMBER = 6;
+        public static final int SKYCRYSTALDETECTORDATA_FIELD_NUMBER = 2;
+        private SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData skyCrystalDetectorData_;
+        public static final int NORMALCOOLDOWNDATALIST_FIELD_NUMBER = 4;
+        private List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> normalCoolDownDataList_;
+        public static final int SLOTLIST_FIELD_NUMBER = 14;
         private List<WidgetSlotDataOuterClass.WidgetSlotData> slotList_;
-        public static final int BACKGROUND_ACTIVE_WIDGET_LIST_FIELD_NUMBER = 9;
+        public static final int BACKGROUNDACTIVEWIDGETLIST_FIELD_NUMBER = 5;
         private Internal.IntList backgroundActiveWidgetList_;
         private int backgroundActiveWidgetListMemoizedSerializedSize;
-        public static final int COOL_DOWN_GROUP_DATA_LIST_FIELD_NUMBER = 3;
-        private List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> coolDownGroupDataList_;
-        public static final int SKY_CRYSTAL_DETECTOR_DATA_FIELD_NUMBER = 4;
-        private SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData skyCrystalDetectorData_;
-        public static final int CLIENT_COLLECTOR_DATA_LIST_FIELD_NUMBER = 7;
-        private List<ClientCollectorDataOuterClass.ClientCollectorData> clientCollectorDataList_;
-        public static final int WEATHER_WIZARD_DATA_FIELD_NUMBER = 15;
-        private WeatherWizardDataOuterClass.WeatherWizardData weatherWizardData_;
-        public static final int NORMAL_COOL_DOWN_DATA_LIST_FIELD_NUMBER = 10;
-        private List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> normalCoolDownDataList_;
-        public static final int ANCHOR_POINT_LIST_FIELD_NUMBER = 13;
+        public static final int ANCHORPOINTLIST_FIELD_NUMBER = 11;
         private List<AnchorPointDataOuterClass.AnchorPointData> anchorPointList_;
+        public static final int WEATHERWIZARDDATA_FIELD_NUMBER = 13;
+        private WeatherWizardDataOuterClass.WeatherWizardData weatherWizardData_;
+        public static final int NEXTANCHORPOINTUSABLETIME_FIELD_NUMBER = 15;
+        private int nextAnchorPointUsableTime_;
+        public static final int CLIENTCOLLECTORDATALIST_FIELD_NUMBER = 7;
+        private List<ClientCollectorDataOuterClass.ClientCollectorData> clientCollectorDataList_;
+        public static final int COOLDOWNGROUPDATALIST_FIELD_NUMBER = 6;
+        private List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> coolDownGroupDataList_;
+        public static final int ONEOFFGATHERPOINTDETECTORDATALIST_FIELD_NUMBER = 8;
+        private List<DetectorDataOuterClass.DetectorData> oneoffGatherPointDetectorDataList_;
+        public static final int LUNCHBOXDATA_FIELD_NUMBER = 1;
+        private LunchBoxDataOuterClass.LunchBoxData lunchBoxData_;
         private byte memoizedIsInitialized;
         private static final AllWidgetDataNotify DEFAULT_INSTANCE = new AllWidgetDataNotify();
         private static final Parser<AllWidgetDataNotify> PARSER = new AbstractParser<AllWidgetDataNotify>() { // from class: emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotify.1
@@ -181,13 +181,13 @@ public final class AllWidgetDataNotifyOuterClass {
         private AllWidgetDataNotify() {
             this.backgroundActiveWidgetListMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
-            this.oneoffGatherPointDetectorDataList_ = Collections.emptyList();
+            this.normalCoolDownDataList_ = Collections.emptyList();
             this.slotList_ = Collections.emptyList();
             this.backgroundActiveWidgetList_ = emptyIntList();
-            this.coolDownGroupDataList_ = Collections.emptyList();
-            this.clientCollectorDataList_ = Collections.emptyList();
-            this.normalCoolDownDataList_ = Collections.emptyList();
             this.anchorPointList_ = Collections.emptyList();
+            this.clientCollectorDataList_ = Collections.emptyList();
+            this.coolDownGroupDataList_ = Collections.emptyList();
+            this.oneoffGatherPointDetectorDataList_ = Collections.emptyList();
         }
 
         /* access modifiers changed from: protected */
@@ -231,14 +231,7 @@ public final class AllWidgetDataNotifyOuterClass {
                                         this.lunchBoxData_ = subBuilder.buildPartial();
                                         break;
                                     }
-                                case 26:
-                                    if ((mutable_bitField0_ & 8) == 0) {
-                                        this.coolDownGroupDataList_ = new ArrayList();
-                                        mutable_bitField0_ = (mutable_bitField0_ | 8) == 1 ? 1 : 0;
-                                    }
-                                    this.coolDownGroupDataList_.add((WidgetCoolDownDataOuterClass.WidgetCoolDownData) input.readMessage(WidgetCoolDownDataOuterClass.WidgetCoolDownData.parser(), extensionRegistry));
-                                    break;
-                                case 34:
+                                case 18:
                                     SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.Builder subBuilder2 = this.skyCrystalDetectorData_ != null ? this.skyCrystalDetectorData_.toBuilder() : null;
                                     this.skyCrystalDetectorData_ = (SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData) input.readMessage(SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.parser(), extensionRegistry);
                                     if (subBuilder2 == null) {
@@ -248,31 +241,21 @@ public final class AllWidgetDataNotifyOuterClass {
                                         this.skyCrystalDetectorData_ = subBuilder2.buildPartial();
                                         break;
                                     }
+                                case 34:
+                                    if ((mutable_bitField0_ & 1) == 0) {
+                                        this.normalCoolDownDataList_ = new ArrayList();
+                                        mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                    }
+                                    this.normalCoolDownDataList_.add((WidgetCoolDownDataOuterClass.WidgetCoolDownData) input.readMessage(WidgetCoolDownDataOuterClass.WidgetCoolDownData.parser(), extensionRegistry));
+                                    break;
                                 case 40:
-                                    this.nextAnchorPointUsableTime_ = input.readUInt32();
-                                    break;
-                                case 50:
-                                    if ((mutable_bitField0_ & 2) == 0) {
-                                        this.slotList_ = new ArrayList();
-                                        mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
-                                    }
-                                    this.slotList_.add((WidgetSlotDataOuterClass.WidgetSlotData) input.readMessage(WidgetSlotDataOuterClass.WidgetSlotData.parser(), extensionRegistry));
-                                    break;
-                                case 58:
-                                    if ((mutable_bitField0_ & 16) == 0) {
-                                        this.clientCollectorDataList_ = new ArrayList();
-                                        mutable_bitField0_ = (mutable_bitField0_ | 16) == 1 ? 1 : 0;
-                                    }
-                                    this.clientCollectorDataList_.add((ClientCollectorDataOuterClass.ClientCollectorData) input.readMessage(ClientCollectorDataOuterClass.ClientCollectorData.parser(), extensionRegistry));
-                                    break;
-                                case 72:
                                     if ((mutable_bitField0_ & 4) == 0) {
                                         this.backgroundActiveWidgetList_ = newIntList();
                                         mutable_bitField0_ = (mutable_bitField0_ | 4) == 1 ? 1 : 0;
                                     }
                                     this.backgroundActiveWidgetList_.addInt(input.readUInt32());
                                     break;
-                                case 74:
+                                case 42:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 4) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.backgroundActiveWidgetList_ = newIntList();
@@ -283,28 +266,35 @@ public final class AllWidgetDataNotifyOuterClass {
                                     }
                                     input.popLimit(limit);
                                     break;
-                                case 82:
+                                case 50:
                                     if ((mutable_bitField0_ & 32) == 0) {
-                                        this.normalCoolDownDataList_ = new ArrayList();
+                                        this.coolDownGroupDataList_ = new ArrayList();
                                         mutable_bitField0_ = (mutable_bitField0_ | 32) == 1 ? 1 : 0;
                                     }
-                                    this.normalCoolDownDataList_.add((WidgetCoolDownDataOuterClass.WidgetCoolDownData) input.readMessage(WidgetCoolDownDataOuterClass.WidgetCoolDownData.parser(), extensionRegistry));
+                                    this.coolDownGroupDataList_.add((WidgetCoolDownDataOuterClass.WidgetCoolDownData) input.readMessage(WidgetCoolDownDataOuterClass.WidgetCoolDownData.parser(), extensionRegistry));
                                     break;
-                                case 106:
+                                case 58:
+                                    if ((mutable_bitField0_ & 16) == 0) {
+                                        this.clientCollectorDataList_ = new ArrayList();
+                                        mutable_bitField0_ = (mutable_bitField0_ | 16) == 1 ? 1 : 0;
+                                    }
+                                    this.clientCollectorDataList_.add((ClientCollectorDataOuterClass.ClientCollectorData) input.readMessage(ClientCollectorDataOuterClass.ClientCollectorData.parser(), extensionRegistry));
+                                    break;
+                                case 66:
                                     if ((mutable_bitField0_ & 64) == 0) {
-                                        this.anchorPointList_ = new ArrayList();
+                                        this.oneoffGatherPointDetectorDataList_ = new ArrayList();
                                         mutable_bitField0_ = (mutable_bitField0_ | 64) == 1 ? 1 : 0;
+                                    }
+                                    this.oneoffGatherPointDetectorDataList_.add((DetectorDataOuterClass.DetectorData) input.readMessage(DetectorDataOuterClass.DetectorData.parser(), extensionRegistry));
+                                    break;
+                                case 90:
+                                    if ((mutable_bitField0_ & 8) == 0) {
+                                        this.anchorPointList_ = new ArrayList();
+                                        mutable_bitField0_ = (mutable_bitField0_ | 8) == 1 ? 1 : 0;
                                     }
                                     this.anchorPointList_.add((AnchorPointDataOuterClass.AnchorPointData) input.readMessage(AnchorPointDataOuterClass.AnchorPointData.parser(), extensionRegistry));
                                     break;
-                                case 114:
-                                    if ((mutable_bitField0_ & 1) == 0) {
-                                        this.oneoffGatherPointDetectorDataList_ = new ArrayList();
-                                        mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
-                                    }
-                                    this.oneoffGatherPointDetectorDataList_.add((OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData) input.readMessage(OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.parser(), extensionRegistry));
-                                    break;
-                                case 122:
+                                case 106:
                                     WeatherWizardDataOuterClass.WeatherWizardData.Builder subBuilder3 = this.weatherWizardData_ != null ? this.weatherWizardData_.toBuilder() : null;
                                     this.weatherWizardData_ = (WeatherWizardDataOuterClass.WeatherWizardData) input.readMessage(WeatherWizardDataOuterClass.WeatherWizardData.parser(), extensionRegistry);
                                     if (subBuilder3 == null) {
@@ -314,6 +304,16 @@ public final class AllWidgetDataNotifyOuterClass {
                                         this.weatherWizardData_ = subBuilder3.buildPartial();
                                         break;
                                     }
+                                case 114:
+                                    if ((mutable_bitField0_ & 2) == 0) {
+                                        this.slotList_ = new ArrayList();
+                                        mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                    }
+                                    this.slotList_.add((WidgetSlotDataOuterClass.WidgetSlotData) input.readMessage(WidgetSlotDataOuterClass.WidgetSlotData.parser(), extensionRegistry));
+                                    break;
+                                case 120:
+                                    this.nextAnchorPointUsableTime_ = input.readUInt32();
+                                    break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                         break;
@@ -331,26 +331,26 @@ public final class AllWidgetDataNotifyOuterClass {
                     }
                 }
             } finally {
-                if ((mutable_bitField0_ & 8) != 0) {
-                    this.coolDownGroupDataList_ = Collections.unmodifiableList(this.coolDownGroupDataList_);
-                }
-                if ((mutable_bitField0_ & 2) != 0) {
-                    this.slotList_ = Collections.unmodifiableList(this.slotList_);
-                }
-                if ((mutable_bitField0_ & 16) != 0) {
-                    this.clientCollectorDataList_ = Collections.unmodifiableList(this.clientCollectorDataList_);
+                if ((mutable_bitField0_ & 1) != 0) {
+                    this.normalCoolDownDataList_ = Collections.unmodifiableList(this.normalCoolDownDataList_);
                 }
                 if ((mutable_bitField0_ & 4) != 0) {
                     this.backgroundActiveWidgetList_.makeImmutable();
                 }
                 if ((mutable_bitField0_ & 32) != 0) {
-                    this.normalCoolDownDataList_ = Collections.unmodifiableList(this.normalCoolDownDataList_);
+                    this.coolDownGroupDataList_ = Collections.unmodifiableList(this.coolDownGroupDataList_);
+                }
+                if ((mutable_bitField0_ & 16) != 0) {
+                    this.clientCollectorDataList_ = Collections.unmodifiableList(this.clientCollectorDataList_);
                 }
                 if ((mutable_bitField0_ & 64) != 0) {
+                    this.oneoffGatherPointDetectorDataList_ = Collections.unmodifiableList(this.oneoffGatherPointDetectorDataList_);
+                }
+                if ((mutable_bitField0_ & 8) != 0) {
                     this.anchorPointList_ = Collections.unmodifiableList(this.anchorPointList_);
                 }
-                if ((mutable_bitField0_ & 1) != 0) {
-                    this.oneoffGatherPointDetectorDataList_ = Collections.unmodifiableList(this.oneoffGatherPointDetectorDataList_);
+                if ((mutable_bitField0_ & 2) != 0) {
+                    this.slotList_ = Collections.unmodifiableList(this.slotList_);
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -367,48 +367,43 @@ public final class AllWidgetDataNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public int getNextAnchorPointUsableTime() {
-            return this.nextAnchorPointUsableTime_;
+        public boolean hasSkyCrystalDetectorData() {
+            return this.skyCrystalDetectorData_ != null;
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public boolean hasLunchBoxData() {
-            return this.lunchBoxData_ != null;
+        public SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData getSkyCrystalDetectorData() {
+            return this.skyCrystalDetectorData_ == null ? SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.getDefaultInstance() : this.skyCrystalDetectorData_;
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public LunchBoxDataOuterClass.LunchBoxData getLunchBoxData() {
-            return this.lunchBoxData_ == null ? LunchBoxDataOuterClass.LunchBoxData.getDefaultInstance() : this.lunchBoxData_;
+        public SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorDataOrBuilder getSkyCrystalDetectorDataOrBuilder() {
+            return getSkyCrystalDetectorData();
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public LunchBoxDataOuterClass.LunchBoxDataOrBuilder getLunchBoxDataOrBuilder() {
-            return getLunchBoxData();
+        public List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> getNormalCoolDownDataListList() {
+            return this.normalCoolDownDataList_;
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public List<OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> getOneoffGatherPointDetectorDataListList() {
-            return this.oneoffGatherPointDetectorDataList_;
+        public List<? extends WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> getNormalCoolDownDataListOrBuilderList() {
+            return this.normalCoolDownDataList_;
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public List<? extends OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder> getOneoffGatherPointDetectorDataListOrBuilderList() {
-            return this.oneoffGatherPointDetectorDataList_;
+        public int getNormalCoolDownDataListCount() {
+            return this.normalCoolDownDataList_.size();
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public int getOneoffGatherPointDetectorDataListCount() {
-            return this.oneoffGatherPointDetectorDataList_.size();
+        public WidgetCoolDownDataOuterClass.WidgetCoolDownData getNormalCoolDownDataList(int index) {
+            return this.normalCoolDownDataList_.get(index);
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData getOneoffGatherPointDetectorDataList(int index) {
-            return this.oneoffGatherPointDetectorDataList_.get(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder getOneoffGatherPointDetectorDataListOrBuilder(int index) {
-            return this.oneoffGatherPointDetectorDataList_.get(index);
+        public WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getNormalCoolDownDataListOrBuilder(int index) {
+            return this.normalCoolDownDataList_.get(index);
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
@@ -452,43 +447,48 @@ public final class AllWidgetDataNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> getCoolDownGroupDataListList() {
-            return this.coolDownGroupDataList_;
+        public List<AnchorPointDataOuterClass.AnchorPointData> getAnchorPointListList() {
+            return this.anchorPointList_;
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public List<? extends WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> getCoolDownGroupDataListOrBuilderList() {
-            return this.coolDownGroupDataList_;
+        public List<? extends AnchorPointDataOuterClass.AnchorPointDataOrBuilder> getAnchorPointListOrBuilderList() {
+            return this.anchorPointList_;
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public int getCoolDownGroupDataListCount() {
-            return this.coolDownGroupDataList_.size();
+        public int getAnchorPointListCount() {
+            return this.anchorPointList_.size();
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public WidgetCoolDownDataOuterClass.WidgetCoolDownData getCoolDownGroupDataList(int index) {
-            return this.coolDownGroupDataList_.get(index);
+        public AnchorPointDataOuterClass.AnchorPointData getAnchorPointList(int index) {
+            return this.anchorPointList_.get(index);
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getCoolDownGroupDataListOrBuilder(int index) {
-            return this.coolDownGroupDataList_.get(index);
+        public AnchorPointDataOuterClass.AnchorPointDataOrBuilder getAnchorPointListOrBuilder(int index) {
+            return this.anchorPointList_.get(index);
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public boolean hasSkyCrystalDetectorData() {
-            return this.skyCrystalDetectorData_ != null;
+        public boolean hasWeatherWizardData() {
+            return this.weatherWizardData_ != null;
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData getSkyCrystalDetectorData() {
-            return this.skyCrystalDetectorData_ == null ? SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.getDefaultInstance() : this.skyCrystalDetectorData_;
+        public WeatherWizardDataOuterClass.WeatherWizardData getWeatherWizardData() {
+            return this.weatherWizardData_ == null ? WeatherWizardDataOuterClass.WeatherWizardData.getDefaultInstance() : this.weatherWizardData_;
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorDataOrBuilder getSkyCrystalDetectorDataOrBuilder() {
-            return getSkyCrystalDetectorData();
+        public WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder getWeatherWizardDataOrBuilder() {
+            return getWeatherWizardData();
+        }
+
+        @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
+        public int getNextAnchorPointUsableTime() {
+            return this.nextAnchorPointUsableTime_;
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
@@ -517,68 +517,68 @@ public final class AllWidgetDataNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public boolean hasWeatherWizardData() {
-            return this.weatherWizardData_ != null;
+        public List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> getCoolDownGroupDataListList() {
+            return this.coolDownGroupDataList_;
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public WeatherWizardDataOuterClass.WeatherWizardData getWeatherWizardData() {
-            return this.weatherWizardData_ == null ? WeatherWizardDataOuterClass.WeatherWizardData.getDefaultInstance() : this.weatherWizardData_;
+        public List<? extends WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> getCoolDownGroupDataListOrBuilderList() {
+            return this.coolDownGroupDataList_;
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder getWeatherWizardDataOrBuilder() {
-            return getWeatherWizardData();
+        public int getCoolDownGroupDataListCount() {
+            return this.coolDownGroupDataList_.size();
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> getNormalCoolDownDataListList() {
-            return this.normalCoolDownDataList_;
+        public WidgetCoolDownDataOuterClass.WidgetCoolDownData getCoolDownGroupDataList(int index) {
+            return this.coolDownGroupDataList_.get(index);
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public List<? extends WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> getNormalCoolDownDataListOrBuilderList() {
-            return this.normalCoolDownDataList_;
+        public WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getCoolDownGroupDataListOrBuilder(int index) {
+            return this.coolDownGroupDataList_.get(index);
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public int getNormalCoolDownDataListCount() {
-            return this.normalCoolDownDataList_.size();
+        public List<DetectorDataOuterClass.DetectorData> getOneoffGatherPointDetectorDataListList() {
+            return this.oneoffGatherPointDetectorDataList_;
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public WidgetCoolDownDataOuterClass.WidgetCoolDownData getNormalCoolDownDataList(int index) {
-            return this.normalCoolDownDataList_.get(index);
+        public List<? extends DetectorDataOuterClass.DetectorDataOrBuilder> getOneoffGatherPointDetectorDataListOrBuilderList() {
+            return this.oneoffGatherPointDetectorDataList_;
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getNormalCoolDownDataListOrBuilder(int index) {
-            return this.normalCoolDownDataList_.get(index);
+        public int getOneoffGatherPointDetectorDataListCount() {
+            return this.oneoffGatherPointDetectorDataList_.size();
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public List<AnchorPointDataOuterClass.AnchorPointData> getAnchorPointListList() {
-            return this.anchorPointList_;
+        public DetectorDataOuterClass.DetectorData getOneoffGatherPointDetectorDataList(int index) {
+            return this.oneoffGatherPointDetectorDataList_.get(index);
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public List<? extends AnchorPointDataOuterClass.AnchorPointDataOrBuilder> getAnchorPointListOrBuilderList() {
-            return this.anchorPointList_;
+        public DetectorDataOuterClass.DetectorDataOrBuilder getOneoffGatherPointDetectorDataListOrBuilder(int index) {
+            return this.oneoffGatherPointDetectorDataList_.get(index);
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public int getAnchorPointListCount() {
-            return this.anchorPointList_.size();
+        public boolean hasLunchBoxData() {
+            return this.lunchBoxData_ != null;
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public AnchorPointDataOuterClass.AnchorPointData getAnchorPointList(int index) {
-            return this.anchorPointList_.get(index);
+        public LunchBoxDataOuterClass.LunchBoxData getLunchBoxData() {
+            return this.lunchBoxData_ == null ? LunchBoxDataOuterClass.LunchBoxData.getDefaultInstance() : this.lunchBoxData_;
         }
 
         @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-        public AnchorPointDataOuterClass.AnchorPointDataOrBuilder getAnchorPointListOrBuilder(int index) {
-            return this.anchorPointList_.get(index);
+        public LunchBoxDataOuterClass.LunchBoxDataOrBuilder getLunchBoxDataOrBuilder() {
+            return getLunchBoxData();
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -600,39 +600,39 @@ public final class AllWidgetDataNotifyOuterClass {
             if (this.lunchBoxData_ != null) {
                 output.writeMessage(1, getLunchBoxData());
             }
-            for (int i = 0; i < this.coolDownGroupDataList_.size(); i++) {
-                output.writeMessage(3, this.coolDownGroupDataList_.get(i));
-            }
             if (this.skyCrystalDetectorData_ != null) {
-                output.writeMessage(4, getSkyCrystalDetectorData());
+                output.writeMessage(2, getSkyCrystalDetectorData());
             }
-            if (this.nextAnchorPointUsableTime_ != 0) {
-                output.writeUInt32(5, this.nextAnchorPointUsableTime_);
-            }
-            for (int i2 = 0; i2 < this.slotList_.size(); i2++) {
-                output.writeMessage(6, this.slotList_.get(i2));
-            }
-            for (int i3 = 0; i3 < this.clientCollectorDataList_.size(); i3++) {
-                output.writeMessage(7, this.clientCollectorDataList_.get(i3));
+            for (int i = 0; i < this.normalCoolDownDataList_.size(); i++) {
+                output.writeMessage(4, this.normalCoolDownDataList_.get(i));
             }
             if (getBackgroundActiveWidgetListList().size() > 0) {
-                output.writeUInt32NoTag(74);
+                output.writeUInt32NoTag(42);
                 output.writeUInt32NoTag(this.backgroundActiveWidgetListMemoizedSerializedSize);
             }
-            for (int i4 = 0; i4 < this.backgroundActiveWidgetList_.size(); i4++) {
-                output.writeUInt32NoTag(this.backgroundActiveWidgetList_.getInt(i4));
+            for (int i2 = 0; i2 < this.backgroundActiveWidgetList_.size(); i2++) {
+                output.writeUInt32NoTag(this.backgroundActiveWidgetList_.getInt(i2));
             }
-            for (int i5 = 0; i5 < this.normalCoolDownDataList_.size(); i5++) {
-                output.writeMessage(10, this.normalCoolDownDataList_.get(i5));
+            for (int i3 = 0; i3 < this.coolDownGroupDataList_.size(); i3++) {
+                output.writeMessage(6, this.coolDownGroupDataList_.get(i3));
+            }
+            for (int i4 = 0; i4 < this.clientCollectorDataList_.size(); i4++) {
+                output.writeMessage(7, this.clientCollectorDataList_.get(i4));
+            }
+            for (int i5 = 0; i5 < this.oneoffGatherPointDetectorDataList_.size(); i5++) {
+                output.writeMessage(8, this.oneoffGatherPointDetectorDataList_.get(i5));
             }
             for (int i6 = 0; i6 < this.anchorPointList_.size(); i6++) {
-                output.writeMessage(13, this.anchorPointList_.get(i6));
-            }
-            for (int i7 = 0; i7 < this.oneoffGatherPointDetectorDataList_.size(); i7++) {
-                output.writeMessage(14, this.oneoffGatherPointDetectorDataList_.get(i7));
+                output.writeMessage(11, this.anchorPointList_.get(i6));
             }
             if (this.weatherWizardData_ != null) {
-                output.writeMessage(15, getWeatherWizardData());
+                output.writeMessage(13, getWeatherWizardData());
+            }
+            for (int i7 = 0; i7 < this.slotList_.size(); i7++) {
+                output.writeMessage(14, this.slotList_.get(i7));
+            }
+            if (this.nextAnchorPointUsableTime_ != 0) {
+                output.writeUInt32(15, this.nextAnchorPointUsableTime_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -647,41 +647,41 @@ public final class AllWidgetDataNotifyOuterClass {
             if (this.lunchBoxData_ != null) {
                 size2 = 0 + CodedOutputStream.computeMessageSize(1, getLunchBoxData());
             }
-            for (int i = 0; i < this.coolDownGroupDataList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(3, this.coolDownGroupDataList_.get(i));
-            }
             if (this.skyCrystalDetectorData_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(4, getSkyCrystalDetectorData());
+                size2 += CodedOutputStream.computeMessageSize(2, getSkyCrystalDetectorData());
             }
-            if (this.nextAnchorPointUsableTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.nextAnchorPointUsableTime_);
-            }
-            for (int i2 = 0; i2 < this.slotList_.size(); i2++) {
-                size2 += CodedOutputStream.computeMessageSize(6, this.slotList_.get(i2));
-            }
-            for (int i3 = 0; i3 < this.clientCollectorDataList_.size(); i3++) {
-                size2 += CodedOutputStream.computeMessageSize(7, this.clientCollectorDataList_.get(i3));
+            for (int i = 0; i < this.normalCoolDownDataList_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(4, this.normalCoolDownDataList_.get(i));
             }
             int dataSize = 0;
-            for (int i4 = 0; i4 < this.backgroundActiveWidgetList_.size(); i4++) {
-                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.backgroundActiveWidgetList_.getInt(i4));
+            for (int i2 = 0; i2 < this.backgroundActiveWidgetList_.size(); i2++) {
+                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.backgroundActiveWidgetList_.getInt(i2));
             }
             int size3 = size2 + dataSize;
             if (!getBackgroundActiveWidgetListList().isEmpty()) {
                 size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.backgroundActiveWidgetListMemoizedSerializedSize = dataSize;
-            for (int i5 = 0; i5 < this.normalCoolDownDataList_.size(); i5++) {
-                size3 += CodedOutputStream.computeMessageSize(10, this.normalCoolDownDataList_.get(i5));
+            for (int i3 = 0; i3 < this.coolDownGroupDataList_.size(); i3++) {
+                size3 += CodedOutputStream.computeMessageSize(6, this.coolDownGroupDataList_.get(i3));
+            }
+            for (int i4 = 0; i4 < this.clientCollectorDataList_.size(); i4++) {
+                size3 += CodedOutputStream.computeMessageSize(7, this.clientCollectorDataList_.get(i4));
+            }
+            for (int i5 = 0; i5 < this.oneoffGatherPointDetectorDataList_.size(); i5++) {
+                size3 += CodedOutputStream.computeMessageSize(8, this.oneoffGatherPointDetectorDataList_.get(i5));
             }
             for (int i6 = 0; i6 < this.anchorPointList_.size(); i6++) {
-                size3 += CodedOutputStream.computeMessageSize(13, this.anchorPointList_.get(i6));
-            }
-            for (int i7 = 0; i7 < this.oneoffGatherPointDetectorDataList_.size(); i7++) {
-                size3 += CodedOutputStream.computeMessageSize(14, this.oneoffGatherPointDetectorDataList_.get(i7));
+                size3 += CodedOutputStream.computeMessageSize(11, this.anchorPointList_.get(i6));
             }
             if (this.weatherWizardData_ != null) {
-                size3 += CodedOutputStream.computeMessageSize(15, getWeatherWizardData());
+                size3 += CodedOutputStream.computeMessageSize(13, getWeatherWizardData());
+            }
+            for (int i7 = 0; i7 < this.slotList_.size(); i7++) {
+                size3 += CodedOutputStream.computeMessageSize(14, this.slotList_.get(i7));
+            }
+            if (this.nextAnchorPointUsableTime_ != 0) {
+                size3 += CodedOutputStream.computeUInt32Size(15, this.nextAnchorPointUsableTime_);
             }
             int size4 = size3 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size4;
@@ -697,14 +697,14 @@ public final class AllWidgetDataNotifyOuterClass {
                 return equals(obj);
             }
             AllWidgetDataNotify other = (AllWidgetDataNotify) obj;
-            if (getNextAnchorPointUsableTime() != other.getNextAnchorPointUsableTime() || hasLunchBoxData() != other.hasLunchBoxData()) {
+            if (hasSkyCrystalDetectorData() != other.hasSkyCrystalDetectorData()) {
                 return false;
             }
-            if ((hasLunchBoxData() && !getLunchBoxData().equals(other.getLunchBoxData())) || !getOneoffGatherPointDetectorDataListList().equals(other.getOneoffGatherPointDetectorDataListList()) || !getSlotListList().equals(other.getSlotListList()) || !getBackgroundActiveWidgetListList().equals(other.getBackgroundActiveWidgetListList()) || !getCoolDownGroupDataListList().equals(other.getCoolDownGroupDataListList()) || hasSkyCrystalDetectorData() != other.hasSkyCrystalDetectorData()) {
+            if ((hasSkyCrystalDetectorData() && !getSkyCrystalDetectorData().equals(other.getSkyCrystalDetectorData())) || !getNormalCoolDownDataListList().equals(other.getNormalCoolDownDataListList()) || !getSlotListList().equals(other.getSlotListList()) || !getBackgroundActiveWidgetListList().equals(other.getBackgroundActiveWidgetListList()) || !getAnchorPointListList().equals(other.getAnchorPointListList()) || hasWeatherWizardData() != other.hasWeatherWizardData()) {
                 return false;
             }
-            if ((!hasSkyCrystalDetectorData() || getSkyCrystalDetectorData().equals(other.getSkyCrystalDetectorData())) && getClientCollectorDataListList().equals(other.getClientCollectorDataListList()) && hasWeatherWizardData() == other.hasWeatherWizardData()) {
-                return (!hasWeatherWizardData() || getWeatherWizardData().equals(other.getWeatherWizardData())) && getNormalCoolDownDataListList().equals(other.getNormalCoolDownDataListList()) && getAnchorPointListList().equals(other.getAnchorPointListList()) && this.unknownFields.equals(other.unknownFields);
+            if ((!hasWeatherWizardData() || getWeatherWizardData().equals(other.getWeatherWizardData())) && getNextAnchorPointUsableTime() == other.getNextAnchorPointUsableTime() && getClientCollectorDataListList().equals(other.getClientCollectorDataListList()) && getCoolDownGroupDataListList().equals(other.getCoolDownGroupDataListList()) && getOneoffGatherPointDetectorDataListList().equals(other.getOneoffGatherPointDetectorDataListList()) && hasLunchBoxData() == other.hasLunchBoxData()) {
+                return (!hasLunchBoxData() || getLunchBoxData().equals(other.getLunchBoxData())) && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -714,40 +714,41 @@ public final class AllWidgetDataNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getNextAnchorPointUsableTime();
-            if (hasLunchBoxData()) {
-                hash = (53 * ((37 * hash) + 1)) + getLunchBoxData().hashCode();
-            }
-            if (getOneoffGatherPointDetectorDataListCount() > 0) {
-                hash = (53 * ((37 * hash) + 14)) + getOneoffGatherPointDetectorDataListList().hashCode();
-            }
-            if (getSlotListCount() > 0) {
-                hash = (53 * ((37 * hash) + 6)) + getSlotListList().hashCode();
-            }
-            if (getBackgroundActiveWidgetListCount() > 0) {
-                hash = (53 * ((37 * hash) + 9)) + getBackgroundActiveWidgetListList().hashCode();
-            }
-            if (getCoolDownGroupDataListCount() > 0) {
-                hash = (53 * ((37 * hash) + 3)) + getCoolDownGroupDataListList().hashCode();
-            }
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasSkyCrystalDetectorData()) {
-                hash = (53 * ((37 * hash) + 4)) + getSkyCrystalDetectorData().hashCode();
-            }
-            if (getClientCollectorDataListCount() > 0) {
-                hash = (53 * ((37 * hash) + 7)) + getClientCollectorDataListList().hashCode();
-            }
-            if (hasWeatherWizardData()) {
-                hash = (53 * ((37 * hash) + 15)) + getWeatherWizardData().hashCode();
+                hash = (53 * ((37 * hash) + 2)) + getSkyCrystalDetectorData().hashCode();
             }
             if (getNormalCoolDownDataListCount() > 0) {
-                hash = (53 * ((37 * hash) + 10)) + getNormalCoolDownDataListList().hashCode();
+                hash = (53 * ((37 * hash) + 4)) + getNormalCoolDownDataListList().hashCode();
+            }
+            if (getSlotListCount() > 0) {
+                hash = (53 * ((37 * hash) + 14)) + getSlotListList().hashCode();
+            }
+            if (getBackgroundActiveWidgetListCount() > 0) {
+                hash = (53 * ((37 * hash) + 5)) + getBackgroundActiveWidgetListList().hashCode();
             }
             if (getAnchorPointListCount() > 0) {
-                hash = (53 * ((37 * hash) + 13)) + getAnchorPointListList().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + getAnchorPointListList().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
-            this.memoizedHashCode = hash2;
-            return hash2;
+            if (hasWeatherWizardData()) {
+                hash = (53 * ((37 * hash) + 13)) + getWeatherWizardData().hashCode();
+            }
+            int hash2 = (53 * ((37 * hash) + 15)) + getNextAnchorPointUsableTime();
+            if (getClientCollectorDataListCount() > 0) {
+                hash2 = (53 * ((37 * hash2) + 7)) + getClientCollectorDataListList().hashCode();
+            }
+            if (getCoolDownGroupDataListCount() > 0) {
+                hash2 = (53 * ((37 * hash2) + 6)) + getCoolDownGroupDataListList().hashCode();
+            }
+            if (getOneoffGatherPointDetectorDataListCount() > 0) {
+                hash2 = (53 * ((37 * hash2) + 8)) + getOneoffGatherPointDetectorDataListList().hashCode();
+            }
+            if (hasLunchBoxData()) {
+                hash2 = (53 * ((37 * hash2) + 1)) + getLunchBoxData().hashCode();
+            }
+            int hash3 = (29 * hash2) + this.unknownFields.hashCode();
+            this.memoizedHashCode = hash3;
+            return hash3;
         }
 
         public static AllWidgetDataNotify parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
@@ -825,26 +826,26 @@ public final class AllWidgetDataNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AllWidgetDataNotifyOuterClass$AllWidgetDataNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements AllWidgetDataNotifyOrBuilder {
             private int bitField0_;
-            private int nextAnchorPointUsableTime_;
-            private LunchBoxDataOuterClass.LunchBoxData lunchBoxData_;
-            private SingleFieldBuilderV3<LunchBoxDataOuterClass.LunchBoxData, LunchBoxDataOuterClass.LunchBoxData.Builder, LunchBoxDataOuterClass.LunchBoxDataOrBuilder> lunchBoxDataBuilder_;
-            private RepeatedFieldBuilderV3<OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData, OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder, OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder> oneoffGatherPointDetectorDataListBuilder_;
-            private RepeatedFieldBuilderV3<WidgetSlotDataOuterClass.WidgetSlotData, WidgetSlotDataOuterClass.WidgetSlotData.Builder, WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder> slotListBuilder_;
-            private RepeatedFieldBuilderV3<WidgetCoolDownDataOuterClass.WidgetCoolDownData, WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> coolDownGroupDataListBuilder_;
             private SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData skyCrystalDetectorData_;
             private SingleFieldBuilderV3<SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData, SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.Builder, SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorDataOrBuilder> skyCrystalDetectorDataBuilder_;
-            private RepeatedFieldBuilderV3<ClientCollectorDataOuterClass.ClientCollectorData, ClientCollectorDataOuterClass.ClientCollectorData.Builder, ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder> clientCollectorDataListBuilder_;
+            private RepeatedFieldBuilderV3<WidgetCoolDownDataOuterClass.WidgetCoolDownData, WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> normalCoolDownDataListBuilder_;
+            private RepeatedFieldBuilderV3<WidgetSlotDataOuterClass.WidgetSlotData, WidgetSlotDataOuterClass.WidgetSlotData.Builder, WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder> slotListBuilder_;
+            private RepeatedFieldBuilderV3<AnchorPointDataOuterClass.AnchorPointData, AnchorPointDataOuterClass.AnchorPointData.Builder, AnchorPointDataOuterClass.AnchorPointDataOrBuilder> anchorPointListBuilder_;
             private WeatherWizardDataOuterClass.WeatherWizardData weatherWizardData_;
             private SingleFieldBuilderV3<WeatherWizardDataOuterClass.WeatherWizardData, WeatherWizardDataOuterClass.WeatherWizardData.Builder, WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder> weatherWizardDataBuilder_;
-            private RepeatedFieldBuilderV3<WidgetCoolDownDataOuterClass.WidgetCoolDownData, WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> normalCoolDownDataListBuilder_;
-            private RepeatedFieldBuilderV3<AnchorPointDataOuterClass.AnchorPointData, AnchorPointDataOuterClass.AnchorPointData.Builder, AnchorPointDataOuterClass.AnchorPointDataOrBuilder> anchorPointListBuilder_;
-            private List<OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> oneoffGatherPointDetectorDataList_ = Collections.emptyList();
+            private int nextAnchorPointUsableTime_;
+            private RepeatedFieldBuilderV3<ClientCollectorDataOuterClass.ClientCollectorData, ClientCollectorDataOuterClass.ClientCollectorData.Builder, ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder> clientCollectorDataListBuilder_;
+            private RepeatedFieldBuilderV3<WidgetCoolDownDataOuterClass.WidgetCoolDownData, WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> coolDownGroupDataListBuilder_;
+            private RepeatedFieldBuilderV3<DetectorDataOuterClass.DetectorData, DetectorDataOuterClass.DetectorData.Builder, DetectorDataOuterClass.DetectorDataOrBuilder> oneoffGatherPointDetectorDataListBuilder_;
+            private LunchBoxDataOuterClass.LunchBoxData lunchBoxData_;
+            private SingleFieldBuilderV3<LunchBoxDataOuterClass.LunchBoxData, LunchBoxDataOuterClass.LunchBoxData.Builder, LunchBoxDataOuterClass.LunchBoxDataOrBuilder> lunchBoxDataBuilder_;
+            private List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> normalCoolDownDataList_ = Collections.emptyList();
             private List<WidgetSlotDataOuterClass.WidgetSlotData> slotList_ = Collections.emptyList();
             private Internal.IntList backgroundActiveWidgetList_ = AllWidgetDataNotify.emptyIntList();
-            private List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> coolDownGroupDataList_ = Collections.emptyList();
-            private List<ClientCollectorDataOuterClass.ClientCollectorData> clientCollectorDataList_ = Collections.emptyList();
-            private List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> normalCoolDownDataList_ = Collections.emptyList();
             private List<AnchorPointDataOuterClass.AnchorPointData> anchorPointList_ = Collections.emptyList();
+            private List<ClientCollectorDataOuterClass.ClientCollectorData> clientCollectorDataList_ = Collections.emptyList();
+            private List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> coolDownGroupDataList_ = Collections.emptyList();
+            private List<DetectorDataOuterClass.DetectorData> oneoffGatherPointDetectorDataList_ = Collections.emptyList();
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return AllWidgetDataNotifyOuterClass.internal_static_AllWidgetDataNotify_descriptor;
@@ -866,30 +867,29 @@ public final class AllWidgetDataNotifyOuterClass {
 
             private void maybeForceBuilderInitialization() {
                 if (AllWidgetDataNotify.alwaysUseFieldBuilders) {
-                    getOneoffGatherPointDetectorDataListFieldBuilder();
-                    getSlotListFieldBuilder();
-                    getCoolDownGroupDataListFieldBuilder();
-                    getClientCollectorDataListFieldBuilder();
                     getNormalCoolDownDataListFieldBuilder();
+                    getSlotListFieldBuilder();
                     getAnchorPointListFieldBuilder();
+                    getClientCollectorDataListFieldBuilder();
+                    getCoolDownGroupDataListFieldBuilder();
+                    getOneoffGatherPointDetectorDataListFieldBuilder();
                 }
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.nextAnchorPointUsableTime_ = 0;
-                if (this.lunchBoxDataBuilder_ == null) {
-                    this.lunchBoxData_ = null;
+                if (this.skyCrystalDetectorDataBuilder_ == null) {
+                    this.skyCrystalDetectorData_ = null;
                 } else {
-                    this.lunchBoxData_ = null;
-                    this.lunchBoxDataBuilder_ = null;
+                    this.skyCrystalDetectorData_ = null;
+                    this.skyCrystalDetectorDataBuilder_ = null;
                 }
-                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
-                    this.oneoffGatherPointDetectorDataList_ = Collections.emptyList();
+                if (this.normalCoolDownDataListBuilder_ == null) {
+                    this.normalCoolDownDataList_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
-                    this.oneoffGatherPointDetectorDataListBuilder_.clear();
+                    this.normalCoolDownDataListBuilder_.clear();
                 }
                 if (this.slotListBuilder_ == null) {
                     this.slotList_ = Collections.emptyList();
@@ -899,23 +899,11 @@ public final class AllWidgetDataNotifyOuterClass {
                 }
                 this.backgroundActiveWidgetList_ = AllWidgetDataNotify.emptyIntList();
                 this.bitField0_ &= -5;
-                if (this.coolDownGroupDataListBuilder_ == null) {
-                    this.coolDownGroupDataList_ = Collections.emptyList();
+                if (this.anchorPointListBuilder_ == null) {
+                    this.anchorPointList_ = Collections.emptyList();
                     this.bitField0_ &= -9;
                 } else {
-                    this.coolDownGroupDataListBuilder_.clear();
-                }
-                if (this.skyCrystalDetectorDataBuilder_ == null) {
-                    this.skyCrystalDetectorData_ = null;
-                } else {
-                    this.skyCrystalDetectorData_ = null;
-                    this.skyCrystalDetectorDataBuilder_ = null;
-                }
-                if (this.clientCollectorDataListBuilder_ == null) {
-                    this.clientCollectorDataList_ = Collections.emptyList();
-                    this.bitField0_ &= -17;
-                } else {
-                    this.clientCollectorDataListBuilder_.clear();
+                    this.anchorPointListBuilder_.clear();
                 }
                 if (this.weatherWizardDataBuilder_ == null) {
                     this.weatherWizardData_ = null;
@@ -923,17 +911,30 @@ public final class AllWidgetDataNotifyOuterClass {
                     this.weatherWizardData_ = null;
                     this.weatherWizardDataBuilder_ = null;
                 }
-                if (this.normalCoolDownDataListBuilder_ == null) {
-                    this.normalCoolDownDataList_ = Collections.emptyList();
+                this.nextAnchorPointUsableTime_ = 0;
+                if (this.clientCollectorDataListBuilder_ == null) {
+                    this.clientCollectorDataList_ = Collections.emptyList();
+                    this.bitField0_ &= -17;
+                } else {
+                    this.clientCollectorDataListBuilder_.clear();
+                }
+                if (this.coolDownGroupDataListBuilder_ == null) {
+                    this.coolDownGroupDataList_ = Collections.emptyList();
                     this.bitField0_ &= -33;
                 } else {
-                    this.normalCoolDownDataListBuilder_.clear();
+                    this.coolDownGroupDataListBuilder_.clear();
                 }
-                if (this.anchorPointListBuilder_ == null) {
-                    this.anchorPointList_ = Collections.emptyList();
+                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
+                    this.oneoffGatherPointDetectorDataList_ = Collections.emptyList();
                     this.bitField0_ &= -65;
                 } else {
-                    this.anchorPointListBuilder_.clear();
+                    this.oneoffGatherPointDetectorDataListBuilder_.clear();
+                }
+                if (this.lunchBoxDataBuilder_ == null) {
+                    this.lunchBoxData_ = null;
+                } else {
+                    this.lunchBoxData_ = null;
+                    this.lunchBoxDataBuilder_ = null;
                 }
                 return this;
             }
@@ -961,20 +962,19 @@ public final class AllWidgetDataNotifyOuterClass {
             public AllWidgetDataNotify buildPartial() {
                 AllWidgetDataNotify result = new AllWidgetDataNotify(this);
                 int i = this.bitField0_;
-                result.nextAnchorPointUsableTime_ = this.nextAnchorPointUsableTime_;
-                if (this.lunchBoxDataBuilder_ == null) {
-                    result.lunchBoxData_ = this.lunchBoxData_;
+                if (this.skyCrystalDetectorDataBuilder_ == null) {
+                    result.skyCrystalDetectorData_ = this.skyCrystalDetectorData_;
                 } else {
-                    result.lunchBoxData_ = this.lunchBoxDataBuilder_.build();
+                    result.skyCrystalDetectorData_ = this.skyCrystalDetectorDataBuilder_.build();
                 }
-                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
+                if (this.normalCoolDownDataListBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
-                        this.oneoffGatherPointDetectorDataList_ = Collections.unmodifiableList(this.oneoffGatherPointDetectorDataList_);
+                        this.normalCoolDownDataList_ = Collections.unmodifiableList(this.normalCoolDownDataList_);
                         this.bitField0_ &= -2;
                     }
-                    result.oneoffGatherPointDetectorDataList_ = this.oneoffGatherPointDetectorDataList_;
+                    result.normalCoolDownDataList_ = this.normalCoolDownDataList_;
                 } else {
-                    result.oneoffGatherPointDetectorDataList_ = this.oneoffGatherPointDetectorDataListBuilder_.build();
+                    result.normalCoolDownDataList_ = this.normalCoolDownDataListBuilder_.build();
                 }
                 if (this.slotListBuilder_ == null) {
                     if ((this.bitField0_ & 2) != 0) {
@@ -990,20 +990,21 @@ public final class AllWidgetDataNotifyOuterClass {
                     this.bitField0_ &= -5;
                 }
                 result.backgroundActiveWidgetList_ = this.backgroundActiveWidgetList_;
-                if (this.coolDownGroupDataListBuilder_ == null) {
+                if (this.anchorPointListBuilder_ == null) {
                     if ((this.bitField0_ & 8) != 0) {
-                        this.coolDownGroupDataList_ = Collections.unmodifiableList(this.coolDownGroupDataList_);
+                        this.anchorPointList_ = Collections.unmodifiableList(this.anchorPointList_);
                         this.bitField0_ &= -9;
                     }
-                    result.coolDownGroupDataList_ = this.coolDownGroupDataList_;
+                    result.anchorPointList_ = this.anchorPointList_;
                 } else {
-                    result.coolDownGroupDataList_ = this.coolDownGroupDataListBuilder_.build();
+                    result.anchorPointList_ = this.anchorPointListBuilder_.build();
                 }
-                if (this.skyCrystalDetectorDataBuilder_ == null) {
-                    result.skyCrystalDetectorData_ = this.skyCrystalDetectorData_;
+                if (this.weatherWizardDataBuilder_ == null) {
+                    result.weatherWizardData_ = this.weatherWizardData_;
                 } else {
-                    result.skyCrystalDetectorData_ = this.skyCrystalDetectorDataBuilder_.build();
+                    result.weatherWizardData_ = this.weatherWizardDataBuilder_.build();
                 }
+                result.nextAnchorPointUsableTime_ = this.nextAnchorPointUsableTime_;
                 if (this.clientCollectorDataListBuilder_ == null) {
                     if ((this.bitField0_ & 16) != 0) {
                         this.clientCollectorDataList_ = Collections.unmodifiableList(this.clientCollectorDataList_);
@@ -1013,28 +1014,28 @@ public final class AllWidgetDataNotifyOuterClass {
                 } else {
                     result.clientCollectorDataList_ = this.clientCollectorDataListBuilder_.build();
                 }
-                if (this.weatherWizardDataBuilder_ == null) {
-                    result.weatherWizardData_ = this.weatherWizardData_;
-                } else {
-                    result.weatherWizardData_ = this.weatherWizardDataBuilder_.build();
-                }
-                if (this.normalCoolDownDataListBuilder_ == null) {
+                if (this.coolDownGroupDataListBuilder_ == null) {
                     if ((this.bitField0_ & 32) != 0) {
-                        this.normalCoolDownDataList_ = Collections.unmodifiableList(this.normalCoolDownDataList_);
+                        this.coolDownGroupDataList_ = Collections.unmodifiableList(this.coolDownGroupDataList_);
                         this.bitField0_ &= -33;
                     }
-                    result.normalCoolDownDataList_ = this.normalCoolDownDataList_;
+                    result.coolDownGroupDataList_ = this.coolDownGroupDataList_;
                 } else {
-                    result.normalCoolDownDataList_ = this.normalCoolDownDataListBuilder_.build();
+                    result.coolDownGroupDataList_ = this.coolDownGroupDataListBuilder_.build();
                 }
-                if (this.anchorPointListBuilder_ == null) {
+                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
                     if ((this.bitField0_ & 64) != 0) {
-                        this.anchorPointList_ = Collections.unmodifiableList(this.anchorPointList_);
+                        this.oneoffGatherPointDetectorDataList_ = Collections.unmodifiableList(this.oneoffGatherPointDetectorDataList_);
                         this.bitField0_ &= -65;
                     }
-                    result.anchorPointList_ = this.anchorPointList_;
+                    result.oneoffGatherPointDetectorDataList_ = this.oneoffGatherPointDetectorDataList_;
                 } else {
-                    result.anchorPointList_ = this.anchorPointListBuilder_.build();
+                    result.oneoffGatherPointDetectorDataList_ = this.oneoffGatherPointDetectorDataListBuilder_.build();
+                }
+                if (this.lunchBoxDataBuilder_ == null) {
+                    result.lunchBoxData_ = this.lunchBoxData_;
+                } else {
+                    result.lunchBoxData_ = this.lunchBoxDataBuilder_.build();
                 }
                 onBuilt();
                 return result;
@@ -1083,32 +1084,29 @@ public final class AllWidgetDataNotifyOuterClass {
                 if (other == AllWidgetDataNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getNextAnchorPointUsableTime() != 0) {
-                    setNextAnchorPointUsableTime(other.getNextAnchorPointUsableTime());
+                if (other.hasSkyCrystalDetectorData()) {
+                    mergeSkyCrystalDetectorData(other.getSkyCrystalDetectorData());
                 }
-                if (other.hasLunchBoxData()) {
-                    mergeLunchBoxData(other.getLunchBoxData());
-                }
-                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
-                    if (!other.oneoffGatherPointDetectorDataList_.isEmpty()) {
-                        if (this.oneoffGatherPointDetectorDataList_.isEmpty()) {
-                            this.oneoffGatherPointDetectorDataList_ = other.oneoffGatherPointDetectorDataList_;
+                if (this.normalCoolDownDataListBuilder_ == null) {
+                    if (!other.normalCoolDownDataList_.isEmpty()) {
+                        if (this.normalCoolDownDataList_.isEmpty()) {
+                            this.normalCoolDownDataList_ = other.normalCoolDownDataList_;
                             this.bitField0_ &= -2;
                         } else {
-                            ensureOneoffGatherPointDetectorDataListIsMutable();
-                            this.oneoffGatherPointDetectorDataList_.addAll(other.oneoffGatherPointDetectorDataList_);
+                            ensureNormalCoolDownDataListIsMutable();
+                            this.normalCoolDownDataList_.addAll(other.normalCoolDownDataList_);
                         }
                         onChanged();
                     }
-                } else if (!other.oneoffGatherPointDetectorDataList_.isEmpty()) {
-                    if (this.oneoffGatherPointDetectorDataListBuilder_.isEmpty()) {
-                        this.oneoffGatherPointDetectorDataListBuilder_.dispose();
-                        this.oneoffGatherPointDetectorDataListBuilder_ = null;
-                        this.oneoffGatherPointDetectorDataList_ = other.oneoffGatherPointDetectorDataList_;
+                } else if (!other.normalCoolDownDataList_.isEmpty()) {
+                    if (this.normalCoolDownDataListBuilder_.isEmpty()) {
+                        this.normalCoolDownDataListBuilder_.dispose();
+                        this.normalCoolDownDataListBuilder_ = null;
+                        this.normalCoolDownDataList_ = other.normalCoolDownDataList_;
                         this.bitField0_ &= -2;
-                        this.oneoffGatherPointDetectorDataListBuilder_ = AllWidgetDataNotify.alwaysUseFieldBuilders ? getOneoffGatherPointDetectorDataListFieldBuilder() : null;
+                        this.normalCoolDownDataListBuilder_ = AllWidgetDataNotify.alwaysUseFieldBuilders ? getNormalCoolDownDataListFieldBuilder() : null;
                     } else {
-                        this.oneoffGatherPointDetectorDataListBuilder_.addAllMessages(other.oneoffGatherPointDetectorDataList_);
+                        this.normalCoolDownDataListBuilder_.addAllMessages(other.normalCoolDownDataList_);
                     }
                 }
                 if (this.slotListBuilder_ == null) {
@@ -1143,30 +1141,33 @@ public final class AllWidgetDataNotifyOuterClass {
                     }
                     onChanged();
                 }
-                if (this.coolDownGroupDataListBuilder_ == null) {
-                    if (!other.coolDownGroupDataList_.isEmpty()) {
-                        if (this.coolDownGroupDataList_.isEmpty()) {
-                            this.coolDownGroupDataList_ = other.coolDownGroupDataList_;
+                if (this.anchorPointListBuilder_ == null) {
+                    if (!other.anchorPointList_.isEmpty()) {
+                        if (this.anchorPointList_.isEmpty()) {
+                            this.anchorPointList_ = other.anchorPointList_;
                             this.bitField0_ &= -9;
                         } else {
-                            ensureCoolDownGroupDataListIsMutable();
-                            this.coolDownGroupDataList_.addAll(other.coolDownGroupDataList_);
+                            ensureAnchorPointListIsMutable();
+                            this.anchorPointList_.addAll(other.anchorPointList_);
                         }
                         onChanged();
                     }
-                } else if (!other.coolDownGroupDataList_.isEmpty()) {
-                    if (this.coolDownGroupDataListBuilder_.isEmpty()) {
-                        this.coolDownGroupDataListBuilder_.dispose();
-                        this.coolDownGroupDataListBuilder_ = null;
-                        this.coolDownGroupDataList_ = other.coolDownGroupDataList_;
+                } else if (!other.anchorPointList_.isEmpty()) {
+                    if (this.anchorPointListBuilder_.isEmpty()) {
+                        this.anchorPointListBuilder_.dispose();
+                        this.anchorPointListBuilder_ = null;
+                        this.anchorPointList_ = other.anchorPointList_;
                         this.bitField0_ &= -9;
-                        this.coolDownGroupDataListBuilder_ = AllWidgetDataNotify.alwaysUseFieldBuilders ? getCoolDownGroupDataListFieldBuilder() : null;
+                        this.anchorPointListBuilder_ = AllWidgetDataNotify.alwaysUseFieldBuilders ? getAnchorPointListFieldBuilder() : null;
                     } else {
-                        this.coolDownGroupDataListBuilder_.addAllMessages(other.coolDownGroupDataList_);
+                        this.anchorPointListBuilder_.addAllMessages(other.anchorPointList_);
                     }
                 }
-                if (other.hasSkyCrystalDetectorData()) {
-                    mergeSkyCrystalDetectorData(other.getSkyCrystalDetectorData());
+                if (other.hasWeatherWizardData()) {
+                    mergeWeatherWizardData(other.getWeatherWizardData());
+                }
+                if (other.getNextAnchorPointUsableTime() != 0) {
+                    setNextAnchorPointUsableTime(other.getNextAnchorPointUsableTime());
                 }
                 if (this.clientCollectorDataListBuilder_ == null) {
                     if (!other.clientCollectorDataList_.isEmpty()) {
@@ -1190,52 +1191,52 @@ public final class AllWidgetDataNotifyOuterClass {
                         this.clientCollectorDataListBuilder_.addAllMessages(other.clientCollectorDataList_);
                     }
                 }
-                if (other.hasWeatherWizardData()) {
-                    mergeWeatherWizardData(other.getWeatherWizardData());
-                }
-                if (this.normalCoolDownDataListBuilder_ == null) {
-                    if (!other.normalCoolDownDataList_.isEmpty()) {
-                        if (this.normalCoolDownDataList_.isEmpty()) {
-                            this.normalCoolDownDataList_ = other.normalCoolDownDataList_;
+                if (this.coolDownGroupDataListBuilder_ == null) {
+                    if (!other.coolDownGroupDataList_.isEmpty()) {
+                        if (this.coolDownGroupDataList_.isEmpty()) {
+                            this.coolDownGroupDataList_ = other.coolDownGroupDataList_;
                             this.bitField0_ &= -33;
                         } else {
-                            ensureNormalCoolDownDataListIsMutable();
-                            this.normalCoolDownDataList_.addAll(other.normalCoolDownDataList_);
+                            ensureCoolDownGroupDataListIsMutable();
+                            this.coolDownGroupDataList_.addAll(other.coolDownGroupDataList_);
                         }
                         onChanged();
                     }
-                } else if (!other.normalCoolDownDataList_.isEmpty()) {
-                    if (this.normalCoolDownDataListBuilder_.isEmpty()) {
-                        this.normalCoolDownDataListBuilder_.dispose();
-                        this.normalCoolDownDataListBuilder_ = null;
-                        this.normalCoolDownDataList_ = other.normalCoolDownDataList_;
+                } else if (!other.coolDownGroupDataList_.isEmpty()) {
+                    if (this.coolDownGroupDataListBuilder_.isEmpty()) {
+                        this.coolDownGroupDataListBuilder_.dispose();
+                        this.coolDownGroupDataListBuilder_ = null;
+                        this.coolDownGroupDataList_ = other.coolDownGroupDataList_;
                         this.bitField0_ &= -33;
-                        this.normalCoolDownDataListBuilder_ = AllWidgetDataNotify.alwaysUseFieldBuilders ? getNormalCoolDownDataListFieldBuilder() : null;
+                        this.coolDownGroupDataListBuilder_ = AllWidgetDataNotify.alwaysUseFieldBuilders ? getCoolDownGroupDataListFieldBuilder() : null;
                     } else {
-                        this.normalCoolDownDataListBuilder_.addAllMessages(other.normalCoolDownDataList_);
+                        this.coolDownGroupDataListBuilder_.addAllMessages(other.coolDownGroupDataList_);
                     }
                 }
-                if (this.anchorPointListBuilder_ == null) {
-                    if (!other.anchorPointList_.isEmpty()) {
-                        if (this.anchorPointList_.isEmpty()) {
-                            this.anchorPointList_ = other.anchorPointList_;
+                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
+                    if (!other.oneoffGatherPointDetectorDataList_.isEmpty()) {
+                        if (this.oneoffGatherPointDetectorDataList_.isEmpty()) {
+                            this.oneoffGatherPointDetectorDataList_ = other.oneoffGatherPointDetectorDataList_;
                             this.bitField0_ &= -65;
                         } else {
-                            ensureAnchorPointListIsMutable();
-                            this.anchorPointList_.addAll(other.anchorPointList_);
+                            ensureOneoffGatherPointDetectorDataListIsMutable();
+                            this.oneoffGatherPointDetectorDataList_.addAll(other.oneoffGatherPointDetectorDataList_);
                         }
                         onChanged();
                     }
-                } else if (!other.anchorPointList_.isEmpty()) {
-                    if (this.anchorPointListBuilder_.isEmpty()) {
-                        this.anchorPointListBuilder_.dispose();
-                        this.anchorPointListBuilder_ = null;
-                        this.anchorPointList_ = other.anchorPointList_;
+                } else if (!other.oneoffGatherPointDetectorDataList_.isEmpty()) {
+                    if (this.oneoffGatherPointDetectorDataListBuilder_.isEmpty()) {
+                        this.oneoffGatherPointDetectorDataListBuilder_.dispose();
+                        this.oneoffGatherPointDetectorDataListBuilder_ = null;
+                        this.oneoffGatherPointDetectorDataList_ = other.oneoffGatherPointDetectorDataList_;
                         this.bitField0_ &= -65;
-                        this.anchorPointListBuilder_ = AllWidgetDataNotify.alwaysUseFieldBuilders ? getAnchorPointListFieldBuilder() : null;
+                        this.oneoffGatherPointDetectorDataListBuilder_ = AllWidgetDataNotify.alwaysUseFieldBuilders ? getOneoffGatherPointDetectorDataListFieldBuilder() : null;
                     } else {
-                        this.anchorPointListBuilder_.addAllMessages(other.anchorPointList_);
+                        this.oneoffGatherPointDetectorDataListBuilder_.addAllMessages(other.oneoffGatherPointDetectorDataList_);
                     }
+                }
+                if (other.hasLunchBoxData()) {
+                    mergeLunchBoxData(other.getLunchBoxData());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -1270,277 +1271,260 @@ public final class AllWidgetDataNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public int getNextAnchorPointUsableTime() {
-                return this.nextAnchorPointUsableTime_;
-            }
-
-            public Builder setNextAnchorPointUsableTime(int value) {
-                this.nextAnchorPointUsableTime_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearNextAnchorPointUsableTime() {
-                this.nextAnchorPointUsableTime_ = 0;
-                onChanged();
-                return this;
+            public boolean hasSkyCrystalDetectorData() {
+                return (this.skyCrystalDetectorDataBuilder_ == null && this.skyCrystalDetectorData_ == null) ? false : true;
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public boolean hasLunchBoxData() {
-                return (this.lunchBoxDataBuilder_ == null && this.lunchBoxData_ == null) ? false : true;
-            }
-
-            @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public LunchBoxDataOuterClass.LunchBoxData getLunchBoxData() {
-                if (this.lunchBoxDataBuilder_ == null) {
-                    return this.lunchBoxData_ == null ? LunchBoxDataOuterClass.LunchBoxData.getDefaultInstance() : this.lunchBoxData_;
+            public SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData getSkyCrystalDetectorData() {
+                if (this.skyCrystalDetectorDataBuilder_ == null) {
+                    return this.skyCrystalDetectorData_ == null ? SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.getDefaultInstance() : this.skyCrystalDetectorData_;
                 }
-                return this.lunchBoxDataBuilder_.getMessage();
+                return this.skyCrystalDetectorDataBuilder_.getMessage();
             }
 
-            public Builder setLunchBoxData(LunchBoxDataOuterClass.LunchBoxData value) {
-                if (this.lunchBoxDataBuilder_ != null) {
-                    this.lunchBoxDataBuilder_.setMessage(value);
+            public Builder setSkyCrystalDetectorData(SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData value) {
+                if (this.skyCrystalDetectorDataBuilder_ != null) {
+                    this.skyCrystalDetectorDataBuilder_.setMessage(value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    this.lunchBoxData_ = value;
+                    this.skyCrystalDetectorData_ = value;
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder setLunchBoxData(LunchBoxDataOuterClass.LunchBoxData.Builder builderForValue) {
-                if (this.lunchBoxDataBuilder_ == null) {
-                    this.lunchBoxData_ = builderForValue.build();
+            public Builder setSkyCrystalDetectorData(SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.Builder builderForValue) {
+                if (this.skyCrystalDetectorDataBuilder_ == null) {
+                    this.skyCrystalDetectorData_ = builderForValue.build();
                     onChanged();
                 } else {
-                    this.lunchBoxDataBuilder_.setMessage(builderForValue.build());
+                    this.skyCrystalDetectorDataBuilder_.setMessage(builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder mergeLunchBoxData(LunchBoxDataOuterClass.LunchBoxData value) {
-                if (this.lunchBoxDataBuilder_ == null) {
-                    if (this.lunchBoxData_ != null) {
-                        this.lunchBoxData_ = LunchBoxDataOuterClass.LunchBoxData.newBuilder(this.lunchBoxData_).mergeFrom(value).buildPartial();
+            public Builder mergeSkyCrystalDetectorData(SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData value) {
+                if (this.skyCrystalDetectorDataBuilder_ == null) {
+                    if (this.skyCrystalDetectorData_ != null) {
+                        this.skyCrystalDetectorData_ = SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.newBuilder(this.skyCrystalDetectorData_).mergeFrom(value).buildPartial();
                     } else {
-                        this.lunchBoxData_ = value;
+                        this.skyCrystalDetectorData_ = value;
                     }
                     onChanged();
                 } else {
-                    this.lunchBoxDataBuilder_.mergeFrom(value);
+                    this.skyCrystalDetectorDataBuilder_.mergeFrom(value);
                 }
                 return this;
             }
 
-            public Builder clearLunchBoxData() {
-                if (this.lunchBoxDataBuilder_ == null) {
-                    this.lunchBoxData_ = null;
+            public Builder clearSkyCrystalDetectorData() {
+                if (this.skyCrystalDetectorDataBuilder_ == null) {
+                    this.skyCrystalDetectorData_ = null;
                     onChanged();
                 } else {
-                    this.lunchBoxData_ = null;
-                    this.lunchBoxDataBuilder_ = null;
+                    this.skyCrystalDetectorData_ = null;
+                    this.skyCrystalDetectorDataBuilder_ = null;
                 }
                 return this;
             }
 
-            public LunchBoxDataOuterClass.LunchBoxData.Builder getLunchBoxDataBuilder() {
+            public SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.Builder getSkyCrystalDetectorDataBuilder() {
                 onChanged();
-                return getLunchBoxDataFieldBuilder().getBuilder();
+                return getSkyCrystalDetectorDataFieldBuilder().getBuilder();
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public LunchBoxDataOuterClass.LunchBoxDataOrBuilder getLunchBoxDataOrBuilder() {
-                if (this.lunchBoxDataBuilder_ != null) {
-                    return this.lunchBoxDataBuilder_.getMessageOrBuilder();
+            public SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorDataOrBuilder getSkyCrystalDetectorDataOrBuilder() {
+                if (this.skyCrystalDetectorDataBuilder_ != null) {
+                    return this.skyCrystalDetectorDataBuilder_.getMessageOrBuilder();
                 }
-                return this.lunchBoxData_ == null ? LunchBoxDataOuterClass.LunchBoxData.getDefaultInstance() : this.lunchBoxData_;
+                return this.skyCrystalDetectorData_ == null ? SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.getDefaultInstance() : this.skyCrystalDetectorData_;
             }
 
-            private SingleFieldBuilderV3<LunchBoxDataOuterClass.LunchBoxData, LunchBoxDataOuterClass.LunchBoxData.Builder, LunchBoxDataOuterClass.LunchBoxDataOrBuilder> getLunchBoxDataFieldBuilder() {
-                if (this.lunchBoxDataBuilder_ == null) {
-                    this.lunchBoxDataBuilder_ = new SingleFieldBuilderV3<>(getLunchBoxData(), getParentForChildren(), isClean());
-                    this.lunchBoxData_ = null;
+            private SingleFieldBuilderV3<SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData, SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.Builder, SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorDataOrBuilder> getSkyCrystalDetectorDataFieldBuilder() {
+                if (this.skyCrystalDetectorDataBuilder_ == null) {
+                    this.skyCrystalDetectorDataBuilder_ = new SingleFieldBuilderV3<>(getSkyCrystalDetectorData(), getParentForChildren(), isClean());
+                    this.skyCrystalDetectorData_ = null;
                 }
-                return this.lunchBoxDataBuilder_;
+                return this.skyCrystalDetectorDataBuilder_;
             }
 
-            private void ensureOneoffGatherPointDetectorDataListIsMutable() {
+            private void ensureNormalCoolDownDataListIsMutable() {
                 if ((this.bitField0_ & 1) == 0) {
-                    this.oneoffGatherPointDetectorDataList_ = new ArrayList(this.oneoffGatherPointDetectorDataList_);
+                    this.normalCoolDownDataList_ = new ArrayList(this.normalCoolDownDataList_);
                     this.bitField0_ |= 1;
                 }
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public List<OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> getOneoffGatherPointDetectorDataListList() {
-                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
-                    return Collections.unmodifiableList(this.oneoffGatherPointDetectorDataList_);
+            public List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> getNormalCoolDownDataListList() {
+                if (this.normalCoolDownDataListBuilder_ == null) {
+                    return Collections.unmodifiableList(this.normalCoolDownDataList_);
                 }
-                return this.oneoffGatherPointDetectorDataListBuilder_.getMessageList();
+                return this.normalCoolDownDataListBuilder_.getMessageList();
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public int getOneoffGatherPointDetectorDataListCount() {
-                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
-                    return this.oneoffGatherPointDetectorDataList_.size();
+            public int getNormalCoolDownDataListCount() {
+                if (this.normalCoolDownDataListBuilder_ == null) {
+                    return this.normalCoolDownDataList_.size();
                 }
-                return this.oneoffGatherPointDetectorDataListBuilder_.getCount();
+                return this.normalCoolDownDataListBuilder_.getCount();
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData getOneoffGatherPointDetectorDataList(int index) {
-                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
-                    return this.oneoffGatherPointDetectorDataList_.get(index);
+            public WidgetCoolDownDataOuterClass.WidgetCoolDownData getNormalCoolDownDataList(int index) {
+                if (this.normalCoolDownDataListBuilder_ == null) {
+                    return this.normalCoolDownDataList_.get(index);
                 }
-                return this.oneoffGatherPointDetectorDataListBuilder_.getMessage(index);
+                return this.normalCoolDownDataListBuilder_.getMessage(index);
             }
 
-            public Builder setOneoffGatherPointDetectorDataList(int index, OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData value) {
-                if (this.oneoffGatherPointDetectorDataListBuilder_ != null) {
-                    this.oneoffGatherPointDetectorDataListBuilder_.setMessage(index, value);
+            public Builder setNormalCoolDownDataList(int index, WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
+                if (this.normalCoolDownDataListBuilder_ != null) {
+                    this.normalCoolDownDataListBuilder_.setMessage(index, value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureOneoffGatherPointDetectorDataListIsMutable();
-                    this.oneoffGatherPointDetectorDataList_.set(index, value);
+                    ensureNormalCoolDownDataListIsMutable();
+                    this.normalCoolDownDataList_.set(index, value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder setOneoffGatherPointDetectorDataList(int index, OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder builderForValue) {
-                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
-                    ensureOneoffGatherPointDetectorDataListIsMutable();
-                    this.oneoffGatherPointDetectorDataList_.set(index, builderForValue.build());
+            public Builder setNormalCoolDownDataList(int index, WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
+                if (this.normalCoolDownDataListBuilder_ == null) {
+                    ensureNormalCoolDownDataListIsMutable();
+                    this.normalCoolDownDataList_.set(index, builderForValue.build());
                     onChanged();
                 } else {
-                    this.oneoffGatherPointDetectorDataListBuilder_.setMessage(index, builderForValue.build());
+                    this.normalCoolDownDataListBuilder_.setMessage(index, builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder addOneoffGatherPointDetectorDataList(OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData value) {
-                if (this.oneoffGatherPointDetectorDataListBuilder_ != null) {
-                    this.oneoffGatherPointDetectorDataListBuilder_.addMessage(value);
+            public Builder addNormalCoolDownDataList(WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
+                if (this.normalCoolDownDataListBuilder_ != null) {
+                    this.normalCoolDownDataListBuilder_.addMessage(value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureOneoffGatherPointDetectorDataListIsMutable();
-                    this.oneoffGatherPointDetectorDataList_.add(value);
+                    ensureNormalCoolDownDataListIsMutable();
+                    this.normalCoolDownDataList_.add(value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder addOneoffGatherPointDetectorDataList(int index, OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData value) {
-                if (this.oneoffGatherPointDetectorDataListBuilder_ != null) {
-                    this.oneoffGatherPointDetectorDataListBuilder_.addMessage(index, value);
+            public Builder addNormalCoolDownDataList(int index, WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
+                if (this.normalCoolDownDataListBuilder_ != null) {
+                    this.normalCoolDownDataListBuilder_.addMessage(index, value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureOneoffGatherPointDetectorDataListIsMutable();
-                    this.oneoffGatherPointDetectorDataList_.add(index, value);
+                    ensureNormalCoolDownDataListIsMutable();
+                    this.normalCoolDownDataList_.add(index, value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder addOneoffGatherPointDetectorDataList(OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder builderForValue) {
-                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
-                    ensureOneoffGatherPointDetectorDataListIsMutable();
-                    this.oneoffGatherPointDetectorDataList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    this.oneoffGatherPointDetectorDataListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addOneoffGatherPointDetectorDataList(int index, OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder builderForValue) {
-                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
-                    ensureOneoffGatherPointDetectorDataListIsMutable();
-                    this.oneoffGatherPointDetectorDataList_.add(index, builderForValue.build());
+            public Builder addNormalCoolDownDataList(WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
+                if (this.normalCoolDownDataListBuilder_ == null) {
+                    ensureNormalCoolDownDataListIsMutable();
+                    this.normalCoolDownDataList_.add(builderForValue.build());
                     onChanged();
                 } else {
-                    this.oneoffGatherPointDetectorDataListBuilder_.addMessage(index, builderForValue.build());
+                    this.normalCoolDownDataListBuilder_.addMessage(builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder addAllOneoffGatherPointDetectorDataList(Iterable<? extends OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> values) {
-                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
-                    ensureOneoffGatherPointDetectorDataListIsMutable();
-                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.oneoffGatherPointDetectorDataList_);
+            public Builder addNormalCoolDownDataList(int index, WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
+                if (this.normalCoolDownDataListBuilder_ == null) {
+                    ensureNormalCoolDownDataListIsMutable();
+                    this.normalCoolDownDataList_.add(index, builderForValue.build());
                     onChanged();
                 } else {
-                    this.oneoffGatherPointDetectorDataListBuilder_.addAllMessages(values);
+                    this.normalCoolDownDataListBuilder_.addMessage(index, builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder clearOneoffGatherPointDetectorDataList() {
-                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
-                    this.oneoffGatherPointDetectorDataList_ = Collections.emptyList();
+            public Builder addAllNormalCoolDownDataList(Iterable<? extends WidgetCoolDownDataOuterClass.WidgetCoolDownData> values) {
+                if (this.normalCoolDownDataListBuilder_ == null) {
+                    ensureNormalCoolDownDataListIsMutable();
+                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.normalCoolDownDataList_);
+                    onChanged();
+                } else {
+                    this.normalCoolDownDataListBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            public Builder clearNormalCoolDownDataList() {
+                if (this.normalCoolDownDataListBuilder_ == null) {
+                    this.normalCoolDownDataList_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                     onChanged();
                 } else {
-                    this.oneoffGatherPointDetectorDataListBuilder_.clear();
+                    this.normalCoolDownDataListBuilder_.clear();
                 }
                 return this;
             }
 
-            public Builder removeOneoffGatherPointDetectorDataList(int index) {
-                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
-                    ensureOneoffGatherPointDetectorDataListIsMutable();
-                    this.oneoffGatherPointDetectorDataList_.remove(index);
+            public Builder removeNormalCoolDownDataList(int index) {
+                if (this.normalCoolDownDataListBuilder_ == null) {
+                    ensureNormalCoolDownDataListIsMutable();
+                    this.normalCoolDownDataList_.remove(index);
                     onChanged();
                 } else {
-                    this.oneoffGatherPointDetectorDataListBuilder_.remove(index);
+                    this.normalCoolDownDataListBuilder_.remove(index);
                 }
                 return this;
             }
 
-            public OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder getOneoffGatherPointDetectorDataListBuilder(int index) {
-                return getOneoffGatherPointDetectorDataListFieldBuilder().getBuilder(index);
+            public WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder getNormalCoolDownDataListBuilder(int index) {
+                return getNormalCoolDownDataListFieldBuilder().getBuilder(index);
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder getOneoffGatherPointDetectorDataListOrBuilder(int index) {
-                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
-                    return this.oneoffGatherPointDetectorDataList_.get(index);
+            public WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getNormalCoolDownDataListOrBuilder(int index) {
+                if (this.normalCoolDownDataListBuilder_ == null) {
+                    return this.normalCoolDownDataList_.get(index);
                 }
-                return this.oneoffGatherPointDetectorDataListBuilder_.getMessageOrBuilder(index);
+                return this.normalCoolDownDataListBuilder_.getMessageOrBuilder(index);
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public List<? extends OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder> getOneoffGatherPointDetectorDataListOrBuilderList() {
-                if (this.oneoffGatherPointDetectorDataListBuilder_ != null) {
-                    return this.oneoffGatherPointDetectorDataListBuilder_.getMessageOrBuilderList();
+            public List<? extends WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> getNormalCoolDownDataListOrBuilderList() {
+                if (this.normalCoolDownDataListBuilder_ != null) {
+                    return this.normalCoolDownDataListBuilder_.getMessageOrBuilderList();
                 }
-                return Collections.unmodifiableList(this.oneoffGatherPointDetectorDataList_);
+                return Collections.unmodifiableList(this.normalCoolDownDataList_);
             }
 
-            public OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder addOneoffGatherPointDetectorDataListBuilder() {
-                return getOneoffGatherPointDetectorDataListFieldBuilder().addBuilder(OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.getDefaultInstance());
+            public WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addNormalCoolDownDataListBuilder() {
+                return getNormalCoolDownDataListFieldBuilder().addBuilder(WidgetCoolDownDataOuterClass.WidgetCoolDownData.getDefaultInstance());
             }
 
-            public OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder addOneoffGatherPointDetectorDataListBuilder(int index) {
-                return getOneoffGatherPointDetectorDataListFieldBuilder().addBuilder(index, OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.getDefaultInstance());
+            public WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addNormalCoolDownDataListBuilder(int index) {
+                return getNormalCoolDownDataListFieldBuilder().addBuilder(index, WidgetCoolDownDataOuterClass.WidgetCoolDownData.getDefaultInstance());
             }
 
-            public List<OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder> getOneoffGatherPointDetectorDataListBuilderList() {
-                return getOneoffGatherPointDetectorDataListFieldBuilder().getBuilderList();
+            public List<WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder> getNormalCoolDownDataListBuilderList() {
+                return getNormalCoolDownDataListFieldBuilder().getBuilderList();
             }
 
-            private RepeatedFieldBuilderV3<OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData, OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder, OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder> getOneoffGatherPointDetectorDataListFieldBuilder() {
-                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
-                    this.oneoffGatherPointDetectorDataListBuilder_ = new RepeatedFieldBuilderV3<>(this.oneoffGatherPointDetectorDataList_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
-                    this.oneoffGatherPointDetectorDataList_ = null;
+            private RepeatedFieldBuilderV3<WidgetCoolDownDataOuterClass.WidgetCoolDownData, WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> getNormalCoolDownDataListFieldBuilder() {
+                if (this.normalCoolDownDataListBuilder_ == null) {
+                    this.normalCoolDownDataListBuilder_ = new RepeatedFieldBuilderV3<>(this.normalCoolDownDataList_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
+                    this.normalCoolDownDataList_ = null;
                 }
-                return this.oneoffGatherPointDetectorDataListBuilder_;
+                return this.normalCoolDownDataListBuilder_;
             }
 
             private void ensureSlotListIsMutable() {
@@ -1769,261 +1753,278 @@ public final class AllWidgetDataNotifyOuterClass {
                 return this;
             }
 
-            private void ensureCoolDownGroupDataListIsMutable() {
+            private void ensureAnchorPointListIsMutable() {
                 if ((this.bitField0_ & 8) == 0) {
-                    this.coolDownGroupDataList_ = new ArrayList(this.coolDownGroupDataList_);
+                    this.anchorPointList_ = new ArrayList(this.anchorPointList_);
                     this.bitField0_ |= 8;
                 }
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> getCoolDownGroupDataListList() {
-                if (this.coolDownGroupDataListBuilder_ == null) {
-                    return Collections.unmodifiableList(this.coolDownGroupDataList_);
+            public List<AnchorPointDataOuterClass.AnchorPointData> getAnchorPointListList() {
+                if (this.anchorPointListBuilder_ == null) {
+                    return Collections.unmodifiableList(this.anchorPointList_);
                 }
-                return this.coolDownGroupDataListBuilder_.getMessageList();
+                return this.anchorPointListBuilder_.getMessageList();
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public int getCoolDownGroupDataListCount() {
-                if (this.coolDownGroupDataListBuilder_ == null) {
-                    return this.coolDownGroupDataList_.size();
+            public int getAnchorPointListCount() {
+                if (this.anchorPointListBuilder_ == null) {
+                    return this.anchorPointList_.size();
                 }
-                return this.coolDownGroupDataListBuilder_.getCount();
+                return this.anchorPointListBuilder_.getCount();
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public WidgetCoolDownDataOuterClass.WidgetCoolDownData getCoolDownGroupDataList(int index) {
-                if (this.coolDownGroupDataListBuilder_ == null) {
-                    return this.coolDownGroupDataList_.get(index);
+            public AnchorPointDataOuterClass.AnchorPointData getAnchorPointList(int index) {
+                if (this.anchorPointListBuilder_ == null) {
+                    return this.anchorPointList_.get(index);
                 }
-                return this.coolDownGroupDataListBuilder_.getMessage(index);
+                return this.anchorPointListBuilder_.getMessage(index);
             }
 
-            public Builder setCoolDownGroupDataList(int index, WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
-                if (this.coolDownGroupDataListBuilder_ != null) {
-                    this.coolDownGroupDataListBuilder_.setMessage(index, value);
+            public Builder setAnchorPointList(int index, AnchorPointDataOuterClass.AnchorPointData value) {
+                if (this.anchorPointListBuilder_ != null) {
+                    this.anchorPointListBuilder_.setMessage(index, value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureCoolDownGroupDataListIsMutable();
-                    this.coolDownGroupDataList_.set(index, value);
+                    ensureAnchorPointListIsMutable();
+                    this.anchorPointList_.set(index, value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder setCoolDownGroupDataList(int index, WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
-                if (this.coolDownGroupDataListBuilder_ == null) {
-                    ensureCoolDownGroupDataListIsMutable();
-                    this.coolDownGroupDataList_.set(index, builderForValue.build());
+            public Builder setAnchorPointList(int index, AnchorPointDataOuterClass.AnchorPointData.Builder builderForValue) {
+                if (this.anchorPointListBuilder_ == null) {
+                    ensureAnchorPointListIsMutable();
+                    this.anchorPointList_.set(index, builderForValue.build());
                     onChanged();
                 } else {
-                    this.coolDownGroupDataListBuilder_.setMessage(index, builderForValue.build());
+                    this.anchorPointListBuilder_.setMessage(index, builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder addCoolDownGroupDataList(WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
-                if (this.coolDownGroupDataListBuilder_ != null) {
-                    this.coolDownGroupDataListBuilder_.addMessage(value);
+            public Builder addAnchorPointList(AnchorPointDataOuterClass.AnchorPointData value) {
+                if (this.anchorPointListBuilder_ != null) {
+                    this.anchorPointListBuilder_.addMessage(value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureCoolDownGroupDataListIsMutable();
-                    this.coolDownGroupDataList_.add(value);
+                    ensureAnchorPointListIsMutable();
+                    this.anchorPointList_.add(value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder addCoolDownGroupDataList(int index, WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
-                if (this.coolDownGroupDataListBuilder_ != null) {
-                    this.coolDownGroupDataListBuilder_.addMessage(index, value);
+            public Builder addAnchorPointList(int index, AnchorPointDataOuterClass.AnchorPointData value) {
+                if (this.anchorPointListBuilder_ != null) {
+                    this.anchorPointListBuilder_.addMessage(index, value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureCoolDownGroupDataListIsMutable();
-                    this.coolDownGroupDataList_.add(index, value);
+                    ensureAnchorPointListIsMutable();
+                    this.anchorPointList_.add(index, value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder addCoolDownGroupDataList(WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
-                if (this.coolDownGroupDataListBuilder_ == null) {
-                    ensureCoolDownGroupDataListIsMutable();
-                    this.coolDownGroupDataList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    this.coolDownGroupDataListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addCoolDownGroupDataList(int index, WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
-                if (this.coolDownGroupDataListBuilder_ == null) {
-                    ensureCoolDownGroupDataListIsMutable();
-                    this.coolDownGroupDataList_.add(index, builderForValue.build());
+            public Builder addAnchorPointList(AnchorPointDataOuterClass.AnchorPointData.Builder builderForValue) {
+                if (this.anchorPointListBuilder_ == null) {
+                    ensureAnchorPointListIsMutable();
+                    this.anchorPointList_.add(builderForValue.build());
                     onChanged();
                 } else {
-                    this.coolDownGroupDataListBuilder_.addMessage(index, builderForValue.build());
+                    this.anchorPointListBuilder_.addMessage(builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder addAllCoolDownGroupDataList(Iterable<? extends WidgetCoolDownDataOuterClass.WidgetCoolDownData> values) {
-                if (this.coolDownGroupDataListBuilder_ == null) {
-                    ensureCoolDownGroupDataListIsMutable();
-                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.coolDownGroupDataList_);
+            public Builder addAnchorPointList(int index, AnchorPointDataOuterClass.AnchorPointData.Builder builderForValue) {
+                if (this.anchorPointListBuilder_ == null) {
+                    ensureAnchorPointListIsMutable();
+                    this.anchorPointList_.add(index, builderForValue.build());
                     onChanged();
                 } else {
-                    this.coolDownGroupDataListBuilder_.addAllMessages(values);
+                    this.anchorPointListBuilder_.addMessage(index, builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder clearCoolDownGroupDataList() {
-                if (this.coolDownGroupDataListBuilder_ == null) {
-                    this.coolDownGroupDataList_ = Collections.emptyList();
+            public Builder addAllAnchorPointList(Iterable<? extends AnchorPointDataOuterClass.AnchorPointData> values) {
+                if (this.anchorPointListBuilder_ == null) {
+                    ensureAnchorPointListIsMutable();
+                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.anchorPointList_);
+                    onChanged();
+                } else {
+                    this.anchorPointListBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            public Builder clearAnchorPointList() {
+                if (this.anchorPointListBuilder_ == null) {
+                    this.anchorPointList_ = Collections.emptyList();
                     this.bitField0_ &= -9;
                     onChanged();
                 } else {
-                    this.coolDownGroupDataListBuilder_.clear();
+                    this.anchorPointListBuilder_.clear();
                 }
                 return this;
             }
 
-            public Builder removeCoolDownGroupDataList(int index) {
-                if (this.coolDownGroupDataListBuilder_ == null) {
-                    ensureCoolDownGroupDataListIsMutable();
-                    this.coolDownGroupDataList_.remove(index);
+            public Builder removeAnchorPointList(int index) {
+                if (this.anchorPointListBuilder_ == null) {
+                    ensureAnchorPointListIsMutable();
+                    this.anchorPointList_.remove(index);
                     onChanged();
                 } else {
-                    this.coolDownGroupDataListBuilder_.remove(index);
+                    this.anchorPointListBuilder_.remove(index);
                 }
                 return this;
             }
 
-            public WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder getCoolDownGroupDataListBuilder(int index) {
-                return getCoolDownGroupDataListFieldBuilder().getBuilder(index);
+            public AnchorPointDataOuterClass.AnchorPointData.Builder getAnchorPointListBuilder(int index) {
+                return getAnchorPointListFieldBuilder().getBuilder(index);
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getCoolDownGroupDataListOrBuilder(int index) {
-                if (this.coolDownGroupDataListBuilder_ == null) {
-                    return this.coolDownGroupDataList_.get(index);
+            public AnchorPointDataOuterClass.AnchorPointDataOrBuilder getAnchorPointListOrBuilder(int index) {
+                if (this.anchorPointListBuilder_ == null) {
+                    return this.anchorPointList_.get(index);
                 }
-                return this.coolDownGroupDataListBuilder_.getMessageOrBuilder(index);
+                return this.anchorPointListBuilder_.getMessageOrBuilder(index);
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public List<? extends WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> getCoolDownGroupDataListOrBuilderList() {
-                if (this.coolDownGroupDataListBuilder_ != null) {
-                    return this.coolDownGroupDataListBuilder_.getMessageOrBuilderList();
+            public List<? extends AnchorPointDataOuterClass.AnchorPointDataOrBuilder> getAnchorPointListOrBuilderList() {
+                if (this.anchorPointListBuilder_ != null) {
+                    return this.anchorPointListBuilder_.getMessageOrBuilderList();
                 }
-                return Collections.unmodifiableList(this.coolDownGroupDataList_);
+                return Collections.unmodifiableList(this.anchorPointList_);
             }
 
-            public WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addCoolDownGroupDataListBuilder() {
-                return getCoolDownGroupDataListFieldBuilder().addBuilder(WidgetCoolDownDataOuterClass.WidgetCoolDownData.getDefaultInstance());
+            public AnchorPointDataOuterClass.AnchorPointData.Builder addAnchorPointListBuilder() {
+                return getAnchorPointListFieldBuilder().addBuilder(AnchorPointDataOuterClass.AnchorPointData.getDefaultInstance());
             }
 
-            public WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addCoolDownGroupDataListBuilder(int index) {
-                return getCoolDownGroupDataListFieldBuilder().addBuilder(index, WidgetCoolDownDataOuterClass.WidgetCoolDownData.getDefaultInstance());
+            public AnchorPointDataOuterClass.AnchorPointData.Builder addAnchorPointListBuilder(int index) {
+                return getAnchorPointListFieldBuilder().addBuilder(index, AnchorPointDataOuterClass.AnchorPointData.getDefaultInstance());
             }
 
-            public List<WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder> getCoolDownGroupDataListBuilderList() {
-                return getCoolDownGroupDataListFieldBuilder().getBuilderList();
+            public List<AnchorPointDataOuterClass.AnchorPointData.Builder> getAnchorPointListBuilderList() {
+                return getAnchorPointListFieldBuilder().getBuilderList();
             }
 
-            private RepeatedFieldBuilderV3<WidgetCoolDownDataOuterClass.WidgetCoolDownData, WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> getCoolDownGroupDataListFieldBuilder() {
-                if (this.coolDownGroupDataListBuilder_ == null) {
-                    this.coolDownGroupDataListBuilder_ = new RepeatedFieldBuilderV3<>(this.coolDownGroupDataList_, (this.bitField0_ & 8) != 0, getParentForChildren(), isClean());
-                    this.coolDownGroupDataList_ = null;
+            private RepeatedFieldBuilderV3<AnchorPointDataOuterClass.AnchorPointData, AnchorPointDataOuterClass.AnchorPointData.Builder, AnchorPointDataOuterClass.AnchorPointDataOrBuilder> getAnchorPointListFieldBuilder() {
+                if (this.anchorPointListBuilder_ == null) {
+                    this.anchorPointListBuilder_ = new RepeatedFieldBuilderV3<>(this.anchorPointList_, (this.bitField0_ & 8) != 0, getParentForChildren(), isClean());
+                    this.anchorPointList_ = null;
                 }
-                return this.coolDownGroupDataListBuilder_;
+                return this.anchorPointListBuilder_;
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public boolean hasSkyCrystalDetectorData() {
-                return (this.skyCrystalDetectorDataBuilder_ == null && this.skyCrystalDetectorData_ == null) ? false : true;
+            public boolean hasWeatherWizardData() {
+                return (this.weatherWizardDataBuilder_ == null && this.weatherWizardData_ == null) ? false : true;
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData getSkyCrystalDetectorData() {
-                if (this.skyCrystalDetectorDataBuilder_ == null) {
-                    return this.skyCrystalDetectorData_ == null ? SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.getDefaultInstance() : this.skyCrystalDetectorData_;
+            public WeatherWizardDataOuterClass.WeatherWizardData getWeatherWizardData() {
+                if (this.weatherWizardDataBuilder_ == null) {
+                    return this.weatherWizardData_ == null ? WeatherWizardDataOuterClass.WeatherWizardData.getDefaultInstance() : this.weatherWizardData_;
                 }
-                return this.skyCrystalDetectorDataBuilder_.getMessage();
+                return this.weatherWizardDataBuilder_.getMessage();
             }
 
-            public Builder setSkyCrystalDetectorData(SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData value) {
-                if (this.skyCrystalDetectorDataBuilder_ != null) {
-                    this.skyCrystalDetectorDataBuilder_.setMessage(value);
+            public Builder setWeatherWizardData(WeatherWizardDataOuterClass.WeatherWizardData value) {
+                if (this.weatherWizardDataBuilder_ != null) {
+                    this.weatherWizardDataBuilder_.setMessage(value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    this.skyCrystalDetectorData_ = value;
+                    this.weatherWizardData_ = value;
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder setSkyCrystalDetectorData(SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.Builder builderForValue) {
-                if (this.skyCrystalDetectorDataBuilder_ == null) {
-                    this.skyCrystalDetectorData_ = builderForValue.build();
+            public Builder setWeatherWizardData(WeatherWizardDataOuterClass.WeatherWizardData.Builder builderForValue) {
+                if (this.weatherWizardDataBuilder_ == null) {
+                    this.weatherWizardData_ = builderForValue.build();
                     onChanged();
                 } else {
-                    this.skyCrystalDetectorDataBuilder_.setMessage(builderForValue.build());
+                    this.weatherWizardDataBuilder_.setMessage(builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder mergeSkyCrystalDetectorData(SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData value) {
-                if (this.skyCrystalDetectorDataBuilder_ == null) {
-                    if (this.skyCrystalDetectorData_ != null) {
-                        this.skyCrystalDetectorData_ = SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.newBuilder(this.skyCrystalDetectorData_).mergeFrom(value).buildPartial();
+            public Builder mergeWeatherWizardData(WeatherWizardDataOuterClass.WeatherWizardData value) {
+                if (this.weatherWizardDataBuilder_ == null) {
+                    if (this.weatherWizardData_ != null) {
+                        this.weatherWizardData_ = WeatherWizardDataOuterClass.WeatherWizardData.newBuilder(this.weatherWizardData_).mergeFrom(value).buildPartial();
                     } else {
-                        this.skyCrystalDetectorData_ = value;
+                        this.weatherWizardData_ = value;
                     }
                     onChanged();
                 } else {
-                    this.skyCrystalDetectorDataBuilder_.mergeFrom(value);
+                    this.weatherWizardDataBuilder_.mergeFrom(value);
                 }
                 return this;
             }
 
-            public Builder clearSkyCrystalDetectorData() {
-                if (this.skyCrystalDetectorDataBuilder_ == null) {
-                    this.skyCrystalDetectorData_ = null;
+            public Builder clearWeatherWizardData() {
+                if (this.weatherWizardDataBuilder_ == null) {
+                    this.weatherWizardData_ = null;
                     onChanged();
                 } else {
-                    this.skyCrystalDetectorData_ = null;
-                    this.skyCrystalDetectorDataBuilder_ = null;
+                    this.weatherWizardData_ = null;
+                    this.weatherWizardDataBuilder_ = null;
                 }
                 return this;
             }
 
-            public SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.Builder getSkyCrystalDetectorDataBuilder() {
+            public WeatherWizardDataOuterClass.WeatherWizardData.Builder getWeatherWizardDataBuilder() {
                 onChanged();
-                return getSkyCrystalDetectorDataFieldBuilder().getBuilder();
+                return getWeatherWizardDataFieldBuilder().getBuilder();
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorDataOrBuilder getSkyCrystalDetectorDataOrBuilder() {
-                if (this.skyCrystalDetectorDataBuilder_ != null) {
-                    return this.skyCrystalDetectorDataBuilder_.getMessageOrBuilder();
+            public WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder getWeatherWizardDataOrBuilder() {
+                if (this.weatherWizardDataBuilder_ != null) {
+                    return this.weatherWizardDataBuilder_.getMessageOrBuilder();
                 }
-                return this.skyCrystalDetectorData_ == null ? SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.getDefaultInstance() : this.skyCrystalDetectorData_;
+                return this.weatherWizardData_ == null ? WeatherWizardDataOuterClass.WeatherWizardData.getDefaultInstance() : this.weatherWizardData_;
             }
 
-            private SingleFieldBuilderV3<SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData, SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.Builder, SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorDataOrBuilder> getSkyCrystalDetectorDataFieldBuilder() {
-                if (this.skyCrystalDetectorDataBuilder_ == null) {
-                    this.skyCrystalDetectorDataBuilder_ = new SingleFieldBuilderV3<>(getSkyCrystalDetectorData(), getParentForChildren(), isClean());
-                    this.skyCrystalDetectorData_ = null;
+            private SingleFieldBuilderV3<WeatherWizardDataOuterClass.WeatherWizardData, WeatherWizardDataOuterClass.WeatherWizardData.Builder, WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder> getWeatherWizardDataFieldBuilder() {
+                if (this.weatherWizardDataBuilder_ == null) {
+                    this.weatherWizardDataBuilder_ = new SingleFieldBuilderV3<>(getWeatherWizardData(), getParentForChildren(), isClean());
+                    this.weatherWizardData_ = null;
                 }
-                return this.skyCrystalDetectorDataBuilder_;
+                return this.weatherWizardDataBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
+            public int getNextAnchorPointUsableTime() {
+                return this.nextAnchorPointUsableTime_;
+            }
+
+            public Builder setNextAnchorPointUsableTime(int value) {
+                this.nextAnchorPointUsableTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearNextAnchorPointUsableTime() {
+                this.nextAnchorPointUsableTime_ = 0;
+                onChanged();
+                return this;
             }
 
             private void ensureClientCollectorDataListIsMutable() {
@@ -2202,437 +2203,437 @@ public final class AllWidgetDataNotifyOuterClass {
                 return this.clientCollectorDataListBuilder_;
             }
 
-            @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public boolean hasWeatherWizardData() {
-                return (this.weatherWizardDataBuilder_ == null && this.weatherWizardData_ == null) ? false : true;
-            }
-
-            @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public WeatherWizardDataOuterClass.WeatherWizardData getWeatherWizardData() {
-                if (this.weatherWizardDataBuilder_ == null) {
-                    return this.weatherWizardData_ == null ? WeatherWizardDataOuterClass.WeatherWizardData.getDefaultInstance() : this.weatherWizardData_;
-                }
-                return this.weatherWizardDataBuilder_.getMessage();
-            }
-
-            public Builder setWeatherWizardData(WeatherWizardDataOuterClass.WeatherWizardData value) {
-                if (this.weatherWizardDataBuilder_ != null) {
-                    this.weatherWizardDataBuilder_.setMessage(value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    this.weatherWizardData_ = value;
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder setWeatherWizardData(WeatherWizardDataOuterClass.WeatherWizardData.Builder builderForValue) {
-                if (this.weatherWizardDataBuilder_ == null) {
-                    this.weatherWizardData_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    this.weatherWizardDataBuilder_.setMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder mergeWeatherWizardData(WeatherWizardDataOuterClass.WeatherWizardData value) {
-                if (this.weatherWizardDataBuilder_ == null) {
-                    if (this.weatherWizardData_ != null) {
-                        this.weatherWizardData_ = WeatherWizardDataOuterClass.WeatherWizardData.newBuilder(this.weatherWizardData_).mergeFrom(value).buildPartial();
-                    } else {
-                        this.weatherWizardData_ = value;
-                    }
-                    onChanged();
-                } else {
-                    this.weatherWizardDataBuilder_.mergeFrom(value);
-                }
-                return this;
-            }
-
-            public Builder clearWeatherWizardData() {
-                if (this.weatherWizardDataBuilder_ == null) {
-                    this.weatherWizardData_ = null;
-                    onChanged();
-                } else {
-                    this.weatherWizardData_ = null;
-                    this.weatherWizardDataBuilder_ = null;
-                }
-                return this;
-            }
-
-            public WeatherWizardDataOuterClass.WeatherWizardData.Builder getWeatherWizardDataBuilder() {
-                onChanged();
-                return getWeatherWizardDataFieldBuilder().getBuilder();
-            }
-
-            @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder getWeatherWizardDataOrBuilder() {
-                if (this.weatherWizardDataBuilder_ != null) {
-                    return this.weatherWizardDataBuilder_.getMessageOrBuilder();
-                }
-                return this.weatherWizardData_ == null ? WeatherWizardDataOuterClass.WeatherWizardData.getDefaultInstance() : this.weatherWizardData_;
-            }
-
-            private SingleFieldBuilderV3<WeatherWizardDataOuterClass.WeatherWizardData, WeatherWizardDataOuterClass.WeatherWizardData.Builder, WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder> getWeatherWizardDataFieldBuilder() {
-                if (this.weatherWizardDataBuilder_ == null) {
-                    this.weatherWizardDataBuilder_ = new SingleFieldBuilderV3<>(getWeatherWizardData(), getParentForChildren(), isClean());
-                    this.weatherWizardData_ = null;
-                }
-                return this.weatherWizardDataBuilder_;
-            }
-
-            private void ensureNormalCoolDownDataListIsMutable() {
+            private void ensureCoolDownGroupDataListIsMutable() {
                 if ((this.bitField0_ & 32) == 0) {
-                    this.normalCoolDownDataList_ = new ArrayList(this.normalCoolDownDataList_);
+                    this.coolDownGroupDataList_ = new ArrayList(this.coolDownGroupDataList_);
                     this.bitField0_ |= 32;
                 }
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> getNormalCoolDownDataListList() {
-                if (this.normalCoolDownDataListBuilder_ == null) {
-                    return Collections.unmodifiableList(this.normalCoolDownDataList_);
+            public List<WidgetCoolDownDataOuterClass.WidgetCoolDownData> getCoolDownGroupDataListList() {
+                if (this.coolDownGroupDataListBuilder_ == null) {
+                    return Collections.unmodifiableList(this.coolDownGroupDataList_);
                 }
-                return this.normalCoolDownDataListBuilder_.getMessageList();
+                return this.coolDownGroupDataListBuilder_.getMessageList();
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public int getNormalCoolDownDataListCount() {
-                if (this.normalCoolDownDataListBuilder_ == null) {
-                    return this.normalCoolDownDataList_.size();
+            public int getCoolDownGroupDataListCount() {
+                if (this.coolDownGroupDataListBuilder_ == null) {
+                    return this.coolDownGroupDataList_.size();
                 }
-                return this.normalCoolDownDataListBuilder_.getCount();
+                return this.coolDownGroupDataListBuilder_.getCount();
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public WidgetCoolDownDataOuterClass.WidgetCoolDownData getNormalCoolDownDataList(int index) {
-                if (this.normalCoolDownDataListBuilder_ == null) {
-                    return this.normalCoolDownDataList_.get(index);
+            public WidgetCoolDownDataOuterClass.WidgetCoolDownData getCoolDownGroupDataList(int index) {
+                if (this.coolDownGroupDataListBuilder_ == null) {
+                    return this.coolDownGroupDataList_.get(index);
                 }
-                return this.normalCoolDownDataListBuilder_.getMessage(index);
+                return this.coolDownGroupDataListBuilder_.getMessage(index);
             }
 
-            public Builder setNormalCoolDownDataList(int index, WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
-                if (this.normalCoolDownDataListBuilder_ != null) {
-                    this.normalCoolDownDataListBuilder_.setMessage(index, value);
+            public Builder setCoolDownGroupDataList(int index, WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
+                if (this.coolDownGroupDataListBuilder_ != null) {
+                    this.coolDownGroupDataListBuilder_.setMessage(index, value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureNormalCoolDownDataListIsMutable();
-                    this.normalCoolDownDataList_.set(index, value);
+                    ensureCoolDownGroupDataListIsMutable();
+                    this.coolDownGroupDataList_.set(index, value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder setNormalCoolDownDataList(int index, WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
-                if (this.normalCoolDownDataListBuilder_ == null) {
-                    ensureNormalCoolDownDataListIsMutable();
-                    this.normalCoolDownDataList_.set(index, builderForValue.build());
+            public Builder setCoolDownGroupDataList(int index, WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
+                if (this.coolDownGroupDataListBuilder_ == null) {
+                    ensureCoolDownGroupDataListIsMutable();
+                    this.coolDownGroupDataList_.set(index, builderForValue.build());
                     onChanged();
                 } else {
-                    this.normalCoolDownDataListBuilder_.setMessage(index, builderForValue.build());
+                    this.coolDownGroupDataListBuilder_.setMessage(index, builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder addNormalCoolDownDataList(WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
-                if (this.normalCoolDownDataListBuilder_ != null) {
-                    this.normalCoolDownDataListBuilder_.addMessage(value);
+            public Builder addCoolDownGroupDataList(WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
+                if (this.coolDownGroupDataListBuilder_ != null) {
+                    this.coolDownGroupDataListBuilder_.addMessage(value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureNormalCoolDownDataListIsMutable();
-                    this.normalCoolDownDataList_.add(value);
+                    ensureCoolDownGroupDataListIsMutable();
+                    this.coolDownGroupDataList_.add(value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder addNormalCoolDownDataList(int index, WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
-                if (this.normalCoolDownDataListBuilder_ != null) {
-                    this.normalCoolDownDataListBuilder_.addMessage(index, value);
+            public Builder addCoolDownGroupDataList(int index, WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
+                if (this.coolDownGroupDataListBuilder_ != null) {
+                    this.coolDownGroupDataListBuilder_.addMessage(index, value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureNormalCoolDownDataListIsMutable();
-                    this.normalCoolDownDataList_.add(index, value);
+                    ensureCoolDownGroupDataListIsMutable();
+                    this.coolDownGroupDataList_.add(index, value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder addNormalCoolDownDataList(WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
-                if (this.normalCoolDownDataListBuilder_ == null) {
-                    ensureNormalCoolDownDataListIsMutable();
-                    this.normalCoolDownDataList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    this.normalCoolDownDataListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addNormalCoolDownDataList(int index, WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
-                if (this.normalCoolDownDataListBuilder_ == null) {
-                    ensureNormalCoolDownDataListIsMutable();
-                    this.normalCoolDownDataList_.add(index, builderForValue.build());
+            public Builder addCoolDownGroupDataList(WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
+                if (this.coolDownGroupDataListBuilder_ == null) {
+                    ensureCoolDownGroupDataListIsMutable();
+                    this.coolDownGroupDataList_.add(builderForValue.build());
                     onChanged();
                 } else {
-                    this.normalCoolDownDataListBuilder_.addMessage(index, builderForValue.build());
+                    this.coolDownGroupDataListBuilder_.addMessage(builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder addAllNormalCoolDownDataList(Iterable<? extends WidgetCoolDownDataOuterClass.WidgetCoolDownData> values) {
-                if (this.normalCoolDownDataListBuilder_ == null) {
-                    ensureNormalCoolDownDataListIsMutable();
-                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.normalCoolDownDataList_);
+            public Builder addCoolDownGroupDataList(int index, WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
+                if (this.coolDownGroupDataListBuilder_ == null) {
+                    ensureCoolDownGroupDataListIsMutable();
+                    this.coolDownGroupDataList_.add(index, builderForValue.build());
                     onChanged();
                 } else {
-                    this.normalCoolDownDataListBuilder_.addAllMessages(values);
+                    this.coolDownGroupDataListBuilder_.addMessage(index, builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder clearNormalCoolDownDataList() {
-                if (this.normalCoolDownDataListBuilder_ == null) {
-                    this.normalCoolDownDataList_ = Collections.emptyList();
+            public Builder addAllCoolDownGroupDataList(Iterable<? extends WidgetCoolDownDataOuterClass.WidgetCoolDownData> values) {
+                if (this.coolDownGroupDataListBuilder_ == null) {
+                    ensureCoolDownGroupDataListIsMutable();
+                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.coolDownGroupDataList_);
+                    onChanged();
+                } else {
+                    this.coolDownGroupDataListBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            public Builder clearCoolDownGroupDataList() {
+                if (this.coolDownGroupDataListBuilder_ == null) {
+                    this.coolDownGroupDataList_ = Collections.emptyList();
                     this.bitField0_ &= -33;
                     onChanged();
                 } else {
-                    this.normalCoolDownDataListBuilder_.clear();
+                    this.coolDownGroupDataListBuilder_.clear();
                 }
                 return this;
             }
 
-            public Builder removeNormalCoolDownDataList(int index) {
-                if (this.normalCoolDownDataListBuilder_ == null) {
-                    ensureNormalCoolDownDataListIsMutable();
-                    this.normalCoolDownDataList_.remove(index);
+            public Builder removeCoolDownGroupDataList(int index) {
+                if (this.coolDownGroupDataListBuilder_ == null) {
+                    ensureCoolDownGroupDataListIsMutable();
+                    this.coolDownGroupDataList_.remove(index);
                     onChanged();
                 } else {
-                    this.normalCoolDownDataListBuilder_.remove(index);
+                    this.coolDownGroupDataListBuilder_.remove(index);
                 }
                 return this;
             }
 
-            public WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder getNormalCoolDownDataListBuilder(int index) {
-                return getNormalCoolDownDataListFieldBuilder().getBuilder(index);
+            public WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder getCoolDownGroupDataListBuilder(int index) {
+                return getCoolDownGroupDataListFieldBuilder().getBuilder(index);
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getNormalCoolDownDataListOrBuilder(int index) {
-                if (this.normalCoolDownDataListBuilder_ == null) {
-                    return this.normalCoolDownDataList_.get(index);
+            public WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getCoolDownGroupDataListOrBuilder(int index) {
+                if (this.coolDownGroupDataListBuilder_ == null) {
+                    return this.coolDownGroupDataList_.get(index);
                 }
-                return this.normalCoolDownDataListBuilder_.getMessageOrBuilder(index);
+                return this.coolDownGroupDataListBuilder_.getMessageOrBuilder(index);
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public List<? extends WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> getNormalCoolDownDataListOrBuilderList() {
-                if (this.normalCoolDownDataListBuilder_ != null) {
-                    return this.normalCoolDownDataListBuilder_.getMessageOrBuilderList();
+            public List<? extends WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> getCoolDownGroupDataListOrBuilderList() {
+                if (this.coolDownGroupDataListBuilder_ != null) {
+                    return this.coolDownGroupDataListBuilder_.getMessageOrBuilderList();
                 }
-                return Collections.unmodifiableList(this.normalCoolDownDataList_);
+                return Collections.unmodifiableList(this.coolDownGroupDataList_);
             }
 
-            public WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addNormalCoolDownDataListBuilder() {
-                return getNormalCoolDownDataListFieldBuilder().addBuilder(WidgetCoolDownDataOuterClass.WidgetCoolDownData.getDefaultInstance());
+            public WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addCoolDownGroupDataListBuilder() {
+                return getCoolDownGroupDataListFieldBuilder().addBuilder(WidgetCoolDownDataOuterClass.WidgetCoolDownData.getDefaultInstance());
             }
 
-            public WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addNormalCoolDownDataListBuilder(int index) {
-                return getNormalCoolDownDataListFieldBuilder().addBuilder(index, WidgetCoolDownDataOuterClass.WidgetCoolDownData.getDefaultInstance());
+            public WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addCoolDownGroupDataListBuilder(int index) {
+                return getCoolDownGroupDataListFieldBuilder().addBuilder(index, WidgetCoolDownDataOuterClass.WidgetCoolDownData.getDefaultInstance());
             }
 
-            public List<WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder> getNormalCoolDownDataListBuilderList() {
-                return getNormalCoolDownDataListFieldBuilder().getBuilderList();
+            public List<WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder> getCoolDownGroupDataListBuilderList() {
+                return getCoolDownGroupDataListFieldBuilder().getBuilderList();
             }
 
-            private RepeatedFieldBuilderV3<WidgetCoolDownDataOuterClass.WidgetCoolDownData, WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> getNormalCoolDownDataListFieldBuilder() {
-                if (this.normalCoolDownDataListBuilder_ == null) {
-                    this.normalCoolDownDataListBuilder_ = new RepeatedFieldBuilderV3<>(this.normalCoolDownDataList_, (this.bitField0_ & 32) != 0, getParentForChildren(), isClean());
-                    this.normalCoolDownDataList_ = null;
+            private RepeatedFieldBuilderV3<WidgetCoolDownDataOuterClass.WidgetCoolDownData, WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> getCoolDownGroupDataListFieldBuilder() {
+                if (this.coolDownGroupDataListBuilder_ == null) {
+                    this.coolDownGroupDataListBuilder_ = new RepeatedFieldBuilderV3<>(this.coolDownGroupDataList_, (this.bitField0_ & 32) != 0, getParentForChildren(), isClean());
+                    this.coolDownGroupDataList_ = null;
                 }
-                return this.normalCoolDownDataListBuilder_;
+                return this.coolDownGroupDataListBuilder_;
             }
 
-            private void ensureAnchorPointListIsMutable() {
+            private void ensureOneoffGatherPointDetectorDataListIsMutable() {
                 if ((this.bitField0_ & 64) == 0) {
-                    this.anchorPointList_ = new ArrayList(this.anchorPointList_);
+                    this.oneoffGatherPointDetectorDataList_ = new ArrayList(this.oneoffGatherPointDetectorDataList_);
                     this.bitField0_ |= 64;
                 }
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public List<AnchorPointDataOuterClass.AnchorPointData> getAnchorPointListList() {
-                if (this.anchorPointListBuilder_ == null) {
-                    return Collections.unmodifiableList(this.anchorPointList_);
+            public List<DetectorDataOuterClass.DetectorData> getOneoffGatherPointDetectorDataListList() {
+                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
+                    return Collections.unmodifiableList(this.oneoffGatherPointDetectorDataList_);
                 }
-                return this.anchorPointListBuilder_.getMessageList();
+                return this.oneoffGatherPointDetectorDataListBuilder_.getMessageList();
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public int getAnchorPointListCount() {
-                if (this.anchorPointListBuilder_ == null) {
-                    return this.anchorPointList_.size();
+            public int getOneoffGatherPointDetectorDataListCount() {
+                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
+                    return this.oneoffGatherPointDetectorDataList_.size();
                 }
-                return this.anchorPointListBuilder_.getCount();
+                return this.oneoffGatherPointDetectorDataListBuilder_.getCount();
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public AnchorPointDataOuterClass.AnchorPointData getAnchorPointList(int index) {
-                if (this.anchorPointListBuilder_ == null) {
-                    return this.anchorPointList_.get(index);
+            public DetectorDataOuterClass.DetectorData getOneoffGatherPointDetectorDataList(int index) {
+                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
+                    return this.oneoffGatherPointDetectorDataList_.get(index);
                 }
-                return this.anchorPointListBuilder_.getMessage(index);
+                return this.oneoffGatherPointDetectorDataListBuilder_.getMessage(index);
             }
 
-            public Builder setAnchorPointList(int index, AnchorPointDataOuterClass.AnchorPointData value) {
-                if (this.anchorPointListBuilder_ != null) {
-                    this.anchorPointListBuilder_.setMessage(index, value);
+            public Builder setOneoffGatherPointDetectorDataList(int index, DetectorDataOuterClass.DetectorData value) {
+                if (this.oneoffGatherPointDetectorDataListBuilder_ != null) {
+                    this.oneoffGatherPointDetectorDataListBuilder_.setMessage(index, value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureAnchorPointListIsMutable();
-                    this.anchorPointList_.set(index, value);
+                    ensureOneoffGatherPointDetectorDataListIsMutable();
+                    this.oneoffGatherPointDetectorDataList_.set(index, value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder setAnchorPointList(int index, AnchorPointDataOuterClass.AnchorPointData.Builder builderForValue) {
-                if (this.anchorPointListBuilder_ == null) {
-                    ensureAnchorPointListIsMutable();
-                    this.anchorPointList_.set(index, builderForValue.build());
+            public Builder setOneoffGatherPointDetectorDataList(int index, DetectorDataOuterClass.DetectorData.Builder builderForValue) {
+                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
+                    ensureOneoffGatherPointDetectorDataListIsMutable();
+                    this.oneoffGatherPointDetectorDataList_.set(index, builderForValue.build());
                     onChanged();
                 } else {
-                    this.anchorPointListBuilder_.setMessage(index, builderForValue.build());
+                    this.oneoffGatherPointDetectorDataListBuilder_.setMessage(index, builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder addAnchorPointList(AnchorPointDataOuterClass.AnchorPointData value) {
-                if (this.anchorPointListBuilder_ != null) {
-                    this.anchorPointListBuilder_.addMessage(value);
+            public Builder addOneoffGatherPointDetectorDataList(DetectorDataOuterClass.DetectorData value) {
+                if (this.oneoffGatherPointDetectorDataListBuilder_ != null) {
+                    this.oneoffGatherPointDetectorDataListBuilder_.addMessage(value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureAnchorPointListIsMutable();
-                    this.anchorPointList_.add(value);
+                    ensureOneoffGatherPointDetectorDataListIsMutable();
+                    this.oneoffGatherPointDetectorDataList_.add(value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder addAnchorPointList(int index, AnchorPointDataOuterClass.AnchorPointData value) {
-                if (this.anchorPointListBuilder_ != null) {
-                    this.anchorPointListBuilder_.addMessage(index, value);
+            public Builder addOneoffGatherPointDetectorDataList(int index, DetectorDataOuterClass.DetectorData value) {
+                if (this.oneoffGatherPointDetectorDataListBuilder_ != null) {
+                    this.oneoffGatherPointDetectorDataListBuilder_.addMessage(index, value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureAnchorPointListIsMutable();
-                    this.anchorPointList_.add(index, value);
+                    ensureOneoffGatherPointDetectorDataListIsMutable();
+                    this.oneoffGatherPointDetectorDataList_.add(index, value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder addAnchorPointList(AnchorPointDataOuterClass.AnchorPointData.Builder builderForValue) {
-                if (this.anchorPointListBuilder_ == null) {
-                    ensureAnchorPointListIsMutable();
-                    this.anchorPointList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    this.anchorPointListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addAnchorPointList(int index, AnchorPointDataOuterClass.AnchorPointData.Builder builderForValue) {
-                if (this.anchorPointListBuilder_ == null) {
-                    ensureAnchorPointListIsMutable();
-                    this.anchorPointList_.add(index, builderForValue.build());
+            public Builder addOneoffGatherPointDetectorDataList(DetectorDataOuterClass.DetectorData.Builder builderForValue) {
+                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
+                    ensureOneoffGatherPointDetectorDataListIsMutable();
+                    this.oneoffGatherPointDetectorDataList_.add(builderForValue.build());
                     onChanged();
                 } else {
-                    this.anchorPointListBuilder_.addMessage(index, builderForValue.build());
+                    this.oneoffGatherPointDetectorDataListBuilder_.addMessage(builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder addAllAnchorPointList(Iterable<? extends AnchorPointDataOuterClass.AnchorPointData> values) {
-                if (this.anchorPointListBuilder_ == null) {
-                    ensureAnchorPointListIsMutable();
-                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.anchorPointList_);
+            public Builder addOneoffGatherPointDetectorDataList(int index, DetectorDataOuterClass.DetectorData.Builder builderForValue) {
+                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
+                    ensureOneoffGatherPointDetectorDataListIsMutable();
+                    this.oneoffGatherPointDetectorDataList_.add(index, builderForValue.build());
                     onChanged();
                 } else {
-                    this.anchorPointListBuilder_.addAllMessages(values);
+                    this.oneoffGatherPointDetectorDataListBuilder_.addMessage(index, builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder clearAnchorPointList() {
-                if (this.anchorPointListBuilder_ == null) {
-                    this.anchorPointList_ = Collections.emptyList();
+            public Builder addAllOneoffGatherPointDetectorDataList(Iterable<? extends DetectorDataOuterClass.DetectorData> values) {
+                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
+                    ensureOneoffGatherPointDetectorDataListIsMutable();
+                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.oneoffGatherPointDetectorDataList_);
+                    onChanged();
+                } else {
+                    this.oneoffGatherPointDetectorDataListBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            public Builder clearOneoffGatherPointDetectorDataList() {
+                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
+                    this.oneoffGatherPointDetectorDataList_ = Collections.emptyList();
                     this.bitField0_ &= -65;
                     onChanged();
                 } else {
-                    this.anchorPointListBuilder_.clear();
+                    this.oneoffGatherPointDetectorDataListBuilder_.clear();
                 }
                 return this;
             }
 
-            public Builder removeAnchorPointList(int index) {
-                if (this.anchorPointListBuilder_ == null) {
-                    ensureAnchorPointListIsMutable();
-                    this.anchorPointList_.remove(index);
+            public Builder removeOneoffGatherPointDetectorDataList(int index) {
+                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
+                    ensureOneoffGatherPointDetectorDataListIsMutable();
+                    this.oneoffGatherPointDetectorDataList_.remove(index);
                     onChanged();
                 } else {
-                    this.anchorPointListBuilder_.remove(index);
+                    this.oneoffGatherPointDetectorDataListBuilder_.remove(index);
                 }
                 return this;
             }
 
-            public AnchorPointDataOuterClass.AnchorPointData.Builder getAnchorPointListBuilder(int index) {
-                return getAnchorPointListFieldBuilder().getBuilder(index);
+            public DetectorDataOuterClass.DetectorData.Builder getOneoffGatherPointDetectorDataListBuilder(int index) {
+                return getOneoffGatherPointDetectorDataListFieldBuilder().getBuilder(index);
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public AnchorPointDataOuterClass.AnchorPointDataOrBuilder getAnchorPointListOrBuilder(int index) {
-                if (this.anchorPointListBuilder_ == null) {
-                    return this.anchorPointList_.get(index);
+            public DetectorDataOuterClass.DetectorDataOrBuilder getOneoffGatherPointDetectorDataListOrBuilder(int index) {
+                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
+                    return this.oneoffGatherPointDetectorDataList_.get(index);
                 }
-                return this.anchorPointListBuilder_.getMessageOrBuilder(index);
+                return this.oneoffGatherPointDetectorDataListBuilder_.getMessageOrBuilder(index);
             }
 
             @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
-            public List<? extends AnchorPointDataOuterClass.AnchorPointDataOrBuilder> getAnchorPointListOrBuilderList() {
-                if (this.anchorPointListBuilder_ != null) {
-                    return this.anchorPointListBuilder_.getMessageOrBuilderList();
+            public List<? extends DetectorDataOuterClass.DetectorDataOrBuilder> getOneoffGatherPointDetectorDataListOrBuilderList() {
+                if (this.oneoffGatherPointDetectorDataListBuilder_ != null) {
+                    return this.oneoffGatherPointDetectorDataListBuilder_.getMessageOrBuilderList();
                 }
-                return Collections.unmodifiableList(this.anchorPointList_);
+                return Collections.unmodifiableList(this.oneoffGatherPointDetectorDataList_);
             }
 
-            public AnchorPointDataOuterClass.AnchorPointData.Builder addAnchorPointListBuilder() {
-                return getAnchorPointListFieldBuilder().addBuilder(AnchorPointDataOuterClass.AnchorPointData.getDefaultInstance());
+            public DetectorDataOuterClass.DetectorData.Builder addOneoffGatherPointDetectorDataListBuilder() {
+                return getOneoffGatherPointDetectorDataListFieldBuilder().addBuilder(DetectorDataOuterClass.DetectorData.getDefaultInstance());
             }
 
-            public AnchorPointDataOuterClass.AnchorPointData.Builder addAnchorPointListBuilder(int index) {
-                return getAnchorPointListFieldBuilder().addBuilder(index, AnchorPointDataOuterClass.AnchorPointData.getDefaultInstance());
+            public DetectorDataOuterClass.DetectorData.Builder addOneoffGatherPointDetectorDataListBuilder(int index) {
+                return getOneoffGatherPointDetectorDataListFieldBuilder().addBuilder(index, DetectorDataOuterClass.DetectorData.getDefaultInstance());
             }
 
-            public List<AnchorPointDataOuterClass.AnchorPointData.Builder> getAnchorPointListBuilderList() {
-                return getAnchorPointListFieldBuilder().getBuilderList();
+            public List<DetectorDataOuterClass.DetectorData.Builder> getOneoffGatherPointDetectorDataListBuilderList() {
+                return getOneoffGatherPointDetectorDataListFieldBuilder().getBuilderList();
             }
 
-            private RepeatedFieldBuilderV3<AnchorPointDataOuterClass.AnchorPointData, AnchorPointDataOuterClass.AnchorPointData.Builder, AnchorPointDataOuterClass.AnchorPointDataOrBuilder> getAnchorPointListFieldBuilder() {
-                if (this.anchorPointListBuilder_ == null) {
-                    this.anchorPointListBuilder_ = new RepeatedFieldBuilderV3<>(this.anchorPointList_, (this.bitField0_ & 64) != 0, getParentForChildren(), isClean());
-                    this.anchorPointList_ = null;
+            private RepeatedFieldBuilderV3<DetectorDataOuterClass.DetectorData, DetectorDataOuterClass.DetectorData.Builder, DetectorDataOuterClass.DetectorDataOrBuilder> getOneoffGatherPointDetectorDataListFieldBuilder() {
+                if (this.oneoffGatherPointDetectorDataListBuilder_ == null) {
+                    this.oneoffGatherPointDetectorDataListBuilder_ = new RepeatedFieldBuilderV3<>(this.oneoffGatherPointDetectorDataList_, (this.bitField0_ & 64) != 0, getParentForChildren(), isClean());
+                    this.oneoffGatherPointDetectorDataList_ = null;
                 }
-                return this.anchorPointListBuilder_;
+                return this.oneoffGatherPointDetectorDataListBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
+            public boolean hasLunchBoxData() {
+                return (this.lunchBoxDataBuilder_ == null && this.lunchBoxData_ == null) ? false : true;
+            }
+
+            @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
+            public LunchBoxDataOuterClass.LunchBoxData getLunchBoxData() {
+                if (this.lunchBoxDataBuilder_ == null) {
+                    return this.lunchBoxData_ == null ? LunchBoxDataOuterClass.LunchBoxData.getDefaultInstance() : this.lunchBoxData_;
+                }
+                return this.lunchBoxDataBuilder_.getMessage();
+            }
+
+            public Builder setLunchBoxData(LunchBoxDataOuterClass.LunchBoxData value) {
+                if (this.lunchBoxDataBuilder_ != null) {
+                    this.lunchBoxDataBuilder_.setMessage(value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    this.lunchBoxData_ = value;
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder setLunchBoxData(LunchBoxDataOuterClass.LunchBoxData.Builder builderForValue) {
+                if (this.lunchBoxDataBuilder_ == null) {
+                    this.lunchBoxData_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    this.lunchBoxDataBuilder_.setMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder mergeLunchBoxData(LunchBoxDataOuterClass.LunchBoxData value) {
+                if (this.lunchBoxDataBuilder_ == null) {
+                    if (this.lunchBoxData_ != null) {
+                        this.lunchBoxData_ = LunchBoxDataOuterClass.LunchBoxData.newBuilder(this.lunchBoxData_).mergeFrom(value).buildPartial();
+                    } else {
+                        this.lunchBoxData_ = value;
+                    }
+                    onChanged();
+                } else {
+                    this.lunchBoxDataBuilder_.mergeFrom(value);
+                }
+                return this;
+            }
+
+            public Builder clearLunchBoxData() {
+                if (this.lunchBoxDataBuilder_ == null) {
+                    this.lunchBoxData_ = null;
+                    onChanged();
+                } else {
+                    this.lunchBoxData_ = null;
+                    this.lunchBoxDataBuilder_ = null;
+                }
+                return this;
+            }
+
+            public LunchBoxDataOuterClass.LunchBoxData.Builder getLunchBoxDataBuilder() {
+                onChanged();
+                return getLunchBoxDataFieldBuilder().getBuilder();
+            }
+
+            @Override // emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotifyOrBuilder
+            public LunchBoxDataOuterClass.LunchBoxDataOrBuilder getLunchBoxDataOrBuilder() {
+                if (this.lunchBoxDataBuilder_ != null) {
+                    return this.lunchBoxDataBuilder_.getMessageOrBuilder();
+                }
+                return this.lunchBoxData_ == null ? LunchBoxDataOuterClass.LunchBoxData.getDefaultInstance() : this.lunchBoxData_;
+            }
+
+            private SingleFieldBuilderV3<LunchBoxDataOuterClass.LunchBoxData, LunchBoxDataOuterClass.LunchBoxData.Builder, LunchBoxDataOuterClass.LunchBoxDataOrBuilder> getLunchBoxDataFieldBuilder() {
+                if (this.lunchBoxDataBuilder_ == null) {
+                    this.lunchBoxDataBuilder_ = new SingleFieldBuilderV3<>(getLunchBoxData(), getParentForChildren(), isClean());
+                    this.lunchBoxData_ = null;
+                }
+                return this.lunchBoxDataBuilder_;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
@@ -2670,13 +2671,13 @@ public final class AllWidgetDataNotifyOuterClass {
     }
 
     static {
-        AnchorPointDataOuterClass.getDescriptor();
-        ClientCollectorDataOuterClass.getDescriptor();
-        LunchBoxDataOuterClass.getDescriptor();
-        OneoffGatherPointDetectorDataOuterClass.getDescriptor();
         SkyCrystalDetectorDataOuterClass.getDescriptor();
         WeatherWizardDataOuterClass.getDescriptor();
+        LunchBoxDataOuterClass.getDescriptor();
         WidgetCoolDownDataOuterClass.getDescriptor();
         WidgetSlotDataOuterClass.getDescriptor();
+        AnchorPointDataOuterClass.getDescriptor();
+        ClientCollectorDataOuterClass.getDescriptor();
+        DetectorDataOuterClass.getDescriptor();
     }
 }

@@ -22,7 +22,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityMoveInfoOuterClass.class */
 public final class EntityMoveInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014EntityMoveInfo.proto\u001a\u0010MotionInfo.proto\"\u0001\n\u000eEntityMoveInfo\u0012\u0011\n\tentity_id\u0018\u0001 \u0001(\r\u0012 \n\u000bmotion_info\u0018\u0002 \u0001(\u000b2\u000b.MotionInfo\u0012\u0012\n\nscene_time\u0018\u0003 \u0001(\r\u0012\u0014\n\freliable_seq\u0018\u0004 \u0001(\r\u0012\u0013\n\u000bis_reliable\u0018\u0005 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MotionInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014EntityMoveInfo.proto\u001a\u0010MotionInfo.proto\"\n\u000eEntityMoveInfo\u0012\u0010\n\bentityId\u0018\u0001 \u0001(\r\u0012\u001f\n\nmotionInfo\u0018\u0002 \u0001(\u000b2\u000b.MotionInfo\u0012\u0011\n\tsceneTime\u0018\u0003 \u0001(\r\u0012\u0013\n\u000breliableSeq\u0018\u0004 \u0001(\r\u0012\u0012\n\nisReliable\u0018\u0005 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MotionInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_EntityMoveInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_EntityMoveInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EntityMoveInfo_descriptor, new String[]{"EntityId", "MotionInfo", "SceneTime", "ReliableSeq", "IsReliable"});
 
@@ -56,15 +56,15 @@ public final class EntityMoveInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityMoveInfoOuterClass$EntityMoveInfo.class */
     public static final class EntityMoveInfo extends GeneratedMessageV3 implements EntityMoveInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTITY_ID_FIELD_NUMBER = 1;
+        public static final int ENTITYID_FIELD_NUMBER = 1;
         private int entityId_;
-        public static final int MOTION_INFO_FIELD_NUMBER = 2;
+        public static final int MOTIONINFO_FIELD_NUMBER = 2;
         private MotionInfoOuterClass.MotionInfo motionInfo_;
-        public static final int SCENE_TIME_FIELD_NUMBER = 3;
+        public static final int SCENETIME_FIELD_NUMBER = 3;
         private int sceneTime_;
-        public static final int RELIABLE_SEQ_FIELD_NUMBER = 4;
+        public static final int RELIABLESEQ_FIELD_NUMBER = 4;
         private int reliableSeq_;
-        public static final int IS_RELIABLE_FIELD_NUMBER = 5;
+        public static final int ISRELIABLE_FIELD_NUMBER = 5;
         private boolean isReliable_;
         private byte memoizedIsInitialized;
         private static final EntityMoveInfo DEFAULT_INSTANCE = new EntityMoveInfo();

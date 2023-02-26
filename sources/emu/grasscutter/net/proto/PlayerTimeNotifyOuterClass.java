@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerTimeNotifyOuterClass.class */
 public final class PlayerTimeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016PlayerTimeNotify.proto\"O\n\u0010PlayerTimeNotify\u0012\u0011\n\tis_paused\u0018\f \u0001(\b\u0012\u0013\n\u000bplayer_time\u0018\u000b \u0001(\u0004\u0012\u0013\n\u000bserver_time\u0018\u0005 \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016PlayerTimeNotify.proto\"L\n\u0010PlayerTimeNotify\u0012\u0012\n\nplayerTime\u0018\r \u0001(\u0004\u0012\u0012\n\nserverTime\u0018\u000f \u0001(\u0004\u0012\u0010\n\bisPaused\u0018\u0007 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PlayerTimeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerTimeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerTimeNotify_descriptor, new String[]{"IsPaused", "PlayerTime", "ServerTime"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerTimeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerTimeNotify_descriptor, new String[]{"PlayerTime", "ServerTime", "IsPaused"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerTimeNotifyOuterClass$PlayerTimeNotifyOrBuilder.class */
     public interface PlayerTimeNotifyOrBuilder extends MessageOrBuilder {
-        boolean getIsPaused();
-
         long getPlayerTime();
 
         long getServerTime();
+
+        boolean getIsPaused();
     }
 
     private PlayerTimeNotifyOuterClass() {
@@ -46,12 +46,12 @@ public final class PlayerTimeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerTimeNotifyOuterClass$PlayerTimeNotify.class */
     public static final class PlayerTimeNotify extends GeneratedMessageV3 implements PlayerTimeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_PAUSED_FIELD_NUMBER = 12;
-        private boolean isPaused_;
-        public static final int PLAYER_TIME_FIELD_NUMBER = 11;
+        public static final int PLAYERTIME_FIELD_NUMBER = 13;
         private long playerTime_;
-        public static final int SERVER_TIME_FIELD_NUMBER = 5;
+        public static final int SERVERTIME_FIELD_NUMBER = 15;
         private long serverTime_;
+        public static final int ISPAUSED_FIELD_NUMBER = 7;
+        private boolean isPaused_;
         private byte memoizedIsInitialized;
         private static final PlayerTimeNotify DEFAULT_INSTANCE = new PlayerTimeNotify();
         private static final Parser<PlayerTimeNotify> PARSER = new AbstractParser<PlayerTimeNotify>() { // from class: emu.grasscutter.net.proto.PlayerTimeNotifyOuterClass.PlayerTimeNotify.1
@@ -98,14 +98,14 @@ public final class PlayerTimeNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 40:
-                                    this.serverTime_ = input.readUInt64();
+                                case 56:
+                                    this.isPaused_ = input.readBool();
                                     break;
-                                case 88:
+                                case 104:
                                     this.playerTime_ = input.readUInt64();
                                     break;
-                                case 96:
-                                    this.isPaused_ = input.readBool();
+                                case 120:
+                                    this.serverTime_ = input.readUInt64();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -138,11 +138,6 @@ public final class PlayerTimeNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PlayerTimeNotifyOuterClass.PlayerTimeNotifyOrBuilder
-        public boolean getIsPaused() {
-            return this.isPaused_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerTimeNotifyOuterClass.PlayerTimeNotifyOrBuilder
         public long getPlayerTime() {
             return this.playerTime_;
         }
@@ -150,6 +145,11 @@ public final class PlayerTimeNotifyOuterClass {
         @Override // emu.grasscutter.net.proto.PlayerTimeNotifyOuterClass.PlayerTimeNotifyOrBuilder
         public long getServerTime() {
             return this.serverTime_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerTimeNotifyOuterClass.PlayerTimeNotifyOrBuilder
+        public boolean getIsPaused() {
+            return this.isPaused_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,14 +167,14 @@ public final class PlayerTimeNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.serverTime_ != 0) {
-                output.writeUInt64(5, this.serverTime_);
+            if (this.isPaused_) {
+                output.writeBool(7, this.isPaused_);
             }
             if (this.playerTime_ != 0) {
-                output.writeUInt64(11, this.playerTime_);
+                output.writeUInt64(13, this.playerTime_);
             }
-            if (this.isPaused_) {
-                output.writeBool(12, this.isPaused_);
+            if (this.serverTime_ != 0) {
+                output.writeUInt64(15, this.serverTime_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class PlayerTimeNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.serverTime_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(5, this.serverTime_);
+            if (this.isPaused_) {
+                size2 = 0 + CodedOutputStream.computeBoolSize(7, this.isPaused_);
             }
             if (this.playerTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(11, this.playerTime_);
+                size2 += CodedOutputStream.computeUInt64Size(13, this.playerTime_);
             }
-            if (this.isPaused_) {
-                size2 += CodedOutputStream.computeBoolSize(12, this.isPaused_);
+            if (this.serverTime_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(15, this.serverTime_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class PlayerTimeNotifyOuterClass {
                 return equals(obj);
             }
             PlayerTimeNotify other = (PlayerTimeNotify) obj;
-            return getIsPaused() == other.getIsPaused() && getPlayerTime() == other.getPlayerTime() && getServerTime() == other.getServerTime() && this.unknownFields.equals(other.unknownFields);
+            return getPlayerTime() == other.getPlayerTime() && getServerTime() == other.getServerTime() && getIsPaused() == other.getIsPaused() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class PlayerTimeNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + Internal.hashBoolean(getIsPaused()))) + 11)) + Internal.hashLong(getPlayerTime()))) + 5)) + Internal.hashLong(getServerTime()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + Internal.hashLong(getPlayerTime()))) + 15)) + Internal.hashLong(getServerTime()))) + 7)) + Internal.hashBoolean(getIsPaused()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -296,9 +296,9 @@ public final class PlayerTimeNotifyOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerTimeNotifyOuterClass$PlayerTimeNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements PlayerTimeNotifyOrBuilder {
-            private boolean isPaused_;
             private long playerTime_;
             private long serverTime_;
+            private boolean isPaused_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return PlayerTimeNotifyOuterClass.internal_static_PlayerTimeNotify_descriptor;
@@ -326,9 +326,9 @@ public final class PlayerTimeNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.isPaused_ = false;
                 this.playerTime_ = 0;
                 this.serverTime_ = 0;
+                this.isPaused_ = false;
                 return this;
             }
 
@@ -354,9 +354,9 @@ public final class PlayerTimeNotifyOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public PlayerTimeNotify buildPartial() {
                 PlayerTimeNotify result = new PlayerTimeNotify(this);
-                result.isPaused_ = this.isPaused_;
                 result.playerTime_ = this.playerTime_;
                 result.serverTime_ = this.serverTime_;
+                result.isPaused_ = this.isPaused_;
                 onBuilt();
                 return result;
             }
@@ -404,14 +404,14 @@ public final class PlayerTimeNotifyOuterClass {
                 if (other == PlayerTimeNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getIsPaused()) {
-                    setIsPaused(other.getIsPaused());
-                }
                 if (other.getPlayerTime() != 0) {
                     setPlayerTime(other.getPlayerTime());
                 }
                 if (other.getServerTime() != 0) {
                     setServerTime(other.getServerTime());
+                }
+                if (other.getIsPaused()) {
+                    setIsPaused(other.getIsPaused());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -446,23 +446,6 @@ public final class PlayerTimeNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.PlayerTimeNotifyOuterClass.PlayerTimeNotifyOrBuilder
-            public boolean getIsPaused() {
-                return this.isPaused_;
-            }
-
-            public Builder setIsPaused(boolean value) {
-                this.isPaused_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsPaused() {
-                this.isPaused_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerTimeNotifyOuterClass.PlayerTimeNotifyOrBuilder
             public long getPlayerTime() {
                 return this.playerTime_;
             }
@@ -492,6 +475,23 @@ public final class PlayerTimeNotifyOuterClass {
 
             public Builder clearServerTime() {
                 this.serverTime_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerTimeNotifyOuterClass.PlayerTimeNotifyOrBuilder
+            public boolean getIsPaused() {
+                return this.isPaused_;
+            }
+
+            public Builder setIsPaused(boolean value) {
+                this.isPaused_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsPaused() {
+                this.isPaused_ = false;
                 onChanged();
                 return this;
             }

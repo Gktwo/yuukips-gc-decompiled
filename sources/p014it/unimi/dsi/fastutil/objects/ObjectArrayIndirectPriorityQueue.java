@@ -13,7 +13,7 @@ public class ObjectArrayIndirectPriorityQueue<K> implements IndirectPriorityQueu
     protected int size;
 
     /* renamed from: c */
-    protected Comparator<? super K> f2681c;
+    protected Comparator<? super K> f2645c;
     protected int firstIndex;
     protected boolean firstIndexValid;
 
@@ -23,7 +23,7 @@ public class ObjectArrayIndirectPriorityQueue<K> implements IndirectPriorityQueu
             this.array = new int[capacity];
         }
         this.refArray = refArray;
-        this.f2681c = c;
+        this.f2645c = c;
     }
 
     public ObjectArrayIndirectPriorityQueue(K[] refArray, int capacity) {
@@ -64,12 +64,12 @@ public class ObjectArrayIndirectPriorityQueue<K> implements IndirectPriorityQueu
         int i = this.size - 1;
         int firstIndex = i;
         K first = this.refArray[this.array[firstIndex]];
-        if (this.f2681c != null) {
+        if (this.f2645c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f2681c.compare((Object) this.refArray[this.array[i]], first) < 0) {
+                } else if (this.f2645c.compare((Object) this.refArray[this.array[i]], first) < 0) {
                     firstIndex = i;
                     first = this.refArray[this.array[i]];
                 }
@@ -93,12 +93,12 @@ public class ObjectArrayIndirectPriorityQueue<K> implements IndirectPriorityQueu
         int i = this.size - 1;
         int lastIndex = i;
         K last = this.refArray[this.array[lastIndex]];
-        if (this.f2681c != null) {
+        if (this.f2645c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f2681c.compare(last, (Object) this.refArray[this.array[i]]) < 0) {
+                } else if (this.f2645c.compare(last, (Object) this.refArray[this.array[i]]) < 0) {
                     lastIndex = i;
                     last = this.refArray[this.array[i]];
                 }
@@ -139,11 +139,11 @@ public class ObjectArrayIndirectPriorityQueue<K> implements IndirectPriorityQueu
         }
         if (!this.firstIndexValid) {
             this.firstIndexValid = false;
-        } else if (this.f2681c == null) {
+        } else if (this.f2645c == null) {
             if (((Comparable) this.refArray[x]).compareTo(this.refArray[this.array[this.firstIndex]]) < 0) {
                 this.firstIndex = this.size;
             }
-        } else if (this.f2681c.compare((Object) this.refArray[x], (Object) this.refArray[this.array[this.firstIndex]]) < 0) {
+        } else if (this.f2645c.compare((Object) this.refArray[x], (Object) this.refArray[this.array[this.firstIndex]]) < 0) {
             this.firstIndex = this.size;
         }
         int[] iArr = this.array;
@@ -255,7 +255,7 @@ public class ObjectArrayIndirectPriorityQueue<K> implements IndirectPriorityQueu
 
     @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public Comparator<? super K> comparator() {
-        return this.f2681c;
+        return this.f2645c;
     }
 
     public String toString() {

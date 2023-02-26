@@ -26,7 +26,7 @@ final class UIntProgressionIterator extends UIntIterator {
     private UIntProgressionIterator(int first, int last, int step) {
         this.finalElement = last;
         this.hasNext = step > 0 ? UnsignedUtils.uintCompare(first, last) <= 0 : UnsignedUtils.uintCompare(first, last) >= 0;
-        this.step = UInt.m7201constructorimpl(step);
+        this.step = UInt.m7198constructorimpl(step);
         this.next = this.hasNext ? first : this.finalElement;
     }
 
@@ -37,10 +37,10 @@ final class UIntProgressionIterator extends UIntIterator {
 
     @Override // kotlin.collections.UIntIterator
     /* renamed from: nextUInt-pVg5ArA */
-    public int mo7223nextUIntpVg5ArA() {
+    public int mo7220nextUIntpVg5ArA() {
         int value = this.next;
         if (value != this.finalElement) {
-            this.next = UInt.m7201constructorimpl(this.next + this.step);
+            this.next = UInt.m7198constructorimpl(this.next + this.step);
         } else if (!this.hasNext) {
             throw new NoSuchElementException();
         } else {

@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PSPlayerApplyEnterMpReqOuterClass.class */
 public final class PSPlayerApplyEnterMpReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dPSPlayerApplyEnterMpReq.proto\"0\n\u0017PSPlayerApplyEnterMpReq\u0012\u0015\n\rtarget_psn_id\u0018\t \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dPSPlayerApplyEnterMpReq.proto\".\n\u0017PSPlayerApplyEnterMpReq\u0012\u0013\n\u000btargetPsnId\u0018\u0006 \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PSPlayerApplyEnterMpReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PSPlayerApplyEnterMpReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PSPlayerApplyEnterMpReq_descriptor, new String[]{"TargetPsnId"});
 
@@ -43,7 +43,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PSPlayerApplyEnterMpReqOuterClass$PSPlayerApplyEnterMpReq.class */
     public static final class PSPlayerApplyEnterMpReq extends GeneratedMessageV3 implements PSPlayerApplyEnterMpReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TARGET_PSN_ID_FIELD_NUMBER = 9;
+        public static final int TARGETPSNID_FIELD_NUMBER = 6;
         private volatile Object targetPsnId_;
         private byte memoizedIsInitialized;
         private static final PSPlayerApplyEnterMpReq DEFAULT_INSTANCE = new PSPlayerApplyEnterMpReq();
@@ -91,7 +91,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 74:
+                            case 50:
                                 this.targetPsnId_ = input.readStringRequireUtf8();
                                 break;
                             default:
@@ -161,7 +161,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (!GeneratedMessageV3.isStringEmpty(this.targetPsnId_)) {
-                GeneratedMessageV3.writeString(output, 9, this.targetPsnId_);
+                GeneratedMessageV3.writeString(output, 6, this.targetPsnId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -174,7 +174,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
             }
             int size2 = 0;
             if (!GeneratedMessageV3.isStringEmpty(this.targetPsnId_)) {
-                size2 = 0 + GeneratedMessageV3.computeStringSize(9, this.targetPsnId_);
+                size2 = 0 + GeneratedMessageV3.computeStringSize(6, this.targetPsnId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -198,7 +198,7 @@ public final class PSPlayerApplyEnterMpReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getTargetPsnId().hashCode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getTargetPsnId().hashCode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

@@ -24,7 +24,7 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarPropNotifyOuterClass.class */
 public final class AvatarPropNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016AvatarPropNotify.proto\"\u0001\n\u0010AvatarPropNotify\u0012\u0013\n\u000bavatar_guid\u0018\u0001 \u0001(\u0004\u00120\n\bprop_map\u0018\b \u0003(\u000b2\u001e.AvatarPropNotify.PropMapEntry\u001a.\n\fPropMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\u0003:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016AvatarPropNotify.proto\"\u0001\n\u0010AvatarPropNotify\u0012\u0012\n\navatarGuid\u0018\u000f \u0001(\u0004\u0012/\n\u0007propMap\u0018\u000b \u0003(\u000b2\u001e.AvatarPropNotify.PropMapEntry\u001a.\n\fPropMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\u0003:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AvatarPropNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarPropNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarPropNotify_descriptor, new String[]{"AvatarGuid", "PropMap"});
     private static final Descriptors.Descriptor internal_static_AvatarPropNotify_PropMapEntry_descriptor = internal_static_AvatarPropNotify_descriptor.getNestedTypes().get(0);
@@ -61,9 +61,9 @@ public final class AvatarPropNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarPropNotifyOuterClass$AvatarPropNotify.class */
     public static final class AvatarPropNotify extends GeneratedMessageV3 implements AvatarPropNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 1;
+        public static final int AVATARGUID_FIELD_NUMBER = 15;
         private long avatarGuid_;
-        public static final int PROP_MAP_FIELD_NUMBER = 8;
+        public static final int PROPMAP_FIELD_NUMBER = 11;
         private MapField<Integer, Long> propMap_;
         private byte memoizedIsInitialized;
         private static final AvatarPropNotify DEFAULT_INSTANCE = new AvatarPropNotify();
@@ -115,7 +115,7 @@ public final class AvatarPropNotifyOuterClass {
                 r4 = this;
                 r0 = r5
                 switch(r0) {
-                    case 8: goto L_0x0014;
+                    case 11: goto L_0x0014;
                     default: goto L_0x0019;
                 }
                 r0 = r4
@@ -168,16 +168,16 @@ public final class AvatarPropNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
-                                this.avatarGuid_ = input.readUInt64();
-                                break;
-                            case 66:
+                            case 90:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.propMap_ = MapField.newMapField(PropMapDefaultEntryHolder.defaultEntry);
                                     mutable_bitField0_ |= 1;
                                 }
                                 MapEntry<Integer, Long> propMap__ = (MapEntry) input.readMessage(PropMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                                 this.propMap_.getMutableMap().put(propMap__.getKey(), propMap__.getValue());
+                                break;
+                            case 120:
+                                this.avatarGuid_ = input.readUInt64();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -280,10 +280,10 @@ public final class AvatarPropNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetPropMap(), PropMapDefaultEntryHolder.defaultEntry, 11);
             if (this.avatarGuid_ != 0) {
-                output.writeUInt64(1, this.avatarGuid_);
+                output.writeUInt64(15, this.avatarGuid_);
             }
-            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetPropMap(), PropMapDefaultEntryHolder.defaultEntry, 8);
             this.unknownFields.writeTo(output);
         }
 
@@ -294,11 +294,11 @@ public final class AvatarPropNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.avatarGuid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(1, this.avatarGuid_);
-            }
             for (Map.Entry<Integer, Long> entry : internalGetPropMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(8, PropMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+                size2 += CodedOutputStream.computeMessageSize(11, PropMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+            }
+            if (this.avatarGuid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(15, this.avatarGuid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -322,9 +322,9 @@ public final class AvatarPropNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + Internal.hashLong(getAvatarGuid());
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + Internal.hashLong(getAvatarGuid());
             if (!internalGetPropMap().getMap().isEmpty()) {
-                hash = (53 * ((37 * hash) + 8)) + internalGetPropMap().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + internalGetPropMap().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -446,7 +446,7 @@ public final class AvatarPropNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 8: goto L_0x0014;
+                        case 11: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -499,7 +499,7 @@ public final class AvatarPropNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 8: goto L_0x0014;
+                        case 11: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4

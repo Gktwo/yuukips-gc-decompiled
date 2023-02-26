@@ -172,51 +172,51 @@ public final class ShortBigListIterators {
     public static class UnmodifiableBigListIterator implements ShortBigListIterator {
 
         /* renamed from: i */
-        protected final ShortBigListIterator f3041i;
+        protected final ShortBigListIterator f3005i;
 
         public UnmodifiableBigListIterator(ShortBigListIterator i) {
-            this.f3041i = i;
+            this.f3005i = i;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f3041i.hasNext();
+            return this.f3005i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f3041i.hasPrevious();
+            return this.f3005i.hasPrevious();
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
         public short nextShort() {
-            return this.f3041i.nextShort();
+            return this.f3005i.nextShort();
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortBidirectionalIterator
         public short previousShort() {
-            return this.f3041i.previousShort();
+            return this.f3005i.previousShort();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long nextIndex() {
-            return this.f3041i.nextIndex();
+            return this.f3005i.nextIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long previousIndex() {
-            return this.f3041i.previousIndex();
+            return this.f3005i.previousIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
         public void forEachRemaining(ShortConsumer action) {
-            this.f3041i.forEachRemaining(action);
+            this.f3005i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Short> action) {
-            this.f3041i.forEachRemaining(action);
+            this.f3005i.forEachRemaining(action);
         }
     }
 
@@ -229,10 +229,10 @@ public final class ShortBigListIterators {
     public static class BigListIteratorListIterator implements ShortBigListIterator {
 
         /* renamed from: i */
-        protected final ShortListIterator f3040i;
+        protected final ShortListIterator f3004i;
 
         protected BigListIteratorListIterator(ShortListIterator i) {
-            this.f3040i = i;
+            this.f3004i = i;
         }
 
         private int intDisplacement(long n) {
@@ -244,78 +244,78 @@ public final class ShortBigListIterators {
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigListIterator
         public void set(short ok) {
-            this.f3040i.set(ok);
+            this.f3004i.set(ok);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigListIterator
         public void add(short ok) {
-            this.f3040i.add(ok);
+            this.f3004i.add(ok);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator
         public int back(int n) {
-            return this.f3040i.back(n);
+            return this.f3004i.back(n);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigListIterator
         public long back(long n) {
-            return (long) this.f3040i.back(intDisplacement(n));
+            return (long) this.f3004i.back(intDisplacement(n));
         }
 
         @Override // java.util.Iterator
         public void remove() {
-            this.f3040i.remove();
+            this.f3004i.remove();
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigListIterator, p014it.unimi.dsi.fastutil.shorts.ShortBidirectionalIterator, p014it.unimi.dsi.fastutil.shorts.ShortIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectIterator
         public int skip(int n) {
-            return this.f3040i.skip(n);
+            return this.f3004i.skip(n);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortBigListIterator
         public long skip(long n) {
-            return (long) this.f3040i.skip(intDisplacement(n));
+            return (long) this.f3004i.skip(intDisplacement(n));
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f3040i.hasNext();
+            return this.f3004i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f3040i.hasPrevious();
+            return this.f3004i.hasPrevious();
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
         public short nextShort() {
-            return this.f3040i.nextShort();
+            return this.f3004i.nextShort();
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortBidirectionalIterator
         public short previousShort() {
-            return this.f3040i.previousShort();
+            return this.f3004i.previousShort();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long nextIndex() {
-            return (long) this.f3040i.nextIndex();
+            return (long) this.f3004i.nextIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long previousIndex() {
-            return (long) this.f3040i.previousIndex();
+            return (long) this.f3004i.previousIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
         public void forEachRemaining(ShortConsumer action) {
-            this.f3040i.forEachRemaining(action);
+            this.f3004i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Short> action) {
-            this.f3040i.forEachRemaining(action);
+            this.f3004i.forEachRemaining(action);
         }
     }
 

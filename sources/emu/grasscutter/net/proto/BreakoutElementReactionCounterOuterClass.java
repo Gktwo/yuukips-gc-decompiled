@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BreakoutElementReactionCounterOuterClass.class */
 public final class BreakoutElementReactionCounterOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n$BreakoutElementReactionCounter.proto\"I\n\u001eBreakoutElementReactionCounter\u0012\u0018\n\u0010element_reaction\u0018\u0001 \u0001(\r\u0012\r\n\u0005count\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n$BreakoutElementReactionCounter.proto\"D\n\u001eBreakoutElementReactionCounter\u0012\u0013\n\u000baknhdghiblg\u0018\u0001 \u0001(\r\u0012\r\n\u0005count\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_BreakoutElementReactionCounter_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_BreakoutElementReactionCounter_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f662xd8b76997 = new GeneratedMessageV3.FieldAccessorTable(internal_static_BreakoutElementReactionCounter_descriptor, new String[]{"ElementReaction", "Count"});
+    private static final GeneratedMessageV3.FieldAccessorTable f660xd8b76997 = new GeneratedMessageV3.FieldAccessorTable(internal_static_BreakoutElementReactionCounter_descriptor, new String[]{"Aknhdghiblg", "Count"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BreakoutElementReactionCounterOuterClass$BreakoutElementReactionCounterOrBuilder.class */
     public interface BreakoutElementReactionCounterOrBuilder extends MessageOrBuilder {
-        int getElementReaction();
+        int getAknhdghiblg();
 
         int getCount();
     }
@@ -45,8 +45,8 @@ public final class BreakoutElementReactionCounterOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BreakoutElementReactionCounterOuterClass$BreakoutElementReactionCounter.class */
     public static final class BreakoutElementReactionCounter extends GeneratedMessageV3 implements BreakoutElementReactionCounterOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ELEMENT_REACTION_FIELD_NUMBER = 1;
-        private int elementReaction_;
+        public static final int AKNHDGHIBLG_FIELD_NUMBER = 1;
+        private int aknhdghiblg_;
         public static final int COUNT_FIELD_NUMBER = 2;
         private int count_;
         private byte memoizedIsInitialized;
@@ -95,7 +95,7 @@ public final class BreakoutElementReactionCounterOuterClass {
                                 done = true;
                                 break;
                             case 8:
-                                this.elementReaction_ = input.readUInt32();
+                                this.aknhdghiblg_ = input.readUInt32();
                                 break;
                             case 16:
                                 this.count_ = input.readUInt32();
@@ -126,12 +126,12 @@ public final class BreakoutElementReactionCounterOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return BreakoutElementReactionCounterOuterClass.f662xd8b76997.ensureFieldAccessorsInitialized(BreakoutElementReactionCounter.class, Builder.class);
+            return BreakoutElementReactionCounterOuterClass.f660xd8b76997.ensureFieldAccessorsInitialized(BreakoutElementReactionCounter.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutElementReactionCounterOuterClass.BreakoutElementReactionCounterOrBuilder
-        public int getElementReaction() {
-            return this.elementReaction_;
+        public int getAknhdghiblg() {
+            return this.aknhdghiblg_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutElementReactionCounterOuterClass.BreakoutElementReactionCounterOrBuilder
@@ -154,8 +154,8 @@ public final class BreakoutElementReactionCounterOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.elementReaction_ != 0) {
-                output.writeUInt32(1, this.elementReaction_);
+            if (this.aknhdghiblg_ != 0) {
+                output.writeUInt32(1, this.aknhdghiblg_);
             }
             if (this.count_ != 0) {
                 output.writeUInt32(2, this.count_);
@@ -170,8 +170,8 @@ public final class BreakoutElementReactionCounterOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.elementReaction_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.elementReaction_);
+            if (this.aknhdghiblg_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.aknhdghiblg_);
             }
             if (this.count_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(2, this.count_);
@@ -190,7 +190,7 @@ public final class BreakoutElementReactionCounterOuterClass {
                 return equals(obj);
             }
             BreakoutElementReactionCounter other = (BreakoutElementReactionCounter) obj;
-            return getElementReaction() == other.getElementReaction() && getCount() == other.getCount() && this.unknownFields.equals(other.unknownFields);
+            return getAknhdghiblg() == other.getAknhdghiblg() && getCount() == other.getCount() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -198,7 +198,7 @@ public final class BreakoutElementReactionCounterOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getElementReaction())) + 2)) + getCount())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getAknhdghiblg())) + 2)) + getCount())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -277,7 +277,7 @@ public final class BreakoutElementReactionCounterOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BreakoutElementReactionCounterOuterClass$BreakoutElementReactionCounter$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements BreakoutElementReactionCounterOrBuilder {
-            private int elementReaction_;
+            private int aknhdghiblg_;
             private int count_;
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -286,7 +286,7 @@ public final class BreakoutElementReactionCounterOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return BreakoutElementReactionCounterOuterClass.f662xd8b76997.ensureFieldAccessorsInitialized(BreakoutElementReactionCounter.class, Builder.class);
+                return BreakoutElementReactionCounterOuterClass.f660xd8b76997.ensureFieldAccessorsInitialized(BreakoutElementReactionCounter.class, Builder.class);
             }
 
             private Builder() {
@@ -306,7 +306,7 @@ public final class BreakoutElementReactionCounterOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.elementReaction_ = 0;
+                this.aknhdghiblg_ = 0;
                 this.count_ = 0;
                 return this;
             }
@@ -333,7 +333,7 @@ public final class BreakoutElementReactionCounterOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public BreakoutElementReactionCounter buildPartial() {
                 BreakoutElementReactionCounter result = new BreakoutElementReactionCounter(this);
-                result.elementReaction_ = this.elementReaction_;
+                result.aknhdghiblg_ = this.aknhdghiblg_;
                 result.count_ = this.count_;
                 onBuilt();
                 return result;
@@ -382,8 +382,8 @@ public final class BreakoutElementReactionCounterOuterClass {
                 if (other == BreakoutElementReactionCounter.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getElementReaction() != 0) {
-                    setElementReaction(other.getElementReaction());
+                if (other.getAknhdghiblg() != 0) {
+                    setAknhdghiblg(other.getAknhdghiblg());
                 }
                 if (other.getCount() != 0) {
                     setCount(other.getCount());
@@ -421,18 +421,18 @@ public final class BreakoutElementReactionCounterOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutElementReactionCounterOuterClass.BreakoutElementReactionCounterOrBuilder
-            public int getElementReaction() {
-                return this.elementReaction_;
+            public int getAknhdghiblg() {
+                return this.aknhdghiblg_;
             }
 
-            public Builder setElementReaction(int value) {
-                this.elementReaction_ = value;
+            public Builder setAknhdghiblg(int value) {
+                this.aknhdghiblg_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearElementReaction() {
-                this.elementReaction_ = 0;
+            public Builder clearAknhdghiblg() {
+                this.aknhdghiblg_ = 0;
                 onChanged();
                 return this;
             }

@@ -8,9 +8,10 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 import okhttp3.HttpUrl;
 
+/* access modifiers changed from: package-private */
 @GwtCompatible(emulated = true)
 /* loaded from: grasscutter.jar:com/google/common/collect/EmptyContiguousSet.class */
-final class EmptyContiguousSet<C extends Comparable> extends ContiguousSet<C> {
+public final class EmptyContiguousSet<C extends Comparable> extends ContiguousSet<C> {
     /* JADX DEBUG: Multi-variable search result rejected for r4v0, resolved type: com.google.common.collect.EmptyContiguousSet<C extends java.lang.Comparable> */
     /* JADX WARN: Multi-variable type inference failed */
     @Override // com.google.common.collect.ContiguousSet, com.google.common.collect.ImmutableSortedSet

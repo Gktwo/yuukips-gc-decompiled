@@ -172,51 +172,51 @@ public final class ByteBigListIterators {
     public static class UnmodifiableBigListIterator implements ByteBigListIterator {
 
         /* renamed from: i */
-        protected final ByteBigListIterator f1273i;
+        protected final ByteBigListIterator f1237i;
 
         public UnmodifiableBigListIterator(ByteBigListIterator i) {
-            this.f1273i = i;
+            this.f1237i = i;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1273i.hasNext();
+            return this.f1237i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1273i.hasPrevious();
+            return this.f1237i.hasPrevious();
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
         public byte nextByte() {
-            return this.f1273i.nextByte();
+            return this.f1237i.nextByte();
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteBidirectionalIterator
         public byte previousByte() {
-            return this.f1273i.previousByte();
+            return this.f1237i.previousByte();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long nextIndex() {
-            return this.f1273i.nextIndex();
+            return this.f1237i.nextIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long previousIndex() {
-            return this.f1273i.previousIndex();
+            return this.f1237i.previousIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
         public void forEachRemaining(ByteConsumer action) {
-            this.f1273i.forEachRemaining(action);
+            this.f1237i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Byte> action) {
-            this.f1273i.forEachRemaining(action);
+            this.f1237i.forEachRemaining(action);
         }
     }
 
@@ -229,10 +229,10 @@ public final class ByteBigListIterators {
     public static class BigListIteratorListIterator implements ByteBigListIterator {
 
         /* renamed from: i */
-        protected final ByteListIterator f1272i;
+        protected final ByteListIterator f1236i;
 
         protected BigListIteratorListIterator(ByteListIterator i) {
-            this.f1272i = i;
+            this.f1236i = i;
         }
 
         private int intDisplacement(long n) {
@@ -244,78 +244,78 @@ public final class ByteBigListIterators {
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigListIterator
         public void set(byte ok) {
-            this.f1272i.set(ok);
+            this.f1236i.set(ok);
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigListIterator
         public void add(byte ok) {
-            this.f1272i.add(ok);
+            this.f1236i.add(ok);
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator
         public int back(int n) {
-            return this.f1272i.back(n);
+            return this.f1236i.back(n);
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigListIterator
         public long back(long n) {
-            return (long) this.f1272i.back(intDisplacement(n));
+            return (long) this.f1236i.back(intDisplacement(n));
         }
 
         @Override // java.util.Iterator
         public void remove() {
-            this.f1272i.remove();
+            this.f1236i.remove();
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigListIterator, p014it.unimi.dsi.fastutil.bytes.ByteBidirectionalIterator, p014it.unimi.dsi.fastutil.bytes.ByteIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectIterator
         public int skip(int n) {
-            return this.f1272i.skip(n);
+            return this.f1236i.skip(n);
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigListIterator
         public long skip(long n) {
-            return (long) this.f1272i.skip(intDisplacement(n));
+            return (long) this.f1236i.skip(intDisplacement(n));
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1272i.hasNext();
+            return this.f1236i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1272i.hasPrevious();
+            return this.f1236i.hasPrevious();
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
         public byte nextByte() {
-            return this.f1272i.nextByte();
+            return this.f1236i.nextByte();
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteBidirectionalIterator
         public byte previousByte() {
-            return this.f1272i.previousByte();
+            return this.f1236i.previousByte();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long nextIndex() {
-            return (long) this.f1272i.nextIndex();
+            return (long) this.f1236i.nextIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long previousIndex() {
-            return (long) this.f1272i.previousIndex();
+            return (long) this.f1236i.previousIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
         public void forEachRemaining(ByteConsumer action) {
-            this.f1272i.forEachRemaining(action);
+            this.f1236i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Byte> action) {
-            this.f1272i.forEachRemaining(action);
+            this.f1236i.forEachRemaining(action);
         }
     }
 

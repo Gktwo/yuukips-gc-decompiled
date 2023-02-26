@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerApplyEnterMpResultReqOuterClass.class */
 public final class PlayerApplyEnterMpResultReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!PlayerApplyEnterMpResultReq.proto\"C\n\u001bPlayerApplyEnterMpResultReq\u0012\u0011\n\tapply_uid\u0018\u0007 \u0001(\r\u0012\u0011\n\tis_agreed\u0018\f \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!PlayerApplyEnterMpResultReq.proto\"A\n\u001bPlayerApplyEnterMpResultReq\u0012\u0010\n\bapplyUid\u0018\u0004 \u0001(\r\u0012\u0010\n\bisAgreed\u0018\u0006 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PlayerApplyEnterMpResultReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerApplyEnterMpResultReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerApplyEnterMpResultReq_descriptor, new String[]{"ApplyUid", "IsAgreed"});
 
@@ -44,9 +44,9 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerApplyEnterMpResultReqOuterClass$PlayerApplyEnterMpResultReq.class */
     public static final class PlayerApplyEnterMpResultReq extends GeneratedMessageV3 implements PlayerApplyEnterMpResultReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int APPLY_UID_FIELD_NUMBER = 7;
+        public static final int APPLYUID_FIELD_NUMBER = 4;
         private int applyUid_;
-        public static final int IS_AGREED_FIELD_NUMBER = 12;
+        public static final int ISAGREED_FIELD_NUMBER = 6;
         private boolean isAgreed_;
         private byte memoizedIsInitialized;
         private static final PlayerApplyEnterMpResultReq DEFAULT_INSTANCE = new PlayerApplyEnterMpResultReq();
@@ -93,10 +93,10 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 56:
+                            case 32:
                                 this.applyUid_ = input.readUInt32();
                                 break;
-                            case 96:
+                            case 48:
                                 this.isAgreed_ = input.readBool();
                                 break;
                             default:
@@ -154,10 +154,10 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.applyUid_ != 0) {
-                output.writeUInt32(7, this.applyUid_);
+                output.writeUInt32(4, this.applyUid_);
             }
             if (this.isAgreed_) {
-                output.writeBool(12, this.isAgreed_);
+                output.writeBool(6, this.isAgreed_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -170,10 +170,10 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
             }
             int size2 = 0;
             if (this.applyUid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.applyUid_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.applyUid_);
             }
             if (this.isAgreed_) {
-                size2 += CodedOutputStream.computeBoolSize(12, this.isAgreed_);
+                size2 += CodedOutputStream.computeBoolSize(6, this.isAgreed_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -197,7 +197,7 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getApplyUid())) + 12)) + Internal.hashBoolean(getIsAgreed()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getApplyUid())) + 6)) + Internal.hashBoolean(getIsAgreed()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

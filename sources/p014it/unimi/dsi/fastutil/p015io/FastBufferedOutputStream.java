@@ -15,7 +15,7 @@ public class FastBufferedOutputStream extends MeasurableOutputStream implements 
     protected int avail;
 
     /* renamed from: os */
-    protected OutputStream f2209os;
+    protected OutputStream f2173os;
     private FileChannel fileChannel;
     private RepositionableStream repositionableStream;
     private MeasurableStream measurableStream;
@@ -28,7 +28,7 @@ public class FastBufferedOutputStream extends MeasurableOutputStream implements 
     }
 
     public FastBufferedOutputStream(OutputStream os, byte[] buffer) {
-        this.f2209os = os;
+        this.f2173os = os;
         ensureBufferSize(buffer.length);
         this.buffer = buffer;
         this.avail = buffer.length;
@@ -61,7 +61,7 @@ public class FastBufferedOutputStream extends MeasurableOutputStream implements 
     private void dumpBuffer(boolean ifFull) throws IOException {
         if (this.pos != 0) {
             if (!ifFull || this.avail == 0) {
-                this.f2209os.write(this.buffer, 0, this.pos);
+                this.f2173os.write(this.buffer, 0, this.pos);
                 this.pos = 0;
                 this.avail = this.buffer.length;
             }
@@ -82,7 +82,7 @@ public class FastBufferedOutputStream extends MeasurableOutputStream implements 
     public void write(byte[] b, int offset, int length) throws IOException {
         if (length >= this.buffer.length) {
             dumpBuffer(false);
-            this.f2209os.write(b, offset, length);
+            this.f2173os.write(b, offset, length);
         } else if (length <= this.avail) {
             System.arraycopy(b, offset, this.buffer, this.pos, length);
             this.pos += length;
@@ -99,17 +99,17 @@ public class FastBufferedOutputStream extends MeasurableOutputStream implements 
     @Override // java.io.OutputStream, java.io.Flushable
     public void flush() throws IOException {
         dumpBuffer(false);
-        this.f2209os.flush();
+        this.f2173os.flush();
     }
 
     @Override // java.io.OutputStream, java.io.Closeable, java.lang.AutoCloseable
     public void close() throws IOException {
-        if (this.f2209os != null) {
+        if (this.f2173os != null) {
             flush();
-            if (this.f2209os != System.out) {
-                this.f2209os.close();
+            if (this.f2173os != System.out) {
+                this.f2173os.close();
             }
-            this.f2209os = null;
+            this.f2173os = null;
             this.buffer = null;
         }
     }

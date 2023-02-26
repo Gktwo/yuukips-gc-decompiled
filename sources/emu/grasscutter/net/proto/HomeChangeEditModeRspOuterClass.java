@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeChangeEditModeRspOuterClass.class */
 public final class HomeChangeEditModeRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bHomeChangeEditModeRsp.proto\"D\n\u0015HomeChangeEditModeRsp\u0012\u001a\n\u0012is_enter_edit_mode\u0018\u0002 \u0001(\b\u0012\u000f\n\u0007retcode\u0018\r \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bHomeChangeEditModeRsp.proto\"A\n\u0015HomeChangeEditModeRsp\u0012\u0017\n\u000fisEnterEditMode\u0018\t \u0001(\b\u0012\u000f\n\u0007retcode\u0018\u0003 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_HomeChangeEditModeRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeChangeEditModeRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeChangeEditModeRsp_descriptor, new String[]{"IsEnterEditMode", "Retcode"});
 
@@ -44,9 +44,9 @@ public final class HomeChangeEditModeRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeChangeEditModeRspOuterClass$HomeChangeEditModeRsp.class */
     public static final class HomeChangeEditModeRsp extends GeneratedMessageV3 implements HomeChangeEditModeRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_ENTER_EDIT_MODE_FIELD_NUMBER = 2;
+        public static final int ISENTEREDITMODE_FIELD_NUMBER = 9;
         private boolean isEnterEditMode_;
-        public static final int RETCODE_FIELD_NUMBER = 13;
+        public static final int RETCODE_FIELD_NUMBER = 3;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final HomeChangeEditModeRsp DEFAULT_INSTANCE = new HomeChangeEditModeRsp();
@@ -93,11 +93,11 @@ public final class HomeChangeEditModeRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 16:
-                                this.isEnterEditMode_ = input.readBool();
-                                break;
-                            case 104:
+                            case 24:
                                 this.retcode_ = input.readInt32();
+                                break;
+                            case 72:
+                                this.isEnterEditMode_ = input.readBool();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -153,11 +153,11 @@ public final class HomeChangeEditModeRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.isEnterEditMode_) {
-                output.writeBool(2, this.isEnterEditMode_);
-            }
             if (this.retcode_ != 0) {
-                output.writeInt32(13, this.retcode_);
+                output.writeInt32(3, this.retcode_);
+            }
+            if (this.isEnterEditMode_) {
+                output.writeBool(9, this.isEnterEditMode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,11 +169,11 @@ public final class HomeChangeEditModeRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.isEnterEditMode_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(2, this.isEnterEditMode_);
-            }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(13, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(3, this.retcode_);
+            }
+            if (this.isEnterEditMode_) {
+                size2 += CodedOutputStream.computeBoolSize(9, this.isEnterEditMode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -197,7 +197,7 @@ public final class HomeChangeEditModeRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + Internal.hashBoolean(getIsEnterEditMode()))) + 13)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + Internal.hashBoolean(getIsEnterEditMode()))) + 3)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

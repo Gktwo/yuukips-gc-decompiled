@@ -84,7 +84,7 @@ public interface FloatBigList extends BigList<Float>, FloatCollection, Comparabl
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r15v0, types: [float[][], long] */
+    /* JADX WARN: Type inference failed for: r15v0, types: [long, float[][]] */
     /* JADX WARN: Type inference failed for: r0v9, types: [it.unimi.dsi.fastutil.floats.FloatBigListIterator] */
     /* JADX WARN: Type inference failed for: r20v0 */
     /* JADX WARN: Type inference failed for: r20v1, types: [long] */

@@ -90,30 +90,30 @@ public abstract class AbstractInt2DoubleSortedMap extends AbstractInt2DoubleMap 
     public static class KeySetIterator implements IntBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Int2DoubleMap.Entry> f1989i;
+        protected final ObjectBidirectionalIterator<Int2DoubleMap.Entry> f1953i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Int2DoubleMap.Entry> i) {
-            this.f1989i = i;
+            this.f1953i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntIterator, java.util.PrimitiveIterator.OfInt
         public int nextInt() {
-            return ((Int2DoubleMap.Entry) this.f1989i.next()).getIntKey();
+            return ((Int2DoubleMap.Entry) this.f1953i.next()).getIntKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntBidirectionalIterator
         public int previousInt() {
-            return this.f1989i.previous().getIntKey();
+            return this.f1953i.previous().getIntKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1989i.hasNext();
+            return this.f1953i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1989i.hasPrevious();
+            return this.f1953i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractInt2DoubleSortedMap extends AbstractInt2DoubleMap 
     public static class ValuesIterator implements DoubleIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Int2DoubleMap.Entry> f1990i;
+        protected final ObjectBidirectionalIterator<Int2DoubleMap.Entry> f1954i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Int2DoubleMap.Entry> i) {
-            this.f1990i = i;
+            this.f1954i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
         public double nextDouble() {
-            return ((Int2DoubleMap.Entry) this.f1990i.next()).getDoubleValue();
+            return ((Int2DoubleMap.Entry) this.f1954i.next()).getDoubleValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1990i.hasNext();
+            return this.f1954i.hasNext();
         }
     }
 }

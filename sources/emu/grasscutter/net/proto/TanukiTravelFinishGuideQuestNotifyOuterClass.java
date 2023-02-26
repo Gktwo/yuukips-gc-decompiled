@@ -19,11 +19,11 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TanukiTravelFinishGuideQuestNotifyOuterClass.class */
 public final class TanukiTravelFinishGuideQuestNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n(TanukiTravelFinishGuideQuestNotify.proto\"9\n\"TanukiTravelFinishGuideQuestNotify\u0012\u0013\n\u000bactivity_id\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n(TanukiTravelFinishGuideQuestNotify.proto\"8\n\"TanukiTravelFinishGuideQuestNotify\u0012\u0012\n\nactivityId\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_TanukiTravelFinishGuideQuestNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_TanukiTravelFinishGuideQuestNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f887x3aa9a6cf = new GeneratedMessageV3.FieldAccessorTable(internal_static_TanukiTravelFinishGuideQuestNotify_descriptor, new String[]{"ActivityId"});
+    private static final GeneratedMessageV3.FieldAccessorTable f857x3aa9a6cf = new GeneratedMessageV3.FieldAccessorTable(internal_static_TanukiTravelFinishGuideQuestNotify_descriptor, new String[]{"ActivityId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TanukiTravelFinishGuideQuestNotifyOuterClass$TanukiTravelFinishGuideQuestNotifyOrBuilder.class */
     public interface TanukiTravelFinishGuideQuestNotifyOrBuilder extends MessageOrBuilder {
@@ -43,7 +43,7 @@ public final class TanukiTravelFinishGuideQuestNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TanukiTravelFinishGuideQuestNotifyOuterClass$TanukiTravelFinishGuideQuestNotify.class */
     public static final class TanukiTravelFinishGuideQuestNotify extends GeneratedMessageV3 implements TanukiTravelFinishGuideQuestNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ACTIVITY_ID_FIELD_NUMBER = 1;
+        public static final int ACTIVITYID_FIELD_NUMBER = 7;
         private int activityId_;
         private byte memoizedIsInitialized;
         private static final TanukiTravelFinishGuideQuestNotify DEFAULT_INSTANCE = new TanukiTravelFinishGuideQuestNotify();
@@ -90,7 +90,7 @@ public final class TanukiTravelFinishGuideQuestNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
+                            case 56:
                                 this.activityId_ = input.readUInt32();
                                 break;
                             default:
@@ -119,7 +119,7 @@ public final class TanukiTravelFinishGuideQuestNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return TanukiTravelFinishGuideQuestNotifyOuterClass.f887x3aa9a6cf.ensureFieldAccessorsInitialized(TanukiTravelFinishGuideQuestNotify.class, Builder.class);
+            return TanukiTravelFinishGuideQuestNotifyOuterClass.f857x3aa9a6cf.ensureFieldAccessorsInitialized(TanukiTravelFinishGuideQuestNotify.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.TanukiTravelFinishGuideQuestNotifyOuterClass.TanukiTravelFinishGuideQuestNotifyOrBuilder
@@ -143,7 +143,7 @@ public final class TanukiTravelFinishGuideQuestNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.activityId_ != 0) {
-                output.writeUInt32(1, this.activityId_);
+                output.writeUInt32(7, this.activityId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -156,7 +156,7 @@ public final class TanukiTravelFinishGuideQuestNotifyOuterClass {
             }
             int size2 = 0;
             if (this.activityId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.activityId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.activityId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -180,7 +180,7 @@ public final class TanukiTravelFinishGuideQuestNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getActivityId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getActivityId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -267,7 +267,7 @@ public final class TanukiTravelFinishGuideQuestNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return TanukiTravelFinishGuideQuestNotifyOuterClass.f887x3aa9a6cf.ensureFieldAccessorsInitialized(TanukiTravelFinishGuideQuestNotify.class, Builder.class);
+                return TanukiTravelFinishGuideQuestNotifyOuterClass.f857x3aa9a6cf.ensureFieldAccessorsInitialized(TanukiTravelFinishGuideQuestNotify.class, Builder.class);
             }
 
             private Builder() {

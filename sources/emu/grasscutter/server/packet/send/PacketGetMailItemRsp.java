@@ -6,7 +6,6 @@ import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.EquipParamOuterClass;
 import emu.grasscutter.net.proto.GetMailItemRspOuterClass;
 import java.util.ArrayList;
@@ -18,7 +17,7 @@ import java.util.stream.Stream;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketGetMailItemRsp.class */
 public class PacketGetMailItemRsp extends BasePacket {
     public PacketGetMailItemRsp(Player player, List<Integer> mailList) {
-        super(PacketOpcodes.GetMailItemRsp);
+        super(1420);
         List<Mail> claimedMessages = new ArrayList<>();
         List<EquipParamOuterClass.EquipParam> claimedItems = new ArrayList<>();
         GetMailItemRspOuterClass.GetMailItemRsp.Builder proto = GetMailItemRspOuterClass.GetMailItemRsp.newBuilder();

@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeEditCustomFurnitureRspOuterClass.class */
 public final class HomeEditCustomFurnitureRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n HomeEditCustomFurnitureRsp.proto\u001a\u001dHomeCustomFurnitureInfo.proto\"f\n\u001aHomeEditCustomFurnitureRsp\u0012\u000f\n\u0007retcode\u0018\u0001 \u0001(\u0005\u00127\n\u0015custom_furniture_info\u0018\u0002 \u0001(\u000b2\u0018.HomeCustomFurnitureInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeCustomFurnitureInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n HomeEditCustomFurnitureRsp.proto\u001a\u001dHomeCustomFurnitureInfo.proto\"d\n\u001aHomeEditCustomFurnitureRsp\u0012\u000f\n\u0007retcode\u0018\u0007 \u0001(\u0005\u00125\n\u0013customFurnitureInfo\u0018\u000b \u0001(\u000b2\u0018.HomeCustomFurnitureInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeCustomFurnitureInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_HomeEditCustomFurnitureRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeEditCustomFurnitureRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeEditCustomFurnitureRsp_descriptor, new String[]{"Retcode", "CustomFurnitureInfo"});
 
@@ -49,9 +49,9 @@ public final class HomeEditCustomFurnitureRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeEditCustomFurnitureRspOuterClass$HomeEditCustomFurnitureRsp.class */
     public static final class HomeEditCustomFurnitureRsp extends GeneratedMessageV3 implements HomeEditCustomFurnitureRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 1;
+        public static final int RETCODE_FIELD_NUMBER = 7;
         private int retcode_;
-        public static final int CUSTOM_FURNITURE_INFO_FIELD_NUMBER = 2;
+        public static final int CUSTOMFURNITUREINFO_FIELD_NUMBER = 11;
         private HomeCustomFurnitureInfoOuterClass.HomeCustomFurnitureInfo customFurnitureInfo_;
         private byte memoizedIsInitialized;
         private static final HomeEditCustomFurnitureRsp DEFAULT_INSTANCE = new HomeEditCustomFurnitureRsp();
@@ -99,10 +99,10 @@ public final class HomeEditCustomFurnitureRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
+                                case 56:
                                     this.retcode_ = input.readInt32();
                                     break;
-                                case 18:
+                                case 90:
                                     HomeCustomFurnitureInfoOuterClass.HomeCustomFurnitureInfo.Builder subBuilder = this.customFurnitureInfo_ != null ? this.customFurnitureInfo_.toBuilder() : null;
                                     this.customFurnitureInfo_ = (HomeCustomFurnitureInfoOuterClass.HomeCustomFurnitureInfo) input.readMessage(HomeCustomFurnitureInfoOuterClass.HomeCustomFurnitureInfo.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -178,10 +178,10 @@ public final class HomeEditCustomFurnitureRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.retcode_ != 0) {
-                output.writeInt32(1, this.retcode_);
+                output.writeInt32(7, this.retcode_);
             }
             if (this.customFurnitureInfo_ != null) {
-                output.writeMessage(2, getCustomFurnitureInfo());
+                output.writeMessage(11, getCustomFurnitureInfo());
             }
             this.unknownFields.writeTo(output);
         }
@@ -194,10 +194,10 @@ public final class HomeEditCustomFurnitureRspOuterClass {
             }
             int size2 = 0;
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(1, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(7, this.retcode_);
             }
             if (this.customFurnitureInfo_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(2, getCustomFurnitureInfo());
+                size2 += CodedOutputStream.computeMessageSize(11, getCustomFurnitureInfo());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -224,9 +224,9 @@ public final class HomeEditCustomFurnitureRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getRetcode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getRetcode();
             if (hasCustomFurnitureInfo()) {
-                hash = (53 * ((37 * hash) + 2)) + getCustomFurnitureInfo().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + getCustomFurnitureInfo().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

@@ -1,7 +1,6 @@
 package net.bytebuddy.implementation.auxiliary;
 
 import edu.umd.p012cs.findbugs.annotations.SuppressFBWarnings;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -109,9 +108,9 @@ public class MethodCallProxy implements AuxiliaryType {
         @SuppressFBWarnings(value = {"SE_BAD_FIELD_STORE"}, justification = "Precomputed method graph is not intended for serialization")
         PrecomputedMethodGraph() {
             LinkedHashMap<MethodDescription.SignatureToken, MethodGraph.Node> nodes = new LinkedHashMap<>();
-            MethodDescription callMethod = new MethodDescription.Latent(TypeDescription.ForLoadedType.m247of(Callable.class), "call", PacketOpcodes.ProudSkillExtraLevelNotify, Collections.emptyList(), TypeDescription.Generic.OBJECT, Collections.emptyList(), Collections.singletonList(TypeDescription.Generic.OfNonGenericType.ForLoadedType.m244of(Exception.class)), Collections.emptyList(), AnnotationValue.UNDEFINED, TypeDescription.Generic.UNDEFINED);
+            MethodDescription callMethod = new MethodDescription.Latent(TypeDescription.ForLoadedType.m247of(Callable.class), "call", 1025, Collections.emptyList(), TypeDescription.Generic.OBJECT, Collections.emptyList(), Collections.singletonList(TypeDescription.Generic.OfNonGenericType.ForLoadedType.m244of(Exception.class)), Collections.emptyList(), AnnotationValue.UNDEFINED, TypeDescription.Generic.UNDEFINED);
             nodes.put(callMethod.asSignatureToken(), new MethodGraph.Node.Simple(callMethod));
-            MethodDescription runMethod = new MethodDescription.Latent(TypeDescription.ForLoadedType.m247of(Runnable.class), "run", PacketOpcodes.ProudSkillExtraLevelNotify, Collections.emptyList(), TypeDescription.Generic.VOID, Collections.emptyList(), Collections.emptyList(), Collections.emptyList(), AnnotationValue.UNDEFINED, TypeDescription.Generic.UNDEFINED);
+            MethodDescription runMethod = new MethodDescription.Latent(TypeDescription.ForLoadedType.m247of(Runnable.class), "run", 1025, Collections.emptyList(), TypeDescription.Generic.VOID, Collections.emptyList(), Collections.emptyList(), Collections.emptyList(), AnnotationValue.UNDEFINED, TypeDescription.Generic.UNDEFINED);
             nodes.put(runMethod.asSignatureToken(), new MethodGraph.Node.Simple(runMethod));
             MethodGraph methodGraph = new MethodGraph.Simple(nodes);
             this.methodGraph = new MethodGraph.Linked.Delegation(methodGraph, methodGraph, Collections.emptyMap());

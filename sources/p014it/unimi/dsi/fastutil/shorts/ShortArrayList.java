@@ -23,7 +23,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
     public static final int DEFAULT_INITIAL_CAPACITY = 10;
 
     /* renamed from: a */
-    protected transient short[] f3023a;
+    protected transient short[] f2987a;
     protected int size;
     static final /* synthetic */ boolean $assertionsDisabled;
 
@@ -36,20 +36,20 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
     }
 
     private static final short[] copyArrayFromSafe(ShortArrayList l) {
-        return copyArraySafe(l.f3023a, l.size);
+        return copyArraySafe(l.f2987a, l.size);
     }
 
     protected ShortArrayList(short[] a, boolean wrapped) {
-        this.f3023a = a;
+        this.f2987a = a;
     }
 
     private void initArrayFromCapacity(int capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException("Initial capacity (" + capacity + ") is negative");
         } else if (capacity == 0) {
-            this.f3023a = ShortArrays.EMPTY_ARRAY;
+            this.f2987a = ShortArrays.EMPTY_ARRAY;
         } else {
-            this.f3023a = new short[capacity];
+            this.f2987a = new short[capacity];
         }
     }
 
@@ -58,51 +58,51 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
     }
 
     public ShortArrayList() {
-        this.f3023a = ShortArrays.DEFAULT_EMPTY_ARRAY;
+        this.f2987a = ShortArrays.DEFAULT_EMPTY_ARRAY;
     }
 
     public ShortArrayList(Collection<? extends Short> c) {
         if (c instanceof ShortArrayList) {
-            this.f3023a = copyArrayFromSafe((ShortArrayList) c);
-            this.size = this.f3023a.length;
+            this.f2987a = copyArrayFromSafe((ShortArrayList) c);
+            this.size = this.f2987a.length;
             return;
         }
         initArrayFromCapacity(c.size());
         if (c instanceof ShortList) {
-            short[] sArr = this.f3023a;
+            short[] sArr = this.f2987a;
             int size = c.size();
             this.size = size;
             ((ShortList) c).getElements(0, sArr, 0, size);
             return;
         }
-        this.size = ShortIterators.unwrap(ShortIterators.asShortIterator(c.iterator()), this.f3023a);
+        this.size = ShortIterators.unwrap(ShortIterators.asShortIterator(c.iterator()), this.f2987a);
     }
 
     public ShortArrayList(ShortCollection c) {
         if (c instanceof ShortArrayList) {
-            this.f3023a = copyArrayFromSafe((ShortArrayList) c);
-            this.size = this.f3023a.length;
+            this.f2987a = copyArrayFromSafe((ShortArrayList) c);
+            this.size = this.f2987a.length;
             return;
         }
         initArrayFromCapacity(c.size());
         if (c instanceof ShortList) {
-            short[] sArr = this.f3023a;
+            short[] sArr = this.f2987a;
             int size = c.size();
             this.size = size;
             ((ShortList) c).getElements(0, sArr, 0, size);
             return;
         }
-        this.size = ShortIterators.unwrap(c.iterator(), this.f3023a);
+        this.size = ShortIterators.unwrap(c.iterator(), this.f2987a);
     }
 
     public ShortArrayList(ShortList l) {
         if (l instanceof ShortArrayList) {
-            this.f3023a = copyArrayFromSafe((ShortArrayList) l);
-            this.size = this.f3023a.length;
+            this.f2987a = copyArrayFromSafe((ShortArrayList) l);
+            this.size = this.f2987a.length;
             return;
         }
         initArrayFromCapacity(l.size());
-        short[] sArr = this.f3023a;
+        short[] sArr = this.f2987a;
         int size = l.size();
         this.size = size;
         l.getElements(0, sArr, 0, size);
@@ -114,7 +114,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
 
     public ShortArrayList(short[] a, int offset, int length) {
         this(length);
-        System.arraycopy(a, offset, this.f3023a, 0, length);
+        System.arraycopy(a, offset, this.f2987a, 0, length);
         this.size = length;
     }
 
@@ -133,7 +133,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
     }
 
     public short[] elements() {
-        return this.f3023a;
+        return this.f2987a;
     }
 
     public static ShortArrayList wrap(short[] a, int length) {
@@ -160,26 +160,26 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
     }
 
     public void ensureCapacity(int capacity) {
-        if (capacity <= this.f3023a.length) {
+        if (capacity <= this.f2987a.length) {
             return;
         }
-        if (this.f3023a != ShortArrays.DEFAULT_EMPTY_ARRAY || capacity > 10) {
-            this.f3023a = ShortArrays.ensureCapacity(this.f3023a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > this.f3023a.length) {
+        if (this.f2987a != ShortArrays.DEFAULT_EMPTY_ARRAY || capacity > 10) {
+            this.f2987a = ShortArrays.ensureCapacity(this.f2987a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > this.f2987a.length) {
                 throw new AssertionError();
             }
         }
     }
 
     private void grow(int capacity) {
-        if (capacity > this.f3023a.length) {
-            if (this.f3023a != ShortArrays.DEFAULT_EMPTY_ARRAY) {
-                capacity = (int) Math.max(Math.min(((long) this.f3023a.length) + ((long) (this.f3023a.length >> 1)), 2147483639L), (long) capacity);
+        if (capacity > this.f2987a.length) {
+            if (this.f2987a != ShortArrays.DEFAULT_EMPTY_ARRAY) {
+                capacity = (int) Math.max(Math.min(((long) this.f2987a.length) + ((long) (this.f2987a.length >> 1)), 2147483639L), (long) capacity);
             } else if (capacity < 10) {
                 capacity = 10;
             }
-            this.f3023a = ShortArrays.forceCapacity(this.f3023a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > this.f3023a.length) {
+            this.f2987a = ShortArrays.forceCapacity(this.f2987a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > this.f2987a.length) {
                 throw new AssertionError();
             }
         }
@@ -190,11 +190,11 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
         ensureIndex(index);
         grow(this.size + 1);
         if (index != this.size) {
-            System.arraycopy(this.f3023a, index, this.f3023a, index + 1, this.size - index);
+            System.arraycopy(this.f2987a, index, this.f2987a, index + 1, this.size - index);
         }
-        this.f3023a[index] = k;
+        this.f2987a[index] = k;
         this.size++;
-        if (!$assertionsDisabled && this.size > this.f3023a.length) {
+        if (!$assertionsDisabled && this.size > this.f2987a.length) {
             throw new AssertionError();
         }
     }
@@ -202,11 +202,11 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, p014it.unimi.dsi.fastutil.shorts.AbstractShortCollection, p014it.unimi.dsi.fastutil.shorts.ShortCollection
     public boolean add(short k) {
         grow(this.size + 1);
-        short[] sArr = this.f3023a;
+        short[] sArr = this.f2987a;
         int i = this.size;
         this.size = i + 1;
         sArr[i] = k;
-        if ($assertionsDisabled || this.size <= this.f3023a.length) {
+        if ($assertionsDisabled || this.size <= this.f2987a.length) {
             return true;
         }
         throw new AssertionError();
@@ -215,7 +215,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
     @Override // p014it.unimi.dsi.fastutil.shorts.ShortList
     public short getShort(int index) {
         if (index < this.size) {
-            return this.f3023a[index];
+            return this.f2987a[index];
         }
         throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
     }
@@ -223,7 +223,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, p014it.unimi.dsi.fastutil.shorts.ShortList
     public int indexOf(short k) {
         for (int i = 0; i < this.size; i++) {
-            if (k == this.f3023a[i]) {
+            if (k == this.f2987a[i]) {
                 return i;
             }
         }
@@ -238,7 +238,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
             if (i == 0) {
                 return -1;
             }
-        } while (k != this.f3023a[i]);
+        } while (k != this.f2987a[i]);
         return i;
     }
 
@@ -247,12 +247,12 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        short old = this.f3023a[index];
+        short old = this.f2987a[index];
         this.size--;
         if (index != this.size) {
-            System.arraycopy(this.f3023a, index + 1, this.f3023a, index, this.size - index);
+            System.arraycopy(this.f2987a, index + 1, this.f2987a, index, this.size - index);
         }
-        if ($assertionsDisabled || this.size <= this.f3023a.length) {
+        if ($assertionsDisabled || this.size <= this.f2987a.length) {
             return old;
         }
         throw new AssertionError();
@@ -265,7 +265,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
             return false;
         }
         removeShort(index);
-        if ($assertionsDisabled || this.size <= this.f3023a.length) {
+        if ($assertionsDisabled || this.size <= this.f2987a.length) {
             return true;
         }
         throw new AssertionError();
@@ -276,15 +276,15 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        short old = this.f3023a[index];
-        this.f3023a[index] = k;
+        short old = this.f2987a[index];
+        this.f2987a[index] = k;
         return old;
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public void clear() {
         this.size = 0;
-        if (!$assertionsDisabled && this.size > this.f3023a.length) {
+        if (!$assertionsDisabled && this.size > this.f2987a.length) {
             throw new AssertionError();
         }
     }
@@ -296,11 +296,11 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, p014it.unimi.dsi.fastutil.shorts.ShortList
     public void size(int size) {
-        if (size > this.f3023a.length) {
-            this.f3023a = ShortArrays.forceCapacity(this.f3023a, size, this.size);
+        if (size > this.f2987a.length) {
+            this.f2987a = ShortArrays.forceCapacity(this.f2987a, size, this.size);
         }
         if (size > this.size) {
-            Arrays.fill(this.f3023a, this.size, size, (short) 0);
+            Arrays.fill(this.f2987a, this.size, size, (short) 0);
         }
         this.size = size;
     }
@@ -315,11 +315,11 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
     }
 
     public void trim(int n) {
-        if (n < this.f3023a.length && this.size != this.f3023a.length) {
+        if (n < this.f2987a.length && this.size != this.f2987a.length) {
             short[] t = new short[Math.max(n, this.size)];
-            System.arraycopy(this.f3023a, 0, t, 0, this.size);
-            this.f3023a = t;
-            if (!$assertionsDisabled && this.size > this.f3023a.length) {
+            System.arraycopy(this.f2987a, 0, t, 0, this.size);
+            this.f2987a = t;
+            if (!$assertionsDisabled && this.size > this.f2987a.length) {
                 throw new AssertionError();
             }
         }
@@ -336,13 +336,13 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
         }
 
         private short[] getParentArray() {
-            return ShortArrayList.this.f3023a;
+            return ShortArrayList.this.f2987a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList.ShortSubList, p014it.unimi.dsi.fastutil.shorts.ShortList
         public short getShort(int i) {
             ensureRestrictedIndex(i);
-            return ShortArrayList.this.f3023a[i + this.from];
+            return ShortArrayList.this.f2987a[i + this.from];
         }
 
         /* access modifiers changed from: private */
@@ -355,7 +355,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
 
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterators.AbstractIndexBasedIterator
             protected final short get(int i) {
-                return ShortArrayList.this.f3023a[SubList.this.from + i];
+                return ShortArrayList.this.f2987a[SubList.this.from + i];
             }
 
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterators.AbstractIndexBasedListIterator
@@ -375,7 +375,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
 
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterators.AbstractIndexBasedIterator
             protected final int getMaxPos() {
-                return SubList.this.f2892to - SubList.this.from;
+                return SubList.this.f2856to - SubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterators.AbstractIndexBasedIterator, p014it.unimi.dsi.fastutil.shorts.ShortIterator
@@ -383,7 +383,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                short[] sArr = ShortArrayList.this.f3023a;
+                short[] sArr = ShortArrayList.this.f2987a;
                 int i = SubList.this.from;
                 int i2 = this.pos;
                 this.pos = i2 + 1;
@@ -396,7 +396,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                short[] sArr = ShortArrayList.this.f3023a;
+                short[] sArr = ShortArrayList.this.f2987a;
                 int i = SubList.this.from;
                 int i2 = this.pos - 1;
                 this.pos = i2;
@@ -406,9 +406,9 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
 
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterators.AbstractIndexBasedIterator, p014it.unimi.dsi.fastutil.shorts.ShortIterator
             public void forEachRemaining(ShortConsumer action) {
-                int max = SubList.this.f2892to - SubList.this.from;
+                int max = SubList.this.f2856to - SubList.this.from;
                 while (this.pos < max) {
-                    short[] sArr = ShortArrayList.this.f3023a;
+                    short[] sArr = ShortArrayList.this.f2987a;
                     int i = SubList.this.from;
                     int i2 = this.pos;
                     this.pos = i2 + 1;
@@ -438,12 +438,12 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
 
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortSpliterators.LateBindingSizeIndexBasedSpliterator
             protected final int getMaxPosFromBackingStore() {
-                return SubList.this.f2892to;
+                return SubList.this.f2856to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortSpliterators.AbstractIndexBasedSpliterator
             protected final short get(int i) {
-                return ShortArrayList.this.f3023a[i];
+                return ShortArrayList.this.f2987a[i];
             }
 
             /* access modifiers changed from: protected */
@@ -457,7 +457,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
                 if (this.pos >= getMaxPos()) {
                     return false;
                 }
-                short[] sArr = ShortArrayList.this.f3023a;
+                short[] sArr = ShortArrayList.this.f2987a;
                 int i = this.pos;
                 this.pos = i + 1;
                 action.accept(sArr[i]);
@@ -468,7 +468,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
             public void forEachRemaining(ShortConsumer action) {
                 int max = getMaxPos();
                 while (this.pos < max) {
-                    short[] sArr = ShortArrayList.this.f3023a;
+                    short[] sArr = ShortArrayList.this.f2987a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(sArr[i]);
@@ -482,7 +482,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
         }
 
         boolean contentsEquals(short[] otherA, int otherAFrom, int otherATo) {
-            if (ShortArrayList.this.f3023a == otherA && this.from == otherAFrom && this.f2892to == otherATo) {
+            if (ShortArrayList.this.f2987a == otherA && this.from == otherAFrom && this.f2856to == otherATo) {
                 return true;
             }
             if (otherATo - otherAFrom != size()) {
@@ -490,10 +490,10 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
             }
             int pos = this.from;
             int otherPos = otherAFrom;
-            while (pos < this.f2892to) {
+            while (pos < this.f2856to) {
                 pos++;
                 otherPos++;
-                if (ShortArrayList.this.f3023a[pos] != otherA[otherPos]) {
+                if (ShortArrayList.this.f2987a[pos] != otherA[otherPos]) {
                     return false;
                 }
             }
@@ -510,23 +510,23 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
             }
             if (o instanceof ShortArrayList) {
                 ShortArrayList other = (ShortArrayList) o;
-                return contentsEquals(other.f3023a, 0, other.size());
+                return contentsEquals(other.f2987a, 0, other.size());
             } else if (!(o instanceof SubList)) {
                 return equals(o);
             } else {
                 SubList other2 = (SubList) o;
-                return contentsEquals(other2.getParentArray(), other2.from, other2.f2892to);
+                return contentsEquals(other2.getParentArray(), other2.from, other2.f2856to);
             }
         }
 
         int contentsCompareTo(short[] otherA, int otherAFrom, int otherATo) {
-            if (ShortArrayList.this.f3023a == otherA && this.from == otherAFrom && this.f2892to == otherATo) {
+            if (ShortArrayList.this.f2987a == otherA && this.from == otherAFrom && this.f2856to == otherATo) {
                 return 0;
             }
             int i = this.from;
             int j = otherAFrom;
-            while (i < this.f2892to && i < otherATo) {
-                int r = Short.compare(ShortArrayList.this.f3023a[i], otherA[j]);
+            while (i < this.f2856to && i < otherATo) {
+                int r = Short.compare(ShortArrayList.this.f2987a[i], otherA[j]);
                 if (r != 0) {
                     return r;
                 }
@@ -536,19 +536,19 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
             if (i < otherATo) {
                 return -1;
             }
-            return i < this.f2892to ? 1 : 0;
+            return i < this.f2856to ? 1 : 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList
         public int compareTo(List<? extends Short> l) {
             if (l instanceof ShortArrayList) {
                 ShortArrayList other = (ShortArrayList) l;
-                return contentsCompareTo(other.f3023a, 0, other.size());
+                return contentsCompareTo(other.f2987a, 0, other.size());
             } else if (!(l instanceof SubList)) {
                 return compareTo(l);
             } else {
                 SubList other2 = (SubList) l;
-                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f2892to);
+                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f2856to);
             }
         }
     }
@@ -570,13 +570,13 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, p014it.unimi.dsi.fastutil.shorts.ShortList
     public void getElements(int from, short[] a, int offset, int length) {
         ShortArrays.ensureOffsetLength(a, offset, length);
-        System.arraycopy(this.f3023a, from, a, offset, length);
+        System.arraycopy(this.f2987a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, p014it.unimi.dsi.fastutil.shorts.ShortList
     public void removeElements(int from, int to) {
         p014it.unimi.dsi.fastutil.Arrays.ensureFromTo(this.size, from, to);
-        System.arraycopy(this.f3023a, to, this.f3023a, from, this.size - to);
+        System.arraycopy(this.f2987a, to, this.f2987a, from, this.size - to);
         this.size -= to - from;
     }
 
@@ -585,8 +585,8 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
         ensureIndex(index);
         ShortArrays.ensureOffsetLength(a, offset, length);
         grow(this.size + length);
-        System.arraycopy(this.f3023a, index, this.f3023a, index + length, this.size - index);
-        System.arraycopy(a, offset, this.f3023a, index, length);
+        System.arraycopy(this.f2987a, index, this.f2987a, index + length, this.size - index);
+        System.arraycopy(a, offset, this.f2987a, index, length);
         this.size += length;
     }
 
@@ -597,13 +597,13 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
         if (index + length > this.size) {
             throw new IndexOutOfBoundsException("End index (" + (index + length) + ") is greater than list size (" + this.size + ")");
         }
-        System.arraycopy(a, offset, this.f3023a, index, length);
+        System.arraycopy(a, offset, this.f2987a, index, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortList, p014it.unimi.dsi.fastutil.shorts.ShortIterable
     public void forEach(ShortConsumer action) {
         for (int i = 0; i < this.size; i++) {
-            action.accept(this.f3023a[i]);
+            action.accept(this.f2987a[i]);
         }
     }
 
@@ -618,7 +618,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
             return false;
         }
         grow(this.size + n);
-        System.arraycopy(this.f3023a, index, this.f3023a, index + n, this.size - index);
+        System.arraycopy(this.f2987a, index, this.f2987a, index + n, this.size - index);
         ShortIterator i = c.iterator();
         this.size += n;
         while (true) {
@@ -627,9 +627,9 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
                 break;
             }
             index++;
-            this.f3023a[index] = i.nextShort();
+            this.f2987a[index] = i.nextShort();
         }
-        if ($assertionsDisabled || this.size <= this.f3023a.length) {
+        if ($assertionsDisabled || this.size <= this.f2987a.length) {
             return true;
         }
         throw new AssertionError();
@@ -643,10 +643,10 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
             return false;
         }
         grow(this.size + n);
-        System.arraycopy(this.f3023a, index, this.f3023a, index + n, this.size - index);
-        l.getElements(0, this.f3023a, index, n);
+        System.arraycopy(this.f2987a, index, this.f2987a, index + n, this.size - index);
+        l.getElements(0, this.f2987a, index, n);
         this.size += n;
-        if ($assertionsDisabled || this.size <= this.f3023a.length) {
+        if ($assertionsDisabled || this.size <= this.f2987a.length) {
             return true;
         }
         throw new AssertionError();
@@ -654,7 +654,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortCollection, p014it.unimi.dsi.fastutil.shorts.ShortCollection
     public boolean removeAll(ShortCollection c) {
-        short[] a = this.f3023a;
+        short[] a = this.f2987a;
         int j = 0;
         for (int i = 0; i < this.size; i++) {
             if (!c.contains(a[i])) {
@@ -672,7 +672,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
         if (a == null || a.length < this.size) {
             a = Arrays.copyOf(a, this.size);
         }
-        System.arraycopy(this.f3023a, 0, a, 0, this.size);
+        System.arraycopy(this.f2987a, 0, a, 0, this.size);
         return a;
     }
 
@@ -704,7 +704,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                short[] sArr = ShortArrayList.this.f3023a;
+                short[] sArr = ShortArrayList.this.f2987a;
                 int i = this.pos;
                 this.pos = i + 1;
                 this.last = i;
@@ -716,7 +716,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                short[] sArr = ShortArrayList.this.f3023a;
+                short[] sArr = ShortArrayList.this.f2987a;
                 int i = this.pos - 1;
                 this.pos = i;
                 this.last = i;
@@ -765,7 +765,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
             public void forEachRemaining(ShortConsumer action) {
                 while (this.pos < ShortArrayList.this.size) {
-                    short[] sArr = ShortArrayList.this.f3023a;
+                    short[] sArr = ShortArrayList.this.f2987a;
                     int i = this.pos;
                     this.pos = i + 1;
                     this.last = i;
@@ -853,7 +853,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            short[] sArr = ShortArrayList.this.f3023a;
+            short[] sArr = ShortArrayList.this.f2987a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(sArr[i]);
@@ -863,7 +863,7 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
         public void forEachRemaining(ShortConsumer action) {
             int max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(ShortArrayList.this.f3023a[this.pos]);
+                action.accept(ShortArrayList.this.f2987a[this.pos]);
                 this.pos++;
             }
         }
@@ -911,18 +911,18 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
     @Override // p014it.unimi.dsi.fastutil.shorts.ShortList
     public void sort(ShortComparator comp) {
         if (comp == null) {
-            ShortArrays.stableSort(this.f3023a, 0, this.size);
+            ShortArrays.stableSort(this.f2987a, 0, this.size);
         } else {
-            ShortArrays.stableSort(this.f3023a, 0, this.size, comp);
+            ShortArrays.stableSort(this.f2987a, 0, this.size, comp);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.ShortList
     public void unstableSort(ShortComparator comp) {
         if (comp == null) {
-            ShortArrays.unstableSort(this.f3023a, 0, this.size);
+            ShortArrays.unstableSort(this.f2987a, 0, this.size);
         } else {
-            ShortArrays.unstableSort(this.f3023a, 0, this.size, comp);
+            ShortArrays.unstableSort(this.f2987a, 0, this.size, comp);
         }
     }
 
@@ -930,12 +930,12 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
     public ShortArrayList clone() {
         ShortArrayList cloned;
         if (getClass() == ShortArrayList.class) {
-            cloned = new ShortArrayList(copyArraySafe(this.f3023a, this.size), false);
+            cloned = new ShortArrayList(copyArraySafe(this.f2987a, this.size), false);
             cloned.size = this.size;
         } else {
             try {
                 cloned = (ShortArrayList) clone();
-                cloned.f3023a = copyArraySafe(this.f3023a, this.size);
+                cloned.f2987a = copyArraySafe(this.f2987a, this.size);
             } catch (CloneNotSupportedException err) {
                 throw new InternalError(err);
             }
@@ -951,8 +951,8 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
         if (s != l.size()) {
             return false;
         }
-        short[] a1 = this.f3023a;
-        short[] a2 = l.f3023a;
+        short[] a1 = this.f2987a;
+        short[] a2 = l.f2987a;
         if (a1 == a2 && s == l.size()) {
             return true;
         }
@@ -985,8 +985,8 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
     public int compareTo(ShortArrayList l) {
         int s1 = size();
         int s2 = l.size();
-        short[] a1 = this.f3023a;
-        short[] a2 = l.f3023a;
+        short[] a1 = this.f2987a;
+        short[] a2 = l.f2987a;
         if (a1 == a2 && s1 == s2) {
             return 0;
         }
@@ -1018,15 +1018,15 @@ public class ShortArrayList extends AbstractShortList implements RandomAccess, C
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; i < this.size; i++) {
-            s.writeShort(this.f3023a[i]);
+            s.writeShort(this.f2987a[i]);
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f3023a = new short[this.size];
+        this.f2987a = new short[this.size];
         for (int i = 0; i < this.size; i++) {
-            this.f3023a[i] = s.readShort();
+            this.f2987a[i] = s.readShort();
         }
     }
 }

@@ -49,13 +49,13 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f1801n;
+    protected transient int f1765n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1802f;
+    protected final float f1766f;
     protected transient Float2BooleanSortedMap.FastSortedEntrySet entries;
     protected transient FloatSortedSet keys;
     protected transient BooleanCollection values;
@@ -68,15 +68,15 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1802f = f;
+            this.f1766f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1801n = arraySize;
+            this.f1765n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1801n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1801n, f);
-            this.key = new float[this.f1801n + 1];
-            this.value = new boolean[this.f1801n + 1];
-            this.link = new long[this.f1801n + 1];
+            this.mask = this.f1765n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1765n, f);
+            this.key = new float[this.f1765n + 1];
+            this.value = new boolean[this.f1765n + 1];
+            this.link = new long[this.f1765n + 1];
         }
     }
 
@@ -125,15 +125,15 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1802f);
-        if (needed > this.f1801n) {
+        int needed = HashCommon.arraySize(capacity, this.f1766f);
+        if (needed > this.f1765n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1802f)))));
-        if (needed > this.f1801n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1766f)))));
+        if (needed > this.f1765n) {
             rehash(needed);
         }
     }
@@ -144,8 +144,8 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f1801n > this.minN && this.size < this.maxFill / 4 && this.f1801n > 16) {
-            rehash(this.f1801n / 2);
+        if (this.f1765n > this.minN && this.size < this.maxFill / 4 && this.f1765n > 16) {
+            rehash(this.f1765n / 2);
         }
         return oldValue;
     }
@@ -153,18 +153,18 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
     /* access modifiers changed from: private */
     public boolean removeNullEntry() {
         this.containsNullKey = false;
-        boolean oldValue = this.value[this.f1801n];
+        boolean oldValue = this.value[this.f1765n];
         this.size--;
-        fixPointers(this.f1801n);
-        if (this.f1801n > this.minN && this.size < this.maxFill / 4 && this.f1801n > 16) {
-            rehash(this.f1801n / 2);
+        fixPointers(this.f1765n);
+        if (this.f1765n > this.minN && this.size < this.maxFill / 4 && this.f1765n > 16) {
+            rehash(this.f1765n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloat2BooleanMap, java.util.Map
     public void putAll(Map<? extends Float, ? extends Boolean> m) {
-        if (((double) this.f1802f) <= 0.5d) {
+        if (((double) this.f1766f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -175,7 +175,7 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
     private int find(float k) {
         float curr;
         if (Float.floatToIntBits(k) == 0) {
-            return this.containsNullKey ? this.f1801n : -(this.f1801n + 1);
+            return this.containsNullKey ? this.f1765n : -(this.f1765n + 1);
         }
         float[] key = this.key;
         int mix = HashCommon.mix(HashCommon.float2int(k)) & this.mask;
@@ -199,7 +199,7 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
     }
 
     private void insert(int pos, float k, boolean v) {
-        if (pos == this.f1801n) {
+        if (pos == this.f1765n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -218,7 +218,7 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f1802f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f1766f));
         }
     }
 
@@ -311,13 +311,13 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
         }
         this.size--;
         boolean v = this.value[pos];
-        if (pos == this.f1801n) {
+        if (pos == this.f1765n) {
             this.containsNullKey = false;
         } else {
             shiftKeys(pos);
         }
-        if (this.f1801n > this.minN && this.size < this.maxFill / 4 && this.f1801n > 16) {
-            rehash(this.f1801n / 2);
+        if (this.f1765n > this.minN && this.size < this.maxFill / 4 && this.f1765n > 16) {
+            rehash(this.f1765n / 2);
         }
         return v;
     }
@@ -335,13 +335,13 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
         }
         this.size--;
         boolean v = this.value[pos];
-        if (pos == this.f1801n) {
+        if (pos == this.f1765n) {
             this.containsNullKey = false;
         } else {
             shiftKeys(pos);
         }
-        if (this.f1801n > this.minN && this.size < this.maxFill / 4 && this.f1801n > 16) {
-            rehash(this.f1801n / 2);
+        if (this.f1765n > this.minN && this.size < this.maxFill / 4 && this.f1765n > 16) {
+            rehash(this.f1765n / 2);
         }
         return v;
     }
@@ -421,8 +421,8 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
         } else if (!this.containsNullKey) {
             return this.defRetValue;
         } else {
-            moveIndexToFirst(this.f1801n);
-            return this.value[this.f1801n];
+            moveIndexToFirst(this.f1765n);
+            return this.value[this.f1765n];
         }
     }
 
@@ -453,8 +453,8 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
         } else if (!this.containsNullKey) {
             return this.defRetValue;
         } else {
-            moveIndexToLast(this.f1801n);
-            return this.value[this.f1801n];
+            moveIndexToLast(this.f1765n);
+            return this.value[this.f1765n];
         }
     }
 
@@ -482,11 +482,11 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
                 return setValue(pos, v);
             }
         } else if (this.containsNullKey) {
-            moveIndexToFirst(this.f1801n);
-            return setValue(this.f1801n, v);
+            moveIndexToFirst(this.f1765n);
+            return setValue(this.f1765n, v);
         } else {
             this.containsNullKey = true;
-            pos = this.f1801n;
+            pos = this.f1765n;
         }
         this.key[pos] = k;
         this.value[pos] = v;
@@ -504,7 +504,7 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size, this.f1802f));
+            rehash(HashCommon.arraySize(this.size, this.f1766f));
         }
         return this.defRetValue;
     }
@@ -533,11 +533,11 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
                 return setValue(pos, v);
             }
         } else if (this.containsNullKey) {
-            moveIndexToLast(this.f1801n);
-            return setValue(this.f1801n, v);
+            moveIndexToLast(this.f1765n);
+            return setValue(this.f1765n, v);
         } else {
             this.containsNullKey = true;
-            pos = this.f1801n;
+            pos = this.f1765n;
         }
         this.key[pos] = k;
         this.value[pos] = v;
@@ -555,7 +555,7 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size, this.f1802f));
+            rehash(HashCommon.arraySize(this.size, this.f1766f));
         }
         return this.defRetValue;
     }
@@ -564,7 +564,7 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
     public boolean get(float k) {
         float curr;
         if (Float.floatToIntBits(k) == 0) {
-            return this.containsNullKey ? this.value[this.f1801n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f1765n] : this.defRetValue;
         }
         float[] key = this.key;
         int mix = HashCommon.mix(HashCommon.float2int(k)) & this.mask;
@@ -618,10 +618,10 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
     public boolean containsValue(boolean v) {
         boolean[] value = this.value;
         float[] key = this.key;
-        if (this.containsNullKey && value[this.f1801n] == v) {
+        if (this.containsNullKey && value[this.f1765n] == v) {
             return true;
         }
-        int i = this.f1801n;
+        int i = this.f1765n;
         while (true) {
             i--;
             if (i == 0) {
@@ -637,7 +637,7 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
     public boolean getOrDefault(float k, boolean defaultValue) {
         float curr;
         if (Float.floatToIntBits(k) == 0) {
-            return this.containsNullKey ? this.value[this.f1801n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f1765n] : defaultValue;
         }
         float[] key = this.key;
         int mix = HashCommon.mix(HashCommon.float2int(k)) & this.mask;
@@ -696,7 +696,7 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
                     return true;
                 }
             }
-        } else if (!this.containsNullKey || v != this.value[this.f1801n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f1765n]) {
             return false;
         } else {
             removeNullEntry();
@@ -1067,8 +1067,8 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
             this.index = -1;
             if (Float.floatToIntBits(from) == 0) {
                 if (Float2BooleanLinkedOpenHashMap.this.containsNullKey) {
-                    this.next = (int) Float2BooleanLinkedOpenHashMap.this.link[Float2BooleanLinkedOpenHashMap.this.f1801n];
-                    this.prev = Float2BooleanLinkedOpenHashMap.this.f1801n;
+                    this.next = (int) Float2BooleanLinkedOpenHashMap.this.link[Float2BooleanLinkedOpenHashMap.this.f1765n];
+                    this.prev = Float2BooleanLinkedOpenHashMap.this.f1765n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + from + " does not belong to this map.");
@@ -1197,7 +1197,7 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
             }
             int pos = this.curr;
             this.curr = -1;
-            if (pos == Float2BooleanLinkedOpenHashMap.this.f1801n) {
+            if (pos == Float2BooleanLinkedOpenHashMap.this.f1765n) {
                 Float2BooleanLinkedOpenHashMap.this.containsNullKey = false;
                 return;
             }
@@ -1442,7 +1442,7 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
             float k = ((Float) e.getKey()).floatValue();
             boolean v = ((Boolean) e.getValue()).booleanValue();
             if (Float.floatToIntBits(k) == 0) {
-                return Float2BooleanLinkedOpenHashMap.this.containsNullKey && Float2BooleanLinkedOpenHashMap.this.value[Float2BooleanLinkedOpenHashMap.this.f1801n] == v;
+                return Float2BooleanLinkedOpenHashMap.this.containsNullKey && Float2BooleanLinkedOpenHashMap.this.value[Float2BooleanLinkedOpenHashMap.this.f1765n] == v;
             }
             float[] key = Float2BooleanLinkedOpenHashMap.this.key;
             int mix = HashCommon.mix(HashCommon.float2int(k)) & Float2BooleanLinkedOpenHashMap.this.mask;
@@ -1503,7 +1503,7 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
                     Float2BooleanLinkedOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Float2BooleanLinkedOpenHashMap.this.containsNullKey || Float2BooleanLinkedOpenHashMap.this.value[Float2BooleanLinkedOpenHashMap.this.f1801n] != v) {
+            } else if (!Float2BooleanLinkedOpenHashMap.this.containsNullKey || Float2BooleanLinkedOpenHashMap.this.value[Float2BooleanLinkedOpenHashMap.this.f1765n] != v) {
                 return false;
             } else {
                 Float2BooleanLinkedOpenHashMap.this.removeNullEntry();
@@ -1801,8 +1801,8 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1802f)));
-        if (l >= this.f1801n || this.size > HashCommon.maxFill(l, this.f1802f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1766f)));
+        if (l >= this.f1765n || this.size > HashCommon.maxFill(l, this.f1766f)) {
             return true;
         }
         try {
@@ -1863,9 +1863,9 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f1801n = newN;
+        this.f1765n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f1801n, this.f1802f);
+        this.maxFill = HashCommon.maxFill(this.f1765n, this.f1766f);
         this.key = newKey;
         this.value = newValue;
     }
@@ -1904,7 +1904,7 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f1801n] ? RetcodeOuterClass.Retcode.RET_MP_OTHER_DATA_VERSION_NOT_LATEST_VALUE : RetcodeOuterClass.Retcode.RET_MP_MATCH_FULL_VALUE;
+            h += this.value[this.f1765n] ? RetcodeOuterClass.Retcode.RET_MP_OTHER_DATA_VERSION_NOT_LATEST_VALUE : RetcodeOuterClass.Retcode.RET_MP_MATCH_FULL_VALUE;
         }
         return h;
     }
@@ -1930,14 +1930,14 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f1801n = HashCommon.arraySize(this.size, this.f1802f);
-        this.maxFill = HashCommon.maxFill(this.f1801n, this.f1802f);
-        this.mask = this.f1801n - 1;
-        float[] key = new float[this.f1801n + 1];
+        this.f1765n = HashCommon.arraySize(this.size, this.f1766f);
+        this.maxFill = HashCommon.maxFill(this.f1765n, this.f1766f);
+        this.mask = this.f1765n - 1;
+        float[] key = new float[this.f1765n + 1];
         this.key = key;
-        boolean[] value = new boolean[this.f1801n + 1];
+        boolean[] value = new boolean[this.f1765n + 1];
         this.value = value;
-        long[] link = new long[this.f1801n + 1];
+        long[] link = new long[this.f1765n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -1962,7 +1962,7 @@ public class Float2BooleanLinkedOpenHashMap extends AbstractFloat2BooleanSortedM
                     i2 = this.mask;
                 }
             } else {
-                pos = this.f1801n;
+                pos = this.f1765n;
                 this.containsNullKey = true;
             }
             key[pos] = k;

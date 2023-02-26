@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MonsterAIConfigHashNotifyOuterClass.class */
 public final class MonsterAIConfigHashNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fMonsterAIConfigHashNotify.proto\"R\n\u0019MonsterAIConfigHashNotify\u0012\u0012\n\nhash_value\u0018\u0007 \u0001(\u0005\u0012\u0011\n\tentity_id\u0018\u000e \u0001(\r\u0012\u000e\n\u0006job_id\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fMonsterAIConfigHashNotify.proto\"O\n\u0019MonsterAIConfigHashNotify\u0012\u0011\n\thashValue\u0018\t \u0001(\u0005\u0012\u0010\n\bentityId\u0018\u0007 \u0001(\r\u0012\r\n\u0005jobId\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_MonsterAIConfigHashNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_MonsterAIConfigHashNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MonsterAIConfigHashNotify_descriptor, new String[]{"HashValue", "EntityId", "JobId"});
 
@@ -45,11 +45,11 @@ public final class MonsterAIConfigHashNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MonsterAIConfigHashNotifyOuterClass$MonsterAIConfigHashNotify.class */
     public static final class MonsterAIConfigHashNotify extends GeneratedMessageV3 implements MonsterAIConfigHashNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int HASH_VALUE_FIELD_NUMBER = 7;
+        public static final int HASHVALUE_FIELD_NUMBER = 9;
         private int hashValue_;
-        public static final int ENTITY_ID_FIELD_NUMBER = 14;
+        public static final int ENTITYID_FIELD_NUMBER = 7;
         private int entityId_;
-        public static final int JOB_ID_FIELD_NUMBER = 11;
+        public static final int JOBID_FIELD_NUMBER = 1;
         private int jobId_;
         private byte memoizedIsInitialized;
         private static final MonsterAIConfigHashNotify DEFAULT_INSTANCE = new MonsterAIConfigHashNotify();
@@ -97,14 +97,14 @@ public final class MonsterAIConfigHashNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 56:
-                                    this.hashValue_ = input.readInt32();
-                                    break;
-                                case 88:
+                                case 8:
                                     this.jobId_ = input.readUInt32();
                                     break;
-                                case 112:
+                                case 56:
                                     this.entityId_ = input.readUInt32();
+                                    break;
+                                case 72:
+                                    this.hashValue_ = input.readInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -166,14 +166,14 @@ public final class MonsterAIConfigHashNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.hashValue_ != 0) {
-                output.writeInt32(7, this.hashValue_);
-            }
             if (this.jobId_ != 0) {
-                output.writeUInt32(11, this.jobId_);
+                output.writeUInt32(1, this.jobId_);
             }
             if (this.entityId_ != 0) {
-                output.writeUInt32(14, this.entityId_);
+                output.writeUInt32(7, this.entityId_);
+            }
+            if (this.hashValue_ != 0) {
+                output.writeInt32(9, this.hashValue_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -185,14 +185,14 @@ public final class MonsterAIConfigHashNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.hashValue_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(7, this.hashValue_);
-            }
             if (this.jobId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.jobId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.jobId_);
             }
             if (this.entityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.entityId_);
+                size2 += CodedOutputStream.computeUInt32Size(7, this.entityId_);
+            }
+            if (this.hashValue_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(9, this.hashValue_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -216,7 +216,7 @@ public final class MonsterAIConfigHashNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getHashValue())) + 14)) + getEntityId())) + 11)) + getJobId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getHashValue())) + 7)) + getEntityId())) + 1)) + getJobId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

@@ -90,30 +90,30 @@ public abstract class AbstractDouble2ShortSortedMap extends AbstractDouble2Short
     public static class KeySetIterator implements DoubleBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Double2ShortMap.Entry> f1571i;
+        protected final ObjectBidirectionalIterator<Double2ShortMap.Entry> f1535i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Double2ShortMap.Entry> i) {
-            this.f1571i = i;
+            this.f1535i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
         public double nextDouble() {
-            return ((Double2ShortMap.Entry) this.f1571i.next()).getDoubleKey();
+            return ((Double2ShortMap.Entry) this.f1535i.next()).getDoubleKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBidirectionalIterator
         public double previousDouble() {
-            return this.f1571i.previous().getDoubleKey();
+            return this.f1535i.previous().getDoubleKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1571i.hasNext();
+            return this.f1535i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1571i.hasPrevious();
+            return this.f1535i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractDouble2ShortSortedMap extends AbstractDouble2Short
     public static class ValuesIterator implements ShortIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Double2ShortMap.Entry> f1572i;
+        protected final ObjectBidirectionalIterator<Double2ShortMap.Entry> f1536i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Double2ShortMap.Entry> i) {
-            this.f1572i = i;
+            this.f1536i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
         public short nextShort() {
-            return ((Double2ShortMap.Entry) this.f1572i.next()).getShortValue();
+            return ((Double2ShortMap.Entry) this.f1536i.next()).getShortValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1572i.hasNext();
+            return this.f1536i.hasNext();
         }
     }
 }

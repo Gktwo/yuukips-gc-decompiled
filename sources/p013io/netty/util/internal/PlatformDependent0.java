@@ -51,7 +51,7 @@ public final class PlatformDependent0 {
         /*
         // Method dump skipped, instructions count: 1333
         */
-        throw new UnsupportedOperationException("Method not decompiled: p013io.netty.util.internal.PlatformDependent0.m6327clinit():void");
+        throw new UnsupportedOperationException("Method not decompiled: p013io.netty.util.internal.PlatformDependent0.m6324clinit():void");
     }
 
     /* access modifiers changed from: private */

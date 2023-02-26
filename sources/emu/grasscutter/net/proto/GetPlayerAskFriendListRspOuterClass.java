@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetPlayerAskFriendListRspOuterClass.class */
 public final class GetPlayerAskFriendListRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fGetPlayerAskFriendListRsp.proto\u001a\u0011FriendBrief.proto\"S\n\u0019GetPlayerAskFriendListRsp\u0012\u000f\n\u0007retcode\u0018\u000b \u0001(\u0005\u0012%\n\u000fask_friend_list\u0018\u0003 \u0003(\u000b2\f.FriendBriefB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{FriendBriefOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fGetPlayerAskFriendListRsp.proto\u001a\u0011FriendBrief.proto\"Q\n\u0019GetPlayerAskFriendListRsp\u0012\u000f\n\u0007retcode\u0018\u0005 \u0001(\u0005\u0012#\n\raskFriendList\u0018\u0006 \u0003(\u000b2\f.FriendBriefB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{FriendBriefOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_GetPlayerAskFriendListRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetPlayerAskFriendListRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetPlayerAskFriendListRsp_descriptor, new String[]{"Retcode", "AskFriendList"});
 
@@ -57,9 +57,9 @@ public final class GetPlayerAskFriendListRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetPlayerAskFriendListRspOuterClass$GetPlayerAskFriendListRsp.class */
     public static final class GetPlayerAskFriendListRsp extends GeneratedMessageV3 implements GetPlayerAskFriendListRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 11;
+        public static final int RETCODE_FIELD_NUMBER = 5;
         private int retcode_;
-        public static final int ASK_FRIEND_LIST_FIELD_NUMBER = 3;
+        public static final int ASKFRIENDLIST_FIELD_NUMBER = 6;
         private List<FriendBriefOuterClass.FriendBrief> askFriendList_;
         private byte memoizedIsInitialized;
         private static final GetPlayerAskFriendListRsp DEFAULT_INSTANCE = new GetPlayerAskFriendListRsp();
@@ -110,15 +110,15 @@ public final class GetPlayerAskFriendListRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 26:
+                                case 40:
+                                    this.retcode_ = input.readInt32();
+                                    break;
+                                case 50:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.askFriendList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.askFriendList_.add((FriendBriefOuterClass.FriendBrief) input.readMessage(FriendBriefOuterClass.FriendBrief.parser(), extensionRegistry));
-                                    break;
-                                case 88:
-                                    this.retcode_ = input.readInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -198,11 +198,11 @@ public final class GetPlayerAskFriendListRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            for (int i = 0; i < this.askFriendList_.size(); i++) {
-                output.writeMessage(3, this.askFriendList_.get(i));
-            }
             if (this.retcode_ != 0) {
-                output.writeInt32(11, this.retcode_);
+                output.writeInt32(5, this.retcode_);
+            }
+            for (int i = 0; i < this.askFriendList_.size(); i++) {
+                output.writeMessage(6, this.askFriendList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -214,11 +214,11 @@ public final class GetPlayerAskFriendListRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            for (int i = 0; i < this.askFriendList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(3, this.askFriendList_.get(i));
-            }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(11, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(5, this.retcode_);
+            }
+            for (int i = 0; i < this.askFriendList_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(6, this.askFriendList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -242,9 +242,9 @@ public final class GetPlayerAskFriendListRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getRetcode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getRetcode();
             if (getAskFriendListCount() > 0) {
-                hash = (53 * ((37 * hash) + 3)) + getAskFriendListList().hashCode();
+                hash = (53 * ((37 * hash) + 6)) + getAskFriendListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

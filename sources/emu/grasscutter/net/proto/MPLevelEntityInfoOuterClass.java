@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MPLevelEntityInfoOuterClass.class */
 public final class MPLevelEntityInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017MPLevelEntityInfo.proto\u001a\u001aAbilitySyncStateInfo.proto\"n\n\u0011MPLevelEntityInfo\u0012+\n\fability_info\u0018\u000f \u0001(\u000b2\u0015.AbilitySyncStateInfo\u0012\u0011\n\tentity_id\u0018\n \u0001(\r\u0012\u0019\n\u0011authority_peer_id\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilitySyncStateInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017MPLevelEntityInfo.proto\u001a\u001aAbilitySyncStateInfo.proto\"j\n\u0011MPLevelEntityInfo\u0012*\n\u000babilityInfo\u0018\u0002 \u0001(\u000b2\u0015.AbilitySyncStateInfo\u0012\u0010\n\bentityId\u0018\u000b \u0001(\r\u0012\u0017\n\u000fauthorityPeerId\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilitySyncStateInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_MPLevelEntityInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_MPLevelEntityInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MPLevelEntityInfo_descriptor, new String[]{"AbilityInfo", "EntityId", "AuthorityPeerId"});
 
@@ -51,11 +51,11 @@ public final class MPLevelEntityInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MPLevelEntityInfoOuterClass$MPLevelEntityInfo.class */
     public static final class MPLevelEntityInfo extends GeneratedMessageV3 implements MPLevelEntityInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ABILITY_INFO_FIELD_NUMBER = 15;
+        public static final int ABILITYINFO_FIELD_NUMBER = 2;
         private AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo abilityInfo_;
-        public static final int ENTITY_ID_FIELD_NUMBER = 10;
+        public static final int ENTITYID_FIELD_NUMBER = 11;
         private int entityId_;
-        public static final int AUTHORITY_PEER_ID_FIELD_NUMBER = 5;
+        public static final int AUTHORITYPEERID_FIELD_NUMBER = 9;
         private int authorityPeerId_;
         private byte memoizedIsInitialized;
         private static final MPLevelEntityInfo DEFAULT_INSTANCE = new MPLevelEntityInfo();
@@ -103,13 +103,7 @@ public final class MPLevelEntityInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 40:
-                                    this.authorityPeerId_ = input.readUInt32();
-                                    break;
-                                case 80:
-                                    this.entityId_ = input.readUInt32();
-                                    break;
-                                case 122:
+                                case 18:
                                     AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder subBuilder = this.abilityInfo_ != null ? this.abilityInfo_.toBuilder() : null;
                                     this.abilityInfo_ = (AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo) input.readMessage(AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -119,6 +113,12 @@ public final class MPLevelEntityInfoOuterClass {
                                         this.abilityInfo_ = subBuilder.buildPartial();
                                         break;
                                     }
+                                case 72:
+                                    this.authorityPeerId_ = input.readUInt32();
+                                    break;
+                                case 88:
+                                    this.entityId_ = input.readUInt32();
+                                    break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                         break;
@@ -189,14 +189,14 @@ public final class MPLevelEntityInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.abilityInfo_ != null) {
+                output.writeMessage(2, getAbilityInfo());
+            }
             if (this.authorityPeerId_ != 0) {
-                output.writeUInt32(5, this.authorityPeerId_);
+                output.writeUInt32(9, this.authorityPeerId_);
             }
             if (this.entityId_ != 0) {
-                output.writeUInt32(10, this.entityId_);
-            }
-            if (this.abilityInfo_ != null) {
-                output.writeMessage(15, getAbilityInfo());
+                output.writeUInt32(11, this.entityId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -208,14 +208,14 @@ public final class MPLevelEntityInfoOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.abilityInfo_ != null) {
+                size2 = 0 + CodedOutputStream.computeMessageSize(2, getAbilityInfo());
+            }
             if (this.authorityPeerId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.authorityPeerId_);
+                size2 += CodedOutputStream.computeUInt32Size(9, this.authorityPeerId_);
             }
             if (this.entityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.entityId_);
-            }
-            if (this.abilityInfo_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(15, getAbilityInfo());
+                size2 += CodedOutputStream.computeUInt32Size(11, this.entityId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -244,9 +244,9 @@ public final class MPLevelEntityInfoOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasAbilityInfo()) {
-                hash = (53 * ((37 * hash) + 15)) + getAbilityInfo().hashCode();
+                hash = (53 * ((37 * hash) + 2)) + getAbilityInfo().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 10)) + getEntityId())) + 5)) + getAuthorityPeerId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 11)) + getEntityId())) + 9)) + getAuthorityPeerId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

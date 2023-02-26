@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WeaponPromoteReqOuterClass.class */
 public final class WeaponPromoteReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016WeaponPromoteReq.proto\".\n\u0010WeaponPromoteReq\u0012\u001a\n\u0012target_weapon_guid\u0018\u000e \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016WeaponPromoteReq.proto\",\n\u0010WeaponPromoteReq\u0012\u0018\n\u0010targetWeaponGuid\u0018\u0003 \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_WeaponPromoteReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_WeaponPromoteReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WeaponPromoteReq_descriptor, new String[]{"TargetWeaponGuid"});
 
@@ -42,7 +42,7 @@ public final class WeaponPromoteReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WeaponPromoteReqOuterClass$WeaponPromoteReq.class */
     public static final class WeaponPromoteReq extends GeneratedMessageV3 implements WeaponPromoteReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TARGET_WEAPON_GUID_FIELD_NUMBER = 14;
+        public static final int TARGETWEAPONGUID_FIELD_NUMBER = 3;
         private long targetWeaponGuid_;
         private byte memoizedIsInitialized;
         private static final WeaponPromoteReq DEFAULT_INSTANCE = new WeaponPromoteReq();
@@ -89,7 +89,7 @@ public final class WeaponPromoteReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 112:
+                            case 24:
                                 this.targetWeaponGuid_ = input.readUInt64();
                                 break;
                             default:
@@ -142,7 +142,7 @@ public final class WeaponPromoteReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.targetWeaponGuid_ != 0) {
-                output.writeUInt64(14, this.targetWeaponGuid_);
+                output.writeUInt64(3, this.targetWeaponGuid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -155,7 +155,7 @@ public final class WeaponPromoteReqOuterClass {
             }
             int size2 = 0;
             if (this.targetWeaponGuid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(14, this.targetWeaponGuid_);
+                size2 = 0 + CodedOutputStream.computeUInt64Size(3, this.targetWeaponGuid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -179,7 +179,7 @@ public final class WeaponPromoteReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + Internal.hashLong(getTargetWeaponGuid()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + Internal.hashLong(getTargetWeaponGuid()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

@@ -8,12 +8,12 @@ import java.util.List;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketFinishedParentQuestUpdateNotify.class */
 public class PacketFinishedParentQuestUpdateNotify extends BasePacket {
     public PacketFinishedParentQuestUpdateNotify(GameMainQuest quest) {
-        super(500);
+        super(420);
         setData(FinishedParentQuestUpdateNotifyOuterClass.FinishedParentQuestUpdateNotify.newBuilder().addParentQuestList(quest.toProto(true)).build());
     }
 
     public PacketFinishedParentQuestUpdateNotify(List<GameMainQuest> quests) {
-        super(500);
+        super(420);
         FinishedParentQuestUpdateNotifyOuterClass.FinishedParentQuestUpdateNotify.Builder proto = FinishedParentQuestUpdateNotifyOuterClass.FinishedParentQuestUpdateNotify.newBuilder();
         for (GameMainQuest mainQuest : quests) {
             proto.addParentQuestList(mainQuest.toProto(true));

@@ -8,26 +8,25 @@ import com.google.protobuf.Descriptors;
 import com.google.protobuf.ExtensionRegistry;
 import com.google.protobuf.ExtensionRegistryLite;
 import com.google.protobuf.GeneratedMessageV3;
-import com.google.protobuf.Internal;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Message;
 import com.google.protobuf.MessageOrBuilder;
 import com.google.protobuf.Parser;
-import com.google.protobuf.ProtocolMessageEnum;
 import com.google.protobuf.UnknownFieldSet;
+import emu.grasscutter.net.proto.OpTypeOuterClass;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UpdateAbilityCreatedMovingPlatformNotifyOuterClass.class */
 public final class UpdateAbilityCreatedMovingPlatformNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n.UpdateAbilityCreatedMovingPlatformNotify.proto\"Ê\u0001\n(UpdateAbilityCreatedMovingPlatformNotify\u0012\u0011\n\tentity_id\u0018\u0001 \u0001(\r\u0012A\n\u0007op_type\u0018\u000f \u0001(\u000e20.UpdateAbilityCreatedMovingPlatformNotify.OpType\"H\n\u0006OpType\u0012\u0010\n\fOP_TYPE_NONE\u0010��\u0012\u0014\n\u0010OP_TYPE_ACTIVATE\u0010\u0001\u0012\u0016\n\u0012OP_TYPE_DEACTIVATE\u0010\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n.UpdateAbilityCreatedMovingPlatformNotify.proto\u001a\fOpType.proto\"U\n(UpdateAbilityCreatedMovingPlatformNotify\u0012\u0010\n\bentityId\u0018\u0004 \u0001(\r\u0012\u0017\n\u0006opType\u0018\u0006 \u0001(\u000e2\u0007.OpTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{OpTypeOuterClass.getDescriptor()});
 
     /* renamed from: internal_static_UpdateAbilityCreatedMovingPlatformNotify_descriptor */
-    private static final Descriptors.Descriptor f903x186480e = getDescriptor().getMessageTypes().get(0);
+    private static final Descriptors.Descriptor f872x186480e = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_UpdateAbilityCreatedMovingPlatformNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f904x99eb808c = new GeneratedMessageV3.FieldAccessorTable(f903x186480e, new String[]{"EntityId", "OpType"});
+    private static final GeneratedMessageV3.FieldAccessorTable f873x99eb808c = new GeneratedMessageV3.FieldAccessorTable(f872x186480e, new String[]{"EntityId", "OpType"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UpdateAbilityCreatedMovingPlatformNotifyOuterClass$UpdateAbilityCreatedMovingPlatformNotifyOrBuilder.class */
     public interface UpdateAbilityCreatedMovingPlatformNotifyOrBuilder extends MessageOrBuilder {
@@ -35,7 +34,7 @@ public final class UpdateAbilityCreatedMovingPlatformNotifyOuterClass {
 
         int getOpTypeValue();
 
-        UpdateAbilityCreatedMovingPlatformNotify.OpType getOpType();
+        OpTypeOuterClass.OpType getOpType();
     }
 
     private UpdateAbilityCreatedMovingPlatformNotifyOuterClass() {
@@ -51,9 +50,9 @@ public final class UpdateAbilityCreatedMovingPlatformNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UpdateAbilityCreatedMovingPlatformNotifyOuterClass$UpdateAbilityCreatedMovingPlatformNotify.class */
     public static final class UpdateAbilityCreatedMovingPlatformNotify extends GeneratedMessageV3 implements UpdateAbilityCreatedMovingPlatformNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTITY_ID_FIELD_NUMBER = 1;
+        public static final int ENTITYID_FIELD_NUMBER = 4;
         private int entityId_;
-        public static final int OP_TYPE_FIELD_NUMBER = 15;
+        public static final int OPTYPE_FIELD_NUMBER = 6;
         private int opType_;
         private byte memoizedIsInitialized;
         private static final UpdateAbilityCreatedMovingPlatformNotify DEFAULT_INSTANCE = new UpdateAbilityCreatedMovingPlatformNotify();
@@ -102,10 +101,10 @@ public final class UpdateAbilityCreatedMovingPlatformNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
+                                case 32:
                                     this.entityId_ = input.readUInt32();
                                     break;
-                                case 120:
+                                case 48:
                                     this.opType_ = input.readEnum();
                                     break;
                                 default:
@@ -130,93 +129,12 @@ public final class UpdateAbilityCreatedMovingPlatformNotifyOuterClass {
         }
 
         public static final Descriptors.Descriptor getDescriptor() {
-            return UpdateAbilityCreatedMovingPlatformNotifyOuterClass.f903x186480e;
+            return UpdateAbilityCreatedMovingPlatformNotifyOuterClass.f872x186480e;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return UpdateAbilityCreatedMovingPlatformNotifyOuterClass.f904x99eb808c.ensureFieldAccessorsInitialized(UpdateAbilityCreatedMovingPlatformNotify.class, Builder.class);
-        }
-
-        /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UpdateAbilityCreatedMovingPlatformNotifyOuterClass$UpdateAbilityCreatedMovingPlatformNotify$OpType.class */
-        public enum OpType implements ProtocolMessageEnum {
-            OP_TYPE_NONE(0),
-            OP_TYPE_ACTIVATE(1),
-            OP_TYPE_DEACTIVATE(2),
-            UNRECOGNIZED(-1);
-            
-            public static final int OP_TYPE_NONE_VALUE = 0;
-            public static final int OP_TYPE_ACTIVATE_VALUE = 1;
-            public static final int OP_TYPE_DEACTIVATE_VALUE = 2;
-            private static final Internal.EnumLiteMap<OpType> internalValueMap = new Internal.EnumLiteMap<OpType>() { // from class: emu.grasscutter.net.proto.UpdateAbilityCreatedMovingPlatformNotifyOuterClass.UpdateAbilityCreatedMovingPlatformNotify.OpType.1
-                @Override // com.google.protobuf.Internal.EnumLiteMap
-                public OpType findValueByNumber(int number) {
-                    return OpType.forNumber(number);
-                }
-            };
-            private static final OpType[] VALUES = values();
-            private final int value;
-
-            @Override // com.google.protobuf.ProtocolMessageEnum, com.google.protobuf.Internal.EnumLite
-            public final int getNumber() {
-                if (this != UNRECOGNIZED) {
-                    return this.value;
-                }
-                throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
-            }
-
-            @Deprecated
-            public static OpType valueOf(int value) {
-                return forNumber(value);
-            }
-
-            public static OpType forNumber(int value) {
-                switch (value) {
-                    case 0:
-                        return OP_TYPE_NONE;
-                    case 1:
-                        return OP_TYPE_ACTIVATE;
-                    case 2:
-                        return OP_TYPE_DEACTIVATE;
-                    default:
-                        return null;
-                }
-            }
-
-            public static Internal.EnumLiteMap<OpType> internalGetValueMap() {
-                return internalValueMap;
-            }
-
-            @Override // com.google.protobuf.ProtocolMessageEnum
-            public final Descriptors.EnumValueDescriptor getValueDescriptor() {
-                if (this != UNRECOGNIZED) {
-                    return getDescriptor().getValues().get(ordinal());
-                }
-                throw new IllegalStateException("Can't get the descriptor of an unrecognized enum value.");
-            }
-
-            @Override // com.google.protobuf.ProtocolMessageEnum
-            public final Descriptors.EnumDescriptor getDescriptorForType() {
-                return getDescriptor();
-            }
-
-            public static final Descriptors.EnumDescriptor getDescriptor() {
-                return UpdateAbilityCreatedMovingPlatformNotify.getDescriptor().getEnumTypes().get(0);
-            }
-
-            public static OpType valueOf(Descriptors.EnumValueDescriptor desc) {
-                if (desc.getType() != getDescriptor()) {
-                    throw new IllegalArgumentException("EnumValueDescriptor is not for this type.");
-                } else if (desc.getIndex() == -1) {
-                    return UNRECOGNIZED;
-                } else {
-                    return VALUES[desc.getIndex()];
-                }
-            }
-
-            OpType(int value) {
-                this.value = value;
-            }
+            return UpdateAbilityCreatedMovingPlatformNotifyOuterClass.f873x99eb808c.ensureFieldAccessorsInitialized(UpdateAbilityCreatedMovingPlatformNotify.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.UpdateAbilityCreatedMovingPlatformNotifyOuterClass.UpdateAbilityCreatedMovingPlatformNotifyOrBuilder
@@ -230,9 +148,9 @@ public final class UpdateAbilityCreatedMovingPlatformNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.UpdateAbilityCreatedMovingPlatformNotifyOuterClass.UpdateAbilityCreatedMovingPlatformNotifyOrBuilder
-        public OpType getOpType() {
-            OpType result = OpType.valueOf(this.opType_);
-            return result == null ? OpType.UNRECOGNIZED : result;
+        public OpTypeOuterClass.OpType getOpType() {
+            OpTypeOuterClass.OpType result = OpTypeOuterClass.OpType.valueOf(this.opType_);
+            return result == null ? OpTypeOuterClass.OpType.UNRECOGNIZED : result;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -251,10 +169,10 @@ public final class UpdateAbilityCreatedMovingPlatformNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.entityId_ != 0) {
-                output.writeUInt32(1, this.entityId_);
+                output.writeUInt32(4, this.entityId_);
             }
-            if (this.opType_ != OpType.OP_TYPE_NONE.getNumber()) {
-                output.writeEnum(15, this.opType_);
+            if (this.opType_ != OpTypeOuterClass.OpType.OP_TYPE_NONE.getNumber()) {
+                output.writeEnum(6, this.opType_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -267,10 +185,10 @@ public final class UpdateAbilityCreatedMovingPlatformNotifyOuterClass {
             }
             int size2 = 0;
             if (this.entityId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.entityId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.entityId_);
             }
-            if (this.opType_ != OpType.OP_TYPE_NONE.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(15, this.opType_);
+            if (this.opType_ != OpTypeOuterClass.OpType.OP_TYPE_NONE.getNumber()) {
+                size2 += CodedOutputStream.computeEnumSize(6, this.opType_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -294,7 +212,7 @@ public final class UpdateAbilityCreatedMovingPlatformNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getEntityId())) + 15)) + this.opType_)) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getEntityId())) + 6)) + this.opType_)) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -377,12 +295,12 @@ public final class UpdateAbilityCreatedMovingPlatformNotifyOuterClass {
             private int opType_ = 0;
 
             public static final Descriptors.Descriptor getDescriptor() {
-                return UpdateAbilityCreatedMovingPlatformNotifyOuterClass.f903x186480e;
+                return UpdateAbilityCreatedMovingPlatformNotifyOuterClass.f872x186480e;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return UpdateAbilityCreatedMovingPlatformNotifyOuterClass.f904x99eb808c.ensureFieldAccessorsInitialized(UpdateAbilityCreatedMovingPlatformNotify.class, Builder.class);
+                return UpdateAbilityCreatedMovingPlatformNotifyOuterClass.f873x99eb808c.ensureFieldAccessorsInitialized(UpdateAbilityCreatedMovingPlatformNotify.class, Builder.class);
             }
 
             private Builder() {
@@ -409,7 +327,7 @@ public final class UpdateAbilityCreatedMovingPlatformNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
-                return UpdateAbilityCreatedMovingPlatformNotifyOuterClass.f903x186480e;
+                return UpdateAbilityCreatedMovingPlatformNotifyOuterClass.f872x186480e;
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -545,12 +463,12 @@ public final class UpdateAbilityCreatedMovingPlatformNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.UpdateAbilityCreatedMovingPlatformNotifyOuterClass.UpdateAbilityCreatedMovingPlatformNotifyOrBuilder
-            public OpType getOpType() {
-                OpType result = OpType.valueOf(this.opType_);
-                return result == null ? OpType.UNRECOGNIZED : result;
+            public OpTypeOuterClass.OpType getOpType() {
+                OpTypeOuterClass.OpType result = OpTypeOuterClass.OpType.valueOf(this.opType_);
+                return result == null ? OpTypeOuterClass.OpType.UNRECOGNIZED : result;
             }
 
-            public Builder setOpType(OpType value) {
+            public Builder setOpType(OpTypeOuterClass.OpType value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -597,5 +515,9 @@ public final class UpdateAbilityCreatedMovingPlatformNotifyOuterClass {
 
     public static Descriptors.FileDescriptor getDescriptor() {
         return descriptor;
+    }
+
+    static {
+        OpTypeOuterClass.getDescriptor();
     }
 }

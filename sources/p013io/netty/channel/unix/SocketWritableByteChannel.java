@@ -14,13 +14,13 @@ import p013io.netty.util.internal.ObjectUtil;
 public abstract class SocketWritableByteChannel implements WritableByteChannel {
 
     /* renamed from: fd */
-    private final FileDescriptor f991fd;
+    private final FileDescriptor f955fd;
 
     protected abstract ByteBufAllocator alloc();
 
     /* access modifiers changed from: protected */
     public SocketWritableByteChannel(FileDescriptor fd) {
-        this.f991fd = (FileDescriptor) ObjectUtil.checkNotNull(fd, "fd");
+        this.f955fd = (FileDescriptor) ObjectUtil.checkNotNull(fd, "fd");
     }
 
     @Override // java.nio.channels.WritableByteChannel
@@ -29,7 +29,7 @@ public abstract class SocketWritableByteChannel implements WritableByteChannel {
         int position = src.position();
         int limit = src.limit();
         if (src.isDirect()) {
-            written = this.f991fd.write(src, position, src.limit());
+            written = this.f955fd.write(src, position, src.limit());
         } else {
             int readableBytes = limit - position;
             ByteBuf buffer = null;
@@ -49,7 +49,7 @@ public abstract class SocketWritableByteChannel implements WritableByteChannel {
                 }
                 buffer.writeBytes(src.duplicate());
                 ByteBuffer nioBuffer = buffer.internalNioBuffer(buffer.readerIndex(), readableBytes);
-                written = this.f991fd.write(nioBuffer, nioBuffer.position(), nioBuffer.limit());
+                written = this.f955fd.write(nioBuffer, nioBuffer.position(), nioBuffer.limit());
                 if (buffer != null) {
                     buffer.release();
                 }
@@ -68,11 +68,11 @@ public abstract class SocketWritableByteChannel implements WritableByteChannel {
 
     @Override // java.nio.channels.Channel
     public final boolean isOpen() {
-        return this.f991fd.isOpen();
+        return this.f955fd.isOpen();
     }
 
     @Override // java.io.Closeable, java.lang.AutoCloseable, java.nio.channels.Channel
     public final void close() throws IOException {
-        this.f991fd.close();
+        this.f955fd.close();
     }
 }

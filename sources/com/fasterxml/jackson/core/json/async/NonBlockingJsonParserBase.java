@@ -440,13 +440,13 @@ public abstract class NonBlockingJsonParserBase extends ParserBase {
             int ch2 = (quads[ix >> 2] >> ((3 - (ix & 3)) << 3)) & 255;
             ix++;
             if (ch2 > 127) {
-                if ((ch2 & PacketOpcodes.WorldPlayerLocationNotify) == 192) {
+                if ((ch2 & PacketOpcodes.SceneAvatarStaminaStepRsp) == 192) {
                     ch = ch2 & 31;
                     needed = 1;
-                } else if ((ch2 & PacketOpcodes.ExecuteGadgetLuaRsp) == 224) {
+                } else if ((ch2 & PacketOpcodes.SceneKickPlayerRsp) == 224) {
                     ch = ch2 & 15;
                     needed = 2;
-                } else if ((ch2 & PacketOpcodes.ScenePlayerLocationNotify) == 240) {
+                } else if ((ch2 & PacketOpcodes.EnterSceneDoneReq) == 240) {
                     ch = ch2 & 7;
                     needed = 3;
                 } else {

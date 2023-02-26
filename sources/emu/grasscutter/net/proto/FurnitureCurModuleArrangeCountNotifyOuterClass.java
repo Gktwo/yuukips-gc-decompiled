@@ -25,11 +25,11 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureCurModuleArrangeCountNotifyOuterClass.class */
 public final class FurnitureCurModuleArrangeCountNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n*FurnitureCurModuleArrangeCountNotify.proto\u001a\u0010Uint32Pair.proto\"Y\n$FurnitureCurModuleArrangeCountNotify\u00121\n\u001cfurniture_arrange_count_list\u0018\u0003 \u0003(\u000b2\u000b.Uint32PairB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{Uint32PairOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n*FurnitureCurModuleArrangeCountNotify.proto\u001a\u0010Uint32Pair.proto\"V\n$FurnitureCurModuleArrangeCountNotify\u0012.\n\u0019furnitureArrangeCountList\u0018\r \u0003(\u000b2\u000b.Uint32PairB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{Uint32PairOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_FurnitureCurModuleArrangeCountNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_FurnitureCurModuleArrangeCountNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f725xb011ca17 = new GeneratedMessageV3.FieldAccessorTable(internal_static_FurnitureCurModuleArrangeCountNotify_descriptor, new String[]{"FurnitureArrangeCountList"});
+    private static final GeneratedMessageV3.FieldAccessorTable f718xb011ca17 = new GeneratedMessageV3.FieldAccessorTable(internal_static_FurnitureCurModuleArrangeCountNotify_descriptor, new String[]{"FurnitureArrangeCountList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureCurModuleArrangeCountNotifyOuterClass$FurnitureCurModuleArrangeCountNotifyOrBuilder.class */
     public interface FurnitureCurModuleArrangeCountNotifyOrBuilder extends MessageOrBuilder {
@@ -57,7 +57,7 @@ public final class FurnitureCurModuleArrangeCountNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureCurModuleArrangeCountNotifyOuterClass$FurnitureCurModuleArrangeCountNotify.class */
     public static final class FurnitureCurModuleArrangeCountNotify extends GeneratedMessageV3 implements FurnitureCurModuleArrangeCountNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int FURNITURE_ARRANGE_COUNT_LIST_FIELD_NUMBER = 3;
+        public static final int FURNITUREARRANGECOUNTLIST_FIELD_NUMBER = 13;
         private List<Uint32PairOuterClass.Uint32Pair> furnitureArrangeCountList_;
         private byte memoizedIsInitialized;
         private static final FurnitureCurModuleArrangeCountNotify DEFAULT_INSTANCE = new FurnitureCurModuleArrangeCountNotify();
@@ -108,7 +108,7 @@ public final class FurnitureCurModuleArrangeCountNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 26:
+                                case 106:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.furnitureArrangeCountList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -145,7 +145,7 @@ public final class FurnitureCurModuleArrangeCountNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return FurnitureCurModuleArrangeCountNotifyOuterClass.f725xb011ca17.ensureFieldAccessorsInitialized(FurnitureCurModuleArrangeCountNotify.class, Builder.class);
+            return FurnitureCurModuleArrangeCountNotifyOuterClass.f718xb011ca17.ensureFieldAccessorsInitialized(FurnitureCurModuleArrangeCountNotify.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.FurnitureCurModuleArrangeCountNotifyOuterClass.FurnitureCurModuleArrangeCountNotifyOrBuilder
@@ -189,7 +189,7 @@ public final class FurnitureCurModuleArrangeCountNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.furnitureArrangeCountList_.size(); i++) {
-                output.writeMessage(3, this.furnitureArrangeCountList_.get(i));
+                output.writeMessage(13, this.furnitureArrangeCountList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -202,7 +202,7 @@ public final class FurnitureCurModuleArrangeCountNotifyOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.furnitureArrangeCountList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(3, this.furnitureArrangeCountList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(13, this.furnitureArrangeCountList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -228,7 +228,7 @@ public final class FurnitureCurModuleArrangeCountNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getFurnitureArrangeCountListCount() > 0) {
-                hash = (53 * ((37 * hash) + 3)) + getFurnitureArrangeCountListList().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getFurnitureArrangeCountListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -319,7 +319,7 @@ public final class FurnitureCurModuleArrangeCountNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return FurnitureCurModuleArrangeCountNotifyOuterClass.f725xb011ca17.ensureFieldAccessorsInitialized(FurnitureCurModuleArrangeCountNotify.class, Builder.class);
+                return FurnitureCurModuleArrangeCountNotifyOuterClass.f718xb011ca17.ensureFieldAccessorsInitialized(FurnitureCurModuleArrangeCountNotify.class, Builder.class);
             }
 
             private Builder() {

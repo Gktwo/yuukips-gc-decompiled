@@ -119,32 +119,32 @@ public abstract class AbstractReferenceBigList<K> extends AbstractReferenceColle
     public static final class IndexBasedSpliterator<K> extends ObjectBigSpliterators.LateBindingSizeIndexBasedSpliterator<K> {
 
         /* renamed from: l */
-        final ReferenceBigList<K> f2534l;
+        final ReferenceBigList<K> f2498l;
 
         IndexBasedSpliterator(ReferenceBigList<K> l, long pos) {
             super(pos);
-            this.f2534l = l;
+            this.f2498l = l;
         }
 
         IndexBasedSpliterator(ReferenceBigList<K> l, long pos, long maxPos) {
             super(pos, maxPos);
-            this.f2534l = l;
+            this.f2498l = l;
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigSpliterators.LateBindingSizeIndexBasedSpliterator
         protected final long getMaxPosFromBackingStore() {
-            return this.f2534l.size64();
+            return this.f2498l.size64();
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigSpliterators.AbstractIndexBasedSpliterator
         protected final K get(long i) {
-            return this.f2534l.get(i);
+            return this.f2498l.get(i);
         }
 
         /* access modifiers changed from: protected */
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigSpliterators.AbstractIndexBasedSpliterator
         public final IndexBasedSpliterator<K> makeForSplit(long pos, long maxPos) {
-            return new IndexBasedSpliterator<>(this.f2534l, pos, maxPos);
+            return new IndexBasedSpliterator<>(this.f2498l, pos, maxPos);
         }
     }
 
@@ -670,11 +670,11 @@ public abstract class AbstractReferenceBigList<K> extends AbstractReferenceColle
         private static final long serialVersionUID = -7046029254386353129L;
 
         /* renamed from: l */
-        protected final ReferenceBigList<K> f2535l;
+        protected final ReferenceBigList<K> f2499l;
         protected final long from;
 
         /* renamed from: to */
-        protected long f2536to;
+        protected long f2500to;
         static final /* synthetic */ boolean $assertionsDisabled;
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceBigList, p014it.unimi.dsi.fastutil.objects.ReferenceBigList, p014it.unimi.dsi.fastutil.BigList
@@ -687,18 +687,18 @@ public abstract class AbstractReferenceBigList<K> extends AbstractReferenceColle
         }
 
         public ReferenceSubList(ReferenceBigList<K> l, long from, long to) {
-            this.f2535l = l;
+            this.f2499l = l;
             this.from = from;
-            this.f2536to = to;
+            this.f2500to = to;
         }
 
         /* access modifiers changed from: private */
         public boolean assertRange() {
-            if (!$assertionsDisabled && this.from > this.f2535l.size64()) {
+            if (!$assertionsDisabled && this.from > this.f2499l.size64()) {
                 throw new AssertionError();
-            } else if (!$assertionsDisabled && this.f2536to > this.f2535l.size64()) {
+            } else if (!$assertionsDisabled && this.f2500to > this.f2499l.size64()) {
                 throw new AssertionError();
-            } else if ($assertionsDisabled || this.f2536to >= this.from) {
+            } else if ($assertionsDisabled || this.f2500to >= this.from) {
                 return true;
             } else {
                 throw new AssertionError();
@@ -707,8 +707,8 @@ public abstract class AbstractReferenceBigList<K> extends AbstractReferenceColle
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceBigList, java.util.AbstractCollection, java.util.Collection
         public boolean add(K k) {
-            this.f2535l.add(this.f2536to, k);
-            this.f2536to++;
+            this.f2499l.add(this.f2500to, k);
+            this.f2500to++;
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }
@@ -718,8 +718,8 @@ public abstract class AbstractReferenceBigList<K> extends AbstractReferenceColle
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceBigList, p014it.unimi.dsi.fastutil.BigList
         public void add(long index, K k) {
             ensureIndex(index);
-            this.f2535l.add(this.from + index, k);
-            this.f2536to++;
+            this.f2499l.add(this.from + index, k);
+            this.f2500to++;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -728,32 +728,32 @@ public abstract class AbstractReferenceBigList<K> extends AbstractReferenceColle
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceBigList, p014it.unimi.dsi.fastutil.BigList
         public boolean addAll(long index, Collection<? extends K> c) {
             ensureIndex(index);
-            this.f2536to += (long) c.size();
-            return this.f2535l.addAll(this.from + index, c);
+            this.f2500to += (long) c.size();
+            return this.f2499l.addAll(this.from + index, c);
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigList
         public K get(long index) {
             ensureRestrictedIndex(index);
-            return this.f2535l.get(this.from + index);
+            return this.f2499l.get(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceBigList, p014it.unimi.dsi.fastutil.BigList
         public K remove(long index) {
             ensureRestrictedIndex(index);
-            this.f2536to--;
-            return this.f2535l.remove(this.from + index);
+            this.f2500to--;
+            return this.f2499l.remove(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceBigList, p014it.unimi.dsi.fastutil.BigList
         public K set(long index, K k) {
             ensureRestrictedIndex(index);
-            return this.f2535l.set(this.from + index, k);
+            return this.f2499l.set(this.from + index, k);
         }
 
         @Override // p014it.unimi.dsi.fastutil.Size64
         public long size64() {
-            return this.f2536to - this.from;
+            return this.f2500to - this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceBigList, p014it.unimi.dsi.fastutil.objects.ReferenceBigList
@@ -762,15 +762,15 @@ public abstract class AbstractReferenceBigList<K> extends AbstractReferenceColle
             if (from + length > size64()) {
                 throw new IndexOutOfBoundsException("End index (" + from + length + ") is greater than list size (" + size64() + ")");
             }
-            this.f2535l.getElements(this.from + from, a, offset, length);
+            this.f2499l.getElements(this.from + from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceBigList, p014it.unimi.dsi.fastutil.objects.ReferenceBigList
         public void removeElements(long from, long to) {
             ensureIndex(from);
             ensureIndex(to);
-            this.f2535l.removeElements(this.from + from, this.from + to);
-            this.f2536to -= to - from;
+            this.f2499l.removeElements(this.from + from, this.from + to);
+            this.f2500to -= to - from;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -779,8 +779,8 @@ public abstract class AbstractReferenceBigList<K> extends AbstractReferenceColle
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceBigList, p014it.unimi.dsi.fastutil.objects.ReferenceBigList
         public void addElements(long index, K[][] a, long offset, long length) {
             ensureIndex(index);
-            this.f2535l.addElements(this.from + index, a, offset, length);
-            this.f2536to += length;
+            this.f2499l.addElements(this.from + index, a, offset, length);
+            this.f2500to += length;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -802,7 +802,7 @@ public abstract class AbstractReferenceBigList<K> extends AbstractReferenceColle
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigListIterators.AbstractIndexBasedBigIterator
             protected final K get(long i) {
-                return ReferenceSubList.this.f2535l.get(ReferenceSubList.this.from + i);
+                return ReferenceSubList.this.f2499l.get(ReferenceSubList.this.from + i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigListIterators.AbstractIndexBasedBigListIterator
@@ -822,7 +822,7 @@ public abstract class AbstractReferenceBigList<K> extends AbstractReferenceColle
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigListIterators.AbstractIndexBasedBigIterator
             protected final long getMaxPos() {
-                return ReferenceSubList.this.f2536to - ReferenceSubList.this.from;
+                return ReferenceSubList.this.f2500to - ReferenceSubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigListIterators.AbstractIndexBasedBigListIterator, p014it.unimi.dsi.fastutil.objects.ObjectBigListIterator, p014it.unimi.dsi.fastutil.BigListIterator
@@ -864,7 +864,7 @@ public abstract class AbstractReferenceBigList<K> extends AbstractReferenceColle
 
             @Override // java.util.Iterator
             public boolean hasNext() {
-                return this.parent.nextIndex() < ReferenceSubList.this.f2536to;
+                return this.parent.nextIndex() < ReferenceSubList.this.f2500to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -927,10 +927,10 @@ public abstract class AbstractReferenceBigList<K> extends AbstractReferenceColle
                 }
                 long currentPos = this.parent.nextIndex();
                 char c = currentPos + n;
-                int i = (c > ReferenceSubList.this.f2536to ? 1 : (c == ReferenceSubList.this.f2536to ? 0 : -1));
+                int i = (c > ReferenceSubList.this.f2500to ? 1 : (c == ReferenceSubList.this.f2500to ? 0 : -1));
                 long parentNewPos = c;
                 if (i > 0) {
-                    parentNewPos = ReferenceSubList.this.f2536to;
+                    parentNewPos = ReferenceSubList.this.f2500to;
                 }
                 return this.parent.skip((parentNewPos == 1 ? 1 : 0) - currentPos);
             }
@@ -939,12 +939,12 @@ public abstract class AbstractReferenceBigList<K> extends AbstractReferenceColle
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceBigList, p014it.unimi.dsi.fastutil.objects.ReferenceBigList, p014it.unimi.dsi.fastutil.BigList
         public ObjectBigListIterator<K> listIterator(long index) {
             ensureIndex(index);
-            return this.f2535l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f2535l.listIterator(index + this.from));
+            return this.f2499l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f2499l.listIterator(index + this.from));
         }
 
         @Override // java.util.Collection, java.lang.Iterable, p014it.unimi.dsi.fastutil.objects.ReferenceCollection, p014it.unimi.dsi.fastutil.objects.ObjectIterable, p014it.unimi.dsi.fastutil.objects.ObjectCollection, p014it.unimi.dsi.fastutil.objects.ObjectSet, java.util.Set
         public ObjectSpliterator<K> spliterator() {
-            return this.f2535l instanceof RandomAccess ? new IndexBasedSpliterator(this.f2535l, this.from, this.f2536to) : spliterator();
+            return this.f2499l instanceof RandomAccess ? new IndexBasedSpliterator(this.f2499l, this.from, this.f2500to) : spliterator();
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceBigList, p014it.unimi.dsi.fastutil.objects.ReferenceBigList, p014it.unimi.dsi.fastutil.BigList

@@ -594,15 +594,15 @@ public final class LongBigArrays {
         private final long from;
 
         /* renamed from: to */
-        private final long f2406to;
+        private final long f2370to;
 
         /* renamed from: x */
-        private final long[][] f2407x;
+        private final long[][] f2371x;
 
         public ForkJoinQuickSort(long[][] x, long from, long to) {
             this.from = from;
-            this.f2406to = to;
-            this.f2407x = x;
+            this.f2370to = to;
+            this.f2371x = x;
         }
 
         /* JADX DEBUG: Failed to insert an additional move for type inference into block B:40:0x00ad */
@@ -662,16 +662,16 @@ public final class LongBigArrays {
         private final long from;
 
         /* renamed from: to */
-        private final long f2408to;
+        private final long f2372to;
 
         /* renamed from: x */
-        private final long[][] f2409x;
+        private final long[][] f2373x;
         private final LongComparator comp;
 
         public ForkJoinQuickSortComp(long[][] x, long from, long to, LongComparator comp) {
             this.from = from;
-            this.f2408to = to;
-            this.f2409x = x;
+            this.f2372to = to;
+            this.f2373x = x;
             this.comp = comp;
         }
 

@@ -1,5 +1,6 @@
 package com.esotericsoftware.asm;
 
+import emu.grasscutter.net.packet.PacketOpcodes;
 import javassist.bytecode.AnnotationsAttribute;
 import javassist.bytecode.BootstrapMethodsAttribute;
 import javassist.bytecode.DeprecatedAttribute;
@@ -867,7 +868,7 @@ public class ClassWriter extends ClassVisitor {
 
     static {
         _clinit_();
-        byte[] bArr = new byte[220];
+        byte[] bArr = new byte[PacketOpcodes.SceneInitFinishRsp];
         for (int i = 0; i < bArr.length; i++) {
             bArr[i] = (byte) ("AAAAAAAAAAAAAAAABCLMMDDDDDEEEEEEEEEEEEEEEEEEEEAAAAAAAADDDDDEEEEEEEEEEEEEEEEEEEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAAAAAAJJJJJJJJJJJJJJJJDOPAAAAAAGGGGGGGHIFBFAAFFAARQJJKKJJJJJJJJJJJJJJJJJJ".charAt(i) - 'A');
         }

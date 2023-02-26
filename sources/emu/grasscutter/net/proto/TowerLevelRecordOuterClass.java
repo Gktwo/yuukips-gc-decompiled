@@ -23,19 +23,19 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerLevelRecordOuterClass.class */
 public final class TowerLevelRecordOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016TowerLevelRecord.proto\"A\n\u0010TowerLevelRecord\u0012\u001b\n\u0013satisfied_cond_list\u0018\r \u0003(\r\u0012\u0010\n\blevel_id\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016TowerLevelRecord.proto\">\n\u0010TowerLevelRecord\u0012\u000f\n\u0007levelId\u0018\u000b \u0001(\r\u0012\u0019\n\u0011satisfiedCondList\u0018\u0007 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_TowerLevelRecord_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TowerLevelRecord_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TowerLevelRecord_descriptor, new String[]{"SatisfiedCondList", "LevelId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TowerLevelRecord_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TowerLevelRecord_descriptor, new String[]{"LevelId", "SatisfiedCondList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerLevelRecordOuterClass$TowerLevelRecordOrBuilder.class */
     public interface TowerLevelRecordOrBuilder extends MessageOrBuilder {
+        int getLevelId();
+
         List<Integer> getSatisfiedCondListList();
 
         int getSatisfiedCondListCount();
 
         int getSatisfiedCondList(int i);
-
-        int getLevelId();
     }
 
     private TowerLevelRecordOuterClass() {
@@ -51,11 +51,11 @@ public final class TowerLevelRecordOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerLevelRecordOuterClass$TowerLevelRecord.class */
     public static final class TowerLevelRecord extends GeneratedMessageV3 implements TowerLevelRecordOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SATISFIED_COND_LIST_FIELD_NUMBER = 13;
+        public static final int LEVELID_FIELD_NUMBER = 11;
+        private int levelId_;
+        public static final int SATISFIEDCONDLIST_FIELD_NUMBER = 7;
         private Internal.IntList satisfiedCondList_;
         private int satisfiedCondListMemoizedSerializedSize;
-        public static final int LEVEL_ID_FIELD_NUMBER = 15;
-        private int levelId_;
         private byte memoizedIsInitialized;
         private static final TowerLevelRecord DEFAULT_INSTANCE = new TowerLevelRecord();
         private static final Parser<TowerLevelRecord> PARSER = new AbstractParser<TowerLevelRecord>() { // from class: emu.grasscutter.net.proto.TowerLevelRecordOuterClass.TowerLevelRecord.1
@@ -107,14 +107,14 @@ public final class TowerLevelRecordOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 104:
+                                case 56:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.satisfiedCondList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.satisfiedCondList_.addInt(input.readUInt32());
                                     break;
-                                case 106:
+                                case 58:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.satisfiedCondList_ = newIntList();
@@ -125,7 +125,7 @@ public final class TowerLevelRecordOuterClass {
                                     }
                                     input.popLimit(limit);
                                     break;
-                                case 120:
+                                case 88:
                                     this.levelId_ = input.readUInt32();
                                     break;
                                 default:
@@ -162,6 +162,11 @@ public final class TowerLevelRecordOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.TowerLevelRecordOuterClass.TowerLevelRecordOrBuilder
+        public int getLevelId() {
+            return this.levelId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.TowerLevelRecordOuterClass.TowerLevelRecordOrBuilder
         public List<Integer> getSatisfiedCondListList() {
             return this.satisfiedCondList_;
         }
@@ -174,11 +179,6 @@ public final class TowerLevelRecordOuterClass {
         @Override // emu.grasscutter.net.proto.TowerLevelRecordOuterClass.TowerLevelRecordOrBuilder
         public int getSatisfiedCondList(int index) {
             return this.satisfiedCondList_.getInt(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.TowerLevelRecordOuterClass.TowerLevelRecordOrBuilder
-        public int getLevelId() {
-            return this.levelId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -198,14 +198,14 @@ public final class TowerLevelRecordOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getSatisfiedCondListList().size() > 0) {
-                output.writeUInt32NoTag(106);
+                output.writeUInt32NoTag(58);
                 output.writeUInt32NoTag(this.satisfiedCondListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.satisfiedCondList_.size(); i++) {
                 output.writeUInt32NoTag(this.satisfiedCondList_.getInt(i));
             }
             if (this.levelId_ != 0) {
-                output.writeUInt32(15, this.levelId_);
+                output.writeUInt32(11, this.levelId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -226,7 +226,7 @@ public final class TowerLevelRecordOuterClass {
             }
             this.satisfiedCondListMemoizedSerializedSize = dataSize;
             if (this.levelId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.levelId_);
+                size2 += CodedOutputStream.computeUInt32Size(11, this.levelId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -242,7 +242,7 @@ public final class TowerLevelRecordOuterClass {
                 return equals(obj);
             }
             TowerLevelRecord other = (TowerLevelRecord) obj;
-            return getSatisfiedCondListList().equals(other.getSatisfiedCondListList()) && getLevelId() == other.getLevelId() && this.unknownFields.equals(other.unknownFields);
+            return getLevelId() == other.getLevelId() && getSatisfiedCondListList().equals(other.getSatisfiedCondListList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -250,11 +250,11 @@ public final class TowerLevelRecordOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getLevelId();
             if (getSatisfiedCondListCount() > 0) {
-                hash = (53 * ((37 * hash) + 13)) + getSatisfiedCondListList().hashCode();
+                hash = (53 * ((37 * hash) + 7)) + getSatisfiedCondListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 15)) + getLevelId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -334,8 +334,8 @@ public final class TowerLevelRecordOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerLevelRecordOuterClass$TowerLevelRecord$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements TowerLevelRecordOrBuilder {
             private int bitField0_;
-            private Internal.IntList satisfiedCondList_ = TowerLevelRecord.emptyIntList();
             private int levelId_;
+            private Internal.IntList satisfiedCondList_ = TowerLevelRecord.emptyIntList();
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return TowerLevelRecordOuterClass.internal_static_TowerLevelRecord_descriptor;
@@ -363,9 +363,9 @@ public final class TowerLevelRecordOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.levelId_ = 0;
                 this.satisfiedCondList_ = TowerLevelRecord.emptyIntList();
                 this.bitField0_ &= -2;
-                this.levelId_ = 0;
                 return this;
             }
 
@@ -392,12 +392,12 @@ public final class TowerLevelRecordOuterClass {
             public TowerLevelRecord buildPartial() {
                 TowerLevelRecord result = new TowerLevelRecord(this);
                 int i = this.bitField0_;
+                result.levelId_ = this.levelId_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.satisfiedCondList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.satisfiedCondList_ = this.satisfiedCondList_;
-                result.levelId_ = this.levelId_;
                 onBuilt();
                 return result;
             }
@@ -445,6 +445,9 @@ public final class TowerLevelRecordOuterClass {
                 if (other == TowerLevelRecord.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getLevelId() != 0) {
+                    setLevelId(other.getLevelId());
+                }
                 if (!other.satisfiedCondList_.isEmpty()) {
                     if (this.satisfiedCondList_.isEmpty()) {
                         this.satisfiedCondList_ = other.satisfiedCondList_;
@@ -454,9 +457,6 @@ public final class TowerLevelRecordOuterClass {
                         this.satisfiedCondList_.addAll(other.satisfiedCondList_);
                     }
                     onChanged();
-                }
-                if (other.getLevelId() != 0) {
-                    setLevelId(other.getLevelId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -488,6 +488,23 @@ public final class TowerLevelRecordOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.TowerLevelRecordOuterClass.TowerLevelRecordOrBuilder
+            public int getLevelId() {
+                return this.levelId_;
+            }
+
+            public Builder setLevelId(int value) {
+                this.levelId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearLevelId() {
+                this.levelId_ = 0;
+                onChanged();
+                return this;
             }
 
             private void ensureSatisfiedCondListIsMutable() {
@@ -536,23 +553,6 @@ public final class TowerLevelRecordOuterClass {
             public Builder clearSatisfiedCondList() {
                 this.satisfiedCondList_ = TowerLevelRecord.emptyIntList();
                 this.bitField0_ &= -2;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.TowerLevelRecordOuterClass.TowerLevelRecordOrBuilder
-            public int getLevelId() {
-                return this.levelId_;
-            }
-
-            public Builder setLevelId(int value) {
-                this.levelId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearLevelId() {
-                this.levelId_ = 0;
                 onChanged();
                 return this;
             }

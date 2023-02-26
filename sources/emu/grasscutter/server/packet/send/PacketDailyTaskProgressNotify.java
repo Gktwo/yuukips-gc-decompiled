@@ -7,7 +7,7 @@ import emu.grasscutter.net.proto.DailyTaskProgressNotifyOuterClass;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketDailyTaskProgressNotify.class */
 public class PacketDailyTaskProgressNotify extends BasePacket {
     public PacketDailyTaskProgressNotify(DailyTaskInfoOuterClass.DailyTaskInfo info) {
-        super(149);
+        super(179);
         setData(DailyTaskProgressNotifyOuterClass.DailyTaskProgressNotify.newBuilder().setInfo(info).build());
     }
 }

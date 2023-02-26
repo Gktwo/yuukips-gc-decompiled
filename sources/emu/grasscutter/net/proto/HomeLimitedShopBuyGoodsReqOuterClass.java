@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeLimitedShopBuyGoodsReqOuterClass.class */
 public final class HomeLimitedShopBuyGoodsReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n HomeLimitedShopBuyGoodsReq.proto\u001a\u001aHomeLimitedShopGoods.proto\"U\n\u001aHomeLimitedShopBuyGoodsReq\u0012$\n\u0005goods\u0018\u0006 \u0001(\u000b2\u0015.HomeLimitedShopGoods\u0012\u0011\n\tbuy_count\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeLimitedShopGoodsOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n HomeLimitedShopBuyGoodsReq.proto\u001a\u001aHomeLimitedShopGoods.proto\"T\n\u001aHomeLimitedShopBuyGoodsReq\u0012$\n\u0005goods\u0018\u0001 \u0001(\u000b2\u0015.HomeLimitedShopGoods\u0012\u0010\n\bbuyCount\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeLimitedShopGoodsOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_HomeLimitedShopBuyGoodsReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeLimitedShopBuyGoodsReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeLimitedShopBuyGoodsReq_descriptor, new String[]{"Goods", "BuyCount"});
 
@@ -49,9 +49,9 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeLimitedShopBuyGoodsReqOuterClass$HomeLimitedShopBuyGoodsReq.class */
     public static final class HomeLimitedShopBuyGoodsReq extends GeneratedMessageV3 implements HomeLimitedShopBuyGoodsReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int GOODS_FIELD_NUMBER = 6;
+        public static final int GOODS_FIELD_NUMBER = 1;
         private HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods goods_;
-        public static final int BUY_COUNT_FIELD_NUMBER = 13;
+        public static final int BUYCOUNT_FIELD_NUMBER = 10;
         private int buyCount_;
         private byte memoizedIsInitialized;
         private static final HomeLimitedShopBuyGoodsReq DEFAULT_INSTANCE = new HomeLimitedShopBuyGoodsReq();
@@ -99,7 +99,7 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 50:
+                                case 10:
                                     HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.Builder subBuilder = this.goods_ != null ? this.goods_.toBuilder() : null;
                                     this.goods_ = (HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods) input.readMessage(HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -109,7 +109,7 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
                                         this.goods_ = subBuilder.buildPartial();
                                         break;
                                     }
-                                case 104:
+                                case 80:
                                     this.buyCount_ = input.readUInt32();
                                     break;
                                 default:
@@ -178,10 +178,10 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.goods_ != null) {
-                output.writeMessage(6, getGoods());
+                output.writeMessage(1, getGoods());
             }
             if (this.buyCount_ != 0) {
-                output.writeUInt32(13, this.buyCount_);
+                output.writeUInt32(10, this.buyCount_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -194,10 +194,10 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
             }
             int size2 = 0;
             if (this.goods_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(6, getGoods());
+                size2 = 0 + CodedOutputStream.computeMessageSize(1, getGoods());
             }
             if (this.buyCount_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.buyCount_);
+                size2 += CodedOutputStream.computeUInt32Size(10, this.buyCount_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,9 +226,9 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasGoods()) {
-                hash = (53 * ((37 * hash) + 6)) + getGoods().hashCode();
+                hash = (53 * ((37 * hash) + 1)) + getGoods().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 13)) + getBuyCount())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 10)) + getBuyCount())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

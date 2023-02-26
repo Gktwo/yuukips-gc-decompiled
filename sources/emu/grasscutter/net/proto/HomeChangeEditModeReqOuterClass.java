@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeChangeEditModeReqOuterClass.class */
 public final class HomeChangeEditModeReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bHomeChangeEditModeReq.proto\"3\n\u0015HomeChangeEditModeReq\u0012\u001a\n\u0012is_enter_edit_mode\u0018\u000f \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bHomeChangeEditModeReq.proto\"0\n\u0015HomeChangeEditModeReq\u0012\u0017\n\u000fisEnterEditMode\u0018\u0002 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_HomeChangeEditModeReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeChangeEditModeReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeChangeEditModeReq_descriptor, new String[]{"IsEnterEditMode"});
 
@@ -42,7 +42,7 @@ public final class HomeChangeEditModeReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeChangeEditModeReqOuterClass$HomeChangeEditModeReq.class */
     public static final class HomeChangeEditModeReq extends GeneratedMessageV3 implements HomeChangeEditModeReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_ENTER_EDIT_MODE_FIELD_NUMBER = 15;
+        public static final int ISENTEREDITMODE_FIELD_NUMBER = 2;
         private boolean isEnterEditMode_;
         private byte memoizedIsInitialized;
         private static final HomeChangeEditModeReq DEFAULT_INSTANCE = new HomeChangeEditModeReq();
@@ -89,7 +89,7 @@ public final class HomeChangeEditModeReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 120:
+                            case 16:
                                 this.isEnterEditMode_ = input.readBool();
                                 break;
                             default:
@@ -142,7 +142,7 @@ public final class HomeChangeEditModeReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.isEnterEditMode_) {
-                output.writeBool(15, this.isEnterEditMode_);
+                output.writeBool(2, this.isEnterEditMode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -155,7 +155,7 @@ public final class HomeChangeEditModeReqOuterClass {
             }
             int size2 = 0;
             if (this.isEnterEditMode_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(15, this.isEnterEditMode_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(2, this.isEnterEditMode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -179,7 +179,7 @@ public final class HomeChangeEditModeReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + Internal.hashBoolean(getIsEnterEditMode()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + Internal.hashBoolean(getIsEnterEditMode()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

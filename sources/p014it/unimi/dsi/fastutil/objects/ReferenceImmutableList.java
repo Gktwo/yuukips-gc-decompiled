@@ -22,7 +22,7 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
     private static final long serialVersionUID = 0;
 
     /* renamed from: a */
-    private final K[] f2834a;
+    private final K[] f2798a;
     static final ReferenceImmutableList EMPTY = new ReferenceImmutableList(ObjectArrays.EMPTY_ARRAY);
     private static final Collector<Object, ?, ReferenceImmutableList<Object>> TO_LIST_COLLECTOR = Collector.of(ReferenceArrayList::new, (v0, v1) -> {
         v0.add(v1);
@@ -35,7 +35,7 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
     }
 
     public ReferenceImmutableList(K[] a) {
-        this.f2834a = a;
+        this.f2798a = a;
     }
 
     public ReferenceImmutableList(Collection<? extends K> c) {
@@ -48,12 +48,12 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
 
     public ReferenceImmutableList(ReferenceList<? extends K> l) {
         this(l.isEmpty() ? emptyArray() : new Object[l.size()]);
-        l.getElements(0, this.f2834a, 0, l.size());
+        l.getElements(0, this.f2798a, 0, l.size());
     }
 
     public ReferenceImmutableList(K[] a, int offset, int length) {
         this(length == 0 ? emptyArray() : new Object[length]);
-        System.arraycopy(a, offset, this.f2834a, 0, length);
+        System.arraycopy(a, offset, this.f2798a, 0, length);
     }
 
     public ReferenceImmutableList(ObjectIterator<? extends K> i) {
@@ -103,17 +103,17 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
 
     @Override // java.util.List
     public K get(int index) {
-        if (index < this.f2834a.length) {
-            return this.f2834a[index];
+        if (index < this.f2798a.length) {
+            return this.f2798a[index];
         }
-        throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.f2834a.length + ")");
+        throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.f2798a.length + ")");
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, java.util.List
     public int indexOf(Object k) {
-        int size = this.f2834a.length;
+        int size = this.f2798a.length;
         for (int i = 0; i < size; i++) {
-            if (k == this.f2834a[i]) {
+            if (k == this.f2798a[i]) {
                 return i;
             }
         }
@@ -122,45 +122,45 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, java.util.List
     public int lastIndexOf(Object k) {
-        int i = this.f2834a.length;
+        int i = this.f2798a.length;
         do {
             i--;
             if (i == 0) {
                 return -1;
             }
-        } while (k != this.f2834a[i]);
+        } while (k != this.f2798a[i]);
         return i;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public int size() {
-        return this.f2834a.length;
+        return this.f2798a.length;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List, p014it.unimi.dsi.fastutil.Stack
     public boolean isEmpty() {
-        return this.f2834a.length == 0;
+        return this.f2798a.length == 0;
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, p014it.unimi.dsi.fastutil.objects.ReferenceList
     public void getElements(int from, Object[] a, int offset, int length) {
         ObjectArrays.ensureOffsetLength(a, offset, length);
-        System.arraycopy(this.f2834a, from, a, offset, length);
+        System.arraycopy(this.f2798a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, java.lang.Iterable
     public void forEach(Consumer<? super K> action) {
-        for (int i = 0; i < this.f2834a.length; i++) {
-            action.accept((Object) this.f2834a[i]);
+        for (int i = 0; i < this.f2798a.length; i++) {
+            action.accept((Object) this.f2798a[i]);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public Object[] toArray() {
-        if (this.f2834a.getClass().equals(Object[].class)) {
-            return (Object[]) this.f2834a.clone();
+        if (this.f2798a.getClass().equals(Object[].class)) {
+            return (Object[]) this.f2798a.clone();
         }
-        return Arrays.copyOf(this.f2834a, this.f2834a.length, Object[].class);
+        return Arrays.copyOf(this.f2798a, this.f2798a.length, Object[].class);
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -170,7 +170,7 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
         } else if (a.length < size()) {
             a = (K[]) ((Object[]) Array.newInstance(a.getClass().getComponentType(), size()));
         }
-        System.arraycopy(this.f2834a, 0, a, 0, size());
+        System.arraycopy(this.f2798a, 0, a, 0, size());
         if (a.length > size()) {
             a[size()] = null;
         }
@@ -190,7 +190,7 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
 
             @Override // java.util.Iterator, java.util.ListIterator
             public boolean hasNext() {
-                return this.pos < ReferenceImmutableList.this.f2834a.length;
+                return this.pos < ReferenceImmutableList.this.f2798a.length;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -203,7 +203,7 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                Object[] objArr = ReferenceImmutableList.this.f2834a;
+                Object[] objArr = ReferenceImmutableList.this.f2798a;
                 int i = this.pos;
                 this.pos = i + 1;
                 return (K) objArr[i];
@@ -214,7 +214,7 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                Object[] objArr = ReferenceImmutableList.this.f2834a;
+                Object[] objArr = ReferenceImmutableList.this.f2798a;
                 int i = this.pos - 1;
                 this.pos = i;
                 return (K) objArr[i];
@@ -232,8 +232,8 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
 
             @Override // java.util.Iterator
             public void forEachRemaining(Consumer<? super K> action) {
-                while (this.pos < ReferenceImmutableList.this.f2834a.length) {
-                    Object[] objArr = ReferenceImmutableList.this.f2834a;
+                while (this.pos < ReferenceImmutableList.this.f2798a.length) {
+                    Object[] objArr = ReferenceImmutableList.this.f2798a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(objArr[i]);
@@ -260,7 +260,7 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
                 if (n < 0) {
                     throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                 }
-                int remaining = ReferenceImmutableList.this.f2834a.length - this.pos;
+                int remaining = ReferenceImmutableList.this.f2798a.length - this.pos;
                 if (n < remaining) {
                     this.pos -= n;
                 } else {
@@ -275,12 +275,12 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
                 if (n < 0) {
                     throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                 }
-                int remaining = ReferenceImmutableList.this.f2834a.length - this.pos;
+                int remaining = ReferenceImmutableList.this.f2798a.length - this.pos;
                 if (n < remaining) {
                     this.pos += n;
                 } else {
                     n = remaining;
-                    this.pos = ReferenceImmutableList.this.f2834a.length;
+                    this.pos = ReferenceImmutableList.this.f2798a.length;
                 }
                 return n;
             }
@@ -300,7 +300,7 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
         }
 
         public Spliterator(ReferenceImmutableList referenceImmutableList) {
-            this(0, referenceImmutableList.f2834a.length);
+            this(0, referenceImmutableList.f2798a.length);
         }
 
         private Spliterator(int pos, int max) {
@@ -327,7 +327,7 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
             if (this.pos >= this.max) {
                 return false;
             }
-            Object[] objArr = ReferenceImmutableList.this.f2834a;
+            Object[] objArr = ReferenceImmutableList.this.f2798a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(objArr[i]);
@@ -337,7 +337,7 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
         @Override // java.util.Spliterator
         public void forEachRemaining(Consumer<? super K> action) {
             while (this.pos < this.max) {
-                action.accept(ReferenceImmutableList.this.f2834a[this.pos]);
+                action.accept(ReferenceImmutableList.this.f2798a[this.pos]);
                 this.pos++;
             }
         }
@@ -387,28 +387,28 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
         final int from;
 
         /* renamed from: to */
-        final int f2835to;
+        final int f2799to;
 
         /* renamed from: a */
-        final transient K[] f2836a;
+        final transient K[] f2800a;
 
         ImmutableSubList(ReferenceImmutableList<K> innerList, int from, int to) {
             this.innerList = innerList;
             this.from = from;
-            this.f2835to = to;
-            this.f2836a = (K[]) ((ReferenceImmutableList) innerList).f2834a;
+            this.f2799to = to;
+            this.f2800a = (K[]) ((ReferenceImmutableList) innerList).f2798a;
         }
 
         @Override // java.util.List
         public K get(int index) {
             ensureRestrictedIndex(index);
-            return this.f2836a[index + this.from];
+            return this.f2800a[index + this.from];
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, java.util.List
         public int indexOf(Object k) {
-            for (int i = this.from; i < this.f2835to; i++) {
-                if (k == this.f2836a[i]) {
+            for (int i = this.from; i < this.f2799to; i++) {
+                if (k == this.f2800a[i]) {
                     return i - this.from;
                 }
             }
@@ -417,46 +417,46 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, java.util.List
         public int lastIndexOf(Object k) {
-            int i = this.f2835to;
+            int i = this.f2799to;
             do {
                 i--;
                 if (i == this.from) {
                     return -1;
                 }
-            } while (k != this.f2836a[i]);
+            } while (k != this.f2800a[i]);
             return i - this.from;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public int size() {
-            return this.f2835to - this.from;
+            return this.f2799to - this.from;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List, p014it.unimi.dsi.fastutil.Stack
         public boolean isEmpty() {
-            return this.f2835to <= this.from;
+            return this.f2799to <= this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, p014it.unimi.dsi.fastutil.objects.ReferenceList
         public void getElements(int fromSublistIndex, Object[] a, int offset, int length) {
             ObjectArrays.ensureOffsetLength(a, offset, length);
             ensureRestrictedIndex(fromSublistIndex);
-            if (this.from + length > this.f2835to) {
+            if (this.from + length > this.f2799to) {
                 throw new IndexOutOfBoundsException("Final index " + (this.from + length) + " (startingIndex: " + this.from + " + length: " + length + ") is greater then list length " + size());
             }
-            System.arraycopy(this.f2836a, fromSublistIndex + this.from, a, offset, length);
+            System.arraycopy(this.f2800a, fromSublistIndex + this.from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, java.lang.Iterable
         public void forEach(Consumer<? super K> action) {
-            for (int i = this.from; i < this.f2835to; i++) {
-                action.accept((Object) this.f2836a[i]);
+            for (int i = this.from; i < this.f2799to; i++) {
+                action.accept((Object) this.f2800a[i]);
             }
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, java.util.AbstractCollection, java.util.Collection, java.util.List
         public Object[] toArray() {
-            return Arrays.copyOfRange(this.f2836a, this.from, this.f2835to, Object[].class);
+            return Arrays.copyOfRange(this.f2800a, this.from, this.f2799to, Object[].class);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -469,7 +469,7 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
             } else if (a.length < size) {
                 a = (K[]) ((Object[]) Array.newInstance(a.getClass().getComponentType(), size));
             }
-            System.arraycopy(this.f2836a, this.from, a, 0, size);
+            System.arraycopy(this.f2800a, this.from, a, 0, size);
             if (a.length > size) {
                 a[size] = null;
             }
@@ -489,7 +489,7 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
 
                 @Override // java.util.Iterator, java.util.ListIterator
                 public boolean hasNext() {
-                    return this.pos < ImmutableSubList.this.f2835to;
+                    return this.pos < ImmutableSubList.this.f2799to;
                 }
 
                 @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -502,7 +502,7 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
                     if (!hasNext()) {
                         throw new NoSuchElementException();
                     }
-                    K[] kArr = ImmutableSubList.this.f2836a;
+                    K[] kArr = ImmutableSubList.this.f2800a;
                     int i = this.pos;
                     this.pos = i + 1;
                     return kArr[i + ImmutableSubList.this.from];
@@ -513,7 +513,7 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
                     if (!hasPrevious()) {
                         throw new NoSuchElementException();
                     }
-                    K[] kArr = ImmutableSubList.this.f2836a;
+                    K[] kArr = ImmutableSubList.this.f2800a;
                     int i = this.pos - 1;
                     this.pos = i;
                     return kArr[i + ImmutableSubList.this.from];
@@ -531,10 +531,10 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
 
                 @Override // java.util.Iterator
                 public void forEachRemaining(Consumer<? super K> action) {
-                    while (this.pos < ImmutableSubList.this.f2835to) {
+                    while (this.pos < ImmutableSubList.this.f2799to) {
                         int i = this.pos;
                         this.pos = i + 1;
-                        action.accept((Object) ImmutableSubList.this.f2836a[i + ImmutableSubList.this.from]);
+                        action.accept((Object) ImmutableSubList.this.f2800a[i + ImmutableSubList.this.from]);
                     }
                 }
 
@@ -558,7 +558,7 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
                     if (n < 0) {
                         throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                     }
-                    int remaining = ImmutableSubList.this.f2835to - this.pos;
+                    int remaining = ImmutableSubList.this.f2799to - this.pos;
                     if (n < remaining) {
                         this.pos -= n;
                     } else {
@@ -573,12 +573,12 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
                     if (n < 0) {
                         throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                     }
-                    int remaining = ImmutableSubList.this.f2835to - this.pos;
+                    int remaining = ImmutableSubList.this.f2799to - this.pos;
                     if (n < remaining) {
                         this.pos += n;
                     } else {
                         n = remaining;
-                        this.pos = ImmutableSubList.this.f2835to;
+                        this.pos = ImmutableSubList.this.f2799to;
                     }
                     return n;
                 }
@@ -590,7 +590,7 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
         /* loaded from: grasscutter.jar:it/unimi/dsi/fastutil/objects/ReferenceImmutableList$ImmutableSubList$SubListSpliterator.class */
         public final class SubListSpliterator extends ObjectSpliterators.EarlyBindingSizeIndexBasedSpliterator<K> {
             SubListSpliterator() {
-                super(ImmutableSubList.this.from, ImmutableSubList.this.f2835to);
+                super(ImmutableSubList.this.from, ImmutableSubList.this.f2799to);
             }
 
             private SubListSpliterator(int pos, int maxPos) {
@@ -599,7 +599,7 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterators.AbstractIndexBasedSpliterator
             protected final K get(int i) {
-                return ImmutableSubList.this.f2836a[i];
+                return ImmutableSubList.this.f2800a[i];
             }
 
             /* access modifiers changed from: protected */
@@ -615,7 +615,7 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
                 }
                 int i = this.pos;
                 this.pos = i + 1;
-                action.accept((Object) ImmutableSubList.this.f2836a[i]);
+                action.accept((Object) ImmutableSubList.this.f2800a[i]);
                 return true;
             }
 
@@ -625,7 +625,7 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
                 while (this.pos < max) {
                     int i = this.pos;
                     this.pos = i + 1;
-                    action.accept((Object) ImmutableSubList.this.f2836a[i]);
+                    action.accept((Object) ImmutableSubList.this.f2800a[i]);
                 }
             }
 
@@ -641,7 +641,7 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
         }
 
         boolean contentsEquals(K[] otherA, int otherAFrom, int otherATo) {
-            if (this.f2836a == otherA && this.from == otherAFrom && this.f2835to == otherATo) {
+            if (this.f2800a == otherA && this.from == otherAFrom && this.f2799to == otherATo) {
                 return true;
             }
             if (otherATo - otherAFrom != size()) {
@@ -649,10 +649,10 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
             }
             int pos = this.from;
             int otherPos = otherAFrom;
-            while (pos < this.f2835to) {
+            while (pos < this.f2799to) {
                 pos++;
                 otherPos++;
-                if (this.f2836a[pos] != otherA[otherPos]) {
+                if (this.f2800a[pos] != otherA[otherPos]) {
                     return false;
                 }
             }
@@ -671,18 +671,18 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
             }
             if (o instanceof ReferenceImmutableList) {
                 ReferenceImmutableList<K> other = (ReferenceImmutableList) o;
-                return contentsEquals(((ReferenceImmutableList) other).f2834a, 0, other.size());
+                return contentsEquals(((ReferenceImmutableList) other).f2798a, 0, other.size());
             } else if (!(o instanceof ImmutableSubList)) {
                 return equals(o);
             } else {
                 ImmutableSubList<K> other2 = (ImmutableSubList) o;
-                return contentsEquals(other2.f2836a, other2.from, other2.f2835to);
+                return contentsEquals(other2.f2800a, other2.from, other2.f2799to);
             }
         }
 
         private Object readResolve() throws ObjectStreamException {
             try {
-                return this.innerList.subList(this.from, this.f2835to);
+                return this.innerList.subList(this.from, this.f2799to);
             } catch (IllegalArgumentException | IndexOutOfBoundsException ex) {
                 throw ((InvalidObjectException) new InvalidObjectException(ex.getMessage()).initCause(ex));
             }
@@ -724,15 +724,15 @@ public class ReferenceImmutableList<K> extends ReferenceLists.ImmutableListBase<
     }
 
     public boolean equals(ReferenceImmutableList<K> l) {
-        if (l == this || this.f2834a == l.f2834a) {
+        if (l == this || this.f2798a == l.f2798a) {
             return true;
         }
         int s = size();
         if (s != l.size()) {
             return false;
         }
-        K[] a1 = this.f2834a;
-        K[] a2 = l.f2834a;
+        K[] a1 = this.f2798a;
+        K[] a2 = l.f2798a;
         do {
             s--;
             if (s == 0) {

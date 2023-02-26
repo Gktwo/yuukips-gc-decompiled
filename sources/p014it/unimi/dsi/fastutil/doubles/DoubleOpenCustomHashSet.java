@@ -25,13 +25,13 @@ public class DoubleOpenCustomHashSet extends AbstractDoubleSet implements Serial
     protected DoubleHash.Strategy strategy;
 
     /* renamed from: n */
-    protected transient int f1737n;
+    protected transient int f1701n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1738f;
+    protected final float f1702f;
 
     public DoubleOpenCustomHashSet(int expected, float f, DoubleHash.Strategy strategy) {
         this.strategy = strategy;
@@ -40,13 +40,13 @@ public class DoubleOpenCustomHashSet extends AbstractDoubleSet implements Serial
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1738f = f;
+            this.f1702f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1737n = arraySize;
+            this.f1701n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1737n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1737n, f);
-            this.key = new double[this.f1737n + 1];
+            this.mask = this.f1701n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1701n, f);
+            this.key = new double[this.f1701n + 1];
         }
     }
 
@@ -125,22 +125,22 @@ public class DoubleOpenCustomHashSet extends AbstractDoubleSet implements Serial
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1738f);
-        if (needed > this.f1737n) {
+        int needed = HashCommon.arraySize(capacity, this.f1702f);
+        if (needed > this.f1701n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1738f)))));
-        if (needed > this.f1737n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1702f)))));
+        if (needed > this.f1701n) {
             rehash(needed);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleCollection, p014it.unimi.dsi.fastutil.doubles.DoubleCollection
     public boolean addAll(DoubleCollection c) {
-        if (((double) this.f1738f) <= 0.5d) {
+        if (((double) this.f1702f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -150,7 +150,7 @@ public class DoubleOpenCustomHashSet extends AbstractDoubleSet implements Serial
 
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Double> c) {
-        if (((double) this.f1738f) <= 0.5d) {
+        if (((double) this.f1702f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -182,14 +182,14 @@ public class DoubleOpenCustomHashSet extends AbstractDoubleSet implements Serial
             return false;
         } else {
             this.containsNull = true;
-            this.key[this.f1737n] = k;
+            this.key[this.f1701n] = k;
         }
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f1738f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f1702f));
         return true;
     }
 
@@ -225,21 +225,21 @@ public class DoubleOpenCustomHashSet extends AbstractDoubleSet implements Serial
     private boolean removeEntry(int pos) {
         this.size--;
         shiftKeys(pos);
-        if (this.f1737n <= this.minN || this.size >= this.maxFill / 4 || this.f1737n <= 16) {
+        if (this.f1701n <= this.minN || this.size >= this.maxFill / 4 || this.f1701n <= 16) {
             return true;
         }
-        rehash(this.f1737n / 2);
+        rehash(this.f1701n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f1737n] = 0.0d;
+        this.key[this.f1701n] = 0.0d;
         this.size--;
-        if (this.f1737n <= this.minN || this.size >= this.maxFill / 4 || this.f1737n <= 16) {
+        if (this.f1701n <= this.minN || this.size >= this.maxFill / 4 || this.f1701n <= 16) {
             return true;
         }
-        rehash(this.f1737n / 2);
+        rehash(this.f1701n / 2);
         return true;
     }
 
@@ -323,20 +323,20 @@ public class DoubleOpenCustomHashSet extends AbstractDoubleSet implements Serial
         int last;
 
         /* renamed from: c */
-        int f1739c;
+        int f1703c;
         boolean mustReturnNull;
         DoubleArrayList wrapped;
 
         private SetIterator() {
-            this.pos = DoubleOpenCustomHashSet.this.f1737n;
+            this.pos = DoubleOpenCustomHashSet.this.f1701n;
             this.last = -1;
-            this.f1739c = DoubleOpenCustomHashSet.this.size;
+            this.f1703c = DoubleOpenCustomHashSet.this.size;
             this.mustReturnNull = DoubleOpenCustomHashSet.this.containsNull;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1739c != 0;
+            return this.f1703c != 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
@@ -344,11 +344,11 @@ public class DoubleOpenCustomHashSet extends AbstractDoubleSet implements Serial
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f1739c--;
+            this.f1703c--;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = DoubleOpenCustomHashSet.this.f1737n;
-                return DoubleOpenCustomHashSet.this.key[DoubleOpenCustomHashSet.this.f1737n];
+                this.last = DoubleOpenCustomHashSet.this.f1701n;
+                return DoubleOpenCustomHashSet.this.key[DoubleOpenCustomHashSet.this.f1701n];
             }
             double[] key = DoubleOpenCustomHashSet.this.key;
             do {
@@ -407,9 +407,9 @@ public class DoubleOpenCustomHashSet extends AbstractDoubleSet implements Serial
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == DoubleOpenCustomHashSet.this.f1737n) {
+            if (this.last == DoubleOpenCustomHashSet.this.f1701n) {
                 DoubleOpenCustomHashSet.this.containsNull = false;
-                DoubleOpenCustomHashSet.this.key[DoubleOpenCustomHashSet.this.f1737n] = 0.0d;
+                DoubleOpenCustomHashSet.this.key[DoubleOpenCustomHashSet.this.f1701n] = 0.0d;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -426,22 +426,22 @@ public class DoubleOpenCustomHashSet extends AbstractDoubleSet implements Serial
             double[] key = DoubleOpenCustomHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = DoubleOpenCustomHashSet.this.f1737n;
-                action.accept(key[DoubleOpenCustomHashSet.this.f1737n]);
-                this.f1739c--;
+                this.last = DoubleOpenCustomHashSet.this.f1701n;
+                action.accept(key[DoubleOpenCustomHashSet.this.f1701n]);
+                this.f1703c--;
             }
-            while (this.f1739c != 0) {
+            while (this.f1703c != 0) {
                 int i = this.pos - 1;
                 this.pos = i;
                 if (i < 0) {
                     this.last = Integer.MIN_VALUE;
                     action.accept(this.wrapped.getDouble((-this.pos) - 1));
-                    this.f1739c--;
+                    this.f1703c--;
                 } else if (Double.doubleToLongBits(key[this.pos]) != 0) {
                     int i2 = this.pos;
                     this.last = i2;
                     action.accept(key[i2]);
-                    this.f1739c--;
+                    this.f1703c--;
                 }
             }
         }
@@ -461,22 +461,22 @@ public class DoubleOpenCustomHashSet extends AbstractDoubleSet implements Serial
         int max;
 
         /* renamed from: c */
-        int f1740c;
+        int f1704c;
         boolean mustReturnNull;
         boolean hasSplit;
 
         SetSpliterator() {
             this.pos = 0;
-            this.max = DoubleOpenCustomHashSet.this.f1737n;
-            this.f1740c = 0;
+            this.max = DoubleOpenCustomHashSet.this.f1701n;
+            this.f1704c = 0;
             this.mustReturnNull = DoubleOpenCustomHashSet.this.containsNull;
             this.hasSplit = false;
         }
 
         SetSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = DoubleOpenCustomHashSet.this.f1737n;
-            this.f1740c = 0;
+            this.max = DoubleOpenCustomHashSet.this.f1701n;
+            this.f1704c = 0;
             this.mustReturnNull = DoubleOpenCustomHashSet.this.containsNull;
             this.hasSplit = false;
             this.pos = pos;
@@ -489,14 +489,14 @@ public class DoubleOpenCustomHashSet extends AbstractDoubleSet implements Serial
         public boolean tryAdvance(DoubleConsumer action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1740c++;
-                action.accept(DoubleOpenCustomHashSet.this.key[DoubleOpenCustomHashSet.this.f1737n]);
+                this.f1704c++;
+                action.accept(DoubleOpenCustomHashSet.this.key[DoubleOpenCustomHashSet.this.f1701n]);
                 return true;
             }
             double[] key = DoubleOpenCustomHashSet.this.key;
             while (this.pos < this.max) {
                 if (Double.doubleToLongBits(key[this.pos]) != 0) {
-                    this.f1740c++;
+                    this.f1704c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(key[i]);
@@ -512,13 +512,13 @@ public class DoubleOpenCustomHashSet extends AbstractDoubleSet implements Serial
             double[] key = DoubleOpenCustomHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                action.accept(key[DoubleOpenCustomHashSet.this.f1737n]);
-                this.f1740c++;
+                action.accept(key[DoubleOpenCustomHashSet.this.f1701n]);
+                this.f1704c++;
             }
             while (this.pos < this.max) {
                 if (Double.doubleToLongBits(key[this.pos]) != 0) {
                     action.accept(key[this.pos]);
-                    this.f1740c++;
+                    this.f1704c++;
                 }
                 this.pos++;
             }
@@ -532,9 +532,9 @@ public class DoubleOpenCustomHashSet extends AbstractDoubleSet implements Serial
         @Override // java.util.Spliterator
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (DoubleOpenCustomHashSet.this.size - this.f1740c);
+                return (long) (DoubleOpenCustomHashSet.this.size - this.f1704c);
             }
-            return Math.min((long) (DoubleOpenCustomHashSet.this.size - this.f1740c), ((long) ((((double) DoubleOpenCustomHashSet.this.realSize()) / ((double) DoubleOpenCustomHashSet.this.f1737n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (DoubleOpenCustomHashSet.this.size - this.f1704c), ((long) ((((double) DoubleOpenCustomHashSet.this.realSize()) / ((double) DoubleOpenCustomHashSet.this.f1701n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleSpliterator, java.util.Spliterator.OfDouble, java.util.Spliterator.OfPrimitive, java.util.Spliterator
@@ -663,10 +663,10 @@ public class DoubleOpenCustomHashSet extends AbstractDoubleSet implements Serial
     @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterable
     public void forEach(DoubleConsumer action) {
         if (this.containsNull) {
-            action.accept(this.key[this.f1737n]);
+            action.accept(this.key[this.f1701n]);
         }
         double[] key = this.key;
-        int pos = this.f1737n;
+        int pos = this.f1701n;
         while (true) {
             pos--;
             if (pos == 0) {
@@ -683,8 +683,8 @@ public class DoubleOpenCustomHashSet extends AbstractDoubleSet implements Serial
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1738f)));
-        if (l >= this.f1737n || this.size > HashCommon.maxFill(l, this.f1738f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1702f)));
+        if (l >= this.f1701n || this.size > HashCommon.maxFill(l, this.f1702f)) {
             return true;
         }
         try {
@@ -700,7 +700,7 @@ public class DoubleOpenCustomHashSet extends AbstractDoubleSet implements Serial
         double[] key = this.key;
         int mask = newN - 1;
         double[] newKey = new double[newN + 1];
-        int i2 = this.f1737n;
+        int i2 = this.f1701n;
         int j = realSize();
         while (true) {
             j--;
@@ -718,9 +718,9 @@ public class DoubleOpenCustomHashSet extends AbstractDoubleSet implements Serial
                 }
                 newKey[pos] = key[i2];
             } else {
-                this.f1737n = newN;
+                this.f1701n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f1737n, this.f1738f);
+                this.maxFill = HashCommon.maxFill(this.f1701n, this.f1702f);
                 this.key = newKey;
                 return;
             }
@@ -776,10 +776,10 @@ public class DoubleOpenCustomHashSet extends AbstractDoubleSet implements Serial
         int pos;
         int i;
         s.defaultReadObject();
-        this.f1737n = HashCommon.arraySize(this.size, this.f1738f);
-        this.maxFill = HashCommon.maxFill(this.f1737n, this.f1738f);
-        this.mask = this.f1737n - 1;
-        double[] key = new double[this.f1737n + 1];
+        this.f1701n = HashCommon.arraySize(this.size, this.f1702f);
+        this.maxFill = HashCommon.maxFill(this.f1701n, this.f1702f);
+        this.mask = this.f1701n - 1;
+        double[] key = new double[this.f1701n + 1];
         this.key = key;
         int i2 = this.size;
         while (true) {
@@ -787,7 +787,7 @@ public class DoubleOpenCustomHashSet extends AbstractDoubleSet implements Serial
             if (i2 != 0) {
                 double k = s.readDouble();
                 if (this.strategy.equals(k, 0.0d)) {
-                    pos = this.f1737n;
+                    pos = this.f1701n;
                     this.containsNull = true;
                 } else {
                     int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;

@@ -19,21 +19,21 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DoGachaReqOuterClass.class */
 public final class DoGachaReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010DoGachaReq.proto\"y\n\nDoGachaReq\u0012\u0011\n\tgacha_tag\u0018\u000e \u0001(\t\u0012\u0019\n\u0011gacha_schedule_id\u0018\u0006 \u0001(\r\u0012\u0012\n\ngacha_type\u0018\u0001 \u0001(\r\u0012\u0014\n\fgacha_random\u0018\t \u0001(\r\u0012\u0013\n\u000bgacha_times\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010DoGachaReq.proto\"s\n\nDoGachaReq\u0012\u0013\n\u000bgachaRandom\u0018\f \u0001(\r\u0012\u0011\n\tgachaType\u0018\u0002 \u0001(\r\u0012\u0017\n\u000fgachaScheduleId\u0018\u0003 \u0001(\r\u0012\u0010\n\bgachaTag\u0018\u000f \u0001(\t\u0012\u0012\n\ngachaTimes\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_DoGachaReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_DoGachaReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DoGachaReq_descriptor, new String[]{"GachaTag", "GachaScheduleId", "GachaType", "GachaRandom", "GachaTimes"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_DoGachaReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DoGachaReq_descriptor, new String[]{"GachaRandom", "GachaType", "GachaScheduleId", "GachaTag", "GachaTimes"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DoGachaReqOuterClass$DoGachaReqOrBuilder.class */
     public interface DoGachaReqOrBuilder extends MessageOrBuilder {
-        String getGachaTag();
-
-        ByteString getGachaTagBytes();
-
-        int getGachaScheduleId();
+        int getGachaRandom();
 
         int getGachaType();
 
-        int getGachaRandom();
+        int getGachaScheduleId();
+
+        String getGachaTag();
+
+        ByteString getGachaTagBytes();
 
         int getGachaTimes();
     }
@@ -51,15 +51,15 @@ public final class DoGachaReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DoGachaReqOuterClass$DoGachaReq.class */
     public static final class DoGachaReq extends GeneratedMessageV3 implements DoGachaReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int GACHA_TAG_FIELD_NUMBER = 14;
-        private volatile Object gachaTag_;
-        public static final int GACHA_SCHEDULE_ID_FIELD_NUMBER = 6;
-        private int gachaScheduleId_;
-        public static final int GACHA_TYPE_FIELD_NUMBER = 1;
-        private int gachaType_;
-        public static final int GACHA_RANDOM_FIELD_NUMBER = 9;
+        public static final int GACHARANDOM_FIELD_NUMBER = 12;
         private int gachaRandom_;
-        public static final int GACHA_TIMES_FIELD_NUMBER = 3;
+        public static final int GACHATYPE_FIELD_NUMBER = 2;
+        private int gachaType_;
+        public static final int GACHASCHEDULEID_FIELD_NUMBER = 3;
+        private int gachaScheduleId_;
+        public static final int GACHATAG_FIELD_NUMBER = 15;
+        private volatile Object gachaTag_;
+        public static final int GACHATIMES_FIELD_NUMBER = 10;
         private int gachaTimes_;
         private byte memoizedIsInitialized;
         private static final DoGachaReq DEFAULT_INSTANCE = new DoGachaReq();
@@ -107,19 +107,19 @@ public final class DoGachaReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
+                            case 16:
                                 this.gachaType_ = input.readUInt32();
                                 break;
                             case 24:
-                                this.gachaTimes_ = input.readUInt32();
-                                break;
-                            case 48:
                                 this.gachaScheduleId_ = input.readUInt32();
                                 break;
-                            case 72:
+                            case 80:
+                                this.gachaTimes_ = input.readUInt32();
+                                break;
+                            case 96:
                                 this.gachaRandom_ = input.readUInt32();
                                 break;
-                            case 114:
+                            case 122:
                                 this.gachaTag_ = input.readStringRequireUtf8();
                                 break;
                             default:
@@ -152,6 +152,21 @@ public final class DoGachaReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.DoGachaReqOuterClass.DoGachaReqOrBuilder
+        public int getGachaRandom() {
+            return this.gachaRandom_;
+        }
+
+        @Override // emu.grasscutter.net.proto.DoGachaReqOuterClass.DoGachaReqOrBuilder
+        public int getGachaType() {
+            return this.gachaType_;
+        }
+
+        @Override // emu.grasscutter.net.proto.DoGachaReqOuterClass.DoGachaReqOrBuilder
+        public int getGachaScheduleId() {
+            return this.gachaScheduleId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.DoGachaReqOuterClass.DoGachaReqOrBuilder
         public String getGachaTag() {
             Object ref = this.gachaTag_;
             if (ref instanceof String) {
@@ -171,21 +186,6 @@ public final class DoGachaReqOuterClass {
             ByteString b = ByteString.copyFromUtf8((String) ref);
             this.gachaTag_ = b;
             return b;
-        }
-
-        @Override // emu.grasscutter.net.proto.DoGachaReqOuterClass.DoGachaReqOrBuilder
-        public int getGachaScheduleId() {
-            return this.gachaScheduleId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.DoGachaReqOuterClass.DoGachaReqOrBuilder
-        public int getGachaType() {
-            return this.gachaType_;
-        }
-
-        @Override // emu.grasscutter.net.proto.DoGachaReqOuterClass.DoGachaReqOrBuilder
-        public int getGachaRandom() {
-            return this.gachaRandom_;
         }
 
         @Override // emu.grasscutter.net.proto.DoGachaReqOuterClass.DoGachaReqOrBuilder
@@ -209,19 +209,19 @@ public final class DoGachaReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.gachaType_ != 0) {
-                output.writeUInt32(1, this.gachaType_);
-            }
-            if (this.gachaTimes_ != 0) {
-                output.writeUInt32(3, this.gachaTimes_);
+                output.writeUInt32(2, this.gachaType_);
             }
             if (this.gachaScheduleId_ != 0) {
-                output.writeUInt32(6, this.gachaScheduleId_);
+                output.writeUInt32(3, this.gachaScheduleId_);
+            }
+            if (this.gachaTimes_ != 0) {
+                output.writeUInt32(10, this.gachaTimes_);
             }
             if (this.gachaRandom_ != 0) {
-                output.writeUInt32(9, this.gachaRandom_);
+                output.writeUInt32(12, this.gachaRandom_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.gachaTag_)) {
-                GeneratedMessageV3.writeString(output, 14, this.gachaTag_);
+                GeneratedMessageV3.writeString(output, 15, this.gachaTag_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -234,19 +234,19 @@ public final class DoGachaReqOuterClass {
             }
             int size2 = 0;
             if (this.gachaType_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.gachaType_);
-            }
-            if (this.gachaTimes_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(3, this.gachaTimes_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.gachaType_);
             }
             if (this.gachaScheduleId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(6, this.gachaScheduleId_);
+                size2 += CodedOutputStream.computeUInt32Size(3, this.gachaScheduleId_);
+            }
+            if (this.gachaTimes_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(10, this.gachaTimes_);
             }
             if (this.gachaRandom_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.gachaRandom_);
+                size2 += CodedOutputStream.computeUInt32Size(12, this.gachaRandom_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.gachaTag_)) {
-                size2 += GeneratedMessageV3.computeStringSize(14, this.gachaTag_);
+                size2 += GeneratedMessageV3.computeStringSize(15, this.gachaTag_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -262,7 +262,7 @@ public final class DoGachaReqOuterClass {
                 return equals(obj);
             }
             DoGachaReq other = (DoGachaReq) obj;
-            return getGachaTag().equals(other.getGachaTag()) && getGachaScheduleId() == other.getGachaScheduleId() && getGachaType() == other.getGachaType() && getGachaRandom() == other.getGachaRandom() && getGachaTimes() == other.getGachaTimes() && this.unknownFields.equals(other.unknownFields);
+            return getGachaRandom() == other.getGachaRandom() && getGachaType() == other.getGachaType() && getGachaScheduleId() == other.getGachaScheduleId() && getGachaTag().equals(other.getGachaTag()) && getGachaTimes() == other.getGachaTimes() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -270,7 +270,7 @@ public final class DoGachaReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getGachaTag().hashCode())) + 6)) + getGachaScheduleId())) + 1)) + getGachaType())) + 9)) + getGachaRandom())) + 3)) + getGachaTimes())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getGachaRandom())) + 2)) + getGachaType())) + 3)) + getGachaScheduleId())) + 15)) + getGachaTag().hashCode())) + 10)) + getGachaTimes())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -349,10 +349,10 @@ public final class DoGachaReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DoGachaReqOuterClass$DoGachaReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements DoGachaReqOrBuilder {
-            private Object gachaTag_ = "";
-            private int gachaScheduleId_;
-            private int gachaType_;
             private int gachaRandom_;
+            private int gachaType_;
+            private int gachaScheduleId_;
+            private Object gachaTag_ = "";
             private int gachaTimes_;
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -381,10 +381,10 @@ public final class DoGachaReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.gachaTag_ = "";
-                this.gachaScheduleId_ = 0;
-                this.gachaType_ = 0;
                 this.gachaRandom_ = 0;
+                this.gachaType_ = 0;
+                this.gachaScheduleId_ = 0;
+                this.gachaTag_ = "";
                 this.gachaTimes_ = 0;
                 return this;
             }
@@ -411,10 +411,10 @@ public final class DoGachaReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public DoGachaReq buildPartial() {
                 DoGachaReq result = new DoGachaReq(this);
-                result.gachaTag_ = this.gachaTag_;
-                result.gachaScheduleId_ = this.gachaScheduleId_;
-                result.gachaType_ = this.gachaType_;
                 result.gachaRandom_ = this.gachaRandom_;
+                result.gachaType_ = this.gachaType_;
+                result.gachaScheduleId_ = this.gachaScheduleId_;
+                result.gachaTag_ = this.gachaTag_;
                 result.gachaTimes_ = this.gachaTimes_;
                 onBuilt();
                 return result;
@@ -463,18 +463,18 @@ public final class DoGachaReqOuterClass {
                 if (other == DoGachaReq.getDefaultInstance()) {
                     return this;
                 }
-                if (!other.getGachaTag().isEmpty()) {
-                    this.gachaTag_ = other.gachaTag_;
-                    onChanged();
-                }
-                if (other.getGachaScheduleId() != 0) {
-                    setGachaScheduleId(other.getGachaScheduleId());
+                if (other.getGachaRandom() != 0) {
+                    setGachaRandom(other.getGachaRandom());
                 }
                 if (other.getGachaType() != 0) {
                     setGachaType(other.getGachaType());
                 }
-                if (other.getGachaRandom() != 0) {
-                    setGachaRandom(other.getGachaRandom());
+                if (other.getGachaScheduleId() != 0) {
+                    setGachaScheduleId(other.getGachaScheduleId());
+                }
+                if (!other.getGachaTag().isEmpty()) {
+                    this.gachaTag_ = other.gachaTag_;
+                    onChanged();
                 }
                 if (other.getGachaTimes() != 0) {
                     setGachaTimes(other.getGachaTimes());
@@ -509,6 +509,57 @@ public final class DoGachaReqOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.DoGachaReqOuterClass.DoGachaReqOrBuilder
+            public int getGachaRandom() {
+                return this.gachaRandom_;
+            }
+
+            public Builder setGachaRandom(int value) {
+                this.gachaRandom_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearGachaRandom() {
+                this.gachaRandom_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.DoGachaReqOuterClass.DoGachaReqOrBuilder
+            public int getGachaType() {
+                return this.gachaType_;
+            }
+
+            public Builder setGachaType(int value) {
+                this.gachaType_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearGachaType() {
+                this.gachaType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.DoGachaReqOuterClass.DoGachaReqOrBuilder
+            public int getGachaScheduleId() {
+                return this.gachaScheduleId_;
+            }
+
+            public Builder setGachaScheduleId(int value) {
+                this.gachaScheduleId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearGachaScheduleId() {
+                this.gachaScheduleId_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.DoGachaReqOuterClass.DoGachaReqOrBuilder
@@ -554,57 +605,6 @@ public final class DoGachaReqOuterClass {
                 }
                 DoGachaReq.checkByteStringIsUtf8(value);
                 this.gachaTag_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.DoGachaReqOuterClass.DoGachaReqOrBuilder
-            public int getGachaScheduleId() {
-                return this.gachaScheduleId_;
-            }
-
-            public Builder setGachaScheduleId(int value) {
-                this.gachaScheduleId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearGachaScheduleId() {
-                this.gachaScheduleId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.DoGachaReqOuterClass.DoGachaReqOrBuilder
-            public int getGachaType() {
-                return this.gachaType_;
-            }
-
-            public Builder setGachaType(int value) {
-                this.gachaType_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearGachaType() {
-                this.gachaType_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.DoGachaReqOuterClass.DoGachaReqOrBuilder
-            public int getGachaRandom() {
-                return this.gachaRandom_;
-            }
-
-            public Builder setGachaRandom(int value) {
-                this.gachaRandom_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearGachaRandom() {
-                this.gachaRandom_ = 0;
                 onChanged();
                 return this;
             }

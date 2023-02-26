@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetActivityShopSheetInfoReqOuterClass.class */
 public final class GetActivityShopSheetInfoReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!GetActivityShopSheetInfoReq.proto\"0\n\u001bGetActivityShopSheetInfoReq\u0012\u0011\n\tshop_type\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!GetActivityShopSheetInfoReq.proto\"/\n\u001bGetActivityShopSheetInfoReq\u0012\u0010\n\bshopType\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GetActivityShopSheetInfoReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetActivityShopSheetInfoReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetActivityShopSheetInfoReq_descriptor, new String[]{"ShopType"});
 
@@ -41,7 +41,7 @@ public final class GetActivityShopSheetInfoReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetActivityShopSheetInfoReqOuterClass$GetActivityShopSheetInfoReq.class */
     public static final class GetActivityShopSheetInfoReq extends GeneratedMessageV3 implements GetActivityShopSheetInfoReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SHOP_TYPE_FIELD_NUMBER = 10;
+        public static final int SHOPTYPE_FIELD_NUMBER = 14;
         private int shopType_;
         private byte memoizedIsInitialized;
         private static final GetActivityShopSheetInfoReq DEFAULT_INSTANCE = new GetActivityShopSheetInfoReq();
@@ -88,7 +88,7 @@ public final class GetActivityShopSheetInfoReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 80:
+                            case 112:
                                 this.shopType_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class GetActivityShopSheetInfoReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.shopType_ != 0) {
-                output.writeUInt32(10, this.shopType_);
+                output.writeUInt32(14, this.shopType_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class GetActivityShopSheetInfoReqOuterClass {
             }
             int size2 = 0;
             if (this.shopType_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(10, this.shopType_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(14, this.shopType_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class GetActivityShopSheetInfoReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getShopType())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getShopType())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

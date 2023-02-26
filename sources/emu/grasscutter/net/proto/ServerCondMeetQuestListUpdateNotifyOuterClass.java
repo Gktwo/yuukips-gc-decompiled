@@ -23,11 +23,11 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ServerCondMeetQuestListUpdateNotifyOuterClass.class */
 public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n)ServerCondMeetQuestListUpdateNotify.proto\"[\n#ServerCondMeetQuestListUpdateNotify\u0012\u0019\n\u0011add_quest_id_list\u0018\n \u0003(\r\u0012\u0019\n\u0011del_quest_id_list\u0018\u0004 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n)ServerCondMeetQuestListUpdateNotify.proto\"U\n#ServerCondMeetQuestListUpdateNotify\u0012\u0016\n\u000eaddQuestIdList\u0018\u0002 \u0003(\r\u0012\u0016\n\u000edelQuestIdList\u0018\u0007 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ServerCondMeetQuestListUpdateNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_ServerCondMeetQuestListUpdateNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f871x424b9035 = new GeneratedMessageV3.FieldAccessorTable(internal_static_ServerCondMeetQuestListUpdateNotify_descriptor, new String[]{"AddQuestIdList", "DelQuestIdList"});
+    private static final GeneratedMessageV3.FieldAccessorTable f845x424b9035 = new GeneratedMessageV3.FieldAccessorTable(internal_static_ServerCondMeetQuestListUpdateNotify_descriptor, new String[]{"AddQuestIdList", "DelQuestIdList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ServerCondMeetQuestListUpdateNotifyOuterClass$ServerCondMeetQuestListUpdateNotifyOrBuilder.class */
     public interface ServerCondMeetQuestListUpdateNotifyOrBuilder extends MessageOrBuilder {
@@ -57,10 +57,10 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ServerCondMeetQuestListUpdateNotifyOuterClass$ServerCondMeetQuestListUpdateNotify.class */
     public static final class ServerCondMeetQuestListUpdateNotify extends GeneratedMessageV3 implements ServerCondMeetQuestListUpdateNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ADD_QUEST_ID_LIST_FIELD_NUMBER = 10;
+        public static final int ADDQUESTIDLIST_FIELD_NUMBER = 2;
         private Internal.IntList addQuestIdList_;
         private int addQuestIdListMemoizedSerializedSize;
-        public static final int DEL_QUEST_ID_LIST_FIELD_NUMBER = 4;
+        public static final int DELQUESTIDLIST_FIELD_NUMBER = 7;
         private Internal.IntList delQuestIdList_;
         private int delQuestIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -117,39 +117,39 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 32:
-                                if ((mutable_bitField0_ & 2) == 0) {
-                                    this.delQuestIdList_ = newIntList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
-                                }
-                                this.delQuestIdList_.addInt(input.readUInt32());
-                                break;
-                            case 34:
-                                int limit = input.pushLimit(input.readRawVarint32());
-                                if ((mutable_bitField0_ & 2) == 0 && input.getBytesUntilLimit() > 0) {
-                                    this.delQuestIdList_ = newIntList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
-                                }
-                                while (input.getBytesUntilLimit() > 0) {
-                                    this.delQuestIdList_.addInt(input.readUInt32());
-                                }
-                                input.popLimit(limit);
-                                break;
-                            case 80:
+                            case 16:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.addQuestIdList_ = newIntList();
                                     mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                 }
                                 this.addQuestIdList_.addInt(input.readUInt32());
                                 break;
-                            case 82:
-                                int limit2 = input.pushLimit(input.readRawVarint32());
+                            case 18:
+                                int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.addQuestIdList_ = newIntList();
                                     mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                 }
                                 while (input.getBytesUntilLimit() > 0) {
                                     this.addQuestIdList_.addInt(input.readUInt32());
+                                }
+                                input.popLimit(limit);
+                                break;
+                            case 56:
+                                if ((mutable_bitField0_ & 2) == 0) {
+                                    this.delQuestIdList_ = newIntList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                }
+                                this.delQuestIdList_.addInt(input.readUInt32());
+                                break;
+                            case 58:
+                                int limit2 = input.pushLimit(input.readRawVarint32());
+                                if ((mutable_bitField0_ & 2) == 0 && input.getBytesUntilLimit() > 0) {
+                                    this.delQuestIdList_ = newIntList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                }
+                                while (input.getBytesUntilLimit() > 0) {
+                                    this.delQuestIdList_.addInt(input.readUInt32());
                                 }
                                 input.popLimit(limit2);
                                 break;
@@ -169,11 +169,11 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                     }
                 }
             } finally {
-                if ((mutable_bitField0_ & 2) != 0) {
-                    this.delQuestIdList_.makeImmutable();
-                }
                 if ((mutable_bitField0_ & 1) != 0) {
                     this.addQuestIdList_.makeImmutable();
+                }
+                if ((mutable_bitField0_ & 2) != 0) {
+                    this.delQuestIdList_.makeImmutable();
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -186,7 +186,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return ServerCondMeetQuestListUpdateNotifyOuterClass.f871x424b9035.ensureFieldAccessorsInitialized(ServerCondMeetQuestListUpdateNotify.class, Builder.class);
+            return ServerCondMeetQuestListUpdateNotifyOuterClass.f845x424b9035.ensureFieldAccessorsInitialized(ServerCondMeetQuestListUpdateNotify.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.ServerCondMeetQuestListUpdateNotifyOuterClass.ServerCondMeetQuestListUpdateNotifyOrBuilder
@@ -235,19 +235,19 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (getDelQuestIdListList().size() > 0) {
-                output.writeUInt32NoTag(34);
-                output.writeUInt32NoTag(this.delQuestIdListMemoizedSerializedSize);
-            }
-            for (int i = 0; i < this.delQuestIdList_.size(); i++) {
-                output.writeUInt32NoTag(this.delQuestIdList_.getInt(i));
-            }
             if (getAddQuestIdListList().size() > 0) {
-                output.writeUInt32NoTag(82);
+                output.writeUInt32NoTag(18);
                 output.writeUInt32NoTag(this.addQuestIdListMemoizedSerializedSize);
             }
-            for (int i2 = 0; i2 < this.addQuestIdList_.size(); i2++) {
-                output.writeUInt32NoTag(this.addQuestIdList_.getInt(i2));
+            for (int i = 0; i < this.addQuestIdList_.size(); i++) {
+                output.writeUInt32NoTag(this.addQuestIdList_.getInt(i));
+            }
+            if (getDelQuestIdListList().size() > 0) {
+                output.writeUInt32NoTag(58);
+                output.writeUInt32NoTag(this.delQuestIdListMemoizedSerializedSize);
+            }
+            for (int i2 = 0; i2 < this.delQuestIdList_.size(); i2++) {
+                output.writeUInt32NoTag(this.delQuestIdList_.getInt(i2));
             }
             this.unknownFields.writeTo(output);
         }
@@ -259,23 +259,23 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
                 return size;
             }
             int dataSize = 0;
-            for (int i = 0; i < this.delQuestIdList_.size(); i++) {
-                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.delQuestIdList_.getInt(i));
+            for (int i = 0; i < this.addQuestIdList_.size(); i++) {
+                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.addQuestIdList_.getInt(i));
             }
             int size2 = 0 + dataSize;
-            if (!getDelQuestIdListList().isEmpty()) {
+            if (!getAddQuestIdListList().isEmpty()) {
                 size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
-            this.delQuestIdListMemoizedSerializedSize = dataSize;
+            this.addQuestIdListMemoizedSerializedSize = dataSize;
             int dataSize2 = 0;
-            for (int i2 = 0; i2 < this.addQuestIdList_.size(); i2++) {
-                dataSize2 += CodedOutputStream.computeUInt32SizeNoTag(this.addQuestIdList_.getInt(i2));
+            for (int i2 = 0; i2 < this.delQuestIdList_.size(); i2++) {
+                dataSize2 += CodedOutputStream.computeUInt32SizeNoTag(this.delQuestIdList_.getInt(i2));
             }
             int size3 = size2 + dataSize2;
-            if (!getAddQuestIdListList().isEmpty()) {
+            if (!getDelQuestIdListList().isEmpty()) {
                 size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize2);
             }
-            this.addQuestIdListMemoizedSerializedSize = dataSize2;
+            this.delQuestIdListMemoizedSerializedSize = dataSize2;
             int size4 = size3 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size4;
             return size4;
@@ -300,10 +300,10 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getAddQuestIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 10)) + getAddQuestIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 2)) + getAddQuestIdListList().hashCode();
             }
             if (getDelQuestIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 4)) + getDelQuestIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 7)) + getDelQuestIdListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -394,7 +394,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return ServerCondMeetQuestListUpdateNotifyOuterClass.f871x424b9035.ensureFieldAccessorsInitialized(ServerCondMeetQuestListUpdateNotify.class, Builder.class);
+                return ServerCondMeetQuestListUpdateNotifyOuterClass.f845x424b9035.ensureFieldAccessorsInitialized(ServerCondMeetQuestListUpdateNotify.class, Builder.class);
             }
 
             private Builder() {

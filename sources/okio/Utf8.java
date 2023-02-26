@@ -124,7 +124,7 @@ public final class Utf8 {
                 index++;
             } else {
                 if (!(55296 <= c ? c <= 57343 : false)) {
-                    function1.invoke(Byte.valueOf((byte) ((c >> '\f') | PacketOpcodes.WorldPlayerLocationNotify)));
+                    function1.invoke(Byte.valueOf((byte) ((c >> '\f') | PacketOpcodes.SceneAvatarStaminaStepRsp)));
                     function1.invoke(Byte.valueOf((byte) (((c >> 6) & 63) | 128)));
                     function1.invoke(Byte.valueOf((byte) ((c & '?') | 128)));
                     index++;
@@ -133,7 +133,7 @@ public final class Utf8 {
                         char charAt = $this$processUtf8Bytes.charAt(index + 1);
                         if (56320 <= charAt ? charAt <= 57343 : false) {
                             int codePoint = ((c << '\n') + $this$processUtf8Bytes.charAt(index + 1)) - 56613888;
-                            function1.invoke(Byte.valueOf((byte) ((codePoint >> 18) | PacketOpcodes.ExecuteGadgetLuaRsp)));
+                            function1.invoke(Byte.valueOf((byte) ((codePoint >> 18) | PacketOpcodes.SceneKickPlayerRsp)));
                             function1.invoke(Byte.valueOf((byte) (((codePoint >> 12) & 63) | 128)));
                             function1.invoke(Byte.valueOf((byte) (((codePoint >> 6) & 63) | 128)));
                             function1.invoke(Byte.valueOf((byte) ((codePoint & 63) | 128)));

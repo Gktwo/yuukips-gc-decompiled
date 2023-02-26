@@ -934,7 +934,7 @@ public class Long2CharAVLTreeMap extends AbstractLong2CharSortedMap implements S
         long from;
 
         /* renamed from: to */
-        long f2287to;
+        long f2251to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Long2CharMap.Entry> entries;
@@ -945,7 +945,7 @@ public class Long2CharAVLTreeMap extends AbstractLong2CharSortedMap implements S
             if (bottom || top || Long2CharAVLTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f2287to = to;
+                this.f2251to = to;
                 this.top = top;
                 this.defRetValue = Long2CharAVLTreeMap.this.defRetValue;
                 return;
@@ -964,7 +964,7 @@ public class Long2CharAVLTreeMap extends AbstractLong2CharSortedMap implements S
 
         /* renamed from: in */
         final boolean m687in(long k) {
-            return (this.bottom || Long2CharAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Long2CharAVLTreeMap.this.compare(k, this.f2287to) < 0);
+            return (this.bottom || Long2CharAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Long2CharAVLTreeMap.this.compare(k, this.f2251to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.Long2CharMap, p014it.unimi.dsi.fastutil.longs.Long2CharSortedMap
@@ -1139,7 +1139,7 @@ public class Long2CharAVLTreeMap extends AbstractLong2CharSortedMap implements S
         public char put(long k, char v) {
             Long2CharAVLTreeMap.this.modified = false;
             if (!m687in(k)) {
-                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2287to)) + ")");
+                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2251to)) + ")");
             }
             return Long2CharAVLTreeMap.this.modified ? this.defRetValue : Long2CharAVLTreeMap.this.put(k, v);
         }
@@ -1177,7 +1177,7 @@ public class Long2CharAVLTreeMap extends AbstractLong2CharSortedMap implements S
 
         @Override // p014it.unimi.dsi.fastutil.longs.Long2CharSortedMap
         public Long2CharSortedMap headMap(long to) {
-            if (!this.top && Long2CharAVLTreeMap.this.compare(to, this.f2287to) >= 0) {
+            if (!this.top && Long2CharAVLTreeMap.this.compare(to, this.f2251to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1188,7 +1188,7 @@ public class Long2CharAVLTreeMap extends AbstractLong2CharSortedMap implements S
             if (!this.bottom && Long2CharAVLTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f2287to, this.top);
+            return new Submap(from, false, this.f2251to, this.top);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -1207,7 +1207,7 @@ public class Long2CharAVLTreeMap extends AbstractLong2CharSortedMap implements S
             }
             long to = j2;
             if (!this.top) {
-                to = Long2CharAVLTreeMap.this.compare(j2, this.f2287to) < 0 ? j2 : this.f2287to;
+                to = Long2CharAVLTreeMap.this.compare(j2, this.f2251to) < 0 ? j2 : this.f2251to;
             }
             long from = j;
             if (!this.bottom) {
@@ -1215,7 +1215,7 @@ public class Long2CharAVLTreeMap extends AbstractLong2CharSortedMap implements S
             }
             if (!this.top && !this.bottom) {
                 if ((from == 1 ? 1 : 0) == this.from) {
-                    if ((to == 1 ? 1 : 0) == this.f2287to) {
+                    if ((to == 1 ? 1 : 0) == this.f2251to) {
                         return this;
                     }
                 }
@@ -1239,7 +1239,7 @@ public class Long2CharAVLTreeMap extends AbstractLong2CharSortedMap implements S
             if (e == null) {
                 return null;
             }
-            if (this.top || Long2CharAVLTreeMap.this.compare(e.key, this.f2287to) < 0) {
+            if (this.top || Long2CharAVLTreeMap.this.compare(e.key, this.f2251to) < 0) {
                 return e;
             }
             return null;
@@ -1253,8 +1253,8 @@ public class Long2CharAVLTreeMap extends AbstractLong2CharSortedMap implements S
             if (this.top) {
                 e = Long2CharAVLTreeMap.this.lastEntry;
             } else {
-                e = Long2CharAVLTreeMap.this.locateKey(this.f2287to);
-                if (Long2CharAVLTreeMap.this.compare(e.key, this.f2287to) >= 0) {
+                e = Long2CharAVLTreeMap.this.locateKey(this.f2251to);
+                if (Long2CharAVLTreeMap.this.compare(e.key, this.f2251to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1332,7 +1332,7 @@ public class Long2CharAVLTreeMap extends AbstractLong2CharSortedMap implements S
             @Override // p014it.unimi.dsi.fastutil.longs.Long2CharAVLTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Long2CharAVLTreeMap.this.compare(this.next.key, Submap.this.f2287to) >= 0) {
+                if (!Submap.this.top && this.next != null && Long2CharAVLTreeMap.this.compare(this.next.key, Submap.this.f2251to) >= 0) {
                     this.next = null;
                 }
             }

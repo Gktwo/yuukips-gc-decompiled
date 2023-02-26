@@ -24,7 +24,7 @@ public class Telnet {
     private int port;
 
     /* renamed from: ip */
-    private String f3214ip;
+    private String f3178ip;
 
     /* loaded from: grasscutter.jar:org/jline/builtins/telnet/Telnet$ShellProvider.class */
     public interface ShellProvider {
@@ -47,7 +47,7 @@ public class Telnet {
             if (this.portListener != null) {
                 throw new IllegalStateException("telnetd is already running on port " + this.port);
             }
-            this.f3214ip = opt.get("ip");
+            this.f3178ip = opt.get("ip");
             this.port = opt.getNumber("port");
             start();
             status();
@@ -65,7 +65,7 @@ public class Telnet {
 
     private void status() {
         if (this.portListener != null) {
-            System.out.println("telnetd is running on " + this.f3214ip + EmitterKt.COMMENT_PREFIX + this.port);
+            System.out.println("telnetd is running on " + this.f3178ip + EmitterKt.COMMENT_PREFIX + this.port);
         } else {
             System.out.println("telnetd is not running.");
         }
@@ -86,7 +86,7 @@ public class Telnet {
                         final Terminal terminal = TerminalBuilder.builder().type(getConnectionData().getNegotiatedTerminalType().toLowerCase()).streams(new InputStream() { // from class: org.jline.builtins.telnet.Telnet.1.1.1
                             @Override // java.io.InputStream
                             public int read() throws IOException {
-                                return C58411.this.telnetIO.read();
+                                return C58331.this.telnetIO.read();
                             }
 
                             @Override // java.io.InputStream
@@ -101,12 +101,12 @@ public class Telnet {
                         }, new PrintStream(new OutputStream() { // from class: org.jline.builtins.telnet.Telnet.1.1.2
                             @Override // java.io.OutputStream
                             public void write(int b) throws IOException {
-                                C58411.this.telnetIO.write(b);
+                                C58331.this.telnetIO.write(b);
                             }
 
                             @Override // java.io.OutputStream, java.io.Flushable
                             public void flush() throws IOException {
-                                C58411.this.telnetIO.flush();
+                                C58331.this.telnetIO.flush();
                             }
                         })).system(false).name("telnet").build();
                         terminal.setSize(new Size(getConnectionData().getTerminalColumns(), getConnectionData().getTerminalRows()));
@@ -114,7 +114,7 @@ public class Telnet {
                         addConnectionListener(new ConnectionListener() { // from class: org.jline.builtins.telnet.Telnet.1.1.3
                             @Override // org.jline.builtins.telnet.ConnectionListener
                             public void connectionTerminalGeometryChanged(ConnectionEvent ce) {
-                                terminal.setSize(new Size(C58411.this.getConnectionData().getTerminalColumns(), C58411.this.getConnectionData().getTerminalRows()));
+                                terminal.setSize(new Size(C58331.this.getConnectionData().getTerminalColumns(), C58331.this.getConnectionData().getTerminalRows()));
                                 terminal.raise(Terminal.Signal.WINCH);
                             }
                         });
@@ -136,7 +136,7 @@ public class Telnet {
             }
         };
         this.connectionManager.start();
-        this.portListener = new PortListener("gogo", this.f3214ip, this.port, 10);
+        this.portListener = new PortListener("gogo", this.f3178ip, this.port, 10);
         this.portListener.setConnectionManager(this.connectionManager);
         this.portListener.start();
     }

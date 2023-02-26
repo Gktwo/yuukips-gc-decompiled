@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ExhibitionDisplayInfoOuterClass.class */
 public final class ExhibitionDisplayInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bExhibitionDisplayInfo.proto\"H\n\u0015ExhibitionDisplayInfo\u0012\n\n\u0002id\u0018\u0001 \u0001(\r\u0012\r\n\u0005param\u0018\u0002 \u0001(\r\u0012\u0014\n\fdetail_param\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bExhibitionDisplayInfo.proto\"G\n\u0015ExhibitionDisplayInfo\u0012\n\n\u0002id\u0018\u0001 \u0001(\r\u0012\r\n\u0005param\u0018\u0002 \u0001(\r\u0012\u0013\n\u000bdetailParam\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ExhibitionDisplayInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ExhibitionDisplayInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ExhibitionDisplayInfo_descriptor, new String[]{"Id", "Param", "DetailParam"});
 
@@ -49,7 +49,7 @@ public final class ExhibitionDisplayInfoOuterClass {
         private int id_;
         public static final int PARAM_FIELD_NUMBER = 2;
         private int param_;
-        public static final int DETAIL_PARAM_FIELD_NUMBER = 3;
+        public static final int DETAILPARAM_FIELD_NUMBER = 3;
         private int detailParam_;
         private byte memoizedIsInitialized;
         private static final ExhibitionDisplayInfo DEFAULT_INSTANCE = new ExhibitionDisplayInfo();

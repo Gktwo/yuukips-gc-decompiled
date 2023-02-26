@@ -15,7 +15,7 @@ import org.eclipse.jetty.http.MimeTypes;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.Server;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.StringUtil;
 import org.eclipse.jetty.util.URIUtil;
 import org.eclipse.jetty.util.log.Log;
@@ -40,7 +40,7 @@ public class DefaultHandler extends AbstractHandler {
             try {
                 URL fav = getClass().getClassLoader().getResource("org/eclipse/jetty/favicon.ico");
                 if (fav != null) {
-                    favbytes = C5747IO.readBytes(Resource.newResource(fav).getInputStream());
+                    favbytes = C5739IO.readBytes(Resource.newResource(fav).getInputStream());
                 }
                 this._favicon = favbytes;
             } catch (Exception e) {

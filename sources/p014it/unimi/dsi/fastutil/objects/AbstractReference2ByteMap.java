@@ -182,30 +182,30 @@ public abstract class AbstractReference2ByteMap<K> extends AbstractReference2Byt
                 return new ObjectIterator<K>() { // from class: it.unimi.dsi.fastutil.objects.AbstractReference2ByteMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Reference2ByteMap.Entry<K>> f2498i;
+                    private final ObjectIterator<Reference2ByteMap.Entry<K>> f2462i;
 
                     {
-                        this.f2498i = Reference2ByteMaps.fastIterator(AbstractReference2ByteMap.this);
+                        this.f2462i = Reference2ByteMaps.fastIterator(AbstractReference2ByteMap.this);
                     }
 
                     @Override // java.util.Iterator
                     public K next() {
-                        return this.f2498i.next().getKey();
+                        return this.f2462i.next().getKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2498i.hasNext();
+                        return this.f2462i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2498i.remove();
+                        this.f2462i.remove();
                     }
 
                     @Override // java.util.Iterator
                     public void forEachRemaining(Consumer<? super K> action) {
-                        this.f2498i.forEachRemaining(entry -> {
+                        this.f2462i.forEachRemaining(entry -> {
                             action.accept(entry.getKey());
                         });
                     }
@@ -243,30 +243,30 @@ public abstract class AbstractReference2ByteMap<K> extends AbstractReference2Byt
                 return new ByteIterator() { // from class: it.unimi.dsi.fastutil.objects.AbstractReference2ByteMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Reference2ByteMap.Entry<K>> f2499i;
+                    private final ObjectIterator<Reference2ByteMap.Entry<K>> f2463i;
 
                     {
-                        this.f2499i = Reference2ByteMaps.fastIterator(AbstractReference2ByteMap.this);
+                        this.f2463i = Reference2ByteMaps.fastIterator(AbstractReference2ByteMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
                     public byte nextByte() {
-                        return this.f2499i.next().getByteValue();
+                        return this.f2463i.next().getByteValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2499i.hasNext();
+                        return this.f2463i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2499i.remove();
+                        this.f2463i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
                     public void forEachRemaining(ByteConsumer action) {
-                        this.f2499i.forEachRemaining(entry -> {
+                        this.f2463i.forEachRemaining(entry -> {
                             action.accept(entry.getByteValue());
                         });
                     }

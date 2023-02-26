@@ -9,7 +9,7 @@ import emu.grasscutter.net.proto.OpenStateUpdateNotifyOuterClass;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketOpenStateUpdateNotify.class */
 public class PacketOpenStateUpdateNotify extends BasePacket {
     public PacketOpenStateUpdateNotify(Player player) {
-        super(107);
+        super(158);
         OpenStateUpdateNotifyOuterClass.OpenStateUpdateNotify.Builder proto = OpenStateUpdateNotifyOuterClass.OpenStateUpdateNotify.newBuilder();
         GameData.getOpenStateList().stream().map((v0) -> {
             return v0.getId();
@@ -24,7 +24,7 @@ public class PacketOpenStateUpdateNotify extends BasePacket {
     }
 
     public PacketOpenStateUpdateNotify() {
-        super(107);
+        super(158);
         OpenStateUpdateNotifyOuterClass.OpenStateUpdateNotify.Builder proto = OpenStateUpdateNotifyOuterClass.OpenStateUpdateNotify.newBuilder();
         for (int i = 1; i < 5000; i++) {
             proto.putOpenStateMap(i, 1);

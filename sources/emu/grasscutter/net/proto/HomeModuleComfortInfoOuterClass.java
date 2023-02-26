@@ -23,14 +23,12 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeModuleComfortInfoOuterClass.class */
 public final class HomeModuleComfortInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bHomeModuleComfortInfo.proto\"z\n\u0015HomeModuleComfortInfo\u0012 \n\u0018room_scene_comfort_value\u0018\u0005 \u0001(\r\u0012,\n$world_scene_block_comfort_value_list\u0018\n \u0003(\r\u0012\u0011\n\tmodule_id\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bHomeModuleComfortInfo.proto\"q\n\u0015HomeModuleComfortInfo\u0012'\n\u001fworldSceneBlockComfortValueList\u0018\u0003 \u0003(\r\u0012\u0010\n\bmoduleId\u0018\r \u0001(\r\u0012\u001d\n\u0015roomSceneComfortValue\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_HomeModuleComfortInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeModuleComfortInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeModuleComfortInfo_descriptor, new String[]{"RoomSceneComfortValue", "WorldSceneBlockComfortValueList", "ModuleId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeModuleComfortInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeModuleComfortInfo_descriptor, new String[]{"WorldSceneBlockComfortValueList", "ModuleId", "RoomSceneComfortValue"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeModuleComfortInfoOuterClass$HomeModuleComfortInfoOrBuilder.class */
     public interface HomeModuleComfortInfoOrBuilder extends MessageOrBuilder {
-        int getRoomSceneComfortValue();
-
         List<Integer> getWorldSceneBlockComfortValueListList();
 
         int getWorldSceneBlockComfortValueListCount();
@@ -38,6 +36,8 @@ public final class HomeModuleComfortInfoOuterClass {
         int getWorldSceneBlockComfortValueList(int i);
 
         int getModuleId();
+
+        int getRoomSceneComfortValue();
     }
 
     private HomeModuleComfortInfoOuterClass() {
@@ -53,13 +53,13 @@ public final class HomeModuleComfortInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeModuleComfortInfoOuterClass$HomeModuleComfortInfo.class */
     public static final class HomeModuleComfortInfo extends GeneratedMessageV3 implements HomeModuleComfortInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ROOM_SCENE_COMFORT_VALUE_FIELD_NUMBER = 5;
-        private int roomSceneComfortValue_;
-        public static final int WORLD_SCENE_BLOCK_COMFORT_VALUE_LIST_FIELD_NUMBER = 10;
+        public static final int WORLDSCENEBLOCKCOMFORTVALUELIST_FIELD_NUMBER = 3;
         private Internal.IntList worldSceneBlockComfortValueList_;
         private int worldSceneBlockComfortValueListMemoizedSerializedSize;
-        public static final int MODULE_ID_FIELD_NUMBER = 15;
+        public static final int MODULEID_FIELD_NUMBER = 13;
         private int moduleId_;
+        public static final int ROOMSCENECOMFORTVALUE_FIELD_NUMBER = 2;
+        private int roomSceneComfortValue_;
         private byte memoizedIsInitialized;
         private static final HomeModuleComfortInfo DEFAULT_INSTANCE = new HomeModuleComfortInfo();
         private static final Parser<HomeModuleComfortInfo> PARSER = new AbstractParser<HomeModuleComfortInfo>() { // from class: emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo.1
@@ -110,17 +110,17 @@ public final class HomeModuleComfortInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 40:
+                            case 16:
                                 this.roomSceneComfortValue_ = input.readUInt32();
                                 break;
-                            case 80:
+                            case 24:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.worldSceneBlockComfortValueList_ = newIntList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.worldSceneBlockComfortValueList_.addInt(input.readUInt32());
                                 break;
-                            case 82:
+                            case 26:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.worldSceneBlockComfortValueList_ = newIntList();
@@ -131,7 +131,7 @@ public final class HomeModuleComfortInfoOuterClass {
                                 }
                                 input.popLimit(limit);
                                 break;
-                            case 120:
+                            case 104:
                                 this.moduleId_ = input.readUInt32();
                                 break;
                             default:
@@ -167,11 +167,6 @@ public final class HomeModuleComfortInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfoOrBuilder
-        public int getRoomSceneComfortValue() {
-            return this.roomSceneComfortValue_;
-        }
-
-        @Override // emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfoOrBuilder
         public List<Integer> getWorldSceneBlockComfortValueListList() {
             return this.worldSceneBlockComfortValueList_;
         }
@@ -191,6 +186,11 @@ public final class HomeModuleComfortInfoOuterClass {
             return this.moduleId_;
         }
 
+        @Override // emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfoOrBuilder
+        public int getRoomSceneComfortValue() {
+            return this.roomSceneComfortValue_;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -208,17 +208,17 @@ public final class HomeModuleComfortInfoOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (this.roomSceneComfortValue_ != 0) {
-                output.writeUInt32(5, this.roomSceneComfortValue_);
+                output.writeUInt32(2, this.roomSceneComfortValue_);
             }
             if (getWorldSceneBlockComfortValueListList().size() > 0) {
-                output.writeUInt32NoTag(82);
+                output.writeUInt32NoTag(26);
                 output.writeUInt32NoTag(this.worldSceneBlockComfortValueListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.worldSceneBlockComfortValueList_.size(); i++) {
                 output.writeUInt32NoTag(this.worldSceneBlockComfortValueList_.getInt(i));
             }
             if (this.moduleId_ != 0) {
-                output.writeUInt32(15, this.moduleId_);
+                output.writeUInt32(13, this.moduleId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -231,7 +231,7 @@ public final class HomeModuleComfortInfoOuterClass {
             }
             int size2 = 0;
             if (this.roomSceneComfortValue_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.roomSceneComfortValue_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.roomSceneComfortValue_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.worldSceneBlockComfortValueList_.size(); i++) {
@@ -243,7 +243,7 @@ public final class HomeModuleComfortInfoOuterClass {
             }
             this.worldSceneBlockComfortValueListMemoizedSerializedSize = dataSize;
             if (this.moduleId_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(15, this.moduleId_);
+                size3 += CodedOutputStream.computeUInt32Size(13, this.moduleId_);
             }
             int size4 = size3 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size4;
@@ -259,7 +259,7 @@ public final class HomeModuleComfortInfoOuterClass {
                 return equals(obj);
             }
             HomeModuleComfortInfo other = (HomeModuleComfortInfo) obj;
-            return getRoomSceneComfortValue() == other.getRoomSceneComfortValue() && getWorldSceneBlockComfortValueListList().equals(other.getWorldSceneBlockComfortValueListList()) && getModuleId() == other.getModuleId() && this.unknownFields.equals(other.unknownFields);
+            return getWorldSceneBlockComfortValueListList().equals(other.getWorldSceneBlockComfortValueListList()) && getModuleId() == other.getModuleId() && getRoomSceneComfortValue() == other.getRoomSceneComfortValue() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -267,11 +267,11 @@ public final class HomeModuleComfortInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getRoomSceneComfortValue();
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (getWorldSceneBlockComfortValueListCount() > 0) {
-                hash = (53 * ((37 * hash) + 10)) + getWorldSceneBlockComfortValueListList().hashCode();
+                hash = (53 * ((37 * hash) + 3)) + getWorldSceneBlockComfortValueListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 15)) + getModuleId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 13)) + getModuleId())) + 2)) + getRoomSceneComfortValue())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -351,9 +351,9 @@ public final class HomeModuleComfortInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeModuleComfortInfoOuterClass$HomeModuleComfortInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements HomeModuleComfortInfoOrBuilder {
             private int bitField0_;
-            private int roomSceneComfortValue_;
             private Internal.IntList worldSceneBlockComfortValueList_ = HomeModuleComfortInfo.emptyIntList();
             private int moduleId_;
+            private int roomSceneComfortValue_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return HomeModuleComfortInfoOuterClass.internal_static_HomeModuleComfortInfo_descriptor;
@@ -381,10 +381,10 @@ public final class HomeModuleComfortInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.roomSceneComfortValue_ = 0;
                 this.worldSceneBlockComfortValueList_ = HomeModuleComfortInfo.emptyIntList();
                 this.bitField0_ &= -2;
                 this.moduleId_ = 0;
+                this.roomSceneComfortValue_ = 0;
                 return this;
             }
 
@@ -411,13 +411,13 @@ public final class HomeModuleComfortInfoOuterClass {
             public HomeModuleComfortInfo buildPartial() {
                 HomeModuleComfortInfo result = new HomeModuleComfortInfo(this);
                 int i = this.bitField0_;
-                result.roomSceneComfortValue_ = this.roomSceneComfortValue_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.worldSceneBlockComfortValueList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.worldSceneBlockComfortValueList_ = this.worldSceneBlockComfortValueList_;
                 result.moduleId_ = this.moduleId_;
+                result.roomSceneComfortValue_ = this.roomSceneComfortValue_;
                 onBuilt();
                 return result;
             }
@@ -465,9 +465,6 @@ public final class HomeModuleComfortInfoOuterClass {
                 if (other == HomeModuleComfortInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getRoomSceneComfortValue() != 0) {
-                    setRoomSceneComfortValue(other.getRoomSceneComfortValue());
-                }
                 if (!other.worldSceneBlockComfortValueList_.isEmpty()) {
                     if (this.worldSceneBlockComfortValueList_.isEmpty()) {
                         this.worldSceneBlockComfortValueList_ = other.worldSceneBlockComfortValueList_;
@@ -480,6 +477,9 @@ public final class HomeModuleComfortInfoOuterClass {
                 }
                 if (other.getModuleId() != 0) {
                     setModuleId(other.getModuleId());
+                }
+                if (other.getRoomSceneComfortValue() != 0) {
+                    setRoomSceneComfortValue(other.getRoomSceneComfortValue());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -511,23 +511,6 @@ public final class HomeModuleComfortInfoOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfoOrBuilder
-            public int getRoomSceneComfortValue() {
-                return this.roomSceneComfortValue_;
-            }
-
-            public Builder setRoomSceneComfortValue(int value) {
-                this.roomSceneComfortValue_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRoomSceneComfortValue() {
-                this.roomSceneComfortValue_ = 0;
-                onChanged();
-                return this;
             }
 
             private void ensureWorldSceneBlockComfortValueListIsMutable() {
@@ -593,6 +576,23 @@ public final class HomeModuleComfortInfoOuterClass {
 
             public Builder clearModuleId() {
                 this.moduleId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.HomeModuleComfortInfoOuterClass.HomeModuleComfortInfoOrBuilder
+            public int getRoomSceneComfortValue() {
+                return this.roomSceneComfortValue_;
+            }
+
+            public Builder setRoomSceneComfortValue(int value) {
+                this.roomSceneComfortValue_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRoomSceneComfortValue() {
+                this.roomSceneComfortValue_ = 0;
                 onChanged();
                 return this;
             }

@@ -58,7 +58,7 @@ public class ClassFields {
             List<FieldTypeInfo> fieldOrderWithinClass = new ArrayList<>();
             for (Field field : fields) {
                 if (visibleFieldNames.add(field.getName())) {
-                    boolean isIdField = field.isAnnotationPresent(AbstractC5513Id.class);
+                    boolean isIdField = field.isAnnotationPresent(AbstractC5505Id.class);
                     if (isIdField) {
                         if (this.idField != null) {
                             throw new IllegalArgumentException("More than one @Id annotation: " + this.idField.getDeclaringClass() + Mapper.IGNORED_FIELDNAME + this.idField + " ; " + currRawType.getName() + Mapper.IGNORED_FIELDNAME + field.getName());

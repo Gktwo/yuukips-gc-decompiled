@@ -22,7 +22,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GachaTransferItemOuterClass.class */
 public final class GachaTransferItemOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017GachaTransferItem.proto\u001a\u000fItemParam.proto\"K\n\u0011GachaTransferItem\u0012\u0018\n\u0004item\u0018\u0001 \u0001(\u000b2\n.ItemParam\u0012\u001c\n\u0014is_transfer_item_new\u0018\u000b \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017GachaTransferItem.proto\u001a\u000fItemParam.proto\"H\n\u0011GachaTransferItem\u0012\u0018\n\u0004item\u0018\u0005 \u0001(\u000b2\n.ItemParam\u0012\u0019\n\u0011isTransferItemNew\u0018\u0003 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_GachaTransferItem_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GachaTransferItem_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GachaTransferItem_descriptor, new String[]{"Item", "IsTransferItemNew"});
 
@@ -50,9 +50,9 @@ public final class GachaTransferItemOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GachaTransferItemOuterClass$GachaTransferItem.class */
     public static final class GachaTransferItem extends GeneratedMessageV3 implements GachaTransferItemOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ITEM_FIELD_NUMBER = 1;
+        public static final int ITEM_FIELD_NUMBER = 5;
         private ItemParamOuterClass.ItemParam item_;
-        public static final int IS_TRANSFER_ITEM_NEW_FIELD_NUMBER = 11;
+        public static final int ISTRANSFERITEMNEW_FIELD_NUMBER = 3;
         private boolean isTransferItemNew_;
         private byte memoizedIsInitialized;
         private static final GachaTransferItem DEFAULT_INSTANCE = new GachaTransferItem();
@@ -100,7 +100,10 @@ public final class GachaTransferItemOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 10:
+                                case 24:
+                                    this.isTransferItemNew_ = input.readBool();
+                                    break;
+                                case 42:
                                     ItemParamOuterClass.ItemParam.Builder subBuilder = this.item_ != null ? this.item_.toBuilder() : null;
                                     this.item_ = (ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -110,9 +113,6 @@ public final class GachaTransferItemOuterClass {
                                         this.item_ = subBuilder.buildPartial();
                                         break;
                                     }
-                                case 88:
-                                    this.isTransferItemNew_ = input.readBool();
-                                    break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                         break;
@@ -178,11 +178,11 @@ public final class GachaTransferItemOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.item_ != null) {
-                output.writeMessage(1, getItem());
-            }
             if (this.isTransferItemNew_) {
-                output.writeBool(11, this.isTransferItemNew_);
+                output.writeBool(3, this.isTransferItemNew_);
+            }
+            if (this.item_ != null) {
+                output.writeMessage(5, getItem());
             }
             this.unknownFields.writeTo(output);
         }
@@ -194,11 +194,11 @@ public final class GachaTransferItemOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.item_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(1, getItem());
-            }
             if (this.isTransferItemNew_) {
-                size2 += CodedOutputStream.computeBoolSize(11, this.isTransferItemNew_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(3, this.isTransferItemNew_);
+            }
+            if (this.item_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(5, getItem());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -227,9 +227,9 @@ public final class GachaTransferItemOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasItem()) {
-                hash = (53 * ((37 * hash) + 1)) + getItem().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getItem().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 11)) + Internal.hashBoolean(getIsTransferItemNew()))) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 3)) + Internal.hashBoolean(getIsTransferItemNew()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

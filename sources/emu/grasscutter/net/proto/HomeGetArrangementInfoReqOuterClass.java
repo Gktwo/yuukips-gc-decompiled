@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeGetArrangementInfoReqOuterClass.class */
 public final class HomeGetArrangementInfoReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fHomeGetArrangementInfoReq.proto\"2\n\u0019HomeGetArrangementInfoReq\u0012\u0015\n\rscene_id_list\u0018\u0006 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fHomeGetArrangementInfoReq.proto\"0\n\u0019HomeGetArrangementInfoReq\u0012\u0013\n\u000bsceneIdList\u0018\n \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_HomeGetArrangementInfoReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeGetArrangementInfoReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeGetArrangementInfoReq_descriptor, new String[]{"SceneIdList"});
 
@@ -49,7 +49,7 @@ public final class HomeGetArrangementInfoReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeGetArrangementInfoReqOuterClass$HomeGetArrangementInfoReq.class */
     public static final class HomeGetArrangementInfoReq extends GeneratedMessageV3 implements HomeGetArrangementInfoReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SCENE_ID_LIST_FIELD_NUMBER = 6;
+        public static final int SCENEIDLIST_FIELD_NUMBER = 10;
         private Internal.IntList sceneIdList_;
         private int sceneIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -103,14 +103,14 @@ public final class HomeGetArrangementInfoReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 48:
+                                case 80:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.sceneIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.sceneIdList_.addInt(input.readUInt32());
                                     break;
-                                case 50:
+                                case 82:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.sceneIdList_ = newIntList();
@@ -186,7 +186,7 @@ public final class HomeGetArrangementInfoReqOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getSceneIdListList().size() > 0) {
-                output.writeUInt32NoTag(50);
+                output.writeUInt32NoTag(82);
                 output.writeUInt32NoTag(this.sceneIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.sceneIdList_.size(); i++) {
@@ -234,7 +234,7 @@ public final class HomeGetArrangementInfoReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getSceneIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 6)) + getSceneIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getSceneIdListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

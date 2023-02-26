@@ -2,12 +2,13 @@ package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.CreateVehicleReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketCreateVehicleRsp;
 import emu.grasscutter.utils.Position;
 
-@Opcodes(807)
+@Opcodes(PacketOpcodes.CreateVehicleReq)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerCreateVehicleReq.class */
 public class HandlerCreateVehicleReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

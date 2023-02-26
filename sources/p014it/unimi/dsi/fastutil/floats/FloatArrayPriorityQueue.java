@@ -15,7 +15,7 @@ public class FloatArrayPriorityQueue implements FloatPriorityQueue, Serializable
     protected int size;
 
     /* renamed from: c */
-    protected FloatComparator f1923c;
+    protected FloatComparator f1887c;
     protected transient int firstIndex;
     protected transient boolean firstIndexValid;
 
@@ -24,7 +24,7 @@ public class FloatArrayPriorityQueue implements FloatPriorityQueue, Serializable
         if (capacity > 0) {
             this.array = new float[capacity];
         }
-        this.f1923c = c;
+        this.f1887c = c;
     }
 
     public FloatArrayPriorityQueue(int capacity) {
@@ -65,12 +65,12 @@ public class FloatArrayPriorityQueue implements FloatPriorityQueue, Serializable
         int i = this.size - 1;
         int firstIndex = i;
         float first = this.array[firstIndex];
-        if (this.f1923c != null) {
+        if (this.f1887c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f1923c.compare(this.array[i], first) < 0) {
+                } else if (this.f1887c.compare(this.array[i], first) < 0) {
                     firstIndex = i;
                     first = this.array[i];
                 }
@@ -103,11 +103,11 @@ public class FloatArrayPriorityQueue implements FloatPriorityQueue, Serializable
         }
         if (!this.firstIndexValid) {
             this.firstIndexValid = false;
-        } else if (this.f1923c == null) {
+        } else if (this.f1887c == null) {
             if (Float.compare(x, this.array[this.firstIndex]) < 0) {
                 this.firstIndex = this.size;
             }
-        } else if (this.f1923c.compare(x, this.array[this.firstIndex]) < 0) {
+        } else if (this.f1887c.compare(x, this.array[this.firstIndex]) < 0) {
             this.firstIndex = this.size;
         }
         float[] fArr = this.array;
@@ -159,7 +159,7 @@ public class FloatArrayPriorityQueue implements FloatPriorityQueue, Serializable
     /* Return type fixed from 'it.unimi.dsi.fastutil.floats.FloatComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.floats.FloatPriorityQueue, p014it.unimi.dsi.fastutil.PriorityQueue
     public Comparator<? super Float> comparator() {
-        return this.f1923c;
+        return this.f1887c;
     }
 
     private void writeObject(ObjectOutputStream s) throws IOException {

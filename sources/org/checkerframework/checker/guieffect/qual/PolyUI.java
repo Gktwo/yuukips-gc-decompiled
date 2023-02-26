@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 import org.checkerframework.framework.qual.PolymorphicQualifier;
 
 @Target({ElementType.TYPE_USE, ElementType.TYPE_PARAMETER})
-@PolymorphicQualifier(AbstractC5562UI.class)
+@PolymorphicQualifier(AbstractC5554UI.class)
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 /* loaded from: grasscutter.jar:org/checkerframework/checker/guieffect/qual/PolyUI.class */

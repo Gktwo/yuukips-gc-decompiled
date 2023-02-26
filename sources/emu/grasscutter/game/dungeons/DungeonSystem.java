@@ -109,6 +109,7 @@ public class DungeonSystem extends BaseGameSystem {
     }
 
     public void exitDungeon(Player player) {
+        Position d;
         Scene scene = player.getScene();
         if (scene != null && scene.getSceneType() == SceneType.SCENE_DUNGEON) {
             int prevScene = scene.getPrevScene() > 0 ? scene.getPrevScene() : 3;
@@ -117,10 +118,10 @@ public class DungeonSystem extends BaseGameSystem {
             Position prevPos = new Position(GameConstants.START_POSITION);
             if (dungeonData != null) {
                 ScenePointEntry entry = GameData.getScenePointEntryById(prevScene, scene.getPrevScenePoint());
-                if (entry != null) {
-                    prevPos.set(entry.getPointData().getTranPos());
+                if (!(entry == null || (d = entry.getPointData().getTranPos()) == null)) {
+                    prevPos.set(d);
                 }
-                if (!dungeonManager.isFinishedSuccessfully()) {
+                if (dungeonManager != null && !dungeonManager.isFinishedSuccessfully()) {
                     dungeonManager.quitDungeon();
                 }
             }

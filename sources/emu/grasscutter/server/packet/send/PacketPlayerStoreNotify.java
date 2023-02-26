@@ -49,7 +49,7 @@ public class PacketPlayerStoreNotify extends BasePacket {
         /*
             r4 = this;
             r0 = r4
-            r1 = 679(0x2a7, float:9.51E-43)
+            r1 = 605(0x25d, float:8.48E-43)
             r0.<init>(r1)
             r0 = r4
             r1 = 2

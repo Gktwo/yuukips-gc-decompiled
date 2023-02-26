@@ -119,32 +119,32 @@ public abstract class AbstractIntBigList extends AbstractIntCollection implement
     public static final class IndexBasedSpliterator extends IntBigSpliterators.LateBindingSizeIndexBasedSpliterator {
 
         /* renamed from: l */
-        final IntBigList f2015l;
+        final IntBigList f1979l;
 
         IndexBasedSpliterator(IntBigList l, long pos) {
             super(pos);
-            this.f2015l = l;
+            this.f1979l = l;
         }
 
         IndexBasedSpliterator(IntBigList l, long pos, long maxPos) {
             super(pos, maxPos);
-            this.f2015l = l;
+            this.f1979l = l;
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntBigSpliterators.LateBindingSizeIndexBasedSpliterator
         protected final long getMaxPosFromBackingStore() {
-            return this.f2015l.size64();
+            return this.f1979l.size64();
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntBigSpliterators.AbstractIndexBasedSpliterator
         protected final int get(long i) {
-            return this.f2015l.getInt(i);
+            return this.f1979l.getInt(i);
         }
 
         /* access modifiers changed from: protected */
         @Override // p014it.unimi.dsi.fastutil.ints.IntBigSpliterators.AbstractIndexBasedSpliterator
         public final IndexBasedSpliterator makeForSplit(long pos, long maxPos) {
-            return new IndexBasedSpliterator(this.f2015l, pos, maxPos);
+            return new IndexBasedSpliterator(this.f1979l, pos, maxPos);
         }
     }
 
@@ -415,7 +415,7 @@ public abstract class AbstractIntBigList extends AbstractIntCollection implement
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r11v0, types: [it.unimi.dsi.fastutil.ints.AbstractIntBigList, long] */
+    /* JADX WARN: Type inference failed for: r11v0, types: [long, it.unimi.dsi.fastutil.ints.AbstractIntBigList] */
     /* JADX WARN: Type inference failed for: r12v0, types: [long] */
     /* JADX WARN: Type inference failed for: r17v0, types: [long] */
     /* JADX WARN: Type inference failed for: r0v8, types: [it.unimi.dsi.fastutil.ints.IntBigListIterator] */
@@ -1000,11 +1000,11 @@ public abstract class AbstractIntBigList extends AbstractIntCollection implement
         private static final long serialVersionUID = -7046029254386353129L;
 
         /* renamed from: l */
-        protected final IntBigList f2016l;
+        protected final IntBigList f1980l;
         protected final long from;
 
         /* renamed from: to */
-        protected long f2017to;
+        protected long f1981to;
         static final /* synthetic */ boolean $assertionsDisabled;
 
         /* Return type fixed from 'it.unimi.dsi.fastutil.BigListIterator' to match base method */
@@ -1081,18 +1081,18 @@ public abstract class AbstractIntBigList extends AbstractIntCollection implement
         }
 
         public IntSubList(IntBigList l, long from, long to) {
-            this.f2016l = l;
+            this.f1980l = l;
             this.from = from;
-            this.f2017to = to;
+            this.f1981to = to;
         }
 
         /* access modifiers changed from: private */
         public boolean assertRange() {
-            if (!$assertionsDisabled && this.from > this.f2016l.size64()) {
+            if (!$assertionsDisabled && this.from > this.f1980l.size64()) {
                 throw new AssertionError();
-            } else if (!$assertionsDisabled && this.f2017to > this.f2016l.size64()) {
+            } else if (!$assertionsDisabled && this.f1981to > this.f1980l.size64()) {
                 throw new AssertionError();
-            } else if ($assertionsDisabled || this.f2017to >= this.from) {
+            } else if ($assertionsDisabled || this.f1981to >= this.from) {
                 return true;
             } else {
                 throw new AssertionError();
@@ -1101,8 +1101,8 @@ public abstract class AbstractIntBigList extends AbstractIntCollection implement
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntBigList, p014it.unimi.dsi.fastutil.ints.AbstractIntCollection, p014it.unimi.dsi.fastutil.ints.IntCollection
         public boolean add(int k) {
-            this.f2016l.add(this.f2017to, k);
-            this.f2017to++;
+            this.f1980l.add(this.f1981to, k);
+            this.f1981to++;
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }
@@ -1112,8 +1112,8 @@ public abstract class AbstractIntBigList extends AbstractIntCollection implement
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntBigList, p014it.unimi.dsi.fastutil.ints.IntBigList
         public void add(long index, int k) {
             ensureIndex(index);
-            this.f2016l.add(this.from + index, k);
-            this.f2017to++;
+            this.f1980l.add(this.from + index, k);
+            this.f1981to++;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1122,32 +1122,32 @@ public abstract class AbstractIntBigList extends AbstractIntCollection implement
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntBigList, p014it.unimi.dsi.fastutil.BigList
         public boolean addAll(long index, Collection<? extends Integer> c) {
             ensureIndex(index);
-            this.f2017to += (long) c.size();
-            return this.f2016l.addAll(this.from + index, c);
+            this.f1981to += (long) c.size();
+            return this.f1980l.addAll(this.from + index, c);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntBigList
         public int getInt(long index) {
             ensureRestrictedIndex(index);
-            return this.f2016l.getInt(this.from + index);
+            return this.f1980l.getInt(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntBigList, p014it.unimi.dsi.fastutil.ints.IntBigList
         public int removeInt(long index) {
             ensureRestrictedIndex(index);
-            this.f2017to--;
-            return this.f2016l.removeInt(this.from + index);
+            this.f1981to--;
+            return this.f1980l.removeInt(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntBigList, p014it.unimi.dsi.fastutil.ints.IntBigList
         public int set(long index, int k) {
             ensureRestrictedIndex(index);
-            return this.f2016l.set(this.from + index, k);
+            return this.f1980l.set(this.from + index, k);
         }
 
         @Override // p014it.unimi.dsi.fastutil.Size64
         public long size64() {
-            return this.f2017to - this.from;
+            return this.f1981to - this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntBigList, p014it.unimi.dsi.fastutil.ints.IntBigList
@@ -1156,15 +1156,15 @@ public abstract class AbstractIntBigList extends AbstractIntCollection implement
             if (from + length > size64()) {
                 throw new IndexOutOfBoundsException("End index (" + from + length + ") is greater than list size (" + size64() + ")");
             }
-            this.f2016l.getElements(this.from + from, a, offset, length);
+            this.f1980l.getElements(this.from + from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntBigList, p014it.unimi.dsi.fastutil.ints.IntBigList
         public void removeElements(long from, long to) {
             ensureIndex(from);
             ensureIndex(to);
-            this.f2016l.removeElements(this.from + from, this.from + to);
-            this.f2017to -= to - from;
+            this.f1980l.removeElements(this.from + from, this.from + to);
+            this.f1981to -= to - from;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1173,8 +1173,8 @@ public abstract class AbstractIntBigList extends AbstractIntCollection implement
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntBigList, p014it.unimi.dsi.fastutil.ints.IntBigList
         public void addElements(long index, int[][] a, long offset, long length) {
             ensureIndex(index);
-            this.f2016l.addElements(this.from + index, a, offset, length);
-            this.f2017to += length;
+            this.f1980l.addElements(this.from + index, a, offset, length);
+            this.f1981to += length;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1196,7 +1196,7 @@ public abstract class AbstractIntBigList extends AbstractIntCollection implement
 
             @Override // p014it.unimi.dsi.fastutil.ints.IntBigListIterators.AbstractIndexBasedBigIterator
             protected final int get(long i) {
-                return IntSubList.this.f2016l.getInt(IntSubList.this.from + i);
+                return IntSubList.this.f1980l.getInt(IntSubList.this.from + i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.ints.IntBigListIterators.AbstractIndexBasedBigListIterator
@@ -1216,7 +1216,7 @@ public abstract class AbstractIntBigList extends AbstractIntCollection implement
 
             @Override // p014it.unimi.dsi.fastutil.ints.IntBigListIterators.AbstractIndexBasedBigIterator
             protected final long getMaxPos() {
-                return IntSubList.this.f2017to - IntSubList.this.from;
+                return IntSubList.this.f1981to - IntSubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.ints.IntBigListIterators.AbstractIndexBasedBigListIterator, p014it.unimi.dsi.fastutil.ints.IntBigListIterator
@@ -1258,7 +1258,7 @@ public abstract class AbstractIntBigList extends AbstractIntCollection implement
 
             @Override // java.util.Iterator
             public boolean hasNext() {
-                return this.parent.nextIndex() < IntSubList.this.f2017to;
+                return this.parent.nextIndex() < IntSubList.this.f1981to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -1321,10 +1321,10 @@ public abstract class AbstractIntBigList extends AbstractIntCollection implement
                 }
                 long currentPos = this.parent.nextIndex();
                 char c = currentPos + n;
-                int i = (c > IntSubList.this.f2017to ? 1 : (c == IntSubList.this.f2017to ? 0 : -1));
+                int i = (c > IntSubList.this.f1981to ? 1 : (c == IntSubList.this.f1981to ? 0 : -1));
                 long parentNewPos = c;
                 if (i > 0) {
-                    parentNewPos = IntSubList.this.f2017to;
+                    parentNewPos = IntSubList.this.f1981to;
                 }
                 return this.parent.skip((parentNewPos == 1 ? 1 : 0) - currentPos);
             }
@@ -1335,12 +1335,12 @@ public abstract class AbstractIntBigList extends AbstractIntCollection implement
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntBigList, p014it.unimi.dsi.fastutil.ints.IntBigList, p014it.unimi.dsi.fastutil.BigList
         public BigListIterator<Integer> listIterator(long index) {
             ensureIndex(index);
-            return this.f2016l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f2016l.listIterator(index + this.from));
+            return this.f1980l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f1980l.listIterator(index + this.from));
         }
 
         @Override // java.util.Collection, java.lang.Iterable, p014it.unimi.dsi.fastutil.ints.IntCollection, p014it.unimi.dsi.fastutil.ints.IntIterable
         public IntSpliterator spliterator() {
-            return this.f2016l instanceof RandomAccess ? new IndexBasedSpliterator(this.f2016l, this.from, this.f2017to) : spliterator();
+            return this.f1980l instanceof RandomAccess ? new IndexBasedSpliterator(this.f1980l, this.from, this.f1981to) : spliterator();
         }
 
         /* Return type fixed from 'it.unimi.dsi.fastutil.ints.IntBigList' to match base method */
@@ -1360,8 +1360,8 @@ public abstract class AbstractIntBigList extends AbstractIntCollection implement
             if (index == -1) {
                 return false;
             }
-            this.f2017to--;
-            this.f2016l.removeInt(this.from + index);
+            this.f1981to--;
+            this.f1980l.removeInt(this.from + index);
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }

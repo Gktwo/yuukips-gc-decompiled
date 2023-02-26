@@ -22,13 +22,13 @@ public class ShortOpenHashSet extends AbstractShortSet implements Serializable, 
     protected transient boolean containsNull;
 
     /* renamed from: n */
-    protected transient int f3064n;
+    protected transient int f3028n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f3065f;
+    protected final float f3029f;
 
     public ShortOpenHashSet(int expected, float f) {
         if (f <= 0.0f || f >= 1.0f) {
@@ -36,13 +36,13 @@ public class ShortOpenHashSet extends AbstractShortSet implements Serializable, 
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f3065f = f;
+            this.f3029f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f3064n = arraySize;
+            this.f3028n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f3064n - 1;
-            this.maxFill = HashCommon.maxFill(this.f3064n, f);
-            this.key = new short[this.f3064n + 1];
+            this.mask = this.f3028n - 1;
+            this.maxFill = HashCommon.maxFill(this.f3028n, f);
+            this.key = new short[this.f3028n + 1];
         }
     }
 
@@ -163,22 +163,22 @@ public class ShortOpenHashSet extends AbstractShortSet implements Serializable, 
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f3065f);
-        if (needed > this.f3064n) {
+        int needed = HashCommon.arraySize(capacity, this.f3029f);
+        if (needed > this.f3028n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f3065f)))));
-        if (needed > this.f3064n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f3029f)))));
+        if (needed > this.f3028n) {
             rehash(needed);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortCollection, p014it.unimi.dsi.fastutil.shorts.ShortCollection
     public boolean addAll(ShortCollection c) {
-        if (((double) this.f3065f) <= 0.5d) {
+        if (((double) this.f3029f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -188,7 +188,7 @@ public class ShortOpenHashSet extends AbstractShortSet implements Serializable, 
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Short> c) {
-        if (((double) this.f3065f) <= 0.5d) {
+        if (((double) this.f3029f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -228,7 +228,7 @@ public class ShortOpenHashSet extends AbstractShortSet implements Serializable, 
         if (i2 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f3065f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f3029f));
         return true;
     }
 
@@ -264,21 +264,21 @@ public class ShortOpenHashSet extends AbstractShortSet implements Serializable, 
     private boolean removeEntry(int pos) {
         this.size--;
         shiftKeys(pos);
-        if (this.f3064n <= this.minN || this.size >= this.maxFill / 4 || this.f3064n <= 16) {
+        if (this.f3028n <= this.minN || this.size >= this.maxFill / 4 || this.f3028n <= 16) {
             return true;
         }
-        rehash(this.f3064n / 2);
+        rehash(this.f3028n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f3064n] = 0;
+        this.key[this.f3028n] = 0;
         this.size--;
-        if (this.f3064n <= this.minN || this.size >= this.maxFill / 4 || this.f3064n <= 16) {
+        if (this.f3028n <= this.minN || this.size >= this.maxFill / 4 || this.f3028n <= 16) {
             return true;
         }
-        rehash(this.f3064n / 2);
+        rehash(this.f3028n / 2);
         return true;
     }
 
@@ -366,20 +366,20 @@ public class ShortOpenHashSet extends AbstractShortSet implements Serializable, 
         int last;
 
         /* renamed from: c */
-        int f3066c;
+        int f3030c;
         boolean mustReturnNull;
         ShortArrayList wrapped;
 
         private SetIterator() {
-            this.pos = ShortOpenHashSet.this.f3064n;
+            this.pos = ShortOpenHashSet.this.f3028n;
             this.last = -1;
-            this.f3066c = ShortOpenHashSet.this.size;
+            this.f3030c = ShortOpenHashSet.this.size;
             this.mustReturnNull = ShortOpenHashSet.this.containsNull;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f3066c != 0;
+            return this.f3030c != 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
@@ -387,11 +387,11 @@ public class ShortOpenHashSet extends AbstractShortSet implements Serializable, 
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f3066c--;
+            this.f3030c--;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = ShortOpenHashSet.this.f3064n;
-                return ShortOpenHashSet.this.key[ShortOpenHashSet.this.f3064n];
+                this.last = ShortOpenHashSet.this.f3028n;
+                return ShortOpenHashSet.this.key[ShortOpenHashSet.this.f3028n];
             }
             short[] key = ShortOpenHashSet.this.key;
             do {
@@ -450,9 +450,9 @@ public class ShortOpenHashSet extends AbstractShortSet implements Serializable, 
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == ShortOpenHashSet.this.f3064n) {
+            if (this.last == ShortOpenHashSet.this.f3028n) {
                 ShortOpenHashSet.this.containsNull = false;
-                ShortOpenHashSet.this.key[ShortOpenHashSet.this.f3064n] = 0;
+                ShortOpenHashSet.this.key[ShortOpenHashSet.this.f3028n] = 0;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -469,22 +469,22 @@ public class ShortOpenHashSet extends AbstractShortSet implements Serializable, 
             short[] key = ShortOpenHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = ShortOpenHashSet.this.f3064n;
-                action.accept(key[ShortOpenHashSet.this.f3064n]);
-                this.f3066c--;
+                this.last = ShortOpenHashSet.this.f3028n;
+                action.accept(key[ShortOpenHashSet.this.f3028n]);
+                this.f3030c--;
             }
-            while (this.f3066c != 0) {
+            while (this.f3030c != 0) {
                 int i = this.pos - 1;
                 this.pos = i;
                 if (i < 0) {
                     this.last = Integer.MIN_VALUE;
                     action.accept(this.wrapped.getShort((-this.pos) - 1));
-                    this.f3066c--;
+                    this.f3030c--;
                 } else if (key[this.pos] != 0) {
                     int i2 = this.pos;
                     this.last = i2;
                     action.accept(key[i2]);
-                    this.f3066c--;
+                    this.f3030c--;
                 }
             }
         }
@@ -504,22 +504,22 @@ public class ShortOpenHashSet extends AbstractShortSet implements Serializable, 
         int max;
 
         /* renamed from: c */
-        int f3067c;
+        int f3031c;
         boolean mustReturnNull;
         boolean hasSplit;
 
         SetSpliterator() {
             this.pos = 0;
-            this.max = ShortOpenHashSet.this.f3064n;
-            this.f3067c = 0;
+            this.max = ShortOpenHashSet.this.f3028n;
+            this.f3031c = 0;
             this.mustReturnNull = ShortOpenHashSet.this.containsNull;
             this.hasSplit = false;
         }
 
         SetSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = ShortOpenHashSet.this.f3064n;
-            this.f3067c = 0;
+            this.max = ShortOpenHashSet.this.f3028n;
+            this.f3031c = 0;
             this.mustReturnNull = ShortOpenHashSet.this.containsNull;
             this.hasSplit = false;
             this.pos = pos;
@@ -531,14 +531,14 @@ public class ShortOpenHashSet extends AbstractShortSet implements Serializable, 
         public boolean tryAdvance(ShortConsumer action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f3067c++;
-                action.accept(ShortOpenHashSet.this.key[ShortOpenHashSet.this.f3064n]);
+                this.f3031c++;
+                action.accept(ShortOpenHashSet.this.key[ShortOpenHashSet.this.f3028n]);
                 return true;
             }
             short[] key = ShortOpenHashSet.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f3067c++;
+                    this.f3031c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(key[i]);
@@ -553,13 +553,13 @@ public class ShortOpenHashSet extends AbstractShortSet implements Serializable, 
             short[] key = ShortOpenHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                action.accept(key[ShortOpenHashSet.this.f3064n]);
-                this.f3067c++;
+                action.accept(key[ShortOpenHashSet.this.f3028n]);
+                this.f3031c++;
             }
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     action.accept(key[this.pos]);
-                    this.f3067c++;
+                    this.f3031c++;
                 }
                 this.pos++;
             }
@@ -573,9 +573,9 @@ public class ShortOpenHashSet extends AbstractShortSet implements Serializable, 
         @Override // java.util.Spliterator
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (ShortOpenHashSet.this.size - this.f3067c);
+                return (long) (ShortOpenHashSet.this.size - this.f3031c);
             }
-            return Math.min((long) (ShortOpenHashSet.this.size - this.f3067c), ((long) ((((double) ShortOpenHashSet.this.realSize()) / ((double) ShortOpenHashSet.this.f3064n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (ShortOpenHashSet.this.size - this.f3031c), ((long) ((((double) ShortOpenHashSet.this.realSize()) / ((double) ShortOpenHashSet.this.f3028n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
@@ -701,10 +701,10 @@ public class ShortOpenHashSet extends AbstractShortSet implements Serializable, 
     @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterable
     public void forEach(ShortConsumer action) {
         if (this.containsNull) {
-            action.accept(this.key[this.f3064n]);
+            action.accept(this.key[this.f3028n]);
         }
         short[] key = this.key;
-        int pos = this.f3064n;
+        int pos = this.f3028n;
         while (true) {
             pos--;
             if (pos == 0) {
@@ -721,8 +721,8 @@ public class ShortOpenHashSet extends AbstractShortSet implements Serializable, 
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f3065f)));
-        if (l >= this.f3064n || this.size > HashCommon.maxFill(l, this.f3065f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f3029f)));
+        if (l >= this.f3028n || this.size > HashCommon.maxFill(l, this.f3029f)) {
             return true;
         }
         try {
@@ -738,7 +738,7 @@ public class ShortOpenHashSet extends AbstractShortSet implements Serializable, 
         short[] key = this.key;
         int mask = newN - 1;
         short[] newKey = new short[newN + 1];
-        int i2 = this.f3064n;
+        int i2 = this.f3028n;
         int j = realSize();
         while (true) {
             j--;
@@ -756,9 +756,9 @@ public class ShortOpenHashSet extends AbstractShortSet implements Serializable, 
                 }
                 newKey[pos] = key[i2];
             } else {
-                this.f3064n = newN;
+                this.f3028n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f3064n, this.f3065f);
+                this.maxFill = HashCommon.maxFill(this.f3028n, this.f3029f);
                 this.key = newKey;
                 return;
             }
@@ -814,10 +814,10 @@ public class ShortOpenHashSet extends AbstractShortSet implements Serializable, 
         int pos;
         int i;
         s.defaultReadObject();
-        this.f3064n = HashCommon.arraySize(this.size, this.f3065f);
-        this.maxFill = HashCommon.maxFill(this.f3064n, this.f3065f);
-        this.mask = this.f3064n - 1;
-        short[] key = new short[this.f3064n + 1];
+        this.f3028n = HashCommon.arraySize(this.size, this.f3029f);
+        this.maxFill = HashCommon.maxFill(this.f3028n, this.f3029f);
+        this.mask = this.f3028n - 1;
+        short[] key = new short[this.f3028n + 1];
         this.key = key;
         int i2 = this.size;
         while (true) {
@@ -825,7 +825,7 @@ public class ShortOpenHashSet extends AbstractShortSet implements Serializable, 
             if (i2 != 0) {
                 short k = s.readShort();
                 if (k == 0) {
-                    pos = this.f3064n;
+                    pos = this.f3028n;
                     this.containsNull = true;
                 } else {
                     int mix = HashCommon.mix((int) k) & this.mask;

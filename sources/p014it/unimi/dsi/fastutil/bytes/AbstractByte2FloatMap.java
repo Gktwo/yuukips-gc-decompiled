@@ -198,30 +198,30 @@ public abstract class AbstractByte2FloatMap extends AbstractByte2FloatFunction i
                 return new ByteIterator() { // from class: it.unimi.dsi.fastutil.bytes.AbstractByte2FloatMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Byte2FloatMap.Entry> f1095i;
+                    private final ObjectIterator<Byte2FloatMap.Entry> f1059i;
 
                     {
-                        this.f1095i = Byte2FloatMaps.fastIterator(AbstractByte2FloatMap.this);
+                        this.f1059i = Byte2FloatMaps.fastIterator(AbstractByte2FloatMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
                     public byte nextByte() {
-                        return this.f1095i.next().getByteKey();
+                        return this.f1059i.next().getByteKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1095i.hasNext();
+                        return this.f1059i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1095i.remove();
+                        this.f1059i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
                     public void forEachRemaining(ByteConsumer action) {
-                        this.f1095i.forEachRemaining(entry -> {
+                        this.f1059i.forEachRemaining(entry -> {
                             action.accept(entry.getByteKey());
                         });
                     }
@@ -261,30 +261,30 @@ public abstract class AbstractByte2FloatMap extends AbstractByte2FloatFunction i
                 return new FloatIterator() { // from class: it.unimi.dsi.fastutil.bytes.AbstractByte2FloatMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Byte2FloatMap.Entry> f1096i;
+                    private final ObjectIterator<Byte2FloatMap.Entry> f1060i;
 
                     {
-                        this.f1096i = Byte2FloatMaps.fastIterator(AbstractByte2FloatMap.this);
+                        this.f1060i = Byte2FloatMaps.fastIterator(AbstractByte2FloatMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
                     public float nextFloat() {
-                        return this.f1096i.next().getFloatValue();
+                        return this.f1060i.next().getFloatValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1096i.hasNext();
+                        return this.f1060i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1096i.remove();
+                        this.f1060i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
                     public void forEachRemaining(FloatConsumer action) {
-                        this.f1096i.forEachRemaining(entry -> {
+                        this.f1060i.forEachRemaining(entry -> {
                             action.accept(entry.getFloatValue());
                         });
                     }

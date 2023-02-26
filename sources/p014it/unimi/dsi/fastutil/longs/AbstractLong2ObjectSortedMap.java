@@ -90,30 +90,30 @@ public abstract class AbstractLong2ObjectSortedMap<V> extends AbstractLong2Objec
     public static class KeySetIterator<V> implements LongBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Long2ObjectMap.Entry<V>> f2247i;
+        protected final ObjectBidirectionalIterator<Long2ObjectMap.Entry<V>> f2211i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Long2ObjectMap.Entry<V>> i) {
-            this.f2247i = i;
+            this.f2211i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
         public long nextLong() {
-            return ((Long2ObjectMap.Entry) this.f2247i.next()).getLongKey();
+            return ((Long2ObjectMap.Entry) this.f2211i.next()).getLongKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongBidirectionalIterator
         public long previousLong() {
-            return this.f2247i.previous().getLongKey();
+            return this.f2211i.previous().getLongKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2247i.hasNext();
+            return this.f2211i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2247i.hasPrevious();
+            return this.f2211i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractLong2ObjectSortedMap<V> extends AbstractLong2Objec
     public static class ValuesIterator<V> implements ObjectIterator<V> {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Long2ObjectMap.Entry<V>> f2248i;
+        protected final ObjectBidirectionalIterator<Long2ObjectMap.Entry<V>> f2212i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Long2ObjectMap.Entry<V>> i) {
-            this.f2248i = i;
+            this.f2212i = i;
         }
 
         @Override // java.util.Iterator
         public V next() {
-            return ((Long2ObjectMap.Entry) this.f2248i.next()).getValue();
+            return ((Long2ObjectMap.Entry) this.f2212i.next()).getValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2248i.hasNext();
+            return this.f2212i.hasNext();
         }
     }
 }

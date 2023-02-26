@@ -236,11 +236,11 @@ public final class _RealBufferedSourceKt {
         Intrinsics.checkNotNullParameter($this$commonReadUtf8CodePoint, "<this>");
         $this$commonReadUtf8CodePoint.require(1);
         int b0 = $this$commonReadUtf8CodePoint.bufferField.getByte(0);
-        if ((b0 & PacketOpcodes.WorldPlayerLocationNotify) == 192) {
+        if ((b0 & PacketOpcodes.SceneAvatarStaminaStepRsp) == 192) {
             $this$commonReadUtf8CodePoint.require(2);
-        } else if ((b0 & PacketOpcodes.ExecuteGadgetLuaRsp) == 224) {
+        } else if ((b0 & PacketOpcodes.SceneKickPlayerRsp) == 224) {
             $this$commonReadUtf8CodePoint.require(3);
-        } else if ((b0 & PacketOpcodes.ScenePlayerLocationNotify) == 240) {
+        } else if ((b0 & PacketOpcodes.EnterSceneDoneReq) == 240) {
             $this$commonReadUtf8CodePoint.require(4);
         }
         return $this$commonReadUtf8CodePoint.bufferField.readUtf8CodePoint();

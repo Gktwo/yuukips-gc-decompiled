@@ -13,21 +13,21 @@ import org.luaj.vm2.lib.jse.JsePlatform;
 public class DefaultLauncher implements Launcher {
 
     /* renamed from: g */
-    protected Globals f3363g = JsePlatform.standardGlobals();
+    protected Globals f3327g = JsePlatform.standardGlobals();
 
     @Override // org.luaj.vm2.server.Launcher
     public Object[] launch(String str, Object[] objArr) {
-        return launchChunk(this.f3363g.load(str, LineReader.MAIN), objArr);
+        return launchChunk(this.f3327g.load(str, LineReader.MAIN), objArr);
     }
 
     @Override // org.luaj.vm2.server.Launcher
     public Object[] launch(InputStream inputStream, Object[] objArr) {
-        return launchChunk(this.f3363g.load(inputStream, LineReader.MAIN, "bt", this.f3363g), objArr);
+        return launchChunk(this.f3327g.load(inputStream, LineReader.MAIN, "bt", this.f3327g), objArr);
     }
 
     @Override // org.luaj.vm2.server.Launcher
     public Object[] launch(Reader reader, Object[] objArr) {
-        return launchChunk(this.f3363g.load(reader, LineReader.MAIN), objArr);
+        return launchChunk(this.f3327g.load(reader, LineReader.MAIN), objArr);
     }
 
     private Object[] launchChunk(LuaValue luaValue, Object[] objArr) {

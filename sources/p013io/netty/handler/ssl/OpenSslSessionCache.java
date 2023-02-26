@@ -213,7 +213,7 @@ public class OpenSslSessionCache implements SSLSessionCache {
         private final int peerPort;
 
         /* renamed from: id */
-        private final OpenSslSessionId f1017id;
+        private final OpenSslSessionId f981id;
         private final long timeout;
         private boolean freed;
         static final /* synthetic */ boolean $assertionsDisabled;
@@ -232,7 +232,7 @@ public class OpenSslSessionCache implements SSLSessionCache {
             this.peerHost = peerHost;
             this.peerPort = peerPort;
             this.timeout = timeout;
-            this.f1017id = new OpenSslSessionId(SSLSession.getSessionId(session));
+            this.f981id = new OpenSslSessionId(SSLSession.getSessionId(session));
         }
 
         @Override // p013io.netty.handler.ssl.OpenSslSession
@@ -283,7 +283,7 @@ public class OpenSslSessionCache implements SSLSessionCache {
 
         @Override // p013io.netty.handler.ssl.OpenSslSession
         public OpenSslSessionId sessionId() {
-            return this.f1017id;
+            return this.f981id;
         }
 
         boolean isValid(long now) {
@@ -312,7 +312,7 @@ public class OpenSslSessionCache implements SSLSessionCache {
 
         @Override // javax.net.ssl.SSLSession
         public byte[] getId() {
-            return this.f1017id.cloneBytes();
+            return this.f981id.cloneBytes();
         }
 
         @Override // javax.net.ssl.SSLSession
@@ -416,7 +416,7 @@ public class OpenSslSessionCache implements SSLSessionCache {
 
         @Override // java.lang.Object
         public int hashCode() {
-            return this.f1017id.hashCode();
+            return this.f981id.hashCode();
         }
 
         @Override // java.lang.Object
@@ -427,7 +427,7 @@ public class OpenSslSessionCache implements SSLSessionCache {
             if (!(o instanceof OpenSslSession)) {
                 return false;
             }
-            return this.f1017id.equals(((OpenSslSession) o).sessionId());
+            return this.f981id.equals(((OpenSslSession) o).sessionId());
         }
     }
 }

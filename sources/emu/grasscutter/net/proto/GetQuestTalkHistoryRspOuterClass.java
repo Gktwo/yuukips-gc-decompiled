@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetQuestTalkHistoryRspOuterClass.class */
 public final class GetQuestTalkHistoryRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cGetQuestTalkHistoryRsp.proto\"X\n\u0016GetQuestTalkHistoryRsp\u0012\u000f\n\u0007retcode\u0018\u0004 \u0001(\u0005\u0012\u0017\n\u000fparent_quest_id\u0018\u0003 \u0001(\r\u0012\u0014\n\ftalk_id_list\u0018\u0005 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cGetQuestTalkHistoryRsp.proto\"T\n\u0016GetQuestTalkHistoryRsp\u0012\u000f\n\u0007retcode\u0018\b \u0001(\u0005\u0012\u0015\n\rparentQuestId\u0018\r \u0001(\r\u0012\u0012\n\ntalkIdList\u0018\u0007 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GetQuestTalkHistoryRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetQuestTalkHistoryRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetQuestTalkHistoryRsp_descriptor, new String[]{"Retcode", "ParentQuestId", "TalkIdList"});
 
@@ -53,11 +53,11 @@ public final class GetQuestTalkHistoryRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetQuestTalkHistoryRspOuterClass$GetQuestTalkHistoryRsp.class */
     public static final class GetQuestTalkHistoryRsp extends GeneratedMessageV3 implements GetQuestTalkHistoryRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 4;
+        public static final int RETCODE_FIELD_NUMBER = 8;
         private int retcode_;
-        public static final int PARENT_QUEST_ID_FIELD_NUMBER = 3;
+        public static final int PARENTQUESTID_FIELD_NUMBER = 13;
         private int parentQuestId_;
-        public static final int TALK_ID_LIST_FIELD_NUMBER = 5;
+        public static final int TALKIDLIST_FIELD_NUMBER = 7;
         private Internal.IntList talkIdList_;
         private int talkIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -110,20 +110,14 @@ public final class GetQuestTalkHistoryRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 24:
-                                this.parentQuestId_ = input.readUInt32();
-                                break;
-                            case 32:
-                                this.retcode_ = input.readInt32();
-                                break;
-                            case 40:
+                            case 56:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.talkIdList_ = newIntList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.talkIdList_.addInt(input.readUInt32());
                                 break;
-                            case 42:
+                            case 58:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.talkIdList_ = newIntList();
@@ -133,6 +127,12 @@ public final class GetQuestTalkHistoryRspOuterClass {
                                     this.talkIdList_.addInt(input.readUInt32());
                                 }
                                 input.popLimit(limit);
+                                break;
+                            case 64:
+                                this.retcode_ = input.readInt32();
+                                break;
+                            case 104:
+                                this.parentQuestId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -207,18 +207,18 @@ public final class GetQuestTalkHistoryRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (this.parentQuestId_ != 0) {
-                output.writeUInt32(3, this.parentQuestId_);
-            }
-            if (this.retcode_ != 0) {
-                output.writeInt32(4, this.retcode_);
-            }
             if (getTalkIdListList().size() > 0) {
-                output.writeUInt32NoTag(42);
+                output.writeUInt32NoTag(58);
                 output.writeUInt32NoTag(this.talkIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.talkIdList_.size(); i++) {
                 output.writeUInt32NoTag(this.talkIdList_.getInt(i));
+            }
+            if (this.retcode_ != 0) {
+                output.writeInt32(8, this.retcode_);
+            }
+            if (this.parentQuestId_ != 0) {
+                output.writeUInt32(13, this.parentQuestId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -229,25 +229,24 @@ public final class GetQuestTalkHistoryRspOuterClass {
             if (size != -1) {
                 return size;
             }
-            int size2 = 0;
-            if (this.parentQuestId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.parentQuestId_);
-            }
-            if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(4, this.retcode_);
-            }
             int dataSize = 0;
             for (int i = 0; i < this.talkIdList_.size(); i++) {
                 dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.talkIdList_.getInt(i));
             }
-            int size3 = size2 + dataSize;
+            int size2 = 0 + dataSize;
             if (!getTalkIdListList().isEmpty()) {
-                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.talkIdListMemoizedSerializedSize = dataSize;
-            int size4 = size3 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size4;
-            return size4;
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(8, this.retcode_);
+            }
+            if (this.parentQuestId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(13, this.parentQuestId_);
+            }
+            int size3 = size2 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size3;
+            return size3;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -267,9 +266,9 @@ public final class GetQuestTalkHistoryRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getRetcode())) + 3)) + getParentQuestId();
+            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getRetcode())) + 13)) + getParentQuestId();
             if (getTalkIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 5)) + getTalkIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 7)) + getTalkIdListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

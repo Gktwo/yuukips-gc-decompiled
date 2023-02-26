@@ -294,7 +294,7 @@ public final class Snappy {
         }
         int initialIndex = out.writerIndex();
         int length = 4 + ((tag & 28) >> 2);
-        int offset = (((tag & PacketOpcodes.WorldPlayerLocationNotify) << 8) >> 5) | in.readUnsignedByte();
+        int offset = (((tag & PacketOpcodes.SceneAvatarStaminaStepRsp) << 8) >> 5) | in.readUnsignedByte();
         validateOffset(offset, writtenSoFar);
         out.markReaderIndex();
         if (offset < length) {

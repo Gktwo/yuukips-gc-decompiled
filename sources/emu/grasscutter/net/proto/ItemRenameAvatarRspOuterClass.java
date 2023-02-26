@@ -19,17 +19,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ItemRenameAvatarRspOuterClass.class */
 public final class ItemRenameAvatarRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019ItemRenameAvatarRsp.proto\"J\n\u0013ItemRenameAvatarRsp\u0012\u000f\n\u0007retcode\u0018\u000e \u0001(\u0005\u0012\u000f\n\u0007cd_time\u0018\u0005 \u0001(\r\u0012\u0011\n\trename_id\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019ItemRenameAvatarRsp.proto\"H\n\u0013ItemRenameAvatarRsp\u0012\u000f\n\u0007retcode\u0018\u000f \u0001(\u0005\u0012\u0010\n\brenameId\u0018\b \u0001(\r\u0012\u000e\n\u0006cdTime\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ItemRenameAvatarRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ItemRenameAvatarRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ItemRenameAvatarRsp_descriptor, new String[]{"Retcode", "CdTime", "RenameId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ItemRenameAvatarRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ItemRenameAvatarRsp_descriptor, new String[]{"Retcode", "RenameId", "CdTime"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ItemRenameAvatarRspOuterClass$ItemRenameAvatarRspOrBuilder.class */
     public interface ItemRenameAvatarRspOrBuilder extends MessageOrBuilder {
         int getRetcode();
 
-        int getCdTime();
-
         int getRenameId();
+
+        int getCdTime();
     }
 
     private ItemRenameAvatarRspOuterClass() {
@@ -45,12 +45,12 @@ public final class ItemRenameAvatarRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ItemRenameAvatarRspOuterClass$ItemRenameAvatarRsp.class */
     public static final class ItemRenameAvatarRsp extends GeneratedMessageV3 implements ItemRenameAvatarRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 14;
+        public static final int RETCODE_FIELD_NUMBER = 15;
         private int retcode_;
-        public static final int CD_TIME_FIELD_NUMBER = 5;
-        private int cdTime_;
-        public static final int RENAME_ID_FIELD_NUMBER = 8;
+        public static final int RENAMEID_FIELD_NUMBER = 8;
         private int renameId_;
+        public static final int CDTIME_FIELD_NUMBER = 7;
+        private int cdTime_;
         private byte memoizedIsInitialized;
         private static final ItemRenameAvatarRsp DEFAULT_INSTANCE = new ItemRenameAvatarRsp();
         private static final Parser<ItemRenameAvatarRsp> PARSER = new AbstractParser<ItemRenameAvatarRsp>() { // from class: emu.grasscutter.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRsp.1
@@ -97,13 +97,13 @@ public final class ItemRenameAvatarRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 40:
+                                case 56:
                                     this.cdTime_ = input.readUInt32();
                                     break;
                                 case 64:
                                     this.renameId_ = input.readUInt32();
                                     break;
-                                case 112:
+                                case 120:
                                     this.retcode_ = input.readInt32();
                                     break;
                                 default:
@@ -142,13 +142,13 @@ public final class ItemRenameAvatarRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRspOrBuilder
-        public int getCdTime() {
-            return this.cdTime_;
+        public int getRenameId() {
+            return this.renameId_;
         }
 
         @Override // emu.grasscutter.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRspOrBuilder
-        public int getRenameId() {
-            return this.renameId_;
+        public int getCdTime() {
+            return this.cdTime_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,13 +167,13 @@ public final class ItemRenameAvatarRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.cdTime_ != 0) {
-                output.writeUInt32(5, this.cdTime_);
+                output.writeUInt32(7, this.cdTime_);
             }
             if (this.renameId_ != 0) {
                 output.writeUInt32(8, this.renameId_);
             }
             if (this.retcode_ != 0) {
-                output.writeInt32(14, this.retcode_);
+                output.writeInt32(15, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,13 +186,13 @@ public final class ItemRenameAvatarRspOuterClass {
             }
             int size2 = 0;
             if (this.cdTime_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.cdTime_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.cdTime_);
             }
             if (this.renameId_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(8, this.renameId_);
             }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(14, this.retcode_);
+                size2 += CodedOutputStream.computeInt32Size(15, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -208,7 +208,7 @@ public final class ItemRenameAvatarRspOuterClass {
                 return equals(obj);
             }
             ItemRenameAvatarRsp other = (ItemRenameAvatarRsp) obj;
-            return getRetcode() == other.getRetcode() && getCdTime() == other.getCdTime() && getRenameId() == other.getRenameId() && this.unknownFields.equals(other.unknownFields);
+            return getRetcode() == other.getRetcode() && getRenameId() == other.getRenameId() && getCdTime() == other.getCdTime() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -216,7 +216,7 @@ public final class ItemRenameAvatarRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getRetcode())) + 5)) + getCdTime())) + 8)) + getRenameId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getRetcode())) + 8)) + getRenameId())) + 7)) + getCdTime())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -296,8 +296,8 @@ public final class ItemRenameAvatarRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ItemRenameAvatarRspOuterClass$ItemRenameAvatarRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ItemRenameAvatarRspOrBuilder {
             private int retcode_;
-            private int cdTime_;
             private int renameId_;
+            private int cdTime_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ItemRenameAvatarRspOuterClass.internal_static_ItemRenameAvatarRsp_descriptor;
@@ -326,8 +326,8 @@ public final class ItemRenameAvatarRspOuterClass {
             public Builder clear() {
                 clear();
                 this.retcode_ = 0;
-                this.cdTime_ = 0;
                 this.renameId_ = 0;
+                this.cdTime_ = 0;
                 return this;
             }
 
@@ -354,8 +354,8 @@ public final class ItemRenameAvatarRspOuterClass {
             public ItemRenameAvatarRsp buildPartial() {
                 ItemRenameAvatarRsp result = new ItemRenameAvatarRsp(this);
                 result.retcode_ = this.retcode_;
-                result.cdTime_ = this.cdTime_;
                 result.renameId_ = this.renameId_;
+                result.cdTime_ = this.cdTime_;
                 onBuilt();
                 return result;
             }
@@ -406,11 +406,11 @@ public final class ItemRenameAvatarRspOuterClass {
                 if (other.getRetcode() != 0) {
                     setRetcode(other.getRetcode());
                 }
-                if (other.getCdTime() != 0) {
-                    setCdTime(other.getCdTime());
-                }
                 if (other.getRenameId() != 0) {
                     setRenameId(other.getRenameId());
+                }
+                if (other.getCdTime() != 0) {
+                    setCdTime(other.getCdTime());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -462,23 +462,6 @@ public final class ItemRenameAvatarRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRspOrBuilder
-            public int getCdTime() {
-                return this.cdTime_;
-            }
-
-            public Builder setCdTime(int value) {
-                this.cdTime_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearCdTime() {
-                this.cdTime_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRspOrBuilder
             public int getRenameId() {
                 return this.renameId_;
             }
@@ -491,6 +474,23 @@ public final class ItemRenameAvatarRspOuterClass {
 
             public Builder clearRenameId() {
                 this.renameId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ItemRenameAvatarRspOuterClass.ItemRenameAvatarRspOrBuilder
+            public int getCdTime() {
+                return this.cdTime_;
+            }
+
+            public Builder setCdTime(int value) {
+                this.cdTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearCdTime() {
+                this.cdTime_ = 0;
                 onChanged();
                 return this;
             }

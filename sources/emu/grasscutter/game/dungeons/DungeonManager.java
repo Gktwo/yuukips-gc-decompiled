@@ -65,7 +65,7 @@ public class DungeonManager {
             DataLoader.loadList("DungeonDrop.json", DungeonDrop.class).forEach(entry -> {
                 dungeonDropData.put(entry.getDungeonId(), (int) entry.getDrops());
             });
-            Grasscutter.getLogger().warn("Loaded {} dungeon drop data entries.", Integer.valueOf(dungeonDropData.size()));
+            Grasscutter.getLogger().info("Loaded {} dungeon drop data entries.", Integer.valueOf(dungeonDropData.size()));
         } catch (Exception ex) {
             Grasscutter.getLogger().error("Unable to load dungeon drop data.", (Throwable) ex);
         }

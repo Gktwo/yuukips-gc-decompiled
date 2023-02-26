@@ -3,7 +3,7 @@ package org.eclipse.jetty.server.resource;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 
 /* loaded from: grasscutter.jar:org/eclipse/jetty/server/resource/InputStreamRangeWriter.class */
 public class InputStreamRangeWriter implements RangeWriter {
@@ -65,7 +65,7 @@ public class InputStreamRangeWriter implements RangeWriter {
             }
             this.pos = skipTo;
         }
-        C5747IO.copy(this.inputStream, outputStream, length);
+        C5739IO.copy(this.inputStream, outputStream, length);
         this.pos += length;
     }
 }

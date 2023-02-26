@@ -17,7 +17,7 @@ public class IntArraySet extends AbstractIntSet implements Serializable, Cloneab
     private static final long serialVersionUID = 1;
 
     /* renamed from: a */
-    private transient int[] f2153a;
+    private transient int[] f2117a;
     private int size;
 
     static /* synthetic */ int access$010(IntArraySet x0) {
@@ -27,16 +27,16 @@ public class IntArraySet extends AbstractIntSet implements Serializable, Cloneab
     }
 
     public IntArraySet(int[] a) {
-        this.f2153a = a;
+        this.f2117a = a;
         this.size = a.length;
     }
 
     public IntArraySet() {
-        this.f2153a = IntArrays.EMPTY_ARRAY;
+        this.f2117a = IntArrays.EMPTY_ARRAY;
     }
 
     public IntArraySet(int capacity) {
-        this.f2153a = new int[capacity];
+        this.f2117a = new int[capacity];
     }
 
     public IntArraySet(IntCollection c) {
@@ -54,7 +54,7 @@ public class IntArraySet extends AbstractIntSet implements Serializable, Cloneab
         int i = 0;
         IntIterator it = c.iterator();
         while (it.hasNext()) {
-            this.f2153a[i] = it.next().intValue();
+            this.f2117a[i] = it.next().intValue();
             i++;
         }
         this.size = i;
@@ -64,14 +64,14 @@ public class IntArraySet extends AbstractIntSet implements Serializable, Cloneab
         this(c.size());
         int i = 0;
         for (Integer x : c) {
-            this.f2153a[i] = x.intValue();
+            this.f2117a[i] = x.intValue();
             i++;
         }
         this.size = i;
     }
 
     public IntArraySet(int[] a, int size) {
-        this.f2153a = a;
+        this.f2117a = a;
         this.size = size;
         if (size > a.length) {
             throw new IllegalArgumentException("The provided size (" + size + ") is larger than or equal to the array size (" + a.length + ")");
@@ -115,7 +115,7 @@ public class IntArraySet extends AbstractIntSet implements Serializable, Cloneab
             if (i == 0) {
                 return -1;
             }
-        } while (this.f2153a[i] != o);
+        } while (this.f2117a[i] != o);
         return i;
     }
 
@@ -134,7 +134,7 @@ public class IntArraySet extends AbstractIntSet implements Serializable, Cloneab
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                int[] iArr = IntArraySet.this.f2153a;
+                int[] iArr = IntArraySet.this.f2117a;
                 int i = this.next;
                 this.next = i + 1;
                 return iArr[i];
@@ -145,7 +145,7 @@ public class IntArraySet extends AbstractIntSet implements Serializable, Cloneab
                 int access$010 = IntArraySet.access$010(IntArraySet.this);
                 int i = this.next;
                 this.next = i - 1;
-                System.arraycopy(IntArraySet.this.f2153a, this.next + 1, IntArraySet.this.f2153a, this.next, access$010 - i);
+                System.arraycopy(IntArraySet.this.f2117a, this.next + 1, IntArraySet.this.f2117a, this.next, access$010 - i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.ints.IntIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectIterator
@@ -211,7 +211,7 @@ public class IntArraySet extends AbstractIntSet implements Serializable, Cloneab
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            int[] iArr = IntArraySet.this.f2153a;
+            int[] iArr = IntArraySet.this.f2117a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(iArr[i]);
@@ -222,7 +222,7 @@ public class IntArraySet extends AbstractIntSet implements Serializable, Cloneab
         public void forEachRemaining(IntConsumer action) {
             int max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(IntArraySet.this.f2153a[this.pos]);
+                action.accept(IntArraySet.this.f2117a[this.pos]);
                 this.pos++;
             }
         }
@@ -285,7 +285,7 @@ public class IntArraySet extends AbstractIntSet implements Serializable, Cloneab
         }
         int tail = (this.size - pos) - 1;
         for (int i = 0; i < tail; i++) {
-            this.f2153a[pos + i] = this.f2153a[pos + i + 1];
+            this.f2117a[pos + i] = this.f2117a[pos + i + 1];
         }
         this.size--;
         return true;
@@ -296,7 +296,7 @@ public class IntArraySet extends AbstractIntSet implements Serializable, Cloneab
         if (findKey(k) != -1) {
             return false;
         }
-        if (this.size == this.f2153a.length) {
+        if (this.size == this.f2117a.length) {
             int[] b = new int[this.size == 0 ? 2 : this.size * 2];
             int i = this.size;
             while (true) {
@@ -304,11 +304,11 @@ public class IntArraySet extends AbstractIntSet implements Serializable, Cloneab
                 if (i == 0) {
                     break;
                 }
-                b[i] = this.f2153a[i];
+                b[i] = this.f2117a[i];
             }
-            this.f2153a = b;
+            this.f2117a = b;
         }
-        int[] iArr = this.f2153a;
+        int[] iArr = this.f2117a;
         int i2 = this.size;
         this.size = i2 + 1;
         iArr[i2] = k;
@@ -327,7 +327,7 @@ public class IntArraySet extends AbstractIntSet implements Serializable, Cloneab
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntCollection, p014it.unimi.dsi.fastutil.ints.IntCollection
     public int[] toIntArray() {
-        return Arrays.copyOf(this.f2153a, this.size);
+        return Arrays.copyOf(this.f2117a, this.size);
     }
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntCollection, p014it.unimi.dsi.fastutil.ints.IntCollection
@@ -335,7 +335,7 @@ public class IntArraySet extends AbstractIntSet implements Serializable, Cloneab
         if (a == null || a.length < this.size) {
             a = new int[this.size];
         }
-        System.arraycopy(this.f2153a, 0, a, 0, this.size);
+        System.arraycopy(this.f2117a, 0, a, 0, this.size);
         return a;
     }
 
@@ -343,7 +343,7 @@ public class IntArraySet extends AbstractIntSet implements Serializable, Cloneab
     public IntArraySet clone() {
         try {
             IntArraySet c = (IntArraySet) clone();
-            c.f2153a = (int[]) this.f2153a.clone();
+            c.f2117a = (int[]) this.f2117a.clone();
             return c;
         } catch (CloneNotSupportedException e) {
             throw new InternalError();
@@ -353,15 +353,15 @@ public class IntArraySet extends AbstractIntSet implements Serializable, Cloneab
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; i < this.size; i++) {
-            s.writeInt(this.f2153a[i]);
+            s.writeInt(this.f2117a[i]);
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f2153a = new int[this.size];
+        this.f2117a = new int[this.size];
         for (int i = 0; i < this.size; i++) {
-            this.f2153a[i] = s.readInt();
+            this.f2117a[i] = s.readInt();
         }
     }
 }

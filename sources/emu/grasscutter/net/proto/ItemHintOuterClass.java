@@ -20,19 +20,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ItemHintOuterClass.class */
 public final class ItemHintOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000eItemHint.proto\"H\n\bItemHint\u0012\u000e\n\u0006is_new\u0018\t \u0001(\b\u0012\f\n\u0004guid\u0018\n \u0001(\u0004\u0012\r\n\u0005count\u0018\u000f \u0001(\r\u0012\u000f\n\u0007item_id\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000eItemHint.proto\"F\n\bItemHint\u0012\r\n\u0005count\u0018\f \u0001(\r\u0012\f\n\u0004guid\u0018\b \u0001(\u0004\u0012\u000e\n\u0006itemId\u0018\r \u0001(\r\u0012\r\n\u0005isNew\u0018\u000e \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ItemHint_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ItemHint_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ItemHint_descriptor, new String[]{"IsNew", "Guid", "Count", "ItemId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ItemHint_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ItemHint_descriptor, new String[]{"Count", "Guid", "ItemId", "IsNew"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ItemHintOuterClass$ItemHintOrBuilder.class */
     public interface ItemHintOrBuilder extends MessageOrBuilder {
-        boolean getIsNew();
+        int getCount();
 
         long getGuid();
 
-        int getCount();
-
         int getItemId();
+
+        boolean getIsNew();
     }
 
     private ItemHintOuterClass() {
@@ -48,14 +48,14 @@ public final class ItemHintOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ItemHintOuterClass$ItemHint.class */
     public static final class ItemHint extends GeneratedMessageV3 implements ItemHintOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_NEW_FIELD_NUMBER = 9;
-        private boolean isNew_;
-        public static final int GUID_FIELD_NUMBER = 10;
-        private long guid_;
-        public static final int COUNT_FIELD_NUMBER = 15;
+        public static final int COUNT_FIELD_NUMBER = 12;
         private int count_;
-        public static final int ITEM_ID_FIELD_NUMBER = 3;
+        public static final int GUID_FIELD_NUMBER = 8;
+        private long guid_;
+        public static final int ITEMID_FIELD_NUMBER = 13;
         private int itemId_;
+        public static final int ISNEW_FIELD_NUMBER = 14;
+        private boolean isNew_;
         private byte memoizedIsInitialized;
         private static final ItemHint DEFAULT_INSTANCE = new ItemHint();
         private static final Parser<ItemHint> PARSER = new AbstractParser<ItemHint>() { // from class: emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint.1
@@ -102,17 +102,17 @@ public final class ItemHintOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 24:
-                                    this.itemId_ = input.readUInt32();
-                                    break;
-                                case 72:
-                                    this.isNew_ = input.readBool();
-                                    break;
-                                case 80:
+                                case 64:
                                     this.guid_ = input.readUInt64();
                                     break;
-                                case 120:
+                                case 96:
                                     this.count_ = input.readUInt32();
+                                    break;
+                                case 104:
+                                    this.itemId_ = input.readUInt32();
+                                    break;
+                                case 112:
+                                    this.isNew_ = input.readBool();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -145,8 +145,8 @@ public final class ItemHintOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ItemHintOuterClass.ItemHintOrBuilder
-        public boolean getIsNew() {
-            return this.isNew_;
+        public int getCount() {
+            return this.count_;
         }
 
         @Override // emu.grasscutter.net.proto.ItemHintOuterClass.ItemHintOrBuilder
@@ -155,13 +155,13 @@ public final class ItemHintOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ItemHintOuterClass.ItemHintOrBuilder
-        public int getCount() {
-            return this.count_;
+        public int getItemId() {
+            return this.itemId_;
         }
 
         @Override // emu.grasscutter.net.proto.ItemHintOuterClass.ItemHintOrBuilder
-        public int getItemId() {
-            return this.itemId_;
+        public boolean getIsNew() {
+            return this.isNew_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -179,17 +179,17 @@ public final class ItemHintOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.itemId_ != 0) {
-                output.writeUInt32(3, this.itemId_);
-            }
-            if (this.isNew_) {
-                output.writeBool(9, this.isNew_);
-            }
             if (this.guid_ != 0) {
-                output.writeUInt64(10, this.guid_);
+                output.writeUInt64(8, this.guid_);
             }
             if (this.count_ != 0) {
-                output.writeUInt32(15, this.count_);
+                output.writeUInt32(12, this.count_);
+            }
+            if (this.itemId_ != 0) {
+                output.writeUInt32(13, this.itemId_);
+            }
+            if (this.isNew_) {
+                output.writeBool(14, this.isNew_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -201,17 +201,17 @@ public final class ItemHintOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.itemId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.itemId_);
-            }
-            if (this.isNew_) {
-                size2 += CodedOutputStream.computeBoolSize(9, this.isNew_);
-            }
             if (this.guid_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(10, this.guid_);
+                size2 = 0 + CodedOutputStream.computeUInt64Size(8, this.guid_);
             }
             if (this.count_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.count_);
+                size2 += CodedOutputStream.computeUInt32Size(12, this.count_);
+            }
+            if (this.itemId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(13, this.itemId_);
+            }
+            if (this.isNew_) {
+                size2 += CodedOutputStream.computeBoolSize(14, this.isNew_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -227,7 +227,7 @@ public final class ItemHintOuterClass {
                 return equals(obj);
             }
             ItemHint other = (ItemHint) obj;
-            return getIsNew() == other.getIsNew() && getGuid() == other.getGuid() && getCount() == other.getCount() && getItemId() == other.getItemId() && this.unknownFields.equals(other.unknownFields);
+            return getCount() == other.getCount() && getGuid() == other.getGuid() && getItemId() == other.getItemId() && getIsNew() == other.getIsNew() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -235,7 +235,7 @@ public final class ItemHintOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + Internal.hashBoolean(getIsNew()))) + 10)) + Internal.hashLong(getGuid()))) + 15)) + getCount())) + 3)) + getItemId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getCount())) + 8)) + Internal.hashLong(getGuid()))) + 13)) + getItemId())) + 14)) + Internal.hashBoolean(getIsNew()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -314,10 +314,10 @@ public final class ItemHintOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ItemHintOuterClass$ItemHint$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ItemHintOrBuilder {
-            private boolean isNew_;
-            private long guid_;
             private int count_;
+            private long guid_;
             private int itemId_;
+            private boolean isNew_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ItemHintOuterClass.internal_static_ItemHint_descriptor;
@@ -345,10 +345,10 @@ public final class ItemHintOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.isNew_ = false;
-                this.guid_ = 0;
                 this.count_ = 0;
+                this.guid_ = 0;
                 this.itemId_ = 0;
+                this.isNew_ = false;
                 return this;
             }
 
@@ -374,10 +374,10 @@ public final class ItemHintOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public ItemHint buildPartial() {
                 ItemHint result = new ItemHint(this);
-                result.isNew_ = this.isNew_;
-                result.guid_ = this.guid_;
                 result.count_ = this.count_;
+                result.guid_ = this.guid_;
                 result.itemId_ = this.itemId_;
+                result.isNew_ = this.isNew_;
                 onBuilt();
                 return result;
             }
@@ -425,17 +425,17 @@ public final class ItemHintOuterClass {
                 if (other == ItemHint.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getIsNew()) {
-                    setIsNew(other.getIsNew());
+                if (other.getCount() != 0) {
+                    setCount(other.getCount());
                 }
                 if (other.getGuid() != 0) {
                     setGuid(other.getGuid());
                 }
-                if (other.getCount() != 0) {
-                    setCount(other.getCount());
-                }
                 if (other.getItemId() != 0) {
                     setItemId(other.getItemId());
+                }
+                if (other.getIsNew()) {
+                    setIsNew(other.getIsNew());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -470,18 +470,18 @@ public final class ItemHintOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ItemHintOuterClass.ItemHintOrBuilder
-            public boolean getIsNew() {
-                return this.isNew_;
+            public int getCount() {
+                return this.count_;
             }
 
-            public Builder setIsNew(boolean value) {
-                this.isNew_ = value;
+            public Builder setCount(int value) {
+                this.count_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearIsNew() {
-                this.isNew_ = false;
+            public Builder clearCount() {
+                this.count_ = 0;
                 onChanged();
                 return this;
             }
@@ -504,23 +504,6 @@ public final class ItemHintOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ItemHintOuterClass.ItemHintOrBuilder
-            public int getCount() {
-                return this.count_;
-            }
-
-            public Builder setCount(int value) {
-                this.count_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearCount() {
-                this.count_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ItemHintOuterClass.ItemHintOrBuilder
             public int getItemId() {
                 return this.itemId_;
             }
@@ -533,6 +516,23 @@ public final class ItemHintOuterClass {
 
             public Builder clearItemId() {
                 this.itemId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ItemHintOuterClass.ItemHintOrBuilder
+            public boolean getIsNew() {
+                return this.isNew_;
+            }
+
+            public Builder setIsNew(boolean value) {
+                this.isNew_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsNew() {
+                this.isNew_ = false;
                 onChanged();
                 return this;
             }

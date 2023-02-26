@@ -1,5 +1,6 @@
 package net.bytebuddy.implementation;
 
+import emu.grasscutter.net.packet.PacketOpcodes;
 import java.lang.reflect.InvocationHandler;
 import java.util.ArrayList;
 import java.util.List;
@@ -185,7 +186,7 @@ public abstract class InvocationHandlerAdapter implements Implementation.Composa
         @Override // net.bytebuddy.dynamic.scaffold.InstrumentedType.Prepareable
         public InstrumentedType prepare(InstrumentedType instrumentedType) {
             if (instrumentedType.getDeclaredFields().filter(ElementMatchers.named(this.fieldName).and(ElementMatchers.fieldType(InvocationHandlerAdapter.INVOCATION_HANDLER_TYPE.asErasure()))).isEmpty()) {
-                return instrumentedType.withField(new FieldDescription.Token(this.fieldName, 4169, InvocationHandlerAdapter.INVOCATION_HANDLER_TYPE)).withInitializer(new LoadedTypeInitializer.ForStaticField(this.fieldName, this.invocationHandler));
+                return instrumentedType.withField(new FieldDescription.Token(this.fieldName, PacketOpcodes.PlayerCancelMatchRsp, InvocationHandlerAdapter.INVOCATION_HANDLER_TYPE)).withInitializer(new LoadedTypeInitializer.ForStaticField(this.fieldName, this.invocationHandler));
             }
             throw new IllegalStateException("Field with name " + this.fieldName + " and type " + InvocationHandlerAdapter.INVOCATION_HANDLER_TYPE.asErasure() + " already declared by " + instrumentedType);
         }

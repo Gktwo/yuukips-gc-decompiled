@@ -18,7 +18,7 @@ public class DefaultFileRegion extends AbstractReferenceCounted implements FileR
     private static final InternalLogger logger = InternalLoggerFactory.getInstance(DefaultFileRegion.class);
 
     /* renamed from: f */
-    private final File f978f;
+    private final File f942f;
     private final long position;
     private final long count;
     private long transferred;
@@ -28,11 +28,11 @@ public class DefaultFileRegion extends AbstractReferenceCounted implements FileR
         this.file = (FileChannel) ObjectUtil.checkNotNull(file, Action.FILE_ATTRIBUTE);
         this.position = ObjectUtil.checkPositiveOrZero(position, "position");
         this.count = ObjectUtil.checkPositiveOrZero(count, "count");
-        this.f978f = null;
+        this.f942f = null;
     }
 
     public DefaultFileRegion(File f, long position, long count) {
-        this.f978f = (File) ObjectUtil.checkNotNull(f, "f");
+        this.f942f = (File) ObjectUtil.checkNotNull(f, "f");
         this.position = ObjectUtil.checkPositiveOrZero(position, "position");
         this.count = ObjectUtil.checkPositiveOrZero(count, "count");
     }
@@ -43,7 +43,7 @@ public class DefaultFileRegion extends AbstractReferenceCounted implements FileR
 
     public void open() throws IOException {
         if (!isOpen() && refCnt() > 0) {
-            this.file = new RandomAccessFile(this.f978f, "r").getChannel();
+            this.file = new RandomAccessFile(this.f942f, "r").getChannel();
         }
     }
 

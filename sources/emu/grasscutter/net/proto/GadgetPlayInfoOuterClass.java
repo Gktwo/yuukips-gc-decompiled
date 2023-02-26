@@ -16,7 +16,7 @@ import com.google.protobuf.MessageOrBuilder;
 import com.google.protobuf.Parser;
 import com.google.protobuf.SingleFieldBuilderV3;
 import com.google.protobuf.UnknownFieldSet;
-import emu.grasscutter.net.proto.GadgetCrucibleInfoOuterClass;
+import emu.grasscutter.net.proto.CrucibleInfoOuterClass;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GadgetPlayInfoOuterClass.class */
 public final class GadgetPlayInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014GadgetPlayInfo.proto\u001a\u0018GadgetCrucibleInfo.proto\"Å\u0001\n\u000eGadgetPlayInfo\u0012\u0011\n\tplay_type\u0018\u0001 \u0001(\r\u0012\u0010\n\bduration\u0018\u0002 \u0001(\r\u0012\u001b\n\u0013progress_stage_list\u0018\u0003 \u0003(\r\u0012\u0010\n\bstart_cd\u0018\u0004 \u0001(\r\u0012\u0012\n\nstart_time\u0018\u0005 \u0001(\r\u0012\u0010\n\bprogress\u0018\u0006 \u0001(\r\u0012,\n\rcrucible_info\u0018\u0015 \u0001(\u000b2\u0013.GadgetCrucibleInfoH��B\u000b\n\tplay_infoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{GadgetCrucibleInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014GadgetPlayInfo.proto\u001a\u0012CrucibleInfo.proto\"º\u0001\n\u000eGadgetPlayInfo\u0012\u0010\n\bplayType\u0018\u0001 \u0001(\r\u0012\u0010\n\bduration\u0018\u0002 \u0001(\r\u0012\u0019\n\u0011progressStageList\u0018\u0003 \u0003(\r\u0012\u000f\n\u0007startCd\u0018\u0004 \u0001(\r\u0012\u0011\n\tstartTime\u0018\u0005 \u0001(\r\u0012\u0010\n\bprogress\u0018\u0006 \u0001(\r\u0012&\n\rcrucible_info\u0018\u0015 \u0001(\u000b2\r.CrucibleInfoH��B\u000b\n\tplay_infoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CrucibleInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_GadgetPlayInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GadgetPlayInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GadgetPlayInfo_descriptor, new String[]{"PlayType", "Duration", "ProgressStageList", "StartCd", "StartTime", "Progress", "CrucibleInfo", "PlayInfo"});
 
@@ -49,9 +49,9 @@ public final class GadgetPlayInfoOuterClass {
 
         boolean hasCrucibleInfo();
 
-        GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo getCrucibleInfo();
+        CrucibleInfoOuterClass.CrucibleInfo getCrucibleInfo();
 
-        GadgetCrucibleInfoOuterClass.GadgetCrucibleInfoOrBuilder getCrucibleInfoOrBuilder();
+        CrucibleInfoOuterClass.CrucibleInfoOrBuilder getCrucibleInfoOrBuilder();
 
         GadgetPlayInfo.PlayInfoCase getPlayInfoCase();
     }
@@ -71,16 +71,16 @@ public final class GadgetPlayInfoOuterClass {
         private static final long serialVersionUID = 0;
         private int playInfoCase_;
         private Object playInfo_;
-        public static final int PLAY_TYPE_FIELD_NUMBER = 1;
+        public static final int PLAYTYPE_FIELD_NUMBER = 1;
         private int playType_;
         public static final int DURATION_FIELD_NUMBER = 2;
         private int duration_;
-        public static final int PROGRESS_STAGE_LIST_FIELD_NUMBER = 3;
+        public static final int PROGRESSSTAGELIST_FIELD_NUMBER = 3;
         private Internal.IntList progressStageList_;
         private int progressStageListMemoizedSerializedSize;
-        public static final int START_CD_FIELD_NUMBER = 4;
+        public static final int STARTCD_FIELD_NUMBER = 4;
         private int startCd_;
-        public static final int START_TIME_FIELD_NUMBER = 5;
+        public static final int STARTTIME_FIELD_NUMBER = 5;
         private int startTime_;
         public static final int PROGRESS_FIELD_NUMBER = 6;
         private int progress_;
@@ -171,10 +171,10 @@ public final class GadgetPlayInfoOuterClass {
                                 this.progress_ = input.readUInt32();
                                 break;
                             case 170:
-                                GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo.Builder subBuilder = this.playInfoCase_ == 21 ? ((GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo) this.playInfo_).toBuilder() : null;
-                                this.playInfo_ = input.readMessage(GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo.parser(), extensionRegistry);
+                                CrucibleInfoOuterClass.CrucibleInfo.Builder subBuilder = this.playInfoCase_ == 21 ? ((CrucibleInfoOuterClass.CrucibleInfo) this.playInfo_).toBuilder() : null;
+                                this.playInfo_ = input.readMessage(CrucibleInfoOuterClass.CrucibleInfo.parser(), extensionRegistry);
                                 if (subBuilder != null) {
-                                    subBuilder.mergeFrom((GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo) this.playInfo_);
+                                    subBuilder.mergeFrom((CrucibleInfoOuterClass.CrucibleInfo) this.playInfo_);
                                     this.playInfo_ = subBuilder.buildPartial();
                                 }
                                 this.playInfoCase_ = 21;
@@ -295,19 +295,19 @@ public final class GadgetPlayInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfoOrBuilder
-        public GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo getCrucibleInfo() {
+        public CrucibleInfoOuterClass.CrucibleInfo getCrucibleInfo() {
             if (this.playInfoCase_ == 21) {
-                return (GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo) this.playInfo_;
+                return (CrucibleInfoOuterClass.CrucibleInfo) this.playInfo_;
             }
-            return GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo.getDefaultInstance();
+            return CrucibleInfoOuterClass.CrucibleInfo.getDefaultInstance();
         }
 
         @Override // emu.grasscutter.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfoOrBuilder
-        public GadgetCrucibleInfoOuterClass.GadgetCrucibleInfoOrBuilder getCrucibleInfoOrBuilder() {
+        public CrucibleInfoOuterClass.CrucibleInfoOrBuilder getCrucibleInfoOrBuilder() {
             if (this.playInfoCase_ == 21) {
-                return (GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo) this.playInfo_;
+                return (CrucibleInfoOuterClass.CrucibleInfo) this.playInfo_;
             }
-            return GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo.getDefaultInstance();
+            return CrucibleInfoOuterClass.CrucibleInfo.getDefaultInstance();
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -349,7 +349,7 @@ public final class GadgetPlayInfoOuterClass {
                 output.writeUInt32(6, this.progress_);
             }
             if (this.playInfoCase_ == 21) {
-                output.writeMessage(21, (GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo) this.playInfo_);
+                output.writeMessage(21, (CrucibleInfoOuterClass.CrucibleInfo) this.playInfo_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -386,7 +386,7 @@ public final class GadgetPlayInfoOuterClass {
                 size3 += CodedOutputStream.computeUInt32Size(6, this.progress_);
             }
             if (this.playInfoCase_ == 21) {
-                size3 += CodedOutputStream.computeMessageSize(21, (GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo) this.playInfo_);
+                size3 += CodedOutputStream.computeMessageSize(21, (CrucibleInfoOuterClass.CrucibleInfo) this.playInfo_);
             }
             int size4 = size3 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size4;
@@ -516,7 +516,7 @@ public final class GadgetPlayInfoOuterClass {
             private int startCd_;
             private int startTime_;
             private int progress_;
-            private SingleFieldBuilderV3<GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo, GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo.Builder, GadgetCrucibleInfoOuterClass.GadgetCrucibleInfoOrBuilder> crucibleInfoBuilder_;
+            private SingleFieldBuilderV3<CrucibleInfoOuterClass.CrucibleInfo, CrucibleInfoOuterClass.CrucibleInfo.Builder, CrucibleInfoOuterClass.CrucibleInfoOrBuilder> crucibleInfoBuilder_;
             private int playInfoCase_ = 0;
             private Internal.IntList progressStageList_ = GadgetPlayInfo.emptyIntList();
 
@@ -861,20 +861,20 @@ public final class GadgetPlayInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfoOrBuilder
-            public GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo getCrucibleInfo() {
+            public CrucibleInfoOuterClass.CrucibleInfo getCrucibleInfo() {
                 if (this.crucibleInfoBuilder_ == null) {
                     if (this.playInfoCase_ == 21) {
-                        return (GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo) this.playInfo_;
+                        return (CrucibleInfoOuterClass.CrucibleInfo) this.playInfo_;
                     }
-                    return GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo.getDefaultInstance();
+                    return CrucibleInfoOuterClass.CrucibleInfo.getDefaultInstance();
                 } else if (this.playInfoCase_ == 21) {
                     return this.crucibleInfoBuilder_.getMessage();
                 } else {
-                    return GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo.getDefaultInstance();
+                    return CrucibleInfoOuterClass.CrucibleInfo.getDefaultInstance();
                 }
             }
 
-            public Builder setCrucibleInfo(GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo value) {
+            public Builder setCrucibleInfo(CrucibleInfoOuterClass.CrucibleInfo value) {
                 if (this.crucibleInfoBuilder_ != null) {
                     this.crucibleInfoBuilder_.setMessage(value);
                 } else if (value == null) {
@@ -887,7 +887,7 @@ public final class GadgetPlayInfoOuterClass {
                 return this;
             }
 
-            public Builder setCrucibleInfo(GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo.Builder builderForValue) {
+            public Builder setCrucibleInfo(CrucibleInfoOuterClass.CrucibleInfo.Builder builderForValue) {
                 if (this.crucibleInfoBuilder_ == null) {
                     this.playInfo_ = builderForValue.build();
                     onChanged();
@@ -898,12 +898,12 @@ public final class GadgetPlayInfoOuterClass {
                 return this;
             }
 
-            public Builder mergeCrucibleInfo(GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo value) {
+            public Builder mergeCrucibleInfo(CrucibleInfoOuterClass.CrucibleInfo value) {
                 if (this.crucibleInfoBuilder_ == null) {
-                    if (this.playInfoCase_ != 21 || this.playInfo_ == GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo.getDefaultInstance()) {
+                    if (this.playInfoCase_ != 21 || this.playInfo_ == CrucibleInfoOuterClass.CrucibleInfo.getDefaultInstance()) {
                         this.playInfo_ = value;
                     } else {
-                        this.playInfo_ = GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo.newBuilder((GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo) this.playInfo_).mergeFrom(value).buildPartial();
+                        this.playInfo_ = CrucibleInfoOuterClass.CrucibleInfo.newBuilder((CrucibleInfoOuterClass.CrucibleInfo) this.playInfo_).mergeFrom(value).buildPartial();
                     }
                     onChanged();
                 } else {
@@ -931,27 +931,27 @@ public final class GadgetPlayInfoOuterClass {
                 return this;
             }
 
-            public GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo.Builder getCrucibleInfoBuilder() {
+            public CrucibleInfoOuterClass.CrucibleInfo.Builder getCrucibleInfoBuilder() {
                 return getCrucibleInfoFieldBuilder().getBuilder();
             }
 
             @Override // emu.grasscutter.net.proto.GadgetPlayInfoOuterClass.GadgetPlayInfoOrBuilder
-            public GadgetCrucibleInfoOuterClass.GadgetCrucibleInfoOrBuilder getCrucibleInfoOrBuilder() {
+            public CrucibleInfoOuterClass.CrucibleInfoOrBuilder getCrucibleInfoOrBuilder() {
                 if (this.playInfoCase_ == 21 && this.crucibleInfoBuilder_ != null) {
                     return this.crucibleInfoBuilder_.getMessageOrBuilder();
                 }
                 if (this.playInfoCase_ == 21) {
-                    return (GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo) this.playInfo_;
+                    return (CrucibleInfoOuterClass.CrucibleInfo) this.playInfo_;
                 }
-                return GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo.getDefaultInstance();
+                return CrucibleInfoOuterClass.CrucibleInfo.getDefaultInstance();
             }
 
-            private SingleFieldBuilderV3<GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo, GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo.Builder, GadgetCrucibleInfoOuterClass.GadgetCrucibleInfoOrBuilder> getCrucibleInfoFieldBuilder() {
+            private SingleFieldBuilderV3<CrucibleInfoOuterClass.CrucibleInfo, CrucibleInfoOuterClass.CrucibleInfo.Builder, CrucibleInfoOuterClass.CrucibleInfoOrBuilder> getCrucibleInfoFieldBuilder() {
                 if (this.crucibleInfoBuilder_ == null) {
                     if (this.playInfoCase_ != 21) {
-                        this.playInfo_ = GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo.getDefaultInstance();
+                        this.playInfo_ = CrucibleInfoOuterClass.CrucibleInfo.getDefaultInstance();
                     }
-                    this.crucibleInfoBuilder_ = new SingleFieldBuilderV3<>((GadgetCrucibleInfoOuterClass.GadgetCrucibleInfo) this.playInfo_, getParentForChildren(), isClean());
+                    this.crucibleInfoBuilder_ = new SingleFieldBuilderV3<>((CrucibleInfoOuterClass.CrucibleInfo) this.playInfo_, getParentForChildren(), isClean());
                     this.playInfo_ = null;
                 }
                 this.playInfoCase_ = 21;
@@ -994,6 +994,6 @@ public final class GadgetPlayInfoOuterClass {
     }
 
     static {
-        GadgetCrucibleInfoOuterClass.getDescriptor();
+        CrucibleInfoOuterClass.getDescriptor();
     }
 }

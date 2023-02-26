@@ -19,16 +19,16 @@ public class IntMappedBigList extends AbstractIntBigList {
     private final boolean[] readyToUse;
 
     /* renamed from: n */
-    private final int f2187n;
+    private final int f2151n;
     private final long size;
 
     protected IntMappedBigList(IntBuffer[] buffer, long size, boolean[] readyToUse) {
         this.buffer = buffer;
-        this.f2187n = buffer.length;
+        this.f2151n = buffer.length;
         this.size = size;
         this.readyToUse = readyToUse;
-        for (int i = 0; i < this.f2187n; i++) {
-            if (i < this.f2187n - 1 && ((long) buffer[i].capacity()) != CHUNK_SIZE) {
+        for (int i = 0; i < this.f2151n; i++) {
+            if (i < this.f2151n - 1 && ((long) buffer[i].capacity()) != CHUNK_SIZE) {
                 throw new IllegalArgumentException();
             }
         }
@@ -66,7 +66,7 @@ public class IntMappedBigList extends AbstractIntBigList {
     }
 
     public IntMappedBigList copy() {
-        return new IntMappedBigList((IntBuffer[]) this.buffer.clone(), this.size, new boolean[this.f2187n]);
+        return new IntMappedBigList((IntBuffer[]) this.buffer.clone(), this.size, new boolean[this.f2151n]);
     }
 
     @Override // p014it.unimi.dsi.fastutil.ints.IntBigList

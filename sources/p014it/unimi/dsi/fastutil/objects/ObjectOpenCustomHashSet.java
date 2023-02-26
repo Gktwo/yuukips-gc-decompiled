@@ -24,13 +24,13 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
     protected Hash.Strategy<? super K> strategy;
 
     /* renamed from: n */
-    protected transient int f2716n;
+    protected transient int f2680n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2717f;
+    protected final float f2681f;
 
     public ObjectOpenCustomHashSet(int expected, float f, Hash.Strategy<? super K> strategy) {
         this.strategy = strategy;
@@ -39,13 +39,13 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2717f = f;
+            this.f2681f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2716n = arraySize;
+            this.f2680n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2716n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2716n, f);
-            this.key = (K[]) new Object[this.f2716n + 1];
+            this.mask = this.f2680n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2680n, f);
+            this.key = (K[]) new Object[this.f2680n + 1];
         }
     }
 
@@ -118,22 +118,22 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2717f);
-        if (needed > this.f2716n) {
+        int needed = HashCommon.arraySize(capacity, this.f2681f);
+        if (needed > this.f2680n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2717f)))));
-        if (needed > this.f2716n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2681f)))));
+        if (needed > this.f2680n) {
             rehash(needed);
         }
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public boolean addAll(Collection<? extends K> c) {
-        if (((double) this.f2717f) <= 0.5d) {
+        if (((double) this.f2681f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -167,14 +167,14 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
             return false;
         } else {
             this.containsNull = true;
-            this.key[this.f2716n] = k;
+            this.key[this.f2680n] = k;
         }
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f2717f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f2681f));
         return true;
     }
 
@@ -200,15 +200,15 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
             }
             key[pos] = k;
         } else if (this.containsNull) {
-            return this.key[this.f2716n];
+            return this.key[this.f2680n];
         } else {
             this.containsNull = true;
-            this.key[this.f2716n] = k;
+            this.key[this.f2680n] = k;
         }
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2717f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2681f));
         }
         return k;
     }
@@ -245,21 +245,21 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
     private boolean removeEntry(int pos) {
         this.size--;
         shiftKeys(pos);
-        if (this.f2716n <= this.minN || this.size >= this.maxFill / 4 || this.f2716n <= 16) {
+        if (this.f2680n <= this.minN || this.size >= this.maxFill / 4 || this.f2680n <= 16) {
             return true;
         }
-        rehash(this.f2716n / 2);
+        rehash(this.f2680n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f2716n] = null;
+        this.key[this.f2680n] = null;
         this.size--;
-        if (this.f2716n <= this.minN || this.size >= this.maxFill / 4 || this.f2716n <= 16) {
+        if (this.f2680n <= this.minN || this.size >= this.maxFill / 4 || this.f2680n <= 16) {
             return true;
         }
-        rehash(this.f2716n / 2);
+        rehash(this.f2680n / 2);
         return true;
     }
 
@@ -323,7 +323,7 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
     public K get(Object k) {
         K curr;
         if (this.strategy.equals(k, null)) {
-            return this.key[this.f2716n];
+            return this.key[this.f2680n];
         }
         K[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -373,20 +373,20 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
         int last;
 
         /* renamed from: c */
-        int f2718c;
+        int f2682c;
         boolean mustReturnNull;
         ObjectArrayList<K> wrapped;
 
         private SetIterator() {
-            this.pos = ObjectOpenCustomHashSet.this.f2716n;
+            this.pos = ObjectOpenCustomHashSet.this.f2680n;
             this.last = -1;
-            this.f2718c = ObjectOpenCustomHashSet.this.size;
+            this.f2682c = ObjectOpenCustomHashSet.this.size;
             this.mustReturnNull = ObjectOpenCustomHashSet.this.containsNull;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2718c != 0;
+            return this.f2682c != 0;
         }
 
         @Override // java.util.Iterator
@@ -394,11 +394,11 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2718c--;
+            this.f2682c--;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = ObjectOpenCustomHashSet.this.f2716n;
-                return ObjectOpenCustomHashSet.this.key[ObjectOpenCustomHashSet.this.f2716n];
+                this.last = ObjectOpenCustomHashSet.this.f2680n;
+                return ObjectOpenCustomHashSet.this.key[ObjectOpenCustomHashSet.this.f2680n];
             }
             K[] key = ObjectOpenCustomHashSet.this.key;
             do {
@@ -457,9 +457,9 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == ObjectOpenCustomHashSet.this.f2716n) {
+            if (this.last == ObjectOpenCustomHashSet.this.f2680n) {
                 ObjectOpenCustomHashSet.this.containsNull = false;
-                ObjectOpenCustomHashSet.this.key[ObjectOpenCustomHashSet.this.f2716n] = null;
+                ObjectOpenCustomHashSet.this.key[ObjectOpenCustomHashSet.this.f2680n] = null;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -477,22 +477,22 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
             K[] key = ObjectOpenCustomHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = ObjectOpenCustomHashSet.this.f2716n;
-                action.accept((Object) key[ObjectOpenCustomHashSet.this.f2716n]);
-                this.f2718c--;
+                this.last = ObjectOpenCustomHashSet.this.f2680n;
+                action.accept((Object) key[ObjectOpenCustomHashSet.this.f2680n]);
+                this.f2682c--;
             }
-            while (this.f2718c != 0) {
+            while (this.f2682c != 0) {
                 int i = this.pos - 1;
                 this.pos = i;
                 if (i < 0) {
                     this.last = Integer.MIN_VALUE;
                     action.accept((K) this.wrapped.get((-this.pos) - 1));
-                    this.f2718c--;
+                    this.f2682c--;
                 } else if (key[this.pos] != null) {
                     int i2 = this.pos;
                     this.last = i2;
                     action.accept((Object) key[i2]);
-                    this.f2718c--;
+                    this.f2682c--;
                 }
             }
         }
@@ -512,22 +512,22 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
         int max;
 
         /* renamed from: c */
-        int f2719c;
+        int f2683c;
         boolean mustReturnNull;
         boolean hasSplit;
 
         SetSpliterator() {
             this.pos = 0;
-            this.max = ObjectOpenCustomHashSet.this.f2716n;
-            this.f2719c = 0;
+            this.max = ObjectOpenCustomHashSet.this.f2680n;
+            this.f2683c = 0;
             this.mustReturnNull = ObjectOpenCustomHashSet.this.containsNull;
             this.hasSplit = false;
         }
 
         SetSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = ObjectOpenCustomHashSet.this.f2716n;
-            this.f2719c = 0;
+            this.max = ObjectOpenCustomHashSet.this.f2680n;
+            this.f2683c = 0;
             this.mustReturnNull = ObjectOpenCustomHashSet.this.containsNull;
             this.hasSplit = false;
             this.pos = pos;
@@ -540,14 +540,14 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
         public boolean tryAdvance(Consumer<? super K> action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2719c++;
-                action.accept((Object) ObjectOpenCustomHashSet.this.key[ObjectOpenCustomHashSet.this.f2716n]);
+                this.f2683c++;
+                action.accept((Object) ObjectOpenCustomHashSet.this.key[ObjectOpenCustomHashSet.this.f2680n]);
                 return true;
             }
             K[] key = ObjectOpenCustomHashSet.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != null) {
-                    this.f2719c++;
+                    this.f2683c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept((Object) key[i]);
@@ -563,13 +563,13 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
             K[] key = ObjectOpenCustomHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                action.accept((Object) key[ObjectOpenCustomHashSet.this.f2716n]);
-                this.f2719c++;
+                action.accept((Object) key[ObjectOpenCustomHashSet.this.f2680n]);
+                this.f2683c++;
             }
             while (this.pos < this.max) {
                 if (key[this.pos] != null) {
                     action.accept((Object) key[this.pos]);
-                    this.f2719c++;
+                    this.f2683c++;
                 }
                 this.pos++;
             }
@@ -583,9 +583,9 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
         @Override // java.util.Spliterator
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (ObjectOpenCustomHashSet.this.size - this.f2719c);
+                return (long) (ObjectOpenCustomHashSet.this.size - this.f2683c);
             }
-            return Math.min((long) (ObjectOpenCustomHashSet.this.size - this.f2719c), ((long) ((((double) ObjectOpenCustomHashSet.this.realSize()) / ((double) ObjectOpenCustomHashSet.this.f2716n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (ObjectOpenCustomHashSet.this.size - this.f2683c), ((long) ((((double) ObjectOpenCustomHashSet.this.realSize()) / ((double) ObjectOpenCustomHashSet.this.f2680n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -711,10 +711,10 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
     @Override // java.lang.Iterable
     public void forEach(Consumer<? super K> action) {
         if (this.containsNull) {
-            action.accept((Object) this.key[this.f2716n]);
+            action.accept((Object) this.key[this.f2680n]);
         }
         K[] key = this.key;
-        int pos = this.f2716n;
+        int pos = this.f2680n;
         while (true) {
             pos--;
             if (pos == 0) {
@@ -731,8 +731,8 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2717f)));
-        if (l >= this.f2716n || this.size > HashCommon.maxFill(l, this.f2717f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2681f)));
+        if (l >= this.f2680n || this.size > HashCommon.maxFill(l, this.f2681f)) {
             return true;
         }
         try {
@@ -748,7 +748,7 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
         K[] key = this.key;
         int mask = newN - 1;
         K[] newKey = (K[]) new Object[newN + 1];
-        int i2 = this.f2716n;
+        int i2 = this.f2680n;
         int j = realSize();
         while (true) {
             j--;
@@ -766,9 +766,9 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
                 }
                 newKey[pos] = key[i2];
             } else {
-                this.f2716n = newN;
+                this.f2680n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2716n, this.f2717f);
+                this.maxFill = HashCommon.maxFill(this.f2680n, this.f2681f);
                 this.key = newKey;
                 return;
             }
@@ -830,10 +830,10 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
         int pos;
         int i;
         s.defaultReadObject();
-        this.f2716n = HashCommon.arraySize(this.size, this.f2717f);
-        this.maxFill = HashCommon.maxFill(this.f2716n, this.f2717f);
-        this.mask = this.f2716n - 1;
-        K[] key = (K[]) new Object[this.f2716n + 1];
+        this.f2680n = HashCommon.arraySize(this.size, this.f2681f);
+        this.maxFill = HashCommon.maxFill(this.f2680n, this.f2681f);
+        this.mask = this.f2680n - 1;
+        K[] key = (K[]) new Object[this.f2680n + 1];
         this.key = key;
         int i2 = this.size;
         while (true) {
@@ -841,7 +841,7 @@ public class ObjectOpenCustomHashSet<K> extends AbstractObjectSet<K> implements 
             if (i2 != 0) {
                 Object readObject = s.readObject();
                 if (this.strategy.equals(readObject, null)) {
-                    pos = this.f2716n;
+                    pos = this.f2680n;
                     this.containsNull = true;
                 } else {
                     int mix = HashCommon.mix(this.strategy.hashCode(readObject)) & this.mask;

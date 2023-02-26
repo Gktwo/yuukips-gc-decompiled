@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PullRecentChatReqOuterClass.class */
 public final class PullRecentChatReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017PullRecentChatReq.proto\"=\n\u0011PullRecentChatReq\u0012\u0010\n\bpull_num\u0018\u0003 \u0001(\r\u0012\u0016\n\u000ebegin_sequence\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017PullRecentChatReq.proto\";\n\u0011PullRecentChatReq\u0012\u0015\n\rbeginSequence\u0018\u000e \u0001(\r\u0012\u000f\n\u0007pullNum\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PullRecentChatReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PullRecentChatReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PullRecentChatReq_descriptor, new String[]{"PullNum", "BeginSequence"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PullRecentChatReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PullRecentChatReq_descriptor, new String[]{"BeginSequence", "PullNum"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PullRecentChatReqOuterClass$PullRecentChatReqOrBuilder.class */
     public interface PullRecentChatReqOrBuilder extends MessageOrBuilder {
-        int getPullNum();
-
         int getBeginSequence();
+
+        int getPullNum();
     }
 
     private PullRecentChatReqOuterClass() {
@@ -43,10 +43,10 @@ public final class PullRecentChatReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PullRecentChatReqOuterClass$PullRecentChatReq.class */
     public static final class PullRecentChatReq extends GeneratedMessageV3 implements PullRecentChatReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PULL_NUM_FIELD_NUMBER = 3;
-        private int pullNum_;
-        public static final int BEGIN_SEQUENCE_FIELD_NUMBER = 15;
+        public static final int BEGINSEQUENCE_FIELD_NUMBER = 14;
         private int beginSequence_;
+        public static final int PULLNUM_FIELD_NUMBER = 2;
+        private int pullNum_;
         private byte memoizedIsInitialized;
         private static final PullRecentChatReq DEFAULT_INSTANCE = new PullRecentChatReq();
         private static final Parser<PullRecentChatReq> PARSER = new AbstractParser<PullRecentChatReq>() { // from class: emu.grasscutter.net.proto.PullRecentChatReqOuterClass.PullRecentChatReq.1
@@ -92,10 +92,10 @@ public final class PullRecentChatReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 24:
+                            case 16:
                                 this.pullNum_ = input.readUInt32();
                                 break;
-                            case 120:
+                            case 112:
                                 this.beginSequence_ = input.readUInt32();
                                 break;
                             default:
@@ -128,13 +128,13 @@ public final class PullRecentChatReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PullRecentChatReqOuterClass.PullRecentChatReqOrBuilder
-        public int getPullNum() {
-            return this.pullNum_;
+        public int getBeginSequence() {
+            return this.beginSequence_;
         }
 
         @Override // emu.grasscutter.net.proto.PullRecentChatReqOuterClass.PullRecentChatReqOrBuilder
-        public int getBeginSequence() {
-            return this.beginSequence_;
+        public int getPullNum() {
+            return this.pullNum_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -153,10 +153,10 @@ public final class PullRecentChatReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.pullNum_ != 0) {
-                output.writeUInt32(3, this.pullNum_);
+                output.writeUInt32(2, this.pullNum_);
             }
             if (this.beginSequence_ != 0) {
-                output.writeUInt32(15, this.beginSequence_);
+                output.writeUInt32(14, this.beginSequence_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class PullRecentChatReqOuterClass {
             }
             int size2 = 0;
             if (this.pullNum_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.pullNum_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.pullNum_);
             }
             if (this.beginSequence_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.beginSequence_);
+                size2 += CodedOutputStream.computeUInt32Size(14, this.beginSequence_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -188,7 +188,7 @@ public final class PullRecentChatReqOuterClass {
                 return equals(obj);
             }
             PullRecentChatReq other = (PullRecentChatReq) obj;
-            return getPullNum() == other.getPullNum() && getBeginSequence() == other.getBeginSequence() && this.unknownFields.equals(other.unknownFields);
+            return getBeginSequence() == other.getBeginSequence() && getPullNum() == other.getPullNum() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -196,7 +196,7 @@ public final class PullRecentChatReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getPullNum())) + 15)) + getBeginSequence())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getBeginSequence())) + 2)) + getPullNum())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -275,8 +275,8 @@ public final class PullRecentChatReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PullRecentChatReqOuterClass$PullRecentChatReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements PullRecentChatReqOrBuilder {
-            private int pullNum_;
             private int beginSequence_;
+            private int pullNum_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return PullRecentChatReqOuterClass.internal_static_PullRecentChatReq_descriptor;
@@ -304,8 +304,8 @@ public final class PullRecentChatReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.pullNum_ = 0;
                 this.beginSequence_ = 0;
+                this.pullNum_ = 0;
                 return this;
             }
 
@@ -331,8 +331,8 @@ public final class PullRecentChatReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public PullRecentChatReq buildPartial() {
                 PullRecentChatReq result = new PullRecentChatReq(this);
-                result.pullNum_ = this.pullNum_;
                 result.beginSequence_ = this.beginSequence_;
+                result.pullNum_ = this.pullNum_;
                 onBuilt();
                 return result;
             }
@@ -380,11 +380,11 @@ public final class PullRecentChatReqOuterClass {
                 if (other == PullRecentChatReq.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getPullNum() != 0) {
-                    setPullNum(other.getPullNum());
-                }
                 if (other.getBeginSequence() != 0) {
                     setBeginSequence(other.getBeginSequence());
+                }
+                if (other.getPullNum() != 0) {
+                    setPullNum(other.getPullNum());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -419,23 +419,6 @@ public final class PullRecentChatReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.PullRecentChatReqOuterClass.PullRecentChatReqOrBuilder
-            public int getPullNum() {
-                return this.pullNum_;
-            }
-
-            public Builder setPullNum(int value) {
-                this.pullNum_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearPullNum() {
-                this.pullNum_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PullRecentChatReqOuterClass.PullRecentChatReqOrBuilder
             public int getBeginSequence() {
                 return this.beginSequence_;
             }
@@ -448,6 +431,23 @@ public final class PullRecentChatReqOuterClass {
 
             public Builder clearBeginSequence() {
                 this.beginSequence_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.PullRecentChatReqOuterClass.PullRecentChatReqOrBuilder
+            public int getPullNum() {
+                return this.pullNum_;
+            }
+
+            public Builder setPullNum(int value) {
+                this.pullNum_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearPullNum() {
+                this.pullNum_ = 0;
                 onChanged();
                 return this;
             }

@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MoonfinTrialLevelInfoOuterClass.class */
 public final class MoonfinTrialLevelInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bMoonfinTrialLevelInfo.proto\"?\n\u0015MoonfinTrialLevelInfo\u0012\u0013\n\u000bbest_record\u0018\u000f \u0001(\r\u0012\u0011\n\topen_time\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bMoonfinTrialLevelInfo.proto\"=\n\u0015MoonfinTrialLevelInfo\u0012\u0012\n\nbestRecord\u0018\u000b \u0001(\r\u0012\u0010\n\bopenTime\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_MoonfinTrialLevelInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_MoonfinTrialLevelInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MoonfinTrialLevelInfo_descriptor, new String[]{"BestRecord", "OpenTime"});
 
@@ -43,9 +43,9 @@ public final class MoonfinTrialLevelInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MoonfinTrialLevelInfoOuterClass$MoonfinTrialLevelInfo.class */
     public static final class MoonfinTrialLevelInfo extends GeneratedMessageV3 implements MoonfinTrialLevelInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int BEST_RECORD_FIELD_NUMBER = 15;
+        public static final int BESTRECORD_FIELD_NUMBER = 11;
         private int bestRecord_;
-        public static final int OPEN_TIME_FIELD_NUMBER = 13;
+        public static final int OPENTIME_FIELD_NUMBER = 3;
         private int openTime_;
         private byte memoizedIsInitialized;
         private static final MoonfinTrialLevelInfo DEFAULT_INSTANCE = new MoonfinTrialLevelInfo();
@@ -92,10 +92,10 @@ public final class MoonfinTrialLevelInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 104:
+                            case 24:
                                 this.openTime_ = input.readUInt32();
                                 break;
-                            case 120:
+                            case 88:
                                 this.bestRecord_ = input.readUInt32();
                                 break;
                             default:
@@ -153,10 +153,10 @@ public final class MoonfinTrialLevelInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.openTime_ != 0) {
-                output.writeUInt32(13, this.openTime_);
+                output.writeUInt32(3, this.openTime_);
             }
             if (this.bestRecord_ != 0) {
-                output.writeUInt32(15, this.bestRecord_);
+                output.writeUInt32(11, this.bestRecord_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class MoonfinTrialLevelInfoOuterClass {
             }
             int size2 = 0;
             if (this.openTime_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(13, this.openTime_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.openTime_);
             }
             if (this.bestRecord_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.bestRecord_);
+                size2 += CodedOutputStream.computeUInt32Size(11, this.bestRecord_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class MoonfinTrialLevelInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getBestRecord())) + 13)) + getOpenTime())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getBestRecord())) + 3)) + getOpenTime())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

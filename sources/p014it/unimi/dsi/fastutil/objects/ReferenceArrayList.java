@@ -28,7 +28,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
     protected final boolean wrapped;
 
     /* renamed from: a */
-    protected transient K[] f2831a;
+    protected transient K[] f2795a;
     protected int size;
     private static final Collector<Object, ?, ReferenceArrayList<Object>> TO_LIST_COLLECTOR;
     static final /* synthetic */ boolean $assertionsDisabled;
@@ -47,11 +47,11 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
     }
 
     private static final <K> K[] copyArrayFromSafe(ReferenceArrayList<K> l) {
-        return (K[]) copyArraySafe(l.f2831a, l.size);
+        return (K[]) copyArraySafe(l.f2795a, l.size);
     }
 
     protected ReferenceArrayList(K[] a, boolean wrapped) {
-        this.f2831a = a;
+        this.f2795a = a;
         this.wrapped = wrapped;
     }
 
@@ -59,9 +59,9 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
         if (capacity < 0) {
             throw new IllegalArgumentException("Initial capacity (" + capacity + ") is negative");
         } else if (capacity == 0) {
-            this.f2831a = (K[]) ObjectArrays.EMPTY_ARRAY;
+            this.f2795a = (K[]) ObjectArrays.EMPTY_ARRAY;
         } else {
-            this.f2831a = (K[]) new Object[capacity];
+            this.f2795a = (K[]) new Object[capacity];
         }
     }
 
@@ -71,23 +71,23 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
     }
 
     public ReferenceArrayList() {
-        this.f2831a = (K[]) ObjectArrays.DEFAULT_EMPTY_ARRAY;
+        this.f2795a = (K[]) ObjectArrays.DEFAULT_EMPTY_ARRAY;
         this.wrapped = false;
     }
 
     public ReferenceArrayList(Collection<? extends K> c) {
         if (c instanceof ReferenceArrayList) {
-            this.f2831a = (K[]) copyArrayFromSafe((ReferenceArrayList) c);
-            this.size = this.f2831a.length;
+            this.f2795a = (K[]) copyArrayFromSafe((ReferenceArrayList) c);
+            this.size = this.f2795a.length;
         } else {
             initArrayFromCapacity(c.size());
             if (c instanceof ReferenceList) {
-                K[] kArr = this.f2831a;
+                K[] kArr = this.f2795a;
                 int size = c.size();
                 this.size = size;
                 ((ReferenceList) c).getElements(0, kArr, 0, size);
             } else {
-                this.size = ObjectIterators.unwrap(c.iterator(), this.f2831a);
+                this.size = ObjectIterators.unwrap(c.iterator(), this.f2795a);
             }
         }
         this.wrapped = false;
@@ -95,17 +95,17 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
 
     public ReferenceArrayList(ReferenceCollection<? extends K> c) {
         if (c instanceof ReferenceArrayList) {
-            this.f2831a = (K[]) copyArrayFromSafe((ReferenceArrayList) c);
-            this.size = this.f2831a.length;
+            this.f2795a = (K[]) copyArrayFromSafe((ReferenceArrayList) c);
+            this.size = this.f2795a.length;
         } else {
             initArrayFromCapacity(c.size());
             if (c instanceof ReferenceList) {
-                K[] kArr = this.f2831a;
+                K[] kArr = this.f2795a;
                 int size = c.size();
                 this.size = size;
                 ((ReferenceList) c).getElements(0, kArr, 0, size);
             } else {
-                this.size = ObjectIterators.unwrap(c.iterator(), this.f2831a);
+                this.size = ObjectIterators.unwrap(c.iterator(), this.f2795a);
             }
         }
         this.wrapped = false;
@@ -113,11 +113,11 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
 
     public ReferenceArrayList(ReferenceList<? extends K> l) {
         if (l instanceof ReferenceArrayList) {
-            this.f2831a = (K[]) copyArrayFromSafe((ReferenceArrayList) l);
-            this.size = this.f2831a.length;
+            this.f2795a = (K[]) copyArrayFromSafe((ReferenceArrayList) l);
+            this.size = this.f2795a.length;
         } else {
             initArrayFromCapacity(l.size());
-            K[] kArr = this.f2831a;
+            K[] kArr = this.f2795a;
             int size = l.size();
             this.size = size;
             l.getElements(0, kArr, 0, size);
@@ -131,7 +131,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
 
     public ReferenceArrayList(K[] a, int offset, int length) {
         this(length);
-        System.arraycopy(a, offset, this.f2831a, 0, length);
+        System.arraycopy(a, offset, this.f2795a, 0, length);
         this.size = length;
     }
 
@@ -154,7 +154,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
     }
 
     public K[] elements() {
-        return this.f2831a;
+        return this.f2795a;
     }
 
     public static <K> ReferenceArrayList<K> wrap(K[] a, int length) {
@@ -205,38 +205,38 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
     }
 
     public void ensureCapacity(int capacity) {
-        if (capacity <= this.f2831a.length) {
+        if (capacity <= this.f2795a.length) {
             return;
         }
-        if (this.f2831a != ObjectArrays.DEFAULT_EMPTY_ARRAY || capacity > 10) {
+        if (this.f2795a != ObjectArrays.DEFAULT_EMPTY_ARRAY || capacity > 10) {
             if (this.wrapped) {
-                this.f2831a = (K[]) ObjectArrays.ensureCapacity(this.f2831a, capacity, this.size);
-            } else if (capacity > this.f2831a.length) {
+                this.f2795a = (K[]) ObjectArrays.ensureCapacity(this.f2795a, capacity, this.size);
+            } else if (capacity > this.f2795a.length) {
                 K[] kArr = (K[]) new Object[capacity];
-                System.arraycopy(this.f2831a, 0, kArr, 0, this.size);
-                this.f2831a = kArr;
+                System.arraycopy(this.f2795a, 0, kArr, 0, this.size);
+                this.f2795a = kArr;
             }
-            if (!$assertionsDisabled && this.size > this.f2831a.length) {
+            if (!$assertionsDisabled && this.size > this.f2795a.length) {
                 throw new AssertionError();
             }
         }
     }
 
     private void grow(int capacity) {
-        if (capacity > this.f2831a.length) {
-            if (this.f2831a != ObjectArrays.DEFAULT_EMPTY_ARRAY) {
-                capacity = (int) Math.max(Math.min(((long) this.f2831a.length) + ((long) (this.f2831a.length >> 1)), 2147483639L), (long) capacity);
+        if (capacity > this.f2795a.length) {
+            if (this.f2795a != ObjectArrays.DEFAULT_EMPTY_ARRAY) {
+                capacity = (int) Math.max(Math.min(((long) this.f2795a.length) + ((long) (this.f2795a.length >> 1)), 2147483639L), (long) capacity);
             } else if (capacity < 10) {
                 capacity = 10;
             }
             if (this.wrapped) {
-                this.f2831a = (K[]) ObjectArrays.forceCapacity(this.f2831a, capacity, this.size);
+                this.f2795a = (K[]) ObjectArrays.forceCapacity(this.f2795a, capacity, this.size);
             } else {
                 K[] kArr = (K[]) new Object[capacity];
-                System.arraycopy(this.f2831a, 0, kArr, 0, this.size);
-                this.f2831a = kArr;
+                System.arraycopy(this.f2795a, 0, kArr, 0, this.size);
+                this.f2795a = kArr;
             }
-            if (!$assertionsDisabled && this.size > this.f2831a.length) {
+            if (!$assertionsDisabled && this.size > this.f2795a.length) {
                 throw new AssertionError();
             }
         }
@@ -247,11 +247,11 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
         ensureIndex(index);
         grow(this.size + 1);
         if (index != this.size) {
-            System.arraycopy(this.f2831a, index, this.f2831a, index + 1, this.size - index);
+            System.arraycopy(this.f2795a, index, this.f2795a, index + 1, this.size - index);
         }
-        this.f2831a[index] = k;
+        this.f2795a[index] = k;
         this.size++;
-        if (!$assertionsDisabled && this.size > this.f2831a.length) {
+        if (!$assertionsDisabled && this.size > this.f2795a.length) {
             throw new AssertionError();
         }
     }
@@ -259,11 +259,11 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean add(K k) {
         grow(this.size + 1);
-        K[] kArr = this.f2831a;
+        K[] kArr = this.f2795a;
         int i = this.size;
         this.size = i + 1;
         kArr[i] = k;
-        if ($assertionsDisabled || this.size <= this.f2831a.length) {
+        if ($assertionsDisabled || this.size <= this.f2795a.length) {
             return true;
         }
         throw new AssertionError();
@@ -272,7 +272,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
     @Override // java.util.List
     public K get(int index) {
         if (index < this.size) {
-            return this.f2831a[index];
+            return this.f2795a[index];
         }
         throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
     }
@@ -280,7 +280,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, java.util.List
     public int indexOf(Object k) {
         for (int i = 0; i < this.size; i++) {
-            if (k == this.f2831a[i]) {
+            if (k == this.f2795a[i]) {
                 return i;
             }
         }
@@ -295,7 +295,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
             if (i == 0) {
                 return -1;
             }
-        } while (k != this.f2831a[i]);
+        } while (k != this.f2795a[i]);
         return i;
     }
 
@@ -304,13 +304,13 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        K old = this.f2831a[index];
+        K old = this.f2795a[index];
         this.size--;
         if (index != this.size) {
-            System.arraycopy(this.f2831a, index + 1, this.f2831a, index, this.size - index);
+            System.arraycopy(this.f2795a, index + 1, this.f2795a, index, this.size - index);
         }
-        this.f2831a[this.size] = null;
-        if ($assertionsDisabled || this.size <= this.f2831a.length) {
+        this.f2795a[this.size] = null;
+        if ($assertionsDisabled || this.size <= this.f2795a.length) {
             return old;
         }
         throw new AssertionError();
@@ -323,7 +323,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
             return false;
         }
         remove(index);
-        if ($assertionsDisabled || this.size <= this.f2831a.length) {
+        if ($assertionsDisabled || this.size <= this.f2795a.length) {
             return true;
         }
         throw new AssertionError();
@@ -334,16 +334,16 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        K old = this.f2831a[index];
-        this.f2831a[index] = k;
+        K old = this.f2795a[index];
+        this.f2795a[index] = k;
         return old;
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public void clear() {
-        Arrays.fill(this.f2831a, 0, this.size, (Object) null);
+        Arrays.fill(this.f2795a, 0, this.size, (Object) null);
         this.size = 0;
-        if (!$assertionsDisabled && this.size > this.f2831a.length) {
+        if (!$assertionsDisabled && this.size > this.f2795a.length) {
             throw new AssertionError();
         }
     }
@@ -355,13 +355,13 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, p014it.unimi.dsi.fastutil.objects.ReferenceList
     public void size(int size) {
-        if (size > this.f2831a.length) {
-            this.f2831a = (K[]) ObjectArrays.forceCapacity(this.f2831a, size, this.size);
+        if (size > this.f2795a.length) {
+            this.f2795a = (K[]) ObjectArrays.forceCapacity(this.f2795a, size, this.size);
         }
         if (size > this.size) {
-            Arrays.fill(this.f2831a, this.size, size, (Object) null);
+            Arrays.fill(this.f2795a, this.size, size, (Object) null);
         } else {
-            Arrays.fill(this.f2831a, size, this.size, (Object) null);
+            Arrays.fill(this.f2795a, size, this.size, (Object) null);
         }
         this.size = size;
     }
@@ -376,11 +376,11 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
     }
 
     public void trim(int n) {
-        if (n < this.f2831a.length && this.size != this.f2831a.length) {
+        if (n < this.f2795a.length && this.size != this.f2795a.length) {
             K[] t = (K[]) new Object[Math.max(n, this.size)];
-            System.arraycopy(this.f2831a, 0, t, 0, this.size);
-            this.f2831a = t;
-            if (!$assertionsDisabled && this.size > this.f2831a.length) {
+            System.arraycopy(this.f2795a, 0, t, 0, this.size);
+            this.f2795a = t;
+            if (!$assertionsDisabled && this.size > this.f2795a.length) {
                 throw new AssertionError();
             }
         }
@@ -397,13 +397,13 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
         }
 
         private K[] getParentArray() {
-            return ReferenceArrayList.this.f2831a;
+            return ReferenceArrayList.this.f2795a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList.ReferenceSubList, java.util.List
         public K get(int i) {
             ensureRestrictedIndex(i);
-            return ReferenceArrayList.this.f2831a[i + this.from];
+            return ReferenceArrayList.this.f2795a[i + this.from];
         }
 
         /* access modifiers changed from: private */
@@ -416,7 +416,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectIterators.AbstractIndexBasedIterator
             protected final K get(int i) {
-                return ReferenceArrayList.this.f2831a[SubList.this.from + i];
+                return ReferenceArrayList.this.f2795a[SubList.this.from + i];
             }
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectIterators.AbstractIndexBasedListIterator
@@ -436,7 +436,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectIterators.AbstractIndexBasedIterator
             protected final int getMaxPos() {
-                return SubList.this.f2539to - SubList.this.from;
+                return SubList.this.f2503to - SubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectIterators.AbstractIndexBasedIterator, java.util.Iterator, java.util.ListIterator
@@ -444,7 +444,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                K[] kArr = ReferenceArrayList.this.f2831a;
+                K[] kArr = ReferenceArrayList.this.f2795a;
                 int i = SubList.this.from;
                 int i2 = this.pos;
                 this.pos = i2 + 1;
@@ -457,7 +457,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                K[] kArr = ReferenceArrayList.this.f2831a;
+                K[] kArr = ReferenceArrayList.this.f2795a;
                 int i = SubList.this.from;
                 int i2 = this.pos - 1;
                 this.pos = i2;
@@ -467,13 +467,13 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectIterators.AbstractIndexBasedIterator, java.util.Iterator
             public void forEachRemaining(Consumer<? super K> action) {
-                int max = SubList.this.f2539to - SubList.this.from;
+                int max = SubList.this.f2503to - SubList.this.from;
                 while (this.pos < max) {
                     int i = SubList.this.from;
                     int i2 = this.pos;
                     this.pos = i2 + 1;
                     this.lastReturned = i2;
-                    action.accept((Object) ReferenceArrayList.this.f2831a[i + i2]);
+                    action.accept((Object) ReferenceArrayList.this.f2795a[i + i2]);
                 }
             }
         }
@@ -497,12 +497,12 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterators.LateBindingSizeIndexBasedSpliterator
             protected final int getMaxPosFromBackingStore() {
-                return SubList.this.f2539to;
+                return SubList.this.f2503to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterators.AbstractIndexBasedSpliterator
             protected final K get(int i) {
-                return ReferenceArrayList.this.f2831a[i];
+                return ReferenceArrayList.this.f2795a[i];
             }
 
             /* access modifiers changed from: protected */
@@ -518,7 +518,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
                 }
                 int i = this.pos;
                 this.pos = i + 1;
-                action.accept((Object) ReferenceArrayList.this.f2831a[i]);
+                action.accept((Object) ReferenceArrayList.this.f2795a[i]);
                 return true;
             }
 
@@ -528,7 +528,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
                 while (this.pos < max) {
                     int i = this.pos;
                     this.pos = i + 1;
-                    action.accept((Object) ReferenceArrayList.this.f2831a[i]);
+                    action.accept((Object) ReferenceArrayList.this.f2795a[i]);
                 }
             }
         }
@@ -539,7 +539,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
         }
 
         boolean contentsEquals(K[] otherA, int otherAFrom, int otherATo) {
-            if (ReferenceArrayList.this.f2831a == otherA && this.from == otherAFrom && this.f2539to == otherATo) {
+            if (ReferenceArrayList.this.f2795a == otherA && this.from == otherAFrom && this.f2503to == otherATo) {
                 return true;
             }
             if (otherATo - otherAFrom != size()) {
@@ -547,10 +547,10 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
             }
             int pos = this.from;
             int otherPos = otherAFrom;
-            while (pos < this.f2539to) {
+            while (pos < this.f2503to) {
                 pos++;
                 otherPos++;
-                if (ReferenceArrayList.this.f2831a[pos] != otherA[otherPos]) {
+                if (ReferenceArrayList.this.f2795a[pos] != otherA[otherPos]) {
                     return false;
                 }
             }
@@ -569,12 +569,12 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
             }
             if (o instanceof ReferenceArrayList) {
                 ReferenceArrayList<K> other = (ReferenceArrayList) o;
-                return contentsEquals(other.f2831a, 0, other.size());
+                return contentsEquals(other.f2795a, 0, other.size());
             } else if (!(o instanceof SubList)) {
                 return equals(o);
             } else {
                 ReferenceArrayList<K>.SubList other2 = (SubList) o;
-                return contentsEquals(other2.getParentArray(), other2.from, other2.f2539to);
+                return contentsEquals(other2.getParentArray(), other2.from, other2.f2503to);
             }
         }
     }
@@ -595,19 +595,19 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, p014it.unimi.dsi.fastutil.objects.ReferenceList
     public void getElements(int from, Object[] a, int offset, int length) {
         ObjectArrays.ensureOffsetLength(a, offset, length);
-        System.arraycopy(this.f2831a, from, a, offset, length);
+        System.arraycopy(this.f2795a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, p014it.unimi.dsi.fastutil.objects.ReferenceList
     public void removeElements(int from, int to) {
         p014it.unimi.dsi.fastutil.Arrays.ensureFromTo(this.size, from, to);
-        System.arraycopy(this.f2831a, to, this.f2831a, from, this.size - to);
+        System.arraycopy(this.f2795a, to, this.f2795a, from, this.size - to);
         this.size -= to - from;
         int i = to - from;
         while (true) {
             i--;
             if (i != 0) {
-                this.f2831a[this.size + i] = null;
+                this.f2795a[this.size + i] = null;
             } else {
                 return;
             }
@@ -619,8 +619,8 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
         ensureIndex(index);
         ObjectArrays.ensureOffsetLength(a, offset, length);
         grow(this.size + length);
-        System.arraycopy(this.f2831a, index, this.f2831a, index + length, this.size - index);
-        System.arraycopy(a, offset, this.f2831a, index, length);
+        System.arraycopy(this.f2795a, index, this.f2795a, index + length, this.size - index);
+        System.arraycopy(a, offset, this.f2795a, index, length);
         this.size += length;
     }
 
@@ -631,13 +631,13 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
         if (index + length > this.size) {
             throw new IndexOutOfBoundsException("End index (" + (index + length) + ") is greater than list size (" + this.size + ")");
         }
-        System.arraycopy(a, offset, this.f2831a, index, length);
+        System.arraycopy(a, offset, this.f2795a, index, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, java.lang.Iterable
     public void forEach(Consumer<? super K> action) {
         for (int i = 0; i < this.size; i++) {
-            action.accept((Object) this.f2831a[i]);
+            action.accept((Object) this.f2795a[i]);
         }
     }
 
@@ -654,7 +654,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
             return false;
         }
         grow(this.size + n);
-        System.arraycopy(this.f2831a, index, this.f2831a, index + n, this.size - index);
+        System.arraycopy(this.f2795a, index, this.f2795a, index + n, this.size - index);
         Iterator<? extends K> i = c.iterator();
         this.size += n;
         while (true) {
@@ -663,9 +663,9 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
                 break;
             }
             index++;
-            this.f2831a[index] = i.next();
+            this.f2795a[index] = i.next();
         }
-        if ($assertionsDisabled || this.size <= this.f2831a.length) {
+        if ($assertionsDisabled || this.size <= this.f2795a.length) {
             return true;
         }
         throw new AssertionError();
@@ -679,10 +679,10 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
             return false;
         }
         grow(this.size + n);
-        System.arraycopy(this.f2831a, index, this.f2831a, index + n, this.size - index);
-        l.getElements(0, this.f2831a, index, n);
+        System.arraycopy(this.f2795a, index, this.f2795a, index + n, this.size - index);
+        l.getElements(0, this.f2795a, index, n);
         this.size += n;
-        if ($assertionsDisabled || this.size <= this.f2831a.length) {
+        if ($assertionsDisabled || this.size <= this.f2795a.length) {
             return true;
         }
         throw new AssertionError();
@@ -690,7 +690,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean removeAll(Collection<?> c) {
-        Object[] a = this.f2831a;
+        Object[] a = this.f2795a;
         int j = 0;
         for (int i = 0; i < this.size; i++) {
             if (!c.contains(a[i])) {
@@ -706,7 +706,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public Object[] toArray() {
-        return Arrays.copyOf(this.f2831a, size(), Object[].class);
+        return Arrays.copyOf(this.f2795a, size(), Object[].class);
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractReferenceList, java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -716,7 +716,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
         } else if (a.length < size()) {
             a = (K[]) ((Object[]) Array.newInstance(a.getClass().getComponentType(), size()));
         }
-        System.arraycopy(this.f2831a, 0, a, 0, size());
+        System.arraycopy(this.f2795a, 0, a, 0, size());
         if (a.length > size()) {
             a[size()] = null;
         }
@@ -750,7 +750,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                K[] kArr = ReferenceArrayList.this.f2831a;
+                K[] kArr = ReferenceArrayList.this.f2795a;
                 int i = this.pos;
                 this.pos = i + 1;
                 this.last = i;
@@ -762,7 +762,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                K[] kArr = ReferenceArrayList.this.f2831a;
+                K[] kArr = ReferenceArrayList.this.f2795a;
                 int i = this.pos - 1;
                 this.pos = i;
                 this.last = i;
@@ -814,7 +814,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
                     int i = this.pos;
                     this.pos = i + 1;
                     this.last = i;
-                    action.accept((Object) ReferenceArrayList.this.f2831a[i]);
+                    action.accept((Object) ReferenceArrayList.this.f2795a[i]);
                 }
             }
 
@@ -901,7 +901,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
             }
             int i = this.pos;
             this.pos = i + 1;
-            action.accept((Object) ReferenceArrayList.this.f2831a[i]);
+            action.accept((Object) ReferenceArrayList.this.f2795a[i]);
             return true;
         }
 
@@ -909,7 +909,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
         public void forEachRemaining(Consumer<? super K> action) {
             int max = getWorkingMax();
             while (this.pos < max) {
-                action.accept((Object) ReferenceArrayList.this.f2831a[this.pos]);
+                action.accept((Object) ReferenceArrayList.this.f2795a[this.pos]);
                 this.pos++;
             }
         }
@@ -957,18 +957,18 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
     @Override // p014it.unimi.dsi.fastutil.objects.ReferenceList, java.util.List
     public void sort(Comparator<? super K> comp) {
         if (comp == null) {
-            ObjectArrays.stableSort(this.f2831a, 0, this.size);
+            ObjectArrays.stableSort(this.f2795a, 0, this.size);
         } else {
-            ObjectArrays.stableSort(this.f2831a, 0, this.size, comp);
+            ObjectArrays.stableSort(this.f2795a, 0, this.size, comp);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.ReferenceList
     public void unstableSort(Comparator<? super K> comp) {
         if (comp == null) {
-            ObjectArrays.unstableSort(this.f2831a, 0, this.size);
+            ObjectArrays.unstableSort(this.f2795a, 0, this.size);
         } else {
-            ObjectArrays.unstableSort(this.f2831a, 0, this.size, comp);
+            ObjectArrays.unstableSort(this.f2795a, 0, this.size, comp);
         }
     }
 
@@ -976,12 +976,12 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
     public ReferenceArrayList<K> clone() {
         ReferenceArrayList<K> cloned;
         if (getClass() == ReferenceArrayList.class) {
-            cloned = new ReferenceArrayList<>(copyArraySafe(this.f2831a, this.size), false);
+            cloned = new ReferenceArrayList<>(copyArraySafe(this.f2795a, this.size), false);
             cloned.size = this.size;
         } else {
             try {
                 cloned = (ReferenceArrayList) clone();
-                cloned.f2831a = (K[]) copyArraySafe(this.f2831a, this.size);
+                cloned.f2795a = (K[]) copyArraySafe(this.f2795a, this.size);
             } catch (CloneNotSupportedException err) {
                 throw new InternalError(err);
             }
@@ -997,8 +997,8 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
         if (s != l.size()) {
             return false;
         }
-        K[] a1 = this.f2831a;
-        K[] a2 = l.f2831a;
+        K[] a1 = this.f2795a;
+        K[] a2 = l.f2795a;
         if (a1 == a2 && s == l.size()) {
             return true;
         }
@@ -1031,7 +1031,7 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; i < this.size; i++) {
-            s.writeObject(this.f2831a[i]);
+            s.writeObject(this.f2795a[i]);
         }
     }
 
@@ -1039,9 +1039,9 @@ public class ReferenceArrayList<K> extends AbstractReferenceList<K> implements R
     /* JADX WARN: Multi-variable type inference failed */
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f2831a = (K[]) new Object[this.size];
+        this.f2795a = (K[]) new Object[this.size];
         for (int i = 0; i < this.size; i++) {
-            this.f2831a[i] = s.readObject();
+            this.f2795a[i] = s.readObject();
         }
     }
 }

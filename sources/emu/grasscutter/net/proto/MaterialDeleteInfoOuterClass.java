@@ -26,35 +26,35 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MaterialDeleteInfoOuterClass.class */
 public final class MaterialDeleteInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018MaterialDeleteInfo.proto\"ï\u0005\n\u0012MaterialDeleteInfo\u0012\u0019\n\u0011has_delete_config\u0018\u0001 \u0001(\b\u0012@\n\u0011count_down_delete\u0018\u0002 \u0001(\u000b2#.MaterialDeleteInfo.CountDownDeleteH��\u00129\n\u000bdate_delete\u0018\u0003 \u0001(\u000b2\".MaterialDeleteInfo.DateTimeDeleteH��\u0012T\n\u001cdelay_week_count_down_delete\u0018\u0004 \u0001(\u000b2,.MaterialDeleteInfo.DelayWeekCountDownDeleteH��\u001aÂ\u0001\n\u000fCountDownDelete\u0012V\n\u0013delete_time_num_map\u0018\u0001 \u0003(\u000b29.MaterialDeleteInfo.CountDownDelete.DeleteTimeNumMapEntry\u0012\u001e\n\u0016config_count_down_time\u0018\u0002 \u0001(\r\u001a7\n\u0015DeleteTimeNumMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001\u001a%\n\u000eDateTimeDelete\u0012\u0013\n\u000bdelete_time\u0018\u0001 \u0001(\r\u001aï\u0001\n\u0018DelayWeekCountDownDelete\u0012_\n\u0013delete_time_num_map\u0018\u0001 \u0003(\u000b2B.MaterialDeleteInfo.DelayWeekCountDownDelete.DeleteTimeNumMapEntry\u0012\u0019\n\u0011config_delay_week\u0018\u0002 \u0001(\r\u0012\u001e\n\u0016config_count_down_time\u0018\u0003 \u0001(\r\u001a7\n\u0015DeleteTimeNumMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\r\n\u000bdelete_infoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018MaterialDeleteInfo.proto\"Þ\u0005\n\u0012MaterialDeleteInfo\u0012\u0017\n\u000fhasDeleteConfig\u0018\u0001 \u0001(\b\u0012@\n\u0011count_down_delete\u0018\u0002 \u0001(\u000b2#.MaterialDeleteInfo.CountDownDeleteH��\u00129\n\u000bdate_delete\u0018\u0003 \u0001(\u000b2\".MaterialDeleteInfo.DateTimeDeleteH��\u0012T\n\u001cdelay_week_count_down_delete\u0018\u0004 \u0001(\u000b2,.MaterialDeleteInfo.DelayWeekCountDownDeleteH��\u001a¼\u0001\n\u000fCountDownDelete\u0012S\n\u0010deleteTimeNumMap\u0018\u0001 \u0003(\u000b29.MaterialDeleteInfo.CountDownDelete.DeleteTimeNumMapEntry\u0012\u001b\n\u0013configCountDownTime\u0018\u0002 \u0001(\r\u001a7\n\u0015DeleteTimeNumMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001\u001a$\n\u000eDateTimeDelete\u0012\u0012\n\ndeleteTime\u0018\u0001 \u0001(\r\u001aç\u0001\n\u0018DelayWeekCountDownDelete\u0012\\\n\u0010deleteTimeNumMap\u0018\u0001 \u0003(\u000b2B.MaterialDeleteInfo.DelayWeekCountDownDelete.DeleteTimeNumMapEntry\u0012\u0017\n\u000fconfigDelayWeek\u0018\u0002 \u0001(\r\u0012\u001b\n\u0013configCountDownTime\u0018\u0003 \u0001(\r\u001a7\n\u0015DeleteTimeNumMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\r\n\u000bdelete_infoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_MaterialDeleteInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_MaterialDeleteInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MaterialDeleteInfo_descriptor, new String[]{"HasDeleteConfig", "CountDownDelete", "DateDelete", "DelayWeekCountDownDelete", "DeleteInfo"});
     private static final Descriptors.Descriptor internal_static_MaterialDeleteInfo_CountDownDelete_descriptor = internal_static_MaterialDeleteInfo_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_MaterialDeleteInfo_CountDownDelete_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f777x954a700 = new GeneratedMessageV3.FieldAccessorTable(internal_static_MaterialDeleteInfo_CountDownDelete_descriptor, new String[]{"DeleteTimeNumMap", "ConfigCountDownTime"});
+    private static final GeneratedMessageV3.FieldAccessorTable f759x954a700 = new GeneratedMessageV3.FieldAccessorTable(internal_static_MaterialDeleteInfo_CountDownDelete_descriptor, new String[]{"DeleteTimeNumMap", "ConfigCountDownTime"});
 
     /* renamed from: internal_static_MaterialDeleteInfo_CountDownDelete_DeleteTimeNumMapEntry_descriptor */
-    private static final Descriptors.Descriptor f778xdc9fa59d = internal_static_MaterialDeleteInfo_CountDownDelete_descriptor.getNestedTypes().get(0);
+    private static final Descriptors.Descriptor f760xdc9fa59d = internal_static_MaterialDeleteInfo_CountDownDelete_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_MaterialDeleteInfo_CountDownDelete_DeleteTimeNumMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f779xfa91df1b = new GeneratedMessageV3.FieldAccessorTable(f778xdc9fa59d, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f761xfa91df1b = new GeneratedMessageV3.FieldAccessorTable(f760xdc9fa59d, new String[]{"Key", "Value"});
     private static final Descriptors.Descriptor internal_static_MaterialDeleteInfo_DateTimeDelete_descriptor = internal_static_MaterialDeleteInfo_descriptor.getNestedTypes().get(1);
 
     /* renamed from: internal_static_MaterialDeleteInfo_DateTimeDelete_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f780x1526b256 = new GeneratedMessageV3.FieldAccessorTable(internal_static_MaterialDeleteInfo_DateTimeDelete_descriptor, new String[]{"DeleteTime"});
+    private static final GeneratedMessageV3.FieldAccessorTable f762x1526b256 = new GeneratedMessageV3.FieldAccessorTable(internal_static_MaterialDeleteInfo_DateTimeDelete_descriptor, new String[]{"DeleteTime"});
 
     /* renamed from: internal_static_MaterialDeleteInfo_DelayWeekCountDownDelete_descriptor */
-    private static final Descriptors.Descriptor f781xbc57e159 = internal_static_MaterialDeleteInfo_descriptor.getNestedTypes().get(2);
+    private static final Descriptors.Descriptor f763xbc57e159 = internal_static_MaterialDeleteInfo_descriptor.getNestedTypes().get(2);
 
     /* renamed from: internal_static_MaterialDeleteInfo_DelayWeekCountDownDelete_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f782x4a209ed7 = new GeneratedMessageV3.FieldAccessorTable(f781xbc57e159, new String[]{"DeleteTimeNumMap", "ConfigDelayWeek", "ConfigCountDownTime"});
+    private static final GeneratedMessageV3.FieldAccessorTable f764x4a209ed7 = new GeneratedMessageV3.FieldAccessorTable(f763xbc57e159, new String[]{"DeleteTimeNumMap", "ConfigDelayWeek", "ConfigCountDownTime"});
 
     /* renamed from: internal_static_MaterialDeleteInfo_DelayWeekCountDownDelete_DeleteTimeNumMapEntry_descriptor */
-    private static final Descriptors.Descriptor f783x88f59934 = f781xbc57e159.getNestedTypes().get(0);
+    private static final Descriptors.Descriptor f765x88f59934 = f763xbc57e159.getNestedTypes().get(0);
 
     /* renamed from: internal_static_MaterialDeleteInfo_DelayWeekCountDownDelete_DeleteTimeNumMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f784xeba24bb2 = new GeneratedMessageV3.FieldAccessorTable(f783x88f59934, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f766xeba24bb2 = new GeneratedMessageV3.FieldAccessorTable(f765x88f59934, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MaterialDeleteInfoOuterClass$MaterialDeleteInfoOrBuilder.class */
     public interface MaterialDeleteInfoOrBuilder extends MessageOrBuilder {
@@ -96,7 +96,7 @@ public final class MaterialDeleteInfoOuterClass {
         private static final long serialVersionUID = 0;
         private int deleteInfoCase_;
         private Object deleteInfo_;
-        public static final int HAS_DELETE_CONFIG_FIELD_NUMBER = 1;
+        public static final int HASDELETECONFIG_FIELD_NUMBER = 1;
         private boolean hasDeleteConfig_;
         public static final int COUNT_DOWN_DELETE_FIELD_NUMBER = 2;
         public static final int DATE_DELETE_FIELD_NUMBER = 3;
@@ -253,9 +253,9 @@ public final class MaterialDeleteInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MaterialDeleteInfoOuterClass$MaterialDeleteInfo$CountDownDelete.class */
         public static final class CountDownDelete extends GeneratedMessageV3 implements CountDownDeleteOrBuilder {
             private static final long serialVersionUID = 0;
-            public static final int DELETE_TIME_NUM_MAP_FIELD_NUMBER = 1;
+            public static final int DELETETIMENUMMAP_FIELD_NUMBER = 1;
             private MapField<Integer, Integer> deleteTimeNumMap_;
-            public static final int CONFIG_COUNT_DOWN_TIME_FIELD_NUMBER = 2;
+            public static final int CONFIGCOUNTDOWNTIME_FIELD_NUMBER = 2;
             private int configCountDownTime_;
             private byte memoizedIsInitialized;
             private static final CountDownDelete DEFAULT_INSTANCE = new CountDownDelete();
@@ -393,13 +393,13 @@ public final class MaterialDeleteInfoOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return MaterialDeleteInfoOuterClass.f777x954a700.ensureFieldAccessorsInitialized(CountDownDelete.class, Builder.class);
+                return MaterialDeleteInfoOuterClass.f759x954a700.ensureFieldAccessorsInitialized(CountDownDelete.class, Builder.class);
             }
 
             /* access modifiers changed from: private */
             /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MaterialDeleteInfoOuterClass$MaterialDeleteInfo$CountDownDelete$DeleteTimeNumMapDefaultEntryHolder.class */
             public static final class DeleteTimeNumMapDefaultEntryHolder {
-                static final MapEntry<Integer, Integer> defaultEntry = MapEntry.newDefaultInstance(MaterialDeleteInfoOuterClass.f778xdc9fa59d, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.UINT32, 0);
+                static final MapEntry<Integer, Integer> defaultEntry = MapEntry.newDefaultInstance(MaterialDeleteInfoOuterClass.f760xdc9fa59d, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.UINT32, 0);
 
                 private DeleteTimeNumMapDefaultEntryHolder() {
                 }
@@ -709,7 +709,7 @@ public final class MaterialDeleteInfoOuterClass {
 
                 @Override // com.google.protobuf.GeneratedMessageV3.Builder
                 protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                    return MaterialDeleteInfoOuterClass.f777x954a700.ensureFieldAccessorsInitialized(CountDownDelete.class, Builder.class);
+                    return MaterialDeleteInfoOuterClass.f759x954a700.ensureFieldAccessorsInitialized(CountDownDelete.class, Builder.class);
                 }
 
                 private Builder() {
@@ -972,7 +972,7 @@ public final class MaterialDeleteInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MaterialDeleteInfoOuterClass$MaterialDeleteInfo$DateTimeDelete.class */
         public static final class DateTimeDelete extends GeneratedMessageV3 implements DateTimeDeleteOrBuilder {
             private static final long serialVersionUID = 0;
-            public static final int DELETE_TIME_FIELD_NUMBER = 1;
+            public static final int DELETETIME_FIELD_NUMBER = 1;
             private int deleteTime_;
             private byte memoizedIsInitialized;
             private static final DateTimeDelete DEFAULT_INSTANCE = new DateTimeDelete();
@@ -1048,7 +1048,7 @@ public final class MaterialDeleteInfoOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return MaterialDeleteInfoOuterClass.f780x1526b256.ensureFieldAccessorsInitialized(DateTimeDelete.class, Builder.class);
+                return MaterialDeleteInfoOuterClass.f762x1526b256.ensureFieldAccessorsInitialized(DateTimeDelete.class, Builder.class);
             }
 
             @Override // emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo.DateTimeDeleteOrBuilder
@@ -1196,7 +1196,7 @@ public final class MaterialDeleteInfoOuterClass {
 
                 @Override // com.google.protobuf.GeneratedMessageV3.Builder
                 protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                    return MaterialDeleteInfoOuterClass.f780x1526b256.ensureFieldAccessorsInitialized(DateTimeDelete.class, Builder.class);
+                    return MaterialDeleteInfoOuterClass.f762x1526b256.ensureFieldAccessorsInitialized(DateTimeDelete.class, Builder.class);
                 }
 
                 private Builder() {
@@ -1375,11 +1375,11 @@ public final class MaterialDeleteInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MaterialDeleteInfoOuterClass$MaterialDeleteInfo$DelayWeekCountDownDelete.class */
         public static final class DelayWeekCountDownDelete extends GeneratedMessageV3 implements DelayWeekCountDownDeleteOrBuilder {
             private static final long serialVersionUID = 0;
-            public static final int DELETE_TIME_NUM_MAP_FIELD_NUMBER = 1;
+            public static final int DELETETIMENUMMAP_FIELD_NUMBER = 1;
             private MapField<Integer, Integer> deleteTimeNumMap_;
-            public static final int CONFIG_DELAY_WEEK_FIELD_NUMBER = 2;
+            public static final int CONFIGDELAYWEEK_FIELD_NUMBER = 2;
             private int configDelayWeek_;
-            public static final int CONFIG_COUNT_DOWN_TIME_FIELD_NUMBER = 3;
+            public static final int CONFIGCOUNTDOWNTIME_FIELD_NUMBER = 3;
             private int configCountDownTime_;
             private byte memoizedIsInitialized;
             private static final DelayWeekCountDownDelete DEFAULT_INSTANCE = new DelayWeekCountDownDelete();
@@ -1515,18 +1515,18 @@ public final class MaterialDeleteInfoOuterClass {
             }
 
             public static final Descriptors.Descriptor getDescriptor() {
-                return MaterialDeleteInfoOuterClass.f781xbc57e159;
+                return MaterialDeleteInfoOuterClass.f763xbc57e159;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return MaterialDeleteInfoOuterClass.f782x4a209ed7.ensureFieldAccessorsInitialized(DelayWeekCountDownDelete.class, Builder.class);
+                return MaterialDeleteInfoOuterClass.f764x4a209ed7.ensureFieldAccessorsInitialized(DelayWeekCountDownDelete.class, Builder.class);
             }
 
             /* access modifiers changed from: private */
             /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MaterialDeleteInfoOuterClass$MaterialDeleteInfo$DelayWeekCountDownDelete$DeleteTimeNumMapDefaultEntryHolder.class */
             public static final class DeleteTimeNumMapDefaultEntryHolder {
-                static final MapEntry<Integer, Integer> defaultEntry = MapEntry.newDefaultInstance(MaterialDeleteInfoOuterClass.f783x88f59934, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.UINT32, 0);
+                static final MapEntry<Integer, Integer> defaultEntry = MapEntry.newDefaultInstance(MaterialDeleteInfoOuterClass.f765x88f59934, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.UINT32, 0);
 
                 private DeleteTimeNumMapDefaultEntryHolder() {
                 }
@@ -1843,12 +1843,12 @@ public final class MaterialDeleteInfoOuterClass {
                 }
 
                 public static final Descriptors.Descriptor getDescriptor() {
-                    return MaterialDeleteInfoOuterClass.f781xbc57e159;
+                    return MaterialDeleteInfoOuterClass.f763xbc57e159;
                 }
 
                 @Override // com.google.protobuf.GeneratedMessageV3.Builder
                 protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                    return MaterialDeleteInfoOuterClass.f782x4a209ed7.ensureFieldAccessorsInitialized(DelayWeekCountDownDelete.class, Builder.class);
+                    return MaterialDeleteInfoOuterClass.f764x4a209ed7.ensureFieldAccessorsInitialized(DelayWeekCountDownDelete.class, Builder.class);
                 }
 
                 private Builder() {
@@ -1876,7 +1876,7 @@ public final class MaterialDeleteInfoOuterClass {
 
                 @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
                 public Descriptors.Descriptor getDescriptorForType() {
-                    return MaterialDeleteInfoOuterClass.f781xbc57e159;
+                    return MaterialDeleteInfoOuterClass.f763xbc57e159;
                 }
 
                 @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder

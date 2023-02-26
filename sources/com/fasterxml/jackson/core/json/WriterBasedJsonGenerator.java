@@ -9,7 +9,6 @@ import com.fasterxml.jackson.core.SerializableString;
 import com.fasterxml.jackson.core.p003io.CharTypes;
 import com.fasterxml.jackson.core.p003io.IOContext;
 import com.fasterxml.jackson.core.p003io.NumberOutput;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
@@ -2008,7 +2007,7 @@ public class WriterBasedJsonGenerator extends JsonGeneratorImpl {
 
     private char[] _allocateCopyBuffer() {
         if (this._copyBuffer == null) {
-            this._copyBuffer = this._ioContext.allocNameCopyBuffer(PacketOpcodes.SetCoopChapterViewedRsp);
+            this._copyBuffer = this._ioContext.allocNameCopyBuffer(2000);
         }
         return this._copyBuffer;
     }

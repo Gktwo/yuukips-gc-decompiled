@@ -291,40 +291,40 @@ public final class ObjectSpliterators {
     private static class SpliteratorWrapper<K> implements ObjectSpliterator<K> {
 
         /* renamed from: i */
-        final Spliterator<K> f2730i;
+        final Spliterator<K> f2694i;
 
         public SpliteratorWrapper(Spliterator<K> i) {
-            this.f2730i = i;
+            this.f2694i = i;
         }
 
         @Override // java.util.Spliterator
         public boolean tryAdvance(Consumer<? super K> action) {
-            return this.f2730i.tryAdvance(action);
+            return this.f2694i.tryAdvance(action);
         }
 
         @Override // java.util.Spliterator
         public void forEachRemaining(Consumer<? super K> action) {
-            this.f2730i.forEachRemaining(action);
+            this.f2694i.forEachRemaining(action);
         }
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return this.f2730i.estimateSize();
+            return this.f2694i.estimateSize();
         }
 
         @Override // java.util.Spliterator
         public int characteristics() {
-            return this.f2730i.characteristics();
+            return this.f2694i.characteristics();
         }
 
         @Override // java.util.Spliterator
         public Comparator<? super K> getComparator() {
-            return ObjectComparators.asObjectComparator(this.f2730i.getComparator());
+            return ObjectComparators.asObjectComparator(this.f2694i.getComparator());
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
         public ObjectSpliterator<K> trySplit() {
-            Spliterator<K> innerSplit = this.f2730i.trySplit();
+            Spliterator<K> innerSplit = this.f2694i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -349,7 +349,7 @@ public final class ObjectSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterators.SpliteratorWrapper, p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
         public ObjectSpliterator<K> trySplit() {
-            Spliterator<K> innerSplit = this.f2730i.trySplit();
+            Spliterator<K> innerSplit = this.f2694i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -532,7 +532,7 @@ public final class ObjectSpliterators {
         private static final int CHARACTERISTICS_NOT_SUPPORTED_WHILE_MULTIPLE = 5;
 
         /* renamed from: a */
-        final ObjectSpliterator<? extends K>[] f2729a;
+        final ObjectSpliterator<? extends K>[] f2693a;
         int offset;
         int length;
         long remainingEstimatedExceptCurrent;
@@ -541,7 +541,7 @@ public final class ObjectSpliterators {
         public SpliteratorConcatenator(ObjectSpliterator<? extends K>[] a, int offset, int length) {
             this.remainingEstimatedExceptCurrent = LongCompanionObject.MAX_VALUE;
             this.characteristics = 0;
-            this.f2729a = a;
+            this.f2693a = a;
             this.offset = offset;
             this.length = length;
             this.remainingEstimatedExceptCurrent = recomputeRemaining();
@@ -570,7 +570,7 @@ public final class ObjectSpliterators {
                 r0 = r6
                 if (r0 <= 0) goto L_0x004e
                 r0 = r5
-                it.unimi.dsi.fastutil.objects.ObjectSpliterator<? extends K>[] r0 = r0.f2729a
+                it.unimi.dsi.fastutil.objects.ObjectSpliterator<? extends K>[] r0 = r0.f2693a
                 r1 = r7
                 int r7 = r7 + 1
                 r0 = r0[r1]
@@ -620,7 +620,7 @@ public final class ObjectSpliterators {
             }
             while (curLength > 0) {
                 curOffset++;
-                current &= this.f2729a[curOffset].characteristics();
+                current &= this.f2693a[curOffset].characteristics();
                 curLength--;
             }
             return current;
@@ -641,7 +641,7 @@ public final class ObjectSpliterators {
             while (true) {
                 if (this.length <= 0) {
                     break;
-                } else if (this.f2729a[this.offset].tryAdvance(action)) {
+                } else if (this.f2693a[this.offset].tryAdvance(action)) {
                     any = true;
                     break;
                 } else {
@@ -654,7 +654,7 @@ public final class ObjectSpliterators {
         @Override // java.util.Spliterator
         public void forEachRemaining(Consumer<? super K> action) {
             while (this.length > 0) {
-                this.f2729a[this.offset].forEachRemaining(action);
+                this.f2693a[this.offset].forEachRemaining(action);
                 advanceNextSpliterator();
             }
         }
@@ -664,7 +664,7 @@ public final class ObjectSpliterators {
             if (this.length <= 0) {
                 return 0;
             }
-            long est = this.f2729a[this.offset].estimateSize() + this.remainingEstimatedExceptCurrent;
+            long est = this.f2693a[this.offset].estimateSize() + this.remainingEstimatedExceptCurrent;
             if (est < 0) {
                 return LongCompanionObject.MAX_VALUE;
             }
@@ -680,7 +680,7 @@ public final class ObjectSpliterators {
         @Override // java.util.Spliterator
         public Comparator<? super K> getComparator() {
             if (this.length == 1 && (this.characteristics & 4) != 0) {
-                return (Comparator<? super Object>) this.f2729a[this.offset].getComparator();
+                return (Comparator<? super Object>) this.f2693a[this.offset].getComparator();
             }
             throw new IllegalStateException();
         }
@@ -692,15 +692,15 @@ public final class ObjectSpliterators {
                 case 0:
                     return null;
                 case 1:
-                    ObjectSpliterator objectSpliterator = (ObjectSpliterator<? extends K>) this.f2729a[this.offset].trySplit();
-                    this.characteristics = this.f2729a[this.offset].characteristics();
+                    ObjectSpliterator objectSpliterator = (ObjectSpliterator<? extends K>) this.f2693a[this.offset].trySplit();
+                    this.characteristics = this.f2693a[this.offset].characteristics();
                     return objectSpliterator;
                 case 2:
                     int i = this.offset;
                     this.offset = i + 1;
-                    ObjectSpliterator<K> split = (ObjectSpliterator<K>) this.f2729a[i];
+                    ObjectSpliterator<K> split = (ObjectSpliterator<K>) this.f2693a[i];
                     this.length--;
-                    this.characteristics = this.f2729a[this.offset].characteristics();
+                    this.characteristics = this.f2693a[this.offset].characteristics();
                     this.remainingEstimatedExceptCurrent = 0;
                     return split;
                 default:
@@ -710,7 +710,7 @@ public final class ObjectSpliterators {
                     this.length -= mid;
                     this.remainingEstimatedExceptCurrent = recomputeRemaining();
                     this.characteristics = computeCharacteristics();
-                    return new SpliteratorConcatenator(this.f2729a, ret_offset, mid);
+                    return new SpliteratorConcatenator(this.f2693a, ret_offset, mid);
             }
         }
 
@@ -722,7 +722,7 @@ public final class ObjectSpliterators {
                 return 0;
             }
             while (c < n && this.length >= 0) {
-                c += this.f2729a[this.offset].skip(n - c);
+                c += this.f2693a[this.offset].skip(n - c);
                 if (c < n) {
                     advanceNextSpliterator();
                 }

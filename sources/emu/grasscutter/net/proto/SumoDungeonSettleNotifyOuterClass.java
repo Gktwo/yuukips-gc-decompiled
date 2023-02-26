@@ -20,12 +20,16 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SumoDungeonSettleNotifyOuterClass.class */
 public final class SumoDungeonSettleNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dSumoDungeonSettleNotify.proto\"¨\u0001\n\u0017SumoDungeonSettleNotify\u0012\u0015\n\ris_new_record\u0018\u0004 \u0001(\b\u0012\u0018\n\u0010kill_monster_num\u0018\f \u0001(\r\u0012\u0015\n\rdifficulty_id\u0018\u0003 \u0001(\r\u0012\u0013\n\u000bfinal_score\u0018\u0002 \u0001(\r\u0012\u001e\n\u0016kill_elite_monster_num\u0018\u000f \u0001(\r\u0012\u0010\n\bstage_id\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dSumoDungeonSettleNotify.proto\"\u0001\n\u0017SumoDungeonSettleNotify\u0012\u001b\n\u0013killEliteMonsterNum\u0018\r \u0001(\r\u0012\u000f\n\u0007stageId\u0018\u0003 \u0001(\r\u0012\u0013\n\u000bisNewRecord\u0018\u000f \u0001(\b\u0012\u0016\n\u000ekillMonsterNum\u0018\u0004 \u0001(\r\u0012\u0014\n\fdifficultyId\u0018\u0002 \u0001(\r\u0012\u0012\n\nfinalScore\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SumoDungeonSettleNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SumoDungeonSettleNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SumoDungeonSettleNotify_descriptor, new String[]{"IsNewRecord", "KillMonsterNum", "DifficultyId", "FinalScore", "KillEliteMonsterNum", "StageId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SumoDungeonSettleNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SumoDungeonSettleNotify_descriptor, new String[]{"KillEliteMonsterNum", "StageId", "IsNewRecord", "KillMonsterNum", "DifficultyId", "FinalScore"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SumoDungeonSettleNotifyOuterClass$SumoDungeonSettleNotifyOrBuilder.class */
     public interface SumoDungeonSettleNotifyOrBuilder extends MessageOrBuilder {
+        int getKillEliteMonsterNum();
+
+        int getStageId();
+
         boolean getIsNewRecord();
 
         int getKillMonsterNum();
@@ -33,10 +37,6 @@ public final class SumoDungeonSettleNotifyOuterClass {
         int getDifficultyId();
 
         int getFinalScore();
-
-        int getKillEliteMonsterNum();
-
-        int getStageId();
     }
 
     private SumoDungeonSettleNotifyOuterClass() {
@@ -52,18 +52,18 @@ public final class SumoDungeonSettleNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SumoDungeonSettleNotifyOuterClass$SumoDungeonSettleNotify.class */
     public static final class SumoDungeonSettleNotify extends GeneratedMessageV3 implements SumoDungeonSettleNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_NEW_RECORD_FIELD_NUMBER = 4;
-        private boolean isNewRecord_;
-        public static final int KILL_MONSTER_NUM_FIELD_NUMBER = 12;
-        private int killMonsterNum_;
-        public static final int DIFFICULTY_ID_FIELD_NUMBER = 3;
-        private int difficultyId_;
-        public static final int FINAL_SCORE_FIELD_NUMBER = 2;
-        private int finalScore_;
-        public static final int KILL_ELITE_MONSTER_NUM_FIELD_NUMBER = 15;
+        public static final int KILLELITEMONSTERNUM_FIELD_NUMBER = 13;
         private int killEliteMonsterNum_;
-        public static final int STAGE_ID_FIELD_NUMBER = 11;
+        public static final int STAGEID_FIELD_NUMBER = 3;
         private int stageId_;
+        public static final int ISNEWRECORD_FIELD_NUMBER = 15;
+        private boolean isNewRecord_;
+        public static final int KILLMONSTERNUM_FIELD_NUMBER = 4;
+        private int killMonsterNum_;
+        public static final int DIFFICULTYID_FIELD_NUMBER = 2;
+        private int difficultyId_;
+        public static final int FINALSCORE_FIELD_NUMBER = 11;
+        private int finalScore_;
         private byte memoizedIsInitialized;
         private static final SumoDungeonSettleNotify DEFAULT_INSTANCE = new SumoDungeonSettleNotify();
         private static final Parser<SumoDungeonSettleNotify> PARSER = new AbstractParser<SumoDungeonSettleNotify>() { // from class: emu.grasscutter.net.proto.SumoDungeonSettleNotifyOuterClass.SumoDungeonSettleNotify.1
@@ -110,22 +110,22 @@ public final class SumoDungeonSettleNotifyOuterClass {
                                 done = true;
                                 break;
                             case 16:
-                                this.finalScore_ = input.readUInt32();
-                                break;
-                            case 24:
                                 this.difficultyId_ = input.readUInt32();
                                 break;
-                            case 32:
-                                this.isNewRecord_ = input.readBool();
-                                break;
-                            case 88:
+                            case 24:
                                 this.stageId_ = input.readUInt32();
                                 break;
-                            case 96:
+                            case 32:
                                 this.killMonsterNum_ = input.readUInt32();
                                 break;
-                            case 120:
+                            case 88:
+                                this.finalScore_ = input.readUInt32();
+                                break;
+                            case 104:
                                 this.killEliteMonsterNum_ = input.readUInt32();
+                                break;
+                            case 120:
+                                this.isNewRecord_ = input.readBool();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -157,6 +157,16 @@ public final class SumoDungeonSettleNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SumoDungeonSettleNotifyOuterClass.SumoDungeonSettleNotifyOrBuilder
+        public int getKillEliteMonsterNum() {
+            return this.killEliteMonsterNum_;
+        }
+
+        @Override // emu.grasscutter.net.proto.SumoDungeonSettleNotifyOuterClass.SumoDungeonSettleNotifyOrBuilder
+        public int getStageId() {
+            return this.stageId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.SumoDungeonSettleNotifyOuterClass.SumoDungeonSettleNotifyOrBuilder
         public boolean getIsNewRecord() {
             return this.isNewRecord_;
         }
@@ -176,16 +186,6 @@ public final class SumoDungeonSettleNotifyOuterClass {
             return this.finalScore_;
         }
 
-        @Override // emu.grasscutter.net.proto.SumoDungeonSettleNotifyOuterClass.SumoDungeonSettleNotifyOrBuilder
-        public int getKillEliteMonsterNum() {
-            return this.killEliteMonsterNum_;
-        }
-
-        @Override // emu.grasscutter.net.proto.SumoDungeonSettleNotifyOuterClass.SumoDungeonSettleNotifyOrBuilder
-        public int getStageId() {
-            return this.stageId_;
-        }
-
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -201,23 +201,23 @@ public final class SumoDungeonSettleNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.finalScore_ != 0) {
-                output.writeUInt32(2, this.finalScore_);
-            }
             if (this.difficultyId_ != 0) {
-                output.writeUInt32(3, this.difficultyId_);
-            }
-            if (this.isNewRecord_) {
-                output.writeBool(4, this.isNewRecord_);
+                output.writeUInt32(2, this.difficultyId_);
             }
             if (this.stageId_ != 0) {
-                output.writeUInt32(11, this.stageId_);
+                output.writeUInt32(3, this.stageId_);
             }
             if (this.killMonsterNum_ != 0) {
-                output.writeUInt32(12, this.killMonsterNum_);
+                output.writeUInt32(4, this.killMonsterNum_);
+            }
+            if (this.finalScore_ != 0) {
+                output.writeUInt32(11, this.finalScore_);
             }
             if (this.killEliteMonsterNum_ != 0) {
-                output.writeUInt32(15, this.killEliteMonsterNum_);
+                output.writeUInt32(13, this.killEliteMonsterNum_);
+            }
+            if (this.isNewRecord_) {
+                output.writeBool(15, this.isNewRecord_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -229,23 +229,23 @@ public final class SumoDungeonSettleNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.finalScore_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.finalScore_);
-            }
             if (this.difficultyId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(3, this.difficultyId_);
-            }
-            if (this.isNewRecord_) {
-                size2 += CodedOutputStream.computeBoolSize(4, this.isNewRecord_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.difficultyId_);
             }
             if (this.stageId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.stageId_);
+                size2 += CodedOutputStream.computeUInt32Size(3, this.stageId_);
             }
             if (this.killMonsterNum_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.killMonsterNum_);
+                size2 += CodedOutputStream.computeUInt32Size(4, this.killMonsterNum_);
+            }
+            if (this.finalScore_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(11, this.finalScore_);
             }
             if (this.killEliteMonsterNum_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.killEliteMonsterNum_);
+                size2 += CodedOutputStream.computeUInt32Size(13, this.killEliteMonsterNum_);
+            }
+            if (this.isNewRecord_) {
+                size2 += CodedOutputStream.computeBoolSize(15, this.isNewRecord_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -261,7 +261,7 @@ public final class SumoDungeonSettleNotifyOuterClass {
                 return equals(obj);
             }
             SumoDungeonSettleNotify other = (SumoDungeonSettleNotify) obj;
-            return getIsNewRecord() == other.getIsNewRecord() && getKillMonsterNum() == other.getKillMonsterNum() && getDifficultyId() == other.getDifficultyId() && getFinalScore() == other.getFinalScore() && getKillEliteMonsterNum() == other.getKillEliteMonsterNum() && getStageId() == other.getStageId() && this.unknownFields.equals(other.unknownFields);
+            return getKillEliteMonsterNum() == other.getKillEliteMonsterNum() && getStageId() == other.getStageId() && getIsNewRecord() == other.getIsNewRecord() && getKillMonsterNum() == other.getKillMonsterNum() && getDifficultyId() == other.getDifficultyId() && getFinalScore() == other.getFinalScore() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -269,7 +269,7 @@ public final class SumoDungeonSettleNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + Internal.hashBoolean(getIsNewRecord()))) + 12)) + getKillMonsterNum())) + 3)) + getDifficultyId())) + 2)) + getFinalScore())) + 15)) + getKillEliteMonsterNum())) + 11)) + getStageId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + getKillEliteMonsterNum())) + 3)) + getStageId())) + 15)) + Internal.hashBoolean(getIsNewRecord()))) + 4)) + getKillMonsterNum())) + 2)) + getDifficultyId())) + 11)) + getFinalScore())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -348,12 +348,12 @@ public final class SumoDungeonSettleNotifyOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SumoDungeonSettleNotifyOuterClass$SumoDungeonSettleNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SumoDungeonSettleNotifyOrBuilder {
+            private int killEliteMonsterNum_;
+            private int stageId_;
             private boolean isNewRecord_;
             private int killMonsterNum_;
             private int difficultyId_;
             private int finalScore_;
-            private int killEliteMonsterNum_;
-            private int stageId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return SumoDungeonSettleNotifyOuterClass.internal_static_SumoDungeonSettleNotify_descriptor;
@@ -381,12 +381,12 @@ public final class SumoDungeonSettleNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.killEliteMonsterNum_ = 0;
+                this.stageId_ = 0;
                 this.isNewRecord_ = false;
                 this.killMonsterNum_ = 0;
                 this.difficultyId_ = 0;
                 this.finalScore_ = 0;
-                this.killEliteMonsterNum_ = 0;
-                this.stageId_ = 0;
                 return this;
             }
 
@@ -412,12 +412,12 @@ public final class SumoDungeonSettleNotifyOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public SumoDungeonSettleNotify buildPartial() {
                 SumoDungeonSettleNotify result = new SumoDungeonSettleNotify(this);
+                result.killEliteMonsterNum_ = this.killEliteMonsterNum_;
+                result.stageId_ = this.stageId_;
                 result.isNewRecord_ = this.isNewRecord_;
                 result.killMonsterNum_ = this.killMonsterNum_;
                 result.difficultyId_ = this.difficultyId_;
                 result.finalScore_ = this.finalScore_;
-                result.killEliteMonsterNum_ = this.killEliteMonsterNum_;
-                result.stageId_ = this.stageId_;
                 onBuilt();
                 return result;
             }
@@ -465,6 +465,12 @@ public final class SumoDungeonSettleNotifyOuterClass {
                 if (other == SumoDungeonSettleNotify.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getKillEliteMonsterNum() != 0) {
+                    setKillEliteMonsterNum(other.getKillEliteMonsterNum());
+                }
+                if (other.getStageId() != 0) {
+                    setStageId(other.getStageId());
+                }
                 if (other.getIsNewRecord()) {
                     setIsNewRecord(other.getIsNewRecord());
                 }
@@ -476,12 +482,6 @@ public final class SumoDungeonSettleNotifyOuterClass {
                 }
                 if (other.getFinalScore() != 0) {
                     setFinalScore(other.getFinalScore());
-                }
-                if (other.getKillEliteMonsterNum() != 0) {
-                    setKillEliteMonsterNum(other.getKillEliteMonsterNum());
-                }
-                if (other.getStageId() != 0) {
-                    setStageId(other.getStageId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -513,6 +513,40 @@ public final class SumoDungeonSettleNotifyOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.SumoDungeonSettleNotifyOuterClass.SumoDungeonSettleNotifyOrBuilder
+            public int getKillEliteMonsterNum() {
+                return this.killEliteMonsterNum_;
+            }
+
+            public Builder setKillEliteMonsterNum(int value) {
+                this.killEliteMonsterNum_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearKillEliteMonsterNum() {
+                this.killEliteMonsterNum_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SumoDungeonSettleNotifyOuterClass.SumoDungeonSettleNotifyOrBuilder
+            public int getStageId() {
+                return this.stageId_;
+            }
+
+            public Builder setStageId(int value) {
+                this.stageId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearStageId() {
+                this.stageId_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.SumoDungeonSettleNotifyOuterClass.SumoDungeonSettleNotifyOrBuilder
@@ -579,40 +613,6 @@ public final class SumoDungeonSettleNotifyOuterClass {
 
             public Builder clearFinalScore() {
                 this.finalScore_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.SumoDungeonSettleNotifyOuterClass.SumoDungeonSettleNotifyOrBuilder
-            public int getKillEliteMonsterNum() {
-                return this.killEliteMonsterNum_;
-            }
-
-            public Builder setKillEliteMonsterNum(int value) {
-                this.killEliteMonsterNum_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearKillEliteMonsterNum() {
-                this.killEliteMonsterNum_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.SumoDungeonSettleNotifyOuterClass.SumoDungeonSettleNotifyOrBuilder
-            public int getStageId() {
-                return this.stageId_;
-            }
-
-            public Builder setStageId(int value) {
-                this.stageId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearStageId() {
-                this.stageId_ = 0;
                 onChanged();
                 return this;
             }

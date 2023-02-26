@@ -15,23 +15,23 @@ public final class FloatPriorityQueues {
     public static class SynchronizedPriorityQueue implements FloatPriorityQueue {
 
         /* renamed from: q */
-        protected final FloatPriorityQueue f1970q;
+        protected final FloatPriorityQueue f1934q;
         protected final Object sync;
 
         protected SynchronizedPriorityQueue(FloatPriorityQueue q, Object sync) {
-            this.f1970q = q;
+            this.f1934q = q;
             this.sync = sync;
         }
 
         protected SynchronizedPriorityQueue(FloatPriorityQueue q) {
-            this.f1970q = q;
+            this.f1934q = q;
             this.sync = this;
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatPriorityQueue
         public void enqueue(float x) {
             synchronized (this.sync) {
-                this.f1970q.enqueue(x);
+                this.f1934q.enqueue(x);
             }
         }
 
@@ -39,7 +39,7 @@ public final class FloatPriorityQueues {
         public float dequeueFloat() {
             float dequeueFloat;
             synchronized (this.sync) {
-                dequeueFloat = this.f1970q.dequeueFloat();
+                dequeueFloat = this.f1934q.dequeueFloat();
             }
             return dequeueFloat;
         }
@@ -48,7 +48,7 @@ public final class FloatPriorityQueues {
         public float firstFloat() {
             float firstFloat;
             synchronized (this.sync) {
-                firstFloat = this.f1970q.firstFloat();
+                firstFloat = this.f1934q.firstFloat();
             }
             return firstFloat;
         }
@@ -57,7 +57,7 @@ public final class FloatPriorityQueues {
         public float lastFloat() {
             float lastFloat;
             synchronized (this.sync) {
-                lastFloat = this.f1970q.lastFloat();
+                lastFloat = this.f1934q.lastFloat();
             }
             return lastFloat;
         }
@@ -66,7 +66,7 @@ public final class FloatPriorityQueues {
         public boolean isEmpty() {
             boolean isEmpty;
             synchronized (this.sync) {
-                isEmpty = this.f1970q.isEmpty();
+                isEmpty = this.f1934q.isEmpty();
             }
             return isEmpty;
         }
@@ -75,7 +75,7 @@ public final class FloatPriorityQueues {
         public int size() {
             int size;
             synchronized (this.sync) {
-                size = this.f1970q.size();
+                size = this.f1934q.size();
             }
             return size;
         }
@@ -83,14 +83,14 @@ public final class FloatPriorityQueues {
         @Override // p014it.unimi.dsi.fastutil.PriorityQueue
         public void clear() {
             synchronized (this.sync) {
-                this.f1970q.clear();
+                this.f1934q.clear();
             }
         }
 
         @Override // p014it.unimi.dsi.fastutil.PriorityQueue
         public void changed() {
             synchronized (this.sync) {
-                this.f1970q.changed();
+                this.f1934q.changed();
             }
         }
 
@@ -99,7 +99,7 @@ public final class FloatPriorityQueues {
         public Comparator<? super Float> comparator() {
             Comparator<? super Float> comparator;
             synchronized (this.sync) {
-                comparator = this.f1970q.comparator();
+                comparator = this.f1934q.comparator();
             }
             return comparator;
         }
@@ -108,7 +108,7 @@ public final class FloatPriorityQueues {
         @Deprecated
         public void enqueue(Float x) {
             synchronized (this.sync) {
-                this.f1970q.enqueue(x);
+                this.f1934q.enqueue(x);
             }
         }
 
@@ -117,7 +117,7 @@ public final class FloatPriorityQueues {
         public Float dequeue() {
             Float dequeue;
             synchronized (this.sync) {
-                dequeue = this.f1970q.dequeue();
+                dequeue = this.f1934q.dequeue();
             }
             return dequeue;
         }
@@ -127,7 +127,7 @@ public final class FloatPriorityQueues {
         public Float first() {
             Float first;
             synchronized (this.sync) {
-                first = this.f1970q.first();
+                first = this.f1934q.first();
             }
             return first;
         }
@@ -137,7 +137,7 @@ public final class FloatPriorityQueues {
         public Float last() {
             Float last;
             synchronized (this.sync) {
-                last = this.f1970q.last();
+                last = this.f1934q.last();
             }
             return last;
         }
@@ -145,7 +145,7 @@ public final class FloatPriorityQueues {
         public int hashCode() {
             int hashCode;
             synchronized (this.sync) {
-                hashCode = this.f1970q.hashCode();
+                hashCode = this.f1934q.hashCode();
             }
             return hashCode;
         }
@@ -156,7 +156,7 @@ public final class FloatPriorityQueues {
                 return true;
             }
             synchronized (this.sync) {
-                equals = this.f1970q.equals(o);
+                equals = this.f1934q.equals(o);
             }
             return equals;
         }

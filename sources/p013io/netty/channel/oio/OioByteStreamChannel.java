@@ -33,10 +33,10 @@ public abstract class OioByteStreamChannel extends AbstractOioByteChannel {
     };
 
     /* renamed from: is */
-    private InputStream f987is;
+    private InputStream f951is;
 
     /* renamed from: os */
-    private OutputStream f988os;
+    private OutputStream f952os;
     private WritableByteChannel outChannel;
 
     /* access modifiers changed from: protected */
@@ -45,13 +45,13 @@ public abstract class OioByteStreamChannel extends AbstractOioByteChannel {
     }
 
     protected final void activate(InputStream is, OutputStream os) {
-        if (this.f987is != null) {
+        if (this.f951is != null) {
             throw new IllegalStateException("input was set already");
-        } else if (this.f988os != null) {
+        } else if (this.f952os != null) {
             throw new IllegalStateException("output was set already");
         } else {
-            this.f987is = (InputStream) ObjectUtil.checkNotNull(is, BeanUtil.PREFIX_GETTER_IS);
-            this.f988os = (OutputStream) ObjectUtil.checkNotNull(os, "os");
+            this.f951is = (InputStream) ObjectUtil.checkNotNull(is, BeanUtil.PREFIX_GETTER_IS);
+            this.f952os = (OutputStream) ObjectUtil.checkNotNull(os, "os");
             if (this.readWhenInactive) {
                 eventLoop().execute(this.readTask);
                 this.readWhenInactive = false;
@@ -62,14 +62,14 @@ public abstract class OioByteStreamChannel extends AbstractOioByteChannel {
     @Override // p013io.netty.channel.Channel
     public boolean isActive() {
         OutputStream os;
-        InputStream is = this.f987is;
-        return (is == null || is == CLOSED_IN || (os = this.f988os) == null || os == CLOSED_OUT) ? false : true;
+        InputStream is = this.f951is;
+        return (is == null || is == CLOSED_IN || (os = this.f952os) == null || os == CLOSED_OUT) ? false : true;
     }
 
     @Override // p013io.netty.channel.oio.AbstractOioByteChannel
     protected int available() {
         try {
-            return this.f987is.available();
+            return this.f951is.available();
         } catch (IOException e) {
             return 0;
         }
@@ -80,12 +80,12 @@ public abstract class OioByteStreamChannel extends AbstractOioByteChannel {
     public int doReadBytes(ByteBuf buf) throws Exception {
         RecvByteBufAllocator.Handle allocHandle = unsafe().recvBufAllocHandle();
         allocHandle.attemptedBytesRead(Math.max(1, Math.min(available(), buf.maxWritableBytes())));
-        return buf.writeBytes(this.f987is, allocHandle.attemptedBytesRead());
+        return buf.writeBytes(this.f951is, allocHandle.attemptedBytesRead());
     }
 
     @Override // p013io.netty.channel.oio.AbstractOioByteChannel
     protected void doWriteBytes(ByteBuf buf) throws Exception {
-        OutputStream os = this.f988os;
+        OutputStream os = this.f952os;
         if (os == null) {
             throw new NotYetConnectedException();
         }
@@ -95,7 +95,7 @@ public abstract class OioByteStreamChannel extends AbstractOioByteChannel {
     /* JADX WARN: Type inference failed for: r0v12, types: [long] */
     @Override // p013io.netty.channel.oio.AbstractOioByteChannel
     protected void doWriteFileRegion(FileRegion region) throws Exception {
-        OutputStream os = this.f988os;
+        OutputStream os = this.f952os;
         if (os == null) {
             throw new NotYetConnectedException();
         }
@@ -121,10 +121,10 @@ public abstract class OioByteStreamChannel extends AbstractOioByteChannel {
 
     @Override // p013io.netty.channel.AbstractChannel
     protected void doClose() throws Exception {
-        InputStream is = this.f987is;
-        OutputStream os = this.f988os;
-        this.f987is = CLOSED_IN;
-        this.f988os = CLOSED_OUT;
+        InputStream is = this.f951is;
+        OutputStream os = this.f952os;
+        this.f951is = CLOSED_IN;
+        this.f952os = CLOSED_OUT;
         if (is != null) {
             try {
                 is.close();

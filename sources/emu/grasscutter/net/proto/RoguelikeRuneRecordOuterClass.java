@@ -19,17 +19,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RoguelikeRuneRecordOuterClass.class */
 public final class RoguelikeRuneRecordOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019RoguelikeRuneRecord.proto\"`\n\u0013RoguelikeRuneRecord\u0012\u000f\n\u0007rune_id\u0018\n \u0001(\r\u0012\u001b\n\u0013Unk3300_JLOLMLFAPHH\u0018\u0001 \u0001(\r\u0012\u001b\n\u0013Unk3300_IGBOJLPPKON\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019RoguelikeRuneRecord.proto\"_\n\u0013RoguelikeRuneRecord\u0012\u001b\n\u0013Unk3300_JLOLMLFAPHH\u0018\u0007 \u0001(\r\u0012\u001b\n\u0013Unk3300_IGBOJLPPKON\u0018\f \u0001(\r\u0012\u000e\n\u0006runeId\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_RoguelikeRuneRecord_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_RoguelikeRuneRecord_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_RoguelikeRuneRecord_descriptor, new String[]{"RuneId", "Unk3300JLOLMLFAPHH", "Unk3300IGBOJLPPKON"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_RoguelikeRuneRecord_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_RoguelikeRuneRecord_descriptor, new String[]{"Unk3300JLOLMLFAPHH", "Unk3300IGBOJLPPKON", "RuneId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RoguelikeRuneRecordOuterClass$RoguelikeRuneRecordOrBuilder.class */
     public interface RoguelikeRuneRecordOrBuilder extends MessageOrBuilder {
-        int getRuneId();
-
         int getUnk3300JLOLMLFAPHH();
 
         int getUnk3300IGBOJLPPKON();
+
+        int getRuneId();
     }
 
     private RoguelikeRuneRecordOuterClass() {
@@ -45,12 +45,12 @@ public final class RoguelikeRuneRecordOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RoguelikeRuneRecordOuterClass$RoguelikeRuneRecord.class */
     public static final class RoguelikeRuneRecord extends GeneratedMessageV3 implements RoguelikeRuneRecordOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RUNE_ID_FIELD_NUMBER = 10;
-        private int runeId_;
-        public static final int UNK3300_JLOLMLFAPHH_FIELD_NUMBER = 1;
+        public static final int UNK3300_JLOLMLFAPHH_FIELD_NUMBER = 7;
         private int unk3300JLOLMLFAPHH_;
-        public static final int UNK3300_IGBOJLPPKON_FIELD_NUMBER = 11;
+        public static final int UNK3300_IGBOJLPPKON_FIELD_NUMBER = 12;
         private int unk3300IGBOJLPPKON_;
+        public static final int RUNEID_FIELD_NUMBER = 6;
+        private int runeId_;
         private byte memoizedIsInitialized;
         private static final RoguelikeRuneRecord DEFAULT_INSTANCE = new RoguelikeRuneRecord();
         private static final Parser<RoguelikeRuneRecord> PARSER = new AbstractParser<RoguelikeRuneRecord>() { // from class: emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord.1
@@ -97,13 +97,13 @@ public final class RoguelikeRuneRecordOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
-                                    this.unk3300JLOLMLFAPHH_ = input.readUInt32();
-                                    break;
-                                case 80:
+                                case 48:
                                     this.runeId_ = input.readUInt32();
                                     break;
-                                case 88:
+                                case 56:
+                                    this.unk3300JLOLMLFAPHH_ = input.readUInt32();
+                                    break;
+                                case 96:
                                     this.unk3300IGBOJLPPKON_ = input.readUInt32();
                                     break;
                                 default:
@@ -137,11 +137,6 @@ public final class RoguelikeRuneRecordOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecordOrBuilder
-        public int getRuneId() {
-            return this.runeId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecordOrBuilder
         public int getUnk3300JLOLMLFAPHH() {
             return this.unk3300JLOLMLFAPHH_;
         }
@@ -149,6 +144,11 @@ public final class RoguelikeRuneRecordOuterClass {
         @Override // emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecordOrBuilder
         public int getUnk3300IGBOJLPPKON() {
             return this.unk3300IGBOJLPPKON_;
+        }
+
+        @Override // emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecordOrBuilder
+        public int getRuneId() {
+            return this.runeId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -166,14 +166,14 @@ public final class RoguelikeRuneRecordOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.unk3300JLOLMLFAPHH_ != 0) {
-                output.writeUInt32(1, this.unk3300JLOLMLFAPHH_);
-            }
             if (this.runeId_ != 0) {
-                output.writeUInt32(10, this.runeId_);
+                output.writeUInt32(6, this.runeId_);
+            }
+            if (this.unk3300JLOLMLFAPHH_ != 0) {
+                output.writeUInt32(7, this.unk3300JLOLMLFAPHH_);
             }
             if (this.unk3300IGBOJLPPKON_ != 0) {
-                output.writeUInt32(11, this.unk3300IGBOJLPPKON_);
+                output.writeUInt32(12, this.unk3300IGBOJLPPKON_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -185,14 +185,14 @@ public final class RoguelikeRuneRecordOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.unk3300JLOLMLFAPHH_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.unk3300JLOLMLFAPHH_);
-            }
             if (this.runeId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.runeId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.runeId_);
+            }
+            if (this.unk3300JLOLMLFAPHH_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(7, this.unk3300JLOLMLFAPHH_);
             }
             if (this.unk3300IGBOJLPPKON_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.unk3300IGBOJLPPKON_);
+                size2 += CodedOutputStream.computeUInt32Size(12, this.unk3300IGBOJLPPKON_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -208,7 +208,7 @@ public final class RoguelikeRuneRecordOuterClass {
                 return equals(obj);
             }
             RoguelikeRuneRecord other = (RoguelikeRuneRecord) obj;
-            return getRuneId() == other.getRuneId() && getUnk3300JLOLMLFAPHH() == other.getUnk3300JLOLMLFAPHH() && getUnk3300IGBOJLPPKON() == other.getUnk3300IGBOJLPPKON() && this.unknownFields.equals(other.unknownFields);
+            return getUnk3300JLOLMLFAPHH() == other.getUnk3300JLOLMLFAPHH() && getUnk3300IGBOJLPPKON() == other.getUnk3300IGBOJLPPKON() && getRuneId() == other.getRuneId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -216,7 +216,7 @@ public final class RoguelikeRuneRecordOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getRuneId())) + 1)) + getUnk3300JLOLMLFAPHH())) + 11)) + getUnk3300IGBOJLPPKON())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getUnk3300JLOLMLFAPHH())) + 12)) + getUnk3300IGBOJLPPKON())) + 6)) + getRuneId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -295,9 +295,9 @@ public final class RoguelikeRuneRecordOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RoguelikeRuneRecordOuterClass$RoguelikeRuneRecord$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements RoguelikeRuneRecordOrBuilder {
-            private int runeId_;
             private int unk3300JLOLMLFAPHH_;
             private int unk3300IGBOJLPPKON_;
+            private int runeId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return RoguelikeRuneRecordOuterClass.internal_static_RoguelikeRuneRecord_descriptor;
@@ -325,9 +325,9 @@ public final class RoguelikeRuneRecordOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.runeId_ = 0;
                 this.unk3300JLOLMLFAPHH_ = 0;
                 this.unk3300IGBOJLPPKON_ = 0;
+                this.runeId_ = 0;
                 return this;
             }
 
@@ -353,9 +353,9 @@ public final class RoguelikeRuneRecordOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public RoguelikeRuneRecord buildPartial() {
                 RoguelikeRuneRecord result = new RoguelikeRuneRecord(this);
-                result.runeId_ = this.runeId_;
                 result.unk3300JLOLMLFAPHH_ = this.unk3300JLOLMLFAPHH_;
                 result.unk3300IGBOJLPPKON_ = this.unk3300IGBOJLPPKON_;
+                result.runeId_ = this.runeId_;
                 onBuilt();
                 return result;
             }
@@ -403,14 +403,14 @@ public final class RoguelikeRuneRecordOuterClass {
                 if (other == RoguelikeRuneRecord.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getRuneId() != 0) {
-                    setRuneId(other.getRuneId());
-                }
                 if (other.getUnk3300JLOLMLFAPHH() != 0) {
                     setUnk3300JLOLMLFAPHH(other.getUnk3300JLOLMLFAPHH());
                 }
                 if (other.getUnk3300IGBOJLPPKON() != 0) {
                     setUnk3300IGBOJLPPKON(other.getUnk3300IGBOJLPPKON());
+                }
+                if (other.getRuneId() != 0) {
+                    setRuneId(other.getRuneId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -445,23 +445,6 @@ public final class RoguelikeRuneRecordOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecordOrBuilder
-            public int getRuneId() {
-                return this.runeId_;
-            }
-
-            public Builder setRuneId(int value) {
-                this.runeId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRuneId() {
-                this.runeId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecordOrBuilder
             public int getUnk3300JLOLMLFAPHH() {
                 return this.unk3300JLOLMLFAPHH_;
             }
@@ -491,6 +474,23 @@ public final class RoguelikeRuneRecordOuterClass {
 
             public Builder clearUnk3300IGBOJLPPKON() {
                 this.unk3300IGBOJLPPKON_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecordOrBuilder
+            public int getRuneId() {
+                return this.runeId_;
+            }
+
+            public Builder setRuneId(int value) {
+                this.runeId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRuneId() {
+                this.runeId_ = 0;
                 onChanged();
                 return this;
             }

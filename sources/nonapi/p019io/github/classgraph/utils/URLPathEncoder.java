@@ -66,7 +66,7 @@ public final class URLPathEncoder {
             }
             i++;
         }
-        if (VersionFinder.f3111OS == VersionFinder.OperatingSystem.Windows) {
+        if (VersionFinder.f3075OS == VersionFinder.OperatingSystem.Windows) {
             int i2 = validColonPrefixLen;
             if (i2 < path.length() && path.charAt(i2) == '/') {
                 i2++;
@@ -83,7 +83,7 @@ public final class URLPathEncoder {
                 encodedPath.append((char) b);
             } else {
                 encodedPath.append('%');
-                encodedPath.append(HEXADECIMAL[(b & PacketOpcodes.ExecuteGadgetLuaRsp) >> 4]);
+                encodedPath.append(HEXADECIMAL[(b & PacketOpcodes.SceneKickPlayerRsp) >> 4]);
                 encodedPath.append(HEXADECIMAL[b & 15]);
             }
         }
@@ -100,7 +100,7 @@ public final class URLPathEncoder {
                 urlPathNormalized = urlPathNormalized.substring(4);
             }
             String windowsDrivePrefix = "";
-            if (VersionFinder.f3111OS == VersionFinder.OperatingSystem.Windows) {
+            if (VersionFinder.f3075OS == VersionFinder.OperatingSystem.Windows) {
                 if (urlPathNormalized.length() >= 2 && Character.isLetter(urlPathNormalized.charAt(0)) && urlPathNormalized.charAt(1) == ':') {
                     windowsDrivePrefix = urlPathNormalized.substring(0, 2);
                     urlPathNormalized = urlPathNormalized.substring(2);

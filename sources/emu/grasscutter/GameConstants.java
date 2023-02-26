@@ -18,12 +18,12 @@ public final class GameConstants {
     public static final int BATTLE_PASS_POINT_PER_WEEK = 10000;
     public static final int BATTLE_PASS_LEVEL_PRICE = 150;
     public static final int BATTLE_PASS_CURRENT_INDEX = 2;
-    public static String[] VERSION = {"3.3.0", "3.3.54", "3.3.51", "3.3.52", "3.3.53", "3.3.50"};
+    public static String[] VERSION = {"3.4.0"};
     public static double[] VERSION_SDK = {2.4d, 2.6d, 2.7d};
     public static String Redirect_URL = "<meta http-equiv='refresh' content='2;url=https://ps.yuuki.me'/>";
     public static String Update_URL = "https://ps.yuuki.me/genshin";
     public static final Position START_POSITION = new Position(2747.0f, 194.0f, -1719.0f);
-    public static final String[] DEFAULT_ABILITY_STRINGS = {"Avatar_DefaultAbility_VisionReplaceDieInvincible", "Avatar_DefaultAbility_AvartarInShaderChange", "Avatar_SprintBS_Invincible", "Avatar_Freeze_Duration_Reducer", "Avatar_Attack_ReviveEnergy", "Avatar_Component_Initializer", "Avatar_FallAnthem_Achievement_Listener"};
+    public static final String[] DEFAULT_ABILITY_STRINGS = {"Avatar_DefaultAbility_VisionReplaceDieInvincible", "Avatar_DefaultAbility_AvartarInShaderChange", "Avatar_SprintBS_Invincible", "Avatar_Freeze_Duration_Reducer", "Avatar_Attack_ReviveEnergy", "Avatar_Component_Initializer", "Avatar_FallAnthem_Achievement_Listener", "GrapplingHookSkill_Ability"};
     public static final int[] DEFAULT_ABILITY_HASHES = Arrays.stream(DEFAULT_ABILITY_STRINGS).mapToInt(Utils::abilityHash).toArray();
     public static final int DEFAULT_ABILITY_NAME = Utils.abilityHash("Default");
 }

@@ -23,17 +23,17 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ReliquaryFilterStateSaveNotifyOuterClass.class */
 public final class ReliquaryFilterStateSaveNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n$ReliquaryFilterStateSaveNotify.proto\"Â\u0001\n\u001eReliquaryFilterStateSaveNotify\u0012`\n\u001areliquary_filter_state_map\u0018\u0004 \u0003(\u000b2<.ReliquaryFilterStateSaveNotify.ReliquaryFilterStateMapEntry\u001a>\n\u001cReliquaryFilterStateMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n$ReliquaryFilterStateSaveNotify.proto\"¿\u0001\n\u001eReliquaryFilterStateSaveNotify\u0012]\n\u0017reliquaryFilterStateMap\u0018\u0003 \u0003(\u000b2<.ReliquaryFilterStateSaveNotify.ReliquaryFilterStateMapEntry\u001a>\n\u001cReliquaryFilterStateMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ReliquaryFilterStateSaveNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_ReliquaryFilterStateSaveNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f843x71970fb2 = new GeneratedMessageV3.FieldAccessorTable(internal_static_ReliquaryFilterStateSaveNotify_descriptor, new String[]{"ReliquaryFilterStateMap"});
+    private static final GeneratedMessageV3.FieldAccessorTable f821x71970fb2 = new GeneratedMessageV3.FieldAccessorTable(internal_static_ReliquaryFilterStateSaveNotify_descriptor, new String[]{"ReliquaryFilterStateMap"});
 
     /* renamed from: internal_static_ReliquaryFilterStateSaveNotify_ReliquaryFilterStateMapEntry_descriptor */
-    private static final Descriptors.Descriptor f844x815c144e = internal_static_ReliquaryFilterStateSaveNotify_descriptor.getNestedTypes().get(0);
+    private static final Descriptors.Descriptor f822x815c144e = internal_static_ReliquaryFilterStateSaveNotify_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_ReliquaryFilterStateSaveNotify_ReliquaryFilterStateMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f845xe510ccc = new GeneratedMessageV3.FieldAccessorTable(f844x815c144e, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f823xe510ccc = new GeneratedMessageV3.FieldAccessorTable(f822x815c144e, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ReliquaryFilterStateSaveNotifyOuterClass$ReliquaryFilterStateSaveNotifyOrBuilder.class */
     public interface ReliquaryFilterStateSaveNotifyOrBuilder extends MessageOrBuilder {
@@ -64,7 +64,7 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ReliquaryFilterStateSaveNotifyOuterClass$ReliquaryFilterStateSaveNotify.class */
     public static final class ReliquaryFilterStateSaveNotify extends GeneratedMessageV3 implements ReliquaryFilterStateSaveNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RELIQUARY_FILTER_STATE_MAP_FIELD_NUMBER = 4;
+        public static final int RELIQUARYFILTERSTATEMAP_FIELD_NUMBER = 3;
         private MapField<Integer, Integer> reliquaryFilterStateMap_;
         private byte memoizedIsInitialized;
         private static final ReliquaryFilterStateSaveNotify DEFAULT_INSTANCE = new ReliquaryFilterStateSaveNotify();
@@ -116,7 +116,7 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
                 r4 = this;
                 r0 = r5
                 switch(r0) {
-                    case 4: goto L_0x0014;
+                    case 3: goto L_0x0014;
                     default: goto L_0x0019;
                 }
                 r0 = r4
@@ -169,7 +169,7 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 34:
+                            case 26:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.reliquaryFilterStateMap_ = MapField.newMapField(ReliquaryFilterStateMapDefaultEntryHolder.defaultEntry);
                                     mutable_bitField0_ |= 1;
@@ -203,13 +203,13 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return ReliquaryFilterStateSaveNotifyOuterClass.f843x71970fb2.ensureFieldAccessorsInitialized(ReliquaryFilterStateSaveNotify.class, Builder.class);
+            return ReliquaryFilterStateSaveNotifyOuterClass.f821x71970fb2.ensureFieldAccessorsInitialized(ReliquaryFilterStateSaveNotify.class, Builder.class);
         }
 
         /* access modifiers changed from: private */
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ReliquaryFilterStateSaveNotifyOuterClass$ReliquaryFilterStateSaveNotify$ReliquaryFilterStateMapDefaultEntryHolder.class */
         public static final class ReliquaryFilterStateMapDefaultEntryHolder {
-            static final MapEntry<Integer, Integer> defaultEntry = MapEntry.newDefaultInstance(ReliquaryFilterStateSaveNotifyOuterClass.f844x815c144e, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.UINT32, 0);
+            static final MapEntry<Integer, Integer> defaultEntry = MapEntry.newDefaultInstance(ReliquaryFilterStateSaveNotifyOuterClass.f822x815c144e, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.UINT32, 0);
 
             private ReliquaryFilterStateMapDefaultEntryHolder() {
             }
@@ -273,7 +273,7 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetReliquaryFilterStateMap(), ReliquaryFilterStateMapDefaultEntryHolder.defaultEntry, 4);
+            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetReliquaryFilterStateMap(), ReliquaryFilterStateMapDefaultEntryHolder.defaultEntry, 3);
             this.unknownFields.writeTo(output);
         }
 
@@ -285,7 +285,7 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
             }
             int size2 = 0;
             for (Map.Entry<Integer, Integer> entry : internalGetReliquaryFilterStateMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(4, ReliquaryFilterStateMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+                size2 += CodedOutputStream.computeMessageSize(3, ReliquaryFilterStateMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -311,7 +311,7 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (!internalGetReliquaryFilterStateMap().getMap().isEmpty()) {
-                hash = (53 * ((37 * hash) + 4)) + internalGetReliquaryFilterStateMap().hashCode();
+                hash = (53 * ((37 * hash) + 3)) + internalGetReliquaryFilterStateMap().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -432,7 +432,7 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 4: goto L_0x0014;
+                        case 3: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -485,7 +485,7 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 4: goto L_0x0014;
+                        case 3: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -507,7 +507,7 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return ReliquaryFilterStateSaveNotifyOuterClass.f843x71970fb2.ensureFieldAccessorsInitialized(ReliquaryFilterStateSaveNotify.class, Builder.class);
+                return ReliquaryFilterStateSaveNotifyOuterClass.f821x71970fb2.ensureFieldAccessorsInitialized(ReliquaryFilterStateSaveNotify.class, Builder.class);
             }
 
             private Builder() {

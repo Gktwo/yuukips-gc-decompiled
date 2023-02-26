@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestDestroyNpcReqOuterClass.class */
 public final class QuestDestroyNpcReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018QuestDestroyNpcReq.proto\"=\n\u0012QuestDestroyNpcReq\u0012\u000e\n\u0006npc_id\u0018\u000f \u0001(\r\u0012\u0017\n\u000fparent_quest_id\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018QuestDestroyNpcReq.proto\":\n\u0012QuestDestroyNpcReq\u0012\u0015\n\rparentQuestId\u0018\u0004 \u0001(\r\u0012\r\n\u0005npcId\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_QuestDestroyNpcReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_QuestDestroyNpcReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QuestDestroyNpcReq_descriptor, new String[]{"NpcId", "ParentQuestId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_QuestDestroyNpcReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QuestDestroyNpcReq_descriptor, new String[]{"ParentQuestId", "NpcId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestDestroyNpcReqOuterClass$QuestDestroyNpcReqOrBuilder.class */
     public interface QuestDestroyNpcReqOrBuilder extends MessageOrBuilder {
-        int getNpcId();
-
         int getParentQuestId();
+
+        int getNpcId();
     }
 
     private QuestDestroyNpcReqOuterClass() {
@@ -43,10 +43,10 @@ public final class QuestDestroyNpcReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestDestroyNpcReqOuterClass$QuestDestroyNpcReq.class */
     public static final class QuestDestroyNpcReq extends GeneratedMessageV3 implements QuestDestroyNpcReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int NPC_ID_FIELD_NUMBER = 15;
-        private int npcId_;
-        public static final int PARENT_QUEST_ID_FIELD_NUMBER = 2;
+        public static final int PARENTQUESTID_FIELD_NUMBER = 4;
         private int parentQuestId_;
+        public static final int NPCID_FIELD_NUMBER = 7;
+        private int npcId_;
         private byte memoizedIsInitialized;
         private static final QuestDestroyNpcReq DEFAULT_INSTANCE = new QuestDestroyNpcReq();
         private static final Parser<QuestDestroyNpcReq> PARSER = new AbstractParser<QuestDestroyNpcReq>() { // from class: emu.grasscutter.net.proto.QuestDestroyNpcReqOuterClass.QuestDestroyNpcReq.1
@@ -92,10 +92,10 @@ public final class QuestDestroyNpcReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 16:
+                            case 32:
                                 this.parentQuestId_ = input.readUInt32();
                                 break;
-                            case 120:
+                            case 56:
                                 this.npcId_ = input.readUInt32();
                                 break;
                             default:
@@ -128,13 +128,13 @@ public final class QuestDestroyNpcReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.QuestDestroyNpcReqOuterClass.QuestDestroyNpcReqOrBuilder
-        public int getNpcId() {
-            return this.npcId_;
+        public int getParentQuestId() {
+            return this.parentQuestId_;
         }
 
         @Override // emu.grasscutter.net.proto.QuestDestroyNpcReqOuterClass.QuestDestroyNpcReqOrBuilder
-        public int getParentQuestId() {
-            return this.parentQuestId_;
+        public int getNpcId() {
+            return this.npcId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -153,10 +153,10 @@ public final class QuestDestroyNpcReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.parentQuestId_ != 0) {
-                output.writeUInt32(2, this.parentQuestId_);
+                output.writeUInt32(4, this.parentQuestId_);
             }
             if (this.npcId_ != 0) {
-                output.writeUInt32(15, this.npcId_);
+                output.writeUInt32(7, this.npcId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class QuestDestroyNpcReqOuterClass {
             }
             int size2 = 0;
             if (this.parentQuestId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.parentQuestId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.parentQuestId_);
             }
             if (this.npcId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.npcId_);
+                size2 += CodedOutputStream.computeUInt32Size(7, this.npcId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -188,7 +188,7 @@ public final class QuestDestroyNpcReqOuterClass {
                 return equals(obj);
             }
             QuestDestroyNpcReq other = (QuestDestroyNpcReq) obj;
-            return getNpcId() == other.getNpcId() && getParentQuestId() == other.getParentQuestId() && this.unknownFields.equals(other.unknownFields);
+            return getParentQuestId() == other.getParentQuestId() && getNpcId() == other.getNpcId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -196,7 +196,7 @@ public final class QuestDestroyNpcReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getNpcId())) + 2)) + getParentQuestId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getParentQuestId())) + 7)) + getNpcId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -275,8 +275,8 @@ public final class QuestDestroyNpcReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestDestroyNpcReqOuterClass$QuestDestroyNpcReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements QuestDestroyNpcReqOrBuilder {
-            private int npcId_;
             private int parentQuestId_;
+            private int npcId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return QuestDestroyNpcReqOuterClass.internal_static_QuestDestroyNpcReq_descriptor;
@@ -304,8 +304,8 @@ public final class QuestDestroyNpcReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.npcId_ = 0;
                 this.parentQuestId_ = 0;
+                this.npcId_ = 0;
                 return this;
             }
 
@@ -331,8 +331,8 @@ public final class QuestDestroyNpcReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public QuestDestroyNpcReq buildPartial() {
                 QuestDestroyNpcReq result = new QuestDestroyNpcReq(this);
-                result.npcId_ = this.npcId_;
                 result.parentQuestId_ = this.parentQuestId_;
+                result.npcId_ = this.npcId_;
                 onBuilt();
                 return result;
             }
@@ -380,11 +380,11 @@ public final class QuestDestroyNpcReqOuterClass {
                 if (other == QuestDestroyNpcReq.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getNpcId() != 0) {
-                    setNpcId(other.getNpcId());
-                }
                 if (other.getParentQuestId() != 0) {
                     setParentQuestId(other.getParentQuestId());
+                }
+                if (other.getNpcId() != 0) {
+                    setNpcId(other.getNpcId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -419,23 +419,6 @@ public final class QuestDestroyNpcReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.QuestDestroyNpcReqOuterClass.QuestDestroyNpcReqOrBuilder
-            public int getNpcId() {
-                return this.npcId_;
-            }
-
-            public Builder setNpcId(int value) {
-                this.npcId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearNpcId() {
-                this.npcId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.QuestDestroyNpcReqOuterClass.QuestDestroyNpcReqOrBuilder
             public int getParentQuestId() {
                 return this.parentQuestId_;
             }
@@ -448,6 +431,23 @@ public final class QuestDestroyNpcReqOuterClass {
 
             public Builder clearParentQuestId() {
                 this.parentQuestId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.QuestDestroyNpcReqOuterClass.QuestDestroyNpcReqOrBuilder
+            public int getNpcId() {
+                return this.npcId_;
+            }
+
+            public Builder setNpcId(int value) {
+                this.npcId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearNpcId() {
+                this.npcId_ = 0;
                 onChanged();
                 return this;
             }

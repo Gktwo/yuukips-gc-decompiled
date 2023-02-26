@@ -35,7 +35,7 @@ public class MimeTypes {
         /*
         // Method dump skipped, instructions count: 763
         */
-        throw new UnsupportedOperationException("Method not decompiled: org.eclipse.jetty.http.MimeTypes.m9573clinit():void");
+        throw new UnsupportedOperationException("Method not decompiled: org.eclipse.jetty.http.MimeTypes.m9570clinit():void");
     }
 
     /* loaded from: grasscutter.jar:org/eclipse/jetty/http/MimeTypes$Type.class */

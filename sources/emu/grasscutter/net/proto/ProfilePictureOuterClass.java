@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ProfilePictureOuterClass.class */
 public final class ProfilePictureOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014ProfilePicture.proto\"7\n\u000eProfilePicture\u0012\u0011\n\tavatar_id\u0018\u0001 \u0001(\r\u0012\u0012\n\ncostume_id\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014ProfilePicture.proto\"5\n\u000eProfilePicture\u0012\u0010\n\bavatarId\u0018\u0001 \u0001(\r\u0012\u0011\n\tcostumeId\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ProfilePicture_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ProfilePicture_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ProfilePicture_descriptor, new String[]{"AvatarId", "CostumeId"});
 
@@ -43,9 +43,9 @@ public final class ProfilePictureOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ProfilePictureOuterClass$ProfilePicture.class */
     public static final class ProfilePicture extends GeneratedMessageV3 implements ProfilePictureOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_ID_FIELD_NUMBER = 1;
+        public static final int AVATARID_FIELD_NUMBER = 1;
         private int avatarId_;
-        public static final int COSTUME_ID_FIELD_NUMBER = 2;
+        public static final int COSTUMEID_FIELD_NUMBER = 2;
         private int costumeId_;
         private byte memoizedIsInitialized;
         private static final ProfilePicture DEFAULT_INSTANCE = new ProfilePicture();

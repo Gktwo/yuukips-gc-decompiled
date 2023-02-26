@@ -30,7 +30,7 @@ public final class ContinuationKt {
     private static final <T> void resume(Continuation<? super T> continuation, T t) {
         Intrinsics.checkNotNullParameter(continuation, "<this>");
         Result.Companion companion = Result.Companion;
-        continuation.resumeWith(Result.m7062constructorimpl(t));
+        continuation.resumeWith(Result.m7059constructorimpl(t));
     }
 
     @SinceKotlin(version = "1.3")
@@ -39,7 +39,7 @@ public final class ContinuationKt {
         Intrinsics.checkNotNullParameter(continuation, "<this>");
         Intrinsics.checkNotNullParameter(exception, "exception");
         Result.Companion companion = Result.Companion;
-        continuation.resumeWith(Result.m7062constructorimpl(ResultKt.createFailure(exception)));
+        continuation.resumeWith(Result.m7059constructorimpl(ResultKt.createFailure(exception)));
     }
 
     @SinceKotlin(version = "1.3")
@@ -66,7 +66,7 @@ public final class ContinuationKt {
 
             @Override // kotlin.coroutines.Continuation
             public void resumeWith(@NotNull Object result) {
-                this.$resumeWith.invoke(Result.m7063boximpl(result));
+                this.$resumeWith.invoke(Result.m7060boximpl(result));
             }
         };
     }
@@ -93,7 +93,7 @@ public final class ContinuationKt {
         Intrinsics.checkNotNullParameter(continuation, "completion");
         Continuation intercepted = IntrinsicsKt.intercepted(IntrinsicsKt.createCoroutineUnintercepted(function1, continuation));
         Result.Companion companion = Result.Companion;
-        intercepted.resumeWith(Result.m7062constructorimpl(Unit.INSTANCE));
+        intercepted.resumeWith(Result.m7059constructorimpl(Unit.INSTANCE));
     }
 
     @SinceKotlin(version = "1.3")
@@ -102,7 +102,7 @@ public final class ContinuationKt {
         Intrinsics.checkNotNullParameter(continuation, "completion");
         Continuation intercepted = IntrinsicsKt.intercepted(IntrinsicsKt.createCoroutineUnintercepted(function2, r, continuation));
         Result.Companion companion = Result.Companion;
-        intercepted.resumeWith(Result.m7062constructorimpl(Unit.INSTANCE));
+        intercepted.resumeWith(Result.m7059constructorimpl(Unit.INSTANCE));
     }
 
     @SinceKotlin(version = "1.3")

@@ -10,10 +10,10 @@ import p013io.netty.util.internal.ObjectUtil;
 public final class KeyManagerFactoryWrapper extends SimpleKeyManagerFactory {
 
     /* renamed from: km */
-    private final KeyManager f1029km;
+    private final KeyManager f993km;
 
     public KeyManagerFactoryWrapper(KeyManager km) {
-        this.f1029km = (KeyManager) ObjectUtil.checkNotNull(km, "km");
+        this.f993km = (KeyManager) ObjectUtil.checkNotNull(km, "km");
     }
 
     @Override // p013io.netty.handler.ssl.util.SimpleKeyManagerFactory
@@ -26,6 +26,6 @@ public final class KeyManagerFactoryWrapper extends SimpleKeyManagerFactory {
 
     @Override // p013io.netty.handler.ssl.util.SimpleKeyManagerFactory
     protected KeyManager[] engineGetKeyManagers() {
-        return new KeyManager[]{this.f1029km};
+        return new KeyManager[]{this.f993km};
     }
 }

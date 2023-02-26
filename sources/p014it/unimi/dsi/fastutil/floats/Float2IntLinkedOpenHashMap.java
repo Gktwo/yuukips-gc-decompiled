@@ -48,13 +48,13 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f1861n;
+    protected transient int f1825n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1862f;
+    protected final float f1826f;
     protected transient Float2IntSortedMap.FastSortedEntrySet entries;
     protected transient FloatSortedSet keys;
     protected transient IntCollection values;
@@ -67,15 +67,15 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1862f = f;
+            this.f1826f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1861n = arraySize;
+            this.f1825n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1861n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1861n, f);
-            this.key = new float[this.f1861n + 1];
-            this.value = new int[this.f1861n + 1];
-            this.link = new long[this.f1861n + 1];
+            this.mask = this.f1825n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1825n, f);
+            this.key = new float[this.f1825n + 1];
+            this.value = new int[this.f1825n + 1];
+            this.link = new long[this.f1825n + 1];
         }
     }
 
@@ -124,15 +124,15 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1862f);
-        if (needed > this.f1861n) {
+        int needed = HashCommon.arraySize(capacity, this.f1826f);
+        if (needed > this.f1825n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1862f)))));
-        if (needed > this.f1861n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1826f)))));
+        if (needed > this.f1825n) {
             rehash(needed);
         }
     }
@@ -143,8 +143,8 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f1861n > this.minN && this.size < this.maxFill / 4 && this.f1861n > 16) {
-            rehash(this.f1861n / 2);
+        if (this.f1825n > this.minN && this.size < this.maxFill / 4 && this.f1825n > 16) {
+            rehash(this.f1825n / 2);
         }
         return oldValue;
     }
@@ -152,18 +152,18 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
     /* access modifiers changed from: private */
     public int removeNullEntry() {
         this.containsNullKey = false;
-        int oldValue = this.value[this.f1861n];
+        int oldValue = this.value[this.f1825n];
         this.size--;
-        fixPointers(this.f1861n);
-        if (this.f1861n > this.minN && this.size < this.maxFill / 4 && this.f1861n > 16) {
-            rehash(this.f1861n / 2);
+        fixPointers(this.f1825n);
+        if (this.f1825n > this.minN && this.size < this.maxFill / 4 && this.f1825n > 16) {
+            rehash(this.f1825n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloat2IntMap, java.util.Map
     public void putAll(Map<? extends Float, ? extends Integer> m) {
-        if (((double) this.f1862f) <= 0.5d) {
+        if (((double) this.f1826f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -174,7 +174,7 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
     private int find(float k) {
         float curr;
         if (Float.floatToIntBits(k) == 0) {
-            return this.containsNullKey ? this.f1861n : -(this.f1861n + 1);
+            return this.containsNullKey ? this.f1825n : -(this.f1825n + 1);
         }
         float[] key = this.key;
         int mix = HashCommon.mix(HashCommon.float2int(k)) & this.mask;
@@ -198,7 +198,7 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
     }
 
     private void insert(int pos, float k, int v) {
-        if (pos == this.f1861n) {
+        if (pos == this.f1825n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -217,7 +217,7 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f1862f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f1826f));
         }
     }
 
@@ -261,9 +261,9 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f1861n, incr);
+            return addToValue(this.f1825n, incr);
         } else {
-            pos = this.f1861n;
+            pos = this.f1825n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -282,7 +282,7 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f1862f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f1826f));
         }
         return this.defRetValue;
     }
@@ -364,13 +364,13 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
         }
         this.size--;
         int v = this.value[pos];
-        if (pos == this.f1861n) {
+        if (pos == this.f1825n) {
             this.containsNullKey = false;
         } else {
             shiftKeys(pos);
         }
-        if (this.f1861n > this.minN && this.size < this.maxFill / 4 && this.f1861n > 16) {
-            rehash(this.f1861n / 2);
+        if (this.f1825n > this.minN && this.size < this.maxFill / 4 && this.f1825n > 16) {
+            rehash(this.f1825n / 2);
         }
         return v;
     }
@@ -388,13 +388,13 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
         }
         this.size--;
         int v = this.value[pos];
-        if (pos == this.f1861n) {
+        if (pos == this.f1825n) {
             this.containsNullKey = false;
         } else {
             shiftKeys(pos);
         }
-        if (this.f1861n > this.minN && this.size < this.maxFill / 4 && this.f1861n > 16) {
-            rehash(this.f1861n / 2);
+        if (this.f1825n > this.minN && this.size < this.maxFill / 4 && this.f1825n > 16) {
+            rehash(this.f1825n / 2);
         }
         return v;
     }
@@ -474,8 +474,8 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
         } else if (!this.containsNullKey) {
             return this.defRetValue;
         } else {
-            moveIndexToFirst(this.f1861n);
-            return this.value[this.f1861n];
+            moveIndexToFirst(this.f1825n);
+            return this.value[this.f1825n];
         }
     }
 
@@ -506,8 +506,8 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
         } else if (!this.containsNullKey) {
             return this.defRetValue;
         } else {
-            moveIndexToLast(this.f1861n);
-            return this.value[this.f1861n];
+            moveIndexToLast(this.f1825n);
+            return this.value[this.f1825n];
         }
     }
 
@@ -535,11 +535,11 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
                 return setValue(pos, v);
             }
         } else if (this.containsNullKey) {
-            moveIndexToFirst(this.f1861n);
-            return setValue(this.f1861n, v);
+            moveIndexToFirst(this.f1825n);
+            return setValue(this.f1825n, v);
         } else {
             this.containsNullKey = true;
-            pos = this.f1861n;
+            pos = this.f1825n;
         }
         this.key[pos] = k;
         this.value[pos] = v;
@@ -557,7 +557,7 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size, this.f1862f));
+            rehash(HashCommon.arraySize(this.size, this.f1826f));
         }
         return this.defRetValue;
     }
@@ -586,11 +586,11 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
                 return setValue(pos, v);
             }
         } else if (this.containsNullKey) {
-            moveIndexToLast(this.f1861n);
-            return setValue(this.f1861n, v);
+            moveIndexToLast(this.f1825n);
+            return setValue(this.f1825n, v);
         } else {
             this.containsNullKey = true;
-            pos = this.f1861n;
+            pos = this.f1825n;
         }
         this.key[pos] = k;
         this.value[pos] = v;
@@ -608,7 +608,7 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size, this.f1862f));
+            rehash(HashCommon.arraySize(this.size, this.f1826f));
         }
         return this.defRetValue;
     }
@@ -617,7 +617,7 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
     public int get(float k) {
         float curr;
         if (Float.floatToIntBits(k) == 0) {
-            return this.containsNullKey ? this.value[this.f1861n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f1825n] : this.defRetValue;
         }
         float[] key = this.key;
         int mix = HashCommon.mix(HashCommon.float2int(k)) & this.mask;
@@ -671,10 +671,10 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
     public boolean containsValue(int v) {
         int[] value = this.value;
         float[] key = this.key;
-        if (this.containsNullKey && value[this.f1861n] == v) {
+        if (this.containsNullKey && value[this.f1825n] == v) {
             return true;
         }
-        int i = this.f1861n;
+        int i = this.f1825n;
         while (true) {
             i--;
             if (i == 0) {
@@ -690,7 +690,7 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
     public int getOrDefault(float k, int defaultValue) {
         float curr;
         if (Float.floatToIntBits(k) == 0) {
-            return this.containsNullKey ? this.value[this.f1861n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f1825n] : defaultValue;
         }
         float[] key = this.key;
         int mix = HashCommon.mix(HashCommon.float2int(k)) & this.mask;
@@ -749,7 +749,7 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
                     return true;
                 }
             }
-        } else if (!this.containsNullKey || v != this.value[this.f1861n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f1825n]) {
             return false;
         } else {
             removeNullEntry();
@@ -1120,8 +1120,8 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
             this.index = -1;
             if (Float.floatToIntBits(from) == 0) {
                 if (Float2IntLinkedOpenHashMap.this.containsNullKey) {
-                    this.next = (int) Float2IntLinkedOpenHashMap.this.link[Float2IntLinkedOpenHashMap.this.f1861n];
-                    this.prev = Float2IntLinkedOpenHashMap.this.f1861n;
+                    this.next = (int) Float2IntLinkedOpenHashMap.this.link[Float2IntLinkedOpenHashMap.this.f1825n];
+                    this.prev = Float2IntLinkedOpenHashMap.this.f1825n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + from + " does not belong to this map.");
@@ -1250,7 +1250,7 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
             }
             int pos = this.curr;
             this.curr = -1;
-            if (pos == Float2IntLinkedOpenHashMap.this.f1861n) {
+            if (pos == Float2IntLinkedOpenHashMap.this.f1825n) {
                 Float2IntLinkedOpenHashMap.this.containsNullKey = false;
                 return;
             }
@@ -1495,7 +1495,7 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
             float k = ((Float) e.getKey()).floatValue();
             int v = ((Integer) e.getValue()).intValue();
             if (Float.floatToIntBits(k) == 0) {
-                return Float2IntLinkedOpenHashMap.this.containsNullKey && Float2IntLinkedOpenHashMap.this.value[Float2IntLinkedOpenHashMap.this.f1861n] == v;
+                return Float2IntLinkedOpenHashMap.this.containsNullKey && Float2IntLinkedOpenHashMap.this.value[Float2IntLinkedOpenHashMap.this.f1825n] == v;
             }
             float[] key = Float2IntLinkedOpenHashMap.this.key;
             int mix = HashCommon.mix(HashCommon.float2int(k)) & Float2IntLinkedOpenHashMap.this.mask;
@@ -1556,7 +1556,7 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
                     Float2IntLinkedOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Float2IntLinkedOpenHashMap.this.containsNullKey || Float2IntLinkedOpenHashMap.this.value[Float2IntLinkedOpenHashMap.this.f1861n] != v) {
+            } else if (!Float2IntLinkedOpenHashMap.this.containsNullKey || Float2IntLinkedOpenHashMap.this.value[Float2IntLinkedOpenHashMap.this.f1825n] != v) {
                 return false;
             } else {
                 Float2IntLinkedOpenHashMap.this.removeNullEntry();
@@ -1854,8 +1854,8 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1862f)));
-        if (l >= this.f1861n || this.size > HashCommon.maxFill(l, this.f1862f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1826f)));
+        if (l >= this.f1825n || this.size > HashCommon.maxFill(l, this.f1826f)) {
             return true;
         }
         try {
@@ -1916,9 +1916,9 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f1861n = newN;
+        this.f1825n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f1861n, this.f1862f);
+        this.maxFill = HashCommon.maxFill(this.f1825n, this.f1826f);
         this.key = newKey;
         this.value = newValue;
     }
@@ -1957,7 +1957,7 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f1861n];
+            h += this.value[this.f1825n];
         }
         return h;
     }
@@ -1983,14 +1983,14 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f1861n = HashCommon.arraySize(this.size, this.f1862f);
-        this.maxFill = HashCommon.maxFill(this.f1861n, this.f1862f);
-        this.mask = this.f1861n - 1;
-        float[] key = new float[this.f1861n + 1];
+        this.f1825n = HashCommon.arraySize(this.size, this.f1826f);
+        this.maxFill = HashCommon.maxFill(this.f1825n, this.f1826f);
+        this.mask = this.f1825n - 1;
+        float[] key = new float[this.f1825n + 1];
         this.key = key;
-        int[] value = new int[this.f1861n + 1];
+        int[] value = new int[this.f1825n + 1];
         this.value = value;
-        long[] link = new long[this.f1861n + 1];
+        long[] link = new long[this.f1825n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -2015,7 +2015,7 @@ public class Float2IntLinkedOpenHashMap extends AbstractFloat2IntSortedMap imple
                     i2 = this.mask;
                 }
             } else {
-                pos = this.f1861n;
+                pos = this.f1825n;
                 this.containsNullKey = true;
             }
             key[pos] = k;

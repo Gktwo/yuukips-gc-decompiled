@@ -495,7 +495,7 @@ public class SslHandler extends ByteToMessageDecoder implements ChannelOutboundH
     /* access modifiers changed from: package-private */
     /* renamed from: io.netty.handler.ssl.SslHandler$11 */
     /* loaded from: grasscutter.jar:io/netty/handler/ssl/SslHandler$11.class */
-    public static /* synthetic */ class C304911 {
+    public static /* synthetic */ class C304111 {
         static final /* synthetic */ int[] $SwitchMap$javax$net$ssl$SSLEngineResult$HandshakeStatus = new int[SSLEngineResult.HandshakeStatus.values().length];
 
         static {

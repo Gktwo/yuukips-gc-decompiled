@@ -198,30 +198,30 @@ public abstract class AbstractDouble2BooleanMap extends AbstractDouble2BooleanFu
                 return new DoubleIterator() { // from class: it.unimi.dsi.fastutil.doubles.AbstractDouble2BooleanMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Double2BooleanMap.Entry> f1533i;
+                    private final ObjectIterator<Double2BooleanMap.Entry> f1497i;
 
                     {
-                        this.f1533i = Double2BooleanMaps.fastIterator(AbstractDouble2BooleanMap.this);
+                        this.f1497i = Double2BooleanMaps.fastIterator(AbstractDouble2BooleanMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
                     public double nextDouble() {
-                        return this.f1533i.next().getDoubleKey();
+                        return this.f1497i.next().getDoubleKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1533i.hasNext();
+                        return this.f1497i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1533i.remove();
+                        this.f1497i.remove();
                     }
 
                     @Override // java.util.PrimitiveIterator.OfDouble
                     public void forEachRemaining(DoubleConsumer action) {
-                        this.f1533i.forEachRemaining(entry -> {
+                        this.f1497i.forEachRemaining(entry -> {
                             action.accept(entry.getDoubleKey());
                         });
                     }
@@ -259,30 +259,30 @@ public abstract class AbstractDouble2BooleanMap extends AbstractDouble2BooleanFu
                 return new BooleanIterator() { // from class: it.unimi.dsi.fastutil.doubles.AbstractDouble2BooleanMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Double2BooleanMap.Entry> f1534i;
+                    private final ObjectIterator<Double2BooleanMap.Entry> f1498i;
 
                     {
-                        this.f1534i = Double2BooleanMaps.fastIterator(AbstractDouble2BooleanMap.this);
+                        this.f1498i = Double2BooleanMaps.fastIterator(AbstractDouble2BooleanMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
                     public boolean nextBoolean() {
-                        return this.f1534i.next().getBooleanValue();
+                        return this.f1498i.next().getBooleanValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1534i.hasNext();
+                        return this.f1498i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1534i.remove();
+                        this.f1498i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
                     public void forEachRemaining(BooleanConsumer action) {
-                        this.f1534i.forEachRemaining(entry -> {
+                        this.f1498i.forEachRemaining(entry -> {
                             action.accept(entry.getBooleanValue());
                         });
                     }

@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DailyTaskFilterCityRspOuterClass.class */
 public final class DailyTaskFilterCityRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cDailyTaskFilterCityRsp.proto\":\n\u0016DailyTaskFilterCityRsp\u0012\u000f\n\u0007city_id\u0018\u0007 \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0006 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cDailyTaskFilterCityRsp.proto\":\n\u0016DailyTaskFilterCityRsp\u0012\u000f\n\u0007city_id\u0018\u000f \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0006 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_DailyTaskFilterCityRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_DailyTaskFilterCityRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DailyTaskFilterCityRsp_descriptor, new String[]{"CityId", "Retcode"});
 
@@ -43,7 +43,7 @@ public final class DailyTaskFilterCityRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DailyTaskFilterCityRspOuterClass$DailyTaskFilterCityRsp.class */
     public static final class DailyTaskFilterCityRsp extends GeneratedMessageV3 implements DailyTaskFilterCityRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CITY_ID_FIELD_NUMBER = 7;
+        public static final int CITY_ID_FIELD_NUMBER = 15;
         private int cityId_;
         public static final int RETCODE_FIELD_NUMBER = 6;
         private int retcode_;
@@ -95,7 +95,7 @@ public final class DailyTaskFilterCityRspOuterClass {
                             case 48:
                                 this.retcode_ = input.readInt32();
                                 break;
-                            case 56:
+                            case 120:
                                 this.cityId_ = input.readUInt32();
                                 break;
                             default:
@@ -156,7 +156,7 @@ public final class DailyTaskFilterCityRspOuterClass {
                 output.writeInt32(6, this.retcode_);
             }
             if (this.cityId_ != 0) {
-                output.writeUInt32(7, this.cityId_);
+                output.writeUInt32(15, this.cityId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -172,7 +172,7 @@ public final class DailyTaskFilterCityRspOuterClass {
                 size2 = 0 + CodedOutputStream.computeInt32Size(6, this.retcode_);
             }
             if (this.cityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.cityId_);
+                size2 += CodedOutputStream.computeUInt32Size(15, this.cityId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class DailyTaskFilterCityRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getCityId())) + 6)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getCityId())) + 6)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

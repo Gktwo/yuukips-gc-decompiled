@@ -11,7 +11,7 @@ import java.util.List;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketForgeQueueManipulateRsp.class */
 public class PacketForgeQueueManipulateRsp extends BasePacket {
     public PacketForgeQueueManipulateRsp(RetcodeOuterClass.Retcode retcode, ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType type, List<GameItem> output, List<GameItem> refund, List<GameItem> extra) {
-        super(682);
+        super(636);
         ForgeQueueManipulateRspOuterClass.ForgeQueueManipulateRsp.Builder builder = ForgeQueueManipulateRspOuterClass.ForgeQueueManipulateRsp.newBuilder().setRetcode(retcode.getNumber()).setManipulateType(type);
         for (GameItem item : output) {
             builder.addOutputItemList(ItemParamOuterClass.ItemParam.newBuilder().setItemId(item.getItemId()).setCount(item.getCount()).build());

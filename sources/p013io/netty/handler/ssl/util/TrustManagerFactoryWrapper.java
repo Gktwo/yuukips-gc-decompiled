@@ -10,10 +10,10 @@ import p013io.netty.util.internal.ObjectUtil;
 public final class TrustManagerFactoryWrapper extends SimpleTrustManagerFactory {
 
     /* renamed from: tm */
-    private final TrustManager f1030tm;
+    private final TrustManager f994tm;
 
     public TrustManagerFactoryWrapper(TrustManager tm) {
-        this.f1030tm = (TrustManager) ObjectUtil.checkNotNull(tm, "tm");
+        this.f994tm = (TrustManager) ObjectUtil.checkNotNull(tm, "tm");
     }
 
     @Override // p013io.netty.handler.ssl.util.SimpleTrustManagerFactory
@@ -26,6 +26,6 @@ public final class TrustManagerFactoryWrapper extends SimpleTrustManagerFactory 
 
     @Override // p013io.netty.handler.ssl.util.SimpleTrustManagerFactory
     protected TrustManager[] engineGetTrustManagers() {
-        return new TrustManager[]{this.f1030tm};
+        return new TrustManager[]{this.f994tm};
     }
 }

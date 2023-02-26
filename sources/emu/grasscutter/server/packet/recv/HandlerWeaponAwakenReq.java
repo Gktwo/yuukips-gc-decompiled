@@ -5,7 +5,7 @@ import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.WeaponAwakenReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 
-@Opcodes(633)
+@Opcodes(645)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerWeaponAwakenReq.class */
 public class HandlerWeaponAwakenReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

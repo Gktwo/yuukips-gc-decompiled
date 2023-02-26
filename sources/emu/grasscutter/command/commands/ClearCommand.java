@@ -6,12 +6,11 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import java.util.List;
 import org.jline.console.Printer;
 import org.jline.reader.LineReader;
 
-@Command(label = LineReader.CLEAR, usage = {"[all|wp|art|mat]"}, permission = "player.clearinv", permissionTargeted = "player.clearinv.others", ratelimit = 120)
+@Command(label = LineReader.CLEAR, usage = {"[all|wp|art|mat]"}, permission = "player.clearinv", permissionTargeted = "player.clearinv.others", ratelimit = 60)
 /* loaded from: grasscutter.jar:emu/grasscutter/command/commands/ClearCommand.class */
 public final class ClearCommand implements CommandHandler {
     @Override // emu.grasscutter.command.CommandHandler
@@ -56,7 +55,7 @@ public final class ClearCommand implements CommandHandler {
                     return item.getItemType() == ItemType.ITEM_WEAPON;
                 }).filter(item -> {
                     return !item.isLocked() && !item.isEquipped();
-                }).limit((long) PacketOpcodes.SetCoopChapterViewedRsp).toList();
+                }).limit((long) 1000).toList();
                 CommandHandler.sendTranslatedMessage(sender, "commands.clear.weapons", targetPlayer.getNickname());
                 break;
             case 1:
@@ -64,7 +63,7 @@ public final class ClearCommand implements CommandHandler {
                     return item.getItemType() == ItemType.ITEM_RELIQUARY;
                 }).filter(item -> {
                     return !item.isLocked() && !item.isEquipped();
-                }).limit((long) PacketOpcodes.SetCoopChapterViewedRsp).toList();
+                }).limit((long) 1000).toList();
                 CommandHandler.sendTranslatedMessage(sender, "commands.clear.artifacts", targetPlayer.getNickname());
                 break;
             case 2:
@@ -72,17 +71,17 @@ public final class ClearCommand implements CommandHandler {
                     return item.getItemType() == ItemType.ITEM_MATERIAL;
                 }).filter(item -> {
                     return !item.isLocked() && !item.isEquipped();
-                }).limit((long) PacketOpcodes.SetCoopChapterViewedRsp).toList();
+                }).limit((long) 1000).toList();
                 CommandHandler.sendTranslatedMessage(sender, "commands.clear.materials", targetPlayer.getNickname());
                 break;
             case 3:
                 toDelete = playerInventory.getItems().values().stream().filter(item -> {
                     return !item.isLocked() && !item.isEquipped();
-                }).limit((long) PacketOpcodes.SetCoopChapterViewedRsp).toList();
+                }).limit((long) 1000).toList();
                 break;
         }
         if (toDelete != null) {
-            CommandHandler.sendTranslatedMessage(sender, "dockergs.commands.clear.done", Integer.valueOf(toDelete.size()), Integer.valueOf((int) PacketOpcodes.SetCoopChapterViewedRsp));
+            CommandHandler.sendTranslatedMessage(sender, "dockergs.commands.clear.done", Integer.valueOf(toDelete.size()), 1000);
             playerInventory.removeItems(toDelete);
         }
     }

@@ -50,11 +50,11 @@ public abstract class BaseContinuationImpl implements Continuation<Object>, Coro
                 outcome2 = $this$resumeWith_u24lambda_u2d0.invokeSuspend(param);
             } catch (Throwable exception) {
                 Result.Companion companion = Result.Companion;
-                outcome = Result.m7062constructorimpl(ResultKt.createFailure(exception));
+                outcome = Result.m7059constructorimpl(ResultKt.createFailure(exception));
             }
             if (outcome2 != IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
                 Result.Companion companion2 = Result.Companion;
-                outcome = Result.m7062constructorimpl(outcome2);
+                outcome = Result.m7059constructorimpl(outcome2);
                 $this$resumeWith_u24lambda_u2d0.releaseIntercepted();
                 if (completion instanceof BaseContinuationImpl) {
                     current = completion;

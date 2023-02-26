@@ -23,7 +23,7 @@ public final class GetFurnitureCurModuleArrangeCountReqOuterClass {
     private static final Descriptors.Descriptor internal_static_GetFurnitureCurModuleArrangeCountReq_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_GetFurnitureCurModuleArrangeCountReq_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f743xde8256b2 = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetFurnitureCurModuleArrangeCountReq_descriptor, new String[0]);
+    private static final GeneratedMessageV3.FieldAccessorTable f729xde8256b2 = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetFurnitureCurModuleArrangeCountReq_descriptor, new String[0]);
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetFurnitureCurModuleArrangeCountReqOuterClass$GetFurnitureCurModuleArrangeCountReqOrBuilder.class */
     public interface GetFurnitureCurModuleArrangeCountReqOrBuilder extends MessageOrBuilder {
@@ -113,7 +113,7 @@ public final class GetFurnitureCurModuleArrangeCountReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return GetFurnitureCurModuleArrangeCountReqOuterClass.f743xde8256b2.ensureFieldAccessorsInitialized(GetFurnitureCurModuleArrangeCountReq.class, Builder.class);
+            return GetFurnitureCurModuleArrangeCountReqOuterClass.f729xde8256b2.ensureFieldAccessorsInitialized(GetFurnitureCurModuleArrangeCountReq.class, Builder.class);
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -246,7 +246,7 @@ public final class GetFurnitureCurModuleArrangeCountReqOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return GetFurnitureCurModuleArrangeCountReqOuterClass.f743xde8256b2.ensureFieldAccessorsInitialized(GetFurnitureCurModuleArrangeCountReq.class, Builder.class);
+                return GetFurnitureCurModuleArrangeCountReqOuterClass.f729xde8256b2.ensureFieldAccessorsInitialized(GetFurnitureCurModuleArrangeCountReq.class, Builder.class);
             }
 
             private Builder() {

@@ -99,7 +99,7 @@ public final class JettyPrecompressingResourceHandler {
     private final byte[] getStaticResourceByteArray(Resource resource, String target, CompressionType type) {
         if (resource.length() <= ((long) resourceMaxSize)) {
             return compressedFiles.computeIfAbsent(Intrinsics.stringPlus(target, type.getExtension()), (v2) -> {
-                return m5860getStaticResourceByteArray$lambda1(r2, r3, v2);
+                return m5857getStaticResourceByteArray$lambda1(r2, r3, v2);
             });
         }
         JavalinLogger.warn$default("Static file '" + target + "' is larger than configured max size for pre-compression (" + resourceMaxSize + " bytes).\nYou can configure the max size with `JettyPrecompressingResourceHandler.resourceMaxSize = newMaxSize`.", null, 2, null);
@@ -107,7 +107,7 @@ public final class JettyPrecompressingResourceHandler {
     }
 
     /* renamed from: getStaticResourceByteArray$lambda-1  reason: not valid java name */
-    private static final byte[] m5860getStaticResourceByteArray$lambda1(Resource $resource, CompressionType $type, String it) {
+    private static final byte[] m5857getStaticResourceByteArray$lambda1(Resource $resource, CompressionType $type, String it) {
         Intrinsics.checkNotNullParameter($resource, "$resource");
         Intrinsics.checkNotNullParameter($type, "$type");
         Intrinsics.checkNotNullParameter(it, "it");

@@ -124,7 +124,7 @@ public final class GzipSink implements Sink {
     @JvmName(name = "-deprecated_deflater")
     @NotNull
     /* renamed from: -deprecated_deflater  reason: not valid java name */
-    public final Deflater m9393deprecated_deflater() {
+    public final Deflater m9390deprecated_deflater() {
         return this.deflater;
     }
 }

@@ -15,16 +15,16 @@ public final class UByteArrayKt {
         Intrinsics.checkNotNullParameter(function1, "init");
         byte[] bArr = new byte[size];
         for (int i = 0; i < size; i++) {
-            bArr[i] = function1.invoke(Integer.valueOf(i)).m7124unboximpl();
+            bArr[i] = function1.invoke(Integer.valueOf(i)).m7121unboximpl();
         }
-        return UByteArray.m7140constructorimpl(bArr);
+        return UByteArray.m7137constructorimpl(bArr);
     }
 
     @SinceKotlin(version = "1.3")
     @ExperimentalUnsignedTypes
     @InlineOnly
     /* renamed from: ubyteArrayOf-GBYM_sE  reason: not valid java name */
-    private static final byte[] m7145ubyteArrayOfGBYM_sE(byte... elements) {
+    private static final byte[] m7142ubyteArrayOfGBYM_sE(byte... elements) {
         Intrinsics.checkNotNullParameter(elements, "elements");
         return elements;
     }

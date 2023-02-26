@@ -19,16 +19,16 @@ public class LongMappedBigList extends AbstractLongBigList {
     private final boolean[] readyToUse;
 
     /* renamed from: n */
-    private final int f2429n;
+    private final int f2393n;
     private final long size;
 
     protected LongMappedBigList(LongBuffer[] buffer, long size, boolean[] readyToUse) {
         this.buffer = buffer;
-        this.f2429n = buffer.length;
+        this.f2393n = buffer.length;
         this.size = size;
         this.readyToUse = readyToUse;
-        for (int i = 0; i < this.f2429n; i++) {
-            if (i < this.f2429n - 1 && ((long) buffer[i].capacity()) != CHUNK_SIZE) {
+        for (int i = 0; i < this.f2393n; i++) {
+            if (i < this.f2393n - 1 && ((long) buffer[i].capacity()) != CHUNK_SIZE) {
                 throw new IllegalArgumentException();
             }
         }
@@ -66,7 +66,7 @@ public class LongMappedBigList extends AbstractLongBigList {
     }
 
     public LongMappedBigList copy() {
-        return new LongMappedBigList((LongBuffer[]) this.buffer.clone(), this.size, new boolean[this.f2429n]);
+        return new LongMappedBigList((LongBuffer[]) this.buffer.clone(), this.size, new boolean[this.f2393n]);
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.LongBigList

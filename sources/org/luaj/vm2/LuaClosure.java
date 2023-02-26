@@ -7,12 +7,12 @@ public class LuaClosure extends LuaFunction {
     private static final UpValue[] NOUPVALUES = new UpValue[0];
 
     /* renamed from: p */
-    public final Prototype f3287p;
+    public final Prototype f3251p;
     public UpValue[] upValues;
     final Globals globals;
 
     public LuaClosure(Prototype prototype, LuaValue luaValue) {
-        this.f3287p = prototype;
+        this.f3251p = prototype;
         if (prototype.upvalues == null || prototype.upvalues.length == 0) {
             this.upValues = NOUPVALUES;
         } else {
@@ -44,13 +44,13 @@ public class LuaClosure extends LuaFunction {
 
     @Override // org.luaj.vm2.LuaFunction, org.luaj.vm2.LuaValue, org.luaj.vm2.Varargs
     public String tojstring() {
-        return new StringBuffer().append("function: ").append(this.f3287p.toString()).toString();
+        return new StringBuffer().append("function: ").append(this.f3251p.toString()).toString();
     }
 
     @Override // org.luaj.vm2.LuaValue
     public final LuaValue call() {
-        LuaValue[] luaValueArr = new LuaValue[this.f3287p.maxstacksize];
-        for (int i = 0; i < this.f3287p.numparams; i++) {
+        LuaValue[] luaValueArr = new LuaValue[this.f3251p.maxstacksize];
+        for (int i = 0; i < this.f3251p.numparams; i++) {
             luaValueArr[i] = NIL;
         }
         return execute(luaValueArr, NONE).arg1();
@@ -58,12 +58,12 @@ public class LuaClosure extends LuaFunction {
 
     @Override // org.luaj.vm2.LuaValue
     public final LuaValue call(LuaValue luaValue) {
-        LuaValue[] luaValueArr = new LuaValue[this.f3287p.maxstacksize];
-        System.arraycopy(NILS, 0, luaValueArr, 0, this.f3287p.maxstacksize);
-        for (int i = 1; i < this.f3287p.numparams; i++) {
+        LuaValue[] luaValueArr = new LuaValue[this.f3251p.maxstacksize];
+        System.arraycopy(NILS, 0, luaValueArr, 0, this.f3251p.maxstacksize);
+        for (int i = 1; i < this.f3251p.numparams; i++) {
             luaValueArr[i] = NIL;
         }
-        switch (this.f3287p.numparams) {
+        switch (this.f3251p.numparams) {
             case 0:
                 return execute(luaValueArr, luaValue).arg1();
             default:
@@ -74,13 +74,13 @@ public class LuaClosure extends LuaFunction {
 
     @Override // org.luaj.vm2.LuaValue
     public final LuaValue call(LuaValue luaValue, LuaValue luaValue2) {
-        LuaValue[] luaValueArr = new LuaValue[this.f3287p.maxstacksize];
-        for (int i = 2; i < this.f3287p.numparams; i++) {
+        LuaValue[] luaValueArr = new LuaValue[this.f3251p.maxstacksize];
+        for (int i = 2; i < this.f3251p.numparams; i++) {
             luaValueArr[i] = NIL;
         }
-        switch (this.f3287p.numparams) {
+        switch (this.f3251p.numparams) {
             case 0:
-                return execute(luaValueArr, this.f3287p.is_vararg != 0 ? varargsOf(luaValue, luaValue2) : NONE).arg1();
+                return execute(luaValueArr, this.f3251p.is_vararg != 0 ? varargsOf(luaValue, luaValue2) : NONE).arg1();
             case 1:
                 luaValueArr[0] = luaValue;
                 return execute(luaValueArr, luaValue2).arg1();
@@ -93,16 +93,16 @@ public class LuaClosure extends LuaFunction {
 
     @Override // org.luaj.vm2.LuaValue
     public final LuaValue call(LuaValue luaValue, LuaValue luaValue2, LuaValue luaValue3) {
-        LuaValue[] luaValueArr = new LuaValue[this.f3287p.maxstacksize];
-        for (int i = 3; i < this.f3287p.numparams; i++) {
+        LuaValue[] luaValueArr = new LuaValue[this.f3251p.maxstacksize];
+        for (int i = 3; i < this.f3251p.numparams; i++) {
             luaValueArr[i] = NIL;
         }
-        switch (this.f3287p.numparams) {
+        switch (this.f3251p.numparams) {
             case 0:
-                return execute(luaValueArr, this.f3287p.is_vararg != 0 ? varargsOf(luaValue, luaValue2, luaValue3) : NONE).arg1();
+                return execute(luaValueArr, this.f3251p.is_vararg != 0 ? varargsOf(luaValue, luaValue2, luaValue3) : NONE).arg1();
             case 1:
                 luaValueArr[0] = luaValue;
-                return execute(luaValueArr, this.f3287p.is_vararg != 0 ? varargsOf(luaValue2, luaValue3) : NONE).arg1();
+                return execute(luaValueArr, this.f3251p.is_vararg != 0 ? varargsOf(luaValue2, luaValue3) : NONE).arg1();
             case 2:
                 luaValueArr[0] = luaValue;
                 luaValueArr[1] = luaValue2;
@@ -122,11 +122,11 @@ public class LuaClosure extends LuaFunction {
 
     @Override // org.luaj.vm2.LuaValue
     public final Varargs onInvoke(Varargs varargs) {
-        LuaValue[] luaValueArr = new LuaValue[this.f3287p.maxstacksize];
-        for (int i = 0; i < this.f3287p.numparams; i++) {
+        LuaValue[] luaValueArr = new LuaValue[this.f3251p.maxstacksize];
+        for (int i = 0; i < this.f3251p.numparams; i++) {
             luaValueArr[i] = varargs.arg(i + 1);
         }
-        return execute(luaValueArr, this.f3287p.is_vararg != 0 ? varargs.subargs(this.f3287p.numparams + 1) : NONE);
+        return execute(luaValueArr, this.f3251p.is_vararg != 0 ? varargs.subargs(this.f3251p.numparams + 1) : NONE);
     }
 
     /* JADX WARNING: Code restructure failed: missing block: B:366:0x0c2c, code lost:
@@ -193,6 +193,6 @@ public class LuaClosure extends LuaFunction {
 
     @Override // org.luaj.vm2.LuaFunction
     public String name() {
-        return new StringBuffer().append("<").append(this.f3287p.shortsource()).append(EmitterKt.COMMENT_PREFIX).append(this.f3287p.linedefined).append(">").toString();
+        return new StringBuffer().append("<").append(this.f3251p.shortsource()).append(EmitterKt.COMMENT_PREFIX).append(this.f3251p.linedefined).append(">").toString();
     }
 }

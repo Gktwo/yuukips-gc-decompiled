@@ -23,11 +23,11 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeAllUnlockedBgmIdListNotifyOuterClass.class */
 public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n$HomeAllUnlockedBgmIdListNotify.proto\"B\n\u001eHomeAllUnlockedBgmIdListNotify\u0012 \n\u0018all_unlocked_bgm_id_list\u0018\u000e \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n$HomeAllUnlockedBgmIdListNotify.proto\">\n\u001eHomeAllUnlockedBgmIdListNotify\u0012\u001c\n\u0014allUnlockedBgmIdList\u0018\r \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_HomeAllUnlockedBgmIdListNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_HomeAllUnlockedBgmIdListNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f756x901ceb18 = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeAllUnlockedBgmIdListNotify_descriptor, new String[]{"AllUnlockedBgmIdList"});
+    private static final GeneratedMessageV3.FieldAccessorTable f740x901ceb18 = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeAllUnlockedBgmIdListNotify_descriptor, new String[]{"AllUnlockedBgmIdList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeAllUnlockedBgmIdListNotifyOuterClass$HomeAllUnlockedBgmIdListNotifyOrBuilder.class */
     public interface HomeAllUnlockedBgmIdListNotifyOrBuilder extends MessageOrBuilder {
@@ -51,7 +51,7 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeAllUnlockedBgmIdListNotifyOuterClass$HomeAllUnlockedBgmIdListNotify.class */
     public static final class HomeAllUnlockedBgmIdListNotify extends GeneratedMessageV3 implements HomeAllUnlockedBgmIdListNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ALL_UNLOCKED_BGM_ID_LIST_FIELD_NUMBER = 14;
+        public static final int ALLUNLOCKEDBGMIDLIST_FIELD_NUMBER = 13;
         private Internal.IntList allUnlockedBgmIdList_;
         private int allUnlockedBgmIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -105,14 +105,14 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 112:
+                                case 104:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.allUnlockedBgmIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.allUnlockedBgmIdList_.addInt(input.readUInt32());
                                     break;
-                                case 114:
+                                case 106:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.allUnlockedBgmIdList_ = newIntList();
@@ -153,7 +153,7 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return HomeAllUnlockedBgmIdListNotifyOuterClass.f756x901ceb18.ensureFieldAccessorsInitialized(HomeAllUnlockedBgmIdListNotify.class, Builder.class);
+            return HomeAllUnlockedBgmIdListNotifyOuterClass.f740x901ceb18.ensureFieldAccessorsInitialized(HomeAllUnlockedBgmIdListNotify.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.HomeAllUnlockedBgmIdListNotifyOuterClass.HomeAllUnlockedBgmIdListNotifyOrBuilder
@@ -188,7 +188,7 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getAllUnlockedBgmIdListList().size() > 0) {
-                output.writeUInt32NoTag(114);
+                output.writeUInt32NoTag(106);
                 output.writeUInt32NoTag(this.allUnlockedBgmIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.allUnlockedBgmIdList_.size(); i++) {
@@ -236,7 +236,7 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getAllUnlockedBgmIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 14)) + getAllUnlockedBgmIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getAllUnlockedBgmIdListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -326,7 +326,7 @@ public final class HomeAllUnlockedBgmIdListNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return HomeAllUnlockedBgmIdListNotifyOuterClass.f756x901ceb18.ensureFieldAccessorsInitialized(HomeAllUnlockedBgmIdListNotify.class, Builder.class);
+                return HomeAllUnlockedBgmIdListNotifyOuterClass.f740x901ceb18.ensureFieldAccessorsInitialized(HomeAllUnlockedBgmIdListNotify.class, Builder.class);
             }
 
             private Builder() {

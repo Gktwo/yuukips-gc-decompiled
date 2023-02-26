@@ -25,13 +25,13 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
     protected transient boolean containsNull;
 
     /* renamed from: n */
-    protected transient int f2724n;
+    protected transient int f2688n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2725f;
+    protected final float f2689f;
     private static final Collector<Object, ?, ObjectOpenHashSet<Object>> TO_SET_COLLECTOR = Collector.of(ObjectOpenHashSet::new, (v0, v1) -> {
         v0.add(v1);
     }, (v0, v1) -> {
@@ -44,13 +44,13 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2725f = f;
+            this.f2689f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2724n = arraySize;
+            this.f2688n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2724n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2724n, f);
-            this.key = (K[]) new Object[this.f2724n + 1];
+            this.mask = this.f2688n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2688n, f);
+            this.key = (K[]) new Object[this.f2688n + 1];
         }
     }
 
@@ -185,22 +185,22 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2725f);
-        if (needed > this.f2724n) {
+        int needed = HashCommon.arraySize(capacity, this.f2689f);
+        if (needed > this.f2688n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2725f)))));
-        if (needed > this.f2724n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2689f)))));
+        if (needed > this.f2688n) {
             rehash(needed);
         }
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public boolean addAll(Collection<? extends K> c) {
-        if (((double) this.f2725f) <= 0.5d) {
+        if (((double) this.f2689f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -240,7 +240,7 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
         if (i2 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f2725f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f2689f));
         return true;
     }
 
@@ -266,14 +266,14 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
             }
             key[pos] = k;
         } else if (this.containsNull) {
-            return this.key[this.f2724n];
+            return this.key[this.f2688n];
         } else {
             this.containsNull = true;
         }
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2725f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2689f));
         }
         return k;
     }
@@ -310,21 +310,21 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
     private boolean removeEntry(int pos) {
         this.size--;
         shiftKeys(pos);
-        if (this.f2724n <= this.minN || this.size >= this.maxFill / 4 || this.f2724n <= 16) {
+        if (this.f2688n <= this.minN || this.size >= this.maxFill / 4 || this.f2688n <= 16) {
             return true;
         }
-        rehash(this.f2724n / 2);
+        rehash(this.f2688n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f2724n] = null;
+        this.key[this.f2688n] = null;
         this.size--;
-        if (this.f2724n <= this.minN || this.size >= this.maxFill / 4 || this.f2724n <= 16) {
+        if (this.f2688n <= this.minN || this.size >= this.maxFill / 4 || this.f2688n <= 16) {
             return true;
         }
-        rehash(this.f2724n / 2);
+        rehash(this.f2688n / 2);
         return true;
     }
 
@@ -388,7 +388,7 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
     public K get(Object k) {
         K curr;
         if (k == null) {
-            return this.key[this.f2724n];
+            return this.key[this.f2688n];
         }
         K[] key = this.key;
         int mix = HashCommon.mix(k.hashCode()) & this.mask;
@@ -438,20 +438,20 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
         int last;
 
         /* renamed from: c */
-        int f2726c;
+        int f2690c;
         boolean mustReturnNull;
         ObjectArrayList<K> wrapped;
 
         private SetIterator() {
-            this.pos = ObjectOpenHashSet.this.f2724n;
+            this.pos = ObjectOpenHashSet.this.f2688n;
             this.last = -1;
-            this.f2726c = ObjectOpenHashSet.this.size;
+            this.f2690c = ObjectOpenHashSet.this.size;
             this.mustReturnNull = ObjectOpenHashSet.this.containsNull;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2726c != 0;
+            return this.f2690c != 0;
         }
 
         @Override // java.util.Iterator
@@ -459,11 +459,11 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2726c--;
+            this.f2690c--;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = ObjectOpenHashSet.this.f2724n;
-                return ObjectOpenHashSet.this.key[ObjectOpenHashSet.this.f2724n];
+                this.last = ObjectOpenHashSet.this.f2688n;
+                return ObjectOpenHashSet.this.key[ObjectOpenHashSet.this.f2688n];
             }
             K[] key = ObjectOpenHashSet.this.key;
             do {
@@ -522,9 +522,9 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == ObjectOpenHashSet.this.f2724n) {
+            if (this.last == ObjectOpenHashSet.this.f2688n) {
                 ObjectOpenHashSet.this.containsNull = false;
-                ObjectOpenHashSet.this.key[ObjectOpenHashSet.this.f2724n] = null;
+                ObjectOpenHashSet.this.key[ObjectOpenHashSet.this.f2688n] = null;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -542,22 +542,22 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
             K[] key = ObjectOpenHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = ObjectOpenHashSet.this.f2724n;
-                action.accept((Object) key[ObjectOpenHashSet.this.f2724n]);
-                this.f2726c--;
+                this.last = ObjectOpenHashSet.this.f2688n;
+                action.accept((Object) key[ObjectOpenHashSet.this.f2688n]);
+                this.f2690c--;
             }
-            while (this.f2726c != 0) {
+            while (this.f2690c != 0) {
                 int i = this.pos - 1;
                 this.pos = i;
                 if (i < 0) {
                     this.last = Integer.MIN_VALUE;
                     action.accept((K) this.wrapped.get((-this.pos) - 1));
-                    this.f2726c--;
+                    this.f2690c--;
                 } else if (key[this.pos] != null) {
                     int i2 = this.pos;
                     this.last = i2;
                     action.accept((Object) key[i2]);
-                    this.f2726c--;
+                    this.f2690c--;
                 }
             }
         }
@@ -577,22 +577,22 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
         int max;
 
         /* renamed from: c */
-        int f2727c;
+        int f2691c;
         boolean mustReturnNull;
         boolean hasSplit;
 
         SetSpliterator() {
             this.pos = 0;
-            this.max = ObjectOpenHashSet.this.f2724n;
-            this.f2727c = 0;
+            this.max = ObjectOpenHashSet.this.f2688n;
+            this.f2691c = 0;
             this.mustReturnNull = ObjectOpenHashSet.this.containsNull;
             this.hasSplit = false;
         }
 
         SetSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = ObjectOpenHashSet.this.f2724n;
-            this.f2727c = 0;
+            this.max = ObjectOpenHashSet.this.f2688n;
+            this.f2691c = 0;
             this.mustReturnNull = ObjectOpenHashSet.this.containsNull;
             this.hasSplit = false;
             this.pos = pos;
@@ -605,14 +605,14 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
         public boolean tryAdvance(Consumer<? super K> action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2727c++;
-                action.accept((Object) ObjectOpenHashSet.this.key[ObjectOpenHashSet.this.f2724n]);
+                this.f2691c++;
+                action.accept((Object) ObjectOpenHashSet.this.key[ObjectOpenHashSet.this.f2688n]);
                 return true;
             }
             K[] key = ObjectOpenHashSet.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != null) {
-                    this.f2727c++;
+                    this.f2691c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept((Object) key[i]);
@@ -628,13 +628,13 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
             K[] key = ObjectOpenHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                action.accept((Object) key[ObjectOpenHashSet.this.f2724n]);
-                this.f2727c++;
+                action.accept((Object) key[ObjectOpenHashSet.this.f2688n]);
+                this.f2691c++;
             }
             while (this.pos < this.max) {
                 if (key[this.pos] != null) {
                     action.accept((Object) key[this.pos]);
-                    this.f2727c++;
+                    this.f2691c++;
                 }
                 this.pos++;
             }
@@ -648,9 +648,9 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
         @Override // java.util.Spliterator
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (ObjectOpenHashSet.this.size - this.f2727c);
+                return (long) (ObjectOpenHashSet.this.size - this.f2691c);
             }
-            return Math.min((long) (ObjectOpenHashSet.this.size - this.f2727c), ((long) ((((double) ObjectOpenHashSet.this.realSize()) / ((double) ObjectOpenHashSet.this.f2724n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (ObjectOpenHashSet.this.size - this.f2691c), ((long) ((((double) ObjectOpenHashSet.this.realSize()) / ((double) ObjectOpenHashSet.this.f2688n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -776,10 +776,10 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
     @Override // java.lang.Iterable
     public void forEach(Consumer<? super K> action) {
         if (this.containsNull) {
-            action.accept((Object) this.key[this.f2724n]);
+            action.accept((Object) this.key[this.f2688n]);
         }
         K[] key = this.key;
-        int pos = this.f2724n;
+        int pos = this.f2688n;
         while (true) {
             pos--;
             if (pos == 0) {
@@ -796,8 +796,8 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2725f)));
-        if (l >= this.f2724n || this.size > HashCommon.maxFill(l, this.f2725f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2689f)));
+        if (l >= this.f2688n || this.size > HashCommon.maxFill(l, this.f2689f)) {
             return true;
         }
         try {
@@ -813,7 +813,7 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
         K[] key = this.key;
         int mask = newN - 1;
         K[] newKey = (K[]) new Object[newN + 1];
-        int i2 = this.f2724n;
+        int i2 = this.f2688n;
         int j = realSize();
         while (true) {
             j--;
@@ -831,9 +831,9 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
                 }
                 newKey[pos] = key[i2];
             } else {
-                this.f2724n = newN;
+                this.f2688n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2724n, this.f2725f);
+                this.maxFill = HashCommon.maxFill(this.f2688n, this.f2689f);
                 this.key = newKey;
                 return;
             }
@@ -894,10 +894,10 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
         int pos;
         int i;
         s.defaultReadObject();
-        this.f2724n = HashCommon.arraySize(this.size, this.f2725f);
-        this.maxFill = HashCommon.maxFill(this.f2724n, this.f2725f);
-        this.mask = this.f2724n - 1;
-        K[] key = (K[]) new Object[this.f2724n + 1];
+        this.f2688n = HashCommon.arraySize(this.size, this.f2689f);
+        this.maxFill = HashCommon.maxFill(this.f2688n, this.f2689f);
+        this.mask = this.f2688n - 1;
+        K[] key = (K[]) new Object[this.f2688n + 1];
         this.key = key;
         int i2 = this.size;
         while (true) {
@@ -905,7 +905,7 @@ public class ObjectOpenHashSet<K> extends AbstractObjectSet<K> implements Serial
             if (i2 != 0) {
                 Object readObject = s.readObject();
                 if (readObject == null) {
-                    pos = this.f2724n;
+                    pos = this.f2688n;
                     this.containsNull = true;
                 } else {
                     int mix = HashCommon.mix(readObject.hashCode()) & this.mask;

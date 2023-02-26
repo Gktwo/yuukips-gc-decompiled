@@ -25,12 +25,12 @@ public final class HeadersPlugin implements Plugin {
     public void apply(@NotNull Javalin app) {
         Intrinsics.checkNotNullParameter(app, "app");
         app.before((v1) -> {
-            m5768apply$lambda1(r1, v1);
+            m5765apply$lambda1(r1, v1);
         });
     }
 
     /* renamed from: apply$lambda-1  reason: not valid java name */
-    private static final void m5768apply$lambda1(HeadersPlugin this$0, Context ctx) {
+    private static final void m5765apply$lambda1(HeadersPlugin this$0, Context ctx) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(ctx, "ctx");
         for (Map.Entry element$iv : this$0.headers.getHeaders().entrySet()) {

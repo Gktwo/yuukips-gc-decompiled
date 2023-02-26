@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ShopConcertProductOuterClass.class */
 public final class ShopConcertProductOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018ShopConcertProduct.proto\"¡\u0001\n\u0012ShopConcertProduct\u0012\u0012\n\nproduct_id\u0018\u0001 \u0001(\t\u0012\u0012\n\nprice_tier\u0018\u0002 \u0001(\t\u0012\u0014\n\fobtain_count\u0018\u0003 \u0001(\r\u0012\u0014\n\fobtain_limit\u0018\u0004 \u0001(\r\u0012\u0012\n\nbegin_time\u0018\u0005 \u0001(\r\u0012\u0010\n\bend_time\u0018\u0006 \u0001(\r\u0012\u0011\n\tbuy_times\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018ShopConcertProduct.proto\"\u0001\n\u0012ShopConcertProduct\u0012\u0011\n\tproductId\u0018\u0001 \u0001(\t\u0012\u0011\n\tpriceTier\u0018\u0002 \u0001(\t\u0012\u0013\n\u000bobtainCount\u0018\u0003 \u0001(\r\u0012\u0013\n\u000bobtainLimit\u0018\u0004 \u0001(\r\u0012\u0011\n\tbeginTime\u0018\u0005 \u0001(\r\u0012\u000f\n\u0007endTime\u0018\u0006 \u0001(\r\u0012\u0010\n\bbuyTimes\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ShopConcertProduct_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ShopConcertProduct_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ShopConcertProduct_descriptor, new String[]{"ProductId", "PriceTier", "ObtainCount", "ObtainLimit", "BeginTime", "EndTime", "BuyTimes"});
 
@@ -57,19 +57,19 @@ public final class ShopConcertProductOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ShopConcertProductOuterClass$ShopConcertProduct.class */
     public static final class ShopConcertProduct extends GeneratedMessageV3 implements ShopConcertProductOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PRODUCT_ID_FIELD_NUMBER = 1;
+        public static final int PRODUCTID_FIELD_NUMBER = 1;
         private volatile Object productId_;
-        public static final int PRICE_TIER_FIELD_NUMBER = 2;
+        public static final int PRICETIER_FIELD_NUMBER = 2;
         private volatile Object priceTier_;
-        public static final int OBTAIN_COUNT_FIELD_NUMBER = 3;
+        public static final int OBTAINCOUNT_FIELD_NUMBER = 3;
         private int obtainCount_;
-        public static final int OBTAIN_LIMIT_FIELD_NUMBER = 4;
+        public static final int OBTAINLIMIT_FIELD_NUMBER = 4;
         private int obtainLimit_;
-        public static final int BEGIN_TIME_FIELD_NUMBER = 5;
+        public static final int BEGINTIME_FIELD_NUMBER = 5;
         private int beginTime_;
-        public static final int END_TIME_FIELD_NUMBER = 6;
+        public static final int ENDTIME_FIELD_NUMBER = 6;
         private int endTime_;
-        public static final int BUY_TIMES_FIELD_NUMBER = 7;
+        public static final int BUYTIMES_FIELD_NUMBER = 7;
         private int buyTimes_;
         private byte memoizedIsInitialized;
         private static final ShopConcertProduct DEFAULT_INSTANCE = new ShopConcertProduct();

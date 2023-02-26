@@ -34,7 +34,7 @@ public final class ConnectionDispersionTest {
     }
 
     private static synchronized boolean isReady() {
-        return ready_count == 600;
+        return ready_count == NUM_THREADS;
     }
 
     private static synchronized void start() {
@@ -78,8 +78,8 @@ public final class ConnectionDispersionTest {
             setDataSource(ds);
             ds.getConnection().close();
             System.err.println("Generating thread list...");
-            List threads = new ArrayList(600);
-            for (int i = 0; i < 600; i++) {
+            List threads = new ArrayList((int) NUM_THREADS);
+            for (int i = 0; i < NUM_THREADS; i++) {
                 CompeteThread competeThread = new CompeteThread();
                 competeThread.start();
                 threads.add(competeThread);
@@ -99,11 +99,11 @@ public final class ConnectionDispersionTest {
             System.err.println("Stopping the race.");
             stop();
             System.err.println("Waiting for Threads to complete.");
-            for (int i2 = 0; i2 < 600; i2++) {
+            for (int i2 = 0; i2 < NUM_THREADS; i2++) {
                 ((Thread) threads.get(i2)).join();
             }
             Map outcomeMap = new TreeMap();
-            for (int i3 = 0; i3 < 600; i3++) {
+            for (int i3 = 0; i3 < NUM_THREADS; i3++) {
                 Integer outcome = new Integer(((CompeteThread) threads.get(i3)).getCount());
                 Integer old = (Integer) outcomeMap.get(outcome);
                 if (old == null) {

@@ -16,7 +16,6 @@ import org.eclipse.jetty.http.HttpHeader;
 import org.eclipse.jetty.http.HttpHeaderValue;
 import org.eclipse.jetty.http.HttpMethod;
 import org.eclipse.jetty.http.HttpParser;
-import org.eclipse.jetty.http.HttpStatus;
 import org.eclipse.jetty.http.HttpURI;
 import org.eclipse.jetty.http.HttpVersion;
 import org.eclipse.jetty.http.MetaData;
@@ -106,7 +105,7 @@ public class HttpChannelOverHttp extends HttpChannel implements HttpParser.Reque
                 case EXPECT:
                     if (this._metadata.getHttpVersion() == HttpVersion.HTTP_1_1) {
                         HttpHeaderValue expect = HttpHeaderValue.CACHE.get(value);
-                        switch (C56821.$SwitchMap$org$eclipse$jetty$http$HttpHeaderValue[(expect == null ? HttpHeaderValue.UNKNOWN : expect).ordinal()]) {
+                        switch (C56741.$SwitchMap$org$eclipse$jetty$http$HttpHeaderValue[(expect == null ? HttpHeaderValue.UNKNOWN : expect).ordinal()]) {
                             case 1:
                                 this._expect100Continue = true;
                                 break;
@@ -273,7 +272,7 @@ public class HttpChannelOverHttp extends HttpChannel implements HttpParser.Reque
                 if (HttpMethod.PRI.m40is(this._metadata.getMethod()) && "*".equals(this._metadata.getURI().toString()) && this._fields.size() == 0 && upgrade()) {
                     return true;
                 }
-                badMessage(new BadMessageException((int) HttpStatus.UPGRADE_REQUIRED_426));
+                badMessage(new BadMessageException(426));
                 this._httpConnection.getParser().close();
                 return false;
             default:

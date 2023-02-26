@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarUpgradeReqOuterClass.class */
 public final class AvatarUpgradeReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016AvatarUpgradeReq.proto\"G\n\u0010AvatarUpgradeReq\u0012\u000f\n\u0007item_id\u0018\f \u0001(\r\u0012\r\n\u0005count\u0018\u0007 \u0001(\r\u0012\u0013\n\u000bavatar_guid\u0018\u0001 \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016AvatarUpgradeReq.proto\"E\n\u0010AvatarUpgradeReq\u0012\u000e\n\u0006itemId\u0018\u0001 \u0001(\r\u0012\r\n\u0005count\u0018\t \u0001(\r\u0012\u0012\n\navatarGuid\u0018\f \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AvatarUpgradeReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarUpgradeReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarUpgradeReq_descriptor, new String[]{"ItemId", "Count", "AvatarGuid"});
 
@@ -46,11 +46,11 @@ public final class AvatarUpgradeReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarUpgradeReqOuterClass$AvatarUpgradeReq.class */
     public static final class AvatarUpgradeReq extends GeneratedMessageV3 implements AvatarUpgradeReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ITEM_ID_FIELD_NUMBER = 12;
+        public static final int ITEMID_FIELD_NUMBER = 1;
         private int itemId_;
-        public static final int COUNT_FIELD_NUMBER = 7;
+        public static final int COUNT_FIELD_NUMBER = 9;
         private int count_;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 1;
+        public static final int AVATARGUID_FIELD_NUMBER = 12;
         private long avatarGuid_;
         private byte memoizedIsInitialized;
         private static final AvatarUpgradeReq DEFAULT_INSTANCE = new AvatarUpgradeReq();
@@ -99,13 +99,13 @@ public final class AvatarUpgradeReqOuterClass {
                                     done = true;
                                     break;
                                 case 8:
-                                    this.avatarGuid_ = input.readUInt64();
+                                    this.itemId_ = input.readUInt32();
                                     break;
-                                case 56:
+                                case 72:
                                     this.count_ = input.readUInt32();
                                     break;
                                 case 96:
-                                    this.itemId_ = input.readUInt32();
+                                    this.avatarGuid_ = input.readUInt64();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -167,14 +167,14 @@ public final class AvatarUpgradeReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.avatarGuid_ != 0) {
-                output.writeUInt64(1, this.avatarGuid_);
+            if (this.itemId_ != 0) {
+                output.writeUInt32(1, this.itemId_);
             }
             if (this.count_ != 0) {
-                output.writeUInt32(7, this.count_);
+                output.writeUInt32(9, this.count_);
             }
-            if (this.itemId_ != 0) {
-                output.writeUInt32(12, this.itemId_);
+            if (this.avatarGuid_ != 0) {
+                output.writeUInt64(12, this.avatarGuid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class AvatarUpgradeReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.avatarGuid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(1, this.avatarGuid_);
+            if (this.itemId_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.itemId_);
             }
             if (this.count_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.count_);
+                size2 += CodedOutputStream.computeUInt32Size(9, this.count_);
             }
-            if (this.itemId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.itemId_);
+            if (this.avatarGuid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(12, this.avatarGuid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -217,7 +217,7 @@ public final class AvatarUpgradeReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getItemId())) + 7)) + getCount())) + 1)) + Internal.hashLong(getAvatarGuid()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getItemId())) + 9)) + getCount())) + 12)) + Internal.hashLong(getAvatarGuid()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

@@ -2,9 +2,8 @@ package com.sun.jna;
 
 import java.lang.reflect.InvocationTargetException;
 
-/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:com/sun/jna/Klass.class */
-public abstract class Klass {
+abstract class Klass {
     private Klass() {
     }
 

@@ -8,7 +8,7 @@ public class DeviceInfo implements Serializable {
     @SerializedName(value = "ip", alternate = {"Ip"})
 
     /* renamed from: ip */
-    private String f960ip;
+    private String f925ip;
     @SerializedName(value = "plat", alternate = {"Plat"})
     private Integer plat;
     @SerializedName(value = "device_id", alternate = {"deviceId"})
@@ -26,18 +26,18 @@ public class DeviceInfo implements Serializable {
     @SerializedName(value = "os", alternate = {"Os"})
 
     /* renamed from: os */
-    private String f961os;
+    private String f926os;
     @SerializedName(value = "channel_id", alternate = {"channelId"})
     private String channelId;
     @SerializedName(value = "channel_subid", alternate = {"channelSubid"})
     private String channelSubid;
 
     public String getIp() {
-        return this.f960ip;
+        return this.f925ip;
     }
 
     public void setIp(String ip) {
-        this.f960ip = ip;
+        this.f925ip = ip;
     }
 
     public Integer getPlat() {
@@ -97,11 +97,11 @@ public class DeviceInfo implements Serializable {
     }
 
     public String getOs() {
-        return this.f961os;
+        return this.f926os;
     }
 
     public void setOs(String os) {
-        this.f961os = os;
+        this.f926os = os;
     }
 
     public String getChannelId() {

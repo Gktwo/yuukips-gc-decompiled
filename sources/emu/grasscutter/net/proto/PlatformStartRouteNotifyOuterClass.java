@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlatformStartRouteNotifyOuterClass.class */
 public final class PlatformStartRouteNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001ePlatformStartRouteNotify.proto\u001a\u0012PlatformInfo.proto\"b\n\u0018PlatformStartRouteNotify\u0012\u0011\n\tentity_id\u0018\f \u0001(\r\u0012\u0012\n\nscene_time\u0018\u0007 \u0001(\r\u0012\u001f\n\bplatform\u0018\u0002 \u0001(\u000b2\r.PlatformInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PlatformInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001ePlatformStartRouteNotify.proto\u001a\u0012PlatformInfo.proto\"`\n\u0018PlatformStartRouteNotify\u0012\u0010\n\bentityId\u0018\u0002 \u0001(\r\u0012\u0011\n\tsceneTime\u0018\u0006 \u0001(\r\u0012\u001f\n\bplatform\u0018\u0007 \u0001(\u000b2\r.PlatformInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PlatformInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_PlatformStartRouteNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlatformStartRouteNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlatformStartRouteNotify_descriptor, new String[]{"EntityId", "SceneTime", "Platform"});
 
@@ -51,11 +51,11 @@ public final class PlatformStartRouteNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlatformStartRouteNotifyOuterClass$PlatformStartRouteNotify.class */
     public static final class PlatformStartRouteNotify extends GeneratedMessageV3 implements PlatformStartRouteNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTITY_ID_FIELD_NUMBER = 12;
+        public static final int ENTITYID_FIELD_NUMBER = 2;
         private int entityId_;
-        public static final int SCENE_TIME_FIELD_NUMBER = 7;
+        public static final int SCENETIME_FIELD_NUMBER = 6;
         private int sceneTime_;
-        public static final int PLATFORM_FIELD_NUMBER = 2;
+        public static final int PLATFORM_FIELD_NUMBER = 7;
         private PlatformInfoOuterClass.PlatformInfo platform_;
         private byte memoizedIsInitialized;
         private static final PlatformStartRouteNotify DEFAULT_INSTANCE = new PlatformStartRouteNotify();
@@ -103,7 +103,13 @@ public final class PlatformStartRouteNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 18:
+                                case 16:
+                                    this.entityId_ = input.readUInt32();
+                                    break;
+                                case 48:
+                                    this.sceneTime_ = input.readUInt32();
+                                    break;
+                                case 58:
                                     PlatformInfoOuterClass.PlatformInfo.Builder subBuilder = this.platform_ != null ? this.platform_.toBuilder() : null;
                                     this.platform_ = (PlatformInfoOuterClass.PlatformInfo) input.readMessage(PlatformInfoOuterClass.PlatformInfo.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -113,12 +119,6 @@ public final class PlatformStartRouteNotifyOuterClass {
                                         this.platform_ = subBuilder.buildPartial();
                                         break;
                                     }
-                                case 56:
-                                    this.sceneTime_ = input.readUInt32();
-                                    break;
-                                case 96:
-                                    this.entityId_ = input.readUInt32();
-                                    break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                         break;
@@ -189,14 +189,14 @@ public final class PlatformStartRouteNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.platform_ != null) {
-                output.writeMessage(2, getPlatform());
+            if (this.entityId_ != 0) {
+                output.writeUInt32(2, this.entityId_);
             }
             if (this.sceneTime_ != 0) {
-                output.writeUInt32(7, this.sceneTime_);
+                output.writeUInt32(6, this.sceneTime_);
             }
-            if (this.entityId_ != 0) {
-                output.writeUInt32(12, this.entityId_);
+            if (this.platform_ != null) {
+                output.writeMessage(7, getPlatform());
             }
             this.unknownFields.writeTo(output);
         }
@@ -208,14 +208,14 @@ public final class PlatformStartRouteNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.platform_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(2, getPlatform());
+            if (this.entityId_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.entityId_);
             }
             if (this.sceneTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.sceneTime_);
+                size2 += CodedOutputStream.computeUInt32Size(6, this.sceneTime_);
             }
-            if (this.entityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.entityId_);
+            if (this.platform_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(7, getPlatform());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -242,9 +242,9 @@ public final class PlatformStartRouteNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getEntityId())) + 7)) + getSceneTime();
+            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getEntityId())) + 6)) + getSceneTime();
             if (hasPlatform()) {
-                hash = (53 * ((37 * hash) + 2)) + getPlatform().hashCode();
+                hash = (53 * ((37 * hash) + 7)) + getPlatform().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

@@ -12,7 +12,7 @@ public class JTAJobRunShell extends JobRunShell {
     private final Integer transactionTimeout;
 
     /* renamed from: ut */
-    private UserTransaction f3368ut;
+    private UserTransaction f3332ut;
 
     public JTAJobRunShell(Scheduler scheduler, TriggerFiredBundle bndle) {
         super(scheduler, bndle);
@@ -32,12 +32,12 @@ public class JTAJobRunShell extends JobRunShell {
             beganSuccessfully = false;
             try {
                 getLog().debug("Looking up UserTransaction.");
-                this.f3368ut = UserTransactionHelper.lookupUserTransaction();
+                this.f3332ut = UserTransactionHelper.lookupUserTransaction();
                 if (this.transactionTimeout != null) {
-                    this.f3368ut.setTransactionTimeout(this.transactionTimeout.intValue());
+                    this.f3332ut.setTransactionTimeout(this.transactionTimeout.intValue());
                 }
                 getLog().debug("Beginning UserTransaction.");
-                this.f3368ut.begin();
+                this.f3332ut.begin();
                 beganSuccessfully = true;
                 if (1 == 0) {
                     cleanupUserTransaction();
@@ -66,12 +66,12 @@ public class JTAJobRunShell extends JobRunShell {
         /*
             r5 = this;
             r0 = r5
-            javax.transaction.UserTransaction r0 = r0.f3368ut
+            javax.transaction.UserTransaction r0 = r0.f3332ut
             if (r0 != 0) goto L_0x0008
             return
         L_0x0008:
             r0 = r5
-            javax.transaction.UserTransaction r0 = r0.f3368ut     // Catch: all -> 0x0082, SystemException -> 0x0025
+            javax.transaction.UserTransaction r0 = r0.f3332ut     // Catch: all -> 0x0082, SystemException -> 0x0025
             int r0 = r0.getStatus()     // Catch: all -> 0x0082, SystemException -> 0x0025
             r1 = 1
             if (r0 != r1) goto L_0x0022
@@ -99,7 +99,7 @@ public class JTAJobRunShell extends JobRunShell {
             java.lang.String r1 = "Committing UserTransaction."
             r0.debug(r1)     // Catch: Exception -> 0x004c, all -> 0x0082
             r0 = r5
-            javax.transaction.UserTransaction r0 = r0.f3368ut     // Catch: Exception -> 0x004c, all -> 0x0082
+            javax.transaction.UserTransaction r0 = r0.f3332ut     // Catch: Exception -> 0x004c, all -> 0x0082
             r0.commit()     // Catch: Exception -> 0x004c, all -> 0x0082
             goto L_0x007b
         L_0x004c:
@@ -116,7 +116,7 @@ public class JTAJobRunShell extends JobRunShell {
             java.lang.String r1 = "Rolling-back UserTransaction."
             r0.debug(r1)     // Catch: Exception -> 0x006f, all -> 0x0082
             r0 = r5
-            javax.transaction.UserTransaction r0 = r0.f3368ut     // Catch: Exception -> 0x006f, all -> 0x0082
+            javax.transaction.UserTransaction r0 = r0.f3332ut     // Catch: Exception -> 0x006f, all -> 0x0082
             r0.rollback()     // Catch: Exception -> 0x006f, all -> 0x0082
             goto L_0x007b
         L_0x006f:
@@ -150,9 +150,9 @@ public class JTAJobRunShell extends JobRunShell {
     }
 
     private void cleanupUserTransaction() {
-        if (this.f3368ut != null) {
-            UserTransactionHelper.returnUserTransaction(this.f3368ut);
-            this.f3368ut = null;
+        if (this.f3332ut != null) {
+            UserTransactionHelper.returnUserTransaction(this.f3332ut);
+            this.f3332ut = null;
         }
     }
 }

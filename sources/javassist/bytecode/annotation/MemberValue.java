@@ -11,7 +11,7 @@ import okhttp3.HttpUrl;
 public abstract class MemberValue {
 
     /* renamed from: cp */
-    ConstPool f3074cp;
+    ConstPool f3038cp;
     char tag;
 
     /* access modifiers changed from: package-private */
@@ -26,7 +26,7 @@ public abstract class MemberValue {
 
     /* access modifiers changed from: package-private */
     public MemberValue(char tag, ConstPool cp) {
-        this.f3074cp = cp;
+        this.f3038cp = cp;
         this.tag = tag;
     }
 

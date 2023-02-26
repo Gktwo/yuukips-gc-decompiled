@@ -197,30 +197,30 @@ public abstract class AbstractByte2ShortMap extends AbstractByte2ShortFunction i
                 return new ByteIterator() { // from class: it.unimi.dsi.fastutil.bytes.AbstractByte2ShortMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Byte2ShortMap.Entry> f1115i;
+                    private final ObjectIterator<Byte2ShortMap.Entry> f1079i;
 
                     {
-                        this.f1115i = Byte2ShortMaps.fastIterator(AbstractByte2ShortMap.this);
+                        this.f1079i = Byte2ShortMaps.fastIterator(AbstractByte2ShortMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
                     public byte nextByte() {
-                        return this.f1115i.next().getByteKey();
+                        return this.f1079i.next().getByteKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1115i.hasNext();
+                        return this.f1079i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1115i.remove();
+                        this.f1079i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
                     public void forEachRemaining(ByteConsumer action) {
-                        this.f1115i.forEachRemaining(entry -> {
+                        this.f1079i.forEachRemaining(entry -> {
                             action.accept(entry.getByteKey());
                         });
                     }
@@ -260,30 +260,30 @@ public abstract class AbstractByte2ShortMap extends AbstractByte2ShortFunction i
                 return new ShortIterator() { // from class: it.unimi.dsi.fastutil.bytes.AbstractByte2ShortMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Byte2ShortMap.Entry> f1116i;
+                    private final ObjectIterator<Byte2ShortMap.Entry> f1080i;
 
                     {
-                        this.f1116i = Byte2ShortMaps.fastIterator(AbstractByte2ShortMap.this);
+                        this.f1080i = Byte2ShortMaps.fastIterator(AbstractByte2ShortMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
                     public short nextShort() {
-                        return this.f1116i.next().getShortValue();
+                        return this.f1080i.next().getShortValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1116i.hasNext();
+                        return this.f1080i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1116i.remove();
+                        this.f1080i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
                     public void forEachRemaining(ShortConsumer action) {
-                        this.f1116i.forEachRemaining(entry -> {
+                        this.f1080i.forEachRemaining(entry -> {
                             action.accept(entry.getShortValue());
                         });
                     }

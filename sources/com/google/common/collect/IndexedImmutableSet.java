@@ -3,7 +3,6 @@ package com.google.common.collect;
 import com.google.common.annotations.GwtCompatible;
 import com.google.common.annotations.GwtIncompatible;
 import com.google.common.base.Preconditions;
-import emu.grasscutter.net.proto.ActivityInfoOuterClass;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 
@@ -20,7 +19,7 @@ public abstract class IndexedImmutableSet<E> extends ImmutableSet<E> {
 
     @Override // com.google.common.collect.ImmutableCollection, java.util.Collection, java.lang.Iterable
     public Spliterator<E> spliterator() {
-        return CollectSpliterators.indexed(size(), ActivityInfoOuterClass.ActivityInfo.GACHA_INFO_FIELD_NUMBER, this::get);
+        return CollectSpliterators.indexed(size(), 1297, this::get);
     }
 
     @Override // java.lang.Iterable

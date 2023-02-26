@@ -30,7 +30,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BreakoutSnapShotOuterClass.class */
 public final class BreakoutSnapShotOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016BreakoutSnapShot.proto\u001a\u0014BreakoutAction.proto\u001a$BreakoutElementReactionCounter.proto\u001a\u001cBreakoutPhysicalObject.proto\u001a\u0018BreakoutSpawnPoint.proto\u001a BreakoutSyncConnectUidInfo.proto\"É\u0005\n\u0010BreakoutSnapShot\u0012\u0018\n\u0010client_game_time\u0018\u0001 \u0001(\u0004\u0012\u0018\n\u0010server_game_time\u0018\u0002 \u0001(\u0004\u0012*\n\tball_list\u0018\u0003 \u0003(\u000b2\u0017.BreakoutPhysicalObject\u00125\n\u0014physical_object_list\u0018\u0004 \u0003(\u000b2\u0017.BreakoutPhysicalObject\u0012$\n\u000baction_list\u0018\u0005 \u0003(\u000b2\u000f.BreakoutAction\u0012\u0012\n\nwave_index\u0018\u0006 \u0001(\r\u0012\u0011\n\tis_finish\u0018\u0007 \u0001(\b\u0012\r\n\u0005score\u0018\b \u0001(\r\u0012\r\n\u0005combo\u0018\t \u0001(\r\u0012\u0011\n\tmax_combo\u0018\n \u0001(\r\u0012\u0012\n\nlife_count\u0018\u000b \u0001(\r\u0012\u0018\n\u0010wave_suite_index\u0018\f \u0001(\r\u0012-\n\u0010spawn_point_list\u0018\r \u0003(\u000b2\u0013.BreakoutSpawnPoint\u0012\u0019\n\u0011remaining_boss_hp\u0018\u000e \u0001(\r\u0012D\n\u001bbrick_element_reaction_list\u0018\u000f \u0003(\u000b2\u001f.BreakoutElementReactionCounter\u0012C\n\u001aball_element_reaction_list\u0018\u0010 \u0003(\u000b2\u001f.BreakoutElementReactionCounter\u00122\n\ruid_info_list\u0018\u0011 \u0003(\u000b2\u001b.BreakoutSyncConnectUidInfo\u00124\n\u0013dynamic_object_list\u0018\u0012 \u0003(\u000b2\u0017.BreakoutPhysicalObject\u0012\u0015\n\rid_index_list\u0018\u0013 \u0003(\r\u0012\u001c\n\u0014raw_client_game_time\u0018\u0014 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BreakoutActionOuterClass.getDescriptor(), BreakoutElementReactionCounterOuterClass.getDescriptor(), BreakoutPhysicalObjectOuterClass.getDescriptor(), BreakoutSpawnPointOuterClass.getDescriptor(), BreakoutSyncConnectUidInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016BreakoutSnapShot.proto\u001a\u001cBreakoutPhysicalObject.proto\u001a\u0014BreakoutAction.proto\u001a\u0018BreakoutSpawnPoint.proto\u001a$BreakoutElementReactionCounter.proto\u001a BreakoutSyncConnectUidInfo.proto\"¨\u0005\n\u0010BreakoutSnapShot\u0012\u0016\n\u000eclientGameTime\u0018\u0001 \u0001(\u0004\u0012\u0016\n\u000eserverGameTime\u0018\u0002 \u0001(\u0004\u0012)\n\bballList\u0018\u0003 \u0003(\u000b2\u0017.BreakoutPhysicalObject\u00123\n\u0012physicalObjectList\u0018\u0004 \u0003(\u000b2\u0017.BreakoutPhysicalObject\u0012#\n\nactionList\u0018\u0005 \u0003(\u000b2\u000f.BreakoutAction\u0012\u0011\n\twaveIndex\u0018\u0006 \u0001(\r\u0012\u0010\n\bisFinish\u0018\u0007 \u0001(\b\u0012\r\n\u0005score\u0018\b \u0001(\r\u0012\r\n\u0005combo\u0018\t \u0001(\r\u0012\u0010\n\bmaxCombo\u0018\n \u0001(\r\u0012\u0011\n\tlifeCount\u0018\u000b \u0001(\r\u0012\u0016\n\u000ewaveSuiteIndex\u0018\f \u0001(\r\u0012+\n\u000espawnPointList\u0018\r \u0003(\u000b2\u0013.BreakoutSpawnPoint\u0012\u0017\n\u000fremainingBossHp\u0018\u000e \u0001(\r\u0012A\n\u0018brickElementReactionList\u0018\u000f \u0003(\u000b2\u001f.BreakoutElementReactionCounter\u0012@\n\u0017ballElementReactionList\u0018\u0010 \u0003(\u000b2\u001f.BreakoutElementReactionCounter\u00120\n\u000buidInfoList\u0018\u0011 \u0003(\u000b2\u001b.BreakoutSyncConnectUidInfo\u00122\n\u0011dynamicObjectList\u0018\u0012 \u0003(\u000b2\u0017.BreakoutPhysicalObject\u0012\u0013\n\u000bidIndexList\u0018\u0013 \u0003(\r\u0012\u0019\n\u0011rawClientGameTime\u0018\u0014 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BreakoutPhysicalObjectOuterClass.getDescriptor(), BreakoutActionOuterClass.getDescriptor(), BreakoutSpawnPointOuterClass.getDescriptor(), BreakoutElementReactionCounterOuterClass.getDescriptor(), BreakoutSyncConnectUidInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_BreakoutSnapShot_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_BreakoutSnapShot_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BreakoutSnapShot_descriptor, new String[]{"ClientGameTime", "ServerGameTime", "BallList", "PhysicalObjectList", "ActionList", "WaveIndex", "IsFinish", "Score", "Combo", "MaxCombo", "LifeCount", "WaveSuiteIndex", "SpawnPointList", "RemainingBossHp", "BrickElementReactionList", "BallElementReactionList", "UidInfoList", "DynamicObjectList", "IdIndexList", "RawClientGameTime"});
 
@@ -158,46 +158,46 @@ public final class BreakoutSnapShotOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BreakoutSnapShotOuterClass$BreakoutSnapShot.class */
     public static final class BreakoutSnapShot extends GeneratedMessageV3 implements BreakoutSnapShotOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CLIENT_GAME_TIME_FIELD_NUMBER = 1;
+        public static final int CLIENTGAMETIME_FIELD_NUMBER = 1;
         private long clientGameTime_;
-        public static final int SERVER_GAME_TIME_FIELD_NUMBER = 2;
+        public static final int SERVERGAMETIME_FIELD_NUMBER = 2;
         private long serverGameTime_;
-        public static final int BALL_LIST_FIELD_NUMBER = 3;
+        public static final int BALLLIST_FIELD_NUMBER = 3;
         private List<BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObject> ballList_;
-        public static final int PHYSICAL_OBJECT_LIST_FIELD_NUMBER = 4;
+        public static final int PHYSICALOBJECTLIST_FIELD_NUMBER = 4;
         private List<BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObject> physicalObjectList_;
-        public static final int ACTION_LIST_FIELD_NUMBER = 5;
+        public static final int ACTIONLIST_FIELD_NUMBER = 5;
         private List<BreakoutActionOuterClass.BreakoutAction> actionList_;
-        public static final int WAVE_INDEX_FIELD_NUMBER = 6;
+        public static final int WAVEINDEX_FIELD_NUMBER = 6;
         private int waveIndex_;
-        public static final int IS_FINISH_FIELD_NUMBER = 7;
+        public static final int ISFINISH_FIELD_NUMBER = 7;
         private boolean isFinish_;
         public static final int SCORE_FIELD_NUMBER = 8;
         private int score_;
         public static final int COMBO_FIELD_NUMBER = 9;
         private int combo_;
-        public static final int MAX_COMBO_FIELD_NUMBER = 10;
+        public static final int MAXCOMBO_FIELD_NUMBER = 10;
         private int maxCombo_;
-        public static final int LIFE_COUNT_FIELD_NUMBER = 11;
+        public static final int LIFECOUNT_FIELD_NUMBER = 11;
         private int lifeCount_;
-        public static final int WAVE_SUITE_INDEX_FIELD_NUMBER = 12;
+        public static final int WAVESUITEINDEX_FIELD_NUMBER = 12;
         private int waveSuiteIndex_;
-        public static final int SPAWN_POINT_LIST_FIELD_NUMBER = 13;
+        public static final int SPAWNPOINTLIST_FIELD_NUMBER = 13;
         private List<BreakoutSpawnPointOuterClass.BreakoutSpawnPoint> spawnPointList_;
-        public static final int REMAINING_BOSS_HP_FIELD_NUMBER = 14;
+        public static final int REMAININGBOSSHP_FIELD_NUMBER = 14;
         private int remainingBossHp_;
-        public static final int BRICK_ELEMENT_REACTION_LIST_FIELD_NUMBER = 15;
+        public static final int BRICKELEMENTREACTIONLIST_FIELD_NUMBER = 15;
         private List<BreakoutElementReactionCounterOuterClass.BreakoutElementReactionCounter> brickElementReactionList_;
-        public static final int BALL_ELEMENT_REACTION_LIST_FIELD_NUMBER = 16;
+        public static final int BALLELEMENTREACTIONLIST_FIELD_NUMBER = 16;
         private List<BreakoutElementReactionCounterOuterClass.BreakoutElementReactionCounter> ballElementReactionList_;
-        public static final int UID_INFO_LIST_FIELD_NUMBER = 17;
+        public static final int UIDINFOLIST_FIELD_NUMBER = 17;
         private List<BreakoutSyncConnectUidInfoOuterClass.BreakoutSyncConnectUidInfo> uidInfoList_;
-        public static final int DYNAMIC_OBJECT_LIST_FIELD_NUMBER = 18;
+        public static final int DYNAMICOBJECTLIST_FIELD_NUMBER = 18;
         private List<BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObject> dynamicObjectList_;
-        public static final int ID_INDEX_LIST_FIELD_NUMBER = 19;
+        public static final int IDINDEXLIST_FIELD_NUMBER = 19;
         private Internal.IntList idIndexList_;
         private int idIndexListMemoizedSerializedSize;
-        public static final int RAW_CLIENT_GAME_TIME_FIELD_NUMBER = 20;
+        public static final int RAWCLIENTGAMETIME_FIELD_NUMBER = 20;
         private int rawClientGameTime_;
         private byte memoizedIsInitialized;
         private static final BreakoutSnapShot DEFAULT_INSTANCE = new BreakoutSnapShot();
@@ -3196,10 +3196,10 @@ public final class BreakoutSnapShotOuterClass {
     }
 
     static {
-        BreakoutActionOuterClass.getDescriptor();
-        BreakoutElementReactionCounterOuterClass.getDescriptor();
         BreakoutPhysicalObjectOuterClass.getDescriptor();
+        BreakoutActionOuterClass.getDescriptor();
         BreakoutSpawnPointOuterClass.getDescriptor();
+        BreakoutElementReactionCounterOuterClass.getDescriptor();
         BreakoutSyncConnectUidInfoOuterClass.getDescriptor();
     }
 }

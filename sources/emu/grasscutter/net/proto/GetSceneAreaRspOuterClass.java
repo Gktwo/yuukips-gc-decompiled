@@ -26,21 +26,19 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetSceneAreaRspOuterClass.class */
 public final class GetSceneAreaRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015GetSceneAreaRsp.proto\u001a\u000eCityInfo.proto\"m\n\u000fGetSceneAreaRsp\u0012\u0010\n\bscene_id\u0018\b \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0001 \u0001(\u0005\u0012\u0014\n\farea_id_list\u0018\u000f \u0003(\r\u0012!\n\u000ecity_info_list\u0018\t \u0003(\u000b2\t.CityInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CityInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015GetSceneAreaRsp.proto\u001a\u000eCityInfo.proto\"h\n\u000fGetSceneAreaRsp\u0012\u0012\n\nareaIdList\u0018\u000b \u0003(\r\u0012\u000f\n\u0007retcode\u0018\u0006 \u0001(\u0005\u0012\u001f\n\fcityInfoList\u0018\u000e \u0003(\u000b2\t.CityInfo\u0012\u000f\n\u0007sceneId\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CityInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_GetSceneAreaRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetSceneAreaRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetSceneAreaRsp_descriptor, new String[]{"SceneId", "Retcode", "AreaIdList", "CityInfoList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetSceneAreaRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetSceneAreaRsp_descriptor, new String[]{"AreaIdList", "Retcode", "CityInfoList", "SceneId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetSceneAreaRspOuterClass$GetSceneAreaRspOrBuilder.class */
     public interface GetSceneAreaRspOrBuilder extends MessageOrBuilder {
-        int getSceneId();
-
-        int getRetcode();
-
         List<Integer> getAreaIdListList();
 
         int getAreaIdListCount();
 
         int getAreaIdList(int i);
+
+        int getRetcode();
 
         List<CityInfoOuterClass.CityInfo> getCityInfoListList();
 
@@ -51,6 +49,8 @@ public final class GetSceneAreaRspOuterClass {
         List<? extends CityInfoOuterClass.CityInfoOrBuilder> getCityInfoListOrBuilderList();
 
         CityInfoOuterClass.CityInfoOrBuilder getCityInfoListOrBuilder(int i);
+
+        int getSceneId();
     }
 
     private GetSceneAreaRspOuterClass() {
@@ -66,15 +66,15 @@ public final class GetSceneAreaRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetSceneAreaRspOuterClass$GetSceneAreaRsp.class */
     public static final class GetSceneAreaRsp extends GeneratedMessageV3 implements GetSceneAreaRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SCENE_ID_FIELD_NUMBER = 8;
-        private int sceneId_;
-        public static final int RETCODE_FIELD_NUMBER = 1;
-        private int retcode_;
-        public static final int AREA_ID_LIST_FIELD_NUMBER = 15;
+        public static final int AREAIDLIST_FIELD_NUMBER = 11;
         private Internal.IntList areaIdList_;
         private int areaIdListMemoizedSerializedSize;
-        public static final int CITY_INFO_LIST_FIELD_NUMBER = 9;
+        public static final int RETCODE_FIELD_NUMBER = 6;
+        private int retcode_;
+        public static final int CITYINFOLIST_FIELD_NUMBER = 14;
         private List<CityInfoOuterClass.CityInfo> cityInfoList_;
+        public static final int SCENEID_FIELD_NUMBER = 2;
+        private int sceneId_;
         private byte memoizedIsInitialized;
         private static final GetSceneAreaRsp DEFAULT_INSTANCE = new GetSceneAreaRsp();
         private static final Parser<GetSceneAreaRsp> PARSER = new AbstractParser<GetSceneAreaRsp>() { // from class: emu.grasscutter.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRsp.1
@@ -127,27 +127,20 @@ public final class GetSceneAreaRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
-                                this.retcode_ = input.readInt32();
-                                break;
-                            case 64:
+                            case 16:
                                 this.sceneId_ = input.readUInt32();
                                 break;
-                            case 74:
-                                if ((mutable_bitField0_ & 2) == 0) {
-                                    this.cityInfoList_ = new ArrayList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
-                                }
-                                this.cityInfoList_.add((CityInfoOuterClass.CityInfo) input.readMessage(CityInfoOuterClass.CityInfo.parser(), extensionRegistry));
+                            case 48:
+                                this.retcode_ = input.readInt32();
                                 break;
-                            case 120:
+                            case 88:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.areaIdList_ = newIntList();
                                     mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                 }
                                 this.areaIdList_.addInt(input.readUInt32());
                                 break;
-                            case 122:
+                            case 90:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.areaIdList_ = newIntList();
@@ -157,6 +150,13 @@ public final class GetSceneAreaRspOuterClass {
                                     this.areaIdList_.addInt(input.readUInt32());
                                 }
                                 input.popLimit(limit);
+                                break;
+                            case 114:
+                                if ((mutable_bitField0_ & 2) == 0) {
+                                    this.cityInfoList_ = new ArrayList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                }
+                                this.cityInfoList_.add((CityInfoOuterClass.CityInfo) input.readMessage(CityInfoOuterClass.CityInfo.parser(), extensionRegistry));
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -174,11 +174,11 @@ public final class GetSceneAreaRspOuterClass {
                     }
                 }
             } finally {
-                if ((mutable_bitField0_ & 2) != 0) {
-                    this.cityInfoList_ = Collections.unmodifiableList(this.cityInfoList_);
-                }
                 if ((mutable_bitField0_ & 1) != 0) {
                     this.areaIdList_.makeImmutable();
+                }
+                if ((mutable_bitField0_ & 2) != 0) {
+                    this.cityInfoList_ = Collections.unmodifiableList(this.cityInfoList_);
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -195,16 +195,6 @@ public final class GetSceneAreaRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRspOrBuilder
-        public int getSceneId() {
-            return this.sceneId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRspOrBuilder
         public List<Integer> getAreaIdListList() {
             return this.areaIdList_;
         }
@@ -217,6 +207,11 @@ public final class GetSceneAreaRspOuterClass {
         @Override // emu.grasscutter.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRspOrBuilder
         public int getAreaIdList(int index) {
             return this.areaIdList_.getInt(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRspOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // emu.grasscutter.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRspOrBuilder
@@ -244,6 +239,11 @@ public final class GetSceneAreaRspOuterClass {
             return this.cityInfoList_.get(index);
         }
 
+        @Override // emu.grasscutter.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRspOrBuilder
+        public int getSceneId() {
+            return this.sceneId_;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -260,21 +260,21 @@ public final class GetSceneAreaRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (this.retcode_ != 0) {
-                output.writeInt32(1, this.retcode_);
-            }
             if (this.sceneId_ != 0) {
-                output.writeUInt32(8, this.sceneId_);
+                output.writeUInt32(2, this.sceneId_);
             }
-            for (int i = 0; i < this.cityInfoList_.size(); i++) {
-                output.writeMessage(9, this.cityInfoList_.get(i));
+            if (this.retcode_ != 0) {
+                output.writeInt32(6, this.retcode_);
             }
             if (getAreaIdListList().size() > 0) {
-                output.writeUInt32NoTag(122);
+                output.writeUInt32NoTag(90);
                 output.writeUInt32NoTag(this.areaIdListMemoizedSerializedSize);
             }
-            for (int i2 = 0; i2 < this.areaIdList_.size(); i2++) {
-                output.writeUInt32NoTag(this.areaIdList_.getInt(i2));
+            for (int i = 0; i < this.areaIdList_.size(); i++) {
+                output.writeUInt32NoTag(this.areaIdList_.getInt(i));
+            }
+            for (int i2 = 0; i2 < this.cityInfoList_.size(); i2++) {
+                output.writeMessage(14, this.cityInfoList_.get(i2));
             }
             this.unknownFields.writeTo(output);
         }
@@ -286,24 +286,24 @@ public final class GetSceneAreaRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(1, this.retcode_);
-            }
             if (this.sceneId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.sceneId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.sceneId_);
             }
-            for (int i = 0; i < this.cityInfoList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(9, this.cityInfoList_.get(i));
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(6, this.retcode_);
             }
             int dataSize = 0;
-            for (int i2 = 0; i2 < this.areaIdList_.size(); i2++) {
-                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.areaIdList_.getInt(i2));
+            for (int i = 0; i < this.areaIdList_.size(); i++) {
+                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.areaIdList_.getInt(i));
             }
             int size3 = size2 + dataSize;
             if (!getAreaIdListList().isEmpty()) {
                 size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.areaIdListMemoizedSerializedSize = dataSize;
+            for (int i2 = 0; i2 < this.cityInfoList_.size(); i2++) {
+                size3 += CodedOutputStream.computeMessageSize(14, this.cityInfoList_.get(i2));
+            }
             int size4 = size3 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size4;
             return size4;
@@ -318,7 +318,7 @@ public final class GetSceneAreaRspOuterClass {
                 return equals(obj);
             }
             GetSceneAreaRsp other = (GetSceneAreaRsp) obj;
-            return getSceneId() == other.getSceneId() && getRetcode() == other.getRetcode() && getAreaIdListList().equals(other.getAreaIdListList()) && getCityInfoListList().equals(other.getCityInfoListList()) && this.unknownFields.equals(other.unknownFields);
+            return getAreaIdListList().equals(other.getAreaIdListList()) && getRetcode() == other.getRetcode() && getCityInfoListList().equals(other.getCityInfoListList()) && getSceneId() == other.getSceneId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -326,16 +326,17 @@ public final class GetSceneAreaRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getSceneId())) + 1)) + getRetcode();
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (getAreaIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 15)) + getAreaIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + getAreaIdListList().hashCode();
             }
+            int hash2 = (53 * ((37 * hash) + 6)) + getRetcode();
             if (getCityInfoListCount() > 0) {
-                hash = (53 * ((37 * hash) + 9)) + getCityInfoListList().hashCode();
+                hash2 = (53 * ((37 * hash2) + 14)) + getCityInfoListList().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
-            this.memoizedHashCode = hash2;
-            return hash2;
+            int hash3 = (29 * ((53 * ((37 * hash2) + 2)) + getSceneId())) + this.unknownFields.hashCode();
+            this.memoizedHashCode = hash3;
+            return hash3;
         }
 
         public static GetSceneAreaRsp parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
@@ -413,11 +414,11 @@ public final class GetSceneAreaRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetSceneAreaRspOuterClass$GetSceneAreaRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements GetSceneAreaRspOrBuilder {
             private int bitField0_;
-            private int sceneId_;
             private int retcode_;
+            private RepeatedFieldBuilderV3<CityInfoOuterClass.CityInfo, CityInfoOuterClass.CityInfo.Builder, CityInfoOuterClass.CityInfoOrBuilder> cityInfoListBuilder_;
+            private int sceneId_;
             private Internal.IntList areaIdList_ = GetSceneAreaRsp.emptyIntList();
             private List<CityInfoOuterClass.CityInfo> cityInfoList_ = Collections.emptyList();
-            private RepeatedFieldBuilderV3<CityInfoOuterClass.CityInfo, CityInfoOuterClass.CityInfo.Builder, CityInfoOuterClass.CityInfoOrBuilder> cityInfoListBuilder_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return GetSceneAreaRspOuterClass.internal_static_GetSceneAreaRsp_descriptor;
@@ -446,16 +447,16 @@ public final class GetSceneAreaRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.sceneId_ = 0;
-                this.retcode_ = 0;
                 this.areaIdList_ = GetSceneAreaRsp.emptyIntList();
                 this.bitField0_ &= -2;
+                this.retcode_ = 0;
                 if (this.cityInfoListBuilder_ == null) {
                     this.cityInfoList_ = Collections.emptyList();
                     this.bitField0_ &= -3;
                 } else {
                     this.cityInfoListBuilder_.clear();
                 }
+                this.sceneId_ = 0;
                 return this;
             }
 
@@ -482,13 +483,12 @@ public final class GetSceneAreaRspOuterClass {
             public GetSceneAreaRsp buildPartial() {
                 GetSceneAreaRsp result = new GetSceneAreaRsp(this);
                 int i = this.bitField0_;
-                result.sceneId_ = this.sceneId_;
-                result.retcode_ = this.retcode_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.areaIdList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.areaIdList_ = this.areaIdList_;
+                result.retcode_ = this.retcode_;
                 if (this.cityInfoListBuilder_ == null) {
                     if ((this.bitField0_ & 2) != 0) {
                         this.cityInfoList_ = Collections.unmodifiableList(this.cityInfoList_);
@@ -498,6 +498,7 @@ public final class GetSceneAreaRspOuterClass {
                 } else {
                     result.cityInfoList_ = this.cityInfoListBuilder_.build();
                 }
+                result.sceneId_ = this.sceneId_;
                 onBuilt();
                 return result;
             }
@@ -545,12 +546,6 @@ public final class GetSceneAreaRspOuterClass {
                 if (other == GetSceneAreaRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getSceneId() != 0) {
-                    setSceneId(other.getSceneId());
-                }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
                 if (!other.areaIdList_.isEmpty()) {
                     if (this.areaIdList_.isEmpty()) {
                         this.areaIdList_ = other.areaIdList_;
@@ -560,6 +555,9 @@ public final class GetSceneAreaRspOuterClass {
                         this.areaIdList_.addAll(other.areaIdList_);
                     }
                     onChanged();
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 if (this.cityInfoListBuilder_ == null) {
                     if (!other.cityInfoList_.isEmpty()) {
@@ -582,6 +580,9 @@ public final class GetSceneAreaRspOuterClass {
                     } else {
                         this.cityInfoListBuilder_.addAllMessages(other.cityInfoList_);
                     }
+                }
+                if (other.getSceneId() != 0) {
+                    setSceneId(other.getSceneId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -613,40 +614,6 @@ public final class GetSceneAreaRspOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRspOrBuilder
-            public int getSceneId() {
-                return this.sceneId_;
-            }
-
-            public Builder setSceneId(int value) {
-                this.sceneId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearSceneId() {
-                this.sceneId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
             }
 
             private void ensureAreaIdListIsMutable() {
@@ -695,6 +662,23 @@ public final class GetSceneAreaRspOuterClass {
             public Builder clearAreaIdList() {
                 this.areaIdList_ = GetSceneAreaRsp.emptyIntList();
                 this.bitField0_ &= -2;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }
@@ -873,6 +857,23 @@ public final class GetSceneAreaRspOuterClass {
                     this.cityInfoList_ = null;
                 }
                 return this.cityInfoListBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRspOrBuilder
+            public int getSceneId() {
+                return this.sceneId_;
+            }
+
+            public Builder setSceneId(int value) {
+                this.sceneId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearSceneId() {
+                this.sceneId_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

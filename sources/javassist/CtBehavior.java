@@ -643,7 +643,7 @@ public abstract class CtBehavior extends CtMember {
         if (ainfo == null) {
             throw new CannotCompileException("no line number info");
         }
-        LineNumberAttribute.C5191Pc pc = ainfo.toNearPc(lineNum);
+        LineNumberAttribute.C5183Pc pc = ainfo.toNearPc(lineNum);
         int lineNum2 = pc.line;
         int index = pc.index;
         if (!modify) {

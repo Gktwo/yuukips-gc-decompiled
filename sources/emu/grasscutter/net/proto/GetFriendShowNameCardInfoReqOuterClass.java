@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetFriendShowNameCardInfoReqOuterClass.class */
 public final class GetFriendShowNameCardInfoReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"GetFriendShowNameCardInfoReq.proto\"+\n\u001cGetFriendShowNameCardInfoReq\u0012\u000b\n\u0003uid\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"GetFriendShowNameCardInfoReq.proto\"+\n\u001cGetFriendShowNameCardInfoReq\u0012\u000b\n\u0003uid\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GetFriendShowNameCardInfoReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetFriendShowNameCardInfoReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetFriendShowNameCardInfoReq_descriptor, new String[]{"Uid"});
 
@@ -41,7 +41,7 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetFriendShowNameCardInfoReqOuterClass$GetFriendShowNameCardInfoReq.class */
     public static final class GetFriendShowNameCardInfoReq extends GeneratedMessageV3 implements GetFriendShowNameCardInfoReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int UID_FIELD_NUMBER = 5;
+        public static final int UID_FIELD_NUMBER = 1;
         private int uid_;
         private byte memoizedIsInitialized;
         private static final GetFriendShowNameCardInfoReq DEFAULT_INSTANCE = new GetFriendShowNameCardInfoReq();
@@ -88,7 +88,7 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 40:
+                            case 8:
                                 this.uid_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.uid_ != 0) {
-                output.writeUInt32(5, this.uid_);
+                output.writeUInt32(1, this.uid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
             }
             int size2 = 0;
             if (this.uid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.uid_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.uid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class GetFriendShowNameCardInfoReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getUid())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getUid())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

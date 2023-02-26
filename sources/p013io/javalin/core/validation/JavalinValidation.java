@@ -96,11 +96,11 @@ public final class JavalinValidation {
     @JvmStatic
     public static final void addValidationExceptionMapper(@NotNull Javalin app) {
         Intrinsics.checkNotNullParameter(app, "app");
-        app.exception(ValidationException.class, JavalinValidation::m5794addValidationExceptionMapper$lambda2);
+        app.exception(ValidationException.class, JavalinValidation::m5791addValidationExceptionMapper$lambda2);
     }
 
     /* renamed from: addValidationExceptionMapper$lambda-2  reason: not valid java name */
-    private static final void m5794addValidationExceptionMapper$lambda2(ValidationException e, Context ctx) {
+    private static final void m5791addValidationExceptionMapper$lambda2(ValidationException e, Context ctx) {
         Intrinsics.checkNotNullParameter(e, "e");
         Intrinsics.checkNotNullParameter(ctx, "ctx");
         ctx.json(e.getErrors()).status(400);

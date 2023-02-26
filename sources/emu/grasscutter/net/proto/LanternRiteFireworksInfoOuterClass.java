@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/LanternRiteFireworksInfoOuterClass.class */
 public final class LanternRiteFireworksInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eLanternRiteFireworksInfo.proto\u001a#LanternRiteFireworksStageInfo.proto\"S\n\u0018LanternRiteFireworksInfo\u00127\n\u000fstage_info_list\u0018\u0002 \u0003(\u000b2\u001e.LanternRiteFireworksStageInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{LanternRiteFireworksStageInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eLanternRiteFireworksInfo.proto\u001a#LanternRiteFireworksStageInfo.proto\"Q\n\u0018LanternRiteFireworksInfo\u00125\n\rstageInfoList\u0018\u0001 \u0003(\u000b2\u001e.LanternRiteFireworksStageInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{LanternRiteFireworksStageInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_LanternRiteFireworksInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_LanternRiteFireworksInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_LanternRiteFireworksInfo_descriptor, new String[]{"StageInfoList"});
 
@@ -55,7 +55,7 @@ public final class LanternRiteFireworksInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/LanternRiteFireworksInfoOuterClass$LanternRiteFireworksInfo.class */
     public static final class LanternRiteFireworksInfo extends GeneratedMessageV3 implements LanternRiteFireworksInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int STAGE_INFO_LIST_FIELD_NUMBER = 2;
+        public static final int STAGEINFOLIST_FIELD_NUMBER = 1;
         private List<LanternRiteFireworksStageInfoOuterClass.LanternRiteFireworksStageInfo> stageInfoList_;
         private byte memoizedIsInitialized;
         private static final LanternRiteFireworksInfo DEFAULT_INSTANCE = new LanternRiteFireworksInfo();
@@ -106,7 +106,7 @@ public final class LanternRiteFireworksInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 18:
+                                case 10:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.stageInfoList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -187,7 +187,7 @@ public final class LanternRiteFireworksInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.stageInfoList_.size(); i++) {
-                output.writeMessage(2, this.stageInfoList_.get(i));
+                output.writeMessage(1, this.stageInfoList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,7 +200,7 @@ public final class LanternRiteFireworksInfoOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.stageInfoList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(2, this.stageInfoList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(1, this.stageInfoList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class LanternRiteFireworksInfoOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getStageInfoListCount() > 0) {
-                hash = (53 * ((37 * hash) + 2)) + getStageInfoListList().hashCode();
+                hash = (53 * ((37 * hash) + 1)) + getStageInfoListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

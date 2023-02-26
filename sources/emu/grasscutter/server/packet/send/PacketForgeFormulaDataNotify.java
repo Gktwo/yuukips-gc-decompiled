@@ -6,7 +6,7 @@ import emu.grasscutter.net.proto.ForgeFormulaDataNotifyOuterClass;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketForgeFormulaDataNotify.class */
 public class PacketForgeFormulaDataNotify extends BasePacket {
     public PacketForgeFormulaDataNotify(int itemId) {
-        super(626);
+        super(661);
         setData(ForgeFormulaDataNotifyOuterClass.ForgeFormulaDataNotify.newBuilder().setForgeId(itemId).setIsLocked(false).build());
     }
 }

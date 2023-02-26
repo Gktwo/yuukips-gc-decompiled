@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BuyGoodsParamOuterClass.class */
 public final class BuyGoodsParamOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013BuyGoodsParam.proto\u001a\u000fShopGoods.proto\"=\n\rBuyGoodsParam\u0012\u0019\n\u0005goods\u0018\u000e \u0001(\u000b2\n.ShopGoods\u0012\u0011\n\tbuy_count\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ShopGoodsOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013BuyGoodsParam.proto\u001a\u000fShopGoods.proto\"<\n\rBuyGoodsParam\u0012\u0019\n\u0005goods\u0018\b \u0001(\u000b2\n.ShopGoods\u0012\u0010\n\bbuyCount\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ShopGoodsOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_BuyGoodsParam_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_BuyGoodsParam_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BuyGoodsParam_descriptor, new String[]{"Goods", "BuyCount"});
 
@@ -49,9 +49,9 @@ public final class BuyGoodsParamOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BuyGoodsParamOuterClass$BuyGoodsParam.class */
     public static final class BuyGoodsParam extends GeneratedMessageV3 implements BuyGoodsParamOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int GOODS_FIELD_NUMBER = 14;
+        public static final int GOODS_FIELD_NUMBER = 8;
         private ShopGoodsOuterClass.ShopGoods goods_;
-        public static final int BUY_COUNT_FIELD_NUMBER = 2;
+        public static final int BUYCOUNT_FIELD_NUMBER = 3;
         private int buyCount_;
         private byte memoizedIsInitialized;
         private static final BuyGoodsParam DEFAULT_INSTANCE = new BuyGoodsParam();
@@ -99,10 +99,10 @@ public final class BuyGoodsParamOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
+                                case 24:
                                     this.buyCount_ = input.readUInt32();
                                     break;
-                                case 114:
+                                case 66:
                                     ShopGoodsOuterClass.ShopGoods.Builder subBuilder = this.goods_ != null ? this.goods_.toBuilder() : null;
                                     this.goods_ = (ShopGoodsOuterClass.ShopGoods) input.readMessage(ShopGoodsOuterClass.ShopGoods.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -178,10 +178,10 @@ public final class BuyGoodsParamOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.buyCount_ != 0) {
-                output.writeUInt32(2, this.buyCount_);
+                output.writeUInt32(3, this.buyCount_);
             }
             if (this.goods_ != null) {
-                output.writeMessage(14, getGoods());
+                output.writeMessage(8, getGoods());
             }
             this.unknownFields.writeTo(output);
         }
@@ -194,10 +194,10 @@ public final class BuyGoodsParamOuterClass {
             }
             int size2 = 0;
             if (this.buyCount_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.buyCount_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.buyCount_);
             }
             if (this.goods_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(14, getGoods());
+                size2 += CodedOutputStream.computeMessageSize(8, getGoods());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,9 +226,9 @@ public final class BuyGoodsParamOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasGoods()) {
-                hash = (53 * ((37 * hash) + 14)) + getGoods().hashCode();
+                hash = (53 * ((37 * hash) + 8)) + getGoods().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 2)) + getBuyCount())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 3)) + getBuyCount())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

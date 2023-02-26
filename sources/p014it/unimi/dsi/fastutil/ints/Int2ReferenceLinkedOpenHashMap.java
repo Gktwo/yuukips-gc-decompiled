@@ -44,13 +44,13 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f2118n;
+    protected transient int f2082n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2119f;
+    protected final float f2083f;
     protected transient Int2ReferenceSortedMap.FastSortedEntrySet<V> entries;
     protected transient IntSortedSet keys;
     protected transient ReferenceCollection<V> values;
@@ -63,15 +63,15 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2119f = f;
+            this.f2083f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2118n = arraySize;
+            this.f2082n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2118n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2118n, f);
-            this.key = new int[this.f2118n + 1];
-            this.value = (V[]) new Object[this.f2118n + 1];
-            this.link = new long[this.f2118n + 1];
+            this.mask = this.f2082n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2082n, f);
+            this.key = new int[this.f2082n + 1];
+            this.value = (V[]) new Object[this.f2082n + 1];
+            this.link = new long[this.f2082n + 1];
         }
     }
 
@@ -120,15 +120,15 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2119f);
-        if (needed > this.f2118n) {
+        int needed = HashCommon.arraySize(capacity, this.f2083f);
+        if (needed > this.f2082n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2119f)))));
-        if (needed > this.f2118n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2083f)))));
+        if (needed > this.f2082n) {
             rehash(needed);
         }
     }
@@ -140,8 +140,8 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f2118n > this.minN && this.size < this.maxFill / 4 && this.f2118n > 16) {
-            rehash(this.f2118n / 2);
+        if (this.f2082n > this.minN && this.size < this.maxFill / 4 && this.f2082n > 16) {
+            rehash(this.f2082n / 2);
         }
         return oldValue;
     }
@@ -149,19 +149,19 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
     /* access modifiers changed from: private */
     public V removeNullEntry() {
         this.containsNullKey = false;
-        V oldValue = this.value[this.f2118n];
-        this.value[this.f2118n] = null;
+        V oldValue = this.value[this.f2082n];
+        this.value[this.f2082n] = null;
         this.size--;
-        fixPointers(this.f2118n);
-        if (this.f2118n > this.minN && this.size < this.maxFill / 4 && this.f2118n > 16) {
-            rehash(this.f2118n / 2);
+        fixPointers(this.f2082n);
+        if (this.f2082n > this.minN && this.size < this.maxFill / 4 && this.f2082n > 16) {
+            rehash(this.f2082n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractInt2ReferenceMap, java.util.Map
     public void putAll(Map<? extends Integer, ? extends V> m) {
-        if (((double) this.f2119f) <= 0.5d) {
+        if (((double) this.f2083f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -172,7 +172,7 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
     private int find(int k) {
         int curr;
         if (k == 0) {
-            return this.containsNullKey ? this.f2118n : -(this.f2118n + 1);
+            return this.containsNullKey ? this.f2082n : -(this.f2082n + 1);
         }
         int[] key = this.key;
         int mix = HashCommon.mix(k) & this.mask;
@@ -196,7 +196,7 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
     }
 
     private void insert(int pos, int k, V v) {
-        if (pos == this.f2118n) {
+        if (pos == this.f2082n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -215,7 +215,7 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2119f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2083f));
         }
     }
 
@@ -309,14 +309,14 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
         }
         this.size--;
         V v = this.value[pos];
-        if (pos == this.f2118n) {
+        if (pos == this.f2082n) {
             this.containsNullKey = false;
-            this.value[this.f2118n] = null;
+            this.value[this.f2082n] = null;
         } else {
             shiftKeys(pos);
         }
-        if (this.f2118n > this.minN && this.size < this.maxFill / 4 && this.f2118n > 16) {
-            rehash(this.f2118n / 2);
+        if (this.f2082n > this.minN && this.size < this.maxFill / 4 && this.f2082n > 16) {
+            rehash(this.f2082n / 2);
         }
         return v;
     }
@@ -334,14 +334,14 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
         }
         this.size--;
         V v = this.value[pos];
-        if (pos == this.f2118n) {
+        if (pos == this.f2082n) {
             this.containsNullKey = false;
-            this.value[this.f2118n] = null;
+            this.value[this.f2082n] = null;
         } else {
             shiftKeys(pos);
         }
-        if (this.f2118n > this.minN && this.size < this.maxFill / 4 && this.f2118n > 16) {
-            rehash(this.f2118n / 2);
+        if (this.f2082n > this.minN && this.size < this.maxFill / 4 && this.f2082n > 16) {
+            rehash(this.f2082n / 2);
         }
         return v;
     }
@@ -421,8 +421,8 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
         } else if (!this.containsNullKey) {
             return (V) this.defRetValue;
         } else {
-            moveIndexToFirst(this.f2118n);
-            return this.value[this.f2118n];
+            moveIndexToFirst(this.f2082n);
+            return this.value[this.f2082n];
         }
     }
 
@@ -453,8 +453,8 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
         } else if (!this.containsNullKey) {
             return (V) this.defRetValue;
         } else {
-            moveIndexToLast(this.f2118n);
-            return this.value[this.f2118n];
+            moveIndexToLast(this.f2082n);
+            return this.value[this.f2082n];
         }
     }
 
@@ -482,11 +482,11 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
                 return setValue(pos, v);
             }
         } else if (this.containsNullKey) {
-            moveIndexToFirst(this.f2118n);
-            return setValue(this.f2118n, v);
+            moveIndexToFirst(this.f2082n);
+            return setValue(this.f2082n, v);
         } else {
             this.containsNullKey = true;
-            pos = this.f2118n;
+            pos = this.f2082n;
         }
         this.key[pos] = k;
         this.value[pos] = v;
@@ -504,7 +504,7 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size, this.f2119f));
+            rehash(HashCommon.arraySize(this.size, this.f2083f));
         }
         return (V) this.defRetValue;
     }
@@ -533,11 +533,11 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
                 return setValue(pos, v);
             }
         } else if (this.containsNullKey) {
-            moveIndexToLast(this.f2118n);
-            return setValue(this.f2118n, v);
+            moveIndexToLast(this.f2082n);
+            return setValue(this.f2082n, v);
         } else {
             this.containsNullKey = true;
-            pos = this.f2118n;
+            pos = this.f2082n;
         }
         this.key[pos] = k;
         this.value[pos] = v;
@@ -555,7 +555,7 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size, this.f2119f));
+            rehash(HashCommon.arraySize(this.size, this.f2083f));
         }
         return (V) this.defRetValue;
     }
@@ -564,7 +564,7 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
     public V get(int k) {
         int curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f2118n] : (V) this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2082n] : (V) this.defRetValue;
         }
         int[] key = this.key;
         int mix = HashCommon.mix(k) & this.mask;
@@ -618,10 +618,10 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
     public boolean containsValue(Object v) {
         V[] value = this.value;
         int[] key = this.key;
-        if (this.containsNullKey && value[this.f2118n] == v) {
+        if (this.containsNullKey && value[this.f2082n] == v) {
             return true;
         }
-        int i = this.f2118n;
+        int i = this.f2082n;
         while (true) {
             i--;
             if (i == 0) {
@@ -637,7 +637,7 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
     public V getOrDefault(int k, V defaultValue) {
         int curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f2118n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2082n] : defaultValue;
         }
         int[] key = this.key;
         int mix = HashCommon.mix(k) & this.mask;
@@ -696,7 +696,7 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
                     return true;
                 }
             }
-        } else if (!this.containsNullKey || v != this.value[this.f2118n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f2082n]) {
             return false;
         } else {
             removeNullEntry();
@@ -1036,8 +1036,8 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
             this.index = -1;
             if (from == 0) {
                 if (Int2ReferenceLinkedOpenHashMap.this.containsNullKey) {
-                    this.next = (int) Int2ReferenceLinkedOpenHashMap.this.link[Int2ReferenceLinkedOpenHashMap.this.f2118n];
-                    this.prev = Int2ReferenceLinkedOpenHashMap.this.f2118n;
+                    this.next = (int) Int2ReferenceLinkedOpenHashMap.this.link[Int2ReferenceLinkedOpenHashMap.this.f2082n];
+                    this.prev = Int2ReferenceLinkedOpenHashMap.this.f2082n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + from + " does not belong to this map.");
@@ -1166,9 +1166,9 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
             }
             int pos = this.curr;
             this.curr = -1;
-            if (pos == Int2ReferenceLinkedOpenHashMap.this.f2118n) {
+            if (pos == Int2ReferenceLinkedOpenHashMap.this.f2082n) {
                 Int2ReferenceLinkedOpenHashMap.this.containsNullKey = false;
-                Int2ReferenceLinkedOpenHashMap.this.value[Int2ReferenceLinkedOpenHashMap.this.f2118n] = null;
+                Int2ReferenceLinkedOpenHashMap.this.value[Int2ReferenceLinkedOpenHashMap.this.f2082n] = null;
                 return;
             }
             int[] key = Int2ReferenceLinkedOpenHashMap.this.key;
@@ -1426,7 +1426,7 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
             int k = ((Integer) e.getKey()).intValue();
             Object value = e.getValue();
             if (k == 0) {
-                return Int2ReferenceLinkedOpenHashMap.this.containsNullKey && Int2ReferenceLinkedOpenHashMap.this.value[Int2ReferenceLinkedOpenHashMap.this.f2118n] == value;
+                return Int2ReferenceLinkedOpenHashMap.this.containsNullKey && Int2ReferenceLinkedOpenHashMap.this.value[Int2ReferenceLinkedOpenHashMap.this.f2082n] == value;
             }
             int[] key = Int2ReferenceLinkedOpenHashMap.this.key;
             int mix = HashCommon.mix(k) & Int2ReferenceLinkedOpenHashMap.this.mask;
@@ -1487,7 +1487,7 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
                     Int2ReferenceLinkedOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Int2ReferenceLinkedOpenHashMap.this.containsNullKey || Int2ReferenceLinkedOpenHashMap.this.value[Int2ReferenceLinkedOpenHashMap.this.f2118n] != value) {
+            } else if (!Int2ReferenceLinkedOpenHashMap.this.containsNullKey || Int2ReferenceLinkedOpenHashMap.this.value[Int2ReferenceLinkedOpenHashMap.this.f2082n] != value) {
                 return false;
             } else {
                 Int2ReferenceLinkedOpenHashMap.this.removeNullEntry();
@@ -1789,8 +1789,8 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2119f)));
-        if (l >= this.f2118n || this.size > HashCommon.maxFill(l, this.f2119f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2083f)));
+        if (l >= this.f2082n || this.size > HashCommon.maxFill(l, this.f2083f)) {
             return true;
         }
         try {
@@ -1851,9 +1851,9 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f2118n = newN;
+        this.f2082n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f2118n, this.f2119f);
+        this.maxFill = HashCommon.maxFill(this.f2082n, this.f2083f);
         this.key = newKey;
         this.value = newValue;
     }
@@ -1896,7 +1896,7 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f2118n] == null ? 0 : System.identityHashCode(this.value[this.f2118n]);
+            h += this.value[this.f2082n] == null ? 0 : System.identityHashCode(this.value[this.f2082n]);
         }
         return h;
     }
@@ -1924,14 +1924,14 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2118n = HashCommon.arraySize(this.size, this.f2119f);
-        this.maxFill = HashCommon.maxFill(this.f2118n, this.f2119f);
-        this.mask = this.f2118n - 1;
-        int[] key = new int[this.f2118n + 1];
+        this.f2082n = HashCommon.arraySize(this.size, this.f2083f);
+        this.maxFill = HashCommon.maxFill(this.f2082n, this.f2083f);
+        this.mask = this.f2082n - 1;
+        int[] key = new int[this.f2082n + 1];
         this.key = key;
-        V[] value = (V[]) new Object[this.f2118n + 1];
+        V[] value = (V[]) new Object[this.f2082n + 1];
         this.value = value;
-        long[] link = new long[this.f2118n + 1];
+        long[] link = new long[this.f2082n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -1956,7 +1956,7 @@ public class Int2ReferenceLinkedOpenHashMap<V> extends AbstractInt2ReferenceSort
                     i2 = this.mask;
                 }
             } else {
-                pos = this.f2118n;
+                pos = this.f2082n;
                 this.containsNullKey = true;
             }
             key[pos] = k;

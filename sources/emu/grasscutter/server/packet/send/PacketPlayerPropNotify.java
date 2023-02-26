@@ -9,7 +9,7 @@ import emu.grasscutter.utils.ProtoHelper;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketPlayerPropNotify.class */
 public class PacketPlayerPropNotify extends BasePacket {
     public PacketPlayerPropNotify(Player player, PlayerProperty prop) {
-        super(139);
+        super(129);
         buildHeader(0);
         setData(PlayerPropNotifyOuterClass.PlayerPropNotify.newBuilder().putPropMap(prop.getId(), ProtoHelper.newPropValue(prop, player.getProperty(prop))).build());
     }

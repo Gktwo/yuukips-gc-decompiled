@@ -1,6 +1,7 @@
 package emu.grasscutter.data.common;
 
 import java.util.List;
+import java.util.Optional;
 import p014it.unimi.dsi.fastutil.floats.FloatArrayList;
 import p014it.unimi.dsi.fastutil.objects.Object2FloatArrayMap;
 import p014it.unimi.dsi.fastutil.objects.Object2FloatMap;
@@ -19,6 +20,7 @@ public class DynamicFloat {
         public EnumC1353Op f507op;
         public float fValue;
         public String sValue;
+        public boolean bValue;
 
         /* access modifiers changed from: package-private */
         /* renamed from: emu.grasscutter.data.common.DynamicFloat$StackOp$Op */
@@ -29,7 +31,8 @@ public class DynamicFloat {
             ADD,
             SUB,
             MUL,
-            DIV
+            DIV,
+            NEXBOOLEAN
         }
 
         public StackOp(String s) {
@@ -81,6 +84,11 @@ public class DynamicFloat {
             }
         }
 
+        public StackOp(boolean b) {
+            this.f507op = EnumC1353Op.NEXBOOLEAN;
+            this.bValue = Boolean.parseBoolean(String.valueOf(b));
+        }
+
         public StackOp(float f) {
             this.f507op = EnumC1353Op.CONSTANT;
             this.fValue = f;
@@ -93,11 +101,23 @@ public class DynamicFloat {
         this.constant = constant;
     }
 
+    public String toString(boolean nextBoolean) {
+        this.ops = List.of(new StackOp(String.valueOf(nextBoolean)));
+        return this.ops.toString();
+    }
+
     public DynamicFloat(String key) {
         this.dynamic = false;
         this.constant = 0.0f;
         this.dynamic = true;
         this.ops = List.of(new StackOp(key));
+    }
+
+    public DynamicFloat(boolean b) {
+        this.dynamic = false;
+        this.constant = 0.0f;
+        this.dynamic = true;
+        this.ops = List.of(new StackOp(String.valueOf(b)));
     }
 
     public DynamicFloat(List<StackOp> ops) {
@@ -135,6 +155,9 @@ public class DynamicFloat {
                     break;
                 case DIV:
                     fl.push((1.0f / fl.popFloat()) * fl.popFloat());
+                    break;
+                case NEXBOOLEAN:
+                    fl.push(props.getOrDefault(Optional.of(Boolean.valueOf(op.bValue)), 0.0f));
                     break;
             }
         }

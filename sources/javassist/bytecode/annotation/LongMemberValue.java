@@ -37,11 +37,11 @@ public class LongMemberValue extends MemberValue {
     }
 
     public long getValue() {
-        return this.f3074cp.getLongInfo(this.valueIndex);
+        return this.f3038cp.getLongInfo(this.valueIndex);
     }
 
     public void setValue(long newValue) {
-        this.valueIndex = this.f3074cp.addLongInfo(newValue);
+        this.valueIndex = this.f3038cp.addLongInfo(newValue);
     }
 
     public String toString() {

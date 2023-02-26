@@ -8,7 +8,7 @@ import java.util.Collection;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketGadgetAutoPickDropInfoNotify.class */
 public class PacketGadgetAutoPickDropInfoNotify extends BasePacket {
     public PacketGadgetAutoPickDropInfoNotify(Collection<GameItem> items) {
-        super(899);
+        super(816);
         GadgetAutoPickDropInfoNotifyOuterClass.GadgetAutoPickDropInfoNotify.Builder proto = GadgetAutoPickDropInfoNotifyOuterClass.GadgetAutoPickDropInfoNotify.newBuilder();
         items.forEach(item -> {
             proto.addItemList(item.toProto());

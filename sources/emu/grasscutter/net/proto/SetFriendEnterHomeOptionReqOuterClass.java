@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetFriendEnterHomeOptionReqOuterClass.class */
 public final class SetFriendEnterHomeOptionReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!SetFriendEnterHomeOptionReq.proto\u001a\u001bFriendEnterHomeOption.proto\"E\n\u001bSetFriendEnterHomeOptionReq\u0012&\n\u0006option\u0018\b \u0001(\u000e2\u0016.FriendEnterHomeOptionB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{FriendEnterHomeOptionOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!SetFriendEnterHomeOptionReq.proto\u001a\u001bFriendEnterHomeOption.proto\"E\n\u001bSetFriendEnterHomeOptionReq\u0012&\n\u0006option\u0018\f \u0001(\u000e2\u0016.FriendEnterHomeOptionB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{FriendEnterHomeOptionOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SetFriendEnterHomeOptionReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetFriendEnterHomeOptionReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetFriendEnterHomeOptionReq_descriptor, new String[]{"Option"});
 
@@ -44,7 +44,7 @@ public final class SetFriendEnterHomeOptionReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetFriendEnterHomeOptionReqOuterClass$SetFriendEnterHomeOptionReq.class */
     public static final class SetFriendEnterHomeOptionReq extends GeneratedMessageV3 implements SetFriendEnterHomeOptionReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int OPTION_FIELD_NUMBER = 8;
+        public static final int OPTION_FIELD_NUMBER = 12;
         private int option_;
         private byte memoizedIsInitialized;
         private static final SetFriendEnterHomeOptionReq DEFAULT_INSTANCE = new SetFriendEnterHomeOptionReq();
@@ -92,7 +92,7 @@ public final class SetFriendEnterHomeOptionReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 64:
+                            case 96:
                                 this.option_ = input.readEnum();
                                 break;
                             default:
@@ -151,7 +151,7 @@ public final class SetFriendEnterHomeOptionReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.option_ != FriendEnterHomeOptionOuterClass.FriendEnterHomeOption.FRIEND_ENTER_HOME_OPTION_NEED_CONFIRM.getNumber()) {
-                output.writeEnum(8, this.option_);
+                output.writeEnum(12, this.option_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -164,7 +164,7 @@ public final class SetFriendEnterHomeOptionReqOuterClass {
             }
             int size2 = 0;
             if (this.option_ != FriendEnterHomeOptionOuterClass.FriendEnterHomeOption.FRIEND_ENTER_HOME_OPTION_NEED_CONFIRM.getNumber()) {
-                size2 = 0 + CodedOutputStream.computeEnumSize(8, this.option_);
+                size2 = 0 + CodedOutputStream.computeEnumSize(12, this.option_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -188,7 +188,7 @@ public final class SetFriendEnterHomeOptionReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + this.option_)) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + this.option_)) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

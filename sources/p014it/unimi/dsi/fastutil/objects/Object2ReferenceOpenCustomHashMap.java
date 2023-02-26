@@ -28,13 +28,13 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
     protected Hash.Strategy<? super K> strategy;
 
     /* renamed from: n */
-    protected transient int f2657n;
+    protected transient int f2621n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2658f;
+    protected final float f2622f;
     protected transient Object2ReferenceMap.FastEntrySet<K, V> entries;
     protected transient ObjectSet<K> keys;
     protected transient ReferenceCollection<V> values;
@@ -46,14 +46,14 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2658f = f;
+            this.f2622f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2657n = arraySize;
+            this.f2621n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2657n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2657n, f);
-            this.key = (K[]) new Object[this.f2657n + 1];
-            this.value = (V[]) new Object[this.f2657n + 1];
+            this.mask = this.f2621n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2621n, f);
+            this.key = (K[]) new Object[this.f2621n + 1];
+            this.value = (V[]) new Object[this.f2621n + 1];
         }
     }
 
@@ -107,15 +107,15 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2658f);
-        if (needed > this.f2657n) {
+        int needed = HashCommon.arraySize(capacity, this.f2622f);
+        if (needed > this.f2621n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2658f)))));
-        if (needed > this.f2657n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2622f)))));
+        if (needed > this.f2621n) {
             rehash(needed);
         }
     }
@@ -126,8 +126,8 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
         this.value[pos] = null;
         this.size--;
         shiftKeys(pos);
-        if (this.f2657n > this.minN && this.size < this.maxFill / 4 && this.f2657n > 16) {
-            rehash(this.f2657n / 2);
+        if (this.f2621n > this.minN && this.size < this.maxFill / 4 && this.f2621n > 16) {
+            rehash(this.f2621n / 2);
         }
         return oldValue;
     }
@@ -135,19 +135,19 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
     /* access modifiers changed from: private */
     public V removeNullEntry() {
         this.containsNullKey = false;
-        this.key[this.f2657n] = null;
-        V oldValue = this.value[this.f2657n];
-        this.value[this.f2657n] = null;
+        this.key[this.f2621n] = null;
+        V oldValue = this.value[this.f2621n];
+        this.value[this.f2621n] = null;
         this.size--;
-        if (this.f2657n > this.minN && this.size < this.maxFill / 4 && this.f2657n > 16) {
-            rehash(this.f2657n / 2);
+        if (this.f2621n > this.minN && this.size < this.maxFill / 4 && this.f2621n > 16) {
+            rehash(this.f2621n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObject2ReferenceMap, java.util.Map
     public void putAll(Map<? extends K, ? extends V> m) {
-        if (((double) this.f2658f) <= 0.5d) {
+        if (((double) this.f2622f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -158,7 +158,7 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
     private int find(K k) {
         K curr;
         if (this.strategy.equals(k, null)) {
-            return this.containsNullKey ? this.f2657n : -(this.f2657n + 1);
+            return this.containsNullKey ? this.f2621n : -(this.f2621n + 1);
         }
         K[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -182,7 +182,7 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
     }
 
     private void insert(int pos, K k, V v) {
-        if (pos == this.f2657n) {
+        if (pos == this.f2621n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -190,7 +190,7 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2658f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2622f));
         }
     }
 
@@ -268,7 +268,7 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
     public V get(Object k) {
         K curr;
         if (this.strategy.equals(k, null)) {
-            return this.containsNullKey ? this.value[this.f2657n] : (V) this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2621n] : (V) this.defRetValue;
         }
         K[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -322,10 +322,10 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
     public boolean containsValue(Object v) {
         V[] value = this.value;
         K[] key = this.key;
-        if (this.containsNullKey && value[this.f2657n] == v) {
+        if (this.containsNullKey && value[this.f2621n] == v) {
             return true;
         }
-        int i = this.f2657n;
+        int i = this.f2621n;
         while (true) {
             i--;
             if (i == 0) {
@@ -341,7 +341,7 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
     public V getOrDefault(Object k, V defaultValue) {
         K curr;
         if (this.strategy.equals(k, null)) {
-            return this.containsNullKey ? this.value[this.f2657n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2621n] : defaultValue;
         }
         K[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -401,7 +401,7 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
                 removeEntry(pos);
                 return true;
             }
-        } else if (!this.containsNullKey || v != this.value[this.f2657n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f2621n]) {
             return false;
         } else {
             removeNullEntry();
@@ -607,31 +607,31 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
         int last;
 
         /* renamed from: c */
-        int f2659c;
+        int f2623c;
         boolean mustReturnNullKey;
         ObjectArrayList<K> wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Object2ReferenceOpenCustomHashMap.this.f2657n;
+            this.pos = Object2ReferenceOpenCustomHashMap.this.f2621n;
             this.last = -1;
-            this.f2659c = Object2ReferenceOpenCustomHashMap.this.size;
+            this.f2623c = Object2ReferenceOpenCustomHashMap.this.size;
             this.mustReturnNullKey = Object2ReferenceOpenCustomHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f2659c != 0;
+            return this.f2623c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2659c--;
+            this.f2623c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Object2ReferenceOpenCustomHashMap.this.f2657n;
+                int i = Object2ReferenceOpenCustomHashMap.this.f2621n;
                 this.last = i;
                 return i;
             }
@@ -663,13 +663,13 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Object2ReferenceOpenCustomHashMap.this.f2657n;
+                int i = Object2ReferenceOpenCustomHashMap.this.f2621n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f2659c--;
+                this.f2623c--;
             }
             K[] key = Object2ReferenceOpenCustomHashMap.this.key;
-            while (this.f2659c != 0) {
+            while (this.f2623c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -686,12 +686,12 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
                         i3 = Object2ReferenceOpenCustomHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f2659c--;
+                    this.f2623c--;
                 } else if (key[this.pos] != null) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f2659c--;
+                    this.f2623c--;
                 }
             }
         }
@@ -741,10 +741,10 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Object2ReferenceOpenCustomHashMap.this.f2657n) {
+            if (this.last == Object2ReferenceOpenCustomHashMap.this.f2621n) {
                 Object2ReferenceOpenCustomHashMap.this.containsNullKey = false;
-                Object2ReferenceOpenCustomHashMap.this.key[Object2ReferenceOpenCustomHashMap.this.f2657n] = null;
-                Object2ReferenceOpenCustomHashMap.this.value[Object2ReferenceOpenCustomHashMap.this.f2657n] = null;
+                Object2ReferenceOpenCustomHashMap.this.key[Object2ReferenceOpenCustomHashMap.this.f2621n] = null;
+                Object2ReferenceOpenCustomHashMap.this.value[Object2ReferenceOpenCustomHashMap.this.f2621n] = null;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -848,7 +848,7 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
         int max;
 
         /* renamed from: c */
-        int f2660c;
+        int f2624c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -858,16 +858,16 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Object2ReferenceOpenCustomHashMap.this.f2657n;
-            this.f2660c = 0;
+            this.max = Object2ReferenceOpenCustomHashMap.this.f2621n;
+            this.f2624c = 0;
             this.mustReturnNull = Object2ReferenceOpenCustomHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Object2ReferenceOpenCustomHashMap.this.f2657n;
-            this.f2660c = 0;
+            this.max = Object2ReferenceOpenCustomHashMap.this.f2621n;
+            this.f2624c = 0;
             this.mustReturnNull = Object2ReferenceOpenCustomHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -879,14 +879,14 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2660c++;
-                acceptOnIndex(action, Object2ReferenceOpenCustomHashMap.this.f2657n);
+                this.f2624c++;
+                acceptOnIndex(action, Object2ReferenceOpenCustomHashMap.this.f2621n);
                 return true;
             }
             K[] key = Object2ReferenceOpenCustomHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != null) {
-                    this.f2660c++;
+                    this.f2624c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -900,14 +900,14 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2660c++;
-                acceptOnIndex(action, Object2ReferenceOpenCustomHashMap.this.f2657n);
+                this.f2624c++;
+                acceptOnIndex(action, Object2ReferenceOpenCustomHashMap.this.f2621n);
             }
             K[] key = Object2ReferenceOpenCustomHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != null) {
                     acceptOnIndex(action, this.pos);
-                    this.f2660c++;
+                    this.f2624c++;
                 }
                 this.pos++;
             }
@@ -915,9 +915,9 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Object2ReferenceOpenCustomHashMap.this.size - this.f2660c);
+                return (long) (Object2ReferenceOpenCustomHashMap.this.size - this.f2624c);
             }
-            return Math.min((long) (Object2ReferenceOpenCustomHashMap.this.size - this.f2660c), ((long) ((((double) Object2ReferenceOpenCustomHashMap.this.realSize()) / ((double) Object2ReferenceOpenCustomHashMap.this.f2657n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Object2ReferenceOpenCustomHashMap.this.size - this.f2624c), ((long) ((((double) Object2ReferenceOpenCustomHashMap.this.realSize()) / ((double) Object2ReferenceOpenCustomHashMap.this.f2621n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1111,7 +1111,7 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
             Object key = e.getKey();
             Object value = e.getValue();
             if (Object2ReferenceOpenCustomHashMap.this.strategy.equals(key, null)) {
-                return Object2ReferenceOpenCustomHashMap.this.containsNullKey && Object2ReferenceOpenCustomHashMap.this.value[Object2ReferenceOpenCustomHashMap.this.f2657n] == value;
+                return Object2ReferenceOpenCustomHashMap.this.containsNullKey && Object2ReferenceOpenCustomHashMap.this.value[Object2ReferenceOpenCustomHashMap.this.f2621n] == value;
             }
             K[] key2 = Object2ReferenceOpenCustomHashMap.this.key;
             int mix = HashCommon.mix(Object2ReferenceOpenCustomHashMap.this.strategy.hashCode(key)) & Object2ReferenceOpenCustomHashMap.this.mask;
@@ -1169,7 +1169,7 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
                     Object2ReferenceOpenCustomHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Object2ReferenceOpenCustomHashMap.this.containsNullKey || Object2ReferenceOpenCustomHashMap.this.value[Object2ReferenceOpenCustomHashMap.this.f2657n] != value) {
+            } else if (!Object2ReferenceOpenCustomHashMap.this.containsNullKey || Object2ReferenceOpenCustomHashMap.this.value[Object2ReferenceOpenCustomHashMap.this.f2621n] != value) {
                 return false;
             } else {
                 Object2ReferenceOpenCustomHashMap.this.removeNullEntry();
@@ -1190,9 +1190,9 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Object2ReferenceMap.Entry<K, V>> consumer) {
             if (Object2ReferenceOpenCustomHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractObject2ReferenceMap.BasicEntry(Object2ReferenceOpenCustomHashMap.this.key[Object2ReferenceOpenCustomHashMap.this.f2657n], Object2ReferenceOpenCustomHashMap.this.value[Object2ReferenceOpenCustomHashMap.this.f2657n]));
+                consumer.accept(new AbstractObject2ReferenceMap.BasicEntry(Object2ReferenceOpenCustomHashMap.this.key[Object2ReferenceOpenCustomHashMap.this.f2621n], Object2ReferenceOpenCustomHashMap.this.value[Object2ReferenceOpenCustomHashMap.this.f2621n]));
             }
-            int pos = Object2ReferenceOpenCustomHashMap.this.f2657n;
+            int pos = Object2ReferenceOpenCustomHashMap.this.f2621n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1208,11 +1208,11 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
         public void fastForEach(Consumer<? super Object2ReferenceMap.Entry<K, V>> consumer) {
             AbstractObject2ReferenceMap.BasicEntry<K, V> entry = new AbstractObject2ReferenceMap.BasicEntry<>();
             if (Object2ReferenceOpenCustomHashMap.this.containsNullKey) {
-                entry.key = Object2ReferenceOpenCustomHashMap.this.key[Object2ReferenceOpenCustomHashMap.this.f2657n];
-                entry.value = Object2ReferenceOpenCustomHashMap.this.value[Object2ReferenceOpenCustomHashMap.this.f2657n];
+                entry.key = Object2ReferenceOpenCustomHashMap.this.key[Object2ReferenceOpenCustomHashMap.this.f2621n];
+                entry.value = Object2ReferenceOpenCustomHashMap.this.value[Object2ReferenceOpenCustomHashMap.this.f2621n];
                 consumer.accept(entry);
             }
-            int pos = Object2ReferenceOpenCustomHashMap.this.f2657n;
+            int pos = Object2ReferenceOpenCustomHashMap.this.f2621n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1328,9 +1328,9 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super K> consumer) {
             if (Object2ReferenceOpenCustomHashMap.this.containsNullKey) {
-                consumer.accept((Object) Object2ReferenceOpenCustomHashMap.this.key[Object2ReferenceOpenCustomHashMap.this.f2657n]);
+                consumer.accept((Object) Object2ReferenceOpenCustomHashMap.this.key[Object2ReferenceOpenCustomHashMap.this.f2621n]);
             }
-            int pos = Object2ReferenceOpenCustomHashMap.this.f2657n;
+            int pos = Object2ReferenceOpenCustomHashMap.this.f2621n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1465,9 +1465,9 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
                 @Override // java.lang.Iterable
                 public void forEach(Consumer<? super V> consumer) {
                     if (Object2ReferenceOpenCustomHashMap.this.containsNullKey) {
-                        consumer.accept((Object) Object2ReferenceOpenCustomHashMap.this.value[Object2ReferenceOpenCustomHashMap.this.f2657n]);
+                        consumer.accept((Object) Object2ReferenceOpenCustomHashMap.this.value[Object2ReferenceOpenCustomHashMap.this.f2621n]);
                     }
-                    int pos = Object2ReferenceOpenCustomHashMap.this.f2657n;
+                    int pos = Object2ReferenceOpenCustomHashMap.this.f2621n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1503,8 +1503,8 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2658f)));
-        if (l >= this.f2657n || this.size > HashCommon.maxFill(l, this.f2658f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2622f)));
+        if (l >= this.f2621n || this.size > HashCommon.maxFill(l, this.f2622f)) {
             return true;
         }
         try {
@@ -1522,7 +1522,7 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
         int mask = newN - 1;
         K[] newKey = (K[]) new Object[newN + 1];
         V[] newValue = (V[]) new Object[newN + 1];
-        int i2 = this.f2657n;
+        int i2 = this.f2621n;
         int j = realSize();
         while (true) {
             j--;
@@ -1541,10 +1541,10 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f2657n];
-                this.f2657n = newN;
+                newValue[newN] = value[this.f2621n];
+                this.f2621n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2657n, this.f2658f);
+                this.maxFill = HashCommon.maxFill(this.f2621n, this.f2622f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1593,7 +1593,7 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f2657n] == null ? 0 : System.identityHashCode(this.value[this.f2657n]);
+            h += this.value[this.f2621n] == null ? 0 : System.identityHashCode(this.value[this.f2621n]);
         }
         return h;
     }
@@ -1623,12 +1623,12 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2657n = HashCommon.arraySize(this.size, this.f2658f);
-        this.maxFill = HashCommon.maxFill(this.f2657n, this.f2658f);
-        this.mask = this.f2657n - 1;
-        K[] key = (K[]) new Object[this.f2657n + 1];
+        this.f2621n = HashCommon.arraySize(this.size, this.f2622f);
+        this.maxFill = HashCommon.maxFill(this.f2621n, this.f2622f);
+        this.mask = this.f2621n - 1;
+        K[] key = (K[]) new Object[this.f2621n + 1];
         this.key = key;
-        V[] value = (V[]) new Object[this.f2657n + 1];
+        V[] value = (V[]) new Object[this.f2621n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1637,7 +1637,7 @@ public class Object2ReferenceOpenCustomHashMap<K, V> extends AbstractObject2Refe
                 Object readObject = s.readObject();
                 Object readObject2 = s.readObject();
                 if (this.strategy.equals(readObject, null)) {
-                    pos = this.f2657n;
+                    pos = this.f2621n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix(this.strategy.hashCode(readObject));

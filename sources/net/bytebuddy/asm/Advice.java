@@ -4928,7 +4928,7 @@ public class Advice implements AsmVisitorWrapper.ForDeclaredMethods.MethodVisito
                             this.index = i3 + 1;
                             Label actualHandler = list3.get(i3);
                             this.substitutions.put(handler, actualHandler);
-                            ((CodeTranslationVisitor) this.f3104mv).propagateHandler(actualHandler);
+                            ((CodeTranslationVisitor) this.f3068mv).propagateHandler(actualHandler);
                         }
 
                         @Override // net.bytebuddy.jar.asm.MethodVisitor
@@ -5230,7 +5230,7 @@ public class Advice implements AsmVisitorWrapper.ForDeclaredMethods.MethodVisito
                 }
 
                 protected void propagateHandler(Label label) {
-                    ((StackAwareMethodVisitor) this.f3104mv).register(label, Collections.singletonList(StackSize.SINGLE));
+                    ((StackAwareMethodVisitor) this.f3068mv).register(label, Collections.singletonList(StackSize.SINGLE));
                 }
 
                 @Override // net.bytebuddy.jar.asm.MethodVisitor
@@ -5332,19 +5332,19 @@ public class Advice implements AsmVisitorWrapper.ForDeclaredMethods.MethodVisito
                                 expectedGrowth = StackSize.ZERO;
                                 break;
                         }
-                        this.methodSizeHandler.requireStackSizePadding(stackManipulation.apply(this.f3104mv, this.implementationContext).getMaximalSize() - expectedGrowth.getSize());
+                        this.methodSizeHandler.requireStackSizePadding(stackManipulation.apply(this.f3068mv, this.implementationContext).getMaximalSize() - expectedGrowth.getSize());
                         return;
                     }
-                    this.f3104mv.visitVarInsn(opcode, this.argumentHandler.mapped(offset));
+                    this.f3068mv.visitVarInsn(opcode, this.argumentHandler.mapped(offset));
                 }
 
                 @Override // net.bytebuddy.jar.asm.MethodVisitor
                 public void visitIincInsn(int offset, int value) {
                     OffsetMapping.Target target = this.offsetMappings.get(Integer.valueOf(offset));
                     if (target != null) {
-                        this.methodSizeHandler.requireStackSizePadding(target.resolveIncrement(value).apply(this.f3104mv, this.implementationContext).getMaximalSize());
+                        this.methodSizeHandler.requireStackSizePadding(target.resolveIncrement(value).apply(this.f3068mv, this.implementationContext).getMaximalSize());
                     } else {
-                        this.f3104mv.visitIincInsn(this.argumentHandler.mapped(offset), value);
+                        this.f3068mv.visitIincInsn(this.argumentHandler.mapped(offset), value);
                     }
                 }
 
@@ -5352,28 +5352,28 @@ public class Advice implements AsmVisitorWrapper.ForDeclaredMethods.MethodVisito
                 public void visitInsn(int opcode) {
                     switch (opcode) {
                         case 172:
-                            this.methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor) this.f3104mv).drainStack(54, 21, StackSize.SINGLE));
+                            this.methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor) this.f3068mv).drainStack(54, 21, StackSize.SINGLE));
                             break;
                         case 173:
-                            this.methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor) this.f3104mv).drainStack(55, 22, StackSize.DOUBLE));
+                            this.methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor) this.f3068mv).drainStack(55, 22, StackSize.DOUBLE));
                             break;
                         case 174:
-                            this.methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor) this.f3104mv).drainStack(56, 23, StackSize.SINGLE));
+                            this.methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor) this.f3068mv).drainStack(56, 23, StackSize.SINGLE));
                             break;
                         case 175:
-                            this.methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor) this.f3104mv).drainStack(57, 24, StackSize.DOUBLE));
+                            this.methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor) this.f3068mv).drainStack(57, 24, StackSize.DOUBLE));
                             break;
                         case 176:
-                            this.methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor) this.f3104mv).drainStack(58, 25, StackSize.SINGLE));
+                            this.methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor) this.f3068mv).drainStack(58, 25, StackSize.SINGLE));
                             break;
                         case 177:
-                            ((StackAwareMethodVisitor) this.f3104mv).drainStack();
+                            ((StackAwareMethodVisitor) this.f3068mv).drainStack();
                             break;
                         default:
-                            this.f3104mv.visitInsn(opcode);
+                            this.f3068mv.visitInsn(opcode);
                             return;
                     }
-                    this.f3104mv.visitJumpInsn(167, this.endOfMethod);
+                    this.f3068mv.visitJumpInsn(167, this.endOfMethod);
                 }
 
                 @Override // net.bytebuddy.jar.asm.MethodVisitor
@@ -5853,38 +5853,38 @@ public class Advice implements AsmVisitorWrapper.ForDeclaredMethods.MethodVisito
             this.methodExit.prepare();
             this.methodEnter.initialize();
             this.methodExit.initialize();
-            this.stackMapFrameHandler.injectInitializationFrame(this.f3104mv);
+            this.stackMapFrameHandler.injectInitializationFrame(this.f3068mv);
             this.methodEnter.apply();
-            this.f3104mv.visitLabel(this.preparationStart);
-            this.methodSizeHandler.requireStackSize(this.argumentHandler.prepare(this.f3104mv));
-            this.stackMapFrameHandler.injectStartFrame(this.f3104mv);
+            this.f3068mv.visitLabel(this.preparationStart);
+            this.methodSizeHandler.requireStackSize(this.argumentHandler.prepare(this.f3068mv));
+            this.stackMapFrameHandler.injectStartFrame(this.f3068mv);
             onUserStart();
         }
 
         @Override // net.bytebuddy.utility.visitor.ExceptionTableSensitiveMethodVisitor
         protected void onVisitVarInsn(int opcode, int offset) {
-            this.f3104mv.visitVarInsn(opcode, this.argumentHandler.argument(offset));
+            this.f3068mv.visitVarInsn(opcode, this.argumentHandler.argument(offset));
         }
 
         @Override // net.bytebuddy.utility.visitor.ExceptionTableSensitiveMethodVisitor
         protected void onVisitIincInsn(int offset, int increment) {
-            this.f3104mv.visitIincInsn(this.argumentHandler.argument(offset), increment);
+            this.f3068mv.visitIincInsn(this.argumentHandler.argument(offset), increment);
         }
 
         @Override // net.bytebuddy.utility.visitor.ExceptionTableSensitiveMethodVisitor
         public void onVisitFrame(int type, int localVariableLength, Object[] localVariable, int stackSize, Object[] stack) {
-            this.stackMapFrameHandler.translateFrame(this.f3104mv, type, localVariableLength, localVariable, stackSize, stack);
+            this.stackMapFrameHandler.translateFrame(this.f3068mv, type, localVariableLength, localVariable, stackSize, stack);
         }
 
         @Override // net.bytebuddy.jar.asm.MethodVisitor
         public void visitMaxs(int stackSize, int localVariableLength) {
             onUserEnd();
-            this.f3104mv.visitMaxs(this.methodSizeHandler.compoundStackSize(stackSize), this.methodSizeHandler.compoundLocalVariableLength(localVariableLength));
+            this.f3068mv.visitMaxs(this.methodSizeHandler.compoundStackSize(stackSize), this.methodSizeHandler.compoundLocalVariableLength(localVariableLength));
         }
 
         @Override // net.bytebuddy.jar.asm.MethodVisitor
         public void visitLocalVariable(String name, String descriptor, String signature, Label start, Label end, int index) {
-            this.f3104mv.visitLocalVariable(name, descriptor, signature, start, end, (index != 0 || !"this".equals(name)) ? this.argumentHandler.variable(index) : index);
+            this.f3068mv.visitLocalVariable(name, descriptor, signature, start, end, (index != 0 || !"this".equals(name)) ? this.argumentHandler.variable(index) : index);
         }
 
         @Override // net.bytebuddy.jar.asm.MethodVisitor
@@ -5893,7 +5893,7 @@ public class Advice implements AsmVisitorWrapper.ForDeclaredMethods.MethodVisito
             for (int anIndex = 0; anIndex < index.length; anIndex++) {
                 translated[anIndex] = this.argumentHandler.variable(index[anIndex]);
             }
-            return this.f3104mv.visitLocalVariableAnnotation(typeReference, typePath, start, end, translated, descriptor, visible);
+            return this.f3068mv.visitLocalVariableAnnotation(typeReference, typePath, start, end, translated, descriptor, visible);
         }
 
         /* access modifiers changed from: protected */
@@ -5970,54 +5970,54 @@ public class Advice implements AsmVisitorWrapper.ForDeclaredMethods.MethodVisito
             protected void onVisitInsn(int opcode) {
                 switch (opcode) {
                     case 172:
-                        this.methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor) this.f3104mv).drainStack(54, 21, StackSize.SINGLE));
+                        this.methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor) this.f3068mv).drainStack(54, 21, StackSize.SINGLE));
                         break;
                     case 173:
-                        this.methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor) this.f3104mv).drainStack(55, 22, StackSize.DOUBLE));
+                        this.methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor) this.f3068mv).drainStack(55, 22, StackSize.DOUBLE));
                         break;
                     case 174:
-                        this.methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor) this.f3104mv).drainStack(56, 23, StackSize.SINGLE));
+                        this.methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor) this.f3068mv).drainStack(56, 23, StackSize.SINGLE));
                         break;
                     case 175:
-                        this.methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor) this.f3104mv).drainStack(57, 24, StackSize.DOUBLE));
+                        this.methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor) this.f3068mv).drainStack(57, 24, StackSize.DOUBLE));
                         break;
                     case 176:
-                        this.methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor) this.f3104mv).drainStack(58, 25, StackSize.SINGLE));
+                        this.methodSizeHandler.requireLocalVariableLength(((StackAwareMethodVisitor) this.f3068mv).drainStack(58, 25, StackSize.SINGLE));
                         break;
                     case 177:
-                        ((StackAwareMethodVisitor) this.f3104mv).drainStack();
+                        ((StackAwareMethodVisitor) this.f3068mv).drainStack();
                         break;
                     default:
-                        this.f3104mv.visitInsn(opcode);
+                        this.f3068mv.visitInsn(opcode);
                         return;
                 }
-                this.f3104mv.visitJumpInsn(167, this.returnHandler);
+                this.f3068mv.visitJumpInsn(167, this.returnHandler);
             }
 
             @Override // net.bytebuddy.asm.Advice.AdviceVisitor
             protected void onUserEnd() {
-                this.f3104mv.visitLabel(this.returnHandler);
+                this.f3068mv.visitLabel(this.returnHandler);
                 onUserReturn();
-                this.stackMapFrameHandler.injectCompletionFrame(this.f3104mv);
+                this.stackMapFrameHandler.injectCompletionFrame(this.f3068mv);
                 this.methodExit.apply();
                 onExitAdviceReturn();
                 if (this.instrumentedMethod.getReturnType().represents(Boolean.TYPE) || this.instrumentedMethod.getReturnType().represents(Byte.TYPE) || this.instrumentedMethod.getReturnType().represents(Short.TYPE) || this.instrumentedMethod.getReturnType().represents(Character.TYPE) || this.instrumentedMethod.getReturnType().represents(Integer.TYPE)) {
-                    this.f3104mv.visitVarInsn(21, this.argumentHandler.returned());
-                    this.f3104mv.visitInsn(172);
+                    this.f3068mv.visitVarInsn(21, this.argumentHandler.returned());
+                    this.f3068mv.visitInsn(172);
                 } else if (this.instrumentedMethod.getReturnType().represents(Long.TYPE)) {
-                    this.f3104mv.visitVarInsn(22, this.argumentHandler.returned());
-                    this.f3104mv.visitInsn(173);
+                    this.f3068mv.visitVarInsn(22, this.argumentHandler.returned());
+                    this.f3068mv.visitInsn(173);
                 } else if (this.instrumentedMethod.getReturnType().represents(Float.TYPE)) {
-                    this.f3104mv.visitVarInsn(23, this.argumentHandler.returned());
-                    this.f3104mv.visitInsn(174);
+                    this.f3068mv.visitVarInsn(23, this.argumentHandler.returned());
+                    this.f3068mv.visitInsn(174);
                 } else if (this.instrumentedMethod.getReturnType().represents(Double.TYPE)) {
-                    this.f3104mv.visitVarInsn(24, this.argumentHandler.returned());
-                    this.f3104mv.visitInsn(175);
+                    this.f3068mv.visitVarInsn(24, this.argumentHandler.returned());
+                    this.f3068mv.visitInsn(175);
                 } else if (!this.instrumentedMethod.getReturnType().represents(Void.TYPE)) {
-                    this.f3104mv.visitVarInsn(25, this.argumentHandler.returned());
-                    this.f3104mv.visitInsn(176);
+                    this.f3068mv.visitVarInsn(25, this.argumentHandler.returned());
+                    this.f3068mv.visitInsn(176);
                 } else {
-                    this.f3104mv.visitInsn(177);
+                    this.f3068mv.visitInsn(177);
                 }
                 this.methodSizeHandler.requireStackSize(this.instrumentedMethod.getReturnType().getStackSize().getSize());
             }
@@ -6071,20 +6071,20 @@ public class Advice implements AsmVisitorWrapper.ForDeclaredMethods.MethodVisito
                 @Override // net.bytebuddy.asm.Advice.AdviceVisitor.WithExitAdvice
                 protected void onUserReturn() {
                     if (this.instrumentedMethod.getReturnType().represents(Boolean.TYPE) || this.instrumentedMethod.getReturnType().represents(Byte.TYPE) || this.instrumentedMethod.getReturnType().represents(Short.TYPE) || this.instrumentedMethod.getReturnType().represents(Character.TYPE) || this.instrumentedMethod.getReturnType().represents(Integer.TYPE)) {
-                        this.stackMapFrameHandler.injectReturnFrame(this.f3104mv);
-                        this.f3104mv.visitVarInsn(54, this.argumentHandler.returned());
+                        this.stackMapFrameHandler.injectReturnFrame(this.f3068mv);
+                        this.f3068mv.visitVarInsn(54, this.argumentHandler.returned());
                     } else if (this.instrumentedMethod.getReturnType().represents(Long.TYPE)) {
-                        this.stackMapFrameHandler.injectReturnFrame(this.f3104mv);
-                        this.f3104mv.visitVarInsn(55, this.argumentHandler.returned());
+                        this.stackMapFrameHandler.injectReturnFrame(this.f3068mv);
+                        this.f3068mv.visitVarInsn(55, this.argumentHandler.returned());
                     } else if (this.instrumentedMethod.getReturnType().represents(Float.TYPE)) {
-                        this.stackMapFrameHandler.injectReturnFrame(this.f3104mv);
-                        this.f3104mv.visitVarInsn(56, this.argumentHandler.returned());
+                        this.stackMapFrameHandler.injectReturnFrame(this.f3068mv);
+                        this.f3068mv.visitVarInsn(56, this.argumentHandler.returned());
                     } else if (this.instrumentedMethod.getReturnType().represents(Double.TYPE)) {
-                        this.stackMapFrameHandler.injectReturnFrame(this.f3104mv);
-                        this.f3104mv.visitVarInsn(57, this.argumentHandler.returned());
+                        this.stackMapFrameHandler.injectReturnFrame(this.f3068mv);
+                        this.f3068mv.visitVarInsn(57, this.argumentHandler.returned());
                     } else if (!this.instrumentedMethod.getReturnType().represents(Void.TYPE)) {
-                        this.stackMapFrameHandler.injectReturnFrame(this.f3104mv);
-                        this.f3104mv.visitVarInsn(58, this.argumentHandler.returned());
+                        this.stackMapFrameHandler.injectReturnFrame(this.f3068mv);
+                        this.f3068mv.visitVarInsn(58, this.argumentHandler.returned());
                     }
                 }
 
@@ -6109,64 +6109,64 @@ public class Advice implements AsmVisitorWrapper.ForDeclaredMethods.MethodVisito
 
                 @Override // net.bytebuddy.asm.Advice.AdviceVisitor
                 protected void onUserPrepare() {
-                    this.f3104mv.visitTryCatchBlock(this.userStart, this.returnHandler, this.exceptionHandler, this.throwable.getInternalName());
+                    this.f3068mv.visitTryCatchBlock(this.userStart, this.returnHandler, this.exceptionHandler, this.throwable.getInternalName());
                 }
 
                 @Override // net.bytebuddy.asm.Advice.AdviceVisitor
                 protected void onUserStart() {
-                    this.f3104mv.visitLabel(this.userStart);
+                    this.f3068mv.visitLabel(this.userStart);
                 }
 
                 @Override // net.bytebuddy.asm.Advice.AdviceVisitor.WithExitAdvice
                 protected void onUserReturn() {
-                    this.stackMapFrameHandler.injectReturnFrame(this.f3104mv);
+                    this.stackMapFrameHandler.injectReturnFrame(this.f3068mv);
                     if (this.instrumentedMethod.getReturnType().represents(Boolean.TYPE) || this.instrumentedMethod.getReturnType().represents(Byte.TYPE) || this.instrumentedMethod.getReturnType().represents(Short.TYPE) || this.instrumentedMethod.getReturnType().represents(Character.TYPE) || this.instrumentedMethod.getReturnType().represents(Integer.TYPE)) {
-                        this.f3104mv.visitVarInsn(54, this.argumentHandler.returned());
+                        this.f3068mv.visitVarInsn(54, this.argumentHandler.returned());
                     } else if (this.instrumentedMethod.getReturnType().represents(Long.TYPE)) {
-                        this.f3104mv.visitVarInsn(55, this.argumentHandler.returned());
+                        this.f3068mv.visitVarInsn(55, this.argumentHandler.returned());
                     } else if (this.instrumentedMethod.getReturnType().represents(Float.TYPE)) {
-                        this.f3104mv.visitVarInsn(56, this.argumentHandler.returned());
+                        this.f3068mv.visitVarInsn(56, this.argumentHandler.returned());
                     } else if (this.instrumentedMethod.getReturnType().represents(Double.TYPE)) {
-                        this.f3104mv.visitVarInsn(57, this.argumentHandler.returned());
+                        this.f3068mv.visitVarInsn(57, this.argumentHandler.returned());
                     } else if (!this.instrumentedMethod.getReturnType().represents(Void.TYPE)) {
-                        this.f3104mv.visitVarInsn(58, this.argumentHandler.returned());
+                        this.f3068mv.visitVarInsn(58, this.argumentHandler.returned());
                     }
-                    this.f3104mv.visitInsn(1);
-                    this.f3104mv.visitVarInsn(58, this.argumentHandler.thrown());
+                    this.f3068mv.visitInsn(1);
+                    this.f3068mv.visitVarInsn(58, this.argumentHandler.thrown());
                     Label endOfHandler = new Label();
-                    this.f3104mv.visitJumpInsn(167, endOfHandler);
-                    this.f3104mv.visitLabel(this.exceptionHandler);
-                    this.stackMapFrameHandler.injectExceptionFrame(this.f3104mv);
-                    this.f3104mv.visitVarInsn(58, this.argumentHandler.thrown());
+                    this.f3068mv.visitJumpInsn(167, endOfHandler);
+                    this.f3068mv.visitLabel(this.exceptionHandler);
+                    this.stackMapFrameHandler.injectExceptionFrame(this.f3068mv);
+                    this.f3068mv.visitVarInsn(58, this.argumentHandler.thrown());
                     if (this.instrumentedMethod.getReturnType().represents(Boolean.TYPE) || this.instrumentedMethod.getReturnType().represents(Byte.TYPE) || this.instrumentedMethod.getReturnType().represents(Short.TYPE) || this.instrumentedMethod.getReturnType().represents(Character.TYPE) || this.instrumentedMethod.getReturnType().represents(Integer.TYPE)) {
-                        this.f3104mv.visitInsn(3);
-                        this.f3104mv.visitVarInsn(54, this.argumentHandler.returned());
+                        this.f3068mv.visitInsn(3);
+                        this.f3068mv.visitVarInsn(54, this.argumentHandler.returned());
                     } else if (this.instrumentedMethod.getReturnType().represents(Long.TYPE)) {
-                        this.f3104mv.visitInsn(9);
-                        this.f3104mv.visitVarInsn(55, this.argumentHandler.returned());
+                        this.f3068mv.visitInsn(9);
+                        this.f3068mv.visitVarInsn(55, this.argumentHandler.returned());
                     } else if (this.instrumentedMethod.getReturnType().represents(Float.TYPE)) {
-                        this.f3104mv.visitInsn(11);
-                        this.f3104mv.visitVarInsn(56, this.argumentHandler.returned());
+                        this.f3068mv.visitInsn(11);
+                        this.f3068mv.visitVarInsn(56, this.argumentHandler.returned());
                     } else if (this.instrumentedMethod.getReturnType().represents(Double.TYPE)) {
-                        this.f3104mv.visitInsn(14);
-                        this.f3104mv.visitVarInsn(57, this.argumentHandler.returned());
+                        this.f3068mv.visitInsn(14);
+                        this.f3068mv.visitVarInsn(57, this.argumentHandler.returned());
                     } else if (!this.instrumentedMethod.getReturnType().represents(Void.TYPE)) {
-                        this.f3104mv.visitInsn(1);
-                        this.f3104mv.visitVarInsn(58, this.argumentHandler.returned());
+                        this.f3068mv.visitInsn(1);
+                        this.f3068mv.visitVarInsn(58, this.argumentHandler.returned());
                     }
-                    this.f3104mv.visitLabel(endOfHandler);
+                    this.f3068mv.visitLabel(endOfHandler);
                     this.methodSizeHandler.requireStackSize(StackSize.SINGLE.getSize());
                 }
 
                 @Override // net.bytebuddy.asm.Advice.AdviceVisitor.WithExitAdvice
                 protected void onExitAdviceReturn() {
-                    this.f3104mv.visitVarInsn(25, this.argumentHandler.thrown());
+                    this.f3068mv.visitVarInsn(25, this.argumentHandler.thrown());
                     Label endOfHandler = new Label();
-                    this.f3104mv.visitJumpInsn(198, endOfHandler);
-                    this.f3104mv.visitVarInsn(25, this.argumentHandler.thrown());
-                    this.f3104mv.visitInsn(191);
-                    this.f3104mv.visitLabel(endOfHandler);
-                    this.stackMapFrameHandler.injectPostCompletionFrame(this.f3104mv);
+                    this.f3068mv.visitJumpInsn(198, endOfHandler);
+                    this.f3068mv.visitVarInsn(25, this.argumentHandler.thrown());
+                    this.f3068mv.visitInsn(191);
+                    this.f3068mv.visitLabel(endOfHandler);
+                    this.stackMapFrameHandler.injectPostCompletionFrame(this.f3068mv);
                 }
             }
         }

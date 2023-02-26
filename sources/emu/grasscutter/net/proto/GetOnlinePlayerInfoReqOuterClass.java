@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetOnlinePlayerInfoReqOuterClass.class */
 public final class GetOnlinePlayerInfoReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cGetOnlinePlayerInfoReq.proto\"x\n\u0016GetOnlinePlayerInfoReq\u0012\u0014\n\fis_online_id\u0018\b \u0001(\b\u0012\u0014\n\ntarget_uid\u0018\u0001 \u0001(\rH��\u0012\u0013\n\tonline_id\u0018\u0007 \u0001(\tH��\u0012\u0010\n\u0006psn_id\u0018\u0004 \u0001(\tH��B\u000b\n\tplayer_idB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cGetOnlinePlayerInfoReq.proto\"v\n\u0016GetOnlinePlayerInfoReq\u0012\u0012\n\nisOnlineId\u0018\u0003 \u0001(\b\u0012\u0014\n\ntarget_uid\u0018\u0004 \u0001(\rH��\u0012\u0013\n\tonline_id\u0018\n \u0001(\tH��\u0012\u0010\n\u0006psn_id\u0018\f \u0001(\tH��B\u000b\n\tplayer_idB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GetOnlinePlayerInfoReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetOnlinePlayerInfoReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetOnlinePlayerInfoReq_descriptor, new String[]{"IsOnlineId", "TargetUid", "OnlineId", "PsnId", "PlayerId"});
 
@@ -63,11 +63,11 @@ public final class GetOnlinePlayerInfoReqOuterClass {
         private static final long serialVersionUID = 0;
         private int playerIdCase_;
         private Object playerId_;
-        public static final int IS_ONLINE_ID_FIELD_NUMBER = 8;
+        public static final int ISONLINEID_FIELD_NUMBER = 3;
         private boolean isOnlineId_;
-        public static final int TARGET_UID_FIELD_NUMBER = 1;
-        public static final int ONLINE_ID_FIELD_NUMBER = 7;
-        public static final int PSN_ID_FIELD_NUMBER = 4;
+        public static final int TARGET_UID_FIELD_NUMBER = 4;
+        public static final int ONLINE_ID_FIELD_NUMBER = 10;
+        public static final int PSN_ID_FIELD_NUMBER = 12;
         private byte memoizedIsInitialized;
         private static final GetOnlinePlayerInfoReq DEFAULT_INSTANCE = new GetOnlinePlayerInfoReq();
         private static final Parser<GetOnlinePlayerInfoReq> PARSER = new AbstractParser<GetOnlinePlayerInfoReq>() { // from class: emu.grasscutter.net.proto.GetOnlinePlayerInfoReqOuterClass.GetOnlinePlayerInfoReq.1
@@ -110,38 +110,40 @@ public final class GetOnlinePlayerInfoReqOuterClass {
                 boolean done = false;
                 while (!done) {
                     try {
-                        int tag = input.readTag();
-                        switch (tag) {
-                            case 0:
-                                done = true;
-                                break;
-                            case 8:
-                                this.playerIdCase_ = 1;
-                                this.playerId_ = Integer.valueOf(input.readUInt32());
-                                break;
-                            case 34:
-                                String s = input.readStringRequireUtf8();
-                                this.playerIdCase_ = 4;
-                                this.playerId_ = s;
-                                break;
-                            case 58:
-                                String s2 = input.readStringRequireUtf8();
-                                this.playerIdCase_ = 7;
-                                this.playerId_ = s2;
-                                break;
-                            case 64:
-                                this.isOnlineId_ = input.readBool();
-                                break;
-                            default:
-                                if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                                    break;
-                                } else {
+                        try {
+                            int tag = input.readTag();
+                            switch (tag) {
+                                case 0:
                                     done = true;
                                     break;
-                                }
+                                case 24:
+                                    this.isOnlineId_ = input.readBool();
+                                    break;
+                                case 32:
+                                    this.playerIdCase_ = 4;
+                                    this.playerId_ = Integer.valueOf(input.readUInt32());
+                                    break;
+                                case 82:
+                                    String s = input.readStringRequireUtf8();
+                                    this.playerIdCase_ = 10;
+                                    this.playerId_ = s;
+                                    break;
+                                case 98:
+                                    String s2 = input.readStringRequireUtf8();
+                                    this.playerIdCase_ = 12;
+                                    this.playerId_ = s2;
+                                    break;
+                                default:
+                                    if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                                        break;
+                                    } else {
+                                        done = true;
+                                        break;
+                                    }
+                            }
+                        } catch (InvalidProtocolBufferException e) {
+                            throw e.setUnfinishedMessage(this);
                         }
-                    } catch (InvalidProtocolBufferException e) {
-                        throw e.setUnfinishedMessage(this);
                     } catch (IOException e2) {
                         throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
                     }
@@ -163,9 +165,9 @@ public final class GetOnlinePlayerInfoReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetOnlinePlayerInfoReqOuterClass$GetOnlinePlayerInfoReq$PlayerIdCase.class */
         public enum PlayerIdCase implements Internal.EnumLite, AbstractMessageLite.InternalOneOfEnum {
-            TARGET_UID(1),
-            ONLINE_ID(7),
-            PSN_ID(4),
+            TARGET_UID(4),
+            ONLINE_ID(10),
+            PSN_ID(12),
             PLAYERID_NOT_SET(0);
             
             private final int value;
@@ -183,18 +185,14 @@ public final class GetOnlinePlayerInfoReqOuterClass {
                 switch (value) {
                     case 0:
                         return PLAYERID_NOT_SET;
-                    case 1:
+                    case 4:
                         return TARGET_UID;
-                    case 2:
-                    case 3:
-                    case 5:
-                    case 6:
+                    case 10:
+                        return ONLINE_ID;
+                    case 12:
+                        return PSN_ID;
                     default:
                         return null;
-                    case 4:
-                        return PSN_ID;
-                    case 7:
-                        return ONLINE_ID;
                 }
             }
 
@@ -216,12 +214,12 @@ public final class GetOnlinePlayerInfoReqOuterClass {
 
         @Override // emu.grasscutter.net.proto.GetOnlinePlayerInfoReqOuterClass.GetOnlinePlayerInfoReqOrBuilder
         public boolean hasTargetUid() {
-            return this.playerIdCase_ == 1;
+            return this.playerIdCase_ == 4;
         }
 
         @Override // emu.grasscutter.net.proto.GetOnlinePlayerInfoReqOuterClass.GetOnlinePlayerInfoReqOrBuilder
         public int getTargetUid() {
-            if (this.playerIdCase_ == 1) {
+            if (this.playerIdCase_ == 4) {
                 return ((Integer) this.playerId_).intValue();
             }
             return 0;
@@ -229,20 +227,20 @@ public final class GetOnlinePlayerInfoReqOuterClass {
 
         @Override // emu.grasscutter.net.proto.GetOnlinePlayerInfoReqOuterClass.GetOnlinePlayerInfoReqOrBuilder
         public boolean hasOnlineId() {
-            return this.playerIdCase_ == 7;
+            return this.playerIdCase_ == 10;
         }
 
         @Override // emu.grasscutter.net.proto.GetOnlinePlayerInfoReqOuterClass.GetOnlinePlayerInfoReqOrBuilder
         public String getOnlineId() {
             Object ref = "";
-            if (this.playerIdCase_ == 7) {
+            if (this.playerIdCase_ == 10) {
                 ref = this.playerId_;
             }
             if (ref instanceof String) {
                 return (String) ref;
             }
             String s = ((ByteString) ref).toStringUtf8();
-            if (this.playerIdCase_ == 7) {
+            if (this.playerIdCase_ == 10) {
                 this.playerId_ = s;
             }
             return s;
@@ -251,14 +249,14 @@ public final class GetOnlinePlayerInfoReqOuterClass {
         @Override // emu.grasscutter.net.proto.GetOnlinePlayerInfoReqOuterClass.GetOnlinePlayerInfoReqOrBuilder
         public ByteString getOnlineIdBytes() {
             Object ref = "";
-            if (this.playerIdCase_ == 7) {
+            if (this.playerIdCase_ == 10) {
                 ref = this.playerId_;
             }
             if (!(ref instanceof String)) {
                 return (ByteString) ref;
             }
             ByteString b = ByteString.copyFromUtf8((String) ref);
-            if (this.playerIdCase_ == 7) {
+            if (this.playerIdCase_ == 10) {
                 this.playerId_ = b;
             }
             return b;
@@ -266,20 +264,20 @@ public final class GetOnlinePlayerInfoReqOuterClass {
 
         @Override // emu.grasscutter.net.proto.GetOnlinePlayerInfoReqOuterClass.GetOnlinePlayerInfoReqOrBuilder
         public boolean hasPsnId() {
-            return this.playerIdCase_ == 4;
+            return this.playerIdCase_ == 12;
         }
 
         @Override // emu.grasscutter.net.proto.GetOnlinePlayerInfoReqOuterClass.GetOnlinePlayerInfoReqOrBuilder
         public String getPsnId() {
             Object ref = "";
-            if (this.playerIdCase_ == 4) {
+            if (this.playerIdCase_ == 12) {
                 ref = this.playerId_;
             }
             if (ref instanceof String) {
                 return (String) ref;
             }
             String s = ((ByteString) ref).toStringUtf8();
-            if (this.playerIdCase_ == 4) {
+            if (this.playerIdCase_ == 12) {
                 this.playerId_ = s;
             }
             return s;
@@ -288,14 +286,14 @@ public final class GetOnlinePlayerInfoReqOuterClass {
         @Override // emu.grasscutter.net.proto.GetOnlinePlayerInfoReqOuterClass.GetOnlinePlayerInfoReqOrBuilder
         public ByteString getPsnIdBytes() {
             Object ref = "";
-            if (this.playerIdCase_ == 4) {
+            if (this.playerIdCase_ == 12) {
                 ref = this.playerId_;
             }
             if (!(ref instanceof String)) {
                 return (ByteString) ref;
             }
             ByteString b = ByteString.copyFromUtf8((String) ref);
-            if (this.playerIdCase_ == 4) {
+            if (this.playerIdCase_ == 12) {
                 this.playerId_ = b;
             }
             return b;
@@ -316,17 +314,17 @@ public final class GetOnlinePlayerInfoReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.playerIdCase_ == 1) {
-                output.writeUInt32(1, ((Integer) this.playerId_).intValue());
+            if (this.isOnlineId_) {
+                output.writeBool(3, this.isOnlineId_);
             }
             if (this.playerIdCase_ == 4) {
-                GeneratedMessageV3.writeString(output, 4, this.playerId_);
+                output.writeUInt32(4, ((Integer) this.playerId_).intValue());
             }
-            if (this.playerIdCase_ == 7) {
-                GeneratedMessageV3.writeString(output, 7, this.playerId_);
+            if (this.playerIdCase_ == 10) {
+                GeneratedMessageV3.writeString(output, 10, this.playerId_);
             }
-            if (this.isOnlineId_) {
-                output.writeBool(8, this.isOnlineId_);
+            if (this.playerIdCase_ == 12) {
+                GeneratedMessageV3.writeString(output, 12, this.playerId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -338,17 +336,17 @@ public final class GetOnlinePlayerInfoReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.playerIdCase_ == 1) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, ((Integer) this.playerId_).intValue());
+            if (this.isOnlineId_) {
+                size2 = 0 + CodedOutputStream.computeBoolSize(3, this.isOnlineId_);
             }
             if (this.playerIdCase_ == 4) {
-                size2 += GeneratedMessageV3.computeStringSize(4, this.playerId_);
+                size2 += CodedOutputStream.computeUInt32Size(4, ((Integer) this.playerId_).intValue());
             }
-            if (this.playerIdCase_ == 7) {
-                size2 += GeneratedMessageV3.computeStringSize(7, this.playerId_);
+            if (this.playerIdCase_ == 10) {
+                size2 += GeneratedMessageV3.computeStringSize(10, this.playerId_);
             }
-            if (this.isOnlineId_) {
-                size2 += CodedOutputStream.computeBoolSize(8, this.isOnlineId_);
+            if (this.playerIdCase_ == 12) {
+                size2 += GeneratedMessageV3.computeStringSize(12, this.playerId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -368,18 +366,18 @@ public final class GetOnlinePlayerInfoReqOuterClass {
                 return false;
             }
             switch (this.playerIdCase_) {
-                case 1:
+                case 4:
                     if (getTargetUid() != other.getTargetUid()) {
                         return false;
                     }
                     break;
-                case 4:
-                    if (!getPsnId().equals(other.getPsnId())) {
+                case 10:
+                    if (!getOnlineId().equals(other.getOnlineId())) {
                         return false;
                     }
                     break;
-                case 7:
-                    if (!getOnlineId().equals(other.getOnlineId())) {
+                case 12:
+                    if (!getPsnId().equals(other.getPsnId())) {
                         return false;
                     }
                     break;
@@ -392,16 +390,16 @@ public final class GetOnlinePlayerInfoReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + Internal.hashBoolean(getIsOnlineId());
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + Internal.hashBoolean(getIsOnlineId());
             switch (this.playerIdCase_) {
-                case 1:
-                    hash = (53 * ((37 * hash) + 1)) + getTargetUid();
-                    break;
                 case 4:
-                    hash = (53 * ((37 * hash) + 4)) + getPsnId().hashCode();
+                    hash = (53 * ((37 * hash) + 4)) + getTargetUid();
                     break;
-                case 7:
-                    hash = (53 * ((37 * hash) + 7)) + getOnlineId().hashCode();
+                case 10:
+                    hash = (53 * ((37 * hash) + 10)) + getOnlineId().hashCode();
+                    break;
+                case 12:
+                    hash = (53 * ((37 * hash) + 12)) + getPsnId().hashCode();
                     break;
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
@@ -542,13 +540,13 @@ public final class GetOnlinePlayerInfoReqOuterClass {
             public GetOnlinePlayerInfoReq buildPartial() {
                 GetOnlinePlayerInfoReq result = new GetOnlinePlayerInfoReq(this);
                 result.isOnlineId_ = this.isOnlineId_;
-                if (this.playerIdCase_ == 1) {
-                    result.playerId_ = this.playerId_;
-                }
-                if (this.playerIdCase_ == 7) {
-                    result.playerId_ = this.playerId_;
-                }
                 if (this.playerIdCase_ == 4) {
+                    result.playerId_ = this.playerId_;
+                }
+                if (this.playerIdCase_ == 10) {
+                    result.playerId_ = this.playerId_;
+                }
+                if (this.playerIdCase_ == 12) {
                     result.playerId_ = this.playerId_;
                 }
                 result.playerIdCase_ = this.playerIdCase_;
@@ -607,12 +605,12 @@ public final class GetOnlinePlayerInfoReqOuterClass {
                         setTargetUid(other.getTargetUid());
                         break;
                     case ONLINE_ID:
-                        this.playerIdCase_ = 7;
+                        this.playerIdCase_ = 10;
                         this.playerId_ = other.playerId_;
                         onChanged();
                         break;
                     case PSN_ID:
-                        this.playerIdCase_ = 4;
+                        this.playerIdCase_ = 12;
                         this.playerId_ = other.playerId_;
                         onChanged();
                         break;
@@ -680,26 +678,26 @@ public final class GetOnlinePlayerInfoReqOuterClass {
 
             @Override // emu.grasscutter.net.proto.GetOnlinePlayerInfoReqOuterClass.GetOnlinePlayerInfoReqOrBuilder
             public boolean hasTargetUid() {
-                return this.playerIdCase_ == 1;
+                return this.playerIdCase_ == 4;
             }
 
             @Override // emu.grasscutter.net.proto.GetOnlinePlayerInfoReqOuterClass.GetOnlinePlayerInfoReqOrBuilder
             public int getTargetUid() {
-                if (this.playerIdCase_ == 1) {
+                if (this.playerIdCase_ == 4) {
                     return ((Integer) this.playerId_).intValue();
                 }
                 return 0;
             }
 
             public Builder setTargetUid(int value) {
-                this.playerIdCase_ = 1;
+                this.playerIdCase_ = 4;
                 this.playerId_ = Integer.valueOf(value);
                 onChanged();
                 return this;
             }
 
             public Builder clearTargetUid() {
-                if (this.playerIdCase_ == 1) {
+                if (this.playerIdCase_ == 4) {
                     this.playerIdCase_ = 0;
                     this.playerId_ = null;
                     onChanged();
@@ -709,20 +707,20 @@ public final class GetOnlinePlayerInfoReqOuterClass {
 
             @Override // emu.grasscutter.net.proto.GetOnlinePlayerInfoReqOuterClass.GetOnlinePlayerInfoReqOrBuilder
             public boolean hasOnlineId() {
-                return this.playerIdCase_ == 7;
+                return this.playerIdCase_ == 10;
             }
 
             @Override // emu.grasscutter.net.proto.GetOnlinePlayerInfoReqOuterClass.GetOnlinePlayerInfoReqOrBuilder
             public String getOnlineId() {
                 Object ref = "";
-                if (this.playerIdCase_ == 7) {
+                if (this.playerIdCase_ == 10) {
                     ref = this.playerId_;
                 }
                 if (ref instanceof String) {
                     return (String) ref;
                 }
                 String s = ((ByteString) ref).toStringUtf8();
-                if (this.playerIdCase_ == 7) {
+                if (this.playerIdCase_ == 10) {
                     this.playerId_ = s;
                 }
                 return s;
@@ -731,14 +729,14 @@ public final class GetOnlinePlayerInfoReqOuterClass {
             @Override // emu.grasscutter.net.proto.GetOnlinePlayerInfoReqOuterClass.GetOnlinePlayerInfoReqOrBuilder
             public ByteString getOnlineIdBytes() {
                 Object ref = "";
-                if (this.playerIdCase_ == 7) {
+                if (this.playerIdCase_ == 10) {
                     ref = this.playerId_;
                 }
                 if (!(ref instanceof String)) {
                     return (ByteString) ref;
                 }
                 ByteString b = ByteString.copyFromUtf8((String) ref);
-                if (this.playerIdCase_ == 7) {
+                if (this.playerIdCase_ == 10) {
                     this.playerId_ = b;
                 }
                 return b;
@@ -748,14 +746,14 @@ public final class GetOnlinePlayerInfoReqOuterClass {
                 if (value == null) {
                     throw new NullPointerException();
                 }
-                this.playerIdCase_ = 7;
+                this.playerIdCase_ = 10;
                 this.playerId_ = value;
                 onChanged();
                 return this;
             }
 
             public Builder clearOnlineId() {
-                if (this.playerIdCase_ == 7) {
+                if (this.playerIdCase_ == 10) {
                     this.playerIdCase_ = 0;
                     this.playerId_ = null;
                     onChanged();
@@ -768,7 +766,7 @@ public final class GetOnlinePlayerInfoReqOuterClass {
                     throw new NullPointerException();
                 }
                 GetOnlinePlayerInfoReq.checkByteStringIsUtf8(value);
-                this.playerIdCase_ = 7;
+                this.playerIdCase_ = 10;
                 this.playerId_ = value;
                 onChanged();
                 return this;
@@ -776,20 +774,20 @@ public final class GetOnlinePlayerInfoReqOuterClass {
 
             @Override // emu.grasscutter.net.proto.GetOnlinePlayerInfoReqOuterClass.GetOnlinePlayerInfoReqOrBuilder
             public boolean hasPsnId() {
-                return this.playerIdCase_ == 4;
+                return this.playerIdCase_ == 12;
             }
 
             @Override // emu.grasscutter.net.proto.GetOnlinePlayerInfoReqOuterClass.GetOnlinePlayerInfoReqOrBuilder
             public String getPsnId() {
                 Object ref = "";
-                if (this.playerIdCase_ == 4) {
+                if (this.playerIdCase_ == 12) {
                     ref = this.playerId_;
                 }
                 if (ref instanceof String) {
                     return (String) ref;
                 }
                 String s = ((ByteString) ref).toStringUtf8();
-                if (this.playerIdCase_ == 4) {
+                if (this.playerIdCase_ == 12) {
                     this.playerId_ = s;
                 }
                 return s;
@@ -798,14 +796,14 @@ public final class GetOnlinePlayerInfoReqOuterClass {
             @Override // emu.grasscutter.net.proto.GetOnlinePlayerInfoReqOuterClass.GetOnlinePlayerInfoReqOrBuilder
             public ByteString getPsnIdBytes() {
                 Object ref = "";
-                if (this.playerIdCase_ == 4) {
+                if (this.playerIdCase_ == 12) {
                     ref = this.playerId_;
                 }
                 if (!(ref instanceof String)) {
                     return (ByteString) ref;
                 }
                 ByteString b = ByteString.copyFromUtf8((String) ref);
-                if (this.playerIdCase_ == 4) {
+                if (this.playerIdCase_ == 12) {
                     this.playerId_ = b;
                 }
                 return b;
@@ -815,14 +813,14 @@ public final class GetOnlinePlayerInfoReqOuterClass {
                 if (value == null) {
                     throw new NullPointerException();
                 }
-                this.playerIdCase_ = 4;
+                this.playerIdCase_ = 12;
                 this.playerId_ = value;
                 onChanged();
                 return this;
             }
 
             public Builder clearPsnId() {
-                if (this.playerIdCase_ == 4) {
+                if (this.playerIdCase_ == 12) {
                     this.playerIdCase_ = 0;
                     this.playerId_ = null;
                     onChanged();
@@ -835,7 +833,7 @@ public final class GetOnlinePlayerInfoReqOuterClass {
                     throw new NullPointerException();
                 }
                 GetOnlinePlayerInfoReq.checkByteStringIsUtf8(value);
-                this.playerIdCase_ = 4;
+                this.playerIdCase_ = 12;
                 this.playerId_ = value;
                 onChanged();
                 return this;

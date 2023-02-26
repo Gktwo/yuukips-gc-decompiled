@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerLevelRewardUpdateNotifyOuterClass.class */
 public final class PlayerLevelRewardUpdateNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#PlayerLevelRewardUpdateNotify.proto\"3\n\u001dPlayerLevelRewardUpdateNotify\u0012\u0012\n\nlevel_list\u0018\t \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#PlayerLevelRewardUpdateNotify.proto\"2\n\u001dPlayerLevelRewardUpdateNotify\u0012\u0011\n\tlevelList\u0018\u0005 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PlayerLevelRewardUpdateNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerLevelRewardUpdateNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerLevelRewardUpdateNotify_descriptor, new String[]{"LevelList"});
 
@@ -49,7 +49,7 @@ public final class PlayerLevelRewardUpdateNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerLevelRewardUpdateNotifyOuterClass$PlayerLevelRewardUpdateNotify.class */
     public static final class PlayerLevelRewardUpdateNotify extends GeneratedMessageV3 implements PlayerLevelRewardUpdateNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int LEVEL_LIST_FIELD_NUMBER = 9;
+        public static final int LEVELLIST_FIELD_NUMBER = 5;
         private Internal.IntList levelList_;
         private int levelListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -103,14 +103,14 @@ public final class PlayerLevelRewardUpdateNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 72:
+                                case 40:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.levelList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.levelList_.addInt(input.readUInt32());
                                     break;
-                                case 74:
+                                case 42:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.levelList_ = newIntList();
@@ -186,7 +186,7 @@ public final class PlayerLevelRewardUpdateNotifyOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getLevelListList().size() > 0) {
-                output.writeUInt32NoTag(74);
+                output.writeUInt32NoTag(42);
                 output.writeUInt32NoTag(this.levelListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.levelList_.size(); i++) {
@@ -234,7 +234,7 @@ public final class PlayerLevelRewardUpdateNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getLevelListCount() > 0) {
-                hash = (53 * ((37 * hash) + 9)) + getLevelListList().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getLevelListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

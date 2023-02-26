@@ -15,23 +15,23 @@ public final class ShortPriorityQueues {
     public static class SynchronizedPriorityQueue implements ShortPriorityQueue {
 
         /* renamed from: q */
-        protected final ShortPriorityQueue f3068q;
+        protected final ShortPriorityQueue f3032q;
         protected final Object sync;
 
         protected SynchronizedPriorityQueue(ShortPriorityQueue q, Object sync) {
-            this.f3068q = q;
+            this.f3032q = q;
             this.sync = sync;
         }
 
         protected SynchronizedPriorityQueue(ShortPriorityQueue q) {
-            this.f3068q = q;
+            this.f3032q = q;
             this.sync = this;
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortPriorityQueue
         public void enqueue(short x) {
             synchronized (this.sync) {
-                this.f3068q.enqueue(x);
+                this.f3032q.enqueue(x);
             }
         }
 
@@ -39,7 +39,7 @@ public final class ShortPriorityQueues {
         public short dequeueShort() {
             short dequeueShort;
             synchronized (this.sync) {
-                dequeueShort = this.f3068q.dequeueShort();
+                dequeueShort = this.f3032q.dequeueShort();
             }
             return dequeueShort;
         }
@@ -48,7 +48,7 @@ public final class ShortPriorityQueues {
         public short firstShort() {
             short firstShort;
             synchronized (this.sync) {
-                firstShort = this.f3068q.firstShort();
+                firstShort = this.f3032q.firstShort();
             }
             return firstShort;
         }
@@ -57,7 +57,7 @@ public final class ShortPriorityQueues {
         public short lastShort() {
             short lastShort;
             synchronized (this.sync) {
-                lastShort = this.f3068q.lastShort();
+                lastShort = this.f3032q.lastShort();
             }
             return lastShort;
         }
@@ -66,7 +66,7 @@ public final class ShortPriorityQueues {
         public boolean isEmpty() {
             boolean isEmpty;
             synchronized (this.sync) {
-                isEmpty = this.f3068q.isEmpty();
+                isEmpty = this.f3032q.isEmpty();
             }
             return isEmpty;
         }
@@ -75,7 +75,7 @@ public final class ShortPriorityQueues {
         public int size() {
             int size;
             synchronized (this.sync) {
-                size = this.f3068q.size();
+                size = this.f3032q.size();
             }
             return size;
         }
@@ -83,14 +83,14 @@ public final class ShortPriorityQueues {
         @Override // p014it.unimi.dsi.fastutil.PriorityQueue
         public void clear() {
             synchronized (this.sync) {
-                this.f3068q.clear();
+                this.f3032q.clear();
             }
         }
 
         @Override // p014it.unimi.dsi.fastutil.PriorityQueue
         public void changed() {
             synchronized (this.sync) {
-                this.f3068q.changed();
+                this.f3032q.changed();
             }
         }
 
@@ -99,7 +99,7 @@ public final class ShortPriorityQueues {
         public Comparator<? super Short> comparator() {
             Comparator<? super Short> comparator;
             synchronized (this.sync) {
-                comparator = this.f3068q.comparator();
+                comparator = this.f3032q.comparator();
             }
             return comparator;
         }
@@ -108,7 +108,7 @@ public final class ShortPriorityQueues {
         @Deprecated
         public void enqueue(Short x) {
             synchronized (this.sync) {
-                this.f3068q.enqueue(x);
+                this.f3032q.enqueue(x);
             }
         }
 
@@ -117,7 +117,7 @@ public final class ShortPriorityQueues {
         public Short dequeue() {
             Short dequeue;
             synchronized (this.sync) {
-                dequeue = this.f3068q.dequeue();
+                dequeue = this.f3032q.dequeue();
             }
             return dequeue;
         }
@@ -127,7 +127,7 @@ public final class ShortPriorityQueues {
         public Short first() {
             Short first;
             synchronized (this.sync) {
-                first = this.f3068q.first();
+                first = this.f3032q.first();
             }
             return first;
         }
@@ -137,7 +137,7 @@ public final class ShortPriorityQueues {
         public Short last() {
             Short last;
             synchronized (this.sync) {
-                last = this.f3068q.last();
+                last = this.f3032q.last();
             }
             return last;
         }
@@ -145,7 +145,7 @@ public final class ShortPriorityQueues {
         public int hashCode() {
             int hashCode;
             synchronized (this.sync) {
-                hashCode = this.f3068q.hashCode();
+                hashCode = this.f3032q.hashCode();
             }
             return hashCode;
         }
@@ -156,7 +156,7 @@ public final class ShortPriorityQueues {
                 return true;
             }
             synchronized (this.sync) {
-                equals = this.f3068q.equals(o);
+                equals = this.f3032q.equals(o);
             }
             return equals;
         }

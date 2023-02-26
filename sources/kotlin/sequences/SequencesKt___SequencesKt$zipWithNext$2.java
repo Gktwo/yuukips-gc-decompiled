@@ -1,5 +1,6 @@
 package kotlin.sequences;
 
+import emu.grasscutter.net.packet.PacketOpcodes;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
@@ -12,7 +13,7 @@ import org.jline.builtins.Tmux;
 
 /* compiled from: _Sequences.kt */
 @Metadata(m371mv = {1, 6, 0}, m372k = 3, m369xi = 48, m374d1 = {"��\u000e\n��\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\u0010��\u001a\u00020\u0001\"\u0004\b��\u0010\u0002\"\u0004\b\u0001\u0010\u0003*\b\u0012\u0004\u0012\u0002H\u00030\u0004H@"}, m373d2 = {"<anonymous>", "", "T", "R", "Lkotlin/sequences/SequenceScope;"})
-@DebugMetadata(m364f = "_Sequences.kt", m362l = {2693}, m363i = {0, 0, 0}, m359s = {"L$0", "L$1", "L$2"}, m360n = {"$this$result", "iterator", Tmux.CMD_NEXT}, m361m = "invokeSuspend", m365c = "kotlin.sequences.SequencesKt___SequencesKt$zipWithNext$2")
+@DebugMetadata(m364f = "_Sequences.kt", m362l = {PacketOpcodes.TakeAchievementGoalRewardRsp}, m363i = {0, 0, 0}, m359s = {"L$0", "L$1", "L$2"}, m360n = {"$this$result", "iterator", Tmux.CMD_NEXT}, m361m = "invokeSuspend", m365c = "kotlin.sequences.SequencesKt___SequencesKt$zipWithNext$2")
 /* loaded from: grasscutter.jar:kotlin/sequences/SequencesKt___SequencesKt$zipWithNext$2.class */
 final class SequencesKt___SequencesKt$zipWithNext$2 extends RestrictedSuspendLambda implements Function2<SequenceScope<? super R>, Continuation<? super Unit>, Object> {
     Object L$1;

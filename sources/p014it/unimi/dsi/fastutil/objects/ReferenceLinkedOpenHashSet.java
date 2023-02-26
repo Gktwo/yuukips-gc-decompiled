@@ -30,13 +30,13 @@ public class ReferenceLinkedOpenHashSet<K> extends AbstractReferenceSortedSet<K>
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f2837n;
+    protected transient int f2801n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2838f;
+    protected final float f2802f;
     private static final Collector<Object, ?, ReferenceLinkedOpenHashSet<Object>> TO_SET_COLLECTOR = Collector.of(ReferenceLinkedOpenHashSet::new, (v0, v1) -> {
         v0.add(v1);
     }, (v0, v1) -> {
@@ -52,14 +52,14 @@ public class ReferenceLinkedOpenHashSet<K> extends AbstractReferenceSortedSet<K>
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2838f = f;
+            this.f2802f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2837n = arraySize;
+            this.f2801n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2837n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2837n, f);
-            this.key = (K[]) new Object[this.f2837n + 1];
-            this.link = new long[this.f2837n + 1];
+            this.mask = this.f2801n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2801n, f);
+            this.key = (K[]) new Object[this.f2801n + 1];
+            this.link = new long[this.f2801n + 1];
         }
     }
 
@@ -196,22 +196,22 @@ public class ReferenceLinkedOpenHashSet<K> extends AbstractReferenceSortedSet<K>
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2838f);
-        if (needed > this.f2837n) {
+        int needed = HashCommon.arraySize(capacity, this.f2802f);
+        if (needed > this.f2801n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2838f)))));
-        if (needed > this.f2837n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2802f)))));
+        if (needed > this.f2801n) {
             rehash(needed);
         }
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public boolean addAll(Collection<? extends K> c) {
-        if (((double) this.f2838f) <= 0.5d) {
+        if (((double) this.f2802f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -245,7 +245,7 @@ public class ReferenceLinkedOpenHashSet<K> extends AbstractReferenceSortedSet<K>
         } else if (this.containsNull) {
             return false;
         } else {
-            pos = this.f2837n;
+            pos = this.f2801n;
             this.containsNull = true;
         }
         if (this.size == 0) {
@@ -264,7 +264,7 @@ public class ReferenceLinkedOpenHashSet<K> extends AbstractReferenceSortedSet<K>
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f2838f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f2802f));
         return true;
     }
 
@@ -302,22 +302,22 @@ public class ReferenceLinkedOpenHashSet<K> extends AbstractReferenceSortedSet<K>
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f2837n <= this.minN || this.size >= this.maxFill / 4 || this.f2837n <= 16) {
+        if (this.f2801n <= this.minN || this.size >= this.maxFill / 4 || this.f2801n <= 16) {
             return true;
         }
-        rehash(this.f2837n / 2);
+        rehash(this.f2801n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f2837n] = null;
+        this.key[this.f2801n] = null;
         this.size--;
-        fixPointers(this.f2837n);
-        if (this.f2837n <= this.minN || this.size >= this.maxFill / 4 || this.f2837n <= 16) {
+        fixPointers(this.f2801n);
+        if (this.f2801n <= this.minN || this.size >= this.maxFill / 4 || this.f2801n <= 16) {
             return true;
         }
-        rehash(this.f2837n / 2);
+        rehash(this.f2801n / 2);
         return true;
     }
 
@@ -393,12 +393,12 @@ public class ReferenceLinkedOpenHashSet<K> extends AbstractReferenceSortedSet<K>
         this.size--;
         if (k == null) {
             this.containsNull = false;
-            this.key[this.f2837n] = null;
+            this.key[this.f2801n] = null;
         } else {
             shiftKeys(pos);
         }
-        if (this.f2837n > this.minN && this.size < this.maxFill / 4 && this.f2837n > 16) {
-            rehash(this.f2837n / 2);
+        if (this.f2801n > this.minN && this.size < this.maxFill / 4 && this.f2801n > 16) {
+            rehash(this.f2801n / 2);
         }
         return k;
     }
@@ -418,12 +418,12 @@ public class ReferenceLinkedOpenHashSet<K> extends AbstractReferenceSortedSet<K>
         this.size--;
         if (k == null) {
             this.containsNull = false;
-            this.key[this.f2837n] = null;
+            this.key[this.f2801n] = null;
         } else {
             shiftKeys(pos);
         }
-        if (this.f2837n > this.minN && this.size < this.maxFill / 4 && this.f2837n > 16) {
-            rehash(this.f2837n / 2);
+        if (this.f2801n > this.minN && this.size < this.maxFill / 4 && this.f2801n > 16) {
+            rehash(this.f2801n / 2);
         }
         return k;
     }
@@ -495,11 +495,11 @@ public class ReferenceLinkedOpenHashSet<K> extends AbstractReferenceSortedSet<K>
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToFirst(this.f2837n);
+            moveIndexToFirst(this.f2801n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f2837n;
+            pos = this.f2801n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -518,7 +518,7 @@ public class ReferenceLinkedOpenHashSet<K> extends AbstractReferenceSortedSet<K>
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f2838f));
+        rehash(HashCommon.arraySize(this.size, this.f2802f));
         return true;
     }
 
@@ -541,11 +541,11 @@ public class ReferenceLinkedOpenHashSet<K> extends AbstractReferenceSortedSet<K>
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToLast(this.f2837n);
+            moveIndexToLast(this.f2801n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f2837n;
+            pos = this.f2801n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -564,7 +564,7 @@ public class ReferenceLinkedOpenHashSet<K> extends AbstractReferenceSortedSet<K>
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f2838f));
+        rehash(HashCommon.arraySize(this.size, this.f2802f));
         return true;
     }
 
@@ -708,8 +708,8 @@ public class ReferenceLinkedOpenHashSet<K> extends AbstractReferenceSortedSet<K>
             this.index = -1;
             if (from == null) {
                 if (ReferenceLinkedOpenHashSet.this.containsNull) {
-                    this.next = (int) ReferenceLinkedOpenHashSet.this.link[ReferenceLinkedOpenHashSet.this.f2837n];
-                    this.prev = ReferenceLinkedOpenHashSet.this.f2837n;
+                    this.next = (int) ReferenceLinkedOpenHashSet.this.link[ReferenceLinkedOpenHashSet.this.f2801n];
+                    this.prev = ReferenceLinkedOpenHashSet.this.f2801n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + from + " does not belong to this set.");
@@ -848,9 +848,9 @@ public class ReferenceLinkedOpenHashSet<K> extends AbstractReferenceSortedSet<K>
             }
             int pos = this.curr;
             this.curr = -1;
-            if (pos == ReferenceLinkedOpenHashSet.this.f2837n) {
+            if (pos == ReferenceLinkedOpenHashSet.this.f2801n) {
                 ReferenceLinkedOpenHashSet.this.containsNull = false;
-                ReferenceLinkedOpenHashSet.this.key[ReferenceLinkedOpenHashSet.this.f2837n] = null;
+                ReferenceLinkedOpenHashSet.this.key[ReferenceLinkedOpenHashSet.this.f2801n] = null;
                 return;
             }
             K[] key = ReferenceLinkedOpenHashSet.this.key;
@@ -920,8 +920,8 @@ public class ReferenceLinkedOpenHashSet<K> extends AbstractReferenceSortedSet<K>
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2838f)));
-        if (l >= this.f2837n || this.size > HashCommon.maxFill(l, this.f2838f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2802f)));
+        if (l >= this.f2801n || this.size > HashCommon.maxFill(l, this.f2802f)) {
             return true;
         }
         try {
@@ -979,9 +979,9 @@ public class ReferenceLinkedOpenHashSet<K> extends AbstractReferenceSortedSet<K>
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f2837n = newN;
+        this.f2801n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f2837n, this.f2838f);
+        this.maxFill = HashCommon.maxFill(this.f2801n, this.f2802f);
         this.key = newKey;
     }
 
@@ -1040,12 +1040,12 @@ public class ReferenceLinkedOpenHashSet<K> extends AbstractReferenceSortedSet<K>
         int pos;
         int i;
         s.defaultReadObject();
-        this.f2837n = HashCommon.arraySize(this.size, this.f2838f);
-        this.maxFill = HashCommon.maxFill(this.f2837n, this.f2838f);
-        this.mask = this.f2837n - 1;
-        K[] key = (K[]) new Object[this.f2837n + 1];
+        this.f2801n = HashCommon.arraySize(this.size, this.f2802f);
+        this.maxFill = HashCommon.maxFill(this.f2801n, this.f2802f);
+        this.mask = this.f2801n - 1;
+        K[] key = (K[]) new Object[this.f2801n + 1];
         this.key = key;
-        long[] link = new long[this.f2837n + 1];
+        long[] link = new long[this.f2801n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -1058,7 +1058,7 @@ public class ReferenceLinkedOpenHashSet<K> extends AbstractReferenceSortedSet<K>
             }
             Object readObject = s.readObject();
             if (readObject == null) {
-                pos = this.f2837n;
+                pos = this.f2801n;
                 this.containsNull = true;
             } else {
                 int mix = HashCommon.mix(System.identityHashCode(readObject)) & this.mask;

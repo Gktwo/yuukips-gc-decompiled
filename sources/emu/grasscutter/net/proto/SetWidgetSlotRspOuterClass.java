@@ -25,16 +25,12 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetWidgetSlotRspOuterClass.class */
 public final class SetWidgetSlotRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016SetWidgetSlotRsp.proto\u001a\u0012WidgetSlotOp.proto\u001a\u0013WidgetSlotTag.proto\"u\n\u0010SetWidgetSlotRsp\u0012\u0013\n\u000bmaterial_id\u0018\u0004 \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0001 \u0001(\u0005\u0012 \n\btag_list\u0018\u000f \u0003(\u000e2\u000e.WidgetSlotTag\u0012\u0019\n\u0002op\u0018\u0005 \u0001(\u000e2\r.WidgetSlotOpB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{WidgetSlotOpOuterClass.getDescriptor(), WidgetSlotTagOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016SetWidgetSlotRsp.proto\u001a\u0012WidgetSlotOp.proto\u001a\u0013WidgetSlotTag.proto\"s\n\u0010SetWidgetSlotRsp\u0012\u001f\n\u0007tagList\u0018\u0007 \u0003(\u000e2\u000e.WidgetSlotTag\u0012\u000f\n\u0007retcode\u0018\u0005 \u0001(\u0005\u0012\u0012\n\nmaterialId\u0018\f \u0001(\r\u0012\u0019\n\u0002op\u0018\t \u0001(\u000e2\r.WidgetSlotOpB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{WidgetSlotOpOuterClass.getDescriptor(), WidgetSlotTagOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SetWidgetSlotRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetWidgetSlotRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetWidgetSlotRsp_descriptor, new String[]{"MaterialId", "Retcode", "TagList", "Op"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetWidgetSlotRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetWidgetSlotRsp_descriptor, new String[]{"TagList", "Retcode", "MaterialId", "Op"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetWidgetSlotRspOuterClass$SetWidgetSlotRspOrBuilder.class */
     public interface SetWidgetSlotRspOrBuilder extends MessageOrBuilder {
-        int getMaterialId();
-
-        int getRetcode();
-
         List<WidgetSlotTagOuterClass.WidgetSlotTag> getTagListList();
 
         int getTagListCount();
@@ -44,6 +40,10 @@ public final class SetWidgetSlotRspOuterClass {
         List<Integer> getTagListValueList();
 
         int getTagListValue(int i);
+
+        int getRetcode();
+
+        int getMaterialId();
 
         int getOpValue();
 
@@ -63,14 +63,14 @@ public final class SetWidgetSlotRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetWidgetSlotRspOuterClass$SetWidgetSlotRsp.class */
     public static final class SetWidgetSlotRsp extends GeneratedMessageV3 implements SetWidgetSlotRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MATERIAL_ID_FIELD_NUMBER = 4;
-        private int materialId_;
-        public static final int RETCODE_FIELD_NUMBER = 1;
-        private int retcode_;
-        public static final int TAG_LIST_FIELD_NUMBER = 15;
+        public static final int TAGLIST_FIELD_NUMBER = 7;
         private List<Integer> tagList_;
         private int tagListMemoizedSerializedSize;
-        public static final int OP_FIELD_NUMBER = 5;
+        public static final int RETCODE_FIELD_NUMBER = 5;
+        private int retcode_;
+        public static final int MATERIALID_FIELD_NUMBER = 12;
+        private int materialId_;
+        public static final int OP_FIELD_NUMBER = 9;
         private int op_;
         private byte memoizedIsInitialized;
         private static final Internal.ListAdapter.Converter<Integer, WidgetSlotTagOuterClass.WidgetSlotTag> tagList_converter_ = new Internal.ListAdapter.Converter<Integer, WidgetSlotTagOuterClass.WidgetSlotTag>() { // from class: emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRsp.1
@@ -128,16 +128,10 @@ public final class SetWidgetSlotRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
+                                case 40:
                                     this.retcode_ = input.readInt32();
                                     break;
-                                case 32:
-                                    this.materialId_ = input.readUInt32();
-                                    break;
-                                case 40:
-                                    this.op_ = input.readEnum();
-                                    break;
-                                case 120:
+                                case 56:
                                     int rawValue = input.readEnum();
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.tagList_ = new ArrayList();
@@ -145,7 +139,7 @@ public final class SetWidgetSlotRspOuterClass {
                                     }
                                     this.tagList_.add(Integer.valueOf(rawValue));
                                     break;
-                                case 122:
+                                case 58:
                                     int oldLimit = input.pushLimit(input.readRawVarint32());
                                     while (input.getBytesUntilLimit() > 0) {
                                         int rawValue2 = input.readEnum();
@@ -156,6 +150,12 @@ public final class SetWidgetSlotRspOuterClass {
                                         this.tagList_.add(Integer.valueOf(rawValue2));
                                     }
                                     input.popLimit(oldLimit);
+                                    break;
+                                case 72:
+                                    this.op_ = input.readEnum();
+                                    break;
+                                case 96:
+                                    this.materialId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -191,16 +191,6 @@ public final class SetWidgetSlotRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRspOrBuilder
-        public int getMaterialId() {
-            return this.materialId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
-        }
-
-        @Override // emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRspOrBuilder
         public List<WidgetSlotTagOuterClass.WidgetSlotTag> getTagListList() {
             return new Internal.ListAdapter(this.tagList_, tagList_converter_);
         }
@@ -223,6 +213,16 @@ public final class SetWidgetSlotRspOuterClass {
         @Override // emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRspOrBuilder
         public int getTagListValue(int index) {
             return this.tagList_.get(index).intValue();
+        }
+
+        @Override // emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRspOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
+        }
+
+        @Override // emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRspOrBuilder
+        public int getMaterialId() {
+            return this.materialId_;
         }
 
         @Override // emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRspOrBuilder
@@ -253,20 +253,20 @@ public final class SetWidgetSlotRspOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (this.retcode_ != 0) {
-                output.writeInt32(1, this.retcode_);
-            }
-            if (this.materialId_ != 0) {
-                output.writeUInt32(4, this.materialId_);
-            }
-            if (this.op_ != WidgetSlotOpOuterClass.WidgetSlotOp.WIDGET_SLOT_OP_ATTACH.getNumber()) {
-                output.writeEnum(5, this.op_);
+                output.writeInt32(5, this.retcode_);
             }
             if (getTagListList().size() > 0) {
-                output.writeUInt32NoTag(122);
+                output.writeUInt32NoTag(58);
                 output.writeUInt32NoTag(this.tagListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.tagList_.size(); i++) {
                 output.writeEnumNoTag(this.tagList_.get(i).intValue());
+            }
+            if (this.op_ != WidgetSlotOpOuterClass.WidgetSlotOp.WIDGET_SLOT_OP_ATTACH.getNumber()) {
+                output.writeEnum(9, this.op_);
+            }
+            if (this.materialId_ != 0) {
+                output.writeUInt32(12, this.materialId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -279,13 +279,7 @@ public final class SetWidgetSlotRspOuterClass {
             }
             int size2 = 0;
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(1, this.retcode_);
-            }
-            if (this.materialId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(4, this.materialId_);
-            }
-            if (this.op_ != WidgetSlotOpOuterClass.WidgetSlotOp.WIDGET_SLOT_OP_ATTACH.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(5, this.op_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(5, this.retcode_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.tagList_.size(); i++) {
@@ -296,6 +290,12 @@ public final class SetWidgetSlotRspOuterClass {
                 size3 = size3 + 1 + CodedOutputStream.computeUInt32SizeNoTag(dataSize);
             }
             this.tagListMemoizedSerializedSize = dataSize;
+            if (this.op_ != WidgetSlotOpOuterClass.WidgetSlotOp.WIDGET_SLOT_OP_ATTACH.getNumber()) {
+                size3 += CodedOutputStream.computeEnumSize(9, this.op_);
+            }
+            if (this.materialId_ != 0) {
+                size3 += CodedOutputStream.computeUInt32Size(12, this.materialId_);
+            }
             int size4 = size3 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size4;
             return size4;
@@ -310,7 +310,7 @@ public final class SetWidgetSlotRspOuterClass {
                 return equals(obj);
             }
             SetWidgetSlotRsp other = (SetWidgetSlotRsp) obj;
-            return getMaterialId() == other.getMaterialId() && getRetcode() == other.getRetcode() && this.tagList_.equals(other.tagList_) && this.op_ == other.op_ && this.unknownFields.equals(other.unknownFields);
+            return this.tagList_.equals(other.tagList_) && getRetcode() == other.getRetcode() && getMaterialId() == other.getMaterialId() && this.op_ == other.op_ && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -318,11 +318,11 @@ public final class SetWidgetSlotRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getMaterialId())) + 1)) + getRetcode();
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (getTagListCount() > 0) {
-                hash = (53 * ((37 * hash) + 15)) + this.tagList_.hashCode();
+                hash = (53 * ((37 * hash) + 7)) + this.tagList_.hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 5)) + this.op_)) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 5)) + getRetcode())) + 12)) + getMaterialId())) + 9)) + this.op_)) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -402,8 +402,8 @@ public final class SetWidgetSlotRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetWidgetSlotRspOuterClass$SetWidgetSlotRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SetWidgetSlotRspOrBuilder {
             private int bitField0_;
-            private int materialId_;
             private int retcode_;
+            private int materialId_;
             private List<Integer> tagList_ = Collections.emptyList();
             private int op_ = 0;
 
@@ -433,10 +433,10 @@ public final class SetWidgetSlotRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.materialId_ = 0;
-                this.retcode_ = 0;
                 this.tagList_ = Collections.emptyList();
                 this.bitField0_ &= -2;
+                this.retcode_ = 0;
+                this.materialId_ = 0;
                 this.op_ = 0;
                 return this;
             }
@@ -464,13 +464,13 @@ public final class SetWidgetSlotRspOuterClass {
             public SetWidgetSlotRsp buildPartial() {
                 SetWidgetSlotRsp result = new SetWidgetSlotRsp(this);
                 int i = this.bitField0_;
-                result.materialId_ = this.materialId_;
-                result.retcode_ = this.retcode_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.tagList_ = Collections.unmodifiableList(this.tagList_);
                     this.bitField0_ &= -2;
                 }
                 result.tagList_ = this.tagList_;
+                result.retcode_ = this.retcode_;
+                result.materialId_ = this.materialId_;
                 result.op_ = this.op_;
                 onBuilt();
                 return result;
@@ -519,12 +519,6 @@ public final class SetWidgetSlotRspOuterClass {
                 if (other == SetWidgetSlotRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getMaterialId() != 0) {
-                    setMaterialId(other.getMaterialId());
-                }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
                 if (!other.tagList_.isEmpty()) {
                     if (this.tagList_.isEmpty()) {
                         this.tagList_ = other.tagList_;
@@ -534,6 +528,12 @@ public final class SetWidgetSlotRspOuterClass {
                         this.tagList_.addAll(other.tagList_);
                     }
                     onChanged();
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
+                }
+                if (other.getMaterialId() != 0) {
+                    setMaterialId(other.getMaterialId());
                 }
                 if (other.op_ != 0) {
                     setOpValue(other.getOpValue());
@@ -568,40 +568,6 @@ public final class SetWidgetSlotRspOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRspOrBuilder
-            public int getMaterialId() {
-                return this.materialId_;
-            }
-
-            public Builder setMaterialId(int value) {
-                this.materialId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearMaterialId() {
-                this.materialId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
             }
 
             private void ensureTagListIsMutable() {
@@ -691,6 +657,40 @@ public final class SetWidgetSlotRspOuterClass {
                 for (Integer num : values) {
                     this.tagList_.add(Integer.valueOf(num.intValue()));
                 }
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRspOrBuilder
+            public int getMaterialId() {
+                return this.materialId_;
+            }
+
+            public Builder setMaterialId(int value) {
+                this.materialId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearMaterialId() {
+                this.materialId_ = 0;
                 onChanged();
                 return this;
             }

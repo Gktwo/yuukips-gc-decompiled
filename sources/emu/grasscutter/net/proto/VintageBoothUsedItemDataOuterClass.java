@@ -20,15 +20,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VintageBoothUsedItemDataOuterClass.class */
 public final class VintageBoothUsedItemDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eVintageBoothUsedItemData.proto\">\n\u0018VintageBoothUsedItemData\u0012\u000f\n\u0007is_open\u0018\n \u0001(\b\u0012\u0011\n\tgadget_id\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eVintageBoothUsedItemData.proto\"<\n\u0018VintageBoothUsedItemData\u0012\u0010\n\bgadgetId\u0018\f \u0001(\r\u0012\u000e\n\u0006isOpen\u0018\u0002 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_VintageBoothUsedItemData_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_VintageBoothUsedItemData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_VintageBoothUsedItemData_descriptor, new String[]{"IsOpen", "GadgetId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_VintageBoothUsedItemData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_VintageBoothUsedItemData_descriptor, new String[]{"GadgetId", "IsOpen"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VintageBoothUsedItemDataOuterClass$VintageBoothUsedItemDataOrBuilder.class */
     public interface VintageBoothUsedItemDataOrBuilder extends MessageOrBuilder {
-        boolean getIsOpen();
-
         int getGadgetId();
+
+        boolean getIsOpen();
     }
 
     private VintageBoothUsedItemDataOuterClass() {
@@ -44,10 +44,10 @@ public final class VintageBoothUsedItemDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VintageBoothUsedItemDataOuterClass$VintageBoothUsedItemData.class */
     public static final class VintageBoothUsedItemData extends GeneratedMessageV3 implements VintageBoothUsedItemDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_OPEN_FIELD_NUMBER = 10;
-        private boolean isOpen_;
-        public static final int GADGET_ID_FIELD_NUMBER = 3;
+        public static final int GADGETID_FIELD_NUMBER = 12;
         private int gadgetId_;
+        public static final int ISOPEN_FIELD_NUMBER = 2;
+        private boolean isOpen_;
         private byte memoizedIsInitialized;
         private static final VintageBoothUsedItemData DEFAULT_INSTANCE = new VintageBoothUsedItemData();
         private static final Parser<VintageBoothUsedItemData> PARSER = new AbstractParser<VintageBoothUsedItemData>() { // from class: emu.grasscutter.net.proto.VintageBoothUsedItemDataOuterClass.VintageBoothUsedItemData.1
@@ -93,11 +93,11 @@ public final class VintageBoothUsedItemDataOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 24:
-                                this.gadgetId_ = input.readUInt32();
-                                break;
-                            case 80:
+                            case 16:
                                 this.isOpen_ = input.readBool();
+                                break;
+                            case 96:
+                                this.gadgetId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -129,13 +129,13 @@ public final class VintageBoothUsedItemDataOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.VintageBoothUsedItemDataOuterClass.VintageBoothUsedItemDataOrBuilder
-        public boolean getIsOpen() {
-            return this.isOpen_;
+        public int getGadgetId() {
+            return this.gadgetId_;
         }
 
         @Override // emu.grasscutter.net.proto.VintageBoothUsedItemDataOuterClass.VintageBoothUsedItemDataOrBuilder
-        public int getGadgetId() {
-            return this.gadgetId_;
+        public boolean getIsOpen() {
+            return this.isOpen_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -153,11 +153,11 @@ public final class VintageBoothUsedItemDataOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.gadgetId_ != 0) {
-                output.writeUInt32(3, this.gadgetId_);
-            }
             if (this.isOpen_) {
-                output.writeBool(10, this.isOpen_);
+                output.writeBool(2, this.isOpen_);
+            }
+            if (this.gadgetId_ != 0) {
+                output.writeUInt32(12, this.gadgetId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,11 +169,11 @@ public final class VintageBoothUsedItemDataOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.gadgetId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.gadgetId_);
-            }
             if (this.isOpen_) {
-                size2 += CodedOutputStream.computeBoolSize(10, this.isOpen_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(2, this.isOpen_);
+            }
+            if (this.gadgetId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(12, this.gadgetId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -189,7 +189,7 @@ public final class VintageBoothUsedItemDataOuterClass {
                 return equals(obj);
             }
             VintageBoothUsedItemData other = (VintageBoothUsedItemData) obj;
-            return getIsOpen() == other.getIsOpen() && getGadgetId() == other.getGadgetId() && this.unknownFields.equals(other.unknownFields);
+            return getGadgetId() == other.getGadgetId() && getIsOpen() == other.getIsOpen() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -197,7 +197,7 @@ public final class VintageBoothUsedItemDataOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + Internal.hashBoolean(getIsOpen()))) + 3)) + getGadgetId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getGadgetId())) + 2)) + Internal.hashBoolean(getIsOpen()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -276,8 +276,8 @@ public final class VintageBoothUsedItemDataOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VintageBoothUsedItemDataOuterClass$VintageBoothUsedItemData$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements VintageBoothUsedItemDataOrBuilder {
-            private boolean isOpen_;
             private int gadgetId_;
+            private boolean isOpen_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return VintageBoothUsedItemDataOuterClass.internal_static_VintageBoothUsedItemData_descriptor;
@@ -305,8 +305,8 @@ public final class VintageBoothUsedItemDataOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.isOpen_ = false;
                 this.gadgetId_ = 0;
+                this.isOpen_ = false;
                 return this;
             }
 
@@ -332,8 +332,8 @@ public final class VintageBoothUsedItemDataOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public VintageBoothUsedItemData buildPartial() {
                 VintageBoothUsedItemData result = new VintageBoothUsedItemData(this);
-                result.isOpen_ = this.isOpen_;
                 result.gadgetId_ = this.gadgetId_;
+                result.isOpen_ = this.isOpen_;
                 onBuilt();
                 return result;
             }
@@ -381,11 +381,11 @@ public final class VintageBoothUsedItemDataOuterClass {
                 if (other == VintageBoothUsedItemData.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getIsOpen()) {
-                    setIsOpen(other.getIsOpen());
-                }
                 if (other.getGadgetId() != 0) {
                     setGadgetId(other.getGadgetId());
+                }
+                if (other.getIsOpen()) {
+                    setIsOpen(other.getIsOpen());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -420,23 +420,6 @@ public final class VintageBoothUsedItemDataOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.VintageBoothUsedItemDataOuterClass.VintageBoothUsedItemDataOrBuilder
-            public boolean getIsOpen() {
-                return this.isOpen_;
-            }
-
-            public Builder setIsOpen(boolean value) {
-                this.isOpen_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsOpen() {
-                this.isOpen_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.VintageBoothUsedItemDataOuterClass.VintageBoothUsedItemDataOrBuilder
             public int getGadgetId() {
                 return this.gadgetId_;
             }
@@ -449,6 +432,23 @@ public final class VintageBoothUsedItemDataOuterClass {
 
             public Builder clearGadgetId() {
                 this.gadgetId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.VintageBoothUsedItemDataOuterClass.VintageBoothUsedItemDataOrBuilder
+            public boolean getIsOpen() {
+                return this.isOpen_;
+            }
+
+            public Builder setIsOpen(boolean value) {
+                this.isOpen_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsOpen() {
+                this.isOpen_ = false;
                 onChanged();
                 return this;
             }

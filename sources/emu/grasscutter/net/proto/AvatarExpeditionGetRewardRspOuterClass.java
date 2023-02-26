@@ -30,27 +30,19 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExpeditionGetRewardRspOuterClass.class */
 public final class AvatarExpeditionGetRewardRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"AvatarExpeditionGetRewardRsp.proto\u001a\u001aAvatarExpeditionInfo.proto\u001a\u000fItemParam.proto\"\u0002\n\u001cAvatarExpeditionGetRewardRsp\u0012\u001d\n\titem_list\u0018\u0007 \u0003(\u000b2\n.ItemParam\u0012#\n\u000fextra_item_list\u0018\u000b \u0003(\u000b2\n.ItemParam\u0012Q\n\u0013expedition_info_map\u0018\r \u0003(\u000b24.AvatarExpeditionGetRewardRsp.ExpeditionInfoMapEntry\u0012\u000f\n\u0007retcode\u0018\b \u0001(\u0005\u001aO\n\u0016ExpeditionInfoMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\u0004\u0012$\n\u0005value\u0018\u0002 \u0001(\u000b2\u0015.AvatarExpeditionInfo:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarExpeditionInfoOuterClass.getDescriptor(), ItemParamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"AvatarExpeditionGetRewardRsp.proto\u001a\u000fItemParam.proto\u001a\u001aAvatarExpeditionInfo.proto\"\u0002\n\u001cAvatarExpeditionGetRewardRsp\u0012\u000f\n\u0007retcode\u0018\t \u0001(\u0005\u0012!\n\rextraItemList\u0018\n \u0003(\u000b2\n.ItemParam\u0012O\n\u0011expeditionInfoMap\u0018\u0004 \u0003(\u000b24.AvatarExpeditionGetRewardRsp.ExpeditionInfoMapEntry\u0012\u001c\n\bitemList\u0018\u000e \u0003(\u000b2\n.ItemParam\u001aO\n\u0016ExpeditionInfoMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\u0004\u0012$\n\u0005value\u0018\u0002 \u0001(\u000b2\u0015.AvatarExpeditionInfo:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor(), AvatarExpeditionInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AvatarExpeditionGetRewardRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarExpeditionGetRewardRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarExpeditionGetRewardRsp_descriptor, new String[]{"ItemList", "ExtraItemList", "ExpeditionInfoMap", "Retcode"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarExpeditionGetRewardRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarExpeditionGetRewardRsp_descriptor, new String[]{"Retcode", "ExtraItemList", "ExpeditionInfoMap", "ItemList"});
 
     /* renamed from: internal_static_AvatarExpeditionGetRewardRsp_ExpeditionInfoMapEntry_descriptor */
-    private static final Descriptors.Descriptor f633x9920f1bd = internal_static_AvatarExpeditionGetRewardRsp_descriptor.getNestedTypes().get(0);
+    private static final Descriptors.Descriptor f632x9920f1bd = internal_static_AvatarExpeditionGetRewardRsp_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_AvatarExpeditionGetRewardRsp_ExpeditionInfoMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f634x7f950b3b = new GeneratedMessageV3.FieldAccessorTable(f633x9920f1bd, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f633x7f950b3b = new GeneratedMessageV3.FieldAccessorTable(f632x9920f1bd, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExpeditionGetRewardRspOuterClass$AvatarExpeditionGetRewardRspOrBuilder.class */
     public interface AvatarExpeditionGetRewardRspOrBuilder extends MessageOrBuilder {
-        List<ItemParamOuterClass.ItemParam> getItemListList();
-
-        ItemParamOuterClass.ItemParam getItemList(int i);
-
-        int getItemListCount();
-
-        List<? extends ItemParamOuterClass.ItemParamOrBuilder> getItemListOrBuilderList();
-
-        ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(int i);
+        int getRetcode();
 
         List<ItemParamOuterClass.ItemParam> getExtraItemListList();
 
@@ -75,7 +67,15 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
 
         AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo getExpeditionInfoMapOrThrow(long j);
 
-        int getRetcode();
+        List<ItemParamOuterClass.ItemParam> getItemListList();
+
+        ItemParamOuterClass.ItemParam getItemList(int i);
+
+        int getItemListCount();
+
+        List<? extends ItemParamOuterClass.ItemParamOrBuilder> getItemListOrBuilderList();
+
+        ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(int i);
     }
 
     private AvatarExpeditionGetRewardRspOuterClass() {
@@ -91,14 +91,14 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExpeditionGetRewardRspOuterClass$AvatarExpeditionGetRewardRsp.class */
     public static final class AvatarExpeditionGetRewardRsp extends GeneratedMessageV3 implements AvatarExpeditionGetRewardRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ITEM_LIST_FIELD_NUMBER = 7;
-        private List<ItemParamOuterClass.ItemParam> itemList_;
-        public static final int EXTRA_ITEM_LIST_FIELD_NUMBER = 11;
-        private List<ItemParamOuterClass.ItemParam> extraItemList_;
-        public static final int EXPEDITION_INFO_MAP_FIELD_NUMBER = 13;
-        private MapField<Long, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> expeditionInfoMap_;
-        public static final int RETCODE_FIELD_NUMBER = 8;
+        public static final int RETCODE_FIELD_NUMBER = 9;
         private int retcode_;
+        public static final int EXTRAITEMLIST_FIELD_NUMBER = 10;
+        private List<ItemParamOuterClass.ItemParam> extraItemList_;
+        public static final int EXPEDITIONINFOMAP_FIELD_NUMBER = 4;
+        private MapField<Long, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> expeditionInfoMap_;
+        public static final int ITEMLIST_FIELD_NUMBER = 14;
+        private List<ItemParamOuterClass.ItemParam> itemList_;
         private byte memoizedIsInitialized;
         private static final AvatarExpeditionGetRewardRsp DEFAULT_INSTANCE = new AvatarExpeditionGetRewardRsp();
         private static final Parser<AvatarExpeditionGetRewardRsp> PARSER = new AbstractParser<AvatarExpeditionGetRewardRsp>() { // from class: emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRsp.1
@@ -149,7 +149,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
                 r4 = this;
                 r0 = r5
                 switch(r0) {
-                    case 13: goto L_0x0014;
+                    case 4: goto L_0x0014;
                     default: goto L_0x0019;
                 }
                 r0 = r4
@@ -172,8 +172,8 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
 
         private AvatarExpeditionGetRewardRsp() {
             this.memoizedIsInitialized = -1;
-            this.itemList_ = Collections.emptyList();
             this.extraItemList_ = Collections.emptyList();
+            this.itemList_ = Collections.emptyList();
         }
 
         /* access modifiers changed from: protected */
@@ -206,30 +206,30 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 58:
-                                if ((mutable_bitField0_ & 1) == 0) {
-                                    this.itemList_ = new ArrayList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
-                                }
-                                this.itemList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-                                break;
-                            case 64:
-                                this.retcode_ = input.readInt32();
-                                break;
-                            case 90:
+                            case 34:
                                 if ((mutable_bitField0_ & 2) == 0) {
-                                    this.extraItemList_ = new ArrayList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
-                                }
-                                this.extraItemList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-                                break;
-                            case 106:
-                                if ((mutable_bitField0_ & 4) == 0) {
                                     this.expeditionInfoMap_ = MapField.newMapField(ExpeditionInfoMapDefaultEntryHolder.defaultEntry);
-                                    mutable_bitField0_ = (mutable_bitField0_ | 4) == 1 ? 1 : 0;
+                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
                                 }
                                 MapEntry<Long, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> expeditionInfoMap__ = (MapEntry) input.readMessage(ExpeditionInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                                 this.expeditionInfoMap_.getMutableMap().put(expeditionInfoMap__.getKey(), expeditionInfoMap__.getValue());
+                                break;
+                            case 72:
+                                this.retcode_ = input.readInt32();
+                                break;
+                            case 82:
+                                if ((mutable_bitField0_ & 1) == 0) {
+                                    this.extraItemList_ = new ArrayList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                }
+                                this.extraItemList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+                                break;
+                            case 114:
+                                if ((mutable_bitField0_ & 4) == 0) {
+                                    this.itemList_ = new ArrayList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 4) == 1 ? 1 : 0;
+                                }
+                                this.itemList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -248,10 +248,10 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
                 }
             } finally {
                 if ((mutable_bitField0_ & 1) != 0) {
-                    this.itemList_ = Collections.unmodifiableList(this.itemList_);
-                }
-                if ((mutable_bitField0_ & 2) != 0) {
                     this.extraItemList_ = Collections.unmodifiableList(this.extraItemList_);
+                }
+                if ((mutable_bitField0_ & 4) != 0) {
+                    this.itemList_ = Collections.unmodifiableList(this.itemList_);
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -268,28 +268,8 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
-        public List<ItemParamOuterClass.ItemParam> getItemListList() {
-            return this.itemList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
-        public List<? extends ItemParamOuterClass.ItemParamOrBuilder> getItemListOrBuilderList() {
-            return this.itemList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
-        public int getItemListCount() {
-            return this.itemList_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
-        public ItemParamOuterClass.ItemParam getItemList(int index) {
-            return this.itemList_.get(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
-        public ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(int index) {
-            return this.itemList_.get(index);
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
@@ -320,7 +300,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
         /* access modifiers changed from: private */
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExpeditionGetRewardRspOuterClass$AvatarExpeditionGetRewardRsp$ExpeditionInfoMapDefaultEntryHolder.class */
         public static final class ExpeditionInfoMapDefaultEntryHolder {
-            static final MapEntry<Long, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> defaultEntry = MapEntry.newDefaultInstance(AvatarExpeditionGetRewardRspOuterClass.f633x9920f1bd, WireFormat.FieldType.UINT64, 0L, WireFormat.FieldType.MESSAGE, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo.getDefaultInstance());
+            static final MapEntry<Long, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> defaultEntry = MapEntry.newDefaultInstance(AvatarExpeditionGetRewardRspOuterClass.f632x9920f1bd, WireFormat.FieldType.UINT64, 0L, WireFormat.FieldType.MESSAGE, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo.getDefaultInstance());
 
             private ExpeditionInfoMapDefaultEntryHolder() {
             }
@@ -370,8 +350,28 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
+        public List<ItemParamOuterClass.ItemParam> getItemListList() {
+            return this.itemList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
+        public List<? extends ItemParamOuterClass.ItemParamOrBuilder> getItemListOrBuilderList() {
+            return this.itemList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
+        public int getItemListCount() {
+            return this.itemList_.size();
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
+        public ItemParamOuterClass.ItemParam getItemList(int index) {
+            return this.itemList_.get(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
+        public ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(int index) {
+            return this.itemList_.get(index);
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -389,16 +389,16 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            for (int i = 0; i < this.itemList_.size(); i++) {
-                output.writeMessage(7, this.itemList_.get(i));
-            }
+            GeneratedMessageV3.serializeLongMapTo(output, internalGetExpeditionInfoMap(), ExpeditionInfoMapDefaultEntryHolder.defaultEntry, 4);
             if (this.retcode_ != 0) {
-                output.writeInt32(8, this.retcode_);
+                output.writeInt32(9, this.retcode_);
             }
-            for (int i2 = 0; i2 < this.extraItemList_.size(); i2++) {
-                output.writeMessage(11, this.extraItemList_.get(i2));
+            for (int i = 0; i < this.extraItemList_.size(); i++) {
+                output.writeMessage(10, this.extraItemList_.get(i));
             }
-            GeneratedMessageV3.serializeLongMapTo(output, internalGetExpeditionInfoMap(), ExpeditionInfoMapDefaultEntryHolder.defaultEntry, 13);
+            for (int i2 = 0; i2 < this.itemList_.size(); i2++) {
+                output.writeMessage(14, this.itemList_.get(i2));
+            }
             this.unknownFields.writeTo(output);
         }
 
@@ -409,17 +409,17 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            for (int i = 0; i < this.itemList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(7, this.itemList_.get(i));
+            for (Map.Entry<Long, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> entry : internalGetExpeditionInfoMap().getMap().entrySet()) {
+                size2 += CodedOutputStream.computeMessageSize(4, ExpeditionInfoMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
             }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(8, this.retcode_);
+                size2 += CodedOutputStream.computeInt32Size(9, this.retcode_);
             }
-            for (int i2 = 0; i2 < this.extraItemList_.size(); i2++) {
-                size2 += CodedOutputStream.computeMessageSize(11, this.extraItemList_.get(i2));
+            for (int i = 0; i < this.extraItemList_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(10, this.extraItemList_.get(i));
             }
-            for (Map.Entry<Long, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> entry : internalGetExpeditionInfoMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(13, ExpeditionInfoMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+            for (int i2 = 0; i2 < this.itemList_.size(); i2++) {
+                size2 += CodedOutputStream.computeMessageSize(14, this.itemList_.get(i2));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -435,7 +435,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
                 return equals(obj);
             }
             AvatarExpeditionGetRewardRsp other = (AvatarExpeditionGetRewardRsp) obj;
-            return getItemListList().equals(other.getItemListList()) && getExtraItemListList().equals(other.getExtraItemListList()) && internalGetExpeditionInfoMap().equals(other.internalGetExpeditionInfoMap()) && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
+            return getRetcode() == other.getRetcode() && getExtraItemListList().equals(other.getExtraItemListList()) && internalGetExpeditionInfoMap().equals(other.internalGetExpeditionInfoMap()) && getItemListList().equals(other.getItemListList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -443,17 +443,17 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
-            if (getItemListCount() > 0) {
-                hash = (53 * ((37 * hash) + 7)) + getItemListList().hashCode();
-            }
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getRetcode();
             if (getExtraItemListCount() > 0) {
-                hash = (53 * ((37 * hash) + 11)) + getExtraItemListList().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getExtraItemListList().hashCode();
             }
             if (!internalGetExpeditionInfoMap().getMap().isEmpty()) {
-                hash = (53 * ((37 * hash) + 13)) + internalGetExpeditionInfoMap().hashCode();
+                hash = (53 * ((37 * hash) + 4)) + internalGetExpeditionInfoMap().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 8)) + getRetcode())) + this.unknownFields.hashCode();
+            if (getItemListCount() > 0) {
+                hash = (53 * ((37 * hash) + 14)) + getItemListList().hashCode();
+            }
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -533,12 +533,12 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExpeditionGetRewardRspOuterClass$AvatarExpeditionGetRewardRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements AvatarExpeditionGetRewardRspOrBuilder {
             private int bitField0_;
-            private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> itemListBuilder_;
+            private int retcode_;
             private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> extraItemListBuilder_;
             private MapField<Long, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> expeditionInfoMap_;
-            private int retcode_;
-            private List<ItemParamOuterClass.ItemParam> itemList_ = Collections.emptyList();
+            private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> itemListBuilder_;
             private List<ItemParamOuterClass.ItemParam> extraItemList_ = Collections.emptyList();
+            private List<ItemParamOuterClass.ItemParam> itemList_ = Collections.emptyList();
 
             /*  JADX ERROR: Dependency scan failed at insn: 0x001E: INVOKE_CUSTOM r0
                 java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
@@ -577,7 +577,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 13: goto L_0x0014;
+                        case 4: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -630,7 +630,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 13: goto L_0x0014;
+                        case 4: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -666,28 +666,28 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
 
             private void maybeForceBuilderInitialization() {
                 if (AvatarExpeditionGetRewardRsp.alwaysUseFieldBuilders) {
-                    getItemListFieldBuilder();
                     getExtraItemListFieldBuilder();
+                    getItemListFieldBuilder();
                 }
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                if (this.itemListBuilder_ == null) {
-                    this.itemList_ = Collections.emptyList();
-                    this.bitField0_ &= -2;
-                } else {
-                    this.itemListBuilder_.clear();
-                }
+                this.retcode_ = 0;
                 if (this.extraItemListBuilder_ == null) {
                     this.extraItemList_ = Collections.emptyList();
-                    this.bitField0_ &= -3;
+                    this.bitField0_ &= -2;
                 } else {
                     this.extraItemListBuilder_.clear();
                 }
                 internalGetMutableExpeditionInfoMap().clear();
-                this.retcode_ = 0;
+                if (this.itemListBuilder_ == null) {
+                    this.itemList_ = Collections.emptyList();
+                    this.bitField0_ &= -5;
+                } else {
+                    this.itemListBuilder_.clear();
+                }
                 return this;
             }
 
@@ -714,19 +714,11 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
             public AvatarExpeditionGetRewardRsp buildPartial() {
                 AvatarExpeditionGetRewardRsp result = new AvatarExpeditionGetRewardRsp(this);
                 int i = this.bitField0_;
-                if (this.itemListBuilder_ == null) {
-                    if ((this.bitField0_ & 1) != 0) {
-                        this.itemList_ = Collections.unmodifiableList(this.itemList_);
-                        this.bitField0_ &= -2;
-                    }
-                    result.itemList_ = this.itemList_;
-                } else {
-                    result.itemList_ = this.itemListBuilder_.build();
-                }
+                result.retcode_ = this.retcode_;
                 if (this.extraItemListBuilder_ == null) {
-                    if ((this.bitField0_ & 2) != 0) {
+                    if ((this.bitField0_ & 1) != 0) {
                         this.extraItemList_ = Collections.unmodifiableList(this.extraItemList_);
-                        this.bitField0_ &= -3;
+                        this.bitField0_ &= -2;
                     }
                     result.extraItemList_ = this.extraItemList_;
                 } else {
@@ -734,7 +726,15 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
                 }
                 result.expeditionInfoMap_ = internalGetExpeditionInfoMap();
                 result.expeditionInfoMap_.makeImmutable();
-                result.retcode_ = this.retcode_;
+                if (this.itemListBuilder_ == null) {
+                    if ((this.bitField0_ & 4) != 0) {
+                        this.itemList_ = Collections.unmodifiableList(this.itemList_);
+                        this.bitField0_ &= -5;
+                    }
+                    result.itemList_ = this.itemList_;
+                } else {
+                    result.itemList_ = this.itemListBuilder_.build();
+                }
                 onBuilt();
                 return result;
             }
@@ -782,33 +782,14 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
                 if (other == AvatarExpeditionGetRewardRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (this.itemListBuilder_ == null) {
-                    if (!other.itemList_.isEmpty()) {
-                        if (this.itemList_.isEmpty()) {
-                            this.itemList_ = other.itemList_;
-                            this.bitField0_ &= -2;
-                        } else {
-                            ensureItemListIsMutable();
-                            this.itemList_.addAll(other.itemList_);
-                        }
-                        onChanged();
-                    }
-                } else if (!other.itemList_.isEmpty()) {
-                    if (this.itemListBuilder_.isEmpty()) {
-                        this.itemListBuilder_.dispose();
-                        this.itemListBuilder_ = null;
-                        this.itemList_ = other.itemList_;
-                        this.bitField0_ &= -2;
-                        this.itemListBuilder_ = AvatarExpeditionGetRewardRsp.alwaysUseFieldBuilders ? getItemListFieldBuilder() : null;
-                    } else {
-                        this.itemListBuilder_.addAllMessages(other.itemList_);
-                    }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 if (this.extraItemListBuilder_ == null) {
                     if (!other.extraItemList_.isEmpty()) {
                         if (this.extraItemList_.isEmpty()) {
                             this.extraItemList_ = other.extraItemList_;
-                            this.bitField0_ &= -3;
+                            this.bitField0_ &= -2;
                         } else {
                             ensureExtraItemListIsMutable();
                             this.extraItemList_.addAll(other.extraItemList_);
@@ -820,15 +801,34 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
                         this.extraItemListBuilder_.dispose();
                         this.extraItemListBuilder_ = null;
                         this.extraItemList_ = other.extraItemList_;
-                        this.bitField0_ &= -3;
+                        this.bitField0_ &= -2;
                         this.extraItemListBuilder_ = AvatarExpeditionGetRewardRsp.alwaysUseFieldBuilders ? getExtraItemListFieldBuilder() : null;
                     } else {
                         this.extraItemListBuilder_.addAllMessages(other.extraItemList_);
                     }
                 }
                 internalGetMutableExpeditionInfoMap().mergeFrom(other.internalGetExpeditionInfoMap());
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
+                if (this.itemListBuilder_ == null) {
+                    if (!other.itemList_.isEmpty()) {
+                        if (this.itemList_.isEmpty()) {
+                            this.itemList_ = other.itemList_;
+                            this.bitField0_ &= -5;
+                        } else {
+                            ensureItemListIsMutable();
+                            this.itemList_.addAll(other.itemList_);
+                        }
+                        onChanged();
+                    }
+                } else if (!other.itemList_.isEmpty()) {
+                    if (this.itemListBuilder_.isEmpty()) {
+                        this.itemListBuilder_.dispose();
+                        this.itemListBuilder_ = null;
+                        this.itemList_ = other.itemList_;
+                        this.bitField0_ &= -5;
+                        this.itemListBuilder_ = AvatarExpeditionGetRewardRsp.alwaysUseFieldBuilders ? getItemListFieldBuilder() : null;
+                    } else {
+                        this.itemListBuilder_.addAllMessages(other.itemList_);
+                    }
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -862,186 +862,27 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
                 }
             }
 
-            private void ensureItemListIsMutable() {
-                if ((this.bitField0_ & 1) == 0) {
-                    this.itemList_ = new ArrayList(this.itemList_);
-                    this.bitField0_ |= 1;
-                }
-            }
-
             @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
-            public List<ItemParamOuterClass.ItemParam> getItemListList() {
-                if (this.itemListBuilder_ == null) {
-                    return Collections.unmodifiableList(this.itemList_);
-                }
-                return this.itemListBuilder_.getMessageList();
+            public int getRetcode() {
+                return this.retcode_;
             }
 
-            @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
-            public int getItemListCount() {
-                if (this.itemListBuilder_ == null) {
-                    return this.itemList_.size();
-                }
-                return this.itemListBuilder_.getCount();
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
-            public ItemParamOuterClass.ItemParam getItemList(int index) {
-                if (this.itemListBuilder_ == null) {
-                    return this.itemList_.get(index);
-                }
-                return this.itemListBuilder_.getMessage(index);
-            }
-
-            public Builder setItemList(int index, ItemParamOuterClass.ItemParam value) {
-                if (this.itemListBuilder_ != null) {
-                    this.itemListBuilder_.setMessage(index, value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    ensureItemListIsMutable();
-                    this.itemList_.set(index, value);
-                    onChanged();
-                }
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
                 return this;
             }
 
-            public Builder setItemList(int index, ItemParamOuterClass.ItemParam.Builder builderForValue) {
-                if (this.itemListBuilder_ == null) {
-                    ensureItemListIsMutable();
-                    this.itemList_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    this.itemListBuilder_.setMessage(index, builderForValue.build());
-                }
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
+                onChanged();
                 return this;
-            }
-
-            public Builder addItemList(ItemParamOuterClass.ItemParam value) {
-                if (this.itemListBuilder_ != null) {
-                    this.itemListBuilder_.addMessage(value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    ensureItemListIsMutable();
-                    this.itemList_.add(value);
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder addItemList(int index, ItemParamOuterClass.ItemParam value) {
-                if (this.itemListBuilder_ != null) {
-                    this.itemListBuilder_.addMessage(index, value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    ensureItemListIsMutable();
-                    this.itemList_.add(index, value);
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder addItemList(ItemParamOuterClass.ItemParam.Builder builderForValue) {
-                if (this.itemListBuilder_ == null) {
-                    ensureItemListIsMutable();
-                    this.itemList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    this.itemListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addItemList(int index, ItemParamOuterClass.ItemParam.Builder builderForValue) {
-                if (this.itemListBuilder_ == null) {
-                    ensureItemListIsMutable();
-                    this.itemList_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    this.itemListBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addAllItemList(Iterable<? extends ItemParamOuterClass.ItemParam> values) {
-                if (this.itemListBuilder_ == null) {
-                    ensureItemListIsMutable();
-                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.itemList_);
-                    onChanged();
-                } else {
-                    this.itemListBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-
-            public Builder clearItemList() {
-                if (this.itemListBuilder_ == null) {
-                    this.itemList_ = Collections.emptyList();
-                    this.bitField0_ &= -2;
-                    onChanged();
-                } else {
-                    this.itemListBuilder_.clear();
-                }
-                return this;
-            }
-
-            public Builder removeItemList(int index) {
-                if (this.itemListBuilder_ == null) {
-                    ensureItemListIsMutable();
-                    this.itemList_.remove(index);
-                    onChanged();
-                } else {
-                    this.itemListBuilder_.remove(index);
-                }
-                return this;
-            }
-
-            public ItemParamOuterClass.ItemParam.Builder getItemListBuilder(int index) {
-                return getItemListFieldBuilder().getBuilder(index);
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
-            public ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(int index) {
-                if (this.itemListBuilder_ == null) {
-                    return this.itemList_.get(index);
-                }
-                return this.itemListBuilder_.getMessageOrBuilder(index);
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
-            public List<? extends ItemParamOuterClass.ItemParamOrBuilder> getItemListOrBuilderList() {
-                if (this.itemListBuilder_ != null) {
-                    return this.itemListBuilder_.getMessageOrBuilderList();
-                }
-                return Collections.unmodifiableList(this.itemList_);
-            }
-
-            public ItemParamOuterClass.ItemParam.Builder addItemListBuilder() {
-                return getItemListFieldBuilder().addBuilder(ItemParamOuterClass.ItemParam.getDefaultInstance());
-            }
-
-            public ItemParamOuterClass.ItemParam.Builder addItemListBuilder(int index) {
-                return getItemListFieldBuilder().addBuilder(index, ItemParamOuterClass.ItemParam.getDefaultInstance());
-            }
-
-            public List<ItemParamOuterClass.ItemParam.Builder> getItemListBuilderList() {
-                return getItemListFieldBuilder().getBuilderList();
-            }
-
-            private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> getItemListFieldBuilder() {
-                if (this.itemListBuilder_ == null) {
-                    this.itemListBuilder_ = new RepeatedFieldBuilderV3<>(this.itemList_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
-                    this.itemList_ = null;
-                }
-                return this.itemListBuilder_;
             }
 
             private void ensureExtraItemListIsMutable() {
-                if ((this.bitField0_ & 2) == 0) {
+                if ((this.bitField0_ & 1) == 0) {
                     this.extraItemList_ = new ArrayList(this.extraItemList_);
-                    this.bitField0_ |= 2;
+                    this.bitField0_ |= 1;
                 }
             }
 
@@ -1155,7 +996,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
             public Builder clearExtraItemList() {
                 if (this.extraItemListBuilder_ == null) {
                     this.extraItemList_ = Collections.emptyList();
-                    this.bitField0_ &= -3;
+                    this.bitField0_ &= -2;
                     onChanged();
                 } else {
                     this.extraItemListBuilder_.clear();
@@ -1208,7 +1049,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
 
             private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> getExtraItemListFieldBuilder() {
                 if (this.extraItemListBuilder_ == null) {
-                    this.extraItemListBuilder_ = new RepeatedFieldBuilderV3<>(this.extraItemList_, (this.bitField0_ & 2) != 0, getParentForChildren(), isClean());
+                    this.extraItemListBuilder_ = new RepeatedFieldBuilderV3<>(this.extraItemList_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
                     this.extraItemList_ = null;
                 }
                 return this.extraItemListBuilder_;
@@ -1296,21 +1137,180 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
                 return this;
             }
 
+            private void ensureItemListIsMutable() {
+                if ((this.bitField0_ & 4) == 0) {
+                    this.itemList_ = new ArrayList(this.itemList_);
+                    this.bitField0_ |= 4;
+                }
+            }
+
             @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
+            public List<ItemParamOuterClass.ItemParam> getItemListList() {
+                if (this.itemListBuilder_ == null) {
+                    return Collections.unmodifiableList(this.itemList_);
+                }
+                return this.itemListBuilder_.getMessageList();
             }
 
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
+            @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
+            public int getItemListCount() {
+                if (this.itemListBuilder_ == null) {
+                    return this.itemList_.size();
+                }
+                return this.itemListBuilder_.getCount();
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
+            public ItemParamOuterClass.ItemParam getItemList(int index) {
+                if (this.itemListBuilder_ == null) {
+                    return this.itemList_.get(index);
+                }
+                return this.itemListBuilder_.getMessage(index);
+            }
+
+            public Builder setItemList(int index, ItemParamOuterClass.ItemParam value) {
+                if (this.itemListBuilder_ != null) {
+                    this.itemListBuilder_.setMessage(index, value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    ensureItemListIsMutable();
+                    this.itemList_.set(index, value);
+                    onChanged();
+                }
                 return this;
             }
 
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
+            public Builder setItemList(int index, ItemParamOuterClass.ItemParam.Builder builderForValue) {
+                if (this.itemListBuilder_ == null) {
+                    ensureItemListIsMutable();
+                    this.itemList_.set(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    this.itemListBuilder_.setMessage(index, builderForValue.build());
+                }
                 return this;
+            }
+
+            public Builder addItemList(ItemParamOuterClass.ItemParam value) {
+                if (this.itemListBuilder_ != null) {
+                    this.itemListBuilder_.addMessage(value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    ensureItemListIsMutable();
+                    this.itemList_.add(value);
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder addItemList(int index, ItemParamOuterClass.ItemParam value) {
+                if (this.itemListBuilder_ != null) {
+                    this.itemListBuilder_.addMessage(index, value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    ensureItemListIsMutable();
+                    this.itemList_.add(index, value);
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder addItemList(ItemParamOuterClass.ItemParam.Builder builderForValue) {
+                if (this.itemListBuilder_ == null) {
+                    ensureItemListIsMutable();
+                    this.itemList_.add(builderForValue.build());
+                    onChanged();
+                } else {
+                    this.itemListBuilder_.addMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder addItemList(int index, ItemParamOuterClass.ItemParam.Builder builderForValue) {
+                if (this.itemListBuilder_ == null) {
+                    ensureItemListIsMutable();
+                    this.itemList_.add(index, builderForValue.build());
+                    onChanged();
+                } else {
+                    this.itemListBuilder_.addMessage(index, builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder addAllItemList(Iterable<? extends ItemParamOuterClass.ItemParam> values) {
+                if (this.itemListBuilder_ == null) {
+                    ensureItemListIsMutable();
+                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.itemList_);
+                    onChanged();
+                } else {
+                    this.itemListBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            public Builder clearItemList() {
+                if (this.itemListBuilder_ == null) {
+                    this.itemList_ = Collections.emptyList();
+                    this.bitField0_ &= -5;
+                    onChanged();
+                } else {
+                    this.itemListBuilder_.clear();
+                }
+                return this;
+            }
+
+            public Builder removeItemList(int index) {
+                if (this.itemListBuilder_ == null) {
+                    ensureItemListIsMutable();
+                    this.itemList_.remove(index);
+                    onChanged();
+                } else {
+                    this.itemListBuilder_.remove(index);
+                }
+                return this;
+            }
+
+            public ItemParamOuterClass.ItemParam.Builder getItemListBuilder(int index) {
+                return getItemListFieldBuilder().getBuilder(index);
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
+            public ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(int index) {
+                if (this.itemListBuilder_ == null) {
+                    return this.itemList_.get(index);
+                }
+                return this.itemListBuilder_.getMessageOrBuilder(index);
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRspOrBuilder
+            public List<? extends ItemParamOuterClass.ItemParamOrBuilder> getItemListOrBuilderList() {
+                if (this.itemListBuilder_ != null) {
+                    return this.itemListBuilder_.getMessageOrBuilderList();
+                }
+                return Collections.unmodifiableList(this.itemList_);
+            }
+
+            public ItemParamOuterClass.ItemParam.Builder addItemListBuilder() {
+                return getItemListFieldBuilder().addBuilder(ItemParamOuterClass.ItemParam.getDefaultInstance());
+            }
+
+            public ItemParamOuterClass.ItemParam.Builder addItemListBuilder(int index) {
+                return getItemListFieldBuilder().addBuilder(index, ItemParamOuterClass.ItemParam.getDefaultInstance());
+            }
+
+            public List<ItemParamOuterClass.ItemParam.Builder> getItemListBuilderList() {
+                return getItemListFieldBuilder().getBuilderList();
+            }
+
+            private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> getItemListFieldBuilder() {
+                if (this.itemListBuilder_ == null) {
+                    this.itemListBuilder_ = new RepeatedFieldBuilderV3<>(this.itemList_, (this.bitField0_ & 4) != 0, getParentForChildren(), isClean());
+                    this.itemList_ = null;
+                }
+                return this.itemListBuilder_;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
@@ -1348,7 +1348,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
     }
 
     static {
-        AvatarExpeditionInfoOuterClass.getDescriptor();
         ItemParamOuterClass.getDescriptor();
+        AvatarExpeditionInfoOuterClass.getDescriptor();
     }
 }

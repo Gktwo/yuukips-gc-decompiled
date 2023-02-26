@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ModifierDurabilityOuterClass.class */
 public final class ModifierDurabilityOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018ModifierDurability.proto\"H\n\u0012ModifierDurability\u0012\u0014\n\freduce_ratio\u0018\u0001 \u0001(\u0002\u0012\u001c\n\u0014remaining_durability\u0018\u0002 \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018ModifierDurability.proto\"F\n\u0012ModifierDurability\u0012\u0013\n\u000breduceRatio\u0018\u0001 \u0001(\u0002\u0012\u001b\n\u0013remainingDurability\u0018\u0002 \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ModifierDurability_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ModifierDurability_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ModifierDurability_descriptor, new String[]{"ReduceRatio", "RemainingDurability"});
 
@@ -43,9 +43,9 @@ public final class ModifierDurabilityOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ModifierDurabilityOuterClass$ModifierDurability.class */
     public static final class ModifierDurability extends GeneratedMessageV3 implements ModifierDurabilityOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int REDUCE_RATIO_FIELD_NUMBER = 1;
+        public static final int REDUCERATIO_FIELD_NUMBER = 1;
         private float reduceRatio_;
-        public static final int REMAINING_DURABILITY_FIELD_NUMBER = 2;
+        public static final int REMAININGDURABILITY_FIELD_NUMBER = 2;
         private float remainingDurability_;
         private byte memoizedIsInitialized;
         private static final ModifierDurability DEFAULT_INSTANCE = new ModifierDurability();

@@ -2,7 +2,6 @@ package org.jline.console.impl;
 
 import com.fasterxml.jackson.core.JsonFactory;
 import dev.morphia.mapping.Mapper;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import java.io.File;
 import java.math.BigDecimal;
 import java.nio.file.Path;
@@ -339,7 +338,7 @@ public class DefaultPrinter extends JlineCommandRegistry implements Printer {
     private String truncate4nanorc(String obj) {
         String val = obj;
         if (val.length() > 400 && !val.contains("\n")) {
-            val = val.substring(0, PacketOpcodes.EvtBulletDeactiveNotify);
+            val = val.substring(0, 399);
         }
         return val;
     }

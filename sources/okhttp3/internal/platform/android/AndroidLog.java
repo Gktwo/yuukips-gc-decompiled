@@ -72,7 +72,7 @@ public final class AndroidLog {
                 int newline = StringsKt.indexOf$default((CharSequence) logMessage, '\n', i, false, 4, (Object) null);
                 int newline2 = newline != -1 ? newline : length;
                 do {
-                    int end = Math.min(newline2, i + 4000);
+                    int end = Math.min(newline2, i + MAX_LOG_LENGTH);
                     String substring = logMessage.substring(i, end);
                     Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String…ing(startIndex, endIndex)");
                     Log.println(logLevel, tag, substring);

@@ -190,30 +190,30 @@ public abstract class AbstractByte2ReferenceMap<V> extends AbstractByte2Referenc
                 return new ByteIterator() { // from class: it.unimi.dsi.fastutil.bytes.AbstractByte2ReferenceMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Byte2ReferenceMap.Entry<V>> f1111i;
+                    private final ObjectIterator<Byte2ReferenceMap.Entry<V>> f1075i;
 
                     {
-                        this.f1111i = Byte2ReferenceMaps.fastIterator(AbstractByte2ReferenceMap.this);
+                        this.f1075i = Byte2ReferenceMaps.fastIterator(AbstractByte2ReferenceMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
                     public byte nextByte() {
-                        return this.f1111i.next().getByteKey();
+                        return this.f1075i.next().getByteKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1111i.hasNext();
+                        return this.f1075i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1111i.remove();
+                        this.f1075i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
                     public void forEachRemaining(ByteConsumer action) {
-                        this.f1111i.forEachRemaining(entry -> {
+                        this.f1075i.forEachRemaining(entry -> {
                             action.accept(entry.getByteKey());
                         });
                     }
@@ -252,30 +252,30 @@ public abstract class AbstractByte2ReferenceMap<V> extends AbstractByte2Referenc
                 return new ObjectIterator<V>() { // from class: it.unimi.dsi.fastutil.bytes.AbstractByte2ReferenceMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Byte2ReferenceMap.Entry<V>> f1112i;
+                    private final ObjectIterator<Byte2ReferenceMap.Entry<V>> f1076i;
 
                     {
-                        this.f1112i = Byte2ReferenceMaps.fastIterator(AbstractByte2ReferenceMap.this);
+                        this.f1076i = Byte2ReferenceMaps.fastIterator(AbstractByte2ReferenceMap.this);
                     }
 
                     @Override // java.util.Iterator
                     public V next() {
-                        return this.f1112i.next().getValue();
+                        return this.f1076i.next().getValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1112i.hasNext();
+                        return this.f1076i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1112i.remove();
+                        this.f1076i.remove();
                     }
 
                     @Override // java.util.Iterator
                     public void forEachRemaining(Consumer<? super V> action) {
-                        this.f1112i.forEachRemaining(entry -> {
+                        this.f1076i.forEachRemaining(entry -> {
                             action.accept(entry.getValue());
                         });
                     }

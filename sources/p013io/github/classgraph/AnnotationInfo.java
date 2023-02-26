@@ -186,9 +186,10 @@ public class AnnotationInfo extends ScanResultObject implements Comparable<Annot
         return (Annotation) Proxy.newProxyInstance(annotationClass.getClassLoader(), new Class[]{annotationClass}, new AnnotationInvocationHandler(annotationClass, this));
     }
 
+    /* access modifiers changed from: private */
     /* renamed from: io.github.classgraph.AnnotationInfo$AnnotationInvocationHandler */
     /* loaded from: grasscutter.jar:io/github/classgraph/AnnotationInfo$AnnotationInvocationHandler.class */
-    private static class AnnotationInvocationHandler implements InvocationHandler {
+    public static class AnnotationInvocationHandler implements InvocationHandler {
         private final Class<? extends Annotation> annotationClass;
         private final AnnotationInfo annotationInfo;
         private final Map<String, Object> annotationParameterValuesInstantiated = new HashMap();

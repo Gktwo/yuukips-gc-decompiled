@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WinterCampGiveFriendItemRspOuterClass.class */
 public final class WinterCampGiveFriendItemRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!WinterCampGiveFriendItemRsp.proto\"J\n\u001bWinterCampGiveFriendItemRsp\u0012\u001a\n\u0012limit_item_id_list\u0018\u0003 \u0003(\r\u0012\u000f\n\u0007retcode\u0018\u000f \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!WinterCampGiveFriendItemRsp.proto\"G\n\u001bWinterCampGiveFriendItemRsp\u0012\u0017\n\u000flimitItemIdList\u0018\u0007 \u0003(\r\u0012\u000f\n\u0007retcode\u0018\u000f \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_WinterCampGiveFriendItemRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_WinterCampGiveFriendItemRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WinterCampGiveFriendItemRsp_descriptor, new String[]{"LimitItemIdList", "Retcode"});
 
@@ -51,7 +51,7 @@ public final class WinterCampGiveFriendItemRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WinterCampGiveFriendItemRspOuterClass$WinterCampGiveFriendItemRsp.class */
     public static final class WinterCampGiveFriendItemRsp extends GeneratedMessageV3 implements WinterCampGiveFriendItemRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int LIMIT_ITEM_ID_LIST_FIELD_NUMBER = 3;
+        public static final int LIMITITEMIDLIST_FIELD_NUMBER = 7;
         private Internal.IntList limitItemIdList_;
         private int limitItemIdListMemoizedSerializedSize;
         public static final int RETCODE_FIELD_NUMBER = 15;
@@ -107,14 +107,14 @@ public final class WinterCampGiveFriendItemRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 24:
+                                case 56:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.limitItemIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.limitItemIdList_.addInt(input.readUInt32());
                                     break;
-                                case 26:
+                                case 58:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.limitItemIdList_ = newIntList();
@@ -198,7 +198,7 @@ public final class WinterCampGiveFriendItemRspOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getLimitItemIdListList().size() > 0) {
-                output.writeUInt32NoTag(26);
+                output.writeUInt32NoTag(58);
                 output.writeUInt32NoTag(this.limitItemIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.limitItemIdList_.size(); i++) {
@@ -252,7 +252,7 @@ public final class WinterCampGiveFriendItemRspOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getLimitItemIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 3)) + getLimitItemIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 7)) + getLimitItemIdListList().hashCode();
             }
             int hash2 = (29 * ((53 * ((37 * hash) + 15)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

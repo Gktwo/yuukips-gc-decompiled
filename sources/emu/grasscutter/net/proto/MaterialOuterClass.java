@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MaterialOuterClass.class */
 public final class MaterialOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000eMaterial.proto\u001a\u0018MaterialDeleteInfo.proto\"C\n\bMaterial\u0012\r\n\u0005count\u0018\u0001 \u0001(\r\u0012(\n\u000bdelete_info\u0018\u0002 \u0001(\u000b2\u0013.MaterialDeleteInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MaterialDeleteInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000eMaterial.proto\u001a\u0018MaterialDeleteInfo.proto\"B\n\bMaterial\u0012\r\n\u0005count\u0018\u0001 \u0001(\r\u0012'\n\ndeleteInfo\u0018\u0002 \u0001(\u000b2\u0013.MaterialDeleteInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MaterialDeleteInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_Material_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_Material_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_Material_descriptor, new String[]{"Count", "DeleteInfo"});
 
@@ -51,7 +51,7 @@ public final class MaterialOuterClass {
         private static final long serialVersionUID = 0;
         public static final int COUNT_FIELD_NUMBER = 1;
         private int count_;
-        public static final int DELETE_INFO_FIELD_NUMBER = 2;
+        public static final int DELETEINFO_FIELD_NUMBER = 2;
         private MaterialDeleteInfoOuterClass.MaterialDeleteInfo deleteInfo_;
         private byte memoizedIsInitialized;
         private static final Material DEFAULT_INSTANCE = new Material();

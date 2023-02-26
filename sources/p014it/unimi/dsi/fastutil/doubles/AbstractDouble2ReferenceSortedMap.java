@@ -90,30 +90,30 @@ public abstract class AbstractDouble2ReferenceSortedMap<V> extends AbstractDoubl
     public static class KeySetIterator<V> implements DoubleBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Double2ReferenceMap.Entry<V>> f1567i;
+        protected final ObjectBidirectionalIterator<Double2ReferenceMap.Entry<V>> f1531i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Double2ReferenceMap.Entry<V>> i) {
-            this.f1567i = i;
+            this.f1531i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
         public double nextDouble() {
-            return ((Double2ReferenceMap.Entry) this.f1567i.next()).getDoubleKey();
+            return ((Double2ReferenceMap.Entry) this.f1531i.next()).getDoubleKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBidirectionalIterator
         public double previousDouble() {
-            return this.f1567i.previous().getDoubleKey();
+            return this.f1531i.previous().getDoubleKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1567i.hasNext();
+            return this.f1531i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1567i.hasPrevious();
+            return this.f1531i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractDouble2ReferenceSortedMap<V> extends AbstractDoubl
     public static class ValuesIterator<V> implements ObjectIterator<V> {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Double2ReferenceMap.Entry<V>> f1568i;
+        protected final ObjectBidirectionalIterator<Double2ReferenceMap.Entry<V>> f1532i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Double2ReferenceMap.Entry<V>> i) {
-            this.f1568i = i;
+            this.f1532i = i;
         }
 
         @Override // java.util.Iterator
         public V next() {
-            return ((Double2ReferenceMap.Entry) this.f1568i.next()).getValue();
+            return ((Double2ReferenceMap.Entry) this.f1532i.next()).getValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1568i.hasNext();
+            return this.f1532i.hasNext();
         }
     }
 }

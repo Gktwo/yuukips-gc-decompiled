@@ -20,21 +20,21 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MusicGameSettleRspOuterClass.class */
 public final class MusicGameSettleRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018MusicGameSettleRsp.proto\"\u0001\n\u0012MusicGameSettleRsp\u0012\u000f\n\u0007retcode\u0018\f \u0001(\u0005\u0012\u0010\n\bugc_guid\u0018\u0007 \u0001(\u0004\u0012\u0015\n\ris_new_record\u0018\b \u0001(\b\u0012\u001c\n\u0014is_unlock_next_level\u0018\n \u0001(\b\u0012\u0016\n\u000emusic_basic_id\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018MusicGameSettleRsp.proto\"|\n\u0012MusicGameSettleRsp\u0012\u000f\n\u0007retcode\u0018\t \u0001(\u0005\u0012\u0019\n\u0011isUnlockNextLevel\u0018\u0001 \u0001(\b\u0012\u000f\n\u0007ugcGuid\u0018\u0007 \u0001(\u0004\u0012\u0014\n\fmusicBasicId\u0018\u0004 \u0001(\r\u0012\u0013\n\u000bisNewRecord\u0018\u000e \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_MusicGameSettleRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_MusicGameSettleRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MusicGameSettleRsp_descriptor, new String[]{"Retcode", "UgcGuid", "IsNewRecord", "IsUnlockNextLevel", "MusicBasicId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_MusicGameSettleRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MusicGameSettleRsp_descriptor, new String[]{"Retcode", "IsUnlockNextLevel", "UgcGuid", "MusicBasicId", "IsNewRecord"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MusicGameSettleRspOuterClass$MusicGameSettleRspOrBuilder.class */
     public interface MusicGameSettleRspOrBuilder extends MessageOrBuilder {
         int getRetcode();
 
-        long getUgcGuid();
-
-        boolean getIsNewRecord();
-
         boolean getIsUnlockNextLevel();
 
+        long getUgcGuid();
+
         int getMusicBasicId();
+
+        boolean getIsNewRecord();
     }
 
     private MusicGameSettleRspOuterClass() {
@@ -50,16 +50,16 @@ public final class MusicGameSettleRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MusicGameSettleRspOuterClass$MusicGameSettleRsp.class */
     public static final class MusicGameSettleRsp extends GeneratedMessageV3 implements MusicGameSettleRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 12;
+        public static final int RETCODE_FIELD_NUMBER = 9;
         private int retcode_;
-        public static final int UGC_GUID_FIELD_NUMBER = 7;
-        private long ugcGuid_;
-        public static final int IS_NEW_RECORD_FIELD_NUMBER = 8;
-        private boolean isNewRecord_;
-        public static final int IS_UNLOCK_NEXT_LEVEL_FIELD_NUMBER = 10;
+        public static final int ISUNLOCKNEXTLEVEL_FIELD_NUMBER = 1;
         private boolean isUnlockNextLevel_;
-        public static final int MUSIC_BASIC_ID_FIELD_NUMBER = 1;
+        public static final int UGCGUID_FIELD_NUMBER = 7;
+        private long ugcGuid_;
+        public static final int MUSICBASICID_FIELD_NUMBER = 4;
         private int musicBasicId_;
+        public static final int ISNEWRECORD_FIELD_NUMBER = 14;
+        private boolean isNewRecord_;
         private byte memoizedIsInitialized;
         private static final MusicGameSettleRsp DEFAULT_INSTANCE = new MusicGameSettleRsp();
         private static final Parser<MusicGameSettleRsp> PARSER = new AbstractParser<MusicGameSettleRsp>() { // from class: emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRsp.1
@@ -106,19 +106,19 @@ public final class MusicGameSettleRspOuterClass {
                                 done = true;
                                 break;
                             case 8:
+                                this.isUnlockNextLevel_ = input.readBool();
+                                break;
+                            case 32:
                                 this.musicBasicId_ = input.readUInt32();
                                 break;
                             case 56:
                                 this.ugcGuid_ = input.readUInt64();
                                 break;
-                            case 64:
-                                this.isNewRecord_ = input.readBool();
-                                break;
-                            case 80:
-                                this.isUnlockNextLevel_ = input.readBool();
-                                break;
-                            case 96:
+                            case 72:
                                 this.retcode_ = input.readInt32();
+                                break;
+                            case 112:
+                                this.isNewRecord_ = input.readBool();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -155,23 +155,23 @@ public final class MusicGameSettleRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRspOrBuilder
-        public long getUgcGuid() {
-            return this.ugcGuid_;
-        }
-
-        @Override // emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRspOrBuilder
-        public boolean getIsNewRecord() {
-            return this.isNewRecord_;
-        }
-
-        @Override // emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRspOrBuilder
         public boolean getIsUnlockNextLevel() {
             return this.isUnlockNextLevel_;
         }
 
         @Override // emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRspOrBuilder
+        public long getUgcGuid() {
+            return this.ugcGuid_;
+        }
+
+        @Override // emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRspOrBuilder
         public int getMusicBasicId() {
             return this.musicBasicId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRspOrBuilder
+        public boolean getIsNewRecord() {
+            return this.isNewRecord_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -189,20 +189,20 @@ public final class MusicGameSettleRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.isUnlockNextLevel_) {
+                output.writeBool(1, this.isUnlockNextLevel_);
+            }
             if (this.musicBasicId_ != 0) {
-                output.writeUInt32(1, this.musicBasicId_);
+                output.writeUInt32(4, this.musicBasicId_);
             }
             if (this.ugcGuid_ != 0) {
                 output.writeUInt64(7, this.ugcGuid_);
             }
-            if (this.isNewRecord_) {
-                output.writeBool(8, this.isNewRecord_);
-            }
-            if (this.isUnlockNextLevel_) {
-                output.writeBool(10, this.isUnlockNextLevel_);
-            }
             if (this.retcode_ != 0) {
-                output.writeInt32(12, this.retcode_);
+                output.writeInt32(9, this.retcode_);
+            }
+            if (this.isNewRecord_) {
+                output.writeBool(14, this.isNewRecord_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -214,20 +214,20 @@ public final class MusicGameSettleRspOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.isUnlockNextLevel_) {
+                size2 = 0 + CodedOutputStream.computeBoolSize(1, this.isUnlockNextLevel_);
+            }
             if (this.musicBasicId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.musicBasicId_);
+                size2 += CodedOutputStream.computeUInt32Size(4, this.musicBasicId_);
             }
             if (this.ugcGuid_ != 0) {
                 size2 += CodedOutputStream.computeUInt64Size(7, this.ugcGuid_);
             }
-            if (this.isNewRecord_) {
-                size2 += CodedOutputStream.computeBoolSize(8, this.isNewRecord_);
-            }
-            if (this.isUnlockNextLevel_) {
-                size2 += CodedOutputStream.computeBoolSize(10, this.isUnlockNextLevel_);
-            }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(12, this.retcode_);
+                size2 += CodedOutputStream.computeInt32Size(9, this.retcode_);
+            }
+            if (this.isNewRecord_) {
+                size2 += CodedOutputStream.computeBoolSize(14, this.isNewRecord_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -243,7 +243,7 @@ public final class MusicGameSettleRspOuterClass {
                 return equals(obj);
             }
             MusicGameSettleRsp other = (MusicGameSettleRsp) obj;
-            return getRetcode() == other.getRetcode() && getUgcGuid() == other.getUgcGuid() && getIsNewRecord() == other.getIsNewRecord() && getIsUnlockNextLevel() == other.getIsUnlockNextLevel() && getMusicBasicId() == other.getMusicBasicId() && this.unknownFields.equals(other.unknownFields);
+            return getRetcode() == other.getRetcode() && getIsUnlockNextLevel() == other.getIsUnlockNextLevel() && getUgcGuid() == other.getUgcGuid() && getMusicBasicId() == other.getMusicBasicId() && getIsNewRecord() == other.getIsNewRecord() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -251,7 +251,7 @@ public final class MusicGameSettleRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getRetcode())) + 7)) + Internal.hashLong(getUgcGuid()))) + 8)) + Internal.hashBoolean(getIsNewRecord()))) + 10)) + Internal.hashBoolean(getIsUnlockNextLevel()))) + 1)) + getMusicBasicId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getRetcode())) + 1)) + Internal.hashBoolean(getIsUnlockNextLevel()))) + 7)) + Internal.hashLong(getUgcGuid()))) + 4)) + getMusicBasicId())) + 14)) + Internal.hashBoolean(getIsNewRecord()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -331,10 +331,10 @@ public final class MusicGameSettleRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MusicGameSettleRspOuterClass$MusicGameSettleRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements MusicGameSettleRspOrBuilder {
             private int retcode_;
-            private long ugcGuid_;
-            private boolean isNewRecord_;
             private boolean isUnlockNextLevel_;
+            private long ugcGuid_;
             private int musicBasicId_;
+            private boolean isNewRecord_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return MusicGameSettleRspOuterClass.internal_static_MusicGameSettleRsp_descriptor;
@@ -363,10 +363,10 @@ public final class MusicGameSettleRspOuterClass {
             public Builder clear() {
                 clear();
                 this.retcode_ = 0;
-                this.ugcGuid_ = 0;
-                this.isNewRecord_ = false;
                 this.isUnlockNextLevel_ = false;
+                this.ugcGuid_ = 0;
                 this.musicBasicId_ = 0;
+                this.isNewRecord_ = false;
                 return this;
             }
 
@@ -393,10 +393,10 @@ public final class MusicGameSettleRspOuterClass {
             public MusicGameSettleRsp buildPartial() {
                 MusicGameSettleRsp result = new MusicGameSettleRsp(this);
                 result.retcode_ = this.retcode_;
-                result.ugcGuid_ = this.ugcGuid_;
-                result.isNewRecord_ = this.isNewRecord_;
                 result.isUnlockNextLevel_ = this.isUnlockNextLevel_;
+                result.ugcGuid_ = this.ugcGuid_;
                 result.musicBasicId_ = this.musicBasicId_;
+                result.isNewRecord_ = this.isNewRecord_;
                 onBuilt();
                 return result;
             }
@@ -447,17 +447,17 @@ public final class MusicGameSettleRspOuterClass {
                 if (other.getRetcode() != 0) {
                     setRetcode(other.getRetcode());
                 }
-                if (other.getUgcGuid() != 0) {
-                    setUgcGuid(other.getUgcGuid());
-                }
-                if (other.getIsNewRecord()) {
-                    setIsNewRecord(other.getIsNewRecord());
-                }
                 if (other.getIsUnlockNextLevel()) {
                     setIsUnlockNextLevel(other.getIsUnlockNextLevel());
                 }
+                if (other.getUgcGuid() != 0) {
+                    setUgcGuid(other.getUgcGuid());
+                }
                 if (other.getMusicBasicId() != 0) {
                     setMusicBasicId(other.getMusicBasicId());
+                }
+                if (other.getIsNewRecord()) {
+                    setIsNewRecord(other.getIsNewRecord());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -509,40 +509,6 @@ public final class MusicGameSettleRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRspOrBuilder
-            public long getUgcGuid() {
-                return this.ugcGuid_;
-            }
-
-            public Builder setUgcGuid(long value) {
-                this.ugcGuid_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUgcGuid() {
-                this.ugcGuid_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRspOrBuilder
-            public boolean getIsNewRecord() {
-                return this.isNewRecord_;
-            }
-
-            public Builder setIsNewRecord(boolean value) {
-                this.isNewRecord_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsNewRecord() {
-                this.isNewRecord_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRspOrBuilder
             public boolean getIsUnlockNextLevel() {
                 return this.isUnlockNextLevel_;
             }
@@ -560,6 +526,23 @@ public final class MusicGameSettleRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRspOrBuilder
+            public long getUgcGuid() {
+                return this.ugcGuid_;
+            }
+
+            public Builder setUgcGuid(long value) {
+                this.ugcGuid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUgcGuid() {
+                this.ugcGuid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRspOrBuilder
             public int getMusicBasicId() {
                 return this.musicBasicId_;
             }
@@ -572,6 +555,23 @@ public final class MusicGameSettleRspOuterClass {
 
             public Builder clearMusicBasicId() {
                 this.musicBasicId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.MusicGameSettleRspOuterClass.MusicGameSettleRspOrBuilder
+            public boolean getIsNewRecord() {
+                return this.isNewRecord_;
+            }
+
+            public Builder setIsNewRecord(boolean value) {
+                this.isNewRecord_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsNewRecord() {
+                this.isNewRecord_ = false;
                 onChanged();
                 return this;
             }

@@ -8,12 +8,12 @@ import emu.grasscutter.net.proto.VectorOuterClass;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketDropHintNotify.class */
 public class PacketDropHintNotify extends BasePacket {
     public PacketDropHintNotify(int itemId, VectorOuterClass.Vector position) {
-        super(646);
+        super(642);
         setData(DropHintNotifyOuterClass.DropHintNotify.newBuilder().addItemIdList(itemId).setPosition(position).build());
     }
 
     public PacketDropHintNotify(Iterable<GameItem> items, VectorOuterClass.Vector position) {
-        super(646);
+        super(642);
         DropHintNotifyOuterClass.DropHintNotify.Builder proto = DropHintNotifyOuterClass.DropHintNotify.newBuilder();
         items.forEach(i -> {
             proto.addItemIdList(i.getItemId());

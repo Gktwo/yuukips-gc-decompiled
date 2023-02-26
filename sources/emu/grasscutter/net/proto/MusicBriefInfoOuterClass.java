@@ -23,61 +23,61 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MusicBriefInfoOuterClass.class */
 public final class MusicBriefInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014MusicBriefInfo.proto\"Ã\u0004\n\u000eMusicBriefInfo\u0012\u001b\n\u0013Unk2700_JNENCBCGPGO\u0018\u0005 \u0001(\u0004\u0012\u001b\n\u0013Unk2700_OJBPHCIDAEB\u0018\b \u0001(\b\u0012\u001b\n\u0013Unk2700_FGCJEGHOKPG\u0018\u0001 \u0001(\b\u0012\u001b\n\u0013Unk2700_DFIBAIILJHN\u0018\u0002 \u0001(\r\u0012\u001c\n\u0013Unk2700_MKBNLEKMIMD\u0018\t \u0001(\r\u0012\u001b\n\u0013Unk2700_PINGIIAANMO\u0018\f \u0001(\r\u0012\u001b\n\u0013Unk2700_MONNIDCNDFI\u0018\n \u0001(\t\u0012\u000f\n\u0007version\u0018\u000f \u0001(\r\u0012\u001b\n\u0013Unk2700_GGHNLPMAGME\u0018\u0003 \u0001(\r\u0012\u001c\n\u0013Unk2700_GDCGOMNBMEO\u0018ê\u0007 \u0003(\r\u0012\u001c\n\u0013Unk2700_JAEONBMBFJJ\u0018Ö\u0007 \u0003(\r\u0012\u001b\n\u0013Unk2700_GBCGGDONMCD\u0018\t \u0001(\b\u0012\u001c\n\u0013Unk2700_LPEKFJBNEJM\u0018\u000e \u0001(\r\u0012\u001b\n\u0013Unk2700_DNLEGADDHKM\u0018\u000b \u0001(\b\u0012\u001b\n\u0013Unk2700_BFMNMPPNBHH\u0018\r \u0001(\r\u0012\u0011\n\tmax_score\u0018\u000e \u0001(\r\u0012\u001c\n\u0013Unk2700_KAMOCHAKPGP\u0018À\u0004 \u0001(\r\u0012\u001b\n\u0013Unk2700_KLPHBLCIOEC\u0018\u0007 \u0001(\r\u0012\u001b\n\u0013Unk2700_CEPGMKAHHCD\u0018\u0004 \u0001(\u0004\u0012\u001b\n\u0013Unk2700_PMCPLPMJCEC\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014MusicBriefInfo.proto\"\u0004\n\u000eMusicBriefInfo\u0012\u000f\n\u0007ugcGuid\u0018\b \u0001(\u0004\u0012\u001b\n\u0013Unk3300_CCMMPAHIMDO\u0018X \u0001(\r\u0012\u001b\n\u0013Unk3300_PLNOFOHFAPE\u0018\u000f \u0001(\r\u0012\u001c\n\u0013Unk3300_HKBHAIMOBKO\u0018Ó\n \u0003(\r\u0012\u001b\n\u0013Unk3300_FKIGPAJFPLG\u0018\u0005 \u0001(\b\u0012\u0019\n\u0011importFromUgcGuid\u0018\u0006 \u0001(\u0004\u0012\u000f\n\u0007musicId\u0018\u000e \u0001(\r\u0012\u001c\n\u0013Unk3300_JEEBFPFEHHG\u0018¦\b \u0003(\r\u0012\u001c\n\u0013Unk3300_MBKDGBNFPOA\u0018­\u000e \u0001(\r\u0012\u001b\n\u0013Unk3300_OJOKFBJALIJ\u0018\u0007 \u0001(\r\u0012\u001c\n\u0013Unk3300_EGIGIOOKBAB\u0018\u0002 \u0001(\r\u0012\u001b\n\u0013Unk3300_OBBMCFADNIN\u0018\u0002 \u0001(\r\u0012\u001b\n\u0013Unk3300_PBENMAHHGIL\u0018\t \u0001(\r\u0012\u001b\n\u0013Unk3300_NCDKCNOLGKB\u0018\u0004 \u0001(\b\u0012\u000f\n\u0007version\u0018\u0001 \u0001(\r\u0012\u0017\n\u000fcreatorNickname\u0018\u0003 \u0001(\t\u0012\u001b\n\u0013Unk3300_GDNAPNAINBA\u0018\u000b \u0001(\b\u0012\u0010\n\bmaxScore\u0018\f \u0001(\r\u0012\u001b\n\u0013Unk3300_KMMBLIMKJCM\u0018\n \u0001(\r\u0012\u0015\n\risPsnPlatform\u0018\r \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_MusicBriefInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_MusicBriefInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MusicBriefInfo_descriptor, new String[]{"Unk2700JNENCBCGPGO", "Unk2700OJBPHCIDAEB", "Unk2700FGCJEGHOKPG", "Unk2700DFIBAIILJHN", "Unk2700MKBNLEKMIMD", "Unk2700PINGIIAANMO", "Unk2700MONNIDCNDFI", "Version", "Unk2700GGHNLPMAGME", "Unk2700GDCGOMNBMEO", "Unk2700JAEONBMBFJJ", "Unk2700GBCGGDONMCD", "Unk2700LPEKFJBNEJM", "Unk2700DNLEGADDHKM", "Unk2700BFMNMPPNBHH", "MaxScore", "Unk2700KAMOCHAKPGP", "Unk2700KLPHBLCIOEC", "Unk2700CEPGMKAHHCD", "Unk2700PMCPLPMJCEC"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_MusicBriefInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MusicBriefInfo_descriptor, new String[]{"UgcGuid", "Unk3300CCMMPAHIMDO", "Unk3300PLNOFOHFAPE", "Unk3300HKBHAIMOBKO", "Unk3300FKIGPAJFPLG", "ImportFromUgcGuid", "MusicId", "Unk3300JEEBFPFEHHG", "Unk3300MBKDGBNFPOA", "Unk3300OJOKFBJALIJ", "Unk3300EGIGIOOKBAB", "Unk3300OBBMCFADNIN", "Unk3300PBENMAHHGIL", "Unk3300NCDKCNOLGKB", "Version", "CreatorNickname", "Unk3300GDNAPNAINBA", "MaxScore", "Unk3300KMMBLIMKJCM", "IsPsnPlatform"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MusicBriefInfoOuterClass$MusicBriefInfoOrBuilder.class */
     public interface MusicBriefInfoOrBuilder extends MessageOrBuilder {
-        long getUnk2700JNENCBCGPGO();
+        long getUgcGuid();
 
-        boolean getUnk2700OJBPHCIDAEB();
+        int getUnk3300CCMMPAHIMDO();
 
-        boolean getUnk2700FGCJEGHOKPG();
+        int getUnk3300PLNOFOHFAPE();
 
-        int getUnk2700DFIBAIILJHN();
+        List<Integer> getUnk3300HKBHAIMOBKOList();
 
-        int getUnk2700MKBNLEKMIMD();
+        int getUnk3300HKBHAIMOBKOCount();
 
-        int getUnk2700PINGIIAANMO();
+        int getUnk3300HKBHAIMOBKO(int i);
 
-        String getUnk2700MONNIDCNDFI();
+        boolean getUnk3300FKIGPAJFPLG();
 
-        ByteString getUnk2700MONNIDCNDFIBytes();
+        long getImportFromUgcGuid();
+
+        int getMusicId();
+
+        List<Integer> getUnk3300JEEBFPFEHHGList();
+
+        int getUnk3300JEEBFPFEHHGCount();
+
+        int getUnk3300JEEBFPFEHHG(int i);
+
+        int getUnk3300MBKDGBNFPOA();
+
+        int getUnk3300OJOKFBJALIJ();
+
+        int getUnk3300EGIGIOOKBAB();
+
+        int getUnk3300OBBMCFADNIN();
+
+        int getUnk3300PBENMAHHGIL();
+
+        boolean getUnk3300NCDKCNOLGKB();
 
         int getVersion();
 
-        int getUnk2700GGHNLPMAGME();
+        String getCreatorNickname();
 
-        List<Integer> getUnk2700GDCGOMNBMEOList();
+        ByteString getCreatorNicknameBytes();
 
-        int getUnk2700GDCGOMNBMEOCount();
-
-        int getUnk2700GDCGOMNBMEO(int i);
-
-        List<Integer> getUnk2700JAEONBMBFJJList();
-
-        int getUnk2700JAEONBMBFJJCount();
-
-        int getUnk2700JAEONBMBFJJ(int i);
-
-        boolean getUnk2700GBCGGDONMCD();
-
-        int getUnk2700LPEKFJBNEJM();
-
-        boolean getUnk2700DNLEGADDHKM();
-
-        int getUnk2700BFMNMPPNBHH();
+        boolean getUnk3300GDNAPNAINBA();
 
         int getMaxScore();
 
-        int getUnk2700KAMOCHAKPGP();
+        int getUnk3300KMMBLIMKJCM();
 
-        int getUnk2700KLPHBLCIOEC();
-
-        long getUnk2700CEPGMKAHHCD();
-
-        int getUnk2700PMCPLPMJCEC();
+        boolean getIsPsnPlatform();
     }
 
     private MusicBriefInfoOuterClass() {
@@ -93,48 +93,48 @@ public final class MusicBriefInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MusicBriefInfoOuterClass$MusicBriefInfo.class */
     public static final class MusicBriefInfo extends GeneratedMessageV3 implements MusicBriefInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int UNK2700_JNENCBCGPGO_FIELD_NUMBER = 5;
-        private long unk2700JNENCBCGPGO_;
-        public static final int UNK2700_OJBPHCIDAEB_FIELD_NUMBER = 8;
-        private boolean unk2700OJBPHCIDAEB_;
-        public static final int UNK2700_FGCJEGHOKPG_FIELD_NUMBER = 1;
-        private boolean unk2700FGCJEGHOKPG_;
-        public static final int UNK2700_DFIBAIILJHN_FIELD_NUMBER = 2;
-        private int unk2700DFIBAIILJHN_;
-        public static final int UNK2700_MKBNLEKMIMD_FIELD_NUMBER = 1182;
-        private int unk2700MKBNLEKMIMD_;
-        public static final int UNK2700_PINGIIAANMO_FIELD_NUMBER = 12;
-        private int unk2700PINGIIAANMO_;
-        public static final int UNK2700_MONNIDCNDFI_FIELD_NUMBER = 10;
-        private volatile Object unk2700MONNIDCNDFI_;
-        public static final int VERSION_FIELD_NUMBER = 15;
+        public static final int UGCGUID_FIELD_NUMBER = 8;
+        private long ugcGuid_;
+        public static final int UNK3300_CCMMPAHIMDO_FIELD_NUMBER = 88;
+        private int unk3300CCMMPAHIMDO_;
+        public static final int UNK3300_PLNOFOHFAPE_FIELD_NUMBER = 15;
+        private int unk3300PLNOFOHFAPE_;
+        public static final int UNK3300_HKBHAIMOBKO_FIELD_NUMBER = 1363;
+        private Internal.IntList unk3300HKBHAIMOBKO_;
+        private int unk3300HKBHAIMOBKOMemoizedSerializedSize;
+        public static final int UNK3300_FKIGPAJFPLG_FIELD_NUMBER = 5;
+        private boolean unk3300FKIGPAJFPLG_;
+        public static final int IMPORTFROMUGCGUID_FIELD_NUMBER = 6;
+        private long importFromUgcGuid_;
+        public static final int MUSICID_FIELD_NUMBER = 14;
+        private int musicId_;
+        public static final int UNK3300_JEEBFPFEHHG_FIELD_NUMBER = 1062;
+        private Internal.IntList unk3300JEEBFPFEHHG_;
+        private int unk3300JEEBFPFEHHGMemoizedSerializedSize;
+        public static final int UNK3300_MBKDGBNFPOA_FIELD_NUMBER = 1837;
+        private int unk3300MBKDGBNFPOA_;
+        public static final int UNK3300_OJOKFBJALIJ_FIELD_NUMBER = 7;
+        private int unk3300OJOKFBJALIJ_;
+        public static final int UNK3300_EGIGIOOKBAB_FIELD_NUMBER = 287;
+        private int unk3300EGIGIOOKBAB_;
+        public static final int UNK3300_OBBMCFADNIN_FIELD_NUMBER = 2;
+        private int unk3300OBBMCFADNIN_;
+        public static final int UNK3300_PBENMAHHGIL_FIELD_NUMBER = 9;
+        private int unk3300PBENMAHHGIL_;
+        public static final int UNK3300_NCDKCNOLGKB_FIELD_NUMBER = 4;
+        private boolean unk3300NCDKCNOLGKB_;
+        public static final int VERSION_FIELD_NUMBER = 1;
         private int version_;
-        public static final int UNK2700_GGHNLPMAGME_FIELD_NUMBER = 3;
-        private int unk2700GGHNLPMAGME_;
-        public static final int UNK2700_GDCGOMNBMEO_FIELD_NUMBER = 1002;
-        private Internal.IntList unk2700GDCGOMNBMEO_;
-        private int unk2700GDCGOMNBMEOMemoizedSerializedSize;
-        public static final int UNK2700_JAEONBMBFJJ_FIELD_NUMBER = 982;
-        private Internal.IntList unk2700JAEONBMBFJJ_;
-        private int unk2700JAEONBMBFJJMemoizedSerializedSize;
-        public static final int UNK2700_GBCGGDONMCD_FIELD_NUMBER = 9;
-        private boolean unk2700GBCGGDONMCD_;
-        public static final int UNK2700_LPEKFJBNEJM_FIELD_NUMBER = 1822;
-        private int unk2700LPEKFJBNEJM_;
-        public static final int UNK2700_DNLEGADDHKM_FIELD_NUMBER = 11;
-        private boolean unk2700DNLEGADDHKM_;
-        public static final int UNK2700_BFMNMPPNBHH_FIELD_NUMBER = 13;
-        private int unk2700BFMNMPPNBHH_;
-        public static final int MAX_SCORE_FIELD_NUMBER = 14;
+        public static final int CREATORNICKNAME_FIELD_NUMBER = 3;
+        private volatile Object creatorNickname_;
+        public static final int UNK3300_GDNAPNAINBA_FIELD_NUMBER = 11;
+        private boolean unk3300GDNAPNAINBA_;
+        public static final int MAXSCORE_FIELD_NUMBER = 12;
         private int maxScore_;
-        public static final int UNK2700_KAMOCHAKPGP_FIELD_NUMBER = 576;
-        private int unk2700KAMOCHAKPGP_;
-        public static final int UNK2700_KLPHBLCIOEC_FIELD_NUMBER = 7;
-        private int unk2700KLPHBLCIOEC_;
-        public static final int UNK2700_CEPGMKAHHCD_FIELD_NUMBER = 4;
-        private long unk2700CEPGMKAHHCD_;
-        public static final int UNK2700_PMCPLPMJCEC_FIELD_NUMBER = 6;
-        private int unk2700PMCPLPMJCEC_;
+        public static final int UNK3300_KMMBLIMKJCM_FIELD_NUMBER = 10;
+        private int unk3300KMMBLIMKJCM_;
+        public static final int ISPSNPLATFORM_FIELD_NUMBER = 13;
+        private boolean isPsnPlatform_;
         private byte memoizedIsInitialized;
         private static final MusicBriefInfo DEFAULT_INSTANCE = new MusicBriefInfo();
         private static final Parser<MusicBriefInfo> PARSER = new AbstractParser<MusicBriefInfo>() { // from class: emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfo.1
@@ -146,18 +146,18 @@ public final class MusicBriefInfoOuterClass {
 
         private MusicBriefInfo(GeneratedMessageV3.Builder<?> builder) {
             super(builder);
-            this.unk2700GDCGOMNBMEOMemoizedSerializedSize = -1;
-            this.unk2700JAEONBMBFJJMemoizedSerializedSize = -1;
+            this.unk3300HKBHAIMOBKOMemoizedSerializedSize = -1;
+            this.unk3300JEEBFPFEHHGMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
         }
 
         private MusicBriefInfo() {
-            this.unk2700GDCGOMNBMEOMemoizedSerializedSize = -1;
-            this.unk2700JAEONBMBFJJMemoizedSerializedSize = -1;
+            this.unk3300HKBHAIMOBKOMemoizedSerializedSize = -1;
+            this.unk3300JEEBFPFEHHGMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
-            this.unk2700MONNIDCNDFI_ = "";
-            this.unk2700GDCGOMNBMEO_ = emptyIntList();
-            this.unk2700JAEONBMBFJJ_ = emptyIntList();
+            this.unk3300HKBHAIMOBKO_ = emptyIntList();
+            this.unk3300JEEBFPFEHHG_ = emptyIntList();
+            this.creatorNickname_ = "";
         }
 
         /* access modifiers changed from: protected */
@@ -192,94 +192,94 @@ public final class MusicBriefInfoOuterClass {
                                     done = true;
                                     break;
                                 case 8:
-                                    this.unk2700FGCJEGHOKPG_ = input.readBool();
-                                    break;
-                                case 16:
-                                    this.unk2700DFIBAIILJHN_ = input.readUInt32();
-                                    break;
-                                case 24:
-                                    this.unk2700GGHNLPMAGME_ = input.readUInt32();
-                                    break;
-                                case 32:
-                                    this.unk2700CEPGMKAHHCD_ = input.readUInt64();
-                                    break;
-                                case 40:
-                                    this.unk2700JNENCBCGPGO_ = input.readUInt64();
-                                    break;
-                                case 48:
-                                    this.unk2700PMCPLPMJCEC_ = input.readUInt32();
-                                    break;
-                                case 56:
-                                    this.unk2700KLPHBLCIOEC_ = input.readUInt32();
-                                    break;
-                                case 64:
-                                    this.unk2700OJBPHCIDAEB_ = input.readBool();
-                                    break;
-                                case 72:
-                                    this.unk2700GBCGGDONMCD_ = input.readBool();
-                                    break;
-                                case 82:
-                                    this.unk2700MONNIDCNDFI_ = input.readStringRequireUtf8();
-                                    break;
-                                case 88:
-                                    this.unk2700DNLEGADDHKM_ = input.readBool();
-                                    break;
-                                case 96:
-                                    this.unk2700PINGIIAANMO_ = input.readUInt32();
-                                    break;
-                                case 104:
-                                    this.unk2700BFMNMPPNBHH_ = input.readUInt32();
-                                    break;
-                                case 112:
-                                    this.maxScore_ = input.readUInt32();
-                                    break;
-                                case 120:
                                     this.version_ = input.readUInt32();
                                     break;
-                                case 4608:
-                                    this.unk2700KAMOCHAKPGP_ = input.readUInt32();
+                                case 16:
+                                    this.unk3300OBBMCFADNIN_ = input.readUInt32();
                                     break;
-                                case 7856:
+                                case 26:
+                                    this.creatorNickname_ = input.readStringRequireUtf8();
+                                    break;
+                                case 32:
+                                    this.unk3300NCDKCNOLGKB_ = input.readBool();
+                                    break;
+                                case 40:
+                                    this.unk3300FKIGPAJFPLG_ = input.readBool();
+                                    break;
+                                case 48:
+                                    this.importFromUgcGuid_ = input.readUInt64();
+                                    break;
+                                case 56:
+                                    this.unk3300OJOKFBJALIJ_ = input.readUInt32();
+                                    break;
+                                case 64:
+                                    this.ugcGuid_ = input.readUInt64();
+                                    break;
+                                case 72:
+                                    this.unk3300PBENMAHHGIL_ = input.readUInt32();
+                                    break;
+                                case 80:
+                                    this.unk3300KMMBLIMKJCM_ = input.readUInt32();
+                                    break;
+                                case 88:
+                                    this.unk3300GDNAPNAINBA_ = input.readBool();
+                                    break;
+                                case 96:
+                                    this.maxScore_ = input.readUInt32();
+                                    break;
+                                case 104:
+                                    this.isPsnPlatform_ = input.readBool();
+                                    break;
+                                case 112:
+                                    this.musicId_ = input.readUInt32();
+                                    break;
+                                case 120:
+                                    this.unk3300PLNOFOHFAPE_ = input.readUInt32();
+                                    break;
+                                case RET_GOODS_BUY_NUM_NOT_ENOUGH_VALUE:
+                                    this.unk3300CCMMPAHIMDO_ = input.readUInt32();
+                                    break;
+                                case 2296:
+                                    this.unk3300EGIGIOOKBAB_ = input.readUInt32();
+                                    break;
+                                case 8496:
                                     if ((mutable_bitField0_ & 2) == 0) {
-                                        this.unk2700JAEONBMBFJJ_ = newIntList();
+                                        this.unk3300JEEBFPFEHHG_ = newIntList();
                                         mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
                                     }
-                                    this.unk2700JAEONBMBFJJ_.addInt(input.readUInt32());
+                                    this.unk3300JEEBFPFEHHG_.addInt(input.readUInt32());
                                     break;
-                                case 7858:
+                                case 8498:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 2) == 0 && input.getBytesUntilLimit() > 0) {
-                                        this.unk2700JAEONBMBFJJ_ = newIntList();
+                                        this.unk3300JEEBFPFEHHG_ = newIntList();
                                         mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
                                     }
                                     while (input.getBytesUntilLimit() > 0) {
-                                        this.unk2700JAEONBMBFJJ_.addInt(input.readUInt32());
+                                        this.unk3300JEEBFPFEHHG_.addInt(input.readUInt32());
                                     }
                                     input.popLimit(limit);
                                     break;
-                                case 8016:
+                                case 10904:
                                     if ((mutable_bitField0_ & 1) == 0) {
-                                        this.unk2700GDCGOMNBMEO_ = newIntList();
+                                        this.unk3300HKBHAIMOBKO_ = newIntList();
                                         mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                     }
-                                    this.unk2700GDCGOMNBMEO_.addInt(input.readUInt32());
+                                    this.unk3300HKBHAIMOBKO_.addInt(input.readUInt32());
                                     break;
-                                case 8018:
+                                case 10906:
                                     int limit2 = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
-                                        this.unk2700GDCGOMNBMEO_ = newIntList();
+                                        this.unk3300HKBHAIMOBKO_ = newIntList();
                                         mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                     }
                                     while (input.getBytesUntilLimit() > 0) {
-                                        this.unk2700GDCGOMNBMEO_.addInt(input.readUInt32());
+                                        this.unk3300HKBHAIMOBKO_.addInt(input.readUInt32());
                                     }
                                     input.popLimit(limit2);
                                     break;
-                                case 9456:
-                                    this.unk2700MKBNLEKMIMD_ = input.readUInt32();
-                                    break;
-                                case 14576:
-                                    this.unk2700LPEKFJBNEJM_ = input.readUInt32();
+                                case 14696:
+                                    this.unk3300MBKDGBNFPOA_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -299,10 +299,10 @@ public final class MusicBriefInfoOuterClass {
                 }
             } finally {
                 if ((mutable_bitField0_ & 2) != 0) {
-                    this.unk2700JAEONBMBFJJ_.makeImmutable();
+                    this.unk3300JEEBFPFEHHG_.makeImmutable();
                 }
                 if ((mutable_bitField0_ & 1) != 0) {
-                    this.unk2700GDCGOMNBMEO_.makeImmutable();
+                    this.unk3300HKBHAIMOBKO_.makeImmutable();
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -319,55 +319,93 @@ public final class MusicBriefInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public long getUnk2700JNENCBCGPGO() {
-            return this.unk2700JNENCBCGPGO_;
+        public long getUgcGuid() {
+            return this.ugcGuid_;
         }
 
         @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public boolean getUnk2700OJBPHCIDAEB() {
-            return this.unk2700OJBPHCIDAEB_;
+        public int getUnk3300CCMMPAHIMDO() {
+            return this.unk3300CCMMPAHIMDO_;
         }
 
         @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public boolean getUnk2700FGCJEGHOKPG() {
-            return this.unk2700FGCJEGHOKPG_;
+        public int getUnk3300PLNOFOHFAPE() {
+            return this.unk3300PLNOFOHFAPE_;
         }
 
         @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public int getUnk2700DFIBAIILJHN() {
-            return this.unk2700DFIBAIILJHN_;
+        public List<Integer> getUnk3300HKBHAIMOBKOList() {
+            return this.unk3300HKBHAIMOBKO_;
         }
 
         @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public int getUnk2700MKBNLEKMIMD() {
-            return this.unk2700MKBNLEKMIMD_;
+        public int getUnk3300HKBHAIMOBKOCount() {
+            return this.unk3300HKBHAIMOBKO_.size();
         }
 
         @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public int getUnk2700PINGIIAANMO() {
-            return this.unk2700PINGIIAANMO_;
+        public int getUnk3300HKBHAIMOBKO(int index) {
+            return this.unk3300HKBHAIMOBKO_.getInt(index);
         }
 
         @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public String getUnk2700MONNIDCNDFI() {
-            Object ref = this.unk2700MONNIDCNDFI_;
-            if (ref instanceof String) {
-                return (String) ref;
-            }
-            String s = ((ByteString) ref).toStringUtf8();
-            this.unk2700MONNIDCNDFI_ = s;
-            return s;
+        public boolean getUnk3300FKIGPAJFPLG() {
+            return this.unk3300FKIGPAJFPLG_;
         }
 
         @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public ByteString getUnk2700MONNIDCNDFIBytes() {
-            Object ref = this.unk2700MONNIDCNDFI_;
-            if (!(ref instanceof String)) {
-                return (ByteString) ref;
-            }
-            ByteString b = ByteString.copyFromUtf8((String) ref);
-            this.unk2700MONNIDCNDFI_ = b;
-            return b;
+        public long getImportFromUgcGuid() {
+            return this.importFromUgcGuid_;
+        }
+
+        @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+        public int getMusicId() {
+            return this.musicId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+        public List<Integer> getUnk3300JEEBFPFEHHGList() {
+            return this.unk3300JEEBFPFEHHG_;
+        }
+
+        @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+        public int getUnk3300JEEBFPFEHHGCount() {
+            return this.unk3300JEEBFPFEHHG_.size();
+        }
+
+        @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+        public int getUnk3300JEEBFPFEHHG(int index) {
+            return this.unk3300JEEBFPFEHHG_.getInt(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+        public int getUnk3300MBKDGBNFPOA() {
+            return this.unk3300MBKDGBNFPOA_;
+        }
+
+        @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+        public int getUnk3300OJOKFBJALIJ() {
+            return this.unk3300OJOKFBJALIJ_;
+        }
+
+        @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+        public int getUnk3300EGIGIOOKBAB() {
+            return this.unk3300EGIGIOOKBAB_;
+        }
+
+        @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+        public int getUnk3300OBBMCFADNIN() {
+            return this.unk3300OBBMCFADNIN_;
+        }
+
+        @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+        public int getUnk3300PBENMAHHGIL() {
+            return this.unk3300PBENMAHHGIL_;
+        }
+
+        @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+        public boolean getUnk3300NCDKCNOLGKB() {
+            return this.unk3300NCDKCNOLGKB_;
         }
 
         @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
@@ -376,58 +414,30 @@ public final class MusicBriefInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public int getUnk2700GGHNLPMAGME() {
-            return this.unk2700GGHNLPMAGME_;
+        public String getCreatorNickname() {
+            Object ref = this.creatorNickname_;
+            if (ref instanceof String) {
+                return (String) ref;
+            }
+            String s = ((ByteString) ref).toStringUtf8();
+            this.creatorNickname_ = s;
+            return s;
         }
 
         @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public List<Integer> getUnk2700GDCGOMNBMEOList() {
-            return this.unk2700GDCGOMNBMEO_;
+        public ByteString getCreatorNicknameBytes() {
+            Object ref = this.creatorNickname_;
+            if (!(ref instanceof String)) {
+                return (ByteString) ref;
+            }
+            ByteString b = ByteString.copyFromUtf8((String) ref);
+            this.creatorNickname_ = b;
+            return b;
         }
 
         @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public int getUnk2700GDCGOMNBMEOCount() {
-            return this.unk2700GDCGOMNBMEO_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public int getUnk2700GDCGOMNBMEO(int index) {
-            return this.unk2700GDCGOMNBMEO_.getInt(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public List<Integer> getUnk2700JAEONBMBFJJList() {
-            return this.unk2700JAEONBMBFJJ_;
-        }
-
-        @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public int getUnk2700JAEONBMBFJJCount() {
-            return this.unk2700JAEONBMBFJJ_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public int getUnk2700JAEONBMBFJJ(int index) {
-            return this.unk2700JAEONBMBFJJ_.getInt(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public boolean getUnk2700GBCGGDONMCD() {
-            return this.unk2700GBCGGDONMCD_;
-        }
-
-        @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public int getUnk2700LPEKFJBNEJM() {
-            return this.unk2700LPEKFJBNEJM_;
-        }
-
-        @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public boolean getUnk2700DNLEGADDHKM() {
-            return this.unk2700DNLEGADDHKM_;
-        }
-
-        @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public int getUnk2700BFMNMPPNBHH() {
-            return this.unk2700BFMNMPPNBHH_;
+        public boolean getUnk3300GDNAPNAINBA() {
+            return this.unk3300GDNAPNAINBA_;
         }
 
         @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
@@ -436,23 +446,13 @@ public final class MusicBriefInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public int getUnk2700KAMOCHAKPGP() {
-            return this.unk2700KAMOCHAKPGP_;
+        public int getUnk3300KMMBLIMKJCM() {
+            return this.unk3300KMMBLIMKJCM_;
         }
 
         @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public int getUnk2700KLPHBLCIOEC() {
-            return this.unk2700KLPHBLCIOEC_;
-        }
-
-        @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public long getUnk2700CEPGMKAHHCD() {
-            return this.unk2700CEPGMKAHHCD_;
-        }
-
-        @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-        public int getUnk2700PMCPLPMJCEC() {
-            return this.unk2700PMCPLPMJCEC_;
+        public boolean getIsPsnPlatform() {
+            return this.isPsnPlatform_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -471,73 +471,73 @@ public final class MusicBriefInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (this.unk2700FGCJEGHOKPG_) {
-                output.writeBool(1, this.unk2700FGCJEGHOKPG_);
+            if (this.version_ != 0) {
+                output.writeUInt32(1, this.version_);
             }
-            if (this.unk2700DFIBAIILJHN_ != 0) {
-                output.writeUInt32(2, this.unk2700DFIBAIILJHN_);
+            if (this.unk3300OBBMCFADNIN_ != 0) {
+                output.writeUInt32(2, this.unk3300OBBMCFADNIN_);
             }
-            if (this.unk2700GGHNLPMAGME_ != 0) {
-                output.writeUInt32(3, this.unk2700GGHNLPMAGME_);
+            if (!GeneratedMessageV3.isStringEmpty(this.creatorNickname_)) {
+                GeneratedMessageV3.writeString(output, 3, this.creatorNickname_);
             }
-            if (this.unk2700CEPGMKAHHCD_ != 0) {
-                output.writeUInt64(4, this.unk2700CEPGMKAHHCD_);
+            if (this.unk3300NCDKCNOLGKB_) {
+                output.writeBool(4, this.unk3300NCDKCNOLGKB_);
             }
-            if (this.unk2700JNENCBCGPGO_ != 0) {
-                output.writeUInt64(5, this.unk2700JNENCBCGPGO_);
+            if (this.unk3300FKIGPAJFPLG_) {
+                output.writeBool(5, this.unk3300FKIGPAJFPLG_);
             }
-            if (this.unk2700PMCPLPMJCEC_ != 0) {
-                output.writeUInt32(6, this.unk2700PMCPLPMJCEC_);
+            if (this.importFromUgcGuid_ != 0) {
+                output.writeUInt64(6, this.importFromUgcGuid_);
             }
-            if (this.unk2700KLPHBLCIOEC_ != 0) {
-                output.writeUInt32(7, this.unk2700KLPHBLCIOEC_);
+            if (this.unk3300OJOKFBJALIJ_ != 0) {
+                output.writeUInt32(7, this.unk3300OJOKFBJALIJ_);
             }
-            if (this.unk2700OJBPHCIDAEB_) {
-                output.writeBool(8, this.unk2700OJBPHCIDAEB_);
+            if (this.ugcGuid_ != 0) {
+                output.writeUInt64(8, this.ugcGuid_);
             }
-            if (this.unk2700GBCGGDONMCD_) {
-                output.writeBool(9, this.unk2700GBCGGDONMCD_);
+            if (this.unk3300PBENMAHHGIL_ != 0) {
+                output.writeUInt32(9, this.unk3300PBENMAHHGIL_);
             }
-            if (!GeneratedMessageV3.isStringEmpty(this.unk2700MONNIDCNDFI_)) {
-                GeneratedMessageV3.writeString(output, 10, this.unk2700MONNIDCNDFI_);
+            if (this.unk3300KMMBLIMKJCM_ != 0) {
+                output.writeUInt32(10, this.unk3300KMMBLIMKJCM_);
             }
-            if (this.unk2700DNLEGADDHKM_) {
-                output.writeBool(11, this.unk2700DNLEGADDHKM_);
-            }
-            if (this.unk2700PINGIIAANMO_ != 0) {
-                output.writeUInt32(12, this.unk2700PINGIIAANMO_);
-            }
-            if (this.unk2700BFMNMPPNBHH_ != 0) {
-                output.writeUInt32(13, this.unk2700BFMNMPPNBHH_);
+            if (this.unk3300GDNAPNAINBA_) {
+                output.writeBool(11, this.unk3300GDNAPNAINBA_);
             }
             if (this.maxScore_ != 0) {
-                output.writeUInt32(14, this.maxScore_);
+                output.writeUInt32(12, this.maxScore_);
             }
-            if (this.version_ != 0) {
-                output.writeUInt32(15, this.version_);
+            if (this.isPsnPlatform_) {
+                output.writeBool(13, this.isPsnPlatform_);
             }
-            if (this.unk2700KAMOCHAKPGP_ != 0) {
-                output.writeUInt32(UNK2700_KAMOCHAKPGP_FIELD_NUMBER, this.unk2700KAMOCHAKPGP_);
+            if (this.musicId_ != 0) {
+                output.writeUInt32(14, this.musicId_);
             }
-            if (getUnk2700JAEONBMBFJJList().size() > 0) {
-                output.writeUInt32NoTag(7858);
-                output.writeUInt32NoTag(this.unk2700JAEONBMBFJJMemoizedSerializedSize);
+            if (this.unk3300PLNOFOHFAPE_ != 0) {
+                output.writeUInt32(15, this.unk3300PLNOFOHFAPE_);
             }
-            for (int i = 0; i < this.unk2700JAEONBMBFJJ_.size(); i++) {
-                output.writeUInt32NoTag(this.unk2700JAEONBMBFJJ_.getInt(i));
+            if (this.unk3300CCMMPAHIMDO_ != 0) {
+                output.writeUInt32(88, this.unk3300CCMMPAHIMDO_);
             }
-            if (getUnk2700GDCGOMNBMEOList().size() > 0) {
-                output.writeUInt32NoTag(8018);
-                output.writeUInt32NoTag(this.unk2700GDCGOMNBMEOMemoizedSerializedSize);
+            if (this.unk3300EGIGIOOKBAB_ != 0) {
+                output.writeUInt32(287, this.unk3300EGIGIOOKBAB_);
             }
-            for (int i2 = 0; i2 < this.unk2700GDCGOMNBMEO_.size(); i2++) {
-                output.writeUInt32NoTag(this.unk2700GDCGOMNBMEO_.getInt(i2));
+            if (getUnk3300JEEBFPFEHHGList().size() > 0) {
+                output.writeUInt32NoTag(8498);
+                output.writeUInt32NoTag(this.unk3300JEEBFPFEHHGMemoizedSerializedSize);
             }
-            if (this.unk2700MKBNLEKMIMD_ != 0) {
-                output.writeUInt32(1182, this.unk2700MKBNLEKMIMD_);
+            for (int i = 0; i < this.unk3300JEEBFPFEHHG_.size(); i++) {
+                output.writeUInt32NoTag(this.unk3300JEEBFPFEHHG_.getInt(i));
             }
-            if (this.unk2700LPEKFJBNEJM_ != 0) {
-                output.writeUInt32(1822, this.unk2700LPEKFJBNEJM_);
+            if (getUnk3300HKBHAIMOBKOList().size() > 0) {
+                output.writeUInt32NoTag(10906);
+                output.writeUInt32NoTag(this.unk3300HKBHAIMOBKOMemoizedSerializedSize);
+            }
+            for (int i2 = 0; i2 < this.unk3300HKBHAIMOBKO_.size(); i2++) {
+                output.writeUInt32NoTag(this.unk3300HKBHAIMOBKO_.getInt(i2));
+            }
+            if (this.unk3300MBKDGBNFPOA_ != 0) {
+                output.writeUInt32(1837, this.unk3300MBKDGBNFPOA_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -549,77 +549,77 @@ public final class MusicBriefInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.unk2700FGCJEGHOKPG_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(1, this.unk2700FGCJEGHOKPG_);
+            if (this.version_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.version_);
             }
-            if (this.unk2700DFIBAIILJHN_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(2, this.unk2700DFIBAIILJHN_);
+            if (this.unk3300OBBMCFADNIN_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(2, this.unk3300OBBMCFADNIN_);
             }
-            if (this.unk2700GGHNLPMAGME_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(3, this.unk2700GGHNLPMAGME_);
+            if (!GeneratedMessageV3.isStringEmpty(this.creatorNickname_)) {
+                size2 += GeneratedMessageV3.computeStringSize(3, this.creatorNickname_);
             }
-            if (this.unk2700CEPGMKAHHCD_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(4, this.unk2700CEPGMKAHHCD_);
+            if (this.unk3300NCDKCNOLGKB_) {
+                size2 += CodedOutputStream.computeBoolSize(4, this.unk3300NCDKCNOLGKB_);
             }
-            if (this.unk2700JNENCBCGPGO_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(5, this.unk2700JNENCBCGPGO_);
+            if (this.unk3300FKIGPAJFPLG_) {
+                size2 += CodedOutputStream.computeBoolSize(5, this.unk3300FKIGPAJFPLG_);
             }
-            if (this.unk2700PMCPLPMJCEC_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(6, this.unk2700PMCPLPMJCEC_);
+            if (this.importFromUgcGuid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(6, this.importFromUgcGuid_);
             }
-            if (this.unk2700KLPHBLCIOEC_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.unk2700KLPHBLCIOEC_);
+            if (this.unk3300OJOKFBJALIJ_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(7, this.unk3300OJOKFBJALIJ_);
             }
-            if (this.unk2700OJBPHCIDAEB_) {
-                size2 += CodedOutputStream.computeBoolSize(8, this.unk2700OJBPHCIDAEB_);
+            if (this.ugcGuid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(8, this.ugcGuid_);
             }
-            if (this.unk2700GBCGGDONMCD_) {
-                size2 += CodedOutputStream.computeBoolSize(9, this.unk2700GBCGGDONMCD_);
+            if (this.unk3300PBENMAHHGIL_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(9, this.unk3300PBENMAHHGIL_);
             }
-            if (!GeneratedMessageV3.isStringEmpty(this.unk2700MONNIDCNDFI_)) {
-                size2 += GeneratedMessageV3.computeStringSize(10, this.unk2700MONNIDCNDFI_);
+            if (this.unk3300KMMBLIMKJCM_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(10, this.unk3300KMMBLIMKJCM_);
             }
-            if (this.unk2700DNLEGADDHKM_) {
-                size2 += CodedOutputStream.computeBoolSize(11, this.unk2700DNLEGADDHKM_);
-            }
-            if (this.unk2700PINGIIAANMO_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.unk2700PINGIIAANMO_);
-            }
-            if (this.unk2700BFMNMPPNBHH_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.unk2700BFMNMPPNBHH_);
+            if (this.unk3300GDNAPNAINBA_) {
+                size2 += CodedOutputStream.computeBoolSize(11, this.unk3300GDNAPNAINBA_);
             }
             if (this.maxScore_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.maxScore_);
+                size2 += CodedOutputStream.computeUInt32Size(12, this.maxScore_);
             }
-            if (this.version_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.version_);
+            if (this.isPsnPlatform_) {
+                size2 += CodedOutputStream.computeBoolSize(13, this.isPsnPlatform_);
             }
-            if (this.unk2700KAMOCHAKPGP_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(UNK2700_KAMOCHAKPGP_FIELD_NUMBER, this.unk2700KAMOCHAKPGP_);
+            if (this.musicId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(14, this.musicId_);
+            }
+            if (this.unk3300PLNOFOHFAPE_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.unk3300PLNOFOHFAPE_);
+            }
+            if (this.unk3300CCMMPAHIMDO_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(88, this.unk3300CCMMPAHIMDO_);
+            }
+            if (this.unk3300EGIGIOOKBAB_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(287, this.unk3300EGIGIOOKBAB_);
             }
             int dataSize = 0;
-            for (int i = 0; i < this.unk2700JAEONBMBFJJ_.size(); i++) {
-                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.unk2700JAEONBMBFJJ_.getInt(i));
+            for (int i = 0; i < this.unk3300JEEBFPFEHHG_.size(); i++) {
+                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.unk3300JEEBFPFEHHG_.getInt(i));
             }
             int size3 = size2 + dataSize;
-            if (!getUnk2700JAEONBMBFJJList().isEmpty()) {
+            if (!getUnk3300JEEBFPFEHHGList().isEmpty()) {
                 size3 = size3 + 2 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
-            this.unk2700JAEONBMBFJJMemoizedSerializedSize = dataSize;
+            this.unk3300JEEBFPFEHHGMemoizedSerializedSize = dataSize;
             int dataSize2 = 0;
-            for (int i2 = 0; i2 < this.unk2700GDCGOMNBMEO_.size(); i2++) {
-                dataSize2 += CodedOutputStream.computeUInt32SizeNoTag(this.unk2700GDCGOMNBMEO_.getInt(i2));
+            for (int i2 = 0; i2 < this.unk3300HKBHAIMOBKO_.size(); i2++) {
+                dataSize2 += CodedOutputStream.computeUInt32SizeNoTag(this.unk3300HKBHAIMOBKO_.getInt(i2));
             }
             int size4 = size3 + dataSize2;
-            if (!getUnk2700GDCGOMNBMEOList().isEmpty()) {
+            if (!getUnk3300HKBHAIMOBKOList().isEmpty()) {
                 size4 = size4 + 2 + CodedOutputStream.computeInt32SizeNoTag(dataSize2);
             }
-            this.unk2700GDCGOMNBMEOMemoizedSerializedSize = dataSize2;
-            if (this.unk2700MKBNLEKMIMD_ != 0) {
-                size4 += CodedOutputStream.computeUInt32Size(1182, this.unk2700MKBNLEKMIMD_);
-            }
-            if (this.unk2700LPEKFJBNEJM_ != 0) {
-                size4 += CodedOutputStream.computeUInt32Size(1822, this.unk2700LPEKFJBNEJM_);
+            this.unk3300HKBHAIMOBKOMemoizedSerializedSize = dataSize2;
+            if (this.unk3300MBKDGBNFPOA_ != 0) {
+                size4 += CodedOutputStream.computeUInt32Size(1837, this.unk3300MBKDGBNFPOA_);
             }
             int size5 = size4 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size5;
@@ -635,7 +635,7 @@ public final class MusicBriefInfoOuterClass {
                 return equals(obj);
             }
             MusicBriefInfo other = (MusicBriefInfo) obj;
-            return getUnk2700JNENCBCGPGO() == other.getUnk2700JNENCBCGPGO() && getUnk2700OJBPHCIDAEB() == other.getUnk2700OJBPHCIDAEB() && getUnk2700FGCJEGHOKPG() == other.getUnk2700FGCJEGHOKPG() && getUnk2700DFIBAIILJHN() == other.getUnk2700DFIBAIILJHN() && getUnk2700MKBNLEKMIMD() == other.getUnk2700MKBNLEKMIMD() && getUnk2700PINGIIAANMO() == other.getUnk2700PINGIIAANMO() && getUnk2700MONNIDCNDFI().equals(other.getUnk2700MONNIDCNDFI()) && getVersion() == other.getVersion() && getUnk2700GGHNLPMAGME() == other.getUnk2700GGHNLPMAGME() && getUnk2700GDCGOMNBMEOList().equals(other.getUnk2700GDCGOMNBMEOList()) && getUnk2700JAEONBMBFJJList().equals(other.getUnk2700JAEONBMBFJJList()) && getUnk2700GBCGGDONMCD() == other.getUnk2700GBCGGDONMCD() && getUnk2700LPEKFJBNEJM() == other.getUnk2700LPEKFJBNEJM() && getUnk2700DNLEGADDHKM() == other.getUnk2700DNLEGADDHKM() && getUnk2700BFMNMPPNBHH() == other.getUnk2700BFMNMPPNBHH() && getMaxScore() == other.getMaxScore() && getUnk2700KAMOCHAKPGP() == other.getUnk2700KAMOCHAKPGP() && getUnk2700KLPHBLCIOEC() == other.getUnk2700KLPHBLCIOEC() && getUnk2700CEPGMKAHHCD() == other.getUnk2700CEPGMKAHHCD() && getUnk2700PMCPLPMJCEC() == other.getUnk2700PMCPLPMJCEC() && this.unknownFields.equals(other.unknownFields);
+            return getUgcGuid() == other.getUgcGuid() && getUnk3300CCMMPAHIMDO() == other.getUnk3300CCMMPAHIMDO() && getUnk3300PLNOFOHFAPE() == other.getUnk3300PLNOFOHFAPE() && getUnk3300HKBHAIMOBKOList().equals(other.getUnk3300HKBHAIMOBKOList()) && getUnk3300FKIGPAJFPLG() == other.getUnk3300FKIGPAJFPLG() && getImportFromUgcGuid() == other.getImportFromUgcGuid() && getMusicId() == other.getMusicId() && getUnk3300JEEBFPFEHHGList().equals(other.getUnk3300JEEBFPFEHHGList()) && getUnk3300MBKDGBNFPOA() == other.getUnk3300MBKDGBNFPOA() && getUnk3300OJOKFBJALIJ() == other.getUnk3300OJOKFBJALIJ() && getUnk3300EGIGIOOKBAB() == other.getUnk3300EGIGIOOKBAB() && getUnk3300OBBMCFADNIN() == other.getUnk3300OBBMCFADNIN() && getUnk3300PBENMAHHGIL() == other.getUnk3300PBENMAHHGIL() && getUnk3300NCDKCNOLGKB() == other.getUnk3300NCDKCNOLGKB() && getVersion() == other.getVersion() && getCreatorNickname().equals(other.getCreatorNickname()) && getUnk3300GDNAPNAINBA() == other.getUnk3300GDNAPNAINBA() && getMaxScore() == other.getMaxScore() && getUnk3300KMMBLIMKJCM() == other.getUnk3300KMMBLIMKJCM() && getIsPsnPlatform() == other.getIsPsnPlatform() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -643,16 +643,17 @@ public final class MusicBriefInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + Internal.hashLong(getUnk2700JNENCBCGPGO()))) + 8)) + Internal.hashBoolean(getUnk2700OJBPHCIDAEB()))) + 1)) + Internal.hashBoolean(getUnk2700FGCJEGHOKPG()))) + 2)) + getUnk2700DFIBAIILJHN())) + 1182)) + getUnk2700MKBNLEKMIMD())) + 12)) + getUnk2700PINGIIAANMO())) + 10)) + getUnk2700MONNIDCNDFI().hashCode())) + 15)) + getVersion())) + 3)) + getUnk2700GGHNLPMAGME();
-            if (getUnk2700GDCGOMNBMEOCount() > 0) {
-                hash = (53 * ((37 * hash) + 1002)) + getUnk2700GDCGOMNBMEOList().hashCode();
+            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + Internal.hashLong(getUgcGuid()))) + 88)) + getUnk3300CCMMPAHIMDO())) + 15)) + getUnk3300PLNOFOHFAPE();
+            if (getUnk3300HKBHAIMOBKOCount() > 0) {
+                hash = (53 * ((37 * hash) + 1363)) + getUnk3300HKBHAIMOBKOList().hashCode();
             }
-            if (getUnk2700JAEONBMBFJJCount() > 0) {
-                hash = (53 * ((37 * hash) + 982)) + getUnk2700JAEONBMBFJJList().hashCode();
+            int hash2 = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 5)) + Internal.hashBoolean(getUnk3300FKIGPAJFPLG()))) + 6)) + Internal.hashLong(getImportFromUgcGuid()))) + 14)) + getMusicId();
+            if (getUnk3300JEEBFPFEHHGCount() > 0) {
+                hash2 = (53 * ((37 * hash2) + 1062)) + getUnk3300JEEBFPFEHHGList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 9)) + Internal.hashBoolean(getUnk2700GBCGGDONMCD()))) + 1822)) + getUnk2700LPEKFJBNEJM())) + 11)) + Internal.hashBoolean(getUnk2700DNLEGADDHKM()))) + 13)) + getUnk2700BFMNMPPNBHH())) + 14)) + getMaxScore())) + UNK2700_KAMOCHAKPGP_FIELD_NUMBER)) + getUnk2700KAMOCHAKPGP())) + 7)) + getUnk2700KLPHBLCIOEC())) + 4)) + Internal.hashLong(getUnk2700CEPGMKAHHCD()))) + 6)) + getUnk2700PMCPLPMJCEC())) + this.unknownFields.hashCode();
-            this.memoizedHashCode = hash2;
-            return hash2;
+            int hash3 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash2) + 1837)) + getUnk3300MBKDGBNFPOA())) + 7)) + getUnk3300OJOKFBJALIJ())) + 287)) + getUnk3300EGIGIOOKBAB())) + 2)) + getUnk3300OBBMCFADNIN())) + 9)) + getUnk3300PBENMAHHGIL())) + 4)) + Internal.hashBoolean(getUnk3300NCDKCNOLGKB()))) + 1)) + getVersion())) + 3)) + getCreatorNickname().hashCode())) + 11)) + Internal.hashBoolean(getUnk3300GDNAPNAINBA()))) + 12)) + getMaxScore())) + 10)) + getUnk3300KMMBLIMKJCM())) + 13)) + Internal.hashBoolean(getIsPsnPlatform()))) + this.unknownFields.hashCode();
+            this.memoizedHashCode = hash3;
+            return hash3;
         }
 
         public static MusicBriefInfo parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
@@ -730,26 +731,26 @@ public final class MusicBriefInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MusicBriefInfoOuterClass$MusicBriefInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements MusicBriefInfoOrBuilder {
             private int bitField0_;
-            private long unk2700JNENCBCGPGO_;
-            private boolean unk2700OJBPHCIDAEB_;
-            private boolean unk2700FGCJEGHOKPG_;
-            private int unk2700DFIBAIILJHN_;
-            private int unk2700MKBNLEKMIMD_;
-            private int unk2700PINGIIAANMO_;
+            private long ugcGuid_;
+            private int unk3300CCMMPAHIMDO_;
+            private int unk3300PLNOFOHFAPE_;
+            private boolean unk3300FKIGPAJFPLG_;
+            private long importFromUgcGuid_;
+            private int musicId_;
+            private int unk3300MBKDGBNFPOA_;
+            private int unk3300OJOKFBJALIJ_;
+            private int unk3300EGIGIOOKBAB_;
+            private int unk3300OBBMCFADNIN_;
+            private int unk3300PBENMAHHGIL_;
+            private boolean unk3300NCDKCNOLGKB_;
             private int version_;
-            private int unk2700GGHNLPMAGME_;
-            private boolean unk2700GBCGGDONMCD_;
-            private int unk2700LPEKFJBNEJM_;
-            private boolean unk2700DNLEGADDHKM_;
-            private int unk2700BFMNMPPNBHH_;
+            private boolean unk3300GDNAPNAINBA_;
             private int maxScore_;
-            private int unk2700KAMOCHAKPGP_;
-            private int unk2700KLPHBLCIOEC_;
-            private long unk2700CEPGMKAHHCD_;
-            private int unk2700PMCPLPMJCEC_;
-            private Object unk2700MONNIDCNDFI_ = "";
-            private Internal.IntList unk2700GDCGOMNBMEO_ = MusicBriefInfo.emptyIntList();
-            private Internal.IntList unk2700JAEONBMBFJJ_ = MusicBriefInfo.emptyIntList();
+            private int unk3300KMMBLIMKJCM_;
+            private boolean isPsnPlatform_;
+            private Internal.IntList unk3300HKBHAIMOBKO_ = MusicBriefInfo.emptyIntList();
+            private Internal.IntList unk3300JEEBFPFEHHG_ = MusicBriefInfo.emptyIntList();
+            private Object creatorNickname_ = "";
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return MusicBriefInfoOuterClass.internal_static_MusicBriefInfo_descriptor;
@@ -777,28 +778,28 @@ public final class MusicBriefInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.unk2700JNENCBCGPGO_ = 0;
-                this.unk2700OJBPHCIDAEB_ = false;
-                this.unk2700FGCJEGHOKPG_ = false;
-                this.unk2700DFIBAIILJHN_ = 0;
-                this.unk2700MKBNLEKMIMD_ = 0;
-                this.unk2700PINGIIAANMO_ = 0;
-                this.unk2700MONNIDCNDFI_ = "";
-                this.version_ = 0;
-                this.unk2700GGHNLPMAGME_ = 0;
-                this.unk2700GDCGOMNBMEO_ = MusicBriefInfo.emptyIntList();
+                this.ugcGuid_ = 0;
+                this.unk3300CCMMPAHIMDO_ = 0;
+                this.unk3300PLNOFOHFAPE_ = 0;
+                this.unk3300HKBHAIMOBKO_ = MusicBriefInfo.emptyIntList();
                 this.bitField0_ &= -2;
-                this.unk2700JAEONBMBFJJ_ = MusicBriefInfo.emptyIntList();
+                this.unk3300FKIGPAJFPLG_ = false;
+                this.importFromUgcGuid_ = 0;
+                this.musicId_ = 0;
+                this.unk3300JEEBFPFEHHG_ = MusicBriefInfo.emptyIntList();
                 this.bitField0_ &= -3;
-                this.unk2700GBCGGDONMCD_ = false;
-                this.unk2700LPEKFJBNEJM_ = 0;
-                this.unk2700DNLEGADDHKM_ = false;
-                this.unk2700BFMNMPPNBHH_ = 0;
+                this.unk3300MBKDGBNFPOA_ = 0;
+                this.unk3300OJOKFBJALIJ_ = 0;
+                this.unk3300EGIGIOOKBAB_ = 0;
+                this.unk3300OBBMCFADNIN_ = 0;
+                this.unk3300PBENMAHHGIL_ = 0;
+                this.unk3300NCDKCNOLGKB_ = false;
+                this.version_ = 0;
+                this.creatorNickname_ = "";
+                this.unk3300GDNAPNAINBA_ = false;
                 this.maxScore_ = 0;
-                this.unk2700KAMOCHAKPGP_ = 0;
-                this.unk2700KLPHBLCIOEC_ = 0;
-                this.unk2700CEPGMKAHHCD_ = 0;
-                this.unk2700PMCPLPMJCEC_ = 0;
+                this.unk3300KMMBLIMKJCM_ = 0;
+                this.isPsnPlatform_ = false;
                 return this;
             }
 
@@ -825,34 +826,34 @@ public final class MusicBriefInfoOuterClass {
             public MusicBriefInfo buildPartial() {
                 MusicBriefInfo result = new MusicBriefInfo(this);
                 int i = this.bitField0_;
-                result.unk2700JNENCBCGPGO_ = this.unk2700JNENCBCGPGO_;
-                result.unk2700OJBPHCIDAEB_ = this.unk2700OJBPHCIDAEB_;
-                result.unk2700FGCJEGHOKPG_ = this.unk2700FGCJEGHOKPG_;
-                result.unk2700DFIBAIILJHN_ = this.unk2700DFIBAIILJHN_;
-                result.unk2700MKBNLEKMIMD_ = this.unk2700MKBNLEKMIMD_;
-                result.unk2700PINGIIAANMO_ = this.unk2700PINGIIAANMO_;
-                result.unk2700MONNIDCNDFI_ = this.unk2700MONNIDCNDFI_;
-                result.version_ = this.version_;
-                result.unk2700GGHNLPMAGME_ = this.unk2700GGHNLPMAGME_;
+                result.ugcGuid_ = this.ugcGuid_;
+                result.unk3300CCMMPAHIMDO_ = this.unk3300CCMMPAHIMDO_;
+                result.unk3300PLNOFOHFAPE_ = this.unk3300PLNOFOHFAPE_;
                 if ((this.bitField0_ & 1) != 0) {
-                    this.unk2700GDCGOMNBMEO_.makeImmutable();
+                    this.unk3300HKBHAIMOBKO_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
-                result.unk2700GDCGOMNBMEO_ = this.unk2700GDCGOMNBMEO_;
+                result.unk3300HKBHAIMOBKO_ = this.unk3300HKBHAIMOBKO_;
+                result.unk3300FKIGPAJFPLG_ = this.unk3300FKIGPAJFPLG_;
+                result.importFromUgcGuid_ = this.importFromUgcGuid_;
+                result.musicId_ = this.musicId_;
                 if ((this.bitField0_ & 2) != 0) {
-                    this.unk2700JAEONBMBFJJ_.makeImmutable();
+                    this.unk3300JEEBFPFEHHG_.makeImmutable();
                     this.bitField0_ &= -3;
                 }
-                result.unk2700JAEONBMBFJJ_ = this.unk2700JAEONBMBFJJ_;
-                result.unk2700GBCGGDONMCD_ = this.unk2700GBCGGDONMCD_;
-                result.unk2700LPEKFJBNEJM_ = this.unk2700LPEKFJBNEJM_;
-                result.unk2700DNLEGADDHKM_ = this.unk2700DNLEGADDHKM_;
-                result.unk2700BFMNMPPNBHH_ = this.unk2700BFMNMPPNBHH_;
+                result.unk3300JEEBFPFEHHG_ = this.unk3300JEEBFPFEHHG_;
+                result.unk3300MBKDGBNFPOA_ = this.unk3300MBKDGBNFPOA_;
+                result.unk3300OJOKFBJALIJ_ = this.unk3300OJOKFBJALIJ_;
+                result.unk3300EGIGIOOKBAB_ = this.unk3300EGIGIOOKBAB_;
+                result.unk3300OBBMCFADNIN_ = this.unk3300OBBMCFADNIN_;
+                result.unk3300PBENMAHHGIL_ = this.unk3300PBENMAHHGIL_;
+                result.unk3300NCDKCNOLGKB_ = this.unk3300NCDKCNOLGKB_;
+                result.version_ = this.version_;
+                result.creatorNickname_ = this.creatorNickname_;
+                result.unk3300GDNAPNAINBA_ = this.unk3300GDNAPNAINBA_;
                 result.maxScore_ = this.maxScore_;
-                result.unk2700KAMOCHAKPGP_ = this.unk2700KAMOCHAKPGP_;
-                result.unk2700KLPHBLCIOEC_ = this.unk2700KLPHBLCIOEC_;
-                result.unk2700CEPGMKAHHCD_ = this.unk2700CEPGMKAHHCD_;
-                result.unk2700PMCPLPMJCEC_ = this.unk2700PMCPLPMJCEC_;
+                result.unk3300KMMBLIMKJCM_ = this.unk3300KMMBLIMKJCM_;
+                result.isPsnPlatform_ = this.isPsnPlatform_;
                 onBuilt();
                 return result;
             }
@@ -900,80 +901,80 @@ public final class MusicBriefInfoOuterClass {
                 if (other == MusicBriefInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getUnk2700JNENCBCGPGO() != 0) {
-                    setUnk2700JNENCBCGPGO(other.getUnk2700JNENCBCGPGO());
+                if (other.getUgcGuid() != 0) {
+                    setUgcGuid(other.getUgcGuid());
                 }
-                if (other.getUnk2700OJBPHCIDAEB()) {
-                    setUnk2700OJBPHCIDAEB(other.getUnk2700OJBPHCIDAEB());
+                if (other.getUnk3300CCMMPAHIMDO() != 0) {
+                    setUnk3300CCMMPAHIMDO(other.getUnk3300CCMMPAHIMDO());
                 }
-                if (other.getUnk2700FGCJEGHOKPG()) {
-                    setUnk2700FGCJEGHOKPG(other.getUnk2700FGCJEGHOKPG());
+                if (other.getUnk3300PLNOFOHFAPE() != 0) {
+                    setUnk3300PLNOFOHFAPE(other.getUnk3300PLNOFOHFAPE());
                 }
-                if (other.getUnk2700DFIBAIILJHN() != 0) {
-                    setUnk2700DFIBAIILJHN(other.getUnk2700DFIBAIILJHN());
-                }
-                if (other.getUnk2700MKBNLEKMIMD() != 0) {
-                    setUnk2700MKBNLEKMIMD(other.getUnk2700MKBNLEKMIMD());
-                }
-                if (other.getUnk2700PINGIIAANMO() != 0) {
-                    setUnk2700PINGIIAANMO(other.getUnk2700PINGIIAANMO());
-                }
-                if (!other.getUnk2700MONNIDCNDFI().isEmpty()) {
-                    this.unk2700MONNIDCNDFI_ = other.unk2700MONNIDCNDFI_;
+                if (!other.unk3300HKBHAIMOBKO_.isEmpty()) {
+                    if (this.unk3300HKBHAIMOBKO_.isEmpty()) {
+                        this.unk3300HKBHAIMOBKO_ = other.unk3300HKBHAIMOBKO_;
+                        this.bitField0_ &= -2;
+                    } else {
+                        ensureUnk3300HKBHAIMOBKOIsMutable();
+                        this.unk3300HKBHAIMOBKO_.addAll(other.unk3300HKBHAIMOBKO_);
+                    }
                     onChanged();
+                }
+                if (other.getUnk3300FKIGPAJFPLG()) {
+                    setUnk3300FKIGPAJFPLG(other.getUnk3300FKIGPAJFPLG());
+                }
+                if (other.getImportFromUgcGuid() != 0) {
+                    setImportFromUgcGuid(other.getImportFromUgcGuid());
+                }
+                if (other.getMusicId() != 0) {
+                    setMusicId(other.getMusicId());
+                }
+                if (!other.unk3300JEEBFPFEHHG_.isEmpty()) {
+                    if (this.unk3300JEEBFPFEHHG_.isEmpty()) {
+                        this.unk3300JEEBFPFEHHG_ = other.unk3300JEEBFPFEHHG_;
+                        this.bitField0_ &= -3;
+                    } else {
+                        ensureUnk3300JEEBFPFEHHGIsMutable();
+                        this.unk3300JEEBFPFEHHG_.addAll(other.unk3300JEEBFPFEHHG_);
+                    }
+                    onChanged();
+                }
+                if (other.getUnk3300MBKDGBNFPOA() != 0) {
+                    setUnk3300MBKDGBNFPOA(other.getUnk3300MBKDGBNFPOA());
+                }
+                if (other.getUnk3300OJOKFBJALIJ() != 0) {
+                    setUnk3300OJOKFBJALIJ(other.getUnk3300OJOKFBJALIJ());
+                }
+                if (other.getUnk3300EGIGIOOKBAB() != 0) {
+                    setUnk3300EGIGIOOKBAB(other.getUnk3300EGIGIOOKBAB());
+                }
+                if (other.getUnk3300OBBMCFADNIN() != 0) {
+                    setUnk3300OBBMCFADNIN(other.getUnk3300OBBMCFADNIN());
+                }
+                if (other.getUnk3300PBENMAHHGIL() != 0) {
+                    setUnk3300PBENMAHHGIL(other.getUnk3300PBENMAHHGIL());
+                }
+                if (other.getUnk3300NCDKCNOLGKB()) {
+                    setUnk3300NCDKCNOLGKB(other.getUnk3300NCDKCNOLGKB());
                 }
                 if (other.getVersion() != 0) {
                     setVersion(other.getVersion());
                 }
-                if (other.getUnk2700GGHNLPMAGME() != 0) {
-                    setUnk2700GGHNLPMAGME(other.getUnk2700GGHNLPMAGME());
-                }
-                if (!other.unk2700GDCGOMNBMEO_.isEmpty()) {
-                    if (this.unk2700GDCGOMNBMEO_.isEmpty()) {
-                        this.unk2700GDCGOMNBMEO_ = other.unk2700GDCGOMNBMEO_;
-                        this.bitField0_ &= -2;
-                    } else {
-                        ensureUnk2700GDCGOMNBMEOIsMutable();
-                        this.unk2700GDCGOMNBMEO_.addAll(other.unk2700GDCGOMNBMEO_);
-                    }
+                if (!other.getCreatorNickname().isEmpty()) {
+                    this.creatorNickname_ = other.creatorNickname_;
                     onChanged();
                 }
-                if (!other.unk2700JAEONBMBFJJ_.isEmpty()) {
-                    if (this.unk2700JAEONBMBFJJ_.isEmpty()) {
-                        this.unk2700JAEONBMBFJJ_ = other.unk2700JAEONBMBFJJ_;
-                        this.bitField0_ &= -3;
-                    } else {
-                        ensureUnk2700JAEONBMBFJJIsMutable();
-                        this.unk2700JAEONBMBFJJ_.addAll(other.unk2700JAEONBMBFJJ_);
-                    }
-                    onChanged();
-                }
-                if (other.getUnk2700GBCGGDONMCD()) {
-                    setUnk2700GBCGGDONMCD(other.getUnk2700GBCGGDONMCD());
-                }
-                if (other.getUnk2700LPEKFJBNEJM() != 0) {
-                    setUnk2700LPEKFJBNEJM(other.getUnk2700LPEKFJBNEJM());
-                }
-                if (other.getUnk2700DNLEGADDHKM()) {
-                    setUnk2700DNLEGADDHKM(other.getUnk2700DNLEGADDHKM());
-                }
-                if (other.getUnk2700BFMNMPPNBHH() != 0) {
-                    setUnk2700BFMNMPPNBHH(other.getUnk2700BFMNMPPNBHH());
+                if (other.getUnk3300GDNAPNAINBA()) {
+                    setUnk3300GDNAPNAINBA(other.getUnk3300GDNAPNAINBA());
                 }
                 if (other.getMaxScore() != 0) {
                     setMaxScore(other.getMaxScore());
                 }
-                if (other.getUnk2700KAMOCHAKPGP() != 0) {
-                    setUnk2700KAMOCHAKPGP(other.getUnk2700KAMOCHAKPGP());
+                if (other.getUnk3300KMMBLIMKJCM() != 0) {
+                    setUnk3300KMMBLIMKJCM(other.getUnk3300KMMBLIMKJCM());
                 }
-                if (other.getUnk2700KLPHBLCIOEC() != 0) {
-                    setUnk2700KLPHBLCIOEC(other.getUnk2700KLPHBLCIOEC());
-                }
-                if (other.getUnk2700CEPGMKAHHCD() != 0) {
-                    setUnk2700CEPGMKAHHCD(other.getUnk2700CEPGMKAHHCD());
-                }
-                if (other.getUnk2700PMCPLPMJCEC() != 0) {
-                    setUnk2700PMCPLPMJCEC(other.getUnk2700PMCPLPMJCEC());
+                if (other.getIsPsnPlatform()) {
+                    setIsPsnPlatform(other.getIsPsnPlatform());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -1008,150 +1009,305 @@ public final class MusicBriefInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public long getUnk2700JNENCBCGPGO() {
-                return this.unk2700JNENCBCGPGO_;
+            public long getUgcGuid() {
+                return this.ugcGuid_;
             }
 
-            public Builder setUnk2700JNENCBCGPGO(long value) {
-                this.unk2700JNENCBCGPGO_ = value;
+            public Builder setUgcGuid(long value) {
+                this.ugcGuid_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearUnk2700JNENCBCGPGO() {
-                this.unk2700JNENCBCGPGO_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public boolean getUnk2700OJBPHCIDAEB() {
-                return this.unk2700OJBPHCIDAEB_;
-            }
-
-            public Builder setUnk2700OJBPHCIDAEB(boolean value) {
-                this.unk2700OJBPHCIDAEB_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk2700OJBPHCIDAEB() {
-                this.unk2700OJBPHCIDAEB_ = false;
+            public Builder clearUgcGuid() {
+                this.ugcGuid_ = 0;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public boolean getUnk2700FGCJEGHOKPG() {
-                return this.unk2700FGCJEGHOKPG_;
+            public int getUnk3300CCMMPAHIMDO() {
+                return this.unk3300CCMMPAHIMDO_;
             }
 
-            public Builder setUnk2700FGCJEGHOKPG(boolean value) {
-                this.unk2700FGCJEGHOKPG_ = value;
+            public Builder setUnk3300CCMMPAHIMDO(int value) {
+                this.unk3300CCMMPAHIMDO_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearUnk2700FGCJEGHOKPG() {
-                this.unk2700FGCJEGHOKPG_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public int getUnk2700DFIBAIILJHN() {
-                return this.unk2700DFIBAIILJHN_;
-            }
-
-            public Builder setUnk2700DFIBAIILJHN(int value) {
-                this.unk2700DFIBAIILJHN_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk2700DFIBAIILJHN() {
-                this.unk2700DFIBAIILJHN_ = 0;
+            public Builder clearUnk3300CCMMPAHIMDO() {
+                this.unk3300CCMMPAHIMDO_ = 0;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public int getUnk2700MKBNLEKMIMD() {
-                return this.unk2700MKBNLEKMIMD_;
+            public int getUnk3300PLNOFOHFAPE() {
+                return this.unk3300PLNOFOHFAPE_;
             }
 
-            public Builder setUnk2700MKBNLEKMIMD(int value) {
-                this.unk2700MKBNLEKMIMD_ = value;
+            public Builder setUnk3300PLNOFOHFAPE(int value) {
+                this.unk3300PLNOFOHFAPE_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearUnk2700MKBNLEKMIMD() {
-                this.unk2700MKBNLEKMIMD_ = 0;
+            public Builder clearUnk3300PLNOFOHFAPE() {
+                this.unk3300PLNOFOHFAPE_ = 0;
                 onChanged();
                 return this;
             }
 
-            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public int getUnk2700PINGIIAANMO() {
-                return this.unk2700PINGIIAANMO_;
-            }
-
-            public Builder setUnk2700PINGIIAANMO(int value) {
-                this.unk2700PINGIIAANMO_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk2700PINGIIAANMO() {
-                this.unk2700PINGIIAANMO_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public String getUnk2700MONNIDCNDFI() {
-                Object ref = this.unk2700MONNIDCNDFI_;
-                if (ref instanceof String) {
-                    return (String) ref;
+            private void ensureUnk3300HKBHAIMOBKOIsMutable() {
+                if ((this.bitField0_ & 1) == 0) {
+                    this.unk3300HKBHAIMOBKO_ = MusicBriefInfo.mutableCopy(this.unk3300HKBHAIMOBKO_);
+                    this.bitField0_ |= 1;
                 }
-                String s = ((ByteString) ref).toStringUtf8();
-                this.unk2700MONNIDCNDFI_ = s;
-                return s;
             }
 
             @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public ByteString getUnk2700MONNIDCNDFIBytes() {
-                Object ref = this.unk2700MONNIDCNDFI_;
-                if (!(ref instanceof String)) {
-                    return (ByteString) ref;
-                }
-                ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.unk2700MONNIDCNDFI_ = b;
-                return b;
+            public List<Integer> getUnk3300HKBHAIMOBKOList() {
+                return (this.bitField0_ & 1) != 0 ? Collections.unmodifiableList(this.unk3300HKBHAIMOBKO_) : this.unk3300HKBHAIMOBKO_;
             }
 
-            public Builder setUnk2700MONNIDCNDFI(String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.unk2700MONNIDCNDFI_ = value;
+            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+            public int getUnk3300HKBHAIMOBKOCount() {
+                return this.unk3300HKBHAIMOBKO_.size();
+            }
+
+            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+            public int getUnk3300HKBHAIMOBKO(int index) {
+                return this.unk3300HKBHAIMOBKO_.getInt(index);
+            }
+
+            public Builder setUnk3300HKBHAIMOBKO(int index, int value) {
+                ensureUnk3300HKBHAIMOBKOIsMutable();
+                this.unk3300HKBHAIMOBKO_.setInt(index, value);
                 onChanged();
                 return this;
             }
 
-            public Builder clearUnk2700MONNIDCNDFI() {
-                this.unk2700MONNIDCNDFI_ = MusicBriefInfo.getDefaultInstance().getUnk2700MONNIDCNDFI();
+            public Builder addUnk3300HKBHAIMOBKO(int value) {
+                ensureUnk3300HKBHAIMOBKOIsMutable();
+                this.unk3300HKBHAIMOBKO_.addInt(value);
                 onChanged();
                 return this;
             }
 
-            public Builder setUnk2700MONNIDCNDFIBytes(ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
+            public Builder addAllUnk3300HKBHAIMOBKO(Iterable<? extends Integer> values) {
+                ensureUnk3300HKBHAIMOBKOIsMutable();
+                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.unk3300HKBHAIMOBKO_);
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300HKBHAIMOBKO() {
+                this.unk3300HKBHAIMOBKO_ = MusicBriefInfo.emptyIntList();
+                this.bitField0_ &= -2;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+            public boolean getUnk3300FKIGPAJFPLG() {
+                return this.unk3300FKIGPAJFPLG_;
+            }
+
+            public Builder setUnk3300FKIGPAJFPLG(boolean value) {
+                this.unk3300FKIGPAJFPLG_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300FKIGPAJFPLG() {
+                this.unk3300FKIGPAJFPLG_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+            public long getImportFromUgcGuid() {
+                return this.importFromUgcGuid_;
+            }
+
+            public Builder setImportFromUgcGuid(long value) {
+                this.importFromUgcGuid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearImportFromUgcGuid() {
+                this.importFromUgcGuid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+            public int getMusicId() {
+                return this.musicId_;
+            }
+
+            public Builder setMusicId(int value) {
+                this.musicId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearMusicId() {
+                this.musicId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            private void ensureUnk3300JEEBFPFEHHGIsMutable() {
+                if ((this.bitField0_ & 2) == 0) {
+                    this.unk3300JEEBFPFEHHG_ = MusicBriefInfo.mutableCopy(this.unk3300JEEBFPFEHHG_);
+                    this.bitField0_ |= 2;
                 }
-                MusicBriefInfo.checkByteStringIsUtf8(value);
-                this.unk2700MONNIDCNDFI_ = value;
+            }
+
+            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+            public List<Integer> getUnk3300JEEBFPFEHHGList() {
+                return (this.bitField0_ & 2) != 0 ? Collections.unmodifiableList(this.unk3300JEEBFPFEHHG_) : this.unk3300JEEBFPFEHHG_;
+            }
+
+            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+            public int getUnk3300JEEBFPFEHHGCount() {
+                return this.unk3300JEEBFPFEHHG_.size();
+            }
+
+            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+            public int getUnk3300JEEBFPFEHHG(int index) {
+                return this.unk3300JEEBFPFEHHG_.getInt(index);
+            }
+
+            public Builder setUnk3300JEEBFPFEHHG(int index, int value) {
+                ensureUnk3300JEEBFPFEHHGIsMutable();
+                this.unk3300JEEBFPFEHHG_.setInt(index, value);
+                onChanged();
+                return this;
+            }
+
+            public Builder addUnk3300JEEBFPFEHHG(int value) {
+                ensureUnk3300JEEBFPFEHHGIsMutable();
+                this.unk3300JEEBFPFEHHG_.addInt(value);
+                onChanged();
+                return this;
+            }
+
+            public Builder addAllUnk3300JEEBFPFEHHG(Iterable<? extends Integer> values) {
+                ensureUnk3300JEEBFPFEHHGIsMutable();
+                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.unk3300JEEBFPFEHHG_);
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300JEEBFPFEHHG() {
+                this.unk3300JEEBFPFEHHG_ = MusicBriefInfo.emptyIntList();
+                this.bitField0_ &= -3;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+            public int getUnk3300MBKDGBNFPOA() {
+                return this.unk3300MBKDGBNFPOA_;
+            }
+
+            public Builder setUnk3300MBKDGBNFPOA(int value) {
+                this.unk3300MBKDGBNFPOA_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300MBKDGBNFPOA() {
+                this.unk3300MBKDGBNFPOA_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+            public int getUnk3300OJOKFBJALIJ() {
+                return this.unk3300OJOKFBJALIJ_;
+            }
+
+            public Builder setUnk3300OJOKFBJALIJ(int value) {
+                this.unk3300OJOKFBJALIJ_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300OJOKFBJALIJ() {
+                this.unk3300OJOKFBJALIJ_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+            public int getUnk3300EGIGIOOKBAB() {
+                return this.unk3300EGIGIOOKBAB_;
+            }
+
+            public Builder setUnk3300EGIGIOOKBAB(int value) {
+                this.unk3300EGIGIOOKBAB_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300EGIGIOOKBAB() {
+                this.unk3300EGIGIOOKBAB_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+            public int getUnk3300OBBMCFADNIN() {
+                return this.unk3300OBBMCFADNIN_;
+            }
+
+            public Builder setUnk3300OBBMCFADNIN(int value) {
+                this.unk3300OBBMCFADNIN_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300OBBMCFADNIN() {
+                this.unk3300OBBMCFADNIN_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+            public int getUnk3300PBENMAHHGIL() {
+                return this.unk3300PBENMAHHGIL_;
+            }
+
+            public Builder setUnk3300PBENMAHHGIL(int value) {
+                this.unk3300PBENMAHHGIL_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300PBENMAHHGIL() {
+                this.unk3300PBENMAHHGIL_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
+            public boolean getUnk3300NCDKCNOLGKB() {
+                return this.unk3300NCDKCNOLGKB_;
+            }
+
+            public Builder setUnk3300NCDKCNOLGKB(boolean value) {
+                this.unk3300NCDKCNOLGKB_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300NCDKCNOLGKB() {
+                this.unk3300NCDKCNOLGKB_ = false;
                 onChanged();
                 return this;
             }
@@ -1174,186 +1330,65 @@ public final class MusicBriefInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public int getUnk2700GGHNLPMAGME() {
-                return this.unk2700GGHNLPMAGME_;
-            }
-
-            public Builder setUnk2700GGHNLPMAGME(int value) {
-                this.unk2700GGHNLPMAGME_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk2700GGHNLPMAGME() {
-                this.unk2700GGHNLPMAGME_ = 0;
-                onChanged();
-                return this;
-            }
-
-            private void ensureUnk2700GDCGOMNBMEOIsMutable() {
-                if ((this.bitField0_ & 1) == 0) {
-                    this.unk2700GDCGOMNBMEO_ = MusicBriefInfo.mutableCopy(this.unk2700GDCGOMNBMEO_);
-                    this.bitField0_ |= 1;
+            public String getCreatorNickname() {
+                Object ref = this.creatorNickname_;
+                if (ref instanceof String) {
+                    return (String) ref;
                 }
+                String s = ((ByteString) ref).toStringUtf8();
+                this.creatorNickname_ = s;
+                return s;
             }
 
             @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public List<Integer> getUnk2700GDCGOMNBMEOList() {
-                return (this.bitField0_ & 1) != 0 ? Collections.unmodifiableList(this.unk2700GDCGOMNBMEO_) : this.unk2700GDCGOMNBMEO_;
-            }
-
-            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public int getUnk2700GDCGOMNBMEOCount() {
-                return this.unk2700GDCGOMNBMEO_.size();
-            }
-
-            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public int getUnk2700GDCGOMNBMEO(int index) {
-                return this.unk2700GDCGOMNBMEO_.getInt(index);
-            }
-
-            public Builder setUnk2700GDCGOMNBMEO(int index, int value) {
-                ensureUnk2700GDCGOMNBMEOIsMutable();
-                this.unk2700GDCGOMNBMEO_.setInt(index, value);
-                onChanged();
-                return this;
-            }
-
-            public Builder addUnk2700GDCGOMNBMEO(int value) {
-                ensureUnk2700GDCGOMNBMEOIsMutable();
-                this.unk2700GDCGOMNBMEO_.addInt(value);
-                onChanged();
-                return this;
-            }
-
-            public Builder addAllUnk2700GDCGOMNBMEO(Iterable<? extends Integer> values) {
-                ensureUnk2700GDCGOMNBMEOIsMutable();
-                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.unk2700GDCGOMNBMEO_);
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk2700GDCGOMNBMEO() {
-                this.unk2700GDCGOMNBMEO_ = MusicBriefInfo.emptyIntList();
-                this.bitField0_ &= -2;
-                onChanged();
-                return this;
-            }
-
-            private void ensureUnk2700JAEONBMBFJJIsMutable() {
-                if ((this.bitField0_ & 2) == 0) {
-                    this.unk2700JAEONBMBFJJ_ = MusicBriefInfo.mutableCopy(this.unk2700JAEONBMBFJJ_);
-                    this.bitField0_ |= 2;
+            public ByteString getCreatorNicknameBytes() {
+                Object ref = this.creatorNickname_;
+                if (!(ref instanceof String)) {
+                    return (ByteString) ref;
                 }
+                ByteString b = ByteString.copyFromUtf8((String) ref);
+                this.creatorNickname_ = b;
+                return b;
             }
 
-            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public List<Integer> getUnk2700JAEONBMBFJJList() {
-                return (this.bitField0_ & 2) != 0 ? Collections.unmodifiableList(this.unk2700JAEONBMBFJJ_) : this.unk2700JAEONBMBFJJ_;
-            }
-
-            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public int getUnk2700JAEONBMBFJJCount() {
-                return this.unk2700JAEONBMBFJJ_.size();
-            }
-
-            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public int getUnk2700JAEONBMBFJJ(int index) {
-                return this.unk2700JAEONBMBFJJ_.getInt(index);
-            }
-
-            public Builder setUnk2700JAEONBMBFJJ(int index, int value) {
-                ensureUnk2700JAEONBMBFJJIsMutable();
-                this.unk2700JAEONBMBFJJ_.setInt(index, value);
+            public Builder setCreatorNickname(String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.creatorNickname_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder addUnk2700JAEONBMBFJJ(int value) {
-                ensureUnk2700JAEONBMBFJJIsMutable();
-                this.unk2700JAEONBMBFJJ_.addInt(value);
+            public Builder clearCreatorNickname() {
+                this.creatorNickname_ = MusicBriefInfo.getDefaultInstance().getCreatorNickname();
                 onChanged();
                 return this;
             }
 
-            public Builder addAllUnk2700JAEONBMBFJJ(Iterable<? extends Integer> values) {
-                ensureUnk2700JAEONBMBFJJIsMutable();
-                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.unk2700JAEONBMBFJJ_);
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk2700JAEONBMBFJJ() {
-                this.unk2700JAEONBMBFJJ_ = MusicBriefInfo.emptyIntList();
-                this.bitField0_ &= -3;
+            public Builder setCreatorNicknameBytes(ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                MusicBriefInfo.checkByteStringIsUtf8(value);
+                this.creatorNickname_ = value;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public boolean getUnk2700GBCGGDONMCD() {
-                return this.unk2700GBCGGDONMCD_;
+            public boolean getUnk3300GDNAPNAINBA() {
+                return this.unk3300GDNAPNAINBA_;
             }
 
-            public Builder setUnk2700GBCGGDONMCD(boolean value) {
-                this.unk2700GBCGGDONMCD_ = value;
+            public Builder setUnk3300GDNAPNAINBA(boolean value) {
+                this.unk3300GDNAPNAINBA_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearUnk2700GBCGGDONMCD() {
-                this.unk2700GBCGGDONMCD_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public int getUnk2700LPEKFJBNEJM() {
-                return this.unk2700LPEKFJBNEJM_;
-            }
-
-            public Builder setUnk2700LPEKFJBNEJM(int value) {
-                this.unk2700LPEKFJBNEJM_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk2700LPEKFJBNEJM() {
-                this.unk2700LPEKFJBNEJM_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public boolean getUnk2700DNLEGADDHKM() {
-                return this.unk2700DNLEGADDHKM_;
-            }
-
-            public Builder setUnk2700DNLEGADDHKM(boolean value) {
-                this.unk2700DNLEGADDHKM_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk2700DNLEGADDHKM() {
-                this.unk2700DNLEGADDHKM_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public int getUnk2700BFMNMPPNBHH() {
-                return this.unk2700BFMNMPPNBHH_;
-            }
-
-            public Builder setUnk2700BFMNMPPNBHH(int value) {
-                this.unk2700BFMNMPPNBHH_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk2700BFMNMPPNBHH() {
-                this.unk2700BFMNMPPNBHH_ = 0;
+            public Builder clearUnk3300GDNAPNAINBA() {
+                this.unk3300GDNAPNAINBA_ = false;
                 onChanged();
                 return this;
             }
@@ -1376,69 +1411,35 @@ public final class MusicBriefInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public int getUnk2700KAMOCHAKPGP() {
-                return this.unk2700KAMOCHAKPGP_;
+            public int getUnk3300KMMBLIMKJCM() {
+                return this.unk3300KMMBLIMKJCM_;
             }
 
-            public Builder setUnk2700KAMOCHAKPGP(int value) {
-                this.unk2700KAMOCHAKPGP_ = value;
+            public Builder setUnk3300KMMBLIMKJCM(int value) {
+                this.unk3300KMMBLIMKJCM_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearUnk2700KAMOCHAKPGP() {
-                this.unk2700KAMOCHAKPGP_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public int getUnk2700KLPHBLCIOEC() {
-                return this.unk2700KLPHBLCIOEC_;
-            }
-
-            public Builder setUnk2700KLPHBLCIOEC(int value) {
-                this.unk2700KLPHBLCIOEC_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk2700KLPHBLCIOEC() {
-                this.unk2700KLPHBLCIOEC_ = 0;
+            public Builder clearUnk3300KMMBLIMKJCM() {
+                this.unk3300KMMBLIMKJCM_ = 0;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public long getUnk2700CEPGMKAHHCD() {
-                return this.unk2700CEPGMKAHHCD_;
+            public boolean getIsPsnPlatform() {
+                return this.isPsnPlatform_;
             }
 
-            public Builder setUnk2700CEPGMKAHHCD(long value) {
-                this.unk2700CEPGMKAHHCD_ = value;
+            public Builder setIsPsnPlatform(boolean value) {
+                this.isPsnPlatform_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearUnk2700CEPGMKAHHCD() {
-                this.unk2700CEPGMKAHHCD_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.MusicBriefInfoOuterClass.MusicBriefInfoOrBuilder
-            public int getUnk2700PMCPLPMJCEC() {
-                return this.unk2700PMCPLPMJCEC_;
-            }
-
-            public Builder setUnk2700PMCPLPMJCEC(int value) {
-                this.unk2700PMCPLPMJCEC_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk2700PMCPLPMJCEC() {
-                this.unk2700PMCPLPMJCEC_ = 0;
+            public Builder clearIsPsnPlatform() {
+                this.isPsnPlatform_ = false;
                 onChanged();
                 return this;
             }

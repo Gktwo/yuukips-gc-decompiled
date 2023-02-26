@@ -23,7 +23,7 @@ public final class TowerMiddleLevelChangeTeamNotifyOuterClass {
     private static final Descriptors.Descriptor internal_static_TowerMiddleLevelChangeTeamNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_TowerMiddleLevelChangeTeamNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f893x4d8d4341 = new GeneratedMessageV3.FieldAccessorTable(internal_static_TowerMiddleLevelChangeTeamNotify_descriptor, new String[0]);
+    private static final GeneratedMessageV3.FieldAccessorTable f863x4d8d4341 = new GeneratedMessageV3.FieldAccessorTable(internal_static_TowerMiddleLevelChangeTeamNotify_descriptor, new String[0]);
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerMiddleLevelChangeTeamNotifyOuterClass$TowerMiddleLevelChangeTeamNotifyOrBuilder.class */
     public interface TowerMiddleLevelChangeTeamNotifyOrBuilder extends MessageOrBuilder {
@@ -113,7 +113,7 @@ public final class TowerMiddleLevelChangeTeamNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return TowerMiddleLevelChangeTeamNotifyOuterClass.f893x4d8d4341.ensureFieldAccessorsInitialized(TowerMiddleLevelChangeTeamNotify.class, Builder.class);
+            return TowerMiddleLevelChangeTeamNotifyOuterClass.f863x4d8d4341.ensureFieldAccessorsInitialized(TowerMiddleLevelChangeTeamNotify.class, Builder.class);
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -246,7 +246,7 @@ public final class TowerMiddleLevelChangeTeamNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return TowerMiddleLevelChangeTeamNotifyOuterClass.f893x4d8d4341.ensureFieldAccessorsInitialized(TowerMiddleLevelChangeTeamNotify.class, Builder.class);
+                return TowerMiddleLevelChangeTeamNotifyOuterClass.f863x4d8d4341.ensureFieldAccessorsInitialized(TowerMiddleLevelChangeTeamNotify.class, Builder.class);
             }
 
             private Builder() {

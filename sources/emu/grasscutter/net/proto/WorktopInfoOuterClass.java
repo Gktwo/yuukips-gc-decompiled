@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WorktopInfoOuterClass.class */
 public final class WorktopInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0011WorktopInfo.proto\"@\n\u000bWorktopInfo\u0012\u0013\n\u000boption_list\u0018\u0001 \u0003(\r\u0012\u001c\n\u0014is_guest_can_operate\u0018\u0002 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0011WorktopInfo.proto\"<\n\u000bWorktopInfo\u0012\u0012\n\noptionList\u0018\u0001 \u0003(\r\u0012\u0019\n\u0011isGuestCanOperate\u0018\u0002 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_WorktopInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_WorktopInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WorktopInfo_descriptor, new String[]{"OptionList", "IsGuestCanOperate"});
 
@@ -51,10 +51,10 @@ public final class WorktopInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WorktopInfoOuterClass$WorktopInfo.class */
     public static final class WorktopInfo extends GeneratedMessageV3 implements WorktopInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int OPTION_LIST_FIELD_NUMBER = 1;
+        public static final int OPTIONLIST_FIELD_NUMBER = 1;
         private Internal.IntList optionList_;
         private int optionListMemoizedSerializedSize;
-        public static final int IS_GUEST_CAN_OPERATE_FIELD_NUMBER = 2;
+        public static final int ISGUESTCANOPERATE_FIELD_NUMBER = 2;
         private boolean isGuestCanOperate_;
         private byte memoizedIsInitialized;
         private static final WorktopInfo DEFAULT_INSTANCE = new WorktopInfo();

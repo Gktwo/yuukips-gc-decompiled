@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestListNotifyOuterClass.class */
 public final class QuestListNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015QuestListNotify.proto\u001a\u000bQuest.proto\"-\n\u000fQuestListNotify\u0012\u001a\n\nquest_list\u0018\r \u0003(\u000b2\u0006.QuestB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{QuestOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015QuestListNotify.proto\u001a\u000bQuest.proto\",\n\u000fQuestListNotify\u0012\u0019\n\tquestList\u0018\r \u0003(\u000b2\u0006.QuestB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{QuestOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_QuestListNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_QuestListNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QuestListNotify_descriptor, new String[]{"QuestList"});
 
@@ -55,7 +55,7 @@ public final class QuestListNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestListNotifyOuterClass$QuestListNotify.class */
     public static final class QuestListNotify extends GeneratedMessageV3 implements QuestListNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int QUEST_LIST_FIELD_NUMBER = 13;
+        public static final int QUESTLIST_FIELD_NUMBER = 13;
         private List<QuestOuterClass.Quest> questList_;
         private byte memoizedIsInitialized;
         private static final QuestListNotify DEFAULT_INSTANCE = new QuestListNotify();

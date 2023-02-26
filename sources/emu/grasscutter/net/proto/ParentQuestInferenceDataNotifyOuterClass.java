@@ -25,11 +25,11 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ParentQuestInferenceDataNotifyOuterClass.class */
 public final class ParentQuestInferenceDataNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n$ParentQuestInferenceDataNotify.proto\u001a\u0017InferencePageInfo.proto\"j\n\u001eParentQuestInferenceDataNotify\u0012\u0017\n\u000fparent_quest_id\u0018\b \u0001(\r\u0012/\n\u0013inference_page_list\u0018\u000e \u0003(\u000b2\u0012.InferencePageInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{InferencePageInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n$ParentQuestInferenceDataNotify.proto\u001a\u0017InferencePageInfo.proto\"f\n\u001eParentQuestInferenceDataNotify\u0012\u0015\n\rparentQuestId\u0018\b \u0001(\r\u0012-\n\u0011inferencePageList\u0018\u000b \u0003(\u000b2\u0012.InferencePageInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{InferencePageInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ParentQuestInferenceDataNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_ParentQuestInferenceDataNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f822xabec9989 = new GeneratedMessageV3.FieldAccessorTable(internal_static_ParentQuestInferenceDataNotify_descriptor, new String[]{"ParentQuestId", "InferencePageList"});
+    private static final GeneratedMessageV3.FieldAccessorTable f800xabec9989 = new GeneratedMessageV3.FieldAccessorTable(internal_static_ParentQuestInferenceDataNotify_descriptor, new String[]{"ParentQuestId", "InferencePageList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ParentQuestInferenceDataNotifyOuterClass$ParentQuestInferenceDataNotifyOrBuilder.class */
     public interface ParentQuestInferenceDataNotifyOrBuilder extends MessageOrBuilder {
@@ -59,9 +59,9 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ParentQuestInferenceDataNotifyOuterClass$ParentQuestInferenceDataNotify.class */
     public static final class ParentQuestInferenceDataNotify extends GeneratedMessageV3 implements ParentQuestInferenceDataNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PARENT_QUEST_ID_FIELD_NUMBER = 8;
+        public static final int PARENTQUESTID_FIELD_NUMBER = 8;
         private int parentQuestId_;
-        public static final int INFERENCE_PAGE_LIST_FIELD_NUMBER = 14;
+        public static final int INFERENCEPAGELIST_FIELD_NUMBER = 11;
         private List<InferencePageInfoOuterClass.InferencePageInfo> inferencePageList_;
         private byte memoizedIsInitialized;
         private static final ParentQuestInferenceDataNotify DEFAULT_INSTANCE = new ParentQuestInferenceDataNotify();
@@ -115,7 +115,7 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
                                 case 64:
                                     this.parentQuestId_ = input.readUInt32();
                                     break;
-                                case 114:
+                                case 90:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.inferencePageList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -152,7 +152,7 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return ParentQuestInferenceDataNotifyOuterClass.f822xabec9989.ensureFieldAccessorsInitialized(ParentQuestInferenceDataNotify.class, Builder.class);
+            return ParentQuestInferenceDataNotifyOuterClass.f800xabec9989.ensureFieldAccessorsInitialized(ParentQuestInferenceDataNotify.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.ParentQuestInferenceDataNotifyOuterClass.ParentQuestInferenceDataNotifyOrBuilder
@@ -204,7 +204,7 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
                 output.writeUInt32(8, this.parentQuestId_);
             }
             for (int i = 0; i < this.inferencePageList_.size(); i++) {
-                output.writeMessage(14, this.inferencePageList_.get(i));
+                output.writeMessage(11, this.inferencePageList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -220,7 +220,7 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
                 size2 = 0 + CodedOutputStream.computeUInt32Size(8, this.parentQuestId_);
             }
             for (int i = 0; i < this.inferencePageList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(14, this.inferencePageList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(11, this.inferencePageList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -246,7 +246,7 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
             }
             int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getParentQuestId();
             if (getInferencePageListCount() > 0) {
-                hash = (53 * ((37 * hash) + 14)) + getInferencePageListList().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + getInferencePageListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -338,7 +338,7 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return ParentQuestInferenceDataNotifyOuterClass.f822xabec9989.ensureFieldAccessorsInitialized(ParentQuestInferenceDataNotify.class, Builder.class);
+                return ParentQuestInferenceDataNotifyOuterClass.f800xabec9989.ensureFieldAccessorsInitialized(ParentQuestInferenceDataNotify.class, Builder.class);
             }
 
             private Builder() {

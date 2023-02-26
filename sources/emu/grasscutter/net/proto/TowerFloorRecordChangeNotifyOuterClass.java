@@ -26,7 +26,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerFloorRecordChangeNotifyOuterClass.class */
 public final class TowerFloorRecordChangeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"TowerFloorRecordChangeNotify.proto\u001a\u0016TowerFloorRecord.proto\"v\n\u001cTowerFloorRecordChangeNotify\u0012\"\n\u001ais_finished_entrance_floor\u0018\u0004 \u0001(\b\u00122\n\u0017tower_floor_record_list\u0018\u000f \u0003(\u000b2\u0011.TowerFloorRecordB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{TowerFloorRecordOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"TowerFloorRecordChangeNotify.proto\u001a\u0016TowerFloorRecord.proto\"p\n\u001cTowerFloorRecordChangeNotify\u0012\u001f\n\u0017isFinishedEntranceFloor\u0018\u000b \u0001(\b\u0012/\n\u0014towerFloorRecordList\u0018\f \u0003(\u000b2\u0011.TowerFloorRecordB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{TowerFloorRecordOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_TowerFloorRecordChangeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_TowerFloorRecordChangeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TowerFloorRecordChangeNotify_descriptor, new String[]{"IsFinishedEntranceFloor", "TowerFloorRecordList"});
 
@@ -58,9 +58,9 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerFloorRecordChangeNotifyOuterClass$TowerFloorRecordChangeNotify.class */
     public static final class TowerFloorRecordChangeNotify extends GeneratedMessageV3 implements TowerFloorRecordChangeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_FINISHED_ENTRANCE_FLOOR_FIELD_NUMBER = 4;
+        public static final int ISFINISHEDENTRANCEFLOOR_FIELD_NUMBER = 11;
         private boolean isFinishedEntranceFloor_;
-        public static final int TOWER_FLOOR_RECORD_LIST_FIELD_NUMBER = 15;
+        public static final int TOWERFLOORRECORDLIST_FIELD_NUMBER = 12;
         private List<TowerFloorRecordOuterClass.TowerFloorRecord> towerFloorRecordList_;
         private byte memoizedIsInitialized;
         private static final TowerFloorRecordChangeNotify DEFAULT_INSTANCE = new TowerFloorRecordChangeNotify();
@@ -111,10 +111,10 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 32:
+                                case 88:
                                     this.isFinishedEntranceFloor_ = input.readBool();
                                     break;
-                                case 122:
+                                case 98:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.towerFloorRecordList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -200,10 +200,10 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.isFinishedEntranceFloor_) {
-                output.writeBool(4, this.isFinishedEntranceFloor_);
+                output.writeBool(11, this.isFinishedEntranceFloor_);
             }
             for (int i = 0; i < this.towerFloorRecordList_.size(); i++) {
-                output.writeMessage(15, this.towerFloorRecordList_.get(i));
+                output.writeMessage(12, this.towerFloorRecordList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -216,10 +216,10 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
             }
             int size2 = 0;
             if (this.isFinishedEntranceFloor_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(4, this.isFinishedEntranceFloor_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(11, this.isFinishedEntranceFloor_);
             }
             for (int i = 0; i < this.towerFloorRecordList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(15, this.towerFloorRecordList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(12, this.towerFloorRecordList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -243,9 +243,9 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + Internal.hashBoolean(getIsFinishedEntranceFloor());
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + Internal.hashBoolean(getIsFinishedEntranceFloor());
             if (getTowerFloorRecordListCount() > 0) {
-                hash = (53 * ((37 * hash) + 15)) + getTowerFloorRecordListList().hashCode();
+                hash = (53 * ((37 * hash) + 12)) + getTowerFloorRecordListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

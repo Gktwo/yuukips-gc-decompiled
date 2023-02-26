@@ -3,6 +3,7 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.DungeonEntryData;
 import emu.grasscutter.net.packet.BasePacket;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.DailyDungeonEntryInfoOuterClass;
 import emu.grasscutter.net.proto.DungeonEntryInfoOuterClass;
 import emu.grasscutter.net.proto.GetDailyDungeonEntryInfoRspOuterClass;
@@ -10,7 +11,7 @@ import emu.grasscutter.net.proto.GetDailyDungeonEntryInfoRspOuterClass;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketGetDailyDungeonEntryInfoRsp.class */
 public class PacketGetDailyDungeonEntryInfoRsp extends BasePacket {
     public PacketGetDailyDungeonEntryInfoRsp(Integer sceneID) {
-        super(953);
+        super(PacketOpcodes.GetDailyDungeonEntryInfoRsp);
         GetDailyDungeonEntryInfoRspOuterClass.GetDailyDungeonEntryInfoRsp.Builder resp = GetDailyDungeonEntryInfoRspOuterClass.GetDailyDungeonEntryInfoRsp.newBuilder();
         for (DailyDungeonEntryInfoOuterClass.DailyDungeonEntryInfo info : GameData.getDungeonEntryDataMap().values().parallelStream().filter(d -> {
             return d.getSceneId() == sceneID.intValue();

@@ -20,23 +20,23 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GearLevelDataOuterClass.class */
 public final class GearLevelDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013GearLevelData.proto\"\u0001\n\rGearLevelData\u0012\u001b\n\u0013Unk3300_DFGHKDBENED\u0018\u0004 \u0001(\r\u0012\u0013\n\u000bis_finished\u0018\u0003 \u0001(\b\u0012\u000f\n\u0007is_open\u0018\u0005 \u0001(\b\u0012\u0011\n\topen_time\u0018\u000b \u0001(\r\u0012\u0010\n\blevel_id\u0018\n \u0001(\r\u0012\u001b\n\u0013Unk3300_FIKPLGJIBGP\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013GearLevelData.proto\"\u0001\n\rGearLevelData\u0012\u001b\n\u0013Unk3300_DFGHKDBENED\u0018\u0001 \u0001(\r\u0012\u0010\n\bopenTime\u0018\u0004 \u0001(\r\u0012\u000f\n\u0007levelId\u0018\u0007 \u0001(\r\u0012\u001b\n\u0013Unk3300_FIKPLGJIBGP\u0018\f \u0001(\r\u0012\u0012\n\nisFinished\u0018\r \u0001(\b\u0012\u000e\n\u0006isOpen\u0018\t \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GearLevelData_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GearLevelData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GearLevelData_descriptor, new String[]{"Unk3300DFGHKDBENED", "IsFinished", "IsOpen", "OpenTime", "LevelId", "Unk3300FIKPLGJIBGP"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GearLevelData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GearLevelData_descriptor, new String[]{"Unk3300DFGHKDBENED", "OpenTime", "LevelId", "Unk3300FIKPLGJIBGP", "IsFinished", "IsOpen"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GearLevelDataOuterClass$GearLevelDataOrBuilder.class */
     public interface GearLevelDataOrBuilder extends MessageOrBuilder {
         int getUnk3300DFGHKDBENED();
-
-        boolean getIsFinished();
-
-        boolean getIsOpen();
 
         int getOpenTime();
 
         int getLevelId();
 
         int getUnk3300FIKPLGJIBGP();
+
+        boolean getIsFinished();
+
+        boolean getIsOpen();
     }
 
     private GearLevelDataOuterClass() {
@@ -52,18 +52,18 @@ public final class GearLevelDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GearLevelDataOuterClass$GearLevelData.class */
     public static final class GearLevelData extends GeneratedMessageV3 implements GearLevelDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int UNK3300_DFGHKDBENED_FIELD_NUMBER = 4;
+        public static final int UNK3300_DFGHKDBENED_FIELD_NUMBER = 1;
         private int unk3300DFGHKDBENED_;
-        public static final int IS_FINISHED_FIELD_NUMBER = 3;
-        private boolean isFinished_;
-        public static final int IS_OPEN_FIELD_NUMBER = 5;
-        private boolean isOpen_;
-        public static final int OPEN_TIME_FIELD_NUMBER = 11;
+        public static final int OPENTIME_FIELD_NUMBER = 4;
         private int openTime_;
-        public static final int LEVEL_ID_FIELD_NUMBER = 10;
+        public static final int LEVELID_FIELD_NUMBER = 7;
         private int levelId_;
-        public static final int UNK3300_FIKPLGJIBGP_FIELD_NUMBER = 15;
+        public static final int UNK3300_FIKPLGJIBGP_FIELD_NUMBER = 12;
         private int unk3300FIKPLGJIBGP_;
+        public static final int ISFINISHED_FIELD_NUMBER = 13;
+        private boolean isFinished_;
+        public static final int ISOPEN_FIELD_NUMBER = 9;
+        private boolean isOpen_;
         private byte memoizedIsInitialized;
         private static final GearLevelData DEFAULT_INSTANCE = new GearLevelData();
         private static final Parser<GearLevelData> PARSER = new AbstractParser<GearLevelData>() { // from class: emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData.1
@@ -109,23 +109,23 @@ public final class GearLevelDataOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 24:
-                                this.isFinished_ = input.readBool();
-                                break;
-                            case 32:
+                            case 8:
                                 this.unk3300DFGHKDBENED_ = input.readUInt32();
                                 break;
-                            case 40:
-                                this.isOpen_ = input.readBool();
-                                break;
-                            case 80:
-                                this.levelId_ = input.readUInt32();
-                                break;
-                            case 88:
+                            case 32:
                                 this.openTime_ = input.readUInt32();
                                 break;
-                            case 120:
+                            case 56:
+                                this.levelId_ = input.readUInt32();
+                                break;
+                            case 72:
+                                this.isOpen_ = input.readBool();
+                                break;
+                            case 96:
                                 this.unk3300FIKPLGJIBGP_ = input.readUInt32();
+                                break;
+                            case 104:
+                                this.isFinished_ = input.readBool();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -162,16 +162,6 @@ public final class GearLevelDataOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelDataOrBuilder
-        public boolean getIsFinished() {
-            return this.isFinished_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelDataOrBuilder
-        public boolean getIsOpen() {
-            return this.isOpen_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelDataOrBuilder
         public int getOpenTime() {
             return this.openTime_;
         }
@@ -184,6 +174,16 @@ public final class GearLevelDataOuterClass {
         @Override // emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelDataOrBuilder
         public int getUnk3300FIKPLGJIBGP() {
             return this.unk3300FIKPLGJIBGP_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelDataOrBuilder
+        public boolean getIsFinished() {
+            return this.isFinished_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelDataOrBuilder
+        public boolean getIsOpen() {
+            return this.isOpen_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -201,23 +201,23 @@ public final class GearLevelDataOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.isFinished_) {
-                output.writeBool(3, this.isFinished_);
-            }
             if (this.unk3300DFGHKDBENED_ != 0) {
-                output.writeUInt32(4, this.unk3300DFGHKDBENED_);
-            }
-            if (this.isOpen_) {
-                output.writeBool(5, this.isOpen_);
-            }
-            if (this.levelId_ != 0) {
-                output.writeUInt32(10, this.levelId_);
+                output.writeUInt32(1, this.unk3300DFGHKDBENED_);
             }
             if (this.openTime_ != 0) {
-                output.writeUInt32(11, this.openTime_);
+                output.writeUInt32(4, this.openTime_);
+            }
+            if (this.levelId_ != 0) {
+                output.writeUInt32(7, this.levelId_);
+            }
+            if (this.isOpen_) {
+                output.writeBool(9, this.isOpen_);
             }
             if (this.unk3300FIKPLGJIBGP_ != 0) {
-                output.writeUInt32(15, this.unk3300FIKPLGJIBGP_);
+                output.writeUInt32(12, this.unk3300FIKPLGJIBGP_);
+            }
+            if (this.isFinished_) {
+                output.writeBool(13, this.isFinished_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -229,23 +229,23 @@ public final class GearLevelDataOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.isFinished_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(3, this.isFinished_);
-            }
             if (this.unk3300DFGHKDBENED_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(4, this.unk3300DFGHKDBENED_);
-            }
-            if (this.isOpen_) {
-                size2 += CodedOutputStream.computeBoolSize(5, this.isOpen_);
-            }
-            if (this.levelId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.levelId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.unk3300DFGHKDBENED_);
             }
             if (this.openTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.openTime_);
+                size2 += CodedOutputStream.computeUInt32Size(4, this.openTime_);
+            }
+            if (this.levelId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(7, this.levelId_);
+            }
+            if (this.isOpen_) {
+                size2 += CodedOutputStream.computeBoolSize(9, this.isOpen_);
             }
             if (this.unk3300FIKPLGJIBGP_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.unk3300FIKPLGJIBGP_);
+                size2 += CodedOutputStream.computeUInt32Size(12, this.unk3300FIKPLGJIBGP_);
+            }
+            if (this.isFinished_) {
+                size2 += CodedOutputStream.computeBoolSize(13, this.isFinished_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -261,7 +261,7 @@ public final class GearLevelDataOuterClass {
                 return equals(obj);
             }
             GearLevelData other = (GearLevelData) obj;
-            return getUnk3300DFGHKDBENED() == other.getUnk3300DFGHKDBENED() && getIsFinished() == other.getIsFinished() && getIsOpen() == other.getIsOpen() && getOpenTime() == other.getOpenTime() && getLevelId() == other.getLevelId() && getUnk3300FIKPLGJIBGP() == other.getUnk3300FIKPLGJIBGP() && this.unknownFields.equals(other.unknownFields);
+            return getUnk3300DFGHKDBENED() == other.getUnk3300DFGHKDBENED() && getOpenTime() == other.getOpenTime() && getLevelId() == other.getLevelId() && getUnk3300FIKPLGJIBGP() == other.getUnk3300FIKPLGJIBGP() && getIsFinished() == other.getIsFinished() && getIsOpen() == other.getIsOpen() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -269,7 +269,7 @@ public final class GearLevelDataOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getUnk3300DFGHKDBENED())) + 3)) + Internal.hashBoolean(getIsFinished()))) + 5)) + Internal.hashBoolean(getIsOpen()))) + 11)) + getOpenTime())) + 10)) + getLevelId())) + 15)) + getUnk3300FIKPLGJIBGP())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getUnk3300DFGHKDBENED())) + 4)) + getOpenTime())) + 7)) + getLevelId())) + 12)) + getUnk3300FIKPLGJIBGP())) + 13)) + Internal.hashBoolean(getIsFinished()))) + 9)) + Internal.hashBoolean(getIsOpen()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -349,11 +349,11 @@ public final class GearLevelDataOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GearLevelDataOuterClass$GearLevelData$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements GearLevelDataOrBuilder {
             private int unk3300DFGHKDBENED_;
-            private boolean isFinished_;
-            private boolean isOpen_;
             private int openTime_;
             private int levelId_;
             private int unk3300FIKPLGJIBGP_;
+            private boolean isFinished_;
+            private boolean isOpen_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return GearLevelDataOuterClass.internal_static_GearLevelData_descriptor;
@@ -382,11 +382,11 @@ public final class GearLevelDataOuterClass {
             public Builder clear() {
                 clear();
                 this.unk3300DFGHKDBENED_ = 0;
-                this.isFinished_ = false;
-                this.isOpen_ = false;
                 this.openTime_ = 0;
                 this.levelId_ = 0;
                 this.unk3300FIKPLGJIBGP_ = 0;
+                this.isFinished_ = false;
+                this.isOpen_ = false;
                 return this;
             }
 
@@ -413,11 +413,11 @@ public final class GearLevelDataOuterClass {
             public GearLevelData buildPartial() {
                 GearLevelData result = new GearLevelData(this);
                 result.unk3300DFGHKDBENED_ = this.unk3300DFGHKDBENED_;
-                result.isFinished_ = this.isFinished_;
-                result.isOpen_ = this.isOpen_;
                 result.openTime_ = this.openTime_;
                 result.levelId_ = this.levelId_;
                 result.unk3300FIKPLGJIBGP_ = this.unk3300FIKPLGJIBGP_;
+                result.isFinished_ = this.isFinished_;
+                result.isOpen_ = this.isOpen_;
                 onBuilt();
                 return result;
             }
@@ -468,12 +468,6 @@ public final class GearLevelDataOuterClass {
                 if (other.getUnk3300DFGHKDBENED() != 0) {
                     setUnk3300DFGHKDBENED(other.getUnk3300DFGHKDBENED());
                 }
-                if (other.getIsFinished()) {
-                    setIsFinished(other.getIsFinished());
-                }
-                if (other.getIsOpen()) {
-                    setIsOpen(other.getIsOpen());
-                }
                 if (other.getOpenTime() != 0) {
                     setOpenTime(other.getOpenTime());
                 }
@@ -482,6 +476,12 @@ public final class GearLevelDataOuterClass {
                 }
                 if (other.getUnk3300FIKPLGJIBGP() != 0) {
                     setUnk3300FIKPLGJIBGP(other.getUnk3300FIKPLGJIBGP());
+                }
+                if (other.getIsFinished()) {
+                    setIsFinished(other.getIsFinished());
+                }
+                if (other.getIsOpen()) {
+                    setIsOpen(other.getIsOpen());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -533,40 +533,6 @@ public final class GearLevelDataOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelDataOrBuilder
-            public boolean getIsFinished() {
-                return this.isFinished_;
-            }
-
-            public Builder setIsFinished(boolean value) {
-                this.isFinished_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsFinished() {
-                this.isFinished_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelDataOrBuilder
-            public boolean getIsOpen() {
-                return this.isOpen_;
-            }
-
-            public Builder setIsOpen(boolean value) {
-                this.isOpen_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsOpen() {
-                this.isOpen_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelDataOrBuilder
             public int getOpenTime() {
                 return this.openTime_;
             }
@@ -613,6 +579,40 @@ public final class GearLevelDataOuterClass {
 
             public Builder clearUnk3300FIKPLGJIBGP() {
                 this.unk3300FIKPLGJIBGP_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelDataOrBuilder
+            public boolean getIsFinished() {
+                return this.isFinished_;
+            }
+
+            public Builder setIsFinished(boolean value) {
+                this.isFinished_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsFinished() {
+                this.isFinished_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelDataOrBuilder
+            public boolean getIsOpen() {
+                return this.isOpen_;
+            }
+
+            public Builder setIsOpen(boolean value) {
+                this.isOpen_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsOpen() {
+                this.isOpen_ = false;
                 onChanged();
                 return this;
             }

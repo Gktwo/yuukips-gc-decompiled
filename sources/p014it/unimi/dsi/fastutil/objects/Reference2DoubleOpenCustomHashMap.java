@@ -34,13 +34,13 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
     protected Hash.Strategy<? super K> strategy;
 
     /* renamed from: n */
-    protected transient int f2763n;
+    protected transient int f2727n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2764f;
+    protected final float f2728f;
     protected transient Reference2DoubleMap.FastEntrySet<K> entries;
     protected transient ReferenceSet<K> keys;
     protected transient DoubleCollection values;
@@ -118,14 +118,14 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2764f = f;
+            this.f2728f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2763n = arraySize;
+            this.f2727n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2763n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2763n, f);
-            this.key = (K[]) new Object[this.f2763n + 1];
-            this.value = new double[this.f2763n + 1];
+            this.mask = this.f2727n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2727n, f);
+            this.key = (K[]) new Object[this.f2727n + 1];
+            this.value = new double[this.f2727n + 1];
         }
     }
 
@@ -179,15 +179,15 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2764f);
-        if (needed > this.f2763n) {
+        int needed = HashCommon.arraySize(capacity, this.f2728f);
+        if (needed > this.f2727n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2764f)))));
-        if (needed > this.f2763n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2728f)))));
+        if (needed > this.f2727n) {
             rehash(needed);
         }
     }
@@ -197,8 +197,8 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
         double oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f2763n > this.minN && this.size < this.maxFill / 4 && this.f2763n > 16) {
-            rehash(this.f2763n / 2);
+        if (this.f2727n > this.minN && this.size < this.maxFill / 4 && this.f2727n > 16) {
+            rehash(this.f2727n / 2);
         }
         return oldValue;
     }
@@ -206,18 +206,18 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
     /* access modifiers changed from: private */
     public double removeNullEntry() {
         this.containsNullKey = false;
-        this.key[this.f2763n] = null;
-        double oldValue = this.value[this.f2763n];
+        this.key[this.f2727n] = null;
+        double oldValue = this.value[this.f2727n];
         this.size--;
-        if (this.f2763n > this.minN && this.size < this.maxFill / 4 && this.f2763n > 16) {
-            rehash(this.f2763n / 2);
+        if (this.f2727n > this.minN && this.size < this.maxFill / 4 && this.f2727n > 16) {
+            rehash(this.f2727n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractReference2DoubleMap, java.util.Map
     public void putAll(Map<? extends K, ? extends Double> m) {
-        if (((double) this.f2764f) <= 0.5d) {
+        if (((double) this.f2728f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -228,7 +228,7 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
     private int find(K k) {
         K curr;
         if (this.strategy.equals(k, null)) {
-            return this.containsNullKey ? this.f2763n : -(this.f2763n + 1);
+            return this.containsNullKey ? this.f2727n : -(this.f2727n + 1);
         }
         K[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -252,7 +252,7 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
     }
 
     private void insert(int pos, K k, double v) {
-        if (pos == this.f2763n) {
+        if (pos == this.f2727n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -260,7 +260,7 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2764f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2728f));
         }
     }
 
@@ -304,9 +304,9 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f2763n, incr);
+            return addToValue(this.f2727n, incr);
         } else {
-            pos = this.f2763n;
+            pos = this.f2727n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -314,7 +314,7 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2764f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2728f));
         }
         return this.defRetValue;
     }
@@ -380,7 +380,7 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
     public double getDouble(Object k) {
         K curr;
         if (this.strategy.equals(k, null)) {
-            return this.containsNullKey ? this.value[this.f2763n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2727n] : this.defRetValue;
         }
         K[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -434,10 +434,10 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
     public boolean containsValue(double v) {
         double[] value = this.value;
         K[] key = this.key;
-        if (this.containsNullKey && Double.doubleToLongBits(value[this.f2763n]) == Double.doubleToLongBits(v)) {
+        if (this.containsNullKey && Double.doubleToLongBits(value[this.f2727n]) == Double.doubleToLongBits(v)) {
             return true;
         }
-        int i = this.f2763n;
+        int i = this.f2727n;
         while (true) {
             i--;
             if (i == 0) {
@@ -453,7 +453,7 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
     public double getOrDefault(Object k, double defaultValue) {
         K curr;
         if (this.strategy.equals(k, null)) {
-            return this.containsNullKey ? this.value[this.f2763n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2727n] : defaultValue;
         }
         K[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -513,7 +513,7 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
                 removeEntry(pos);
                 return true;
             }
-        } else if (!this.containsNullKey || Double.doubleToLongBits(v) != Double.doubleToLongBits(this.value[this.f2763n])) {
+        } else if (!this.containsNullKey || Double.doubleToLongBits(v) != Double.doubleToLongBits(this.value[this.f2727n])) {
             return false;
         } else {
             removeNullEntry();
@@ -673,31 +673,31 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
         int last;
 
         /* renamed from: c */
-        int f2765c;
+        int f2729c;
         boolean mustReturnNullKey;
         ReferenceArrayList<K> wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Reference2DoubleOpenCustomHashMap.this.f2763n;
+            this.pos = Reference2DoubleOpenCustomHashMap.this.f2727n;
             this.last = -1;
-            this.f2765c = Reference2DoubleOpenCustomHashMap.this.size;
+            this.f2729c = Reference2DoubleOpenCustomHashMap.this.size;
             this.mustReturnNullKey = Reference2DoubleOpenCustomHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f2765c != 0;
+            return this.f2729c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2765c--;
+            this.f2729c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Reference2DoubleOpenCustomHashMap.this.f2763n;
+                int i = Reference2DoubleOpenCustomHashMap.this.f2727n;
                 this.last = i;
                 return i;
             }
@@ -729,13 +729,13 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Reference2DoubleOpenCustomHashMap.this.f2763n;
+                int i = Reference2DoubleOpenCustomHashMap.this.f2727n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f2765c--;
+                this.f2729c--;
             }
             K[] key = Reference2DoubleOpenCustomHashMap.this.key;
-            while (this.f2765c != 0) {
+            while (this.f2729c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -752,12 +752,12 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
                         i3 = Reference2DoubleOpenCustomHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f2765c--;
+                    this.f2729c--;
                 } else if (key[this.pos] != null) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f2765c--;
+                    this.f2729c--;
                 }
             }
         }
@@ -806,9 +806,9 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Reference2DoubleOpenCustomHashMap.this.f2763n) {
+            if (this.last == Reference2DoubleOpenCustomHashMap.this.f2727n) {
                 Reference2DoubleOpenCustomHashMap.this.containsNullKey = false;
-                Reference2DoubleOpenCustomHashMap.this.key[Reference2DoubleOpenCustomHashMap.this.f2763n] = null;
+                Reference2DoubleOpenCustomHashMap.this.key[Reference2DoubleOpenCustomHashMap.this.f2727n] = null;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -912,7 +912,7 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
         int max;
 
         /* renamed from: c */
-        int f2766c;
+        int f2730c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -922,16 +922,16 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Reference2DoubleOpenCustomHashMap.this.f2763n;
-            this.f2766c = 0;
+            this.max = Reference2DoubleOpenCustomHashMap.this.f2727n;
+            this.f2730c = 0;
             this.mustReturnNull = Reference2DoubleOpenCustomHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Reference2DoubleOpenCustomHashMap.this.f2763n;
-            this.f2766c = 0;
+            this.max = Reference2DoubleOpenCustomHashMap.this.f2727n;
+            this.f2730c = 0;
             this.mustReturnNull = Reference2DoubleOpenCustomHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -943,14 +943,14 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2766c++;
-                acceptOnIndex(action, Reference2DoubleOpenCustomHashMap.this.f2763n);
+                this.f2730c++;
+                acceptOnIndex(action, Reference2DoubleOpenCustomHashMap.this.f2727n);
                 return true;
             }
             K[] key = Reference2DoubleOpenCustomHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != null) {
-                    this.f2766c++;
+                    this.f2730c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -964,14 +964,14 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2766c++;
-                acceptOnIndex(action, Reference2DoubleOpenCustomHashMap.this.f2763n);
+                this.f2730c++;
+                acceptOnIndex(action, Reference2DoubleOpenCustomHashMap.this.f2727n);
             }
             K[] key = Reference2DoubleOpenCustomHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != null) {
                     acceptOnIndex(action, this.pos);
-                    this.f2766c++;
+                    this.f2730c++;
                 }
                 this.pos++;
             }
@@ -979,9 +979,9 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Reference2DoubleOpenCustomHashMap.this.size - this.f2766c);
+                return (long) (Reference2DoubleOpenCustomHashMap.this.size - this.f2730c);
             }
-            return Math.min((long) (Reference2DoubleOpenCustomHashMap.this.size - this.f2766c), ((long) ((((double) Reference2DoubleOpenCustomHashMap.this.realSize()) / ((double) Reference2DoubleOpenCustomHashMap.this.f2763n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Reference2DoubleOpenCustomHashMap.this.size - this.f2730c), ((long) ((((double) Reference2DoubleOpenCustomHashMap.this.realSize()) / ((double) Reference2DoubleOpenCustomHashMap.this.f2727n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1179,7 +1179,7 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
             Object key = e.getKey();
             double v = ((Double) e.getValue()).doubleValue();
             if (Reference2DoubleOpenCustomHashMap.this.strategy.equals(key, null)) {
-                return Reference2DoubleOpenCustomHashMap.this.containsNullKey && Double.doubleToLongBits(Reference2DoubleOpenCustomHashMap.this.value[Reference2DoubleOpenCustomHashMap.this.f2763n]) == Double.doubleToLongBits(v);
+                return Reference2DoubleOpenCustomHashMap.this.containsNullKey && Double.doubleToLongBits(Reference2DoubleOpenCustomHashMap.this.value[Reference2DoubleOpenCustomHashMap.this.f2727n]) == Double.doubleToLongBits(v);
             }
             K[] key2 = Reference2DoubleOpenCustomHashMap.this.key;
             int mix = HashCommon.mix(Reference2DoubleOpenCustomHashMap.this.strategy.hashCode(key)) & Reference2DoubleOpenCustomHashMap.this.mask;
@@ -1240,7 +1240,7 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
                     Reference2DoubleOpenCustomHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Reference2DoubleOpenCustomHashMap.this.containsNullKey || Double.doubleToLongBits(Reference2DoubleOpenCustomHashMap.this.value[Reference2DoubleOpenCustomHashMap.this.f2763n]) != Double.doubleToLongBits(v)) {
+            } else if (!Reference2DoubleOpenCustomHashMap.this.containsNullKey || Double.doubleToLongBits(Reference2DoubleOpenCustomHashMap.this.value[Reference2DoubleOpenCustomHashMap.this.f2727n]) != Double.doubleToLongBits(v)) {
                 return false;
             } else {
                 Reference2DoubleOpenCustomHashMap.this.removeNullEntry();
@@ -1261,9 +1261,9 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Reference2DoubleMap.Entry<K>> consumer) {
             if (Reference2DoubleOpenCustomHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractReference2DoubleMap.BasicEntry(Reference2DoubleOpenCustomHashMap.this.key[Reference2DoubleOpenCustomHashMap.this.f2763n], Reference2DoubleOpenCustomHashMap.this.value[Reference2DoubleOpenCustomHashMap.this.f2763n]));
+                consumer.accept(new AbstractReference2DoubleMap.BasicEntry(Reference2DoubleOpenCustomHashMap.this.key[Reference2DoubleOpenCustomHashMap.this.f2727n], Reference2DoubleOpenCustomHashMap.this.value[Reference2DoubleOpenCustomHashMap.this.f2727n]));
             }
-            int pos = Reference2DoubleOpenCustomHashMap.this.f2763n;
+            int pos = Reference2DoubleOpenCustomHashMap.this.f2727n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1279,11 +1279,11 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
         public void fastForEach(Consumer<? super Reference2DoubleMap.Entry<K>> consumer) {
             AbstractReference2DoubleMap.BasicEntry<K> entry = new AbstractReference2DoubleMap.BasicEntry<>();
             if (Reference2DoubleOpenCustomHashMap.this.containsNullKey) {
-                entry.key = Reference2DoubleOpenCustomHashMap.this.key[Reference2DoubleOpenCustomHashMap.this.f2763n];
-                entry.value = Reference2DoubleOpenCustomHashMap.this.value[Reference2DoubleOpenCustomHashMap.this.f2763n];
+                entry.key = Reference2DoubleOpenCustomHashMap.this.key[Reference2DoubleOpenCustomHashMap.this.f2727n];
+                entry.value = Reference2DoubleOpenCustomHashMap.this.value[Reference2DoubleOpenCustomHashMap.this.f2727n];
                 consumer.accept(entry);
             }
-            int pos = Reference2DoubleOpenCustomHashMap.this.f2763n;
+            int pos = Reference2DoubleOpenCustomHashMap.this.f2727n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1399,9 +1399,9 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super K> consumer) {
             if (Reference2DoubleOpenCustomHashMap.this.containsNullKey) {
-                consumer.accept((Object) Reference2DoubleOpenCustomHashMap.this.key[Reference2DoubleOpenCustomHashMap.this.f2763n]);
+                consumer.accept((Object) Reference2DoubleOpenCustomHashMap.this.key[Reference2DoubleOpenCustomHashMap.this.f2727n]);
             }
-            int pos = Reference2DoubleOpenCustomHashMap.this.f2763n;
+            int pos = Reference2DoubleOpenCustomHashMap.this.f2727n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1529,9 +1529,9 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
                 @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterable
                 public void forEach(DoubleConsumer consumer) {
                     if (Reference2DoubleOpenCustomHashMap.this.containsNullKey) {
-                        consumer.accept(Reference2DoubleOpenCustomHashMap.this.value[Reference2DoubleOpenCustomHashMap.this.f2763n]);
+                        consumer.accept(Reference2DoubleOpenCustomHashMap.this.value[Reference2DoubleOpenCustomHashMap.this.f2727n]);
                     }
-                    int pos = Reference2DoubleOpenCustomHashMap.this.f2763n;
+                    int pos = Reference2DoubleOpenCustomHashMap.this.f2727n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1567,8 +1567,8 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2764f)));
-        if (l >= this.f2763n || this.size > HashCommon.maxFill(l, this.f2764f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2728f)));
+        if (l >= this.f2727n || this.size > HashCommon.maxFill(l, this.f2728f)) {
             return true;
         }
         try {
@@ -1586,7 +1586,7 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
         int mask = newN - 1;
         K[] newKey = (K[]) new Object[newN + 1];
         double[] newValue = new double[newN + 1];
-        int i2 = this.f2763n;
+        int i2 = this.f2727n;
         int j = realSize();
         while (true) {
             j--;
@@ -1605,10 +1605,10 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f2763n];
-                this.f2763n = newN;
+                newValue[newN] = value[this.f2727n];
+                this.f2727n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2763n, this.f2764f);
+                this.maxFill = HashCommon.maxFill(this.f2727n, this.f2728f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1655,7 +1655,7 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
             i++;
         }
         if (this.containsNullKey) {
-            h += HashCommon.double2int(this.value[this.f2763n]);
+            h += HashCommon.double2int(this.value[this.f2727n]);
         }
         return h;
     }
@@ -1684,12 +1684,12 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2763n = HashCommon.arraySize(this.size, this.f2764f);
-        this.maxFill = HashCommon.maxFill(this.f2763n, this.f2764f);
-        this.mask = this.f2763n - 1;
-        K[] key = (K[]) new Object[this.f2763n + 1];
+        this.f2727n = HashCommon.arraySize(this.size, this.f2728f);
+        this.maxFill = HashCommon.maxFill(this.f2727n, this.f2728f);
+        this.mask = this.f2727n - 1;
+        K[] key = (K[]) new Object[this.f2727n + 1];
         this.key = key;
-        double[] value = new double[this.f2763n + 1];
+        double[] value = new double[this.f2727n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1698,7 +1698,7 @@ public class Reference2DoubleOpenCustomHashMap<K> extends AbstractReference2Doub
                 Object readObject = s.readObject();
                 double v = s.readDouble();
                 if (this.strategy.equals(readObject, null)) {
-                    pos = this.f2763n;
+                    pos = this.f2727n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix(this.strategy.hashCode(readObject));

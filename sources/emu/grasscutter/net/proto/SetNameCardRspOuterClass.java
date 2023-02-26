@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetNameCardRspOuterClass.class */
 public final class SetNameCardRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014SetNameCardRsp.proto\"7\n\u000eSetNameCardRsp\u0012\u0014\n\fname_card_id\u0018\t \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0004 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014SetNameCardRsp.proto\"5\n\u000eSetNameCardRsp\u0012\u0012\n\nnameCardId\u0018\u000e \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0007 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SetNameCardRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetNameCardRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetNameCardRsp_descriptor, new String[]{"NameCardId", "Retcode"});
 
@@ -43,9 +43,9 @@ public final class SetNameCardRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetNameCardRspOuterClass$SetNameCardRsp.class */
     public static final class SetNameCardRsp extends GeneratedMessageV3 implements SetNameCardRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int NAME_CARD_ID_FIELD_NUMBER = 9;
+        public static final int NAMECARDID_FIELD_NUMBER = 14;
         private int nameCardId_;
-        public static final int RETCODE_FIELD_NUMBER = 4;
+        public static final int RETCODE_FIELD_NUMBER = 7;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final SetNameCardRsp DEFAULT_INSTANCE = new SetNameCardRsp();
@@ -92,10 +92,10 @@ public final class SetNameCardRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 32:
+                            case 56:
                                 this.retcode_ = input.readInt32();
                                 break;
-                            case 72:
+                            case 112:
                                 this.nameCardId_ = input.readUInt32();
                                 break;
                             default:
@@ -153,10 +153,10 @@ public final class SetNameCardRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.retcode_ != 0) {
-                output.writeInt32(4, this.retcode_);
+                output.writeInt32(7, this.retcode_);
             }
             if (this.nameCardId_ != 0) {
-                output.writeUInt32(9, this.nameCardId_);
+                output.writeUInt32(14, this.nameCardId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class SetNameCardRspOuterClass {
             }
             int size2 = 0;
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(4, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(7, this.retcode_);
             }
             if (this.nameCardId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.nameCardId_);
+                size2 += CodedOutputStream.computeUInt32Size(14, this.nameCardId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class SetNameCardRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getNameCardId())) + 4)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getNameCardId())) + 7)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

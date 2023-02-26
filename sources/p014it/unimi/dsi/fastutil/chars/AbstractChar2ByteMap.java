@@ -195,30 +195,30 @@ public abstract class AbstractChar2ByteMap extends AbstractChar2ByteFunction imp
                 return new CharIterator() { // from class: it.unimi.dsi.fastutil.chars.AbstractChar2ByteMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Char2ByteMap.Entry> f1310i;
+                    private final ObjectIterator<Char2ByteMap.Entry> f1274i;
 
                     {
-                        this.f1310i = Char2ByteMaps.fastIterator(AbstractChar2ByteMap.this);
+                        this.f1274i = Char2ByteMaps.fastIterator(AbstractChar2ByteMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
                     public char nextChar() {
-                        return this.f1310i.next().getCharKey();
+                        return this.f1274i.next().getCharKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1310i.hasNext();
+                        return this.f1274i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1310i.remove();
+                        this.f1274i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
                     public void forEachRemaining(CharConsumer action) {
-                        this.f1310i.forEachRemaining(entry -> {
+                        this.f1274i.forEachRemaining(entry -> {
                             action.accept(entry.getCharKey());
                         });
                     }
@@ -256,30 +256,30 @@ public abstract class AbstractChar2ByteMap extends AbstractChar2ByteFunction imp
                 return new ByteIterator() { // from class: it.unimi.dsi.fastutil.chars.AbstractChar2ByteMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Char2ByteMap.Entry> f1311i;
+                    private final ObjectIterator<Char2ByteMap.Entry> f1275i;
 
                     {
-                        this.f1311i = Char2ByteMaps.fastIterator(AbstractChar2ByteMap.this);
+                        this.f1275i = Char2ByteMaps.fastIterator(AbstractChar2ByteMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
                     public byte nextByte() {
-                        return this.f1311i.next().getByteValue();
+                        return this.f1275i.next().getByteValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1311i.hasNext();
+                        return this.f1275i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1311i.remove();
+                        this.f1275i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
                     public void forEachRemaining(ByteConsumer action) {
-                        this.f1311i.forEachRemaining(entry -> {
+                        this.f1275i.forEachRemaining(entry -> {
                             action.accept(entry.getByteValue());
                         });
                     }

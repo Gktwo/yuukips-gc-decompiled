@@ -74,8 +74,8 @@ public class JseMathLib extends MathLib {
 
     /* renamed from: org.luaj.vm2.lib.jse.JseMathLib$log */
     /* loaded from: grasscutter.jar:org/luaj/vm2/lib/jse/JseMathLib$log.class */
-    static final class C5877log extends MathLib.UnaryOp {
-        C5877log() {
+    static final class C5869log extends MathLib.UnaryOp {
+        C5869log() {
         }
 
         @Override // org.luaj.vm2.lib.MathLib.UnaryOp
@@ -127,7 +127,7 @@ public class JseMathLib extends MathLib {
         luaValue3.set("atan2", new atan2());
         luaValue3.set("cosh", new cosh());
         luaValue3.set("exp", new exp());
-        luaValue3.set("log", new C5877log());
+        luaValue3.set("log", new C5869log());
         luaValue3.set("pow", new pow());
         luaValue3.set("sinh", new sinh());
         luaValue3.set("tanh", new tanh());

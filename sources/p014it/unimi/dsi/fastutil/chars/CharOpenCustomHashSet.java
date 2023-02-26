@@ -24,13 +24,13 @@ public class CharOpenCustomHashSet extends AbstractCharSet implements Serializab
     protected CharHash.Strategy strategy;
 
     /* renamed from: n */
-    protected transient int f1519n;
+    protected transient int f1483n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1520f;
+    protected final float f1484f;
 
     public CharOpenCustomHashSet(int expected, float f, CharHash.Strategy strategy) {
         this.strategy = strategy;
@@ -39,13 +39,13 @@ public class CharOpenCustomHashSet extends AbstractCharSet implements Serializab
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1520f = f;
+            this.f1484f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1519n = arraySize;
+            this.f1483n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1519n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1519n, f);
-            this.key = new char[this.f1519n + 1];
+            this.mask = this.f1483n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1483n, f);
+            this.key = new char[this.f1483n + 1];
         }
     }
 
@@ -124,22 +124,22 @@ public class CharOpenCustomHashSet extends AbstractCharSet implements Serializab
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1520f);
-        if (needed > this.f1519n) {
+        int needed = HashCommon.arraySize(capacity, this.f1484f);
+        if (needed > this.f1483n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1520f)))));
-        if (needed > this.f1519n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1484f)))));
+        if (needed > this.f1483n) {
             rehash(needed);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharCollection, p014it.unimi.dsi.fastutil.chars.CharCollection
     public boolean addAll(CharCollection c) {
-        if (((double) this.f1520f) <= 0.5d) {
+        if (((double) this.f1484f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -149,7 +149,7 @@ public class CharOpenCustomHashSet extends AbstractCharSet implements Serializab
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Character> c) {
-        if (((double) this.f1520f) <= 0.5d) {
+        if (((double) this.f1484f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -183,14 +183,14 @@ public class CharOpenCustomHashSet extends AbstractCharSet implements Serializab
             return false;
         } else {
             this.containsNull = true;
-            this.key[this.f1519n] = k;
+            this.key[this.f1483n] = k;
         }
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f1520f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f1484f));
         return true;
     }
 
@@ -226,21 +226,21 @@ public class CharOpenCustomHashSet extends AbstractCharSet implements Serializab
     private boolean removeEntry(int pos) {
         this.size--;
         shiftKeys(pos);
-        if (this.f1519n <= this.minN || this.size >= this.maxFill / 4 || this.f1519n <= 16) {
+        if (this.f1483n <= this.minN || this.size >= this.maxFill / 4 || this.f1483n <= 16) {
             return true;
         }
-        rehash(this.f1519n / 2);
+        rehash(this.f1483n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f1519n] = 0;
+        this.key[this.f1483n] = 0;
         this.size--;
-        if (this.f1519n <= this.minN || this.size >= this.maxFill / 4 || this.f1519n <= 16) {
+        if (this.f1483n <= this.minN || this.size >= this.maxFill / 4 || this.f1483n <= 16) {
             return true;
         }
-        rehash(this.f1519n / 2);
+        rehash(this.f1483n / 2);
         return true;
     }
 
@@ -328,20 +328,20 @@ public class CharOpenCustomHashSet extends AbstractCharSet implements Serializab
         int last;
 
         /* renamed from: c */
-        int f1521c;
+        int f1485c;
         boolean mustReturnNull;
         CharArrayList wrapped;
 
         private SetIterator() {
-            this.pos = CharOpenCustomHashSet.this.f1519n;
+            this.pos = CharOpenCustomHashSet.this.f1483n;
             this.last = -1;
-            this.f1521c = CharOpenCustomHashSet.this.size;
+            this.f1485c = CharOpenCustomHashSet.this.size;
             this.mustReturnNull = CharOpenCustomHashSet.this.containsNull;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1521c != 0;
+            return this.f1485c != 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
@@ -349,11 +349,11 @@ public class CharOpenCustomHashSet extends AbstractCharSet implements Serializab
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f1521c--;
+            this.f1485c--;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = CharOpenCustomHashSet.this.f1519n;
-                return CharOpenCustomHashSet.this.key[CharOpenCustomHashSet.this.f1519n];
+                this.last = CharOpenCustomHashSet.this.f1483n;
+                return CharOpenCustomHashSet.this.key[CharOpenCustomHashSet.this.f1483n];
             }
             char[] key = CharOpenCustomHashSet.this.key;
             do {
@@ -412,9 +412,9 @@ public class CharOpenCustomHashSet extends AbstractCharSet implements Serializab
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == CharOpenCustomHashSet.this.f1519n) {
+            if (this.last == CharOpenCustomHashSet.this.f1483n) {
                 CharOpenCustomHashSet.this.containsNull = false;
-                CharOpenCustomHashSet.this.key[CharOpenCustomHashSet.this.f1519n] = 0;
+                CharOpenCustomHashSet.this.key[CharOpenCustomHashSet.this.f1483n] = 0;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -431,22 +431,22 @@ public class CharOpenCustomHashSet extends AbstractCharSet implements Serializab
             char[] key = CharOpenCustomHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = CharOpenCustomHashSet.this.f1519n;
-                action.accept(key[CharOpenCustomHashSet.this.f1519n]);
-                this.f1521c--;
+                this.last = CharOpenCustomHashSet.this.f1483n;
+                action.accept(key[CharOpenCustomHashSet.this.f1483n]);
+                this.f1485c--;
             }
-            while (this.f1521c != 0) {
+            while (this.f1485c != 0) {
                 int i = this.pos - 1;
                 this.pos = i;
                 if (i < 0) {
                     this.last = Integer.MIN_VALUE;
                     action.accept(this.wrapped.getChar((-this.pos) - 1));
-                    this.f1521c--;
+                    this.f1485c--;
                 } else if (key[this.pos] != 0) {
                     int i2 = this.pos;
                     this.last = i2;
                     action.accept(key[i2]);
-                    this.f1521c--;
+                    this.f1485c--;
                 }
             }
         }
@@ -466,22 +466,22 @@ public class CharOpenCustomHashSet extends AbstractCharSet implements Serializab
         int max;
 
         /* renamed from: c */
-        int f1522c;
+        int f1486c;
         boolean mustReturnNull;
         boolean hasSplit;
 
         SetSpliterator() {
             this.pos = 0;
-            this.max = CharOpenCustomHashSet.this.f1519n;
-            this.f1522c = 0;
+            this.max = CharOpenCustomHashSet.this.f1483n;
+            this.f1486c = 0;
             this.mustReturnNull = CharOpenCustomHashSet.this.containsNull;
             this.hasSplit = false;
         }
 
         SetSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = CharOpenCustomHashSet.this.f1519n;
-            this.f1522c = 0;
+            this.max = CharOpenCustomHashSet.this.f1483n;
+            this.f1486c = 0;
             this.mustReturnNull = CharOpenCustomHashSet.this.containsNull;
             this.hasSplit = false;
             this.pos = pos;
@@ -493,14 +493,14 @@ public class CharOpenCustomHashSet extends AbstractCharSet implements Serializab
         public boolean tryAdvance(CharConsumer action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1522c++;
-                action.accept(CharOpenCustomHashSet.this.key[CharOpenCustomHashSet.this.f1519n]);
+                this.f1486c++;
+                action.accept(CharOpenCustomHashSet.this.key[CharOpenCustomHashSet.this.f1483n]);
                 return true;
             }
             char[] key = CharOpenCustomHashSet.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f1522c++;
+                    this.f1486c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(key[i]);
@@ -515,13 +515,13 @@ public class CharOpenCustomHashSet extends AbstractCharSet implements Serializab
             char[] key = CharOpenCustomHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                action.accept(key[CharOpenCustomHashSet.this.f1519n]);
-                this.f1522c++;
+                action.accept(key[CharOpenCustomHashSet.this.f1483n]);
+                this.f1486c++;
             }
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     action.accept(key[this.pos]);
-                    this.f1522c++;
+                    this.f1486c++;
                 }
                 this.pos++;
             }
@@ -535,9 +535,9 @@ public class CharOpenCustomHashSet extends AbstractCharSet implements Serializab
         @Override // java.util.Spliterator
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (CharOpenCustomHashSet.this.size - this.f1522c);
+                return (long) (CharOpenCustomHashSet.this.size - this.f1486c);
             }
-            return Math.min((long) (CharOpenCustomHashSet.this.size - this.f1522c), ((long) ((((double) CharOpenCustomHashSet.this.realSize()) / ((double) CharOpenCustomHashSet.this.f1519n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (CharOpenCustomHashSet.this.size - this.f1486c), ((long) ((((double) CharOpenCustomHashSet.this.realSize()) / ((double) CharOpenCustomHashSet.this.f1483n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
@@ -663,10 +663,10 @@ public class CharOpenCustomHashSet extends AbstractCharSet implements Serializab
     @Override // p014it.unimi.dsi.fastutil.chars.CharIterable
     public void forEach(CharConsumer action) {
         if (this.containsNull) {
-            action.accept(this.key[this.f1519n]);
+            action.accept(this.key[this.f1483n]);
         }
         char[] key = this.key;
-        int pos = this.f1519n;
+        int pos = this.f1483n;
         while (true) {
             pos--;
             if (pos == 0) {
@@ -683,8 +683,8 @@ public class CharOpenCustomHashSet extends AbstractCharSet implements Serializab
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1520f)));
-        if (l >= this.f1519n || this.size > HashCommon.maxFill(l, this.f1520f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1484f)));
+        if (l >= this.f1483n || this.size > HashCommon.maxFill(l, this.f1484f)) {
             return true;
         }
         try {
@@ -700,7 +700,7 @@ public class CharOpenCustomHashSet extends AbstractCharSet implements Serializab
         char[] key = this.key;
         int mask = newN - 1;
         char[] newKey = new char[newN + 1];
-        int i2 = this.f1519n;
+        int i2 = this.f1483n;
         int j = realSize();
         while (true) {
             j--;
@@ -718,9 +718,9 @@ public class CharOpenCustomHashSet extends AbstractCharSet implements Serializab
                 }
                 newKey[pos] = key[i2];
             } else {
-                this.f1519n = newN;
+                this.f1483n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f1519n, this.f1520f);
+                this.maxFill = HashCommon.maxFill(this.f1483n, this.f1484f);
                 this.key = newKey;
                 return;
             }
@@ -776,10 +776,10 @@ public class CharOpenCustomHashSet extends AbstractCharSet implements Serializab
         int pos;
         int i;
         s.defaultReadObject();
-        this.f1519n = HashCommon.arraySize(this.size, this.f1520f);
-        this.maxFill = HashCommon.maxFill(this.f1519n, this.f1520f);
-        this.mask = this.f1519n - 1;
-        char[] key = new char[this.f1519n + 1];
+        this.f1483n = HashCommon.arraySize(this.size, this.f1484f);
+        this.maxFill = HashCommon.maxFill(this.f1483n, this.f1484f);
+        this.mask = this.f1483n - 1;
+        char[] key = new char[this.f1483n + 1];
         this.key = key;
         int i2 = this.size;
         while (true) {
@@ -787,7 +787,7 @@ public class CharOpenCustomHashSet extends AbstractCharSet implements Serializab
             if (i2 != 0) {
                 char k = s.readChar();
                 if (this.strategy.equals(k, 0)) {
-                    pos = this.f1519n;
+                    pos = this.f1483n;
                     this.containsNull = true;
                 } else {
                     int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;

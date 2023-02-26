@@ -198,30 +198,30 @@ public abstract class AbstractLong2BooleanMap extends AbstractLong2BooleanFuncti
                 return new LongIterator() { // from class: it.unimi.dsi.fastutil.longs.AbstractLong2BooleanMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Long2BooleanMap.Entry> f2217i;
+                    private final ObjectIterator<Long2BooleanMap.Entry> f2181i;
 
                     {
-                        this.f2217i = Long2BooleanMaps.fastIterator(AbstractLong2BooleanMap.this);
+                        this.f2181i = Long2BooleanMaps.fastIterator(AbstractLong2BooleanMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
                     public long nextLong() {
-                        return this.f2217i.next().getLongKey();
+                        return this.f2181i.next().getLongKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2217i.hasNext();
+                        return this.f2181i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2217i.remove();
+                        this.f2181i.remove();
                     }
 
                     @Override // java.util.PrimitiveIterator.OfLong
                     public void forEachRemaining(LongConsumer action) {
-                        this.f2217i.forEachRemaining(entry -> {
+                        this.f2181i.forEachRemaining(entry -> {
                             action.accept(entry.getLongKey());
                         });
                     }
@@ -259,30 +259,30 @@ public abstract class AbstractLong2BooleanMap extends AbstractLong2BooleanFuncti
                 return new BooleanIterator() { // from class: it.unimi.dsi.fastutil.longs.AbstractLong2BooleanMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Long2BooleanMap.Entry> f2218i;
+                    private final ObjectIterator<Long2BooleanMap.Entry> f2182i;
 
                     {
-                        this.f2218i = Long2BooleanMaps.fastIterator(AbstractLong2BooleanMap.this);
+                        this.f2182i = Long2BooleanMaps.fastIterator(AbstractLong2BooleanMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
                     public boolean nextBoolean() {
-                        return this.f2218i.next().getBooleanValue();
+                        return this.f2182i.next().getBooleanValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2218i.hasNext();
+                        return this.f2182i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2218i.remove();
+                        this.f2182i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
                     public void forEachRemaining(BooleanConsumer action) {
-                        this.f2218i.forEachRemaining(entry -> {
+                        this.f2182i.forEachRemaining(entry -> {
                             action.accept(entry.getBooleanValue());
                         });
                     }

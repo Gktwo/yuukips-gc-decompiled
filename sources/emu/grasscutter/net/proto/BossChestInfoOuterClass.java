@@ -28,13 +28,13 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BossChestInfoOuterClass.class */
 public final class BossChestInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013BossChestInfo.proto\u001a!WeeklyBossResinDiscountInfo.proto\"ÿ\u0001\n\rBossChestInfo\u0012\u0019\n\u0011monster_config_id\u0018\u0001 \u0001(\r\u0012\r\n\u0005resin\u0018\u0002 \u0001(\r\u0012\u0017\n\u000fremain_uid_list\u0018\u0003 \u0003(\r\u0012\u0018\n\u0010qualify_uid_list\u0018\u0004 \u0003(\r\u0012<\n\u0010uid_discount_map\u0018\u0005 \u0003(\u000b2\".BossChestInfo.UidDiscountMapEntry\u001aS\n\u0013UidDiscountMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012+\n\u0005value\u0018\u0002 \u0001(\u000b2\u001c.WeeklyBossResinDiscountInfo:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{WeeklyBossResinDiscountInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013BossChestInfo.proto\u001a!WeeklyBossResinDiscountInfo.proto\"÷\u0001\n\rBossChestInfo\u0012\u0017\n\u000fmonsterConfigId\u0018\u0001 \u0001(\r\u0012\r\n\u0005resin\u0018\u0002 \u0001(\r\u0012\u0015\n\rremainUidList\u0018\u0003 \u0003(\r\u0012\u0016\n\u000equalifyUidList\u0018\u0004 \u0003(\r\u0012:\n\u000euidDiscountMap\u0018\u0005 \u0003(\u000b2\".BossChestInfo.UidDiscountMapEntry\u001aS\n\u0013UidDiscountMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012+\n\u0005value\u0018\u0002 \u0001(\u000b2\u001c.WeeklyBossResinDiscountInfo:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{WeeklyBossResinDiscountInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_BossChestInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_BossChestInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BossChestInfo_descriptor, new String[]{"MonsterConfigId", "Resin", "RemainUidList", "QualifyUidList", "UidDiscountMap"});
     private static final Descriptors.Descriptor internal_static_BossChestInfo_UidDiscountMapEntry_descriptor = internal_static_BossChestInfo_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_BossChestInfo_UidDiscountMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f660xc6636051 = new GeneratedMessageV3.FieldAccessorTable(internal_static_BossChestInfo_UidDiscountMapEntry_descriptor, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f659xc6636051 = new GeneratedMessageV3.FieldAccessorTable(internal_static_BossChestInfo_UidDiscountMapEntry_descriptor, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BossChestInfoOuterClass$BossChestInfoOrBuilder.class */
     public interface BossChestInfoOrBuilder extends MessageOrBuilder {
@@ -81,17 +81,17 @@ public final class BossChestInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BossChestInfoOuterClass$BossChestInfo.class */
     public static final class BossChestInfo extends GeneratedMessageV3 implements BossChestInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MONSTER_CONFIG_ID_FIELD_NUMBER = 1;
+        public static final int MONSTERCONFIGID_FIELD_NUMBER = 1;
         private int monsterConfigId_;
         public static final int RESIN_FIELD_NUMBER = 2;
         private int resin_;
-        public static final int REMAIN_UID_LIST_FIELD_NUMBER = 3;
+        public static final int REMAINUIDLIST_FIELD_NUMBER = 3;
         private Internal.IntList remainUidList_;
         private int remainUidListMemoizedSerializedSize;
-        public static final int QUALIFY_UID_LIST_FIELD_NUMBER = 4;
+        public static final int QUALIFYUIDLIST_FIELD_NUMBER = 4;
         private Internal.IntList qualifyUidList_;
         private int qualifyUidListMemoizedSerializedSize;
-        public static final int UID_DISCOUNT_MAP_FIELD_NUMBER = 5;
+        public static final int UIDDISCOUNTMAP_FIELD_NUMBER = 5;
         private MapField<Integer, WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo> uidDiscountMap_;
         private byte memoizedIsInitialized;
         private static final BossChestInfo DEFAULT_INSTANCE = new BossChestInfo();

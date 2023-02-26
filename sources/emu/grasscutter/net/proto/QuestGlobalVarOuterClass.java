@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestGlobalVarOuterClass.class */
 public final class QuestGlobalVarOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014QuestGlobalVar.proto\",\n\u000eQuestGlobalVar\u0012\r\n\u0005value\u0018\u0004 \u0001(\u0005\u0012\u000b\n\u0003key\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014QuestGlobalVar.proto\",\n\u000eQuestGlobalVar\u0012\r\n\u0005value\u0018\u000e \u0001(\u0005\u0012\u000b\n\u0003key\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_QuestGlobalVar_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_QuestGlobalVar_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QuestGlobalVar_descriptor, new String[]{"Value", "Key"});
 
@@ -43,7 +43,7 @@ public final class QuestGlobalVarOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestGlobalVarOuterClass$QuestGlobalVar.class */
     public static final class QuestGlobalVar extends GeneratedMessageV3 implements QuestGlobalVarOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int VALUE_FIELD_NUMBER = 4;
+        public static final int VALUE_FIELD_NUMBER = 14;
         private int value_;
         public static final int KEY_FIELD_NUMBER = 9;
         private int key_;
@@ -92,11 +92,11 @@ public final class QuestGlobalVarOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 32:
-                                this.value_ = input.readInt32();
-                                break;
                             case 72:
                                 this.key_ = input.readUInt32();
+                                break;
+                            case 112:
+                                this.value_ = input.readInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -152,11 +152,11 @@ public final class QuestGlobalVarOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.value_ != 0) {
-                output.writeInt32(4, this.value_);
-            }
             if (this.key_ != 0) {
                 output.writeUInt32(9, this.key_);
+            }
+            if (this.value_ != 0) {
+                output.writeInt32(14, this.value_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class QuestGlobalVarOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.value_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(4, this.value_);
-            }
             if (this.key_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.key_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(9, this.key_);
+            }
+            if (this.value_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(14, this.value_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class QuestGlobalVarOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getValue())) + 9)) + getKey())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getValue())) + 9)) + getKey())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

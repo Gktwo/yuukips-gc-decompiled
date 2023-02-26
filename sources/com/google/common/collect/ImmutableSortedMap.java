@@ -5,7 +5,6 @@ import com.google.common.annotations.GwtCompatible;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
-import emu.grasscutter.net.proto.ActivityInfoOuterClass;
 import java.util.AbstractMap;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -355,7 +354,7 @@ public final class ImmutableSortedMap<K, V> extends ImmutableSortedMapFauxveride
 
                     @Override // com.google.common.collect.ImmutableList, com.google.common.collect.ImmutableCollection, java.util.Collection, java.lang.Iterable
                     public Spliterator<Map.Entry<K, V>> spliterator() {
-                        return CollectSpliterators.indexed(size(), ActivityInfoOuterClass.ActivityInfo.GACHA_INFO_FIELD_NUMBER, this::get);
+                        return CollectSpliterators.indexed(size(), 1297, this::get);
                     }
 
                     @Override // com.google.common.collect.ImmutableAsList

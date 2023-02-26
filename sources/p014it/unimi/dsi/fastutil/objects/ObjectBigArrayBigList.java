@@ -26,7 +26,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
     protected final boolean wrapped;
 
     /* renamed from: a */
-    protected transient K[][] f2694a;
+    protected transient K[][] f2658a;
     protected long size;
     private static final Collector<Object, ?, ObjectBigArrayBigList<Object>> TO_LIST_COLLECTOR;
     static final /* synthetic */ boolean $assertionsDisabled;
@@ -46,7 +46,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
     }
 
     protected ObjectBigArrayBigList(K[][] a, boolean dummy) {
-        this.f2694a = a;
+        this.f2658a = a;
         this.wrapped = true;
     }
 
@@ -55,15 +55,15 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
             throw new IllegalArgumentException("Initial capacity (" + capacity + ") is negative");
         }
         if (capacity == 0) {
-            this.f2694a = (K[][]) ObjectBigArrays.EMPTY_BIG_ARRAY;
+            this.f2658a = (K[][]) ObjectBigArrays.EMPTY_BIG_ARRAY;
         } else {
-            this.f2694a = (K[][]) ObjectBigArrays.newBigArray(capacity);
+            this.f2658a = (K[][]) ObjectBigArrays.newBigArray(capacity);
         }
         this.wrapped = false;
     }
 
     public ObjectBigArrayBigList() {
-        this.f2694a = (K[][]) ObjectBigArrays.DEFAULT_EMPTY_BIG_ARRAY;
+        this.f2658a = (K[][]) ObjectBigArrays.DEFAULT_EMPTY_BIG_ARRAY;
         this.wrapped = false;
     }
 
@@ -72,7 +72,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
     public ObjectBigArrayBigList(ObjectCollection<? extends K> c) {
         this(Size64.sizeOf(c));
         if (c instanceof ObjectBigList) {
-            K[][] kArr = this.f2694a;
+            K[][] kArr = this.f2658a;
             long sizeOf = Size64.sizeOf(c);
             this.size = sizeOf;
             ((ObjectBigList) c).getElements(0, kArr, 0, sizeOf);
@@ -89,7 +89,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
     public ObjectBigArrayBigList(Collection<? extends K> c) {
         this(Size64.sizeOf(c));
         if (c instanceof ObjectBigList) {
-            K[][] kArr = this.f2694a;
+            K[][] kArr = this.f2658a;
             long sizeOf = Size64.sizeOf(c);
             this.size = sizeOf;
             ((ObjectBigList) c).getElements(0, kArr, 0, sizeOf);
@@ -103,7 +103,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
 
     public ObjectBigArrayBigList(ObjectBigList<? extends K> l) {
         this(l.size64());
-        K[][] kArr = this.f2694a;
+        K[][] kArr = this.f2658a;
         long size64 = l.size64();
         this.size = size64;
         l.getElements(0, kArr, 0, size64);
@@ -115,7 +115,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
 
     public ObjectBigArrayBigList(K[][] a, long offset, long length) {
         this(length);
-        BigArrays.copy(a, offset, this.f2694a, 0, length);
+        BigArrays.copy(a, offset, this.f2658a, 0, length);
         this.size = length;
     }
 
@@ -138,7 +138,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
     }
 
     public K[][] elements() {
-        return this.f2694a;
+        return this.f2658a;
     }
 
     public static <K> ObjectBigArrayBigList<K> wrap(K[][] a, long length) {
@@ -185,36 +185,36 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
     }
 
     public void ensureCapacity(long capacity) {
-        if (capacity > BigArrays.length(this.f2694a) && this.f2694a != ObjectBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
+        if (capacity > BigArrays.length(this.f2658a) && this.f2658a != ObjectBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
             if (this.wrapped) {
-                this.f2694a = (K[][]) BigArrays.forceCapacity(this.f2694a, capacity, this.size);
-            } else if (capacity > BigArrays.length(this.f2694a)) {
+                this.f2658a = (K[][]) BigArrays.forceCapacity(this.f2658a, capacity, this.size);
+            } else if (capacity > BigArrays.length(this.f2658a)) {
                 K[][] kArr = (K[][]) ObjectBigArrays.newBigArray(capacity);
-                BigArrays.copy(this.f2694a, 0, kArr, 0, this.size);
-                this.f2694a = kArr;
+                BigArrays.copy(this.f2658a, 0, kArr, 0, this.size);
+                this.f2658a = kArr;
             }
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f2694a)) {
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f2658a)) {
                 throw new AssertionError();
             }
         }
     }
 
     private void grow(long capacity) {
-        long oldLength = BigArrays.length(this.f2694a);
+        long oldLength = BigArrays.length(this.f2658a);
         if (capacity > oldLength) {
-            if (this.f2694a != ObjectBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
+            if (this.f2658a != ObjectBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
                 capacity = Math.max(oldLength + (oldLength >> 1), capacity);
             } else if (capacity < 10) {
                 capacity = 10;
             }
             if (this.wrapped) {
-                this.f2694a = (K[][]) BigArrays.forceCapacity(this.f2694a, capacity, this.size);
+                this.f2658a = (K[][]) BigArrays.forceCapacity(this.f2658a, capacity, this.size);
             } else {
                 K[][] kArr = (K[][]) ObjectBigArrays.newBigArray(capacity);
-                BigArrays.copy(this.f2694a, 0, kArr, 0, this.size);
-                this.f2694a = kArr;
+                BigArrays.copy(this.f2658a, 0, kArr, 0, this.size);
+                this.f2658a = kArr;
             }
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f2694a)) {
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f2658a)) {
                 throw new AssertionError();
             }
         }
@@ -225,11 +225,11 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
         ensureIndex(index);
         grow(this.size + 1);
         if (index != this.size) {
-            BigArrays.copy(this.f2694a, index, this.f2694a, index + 1, this.size - index);
+            BigArrays.copy(this.f2658a, index, this.f2658a, index + 1, this.size - index);
         }
-        BigArrays.set(this.f2694a, index, k);
+        BigArrays.set(this.f2658a, index, k);
         this.size++;
-        if (!$assertionsDisabled && this.size > BigArrays.length(this.f2694a)) {
+        if (!$assertionsDisabled && this.size > BigArrays.length(this.f2658a)) {
             throw new AssertionError();
         }
     }
@@ -237,11 +237,11 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, java.util.AbstractCollection, java.util.Collection
     public boolean add(K k) {
         grow(this.size + 1);
-        K[][] kArr = this.f2694a;
+        K[][] kArr = this.f2658a;
         long j = this.size;
         this.size = j + 1;
         BigArrays.set(kArr, j, k);
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2694a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2658a)) {
             return true;
         }
         throw new AssertionError();
@@ -250,7 +250,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
     @Override // p014it.unimi.dsi.fastutil.BigList
     public K get(long index) {
         if (index < this.size) {
-            return (K) BigArrays.get(this.f2694a, index);
+            return (K) BigArrays.get(this.f2658a, index);
         }
         throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
     }
@@ -258,7 +258,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, p014it.unimi.dsi.fastutil.BigList
     public long indexOf(Object k) {
         for (long i = 0; i < this.size; i++) {
-            if (Objects.equals(k, BigArrays.get(this.f2694a, i))) {
+            if (Objects.equals(k, BigArrays.get(this.f2658a, i))) {
                 return i;
             }
         }
@@ -290,7 +290,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
             if (r0 == 0) goto L_0x0020
             r0 = r8
             r1 = r7
-            K[][] r1 = r1.f2694a
+            K[][] r1 = r1.f2658a
             r2 = r9
             java.lang.Object r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
             boolean r0 = java.util.Objects.equals(r0, r1)
@@ -309,13 +309,13 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        K old = (K) BigArrays.get(this.f2694a, index);
+        K old = (K) BigArrays.get(this.f2658a, index);
         this.size--;
         if (index != this.size) {
-            BigArrays.copy(this.f2694a, index + 1, this.f2694a, index, this.size - index);
+            BigArrays.copy(this.f2658a, index + 1, this.f2658a, index, this.size - index);
         }
-        BigArrays.set(this.f2694a, this.size, (Object) null);
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2694a)) {
+        BigArrays.set(this.f2658a, this.size, (Object) null);
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2658a)) {
             return old;
         }
         throw new AssertionError();
@@ -328,7 +328,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
             return false;
         }
         remove(index);
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2694a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2658a)) {
             return true;
         }
         throw new AssertionError();
@@ -339,8 +339,8 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        K old = (K) BigArrays.get(this.f2694a, index);
-        BigArrays.set(this.f2694a, index, k);
+        K old = (K) BigArrays.get(this.f2658a, index);
+        BigArrays.set(this.f2658a, index, k);
         return old;
     }
 
@@ -356,12 +356,12 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
             if (sd == 134217728) {
                 sd = 0;
                 ss++;
-                s = this.f2694a[ss];
+                s = this.f2658a[ss];
             }
             if (!c.contains(s[sd])) {
                 if (dd == 134217728) {
                     ds++;
-                    d = this.f2694a[ds];
+                    d = this.f2658a[ds];
                     dd = 0;
                 }
                 dd++;
@@ -370,7 +370,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
             sd++;
         }
         long j = BigArrays.index(ds, dd);
-        BigArrays.fill(this.f2694a, j, this.size, (Object) null);
+        BigArrays.fill(this.f2658a, j, this.size, (Object) null);
         boolean modified = this.size != j;
         this.size = j;
         return modified;
@@ -390,17 +390,17 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
             return false;
         }
         grow(this.size + ((long) n));
-        BigArrays.copy(this.f2694a, index, this.f2694a, index + ((long) n), this.size - index);
+        BigArrays.copy(this.f2658a, index, this.f2658a, index + ((long) n), this.size - index);
         Iterator<? extends K> i = c.iterator();
         this.size += (long) n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2694a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2658a)) {
             while (true) {
                 n--;
                 if (n == 0) {
                     return true;
                 }
                 index++;
-                BigArrays.set(this.f2694a, index, i.next());
+                BigArrays.set(this.f2658a, index, i.next());
             }
         } else {
             throw new AssertionError();
@@ -415,10 +415,10 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
             return false;
         }
         grow(this.size + n);
-        BigArrays.copy(this.f2694a, index, this.f2694a, index + n, this.size - index);
-        list.getElements(0, this.f2694a, index, n);
+        BigArrays.copy(this.f2658a, index, this.f2658a, index + n, this.size - index);
+        list.getElements(0, this.f2658a, index, n);
         this.size += n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2694a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2658a)) {
             return true;
         }
         throw new AssertionError();
@@ -432,15 +432,15 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
             return false;
         }
         grow(this.size + ((long) n));
-        BigArrays.copy(this.f2694a, index, this.f2694a, index + ((long) n), this.size - index);
+        BigArrays.copy(this.f2658a, index, this.f2658a, index + ((long) n), this.size - index);
         this.size += (long) n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2694a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f2658a)) {
             int segment = BigArrays.segment(index);
             int displ = BigArrays.displacement(index);
             int pos = 0;
             while (n > 0) {
-                int l = Math.min(this.f2694a[segment].length - displ, n);
-                list.getElements(pos, this.f2694a[segment], displ, l);
+                int l = Math.min(this.f2658a[segment].length - displ, n);
+                list.getElements(pos, this.f2658a[segment], displ, l);
                 int i = displ + l;
                 displ = i;
                 if (i == 134217728) {
@@ -457,9 +457,9 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, java.util.AbstractCollection, java.util.Collection
     public void clear() {
-        BigArrays.fill(this.f2694a, 0, this.size, (Object) null);
+        BigArrays.fill(this.f2658a, 0, this.size, (Object) null);
         this.size = 0;
-        if (!$assertionsDisabled && this.size > BigArrays.length(this.f2694a)) {
+        if (!$assertionsDisabled && this.size > BigArrays.length(this.f2658a)) {
             throw new AssertionError();
         }
     }
@@ -471,13 +471,13 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, p014it.unimi.dsi.fastutil.BigList
     public void size(long size) {
-        if (size > BigArrays.length(this.f2694a)) {
-            this.f2694a = (K[][]) BigArrays.forceCapacity(this.f2694a, size, this.size);
+        if (size > BigArrays.length(this.f2658a)) {
+            this.f2658a = (K[][]) BigArrays.forceCapacity(this.f2658a, size, this.size);
         }
         if (size > this.size) {
-            BigArrays.fill(this.f2694a, this.size, size, (Object) null);
+            BigArrays.fill(this.f2658a, this.size, size, (Object) null);
         } else {
-            BigArrays.fill(this.f2694a, size, this.size, (Object) null);
+            BigArrays.fill(this.f2658a, size, this.size, (Object) null);
         }
         this.size = size;
     }
@@ -492,10 +492,10 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
     }
 
     public void trim(long n) {
-        long arrayLength = BigArrays.length(this.f2694a);
+        long arrayLength = BigArrays.length(this.f2658a);
         if (n < arrayLength && this.size != arrayLength) {
-            this.f2694a = (K[][]) BigArrays.trim(this.f2694a, Math.max(n, this.size));
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f2694a)) {
+            this.f2658a = (K[][]) BigArrays.trim(this.f2658a, Math.max(n, this.size));
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f2658a)) {
                 throw new AssertionError();
             }
         }
@@ -517,13 +517,13 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
         }
 
         private K[][] getParentArray() {
-            return ObjectBigArrayBigList.this.f2694a;
+            return ObjectBigArrayBigList.this.f2658a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList.ObjectSubList, p014it.unimi.dsi.fastutil.BigList
         public K get(long i) {
             ensureRestrictedIndex(i);
-            return (K) BigArrays.get(ObjectBigArrayBigList.this.f2694a, i + this.from);
+            return (K) BigArrays.get(ObjectBigArrayBigList.this.f2658a, i + this.from);
         }
 
         /* access modifiers changed from: private */
@@ -536,7 +536,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigListIterators.AbstractIndexBasedBigIterator
             protected final K get(long i) {
-                return (K) BigArrays.get(ObjectBigArrayBigList.this.f2694a, SubList.this.from + i);
+                return (K) BigArrays.get(ObjectBigArrayBigList.this.f2658a, SubList.this.from + i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigListIterators.AbstractIndexBasedBigListIterator
@@ -556,7 +556,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigListIterators.AbstractIndexBasedBigIterator
             protected final long getMaxPos() {
-                return SubList.this.f2490to - SubList.this.from;
+                return SubList.this.f2454to - SubList.this.from;
             }
 
             /* JADX DEBUG: Multi-variable search result rejected for r12v0, resolved type: it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList$SubList$SubListIterator */
@@ -566,7 +566,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                K[][] kArr = ObjectBigArrayBigList.this.f2694a;
+                K[][] kArr = ObjectBigArrayBigList.this.f2658a;
                 long j = SubList.this.from;
                 long j2 = this.pos;
                 this.pos = j2 + 1;
@@ -581,7 +581,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                K[][] kArr = ObjectBigArrayBigList.this.f2694a;
+                K[][] kArr = ObjectBigArrayBigList.this.f2658a;
                 long j = SubList.this.from;
                 long j2 = this.pos - 1;
                 this.pos = j2;
@@ -594,13 +594,13 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
             /* JADX WARN: Type inference failed for: r1v7, types: [java.util.function.Consumer, K[][]] */
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigListIterators.AbstractIndexBasedBigIterator, java.util.Iterator
             public void forEachRemaining(Consumer<? super K> action) {
-                long max = SubList.this.f2490to - SubList.this.from;
+                long max = SubList.this.f2454to - SubList.this.from;
                 while (this.pos < max) {
                     long j = SubList.this.from;
                     long j2 = this.pos;
                     this.pos = j2 + 1;
                     this.lastReturned = j2;
-                    ObjectBigArrayBigList.this.f2694a.accept(BigArrays.get((Object[][]) this, j2 + j));
+                    ObjectBigArrayBigList.this.f2658a.accept(BigArrays.get((Object[][]) this, j2 + j));
                 }
             }
         }
@@ -624,12 +624,12 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigSpliterators.LateBindingSizeIndexBasedSpliterator
             protected final long getMaxPosFromBackingStore() {
-                return SubList.this.f2490to;
+                return SubList.this.f2454to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigSpliterators.AbstractIndexBasedSpliterator
             protected final K get(long i) {
-                return (K) BigArrays.get(ObjectBigArrayBigList.this.f2694a, i);
+                return (K) BigArrays.get(ObjectBigArrayBigList.this.f2658a, i);
             }
 
             /* access modifiers changed from: protected */
@@ -648,7 +648,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
                 if (this.pos >= getMaxPos()) {
                     return false;
                 }
-                K[][] kArr = ObjectBigArrayBigList.this.f2694a;
+                K[][] kArr = ObjectBigArrayBigList.this.f2658a;
                 long j = this.pos;
                 this.pos = j + 1;
                 action.accept((Object) BigArrays.get(kArr, j));
@@ -659,7 +659,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
             public void forEachRemaining(Consumer<? super K> action) {
                 long max = getMaxPos();
                 while (this.pos < max) {
-                    K[][] kArr = ObjectBigArrayBigList.this.f2694a;
+                    K[][] kArr = ObjectBigArrayBigList.this.f2658a;
                     long j = this.pos;
                     this.pos = j + 1;
                     action.accept((Object) BigArrays.get(kArr, j));
@@ -683,7 +683,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
                 r7 = this;
                 r0 = r7
                 it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList r0 = p014it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList.this
-                K[][] r0 = r0.f2694a
+                K[][] r0 = r0.f2658a
                 r1 = r8
                 if (r0 != r1) goto L_0x0020
                 r0 = r7
@@ -692,7 +692,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
                 r0 = r7
-                long r0 = r0.f2490to
+                long r0 = r0.f2454to
                 r1 = r11
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
@@ -710,7 +710,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
                 return r0
             L_0x002e:
                 r0 = r7
-                long r0 = r0.f2490to
+                long r0 = r0.f2454to
                 r13 = r0
                 r0 = r11
                 r15 = r0
@@ -726,7 +726,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
                 if (r0 < 0) goto L_0x0066
                 r0 = r7
                 it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList r0 = p014it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList.this
-                K[][] r0 = r0.f2694a
+                K[][] r0 = r0.f2658a
                 r1 = r13
                 java.lang.Object r0 = p014it.unimi.dsi.fastutil.BigArrays.get(r0, r1)
                 r1 = r8
@@ -759,12 +759,12 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
             }
             if (o instanceof ObjectBigArrayBigList) {
                 ObjectBigArrayBigList<K> other = (ObjectBigArrayBigList) o;
-                return contentsEquals(other.f2694a, 0, other.size64());
+                return contentsEquals(other.f2658a, 0, other.size64());
             } else if (!(o instanceof SubList)) {
                 return equals(o);
             } else {
                 ObjectBigArrayBigList<K>.SubList other2 = (SubList) o;
-                return contentsEquals(other2.getParentArray(), other2.from, other2.f2490to);
+                return contentsEquals(other2.getParentArray(), other2.from, other2.f2454to);
             }
         }
 
@@ -788,7 +788,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
             L_0x0009:
                 r0 = r14
                 r1 = r5
-                long r1 = r1.f2490to
+                long r1 = r1.f2454to
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 >= 0) goto L_0x0055
                 r0 = r14
@@ -797,7 +797,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
                 if (r0 >= 0) goto L_0x0055
                 r0 = r5
                 it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList r0 = p014it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList.this
-                K[][] r0 = r0.f2694a
+                K[][] r0 = r0.f2658a
                 r1 = r14
                 java.lang.Object r0 = p014it.unimi.dsi.fastutil.BigArrays.get(r0, r1)
                 r11 = r0
@@ -834,7 +834,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
             L_0x0061:
                 r0 = r14
                 r1 = r5
-                long r1 = r1.f2490to
+                long r1 = r1.f2454to
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 >= 0) goto L_0x006f
                 r0 = 1
@@ -853,12 +853,12 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
         public int compareTo(BigList<? extends K> l) {
             if (l instanceof ObjectBigArrayBigList) {
                 ObjectBigArrayBigList<K> other = (ObjectBigArrayBigList) l;
-                return contentsCompareTo(other.f2694a, 0, other.size64());
+                return contentsCompareTo(other.f2658a, 0, other.size64());
             } else if (!(l instanceof SubList)) {
                 return compareTo((BigList) l);
             } else {
                 ObjectBigArrayBigList<K>.SubList other2 = (SubList) l;
-                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f2490to);
+                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f2454to);
             }
         }
     }
@@ -878,20 +878,20 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, p014it.unimi.dsi.fastutil.objects.ObjectBigList
     public void getElements(long from, Object[][] a, long offset, long length) {
-        BigArrays.copy(this.f2694a, from, a, offset, length);
+        BigArrays.copy(this.f2658a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.ObjectBigList
     public void getElements(long from, Object[] a, int offset, int length) {
-        BigArrays.copyFromBig(this.f2694a, from, a, offset, length);
+        BigArrays.copyFromBig(this.f2658a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, p014it.unimi.dsi.fastutil.objects.ObjectBigList
     public void removeElements(long from, long to) {
         BigArrays.ensureFromTo(this.size, from, to);
-        BigArrays.copy(this.f2694a, to, this.f2694a, from, this.size - to);
+        BigArrays.copy(this.f2658a, to, this.f2658a, from, this.size - to);
         this.size -= to - from;
-        BigArrays.fill(this.f2694a, this.size, (this.size + to) - from, (Object) null);
+        BigArrays.fill(this.f2658a, this.size, (this.size + to) - from, (Object) null);
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, p014it.unimi.dsi.fastutil.objects.ObjectBigList
@@ -899,20 +899,20 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
         ensureIndex(index);
         BigArrays.ensureOffsetLength(a, offset, length);
         grow(this.size + length);
-        BigArrays.copy(this.f2694a, index, this.f2694a, index + length, this.size - index);
-        BigArrays.copy(a, offset, this.f2694a, index, length);
+        BigArrays.copy(this.f2658a, index, this.f2658a, index + length, this.size - index);
+        BigArrays.copy(a, offset, this.f2658a, index, length);
         this.size += length;
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, p014it.unimi.dsi.fastutil.objects.ObjectBigList
     public void setElements(long index, Object[][] a, long offset, long length) {
-        BigArrays.copy(a, offset, this.f2694a, index, length);
+        BigArrays.copy(a, offset, this.f2658a, index, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectBigList, java.lang.Iterable
     public void forEach(Consumer<? super K> action) {
         for (long i = 0; i < this.size; i++) {
-            action.accept((Object) BigArrays.get(this.f2694a, i));
+            action.accept((Object) BigArrays.get(this.f2658a, i));
         }
     }
 
@@ -956,7 +956,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
                 L_0x000f:
                     r0 = r10
                     it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList r0 = p014it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList.this
-                    K[][] r0 = r0.f2694a
+                    K[][] r0 = r0.f2658a
                     r1 = r10
                     r2 = r10
                     r3 = r2
@@ -970,7 +970,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
                     java.lang.Object r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
                     return r1
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList.C48541.next():java.lang.Object");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList.C48461.next():java.lang.Object");
             }
 
             /* JADX WARN: Type inference failed for: r0v4, types: [long, K[][]] */
@@ -991,7 +991,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
                 L_0x000f:
                     r0 = r8
                     it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList r0 = p014it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList.this
-                    K[][] r0 = r0.f2694a
+                    K[][] r0 = r0.f2658a
                     r1 = r8
                     r2 = r8
                     r3 = r2
@@ -1005,7 +1005,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
                     java.lang.Object r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
                     return r1
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList.C48541.previous():java.lang.Object");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList.C48461.previous():java.lang.Object");
             }
 
             @Override // p014it.unimi.dsi.fastutil.BigListIterator
@@ -1068,7 +1068,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
                     r0 = r12
                     r1 = r11
                     it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList r1 = p014it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList.this
-                    K[][] r1 = r1.f2694a
+                    K[][] r1 = r1.f2658a
                     r2 = r11
                     r3 = r11
                     r4 = r3
@@ -1085,7 +1085,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
                 L_0x0032:
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList.C48541.forEachRemaining(java.util.function.Consumer):void");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList.C48461.forEachRemaining(java.util.function.Consumer):void");
             }
 
             /* JADX WARN: Multi-variable type inference failed */
@@ -1148,7 +1148,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
                     r0 = r7
                     return r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList.C48541.back(long):long");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList.C48461.back(long):long");
             }
 
             /* JADX WARN: Multi-variable type inference failed */
@@ -1215,7 +1215,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
                     r0 = r7
                     return r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList.C48541.skip(long):long");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.objects.ObjectBigArrayBigList.C48461.skip(long):long");
             }
         };
     }
@@ -1267,7 +1267,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            K[][] kArr = ObjectBigArrayBigList.this.f2694a;
+            K[][] kArr = ObjectBigArrayBigList.this.f2658a;
             long j = this.pos;
             this.pos = j + 1;
             action.accept((Object) BigArrays.get(kArr, j));
@@ -1278,7 +1278,7 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
         public void forEachRemaining(Consumer<? super K> action) {
             long max = getWorkingMax();
             while (this.pos < max) {
-                action.accept((Object) BigArrays.get(ObjectBigArrayBigList.this.f2694a, this.pos));
+                action.accept((Object) BigArrays.get(ObjectBigArrayBigList.this.f2658a, this.pos));
                 this.pos++;
             }
         }
@@ -1331,12 +1331,12 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
         } else {
             try {
                 c = (ObjectBigArrayBigList) clone();
-                c.f2694a = (K[][]) ObjectBigArrays.newBigArray(this.size);
+                c.f2658a = (K[][]) ObjectBigArrays.newBigArray(this.size);
             } catch (CloneNotSupportedException e) {
                 throw new InternalError(e);
             }
         }
-        BigArrays.copy(this.f2694a, 0, c.f2694a, 0, this.size);
+        BigArrays.copy(this.f2658a, 0, c.f2658a, 0, this.size);
         return c;
     }
 
@@ -1350,8 +1350,8 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
         if (size64 != l.size64()) {
             return false;
         }
-        K[][] a1 = this.f2694a;
-        K[][] a2 = l.f2694a;
+        K[][] a1 = this.f2658a;
+        K[][] a2 = l.f2658a;
         if (a1 == a2) {
             return true;
         }
@@ -1384,8 +1384,8 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
     public int compareTo(ObjectBigArrayBigList<? extends K> l) {
         long s1 = size64();
         long s2 = l.size64();
-        K[][] a1 = this.f2694a;
-        Object[][] objArr = l.f2694a;
+        K[][] a1 = this.f2658a;
+        Object[][] objArr = l.f2658a;
         int i = 0;
         while (((long) i) < s1 && ((long) i) < s2) {
             int r = ((Comparable) BigArrays.get(a1, (long) i)).compareTo(BigArrays.get(objArr, (long) i));
@@ -1414,15 +1414,15 @@ public class ObjectBigArrayBigList<K> extends AbstractObjectBigList<K> implement
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; ((long) i) < this.size; i++) {
-            s.writeObject(BigArrays.get(this.f2694a, (long) i));
+            s.writeObject(BigArrays.get(this.f2658a, (long) i));
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f2694a = (K[][]) ObjectBigArrays.newBigArray(this.size);
+        this.f2658a = (K[][]) ObjectBigArrays.newBigArray(this.size);
         for (int i = 0; ((long) i) < this.size; i++) {
-            BigArrays.set(this.f2694a, (long) i, s.readObject());
+            BigArrays.set(this.f2658a, (long) i, s.readObject());
         }
     }
 }

@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ReliquaryOuterClass.class */
 public final class ReliquaryOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000fReliquary.proto\"q\n\tReliquary\u0012\r\n\u0005level\u0018\u0001 \u0001(\r\u0012\u000b\n\u0003exp\u0018\u0002 \u0001(\r\u0012\u0015\n\rpromote_level\u0018\u0003 \u0001(\r\u0012\u0014\n\fmain_prop_id\u0018\u0004 \u0001(\r\u0012\u001b\n\u0013append_prop_id_list\u0018\u0005 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000fReliquary.proto\"k\n\tReliquary\u0012\r\n\u0005level\u0018\u0001 \u0001(\r\u0012\u000b\n\u0003exp\u0018\u0002 \u0001(\r\u0012\u0014\n\fpromoteLevel\u0018\u0003 \u0001(\r\u0012\u0012\n\nmainPropId\u0018\u0004 \u0001(\r\u0012\u0018\n\u0010appendPropIdList\u0018\u0005 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_Reliquary_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_Reliquary_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_Reliquary_descriptor, new String[]{"Level", "Exp", "PromoteLevel", "MainPropId", "AppendPropIdList"});
 
@@ -61,11 +61,11 @@ public final class ReliquaryOuterClass {
         private int level_;
         public static final int EXP_FIELD_NUMBER = 2;
         private int exp_;
-        public static final int PROMOTE_LEVEL_FIELD_NUMBER = 3;
+        public static final int PROMOTELEVEL_FIELD_NUMBER = 3;
         private int promoteLevel_;
-        public static final int MAIN_PROP_ID_FIELD_NUMBER = 4;
+        public static final int MAINPROPID_FIELD_NUMBER = 4;
         private int mainPropId_;
-        public static final int APPEND_PROP_ID_LIST_FIELD_NUMBER = 5;
+        public static final int APPENDPROPIDLIST_FIELD_NUMBER = 5;
         private Internal.IntList appendPropIdList_;
         private int appendPropIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;

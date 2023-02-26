@@ -21,21 +21,21 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CombatInvokeEntryOuterClass.class */
 public final class CombatInvokeEntryOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017CombatInvokeEntry.proto\u001a\u0018CombatTypeArgument.proto\u001a\u0011ForwardType.proto\"x\n\u0011CombatInvokeEntry\u0012\"\n\fforward_type\u0018\u000b \u0001(\u000e2\f.ForwardType\u0012*\n\rargument_type\u0018\t \u0001(\u000e2\u0013.CombatTypeArgument\u0012\u0013\n\u000bcombat_data\u0018\u0007 \u0001(\fB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CombatTypeArgumentOuterClass.getDescriptor(), ForwardTypeOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017CombatInvokeEntry.proto\u001a\u0018CombatTypeArgument.proto\u001a\u0011ForwardType.proto\"u\n\u0011CombatInvokeEntry\u0012\u0012\n\ncombatData\u0018\u0007 \u0001(\f\u0012)\n\fargumentType\u0018\b \u0001(\u000e2\u0013.CombatTypeArgument\u0012!\n\u000bforwardType\u0018\u000f \u0001(\u000e2\f.ForwardTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CombatTypeArgumentOuterClass.getDescriptor(), ForwardTypeOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_CombatInvokeEntry_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_CombatInvokeEntry_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CombatInvokeEntry_descriptor, new String[]{"ForwardType", "ArgumentType", "CombatData"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_CombatInvokeEntry_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CombatInvokeEntry_descriptor, new String[]{"CombatData", "ArgumentType", "ForwardType"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CombatInvokeEntryOuterClass$CombatInvokeEntryOrBuilder.class */
     public interface CombatInvokeEntryOrBuilder extends MessageOrBuilder {
-        int getForwardTypeValue();
-
-        ForwardTypeOuterClass.ForwardType getForwardType();
+        ByteString getCombatData();
 
         int getArgumentTypeValue();
 
         CombatTypeArgumentOuterClass.CombatTypeArgument getArgumentType();
 
-        ByteString getCombatData();
+        int getForwardTypeValue();
+
+        ForwardTypeOuterClass.ForwardType getForwardType();
     }
 
     private CombatInvokeEntryOuterClass() {
@@ -51,12 +51,12 @@ public final class CombatInvokeEntryOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CombatInvokeEntryOuterClass$CombatInvokeEntry.class */
     public static final class CombatInvokeEntry extends GeneratedMessageV3 implements CombatInvokeEntryOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int FORWARD_TYPE_FIELD_NUMBER = 11;
-        private int forwardType_;
-        public static final int ARGUMENT_TYPE_FIELD_NUMBER = 9;
-        private int argumentType_;
-        public static final int COMBAT_DATA_FIELD_NUMBER = 7;
+        public static final int COMBATDATA_FIELD_NUMBER = 7;
         private ByteString combatData_;
+        public static final int ARGUMENTTYPE_FIELD_NUMBER = 8;
+        private int argumentType_;
+        public static final int FORWARDTYPE_FIELD_NUMBER = 15;
+        private int forwardType_;
         private byte memoizedIsInitialized;
         private static final CombatInvokeEntry DEFAULT_INSTANCE = new CombatInvokeEntry();
         private static final Parser<CombatInvokeEntry> PARSER = new AbstractParser<CombatInvokeEntry>() { // from class: emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntry.1
@@ -73,9 +73,9 @@ public final class CombatInvokeEntryOuterClass {
 
         private CombatInvokeEntry() {
             this.memoizedIsInitialized = -1;
-            this.forwardType_ = 0;
-            this.argumentType_ = 0;
             this.combatData_ = ByteString.EMPTY;
+            this.argumentType_ = 0;
+            this.forwardType_ = 0;
         }
 
         /* access modifiers changed from: protected */
@@ -108,10 +108,10 @@ public final class CombatInvokeEntryOuterClass {
                             case 58:
                                 this.combatData_ = input.readBytes();
                                 break;
-                            case 72:
+                            case 64:
                                 this.argumentType_ = input.readEnum();
                                 break;
-                            case 88:
+                            case 120:
                                 this.forwardType_ = input.readEnum();
                                 break;
                             default:
@@ -144,14 +144,8 @@ public final class CombatInvokeEntryOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntryOrBuilder
-        public int getForwardTypeValue() {
-            return this.forwardType_;
-        }
-
-        @Override // emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntryOrBuilder
-        public ForwardTypeOuterClass.ForwardType getForwardType() {
-            ForwardTypeOuterClass.ForwardType result = ForwardTypeOuterClass.ForwardType.valueOf(this.forwardType_);
-            return result == null ? ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
+        public ByteString getCombatData() {
+            return this.combatData_;
         }
 
         @Override // emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntryOrBuilder
@@ -166,8 +160,14 @@ public final class CombatInvokeEntryOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntryOrBuilder
-        public ByteString getCombatData() {
-            return this.combatData_;
+        public int getForwardTypeValue() {
+            return this.forwardType_;
+        }
+
+        @Override // emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntryOrBuilder
+        public ForwardTypeOuterClass.ForwardType getForwardType() {
+            ForwardTypeOuterClass.ForwardType result = ForwardTypeOuterClass.ForwardType.valueOf(this.forwardType_);
+            return result == null ? ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -189,10 +189,10 @@ public final class CombatInvokeEntryOuterClass {
                 output.writeBytes(7, this.combatData_);
             }
             if (this.argumentType_ != CombatTypeArgumentOuterClass.CombatTypeArgument.COMBAT_TYPE_ARGUMENT_NONE.getNumber()) {
-                output.writeEnum(9, this.argumentType_);
+                output.writeEnum(8, this.argumentType_);
             }
             if (this.forwardType_ != ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
-                output.writeEnum(11, this.forwardType_);
+                output.writeEnum(15, this.forwardType_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -208,10 +208,10 @@ public final class CombatInvokeEntryOuterClass {
                 size2 = 0 + CodedOutputStream.computeBytesSize(7, this.combatData_);
             }
             if (this.argumentType_ != CombatTypeArgumentOuterClass.CombatTypeArgument.COMBAT_TYPE_ARGUMENT_NONE.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(9, this.argumentType_);
+                size2 += CodedOutputStream.computeEnumSize(8, this.argumentType_);
             }
             if (this.forwardType_ != ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(11, this.forwardType_);
+                size2 += CodedOutputStream.computeEnumSize(15, this.forwardType_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -227,7 +227,7 @@ public final class CombatInvokeEntryOuterClass {
                 return equals(obj);
             }
             CombatInvokeEntry other = (CombatInvokeEntry) obj;
-            return this.forwardType_ == other.forwardType_ && this.argumentType_ == other.argumentType_ && getCombatData().equals(other.getCombatData()) && this.unknownFields.equals(other.unknownFields);
+            return getCombatData().equals(other.getCombatData()) && this.argumentType_ == other.argumentType_ && this.forwardType_ == other.forwardType_ && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -235,7 +235,7 @@ public final class CombatInvokeEntryOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + this.forwardType_)) + 9)) + this.argumentType_)) + 7)) + getCombatData().hashCode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getCombatData().hashCode())) + 8)) + this.argumentType_)) + 15)) + this.forwardType_)) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -314,9 +314,9 @@ public final class CombatInvokeEntryOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CombatInvokeEntryOuterClass$CombatInvokeEntry$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements CombatInvokeEntryOrBuilder {
-            private int forwardType_ = 0;
-            private int argumentType_ = 0;
             private ByteString combatData_ = ByteString.EMPTY;
+            private int argumentType_ = 0;
+            private int forwardType_ = 0;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return CombatInvokeEntryOuterClass.internal_static_CombatInvokeEntry_descriptor;
@@ -344,9 +344,9 @@ public final class CombatInvokeEntryOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.forwardType_ = 0;
-                this.argumentType_ = 0;
                 this.combatData_ = ByteString.EMPTY;
+                this.argumentType_ = 0;
+                this.forwardType_ = 0;
                 return this;
             }
 
@@ -372,9 +372,9 @@ public final class CombatInvokeEntryOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public CombatInvokeEntry buildPartial() {
                 CombatInvokeEntry result = new CombatInvokeEntry(this);
-                result.forwardType_ = this.forwardType_;
-                result.argumentType_ = this.argumentType_;
                 result.combatData_ = this.combatData_;
+                result.argumentType_ = this.argumentType_;
+                result.forwardType_ = this.forwardType_;
                 onBuilt();
                 return result;
             }
@@ -422,14 +422,14 @@ public final class CombatInvokeEntryOuterClass {
                 if (other == CombatInvokeEntry.getDefaultInstance()) {
                     return this;
                 }
-                if (other.forwardType_ != 0) {
-                    setForwardTypeValue(other.getForwardTypeValue());
+                if (other.getCombatData() != ByteString.EMPTY) {
+                    setCombatData(other.getCombatData());
                 }
                 if (other.argumentType_ != 0) {
                     setArgumentTypeValue(other.getArgumentTypeValue());
                 }
-                if (other.getCombatData() != ByteString.EMPTY) {
-                    setCombatData(other.getCombatData());
+                if (other.forwardType_ != 0) {
+                    setForwardTypeValue(other.getForwardTypeValue());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -464,33 +464,21 @@ public final class CombatInvokeEntryOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntryOrBuilder
-            public int getForwardTypeValue() {
-                return this.forwardType_;
+            public ByteString getCombatData() {
+                return this.combatData_;
             }
 
-            public Builder setForwardTypeValue(int value) {
-                this.forwardType_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntryOrBuilder
-            public ForwardTypeOuterClass.ForwardType getForwardType() {
-                ForwardTypeOuterClass.ForwardType result = ForwardTypeOuterClass.ForwardType.valueOf(this.forwardType_);
-                return result == null ? ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
-            }
-
-            public Builder setForwardType(ForwardTypeOuterClass.ForwardType value) {
+            public Builder setCombatData(ByteString value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
-                this.forwardType_ = value.getNumber();
+                this.combatData_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearForwardType() {
-                this.forwardType_ = 0;
+            public Builder clearCombatData() {
+                this.combatData_ = CombatInvokeEntry.getDefaultInstance().getCombatData();
                 onChanged();
                 return this;
             }
@@ -528,21 +516,33 @@ public final class CombatInvokeEntryOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntryOrBuilder
-            public ByteString getCombatData() {
-                return this.combatData_;
+            public int getForwardTypeValue() {
+                return this.forwardType_;
             }
 
-            public Builder setCombatData(ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.combatData_ = value;
+            public Builder setForwardTypeValue(int value) {
+                this.forwardType_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearCombatData() {
-                this.combatData_ = CombatInvokeEntry.getDefaultInstance().getCombatData();
+            @Override // emu.grasscutter.net.proto.CombatInvokeEntryOuterClass.CombatInvokeEntryOrBuilder
+            public ForwardTypeOuterClass.ForwardType getForwardType() {
+                ForwardTypeOuterClass.ForwardType result = ForwardTypeOuterClass.ForwardType.valueOf(this.forwardType_);
+                return result == null ? ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
+            }
+
+            public Builder setForwardType(ForwardTypeOuterClass.ForwardType value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.forwardType_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+
+            public Builder clearForwardType() {
+                this.forwardType_ = 0;
                 onChanged();
                 return this;
             }

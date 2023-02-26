@@ -22,19 +22,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EvtDoSkillSuccNotifyOuterClass.class */
 public final class EvtDoSkillSuccNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aEvtDoSkillSuccNotify.proto\u001a\u0011ForwardType.proto\u001a\fVector.proto\"y\n\u0014EvtDoSkillSuccNotify\u0012\u0011\n\tcaster_id\u0018\u000f \u0001(\r\u0012\"\n\fforward_type\u0018\t \u0001(\u000e2\f.ForwardType\u0012\u0010\n\bskill_id\u0018\u000e \u0001(\r\u0012\u0018\n\u0007forward\u0018\r \u0001(\u000b2\u0007.VectorB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ForwardTypeOuterClass.getDescriptor(), VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aEvtDoSkillSuccNotify.proto\u001a\u0011ForwardType.proto\u001a\fVector.proto\"v\n\u0014EvtDoSkillSuccNotify\u0012\u000f\n\u0007skillId\u0018\r \u0001(\r\u0012!\n\u000bforwardType\u0018\u0005 \u0001(\u000e2\f.ForwardType\u0012\u0010\n\bcasterId\u0018\u0002 \u0001(\r\u0012\u0018\n\u0007forward\u0018\u000e \u0001(\u000b2\u0007.VectorB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ForwardTypeOuterClass.getDescriptor(), VectorOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_EvtDoSkillSuccNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_EvtDoSkillSuccNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EvtDoSkillSuccNotify_descriptor, new String[]{"CasterId", "ForwardType", "SkillId", "Forward"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_EvtDoSkillSuccNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EvtDoSkillSuccNotify_descriptor, new String[]{"SkillId", "ForwardType", "CasterId", "Forward"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EvtDoSkillSuccNotifyOuterClass$EvtDoSkillSuccNotifyOrBuilder.class */
     public interface EvtDoSkillSuccNotifyOrBuilder extends MessageOrBuilder {
-        int getCasterId();
+        int getSkillId();
 
         int getForwardTypeValue();
 
         ForwardTypeOuterClass.ForwardType getForwardType();
 
-        int getSkillId();
+        int getCasterId();
 
         boolean hasForward();
 
@@ -56,13 +56,13 @@ public final class EvtDoSkillSuccNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EvtDoSkillSuccNotifyOuterClass$EvtDoSkillSuccNotify.class */
     public static final class EvtDoSkillSuccNotify extends GeneratedMessageV3 implements EvtDoSkillSuccNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CASTER_ID_FIELD_NUMBER = 15;
-        private int casterId_;
-        public static final int FORWARD_TYPE_FIELD_NUMBER = 9;
-        private int forwardType_;
-        public static final int SKILL_ID_FIELD_NUMBER = 14;
+        public static final int SKILLID_FIELD_NUMBER = 13;
         private int skillId_;
-        public static final int FORWARD_FIELD_NUMBER = 13;
+        public static final int FORWARDTYPE_FIELD_NUMBER = 5;
+        private int forwardType_;
+        public static final int CASTERID_FIELD_NUMBER = 2;
+        private int casterId_;
+        public static final int FORWARD_FIELD_NUMBER = 14;
         private VectorOuterClass.Vector forward_;
         private byte memoizedIsInitialized;
         private static final EvtDoSkillSuccNotify DEFAULT_INSTANCE = new EvtDoSkillSuccNotify();
@@ -110,10 +110,16 @@ public final class EvtDoSkillSuccNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 72:
+                            case 16:
+                                this.casterId_ = input.readUInt32();
+                                break;
+                            case 40:
                                 this.forwardType_ = input.readEnum();
                                 break;
-                            case 106:
+                            case 104:
+                                this.skillId_ = input.readUInt32();
+                                break;
+                            case 114:
                                 VectorOuterClass.Vector.Builder subBuilder = this.forward_ != null ? this.forward_.toBuilder() : null;
                                 this.forward_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -123,12 +129,6 @@ public final class EvtDoSkillSuccNotifyOuterClass {
                                     this.forward_ = subBuilder.buildPartial();
                                     break;
                                 }
-                            case 112:
-                                this.skillId_ = input.readUInt32();
-                                break;
-                            case 120:
-                                this.casterId_ = input.readUInt32();
-                                break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                     break;
@@ -159,8 +159,8 @@ public final class EvtDoSkillSuccNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.EvtDoSkillSuccNotifyOuterClass.EvtDoSkillSuccNotifyOrBuilder
-        public int getCasterId() {
-            return this.casterId_;
+        public int getSkillId() {
+            return this.skillId_;
         }
 
         @Override // emu.grasscutter.net.proto.EvtDoSkillSuccNotifyOuterClass.EvtDoSkillSuccNotifyOrBuilder
@@ -175,8 +175,8 @@ public final class EvtDoSkillSuccNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.EvtDoSkillSuccNotifyOuterClass.EvtDoSkillSuccNotifyOrBuilder
-        public int getSkillId() {
-            return this.skillId_;
+        public int getCasterId() {
+            return this.casterId_;
         }
 
         @Override // emu.grasscutter.net.proto.EvtDoSkillSuccNotifyOuterClass.EvtDoSkillSuccNotifyOrBuilder
@@ -209,17 +209,17 @@ public final class EvtDoSkillSuccNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.forwardType_ != ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
-                output.writeEnum(9, this.forwardType_);
+            if (this.casterId_ != 0) {
+                output.writeUInt32(2, this.casterId_);
             }
-            if (this.forward_ != null) {
-                output.writeMessage(13, getForward());
+            if (this.forwardType_ != ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
+                output.writeEnum(5, this.forwardType_);
             }
             if (this.skillId_ != 0) {
-                output.writeUInt32(14, this.skillId_);
+                output.writeUInt32(13, this.skillId_);
             }
-            if (this.casterId_ != 0) {
-                output.writeUInt32(15, this.casterId_);
+            if (this.forward_ != null) {
+                output.writeMessage(14, getForward());
             }
             this.unknownFields.writeTo(output);
         }
@@ -231,17 +231,17 @@ public final class EvtDoSkillSuccNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.forwardType_ != ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
-                size2 = 0 + CodedOutputStream.computeEnumSize(9, this.forwardType_);
+            if (this.casterId_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.casterId_);
             }
-            if (this.forward_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(13, getForward());
+            if (this.forwardType_ != ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
+                size2 += CodedOutputStream.computeEnumSize(5, this.forwardType_);
             }
             if (this.skillId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.skillId_);
+                size2 += CodedOutputStream.computeUInt32Size(13, this.skillId_);
             }
-            if (this.casterId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.casterId_);
+            if (this.forward_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(14, getForward());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -257,7 +257,7 @@ public final class EvtDoSkillSuccNotifyOuterClass {
                 return equals(obj);
             }
             EvtDoSkillSuccNotify other = (EvtDoSkillSuccNotify) obj;
-            if (getCasterId() == other.getCasterId() && this.forwardType_ == other.forwardType_ && getSkillId() == other.getSkillId() && hasForward() == other.hasForward()) {
+            if (getSkillId() == other.getSkillId() && this.forwardType_ == other.forwardType_ && getCasterId() == other.getCasterId() && hasForward() == other.hasForward()) {
                 return (!hasForward() || getForward().equals(other.getForward())) && this.unknownFields.equals(other.unknownFields);
             }
             return false;
@@ -268,9 +268,9 @@ public final class EvtDoSkillSuccNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getCasterId())) + 9)) + this.forwardType_)) + 14)) + getSkillId();
+            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + getSkillId())) + 5)) + this.forwardType_)) + 2)) + getCasterId();
             if (hasForward()) {
-                hash = (53 * ((37 * hash) + 13)) + getForward().hashCode();
+                hash = (53 * ((37 * hash) + 14)) + getForward().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -351,9 +351,9 @@ public final class EvtDoSkillSuccNotifyOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EvtDoSkillSuccNotifyOuterClass$EvtDoSkillSuccNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements EvtDoSkillSuccNotifyOrBuilder {
-            private int casterId_;
-            private int forwardType_ = 0;
             private int skillId_;
+            private int forwardType_ = 0;
+            private int casterId_;
             private VectorOuterClass.Vector forward_;
             private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> forwardBuilder_;
 
@@ -383,9 +383,9 @@ public final class EvtDoSkillSuccNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.casterId_ = 0;
-                this.forwardType_ = 0;
                 this.skillId_ = 0;
+                this.forwardType_ = 0;
+                this.casterId_ = 0;
                 if (this.forwardBuilder_ == null) {
                     this.forward_ = null;
                 } else {
@@ -417,9 +417,9 @@ public final class EvtDoSkillSuccNotifyOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public EvtDoSkillSuccNotify buildPartial() {
                 EvtDoSkillSuccNotify result = new EvtDoSkillSuccNotify(this);
-                result.casterId_ = this.casterId_;
-                result.forwardType_ = this.forwardType_;
                 result.skillId_ = this.skillId_;
+                result.forwardType_ = this.forwardType_;
+                result.casterId_ = this.casterId_;
                 if (this.forwardBuilder_ == null) {
                     result.forward_ = this.forward_;
                 } else {
@@ -472,14 +472,14 @@ public final class EvtDoSkillSuccNotifyOuterClass {
                 if (other == EvtDoSkillSuccNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getCasterId() != 0) {
-                    setCasterId(other.getCasterId());
+                if (other.getSkillId() != 0) {
+                    setSkillId(other.getSkillId());
                 }
                 if (other.forwardType_ != 0) {
                     setForwardTypeValue(other.getForwardTypeValue());
                 }
-                if (other.getSkillId() != 0) {
-                    setSkillId(other.getSkillId());
+                if (other.getCasterId() != 0) {
+                    setCasterId(other.getCasterId());
                 }
                 if (other.hasForward()) {
                     mergeForward(other.getForward());
@@ -517,18 +517,18 @@ public final class EvtDoSkillSuccNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.EvtDoSkillSuccNotifyOuterClass.EvtDoSkillSuccNotifyOrBuilder
-            public int getCasterId() {
-                return this.casterId_;
+            public int getSkillId() {
+                return this.skillId_;
             }
 
-            public Builder setCasterId(int value) {
-                this.casterId_ = value;
+            public Builder setSkillId(int value) {
+                this.skillId_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearCasterId() {
-                this.casterId_ = 0;
+            public Builder clearSkillId() {
+                this.skillId_ = 0;
                 onChanged();
                 return this;
             }
@@ -566,18 +566,18 @@ public final class EvtDoSkillSuccNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.EvtDoSkillSuccNotifyOuterClass.EvtDoSkillSuccNotifyOrBuilder
-            public int getSkillId() {
-                return this.skillId_;
+            public int getCasterId() {
+                return this.casterId_;
             }
 
-            public Builder setSkillId(int value) {
-                this.skillId_ = value;
+            public Builder setCasterId(int value) {
+                this.casterId_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearSkillId() {
-                this.skillId_ = 0;
+            public Builder clearCasterId() {
+                this.casterId_ = 0;
                 onChanged();
                 return this;
             }

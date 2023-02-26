@@ -26,7 +26,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarFetterInfoOuterClass.class */
 public final class AvatarFetterInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016AvatarFetterInfo.proto\u001a\u0010FetterData.proto\"­\u0001\n\u0010AvatarFetterInfo\u0012\u0012\n\nexp_number\u0018\u0001 \u0001(\r\u0012\u0011\n\texp_level\u0018\u0002 \u0001(\r\u0012\u0014\n\fopen_id_list\u0018\u0003 \u0003(\r\u0012\u0016\n\u000efinish_id_list\u0018\u0004 \u0003(\r\u0012\"\n\u001arewarded_fetter_level_list\u0018\u0005 \u0003(\r\u0012 \n\u000bfetter_list\u0018\u0006 \u0003(\u000b2\u000b.FetterDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{FetterDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016AvatarFetterInfo.proto\u001a\u0010FetterData.proto\"£\u0001\n\u0010AvatarFetterInfo\u0012\u0011\n\texpNumber\u0018\u0001 \u0001(\r\u0012\u0010\n\bexpLevel\u0018\u0002 \u0001(\r\u0012\u0012\n\nopenIdList\u0018\u0003 \u0003(\r\u0012\u0014\n\ffinishIdList\u0018\u0004 \u0003(\r\u0012\u001f\n\u0017rewardedFetterLevelList\u0018\u0005 \u0003(\r\u0012\u001f\n\nfetterList\u0018\u0006 \u0003(\u000b2\u000b.FetterDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{FetterDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AvatarFetterInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarFetterInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarFetterInfo_descriptor, new String[]{"ExpNumber", "ExpLevel", "OpenIdList", "FinishIdList", "RewardedFetterLevelList", "FetterList"});
 
@@ -78,20 +78,20 @@ public final class AvatarFetterInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarFetterInfoOuterClass$AvatarFetterInfo.class */
     public static final class AvatarFetterInfo extends GeneratedMessageV3 implements AvatarFetterInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int EXP_NUMBER_FIELD_NUMBER = 1;
+        public static final int EXPNUMBER_FIELD_NUMBER = 1;
         private int expNumber_;
-        public static final int EXP_LEVEL_FIELD_NUMBER = 2;
+        public static final int EXPLEVEL_FIELD_NUMBER = 2;
         private int expLevel_;
-        public static final int OPEN_ID_LIST_FIELD_NUMBER = 3;
+        public static final int OPENIDLIST_FIELD_NUMBER = 3;
         private Internal.IntList openIdList_;
         private int openIdListMemoizedSerializedSize;
-        public static final int FINISH_ID_LIST_FIELD_NUMBER = 4;
+        public static final int FINISHIDLIST_FIELD_NUMBER = 4;
         private Internal.IntList finishIdList_;
         private int finishIdListMemoizedSerializedSize;
-        public static final int REWARDED_FETTER_LEVEL_LIST_FIELD_NUMBER = 5;
+        public static final int REWARDEDFETTERLEVELLIST_FIELD_NUMBER = 5;
         private Internal.IntList rewardedFetterLevelList_;
         private int rewardedFetterLevelListMemoizedSerializedSize;
-        public static final int FETTER_LIST_FIELD_NUMBER = 6;
+        public static final int FETTERLIST_FIELD_NUMBER = 6;
         private List<FetterDataOuterClass.FetterData> fetterList_;
         private byte memoizedIsInitialized;
         private static final AvatarFetterInfo DEFAULT_INSTANCE = new AvatarFetterInfo();

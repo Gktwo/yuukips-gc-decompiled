@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeSceneJumpReqOuterClass.class */
 public final class HomeSceneJumpReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016HomeSceneJumpReq.proto\"/\n\u0010HomeSceneJumpReq\u0012\u001b\n\u0013is_enter_room_scene\u0018\u0002 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016HomeSceneJumpReq.proto\",\n\u0010HomeSceneJumpReq\u0012\u0018\n\u0010isEnterRoomScene\u0018\r \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_HomeSceneJumpReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeSceneJumpReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeSceneJumpReq_descriptor, new String[]{"IsEnterRoomScene"});
 
@@ -42,7 +42,7 @@ public final class HomeSceneJumpReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeSceneJumpReqOuterClass$HomeSceneJumpReq.class */
     public static final class HomeSceneJumpReq extends GeneratedMessageV3 implements HomeSceneJumpReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_ENTER_ROOM_SCENE_FIELD_NUMBER = 2;
+        public static final int ISENTERROOMSCENE_FIELD_NUMBER = 13;
         private boolean isEnterRoomScene_;
         private byte memoizedIsInitialized;
         private static final HomeSceneJumpReq DEFAULT_INSTANCE = new HomeSceneJumpReq();
@@ -89,7 +89,7 @@ public final class HomeSceneJumpReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 16:
+                            case 104:
                                 this.isEnterRoomScene_ = input.readBool();
                                 break;
                             default:
@@ -142,7 +142,7 @@ public final class HomeSceneJumpReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.isEnterRoomScene_) {
-                output.writeBool(2, this.isEnterRoomScene_);
+                output.writeBool(13, this.isEnterRoomScene_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -155,7 +155,7 @@ public final class HomeSceneJumpReqOuterClass {
             }
             int size2 = 0;
             if (this.isEnterRoomScene_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(2, this.isEnterRoomScene_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(13, this.isEnterRoomScene_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -179,7 +179,7 @@ public final class HomeSceneJumpReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + Internal.hashBoolean(getIsEnterRoomScene()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + Internal.hashBoolean(getIsEnterRoomScene()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

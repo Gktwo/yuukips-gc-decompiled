@@ -4,7 +4,6 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.packet.PacketOpcodesUtils;
 import emu.grasscutter.server.event.game.SendPacketEvent;
 import emu.grasscutter.server.game.GameSessionManager;
 import emu.grasscutter.utils.Crypto;
@@ -79,7 +78,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
             r1 = r7
             java.lang.Integer r1 = java.lang.Integer.valueOf(r1)
             boolean r0 = r0.contains(r1)
-            if (r0 != 0) goto L_0x0043
+            if (r0 != 0) goto L_0x0023
             ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
             r1 = r6
             r2 = r7
@@ -87,24 +86,12 @@ public class GameSession implements GameSessionManager.KcpChannel {
             r3 = r7
             // decode failed: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (Ljava/lang/String;, Ljava/lang/String;, I)Ljava/lang/String;}, :  ()]}
             r0.debug(r1)
-            r0 = r8
-            if (r0 == 0) goto L_0x0043
-            emu.grasscutter.config.ConfigContainer$Server r0 = emu.grasscutter.config.Configuration.SERVER
-            java.util.Set<java.lang.Integer> r0 = r0.DebugWatchPayload
-            r1 = r7
-            java.lang.Integer r1 = java.lang.Integer.valueOf(r1)
-            boolean r0 = r0.contains(r1)
-            if (r0 == 0) goto L_0x0043
-            ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
-            r1 = r8
-            java.lang.String r1 = emu.grasscutter.utils.Utils.bytesToHex(r1)
-            r0.debug(r1)
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: emu.grasscutter.server.game.GameSession.logPacket(java.lang.String, int, byte[]):void");
     }
 
-    /*  JADX ERROR: Dependency scan failed at insn: 0x0075: INVOKE_CUSTOM r-18, r-17, r0
+    /*  JADX ERROR: Dependency scan failed at insn: 0x0060: INVOKE_CUSTOM r-14, r-13, r0
         java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
         	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
         	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
@@ -120,7 +107,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
         	at jadx.core.dex.visitors.usage.UsageInfoVisitor.init(UsageInfoVisitor.java:36)
         	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:267)
         */
-    /*  JADX ERROR: Failed to decode insn: 0x0075: INVOKE_CUSTOM r1, r2, r0, method: emu.grasscutter.server.game.GameSession.handleClose():void
+    /*  JADX ERROR: Failed to decode insn: 0x0060: INVOKE_CUSTOM r1, r2, r0, method: emu.grasscutter.server.game.GameSession.handleClose():void
         jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I, J)Ljava/lang/String;},  | ]}
         	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:55)
         	at jadx.core.dex.instructions.InsnDecoder.invoke(InsnDecoder.java:568)
@@ -156,7 +143,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
             r0.onLogout(r1)
             r0 = r5
             boolean r0 = r0.isRequest
-            if (r0 != 0) goto L_0x0034
+            if (r0 != 0) goto L_0x006b
             ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
             java.lang.String r1 = "Unexpected Disconnect: {} "
             r2 = r5
@@ -165,7 +152,30 @@ public class GameSession implements GameSessionManager.KcpChannel {
             r0 = r5
             r1 = 0
             r0.IsLogout(r1)
-            goto L_0x0046
+            emu.grasscutter.server.game.Ratelimit r0 = new emu.grasscutter.server.game.Ratelimit
+            r1 = r0
+            r1.<init>()
+            r6 = r0
+            r0 = r6
+            java.lang.String r1 = "disconnected"
+            r2 = 10
+            r3 = 60
+            r0.Set(r1, r2, r3)
+            r0 = r6
+            boolean r0 = r0.IsCount()
+            if (r0 == 0) goto L_0x0055
+            r0 = 0
+            java.lang.String r1 = "We detected many disconnects"
+            emu.grasscutter.server.game.GameServer.doExit(r0, r1)
+            goto L_0x0068
+            ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
+            r1 = r6
+            int r1 = r1.GetCount()
+            r2 = r6
+            long r2 = r2.GetMs()
+            // decode failed: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I, J)Ljava/lang/String;},  | ]}
+            r0.warn(r1)
+            goto L_0x007d
             ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
             java.lang.String r1 = "Disconnect Normal: {} "
             r2 = r5
@@ -174,29 +184,6 @@ public class GameSession implements GameSessionManager.KcpChannel {
             r0 = r5
             r1 = 1
             r0.IsLogout(r1)
-            emu.grasscutter.server.game.Ratelimit r0 = new emu.grasscutter.server.game.Ratelimit
-            r1 = r0
-            r1.<init>()
-            r6 = r0
-            r0 = r6
-            java.lang.String r1 = "disconnected"
-            r2 = 10
-            r3 = 15
-            r0.Set(r1, r2, r3)
-            r0 = r6
-            boolean r0 = r0.m1192Is()
-            if (r0 == 0) goto L_0x006a
-            r0 = 0
-            java.lang.String r1 = "We detected many disconnects"
-            emu.grasscutter.server.game.GameServer.doExit(r0, r1)
-            goto L_0x007d
-            ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
-            r1 = r6
-            int r1 = r1.GetCount()
-            r2 = r6
-            long r2 = r2.GetMs()
-            // decode failed: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I, J)Ljava/lang/String;},  | ]}
-            r0.warn(r1)
             r0 = r5
             r1 = 0
             r0.tunnel = r1
@@ -533,11 +520,10 @@ public class GameSession implements GameSessionManager.KcpChannel {
             Grasscutter.getLogger().warn("Tried to send packet with missing cmd id!");
             return;
         }
-        if (PacketOpcodesUtils.BANNED_PACKETS.contains(Integer.valueOf(packet.getOpcode()))) {
-        }
         if (packet.shouldBuildHeader()) {
             packet.buildHeader(getNextClientSequence());
         }
+        logPacket("SEND", packet.getOpcode(), packet.getData());
         SendPacketEvent event = new SendPacketEvent(this, packet);
         event.call();
         if (!event.isCanceled() && this.tunnel != null) {
@@ -581,6 +567,7 @@ public class GameSession implements GameSessionManager.KcpChannel {
                         packet.release();
                         return;
                     }
+                    logPacket("RECV", opcode, payload);
                     getServer().getPacketHandler().handle(this, opcode, header, payload);
                 } catch (Exception e) {
                     Grasscutter.getLogger().error("Error1: handleReceive", (Throwable) e);
@@ -640,9 +627,9 @@ public class GameSession implements GameSessionManager.KcpChannel {
 
     public void IsLogout(boolean logout) {
         if (logout) {
-            send(new BasePacket(161));
+            send(new BasePacket(180));
         } else {
-            send(new BasePacket(152));
+            send(new BasePacket(160));
         }
         close_tunnel();
     }

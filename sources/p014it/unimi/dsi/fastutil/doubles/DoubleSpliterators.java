@@ -302,22 +302,22 @@ public final class DoubleSpliterators {
     private static class SpliteratorWrapper implements DoubleSpliterator {
 
         /* renamed from: i */
-        final Spliterator<Double> f1753i;
+        final Spliterator<Double> f1717i;
 
         public SpliteratorWrapper(Spliterator<Double> i) {
-            this.f1753i = i;
+            this.f1717i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleSpliterator
         public boolean tryAdvance(DoubleConsumer action) {
-            return this.f1753i.tryAdvance(action);
+            return this.f1717i.tryAdvance(action);
         }
 
         @Override // java.util.Spliterator.OfDouble
         public boolean tryAdvance(DoubleConsumer action) {
             Consumer<? super Double> consumer;
             Objects.requireNonNull(action);
-            Spliterator<Double> spliterator = this.f1753i;
+            Spliterator<Double> spliterator = this.f1717i;
             if (action instanceof Consumer) {
                 consumer = (Consumer) action;
             } else {
@@ -332,19 +332,19 @@ public final class DoubleSpliterators {
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleSpliterator, java.util.Spliterator.OfDouble, java.util.Spliterator
         @Deprecated
         public boolean tryAdvance(Consumer<? super Double> action) {
-            return this.f1753i.tryAdvance(action);
+            return this.f1717i.tryAdvance(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleSpliterator
         public void forEachRemaining(DoubleConsumer action) {
-            this.f1753i.forEachRemaining(action);
+            this.f1717i.forEachRemaining(action);
         }
 
         @Override // java.util.Spliterator.OfDouble
         public void forEachRemaining(DoubleConsumer action) {
             Consumer<? super Double> consumer;
             Objects.requireNonNull(action);
-            Spliterator<Double> spliterator = this.f1753i;
+            Spliterator<Double> spliterator = this.f1717i;
             if (action instanceof Consumer) {
                 consumer = (Consumer) action;
             } else {
@@ -359,27 +359,27 @@ public final class DoubleSpliterators {
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleSpliterator, java.util.Spliterator.OfDouble, java.util.Spliterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Double> action) {
-            this.f1753i.forEachRemaining(action);
+            this.f1717i.forEachRemaining(action);
         }
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return this.f1753i.estimateSize();
+            return this.f1717i.estimateSize();
         }
 
         @Override // java.util.Spliterator
         public int characteristics() {
-            return this.f1753i.characteristics();
+            return this.f1717i.characteristics();
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleSpliterator, java.util.Spliterator
         public DoubleComparator getComparator() {
-            return DoubleComparators.asDoubleComparator(this.f1753i.getComparator());
+            return DoubleComparators.asDoubleComparator(this.f1717i.getComparator());
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleSpliterator, java.util.Spliterator.OfDouble, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public DoubleSpliterator trySplit() {
-            Spliterator<Double> innerSplit = this.f1753i.trySplit();
+            Spliterator<Double> innerSplit = this.f1717i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -404,7 +404,7 @@ public final class DoubleSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleSpliterators.SpliteratorWrapper, p014it.unimi.dsi.fastutil.doubles.DoubleSpliterator, java.util.Spliterator.OfDouble, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public DoubleSpliterator trySplit() {
-            Spliterator<Double> innerSplit = this.f1753i.trySplit();
+            Spliterator<Double> innerSplit = this.f1717i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -417,40 +417,40 @@ public final class DoubleSpliterators {
     private static class PrimitiveSpliteratorWrapper implements DoubleSpliterator {
 
         /* renamed from: i */
-        final Spliterator.OfDouble f1751i;
+        final Spliterator.OfDouble f1715i;
 
         public PrimitiveSpliteratorWrapper(Spliterator.OfDouble i) {
-            this.f1751i = i;
+            this.f1715i = i;
         }
 
         @Override // java.util.Spliterator.OfDouble
         public boolean tryAdvance(DoubleConsumer action) {
-            return this.f1751i.tryAdvance(action);
+            return this.f1715i.tryAdvance(action);
         }
 
         @Override // java.util.Spliterator.OfDouble
         public void forEachRemaining(DoubleConsumer action) {
-            this.f1751i.forEachRemaining(action);
+            this.f1715i.forEachRemaining(action);
         }
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return this.f1751i.estimateSize();
+            return this.f1715i.estimateSize();
         }
 
         @Override // java.util.Spliterator
         public int characteristics() {
-            return this.f1751i.characteristics();
+            return this.f1715i.characteristics();
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleSpliterator, java.util.Spliterator
         public DoubleComparator getComparator() {
-            return DoubleComparators.asDoubleComparator(this.f1751i.getComparator());
+            return DoubleComparators.asDoubleComparator(this.f1715i.getComparator());
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleSpliterator, java.util.Spliterator.OfDouble, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public DoubleSpliterator trySplit() {
-            Spliterator.OfDouble innerSplit = this.f1751i.trySplit();
+            Spliterator.OfDouble innerSplit = this.f1715i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -475,7 +475,7 @@ public final class DoubleSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleSpliterators.PrimitiveSpliteratorWrapper, p014it.unimi.dsi.fastutil.doubles.DoubleSpliterator, java.util.Spliterator.OfDouble, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public DoubleSpliterator trySplit() {
-            Spliterator.OfDouble innerSplit = this.f1751i.trySplit();
+            Spliterator.OfDouble innerSplit = this.f1715i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -658,7 +658,7 @@ public final class DoubleSpliterators {
         private static final int CHARACTERISTICS_NOT_SUPPORTED_WHILE_MULTIPLE = 5;
 
         /* renamed from: a */
-        final DoubleSpliterator[] f1752a;
+        final DoubleSpliterator[] f1716a;
         int offset;
         int length;
         long remainingEstimatedExceptCurrent;
@@ -667,7 +667,7 @@ public final class DoubleSpliterators {
         public SpliteratorConcatenator(DoubleSpliterator[] a, int offset, int length) {
             this.remainingEstimatedExceptCurrent = LongCompanionObject.MAX_VALUE;
             this.characteristics = 0;
-            this.f1752a = a;
+            this.f1716a = a;
             this.offset = offset;
             this.length = length;
             this.remainingEstimatedExceptCurrent = recomputeRemaining();
@@ -696,7 +696,7 @@ public final class DoubleSpliterators {
                 r0 = r6
                 if (r0 <= 0) goto L_0x004e
                 r0 = r5
-                it.unimi.dsi.fastutil.doubles.DoubleSpliterator[] r0 = r0.f1752a
+                it.unimi.dsi.fastutil.doubles.DoubleSpliterator[] r0 = r0.f1716a
                 r1 = r7
                 int r7 = r7 + 1
                 r0 = r0[r1]
@@ -746,7 +746,7 @@ public final class DoubleSpliterators {
             }
             while (curLength > 0) {
                 curOffset++;
-                current &= this.f1752a[curOffset].characteristics();
+                current &= this.f1716a[curOffset].characteristics();
                 curLength--;
             }
             return current;
@@ -767,7 +767,7 @@ public final class DoubleSpliterators {
             while (true) {
                 if (this.length <= 0) {
                     break;
-                } else if (this.f1752a[this.offset].tryAdvance(action)) {
+                } else if (this.f1716a[this.offset].tryAdvance(action)) {
                     any = true;
                     break;
                 } else {
@@ -780,7 +780,7 @@ public final class DoubleSpliterators {
         @Override // java.util.Spliterator.OfDouble
         public void forEachRemaining(DoubleConsumer action) {
             while (this.length > 0) {
-                this.f1752a[this.offset].forEachRemaining(action);
+                this.f1716a[this.offset].forEachRemaining(action);
                 advanceNextSpliterator();
             }
         }
@@ -789,7 +789,7 @@ public final class DoubleSpliterators {
         @Deprecated
         public void forEachRemaining(Consumer<? super Double> action) {
             while (this.length > 0) {
-                this.f1752a[this.offset].forEachRemaining(action);
+                this.f1716a[this.offset].forEachRemaining(action);
                 advanceNextSpliterator();
             }
         }
@@ -799,7 +799,7 @@ public final class DoubleSpliterators {
             if (this.length <= 0) {
                 return 0;
             }
-            long est = this.f1752a[this.offset].estimateSize() + this.remainingEstimatedExceptCurrent;
+            long est = this.f1716a[this.offset].estimateSize() + this.remainingEstimatedExceptCurrent;
             if (est < 0) {
                 return LongCompanionObject.MAX_VALUE;
             }
@@ -814,7 +814,7 @@ public final class DoubleSpliterators {
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleSpliterator, java.util.Spliterator
         public DoubleComparator getComparator() {
             if (this.length == 1 && (this.characteristics & 4) != 0) {
-                return this.f1752a[this.offset].getComparator();
+                return this.f1716a[this.offset].getComparator();
             }
             throw new IllegalStateException();
         }
@@ -825,16 +825,16 @@ public final class DoubleSpliterators {
                 case 0:
                     return null;
                 case 1:
-                    DoubleSpliterator split = this.f1752a[this.offset].trySplit();
-                    this.characteristics = this.f1752a[this.offset].characteristics();
+                    DoubleSpliterator split = this.f1716a[this.offset].trySplit();
+                    this.characteristics = this.f1716a[this.offset].characteristics();
                     return split;
                 case 2:
-                    DoubleSpliterator[] doubleSpliteratorArr = this.f1752a;
+                    DoubleSpliterator[] doubleSpliteratorArr = this.f1716a;
                     int i = this.offset;
                     this.offset = i + 1;
                     DoubleSpliterator split2 = doubleSpliteratorArr[i];
                     this.length--;
-                    this.characteristics = this.f1752a[this.offset].characteristics();
+                    this.characteristics = this.f1716a[this.offset].characteristics();
                     this.remainingEstimatedExceptCurrent = 0;
                     return split2;
                 default:
@@ -844,7 +844,7 @@ public final class DoubleSpliterators {
                     this.length -= mid;
                     this.remainingEstimatedExceptCurrent = recomputeRemaining();
                     this.characteristics = computeCharacteristics();
-                    return new SpliteratorConcatenator(this.f1752a, ret_offset, mid);
+                    return new SpliteratorConcatenator(this.f1716a, ret_offset, mid);
             }
         }
 
@@ -856,7 +856,7 @@ public final class DoubleSpliterators {
                 return 0;
             }
             while (c < n && this.length >= 0) {
-                c += this.f1752a[this.offset].skip(n - c);
+                c += this.f1716a[this.offset].skip(n - c);
                 if (c < n) {
                     advanceNextSpliterator();
                 }

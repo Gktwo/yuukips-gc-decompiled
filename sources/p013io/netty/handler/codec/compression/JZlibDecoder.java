@@ -13,7 +13,7 @@ import p013io.netty.util.internal.ObjectUtil;
 public class JZlibDecoder extends ZlibDecoder {
 
     /* renamed from: z */
-    private final Inflater f1006z;
+    private final Inflater f970z;
     private byte[] dictionary;
     private volatile boolean finished;
 
@@ -31,11 +31,11 @@ public class JZlibDecoder extends ZlibDecoder {
 
     public JZlibDecoder(ZlibWrapper wrapper, int maxAllocation) {
         super(maxAllocation);
-        this.f1006z = new Inflater();
+        this.f970z = new Inflater();
         ObjectUtil.checkNotNull(wrapper, "wrapper");
-        int resultCode = this.f1006z.init(ZlibUtil.convertWrapperType(wrapper));
+        int resultCode = this.f970z.init(ZlibUtil.convertWrapperType(wrapper));
         if (resultCode != 0) {
-            ZlibUtil.fail(this.f1006z, "initialization failure", resultCode);
+            ZlibUtil.fail(this.f970z, "initialization failure", resultCode);
         }
     }
 
@@ -45,11 +45,11 @@ public class JZlibDecoder extends ZlibDecoder {
 
     public JZlibDecoder(byte[] dictionary, int maxAllocation) {
         super(maxAllocation);
-        this.f1006z = new Inflater();
+        this.f970z = new Inflater();
         this.dictionary = (byte[]) ObjectUtil.checkNotNull(dictionary, "dictionary");
-        int resultCode = this.f1006z.inflateInit(JZlib.W_ZLIB);
+        int resultCode = this.f970z.inflateInit(JZlib.W_ZLIB);
         if (resultCode != 0) {
-            ZlibUtil.fail(this.f1006z, "initialization failure", resultCode);
+            ZlibUtil.fail(this.f970z, "initialization failure", resultCode);
         }
     }
 
@@ -67,32 +67,32 @@ public class JZlibDecoder extends ZlibDecoder {
         int inputLength = in.readableBytes();
         if (inputLength != 0) {
             try {
-                this.f1006z.avail_in = inputLength;
+                this.f970z.avail_in = inputLength;
                 if (in.hasArray()) {
-                    this.f1006z.next_in = in.array();
-                    this.f1006z.next_in_index = in.arrayOffset() + in.readerIndex();
+                    this.f970z.next_in = in.array();
+                    this.f970z.next_in_index = in.arrayOffset() + in.readerIndex();
                 } else {
                     byte[] array = new byte[inputLength];
                     in.getBytes(in.readerIndex(), array);
-                    this.f1006z.next_in = array;
-                    this.f1006z.next_in_index = 0;
+                    this.f970z.next_in = array;
+                    this.f970z.next_in_index = 0;
                 }
-                int oldNextInIndex = this.f1006z.next_in_index;
+                int oldNextInIndex = this.f970z.next_in_index;
                 ByteBuf decompressed = prepareDecompressBuffer(ctx, null, inputLength << 1);
                 while (true) {
-                    decompressed = prepareDecompressBuffer(ctx, decompressed, this.f1006z.avail_in << 1);
-                    this.f1006z.avail_out = decompressed.writableBytes();
-                    this.f1006z.next_out = decompressed.array();
-                    this.f1006z.next_out_index = decompressed.arrayOffset() + decompressed.writerIndex();
-                    int oldNextOutIndex = this.f1006z.next_out_index;
-                    int resultCode = this.f1006z.inflate(2);
-                    int outputLength = this.f1006z.next_out_index - oldNextOutIndex;
+                    decompressed = prepareDecompressBuffer(ctx, decompressed, this.f970z.avail_in << 1);
+                    this.f970z.avail_out = decompressed.writableBytes();
+                    this.f970z.next_out = decompressed.array();
+                    this.f970z.next_out_index = decompressed.arrayOffset() + decompressed.writerIndex();
+                    int oldNextOutIndex = this.f970z.next_out_index;
+                    int resultCode = this.f970z.inflate(2);
+                    int outputLength = this.f970z.next_out_index - oldNextOutIndex;
                     if (outputLength > 0) {
                         decompressed.writerIndex(decompressed.writerIndex() + outputLength);
                     }
                     switch (resultCode) {
                         case -5:
-                            if (this.f1006z.avail_in > 0) {
+                            if (this.f970z.avail_in > 0) {
                                 break;
                             } else {
                                 break;
@@ -102,38 +102,38 @@ public class JZlibDecoder extends ZlibDecoder {
                         case -2:
                         case -1:
                         default:
-                            ZlibUtil.fail(this.f1006z, "decompression failure", resultCode);
+                            ZlibUtil.fail(this.f970z, "decompression failure", resultCode);
                             break;
                         case 0:
                             break;
                         case 1:
                             this.finished = true;
-                            this.f1006z.inflateEnd();
+                            this.f970z.inflateEnd();
                             break;
                         case 2:
                             if (this.dictionary != null) {
-                                int resultCode2 = this.f1006z.inflateSetDictionary(this.dictionary, this.dictionary.length);
+                                int resultCode2 = this.f970z.inflateSetDictionary(this.dictionary, this.dictionary.length);
                                 if (resultCode2 == 0) {
                                     break;
                                 } else {
-                                    ZlibUtil.fail(this.f1006z, "failed to set the dictionary", resultCode2);
+                                    ZlibUtil.fail(this.f970z, "failed to set the dictionary", resultCode2);
                                     break;
                                 }
                             } else {
-                                ZlibUtil.fail(this.f1006z, "decompression failure", resultCode);
+                                ZlibUtil.fail(this.f970z, "decompression failure", resultCode);
                                 break;
                             }
                     }
                 }
-                in.skipBytes(this.f1006z.next_in_index - oldNextInIndex);
+                in.skipBytes(this.f970z.next_in_index - oldNextInIndex);
                 if (decompressed.isReadable()) {
                     out.add(decompressed);
                 } else {
                     decompressed.release();
                 }
             } finally {
-                this.f1006z.next_in = null;
-                this.f1006z.next_out = null;
+                this.f970z.next_in = null;
+                this.f970z.next_out = null;
             }
         }
     }

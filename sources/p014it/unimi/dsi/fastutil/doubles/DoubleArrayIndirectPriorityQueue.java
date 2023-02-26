@@ -12,7 +12,7 @@ public class DoubleArrayIndirectPriorityQueue implements DoubleIndirectPriorityQ
     protected int size;
 
     /* renamed from: c */
-    protected DoubleComparator f1700c;
+    protected DoubleComparator f1664c;
     protected int firstIndex;
     protected boolean firstIndexValid;
 
@@ -22,7 +22,7 @@ public class DoubleArrayIndirectPriorityQueue implements DoubleIndirectPriorityQ
             this.array = new int[capacity];
         }
         this.refArray = refArray;
-        this.f1700c = c;
+        this.f1664c = c;
     }
 
     public DoubleArrayIndirectPriorityQueue(double[] refArray, int capacity) {
@@ -63,12 +63,12 @@ public class DoubleArrayIndirectPriorityQueue implements DoubleIndirectPriorityQ
         int i = this.size - 1;
         int firstIndex = i;
         double first = this.refArray[this.array[firstIndex]];
-        if (this.f1700c != null) {
+        if (this.f1664c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f1700c.compare(this.refArray[this.array[i]], first) < 0) {
+                } else if (this.f1664c.compare(this.refArray[this.array[i]], first) < 0) {
                     firstIndex = i;
                     first = this.refArray[this.array[i]];
                 }
@@ -92,12 +92,12 @@ public class DoubleArrayIndirectPriorityQueue implements DoubleIndirectPriorityQ
         int i = this.size - 1;
         int lastIndex = i;
         double last = this.refArray[this.array[lastIndex]];
-        if (this.f1700c != null) {
+        if (this.f1664c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f1700c.compare(last, this.refArray[this.array[i]]) < 0) {
+                } else if (this.f1664c.compare(last, this.refArray[this.array[i]]) < 0) {
                     lastIndex = i;
                     last = this.refArray[this.array[i]];
                 }
@@ -138,11 +138,11 @@ public class DoubleArrayIndirectPriorityQueue implements DoubleIndirectPriorityQ
         }
         if (!this.firstIndexValid) {
             this.firstIndexValid = false;
-        } else if (this.f1700c == null) {
+        } else if (this.f1664c == null) {
             if (Double.compare(this.refArray[x], this.refArray[this.array[this.firstIndex]]) < 0) {
                 this.firstIndex = this.size;
             }
-        } else if (this.f1700c.compare(this.refArray[x], this.refArray[this.array[this.firstIndex]]) < 0) {
+        } else if (this.f1664c.compare(this.refArray[x], this.refArray[this.array[this.firstIndex]]) < 0) {
             this.firstIndex = this.size;
         }
         int[] iArr = this.array;
@@ -255,7 +255,7 @@ public class DoubleArrayIndirectPriorityQueue implements DoubleIndirectPriorityQ
     /* Return type fixed from 'it.unimi.dsi.fastutil.doubles.DoubleComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIndirectPriorityQueue, p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public Comparator<? super Double> comparator() {
-        return this.f1700c;
+        return this.f1664c;
     }
 
     public String toString() {

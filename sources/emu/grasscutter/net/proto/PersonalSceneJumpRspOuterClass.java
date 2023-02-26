@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PersonalSceneJumpRspOuterClass.class */
 public final class PersonalSceneJumpRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aPersonalSceneJumpRsp.proto\u001a\fVector.proto\"Y\n\u0014PersonalSceneJumpRsp\u0012\u0015\n\rdest_scene_id\u0018\u0003 \u0001(\r\u0012\u0019\n\bdest_pos\u0018\b \u0001(\u000b2\u0007.Vector\u0012\u000f\n\u0007retcode\u0018\u0007 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aPersonalSceneJumpRsp.proto\u001a\fVector.proto\"V\n\u0014PersonalSceneJumpRsp\u0012\u0013\n\u000bdestSceneId\u0018\u0003 \u0001(\r\u0012\u0018\n\u0007destPos\u0018\u0002 \u0001(\u000b2\u0007.Vector\u0012\u000f\n\u0007retcode\u0018\f \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_PersonalSceneJumpRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PersonalSceneJumpRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PersonalSceneJumpRsp_descriptor, new String[]{"DestSceneId", "DestPos", "Retcode"});
 
@@ -51,11 +51,11 @@ public final class PersonalSceneJumpRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PersonalSceneJumpRspOuterClass$PersonalSceneJumpRsp.class */
     public static final class PersonalSceneJumpRsp extends GeneratedMessageV3 implements PersonalSceneJumpRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int DEST_SCENE_ID_FIELD_NUMBER = 3;
+        public static final int DESTSCENEID_FIELD_NUMBER = 3;
         private int destSceneId_;
-        public static final int DEST_POS_FIELD_NUMBER = 8;
+        public static final int DESTPOS_FIELD_NUMBER = 2;
         private VectorOuterClass.Vector destPos_;
-        public static final int RETCODE_FIELD_NUMBER = 7;
+        public static final int RETCODE_FIELD_NUMBER = 12;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final PersonalSceneJumpRsp DEFAULT_INSTANCE = new PersonalSceneJumpRsp();
@@ -103,13 +103,7 @@ public final class PersonalSceneJumpRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 24:
-                                    this.destSceneId_ = input.readUInt32();
-                                    break;
-                                case 56:
-                                    this.retcode_ = input.readInt32();
-                                    break;
-                                case 66:
+                                case 18:
                                     VectorOuterClass.Vector.Builder subBuilder = this.destPos_ != null ? this.destPos_.toBuilder() : null;
                                     this.destPos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -119,6 +113,12 @@ public final class PersonalSceneJumpRspOuterClass {
                                         this.destPos_ = subBuilder.buildPartial();
                                         break;
                                     }
+                                case 24:
+                                    this.destSceneId_ = input.readUInt32();
+                                    break;
+                                case 96:
+                                    this.retcode_ = input.readInt32();
+                                    break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                         break;
@@ -189,14 +189,14 @@ public final class PersonalSceneJumpRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.destPos_ != null) {
+                output.writeMessage(2, getDestPos());
+            }
             if (this.destSceneId_ != 0) {
                 output.writeUInt32(3, this.destSceneId_);
             }
             if (this.retcode_ != 0) {
-                output.writeInt32(7, this.retcode_);
-            }
-            if (this.destPos_ != null) {
-                output.writeMessage(8, getDestPos());
+                output.writeInt32(12, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -208,14 +208,14 @@ public final class PersonalSceneJumpRspOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.destPos_ != null) {
+                size2 = 0 + CodedOutputStream.computeMessageSize(2, getDestPos());
+            }
             if (this.destSceneId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.destSceneId_);
+                size2 += CodedOutputStream.computeUInt32Size(3, this.destSceneId_);
             }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(7, this.retcode_);
-            }
-            if (this.destPos_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(8, getDestPos());
+                size2 += CodedOutputStream.computeInt32Size(12, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -244,9 +244,9 @@ public final class PersonalSceneJumpRspOuterClass {
             }
             int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getDestSceneId();
             if (hasDestPos()) {
-                hash = (53 * ((37 * hash) + 8)) + getDestPos().hashCode();
+                hash = (53 * ((37 * hash) + 2)) + getDestPos().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 7)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 12)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

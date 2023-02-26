@@ -23,13 +23,13 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/LunchBoxDataOuterClass.class */
 public final class LunchBoxDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012LunchBoxData.proto\"\u0001\n\fLunchBoxData\u0012=\n\u0011slot_material_map\u0018\u0004 \u0003(\u000b2\".LunchBoxData.SlotMaterialMapEntry\u001a6\n\u0014SlotMaterialMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012LunchBoxData.proto\"\u0001\n\fLunchBoxData\u0012;\n\u000fslotMaterialMap\u0018\u0006 \u0003(\u000b2\".LunchBoxData.SlotMaterialMapEntry\u001a6\n\u0014SlotMaterialMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_LunchBoxData_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_LunchBoxData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_LunchBoxData_descriptor, new String[]{"SlotMaterialMap"});
     private static final Descriptors.Descriptor internal_static_LunchBoxData_SlotMaterialMapEntry_descriptor = internal_static_LunchBoxData_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_LunchBoxData_SlotMaterialMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f775x767e88cc = new GeneratedMessageV3.FieldAccessorTable(internal_static_LunchBoxData_SlotMaterialMapEntry_descriptor, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f757x767e88cc = new GeneratedMessageV3.FieldAccessorTable(internal_static_LunchBoxData_SlotMaterialMapEntry_descriptor, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/LunchBoxDataOuterClass$LunchBoxDataOrBuilder.class */
     public interface LunchBoxDataOrBuilder extends MessageOrBuilder {
@@ -60,7 +60,7 @@ public final class LunchBoxDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/LunchBoxDataOuterClass$LunchBoxData.class */
     public static final class LunchBoxData extends GeneratedMessageV3 implements LunchBoxDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SLOT_MATERIAL_MAP_FIELD_NUMBER = 4;
+        public static final int SLOTMATERIALMAP_FIELD_NUMBER = 6;
         private MapField<Integer, Integer> slotMaterialMap_;
         private byte memoizedIsInitialized;
         private static final LunchBoxData DEFAULT_INSTANCE = new LunchBoxData();
@@ -112,7 +112,7 @@ public final class LunchBoxDataOuterClass {
                 r4 = this;
                 r0 = r5
                 switch(r0) {
-                    case 4: goto L_0x0014;
+                    case 6: goto L_0x0014;
                     default: goto L_0x0019;
                 }
                 r0 = r4
@@ -165,7 +165,7 @@ public final class LunchBoxDataOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 34:
+                            case 50:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.slotMaterialMap_ = MapField.newMapField(SlotMaterialMapDefaultEntryHolder.defaultEntry);
                                     mutable_bitField0_ |= 1;
@@ -269,7 +269,7 @@ public final class LunchBoxDataOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetSlotMaterialMap(), SlotMaterialMapDefaultEntryHolder.defaultEntry, 4);
+            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetSlotMaterialMap(), SlotMaterialMapDefaultEntryHolder.defaultEntry, 6);
             this.unknownFields.writeTo(output);
         }
 
@@ -281,7 +281,7 @@ public final class LunchBoxDataOuterClass {
             }
             int size2 = 0;
             for (Map.Entry<Integer, Integer> entry : internalGetSlotMaterialMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(4, SlotMaterialMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+                size2 += CodedOutputStream.computeMessageSize(6, SlotMaterialMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -307,7 +307,7 @@ public final class LunchBoxDataOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (!internalGetSlotMaterialMap().getMap().isEmpty()) {
-                hash = (53 * ((37 * hash) + 4)) + internalGetSlotMaterialMap().hashCode();
+                hash = (53 * ((37 * hash) + 6)) + internalGetSlotMaterialMap().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -428,7 +428,7 @@ public final class LunchBoxDataOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 4: goto L_0x0014;
+                        case 6: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -481,7 +481,7 @@ public final class LunchBoxDataOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 4: goto L_0x0014;
+                        case 6: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4

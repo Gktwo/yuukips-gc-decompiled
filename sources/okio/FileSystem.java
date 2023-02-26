@@ -126,7 +126,7 @@ public abstract class FileSystem {
     /* JADX WARN: Multi-variable type inference failed */
     @JvmName(name = "-read")
     /* renamed from: -read  reason: not valid java name */
-    public final <T> T m9387read(@NotNull Path file, @NotNull Function1<? super BufferedSource, ? extends T> function1) throws IOException {
+    public final <T> T m9384read(@NotNull Path file, @NotNull Function1<? super BufferedSource, ? extends T> function1) throws IOException {
         Intrinsics.checkNotNullParameter(file, Action.FILE_ATTRIBUTE);
         Intrinsics.checkNotNullParameter(function1, "readerAction");
         Closeable $this$use$iv = Okio.buffer(source(file));
@@ -172,7 +172,7 @@ public abstract class FileSystem {
     }
 
     /* renamed from: -write$default  reason: not valid java name */
-    public static /* synthetic */ Object m9389write$default(FileSystem fileSystem, Path file, boolean mustCreate, Function1 writerAction, int i, Object obj) throws IOException {
+    public static /* synthetic */ Object m9386write$default(FileSystem fileSystem, Path file, boolean mustCreate, Function1 writerAction, int i, Object obj) throws IOException {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: write");
         }
@@ -211,7 +211,7 @@ public abstract class FileSystem {
     /* JADX WARN: Multi-variable type inference failed */
     @JvmName(name = "-write")
     /* renamed from: -write  reason: not valid java name */
-    public final <T> T m9388write(@NotNull Path file, boolean mustCreate, @NotNull Function1<? super BufferedSink, ? extends T> function1) throws IOException {
+    public final <T> T m9385write(@NotNull Path file, boolean mustCreate, @NotNull Function1<? super BufferedSink, ? extends T> function1) throws IOException {
         Intrinsics.checkNotNullParameter(file, Action.FILE_ATTRIBUTE);
         Intrinsics.checkNotNullParameter(function1, "writerAction");
         Closeable $this$use$iv = Okio.buffer(sink(file, mustCreate));

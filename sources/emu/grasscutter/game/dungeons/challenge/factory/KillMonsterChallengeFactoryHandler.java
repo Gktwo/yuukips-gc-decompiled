@@ -50,7 +50,7 @@ public class KillMonsterChallengeFactoryHandler implements ChallengeFactoryHandl
             r22 = r0
             ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
             r1 = r22
-            int r1 = r1.f957id
+            int r1 = r1.f922id
             // decode failed: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, Start KillMonsterChallengeFactoryHandler: ]}
             r0.info(r1)
             emu.grasscutter.game.dungeons.challenge.WorldChallenge r0 = new emu.grasscutter.game.dungeons.challenge.WorldChallenge

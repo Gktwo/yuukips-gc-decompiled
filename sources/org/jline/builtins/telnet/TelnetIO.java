@@ -14,44 +14,44 @@ public class TelnetIO {
     protected static final int IAC = 255;
 
     /* renamed from: GA */
-    protected static final int f3215GA = 249;
+    protected static final int f3179GA = 249;
     protected static final int WILL = 251;
     protected static final int WONT = 252;
 
     /* renamed from: DO */
-    protected static final int f3216DO = 253;
+    protected static final int f3180DO = 253;
     protected static final int DONT = 254;
 
     /* renamed from: SB */
-    protected static final int f3217SB = 250;
+    protected static final int f3181SB = 250;
 
     /* renamed from: SE */
-    protected static final int f3218SE = 240;
+    protected static final int f3182SE = 240;
     protected static final int NOP = 241;
 
     /* renamed from: DM */
-    protected static final int f3219DM = 242;
+    protected static final int f3183DM = 242;
     protected static final int BRK = 243;
 
     /* renamed from: IP */
-    protected static final int f3220IP = 244;
+    protected static final int f3184IP = 244;
 
     /* renamed from: AO */
-    protected static final int f3221AO = 245;
+    protected static final int f3185AO = 245;
     protected static final int AYT = 246;
 
     /* renamed from: EC */
-    protected static final int f3222EC = 247;
+    protected static final int f3186EC = 247;
 
     /* renamed from: EL */
-    protected static final int f3223EL = 248;
+    protected static final int f3187EL = 248;
     protected static final int ECHO = 1;
     protected static final int SUPGA = 3;
     protected static final int NAWS = 31;
     protected static final int TTYPE = 24;
 
     /* renamed from: IS */
-    protected static final int f3224IS = 0;
+    protected static final int f3188IS = 0;
     protected static final int SEND = 1;
     protected static final int LOGOUT = 18;
     protected static final int LINEMODE = 34;
@@ -106,7 +106,7 @@ public class TelnetIO {
     private DataOutputStream out;
 
     /* renamed from: in */
-    private DataInputStream f3225in;
+    private DataInputStream f3189in;
     private IACHandler iacHandler;
     private InetAddress localAddress;
     private boolean noIac = false;
@@ -115,7 +115,7 @@ public class TelnetIO {
 
     public void initIO() throws IOException {
         this.iacHandler = new IACHandler();
-        this.f3225in = new DataInputStream(this.connectionData.getSocket().getInputStream());
+        this.f3189in = new DataInputStream(this.connectionData.getSocket().getInputStream());
         this.out = new DataOutputStream(new BufferedOutputStream(this.connectionData.getSocket().getOutputStream()));
         this.localAddress = this.connectionData.getSocket().getLocalAddress();
         this.crFlag = false;
@@ -200,19 +200,19 @@ public class TelnetIO {
 
     public void closeInput() {
         try {
-            this.f3225in.close();
+            this.f3189in.close();
         } catch (IOException e) {
         }
     }
 
     /* access modifiers changed from: private */
     public int read16int() throws IOException {
-        return this.f3225in.readUnsignedShort();
+        return this.f3189in.readUnsignedShort();
     }
 
     /* access modifiers changed from: private */
     public int rawread() throws IOException {
-        int b = this.f3225in.readUnsignedByte();
+        int b = this.f3189in.readUnsignedByte();
         this.connectionData.activity();
         return b;
     }

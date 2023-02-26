@@ -6,9 +6,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.bson.codecs.Codec;
 import org.bson.codecs.configuration.CodecRegistry;
 
-/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:org/bson/codecs/pojo/PropertyCodecRegistryImpl.class */
-public class PropertyCodecRegistryImpl implements PropertyCodecRegistry {
+class PropertyCodecRegistryImpl implements PropertyCodecRegistry {
     private final List<PropertyCodecProvider> propertyCodecProviders;
     private final ConcurrentHashMap<TypeWithTypeParameters<?>, Codec<?>> propertyCodecCache;
 

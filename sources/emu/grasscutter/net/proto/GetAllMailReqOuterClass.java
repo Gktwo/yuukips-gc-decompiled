@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetAllMailReqOuterClass.class */
 public final class GetAllMailReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013GetAllMailReq.proto\"%\n\rGetAllMailReq\u0012\u0014\n\fis_collected\u0018\u0004 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013GetAllMailReq.proto\"$\n\rGetAllMailReq\u0012\u0013\n\u000bisCollected\u0018\b \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GetAllMailReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetAllMailReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetAllMailReq_descriptor, new String[]{"IsCollected"});
 
@@ -42,7 +42,7 @@ public final class GetAllMailReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetAllMailReqOuterClass$GetAllMailReq.class */
     public static final class GetAllMailReq extends GeneratedMessageV3 implements GetAllMailReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_COLLECTED_FIELD_NUMBER = 4;
+        public static final int ISCOLLECTED_FIELD_NUMBER = 8;
         private boolean isCollected_;
         private byte memoizedIsInitialized;
         private static final GetAllMailReq DEFAULT_INSTANCE = new GetAllMailReq();
@@ -89,7 +89,7 @@ public final class GetAllMailReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 32:
+                            case 64:
                                 this.isCollected_ = input.readBool();
                                 break;
                             default:
@@ -142,7 +142,7 @@ public final class GetAllMailReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.isCollected_) {
-                output.writeBool(4, this.isCollected_);
+                output.writeBool(8, this.isCollected_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -155,7 +155,7 @@ public final class GetAllMailReqOuterClass {
             }
             int size2 = 0;
             if (this.isCollected_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(4, this.isCollected_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(8, this.isCollected_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -179,7 +179,7 @@ public final class GetAllMailReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + Internal.hashBoolean(getIsCollected()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + Internal.hashBoolean(getIsCollected()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

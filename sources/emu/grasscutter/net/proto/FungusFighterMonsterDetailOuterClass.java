@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FungusFighterMonsterDetailOuterClass.class */
 public final class FungusFighterMonsterDetailOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n FungusFighterMonsterDetail.proto\"\\\n\u001aFungusFighterMonsterDetail\u0012\u0019\n\u0011cur_hp_percentage\u0018\t \u0001(\u0002\u0012\u0010\n\bis_alive\u0018\n \u0001(\b\u0012\u0011\n\tfungus_id\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n FungusFighterMonsterDetail.proto\"X\n\u001aFungusFighterMonsterDetail\u0012\u0017\n\u000fcurHpPercentage\u0018\t \u0001(\u0002\u0012\u0010\n\bfungusId\u0018\n \u0001(\r\u0012\u000f\n\u0007isAlive\u0018\f \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_FungusFighterMonsterDetail_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_FungusFighterMonsterDetail_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FungusFighterMonsterDetail_descriptor, new String[]{"CurHpPercentage", "IsAlive", "FungusId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_FungusFighterMonsterDetail_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FungusFighterMonsterDetail_descriptor, new String[]{"CurHpPercentage", "FungusId", "IsAlive"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FungusFighterMonsterDetailOuterClass$FungusFighterMonsterDetailOrBuilder.class */
     public interface FungusFighterMonsterDetailOrBuilder extends MessageOrBuilder {
         float getCurHpPercentage();
 
-        boolean getIsAlive();
-
         int getFungusId();
+
+        boolean getIsAlive();
     }
 
     private FungusFighterMonsterDetailOuterClass() {
@@ -46,12 +46,12 @@ public final class FungusFighterMonsterDetailOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FungusFighterMonsterDetailOuterClass$FungusFighterMonsterDetail.class */
     public static final class FungusFighterMonsterDetail extends GeneratedMessageV3 implements FungusFighterMonsterDetailOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CUR_HP_PERCENTAGE_FIELD_NUMBER = 9;
+        public static final int CURHPPERCENTAGE_FIELD_NUMBER = 9;
         private float curHpPercentage_;
-        public static final int IS_ALIVE_FIELD_NUMBER = 10;
-        private boolean isAlive_;
-        public static final int FUNGUS_ID_FIELD_NUMBER = 13;
+        public static final int FUNGUSID_FIELD_NUMBER = 10;
         private int fungusId_;
+        public static final int ISALIVE_FIELD_NUMBER = 12;
+        private boolean isAlive_;
         private byte memoizedIsInitialized;
         private static final FungusFighterMonsterDetail DEFAULT_INSTANCE = new FungusFighterMonsterDetail();
         private static final Parser<FungusFighterMonsterDetail> PARSER = new AbstractParser<FungusFighterMonsterDetail>() { // from class: emu.grasscutter.net.proto.FungusFighterMonsterDetailOuterClass.FungusFighterMonsterDetail.1
@@ -102,10 +102,10 @@ public final class FungusFighterMonsterDetailOuterClass {
                                     this.curHpPercentage_ = input.readFloat();
                                     break;
                                 case 80:
-                                    this.isAlive_ = input.readBool();
-                                    break;
-                                case 104:
                                     this.fungusId_ = input.readUInt32();
+                                    break;
+                                case 96:
+                                    this.isAlive_ = input.readBool();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -143,13 +143,13 @@ public final class FungusFighterMonsterDetailOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.FungusFighterMonsterDetailOuterClass.FungusFighterMonsterDetailOrBuilder
-        public boolean getIsAlive() {
-            return this.isAlive_;
+        public int getFungusId() {
+            return this.fungusId_;
         }
 
         @Override // emu.grasscutter.net.proto.FungusFighterMonsterDetailOuterClass.FungusFighterMonsterDetailOrBuilder
-        public int getFungusId() {
-            return this.fungusId_;
+        public boolean getIsAlive() {
+            return this.isAlive_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -170,11 +170,11 @@ public final class FungusFighterMonsterDetailOuterClass {
             if (this.curHpPercentage_ != 0.0f) {
                 output.writeFloat(9, this.curHpPercentage_);
             }
-            if (this.isAlive_) {
-                output.writeBool(10, this.isAlive_);
-            }
             if (this.fungusId_ != 0) {
-                output.writeUInt32(13, this.fungusId_);
+                output.writeUInt32(10, this.fungusId_);
+            }
+            if (this.isAlive_) {
+                output.writeBool(12, this.isAlive_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -189,11 +189,11 @@ public final class FungusFighterMonsterDetailOuterClass {
             if (this.curHpPercentage_ != 0.0f) {
                 size2 = 0 + CodedOutputStream.computeFloatSize(9, this.curHpPercentage_);
             }
-            if (this.isAlive_) {
-                size2 += CodedOutputStream.computeBoolSize(10, this.isAlive_);
-            }
             if (this.fungusId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.fungusId_);
+                size2 += CodedOutputStream.computeUInt32Size(10, this.fungusId_);
+            }
+            if (this.isAlive_) {
+                size2 += CodedOutputStream.computeBoolSize(12, this.isAlive_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class FungusFighterMonsterDetailOuterClass {
                 return equals(obj);
             }
             FungusFighterMonsterDetail other = (FungusFighterMonsterDetail) obj;
-            return Float.floatToIntBits(getCurHpPercentage()) == Float.floatToIntBits(other.getCurHpPercentage()) && getIsAlive() == other.getIsAlive() && getFungusId() == other.getFungusId() && this.unknownFields.equals(other.unknownFields);
+            return Float.floatToIntBits(getCurHpPercentage()) == Float.floatToIntBits(other.getCurHpPercentage()) && getFungusId() == other.getFungusId() && getIsAlive() == other.getIsAlive() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class FungusFighterMonsterDetailOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + Float.floatToIntBits(getCurHpPercentage()))) + 10)) + Internal.hashBoolean(getIsAlive()))) + 13)) + getFungusId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + Float.floatToIntBits(getCurHpPercentage()))) + 10)) + getFungusId())) + 12)) + Internal.hashBoolean(getIsAlive()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -297,8 +297,8 @@ public final class FungusFighterMonsterDetailOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FungusFighterMonsterDetailOuterClass$FungusFighterMonsterDetail$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements FungusFighterMonsterDetailOrBuilder {
             private float curHpPercentage_;
-            private boolean isAlive_;
             private int fungusId_;
+            private boolean isAlive_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return FungusFighterMonsterDetailOuterClass.internal_static_FungusFighterMonsterDetail_descriptor;
@@ -327,8 +327,8 @@ public final class FungusFighterMonsterDetailOuterClass {
             public Builder clear() {
                 clear();
                 this.curHpPercentage_ = 0.0f;
-                this.isAlive_ = false;
                 this.fungusId_ = 0;
+                this.isAlive_ = false;
                 return this;
             }
 
@@ -355,8 +355,8 @@ public final class FungusFighterMonsterDetailOuterClass {
             public FungusFighterMonsterDetail buildPartial() {
                 FungusFighterMonsterDetail result = new FungusFighterMonsterDetail(this);
                 result.curHpPercentage_ = this.curHpPercentage_;
-                result.isAlive_ = this.isAlive_;
                 result.fungusId_ = this.fungusId_;
+                result.isAlive_ = this.isAlive_;
                 onBuilt();
                 return result;
             }
@@ -407,11 +407,11 @@ public final class FungusFighterMonsterDetailOuterClass {
                 if (other.getCurHpPercentage() != 0.0f) {
                     setCurHpPercentage(other.getCurHpPercentage());
                 }
-                if (other.getIsAlive()) {
-                    setIsAlive(other.getIsAlive());
-                }
                 if (other.getFungusId() != 0) {
                     setFungusId(other.getFungusId());
+                }
+                if (other.getIsAlive()) {
+                    setIsAlive(other.getIsAlive());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -463,23 +463,6 @@ public final class FungusFighterMonsterDetailOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.FungusFighterMonsterDetailOuterClass.FungusFighterMonsterDetailOrBuilder
-            public boolean getIsAlive() {
-                return this.isAlive_;
-            }
-
-            public Builder setIsAlive(boolean value) {
-                this.isAlive_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsAlive() {
-                this.isAlive_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.FungusFighterMonsterDetailOuterClass.FungusFighterMonsterDetailOrBuilder
             public int getFungusId() {
                 return this.fungusId_;
             }
@@ -492,6 +475,23 @@ public final class FungusFighterMonsterDetailOuterClass {
 
             public Builder clearFungusId() {
                 this.fungusId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.FungusFighterMonsterDetailOuterClass.FungusFighterMonsterDetailOrBuilder
+            public boolean getIsAlive() {
+                return this.isAlive_;
+            }
+
+            public Builder setIsAlive(boolean value) {
+                this.isAlive_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsAlive() {
+                this.isAlive_ = false;
                 onChanged();
                 return this;
             }

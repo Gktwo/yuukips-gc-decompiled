@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChangeMailStarNotifyOuterClass.class */
 public final class ChangeMailStarNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aChangeMailStarNotify.proto\"=\n\u0014ChangeMailStarNotify\u0012\u0014\n\fmail_id_list\u0018\r \u0003(\r\u0012\u000f\n\u0007is_star\u0018\u000f \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aChangeMailStarNotify.proto\":\n\u0014ChangeMailStarNotify\u0012\u0012\n\nmailIdList\u0018\u000b \u0003(\r\u0012\u000e\n\u0006isStar\u0018\f \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ChangeMailStarNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChangeMailStarNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChangeMailStarNotify_descriptor, new String[]{"MailIdList", "IsStar"});
 
@@ -51,10 +51,10 @@ public final class ChangeMailStarNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChangeMailStarNotifyOuterClass$ChangeMailStarNotify.class */
     public static final class ChangeMailStarNotify extends GeneratedMessageV3 implements ChangeMailStarNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MAIL_ID_LIST_FIELD_NUMBER = 13;
+        public static final int MAILIDLIST_FIELD_NUMBER = 11;
         private Internal.IntList mailIdList_;
         private int mailIdListMemoizedSerializedSize;
-        public static final int IS_STAR_FIELD_NUMBER = 15;
+        public static final int ISSTAR_FIELD_NUMBER = 12;
         private boolean isStar_;
         private byte memoizedIsInitialized;
         private static final ChangeMailStarNotify DEFAULT_INSTANCE = new ChangeMailStarNotify();
@@ -107,14 +107,14 @@ public final class ChangeMailStarNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 104:
+                                case 88:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.mailIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.mailIdList_.addInt(input.readUInt32());
                                     break;
-                                case 106:
+                                case 90:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.mailIdList_ = newIntList();
@@ -125,7 +125,7 @@ public final class ChangeMailStarNotifyOuterClass {
                                     }
                                     input.popLimit(limit);
                                     break;
-                                case 120:
+                                case 96:
                                     this.isStar_ = input.readBool();
                                     break;
                                 default:
@@ -198,14 +198,14 @@ public final class ChangeMailStarNotifyOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getMailIdListList().size() > 0) {
-                output.writeUInt32NoTag(106);
+                output.writeUInt32NoTag(90);
                 output.writeUInt32NoTag(this.mailIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.mailIdList_.size(); i++) {
                 output.writeUInt32NoTag(this.mailIdList_.getInt(i));
             }
             if (this.isStar_) {
-                output.writeBool(15, this.isStar_);
+                output.writeBool(12, this.isStar_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -226,7 +226,7 @@ public final class ChangeMailStarNotifyOuterClass {
             }
             this.mailIdListMemoizedSerializedSize = dataSize;
             if (this.isStar_) {
-                size2 += CodedOutputStream.computeBoolSize(15, this.isStar_);
+                size2 += CodedOutputStream.computeBoolSize(12, this.isStar_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -252,9 +252,9 @@ public final class ChangeMailStarNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getMailIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 13)) + getMailIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + getMailIdListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 15)) + Internal.hashBoolean(getIsStar()))) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 12)) + Internal.hashBoolean(getIsStar()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

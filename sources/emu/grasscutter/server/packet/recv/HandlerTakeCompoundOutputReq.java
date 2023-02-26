@@ -5,7 +5,7 @@ import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.TakeCompoundOutputReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 
-@Opcodes(134)
+@Opcodes(130)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerTakeCompoundOutputReq.class */
 public class HandlerTakeCompoundOutputReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

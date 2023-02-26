@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ItemParamOuterClass.class */
 public final class ItemParamOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000fItemParam.proto\"+\n\tItemParam\u0012\u000f\n\u0007item_id\u0018\u0001 \u0001(\r\u0012\r\n\u0005count\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000fItemParam.proto\"*\n\tItemParam\u0012\u000e\n\u0006itemId\u0018\u0001 \u0001(\r\u0012\r\n\u0005count\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ItemParam_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ItemParam_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ItemParam_descriptor, new String[]{"ItemId", "Count"});
 
@@ -43,7 +43,7 @@ public final class ItemParamOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ItemParamOuterClass$ItemParam.class */
     public static final class ItemParam extends GeneratedMessageV3 implements ItemParamOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ITEM_ID_FIELD_NUMBER = 1;
+        public static final int ITEMID_FIELD_NUMBER = 1;
         private int itemId_;
         public static final int COUNT_FIELD_NUMBER = 2;
         private int count_;

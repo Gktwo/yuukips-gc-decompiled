@@ -477,11 +477,35 @@ public class GameHome {
         player.getSession().send(new PacketUnlockedHomeBgmNotify(player));
     }
 
+    public void onClaimReward(Player player) {
+        player.getSession().send(new PacketPlayerHomeCompInfoNotify(player));
+    }
+
     public Player getPlayer() {
         if (this.player == null) {
             this.player = Grasscutter.getGameServer().getPlayerByUid((int) this.ownerUid, true);
         }
         return this.player;
+    }
+
+    public void addExp(Player player, int count) {
+        this.exp += count;
+        int reqExp = getExpRequired(this.level);
+        while (this.exp >= reqExp && reqExp > 0) {
+            this.exp -= reqExp;
+            this.level++;
+            reqExp = getExpRequired(this.level);
+            player.getSession().send(new PacketHomeBasicInfoNotify(player, false));
+        }
+        onOwnerLogin(player);
+    }
+
+    private int getExpRequired(int level) {
+        HomeWorldLevelData levelData = GameData.getHomeWorldLevelDataMap().get(level);
+        if (levelData != null) {
+            return levelData.getExp();
+        }
+        return 0;
     }
 
     public HomeWorldLevelData getLevelData() {

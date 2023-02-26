@@ -23,11 +23,11 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QueryCodexMonsterBeKilledNumReqOuterClass.class */
 public final class QueryCodexMonsterBeKilledNumReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n%QueryCodexMonsterBeKilledNumReq.proto\"8\n\u001fQueryCodexMonsterBeKilledNumReq\u0012\u0015\n\rcodex_id_list\u0018\u0003 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n%QueryCodexMonsterBeKilledNumReq.proto\"6\n\u001fQueryCodexMonsterBeKilledNumReq\u0012\u0013\n\u000bcodexIdList\u0018\u0001 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_QueryCodexMonsterBeKilledNumReq_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_QueryCodexMonsterBeKilledNumReq_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f835x36ce0fcc = new GeneratedMessageV3.FieldAccessorTable(internal_static_QueryCodexMonsterBeKilledNumReq_descriptor, new String[]{"CodexIdList"});
+    private static final GeneratedMessageV3.FieldAccessorTable f813x36ce0fcc = new GeneratedMessageV3.FieldAccessorTable(internal_static_QueryCodexMonsterBeKilledNumReq_descriptor, new String[]{"CodexIdList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QueryCodexMonsterBeKilledNumReqOuterClass$QueryCodexMonsterBeKilledNumReqOrBuilder.class */
     public interface QueryCodexMonsterBeKilledNumReqOrBuilder extends MessageOrBuilder {
@@ -51,7 +51,7 @@ public final class QueryCodexMonsterBeKilledNumReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QueryCodexMonsterBeKilledNumReqOuterClass$QueryCodexMonsterBeKilledNumReq.class */
     public static final class QueryCodexMonsterBeKilledNumReq extends GeneratedMessageV3 implements QueryCodexMonsterBeKilledNumReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CODEX_ID_LIST_FIELD_NUMBER = 3;
+        public static final int CODEXIDLIST_FIELD_NUMBER = 1;
         private Internal.IntList codexIdList_;
         private int codexIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -105,14 +105,14 @@ public final class QueryCodexMonsterBeKilledNumReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 24:
+                                case 8:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.codexIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.codexIdList_.addInt(input.readUInt32());
                                     break;
-                                case 26:
+                                case 10:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.codexIdList_ = newIntList();
@@ -153,7 +153,7 @@ public final class QueryCodexMonsterBeKilledNumReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return QueryCodexMonsterBeKilledNumReqOuterClass.f835x36ce0fcc.ensureFieldAccessorsInitialized(QueryCodexMonsterBeKilledNumReq.class, Builder.class);
+            return QueryCodexMonsterBeKilledNumReqOuterClass.f813x36ce0fcc.ensureFieldAccessorsInitialized(QueryCodexMonsterBeKilledNumReq.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.QueryCodexMonsterBeKilledNumReqOuterClass.QueryCodexMonsterBeKilledNumReqOrBuilder
@@ -188,7 +188,7 @@ public final class QueryCodexMonsterBeKilledNumReqOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getCodexIdListList().size() > 0) {
-                output.writeUInt32NoTag(26);
+                output.writeUInt32NoTag(10);
                 output.writeUInt32NoTag(this.codexIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.codexIdList_.size(); i++) {
@@ -236,7 +236,7 @@ public final class QueryCodexMonsterBeKilledNumReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getCodexIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 3)) + getCodexIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 1)) + getCodexIdListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -326,7 +326,7 @@ public final class QueryCodexMonsterBeKilledNumReqOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return QueryCodexMonsterBeKilledNumReqOuterClass.f835x36ce0fcc.ensureFieldAccessorsInitialized(QueryCodexMonsterBeKilledNumReq.class, Builder.class);
+                return QueryCodexMonsterBeKilledNumReqOuterClass.f813x36ce0fcc.ensureFieldAccessorsInitialized(QueryCodexMonsterBeKilledNumReq.class, Builder.class);
             }
 
             private Builder() {

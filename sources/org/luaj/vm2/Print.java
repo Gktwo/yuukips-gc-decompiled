@@ -10,7 +10,7 @@ public class Print extends Lua {
     private static final String STRING_FOR_NULL = "null";
 
     /* renamed from: ps */
-    public static PrintStream f3294ps = System.out;
+    public static PrintStream f3258ps = System.out;
     public static final String[] OPNAMES = {"MOVE", "LOADK", "LOADKX", "LOADBOOL", "LOADNIL", "GETUPVAL", "GETTABUP", "GETTABLE", "SETTABUP", "SETUPVAL", "SETTABLE", "NEWTABLE", "SELF", "ADD", "SUB", "MUL", "DIV", "MOD", "POW", "UNM", "NOT", "LEN", "CONCAT", "JMP", "EQ", "LT", "LE", "TEST", "TESTSET", "CALL", "TAILCALL", "RETURN", "FORLOOP", "FORPREP", "TFORCALL", "TFORLOOP", "SETLIST", "CLOSURE", "VARARG", "EXTRAARG", null};
 
     static void printString(PrintStream printStream, LuaString luaString) {
@@ -71,7 +71,7 @@ public class Print extends Lua {
     }
 
     static void printConstant(PrintStream printStream, Prototype prototype, int i) {
-        printValue(printStream, prototype.f3295k[i]);
+        printValue(printStream, prototype.f3259k[i]);
     }
 
     static void printUpvalue(PrintStream printStream, Upvaldesc upvaldesc) {
@@ -83,12 +83,12 @@ public class Print extends Lua {
         int length = prototype.code.length;
         for (int i = 0; i < length; i++) {
             printOpCode(prototype, i);
-            f3294ps.println();
+            f3258ps.println();
         }
     }
 
     public static void printOpCode(Prototype prototype, int i) {
-        printOpCode(f3294ps, prototype, i);
+        printOpCode(f3258ps, prototype, i);
     }
 
     public static void printOpCode(PrintStream printStream, Prototype prototype, int i) {
@@ -241,7 +241,7 @@ public class Print extends Lua {
                     return;
                 }
             case 37:
-                printStream.print(new StringBuffer().append("  ; ").append(prototype.f3296p[GETARG_Bx].getClass().getName()).toString());
+                printStream.print(new StringBuffer().append("  ; ").append(prototype.f3260p[GETARG_Bx].getClass().getName()).toString());
                 return;
             case 38:
                 printStream.print(new StringBuffer().append("  ; is_vararg=").append(prototype.is_vararg).toString());
@@ -258,34 +258,34 @@ public class Print extends Lua {
 
     static void printHeader(Prototype prototype) {
         String valueOf = String.valueOf(prototype.source);
-        f3294ps.print(new StringBuffer().append("\n%").append(prototype.linedefined == 0 ? LineReader.MAIN : "function").append(" <").append((valueOf.startsWith("@") || valueOf.startsWith("=")) ? valueOf.substring(1) : "\u001bLua".equals(valueOf) ? "(bstring)" : "(string)").append(EmitterKt.COMMENT_PREFIX).append(prototype.linedefined).append(",").append(prototype.lastlinedefined).append("> (").append(prototype.code.length).append(" instructions, ").append(prototype.code.length * 4).append(" bytes at ").append(m16id(prototype)).append(")\n").toString());
-        f3294ps.print(new StringBuffer().append(prototype.numparams).append(" param, ").append(prototype.maxstacksize).append(" slot, ").append(prototype.upvalues.length).append(" upvalue, ").toString());
-        f3294ps.print(new StringBuffer().append(prototype.locvars.length).append(" local, ").append(prototype.f3295k.length).append(" constant, ").append(prototype.f3296p.length).append(" function\n").toString());
+        f3258ps.print(new StringBuffer().append("\n%").append(prototype.linedefined == 0 ? LineReader.MAIN : "function").append(" <").append((valueOf.startsWith("@") || valueOf.startsWith("=")) ? valueOf.substring(1) : "\u001bLua".equals(valueOf) ? "(bstring)" : "(string)").append(EmitterKt.COMMENT_PREFIX).append(prototype.linedefined).append(",").append(prototype.lastlinedefined).append("> (").append(prototype.code.length).append(" instructions, ").append(prototype.code.length * 4).append(" bytes at ").append(m16id(prototype)).append(")\n").toString());
+        f3258ps.print(new StringBuffer().append(prototype.numparams).append(" param, ").append(prototype.maxstacksize).append(" slot, ").append(prototype.upvalues.length).append(" upvalue, ").toString());
+        f3258ps.print(new StringBuffer().append(prototype.locvars.length).append(" local, ").append(prototype.f3259k.length).append(" constant, ").append(prototype.f3260p.length).append(" function\n").toString());
     }
 
     static void printConstants(Prototype prototype) {
-        int length = prototype.f3295k.length;
-        f3294ps.print(new StringBuffer().append("constants (").append(length).append(") for ").append(m16id(prototype)).append(":\n").toString());
+        int length = prototype.f3259k.length;
+        f3258ps.print(new StringBuffer().append("constants (").append(length).append(") for ").append(m16id(prototype)).append(":\n").toString());
         for (int i = 0; i < length; i++) {
-            f3294ps.print(new StringBuffer().append("  ").append(i + 1).append("  ").toString());
-            printValue(f3294ps, prototype.f3295k[i]);
-            f3294ps.print("\n");
+            f3258ps.print(new StringBuffer().append("  ").append(i + 1).append("  ").toString());
+            printValue(f3258ps, prototype.f3259k[i]);
+            f3258ps.print("\n");
         }
     }
 
     static void printLocals(Prototype prototype) {
         int length = prototype.locvars.length;
-        f3294ps.print(new StringBuffer().append("locals (").append(length).append(") for ").append(m16id(prototype)).append(":\n").toString());
+        f3258ps.print(new StringBuffer().append("locals (").append(length).append(") for ").append(m16id(prototype)).append(":\n").toString());
         for (int i = 0; i < length; i++) {
-            f3294ps.println(new StringBuffer().append("  ").append(i).append("  ").append(prototype.locvars[i].varname).append(" ").append(prototype.locvars[i].startpc + 1).append(" ").append(prototype.locvars[i].endpc + 1).toString());
+            f3258ps.println(new StringBuffer().append("  ").append(i).append("  ").append(prototype.locvars[i].varname).append(" ").append(prototype.locvars[i].startpc + 1).append(" ").append(prototype.locvars[i].endpc + 1).toString());
         }
     }
 
     static void printUpValues(Prototype prototype) {
         int length = prototype.upvalues.length;
-        f3294ps.print(new StringBuffer().append("upvalues (").append(length).append(") for ").append(m16id(prototype)).append(":\n").toString());
+        f3258ps.print(new StringBuffer().append("upvalues (").append(length).append(") for ").append(m16id(prototype)).append(":\n").toString());
         for (int i = 0; i < length; i++) {
-            f3294ps.print(new StringBuffer().append("  ").append(i).append("  ").append(prototype.upvalues[i]).append("\n").toString());
+            f3258ps.print(new StringBuffer().append("  ").append(i).append("  ").append(prototype.upvalues[i]).append("\n").toString());
         }
     }
 
@@ -294,7 +294,7 @@ public class Print extends Lua {
     }
 
     public static void printFunction(Prototype prototype, boolean z) {
-        int length = prototype.f3296p.length;
+        int length = prototype.f3260p.length;
         printHeader(prototype);
         printCode(prototype);
         if (z) {
@@ -303,22 +303,22 @@ public class Print extends Lua {
             printUpValues(prototype);
         }
         for (int i = 0; i < length; i++) {
-            printFunction(prototype.f3296p[i], z);
+            printFunction(prototype.f3260p[i], z);
         }
     }
 
     private static void format(String str, int i) {
         int length = str.length();
         if (length > i) {
-            f3294ps.print(str.substring(0, i));
+            f3258ps.print(str.substring(0, i));
             return;
         }
-        f3294ps.print(str);
+        f3258ps.print(str);
         int i2 = i - length;
         while (true) {
             i2--;
             if (i2 >= 0) {
-                f3294ps.print(' ');
+                f3258ps.print(' ');
             } else {
                 return;
             }
@@ -337,54 +337,54 @@ public class Print extends Lua {
     }
 
     public static void printState(LuaClosure luaClosure, int i, LuaValue[] luaValueArr, int i2, Varargs varargs) {
-        PrintStream printStream = f3294ps;
+        PrintStream printStream = f3258ps;
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        f3294ps = new PrintStream(byteArrayOutputStream);
-        printOpCode(luaClosure.f3287p, i);
-        f3294ps.flush();
-        f3294ps.close();
-        f3294ps = printStream;
+        f3258ps = new PrintStream(byteArrayOutputStream);
+        printOpCode(luaClosure.f3251p, i);
+        f3258ps.flush();
+        f3258ps.close();
+        f3258ps = printStream;
         format(byteArrayOutputStream.toString(), 50);
         printStack(luaValueArr, i2, varargs);
-        f3294ps.println();
+        f3258ps.println();
     }
 
     public static void printStack(LuaValue[] luaValueArr, int i, Varargs varargs) {
-        f3294ps.print('[');
+        f3258ps.print('[');
         for (int i2 = 0; i2 < luaValueArr.length; i2++) {
             LuaValue luaValue = luaValueArr[i2];
             if (luaValue != null) {
                 switch (luaValue.type()) {
                     case 4:
                         LuaString checkstring = luaValue.checkstring();
-                        f3294ps.print(checkstring.length() < 48 ? checkstring.tojstring() : new StringBuffer().append(checkstring.substring(0, 32).tojstring()).append("...+").append(checkstring.length() - 32).append("b").toString());
+                        f3258ps.print(checkstring.length() < 48 ? checkstring.tojstring() : new StringBuffer().append(checkstring.substring(0, 32).tojstring()).append("...+").append(checkstring.length() - 32).append("b").toString());
                         break;
                     case 5:
                     default:
-                        f3294ps.print(luaValue.tojstring());
+                        f3258ps.print(luaValue.tojstring());
                         break;
                     case 6:
-                        f3294ps.print(luaValue.tojstring());
+                        f3258ps.print(luaValue.tojstring());
                         break;
                     case 7:
                         Object obj = luaValue.touserdata();
                         if (obj != null) {
                             String name = obj.getClass().getName();
-                            f3294ps.print(new StringBuffer().append(name.substring(name.lastIndexOf(46) + 1)).append(": ").append(Integer.toHexString(obj.hashCode())).toString());
+                            f3258ps.print(new StringBuffer().append(name.substring(name.lastIndexOf(46) + 1)).append(": ").append(Integer.toHexString(obj.hashCode())).toString());
                             break;
                         } else {
-                            f3294ps.print(luaValue.toString());
+                            f3258ps.print(luaValue.toString());
                             break;
                         }
                 }
             } else {
-                f3294ps.print(STRING_FOR_NULL);
+                f3258ps.print(STRING_FOR_NULL);
             }
             if (i2 + 1 == i) {
-                f3294ps.print(']');
+                f3258ps.print(']');
             }
-            f3294ps.print(" | ");
+            f3258ps.print(" | ");
         }
-        f3294ps.print(varargs);
+        f3258ps.print(varargs);
     }
 }

@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerHeadImageReqOuterClass.class */
 public final class SetPlayerHeadImageReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bSetPlayerHeadImageReq.proto\"*\n\u0015SetPlayerHeadImageReq\u0012\u0011\n\tavatar_id\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bSetPlayerHeadImageReq.proto\")\n\u0015SetPlayerHeadImageReq\u0012\u0010\n\bavatarId\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SetPlayerHeadImageReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetPlayerHeadImageReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetPlayerHeadImageReq_descriptor, new String[]{"AvatarId"});
 
@@ -41,7 +41,7 @@ public final class SetPlayerHeadImageReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerHeadImageReqOuterClass$SetPlayerHeadImageReq.class */
     public static final class SetPlayerHeadImageReq extends GeneratedMessageV3 implements SetPlayerHeadImageReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_ID_FIELD_NUMBER = 5;
+        public static final int AVATARID_FIELD_NUMBER = 10;
         private int avatarId_;
         private byte memoizedIsInitialized;
         private static final SetPlayerHeadImageReq DEFAULT_INSTANCE = new SetPlayerHeadImageReq();
@@ -88,7 +88,7 @@ public final class SetPlayerHeadImageReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 40:
+                            case 80:
                                 this.avatarId_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class SetPlayerHeadImageReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.avatarId_ != 0) {
-                output.writeUInt32(5, this.avatarId_);
+                output.writeUInt32(10, this.avatarId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class SetPlayerHeadImageReqOuterClass {
             }
             int size2 = 0;
             if (this.avatarId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.avatarId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(10, this.avatarId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class SetPlayerHeadImageReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getAvatarId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getAvatarId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

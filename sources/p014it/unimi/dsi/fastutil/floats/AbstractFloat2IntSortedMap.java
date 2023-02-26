@@ -90,30 +90,30 @@ public abstract class AbstractFloat2IntSortedMap extends AbstractFloat2IntMap im
     public static class KeySetIterator implements FloatBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Float2IntMap.Entry> f1776i;
+        protected final ObjectBidirectionalIterator<Float2IntMap.Entry> f1740i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Float2IntMap.Entry> i) {
-            this.f1776i = i;
+            this.f1740i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
         public float nextFloat() {
-            return ((Float2IntMap.Entry) this.f1776i.next()).getFloatKey();
+            return ((Float2IntMap.Entry) this.f1740i.next()).getFloatKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatBidirectionalIterator
         public float previousFloat() {
-            return this.f1776i.previous().getFloatKey();
+            return this.f1740i.previous().getFloatKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1776i.hasNext();
+            return this.f1740i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1776i.hasPrevious();
+            return this.f1740i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractFloat2IntSortedMap extends AbstractFloat2IntMap im
     public static class ValuesIterator implements IntIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Float2IntMap.Entry> f1777i;
+        protected final ObjectBidirectionalIterator<Float2IntMap.Entry> f1741i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Float2IntMap.Entry> i) {
-            this.f1777i = i;
+            this.f1741i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntIterator, java.util.PrimitiveIterator.OfInt
         public int nextInt() {
-            return ((Float2IntMap.Entry) this.f1777i.next()).getIntValue();
+            return ((Float2IntMap.Entry) this.f1741i.next()).getIntValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1777i.hasNext();
+            return this.f1741i.hasNext();
         }
     }
 }

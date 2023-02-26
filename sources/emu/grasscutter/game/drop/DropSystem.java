@@ -95,11 +95,13 @@ public class DropSystem extends BaseGameSystem {
         List<GameItem> items = new ArrayList<>();
         processDrop(dropData, 1, items);
         if (dropData.isFallToGround()) {
-            dropItems(items, ActionReason.MonsterDie, monster, monster.getScene().getPlayers().get(0), true);
+            for (Player p : monster.getScene().getPlayers()) {
+                dropItems(items, ActionReason.MonsterDie, monster, p, true);
+            }
             return true;
         }
-        for (Player p : monster.getScene().getPlayers()) {
-            p.getInventory().addItems(items, ActionReason.MonsterDie);
+        for (Player p2 : monster.getScene().getPlayers()) {
+            p2.getInventory().addItems(items, ActionReason.MonsterDie);
         }
         return true;
     }

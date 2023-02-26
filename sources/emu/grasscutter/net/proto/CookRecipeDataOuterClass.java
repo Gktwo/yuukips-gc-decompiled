@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CookRecipeDataOuterClass.class */
 public final class CookRecipeDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014CookRecipeData.proto\"8\n\u000eCookRecipeData\u0012\u0013\n\u000bproficiency\u0018\b \u0001(\r\u0012\u0011\n\trecipe_id\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014CookRecipeData.proto\"7\n\u000eCookRecipeData\u0012\u0013\n\u000bproficiency\u0018\u0001 \u0001(\r\u0012\u0010\n\brecipeId\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_CookRecipeData_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_CookRecipeData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CookRecipeData_descriptor, new String[]{"Proficiency", "RecipeId"});
 
@@ -43,9 +43,9 @@ public final class CookRecipeDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CookRecipeDataOuterClass$CookRecipeData.class */
     public static final class CookRecipeData extends GeneratedMessageV3 implements CookRecipeDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PROFICIENCY_FIELD_NUMBER = 8;
+        public static final int PROFICIENCY_FIELD_NUMBER = 1;
         private int proficiency_;
-        public static final int RECIPE_ID_FIELD_NUMBER = 14;
+        public static final int RECIPEID_FIELD_NUMBER = 6;
         private int recipeId_;
         private byte memoizedIsInitialized;
         private static final CookRecipeData DEFAULT_INSTANCE = new CookRecipeData();
@@ -92,10 +92,10 @@ public final class CookRecipeDataOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 64:
+                            case 8:
                                 this.proficiency_ = input.readUInt32();
                                 break;
-                            case 112:
+                            case 48:
                                 this.recipeId_ = input.readUInt32();
                                 break;
                             default:
@@ -153,10 +153,10 @@ public final class CookRecipeDataOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.proficiency_ != 0) {
-                output.writeUInt32(8, this.proficiency_);
+                output.writeUInt32(1, this.proficiency_);
             }
             if (this.recipeId_ != 0) {
-                output.writeUInt32(14, this.recipeId_);
+                output.writeUInt32(6, this.recipeId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class CookRecipeDataOuterClass {
             }
             int size2 = 0;
             if (this.proficiency_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(8, this.proficiency_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.proficiency_);
             }
             if (this.recipeId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.recipeId_);
+                size2 += CodedOutputStream.computeUInt32Size(6, this.recipeId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class CookRecipeDataOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getProficiency())) + 14)) + getRecipeId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getProficiency())) + 6)) + getRecipeId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

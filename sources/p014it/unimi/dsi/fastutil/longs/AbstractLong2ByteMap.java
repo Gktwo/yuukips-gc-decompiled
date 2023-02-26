@@ -197,30 +197,30 @@ public abstract class AbstractLong2ByteMap extends AbstractLong2ByteFunction imp
                 return new LongIterator() { // from class: it.unimi.dsi.fastutil.longs.AbstractLong2ByteMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Long2ByteMap.Entry> f2221i;
+                    private final ObjectIterator<Long2ByteMap.Entry> f2185i;
 
                     {
-                        this.f2221i = Long2ByteMaps.fastIterator(AbstractLong2ByteMap.this);
+                        this.f2185i = Long2ByteMaps.fastIterator(AbstractLong2ByteMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
                     public long nextLong() {
-                        return this.f2221i.next().getLongKey();
+                        return this.f2185i.next().getLongKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2221i.hasNext();
+                        return this.f2185i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2221i.remove();
+                        this.f2185i.remove();
                     }
 
                     @Override // java.util.PrimitiveIterator.OfLong
                     public void forEachRemaining(LongConsumer action) {
-                        this.f2221i.forEachRemaining(entry -> {
+                        this.f2185i.forEachRemaining(entry -> {
                             action.accept(entry.getLongKey());
                         });
                     }
@@ -258,30 +258,30 @@ public abstract class AbstractLong2ByteMap extends AbstractLong2ByteFunction imp
                 return new ByteIterator() { // from class: it.unimi.dsi.fastutil.longs.AbstractLong2ByteMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Long2ByteMap.Entry> f2222i;
+                    private final ObjectIterator<Long2ByteMap.Entry> f2186i;
 
                     {
-                        this.f2222i = Long2ByteMaps.fastIterator(AbstractLong2ByteMap.this);
+                        this.f2186i = Long2ByteMaps.fastIterator(AbstractLong2ByteMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
                     public byte nextByte() {
-                        return this.f2222i.next().getByteValue();
+                        return this.f2186i.next().getByteValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2222i.hasNext();
+                        return this.f2186i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2222i.remove();
+                        this.f2186i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
                     public void forEachRemaining(ByteConsumer action) {
-                        this.f2222i.forEachRemaining(entry -> {
+                        this.f2186i.forEachRemaining(entry -> {
                             action.accept(entry.getByteValue());
                         });
                     }

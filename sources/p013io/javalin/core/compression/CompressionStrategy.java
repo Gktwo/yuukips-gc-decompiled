@@ -1,7 +1,6 @@
 package p013io.javalin.core.compression;
 
 import com.nixxcode.jvmbrotli.common.BrotliLoader;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
@@ -44,7 +43,7 @@ public final class CompressionStrategy {
     public CompressionStrategy(@Nullable Brotli brotli, @Nullable Gzip gzip) {
         this.brotli = brotli != null ? tryLoadBrotli(brotli) : null;
         this.gzip = gzip;
-        this.minSizeForCompression = PacketOpcodes.GetMailItemRsp;
+        this.minSizeForCompression = 1500;
         this.excludedMimeTypesFromCompression = CollectionsKt.listOf((Object[]) new String[]{"image/", "audio/", "video/", "application/compress", "application/zip", "application/gzip", "application/bzip2", "application/brotli", "application/x-xz", "application/x-rar-compressed"});
     }
 

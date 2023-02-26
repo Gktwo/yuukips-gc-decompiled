@@ -17,14 +17,14 @@ public class LongHeapPriorityQueue implements LongPriorityQueue, Serializable {
     protected int size;
 
     /* renamed from: c */
-    protected LongComparator f2412c;
+    protected LongComparator f2376c;
 
     public LongHeapPriorityQueue(int capacity, LongComparator c) {
         this.heap = LongArrays.EMPTY_ARRAY;
         if (capacity > 0) {
             this.heap = new long[capacity];
         }
-        this.f2412c = c;
+        this.f2376c = c;
     }
 
     public LongHeapPriorityQueue(int capacity) {
@@ -88,7 +88,7 @@ public class LongHeapPriorityQueue implements LongPriorityQueue, Serializable {
         int i = this.size;
         this.size = i + 1;
         jArr[i] = x;
-        LongHeaps.upHeap(this.heap, this.size, this.size - 1, this.f2412c);
+        LongHeaps.upHeap(this.heap, this.size, this.size - 1, this.f2376c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.LongPriorityQueue
@@ -103,7 +103,7 @@ public class LongHeapPriorityQueue implements LongPriorityQueue, Serializable {
         this.size = i;
         jArr[0] = jArr2[i];
         if (this.size != 0) {
-            LongHeaps.downHeap(this.heap, this.size, 0, this.f2412c);
+            LongHeaps.downHeap(this.heap, this.size, 0, this.f2376c);
         }
         return result;
     }
@@ -118,7 +118,7 @@ public class LongHeapPriorityQueue implements LongPriorityQueue, Serializable {
 
     @Override // p014it.unimi.dsi.fastutil.PriorityQueue
     public void changed() {
-        LongHeaps.downHeap(this.heap, this.size, 0, this.f2412c);
+        LongHeaps.downHeap(this.heap, this.size, 0, this.f2376c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.PriorityQueue
@@ -138,7 +138,7 @@ public class LongHeapPriorityQueue implements LongPriorityQueue, Serializable {
     /* Return type fixed from 'it.unimi.dsi.fastutil.longs.LongComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.longs.LongPriorityQueue, p014it.unimi.dsi.fastutil.PriorityQueue
     public Comparator<? super Long> comparator() {
-        return this.f2412c;
+        return this.f2376c;
     }
 
     private void writeObject(ObjectOutputStream s) throws IOException {

@@ -92,23 +92,23 @@ public class IndirectPriorityQueues {
         public static final long serialVersionUID = -7046029254386353129L;
 
         /* renamed from: q */
-        protected final IndirectPriorityQueue<K> f1038q;
+        protected final IndirectPriorityQueue<K> f1002q;
         protected final Object sync;
 
         protected SynchronizedIndirectPriorityQueue(IndirectPriorityQueue<K> q, Object sync) {
-            this.f1038q = q;
+            this.f1002q = q;
             this.sync = sync;
         }
 
         protected SynchronizedIndirectPriorityQueue(IndirectPriorityQueue<K> q) {
-            this.f1038q = q;
+            this.f1002q = q;
             this.sync = this;
         }
 
         @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
         public void enqueue(int x) {
             synchronized (this.sync) {
-                this.f1038q.enqueue(x);
+                this.f1002q.enqueue(x);
             }
         }
 
@@ -116,7 +116,7 @@ public class IndirectPriorityQueues {
         public int dequeue() {
             int dequeue;
             synchronized (this.sync) {
-                dequeue = this.f1038q.dequeue();
+                dequeue = this.f1002q.dequeue();
             }
             return dequeue;
         }
@@ -125,7 +125,7 @@ public class IndirectPriorityQueues {
         public boolean contains(int index) {
             boolean contains;
             synchronized (this.sync) {
-                contains = this.f1038q.contains(index);
+                contains = this.f1002q.contains(index);
             }
             return contains;
         }
@@ -134,7 +134,7 @@ public class IndirectPriorityQueues {
         public int first() {
             int first;
             synchronized (this.sync) {
-                first = this.f1038q.first();
+                first = this.f1002q.first();
             }
             return first;
         }
@@ -143,7 +143,7 @@ public class IndirectPriorityQueues {
         public int last() {
             int last;
             synchronized (this.sync) {
-                last = this.f1038q.last();
+                last = this.f1002q.last();
             }
             return last;
         }
@@ -152,7 +152,7 @@ public class IndirectPriorityQueues {
         public boolean isEmpty() {
             boolean isEmpty;
             synchronized (this.sync) {
-                isEmpty = this.f1038q.isEmpty();
+                isEmpty = this.f1002q.isEmpty();
             }
             return isEmpty;
         }
@@ -161,7 +161,7 @@ public class IndirectPriorityQueues {
         public int size() {
             int size;
             synchronized (this.sync) {
-                size = this.f1038q.size();
+                size = this.f1002q.size();
             }
             return size;
         }
@@ -169,28 +169,28 @@ public class IndirectPriorityQueues {
         @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
         public void clear() {
             synchronized (this.sync) {
-                this.f1038q.clear();
+                this.f1002q.clear();
             }
         }
 
         @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
         public void changed() {
             synchronized (this.sync) {
-                this.f1038q.changed();
+                this.f1002q.changed();
             }
         }
 
         @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
         public void allChanged() {
             synchronized (this.sync) {
-                this.f1038q.allChanged();
+                this.f1002q.allChanged();
             }
         }
 
         @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
         public void changed(int i) {
             synchronized (this.sync) {
-                this.f1038q.changed(i);
+                this.f1002q.changed(i);
             }
         }
 
@@ -198,7 +198,7 @@ public class IndirectPriorityQueues {
         public boolean remove(int i) {
             boolean remove;
             synchronized (this.sync) {
-                remove = this.f1038q.remove(i);
+                remove = this.f1002q.remove(i);
             }
             return remove;
         }
@@ -207,14 +207,14 @@ public class IndirectPriorityQueues {
         public Comparator<? super K> comparator() {
             Comparator<? super K> comparator;
             synchronized (this.sync) {
-                comparator = this.f1038q.comparator();
+                comparator = this.f1002q.comparator();
             }
             return comparator;
         }
 
         @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
         public int front(int[] a) {
-            return this.f1038q.front(a);
+            return this.f1002q.front(a);
         }
     }
 

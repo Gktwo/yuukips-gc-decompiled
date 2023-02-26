@@ -13,7 +13,7 @@ public class ChunkedStream implements ChunkedInput<ByteBuf> {
     static final int DEFAULT_CHUNK_SIZE = 8192;
 
     /* renamed from: in */
-    private final PushbackInputStream f1033in;
+    private final PushbackInputStream f997in;
     private final int chunkSize;
     private long offset;
     private boolean closed;
@@ -26,9 +26,9 @@ public class ChunkedStream implements ChunkedInput<ByteBuf> {
         ObjectUtil.checkNotNull(in, "in");
         ObjectUtil.checkPositive(chunkSize, "chunkSize");
         if (in instanceof PushbackInputStream) {
-            this.f1033in = (PushbackInputStream) in;
+            this.f997in = (PushbackInputStream) in;
         } else {
-            this.f1033in = new PushbackInputStream(in);
+            this.f997in = new PushbackInputStream(in);
         }
         this.chunkSize = chunkSize;
     }
@@ -42,21 +42,21 @@ public class ChunkedStream implements ChunkedInput<ByteBuf> {
         if (this.closed) {
             return true;
         }
-        if (this.f1033in.available() > 0) {
+        if (this.f997in.available() > 0) {
             return false;
         }
-        int b = this.f1033in.read();
+        int b = this.f997in.read();
         if (b < 0) {
             return true;
         }
-        this.f1033in.unread(b);
+        this.f997in.unread(b);
         return false;
     }
 
     @Override // p013io.netty.handler.stream.ChunkedInput
     public void close() throws Exception {
         this.closed = true;
-        this.f1033in.close();
+        this.f997in.close();
     }
 
     @Override // p013io.netty.handler.stream.ChunkedInput
@@ -71,15 +71,15 @@ public class ChunkedStream implements ChunkedInput<ByteBuf> {
         if (isEndOfInput()) {
             return null;
         }
-        if (this.f1033in.available() <= 0) {
+        if (this.f997in.available() <= 0) {
             chunkSize = this.chunkSize;
         } else {
-            chunkSize = Math.min(this.chunkSize, this.f1033in.available());
+            chunkSize = Math.min(this.chunkSize, this.f997in.available());
         }
         boolean release = true;
         ByteBuf buffer = allocator.buffer(chunkSize);
         try {
-            int written = buffer.writeBytes(this.f1033in, chunkSize);
+            int written = buffer.writeBytes(this.f997in, chunkSize);
             if (written < 0) {
                 return null;
             }

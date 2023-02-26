@@ -20,21 +20,21 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityIdentifierOuterClass.class */
 public final class AbilityIdentifierOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017AbilityIdentifier.proto\"¸\u0001\n\u0011AbilityIdentifier\u0012\u001c\n\u0014instanced_ability_id\u0018\u0004 \u0001(\r\u0012\u0019\n\u0011modifier_owner_id\u0018\n \u0001(\r\u0012\u001e\n\u0016is_serverbuff_modifier\u0018\u000e \u0001(\b\u0012\u0010\n\blocal_id\u0018\u0007 \u0001(\u0005\u0012\u0019\n\u0011ability_caster_id\u0018\u0001 \u0001(\r\u0012\u001d\n\u0015instanced_modifier_id\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017AbilityIdentifier.proto\"­\u0001\n\u0011AbilityIdentifier\u0012\u0017\n\u000fmodifierOwnerId\u0018\u0003 \u0001(\r\u0012\u0017\n\u000fabilityCasterId\u0018\n \u0001(\r\u0012\u001a\n\u0012instancedAbilityId\u0018\u0005 \u0001(\r\u0012\u001c\n\u0014isServerbuffModifier\u0018\u0004 \u0001(\b\u0012\u000f\n\u0007localId\u0018\b \u0001(\u0005\u0012\u001b\n\u0013instancedModifierId\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AbilityIdentifier_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AbilityIdentifier_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AbilityIdentifier_descriptor, new String[]{"InstancedAbilityId", "ModifierOwnerId", "IsServerbuffModifier", "LocalId", "AbilityCasterId", "InstancedModifierId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AbilityIdentifier_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AbilityIdentifier_descriptor, new String[]{"ModifierOwnerId", "AbilityCasterId", "InstancedAbilityId", "IsServerbuffModifier", "LocalId", "InstancedModifierId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityIdentifierOuterClass$AbilityIdentifierOrBuilder.class */
     public interface AbilityIdentifierOrBuilder extends MessageOrBuilder {
-        int getInstancedAbilityId();
-
         int getModifierOwnerId();
+
+        int getAbilityCasterId();
+
+        int getInstancedAbilityId();
 
         boolean getIsServerbuffModifier();
 
         int getLocalId();
-
-        int getAbilityCasterId();
 
         int getInstancedModifierId();
     }
@@ -52,17 +52,17 @@ public final class AbilityIdentifierOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityIdentifierOuterClass$AbilityIdentifier.class */
     public static final class AbilityIdentifier extends GeneratedMessageV3 implements AbilityIdentifierOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int INSTANCED_ABILITY_ID_FIELD_NUMBER = 4;
-        private int instancedAbilityId_;
-        public static final int MODIFIER_OWNER_ID_FIELD_NUMBER = 10;
+        public static final int MODIFIEROWNERID_FIELD_NUMBER = 3;
         private int modifierOwnerId_;
-        public static final int IS_SERVERBUFF_MODIFIER_FIELD_NUMBER = 14;
-        private boolean isServerbuffModifier_;
-        public static final int LOCAL_ID_FIELD_NUMBER = 7;
-        private int localId_;
-        public static final int ABILITY_CASTER_ID_FIELD_NUMBER = 1;
+        public static final int ABILITYCASTERID_FIELD_NUMBER = 10;
         private int abilityCasterId_;
-        public static final int INSTANCED_MODIFIER_ID_FIELD_NUMBER = 5;
+        public static final int INSTANCEDABILITYID_FIELD_NUMBER = 5;
+        private int instancedAbilityId_;
+        public static final int ISSERVERBUFFMODIFIER_FIELD_NUMBER = 4;
+        private boolean isServerbuffModifier_;
+        public static final int LOCALID_FIELD_NUMBER = 8;
+        private int localId_;
+        public static final int INSTANCEDMODIFIERID_FIELD_NUMBER = 11;
         private int instancedModifierId_;
         private byte memoizedIsInitialized;
         private static final AbilityIdentifier DEFAULT_INSTANCE = new AbilityIdentifier();
@@ -109,23 +109,23 @@ public final class AbilityIdentifierOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
-                                this.abilityCasterId_ = input.readUInt32();
+                            case 24:
+                                this.modifierOwnerId_ = input.readUInt32();
                                 break;
                             case 32:
-                                this.instancedAbilityId_ = input.readUInt32();
+                                this.isServerbuffModifier_ = input.readBool();
                                 break;
                             case 40:
-                                this.instancedModifierId_ = input.readUInt32();
+                                this.instancedAbilityId_ = input.readUInt32();
                                 break;
-                            case 56:
+                            case 64:
                                 this.localId_ = input.readInt32();
                                 break;
                             case 80:
-                                this.modifierOwnerId_ = input.readUInt32();
+                                this.abilityCasterId_ = input.readUInt32();
                                 break;
-                            case 112:
-                                this.isServerbuffModifier_ = input.readBool();
+                            case 88:
+                                this.instancedModifierId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -157,13 +157,18 @@ public final class AbilityIdentifierOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifierOrBuilder
-        public int getInstancedAbilityId() {
-            return this.instancedAbilityId_;
+        public int getModifierOwnerId() {
+            return this.modifierOwnerId_;
         }
 
         @Override // emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifierOrBuilder
-        public int getModifierOwnerId() {
-            return this.modifierOwnerId_;
+        public int getAbilityCasterId() {
+            return this.abilityCasterId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifierOrBuilder
+        public int getInstancedAbilityId() {
+            return this.instancedAbilityId_;
         }
 
         @Override // emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifierOrBuilder
@@ -174,11 +179,6 @@ public final class AbilityIdentifierOuterClass {
         @Override // emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifierOrBuilder
         public int getLocalId() {
             return this.localId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifierOrBuilder
-        public int getAbilityCasterId() {
-            return this.abilityCasterId_;
         }
 
         @Override // emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifierOrBuilder
@@ -201,23 +201,23 @@ public final class AbilityIdentifierOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.abilityCasterId_ != 0) {
-                output.writeUInt32(1, this.abilityCasterId_);
-            }
-            if (this.instancedAbilityId_ != 0) {
-                output.writeUInt32(4, this.instancedAbilityId_);
-            }
-            if (this.instancedModifierId_ != 0) {
-                output.writeUInt32(5, this.instancedModifierId_);
-            }
-            if (this.localId_ != 0) {
-                output.writeInt32(7, this.localId_);
-            }
             if (this.modifierOwnerId_ != 0) {
-                output.writeUInt32(10, this.modifierOwnerId_);
+                output.writeUInt32(3, this.modifierOwnerId_);
             }
             if (this.isServerbuffModifier_) {
-                output.writeBool(14, this.isServerbuffModifier_);
+                output.writeBool(4, this.isServerbuffModifier_);
+            }
+            if (this.instancedAbilityId_ != 0) {
+                output.writeUInt32(5, this.instancedAbilityId_);
+            }
+            if (this.localId_ != 0) {
+                output.writeInt32(8, this.localId_);
+            }
+            if (this.abilityCasterId_ != 0) {
+                output.writeUInt32(10, this.abilityCasterId_);
+            }
+            if (this.instancedModifierId_ != 0) {
+                output.writeUInt32(11, this.instancedModifierId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -229,23 +229,23 @@ public final class AbilityIdentifierOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.abilityCasterId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.abilityCasterId_);
-            }
-            if (this.instancedAbilityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(4, this.instancedAbilityId_);
-            }
-            if (this.instancedModifierId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.instancedModifierId_);
-            }
-            if (this.localId_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(7, this.localId_);
-            }
             if (this.modifierOwnerId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.modifierOwnerId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.modifierOwnerId_);
             }
             if (this.isServerbuffModifier_) {
-                size2 += CodedOutputStream.computeBoolSize(14, this.isServerbuffModifier_);
+                size2 += CodedOutputStream.computeBoolSize(4, this.isServerbuffModifier_);
+            }
+            if (this.instancedAbilityId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(5, this.instancedAbilityId_);
+            }
+            if (this.localId_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(8, this.localId_);
+            }
+            if (this.abilityCasterId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(10, this.abilityCasterId_);
+            }
+            if (this.instancedModifierId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(11, this.instancedModifierId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -261,7 +261,7 @@ public final class AbilityIdentifierOuterClass {
                 return equals(obj);
             }
             AbilityIdentifier other = (AbilityIdentifier) obj;
-            return getInstancedAbilityId() == other.getInstancedAbilityId() && getModifierOwnerId() == other.getModifierOwnerId() && getIsServerbuffModifier() == other.getIsServerbuffModifier() && getLocalId() == other.getLocalId() && getAbilityCasterId() == other.getAbilityCasterId() && getInstancedModifierId() == other.getInstancedModifierId() && this.unknownFields.equals(other.unknownFields);
+            return getModifierOwnerId() == other.getModifierOwnerId() && getAbilityCasterId() == other.getAbilityCasterId() && getInstancedAbilityId() == other.getInstancedAbilityId() && getIsServerbuffModifier() == other.getIsServerbuffModifier() && getLocalId() == other.getLocalId() && getInstancedModifierId() == other.getInstancedModifierId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -269,7 +269,7 @@ public final class AbilityIdentifierOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getInstancedAbilityId())) + 10)) + getModifierOwnerId())) + 14)) + Internal.hashBoolean(getIsServerbuffModifier()))) + 7)) + getLocalId())) + 1)) + getAbilityCasterId())) + 5)) + getInstancedModifierId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getModifierOwnerId())) + 10)) + getAbilityCasterId())) + 5)) + getInstancedAbilityId())) + 4)) + Internal.hashBoolean(getIsServerbuffModifier()))) + 8)) + getLocalId())) + 11)) + getInstancedModifierId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -348,11 +348,11 @@ public final class AbilityIdentifierOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityIdentifierOuterClass$AbilityIdentifier$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements AbilityIdentifierOrBuilder {
-            private int instancedAbilityId_;
             private int modifierOwnerId_;
+            private int abilityCasterId_;
+            private int instancedAbilityId_;
             private boolean isServerbuffModifier_;
             private int localId_;
-            private int abilityCasterId_;
             private int instancedModifierId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -381,11 +381,11 @@ public final class AbilityIdentifierOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.instancedAbilityId_ = 0;
                 this.modifierOwnerId_ = 0;
+                this.abilityCasterId_ = 0;
+                this.instancedAbilityId_ = 0;
                 this.isServerbuffModifier_ = false;
                 this.localId_ = 0;
-                this.abilityCasterId_ = 0;
                 this.instancedModifierId_ = 0;
                 return this;
             }
@@ -412,11 +412,11 @@ public final class AbilityIdentifierOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public AbilityIdentifier buildPartial() {
                 AbilityIdentifier result = new AbilityIdentifier(this);
-                result.instancedAbilityId_ = this.instancedAbilityId_;
                 result.modifierOwnerId_ = this.modifierOwnerId_;
+                result.abilityCasterId_ = this.abilityCasterId_;
+                result.instancedAbilityId_ = this.instancedAbilityId_;
                 result.isServerbuffModifier_ = this.isServerbuffModifier_;
                 result.localId_ = this.localId_;
-                result.abilityCasterId_ = this.abilityCasterId_;
                 result.instancedModifierId_ = this.instancedModifierId_;
                 onBuilt();
                 return result;
@@ -465,20 +465,20 @@ public final class AbilityIdentifierOuterClass {
                 if (other == AbilityIdentifier.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getInstancedAbilityId() != 0) {
-                    setInstancedAbilityId(other.getInstancedAbilityId());
-                }
                 if (other.getModifierOwnerId() != 0) {
                     setModifierOwnerId(other.getModifierOwnerId());
+                }
+                if (other.getAbilityCasterId() != 0) {
+                    setAbilityCasterId(other.getAbilityCasterId());
+                }
+                if (other.getInstancedAbilityId() != 0) {
+                    setInstancedAbilityId(other.getInstancedAbilityId());
                 }
                 if (other.getIsServerbuffModifier()) {
                     setIsServerbuffModifier(other.getIsServerbuffModifier());
                 }
                 if (other.getLocalId() != 0) {
                     setLocalId(other.getLocalId());
-                }
-                if (other.getAbilityCasterId() != 0) {
-                    setAbilityCasterId(other.getAbilityCasterId());
                 }
                 if (other.getInstancedModifierId() != 0) {
                     setInstancedModifierId(other.getInstancedModifierId());
@@ -516,23 +516,6 @@ public final class AbilityIdentifierOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifierOrBuilder
-            public int getInstancedAbilityId() {
-                return this.instancedAbilityId_;
-            }
-
-            public Builder setInstancedAbilityId(int value) {
-                this.instancedAbilityId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearInstancedAbilityId() {
-                this.instancedAbilityId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifierOrBuilder
             public int getModifierOwnerId() {
                 return this.modifierOwnerId_;
             }
@@ -545,6 +528,40 @@ public final class AbilityIdentifierOuterClass {
 
             public Builder clearModifierOwnerId() {
                 this.modifierOwnerId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifierOrBuilder
+            public int getAbilityCasterId() {
+                return this.abilityCasterId_;
+            }
+
+            public Builder setAbilityCasterId(int value) {
+                this.abilityCasterId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearAbilityCasterId() {
+                this.abilityCasterId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifierOrBuilder
+            public int getInstancedAbilityId() {
+                return this.instancedAbilityId_;
+            }
+
+            public Builder setInstancedAbilityId(int value) {
+                this.instancedAbilityId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearInstancedAbilityId() {
+                this.instancedAbilityId_ = 0;
                 onChanged();
                 return this;
             }
@@ -579,23 +596,6 @@ public final class AbilityIdentifierOuterClass {
 
             public Builder clearLocalId() {
                 this.localId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AbilityIdentifierOuterClass.AbilityIdentifierOrBuilder
-            public int getAbilityCasterId() {
-                return this.abilityCasterId_;
-            }
-
-            public Builder setAbilityCasterId(int value) {
-                this.abilityCasterId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearAbilityCasterId() {
-                this.abilityCasterId_ = 0;
                 onChanged();
                 return this;
             }

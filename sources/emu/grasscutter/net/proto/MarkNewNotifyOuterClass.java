@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MarkNewNotifyOuterClass.class */
 public final class MarkNewNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013MarkNewNotify.proto\"7\n\rMarkNewNotify\u0012\u000f\n\u0007id_list\u0018\u0007 \u0003(\r\u0012\u0015\n\rmark_new_type\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013MarkNewNotify.proto\"4\n\rMarkNewNotify\u0012\u000e\n\u0006idList\u0018\u0001 \u0003(\r\u0012\u0013\n\u000bmarkNewType\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_MarkNewNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_MarkNewNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MarkNewNotify_descriptor, new String[]{"IdList", "MarkNewType"});
 
@@ -51,10 +51,10 @@ public final class MarkNewNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MarkNewNotifyOuterClass$MarkNewNotify.class */
     public static final class MarkNewNotify extends GeneratedMessageV3 implements MarkNewNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ID_LIST_FIELD_NUMBER = 7;
+        public static final int IDLIST_FIELD_NUMBER = 1;
         private Internal.IntList idList_;
         private int idListMemoizedSerializedSize;
-        public static final int MARK_NEW_TYPE_FIELD_NUMBER = 3;
+        public static final int MARKNEWTYPE_FIELD_NUMBER = 15;
         private int markNewType_;
         private byte memoizedIsInitialized;
         private static final MarkNewNotify DEFAULT_INSTANCE = new MarkNewNotify();
@@ -107,17 +107,14 @@ public final class MarkNewNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 24:
-                                    this.markNewType_ = input.readUInt32();
-                                    break;
-                                case 56:
+                                case 8:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.idList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.idList_.addInt(input.readUInt32());
                                     break;
-                                case 58:
+                                case 10:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.idList_ = newIntList();
@@ -127,6 +124,9 @@ public final class MarkNewNotifyOuterClass {
                                         this.idList_.addInt(input.readUInt32());
                                     }
                                     input.popLimit(limit);
+                                    break;
+                                case 120:
+                                    this.markNewType_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -197,15 +197,15 @@ public final class MarkNewNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (this.markNewType_ != 0) {
-                output.writeUInt32(3, this.markNewType_);
-            }
             if (getIdListList().size() > 0) {
-                output.writeUInt32NoTag(58);
+                output.writeUInt32NoTag(10);
                 output.writeUInt32NoTag(this.idListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.idList_.size(); i++) {
                 output.writeUInt32NoTag(this.idList_.getInt(i));
+            }
+            if (this.markNewType_ != 0) {
+                output.writeUInt32(15, this.markNewType_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -216,22 +216,21 @@ public final class MarkNewNotifyOuterClass {
             if (size != -1) {
                 return size;
             }
-            int size2 = 0;
-            if (this.markNewType_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.markNewType_);
-            }
             int dataSize = 0;
             for (int i = 0; i < this.idList_.size(); i++) {
                 dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.idList_.getInt(i));
             }
-            int size3 = size2 + dataSize;
+            int size2 = 0 + dataSize;
             if (!getIdListList().isEmpty()) {
-                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.idListMemoizedSerializedSize = dataSize;
-            int size4 = size3 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size4;
-            return size4;
+            if (this.markNewType_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.markNewType_);
+            }
+            int size3 = size2 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size3;
+            return size3;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -253,9 +252,9 @@ public final class MarkNewNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 7)) + getIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 1)) + getIdListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 3)) + getMarkNewType())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 15)) + getMarkNewType())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

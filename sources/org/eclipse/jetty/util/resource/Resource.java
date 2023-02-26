@@ -19,7 +19,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.Loader;
 import org.eclipse.jetty.util.MultiMap;
 import org.eclipse.jetty.util.StringUtil;
@@ -451,9 +451,9 @@ public abstract class Resource implements ResourceFactory, Closeable {
         try {
             in.skip(start);
             if (count < 0) {
-                C5747IO.copy(in, out);
+                C5739IO.copy(in, out);
             } else {
-                C5747IO.copy(in, out, count);
+                C5739IO.copy(in, out, count);
             }
             if (in != null) {
                 in.close();

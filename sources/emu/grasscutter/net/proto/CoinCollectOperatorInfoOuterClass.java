@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CoinCollectOperatorInfoOuterClass.class */
 public final class CoinCollectOperatorInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dCoinCollectOperatorInfo.proto\"+\n\u0017CoinCollectOperatorInfo\u0012\u0010\n\blevel_id\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dCoinCollectOperatorInfo.proto\"*\n\u0017CoinCollectOperatorInfo\u0012\u000f\n\u0007levelId\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_CoinCollectOperatorInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_CoinCollectOperatorInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CoinCollectOperatorInfo_descriptor, new String[]{"LevelId"});
 
@@ -41,7 +41,7 @@ public final class CoinCollectOperatorInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CoinCollectOperatorInfoOuterClass$CoinCollectOperatorInfo.class */
     public static final class CoinCollectOperatorInfo extends GeneratedMessageV3 implements CoinCollectOperatorInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int LEVEL_ID_FIELD_NUMBER = 1;
+        public static final int LEVELID_FIELD_NUMBER = 1;
         private int levelId_;
         private byte memoizedIsInitialized;
         private static final CoinCollectOperatorInfo DEFAULT_INSTANCE = new CoinCollectOperatorInfo();

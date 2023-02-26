@@ -569,7 +569,7 @@ public class IntRBTreeSet extends AbstractIntSortedSet implements Serializable, 
         int from;
 
         /* renamed from: to */
-        int f2201to;
+        int f2165to;
         boolean bottom;
         boolean top;
 
@@ -577,7 +577,7 @@ public class IntRBTreeSet extends AbstractIntSortedSet implements Serializable, 
             if (bottom || top || IntRBTreeSet.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f2201to = to;
+                this.f2165to = to;
                 this.top = top;
                 return;
             }
@@ -595,7 +595,7 @@ public class IntRBTreeSet extends AbstractIntSortedSet implements Serializable, 
 
         /* renamed from: in */
         final boolean m704in(int k) {
-            return (this.bottom || IntRBTreeSet.this.compare(k, this.from) >= 0) && (this.top || IntRBTreeSet.this.compare(k, this.f2201to) < 0);
+            return (this.bottom || IntRBTreeSet.this.compare(k, this.from) >= 0) && (this.top || IntRBTreeSet.this.compare(k, this.f2165to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntCollection, p014it.unimi.dsi.fastutil.ints.IntCollection
@@ -608,7 +608,7 @@ public class IntRBTreeSet extends AbstractIntSortedSet implements Serializable, 
             if (m704in(k)) {
                 return IntRBTreeSet.this.add(k);
             }
-            throw new IllegalArgumentException("Element (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2201to)) + ")");
+            throw new IllegalArgumentException("Element (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2165to)) + ")");
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntSet, p014it.unimi.dsi.fastutil.ints.IntSet
@@ -653,7 +653,7 @@ public class IntRBTreeSet extends AbstractIntSortedSet implements Serializable, 
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntSortedSet
         public IntSortedSet headSet(int to) {
-            if (!this.top && IntRBTreeSet.this.compare(to, this.f2201to) >= 0) {
+            if (!this.top && IntRBTreeSet.this.compare(to, this.f2165to) >= 0) {
                 return this;
             }
             return new Subset(this.from, this.bottom, to, false);
@@ -664,7 +664,7 @@ public class IntRBTreeSet extends AbstractIntSortedSet implements Serializable, 
             if (!this.bottom && IntRBTreeSet.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Subset(from, false, this.f2201to, this.top);
+            return new Subset(from, false, this.f2165to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntSortedSet
@@ -673,12 +673,12 @@ public class IntRBTreeSet extends AbstractIntSortedSet implements Serializable, 
                 return new Subset(from, false, to, false);
             }
             if (!this.top) {
-                to = IntRBTreeSet.this.compare(to, this.f2201to) < 0 ? to : this.f2201to;
+                to = IntRBTreeSet.this.compare(to, this.f2165to) < 0 ? to : this.f2165to;
             }
             if (!this.bottom) {
                 from = IntRBTreeSet.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f2201to) ? new Subset(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f2165to) ? new Subset(from, false, to, false) : this;
         }
 
         public Entry firstEntry() {
@@ -697,7 +697,7 @@ public class IntRBTreeSet extends AbstractIntSortedSet implements Serializable, 
             if (e == null) {
                 return null;
             }
-            if (this.top || IntRBTreeSet.this.compare(e.key, this.f2201to) < 0) {
+            if (this.top || IntRBTreeSet.this.compare(e.key, this.f2165to) < 0) {
                 return e;
             }
             return null;
@@ -711,8 +711,8 @@ public class IntRBTreeSet extends AbstractIntSortedSet implements Serializable, 
             if (this.top) {
                 e = IntRBTreeSet.this.lastEntry;
             } else {
-                e = IntRBTreeSet.this.locateKey(this.f2201to);
-                if (IntRBTreeSet.this.compare(e.key, this.f2201to) >= 0) {
+                e = IntRBTreeSet.this.locateKey(this.f2165to);
+                if (IntRBTreeSet.this.compare(e.key, this.f2165to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -790,7 +790,7 @@ public class IntRBTreeSet extends AbstractIntSortedSet implements Serializable, 
             @Override // p014it.unimi.dsi.fastutil.ints.IntRBTreeSet.SetIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Subset.this.top && this.next != null && IntRBTreeSet.this.compare(this.next.key, Subset.this.f2201to) >= 0) {
+                if (!Subset.this.top && this.next != null && IntRBTreeSet.this.compare(this.next.key, Subset.this.f2165to) >= 0) {
                     this.next = null;
                 }
             }

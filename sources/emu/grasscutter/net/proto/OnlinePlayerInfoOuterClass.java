@@ -27,7 +27,7 @@ import javassist.bytecode.SignatureAttribute;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/OnlinePlayerInfoOuterClass.class */
 public final class OnlinePlayerInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016OnlinePlayerInfo.proto\u001a\u0013MpSettingType.proto\u001a\u0014ProfilePicture.proto\"Ë\u0002\n\u0010OnlinePlayerInfo\u0012\u000b\n\u0003uid\u0018\u0001 \u0001(\r\u0012\u0010\n\bnickname\u0018\u0002 \u0001(\t\u0012\u0014\n\fplayer_level\u0018\u0003 \u0001(\r\u0012\u0011\n\tavatar_id\u0018\u0004 \u0001(\r\u0012'\n\u000fmp_setting_type\u0018\u0005 \u0001(\u000e2\u000e.MpSettingType\u0012\u001f\n\u0017cur_player_num_in_world\u0018\u0006 \u0001(\r\u0012\u0013\n\u000bworld_level\u0018\u0007 \u0001(\r\u0012\u0011\n\tonline_id\u0018\b \u0001(\t\u0012\u0014\n\fname_card_id\u0018\t \u0001(\r\u0012\u001a\n\u0012blacklist_uid_list\u0018\n \u0003(\r\u0012\u0011\n\tsignature\u0018\u000b \u0001(\t\u0012(\n\u000fprofile_picture\u0018\f \u0001(\u000b2\u000f.ProfilePicture\u0012\u000e\n\u0006psn_id\u0018\r \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MpSettingTypeOuterClass.getDescriptor(), ProfilePictureOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016OnlinePlayerInfo.proto\u001a\u0013MpSettingType.proto\u001a\u0014ProfilePicture.proto\"»\u0002\n\u0010OnlinePlayerInfo\u0012\u000b\n\u0003uid\u0018\u0001 \u0001(\r\u0012\u0010\n\bnickname\u0018\u0002 \u0001(\t\u0012\u0013\n\u000bplayerLevel\u0018\u0003 \u0001(\r\u0012\u0010\n\bavatarId\u0018\u0004 \u0001(\r\u0012%\n\rmpSettingType\u0018\u0005 \u0001(\u000e2\u000e.MpSettingType\u0012\u001b\n\u0013curPlayerNumInWorld\u0018\u0006 \u0001(\r\u0012\u0012\n\nworldLevel\u0018\u0007 \u0001(\r\u0012\u0010\n\bonlineId\u0018\b \u0001(\t\u0012\u0012\n\nnameCardId\u0018\t \u0001(\r\u0012\u0018\n\u0010blacklistUidList\u0018\n \u0003(\r\u0012\u0011\n\tsignature\u0018\u000b \u0001(\t\u0012'\n\u000eprofilePicture\u0018\f \u0001(\u000b2\u000f.ProfilePicture\u0012\r\n\u0005psnId\u0018\r \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MpSettingTypeOuterClass.getDescriptor(), ProfilePictureOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_OnlinePlayerInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_OnlinePlayerInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_OnlinePlayerInfo_descriptor, new String[]{"Uid", "Nickname", "PlayerLevel", "AvatarId", "MpSettingType", "CurPlayerNumInWorld", "WorldLevel", "OnlineId", "NameCardId", "BlacklistUidList", SignatureAttribute.tag, "ProfilePicture", "PsnId"});
 
@@ -95,28 +95,28 @@ public final class OnlinePlayerInfoOuterClass {
         private int uid_;
         public static final int NICKNAME_FIELD_NUMBER = 2;
         private volatile Object nickname_;
-        public static final int PLAYER_LEVEL_FIELD_NUMBER = 3;
+        public static final int PLAYERLEVEL_FIELD_NUMBER = 3;
         private int playerLevel_;
-        public static final int AVATAR_ID_FIELD_NUMBER = 4;
+        public static final int AVATARID_FIELD_NUMBER = 4;
         private int avatarId_;
-        public static final int MP_SETTING_TYPE_FIELD_NUMBER = 5;
+        public static final int MPSETTINGTYPE_FIELD_NUMBER = 5;
         private int mpSettingType_;
-        public static final int CUR_PLAYER_NUM_IN_WORLD_FIELD_NUMBER = 6;
+        public static final int CURPLAYERNUMINWORLD_FIELD_NUMBER = 6;
         private int curPlayerNumInWorld_;
-        public static final int WORLD_LEVEL_FIELD_NUMBER = 7;
+        public static final int WORLDLEVEL_FIELD_NUMBER = 7;
         private int worldLevel_;
-        public static final int ONLINE_ID_FIELD_NUMBER = 8;
+        public static final int ONLINEID_FIELD_NUMBER = 8;
         private volatile Object onlineId_;
-        public static final int NAME_CARD_ID_FIELD_NUMBER = 9;
+        public static final int NAMECARDID_FIELD_NUMBER = 9;
         private int nameCardId_;
-        public static final int BLACKLIST_UID_LIST_FIELD_NUMBER = 10;
+        public static final int BLACKLISTUIDLIST_FIELD_NUMBER = 10;
         private Internal.IntList blacklistUidList_;
         private int blacklistUidListMemoizedSerializedSize;
         public static final int SIGNATURE_FIELD_NUMBER = 11;
         private volatile Object signature_;
-        public static final int PROFILE_PICTURE_FIELD_NUMBER = 12;
+        public static final int PROFILEPICTURE_FIELD_NUMBER = 12;
         private ProfilePictureOuterClass.ProfilePicture profilePicture_;
-        public static final int PSN_ID_FIELD_NUMBER = 13;
+        public static final int PSNID_FIELD_NUMBER = 13;
         private volatile Object psnId_;
         private byte memoizedIsInitialized;
         private static final OnlinePlayerInfo DEFAULT_INSTANCE = new OnlinePlayerInfo();

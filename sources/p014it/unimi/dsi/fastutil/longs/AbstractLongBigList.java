@@ -120,32 +120,32 @@ public abstract class AbstractLongBigList extends AbstractLongCollection impleme
     public static final class IndexBasedSpliterator extends LongBigSpliterators.LateBindingSizeIndexBasedSpliterator {
 
         /* renamed from: l */
-        final LongBigList f2257l;
+        final LongBigList f2221l;
 
         IndexBasedSpliterator(LongBigList l, long pos) {
             super(pos);
-            this.f2257l = l;
+            this.f2221l = l;
         }
 
         IndexBasedSpliterator(LongBigList l, long pos, long maxPos) {
             super(pos, maxPos);
-            this.f2257l = l;
+            this.f2221l = l;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongBigSpliterators.LateBindingSizeIndexBasedSpliterator
         protected final long getMaxPosFromBackingStore() {
-            return this.f2257l.size64();
+            return this.f2221l.size64();
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongBigSpliterators.AbstractIndexBasedSpliterator
         protected final long get(long i) {
-            return this.f2257l.getLong(i);
+            return this.f2221l.getLong(i);
         }
 
         /* access modifiers changed from: protected */
         @Override // p014it.unimi.dsi.fastutil.longs.LongBigSpliterators.AbstractIndexBasedSpliterator
         public final IndexBasedSpliterator makeForSplit(long pos, long maxPos) {
-            return new IndexBasedSpliterator(this.f2257l, pos, maxPos);
+            return new IndexBasedSpliterator(this.f2221l, pos, maxPos);
         }
     }
 
@@ -1004,11 +1004,11 @@ public abstract class AbstractLongBigList extends AbstractLongCollection impleme
         private static final long serialVersionUID = -7046029254386353129L;
 
         /* renamed from: l */
-        protected final LongBigList f2258l;
+        protected final LongBigList f2222l;
         protected final long from;
 
         /* renamed from: to */
-        protected long f2259to;
+        protected long f2223to;
         static final /* synthetic */ boolean $assertionsDisabled;
 
         /* Return type fixed from 'it.unimi.dsi.fastutil.BigListIterator' to match base method */
@@ -1085,18 +1085,18 @@ public abstract class AbstractLongBigList extends AbstractLongCollection impleme
         }
 
         public LongSubList(LongBigList l, long from, long to) {
-            this.f2258l = l;
+            this.f2222l = l;
             this.from = from;
-            this.f2259to = to;
+            this.f2223to = to;
         }
 
         /* access modifiers changed from: private */
         public boolean assertRange() {
-            if (!$assertionsDisabled && this.from > this.f2258l.size64()) {
+            if (!$assertionsDisabled && this.from > this.f2222l.size64()) {
                 throw new AssertionError();
-            } else if (!$assertionsDisabled && this.f2259to > this.f2258l.size64()) {
+            } else if (!$assertionsDisabled && this.f2223to > this.f2222l.size64()) {
                 throw new AssertionError();
-            } else if ($assertionsDisabled || this.f2259to >= this.from) {
+            } else if ($assertionsDisabled || this.f2223to >= this.from) {
                 return true;
             } else {
                 throw new AssertionError();
@@ -1105,8 +1105,8 @@ public abstract class AbstractLongBigList extends AbstractLongCollection impleme
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongBigList, p014it.unimi.dsi.fastutil.longs.AbstractLongCollection, p014it.unimi.dsi.fastutil.longs.LongCollection
         public boolean add(long k) {
-            this.f2258l.add(this.f2259to, k);
-            this.f2259to++;
+            this.f2222l.add(this.f2223to, k);
+            this.f2223to++;
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }
@@ -1116,8 +1116,8 @@ public abstract class AbstractLongBigList extends AbstractLongCollection impleme
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongBigList, p014it.unimi.dsi.fastutil.longs.LongBigList
         public void add(long index, long k) {
             ensureIndex(index);
-            this.f2258l.add(this.from + index, k);
-            this.f2259to++;
+            this.f2222l.add(this.from + index, k);
+            this.f2223to++;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1126,32 +1126,32 @@ public abstract class AbstractLongBigList extends AbstractLongCollection impleme
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongBigList, p014it.unimi.dsi.fastutil.BigList
         public boolean addAll(long index, Collection<? extends Long> c) {
             ensureIndex(index);
-            this.f2259to += (long) c.size();
-            return this.f2258l.addAll(this.from + index, c);
+            this.f2223to += (long) c.size();
+            return this.f2222l.addAll(this.from + index, c);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongBigList
         public long getLong(long index) {
             ensureRestrictedIndex(index);
-            return this.f2258l.getLong(this.from + index);
+            return this.f2222l.getLong(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongBigList, p014it.unimi.dsi.fastutil.longs.LongBigList
         public long removeLong(long index) {
             ensureRestrictedIndex(index);
-            this.f2259to--;
-            return this.f2258l.removeLong(this.from + index);
+            this.f2223to--;
+            return this.f2222l.removeLong(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongBigList, p014it.unimi.dsi.fastutil.longs.LongBigList
         public long set(long index, long k) {
             ensureRestrictedIndex(index);
-            return this.f2258l.set(this.from + index, k);
+            return this.f2222l.set(this.from + index, k);
         }
 
         @Override // p014it.unimi.dsi.fastutil.Size64
         public long size64() {
-            return this.f2259to - this.from;
+            return this.f2223to - this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongBigList, p014it.unimi.dsi.fastutil.longs.LongBigList
@@ -1160,15 +1160,15 @@ public abstract class AbstractLongBigList extends AbstractLongCollection impleme
             if (from + length > size64()) {
                 throw new IndexOutOfBoundsException("End index (" + from + length + ") is greater than list size (" + size64() + ")");
             }
-            this.f2258l.getElements(this.from + from, a, offset, length);
+            this.f2222l.getElements(this.from + from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongBigList, p014it.unimi.dsi.fastutil.longs.LongBigList
         public void removeElements(long from, long to) {
             ensureIndex(from);
             ensureIndex(to);
-            this.f2258l.removeElements(this.from + from, this.from + to);
-            this.f2259to -= to - from;
+            this.f2222l.removeElements(this.from + from, this.from + to);
+            this.f2223to -= to - from;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1177,8 +1177,8 @@ public abstract class AbstractLongBigList extends AbstractLongCollection impleme
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongBigList, p014it.unimi.dsi.fastutil.longs.LongBigList
         public void addElements(long index, long[][] a, long offset, long length) {
             ensureIndex(index);
-            this.f2258l.addElements(this.from + index, a, offset, length);
-            this.f2259to += length;
+            this.f2222l.addElements(this.from + index, a, offset, length);
+            this.f2223to += length;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1200,7 +1200,7 @@ public abstract class AbstractLongBigList extends AbstractLongCollection impleme
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongBigListIterators.AbstractIndexBasedBigIterator
             protected final long get(long i) {
-                return LongSubList.this.f2258l.getLong(LongSubList.this.from + i);
+                return LongSubList.this.f2222l.getLong(LongSubList.this.from + i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongBigListIterators.AbstractIndexBasedBigListIterator
@@ -1220,7 +1220,7 @@ public abstract class AbstractLongBigList extends AbstractLongCollection impleme
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongBigListIterators.AbstractIndexBasedBigIterator
             protected final long getMaxPos() {
-                return LongSubList.this.f2259to - LongSubList.this.from;
+                return LongSubList.this.f2223to - LongSubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongBigListIterators.AbstractIndexBasedBigListIterator, p014it.unimi.dsi.fastutil.longs.LongBigListIterator
@@ -1262,7 +1262,7 @@ public abstract class AbstractLongBigList extends AbstractLongCollection impleme
 
             @Override // java.util.Iterator
             public boolean hasNext() {
-                return this.parent.nextIndex() < LongSubList.this.f2259to;
+                return this.parent.nextIndex() < LongSubList.this.f2223to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -1325,10 +1325,10 @@ public abstract class AbstractLongBigList extends AbstractLongCollection impleme
                 }
                 long currentPos = this.parent.nextIndex();
                 char c = currentPos + n;
-                int i = (c > LongSubList.this.f2259to ? 1 : (c == LongSubList.this.f2259to ? 0 : -1));
+                int i = (c > LongSubList.this.f2223to ? 1 : (c == LongSubList.this.f2223to ? 0 : -1));
                 long parentNewPos = c;
                 if (i > 0) {
-                    parentNewPos = LongSubList.this.f2259to;
+                    parentNewPos = LongSubList.this.f2223to;
                 }
                 return this.parent.skip((parentNewPos == 1 ? 1 : 0) - currentPos);
             }
@@ -1339,12 +1339,12 @@ public abstract class AbstractLongBigList extends AbstractLongCollection impleme
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongBigList, p014it.unimi.dsi.fastutil.longs.LongBigList, p014it.unimi.dsi.fastutil.BigList
         public BigListIterator<Long> listIterator(long index) {
             ensureIndex(index);
-            return this.f2258l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f2258l.listIterator(index + this.from));
+            return this.f2222l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f2222l.listIterator(index + this.from));
         }
 
         @Override // java.util.Collection, java.lang.Iterable, p014it.unimi.dsi.fastutil.longs.LongCollection, p014it.unimi.dsi.fastutil.longs.LongIterable
         public LongSpliterator spliterator() {
-            return this.f2258l instanceof RandomAccess ? new IndexBasedSpliterator(this.f2258l, this.from, this.f2259to) : spliterator();
+            return this.f2222l instanceof RandomAccess ? new IndexBasedSpliterator(this.f2222l, this.from, this.f2223to) : spliterator();
         }
 
         /* Return type fixed from 'it.unimi.dsi.fastutil.longs.LongBigList' to match base method */
@@ -1364,8 +1364,8 @@ public abstract class AbstractLongBigList extends AbstractLongCollection impleme
             if (index == -1) {
                 return false;
             }
-            this.f2259to--;
-            this.f2258l.removeLong(this.from + index);
+            this.f2223to--;
+            this.f2222l.removeLong(this.from + index);
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }

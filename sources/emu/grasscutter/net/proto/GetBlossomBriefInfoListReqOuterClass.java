@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetBlossomBriefInfoListReqOuterClass.class */
 public final class GetBlossomBriefInfoListReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n GetBlossomBriefInfoListReq.proto\"2\n\u001aGetBlossomBriefInfoListReq\u0012\u0014\n\fcity_id_list\u0018\u0007 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n GetBlossomBriefInfoListReq.proto\"0\n\u001aGetBlossomBriefInfoListReq\u0012\u0012\n\ncityIdList\u0018\u0005 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GetBlossomBriefInfoListReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetBlossomBriefInfoListReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetBlossomBriefInfoListReq_descriptor, new String[]{"CityIdList"});
 
@@ -49,7 +49,7 @@ public final class GetBlossomBriefInfoListReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetBlossomBriefInfoListReqOuterClass$GetBlossomBriefInfoListReq.class */
     public static final class GetBlossomBriefInfoListReq extends GeneratedMessageV3 implements GetBlossomBriefInfoListReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CITY_ID_LIST_FIELD_NUMBER = 7;
+        public static final int CITYIDLIST_FIELD_NUMBER = 5;
         private Internal.IntList cityIdList_;
         private int cityIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -103,14 +103,14 @@ public final class GetBlossomBriefInfoListReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 56:
+                                case 40:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.cityIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.cityIdList_.addInt(input.readUInt32());
                                     break;
-                                case 58:
+                                case 42:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.cityIdList_ = newIntList();
@@ -186,7 +186,7 @@ public final class GetBlossomBriefInfoListReqOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getCityIdListList().size() > 0) {
-                output.writeUInt32NoTag(58);
+                output.writeUInt32NoTag(42);
                 output.writeUInt32NoTag(this.cityIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.cityIdList_.size(); i++) {
@@ -234,7 +234,7 @@ public final class GetBlossomBriefInfoListReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getCityIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 7)) + getCityIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getCityIdListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

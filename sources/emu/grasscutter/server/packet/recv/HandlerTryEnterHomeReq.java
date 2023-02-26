@@ -33,7 +33,7 @@ public class HandlerTryEnterHomeReq extends PacketHandler {
             session.send(new PacketTryEnterHomeRsp());
             return;
         }
-        int realmId = PacketOpcodes.SetCoopChapterViewedRsp + session.getPlayer().getCurrentRealmId();
+        int realmId = 2000 + session.getPlayer().getCurrentRealmId();
         GameHome home = session.getPlayer().getHome();
         if (home.getHomeSceneItem(realmId) == null) {
             session.send(new PacketTryEnterHomeRsp());

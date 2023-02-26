@@ -25,13 +25,13 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarSkillInfoNotifyOuterClass.class */
 public final class AvatarSkillInfoNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bAvatarSkillInfoNotify.proto\u001a\u0015AvatarSkillInfo.proto\"¡\u0001\n\u0015AvatarSkillInfoNotify\u00127\n\tskill_map\u0018\u0006 \u0003(\u000b2$.AvatarSkillInfoNotify.SkillMapEntry\u0012\f\n\u0004guid\u0018\u0004 \u0001(\u0004\u001aA\n\rSkillMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\u001f\n\u0005value\u0018\u0002 \u0001(\u000b2\u0010.AvatarSkillInfo:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarSkillInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bAvatarSkillInfoNotify.proto\u001a\u0015AvatarSkillInfo.proto\" \u0001\n\u0015AvatarSkillInfoNotify\u00126\n\bskillMap\u0018\u0002 \u0003(\u000b2$.AvatarSkillInfoNotify.SkillMapEntry\u0012\f\n\u0004guid\u0018\u0004 \u0001(\u0004\u001aA\n\rSkillMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\u001f\n\u0005value\u0018\u0002 \u0001(\u000b2\u0010.AvatarSkillInfo:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarSkillInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AvatarSkillInfoNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarSkillInfoNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarSkillInfoNotify_descriptor, new String[]{"SkillMap", "Guid"});
     private static final Descriptors.Descriptor internal_static_AvatarSkillInfoNotify_SkillMapEntry_descriptor = internal_static_AvatarSkillInfoNotify_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_AvatarSkillInfoNotify_SkillMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f649x633c1984 = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarSkillInfoNotify_SkillMapEntry_descriptor, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f648x633c1984 = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarSkillInfoNotify_SkillMapEntry_descriptor, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarSkillInfoNotifyOuterClass$AvatarSkillInfoNotifyOrBuilder.class */
     public interface AvatarSkillInfoNotifyOrBuilder extends MessageOrBuilder {
@@ -64,7 +64,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarSkillInfoNotifyOuterClass$AvatarSkillInfoNotify.class */
     public static final class AvatarSkillInfoNotify extends GeneratedMessageV3 implements AvatarSkillInfoNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SKILL_MAP_FIELD_NUMBER = 6;
+        public static final int SKILLMAP_FIELD_NUMBER = 2;
         private MapField<Integer, AvatarSkillInfoOuterClass.AvatarSkillInfo> skillMap_;
         public static final int GUID_FIELD_NUMBER = 4;
         private long guid_;
@@ -118,7 +118,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
                 r4 = this;
                 r0 = r5
                 switch(r0) {
-                    case 6: goto L_0x0014;
+                    case 2: goto L_0x0014;
                     default: goto L_0x0019;
                 }
                 r0 = r4
@@ -171,16 +171,16 @@ public final class AvatarSkillInfoNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 32:
-                                this.guid_ = input.readUInt64();
-                                break;
-                            case 50:
+                            case 18:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.skillMap_ = MapField.newMapField(SkillMapDefaultEntryHolder.defaultEntry);
                                     mutable_bitField0_ |= 1;
                                 }
                                 MapEntry<Integer, AvatarSkillInfoOuterClass.AvatarSkillInfo> skillMap__ = (MapEntry) input.readMessage(SkillMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                                 this.skillMap_.getMutableMap().put(skillMap__.getKey(), skillMap__.getValue());
+                                break;
+                            case 32:
+                                this.guid_ = input.readUInt64();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -283,10 +283,10 @@ public final class AvatarSkillInfoNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetSkillMap(), SkillMapDefaultEntryHolder.defaultEntry, 2);
             if (this.guid_ != 0) {
                 output.writeUInt64(4, this.guid_);
             }
-            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetSkillMap(), SkillMapDefaultEntryHolder.defaultEntry, 6);
             this.unknownFields.writeTo(output);
         }
 
@@ -297,11 +297,11 @@ public final class AvatarSkillInfoNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.guid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(4, this.guid_);
-            }
             for (Map.Entry<Integer, AvatarSkillInfoOuterClass.AvatarSkillInfo> entry : internalGetSkillMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(6, SkillMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+                size2 += CodedOutputStream.computeMessageSize(2, SkillMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+            }
+            if (this.guid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(4, this.guid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -327,7 +327,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (!internalGetSkillMap().getMap().isEmpty()) {
-                hash = (53 * ((37 * hash) + 6)) + internalGetSkillMap().hashCode();
+                hash = (53 * ((37 * hash) + 2)) + internalGetSkillMap().hashCode();
             }
             int hash2 = (29 * ((53 * ((37 * hash) + 4)) + Internal.hashLong(getGuid()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -449,7 +449,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 6: goto L_0x0014;
+                        case 2: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -502,7 +502,7 @@ public final class AvatarSkillInfoNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 6: goto L_0x0014;
+                        case 2: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4

@@ -20,7 +20,7 @@ public class ObjectArraySet<K> extends AbstractObjectSet<K> implements Serializa
     private static final long serialVersionUID = 1;
 
     /* renamed from: a */
-    private transient Object[] f2684a;
+    private transient Object[] f2648a;
     private int size;
 
     static /* synthetic */ int access$010(ObjectArraySet x0) {
@@ -30,16 +30,16 @@ public class ObjectArraySet<K> extends AbstractObjectSet<K> implements Serializa
     }
 
     public ObjectArraySet(Object[] a) {
-        this.f2684a = a;
+        this.f2648a = a;
         this.size = a.length;
     }
 
     public ObjectArraySet() {
-        this.f2684a = ObjectArrays.EMPTY_ARRAY;
+        this.f2648a = ObjectArrays.EMPTY_ARRAY;
     }
 
     public ObjectArraySet(int capacity) {
-        this.f2684a = new Object[capacity];
+        this.f2648a = new Object[capacity];
     }
 
     public ObjectArraySet(ObjectCollection<K> c) {
@@ -57,7 +57,7 @@ public class ObjectArraySet<K> extends AbstractObjectSet<K> implements Serializa
         int i = 0;
         ObjectIterator<K> it = c.iterator();
         while (it.hasNext()) {
-            this.f2684a[i] = it.next();
+            this.f2648a[i] = it.next();
             i++;
         }
         this.size = i;
@@ -68,14 +68,14 @@ public class ObjectArraySet<K> extends AbstractObjectSet<K> implements Serializa
         int i = 0;
         Iterator<? extends K> it = c.iterator();
         while (it.hasNext()) {
-            this.f2684a[i] = it.next();
+            this.f2648a[i] = it.next();
             i++;
         }
         this.size = i;
     }
 
     public ObjectArraySet(Object[] a, int size) {
-        this.f2684a = a;
+        this.f2648a = a;
         this.size = size;
         if (size > a.length) {
             throw new IllegalArgumentException("The provided size (" + size + ") is larger than or equal to the array size (" + a.length + ")");
@@ -121,7 +121,7 @@ public class ObjectArraySet<K> extends AbstractObjectSet<K> implements Serializa
             if (i == 0) {
                 return -1;
             }
-        } while (!Objects.equals(this.f2684a[i], o));
+        } while (!Objects.equals(this.f2648a[i], o));
         return i;
     }
 
@@ -140,7 +140,7 @@ public class ObjectArraySet<K> extends AbstractObjectSet<K> implements Serializa
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                Object[] objArr = ObjectArraySet.this.f2684a;
+                Object[] objArr = ObjectArraySet.this.f2648a;
                 int i = this.next;
                 this.next = i + 1;
                 return (K) objArr[i];
@@ -151,8 +151,8 @@ public class ObjectArraySet<K> extends AbstractObjectSet<K> implements Serializa
                 int access$010 = ObjectArraySet.access$010(ObjectArraySet.this);
                 int i = this.next;
                 this.next = i - 1;
-                System.arraycopy(ObjectArraySet.this.f2684a, this.next + 1, ObjectArraySet.this.f2684a, this.next, access$010 - i);
-                ObjectArraySet.this.f2684a[ObjectArraySet.this.size] = null;
+                System.arraycopy(ObjectArraySet.this.f2648a, this.next + 1, ObjectArraySet.this.f2648a, this.next, access$010 - i);
+                ObjectArraySet.this.f2648a[ObjectArraySet.this.size] = null;
             }
 
             @Override // p014it.unimi.dsi.fastutil.objects.ObjectIterator
@@ -218,7 +218,7 @@ public class ObjectArraySet<K> extends AbstractObjectSet<K> implements Serializa
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            Object[] objArr = ObjectArraySet.this.f2684a;
+            Object[] objArr = ObjectArraySet.this.f2648a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(objArr[i]);
@@ -229,7 +229,7 @@ public class ObjectArraySet<K> extends AbstractObjectSet<K> implements Serializa
         public void forEachRemaining(Consumer<? super K> action) {
             int max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(ObjectArraySet.this.f2684a[this.pos]);
+                action.accept(ObjectArraySet.this.f2648a[this.pos]);
                 this.pos++;
             }
         }
@@ -292,10 +292,10 @@ public class ObjectArraySet<K> extends AbstractObjectSet<K> implements Serializa
         }
         int tail = (this.size - pos) - 1;
         for (int i = 0; i < tail; i++) {
-            this.f2684a[pos + i] = this.f2684a[pos + i + 1];
+            this.f2648a[pos + i] = this.f2648a[pos + i + 1];
         }
         this.size--;
-        this.f2684a[this.size] = null;
+        this.f2648a[this.size] = null;
         return true;
     }
 
@@ -304,7 +304,7 @@ public class ObjectArraySet<K> extends AbstractObjectSet<K> implements Serializa
         if (findKey(k) != -1) {
             return false;
         }
-        if (this.size == this.f2684a.length) {
+        if (this.size == this.f2648a.length) {
             Object[] b = new Object[this.size == 0 ? 2 : this.size * 2];
             int i = this.size;
             while (true) {
@@ -312,11 +312,11 @@ public class ObjectArraySet<K> extends AbstractObjectSet<K> implements Serializa
                 if (i == 0) {
                     break;
                 }
-                b[i] = this.f2684a[i];
+                b[i] = this.f2648a[i];
             }
-            this.f2684a = b;
+            this.f2648a = b;
         }
-        Object[] objArr = this.f2684a;
+        Object[] objArr = this.f2648a;
         int i2 = this.size;
         this.size = i2 + 1;
         objArr[i2] = k;
@@ -325,7 +325,7 @@ public class ObjectArraySet<K> extends AbstractObjectSet<K> implements Serializa
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public void clear() {
-        Arrays.fill(this.f2684a, 0, this.size, (Object) null);
+        Arrays.fill(this.f2648a, 0, this.size, (Object) null);
         this.size = 0;
     }
 
@@ -336,7 +336,7 @@ public class ObjectArraySet<K> extends AbstractObjectSet<K> implements Serializa
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public Object[] toArray() {
-        return Arrays.copyOf(this.f2684a, this.size, Object[].class);
+        return Arrays.copyOf(this.f2648a, this.size, Object[].class);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
@@ -346,7 +346,7 @@ public class ObjectArraySet<K> extends AbstractObjectSet<K> implements Serializa
         } else if (a.length < this.size) {
             a = (K[]) ((Object[]) Array.newInstance(a.getClass().getComponentType(), this.size));
         }
-        System.arraycopy(this.f2684a, 0, a, 0, this.size);
+        System.arraycopy(this.f2648a, 0, a, 0, this.size);
         if (a.length > this.size) {
             a[this.size] = null;
         }
@@ -357,7 +357,7 @@ public class ObjectArraySet<K> extends AbstractObjectSet<K> implements Serializa
     public ObjectArraySet<K> clone() {
         try {
             ObjectArraySet<K> c = (ObjectArraySet) clone();
-            c.f2684a = (Object[]) this.f2684a.clone();
+            c.f2648a = (Object[]) this.f2648a.clone();
             return c;
         } catch (CloneNotSupportedException e) {
             throw new InternalError();
@@ -367,15 +367,15 @@ public class ObjectArraySet<K> extends AbstractObjectSet<K> implements Serializa
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; i < this.size; i++) {
-            s.writeObject(this.f2684a[i]);
+            s.writeObject(this.f2648a[i]);
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f2684a = new Object[this.size];
+        this.f2648a = new Object[this.size];
         for (int i = 0; i < this.size; i++) {
-            this.f2684a[i] = s.readObject();
+            this.f2648a[i] = s.readObject();
         }
     }
 }

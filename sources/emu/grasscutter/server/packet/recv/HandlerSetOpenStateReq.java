@@ -5,7 +5,7 @@ import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.SetOpenStateReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 
-@Opcodes(189)
+@Opcodes(188)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerSetOpenStateReq.class */
 public class HandlerSetOpenStateReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

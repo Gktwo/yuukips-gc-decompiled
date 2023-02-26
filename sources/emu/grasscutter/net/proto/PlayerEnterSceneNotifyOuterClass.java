@@ -26,17 +26,23 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerEnterSceneNotifyOuterClass.class */
 public final class PlayerEnterSceneNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cPlayerEnterSceneNotify.proto\u001a\u000fEnterType.proto\u001a\fVector.proto\"\u0003\n\u0016PlayerEnterSceneNotify\u0012\u0013\n\nworld_type\u0018È\t \u0001(\r\u0012\u0012\n\nis_skip_ui\u0018  \u0001(\b\u0012\u0013\n\u000bworld_level\u0018\u0004 \u0001(\r\u0012\u0014\n\u0003pos\u0018\u0001 \u0001(\u000b2\u0007.Vector\u0012\"\n\u001ais_first_login_enter_scene\u0018\u0003 \u0001(\b\u0012\u0015\n\rprev_scene_id\u0018\r \u0001(\r\u0012\u0019\n\u0011enter_scene_token\u0018\u0006 \u0001(\r\u0012\u0012\n\ndungeon_id\u0018\u0002 \u0001(\r\u0012\u0010\n\bscene_id\u0018\u000b \u0001(\r\u0012\u0018\n\u0004type\u0018\f \u0001(\u000e2\n.EnterType\u0012\u0019\n\u0011scene_tag_id_list\u0018\u0005 \u0003(\r\u0012\u0018\n\u0010scene_begin_time\u0018\t \u0001(\u0004\u0012\u0015\n\fenter_reason\u0018\u0002 \u0001(\r\u0012\u0012\n\ntarget_uid\u0018\b \u0001(\r\u0012\u0019\n\bprev_pos\u0018\n \u0001(\u000b2\u0007.Vector\u0012\u001a\n\u0011scene_transaction\u0018ò\u0002 \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{EnterTypeOuterClass.getDescriptor(), VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cPlayerEnterSceneNotify.proto\u001a\fVector.proto\u001a\u000fEnterType.proto\"\u0003\n\u0016PlayerEnterSceneNotify\u0012\u001e\n\u0016isFirstLoginEnterScene\u0018\n \u0001(\b\u0012\u0017\n\u000fenterSceneToken\u0018\u0002 \u0001(\r\u0012\u0013\n\u000bprevSceneId\u0018\u0004 \u0001(\r\u0012\u0012\n\tworldType\u0018Â\b \u0001(\r\u0012\u0011\n\bisSkipUi\u0018½\u0002 \u0001(\b\u0012\u000f\n\u0007sceneId\u0018\u0003 \u0001(\r\u0012\u0014\n\u0003pos\u0018\r \u0001(\u000b2\u0007.Vector\u0012\u0012\n\nworldLevel\u0018\u0005 \u0001(\r\u0012\u0019\n\u0010sceneTransaction\u0018\u0005 \u0001(\t\u0012\u0013\n\u000benterReason\u0018J \u0001(\r\u0012\u0018\n\u0004type\u0018\t \u0001(\u000e2\n.EnterType\u0012\u0011\n\tdungeonId\u0018\u000b \u0001(\r\u0012\u0016\n\u000esceneTagIdList\u0018\b \u0003(\r\u0012\u0018\n\u0007prevPos\u0018\f \u0001(\u000b2\u0007.Vector\u0012\u0016\n\u000esceneBeginTime\u0018\u000f \u0001(\u0004\u0012\u0011\n\ttargetUid\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor(), EnterTypeOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_PlayerEnterSceneNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerEnterSceneNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerEnterSceneNotify_descriptor, new String[]{"WorldType", "IsSkipUi", "WorldLevel", "Pos", "IsFirstLoginEnterScene", "PrevSceneId", "EnterSceneToken", "DungeonId", "SceneId", "Type", "SceneTagIdList", "SceneBeginTime", "EnterReason", "TargetUid", "PrevPos", "SceneTransaction"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerEnterSceneNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerEnterSceneNotify_descriptor, new String[]{"IsFirstLoginEnterScene", "EnterSceneToken", "PrevSceneId", "WorldType", "IsSkipUi", "SceneId", "Pos", "WorldLevel", "SceneTransaction", "EnterReason", "Type", "DungeonId", "SceneTagIdList", "PrevPos", "SceneBeginTime", "TargetUid"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerEnterSceneNotifyOuterClass$PlayerEnterSceneNotifyOrBuilder.class */
     public interface PlayerEnterSceneNotifyOrBuilder extends MessageOrBuilder {
+        boolean getIsFirstLoginEnterScene();
+
+        int getEnterSceneToken();
+
+        int getPrevSceneId();
+
         int getWorldType();
 
         boolean getIsSkipUi();
 
-        int getWorldLevel();
+        int getSceneId();
 
         boolean hasPos();
 
@@ -44,19 +50,19 @@ public final class PlayerEnterSceneNotifyOuterClass {
 
         VectorOuterClass.VectorOrBuilder getPosOrBuilder();
 
-        boolean getIsFirstLoginEnterScene();
+        int getWorldLevel();
 
-        int getPrevSceneId();
+        String getSceneTransaction();
 
-        int getEnterSceneToken();
+        ByteString getSceneTransactionBytes();
 
-        int getDungeonId();
-
-        int getSceneId();
+        int getEnterReason();
 
         int getTypeValue();
 
         EnterTypeOuterClass.EnterType getType();
+
+        int getDungeonId();
 
         List<Integer> getSceneTagIdListList();
 
@@ -64,21 +70,15 @@ public final class PlayerEnterSceneNotifyOuterClass {
 
         int getSceneTagIdList(int i);
 
-        long getSceneBeginTime();
-
-        int getEnterReason();
-
-        int getTargetUid();
-
         boolean hasPrevPos();
 
         VectorOuterClass.Vector getPrevPos();
 
         VectorOuterClass.VectorOrBuilder getPrevPosOrBuilder();
 
-        String getSceneTransaction();
+        long getSceneBeginTime();
 
-        ByteString getSceneTransactionBytes();
+        int getTargetUid();
     }
 
     private PlayerEnterSceneNotifyOuterClass() {
@@ -94,39 +94,39 @@ public final class PlayerEnterSceneNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerEnterSceneNotifyOuterClass$PlayerEnterSceneNotify.class */
     public static final class PlayerEnterSceneNotify extends GeneratedMessageV3 implements PlayerEnterSceneNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int WORLD_TYPE_FIELD_NUMBER = 1224;
-        private int worldType_;
-        public static final int IS_SKIP_UI_FIELD_NUMBER = 32;
-        private boolean isSkipUi_;
-        public static final int WORLD_LEVEL_FIELD_NUMBER = 4;
-        private int worldLevel_;
-        public static final int POS_FIELD_NUMBER = 1;
-        private VectorOuterClass.Vector pos_;
-        public static final int IS_FIRST_LOGIN_ENTER_SCENE_FIELD_NUMBER = 3;
+        public static final int ISFIRSTLOGINENTERSCENE_FIELD_NUMBER = 10;
         private boolean isFirstLoginEnterScene_;
-        public static final int PREV_SCENE_ID_FIELD_NUMBER = 13;
-        private int prevSceneId_;
-        public static final int ENTER_SCENE_TOKEN_FIELD_NUMBER = 6;
+        public static final int ENTERSCENETOKEN_FIELD_NUMBER = 2;
         private int enterSceneToken_;
-        public static final int DUNGEON_ID_FIELD_NUMBER = 2;
-        private int dungeonId_;
-        public static final int SCENE_ID_FIELD_NUMBER = 11;
+        public static final int PREVSCENEID_FIELD_NUMBER = 4;
+        private int prevSceneId_;
+        public static final int WORLDTYPE_FIELD_NUMBER = 1090;
+        private int worldType_;
+        public static final int ISSKIPUI_FIELD_NUMBER = 317;
+        private boolean isSkipUi_;
+        public static final int SCENEID_FIELD_NUMBER = 3;
         private int sceneId_;
-        public static final int TYPE_FIELD_NUMBER = 12;
+        public static final int POS_FIELD_NUMBER = 13;
+        private VectorOuterClass.Vector pos_;
+        public static final int WORLDLEVEL_FIELD_NUMBER = 5;
+        private int worldLevel_;
+        public static final int SCENETRANSACTION_FIELD_NUMBER = 647;
+        private volatile Object sceneTransaction_;
+        public static final int ENTERREASON_FIELD_NUMBER = 74;
+        private int enterReason_;
+        public static final int TYPE_FIELD_NUMBER = 9;
         private int type_;
-        public static final int SCENE_TAG_ID_LIST_FIELD_NUMBER = 5;
+        public static final int DUNGEONID_FIELD_NUMBER = 11;
+        private int dungeonId_;
+        public static final int SCENETAGIDLIST_FIELD_NUMBER = 8;
         private Internal.IntList sceneTagIdList_;
         private int sceneTagIdListMemoizedSerializedSize;
-        public static final int SCENE_BEGIN_TIME_FIELD_NUMBER = 9;
-        private long sceneBeginTime_;
-        public static final int ENTER_REASON_FIELD_NUMBER = 287;
-        private int enterReason_;
-        public static final int TARGET_UID_FIELD_NUMBER = 8;
-        private int targetUid_;
-        public static final int PREV_POS_FIELD_NUMBER = 10;
+        public static final int PREVPOS_FIELD_NUMBER = 12;
         private VectorOuterClass.Vector prevPos_;
-        public static final int SCENE_TRANSACTION_FIELD_NUMBER = 370;
-        private volatile Object sceneTransaction_;
+        public static final int SCENEBEGINTIME_FIELD_NUMBER = 15;
+        private long sceneBeginTime_;
+        public static final int TARGETUID_FIELD_NUMBER = 1;
+        private int targetUid_;
         private byte memoizedIsInitialized;
         private static final PlayerEnterSceneNotify DEFAULT_INSTANCE = new PlayerEnterSceneNotify();
         private static final Parser<PlayerEnterSceneNotify> PARSER = new AbstractParser<PlayerEnterSceneNotify>() { // from class: emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify.1
@@ -145,9 +145,9 @@ public final class PlayerEnterSceneNotifyOuterClass {
         private PlayerEnterSceneNotify() {
             this.sceneTagIdListMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
+            this.sceneTransaction_ = "";
             this.type_ = 0;
             this.sceneTagIdList_ = emptyIntList();
-            this.sceneTransaction_ = "";
         }
 
         /* access modifiers changed from: protected */
@@ -179,33 +179,29 @@ public final class PlayerEnterSceneNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 10:
-                                VectorOuterClass.Vector.Builder subBuilder = this.pos_ != null ? this.pos_.toBuilder() : null;
-                                this.pos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
-                                if (subBuilder == null) {
-                                    break;
-                                } else {
-                                    subBuilder.mergeFrom(this.pos_);
-                                    this.pos_ = subBuilder.buildPartial();
-                                    break;
-                                }
+                            case 8:
+                                this.targetUid_ = input.readUInt32();
+                                break;
                             case 16:
-                                this.dungeonId_ = input.readUInt32();
+                                this.enterSceneToken_ = input.readUInt32();
                                 break;
                             case 24:
-                                this.isFirstLoginEnterScene_ = input.readBool();
+                                this.sceneId_ = input.readUInt32();
                                 break;
                             case 32:
-                                this.worldLevel_ = input.readUInt32();
+                                this.prevSceneId_ = input.readUInt32();
                                 break;
                             case 40:
+                                this.worldLevel_ = input.readUInt32();
+                                break;
+                            case 64:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.sceneTagIdList_ = newIntList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.sceneTagIdList_.addInt(input.readUInt32());
                                 break;
-                            case 42:
+                            case 66:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.sceneTagIdList_ = newIntList();
@@ -216,44 +212,48 @@ public final class PlayerEnterSceneNotifyOuterClass {
                                 }
                                 input.popLimit(limit);
                                 break;
-                            case 48:
-                                this.enterSceneToken_ = input.readUInt32();
-                                break;
-                            case 64:
-                                this.targetUid_ = input.readUInt32();
-                                break;
                             case 72:
-                                this.sceneBeginTime_ = input.readUInt64();
+                                this.type_ = input.readEnum();
                                 break;
-                            case 82:
-                                VectorOuterClass.Vector.Builder subBuilder2 = this.prevPos_ != null ? this.prevPos_.toBuilder() : null;
+                            case 80:
+                                this.isFirstLoginEnterScene_ = input.readBool();
+                                break;
+                            case 88:
+                                this.dungeonId_ = input.readUInt32();
+                                break;
+                            case 98:
+                                VectorOuterClass.Vector.Builder subBuilder = this.prevPos_ != null ? this.prevPos_.toBuilder() : null;
                                 this.prevPos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
+                                if (subBuilder == null) {
+                                    break;
+                                } else {
+                                    subBuilder.mergeFrom(this.prevPos_);
+                                    this.prevPos_ = subBuilder.buildPartial();
+                                    break;
+                                }
+                            case 106:
+                                VectorOuterClass.Vector.Builder subBuilder2 = this.pos_ != null ? this.pos_.toBuilder() : null;
+                                this.pos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
                                 if (subBuilder2 == null) {
                                     break;
                                 } else {
-                                    subBuilder2.mergeFrom(this.prevPos_);
-                                    this.prevPos_ = subBuilder2.buildPartial();
+                                    subBuilder2.mergeFrom(this.pos_);
+                                    this.pos_ = subBuilder2.buildPartial();
                                     break;
                                 }
-                            case 88:
-                                this.sceneId_ = input.readUInt32();
+                            case 120:
+                                this.sceneBeginTime_ = input.readUInt64();
                                 break;
-                            case 96:
-                                this.type_ = input.readEnum();
-                                break;
-                            case 104:
-                                this.prevSceneId_ = input.readUInt32();
-                                break;
-                            case 256:
-                                this.isSkipUi_ = input.readBool();
-                                break;
-                            case 2296:
+                            case 592:
                                 this.enterReason_ = input.readUInt32();
                                 break;
-                            case 2962:
+                            case 2536:
+                                this.isSkipUi_ = input.readBool();
+                                break;
+                            case 5178:
                                 this.sceneTransaction_ = input.readStringRequireUtf8();
                                 break;
-                            case RET_HOME_BGM_ID_NOT_FOUND_VALUE:
+                            case 8720:
                                 this.worldType_ = input.readUInt32();
                                 break;
                             default:
@@ -289,6 +289,21 @@ public final class PlayerEnterSceneNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
+        public boolean getIsFirstLoginEnterScene() {
+            return this.isFirstLoginEnterScene_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
+        public int getEnterSceneToken() {
+            return this.enterSceneToken_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
+        public int getPrevSceneId() {
+            return this.prevSceneId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
         public int getWorldType() {
             return this.worldType_;
         }
@@ -299,8 +314,8 @@ public final class PlayerEnterSceneNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-        public int getWorldLevel() {
-            return this.worldLevel_;
+        public int getSceneId() {
+            return this.sceneId_;
         }
 
         @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
@@ -319,84 +334,8 @@ public final class PlayerEnterSceneNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-        public boolean getIsFirstLoginEnterScene() {
-            return this.isFirstLoginEnterScene_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-        public int getPrevSceneId() {
-            return this.prevSceneId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-        public int getEnterSceneToken() {
-            return this.enterSceneToken_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-        public int getDungeonId() {
-            return this.dungeonId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-        public int getSceneId() {
-            return this.sceneId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-        public int getTypeValue() {
-            return this.type_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-        public EnterTypeOuterClass.EnterType getType() {
-            EnterTypeOuterClass.EnterType result = EnterTypeOuterClass.EnterType.valueOf(this.type_);
-            return result == null ? EnterTypeOuterClass.EnterType.UNRECOGNIZED : result;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-        public List<Integer> getSceneTagIdListList() {
-            return this.sceneTagIdList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-        public int getSceneTagIdListCount() {
-            return this.sceneTagIdList_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-        public int getSceneTagIdList(int index) {
-            return this.sceneTagIdList_.getInt(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-        public long getSceneBeginTime() {
-            return this.sceneBeginTime_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-        public int getEnterReason() {
-            return this.enterReason_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-        public int getTargetUid() {
-            return this.targetUid_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-        public boolean hasPrevPos() {
-            return this.prevPos_ != null;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-        public VectorOuterClass.Vector getPrevPos() {
-            return this.prevPos_ == null ? VectorOuterClass.Vector.getDefaultInstance() : this.prevPos_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-        public VectorOuterClass.VectorOrBuilder getPrevPosOrBuilder() {
-            return getPrevPos();
+        public int getWorldLevel() {
+            return this.worldLevel_;
         }
 
         @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
@@ -421,6 +360,67 @@ public final class PlayerEnterSceneNotifyOuterClass {
             return b;
         }
 
+        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
+        public int getEnterReason() {
+            return this.enterReason_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
+        public int getTypeValue() {
+            return this.type_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
+        public EnterTypeOuterClass.EnterType getType() {
+            EnterTypeOuterClass.EnterType result = EnterTypeOuterClass.EnterType.valueOf(this.type_);
+            return result == null ? EnterTypeOuterClass.EnterType.UNRECOGNIZED : result;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
+        public int getDungeonId() {
+            return this.dungeonId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
+        public List<Integer> getSceneTagIdListList() {
+            return this.sceneTagIdList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
+        public int getSceneTagIdListCount() {
+            return this.sceneTagIdList_.size();
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
+        public int getSceneTagIdList(int index) {
+            return this.sceneTagIdList_.getInt(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
+        public boolean hasPrevPos() {
+            return this.prevPos_ != null;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
+        public VectorOuterClass.Vector getPrevPos() {
+            return this.prevPos_ == null ? VectorOuterClass.Vector.getDefaultInstance() : this.prevPos_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
+        public VectorOuterClass.VectorOrBuilder getPrevPosOrBuilder() {
+            return getPrevPos();
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
+        public long getSceneBeginTime() {
+            return this.sceneBeginTime_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
+        public int getTargetUid() {
+            return this.targetUid_;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -437,57 +437,57 @@ public final class PlayerEnterSceneNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (this.pos_ != null) {
-                output.writeMessage(1, getPos());
+            if (this.targetUid_ != 0) {
+                output.writeUInt32(1, this.targetUid_);
             }
-            if (this.dungeonId_ != 0) {
-                output.writeUInt32(2, this.dungeonId_);
+            if (this.enterSceneToken_ != 0) {
+                output.writeUInt32(2, this.enterSceneToken_);
             }
-            if (this.isFirstLoginEnterScene_) {
-                output.writeBool(3, this.isFirstLoginEnterScene_);
+            if (this.sceneId_ != 0) {
+                output.writeUInt32(3, this.sceneId_);
+            }
+            if (this.prevSceneId_ != 0) {
+                output.writeUInt32(4, this.prevSceneId_);
             }
             if (this.worldLevel_ != 0) {
-                output.writeUInt32(4, this.worldLevel_);
+                output.writeUInt32(5, this.worldLevel_);
             }
             if (getSceneTagIdListList().size() > 0) {
-                output.writeUInt32NoTag(42);
+                output.writeUInt32NoTag(66);
                 output.writeUInt32NoTag(this.sceneTagIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.sceneTagIdList_.size(); i++) {
                 output.writeUInt32NoTag(this.sceneTagIdList_.getInt(i));
             }
-            if (this.enterSceneToken_ != 0) {
-                output.writeUInt32(6, this.enterSceneToken_);
+            if (this.type_ != EnterTypeOuterClass.EnterType.ENTER_TYPE_NONE.getNumber()) {
+                output.writeEnum(9, this.type_);
             }
-            if (this.targetUid_ != 0) {
-                output.writeUInt32(8, this.targetUid_);
+            if (this.isFirstLoginEnterScene_) {
+                output.writeBool(10, this.isFirstLoginEnterScene_);
             }
-            if (this.sceneBeginTime_ != 0) {
-                output.writeUInt64(9, this.sceneBeginTime_);
+            if (this.dungeonId_ != 0) {
+                output.writeUInt32(11, this.dungeonId_);
             }
             if (this.prevPos_ != null) {
-                output.writeMessage(10, getPrevPos());
+                output.writeMessage(12, getPrevPos());
             }
-            if (this.sceneId_ != 0) {
-                output.writeUInt32(11, this.sceneId_);
+            if (this.pos_ != null) {
+                output.writeMessage(13, getPos());
             }
-            if (this.type_ != EnterTypeOuterClass.EnterType.ENTER_TYPE_NONE.getNumber()) {
-                output.writeEnum(12, this.type_);
-            }
-            if (this.prevSceneId_ != 0) {
-                output.writeUInt32(13, this.prevSceneId_);
-            }
-            if (this.isSkipUi_) {
-                output.writeBool(32, this.isSkipUi_);
+            if (this.sceneBeginTime_ != 0) {
+                output.writeUInt64(15, this.sceneBeginTime_);
             }
             if (this.enterReason_ != 0) {
-                output.writeUInt32(287, this.enterReason_);
+                output.writeUInt32(74, this.enterReason_);
+            }
+            if (this.isSkipUi_) {
+                output.writeBool(317, this.isSkipUi_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.sceneTransaction_)) {
-                GeneratedMessageV3.writeString(output, 370, this.sceneTransaction_);
+                GeneratedMessageV3.writeString(output, 647, this.sceneTransaction_);
             }
             if (this.worldType_ != 0) {
-                output.writeUInt32(1224, this.worldType_);
+                output.writeUInt32(WORLDTYPE_FIELD_NUMBER, this.worldType_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -499,17 +499,20 @@ public final class PlayerEnterSceneNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.pos_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(1, getPos());
+            if (this.targetUid_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.targetUid_);
             }
-            if (this.dungeonId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(2, this.dungeonId_);
+            if (this.enterSceneToken_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(2, this.enterSceneToken_);
             }
-            if (this.isFirstLoginEnterScene_) {
-                size2 += CodedOutputStream.computeBoolSize(3, this.isFirstLoginEnterScene_);
+            if (this.sceneId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(3, this.sceneId_);
+            }
+            if (this.prevSceneId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(4, this.prevSceneId_);
             }
             if (this.worldLevel_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(4, this.worldLevel_);
+                size2 += CodedOutputStream.computeUInt32Size(5, this.worldLevel_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.sceneTagIdList_.size(); i++) {
@@ -520,38 +523,35 @@ public final class PlayerEnterSceneNotifyOuterClass {
                 size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.sceneTagIdListMemoizedSerializedSize = dataSize;
-            if (this.enterSceneToken_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(6, this.enterSceneToken_);
+            if (this.type_ != EnterTypeOuterClass.EnterType.ENTER_TYPE_NONE.getNumber()) {
+                size3 += CodedOutputStream.computeEnumSize(9, this.type_);
             }
-            if (this.targetUid_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(8, this.targetUid_);
+            if (this.isFirstLoginEnterScene_) {
+                size3 += CodedOutputStream.computeBoolSize(10, this.isFirstLoginEnterScene_);
             }
-            if (this.sceneBeginTime_ != 0) {
-                size3 += CodedOutputStream.computeUInt64Size(9, this.sceneBeginTime_);
+            if (this.dungeonId_ != 0) {
+                size3 += CodedOutputStream.computeUInt32Size(11, this.dungeonId_);
             }
             if (this.prevPos_ != null) {
-                size3 += CodedOutputStream.computeMessageSize(10, getPrevPos());
+                size3 += CodedOutputStream.computeMessageSize(12, getPrevPos());
             }
-            if (this.sceneId_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(11, this.sceneId_);
+            if (this.pos_ != null) {
+                size3 += CodedOutputStream.computeMessageSize(13, getPos());
             }
-            if (this.type_ != EnterTypeOuterClass.EnterType.ENTER_TYPE_NONE.getNumber()) {
-                size3 += CodedOutputStream.computeEnumSize(12, this.type_);
-            }
-            if (this.prevSceneId_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(13, this.prevSceneId_);
-            }
-            if (this.isSkipUi_) {
-                size3 += CodedOutputStream.computeBoolSize(32, this.isSkipUi_);
+            if (this.sceneBeginTime_ != 0) {
+                size3 += CodedOutputStream.computeUInt64Size(15, this.sceneBeginTime_);
             }
             if (this.enterReason_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(287, this.enterReason_);
+                size3 += CodedOutputStream.computeUInt32Size(74, this.enterReason_);
+            }
+            if (this.isSkipUi_) {
+                size3 += CodedOutputStream.computeBoolSize(317, this.isSkipUi_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.sceneTransaction_)) {
-                size3 += GeneratedMessageV3.computeStringSize(370, this.sceneTransaction_);
+                size3 += GeneratedMessageV3.computeStringSize(647, this.sceneTransaction_);
             }
             if (this.worldType_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(1224, this.worldType_);
+                size3 += CodedOutputStream.computeUInt32Size(WORLDTYPE_FIELD_NUMBER, this.worldType_);
             }
             int size4 = size3 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size4;
@@ -567,11 +567,11 @@ public final class PlayerEnterSceneNotifyOuterClass {
                 return equals(obj);
             }
             PlayerEnterSceneNotify other = (PlayerEnterSceneNotify) obj;
-            if (getWorldType() != other.getWorldType() || getIsSkipUi() != other.getIsSkipUi() || getWorldLevel() != other.getWorldLevel() || hasPos() != other.hasPos()) {
+            if (getIsFirstLoginEnterScene() != other.getIsFirstLoginEnterScene() || getEnterSceneToken() != other.getEnterSceneToken() || getPrevSceneId() != other.getPrevSceneId() || getWorldType() != other.getWorldType() || getIsSkipUi() != other.getIsSkipUi() || getSceneId() != other.getSceneId() || hasPos() != other.hasPos()) {
                 return false;
             }
-            if ((!hasPos() || getPos().equals(other.getPos())) && getIsFirstLoginEnterScene() == other.getIsFirstLoginEnterScene() && getPrevSceneId() == other.getPrevSceneId() && getEnterSceneToken() == other.getEnterSceneToken() && getDungeonId() == other.getDungeonId() && getSceneId() == other.getSceneId() && this.type_ == other.type_ && getSceneTagIdListList().equals(other.getSceneTagIdListList()) && getSceneBeginTime() == other.getSceneBeginTime() && getEnterReason() == other.getEnterReason() && getTargetUid() == other.getTargetUid() && hasPrevPos() == other.hasPrevPos()) {
-                return (!hasPrevPos() || getPrevPos().equals(other.getPrevPos())) && getSceneTransaction().equals(other.getSceneTransaction()) && this.unknownFields.equals(other.unknownFields);
+            if ((!hasPos() || getPos().equals(other.getPos())) && getWorldLevel() == other.getWorldLevel() && getSceneTransaction().equals(other.getSceneTransaction()) && getEnterReason() == other.getEnterReason() && this.type_ == other.type_ && getDungeonId() == other.getDungeonId() && getSceneTagIdListList().equals(other.getSceneTagIdListList()) && hasPrevPos() == other.hasPrevPos()) {
+                return (!hasPrevPos() || getPrevPos().equals(other.getPrevPos())) && getSceneBeginTime() == other.getSceneBeginTime() && getTargetUid() == other.getTargetUid() && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -581,21 +581,20 @@ public final class PlayerEnterSceneNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1224)) + getWorldType())) + 32)) + Internal.hashBoolean(getIsSkipUi()))) + 4)) + getWorldLevel();
+            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + Internal.hashBoolean(getIsFirstLoginEnterScene()))) + 2)) + getEnterSceneToken())) + 4)) + getPrevSceneId())) + WORLDTYPE_FIELD_NUMBER)) + getWorldType())) + 317)) + Internal.hashBoolean(getIsSkipUi()))) + 3)) + getSceneId();
             if (hasPos()) {
-                hash = (53 * ((37 * hash) + 1)) + getPos().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getPos().hashCode();
             }
-            int hash2 = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 3)) + Internal.hashBoolean(getIsFirstLoginEnterScene()))) + 13)) + getPrevSceneId())) + 6)) + getEnterSceneToken())) + 2)) + getDungeonId())) + 11)) + getSceneId())) + 12)) + this.type_;
+            int hash2 = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 5)) + getWorldLevel())) + 647)) + getSceneTransaction().hashCode())) + 74)) + getEnterReason())) + 9)) + this.type_)) + 11)) + getDungeonId();
             if (getSceneTagIdListCount() > 0) {
-                hash2 = (53 * ((37 * hash2) + 5)) + getSceneTagIdListList().hashCode();
+                hash2 = (53 * ((37 * hash2) + 8)) + getSceneTagIdListList().hashCode();
             }
-            int hash3 = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash2) + 9)) + Internal.hashLong(getSceneBeginTime()))) + 287)) + getEnterReason())) + 8)) + getTargetUid();
             if (hasPrevPos()) {
-                hash3 = (53 * ((37 * hash3) + 10)) + getPrevPos().hashCode();
+                hash2 = (53 * ((37 * hash2) + 12)) + getPrevPos().hashCode();
             }
-            int hash4 = (29 * ((53 * ((37 * hash3) + 370)) + getSceneTransaction().hashCode())) + this.unknownFields.hashCode();
-            this.memoizedHashCode = hash4;
-            return hash4;
+            int hash3 = (29 * ((53 * ((37 * ((53 * ((37 * hash2) + 15)) + Internal.hashLong(getSceneBeginTime()))) + 1)) + getTargetUid())) + this.unknownFields.hashCode();
+            this.memoizedHashCode = hash3;
+            return hash3;
         }
 
         public static PlayerEnterSceneNotify parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
@@ -673,24 +672,24 @@ public final class PlayerEnterSceneNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerEnterSceneNotifyOuterClass$PlayerEnterSceneNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements PlayerEnterSceneNotifyOrBuilder {
             private int bitField0_;
+            private boolean isFirstLoginEnterScene_;
+            private int enterSceneToken_;
+            private int prevSceneId_;
             private int worldType_;
             private boolean isSkipUi_;
-            private int worldLevel_;
+            private int sceneId_;
             private VectorOuterClass.Vector pos_;
             private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> posBuilder_;
-            private boolean isFirstLoginEnterScene_;
-            private int prevSceneId_;
-            private int enterSceneToken_;
-            private int dungeonId_;
-            private int sceneId_;
-            private long sceneBeginTime_;
+            private int worldLevel_;
             private int enterReason_;
-            private int targetUid_;
+            private int dungeonId_;
             private VectorOuterClass.Vector prevPos_;
             private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> prevPosBuilder_;
+            private long sceneBeginTime_;
+            private int targetUid_;
+            private Object sceneTransaction_ = "";
             private int type_ = 0;
             private Internal.IntList sceneTagIdList_ = PlayerEnterSceneNotify.emptyIntList();
-            private Object sceneTransaction_ = "";
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return PlayerEnterSceneNotifyOuterClass.internal_static_PlayerEnterSceneNotify_descriptor;
@@ -718,33 +717,33 @@ public final class PlayerEnterSceneNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.isFirstLoginEnterScene_ = false;
+                this.enterSceneToken_ = 0;
+                this.prevSceneId_ = 0;
                 this.worldType_ = 0;
                 this.isSkipUi_ = false;
-                this.worldLevel_ = 0;
+                this.sceneId_ = 0;
                 if (this.posBuilder_ == null) {
                     this.pos_ = null;
                 } else {
                     this.pos_ = null;
                     this.posBuilder_ = null;
                 }
-                this.isFirstLoginEnterScene_ = false;
-                this.prevSceneId_ = 0;
-                this.enterSceneToken_ = 0;
-                this.dungeonId_ = 0;
-                this.sceneId_ = 0;
+                this.worldLevel_ = 0;
+                this.sceneTransaction_ = "";
+                this.enterReason_ = 0;
                 this.type_ = 0;
+                this.dungeonId_ = 0;
                 this.sceneTagIdList_ = PlayerEnterSceneNotify.emptyIntList();
                 this.bitField0_ &= -2;
-                this.sceneBeginTime_ = 0;
-                this.enterReason_ = 0;
-                this.targetUid_ = 0;
                 if (this.prevPosBuilder_ == null) {
                     this.prevPos_ = null;
                 } else {
                     this.prevPos_ = null;
                     this.prevPosBuilder_ = null;
                 }
-                this.sceneTransaction_ = "";
+                this.sceneBeginTime_ = 0;
+                this.targetUid_ = 0;
                 return this;
             }
 
@@ -771,34 +770,34 @@ public final class PlayerEnterSceneNotifyOuterClass {
             public PlayerEnterSceneNotify buildPartial() {
                 PlayerEnterSceneNotify result = new PlayerEnterSceneNotify(this);
                 int i = this.bitField0_;
+                result.isFirstLoginEnterScene_ = this.isFirstLoginEnterScene_;
+                result.enterSceneToken_ = this.enterSceneToken_;
+                result.prevSceneId_ = this.prevSceneId_;
                 result.worldType_ = this.worldType_;
                 result.isSkipUi_ = this.isSkipUi_;
-                result.worldLevel_ = this.worldLevel_;
+                result.sceneId_ = this.sceneId_;
                 if (this.posBuilder_ == null) {
                     result.pos_ = this.pos_;
                 } else {
                     result.pos_ = this.posBuilder_.build();
                 }
-                result.isFirstLoginEnterScene_ = this.isFirstLoginEnterScene_;
-                result.prevSceneId_ = this.prevSceneId_;
-                result.enterSceneToken_ = this.enterSceneToken_;
-                result.dungeonId_ = this.dungeonId_;
-                result.sceneId_ = this.sceneId_;
+                result.worldLevel_ = this.worldLevel_;
+                result.sceneTransaction_ = this.sceneTransaction_;
+                result.enterReason_ = this.enterReason_;
                 result.type_ = this.type_;
+                result.dungeonId_ = this.dungeonId_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.sceneTagIdList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.sceneTagIdList_ = this.sceneTagIdList_;
-                result.sceneBeginTime_ = this.sceneBeginTime_;
-                result.enterReason_ = this.enterReason_;
-                result.targetUid_ = this.targetUid_;
                 if (this.prevPosBuilder_ == null) {
                     result.prevPos_ = this.prevPos_;
                 } else {
                     result.prevPos_ = this.prevPosBuilder_.build();
                 }
-                result.sceneTransaction_ = this.sceneTransaction_;
+                result.sceneBeginTime_ = this.sceneBeginTime_;
+                result.targetUid_ = this.targetUid_;
                 onBuilt();
                 return result;
             }
@@ -846,35 +845,42 @@ public final class PlayerEnterSceneNotifyOuterClass {
                 if (other == PlayerEnterSceneNotify.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getIsFirstLoginEnterScene()) {
+                    setIsFirstLoginEnterScene(other.getIsFirstLoginEnterScene());
+                }
+                if (other.getEnterSceneToken() != 0) {
+                    setEnterSceneToken(other.getEnterSceneToken());
+                }
+                if (other.getPrevSceneId() != 0) {
+                    setPrevSceneId(other.getPrevSceneId());
+                }
                 if (other.getWorldType() != 0) {
                     setWorldType(other.getWorldType());
                 }
                 if (other.getIsSkipUi()) {
                     setIsSkipUi(other.getIsSkipUi());
                 }
-                if (other.getWorldLevel() != 0) {
-                    setWorldLevel(other.getWorldLevel());
+                if (other.getSceneId() != 0) {
+                    setSceneId(other.getSceneId());
                 }
                 if (other.hasPos()) {
                     mergePos(other.getPos());
                 }
-                if (other.getIsFirstLoginEnterScene()) {
-                    setIsFirstLoginEnterScene(other.getIsFirstLoginEnterScene());
+                if (other.getWorldLevel() != 0) {
+                    setWorldLevel(other.getWorldLevel());
                 }
-                if (other.getPrevSceneId() != 0) {
-                    setPrevSceneId(other.getPrevSceneId());
+                if (!other.getSceneTransaction().isEmpty()) {
+                    this.sceneTransaction_ = other.sceneTransaction_;
+                    onChanged();
                 }
-                if (other.getEnterSceneToken() != 0) {
-                    setEnterSceneToken(other.getEnterSceneToken());
-                }
-                if (other.getDungeonId() != 0) {
-                    setDungeonId(other.getDungeonId());
-                }
-                if (other.getSceneId() != 0) {
-                    setSceneId(other.getSceneId());
+                if (other.getEnterReason() != 0) {
+                    setEnterReason(other.getEnterReason());
                 }
                 if (other.type_ != 0) {
                     setTypeValue(other.getTypeValue());
+                }
+                if (other.getDungeonId() != 0) {
+                    setDungeonId(other.getDungeonId());
                 }
                 if (!other.sceneTagIdList_.isEmpty()) {
                     if (this.sceneTagIdList_.isEmpty()) {
@@ -886,21 +892,14 @@ public final class PlayerEnterSceneNotifyOuterClass {
                     }
                     onChanged();
                 }
-                if (other.getSceneBeginTime() != 0) {
-                    setSceneBeginTime(other.getSceneBeginTime());
-                }
-                if (other.getEnterReason() != 0) {
-                    setEnterReason(other.getEnterReason());
-                }
-                if (other.getTargetUid() != 0) {
-                    setTargetUid(other.getTargetUid());
-                }
                 if (other.hasPrevPos()) {
                     mergePrevPos(other.getPrevPos());
                 }
-                if (!other.getSceneTransaction().isEmpty()) {
-                    this.sceneTransaction_ = other.sceneTransaction_;
-                    onChanged();
+                if (other.getSceneBeginTime() != 0) {
+                    setSceneBeginTime(other.getSceneBeginTime());
+                }
+                if (other.getTargetUid() != 0) {
+                    setTargetUid(other.getTargetUid());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -932,6 +931,57 @@ public final class PlayerEnterSceneNotifyOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
+            public boolean getIsFirstLoginEnterScene() {
+                return this.isFirstLoginEnterScene_;
+            }
+
+            public Builder setIsFirstLoginEnterScene(boolean value) {
+                this.isFirstLoginEnterScene_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsFirstLoginEnterScene() {
+                this.isFirstLoginEnterScene_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
+            public int getEnterSceneToken() {
+                return this.enterSceneToken_;
+            }
+
+            public Builder setEnterSceneToken(int value) {
+                this.enterSceneToken_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearEnterSceneToken() {
+                this.enterSceneToken_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
+            public int getPrevSceneId() {
+                return this.prevSceneId_;
+            }
+
+            public Builder setPrevSceneId(int value) {
+                this.prevSceneId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearPrevSceneId() {
+                this.prevSceneId_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
@@ -969,18 +1019,18 @@ public final class PlayerEnterSceneNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-            public int getWorldLevel() {
-                return this.worldLevel_;
+            public int getSceneId() {
+                return this.sceneId_;
             }
 
-            public Builder setWorldLevel(int value) {
-                this.worldLevel_ = value;
+            public Builder setSceneId(int value) {
+                this.sceneId_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearWorldLevel() {
-                this.worldLevel_ = 0;
+            public Builder clearSceneId() {
+                this.sceneId_ = 0;
                 onChanged();
                 return this;
             }
@@ -1067,86 +1117,82 @@ public final class PlayerEnterSceneNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-            public boolean getIsFirstLoginEnterScene() {
-                return this.isFirstLoginEnterScene_;
+            public int getWorldLevel() {
+                return this.worldLevel_;
             }
 
-            public Builder setIsFirstLoginEnterScene(boolean value) {
-                this.isFirstLoginEnterScene_ = value;
+            public Builder setWorldLevel(int value) {
+                this.worldLevel_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearIsFirstLoginEnterScene() {
-                this.isFirstLoginEnterScene_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-            public int getPrevSceneId() {
-                return this.prevSceneId_;
-            }
-
-            public Builder setPrevSceneId(int value) {
-                this.prevSceneId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearPrevSceneId() {
-                this.prevSceneId_ = 0;
+            public Builder clearWorldLevel() {
+                this.worldLevel_ = 0;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-            public int getEnterSceneToken() {
-                return this.enterSceneToken_;
+            public String getSceneTransaction() {
+                Object ref = this.sceneTransaction_;
+                if (ref instanceof String) {
+                    return (String) ref;
+                }
+                String s = ((ByteString) ref).toStringUtf8();
+                this.sceneTransaction_ = s;
+                return s;
             }
 
-            public Builder setEnterSceneToken(int value) {
-                this.enterSceneToken_ = value;
+            @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
+            public ByteString getSceneTransactionBytes() {
+                Object ref = this.sceneTransaction_;
+                if (!(ref instanceof String)) {
+                    return (ByteString) ref;
+                }
+                ByteString b = ByteString.copyFromUtf8((String) ref);
+                this.sceneTransaction_ = b;
+                return b;
+            }
+
+            public Builder setSceneTransaction(String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.sceneTransaction_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearEnterSceneToken() {
-                this.enterSceneToken_ = 0;
+            public Builder clearSceneTransaction() {
+                this.sceneTransaction_ = PlayerEnterSceneNotify.getDefaultInstance().getSceneTransaction();
+                onChanged();
+                return this;
+            }
+
+            public Builder setSceneTransactionBytes(ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                PlayerEnterSceneNotify.checkByteStringIsUtf8(value);
+                this.sceneTransaction_ = value;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-            public int getDungeonId() {
-                return this.dungeonId_;
+            public int getEnterReason() {
+                return this.enterReason_;
             }
 
-            public Builder setDungeonId(int value) {
-                this.dungeonId_ = value;
+            public Builder setEnterReason(int value) {
+                this.enterReason_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearDungeonId() {
-                this.dungeonId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-            public int getSceneId() {
-                return this.sceneId_;
-            }
-
-            public Builder setSceneId(int value) {
-                this.sceneId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearSceneId() {
-                this.sceneId_ = 0;
+            public Builder clearEnterReason() {
+                this.enterReason_ = 0;
                 onChanged();
                 return this;
             }
@@ -1179,6 +1225,23 @@ public final class PlayerEnterSceneNotifyOuterClass {
 
             public Builder clearType() {
                 this.type_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
+            public int getDungeonId() {
+                return this.dungeonId_;
+            }
+
+            public Builder setDungeonId(int value) {
+                this.dungeonId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearDungeonId() {
+                this.dungeonId_ = 0;
                 onChanged();
                 return this;
             }
@@ -1229,57 +1292,6 @@ public final class PlayerEnterSceneNotifyOuterClass {
             public Builder clearSceneTagIdList() {
                 this.sceneTagIdList_ = PlayerEnterSceneNotify.emptyIntList();
                 this.bitField0_ &= -2;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-            public long getSceneBeginTime() {
-                return this.sceneBeginTime_;
-            }
-
-            public Builder setSceneBeginTime(long value) {
-                this.sceneBeginTime_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearSceneBeginTime() {
-                this.sceneBeginTime_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-            public int getEnterReason() {
-                return this.enterReason_;
-            }
-
-            public Builder setEnterReason(int value) {
-                this.enterReason_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearEnterReason() {
-                this.enterReason_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-            public int getTargetUid() {
-                return this.targetUid_;
-            }
-
-            public Builder setTargetUid(int value) {
-                this.targetUid_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearTargetUid() {
-                this.targetUid_ = 0;
                 onChanged();
                 return this;
             }
@@ -1366,48 +1378,35 @@ public final class PlayerEnterSceneNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-            public String getSceneTransaction() {
-                Object ref = this.sceneTransaction_;
-                if (ref instanceof String) {
-                    return (String) ref;
-                }
-                String s = ((ByteString) ref).toStringUtf8();
-                this.sceneTransaction_ = s;
-                return s;
+            public long getSceneBeginTime() {
+                return this.sceneBeginTime_;
+            }
+
+            public Builder setSceneBeginTime(long value) {
+                this.sceneBeginTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearSceneBeginTime() {
+                this.sceneBeginTime_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotifyOrBuilder
-            public ByteString getSceneTransactionBytes() {
-                Object ref = this.sceneTransaction_;
-                if (!(ref instanceof String)) {
-                    return (ByteString) ref;
-                }
-                ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.sceneTransaction_ = b;
-                return b;
+            public int getTargetUid() {
+                return this.targetUid_;
             }
 
-            public Builder setSceneTransaction(String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.sceneTransaction_ = value;
+            public Builder setTargetUid(int value) {
+                this.targetUid_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearSceneTransaction() {
-                this.sceneTransaction_ = PlayerEnterSceneNotify.getDefaultInstance().getSceneTransaction();
-                onChanged();
-                return this;
-            }
-
-            public Builder setSceneTransactionBytes(ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                PlayerEnterSceneNotify.checkByteStringIsUtf8(value);
-                this.sceneTransaction_ = value;
+            public Builder clearTargetUid() {
+                this.targetUid_ = 0;
                 onChanged();
                 return this;
             }
@@ -1447,7 +1446,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
     }
 
     static {
-        EnterTypeOuterClass.getDescriptor();
         VectorOuterClass.getDescriptor();
+        EnterTypeOuterClass.getDescriptor();
     }
 }

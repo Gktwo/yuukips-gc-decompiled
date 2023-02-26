@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExpeditionInfoOuterClass.class */
 public final class AvatarExpeditionInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aAvatarExpeditionInfo.proto\u001a\u001bAvatarExpeditionState.proto\"\u0001\n\u0014AvatarExpeditionInfo\u0012%\n\u0005state\u0018\u0001 \u0001(\u000e2\u0016.AvatarExpeditionState\u0012\u000e\n\u0006exp_id\u0018\u0002 \u0001(\r\u0012\u0011\n\thour_time\u0018\u0003 \u0001(\r\u0012\u0012\n\nstart_time\u0018\u0004 \u0001(\r\u0012\u0015\n\rshorten_ratio\u0018\u0005 \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarExpeditionStateOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aAvatarExpeditionInfo.proto\u001a\u001bAvatarExpeditionState.proto\"\u0001\n\u0014AvatarExpeditionInfo\u0012%\n\u0005state\u0018\u0001 \u0001(\u000e2\u0016.AvatarExpeditionState\u0012\r\n\u0005expId\u0018\u0002 \u0001(\r\u0012\u0010\n\bhourTime\u0018\u0003 \u0001(\r\u0012\u0011\n\tstartTime\u0018\u0004 \u0001(\r\u0012\u0014\n\fshortenRatio\u0018\u0005 \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarExpeditionStateOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AvatarExpeditionInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarExpeditionInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarExpeditionInfo_descriptor, new String[]{"State", "ExpId", "HourTime", "StartTime", "ShortenRatio"});
 
@@ -54,13 +54,13 @@ public final class AvatarExpeditionInfoOuterClass {
         private static final long serialVersionUID = 0;
         public static final int STATE_FIELD_NUMBER = 1;
         private int state_;
-        public static final int EXP_ID_FIELD_NUMBER = 2;
+        public static final int EXPID_FIELD_NUMBER = 2;
         private int expId_;
-        public static final int HOUR_TIME_FIELD_NUMBER = 3;
+        public static final int HOURTIME_FIELD_NUMBER = 3;
         private int hourTime_;
-        public static final int START_TIME_FIELD_NUMBER = 4;
+        public static final int STARTTIME_FIELD_NUMBER = 4;
         private int startTime_;
-        public static final int SHORTEN_RATIO_FIELD_NUMBER = 5;
+        public static final int SHORTENRATIO_FIELD_NUMBER = 5;
         private float shortenRatio_;
         private byte memoizedIsInitialized;
         private static final AvatarExpeditionInfo DEFAULT_INSTANCE = new AvatarExpeditionInfo();

@@ -101,7 +101,7 @@ public class lua {
             if (r0 == 0) goto L_0x005c
             r0 = r10
             org.luaj.vm2.LuaClosure r0 = r0.checkclosure()     // Catch: Exception -> 0x0072
-            org.luaj.vm2.Prototype r0 = r0.f3287p     // Catch: Exception -> 0x0072
+            org.luaj.vm2.Prototype r0 = r0.f3251p     // Catch: Exception -> 0x0072
             org.luaj.vm2.Print.print(r0)     // Catch: Exception -> 0x0072
         L_0x005c:
             r0 = r7

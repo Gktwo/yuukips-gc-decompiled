@@ -27,14 +27,12 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeFurnitureMakeRspOuterClass.class */
 public final class TakeFurnitureMakeRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aTakeFurnitureMakeRsp.proto\u001a\u0017FurnitureMakeSlot.proto\u001a\u000fItemParam.proto\"µ\u0001\n\u0014TakeFurnitureMakeRsp\u0012\u000f\n\u0007retcode\u0018\u000f \u0001(\u0005\u0012$\n\u0010return_item_list\u0018\u0005 \u0003(\u000b2\n.ItemParam\u0012/\n\u0013furniture_make_slot\u0018\u000e \u0001(\u000b2\u0012.FurnitureMakeSlot\u0012$\n\u0010output_item_list\u0018\n \u0003(\u000b2\n.ItemParam\u0012\u000f\n\u0007make_id\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{FurnitureMakeSlotOuterClass.getDescriptor(), ItemParamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aTakeFurnitureMakeRsp.proto\u001a\u0017FurnitureMakeSlot.proto\u001a\u000fItemParam.proto\"®\u0001\n\u0014TakeFurnitureMakeRsp\u0012\"\n\u000ereturnItemList\u0018\u0007 \u0003(\u000b2\n.ItemParam\u0012-\n\u0011furnitureMakeSlot\u0018\u0006 \u0001(\u000b2\u0012.FurnitureMakeSlot\u0012\u000e\n\u0006makeId\u0018\u0004 \u0001(\r\u0012\"\n\u000eoutputItemList\u0018\u0001 \u0003(\u000b2\n.ItemParam\u0012\u000f\n\u0007retcode\u0018\n \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{FurnitureMakeSlotOuterClass.getDescriptor(), ItemParamOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_TakeFurnitureMakeRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TakeFurnitureMakeRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TakeFurnitureMakeRsp_descriptor, new String[]{"Retcode", "ReturnItemList", "FurnitureMakeSlot", "OutputItemList", "MakeId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TakeFurnitureMakeRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TakeFurnitureMakeRsp_descriptor, new String[]{"ReturnItemList", "FurnitureMakeSlot", "MakeId", "OutputItemList", "Retcode"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeFurnitureMakeRspOuterClass$TakeFurnitureMakeRspOrBuilder.class */
     public interface TakeFurnitureMakeRspOrBuilder extends MessageOrBuilder {
-        int getRetcode();
-
         List<ItemParamOuterClass.ItemParam> getReturnItemListList();
 
         ItemParamOuterClass.ItemParam getReturnItemList(int i);
@@ -51,6 +49,8 @@ public final class TakeFurnitureMakeRspOuterClass {
 
         FurnitureMakeSlotOuterClass.FurnitureMakeSlotOrBuilder getFurnitureMakeSlotOrBuilder();
 
+        int getMakeId();
+
         List<ItemParamOuterClass.ItemParam> getOutputItemListList();
 
         ItemParamOuterClass.ItemParam getOutputItemList(int i);
@@ -61,7 +61,7 @@ public final class TakeFurnitureMakeRspOuterClass {
 
         ItemParamOuterClass.ItemParamOrBuilder getOutputItemListOrBuilder(int i);
 
-        int getMakeId();
+        int getRetcode();
     }
 
     private TakeFurnitureMakeRspOuterClass() {
@@ -77,16 +77,16 @@ public final class TakeFurnitureMakeRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeFurnitureMakeRspOuterClass$TakeFurnitureMakeRsp.class */
     public static final class TakeFurnitureMakeRsp extends GeneratedMessageV3 implements TakeFurnitureMakeRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 15;
-        private int retcode_;
-        public static final int RETURN_ITEM_LIST_FIELD_NUMBER = 5;
+        public static final int RETURNITEMLIST_FIELD_NUMBER = 7;
         private List<ItemParamOuterClass.ItemParam> returnItemList_;
-        public static final int FURNITURE_MAKE_SLOT_FIELD_NUMBER = 14;
+        public static final int FURNITUREMAKESLOT_FIELD_NUMBER = 6;
         private FurnitureMakeSlotOuterClass.FurnitureMakeSlot furnitureMakeSlot_;
-        public static final int OUTPUT_ITEM_LIST_FIELD_NUMBER = 10;
-        private List<ItemParamOuterClass.ItemParam> outputItemList_;
-        public static final int MAKE_ID_FIELD_NUMBER = 3;
+        public static final int MAKEID_FIELD_NUMBER = 4;
         private int makeId_;
+        public static final int OUTPUTITEMLIST_FIELD_NUMBER = 1;
+        private List<ItemParamOuterClass.ItemParam> outputItemList_;
+        public static final int RETCODE_FIELD_NUMBER = 10;
+        private int retcode_;
         private byte memoizedIsInitialized;
         private static final TakeFurnitureMakeRsp DEFAULT_INSTANCE = new TakeFurnitureMakeRsp();
         private static final Parser<TakeFurnitureMakeRsp> PARSER = new AbstractParser<TakeFurnitureMakeRsp>() { // from class: emu.grasscutter.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRsp.1
@@ -138,24 +138,17 @@ public final class TakeFurnitureMakeRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 24:
-                                    this.makeId_ = input.readUInt32();
-                                    break;
-                                case 42:
-                                    if ((mutable_bitField0_ & 1) == 0) {
-                                        this.returnItemList_ = new ArrayList();
-                                        mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
-                                    }
-                                    this.returnItemList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-                                    break;
-                                case 82:
+                                case 10:
                                     if ((mutable_bitField0_ & 2) == 0) {
                                         this.outputItemList_ = new ArrayList();
                                         mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
                                     }
                                     this.outputItemList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
                                     break;
-                                case 114:
+                                case 32:
+                                    this.makeId_ = input.readUInt32();
+                                    break;
+                                case 50:
                                     FurnitureMakeSlotOuterClass.FurnitureMakeSlot.Builder subBuilder = this.furnitureMakeSlot_ != null ? this.furnitureMakeSlot_.toBuilder() : null;
                                     this.furnitureMakeSlot_ = (FurnitureMakeSlotOuterClass.FurnitureMakeSlot) input.readMessage(FurnitureMakeSlotOuterClass.FurnitureMakeSlot.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -165,7 +158,14 @@ public final class TakeFurnitureMakeRspOuterClass {
                                         this.furnitureMakeSlot_ = subBuilder.buildPartial();
                                         break;
                                     }
-                                case 120:
+                                case 58:
+                                    if ((mutable_bitField0_ & 1) == 0) {
+                                        this.returnItemList_ = new ArrayList();
+                                        mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
+                                    }
+                                    this.returnItemList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+                                    break;
+                                case 80:
                                     this.retcode_ = input.readInt32();
                                     break;
                                 default:
@@ -185,11 +185,11 @@ public final class TakeFurnitureMakeRspOuterClass {
                     }
                 }
             } finally {
-                if ((mutable_bitField0_ & 1) != 0) {
-                    this.returnItemList_ = Collections.unmodifiableList(this.returnItemList_);
-                }
                 if ((mutable_bitField0_ & 2) != 0) {
                     this.outputItemList_ = Collections.unmodifiableList(this.outputItemList_);
+                }
+                if ((mutable_bitField0_ & 1) != 0) {
+                    this.returnItemList_ = Collections.unmodifiableList(this.returnItemList_);
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -203,11 +203,6 @@ public final class TakeFurnitureMakeRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return TakeFurnitureMakeRspOuterClass.internal_static_TakeFurnitureMakeRsp_fieldAccessorTable.ensureFieldAccessorsInitialized(TakeFurnitureMakeRsp.class, Builder.class);
-        }
-
-        @Override // emu.grasscutter.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
         }
 
         @Override // emu.grasscutter.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRspOrBuilder
@@ -251,6 +246,11 @@ public final class TakeFurnitureMakeRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRspOrBuilder
+        public int getMakeId() {
+            return this.makeId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRspOrBuilder
         public List<ItemParamOuterClass.ItemParam> getOutputItemListList() {
             return this.outputItemList_;
         }
@@ -276,8 +276,8 @@ public final class TakeFurnitureMakeRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRspOrBuilder
-        public int getMakeId() {
-            return this.makeId_;
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -295,20 +295,20 @@ public final class TakeFurnitureMakeRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            for (int i = 0; i < this.outputItemList_.size(); i++) {
+                output.writeMessage(1, this.outputItemList_.get(i));
+            }
             if (this.makeId_ != 0) {
-                output.writeUInt32(3, this.makeId_);
-            }
-            for (int i = 0; i < this.returnItemList_.size(); i++) {
-                output.writeMessage(5, this.returnItemList_.get(i));
-            }
-            for (int i2 = 0; i2 < this.outputItemList_.size(); i2++) {
-                output.writeMessage(10, this.outputItemList_.get(i2));
+                output.writeUInt32(4, this.makeId_);
             }
             if (this.furnitureMakeSlot_ != null) {
-                output.writeMessage(14, getFurnitureMakeSlot());
+                output.writeMessage(6, getFurnitureMakeSlot());
+            }
+            for (int i2 = 0; i2 < this.returnItemList_.size(); i2++) {
+                output.writeMessage(7, this.returnItemList_.get(i2));
             }
             if (this.retcode_ != 0) {
-                output.writeInt32(15, this.retcode_);
+                output.writeInt32(10, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -320,20 +320,20 @@ public final class TakeFurnitureMakeRspOuterClass {
                 return size;
             }
             int size2 = 0;
+            for (int i = 0; i < this.outputItemList_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(1, this.outputItemList_.get(i));
+            }
             if (this.makeId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.makeId_);
-            }
-            for (int i = 0; i < this.returnItemList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(5, this.returnItemList_.get(i));
-            }
-            for (int i2 = 0; i2 < this.outputItemList_.size(); i2++) {
-                size2 += CodedOutputStream.computeMessageSize(10, this.outputItemList_.get(i2));
+                size2 += CodedOutputStream.computeUInt32Size(4, this.makeId_);
             }
             if (this.furnitureMakeSlot_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(14, getFurnitureMakeSlot());
+                size2 += CodedOutputStream.computeMessageSize(6, getFurnitureMakeSlot());
+            }
+            for (int i2 = 0; i2 < this.returnItemList_.size(); i2++) {
+                size2 += CodedOutputStream.computeMessageSize(7, this.returnItemList_.get(i2));
             }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(15, this.retcode_);
+                size2 += CodedOutputStream.computeInt32Size(10, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -349,8 +349,8 @@ public final class TakeFurnitureMakeRspOuterClass {
                 return equals(obj);
             }
             TakeFurnitureMakeRsp other = (TakeFurnitureMakeRsp) obj;
-            if (getRetcode() == other.getRetcode() && getReturnItemListList().equals(other.getReturnItemListList()) && hasFurnitureMakeSlot() == other.hasFurnitureMakeSlot()) {
-                return (!hasFurnitureMakeSlot() || getFurnitureMakeSlot().equals(other.getFurnitureMakeSlot())) && getOutputItemListList().equals(other.getOutputItemListList()) && getMakeId() == other.getMakeId() && this.unknownFields.equals(other.unknownFields);
+            if (getReturnItemListList().equals(other.getReturnItemListList()) && hasFurnitureMakeSlot() == other.hasFurnitureMakeSlot()) {
+                return (!hasFurnitureMakeSlot() || getFurnitureMakeSlot().equals(other.getFurnitureMakeSlot())) && getMakeId() == other.getMakeId() && getOutputItemListList().equals(other.getOutputItemListList()) && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -360,19 +360,20 @@ public final class TakeFurnitureMakeRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getRetcode();
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (getReturnItemListCount() > 0) {
-                hash = (53 * ((37 * hash) + 5)) + getReturnItemListList().hashCode();
+                hash = (53 * ((37 * hash) + 7)) + getReturnItemListList().hashCode();
             }
             if (hasFurnitureMakeSlot()) {
-                hash = (53 * ((37 * hash) + 14)) + getFurnitureMakeSlot().hashCode();
+                hash = (53 * ((37 * hash) + 6)) + getFurnitureMakeSlot().hashCode();
             }
+            int hash2 = (53 * ((37 * hash) + 4)) + getMakeId();
             if (getOutputItemListCount() > 0) {
-                hash = (53 * ((37 * hash) + 10)) + getOutputItemListList().hashCode();
+                hash2 = (53 * ((37 * hash2) + 1)) + getOutputItemListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 3)) + getMakeId())) + this.unknownFields.hashCode();
-            this.memoizedHashCode = hash2;
-            return hash2;
+            int hash3 = (29 * ((53 * ((37 * hash2) + 10)) + getRetcode())) + this.unknownFields.hashCode();
+            this.memoizedHashCode = hash3;
+            return hash3;
         }
 
         public static TakeFurnitureMakeRsp parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
@@ -450,12 +451,12 @@ public final class TakeFurnitureMakeRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeFurnitureMakeRspOuterClass$TakeFurnitureMakeRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements TakeFurnitureMakeRspOrBuilder {
             private int bitField0_;
-            private int retcode_;
             private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> returnItemListBuilder_;
             private FurnitureMakeSlotOuterClass.FurnitureMakeSlot furnitureMakeSlot_;
             private SingleFieldBuilderV3<FurnitureMakeSlotOuterClass.FurnitureMakeSlot, FurnitureMakeSlotOuterClass.FurnitureMakeSlot.Builder, FurnitureMakeSlotOuterClass.FurnitureMakeSlotOrBuilder> furnitureMakeSlotBuilder_;
-            private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> outputItemListBuilder_;
             private int makeId_;
+            private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> outputItemListBuilder_;
+            private int retcode_;
             private List<ItemParamOuterClass.ItemParam> returnItemList_ = Collections.emptyList();
             private List<ItemParamOuterClass.ItemParam> outputItemList_ = Collections.emptyList();
 
@@ -487,7 +488,6 @@ public final class TakeFurnitureMakeRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.retcode_ = 0;
                 if (this.returnItemListBuilder_ == null) {
                     this.returnItemList_ = Collections.emptyList();
                     this.bitField0_ &= -2;
@@ -500,13 +500,14 @@ public final class TakeFurnitureMakeRspOuterClass {
                     this.furnitureMakeSlot_ = null;
                     this.furnitureMakeSlotBuilder_ = null;
                 }
+                this.makeId_ = 0;
                 if (this.outputItemListBuilder_ == null) {
                     this.outputItemList_ = Collections.emptyList();
                     this.bitField0_ &= -3;
                 } else {
                     this.outputItemListBuilder_.clear();
                 }
-                this.makeId_ = 0;
+                this.retcode_ = 0;
                 return this;
             }
 
@@ -533,7 +534,6 @@ public final class TakeFurnitureMakeRspOuterClass {
             public TakeFurnitureMakeRsp buildPartial() {
                 TakeFurnitureMakeRsp result = new TakeFurnitureMakeRsp(this);
                 int i = this.bitField0_;
-                result.retcode_ = this.retcode_;
                 if (this.returnItemListBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
                         this.returnItemList_ = Collections.unmodifiableList(this.returnItemList_);
@@ -548,6 +548,7 @@ public final class TakeFurnitureMakeRspOuterClass {
                 } else {
                     result.furnitureMakeSlot_ = this.furnitureMakeSlotBuilder_.build();
                 }
+                result.makeId_ = this.makeId_;
                 if (this.outputItemListBuilder_ == null) {
                     if ((this.bitField0_ & 2) != 0) {
                         this.outputItemList_ = Collections.unmodifiableList(this.outputItemList_);
@@ -557,7 +558,7 @@ public final class TakeFurnitureMakeRspOuterClass {
                 } else {
                     result.outputItemList_ = this.outputItemListBuilder_.build();
                 }
-                result.makeId_ = this.makeId_;
+                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -605,9 +606,6 @@ public final class TakeFurnitureMakeRspOuterClass {
                 if (other == TakeFurnitureMakeRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
                 if (this.returnItemListBuilder_ == null) {
                     if (!other.returnItemList_.isEmpty()) {
                         if (this.returnItemList_.isEmpty()) {
@@ -633,6 +631,9 @@ public final class TakeFurnitureMakeRspOuterClass {
                 if (other.hasFurnitureMakeSlot()) {
                     mergeFurnitureMakeSlot(other.getFurnitureMakeSlot());
                 }
+                if (other.getMakeId() != 0) {
+                    setMakeId(other.getMakeId());
+                }
                 if (this.outputItemListBuilder_ == null) {
                     if (!other.outputItemList_.isEmpty()) {
                         if (this.outputItemList_.isEmpty()) {
@@ -655,8 +656,8 @@ public final class TakeFurnitureMakeRspOuterClass {
                         this.outputItemListBuilder_.addAllMessages(other.outputItemList_);
                     }
                 }
-                if (other.getMakeId() != 0) {
-                    setMakeId(other.getMakeId());
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -688,23 +689,6 @@ public final class TakeFurnitureMakeRspOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
             }
 
             private void ensureReturnItemListIsMutable() {
@@ -964,6 +948,23 @@ public final class TakeFurnitureMakeRspOuterClass {
                 return this.furnitureMakeSlotBuilder_;
             }
 
+            @Override // emu.grasscutter.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRspOrBuilder
+            public int getMakeId() {
+                return this.makeId_;
+            }
+
+            public Builder setMakeId(int value) {
+                this.makeId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearMakeId() {
+                this.makeId_ = 0;
+                onChanged();
+                return this;
+            }
+
             private void ensureOutputItemListIsMutable() {
                 if ((this.bitField0_ & 2) == 0) {
                     this.outputItemList_ = new ArrayList(this.outputItemList_);
@@ -1141,18 +1142,18 @@ public final class TakeFurnitureMakeRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRspOrBuilder
-            public int getMakeId() {
-                return this.makeId_;
+            public int getRetcode() {
+                return this.retcode_;
             }
 
-            public Builder setMakeId(int value) {
-                this.makeId_ = value;
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearMakeId() {
-                this.makeId_ = 0;
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }

@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CookRecipeDataNotifyOuterClass.class */
 public final class CookRecipeDataNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aCookRecipeDataNotify.proto\u001a\u0014CookRecipeData.proto\"<\n\u0014CookRecipeDataNotify\u0012$\n\u000brecipe_data\u0018\u0001 \u0001(\u000b2\u000f.CookRecipeDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CookRecipeDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aCookRecipeDataNotify.proto\u001a\u0014CookRecipeData.proto\";\n\u0014CookRecipeDataNotify\u0012#\n\nrecipeData\u0018\u0006 \u0001(\u000b2\u000f.CookRecipeDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CookRecipeDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_CookRecipeDataNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_CookRecipeDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CookRecipeDataNotify_descriptor, new String[]{"RecipeData"});
 
@@ -47,7 +47,7 @@ public final class CookRecipeDataNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CookRecipeDataNotifyOuterClass$CookRecipeDataNotify.class */
     public static final class CookRecipeDataNotify extends GeneratedMessageV3 implements CookRecipeDataNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RECIPE_DATA_FIELD_NUMBER = 1;
+        public static final int RECIPEDATA_FIELD_NUMBER = 6;
         private CookRecipeDataOuterClass.CookRecipeData recipeData_;
         private byte memoizedIsInitialized;
         private static final CookRecipeDataNotify DEFAULT_INSTANCE = new CookRecipeDataNotify();
@@ -94,7 +94,7 @@ public final class CookRecipeDataNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 10:
+                            case 50:
                                 CookRecipeDataOuterClass.CookRecipeData.Builder subBuilder = this.recipeData_ != null ? this.recipeData_.toBuilder() : null;
                                 this.recipeData_ = (CookRecipeDataOuterClass.CookRecipeData) input.readMessage(CookRecipeDataOuterClass.CookRecipeData.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -164,7 +164,7 @@ public final class CookRecipeDataNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.recipeData_ != null) {
-                output.writeMessage(1, getRecipeData());
+                output.writeMessage(6, getRecipeData());
             }
             this.unknownFields.writeTo(output);
         }
@@ -177,7 +177,7 @@ public final class CookRecipeDataNotifyOuterClass {
             }
             int size2 = 0;
             if (this.recipeData_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(1, getRecipeData());
+                size2 = 0 + CodedOutputStream.computeMessageSize(6, getRecipeData());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -206,7 +206,7 @@ public final class CookRecipeDataNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasRecipeData()) {
-                hash = (53 * ((37 * hash) + 1)) + getRecipeData().hashCode();
+                hash = (53 * ((37 * hash) + 6)) + getRecipeData().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

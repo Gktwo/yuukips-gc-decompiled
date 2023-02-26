@@ -21,19 +21,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ActivityUpdateWatcherNotifyOuterClass.class */
 public final class ActivityUpdateWatcherNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!ActivityUpdateWatcherNotify.proto\u001a\u0019ActivityWatcherInfo.proto\"^\n\u001bActivityUpdateWatcherNotify\u0012\u0013\n\u000bactivity_id\u0018\t \u0001(\r\u0012*\n\fwatcher_info\u0018\u0005 \u0001(\u000b2\u0014.ActivityWatcherInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ActivityWatcherInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!ActivityUpdateWatcherNotify.proto\u001a\u0019ActivityWatcherInfo.proto\"\\\n\u001bActivityUpdateWatcherNotify\u0012)\n\u000bwatcherInfo\u0018\u000b \u0001(\u000b2\u0014.ActivityWatcherInfo\u0012\u0012\n\nactivityId\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ActivityWatcherInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ActivityUpdateWatcherNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ActivityUpdateWatcherNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ActivityUpdateWatcherNotify_descriptor, new String[]{"ActivityId", "WatcherInfo"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ActivityUpdateWatcherNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ActivityUpdateWatcherNotify_descriptor, new String[]{"WatcherInfo", "ActivityId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ActivityUpdateWatcherNotifyOuterClass$ActivityUpdateWatcherNotifyOrBuilder.class */
     public interface ActivityUpdateWatcherNotifyOrBuilder extends MessageOrBuilder {
-        int getActivityId();
-
         boolean hasWatcherInfo();
 
         ActivityWatcherInfoOuterClass.ActivityWatcherInfo getWatcherInfo();
 
         ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder getWatcherInfoOrBuilder();
+
+        int getActivityId();
     }
 
     private ActivityUpdateWatcherNotifyOuterClass() {
@@ -49,10 +49,10 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ActivityUpdateWatcherNotifyOuterClass$ActivityUpdateWatcherNotify.class */
     public static final class ActivityUpdateWatcherNotify extends GeneratedMessageV3 implements ActivityUpdateWatcherNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ACTIVITY_ID_FIELD_NUMBER = 9;
-        private int activityId_;
-        public static final int WATCHER_INFO_FIELD_NUMBER = 5;
+        public static final int WATCHERINFO_FIELD_NUMBER = 11;
         private ActivityWatcherInfoOuterClass.ActivityWatcherInfo watcherInfo_;
+        public static final int ACTIVITYID_FIELD_NUMBER = 3;
+        private int activityId_;
         private byte memoizedIsInitialized;
         private static final ActivityUpdateWatcherNotify DEFAULT_INSTANCE = new ActivityUpdateWatcherNotify();
         private static final Parser<ActivityUpdateWatcherNotify> PARSER = new AbstractParser<ActivityUpdateWatcherNotify>() { // from class: emu.grasscutter.net.proto.ActivityUpdateWatcherNotifyOuterClass.ActivityUpdateWatcherNotify.1
@@ -99,7 +99,10 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 42:
+                                case 24:
+                                    this.activityId_ = input.readUInt32();
+                                    break;
+                                case 90:
                                     ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder subBuilder = this.watcherInfo_ != null ? this.watcherInfo_.toBuilder() : null;
                                     this.watcherInfo_ = (ActivityWatcherInfoOuterClass.ActivityWatcherInfo) input.readMessage(ActivityWatcherInfoOuterClass.ActivityWatcherInfo.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -109,9 +112,6 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
                                         this.watcherInfo_ = subBuilder.buildPartial();
                                         break;
                                     }
-                                case 72:
-                                    this.activityId_ = input.readUInt32();
-                                    break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                         break;
@@ -143,11 +143,6 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ActivityUpdateWatcherNotifyOuterClass.ActivityUpdateWatcherNotifyOrBuilder
-        public int getActivityId() {
-            return this.activityId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ActivityUpdateWatcherNotifyOuterClass.ActivityUpdateWatcherNotifyOrBuilder
         public boolean hasWatcherInfo() {
             return this.watcherInfo_ != null;
         }
@@ -160,6 +155,11 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
         @Override // emu.grasscutter.net.proto.ActivityUpdateWatcherNotifyOuterClass.ActivityUpdateWatcherNotifyOrBuilder
         public ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder getWatcherInfoOrBuilder() {
             return getWatcherInfo();
+        }
+
+        @Override // emu.grasscutter.net.proto.ActivityUpdateWatcherNotifyOuterClass.ActivityUpdateWatcherNotifyOrBuilder
+        public int getActivityId() {
+            return this.activityId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -177,11 +177,11 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.watcherInfo_ != null) {
-                output.writeMessage(5, getWatcherInfo());
-            }
             if (this.activityId_ != 0) {
-                output.writeUInt32(9, this.activityId_);
+                output.writeUInt32(3, this.activityId_);
+            }
+            if (this.watcherInfo_ != null) {
+                output.writeMessage(11, getWatcherInfo());
             }
             this.unknownFields.writeTo(output);
         }
@@ -193,11 +193,11 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.watcherInfo_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(5, getWatcherInfo());
-            }
             if (this.activityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.activityId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.activityId_);
+            }
+            if (this.watcherInfo_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(11, getWatcherInfo());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -213,10 +213,10 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
                 return equals(obj);
             }
             ActivityUpdateWatcherNotify other = (ActivityUpdateWatcherNotify) obj;
-            if (getActivityId() == other.getActivityId() && hasWatcherInfo() == other.hasWatcherInfo()) {
-                return (!hasWatcherInfo() || getWatcherInfo().equals(other.getWatcherInfo())) && this.unknownFields.equals(other.unknownFields);
+            if (hasWatcherInfo() != other.hasWatcherInfo()) {
+                return false;
             }
-            return false;
+            return (!hasWatcherInfo() || getWatcherInfo().equals(other.getWatcherInfo())) && getActivityId() == other.getActivityId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -224,11 +224,11 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getActivityId();
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasWatcherInfo()) {
-                hash = (53 * ((37 * hash) + 5)) + getWatcherInfo().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + getWatcherInfo().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 3)) + getActivityId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -307,9 +307,9 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ActivityUpdateWatcherNotifyOuterClass$ActivityUpdateWatcherNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ActivityUpdateWatcherNotifyOrBuilder {
-            private int activityId_;
             private ActivityWatcherInfoOuterClass.ActivityWatcherInfo watcherInfo_;
             private SingleFieldBuilderV3<ActivityWatcherInfoOuterClass.ActivityWatcherInfo, ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder, ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder> watcherInfoBuilder_;
+            private int activityId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ActivityUpdateWatcherNotifyOuterClass.internal_static_ActivityUpdateWatcherNotify_descriptor;
@@ -337,13 +337,13 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.activityId_ = 0;
                 if (this.watcherInfoBuilder_ == null) {
                     this.watcherInfo_ = null;
                 } else {
                     this.watcherInfo_ = null;
                     this.watcherInfoBuilder_ = null;
                 }
+                this.activityId_ = 0;
                 return this;
             }
 
@@ -369,12 +369,12 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public ActivityUpdateWatcherNotify buildPartial() {
                 ActivityUpdateWatcherNotify result = new ActivityUpdateWatcherNotify(this);
-                result.activityId_ = this.activityId_;
                 if (this.watcherInfoBuilder_ == null) {
                     result.watcherInfo_ = this.watcherInfo_;
                 } else {
                     result.watcherInfo_ = this.watcherInfoBuilder_.build();
                 }
+                result.activityId_ = this.activityId_;
                 onBuilt();
                 return result;
             }
@@ -422,11 +422,11 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
                 if (other == ActivityUpdateWatcherNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getActivityId() != 0) {
-                    setActivityId(other.getActivityId());
-                }
                 if (other.hasWatcherInfo()) {
                     mergeWatcherInfo(other.getWatcherInfo());
+                }
+                if (other.getActivityId() != 0) {
+                    setActivityId(other.getActivityId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -458,23 +458,6 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.ActivityUpdateWatcherNotifyOuterClass.ActivityUpdateWatcherNotifyOrBuilder
-            public int getActivityId() {
-                return this.activityId_;
-            }
-
-            public Builder setActivityId(int value) {
-                this.activityId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearActivityId() {
-                this.activityId_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // emu.grasscutter.net.proto.ActivityUpdateWatcherNotifyOuterClass.ActivityUpdateWatcherNotifyOrBuilder
@@ -556,6 +539,23 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
                     this.watcherInfo_ = null;
                 }
                 return this.watcherInfoBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.ActivityUpdateWatcherNotifyOuterClass.ActivityUpdateWatcherNotifyOrBuilder
+            public int getActivityId() {
+                return this.activityId_;
+            }
+
+            public Builder setActivityId(int value) {
+                this.activityId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearActivityId() {
+                this.activityId_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EquipRoguelikeRuneRspOuterClass.class */
 public final class EquipRoguelikeRuneRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bEquipRoguelikeRuneRsp.proto\";\n\u0015EquipRoguelikeRuneRsp\u0012\u0011\n\trune_list\u0018\u0006 \u0003(\r\u0012\u000f\n\u0007retcode\u0018\u0005 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bEquipRoguelikeRuneRsp.proto\":\n\u0015EquipRoguelikeRuneRsp\u0012\u0010\n\bruneList\u0018\r \u0003(\r\u0012\u000f\n\u0007retcode\u0018\u0007 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_EquipRoguelikeRuneRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_EquipRoguelikeRuneRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EquipRoguelikeRuneRsp_descriptor, new String[]{"RuneList", "Retcode"});
 
@@ -51,10 +51,10 @@ public final class EquipRoguelikeRuneRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EquipRoguelikeRuneRspOuterClass$EquipRoguelikeRuneRsp.class */
     public static final class EquipRoguelikeRuneRsp extends GeneratedMessageV3 implements EquipRoguelikeRuneRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RUNE_LIST_FIELD_NUMBER = 6;
+        public static final int RUNELIST_FIELD_NUMBER = 13;
         private Internal.IntList runeList_;
         private int runeListMemoizedSerializedSize;
-        public static final int RETCODE_FIELD_NUMBER = 5;
+        public static final int RETCODE_FIELD_NUMBER = 7;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final EquipRoguelikeRuneRsp DEFAULT_INSTANCE = new EquipRoguelikeRuneRsp();
@@ -107,17 +107,17 @@ public final class EquipRoguelikeRuneRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 40:
+                                case 56:
                                     this.retcode_ = input.readInt32();
                                     break;
-                                case 48:
+                                case 104:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.runeList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.runeList_.addInt(input.readUInt32());
                                     break;
-                                case 50:
+                                case 106:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.runeList_ = newIntList();
@@ -198,10 +198,10 @@ public final class EquipRoguelikeRuneRspOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (this.retcode_ != 0) {
-                output.writeInt32(5, this.retcode_);
+                output.writeInt32(7, this.retcode_);
             }
             if (getRuneListList().size() > 0) {
-                output.writeUInt32NoTag(50);
+                output.writeUInt32NoTag(106);
                 output.writeUInt32NoTag(this.runeListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.runeList_.size(); i++) {
@@ -218,7 +218,7 @@ public final class EquipRoguelikeRuneRspOuterClass {
             }
             int size2 = 0;
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(5, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(7, this.retcode_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.runeList_.size(); i++) {
@@ -253,9 +253,9 @@ public final class EquipRoguelikeRuneRspOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getRuneListCount() > 0) {
-                hash = (53 * ((37 * hash) + 6)) + getRuneListList().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getRuneListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 5)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 7)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

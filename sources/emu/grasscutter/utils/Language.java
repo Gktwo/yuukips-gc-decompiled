@@ -1243,8 +1243,8 @@ here is english version:
                         Grasscutter.getLogger().error("Exception while checking modified time: ", path);
                         return Long.valueOf((long) LongCompanionObject.MAX_VALUE);
                     }
-                }).max((v0, v1) -> {
-                    return Long.compare(v0, v1);
+                }).max(arg0, arg1 -> {
+                    return Long.compare(arg0.longValue(), arg1.longValue());
                 }).get()).longValue();
                 Grasscutter.getLogger().info("Cache modified %d, textmap modified %d".formatted(new Object[]{Long.valueOf(cacheModified), Long.valueOf(textmapsModified)}));
             } catch (NoSuchFileException e) {

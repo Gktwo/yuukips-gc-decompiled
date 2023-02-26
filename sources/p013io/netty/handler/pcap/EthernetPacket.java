@@ -9,10 +9,10 @@ final class EthernetPacket {
     private static final byte[] DUMMY_DESTINATION_MAC_ADDRESS = {0, 0, 94, 0, 83, -1};
 
     /* renamed from: V4 */
-    private static final int f1012V4 = 2048;
+    private static final int f976V4 = 2048;
 
     /* renamed from: V6 */
-    private static final int f1013V6 = 34525;
+    private static final int f977V6 = 34525;
 
     private EthernetPacket() {
     }
@@ -24,7 +24,7 @@ final class EthernetPacket {
 
     /* access modifiers changed from: package-private */
     public static void writeIPv6(ByteBuf byteBuf, ByteBuf payload) {
-        writePacket(byteBuf, payload, DUMMY_SOURCE_MAC_ADDRESS, DUMMY_DESTINATION_MAC_ADDRESS, f1013V6);
+        writePacket(byteBuf, payload, DUMMY_SOURCE_MAC_ADDRESS, DUMMY_DESTINATION_MAC_ADDRESS, f977V6);
     }
 
     private static void writePacket(ByteBuf byteBuf, ByteBuf payload, byte[] srcAddress, byte[] dstAddress, int type) {

@@ -49,7 +49,7 @@ public final class Typography {
     public static final char euro = 8364;
 
     /* renamed from: tm */
-    public static final char f3096tm = 8482;
+    public static final char f3060tm = 8482;
     public static final char almostEqual = 8776;
     public static final char notEqual = 8800;
     public static final char lessOrEqual = 8804;

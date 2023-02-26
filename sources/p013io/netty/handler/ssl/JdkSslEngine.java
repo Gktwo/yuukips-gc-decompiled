@@ -8,10 +8,9 @@ import javax.net.ssl.SSLParameters;
 import javax.net.ssl.SSLSession;
 import p013io.netty.util.internal.SuppressJava6Requirement;
 
-/* access modifiers changed from: package-private */
 /* renamed from: io.netty.handler.ssl.JdkSslEngine */
 /* loaded from: grasscutter.jar:io/netty/handler/ssl/JdkSslEngine.class */
-public class JdkSslEngine extends SSLEngine implements ApplicationProtocolAccessor {
+class JdkSslEngine extends SSLEngine implements ApplicationProtocolAccessor {
     private final SSLEngine engine;
     private volatile String applicationProtocol;
 

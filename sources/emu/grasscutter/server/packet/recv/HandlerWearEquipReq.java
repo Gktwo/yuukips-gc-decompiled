@@ -6,7 +6,7 @@ import emu.grasscutter.net.proto.WearEquipReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketWearEquipRsp;
 
-@Opcodes(699)
+@Opcodes(616)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerWearEquipReq.class */
 public class HandlerWearEquipReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

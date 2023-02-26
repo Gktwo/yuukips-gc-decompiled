@@ -20,19 +20,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RogueDiaryDungeonRecordOuterClass.class */
 public final class RogueDiaryDungeonRecordOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dRogueDiaryDungeonRecord.proto\"h\n\u0017RogueDiaryDungeonRecord\u0012\u0013\n\u000bfinish_time\u0018\u000e \u0001(\r\u0012\u0011\n\tis_finish\u0018\n \u0001(\b\u0012\u0012\n\ndifficulty\u0018\u0005 \u0001(\r\u0012\u0011\n\tmax_round\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dRogueDiaryDungeonRecord.proto\"e\n\u0017RogueDiaryDungeonRecord\u0012\u0012\n\nfinishTime\u0018\t \u0001(\r\u0012\u0010\n\bmaxRound\u0018\f \u0001(\r\u0012\u0010\n\bisFinish\u0018\u0007 \u0001(\b\u0012\u0012\n\ndifficulty\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_RogueDiaryDungeonRecord_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_RogueDiaryDungeonRecord_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_RogueDiaryDungeonRecord_descriptor, new String[]{"FinishTime", "IsFinish", "Difficulty", "MaxRound"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_RogueDiaryDungeonRecord_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_RogueDiaryDungeonRecord_descriptor, new String[]{"FinishTime", "MaxRound", "IsFinish", "Difficulty"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RogueDiaryDungeonRecordOuterClass$RogueDiaryDungeonRecordOrBuilder.class */
     public interface RogueDiaryDungeonRecordOrBuilder extends MessageOrBuilder {
         int getFinishTime();
 
+        int getMaxRound();
+
         boolean getIsFinish();
 
         int getDifficulty();
-
-        int getMaxRound();
     }
 
     private RogueDiaryDungeonRecordOuterClass() {
@@ -48,14 +48,14 @@ public final class RogueDiaryDungeonRecordOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RogueDiaryDungeonRecordOuterClass$RogueDiaryDungeonRecord.class */
     public static final class RogueDiaryDungeonRecord extends GeneratedMessageV3 implements RogueDiaryDungeonRecordOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int FINISH_TIME_FIELD_NUMBER = 14;
+        public static final int FINISHTIME_FIELD_NUMBER = 9;
         private int finishTime_;
-        public static final int IS_FINISH_FIELD_NUMBER = 10;
-        private boolean isFinish_;
-        public static final int DIFFICULTY_FIELD_NUMBER = 5;
-        private int difficulty_;
-        public static final int MAX_ROUND_FIELD_NUMBER = 7;
+        public static final int MAXROUND_FIELD_NUMBER = 12;
         private int maxRound_;
+        public static final int ISFINISH_FIELD_NUMBER = 7;
+        private boolean isFinish_;
+        public static final int DIFFICULTY_FIELD_NUMBER = 13;
+        private int difficulty_;
         private byte memoizedIsInitialized;
         private static final RogueDiaryDungeonRecord DEFAULT_INSTANCE = new RogueDiaryDungeonRecord();
         private static final Parser<RogueDiaryDungeonRecord> PARSER = new AbstractParser<RogueDiaryDungeonRecord>() { // from class: emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecord.1
@@ -102,17 +102,17 @@ public final class RogueDiaryDungeonRecordOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 40:
-                                    this.difficulty_ = input.readUInt32();
-                                    break;
                                 case 56:
-                                    this.maxRound_ = input.readUInt32();
-                                    break;
-                                case 80:
                                     this.isFinish_ = input.readBool();
                                     break;
-                                case 112:
+                                case 72:
                                     this.finishTime_ = input.readUInt32();
+                                    break;
+                                case 96:
+                                    this.maxRound_ = input.readUInt32();
+                                    break;
+                                case 104:
+                                    this.difficulty_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -150,6 +150,11 @@ public final class RogueDiaryDungeonRecordOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecordOrBuilder
+        public int getMaxRound() {
+            return this.maxRound_;
+        }
+
+        @Override // emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecordOrBuilder
         public boolean getIsFinish() {
             return this.isFinish_;
         }
@@ -157,11 +162,6 @@ public final class RogueDiaryDungeonRecordOuterClass {
         @Override // emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecordOrBuilder
         public int getDifficulty() {
             return this.difficulty_;
-        }
-
-        @Override // emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecordOrBuilder
-        public int getMaxRound() {
-            return this.maxRound_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -179,17 +179,17 @@ public final class RogueDiaryDungeonRecordOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.difficulty_ != 0) {
-                output.writeUInt32(5, this.difficulty_);
-            }
-            if (this.maxRound_ != 0) {
-                output.writeUInt32(7, this.maxRound_);
-            }
             if (this.isFinish_) {
-                output.writeBool(10, this.isFinish_);
+                output.writeBool(7, this.isFinish_);
             }
             if (this.finishTime_ != 0) {
-                output.writeUInt32(14, this.finishTime_);
+                output.writeUInt32(9, this.finishTime_);
+            }
+            if (this.maxRound_ != 0) {
+                output.writeUInt32(12, this.maxRound_);
+            }
+            if (this.difficulty_ != 0) {
+                output.writeUInt32(13, this.difficulty_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -201,17 +201,17 @@ public final class RogueDiaryDungeonRecordOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.difficulty_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.difficulty_);
-            }
-            if (this.maxRound_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.maxRound_);
-            }
             if (this.isFinish_) {
-                size2 += CodedOutputStream.computeBoolSize(10, this.isFinish_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(7, this.isFinish_);
             }
             if (this.finishTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.finishTime_);
+                size2 += CodedOutputStream.computeUInt32Size(9, this.finishTime_);
+            }
+            if (this.maxRound_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(12, this.maxRound_);
+            }
+            if (this.difficulty_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(13, this.difficulty_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -227,7 +227,7 @@ public final class RogueDiaryDungeonRecordOuterClass {
                 return equals(obj);
             }
             RogueDiaryDungeonRecord other = (RogueDiaryDungeonRecord) obj;
-            return getFinishTime() == other.getFinishTime() && getIsFinish() == other.getIsFinish() && getDifficulty() == other.getDifficulty() && getMaxRound() == other.getMaxRound() && this.unknownFields.equals(other.unknownFields);
+            return getFinishTime() == other.getFinishTime() && getMaxRound() == other.getMaxRound() && getIsFinish() == other.getIsFinish() && getDifficulty() == other.getDifficulty() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -235,7 +235,7 @@ public final class RogueDiaryDungeonRecordOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getFinishTime())) + 10)) + Internal.hashBoolean(getIsFinish()))) + 5)) + getDifficulty())) + 7)) + getMaxRound())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getFinishTime())) + 12)) + getMaxRound())) + 7)) + Internal.hashBoolean(getIsFinish()))) + 13)) + getDifficulty())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -315,9 +315,9 @@ public final class RogueDiaryDungeonRecordOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RogueDiaryDungeonRecordOuterClass$RogueDiaryDungeonRecord$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements RogueDiaryDungeonRecordOrBuilder {
             private int finishTime_;
+            private int maxRound_;
             private boolean isFinish_;
             private int difficulty_;
-            private int maxRound_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return RogueDiaryDungeonRecordOuterClass.internal_static_RogueDiaryDungeonRecord_descriptor;
@@ -346,9 +346,9 @@ public final class RogueDiaryDungeonRecordOuterClass {
             public Builder clear() {
                 clear();
                 this.finishTime_ = 0;
+                this.maxRound_ = 0;
                 this.isFinish_ = false;
                 this.difficulty_ = 0;
-                this.maxRound_ = 0;
                 return this;
             }
 
@@ -375,9 +375,9 @@ public final class RogueDiaryDungeonRecordOuterClass {
             public RogueDiaryDungeonRecord buildPartial() {
                 RogueDiaryDungeonRecord result = new RogueDiaryDungeonRecord(this);
                 result.finishTime_ = this.finishTime_;
+                result.maxRound_ = this.maxRound_;
                 result.isFinish_ = this.isFinish_;
                 result.difficulty_ = this.difficulty_;
-                result.maxRound_ = this.maxRound_;
                 onBuilt();
                 return result;
             }
@@ -428,14 +428,14 @@ public final class RogueDiaryDungeonRecordOuterClass {
                 if (other.getFinishTime() != 0) {
                     setFinishTime(other.getFinishTime());
                 }
+                if (other.getMaxRound() != 0) {
+                    setMaxRound(other.getMaxRound());
+                }
                 if (other.getIsFinish()) {
                     setIsFinish(other.getIsFinish());
                 }
                 if (other.getDifficulty() != 0) {
                     setDifficulty(other.getDifficulty());
-                }
-                if (other.getMaxRound() != 0) {
-                    setMaxRound(other.getMaxRound());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -487,6 +487,23 @@ public final class RogueDiaryDungeonRecordOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecordOrBuilder
+            public int getMaxRound() {
+                return this.maxRound_;
+            }
+
+            public Builder setMaxRound(int value) {
+                this.maxRound_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearMaxRound() {
+                this.maxRound_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecordOrBuilder
             public boolean getIsFinish() {
                 return this.isFinish_;
             }
@@ -516,23 +533,6 @@ public final class RogueDiaryDungeonRecordOuterClass {
 
             public Builder clearDifficulty() {
                 this.difficulty_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.RogueDiaryDungeonRecordOuterClass.RogueDiaryDungeonRecordOrBuilder
-            public int getMaxRound() {
-                return this.maxRound_;
-            }
-
-            public Builder setMaxRound(int value) {
-                this.maxRound_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearMaxRound() {
-                this.maxRound_ = 0;
                 onChanged();
                 return this;
             }

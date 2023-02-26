@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MusicGameStartReqOuterClass.class */
 public final class MusicGameStartReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017MusicGameStartReq.proto\"T\n\u0011MusicGameStartReq\u0012\u0016\n\u000emusic_basic_id\u0018\u000b \u0001(\r\u0012\u0015\n\ris_save_score\u0018\f \u0001(\b\u0012\u0010\n\bugc_guid\u0018\t \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017MusicGameStartReq.proto\"O\n\u0011MusicGameStartReq\u0012\u000f\n\u0007ugcGuid\u0018\u0005 \u0001(\u0004\u0012\u0014\n\fmusicBasicId\u0018\u0007 \u0001(\r\u0012\u0013\n\u000bisSaveScore\u0018\u000f \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_MusicGameStartReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_MusicGameStartReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MusicGameStartReq_descriptor, new String[]{"MusicBasicId", "IsSaveScore", "UgcGuid"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_MusicGameStartReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MusicGameStartReq_descriptor, new String[]{"UgcGuid", "MusicBasicId", "IsSaveScore"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MusicGameStartReqOuterClass$MusicGameStartReqOrBuilder.class */
     public interface MusicGameStartReqOrBuilder extends MessageOrBuilder {
+        long getUgcGuid();
+
         int getMusicBasicId();
 
         boolean getIsSaveScore();
-
-        long getUgcGuid();
     }
 
     private MusicGameStartReqOuterClass() {
@@ -46,12 +46,12 @@ public final class MusicGameStartReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MusicGameStartReqOuterClass$MusicGameStartReq.class */
     public static final class MusicGameStartReq extends GeneratedMessageV3 implements MusicGameStartReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MUSIC_BASIC_ID_FIELD_NUMBER = 11;
-        private int musicBasicId_;
-        public static final int IS_SAVE_SCORE_FIELD_NUMBER = 12;
-        private boolean isSaveScore_;
-        public static final int UGC_GUID_FIELD_NUMBER = 9;
+        public static final int UGCGUID_FIELD_NUMBER = 5;
         private long ugcGuid_;
+        public static final int MUSICBASICID_FIELD_NUMBER = 7;
+        private int musicBasicId_;
+        public static final int ISSAVESCORE_FIELD_NUMBER = 15;
+        private boolean isSaveScore_;
         private byte memoizedIsInitialized;
         private static final MusicGameStartReq DEFAULT_INSTANCE = new MusicGameStartReq();
         private static final Parser<MusicGameStartReq> PARSER = new AbstractParser<MusicGameStartReq>() { // from class: emu.grasscutter.net.proto.MusicGameStartReqOuterClass.MusicGameStartReq.1
@@ -98,13 +98,13 @@ public final class MusicGameStartReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 72:
+                                case 40:
                                     this.ugcGuid_ = input.readUInt64();
                                     break;
-                                case 88:
+                                case 56:
                                     this.musicBasicId_ = input.readUInt32();
                                     break;
-                                case 96:
+                                case 120:
                                     this.isSaveScore_ = input.readBool();
                                     break;
                                 default:
@@ -138,6 +138,11 @@ public final class MusicGameStartReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.MusicGameStartReqOuterClass.MusicGameStartReqOrBuilder
+        public long getUgcGuid() {
+            return this.ugcGuid_;
+        }
+
+        @Override // emu.grasscutter.net.proto.MusicGameStartReqOuterClass.MusicGameStartReqOrBuilder
         public int getMusicBasicId() {
             return this.musicBasicId_;
         }
@@ -145,11 +150,6 @@ public final class MusicGameStartReqOuterClass {
         @Override // emu.grasscutter.net.proto.MusicGameStartReqOuterClass.MusicGameStartReqOrBuilder
         public boolean getIsSaveScore() {
             return this.isSaveScore_;
-        }
-
-        @Override // emu.grasscutter.net.proto.MusicGameStartReqOuterClass.MusicGameStartReqOrBuilder
-        public long getUgcGuid() {
-            return this.ugcGuid_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -168,13 +168,13 @@ public final class MusicGameStartReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.ugcGuid_ != 0) {
-                output.writeUInt64(9, this.ugcGuid_);
+                output.writeUInt64(5, this.ugcGuid_);
             }
             if (this.musicBasicId_ != 0) {
-                output.writeUInt32(11, this.musicBasicId_);
+                output.writeUInt32(7, this.musicBasicId_);
             }
             if (this.isSaveScore_) {
-                output.writeBool(12, this.isSaveScore_);
+                output.writeBool(15, this.isSaveScore_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -187,13 +187,13 @@ public final class MusicGameStartReqOuterClass {
             }
             int size2 = 0;
             if (this.ugcGuid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(9, this.ugcGuid_);
+                size2 = 0 + CodedOutputStream.computeUInt64Size(5, this.ugcGuid_);
             }
             if (this.musicBasicId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.musicBasicId_);
+                size2 += CodedOutputStream.computeUInt32Size(7, this.musicBasicId_);
             }
             if (this.isSaveScore_) {
-                size2 += CodedOutputStream.computeBoolSize(12, this.isSaveScore_);
+                size2 += CodedOutputStream.computeBoolSize(15, this.isSaveScore_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class MusicGameStartReqOuterClass {
                 return equals(obj);
             }
             MusicGameStartReq other = (MusicGameStartReq) obj;
-            return getMusicBasicId() == other.getMusicBasicId() && getIsSaveScore() == other.getIsSaveScore() && getUgcGuid() == other.getUgcGuid() && this.unknownFields.equals(other.unknownFields);
+            return getUgcGuid() == other.getUgcGuid() && getMusicBasicId() == other.getMusicBasicId() && getIsSaveScore() == other.getIsSaveScore() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class MusicGameStartReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getMusicBasicId())) + 12)) + Internal.hashBoolean(getIsSaveScore()))) + 9)) + Internal.hashLong(getUgcGuid()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + Internal.hashLong(getUgcGuid()))) + 7)) + getMusicBasicId())) + 15)) + Internal.hashBoolean(getIsSaveScore()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -296,9 +296,9 @@ public final class MusicGameStartReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MusicGameStartReqOuterClass$MusicGameStartReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements MusicGameStartReqOrBuilder {
+            private long ugcGuid_;
             private int musicBasicId_;
             private boolean isSaveScore_;
-            private long ugcGuid_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return MusicGameStartReqOuterClass.internal_static_MusicGameStartReq_descriptor;
@@ -326,9 +326,9 @@ public final class MusicGameStartReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.ugcGuid_ = 0;
                 this.musicBasicId_ = 0;
                 this.isSaveScore_ = false;
-                this.ugcGuid_ = 0;
                 return this;
             }
 
@@ -354,9 +354,9 @@ public final class MusicGameStartReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public MusicGameStartReq buildPartial() {
                 MusicGameStartReq result = new MusicGameStartReq(this);
+                result.ugcGuid_ = this.ugcGuid_;
                 result.musicBasicId_ = this.musicBasicId_;
                 result.isSaveScore_ = this.isSaveScore_;
-                result.ugcGuid_ = this.ugcGuid_;
                 onBuilt();
                 return result;
             }
@@ -404,14 +404,14 @@ public final class MusicGameStartReqOuterClass {
                 if (other == MusicGameStartReq.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getUgcGuid() != 0) {
+                    setUgcGuid(other.getUgcGuid());
+                }
                 if (other.getMusicBasicId() != 0) {
                     setMusicBasicId(other.getMusicBasicId());
                 }
                 if (other.getIsSaveScore()) {
                     setIsSaveScore(other.getIsSaveScore());
-                }
-                if (other.getUgcGuid() != 0) {
-                    setUgcGuid(other.getUgcGuid());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -446,6 +446,23 @@ public final class MusicGameStartReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.MusicGameStartReqOuterClass.MusicGameStartReqOrBuilder
+            public long getUgcGuid() {
+                return this.ugcGuid_;
+            }
+
+            public Builder setUgcGuid(long value) {
+                this.ugcGuid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUgcGuid() {
+                this.ugcGuid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.MusicGameStartReqOuterClass.MusicGameStartReqOrBuilder
             public int getMusicBasicId() {
                 return this.musicBasicId_;
             }
@@ -475,23 +492,6 @@ public final class MusicGameStartReqOuterClass {
 
             public Builder clearIsSaveScore() {
                 this.isSaveScore_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.MusicGameStartReqOuterClass.MusicGameStartReqOrBuilder
-            public long getUgcGuid() {
-                return this.ugcGuid_;
-            }
-
-            public Builder setUgcGuid(long value) {
-                this.ugcGuid_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUgcGuid() {
-                this.ugcGuid_ = 0;
                 onChanged();
                 return this;
             }

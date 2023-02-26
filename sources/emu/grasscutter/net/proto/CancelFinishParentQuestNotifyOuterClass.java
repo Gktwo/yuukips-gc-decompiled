@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CancelFinishParentQuestNotifyOuterClass.class */
 public final class CancelFinishParentQuestNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#CancelFinishParentQuestNotify.proto\"8\n\u001dCancelFinishParentQuestNotify\u0012\u0017\n\u000fparent_quest_id\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#CancelFinishParentQuestNotify.proto\"6\n\u001dCancelFinishParentQuestNotify\u0012\u0015\n\rparentQuestId\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_CancelFinishParentQuestNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_CancelFinishParentQuestNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CancelFinishParentQuestNotify_descriptor, new String[]{"ParentQuestId"});
 
@@ -41,7 +41,7 @@ public final class CancelFinishParentQuestNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CancelFinishParentQuestNotifyOuterClass$CancelFinishParentQuestNotify.class */
     public static final class CancelFinishParentQuestNotify extends GeneratedMessageV3 implements CancelFinishParentQuestNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PARENT_QUEST_ID_FIELD_NUMBER = 14;
+        public static final int PARENTQUESTID_FIELD_NUMBER = 10;
         private int parentQuestId_;
         private byte memoizedIsInitialized;
         private static final CancelFinishParentQuestNotify DEFAULT_INSTANCE = new CancelFinishParentQuestNotify();
@@ -88,7 +88,7 @@ public final class CancelFinishParentQuestNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 112:
+                            case 80:
                                 this.parentQuestId_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class CancelFinishParentQuestNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.parentQuestId_ != 0) {
-                output.writeUInt32(14, this.parentQuestId_);
+                output.writeUInt32(10, this.parentQuestId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class CancelFinishParentQuestNotifyOuterClass {
             }
             int size2 = 0;
             if (this.parentQuestId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(14, this.parentQuestId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(10, this.parentQuestId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class CancelFinishParentQuestNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getParentQuestId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getParentQuestId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

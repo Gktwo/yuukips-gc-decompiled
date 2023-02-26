@@ -227,23 +227,23 @@ public class StringLib extends TwoArgFunction {
         private final int srclen;
 
         /* renamed from: ms */
-        private final MatchState f3340ms;
+        private final MatchState f3304ms;
         private int soffset = 0;
 
         public GMatchAux(Varargs varargs, LuaString luaString, LuaString luaString2) {
             this.srclen = luaString.length();
-            this.f3340ms = new MatchState(varargs, luaString, luaString2);
+            this.f3304ms = new MatchState(varargs, luaString, luaString2);
         }
 
         @Override // org.luaj.vm2.lib.VarArgFunction, org.luaj.vm2.lib.LibFunction, org.luaj.vm2.LuaValue
         public Varargs invoke(Varargs varargs) {
             while (this.soffset < this.srclen) {
-                this.f3340ms.reset();
-                int match = this.f3340ms.match(this.soffset, 0);
+                this.f3304ms.reset();
+                int match = this.f3304ms.match(this.soffset, 0);
                 if (match >= 0) {
                     int i = this.soffset;
                     this.soffset = match;
-                    return this.f3340ms.push_captures(true, i, match);
+                    return this.f3304ms.push_captures(true, i, match);
                 }
                 this.soffset++;
             }
@@ -256,18 +256,18 @@ public class StringLib extends TwoArgFunction {
     public static class MatchState {
 
         /* renamed from: s */
-        final LuaString f3341s;
+        final LuaString f3305s;
 
         /* renamed from: p */
-        final LuaString f3342p;
+        final LuaString f3306p;
         final Varargs args;
         int level = 0;
         int[] cinit = new int[32];
         int[] clen = new int[32];
 
         MatchState(Varargs varargs, LuaString luaString, LuaString luaString2) {
-            this.f3341s = luaString;
-            this.f3342p = luaString2;
+            this.f3305s = luaString;
+            this.f3306p = luaString2;
             this.args = varargs;
         }
 
@@ -288,7 +288,7 @@ public class StringLib extends TwoArgFunction {
                     if (!Character.isDigit((char) luaByte2)) {
                         buffer.append(luaByte2);
                     } else if (luaByte2 == 48) {
-                        buffer.append(this.f3341s.substring(i, i2));
+                        buffer.append(this.f3305s.substring(i, i2));
                     } else {
                         buffer.append(push_onecapture(luaByte2 - 49, i, i2).strvalue());
                     }
@@ -315,7 +315,7 @@ public class StringLib extends TwoArgFunction {
                     return;
             }
             if (!luaString.toboolean()) {
-                luaString = this.f3341s.substring(i, i2);
+                luaString = this.f3305s.substring(i, i2);
             } else if (!luaString.isstring()) {
                 LuaValue.error(new StringBuffer().append("invalid replacement value (a ").append(luaString.typename()).append(")").toString());
             }
@@ -340,7 +340,7 @@ public class StringLib extends TwoArgFunction {
 
         private LuaValue push_onecapture(int i, int i2, int i3) {
             if (i >= this.level) {
-                return i == 0 ? this.f3341s.substring(i2, i3) : LuaValue.error("invalid capture index");
+                return i == 0 ? this.f3305s.substring(i2, i3) : LuaValue.error("invalid capture index");
             }
             int i4 = this.clen[i];
             if (i4 == -1) {
@@ -350,7 +350,7 @@ public class StringLib extends TwoArgFunction {
                 return LuaValue.valueOf(this.cinit[i] + 1);
             }
             int i5 = this.cinit[i];
-            return this.f3341s.substring(i5, i5 + i4);
+            return this.f3305s.substring(i5, i5 + i4);
         }
 
         private int check_capture(int i) {
@@ -376,25 +376,25 @@ public class StringLib extends TwoArgFunction {
 
         int classend(int i) {
             int i2 = i + 1;
-            switch (this.f3342p.luaByte(i)) {
+            switch (this.f3306p.luaByte(i)) {
                 case 37:
-                    if (i2 == this.f3342p.length()) {
+                    if (i2 == this.f3306p.length()) {
                         LuaValue.error("malformed pattern (ends with %)");
                     }
                     return i2 + 1;
                 case 91:
-                    if (this.f3342p.luaByte(i2) == 94) {
+                    if (this.f3306p.luaByte(i2) == 94) {
                         i2++;
                     }
                     do {
-                        if (i2 == this.f3342p.length()) {
+                        if (i2 == this.f3306p.length()) {
                             LuaValue.error("malformed pattern (missing ])");
                         }
                         i2++;
-                        if (this.f3342p.luaByte(i2) == 37 && i2 != this.f3342p.length()) {
+                        if (this.f3306p.luaByte(i2) == 37 && i2 != this.f3306p.length()) {
                             i2++;
                         }
-                    } while (this.f3342p.luaByte(i2) != 93);
+                    } while (this.f3306p.luaByte(i2) != 93);
                     return i2 + 1;
                 default:
                     return i2;
@@ -460,7 +460,7 @@ public class StringLib extends TwoArgFunction {
 
         boolean matchbracketclass(int i, int i2, int i3) {
             boolean z = true;
-            if (this.f3342p.luaByte(i2 + 1) == 94) {
+            if (this.f3306p.luaByte(i2 + 1) == 94) {
                 z = false;
                 i2++;
             }
@@ -469,32 +469,32 @@ public class StringLib extends TwoArgFunction {
                 if (i2 >= i3) {
                     return !z;
                 }
-                if (this.f3342p.luaByte(i2) == 37) {
+                if (this.f3306p.luaByte(i2) == 37) {
                     i2++;
-                    if (match_class(i, this.f3342p.luaByte(i2))) {
+                    if (match_class(i, this.f3306p.luaByte(i2))) {
                         return z;
                     }
-                } else if (this.f3342p.luaByte(i2 + 1) == 45 && i2 + 2 < i3) {
+                } else if (this.f3306p.luaByte(i2 + 1) == 45 && i2 + 2 < i3) {
                     i2 += 2;
-                    if (this.f3342p.luaByte(i2 - 2) <= i && i <= this.f3342p.luaByte(i2)) {
+                    if (this.f3306p.luaByte(i2 - 2) <= i && i <= this.f3306p.luaByte(i2)) {
                         return z;
                     }
-                } else if (this.f3342p.luaByte(i2) == i) {
+                } else if (this.f3306p.luaByte(i2) == i) {
                     return z;
                 }
             }
         }
 
         boolean singlematch(int i, int i2, int i3) {
-            switch (this.f3342p.luaByte(i2)) {
+            switch (this.f3306p.luaByte(i2)) {
                 case 37:
-                    return match_class(i, this.f3342p.luaByte(i2 + 1));
+                    return match_class(i, this.f3306p.luaByte(i2 + 1));
                 case 46:
                     return true;
                 case 91:
                     return matchbracketclass(i, i2, i3 - 1);
                 default:
-                    return this.f3342p.luaByte(i2) == i;
+                    return this.f3306p.luaByte(i2) == i;
             }
         }
 
@@ -509,7 +509,7 @@ public class StringLib extends TwoArgFunction {
 
         int max_expand(int i, int i2, int i3) {
             int i4 = 0;
-            while (i + i4 < this.f3341s.length() && singlematch(this.f3341s.luaByte(i + i4), i2, i3)) {
+            while (i + i4 < this.f3305s.length() && singlematch(this.f3305s.luaByte(i + i4), i2, i3)) {
                 i4++;
             }
             while (i4 >= 0) {
@@ -528,7 +528,7 @@ public class StringLib extends TwoArgFunction {
                 if (match != -1) {
                     return match;
                 }
-                if (i >= this.f3341s.length() || !singlematch(this.f3341s.luaByte(i), i2, i3)) {
+                if (i >= this.f3305s.length() || !singlematch(this.f3305s.luaByte(i), i2, i3)) {
                     return -1;
                 }
                 i++;
@@ -563,7 +563,7 @@ public class StringLib extends TwoArgFunction {
         int match_capture(int i, int i2) {
             int check_capture = check_capture(i2);
             int i3 = this.clen[check_capture];
-            if (this.f3341s.length() - i < i3 || !LuaString.equals(this.f3341s, this.cinit[check_capture], this.f3341s, i, i3)) {
+            if (this.f3305s.length() - i < i3 || !LuaString.equals(this.f3305s, this.cinit[check_capture], this.f3305s, i, i3)) {
                 return -1;
             }
             return i + i3;
@@ -571,27 +571,27 @@ public class StringLib extends TwoArgFunction {
 
         int matchbalance(int i, int i2) {
             int luaByte;
-            int length = this.f3342p.length();
+            int length = this.f3306p.length();
             if (i2 == length || i2 + 1 == length) {
                 LuaValue.error("unbalanced pattern");
             }
-            int length2 = this.f3341s.length();
-            if (i >= length2 || this.f3341s.luaByte(i) != (luaByte = this.f3342p.luaByte(i2))) {
+            int length2 = this.f3305s.length();
+            if (i >= length2 || this.f3305s.luaByte(i) != (luaByte = this.f3306p.luaByte(i2))) {
                 return -1;
             }
-            int luaByte2 = this.f3342p.luaByte(i2 + 1);
+            int luaByte2 = this.f3306p.luaByte(i2 + 1);
             int i3 = 1;
             while (true) {
                 i++;
                 if (i >= length2) {
                     return -1;
                 }
-                if (this.f3341s.luaByte(i) == luaByte2) {
+                if (this.f3305s.luaByte(i) == luaByte2) {
                     i3--;
                     if (i3 == 0) {
                         return i + 1;
                     }
-                } else if (this.f3341s.luaByte(i) == luaByte) {
+                } else if (this.f3305s.luaByte(i) == luaByte) {
                     i3++;
                 }
             }
@@ -664,7 +664,7 @@ public class StringLib extends TwoArgFunction {
             LuaFunction checkfunction = luaValue.checkfunction();
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             try {
-                DumpState.dump(((LuaClosure) checkfunction).f3287p, byteArrayOutputStream, true);
+                DumpState.dump(((LuaClosure) checkfunction).f3251p, byteArrayOutputStream, true);
                 return LuaString.valueUsing(byteArrayOutputStream.toByteArray());
             } catch (IOException e) {
                 return error(e.getMessage());
@@ -685,8 +685,8 @@ public class StringLib extends TwoArgFunction {
 
     /* renamed from: org.luaj.vm2.lib.StringLib$format */
     /* loaded from: grasscutter.jar:org/luaj/vm2/lib/StringLib$format.class */
-    static final class C5873format extends VarArgFunction {
-        C5873format() {
+    static final class C5865format extends VarArgFunction {
+        C5865format() {
         }
 
         @Override // org.luaj.vm2.lib.VarArgFunction, org.luaj.vm2.lib.LibFunction, org.luaj.vm2.LuaValue
@@ -962,7 +962,7 @@ public class StringLib extends TwoArgFunction {
         luaTable.set("char", new char_());
         luaTable.set("dump", new dump());
         luaTable.set("find", new find());
-        luaTable.set("format", new C5873format());
+        luaTable.set("format", new C5865format());
         luaTable.set("gmatch", new gmatch());
         luaTable.set("gsub", new gsub());
         luaTable.set("len", new len());

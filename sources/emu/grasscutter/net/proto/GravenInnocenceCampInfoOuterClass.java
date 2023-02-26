@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GravenInnocenceCampInfoOuterClass.class */
 public final class GravenInnocenceCampInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dGravenInnocenceCampInfo.proto\u001a\"GravenInnocenceCampStageInfo.proto\"Q\n\u0017GravenInnocenceCampInfo\u00126\n\u000fstage_info_list\u0018\u000e \u0003(\u000b2\u001d.GravenInnocenceCampStageInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{GravenInnocenceCampStageInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dGravenInnocenceCampInfo.proto\u001a\"GravenInnocenceCampStageInfo.proto\"O\n\u0017GravenInnocenceCampInfo\u00124\n\rstageInfoList\u0018\u0004 \u0003(\u000b2\u001d.GravenInnocenceCampStageInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{GravenInnocenceCampStageInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_GravenInnocenceCampInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GravenInnocenceCampInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GravenInnocenceCampInfo_descriptor, new String[]{"StageInfoList"});
 
@@ -55,7 +55,7 @@ public final class GravenInnocenceCampInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GravenInnocenceCampInfoOuterClass$GravenInnocenceCampInfo.class */
     public static final class GravenInnocenceCampInfo extends GeneratedMessageV3 implements GravenInnocenceCampInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int STAGE_INFO_LIST_FIELD_NUMBER = 14;
+        public static final int STAGEINFOLIST_FIELD_NUMBER = 4;
         private List<GravenInnocenceCampStageInfoOuterClass.GravenInnocenceCampStageInfo> stageInfoList_;
         private byte memoizedIsInitialized;
         private static final GravenInnocenceCampInfo DEFAULT_INSTANCE = new GravenInnocenceCampInfo();
@@ -106,7 +106,7 @@ public final class GravenInnocenceCampInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 114:
+                                case 34:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.stageInfoList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -187,7 +187,7 @@ public final class GravenInnocenceCampInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.stageInfoList_.size(); i++) {
-                output.writeMessage(14, this.stageInfoList_.get(i));
+                output.writeMessage(4, this.stageInfoList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,7 +200,7 @@ public final class GravenInnocenceCampInfoOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.stageInfoList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(14, this.stageInfoList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(4, this.stageInfoList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class GravenInnocenceCampInfoOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getStageInfoListCount() > 0) {
-                hash = (53 * ((37 * hash) + 14)) + getStageInfoListList().hashCode();
+                hash = (53 * ((37 * hash) + 4)) + getStageInfoListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

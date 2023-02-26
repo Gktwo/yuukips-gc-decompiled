@@ -290,7 +290,7 @@ public class Scanner implements Callable<ScanResult> {
                 /*
                 // Method dump skipped, instructions count: 272
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p013io.github.classgraph.Scanner.C27373.processWorkUnit(io.github.classgraph.Scanner$ClasspathEntryWorkUnit, nonapi.io.github.classgraph.concurrency.WorkQueue, nonapi.io.github.classgraph.utils.LogNode):void");
+                throw new UnsupportedOperationException("Method not decompiled: p013io.github.classgraph.Scanner.C27293.processWorkUnit(io.github.classgraph.Scanner$ClasspathEntryWorkUnit, nonapi.io.github.classgraph.concurrency.WorkQueue, nonapi.io.github.classgraph.utils.LogNode):void");
             }
         };
     }

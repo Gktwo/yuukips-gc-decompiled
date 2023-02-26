@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DelMailRspOuterClass.class */
 public final class DelMailRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010DelMailRsp.proto\"3\n\nDelMailRsp\u0012\u000f\n\u0007retcode\u0018\u0002 \u0001(\u0005\u0012\u0014\n\fmail_id_list\u0018\u000b \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010DelMailRsp.proto\"1\n\nDelMailRsp\u0012\u000f\n\u0007retcode\u0018\u0007 \u0001(\u0005\u0012\u0012\n\nmailIdList\u0018\t \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_DelMailRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_DelMailRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DelMailRsp_descriptor, new String[]{"Retcode", "MailIdList"});
 
@@ -51,9 +51,9 @@ public final class DelMailRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DelMailRspOuterClass$DelMailRsp.class */
     public static final class DelMailRsp extends GeneratedMessageV3 implements DelMailRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 2;
+        public static final int RETCODE_FIELD_NUMBER = 7;
         private int retcode_;
-        public static final int MAIL_ID_LIST_FIELD_NUMBER = 11;
+        public static final int MAILIDLIST_FIELD_NUMBER = 9;
         private Internal.IntList mailIdList_;
         private int mailIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -107,17 +107,17 @@ public final class DelMailRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
+                                case 56:
                                     this.retcode_ = input.readInt32();
                                     break;
-                                case 88:
+                                case 72:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.mailIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.mailIdList_.addInt(input.readUInt32());
                                     break;
-                                case 90:
+                                case 74:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.mailIdList_ = newIntList();
@@ -198,10 +198,10 @@ public final class DelMailRspOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (this.retcode_ != 0) {
-                output.writeInt32(2, this.retcode_);
+                output.writeInt32(7, this.retcode_);
             }
             if (getMailIdListList().size() > 0) {
-                output.writeUInt32NoTag(90);
+                output.writeUInt32NoTag(74);
                 output.writeUInt32NoTag(this.mailIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.mailIdList_.size(); i++) {
@@ -218,7 +218,7 @@ public final class DelMailRspOuterClass {
             }
             int size2 = 0;
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(2, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(7, this.retcode_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.mailIdList_.size(); i++) {
@@ -251,9 +251,9 @@ public final class DelMailRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getRetcode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getRetcode();
             if (getMailIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 11)) + getMailIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 9)) + getMailIdListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerChatReqOuterClass.class */
 public final class PlayerChatReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013PlayerChatReq.proto\u001a\u000eChatInfo.proto\"A\n\rPlayerChatReq\u0012\u0012\n\nchannel_id\u0018\u0003 \u0001(\r\u0012\u001c\n\tchat_info\u0018\t \u0001(\u000b2\t.ChatInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ChatInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013PlayerChatReq.proto\u001a\u000eChatInfo.proto\"?\n\rPlayerChatReq\u0012\u0011\n\tchannelId\u0018\u0005 \u0001(\r\u0012\u001b\n\bchatInfo\u0018\f \u0001(\u000b2\t.ChatInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ChatInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_PlayerChatReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerChatReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerChatReq_descriptor, new String[]{"ChannelId", "ChatInfo"});
 
@@ -49,9 +49,9 @@ public final class PlayerChatReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerChatReqOuterClass$PlayerChatReq.class */
     public static final class PlayerChatReq extends GeneratedMessageV3 implements PlayerChatReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CHANNEL_ID_FIELD_NUMBER = 3;
+        public static final int CHANNELID_FIELD_NUMBER = 5;
         private int channelId_;
-        public static final int CHAT_INFO_FIELD_NUMBER = 9;
+        public static final int CHATINFO_FIELD_NUMBER = 12;
         private ChatInfoOuterClass.ChatInfo chatInfo_;
         private byte memoizedIsInitialized;
         private static final PlayerChatReq DEFAULT_INSTANCE = new PlayerChatReq();
@@ -99,10 +99,10 @@ public final class PlayerChatReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 24:
+                                case 40:
                                     this.channelId_ = input.readUInt32();
                                     break;
-                                case 74:
+                                case 98:
                                     ChatInfoOuterClass.ChatInfo.Builder subBuilder = this.chatInfo_ != null ? this.chatInfo_.toBuilder() : null;
                                     this.chatInfo_ = (ChatInfoOuterClass.ChatInfo) input.readMessage(ChatInfoOuterClass.ChatInfo.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -178,10 +178,10 @@ public final class PlayerChatReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.channelId_ != 0) {
-                output.writeUInt32(3, this.channelId_);
+                output.writeUInt32(5, this.channelId_);
             }
             if (this.chatInfo_ != null) {
-                output.writeMessage(9, getChatInfo());
+                output.writeMessage(12, getChatInfo());
             }
             this.unknownFields.writeTo(output);
         }
@@ -194,10 +194,10 @@ public final class PlayerChatReqOuterClass {
             }
             int size2 = 0;
             if (this.channelId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.channelId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.channelId_);
             }
             if (this.chatInfo_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(9, getChatInfo());
+                size2 += CodedOutputStream.computeMessageSize(12, getChatInfo());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -224,9 +224,9 @@ public final class PlayerChatReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getChannelId();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getChannelId();
             if (hasChatInfo()) {
-                hash = (53 * ((37 * hash) + 9)) + getChatInfo().hashCode();
+                hash = (53 * ((37 * hash) + 12)) + getChatInfo().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

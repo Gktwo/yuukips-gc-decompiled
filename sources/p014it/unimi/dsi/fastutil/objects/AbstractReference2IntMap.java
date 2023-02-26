@@ -188,30 +188,30 @@ public abstract class AbstractReference2IntMap<K> extends AbstractReference2IntF
                 return new ObjectIterator<K>() { // from class: it.unimi.dsi.fastutil.objects.AbstractReference2IntMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Reference2IntMap.Entry<K>> f2514i;
+                    private final ObjectIterator<Reference2IntMap.Entry<K>> f2478i;
 
                     {
-                        this.f2514i = Reference2IntMaps.fastIterator(AbstractReference2IntMap.this);
+                        this.f2478i = Reference2IntMaps.fastIterator(AbstractReference2IntMap.this);
                     }
 
                     @Override // java.util.Iterator
                     public K next() {
-                        return this.f2514i.next().getKey();
+                        return this.f2478i.next().getKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2514i.hasNext();
+                        return this.f2478i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2514i.remove();
+                        this.f2478i.remove();
                     }
 
                     @Override // java.util.Iterator
                     public void forEachRemaining(Consumer<? super K> action) {
-                        this.f2514i.forEachRemaining(entry -> {
+                        this.f2478i.forEachRemaining(entry -> {
                             action.accept(entry.getKey());
                         });
                     }
@@ -249,30 +249,30 @@ public abstract class AbstractReference2IntMap<K> extends AbstractReference2IntF
                 return new IntIterator() { // from class: it.unimi.dsi.fastutil.objects.AbstractReference2IntMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Reference2IntMap.Entry<K>> f2515i;
+                    private final ObjectIterator<Reference2IntMap.Entry<K>> f2479i;
 
                     {
-                        this.f2515i = Reference2IntMaps.fastIterator(AbstractReference2IntMap.this);
+                        this.f2479i = Reference2IntMaps.fastIterator(AbstractReference2IntMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.ints.IntIterator, java.util.PrimitiveIterator.OfInt
                     public int nextInt() {
-                        return this.f2515i.next().getIntValue();
+                        return this.f2479i.next().getIntValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2515i.hasNext();
+                        return this.f2479i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2515i.remove();
+                        this.f2479i.remove();
                     }
 
                     @Override // java.util.PrimitiveIterator.OfInt
                     public void forEachRemaining(IntConsumer action) {
-                        this.f2515i.forEachRemaining(entry -> {
+                        this.f2479i.forEachRemaining(entry -> {
                             action.accept(entry.getIntValue());
                         });
                     }

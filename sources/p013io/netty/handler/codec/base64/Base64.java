@@ -259,14 +259,14 @@ public final class Base64 {
     public static final class Decoder implements ByteProcessor {
 
         /* renamed from: b4 */
-        private final byte[] f996b4;
+        private final byte[] f960b4;
         private int b4Posn;
         private byte[] decodabet;
         private int outBuffPosn;
         private ByteBuf dest;
 
         private Decoder() {
-            this.f996b4 = new byte[4];
+            this.f960b4 = new byte[4];
         }
 
         ByteBuf decode(ByteBuf src, int off, int len, ByteBufAllocator allocator, Base64Dialect dialect) {
@@ -290,14 +290,14 @@ public final class Base64 {
             } else if (sbiDecode < -1) {
                 return true;
             } else {
-                byte[] bArr = this.f996b4;
+                byte[] bArr = this.f960b4;
                 int i = this.b4Posn;
                 this.b4Posn = i + 1;
                 bArr[i] = value;
                 if (this.b4Posn <= 3) {
                     return true;
                 }
-                this.outBuffPosn += decode4to3(this.f996b4, this.dest, this.outBuffPosn, this.decodabet);
+                this.outBuffPosn += decode4to3(this.f960b4, this.dest, this.outBuffPosn, this.decodabet);
                 this.b4Posn = 0;
                 return value != 61;
             }

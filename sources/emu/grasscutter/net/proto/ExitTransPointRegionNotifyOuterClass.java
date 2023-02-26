@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ExitTransPointRegionNotifyOuterClass.class */
 public final class ExitTransPointRegionNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n ExitTransPointRegionNotify.proto\"@\n\u001aExitTransPointRegionNotify\u0012\u0010\n\bpoint_id\u0018\u0004 \u0001(\r\u0012\u0010\n\bscene_id\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n ExitTransPointRegionNotify.proto\">\n\u001aExitTransPointRegionNotify\u0012\u000f\n\u0007pointId\u0018\u0002 \u0001(\r\u0012\u000f\n\u0007sceneId\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ExitTransPointRegionNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ExitTransPointRegionNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ExitTransPointRegionNotify_descriptor, new String[]{"PointId", "SceneId"});
 
@@ -43,9 +43,9 @@ public final class ExitTransPointRegionNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ExitTransPointRegionNotifyOuterClass$ExitTransPointRegionNotify.class */
     public static final class ExitTransPointRegionNotify extends GeneratedMessageV3 implements ExitTransPointRegionNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int POINT_ID_FIELD_NUMBER = 4;
+        public static final int POINTID_FIELD_NUMBER = 2;
         private int pointId_;
-        public static final int SCENE_ID_FIELD_NUMBER = 1;
+        public static final int SCENEID_FIELD_NUMBER = 8;
         private int sceneId_;
         private byte memoizedIsInitialized;
         private static final ExitTransPointRegionNotify DEFAULT_INSTANCE = new ExitTransPointRegionNotify();
@@ -92,11 +92,11 @@ public final class ExitTransPointRegionNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
-                                this.sceneId_ = input.readUInt32();
-                                break;
-                            case 32:
+                            case 16:
                                 this.pointId_ = input.readUInt32();
+                                break;
+                            case 64:
+                                this.sceneId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -152,11 +152,11 @@ public final class ExitTransPointRegionNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.sceneId_ != 0) {
-                output.writeUInt32(1, this.sceneId_);
-            }
             if (this.pointId_ != 0) {
-                output.writeUInt32(4, this.pointId_);
+                output.writeUInt32(2, this.pointId_);
+            }
+            if (this.sceneId_ != 0) {
+                output.writeUInt32(8, this.sceneId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class ExitTransPointRegionNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.sceneId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.sceneId_);
-            }
             if (this.pointId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(4, this.pointId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.pointId_);
+            }
+            if (this.sceneId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(8, this.sceneId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class ExitTransPointRegionNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getPointId())) + 1)) + getSceneId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getPointId())) + 8)) + getSceneId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

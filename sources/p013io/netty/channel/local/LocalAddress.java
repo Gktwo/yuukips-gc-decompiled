@@ -11,7 +11,7 @@ public final class LocalAddress extends SocketAddress implements Comparable<Loca
     public static final LocalAddress ANY = new LocalAddress("ANY");
 
     /* renamed from: id */
-    private final String f985id;
+    private final String f949id;
     private final String strVal;
 
     /* access modifiers changed from: package-private */
@@ -20,23 +20,23 @@ public final class LocalAddress extends SocketAddress implements Comparable<Loca
         buf.append("local:E");
         buf.append(Long.toHexString((((long) channel.hashCode()) & 4294967295L) | 4294967296L));
         buf.setCharAt(7, ':');
-        this.f985id = buf.substring(6);
+        this.f949id = buf.substring(6);
         this.strVal = buf.toString();
     }
 
     public LocalAddress(String id) {
-        this.f985id = ObjectUtil.checkNonEmptyAfterTrim(id, "id").toLowerCase();
-        this.strVal = "local:" + this.f985id;
+        this.f949id = ObjectUtil.checkNonEmptyAfterTrim(id, "id").toLowerCase();
+        this.strVal = "local:" + this.f949id;
     }
 
     /* renamed from: id */
     public String m1179id() {
-        return this.f985id;
+        return this.f949id;
     }
 
     @Override // java.lang.Object
     public int hashCode() {
-        return this.f985id.hashCode();
+        return this.f949id.hashCode();
     }
 
     @Override // java.lang.Object
@@ -44,11 +44,11 @@ public final class LocalAddress extends SocketAddress implements Comparable<Loca
         if (!(o instanceof LocalAddress)) {
             return false;
         }
-        return this.f985id.equals(((LocalAddress) o).f985id);
+        return this.f949id.equals(((LocalAddress) o).f949id);
     }
 
     public int compareTo(LocalAddress o) {
-        return this.f985id.compareTo(o.f985id);
+        return this.f949id.compareTo(o.f949id);
     }
 
     @Override // java.lang.Object

@@ -4,7 +4,7 @@ package org.luaj.vm2.compiler;
 public class IntPtr {
 
     /* renamed from: i */
-    int f3315i;
+    int f3279i;
 
     /* access modifiers changed from: package-private */
     public IntPtr() {
@@ -12,6 +12,6 @@ public class IntPtr {
 
     /* access modifiers changed from: package-private */
     public IntPtr(int i) {
-        this.f3315i = i;
+        this.f3279i = i;
     }
 }

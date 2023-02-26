@@ -40,13 +40,13 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
     protected transient boolean containsNullKey;
 
     /* renamed from: n */
-    protected transient int f2948n;
+    protected transient int f2912n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2949f;
+    protected final float f2913f;
     protected transient Short2FloatMap.FastEntrySet entries;
     protected transient ShortSet keys;
     protected transient FloatCollection values;
@@ -57,14 +57,14 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2949f = f;
+            this.f2913f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2948n = arraySize;
+            this.f2912n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2948n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2948n, f);
-            this.key = new short[this.f2948n + 1];
-            this.value = new float[this.f2948n + 1];
+            this.mask = this.f2912n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2912n, f);
+            this.key = new short[this.f2912n + 1];
+            this.value = new float[this.f2912n + 1];
         }
     }
 
@@ -114,15 +114,15 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2949f);
-        if (needed > this.f2948n) {
+        int needed = HashCommon.arraySize(capacity, this.f2913f);
+        if (needed > this.f2912n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2949f)))));
-        if (needed > this.f2948n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2913f)))));
+        if (needed > this.f2912n) {
             rehash(needed);
         }
     }
@@ -132,8 +132,8 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
         float oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f2948n > this.minN && this.size < this.maxFill / 4 && this.f2948n > 16) {
-            rehash(this.f2948n / 2);
+        if (this.f2912n > this.minN && this.size < this.maxFill / 4 && this.f2912n > 16) {
+            rehash(this.f2912n / 2);
         }
         return oldValue;
     }
@@ -141,17 +141,17 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
     /* access modifiers changed from: private */
     public float removeNullEntry() {
         this.containsNullKey = false;
-        float oldValue = this.value[this.f2948n];
+        float oldValue = this.value[this.f2912n];
         this.size--;
-        if (this.f2948n > this.minN && this.size < this.maxFill / 4 && this.f2948n > 16) {
-            rehash(this.f2948n / 2);
+        if (this.f2912n > this.minN && this.size < this.maxFill / 4 && this.f2912n > 16) {
+            rehash(this.f2912n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShort2FloatMap, java.util.Map
     public void putAll(Map<? extends Short, ? extends Float> m) {
-        if (((double) this.f2949f) <= 0.5d) {
+        if (((double) this.f2913f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -162,7 +162,7 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
     private int find(short k) {
         short curr;
         if (k == 0) {
-            return this.containsNullKey ? this.f2948n : -(this.f2948n + 1);
+            return this.containsNullKey ? this.f2912n : -(this.f2912n + 1);
         }
         short[] key = this.key;
         int mix = HashCommon.mix((int) k) & this.mask;
@@ -186,7 +186,7 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
     }
 
     private void insert(int pos, short k, float v) {
-        if (pos == this.f2948n) {
+        if (pos == this.f2912n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -194,7 +194,7 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2949f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2913f));
         }
     }
 
@@ -238,9 +238,9 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f2948n, incr);
+            return addToValue(this.f2912n, incr);
         } else {
-            pos = this.f2948n;
+            pos = this.f2912n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -248,7 +248,7 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2949f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2913f));
         }
         return this.defRetValue;
     }
@@ -314,7 +314,7 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
     public float get(short k) {
         short curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f2948n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2912n] : this.defRetValue;
         }
         short[] key = this.key;
         int mix = HashCommon.mix((int) k) & this.mask;
@@ -368,10 +368,10 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
     public boolean containsValue(float v) {
         float[] value = this.value;
         short[] key = this.key;
-        if (this.containsNullKey && Float.floatToIntBits(value[this.f2948n]) == Float.floatToIntBits(v)) {
+        if (this.containsNullKey && Float.floatToIntBits(value[this.f2912n]) == Float.floatToIntBits(v)) {
             return true;
         }
-        int i = this.f2948n;
+        int i = this.f2912n;
         while (true) {
             i--;
             if (i == 0) {
@@ -387,7 +387,7 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
     public float getOrDefault(short k, float defaultValue) {
         short curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f2948n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2912n] : defaultValue;
         }
         short[] key = this.key;
         int mix = HashCommon.mix((int) k) & this.mask;
@@ -446,7 +446,7 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
                     return true;
                 }
             }
-        } else if (!this.containsNullKey || Float.floatToIntBits(v) != Float.floatToIntBits(this.value[this.f2948n])) {
+        } else if (!this.containsNullKey || Float.floatToIntBits(v) != Float.floatToIntBits(this.value[this.f2912n])) {
             return false;
         } else {
             removeNullEntry();
@@ -701,31 +701,31 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
         int last;
 
         /* renamed from: c */
-        int f2950c;
+        int f2914c;
         boolean mustReturnNullKey;
         ShortArrayList wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Short2FloatOpenHashMap.this.f2948n;
+            this.pos = Short2FloatOpenHashMap.this.f2912n;
             this.last = -1;
-            this.f2950c = Short2FloatOpenHashMap.this.size;
+            this.f2914c = Short2FloatOpenHashMap.this.size;
             this.mustReturnNullKey = Short2FloatOpenHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f2950c != 0;
+            return this.f2914c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2950c--;
+            this.f2914c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Short2FloatOpenHashMap.this.f2948n;
+                int i = Short2FloatOpenHashMap.this.f2912n;
                 this.last = i;
                 return i;
             }
@@ -757,13 +757,13 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Short2FloatOpenHashMap.this.f2948n;
+                int i = Short2FloatOpenHashMap.this.f2912n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f2950c--;
+                this.f2914c--;
             }
             short[] key = Short2FloatOpenHashMap.this.key;
-            while (this.f2950c != 0) {
+            while (this.f2914c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -780,12 +780,12 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
                         i3 = Short2FloatOpenHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f2950c--;
+                    this.f2914c--;
                 } else if (key[this.pos] != 0) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f2950c--;
+                    this.f2914c--;
                 }
             }
         }
@@ -834,7 +834,7 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Short2FloatOpenHashMap.this.f2948n) {
+            if (this.last == Short2FloatOpenHashMap.this.f2912n) {
                 Short2FloatOpenHashMap.this.containsNullKey = false;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
@@ -931,7 +931,7 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
         int max;
 
         /* renamed from: c */
-        int f2951c;
+        int f2915c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -941,16 +941,16 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Short2FloatOpenHashMap.this.f2948n;
-            this.f2951c = 0;
+            this.max = Short2FloatOpenHashMap.this.f2912n;
+            this.f2915c = 0;
             this.mustReturnNull = Short2FloatOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Short2FloatOpenHashMap.this.f2948n;
-            this.f2951c = 0;
+            this.max = Short2FloatOpenHashMap.this.f2912n;
+            this.f2915c = 0;
             this.mustReturnNull = Short2FloatOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -962,14 +962,14 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2951c++;
-                acceptOnIndex(action, Short2FloatOpenHashMap.this.f2948n);
+                this.f2915c++;
+                acceptOnIndex(action, Short2FloatOpenHashMap.this.f2912n);
                 return true;
             }
             short[] key = Short2FloatOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f2951c++;
+                    this.f2915c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -983,14 +983,14 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2951c++;
-                acceptOnIndex(action, Short2FloatOpenHashMap.this.f2948n);
+                this.f2915c++;
+                acceptOnIndex(action, Short2FloatOpenHashMap.this.f2912n);
             }
             short[] key = Short2FloatOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     acceptOnIndex(action, this.pos);
-                    this.f2951c++;
+                    this.f2915c++;
                 }
                 this.pos++;
             }
@@ -998,9 +998,9 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Short2FloatOpenHashMap.this.size - this.f2951c);
+                return (long) (Short2FloatOpenHashMap.this.size - this.f2915c);
             }
-            return Math.min((long) (Short2FloatOpenHashMap.this.size - this.f2951c), ((long) ((((double) Short2FloatOpenHashMap.this.realSize()) / ((double) Short2FloatOpenHashMap.this.f2948n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Short2FloatOpenHashMap.this.size - this.f2915c), ((long) ((((double) Short2FloatOpenHashMap.this.realSize()) / ((double) Short2FloatOpenHashMap.this.f2912n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1193,7 +1193,7 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
             short k = ((Short) e.getKey()).shortValue();
             float v = ((Float) e.getValue()).floatValue();
             if (k == 0) {
-                return Short2FloatOpenHashMap.this.containsNullKey && Float.floatToIntBits(Short2FloatOpenHashMap.this.value[Short2FloatOpenHashMap.this.f2948n]) == Float.floatToIntBits(v);
+                return Short2FloatOpenHashMap.this.containsNullKey && Float.floatToIntBits(Short2FloatOpenHashMap.this.value[Short2FloatOpenHashMap.this.f2912n]) == Float.floatToIntBits(v);
             }
             short[] key = Short2FloatOpenHashMap.this.key;
             int mix = HashCommon.mix((int) k) & Short2FloatOpenHashMap.this.mask;
@@ -1254,7 +1254,7 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
                     Short2FloatOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Short2FloatOpenHashMap.this.containsNullKey || Float.floatToIntBits(Short2FloatOpenHashMap.this.value[Short2FloatOpenHashMap.this.f2948n]) != Float.floatToIntBits(v)) {
+            } else if (!Short2FloatOpenHashMap.this.containsNullKey || Float.floatToIntBits(Short2FloatOpenHashMap.this.value[Short2FloatOpenHashMap.this.f2912n]) != Float.floatToIntBits(v)) {
                 return false;
             } else {
                 Short2FloatOpenHashMap.this.removeNullEntry();
@@ -1275,9 +1275,9 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Short2FloatMap.Entry> consumer) {
             if (Short2FloatOpenHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractShort2FloatMap.BasicEntry(Short2FloatOpenHashMap.this.key[Short2FloatOpenHashMap.this.f2948n], Short2FloatOpenHashMap.this.value[Short2FloatOpenHashMap.this.f2948n]));
+                consumer.accept(new AbstractShort2FloatMap.BasicEntry(Short2FloatOpenHashMap.this.key[Short2FloatOpenHashMap.this.f2912n], Short2FloatOpenHashMap.this.value[Short2FloatOpenHashMap.this.f2912n]));
             }
-            int pos = Short2FloatOpenHashMap.this.f2948n;
+            int pos = Short2FloatOpenHashMap.this.f2912n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1293,11 +1293,11 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
         public void fastForEach(Consumer<? super Short2FloatMap.Entry> consumer) {
             AbstractShort2FloatMap.BasicEntry entry = new AbstractShort2FloatMap.BasicEntry();
             if (Short2FloatOpenHashMap.this.containsNullKey) {
-                entry.key = Short2FloatOpenHashMap.this.key[Short2FloatOpenHashMap.this.f2948n];
-                entry.value = Short2FloatOpenHashMap.this.value[Short2FloatOpenHashMap.this.f2948n];
+                entry.key = Short2FloatOpenHashMap.this.key[Short2FloatOpenHashMap.this.f2912n];
+                entry.value = Short2FloatOpenHashMap.this.value[Short2FloatOpenHashMap.this.f2912n];
                 consumer.accept(entry);
             }
-            int pos = Short2FloatOpenHashMap.this.f2948n;
+            int pos = Short2FloatOpenHashMap.this.f2912n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1395,9 +1395,9 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterable
         public void forEach(ShortConsumer consumer) {
             if (Short2FloatOpenHashMap.this.containsNullKey) {
-                consumer.accept(Short2FloatOpenHashMap.this.key[Short2FloatOpenHashMap.this.f2948n]);
+                consumer.accept(Short2FloatOpenHashMap.this.key[Short2FloatOpenHashMap.this.f2912n]);
             }
-            int pos = Short2FloatOpenHashMap.this.f2948n;
+            int pos = Short2FloatOpenHashMap.this.f2912n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1516,9 +1516,9 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
                 @Override // p014it.unimi.dsi.fastutil.floats.FloatIterable
                 public void forEach(FloatConsumer consumer) {
                     if (Short2FloatOpenHashMap.this.containsNullKey) {
-                        consumer.accept(Short2FloatOpenHashMap.this.value[Short2FloatOpenHashMap.this.f2948n]);
+                        consumer.accept(Short2FloatOpenHashMap.this.value[Short2FloatOpenHashMap.this.f2912n]);
                     }
-                    int pos = Short2FloatOpenHashMap.this.f2948n;
+                    int pos = Short2FloatOpenHashMap.this.f2912n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1554,8 +1554,8 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2949f)));
-        if (l >= this.f2948n || this.size > HashCommon.maxFill(l, this.f2949f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2913f)));
+        if (l >= this.f2912n || this.size > HashCommon.maxFill(l, this.f2913f)) {
             return true;
         }
         try {
@@ -1573,7 +1573,7 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
         int mask = newN - 1;
         short[] newKey = new short[newN + 1];
         float[] newValue = new float[newN + 1];
-        int i2 = this.f2948n;
+        int i2 = this.f2912n;
         int j = realSize();
         while (true) {
             j--;
@@ -1592,10 +1592,10 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f2948n];
-                this.f2948n = newN;
+                newValue[newN] = value[this.f2912n];
+                this.f2912n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2948n, this.f2949f);
+                this.maxFill = HashCommon.maxFill(this.f2912n, this.f2913f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1636,7 +1636,7 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
             i++;
         }
         if (this.containsNullKey) {
-            h += HashCommon.float2int(this.value[this.f2948n]);
+            h += HashCommon.float2int(this.value[this.f2912n]);
         }
         return h;
     }
@@ -1662,12 +1662,12 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2948n = HashCommon.arraySize(this.size, this.f2949f);
-        this.maxFill = HashCommon.maxFill(this.f2948n, this.f2949f);
-        this.mask = this.f2948n - 1;
-        short[] key = new short[this.f2948n + 1];
+        this.f2912n = HashCommon.arraySize(this.size, this.f2913f);
+        this.maxFill = HashCommon.maxFill(this.f2912n, this.f2913f);
+        this.mask = this.f2912n - 1;
+        short[] key = new short[this.f2912n + 1];
         this.key = key;
-        float[] value = new float[this.f2948n + 1];
+        float[] value = new float[this.f2912n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1676,7 +1676,7 @@ public class Short2FloatOpenHashMap extends AbstractShort2FloatMap implements Se
                 short k = s.readShort();
                 float v = s.readFloat();
                 if (k == 0) {
-                    pos = this.f2948n;
+                    pos = this.f2912n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix((int) k);

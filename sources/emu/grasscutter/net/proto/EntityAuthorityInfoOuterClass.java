@@ -31,7 +31,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityAuthorityInfoOuterClass.class */
 public final class EntityAuthorityInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019EntityAuthorityInfo.proto\u001a\u001aAbilitySyncStateInfo.proto\u001a$AnimatorParameterValueInfoPair.proto\u001a\u001bEntityClientExtraInfo.proto\u001a\u001fEntityRendererChangedInfo.proto\u001a\u0017SceneEntityAiInfo.proto\u001a\fVector.proto\"©\u0002\n\u0013EntityAuthorityInfo\u0012+\n\fability_info\u0018\u0001 \u0001(\u000b2\u0015.AbilitySyncStateInfo\u00129\n\u0015renderer_changed_info\u0018\u0002 \u0001(\u000b2\u001a.EntityRendererChangedInfo\u0012#\n\u0007ai_info\u0018\u0003 \u0001(\u000b2\u0012.SceneEntityAiInfo\u0012\u0019\n\bborn_pos\u0018\u0004 \u0001(\u000b2\u0007.Vector\u00127\n\u000epose_para_list\u0018\u0005 \u0003(\u000b2\u001f.AnimatorParameterValueInfoPair\u00121\n\u0011client_extra_info\u0018\u0006 \u0001(\u000b2\u0016.EntityClientExtraInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilitySyncStateInfoOuterClass.getDescriptor(), AnimatorParameterValueInfoPairOuterClass.getDescriptor(), EntityClientExtraInfoOuterClass.getDescriptor(), EntityRendererChangedInfoOuterClass.getDescriptor(), SceneEntityAiInfoOuterClass.getDescriptor(), VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019EntityAuthorityInfo.proto\u001a\u001aAbilitySyncStateInfo.proto\u001a\u001fEntityRendererChangedInfo.proto\u001a\u0017SceneEntityAiInfo.proto\u001a\fVector.proto\u001a\u001bEntityClientExtraInfo.proto\u001a$AnimatorParameterValueInfoPair.proto\" \u0002\n\u0013EntityAuthorityInfo\u0012*\n\u000babilityInfo\u0018\u0001 \u0001(\u000b2\u0015.AbilitySyncStateInfo\u00127\n\u0013rendererChangedInfo\u0018\u0002 \u0001(\u000b2\u001a.EntityRendererChangedInfo\u0012\"\n\u0006aiInfo\u0018\u0003 \u0001(\u000b2\u0012.SceneEntityAiInfo\u0012\u0018\n\u0007bornPos\u0018\u0004 \u0001(\u000b2\u0007.Vector\u00125\n\fposeParaList\u0018\u0005 \u0003(\u000b2\u001f.AnimatorParameterValueInfoPair\u0012/\n\u000fclientExtraInfo\u0018\u0006 \u0001(\u000b2\u0016.EntityClientExtraInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilitySyncStateInfoOuterClass.getDescriptor(), EntityRendererChangedInfoOuterClass.getDescriptor(), SceneEntityAiInfoOuterClass.getDescriptor(), VectorOuterClass.getDescriptor(), EntityClientExtraInfoOuterClass.getDescriptor(), AnimatorParameterValueInfoPairOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_EntityAuthorityInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_EntityAuthorityInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EntityAuthorityInfo_descriptor, new String[]{"AbilityInfo", "RendererChangedInfo", "AiInfo", "BornPos", "PoseParaList", "ClientExtraInfo"});
 
@@ -91,17 +91,17 @@ public final class EntityAuthorityInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityAuthorityInfoOuterClass$EntityAuthorityInfo.class */
     public static final class EntityAuthorityInfo extends GeneratedMessageV3 implements EntityAuthorityInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ABILITY_INFO_FIELD_NUMBER = 1;
+        public static final int ABILITYINFO_FIELD_NUMBER = 1;
         private AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo abilityInfo_;
-        public static final int RENDERER_CHANGED_INFO_FIELD_NUMBER = 2;
+        public static final int RENDERERCHANGEDINFO_FIELD_NUMBER = 2;
         private EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo rendererChangedInfo_;
-        public static final int AI_INFO_FIELD_NUMBER = 3;
+        public static final int AIINFO_FIELD_NUMBER = 3;
         private SceneEntityAiInfoOuterClass.SceneEntityAiInfo aiInfo_;
-        public static final int BORN_POS_FIELD_NUMBER = 4;
+        public static final int BORNPOS_FIELD_NUMBER = 4;
         private VectorOuterClass.Vector bornPos_;
-        public static final int POSE_PARA_LIST_FIELD_NUMBER = 5;
+        public static final int POSEPARALIST_FIELD_NUMBER = 5;
         private List<AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair> poseParaList_;
-        public static final int CLIENT_EXTRA_INFO_FIELD_NUMBER = 6;
+        public static final int CLIENTEXTRAINFO_FIELD_NUMBER = 6;
         private EntityClientExtraInfoOuterClass.EntityClientExtraInfo clientExtraInfo_;
         private byte memoizedIsInitialized;
         private static final EntityAuthorityInfo DEFAULT_INSTANCE = new EntityAuthorityInfo();
@@ -1406,10 +1406,10 @@ public final class EntityAuthorityInfoOuterClass {
 
     static {
         AbilitySyncStateInfoOuterClass.getDescriptor();
-        AnimatorParameterValueInfoPairOuterClass.getDescriptor();
-        EntityClientExtraInfoOuterClass.getDescriptor();
         EntityRendererChangedInfoOuterClass.getDescriptor();
         SceneEntityAiInfoOuterClass.getDescriptor();
         VectorOuterClass.getDescriptor();
+        EntityClientExtraInfoOuterClass.getDescriptor();
+        AnimatorParameterValueInfoPairOuterClass.getDescriptor();
     }
 }

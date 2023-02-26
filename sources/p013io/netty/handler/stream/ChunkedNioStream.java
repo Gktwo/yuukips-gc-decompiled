@@ -12,7 +12,7 @@ import p013io.netty.util.internal.ObjectUtil;
 public class ChunkedNioStream implements ChunkedInput<ByteBuf> {
 
     /* renamed from: in */
-    private final ReadableByteChannel f1032in;
+    private final ReadableByteChannel f996in;
     private final int chunkSize;
     private long offset;
     private final ByteBuffer byteBuffer;
@@ -22,7 +22,7 @@ public class ChunkedNioStream implements ChunkedInput<ByteBuf> {
     }
 
     public ChunkedNioStream(ReadableByteChannel in, int chunkSize) {
-        this.f1032in = (ReadableByteChannel) ObjectUtil.checkNotNull(in, "in");
+        this.f996in = (ReadableByteChannel) ObjectUtil.checkNotNull(in, "in");
         this.chunkSize = ObjectUtil.checkPositive(chunkSize, "chunkSize");
         this.byteBuffer = ByteBuffer.allocate(chunkSize);
     }
@@ -37,7 +37,7 @@ public class ChunkedNioStream implements ChunkedInput<ByteBuf> {
         if (this.byteBuffer.position() > 0) {
             return false;
         }
-        if (!this.f1032in.isOpen() || (b = this.f1032in.read(this.byteBuffer)) < 0) {
+        if (!this.f996in.isOpen() || (b = this.f996in.read(this.byteBuffer)) < 0) {
             return true;
         }
         this.offset += (long) b;
@@ -46,7 +46,7 @@ public class ChunkedNioStream implements ChunkedInput<ByteBuf> {
 
     @Override // p013io.netty.handler.stream.ChunkedInput
     public void close() throws Exception {
-        this.f1032in.close();
+        this.f996in.close();
     }
 
     @Override // p013io.netty.handler.stream.ChunkedInput
@@ -62,7 +62,7 @@ public class ChunkedNioStream implements ChunkedInput<ByteBuf> {
         }
         int readBytes = this.byteBuffer.position();
         do {
-            int localReadBytes = this.f1032in.read(this.byteBuffer);
+            int localReadBytes = this.f996in.read(this.byteBuffer);
             if (localReadBytes < 0) {
                 break;
             }

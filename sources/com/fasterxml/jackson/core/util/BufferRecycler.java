@@ -1,6 +1,5 @@
 package com.fasterxml.jackson.core.util;
 
-import emu.grasscutter.net.packet.PacketOpcodes;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 
 /* loaded from: grasscutter.jar:com/fasterxml/jackson/core/util/BufferRecycler.class */
@@ -13,8 +12,8 @@ public class BufferRecycler {
     public static final int CHAR_CONCAT_BUFFER = 1;
     public static final int CHAR_TEXT_BUFFER = 2;
     public static final int CHAR_NAME_COPY_BUFFER = 3;
-    private static final int[] BYTE_BUFFER_LENGTHS = {8000, 8000, PacketOpcodes.SetCoopChapterViewedRsp, PacketOpcodes.SetCoopChapterViewedRsp};
-    private static final int[] CHAR_BUFFER_LENGTHS = {PacketOpcodes.MechanicusOpenNotify, PacketOpcodes.MechanicusOpenNotify, 200, 200};
+    private static final int[] BYTE_BUFFER_LENGTHS = {8000, 8000, 2000, 2000};
+    private static final int[] CHAR_BUFFER_LENGTHS = {4000, 4000, 200, 200};
     protected final AtomicReferenceArray<byte[]> _byteBuffers;
     protected final AtomicReferenceArray<char[]> _charBuffers;
 

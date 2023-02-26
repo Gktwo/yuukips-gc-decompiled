@@ -1,10 +1,9 @@
 package p013io.netty.util.internal.shaded.org.jctools.queues.atomic;
 
 /* compiled from: MpscAtomicArrayQueue.java */
-/* access modifiers changed from: package-private */
 /* renamed from: io.netty.util.internal.shaded.org.jctools.queues.atomic.MpscAtomicArrayQueueMidPad */
 /* loaded from: grasscutter.jar:io/netty/util/internal/shaded/org/jctools/queues/atomic/MpscAtomicArrayQueueMidPad.class */
-public abstract class MpscAtomicArrayQueueMidPad<E> extends MpscAtomicArrayQueueProducerIndexField<E> {
+abstract class MpscAtomicArrayQueueMidPad<E> extends MpscAtomicArrayQueueProducerIndexField<E> {
     byte b000;
     byte b001;
     byte b002;

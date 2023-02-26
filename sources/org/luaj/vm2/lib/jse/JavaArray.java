@@ -13,7 +13,7 @@ class JavaArray extends LuaUserdata {
 
     /* renamed from: org.luaj.vm2.lib.jse.JavaArray$1 */
     /* loaded from: grasscutter.jar:org/luaj/vm2/lib/jse/JavaArray$1.class */
-    static class C58751 {
+    static class C58671 {
     }
 
     /* loaded from: grasscutter.jar:org/luaj/vm2/lib/jse/JavaArray$LenFunction.class */
@@ -26,7 +26,7 @@ class JavaArray extends LuaUserdata {
             return LuaValue.valueOf(Array.getLength(((LuaUserdata) luaValue).m_instance));
         }
 
-        LenFunction(C58751 r3) {
+        LenFunction(C58671 r3) {
             this();
         }
     }

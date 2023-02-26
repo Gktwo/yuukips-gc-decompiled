@@ -338,7 +338,7 @@ public class MemberCodeGen extends CodeGen {
                 case TokenId.LONG:
                     atype = 11;
                     break;
-                case 334:
+                case TokenId.SHORT:
                     atype = 9;
                     break;
                 default:

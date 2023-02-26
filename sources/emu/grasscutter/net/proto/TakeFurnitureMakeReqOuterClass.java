@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeFurnitureMakeReqOuterClass.class */
 public final class TakeFurnitureMakeReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aTakeFurnitureMakeReq.proto\"N\n\u0014TakeFurnitureMakeReq\u0012\r\n\u0005index\u0018\f \u0001(\r\u0012\u0016\n\u000eis_fast_finish\u0018\u0002 \u0001(\b\u0012\u000f\n\u0007make_id\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aTakeFurnitureMakeReq.proto\"K\n\u0014TakeFurnitureMakeReq\u0012\r\n\u0005index\u0018\u0006 \u0001(\r\u0012\u0014\n\fisFastFinish\u0018\u000f \u0001(\b\u0012\u000e\n\u0006makeId\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_TakeFurnitureMakeReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_TakeFurnitureMakeReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TakeFurnitureMakeReq_descriptor, new String[]{"Index", "IsFastFinish", "MakeId"});
 
@@ -46,11 +46,11 @@ public final class TakeFurnitureMakeReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeFurnitureMakeReqOuterClass$TakeFurnitureMakeReq.class */
     public static final class TakeFurnitureMakeReq extends GeneratedMessageV3 implements TakeFurnitureMakeReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int INDEX_FIELD_NUMBER = 12;
+        public static final int INDEX_FIELD_NUMBER = 6;
         private int index_;
-        public static final int IS_FAST_FINISH_FIELD_NUMBER = 2;
+        public static final int ISFASTFINISH_FIELD_NUMBER = 15;
         private boolean isFastFinish_;
-        public static final int MAKE_ID_FIELD_NUMBER = 7;
+        public static final int MAKEID_FIELD_NUMBER = 9;
         private int makeId_;
         private byte memoizedIsInitialized;
         private static final TakeFurnitureMakeReq DEFAULT_INSTANCE = new TakeFurnitureMakeReq();
@@ -98,14 +98,14 @@ public final class TakeFurnitureMakeReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
-                                    this.isFastFinish_ = input.readBool();
+                                case 48:
+                                    this.index_ = input.readUInt32();
                                     break;
-                                case 56:
+                                case 72:
                                     this.makeId_ = input.readUInt32();
                                     break;
-                                case 96:
-                                    this.index_ = input.readUInt32();
+                                case 120:
+                                    this.isFastFinish_ = input.readBool();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -167,14 +167,14 @@ public final class TakeFurnitureMakeReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.isFastFinish_) {
-                output.writeBool(2, this.isFastFinish_);
+            if (this.index_ != 0) {
+                output.writeUInt32(6, this.index_);
             }
             if (this.makeId_ != 0) {
-                output.writeUInt32(7, this.makeId_);
+                output.writeUInt32(9, this.makeId_);
             }
-            if (this.index_ != 0) {
-                output.writeUInt32(12, this.index_);
+            if (this.isFastFinish_) {
+                output.writeBool(15, this.isFastFinish_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class TakeFurnitureMakeReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.isFastFinish_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(2, this.isFastFinish_);
+            if (this.index_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.index_);
             }
             if (this.makeId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.makeId_);
+                size2 += CodedOutputStream.computeUInt32Size(9, this.makeId_);
             }
-            if (this.index_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.index_);
+            if (this.isFastFinish_) {
+                size2 += CodedOutputStream.computeBoolSize(15, this.isFastFinish_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -217,7 +217,7 @@ public final class TakeFurnitureMakeReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getIndex())) + 2)) + Internal.hashBoolean(getIsFastFinish()))) + 7)) + getMakeId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getIndex())) + 15)) + Internal.hashBoolean(getIsFastFinish()))) + 9)) + getMakeId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

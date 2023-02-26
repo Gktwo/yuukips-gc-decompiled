@@ -38,18 +38,18 @@ public class UIntProgression implements Iterable<UInt>, KMappedMarker {
             throw new IllegalArgumentException("Step must be greater than Int.MIN_VALUE to avoid overflow on negation.");
         } else {
             this.first = start;
-            this.last = UProgressionUtil.m8283getProgressionLastElementNkh28Cs(start, endInclusive, step);
+            this.last = UProgressionUtil.m8280getProgressionLastElementNkh28Cs(start, endInclusive, step);
             this.step = step;
         }
     }
 
     /* renamed from: getFirst-pVg5ArA  reason: not valid java name */
-    public final int m8336getFirstpVg5ArA() {
+    public final int m8333getFirstpVg5ArA() {
         return this.first;
     }
 
     /* renamed from: getLast-pVg5ArA  reason: not valid java name */
-    public final int m8337getLastpVg5ArA() {
+    public final int m8334getLastpVg5ArA() {
         return this.last;
     }
 
@@ -60,17 +60,17 @@ public class UIntProgression implements Iterable<UInt>, KMappedMarker {
     @Override // java.lang.Iterable
     @NotNull
     public final Iterator<UInt> iterator() {
-        return new UIntProgressionIterator(m8336getFirstpVg5ArA(), m8337getLastpVg5ArA(), this.step, null);
+        return new UIntProgressionIterator(m8333getFirstpVg5ArA(), m8334getLastpVg5ArA(), this.step, null);
     }
 
     @Override // kotlin.ranges.ClosedRange
     public boolean isEmpty() {
-        return this.step > 0 ? UnsignedUtils.uintCompare(m8336getFirstpVg5ArA(), m8337getLastpVg5ArA()) > 0 : UnsignedUtils.uintCompare(m8336getFirstpVg5ArA(), m8337getLastpVg5ArA()) < 0;
+        return this.step > 0 ? UnsignedUtils.uintCompare(m8333getFirstpVg5ArA(), m8334getLastpVg5ArA()) > 0 : UnsignedUtils.uintCompare(m8333getFirstpVg5ArA(), m8334getLastpVg5ArA()) < 0;
     }
 
     @Override // java.lang.Object
     public boolean equals(@Nullable Object other) {
-        return (other instanceof UIntProgression) && ((isEmpty() && ((UIntProgression) other).isEmpty()) || (m8336getFirstpVg5ArA() == ((UIntProgression) other).m8336getFirstpVg5ArA() && m8337getLastpVg5ArA() == ((UIntProgression) other).m8337getLastpVg5ArA() && this.step == ((UIntProgression) other).step));
+        return (other instanceof UIntProgression) && ((isEmpty() && ((UIntProgression) other).isEmpty()) || (m8333getFirstpVg5ArA() == ((UIntProgression) other).m8333getFirstpVg5ArA() && m8334getLastpVg5ArA() == ((UIntProgression) other).m8334getLastpVg5ArA() && this.step == ((UIntProgression) other).step));
     }
 
     @Override // java.lang.Object
@@ -78,13 +78,13 @@ public class UIntProgression implements Iterable<UInt>, KMappedMarker {
         if (isEmpty()) {
             return -1;
         }
-        return (31 * ((31 * m8336getFirstpVg5ArA()) + m8337getLastpVg5ArA())) + this.step;
+        return (31 * ((31 * m8333getFirstpVg5ArA()) + m8334getLastpVg5ArA())) + this.step;
     }
 
     @Override // java.lang.Object
     @NotNull
     public String toString() {
-        return this.step > 0 ? ((Object) UInt.m7198toStringimpl(m8336getFirstpVg5ArA())) + CallerDataConverter.DEFAULT_RANGE_DELIMITER + ((Object) UInt.m7198toStringimpl(m8337getLastpVg5ArA())) + " step " + this.step : ((Object) UInt.m7198toStringimpl(m8336getFirstpVg5ArA())) + " downTo " + ((Object) UInt.m7198toStringimpl(m8337getLastpVg5ArA())) + " step " + (-this.step);
+        return this.step > 0 ? ((Object) UInt.m7195toStringimpl(m8333getFirstpVg5ArA())) + CallerDataConverter.DEFAULT_RANGE_DELIMITER + ((Object) UInt.m7195toStringimpl(m8334getLastpVg5ArA())) + " step " + this.step : ((Object) UInt.m7195toStringimpl(m8333getFirstpVg5ArA())) + " downTo " + ((Object) UInt.m7195toStringimpl(m8334getLastpVg5ArA())) + " step " + (-this.step);
     }
 
     /* compiled from: UIntRange.kt */
@@ -100,7 +100,7 @@ public class UIntProgression implements Iterable<UInt>, KMappedMarker {
 
         @NotNull
         /* renamed from: fromClosedRange-Nkh28Cs  reason: not valid java name */
-        public final UIntProgression m8339fromClosedRangeNkh28Cs(int rangeStart, int rangeEnd, int step) {
+        public final UIntProgression m8336fromClosedRangeNkh28Cs(int rangeStart, int rangeEnd, int step) {
             return new UIntProgression(rangeStart, rangeEnd, step, null);
         }
     }

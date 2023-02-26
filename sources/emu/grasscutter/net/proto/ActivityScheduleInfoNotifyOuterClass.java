@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ActivityScheduleInfoNotifyOuterClass.class */
 public final class ActivityScheduleInfoNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n ActivityScheduleInfoNotify.proto\u001a\u001aActivityScheduleInfo.proto\"t\n\u001aActivityScheduleInfoNotify\u00125\n\u0016activity_schedule_list\u0018\u0001 \u0003(\u000b2\u0015.ActivityScheduleInfo\u0012\u001f\n\u0017remain_fly_sea_lamp_num\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ActivityScheduleInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n ActivityScheduleInfoNotify.proto\u001a\u001aActivityScheduleInfo.proto\"n\n\u001aActivityScheduleInfoNotify\u00123\n\u0014activityScheduleList\u0018\u0005 \u0003(\u000b2\u0015.ActivityScheduleInfo\u0012\u001b\n\u0013remainFlySeaLampNum\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ActivityScheduleInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ActivityScheduleInfoNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ActivityScheduleInfoNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ActivityScheduleInfoNotify_descriptor, new String[]{"ActivityScheduleList", "RemainFlySeaLampNum"});
 
@@ -57,9 +57,9 @@ public final class ActivityScheduleInfoNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ActivityScheduleInfoNotifyOuterClass$ActivityScheduleInfoNotify.class */
     public static final class ActivityScheduleInfoNotify extends GeneratedMessageV3 implements ActivityScheduleInfoNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ACTIVITY_SCHEDULE_LIST_FIELD_NUMBER = 1;
+        public static final int ACTIVITYSCHEDULELIST_FIELD_NUMBER = 5;
         private List<ActivityScheduleInfoOuterClass.ActivityScheduleInfo> activityScheduleList_;
-        public static final int REMAIN_FLY_SEA_LAMP_NUM_FIELD_NUMBER = 13;
+        public static final int REMAINFLYSEALAMPNUM_FIELD_NUMBER = 11;
         private int remainFlySeaLampNum_;
         private byte memoizedIsInitialized;
         private static final ActivityScheduleInfoNotify DEFAULT_INSTANCE = new ActivityScheduleInfoNotify();
@@ -110,14 +110,14 @@ public final class ActivityScheduleInfoNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 10:
+                                case 42:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.activityScheduleList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.activityScheduleList_.add((ActivityScheduleInfoOuterClass.ActivityScheduleInfo) input.readMessage(ActivityScheduleInfoOuterClass.ActivityScheduleInfo.parser(), extensionRegistry));
                                     break;
-                                case 104:
+                                case 88:
                                     this.remainFlySeaLampNum_ = input.readUInt32();
                                     break;
                                 default:
@@ -199,10 +199,10 @@ public final class ActivityScheduleInfoNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.activityScheduleList_.size(); i++) {
-                output.writeMessage(1, this.activityScheduleList_.get(i));
+                output.writeMessage(5, this.activityScheduleList_.get(i));
             }
             if (this.remainFlySeaLampNum_ != 0) {
-                output.writeUInt32(13, this.remainFlySeaLampNum_);
+                output.writeUInt32(11, this.remainFlySeaLampNum_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -215,10 +215,10 @@ public final class ActivityScheduleInfoNotifyOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.activityScheduleList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(1, this.activityScheduleList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(5, this.activityScheduleList_.get(i));
             }
             if (this.remainFlySeaLampNum_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.remainFlySeaLampNum_);
+                size2 += CodedOutputStream.computeUInt32Size(11, this.remainFlySeaLampNum_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -244,9 +244,9 @@ public final class ActivityScheduleInfoNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getActivityScheduleListCount() > 0) {
-                hash = (53 * ((37 * hash) + 1)) + getActivityScheduleListList().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getActivityScheduleListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 13)) + getRemainFlySeaLampNum())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 11)) + getRemainFlySeaLampNum())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

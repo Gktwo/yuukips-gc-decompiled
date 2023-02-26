@@ -8,9 +8,10 @@ import java.util.HashMap;
 import java.util.Map;
 import org.bson.Document;
 
+/* access modifiers changed from: package-private */
 @Deprecated(since = "2.0", forRemoval = true)
 /* loaded from: grasscutter.jar:dev/morphia/query/FieldCriteria.class */
-class FieldCriteria extends AbstractCriteria {
+public class FieldCriteria extends AbstractCriteria {
     private final String field;
     private final FilterOperator operator;
     private final Object value;

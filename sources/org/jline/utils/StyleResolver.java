@@ -426,7 +426,7 @@ public class StyleResolver {
                     break;
                 }
                 break;
-            case PacketOpcodes.PlayerChatNotify:
+            case PacketOpcodes.EntityConfigHashNotify:
                 if (lowerCase.equals("fg")) {
                     c = 1;
                     break;

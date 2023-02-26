@@ -123,33 +123,33 @@ public abstract class AbstractIntList extends AbstractIntCollection implements I
     public static final class IndexBasedSpliterator extends IntSpliterators.LateBindingSizeIndexBasedSpliterator {
 
         /* renamed from: l */
-        final IntList f2018l;
+        final IntList f1982l;
 
         /* access modifiers changed from: package-private */
         public IndexBasedSpliterator(IntList l, int pos) {
             super(pos);
-            this.f2018l = l;
+            this.f1982l = l;
         }
 
         IndexBasedSpliterator(IntList l, int pos, int maxPos) {
             super(pos, maxPos);
-            this.f2018l = l;
+            this.f1982l = l;
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntSpliterators.LateBindingSizeIndexBasedSpliterator
         protected final int getMaxPosFromBackingStore() {
-            return this.f2018l.size();
+            return this.f1982l.size();
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntSpliterators.AbstractIndexBasedSpliterator
         protected final int get(int i) {
-            return this.f2018l.getInt(i);
+            return this.f1982l.getInt(i);
         }
 
         /* access modifiers changed from: protected */
         @Override // p014it.unimi.dsi.fastutil.ints.IntSpliterators.AbstractIndexBasedSpliterator
         public final IndexBasedSpliterator makeForSplit(int pos, int maxPos) {
-            return new IndexBasedSpliterator(this.f2018l, pos, maxPos);
+            return new IndexBasedSpliterator(this.f1982l, pos, maxPos);
         }
     }
 
@@ -866,11 +866,11 @@ public abstract class AbstractIntList extends AbstractIntCollection implements I
         private static final long serialVersionUID = -7046029254386353129L;
 
         /* renamed from: l */
-        protected final IntList f2019l;
+        protected final IntList f1983l;
         protected final int from;
 
         /* renamed from: to */
-        protected int f2020to;
+        protected int f1984to;
         static final /* synthetic */ boolean $assertionsDisabled;
 
         /* Return type fixed from 'java.util.ListIterator' to match base method */
@@ -890,18 +890,18 @@ public abstract class AbstractIntList extends AbstractIntCollection implements I
         }
 
         public IntSubList(IntList l, int from, int to) {
-            this.f2019l = l;
+            this.f1983l = l;
             this.from = from;
-            this.f2020to = to;
+            this.f1984to = to;
         }
 
         /* access modifiers changed from: private */
         public boolean assertRange() {
-            if (!$assertionsDisabled && this.from > this.f2019l.size()) {
+            if (!$assertionsDisabled && this.from > this.f1983l.size()) {
                 throw new AssertionError();
-            } else if (!$assertionsDisabled && this.f2020to > this.f2019l.size()) {
+            } else if (!$assertionsDisabled && this.f1984to > this.f1983l.size()) {
                 throw new AssertionError();
-            } else if ($assertionsDisabled || this.f2020to >= this.from) {
+            } else if ($assertionsDisabled || this.f1984to >= this.from) {
                 return true;
             } else {
                 throw new AssertionError();
@@ -910,8 +910,8 @@ public abstract class AbstractIntList extends AbstractIntCollection implements I
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.AbstractIntCollection, p014it.unimi.dsi.fastutil.ints.IntCollection
         public boolean add(int k) {
-            this.f2019l.add(this.f2020to, k);
-            this.f2020to++;
+            this.f1983l.add(this.f1984to, k);
+            this.f1984to++;
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }
@@ -921,8 +921,8 @@ public abstract class AbstractIntList extends AbstractIntCollection implements I
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntList
         public void add(int index, int k) {
             ensureIndex(index);
-            this.f2019l.add(this.from + index, k);
-            this.f2020to++;
+            this.f1983l.add(this.from + index, k);
+            this.f1984to++;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -931,32 +931,32 @@ public abstract class AbstractIntList extends AbstractIntCollection implements I
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, java.util.List
         public boolean addAll(int index, Collection<? extends Integer> c) {
             ensureIndex(index);
-            this.f2020to += c.size();
-            return this.f2019l.addAll(this.from + index, c);
+            this.f1984to += c.size();
+            return this.f1983l.addAll(this.from + index, c);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntList
         public int getInt(int index) {
             ensureRestrictedIndex(index);
-            return this.f2019l.getInt(this.from + index);
+            return this.f1983l.getInt(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntList
         public int removeInt(int index) {
             ensureRestrictedIndex(index);
-            this.f2020to--;
-            return this.f2019l.removeInt(this.from + index);
+            this.f1984to--;
+            return this.f1983l.removeInt(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntList
         public int set(int index, int k) {
             ensureRestrictedIndex(index);
-            return this.f2019l.set(this.from + index, k);
+            return this.f1983l.set(this.from + index, k);
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public int size() {
-            return this.f2020to - this.from;
+            return this.f1984to - this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntList
@@ -965,15 +965,15 @@ public abstract class AbstractIntList extends AbstractIntCollection implements I
             if (from + length > size()) {
                 throw new IndexOutOfBoundsException("End index (" + from + length + ") is greater than list size (" + size() + ")");
             }
-            this.f2019l.getElements(this.from + from, a, offset, length);
+            this.f1983l.getElements(this.from + from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntList
         public void removeElements(int from, int to) {
             ensureIndex(from);
             ensureIndex(to);
-            this.f2019l.removeElements(this.from + from, this.from + to);
-            this.f2020to -= to - from;
+            this.f1983l.removeElements(this.from + from, this.from + to);
+            this.f1984to -= to - from;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -982,8 +982,8 @@ public abstract class AbstractIntList extends AbstractIntCollection implements I
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntList
         public void addElements(int index, int[] a, int offset, int length) {
             ensureIndex(index);
-            this.f2019l.addElements(this.from + index, a, offset, length);
-            this.f2020to += length;
+            this.f1983l.addElements(this.from + index, a, offset, length);
+            this.f1984to += length;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -992,7 +992,7 @@ public abstract class AbstractIntList extends AbstractIntCollection implements I
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntList
         public void setElements(int index, int[] a, int offset, int length) {
             ensureIndex(index);
-            this.f2019l.setElements(this.from + index, a, offset, length);
+            this.f1983l.setElements(this.from + index, a, offset, length);
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1014,7 +1014,7 @@ public abstract class AbstractIntList extends AbstractIntCollection implements I
 
             @Override // p014it.unimi.dsi.fastutil.ints.IntIterators.AbstractIndexBasedIterator
             protected final int get(int i) {
-                return IntSubList.this.f2019l.getInt(IntSubList.this.from + i);
+                return IntSubList.this.f1983l.getInt(IntSubList.this.from + i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.ints.IntIterators.AbstractIndexBasedListIterator
@@ -1034,7 +1034,7 @@ public abstract class AbstractIntList extends AbstractIntCollection implements I
 
             @Override // p014it.unimi.dsi.fastutil.ints.IntIterators.AbstractIndexBasedIterator
             protected final int getMaxPos() {
-                return IntSubList.this.f2020to - IntSubList.this.from;
+                return IntSubList.this.f1984to - IntSubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.ints.IntIterators.AbstractIndexBasedListIterator, p014it.unimi.dsi.fastutil.ints.IntListIterator
@@ -1076,7 +1076,7 @@ public abstract class AbstractIntList extends AbstractIntCollection implements I
 
             @Override // java.util.Iterator, java.util.ListIterator
             public boolean hasNext() {
-                return this.parent.nextIndex() < IntSubList.this.f2020to;
+                return this.parent.nextIndex() < IntSubList.this.f1984to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -1135,8 +1135,8 @@ public abstract class AbstractIntList extends AbstractIntCollection implements I
                 }
                 int currentPos = this.parent.nextIndex();
                 int parentNewPos = currentPos + n;
-                if (parentNewPos > IntSubList.this.f2020to) {
-                    parentNewPos = IntSubList.this.f2020to;
+                if (parentNewPos > IntSubList.this.f1984to) {
+                    parentNewPos = IntSubList.this.f1984to;
                 }
                 return this.parent.skip(parentNewPos - currentPos);
             }
@@ -1147,12 +1147,12 @@ public abstract class AbstractIntList extends AbstractIntCollection implements I
         @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntList, p014it.unimi.dsi.fastutil.ints.IntList, java.util.List
         public ListIterator<Integer> listIterator(int index) {
             ensureIndex(index);
-            return this.f2019l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f2019l.listIterator(index + this.from));
+            return this.f1983l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f1983l.listIterator(index + this.from));
         }
 
         @Override // java.util.Collection, java.lang.Iterable, p014it.unimi.dsi.fastutil.ints.IntCollection, p014it.unimi.dsi.fastutil.ints.IntIterable
         public IntSpliterator spliterator() {
-            return this.f2019l instanceof RandomAccess ? new IndexBasedSpliterator(this.f2019l, this.from, this.f2020to) : spliterator();
+            return this.f1983l instanceof RandomAccess ? new IndexBasedSpliterator(this.f1983l, this.from, this.f1984to) : spliterator();
         }
 
         /* Return type fixed from 'it.unimi.dsi.fastutil.ints.IntList' to match base method */
@@ -1172,8 +1172,8 @@ public abstract class AbstractIntList extends AbstractIntCollection implements I
             if (index == -1) {
                 return false;
             }
-            this.f2020to--;
-            this.f2019l.removeInt(this.from + index);
+            this.f1984to--;
+            this.f1983l.removeInt(this.from + index);
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }

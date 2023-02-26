@@ -14,7 +14,7 @@ public class CharHeapIndirectPriorityQueue extends CharHeapSemiIndirectPriorityQ
         if (capacity > 0) {
             this.heap = new int[capacity];
         }
-        this.f1502c = c;
+        this.f1466c = c;
         this.inv = new int[refArray.length];
         Arrays.fill(this.inv, -1);
     }
@@ -74,7 +74,7 @@ public class CharHeapIndirectPriorityQueue extends CharHeapSemiIndirectPriorityQ
         int i = this.size;
         this.size = i + 1;
         iArr[x] = i;
-        CharIndirectHeaps.upHeap(this.refArray, this.heap, this.inv, this.size, this.size - 1, this.f1502c);
+        CharIndirectHeaps.upHeap(this.refArray, this.heap, this.inv, this.size, this.size - 1, this.f1466c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
@@ -99,14 +99,14 @@ public class CharHeapIndirectPriorityQueue extends CharHeapSemiIndirectPriorityQ
         }
         this.inv[result] = -1;
         if (this.size != 0) {
-            CharIndirectHeaps.downHeap(this.refArray, this.heap, this.inv, this.size, 0, this.f1502c);
+            CharIndirectHeaps.downHeap(this.refArray, this.heap, this.inv, this.size, 0, this.f1466c);
         }
         return result;
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.CharHeapSemiIndirectPriorityQueue, p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public void changed() {
-        CharIndirectHeaps.downHeap(this.refArray, this.heap, this.inv, this.size, 0, this.f1502c);
+        CharIndirectHeaps.downHeap(this.refArray, this.heap, this.inv, this.size, 0, this.f1466c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
@@ -115,12 +115,12 @@ public class CharHeapIndirectPriorityQueue extends CharHeapSemiIndirectPriorityQ
         if (pos < 0) {
             throw new IllegalArgumentException("Index " + index + " does not belong to the queue");
         }
-        CharIndirectHeaps.downHeap(this.refArray, this.heap, this.inv, this.size, CharIndirectHeaps.upHeap(this.refArray, this.heap, this.inv, this.size, pos, this.f1502c), this.f1502c);
+        CharIndirectHeaps.downHeap(this.refArray, this.heap, this.inv, this.size, CharIndirectHeaps.upHeap(this.refArray, this.heap, this.inv, this.size, pos, this.f1466c), this.f1466c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.CharHeapSemiIndirectPriorityQueue, p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public void allChanged() {
-        CharIndirectHeaps.makeHeap(this.refArray, this.heap, this.inv, this.size, this.f1502c);
+        CharIndirectHeaps.makeHeap(this.refArray, this.heap, this.inv, this.size, this.f1466c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
@@ -140,7 +140,7 @@ public class CharHeapIndirectPriorityQueue extends CharHeapSemiIndirectPriorityQ
         int i2 = this.heap[this.size];
         iArr2[result] = i2;
         iArr[i2] = result;
-        CharIndirectHeaps.downHeap(this.refArray, this.heap, this.inv, this.size, CharIndirectHeaps.upHeap(this.refArray, this.heap, this.inv, this.size, result, this.f1502c), this.f1502c);
+        CharIndirectHeaps.downHeap(this.refArray, this.heap, this.inv, this.size, CharIndirectHeaps.upHeap(this.refArray, this.heap, this.inv, this.size, result, this.f1466c), this.f1466c);
         return true;
     }
 

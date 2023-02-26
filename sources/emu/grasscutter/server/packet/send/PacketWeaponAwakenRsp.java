@@ -8,7 +8,7 @@ import emu.grasscutter.net.proto.WeaponAwakenRspOuterClass;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketWeaponAwakenRsp.class */
 public class PacketWeaponAwakenRsp extends BasePacket {
     public PacketWeaponAwakenRsp(Avatar avatar, GameItem item, GameItem feedWeapon, int oldRefineLevel) {
-        super(610);
+        super(685);
         WeaponAwakenRspOuterClass.WeaponAwakenRsp.Builder proto = WeaponAwakenRspOuterClass.WeaponAwakenRsp.newBuilder().setTargetWeaponGuid(item.getGuid()).setTargetWeaponAwakenLevel(item.getRefinement());
         for (Integer num : item.getAffixes()) {
             int affixId = num.intValue();

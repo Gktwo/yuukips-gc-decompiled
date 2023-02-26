@@ -22,7 +22,7 @@ public interface Opcodes {
     public static final int V1_8 = 52;
 
     /* renamed from: V9 */
-    public static final int f3107V9 = 53;
+    public static final int f3071V9 = 53;
     public static final int V10 = 54;
     public static final int V11 = 55;
     public static final int V12 = 56;

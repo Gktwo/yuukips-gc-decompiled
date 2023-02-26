@@ -21,21 +21,21 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerHeadImageRspOuterClass.class */
 public final class SetPlayerHeadImageRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bSetPlayerHeadImageRsp.proto\u001a\u0014ProfilePicture.proto\"e\n\u0015SetPlayerHeadImageRsp\u0012(\n\u000fprofile_picture\u0018\u000e \u0001(\u000b2\u000f.ProfilePicture\u0012\u0011\n\tavatar_id\u0018\u0007 \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u000f \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ProfilePictureOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bSetPlayerHeadImageRsp.proto\u001a\u0014ProfilePicture.proto\"c\n\u0015SetPlayerHeadImageRsp\u0012\u000f\n\u0007retcode\u0018\u0005 \u0001(\u0005\u0012\u0010\n\bavatarId\u0018\u0002 \u0001(\r\u0012'\n\u000eprofilePicture\u0018\t \u0001(\u000b2\u000f.ProfilePictureB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ProfilePictureOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SetPlayerHeadImageRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetPlayerHeadImageRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetPlayerHeadImageRsp_descriptor, new String[]{"ProfilePicture", "AvatarId", "Retcode"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetPlayerHeadImageRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetPlayerHeadImageRsp_descriptor, new String[]{"Retcode", "AvatarId", "ProfilePicture"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerHeadImageRspOuterClass$SetPlayerHeadImageRspOrBuilder.class */
     public interface SetPlayerHeadImageRspOrBuilder extends MessageOrBuilder {
+        int getRetcode();
+
+        int getAvatarId();
+
         boolean hasProfilePicture();
 
         ProfilePictureOuterClass.ProfilePicture getProfilePicture();
 
         ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder();
-
-        int getAvatarId();
-
-        int getRetcode();
     }
 
     private SetPlayerHeadImageRspOuterClass() {
@@ -51,12 +51,12 @@ public final class SetPlayerHeadImageRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerHeadImageRspOuterClass$SetPlayerHeadImageRsp.class */
     public static final class SetPlayerHeadImageRsp extends GeneratedMessageV3 implements SetPlayerHeadImageRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PROFILE_PICTURE_FIELD_NUMBER = 14;
-        private ProfilePictureOuterClass.ProfilePicture profilePicture_;
-        public static final int AVATAR_ID_FIELD_NUMBER = 7;
-        private int avatarId_;
-        public static final int RETCODE_FIELD_NUMBER = 15;
+        public static final int RETCODE_FIELD_NUMBER = 5;
         private int retcode_;
+        public static final int AVATARID_FIELD_NUMBER = 2;
+        private int avatarId_;
+        public static final int PROFILEPICTURE_FIELD_NUMBER = 9;
+        private ProfilePictureOuterClass.ProfilePicture profilePicture_;
         private byte memoizedIsInitialized;
         private static final SetPlayerHeadImageRsp DEFAULT_INSTANCE = new SetPlayerHeadImageRsp();
         private static final Parser<SetPlayerHeadImageRsp> PARSER = new AbstractParser<SetPlayerHeadImageRsp>() { // from class: emu.grasscutter.net.proto.SetPlayerHeadImageRspOuterClass.SetPlayerHeadImageRsp.1
@@ -103,10 +103,13 @@ public final class SetPlayerHeadImageRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 56:
+                                case 16:
                                     this.avatarId_ = input.readUInt32();
                                     break;
-                                case 114:
+                                case 40:
+                                    this.retcode_ = input.readInt32();
+                                    break;
+                                case 74:
                                     ProfilePictureOuterClass.ProfilePicture.Builder subBuilder = this.profilePicture_ != null ? this.profilePicture_.toBuilder() : null;
                                     this.profilePicture_ = (ProfilePictureOuterClass.ProfilePicture) input.readMessage(ProfilePictureOuterClass.ProfilePicture.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -116,9 +119,6 @@ public final class SetPlayerHeadImageRspOuterClass {
                                         this.profilePicture_ = subBuilder.buildPartial();
                                         break;
                                     }
-                                case 120:
-                                    this.retcode_ = input.readInt32();
-                                    break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                         break;
@@ -150,6 +150,16 @@ public final class SetPlayerHeadImageRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SetPlayerHeadImageRspOuterClass.SetPlayerHeadImageRspOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
+        }
+
+        @Override // emu.grasscutter.net.proto.SetPlayerHeadImageRspOuterClass.SetPlayerHeadImageRspOrBuilder
+        public int getAvatarId() {
+            return this.avatarId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.SetPlayerHeadImageRspOuterClass.SetPlayerHeadImageRspOrBuilder
         public boolean hasProfilePicture() {
             return this.profilePicture_ != null;
         }
@@ -162,16 +172,6 @@ public final class SetPlayerHeadImageRspOuterClass {
         @Override // emu.grasscutter.net.proto.SetPlayerHeadImageRspOuterClass.SetPlayerHeadImageRspOrBuilder
         public ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
             return getProfilePicture();
-        }
-
-        @Override // emu.grasscutter.net.proto.SetPlayerHeadImageRspOuterClass.SetPlayerHeadImageRspOrBuilder
-        public int getAvatarId() {
-            return this.avatarId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.SetPlayerHeadImageRspOuterClass.SetPlayerHeadImageRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -190,13 +190,13 @@ public final class SetPlayerHeadImageRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.avatarId_ != 0) {
-                output.writeUInt32(7, this.avatarId_);
-            }
-            if (this.profilePicture_ != null) {
-                output.writeMessage(14, getProfilePicture());
+                output.writeUInt32(2, this.avatarId_);
             }
             if (this.retcode_ != 0) {
-                output.writeInt32(15, this.retcode_);
+                output.writeInt32(5, this.retcode_);
+            }
+            if (this.profilePicture_ != null) {
+                output.writeMessage(9, getProfilePicture());
             }
             this.unknownFields.writeTo(output);
         }
@@ -209,13 +209,13 @@ public final class SetPlayerHeadImageRspOuterClass {
             }
             int size2 = 0;
             if (this.avatarId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.avatarId_);
-            }
-            if (this.profilePicture_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(14, getProfilePicture());
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.avatarId_);
             }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(15, this.retcode_);
+                size2 += CodedOutputStream.computeInt32Size(5, this.retcode_);
+            }
+            if (this.profilePicture_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(9, getProfilePicture());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -231,10 +231,10 @@ public final class SetPlayerHeadImageRspOuterClass {
                 return equals(obj);
             }
             SetPlayerHeadImageRsp other = (SetPlayerHeadImageRsp) obj;
-            if (hasProfilePicture() != other.hasProfilePicture()) {
-                return false;
+            if (getRetcode() == other.getRetcode() && getAvatarId() == other.getAvatarId() && hasProfilePicture() == other.hasProfilePicture()) {
+                return (!hasProfilePicture() || getProfilePicture().equals(other.getProfilePicture())) && this.unknownFields.equals(other.unknownFields);
             }
-            return (!hasProfilePicture() || getProfilePicture().equals(other.getProfilePicture())) && getAvatarId() == other.getAvatarId() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
+            return false;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -242,11 +242,11 @@ public final class SetPlayerHeadImageRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
+            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getRetcode())) + 2)) + getAvatarId();
             if (hasProfilePicture()) {
-                hash = (53 * ((37 * hash) + 14)) + getProfilePicture().hashCode();
+                hash = (53 * ((37 * hash) + 9)) + getProfilePicture().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 7)) + getAvatarId())) + 15)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -325,10 +325,10 @@ public final class SetPlayerHeadImageRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetPlayerHeadImageRspOuterClass$SetPlayerHeadImageRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SetPlayerHeadImageRspOrBuilder {
+            private int retcode_;
+            private int avatarId_;
             private ProfilePictureOuterClass.ProfilePicture profilePicture_;
             private SingleFieldBuilderV3<ProfilePictureOuterClass.ProfilePicture, ProfilePictureOuterClass.ProfilePicture.Builder, ProfilePictureOuterClass.ProfilePictureOrBuilder> profilePictureBuilder_;
-            private int avatarId_;
-            private int retcode_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return SetPlayerHeadImageRspOuterClass.internal_static_SetPlayerHeadImageRsp_descriptor;
@@ -356,14 +356,14 @@ public final class SetPlayerHeadImageRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.retcode_ = 0;
+                this.avatarId_ = 0;
                 if (this.profilePictureBuilder_ == null) {
                     this.profilePicture_ = null;
                 } else {
                     this.profilePicture_ = null;
                     this.profilePictureBuilder_ = null;
                 }
-                this.avatarId_ = 0;
-                this.retcode_ = 0;
                 return this;
             }
 
@@ -389,13 +389,13 @@ public final class SetPlayerHeadImageRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public SetPlayerHeadImageRsp buildPartial() {
                 SetPlayerHeadImageRsp result = new SetPlayerHeadImageRsp(this);
+                result.retcode_ = this.retcode_;
+                result.avatarId_ = this.avatarId_;
                 if (this.profilePictureBuilder_ == null) {
                     result.profilePicture_ = this.profilePicture_;
                 } else {
                     result.profilePicture_ = this.profilePictureBuilder_.build();
                 }
-                result.avatarId_ = this.avatarId_;
-                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -443,14 +443,14 @@ public final class SetPlayerHeadImageRspOuterClass {
                 if (other == SetPlayerHeadImageRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.hasProfilePicture()) {
-                    mergeProfilePicture(other.getProfilePicture());
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 if (other.getAvatarId() != 0) {
                     setAvatarId(other.getAvatarId());
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
+                if (other.hasProfilePicture()) {
+                    mergeProfilePicture(other.getProfilePicture());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -482,6 +482,40 @@ public final class SetPlayerHeadImageRspOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.SetPlayerHeadImageRspOuterClass.SetPlayerHeadImageRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SetPlayerHeadImageRspOuterClass.SetPlayerHeadImageRspOrBuilder
+            public int getAvatarId() {
+                return this.avatarId_;
+            }
+
+            public Builder setAvatarId(int value) {
+                this.avatarId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearAvatarId() {
+                this.avatarId_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.SetPlayerHeadImageRspOuterClass.SetPlayerHeadImageRspOrBuilder
@@ -563,40 +597,6 @@ public final class SetPlayerHeadImageRspOuterClass {
                     this.profilePicture_ = null;
                 }
                 return this.profilePictureBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.SetPlayerHeadImageRspOuterClass.SetPlayerHeadImageRspOrBuilder
-            public int getAvatarId() {
-                return this.avatarId_;
-            }
-
-            public Builder setAvatarId(int value) {
-                this.avatarId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearAvatarId() {
-                this.avatarId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.SetPlayerHeadImageRspOuterClass.SetPlayerHeadImageRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

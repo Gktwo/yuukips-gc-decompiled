@@ -8,7 +8,6 @@ import com.google.common.collect.ImmutableCollection;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import com.google.errorprone.annotations.concurrent.LazyInit;
 import com.google.j2objc.annotations.RetainedWith;
-import emu.grasscutter.net.proto.ActivityInfoOuterClass;
 import java.io.Serializable;
 import java.util.AbstractMap;
 import java.util.Arrays;
@@ -289,7 +288,7 @@ public abstract class ImmutableMap<K, V> implements Map<K, V>, Serializable {
         }
 
         Spliterator<Map.Entry<K, V>> entrySpliterator() {
-            return Spliterators.spliterator(entryIterator(), (long) size(), (int) ActivityInfoOuterClass.ActivityInfo.GACHA_INFO_FIELD_NUMBER);
+            return Spliterators.spliterator(entryIterator(), (long) size(), 1297);
         }
 
         /* access modifiers changed from: package-private */

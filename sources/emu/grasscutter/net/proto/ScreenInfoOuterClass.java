@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ScreenInfoOuterClass.class */
 public final class ScreenInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010ScreenInfo.proto\":\n\nScreenInfo\u0012\u000f\n\u0007live_id\u0018\u0001 \u0001(\r\u0012\u001b\n\u0013projector_entity_id\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010ScreenInfo.proto\"7\n\nScreenInfo\u0012\u000e\n\u0006liveId\u0018\u0001 \u0001(\r\u0012\u0019\n\u0011projectorEntityId\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ScreenInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ScreenInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ScreenInfo_descriptor, new String[]{"LiveId", "ProjectorEntityId"});
 
@@ -43,9 +43,9 @@ public final class ScreenInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ScreenInfoOuterClass$ScreenInfo.class */
     public static final class ScreenInfo extends GeneratedMessageV3 implements ScreenInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int LIVE_ID_FIELD_NUMBER = 1;
+        public static final int LIVEID_FIELD_NUMBER = 1;
         private int liveId_;
-        public static final int PROJECTOR_ENTITY_ID_FIELD_NUMBER = 2;
+        public static final int PROJECTORENTITYID_FIELD_NUMBER = 2;
         private int projectorEntityId_;
         private byte memoizedIsInitialized;
         private static final ScreenInfo DEFAULT_INSTANCE = new ScreenInfo();

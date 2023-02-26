@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestListUpdateNotifyOuterClass.class */
 public final class QuestListUpdateNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bQuestListUpdateNotify.proto\u001a\u000bQuest.proto\"3\n\u0015QuestListUpdateNotify\u0012\u001a\n\nquest_list\u0018\u0007 \u0003(\u000b2\u0006.QuestB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{QuestOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bQuestListUpdateNotify.proto\u001a\u000bQuest.proto\"2\n\u0015QuestListUpdateNotify\u0012\u0019\n\tquestList\u0018\r \u0003(\u000b2\u0006.QuestB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{QuestOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_QuestListUpdateNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_QuestListUpdateNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QuestListUpdateNotify_descriptor, new String[]{"QuestList"});
 
@@ -55,7 +55,7 @@ public final class QuestListUpdateNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestListUpdateNotifyOuterClass$QuestListUpdateNotify.class */
     public static final class QuestListUpdateNotify extends GeneratedMessageV3 implements QuestListUpdateNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int QUEST_LIST_FIELD_NUMBER = 7;
+        public static final int QUESTLIST_FIELD_NUMBER = 13;
         private List<QuestOuterClass.Quest> questList_;
         private byte memoizedIsInitialized;
         private static final QuestListUpdateNotify DEFAULT_INSTANCE = new QuestListUpdateNotify();
@@ -106,7 +106,7 @@ public final class QuestListUpdateNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 58:
+                                case 106:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.questList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -187,7 +187,7 @@ public final class QuestListUpdateNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.questList_.size(); i++) {
-                output.writeMessage(7, this.questList_.get(i));
+                output.writeMessage(13, this.questList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,7 +200,7 @@ public final class QuestListUpdateNotifyOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.questList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(7, this.questList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(13, this.questList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class QuestListUpdateNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getQuestListCount() > 0) {
-                hash = (53 * ((37 * hash) + 7)) + getQuestListList().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getQuestListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

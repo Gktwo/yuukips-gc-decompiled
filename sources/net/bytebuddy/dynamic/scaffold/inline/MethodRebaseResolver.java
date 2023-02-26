@@ -183,7 +183,7 @@ public interface MethodRebaseResolver {
 
                 @Override // net.bytebuddy.description.ModifierReviewable
                 public int getModifiers() {
-                    return 4096 | (this.methodDescription.isStatic() ? 8 : 0) | (this.methodDescription.isNative() ? PacketOpcodes.SceneCreateEntityRsp : 0) | ((!this.instrumentedType.isInterface() || this.methodDescription.isNative()) ? 2 : 1);
+                    return 4096 | (this.methodDescription.isStatic() ? 8 : 0) | (this.methodDescription.isNative() ? PacketOpcodes.HitClientTrivialNotify : 0) | ((!this.instrumentedType.isInterface() || this.methodDescription.isNative()) ? 2 : 1);
                 }
 
                 @Override // net.bytebuddy.description.NamedElement.WithRuntimeName
@@ -283,7 +283,7 @@ public interface MethodRebaseResolver {
 
                 @Override // net.bytebuddy.description.ModifierReviewable
                 public int getModifiers() {
-                    return PacketOpcodes.GetFriendShowNameCardInfoReq;
+                    return 4098;
                 }
 
                 @Override // net.bytebuddy.description.NamedElement.WithRuntimeName

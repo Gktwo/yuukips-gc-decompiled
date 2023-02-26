@@ -90,30 +90,30 @@ public abstract class AbstractLong2CharSortedMap extends AbstractLong2CharMap im
     public static class KeySetIterator implements LongBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Long2CharMap.Entry> f2227i;
+        protected final ObjectBidirectionalIterator<Long2CharMap.Entry> f2191i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Long2CharMap.Entry> i) {
-            this.f2227i = i;
+            this.f2191i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
         public long nextLong() {
-            return ((Long2CharMap.Entry) this.f2227i.next()).getLongKey();
+            return ((Long2CharMap.Entry) this.f2191i.next()).getLongKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongBidirectionalIterator
         public long previousLong() {
-            return this.f2227i.previous().getLongKey();
+            return this.f2191i.previous().getLongKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2227i.hasNext();
+            return this.f2191i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2227i.hasPrevious();
+            return this.f2191i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractLong2CharSortedMap extends AbstractLong2CharMap im
     public static class ValuesIterator implements CharIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Long2CharMap.Entry> f2228i;
+        protected final ObjectBidirectionalIterator<Long2CharMap.Entry> f2192i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Long2CharMap.Entry> i) {
-            this.f2228i = i;
+            this.f2192i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public char nextChar() {
-            return ((Long2CharMap.Entry) this.f2228i.next()).getCharValue();
+            return ((Long2CharMap.Entry) this.f2192i.next()).getCharValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2228i.hasNext();
+            return this.f2192i.hasNext();
         }
     }
 }

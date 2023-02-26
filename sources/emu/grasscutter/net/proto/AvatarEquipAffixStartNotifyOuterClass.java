@@ -22,19 +22,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarEquipAffixStartNotifyOuterClass.class */
 public final class AvatarEquipAffixStartNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!AvatarEquipAffixStartNotify.proto\u001a\u001aAvatarEquipAffixInfo.proto\"c\n\u001bAvatarEquipAffixStartNotify\u0012\u0013\n\u000bavatar_guid\u0018\u0001 \u0001(\u0004\u0012/\n\u0010equip_affix_info\u0018\t \u0001(\u000b2\u0015.AvatarEquipAffixInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarEquipAffixInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!AvatarEquipAffixStartNotify.proto\u001a\u001aAvatarEquipAffixInfo.proto\"`\n\u001bAvatarEquipAffixStartNotify\u0012-\n\u000eequipAffixInfo\u0018\u0005 \u0001(\u000b2\u0015.AvatarEquipAffixInfo\u0012\u0012\n\navatarGuid\u0018\u000f \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarEquipAffixInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AvatarEquipAffixStartNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarEquipAffixStartNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarEquipAffixStartNotify_descriptor, new String[]{"AvatarGuid", "EquipAffixInfo"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarEquipAffixStartNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarEquipAffixStartNotify_descriptor, new String[]{"EquipAffixInfo", "AvatarGuid"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarEquipAffixStartNotifyOuterClass$AvatarEquipAffixStartNotifyOrBuilder.class */
     public interface AvatarEquipAffixStartNotifyOrBuilder extends MessageOrBuilder {
-        long getAvatarGuid();
-
         boolean hasEquipAffixInfo();
 
         AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo getEquipAffixInfo();
 
         AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfoOrBuilder getEquipAffixInfoOrBuilder();
+
+        long getAvatarGuid();
     }
 
     private AvatarEquipAffixStartNotifyOuterClass() {
@@ -50,10 +50,10 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarEquipAffixStartNotifyOuterClass$AvatarEquipAffixStartNotify.class */
     public static final class AvatarEquipAffixStartNotify extends GeneratedMessageV3 implements AvatarEquipAffixStartNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 1;
-        private long avatarGuid_;
-        public static final int EQUIP_AFFIX_INFO_FIELD_NUMBER = 9;
+        public static final int EQUIPAFFIXINFO_FIELD_NUMBER = 5;
         private AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo equipAffixInfo_;
+        public static final int AVATARGUID_FIELD_NUMBER = 15;
+        private long avatarGuid_;
         private byte memoizedIsInitialized;
         private static final AvatarEquipAffixStartNotify DEFAULT_INSTANCE = new AvatarEquipAffixStartNotify();
         private static final Parser<AvatarEquipAffixStartNotify> PARSER = new AbstractParser<AvatarEquipAffixStartNotify>() { // from class: emu.grasscutter.net.proto.AvatarEquipAffixStartNotifyOuterClass.AvatarEquipAffixStartNotify.1
@@ -100,10 +100,7 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
-                                    this.avatarGuid_ = input.readUInt64();
-                                    break;
-                                case 74:
+                                case 42:
                                     AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo.Builder subBuilder = this.equipAffixInfo_ != null ? this.equipAffixInfo_.toBuilder() : null;
                                     this.equipAffixInfo_ = (AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo) input.readMessage(AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -113,6 +110,9 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
                                         this.equipAffixInfo_ = subBuilder.buildPartial();
                                         break;
                                     }
+                                case 120:
+                                    this.avatarGuid_ = input.readUInt64();
+                                    break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                         break;
@@ -144,11 +144,6 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AvatarEquipAffixStartNotifyOuterClass.AvatarEquipAffixStartNotifyOrBuilder
-        public long getAvatarGuid() {
-            return this.avatarGuid_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarEquipAffixStartNotifyOuterClass.AvatarEquipAffixStartNotifyOrBuilder
         public boolean hasEquipAffixInfo() {
             return this.equipAffixInfo_ != null;
         }
@@ -161,6 +156,11 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
         @Override // emu.grasscutter.net.proto.AvatarEquipAffixStartNotifyOuterClass.AvatarEquipAffixStartNotifyOrBuilder
         public AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfoOrBuilder getEquipAffixInfoOrBuilder() {
             return getEquipAffixInfo();
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarEquipAffixStartNotifyOuterClass.AvatarEquipAffixStartNotifyOrBuilder
+        public long getAvatarGuid() {
+            return this.avatarGuid_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -178,11 +178,11 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.avatarGuid_ != 0) {
-                output.writeUInt64(1, this.avatarGuid_);
-            }
             if (this.equipAffixInfo_ != null) {
-                output.writeMessage(9, getEquipAffixInfo());
+                output.writeMessage(5, getEquipAffixInfo());
+            }
+            if (this.avatarGuid_ != 0) {
+                output.writeUInt64(15, this.avatarGuid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -194,11 +194,11 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.avatarGuid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(1, this.avatarGuid_);
-            }
             if (this.equipAffixInfo_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(9, getEquipAffixInfo());
+                size2 = 0 + CodedOutputStream.computeMessageSize(5, getEquipAffixInfo());
+            }
+            if (this.avatarGuid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(15, this.avatarGuid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -214,10 +214,10 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
                 return equals(obj);
             }
             AvatarEquipAffixStartNotify other = (AvatarEquipAffixStartNotify) obj;
-            if (getAvatarGuid() == other.getAvatarGuid() && hasEquipAffixInfo() == other.hasEquipAffixInfo()) {
-                return (!hasEquipAffixInfo() || getEquipAffixInfo().equals(other.getEquipAffixInfo())) && this.unknownFields.equals(other.unknownFields);
+            if (hasEquipAffixInfo() != other.hasEquipAffixInfo()) {
+                return false;
             }
-            return false;
+            return (!hasEquipAffixInfo() || getEquipAffixInfo().equals(other.getEquipAffixInfo())) && getAvatarGuid() == other.getAvatarGuid() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -225,11 +225,11 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + Internal.hashLong(getAvatarGuid());
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasEquipAffixInfo()) {
-                hash = (53 * ((37 * hash) + 9)) + getEquipAffixInfo().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getEquipAffixInfo().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 15)) + Internal.hashLong(getAvatarGuid()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -308,9 +308,9 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarEquipAffixStartNotifyOuterClass$AvatarEquipAffixStartNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements AvatarEquipAffixStartNotifyOrBuilder {
-            private long avatarGuid_;
             private AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo equipAffixInfo_;
             private SingleFieldBuilderV3<AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo, AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo.Builder, AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfoOrBuilder> equipAffixInfoBuilder_;
+            private long avatarGuid_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return AvatarEquipAffixStartNotifyOuterClass.internal_static_AvatarEquipAffixStartNotify_descriptor;
@@ -338,13 +338,13 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.avatarGuid_ = 0;
                 if (this.equipAffixInfoBuilder_ == null) {
                     this.equipAffixInfo_ = null;
                 } else {
                     this.equipAffixInfo_ = null;
                     this.equipAffixInfoBuilder_ = null;
                 }
+                this.avatarGuid_ = 0;
                 return this;
             }
 
@@ -370,12 +370,12 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public AvatarEquipAffixStartNotify buildPartial() {
                 AvatarEquipAffixStartNotify result = new AvatarEquipAffixStartNotify(this);
-                result.avatarGuid_ = this.avatarGuid_;
                 if (this.equipAffixInfoBuilder_ == null) {
                     result.equipAffixInfo_ = this.equipAffixInfo_;
                 } else {
                     result.equipAffixInfo_ = this.equipAffixInfoBuilder_.build();
                 }
+                result.avatarGuid_ = this.avatarGuid_;
                 onBuilt();
                 return result;
             }
@@ -423,11 +423,11 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
                 if (other == AvatarEquipAffixStartNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getAvatarGuid() != 0) {
-                    setAvatarGuid(other.getAvatarGuid());
-                }
                 if (other.hasEquipAffixInfo()) {
                     mergeEquipAffixInfo(other.getEquipAffixInfo());
+                }
+                if (other.getAvatarGuid() != 0) {
+                    setAvatarGuid(other.getAvatarGuid());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -459,23 +459,6 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarEquipAffixStartNotifyOuterClass.AvatarEquipAffixStartNotifyOrBuilder
-            public long getAvatarGuid() {
-                return this.avatarGuid_;
-            }
-
-            public Builder setAvatarGuid(long value) {
-                this.avatarGuid_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearAvatarGuid() {
-                this.avatarGuid_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // emu.grasscutter.net.proto.AvatarEquipAffixStartNotifyOuterClass.AvatarEquipAffixStartNotifyOrBuilder
@@ -557,6 +540,23 @@ public final class AvatarEquipAffixStartNotifyOuterClass {
                     this.equipAffixInfo_ = null;
                 }
                 return this.equipAffixInfoBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarEquipAffixStartNotifyOuterClass.AvatarEquipAffixStartNotifyOrBuilder
+            public long getAvatarGuid() {
+                return this.avatarGuid_;
+            }
+
+            public Builder setAvatarGuid(long value) {
+                this.avatarGuid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearAvatarGuid() {
+                this.avatarGuid_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

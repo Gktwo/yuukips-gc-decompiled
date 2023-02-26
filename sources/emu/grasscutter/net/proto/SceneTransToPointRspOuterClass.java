@@ -19,17 +19,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneTransToPointRspOuterClass.class */
 public final class SceneTransToPointRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aSceneTransToPointRsp.proto\"K\n\u0014SceneTransToPointRsp\u0012\u000f\n\u0007retcode\u0018\b \u0001(\u0005\u0012\u0010\n\bpoint_id\u0018\u0004 \u0001(\r\u0012\u0010\n\bscene_id\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aSceneTransToPointRsp.proto\"I\n\u0014SceneTransToPointRsp\u0012\u000f\n\u0007sceneId\u0018\u0002 \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0004 \u0001(\u0005\u0012\u000f\n\u0007pointId\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SceneTransToPointRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SceneTransToPointRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneTransToPointRsp_descriptor, new String[]{"Retcode", "PointId", "SceneId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SceneTransToPointRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneTransToPointRsp_descriptor, new String[]{"SceneId", "Retcode", "PointId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneTransToPointRspOuterClass$SceneTransToPointRspOrBuilder.class */
     public interface SceneTransToPointRspOrBuilder extends MessageOrBuilder {
+        int getSceneId();
+
         int getRetcode();
 
         int getPointId();
-
-        int getSceneId();
     }
 
     private SceneTransToPointRspOuterClass() {
@@ -45,12 +45,12 @@ public final class SceneTransToPointRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneTransToPointRspOuterClass$SceneTransToPointRsp.class */
     public static final class SceneTransToPointRsp extends GeneratedMessageV3 implements SceneTransToPointRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 8;
-        private int retcode_;
-        public static final int POINT_ID_FIELD_NUMBER = 4;
-        private int pointId_;
-        public static final int SCENE_ID_FIELD_NUMBER = 10;
+        public static final int SCENEID_FIELD_NUMBER = 2;
         private int sceneId_;
+        public static final int RETCODE_FIELD_NUMBER = 4;
+        private int retcode_;
+        public static final int POINTID_FIELD_NUMBER = 12;
+        private int pointId_;
         private byte memoizedIsInitialized;
         private static final SceneTransToPointRsp DEFAULT_INSTANCE = new SceneTransToPointRsp();
         private static final Parser<SceneTransToPointRsp> PARSER = new AbstractParser<SceneTransToPointRsp>() { // from class: emu.grasscutter.net.proto.SceneTransToPointRspOuterClass.SceneTransToPointRsp.1
@@ -97,14 +97,14 @@ public final class SceneTransToPointRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 32:
-                                    this.pointId_ = input.readUInt32();
+                                case 16:
+                                    this.sceneId_ = input.readUInt32();
                                     break;
-                                case 64:
+                                case 32:
                                     this.retcode_ = input.readInt32();
                                     break;
-                                case 80:
-                                    this.sceneId_ = input.readUInt32();
+                                case 96:
+                                    this.pointId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -137,6 +137,11 @@ public final class SceneTransToPointRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SceneTransToPointRspOuterClass.SceneTransToPointRspOrBuilder
+        public int getSceneId() {
+            return this.sceneId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.SceneTransToPointRspOuterClass.SceneTransToPointRspOrBuilder
         public int getRetcode() {
             return this.retcode_;
         }
@@ -144,11 +149,6 @@ public final class SceneTransToPointRspOuterClass {
         @Override // emu.grasscutter.net.proto.SceneTransToPointRspOuterClass.SceneTransToPointRspOrBuilder
         public int getPointId() {
             return this.pointId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.SceneTransToPointRspOuterClass.SceneTransToPointRspOrBuilder
-        public int getSceneId() {
-            return this.sceneId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -166,14 +166,14 @@ public final class SceneTransToPointRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.pointId_ != 0) {
-                output.writeUInt32(4, this.pointId_);
+            if (this.sceneId_ != 0) {
+                output.writeUInt32(2, this.sceneId_);
             }
             if (this.retcode_ != 0) {
-                output.writeInt32(8, this.retcode_);
+                output.writeInt32(4, this.retcode_);
             }
-            if (this.sceneId_ != 0) {
-                output.writeUInt32(10, this.sceneId_);
+            if (this.pointId_ != 0) {
+                output.writeUInt32(12, this.pointId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -185,14 +185,14 @@ public final class SceneTransToPointRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.pointId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.pointId_);
+            if (this.sceneId_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.sceneId_);
             }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(8, this.retcode_);
+                size2 += CodedOutputStream.computeInt32Size(4, this.retcode_);
             }
-            if (this.sceneId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.sceneId_);
+            if (this.pointId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(12, this.pointId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -208,7 +208,7 @@ public final class SceneTransToPointRspOuterClass {
                 return equals(obj);
             }
             SceneTransToPointRsp other = (SceneTransToPointRsp) obj;
-            return getRetcode() == other.getRetcode() && getPointId() == other.getPointId() && getSceneId() == other.getSceneId() && this.unknownFields.equals(other.unknownFields);
+            return getSceneId() == other.getSceneId() && getRetcode() == other.getRetcode() && getPointId() == other.getPointId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -216,7 +216,7 @@ public final class SceneTransToPointRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getRetcode())) + 4)) + getPointId())) + 10)) + getSceneId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getSceneId())) + 4)) + getRetcode())) + 12)) + getPointId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -295,9 +295,9 @@ public final class SceneTransToPointRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneTransToPointRspOuterClass$SceneTransToPointRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SceneTransToPointRspOrBuilder {
+            private int sceneId_;
             private int retcode_;
             private int pointId_;
-            private int sceneId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return SceneTransToPointRspOuterClass.internal_static_SceneTransToPointRsp_descriptor;
@@ -325,9 +325,9 @@ public final class SceneTransToPointRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.sceneId_ = 0;
                 this.retcode_ = 0;
                 this.pointId_ = 0;
-                this.sceneId_ = 0;
                 return this;
             }
 
@@ -353,9 +353,9 @@ public final class SceneTransToPointRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public SceneTransToPointRsp buildPartial() {
                 SceneTransToPointRsp result = new SceneTransToPointRsp(this);
+                result.sceneId_ = this.sceneId_;
                 result.retcode_ = this.retcode_;
                 result.pointId_ = this.pointId_;
-                result.sceneId_ = this.sceneId_;
                 onBuilt();
                 return result;
             }
@@ -403,14 +403,14 @@ public final class SceneTransToPointRspOuterClass {
                 if (other == SceneTransToPointRsp.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getSceneId() != 0) {
+                    setSceneId(other.getSceneId());
+                }
                 if (other.getRetcode() != 0) {
                     setRetcode(other.getRetcode());
                 }
                 if (other.getPointId() != 0) {
                     setPointId(other.getPointId());
-                }
-                if (other.getSceneId() != 0) {
-                    setSceneId(other.getSceneId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -445,6 +445,23 @@ public final class SceneTransToPointRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.SceneTransToPointRspOuterClass.SceneTransToPointRspOrBuilder
+            public int getSceneId() {
+                return this.sceneId_;
+            }
+
+            public Builder setSceneId(int value) {
+                this.sceneId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearSceneId() {
+                this.sceneId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SceneTransToPointRspOuterClass.SceneTransToPointRspOrBuilder
             public int getRetcode() {
                 return this.retcode_;
             }
@@ -474,23 +491,6 @@ public final class SceneTransToPointRspOuterClass {
 
             public Builder clearPointId() {
                 this.pointId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.SceneTransToPointRspOuterClass.SceneTransToPointRspOrBuilder
-            public int getSceneId() {
-                return this.sceneId_;
-            }
-
-            public Builder setSceneId(int value) {
-                this.sceneId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearSceneId() {
-                this.sceneId_ = 0;
                 onChanged();
                 return this;
             }

@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriPoetryDataOuterClass.class */
 public final class IrodoriPoetryDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017IrodoriPoetryData.proto\u001a\u001cIrodoriPoetryThemeData.proto\"[\n\u0011IrodoriPoetryData\u00120\n\u000ftheme_data_list\u0018\u0002 \u0003(\u000b2\u0017.IrodoriPoetryThemeData\u0012\u0014\n\fcur_theme_id\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{IrodoriPoetryThemeDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017IrodoriPoetryData.proto\u001a\u001cIrodoriPoetryThemeData.proto\"W\n\u0011IrodoriPoetryData\u0012.\n\rthemeDataList\u0018\n \u0003(\u000b2\u0017.IrodoriPoetryThemeData\u0012\u0012\n\ncurThemeId\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{IrodoriPoetryThemeDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_IrodoriPoetryData_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_IrodoriPoetryData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_IrodoriPoetryData_descriptor, new String[]{"ThemeDataList", "CurThemeId"});
 
@@ -57,9 +57,9 @@ public final class IrodoriPoetryDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriPoetryDataOuterClass$IrodoriPoetryData.class */
     public static final class IrodoriPoetryData extends GeneratedMessageV3 implements IrodoriPoetryDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int THEME_DATA_LIST_FIELD_NUMBER = 2;
+        public static final int THEMEDATALIST_FIELD_NUMBER = 10;
         private List<IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData> themeDataList_;
-        public static final int CUR_THEME_ID_FIELD_NUMBER = 12;
+        public static final int CURTHEMEID_FIELD_NUMBER = 2;
         private int curThemeId_;
         private byte memoizedIsInitialized;
         private static final IrodoriPoetryData DEFAULT_INSTANCE = new IrodoriPoetryData();
@@ -110,15 +110,15 @@ public final class IrodoriPoetryDataOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 18:
+                                case 16:
+                                    this.curThemeId_ = input.readUInt32();
+                                    break;
+                                case 82:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.themeDataList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.themeDataList_.add((IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData) input.readMessage(IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData.parser(), extensionRegistry));
-                                    break;
-                                case 96:
-                                    this.curThemeId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -198,11 +198,11 @@ public final class IrodoriPoetryDataOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            for (int i = 0; i < this.themeDataList_.size(); i++) {
-                output.writeMessage(2, this.themeDataList_.get(i));
-            }
             if (this.curThemeId_ != 0) {
-                output.writeUInt32(12, this.curThemeId_);
+                output.writeUInt32(2, this.curThemeId_);
+            }
+            for (int i = 0; i < this.themeDataList_.size(); i++) {
+                output.writeMessage(10, this.themeDataList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -214,11 +214,11 @@ public final class IrodoriPoetryDataOuterClass {
                 return size;
             }
             int size2 = 0;
-            for (int i = 0; i < this.themeDataList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(2, this.themeDataList_.get(i));
-            }
             if (this.curThemeId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.curThemeId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.curThemeId_);
+            }
+            for (int i = 0; i < this.themeDataList_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(10, this.themeDataList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -244,9 +244,9 @@ public final class IrodoriPoetryDataOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getThemeDataListCount() > 0) {
-                hash = (53 * ((37 * hash) + 2)) + getThemeDataListList().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getThemeDataListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 12)) + getCurThemeId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 2)) + getCurThemeId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

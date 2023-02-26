@@ -28,20 +28,20 @@ public final class HttpAllowedMethodsOnRoutesUtil implements Plugin, PluginLifec
     public void init(@NotNull Javalin app) {
         Intrinsics.checkNotNullParameter(app, "app");
         app.events((v1) -> {
-            m5770init$lambda1(r1, v1);
+            m5767init$lambda1(r1, v1);
         });
     }
 
     /* renamed from: init$lambda-1  reason: not valid java name */
-    private static final void m5770init$lambda1(HttpAllowedMethodsOnRoutesUtil this$0, EventListener it) {
+    private static final void m5767init$lambda1(HttpAllowedMethodsOnRoutesUtil this$0, EventListener it) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         it.handlerAdded((v1) -> {
-            m5769init$lambda1$lambda0(r1, v1);
+            m5766init$lambda1$lambda0(r1, v1);
         });
     }
 
     /* renamed from: init$lambda-1$lambda-0  reason: not valid java name */
-    private static final void m5769init$lambda1$lambda0(HttpAllowedMethodsOnRoutesUtil this$0, HandlerMetaInfo handlerInfo) {
+    private static final void m5766init$lambda1$lambda0(HttpAllowedMethodsOnRoutesUtil this$0, HandlerMetaInfo handlerInfo) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullExpressionValue(handlerInfo, "handlerInfo");
         this$0.addOptionsToList(handlerInfo);
@@ -51,21 +51,21 @@ public final class HttpAllowedMethodsOnRoutesUtil implements Plugin, PluginLifec
     public void apply(@NotNull Javalin app) {
         Intrinsics.checkNotNullParameter(app, "app");
         app.events((v2) -> {
-            m5772apply$lambda3(r1, r2, v2);
+            m5769apply$lambda3(r1, r2, v2);
         });
     }
 
     /* renamed from: apply$lambda-3  reason: not valid java name */
-    private static final void m5772apply$lambda3(HttpAllowedMethodsOnRoutesUtil this$0, Javalin $app, EventListener it) {
+    private static final void m5769apply$lambda3(HttpAllowedMethodsOnRoutesUtil this$0, Javalin $app, EventListener it) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter($app, "$app");
         it.serverStarted(() -> {
-            m5771apply$lambda3$lambda2(r1, r2);
+            m5768apply$lambda3$lambda2(r1, r2);
         });
     }
 
     /* renamed from: apply$lambda-3$lambda-2  reason: not valid java name */
-    private static final void m5771apply$lambda3$lambda2(HttpAllowedMethodsOnRoutesUtil this$0, Javalin $app) {
+    private static final void m5768apply$lambda3$lambda2(HttpAllowedMethodsOnRoutesUtil this$0, Javalin $app) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter($app, "$app");
         this$0.createOptionsEndPoint($app);
@@ -89,13 +89,13 @@ public final class HttpAllowedMethodsOnRoutesUtil implements Plugin, PluginLifec
     private final void createOptionsEndPoint(Javalin app) {
         for (Map.Entry element$iv : this.endpoints.entrySet()) {
             app.options(element$iv.getKey(), (v1) -> {
-                m5773createOptionsEndPoint$lambda6$lambda5(r2, v1);
+                m5770createOptionsEndPoint$lambda6$lambda5(r2, v1);
             });
         }
     }
 
     /* renamed from: createOptionsEndPoint$lambda-6$lambda-5  reason: not valid java name */
-    private static final void m5773createOptionsEndPoint$lambda6$lambda5(Map.Entry $endpoint, Context context) {
+    private static final void m5770createOptionsEndPoint$lambda6$lambda5(Map.Entry $endpoint, Context context) {
         Intrinsics.checkNotNullParameter($endpoint, "$endpoint");
         Intrinsics.checkNotNullParameter(context, CoreConstants.CONTEXT_SCOPE_VALUE);
         context.header("Access-Control-Allow-Methods", CollectionsKt.joinToString$default((Iterable) $endpoint.getValue(), ",", null, null, 0, null, HttpAllowedMethodsOnRoutesUtil$createOptionsEndPoint$1$1$1.INSTANCE, 30, null));

@@ -30,7 +30,7 @@ public final class FingerprintTrustManagerFactory extends SimpleTrustManagerFact
     private final FastThreadLocal<MessageDigest> tlmd;
 
     /* renamed from: tm */
-    private final TrustManager f1027tm;
+    private final TrustManager f991tm;
     private final byte[][] fingerprints;
 
     public static FingerprintTrustManagerFactoryBuilder builder(String algorithm) {
@@ -55,7 +55,7 @@ public final class FingerprintTrustManagerFactory extends SimpleTrustManagerFact
     /* access modifiers changed from: package-private */
     public FingerprintTrustManagerFactory(final String algorithm, byte[][] fingerprints) {
         byte[] f;
-        this.f1027tm = new X509TrustManager() { // from class: io.netty.handler.ssl.util.FingerprintTrustManagerFactory.1
+        this.f991tm = new X509TrustManager() { // from class: io.netty.handler.ssl.util.FingerprintTrustManagerFactory.1
             @Override // javax.net.ssl.X509TrustManager
             public void checkClientTrusted(X509Certificate[] chain, String s) throws CertificateException {
                 checkTrusted("client", chain);
@@ -158,6 +158,6 @@ public final class FingerprintTrustManagerFactory extends SimpleTrustManagerFact
 
     @Override // p013io.netty.handler.ssl.util.SimpleTrustManagerFactory
     protected TrustManager[] engineGetTrustManagers() {
-        return new TrustManager[]{this.f1027tm};
+        return new TrustManager[]{this.f991tm};
     }
 }

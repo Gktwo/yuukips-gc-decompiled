@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ReadMailNotifyOuterClass.class */
 public final class ReadMailNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014ReadMailNotify.proto\"&\n\u000eReadMailNotify\u0012\u0014\n\fmail_id_list\u0018\u0007 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014ReadMailNotify.proto\"$\n\u000eReadMailNotify\u0012\u0012\n\nmailIdList\u0018\u000f \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ReadMailNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ReadMailNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ReadMailNotify_descriptor, new String[]{"MailIdList"});
 
@@ -49,7 +49,7 @@ public final class ReadMailNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ReadMailNotifyOuterClass$ReadMailNotify.class */
     public static final class ReadMailNotify extends GeneratedMessageV3 implements ReadMailNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MAIL_ID_LIST_FIELD_NUMBER = 7;
+        public static final int MAILIDLIST_FIELD_NUMBER = 15;
         private Internal.IntList mailIdList_;
         private int mailIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -103,14 +103,14 @@ public final class ReadMailNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 56:
+                                case 120:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.mailIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.mailIdList_.addInt(input.readUInt32());
                                     break;
-                                case 58:
+                                case 122:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.mailIdList_ = newIntList();
@@ -186,7 +186,7 @@ public final class ReadMailNotifyOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getMailIdListList().size() > 0) {
-                output.writeUInt32NoTag(58);
+                output.writeUInt32NoTag(122);
                 output.writeUInt32NoTag(this.mailIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.mailIdList_.size(); i++) {
@@ -234,7 +234,7 @@ public final class ReadMailNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getMailIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 7)) + getMailIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 15)) + getMailIdListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

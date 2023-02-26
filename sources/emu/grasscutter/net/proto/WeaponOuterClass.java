@@ -23,7 +23,7 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WeaponOuterClass.class */
 public final class WeaponOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\fWeapon.proto\"\u0001\n\u0006Weapon\u0012\r\n\u0005level\u0018\u0001 \u0001(\r\u0012\u000b\n\u0003exp\u0018\u0002 \u0001(\r\u0012\u0015\n\rpromote_level\u0018\u0003 \u0001(\r\u0012(\n\taffix_map\u0018\u0004 \u0003(\u000b2\u0015.Weapon.AffixMapEntry\u001a/\n\rAffixMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\fWeapon.proto\"\u0001\n\u0006Weapon\u0012\r\n\u0005level\u0018\u0001 \u0001(\r\u0012\u000b\n\u0003exp\u0018\u0002 \u0001(\r\u0012\u0014\n\fpromoteLevel\u0018\u0003 \u0001(\r\u0012'\n\baffixMap\u0018\u0004 \u0003(\u000b2\u0015.Weapon.AffixMapEntry\u001a/\n\rAffixMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_Weapon_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_Weapon_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_Weapon_descriptor, new String[]{"Level", "Exp", "PromoteLevel", "AffixMap"});
     private static final Descriptors.Descriptor internal_static_Weapon_AffixMapEntry_descriptor = internal_static_Weapon_descriptor.getNestedTypes().get(0);
@@ -68,9 +68,9 @@ public final class WeaponOuterClass {
         private int level_;
         public static final int EXP_FIELD_NUMBER = 2;
         private int exp_;
-        public static final int PROMOTE_LEVEL_FIELD_NUMBER = 3;
+        public static final int PROMOTELEVEL_FIELD_NUMBER = 3;
         private int promoteLevel_;
-        public static final int AFFIX_MAP_FIELD_NUMBER = 4;
+        public static final int AFFIXMAP_FIELD_NUMBER = 4;
         private MapField<Integer, Integer> affixMap_;
         private byte memoizedIsInitialized;
         private static final Weapon DEFAULT_INSTANCE = new Weapon();

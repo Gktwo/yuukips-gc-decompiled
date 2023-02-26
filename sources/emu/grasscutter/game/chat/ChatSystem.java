@@ -218,7 +218,7 @@ public class ChatSystem implements ChatSystemHandler {
         throw new UnsupportedOperationException("Method not decompiled: emu.grasscutter.game.chat.ChatSystem.handleServerChat(emu.grasscutter.game.player.Player, java.lang.String):void");
     }
 
-    /*  JADX ERROR: Dependency scan failed at insn: 0x004B: INVOKE_CUSTOM r-4, r-3
+    /*  JADX ERROR: Dependency scan failed at insn: 0x0051: INVOKE_CUSTOM r-4, r-3
         java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
         	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
         	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
@@ -234,7 +234,7 @@ public class ChatSystem implements ChatSystemHandler {
         	at jadx.core.dex.visitors.usage.UsageInfoVisitor.init(UsageInfoVisitor.java:36)
         	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:267)
         */
-    /*  JADX ERROR: Failed to decode insn: 0x004B: INVOKE_CUSTOM r2, r3, method: emu.grasscutter.game.chat.ChatSystem.sendServerWelcomeMessages(emu.grasscutter.game.player.Player):void
+    /*  JADX ERROR: Failed to decode insn: 0x0051: INVOKE_CUSTOM r2, r3, method: emu.grasscutter.game.chat.ChatSystem.sendServerWelcomeMessages(emu.grasscutter.game.player.Player):void
         jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (Ljava/lang/String;, Ljava/lang/String;)Ljava/lang/String;}, 
         
         Server Info:
@@ -287,18 +287,22 @@ public class ChatSystem implements ChatSystemHandler {
             int r3 = emu.grasscutter.utils.Utils.randomRange(r3, r4)
             r2 = r2[r3]
             r0.sendPrivateMessageFromServer(r1, r2)
+            java.lang.String r0 = ""
+            r10 = r0
             r0 = r9
             java.lang.String r0 = r0.welcomeMessage
-            if (r0 == 0) goto L_0x0053
+            if (r0 == 0) goto L_0x0048
             r0 = r9
             java.lang.String r0 = r0.welcomeMessage
             int r0 = r0.length()
-            if (r0 <= 0) goto L_0x0053
+            if (r0 <= 0) goto L_0x0048
+            r0 = r9
+            java.lang.String r0 = r0.welcomeMessage
+            r10 = r0
             r0 = r7
             r1 = r8
             int r1 = r1.getUid()
-            r2 = r9
-            java.lang.String r2 = r2.welcomeMessage
+            r2 = r10
             java.lang.String r3 = emu.grasscutter.config.ConfigContainer.dockergs_v
             // decode failed: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (Ljava/lang/String;, Ljava/lang/String;)Ljava/lang/String;}, 
 

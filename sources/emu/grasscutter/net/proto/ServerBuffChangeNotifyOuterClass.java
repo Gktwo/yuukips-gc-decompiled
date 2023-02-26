@@ -27,9 +27,9 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ServerBuffChangeNotifyOuterClass.class */
 public final class ServerBuffChangeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cServerBuffChangeNotify.proto\u001a\u0010ServerBuff.proto\"Ì\u0002\n\u0016ServerBuffChangeNotify\u0012%\n\u0010server_buff_list\u0018\u0004 \u0003(\u000b2\u000b.ServerBuff\u0012\u0018\n\u0010is_creature_buff\u0018\b \u0001(\b\u0012\u0016\n\u000eentity_id_list\u0018\u0006 \u0003(\r\u0012M\n\u0017server_buff_change_type\u0018\t \u0001(\u000e2,.ServerBuffChangeNotify.ServerBuffChangeType\u0012\u0018\n\u0010avatar_guid_list\u0018\u0005 \u0003(\u0004\"p\n\u0014ServerBuffChangeType\u0012+\n'SERVER_BUFF_CHANGE_TYPE_ADD_SERVER_BUFF\u0010��\u0012+\n'SERVER_BUFF_CHANGE_TYPE_DEL_SERVER_BUFF\u0010\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ServerBuffOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cServerBuffChangeNotify.proto\u001a\u0010ServerBuff.proto\"Á\u0002\n\u0016ServerBuffChangeNotify\u0012#\n\u000eserverBuffList\u0018\f \u0003(\u000b2\u000b.ServerBuff\u0012\u0016\n\u000eavatarGuidList\u0018\n \u0003(\u0004\u0012J\n\u0014serverBuffChangeType\u0018\u0004 \u0001(\u000e2,.ServerBuffChangeNotify.ServerBuffChangeType\u0012\u0014\n\fentityIdList\u0018\u0001 \u0003(\r\u0012\u0016\n\u000eisCreatureBuff\u0018\u0005 \u0001(\b\"p\n\u0014ServerBuffChangeType\u0012+\n'SERVER_BUFF_CHANGE_TYPE_ADD_SERVER_BUFF\u0010��\u0012+\n'SERVER_BUFF_CHANGE_TYPE_DEL_SERVER_BUFF\u0010\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ServerBuffOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ServerBuffChangeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ServerBuffChangeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ServerBuffChangeNotify_descriptor, new String[]{"ServerBuffList", "IsCreatureBuff", "EntityIdList", "ServerBuffChangeType", "AvatarGuidList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ServerBuffChangeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ServerBuffChangeNotify_descriptor, new String[]{"ServerBuffList", "AvatarGuidList", "ServerBuffChangeType", "EntityIdList", "IsCreatureBuff"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ServerBuffChangeNotifyOuterClass$ServerBuffChangeNotifyOrBuilder.class */
     public interface ServerBuffChangeNotifyOrBuilder extends MessageOrBuilder {
@@ -43,7 +43,15 @@ public final class ServerBuffChangeNotifyOuterClass {
 
         ServerBuffOuterClass.ServerBuffOrBuilder getServerBuffListOrBuilder(int i);
 
-        boolean getIsCreatureBuff();
+        List<Long> getAvatarGuidListList();
+
+        int getAvatarGuidListCount();
+
+        long getAvatarGuidList(int i);
+
+        int getServerBuffChangeTypeValue();
+
+        ServerBuffChangeNotify.ServerBuffChangeType getServerBuffChangeType();
 
         List<Integer> getEntityIdListList();
 
@@ -51,15 +59,7 @@ public final class ServerBuffChangeNotifyOuterClass {
 
         int getEntityIdList(int i);
 
-        int getServerBuffChangeTypeValue();
-
-        ServerBuffChangeNotify.ServerBuffChangeType getServerBuffChangeType();
-
-        List<Long> getAvatarGuidListList();
-
-        int getAvatarGuidListCount();
-
-        long getAvatarGuidList(int i);
+        boolean getIsCreatureBuff();
     }
 
     private ServerBuffChangeNotifyOuterClass() {
@@ -75,18 +75,18 @@ public final class ServerBuffChangeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ServerBuffChangeNotifyOuterClass$ServerBuffChangeNotify.class */
     public static final class ServerBuffChangeNotify extends GeneratedMessageV3 implements ServerBuffChangeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SERVER_BUFF_LIST_FIELD_NUMBER = 4;
+        public static final int SERVERBUFFLIST_FIELD_NUMBER = 12;
         private List<ServerBuffOuterClass.ServerBuff> serverBuffList_;
-        public static final int IS_CREATURE_BUFF_FIELD_NUMBER = 8;
-        private boolean isCreatureBuff_;
-        public static final int ENTITY_ID_LIST_FIELD_NUMBER = 6;
-        private Internal.IntList entityIdList_;
-        private int entityIdListMemoizedSerializedSize;
-        public static final int SERVER_BUFF_CHANGE_TYPE_FIELD_NUMBER = 9;
-        private int serverBuffChangeType_;
-        public static final int AVATAR_GUID_LIST_FIELD_NUMBER = 5;
+        public static final int AVATARGUIDLIST_FIELD_NUMBER = 10;
         private Internal.LongList avatarGuidList_;
         private int avatarGuidListMemoizedSerializedSize;
+        public static final int SERVERBUFFCHANGETYPE_FIELD_NUMBER = 4;
+        private int serverBuffChangeType_;
+        public static final int ENTITYIDLIST_FIELD_NUMBER = 1;
+        private Internal.IntList entityIdList_;
+        private int entityIdListMemoizedSerializedSize;
+        public static final int ISCREATUREBUFF_FIELD_NUMBER = 5;
+        private boolean isCreatureBuff_;
         private byte memoizedIsInitialized;
         private static final ServerBuffChangeNotify DEFAULT_INSTANCE = new ServerBuffChangeNotify();
         private static final Parser<ServerBuffChangeNotify> PARSER = new AbstractParser<ServerBuffChangeNotify>() { // from class: emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotify.1
@@ -98,19 +98,19 @@ public final class ServerBuffChangeNotifyOuterClass {
 
         private ServerBuffChangeNotify(GeneratedMessageV3.Builder<?> builder) {
             super(builder);
-            this.entityIdListMemoizedSerializedSize = -1;
             this.avatarGuidListMemoizedSerializedSize = -1;
+            this.entityIdListMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
         }
 
         private ServerBuffChangeNotify() {
-            this.entityIdListMemoizedSerializedSize = -1;
             this.avatarGuidListMemoizedSerializedSize = -1;
+            this.entityIdListMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
             this.serverBuffList_ = Collections.emptyList();
-            this.entityIdList_ = emptyIntList();
-            this.serverBuffChangeType_ = 0;
             this.avatarGuidList_ = emptyLongList();
+            this.serverBuffChangeType_ = 0;
+            this.entityIdList_ = emptyIntList();
         }
 
         /* access modifiers changed from: protected */
@@ -143,54 +143,54 @@ public final class ServerBuffChangeNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 34:
+                            case 8:
+                                if ((mutable_bitField0_ & 4) == 0) {
+                                    this.entityIdList_ = newIntList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 4) == 1 ? 1 : 0;
+                                }
+                                this.entityIdList_.addInt(input.readUInt32());
+                                break;
+                            case 10:
+                                int limit = input.pushLimit(input.readRawVarint32());
+                                if ((mutable_bitField0_ & 4) == 0 && input.getBytesUntilLimit() > 0) {
+                                    this.entityIdList_ = newIntList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 4) == 1 ? 1 : 0;
+                                }
+                                while (input.getBytesUntilLimit() > 0) {
+                                    this.entityIdList_.addInt(input.readUInt32());
+                                }
+                                input.popLimit(limit);
+                                break;
+                            case 32:
+                                this.serverBuffChangeType_ = input.readEnum();
+                                break;
+                            case 40:
+                                this.isCreatureBuff_ = input.readBool();
+                                break;
+                            case 80:
+                                if ((mutable_bitField0_ & 2) == 0) {
+                                    this.avatarGuidList_ = newLongList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                }
+                                this.avatarGuidList_.addLong(input.readUInt64());
+                                break;
+                            case 82:
+                                int limit2 = input.pushLimit(input.readRawVarint32());
+                                if ((mutable_bitField0_ & 2) == 0 && input.getBytesUntilLimit() > 0) {
+                                    this.avatarGuidList_ = newLongList();
+                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
+                                }
+                                while (input.getBytesUntilLimit() > 0) {
+                                    this.avatarGuidList_.addLong(input.readUInt64());
+                                }
+                                input.popLimit(limit2);
+                                break;
+                            case 98:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.serverBuffList_ = new ArrayList();
                                     mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                 }
                                 this.serverBuffList_.add((ServerBuffOuterClass.ServerBuff) input.readMessage(ServerBuffOuterClass.ServerBuff.parser(), extensionRegistry));
-                                break;
-                            case 40:
-                                if ((mutable_bitField0_ & 4) == 0) {
-                                    this.avatarGuidList_ = newLongList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 4) == 1 ? 1 : 0;
-                                }
-                                this.avatarGuidList_.addLong(input.readUInt64());
-                                break;
-                            case 42:
-                                int limit = input.pushLimit(input.readRawVarint32());
-                                if ((mutable_bitField0_ & 4) == 0 && input.getBytesUntilLimit() > 0) {
-                                    this.avatarGuidList_ = newLongList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 4) == 1 ? 1 : 0;
-                                }
-                                while (input.getBytesUntilLimit() > 0) {
-                                    this.avatarGuidList_.addLong(input.readUInt64());
-                                }
-                                input.popLimit(limit);
-                                break;
-                            case 48:
-                                if ((mutable_bitField0_ & 2) == 0) {
-                                    this.entityIdList_ = newIntList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
-                                }
-                                this.entityIdList_.addInt(input.readUInt32());
-                                break;
-                            case 50:
-                                int limit2 = input.pushLimit(input.readRawVarint32());
-                                if ((mutable_bitField0_ & 2) == 0 && input.getBytesUntilLimit() > 0) {
-                                    this.entityIdList_ = newIntList();
-                                    mutable_bitField0_ = (mutable_bitField0_ | 2) == 1 ? 1 : 0;
-                                }
-                                while (input.getBytesUntilLimit() > 0) {
-                                    this.entityIdList_.addInt(input.readUInt32());
-                                }
-                                input.popLimit(limit2);
-                                break;
-                            case 64:
-                                this.isCreatureBuff_ = input.readBool();
-                                break;
-                            case 72:
-                                this.serverBuffChangeType_ = input.readEnum();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -208,14 +208,14 @@ public final class ServerBuffChangeNotifyOuterClass {
                     }
                 }
             } finally {
-                if ((mutable_bitField0_ & 1) != 0) {
-                    this.serverBuffList_ = Collections.unmodifiableList(this.serverBuffList_);
-                }
                 if ((mutable_bitField0_ & 4) != 0) {
-                    this.avatarGuidList_.makeImmutable();
+                    this.entityIdList_.makeImmutable();
                 }
                 if ((mutable_bitField0_ & 2) != 0) {
-                    this.entityIdList_.makeImmutable();
+                    this.avatarGuidList_.makeImmutable();
+                }
+                if ((mutable_bitField0_ & 1) != 0) {
+                    this.serverBuffList_ = Collections.unmodifiableList(this.serverBuffList_);
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -334,8 +334,29 @@ public final class ServerBuffChangeNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotifyOrBuilder
-        public boolean getIsCreatureBuff() {
-            return this.isCreatureBuff_;
+        public List<Long> getAvatarGuidListList() {
+            return this.avatarGuidList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotifyOrBuilder
+        public int getAvatarGuidListCount() {
+            return this.avatarGuidList_.size();
+        }
+
+        @Override // emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotifyOrBuilder
+        public long getAvatarGuidList(int index) {
+            return this.avatarGuidList_.getLong(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotifyOrBuilder
+        public int getServerBuffChangeTypeValue() {
+            return this.serverBuffChangeType_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotifyOrBuilder
+        public ServerBuffChangeType getServerBuffChangeType() {
+            ServerBuffChangeType result = ServerBuffChangeType.valueOf(this.serverBuffChangeType_);
+            return result == null ? ServerBuffChangeType.UNRECOGNIZED : result;
         }
 
         @Override // emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotifyOrBuilder
@@ -354,29 +375,8 @@ public final class ServerBuffChangeNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotifyOrBuilder
-        public int getServerBuffChangeTypeValue() {
-            return this.serverBuffChangeType_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotifyOrBuilder
-        public ServerBuffChangeType getServerBuffChangeType() {
-            ServerBuffChangeType result = ServerBuffChangeType.valueOf(this.serverBuffChangeType_);
-            return result == null ? ServerBuffChangeType.UNRECOGNIZED : result;
-        }
-
-        @Override // emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotifyOrBuilder
-        public List<Long> getAvatarGuidListList() {
-            return this.avatarGuidList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotifyOrBuilder
-        public int getAvatarGuidListCount() {
-            return this.avatarGuidList_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotifyOrBuilder
-        public long getAvatarGuidList(int index) {
-            return this.avatarGuidList_.getLong(index);
+        public boolean getIsCreatureBuff() {
+            return this.isCreatureBuff_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -395,28 +395,28 @@ public final class ServerBuffChangeNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            for (int i = 0; i < this.serverBuffList_.size(); i++) {
-                output.writeMessage(4, this.serverBuffList_.get(i));
+            if (getEntityIdListList().size() > 0) {
+                output.writeUInt32NoTag(10);
+                output.writeUInt32NoTag(this.entityIdListMemoizedSerializedSize);
+            }
+            for (int i = 0; i < this.entityIdList_.size(); i++) {
+                output.writeUInt32NoTag(this.entityIdList_.getInt(i));
+            }
+            if (this.serverBuffChangeType_ != ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_ADD_SERVER_BUFF.getNumber()) {
+                output.writeEnum(4, this.serverBuffChangeType_);
+            }
+            if (this.isCreatureBuff_) {
+                output.writeBool(5, this.isCreatureBuff_);
             }
             if (getAvatarGuidListList().size() > 0) {
-                output.writeUInt32NoTag(42);
+                output.writeUInt32NoTag(82);
                 output.writeUInt32NoTag(this.avatarGuidListMemoizedSerializedSize);
             }
             for (int i2 = 0; i2 < this.avatarGuidList_.size(); i2++) {
                 output.writeUInt64NoTag(this.avatarGuidList_.getLong(i2));
             }
-            if (getEntityIdListList().size() > 0) {
-                output.writeUInt32NoTag(50);
-                output.writeUInt32NoTag(this.entityIdListMemoizedSerializedSize);
-            }
-            for (int i3 = 0; i3 < this.entityIdList_.size(); i3++) {
-                output.writeUInt32NoTag(this.entityIdList_.getInt(i3));
-            }
-            if (this.isCreatureBuff_) {
-                output.writeBool(8, this.isCreatureBuff_);
-            }
-            if (this.serverBuffChangeType_ != ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_ADD_SERVER_BUFF.getNumber()) {
-                output.writeEnum(9, this.serverBuffChangeType_);
+            for (int i3 = 0; i3 < this.serverBuffList_.size(); i3++) {
+                output.writeMessage(12, this.serverBuffList_.get(i3));
             }
             this.unknownFields.writeTo(output);
         }
@@ -427,37 +427,36 @@ public final class ServerBuffChangeNotifyOuterClass {
             if (size != -1) {
                 return size;
             }
-            int size2 = 0;
-            for (int i = 0; i < this.serverBuffList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(4, this.serverBuffList_.get(i));
-            }
             int dataSize = 0;
-            for (int i2 = 0; i2 < this.avatarGuidList_.size(); i2++) {
-                dataSize += CodedOutputStream.computeUInt64SizeNoTag(this.avatarGuidList_.getLong(i2));
+            for (int i = 0; i < this.entityIdList_.size(); i++) {
+                dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.entityIdList_.getInt(i));
             }
-            int size3 = size2 + dataSize;
-            if (!getAvatarGuidListList().isEmpty()) {
-                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
-            }
-            this.avatarGuidListMemoizedSerializedSize = dataSize;
-            int dataSize2 = 0;
-            for (int i3 = 0; i3 < this.entityIdList_.size(); i3++) {
-                dataSize2 += CodedOutputStream.computeUInt32SizeNoTag(this.entityIdList_.getInt(i3));
-            }
-            int size4 = size3 + dataSize2;
+            int size2 = 0 + dataSize;
             if (!getEntityIdListList().isEmpty()) {
-                size4 = size4 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize2);
+                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
-            this.entityIdListMemoizedSerializedSize = dataSize2;
-            if (this.isCreatureBuff_) {
-                size4 += CodedOutputStream.computeBoolSize(8, this.isCreatureBuff_);
-            }
+            this.entityIdListMemoizedSerializedSize = dataSize;
             if (this.serverBuffChangeType_ != ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_ADD_SERVER_BUFF.getNumber()) {
-                size4 += CodedOutputStream.computeEnumSize(9, this.serverBuffChangeType_);
+                size2 += CodedOutputStream.computeEnumSize(4, this.serverBuffChangeType_);
             }
-            int size5 = size4 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size5;
-            return size5;
+            if (this.isCreatureBuff_) {
+                size2 += CodedOutputStream.computeBoolSize(5, this.isCreatureBuff_);
+            }
+            int dataSize2 = 0;
+            for (int i2 = 0; i2 < this.avatarGuidList_.size(); i2++) {
+                dataSize2 += CodedOutputStream.computeUInt64SizeNoTag(this.avatarGuidList_.getLong(i2));
+            }
+            int size3 = size2 + dataSize2;
+            if (!getAvatarGuidListList().isEmpty()) {
+                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize2);
+            }
+            this.avatarGuidListMemoizedSerializedSize = dataSize2;
+            for (int i3 = 0; i3 < this.serverBuffList_.size(); i3++) {
+                size3 += CodedOutputStream.computeMessageSize(12, this.serverBuffList_.get(i3));
+            }
+            int size4 = size3 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size4;
+            return size4;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -469,7 +468,7 @@ public final class ServerBuffChangeNotifyOuterClass {
                 return equals(obj);
             }
             ServerBuffChangeNotify other = (ServerBuffChangeNotify) obj;
-            return getServerBuffListList().equals(other.getServerBuffListList()) && getIsCreatureBuff() == other.getIsCreatureBuff() && getEntityIdListList().equals(other.getEntityIdListList()) && this.serverBuffChangeType_ == other.serverBuffChangeType_ && getAvatarGuidListList().equals(other.getAvatarGuidListList()) && this.unknownFields.equals(other.unknownFields);
+            return getServerBuffListList().equals(other.getServerBuffListList()) && getAvatarGuidListList().equals(other.getAvatarGuidListList()) && this.serverBuffChangeType_ == other.serverBuffChangeType_ && getEntityIdListList().equals(other.getEntityIdListList()) && getIsCreatureBuff() == other.getIsCreatureBuff() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -479,19 +478,18 @@ public final class ServerBuffChangeNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getServerBuffListCount() > 0) {
-                hash = (53 * ((37 * hash) + 4)) + getServerBuffListList().hashCode();
+                hash = (53 * ((37 * hash) + 12)) + getServerBuffListList().hashCode();
             }
-            int hash2 = (53 * ((37 * hash) + 8)) + Internal.hashBoolean(getIsCreatureBuff());
-            if (getEntityIdListCount() > 0) {
-                hash2 = (53 * ((37 * hash2) + 6)) + getEntityIdListList().hashCode();
-            }
-            int hash3 = (53 * ((37 * hash2) + 9)) + this.serverBuffChangeType_;
             if (getAvatarGuidListCount() > 0) {
-                hash3 = (53 * ((37 * hash3) + 5)) + getAvatarGuidListList().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getAvatarGuidListList().hashCode();
             }
-            int hash4 = (29 * hash3) + this.unknownFields.hashCode();
-            this.memoizedHashCode = hash4;
-            return hash4;
+            int hash2 = (53 * ((37 * hash) + 4)) + this.serverBuffChangeType_;
+            if (getEntityIdListCount() > 0) {
+                hash2 = (53 * ((37 * hash2) + 1)) + getEntityIdListList().hashCode();
+            }
+            int hash3 = (29 * ((53 * ((37 * hash2) + 5)) + Internal.hashBoolean(getIsCreatureBuff()))) + this.unknownFields.hashCode();
+            this.memoizedHashCode = hash3;
+            return hash3;
         }
 
         public static ServerBuffChangeNotify parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
@@ -572,9 +570,9 @@ public final class ServerBuffChangeNotifyOuterClass {
             private RepeatedFieldBuilderV3<ServerBuffOuterClass.ServerBuff, ServerBuffOuterClass.ServerBuff.Builder, ServerBuffOuterClass.ServerBuffOrBuilder> serverBuffListBuilder_;
             private boolean isCreatureBuff_;
             private List<ServerBuffOuterClass.ServerBuff> serverBuffList_ = Collections.emptyList();
-            private Internal.IntList entityIdList_ = ServerBuffChangeNotify.emptyIntList();
-            private int serverBuffChangeType_ = 0;
             private Internal.LongList avatarGuidList_ = ServerBuffChangeNotify.emptyLongList();
+            private int serverBuffChangeType_ = 0;
+            private Internal.IntList entityIdList_ = ServerBuffChangeNotify.emptyIntList();
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ServerBuffChangeNotifyOuterClass.internal_static_ServerBuffChangeNotify_descriptor;
@@ -609,12 +607,12 @@ public final class ServerBuffChangeNotifyOuterClass {
                 } else {
                     this.serverBuffListBuilder_.clear();
                 }
-                this.isCreatureBuff_ = false;
-                this.entityIdList_ = ServerBuffChangeNotify.emptyIntList();
+                this.avatarGuidList_ = ServerBuffChangeNotify.emptyLongList();
                 this.bitField0_ &= -3;
                 this.serverBuffChangeType_ = 0;
-                this.avatarGuidList_ = ServerBuffChangeNotify.emptyLongList();
+                this.entityIdList_ = ServerBuffChangeNotify.emptyIntList();
                 this.bitField0_ &= -5;
+                this.isCreatureBuff_ = false;
                 return this;
             }
 
@@ -650,18 +648,18 @@ public final class ServerBuffChangeNotifyOuterClass {
                 } else {
                     result.serverBuffList_ = this.serverBuffListBuilder_.build();
                 }
-                result.isCreatureBuff_ = this.isCreatureBuff_;
                 if ((this.bitField0_ & 2) != 0) {
-                    this.entityIdList_.makeImmutable();
+                    this.avatarGuidList_.makeImmutable();
                     this.bitField0_ &= -3;
                 }
-                result.entityIdList_ = this.entityIdList_;
+                result.avatarGuidList_ = this.avatarGuidList_;
                 result.serverBuffChangeType_ = this.serverBuffChangeType_;
                 if ((this.bitField0_ & 4) != 0) {
-                    this.avatarGuidList_.makeImmutable();
+                    this.entityIdList_.makeImmutable();
                     this.bitField0_ &= -5;
                 }
-                result.avatarGuidList_ = this.avatarGuidList_;
+                result.entityIdList_ = this.entityIdList_;
+                result.isCreatureBuff_ = this.isCreatureBuff_;
                 onBuilt();
                 return result;
             }
@@ -731,31 +729,31 @@ public final class ServerBuffChangeNotifyOuterClass {
                         this.serverBuffListBuilder_.addAllMessages(other.serverBuffList_);
                     }
                 }
-                if (other.getIsCreatureBuff()) {
-                    setIsCreatureBuff(other.getIsCreatureBuff());
-                }
-                if (!other.entityIdList_.isEmpty()) {
-                    if (this.entityIdList_.isEmpty()) {
-                        this.entityIdList_ = other.entityIdList_;
+                if (!other.avatarGuidList_.isEmpty()) {
+                    if (this.avatarGuidList_.isEmpty()) {
+                        this.avatarGuidList_ = other.avatarGuidList_;
                         this.bitField0_ &= -3;
                     } else {
-                        ensureEntityIdListIsMutable();
-                        this.entityIdList_.addAll(other.entityIdList_);
+                        ensureAvatarGuidListIsMutable();
+                        this.avatarGuidList_.addAll(other.avatarGuidList_);
                     }
                     onChanged();
                 }
                 if (other.serverBuffChangeType_ != 0) {
                     setServerBuffChangeTypeValue(other.getServerBuffChangeTypeValue());
                 }
-                if (!other.avatarGuidList_.isEmpty()) {
-                    if (this.avatarGuidList_.isEmpty()) {
-                        this.avatarGuidList_ = other.avatarGuidList_;
+                if (!other.entityIdList_.isEmpty()) {
+                    if (this.entityIdList_.isEmpty()) {
+                        this.entityIdList_ = other.entityIdList_;
                         this.bitField0_ &= -5;
                     } else {
-                        ensureAvatarGuidListIsMutable();
-                        this.avatarGuidList_.addAll(other.avatarGuidList_);
+                        ensureEntityIdListIsMutable();
+                        this.entityIdList_.addAll(other.entityIdList_);
                     }
                     onChanged();
+                }
+                if (other.getIsCreatureBuff()) {
+                    setIsCreatureBuff(other.getIsCreatureBuff());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -965,68 +963,51 @@ public final class ServerBuffChangeNotifyOuterClass {
                 return this.serverBuffListBuilder_;
             }
 
-            @Override // emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotifyOrBuilder
-            public boolean getIsCreatureBuff() {
-                return this.isCreatureBuff_;
-            }
-
-            public Builder setIsCreatureBuff(boolean value) {
-                this.isCreatureBuff_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsCreatureBuff() {
-                this.isCreatureBuff_ = false;
-                onChanged();
-                return this;
-            }
-
-            private void ensureEntityIdListIsMutable() {
+            private void ensureAvatarGuidListIsMutable() {
                 if ((this.bitField0_ & 2) == 0) {
-                    this.entityIdList_ = ServerBuffChangeNotify.mutableCopy(this.entityIdList_);
+                    this.avatarGuidList_ = ServerBuffChangeNotify.mutableCopy(this.avatarGuidList_);
                     this.bitField0_ |= 2;
                 }
             }
 
             @Override // emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotifyOrBuilder
-            public List<Integer> getEntityIdListList() {
-                return (this.bitField0_ & 2) != 0 ? Collections.unmodifiableList(this.entityIdList_) : this.entityIdList_;
+            public List<Long> getAvatarGuidListList() {
+                return (this.bitField0_ & 2) != 0 ? Collections.unmodifiableList(this.avatarGuidList_) : this.avatarGuidList_;
             }
 
             @Override // emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotifyOrBuilder
-            public int getEntityIdListCount() {
-                return this.entityIdList_.size();
+            public int getAvatarGuidListCount() {
+                return this.avatarGuidList_.size();
             }
 
             @Override // emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotifyOrBuilder
-            public int getEntityIdList(int index) {
-                return this.entityIdList_.getInt(index);
+            public long getAvatarGuidList(int index) {
+                return this.avatarGuidList_.getLong(index);
             }
 
-            public Builder setEntityIdList(int index, int value) {
-                ensureEntityIdListIsMutable();
-                this.entityIdList_.setInt(index, value);
+            public Builder setAvatarGuidList(int index, long value) {
+                ensureAvatarGuidListIsMutable();
+                this.avatarGuidList_.setLong(index, value);
                 onChanged();
                 return this;
             }
 
-            public Builder addEntityIdList(int value) {
-                ensureEntityIdListIsMutable();
-                this.entityIdList_.addInt(value);
+            public Builder addAvatarGuidList(long value) {
+                ensureAvatarGuidListIsMutable();
+                this.avatarGuidList_.addLong(value);
                 onChanged();
                 return this;
             }
 
-            public Builder addAllEntityIdList(Iterable<? extends Integer> values) {
-                ensureEntityIdListIsMutable();
-                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.entityIdList_);
+            public Builder addAllAvatarGuidList(Iterable<? extends Long> values) {
+                ensureAvatarGuidListIsMutable();
+                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.avatarGuidList_);
                 onChanged();
                 return this;
             }
 
-            public Builder clearEntityIdList() {
-                this.entityIdList_ = ServerBuffChangeNotify.emptyIntList();
+            public Builder clearAvatarGuidList() {
+                this.avatarGuidList_ = ServerBuffChangeNotify.emptyLongList();
                 this.bitField0_ &= -3;
                 onChanged();
                 return this;
@@ -1064,52 +1045,69 @@ public final class ServerBuffChangeNotifyOuterClass {
                 return this;
             }
 
-            private void ensureAvatarGuidListIsMutable() {
+            private void ensureEntityIdListIsMutable() {
                 if ((this.bitField0_ & 4) == 0) {
-                    this.avatarGuidList_ = ServerBuffChangeNotify.mutableCopy(this.avatarGuidList_);
+                    this.entityIdList_ = ServerBuffChangeNotify.mutableCopy(this.entityIdList_);
                     this.bitField0_ |= 4;
                 }
             }
 
             @Override // emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotifyOrBuilder
-            public List<Long> getAvatarGuidListList() {
-                return (this.bitField0_ & 4) != 0 ? Collections.unmodifiableList(this.avatarGuidList_) : this.avatarGuidList_;
+            public List<Integer> getEntityIdListList() {
+                return (this.bitField0_ & 4) != 0 ? Collections.unmodifiableList(this.entityIdList_) : this.entityIdList_;
             }
 
             @Override // emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotifyOrBuilder
-            public int getAvatarGuidListCount() {
-                return this.avatarGuidList_.size();
+            public int getEntityIdListCount() {
+                return this.entityIdList_.size();
             }
 
             @Override // emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotifyOrBuilder
-            public long getAvatarGuidList(int index) {
-                return this.avatarGuidList_.getLong(index);
+            public int getEntityIdList(int index) {
+                return this.entityIdList_.getInt(index);
             }
 
-            public Builder setAvatarGuidList(int index, long value) {
-                ensureAvatarGuidListIsMutable();
-                this.avatarGuidList_.setLong(index, value);
+            public Builder setEntityIdList(int index, int value) {
+                ensureEntityIdListIsMutable();
+                this.entityIdList_.setInt(index, value);
                 onChanged();
                 return this;
             }
 
-            public Builder addAvatarGuidList(long value) {
-                ensureAvatarGuidListIsMutable();
-                this.avatarGuidList_.addLong(value);
+            public Builder addEntityIdList(int value) {
+                ensureEntityIdListIsMutable();
+                this.entityIdList_.addInt(value);
                 onChanged();
                 return this;
             }
 
-            public Builder addAllAvatarGuidList(Iterable<? extends Long> values) {
-                ensureAvatarGuidListIsMutable();
-                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.avatarGuidList_);
+            public Builder addAllEntityIdList(Iterable<? extends Integer> values) {
+                ensureEntityIdListIsMutable();
+                AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.entityIdList_);
                 onChanged();
                 return this;
             }
 
-            public Builder clearAvatarGuidList() {
-                this.avatarGuidList_ = ServerBuffChangeNotify.emptyLongList();
+            public Builder clearEntityIdList() {
+                this.entityIdList_ = ServerBuffChangeNotify.emptyIntList();
                 this.bitField0_ &= -5;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ServerBuffChangeNotifyOuterClass.ServerBuffChangeNotifyOrBuilder
+            public boolean getIsCreatureBuff() {
+                return this.isCreatureBuff_;
+            }
+
+            public Builder setIsCreatureBuff(boolean value) {
+                this.isCreatureBuff_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsCreatureBuff() {
+                this.isCreatureBuff_ = false;
                 onChanged();
                 return this;
             }

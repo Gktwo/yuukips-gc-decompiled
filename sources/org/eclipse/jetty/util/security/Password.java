@@ -1,5 +1,6 @@
 package org.eclipse.jetty.util.security;
 
+import emu.grasscutter.net.packet.PacketOpcodes;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Locale;
@@ -87,7 +88,7 @@ public class Password extends Credential {
                 int i0 = ((Byte.MAX_VALUE + b1 + b2) * 256) + ((Byte.MAX_VALUE + b1) - b2);
                 String x2 = Integer.toString(i0, 36).toLowerCase(Locale.ENGLISH);
                 Integer.parseInt(x2, 36);
-                byte b3 = (byte) ((((i0 / 256) + (i0 % 256)) - 254) / 2);
+                byte b3 = (byte) ((((i0 / 256) + (i0 % 256)) - PacketOpcodes.ExecuteGroupTriggerRsp) / 2);
                 buf.append((CharSequence) "000", 0, 4 - x2.length());
                 buf.append(x2);
             }
@@ -110,7 +111,7 @@ public class Password extends Credential {
             } else {
                 int i0 = Integer.parseInt(s.substring(i, i + 4), 36);
                 l++;
-                b[l] = (byte) ((((i0 / 256) + (i0 % 256)) - 254) / 2);
+                b[l] = (byte) ((((i0 / 256) + (i0 % 256)) - PacketOpcodes.ExecuteGroupTriggerRsp) / 2);
             }
             i += 4;
         }

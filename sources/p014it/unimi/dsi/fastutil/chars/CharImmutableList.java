@@ -20,10 +20,10 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
     static final CharImmutableList EMPTY = new CharImmutableList(CharArrays.EMPTY_ARRAY);
 
     /* renamed from: a */
-    private final char[] f1503a;
+    private final char[] f1467a;
 
     public CharImmutableList(char[] a) {
-        this.f1503a = a;
+        this.f1467a = a;
     }
 
     public CharImmutableList(Collection<? extends Character> c) {
@@ -36,12 +36,12 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
 
     public CharImmutableList(CharList l) {
         this(l.isEmpty() ? CharArrays.EMPTY_ARRAY : new char[l.size()]);
-        l.getElements(0, this.f1503a, 0, l.size());
+        l.getElements(0, this.f1467a, 0, l.size());
     }
 
     public CharImmutableList(char[] a, int offset, int length) {
         this(length == 0 ? CharArrays.EMPTY_ARRAY : new char[length]);
-        System.arraycopy(a, offset, this.f1503a, 0, length);
+        System.arraycopy(a, offset, this.f1467a, 0, length);
     }
 
     public CharImmutableList(CharIterator i) {
@@ -60,17 +60,17 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
 
     @Override // p014it.unimi.dsi.fastutil.chars.CharList
     public char getChar(int index) {
-        if (index < this.f1503a.length) {
-            return this.f1503a[index];
+        if (index < this.f1467a.length) {
+            return this.f1467a[index];
         }
-        throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.f1503a.length + ")");
+        throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.f1467a.length + ")");
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.CharList
     public int indexOf(char k) {
-        int size = this.f1503a.length;
+        int size = this.f1467a.length;
         for (int i = 0; i < size; i++) {
-            if (k == this.f1503a[i]) {
+            if (k == this.f1467a[i]) {
                 return i;
             }
         }
@@ -79,50 +79,50 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.CharList
     public int lastIndexOf(char k) {
-        int i = this.f1503a.length;
+        int i = this.f1467a.length;
         do {
             i--;
             if (i == 0) {
                 return -1;
             }
-        } while (k != this.f1503a[i]);
+        } while (k != this.f1467a[i]);
         return i;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public int size() {
-        return this.f1503a.length;
+        return this.f1467a.length;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List, p014it.unimi.dsi.fastutil.Stack
     public boolean isEmpty() {
-        return this.f1503a.length == 0;
+        return this.f1467a.length == 0;
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.CharList
     public void getElements(int from, char[] a, int offset, int length) {
         CharArrays.ensureOffsetLength(a, offset, length);
-        System.arraycopy(this.f1503a, from, a, offset, length);
+        System.arraycopy(this.f1467a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.CharIterable
     public void forEach(CharConsumer action) {
-        for (int i = 0; i < this.f1503a.length; i++) {
-            action.accept(this.f1503a[i]);
+        for (int i = 0; i < this.f1467a.length; i++) {
+            action.accept(this.f1467a[i]);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.AbstractCharCollection, p014it.unimi.dsi.fastutil.chars.CharCollection
     public char[] toCharArray() {
-        return (char[]) this.f1503a.clone();
+        return (char[]) this.f1467a.clone();
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.AbstractCharCollection, p014it.unimi.dsi.fastutil.chars.CharCollection
     public char[] toArray(char[] a) {
         if (a == null || a.length < size()) {
-            a = new char[this.f1503a.length];
+            a = new char[this.f1467a.length];
         }
-        System.arraycopy(this.f1503a, 0, a, 0, a.length);
+        System.arraycopy(this.f1467a, 0, a, 0, a.length);
         return a;
     }
 
@@ -140,7 +140,7 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
 
             @Override // java.util.Iterator, java.util.ListIterator
             public boolean hasNext() {
-                return this.pos < CharImmutableList.this.f1503a.length;
+                return this.pos < CharImmutableList.this.f1467a.length;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -153,7 +153,7 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                char[] cArr = CharImmutableList.this.f1503a;
+                char[] cArr = CharImmutableList.this.f1467a;
                 int i = this.pos;
                 this.pos = i + 1;
                 return cArr[i];
@@ -164,7 +164,7 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                char[] cArr = CharImmutableList.this.f1503a;
+                char[] cArr = CharImmutableList.this.f1467a;
                 int i = this.pos - 1;
                 this.pos = i;
                 return cArr[i];
@@ -182,8 +182,8 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
 
             @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
             public void forEachRemaining(CharConsumer action) {
-                while (this.pos < CharImmutableList.this.f1503a.length) {
-                    char[] cArr = CharImmutableList.this.f1503a;
+                while (this.pos < CharImmutableList.this.f1467a.length) {
+                    char[] cArr = CharImmutableList.this.f1467a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(cArr[i]);
@@ -210,7 +210,7 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
                 if (n < 0) {
                     throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                 }
-                int remaining = CharImmutableList.this.f1503a.length - this.pos;
+                int remaining = CharImmutableList.this.f1467a.length - this.pos;
                 if (n < remaining) {
                     this.pos -= n;
                 } else {
@@ -225,12 +225,12 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
                 if (n < 0) {
                     throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                 }
-                int remaining = CharImmutableList.this.f1503a.length - this.pos;
+                int remaining = CharImmutableList.this.f1467a.length - this.pos;
                 if (n < remaining) {
                     this.pos += n;
                 } else {
                     n = remaining;
-                    this.pos = CharImmutableList.this.f1503a.length;
+                    this.pos = CharImmutableList.this.f1467a.length;
                 }
                 return n;
             }
@@ -250,7 +250,7 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
         }
 
         public Spliterator(CharImmutableList charImmutableList) {
-            this(0, charImmutableList.f1503a.length);
+            this(0, charImmutableList.f1467a.length);
         }
 
         private Spliterator(int pos, int max) {
@@ -276,7 +276,7 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
             if (this.pos >= this.max) {
                 return false;
             }
-            char[] cArr = CharImmutableList.this.f1503a;
+            char[] cArr = CharImmutableList.this.f1467a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(cArr[i]);
@@ -285,7 +285,7 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
 
         public void forEachRemaining(CharConsumer action) {
             while (this.pos < this.max) {
-                action.accept(CharImmutableList.this.f1503a[this.pos]);
+                action.accept(CharImmutableList.this.f1467a[this.pos]);
                 this.pos++;
             }
         }
@@ -335,28 +335,28 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
         final int from;
 
         /* renamed from: to */
-        final int f1504to;
+        final int f1468to;
 
         /* renamed from: a */
-        final transient char[] f1505a;
+        final transient char[] f1469a;
 
         ImmutableSubList(CharImmutableList innerList, int from, int to) {
             this.innerList = innerList;
             this.from = from;
-            this.f1504to = to;
-            this.f1505a = innerList.f1503a;
+            this.f1468to = to;
+            this.f1469a = innerList.f1467a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharList
         public char getChar(int index) {
             ensureRestrictedIndex(index);
-            return this.f1505a[index + this.from];
+            return this.f1469a[index + this.from];
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.CharList
         public int indexOf(char k) {
-            for (int i = this.from; i < this.f1504to; i++) {
-                if (k == this.f1505a[i]) {
+            for (int i = this.from; i < this.f1468to; i++) {
+                if (k == this.f1469a[i]) {
                     return i - this.from;
                 }
             }
@@ -365,46 +365,46 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
 
         @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.CharList
         public int lastIndexOf(char k) {
-            int i = this.f1504to;
+            int i = this.f1468to;
             do {
                 i--;
                 if (i == this.from) {
                     return -1;
                 }
-            } while (k != this.f1505a[i]);
+            } while (k != this.f1469a[i]);
             return i - this.from;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public int size() {
-            return this.f1504to - this.from;
+            return this.f1468to - this.from;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List, p014it.unimi.dsi.fastutil.Stack
         public boolean isEmpty() {
-            return this.f1504to <= this.from;
+            return this.f1468to <= this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.CharList
         public void getElements(int fromSublistIndex, char[] a, int offset, int length) {
             CharArrays.ensureOffsetLength(a, offset, length);
             ensureRestrictedIndex(fromSublistIndex);
-            if (this.from + length > this.f1504to) {
+            if (this.from + length > this.f1468to) {
                 throw new IndexOutOfBoundsException("Final index " + (this.from + length) + " (startingIndex: " + this.from + " + length: " + length + ") is greater then list length " + size());
             }
-            System.arraycopy(this.f1505a, fromSublistIndex + this.from, a, offset, length);
+            System.arraycopy(this.f1469a, fromSublistIndex + this.from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.CharIterable
         public void forEach(CharConsumer action) {
-            for (int i = this.from; i < this.f1504to; i++) {
-                action.accept(this.f1505a[i]);
+            for (int i = this.from; i < this.f1468to; i++) {
+                action.accept(this.f1469a[i]);
             }
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.AbstractCharCollection, p014it.unimi.dsi.fastutil.chars.CharCollection
         public char[] toCharArray() {
-            return Arrays.copyOfRange(this.f1505a, this.from, this.f1504to);
+            return Arrays.copyOfRange(this.f1469a, this.from, this.f1468to);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, p014it.unimi.dsi.fastutil.chars.AbstractCharCollection, p014it.unimi.dsi.fastutil.chars.CharCollection
@@ -412,7 +412,7 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
             if (a == null || a.length < size()) {
                 a = new char[size()];
             }
-            System.arraycopy(this.f1505a, this.from, a, 0, size());
+            System.arraycopy(this.f1469a, this.from, a, 0, size());
             return a;
         }
 
@@ -430,7 +430,7 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
 
                 @Override // java.util.Iterator, java.util.ListIterator
                 public boolean hasNext() {
-                    return this.pos < ImmutableSubList.this.f1504to;
+                    return this.pos < ImmutableSubList.this.f1468to;
                 }
 
                 @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -443,7 +443,7 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
                     if (!hasNext()) {
                         throw new NoSuchElementException();
                     }
-                    char[] cArr = ImmutableSubList.this.f1505a;
+                    char[] cArr = ImmutableSubList.this.f1469a;
                     int i = this.pos;
                     this.pos = i + 1;
                     return cArr[i + ImmutableSubList.this.from];
@@ -454,7 +454,7 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
                     if (!hasPrevious()) {
                         throw new NoSuchElementException();
                     }
-                    char[] cArr = ImmutableSubList.this.f1505a;
+                    char[] cArr = ImmutableSubList.this.f1469a;
                     int i = this.pos - 1;
                     this.pos = i;
                     return cArr[i + ImmutableSubList.this.from];
@@ -472,8 +472,8 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
 
                 @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
                 public void forEachRemaining(CharConsumer action) {
-                    while (this.pos < ImmutableSubList.this.f1504to) {
-                        char[] cArr = ImmutableSubList.this.f1505a;
+                    while (this.pos < ImmutableSubList.this.f1468to) {
+                        char[] cArr = ImmutableSubList.this.f1469a;
                         int i = this.pos;
                         this.pos = i + 1;
                         action.accept(cArr[i + ImmutableSubList.this.from]);
@@ -500,7 +500,7 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
                     if (n < 0) {
                         throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                     }
-                    int remaining = ImmutableSubList.this.f1504to - this.pos;
+                    int remaining = ImmutableSubList.this.f1468to - this.pos;
                     if (n < remaining) {
                         this.pos -= n;
                     } else {
@@ -515,12 +515,12 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
                     if (n < 0) {
                         throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                     }
-                    int remaining = ImmutableSubList.this.f1504to - this.pos;
+                    int remaining = ImmutableSubList.this.f1468to - this.pos;
                     if (n < remaining) {
                         this.pos += n;
                     } else {
                         n = remaining;
-                        this.pos = ImmutableSubList.this.f1504to;
+                        this.pos = ImmutableSubList.this.f1468to;
                     }
                     return n;
                 }
@@ -532,7 +532,7 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
         /* loaded from: grasscutter.jar:it/unimi/dsi/fastutil/chars/CharImmutableList$ImmutableSubList$SubListSpliterator.class */
         public final class SubListSpliterator extends CharSpliterators.EarlyBindingSizeIndexBasedSpliterator {
             SubListSpliterator() {
-                super(ImmutableSubList.this.from, ImmutableSubList.this.f1504to);
+                super(ImmutableSubList.this.from, ImmutableSubList.this.f1468to);
             }
 
             private SubListSpliterator(int pos, int maxPos) {
@@ -541,7 +541,7 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
 
             @Override // p014it.unimi.dsi.fastutil.chars.CharSpliterators.AbstractIndexBasedSpliterator
             protected final char get(int i) {
-                return ImmutableSubList.this.f1505a[i];
+                return ImmutableSubList.this.f1469a[i];
             }
 
             /* access modifiers changed from: protected */
@@ -555,7 +555,7 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
                 if (this.pos >= this.maxPos) {
                     return false;
                 }
-                char[] cArr = ImmutableSubList.this.f1505a;
+                char[] cArr = ImmutableSubList.this.f1469a;
                 int i = this.pos;
                 this.pos = i + 1;
                 action.accept(cArr[i]);
@@ -566,7 +566,7 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
             public void forEachRemaining(CharConsumer action) {
                 int max = this.maxPos;
                 while (this.pos < max) {
-                    char[] cArr = ImmutableSubList.this.f1505a;
+                    char[] cArr = ImmutableSubList.this.f1469a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(cArr[i]);
@@ -585,7 +585,7 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
         }
 
         boolean contentsEquals(char[] otherA, int otherAFrom, int otherATo) {
-            if (this.f1505a == otherA && this.from == otherAFrom && this.f1504to == otherATo) {
+            if (this.f1469a == otherA && this.from == otherAFrom && this.f1468to == otherATo) {
                 return true;
             }
             if (otherATo - otherAFrom != size()) {
@@ -593,10 +593,10 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
             }
             int pos = this.from;
             int otherPos = otherAFrom;
-            while (pos < this.f1504to) {
+            while (pos < this.f1468to) {
                 pos++;
                 otherPos++;
-                if (this.f1505a[pos] != otherA[otherPos]) {
+                if (this.f1469a[pos] != otherA[otherPos]) {
                     return false;
                 }
             }
@@ -613,23 +613,23 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
             }
             if (o instanceof CharImmutableList) {
                 CharImmutableList other = (CharImmutableList) o;
-                return contentsEquals(other.f1503a, 0, other.size());
+                return contentsEquals(other.f1467a, 0, other.size());
             } else if (!(o instanceof ImmutableSubList)) {
                 return equals(o);
             } else {
                 ImmutableSubList other2 = (ImmutableSubList) o;
-                return contentsEquals(other2.f1505a, other2.from, other2.f1504to);
+                return contentsEquals(other2.f1469a, other2.from, other2.f1468to);
             }
         }
 
         int contentsCompareTo(char[] otherA, int otherAFrom, int otherATo) {
-            if (this.f1505a == otherA && this.from == otherAFrom && this.f1504to == otherATo) {
+            if (this.f1469a == otherA && this.from == otherAFrom && this.f1468to == otherATo) {
                 return 0;
             }
             int i = this.from;
             int j = otherAFrom;
-            while (i < this.f1504to && i < otherATo) {
-                int r = Character.compare(this.f1505a[i], otherA[j]);
+            while (i < this.f1468to && i < otherATo) {
+                int r = Character.compare(this.f1469a[i], otherA[j]);
                 if (r != 0) {
                     return r;
                 }
@@ -639,25 +639,25 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
             if (i < otherATo) {
                 return -1;
             }
-            return i < this.f1504to ? 1 : 0;
+            return i < this.f1468to ? 1 : 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList
         public int compareTo(List<? extends Character> l) {
             if (l instanceof CharImmutableList) {
                 CharImmutableList other = (CharImmutableList) l;
-                return contentsCompareTo(other.f1503a, 0, other.size());
+                return contentsCompareTo(other.f1467a, 0, other.size());
             } else if (!(l instanceof ImmutableSubList)) {
                 return compareTo(l);
             } else {
                 ImmutableSubList other2 = (ImmutableSubList) l;
-                return contentsCompareTo(other2.f1505a, other2.from, other2.f1504to);
+                return contentsCompareTo(other2.f1469a, other2.from, other2.f1468to);
             }
         }
 
         private Object readResolve() throws ObjectStreamException {
             try {
-                return this.innerList.subList(this.from, this.f1504to);
+                return this.innerList.subList(this.from, this.f1468to);
             } catch (IllegalArgumentException | IndexOutOfBoundsException ex) {
                 throw ((InvalidObjectException) new InvalidObjectException(ex.getMessage()).initCause(ex));
             }
@@ -701,13 +701,13 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
     }
 
     public boolean equals(CharImmutableList l) {
-        if (l == this || this.f1503a == l.f1503a) {
+        if (l == this || this.f1467a == l.f1467a) {
             return true;
         }
         if (size() != l.size()) {
             return false;
         }
-        return Arrays.equals(this.f1503a, l.f1503a);
+        return Arrays.equals(this.f1467a, l.f1467a);
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharList, java.util.Collection, java.lang.Object, java.util.List
@@ -728,13 +728,13 @@ public class CharImmutableList extends CharLists.ImmutableListBase implements Ch
     }
 
     public int compareTo(CharImmutableList l) {
-        if (this.f1503a == l.f1503a) {
+        if (this.f1467a == l.f1467a) {
             return 0;
         }
         int s1 = size();
         int s2 = l.size();
-        char[] a1 = this.f1503a;
-        char[] a2 = l.f1503a;
+        char[] a1 = this.f1467a;
+        char[] a2 = l.f1467a;
         int i = 0;
         while (i < s1 && i < s2) {
             int r = Character.compare(a1[i], a2[i]);

@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneKickPlayerRspOuterClass.class */
 public final class SceneKickPlayerRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018SceneKickPlayerRsp.proto\"9\n\u0012SceneKickPlayerRsp\u0012\u000f\n\u0007retcode\u0018\b \u0001(\u0005\u0012\u0012\n\ntarget_uid\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018SceneKickPlayerRsp.proto\"8\n\u0012SceneKickPlayerRsp\u0012\u000f\n\u0007retcode\u0018\r \u0001(\u0005\u0012\u0011\n\ttargetUid\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SceneKickPlayerRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SceneKickPlayerRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneKickPlayerRsp_descriptor, new String[]{"Retcode", "TargetUid"});
 
@@ -43,9 +43,9 @@ public final class SceneKickPlayerRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneKickPlayerRspOuterClass$SceneKickPlayerRsp.class */
     public static final class SceneKickPlayerRsp extends GeneratedMessageV3 implements SceneKickPlayerRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 8;
+        public static final int RETCODE_FIELD_NUMBER = 13;
         private int retcode_;
-        public static final int TARGET_UID_FIELD_NUMBER = 11;
+        public static final int TARGETUID_FIELD_NUMBER = 3;
         private int targetUid_;
         private byte memoizedIsInitialized;
         private static final SceneKickPlayerRsp DEFAULT_INSTANCE = new SceneKickPlayerRsp();
@@ -92,11 +92,11 @@ public final class SceneKickPlayerRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 64:
-                                this.retcode_ = input.readInt32();
-                                break;
-                            case 88:
+                            case 24:
                                 this.targetUid_ = input.readUInt32();
+                                break;
+                            case 104:
+                                this.retcode_ = input.readInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -152,11 +152,11 @@ public final class SceneKickPlayerRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.retcode_ != 0) {
-                output.writeInt32(8, this.retcode_);
-            }
             if (this.targetUid_ != 0) {
-                output.writeUInt32(11, this.targetUid_);
+                output.writeUInt32(3, this.targetUid_);
+            }
+            if (this.retcode_ != 0) {
+                output.writeInt32(13, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class SceneKickPlayerRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(8, this.retcode_);
-            }
             if (this.targetUid_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.targetUid_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.targetUid_);
+            }
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(13, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class SceneKickPlayerRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getRetcode())) + 11)) + getTargetUid())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + getRetcode())) + 3)) + getTargetUid())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

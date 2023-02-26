@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeAchievementRewardReqOuterClass.class */
 public final class TakeAchievementRewardReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eTakeAchievementRewardReq.proto\"+\n\u0018TakeAchievementRewardReq\u0012\u000f\n\u0007id_list\u0018\t \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eTakeAchievementRewardReq.proto\"*\n\u0018TakeAchievementRewardReq\u0012\u000e\n\u0006idList\u0018\n \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_TakeAchievementRewardReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_TakeAchievementRewardReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TakeAchievementRewardReq_descriptor, new String[]{"IdList"});
 
@@ -49,7 +49,7 @@ public final class TakeAchievementRewardReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeAchievementRewardReqOuterClass$TakeAchievementRewardReq.class */
     public static final class TakeAchievementRewardReq extends GeneratedMessageV3 implements TakeAchievementRewardReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ID_LIST_FIELD_NUMBER = 9;
+        public static final int IDLIST_FIELD_NUMBER = 10;
         private Internal.IntList idList_;
         private int idListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -103,14 +103,14 @@ public final class TakeAchievementRewardReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 72:
+                                case 80:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.idList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.idList_.addInt(input.readUInt32());
                                     break;
-                                case 74:
+                                case 82:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.idList_ = newIntList();
@@ -186,7 +186,7 @@ public final class TakeAchievementRewardReqOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getIdListList().size() > 0) {
-                output.writeUInt32NoTag(74);
+                output.writeUInt32NoTag(82);
                 output.writeUInt32NoTag(this.idListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.idList_.size(); i++) {
@@ -234,7 +234,7 @@ public final class TakeAchievementRewardReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 9)) + getIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getIdListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

@@ -20,10 +20,10 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
     static final ByteImmutableList EMPTY = new ByteImmutableList(ByteArrays.EMPTY_ARRAY);
 
     /* renamed from: a */
-    private final byte[] f1276a;
+    private final byte[] f1240a;
 
     public ByteImmutableList(byte[] a) {
-        this.f1276a = a;
+        this.f1240a = a;
     }
 
     public ByteImmutableList(Collection<? extends Byte> c) {
@@ -36,12 +36,12 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
 
     public ByteImmutableList(ByteList l) {
         this(l.isEmpty() ? ByteArrays.EMPTY_ARRAY : new byte[l.size()]);
-        l.getElements(0, this.f1276a, 0, l.size());
+        l.getElements(0, this.f1240a, 0, l.size());
     }
 
     public ByteImmutableList(byte[] a, int offset, int length) {
         this(length == 0 ? ByteArrays.EMPTY_ARRAY : new byte[length]);
-        System.arraycopy(a, offset, this.f1276a, 0, length);
+        System.arraycopy(a, offset, this.f1240a, 0, length);
     }
 
     public ByteImmutableList(ByteIterator i) {
@@ -60,17 +60,17 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
 
     @Override // p014it.unimi.dsi.fastutil.bytes.ByteList
     public byte getByte(int index) {
-        if (index < this.f1276a.length) {
-            return this.f1276a[index];
+        if (index < this.f1240a.length) {
+            return this.f1240a[index];
         }
-        throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.f1276a.length + ")");
+        throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.f1240a.length + ")");
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList, p014it.unimi.dsi.fastutil.bytes.ByteList
     public int indexOf(byte k) {
-        int size = this.f1276a.length;
+        int size = this.f1240a.length;
         for (int i = 0; i < size; i++) {
-            if (k == this.f1276a[i]) {
+            if (k == this.f1240a[i]) {
                 return i;
             }
         }
@@ -79,50 +79,50 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList, p014it.unimi.dsi.fastutil.bytes.ByteList
     public int lastIndexOf(byte k) {
-        int i = this.f1276a.length;
+        int i = this.f1240a.length;
         do {
             i--;
             if (i == 0) {
                 return -1;
             }
-        } while (k != this.f1276a[i]);
+        } while (k != this.f1240a[i]);
         return i;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public int size() {
-        return this.f1276a.length;
+        return this.f1240a.length;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List, p014it.unimi.dsi.fastutil.Stack
     public boolean isEmpty() {
-        return this.f1276a.length == 0;
+        return this.f1240a.length == 0;
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList, p014it.unimi.dsi.fastutil.bytes.ByteList
     public void getElements(int from, byte[] a, int offset, int length) {
         ByteArrays.ensureOffsetLength(a, offset, length);
-        System.arraycopy(this.f1276a, from, a, offset, length);
+        System.arraycopy(this.f1240a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList, p014it.unimi.dsi.fastutil.bytes.ByteIterable
     public void forEach(ByteConsumer action) {
-        for (int i = 0; i < this.f1276a.length; i++) {
-            action.accept(this.f1276a[i]);
+        for (int i = 0; i < this.f1240a.length; i++) {
+            action.accept(this.f1240a[i]);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList, p014it.unimi.dsi.fastutil.bytes.AbstractByteCollection, p014it.unimi.dsi.fastutil.bytes.ByteCollection
     public byte[] toByteArray() {
-        return (byte[]) this.f1276a.clone();
+        return (byte[]) this.f1240a.clone();
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList, p014it.unimi.dsi.fastutil.bytes.AbstractByteCollection, p014it.unimi.dsi.fastutil.bytes.ByteCollection
     public byte[] toArray(byte[] a) {
         if (a == null || a.length < size()) {
-            a = new byte[this.f1276a.length];
+            a = new byte[this.f1240a.length];
         }
-        System.arraycopy(this.f1276a, 0, a, 0, a.length);
+        System.arraycopy(this.f1240a, 0, a, 0, a.length);
         return a;
     }
 
@@ -140,7 +140,7 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
 
             @Override // java.util.Iterator, java.util.ListIterator
             public boolean hasNext() {
-                return this.pos < ByteImmutableList.this.f1276a.length;
+                return this.pos < ByteImmutableList.this.f1240a.length;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -153,7 +153,7 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                byte[] bArr = ByteImmutableList.this.f1276a;
+                byte[] bArr = ByteImmutableList.this.f1240a;
                 int i = this.pos;
                 this.pos = i + 1;
                 return bArr[i];
@@ -164,7 +164,7 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                byte[] bArr = ByteImmutableList.this.f1276a;
+                byte[] bArr = ByteImmutableList.this.f1240a;
                 int i = this.pos - 1;
                 this.pos = i;
                 return bArr[i];
@@ -182,8 +182,8 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
 
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
             public void forEachRemaining(ByteConsumer action) {
-                while (this.pos < ByteImmutableList.this.f1276a.length) {
-                    byte[] bArr = ByteImmutableList.this.f1276a;
+                while (this.pos < ByteImmutableList.this.f1240a.length) {
+                    byte[] bArr = ByteImmutableList.this.f1240a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(bArr[i]);
@@ -210,7 +210,7 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
                 if (n < 0) {
                     throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                 }
-                int remaining = ByteImmutableList.this.f1276a.length - this.pos;
+                int remaining = ByteImmutableList.this.f1240a.length - this.pos;
                 if (n < remaining) {
                     this.pos -= n;
                 } else {
@@ -225,12 +225,12 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
                 if (n < 0) {
                     throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                 }
-                int remaining = ByteImmutableList.this.f1276a.length - this.pos;
+                int remaining = ByteImmutableList.this.f1240a.length - this.pos;
                 if (n < remaining) {
                     this.pos += n;
                 } else {
                     n = remaining;
-                    this.pos = ByteImmutableList.this.f1276a.length;
+                    this.pos = ByteImmutableList.this.f1240a.length;
                 }
                 return n;
             }
@@ -250,7 +250,7 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
         }
 
         public Spliterator(ByteImmutableList byteImmutableList) {
-            this(0, byteImmutableList.f1276a.length);
+            this(0, byteImmutableList.f1240a.length);
         }
 
         private Spliterator(int pos, int max) {
@@ -276,7 +276,7 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
             if (this.pos >= this.max) {
                 return false;
             }
-            byte[] bArr = ByteImmutableList.this.f1276a;
+            byte[] bArr = ByteImmutableList.this.f1240a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(bArr[i]);
@@ -285,7 +285,7 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
 
         public void forEachRemaining(ByteConsumer action) {
             while (this.pos < this.max) {
-                action.accept(ByteImmutableList.this.f1276a[this.pos]);
+                action.accept(ByteImmutableList.this.f1240a[this.pos]);
                 this.pos++;
             }
         }
@@ -335,28 +335,28 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
         final int from;
 
         /* renamed from: to */
-        final int f1277to;
+        final int f1241to;
 
         /* renamed from: a */
-        final transient byte[] f1278a;
+        final transient byte[] f1242a;
 
         ImmutableSubList(ByteImmutableList innerList, int from, int to) {
             this.innerList = innerList;
             this.from = from;
-            this.f1277to = to;
-            this.f1278a = innerList.f1276a;
+            this.f1241to = to;
+            this.f1242a = innerList.f1240a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteList
         public byte getByte(int index) {
             ensureRestrictedIndex(index);
-            return this.f1278a[index + this.from];
+            return this.f1242a[index + this.from];
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList, p014it.unimi.dsi.fastutil.bytes.ByteList
         public int indexOf(byte k) {
-            for (int i = this.from; i < this.f1277to; i++) {
-                if (k == this.f1278a[i]) {
+            for (int i = this.from; i < this.f1241to; i++) {
+                if (k == this.f1242a[i]) {
                     return i - this.from;
                 }
             }
@@ -365,46 +365,46 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
 
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList, p014it.unimi.dsi.fastutil.bytes.ByteList
         public int lastIndexOf(byte k) {
-            int i = this.f1277to;
+            int i = this.f1241to;
             do {
                 i--;
                 if (i == this.from) {
                     return -1;
                 }
-            } while (k != this.f1278a[i]);
+            } while (k != this.f1242a[i]);
             return i - this.from;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public int size() {
-            return this.f1277to - this.from;
+            return this.f1241to - this.from;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List, p014it.unimi.dsi.fastutil.Stack
         public boolean isEmpty() {
-            return this.f1277to <= this.from;
+            return this.f1241to <= this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList, p014it.unimi.dsi.fastutil.bytes.ByteList
         public void getElements(int fromSublistIndex, byte[] a, int offset, int length) {
             ByteArrays.ensureOffsetLength(a, offset, length);
             ensureRestrictedIndex(fromSublistIndex);
-            if (this.from + length > this.f1277to) {
+            if (this.from + length > this.f1241to) {
                 throw new IndexOutOfBoundsException("Final index " + (this.from + length) + " (startingIndex: " + this.from + " + length: " + length + ") is greater then list length " + size());
             }
-            System.arraycopy(this.f1278a, fromSublistIndex + this.from, a, offset, length);
+            System.arraycopy(this.f1242a, fromSublistIndex + this.from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList, p014it.unimi.dsi.fastutil.bytes.ByteIterable
         public void forEach(ByteConsumer action) {
-            for (int i = this.from; i < this.f1277to; i++) {
-                action.accept(this.f1278a[i]);
+            for (int i = this.from; i < this.f1241to; i++) {
+                action.accept(this.f1242a[i]);
             }
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList, p014it.unimi.dsi.fastutil.bytes.AbstractByteCollection, p014it.unimi.dsi.fastutil.bytes.ByteCollection
         public byte[] toByteArray() {
-            return Arrays.copyOfRange(this.f1278a, this.from, this.f1277to);
+            return Arrays.copyOfRange(this.f1242a, this.from, this.f1241to);
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList, p014it.unimi.dsi.fastutil.bytes.AbstractByteCollection, p014it.unimi.dsi.fastutil.bytes.ByteCollection
@@ -412,7 +412,7 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
             if (a == null || a.length < size()) {
                 a = new byte[size()];
             }
-            System.arraycopy(this.f1278a, this.from, a, 0, size());
+            System.arraycopy(this.f1242a, this.from, a, 0, size());
             return a;
         }
 
@@ -430,7 +430,7 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
 
                 @Override // java.util.Iterator, java.util.ListIterator
                 public boolean hasNext() {
-                    return this.pos < ImmutableSubList.this.f1277to;
+                    return this.pos < ImmutableSubList.this.f1241to;
                 }
 
                 @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -443,7 +443,7 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
                     if (!hasNext()) {
                         throw new NoSuchElementException();
                     }
-                    byte[] bArr = ImmutableSubList.this.f1278a;
+                    byte[] bArr = ImmutableSubList.this.f1242a;
                     int i = this.pos;
                     this.pos = i + 1;
                     return bArr[i + ImmutableSubList.this.from];
@@ -454,7 +454,7 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
                     if (!hasPrevious()) {
                         throw new NoSuchElementException();
                     }
-                    byte[] bArr = ImmutableSubList.this.f1278a;
+                    byte[] bArr = ImmutableSubList.this.f1242a;
                     int i = this.pos - 1;
                     this.pos = i;
                     return bArr[i + ImmutableSubList.this.from];
@@ -472,8 +472,8 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
 
                 @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
                 public void forEachRemaining(ByteConsumer action) {
-                    while (this.pos < ImmutableSubList.this.f1277to) {
-                        byte[] bArr = ImmutableSubList.this.f1278a;
+                    while (this.pos < ImmutableSubList.this.f1241to) {
+                        byte[] bArr = ImmutableSubList.this.f1242a;
                         int i = this.pos;
                         this.pos = i + 1;
                         action.accept(bArr[i + ImmutableSubList.this.from]);
@@ -500,7 +500,7 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
                     if (n < 0) {
                         throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                     }
-                    int remaining = ImmutableSubList.this.f1277to - this.pos;
+                    int remaining = ImmutableSubList.this.f1241to - this.pos;
                     if (n < remaining) {
                         this.pos -= n;
                     } else {
@@ -515,12 +515,12 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
                     if (n < 0) {
                         throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                     }
-                    int remaining = ImmutableSubList.this.f1277to - this.pos;
+                    int remaining = ImmutableSubList.this.f1241to - this.pos;
                     if (n < remaining) {
                         this.pos += n;
                     } else {
                         n = remaining;
-                        this.pos = ImmutableSubList.this.f1277to;
+                        this.pos = ImmutableSubList.this.f1241to;
                     }
                     return n;
                 }
@@ -532,7 +532,7 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
         /* loaded from: grasscutter.jar:it/unimi/dsi/fastutil/bytes/ByteImmutableList$ImmutableSubList$SubListSpliterator.class */
         public final class SubListSpliterator extends ByteSpliterators.EarlyBindingSizeIndexBasedSpliterator {
             SubListSpliterator() {
-                super(ImmutableSubList.this.from, ImmutableSubList.this.f1277to);
+                super(ImmutableSubList.this.from, ImmutableSubList.this.f1241to);
             }
 
             private SubListSpliterator(int pos, int maxPos) {
@@ -541,7 +541,7 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
 
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteSpliterators.AbstractIndexBasedSpliterator
             protected final byte get(int i) {
-                return ImmutableSubList.this.f1278a[i];
+                return ImmutableSubList.this.f1242a[i];
             }
 
             /* access modifiers changed from: protected */
@@ -555,7 +555,7 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
                 if (this.pos >= this.maxPos) {
                     return false;
                 }
-                byte[] bArr = ImmutableSubList.this.f1278a;
+                byte[] bArr = ImmutableSubList.this.f1242a;
                 int i = this.pos;
                 this.pos = i + 1;
                 action.accept(bArr[i]);
@@ -566,7 +566,7 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
             public void forEachRemaining(ByteConsumer action) {
                 int max = this.maxPos;
                 while (this.pos < max) {
-                    byte[] bArr = ImmutableSubList.this.f1278a;
+                    byte[] bArr = ImmutableSubList.this.f1242a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(bArr[i]);
@@ -585,7 +585,7 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
         }
 
         boolean contentsEquals(byte[] otherA, int otherAFrom, int otherATo) {
-            if (this.f1278a == otherA && this.from == otherAFrom && this.f1277to == otherATo) {
+            if (this.f1242a == otherA && this.from == otherAFrom && this.f1241to == otherATo) {
                 return true;
             }
             if (otherATo - otherAFrom != size()) {
@@ -593,10 +593,10 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
             }
             int pos = this.from;
             int otherPos = otherAFrom;
-            while (pos < this.f1277to) {
+            while (pos < this.f1241to) {
                 pos++;
                 otherPos++;
-                if (this.f1278a[pos] != otherA[otherPos]) {
+                if (this.f1242a[pos] != otherA[otherPos]) {
                     return false;
                 }
             }
@@ -613,23 +613,23 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
             }
             if (o instanceof ByteImmutableList) {
                 ByteImmutableList other = (ByteImmutableList) o;
-                return contentsEquals(other.f1276a, 0, other.size());
+                return contentsEquals(other.f1240a, 0, other.size());
             } else if (!(o instanceof ImmutableSubList)) {
                 return equals(o);
             } else {
                 ImmutableSubList other2 = (ImmutableSubList) o;
-                return contentsEquals(other2.f1278a, other2.from, other2.f1277to);
+                return contentsEquals(other2.f1242a, other2.from, other2.f1241to);
             }
         }
 
         int contentsCompareTo(byte[] otherA, int otherAFrom, int otherATo) {
-            if (this.f1278a == otherA && this.from == otherAFrom && this.f1277to == otherATo) {
+            if (this.f1242a == otherA && this.from == otherAFrom && this.f1241to == otherATo) {
                 return 0;
             }
             int i = this.from;
             int j = otherAFrom;
-            while (i < this.f1277to && i < otherATo) {
-                int r = Byte.compare(this.f1278a[i], otherA[j]);
+            while (i < this.f1241to && i < otherATo) {
+                int r = Byte.compare(this.f1242a[i], otherA[j]);
                 if (r != 0) {
                     return r;
                 }
@@ -639,25 +639,25 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
             if (i < otherATo) {
                 return -1;
             }
-            return i < this.f1277to ? 1 : 0;
+            return i < this.f1241to ? 1 : 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList
         public int compareTo(List<? extends Byte> l) {
             if (l instanceof ByteImmutableList) {
                 ByteImmutableList other = (ByteImmutableList) l;
-                return contentsCompareTo(other.f1276a, 0, other.size());
+                return contentsCompareTo(other.f1240a, 0, other.size());
             } else if (!(l instanceof ImmutableSubList)) {
                 return compareTo(l);
             } else {
                 ImmutableSubList other2 = (ImmutableSubList) l;
-                return contentsCompareTo(other2.f1278a, other2.from, other2.f1277to);
+                return contentsCompareTo(other2.f1242a, other2.from, other2.f1241to);
             }
         }
 
         private Object readResolve() throws ObjectStreamException {
             try {
-                return this.innerList.subList(this.from, this.f1277to);
+                return this.innerList.subList(this.from, this.f1241to);
             } catch (IllegalArgumentException | IndexOutOfBoundsException ex) {
                 throw ((InvalidObjectException) new InvalidObjectException(ex.getMessage()).initCause(ex));
             }
@@ -701,13 +701,13 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
     }
 
     public boolean equals(ByteImmutableList l) {
-        if (l == this || this.f1276a == l.f1276a) {
+        if (l == this || this.f1240a == l.f1240a) {
             return true;
         }
         if (size() != l.size()) {
             return false;
         }
-        return Arrays.equals(this.f1276a, l.f1276a);
+        return Arrays.equals(this.f1240a, l.f1240a);
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteList, java.util.Collection, java.lang.Object, java.util.List
@@ -728,13 +728,13 @@ public class ByteImmutableList extends ByteLists.ImmutableListBase implements By
     }
 
     public int compareTo(ByteImmutableList l) {
-        if (this.f1276a == l.f1276a) {
+        if (this.f1240a == l.f1240a) {
             return 0;
         }
         int s1 = size();
         int s2 = l.size();
-        byte[] a1 = this.f1276a;
-        byte[] a2 = l.f1276a;
+        byte[] a1 = this.f1240a;
+        byte[] a2 = l.f1240a;
         int i = 0;
         while (i < s1 && i < s2) {
             int r = Byte.compare(a1[i], a2[i]);

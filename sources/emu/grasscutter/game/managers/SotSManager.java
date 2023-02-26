@@ -1,9 +1,16 @@
 package emu.grasscutter.game.managers;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.BasePlayerManager;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.net.proto.ChangeHpReasonOuterClass;
+import emu.grasscutter.net.proto.PropChangeReasonOuterClass;
+import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
+import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 import p001ch.qos.logback.classic.Logger;
@@ -15,144 +22,6 @@ public class SotSManager extends BasePlayerManager {
     public static final int GlobalMaximumSpringVolume = PlayerProperty.PROP_MAX_SPRING_VOLUME.getMax();
     private final Logger logger = Grasscutter.getLogger();
     private final boolean enablePriorityHealing = false;
-
-    /*  JADX ERROR: Dependency scan failed at insn: 0x006C: INVOKE_CUSTOM r-6, r-5
-        java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
-        	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
-        	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
-        	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266)
-        	at java.base/java.util.Objects.checkIndex(Objects.java:359)
-        	at java.base/java.util.ArrayList.get(ArrayList.java:427)
-        	at jadx.core.dex.visitors.usage.UsageInfoVisitor.processInsn(UsageInfoVisitor.java:130)
-        	at jadx.core.dex.visitors.usage.UsageInfoVisitor.lambda$processInstructions$0(UsageInfoVisitor.java:79)
-        	at jadx.plugins.input.java.data.code.JavaCodeReader.visitInstructions(JavaCodeReader.java:82)
-        	at jadx.core.dex.visitors.usage.UsageInfoVisitor.processInstructions(UsageInfoVisitor.java:77)
-        	at jadx.core.dex.visitors.usage.UsageInfoVisitor.processMethod(UsageInfoVisitor.java:62)
-        	at jadx.core.dex.visitors.usage.UsageInfoVisitor.processClass(UsageInfoVisitor.java:51)
-        	at jadx.core.dex.visitors.usage.UsageInfoVisitor.init(UsageInfoVisitor.java:36)
-        	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:267)
-        */
-    /*  JADX ERROR: Failed to decode insn: 0x006C: INVOKE_CUSTOM r1, r2, method: emu.grasscutter.game.managers.SotSManager.checkAndHealAvatar(emu.grasscutter.game.entity.EntityAvatar):void
-        jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (Ljava/lang/String;, I)Ljava/lang/String;}, Healing avatar  +]}
-        	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:55)
-        	at jadx.core.dex.instructions.InsnDecoder.invoke(InsnDecoder.java:568)
-        	at jadx.core.dex.instructions.InsnDecoder.decode(InsnDecoder.java:438)
-        	at jadx.core.dex.instructions.InsnDecoder.lambda$process$0(InsnDecoder.java:48)
-        	at jadx.plugins.input.java.data.code.JavaCodeReader.visitInstructions(JavaCodeReader.java:82)
-        	at jadx.core.dex.instructions.InsnDecoder.process(InsnDecoder.java:43)
-        	at jadx.core.dex.nodes.MethodNode.load(MethodNode.java:194)
-        	at jadx.core.dex.nodes.ClassNode.load(ClassNode.java:309)
-        	at jadx.core.ProcessClass.process(ProcessClass.java:53)
-        	at jadx.core.ProcessClass.generateCode(ProcessClass.java:87)
-        	at jadx.core.dex.nodes.ClassNode.decompile(ClassNode.java:300)
-        	at jadx.core.dex.nodes.ClassNode.decompile(ClassNode.java:265)
-        Caused by: jadx.core.utils.exceptions.JadxRuntimeException: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (Ljava/lang/String;, I)Ljava/lang/String;}, Healing avatar  +]}
-        	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:42)
-        	... 11 more
-        */
-    public void checkAndHealAvatar(emu.grasscutter.game.entity.EntityAvatar r11) {
-        /*
-            r10 = this;
-            r0 = r11
-            emu.grasscutter.game.props.FightProperty r1 = emu.grasscutter.game.props.FightProperty.FIGHT_PROP_MAX_HP
-            float r0 = r0.getFightProperty(r1)
-            r1 = 1120403456(0x42c80000, float:100.0)
-            float r0 = r0 * r1
-            int r0 = (int) r0
-            r12 = r0
-            r0 = r11
-            emu.grasscutter.game.props.FightProperty r1 = emu.grasscutter.game.props.FightProperty.FIGHT_PROP_CUR_HP
-            float r0 = r0.getFightProperty(r1)
-            r1 = 1120403456(0x42c80000, float:100.0)
-            float r0 = r0 * r1
-            int r0 = (int) r0
-            r13 = r0
-            r0 = r13
-            r1 = r12
-            if (r0 != r1) goto L_0x001e
-            return
-            r0 = r12
-            r1 = r10
-            int r1 = r1.getAutoRecoveryPercentage()
-            int r0 = r0 * r1
-            r1 = 100
-            int r0 = r0 / r1
-            r14 = r0
-            r0 = r14
-            r1 = r13
-            if (r0 <= r1) goto L_0x00c6
-            r0 = r14
-            r1 = r13
-            int r0 = r0 - r1
-            r15 = r0
-            r0 = r10
-            int r0 = r0.getCurrentVolume()
-            r16 = r0
-            r0 = r16
-            r1 = r15
-            if (r0 < r1) goto L_0x004e
-            r0 = r10
-            r1 = r16
-            r2 = r15
-            int r1 = r1 - r2
-            r0.setCurrentVolume(r1)
-            goto L_0x0057
-            r0 = r16
-            r15 = r0
-            r0 = r10
-            r1 = 0
-            r0.setCurrentVolume(r1)
-            r0 = r15
-            if (r0 <= 0) goto L_0x00c6
-            r0 = r10
-            ch.qos.logback.classic.Logger r0 = r0.logger
-            r1 = r11
-            emu.grasscutter.game.avatar.Avatar r1 = r1.getAvatar()
-            emu.grasscutter.data.excels.AvatarData r1 = r1.getAvatarData()
-            java.lang.String r1 = r1.getName()
-            r2 = r15
-            // decode failed: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (Ljava/lang/String;, I)Ljava/lang/String;}, Healing avatar  +]}
-            r0.trace(r1)
-            r0 = r10
-            emu.grasscutter.game.player.Player r0 = r0.player
-            emu.grasscutter.game.player.TeamManager r0 = r0.getTeamManager()
-            r1 = r11
-            emu.grasscutter.game.avatar.Avatar r1 = r1.getAvatar()
-            r2 = 0
-            r3 = r15
-            boolean r0 = r0.healAvatar(r1, r2, r3)
-            r0 = r10
-            emu.grasscutter.game.player.Player r0 = r0.player
-            emu.grasscutter.server.game.GameSession r0 = r0.getSession()
-            emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify r1 = new emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify
-            r2 = r1
-            r3 = r11
-            emu.grasscutter.game.props.FightProperty r4 = emu.grasscutter.game.props.FightProperty.FIGHT_PROP_CUR_HP
-            r5 = r15
-            float r5 = (float) r5
-            r6 = 1120403456(0x42c80000, float:100.0)
-            float r5 = r5 / r6
-            java.lang.Float r5 = java.lang.Float.valueOf(r5)
-            r6 = 3
-            java.lang.Integer r6 = java.lang.Integer.valueOf(r6)
-            java.util.List r6 = java.util.List.of(r6)
-            emu.grasscutter.net.proto.PropChangeReasonOuterClass$PropChangeReason r7 = emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_STATUE_RECOVER
-            emu.grasscutter.net.proto.ChangeHpReasonOuterClass$ChangeHpReason r8 = emu.grasscutter.net.proto.ChangeHpReasonOuterClass.ChangeHpReason.CHANGE_HP_REASON_ADD_STATUE
-            r2.<init>(r3, r4, r5, r6, r7, r8)
-            r0.send(r1)
-            r0 = r10
-            emu.grasscutter.game.player.Player r0 = r0.player
-            emu.grasscutter.server.game.GameSession r0 = r0.getSession()
-            emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify r1 = new emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify
-            r2 = r1
-            r3 = r11
-            emu.grasscutter.game.props.FightProperty r4 = emu.grasscutter.game.props.FightProperty.FIGHT_PROP_CUR_HP
-            r2.<init>(r3, r4)
-            r0.send(r1)
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: emu.grasscutter.game.managers.SotSManager.checkAndHealAvatar(emu.grasscutter.game.entity.EntityAvatar):void");
-    }
 
     /*  JADX ERROR: Dependency scan failed at insn: 0x0043: INVOKE_CUSTOM r-6
         java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
@@ -516,6 +385,27 @@ public class SotSManager extends BasePlayerManager {
         }
 
         private AutoRecoverTimerTick() {
+        }
+    }
+
+    public void checkAndHealAvatar(EntityAvatar entity) {
+        int targetHP;
+        int maxHP = (int) (entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * 100.0f);
+        int currentHP = (int) (entity.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) * 100.0f);
+        if (currentHP != maxHP && (targetHP = (maxHP * getAutoRecoveryPercentage()) / 100) > currentHP) {
+            int needHP = targetHP - currentHP;
+            int currentVolume = getCurrentVolume();
+            if (currentVolume >= needHP) {
+                setCurrentVolume(currentVolume - needHP);
+            } else {
+                needHP = currentVolume;
+                setCurrentVolume(0);
+            }
+            if (needHP > 0) {
+                this.player.getTeamManager().healAvatar(entity.getAvatar(), 0, needHP);
+                this.player.getSession().send(new PacketEntityFightPropChangeReasonNotify(entity, FightProperty.FIGHT_PROP_CUR_HP, Float.valueOf(((float) needHP) / 100.0f), List.of(3), PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_STATUE_RECOVER, ChangeHpReasonOuterClass.ChangeHpReason.CHANGE_HP_REASON_ADD_STATUE));
+                this.player.getSession().send(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
+            }
         }
     }
 }

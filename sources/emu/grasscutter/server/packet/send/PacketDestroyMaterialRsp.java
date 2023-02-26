@@ -7,7 +7,7 @@ import p014it.unimi.dsi.fastutil.ints.Int2IntMap;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketDestroyMaterialRsp.class */
 public class PacketDestroyMaterialRsp extends BasePacket {
     public PacketDestroyMaterialRsp(Int2IntMap returnMaterialMap) {
-        super(608);
+        super(637);
         DestroyMaterialRspOuterClass.DestroyMaterialRsp.Builder proto = DestroyMaterialRspOuterClass.DestroyMaterialRsp.newBuilder();
         returnMaterialMap.forEach(id, count -> {
             proto.addItemIdList(id.intValue());

@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TanukiTravelLevelDataOuterClass.class */
 public final class TanukiTravelLevelDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bTanukiTravelLevelData.proto\"M\n\u0015TanukiTravelLevelData\u0012\u0011\n\tis_finish\u0018\u0007 \u0001(\b\u0012\u000f\n\u0007is_open\u0018\t \u0001(\b\u0012\u0010\n\broute_id\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bTanukiTravelLevelData.proto\"J\n\u0015TanukiTravelLevelData\u0012\u0010\n\bisFinish\u0018\u0002 \u0001(\b\u0012\u000f\n\u0007routeId\u0018\u0001 \u0001(\r\u0012\u000e\n\u0006isOpen\u0018\b \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_TanukiTravelLevelData_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TanukiTravelLevelData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TanukiTravelLevelData_descriptor, new String[]{"IsFinish", "IsOpen", "RouteId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TanukiTravelLevelData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TanukiTravelLevelData_descriptor, new String[]{"IsFinish", "RouteId", "IsOpen"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TanukiTravelLevelDataOuterClass$TanukiTravelLevelDataOrBuilder.class */
     public interface TanukiTravelLevelDataOrBuilder extends MessageOrBuilder {
         boolean getIsFinish();
 
-        boolean getIsOpen();
-
         int getRouteId();
+
+        boolean getIsOpen();
     }
 
     private TanukiTravelLevelDataOuterClass() {
@@ -46,12 +46,12 @@ public final class TanukiTravelLevelDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TanukiTravelLevelDataOuterClass$TanukiTravelLevelData.class */
     public static final class TanukiTravelLevelData extends GeneratedMessageV3 implements TanukiTravelLevelDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_FINISH_FIELD_NUMBER = 7;
+        public static final int ISFINISH_FIELD_NUMBER = 2;
         private boolean isFinish_;
-        public static final int IS_OPEN_FIELD_NUMBER = 9;
-        private boolean isOpen_;
-        public static final int ROUTE_ID_FIELD_NUMBER = 8;
+        public static final int ROUTEID_FIELD_NUMBER = 1;
         private int routeId_;
+        public static final int ISOPEN_FIELD_NUMBER = 8;
+        private boolean isOpen_;
         private byte memoizedIsInitialized;
         private static final TanukiTravelLevelData DEFAULT_INSTANCE = new TanukiTravelLevelData();
         private static final Parser<TanukiTravelLevelData> PARSER = new AbstractParser<TanukiTravelLevelData>() { // from class: emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData.1
@@ -98,13 +98,13 @@ public final class TanukiTravelLevelDataOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 56:
+                                case 8:
+                                    this.routeId_ = input.readUInt32();
+                                    break;
+                                case 16:
                                     this.isFinish_ = input.readBool();
                                     break;
                                 case 64:
-                                    this.routeId_ = input.readUInt32();
-                                    break;
-                                case 72:
                                     this.isOpen_ = input.readBool();
                                     break;
                                 default:
@@ -143,13 +143,13 @@ public final class TanukiTravelLevelDataOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelDataOrBuilder
-        public boolean getIsOpen() {
-            return this.isOpen_;
+        public int getRouteId() {
+            return this.routeId_;
         }
 
         @Override // emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelDataOrBuilder
-        public int getRouteId() {
-            return this.routeId_;
+        public boolean getIsOpen() {
+            return this.isOpen_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,14 +167,14 @@ public final class TanukiTravelLevelDataOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.isFinish_) {
-                output.writeBool(7, this.isFinish_);
-            }
             if (this.routeId_ != 0) {
-                output.writeUInt32(8, this.routeId_);
+                output.writeUInt32(1, this.routeId_);
+            }
+            if (this.isFinish_) {
+                output.writeBool(2, this.isFinish_);
             }
             if (this.isOpen_) {
-                output.writeBool(9, this.isOpen_);
+                output.writeBool(8, this.isOpen_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class TanukiTravelLevelDataOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.isFinish_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(7, this.isFinish_);
-            }
             if (this.routeId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.routeId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.routeId_);
+            }
+            if (this.isFinish_) {
+                size2 += CodedOutputStream.computeBoolSize(2, this.isFinish_);
             }
             if (this.isOpen_) {
-                size2 += CodedOutputStream.computeBoolSize(9, this.isOpen_);
+                size2 += CodedOutputStream.computeBoolSize(8, this.isOpen_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class TanukiTravelLevelDataOuterClass {
                 return equals(obj);
             }
             TanukiTravelLevelData other = (TanukiTravelLevelData) obj;
-            return getIsFinish() == other.getIsFinish() && getIsOpen() == other.getIsOpen() && getRouteId() == other.getRouteId() && this.unknownFields.equals(other.unknownFields);
+            return getIsFinish() == other.getIsFinish() && getRouteId() == other.getRouteId() && getIsOpen() == other.getIsOpen() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class TanukiTravelLevelDataOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + Internal.hashBoolean(getIsFinish()))) + 9)) + Internal.hashBoolean(getIsOpen()))) + 8)) + getRouteId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + Internal.hashBoolean(getIsFinish()))) + 1)) + getRouteId())) + 8)) + Internal.hashBoolean(getIsOpen()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -297,8 +297,8 @@ public final class TanukiTravelLevelDataOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TanukiTravelLevelDataOuterClass$TanukiTravelLevelData$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements TanukiTravelLevelDataOrBuilder {
             private boolean isFinish_;
-            private boolean isOpen_;
             private int routeId_;
+            private boolean isOpen_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return TanukiTravelLevelDataOuterClass.internal_static_TanukiTravelLevelData_descriptor;
@@ -327,8 +327,8 @@ public final class TanukiTravelLevelDataOuterClass {
             public Builder clear() {
                 clear();
                 this.isFinish_ = false;
-                this.isOpen_ = false;
                 this.routeId_ = 0;
+                this.isOpen_ = false;
                 return this;
             }
 
@@ -355,8 +355,8 @@ public final class TanukiTravelLevelDataOuterClass {
             public TanukiTravelLevelData buildPartial() {
                 TanukiTravelLevelData result = new TanukiTravelLevelData(this);
                 result.isFinish_ = this.isFinish_;
-                result.isOpen_ = this.isOpen_;
                 result.routeId_ = this.routeId_;
+                result.isOpen_ = this.isOpen_;
                 onBuilt();
                 return result;
             }
@@ -407,11 +407,11 @@ public final class TanukiTravelLevelDataOuterClass {
                 if (other.getIsFinish()) {
                     setIsFinish(other.getIsFinish());
                 }
-                if (other.getIsOpen()) {
-                    setIsOpen(other.getIsOpen());
-                }
                 if (other.getRouteId() != 0) {
                     setRouteId(other.getRouteId());
+                }
+                if (other.getIsOpen()) {
+                    setIsOpen(other.getIsOpen());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -463,23 +463,6 @@ public final class TanukiTravelLevelDataOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelDataOrBuilder
-            public boolean getIsOpen() {
-                return this.isOpen_;
-            }
-
-            public Builder setIsOpen(boolean value) {
-                this.isOpen_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsOpen() {
-                this.isOpen_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelDataOrBuilder
             public int getRouteId() {
                 return this.routeId_;
             }
@@ -492,6 +475,23 @@ public final class TanukiTravelLevelDataOuterClass {
 
             public Builder clearRouteId() {
                 this.routeId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelDataOrBuilder
+            public boolean getIsOpen() {
+                return this.isOpen_;
+            }
+
+            public Builder setIsOpen(boolean value) {
+                this.isOpen_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsOpen() {
+                this.isOpen_ = false;
                 onChanged();
                 return this;
             }

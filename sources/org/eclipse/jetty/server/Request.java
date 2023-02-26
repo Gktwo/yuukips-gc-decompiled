@@ -69,7 +69,7 @@ import org.eclipse.jetty.server.session.Session;
 import org.eclipse.jetty.server.session.SessionHandler;
 import org.eclipse.jetty.util.Attributes;
 import org.eclipse.jetty.util.AttributesMap;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.HostPort;
 import org.eclipse.jetty.util.MultiMap;
 import org.eclipse.jetty.util.StringUtil;
@@ -1007,7 +1007,7 @@ public class Request implements HttpServletRequest {
             return port;
         }
         if (HttpScheme.HTTPS.m39is(getScheme())) {
-            return PacketOpcodes.AddQuestContentProgressReq;
+            return PacketOpcodes.PersonalLineAllDataRsp;
         }
         return 80;
     }
@@ -1715,7 +1715,7 @@ public class Request implements HttpServletRequest {
                 is = charsetPart.getInputStream();
                 try {
                     ByteArrayOutputStream os = new ByteArrayOutputStream();
-                    C5747IO.copy(is, os);
+                    C5739IO.copy(is, os);
                     formCharset = new String(os.toByteArray(), StandardCharsets.UTF_8);
                     if (is != null) {
                         is.close();
@@ -1744,7 +1744,7 @@ public class Request implements HttpServletRequest {
                         } finally {
                         }
                     }
-                    C5747IO.copy(is, os2);
+                    C5739IO.copy(is, os2);
                     String content = new String(os2.toByteArray(), charset == null ? defaultCharset : Charset.forName(charset));
                     if (this._contentParameters == null) {
                         this._contentParameters = params == null ? new MultiMap<>() : params;

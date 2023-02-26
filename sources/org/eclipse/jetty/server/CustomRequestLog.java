@@ -630,7 +630,7 @@ public class CustomRequestLog extends ContainerLifeCycle implements RequestLog {
                             break;
                         }
                         break;
-                    case PacketOpcodes.ForceDragBackTransferNotify:
+                    case PacketOpcodes.GetScenePerformanceReq:
                         if (arg.equals("ms")) {
                             c4 = 2;
                             break;

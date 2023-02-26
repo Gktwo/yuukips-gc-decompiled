@@ -120,32 +120,32 @@ public abstract class AbstractFloatBigList extends AbstractFloatCollection imple
     public static final class IndexBasedSpliterator extends FloatBigSpliterators.LateBindingSizeIndexBasedSpliterator {
 
         /* renamed from: l */
-        final FloatBigList f1796l;
+        final FloatBigList f1760l;
 
         IndexBasedSpliterator(FloatBigList l, long pos) {
             super(pos);
-            this.f1796l = l;
+            this.f1760l = l;
         }
 
         IndexBasedSpliterator(FloatBigList l, long pos, long maxPos) {
             super(pos, maxPos);
-            this.f1796l = l;
+            this.f1760l = l;
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatBigSpliterators.LateBindingSizeIndexBasedSpliterator
         protected final long getMaxPosFromBackingStore() {
-            return this.f1796l.size64();
+            return this.f1760l.size64();
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatBigSpliterators.AbstractIndexBasedSpliterator
         protected final float get(long i) {
-            return this.f1796l.getFloat(i);
+            return this.f1760l.getFloat(i);
         }
 
         /* access modifiers changed from: protected */
         @Override // p014it.unimi.dsi.fastutil.floats.FloatBigSpliterators.AbstractIndexBasedSpliterator
         public final IndexBasedSpliterator makeForSplit(long pos, long maxPos) {
-            return new IndexBasedSpliterator(this.f1796l, pos, maxPos);
+            return new IndexBasedSpliterator(this.f1760l, pos, maxPos);
         }
     }
 
@@ -350,7 +350,7 @@ public abstract class AbstractFloatBigList extends AbstractFloatCollection imple
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v5, types: [it.unimi.dsi.fastutil.floats.FloatBigListIterator] */
     /* JADX WARN: Type inference failed for: r1v4, types: [long] */
-    /* JADX WARN: Type inference failed for: r2v3, types: [float[][], long] */
+    /* JADX WARN: Type inference failed for: r2v3, types: [long, float[][]] */
     /* JADX WARN: Type inference failed for: r1v10, types: [long] */
     /* JADX WARNING: Unknown variable types count: 2 */
     @Override // p014it.unimi.dsi.fastutil.floats.FloatBigList
@@ -541,7 +541,7 @@ public abstract class AbstractFloatBigList extends AbstractFloatCollection imple
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r15v0, types: [float[][], long] */
+    /* JADX WARN: Type inference failed for: r15v0, types: [long, float[][]] */
     /* JADX WARN: Type inference failed for: r0v8, types: [it.unimi.dsi.fastutil.floats.FloatBigListIterator] */
     /* JADX WARN: Type inference failed for: r20v0 */
     /* JADX WARN: Type inference failed for: r20v1, types: [long] */
@@ -1014,11 +1014,11 @@ public abstract class AbstractFloatBigList extends AbstractFloatCollection imple
         private static final long serialVersionUID = -7046029254386353129L;
 
         /* renamed from: l */
-        protected final FloatBigList f1794l;
+        protected final FloatBigList f1758l;
         protected final long from;
 
         /* renamed from: to */
-        protected long f1795to;
+        protected long f1759to;
         static final /* synthetic */ boolean $assertionsDisabled;
 
         /* Return type fixed from 'it.unimi.dsi.fastutil.BigListIterator' to match base method */
@@ -1095,18 +1095,18 @@ public abstract class AbstractFloatBigList extends AbstractFloatCollection imple
         }
 
         public FloatSubList(FloatBigList l, long from, long to) {
-            this.f1794l = l;
+            this.f1758l = l;
             this.from = from;
-            this.f1795to = to;
+            this.f1759to = to;
         }
 
         /* access modifiers changed from: private */
         public boolean assertRange() {
-            if (!$assertionsDisabled && this.from > this.f1794l.size64()) {
+            if (!$assertionsDisabled && this.from > this.f1758l.size64()) {
                 throw new AssertionError();
-            } else if (!$assertionsDisabled && this.f1795to > this.f1794l.size64()) {
+            } else if (!$assertionsDisabled && this.f1759to > this.f1758l.size64()) {
                 throw new AssertionError();
-            } else if ($assertionsDisabled || this.f1795to >= this.from) {
+            } else if ($assertionsDisabled || this.f1759to >= this.from) {
                 return true;
             } else {
                 throw new AssertionError();
@@ -1115,8 +1115,8 @@ public abstract class AbstractFloatBigList extends AbstractFloatCollection imple
 
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatBigList, p014it.unimi.dsi.fastutil.floats.AbstractFloatCollection, p014it.unimi.dsi.fastutil.floats.FloatCollection
         public boolean add(float k) {
-            this.f1794l.add(this.f1795to, k);
-            this.f1795to++;
+            this.f1758l.add(this.f1759to, k);
+            this.f1759to++;
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }
@@ -1126,8 +1126,8 @@ public abstract class AbstractFloatBigList extends AbstractFloatCollection imple
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatBigList, p014it.unimi.dsi.fastutil.floats.FloatBigList
         public void add(long index, float k) {
             ensureIndex(index);
-            this.f1794l.add(this.from + index, k);
-            this.f1795to++;
+            this.f1758l.add(this.from + index, k);
+            this.f1759to++;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1136,32 +1136,32 @@ public abstract class AbstractFloatBigList extends AbstractFloatCollection imple
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatBigList, p014it.unimi.dsi.fastutil.BigList
         public boolean addAll(long index, Collection<? extends Float> c) {
             ensureIndex(index);
-            this.f1795to += (long) c.size();
-            return this.f1794l.addAll(this.from + index, c);
+            this.f1759to += (long) c.size();
+            return this.f1758l.addAll(this.from + index, c);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatBigList
         public float getFloat(long index) {
             ensureRestrictedIndex(index);
-            return this.f1794l.getFloat(this.from + index);
+            return this.f1758l.getFloat(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatBigList, p014it.unimi.dsi.fastutil.floats.FloatBigList
         public float removeFloat(long index) {
             ensureRestrictedIndex(index);
-            this.f1795to--;
-            return this.f1794l.removeFloat(this.from + index);
+            this.f1759to--;
+            return this.f1758l.removeFloat(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatBigList, p014it.unimi.dsi.fastutil.floats.FloatBigList
         public float set(long index, float k) {
             ensureRestrictedIndex(index);
-            return this.f1794l.set(this.from + index, k);
+            return this.f1758l.set(this.from + index, k);
         }
 
         @Override // p014it.unimi.dsi.fastutil.Size64
         public long size64() {
-            return this.f1795to - this.from;
+            return this.f1759to - this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatBigList, p014it.unimi.dsi.fastutil.floats.FloatBigList
@@ -1170,15 +1170,15 @@ public abstract class AbstractFloatBigList extends AbstractFloatCollection imple
             if (from + length > size64()) {
                 throw new IndexOutOfBoundsException("End index (" + from + length + ") is greater than list size (" + size64() + ")");
             }
-            this.f1794l.getElements(this.from + from, a, offset, length);
+            this.f1758l.getElements(this.from + from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatBigList, p014it.unimi.dsi.fastutil.floats.FloatBigList
         public void removeElements(long from, long to) {
             ensureIndex(from);
             ensureIndex(to);
-            this.f1794l.removeElements(this.from + from, this.from + to);
-            this.f1795to -= to - from;
+            this.f1758l.removeElements(this.from + from, this.from + to);
+            this.f1759to -= to - from;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1187,8 +1187,8 @@ public abstract class AbstractFloatBigList extends AbstractFloatCollection imple
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatBigList, p014it.unimi.dsi.fastutil.floats.FloatBigList
         public void addElements(long index, float[][] a, long offset, long length) {
             ensureIndex(index);
-            this.f1794l.addElements(this.from + index, a, offset, length);
-            this.f1795to += length;
+            this.f1758l.addElements(this.from + index, a, offset, length);
+            this.f1759to += length;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1210,7 +1210,7 @@ public abstract class AbstractFloatBigList extends AbstractFloatCollection imple
 
             @Override // p014it.unimi.dsi.fastutil.floats.FloatBigListIterators.AbstractIndexBasedBigIterator
             protected final float get(long i) {
-                return FloatSubList.this.f1794l.getFloat(FloatSubList.this.from + i);
+                return FloatSubList.this.f1758l.getFloat(FloatSubList.this.from + i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.floats.FloatBigListIterators.AbstractIndexBasedBigListIterator
@@ -1230,7 +1230,7 @@ public abstract class AbstractFloatBigList extends AbstractFloatCollection imple
 
             @Override // p014it.unimi.dsi.fastutil.floats.FloatBigListIterators.AbstractIndexBasedBigIterator
             protected final long getMaxPos() {
-                return FloatSubList.this.f1795to - FloatSubList.this.from;
+                return FloatSubList.this.f1759to - FloatSubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.floats.FloatBigListIterators.AbstractIndexBasedBigListIterator, p014it.unimi.dsi.fastutil.floats.FloatBigListIterator
@@ -1272,7 +1272,7 @@ public abstract class AbstractFloatBigList extends AbstractFloatCollection imple
 
             @Override // java.util.Iterator
             public boolean hasNext() {
-                return this.parent.nextIndex() < FloatSubList.this.f1795to;
+                return this.parent.nextIndex() < FloatSubList.this.f1759to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -1335,10 +1335,10 @@ public abstract class AbstractFloatBigList extends AbstractFloatCollection imple
                 }
                 long currentPos = this.parent.nextIndex();
                 char c = currentPos + n;
-                int i = (c > FloatSubList.this.f1795to ? 1 : (c == FloatSubList.this.f1795to ? 0 : -1));
+                int i = (c > FloatSubList.this.f1759to ? 1 : (c == FloatSubList.this.f1759to ? 0 : -1));
                 long parentNewPos = c;
                 if (i > 0) {
-                    parentNewPos = FloatSubList.this.f1795to;
+                    parentNewPos = FloatSubList.this.f1759to;
                 }
                 return this.parent.skip((parentNewPos == 1 ? 1 : 0) - currentPos);
             }
@@ -1349,17 +1349,17 @@ public abstract class AbstractFloatBigList extends AbstractFloatCollection imple
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatBigList, p014it.unimi.dsi.fastutil.floats.FloatBigList, p014it.unimi.dsi.fastutil.BigList
         public BigListIterator<Float> listIterator(long index) {
             ensureIndex(index);
-            return this.f1794l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f1794l.listIterator(index + this.from));
+            return this.f1758l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f1758l.listIterator(index + this.from));
         }
 
         @Override // java.util.Collection, java.lang.Iterable, p014it.unimi.dsi.fastutil.floats.FloatCollection, p014it.unimi.dsi.fastutil.floats.FloatIterable
         public FloatSpliterator spliterator() {
-            return this.f1794l instanceof RandomAccess ? new IndexBasedSpliterator(this.f1794l, this.from, this.f1795to) : spliterator();
+            return this.f1758l instanceof RandomAccess ? new IndexBasedSpliterator(this.f1758l, this.from, this.f1759to) : spliterator();
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatBigList, p014it.unimi.dsi.fastutil.floats.FloatCollection, p014it.unimi.dsi.fastutil.floats.FloatIterable
         public DoubleSpliterator doubleSpliterator() {
-            if (this.f1794l instanceof RandomAccess) {
+            if (this.f1758l instanceof RandomAccess) {
                 return FloatSpliterators.widen(spliterator());
             }
             return doubleSpliterator();
@@ -1382,8 +1382,8 @@ public abstract class AbstractFloatBigList extends AbstractFloatCollection imple
             if (index == -1) {
                 return false;
             }
-            this.f1795to--;
-            this.f1794l.removeFloat(this.from + index);
+            this.f1759to--;
+            this.f1758l.removeFloat(this.from + index);
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }

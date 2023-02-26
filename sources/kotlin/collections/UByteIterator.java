@@ -16,7 +16,7 @@ import org.jline.builtins.Tmux;
 /* loaded from: grasscutter.jar:kotlin/collections/UByteIterator.class */
 public abstract class UByteIterator implements Iterator<UByte>, KMappedMarker {
     /* renamed from: nextUByte-w2LRezQ */
-    public abstract byte mo7144nextUBytew2LRezQ();
+    public abstract byte mo7141nextUBytew2LRezQ();
 
     @Override // java.util.Iterator
     public void remove() {
@@ -26,11 +26,11 @@ public abstract class UByteIterator implements Iterator<UByte>, KMappedMarker {
     /* Return type fixed from 'java.lang.Object' to match base method */
     @Override // java.util.Iterator
     public /* bridge */ /* synthetic */ UByte next() {
-        return UByte.m7123boximpl(m7533nextw2LRezQ());
+        return UByte.m7120boximpl(m7530nextw2LRezQ());
     }
 
     /* renamed from: next-w2LRezQ  reason: not valid java name */
-    public final byte m7533nextw2LRezQ() {
-        return mo7144nextUBytew2LRezQ();
+    public final byte m7530nextw2LRezQ() {
+        return mo7141nextUBytew2LRezQ();
     }
 }

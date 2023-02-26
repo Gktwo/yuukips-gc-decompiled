@@ -23,17 +23,13 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RogueDiaryProgressOuterClass.class */
 public final class RogueDiaryProgressOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018RogueDiaryProgress.proto\"\u0001\n\u0012RogueDiaryProgress\u0012\u0012\n\ndifficulty\u0018\n \u0001(\r\u0012\u0018\n\u0010is_enter_dungeon\u0018\u0003 \u0001(\b\u0012\u0010\n\bstage_id\u0018\u0006 \u0001(\r\u0012\u001a\n\u0012optional_card_list\u0018\u0005 \u0003(\r\u0012\u0011\n\tcur_round\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018RogueDiaryProgress.proto\"}\n\u0012RogueDiaryProgress\u0012\u0016\n\u000eisEnterDungeon\u0018\u0005 \u0001(\b\u0012\u0018\n\u0010optionalCardList\u0018\f \u0003(\r\u0012\u0010\n\bcurRound\u0018\u0007 \u0001(\r\u0012\u000f\n\u0007stageId\u0018\u0003 \u0001(\r\u0012\u0012\n\ndifficulty\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_RogueDiaryProgress_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_RogueDiaryProgress_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_RogueDiaryProgress_descriptor, new String[]{"Difficulty", "IsEnterDungeon", "StageId", "OptionalCardList", "CurRound"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_RogueDiaryProgress_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_RogueDiaryProgress_descriptor, new String[]{"IsEnterDungeon", "OptionalCardList", "CurRound", "StageId", "Difficulty"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RogueDiaryProgressOuterClass$RogueDiaryProgressOrBuilder.class */
     public interface RogueDiaryProgressOrBuilder extends MessageOrBuilder {
-        int getDifficulty();
-
         boolean getIsEnterDungeon();
-
-        int getStageId();
 
         List<Integer> getOptionalCardListList();
 
@@ -42,6 +38,10 @@ public final class RogueDiaryProgressOuterClass {
         int getOptionalCardList(int i);
 
         int getCurRound();
+
+        int getStageId();
+
+        int getDifficulty();
     }
 
     private RogueDiaryProgressOuterClass() {
@@ -57,17 +57,17 @@ public final class RogueDiaryProgressOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RogueDiaryProgressOuterClass$RogueDiaryProgress.class */
     public static final class RogueDiaryProgress extends GeneratedMessageV3 implements RogueDiaryProgressOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int DIFFICULTY_FIELD_NUMBER = 10;
-        private int difficulty_;
-        public static final int IS_ENTER_DUNGEON_FIELD_NUMBER = 3;
+        public static final int ISENTERDUNGEON_FIELD_NUMBER = 5;
         private boolean isEnterDungeon_;
-        public static final int STAGE_ID_FIELD_NUMBER = 6;
-        private int stageId_;
-        public static final int OPTIONAL_CARD_LIST_FIELD_NUMBER = 5;
+        public static final int OPTIONALCARDLIST_FIELD_NUMBER = 12;
         private Internal.IntList optionalCardList_;
         private int optionalCardListMemoizedSerializedSize;
-        public static final int CUR_ROUND_FIELD_NUMBER = 4;
+        public static final int CURROUND_FIELD_NUMBER = 7;
         private int curRound_;
+        public static final int STAGEID_FIELD_NUMBER = 3;
+        private int stageId_;
+        public static final int DIFFICULTY_FIELD_NUMBER = 11;
+        private int difficulty_;
         private byte memoizedIsInitialized;
         private static final RogueDiaryProgress DEFAULT_INSTANCE = new RogueDiaryProgress();
         private static final Parser<RogueDiaryProgress> PARSER = new AbstractParser<RogueDiaryProgress>() { // from class: emu.grasscutter.net.proto.RogueDiaryProgressOuterClass.RogueDiaryProgress.1
@@ -119,19 +119,25 @@ public final class RogueDiaryProgressOuterClass {
                                 done = true;
                                 break;
                             case 24:
-                                this.isEnterDungeon_ = input.readBool();
-                                break;
-                            case 32:
-                                this.curRound_ = input.readUInt32();
+                                this.stageId_ = input.readUInt32();
                                 break;
                             case 40:
+                                this.isEnterDungeon_ = input.readBool();
+                                break;
+                            case 56:
+                                this.curRound_ = input.readUInt32();
+                                break;
+                            case 88:
+                                this.difficulty_ = input.readUInt32();
+                                break;
+                            case 96:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.optionalCardList_ = newIntList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.optionalCardList_.addInt(input.readUInt32());
                                 break;
-                            case 42:
+                            case 98:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.optionalCardList_ = newIntList();
@@ -141,12 +147,6 @@ public final class RogueDiaryProgressOuterClass {
                                     this.optionalCardList_.addInt(input.readUInt32());
                                 }
                                 input.popLimit(limit);
-                                break;
-                            case 48:
-                                this.stageId_ = input.readUInt32();
-                                break;
-                            case 80:
-                                this.difficulty_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -181,18 +181,8 @@ public final class RogueDiaryProgressOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.RogueDiaryProgressOuterClass.RogueDiaryProgressOrBuilder
-        public int getDifficulty() {
-            return this.difficulty_;
-        }
-
-        @Override // emu.grasscutter.net.proto.RogueDiaryProgressOuterClass.RogueDiaryProgressOrBuilder
         public boolean getIsEnterDungeon() {
             return this.isEnterDungeon_;
-        }
-
-        @Override // emu.grasscutter.net.proto.RogueDiaryProgressOuterClass.RogueDiaryProgressOrBuilder
-        public int getStageId() {
-            return this.stageId_;
         }
 
         @Override // emu.grasscutter.net.proto.RogueDiaryProgressOuterClass.RogueDiaryProgressOrBuilder
@@ -215,6 +205,16 @@ public final class RogueDiaryProgressOuterClass {
             return this.curRound_;
         }
 
+        @Override // emu.grasscutter.net.proto.RogueDiaryProgressOuterClass.RogueDiaryProgressOrBuilder
+        public int getStageId() {
+            return this.stageId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.RogueDiaryProgressOuterClass.RogueDiaryProgressOrBuilder
+        public int getDifficulty() {
+            return this.difficulty_;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -231,24 +231,24 @@ public final class RogueDiaryProgressOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
+            if (this.stageId_ != 0) {
+                output.writeUInt32(3, this.stageId_);
+            }
             if (this.isEnterDungeon_) {
-                output.writeBool(3, this.isEnterDungeon_);
+                output.writeBool(5, this.isEnterDungeon_);
             }
             if (this.curRound_ != 0) {
-                output.writeUInt32(4, this.curRound_);
+                output.writeUInt32(7, this.curRound_);
+            }
+            if (this.difficulty_ != 0) {
+                output.writeUInt32(11, this.difficulty_);
             }
             if (getOptionalCardListList().size() > 0) {
-                output.writeUInt32NoTag(42);
+                output.writeUInt32NoTag(98);
                 output.writeUInt32NoTag(this.optionalCardListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.optionalCardList_.size(); i++) {
                 output.writeUInt32NoTag(this.optionalCardList_.getInt(i));
-            }
-            if (this.stageId_ != 0) {
-                output.writeUInt32(6, this.stageId_);
-            }
-            if (this.difficulty_ != 0) {
-                output.writeUInt32(10, this.difficulty_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -260,11 +260,17 @@ public final class RogueDiaryProgressOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.stageId_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.stageId_);
+            }
             if (this.isEnterDungeon_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(3, this.isEnterDungeon_);
+                size2 += CodedOutputStream.computeBoolSize(5, this.isEnterDungeon_);
             }
             if (this.curRound_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(4, this.curRound_);
+                size2 += CodedOutputStream.computeUInt32Size(7, this.curRound_);
+            }
+            if (this.difficulty_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(11, this.difficulty_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.optionalCardList_.size(); i++) {
@@ -275,12 +281,6 @@ public final class RogueDiaryProgressOuterClass {
                 size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.optionalCardListMemoizedSerializedSize = dataSize;
-            if (this.stageId_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(6, this.stageId_);
-            }
-            if (this.difficulty_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(10, this.difficulty_);
-            }
             int size4 = size3 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size4;
             return size4;
@@ -295,7 +295,7 @@ public final class RogueDiaryProgressOuterClass {
                 return equals(obj);
             }
             RogueDiaryProgress other = (RogueDiaryProgress) obj;
-            return getDifficulty() == other.getDifficulty() && getIsEnterDungeon() == other.getIsEnterDungeon() && getStageId() == other.getStageId() && getOptionalCardListList().equals(other.getOptionalCardListList()) && getCurRound() == other.getCurRound() && this.unknownFields.equals(other.unknownFields);
+            return getIsEnterDungeon() == other.getIsEnterDungeon() && getOptionalCardListList().equals(other.getOptionalCardListList()) && getCurRound() == other.getCurRound() && getStageId() == other.getStageId() && getDifficulty() == other.getDifficulty() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -303,11 +303,11 @@ public final class RogueDiaryProgressOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getDifficulty())) + 3)) + Internal.hashBoolean(getIsEnterDungeon()))) + 6)) + getStageId();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + Internal.hashBoolean(getIsEnterDungeon());
             if (getOptionalCardListCount() > 0) {
-                hash = (53 * ((37 * hash) + 5)) + getOptionalCardListList().hashCode();
+                hash = (53 * ((37 * hash) + 12)) + getOptionalCardListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 4)) + getCurRound())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 7)) + getCurRound())) + 3)) + getStageId())) + 11)) + getDifficulty())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -387,11 +387,11 @@ public final class RogueDiaryProgressOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RogueDiaryProgressOuterClass$RogueDiaryProgress$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements RogueDiaryProgressOrBuilder {
             private int bitField0_;
-            private int difficulty_;
             private boolean isEnterDungeon_;
-            private int stageId_;
             private Internal.IntList optionalCardList_ = RogueDiaryProgress.emptyIntList();
             private int curRound_;
+            private int stageId_;
+            private int difficulty_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return RogueDiaryProgressOuterClass.internal_static_RogueDiaryProgress_descriptor;
@@ -419,12 +419,12 @@ public final class RogueDiaryProgressOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.difficulty_ = 0;
                 this.isEnterDungeon_ = false;
-                this.stageId_ = 0;
                 this.optionalCardList_ = RogueDiaryProgress.emptyIntList();
                 this.bitField0_ &= -2;
                 this.curRound_ = 0;
+                this.stageId_ = 0;
+                this.difficulty_ = 0;
                 return this;
             }
 
@@ -451,15 +451,15 @@ public final class RogueDiaryProgressOuterClass {
             public RogueDiaryProgress buildPartial() {
                 RogueDiaryProgress result = new RogueDiaryProgress(this);
                 int i = this.bitField0_;
-                result.difficulty_ = this.difficulty_;
                 result.isEnterDungeon_ = this.isEnterDungeon_;
-                result.stageId_ = this.stageId_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.optionalCardList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.optionalCardList_ = this.optionalCardList_;
                 result.curRound_ = this.curRound_;
+                result.stageId_ = this.stageId_;
+                result.difficulty_ = this.difficulty_;
                 onBuilt();
                 return result;
             }
@@ -507,14 +507,8 @@ public final class RogueDiaryProgressOuterClass {
                 if (other == RogueDiaryProgress.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getDifficulty() != 0) {
-                    setDifficulty(other.getDifficulty());
-                }
                 if (other.getIsEnterDungeon()) {
                     setIsEnterDungeon(other.getIsEnterDungeon());
-                }
-                if (other.getStageId() != 0) {
-                    setStageId(other.getStageId());
                 }
                 if (!other.optionalCardList_.isEmpty()) {
                     if (this.optionalCardList_.isEmpty()) {
@@ -528,6 +522,12 @@ public final class RogueDiaryProgressOuterClass {
                 }
                 if (other.getCurRound() != 0) {
                     setCurRound(other.getCurRound());
+                }
+                if (other.getStageId() != 0) {
+                    setStageId(other.getStageId());
+                }
+                if (other.getDifficulty() != 0) {
+                    setDifficulty(other.getDifficulty());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -562,23 +562,6 @@ public final class RogueDiaryProgressOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.RogueDiaryProgressOuterClass.RogueDiaryProgressOrBuilder
-            public int getDifficulty() {
-                return this.difficulty_;
-            }
-
-            public Builder setDifficulty(int value) {
-                this.difficulty_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearDifficulty() {
-                this.difficulty_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.RogueDiaryProgressOuterClass.RogueDiaryProgressOrBuilder
             public boolean getIsEnterDungeon() {
                 return this.isEnterDungeon_;
             }
@@ -591,23 +574,6 @@ public final class RogueDiaryProgressOuterClass {
 
             public Builder clearIsEnterDungeon() {
                 this.isEnterDungeon_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.RogueDiaryProgressOuterClass.RogueDiaryProgressOrBuilder
-            public int getStageId() {
-                return this.stageId_;
-            }
-
-            public Builder setStageId(int value) {
-                this.stageId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearStageId() {
-                this.stageId_ = 0;
                 onChanged();
                 return this;
             }
@@ -675,6 +641,40 @@ public final class RogueDiaryProgressOuterClass {
 
             public Builder clearCurRound() {
                 this.curRound_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.RogueDiaryProgressOuterClass.RogueDiaryProgressOrBuilder
+            public int getStageId() {
+                return this.stageId_;
+            }
+
+            public Builder setStageId(int value) {
+                this.stageId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearStageId() {
+                this.stageId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.RogueDiaryProgressOuterClass.RogueDiaryProgressOrBuilder
+            public int getDifficulty() {
+                return this.difficulty_;
+            }
+
+            public Builder setDifficulty(int value) {
+                this.difficulty_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearDifficulty() {
+                this.difficulty_ = 0;
                 onChanged();
                 return this;
             }

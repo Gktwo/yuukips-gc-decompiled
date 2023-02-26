@@ -5,7 +5,7 @@ import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.PlayerCompoundMaterialReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 
-@Opcodes(146)
+@Opcodes(142)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerPlayerCompoundMaterialReq.class */
 public class HandlerPlayerCompoundMaterialReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

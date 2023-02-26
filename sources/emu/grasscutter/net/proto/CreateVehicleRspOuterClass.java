@@ -19,17 +19,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CreateVehicleRspOuterClass.class */
 public final class CreateVehicleRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016CreateVehicleRsp.proto\"J\n\u0010CreateVehicleRsp\u0012\u0011\n\tentity_id\u0018\u0005 \u0001(\r\u0012\u0012\n\nvehicle_id\u0018\b \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0002 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016CreateVehicleRsp.proto\"H\n\u0010CreateVehicleRsp\u0012\u0011\n\tvehicleId\u0018\n \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0003 \u0001(\u0005\u0012\u0010\n\bentityId\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_CreateVehicleRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_CreateVehicleRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CreateVehicleRsp_descriptor, new String[]{"EntityId", "VehicleId", "Retcode"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_CreateVehicleRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CreateVehicleRsp_descriptor, new String[]{"VehicleId", "Retcode", "EntityId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CreateVehicleRspOuterClass$CreateVehicleRspOrBuilder.class */
     public interface CreateVehicleRspOrBuilder extends MessageOrBuilder {
-        int getEntityId();
-
         int getVehicleId();
 
         int getRetcode();
+
+        int getEntityId();
     }
 
     private CreateVehicleRspOuterClass() {
@@ -45,12 +45,12 @@ public final class CreateVehicleRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CreateVehicleRspOuterClass$CreateVehicleRsp.class */
     public static final class CreateVehicleRsp extends GeneratedMessageV3 implements CreateVehicleRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTITY_ID_FIELD_NUMBER = 5;
-        private int entityId_;
-        public static final int VEHICLE_ID_FIELD_NUMBER = 8;
+        public static final int VEHICLEID_FIELD_NUMBER = 10;
         private int vehicleId_;
-        public static final int RETCODE_FIELD_NUMBER = 2;
+        public static final int RETCODE_FIELD_NUMBER = 3;
         private int retcode_;
+        public static final int ENTITYID_FIELD_NUMBER = 13;
+        private int entityId_;
         private byte memoizedIsInitialized;
         private static final CreateVehicleRsp DEFAULT_INSTANCE = new CreateVehicleRsp();
         private static final Parser<CreateVehicleRsp> PARSER = new AbstractParser<CreateVehicleRsp>() { // from class: emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp.1
@@ -97,14 +97,14 @@ public final class CreateVehicleRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
+                                case 24:
                                     this.retcode_ = input.readInt32();
                                     break;
-                                case 40:
-                                    this.entityId_ = input.readUInt32();
-                                    break;
-                                case 64:
+                                case 80:
                                     this.vehicleId_ = input.readUInt32();
+                                    break;
+                                case 104:
+                                    this.entityId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -137,11 +137,6 @@ public final class CreateVehicleRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRspOrBuilder
-        public int getEntityId() {
-            return this.entityId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRspOrBuilder
         public int getVehicleId() {
             return this.vehicleId_;
         }
@@ -149,6 +144,11 @@ public final class CreateVehicleRspOuterClass {
         @Override // emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRspOrBuilder
         public int getRetcode() {
             return this.retcode_;
+        }
+
+        @Override // emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRspOrBuilder
+        public int getEntityId() {
+            return this.entityId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,13 +167,13 @@ public final class CreateVehicleRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.retcode_ != 0) {
-                output.writeInt32(2, this.retcode_);
-            }
-            if (this.entityId_ != 0) {
-                output.writeUInt32(5, this.entityId_);
+                output.writeInt32(3, this.retcode_);
             }
             if (this.vehicleId_ != 0) {
-                output.writeUInt32(8, this.vehicleId_);
+                output.writeUInt32(10, this.vehicleId_);
+            }
+            if (this.entityId_ != 0) {
+                output.writeUInt32(13, this.entityId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,13 +186,13 @@ public final class CreateVehicleRspOuterClass {
             }
             int size2 = 0;
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(2, this.retcode_);
-            }
-            if (this.entityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.entityId_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(3, this.retcode_);
             }
             if (this.vehicleId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.vehicleId_);
+                size2 += CodedOutputStream.computeUInt32Size(10, this.vehicleId_);
+            }
+            if (this.entityId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(13, this.entityId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -208,7 +208,7 @@ public final class CreateVehicleRspOuterClass {
                 return equals(obj);
             }
             CreateVehicleRsp other = (CreateVehicleRsp) obj;
-            return getEntityId() == other.getEntityId() && getVehicleId() == other.getVehicleId() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
+            return getVehicleId() == other.getVehicleId() && getRetcode() == other.getRetcode() && getEntityId() == other.getEntityId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -216,7 +216,7 @@ public final class CreateVehicleRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getEntityId())) + 8)) + getVehicleId())) + 2)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getVehicleId())) + 3)) + getRetcode())) + 13)) + getEntityId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -295,9 +295,9 @@ public final class CreateVehicleRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CreateVehicleRspOuterClass$CreateVehicleRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements CreateVehicleRspOrBuilder {
-            private int entityId_;
             private int vehicleId_;
             private int retcode_;
+            private int entityId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return CreateVehicleRspOuterClass.internal_static_CreateVehicleRsp_descriptor;
@@ -325,9 +325,9 @@ public final class CreateVehicleRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.entityId_ = 0;
                 this.vehicleId_ = 0;
                 this.retcode_ = 0;
+                this.entityId_ = 0;
                 return this;
             }
 
@@ -353,9 +353,9 @@ public final class CreateVehicleRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public CreateVehicleRsp buildPartial() {
                 CreateVehicleRsp result = new CreateVehicleRsp(this);
-                result.entityId_ = this.entityId_;
                 result.vehicleId_ = this.vehicleId_;
                 result.retcode_ = this.retcode_;
+                result.entityId_ = this.entityId_;
                 onBuilt();
                 return result;
             }
@@ -403,14 +403,14 @@ public final class CreateVehicleRspOuterClass {
                 if (other == CreateVehicleRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getEntityId() != 0) {
-                    setEntityId(other.getEntityId());
-                }
                 if (other.getVehicleId() != 0) {
                     setVehicleId(other.getVehicleId());
                 }
                 if (other.getRetcode() != 0) {
                     setRetcode(other.getRetcode());
+                }
+                if (other.getEntityId() != 0) {
+                    setEntityId(other.getEntityId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -445,23 +445,6 @@ public final class CreateVehicleRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRspOrBuilder
-            public int getEntityId() {
-                return this.entityId_;
-            }
-
-            public Builder setEntityId(int value) {
-                this.entityId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearEntityId() {
-                this.entityId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRspOrBuilder
             public int getVehicleId() {
                 return this.vehicleId_;
             }
@@ -491,6 +474,23 @@ public final class CreateVehicleRspOuterClass {
 
             public Builder clearRetcode() {
                 this.retcode_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.CreateVehicleRspOuterClass.CreateVehicleRspOrBuilder
+            public int getEntityId() {
+                return this.entityId_;
+            }
+
+            public Builder setEntityId(int value) {
+                this.entityId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearEntityId() {
+                this.entityId_ = 0;
                 onChanged();
                 return this;
             }

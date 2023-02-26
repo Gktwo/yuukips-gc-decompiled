@@ -13,10 +13,8 @@ public class PacketGetActivityInfoRsp extends BasePacket {
     public PacketGetActivityInfoRsp(Set<Integer> activityIdList, ActivityManager activityManager) {
         super(PacketOpcodes.GetActivityInfoRsp);
         GetActivityInfoRspOuterClass.GetActivityInfoRsp.Builder proto = GetActivityInfoRspOuterClass.GetActivityInfoRsp.newBuilder();
-        Stream<Integer> stream = activityIdList.stream();
-        Objects.requireNonNull(activityManager);
-        Stream<R> map = stream.map((v1) -> {
-            return r1.getInfoProtoByActivityId(v1);
+        Stream<R> map = activityIdList.stream().map(arg0 -> {
+            return activityManager.getInfoProtoByActivityId(arg0.intValue());
         });
         Objects.requireNonNull(proto);
         map.forEach(this::addActivityInfoList);

@@ -1,6 +1,5 @@
 package emu.grasscutter.game.drop;
 
-@Deprecated
 /* loaded from: grasscutter.jar:emu/grasscutter/game/drop/DropData.class */
 public class DropData {
     private int minWeight;

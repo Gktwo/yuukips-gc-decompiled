@@ -168,8 +168,9 @@ public class BSONCallbackAdapter extends AbstractBsonWriter {
         return (Context) getContext();
     }
 
+    /* access modifiers changed from: protected */
     @Override // org.bson.AbstractBsonWriter
-    protected String getName() {
+    public String getName() {
         if (getContext().getContextType() == BsonContextType.ARRAY) {
             return Integer.toString(Context.access$308(getContext()));
         }

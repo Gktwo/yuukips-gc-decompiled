@@ -36,7 +36,7 @@ public final class Crypts {
     }
 
     private static KeyManagementService createKeyManagementService() {
-        return new KeyManagementService(getSslContext(), PacketOpcodes.AddQuestContentProgressReq, 10000);
+        return new KeyManagementService(getSslContext(), PacketOpcodes.PersonalLineAllDataRsp, 10000);
     }
 
     private static SSLContext getSslContext() {

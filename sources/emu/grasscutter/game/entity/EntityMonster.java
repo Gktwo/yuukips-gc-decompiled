@@ -229,6 +229,9 @@ public class EntityMonster extends GameEntity {
         addAllFightPropsToEntityInfo(entityInfo);
         entityInfo.addPropList(PropPairOuterClass.PropPair.newBuilder().setType(PlayerProperty.PROP_LEVEL.getId()).setPropValue(ProtoHelper.newPropValue(PlayerProperty.PROP_LEVEL, getLevel())).build());
         SceneMonsterInfoOuterClass.SceneMonsterInfo.Builder monsterInfo = SceneMonsterInfoOuterClass.SceneMonsterInfo.newBuilder().setMonsterId(getMonsterId()).setGroupId(getGroupId()).setConfigId(getConfigId()).addAllAffixList(getMonsterData().getAffix()).setAuthorityPeerId(getWorld().getHostPeerId()).setPoseId(getPoseId()).setBlockId(getScene().getId()).setBornType(MonsterBornTypeOuterClass.MonsterBornType.MONSTER_BORN_TYPE_DEFAULT);
+        if (getMonsterData().getId() == 29070103) {
+            monsterInfo.setTitleId(161).setSpecialNameId(12);
+        }
         if (getMonsterData().getDescribeData() != null) {
             monsterInfo.setTitleId(getMonsterData().getDescribeData().getTitleId()).setSpecialNameId(getMonsterData().getSpecialNameId());
         }

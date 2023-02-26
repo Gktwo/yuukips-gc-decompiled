@@ -512,10 +512,7 @@ public final class DatabaseHelper {
     }
 
     public static void saveQuest(GameMainQuest quest) {
-        try {
-            DatabaseManager.getGameDatastore().save((Datastore) quest);
-        } catch (Exception e) {
-        }
+        DatabaseManager.getGameDatastore().save((Datastore) quest);
     }
 
     public static boolean deleteQuest(GameMainQuest quest) {

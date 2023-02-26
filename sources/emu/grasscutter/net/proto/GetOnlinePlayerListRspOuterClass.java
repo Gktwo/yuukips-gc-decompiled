@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetOnlinePlayerListRspOuterClass.class */
 public final class GetOnlinePlayerListRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cGetOnlinePlayerListRsp.proto\u001a\u0016OnlinePlayerInfo.proto\"e\n\u0016GetOnlinePlayerListRsp\u0012\u000f\n\u0007retcode\u0018\u000f \u0001(\u0005\u0012\r\n\u0005param\u0018\b \u0001(\r\u0012+\n\u0010player_info_list\u0018\u0005 \u0003(\u000b2\u0011.OnlinePlayerInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{OnlinePlayerInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cGetOnlinePlayerListRsp.proto\u001a\u0016OnlinePlayerInfo.proto\"c\n\u0016GetOnlinePlayerListRsp\u0012\u000f\n\u0007retcode\u0018\u0005 \u0001(\u0005\u0012\r\n\u0005param\u0018\u000e \u0001(\r\u0012)\n\u000eplayerInfoList\u0018\t \u0003(\u000b2\u0011.OnlinePlayerInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{OnlinePlayerInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_GetOnlinePlayerListRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetOnlinePlayerListRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetOnlinePlayerListRsp_descriptor, new String[]{"Retcode", "Param", "PlayerInfoList"});
 
@@ -59,11 +59,11 @@ public final class GetOnlinePlayerListRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetOnlinePlayerListRspOuterClass$GetOnlinePlayerListRsp.class */
     public static final class GetOnlinePlayerListRsp extends GeneratedMessageV3 implements GetOnlinePlayerListRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 15;
+        public static final int RETCODE_FIELD_NUMBER = 5;
         private int retcode_;
-        public static final int PARAM_FIELD_NUMBER = 8;
+        public static final int PARAM_FIELD_NUMBER = 14;
         private int param_;
-        public static final int PLAYER_INFO_LIST_FIELD_NUMBER = 5;
+        public static final int PLAYERINFOLIST_FIELD_NUMBER = 9;
         private List<OnlinePlayerInfoOuterClass.OnlinePlayerInfo> playerInfoList_;
         private byte memoizedIsInitialized;
         private static final GetOnlinePlayerListRsp DEFAULT_INSTANCE = new GetOnlinePlayerListRsp();
@@ -113,18 +113,18 @@ public final class GetOnlinePlayerListRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 42:
+                            case 40:
+                                this.retcode_ = input.readInt32();
+                                break;
+                            case 74:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.playerInfoList_ = new ArrayList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.playerInfoList_.add((OnlinePlayerInfoOuterClass.OnlinePlayerInfo) input.readMessage(OnlinePlayerInfoOuterClass.OnlinePlayerInfo.parser(), extensionRegistry));
                                 break;
-                            case 64:
+                            case 112:
                                 this.param_ = input.readUInt32();
-                                break;
-                            case 120:
-                                this.retcode_ = input.readInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -208,14 +208,14 @@ public final class GetOnlinePlayerListRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.retcode_ != 0) {
+                output.writeInt32(5, this.retcode_);
+            }
             for (int i = 0; i < this.playerInfoList_.size(); i++) {
-                output.writeMessage(5, this.playerInfoList_.get(i));
+                output.writeMessage(9, this.playerInfoList_.get(i));
             }
             if (this.param_ != 0) {
-                output.writeUInt32(8, this.param_);
-            }
-            if (this.retcode_ != 0) {
-                output.writeInt32(15, this.retcode_);
+                output.writeUInt32(14, this.param_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -227,14 +227,14 @@ public final class GetOnlinePlayerListRspOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.retcode_ != 0) {
+                size2 = 0 + CodedOutputStream.computeInt32Size(5, this.retcode_);
+            }
             for (int i = 0; i < this.playerInfoList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(5, this.playerInfoList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(9, this.playerInfoList_.get(i));
             }
             if (this.param_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.param_);
-            }
-            if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(15, this.retcode_);
+                size2 += CodedOutputStream.computeUInt32Size(14, this.param_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -258,9 +258,9 @@ public final class GetOnlinePlayerListRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getRetcode())) + 8)) + getParam();
+            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getRetcode())) + 14)) + getParam();
             if (getPlayerInfoListCount() > 0) {
-                hash = (53 * ((37 * hash) + 5)) + getPlayerInfoListList().hashCode();
+                hash = (53 * ((37 * hash) + 9)) + getPlayerInfoListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

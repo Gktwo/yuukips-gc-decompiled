@@ -7,22 +7,22 @@ package org.jline.terminal;
 public class Cursor {
 
     /* renamed from: x */
-    private final int f3234x;
+    private final int f3198x;
 
     /* renamed from: y */
-    private final int f3235y;
+    private final int f3199y;
 
     public Cursor(int x, int y) {
-        this.f3234x = x;
-        this.f3235y = y;
+        this.f3198x = x;
+        this.f3199y = y;
     }
 
     public int getX() {
-        return this.f3234x;
+        return this.f3198x;
     }
 
     public int getY() {
-        return this.f3235y;
+        return this.f3199y;
     }
 
     public boolean equals(Object o) {
@@ -30,14 +30,14 @@ public class Cursor {
             return false;
         }
         Cursor c = (Cursor) o;
-        return this.f3234x == c.f3234x && this.f3235y == c.f3235y;
+        return this.f3198x == c.f3198x && this.f3199y == c.f3199y;
     }
 
     public int hashCode() {
-        return (this.f3234x * 31) + this.f3235y;
+        return (this.f3198x * 31) + this.f3199y;
     }
 
     public String toString() {
-        return "Cursor[x=" + this.f3234x + ", y=" + this.f3235y + ']';
+        return "Cursor[x=" + this.f3198x + ", y=" + this.f3199y + ']';
     }
 }

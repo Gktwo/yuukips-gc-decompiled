@@ -24,7 +24,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityScalarValueEntryOuterClass.class */
 public final class AbilityScalarValueEntryOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dAbilityScalarValueEntry.proto\u001a\u0017AbilityScalarType.proto\u001a\u0013AbilityString.proto\"Á\u0001\n\u0017AbilityScalarValueEntry\u0012\u001b\n\u0003key\u0018\u0001 \u0001(\u000b2\u000e.AbilityString\u0012&\n\nvalue_type\u0018\u0002 \u0001(\u000e2\u0012.AbilityScalarType\u0012\u0015\n\u000bfloat_value\u0018\u0003 \u0001(\u0002H��\u0012\u0016\n\fstring_value\u0018\u0004 \u0001(\tH��\u0012\u0013\n\tint_value\u0018\u0005 \u0001(\u0005H��\u0012\u0014\n\nuint_value\u0018\u0006 \u0001(\rH��B\u0007\n\u0005valueB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityScalarTypeOuterClass.getDescriptor(), AbilityStringOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dAbilityScalarValueEntry.proto\u001a\u0013AbilityString.proto\u001a\u0017AbilityScalarType.proto\"À\u0001\n\u0017AbilityScalarValueEntry\u0012\u001b\n\u0003key\u0018\u0001 \u0001(\u000b2\u000e.AbilityString\u0012%\n\tvalueType\u0018\u0002 \u0001(\u000e2\u0012.AbilityScalarType\u0012\u0015\n\u000bfloat_value\u0018\u0003 \u0001(\u0002H��\u0012\u0016\n\fstring_value\u0018\u0004 \u0001(\tH��\u0012\u0013\n\tint_value\u0018\u0005 \u0001(\u0005H��\u0012\u0014\n\nuint_value\u0018\u0006 \u0001(\rH��B\u0007\n\u0005valueB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityStringOuterClass.getDescriptor(), AbilityScalarTypeOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AbilityScalarValueEntry_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AbilityScalarValueEntry_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AbilityScalarValueEntry_descriptor, new String[]{"Key", "ValueType", "FloatValue", "StringValue", "IntValue", "UintValue", "Value"});
 
@@ -78,7 +78,7 @@ public final class AbilityScalarValueEntryOuterClass {
         private Object value_;
         public static final int KEY_FIELD_NUMBER = 1;
         private AbilityStringOuterClass.AbilityString key_;
-        public static final int VALUE_TYPE_FIELD_NUMBER = 2;
+        public static final int VALUETYPE_FIELD_NUMBER = 2;
         private int valueType_;
         public static final int FLOAT_VALUE_FIELD_NUMBER = 3;
         public static final int STRING_VALUE_FIELD_NUMBER = 4;
@@ -1053,7 +1053,7 @@ public final class AbilityScalarValueEntryOuterClass {
     }
 
     static {
-        AbilityScalarTypeOuterClass.getDescriptor();
         AbilityStringOuterClass.getDescriptor();
+        AbilityScalarTypeOuterClass.getDescriptor();
     }
 }

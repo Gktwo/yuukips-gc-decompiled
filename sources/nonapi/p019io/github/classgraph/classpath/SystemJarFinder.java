@@ -49,7 +49,7 @@ public final class SystemJarFinder {
                 }
             }
         }
-        switch (VersionFinder.f3111OS) {
+        switch (VersionFinder.f3075OS) {
             case Linux:
             case Unix:
             case BSD:

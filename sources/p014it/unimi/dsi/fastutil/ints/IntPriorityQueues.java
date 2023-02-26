@@ -15,23 +15,23 @@ public final class IntPriorityQueues {
     public static class SynchronizedPriorityQueue implements IntPriorityQueue {
 
         /* renamed from: q */
-        protected final IntPriorityQueue f2200q;
+        protected final IntPriorityQueue f2164q;
         protected final Object sync;
 
         protected SynchronizedPriorityQueue(IntPriorityQueue q, Object sync) {
-            this.f2200q = q;
+            this.f2164q = q;
             this.sync = sync;
         }
 
         protected SynchronizedPriorityQueue(IntPriorityQueue q) {
-            this.f2200q = q;
+            this.f2164q = q;
             this.sync = this;
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntPriorityQueue
         public void enqueue(int x) {
             synchronized (this.sync) {
-                this.f2200q.enqueue(x);
+                this.f2164q.enqueue(x);
             }
         }
 
@@ -39,7 +39,7 @@ public final class IntPriorityQueues {
         public int dequeueInt() {
             int dequeueInt;
             synchronized (this.sync) {
-                dequeueInt = this.f2200q.dequeueInt();
+                dequeueInt = this.f2164q.dequeueInt();
             }
             return dequeueInt;
         }
@@ -48,7 +48,7 @@ public final class IntPriorityQueues {
         public int firstInt() {
             int firstInt;
             synchronized (this.sync) {
-                firstInt = this.f2200q.firstInt();
+                firstInt = this.f2164q.firstInt();
             }
             return firstInt;
         }
@@ -57,7 +57,7 @@ public final class IntPriorityQueues {
         public int lastInt() {
             int lastInt;
             synchronized (this.sync) {
-                lastInt = this.f2200q.lastInt();
+                lastInt = this.f2164q.lastInt();
             }
             return lastInt;
         }
@@ -66,7 +66,7 @@ public final class IntPriorityQueues {
         public boolean isEmpty() {
             boolean isEmpty;
             synchronized (this.sync) {
-                isEmpty = this.f2200q.isEmpty();
+                isEmpty = this.f2164q.isEmpty();
             }
             return isEmpty;
         }
@@ -75,7 +75,7 @@ public final class IntPriorityQueues {
         public int size() {
             int size;
             synchronized (this.sync) {
-                size = this.f2200q.size();
+                size = this.f2164q.size();
             }
             return size;
         }
@@ -83,14 +83,14 @@ public final class IntPriorityQueues {
         @Override // p014it.unimi.dsi.fastutil.PriorityQueue
         public void clear() {
             synchronized (this.sync) {
-                this.f2200q.clear();
+                this.f2164q.clear();
             }
         }
 
         @Override // p014it.unimi.dsi.fastutil.PriorityQueue
         public void changed() {
             synchronized (this.sync) {
-                this.f2200q.changed();
+                this.f2164q.changed();
             }
         }
 
@@ -99,7 +99,7 @@ public final class IntPriorityQueues {
         public Comparator<? super Integer> comparator() {
             Comparator<? super Integer> comparator;
             synchronized (this.sync) {
-                comparator = this.f2200q.comparator();
+                comparator = this.f2164q.comparator();
             }
             return comparator;
         }
@@ -108,7 +108,7 @@ public final class IntPriorityQueues {
         @Deprecated
         public void enqueue(Integer x) {
             synchronized (this.sync) {
-                this.f2200q.enqueue(x);
+                this.f2164q.enqueue(x);
             }
         }
 
@@ -117,7 +117,7 @@ public final class IntPriorityQueues {
         public Integer dequeue() {
             Integer dequeue;
             synchronized (this.sync) {
-                dequeue = this.f2200q.dequeue();
+                dequeue = this.f2164q.dequeue();
             }
             return dequeue;
         }
@@ -127,7 +127,7 @@ public final class IntPriorityQueues {
         public Integer first() {
             Integer first;
             synchronized (this.sync) {
-                first = this.f2200q.first();
+                first = this.f2164q.first();
             }
             return first;
         }
@@ -137,7 +137,7 @@ public final class IntPriorityQueues {
         public Integer last() {
             Integer last;
             synchronized (this.sync) {
-                last = this.f2200q.last();
+                last = this.f2164q.last();
             }
             return last;
         }
@@ -145,7 +145,7 @@ public final class IntPriorityQueues {
         public int hashCode() {
             int hashCode;
             synchronized (this.sync) {
-                hashCode = this.f2200q.hashCode();
+                hashCode = this.f2164q.hashCode();
             }
             return hashCode;
         }
@@ -156,7 +156,7 @@ public final class IntPriorityQueues {
                 return true;
             }
             synchronized (this.sync) {
-                equals = this.f2200q.equals(o);
+                equals = this.f2164q.equals(o);
             }
             return equals;
         }

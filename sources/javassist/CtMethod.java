@@ -1,7 +1,6 @@
 package javassist;
 
 import dev.morphia.mapping.Mapper;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import javassist.bytecode.BadBytecode;
 import javassist.bytecode.Bytecode;
 import javassist.bytecode.CodeAttribute;
@@ -23,7 +22,7 @@ public final class CtMethod extends CtBehavior {
     public CtMethod(CtClass returnType, String mname, CtClass[] parameters, CtClass declaring) {
         this(null, declaring);
         this.methodInfo = new MethodInfo(declaring.getClassFile2().getConstPool(), mname, Descriptor.ofMethod(returnType, parameters));
-        setModifiers(PacketOpcodes.ProudSkillExtraLevelNotify);
+        setModifiers(1025);
     }
 
     public CtMethod(CtMethod src, CtClass declaring, ClassMap map) throws CannotCompileException {

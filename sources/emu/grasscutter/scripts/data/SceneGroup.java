@@ -12,7 +12,7 @@ public class SceneGroup {
     public transient int block_id;
 
     /* renamed from: id */
-    public int f957id;
+    public int f922id;
     public int refresh_id;
     public Position pos;
     public Map<Integer, SceneMonster> monsters;
@@ -143,7 +143,7 @@ public class SceneGroup {
             r0 = r17
             int r0 = r0.block_id
             r1 = r17
-            int r1 = r1.f957id
+            int r1 = r1.f922id
             r2 = r17
             int r2 = r2.refresh_id
             r3 = r17
@@ -183,7 +183,7 @@ public class SceneGroup {
     }
 
     public void setId(int id) {
-        this.f957id = id;
+        this.f922id = id;
     }
 
     public void setRefresh_id(int refresh_id) {
@@ -241,7 +241,7 @@ public class SceneGroup {
     /* renamed from: of */
     public static SceneGroup m1194of(int groupId) {
         SceneGroup group = new SceneGroup();
-        group.f957id = groupId;
+        group.f922id = groupId;
         return group;
     }
 

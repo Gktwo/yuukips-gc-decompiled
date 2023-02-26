@@ -120,12 +120,12 @@ public final class Util {
     public static final ThreadFactory threadFactory(@NotNull String name, boolean daemon) {
         Intrinsics.checkNotNullParameter(name, "name");
         return (v2) -> {
-            return m9304threadFactory$lambda1(r0, r1, v2);
+            return m9301threadFactory$lambda1(r0, r1, v2);
         };
     }
 
     /* renamed from: threadFactory$lambda-1  reason: not valid java name */
-    private static final Thread m9304threadFactory$lambda1(String $name, boolean $daemon, Runnable runnable) {
+    private static final Thread m9301threadFactory$lambda1(String $name, boolean $daemon, Runnable runnable) {
         Intrinsics.checkNotNullParameter($name, "$name");
         Thread $this$threadFactory_u24lambda_u2d1_u24lambda_u2d0 = new Thread(runnable, $name);
         $this$threadFactory_u24lambda_u2d1_u24lambda_u2d0.setDaemon($daemon);
@@ -530,12 +530,12 @@ public final class Util {
     public static final EventListener.Factory asFactory(@NotNull EventListener $this$asFactory) {
         Intrinsics.checkNotNullParameter($this$asFactory, "<this>");
         return (v1) -> {
-            return m9305asFactory$lambda8(r0, v1);
+            return m9302asFactory$lambda8(r0, v1);
         };
     }
 
     /* renamed from: asFactory$lambda-8  reason: not valid java name */
-    private static final EventListener m9305asFactory$lambda8(EventListener $this_asFactory, Call it) {
+    private static final EventListener m9302asFactory$lambda8(EventListener $this_asFactory, Call it) {
         Intrinsics.checkNotNullParameter($this_asFactory, "$this_asFactory");
         Intrinsics.checkNotNullParameter(it, "it");
         return $this_asFactory;

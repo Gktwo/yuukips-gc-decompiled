@@ -19,9 +19,8 @@ final class OpenSslCachingKeyMaterialProvider extends OpenSslKeyMaterialProvider
         this.maxCachedEntries = maxCachedEntries;
     }
 
-    /* access modifiers changed from: package-private */
     @Override // p013io.netty.handler.ssl.OpenSslKeyMaterialProvider
-    public OpenSslKeyMaterial chooseKeyMaterial(ByteBufAllocator allocator, String alias) throws Exception {
+    OpenSslKeyMaterial chooseKeyMaterial(ByteBufAllocator allocator, String alias) throws Exception {
         OpenSslKeyMaterial material = this.cache.get(alias);
         if (material == null) {
             material = chooseKeyMaterial(allocator, alias);
@@ -44,9 +43,8 @@ final class OpenSslCachingKeyMaterialProvider extends OpenSslKeyMaterialProvider
         return material.retain();
     }
 
-    /* access modifiers changed from: package-private */
     @Override // p013io.netty.handler.ssl.OpenSslKeyMaterialProvider
-    public void destroy() {
+    void destroy() {
         do {
             Iterator<OpenSslKeyMaterial> iterator = this.cache.values().iterator();
             while (iterator.hasNext()) {

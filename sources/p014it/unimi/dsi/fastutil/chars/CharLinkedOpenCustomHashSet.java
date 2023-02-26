@@ -29,13 +29,13 @@ public class CharLinkedOpenCustomHashSet extends AbstractCharSortedSet implement
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f1514n;
+    protected transient int f1478n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1515f;
+    protected final float f1479f;
     private static final int SPLITERATOR_CHARACTERISTICS = 337;
 
     public CharLinkedOpenCustomHashSet(int expected, float f, CharHash.Strategy strategy) {
@@ -47,14 +47,14 @@ public class CharLinkedOpenCustomHashSet extends AbstractCharSortedSet implement
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1515f = f;
+            this.f1479f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1514n = arraySize;
+            this.f1478n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1514n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1514n, f);
-            this.key = new char[this.f1514n + 1];
-            this.link = new long[this.f1514n + 1];
+            this.mask = this.f1478n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1478n, f);
+            this.key = new char[this.f1478n + 1];
+            this.link = new long[this.f1478n + 1];
         }
     }
 
@@ -132,22 +132,22 @@ public class CharLinkedOpenCustomHashSet extends AbstractCharSortedSet implement
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1515f);
-        if (needed > this.f1514n) {
+        int needed = HashCommon.arraySize(capacity, this.f1479f);
+        if (needed > this.f1478n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1515f)))));
-        if (needed > this.f1514n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1479f)))));
+        if (needed > this.f1478n) {
             rehash(needed);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharCollection, p014it.unimi.dsi.fastutil.chars.CharCollection
     public boolean addAll(CharCollection c) {
-        if (((double) this.f1515f) <= 0.5d) {
+        if (((double) this.f1479f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -157,7 +157,7 @@ public class CharLinkedOpenCustomHashSet extends AbstractCharSortedSet implement
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractCharCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Character> c) {
-        if (((double) this.f1515f) <= 0.5d) {
+        if (((double) this.f1479f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -191,9 +191,9 @@ public class CharLinkedOpenCustomHashSet extends AbstractCharSortedSet implement
         } else if (this.containsNull) {
             return false;
         } else {
-            pos = this.f1514n;
+            pos = this.f1478n;
             this.containsNull = true;
-            this.key[this.f1514n] = k;
+            this.key[this.f1478n] = k;
         }
         if (this.size == 0) {
             this.last = pos;
@@ -211,7 +211,7 @@ public class CharLinkedOpenCustomHashSet extends AbstractCharSortedSet implement
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f1515f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f1479f));
         return true;
     }
 
@@ -249,22 +249,22 @@ public class CharLinkedOpenCustomHashSet extends AbstractCharSortedSet implement
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f1514n <= this.minN || this.size >= this.maxFill / 4 || this.f1514n <= 16) {
+        if (this.f1478n <= this.minN || this.size >= this.maxFill / 4 || this.f1478n <= 16) {
             return true;
         }
-        rehash(this.f1514n / 2);
+        rehash(this.f1478n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f1514n] = 0;
+        this.key[this.f1478n] = 0;
         this.size--;
-        fixPointers(this.f1514n);
-        if (this.f1514n <= this.minN || this.size >= this.maxFill / 4 || this.f1514n <= 16) {
+        fixPointers(this.f1478n);
+        if (this.f1478n <= this.minN || this.size >= this.maxFill / 4 || this.f1478n <= 16) {
             return true;
         }
-        rehash(this.f1514n / 2);
+        rehash(this.f1478n / 2);
         return true;
     }
 
@@ -340,12 +340,12 @@ public class CharLinkedOpenCustomHashSet extends AbstractCharSortedSet implement
         this.size--;
         if (this.strategy.equals(k, 0)) {
             this.containsNull = false;
-            this.key[this.f1514n] = 0;
+            this.key[this.f1478n] = 0;
         } else {
             shiftKeys(pos);
         }
-        if (this.f1514n > this.minN && this.size < this.maxFill / 4 && this.f1514n > 16) {
-            rehash(this.f1514n / 2);
+        if (this.f1478n > this.minN && this.size < this.maxFill / 4 && this.f1478n > 16) {
+            rehash(this.f1478n / 2);
         }
         return k;
     }
@@ -365,12 +365,12 @@ public class CharLinkedOpenCustomHashSet extends AbstractCharSortedSet implement
         this.size--;
         if (this.strategy.equals(k, 0)) {
             this.containsNull = false;
-            this.key[this.f1514n] = 0;
+            this.key[this.f1478n] = 0;
         } else {
             shiftKeys(pos);
         }
-        if (this.f1514n > this.minN && this.size < this.maxFill / 4 && this.f1514n > 16) {
-            rehash(this.f1514n / 2);
+        if (this.f1478n > this.minN && this.size < this.maxFill / 4 && this.f1478n > 16) {
+            rehash(this.f1478n / 2);
         }
         return k;
     }
@@ -442,11 +442,11 @@ public class CharLinkedOpenCustomHashSet extends AbstractCharSortedSet implement
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToFirst(this.f1514n);
+            moveIndexToFirst(this.f1478n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f1514n;
+            pos = this.f1478n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -465,7 +465,7 @@ public class CharLinkedOpenCustomHashSet extends AbstractCharSortedSet implement
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f1515f));
+        rehash(HashCommon.arraySize(this.size, this.f1479f));
         return true;
     }
 
@@ -488,11 +488,11 @@ public class CharLinkedOpenCustomHashSet extends AbstractCharSortedSet implement
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToLast(this.f1514n);
+            moveIndexToLast(this.f1478n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f1514n;
+            pos = this.f1478n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -511,7 +511,7 @@ public class CharLinkedOpenCustomHashSet extends AbstractCharSortedSet implement
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f1515f));
+        rehash(HashCommon.arraySize(this.size, this.f1479f));
         return true;
     }
 
@@ -656,8 +656,8 @@ public class CharLinkedOpenCustomHashSet extends AbstractCharSortedSet implement
             this.index = -1;
             if (CharLinkedOpenCustomHashSet.this.strategy.equals(from, 0)) {
                 if (CharLinkedOpenCustomHashSet.this.containsNull) {
-                    this.next = (int) CharLinkedOpenCustomHashSet.this.link[CharLinkedOpenCustomHashSet.this.f1514n];
-                    this.prev = CharLinkedOpenCustomHashSet.this.f1514n;
+                    this.next = (int) CharLinkedOpenCustomHashSet.this.link[CharLinkedOpenCustomHashSet.this.f1478n];
+                    this.prev = CharLinkedOpenCustomHashSet.this.f1478n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + from + " does not belong to this set.");
@@ -796,9 +796,9 @@ public class CharLinkedOpenCustomHashSet extends AbstractCharSortedSet implement
             }
             int pos = this.curr;
             this.curr = -1;
-            if (pos == CharLinkedOpenCustomHashSet.this.f1514n) {
+            if (pos == CharLinkedOpenCustomHashSet.this.f1478n) {
                 CharLinkedOpenCustomHashSet.this.containsNull = false;
-                CharLinkedOpenCustomHashSet.this.key[CharLinkedOpenCustomHashSet.this.f1514n] = 0;
+                CharLinkedOpenCustomHashSet.this.key[CharLinkedOpenCustomHashSet.this.f1478n] = 0;
                 return;
             }
             char[] key = CharLinkedOpenCustomHashSet.this.key;
@@ -868,8 +868,8 @@ public class CharLinkedOpenCustomHashSet extends AbstractCharSortedSet implement
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1515f)));
-        if (l >= this.f1514n || this.size > HashCommon.maxFill(l, this.f1515f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1479f)));
+        if (l >= this.f1478n || this.size > HashCommon.maxFill(l, this.f1479f)) {
             return true;
         }
         try {
@@ -927,9 +927,9 @@ public class CharLinkedOpenCustomHashSet extends AbstractCharSortedSet implement
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f1514n = newN;
+        this.f1478n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f1514n, this.f1515f);
+        this.maxFill = HashCommon.maxFill(this.f1478n, this.f1479f);
         this.key = newKey;
     }
 
@@ -983,12 +983,12 @@ public class CharLinkedOpenCustomHashSet extends AbstractCharSortedSet implement
         int pos;
         int i;
         s.defaultReadObject();
-        this.f1514n = HashCommon.arraySize(this.size, this.f1515f);
-        this.maxFill = HashCommon.maxFill(this.f1514n, this.f1515f);
-        this.mask = this.f1514n - 1;
-        char[] key = new char[this.f1514n + 1];
+        this.f1478n = HashCommon.arraySize(this.size, this.f1479f);
+        this.maxFill = HashCommon.maxFill(this.f1478n, this.f1479f);
+        this.mask = this.f1478n - 1;
+        char[] key = new char[this.f1478n + 1];
         this.key = key;
-        long[] link = new long[this.f1514n + 1];
+        long[] link = new long[this.f1478n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -1001,7 +1001,7 @@ public class CharLinkedOpenCustomHashSet extends AbstractCharSortedSet implement
             }
             char k = s.readChar();
             if (this.strategy.equals(k, 0)) {
-                pos = this.f1514n;
+                pos = this.f1478n;
                 this.containsNull = true;
             } else {
                 int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;

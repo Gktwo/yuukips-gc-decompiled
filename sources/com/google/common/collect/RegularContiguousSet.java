@@ -30,9 +30,8 @@ public final class RegularContiguousSet<C extends Comparable> extends Contiguous
 
     /* JADX DEBUG: Multi-variable search result rejected for r4v0, resolved type: com.google.common.collect.RegularContiguousSet<C extends java.lang.Comparable> */
     /* JADX WARN: Multi-variable type inference failed */
-    /* access modifiers changed from: package-private */
     @Override // com.google.common.collect.ContiguousSet, com.google.common.collect.ImmutableSortedSet
-    public /* bridge */ /* synthetic */ ImmutableSortedSet headSetImpl(Object obj, boolean z) {
+    /* bridge */ /* synthetic */ ImmutableSortedSet headSetImpl(Object obj, boolean z) {
         return headSetImpl((RegularContiguousSet<C>) ((Comparable) obj), z);
     }
 
@@ -132,8 +131,9 @@ public final class RegularContiguousSet<C extends Comparable> extends Contiguous
         return right != null && Range.compareOrThrow(left, right) == 0;
     }
 
+    /* access modifiers changed from: package-private */
     @Override // com.google.common.collect.ImmutableCollection
-    boolean isPartialView() {
+    public boolean isPartialView() {
         return false;
     }
 

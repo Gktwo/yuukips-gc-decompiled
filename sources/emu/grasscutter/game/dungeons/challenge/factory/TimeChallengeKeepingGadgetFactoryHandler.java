@@ -81,6 +81,6 @@ public class TimeChallengeKeepingGadgetFactoryHandler implements ChallengeFactor
 
     @Override // emu.grasscutter.game.dungeons.challenge.factory.ChallengeFactoryHandler
     public boolean isThisType(int id_challenge, int type_challenge, int id_grup, int goal_kill, int timer, int step, Scene scene, SceneGroup group) {
-        return scene.getSceneType() == SceneType.SCENE_DUNGEON && id_grup == group.f957id && type_challenge == 188;
+        return scene.getSceneType() == SceneType.SCENE_DUNGEON && id_grup == group.f922id && type_challenge == 188;
     }
 }

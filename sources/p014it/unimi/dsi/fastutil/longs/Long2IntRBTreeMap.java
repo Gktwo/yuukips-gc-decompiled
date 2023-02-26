@@ -1000,7 +1000,7 @@ public class Long2IntRBTreeMap extends AbstractLong2IntSortedMap implements Seri
         long from;
 
         /* renamed from: to */
-        long f2334to;
+        long f2298to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Long2IntMap.Entry> entries;
@@ -1011,7 +1011,7 @@ public class Long2IntRBTreeMap extends AbstractLong2IntSortedMap implements Seri
             if (bottom || top || Long2IntRBTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f2334to = to;
+                this.f2298to = to;
                 this.top = top;
                 this.defRetValue = Long2IntRBTreeMap.this.defRetValue;
                 return;
@@ -1030,7 +1030,7 @@ public class Long2IntRBTreeMap extends AbstractLong2IntSortedMap implements Seri
 
         /* renamed from: in */
         final boolean m680in(long k) {
-            return (this.bottom || Long2IntRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Long2IntRBTreeMap.this.compare(k, this.f2334to) < 0);
+            return (this.bottom || Long2IntRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Long2IntRBTreeMap.this.compare(k, this.f2298to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.Long2IntMap, p014it.unimi.dsi.fastutil.longs.Long2IntSortedMap
@@ -1205,7 +1205,7 @@ public class Long2IntRBTreeMap extends AbstractLong2IntSortedMap implements Seri
         public int put(long k, int v) {
             Long2IntRBTreeMap.this.modified = false;
             if (!m680in(k)) {
-                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2334to)) + ")");
+                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2298to)) + ")");
             }
             return Long2IntRBTreeMap.this.modified ? this.defRetValue : Long2IntRBTreeMap.this.put(k, v);
         }
@@ -1243,7 +1243,7 @@ public class Long2IntRBTreeMap extends AbstractLong2IntSortedMap implements Seri
 
         @Override // p014it.unimi.dsi.fastutil.longs.Long2IntSortedMap
         public Long2IntSortedMap headMap(long to) {
-            if (!this.top && Long2IntRBTreeMap.this.compare(to, this.f2334to) >= 0) {
+            if (!this.top && Long2IntRBTreeMap.this.compare(to, this.f2298to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1254,7 +1254,7 @@ public class Long2IntRBTreeMap extends AbstractLong2IntSortedMap implements Seri
             if (!this.bottom && Long2IntRBTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f2334to, this.top);
+            return new Submap(from, false, this.f2298to, this.top);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -1273,7 +1273,7 @@ public class Long2IntRBTreeMap extends AbstractLong2IntSortedMap implements Seri
             }
             long to = j2;
             if (!this.top) {
-                to = Long2IntRBTreeMap.this.compare(j2, this.f2334to) < 0 ? j2 : this.f2334to;
+                to = Long2IntRBTreeMap.this.compare(j2, this.f2298to) < 0 ? j2 : this.f2298to;
             }
             long from = j;
             if (!this.bottom) {
@@ -1281,7 +1281,7 @@ public class Long2IntRBTreeMap extends AbstractLong2IntSortedMap implements Seri
             }
             if (!this.top && !this.bottom) {
                 if ((from == 1 ? 1 : 0) == this.from) {
-                    if ((to == 1 ? 1 : 0) == this.f2334to) {
+                    if ((to == 1 ? 1 : 0) == this.f2298to) {
                         return this;
                     }
                 }
@@ -1305,7 +1305,7 @@ public class Long2IntRBTreeMap extends AbstractLong2IntSortedMap implements Seri
             if (e == null) {
                 return null;
             }
-            if (this.top || Long2IntRBTreeMap.this.compare(e.key, this.f2334to) < 0) {
+            if (this.top || Long2IntRBTreeMap.this.compare(e.key, this.f2298to) < 0) {
                 return e;
             }
             return null;
@@ -1319,8 +1319,8 @@ public class Long2IntRBTreeMap extends AbstractLong2IntSortedMap implements Seri
             if (this.top) {
                 e = Long2IntRBTreeMap.this.lastEntry;
             } else {
-                e = Long2IntRBTreeMap.this.locateKey(this.f2334to);
-                if (Long2IntRBTreeMap.this.compare(e.key, this.f2334to) >= 0) {
+                e = Long2IntRBTreeMap.this.locateKey(this.f2298to);
+                if (Long2IntRBTreeMap.this.compare(e.key, this.f2298to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1398,7 +1398,7 @@ public class Long2IntRBTreeMap extends AbstractLong2IntSortedMap implements Seri
             @Override // p014it.unimi.dsi.fastutil.longs.Long2IntRBTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Long2IntRBTreeMap.this.compare(this.next.key, Submap.this.f2334to) >= 0) {
+                if (!Submap.this.top && this.next != null && Long2IntRBTreeMap.this.compare(this.next.key, Submap.this.f2298to) >= 0) {
                     this.next = null;
                 }
             }

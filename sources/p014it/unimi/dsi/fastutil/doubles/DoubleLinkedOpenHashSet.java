@@ -30,13 +30,13 @@ public class DoubleLinkedOpenHashSet extends AbstractDoubleSortedSet implements 
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f1734n;
+    protected transient int f1698n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1735f;
+    protected final float f1699f;
     private static final int SPLITERATOR_CHARACTERISTICS = 337;
 
     public DoubleLinkedOpenHashSet(int expected, float f) {
@@ -47,14 +47,14 @@ public class DoubleLinkedOpenHashSet extends AbstractDoubleSortedSet implements 
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1735f = f;
+            this.f1699f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1734n = arraySize;
+            this.f1698n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1734n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1734n, f);
-            this.key = new double[this.f1734n + 1];
-            this.link = new long[this.f1734n + 1];
+            this.mask = this.f1698n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1698n, f);
+            this.key = new double[this.f1698n + 1];
+            this.link = new long[this.f1698n + 1];
         }
     }
 
@@ -195,22 +195,22 @@ public class DoubleLinkedOpenHashSet extends AbstractDoubleSortedSet implements 
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1735f);
-        if (needed > this.f1734n) {
+        int needed = HashCommon.arraySize(capacity, this.f1699f);
+        if (needed > this.f1698n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1735f)))));
-        if (needed > this.f1734n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1699f)))));
+        if (needed > this.f1698n) {
             rehash(needed);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleCollection, p014it.unimi.dsi.fastutil.doubles.DoubleCollection
     public boolean addAll(DoubleCollection c) {
-        if (((double) this.f1735f) <= 0.5d) {
+        if (((double) this.f1699f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -220,7 +220,7 @@ public class DoubleLinkedOpenHashSet extends AbstractDoubleSortedSet implements 
 
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Double> c) {
-        if (((double) this.f1735f) <= 0.5d) {
+        if (((double) this.f1699f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -254,7 +254,7 @@ public class DoubleLinkedOpenHashSet extends AbstractDoubleSortedSet implements 
         } else if (this.containsNull) {
             return false;
         } else {
-            pos = this.f1734n;
+            pos = this.f1698n;
             this.containsNull = true;
         }
         if (this.size == 0) {
@@ -273,7 +273,7 @@ public class DoubleLinkedOpenHashSet extends AbstractDoubleSortedSet implements 
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f1735f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f1699f));
         return true;
     }
 
@@ -311,22 +311,22 @@ public class DoubleLinkedOpenHashSet extends AbstractDoubleSortedSet implements 
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f1734n <= this.minN || this.size >= this.maxFill / 4 || this.f1734n <= 16) {
+        if (this.f1698n <= this.minN || this.size >= this.maxFill / 4 || this.f1698n <= 16) {
             return true;
         }
-        rehash(this.f1734n / 2);
+        rehash(this.f1698n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f1734n] = 0.0d;
+        this.key[this.f1698n] = 0.0d;
         this.size--;
-        fixPointers(this.f1734n);
-        if (this.f1734n <= this.minN || this.size >= this.maxFill / 4 || this.f1734n <= 16) {
+        fixPointers(this.f1698n);
+        if (this.f1698n <= this.minN || this.size >= this.maxFill / 4 || this.f1698n <= 16) {
             return true;
         }
-        rehash(this.f1734n / 2);
+        rehash(this.f1698n / 2);
         return true;
     }
 
@@ -402,12 +402,12 @@ public class DoubleLinkedOpenHashSet extends AbstractDoubleSortedSet implements 
         this.size--;
         if (Double.doubleToLongBits(k) == 0) {
             this.containsNull = false;
-            this.key[this.f1734n] = 0.0d;
+            this.key[this.f1698n] = 0.0d;
         } else {
             shiftKeys(pos);
         }
-        if (this.f1734n > this.minN && this.size < this.maxFill / 4 && this.f1734n > 16) {
-            rehash(this.f1734n / 2);
+        if (this.f1698n > this.minN && this.size < this.maxFill / 4 && this.f1698n > 16) {
+            rehash(this.f1698n / 2);
         }
         return k;
     }
@@ -427,12 +427,12 @@ public class DoubleLinkedOpenHashSet extends AbstractDoubleSortedSet implements 
         this.size--;
         if (Double.doubleToLongBits(k) == 0) {
             this.containsNull = false;
-            this.key[this.f1734n] = 0.0d;
+            this.key[this.f1698n] = 0.0d;
         } else {
             shiftKeys(pos);
         }
-        if (this.f1734n > this.minN && this.size < this.maxFill / 4 && this.f1734n > 16) {
-            rehash(this.f1734n / 2);
+        if (this.f1698n > this.minN && this.size < this.maxFill / 4 && this.f1698n > 16) {
+            rehash(this.f1698n / 2);
         }
         return k;
     }
@@ -504,11 +504,11 @@ public class DoubleLinkedOpenHashSet extends AbstractDoubleSortedSet implements 
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToFirst(this.f1734n);
+            moveIndexToFirst(this.f1698n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f1734n;
+            pos = this.f1698n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -527,7 +527,7 @@ public class DoubleLinkedOpenHashSet extends AbstractDoubleSortedSet implements 
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f1735f));
+        rehash(HashCommon.arraySize(this.size, this.f1699f));
         return true;
     }
 
@@ -550,11 +550,11 @@ public class DoubleLinkedOpenHashSet extends AbstractDoubleSortedSet implements 
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToLast(this.f1734n);
+            moveIndexToLast(this.f1698n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f1734n;
+            pos = this.f1698n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -573,7 +573,7 @@ public class DoubleLinkedOpenHashSet extends AbstractDoubleSortedSet implements 
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f1735f));
+        rehash(HashCommon.arraySize(this.size, this.f1699f));
         return true;
     }
 
@@ -718,8 +718,8 @@ public class DoubleLinkedOpenHashSet extends AbstractDoubleSortedSet implements 
             this.index = -1;
             if (Double.doubleToLongBits(from) == 0) {
                 if (DoubleLinkedOpenHashSet.this.containsNull) {
-                    this.next = (int) DoubleLinkedOpenHashSet.this.link[DoubleLinkedOpenHashSet.this.f1734n];
-                    this.prev = DoubleLinkedOpenHashSet.this.f1734n;
+                    this.next = (int) DoubleLinkedOpenHashSet.this.link[DoubleLinkedOpenHashSet.this.f1698n];
+                    this.prev = DoubleLinkedOpenHashSet.this.f1698n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + from + " does not belong to this set.");
@@ -858,9 +858,9 @@ public class DoubleLinkedOpenHashSet extends AbstractDoubleSortedSet implements 
             }
             int pos = this.curr;
             this.curr = -1;
-            if (pos == DoubleLinkedOpenHashSet.this.f1734n) {
+            if (pos == DoubleLinkedOpenHashSet.this.f1698n) {
                 DoubleLinkedOpenHashSet.this.containsNull = false;
-                DoubleLinkedOpenHashSet.this.key[DoubleLinkedOpenHashSet.this.f1734n] = 0.0d;
+                DoubleLinkedOpenHashSet.this.key[DoubleLinkedOpenHashSet.this.f1698n] = 0.0d;
                 return;
             }
             double[] key = DoubleLinkedOpenHashSet.this.key;
@@ -930,8 +930,8 @@ public class DoubleLinkedOpenHashSet extends AbstractDoubleSortedSet implements 
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1735f)));
-        if (l >= this.f1734n || this.size > HashCommon.maxFill(l, this.f1735f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1699f)));
+        if (l >= this.f1698n || this.size > HashCommon.maxFill(l, this.f1699f)) {
             return true;
         }
         try {
@@ -989,9 +989,9 @@ public class DoubleLinkedOpenHashSet extends AbstractDoubleSortedSet implements 
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f1734n = newN;
+        this.f1698n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f1734n, this.f1735f);
+        this.maxFill = HashCommon.maxFill(this.f1698n, this.f1699f);
         this.key = newKey;
     }
 
@@ -1044,12 +1044,12 @@ public class DoubleLinkedOpenHashSet extends AbstractDoubleSortedSet implements 
         int pos;
         int i;
         s.defaultReadObject();
-        this.f1734n = HashCommon.arraySize(this.size, this.f1735f);
-        this.maxFill = HashCommon.maxFill(this.f1734n, this.f1735f);
-        this.mask = this.f1734n - 1;
-        double[] key = new double[this.f1734n + 1];
+        this.f1698n = HashCommon.arraySize(this.size, this.f1699f);
+        this.maxFill = HashCommon.maxFill(this.f1698n, this.f1699f);
+        this.mask = this.f1698n - 1;
+        double[] key = new double[this.f1698n + 1];
         this.key = key;
-        long[] link = new long[this.f1734n + 1];
+        long[] link = new long[this.f1698n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -1062,7 +1062,7 @@ public class DoubleLinkedOpenHashSet extends AbstractDoubleSortedSet implements 
             }
             double k = s.readDouble();
             if (Double.doubleToLongBits(k) == 0) {
-                pos = this.f1734n;
+                pos = this.f1698n;
                 this.containsNull = true;
             } else {
                 int mix = ((int) HashCommon.mix(Double.doubleToRawLongBits(k))) & this.mask;

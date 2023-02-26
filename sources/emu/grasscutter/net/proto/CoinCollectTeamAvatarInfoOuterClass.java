@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CoinCollectTeamAvatarInfoOuterClass.class */
 public final class CoinCollectTeamAvatarInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fCoinCollectTeamAvatarInfo.proto\"B\n\u0019CoinCollectTeamAvatarInfo\u0012\u0011\n\tavatar_id\u0018\u0005 \u0001(\r\u0012\u0012\n\ncostume_id\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fCoinCollectTeamAvatarInfo.proto\"@\n\u0019CoinCollectTeamAvatarInfo\u0012\u0011\n\tcostumeId\u0018\u000f \u0001(\r\u0012\u0010\n\bavatarId\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_CoinCollectTeamAvatarInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_CoinCollectTeamAvatarInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CoinCollectTeamAvatarInfo_descriptor, new String[]{"AvatarId", "CostumeId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_CoinCollectTeamAvatarInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CoinCollectTeamAvatarInfo_descriptor, new String[]{"CostumeId", "AvatarId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CoinCollectTeamAvatarInfoOuterClass$CoinCollectTeamAvatarInfoOrBuilder.class */
     public interface CoinCollectTeamAvatarInfoOrBuilder extends MessageOrBuilder {
-        int getAvatarId();
-
         int getCostumeId();
+
+        int getAvatarId();
     }
 
     private CoinCollectTeamAvatarInfoOuterClass() {
@@ -43,10 +43,10 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CoinCollectTeamAvatarInfoOuterClass$CoinCollectTeamAvatarInfo.class */
     public static final class CoinCollectTeamAvatarInfo extends GeneratedMessageV3 implements CoinCollectTeamAvatarInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_ID_FIELD_NUMBER = 5;
-        private int avatarId_;
-        public static final int COSTUME_ID_FIELD_NUMBER = 1;
+        public static final int COSTUMEID_FIELD_NUMBER = 15;
         private int costumeId_;
+        public static final int AVATARID_FIELD_NUMBER = 8;
+        private int avatarId_;
         private byte memoizedIsInitialized;
         private static final CoinCollectTeamAvatarInfo DEFAULT_INSTANCE = new CoinCollectTeamAvatarInfo();
         private static final Parser<CoinCollectTeamAvatarInfo> PARSER = new AbstractParser<CoinCollectTeamAvatarInfo>() { // from class: emu.grasscutter.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfo.1
@@ -92,11 +92,11 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
-                                this.costumeId_ = input.readUInt32();
-                                break;
-                            case 40:
+                            case 64:
                                 this.avatarId_ = input.readUInt32();
+                                break;
+                            case 120:
+                                this.costumeId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -128,13 +128,13 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfoOrBuilder
-        public int getAvatarId() {
-            return this.avatarId_;
+        public int getCostumeId() {
+            return this.costumeId_;
         }
 
         @Override // emu.grasscutter.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfoOrBuilder
-        public int getCostumeId() {
-            return this.costumeId_;
+        public int getAvatarId() {
+            return this.avatarId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -152,11 +152,11 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.costumeId_ != 0) {
-                output.writeUInt32(1, this.costumeId_);
-            }
             if (this.avatarId_ != 0) {
-                output.writeUInt32(5, this.avatarId_);
+                output.writeUInt32(8, this.avatarId_);
+            }
+            if (this.costumeId_ != 0) {
+                output.writeUInt32(15, this.costumeId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.costumeId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.costumeId_);
-            }
             if (this.avatarId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.avatarId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(8, this.avatarId_);
+            }
+            if (this.costumeId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.costumeId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -188,7 +188,7 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
                 return equals(obj);
             }
             CoinCollectTeamAvatarInfo other = (CoinCollectTeamAvatarInfo) obj;
-            return getAvatarId() == other.getAvatarId() && getCostumeId() == other.getCostumeId() && this.unknownFields.equals(other.unknownFields);
+            return getCostumeId() == other.getCostumeId() && getAvatarId() == other.getAvatarId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -196,7 +196,7 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getAvatarId())) + 1)) + getCostumeId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getCostumeId())) + 8)) + getAvatarId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -275,8 +275,8 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CoinCollectTeamAvatarInfoOuterClass$CoinCollectTeamAvatarInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements CoinCollectTeamAvatarInfoOrBuilder {
-            private int avatarId_;
             private int costumeId_;
+            private int avatarId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return CoinCollectTeamAvatarInfoOuterClass.internal_static_CoinCollectTeamAvatarInfo_descriptor;
@@ -304,8 +304,8 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.avatarId_ = 0;
                 this.costumeId_ = 0;
+                this.avatarId_ = 0;
                 return this;
             }
 
@@ -331,8 +331,8 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public CoinCollectTeamAvatarInfo buildPartial() {
                 CoinCollectTeamAvatarInfo result = new CoinCollectTeamAvatarInfo(this);
-                result.avatarId_ = this.avatarId_;
                 result.costumeId_ = this.costumeId_;
+                result.avatarId_ = this.avatarId_;
                 onBuilt();
                 return result;
             }
@@ -380,11 +380,11 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
                 if (other == CoinCollectTeamAvatarInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getAvatarId() != 0) {
-                    setAvatarId(other.getAvatarId());
-                }
                 if (other.getCostumeId() != 0) {
                     setCostumeId(other.getCostumeId());
+                }
+                if (other.getAvatarId() != 0) {
+                    setAvatarId(other.getAvatarId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -419,23 +419,6 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfoOrBuilder
-            public int getAvatarId() {
-                return this.avatarId_;
-            }
-
-            public Builder setAvatarId(int value) {
-                this.avatarId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearAvatarId() {
-                this.avatarId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfoOrBuilder
             public int getCostumeId() {
                 return this.costumeId_;
             }
@@ -448,6 +431,23 @@ public final class CoinCollectTeamAvatarInfoOuterClass {
 
             public Builder clearCostumeId() {
                 this.costumeId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.CoinCollectTeamAvatarInfoOuterClass.CoinCollectTeamAvatarInfoOrBuilder
+            public int getAvatarId() {
+                return this.avatarId_;
+            }
+
+            public Builder setAvatarId(int value) {
+                this.avatarId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearAvatarId() {
+                this.avatarId_ = 0;
                 onChanged();
                 return this;
             }

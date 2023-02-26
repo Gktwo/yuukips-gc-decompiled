@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SocialShowAvatarInfoOuterClass.class */
 public final class SocialShowAvatarInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aSocialShowAvatarInfo.proto\"L\n\u0014SocialShowAvatarInfo\u0012\u0011\n\tavatar_id\u0018\u0001 \u0001(\r\u0012\r\n\u0005level\u0018\u0002 \u0001(\r\u0012\u0012\n\ncostume_id\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aSocialShowAvatarInfo.proto\"J\n\u0014SocialShowAvatarInfo\u0012\u0010\n\bavatarId\u0018\u0001 \u0001(\r\u0012\r\n\u0005level\u0018\u0002 \u0001(\r\u0012\u0011\n\tcostumeId\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SocialShowAvatarInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SocialShowAvatarInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SocialShowAvatarInfo_descriptor, new String[]{"AvatarId", "Level", "CostumeId"});
 
@@ -45,11 +45,11 @@ public final class SocialShowAvatarInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SocialShowAvatarInfoOuterClass$SocialShowAvatarInfo.class */
     public static final class SocialShowAvatarInfo extends GeneratedMessageV3 implements SocialShowAvatarInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_ID_FIELD_NUMBER = 1;
+        public static final int AVATARID_FIELD_NUMBER = 1;
         private int avatarId_;
         public static final int LEVEL_FIELD_NUMBER = 2;
         private int level_;
-        public static final int COSTUME_ID_FIELD_NUMBER = 3;
+        public static final int COSTUMEID_FIELD_NUMBER = 3;
         private int costumeId_;
         private byte memoizedIsInitialized;
         private static final SocialShowAvatarInfo DEFAULT_INSTANCE = new SocialShowAvatarInfo();

@@ -568,15 +568,15 @@ public final class ShortBigArrays {
         private final long from;
 
         /* renamed from: to */
-        private final long f3036to;
+        private final long f3000to;
 
         /* renamed from: x */
-        private final short[][] f3037x;
+        private final short[][] f3001x;
 
         public ForkJoinQuickSort(short[][] x, long from, long to) {
             this.from = from;
-            this.f3036to = to;
-            this.f3037x = x;
+            this.f3000to = to;
+            this.f3001x = x;
         }
 
         /* JADX DEBUG: Failed to insert an additional move for type inference into block B:40:0x00ad */
@@ -642,16 +642,16 @@ public final class ShortBigArrays {
         private final long from;
 
         /* renamed from: to */
-        private final long f3038to;
+        private final long f3002to;
 
         /* renamed from: x */
-        private final short[][] f3039x;
+        private final short[][] f3003x;
         private final ShortComparator comp;
 
         public ForkJoinQuickSortComp(short[][] x, long from, long to, ShortComparator comp) {
             this.from = from;
-            this.f3038to = to;
-            this.f3039x = x;
+            this.f3002to = to;
+            this.f3003x = x;
             this.comp = comp;
         }
 

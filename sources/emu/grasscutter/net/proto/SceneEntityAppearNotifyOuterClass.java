@@ -26,7 +26,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneEntityAppearNotifyOuterClass.class */
 public final class SceneEntityAppearNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dSceneEntityAppearNotify.proto\u001a\u0015SceneEntityInfo.proto\u001a\u0010VisionType.proto\"q\n\u0017SceneEntityAppearNotify\u0012%\n\u000bentity_list\u0018\u000f \u0003(\u000b2\u0010.SceneEntityInfo\u0012 \n\u000bappear_type\u0018\u0001 \u0001(\u000e2\u000b.VisionType\u0012\r\n\u0005param\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{SceneEntityInfoOuterClass.getDescriptor(), VisionTypeOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dSceneEntityAppearNotify.proto\u001a\u0010VisionType.proto\u001a\u0015SceneEntityInfo.proto\"o\n\u0017SceneEntityAppearNotify\u0012$\n\nentityList\u0018\n \u0003(\u000b2\u0010.SceneEntityInfo\u0012\u001f\n\nappearType\u0018\u0003 \u0001(\u000e2\u000b.VisionType\u0012\r\n\u0005param\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VisionTypeOuterClass.getDescriptor(), SceneEntityInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SceneEntityAppearNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SceneEntityAppearNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneEntityAppearNotify_descriptor, new String[]{"EntityList", "AppearType", "Param"});
 
@@ -62,11 +62,11 @@ public final class SceneEntityAppearNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneEntityAppearNotifyOuterClass$SceneEntityAppearNotify.class */
     public static final class SceneEntityAppearNotify extends GeneratedMessageV3 implements SceneEntityAppearNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTITY_LIST_FIELD_NUMBER = 15;
+        public static final int ENTITYLIST_FIELD_NUMBER = 10;
         private List<SceneEntityInfoOuterClass.SceneEntityInfo> entityList_;
-        public static final int APPEAR_TYPE_FIELD_NUMBER = 1;
+        public static final int APPEARTYPE_FIELD_NUMBER = 3;
         private int appearType_;
-        public static final int PARAM_FIELD_NUMBER = 7;
+        public static final int PARAM_FIELD_NUMBER = 14;
         private int param_;
         private byte memoizedIsInitialized;
         private static final SceneEntityAppearNotify DEFAULT_INSTANCE = new SceneEntityAppearNotify();
@@ -117,18 +117,18 @@ public final class SceneEntityAppearNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
+                            case 24:
                                 this.appearType_ = input.readEnum();
                                 break;
-                            case 56:
-                                this.param_ = input.readUInt32();
-                                break;
-                            case 122:
+                            case 82:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.entityList_ = new ArrayList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.entityList_.add((SceneEntityInfoOuterClass.SceneEntityInfo) input.readMessage(SceneEntityInfoOuterClass.SceneEntityInfo.parser(), extensionRegistry));
+                                break;
+                            case 112:
+                                this.param_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -219,13 +219,13 @@ public final class SceneEntityAppearNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.appearType_ != VisionTypeOuterClass.VisionType.VISION_TYPE_NONE.getNumber()) {
-                output.writeEnum(1, this.appearType_);
-            }
-            if (this.param_ != 0) {
-                output.writeUInt32(7, this.param_);
+                output.writeEnum(3, this.appearType_);
             }
             for (int i = 0; i < this.entityList_.size(); i++) {
-                output.writeMessage(15, this.entityList_.get(i));
+                output.writeMessage(10, this.entityList_.get(i));
+            }
+            if (this.param_ != 0) {
+                output.writeUInt32(14, this.param_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -238,13 +238,13 @@ public final class SceneEntityAppearNotifyOuterClass {
             }
             int size2 = 0;
             if (this.appearType_ != VisionTypeOuterClass.VisionType.VISION_TYPE_NONE.getNumber()) {
-                size2 = 0 + CodedOutputStream.computeEnumSize(1, this.appearType_);
-            }
-            if (this.param_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.param_);
+                size2 = 0 + CodedOutputStream.computeEnumSize(3, this.appearType_);
             }
             for (int i = 0; i < this.entityList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(15, this.entityList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(10, this.entityList_.get(i));
+            }
+            if (this.param_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(14, this.param_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -270,9 +270,9 @@ public final class SceneEntityAppearNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getEntityListCount() > 0) {
-                hash = (53 * ((37 * hash) + 15)) + getEntityListList().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getEntityListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 1)) + this.appearType_)) + 7)) + getParam())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 3)) + this.appearType_)) + 14)) + getParam())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -796,7 +796,7 @@ public final class SceneEntityAppearNotifyOuterClass {
     }
 
     static {
-        SceneEntityInfoOuterClass.getDescriptor();
         VisionTypeOuterClass.getDescriptor();
+        SceneEntityInfoOuterClass.getDescriptor();
     }
 }

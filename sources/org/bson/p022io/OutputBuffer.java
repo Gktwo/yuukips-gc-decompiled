@@ -137,12 +137,12 @@ public abstract class OutputBuffer extends OutputStream implements BsonOutput {
                     write((byte) (128 + (c & 63)));
                     total += 2;
                 } else if (c < 65536) {
-                    write((byte) (PacketOpcodes.WorldPlayerLocationNotify + (c >> 12)));
+                    write((byte) (PacketOpcodes.SceneAvatarStaminaStepRsp + (c >> 12)));
                     write((byte) (128 + ((c >> 6) & 63)));
                     write((byte) (128 + (c & 63)));
                     total += 3;
                 } else {
-                    write((byte) (PacketOpcodes.ExecuteGadgetLuaRsp + (c >> 18)));
+                    write((byte) (PacketOpcodes.SceneKickPlayerRsp + (c >> 18)));
                     write((byte) (128 + ((c >> 12) & 63)));
                     write((byte) (128 + ((c >> 6) & 63)));
                     write((byte) (128 + (c & 63)));

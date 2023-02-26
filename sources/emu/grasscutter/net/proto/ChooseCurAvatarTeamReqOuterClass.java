@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChooseCurAvatarTeamReqOuterClass.class */
 public final class ChooseCurAvatarTeamReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cChooseCurAvatarTeamReq.proto\")\n\u0016ChooseCurAvatarTeamReq\u0012\u000f\n\u0007team_id\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cChooseCurAvatarTeamReq.proto\"(\n\u0016ChooseCurAvatarTeamReq\u0012\u000e\n\u0006teamId\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ChooseCurAvatarTeamReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChooseCurAvatarTeamReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChooseCurAvatarTeamReq_descriptor, new String[]{"TeamId"});
 
@@ -41,7 +41,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChooseCurAvatarTeamReqOuterClass$ChooseCurAvatarTeamReq.class */
     public static final class ChooseCurAvatarTeamReq extends GeneratedMessageV3 implements ChooseCurAvatarTeamReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TEAM_ID_FIELD_NUMBER = 10;
+        public static final int TEAMID_FIELD_NUMBER = 6;
         private int teamId_;
         private byte memoizedIsInitialized;
         private static final ChooseCurAvatarTeamReq DEFAULT_INSTANCE = new ChooseCurAvatarTeamReq();
@@ -88,7 +88,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 80:
+                            case 48:
                                 this.teamId_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.teamId_ != 0) {
-                output.writeUInt32(10, this.teamId_);
+                output.writeUInt32(6, this.teamId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
             }
             int size2 = 0;
             if (this.teamId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(10, this.teamId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.teamId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getTeamId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getTeamId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

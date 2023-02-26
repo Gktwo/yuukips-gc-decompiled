@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestDelNotifyOuterClass.class */
 public final class QuestDelNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014QuestDelNotify.proto\"\"\n\u000eQuestDelNotify\u0012\u0010\n\bquest_id\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014QuestDelNotify.proto\"!\n\u000eQuestDelNotify\u0012\u000f\n\u0007questId\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_QuestDelNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_QuestDelNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QuestDelNotify_descriptor, new String[]{"QuestId"});
 
@@ -41,7 +41,7 @@ public final class QuestDelNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestDelNotifyOuterClass$QuestDelNotify.class */
     public static final class QuestDelNotify extends GeneratedMessageV3 implements QuestDelNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int QUEST_ID_FIELD_NUMBER = 8;
+        public static final int QUESTID_FIELD_NUMBER = 15;
         private int questId_;
         private byte memoizedIsInitialized;
         private static final QuestDelNotify DEFAULT_INSTANCE = new QuestDelNotify();
@@ -88,7 +88,7 @@ public final class QuestDelNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 64:
+                            case 120:
                                 this.questId_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class QuestDelNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.questId_ != 0) {
-                output.writeUInt32(8, this.questId_);
+                output.writeUInt32(15, this.questId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class QuestDelNotifyOuterClass {
             }
             int size2 = 0;
             if (this.questId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(8, this.questId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(15, this.questId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class QuestDelNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getQuestId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getQuestId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

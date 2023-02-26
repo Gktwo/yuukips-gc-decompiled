@@ -15,7 +15,7 @@ public class PacketPlayerLoginRsp extends BasePacket {
     private static QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp regionCache;
 
     public PacketPlayerLoginRsp(GameSession session) {
-        super(119, 1);
+        super(198, 1);
         RegionInfoOuterClass.RegionInfo info;
         setUseDispatchKey(true);
         if (regionCache == null) {

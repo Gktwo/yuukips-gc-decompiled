@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetOpenStateReqOuterClass.class */
 public final class SetOpenStateReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015SetOpenStateReq.proto\"-\n\u000fSetOpenStateReq\u0012\u000b\n\u0003key\u0018\n \u0001(\r\u0012\r\n\u0005value\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015SetOpenStateReq.proto\"-\n\u000fSetOpenStateReq\u0012\r\n\u0005value\u0018\u000e \u0001(\r\u0012\u000b\n\u0003key\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SetOpenStateReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetOpenStateReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetOpenStateReq_descriptor, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetOpenStateReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetOpenStateReq_descriptor, new String[]{"Value", "Key"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetOpenStateReqOuterClass$SetOpenStateReqOrBuilder.class */
     public interface SetOpenStateReqOrBuilder extends MessageOrBuilder {
-        int getKey();
-
         int getValue();
+
+        int getKey();
     }
 
     private SetOpenStateReqOuterClass() {
@@ -43,10 +43,10 @@ public final class SetOpenStateReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetOpenStateReqOuterClass$SetOpenStateReq.class */
     public static final class SetOpenStateReq extends GeneratedMessageV3 implements SetOpenStateReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int KEY_FIELD_NUMBER = 10;
-        private int key_;
-        public static final int VALUE_FIELD_NUMBER = 12;
+        public static final int VALUE_FIELD_NUMBER = 14;
         private int value_;
+        public static final int KEY_FIELD_NUMBER = 7;
+        private int key_;
         private byte memoizedIsInitialized;
         private static final SetOpenStateReq DEFAULT_INSTANCE = new SetOpenStateReq();
         private static final Parser<SetOpenStateReq> PARSER = new AbstractParser<SetOpenStateReq>() { // from class: emu.grasscutter.net.proto.SetOpenStateReqOuterClass.SetOpenStateReq.1
@@ -92,10 +92,10 @@ public final class SetOpenStateReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 80:
+                            case 56:
                                 this.key_ = input.readUInt32();
                                 break;
-                            case 96:
+                            case 112:
                                 this.value_ = input.readUInt32();
                                 break;
                             default:
@@ -128,13 +128,13 @@ public final class SetOpenStateReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SetOpenStateReqOuterClass.SetOpenStateReqOrBuilder
-        public int getKey() {
-            return this.key_;
+        public int getValue() {
+            return this.value_;
         }
 
         @Override // emu.grasscutter.net.proto.SetOpenStateReqOuterClass.SetOpenStateReqOrBuilder
-        public int getValue() {
-            return this.value_;
+        public int getKey() {
+            return this.key_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -153,10 +153,10 @@ public final class SetOpenStateReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.key_ != 0) {
-                output.writeUInt32(10, this.key_);
+                output.writeUInt32(7, this.key_);
             }
             if (this.value_ != 0) {
-                output.writeUInt32(12, this.value_);
+                output.writeUInt32(14, this.value_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class SetOpenStateReqOuterClass {
             }
             int size2 = 0;
             if (this.key_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(10, this.key_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.key_);
             }
             if (this.value_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.value_);
+                size2 += CodedOutputStream.computeUInt32Size(14, this.value_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -188,7 +188,7 @@ public final class SetOpenStateReqOuterClass {
                 return equals(obj);
             }
             SetOpenStateReq other = (SetOpenStateReq) obj;
-            return getKey() == other.getKey() && getValue() == other.getValue() && this.unknownFields.equals(other.unknownFields);
+            return getValue() == other.getValue() && getKey() == other.getKey() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -196,7 +196,7 @@ public final class SetOpenStateReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getKey())) + 12)) + getValue())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getValue())) + 7)) + getKey())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -275,8 +275,8 @@ public final class SetOpenStateReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetOpenStateReqOuterClass$SetOpenStateReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SetOpenStateReqOrBuilder {
-            private int key_;
             private int value_;
+            private int key_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return SetOpenStateReqOuterClass.internal_static_SetOpenStateReq_descriptor;
@@ -304,8 +304,8 @@ public final class SetOpenStateReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.key_ = 0;
                 this.value_ = 0;
+                this.key_ = 0;
                 return this;
             }
 
@@ -331,8 +331,8 @@ public final class SetOpenStateReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public SetOpenStateReq buildPartial() {
                 SetOpenStateReq result = new SetOpenStateReq(this);
-                result.key_ = this.key_;
                 result.value_ = this.value_;
+                result.key_ = this.key_;
                 onBuilt();
                 return result;
             }
@@ -380,11 +380,11 @@ public final class SetOpenStateReqOuterClass {
                 if (other == SetOpenStateReq.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getKey() != 0) {
-                    setKey(other.getKey());
-                }
                 if (other.getValue() != 0) {
                     setValue(other.getValue());
+                }
+                if (other.getKey() != 0) {
+                    setKey(other.getKey());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -419,23 +419,6 @@ public final class SetOpenStateReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.SetOpenStateReqOuterClass.SetOpenStateReqOrBuilder
-            public int getKey() {
-                return this.key_;
-            }
-
-            public Builder setKey(int value) {
-                this.key_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearKey() {
-                this.key_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.SetOpenStateReqOuterClass.SetOpenStateReqOrBuilder
             public int getValue() {
                 return this.value_;
             }
@@ -448,6 +431,23 @@ public final class SetOpenStateReqOuterClass {
 
             public Builder clearValue() {
                 this.value_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SetOpenStateReqOuterClass.SetOpenStateReqOrBuilder
+            public int getKey() {
+                return this.key_;
+            }
+
+            public Builder setKey(int value) {
+                this.key_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearKey() {
+                this.key_ = 0;
                 onChanged();
                 return this;
             }

@@ -351,57 +351,57 @@ public abstract class ReferenceCountedOpenSslContext extends SslContext implemen
 
     /* renamed from: io.netty.handler.ssl.ReferenceCountedOpenSslContext$3 */
     /* loaded from: grasscutter.jar:io/netty/handler/ssl/ReferenceCountedOpenSslContext$3.class */
-    static /* synthetic */ class C30373 {
+    static /* synthetic */ class C30293 {
 
         /* renamed from: $SwitchMap$io$netty$handler$ssl$OpenSslCertificateCompressionConfig$AlgorithmMode */
-        static final /* synthetic */ int[] f1020xca5a932f;
+        static final /* synthetic */ int[] f984xca5a932f;
 
         static {
             try {
-                f1022xcbdfafc1[ApplicationProtocolConfig.SelectedListenerFailureBehavior.CHOOSE_MY_LAST_PROTOCOL.ordinal()] = 1;
+                f986xcbdfafc1[ApplicationProtocolConfig.SelectedListenerFailureBehavior.CHOOSE_MY_LAST_PROTOCOL.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f1022xcbdfafc1[ApplicationProtocolConfig.SelectedListenerFailureBehavior.ACCEPT.ordinal()] = 2;
+                f986xcbdfafc1[ApplicationProtocolConfig.SelectedListenerFailureBehavior.ACCEPT.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
-            f1021xb32e3251 = new int[ApplicationProtocolConfig.SelectorFailureBehavior.values().length];
+            f985xb32e3251 = new int[ApplicationProtocolConfig.SelectorFailureBehavior.values().length];
             try {
-                f1021xb32e3251[ApplicationProtocolConfig.SelectorFailureBehavior.NO_ADVERTISE.ordinal()] = 1;
+                f985xb32e3251[ApplicationProtocolConfig.SelectorFailureBehavior.NO_ADVERTISE.ordinal()] = 1;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f1021xb32e3251[ApplicationProtocolConfig.SelectorFailureBehavior.CHOOSE_MY_LAST_PROTOCOL.ordinal()] = 2;
+                f985xb32e3251[ApplicationProtocolConfig.SelectorFailureBehavior.CHOOSE_MY_LAST_PROTOCOL.ordinal()] = 2;
             } catch (NoSuchFieldError e4) {
             }
-            f1020xca5a932f = new int[OpenSslCertificateCompressionConfig.AlgorithmMode.values().length];
+            f984xca5a932f = new int[OpenSslCertificateCompressionConfig.AlgorithmMode.values().length];
             try {
-                f1020xca5a932f[OpenSslCertificateCompressionConfig.AlgorithmMode.Decompress.ordinal()] = 1;
+                f984xca5a932f[OpenSslCertificateCompressionConfig.AlgorithmMode.Decompress.ordinal()] = 1;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f1020xca5a932f[OpenSslCertificateCompressionConfig.AlgorithmMode.Compress.ordinal()] = 2;
+                f984xca5a932f[OpenSslCertificateCompressionConfig.AlgorithmMode.Compress.ordinal()] = 2;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f1020xca5a932f[OpenSslCertificateCompressionConfig.AlgorithmMode.Both.ordinal()] = 3;
+                f984xca5a932f[OpenSslCertificateCompressionConfig.AlgorithmMode.Both.ordinal()] = 3;
             } catch (NoSuchFieldError e7) {
             }
-            f1019xc16482e4 = new int[ApplicationProtocolConfig.Protocol.values().length];
+            f983xc16482e4 = new int[ApplicationProtocolConfig.Protocol.values().length];
             try {
-                f1019xc16482e4[ApplicationProtocolConfig.Protocol.NPN.ordinal()] = 1;
+                f983xc16482e4[ApplicationProtocolConfig.Protocol.NPN.ordinal()] = 1;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f1019xc16482e4[ApplicationProtocolConfig.Protocol.ALPN.ordinal()] = 2;
+                f983xc16482e4[ApplicationProtocolConfig.Protocol.ALPN.ordinal()] = 2;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f1019xc16482e4[ApplicationProtocolConfig.Protocol.NPN_AND_ALPN.ordinal()] = 3;
+                f983xc16482e4[ApplicationProtocolConfig.Protocol.NPN_AND_ALPN.ordinal()] = 3;
             } catch (NoSuchFieldError e10) {
             }
             try {
-                f1019xc16482e4[ApplicationProtocolConfig.Protocol.NONE.ordinal()] = 4;
+                f983xc16482e4[ApplicationProtocolConfig.Protocol.NONE.ordinal()] = 4;
             } catch (NoSuchFieldError e11) {
             }
         }
@@ -451,9 +451,10 @@ public abstract class ReferenceCountedOpenSslContext extends SslContext implemen
         return this.refCnt.release(decrement);
     }
 
+    /* access modifiers changed from: package-private */
     /* renamed from: io.netty.handler.ssl.ReferenceCountedOpenSslContext$AbstractCertificateVerifier */
     /* loaded from: grasscutter.jar:io/netty/handler/ssl/ReferenceCountedOpenSslContext$AbstractCertificateVerifier.class */
-    static abstract class AbstractCertificateVerifier extends CertificateVerifier {
+    public static abstract class AbstractCertificateVerifier extends CertificateVerifier {
         private final OpenSslEngineMap engineMap;
 
         abstract void verify(ReferenceCountedOpenSslEngine referenceCountedOpenSslEngine, X509Certificate[] x509CertificateArr, String str) throws Exception;

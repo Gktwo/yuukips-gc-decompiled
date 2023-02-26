@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeCompoundOutputRspOuterClass.class */
 public final class TakeCompoundOutputRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bTakeCompoundOutputRsp.proto\u001a\u000fItemParam.proto\"G\n\u0015TakeCompoundOutputRsp\u0012\u001d\n\titem_list\u0018\u000e \u0003(\u000b2\n.ItemParam\u0012\u000f\n\u0007retcode\u0018\u0001 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bTakeCompoundOutputRsp.proto\u001a\u000fItemParam.proto\"F\n\u0015TakeCompoundOutputRsp\u0012\u001c\n\bitemList\u0018\r \u0003(\u000b2\n.ItemParam\u0012\u000f\n\u0007retcode\u0018\u0002 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_TakeCompoundOutputRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_TakeCompoundOutputRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TakeCompoundOutputRsp_descriptor, new String[]{"ItemList", "Retcode"});
 
@@ -57,9 +57,9 @@ public final class TakeCompoundOutputRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeCompoundOutputRspOuterClass$TakeCompoundOutputRsp.class */
     public static final class TakeCompoundOutputRsp extends GeneratedMessageV3 implements TakeCompoundOutputRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ITEM_LIST_FIELD_NUMBER = 14;
+        public static final int ITEMLIST_FIELD_NUMBER = 13;
         private List<ItemParamOuterClass.ItemParam> itemList_;
-        public static final int RETCODE_FIELD_NUMBER = 1;
+        public static final int RETCODE_FIELD_NUMBER = 2;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final TakeCompoundOutputRsp DEFAULT_INSTANCE = new TakeCompoundOutputRsp();
@@ -110,10 +110,10 @@ public final class TakeCompoundOutputRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
+                                case 16:
                                     this.retcode_ = input.readInt32();
                                     break;
-                                case 114:
+                                case 106:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.itemList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -199,10 +199,10 @@ public final class TakeCompoundOutputRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.retcode_ != 0) {
-                output.writeInt32(1, this.retcode_);
+                output.writeInt32(2, this.retcode_);
             }
             for (int i = 0; i < this.itemList_.size(); i++) {
-                output.writeMessage(14, this.itemList_.get(i));
+                output.writeMessage(13, this.itemList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -215,10 +215,10 @@ public final class TakeCompoundOutputRspOuterClass {
             }
             int size2 = 0;
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(1, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(2, this.retcode_);
             }
             for (int i = 0; i < this.itemList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(14, this.itemList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(13, this.itemList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -244,9 +244,9 @@ public final class TakeCompoundOutputRspOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getItemListCount() > 0) {
-                hash = (53 * ((37 * hash) + 14)) + getItemListList().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getItemListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 1)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 2)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

@@ -128,9 +128,8 @@ public class OioSocketChannel extends OioByteStreamChannel implements SocketChan
         return shutdown(newPromise());
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.channel.oio.OioByteStreamChannel, p013io.netty.channel.oio.AbstractOioByteChannel
-    public int doReadBytes(ByteBuf buf) throws Exception {
+    protected int doReadBytes(ByteBuf buf) throws Exception {
         if (this.socket.isClosed()) {
             return -1;
         }

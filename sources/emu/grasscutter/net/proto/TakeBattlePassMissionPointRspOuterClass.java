@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeBattlePassMissionPointRspOuterClass.class */
 public final class TakeBattlePassMissionPointRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#TakeBattlePassMissionPointRsp.proto\"I\n\u001dTakeBattlePassMissionPointRsp\u0012\u0017\n\u000fmission_id_list\u0018\r \u0003(\r\u0012\u000f\n\u0007retcode\u0018\u0005 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#TakeBattlePassMissionPointRsp.proto\"G\n\u001dTakeBattlePassMissionPointRsp\u0012\u0015\n\rmissionIdList\u0018\n \u0003(\r\u0012\u000f\n\u0007retcode\u0018\u0004 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_TakeBattlePassMissionPointRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_TakeBattlePassMissionPointRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TakeBattlePassMissionPointRsp_descriptor, new String[]{"MissionIdList", "Retcode"});
 
@@ -51,10 +51,10 @@ public final class TakeBattlePassMissionPointRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeBattlePassMissionPointRspOuterClass$TakeBattlePassMissionPointRsp.class */
     public static final class TakeBattlePassMissionPointRsp extends GeneratedMessageV3 implements TakeBattlePassMissionPointRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MISSION_ID_LIST_FIELD_NUMBER = 13;
+        public static final int MISSIONIDLIST_FIELD_NUMBER = 10;
         private Internal.IntList missionIdList_;
         private int missionIdListMemoizedSerializedSize;
-        public static final int RETCODE_FIELD_NUMBER = 5;
+        public static final int RETCODE_FIELD_NUMBER = 4;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final TakeBattlePassMissionPointRsp DEFAULT_INSTANCE = new TakeBattlePassMissionPointRsp();
@@ -107,17 +107,17 @@ public final class TakeBattlePassMissionPointRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 40:
+                                case 32:
                                     this.retcode_ = input.readInt32();
                                     break;
-                                case 104:
+                                case 80:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.missionIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.missionIdList_.addInt(input.readUInt32());
                                     break;
-                                case 106:
+                                case 82:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.missionIdList_ = newIntList();
@@ -198,10 +198,10 @@ public final class TakeBattlePassMissionPointRspOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (this.retcode_ != 0) {
-                output.writeInt32(5, this.retcode_);
+                output.writeInt32(4, this.retcode_);
             }
             if (getMissionIdListList().size() > 0) {
-                output.writeUInt32NoTag(106);
+                output.writeUInt32NoTag(82);
                 output.writeUInt32NoTag(this.missionIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.missionIdList_.size(); i++) {
@@ -218,7 +218,7 @@ public final class TakeBattlePassMissionPointRspOuterClass {
             }
             int size2 = 0;
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(5, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(4, this.retcode_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.missionIdList_.size(); i++) {
@@ -253,9 +253,9 @@ public final class TakeBattlePassMissionPointRspOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getMissionIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 13)) + getMissionIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getMissionIdListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 5)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 4)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

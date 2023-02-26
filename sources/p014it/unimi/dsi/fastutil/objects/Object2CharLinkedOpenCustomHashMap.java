@@ -43,13 +43,13 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f2569n;
+    protected transient int f2533n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2570f;
+    protected final float f2534f;
     protected transient Object2CharSortedMap.FastSortedEntrySet<K> entries;
     protected transient ObjectSortedSet<K> keys;
     protected transient CharCollection values;
@@ -63,15 +63,15 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2570f = f;
+            this.f2534f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2569n = arraySize;
+            this.f2533n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2569n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2569n, f);
-            this.key = (K[]) new Object[this.f2569n + 1];
-            this.value = new char[this.f2569n + 1];
-            this.link = new long[this.f2569n + 1];
+            this.mask = this.f2533n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2533n, f);
+            this.key = (K[]) new Object[this.f2533n + 1];
+            this.value = new char[this.f2533n + 1];
+            this.link = new long[this.f2533n + 1];
         }
     }
 
@@ -124,15 +124,15 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2570f);
-        if (needed > this.f2569n) {
+        int needed = HashCommon.arraySize(capacity, this.f2534f);
+        if (needed > this.f2533n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2570f)))));
-        if (needed > this.f2569n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2534f)))));
+        if (needed > this.f2533n) {
             rehash(needed);
         }
     }
@@ -143,8 +143,8 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f2569n > this.minN && this.size < this.maxFill / 4 && this.f2569n > 16) {
-            rehash(this.f2569n / 2);
+        if (this.f2533n > this.minN && this.size < this.maxFill / 4 && this.f2533n > 16) {
+            rehash(this.f2533n / 2);
         }
         return oldValue;
     }
@@ -152,19 +152,19 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
     /* access modifiers changed from: private */
     public char removeNullEntry() {
         this.containsNullKey = false;
-        this.key[this.f2569n] = null;
-        char oldValue = this.value[this.f2569n];
+        this.key[this.f2533n] = null;
+        char oldValue = this.value[this.f2533n];
         this.size--;
-        fixPointers(this.f2569n);
-        if (this.f2569n > this.minN && this.size < this.maxFill / 4 && this.f2569n > 16) {
-            rehash(this.f2569n / 2);
+        fixPointers(this.f2533n);
+        if (this.f2533n > this.minN && this.size < this.maxFill / 4 && this.f2533n > 16) {
+            rehash(this.f2533n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObject2CharMap, java.util.Map
     public void putAll(Map<? extends K, ? extends Character> m) {
-        if (((double) this.f2570f) <= 0.5d) {
+        if (((double) this.f2534f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -175,7 +175,7 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
     private int find(K k) {
         K curr;
         if (this.strategy.equals(k, null)) {
-            return this.containsNullKey ? this.f2569n : -(this.f2569n + 1);
+            return this.containsNullKey ? this.f2533n : -(this.f2533n + 1);
         }
         K[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -199,7 +199,7 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
     }
 
     private void insert(int pos, K k, char v) {
-        if (pos == this.f2569n) {
+        if (pos == this.f2533n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -218,7 +218,7 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2570f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2534f));
         }
     }
 
@@ -262,9 +262,9 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f2569n, incr);
+            return addToValue(this.f2533n, incr);
         } else {
-            pos = this.f2569n;
+            pos = this.f2533n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -283,7 +283,7 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2570f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2534f));
         }
         return this.defRetValue;
     }
@@ -365,14 +365,14 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
         }
         this.size--;
         char v = this.value[pos];
-        if (pos == this.f2569n) {
+        if (pos == this.f2533n) {
             this.containsNullKey = false;
-            this.key[this.f2569n] = null;
+            this.key[this.f2533n] = null;
         } else {
             shiftKeys(pos);
         }
-        if (this.f2569n > this.minN && this.size < this.maxFill / 4 && this.f2569n > 16) {
-            rehash(this.f2569n / 2);
+        if (this.f2533n > this.minN && this.size < this.maxFill / 4 && this.f2533n > 16) {
+            rehash(this.f2533n / 2);
         }
         return v;
     }
@@ -390,14 +390,14 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
         }
         this.size--;
         char v = this.value[pos];
-        if (pos == this.f2569n) {
+        if (pos == this.f2533n) {
             this.containsNullKey = false;
-            this.key[this.f2569n] = null;
+            this.key[this.f2533n] = null;
         } else {
             shiftKeys(pos);
         }
-        if (this.f2569n > this.minN && this.size < this.maxFill / 4 && this.f2569n > 16) {
-            rehash(this.f2569n / 2);
+        if (this.f2533n > this.minN && this.size < this.maxFill / 4 && this.f2533n > 16) {
+            rehash(this.f2533n / 2);
         }
         return v;
     }
@@ -477,8 +477,8 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
         } else if (!this.containsNullKey) {
             return this.defRetValue;
         } else {
-            moveIndexToFirst(this.f2569n);
-            return this.value[this.f2569n];
+            moveIndexToFirst(this.f2533n);
+            return this.value[this.f2533n];
         }
     }
 
@@ -509,8 +509,8 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
         } else if (!this.containsNullKey) {
             return this.defRetValue;
         } else {
-            moveIndexToLast(this.f2569n);
-            return this.value[this.f2569n];
+            moveIndexToLast(this.f2533n);
+            return this.value[this.f2533n];
         }
     }
 
@@ -538,11 +538,11 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
                 return setValue(pos, v);
             }
         } else if (this.containsNullKey) {
-            moveIndexToFirst(this.f2569n);
-            return setValue(this.f2569n, v);
+            moveIndexToFirst(this.f2533n);
+            return setValue(this.f2533n, v);
         } else {
             this.containsNullKey = true;
-            pos = this.f2569n;
+            pos = this.f2533n;
         }
         this.key[pos] = k;
         this.value[pos] = v;
@@ -560,7 +560,7 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size, this.f2570f));
+            rehash(HashCommon.arraySize(this.size, this.f2534f));
         }
         return this.defRetValue;
     }
@@ -589,11 +589,11 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
                 return setValue(pos, v);
             }
         } else if (this.containsNullKey) {
-            moveIndexToLast(this.f2569n);
-            return setValue(this.f2569n, v);
+            moveIndexToLast(this.f2533n);
+            return setValue(this.f2533n, v);
         } else {
             this.containsNullKey = true;
-            pos = this.f2569n;
+            pos = this.f2533n;
         }
         this.key[pos] = k;
         this.value[pos] = v;
@@ -611,7 +611,7 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size, this.f2570f));
+            rehash(HashCommon.arraySize(this.size, this.f2534f));
         }
         return this.defRetValue;
     }
@@ -620,7 +620,7 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
     public char getChar(Object k) {
         K curr;
         if (this.strategy.equals(k, null)) {
-            return this.containsNullKey ? this.value[this.f2569n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2533n] : this.defRetValue;
         }
         K[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -674,10 +674,10 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
     public boolean containsValue(char v) {
         char[] value = this.value;
         K[] key = this.key;
-        if (this.containsNullKey && value[this.f2569n] == v) {
+        if (this.containsNullKey && value[this.f2533n] == v) {
             return true;
         }
-        int i = this.f2569n;
+        int i = this.f2533n;
         while (true) {
             i--;
             if (i == 0) {
@@ -693,7 +693,7 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
     public char getOrDefault(Object k, char defaultValue) {
         K curr;
         if (this.strategy.equals(k, null)) {
-            return this.containsNullKey ? this.value[this.f2569n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2533n] : defaultValue;
         }
         K[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -753,7 +753,7 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
                 removeEntry(pos);
                 return true;
             }
-        } else if (!this.containsNullKey || v != this.value[this.f2569n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f2533n]) {
             return false;
         } else {
             removeNullEntry();
@@ -1101,8 +1101,8 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
             this.index = -1;
             if (Object2CharLinkedOpenCustomHashMap.this.strategy.equals(from, null)) {
                 if (Object2CharLinkedOpenCustomHashMap.this.containsNullKey) {
-                    this.next = (int) Object2CharLinkedOpenCustomHashMap.this.link[Object2CharLinkedOpenCustomHashMap.this.f2569n];
-                    this.prev = Object2CharLinkedOpenCustomHashMap.this.f2569n;
+                    this.next = (int) Object2CharLinkedOpenCustomHashMap.this.link[Object2CharLinkedOpenCustomHashMap.this.f2533n];
+                    this.prev = Object2CharLinkedOpenCustomHashMap.this.f2533n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + from + " does not belong to this map.");
@@ -1231,9 +1231,9 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
             }
             int pos = this.curr;
             this.curr = -1;
-            if (pos == Object2CharLinkedOpenCustomHashMap.this.f2569n) {
+            if (pos == Object2CharLinkedOpenCustomHashMap.this.f2533n) {
                 Object2CharLinkedOpenCustomHashMap.this.containsNullKey = false;
-                Object2CharLinkedOpenCustomHashMap.this.key[Object2CharLinkedOpenCustomHashMap.this.f2569n] = null;
+                Object2CharLinkedOpenCustomHashMap.this.key[Object2CharLinkedOpenCustomHashMap.this.f2533n] = null;
                 return;
             }
             K[] key = Object2CharLinkedOpenCustomHashMap.this.key;
@@ -1490,7 +1490,7 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
             Object key = e.getKey();
             char v = ((Character) e.getValue()).charValue();
             if (Object2CharLinkedOpenCustomHashMap.this.strategy.equals(key, null)) {
-                return Object2CharLinkedOpenCustomHashMap.this.containsNullKey && Object2CharLinkedOpenCustomHashMap.this.value[Object2CharLinkedOpenCustomHashMap.this.f2569n] == v;
+                return Object2CharLinkedOpenCustomHashMap.this.containsNullKey && Object2CharLinkedOpenCustomHashMap.this.value[Object2CharLinkedOpenCustomHashMap.this.f2533n] == v;
             }
             K[] key2 = Object2CharLinkedOpenCustomHashMap.this.key;
             int mix = HashCommon.mix(Object2CharLinkedOpenCustomHashMap.this.strategy.hashCode(key)) & Object2CharLinkedOpenCustomHashMap.this.mask;
@@ -1551,7 +1551,7 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
                     Object2CharLinkedOpenCustomHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Object2CharLinkedOpenCustomHashMap.this.containsNullKey || Object2CharLinkedOpenCustomHashMap.this.value[Object2CharLinkedOpenCustomHashMap.this.f2569n] != v) {
+            } else if (!Object2CharLinkedOpenCustomHashMap.this.containsNullKey || Object2CharLinkedOpenCustomHashMap.this.value[Object2CharLinkedOpenCustomHashMap.this.f2533n] != v) {
                 return false;
             } else {
                 Object2CharLinkedOpenCustomHashMap.this.removeNullEntry();
@@ -1852,8 +1852,8 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2570f)));
-        if (l >= this.f2569n || this.size > HashCommon.maxFill(l, this.f2570f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2534f)));
+        if (l >= this.f2533n || this.size > HashCommon.maxFill(l, this.f2534f)) {
             return true;
         }
         try {
@@ -1914,9 +1914,9 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f2569n = newN;
+        this.f2533n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f2569n, this.f2570f);
+        this.maxFill = HashCommon.maxFill(this.f2533n, this.f2534f);
         this.key = newKey;
         this.value = newValue;
     }
@@ -1961,7 +1961,7 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f2569n];
+            h += this.value[this.f2533n];
         }
         return h;
     }
@@ -1990,14 +1990,14 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2569n = HashCommon.arraySize(this.size, this.f2570f);
-        this.maxFill = HashCommon.maxFill(this.f2569n, this.f2570f);
-        this.mask = this.f2569n - 1;
-        K[] key = (K[]) new Object[this.f2569n + 1];
+        this.f2533n = HashCommon.arraySize(this.size, this.f2534f);
+        this.maxFill = HashCommon.maxFill(this.f2533n, this.f2534f);
+        this.mask = this.f2533n - 1;
+        K[] key = (K[]) new Object[this.f2533n + 1];
         this.key = key;
-        char[] value = new char[this.f2569n + 1];
+        char[] value = new char[this.f2533n + 1];
         this.value = value;
-        long[] link = new long[this.f2569n + 1];
+        long[] link = new long[this.f2533n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -2022,7 +2022,7 @@ public class Object2CharLinkedOpenCustomHashMap<K> extends AbstractObject2CharSo
                     i2 = this.mask;
                 }
             } else {
-                pos = this.f2569n;
+                pos = this.f2533n;
                 this.containsNullKey = true;
             }
             key[pos] = readObject;

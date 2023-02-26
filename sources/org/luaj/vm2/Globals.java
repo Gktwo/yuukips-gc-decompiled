@@ -27,16 +27,16 @@ public class Globals extends LuaTable {
     static abstract class AbstractBufferedStream extends InputStream {
 
         /* renamed from: b */
-        protected byte[] f3276b;
+        protected byte[] f3240b;
 
         /* renamed from: i */
-        protected int f3277i = 0;
+        protected int f3241i = 0;
 
         /* renamed from: j */
-        protected int f3278j = 0;
+        protected int f3242j = 0;
 
         protected AbstractBufferedStream(int i) {
-            this.f3276b = new byte[i];
+            this.f3240b = new byte[i];
         }
 
         protected abstract int avail() throws IOException;
@@ -46,9 +46,9 @@ public class Globals extends LuaTable {
             if (avail() <= 0) {
                 return -1;
             }
-            byte[] bArr = this.f3276b;
-            int i = this.f3277i;
-            this.f3277i = i + 1;
+            byte[] bArr = this.f3240b;
+            int i = this.f3241i;
+            this.f3241i = i + 1;
             return 255 & bArr[i];
         }
 
@@ -64,21 +64,21 @@ public class Globals extends LuaTable {
                 return -1;
             }
             int min = Math.min(avail, i2);
-            System.arraycopy(this.f3276b, this.f3277i, bArr, i, min);
-            this.f3277i += min;
+            System.arraycopy(this.f3240b, this.f3241i, bArr, i, min);
+            this.f3241i += min;
             return min;
         }
 
         @Override // java.io.InputStream
         public long skip(long j) throws IOException {
-            long min = Math.min(j, (long) (this.f3278j - this.f3277i));
-            this.f3277i = (int) (((long) this.f3277i) + min);
+            long min = Math.min(j, (long) (this.f3242j - this.f3241i));
+            this.f3241i = (int) (((long) this.f3241i) + min);
             return min;
         }
 
         @Override // java.io.InputStream
         public int available() throws IOException {
-            return this.f3278j - this.f3277i;
+            return this.f3242j - this.f3241i;
         }
     }
 
@@ -87,7 +87,7 @@ public class Globals extends LuaTable {
     public static class BufferedStream extends AbstractBufferedStream {
 
         /* renamed from: s */
-        private final InputStream f3279s;
+        private final InputStream f3243s;
 
         public BufferedStream(InputStream inputStream) {
             this(128, inputStream);
@@ -95,47 +95,47 @@ public class Globals extends LuaTable {
 
         BufferedStream(int i, InputStream inputStream) {
             super(i);
-            this.f3279s = inputStream;
+            this.f3243s = inputStream;
         }
 
         @Override // org.luaj.vm2.Globals.AbstractBufferedStream
         protected int avail() throws IOException {
-            if (this.f3277i < this.f3278j) {
-                return this.f3278j - this.f3277i;
+            if (this.f3241i < this.f3242j) {
+                return this.f3242j - this.f3241i;
             }
-            if (this.f3278j >= this.f3276b.length) {
-                this.f3278j = 0;
-                this.f3277i = 0;
+            if (this.f3242j >= this.f3240b.length) {
+                this.f3242j = 0;
+                this.f3241i = 0;
             }
-            int read = this.f3279s.read(this.f3276b, this.f3278j, this.f3276b.length - this.f3278j);
+            int read = this.f3243s.read(this.f3240b, this.f3242j, this.f3240b.length - this.f3242j);
             if (read < 0) {
                 return -1;
             }
             if (read == 0) {
-                int read2 = this.f3279s.read();
+                int read2 = this.f3243s.read();
                 if (read2 < 0) {
                     return -1;
                 }
-                this.f3276b[this.f3278j] = (byte) read2;
+                this.f3240b[this.f3242j] = (byte) read2;
                 read = 1;
             }
-            this.f3278j += read;
+            this.f3242j += read;
             return read;
         }
 
         @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
-            this.f3279s.close();
+            this.f3243s.close();
         }
 
         @Override // java.io.InputStream
         public synchronized void mark(int i) {
-            if (this.f3277i > 0 || i > this.f3276b.length) {
-                byte[] bArr = i > this.f3276b.length ? new byte[i] : this.f3276b;
-                System.arraycopy(this.f3276b, this.f3277i, bArr, 0, this.f3278j - this.f3277i);
-                this.f3278j -= this.f3277i;
-                this.f3277i = 0;
-                this.f3276b = bArr;
+            if (this.f3241i > 0 || i > this.f3240b.length) {
+                byte[] bArr = i > this.f3240b.length ? new byte[i] : this.f3240b;
+                System.arraycopy(this.f3240b, this.f3241i, bArr, 0, this.f3242j - this.f3241i);
+                this.f3242j -= this.f3241i;
+                this.f3241i = 0;
+                this.f3240b = bArr;
             }
         }
 
@@ -146,7 +146,7 @@ public class Globals extends LuaTable {
 
         @Override // java.io.InputStream
         public synchronized void reset() throws IOException {
-            this.f3277i = 0;
+            this.f3241i = 0;
         }
     }
 
@@ -164,42 +164,42 @@ public class Globals extends LuaTable {
     static class StrReader extends Reader {
 
         /* renamed from: s */
-        final String f3280s;
+        final String f3244s;
 
         /* renamed from: i */
-        int f3281i = 0;
+        int f3245i = 0;
 
         /* renamed from: n */
-        final int f3282n;
+        final int f3246n;
 
         StrReader(String str) {
-            this.f3280s = str;
-            this.f3282n = str.length();
+            this.f3244s = str;
+            this.f3246n = str.length();
         }
 
         @Override // java.io.Reader, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
-            this.f3281i = this.f3282n;
+            this.f3245i = this.f3246n;
         }
 
         @Override // java.io.Reader
         public int read() throws IOException {
-            if (this.f3281i >= this.f3282n) {
+            if (this.f3245i >= this.f3246n) {
                 return -1;
             }
-            String str = this.f3280s;
-            int i = this.f3281i;
-            this.f3281i = i + 1;
+            String str = this.f3244s;
+            int i = this.f3245i;
+            this.f3245i = i + 1;
             return str.charAt(i);
         }
 
         @Override // java.io.Reader
         public int read(char[] cArr, int i, int i2) throws IOException {
             int i3 = 0;
-            while (i3 < i2 && this.f3281i < this.f3282n) {
-                cArr[i + i3] = this.f3280s.charAt(this.f3281i);
+            while (i3 < i2 && this.f3245i < this.f3246n) {
+                cArr[i + i3] = this.f3244s.charAt(this.f3245i);
                 i3++;
-                this.f3281i++;
+                this.f3245i++;
             }
             if (i3 > 0 || i2 == 0) {
                 return i3;
@@ -213,43 +213,43 @@ public class Globals extends LuaTable {
     public static class UTF8Stream extends AbstractBufferedStream {
 
         /* renamed from: c */
-        private final char[] f3283c = new char[32];
+        private final char[] f3247c = new char[32];
 
         /* renamed from: r */
-        private final Reader f3284r;
+        private final Reader f3248r;
 
         UTF8Stream(Reader reader) {
             super(96);
-            this.f3284r = reader;
+            this.f3248r = reader;
         }
 
         @Override // org.luaj.vm2.Globals.AbstractBufferedStream
         protected int avail() throws IOException {
-            if (this.f3277i < this.f3278j) {
-                return this.f3278j - this.f3277i;
+            if (this.f3241i < this.f3242j) {
+                return this.f3242j - this.f3241i;
             }
-            int read = this.f3284r.read(this.f3283c);
+            int read = this.f3248r.read(this.f3247c);
             if (read < 0) {
                 return -1;
             }
             if (read == 0) {
-                int read2 = this.f3284r.read();
+                int read2 = this.f3248r.read();
                 if (read2 < 0) {
                     return -1;
                 }
-                this.f3283c[0] = (char) read2;
+                this.f3247c[0] = (char) read2;
                 read = 1;
             }
-            char[] cArr = this.f3283c;
-            byte[] bArr = this.f3276b;
-            this.f3277i = 0;
-            this.f3278j = LuaString.encodeToUtf8(cArr, read, bArr, 0);
-            return this.f3278j;
+            char[] cArr = this.f3247c;
+            byte[] bArr = this.f3240b;
+            this.f3241i = 0;
+            this.f3242j = LuaString.encodeToUtf8(cArr, read, bArr, 0);
+            return this.f3242j;
         }
 
         @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
-            this.f3284r.close();
+            this.f3248r.close();
         }
     }
 

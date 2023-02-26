@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 import org.eclipse.jetty.client.api.Connection;
 import org.eclipse.jetty.client.api.Destination;
 import org.eclipse.jetty.util.Attachable;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.Callback;
 import org.eclipse.jetty.util.Pool;
 import org.eclipse.jetty.util.Promise;
@@ -238,7 +238,7 @@ public abstract class AbstractConnectionPool extends ContainerLifeCycle implemen
             }
             boolean canClose = remove(connection);
             if (canClose) {
-                C5747IO.close(connection);
+                C5739IO.close(connection);
             }
             if (LOG.isDebugEnabled()) {
                 Logger logger = LOG;

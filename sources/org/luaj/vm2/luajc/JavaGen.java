@@ -62,7 +62,7 @@ public class JavaGen {
                         javaBuilder.storeLocal(i5, GETARG_A);
                         break;
                     case 1:
-                        javaBuilder.loadConstant(prototype.f3295k[GETARG_Bx]);
+                        javaBuilder.loadConstant(prototype.f3259k[GETARG_Bx]);
                         javaBuilder.storeLocal(i5, GETARG_A);
                         break;
                     case 3:
@@ -342,7 +342,7 @@ public class JavaGen {
                             break;
                         }
                     case 37:
-                        Prototype prototype2 = prototype.f3296p[GETARG_Bx];
+                        Prototype prototype2 = prototype.f3260p[GETARG_Bx];
                         int length = prototype2.upvalues.length;
                         String str2 = protoInfo.subprotos[GETARG_Bx].name;
                         javaBuilder.closureCreate(str2);
@@ -398,7 +398,7 @@ public class JavaGen {
         if (i2 <= 255) {
             javaBuilder.loadLocal(i, i2);
         } else {
-            javaBuilder.loadConstant(prototype.f3295k[i2 & 255]);
+            javaBuilder.loadConstant(prototype.f3259k[i2 & 255]);
         }
     }
 }

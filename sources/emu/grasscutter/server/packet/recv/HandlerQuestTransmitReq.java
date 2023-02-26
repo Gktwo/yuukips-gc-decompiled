@@ -11,7 +11,7 @@ import emu.grasscutter.utils.Position;
 import java.util.ArrayList;
 import java.util.List;
 
-@Opcodes(446)
+@Opcodes(442)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerQuestTransmitReq.class */
 public class HandlerQuestTransmitReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

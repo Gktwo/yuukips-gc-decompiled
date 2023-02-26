@@ -23,19 +23,19 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GachaUpInfoOuterClass.class */
 public final class GachaUpInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0011GachaUpInfo.proto\"=\n\u000bGachaUpInfo\u0012\u0018\n\u0010item_parent_type\u0018\u000f \u0001(\r\u0012\u0014\n\fitem_id_list\u0018\u0006 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0011GachaUpInfo.proto\"9\n\u000bGachaUpInfo\u0012\u0012\n\nitemIdList\u0018\u000b \u0003(\r\u0012\u0016\n\u000eitemParentType\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GachaUpInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GachaUpInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GachaUpInfo_descriptor, new String[]{"ItemParentType", "ItemIdList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GachaUpInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GachaUpInfo_descriptor, new String[]{"ItemIdList", "ItemParentType"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GachaUpInfoOuterClass$GachaUpInfoOrBuilder.class */
     public interface GachaUpInfoOrBuilder extends MessageOrBuilder {
-        int getItemParentType();
-
         List<Integer> getItemIdListList();
 
         int getItemIdListCount();
 
         int getItemIdList(int i);
+
+        int getItemParentType();
     }
 
     private GachaUpInfoOuterClass() {
@@ -51,11 +51,11 @@ public final class GachaUpInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GachaUpInfoOuterClass$GachaUpInfo.class */
     public static final class GachaUpInfo extends GeneratedMessageV3 implements GachaUpInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ITEM_PARENT_TYPE_FIELD_NUMBER = 15;
-        private int itemParentType_;
-        public static final int ITEM_ID_LIST_FIELD_NUMBER = 6;
+        public static final int ITEMIDLIST_FIELD_NUMBER = 11;
         private Internal.IntList itemIdList_;
         private int itemIdListMemoizedSerializedSize;
+        public static final int ITEMPARENTTYPE_FIELD_NUMBER = 15;
+        private int itemParentType_;
         private byte memoizedIsInitialized;
         private static final GachaUpInfo DEFAULT_INSTANCE = new GachaUpInfo();
         private static final Parser<GachaUpInfo> PARSER = new AbstractParser<GachaUpInfo>() { // from class: emu.grasscutter.net.proto.GachaUpInfoOuterClass.GachaUpInfo.1
@@ -107,14 +107,14 @@ public final class GachaUpInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 48:
+                                case 88:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.itemIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.itemIdList_.addInt(input.readUInt32());
                                     break;
-                                case 50:
+                                case 90:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.itemIdList_ = newIntList();
@@ -162,11 +162,6 @@ public final class GachaUpInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GachaUpInfoOuterClass.GachaUpInfoOrBuilder
-        public int getItemParentType() {
-            return this.itemParentType_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GachaUpInfoOuterClass.GachaUpInfoOrBuilder
         public List<Integer> getItemIdListList() {
             return this.itemIdList_;
         }
@@ -179,6 +174,11 @@ public final class GachaUpInfoOuterClass {
         @Override // emu.grasscutter.net.proto.GachaUpInfoOuterClass.GachaUpInfoOrBuilder
         public int getItemIdList(int index) {
             return this.itemIdList_.getInt(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.GachaUpInfoOuterClass.GachaUpInfoOrBuilder
+        public int getItemParentType() {
+            return this.itemParentType_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -198,7 +198,7 @@ public final class GachaUpInfoOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getItemIdListList().size() > 0) {
-                output.writeUInt32NoTag(50);
+                output.writeUInt32NoTag(90);
                 output.writeUInt32NoTag(this.itemIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.itemIdList_.size(); i++) {
@@ -242,7 +242,7 @@ public final class GachaUpInfoOuterClass {
                 return equals(obj);
             }
             GachaUpInfo other = (GachaUpInfo) obj;
-            return getItemParentType() == other.getItemParentType() && getItemIdListList().equals(other.getItemIdListList()) && this.unknownFields.equals(other.unknownFields);
+            return getItemIdListList().equals(other.getItemIdListList()) && getItemParentType() == other.getItemParentType() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -250,11 +250,11 @@ public final class GachaUpInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getItemParentType();
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (getItemIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 6)) + getItemIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + getItemIdListList().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 15)) + getItemParentType())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -334,8 +334,8 @@ public final class GachaUpInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GachaUpInfoOuterClass$GachaUpInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements GachaUpInfoOrBuilder {
             private int bitField0_;
-            private int itemParentType_;
             private Internal.IntList itemIdList_ = GachaUpInfo.emptyIntList();
+            private int itemParentType_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return GachaUpInfoOuterClass.internal_static_GachaUpInfo_descriptor;
@@ -363,9 +363,9 @@ public final class GachaUpInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.itemParentType_ = 0;
                 this.itemIdList_ = GachaUpInfo.emptyIntList();
                 this.bitField0_ &= -2;
+                this.itemParentType_ = 0;
                 return this;
             }
 
@@ -392,12 +392,12 @@ public final class GachaUpInfoOuterClass {
             public GachaUpInfo buildPartial() {
                 GachaUpInfo result = new GachaUpInfo(this);
                 int i = this.bitField0_;
-                result.itemParentType_ = this.itemParentType_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.itemIdList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.itemIdList_ = this.itemIdList_;
+                result.itemParentType_ = this.itemParentType_;
                 onBuilt();
                 return result;
             }
@@ -445,9 +445,6 @@ public final class GachaUpInfoOuterClass {
                 if (other == GachaUpInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getItemParentType() != 0) {
-                    setItemParentType(other.getItemParentType());
-                }
                 if (!other.itemIdList_.isEmpty()) {
                     if (this.itemIdList_.isEmpty()) {
                         this.itemIdList_ = other.itemIdList_;
@@ -457,6 +454,9 @@ public final class GachaUpInfoOuterClass {
                         this.itemIdList_.addAll(other.itemIdList_);
                     }
                     onChanged();
+                }
+                if (other.getItemParentType() != 0) {
+                    setItemParentType(other.getItemParentType());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -488,23 +488,6 @@ public final class GachaUpInfoOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.GachaUpInfoOuterClass.GachaUpInfoOrBuilder
-            public int getItemParentType() {
-                return this.itemParentType_;
-            }
-
-            public Builder setItemParentType(int value) {
-                this.itemParentType_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearItemParentType() {
-                this.itemParentType_ = 0;
-                onChanged();
-                return this;
             }
 
             private void ensureItemIdListIsMutable() {
@@ -553,6 +536,23 @@ public final class GachaUpInfoOuterClass {
             public Builder clearItemIdList() {
                 this.itemIdList_ = GachaUpInfo.emptyIntList();
                 this.bitField0_ &= -2;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GachaUpInfoOuterClass.GachaUpInfoOrBuilder
+            public int getItemParentType() {
+                return this.itemParentType_;
+            }
+
+            public Builder setItemParentType(int value) {
+                this.itemParentType_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearItemParentType() {
+                this.itemParentType_ = 0;
                 onChanged();
                 return this;
             }

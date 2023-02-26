@@ -38,16 +38,16 @@ public class NfaMatcher<T> {
         for (T arg : args) {
             Set<State> nlist = new HashSet<>();
             clist.stream().filter(s -> {
-                return !Objects.equals("++MATCH++", s.f3201c) && !Objects.equals("++SPLIT++", s.f3201c);
+                return !Objects.equals("++MATCH++", s.f3165c) && !Objects.equals("++SPLIT++", s.f3165c);
             }).filter(s -> {
-                return this.matcher.apply(arg, arg.f3201c).booleanValue();
+                return this.matcher.apply(arg, arg.f3165c).booleanValue();
             }).forEach(s -> {
                 addState(nlist, nlist.out);
             });
             clist = nlist;
         }
         return clist.stream().anyMatch(s -> {
-            return Objects.equals("++MATCH++", s.f3201c);
+            return Objects.equals("++MATCH++", s.f3165c);
         });
     }
 
@@ -58,23 +58,23 @@ public class NfaMatcher<T> {
         for (T arg : args) {
             Set<State> nlist = new HashSet<>();
             clist.stream().filter(s -> {
-                return !Objects.equals("++MATCH++", s.f3201c) && !Objects.equals("++SPLIT++", s.f3201c);
+                return !Objects.equals("++MATCH++", s.f3165c) && !Objects.equals("++SPLIT++", s.f3165c);
             }).filter(s -> {
-                return this.matcher.apply(arg, arg.f3201c).booleanValue();
+                return this.matcher.apply(arg, arg.f3165c).booleanValue();
             }).forEach(s -> {
                 addState(nlist, nlist.out);
             });
             clist = nlist;
         }
         return (Set) clist.stream().filter(s -> {
-            return !Objects.equals("++MATCH++", s.f3201c) && !Objects.equals("++SPLIT++", s.f3201c);
+            return !Objects.equals("++MATCH++", s.f3165c) && !Objects.equals("++SPLIT++", s.f3165c);
         }).map(s -> {
-            return s.f3201c;
+            return s.f3165c;
         }).collect(Collectors.toSet());
     }
 
     void addState(Set<State> l, State s) {
-        if (s != null && l.add(s) && Objects.equals("++SPLIT++", s.f3201c)) {
+        if (s != null && l.add(s) && Objects.equals("++SPLIT++", s.f3165c)) {
             addState(l, s.out);
             addState(l, s.out1);
         }
@@ -272,12 +272,12 @@ public class NfaMatcher<T> {
         static final String Split = "++SPLIT++";
 
         /* renamed from: c */
-        final String f3201c;
+        final String f3165c;
         State out;
         State out1;
 
         public State(String c, State out, State out1) {
-            this.f3201c = c;
+            this.f3165c = c;
             this.out = out;
             this.out1 = out1;
         }

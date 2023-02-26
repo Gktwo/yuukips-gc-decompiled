@@ -7,7 +7,6 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
-import org.eclipse.jetty.http.HttpStatus;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import p013io.javalin.http.Context;
@@ -39,7 +38,7 @@ public final class RateLimiter {
         this.timeUnitString = StringsKt.removeSuffix(lowerCase, (CharSequence) "s");
         ConcurrentHashMap it = new ConcurrentHashMap();
         RateLimitUtil.INSTANCE.getExecutor().scheduleAtFixedRate(() -> {
-            m5851keyToRequestCount$lambda1$lambda0(r1);
+            m5848keyToRequestCount$lambda1$lambda0(r1);
         }, 0, 1, getTimeUnit());
         Unit unit = Unit.INSTANCE;
         this.keyToRequestCount = it;
@@ -51,7 +50,7 @@ public final class RateLimiter {
     }
 
     /* renamed from: keyToRequestCount$lambda-1$lambda-0  reason: not valid java name */
-    private static final void m5851keyToRequestCount$lambda1$lambda0(ConcurrentHashMap $it) {
+    private static final void m5848keyToRequestCount$lambda1$lambda0(ConcurrentHashMap $it) {
         Intrinsics.checkNotNullParameter($it, "$it");
         $it.clear();
     }
@@ -59,12 +58,12 @@ public final class RateLimiter {
     public final void incrementCounter(@NotNull Context ctx, int requestLimit) {
         Intrinsics.checkNotNullParameter(ctx, "ctx");
         this.keyToRequestCount.compute(RateLimitUtil.INSTANCE.getKeyFunction().invoke(ctx), (v2, v3) -> {
-            return m5852incrementCounter$lambda2(r2, r3, v2, v3);
+            return m5849incrementCounter$lambda2(r2, r3, v2, v3);
         });
     }
 
     /* renamed from: incrementCounter$lambda-2  reason: not valid java name */
-    private static final Integer m5852incrementCounter$lambda2(int $requestLimit, RateLimiter this$0, String $noName_0, Integer count) {
+    private static final Integer m5849incrementCounter$lambda2(int $requestLimit, RateLimiter this$0, String $noName_0, Integer count) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter($noName_0, "$noName_0");
         if (count == null) {
@@ -73,6 +72,6 @@ public final class RateLimiter {
         if (count.intValue() < $requestLimit) {
             return Integer.valueOf(count.intValue() + 1);
         }
-        throw new HttpResponseException(HttpStatus.TOO_MANY_REQUESTS_429, "Rate limit exceeded - Server allows " + $requestLimit + " requests per " + this$0.timeUnitString + '.', null, 4, null);
+        throw new HttpResponseException(429, "Rate limit exceeded - Server allows " + $requestLimit + " requests per " + this$0.timeUnitString + '.', null, 4, null);
     }
 }

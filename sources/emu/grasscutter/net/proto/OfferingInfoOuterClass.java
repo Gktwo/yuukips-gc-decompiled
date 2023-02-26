@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/OfferingInfoOuterClass.class */
 public final class OfferingInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012OfferingInfo.proto\"#\n\fOfferingInfo\u0012\u0013\n\u000boffering_id\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012OfferingInfo.proto\"\"\n\fOfferingInfo\u0012\u0012\n\nofferingId\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_OfferingInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_OfferingInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_OfferingInfo_descriptor, new String[]{"OfferingId"});
 
@@ -41,7 +41,7 @@ public final class OfferingInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/OfferingInfoOuterClass$OfferingInfo.class */
     public static final class OfferingInfo extends GeneratedMessageV3 implements OfferingInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int OFFERING_ID_FIELD_NUMBER = 1;
+        public static final int OFFERINGID_FIELD_NUMBER = 1;
         private int offeringId_;
         private byte memoizedIsInitialized;
         private static final OfferingInfo DEFAULT_INSTANCE = new OfferingInfo();

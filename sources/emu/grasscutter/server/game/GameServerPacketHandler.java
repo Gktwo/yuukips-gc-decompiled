@@ -107,16 +107,16 @@ public class GameServerPacketHandler {
         if (handler != null) {
             try {
                 GameSession.SessionState state = session.getState();
-                if (opcode != 100) {
-                    if (opcode == 179) {
+                if (opcode != 20) {
+                    if (opcode == 105) {
                         if (state != GameSession.SessionState.WAITING_FOR_TOKEN) {
                             return;
                         }
-                    } else if (opcode == 156) {
+                    } else if (opcode == 187) {
                         if (state != GameSession.SessionState.WAITING_FOR_LOGIN) {
                             return;
                         }
-                    } else if (opcode == 142) {
+                    } else if (opcode == 169) {
                         if (state != GameSession.SessionState.PICKING_CHARACTER) {
                             return;
                         }
@@ -136,7 +136,7 @@ public class GameServerPacketHandler {
                 Grasscutter.getLogger().error("Error: handle", (Throwable) e);
             }
         } else {
-            session.logPacket("Unhandled packet", opcode, null);
+            session.logPacket("Unhandled packet", opcode, payload);
         }
     }
 }

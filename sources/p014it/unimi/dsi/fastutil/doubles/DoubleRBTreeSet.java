@@ -621,7 +621,7 @@ public class DoubleRBTreeSet extends AbstractDoubleSortedSet implements Serializ
         double from;
 
         /* renamed from: to */
-        double f1750to;
+        double f1714to;
         boolean bottom;
         boolean top;
 
@@ -629,7 +629,7 @@ public class DoubleRBTreeSet extends AbstractDoubleSortedSet implements Serializ
             if (bottom || top || DoubleRBTreeSet.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f1750to = to;
+                this.f1714to = to;
                 this.top = top;
                 return;
             }
@@ -647,7 +647,7 @@ public class DoubleRBTreeSet extends AbstractDoubleSortedSet implements Serializ
 
         /* renamed from: in */
         final boolean m872in(double k) {
-            return (this.bottom || DoubleRBTreeSet.this.compare(k, this.from) >= 0) && (this.top || DoubleRBTreeSet.this.compare(k, this.f1750to) < 0);
+            return (this.bottom || DoubleRBTreeSet.this.compare(k, this.from) >= 0) && (this.top || DoubleRBTreeSet.this.compare(k, this.f1714to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleCollection, p014it.unimi.dsi.fastutil.doubles.DoubleCollection
@@ -660,7 +660,7 @@ public class DoubleRBTreeSet extends AbstractDoubleSortedSet implements Serializ
             if (m872in(k)) {
                 return DoubleRBTreeSet.this.add(k);
             }
-            throw new IllegalArgumentException("Element (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1750to)) + ")");
+            throw new IllegalArgumentException("Element (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1714to)) + ")");
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleSet, p014it.unimi.dsi.fastutil.doubles.DoubleSet
@@ -705,7 +705,7 @@ public class DoubleRBTreeSet extends AbstractDoubleSortedSet implements Serializ
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleSortedSet
         public DoubleSortedSet headSet(double to) {
-            if (!this.top && DoubleRBTreeSet.this.compare(to, this.f1750to) >= 0) {
+            if (!this.top && DoubleRBTreeSet.this.compare(to, this.f1714to) >= 0) {
                 return this;
             }
             return new Subset(this.from, this.bottom, to, false);
@@ -716,7 +716,7 @@ public class DoubleRBTreeSet extends AbstractDoubleSortedSet implements Serializ
             if (!this.bottom && DoubleRBTreeSet.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Subset(from, false, this.f1750to, this.top);
+            return new Subset(from, false, this.f1714to, this.top);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -735,7 +735,7 @@ public class DoubleRBTreeSet extends AbstractDoubleSortedSet implements Serializ
             }
             double to = d2;
             if (!this.top) {
-                to = DoubleRBTreeSet.this.compare(d2, this.f1750to) < 0 ? d2 : this.f1750to;
+                to = DoubleRBTreeSet.this.compare(d2, this.f1714to) < 0 ? d2 : this.f1714to;
             }
             double from = d;
             if (!this.bottom) {
@@ -743,7 +743,7 @@ public class DoubleRBTreeSet extends AbstractDoubleSortedSet implements Serializ
             }
             if (!this.top && !this.bottom) {
                 if ((from == Double.MIN_VALUE ? 1.0d : 0.0d) == this.from) {
-                    if ((to == Double.MIN_VALUE ? 1.0d : 0.0d) == this.f1750to) {
+                    if ((to == Double.MIN_VALUE ? 1.0d : 0.0d) == this.f1714to) {
                         return this;
                     }
                 }
@@ -767,7 +767,7 @@ public class DoubleRBTreeSet extends AbstractDoubleSortedSet implements Serializ
             if (e == null) {
                 return null;
             }
-            if (this.top || DoubleRBTreeSet.this.compare(e.key, this.f1750to) < 0) {
+            if (this.top || DoubleRBTreeSet.this.compare(e.key, this.f1714to) < 0) {
                 return e;
             }
             return null;
@@ -781,8 +781,8 @@ public class DoubleRBTreeSet extends AbstractDoubleSortedSet implements Serializ
             if (this.top) {
                 e = DoubleRBTreeSet.this.lastEntry;
             } else {
-                e = DoubleRBTreeSet.this.locateKey(this.f1750to);
-                if (DoubleRBTreeSet.this.compare(e.key, this.f1750to) >= 0) {
+                e = DoubleRBTreeSet.this.locateKey(this.f1714to);
+                if (DoubleRBTreeSet.this.compare(e.key, this.f1714to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -860,7 +860,7 @@ public class DoubleRBTreeSet extends AbstractDoubleSortedSet implements Serializ
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleRBTreeSet.SetIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Subset.this.top && this.next != null && DoubleRBTreeSet.this.compare(this.next.key, Subset.this.f1750to) >= 0) {
+                if (!Subset.this.top && this.next != null && DoubleRBTreeSet.this.compare(this.next.key, Subset.this.f1714to) >= 0) {
                     this.next = null;
                 }
             }

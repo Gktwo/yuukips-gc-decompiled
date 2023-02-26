@@ -202,30 +202,30 @@ public abstract class AbstractChar2DoubleMap extends AbstractChar2DoubleFunction
                 return new CharIterator() { // from class: it.unimi.dsi.fastutil.chars.AbstractChar2DoubleMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Char2DoubleMap.Entry> f1318i;
+                    private final ObjectIterator<Char2DoubleMap.Entry> f1282i;
 
                     {
-                        this.f1318i = Char2DoubleMaps.fastIterator(AbstractChar2DoubleMap.this);
+                        this.f1282i = Char2DoubleMaps.fastIterator(AbstractChar2DoubleMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
                     public char nextChar() {
-                        return this.f1318i.next().getCharKey();
+                        return this.f1282i.next().getCharKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1318i.hasNext();
+                        return this.f1282i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1318i.remove();
+                        this.f1282i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
                     public void forEachRemaining(CharConsumer action) {
-                        this.f1318i.forEachRemaining(entry -> {
+                        this.f1282i.forEachRemaining(entry -> {
                             action.accept(entry.getCharKey());
                         });
                     }
@@ -263,30 +263,30 @@ public abstract class AbstractChar2DoubleMap extends AbstractChar2DoubleFunction
                 return new DoubleIterator() { // from class: it.unimi.dsi.fastutil.chars.AbstractChar2DoubleMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Char2DoubleMap.Entry> f1319i;
+                    private final ObjectIterator<Char2DoubleMap.Entry> f1283i;
 
                     {
-                        this.f1319i = Char2DoubleMaps.fastIterator(AbstractChar2DoubleMap.this);
+                        this.f1283i = Char2DoubleMaps.fastIterator(AbstractChar2DoubleMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
                     public double nextDouble() {
-                        return this.f1319i.next().getDoubleValue();
+                        return this.f1283i.next().getDoubleValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1319i.hasNext();
+                        return this.f1283i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1319i.remove();
+                        this.f1283i.remove();
                     }
 
                     @Override // java.util.PrimitiveIterator.OfDouble
                     public void forEachRemaining(DoubleConsumer action) {
-                        this.f1319i.forEachRemaining(entry -> {
+                        this.f1283i.forEachRemaining(entry -> {
                             action.accept(entry.getDoubleValue());
                         });
                     }

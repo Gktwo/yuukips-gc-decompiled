@@ -10,7 +10,7 @@ public final class PlayerMoveEvent extends PlayerEvent {
     private final Position from;
 
     /* renamed from: to */
-    private final Position f958to;
+    private final Position f923to;
 
     /* loaded from: grasscutter.jar:emu/grasscutter/server/event/player/PlayerMoveEvent$MoveType.class */
     public enum MoveType {
@@ -22,7 +22,7 @@ public final class PlayerMoveEvent extends PlayerEvent {
         super(player);
         this.type = type;
         this.from = from;
-        this.f958to = to;
+        this.f923to = to;
     }
 
     public MoveType getMoveType() {
@@ -34,6 +34,6 @@ public final class PlayerMoveEvent extends PlayerEvent {
     }
 
     public Position getDestination() {
-        return this.f958to;
+        return this.f923to;
     }
 }

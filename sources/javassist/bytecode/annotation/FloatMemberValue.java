@@ -37,11 +37,11 @@ public class FloatMemberValue extends MemberValue {
     }
 
     public float getValue() {
-        return this.f3074cp.getFloatInfo(this.valueIndex);
+        return this.f3038cp.getFloatInfo(this.valueIndex);
     }
 
     public void setValue(float newValue) {
-        this.valueIndex = this.f3074cp.addFloatInfo(newValue);
+        this.valueIndex = this.f3038cp.addFloatInfo(newValue);
     }
 
     public String toString() {

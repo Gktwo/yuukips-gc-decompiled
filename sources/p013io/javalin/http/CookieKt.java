@@ -36,7 +36,7 @@ public final class CookieKt {
         Collection<String> headers = $this$setJavalinCookie.getHeaders("Set-Cookie");
         List<String> cookies = CollectionsKt.toMutableList((Collection) (headers == null ? CollectionsKt.emptyList() : headers));
         cookies.removeIf((v1) -> {
-            return m5817setJavalinCookie$lambda4$lambda1(r1, v1);
+            return m5814setJavalinCookie$lambda4$lambda1(r1, v1);
         });
         String first = (String) CollectionsKt.removeFirst(cookies);
         if (first != null) {
@@ -49,7 +49,7 @@ public final class CookieKt {
     }
 
     /* renamed from: setJavalinCookie$lambda-4$lambda-1  reason: not valid java name */
-    private static final boolean m5817setJavalinCookie$lambda4$lambda1(Cookie $cookie, String it) {
+    private static final boolean m5814setJavalinCookie$lambda4$lambda1(Cookie $cookie, String it) {
         Intrinsics.checkNotNullParameter($cookie, "$cookie");
         Intrinsics.checkNotNullExpressionValue(it, "it");
         if (StringsKt.startsWith$default(it, Intrinsics.stringPlus($cookie.getName(), "="), false, 2, (Object) null)) {

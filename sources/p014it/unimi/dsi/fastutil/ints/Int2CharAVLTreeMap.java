@@ -974,7 +974,7 @@ public class Int2CharAVLTreeMap extends AbstractInt2CharSortedMap implements Ser
         int from;
 
         /* renamed from: to */
-        int f2045to;
+        int f2009to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Int2CharMap.Entry> entries;
@@ -985,7 +985,7 @@ public class Int2CharAVLTreeMap extends AbstractInt2CharSortedMap implements Ser
             if (bottom || top || Int2CharAVLTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f2045to = to;
+                this.f2009to = to;
                 this.top = top;
                 this.defRetValue = Int2CharAVLTreeMap.this.defRetValue;
                 return;
@@ -1004,7 +1004,7 @@ public class Int2CharAVLTreeMap extends AbstractInt2CharSortedMap implements Ser
 
         /* renamed from: in */
         final boolean m772in(int k) {
-            return (this.bottom || Int2CharAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Int2CharAVLTreeMap.this.compare(k, this.f2045to) < 0);
+            return (this.bottom || Int2CharAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Int2CharAVLTreeMap.this.compare(k, this.f2009to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.Int2CharMap, p014it.unimi.dsi.fastutil.ints.Int2CharSortedMap
@@ -1179,7 +1179,7 @@ public class Int2CharAVLTreeMap extends AbstractInt2CharSortedMap implements Ser
         public char put(int k, char v) {
             Int2CharAVLTreeMap.this.modified = false;
             if (!m772in(k)) {
-                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2045to)) + ")");
+                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2009to)) + ")");
             }
             return Int2CharAVLTreeMap.this.modified ? this.defRetValue : Int2CharAVLTreeMap.this.put(k, v);
         }
@@ -1217,7 +1217,7 @@ public class Int2CharAVLTreeMap extends AbstractInt2CharSortedMap implements Ser
 
         @Override // p014it.unimi.dsi.fastutil.ints.Int2CharSortedMap
         public Int2CharSortedMap headMap(int to) {
-            if (!this.top && Int2CharAVLTreeMap.this.compare(to, this.f2045to) >= 0) {
+            if (!this.top && Int2CharAVLTreeMap.this.compare(to, this.f2009to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1228,7 +1228,7 @@ public class Int2CharAVLTreeMap extends AbstractInt2CharSortedMap implements Ser
             if (!this.bottom && Int2CharAVLTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f2045to, this.top);
+            return new Submap(from, false, this.f2009to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.Int2CharSortedMap
@@ -1237,12 +1237,12 @@ public class Int2CharAVLTreeMap extends AbstractInt2CharSortedMap implements Ser
                 return new Submap(from, false, to, false);
             }
             if (!this.top) {
-                to = Int2CharAVLTreeMap.this.compare(to, this.f2045to) < 0 ? to : this.f2045to;
+                to = Int2CharAVLTreeMap.this.compare(to, this.f2009to) < 0 ? to : this.f2009to;
             }
             if (!this.bottom) {
                 from = Int2CharAVLTreeMap.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f2045to) ? new Submap(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f2009to) ? new Submap(from, false, to, false) : this;
         }
 
         public Entry firstEntry() {
@@ -1261,7 +1261,7 @@ public class Int2CharAVLTreeMap extends AbstractInt2CharSortedMap implements Ser
             if (e == null) {
                 return null;
             }
-            if (this.top || Int2CharAVLTreeMap.this.compare(e.key, this.f2045to) < 0) {
+            if (this.top || Int2CharAVLTreeMap.this.compare(e.key, this.f2009to) < 0) {
                 return e;
             }
             return null;
@@ -1275,8 +1275,8 @@ public class Int2CharAVLTreeMap extends AbstractInt2CharSortedMap implements Ser
             if (this.top) {
                 e = Int2CharAVLTreeMap.this.lastEntry;
             } else {
-                e = Int2CharAVLTreeMap.this.locateKey(this.f2045to);
-                if (Int2CharAVLTreeMap.this.compare(e.key, this.f2045to) >= 0) {
+                e = Int2CharAVLTreeMap.this.locateKey(this.f2009to);
+                if (Int2CharAVLTreeMap.this.compare(e.key, this.f2009to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1354,7 +1354,7 @@ public class Int2CharAVLTreeMap extends AbstractInt2CharSortedMap implements Ser
             @Override // p014it.unimi.dsi.fastutil.ints.Int2CharAVLTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Int2CharAVLTreeMap.this.compare(this.next.key, Submap.this.f2045to) >= 0) {
+                if (!Submap.this.top && this.next != null && Int2CharAVLTreeMap.this.compare(this.next.key, Submap.this.f2009to) >= 0) {
                     this.next = null;
                 }
             }

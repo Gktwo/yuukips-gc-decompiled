@@ -621,7 +621,7 @@ public class LongRBTreeSet extends AbstractLongSortedSet implements Serializable
         long from;
 
         /* renamed from: to */
-        long f2443to;
+        long f2407to;
         boolean bottom;
         boolean top;
 
@@ -629,7 +629,7 @@ public class LongRBTreeSet extends AbstractLongSortedSet implements Serializable
             if (bottom || top || LongRBTreeSet.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f2443to = to;
+                this.f2407to = to;
                 this.top = top;
                 return;
             }
@@ -647,7 +647,7 @@ public class LongRBTreeSet extends AbstractLongSortedSet implements Serializable
 
         /* renamed from: in */
         final boolean m619in(long k) {
-            return (this.bottom || LongRBTreeSet.this.compare(k, this.from) >= 0) && (this.top || LongRBTreeSet.this.compare(k, this.f2443to) < 0);
+            return (this.bottom || LongRBTreeSet.this.compare(k, this.from) >= 0) && (this.top || LongRBTreeSet.this.compare(k, this.f2407to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongCollection, p014it.unimi.dsi.fastutil.longs.LongCollection
@@ -660,7 +660,7 @@ public class LongRBTreeSet extends AbstractLongSortedSet implements Serializable
             if (m619in(k)) {
                 return LongRBTreeSet.this.add(k);
             }
-            throw new IllegalArgumentException("Element (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2443to)) + ")");
+            throw new IllegalArgumentException("Element (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2407to)) + ")");
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongSet, p014it.unimi.dsi.fastutil.longs.LongSet
@@ -705,7 +705,7 @@ public class LongRBTreeSet extends AbstractLongSortedSet implements Serializable
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongSortedSet
         public LongSortedSet headSet(long to) {
-            if (!this.top && LongRBTreeSet.this.compare(to, this.f2443to) >= 0) {
+            if (!this.top && LongRBTreeSet.this.compare(to, this.f2407to) >= 0) {
                 return this;
             }
             return new Subset(this.from, this.bottom, to, false);
@@ -716,7 +716,7 @@ public class LongRBTreeSet extends AbstractLongSortedSet implements Serializable
             if (!this.bottom && LongRBTreeSet.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Subset(from, false, this.f2443to, this.top);
+            return new Subset(from, false, this.f2407to, this.top);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -735,7 +735,7 @@ public class LongRBTreeSet extends AbstractLongSortedSet implements Serializable
             }
             long to = j2;
             if (!this.top) {
-                to = LongRBTreeSet.this.compare(j2, this.f2443to) < 0 ? j2 : this.f2443to;
+                to = LongRBTreeSet.this.compare(j2, this.f2407to) < 0 ? j2 : this.f2407to;
             }
             long from = j;
             if (!this.bottom) {
@@ -743,7 +743,7 @@ public class LongRBTreeSet extends AbstractLongSortedSet implements Serializable
             }
             if (!this.top && !this.bottom) {
                 if ((from == 1 ? 1 : 0) == this.from) {
-                    if ((to == 1 ? 1 : 0) == this.f2443to) {
+                    if ((to == 1 ? 1 : 0) == this.f2407to) {
                         return this;
                     }
                 }
@@ -767,7 +767,7 @@ public class LongRBTreeSet extends AbstractLongSortedSet implements Serializable
             if (e == null) {
                 return null;
             }
-            if (this.top || LongRBTreeSet.this.compare(e.key, this.f2443to) < 0) {
+            if (this.top || LongRBTreeSet.this.compare(e.key, this.f2407to) < 0) {
                 return e;
             }
             return null;
@@ -781,8 +781,8 @@ public class LongRBTreeSet extends AbstractLongSortedSet implements Serializable
             if (this.top) {
                 e = LongRBTreeSet.this.lastEntry;
             } else {
-                e = LongRBTreeSet.this.locateKey(this.f2443to);
-                if (LongRBTreeSet.this.compare(e.key, this.f2443to) >= 0) {
+                e = LongRBTreeSet.this.locateKey(this.f2407to);
+                if (LongRBTreeSet.this.compare(e.key, this.f2407to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -860,7 +860,7 @@ public class LongRBTreeSet extends AbstractLongSortedSet implements Serializable
             @Override // p014it.unimi.dsi.fastutil.longs.LongRBTreeSet.SetIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Subset.this.top && this.next != null && LongRBTreeSet.this.compare(this.next.key, Subset.this.f2443to) >= 0) {
+                if (!Subset.this.top && this.next != null && LongRBTreeSet.this.compare(this.next.key, Subset.this.f2407to) >= 0) {
                     this.next = null;
                 }
             }

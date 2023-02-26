@@ -9,7 +9,7 @@ import emu.grasscutter.net.proto.DungeonEntryInfoRspOuterClass;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketDungeonEntryInfoRsp.class */
 public class PacketDungeonEntryInfoRsp extends BasePacket {
     public PacketDungeonEntryInfoRsp(Player player, PointData pointData) {
-        super(930);
+        super(955);
         DungeonEntryInfoRspOuterClass.DungeonEntryInfoRsp.Builder proto = DungeonEntryInfoRspOuterClass.DungeonEntryInfoRsp.newBuilder().setPointId(pointData.getId());
         if (pointData.getDungeonIds() != null) {
             for (int dungeonId : pointData.getDungeonIds()) {
@@ -20,7 +20,7 @@ public class PacketDungeonEntryInfoRsp extends BasePacket {
     }
 
     public PacketDungeonEntryInfoRsp() {
-        super(930);
+        super(955);
         setData(DungeonEntryInfoRspOuterClass.DungeonEntryInfoRsp.newBuilder().setRetcode(1).build());
     }
 }

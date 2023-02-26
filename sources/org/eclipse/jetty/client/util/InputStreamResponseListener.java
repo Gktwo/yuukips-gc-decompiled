@@ -19,7 +19,7 @@ import org.eclipse.jetty.client.api.Response;
 import org.eclipse.jetty.client.api.Result;
 import org.eclipse.jetty.client.util.DeferredContentProvider;
 import org.eclipse.jetty.util.BufferUtil;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.Callback;
 import org.eclipse.jetty.util.log.Log;
 import org.eclipse.jetty.util.log.Logger;
@@ -160,7 +160,7 @@ public class InputStreamResponseListener extends Response.Listener.Adapter {
         if (this.stream.compareAndSet(null, result)) {
             return result;
         }
-        return C5747IO.getClosedStream();
+        return C5739IO.getClosedStream();
     }
 
     /* access modifiers changed from: private */

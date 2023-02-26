@@ -42,13 +42,13 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
     protected ShortHash.Strategy strategy;
 
     /* renamed from: n */
-    protected transient int f2908n;
+    protected transient int f2872n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2909f;
+    protected final float f2873f;
     protected transient Short2ByteMap.FastEntrySet entries;
     protected transient ShortSet keys;
     protected transient ByteCollection values;
@@ -60,14 +60,14 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2909f = f;
+            this.f2873f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2908n = arraySize;
+            this.f2872n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2908n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2908n, f);
-            this.key = new short[this.f2908n + 1];
-            this.value = new byte[this.f2908n + 1];
+            this.mask = this.f2872n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2872n, f);
+            this.key = new short[this.f2872n + 1];
+            this.value = new byte[this.f2872n + 1];
         }
     }
 
@@ -121,15 +121,15 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2909f);
-        if (needed > this.f2908n) {
+        int needed = HashCommon.arraySize(capacity, this.f2873f);
+        if (needed > this.f2872n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2909f)))));
-        if (needed > this.f2908n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2873f)))));
+        if (needed > this.f2872n) {
             rehash(needed);
         }
     }
@@ -139,8 +139,8 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
         byte oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f2908n > this.minN && this.size < this.maxFill / 4 && this.f2908n > 16) {
-            rehash(this.f2908n / 2);
+        if (this.f2872n > this.minN && this.size < this.maxFill / 4 && this.f2872n > 16) {
+            rehash(this.f2872n / 2);
         }
         return oldValue;
     }
@@ -148,17 +148,17 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
     /* access modifiers changed from: private */
     public byte removeNullEntry() {
         this.containsNullKey = false;
-        byte oldValue = this.value[this.f2908n];
+        byte oldValue = this.value[this.f2872n];
         this.size--;
-        if (this.f2908n > this.minN && this.size < this.maxFill / 4 && this.f2908n > 16) {
-            rehash(this.f2908n / 2);
+        if (this.f2872n > this.minN && this.size < this.maxFill / 4 && this.f2872n > 16) {
+            rehash(this.f2872n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShort2ByteMap, java.util.Map
     public void putAll(Map<? extends Short, ? extends Byte> m) {
-        if (((double) this.f2909f) <= 0.5d) {
+        if (((double) this.f2873f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -169,7 +169,7 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
     private int find(short k) {
         short curr;
         if (this.strategy.equals(k, 0)) {
-            return this.containsNullKey ? this.f2908n : -(this.f2908n + 1);
+            return this.containsNullKey ? this.f2872n : -(this.f2872n + 1);
         }
         short[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -193,7 +193,7 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
     }
 
     private void insert(int pos, short k, byte v) {
-        if (pos == this.f2908n) {
+        if (pos == this.f2872n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -201,7 +201,7 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2909f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2873f));
         }
     }
 
@@ -245,9 +245,9 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f2908n, incr);
+            return addToValue(this.f2872n, incr);
         } else {
-            pos = this.f2908n;
+            pos = this.f2872n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -255,7 +255,7 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2909f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2873f));
         }
         return this.defRetValue;
     }
@@ -321,7 +321,7 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
     public byte get(short k) {
         short curr;
         if (this.strategy.equals(k, 0)) {
-            return this.containsNullKey ? this.value[this.f2908n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2872n] : this.defRetValue;
         }
         short[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -375,10 +375,10 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
     public boolean containsValue(byte v) {
         byte[] value = this.value;
         short[] key = this.key;
-        if (this.containsNullKey && value[this.f2908n] == v) {
+        if (this.containsNullKey && value[this.f2872n] == v) {
             return true;
         }
-        int i = this.f2908n;
+        int i = this.f2872n;
         while (true) {
             i--;
             if (i == 0) {
@@ -394,7 +394,7 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
     public byte getOrDefault(short k, byte defaultValue) {
         short curr;
         if (this.strategy.equals(k, 0)) {
-            return this.containsNullKey ? this.value[this.f2908n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2872n] : defaultValue;
         }
         short[] key = this.key;
         int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;
@@ -454,7 +454,7 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
                 removeEntry(pos);
                 return true;
             }
-        } else if (!this.containsNullKey || v != this.value[this.f2908n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f2872n]) {
             return false;
         } else {
             removeNullEntry();
@@ -709,31 +709,31 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
         int last;
 
         /* renamed from: c */
-        int f2910c;
+        int f2874c;
         boolean mustReturnNullKey;
         ShortArrayList wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Short2ByteOpenCustomHashMap.this.f2908n;
+            this.pos = Short2ByteOpenCustomHashMap.this.f2872n;
             this.last = -1;
-            this.f2910c = Short2ByteOpenCustomHashMap.this.size;
+            this.f2874c = Short2ByteOpenCustomHashMap.this.size;
             this.mustReturnNullKey = Short2ByteOpenCustomHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f2910c != 0;
+            return this.f2874c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2910c--;
+            this.f2874c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Short2ByteOpenCustomHashMap.this.f2908n;
+                int i = Short2ByteOpenCustomHashMap.this.f2872n;
                 this.last = i;
                 return i;
             }
@@ -765,13 +765,13 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Short2ByteOpenCustomHashMap.this.f2908n;
+                int i = Short2ByteOpenCustomHashMap.this.f2872n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f2910c--;
+                this.f2874c--;
             }
             short[] key = Short2ByteOpenCustomHashMap.this.key;
-            while (this.f2910c != 0) {
+            while (this.f2874c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -788,12 +788,12 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
                         i3 = Short2ByteOpenCustomHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f2910c--;
+                    this.f2874c--;
                 } else if (key[this.pos] != 0) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f2910c--;
+                    this.f2874c--;
                 }
             }
         }
@@ -842,7 +842,7 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Short2ByteOpenCustomHashMap.this.f2908n) {
+            if (this.last == Short2ByteOpenCustomHashMap.this.f2872n) {
                 Short2ByteOpenCustomHashMap.this.containsNullKey = false;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
@@ -939,7 +939,7 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
         int max;
 
         /* renamed from: c */
-        int f2911c;
+        int f2875c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -949,16 +949,16 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Short2ByteOpenCustomHashMap.this.f2908n;
-            this.f2911c = 0;
+            this.max = Short2ByteOpenCustomHashMap.this.f2872n;
+            this.f2875c = 0;
             this.mustReturnNull = Short2ByteOpenCustomHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Short2ByteOpenCustomHashMap.this.f2908n;
-            this.f2911c = 0;
+            this.max = Short2ByteOpenCustomHashMap.this.f2872n;
+            this.f2875c = 0;
             this.mustReturnNull = Short2ByteOpenCustomHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -970,14 +970,14 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2911c++;
-                acceptOnIndex(action, Short2ByteOpenCustomHashMap.this.f2908n);
+                this.f2875c++;
+                acceptOnIndex(action, Short2ByteOpenCustomHashMap.this.f2872n);
                 return true;
             }
             short[] key = Short2ByteOpenCustomHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f2911c++;
+                    this.f2875c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -991,14 +991,14 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2911c++;
-                acceptOnIndex(action, Short2ByteOpenCustomHashMap.this.f2908n);
+                this.f2875c++;
+                acceptOnIndex(action, Short2ByteOpenCustomHashMap.this.f2872n);
             }
             short[] key = Short2ByteOpenCustomHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     acceptOnIndex(action, this.pos);
-                    this.f2911c++;
+                    this.f2875c++;
                 }
                 this.pos++;
             }
@@ -1006,9 +1006,9 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Short2ByteOpenCustomHashMap.this.size - this.f2911c);
+                return (long) (Short2ByteOpenCustomHashMap.this.size - this.f2875c);
             }
-            return Math.min((long) (Short2ByteOpenCustomHashMap.this.size - this.f2911c), ((long) ((((double) Short2ByteOpenCustomHashMap.this.realSize()) / ((double) Short2ByteOpenCustomHashMap.this.f2908n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Short2ByteOpenCustomHashMap.this.size - this.f2875c), ((long) ((((double) Short2ByteOpenCustomHashMap.this.realSize()) / ((double) Short2ByteOpenCustomHashMap.this.f2872n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1201,7 +1201,7 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
             short k = ((Short) e.getKey()).shortValue();
             byte v = ((Byte) e.getValue()).byteValue();
             if (Short2ByteOpenCustomHashMap.this.strategy.equals(k, 0)) {
-                return Short2ByteOpenCustomHashMap.this.containsNullKey && Short2ByteOpenCustomHashMap.this.value[Short2ByteOpenCustomHashMap.this.f2908n] == v;
+                return Short2ByteOpenCustomHashMap.this.containsNullKey && Short2ByteOpenCustomHashMap.this.value[Short2ByteOpenCustomHashMap.this.f2872n] == v;
             }
             short[] key = Short2ByteOpenCustomHashMap.this.key;
             int mix = HashCommon.mix(Short2ByteOpenCustomHashMap.this.strategy.hashCode(k)) & Short2ByteOpenCustomHashMap.this.mask;
@@ -1262,7 +1262,7 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
                     Short2ByteOpenCustomHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Short2ByteOpenCustomHashMap.this.containsNullKey || Short2ByteOpenCustomHashMap.this.value[Short2ByteOpenCustomHashMap.this.f2908n] != v) {
+            } else if (!Short2ByteOpenCustomHashMap.this.containsNullKey || Short2ByteOpenCustomHashMap.this.value[Short2ByteOpenCustomHashMap.this.f2872n] != v) {
                 return false;
             } else {
                 Short2ByteOpenCustomHashMap.this.removeNullEntry();
@@ -1283,9 +1283,9 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Short2ByteMap.Entry> consumer) {
             if (Short2ByteOpenCustomHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractShort2ByteMap.BasicEntry(Short2ByteOpenCustomHashMap.this.key[Short2ByteOpenCustomHashMap.this.f2908n], Short2ByteOpenCustomHashMap.this.value[Short2ByteOpenCustomHashMap.this.f2908n]));
+                consumer.accept(new AbstractShort2ByteMap.BasicEntry(Short2ByteOpenCustomHashMap.this.key[Short2ByteOpenCustomHashMap.this.f2872n], Short2ByteOpenCustomHashMap.this.value[Short2ByteOpenCustomHashMap.this.f2872n]));
             }
-            int pos = Short2ByteOpenCustomHashMap.this.f2908n;
+            int pos = Short2ByteOpenCustomHashMap.this.f2872n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1301,11 +1301,11 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
         public void fastForEach(Consumer<? super Short2ByteMap.Entry> consumer) {
             AbstractShort2ByteMap.BasicEntry entry = new AbstractShort2ByteMap.BasicEntry();
             if (Short2ByteOpenCustomHashMap.this.containsNullKey) {
-                entry.key = Short2ByteOpenCustomHashMap.this.key[Short2ByteOpenCustomHashMap.this.f2908n];
-                entry.value = Short2ByteOpenCustomHashMap.this.value[Short2ByteOpenCustomHashMap.this.f2908n];
+                entry.key = Short2ByteOpenCustomHashMap.this.key[Short2ByteOpenCustomHashMap.this.f2872n];
+                entry.value = Short2ByteOpenCustomHashMap.this.value[Short2ByteOpenCustomHashMap.this.f2872n];
                 consumer.accept(entry);
             }
-            int pos = Short2ByteOpenCustomHashMap.this.f2908n;
+            int pos = Short2ByteOpenCustomHashMap.this.f2872n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1403,9 +1403,9 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterable
         public void forEach(ShortConsumer consumer) {
             if (Short2ByteOpenCustomHashMap.this.containsNullKey) {
-                consumer.accept(Short2ByteOpenCustomHashMap.this.key[Short2ByteOpenCustomHashMap.this.f2908n]);
+                consumer.accept(Short2ByteOpenCustomHashMap.this.key[Short2ByteOpenCustomHashMap.this.f2872n]);
             }
-            int pos = Short2ByteOpenCustomHashMap.this.f2908n;
+            int pos = Short2ByteOpenCustomHashMap.this.f2872n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1524,9 +1524,9 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
                 @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterable
                 public void forEach(ByteConsumer consumer) {
                     if (Short2ByteOpenCustomHashMap.this.containsNullKey) {
-                        consumer.accept(Short2ByteOpenCustomHashMap.this.value[Short2ByteOpenCustomHashMap.this.f2908n]);
+                        consumer.accept(Short2ByteOpenCustomHashMap.this.value[Short2ByteOpenCustomHashMap.this.f2872n]);
                     }
-                    int pos = Short2ByteOpenCustomHashMap.this.f2908n;
+                    int pos = Short2ByteOpenCustomHashMap.this.f2872n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1562,8 +1562,8 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2909f)));
-        if (l >= this.f2908n || this.size > HashCommon.maxFill(l, this.f2909f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2873f)));
+        if (l >= this.f2872n || this.size > HashCommon.maxFill(l, this.f2873f)) {
             return true;
         }
         try {
@@ -1581,7 +1581,7 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
         int mask = newN - 1;
         short[] newKey = new short[newN + 1];
         byte[] newValue = new byte[newN + 1];
-        int i2 = this.f2908n;
+        int i2 = this.f2872n;
         int j = realSize();
         while (true) {
             j--;
@@ -1600,10 +1600,10 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f2908n];
-                this.f2908n = newN;
+                newValue[newN] = value[this.f2872n];
+                this.f2872n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2908n, this.f2909f);
+                this.maxFill = HashCommon.maxFill(this.f2872n, this.f2873f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1645,7 +1645,7 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f2908n];
+            h += this.value[this.f2872n];
         }
         return h;
     }
@@ -1671,12 +1671,12 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2908n = HashCommon.arraySize(this.size, this.f2909f);
-        this.maxFill = HashCommon.maxFill(this.f2908n, this.f2909f);
-        this.mask = this.f2908n - 1;
-        short[] key = new short[this.f2908n + 1];
+        this.f2872n = HashCommon.arraySize(this.size, this.f2873f);
+        this.maxFill = HashCommon.maxFill(this.f2872n, this.f2873f);
+        this.mask = this.f2872n - 1;
+        short[] key = new short[this.f2872n + 1];
         this.key = key;
-        byte[] value = new byte[this.f2908n + 1];
+        byte[] value = new byte[this.f2872n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1685,7 +1685,7 @@ public class Short2ByteOpenCustomHashMap extends AbstractShort2ByteMap implement
                 short k = s.readShort();
                 byte v = s.readByte();
                 if (this.strategy.equals(k, 0)) {
-                    pos = this.f2908n;
+                    pos = this.f2872n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix(this.strategy.hashCode(k));

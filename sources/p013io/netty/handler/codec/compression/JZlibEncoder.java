@@ -22,7 +22,7 @@ public class JZlibEncoder extends ZlibEncoder {
     private final int wrapperOverhead;
 
     /* renamed from: z */
-    private final Deflater f1007z;
+    private final Deflater f971z;
     private volatile boolean finished;
     private volatile ChannelHandlerContext ctx;
     private static final int THREAD_POOL_DELAY_SECONDS = 10;
@@ -44,7 +44,7 @@ public class JZlibEncoder extends ZlibEncoder {
     }
 
     public JZlibEncoder(ZlibWrapper wrapper, int compressionLevel, int windowBits, int memLevel) {
-        this.f1007z = new Deflater();
+        this.f971z = new Deflater();
         ObjectUtil.checkInRange(compressionLevel, 0, 9, "compressionLevel");
         ObjectUtil.checkInRange(windowBits, 9, 15, "windowBits");
         ObjectUtil.checkInRange(memLevel, 1, 9, "memLevel");
@@ -52,9 +52,9 @@ public class JZlibEncoder extends ZlibEncoder {
         if (wrapper == ZlibWrapper.ZLIB_OR_NONE) {
             throw new IllegalArgumentException("wrapper '" + ZlibWrapper.ZLIB_OR_NONE + "' is not allowed for compression.");
         }
-        int resultCode = this.f1007z.init(compressionLevel, windowBits, memLevel, ZlibUtil.convertWrapperType(wrapper));
+        int resultCode = this.f971z.init(compressionLevel, windowBits, memLevel, ZlibUtil.convertWrapperType(wrapper));
         if (resultCode != 0) {
-            ZlibUtil.fail(this.f1007z, "initialization failure", resultCode);
+            ZlibUtil.fail(this.f971z, "initialization failure", resultCode);
         }
         this.wrapperOverhead = ZlibUtil.wrapperOverhead(wrapper);
     }
@@ -68,18 +68,18 @@ public class JZlibEncoder extends ZlibEncoder {
     }
 
     public JZlibEncoder(int compressionLevel, int windowBits, int memLevel, byte[] dictionary) {
-        this.f1007z = new Deflater();
+        this.f971z = new Deflater();
         ObjectUtil.checkInRange(compressionLevel, 0, 9, "compressionLevel");
         ObjectUtil.checkInRange(windowBits, 9, 15, "windowBits");
         ObjectUtil.checkInRange(memLevel, 1, 9, "memLevel");
         ObjectUtil.checkNotNull(dictionary, "dictionary");
-        int resultCode = this.f1007z.deflateInit(compressionLevel, windowBits, memLevel, JZlib.W_ZLIB);
+        int resultCode = this.f971z.deflateInit(compressionLevel, windowBits, memLevel, JZlib.W_ZLIB);
         if (resultCode != 0) {
-            ZlibUtil.fail(this.f1007z, "initialization failure", resultCode);
+            ZlibUtil.fail(this.f971z, "initialization failure", resultCode);
         } else {
-            int resultCode2 = this.f1007z.deflateSetDictionary(dictionary, dictionary.length);
+            int resultCode2 = this.f971z.deflateSetDictionary(dictionary, dictionary.length);
             if (resultCode2 != 0) {
-                ZlibUtil.fail(this.f1007z, "failed to set the dictionary", resultCode2);
+                ZlibUtil.fail(this.f971z, "failed to set the dictionary", resultCode2);
             }
         }
         this.wrapperOverhead = ZlibUtil.wrapperOverhead(ZlibWrapper.ZLIB);
@@ -162,31 +162,31 @@ public class JZlibEncoder extends ZlibEncoder {
         }
         this.finished = true;
         try {
-            this.f1007z.next_in = EmptyArrays.EMPTY_BYTES;
-            this.f1007z.next_in_index = 0;
-            this.f1007z.avail_in = 0;
+            this.f971z.next_in = EmptyArrays.EMPTY_BYTES;
+            this.f971z.next_in_index = 0;
+            this.f971z.avail_in = 0;
             byte[] out = new byte[32];
-            this.f1007z.next_out = out;
-            this.f1007z.next_out_index = 0;
-            this.f1007z.avail_out = out.length;
-            int resultCode = this.f1007z.deflate(4);
+            this.f971z.next_out = out;
+            this.f971z.next_out_index = 0;
+            this.f971z.avail_out = out.length;
+            int resultCode = this.f971z.deflate(4);
             if (resultCode == 0 || resultCode == 1) {
-                if (this.f1007z.next_out_index != 0) {
-                    footer = Unpooled.wrappedBuffer(out, 0, this.f1007z.next_out_index);
+                if (this.f971z.next_out_index != 0) {
+                    footer = Unpooled.wrappedBuffer(out, 0, this.f971z.next_out_index);
                 } else {
                     footer = Unpooled.EMPTY_BUFFER;
                 }
                 return ctx.writeAndFlush(footer, promise);
             }
-            promise.setFailure((Throwable) ZlibUtil.deflaterException(this.f1007z, "compression failure", resultCode));
-            this.f1007z.deflateEnd();
-            this.f1007z.next_in = null;
-            this.f1007z.next_out = null;
+            promise.setFailure((Throwable) ZlibUtil.deflaterException(this.f971z, "compression failure", resultCode));
+            this.f971z.deflateEnd();
+            this.f971z.next_in = null;
+            this.f971z.next_out = null;
             return promise;
         } finally {
-            this.f1007z.deflateEnd();
-            this.f1007z.next_in = null;
-            this.f1007z.next_out = null;
+            this.f971z.deflateEnd();
+            this.f971z.next_in = null;
+            this.f971z.next_out = null;
         }
     }
 

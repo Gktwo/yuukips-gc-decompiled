@@ -393,19 +393,19 @@ public final class CipherSuite {
     public static final CipherSuite TLS_ECDHE_PSK_WITH_CHACHA20_POLY1305_SHA256 = Companion.init(Ciphers.TLS_ECDHE_PSK_WITH_CHACHA20_POLY1305_SHA256, 52396);
     @JvmField
     @NotNull
-    public static final CipherSuite TLS_AES_128_GCM_SHA256 = Companion.init(Ciphers.TLS_AES_128_GCM_SHA256, PacketOpcodes.HomeEnterEditModeFinishReq);
+    public static final CipherSuite TLS_AES_128_GCM_SHA256 = Companion.init(Ciphers.TLS_AES_128_GCM_SHA256, PacketOpcodes.HomeLimitedShopBuyGoodsRsp);
     @JvmField
     @NotNull
-    public static final CipherSuite TLS_AES_256_GCM_SHA384 = Companion.init(Ciphers.TLS_AES_256_GCM_SHA384, PacketOpcodes.HomePlantWeedReq);
+    public static final CipherSuite TLS_AES_256_GCM_SHA384 = Companion.init(Ciphers.TLS_AES_256_GCM_SHA384, 4866);
     @JvmField
     @NotNull
     public static final CipherSuite TLS_CHACHA20_POLY1305_SHA256 = Companion.init(Ciphers.TLS_CHACHA20_POLY1305_SHA256, 4867);
     @JvmField
     @NotNull
-    public static final CipherSuite TLS_AES_128_CCM_SHA256 = Companion.init("TLS_AES_128_CCM_SHA256", PacketOpcodes.HomeMarkPointNotify);
+    public static final CipherSuite TLS_AES_128_CCM_SHA256 = Companion.init("TLS_AES_128_CCM_SHA256", 4868);
     @JvmField
     @NotNull
-    public static final CipherSuite TLS_AES_128_CCM_8_SHA256 = Companion.init("TLS_AES_128_CCM_8_SHA256", 4869);
+    public static final CipherSuite TLS_AES_128_CCM_8_SHA256 = Companion.init("TLS_AES_128_CCM_8_SHA256", PacketOpcodes.PlayerApplyEnterHomeResultRsp);
 
     @JvmStatic
     @NotNull
@@ -431,7 +431,7 @@ public final class CipherSuite {
     @JvmName(name = "-deprecated_javaName")
     @NotNull
     /* renamed from: -deprecated_javaName  reason: not valid java name */
-    public final String m9170deprecated_javaName() {
+    public final String m9167deprecated_javaName() {
         return this.javaName;
     }
 

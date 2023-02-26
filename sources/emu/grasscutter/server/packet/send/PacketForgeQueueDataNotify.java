@@ -9,7 +9,7 @@ import java.util.Map;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketForgeQueueDataNotify.class */
 public class PacketForgeQueueDataNotify extends BasePacket {
     public PacketForgeQueueDataNotify(Map<Integer, ForgeQueueDataOuterClass.ForgeQueueData> queueData, List<Integer> removedQueues) {
-        super(695);
+        super(643);
         ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotify.Builder builder = ForgeQueueDataNotifyOuterClass.ForgeQueueDataNotify.newBuilder().addAllRemovedForgeQueueList(removedQueues);
         for (Integer num : queueData.keySet()) {
             int queueId = num.intValue();

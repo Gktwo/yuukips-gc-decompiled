@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeStartReqOuterClass.class */
 public final class FurnitureMakeStartReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bFurnitureMakeStartReq.proto\";\n\u0015FurnitureMakeStartReq\u0012\u000f\n\u0007make_id\u0018\u000f \u0001(\r\u0012\u0011\n\tavatar_id\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bFurnitureMakeStartReq.proto\"9\n\u0015FurnitureMakeStartReq\u0012\u000e\n\u0006makeId\u0018\u000f \u0001(\r\u0012\u0010\n\bavatarId\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_FurnitureMakeStartReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_FurnitureMakeStartReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FurnitureMakeStartReq_descriptor, new String[]{"MakeId", "AvatarId"});
 
@@ -43,9 +43,9 @@ public final class FurnitureMakeStartReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeStartReqOuterClass$FurnitureMakeStartReq.class */
     public static final class FurnitureMakeStartReq extends GeneratedMessageV3 implements FurnitureMakeStartReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MAKE_ID_FIELD_NUMBER = 15;
+        public static final int MAKEID_FIELD_NUMBER = 15;
         private int makeId_;
-        public static final int AVATAR_ID_FIELD_NUMBER = 13;
+        public static final int AVATARID_FIELD_NUMBER = 13;
         private int avatarId_;
         private byte memoizedIsInitialized;
         private static final FurnitureMakeStartReq DEFAULT_INSTANCE = new FurnitureMakeStartReq();

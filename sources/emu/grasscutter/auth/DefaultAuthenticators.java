@@ -168,7 +168,7 @@ public final class DefaultAuthenticators {
             	at jadx.core.dex.visitors.usage.UsageInfoVisitor.init(UsageInfoVisitor.java:36)
             	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:267)
             */
-        /*  JADX ERROR: Dependency scan failed at insn: 0x0300: INVOKE_CUSTOM r-36
+        /*  JADX ERROR: Dependency scan failed at insn: 0x0305: INVOKE_CUSTOM r-36
             java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
             	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
             	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
@@ -300,7 +300,7 @@ public final class DefaultAuthenticators {
             	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:42)
             	... 12 more
             */
-        /*  JADX ERROR: Failed to decode insn: 0x0300: INVOKE_CUSTOM r0, method: emu.grasscutter.auth.DefaultAuthenticators.ExperimentalPasswordAuthenticator.authenticate(emu.grasscutter.auth.AuthenticationSystem$AuthenticationRequest):emu.grasscutter.server.http.objects.LoginResultJson
+        /*  JADX ERROR: Failed to decode insn: 0x0305: INVOKE_CUSTOM r0, method: emu.grasscutter.auth.DefaultAuthenticators.ExperimentalPasswordAuthenticator.authenticate(emu.grasscutter.auth.AuthenticationSystem$AuthenticationRequest):emu.grasscutter.server.http.objects.LoginResultJson
             jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (Ljava/lang/String;)Ljava/lang/String;}, Access failed  because invalid username]}
             	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:55)
             	at jadx.core.dex.instructions.InsnDecoder.invoke(InsnDecoder.java:568)
@@ -322,7 +322,7 @@ public final class DefaultAuthenticators {
         @Override // emu.grasscutter.auth.Authenticator
         public emu.grasscutter.server.http.objects.LoginResultJson authenticate(emu.grasscutter.auth.AuthenticationSystem.AuthenticationRequest r8) {
             /*
-            // Method dump skipped, instructions count: 863
+            // Method dump skipped, instructions count: 868
             */
             throw new UnsupportedOperationException("Method not decompiled: emu.grasscutter.auth.DefaultAuthenticators.ExperimentalPasswordAuthenticator.authenticate(emu.grasscutter.auth.AuthenticationSystem$AuthenticationRequest):emu.grasscutter.server.http.objects.LoginResultJson");
         }
@@ -350,16 +350,16 @@ public final class DefaultAuthenticators {
                 if ($assertionsDisabled || requestData != null) {
                     String address = Utils.getClientIpAddress(request.getContext());
                     Account account = DatabaseHelper.getAccountById(requestData.uid);
-                    if (account != null && account.getSessionKey().equals(requestData.token)) {
+                    if (!(account != null && account.getSessionKey().equals(requestData.token)) || account == null) {
+                        response.retcode = -201;
+                        response.message = Language.translate("messages.dispatch.account.account_cache_error", new Object[0]);
+                        loggerMessage = Language.translate("messages.dispatch.account.login_token_error", address);
+                    } else {
                         response.message = "OK";
                         response.data.account.uid = account.getId();
                         response.data.account.token = account.getSessionKey();
                         response.data.account.email = account.getEmail();
                         loggerMessage = Language.translate("messages.dispatch.account.login_token_success", address, requestData.uid);
-                    } else {
-                        response.retcode = -201;
-                        response.message = Language.translate("messages.dispatch.account.account_cache_error", new Object[0]);
-                        loggerMessage = Language.translate("messages.dispatch.account.login_token_error", address);
                     }
                 } else {
                     throw new AssertionError();
@@ -399,16 +399,16 @@ public final class DefaultAuthenticators {
                 } else if ($assertionsDisabled || loginData != null) {
                     String address = Utils.getClientIpAddress(request.getContext());
                     Account account = DatabaseHelper.getAccountById(loginData.uid);
-                    if (account != null && account.getSessionKey().equals(loginData.token)) {
+                    if (!(account != null && account.getSessionKey().equals(loginData.token)) || account == null) {
+                        response.retcode = -201;
+                        response.message = Language.translate("messages.dispatch.account.session_key_error", new Object[0]);
+                        loggerMessage = Language.translate("messages.dispatch.account.combo_token_error", address);
+                    } else {
                         response.message = "OK";
                         response.data.open_id = account.getId();
                         response.data.combo_id = "157795300";
                         response.data.combo_token = account.generateLoginToken();
                         loggerMessage = Language.translate("messages.dispatch.account.combo_token_success", address);
-                    } else {
-                        response.retcode = -201;
-                        response.message = Language.translate("messages.dispatch.account.session_key_error", new Object[0]);
-                        loggerMessage = Language.translate("messages.dispatch.account.combo_token_error", address);
                     }
                 } else {
                     throw new AssertionError();

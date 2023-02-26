@@ -113,7 +113,7 @@ public class JansiSupportImpl implements JansiSupport {
             org.jline.terminal.impl.jansi.JansiSupportImpl.JANSI_MINOR_VERSION = r0
             return
         */
-        throw new UnsupportedOperationException("Method not decompiled: org.jline.terminal.impl.jansi.JansiSupportImpl.m10125clinit():void");
+        throw new UnsupportedOperationException("Method not decompiled: org.jline.terminal.impl.jansi.JansiSupportImpl.m10122clinit():void");
     }
 
     public static int getJansiMajorVersion() {

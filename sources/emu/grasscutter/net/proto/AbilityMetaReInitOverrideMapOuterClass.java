@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityMetaReInitOverrideMapOuterClass.class */
 public final class AbilityMetaReInitOverrideMapOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"AbilityMetaReInitOverrideMap.proto\u001a\u001dAbilityScalarValueEntry.proto\"N\n\u001cAbilityMetaReInitOverrideMap\u0012.\n\foverride_map\u0018\n \u0003(\u000b2\u0018.AbilityScalarValueEntryB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityScalarValueEntryOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"AbilityMetaReInitOverrideMap.proto\u001a\u001dAbilityScalarValueEntry.proto\"M\n\u001cAbilityMetaReInitOverrideMap\u0012-\n\u000boverrideMap\u0018\u0002 \u0003(\u000b2\u0018.AbilityScalarValueEntryB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityScalarValueEntryOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AbilityMetaReInitOverrideMap_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AbilityMetaReInitOverrideMap_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AbilityMetaReInitOverrideMap_descriptor, new String[]{"OverrideMap"});
 
@@ -55,7 +55,7 @@ public final class AbilityMetaReInitOverrideMapOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityMetaReInitOverrideMapOuterClass$AbilityMetaReInitOverrideMap.class */
     public static final class AbilityMetaReInitOverrideMap extends GeneratedMessageV3 implements AbilityMetaReInitOverrideMapOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int OVERRIDE_MAP_FIELD_NUMBER = 10;
+        public static final int OVERRIDEMAP_FIELD_NUMBER = 2;
         private List<AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry> overrideMap_;
         private byte memoizedIsInitialized;
         private static final AbilityMetaReInitOverrideMap DEFAULT_INSTANCE = new AbilityMetaReInitOverrideMap();
@@ -106,7 +106,7 @@ public final class AbilityMetaReInitOverrideMapOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 82:
+                                case 18:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.overrideMap_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -187,7 +187,7 @@ public final class AbilityMetaReInitOverrideMapOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.overrideMap_.size(); i++) {
-                output.writeMessage(10, this.overrideMap_.get(i));
+                output.writeMessage(2, this.overrideMap_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,7 +200,7 @@ public final class AbilityMetaReInitOverrideMapOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.overrideMap_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(10, this.overrideMap_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(2, this.overrideMap_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class AbilityMetaReInitOverrideMapOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getOverrideMapCount() > 0) {
-                hash = (53 * ((37 * hash) + 10)) + getOverrideMapList().hashCode();
+                hash = (53 * ((37 * hash) + 2)) + getOverrideMapList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

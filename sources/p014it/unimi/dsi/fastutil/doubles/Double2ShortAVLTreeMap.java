@@ -934,7 +934,7 @@ public class Double2ShortAVLTreeMap extends AbstractDouble2ShortSortedMap implem
         double from;
 
         /* renamed from: to */
-        double f1687to;
+        double f1651to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Double2ShortMap.Entry> entries;
@@ -945,7 +945,7 @@ public class Double2ShortAVLTreeMap extends AbstractDouble2ShortSortedMap implem
             if (bottom || top || Double2ShortAVLTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f1687to = to;
+                this.f1651to = to;
                 this.top = top;
                 this.defRetValue = Double2ShortAVLTreeMap.this.defRetValue;
                 return;
@@ -964,7 +964,7 @@ public class Double2ShortAVLTreeMap extends AbstractDouble2ShortSortedMap implem
 
         /* renamed from: in */
         final boolean m926in(double k) {
-            return (this.bottom || Double2ShortAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Double2ShortAVLTreeMap.this.compare(k, this.f1687to) < 0);
+            return (this.bottom || Double2ShortAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Double2ShortAVLTreeMap.this.compare(k, this.f1651to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.Double2ShortMap, p014it.unimi.dsi.fastutil.doubles.Double2ShortSortedMap
@@ -1139,7 +1139,7 @@ public class Double2ShortAVLTreeMap extends AbstractDouble2ShortSortedMap implem
         public short put(double k, short v) {
             Double2ShortAVLTreeMap.this.modified = false;
             if (!m926in(k)) {
-                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1687to)) + ")");
+                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1651to)) + ")");
             }
             return Double2ShortAVLTreeMap.this.modified ? this.defRetValue : Double2ShortAVLTreeMap.this.put(k, v);
         }
@@ -1177,7 +1177,7 @@ public class Double2ShortAVLTreeMap extends AbstractDouble2ShortSortedMap implem
 
         @Override // p014it.unimi.dsi.fastutil.doubles.Double2ShortSortedMap
         public Double2ShortSortedMap headMap(double to) {
-            if (!this.top && Double2ShortAVLTreeMap.this.compare(to, this.f1687to) >= 0) {
+            if (!this.top && Double2ShortAVLTreeMap.this.compare(to, this.f1651to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1188,7 +1188,7 @@ public class Double2ShortAVLTreeMap extends AbstractDouble2ShortSortedMap implem
             if (!this.bottom && Double2ShortAVLTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f1687to, this.top);
+            return new Submap(from, false, this.f1651to, this.top);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -1207,7 +1207,7 @@ public class Double2ShortAVLTreeMap extends AbstractDouble2ShortSortedMap implem
             }
             double to = d2;
             if (!this.top) {
-                to = Double2ShortAVLTreeMap.this.compare(d2, this.f1687to) < 0 ? d2 : this.f1687to;
+                to = Double2ShortAVLTreeMap.this.compare(d2, this.f1651to) < 0 ? d2 : this.f1651to;
             }
             double from = d;
             if (!this.bottom) {
@@ -1215,7 +1215,7 @@ public class Double2ShortAVLTreeMap extends AbstractDouble2ShortSortedMap implem
             }
             if (!this.top && !this.bottom) {
                 if ((from == Double.MIN_VALUE ? 1.0d : 0.0d) == this.from) {
-                    if ((to == Double.MIN_VALUE ? 1.0d : 0.0d) == this.f1687to) {
+                    if ((to == Double.MIN_VALUE ? 1.0d : 0.0d) == this.f1651to) {
                         return this;
                     }
                 }
@@ -1239,7 +1239,7 @@ public class Double2ShortAVLTreeMap extends AbstractDouble2ShortSortedMap implem
             if (e == null) {
                 return null;
             }
-            if (this.top || Double2ShortAVLTreeMap.this.compare(e.key, this.f1687to) < 0) {
+            if (this.top || Double2ShortAVLTreeMap.this.compare(e.key, this.f1651to) < 0) {
                 return e;
             }
             return null;
@@ -1253,8 +1253,8 @@ public class Double2ShortAVLTreeMap extends AbstractDouble2ShortSortedMap implem
             if (this.top) {
                 e = Double2ShortAVLTreeMap.this.lastEntry;
             } else {
-                e = Double2ShortAVLTreeMap.this.locateKey(this.f1687to);
-                if (Double2ShortAVLTreeMap.this.compare(e.key, this.f1687to) >= 0) {
+                e = Double2ShortAVLTreeMap.this.locateKey(this.f1651to);
+                if (Double2ShortAVLTreeMap.this.compare(e.key, this.f1651to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1332,7 +1332,7 @@ public class Double2ShortAVLTreeMap extends AbstractDouble2ShortSortedMap implem
             @Override // p014it.unimi.dsi.fastutil.doubles.Double2ShortAVLTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Double2ShortAVLTreeMap.this.compare(this.next.key, Submap.this.f1687to) >= 0) {
+                if (!Submap.this.top && this.next != null && Double2ShortAVLTreeMap.this.compare(this.next.key, Submap.this.f1651to) >= 0) {
                     this.next = null;
                 }
             }

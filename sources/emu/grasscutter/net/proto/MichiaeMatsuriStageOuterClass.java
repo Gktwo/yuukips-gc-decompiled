@@ -20,15 +20,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MichiaeMatsuriStageOuterClass.class */
 public final class MichiaeMatsuriStageOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019MichiaeMatsuriStage.proto\"K\n\u0013MichiaeMatsuriStage\u0012\u0010\n\bstage_id\u0018\u0004 \u0001(\r\u0012\u000f\n\u0007is_open\u0018\u0002 \u0001(\b\u0012\u0011\n\topen_time\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019MichiaeMatsuriStage.proto\"H\n\u0013MichiaeMatsuriStage\u0012\u000e\n\u0006isOpen\u0018\b \u0001(\b\u0012\u000f\n\u0007stageId\u0018\u000b \u0001(\r\u0012\u0010\n\bopenTime\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_MichiaeMatsuriStage_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_MichiaeMatsuriStage_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MichiaeMatsuriStage_descriptor, new String[]{"StageId", "IsOpen", "OpenTime"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_MichiaeMatsuriStage_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MichiaeMatsuriStage_descriptor, new String[]{"IsOpen", "StageId", "OpenTime"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MichiaeMatsuriStageOuterClass$MichiaeMatsuriStageOrBuilder.class */
     public interface MichiaeMatsuriStageOrBuilder extends MessageOrBuilder {
-        int getStageId();
-
         boolean getIsOpen();
+
+        int getStageId();
 
         int getOpenTime();
     }
@@ -46,11 +46,11 @@ public final class MichiaeMatsuriStageOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MichiaeMatsuriStageOuterClass$MichiaeMatsuriStage.class */
     public static final class MichiaeMatsuriStage extends GeneratedMessageV3 implements MichiaeMatsuriStageOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int STAGE_ID_FIELD_NUMBER = 4;
-        private int stageId_;
-        public static final int IS_OPEN_FIELD_NUMBER = 2;
+        public static final int ISOPEN_FIELD_NUMBER = 8;
         private boolean isOpen_;
-        public static final int OPEN_TIME_FIELD_NUMBER = 1;
+        public static final int STAGEID_FIELD_NUMBER = 11;
+        private int stageId_;
+        public static final int OPENTIME_FIELD_NUMBER = 13;
         private int openTime_;
         private byte memoizedIsInitialized;
         private static final MichiaeMatsuriStage DEFAULT_INSTANCE = new MichiaeMatsuriStage();
@@ -98,14 +98,14 @@ public final class MichiaeMatsuriStageOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
-                                    this.openTime_ = input.readUInt32();
-                                    break;
-                                case 16:
+                                case 64:
                                     this.isOpen_ = input.readBool();
                                     break;
-                                case 32:
+                                case 88:
                                     this.stageId_ = input.readUInt32();
+                                    break;
+                                case 104:
+                                    this.openTime_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -138,13 +138,13 @@ public final class MichiaeMatsuriStageOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStageOrBuilder
-        public int getStageId() {
-            return this.stageId_;
+        public boolean getIsOpen() {
+            return this.isOpen_;
         }
 
         @Override // emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStageOrBuilder
-        public boolean getIsOpen() {
-            return this.isOpen_;
+        public int getStageId() {
+            return this.stageId_;
         }
 
         @Override // emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStageOrBuilder
@@ -167,14 +167,14 @@ public final class MichiaeMatsuriStageOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.openTime_ != 0) {
-                output.writeUInt32(1, this.openTime_);
-            }
             if (this.isOpen_) {
-                output.writeBool(2, this.isOpen_);
+                output.writeBool(8, this.isOpen_);
             }
             if (this.stageId_ != 0) {
-                output.writeUInt32(4, this.stageId_);
+                output.writeUInt32(11, this.stageId_);
+            }
+            if (this.openTime_ != 0) {
+                output.writeUInt32(13, this.openTime_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class MichiaeMatsuriStageOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.openTime_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.openTime_);
-            }
             if (this.isOpen_) {
-                size2 += CodedOutputStream.computeBoolSize(2, this.isOpen_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(8, this.isOpen_);
             }
             if (this.stageId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(4, this.stageId_);
+                size2 += CodedOutputStream.computeUInt32Size(11, this.stageId_);
+            }
+            if (this.openTime_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(13, this.openTime_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class MichiaeMatsuriStageOuterClass {
                 return equals(obj);
             }
             MichiaeMatsuriStage other = (MichiaeMatsuriStage) obj;
-            return getStageId() == other.getStageId() && getIsOpen() == other.getIsOpen() && getOpenTime() == other.getOpenTime() && this.unknownFields.equals(other.unknownFields);
+            return getIsOpen() == other.getIsOpen() && getStageId() == other.getStageId() && getOpenTime() == other.getOpenTime() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class MichiaeMatsuriStageOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getStageId())) + 2)) + Internal.hashBoolean(getIsOpen()))) + 1)) + getOpenTime())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + Internal.hashBoolean(getIsOpen()))) + 11)) + getStageId())) + 13)) + getOpenTime())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -296,8 +296,8 @@ public final class MichiaeMatsuriStageOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MichiaeMatsuriStageOuterClass$MichiaeMatsuriStage$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements MichiaeMatsuriStageOrBuilder {
-            private int stageId_;
             private boolean isOpen_;
+            private int stageId_;
             private int openTime_;
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -326,8 +326,8 @@ public final class MichiaeMatsuriStageOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.stageId_ = 0;
                 this.isOpen_ = false;
+                this.stageId_ = 0;
                 this.openTime_ = 0;
                 return this;
             }
@@ -354,8 +354,8 @@ public final class MichiaeMatsuriStageOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public MichiaeMatsuriStage buildPartial() {
                 MichiaeMatsuriStage result = new MichiaeMatsuriStage(this);
-                result.stageId_ = this.stageId_;
                 result.isOpen_ = this.isOpen_;
+                result.stageId_ = this.stageId_;
                 result.openTime_ = this.openTime_;
                 onBuilt();
                 return result;
@@ -404,11 +404,11 @@ public final class MichiaeMatsuriStageOuterClass {
                 if (other == MichiaeMatsuriStage.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getStageId() != 0) {
-                    setStageId(other.getStageId());
-                }
                 if (other.getIsOpen()) {
                     setIsOpen(other.getIsOpen());
+                }
+                if (other.getStageId() != 0) {
+                    setStageId(other.getStageId());
                 }
                 if (other.getOpenTime() != 0) {
                     setOpenTime(other.getOpenTime());
@@ -446,23 +446,6 @@ public final class MichiaeMatsuriStageOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStageOrBuilder
-            public int getStageId() {
-                return this.stageId_;
-            }
-
-            public Builder setStageId(int value) {
-                this.stageId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearStageId() {
-                this.stageId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStageOrBuilder
             public boolean getIsOpen() {
                 return this.isOpen_;
             }
@@ -475,6 +458,23 @@ public final class MichiaeMatsuriStageOuterClass {
 
             public Builder clearIsOpen() {
                 this.isOpen_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStageOrBuilder
+            public int getStageId() {
+                return this.stageId_;
+            }
+
+            public Builder setStageId(int value) {
+                this.stageId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearStageId() {
+                this.stageId_ = 0;
                 onChanged();
                 return this;
             }

@@ -16,15 +16,16 @@ import com.google.protobuf.MessageOrBuilder;
 import com.google.protobuf.Parser;
 import com.google.protobuf.SingleFieldBuilderV3;
 import com.google.protobuf.UnknownFieldSet;
-import emu.grasscutter.net.proto.WidgetCreateLocationInfoOuterClass;
-import emu.grasscutter.net.proto.WidgetCreatorInfoOuterClass;
+import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.proto.CreatorInfoOuterClass;
+import emu.grasscutter.net.proto.LocationInfoOuterClass;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WidgetDoBagReqOuterClass.class */
 public final class WidgetDoBagReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014WidgetDoBagReq.proto\u001a\u001eWidgetCreateLocationInfo.proto\u001a\u0017WidgetCreatorInfo.proto\"\u0001\n\u000eWidgetDoBagReq\u0012\u0013\n\u000bmaterial_id\u0018\u000b \u0001(\r\u00123\n\rlocation_info\u0018²\u0003 \u0001(\u000b2\u0019.WidgetCreateLocationInfoH��\u00122\n\u0013widget_creator_info\u0018º\n \u0001(\u000b2\u0012.WidgetCreatorInfoH��B\t\n\u0007op_infoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{WidgetCreateLocationInfoOuterClass.getDescriptor(), WidgetCreatorInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014WidgetDoBagReq.proto\u001a\u0012LocationInfo.proto\u001a\u0011CreatorInfo.proto\"\u0001\n\u000eWidgetDoBagReq\u0012\u0012\n\nmaterialId\u0018\f \u0001(\r\u0012'\n\rlocation_info\u0018\u0001 \u0001(\u000b2\r.LocationInfoH��\u0012,\n\u0013widget_creator_info\u0018ê\u0002 \u0001(\u000b2\f.CreatorInfoH��B\t\n\u0007op_infoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{LocationInfoOuterClass.getDescriptor(), CreatorInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_WidgetDoBagReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_WidgetDoBagReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WidgetDoBagReq_descriptor, new String[]{"MaterialId", "LocationInfo", "WidgetCreatorInfo", "OpInfo"});
 
@@ -34,15 +35,15 @@ public final class WidgetDoBagReqOuterClass {
 
         boolean hasLocationInfo();
 
-        WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo getLocationInfo();
+        LocationInfoOuterClass.LocationInfo getLocationInfo();
 
-        WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfoOrBuilder getLocationInfoOrBuilder();
+        LocationInfoOuterClass.LocationInfoOrBuilder getLocationInfoOrBuilder();
 
         boolean hasWidgetCreatorInfo();
 
-        WidgetCreatorInfoOuterClass.WidgetCreatorInfo getWidgetCreatorInfo();
+        CreatorInfoOuterClass.CreatorInfo getWidgetCreatorInfo();
 
-        WidgetCreatorInfoOuterClass.WidgetCreatorInfoOrBuilder getWidgetCreatorInfoOrBuilder();
+        CreatorInfoOuterClass.CreatorInfoOrBuilder getWidgetCreatorInfoOrBuilder();
 
         WidgetDoBagReq.OpInfoCase getOpInfoCase();
     }
@@ -62,10 +63,10 @@ public final class WidgetDoBagReqOuterClass {
         private static final long serialVersionUID = 0;
         private int opInfoCase_;
         private Object opInfo_;
-        public static final int MATERIAL_ID_FIELD_NUMBER = 11;
+        public static final int MATERIALID_FIELD_NUMBER = 12;
         private int materialId_;
-        public static final int LOCATION_INFO_FIELD_NUMBER = 434;
-        public static final int WIDGET_CREATOR_INFO_FIELD_NUMBER = 1338;
+        public static final int LOCATION_INFO_FIELD_NUMBER = 135;
+        public static final int WIDGET_CREATOR_INFO_FIELD_NUMBER = 362;
         private byte memoizedIsInitialized;
         private static final WidgetDoBagReq DEFAULT_INSTANCE = new WidgetDoBagReq();
         private static final Parser<WidgetDoBagReq> PARSER = new AbstractParser<WidgetDoBagReq>() { // from class: emu.grasscutter.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReq.1
@@ -113,26 +114,26 @@ public final class WidgetDoBagReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 88:
+                            case 96:
                                 this.materialId_ = input.readUInt32();
                                 break;
-                            case 3474:
-                                WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.Builder subBuilder = this.opInfoCase_ == 434 ? ((WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo) this.opInfo_).toBuilder() : null;
-                                this.opInfo_ = input.readMessage(WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.parser(), extensionRegistry);
+                            case 1082:
+                                LocationInfoOuterClass.LocationInfo.Builder subBuilder = this.opInfoCase_ == 135 ? ((LocationInfoOuterClass.LocationInfo) this.opInfo_).toBuilder() : null;
+                                this.opInfo_ = input.readMessage(LocationInfoOuterClass.LocationInfo.parser(), extensionRegistry);
                                 if (subBuilder != null) {
-                                    subBuilder.mergeFrom((WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo) this.opInfo_);
+                                    subBuilder.mergeFrom((LocationInfoOuterClass.LocationInfo) this.opInfo_);
                                     this.opInfo_ = subBuilder.buildPartial();
                                 }
-                                this.opInfoCase_ = 434;
+                                this.opInfoCase_ = 135;
                                 break;
-                            case 10706:
-                                WidgetCreatorInfoOuterClass.WidgetCreatorInfo.Builder subBuilder2 = this.opInfoCase_ == 1338 ? ((WidgetCreatorInfoOuterClass.WidgetCreatorInfo) this.opInfo_).toBuilder() : null;
-                                this.opInfo_ = input.readMessage(WidgetCreatorInfoOuterClass.WidgetCreatorInfo.parser(), extensionRegistry);
+                            case PacketOpcodes.TakeCityReputationLevelRewardRsp:
+                                CreatorInfoOuterClass.CreatorInfo.Builder subBuilder2 = this.opInfoCase_ == 362 ? ((CreatorInfoOuterClass.CreatorInfo) this.opInfo_).toBuilder() : null;
+                                this.opInfo_ = input.readMessage(CreatorInfoOuterClass.CreatorInfo.parser(), extensionRegistry);
                                 if (subBuilder2 != null) {
-                                    subBuilder2.mergeFrom((WidgetCreatorInfoOuterClass.WidgetCreatorInfo) this.opInfo_);
+                                    subBuilder2.mergeFrom((CreatorInfoOuterClass.CreatorInfo) this.opInfo_);
                                     this.opInfo_ = subBuilder2.buildPartial();
                                 }
-                                this.opInfoCase_ = WIDGET_CREATOR_INFO_FIELD_NUMBER;
+                                this.opInfoCase_ = 362;
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -165,8 +166,8 @@ public final class WidgetDoBagReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WidgetDoBagReqOuterClass$WidgetDoBagReq$OpInfoCase.class */
         public enum OpInfoCase implements Internal.EnumLite, AbstractMessageLite.InternalOneOfEnum {
-            LOCATION_INFO(434),
-            WIDGET_CREATOR_INFO(WidgetDoBagReq.WIDGET_CREATOR_INFO_FIELD_NUMBER),
+            LOCATION_INFO(135),
+            WIDGET_CREATOR_INFO(362),
             OPINFO_NOT_SET(0);
             
             private final int value;
@@ -184,9 +185,9 @@ public final class WidgetDoBagReqOuterClass {
                 switch (value) {
                     case 0:
                         return OPINFO_NOT_SET;
-                    case 434:
+                    case 135:
                         return LOCATION_INFO;
-                    case WidgetDoBagReq.WIDGET_CREATOR_INFO_FIELD_NUMBER /* 1338 */:
+                    case 362:
                         return WIDGET_CREATOR_INFO;
                     default:
                         return null;
@@ -211,44 +212,44 @@ public final class WidgetDoBagReqOuterClass {
 
         @Override // emu.grasscutter.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReqOrBuilder
         public boolean hasLocationInfo() {
-            return this.opInfoCase_ == 434;
+            return this.opInfoCase_ == 135;
         }
 
         @Override // emu.grasscutter.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReqOrBuilder
-        public WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo getLocationInfo() {
-            if (this.opInfoCase_ == 434) {
-                return (WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo) this.opInfo_;
+        public LocationInfoOuterClass.LocationInfo getLocationInfo() {
+            if (this.opInfoCase_ == 135) {
+                return (LocationInfoOuterClass.LocationInfo) this.opInfo_;
             }
-            return WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.getDefaultInstance();
+            return LocationInfoOuterClass.LocationInfo.getDefaultInstance();
         }
 
         @Override // emu.grasscutter.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReqOrBuilder
-        public WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfoOrBuilder getLocationInfoOrBuilder() {
-            if (this.opInfoCase_ == 434) {
-                return (WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo) this.opInfo_;
+        public LocationInfoOuterClass.LocationInfoOrBuilder getLocationInfoOrBuilder() {
+            if (this.opInfoCase_ == 135) {
+                return (LocationInfoOuterClass.LocationInfo) this.opInfo_;
             }
-            return WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.getDefaultInstance();
+            return LocationInfoOuterClass.LocationInfo.getDefaultInstance();
         }
 
         @Override // emu.grasscutter.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReqOrBuilder
         public boolean hasWidgetCreatorInfo() {
-            return this.opInfoCase_ == 1338;
+            return this.opInfoCase_ == 362;
         }
 
         @Override // emu.grasscutter.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReqOrBuilder
-        public WidgetCreatorInfoOuterClass.WidgetCreatorInfo getWidgetCreatorInfo() {
-            if (this.opInfoCase_ == 1338) {
-                return (WidgetCreatorInfoOuterClass.WidgetCreatorInfo) this.opInfo_;
+        public CreatorInfoOuterClass.CreatorInfo getWidgetCreatorInfo() {
+            if (this.opInfoCase_ == 362) {
+                return (CreatorInfoOuterClass.CreatorInfo) this.opInfo_;
             }
-            return WidgetCreatorInfoOuterClass.WidgetCreatorInfo.getDefaultInstance();
+            return CreatorInfoOuterClass.CreatorInfo.getDefaultInstance();
         }
 
         @Override // emu.grasscutter.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReqOrBuilder
-        public WidgetCreatorInfoOuterClass.WidgetCreatorInfoOrBuilder getWidgetCreatorInfoOrBuilder() {
-            if (this.opInfoCase_ == 1338) {
-                return (WidgetCreatorInfoOuterClass.WidgetCreatorInfo) this.opInfo_;
+        public CreatorInfoOuterClass.CreatorInfoOrBuilder getWidgetCreatorInfoOrBuilder() {
+            if (this.opInfoCase_ == 362) {
+                return (CreatorInfoOuterClass.CreatorInfo) this.opInfo_;
             }
-            return WidgetCreatorInfoOuterClass.WidgetCreatorInfo.getDefaultInstance();
+            return CreatorInfoOuterClass.CreatorInfo.getDefaultInstance();
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -267,13 +268,13 @@ public final class WidgetDoBagReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.materialId_ != 0) {
-                output.writeUInt32(11, this.materialId_);
+                output.writeUInt32(12, this.materialId_);
             }
-            if (this.opInfoCase_ == 434) {
-                output.writeMessage(434, (WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo) this.opInfo_);
+            if (this.opInfoCase_ == 135) {
+                output.writeMessage(135, (LocationInfoOuterClass.LocationInfo) this.opInfo_);
             }
-            if (this.opInfoCase_ == 1338) {
-                output.writeMessage(WIDGET_CREATOR_INFO_FIELD_NUMBER, (WidgetCreatorInfoOuterClass.WidgetCreatorInfo) this.opInfo_);
+            if (this.opInfoCase_ == 362) {
+                output.writeMessage(362, (CreatorInfoOuterClass.CreatorInfo) this.opInfo_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -286,13 +287,13 @@ public final class WidgetDoBagReqOuterClass {
             }
             int size2 = 0;
             if (this.materialId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(11, this.materialId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(12, this.materialId_);
             }
-            if (this.opInfoCase_ == 434) {
-                size2 += CodedOutputStream.computeMessageSize(434, (WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo) this.opInfo_);
+            if (this.opInfoCase_ == 135) {
+                size2 += CodedOutputStream.computeMessageSize(135, (LocationInfoOuterClass.LocationInfo) this.opInfo_);
             }
-            if (this.opInfoCase_ == 1338) {
-                size2 += CodedOutputStream.computeMessageSize(WIDGET_CREATOR_INFO_FIELD_NUMBER, (WidgetCreatorInfoOuterClass.WidgetCreatorInfo) this.opInfo_);
+            if (this.opInfoCase_ == 362) {
+                size2 += CodedOutputStream.computeMessageSize(362, (CreatorInfoOuterClass.CreatorInfo) this.opInfo_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -312,12 +313,12 @@ public final class WidgetDoBagReqOuterClass {
                 return false;
             }
             switch (this.opInfoCase_) {
-                case 434:
+                case 135:
                     if (!getLocationInfo().equals(other.getLocationInfo())) {
                         return false;
                     }
                     break;
-                case WIDGET_CREATOR_INFO_FIELD_NUMBER /* 1338 */:
+                case 362:
                     if (!getWidgetCreatorInfo().equals(other.getWidgetCreatorInfo())) {
                         return false;
                     }
@@ -331,13 +332,13 @@ public final class WidgetDoBagReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getMaterialId();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getMaterialId();
             switch (this.opInfoCase_) {
-                case 434:
-                    hash = (53 * ((37 * hash) + 434)) + getLocationInfo().hashCode();
+                case 135:
+                    hash = (53 * ((37 * hash) + 135)) + getLocationInfo().hashCode();
                     break;
-                case WIDGET_CREATOR_INFO_FIELD_NUMBER /* 1338 */:
-                    hash = (53 * ((37 * hash) + WIDGET_CREATOR_INFO_FIELD_NUMBER)) + getWidgetCreatorInfo().hashCode();
+                case 362:
+                    hash = (53 * ((37 * hash) + 362)) + getWidgetCreatorInfo().hashCode();
                     break;
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
@@ -422,8 +423,8 @@ public final class WidgetDoBagReqOuterClass {
             private int opInfoCase_ = 0;
             private Object opInfo_;
             private int materialId_;
-            private SingleFieldBuilderV3<WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo, WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.Builder, WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfoOrBuilder> locationInfoBuilder_;
-            private SingleFieldBuilderV3<WidgetCreatorInfoOuterClass.WidgetCreatorInfo, WidgetCreatorInfoOuterClass.WidgetCreatorInfo.Builder, WidgetCreatorInfoOuterClass.WidgetCreatorInfoOrBuilder> widgetCreatorInfoBuilder_;
+            private SingleFieldBuilderV3<LocationInfoOuterClass.LocationInfo, LocationInfoOuterClass.LocationInfo.Builder, LocationInfoOuterClass.LocationInfoOrBuilder> locationInfoBuilder_;
+            private SingleFieldBuilderV3<CreatorInfoOuterClass.CreatorInfo, CreatorInfoOuterClass.CreatorInfo.Builder, CreatorInfoOuterClass.CreatorInfoOrBuilder> widgetCreatorInfoBuilder_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return WidgetDoBagReqOuterClass.internal_static_WidgetDoBagReq_descriptor;
@@ -480,14 +481,14 @@ public final class WidgetDoBagReqOuterClass {
             public WidgetDoBagReq buildPartial() {
                 WidgetDoBagReq result = new WidgetDoBagReq(this);
                 result.materialId_ = this.materialId_;
-                if (this.opInfoCase_ == 434) {
+                if (this.opInfoCase_ == 135) {
                     if (this.locationInfoBuilder_ == null) {
                         result.opInfo_ = this.opInfo_;
                     } else {
                         result.opInfo_ = this.locationInfoBuilder_.build();
                     }
                 }
-                if (this.opInfoCase_ == 1338) {
+                if (this.opInfoCase_ == 362) {
                     if (this.widgetCreatorInfoBuilder_ == null) {
                         result.opInfo_ = this.opInfo_;
                     } else {
@@ -616,24 +617,24 @@ public final class WidgetDoBagReqOuterClass {
 
             @Override // emu.grasscutter.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReqOrBuilder
             public boolean hasLocationInfo() {
-                return this.opInfoCase_ == 434;
+                return this.opInfoCase_ == 135;
             }
 
             @Override // emu.grasscutter.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReqOrBuilder
-            public WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo getLocationInfo() {
+            public LocationInfoOuterClass.LocationInfo getLocationInfo() {
                 if (this.locationInfoBuilder_ == null) {
-                    if (this.opInfoCase_ == 434) {
-                        return (WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo) this.opInfo_;
+                    if (this.opInfoCase_ == 135) {
+                        return (LocationInfoOuterClass.LocationInfo) this.opInfo_;
                     }
-                    return WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.getDefaultInstance();
-                } else if (this.opInfoCase_ == 434) {
+                    return LocationInfoOuterClass.LocationInfo.getDefaultInstance();
+                } else if (this.opInfoCase_ == 135) {
                     return this.locationInfoBuilder_.getMessage();
                 } else {
-                    return WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.getDefaultInstance();
+                    return LocationInfoOuterClass.LocationInfo.getDefaultInstance();
                 }
             }
 
-            public Builder setLocationInfo(WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo value) {
+            public Builder setLocationInfo(LocationInfoOuterClass.LocationInfo value) {
                 if (this.locationInfoBuilder_ != null) {
                     this.locationInfoBuilder_.setMessage(value);
                 } else if (value == null) {
@@ -642,47 +643,47 @@ public final class WidgetDoBagReqOuterClass {
                     this.opInfo_ = value;
                     onChanged();
                 }
-                this.opInfoCase_ = 434;
+                this.opInfoCase_ = 135;
                 return this;
             }
 
-            public Builder setLocationInfo(WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.Builder builderForValue) {
+            public Builder setLocationInfo(LocationInfoOuterClass.LocationInfo.Builder builderForValue) {
                 if (this.locationInfoBuilder_ == null) {
                     this.opInfo_ = builderForValue.build();
                     onChanged();
                 } else {
                     this.locationInfoBuilder_.setMessage(builderForValue.build());
                 }
-                this.opInfoCase_ = 434;
+                this.opInfoCase_ = 135;
                 return this;
             }
 
-            public Builder mergeLocationInfo(WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo value) {
+            public Builder mergeLocationInfo(LocationInfoOuterClass.LocationInfo value) {
                 if (this.locationInfoBuilder_ == null) {
-                    if (this.opInfoCase_ != 434 || this.opInfo_ == WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.getDefaultInstance()) {
+                    if (this.opInfoCase_ != 135 || this.opInfo_ == LocationInfoOuterClass.LocationInfo.getDefaultInstance()) {
                         this.opInfo_ = value;
                     } else {
-                        this.opInfo_ = WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.newBuilder((WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo) this.opInfo_).mergeFrom(value).buildPartial();
+                        this.opInfo_ = LocationInfoOuterClass.LocationInfo.newBuilder((LocationInfoOuterClass.LocationInfo) this.opInfo_).mergeFrom(value).buildPartial();
                     }
                     onChanged();
                 } else {
-                    if (this.opInfoCase_ == 434) {
+                    if (this.opInfoCase_ == 135) {
                         this.locationInfoBuilder_.mergeFrom(value);
                     }
                     this.locationInfoBuilder_.setMessage(value);
                 }
-                this.opInfoCase_ = 434;
+                this.opInfoCase_ = 135;
                 return this;
             }
 
             public Builder clearLocationInfo() {
                 if (this.locationInfoBuilder_ != null) {
-                    if (this.opInfoCase_ == 434) {
+                    if (this.opInfoCase_ == 135) {
                         this.opInfoCase_ = 0;
                         this.opInfo_ = null;
                     }
                     this.locationInfoBuilder_.clear();
-                } else if (this.opInfoCase_ == 434) {
+                } else if (this.opInfoCase_ == 135) {
                     this.opInfoCase_ = 0;
                     this.opInfo_ = null;
                     onChanged();
@@ -690,54 +691,54 @@ public final class WidgetDoBagReqOuterClass {
                 return this;
             }
 
-            public WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.Builder getLocationInfoBuilder() {
+            public LocationInfoOuterClass.LocationInfo.Builder getLocationInfoBuilder() {
                 return getLocationInfoFieldBuilder().getBuilder();
             }
 
             @Override // emu.grasscutter.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReqOrBuilder
-            public WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfoOrBuilder getLocationInfoOrBuilder() {
-                if (this.opInfoCase_ == 434 && this.locationInfoBuilder_ != null) {
+            public LocationInfoOuterClass.LocationInfoOrBuilder getLocationInfoOrBuilder() {
+                if (this.opInfoCase_ == 135 && this.locationInfoBuilder_ != null) {
                     return this.locationInfoBuilder_.getMessageOrBuilder();
                 }
-                if (this.opInfoCase_ == 434) {
-                    return (WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo) this.opInfo_;
+                if (this.opInfoCase_ == 135) {
+                    return (LocationInfoOuterClass.LocationInfo) this.opInfo_;
                 }
-                return WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.getDefaultInstance();
+                return LocationInfoOuterClass.LocationInfo.getDefaultInstance();
             }
 
-            private SingleFieldBuilderV3<WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo, WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.Builder, WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfoOrBuilder> getLocationInfoFieldBuilder() {
+            private SingleFieldBuilderV3<LocationInfoOuterClass.LocationInfo, LocationInfoOuterClass.LocationInfo.Builder, LocationInfoOuterClass.LocationInfoOrBuilder> getLocationInfoFieldBuilder() {
                 if (this.locationInfoBuilder_ == null) {
-                    if (this.opInfoCase_ != 434) {
-                        this.opInfo_ = WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.getDefaultInstance();
+                    if (this.opInfoCase_ != 135) {
+                        this.opInfo_ = LocationInfoOuterClass.LocationInfo.getDefaultInstance();
                     }
-                    this.locationInfoBuilder_ = new SingleFieldBuilderV3<>((WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo) this.opInfo_, getParentForChildren(), isClean());
+                    this.locationInfoBuilder_ = new SingleFieldBuilderV3<>((LocationInfoOuterClass.LocationInfo) this.opInfo_, getParentForChildren(), isClean());
                     this.opInfo_ = null;
                 }
-                this.opInfoCase_ = 434;
+                this.opInfoCase_ = 135;
                 onChanged();
                 return this.locationInfoBuilder_;
             }
 
             @Override // emu.grasscutter.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReqOrBuilder
             public boolean hasWidgetCreatorInfo() {
-                return this.opInfoCase_ == 1338;
+                return this.opInfoCase_ == 362;
             }
 
             @Override // emu.grasscutter.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReqOrBuilder
-            public WidgetCreatorInfoOuterClass.WidgetCreatorInfo getWidgetCreatorInfo() {
+            public CreatorInfoOuterClass.CreatorInfo getWidgetCreatorInfo() {
                 if (this.widgetCreatorInfoBuilder_ == null) {
-                    if (this.opInfoCase_ == 1338) {
-                        return (WidgetCreatorInfoOuterClass.WidgetCreatorInfo) this.opInfo_;
+                    if (this.opInfoCase_ == 362) {
+                        return (CreatorInfoOuterClass.CreatorInfo) this.opInfo_;
                     }
-                    return WidgetCreatorInfoOuterClass.WidgetCreatorInfo.getDefaultInstance();
-                } else if (this.opInfoCase_ == 1338) {
+                    return CreatorInfoOuterClass.CreatorInfo.getDefaultInstance();
+                } else if (this.opInfoCase_ == 362) {
                     return this.widgetCreatorInfoBuilder_.getMessage();
                 } else {
-                    return WidgetCreatorInfoOuterClass.WidgetCreatorInfo.getDefaultInstance();
+                    return CreatorInfoOuterClass.CreatorInfo.getDefaultInstance();
                 }
             }
 
-            public Builder setWidgetCreatorInfo(WidgetCreatorInfoOuterClass.WidgetCreatorInfo value) {
+            public Builder setWidgetCreatorInfo(CreatorInfoOuterClass.CreatorInfo value) {
                 if (this.widgetCreatorInfoBuilder_ != null) {
                     this.widgetCreatorInfoBuilder_.setMessage(value);
                 } else if (value == null) {
@@ -746,47 +747,47 @@ public final class WidgetDoBagReqOuterClass {
                     this.opInfo_ = value;
                     onChanged();
                 }
-                this.opInfoCase_ = WidgetDoBagReq.WIDGET_CREATOR_INFO_FIELD_NUMBER;
+                this.opInfoCase_ = 362;
                 return this;
             }
 
-            public Builder setWidgetCreatorInfo(WidgetCreatorInfoOuterClass.WidgetCreatorInfo.Builder builderForValue) {
+            public Builder setWidgetCreatorInfo(CreatorInfoOuterClass.CreatorInfo.Builder builderForValue) {
                 if (this.widgetCreatorInfoBuilder_ == null) {
                     this.opInfo_ = builderForValue.build();
                     onChanged();
                 } else {
                     this.widgetCreatorInfoBuilder_.setMessage(builderForValue.build());
                 }
-                this.opInfoCase_ = WidgetDoBagReq.WIDGET_CREATOR_INFO_FIELD_NUMBER;
+                this.opInfoCase_ = 362;
                 return this;
             }
 
-            public Builder mergeWidgetCreatorInfo(WidgetCreatorInfoOuterClass.WidgetCreatorInfo value) {
+            public Builder mergeWidgetCreatorInfo(CreatorInfoOuterClass.CreatorInfo value) {
                 if (this.widgetCreatorInfoBuilder_ == null) {
-                    if (this.opInfoCase_ != 1338 || this.opInfo_ == WidgetCreatorInfoOuterClass.WidgetCreatorInfo.getDefaultInstance()) {
+                    if (this.opInfoCase_ != 362 || this.opInfo_ == CreatorInfoOuterClass.CreatorInfo.getDefaultInstance()) {
                         this.opInfo_ = value;
                     } else {
-                        this.opInfo_ = WidgetCreatorInfoOuterClass.WidgetCreatorInfo.newBuilder((WidgetCreatorInfoOuterClass.WidgetCreatorInfo) this.opInfo_).mergeFrom(value).buildPartial();
+                        this.opInfo_ = CreatorInfoOuterClass.CreatorInfo.newBuilder((CreatorInfoOuterClass.CreatorInfo) this.opInfo_).mergeFrom(value).buildPartial();
                     }
                     onChanged();
                 } else {
-                    if (this.opInfoCase_ == 1338) {
+                    if (this.opInfoCase_ == 362) {
                         this.widgetCreatorInfoBuilder_.mergeFrom(value);
                     }
                     this.widgetCreatorInfoBuilder_.setMessage(value);
                 }
-                this.opInfoCase_ = WidgetDoBagReq.WIDGET_CREATOR_INFO_FIELD_NUMBER;
+                this.opInfoCase_ = 362;
                 return this;
             }
 
             public Builder clearWidgetCreatorInfo() {
                 if (this.widgetCreatorInfoBuilder_ != null) {
-                    if (this.opInfoCase_ == 1338) {
+                    if (this.opInfoCase_ == 362) {
                         this.opInfoCase_ = 0;
                         this.opInfo_ = null;
                     }
                     this.widgetCreatorInfoBuilder_.clear();
-                } else if (this.opInfoCase_ == 1338) {
+                } else if (this.opInfoCase_ == 362) {
                     this.opInfoCase_ = 0;
                     this.opInfo_ = null;
                     onChanged();
@@ -794,30 +795,30 @@ public final class WidgetDoBagReqOuterClass {
                 return this;
             }
 
-            public WidgetCreatorInfoOuterClass.WidgetCreatorInfo.Builder getWidgetCreatorInfoBuilder() {
+            public CreatorInfoOuterClass.CreatorInfo.Builder getWidgetCreatorInfoBuilder() {
                 return getWidgetCreatorInfoFieldBuilder().getBuilder();
             }
 
             @Override // emu.grasscutter.net.proto.WidgetDoBagReqOuterClass.WidgetDoBagReqOrBuilder
-            public WidgetCreatorInfoOuterClass.WidgetCreatorInfoOrBuilder getWidgetCreatorInfoOrBuilder() {
-                if (this.opInfoCase_ == 1338 && this.widgetCreatorInfoBuilder_ != null) {
+            public CreatorInfoOuterClass.CreatorInfoOrBuilder getWidgetCreatorInfoOrBuilder() {
+                if (this.opInfoCase_ == 362 && this.widgetCreatorInfoBuilder_ != null) {
                     return this.widgetCreatorInfoBuilder_.getMessageOrBuilder();
                 }
-                if (this.opInfoCase_ == 1338) {
-                    return (WidgetCreatorInfoOuterClass.WidgetCreatorInfo) this.opInfo_;
+                if (this.opInfoCase_ == 362) {
+                    return (CreatorInfoOuterClass.CreatorInfo) this.opInfo_;
                 }
-                return WidgetCreatorInfoOuterClass.WidgetCreatorInfo.getDefaultInstance();
+                return CreatorInfoOuterClass.CreatorInfo.getDefaultInstance();
             }
 
-            private SingleFieldBuilderV3<WidgetCreatorInfoOuterClass.WidgetCreatorInfo, WidgetCreatorInfoOuterClass.WidgetCreatorInfo.Builder, WidgetCreatorInfoOuterClass.WidgetCreatorInfoOrBuilder> getWidgetCreatorInfoFieldBuilder() {
+            private SingleFieldBuilderV3<CreatorInfoOuterClass.CreatorInfo, CreatorInfoOuterClass.CreatorInfo.Builder, CreatorInfoOuterClass.CreatorInfoOrBuilder> getWidgetCreatorInfoFieldBuilder() {
                 if (this.widgetCreatorInfoBuilder_ == null) {
-                    if (this.opInfoCase_ != 1338) {
-                        this.opInfo_ = WidgetCreatorInfoOuterClass.WidgetCreatorInfo.getDefaultInstance();
+                    if (this.opInfoCase_ != 362) {
+                        this.opInfo_ = CreatorInfoOuterClass.CreatorInfo.getDefaultInstance();
                     }
-                    this.widgetCreatorInfoBuilder_ = new SingleFieldBuilderV3<>((WidgetCreatorInfoOuterClass.WidgetCreatorInfo) this.opInfo_, getParentForChildren(), isClean());
+                    this.widgetCreatorInfoBuilder_ = new SingleFieldBuilderV3<>((CreatorInfoOuterClass.CreatorInfo) this.opInfo_, getParentForChildren(), isClean());
                     this.opInfo_ = null;
                 }
-                this.opInfoCase_ = WidgetDoBagReq.WIDGET_CREATOR_INFO_FIELD_NUMBER;
+                this.opInfoCase_ = 362;
                 onChanged();
                 return this.widgetCreatorInfoBuilder_;
             }
@@ -857,7 +858,7 @@ public final class WidgetDoBagReqOuterClass {
     }
 
     static {
-        WidgetCreateLocationInfoOuterClass.getDescriptor();
-        WidgetCreatorInfoOuterClass.getDescriptor();
+        LocationInfoOuterClass.getDescriptor();
+        CreatorInfoOuterClass.getDescriptor();
     }
 }

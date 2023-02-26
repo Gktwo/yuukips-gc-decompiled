@@ -55,7 +55,7 @@ public class ShellFactoryImpl implements ShellFactory {
     public class ShellImpl implements Command {
 
         /* renamed from: in */
-        private InputStream f3210in;
+        private InputStream f3174in;
         private OutputStream out;
         private OutputStream err;
         private ExitCallback callback;
@@ -65,7 +65,7 @@ public class ShellFactoryImpl implements ShellFactory {
         }
 
         public void setInputStream(InputStream in) {
-            this.f3210in = in;
+            this.f3174in = in;
         }
 
         public void setOutputStream(OutputStream out) {
@@ -176,11 +176,11 @@ public class ShellFactoryImpl implements ShellFactory {
 
             public void run(ChannelSession session, Environment env) throws Exception {
                 try {
-                    Terminal terminal = TerminalBuilder.builder().name("JLine SSH").type((String) env.getEnv().get("TERM")).system(false).streams(this.f3210in, this.out).build();
+                    Terminal terminal = TerminalBuilder.builder().name("JLine SSH").type((String) env.getEnv().get("TERM")).system(false).streams(this.f3174in, this.out).build();
                     terminal.setSize(new Size(Integer.parseInt((String) env.getEnv().get("COLUMNS")), Integer.parseInt((String) env.getEnv().get("LINES"))));
                     Attributes attr = terminal.getAttributes();
                     for (Map.Entry<PtyMode, Integer> e : env.getPtyModes().entrySet()) {
-                        switch (C58381.$SwitchMap$org$apache$sshd$common$channel$PtyMode[e.getKey().ordinal()]) {
+                        switch (C58301.$SwitchMap$org$apache$sshd$common$channel$PtyMode[e.getKey().ordinal()]) {
                             case 1:
                                 attr.setControlChar(Attributes.ControlChar.VINTR, e.getValue().intValue());
                                 break;
@@ -346,7 +346,7 @@ public class ShellFactoryImpl implements ShellFactory {
                     if (!this.closed) {
                         this.closed = true;
                         ShellFactoryImpl.flush(this.out, this.err);
-                        ShellFactoryImpl.close(this.f3210in, this.out, this.err);
+                        ShellFactoryImpl.close(this.f3174in, this.out, this.err);
                         this.callback.onExit(0);
                     }
                 }
@@ -355,7 +355,7 @@ public class ShellFactoryImpl implements ShellFactory {
             /* access modifiers changed from: package-private */
             /* renamed from: org.jline.builtins.ssh.ShellFactoryImpl$1 */
             /* loaded from: grasscutter.jar:org/jline/builtins/ssh/ShellFactoryImpl$1.class */
-            public static /* synthetic */ class C58381 {
+            public static /* synthetic */ class C58301 {
                 static final /* synthetic */ int[] $SwitchMap$org$apache$sshd$common$channel$PtyMode = new int[PtyMode.values().length];
 
                 static {

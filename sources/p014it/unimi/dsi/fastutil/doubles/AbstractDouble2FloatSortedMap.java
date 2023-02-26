@@ -90,30 +90,30 @@ public abstract class AbstractDouble2FloatSortedMap extends AbstractDouble2Float
     public static class KeySetIterator implements DoubleBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Double2FloatMap.Entry> f1551i;
+        protected final ObjectBidirectionalIterator<Double2FloatMap.Entry> f1515i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Double2FloatMap.Entry> i) {
-            this.f1551i = i;
+            this.f1515i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
         public double nextDouble() {
-            return ((Double2FloatMap.Entry) this.f1551i.next()).getDoubleKey();
+            return ((Double2FloatMap.Entry) this.f1515i.next()).getDoubleKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.DoubleBidirectionalIterator
         public double previousDouble() {
-            return this.f1551i.previous().getDoubleKey();
+            return this.f1515i.previous().getDoubleKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1551i.hasNext();
+            return this.f1515i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1551i.hasPrevious();
+            return this.f1515i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractDouble2FloatSortedMap extends AbstractDouble2Float
     public static class ValuesIterator implements FloatIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Double2FloatMap.Entry> f1552i;
+        protected final ObjectBidirectionalIterator<Double2FloatMap.Entry> f1516i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Double2FloatMap.Entry> i) {
-            this.f1552i = i;
+            this.f1516i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
         public float nextFloat() {
-            return ((Double2FloatMap.Entry) this.f1552i.next()).getFloatValue();
+            return ((Double2FloatMap.Entry) this.f1516i.next()).getFloatValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1552i.hasNext();
+            return this.f1516i.hasNext();
         }
     }
 }

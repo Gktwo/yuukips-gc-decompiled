@@ -22,27 +22,27 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GadgetInteractReqOuterClass.class */
 public final class GadgetInteractReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017GadgetInteractReq.proto\u001a\u0011InterOpType.proto\u001a\u0013ResinCostType.proto\"¿\u0001\n\u0011GadgetInteractReq\u0012\u0011\n\tgadget_id\u0018\u0001 \u0001(\r\u0012'\n\u000fresin_cost_type\u0018\r \u0001(\u000e2\u000e.ResinCostType\u0012\u0018\n\u0010gadget_entity_id\u0018\b \u0001(\r\u0012\u001d\n\u0007op_type\u0018\u0002 \u0001(\u000e2\f.InterOpType\u0012\u0016\n\u000eui_interact_id\u0018\u000b \u0001(\r\u0012\u001d\n\u0015is_use_condense_resin\u0018\u0006 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{InterOpTypeOuterClass.getDescriptor(), ResinCostTypeOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017GadgetInteractReq.proto\u001a\u0011InterOpType.proto\u001a\u0013ResinCostType.proto\"´\u0001\n\u0011GadgetInteractReq\u0012\u001c\n\u0006opType\u0018\u0001 \u0001(\u000e2\f.InterOpType\u0012\u001a\n\u0012isUseCondenseResin\u0018\u000e \u0001(\b\u0012\u0016\n\u000egadgetEntityId\u0018\b \u0001(\r\u0012\u0010\n\bgadgetId\u0018\u000f \u0001(\r\u0012%\n\rresinCostType\u0018\u0007 \u0001(\u000e2\u000e.ResinCostType\u0012\u0014\n\fuiInteractId\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{InterOpTypeOuterClass.getDescriptor(), ResinCostTypeOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_GadgetInteractReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GadgetInteractReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GadgetInteractReq_descriptor, new String[]{"GadgetId", "ResinCostType", "GadgetEntityId", "OpType", "UiInteractId", "IsUseCondenseResin"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GadgetInteractReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GadgetInteractReq_descriptor, new String[]{"OpType", "IsUseCondenseResin", "GadgetEntityId", "GadgetId", "ResinCostType", "UiInteractId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GadgetInteractReqOuterClass$GadgetInteractReqOrBuilder.class */
     public interface GadgetInteractReqOrBuilder extends MessageOrBuilder {
+        int getOpTypeValue();
+
+        InterOpTypeOuterClass.InterOpType getOpType();
+
+        boolean getIsUseCondenseResin();
+
+        int getGadgetEntityId();
+
         int getGadgetId();
 
         int getResinCostTypeValue();
 
         ResinCostTypeOuterClass.ResinCostType getResinCostType();
 
-        int getGadgetEntityId();
-
-        int getOpTypeValue();
-
-        InterOpTypeOuterClass.InterOpType getOpType();
-
         int getUiInteractId();
-
-        boolean getIsUseCondenseResin();
     }
 
     private GadgetInteractReqOuterClass() {
@@ -58,18 +58,18 @@ public final class GadgetInteractReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GadgetInteractReqOuterClass$GadgetInteractReq.class */
     public static final class GadgetInteractReq extends GeneratedMessageV3 implements GadgetInteractReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int GADGET_ID_FIELD_NUMBER = 1;
-        private int gadgetId_;
-        public static final int RESIN_COST_TYPE_FIELD_NUMBER = 13;
-        private int resinCostType_;
-        public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 8;
-        private int gadgetEntityId_;
-        public static final int OP_TYPE_FIELD_NUMBER = 2;
+        public static final int OPTYPE_FIELD_NUMBER = 1;
         private int opType_;
-        public static final int UI_INTERACT_ID_FIELD_NUMBER = 11;
-        private int uiInteractId_;
-        public static final int IS_USE_CONDENSE_RESIN_FIELD_NUMBER = 6;
+        public static final int ISUSECONDENSERESIN_FIELD_NUMBER = 14;
         private boolean isUseCondenseResin_;
+        public static final int GADGETENTITYID_FIELD_NUMBER = 8;
+        private int gadgetEntityId_;
+        public static final int GADGETID_FIELD_NUMBER = 15;
+        private int gadgetId_;
+        public static final int RESINCOSTTYPE_FIELD_NUMBER = 7;
+        private int resinCostType_;
+        public static final int UIINTERACTID_FIELD_NUMBER = 6;
+        private int uiInteractId_;
         private byte memoizedIsInitialized;
         private static final GadgetInteractReq DEFAULT_INSTANCE = new GadgetInteractReq();
         private static final Parser<GadgetInteractReq> PARSER = new AbstractParser<GadgetInteractReq>() { // from class: emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq.1
@@ -86,8 +86,8 @@ public final class GadgetInteractReqOuterClass {
 
         private GadgetInteractReq() {
             this.memoizedIsInitialized = -1;
-            this.resinCostType_ = 0;
             this.opType_ = 0;
+            this.resinCostType_ = 0;
         }
 
         /* access modifiers changed from: protected */
@@ -119,22 +119,22 @@ public final class GadgetInteractReqOuterClass {
                                     done = true;
                                     break;
                                 case 8:
-                                    this.gadgetId_ = input.readUInt32();
-                                    break;
-                                case 16:
                                     this.opType_ = input.readEnum();
                                     break;
                                 case 48:
-                                    this.isUseCondenseResin_ = input.readBool();
+                                    this.uiInteractId_ = input.readUInt32();
+                                    break;
+                                case 56:
+                                    this.resinCostType_ = input.readEnum();
                                     break;
                                 case 64:
                                     this.gadgetEntityId_ = input.readUInt32();
                                     break;
-                                case 88:
-                                    this.uiInteractId_ = input.readUInt32();
+                                case 112:
+                                    this.isUseCondenseResin_ = input.readBool();
                                     break;
-                                case 104:
-                                    this.resinCostType_ = input.readEnum();
+                                case 120:
+                                    this.gadgetId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -167,6 +167,27 @@ public final class GadgetInteractReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReqOrBuilder
+        public int getOpTypeValue() {
+            return this.opType_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReqOrBuilder
+        public InterOpTypeOuterClass.InterOpType getOpType() {
+            InterOpTypeOuterClass.InterOpType result = InterOpTypeOuterClass.InterOpType.valueOf(this.opType_);
+            return result == null ? InterOpTypeOuterClass.InterOpType.UNRECOGNIZED : result;
+        }
+
+        @Override // emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReqOrBuilder
+        public boolean getIsUseCondenseResin() {
+            return this.isUseCondenseResin_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReqOrBuilder
+        public int getGadgetEntityId() {
+            return this.gadgetEntityId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReqOrBuilder
         public int getGadgetId() {
             return this.gadgetId_;
         }
@@ -183,29 +204,8 @@ public final class GadgetInteractReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReqOrBuilder
-        public int getGadgetEntityId() {
-            return this.gadgetEntityId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReqOrBuilder
-        public int getOpTypeValue() {
-            return this.opType_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReqOrBuilder
-        public InterOpTypeOuterClass.InterOpType getOpType() {
-            InterOpTypeOuterClass.InterOpType result = InterOpTypeOuterClass.InterOpType.valueOf(this.opType_);
-            return result == null ? InterOpTypeOuterClass.InterOpType.UNRECOGNIZED : result;
-        }
-
-        @Override // emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReqOrBuilder
         public int getUiInteractId() {
             return this.uiInteractId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReqOrBuilder
-        public boolean getIsUseCondenseResin() {
-            return this.isUseCondenseResin_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -223,23 +223,23 @@ public final class GadgetInteractReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.gadgetId_ != 0) {
-                output.writeUInt32(1, this.gadgetId_);
-            }
             if (this.opType_ != InterOpTypeOuterClass.InterOpType.INTER_OP_TYPE_FINISH.getNumber()) {
-                output.writeEnum(2, this.opType_);
+                output.writeEnum(1, this.opType_);
             }
-            if (this.isUseCondenseResin_) {
-                output.writeBool(6, this.isUseCondenseResin_);
+            if (this.uiInteractId_ != 0) {
+                output.writeUInt32(6, this.uiInteractId_);
+            }
+            if (this.resinCostType_ != ResinCostTypeOuterClass.ResinCostType.RESIN_COST_TYPE_NONE.getNumber()) {
+                output.writeEnum(7, this.resinCostType_);
             }
             if (this.gadgetEntityId_ != 0) {
                 output.writeUInt32(8, this.gadgetEntityId_);
             }
-            if (this.uiInteractId_ != 0) {
-                output.writeUInt32(11, this.uiInteractId_);
+            if (this.isUseCondenseResin_) {
+                output.writeBool(14, this.isUseCondenseResin_);
             }
-            if (this.resinCostType_ != ResinCostTypeOuterClass.ResinCostType.RESIN_COST_TYPE_NONE.getNumber()) {
-                output.writeEnum(13, this.resinCostType_);
+            if (this.gadgetId_ != 0) {
+                output.writeUInt32(15, this.gadgetId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -251,23 +251,23 @@ public final class GadgetInteractReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.gadgetId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.gadgetId_);
-            }
             if (this.opType_ != InterOpTypeOuterClass.InterOpType.INTER_OP_TYPE_FINISH.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(2, this.opType_);
+                size2 = 0 + CodedOutputStream.computeEnumSize(1, this.opType_);
             }
-            if (this.isUseCondenseResin_) {
-                size2 += CodedOutputStream.computeBoolSize(6, this.isUseCondenseResin_);
+            if (this.uiInteractId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(6, this.uiInteractId_);
+            }
+            if (this.resinCostType_ != ResinCostTypeOuterClass.ResinCostType.RESIN_COST_TYPE_NONE.getNumber()) {
+                size2 += CodedOutputStream.computeEnumSize(7, this.resinCostType_);
             }
             if (this.gadgetEntityId_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(8, this.gadgetEntityId_);
             }
-            if (this.uiInteractId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.uiInteractId_);
+            if (this.isUseCondenseResin_) {
+                size2 += CodedOutputStream.computeBoolSize(14, this.isUseCondenseResin_);
             }
-            if (this.resinCostType_ != ResinCostTypeOuterClass.ResinCostType.RESIN_COST_TYPE_NONE.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(13, this.resinCostType_);
+            if (this.gadgetId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.gadgetId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -283,7 +283,7 @@ public final class GadgetInteractReqOuterClass {
                 return equals(obj);
             }
             GadgetInteractReq other = (GadgetInteractReq) obj;
-            return getGadgetId() == other.getGadgetId() && this.resinCostType_ == other.resinCostType_ && getGadgetEntityId() == other.getGadgetEntityId() && this.opType_ == other.opType_ && getUiInteractId() == other.getUiInteractId() && getIsUseCondenseResin() == other.getIsUseCondenseResin() && this.unknownFields.equals(other.unknownFields);
+            return this.opType_ == other.opType_ && getIsUseCondenseResin() == other.getIsUseCondenseResin() && getGadgetEntityId() == other.getGadgetEntityId() && getGadgetId() == other.getGadgetId() && this.resinCostType_ == other.resinCostType_ && getUiInteractId() == other.getUiInteractId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -291,7 +291,7 @@ public final class GadgetInteractReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getGadgetId())) + 13)) + this.resinCostType_)) + 8)) + getGadgetEntityId())) + 2)) + this.opType_)) + 11)) + getUiInteractId())) + 6)) + Internal.hashBoolean(getIsUseCondenseResin()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + this.opType_)) + 14)) + Internal.hashBoolean(getIsUseCondenseResin()))) + 8)) + getGadgetEntityId())) + 15)) + getGadgetId())) + 7)) + this.resinCostType_)) + 6)) + getUiInteractId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -370,12 +370,12 @@ public final class GadgetInteractReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GadgetInteractReqOuterClass$GadgetInteractReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements GadgetInteractReqOrBuilder {
-            private int gadgetId_;
-            private int gadgetEntityId_;
-            private int uiInteractId_;
             private boolean isUseCondenseResin_;
-            private int resinCostType_ = 0;
+            private int gadgetEntityId_;
+            private int gadgetId_;
+            private int uiInteractId_;
             private int opType_ = 0;
+            private int resinCostType_ = 0;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return GadgetInteractReqOuterClass.internal_static_GadgetInteractReq_descriptor;
@@ -403,12 +403,12 @@ public final class GadgetInteractReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.opType_ = 0;
+                this.isUseCondenseResin_ = false;
+                this.gadgetEntityId_ = 0;
                 this.gadgetId_ = 0;
                 this.resinCostType_ = 0;
-                this.gadgetEntityId_ = 0;
-                this.opType_ = 0;
                 this.uiInteractId_ = 0;
-                this.isUseCondenseResin_ = false;
                 return this;
             }
 
@@ -434,12 +434,12 @@ public final class GadgetInteractReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public GadgetInteractReq buildPartial() {
                 GadgetInteractReq result = new GadgetInteractReq(this);
+                result.opType_ = this.opType_;
+                result.isUseCondenseResin_ = this.isUseCondenseResin_;
+                result.gadgetEntityId_ = this.gadgetEntityId_;
                 result.gadgetId_ = this.gadgetId_;
                 result.resinCostType_ = this.resinCostType_;
-                result.gadgetEntityId_ = this.gadgetEntityId_;
-                result.opType_ = this.opType_;
                 result.uiInteractId_ = this.uiInteractId_;
-                result.isUseCondenseResin_ = this.isUseCondenseResin_;
                 onBuilt();
                 return result;
             }
@@ -487,23 +487,23 @@ public final class GadgetInteractReqOuterClass {
                 if (other == GadgetInteractReq.getDefaultInstance()) {
                     return this;
                 }
+                if (other.opType_ != 0) {
+                    setOpTypeValue(other.getOpTypeValue());
+                }
+                if (other.getIsUseCondenseResin()) {
+                    setIsUseCondenseResin(other.getIsUseCondenseResin());
+                }
+                if (other.getGadgetEntityId() != 0) {
+                    setGadgetEntityId(other.getGadgetEntityId());
+                }
                 if (other.getGadgetId() != 0) {
                     setGadgetId(other.getGadgetId());
                 }
                 if (other.resinCostType_ != 0) {
                     setResinCostTypeValue(other.getResinCostTypeValue());
                 }
-                if (other.getGadgetEntityId() != 0) {
-                    setGadgetEntityId(other.getGadgetEntityId());
-                }
-                if (other.opType_ != 0) {
-                    setOpTypeValue(other.getOpTypeValue());
-                }
                 if (other.getUiInteractId() != 0) {
                     setUiInteractId(other.getUiInteractId());
-                }
-                if (other.getIsUseCondenseResin()) {
-                    setIsUseCondenseResin(other.getIsUseCondenseResin());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -535,6 +535,72 @@ public final class GadgetInteractReqOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReqOrBuilder
+            public int getOpTypeValue() {
+                return this.opType_;
+            }
+
+            public Builder setOpTypeValue(int value) {
+                this.opType_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReqOrBuilder
+            public InterOpTypeOuterClass.InterOpType getOpType() {
+                InterOpTypeOuterClass.InterOpType result = InterOpTypeOuterClass.InterOpType.valueOf(this.opType_);
+                return result == null ? InterOpTypeOuterClass.InterOpType.UNRECOGNIZED : result;
+            }
+
+            public Builder setOpType(InterOpTypeOuterClass.InterOpType value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.opType_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+
+            public Builder clearOpType() {
+                this.opType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReqOrBuilder
+            public boolean getIsUseCondenseResin() {
+                return this.isUseCondenseResin_;
+            }
+
+            public Builder setIsUseCondenseResin(boolean value) {
+                this.isUseCondenseResin_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsUseCondenseResin() {
+                this.isUseCondenseResin_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReqOrBuilder
+            public int getGadgetEntityId() {
+                return this.gadgetEntityId_;
+            }
+
+            public Builder setGadgetEntityId(int value) {
+                this.gadgetEntityId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearGadgetEntityId() {
+                this.gadgetEntityId_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReqOrBuilder
@@ -587,55 +653,6 @@ public final class GadgetInteractReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReqOrBuilder
-            public int getGadgetEntityId() {
-                return this.gadgetEntityId_;
-            }
-
-            public Builder setGadgetEntityId(int value) {
-                this.gadgetEntityId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearGadgetEntityId() {
-                this.gadgetEntityId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReqOrBuilder
-            public int getOpTypeValue() {
-                return this.opType_;
-            }
-
-            public Builder setOpTypeValue(int value) {
-                this.opType_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReqOrBuilder
-            public InterOpTypeOuterClass.InterOpType getOpType() {
-                InterOpTypeOuterClass.InterOpType result = InterOpTypeOuterClass.InterOpType.valueOf(this.opType_);
-                return result == null ? InterOpTypeOuterClass.InterOpType.UNRECOGNIZED : result;
-            }
-
-            public Builder setOpType(InterOpTypeOuterClass.InterOpType value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.opType_ = value.getNumber();
-                onChanged();
-                return this;
-            }
-
-            public Builder clearOpType() {
-                this.opType_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReqOrBuilder
             public int getUiInteractId() {
                 return this.uiInteractId_;
             }
@@ -648,23 +665,6 @@ public final class GadgetInteractReqOuterClass {
 
             public Builder clearUiInteractId() {
                 this.uiInteractId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReqOrBuilder
-            public boolean getIsUseCondenseResin() {
-                return this.isUseCondenseResin_;
-            }
-
-            public Builder setIsUseCondenseResin(boolean value) {
-                this.isUseCondenseResin_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsUseCondenseResin() {
-                this.isUseCondenseResin_ = false;
                 onChanged();
                 return this;
             }

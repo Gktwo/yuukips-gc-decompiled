@@ -87,30 +87,30 @@ public abstract class AbstractReference2ShortSortedMap<K> extends AbstractRefere
     public static class KeySetIterator<K> implements ObjectBidirectionalIterator<K> {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Reference2ShortMap.Entry<K>> f2532i;
+        protected final ObjectBidirectionalIterator<Reference2ShortMap.Entry<K>> f2496i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Reference2ShortMap.Entry<K>> i) {
-            this.f2532i = i;
+            this.f2496i = i;
         }
 
         @Override // java.util.Iterator
         public K next() {
-            return ((Reference2ShortMap.Entry) this.f2532i.next()).getKey();
+            return ((Reference2ShortMap.Entry) this.f2496i.next()).getKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public K previous() {
-            return this.f2532i.previous().getKey();
+            return this.f2496i.previous().getKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2532i.hasNext();
+            return this.f2496i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2532i.hasPrevious();
+            return this.f2496i.hasPrevious();
         }
     }
 
@@ -153,20 +153,20 @@ public abstract class AbstractReference2ShortSortedMap<K> extends AbstractRefere
     public static class ValuesIterator<K> implements ShortIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Reference2ShortMap.Entry<K>> f2533i;
+        protected final ObjectBidirectionalIterator<Reference2ShortMap.Entry<K>> f2497i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Reference2ShortMap.Entry<K>> i) {
-            this.f2533i = i;
+            this.f2497i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
         public short nextShort() {
-            return ((Reference2ShortMap.Entry) this.f2533i.next()).getShortValue();
+            return ((Reference2ShortMap.Entry) this.f2497i.next()).getShortValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2533i.hasNext();
+            return this.f2497i.hasNext();
         }
     }
 }

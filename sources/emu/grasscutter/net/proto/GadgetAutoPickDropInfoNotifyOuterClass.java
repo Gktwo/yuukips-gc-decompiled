@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GadgetAutoPickDropInfoNotifyOuterClass.class */
 public final class GadgetAutoPickDropInfoNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"GadgetAutoPickDropInfoNotify.proto\u001a\nItem.proto\"8\n\u001cGadgetAutoPickDropInfoNotify\u0012\u0018\n\titem_list\u0018\u000f \u0003(\u000b2\u0005.ItemB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"GadgetAutoPickDropInfoNotify.proto\u001a\nItem.proto\"7\n\u001cGadgetAutoPickDropInfoNotify\u0012\u0017\n\bitemList\u0018\u000f \u0003(\u000b2\u0005.ItemB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_GadgetAutoPickDropInfoNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GadgetAutoPickDropInfoNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GadgetAutoPickDropInfoNotify_descriptor, new String[]{"ItemList"});
 
@@ -55,7 +55,7 @@ public final class GadgetAutoPickDropInfoNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GadgetAutoPickDropInfoNotifyOuterClass$GadgetAutoPickDropInfoNotify.class */
     public static final class GadgetAutoPickDropInfoNotify extends GeneratedMessageV3 implements GadgetAutoPickDropInfoNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ITEM_LIST_FIELD_NUMBER = 15;
+        public static final int ITEMLIST_FIELD_NUMBER = 15;
         private List<ItemOuterClass.Item> itemList_;
         private byte memoizedIsInitialized;
         private static final GadgetAutoPickDropInfoNotify DEFAULT_INSTANCE = new GadgetAutoPickDropInfoNotify();

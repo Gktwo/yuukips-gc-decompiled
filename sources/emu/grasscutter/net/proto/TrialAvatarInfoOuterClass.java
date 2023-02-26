@@ -27,7 +27,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TrialAvatarInfoOuterClass.class */
 public final class TrialAvatarInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015TrialAvatarInfo.proto\u001a\nItem.proto\u001a\u001cTrialAvatarGrantRecord.proto\"z\n\u000fTrialAvatarInfo\u0012\u0017\n\u000ftrial_avatar_id\u0018\u0001 \u0001(\r\u0012\u001f\n\u0010trial_equip_list\u0018\u0002 \u0003(\u000b2\u0005.Item\u0012-\n\fgrant_record\u0018\u0003 \u0001(\u000b2\u0017.TrialAvatarGrantRecordB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemOuterClass.getDescriptor(), TrialAvatarGrantRecordOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015TrialAvatarInfo.proto\u001a\u001cTrialAvatarGrantRecord.proto\u001a\nItem.proto\"u\n\u000fTrialAvatarInfo\u0012\u0015\n\rtrialAvatarId\u0018\u0001 \u0001(\r\u0012\u001d\n\u000etrialEquipList\u0018\u0002 \u0003(\u000b2\u0005.Item\u0012,\n\u000bgrantRecord\u0018\u0003 \u0001(\u000b2\u0017.TrialAvatarGrantRecordB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{TrialAvatarGrantRecordOuterClass.getDescriptor(), ItemOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_TrialAvatarInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_TrialAvatarInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TrialAvatarInfo_descriptor, new String[]{"TrialAvatarId", "TrialEquipList", "GrantRecord"});
 
@@ -65,11 +65,11 @@ public final class TrialAvatarInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TrialAvatarInfoOuterClass$TrialAvatarInfo.class */
     public static final class TrialAvatarInfo extends GeneratedMessageV3 implements TrialAvatarInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TRIAL_AVATAR_ID_FIELD_NUMBER = 1;
+        public static final int TRIALAVATARID_FIELD_NUMBER = 1;
         private int trialAvatarId_;
-        public static final int TRIAL_EQUIP_LIST_FIELD_NUMBER = 2;
+        public static final int TRIALEQUIPLIST_FIELD_NUMBER = 2;
         private List<ItemOuterClass.Item> trialEquipList_;
-        public static final int GRANT_RECORD_FIELD_NUMBER = 3;
+        public static final int GRANTRECORD_FIELD_NUMBER = 3;
         private TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord grantRecord_;
         private byte memoizedIsInitialized;
         private static final TrialAvatarInfo DEFAULT_INSTANCE = new TrialAvatarInfo();
@@ -874,7 +874,7 @@ public final class TrialAvatarInfoOuterClass {
     }
 
     static {
-        ItemOuterClass.getDescriptor();
         TrialAvatarGrantRecordOuterClass.getDescriptor();
+        ItemOuterClass.getDescriptor();
     }
 }

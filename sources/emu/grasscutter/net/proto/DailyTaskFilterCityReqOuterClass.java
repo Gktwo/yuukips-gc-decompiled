@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DailyTaskFilterCityReqOuterClass.class */
 public final class DailyTaskFilterCityReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cDailyTaskFilterCityReq.proto\")\n\u0016DailyTaskFilterCityReq\u0012\u000f\n\u0007city_id\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cDailyTaskFilterCityReq.proto\"(\n\u0016DailyTaskFilterCityReq\u0012\u000e\n\u0006cityId\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_DailyTaskFilterCityReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_DailyTaskFilterCityReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DailyTaskFilterCityReq_descriptor, new String[]{"CityId"});
 
@@ -41,7 +41,7 @@ public final class DailyTaskFilterCityReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DailyTaskFilterCityReqOuterClass$DailyTaskFilterCityReq.class */
     public static final class DailyTaskFilterCityReq extends GeneratedMessageV3 implements DailyTaskFilterCityReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CITY_ID_FIELD_NUMBER = 7;
+        public static final int CITYID_FIELD_NUMBER = 15;
         private int cityId_;
         private byte memoizedIsInitialized;
         private static final DailyTaskFilterCityReq DEFAULT_INSTANCE = new DailyTaskFilterCityReq();
@@ -88,7 +88,7 @@ public final class DailyTaskFilterCityReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 56:
+                            case 120:
                                 this.cityId_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class DailyTaskFilterCityReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.cityId_ != 0) {
-                output.writeUInt32(7, this.cityId_);
+                output.writeUInt32(15, this.cityId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class DailyTaskFilterCityReqOuterClass {
             }
             int size2 = 0;
             if (this.cityId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.cityId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(15, this.cityId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class DailyTaskFilterCityReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getCityId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getCityId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

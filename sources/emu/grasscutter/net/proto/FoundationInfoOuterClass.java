@@ -24,7 +24,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FoundationInfoOuterClass.class */
 public final class FoundationInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014FoundationInfo.proto\u001a\u0016FoundationStatus.proto\"y\n\u000eFoundationInfo\u0012!\n\u0006status\u0018\u0001 \u0001(\u000e2\u0011.FoundationStatus\u0012\u0010\n\buid_list\u0018\u0002 \u0003(\r\u0012\u001b\n\u0013current_building_id\u0018\u0003 \u0001(\r\u0012\u0015\n\rlocked_by_uid\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{FoundationStatusOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014FoundationInfo.proto\u001a\u0016FoundationStatus.proto\"t\n\u000eFoundationInfo\u0012!\n\u0006status\u0018\u0001 \u0001(\u000e2\u0011.FoundationStatus\u0012\u000f\n\u0007uidList\u0018\u0002 \u0003(\r\u0012\u0019\n\u0011currentBuildingId\u0018\u0003 \u0001(\r\u0012\u0013\n\u000blockedByUid\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{FoundationStatusOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_FoundationInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_FoundationInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FoundationInfo_descriptor, new String[]{"Status", "UidList", "CurrentBuildingId", "LockedByUid"});
 
@@ -60,12 +60,12 @@ public final class FoundationInfoOuterClass {
         private static final long serialVersionUID = 0;
         public static final int STATUS_FIELD_NUMBER = 1;
         private int status_;
-        public static final int UID_LIST_FIELD_NUMBER = 2;
+        public static final int UIDLIST_FIELD_NUMBER = 2;
         private Internal.IntList uidList_;
         private int uidListMemoizedSerializedSize;
-        public static final int CURRENT_BUILDING_ID_FIELD_NUMBER = 3;
+        public static final int CURRENTBUILDINGID_FIELD_NUMBER = 3;
         private int currentBuildingId_;
-        public static final int LOCKED_BY_UID_FIELD_NUMBER = 4;
+        public static final int LOCKEDBYUID_FIELD_NUMBER = 4;
         private int lockedByUid_;
         private byte memoizedIsInitialized;
         private static final FoundationInfo DEFAULT_INSTANCE = new FoundationInfo();

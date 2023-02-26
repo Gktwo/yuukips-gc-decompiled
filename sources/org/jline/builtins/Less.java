@@ -901,7 +901,7 @@ public class Less {
         LineEditor lineEditor = new LineEditor(curPos);
         while (true) {
             checkInterrupted();
-            int[] iArr = C58301.$SwitchMap$org$jline$builtins$Less$Operation;
+            int[] iArr = C58221.$SwitchMap$org$jline$builtins$Less$Operation;
             Operation op = (Operation) this.bindingReader.readBinding(fileKeyMap);
             switch (iArr[op.ordinal()]) {
                 case 46:
@@ -953,7 +953,7 @@ public class Less {
         LineEditor lineEditor = new LineEditor(curPos);
         while (true) {
             checkInterrupted();
-            int[] iArr = C58301.$SwitchMap$org$jline$builtins$Less$Operation;
+            int[] iArr = C58221.$SwitchMap$org$jline$builtins$Less$Operation;
             Operation op = (Operation) this.bindingReader.readBinding(searchKeyMap);
             switch (iArr[op.ordinal()]) {
                 case 46:
@@ -1571,22 +1571,22 @@ public class Less {
     public static class Pair<U, V> {
 
         /* renamed from: u */
-        final U f3197u;
+        final U f3161u;
 
         /* renamed from: v */
-        final V f3198v;
+        final V f3162v;
 
         public Pair(U u, V v) {
-            this.f3197u = u;
-            this.f3198v = v;
+            this.f3161u = u;
+            this.f3162v = v;
         }
 
         public U getU() {
-            return this.f3197u;
+            return this.f3161u;
         }
 
         public V getV() {
-            return this.f3198v;
+            return this.f3162v;
         }
     }
 }

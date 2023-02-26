@@ -9,7 +9,7 @@ import emu.grasscutter.net.proto.SetPlayerPropReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketSetPlayerPropRsp;
 
-@Opcodes(199)
+@Opcodes(116)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerSetPlayerPropReq.class */
 public class HandlerSetPlayerPropReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

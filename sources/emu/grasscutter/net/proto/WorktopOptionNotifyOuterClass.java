@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WorktopOptionNotifyOuterClass.class */
 public final class WorktopOptionNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019WorktopOptionNotify.proto\"D\n\u0013WorktopOptionNotify\u0012\u0013\n\u000boption_list\u0018\n \u0003(\r\u0012\u0018\n\u0010gadget_entity_id\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019WorktopOptionNotify.proto\"A\n\u0013WorktopOptionNotify\u0012\u0012\n\noptionList\u0018\t \u0003(\r\u0012\u0016\n\u000egadgetEntityId\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_WorktopOptionNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_WorktopOptionNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WorktopOptionNotify_descriptor, new String[]{"OptionList", "GadgetEntityId"});
 
@@ -51,10 +51,10 @@ public final class WorktopOptionNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WorktopOptionNotifyOuterClass$WorktopOptionNotify.class */
     public static final class WorktopOptionNotify extends GeneratedMessageV3 implements WorktopOptionNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int OPTION_LIST_FIELD_NUMBER = 10;
+        public static final int OPTIONLIST_FIELD_NUMBER = 9;
         private Internal.IntList optionList_;
         private int optionListMemoizedSerializedSize;
-        public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 8;
+        public static final int GADGETENTITYID_FIELD_NUMBER = 15;
         private int gadgetEntityId_;
         private byte memoizedIsInitialized;
         private static final WorktopOptionNotify DEFAULT_INSTANCE = new WorktopOptionNotify();
@@ -107,17 +107,14 @@ public final class WorktopOptionNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 64:
-                                    this.gadgetEntityId_ = input.readUInt32();
-                                    break;
-                                case 80:
+                                case 72:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.optionList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.optionList_.addInt(input.readUInt32());
                                     break;
-                                case 82:
+                                case 74:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.optionList_ = newIntList();
@@ -127,6 +124,9 @@ public final class WorktopOptionNotifyOuterClass {
                                         this.optionList_.addInt(input.readUInt32());
                                     }
                                     input.popLimit(limit);
+                                    break;
+                                case 120:
+                                    this.gadgetEntityId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -197,15 +197,15 @@ public final class WorktopOptionNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (this.gadgetEntityId_ != 0) {
-                output.writeUInt32(8, this.gadgetEntityId_);
-            }
             if (getOptionListList().size() > 0) {
-                output.writeUInt32NoTag(82);
+                output.writeUInt32NoTag(74);
                 output.writeUInt32NoTag(this.optionListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.optionList_.size(); i++) {
                 output.writeUInt32NoTag(this.optionList_.getInt(i));
+            }
+            if (this.gadgetEntityId_ != 0) {
+                output.writeUInt32(15, this.gadgetEntityId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -216,22 +216,21 @@ public final class WorktopOptionNotifyOuterClass {
             if (size != -1) {
                 return size;
             }
-            int size2 = 0;
-            if (this.gadgetEntityId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(8, this.gadgetEntityId_);
-            }
             int dataSize = 0;
             for (int i = 0; i < this.optionList_.size(); i++) {
                 dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.optionList_.getInt(i));
             }
-            int size3 = size2 + dataSize;
+            int size2 = 0 + dataSize;
             if (!getOptionListList().isEmpty()) {
-                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.optionListMemoizedSerializedSize = dataSize;
-            int size4 = size3 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size4;
-            return size4;
+            if (this.gadgetEntityId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.gadgetEntityId_);
+            }
+            int size3 = size2 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size3;
+            return size3;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -253,9 +252,9 @@ public final class WorktopOptionNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getOptionListCount() > 0) {
-                hash = (53 * ((37 * hash) + 10)) + getOptionListList().hashCode();
+                hash = (53 * ((37 * hash) + 9)) + getOptionListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 8)) + getGadgetEntityId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 15)) + getGadgetEntityId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

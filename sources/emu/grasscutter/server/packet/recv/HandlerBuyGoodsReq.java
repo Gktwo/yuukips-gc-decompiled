@@ -9,7 +9,6 @@ import emu.grasscutter.game.shop.ShopLimit;
 import emu.grasscutter.game.shop.ShopSystem;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.BuyGoodsReqOuterClass;
 import emu.grasscutter.net.proto.ShopGoodsOuterClass;
 import emu.grasscutter.server.game.GameSession;
@@ -20,7 +19,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-@Opcodes(PacketOpcodes.BuyGoodsReq)
+@Opcodes(787)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerBuyGoodsReq.class */
 public class HandlerBuyGoodsReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

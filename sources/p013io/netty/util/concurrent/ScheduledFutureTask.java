@@ -12,7 +12,7 @@ import p013io.netty.util.internal.PriorityQueueNode;
 public final class ScheduledFutureTask<V> extends PromiseTask<V> implements ScheduledFuture<V>, PriorityQueueNode {
 
     /* renamed from: id */
-    private long f1035id;
+    private long f999id;
     private long deadlineNanos;
     private final long periodNanos;
     private int queueIndex;
@@ -63,8 +63,8 @@ public final class ScheduledFutureTask<V> extends PromiseTask<V> implements Sche
 
     /* access modifiers changed from: package-private */
     public ScheduledFutureTask<V> setId(long id) {
-        if (this.f1035id == 0) {
-            this.f1035id = id;
+        if (this.f999id == 0) {
+            this.f999id = id;
         }
         return this;
     }
@@ -124,10 +124,10 @@ public final class ScheduledFutureTask<V> extends PromiseTask<V> implements Sche
         if (d > 0) {
             return 1;
         }
-        if (this.f1035id < that.f1035id) {
+        if (this.f999id < that.f999id) {
             return -1;
         }
-        if ($assertionsDisabled || this.f1035id != that.f1035id) {
+        if ($assertionsDisabled || this.f999id != that.f999id) {
             return 1;
         }
         throw new AssertionError();

@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PersonalSceneJumpReqOuterClass.class */
 public final class PersonalSceneJumpReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aPersonalSceneJumpReq.proto\"(\n\u0014PersonalSceneJumpReq\u0012\u0010\n\bpoint_id\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aPersonalSceneJumpReq.proto\"'\n\u0014PersonalSceneJumpReq\u0012\u000f\n\u0007pointId\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PersonalSceneJumpReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PersonalSceneJumpReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PersonalSceneJumpReq_descriptor, new String[]{"PointId"});
 
@@ -41,7 +41,7 @@ public final class PersonalSceneJumpReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PersonalSceneJumpReqOuterClass$PersonalSceneJumpReq.class */
     public static final class PersonalSceneJumpReq extends GeneratedMessageV3 implements PersonalSceneJumpReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int POINT_ID_FIELD_NUMBER = 14;
+        public static final int POINTID_FIELD_NUMBER = 13;
         private int pointId_;
         private byte memoizedIsInitialized;
         private static final PersonalSceneJumpReq DEFAULT_INSTANCE = new PersonalSceneJumpReq();
@@ -88,7 +88,7 @@ public final class PersonalSceneJumpReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 112:
+                            case 104:
                                 this.pointId_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class PersonalSceneJumpReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.pointId_ != 0) {
-                output.writeUInt32(14, this.pointId_);
+                output.writeUInt32(13, this.pointId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class PersonalSceneJumpReqOuterClass {
             }
             int size2 = 0;
             if (this.pointId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(14, this.pointId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(13, this.pointId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class PersonalSceneJumpReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getPointId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + getPointId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

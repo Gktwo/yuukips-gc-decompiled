@@ -28,7 +28,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MotionInfoOuterClass.class */
 public final class MotionInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010MotionInfo.proto\u001a\u0011MotionState.proto\u001a\fVector.proto\"ß\u0001\n\nMotionInfo\u0012\u0014\n\u0003pos\u0018\u0001 \u0001(\u000b2\u0007.Vector\u0012\u0014\n\u0003rot\u0018\u0002 \u0001(\u000b2\u0007.Vector\u0012\u0016\n\u0005speed\u0018\u0003 \u0001(\u000b2\u0007.Vector\u0012\u001b\n\u0005state\u0018\u0004 \u0001(\u000e2\f.MotionState\u0012\u0017\n\u0006params\u0018\u0005 \u0003(\u000b2\u0007.Vector\u0012\u0018\n\u0007ref_pos\u0018\u0006 \u0001(\u000b2\u0007.Vector\u0012\u000e\n\u0006ref_id\u0018\u0007 \u0001(\r\u0012\u0012\n\nscene_time\u0018\b \u0001(\r\u0012\u0019\n\u0011interval_velocity\u0018\t \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MotionStateOuterClass.getDescriptor(), VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010MotionInfo.proto\u001a\fVector.proto\u001a\u0011MotionState.proto\"Û\u0001\n\nMotionInfo\u0012\u0014\n\u0003pos\u0018\u0001 \u0001(\u000b2\u0007.Vector\u0012\u0014\n\u0003rot\u0018\u0002 \u0001(\u000b2\u0007.Vector\u0012\u0016\n\u0005speed\u0018\u0003 \u0001(\u000b2\u0007.Vector\u0012\u001b\n\u0005state\u0018\u0004 \u0001(\u000e2\f.MotionState\u0012\u0017\n\u0006params\u0018\u0005 \u0003(\u000b2\u0007.Vector\u0012\u0017\n\u0006refPos\u0018\u0006 \u0001(\u000b2\u0007.Vector\u0012\r\n\u0005refId\u0018\u0007 \u0001(\r\u0012\u0011\n\tsceneTime\u0018\b \u0001(\r\u0012\u0018\n\u0010intervalVelocity\u0018\t \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor(), MotionStateOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_MotionInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_MotionInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MotionInfo_descriptor, new String[]{"Pos", "Rot", "Speed", "State", "Params", "RefPos", "RefId", "SceneTime", "IntervalVelocity"});
 
@@ -102,13 +102,13 @@ public final class MotionInfoOuterClass {
         private int state_;
         public static final int PARAMS_FIELD_NUMBER = 5;
         private List<VectorOuterClass.Vector> params_;
-        public static final int REF_POS_FIELD_NUMBER = 6;
+        public static final int REFPOS_FIELD_NUMBER = 6;
         private VectorOuterClass.Vector refPos_;
-        public static final int REF_ID_FIELD_NUMBER = 7;
+        public static final int REFID_FIELD_NUMBER = 7;
         private int refId_;
-        public static final int SCENE_TIME_FIELD_NUMBER = 8;
+        public static final int SCENETIME_FIELD_NUMBER = 8;
         private int sceneTime_;
-        public static final int INTERVAL_VELOCITY_FIELD_NUMBER = 9;
+        public static final int INTERVALVELOCITY_FIELD_NUMBER = 9;
         private long intervalVelocity_;
         private byte memoizedIsInitialized;
         private static final MotionInfo DEFAULT_INSTANCE = new MotionInfo();
@@ -1451,7 +1451,7 @@ public final class MotionInfoOuterClass {
     }
 
     static {
-        MotionStateOuterClass.getDescriptor();
         VectorOuterClass.getDescriptor();
+        MotionStateOuterClass.getDescriptor();
     }
 }

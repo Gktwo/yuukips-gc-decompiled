@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeLimitedShopOuterClass.class */
 public final class HomeLimitedShopOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015HomeLimitedShop.proto\u001a\u001aHomeLimitedShopGoods.proto\"<\n\u000fHomeLimitedShop\u0012)\n\ngoods_list\u0018\t \u0003(\u000b2\u0015.HomeLimitedShopGoodsB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeLimitedShopGoodsOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015HomeLimitedShop.proto\u001a\u001aHomeLimitedShopGoods.proto\";\n\u000fHomeLimitedShop\u0012(\n\tgoodsList\u0018\t \u0003(\u000b2\u0015.HomeLimitedShopGoodsB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeLimitedShopGoodsOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_HomeLimitedShop_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeLimitedShop_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeLimitedShop_descriptor, new String[]{"GoodsList"});
 
@@ -55,7 +55,7 @@ public final class HomeLimitedShopOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeLimitedShopOuterClass$HomeLimitedShop.class */
     public static final class HomeLimitedShop extends GeneratedMessageV3 implements HomeLimitedShopOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int GOODS_LIST_FIELD_NUMBER = 9;
+        public static final int GOODSLIST_FIELD_NUMBER = 9;
         private List<HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods> goodsList_;
         private byte memoizedIsInitialized;
         private static final HomeLimitedShop DEFAULT_INSTANCE = new HomeLimitedShop();

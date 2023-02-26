@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GravenInnocenceRaceLevelInfoOuterClass.class */
 public final class GravenInnocenceRaceLevelInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"GravenInnocenceRaceLevelInfo.proto\"T\n\u001cGravenInnocenceRaceLevelInfo\u0012\u0010\n\blevel_id\u0018\f \u0001(\r\u0012\u0011\n\tmax_score\u0018\u0005 \u0001(\r\u0012\u000f\n\u0007is_open\u0018\u0002 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"GravenInnocenceRaceLevelInfo.proto\"Q\n\u001cGravenInnocenceRaceLevelInfo\u0012\u000f\n\u0007levelId\u0018\u0007 \u0001(\r\u0012\u000e\n\u0006isOpen\u0018\r \u0001(\b\u0012\u0010\n\bmaxScore\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GravenInnocenceRaceLevelInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GravenInnocenceRaceLevelInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GravenInnocenceRaceLevelInfo_descriptor, new String[]{"LevelId", "MaxScore", "IsOpen"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GravenInnocenceRaceLevelInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GravenInnocenceRaceLevelInfo_descriptor, new String[]{"LevelId", "IsOpen", "MaxScore"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GravenInnocenceRaceLevelInfoOuterClass$GravenInnocenceRaceLevelInfoOrBuilder.class */
     public interface GravenInnocenceRaceLevelInfoOrBuilder extends MessageOrBuilder {
         int getLevelId();
 
-        int getMaxScore();
-
         boolean getIsOpen();
+
+        int getMaxScore();
     }
 
     private GravenInnocenceRaceLevelInfoOuterClass() {
@@ -46,12 +46,12 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GravenInnocenceRaceLevelInfoOuterClass$GravenInnocenceRaceLevelInfo.class */
     public static final class GravenInnocenceRaceLevelInfo extends GeneratedMessageV3 implements GravenInnocenceRaceLevelInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int LEVEL_ID_FIELD_NUMBER = 12;
+        public static final int LEVELID_FIELD_NUMBER = 7;
         private int levelId_;
-        public static final int MAX_SCORE_FIELD_NUMBER = 5;
-        private int maxScore_;
-        public static final int IS_OPEN_FIELD_NUMBER = 2;
+        public static final int ISOPEN_FIELD_NUMBER = 13;
         private boolean isOpen_;
+        public static final int MAXSCORE_FIELD_NUMBER = 15;
+        private int maxScore_;
         private byte memoizedIsInitialized;
         private static final GravenInnocenceRaceLevelInfo DEFAULT_INSTANCE = new GravenInnocenceRaceLevelInfo();
         private static final Parser<GravenInnocenceRaceLevelInfo> PARSER = new AbstractParser<GravenInnocenceRaceLevelInfo>() { // from class: emu.grasscutter.net.proto.GravenInnocenceRaceLevelInfoOuterClass.GravenInnocenceRaceLevelInfo.1
@@ -98,14 +98,14 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
+                                case 56:
+                                    this.levelId_ = input.readUInt32();
+                                    break;
+                                case 104:
                                     this.isOpen_ = input.readBool();
                                     break;
-                                case 40:
+                                case 120:
                                     this.maxScore_ = input.readUInt32();
-                                    break;
-                                case 96:
-                                    this.levelId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -143,13 +143,13 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GravenInnocenceRaceLevelInfoOuterClass.GravenInnocenceRaceLevelInfoOrBuilder
-        public int getMaxScore() {
-            return this.maxScore_;
+        public boolean getIsOpen() {
+            return this.isOpen_;
         }
 
         @Override // emu.grasscutter.net.proto.GravenInnocenceRaceLevelInfoOuterClass.GravenInnocenceRaceLevelInfoOrBuilder
-        public boolean getIsOpen() {
-            return this.isOpen_;
+        public int getMaxScore() {
+            return this.maxScore_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,14 +167,14 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.levelId_ != 0) {
+                output.writeUInt32(7, this.levelId_);
+            }
             if (this.isOpen_) {
-                output.writeBool(2, this.isOpen_);
+                output.writeBool(13, this.isOpen_);
             }
             if (this.maxScore_ != 0) {
-                output.writeUInt32(5, this.maxScore_);
-            }
-            if (this.levelId_ != 0) {
-                output.writeUInt32(12, this.levelId_);
+                output.writeUInt32(15, this.maxScore_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.levelId_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.levelId_);
+            }
             if (this.isOpen_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(2, this.isOpen_);
+                size2 += CodedOutputStream.computeBoolSize(13, this.isOpen_);
             }
             if (this.maxScore_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.maxScore_);
-            }
-            if (this.levelId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.levelId_);
+                size2 += CodedOutputStream.computeUInt32Size(15, this.maxScore_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
                 return equals(obj);
             }
             GravenInnocenceRaceLevelInfo other = (GravenInnocenceRaceLevelInfo) obj;
-            return getLevelId() == other.getLevelId() && getMaxScore() == other.getMaxScore() && getIsOpen() == other.getIsOpen() && this.unknownFields.equals(other.unknownFields);
+            return getLevelId() == other.getLevelId() && getIsOpen() == other.getIsOpen() && getMaxScore() == other.getMaxScore() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getLevelId())) + 5)) + getMaxScore())) + 2)) + Internal.hashBoolean(getIsOpen()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getLevelId())) + 13)) + Internal.hashBoolean(getIsOpen()))) + 15)) + getMaxScore())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -297,8 +297,8 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GravenInnocenceRaceLevelInfoOuterClass$GravenInnocenceRaceLevelInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements GravenInnocenceRaceLevelInfoOrBuilder {
             private int levelId_;
-            private int maxScore_;
             private boolean isOpen_;
+            private int maxScore_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return GravenInnocenceRaceLevelInfoOuterClass.internal_static_GravenInnocenceRaceLevelInfo_descriptor;
@@ -327,8 +327,8 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
             public Builder clear() {
                 clear();
                 this.levelId_ = 0;
-                this.maxScore_ = 0;
                 this.isOpen_ = false;
+                this.maxScore_ = 0;
                 return this;
             }
 
@@ -355,8 +355,8 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
             public GravenInnocenceRaceLevelInfo buildPartial() {
                 GravenInnocenceRaceLevelInfo result = new GravenInnocenceRaceLevelInfo(this);
                 result.levelId_ = this.levelId_;
-                result.maxScore_ = this.maxScore_;
                 result.isOpen_ = this.isOpen_;
+                result.maxScore_ = this.maxScore_;
                 onBuilt();
                 return result;
             }
@@ -407,11 +407,11 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
                 if (other.getLevelId() != 0) {
                     setLevelId(other.getLevelId());
                 }
-                if (other.getMaxScore() != 0) {
-                    setMaxScore(other.getMaxScore());
-                }
                 if (other.getIsOpen()) {
                     setIsOpen(other.getIsOpen());
+                }
+                if (other.getMaxScore() != 0) {
+                    setMaxScore(other.getMaxScore());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -463,23 +463,6 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.GravenInnocenceRaceLevelInfoOuterClass.GravenInnocenceRaceLevelInfoOrBuilder
-            public int getMaxScore() {
-                return this.maxScore_;
-            }
-
-            public Builder setMaxScore(int value) {
-                this.maxScore_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearMaxScore() {
-                this.maxScore_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GravenInnocenceRaceLevelInfoOuterClass.GravenInnocenceRaceLevelInfoOrBuilder
             public boolean getIsOpen() {
                 return this.isOpen_;
             }
@@ -492,6 +475,23 @@ public final class GravenInnocenceRaceLevelInfoOuterClass {
 
             public Builder clearIsOpen() {
                 this.isOpen_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GravenInnocenceRaceLevelInfoOuterClass.GravenInnocenceRaceLevelInfoOrBuilder
+            public int getMaxScore() {
+                return this.maxScore_;
+            }
+
+            public Builder setMaxScore(int value) {
+                this.maxScore_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearMaxScore() {
+                this.maxScore_ = 0;
                 onChanged();
                 return this;
             }

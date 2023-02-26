@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeChangeBgmNotifyOuterClass.class */
 public final class HomeChangeBgmNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019HomeChangeBgmNotify.proto\"%\n\u0013HomeChangeBgmNotify\u0012\u000e\n\u0006bgm_id\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019HomeChangeBgmNotify.proto\"$\n\u0013HomeChangeBgmNotify\u0012\r\n\u0005bgmId\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_HomeChangeBgmNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeChangeBgmNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeChangeBgmNotify_descriptor, new String[]{"BgmId"});
 
@@ -41,7 +41,7 @@ public final class HomeChangeBgmNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeChangeBgmNotifyOuterClass$HomeChangeBgmNotify.class */
     public static final class HomeChangeBgmNotify extends GeneratedMessageV3 implements HomeChangeBgmNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int BGM_ID_FIELD_NUMBER = 9;
+        public static final int BGMID_FIELD_NUMBER = 7;
         private int bgmId_;
         private byte memoizedIsInitialized;
         private static final HomeChangeBgmNotify DEFAULT_INSTANCE = new HomeChangeBgmNotify();
@@ -88,7 +88,7 @@ public final class HomeChangeBgmNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 72:
+                            case 56:
                                 this.bgmId_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class HomeChangeBgmNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.bgmId_ != 0) {
-                output.writeUInt32(9, this.bgmId_);
+                output.writeUInt32(7, this.bgmId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class HomeChangeBgmNotifyOuterClass {
             }
             int size2 = 0;
             if (this.bgmId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(9, this.bgmId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.bgmId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class HomeChangeBgmNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getBgmId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getBgmId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

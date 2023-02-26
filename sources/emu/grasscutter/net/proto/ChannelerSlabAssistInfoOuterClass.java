@@ -19,17 +19,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChannelerSlabAssistInfoOuterClass.class */
 public final class ChannelerSlabAssistInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dChannelerSlabAssistInfo.proto\"O\n\u0017ChannelerSlabAssistInfo\u0012\u0014\n\favatar_level\u0018\n \u0001(\r\u0012\u000b\n\u0003uid\u0018\u000b \u0001(\r\u0012\u0011\n\tavatar_id\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dChannelerSlabAssistInfo.proto\"M\n\u0017ChannelerSlabAssistInfo\u0012\u000b\n\u0003uid\u0018\u000b \u0001(\r\u0012\u0010\n\bavatarId\u0018\u000f \u0001(\r\u0012\u0013\n\u000bavatarLevel\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ChannelerSlabAssistInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChannelerSlabAssistInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChannelerSlabAssistInfo_descriptor, new String[]{"AvatarLevel", "Uid", "AvatarId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChannelerSlabAssistInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChannelerSlabAssistInfo_descriptor, new String[]{"Uid", "AvatarId", "AvatarLevel"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChannelerSlabAssistInfoOuterClass$ChannelerSlabAssistInfoOrBuilder.class */
     public interface ChannelerSlabAssistInfoOrBuilder extends MessageOrBuilder {
-        int getAvatarLevel();
-
         int getUid();
 
         int getAvatarId();
+
+        int getAvatarLevel();
     }
 
     private ChannelerSlabAssistInfoOuterClass() {
@@ -45,12 +45,12 @@ public final class ChannelerSlabAssistInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChannelerSlabAssistInfoOuterClass$ChannelerSlabAssistInfo.class */
     public static final class ChannelerSlabAssistInfo extends GeneratedMessageV3 implements ChannelerSlabAssistInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_LEVEL_FIELD_NUMBER = 10;
-        private int avatarLevel_;
         public static final int UID_FIELD_NUMBER = 11;
         private int uid_;
-        public static final int AVATAR_ID_FIELD_NUMBER = 6;
+        public static final int AVATARID_FIELD_NUMBER = 15;
         private int avatarId_;
+        public static final int AVATARLEVEL_FIELD_NUMBER = 3;
+        private int avatarLevel_;
         private byte memoizedIsInitialized;
         private static final ChannelerSlabAssistInfo DEFAULT_INSTANCE = new ChannelerSlabAssistInfo();
         private static final Parser<ChannelerSlabAssistInfo> PARSER = new AbstractParser<ChannelerSlabAssistInfo>() { // from class: emu.grasscutter.net.proto.ChannelerSlabAssistInfoOuterClass.ChannelerSlabAssistInfo.1
@@ -97,14 +97,14 @@ public final class ChannelerSlabAssistInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 48:
-                                    this.avatarId_ = input.readUInt32();
-                                    break;
-                                case 80:
+                                case 24:
                                     this.avatarLevel_ = input.readUInt32();
                                     break;
                                 case 88:
                                     this.uid_ = input.readUInt32();
+                                    break;
+                                case 120:
+                                    this.avatarId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -137,11 +137,6 @@ public final class ChannelerSlabAssistInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ChannelerSlabAssistInfoOuterClass.ChannelerSlabAssistInfoOrBuilder
-        public int getAvatarLevel() {
-            return this.avatarLevel_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ChannelerSlabAssistInfoOuterClass.ChannelerSlabAssistInfoOrBuilder
         public int getUid() {
             return this.uid_;
         }
@@ -149,6 +144,11 @@ public final class ChannelerSlabAssistInfoOuterClass {
         @Override // emu.grasscutter.net.proto.ChannelerSlabAssistInfoOuterClass.ChannelerSlabAssistInfoOrBuilder
         public int getAvatarId() {
             return this.avatarId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ChannelerSlabAssistInfoOuterClass.ChannelerSlabAssistInfoOrBuilder
+        public int getAvatarLevel() {
+            return this.avatarLevel_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -166,14 +166,14 @@ public final class ChannelerSlabAssistInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.avatarId_ != 0) {
-                output.writeUInt32(6, this.avatarId_);
-            }
             if (this.avatarLevel_ != 0) {
-                output.writeUInt32(10, this.avatarLevel_);
+                output.writeUInt32(3, this.avatarLevel_);
             }
             if (this.uid_ != 0) {
                 output.writeUInt32(11, this.uid_);
+            }
+            if (this.avatarId_ != 0) {
+                output.writeUInt32(15, this.avatarId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -185,14 +185,14 @@ public final class ChannelerSlabAssistInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.avatarId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.avatarId_);
-            }
             if (this.avatarLevel_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.avatarLevel_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.avatarLevel_);
             }
             if (this.uid_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(11, this.uid_);
+            }
+            if (this.avatarId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.avatarId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -208,7 +208,7 @@ public final class ChannelerSlabAssistInfoOuterClass {
                 return equals(obj);
             }
             ChannelerSlabAssistInfo other = (ChannelerSlabAssistInfo) obj;
-            return getAvatarLevel() == other.getAvatarLevel() && getUid() == other.getUid() && getAvatarId() == other.getAvatarId() && this.unknownFields.equals(other.unknownFields);
+            return getUid() == other.getUid() && getAvatarId() == other.getAvatarId() && getAvatarLevel() == other.getAvatarLevel() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -216,7 +216,7 @@ public final class ChannelerSlabAssistInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getAvatarLevel())) + 11)) + getUid())) + 6)) + getAvatarId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getUid())) + 15)) + getAvatarId())) + 3)) + getAvatarLevel())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -295,9 +295,9 @@ public final class ChannelerSlabAssistInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChannelerSlabAssistInfoOuterClass$ChannelerSlabAssistInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ChannelerSlabAssistInfoOrBuilder {
-            private int avatarLevel_;
             private int uid_;
             private int avatarId_;
+            private int avatarLevel_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ChannelerSlabAssistInfoOuterClass.internal_static_ChannelerSlabAssistInfo_descriptor;
@@ -325,9 +325,9 @@ public final class ChannelerSlabAssistInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.avatarLevel_ = 0;
                 this.uid_ = 0;
                 this.avatarId_ = 0;
+                this.avatarLevel_ = 0;
                 return this;
             }
 
@@ -353,9 +353,9 @@ public final class ChannelerSlabAssistInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public ChannelerSlabAssistInfo buildPartial() {
                 ChannelerSlabAssistInfo result = new ChannelerSlabAssistInfo(this);
-                result.avatarLevel_ = this.avatarLevel_;
                 result.uid_ = this.uid_;
                 result.avatarId_ = this.avatarId_;
+                result.avatarLevel_ = this.avatarLevel_;
                 onBuilt();
                 return result;
             }
@@ -403,14 +403,14 @@ public final class ChannelerSlabAssistInfoOuterClass {
                 if (other == ChannelerSlabAssistInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getAvatarLevel() != 0) {
-                    setAvatarLevel(other.getAvatarLevel());
-                }
                 if (other.getUid() != 0) {
                     setUid(other.getUid());
                 }
                 if (other.getAvatarId() != 0) {
                     setAvatarId(other.getAvatarId());
+                }
+                if (other.getAvatarLevel() != 0) {
+                    setAvatarLevel(other.getAvatarLevel());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -445,23 +445,6 @@ public final class ChannelerSlabAssistInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ChannelerSlabAssistInfoOuterClass.ChannelerSlabAssistInfoOrBuilder
-            public int getAvatarLevel() {
-                return this.avatarLevel_;
-            }
-
-            public Builder setAvatarLevel(int value) {
-                this.avatarLevel_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearAvatarLevel() {
-                this.avatarLevel_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ChannelerSlabAssistInfoOuterClass.ChannelerSlabAssistInfoOrBuilder
             public int getUid() {
                 return this.uid_;
             }
@@ -491,6 +474,23 @@ public final class ChannelerSlabAssistInfoOuterClass {
 
             public Builder clearAvatarId() {
                 this.avatarId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ChannelerSlabAssistInfoOuterClass.ChannelerSlabAssistInfoOrBuilder
+            public int getAvatarLevel() {
+                return this.avatarLevel_;
+            }
+
+            public Builder setAvatarLevel(int value) {
+                this.avatarLevel_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearAvatarLevel() {
+                this.avatarLevel_ = 0;
                 onChanged();
                 return this;
             }

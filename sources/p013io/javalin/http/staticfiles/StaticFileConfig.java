@@ -160,8 +160,8 @@ public final class StaticFileConfig {
         this.skipFileFunction = function1;
     }
 
-    public /* synthetic */ StaticFileConfig(String str, String str2, Location location, boolean z, ContextHandler.AliasCheck aliasCheck, Map map, C27481 r16, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? "/" : str, (i & 2) != 0 ? "/public" : str2, (i & 4) != 0 ? Location.CLASSPATH : location, (i & 8) != 0 ? false : z, (i & 16) != 0 ? null : aliasCheck, (i & 32) != 0 ? MapsKt.mutableMapOf(Tuples.m366to("Cache-Control", "max-age=0")) : map, (i & 64) != 0 ? C27481.INSTANCE : r16);
+    public /* synthetic */ StaticFileConfig(String str, String str2, Location location, boolean z, ContextHandler.AliasCheck aliasCheck, Map map, C27401 r16, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? "/" : str, (i & 2) != 0 ? "/public" : str2, (i & 4) != 0 ? Location.CLASSPATH : location, (i & 8) != 0 ? false : z, (i & 16) != 0 ? null : aliasCheck, (i & 32) != 0 ? MapsKt.mutableMapOf(Tuples.m366to("Cache-Control", "max-age=0")) : map, (i & 64) != 0 ? C27401.INSTANCE : r16);
     }
 
     @NotNull

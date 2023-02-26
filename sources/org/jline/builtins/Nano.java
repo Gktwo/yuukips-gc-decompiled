@@ -2395,7 +2395,7 @@ public class Nano implements Editor {
             prevHandler = this.terminal.handle(Terminal.Signal.WINCH, this::handle);
             display();
             while (true) {
-                int[] iArr = C58311.$SwitchMap$org$jline$builtins$Nano$Operation;
+                int[] iArr = C58231.$SwitchMap$org$jline$builtins$Nano$Operation;
                 Operation op = readOperation(this.keys);
                 switch (iArr[op.ordinal()]) {
                     case 1:

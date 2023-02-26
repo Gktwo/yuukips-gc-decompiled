@@ -59,7 +59,7 @@ public abstract class ForwardingSource implements Source {
     @JvmName(name = "-deprecated_delegate")
     @NotNull
     /* renamed from: -deprecated_delegate  reason: not valid java name */
-    public final Source m9392deprecated_delegate() {
+    public final Source m9389deprecated_delegate() {
         return this.delegate;
     }
 }

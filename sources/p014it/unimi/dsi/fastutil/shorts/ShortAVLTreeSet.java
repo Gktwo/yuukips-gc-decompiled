@@ -987,7 +987,7 @@ public class ShortAVLTreeSet extends AbstractShortSortedSet implements Serializa
         short from;
 
         /* renamed from: to */
-        short f3013to;
+        short f2977to;
         boolean bottom;
         boolean top;
 
@@ -995,7 +995,7 @@ public class ShortAVLTreeSet extends AbstractShortSortedSet implements Serializa
             if (bottom || top || ShortAVLTreeSet.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f3013to = to;
+                this.f2977to = to;
                 this.top = top;
                 return;
             }
@@ -1013,7 +1013,7 @@ public class ShortAVLTreeSet extends AbstractShortSortedSet implements Serializa
 
         /* renamed from: in */
         final boolean m446in(short k) {
-            return (this.bottom || ShortAVLTreeSet.this.compare(k, this.from) >= 0) && (this.top || ShortAVLTreeSet.this.compare(k, this.f3013to) < 0);
+            return (this.bottom || ShortAVLTreeSet.this.compare(k, this.from) >= 0) && (this.top || ShortAVLTreeSet.this.compare(k, this.f2977to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortCollection, p014it.unimi.dsi.fastutil.shorts.ShortCollection
@@ -1026,7 +1026,7 @@ public class ShortAVLTreeSet extends AbstractShortSortedSet implements Serializa
             if (m446in(k)) {
                 return ShortAVLTreeSet.this.add(k);
             }
-            throw new IllegalArgumentException("Element (" + ((int) k) + ") out of range [" + (this.bottom ? "-" : String.valueOf((int) this.from)) + ", " + (this.top ? "-" : String.valueOf((int) this.f3013to)) + ")");
+            throw new IllegalArgumentException("Element (" + ((int) k) + ") out of range [" + (this.bottom ? "-" : String.valueOf((int) this.from)) + ", " + (this.top ? "-" : String.valueOf((int) this.f2977to)) + ")");
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShortSet, p014it.unimi.dsi.fastutil.shorts.ShortSet
@@ -1071,7 +1071,7 @@ public class ShortAVLTreeSet extends AbstractShortSortedSet implements Serializa
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortSortedSet
         public ShortSortedSet headSet(short to) {
-            if (!this.top && ShortAVLTreeSet.this.compare(to, this.f3013to) >= 0) {
+            if (!this.top && ShortAVLTreeSet.this.compare(to, this.f2977to) >= 0) {
                 return this;
             }
             return new Subset(this.from, this.bottom, to, false);
@@ -1082,7 +1082,7 @@ public class ShortAVLTreeSet extends AbstractShortSortedSet implements Serializa
             if (!this.bottom && ShortAVLTreeSet.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Subset(from, false, this.f3013to, this.top);
+            return new Subset(from, false, this.f2977to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortSortedSet
@@ -1091,12 +1091,12 @@ public class ShortAVLTreeSet extends AbstractShortSortedSet implements Serializa
                 return new Subset(from, false, to, false);
             }
             if (!this.top) {
-                to = ShortAVLTreeSet.this.compare(to, this.f3013to) < 0 ? to : this.f3013to;
+                to = ShortAVLTreeSet.this.compare(to, this.f2977to) < 0 ? to : this.f2977to;
             }
             if (!this.bottom) {
                 from = ShortAVLTreeSet.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f3013to) ? new Subset(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f2977to) ? new Subset(from, false, to, false) : this;
         }
 
         public Entry firstEntry() {
@@ -1115,7 +1115,7 @@ public class ShortAVLTreeSet extends AbstractShortSortedSet implements Serializa
             if (e == null) {
                 return null;
             }
-            if (this.top || ShortAVLTreeSet.this.compare(e.key, this.f3013to) < 0) {
+            if (this.top || ShortAVLTreeSet.this.compare(e.key, this.f2977to) < 0) {
                 return e;
             }
             return null;
@@ -1129,8 +1129,8 @@ public class ShortAVLTreeSet extends AbstractShortSortedSet implements Serializa
             if (this.top) {
                 e = ShortAVLTreeSet.this.lastEntry;
             } else {
-                e = ShortAVLTreeSet.this.locateKey(this.f3013to);
-                if (ShortAVLTreeSet.this.compare(e.key, this.f3013to) >= 0) {
+                e = ShortAVLTreeSet.this.locateKey(this.f2977to);
+                if (ShortAVLTreeSet.this.compare(e.key, this.f2977to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1208,7 +1208,7 @@ public class ShortAVLTreeSet extends AbstractShortSortedSet implements Serializa
             @Override // p014it.unimi.dsi.fastutil.shorts.ShortAVLTreeSet.SetIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Subset.this.top && this.next != null && ShortAVLTreeSet.this.compare(this.next.key, Subset.this.f3013to) >= 0) {
+                if (!Subset.this.top && this.next != null && ShortAVLTreeSet.this.compare(this.next.key, Subset.this.f2977to) >= 0) {
                     this.next = null;
                 }
             }

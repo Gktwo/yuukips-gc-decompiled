@@ -301,22 +301,22 @@ public final class LongSpliterators {
     private static class SpliteratorWrapper implements LongSpliterator {
 
         /* renamed from: i */
-        final Spliterator<Long> f2447i;
+        final Spliterator<Long> f2411i;
 
         public SpliteratorWrapper(Spliterator<Long> i) {
-            this.f2447i = i;
+            this.f2411i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongSpliterator
         public boolean tryAdvance(LongConsumer action) {
-            return this.f2447i.tryAdvance(action);
+            return this.f2411i.tryAdvance(action);
         }
 
         @Override // java.util.Spliterator.OfLong
         public boolean tryAdvance(LongConsumer action) {
             Consumer<? super Long> consumer;
             Objects.requireNonNull(action);
-            Spliterator<Long> spliterator = this.f2447i;
+            Spliterator<Long> spliterator = this.f2411i;
             if (action instanceof Consumer) {
                 consumer = (Consumer) action;
             } else {
@@ -331,19 +331,19 @@ public final class LongSpliterators {
         @Override // p014it.unimi.dsi.fastutil.longs.LongSpliterator, java.util.Spliterator.OfLong, java.util.Spliterator
         @Deprecated
         public boolean tryAdvance(Consumer<? super Long> action) {
-            return this.f2447i.tryAdvance(action);
+            return this.f2411i.tryAdvance(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongSpliterator
         public void forEachRemaining(LongConsumer action) {
-            this.f2447i.forEachRemaining(action);
+            this.f2411i.forEachRemaining(action);
         }
 
         @Override // java.util.Spliterator.OfLong
         public void forEachRemaining(LongConsumer action) {
             Consumer<? super Long> consumer;
             Objects.requireNonNull(action);
-            Spliterator<Long> spliterator = this.f2447i;
+            Spliterator<Long> spliterator = this.f2411i;
             if (action instanceof Consumer) {
                 consumer = (Consumer) action;
             } else {
@@ -358,27 +358,27 @@ public final class LongSpliterators {
         @Override // p014it.unimi.dsi.fastutil.longs.LongSpliterator, java.util.Spliterator.OfLong, java.util.Spliterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Long> action) {
-            this.f2447i.forEachRemaining(action);
+            this.f2411i.forEachRemaining(action);
         }
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return this.f2447i.estimateSize();
+            return this.f2411i.estimateSize();
         }
 
         @Override // java.util.Spliterator
         public int characteristics() {
-            return this.f2447i.characteristics();
+            return this.f2411i.characteristics();
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongSpliterator, java.util.Spliterator
         public LongComparator getComparator() {
-            return LongComparators.asLongComparator(this.f2447i.getComparator());
+            return LongComparators.asLongComparator(this.f2411i.getComparator());
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongSpliterator, java.util.Spliterator.OfLong, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public LongSpliterator trySplit() {
-            Spliterator<Long> innerSplit = this.f2447i.trySplit();
+            Spliterator<Long> innerSplit = this.f2411i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -403,7 +403,7 @@ public final class LongSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongSpliterators.SpliteratorWrapper, p014it.unimi.dsi.fastutil.longs.LongSpliterator, java.util.Spliterator.OfLong, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public LongSpliterator trySplit() {
-            Spliterator<Long> innerSplit = this.f2447i.trySplit();
+            Spliterator<Long> innerSplit = this.f2411i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -416,40 +416,40 @@ public final class LongSpliterators {
     private static class PrimitiveSpliteratorWrapper implements LongSpliterator {
 
         /* renamed from: i */
-        final Spliterator.OfLong f2445i;
+        final Spliterator.OfLong f2409i;
 
         public PrimitiveSpliteratorWrapper(Spliterator.OfLong i) {
-            this.f2445i = i;
+            this.f2409i = i;
         }
 
         @Override // java.util.Spliterator.OfLong
         public boolean tryAdvance(LongConsumer action) {
-            return this.f2445i.tryAdvance(action);
+            return this.f2409i.tryAdvance(action);
         }
 
         @Override // java.util.Spliterator.OfLong
         public void forEachRemaining(LongConsumer action) {
-            this.f2445i.forEachRemaining(action);
+            this.f2409i.forEachRemaining(action);
         }
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return this.f2445i.estimateSize();
+            return this.f2409i.estimateSize();
         }
 
         @Override // java.util.Spliterator
         public int characteristics() {
-            return this.f2445i.characteristics();
+            return this.f2409i.characteristics();
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongSpliterator, java.util.Spliterator
         public LongComparator getComparator() {
-            return LongComparators.asLongComparator(this.f2445i.getComparator());
+            return LongComparators.asLongComparator(this.f2409i.getComparator());
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongSpliterator, java.util.Spliterator.OfLong, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public LongSpliterator trySplit() {
-            Spliterator.OfLong innerSplit = this.f2445i.trySplit();
+            Spliterator.OfLong innerSplit = this.f2409i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -474,7 +474,7 @@ public final class LongSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongSpliterators.PrimitiveSpliteratorWrapper, p014it.unimi.dsi.fastutil.longs.LongSpliterator, java.util.Spliterator.OfLong, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public LongSpliterator trySplit() {
-            Spliterator.OfLong innerSplit = this.f2445i.trySplit();
+            Spliterator.OfLong innerSplit = this.f2409i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -658,16 +658,16 @@ public final class LongSpliterators {
         private long curr;
 
         /* renamed from: to */
-        private long f2444to;
+        private long f2408to;
 
         public IntervalSpliterator(long from, long to) {
             this.curr = from;
-            this.f2444to = to;
+            this.f2408to = to;
         }
 
         @Override // java.util.Spliterator.OfLong
         public boolean tryAdvance(LongConsumer action) {
-            if (this.curr >= this.f2444to) {
+            if (this.curr >= this.f2408to) {
                 return false;
             }
             long j = this.curr;
@@ -679,7 +679,7 @@ public final class LongSpliterators {
         @Override // java.util.Spliterator.OfLong
         public void forEachRemaining(LongConsumer action) {
             Objects.requireNonNull(action);
-            while (this.curr < this.f2444to) {
+            while (this.curr < this.f2408to) {
                 action.accept(this.curr);
                 this.curr++;
             }
@@ -687,7 +687,7 @@ public final class LongSpliterators {
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return this.f2444to - this.curr;
+            return this.f2408to - this.curr;
         }
 
         @Override // java.util.Spliterator
@@ -702,7 +702,7 @@ public final class LongSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongSpliterator, java.util.Spliterator.OfLong, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public LongSpliterator trySplit() {
-            long remaining = this.f2444to - this.curr;
+            long remaining = this.f2408to - this.curr;
             long mid = this.curr + (remaining >> 1);
             if (remaining > 2147483648L || remaining < 0) {
                 mid = this.curr + 1073741824;
@@ -719,13 +719,13 @@ public final class LongSpliterators {
         public long skip(long n) {
             if (n < 0) {
                 throw new IllegalArgumentException("Argument must be nonnegative: " + n);
-            } else if (this.curr >= this.f2444to) {
+            } else if (this.curr >= this.f2408to) {
                 return 0;
             } else {
                 long newCurr = this.curr + n;
-                if (newCurr > this.f2444to || newCurr < this.curr) {
-                    long n2 = this.f2444to - this.curr;
-                    this.curr = this.f2444to;
+                if (newCurr > this.f2408to || newCurr < this.curr) {
+                    long n2 = this.f2408to - this.curr;
+                    this.curr = this.f2408to;
                     return n2;
                 }
                 this.curr = newCurr;
@@ -746,7 +746,7 @@ public final class LongSpliterators {
         private static final int CHARACTERISTICS_NOT_SUPPORTED_WHILE_MULTIPLE = 5;
 
         /* renamed from: a */
-        final LongSpliterator[] f2446a;
+        final LongSpliterator[] f2410a;
         int offset;
         int length;
         long remainingEstimatedExceptCurrent;
@@ -755,7 +755,7 @@ public final class LongSpliterators {
         public SpliteratorConcatenator(LongSpliterator[] a, int offset, int length) {
             this.remainingEstimatedExceptCurrent = LongCompanionObject.MAX_VALUE;
             this.characteristics = 0;
-            this.f2446a = a;
+            this.f2410a = a;
             this.offset = offset;
             this.length = length;
             this.remainingEstimatedExceptCurrent = recomputeRemaining();
@@ -784,7 +784,7 @@ public final class LongSpliterators {
                 r0 = r6
                 if (r0 <= 0) goto L_0x004e
                 r0 = r5
-                it.unimi.dsi.fastutil.longs.LongSpliterator[] r0 = r0.f2446a
+                it.unimi.dsi.fastutil.longs.LongSpliterator[] r0 = r0.f2410a
                 r1 = r7
                 int r7 = r7 + 1
                 r0 = r0[r1]
@@ -834,7 +834,7 @@ public final class LongSpliterators {
             }
             while (curLength > 0) {
                 curOffset++;
-                current &= this.f2446a[curOffset].characteristics();
+                current &= this.f2410a[curOffset].characteristics();
                 curLength--;
             }
             return current;
@@ -855,7 +855,7 @@ public final class LongSpliterators {
             while (true) {
                 if (this.length <= 0) {
                     break;
-                } else if (this.f2446a[this.offset].tryAdvance(action)) {
+                } else if (this.f2410a[this.offset].tryAdvance(action)) {
                     any = true;
                     break;
                 } else {
@@ -868,7 +868,7 @@ public final class LongSpliterators {
         @Override // java.util.Spliterator.OfLong
         public void forEachRemaining(LongConsumer action) {
             while (this.length > 0) {
-                this.f2446a[this.offset].forEachRemaining(action);
+                this.f2410a[this.offset].forEachRemaining(action);
                 advanceNextSpliterator();
             }
         }
@@ -877,7 +877,7 @@ public final class LongSpliterators {
         @Deprecated
         public void forEachRemaining(Consumer<? super Long> action) {
             while (this.length > 0) {
-                this.f2446a[this.offset].forEachRemaining(action);
+                this.f2410a[this.offset].forEachRemaining(action);
                 advanceNextSpliterator();
             }
         }
@@ -887,7 +887,7 @@ public final class LongSpliterators {
             if (this.length <= 0) {
                 return 0;
             }
-            long est = this.f2446a[this.offset].estimateSize() + this.remainingEstimatedExceptCurrent;
+            long est = this.f2410a[this.offset].estimateSize() + this.remainingEstimatedExceptCurrent;
             if (est < 0) {
                 return LongCompanionObject.MAX_VALUE;
             }
@@ -902,7 +902,7 @@ public final class LongSpliterators {
         @Override // p014it.unimi.dsi.fastutil.longs.LongSpliterator, java.util.Spliterator
         public LongComparator getComparator() {
             if (this.length == 1 && (this.characteristics & 4) != 0) {
-                return this.f2446a[this.offset].getComparator();
+                return this.f2410a[this.offset].getComparator();
             }
             throw new IllegalStateException();
         }
@@ -913,16 +913,16 @@ public final class LongSpliterators {
                 case 0:
                     return null;
                 case 1:
-                    LongSpliterator split = this.f2446a[this.offset].trySplit();
-                    this.characteristics = this.f2446a[this.offset].characteristics();
+                    LongSpliterator split = this.f2410a[this.offset].trySplit();
+                    this.characteristics = this.f2410a[this.offset].characteristics();
                     return split;
                 case 2:
-                    LongSpliterator[] longSpliteratorArr = this.f2446a;
+                    LongSpliterator[] longSpliteratorArr = this.f2410a;
                     int i = this.offset;
                     this.offset = i + 1;
                     LongSpliterator split2 = longSpliteratorArr[i];
                     this.length--;
-                    this.characteristics = this.f2446a[this.offset].characteristics();
+                    this.characteristics = this.f2410a[this.offset].characteristics();
                     this.remainingEstimatedExceptCurrent = 0;
                     return split2;
                 default:
@@ -932,7 +932,7 @@ public final class LongSpliterators {
                     this.length -= mid;
                     this.remainingEstimatedExceptCurrent = recomputeRemaining();
                     this.characteristics = computeCharacteristics();
-                    return new SpliteratorConcatenator(this.f2446a, ret_offset, mid);
+                    return new SpliteratorConcatenator(this.f2410a, ret_offset, mid);
             }
         }
 
@@ -944,7 +944,7 @@ public final class LongSpliterators {
                 return 0;
             }
             while (c < n && this.length >= 0) {
-                c += this.f2446a[this.offset].skip(n - c);
+                c += this.f2410a[this.offset].skip(n - c);
                 if (c < n) {
                     advanceNextSpliterator();
                 }

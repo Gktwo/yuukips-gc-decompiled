@@ -25,13 +25,13 @@ public class LongOpenHashSet extends AbstractLongSet implements Serializable, Cl
     protected transient boolean containsNull;
 
     /* renamed from: n */
-    protected transient int f2438n;
+    protected transient int f2402n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2439f;
+    protected final float f2403f;
 
     public LongOpenHashSet(int expected, float f) {
         if (f <= 0.0f || f >= 1.0f) {
@@ -39,13 +39,13 @@ public class LongOpenHashSet extends AbstractLongSet implements Serializable, Cl
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2439f = f;
+            this.f2403f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2438n = arraySize;
+            this.f2402n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2438n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2438n, f);
-            this.key = new long[this.f2438n + 1];
+            this.mask = this.f2402n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2402n, f);
+            this.key = new long[this.f2402n + 1];
         }
     }
 
@@ -187,22 +187,22 @@ public class LongOpenHashSet extends AbstractLongSet implements Serializable, Cl
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2439f);
-        if (needed > this.f2438n) {
+        int needed = HashCommon.arraySize(capacity, this.f2403f);
+        if (needed > this.f2402n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2439f)))));
-        if (needed > this.f2438n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2403f)))));
+        if (needed > this.f2402n) {
             rehash(needed);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongCollection, p014it.unimi.dsi.fastutil.longs.LongCollection
     public boolean addAll(LongCollection c) {
-        if (((double) this.f2439f) <= 0.5d) {
+        if (((double) this.f2403f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -212,7 +212,7 @@ public class LongOpenHashSet extends AbstractLongSet implements Serializable, Cl
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Long> c) {
-        if (((double) this.f2439f) <= 0.5d) {
+        if (((double) this.f2403f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -252,7 +252,7 @@ public class LongOpenHashSet extends AbstractLongSet implements Serializable, Cl
         if (i2 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f2439f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f2403f));
         return true;
     }
 
@@ -288,21 +288,21 @@ public class LongOpenHashSet extends AbstractLongSet implements Serializable, Cl
     private boolean removeEntry(int pos) {
         this.size--;
         shiftKeys(pos);
-        if (this.f2438n <= this.minN || this.size >= this.maxFill / 4 || this.f2438n <= 16) {
+        if (this.f2402n <= this.minN || this.size >= this.maxFill / 4 || this.f2402n <= 16) {
             return true;
         }
-        rehash(this.f2438n / 2);
+        rehash(this.f2402n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f2438n] = 0;
+        this.key[this.f2402n] = 0;
         this.size--;
-        if (this.f2438n <= this.minN || this.size >= this.maxFill / 4 || this.f2438n <= 16) {
+        if (this.f2402n <= this.minN || this.size >= this.maxFill / 4 || this.f2402n <= 16) {
             return true;
         }
-        rehash(this.f2438n / 2);
+        rehash(this.f2402n / 2);
         return true;
     }
 
@@ -390,20 +390,20 @@ public class LongOpenHashSet extends AbstractLongSet implements Serializable, Cl
         int last;
 
         /* renamed from: c */
-        int f2440c;
+        int f2404c;
         boolean mustReturnNull;
         LongArrayList wrapped;
 
         private SetIterator() {
-            this.pos = LongOpenHashSet.this.f2438n;
+            this.pos = LongOpenHashSet.this.f2402n;
             this.last = -1;
-            this.f2440c = LongOpenHashSet.this.size;
+            this.f2404c = LongOpenHashSet.this.size;
             this.mustReturnNull = LongOpenHashSet.this.containsNull;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2440c != 0;
+            return this.f2404c != 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
@@ -411,11 +411,11 @@ public class LongOpenHashSet extends AbstractLongSet implements Serializable, Cl
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2440c--;
+            this.f2404c--;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = LongOpenHashSet.this.f2438n;
-                return LongOpenHashSet.this.key[LongOpenHashSet.this.f2438n];
+                this.last = LongOpenHashSet.this.f2402n;
+                return LongOpenHashSet.this.key[LongOpenHashSet.this.f2402n];
             }
             long[] key = LongOpenHashSet.this.key;
             do {
@@ -474,9 +474,9 @@ public class LongOpenHashSet extends AbstractLongSet implements Serializable, Cl
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == LongOpenHashSet.this.f2438n) {
+            if (this.last == LongOpenHashSet.this.f2402n) {
                 LongOpenHashSet.this.containsNull = false;
-                LongOpenHashSet.this.key[LongOpenHashSet.this.f2438n] = 0;
+                LongOpenHashSet.this.key[LongOpenHashSet.this.f2402n] = 0;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -493,22 +493,22 @@ public class LongOpenHashSet extends AbstractLongSet implements Serializable, Cl
             long[] key = LongOpenHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = LongOpenHashSet.this.f2438n;
-                action.accept(key[LongOpenHashSet.this.f2438n]);
-                this.f2440c--;
+                this.last = LongOpenHashSet.this.f2402n;
+                action.accept(key[LongOpenHashSet.this.f2402n]);
+                this.f2404c--;
             }
-            while (this.f2440c != 0) {
+            while (this.f2404c != 0) {
                 int i = this.pos - 1;
                 this.pos = i;
                 if (i < 0) {
                     this.last = Integer.MIN_VALUE;
                     action.accept(this.wrapped.getLong((-this.pos) - 1));
-                    this.f2440c--;
+                    this.f2404c--;
                 } else if (key[this.pos] != 0) {
                     int i2 = this.pos;
                     this.last = i2;
                     action.accept(key[i2]);
-                    this.f2440c--;
+                    this.f2404c--;
                 }
             }
         }
@@ -528,22 +528,22 @@ public class LongOpenHashSet extends AbstractLongSet implements Serializable, Cl
         int max;
 
         /* renamed from: c */
-        int f2441c;
+        int f2405c;
         boolean mustReturnNull;
         boolean hasSplit;
 
         SetSpliterator() {
             this.pos = 0;
-            this.max = LongOpenHashSet.this.f2438n;
-            this.f2441c = 0;
+            this.max = LongOpenHashSet.this.f2402n;
+            this.f2405c = 0;
             this.mustReturnNull = LongOpenHashSet.this.containsNull;
             this.hasSplit = false;
         }
 
         SetSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = LongOpenHashSet.this.f2438n;
-            this.f2441c = 0;
+            this.max = LongOpenHashSet.this.f2402n;
+            this.f2405c = 0;
             this.mustReturnNull = LongOpenHashSet.this.containsNull;
             this.hasSplit = false;
             this.pos = pos;
@@ -556,14 +556,14 @@ public class LongOpenHashSet extends AbstractLongSet implements Serializable, Cl
         public boolean tryAdvance(LongConsumer action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2441c++;
-                action.accept(LongOpenHashSet.this.key[LongOpenHashSet.this.f2438n]);
+                this.f2405c++;
+                action.accept(LongOpenHashSet.this.key[LongOpenHashSet.this.f2402n]);
                 return true;
             }
             long[] key = LongOpenHashSet.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f2441c++;
+                    this.f2405c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(key[i]);
@@ -579,13 +579,13 @@ public class LongOpenHashSet extends AbstractLongSet implements Serializable, Cl
             long[] key = LongOpenHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                action.accept(key[LongOpenHashSet.this.f2438n]);
-                this.f2441c++;
+                action.accept(key[LongOpenHashSet.this.f2402n]);
+                this.f2405c++;
             }
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     action.accept(key[this.pos]);
-                    this.f2441c++;
+                    this.f2405c++;
                 }
                 this.pos++;
             }
@@ -599,9 +599,9 @@ public class LongOpenHashSet extends AbstractLongSet implements Serializable, Cl
         @Override // java.util.Spliterator
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (LongOpenHashSet.this.size - this.f2441c);
+                return (long) (LongOpenHashSet.this.size - this.f2405c);
             }
-            return Math.min((long) (LongOpenHashSet.this.size - this.f2441c), ((long) ((((double) LongOpenHashSet.this.realSize()) / ((double) LongOpenHashSet.this.f2438n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (LongOpenHashSet.this.size - this.f2405c), ((long) ((((double) LongOpenHashSet.this.realSize()) / ((double) LongOpenHashSet.this.f2402n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongSpliterator, java.util.Spliterator.OfLong, java.util.Spliterator.OfPrimitive, java.util.Spliterator
@@ -729,10 +729,10 @@ public class LongOpenHashSet extends AbstractLongSet implements Serializable, Cl
     @Override // p014it.unimi.dsi.fastutil.longs.LongIterable
     public void forEach(LongConsumer action) {
         if (this.containsNull) {
-            action.accept(this.key[this.f2438n]);
+            action.accept(this.key[this.f2402n]);
         }
         long[] key = this.key;
-        int pos = this.f2438n;
+        int pos = this.f2402n;
         while (true) {
             pos--;
             if (pos == 0) {
@@ -749,8 +749,8 @@ public class LongOpenHashSet extends AbstractLongSet implements Serializable, Cl
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2439f)));
-        if (l >= this.f2438n || this.size > HashCommon.maxFill(l, this.f2439f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2403f)));
+        if (l >= this.f2402n || this.size > HashCommon.maxFill(l, this.f2403f)) {
             return true;
         }
         try {
@@ -766,7 +766,7 @@ public class LongOpenHashSet extends AbstractLongSet implements Serializable, Cl
         long[] key = this.key;
         int mask = newN - 1;
         long[] newKey = new long[newN + 1];
-        int i2 = this.f2438n;
+        int i2 = this.f2402n;
         int j = realSize();
         while (true) {
             j--;
@@ -784,9 +784,9 @@ public class LongOpenHashSet extends AbstractLongSet implements Serializable, Cl
                 }
                 newKey[pos] = key[i2];
             } else {
-                this.f2438n = newN;
+                this.f2402n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2438n, this.f2439f);
+                this.maxFill = HashCommon.maxFill(this.f2402n, this.f2403f);
                 this.key = newKey;
                 return;
             }
@@ -841,10 +841,10 @@ public class LongOpenHashSet extends AbstractLongSet implements Serializable, Cl
         int pos;
         int i;
         s.defaultReadObject();
-        this.f2438n = HashCommon.arraySize(this.size, this.f2439f);
-        this.maxFill = HashCommon.maxFill(this.f2438n, this.f2439f);
-        this.mask = this.f2438n - 1;
-        long[] key = new long[this.f2438n + 1];
+        this.f2402n = HashCommon.arraySize(this.size, this.f2403f);
+        this.maxFill = HashCommon.maxFill(this.f2402n, this.f2403f);
+        this.mask = this.f2402n - 1;
+        long[] key = new long[this.f2402n + 1];
         this.key = key;
         int i2 = this.size;
         while (true) {
@@ -852,7 +852,7 @@ public class LongOpenHashSet extends AbstractLongSet implements Serializable, Cl
             if (i2 != 0) {
                 long k = s.readLong();
                 if (k == 0) {
-                    pos = this.f2438n;
+                    pos = this.f2402n;
                     this.containsNull = true;
                 } else {
                     int mix = ((int) HashCommon.mix(k)) & this.mask;

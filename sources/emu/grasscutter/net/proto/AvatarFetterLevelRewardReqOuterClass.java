@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarFetterLevelRewardReqOuterClass.class */
 public final class AvatarFetterLevelRewardReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n AvatarFetterLevelRewardReq.proto\"G\n\u001aAvatarFetterLevelRewardReq\u0012\u0013\n\u000bavatar_guid\u0018\u0002 \u0001(\u0004\u0012\u0014\n\ffetter_level\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n AvatarFetterLevelRewardReq.proto\"E\n\u001aAvatarFetterLevelRewardReq\u0012\u0012\n\navatarGuid\u0018\r \u0001(\u0004\u0012\u0013\n\u000bfetterLevel\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AvatarFetterLevelRewardReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarFetterLevelRewardReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarFetterLevelRewardReq_descriptor, new String[]{"AvatarGuid", "FetterLevel"});
 
@@ -44,9 +44,9 @@ public final class AvatarFetterLevelRewardReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarFetterLevelRewardReqOuterClass$AvatarFetterLevelRewardReq.class */
     public static final class AvatarFetterLevelRewardReq extends GeneratedMessageV3 implements AvatarFetterLevelRewardReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 2;
+        public static final int AVATARGUID_FIELD_NUMBER = 13;
         private long avatarGuid_;
-        public static final int FETTER_LEVEL_FIELD_NUMBER = 5;
+        public static final int FETTERLEVEL_FIELD_NUMBER = 12;
         private int fetterLevel_;
         private byte memoizedIsInitialized;
         private static final AvatarFetterLevelRewardReq DEFAULT_INSTANCE = new AvatarFetterLevelRewardReq();
@@ -93,11 +93,11 @@ public final class AvatarFetterLevelRewardReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 16:
-                                this.avatarGuid_ = input.readUInt64();
-                                break;
-                            case 40:
+                            case 96:
                                 this.fetterLevel_ = input.readUInt32();
+                                break;
+                            case 104:
+                                this.avatarGuid_ = input.readUInt64();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -153,11 +153,11 @@ public final class AvatarFetterLevelRewardReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.avatarGuid_ != 0) {
-                output.writeUInt64(2, this.avatarGuid_);
-            }
             if (this.fetterLevel_ != 0) {
-                output.writeUInt32(5, this.fetterLevel_);
+                output.writeUInt32(12, this.fetterLevel_);
+            }
+            if (this.avatarGuid_ != 0) {
+                output.writeUInt64(13, this.avatarGuid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,11 +169,11 @@ public final class AvatarFetterLevelRewardReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.avatarGuid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(2, this.avatarGuid_);
-            }
             if (this.fetterLevel_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.fetterLevel_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(12, this.fetterLevel_);
+            }
+            if (this.avatarGuid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(13, this.avatarGuid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -197,7 +197,7 @@ public final class AvatarFetterLevelRewardReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + Internal.hashLong(getAvatarGuid()))) + 5)) + getFetterLevel())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + Internal.hashLong(getAvatarGuid()))) + 12)) + getFetterLevel())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

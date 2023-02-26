@@ -14,7 +14,7 @@ public class BasicBlock {
 
     /* renamed from: org.luaj.vm2.luajc.BasicBlock$1 */
     /* loaded from: grasscutter.jar:org/luaj/vm2/luajc/BasicBlock$1.class */
-    static class C58801 {
+    static class C58721 {
     }
 
     /* loaded from: grasscutter.jar:org/luaj/vm2/luajc/BasicBlock$AllocAndXRefVisitor.class */
@@ -50,7 +50,7 @@ public class BasicBlock {
             basicBlockArr2[i4] = this.blocks[i];
         }
 
-        AllocAndXRefVisitor(boolean[] zArr, int[] iArr, int[] iArr2, BasicBlock[] basicBlockArr, C58801 r11) {
+        AllocAndXRefVisitor(boolean[] zArr, int[] iArr, int[] iArr2, BasicBlock[] basicBlockArr, C58721 r11) {
             this(zArr, iArr, iArr2, basicBlockArr);
         }
     }
@@ -89,7 +89,7 @@ public class BasicBlock {
             iArr2[i2] = iArr2[i2] + 1;
         }
 
-        CountPrevNextVistor(boolean[] zArr, int[] iArr, int[] iArr2, C58801 r9) {
+        CountPrevNextVistor(boolean[] zArr, int[] iArr, int[] iArr2, C58721 r9) {
             this(zArr, iArr, iArr2);
         }
     }
@@ -114,7 +114,7 @@ public class BasicBlock {
             this.isend[i] = true;
         }
 
-        MarkAndMergeVisitor(boolean[] zArr, boolean[] zArr2, C58801 r7) {
+        MarkAndMergeVisitor(boolean[] zArr, boolean[] zArr2, C58721 r7) {
             this(zArr, zArr2);
         }
     }

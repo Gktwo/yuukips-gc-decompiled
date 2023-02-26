@@ -29,7 +29,7 @@ public class ProtoInfo {
         this.name = str;
         this.prototype = prototype;
         this.upvals = upvalInfoArr != null ? upvalInfoArr : new UpvalInfo[]{new UpvalInfo(this)};
-        this.subprotos = (prototype.f3296p == null || prototype.f3296p.length <= 0) ? null : new ProtoInfo[prototype.f3296p.length];
+        this.subprotos = (prototype.f3260p == null || prototype.f3260p.length <= 0) ? null : new ProtoInfo[prototype.f3260p.length];
         this.blocks = BasicBlock.findBasicBlocks(prototype);
         this.blocklist = BasicBlock.findLiveBlocks(this.blocks);
         this.params = new VarInfo[prototype.maxstacksize];
@@ -59,22 +59,22 @@ public class ProtoInfo {
                 stringBuffer.append("     ");
                 for (int i4 = 0; i4 < this.prototype.maxstacksize; i4++) {
                     VarInfo varInfo = this.vars[i4][i3];
-                    stringBuffer.append(new StringBuffer().append(varInfo == null ? "null   " : String.valueOf(varInfo)).append(varInfo == null ? "" : varInfo.upvalue != null ? !varInfo.upvalue.f3351rw ? "[C] " : (!varInfo.allocupvalue || varInfo.f3352pc != i3) ? "[]  " : "[*] " : "    ").toString());
+                    stringBuffer.append(new StringBuffer().append(varInfo == null ? "null   " : String.valueOf(varInfo)).append(varInfo == null ? "" : varInfo.upvalue != null ? !varInfo.upvalue.f3315rw ? "[C] " : (!varInfo.allocupvalue || varInfo.f3316pc != i3) ? "[]  " : "[*] " : "    ").toString());
                 }
                 stringBuffer.append("  ");
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                PrintStream printStream = Print.f3294ps;
-                Print.f3294ps = new PrintStream(byteArrayOutputStream);
+                PrintStream printStream = Print.f3258ps;
+                Print.f3258ps = new PrintStream(byteArrayOutputStream);
                 try {
                     Print.printOpCode(this.prototype, i3);
-                    Print.f3294ps.close();
-                    Print.f3294ps = printStream;
+                    Print.f3258ps.close();
+                    Print.f3258ps = printStream;
                     stringBuffer.append(byteArrayOutputStream.toString());
                     stringBuffer.append("\n");
                     i3++;
                 } catch (Throwable th) {
-                    Print.f3294ps.close();
-                    Print.f3294ps = printStream;
+                    Print.f3258ps.close();
+                    Print.f3258ps = printStream;
                     throw th;
                 }
             }
@@ -89,7 +89,7 @@ public class ProtoInfo {
     private void appendOpenUps(StringBuffer stringBuffer, int i) {
         for (int i2 = 0; i2 < this.prototype.maxstacksize; i2++) {
             VarInfo varInfo = i < 0 ? this.params[i2] : this.vars[i2][i];
-            if (varInfo != null && varInfo.f3352pc == i && varInfo.allocupvalue) {
+            if (varInfo != null && varInfo.f3316pc == i && varInfo.allocupvalue) {
                 stringBuffer.append(new StringBuffer().append("    open: ").append(varInfo.upvalue).append("\n").toString());
             }
         }
@@ -351,7 +351,7 @@ public class ProtoInfo {
                         break;
                     case 37:
                         int GETARG_A19 = Lua.GETARG_A(i7);
-                        Upvaldesc[] upvaldescArr = this.prototype.f3296p[Lua.GETARG_Bx(i7)].upvalues;
+                        Upvaldesc[] upvaldescArr = this.prototype.f3260p[Lua.GETARG_Bx(i7)].upvalues;
                         int length3 = upvaldescArr.length;
                         for (int i18 = 0; i18 < length3; i18++) {
                             if (upvaldescArr[i18].instack) {
@@ -426,7 +426,7 @@ public class ProtoInfo {
         for (int i = 0; i < length; i++) {
             if (Lua.GET_OPCODE(iArr[i]) == 37) {
                 int GETARG_Bx = Lua.GETARG_Bx(iArr[i]);
-                Prototype prototype = this.prototype.f3296p[GETARG_Bx];
+                Prototype prototype = this.prototype.f3260p[GETARG_Bx];
                 UpvalInfo[] upvalInfoArr = new UpvalInfo[prototype.upvalues.length];
                 String stringBuffer = new StringBuffer().append(this.name).append("$").append(findInnerprotoNames[GETARG_Bx]).toString();
                 for (int i2 = 0; i2 < prototype.upvalues.length; i2++) {
@@ -438,7 +438,7 @@ public class ProtoInfo {
         }
         for (int i3 = 0; i3 < length; i3++) {
             if (Lua.GET_OPCODE(iArr[i3]) == 9) {
-                this.upvals[Lua.GETARG_B(iArr[i3])].f3351rw = true;
+                this.upvals[Lua.GETARG_B(iArr[i3])].f3315rw = true;
             }
         }
     }
@@ -462,20 +462,20 @@ public class ProtoInfo {
 
     public boolean isUpvalueAssign(int i, int i2) {
         VarInfo varInfo = i < 0 ? this.params[i2] : this.vars[i2][i];
-        return (varInfo == null || varInfo.upvalue == null || !varInfo.upvalue.f3351rw) ? false : true;
+        return (varInfo == null || varInfo.upvalue == null || !varInfo.upvalue.f3315rw) ? false : true;
     }
 
     public boolean isUpvalueCreate(int i, int i2) {
         VarInfo varInfo = i < 0 ? this.params[i2] : this.vars[i2][i];
-        return varInfo != null && varInfo.upvalue != null && varInfo.upvalue.f3351rw && varInfo.allocupvalue && i == varInfo.f3352pc;
+        return varInfo != null && varInfo.upvalue != null && varInfo.upvalue.f3315rw && varInfo.allocupvalue && i == varInfo.f3316pc;
     }
 
     public boolean isUpvalueRefer(int i, int i2) {
-        if (i > 0 && this.vars[i2][i] != null && this.vars[i2][i].f3352pc == i && this.vars[i2][i - 1] != null) {
+        if (i > 0 && this.vars[i2][i] != null && this.vars[i2][i].f3316pc == i && this.vars[i2][i - 1] != null) {
             i--;
         }
         VarInfo varInfo = i < 0 ? this.params[i2] : this.vars[i2][i];
-        return (varInfo == null || varInfo.upvalue == null || !varInfo.upvalue.f3351rw) ? false : true;
+        return (varInfo == null || varInfo.upvalue == null || !varInfo.upvalue.f3315rw) ? false : true;
     }
 
     public boolean isInitialValueUsed(int i) {
@@ -483,14 +483,14 @@ public class ProtoInfo {
     }
 
     public boolean isReadWriteUpvalue(UpvalInfo upvalInfo) {
-        return upvalInfo.f3351rw;
+        return upvalInfo.f3315rw;
     }
 
     private String[] findInnerprotoNames() {
-        if (this.prototype.f3296p.length <= 0) {
+        if (this.prototype.f3260p.length <= 0) {
             return null;
         }
-        String[] strArr = new String[this.prototype.f3296p.length];
+        String[] strArr = new String[this.prototype.f3260p.length];
         Hashtable hashtable = new Hashtable();
         int[] iArr = this.prototype.code;
         int length = iArr.length;
@@ -504,7 +504,7 @@ public class ProtoInfo {
                     case 10:
                         int GETARG_B = Lua.GETARG_B(i2);
                         if (Lua.ISK(GETARG_B)) {
-                            str = this.prototype.f3295k[GETARG_B & 255].tojstring();
+                            str = this.prototype.f3259k[GETARG_B & 255].tojstring();
                             break;
                         }
                         break;

@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnlockAvatarTalentReqOuterClass.class */
 public final class UnlockAvatarTalentReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bUnlockAvatarTalentReq.proto\"?\n\u0015UnlockAvatarTalentReq\u0012\u0011\n\ttalent_id\u0018\u000b \u0001(\r\u0012\u0013\n\u000bavatar_guid\u0018\u0002 \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bUnlockAvatarTalentReq.proto\"=\n\u0015UnlockAvatarTalentReq\u0012\u0010\n\btalentId\u0018\t \u0001(\r\u0012\u0012\n\navatarGuid\u0018\u0001 \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_UnlockAvatarTalentReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_UnlockAvatarTalentReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_UnlockAvatarTalentReq_descriptor, new String[]{"TalentId", "AvatarGuid"});
 
@@ -44,9 +44,9 @@ public final class UnlockAvatarTalentReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnlockAvatarTalentReqOuterClass$UnlockAvatarTalentReq.class */
     public static final class UnlockAvatarTalentReq extends GeneratedMessageV3 implements UnlockAvatarTalentReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TALENT_ID_FIELD_NUMBER = 11;
+        public static final int TALENTID_FIELD_NUMBER = 9;
         private int talentId_;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 2;
+        public static final int AVATARGUID_FIELD_NUMBER = 1;
         private long avatarGuid_;
         private byte memoizedIsInitialized;
         private static final UnlockAvatarTalentReq DEFAULT_INSTANCE = new UnlockAvatarTalentReq();
@@ -93,10 +93,10 @@ public final class UnlockAvatarTalentReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 16:
+                            case 8:
                                 this.avatarGuid_ = input.readUInt64();
                                 break;
-                            case 88:
+                            case 72:
                                 this.talentId_ = input.readUInt32();
                                 break;
                             default:
@@ -154,10 +154,10 @@ public final class UnlockAvatarTalentReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.avatarGuid_ != 0) {
-                output.writeUInt64(2, this.avatarGuid_);
+                output.writeUInt64(1, this.avatarGuid_);
             }
             if (this.talentId_ != 0) {
-                output.writeUInt32(11, this.talentId_);
+                output.writeUInt32(9, this.talentId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -170,10 +170,10 @@ public final class UnlockAvatarTalentReqOuterClass {
             }
             int size2 = 0;
             if (this.avatarGuid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(2, this.avatarGuid_);
+                size2 = 0 + CodedOutputStream.computeUInt64Size(1, this.avatarGuid_);
             }
             if (this.talentId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.talentId_);
+                size2 += CodedOutputStream.computeUInt32Size(9, this.talentId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -197,7 +197,7 @@ public final class UnlockAvatarTalentReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getTalentId())) + 2)) + Internal.hashLong(getAvatarGuid()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getTalentId())) + 1)) + Internal.hashLong(getAvatarGuid()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

@@ -320,7 +320,7 @@ public final class _Utf8Kt {
                         } else {
                             if (!(55296 <= c$iv ? c$iv <= 57343 : false)) {
                                 int size3 = size + 1;
-                                bytes[size] = (byte) ((c$iv >> '\f') | PacketOpcodes.WorldPlayerLocationNotify);
+                                bytes[size] = (byte) ((c$iv >> '\f') | PacketOpcodes.SceneAvatarStaminaStepRsp);
                                 int size4 = size3 + 1;
                                 bytes[size3] = (byte) (((c$iv >> 6) & 63) | 128);
                                 size = size4 + 1;
@@ -332,7 +332,7 @@ public final class _Utf8Kt {
                                     if (56320 <= charAt ? charAt <= 57343 : false) {
                                         int codePoint$iv = ((c$iv << '\n') + $this$commonAsUtf8ToByteArray.charAt(index$iv + 1)) - 56613888;
                                         int size5 = size + 1;
-                                        bytes[size] = (byte) ((codePoint$iv >> 18) | PacketOpcodes.ExecuteGadgetLuaRsp);
+                                        bytes[size] = (byte) ((codePoint$iv >> 18) | PacketOpcodes.SceneKickPlayerRsp);
                                         int size6 = size5 + 1;
                                         bytes[size5] = (byte) (((codePoint$iv >> 12) & 63) | 128);
                                         int size7 = size6 + 1;

@@ -202,30 +202,30 @@ public abstract class AbstractShort2LongMap extends AbstractShort2LongFunction i
                 return new ShortIterator() { // from class: it.unimi.dsi.fastutil.shorts.AbstractShort2LongMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Short2LongMap.Entry> f2871i;
+                    private final ObjectIterator<Short2LongMap.Entry> f2835i;
 
                     {
-                        this.f2871i = Short2LongMaps.fastIterator(AbstractShort2LongMap.this);
+                        this.f2835i = Short2LongMaps.fastIterator(AbstractShort2LongMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
                     public short nextShort() {
-                        return this.f2871i.next().getShortKey();
+                        return this.f2835i.next().getShortKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2871i.hasNext();
+                        return this.f2835i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2871i.remove();
+                        this.f2835i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
                     public void forEachRemaining(ShortConsumer action) {
-                        this.f2871i.forEachRemaining(entry -> {
+                        this.f2835i.forEachRemaining(entry -> {
                             action.accept(entry.getShortKey());
                         });
                     }
@@ -263,30 +263,30 @@ public abstract class AbstractShort2LongMap extends AbstractShort2LongFunction i
                 return new LongIterator() { // from class: it.unimi.dsi.fastutil.shorts.AbstractShort2LongMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Short2LongMap.Entry> f2872i;
+                    private final ObjectIterator<Short2LongMap.Entry> f2836i;
 
                     {
-                        this.f2872i = Short2LongMaps.fastIterator(AbstractShort2LongMap.this);
+                        this.f2836i = Short2LongMaps.fastIterator(AbstractShort2LongMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
                     public long nextLong() {
-                        return this.f2872i.next().getLongValue();
+                        return this.f2836i.next().getLongValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2872i.hasNext();
+                        return this.f2836i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2872i.remove();
+                        this.f2836i.remove();
                     }
 
                     @Override // java.util.PrimitiveIterator.OfLong
                     public void forEachRemaining(LongConsumer action) {
-                        this.f2872i.forEachRemaining(entry -> {
+                        this.f2836i.forEachRemaining(entry -> {
                             action.accept(entry.getLongValue());
                         });
                     }

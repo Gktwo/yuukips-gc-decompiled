@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GatherGadgetInfoOuterClass.class */
 public final class GatherGadgetInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016GatherGadgetInfo.proto\"<\n\u0010GatherGadgetInfo\u0012\u000f\n\u0007item_id\u0018\u0001 \u0001(\r\u0012\u0017\n\u000fis_forbid_guest\u0018\u0002 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016GatherGadgetInfo.proto\";\n\u0010GatherGadgetInfo\u0012\u000e\n\u0006itemId\u0018\u0001 \u0001(\r\u0012\u0017\n\u000fis_forbid_guest\u0018\u0002 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GatherGadgetInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GatherGadgetInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GatherGadgetInfo_descriptor, new String[]{"ItemId", "IsForbidGuest"});
 
@@ -44,7 +44,7 @@ public final class GatherGadgetInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GatherGadgetInfoOuterClass$GatherGadgetInfo.class */
     public static final class GatherGadgetInfo extends GeneratedMessageV3 implements GatherGadgetInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ITEM_ID_FIELD_NUMBER = 1;
+        public static final int ITEMID_FIELD_NUMBER = 1;
         private int itemId_;
         public static final int IS_FORBID_GUEST_FIELD_NUMBER = 2;
         private boolean isForbidGuest_;

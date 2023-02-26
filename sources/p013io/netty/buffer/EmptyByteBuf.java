@@ -56,7 +56,7 @@ public final class EmptyByteBuf extends ByteBuf {
             p013io.netty.buffer.EmptyByteBuf.EMPTY_BYTE_BUFFER_ADDRESS = r0
             return
         */
-        throw new UnsupportedOperationException("Method not decompiled: p013io.netty.buffer.EmptyByteBuf.m5924clinit():void");
+        throw new UnsupportedOperationException("Method not decompiled: p013io.netty.buffer.EmptyByteBuf.m5921clinit():void");
     }
 
     public EmptyByteBuf(ByteBufAllocator alloc) {

@@ -19,17 +19,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChangeTeamNameReqOuterClass.class */
 public final class ChangeTeamNameReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017ChangeTeamNameReq.proto\"7\n\u0011ChangeTeamNameReq\u0012\u000f\n\u0007team_id\u0018\u000e \u0001(\u0005\u0012\u0011\n\tteam_name\u0018\u000f \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017ChangeTeamNameReq.proto\"5\n\u0011ChangeTeamNameReq\u0012\u0010\n\bteamName\u0018\b \u0001(\t\u0012\u000e\n\u0006teamId\u0018\u0001 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ChangeTeamNameReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChangeTeamNameReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChangeTeamNameReq_descriptor, new String[]{"TeamId", "TeamName"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChangeTeamNameReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChangeTeamNameReq_descriptor, new String[]{"TeamName", "TeamId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChangeTeamNameReqOuterClass$ChangeTeamNameReqOrBuilder.class */
     public interface ChangeTeamNameReqOrBuilder extends MessageOrBuilder {
-        int getTeamId();
-
         String getTeamName();
 
         ByteString getTeamNameBytes();
+
+        int getTeamId();
     }
 
     private ChangeTeamNameReqOuterClass() {
@@ -45,10 +45,10 @@ public final class ChangeTeamNameReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChangeTeamNameReqOuterClass$ChangeTeamNameReq.class */
     public static final class ChangeTeamNameReq extends GeneratedMessageV3 implements ChangeTeamNameReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TEAM_ID_FIELD_NUMBER = 14;
-        private int teamId_;
-        public static final int TEAM_NAME_FIELD_NUMBER = 15;
+        public static final int TEAMNAME_FIELD_NUMBER = 8;
         private volatile Object teamName_;
+        public static final int TEAMID_FIELD_NUMBER = 1;
+        private int teamId_;
         private byte memoizedIsInitialized;
         private static final ChangeTeamNameReq DEFAULT_INSTANCE = new ChangeTeamNameReq();
         private static final Parser<ChangeTeamNameReq> PARSER = new AbstractParser<ChangeTeamNameReq>() { // from class: emu.grasscutter.net.proto.ChangeTeamNameReqOuterClass.ChangeTeamNameReq.1
@@ -96,10 +96,10 @@ public final class ChangeTeamNameReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 112:
+                                case 8:
                                     this.teamId_ = input.readInt32();
                                     break;
-                                case 122:
+                                case 66:
                                     this.teamName_ = input.readStringRequireUtf8();
                                     break;
                                 default:
@@ -133,11 +133,6 @@ public final class ChangeTeamNameReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ChangeTeamNameReqOuterClass.ChangeTeamNameReqOrBuilder
-        public int getTeamId() {
-            return this.teamId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ChangeTeamNameReqOuterClass.ChangeTeamNameReqOrBuilder
         public String getTeamName() {
             Object ref = this.teamName_;
             if (ref instanceof String) {
@@ -159,6 +154,11 @@ public final class ChangeTeamNameReqOuterClass {
             return b;
         }
 
+        @Override // emu.grasscutter.net.proto.ChangeTeamNameReqOuterClass.ChangeTeamNameReqOrBuilder
+        public int getTeamId() {
+            return this.teamId_;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -175,10 +175,10 @@ public final class ChangeTeamNameReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.teamId_ != 0) {
-                output.writeInt32(14, this.teamId_);
+                output.writeInt32(1, this.teamId_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.teamName_)) {
-                GeneratedMessageV3.writeString(output, 15, this.teamName_);
+                GeneratedMessageV3.writeString(output, 8, this.teamName_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -191,10 +191,10 @@ public final class ChangeTeamNameReqOuterClass {
             }
             int size2 = 0;
             if (this.teamId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(14, this.teamId_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(1, this.teamId_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.teamName_)) {
-                size2 += GeneratedMessageV3.computeStringSize(15, this.teamName_);
+                size2 += GeneratedMessageV3.computeStringSize(8, this.teamName_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -210,7 +210,7 @@ public final class ChangeTeamNameReqOuterClass {
                 return equals(obj);
             }
             ChangeTeamNameReq other = (ChangeTeamNameReq) obj;
-            return getTeamId() == other.getTeamId() && getTeamName().equals(other.getTeamName()) && this.unknownFields.equals(other.unknownFields);
+            return getTeamName().equals(other.getTeamName()) && getTeamId() == other.getTeamId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -218,7 +218,7 @@ public final class ChangeTeamNameReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getTeamId())) + 15)) + getTeamName().hashCode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getTeamName().hashCode())) + 1)) + getTeamId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -297,8 +297,8 @@ public final class ChangeTeamNameReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChangeTeamNameReqOuterClass$ChangeTeamNameReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ChangeTeamNameReqOrBuilder {
-            private int teamId_;
             private Object teamName_ = "";
+            private int teamId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ChangeTeamNameReqOuterClass.internal_static_ChangeTeamNameReq_descriptor;
@@ -326,8 +326,8 @@ public final class ChangeTeamNameReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.teamId_ = 0;
                 this.teamName_ = "";
+                this.teamId_ = 0;
                 return this;
             }
 
@@ -353,8 +353,8 @@ public final class ChangeTeamNameReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public ChangeTeamNameReq buildPartial() {
                 ChangeTeamNameReq result = new ChangeTeamNameReq(this);
-                result.teamId_ = this.teamId_;
                 result.teamName_ = this.teamName_;
+                result.teamId_ = this.teamId_;
                 onBuilt();
                 return result;
             }
@@ -402,12 +402,12 @@ public final class ChangeTeamNameReqOuterClass {
                 if (other == ChangeTeamNameReq.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getTeamId() != 0) {
-                    setTeamId(other.getTeamId());
-                }
                 if (!other.getTeamName().isEmpty()) {
                     this.teamName_ = other.teamName_;
                     onChanged();
+                }
+                if (other.getTeamId() != 0) {
+                    setTeamId(other.getTeamId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -439,23 +439,6 @@ public final class ChangeTeamNameReqOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.ChangeTeamNameReqOuterClass.ChangeTeamNameReqOrBuilder
-            public int getTeamId() {
-                return this.teamId_;
-            }
-
-            public Builder setTeamId(int value) {
-                this.teamId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearTeamId() {
-                this.teamId_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // emu.grasscutter.net.proto.ChangeTeamNameReqOuterClass.ChangeTeamNameReqOrBuilder
@@ -501,6 +484,23 @@ public final class ChangeTeamNameReqOuterClass {
                 }
                 ChangeTeamNameReq.checkByteStringIsUtf8(value);
                 this.teamName_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ChangeTeamNameReqOuterClass.ChangeTeamNameReqOrBuilder
+            public int getTeamId() {
+                return this.teamId_;
+            }
+
+            public Builder setTeamId(int value) {
+                this.teamId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearTeamId() {
+                this.teamId_ = 0;
                 onChanged();
                 return this;
             }

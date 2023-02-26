@@ -974,7 +974,7 @@ public class Char2ByteAVLTreeMap extends AbstractChar2ByteSortedMap implements S
         char from;
 
         /* renamed from: to */
-        char f1364to;
+        char f1328to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Char2ByteMap.Entry> entries;
@@ -985,7 +985,7 @@ public class Char2ByteAVLTreeMap extends AbstractChar2ByteSortedMap implements S
             if (bottom || top || Char2ByteAVLTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f1364to = to;
+                this.f1328to = to;
                 this.top = top;
                 this.defRetValue = Char2ByteAVLTreeMap.this.defRetValue;
                 return;
@@ -1004,7 +1004,7 @@ public class Char2ByteAVLTreeMap extends AbstractChar2ByteSortedMap implements S
 
         /* renamed from: in */
         final boolean m1027in(char k) {
-            return (this.bottom || Char2ByteAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Char2ByteAVLTreeMap.this.compare(k, this.f1364to) < 0);
+            return (this.bottom || Char2ByteAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Char2ByteAVLTreeMap.this.compare(k, this.f1328to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.Char2ByteMap, p014it.unimi.dsi.fastutil.chars.Char2ByteSortedMap
@@ -1179,7 +1179,7 @@ public class Char2ByteAVLTreeMap extends AbstractChar2ByteSortedMap implements S
         public byte put(char k, byte v) {
             Char2ByteAVLTreeMap.this.modified = false;
             if (!m1027in(k)) {
-                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1364to)) + ")");
+                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1328to)) + ")");
             }
             return Char2ByteAVLTreeMap.this.modified ? this.defRetValue : Char2ByteAVLTreeMap.this.put(k, v);
         }
@@ -1217,7 +1217,7 @@ public class Char2ByteAVLTreeMap extends AbstractChar2ByteSortedMap implements S
 
         @Override // p014it.unimi.dsi.fastutil.chars.Char2ByteSortedMap
         public Char2ByteSortedMap headMap(char to) {
-            if (!this.top && Char2ByteAVLTreeMap.this.compare(to, this.f1364to) >= 0) {
+            if (!this.top && Char2ByteAVLTreeMap.this.compare(to, this.f1328to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1228,7 +1228,7 @@ public class Char2ByteAVLTreeMap extends AbstractChar2ByteSortedMap implements S
             if (!this.bottom && Char2ByteAVLTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f1364to, this.top);
+            return new Submap(from, false, this.f1328to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.Char2ByteSortedMap
@@ -1237,12 +1237,12 @@ public class Char2ByteAVLTreeMap extends AbstractChar2ByteSortedMap implements S
                 return new Submap(from, false, to, false);
             }
             if (!this.top) {
-                to = Char2ByteAVLTreeMap.this.compare(to, this.f1364to) < 0 ? to : this.f1364to;
+                to = Char2ByteAVLTreeMap.this.compare(to, this.f1328to) < 0 ? to : this.f1328to;
             }
             if (!this.bottom) {
                 from = Char2ByteAVLTreeMap.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f1364to) ? new Submap(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f1328to) ? new Submap(from, false, to, false) : this;
         }
 
         public Entry firstEntry() {
@@ -1261,7 +1261,7 @@ public class Char2ByteAVLTreeMap extends AbstractChar2ByteSortedMap implements S
             if (e == null) {
                 return null;
             }
-            if (this.top || Char2ByteAVLTreeMap.this.compare(e.key, this.f1364to) < 0) {
+            if (this.top || Char2ByteAVLTreeMap.this.compare(e.key, this.f1328to) < 0) {
                 return e;
             }
             return null;
@@ -1275,8 +1275,8 @@ public class Char2ByteAVLTreeMap extends AbstractChar2ByteSortedMap implements S
             if (this.top) {
                 e = Char2ByteAVLTreeMap.this.lastEntry;
             } else {
-                e = Char2ByteAVLTreeMap.this.locateKey(this.f1364to);
-                if (Char2ByteAVLTreeMap.this.compare(e.key, this.f1364to) >= 0) {
+                e = Char2ByteAVLTreeMap.this.locateKey(this.f1328to);
+                if (Char2ByteAVLTreeMap.this.compare(e.key, this.f1328to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1354,7 +1354,7 @@ public class Char2ByteAVLTreeMap extends AbstractChar2ByteSortedMap implements S
             @Override // p014it.unimi.dsi.fastutil.chars.Char2ByteAVLTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Char2ByteAVLTreeMap.this.compare(this.next.key, Submap.this.f1364to) >= 0) {
+                if (!Submap.this.top && this.next != null && Char2ByteAVLTreeMap.this.compare(this.next.key, Submap.this.f1328to) >= 0) {
                     this.next = null;
                 }
             }

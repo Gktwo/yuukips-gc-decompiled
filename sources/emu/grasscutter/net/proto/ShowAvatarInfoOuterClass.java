@@ -34,7 +34,7 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ShowAvatarInfoOuterClass.class */
 public final class ShowAvatarInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014ShowAvatarInfo.proto\u001a\u0015AvatarExcelInfo.proto\u001a\u0016AvatarFetterInfo.proto\u001a\u000fPropValue.proto\u001a\u000fShowEquip.proto\"ú\u0005\n\u000eShowAvatarInfo\u0012\u0011\n\tavatar_id\u0018\u0001 \u0001(\r\u0012.\n\bprop_map\u0018\u0002 \u0003(\u000b2\u001c.ShowAvatarInfo.PropMapEntry\u0012\u0016\n\u000etalent_id_list\u0018\u0003 \u0003(\r\u00129\n\u000efight_prop_map\u0018\u0004 \u0003(\u000b2!.ShowAvatarInfo.FightPropMapEntry\u0012\u0016\n\u000eskill_depot_id\u0018\u0005 \u0001(\r\u0012\u001e\n\u0016core_proud_skill_level\u0018\u0006 \u0001(\r\u0012!\n\u0019inherent_proud_skill_list\u0018\u0007 \u0003(\r\u0012;\n\u000fskill_level_map\u0018\b \u0003(\u000b2\".ShowAvatarInfo.SkillLevelMapEntry\u0012Q\n\u001bproud_skill_extra_level_map\u0018\t \u0003(\u000b2,.ShowAvatarInfo.ProudSkillExtraLevelMapEntry\u0012\u001e\n\nequip_list\u0018\n \u0003(\u000b2\n.ShowEquip\u0012&\n\u000bfetter_info\u0018\u000b \u0001(\u000b2\u0011.AvatarFetterInfo\u0012\u0012\n\ncostume_id\u0018\f \u0001(\r\u0012$\n\nexcel_info\u0018\r \u0001(\u000b2\u0010.AvatarExcelInfo\u001a:\n\fPropMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\u0019\n\u0005value\u0018\u0002 \u0001(\u000b2\n.PropValue:\u00028\u0001\u001a3\n\u0011FightPropMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\u0002:\u00028\u0001\u001a4\n\u0012SkillLevelMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001\u001a>\n\u001cProudSkillExtraLevelMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarExcelInfoOuterClass.getDescriptor(), AvatarFetterInfoOuterClass.getDescriptor(), PropValueOuterClass.getDescriptor(), ShowEquipOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014ShowAvatarInfo.proto\u001a\u0016AvatarFetterInfo.proto\u001a\u0015AvatarExcelInfo.proto\u001a\u000fPropValue.proto\u001a\u000fShowEquip.proto\"â\u0005\n\u000eShowAvatarInfo\u0012\u0010\n\bavatarId\u0018\u0001 \u0001(\r\u0012-\n\u0007propMap\u0018\u0002 \u0003(\u000b2\u001c.ShowAvatarInfo.PropMapEntry\u0012\u0014\n\ftalentIdList\u0018\u0003 \u0003(\r\u00127\n\ffightPropMap\u0018\u0004 \u0003(\u000b2!.ShowAvatarInfo.FightPropMapEntry\u0012\u0014\n\fskillDepotId\u0018\u0005 \u0001(\r\u0012\u001b\n\u0013coreProudSkillLevel\u0018\u0006 \u0001(\r\u0012\u001e\n\u0016inherentProudSkillList\u0018\u0007 \u0003(\r\u00129\n\rskillLevelMap\u0018\b \u0003(\u000b2\".ShowAvatarInfo.SkillLevelMapEntry\u0012M\n\u0017proudSkillExtraLevelMap\u0018\t \u0003(\u000b2,.ShowAvatarInfo.ProudSkillExtraLevelMapEntry\u0012\u001d\n\tequipList\u0018\n \u0003(\u000b2\n.ShowEquip\u0012%\n\nfetterInfo\u0018\u000b \u0001(\u000b2\u0011.AvatarFetterInfo\u0012\u0011\n\tcostumeId\u0018\f \u0001(\r\u0012#\n\texcelInfo\u0018\r \u0001(\u000b2\u0010.AvatarExcelInfo\u001a:\n\fPropMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\u0019\n\u0005value\u0018\u0002 \u0001(\u000b2\n.PropValue:\u00028\u0001\u001a3\n\u0011FightPropMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\u0002:\u00028\u0001\u001a4\n\u0012SkillLevelMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001\u001a>\n\u001cProudSkillExtraLevelMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarFetterInfoOuterClass.getDescriptor(), AvatarExcelInfoOuterClass.getDescriptor(), PropValueOuterClass.getDescriptor(), ShowEquipOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ShowAvatarInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ShowAvatarInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ShowAvatarInfo_descriptor, new String[]{"AvatarId", "PropMap", "TalentIdList", "FightPropMap", "SkillDepotId", "CoreProudSkillLevel", "InherentProudSkillList", "SkillLevelMap", "ProudSkillExtraLevelMap", "EquipList", "FetterInfo", "CostumeId", "ExcelInfo"});
     private static final Descriptors.Descriptor internal_static_ShowAvatarInfo_PropMapEntry_descriptor = internal_static_ShowAvatarInfo_descriptor.getNestedTypes().get(0);
@@ -42,17 +42,17 @@ public final class ShowAvatarInfoOuterClass {
     private static final Descriptors.Descriptor internal_static_ShowAvatarInfo_FightPropMapEntry_descriptor = internal_static_ShowAvatarInfo_descriptor.getNestedTypes().get(1);
 
     /* renamed from: internal_static_ShowAvatarInfo_FightPropMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f875xf60fa00f = new GeneratedMessageV3.FieldAccessorTable(internal_static_ShowAvatarInfo_FightPropMapEntry_descriptor, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f849xf60fa00f = new GeneratedMessageV3.FieldAccessorTable(internal_static_ShowAvatarInfo_FightPropMapEntry_descriptor, new String[]{"Key", "Value"});
     private static final Descriptors.Descriptor internal_static_ShowAvatarInfo_SkillLevelMapEntry_descriptor = internal_static_ShowAvatarInfo_descriptor.getNestedTypes().get(2);
 
     /* renamed from: internal_static_ShowAvatarInfo_SkillLevelMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f876x58e1c4d7 = new GeneratedMessageV3.FieldAccessorTable(internal_static_ShowAvatarInfo_SkillLevelMapEntry_descriptor, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f850x58e1c4d7 = new GeneratedMessageV3.FieldAccessorTable(internal_static_ShowAvatarInfo_SkillLevelMapEntry_descriptor, new String[]{"Key", "Value"});
 
     /* renamed from: internal_static_ShowAvatarInfo_ProudSkillExtraLevelMapEntry_descriptor */
-    private static final Descriptors.Descriptor f877xf30cd63 = internal_static_ShowAvatarInfo_descriptor.getNestedTypes().get(3);
+    private static final Descriptors.Descriptor f851xf30cd63 = internal_static_ShowAvatarInfo_descriptor.getNestedTypes().get(3);
 
     /* renamed from: internal_static_ShowAvatarInfo_ProudSkillExtraLevelMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f878x25f9e0e1 = new GeneratedMessageV3.FieldAccessorTable(f877xf30cd63, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f852x25f9e0e1 = new GeneratedMessageV3.FieldAccessorTable(f851xf30cd63, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ShowAvatarInfoOuterClass$ShowAvatarInfoOrBuilder.class */
     public interface ShowAvatarInfoOrBuilder extends MessageOrBuilder {
@@ -164,33 +164,33 @@ public final class ShowAvatarInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ShowAvatarInfoOuterClass$ShowAvatarInfo.class */
     public static final class ShowAvatarInfo extends GeneratedMessageV3 implements ShowAvatarInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_ID_FIELD_NUMBER = 1;
+        public static final int AVATARID_FIELD_NUMBER = 1;
         private int avatarId_;
-        public static final int PROP_MAP_FIELD_NUMBER = 2;
+        public static final int PROPMAP_FIELD_NUMBER = 2;
         private MapField<Integer, PropValueOuterClass.PropValue> propMap_;
-        public static final int TALENT_ID_LIST_FIELD_NUMBER = 3;
+        public static final int TALENTIDLIST_FIELD_NUMBER = 3;
         private Internal.IntList talentIdList_;
         private int talentIdListMemoizedSerializedSize;
-        public static final int FIGHT_PROP_MAP_FIELD_NUMBER = 4;
+        public static final int FIGHTPROPMAP_FIELD_NUMBER = 4;
         private MapField<Integer, Float> fightPropMap_;
-        public static final int SKILL_DEPOT_ID_FIELD_NUMBER = 5;
+        public static final int SKILLDEPOTID_FIELD_NUMBER = 5;
         private int skillDepotId_;
-        public static final int CORE_PROUD_SKILL_LEVEL_FIELD_NUMBER = 6;
+        public static final int COREPROUDSKILLLEVEL_FIELD_NUMBER = 6;
         private int coreProudSkillLevel_;
-        public static final int INHERENT_PROUD_SKILL_LIST_FIELD_NUMBER = 7;
+        public static final int INHERENTPROUDSKILLLIST_FIELD_NUMBER = 7;
         private Internal.IntList inherentProudSkillList_;
         private int inherentProudSkillListMemoizedSerializedSize;
-        public static final int SKILL_LEVEL_MAP_FIELD_NUMBER = 8;
+        public static final int SKILLLEVELMAP_FIELD_NUMBER = 8;
         private MapField<Integer, Integer> skillLevelMap_;
-        public static final int PROUD_SKILL_EXTRA_LEVEL_MAP_FIELD_NUMBER = 9;
+        public static final int PROUDSKILLEXTRALEVELMAP_FIELD_NUMBER = 9;
         private MapField<Integer, Integer> proudSkillExtraLevelMap_;
-        public static final int EQUIP_LIST_FIELD_NUMBER = 10;
+        public static final int EQUIPLIST_FIELD_NUMBER = 10;
         private List<ShowEquipOuterClass.ShowEquip> equipList_;
-        public static final int FETTER_INFO_FIELD_NUMBER = 11;
+        public static final int FETTERINFO_FIELD_NUMBER = 11;
         private AvatarFetterInfoOuterClass.AvatarFetterInfo fetterInfo_;
-        public static final int COSTUME_ID_FIELD_NUMBER = 12;
+        public static final int COSTUMEID_FIELD_NUMBER = 12;
         private int costumeId_;
-        public static final int EXCEL_INFO_FIELD_NUMBER = 13;
+        public static final int EXCELINFO_FIELD_NUMBER = 13;
         private AvatarExcelInfoOuterClass.AvatarExcelInfo excelInfo_;
         private byte memoizedIsInitialized;
         private static final ShowAvatarInfo DEFAULT_INSTANCE = new ShowAvatarInfo();
@@ -670,7 +670,7 @@ public final class ShowAvatarInfoOuterClass {
         /* access modifiers changed from: private */
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ShowAvatarInfoOuterClass$ShowAvatarInfo$ProudSkillExtraLevelMapDefaultEntryHolder.class */
         public static final class ProudSkillExtraLevelMapDefaultEntryHolder {
-            static final MapEntry<Integer, Integer> defaultEntry = MapEntry.newDefaultInstance(ShowAvatarInfoOuterClass.f877xf30cd63, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.UINT32, 0);
+            static final MapEntry<Integer, Integer> defaultEntry = MapEntry.newDefaultInstance(ShowAvatarInfoOuterClass.f851xf30cd63, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.UINT32, 0);
 
             private ProudSkillExtraLevelMapDefaultEntryHolder() {
             }
@@ -2315,8 +2315,8 @@ public final class ShowAvatarInfoOuterClass {
     }
 
     static {
-        AvatarExcelInfoOuterClass.getDescriptor();
         AvatarFetterInfoOuterClass.getDescriptor();
+        AvatarExcelInfoOuterClass.getDescriptor();
         PropValueOuterClass.getDescriptor();
         ShowEquipOuterClass.getDescriptor();
     }

@@ -12,9 +12,8 @@ import org.bson.codecs.RepresentationConfigurable;
 import org.bson.codecs.configuration.CodecConfigurationException;
 import org.bson.codecs.configuration.CodecRegistry;
 
-/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:org/bson/codecs/pojo/LazyPropertyModelCodec.class */
-public class LazyPropertyModelCodec<T> implements Codec<T> {
+class LazyPropertyModelCodec<T> implements Codec<T> {
     private final PropertyModel<T> propertyModel;
     private final CodecRegistry registry;
     private final PropertyCodecRegistry propertyCodecRegistry;

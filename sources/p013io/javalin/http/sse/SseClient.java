@@ -26,7 +26,7 @@ public final class SseClient implements Closeable {
     @NotNull
     private final Emitter emitter;
     @NotNull
-    private Runnable closeCallback = SseClient::m5838closeCallback$lambda0;
+    private Runnable closeCallback = SseClient::m5835closeCallback$lambda0;
 
     @JvmOverloads
     public final void sendEvent(@NotNull String event, @NotNull Object data) {
@@ -44,7 +44,7 @@ public final class SseClient implements Closeable {
     }
 
     /* renamed from: closeCallback$lambda-0  reason: not valid java name */
-    private static final void m5838closeCallback$lambda0() {
+    private static final void m5835closeCallback$lambda0() {
     }
 
     public final void onClose(@NotNull Runnable closeCallback) {

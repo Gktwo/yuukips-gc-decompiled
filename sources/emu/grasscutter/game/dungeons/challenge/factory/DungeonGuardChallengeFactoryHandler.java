@@ -51,7 +51,7 @@ public class DungeonGuardChallengeFactoryHandler implements ChallengeFactoryHand
             r21 = r0
             ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
             r1 = r21
-            int r1 = r1.f957id
+            int r1 = r1.f922id
             // decode failed: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, Start DungeonGuardChallengeFactoryHandler: ]}
             r0.info(r1)
             emu.grasscutter.game.dungeons.challenge.DungeonChallenge r0 = new emu.grasscutter.game.dungeons.challenge.DungeonChallenge
@@ -79,6 +79,6 @@ public class DungeonGuardChallengeFactoryHandler implements ChallengeFactoryHand
 
     @Override // emu.grasscutter.game.dungeons.challenge.factory.ChallengeFactoryHandler
     public boolean isThisType(int challengeIndex, int challengeId, int param3, int param4, int param5, int param6, Scene scene, SceneGroup group) {
-        return scene.getSceneType() == SceneType.SCENE_DUNGEON && param3 == group.f957id;
+        return scene.getSceneType() == SceneType.SCENE_DUNGEON && param3 == group.f922id;
     }
 }

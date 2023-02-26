@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WinterCampRecvItemNotifyOuterClass.class */
 public final class WinterCampRecvItemNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eWinterCampRecvItemNotify.proto\u001a\u001cWinterCampRecvItemData.proto\"K\n\u0018WinterCampRecvItemNotify\u0012/\n\u000erecv_item_data\u0018\u000b \u0001(\u000b2\u0017.WinterCampRecvItemDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{WinterCampRecvItemDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eWinterCampRecvItemNotify.proto\u001a\u001cWinterCampRecvItemData.proto\"I\n\u0018WinterCampRecvItemNotify\u0012-\n\frecvItemData\u0018\u0005 \u0001(\u000b2\u0017.WinterCampRecvItemDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{WinterCampRecvItemDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_WinterCampRecvItemNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_WinterCampRecvItemNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WinterCampRecvItemNotify_descriptor, new String[]{"RecvItemData"});
 
@@ -47,7 +47,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WinterCampRecvItemNotifyOuterClass$WinterCampRecvItemNotify.class */
     public static final class WinterCampRecvItemNotify extends GeneratedMessageV3 implements WinterCampRecvItemNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RECV_ITEM_DATA_FIELD_NUMBER = 11;
+        public static final int RECVITEMDATA_FIELD_NUMBER = 5;
         private WinterCampRecvItemDataOuterClass.WinterCampRecvItemData recvItemData_;
         private byte memoizedIsInitialized;
         private static final WinterCampRecvItemNotify DEFAULT_INSTANCE = new WinterCampRecvItemNotify();
@@ -94,7 +94,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 90:
+                            case 42:
                                 WinterCampRecvItemDataOuterClass.WinterCampRecvItemData.Builder subBuilder = this.recvItemData_ != null ? this.recvItemData_.toBuilder() : null;
                                 this.recvItemData_ = (WinterCampRecvItemDataOuterClass.WinterCampRecvItemData) input.readMessage(WinterCampRecvItemDataOuterClass.WinterCampRecvItemData.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -164,7 +164,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.recvItemData_ != null) {
-                output.writeMessage(11, getRecvItemData());
+                output.writeMessage(5, getRecvItemData());
             }
             this.unknownFields.writeTo(output);
         }
@@ -177,7 +177,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
             }
             int size2 = 0;
             if (this.recvItemData_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(11, getRecvItemData());
+                size2 = 0 + CodedOutputStream.computeMessageSize(5, getRecvItemData());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -206,7 +206,7 @@ public final class WinterCampRecvItemNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasRecvItemData()) {
-                hash = (53 * ((37 * hash) + 11)) + getRecvItemData().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getRecvItemData().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

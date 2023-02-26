@@ -19,7 +19,7 @@ public final class CipherSource implements Source {
     private final Buffer buffer = new Buffer();
 
     /* renamed from: final  reason: not valid java name */
-    private boolean f3386final;
+    private boolean f3350final;
     private boolean closed;
 
     public CipherSource(@NotNull BufferedSource source, @NotNull Cipher cipher) {
@@ -49,7 +49,7 @@ public final class CipherSource implements Source {
         } else if (byteCount == 0) {
             return 0;
         } else {
-            if (this.f3386final) {
+            if (this.f3350final) {
                 return this.buffer.read(sink, byteCount);
             }
             refill();
@@ -60,7 +60,7 @@ public final class CipherSource implements Source {
     private final void refill() {
         while (this.buffer.size() == 0) {
             if (this.source.exhausted()) {
-                this.f3386final = true;
+                this.f3350final = true;
                 doFinal();
                 return;
             }

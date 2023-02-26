@@ -189,30 +189,30 @@ public abstract class AbstractFloat2ReferenceMap<V> extends AbstractFloat2Refere
                 return new FloatIterator() { // from class: it.unimi.dsi.fastutil.floats.AbstractFloat2ReferenceMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Float2ReferenceMap.Entry<V>> f1786i;
+                    private final ObjectIterator<Float2ReferenceMap.Entry<V>> f1750i;
 
                     {
-                        this.f1786i = Float2ReferenceMaps.fastIterator(AbstractFloat2ReferenceMap.this);
+                        this.f1750i = Float2ReferenceMaps.fastIterator(AbstractFloat2ReferenceMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
                     public float nextFloat() {
-                        return this.f1786i.next().getFloatKey();
+                        return this.f1750i.next().getFloatKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1786i.hasNext();
+                        return this.f1750i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1786i.remove();
+                        this.f1750i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
                     public void forEachRemaining(FloatConsumer action) {
-                        this.f1786i.forEachRemaining(entry -> {
+                        this.f1750i.forEachRemaining(entry -> {
                             action.accept(entry.getFloatKey());
                         });
                     }
@@ -249,30 +249,30 @@ public abstract class AbstractFloat2ReferenceMap<V> extends AbstractFloat2Refere
                 return new ObjectIterator<V>() { // from class: it.unimi.dsi.fastutil.floats.AbstractFloat2ReferenceMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Float2ReferenceMap.Entry<V>> f1787i;
+                    private final ObjectIterator<Float2ReferenceMap.Entry<V>> f1751i;
 
                     {
-                        this.f1787i = Float2ReferenceMaps.fastIterator(AbstractFloat2ReferenceMap.this);
+                        this.f1751i = Float2ReferenceMaps.fastIterator(AbstractFloat2ReferenceMap.this);
                     }
 
                     @Override // java.util.Iterator
                     public V next() {
-                        return this.f1787i.next().getValue();
+                        return this.f1751i.next().getValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1787i.hasNext();
+                        return this.f1751i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1787i.remove();
+                        this.f1751i.remove();
                     }
 
                     @Override // java.util.Iterator
                     public void forEachRemaining(Consumer<? super V> action) {
-                        this.f1787i.forEachRemaining(entry -> {
+                        this.f1751i.forEachRemaining(entry -> {
                             action.accept(entry.getValue());
                         });
                     }

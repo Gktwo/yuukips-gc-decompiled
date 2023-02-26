@@ -19,19 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetAuthkeyRspOuterClass.class */
 public final class GetAuthkeyRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013GetAuthkeyRsp.proto\"\n\rGetAuthkeyRsp\u0012\u000f\n\u0007retcode\u0018\b \u0001(\u0005\u0012\u000f\n\u0007authkey\u0018\u0006 \u0001(\t\u0012\u0013\n\u000bauthkey_ver\u0018\r \u0001(\r\u0012\u0011\n\tsign_type\u0018\u0003 \u0001(\r\u0012\u0012\n\nauth_appid\u0018\u0007 \u0001(\t\u0012\u0010\n\bgame_biz\u0018\u0001 \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013GetAuthkeyRsp.proto\"{\n\rGetAuthkeyRsp\u0012\u000f\n\u0007gameBiz\u0018\u0001 \u0001(\t\u0012\u0010\n\bsignType\u0018\u0003 \u0001(\r\u0012\u0011\n\tauthAppid\u0018\u000b \u0001(\t\u0012\u0012\n\nauthkeyVer\u0018\u0007 \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u000e \u0001(\u0005\u0012\u000f\n\u0007authkey\u0018\t \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GetAuthkeyRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetAuthkeyRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetAuthkeyRsp_descriptor, new String[]{"Retcode", "Authkey", "AuthkeyVer", "SignType", "AuthAppid", "GameBiz"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetAuthkeyRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetAuthkeyRsp_descriptor, new String[]{"GameBiz", "SignType", "AuthAppid", "AuthkeyVer", "Retcode", "Authkey"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetAuthkeyRspOuterClass$GetAuthkeyRspOrBuilder.class */
     public interface GetAuthkeyRspOrBuilder extends MessageOrBuilder {
-        int getRetcode();
+        String getGameBiz();
 
-        String getAuthkey();
-
-        ByteString getAuthkeyBytes();
-
-        int getAuthkeyVer();
+        ByteString getGameBizBytes();
 
         int getSignType();
 
@@ -39,9 +35,13 @@ public final class GetAuthkeyRspOuterClass {
 
         ByteString getAuthAppidBytes();
 
-        String getGameBiz();
+        int getAuthkeyVer();
 
-        ByteString getGameBizBytes();
+        int getRetcode();
+
+        String getAuthkey();
+
+        ByteString getAuthkeyBytes();
     }
 
     private GetAuthkeyRspOuterClass() {
@@ -57,18 +57,18 @@ public final class GetAuthkeyRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetAuthkeyRspOuterClass$GetAuthkeyRsp.class */
     public static final class GetAuthkeyRsp extends GeneratedMessageV3 implements GetAuthkeyRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 8;
-        private int retcode_;
-        public static final int AUTHKEY_FIELD_NUMBER = 6;
-        private volatile Object authkey_;
-        public static final int AUTHKEY_VER_FIELD_NUMBER = 13;
-        private int authkeyVer_;
-        public static final int SIGN_TYPE_FIELD_NUMBER = 3;
-        private int signType_;
-        public static final int AUTH_APPID_FIELD_NUMBER = 7;
-        private volatile Object authAppid_;
-        public static final int GAME_BIZ_FIELD_NUMBER = 1;
+        public static final int GAMEBIZ_FIELD_NUMBER = 1;
         private volatile Object gameBiz_;
+        public static final int SIGNTYPE_FIELD_NUMBER = 3;
+        private int signType_;
+        public static final int AUTHAPPID_FIELD_NUMBER = 11;
+        private volatile Object authAppid_;
+        public static final int AUTHKEYVER_FIELD_NUMBER = 7;
+        private int authkeyVer_;
+        public static final int RETCODE_FIELD_NUMBER = 14;
+        private int retcode_;
+        public static final int AUTHKEY_FIELD_NUMBER = 9;
+        private volatile Object authkey_;
         private byte memoizedIsInitialized;
         private static final GetAuthkeyRsp DEFAULT_INSTANCE = new GetAuthkeyRsp();
         private static final Parser<GetAuthkeyRsp> PARSER = new AbstractParser<GetAuthkeyRsp>() { // from class: emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRsp.1
@@ -85,9 +85,9 @@ public final class GetAuthkeyRspOuterClass {
 
         private GetAuthkeyRsp() {
             this.memoizedIsInitialized = -1;
-            this.authkey_ = "";
-            this.authAppid_ = "";
             this.gameBiz_ = "";
+            this.authAppid_ = "";
+            this.authkey_ = "";
         }
 
         /* access modifiers changed from: protected */
@@ -123,17 +123,17 @@ public final class GetAuthkeyRspOuterClass {
                             case 24:
                                 this.signType_ = input.readUInt32();
                                 break;
-                            case 50:
+                            case 56:
+                                this.authkeyVer_ = input.readUInt32();
+                                break;
+                            case 74:
                                 this.authkey_ = input.readStringRequireUtf8();
                                 break;
-                            case 58:
+                            case 90:
                                 this.authAppid_ = input.readStringRequireUtf8();
                                 break;
-                            case 64:
+                            case 112:
                                 this.retcode_ = input.readInt32();
-                                break;
-                            case 104:
-                                this.authkeyVer_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -165,35 +165,25 @@ public final class GetAuthkeyRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRspOrBuilder
-        public String getAuthkey() {
-            Object ref = this.authkey_;
+        public String getGameBiz() {
+            Object ref = this.gameBiz_;
             if (ref instanceof String) {
                 return (String) ref;
             }
             String s = ((ByteString) ref).toStringUtf8();
-            this.authkey_ = s;
+            this.gameBiz_ = s;
             return s;
         }
 
         @Override // emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRspOrBuilder
-        public ByteString getAuthkeyBytes() {
-            Object ref = this.authkey_;
+        public ByteString getGameBizBytes() {
+            Object ref = this.gameBiz_;
             if (!(ref instanceof String)) {
                 return (ByteString) ref;
             }
             ByteString b = ByteString.copyFromUtf8((String) ref);
-            this.authkey_ = b;
+            this.gameBiz_ = b;
             return b;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRspOrBuilder
-        public int getAuthkeyVer() {
-            return this.authkeyVer_;
         }
 
         @Override // emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRspOrBuilder
@@ -224,24 +214,34 @@ public final class GetAuthkeyRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRspOrBuilder
-        public String getGameBiz() {
-            Object ref = this.gameBiz_;
+        public int getAuthkeyVer() {
+            return this.authkeyVer_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRspOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRspOrBuilder
+        public String getAuthkey() {
+            Object ref = this.authkey_;
             if (ref instanceof String) {
                 return (String) ref;
             }
             String s = ((ByteString) ref).toStringUtf8();
-            this.gameBiz_ = s;
+            this.authkey_ = s;
             return s;
         }
 
         @Override // emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRspOrBuilder
-        public ByteString getGameBizBytes() {
-            Object ref = this.gameBiz_;
+        public ByteString getAuthkeyBytes() {
+            Object ref = this.authkey_;
             if (!(ref instanceof String)) {
                 return (ByteString) ref;
             }
             ByteString b = ByteString.copyFromUtf8((String) ref);
-            this.gameBiz_ = b;
+            this.authkey_ = b;
             return b;
         }
 
@@ -266,17 +266,17 @@ public final class GetAuthkeyRspOuterClass {
             if (this.signType_ != 0) {
                 output.writeUInt32(3, this.signType_);
             }
+            if (this.authkeyVer_ != 0) {
+                output.writeUInt32(7, this.authkeyVer_);
+            }
             if (!GeneratedMessageV3.isStringEmpty(this.authkey_)) {
-                GeneratedMessageV3.writeString(output, 6, this.authkey_);
+                GeneratedMessageV3.writeString(output, 9, this.authkey_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.authAppid_)) {
-                GeneratedMessageV3.writeString(output, 7, this.authAppid_);
+                GeneratedMessageV3.writeString(output, 11, this.authAppid_);
             }
             if (this.retcode_ != 0) {
-                output.writeInt32(8, this.retcode_);
-            }
-            if (this.authkeyVer_ != 0) {
-                output.writeUInt32(13, this.authkeyVer_);
+                output.writeInt32(14, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -294,17 +294,17 @@ public final class GetAuthkeyRspOuterClass {
             if (this.signType_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(3, this.signType_);
             }
+            if (this.authkeyVer_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(7, this.authkeyVer_);
+            }
             if (!GeneratedMessageV3.isStringEmpty(this.authkey_)) {
-                size2 += GeneratedMessageV3.computeStringSize(6, this.authkey_);
+                size2 += GeneratedMessageV3.computeStringSize(9, this.authkey_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.authAppid_)) {
-                size2 += GeneratedMessageV3.computeStringSize(7, this.authAppid_);
+                size2 += GeneratedMessageV3.computeStringSize(11, this.authAppid_);
             }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(8, this.retcode_);
-            }
-            if (this.authkeyVer_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.authkeyVer_);
+                size2 += CodedOutputStream.computeInt32Size(14, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -320,7 +320,7 @@ public final class GetAuthkeyRspOuterClass {
                 return equals(obj);
             }
             GetAuthkeyRsp other = (GetAuthkeyRsp) obj;
-            return getRetcode() == other.getRetcode() && getAuthkey().equals(other.getAuthkey()) && getAuthkeyVer() == other.getAuthkeyVer() && getSignType() == other.getSignType() && getAuthAppid().equals(other.getAuthAppid()) && getGameBiz().equals(other.getGameBiz()) && this.unknownFields.equals(other.unknownFields);
+            return getGameBiz().equals(other.getGameBiz()) && getSignType() == other.getSignType() && getAuthAppid().equals(other.getAuthAppid()) && getAuthkeyVer() == other.getAuthkeyVer() && getRetcode() == other.getRetcode() && getAuthkey().equals(other.getAuthkey()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -328,7 +328,7 @@ public final class GetAuthkeyRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getRetcode())) + 6)) + getAuthkey().hashCode())) + 13)) + getAuthkeyVer())) + 3)) + getSignType())) + 7)) + getAuthAppid().hashCode())) + 1)) + getGameBiz().hashCode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getGameBiz().hashCode())) + 3)) + getSignType())) + 11)) + getAuthAppid().hashCode())) + 7)) + getAuthkeyVer())) + 14)) + getRetcode())) + 9)) + getAuthkey().hashCode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -407,12 +407,12 @@ public final class GetAuthkeyRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetAuthkeyRspOuterClass$GetAuthkeyRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements GetAuthkeyRspOrBuilder {
-            private int retcode_;
-            private int authkeyVer_;
             private int signType_;
-            private Object authkey_ = "";
-            private Object authAppid_ = "";
+            private int authkeyVer_;
+            private int retcode_;
             private Object gameBiz_ = "";
+            private Object authAppid_ = "";
+            private Object authkey_ = "";
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return GetAuthkeyRspOuterClass.internal_static_GetAuthkeyRsp_descriptor;
@@ -440,12 +440,12 @@ public final class GetAuthkeyRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.retcode_ = 0;
-                this.authkey_ = "";
-                this.authkeyVer_ = 0;
+                this.gameBiz_ = "";
                 this.signType_ = 0;
                 this.authAppid_ = "";
-                this.gameBiz_ = "";
+                this.authkeyVer_ = 0;
+                this.retcode_ = 0;
+                this.authkey_ = "";
                 return this;
             }
 
@@ -471,12 +471,12 @@ public final class GetAuthkeyRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public GetAuthkeyRsp buildPartial() {
                 GetAuthkeyRsp result = new GetAuthkeyRsp(this);
-                result.retcode_ = this.retcode_;
-                result.authkey_ = this.authkey_;
-                result.authkeyVer_ = this.authkeyVer_;
+                result.gameBiz_ = this.gameBiz_;
                 result.signType_ = this.signType_;
                 result.authAppid_ = this.authAppid_;
-                result.gameBiz_ = this.gameBiz_;
+                result.authkeyVer_ = this.authkeyVer_;
+                result.retcode_ = this.retcode_;
+                result.authkey_ = this.authkey_;
                 onBuilt();
                 return result;
             }
@@ -524,15 +524,9 @@ public final class GetAuthkeyRspOuterClass {
                 if (other == GetAuthkeyRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
-                if (!other.getAuthkey().isEmpty()) {
-                    this.authkey_ = other.authkey_;
+                if (!other.getGameBiz().isEmpty()) {
+                    this.gameBiz_ = other.gameBiz_;
                     onChanged();
-                }
-                if (other.getAuthkeyVer() != 0) {
-                    setAuthkeyVer(other.getAuthkeyVer());
                 }
                 if (other.getSignType() != 0) {
                     setSignType(other.getSignType());
@@ -541,8 +535,14 @@ public final class GetAuthkeyRspOuterClass {
                     this.authAppid_ = other.authAppid_;
                     onChanged();
                 }
-                if (!other.getGameBiz().isEmpty()) {
-                    this.gameBiz_ = other.gameBiz_;
+                if (other.getAuthkeyVer() != 0) {
+                    setAuthkeyVer(other.getAuthkeyVer());
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
+                }
+                if (!other.getAuthkey().isEmpty()) {
+                    this.authkey_ = other.authkey_;
                     onChanged();
                 }
                 mergeUnknownFields(other.unknownFields);
@@ -578,82 +578,48 @@ public final class GetAuthkeyRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRspOrBuilder
-            public String getAuthkey() {
-                Object ref = this.authkey_;
+            public String getGameBiz() {
+                Object ref = this.gameBiz_;
                 if (ref instanceof String) {
                     return (String) ref;
                 }
                 String s = ((ByteString) ref).toStringUtf8();
-                this.authkey_ = s;
+                this.gameBiz_ = s;
                 return s;
             }
 
             @Override // emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRspOrBuilder
-            public ByteString getAuthkeyBytes() {
-                Object ref = this.authkey_;
+            public ByteString getGameBizBytes() {
+                Object ref = this.gameBiz_;
                 if (!(ref instanceof String)) {
                     return (ByteString) ref;
                 }
                 ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.authkey_ = b;
+                this.gameBiz_ = b;
                 return b;
             }
 
-            public Builder setAuthkey(String value) {
+            public Builder setGameBiz(String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
-                this.authkey_ = value;
+                this.gameBiz_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearAuthkey() {
-                this.authkey_ = GetAuthkeyRsp.getDefaultInstance().getAuthkey();
+            public Builder clearGameBiz() {
+                this.gameBiz_ = GetAuthkeyRsp.getDefaultInstance().getGameBiz();
                 onChanged();
                 return this;
             }
 
-            public Builder setAuthkeyBytes(ByteString value) {
+            public Builder setGameBizBytes(ByteString value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
                 GetAuthkeyRsp.checkByteStringIsUtf8(value);
-                this.authkey_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRspOrBuilder
-            public int getAuthkeyVer() {
-                return this.authkeyVer_;
-            }
-
-            public Builder setAuthkeyVer(int value) {
-                this.authkeyVer_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearAuthkeyVer() {
-                this.authkeyVer_ = 0;
+                this.gameBiz_ = value;
                 onChanged();
                 return this;
             }
@@ -723,48 +689,82 @@ public final class GetAuthkeyRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRspOrBuilder
-            public String getGameBiz() {
-                Object ref = this.gameBiz_;
+            public int getAuthkeyVer() {
+                return this.authkeyVer_;
+            }
+
+            public Builder setAuthkeyVer(int value) {
+                this.authkeyVer_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearAuthkeyVer() {
+                this.authkeyVer_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRspOrBuilder
+            public String getAuthkey() {
+                Object ref = this.authkey_;
                 if (ref instanceof String) {
                     return (String) ref;
                 }
                 String s = ((ByteString) ref).toStringUtf8();
-                this.gameBiz_ = s;
+                this.authkey_ = s;
                 return s;
             }
 
             @Override // emu.grasscutter.net.proto.GetAuthkeyRspOuterClass.GetAuthkeyRspOrBuilder
-            public ByteString getGameBizBytes() {
-                Object ref = this.gameBiz_;
+            public ByteString getAuthkeyBytes() {
+                Object ref = this.authkey_;
                 if (!(ref instanceof String)) {
                     return (ByteString) ref;
                 }
                 ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.gameBiz_ = b;
+                this.authkey_ = b;
                 return b;
             }
 
-            public Builder setGameBiz(String value) {
+            public Builder setAuthkey(String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
-                this.gameBiz_ = value;
+                this.authkey_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearGameBiz() {
-                this.gameBiz_ = GetAuthkeyRsp.getDefaultInstance().getGameBiz();
+            public Builder clearAuthkey() {
+                this.authkey_ = GetAuthkeyRsp.getDefaultInstance().getAuthkey();
                 onChanged();
                 return this;
             }
 
-            public Builder setGameBizBytes(ByteString value) {
+            public Builder setAuthkeyBytes(ByteString value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
                 GetAuthkeyRsp.checkByteStringIsUtf8(value);
-                this.gameBiz_ = value;
+                this.authkey_ = value;
                 onChanged();
                 return this;
             }

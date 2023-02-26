@@ -23,7 +23,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
     public static final int DEFAULT_INITIAL_CAPACITY = 10;
 
     /* renamed from: a */
-    protected transient boolean[][] f1057a;
+    protected transient boolean[][] f1021a;
     protected long size;
     static final /* synthetic */ boolean $assertionsDisabled;
 
@@ -32,27 +32,27 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
     }
 
     protected BooleanBigArrayBigList(boolean[][] a, boolean dummy) {
-        this.f1057a = a;
+        this.f1021a = a;
     }
 
     public BooleanBigArrayBigList(long capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException("Initial capacity (" + capacity + ") is negative");
         } else if (capacity == 0) {
-            this.f1057a = BooleanBigArrays.EMPTY_BIG_ARRAY;
+            this.f1021a = BooleanBigArrays.EMPTY_BIG_ARRAY;
         } else {
-            this.f1057a = BooleanBigArrays.newBigArray(capacity);
+            this.f1021a = BooleanBigArrays.newBigArray(capacity);
         }
     }
 
     public BooleanBigArrayBigList() {
-        this.f1057a = BooleanBigArrays.DEFAULT_EMPTY_BIG_ARRAY;
+        this.f1021a = BooleanBigArrays.DEFAULT_EMPTY_BIG_ARRAY;
     }
 
     public BooleanBigArrayBigList(BooleanCollection c) {
         this(Size64.sizeOf(c));
         if (c instanceof BooleanBigList) {
-            boolean[][] zArr = this.f1057a;
+            boolean[][] zArr = this.f1021a;
             long sizeOf = Size64.sizeOf(c);
             this.size = sizeOf;
             ((BooleanBigList) c).getElements(0, zArr, 0, sizeOf);
@@ -66,7 +66,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
 
     public BooleanBigArrayBigList(BooleanBigList l) {
         this(l.size64());
-        boolean[][] zArr = this.f1057a;
+        boolean[][] zArr = this.f1021a;
         long size64 = l.size64();
         this.size = size64;
         l.getElements(0, zArr, 0, size64);
@@ -78,7 +78,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
 
     public BooleanBigArrayBigList(boolean[][] a, long offset, long length) {
         this(length);
-        BigArrays.copy(a, offset, this.f1057a, 0, length);
+        BigArrays.copy(a, offset, this.f1021a, 0, length);
         this.size = length;
     }
 
@@ -97,7 +97,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
     }
 
     public boolean[][] elements() {
-        return this.f1057a;
+        return this.f1021a;
     }
 
     public static BooleanBigArrayBigList wrap(boolean[][] a, long length) {
@@ -124,24 +124,24 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
     }
 
     public void ensureCapacity(long capacity) {
-        if (capacity > BigArrays.length(this.f1057a) && this.f1057a != BooleanBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
-            this.f1057a = BigArrays.forceCapacity(this.f1057a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1057a)) {
+        if (capacity > BigArrays.length(this.f1021a) && this.f1021a != BooleanBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
+            this.f1021a = BigArrays.forceCapacity(this.f1021a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1021a)) {
                 throw new AssertionError();
             }
         }
     }
 
     private void grow(long capacity) {
-        long oldLength = BigArrays.length(this.f1057a);
+        long oldLength = BigArrays.length(this.f1021a);
         if (capacity > oldLength) {
-            if (this.f1057a != BooleanBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
+            if (this.f1021a != BooleanBigArrays.DEFAULT_EMPTY_BIG_ARRAY) {
                 capacity = Math.max(oldLength + (oldLength >> 1), capacity);
             } else if (capacity < 10) {
                 capacity = 10;
             }
-            this.f1057a = BigArrays.forceCapacity(this.f1057a, capacity, this.size);
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1057a)) {
+            this.f1021a = BigArrays.forceCapacity(this.f1021a, capacity, this.size);
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1021a)) {
                 throw new AssertionError();
             }
         }
@@ -152,11 +152,11 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
         ensureIndex(index);
         grow(this.size + 1);
         if (index != this.size) {
-            BigArrays.copy(this.f1057a, index, this.f1057a, index + 1, this.size - index);
+            BigArrays.copy(this.f1021a, index, this.f1021a, index + 1, this.size - index);
         }
-        BigArrays.set(this.f1057a, index, k);
+        BigArrays.set(this.f1021a, index, k);
         this.size++;
-        if (!$assertionsDisabled && this.size > BigArrays.length(this.f1057a)) {
+        if (!$assertionsDisabled && this.size > BigArrays.length(this.f1021a)) {
             throw new AssertionError();
         }
     }
@@ -164,11 +164,11 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanBigList, p014it.unimi.dsi.fastutil.booleans.AbstractBooleanCollection, p014it.unimi.dsi.fastutil.booleans.BooleanCollection
     public boolean add(boolean k) {
         grow(this.size + 1);
-        boolean[][] zArr = this.f1057a;
+        boolean[][] zArr = this.f1021a;
         long j = this.size;
         this.size = j + 1;
         BigArrays.set(zArr, j, k);
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1057a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1021a)) {
             return true;
         }
         throw new AssertionError();
@@ -177,7 +177,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
     @Override // p014it.unimi.dsi.fastutil.booleans.BooleanBigList
     public boolean getBoolean(long index) {
         if (index < this.size) {
-            return BigArrays.get(this.f1057a, index);
+            return BigArrays.get(this.f1021a, index);
         }
         throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
     }
@@ -185,7 +185,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanBigList, p014it.unimi.dsi.fastutil.booleans.BooleanBigList
     public long indexOf(boolean k) {
         for (long i = 0; i < this.size; i++) {
-            if (k == BigArrays.get(this.f1057a, i)) {
+            if (k == BigArrays.get(this.f1021a, i)) {
                 return i;
             }
         }
@@ -217,7 +217,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
             if (r0 == 0) goto L_0x001d
             r0 = r8
             r1 = r7
-            boolean[][] r1 = r1.f1057a
+            boolean[][] r1 = r1.f1021a
             r2 = r9
             boolean r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
             if (r0 != r1) goto L_0x0005
@@ -235,12 +235,12 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        boolean old = BigArrays.get(this.f1057a, index);
+        boolean old = BigArrays.get(this.f1021a, index);
         this.size--;
         if (index != this.size) {
-            BigArrays.copy(this.f1057a, index + 1, this.f1057a, index, this.size - index);
+            BigArrays.copy(this.f1021a, index + 1, this.f1021a, index, this.size - index);
         }
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1057a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1021a)) {
             return old;
         }
         throw new AssertionError();
@@ -253,7 +253,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
             return false;
         }
         removeBoolean(index);
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1057a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1021a)) {
             return true;
         }
         throw new AssertionError();
@@ -264,8 +264,8 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.size + ")");
         }
-        boolean old = BigArrays.get(this.f1057a, index);
-        BigArrays.set(this.f1057a, index, k);
+        boolean old = BigArrays.get(this.f1021a, index);
+        BigArrays.set(this.f1021a, index, k);
         return old;
     }
 
@@ -281,12 +281,12 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
             if (sd == 134217728) {
                 sd = 0;
                 ss++;
-                s = this.f1057a[ss];
+                s = this.f1021a[ss];
             }
             if (!c.contains(s[sd])) {
                 if (dd == 134217728) {
                     ds++;
-                    d = this.f1057a[ds];
+                    d = this.f1021a[ds];
                     dd = 0;
                 }
                 dd++;
@@ -312,12 +312,12 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
             if (sd == 134217728) {
                 sd = 0;
                 ss++;
-                s = this.f1057a[ss];
+                s = this.f1021a[ss];
             }
             if (!c.contains(Boolean.valueOf(s[sd]))) {
                 if (dd == 134217728) {
                     ds++;
-                    d = this.f1057a[ds];
+                    d = this.f1021a[ds];
                     dd = 0;
                 }
                 dd++;
@@ -345,17 +345,17 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
             return false;
         }
         grow(this.size + ((long) n));
-        BigArrays.copy(this.f1057a, index, this.f1057a, index + ((long) n), this.size - index);
+        BigArrays.copy(this.f1021a, index, this.f1021a, index + ((long) n), this.size - index);
         BooleanIterator i = c.iterator();
         this.size += (long) n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1057a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1021a)) {
             while (true) {
                 n--;
                 if (n == 0) {
                     return true;
                 }
                 index++;
-                BigArrays.set(this.f1057a, index, i.nextBoolean());
+                BigArrays.set(this.f1021a, index, i.nextBoolean());
             }
         } else {
             throw new AssertionError();
@@ -370,10 +370,10 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
             return false;
         }
         grow(this.size + n);
-        BigArrays.copy(this.f1057a, index, this.f1057a, index + n, this.size - index);
-        list.getElements(0, this.f1057a, index, n);
+        BigArrays.copy(this.f1021a, index, this.f1021a, index + n, this.size - index);
+        list.getElements(0, this.f1021a, index, n);
         this.size += n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1057a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1021a)) {
             return true;
         }
         throw new AssertionError();
@@ -387,15 +387,15 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
             return false;
         }
         grow(this.size + ((long) n));
-        BigArrays.copy(this.f1057a, index, this.f1057a, index + ((long) n), this.size - index);
+        BigArrays.copy(this.f1021a, index, this.f1021a, index + ((long) n), this.size - index);
         this.size += (long) n;
-        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1057a)) {
+        if ($assertionsDisabled || this.size <= BigArrays.length(this.f1021a)) {
             int segment = BigArrays.segment(index);
             int displ = BigArrays.displacement(index);
             int pos = 0;
             while (n > 0) {
-                int l = Math.min(this.f1057a[segment].length - displ, n);
-                list.getElements(pos, this.f1057a[segment], displ, l);
+                int l = Math.min(this.f1021a[segment].length - displ, n);
+                list.getElements(pos, this.f1021a[segment], displ, l);
                 int i = displ + l;
                 displ = i;
                 if (i == 134217728) {
@@ -413,7 +413,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanBigList, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         this.size = 0;
-        if (!$assertionsDisabled && this.size > BigArrays.length(this.f1057a)) {
+        if (!$assertionsDisabled && this.size > BigArrays.length(this.f1021a)) {
             throw new AssertionError();
         }
     }
@@ -425,11 +425,11 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanBigList, p014it.unimi.dsi.fastutil.BigList
     public void size(long size) {
-        if (size > BigArrays.length(this.f1057a)) {
-            this.f1057a = BigArrays.forceCapacity(this.f1057a, size, this.size);
+        if (size > BigArrays.length(this.f1021a)) {
+            this.f1021a = BigArrays.forceCapacity(this.f1021a, size, this.size);
         }
         if (size > this.size) {
-            BigArrays.fill(this.f1057a, this.size, size, false);
+            BigArrays.fill(this.f1021a, this.size, size, false);
         }
         this.size = size;
     }
@@ -444,10 +444,10 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
     }
 
     public void trim(long n) {
-        long arrayLength = BigArrays.length(this.f1057a);
+        long arrayLength = BigArrays.length(this.f1021a);
         if (n < arrayLength && this.size != arrayLength) {
-            this.f1057a = BigArrays.trim(this.f1057a, Math.max(n, this.size));
-            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1057a)) {
+            this.f1021a = BigArrays.trim(this.f1021a, Math.max(n, this.size));
+            if (!$assertionsDisabled && this.size > BigArrays.length(this.f1021a)) {
                 throw new AssertionError();
             }
         }
@@ -464,13 +464,13 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
         }
 
         private boolean[][] getParentArray() {
-            return BooleanBigArrayBigList.this.f1057a;
+            return BooleanBigArrayBigList.this.f1021a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanBigList.BooleanSubList, p014it.unimi.dsi.fastutil.booleans.BooleanBigList
         public boolean getBoolean(long i) {
             ensureRestrictedIndex(i);
-            return BigArrays.get(BooleanBigArrayBigList.this.f1057a, i + this.from);
+            return BigArrays.get(BooleanBigArrayBigList.this.f1021a, i + this.from);
         }
 
         /* access modifiers changed from: private */
@@ -483,7 +483,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
 
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanBigListIterators.AbstractIndexBasedBigIterator
             protected final boolean get(long i) {
-                return BigArrays.get(BooleanBigArrayBigList.this.f1057a, SubList.this.from + i);
+                return BigArrays.get(BooleanBigArrayBigList.this.f1021a, SubList.this.from + i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanBigListIterators.AbstractIndexBasedBigListIterator
@@ -503,7 +503,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
 
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanBigListIterators.AbstractIndexBasedBigIterator
             protected final long getMaxPos() {
-                return SubList.this.f1041to - SubList.this.from;
+                return SubList.this.f1005to - SubList.this.from;
             }
 
             /* JADX DEBUG: Multi-variable search result rejected for r12v0, resolved type: it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList$SubList$SubListIterator */
@@ -513,7 +513,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                boolean[][] zArr = BooleanBigArrayBigList.this.f1057a;
+                boolean[][] zArr = BooleanBigArrayBigList.this.f1021a;
                 long j = SubList.this.from;
                 long j2 = this.pos;
                 this.pos = j2 + 1;
@@ -528,7 +528,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                boolean[][] zArr = BooleanBigArrayBigList.this.f1057a;
+                boolean[][] zArr = BooleanBigArrayBigList.this.f1021a;
                 long j = SubList.this.from;
                 long j2 = this.pos - 1;
                 this.pos = j2;
@@ -538,7 +538,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
 
             /* JADX DEBUG: Multi-variable search result rejected for r13v0, resolved type: it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList$SubList$SubListIterator */
             /* JADX WARN: Multi-variable type inference failed */
-            /* JADX WARN: Type inference failed for: r1v7, types: [it.unimi.dsi.fastutil.booleans.BooleanConsumer, boolean[][]] */
+            /* JADX WARN: Type inference failed for: r1v7, types: [boolean[][], it.unimi.dsi.fastutil.booleans.BooleanConsumer] */
             /* JADX WARNING: Unknown variable types count: 1 */
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanBigListIterators.AbstractIndexBasedBigIterator, p014it.unimi.dsi.fastutil.booleans.BooleanIterator
             /* Code decompiled incorrectly, please refer to instructions dump. */
@@ -547,7 +547,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
                     r13 = this;
                     r0 = r13
                     it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList$SubList r0 = p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.SubList.this
-                    long r0 = r0.f1041to
+                    long r0 = r0.f1005to
                     r1 = r13
                     it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList$SubList r1 = p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.SubList.this
                     long r1 = r1.from
@@ -563,7 +563,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
                     r1 = r13
                     it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList$SubList r1 = p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.SubList.this
                     it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList r1 = p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.this
-                    boolean[][] r1 = r1.f1057a
+                    boolean[][] r1 = r1.f1021a
                     r2 = r13
                     it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList$SubList r2 = p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.SubList.this
                     long r2 = r2.from
@@ -608,12 +608,12 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
 
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanBigSpliterators.LateBindingSizeIndexBasedSpliterator
             protected final long getMaxPosFromBackingStore() {
-                return SubList.this.f1041to;
+                return SubList.this.f1005to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanBigSpliterators.AbstractIndexBasedSpliterator
             protected final boolean get(long i) {
-                return BigArrays.get(BooleanBigArrayBigList.this.f1057a, i);
+                return BigArrays.get(BooleanBigArrayBigList.this.f1021a, i);
             }
 
             /* access modifiers changed from: protected */
@@ -632,7 +632,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
                 if (this.pos >= getMaxPos()) {
                     return false;
                 }
-                boolean[][] zArr = BooleanBigArrayBigList.this.f1057a;
+                boolean[][] zArr = BooleanBigArrayBigList.this.f1021a;
                 long j = this.pos;
                 this.pos = j + 1;
                 action.accept(BigArrays.get(zArr, j));
@@ -643,7 +643,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
             public void forEachRemaining(BooleanConsumer action) {
                 long max = getMaxPos();
                 while (this.pos < max) {
-                    boolean[][] zArr = BooleanBigArrayBigList.this.f1057a;
+                    boolean[][] zArr = BooleanBigArrayBigList.this.f1021a;
                     long j = this.pos;
                     this.pos = j + 1;
                     action.accept(BigArrays.get(zArr, j));
@@ -667,7 +667,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
                 r7 = this;
                 r0 = r7
                 it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList r0 = p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.this
-                boolean[][] r0 = r0.f1057a
+                boolean[][] r0 = r0.f1021a
                 r1 = r8
                 if (r0 != r1) goto L_0x0020
                 r0 = r7
@@ -676,7 +676,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
                 r0 = r7
-                long r0 = r0.f1041to
+                long r0 = r0.f1005to
                 r1 = r11
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
@@ -694,7 +694,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
                 return r0
             L_0x002e:
                 r0 = r7
-                long r0 = r0.f1041to
+                long r0 = r0.f1005to
                 r13 = r0
                 r0 = r11
                 r15 = r0
@@ -710,7 +710,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
                 if (r0 < 0) goto L_0x0063
                 r0 = r7
                 it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList r0 = p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.this
-                boolean[][] r0 = r0.f1057a
+                boolean[][] r0 = r0.f1021a
                 r1 = r13
                 boolean r0 = p014it.unimi.dsi.fastutil.BigArrays.get(r0, r1)
                 r1 = r8
@@ -740,12 +740,12 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
             }
             if (o instanceof BooleanBigArrayBigList) {
                 BooleanBigArrayBigList other = (BooleanBigArrayBigList) o;
-                return contentsEquals(other.f1057a, 0, other.size64());
+                return contentsEquals(other.f1021a, 0, other.size64());
             } else if (!(o instanceof SubList)) {
                 return equals(o);
             } else {
                 SubList other2 = (SubList) o;
-                return contentsEquals(other2.getParentArray(), other2.from, other2.f1041to);
+                return contentsEquals(other2.getParentArray(), other2.from, other2.f1005to);
             }
         }
 
@@ -763,7 +763,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
                 r5 = this;
                 r0 = r5
                 it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList r0 = p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.this
-                boolean[][] r0 = r0.f1057a
+                boolean[][] r0 = r0.f1021a
                 r1 = r6
                 if (r0 != r1) goto L_0x0020
                 r0 = r5
@@ -772,7 +772,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
                 r0 = r5
-                long r0 = r0.f1041to
+                long r0 = r0.f1005to
                 r1 = r9
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 != 0) goto L_0x0020
@@ -787,7 +787,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
             L_0x0029:
                 r0 = r14
                 r1 = r5
-                long r1 = r1.f1041to
+                long r1 = r1.f1005to
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 >= 0) goto L_0x0070
                 r0 = r14
@@ -796,7 +796,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
                 if (r0 >= 0) goto L_0x0070
                 r0 = r5
                 it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList r0 = p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.this
-                boolean[][] r0 = r0.f1057a
+                boolean[][] r0 = r0.f1021a
                 r1 = r14
                 boolean r0 = p014it.unimi.dsi.fastutil.BigArrays.get(r0, r1)
                 r11 = r0
@@ -832,7 +832,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
             L_0x007c:
                 r0 = r14
                 r1 = r5
-                long r1 = r1.f1041to
+                long r1 = r1.f1005to
                 int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
                 if (r0 >= 0) goto L_0x008a
                 r0 = 1
@@ -849,12 +849,12 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
         public int compareTo(BigList<? extends Boolean> l) {
             if (l instanceof BooleanBigArrayBigList) {
                 BooleanBigArrayBigList other = (BooleanBigArrayBigList) l;
-                return contentsCompareTo(other.f1057a, 0, other.size64());
+                return contentsCompareTo(other.f1021a, 0, other.size64());
             } else if (!(l instanceof SubList)) {
                 return compareTo(l);
             } else {
                 SubList other2 = (SubList) l;
-                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f1041to);
+                return contentsCompareTo(other2.getParentArray(), other2.from, other2.f1005to);
             }
         }
     }
@@ -875,18 +875,18 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanBigList, p014it.unimi.dsi.fastutil.booleans.BooleanBigList
     public void getElements(long from, boolean[][] a, long offset, long length) {
-        BigArrays.copy(this.f1057a, from, a, offset, length);
+        BigArrays.copy(this.f1021a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.booleans.BooleanBigList
     public void getElements(long from, boolean[] a, int offset, int length) {
-        BigArrays.copyFromBig(this.f1057a, from, a, offset, length);
+        BigArrays.copyFromBig(this.f1021a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanBigList, p014it.unimi.dsi.fastutil.booleans.BooleanBigList
     public void removeElements(long from, long to) {
         BigArrays.ensureFromTo(this.size, from, to);
-        BigArrays.copy(this.f1057a, to, this.f1057a, from, this.size - to);
+        BigArrays.copy(this.f1021a, to, this.f1021a, from, this.size - to);
         this.size -= to - from;
     }
 
@@ -895,20 +895,20 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
         ensureIndex(index);
         BigArrays.ensureOffsetLength(a, offset, length);
         grow(this.size + length);
-        BigArrays.copy(this.f1057a, index, this.f1057a, index + length, this.size - index);
-        BigArrays.copy(a, offset, this.f1057a, index, length);
+        BigArrays.copy(this.f1021a, index, this.f1021a, index + length, this.size - index);
+        BigArrays.copy(a, offset, this.f1021a, index, length);
         this.size += length;
     }
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanBigList, p014it.unimi.dsi.fastutil.booleans.BooleanBigList
     public void setElements(long index, boolean[][] a, long offset, long length) {
-        BigArrays.copy(a, offset, this.f1057a, index, length);
+        BigArrays.copy(a, offset, this.f1021a, index, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanBigList, p014it.unimi.dsi.fastutil.booleans.BooleanIterable
     public void forEach(BooleanConsumer action) {
         for (long i = 0; i < this.size; i++) {
-            action.accept(BigArrays.get(this.f1057a, i));
+            action.accept(BigArrays.get(this.f1021a, i));
         }
     }
 
@@ -953,7 +953,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
                 L_0x000f:
                     r0 = r10
                     it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList r0 = p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.this
-                    boolean[][] r0 = r0.f1057a
+                    boolean[][] r0 = r0.f1021a
                     r1 = r10
                     r2 = r10
                     r3 = r2
@@ -967,7 +967,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
                     boolean r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
                     return r1
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.C32251.nextBoolean():boolean");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.C32171.nextBoolean():boolean");
             }
 
             /* JADX WARN: Type inference failed for: r0v4, types: [long, boolean[][]] */
@@ -988,7 +988,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
                 L_0x000f:
                     r0 = r8
                     it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList r0 = p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.this
-                    boolean[][] r0 = r0.f1057a
+                    boolean[][] r0 = r0.f1021a
                     r1 = r8
                     r2 = r8
                     r3 = r2
@@ -1002,7 +1002,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
                     boolean r1 = p014it.unimi.dsi.fastutil.BigArrays.get(r1, r2)
                     return r1
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.C32251.previousBoolean():boolean");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.C32171.previousBoolean():boolean");
             }
 
             @Override // p014it.unimi.dsi.fastutil.BigListIterator
@@ -1065,7 +1065,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
                     r0 = r12
                     r1 = r11
                     it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList r1 = p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.this
-                    boolean[][] r1 = r1.f1057a
+                    boolean[][] r1 = r1.f1021a
                     r2 = r11
                     r3 = r11
                     r4 = r3
@@ -1082,7 +1082,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
                 L_0x0032:
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.C32251.forEachRemaining(it.unimi.dsi.fastutil.booleans.BooleanConsumer):void");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.C32171.forEachRemaining(it.unimi.dsi.fastutil.booleans.BooleanConsumer):void");
             }
 
             /* JADX WARN: Multi-variable type inference failed */
@@ -1145,7 +1145,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
                     r0 = r7
                     return r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.C32251.back(long):long");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.C32171.back(long):long");
             }
 
             /* JADX WARN: Multi-variable type inference failed */
@@ -1212,7 +1212,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
                     r0 = r7
                     return r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.C32251.skip(long):long");
+                throw new UnsupportedOperationException("Method not decompiled: p014it.unimi.dsi.fastutil.booleans.BooleanBigArrayBigList.C32171.skip(long):long");
             }
         };
     }
@@ -1263,7 +1263,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            boolean[][] zArr = BooleanBigArrayBigList.this.f1057a;
+            boolean[][] zArr = BooleanBigArrayBigList.this.f1021a;
             long j = this.pos;
             this.pos = j + 1;
             action.accept(BigArrays.get(zArr, j));
@@ -1273,7 +1273,7 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
         public void forEachRemaining(BooleanConsumer action) {
             long max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(BigArrays.get(BooleanBigArrayBigList.this.f1057a, this.pos));
+                action.accept(BigArrays.get(BooleanBigArrayBigList.this.f1021a, this.pos));
                 this.pos++;
             }
         }
@@ -1326,12 +1326,12 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
         } else {
             try {
                 c = (BooleanBigArrayBigList) clone();
-                c.f1057a = BooleanBigArrays.newBigArray(this.size);
+                c.f1021a = BooleanBigArrays.newBigArray(this.size);
             } catch (CloneNotSupportedException e) {
                 throw new InternalError(e);
             }
         }
-        BigArrays.copy(this.f1057a, 0, c.f1057a, 0, this.size);
+        BigArrays.copy(this.f1021a, 0, c.f1021a, 0, this.size);
         return c;
     }
 
@@ -1345,8 +1345,8 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
         if (size64 != l.size64()) {
             return false;
         }
-        boolean[][] a1 = this.f1057a;
-        boolean[][] a2 = l.f1057a;
+        boolean[][] a1 = this.f1021a;
+        boolean[][] a2 = l.f1021a;
         if (a1 == a2) {
             return true;
         }
@@ -1379,8 +1379,8 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
     public int compareTo(BooleanBigArrayBigList l) {
         long s1 = size64();
         long s2 = l.size64();
-        boolean[][] a1 = this.f1057a;
-        boolean[][] a2 = l.f1057a;
+        boolean[][] a1 = this.f1021a;
+        boolean[][] a2 = l.f1021a;
         if (a1 == a2 && s1 == s2) {
             return 0;
         }
@@ -1412,15 +1412,15 @@ public class BooleanBigArrayBigList extends AbstractBooleanBigList implements Ra
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; ((long) i) < this.size; i++) {
-            s.writeBoolean(BigArrays.get(this.f1057a, (long) i));
+            s.writeBoolean(BigArrays.get(this.f1021a, (long) i));
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f1057a = BooleanBigArrays.newBigArray(this.size);
+        this.f1021a = BooleanBigArrays.newBigArray(this.size);
         for (int i = 0; ((long) i) < this.size; i++) {
-            BigArrays.set(this.f1057a, (long) i, s.readBoolean());
+            BigArrays.set(this.f1021a, (long) i, s.readBoolean());
         }
     }
 }

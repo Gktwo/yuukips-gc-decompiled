@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CookDataNotifyOuterClass.class */
 public final class CookDataNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014CookDataNotify.proto\u001a\u0014CookRecipeData.proto\"J\n\u000eCookDataNotify\u0012)\n\u0010recipe_data_list\u0018\u000f \u0003(\u000b2\u000f.CookRecipeData\u0012\r\n\u0005grade\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CookRecipeDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014CookDataNotify.proto\u001a\u0014CookRecipeData.proto\"H\n\u000eCookDataNotify\u0012'\n\u000erecipeDataList\u0018\t \u0003(\u000b2\u000f.CookRecipeData\u0012\r\n\u0005grade\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CookRecipeDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_CookDataNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_CookDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CookDataNotify_descriptor, new String[]{"RecipeDataList", "Grade"});
 
@@ -57,9 +57,9 @@ public final class CookDataNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CookDataNotifyOuterClass$CookDataNotify.class */
     public static final class CookDataNotify extends GeneratedMessageV3 implements CookDataNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RECIPE_DATA_LIST_FIELD_NUMBER = 15;
+        public static final int RECIPEDATALIST_FIELD_NUMBER = 9;
         private List<CookRecipeDataOuterClass.CookRecipeData> recipeDataList_;
-        public static final int GRADE_FIELD_NUMBER = 9;
+        public static final int GRADE_FIELD_NUMBER = 2;
         private int grade_;
         private byte memoizedIsInitialized;
         private static final CookDataNotify DEFAULT_INSTANCE = new CookDataNotify();
@@ -110,10 +110,10 @@ public final class CookDataNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 72:
+                                case 16:
                                     this.grade_ = input.readUInt32();
                                     break;
-                                case 122:
+                                case 74:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.recipeDataList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -199,10 +199,10 @@ public final class CookDataNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.grade_ != 0) {
-                output.writeUInt32(9, this.grade_);
+                output.writeUInt32(2, this.grade_);
             }
             for (int i = 0; i < this.recipeDataList_.size(); i++) {
-                output.writeMessage(15, this.recipeDataList_.get(i));
+                output.writeMessage(9, this.recipeDataList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -215,10 +215,10 @@ public final class CookDataNotifyOuterClass {
             }
             int size2 = 0;
             if (this.grade_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(9, this.grade_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.grade_);
             }
             for (int i = 0; i < this.recipeDataList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(15, this.recipeDataList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(9, this.recipeDataList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -244,9 +244,9 @@ public final class CookDataNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getRecipeDataListCount() > 0) {
-                hash = (53 * ((37 * hash) + 15)) + getRecipeDataListList().hashCode();
+                hash = (53 * ((37 * hash) + 9)) + getRecipeDataListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 9)) + getGrade())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 2)) + getGrade())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

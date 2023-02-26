@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeBattlePassRewardReqOuterClass.class */
 public final class TakeBattlePassRewardReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dTakeBattlePassRewardReq.proto\u001a BattlePassRewardTakeOption.proto\"P\n\u0017TakeBattlePassRewardReq\u00125\n\u0010take_option_list\u0018\t \u0003(\u000b2\u001b.BattlePassRewardTakeOptionB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BattlePassRewardTakeOptionOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dTakeBattlePassRewardReq.proto\u001a BattlePassRewardTakeOption.proto\"N\n\u0017TakeBattlePassRewardReq\u00123\n\u000etakeOptionList\u0018\u0001 \u0003(\u000b2\u001b.BattlePassRewardTakeOptionB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BattlePassRewardTakeOptionOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_TakeBattlePassRewardReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_TakeBattlePassRewardReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TakeBattlePassRewardReq_descriptor, new String[]{"TakeOptionList"});
 
@@ -55,7 +55,7 @@ public final class TakeBattlePassRewardReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TakeBattlePassRewardReqOuterClass$TakeBattlePassRewardReq.class */
     public static final class TakeBattlePassRewardReq extends GeneratedMessageV3 implements TakeBattlePassRewardReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TAKE_OPTION_LIST_FIELD_NUMBER = 9;
+        public static final int TAKEOPTIONLIST_FIELD_NUMBER = 1;
         private List<BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> takeOptionList_;
         private byte memoizedIsInitialized;
         private static final TakeBattlePassRewardReq DEFAULT_INSTANCE = new TakeBattlePassRewardReq();
@@ -106,7 +106,7 @@ public final class TakeBattlePassRewardReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 74:
+                                case 10:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.takeOptionList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -187,7 +187,7 @@ public final class TakeBattlePassRewardReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.takeOptionList_.size(); i++) {
-                output.writeMessage(9, this.takeOptionList_.get(i));
+                output.writeMessage(1, this.takeOptionList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,7 +200,7 @@ public final class TakeBattlePassRewardReqOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.takeOptionList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(9, this.takeOptionList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(1, this.takeOptionList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class TakeBattlePassRewardReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getTakeOptionListCount() > 0) {
-                hash = (53 * ((37 * hash) + 9)) + getTakeOptionListList().hashCode();
+                hash = (53 * ((37 * hash) + 1)) + getTakeOptionListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

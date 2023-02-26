@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/NpcTalkReqOuterClass.class */
 public final class NpcTalkReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010NpcTalkReq.proto\"G\n\nNpcTalkReq\u0012\u0011\n\tentity_id\u0018\u000e \u0001(\r\u0012\u0015\n\rnpc_entity_id\u0018\u000b \u0001(\r\u0012\u000f\n\u0007talk_id\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010NpcTalkReq.proto\"C\n\nNpcTalkReq\u0012\u0013\n\u000bnpcEntityId\u0018\t \u0001(\r\u0012\u0010\n\bentityId\u0018\u000b \u0001(\r\u0012\u000e\n\u0006talkId\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_NpcTalkReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_NpcTalkReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_NpcTalkReq_descriptor, new String[]{"EntityId", "NpcEntityId", "TalkId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_NpcTalkReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_NpcTalkReq_descriptor, new String[]{"NpcEntityId", "EntityId", "TalkId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/NpcTalkReqOuterClass$NpcTalkReqOrBuilder.class */
     public interface NpcTalkReqOrBuilder extends MessageOrBuilder {
-        int getEntityId();
-
         int getNpcEntityId();
+
+        int getEntityId();
 
         int getTalkId();
     }
@@ -45,11 +45,11 @@ public final class NpcTalkReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/NpcTalkReqOuterClass$NpcTalkReq.class */
     public static final class NpcTalkReq extends GeneratedMessageV3 implements NpcTalkReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTITY_ID_FIELD_NUMBER = 14;
-        private int entityId_;
-        public static final int NPC_ENTITY_ID_FIELD_NUMBER = 11;
+        public static final int NPCENTITYID_FIELD_NUMBER = 9;
         private int npcEntityId_;
-        public static final int TALK_ID_FIELD_NUMBER = 12;
+        public static final int ENTITYID_FIELD_NUMBER = 11;
+        private int entityId_;
+        public static final int TALKID_FIELD_NUMBER = 15;
         private int talkId_;
         private byte memoizedIsInitialized;
         private static final NpcTalkReq DEFAULT_INSTANCE = new NpcTalkReq();
@@ -97,14 +97,14 @@ public final class NpcTalkReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 88:
+                                case 72:
                                     this.npcEntityId_ = input.readUInt32();
                                     break;
-                                case 96:
-                                    this.talkId_ = input.readUInt32();
-                                    break;
-                                case 112:
+                                case 88:
                                     this.entityId_ = input.readUInt32();
+                                    break;
+                                case 120:
+                                    this.talkId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -137,13 +137,13 @@ public final class NpcTalkReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.NpcTalkReqOuterClass.NpcTalkReqOrBuilder
-        public int getEntityId() {
-            return this.entityId_;
+        public int getNpcEntityId() {
+            return this.npcEntityId_;
         }
 
         @Override // emu.grasscutter.net.proto.NpcTalkReqOuterClass.NpcTalkReqOrBuilder
-        public int getNpcEntityId() {
-            return this.npcEntityId_;
+        public int getEntityId() {
+            return this.entityId_;
         }
 
         @Override // emu.grasscutter.net.proto.NpcTalkReqOuterClass.NpcTalkReqOrBuilder
@@ -167,13 +167,13 @@ public final class NpcTalkReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.npcEntityId_ != 0) {
-                output.writeUInt32(11, this.npcEntityId_);
-            }
-            if (this.talkId_ != 0) {
-                output.writeUInt32(12, this.talkId_);
+                output.writeUInt32(9, this.npcEntityId_);
             }
             if (this.entityId_ != 0) {
-                output.writeUInt32(14, this.entityId_);
+                output.writeUInt32(11, this.entityId_);
+            }
+            if (this.talkId_ != 0) {
+                output.writeUInt32(15, this.talkId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,13 +186,13 @@ public final class NpcTalkReqOuterClass {
             }
             int size2 = 0;
             if (this.npcEntityId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(11, this.npcEntityId_);
-            }
-            if (this.talkId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.talkId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(9, this.npcEntityId_);
             }
             if (this.entityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.entityId_);
+                size2 += CodedOutputStream.computeUInt32Size(11, this.entityId_);
+            }
+            if (this.talkId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.talkId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -208,7 +208,7 @@ public final class NpcTalkReqOuterClass {
                 return equals(obj);
             }
             NpcTalkReq other = (NpcTalkReq) obj;
-            return getEntityId() == other.getEntityId() && getNpcEntityId() == other.getNpcEntityId() && getTalkId() == other.getTalkId() && this.unknownFields.equals(other.unknownFields);
+            return getNpcEntityId() == other.getNpcEntityId() && getEntityId() == other.getEntityId() && getTalkId() == other.getTalkId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -216,7 +216,7 @@ public final class NpcTalkReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getEntityId())) + 11)) + getNpcEntityId())) + 12)) + getTalkId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getNpcEntityId())) + 11)) + getEntityId())) + 15)) + getTalkId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -295,8 +295,8 @@ public final class NpcTalkReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/NpcTalkReqOuterClass$NpcTalkReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements NpcTalkReqOrBuilder {
-            private int entityId_;
             private int npcEntityId_;
+            private int entityId_;
             private int talkId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -325,8 +325,8 @@ public final class NpcTalkReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.entityId_ = 0;
                 this.npcEntityId_ = 0;
+                this.entityId_ = 0;
                 this.talkId_ = 0;
                 return this;
             }
@@ -353,8 +353,8 @@ public final class NpcTalkReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public NpcTalkReq buildPartial() {
                 NpcTalkReq result = new NpcTalkReq(this);
-                result.entityId_ = this.entityId_;
                 result.npcEntityId_ = this.npcEntityId_;
+                result.entityId_ = this.entityId_;
                 result.talkId_ = this.talkId_;
                 onBuilt();
                 return result;
@@ -403,11 +403,11 @@ public final class NpcTalkReqOuterClass {
                 if (other == NpcTalkReq.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getEntityId() != 0) {
-                    setEntityId(other.getEntityId());
-                }
                 if (other.getNpcEntityId() != 0) {
                     setNpcEntityId(other.getNpcEntityId());
+                }
+                if (other.getEntityId() != 0) {
+                    setEntityId(other.getEntityId());
                 }
                 if (other.getTalkId() != 0) {
                     setTalkId(other.getTalkId());
@@ -445,23 +445,6 @@ public final class NpcTalkReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.NpcTalkReqOuterClass.NpcTalkReqOrBuilder
-            public int getEntityId() {
-                return this.entityId_;
-            }
-
-            public Builder setEntityId(int value) {
-                this.entityId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearEntityId() {
-                this.entityId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.NpcTalkReqOuterClass.NpcTalkReqOrBuilder
             public int getNpcEntityId() {
                 return this.npcEntityId_;
             }
@@ -474,6 +457,23 @@ public final class NpcTalkReqOuterClass {
 
             public Builder clearNpcEntityId() {
                 this.npcEntityId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.NpcTalkReqOuterClass.NpcTalkReqOrBuilder
+            public int getEntityId() {
+                return this.entityId_;
+            }
+
+            public Builder setEntityId(int value) {
+                this.entityId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearEntityId() {
+                this.entityId_ = 0;
                 onChanged();
                 return this;
             }

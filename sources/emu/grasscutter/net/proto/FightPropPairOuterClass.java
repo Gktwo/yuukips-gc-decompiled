@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FightPropPairOuterClass.class */
 public final class FightPropPairOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013FightPropPair.proto\"6\n\rFightPropPair\u0012\u0011\n\tprop_type\u0018\u0001 \u0001(\r\u0012\u0012\n\nprop_value\u0018\u0002 \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013FightPropPair.proto\"4\n\rFightPropPair\u0012\u0010\n\bpropType\u0018\u0001 \u0001(\r\u0012\u0011\n\tpropValue\u0018\u0002 \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_FightPropPair_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_FightPropPair_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FightPropPair_descriptor, new String[]{"PropType", "PropValue"});
 
@@ -43,9 +43,9 @@ public final class FightPropPairOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FightPropPairOuterClass$FightPropPair.class */
     public static final class FightPropPair extends GeneratedMessageV3 implements FightPropPairOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PROP_TYPE_FIELD_NUMBER = 1;
+        public static final int PROPTYPE_FIELD_NUMBER = 1;
         private int propType_;
-        public static final int PROP_VALUE_FIELD_NUMBER = 2;
+        public static final int PROPVALUE_FIELD_NUMBER = 2;
         private float propValue_;
         private byte memoizedIsInitialized;
         private static final FightPropPair DEFAULT_INSTANCE = new FightPropPair();

@@ -267,14 +267,14 @@ public class NonBlockingIdentityHashMap<TypeK, TypeV> extends AbstractMap<TypeK,
     public static final class Prime {
 
         /* renamed from: _V */
-        final Object f3192_V;
+        final Object f3156_V;
 
         Prime(Object V) {
-            this.f3192_V = V;
+            this.f3156_V = V;
         }
 
         static Object unbox(Object V) {
-            return V instanceof Prime ? ((Prime) V).f3192_V : V;
+            return V instanceof Prime ? ((Prime) V).f3156_V : V;
         }
     }
 
@@ -1019,7 +1019,7 @@ public class NonBlockingIdentityHashMap<TypeK, TypeV> extends AbstractMap<TypeK,
             if (oldval == NonBlockingIdentityHashMap.TOMBPRIME) {
                 return false;
             }
-            Object old_unboxed = ((Prime) oldval).f3192_V;
+            Object old_unboxed = ((Prime) oldval).f3156_V;
             if ($assertionsDisabled || old_unboxed != NonBlockingIdentityHashMap.TOMBSTONE) {
                 NonBlockingIdentityHashMap.putIfMatch0(topmap, newkvs, key, old_unboxed, null);
                 while (oldval != NonBlockingIdentityHashMap.TOMBPRIME && !NonBlockingIdentityHashMap.CAS_val(oldkvs, idx, oldval, NonBlockingIdentityHashMap.TOMBPRIME)) {

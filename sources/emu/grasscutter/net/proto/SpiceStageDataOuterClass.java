@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SpiceStageDataOuterClass.class */
 public final class SpiceStageDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014SpiceStageData.proto\"J\n\u000eSpiceStageData\u0012\u000f\n\u0007is_open\u0018\u0004 \u0001(\b\u0012\u0010\n\bstage_id\u0018\u0005 \u0001(\r\u0012\u0015\n\rsuccess_times\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014SpiceStageData.proto\"G\n\u000eSpiceStageData\u0012\u000e\n\u0006isOpen\u0018\n \u0001(\b\u0012\u0014\n\fsuccessTimes\u0018\u0003 \u0001(\r\u0012\u000f\n\u0007stageId\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SpiceStageData_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SpiceStageData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SpiceStageData_descriptor, new String[]{"IsOpen", "StageId", "SuccessTimes"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SpiceStageData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SpiceStageData_descriptor, new String[]{"IsOpen", "SuccessTimes", "StageId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SpiceStageDataOuterClass$SpiceStageDataOrBuilder.class */
     public interface SpiceStageDataOrBuilder extends MessageOrBuilder {
         boolean getIsOpen();
 
-        int getStageId();
-
         int getSuccessTimes();
+
+        int getStageId();
     }
 
     private SpiceStageDataOuterClass() {
@@ -46,12 +46,12 @@ public final class SpiceStageDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SpiceStageDataOuterClass$SpiceStageData.class */
     public static final class SpiceStageData extends GeneratedMessageV3 implements SpiceStageDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_OPEN_FIELD_NUMBER = 4;
+        public static final int ISOPEN_FIELD_NUMBER = 10;
         private boolean isOpen_;
-        public static final int STAGE_ID_FIELD_NUMBER = 5;
-        private int stageId_;
-        public static final int SUCCESS_TIMES_FIELD_NUMBER = 12;
+        public static final int SUCCESSTIMES_FIELD_NUMBER = 3;
         private int successTimes_;
+        public static final int STAGEID_FIELD_NUMBER = 9;
+        private int stageId_;
         private byte memoizedIsInitialized;
         private static final SpiceStageData DEFAULT_INSTANCE = new SpiceStageData();
         private static final Parser<SpiceStageData> PARSER = new AbstractParser<SpiceStageData>() { // from class: emu.grasscutter.net.proto.SpiceStageDataOuterClass.SpiceStageData.1
@@ -98,14 +98,14 @@ public final class SpiceStageDataOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 32:
-                                    this.isOpen_ = input.readBool();
+                                case 24:
+                                    this.successTimes_ = input.readUInt32();
                                     break;
-                                case 40:
+                                case 72:
                                     this.stageId_ = input.readUInt32();
                                     break;
-                                case 96:
-                                    this.successTimes_ = input.readUInt32();
+                                case 80:
+                                    this.isOpen_ = input.readBool();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -143,13 +143,13 @@ public final class SpiceStageDataOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SpiceStageDataOuterClass.SpiceStageDataOrBuilder
-        public int getStageId() {
-            return this.stageId_;
+        public int getSuccessTimes() {
+            return this.successTimes_;
         }
 
         @Override // emu.grasscutter.net.proto.SpiceStageDataOuterClass.SpiceStageDataOrBuilder
-        public int getSuccessTimes() {
-            return this.successTimes_;
+        public int getStageId() {
+            return this.stageId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,14 +167,14 @@ public final class SpiceStageDataOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.isOpen_) {
-                output.writeBool(4, this.isOpen_);
+            if (this.successTimes_ != 0) {
+                output.writeUInt32(3, this.successTimes_);
             }
             if (this.stageId_ != 0) {
-                output.writeUInt32(5, this.stageId_);
+                output.writeUInt32(9, this.stageId_);
             }
-            if (this.successTimes_ != 0) {
-                output.writeUInt32(12, this.successTimes_);
+            if (this.isOpen_) {
+                output.writeBool(10, this.isOpen_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class SpiceStageDataOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.isOpen_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(4, this.isOpen_);
+            if (this.successTimes_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.successTimes_);
             }
             if (this.stageId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.stageId_);
+                size2 += CodedOutputStream.computeUInt32Size(9, this.stageId_);
             }
-            if (this.successTimes_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.successTimes_);
+            if (this.isOpen_) {
+                size2 += CodedOutputStream.computeBoolSize(10, this.isOpen_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class SpiceStageDataOuterClass {
                 return equals(obj);
             }
             SpiceStageData other = (SpiceStageData) obj;
-            return getIsOpen() == other.getIsOpen() && getStageId() == other.getStageId() && getSuccessTimes() == other.getSuccessTimes() && this.unknownFields.equals(other.unknownFields);
+            return getIsOpen() == other.getIsOpen() && getSuccessTimes() == other.getSuccessTimes() && getStageId() == other.getStageId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class SpiceStageDataOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + Internal.hashBoolean(getIsOpen()))) + 5)) + getStageId())) + 12)) + getSuccessTimes())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + Internal.hashBoolean(getIsOpen()))) + 3)) + getSuccessTimes())) + 9)) + getStageId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -297,8 +297,8 @@ public final class SpiceStageDataOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SpiceStageDataOuterClass$SpiceStageData$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SpiceStageDataOrBuilder {
             private boolean isOpen_;
-            private int stageId_;
             private int successTimes_;
+            private int stageId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return SpiceStageDataOuterClass.internal_static_SpiceStageData_descriptor;
@@ -327,8 +327,8 @@ public final class SpiceStageDataOuterClass {
             public Builder clear() {
                 clear();
                 this.isOpen_ = false;
-                this.stageId_ = 0;
                 this.successTimes_ = 0;
+                this.stageId_ = 0;
                 return this;
             }
 
@@ -355,8 +355,8 @@ public final class SpiceStageDataOuterClass {
             public SpiceStageData buildPartial() {
                 SpiceStageData result = new SpiceStageData(this);
                 result.isOpen_ = this.isOpen_;
-                result.stageId_ = this.stageId_;
                 result.successTimes_ = this.successTimes_;
+                result.stageId_ = this.stageId_;
                 onBuilt();
                 return result;
             }
@@ -407,11 +407,11 @@ public final class SpiceStageDataOuterClass {
                 if (other.getIsOpen()) {
                     setIsOpen(other.getIsOpen());
                 }
-                if (other.getStageId() != 0) {
-                    setStageId(other.getStageId());
-                }
                 if (other.getSuccessTimes() != 0) {
                     setSuccessTimes(other.getSuccessTimes());
+                }
+                if (other.getStageId() != 0) {
+                    setStageId(other.getStageId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -463,23 +463,6 @@ public final class SpiceStageDataOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.SpiceStageDataOuterClass.SpiceStageDataOrBuilder
-            public int getStageId() {
-                return this.stageId_;
-            }
-
-            public Builder setStageId(int value) {
-                this.stageId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearStageId() {
-                this.stageId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.SpiceStageDataOuterClass.SpiceStageDataOrBuilder
             public int getSuccessTimes() {
                 return this.successTimes_;
             }
@@ -492,6 +475,23 @@ public final class SpiceStageDataOuterClass {
 
             public Builder clearSuccessTimes() {
                 this.successTimes_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SpiceStageDataOuterClass.SpiceStageDataOrBuilder
+            public int getStageId() {
+                return this.stageId_;
+            }
+
+            public Builder setStageId(int value) {
+                this.stageId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearStageId() {
+                this.stageId_ = 0;
                 onChanged();
                 return this;
             }

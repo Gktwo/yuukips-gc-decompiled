@@ -40,13 +40,13 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
     protected transient boolean containsNullKey;
 
     /* renamed from: n */
-    protected transient int f2330n;
+    protected transient int f2294n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2331f;
+    protected final float f2295f;
     protected transient Long2IntMap.FastEntrySet entries;
     protected transient LongSet keys;
     protected transient IntCollection values;
@@ -57,14 +57,14 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2331f = f;
+            this.f2295f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2330n = arraySize;
+            this.f2294n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2330n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2330n, f);
-            this.key = new long[this.f2330n + 1];
-            this.value = new int[this.f2330n + 1];
+            this.mask = this.f2294n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2294n, f);
+            this.key = new long[this.f2294n + 1];
+            this.value = new int[this.f2294n + 1];
         }
     }
 
@@ -114,15 +114,15 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2331f);
-        if (needed > this.f2330n) {
+        int needed = HashCommon.arraySize(capacity, this.f2295f);
+        if (needed > this.f2294n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2331f)))));
-        if (needed > this.f2330n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2295f)))));
+        if (needed > this.f2294n) {
             rehash(needed);
         }
     }
@@ -132,8 +132,8 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
         int oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f2330n > this.minN && this.size < this.maxFill / 4 && this.f2330n > 16) {
-            rehash(this.f2330n / 2);
+        if (this.f2294n > this.minN && this.size < this.maxFill / 4 && this.f2294n > 16) {
+            rehash(this.f2294n / 2);
         }
         return oldValue;
     }
@@ -141,17 +141,17 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
     /* access modifiers changed from: private */
     public int removeNullEntry() {
         this.containsNullKey = false;
-        int oldValue = this.value[this.f2330n];
+        int oldValue = this.value[this.f2294n];
         this.size--;
-        if (this.f2330n > this.minN && this.size < this.maxFill / 4 && this.f2330n > 16) {
-            rehash(this.f2330n / 2);
+        if (this.f2294n > this.minN && this.size < this.maxFill / 4 && this.f2294n > 16) {
+            rehash(this.f2294n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLong2IntMap, java.util.Map
     public void putAll(Map<? extends Long, ? extends Integer> m) {
-        if (((double) this.f2331f) <= 0.5d) {
+        if (((double) this.f2295f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -162,7 +162,7 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
     private int find(long k) {
         long curr;
         if (k == 0) {
-            return this.containsNullKey ? this.f2330n : -(this.f2330n + 1);
+            return this.containsNullKey ? this.f2294n : -(this.f2294n + 1);
         }
         long[] key = this.key;
         int mix = ((int) HashCommon.mix(k)) & this.mask;
@@ -186,7 +186,7 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
     }
 
     private void insert(int pos, long k, int v) {
-        if (pos == this.f2330n) {
+        if (pos == this.f2294n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -194,7 +194,7 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2331f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2295f));
         }
     }
 
@@ -238,9 +238,9 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f2330n, incr);
+            return addToValue(this.f2294n, incr);
         } else {
-            pos = this.f2330n;
+            pos = this.f2294n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -248,7 +248,7 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2331f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2295f));
         }
         return this.defRetValue;
     }
@@ -314,7 +314,7 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
     public int get(long k) {
         long curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f2330n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2294n] : this.defRetValue;
         }
         long[] key = this.key;
         int mix = ((int) HashCommon.mix(k)) & this.mask;
@@ -368,10 +368,10 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
     public boolean containsValue(int v) {
         int[] value = this.value;
         long[] key = this.key;
-        if (this.containsNullKey && value[this.f2330n] == v) {
+        if (this.containsNullKey && value[this.f2294n] == v) {
             return true;
         }
-        int i = this.f2330n;
+        int i = this.f2294n;
         while (true) {
             i--;
             if (i == 0) {
@@ -387,7 +387,7 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
     public int getOrDefault(long k, int defaultValue) {
         long curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f2330n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2294n] : defaultValue;
         }
         long[] key = this.key;
         int mix = ((int) HashCommon.mix(k)) & this.mask;
@@ -446,7 +446,7 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
                     return true;
                 }
             }
-        } else if (!this.containsNullKey || v != this.value[this.f2330n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f2294n]) {
             return false;
         } else {
             removeNullEntry();
@@ -701,31 +701,31 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
         int last;
 
         /* renamed from: c */
-        int f2332c;
+        int f2296c;
         boolean mustReturnNullKey;
         LongArrayList wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Long2IntOpenHashMap.this.f2330n;
+            this.pos = Long2IntOpenHashMap.this.f2294n;
             this.last = -1;
-            this.f2332c = Long2IntOpenHashMap.this.size;
+            this.f2296c = Long2IntOpenHashMap.this.size;
             this.mustReturnNullKey = Long2IntOpenHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f2332c != 0;
+            return this.f2296c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2332c--;
+            this.f2296c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Long2IntOpenHashMap.this.f2330n;
+                int i = Long2IntOpenHashMap.this.f2294n;
                 this.last = i;
                 return i;
             }
@@ -757,13 +757,13 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Long2IntOpenHashMap.this.f2330n;
+                int i = Long2IntOpenHashMap.this.f2294n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f2332c--;
+                this.f2296c--;
             }
             long[] key = Long2IntOpenHashMap.this.key;
-            while (this.f2332c != 0) {
+            while (this.f2296c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -780,12 +780,12 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
                         i3 = Long2IntOpenHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f2332c--;
+                    this.f2296c--;
                 } else if (key[this.pos] != 0) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f2332c--;
+                    this.f2296c--;
                 }
             }
         }
@@ -834,7 +834,7 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Long2IntOpenHashMap.this.f2330n) {
+            if (this.last == Long2IntOpenHashMap.this.f2294n) {
                 Long2IntOpenHashMap.this.containsNullKey = false;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
@@ -931,7 +931,7 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
         int max;
 
         /* renamed from: c */
-        int f2333c;
+        int f2297c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -941,16 +941,16 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Long2IntOpenHashMap.this.f2330n;
-            this.f2333c = 0;
+            this.max = Long2IntOpenHashMap.this.f2294n;
+            this.f2297c = 0;
             this.mustReturnNull = Long2IntOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Long2IntOpenHashMap.this.f2330n;
-            this.f2333c = 0;
+            this.max = Long2IntOpenHashMap.this.f2294n;
+            this.f2297c = 0;
             this.mustReturnNull = Long2IntOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -962,14 +962,14 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2333c++;
-                acceptOnIndex(action, Long2IntOpenHashMap.this.f2330n);
+                this.f2297c++;
+                acceptOnIndex(action, Long2IntOpenHashMap.this.f2294n);
                 return true;
             }
             long[] key = Long2IntOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f2333c++;
+                    this.f2297c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -983,14 +983,14 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2333c++;
-                acceptOnIndex(action, Long2IntOpenHashMap.this.f2330n);
+                this.f2297c++;
+                acceptOnIndex(action, Long2IntOpenHashMap.this.f2294n);
             }
             long[] key = Long2IntOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     acceptOnIndex(action, this.pos);
-                    this.f2333c++;
+                    this.f2297c++;
                 }
                 this.pos++;
             }
@@ -998,9 +998,9 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Long2IntOpenHashMap.this.size - this.f2333c);
+                return (long) (Long2IntOpenHashMap.this.size - this.f2297c);
             }
-            return Math.min((long) (Long2IntOpenHashMap.this.size - this.f2333c), ((long) ((((double) Long2IntOpenHashMap.this.realSize()) / ((double) Long2IntOpenHashMap.this.f2330n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Long2IntOpenHashMap.this.size - this.f2297c), ((long) ((((double) Long2IntOpenHashMap.this.realSize()) / ((double) Long2IntOpenHashMap.this.f2294n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1195,7 +1195,7 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
             long k = ((Long) e.getKey()).longValue();
             int v = ((Integer) e.getValue()).intValue();
             if (k == 0) {
-                return Long2IntOpenHashMap.this.containsNullKey && Long2IntOpenHashMap.this.value[Long2IntOpenHashMap.this.f2330n] == v;
+                return Long2IntOpenHashMap.this.containsNullKey && Long2IntOpenHashMap.this.value[Long2IntOpenHashMap.this.f2294n] == v;
             }
             long[] key = Long2IntOpenHashMap.this.key;
             int mix = ((int) HashCommon.mix(k)) & Long2IntOpenHashMap.this.mask;
@@ -1256,7 +1256,7 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
                     Long2IntOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Long2IntOpenHashMap.this.containsNullKey || Long2IntOpenHashMap.this.value[Long2IntOpenHashMap.this.f2330n] != v) {
+            } else if (!Long2IntOpenHashMap.this.containsNullKey || Long2IntOpenHashMap.this.value[Long2IntOpenHashMap.this.f2294n] != v) {
                 return false;
             } else {
                 Long2IntOpenHashMap.this.removeNullEntry();
@@ -1277,9 +1277,9 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Long2IntMap.Entry> consumer) {
             if (Long2IntOpenHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractLong2IntMap.BasicEntry(Long2IntOpenHashMap.this.key[Long2IntOpenHashMap.this.f2330n], Long2IntOpenHashMap.this.value[Long2IntOpenHashMap.this.f2330n]));
+                consumer.accept(new AbstractLong2IntMap.BasicEntry(Long2IntOpenHashMap.this.key[Long2IntOpenHashMap.this.f2294n], Long2IntOpenHashMap.this.value[Long2IntOpenHashMap.this.f2294n]));
             }
-            int pos = Long2IntOpenHashMap.this.f2330n;
+            int pos = Long2IntOpenHashMap.this.f2294n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1295,11 +1295,11 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
         public void fastForEach(Consumer<? super Long2IntMap.Entry> consumer) {
             AbstractLong2IntMap.BasicEntry entry = new AbstractLong2IntMap.BasicEntry();
             if (Long2IntOpenHashMap.this.containsNullKey) {
-                entry.key = Long2IntOpenHashMap.this.key[Long2IntOpenHashMap.this.f2330n];
-                entry.value = Long2IntOpenHashMap.this.value[Long2IntOpenHashMap.this.f2330n];
+                entry.key = Long2IntOpenHashMap.this.key[Long2IntOpenHashMap.this.f2294n];
+                entry.value = Long2IntOpenHashMap.this.value[Long2IntOpenHashMap.this.f2294n];
                 consumer.accept(entry);
             }
-            int pos = Long2IntOpenHashMap.this.f2330n;
+            int pos = Long2IntOpenHashMap.this.f2294n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1407,9 +1407,9 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
         @Override // p014it.unimi.dsi.fastutil.longs.LongIterable
         public void forEach(LongConsumer consumer) {
             if (Long2IntOpenHashMap.this.containsNullKey) {
-                consumer.accept(Long2IntOpenHashMap.this.key[Long2IntOpenHashMap.this.f2330n]);
+                consumer.accept(Long2IntOpenHashMap.this.key[Long2IntOpenHashMap.this.f2294n]);
             }
-            int pos = Long2IntOpenHashMap.this.f2330n;
+            int pos = Long2IntOpenHashMap.this.f2294n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1538,9 +1538,9 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
                 @Override // p014it.unimi.dsi.fastutil.ints.IntIterable
                 public void forEach(IntConsumer consumer) {
                     if (Long2IntOpenHashMap.this.containsNullKey) {
-                        consumer.accept(Long2IntOpenHashMap.this.value[Long2IntOpenHashMap.this.f2330n]);
+                        consumer.accept(Long2IntOpenHashMap.this.value[Long2IntOpenHashMap.this.f2294n]);
                     }
-                    int pos = Long2IntOpenHashMap.this.f2330n;
+                    int pos = Long2IntOpenHashMap.this.f2294n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1576,8 +1576,8 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2331f)));
-        if (l >= this.f2330n || this.size > HashCommon.maxFill(l, this.f2331f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2295f)));
+        if (l >= this.f2294n || this.size > HashCommon.maxFill(l, this.f2295f)) {
             return true;
         }
         try {
@@ -1595,7 +1595,7 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
         int mask = newN - 1;
         long[] newKey = new long[newN + 1];
         int[] newValue = new int[newN + 1];
-        int i2 = this.f2330n;
+        int i2 = this.f2294n;
         int j = realSize();
         while (true) {
             j--;
@@ -1614,10 +1614,10 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f2330n];
-                this.f2330n = newN;
+                newValue[newN] = value[this.f2294n];
+                this.f2294n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2330n, this.f2331f);
+                this.maxFill = HashCommon.maxFill(this.f2294n, this.f2295f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1658,7 +1658,7 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f2330n];
+            h += this.value[this.f2294n];
         }
         return h;
     }
@@ -1684,12 +1684,12 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2330n = HashCommon.arraySize(this.size, this.f2331f);
-        this.maxFill = HashCommon.maxFill(this.f2330n, this.f2331f);
-        this.mask = this.f2330n - 1;
-        long[] key = new long[this.f2330n + 1];
+        this.f2294n = HashCommon.arraySize(this.size, this.f2295f);
+        this.maxFill = HashCommon.maxFill(this.f2294n, this.f2295f);
+        this.mask = this.f2294n - 1;
+        long[] key = new long[this.f2294n + 1];
         this.key = key;
-        int[] value = new int[this.f2330n + 1];
+        int[] value = new int[this.f2294n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1698,7 +1698,7 @@ public class Long2IntOpenHashMap extends AbstractLong2IntMap implements Serializ
                 long k = s.readLong();
                 int v = s.readInt();
                 if (k == 0) {
-                    pos = this.f2330n;
+                    pos = this.f2294n;
                     this.containsNullKey = true;
                 } else {
                     int mix = (int) HashCommon.mix(k);

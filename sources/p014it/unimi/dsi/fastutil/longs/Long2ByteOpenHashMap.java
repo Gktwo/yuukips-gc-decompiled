@@ -41,13 +41,13 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
     protected transient boolean containsNullKey;
 
     /* renamed from: n */
-    protected transient int f2282n;
+    protected transient int f2246n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2283f;
+    protected final float f2247f;
     protected transient Long2ByteMap.FastEntrySet entries;
     protected transient LongSet keys;
     protected transient ByteCollection values;
@@ -58,14 +58,14 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2283f = f;
+            this.f2247f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2282n = arraySize;
+            this.f2246n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2282n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2282n, f);
-            this.key = new long[this.f2282n + 1];
-            this.value = new byte[this.f2282n + 1];
+            this.mask = this.f2246n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2246n, f);
+            this.key = new long[this.f2246n + 1];
+            this.value = new byte[this.f2246n + 1];
         }
     }
 
@@ -115,15 +115,15 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2283f);
-        if (needed > this.f2282n) {
+        int needed = HashCommon.arraySize(capacity, this.f2247f);
+        if (needed > this.f2246n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2283f)))));
-        if (needed > this.f2282n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2247f)))));
+        if (needed > this.f2246n) {
             rehash(needed);
         }
     }
@@ -133,8 +133,8 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
         byte oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f2282n > this.minN && this.size < this.maxFill / 4 && this.f2282n > 16) {
-            rehash(this.f2282n / 2);
+        if (this.f2246n > this.minN && this.size < this.maxFill / 4 && this.f2246n > 16) {
+            rehash(this.f2246n / 2);
         }
         return oldValue;
     }
@@ -142,17 +142,17 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
     /* access modifiers changed from: private */
     public byte removeNullEntry() {
         this.containsNullKey = false;
-        byte oldValue = this.value[this.f2282n];
+        byte oldValue = this.value[this.f2246n];
         this.size--;
-        if (this.f2282n > this.minN && this.size < this.maxFill / 4 && this.f2282n > 16) {
-            rehash(this.f2282n / 2);
+        if (this.f2246n > this.minN && this.size < this.maxFill / 4 && this.f2246n > 16) {
+            rehash(this.f2246n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLong2ByteMap, java.util.Map
     public void putAll(Map<? extends Long, ? extends Byte> m) {
-        if (((double) this.f2283f) <= 0.5d) {
+        if (((double) this.f2247f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -163,7 +163,7 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
     private int find(long k) {
         long curr;
         if (k == 0) {
-            return this.containsNullKey ? this.f2282n : -(this.f2282n + 1);
+            return this.containsNullKey ? this.f2246n : -(this.f2246n + 1);
         }
         long[] key = this.key;
         int mix = ((int) HashCommon.mix(k)) & this.mask;
@@ -187,7 +187,7 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
     }
 
     private void insert(int pos, long k, byte v) {
-        if (pos == this.f2282n) {
+        if (pos == this.f2246n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -195,7 +195,7 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2283f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2247f));
         }
     }
 
@@ -239,9 +239,9 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f2282n, incr);
+            return addToValue(this.f2246n, incr);
         } else {
-            pos = this.f2282n;
+            pos = this.f2246n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -249,7 +249,7 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2283f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2247f));
         }
         return this.defRetValue;
     }
@@ -315,7 +315,7 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
     public byte get(long k) {
         long curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f2282n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2246n] : this.defRetValue;
         }
         long[] key = this.key;
         int mix = ((int) HashCommon.mix(k)) & this.mask;
@@ -369,10 +369,10 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
     public boolean containsValue(byte v) {
         byte[] value = this.value;
         long[] key = this.key;
-        if (this.containsNullKey && value[this.f2282n] == v) {
+        if (this.containsNullKey && value[this.f2246n] == v) {
             return true;
         }
-        int i = this.f2282n;
+        int i = this.f2246n;
         while (true) {
             i--;
             if (i == 0) {
@@ -388,7 +388,7 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
     public byte getOrDefault(long k, byte defaultValue) {
         long curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f2282n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2246n] : defaultValue;
         }
         long[] key = this.key;
         int mix = ((int) HashCommon.mix(k)) & this.mask;
@@ -447,7 +447,7 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
                     return true;
                 }
             }
-        } else if (!this.containsNullKey || v != this.value[this.f2282n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f2246n]) {
             return false;
         } else {
             removeNullEntry();
@@ -702,31 +702,31 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
         int last;
 
         /* renamed from: c */
-        int f2284c;
+        int f2248c;
         boolean mustReturnNullKey;
         LongArrayList wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Long2ByteOpenHashMap.this.f2282n;
+            this.pos = Long2ByteOpenHashMap.this.f2246n;
             this.last = -1;
-            this.f2284c = Long2ByteOpenHashMap.this.size;
+            this.f2248c = Long2ByteOpenHashMap.this.size;
             this.mustReturnNullKey = Long2ByteOpenHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f2284c != 0;
+            return this.f2248c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2284c--;
+            this.f2248c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Long2ByteOpenHashMap.this.f2282n;
+                int i = Long2ByteOpenHashMap.this.f2246n;
                 this.last = i;
                 return i;
             }
@@ -758,13 +758,13 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Long2ByteOpenHashMap.this.f2282n;
+                int i = Long2ByteOpenHashMap.this.f2246n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f2284c--;
+                this.f2248c--;
             }
             long[] key = Long2ByteOpenHashMap.this.key;
-            while (this.f2284c != 0) {
+            while (this.f2248c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -781,12 +781,12 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
                         i3 = Long2ByteOpenHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f2284c--;
+                    this.f2248c--;
                 } else if (key[this.pos] != 0) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f2284c--;
+                    this.f2248c--;
                 }
             }
         }
@@ -835,7 +835,7 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Long2ByteOpenHashMap.this.f2282n) {
+            if (this.last == Long2ByteOpenHashMap.this.f2246n) {
                 Long2ByteOpenHashMap.this.containsNullKey = false;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
@@ -932,7 +932,7 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
         int max;
 
         /* renamed from: c */
-        int f2285c;
+        int f2249c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -942,16 +942,16 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Long2ByteOpenHashMap.this.f2282n;
-            this.f2285c = 0;
+            this.max = Long2ByteOpenHashMap.this.f2246n;
+            this.f2249c = 0;
             this.mustReturnNull = Long2ByteOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Long2ByteOpenHashMap.this.f2282n;
-            this.f2285c = 0;
+            this.max = Long2ByteOpenHashMap.this.f2246n;
+            this.f2249c = 0;
             this.mustReturnNull = Long2ByteOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -963,14 +963,14 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2285c++;
-                acceptOnIndex(action, Long2ByteOpenHashMap.this.f2282n);
+                this.f2249c++;
+                acceptOnIndex(action, Long2ByteOpenHashMap.this.f2246n);
                 return true;
             }
             long[] key = Long2ByteOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f2285c++;
+                    this.f2249c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -984,14 +984,14 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2285c++;
-                acceptOnIndex(action, Long2ByteOpenHashMap.this.f2282n);
+                this.f2249c++;
+                acceptOnIndex(action, Long2ByteOpenHashMap.this.f2246n);
             }
             long[] key = Long2ByteOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     acceptOnIndex(action, this.pos);
-                    this.f2285c++;
+                    this.f2249c++;
                 }
                 this.pos++;
             }
@@ -999,9 +999,9 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Long2ByteOpenHashMap.this.size - this.f2285c);
+                return (long) (Long2ByteOpenHashMap.this.size - this.f2249c);
             }
-            return Math.min((long) (Long2ByteOpenHashMap.this.size - this.f2285c), ((long) ((((double) Long2ByteOpenHashMap.this.realSize()) / ((double) Long2ByteOpenHashMap.this.f2282n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Long2ByteOpenHashMap.this.size - this.f2249c), ((long) ((((double) Long2ByteOpenHashMap.this.realSize()) / ((double) Long2ByteOpenHashMap.this.f2246n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1196,7 +1196,7 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
             long k = ((Long) e.getKey()).longValue();
             byte v = ((Byte) e.getValue()).byteValue();
             if (k == 0) {
-                return Long2ByteOpenHashMap.this.containsNullKey && Long2ByteOpenHashMap.this.value[Long2ByteOpenHashMap.this.f2282n] == v;
+                return Long2ByteOpenHashMap.this.containsNullKey && Long2ByteOpenHashMap.this.value[Long2ByteOpenHashMap.this.f2246n] == v;
             }
             long[] key = Long2ByteOpenHashMap.this.key;
             int mix = ((int) HashCommon.mix(k)) & Long2ByteOpenHashMap.this.mask;
@@ -1257,7 +1257,7 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
                     Long2ByteOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Long2ByteOpenHashMap.this.containsNullKey || Long2ByteOpenHashMap.this.value[Long2ByteOpenHashMap.this.f2282n] != v) {
+            } else if (!Long2ByteOpenHashMap.this.containsNullKey || Long2ByteOpenHashMap.this.value[Long2ByteOpenHashMap.this.f2246n] != v) {
                 return false;
             } else {
                 Long2ByteOpenHashMap.this.removeNullEntry();
@@ -1278,9 +1278,9 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Long2ByteMap.Entry> consumer) {
             if (Long2ByteOpenHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractLong2ByteMap.BasicEntry(Long2ByteOpenHashMap.this.key[Long2ByteOpenHashMap.this.f2282n], Long2ByteOpenHashMap.this.value[Long2ByteOpenHashMap.this.f2282n]));
+                consumer.accept(new AbstractLong2ByteMap.BasicEntry(Long2ByteOpenHashMap.this.key[Long2ByteOpenHashMap.this.f2246n], Long2ByteOpenHashMap.this.value[Long2ByteOpenHashMap.this.f2246n]));
             }
-            int pos = Long2ByteOpenHashMap.this.f2282n;
+            int pos = Long2ByteOpenHashMap.this.f2246n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1296,11 +1296,11 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
         public void fastForEach(Consumer<? super Long2ByteMap.Entry> consumer) {
             AbstractLong2ByteMap.BasicEntry entry = new AbstractLong2ByteMap.BasicEntry();
             if (Long2ByteOpenHashMap.this.containsNullKey) {
-                entry.key = Long2ByteOpenHashMap.this.key[Long2ByteOpenHashMap.this.f2282n];
-                entry.value = Long2ByteOpenHashMap.this.value[Long2ByteOpenHashMap.this.f2282n];
+                entry.key = Long2ByteOpenHashMap.this.key[Long2ByteOpenHashMap.this.f2246n];
+                entry.value = Long2ByteOpenHashMap.this.value[Long2ByteOpenHashMap.this.f2246n];
                 consumer.accept(entry);
             }
-            int pos = Long2ByteOpenHashMap.this.f2282n;
+            int pos = Long2ByteOpenHashMap.this.f2246n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1408,9 +1408,9 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
         @Override // p014it.unimi.dsi.fastutil.longs.LongIterable
         public void forEach(LongConsumer consumer) {
             if (Long2ByteOpenHashMap.this.containsNullKey) {
-                consumer.accept(Long2ByteOpenHashMap.this.key[Long2ByteOpenHashMap.this.f2282n]);
+                consumer.accept(Long2ByteOpenHashMap.this.key[Long2ByteOpenHashMap.this.f2246n]);
             }
-            int pos = Long2ByteOpenHashMap.this.f2282n;
+            int pos = Long2ByteOpenHashMap.this.f2246n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1529,9 +1529,9 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
                 @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterable
                 public void forEach(ByteConsumer consumer) {
                     if (Long2ByteOpenHashMap.this.containsNullKey) {
-                        consumer.accept(Long2ByteOpenHashMap.this.value[Long2ByteOpenHashMap.this.f2282n]);
+                        consumer.accept(Long2ByteOpenHashMap.this.value[Long2ByteOpenHashMap.this.f2246n]);
                     }
-                    int pos = Long2ByteOpenHashMap.this.f2282n;
+                    int pos = Long2ByteOpenHashMap.this.f2246n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1567,8 +1567,8 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2283f)));
-        if (l >= this.f2282n || this.size > HashCommon.maxFill(l, this.f2283f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2247f)));
+        if (l >= this.f2246n || this.size > HashCommon.maxFill(l, this.f2247f)) {
             return true;
         }
         try {
@@ -1586,7 +1586,7 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
         int mask = newN - 1;
         long[] newKey = new long[newN + 1];
         byte[] newValue = new byte[newN + 1];
-        int i2 = this.f2282n;
+        int i2 = this.f2246n;
         int j = realSize();
         while (true) {
             j--;
@@ -1605,10 +1605,10 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f2282n];
-                this.f2282n = newN;
+                newValue[newN] = value[this.f2246n];
+                this.f2246n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2282n, this.f2283f);
+                this.maxFill = HashCommon.maxFill(this.f2246n, this.f2247f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1649,7 +1649,7 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f2282n];
+            h += this.value[this.f2246n];
         }
         return h;
     }
@@ -1675,12 +1675,12 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2282n = HashCommon.arraySize(this.size, this.f2283f);
-        this.maxFill = HashCommon.maxFill(this.f2282n, this.f2283f);
-        this.mask = this.f2282n - 1;
-        long[] key = new long[this.f2282n + 1];
+        this.f2246n = HashCommon.arraySize(this.size, this.f2247f);
+        this.maxFill = HashCommon.maxFill(this.f2246n, this.f2247f);
+        this.mask = this.f2246n - 1;
+        long[] key = new long[this.f2246n + 1];
         this.key = key;
-        byte[] value = new byte[this.f2282n + 1];
+        byte[] value = new byte[this.f2246n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1689,7 +1689,7 @@ public class Long2ByteOpenHashMap extends AbstractLong2ByteMap implements Serial
                 long k = s.readLong();
                 byte v = s.readByte();
                 if (k == 0) {
-                    pos = this.f2282n;
+                    pos = this.f2246n;
                     this.containsNullKey = true;
                 } else {
                     int mix = (int) HashCommon.mix(k);

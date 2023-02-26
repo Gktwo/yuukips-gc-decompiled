@@ -24,17 +24,17 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EvtAiSyncCombatThreatInfoNotifyOuterClass.class */
 public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n%EvtAiSyncCombatThreatInfoNotify.proto\u001a\u0012AiThreatInfo.proto\"Ç\u0001\n\u001fEvtAiSyncCombatThreatInfoNotify\u0012Y\n\u0016combat_threat_info_map\u0018\u000b \u0003(\u000b29.EvtAiSyncCombatThreatInfoNotify.CombatThreatInfoMapEntry\u001aI\n\u0018CombatThreatInfoMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\u001c\n\u0005value\u0018\u0002 \u0001(\u000b2\r.AiThreatInfo:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AiThreatInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n%EvtAiSyncCombatThreatInfoNotify.proto\u001a\u0012AiThreatInfo.proto\"Ä\u0001\n\u001fEvtAiSyncCombatThreatInfoNotify\u0012V\n\u0013combatThreatInfoMap\u0018\b \u0003(\u000b29.EvtAiSyncCombatThreatInfoNotify.CombatThreatInfoMapEntry\u001aI\n\u0018CombatThreatInfoMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\u001c\n\u0005value\u0018\u0002 \u0001(\u000b2\r.AiThreatInfo:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AiThreatInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_EvtAiSyncCombatThreatInfoNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_EvtAiSyncCombatThreatInfoNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f702x8c307990 = new GeneratedMessageV3.FieldAccessorTable(internal_static_EvtAiSyncCombatThreatInfoNotify_descriptor, new String[]{"CombatThreatInfoMap"});
+    private static final GeneratedMessageV3.FieldAccessorTable f699x8c307990 = new GeneratedMessageV3.FieldAccessorTable(internal_static_EvtAiSyncCombatThreatInfoNotify_descriptor, new String[]{"CombatThreatInfoMap"});
 
     /* renamed from: internal_static_EvtAiSyncCombatThreatInfoNotify_CombatThreatInfoMapEntry_descriptor */
-    private static final Descriptors.Descriptor f703x4092c4d9 = internal_static_EvtAiSyncCombatThreatInfoNotify_descriptor.getNestedTypes().get(0);
+    private static final Descriptors.Descriptor f700x4092c4d9 = internal_static_EvtAiSyncCombatThreatInfoNotify_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_EvtAiSyncCombatThreatInfoNotify_CombatThreatInfoMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f704xc5000257 = new GeneratedMessageV3.FieldAccessorTable(f703x4092c4d9, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f701xc5000257 = new GeneratedMessageV3.FieldAccessorTable(f700x4092c4d9, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EvtAiSyncCombatThreatInfoNotifyOuterClass$EvtAiSyncCombatThreatInfoNotifyOrBuilder.class */
     public interface EvtAiSyncCombatThreatInfoNotifyOrBuilder extends MessageOrBuilder {
@@ -65,7 +65,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EvtAiSyncCombatThreatInfoNotifyOuterClass$EvtAiSyncCombatThreatInfoNotify.class */
     public static final class EvtAiSyncCombatThreatInfoNotify extends GeneratedMessageV3 implements EvtAiSyncCombatThreatInfoNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int COMBAT_THREAT_INFO_MAP_FIELD_NUMBER = 11;
+        public static final int COMBATTHREATINFOMAP_FIELD_NUMBER = 8;
         private MapField<Integer, AiThreatInfoOuterClass.AiThreatInfo> combatThreatInfoMap_;
         private byte memoizedIsInitialized;
         private static final EvtAiSyncCombatThreatInfoNotify DEFAULT_INSTANCE = new EvtAiSyncCombatThreatInfoNotify();
@@ -117,7 +117,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
                 r4 = this;
                 r0 = r5
                 switch(r0) {
-                    case 11: goto L_0x0014;
+                    case 8: goto L_0x0014;
                     default: goto L_0x0019;
                 }
                 r0 = r4
@@ -170,7 +170,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 90:
+                            case 66:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.combatThreatInfoMap_ = MapField.newMapField(CombatThreatInfoMapDefaultEntryHolder.defaultEntry);
                                     mutable_bitField0_ |= 1;
@@ -204,13 +204,13 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return EvtAiSyncCombatThreatInfoNotifyOuterClass.f702x8c307990.ensureFieldAccessorsInitialized(EvtAiSyncCombatThreatInfoNotify.class, Builder.class);
+            return EvtAiSyncCombatThreatInfoNotifyOuterClass.f699x8c307990.ensureFieldAccessorsInitialized(EvtAiSyncCombatThreatInfoNotify.class, Builder.class);
         }
 
         /* access modifiers changed from: private */
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EvtAiSyncCombatThreatInfoNotifyOuterClass$EvtAiSyncCombatThreatInfoNotify$CombatThreatInfoMapDefaultEntryHolder.class */
         public static final class CombatThreatInfoMapDefaultEntryHolder {
-            static final MapEntry<Integer, AiThreatInfoOuterClass.AiThreatInfo> defaultEntry = MapEntry.newDefaultInstance(EvtAiSyncCombatThreatInfoNotifyOuterClass.f703x4092c4d9, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.MESSAGE, AiThreatInfoOuterClass.AiThreatInfo.getDefaultInstance());
+            static final MapEntry<Integer, AiThreatInfoOuterClass.AiThreatInfo> defaultEntry = MapEntry.newDefaultInstance(EvtAiSyncCombatThreatInfoNotifyOuterClass.f700x4092c4d9, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.MESSAGE, AiThreatInfoOuterClass.AiThreatInfo.getDefaultInstance());
 
             private CombatThreatInfoMapDefaultEntryHolder() {
             }
@@ -274,7 +274,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetCombatThreatInfoMap(), CombatThreatInfoMapDefaultEntryHolder.defaultEntry, 11);
+            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetCombatThreatInfoMap(), CombatThreatInfoMapDefaultEntryHolder.defaultEntry, 8);
             this.unknownFields.writeTo(output);
         }
 
@@ -286,7 +286,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
             }
             int size2 = 0;
             for (Map.Entry<Integer, AiThreatInfoOuterClass.AiThreatInfo> entry : internalGetCombatThreatInfoMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(11, CombatThreatInfoMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+                size2 += CodedOutputStream.computeMessageSize(8, CombatThreatInfoMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -312,7 +312,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (!internalGetCombatThreatInfoMap().getMap().isEmpty()) {
-                hash = (53 * ((37 * hash) + 11)) + internalGetCombatThreatInfoMap().hashCode();
+                hash = (53 * ((37 * hash) + 8)) + internalGetCombatThreatInfoMap().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -433,7 +433,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 11: goto L_0x0014;
+                        case 8: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -486,7 +486,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 11: goto L_0x0014;
+                        case 8: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -508,7 +508,7 @@ public final class EvtAiSyncCombatThreatInfoNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return EvtAiSyncCombatThreatInfoNotifyOuterClass.f702x8c307990.ensureFieldAccessorsInitialized(EvtAiSyncCombatThreatInfoNotify.class, Builder.class);
+                return EvtAiSyncCombatThreatInfoNotifyOuterClass.f699x8c307990.ensureFieldAccessorsInitialized(EvtAiSyncCombatThreatInfoNotify.class, Builder.class);
             }
 
             private Builder() {

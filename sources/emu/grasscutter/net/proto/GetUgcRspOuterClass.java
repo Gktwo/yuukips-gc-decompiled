@@ -16,9 +16,8 @@ import com.google.protobuf.MessageOrBuilder;
 import com.google.protobuf.Parser;
 import com.google.protobuf.SingleFieldBuilderV3;
 import com.google.protobuf.UnknownFieldSet;
+import emu.grasscutter.net.proto.MusicRecordOuterClass;
 import emu.grasscutter.net.proto.RecordUsageOuterClass;
-import emu.grasscutter.net.proto.UgcMusicBriefInfoOuterClass;
-import emu.grasscutter.net.proto.UgcMusicRecordOuterClass;
 import emu.grasscutter.net.proto.UgcTypeOuterClass;
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,39 +25,31 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetUgcRspOuterClass.class */
 public final class GetUgcRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000fGetUgcRsp.proto\u001a\u0011RecordUsage.proto\u001a\u0017UgcMusicBriefInfo.proto\u001a\u0014UgcMusicRecord.proto\u001a\rUgcType.proto\"ß\u0001\n\tGetUgcRsp\u0012\u000f\n\u0007retcode\u0018\n \u0001(\u0005\u0012&\n\u0010ugc_record_usage\u0018\u0005 \u0001(\u000e2\f.RecordUsage\u0012\u001a\n\bugc_type\u0018\u0006 \u0001(\u000e2\b.UgcType\u0012\u0010\n\bugc_guid\u0018\u0003 \u0001(\u0004\u0012'\n\fmusic_record\u0018\u0002 \u0001(\u000b2\u000f.UgcMusicRecordH��\u0012/\n\u0010music_brief_info\u0018\f \u0001(\u000b2\u0012.UgcMusicBriefInfoH\u0001B\b\n\u0006recordB\u0007\n\u0005briefB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{RecordUsageOuterClass.getDescriptor(), UgcMusicBriefInfoOuterClass.getDescriptor(), UgcMusicRecordOuterClass.getDescriptor(), UgcTypeOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000fGetUgcRsp.proto\u001a\rUgcType.proto\u001a\u0011RecordUsage.proto\u001a\u0011MusicRecord.proto\"\u0001\n\tGetUgcRsp\u0012\u0019\n\u0007ugcType\u0018\f \u0001(\u000e2\b.UgcType\u0012\u000f\n\u0007retcode\u0018\b \u0001(\u0005\u0012$\n\u000eugcRecordUsage\u0018\u0007 \u0001(\u000e2\f.RecordUsage\u0012\u000f\n\u0007ugcGuid\u0018\t \u0001(\u0004\u0012$\n\fmusic_record\u0018\u0001 \u0001(\u000b2\f.MusicRecordH��B\b\n\u0006recordB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{UgcTypeOuterClass.getDescriptor(), RecordUsageOuterClass.getDescriptor(), MusicRecordOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_GetUgcRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetUgcRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetUgcRsp_descriptor, new String[]{"Retcode", "UgcRecordUsage", "UgcType", "UgcGuid", "MusicRecord", "MusicBriefInfo", "Record", "Brief"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetUgcRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetUgcRsp_descriptor, new String[]{"UgcType", "Retcode", "UgcRecordUsage", "UgcGuid", "MusicRecord", "Record"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetUgcRspOuterClass$GetUgcRspOrBuilder.class */
     public interface GetUgcRspOrBuilder extends MessageOrBuilder {
+        int getUgcTypeValue();
+
+        UgcTypeOuterClass.UgcType getUgcType();
+
         int getRetcode();
 
         int getUgcRecordUsageValue();
 
         RecordUsageOuterClass.RecordUsage getUgcRecordUsage();
 
-        int getUgcTypeValue();
-
-        UgcTypeOuterClass.UgcType getUgcType();
-
         long getUgcGuid();
 
         boolean hasMusicRecord();
 
-        UgcMusicRecordOuterClass.UgcMusicRecord getMusicRecord();
+        MusicRecordOuterClass.MusicRecord getMusicRecord();
 
-        UgcMusicRecordOuterClass.UgcMusicRecordOrBuilder getMusicRecordOrBuilder();
-
-        boolean hasMusicBriefInfo();
-
-        UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo getMusicBriefInfo();
-
-        UgcMusicBriefInfoOuterClass.UgcMusicBriefInfoOrBuilder getMusicBriefInfoOrBuilder();
+        MusicRecordOuterClass.MusicRecordOrBuilder getMusicRecordOrBuilder();
 
         GetUgcRsp.RecordCase getRecordCase();
-
-        GetUgcRsp.BriefCase getBriefCase();
     }
 
     private GetUgcRspOuterClass() {
@@ -76,18 +67,15 @@ public final class GetUgcRspOuterClass {
         private static final long serialVersionUID = 0;
         private int recordCase_;
         private Object record_;
-        private int briefCase_;
-        private Object brief_;
-        public static final int RETCODE_FIELD_NUMBER = 10;
-        private int retcode_;
-        public static final int UGC_RECORD_USAGE_FIELD_NUMBER = 5;
-        private int ugcRecordUsage_;
-        public static final int UGC_TYPE_FIELD_NUMBER = 6;
+        public static final int UGCTYPE_FIELD_NUMBER = 12;
         private int ugcType_;
-        public static final int UGC_GUID_FIELD_NUMBER = 3;
+        public static final int RETCODE_FIELD_NUMBER = 8;
+        private int retcode_;
+        public static final int UGCRECORDUSAGE_FIELD_NUMBER = 7;
+        private int ugcRecordUsage_;
+        public static final int UGCGUID_FIELD_NUMBER = 9;
         private long ugcGuid_;
-        public static final int MUSIC_RECORD_FIELD_NUMBER = 2;
-        public static final int MUSIC_BRIEF_INFO_FIELD_NUMBER = 1540;
+        public static final int MUSIC_RECORD_FIELD_NUMBER = 1;
         private byte memoizedIsInitialized;
         private static final GetUgcRsp DEFAULT_INSTANCE = new GetUgcRsp();
         private static final Parser<GetUgcRsp> PARSER = new AbstractParser<GetUgcRsp>() { // from class: emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRsp.1
@@ -100,16 +88,14 @@ public final class GetUgcRspOuterClass {
         private GetUgcRsp(GeneratedMessageV3.Builder<?> builder) {
             super(builder);
             this.recordCase_ = 0;
-            this.briefCase_ = 0;
             this.memoizedIsInitialized = -1;
         }
 
         private GetUgcRsp() {
             this.recordCase_ = 0;
-            this.briefCase_ = 0;
             this.memoizedIsInitialized = -1;
-            this.ugcRecordUsage_ = 0;
             this.ugcType_ = 0;
+            this.ugcRecordUsage_ = 0;
         }
 
         /* access modifiers changed from: protected */
@@ -139,35 +125,26 @@ public final class GetUgcRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 18:
-                                UgcMusicRecordOuterClass.UgcMusicRecord.Builder subBuilder = this.recordCase_ == 2 ? ((UgcMusicRecordOuterClass.UgcMusicRecord) this.record_).toBuilder() : null;
-                                this.record_ = input.readMessage(UgcMusicRecordOuterClass.UgcMusicRecord.parser(), extensionRegistry);
+                            case 10:
+                                MusicRecordOuterClass.MusicRecord.Builder subBuilder = this.recordCase_ == 1 ? ((MusicRecordOuterClass.MusicRecord) this.record_).toBuilder() : null;
+                                this.record_ = input.readMessage(MusicRecordOuterClass.MusicRecord.parser(), extensionRegistry);
                                 if (subBuilder != null) {
-                                    subBuilder.mergeFrom((UgcMusicRecordOuterClass.UgcMusicRecord) this.record_);
+                                    subBuilder.mergeFrom((MusicRecordOuterClass.MusicRecord) this.record_);
                                     this.record_ = subBuilder.buildPartial();
                                 }
-                                this.recordCase_ = 2;
+                                this.recordCase_ = 1;
                                 break;
-                            case 24:
-                                this.ugcGuid_ = input.readUInt64();
-                                break;
-                            case 40:
+                            case 56:
                                 this.ugcRecordUsage_ = input.readEnum();
                                 break;
-                            case 48:
-                                this.ugcType_ = input.readEnum();
-                                break;
-                            case 80:
+                            case 64:
                                 this.retcode_ = input.readInt32();
                                 break;
-                            case 12322:
-                                UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder subBuilder2 = this.briefCase_ == 1540 ? ((UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) this.brief_).toBuilder() : null;
-                                this.brief_ = input.readMessage(UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.parser(), extensionRegistry);
-                                if (subBuilder2 != null) {
-                                    subBuilder2.mergeFrom((UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) this.brief_);
-                                    this.brief_ = subBuilder2.buildPartial();
-                                }
-                                this.briefCase_ = MUSIC_BRIEF_INFO_FIELD_NUMBER;
+                            case 72:
+                                this.ugcGuid_ = input.readUInt64();
+                                break;
+                            case 96:
+                                this.ugcType_ = input.readEnum();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -200,7 +177,7 @@ public final class GetUgcRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetUgcRspOuterClass$GetUgcRsp$RecordCase.class */
         public enum RecordCase implements Internal.EnumLite, AbstractMessageLite.InternalOneOfEnum {
-            MUSIC_RECORD(2),
+            MUSIC_RECORD(1),
             RECORD_NOT_SET(0);
             
             private final int value;
@@ -218,7 +195,7 @@ public final class GetUgcRspOuterClass {
                 switch (value) {
                     case 0:
                         return RECORD_NOT_SET;
-                    case 2:
+                    case 1:
                         return MUSIC_RECORD;
                     default:
                         return null;
@@ -236,42 +213,15 @@ public final class GetUgcRspOuterClass {
             return RecordCase.forNumber(this.recordCase_);
         }
 
-        /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetUgcRspOuterClass$GetUgcRsp$BriefCase.class */
-        public enum BriefCase implements Internal.EnumLite, AbstractMessageLite.InternalOneOfEnum {
-            MUSIC_BRIEF_INFO(GetUgcRsp.MUSIC_BRIEF_INFO_FIELD_NUMBER),
-            BRIEF_NOT_SET(0);
-            
-            private final int value;
-
-            BriefCase(int value) {
-                this.value = value;
-            }
-
-            @Deprecated
-            public static BriefCase valueOf(int value) {
-                return forNumber(value);
-            }
-
-            public static BriefCase forNumber(int value) {
-                switch (value) {
-                    case 0:
-                        return BRIEF_NOT_SET;
-                    case GetUgcRsp.MUSIC_BRIEF_INFO_FIELD_NUMBER /* 1540 */:
-                        return MUSIC_BRIEF_INFO;
-                    default:
-                        return null;
-                }
-            }
-
-            @Override // com.google.protobuf.Internal.EnumLite
-            public int getNumber() {
-                return this.value;
-            }
+        @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
+        public int getUgcTypeValue() {
+            return this.ugcType_;
         }
 
         @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
-        public BriefCase getBriefCase() {
-            return BriefCase.forNumber(this.briefCase_);
+        public UgcTypeOuterClass.UgcType getUgcType() {
+            UgcTypeOuterClass.UgcType result = UgcTypeOuterClass.UgcType.valueOf(this.ugcType_);
+            return result == null ? UgcTypeOuterClass.UgcType.UNRECOGNIZED : result;
         }
 
         @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
@@ -291,61 +241,29 @@ public final class GetUgcRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
-        public int getUgcTypeValue() {
-            return this.ugcType_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
-        public UgcTypeOuterClass.UgcType getUgcType() {
-            UgcTypeOuterClass.UgcType result = UgcTypeOuterClass.UgcType.valueOf(this.ugcType_);
-            return result == null ? UgcTypeOuterClass.UgcType.UNRECOGNIZED : result;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
         public long getUgcGuid() {
             return this.ugcGuid_;
         }
 
         @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
         public boolean hasMusicRecord() {
-            return this.recordCase_ == 2;
+            return this.recordCase_ == 1;
         }
 
         @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
-        public UgcMusicRecordOuterClass.UgcMusicRecord getMusicRecord() {
-            if (this.recordCase_ == 2) {
-                return (UgcMusicRecordOuterClass.UgcMusicRecord) this.record_;
+        public MusicRecordOuterClass.MusicRecord getMusicRecord() {
+            if (this.recordCase_ == 1) {
+                return (MusicRecordOuterClass.MusicRecord) this.record_;
             }
-            return UgcMusicRecordOuterClass.UgcMusicRecord.getDefaultInstance();
+            return MusicRecordOuterClass.MusicRecord.getDefaultInstance();
         }
 
         @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
-        public UgcMusicRecordOuterClass.UgcMusicRecordOrBuilder getMusicRecordOrBuilder() {
-            if (this.recordCase_ == 2) {
-                return (UgcMusicRecordOuterClass.UgcMusicRecord) this.record_;
+        public MusicRecordOuterClass.MusicRecordOrBuilder getMusicRecordOrBuilder() {
+            if (this.recordCase_ == 1) {
+                return (MusicRecordOuterClass.MusicRecord) this.record_;
             }
-            return UgcMusicRecordOuterClass.UgcMusicRecord.getDefaultInstance();
-        }
-
-        @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
-        public boolean hasMusicBriefInfo() {
-            return this.briefCase_ == 1540;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
-        public UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo getMusicBriefInfo() {
-            if (this.briefCase_ == 1540) {
-                return (UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) this.brief_;
-            }
-            return UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.getDefaultInstance();
-        }
-
-        @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
-        public UgcMusicBriefInfoOuterClass.UgcMusicBriefInfoOrBuilder getMusicBriefInfoOrBuilder() {
-            if (this.briefCase_ == 1540) {
-                return (UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) this.brief_;
-            }
-            return UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.getDefaultInstance();
+            return MusicRecordOuterClass.MusicRecord.getDefaultInstance();
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -363,23 +281,20 @@ public final class GetUgcRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.recordCase_ == 2) {
-                output.writeMessage(2, (UgcMusicRecordOuterClass.UgcMusicRecord) this.record_);
-            }
-            if (this.ugcGuid_ != 0) {
-                output.writeUInt64(3, this.ugcGuid_);
+            if (this.recordCase_ == 1) {
+                output.writeMessage(1, (MusicRecordOuterClass.MusicRecord) this.record_);
             }
             if (this.ugcRecordUsage_ != RecordUsageOuterClass.RecordUsage.RECORD_USAGE_UGC_RECORD_USAGE_NONE.getNumber()) {
-                output.writeEnum(5, this.ugcRecordUsage_);
-            }
-            if (this.ugcType_ != UgcTypeOuterClass.UgcType.UGC_TYPE_NONE.getNumber()) {
-                output.writeEnum(6, this.ugcType_);
+                output.writeEnum(7, this.ugcRecordUsage_);
             }
             if (this.retcode_ != 0) {
-                output.writeInt32(10, this.retcode_);
+                output.writeInt32(8, this.retcode_);
             }
-            if (this.briefCase_ == 1540) {
-                output.writeMessage(MUSIC_BRIEF_INFO_FIELD_NUMBER, (UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) this.brief_);
+            if (this.ugcGuid_ != 0) {
+                output.writeUInt64(9, this.ugcGuid_);
+            }
+            if (this.ugcType_ != UgcTypeOuterClass.UgcType.UGC_TYPE_NONE.getNumber()) {
+                output.writeEnum(12, this.ugcType_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -391,23 +306,20 @@ public final class GetUgcRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.recordCase_ == 2) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(2, (UgcMusicRecordOuterClass.UgcMusicRecord) this.record_);
-            }
-            if (this.ugcGuid_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(3, this.ugcGuid_);
+            if (this.recordCase_ == 1) {
+                size2 = 0 + CodedOutputStream.computeMessageSize(1, (MusicRecordOuterClass.MusicRecord) this.record_);
             }
             if (this.ugcRecordUsage_ != RecordUsageOuterClass.RecordUsage.RECORD_USAGE_UGC_RECORD_USAGE_NONE.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(5, this.ugcRecordUsage_);
-            }
-            if (this.ugcType_ != UgcTypeOuterClass.UgcType.UGC_TYPE_NONE.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(6, this.ugcType_);
+                size2 += CodedOutputStream.computeEnumSize(7, this.ugcRecordUsage_);
             }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(10, this.retcode_);
+                size2 += CodedOutputStream.computeInt32Size(8, this.retcode_);
             }
-            if (this.briefCase_ == 1540) {
-                size2 += CodedOutputStream.computeMessageSize(MUSIC_BRIEF_INFO_FIELD_NUMBER, (UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) this.brief_);
+            if (this.ugcGuid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(9, this.ugcGuid_);
+            }
+            if (this.ugcType_ != UgcTypeOuterClass.UgcType.UGC_TYPE_NONE.getNumber()) {
+                size2 += CodedOutputStream.computeEnumSize(12, this.ugcType_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -423,22 +335,12 @@ public final class GetUgcRspOuterClass {
                 return equals(obj);
             }
             GetUgcRsp other = (GetUgcRsp) obj;
-            if (getRetcode() != other.getRetcode() || this.ugcRecordUsage_ != other.ugcRecordUsage_ || this.ugcType_ != other.ugcType_ || getUgcGuid() != other.getUgcGuid() || !getRecordCase().equals(other.getRecordCase())) {
+            if (this.ugcType_ != other.ugcType_ || getRetcode() != other.getRetcode() || this.ugcRecordUsage_ != other.ugcRecordUsage_ || getUgcGuid() != other.getUgcGuid() || !getRecordCase().equals(other.getRecordCase())) {
                 return false;
             }
             switch (this.recordCase_) {
-                case 2:
+                case 1:
                     if (!getMusicRecord().equals(other.getMusicRecord())) {
-                        return false;
-                    }
-                    break;
-            }
-            if (!getBriefCase().equals(other.getBriefCase())) {
-                return false;
-            }
-            switch (this.briefCase_) {
-                case MUSIC_BRIEF_INFO_FIELD_NUMBER /* 1540 */:
-                    if (!getMusicBriefInfo().equals(other.getMusicBriefInfo())) {
                         return false;
                     }
                     break;
@@ -451,15 +353,10 @@ public final class GetUgcRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getRetcode())) + 5)) + this.ugcRecordUsage_)) + 6)) + this.ugcType_)) + 3)) + Internal.hashLong(getUgcGuid());
+            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + this.ugcType_)) + 8)) + getRetcode())) + 7)) + this.ugcRecordUsage_)) + 9)) + Internal.hashLong(getUgcGuid());
             switch (this.recordCase_) {
-                case 2:
-                    hash = (53 * ((37 * hash) + 2)) + getMusicRecord().hashCode();
-                    break;
-            }
-            switch (this.briefCase_) {
-                case MUSIC_BRIEF_INFO_FIELD_NUMBER /* 1540 */:
-                    hash = (53 * ((37 * hash) + MUSIC_BRIEF_INFO_FIELD_NUMBER)) + getMusicBriefInfo().hashCode();
+                case 1:
+                    hash = (53 * ((37 * hash) + 1)) + getMusicRecord().hashCode();
                     break;
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
@@ -542,15 +439,12 @@ public final class GetUgcRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetUgcRspOuterClass$GetUgcRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements GetUgcRspOrBuilder {
             private Object record_;
-            private Object brief_;
             private int retcode_;
             private long ugcGuid_;
-            private SingleFieldBuilderV3<UgcMusicRecordOuterClass.UgcMusicRecord, UgcMusicRecordOuterClass.UgcMusicRecord.Builder, UgcMusicRecordOuterClass.UgcMusicRecordOrBuilder> musicRecordBuilder_;
-            private SingleFieldBuilderV3<UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo, UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder, UgcMusicBriefInfoOuterClass.UgcMusicBriefInfoOrBuilder> musicBriefInfoBuilder_;
+            private SingleFieldBuilderV3<MusicRecordOuterClass.MusicRecord, MusicRecordOuterClass.MusicRecord.Builder, MusicRecordOuterClass.MusicRecordOrBuilder> musicRecordBuilder_;
             private int recordCase_ = 0;
-            private int briefCase_ = 0;
-            private int ugcRecordUsage_ = 0;
             private int ugcType_ = 0;
+            private int ugcRecordUsage_ = 0;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return GetUgcRspOuterClass.internal_static_GetUgcRsp_descriptor;
@@ -578,14 +472,12 @@ public final class GetUgcRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.ugcType_ = 0;
                 this.retcode_ = 0;
                 this.ugcRecordUsage_ = 0;
-                this.ugcType_ = 0;
                 this.ugcGuid_ = 0;
                 this.recordCase_ = 0;
                 this.record_ = null;
-                this.briefCase_ = 0;
-                this.brief_ = null;
                 return this;
             }
 
@@ -611,26 +503,18 @@ public final class GetUgcRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public GetUgcRsp buildPartial() {
                 GetUgcRsp result = new GetUgcRsp(this);
+                result.ugcType_ = this.ugcType_;
                 result.retcode_ = this.retcode_;
                 result.ugcRecordUsage_ = this.ugcRecordUsage_;
-                result.ugcType_ = this.ugcType_;
                 result.ugcGuid_ = this.ugcGuid_;
-                if (this.recordCase_ == 2) {
+                if (this.recordCase_ == 1) {
                     if (this.musicRecordBuilder_ == null) {
                         result.record_ = this.record_;
                     } else {
                         result.record_ = this.musicRecordBuilder_.build();
                     }
                 }
-                if (this.briefCase_ == 1540) {
-                    if (this.musicBriefInfoBuilder_ == null) {
-                        result.brief_ = this.brief_;
-                    } else {
-                        result.brief_ = this.musicBriefInfoBuilder_.build();
-                    }
-                }
                 result.recordCase_ = this.recordCase_;
-                result.briefCase_ = this.briefCase_;
                 onBuilt();
                 return result;
             }
@@ -678,14 +562,14 @@ public final class GetUgcRspOuterClass {
                 if (other == GetUgcRsp.getDefaultInstance()) {
                     return this;
                 }
+                if (other.ugcType_ != 0) {
+                    setUgcTypeValue(other.getUgcTypeValue());
+                }
                 if (other.getRetcode() != 0) {
                     setRetcode(other.getRetcode());
                 }
                 if (other.ugcRecordUsage_ != 0) {
                     setUgcRecordUsageValue(other.getUgcRecordUsageValue());
-                }
-                if (other.ugcType_ != 0) {
-                    setUgcTypeValue(other.getUgcTypeValue());
                 }
                 if (other.getUgcGuid() != 0) {
                     setUgcGuid(other.getUgcGuid());
@@ -693,11 +577,6 @@ public final class GetUgcRspOuterClass {
                 switch (other.getRecordCase()) {
                     case MUSIC_RECORD:
                         mergeMusicRecord(other.getMusicRecord());
-                        break;
-                }
-                switch (other.getBriefCase()) {
-                    case MUSIC_BRIEF_INFO:
-                        mergeMusicBriefInfo(other.getMusicBriefInfo());
                         break;
                 }
                 mergeUnknownFields(other.unknownFields);
@@ -745,13 +624,33 @@ public final class GetUgcRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
-            public BriefCase getBriefCase() {
-                return BriefCase.forNumber(this.briefCase_);
+            public int getUgcTypeValue() {
+                return this.ugcType_;
             }
 
-            public Builder clearBrief() {
-                this.briefCase_ = 0;
-                this.brief_ = null;
+            public Builder setUgcTypeValue(int value) {
+                this.ugcType_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
+            public UgcTypeOuterClass.UgcType getUgcType() {
+                UgcTypeOuterClass.UgcType result = UgcTypeOuterClass.UgcType.valueOf(this.ugcType_);
+                return result == null ? UgcTypeOuterClass.UgcType.UNRECOGNIZED : result;
+            }
+
+            public Builder setUgcType(UgcTypeOuterClass.UgcType value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.ugcType_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUgcType() {
+                this.ugcType_ = 0;
                 onChanged();
                 return this;
             }
@@ -806,38 +705,6 @@ public final class GetUgcRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
-            public int getUgcTypeValue() {
-                return this.ugcType_;
-            }
-
-            public Builder setUgcTypeValue(int value) {
-                this.ugcType_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
-            public UgcTypeOuterClass.UgcType getUgcType() {
-                UgcTypeOuterClass.UgcType result = UgcTypeOuterClass.UgcType.valueOf(this.ugcType_);
-                return result == null ? UgcTypeOuterClass.UgcType.UNRECOGNIZED : result;
-            }
-
-            public Builder setUgcType(UgcTypeOuterClass.UgcType value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.ugcType_ = value.getNumber();
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUgcType() {
-                this.ugcType_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
             public long getUgcGuid() {
                 return this.ugcGuid_;
             }
@@ -856,24 +723,24 @@ public final class GetUgcRspOuterClass {
 
             @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
             public boolean hasMusicRecord() {
-                return this.recordCase_ == 2;
+                return this.recordCase_ == 1;
             }
 
             @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
-            public UgcMusicRecordOuterClass.UgcMusicRecord getMusicRecord() {
+            public MusicRecordOuterClass.MusicRecord getMusicRecord() {
                 if (this.musicRecordBuilder_ == null) {
-                    if (this.recordCase_ == 2) {
-                        return (UgcMusicRecordOuterClass.UgcMusicRecord) this.record_;
+                    if (this.recordCase_ == 1) {
+                        return (MusicRecordOuterClass.MusicRecord) this.record_;
                     }
-                    return UgcMusicRecordOuterClass.UgcMusicRecord.getDefaultInstance();
-                } else if (this.recordCase_ == 2) {
+                    return MusicRecordOuterClass.MusicRecord.getDefaultInstance();
+                } else if (this.recordCase_ == 1) {
                     return this.musicRecordBuilder_.getMessage();
                 } else {
-                    return UgcMusicRecordOuterClass.UgcMusicRecord.getDefaultInstance();
+                    return MusicRecordOuterClass.MusicRecord.getDefaultInstance();
                 }
             }
 
-            public Builder setMusicRecord(UgcMusicRecordOuterClass.UgcMusicRecord value) {
+            public Builder setMusicRecord(MusicRecordOuterClass.MusicRecord value) {
                 if (this.musicRecordBuilder_ != null) {
                     this.musicRecordBuilder_.setMessage(value);
                 } else if (value == null) {
@@ -882,47 +749,47 @@ public final class GetUgcRspOuterClass {
                     this.record_ = value;
                     onChanged();
                 }
-                this.recordCase_ = 2;
+                this.recordCase_ = 1;
                 return this;
             }
 
-            public Builder setMusicRecord(UgcMusicRecordOuterClass.UgcMusicRecord.Builder builderForValue) {
+            public Builder setMusicRecord(MusicRecordOuterClass.MusicRecord.Builder builderForValue) {
                 if (this.musicRecordBuilder_ == null) {
                     this.record_ = builderForValue.build();
                     onChanged();
                 } else {
                     this.musicRecordBuilder_.setMessage(builderForValue.build());
                 }
-                this.recordCase_ = 2;
+                this.recordCase_ = 1;
                 return this;
             }
 
-            public Builder mergeMusicRecord(UgcMusicRecordOuterClass.UgcMusicRecord value) {
+            public Builder mergeMusicRecord(MusicRecordOuterClass.MusicRecord value) {
                 if (this.musicRecordBuilder_ == null) {
-                    if (this.recordCase_ != 2 || this.record_ == UgcMusicRecordOuterClass.UgcMusicRecord.getDefaultInstance()) {
+                    if (this.recordCase_ != 1 || this.record_ == MusicRecordOuterClass.MusicRecord.getDefaultInstance()) {
                         this.record_ = value;
                     } else {
-                        this.record_ = UgcMusicRecordOuterClass.UgcMusicRecord.newBuilder((UgcMusicRecordOuterClass.UgcMusicRecord) this.record_).mergeFrom(value).buildPartial();
+                        this.record_ = MusicRecordOuterClass.MusicRecord.newBuilder((MusicRecordOuterClass.MusicRecord) this.record_).mergeFrom(value).buildPartial();
                     }
                     onChanged();
                 } else {
-                    if (this.recordCase_ == 2) {
+                    if (this.recordCase_ == 1) {
                         this.musicRecordBuilder_.mergeFrom(value);
                     }
                     this.musicRecordBuilder_.setMessage(value);
                 }
-                this.recordCase_ = 2;
+                this.recordCase_ = 1;
                 return this;
             }
 
             public Builder clearMusicRecord() {
                 if (this.musicRecordBuilder_ != null) {
-                    if (this.recordCase_ == 2) {
+                    if (this.recordCase_ == 1) {
                         this.recordCase_ = 0;
                         this.record_ = null;
                     }
                     this.musicRecordBuilder_.clear();
-                } else if (this.recordCase_ == 2) {
+                } else if (this.recordCase_ == 1) {
                     this.recordCase_ = 0;
                     this.record_ = null;
                     onChanged();
@@ -930,136 +797,32 @@ public final class GetUgcRspOuterClass {
                 return this;
             }
 
-            public UgcMusicRecordOuterClass.UgcMusicRecord.Builder getMusicRecordBuilder() {
+            public MusicRecordOuterClass.MusicRecord.Builder getMusicRecordBuilder() {
                 return getMusicRecordFieldBuilder().getBuilder();
             }
 
             @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
-            public UgcMusicRecordOuterClass.UgcMusicRecordOrBuilder getMusicRecordOrBuilder() {
-                if (this.recordCase_ == 2 && this.musicRecordBuilder_ != null) {
+            public MusicRecordOuterClass.MusicRecordOrBuilder getMusicRecordOrBuilder() {
+                if (this.recordCase_ == 1 && this.musicRecordBuilder_ != null) {
                     return this.musicRecordBuilder_.getMessageOrBuilder();
                 }
-                if (this.recordCase_ == 2) {
-                    return (UgcMusicRecordOuterClass.UgcMusicRecord) this.record_;
+                if (this.recordCase_ == 1) {
+                    return (MusicRecordOuterClass.MusicRecord) this.record_;
                 }
-                return UgcMusicRecordOuterClass.UgcMusicRecord.getDefaultInstance();
+                return MusicRecordOuterClass.MusicRecord.getDefaultInstance();
             }
 
-            private SingleFieldBuilderV3<UgcMusicRecordOuterClass.UgcMusicRecord, UgcMusicRecordOuterClass.UgcMusicRecord.Builder, UgcMusicRecordOuterClass.UgcMusicRecordOrBuilder> getMusicRecordFieldBuilder() {
+            private SingleFieldBuilderV3<MusicRecordOuterClass.MusicRecord, MusicRecordOuterClass.MusicRecord.Builder, MusicRecordOuterClass.MusicRecordOrBuilder> getMusicRecordFieldBuilder() {
                 if (this.musicRecordBuilder_ == null) {
-                    if (this.recordCase_ != 2) {
-                        this.record_ = UgcMusicRecordOuterClass.UgcMusicRecord.getDefaultInstance();
+                    if (this.recordCase_ != 1) {
+                        this.record_ = MusicRecordOuterClass.MusicRecord.getDefaultInstance();
                     }
-                    this.musicRecordBuilder_ = new SingleFieldBuilderV3<>((UgcMusicRecordOuterClass.UgcMusicRecord) this.record_, getParentForChildren(), isClean());
+                    this.musicRecordBuilder_ = new SingleFieldBuilderV3<>((MusicRecordOuterClass.MusicRecord) this.record_, getParentForChildren(), isClean());
                     this.record_ = null;
                 }
-                this.recordCase_ = 2;
+                this.recordCase_ = 1;
                 onChanged();
                 return this.musicRecordBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
-            public boolean hasMusicBriefInfo() {
-                return this.briefCase_ == 1540;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
-            public UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo getMusicBriefInfo() {
-                if (this.musicBriefInfoBuilder_ == null) {
-                    if (this.briefCase_ == 1540) {
-                        return (UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) this.brief_;
-                    }
-                    return UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.getDefaultInstance();
-                } else if (this.briefCase_ == 1540) {
-                    return this.musicBriefInfoBuilder_.getMessage();
-                } else {
-                    return UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.getDefaultInstance();
-                }
-            }
-
-            public Builder setMusicBriefInfo(UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo value) {
-                if (this.musicBriefInfoBuilder_ != null) {
-                    this.musicBriefInfoBuilder_.setMessage(value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    this.brief_ = value;
-                    onChanged();
-                }
-                this.briefCase_ = GetUgcRsp.MUSIC_BRIEF_INFO_FIELD_NUMBER;
-                return this;
-            }
-
-            public Builder setMusicBriefInfo(UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder builderForValue) {
-                if (this.musicBriefInfoBuilder_ == null) {
-                    this.brief_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    this.musicBriefInfoBuilder_.setMessage(builderForValue.build());
-                }
-                this.briefCase_ = GetUgcRsp.MUSIC_BRIEF_INFO_FIELD_NUMBER;
-                return this;
-            }
-
-            public Builder mergeMusicBriefInfo(UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo value) {
-                if (this.musicBriefInfoBuilder_ == null) {
-                    if (this.briefCase_ != 1540 || this.brief_ == UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.getDefaultInstance()) {
-                        this.brief_ = value;
-                    } else {
-                        this.brief_ = UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.newBuilder((UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) this.brief_).mergeFrom(value).buildPartial();
-                    }
-                    onChanged();
-                } else {
-                    if (this.briefCase_ == 1540) {
-                        this.musicBriefInfoBuilder_.mergeFrom(value);
-                    }
-                    this.musicBriefInfoBuilder_.setMessage(value);
-                }
-                this.briefCase_ = GetUgcRsp.MUSIC_BRIEF_INFO_FIELD_NUMBER;
-                return this;
-            }
-
-            public Builder clearMusicBriefInfo() {
-                if (this.musicBriefInfoBuilder_ != null) {
-                    if (this.briefCase_ == 1540) {
-                        this.briefCase_ = 0;
-                        this.brief_ = null;
-                    }
-                    this.musicBriefInfoBuilder_.clear();
-                } else if (this.briefCase_ == 1540) {
-                    this.briefCase_ = 0;
-                    this.brief_ = null;
-                    onChanged();
-                }
-                return this;
-            }
-
-            public UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder getMusicBriefInfoBuilder() {
-                return getMusicBriefInfoFieldBuilder().getBuilder();
-            }
-
-            @Override // emu.grasscutter.net.proto.GetUgcRspOuterClass.GetUgcRspOrBuilder
-            public UgcMusicBriefInfoOuterClass.UgcMusicBriefInfoOrBuilder getMusicBriefInfoOrBuilder() {
-                if (this.briefCase_ == 1540 && this.musicBriefInfoBuilder_ != null) {
-                    return this.musicBriefInfoBuilder_.getMessageOrBuilder();
-                }
-                if (this.briefCase_ == 1540) {
-                    return (UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) this.brief_;
-                }
-                return UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.getDefaultInstance();
-            }
-
-            private SingleFieldBuilderV3<UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo, UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder, UgcMusicBriefInfoOuterClass.UgcMusicBriefInfoOrBuilder> getMusicBriefInfoFieldBuilder() {
-                if (this.musicBriefInfoBuilder_ == null) {
-                    if (this.briefCase_ != 1540) {
-                        this.brief_ = UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.getDefaultInstance();
-                    }
-                    this.musicBriefInfoBuilder_ = new SingleFieldBuilderV3<>((UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) this.brief_, getParentForChildren(), isClean());
-                    this.brief_ = null;
-                }
-                this.briefCase_ = GetUgcRsp.MUSIC_BRIEF_INFO_FIELD_NUMBER;
-                onChanged();
-                return this.musicBriefInfoBuilder_;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
@@ -1097,9 +860,8 @@ public final class GetUgcRspOuterClass {
     }
 
     static {
-        RecordUsageOuterClass.getDescriptor();
-        UgcMusicBriefInfoOuterClass.getDescriptor();
-        UgcMusicRecordOuterClass.getDescriptor();
         UgcTypeOuterClass.getDescriptor();
+        RecordUsageOuterClass.getDescriptor();
+        MusicRecordOuterClass.getDescriptor();
     }
 }

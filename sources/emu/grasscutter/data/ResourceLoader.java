@@ -12,7 +12,6 @@ import emu.grasscutter.data.common.PointData;
 import emu.grasscutter.data.excels.QuestData;
 import emu.grasscutter.game.managers.blossom.BlossomConfig;
 import emu.grasscutter.game.quest.enums.QuestTrigger;
-import emu.grasscutter.net.proto.MusicGameCreateBeatmapReqOuterClass;
 import emu.grasscutter.scripts.ScriptLoader;
 import emu.grasscutter.utils.FileUtils;
 import emu.grasscutter.utils.JsonUtils;
@@ -348,7 +347,7 @@ public class ResourceLoader {
         	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:267)
         */
     /*  JADX ERROR: Failed to decode insn: 0x006A: INVOKE_CUSTOM r1, method: emu.grasscutter.data.ResourceLoader.loadAbilityModifiers():void
-        jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, load ability: ]}
+        jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, Loaded Ability ]}
         	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:55)
         	at jadx.core.dex.instructions.InsnDecoder.invoke(InsnDecoder.java:568)
         	at jadx.core.dex.instructions.InsnDecoder.decode(InsnDecoder.java:438)
@@ -361,7 +360,7 @@ public class ResourceLoader {
         	at jadx.core.ProcessClass.generateCode(ProcessClass.java:85)
         	at jadx.core.dex.nodes.ClassNode.decompile(ClassNode.java:300)
         	at jadx.core.dex.nodes.ClassNode.decompile(ClassNode.java:265)
-        Caused by: jadx.core.utils.exceptions.JadxRuntimeException: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, load ability: ]}
+        Caused by: jadx.core.utils.exceptions.JadxRuntimeException: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, Loaded Ability ]}
         	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:42)
         	... 11 more
         */
@@ -411,8 +410,8 @@ public class ResourceLoader {
             ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
             java.util.Map<java.lang.String, emu.grasscutter.data.binout.AbilityData> r1 = emu.grasscutter.data.GameData.abilityDataMap
             int r1 = r1.size()
-            // decode failed: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, load ability: ]}
-            r0.warn(r1)
+            // decode failed: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, Loaded Ability ]}
+            r0.info(r1)
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: emu.grasscutter.data.ResourceLoader.loadAbilityModifiers():void");
@@ -684,7 +683,7 @@ public class ResourceLoader {
             r2 = r4
             int r2 = r2.size()
             java.lang.Integer r2 = java.lang.Integer.valueOf(r2)
-            r0.warn(r1, r2)
+            r0.info(r1, r2)
             goto L_0x0078
             r4 = move-exception
             ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
@@ -695,7 +694,7 @@ public class ResourceLoader {
             it.unimi.dsi.fastutil.ints.Int2ObjectMap r1 = emu.grasscutter.data.GameData.getMainQuestDataMap()
             int r1 = r1.size()
             // decode failed: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, Loaded  MainQuestDatas.]}
-            r0.warn(r1)
+            r0.info(r1)
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: emu.grasscutter.data.ResourceLoader.loadQuests():void");
@@ -753,7 +752,7 @@ public class ResourceLoader {
             r3 = move-exception
             ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
             java.lang.String r1 = "ScriptSceneData folder missing or empty."
-            r0.error(r1)
+            r0.warn(r1)
             return
             return
         */
@@ -812,7 +811,7 @@ public class ResourceLoader {
             it.unimi.dsi.fastutil.ints.Int2ObjectMap r1 = emu.grasscutter.data.GameData.getHomeworldDefaultSaveData()
             int r1 = r1.size()
             // decode failed: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, Loaded  HomeworldDefaultSaveDatas.]}
-            r0.warn(r1)
+            r0.info(r1)
             goto L_0x003e
             r4 = move-exception
             ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
@@ -871,7 +870,7 @@ public class ResourceLoader {
             it.unimi.dsi.fastutil.ints.Int2ObjectMap r1 = emu.grasscutter.data.GameData.getSceneNpcBornData()
             int r1 = r1.size()
             // decode failed: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, Loaded  SceneNpcBornDatas.]}
-            r0.warn(r1)
+            r0.info(r1)
             goto L_0x0036
             r3 = move-exception
             ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
@@ -925,7 +924,7 @@ public class ResourceLoader {
     }
 
     public static void loadQuestGiveAvatar() {
-        GameData.getQuestGiveAvatar().put(35402, Integer.valueOf((int) MusicGameCreateBeatmapReqOuterClass.MusicGameCreateBeatmapReq.MUSIC_BRIEF_INFO_FIELD_NUMBER));
+        GameData.getQuestGiveAvatar().put(35402, 1021);
     }
 
     public static void loadResources() {
@@ -963,10 +962,9 @@ public class ResourceLoader {
                             } else {
                                 badpoint.incrementAndGet();
                             }
-                            scenePoints.add(pointId);
+                            scenePoints.add(pointId.intValue());
                             pointData.setId(pointId.intValue());
-                            GameData.getScenePointIdList().add(pointId);
-                            GameData.getScenePointEntries().put(scenePoint.getName(), scenePoint);
+                            GameData.getScenePointIdList().add(pointId.intValue());
                             GameData.scenePointEntryMap.put((sceneId << 16) + pointId.intValue(), (int) scenePoint);
                             pointData.updateDailyDungeon();
                         });
@@ -977,7 +975,7 @@ public class ResourceLoader {
                     }
                 }
             });
-            Grasscutter.getLogger().info("Scene point good {} and bad {}", goodpoint, badpoint);
+            Grasscutter.getLogger().info("Scene Point: Good {} And Bad {}", goodpoint, badpoint);
         } catch (IOException e) {
             Grasscutter.getLogger().error("Scene point files cannot be found, you cannot use teleport waypoints!");
         }
@@ -1157,8 +1155,7 @@ public class ResourceLoader {
                 GameData.abilityDataMap.put(data.abilityName, data);
                 Map<String, AbilityModifier> modifiers = data.modifiers;
                 if (modifiers != null && modifiers.size() != 0) {
-                    String name = data.abilityName;
-                    AbilityModifierEntry modifierEntry = new AbilityModifierEntry(name);
+                    AbilityModifierEntry modifierEntry = new AbilityModifierEntry(data.abilityName);
                     modifiers.forEach(key, modifier -> {
                         Stream.ofNullable(modifier.onAdded).flatMap((v0) -> {
                             return Stream.of(v0);
@@ -1182,7 +1179,6 @@ public class ResourceLoader {
                             modifierEntry.getOnRemoved().add(action);
                         });
                     });
-                    GameData.getAbilityModifiers().put(name, modifierEntry);
                 }
             }
 
@@ -1269,11 +1265,11 @@ public class ResourceLoader {
                     return
                 L_0x0085:
                     ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
-                    java.lang.String r1 = "Spawn {} data loaded!"
+                    java.lang.String r1 = "Loaded {} Spawn data!"
                     r2 = r6
                     int r2 = r2.size()
                     java.lang.Integer r2 = java.lang.Integer.valueOf(r2)
-                    r0.warn(r1, r2)
+                    r0.info(r1, r2)
                     java.util.HashMap r0 = new java.util.HashMap
                     r1 = r0
                     r1.<init>()
@@ -1382,7 +1378,7 @@ public class ResourceLoader {
                         java.util.Map r2 = emu.grasscutter.data.GameData.getGadgetConfigData()     // Catch: IOException -> 0x002d
                         int r2 = r2.size()     // Catch: IOException -> 0x002d
                         java.lang.Integer r2 = java.lang.Integer.valueOf(r2)     // Catch: IOException -> 0x002d
-                        r0.warn(r1, r2)     // Catch: IOException -> 0x002d
+                        r0.info(r1, r2)     // Catch: IOException -> 0x002d
                         goto L_0x0037
                     L_0x002d:
                         r4 = move-exception
@@ -1455,11 +1451,11 @@ public class ResourceLoader {
                             }     // Catch: IOException -> 0x002d
                             r0.forEach(r1)     // Catch: IOException -> 0x002d
                             ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()     // Catch: IOException -> 0x002d
-                            java.lang.String r1 = "Loaded SceneRoutes for {} scenes."
+                            java.lang.String r1 = "Loaded {} Scene Routes."
                             java.util.Map r2 = emu.grasscutter.data.GameData.getGadgetConfigData()     // Catch: IOException -> 0x002d
                             int r2 = r2.size()     // Catch: IOException -> 0x002d
                             java.lang.Integer r2 = java.lang.Integer.valueOf(r2)     // Catch: IOException -> 0x002d
-                            r0.warn(r1, r2)     // Catch: IOException -> 0x002d
+                            r0.info(r1, r2)     // Catch: IOException -> 0x002d
                             goto L_0x0037
                         L_0x002d:
                             r4 = move-exception
@@ -1475,7 +1471,7 @@ public class ResourceLoader {
                     private static void loadBlossomResources() {
                         try {
                             GameDepot.setBlossomConfig((BlossomConfig) DataLoader.loadClass("BlossomConfig.json", BlossomConfig.class));
-                            Grasscutter.getLogger().warn("Loaded BlossomConfig.");
+                            Grasscutter.getLogger().info("Loaded BlossomConfig.");
                         } catch (IOException e) {
                             Grasscutter.getLogger().error("Failed to load BlossomConfig.");
                         }
@@ -1608,14 +1604,6 @@ public class ResourceLoader {
 
                             public String toString() {
                                 return this.abilityName;
-                            }
-                        }
-
-                        /* loaded from: grasscutter.jar:emu/grasscutter/data/ResourceLoader$OpenConfig.class */
-                        private static class OpenConfig {
-                            public OpenConfigData[] data;
-
-                            private OpenConfig() {
                             }
                         }
                     }

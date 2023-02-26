@@ -25,23 +25,23 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriChessEntranceInfoOuterClass.class */
 public final class IrodoriChessEntranceInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eIrodoriChessEntranceInfo.proto\u001a\u001dIrodoriChessMonsterInfo.proto\"j\n\u0018IrodoriChessEntranceInfo\u0012\u0019\n\u0011entrance_point_id\u0018\u000b \u0001(\r\u00123\n\u0011monster_info_list\u0018\b \u0003(\u000b2\u0018.IrodoriChessMonsterInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{IrodoriChessMonsterInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eIrodoriChessEntranceInfo.proto\u001a\u001dIrodoriChessMonsterInfo.proto\"^\n\u0018IrodoriChessEntranceInfo\u0012\u0013\n\u000bdfpedbghhma\u0018\n \u0001(\r\u0012-\n\u000blhjhgbpjpkl\u0018\b \u0003(\u000b2\u0018.IrodoriChessMonsterInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{IrodoriChessMonsterInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_IrodoriChessEntranceInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_IrodoriChessEntranceInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_IrodoriChessEntranceInfo_descriptor, new String[]{"EntrancePointId", "MonsterInfoList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_IrodoriChessEntranceInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_IrodoriChessEntranceInfo_descriptor, new String[]{"Dfpedbghhma", "Lhjhgbpjpkl"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriChessEntranceInfoOuterClass$IrodoriChessEntranceInfoOrBuilder.class */
     public interface IrodoriChessEntranceInfoOrBuilder extends MessageOrBuilder {
-        int getEntrancePointId();
+        int getDfpedbghhma();
 
-        List<IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo> getMonsterInfoListList();
+        List<IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo> getLhjhgbpjpklList();
 
-        IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo getMonsterInfoList(int i);
+        IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo getLhjhgbpjpkl(int i);
 
-        int getMonsterInfoListCount();
+        int getLhjhgbpjpklCount();
 
-        List<? extends IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder> getMonsterInfoListOrBuilderList();
+        List<? extends IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder> getLhjhgbpjpklOrBuilderList();
 
-        IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder getMonsterInfoListOrBuilder(int i);
+        IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder getLhjhgbpjpklOrBuilder(int i);
     }
 
     private IrodoriChessEntranceInfoOuterClass() {
@@ -57,10 +57,10 @@ public final class IrodoriChessEntranceInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriChessEntranceInfoOuterClass$IrodoriChessEntranceInfo.class */
     public static final class IrodoriChessEntranceInfo extends GeneratedMessageV3 implements IrodoriChessEntranceInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTRANCE_POINT_ID_FIELD_NUMBER = 11;
-        private int entrancePointId_;
-        public static final int MONSTER_INFO_LIST_FIELD_NUMBER = 8;
-        private List<IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo> monsterInfoList_;
+        public static final int DFPEDBGHHMA_FIELD_NUMBER = 10;
+        private int dfpedbghhma_;
+        public static final int LHJHGBPJPKL_FIELD_NUMBER = 8;
+        private List<IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo> lhjhgbpjpkl_;
         private byte memoizedIsInitialized;
         private static final IrodoriChessEntranceInfo DEFAULT_INSTANCE = new IrodoriChessEntranceInfo();
         private static final Parser<IrodoriChessEntranceInfo> PARSER = new AbstractParser<IrodoriChessEntranceInfo>() { // from class: emu.grasscutter.net.proto.IrodoriChessEntranceInfoOuterClass.IrodoriChessEntranceInfo.1
@@ -77,7 +77,7 @@ public final class IrodoriChessEntranceInfoOuterClass {
 
         private IrodoriChessEntranceInfo() {
             this.memoizedIsInitialized = -1;
-            this.monsterInfoList_ = Collections.emptyList();
+            this.lhjhgbpjpkl_ = Collections.emptyList();
         }
 
         /* access modifiers changed from: protected */
@@ -112,13 +112,13 @@ public final class IrodoriChessEntranceInfoOuterClass {
                                     break;
                                 case 66:
                                     if ((mutable_bitField0_ & 1) == 0) {
-                                        this.monsterInfoList_ = new ArrayList();
+                                        this.lhjhgbpjpkl_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
                                     }
-                                    this.monsterInfoList_.add((IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo) input.readMessage(IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.parser(), extensionRegistry));
+                                    this.lhjhgbpjpkl_.add((IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo) input.readMessage(IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.parser(), extensionRegistry));
                                     break;
-                                case 88:
-                                    this.entrancePointId_ = input.readUInt32();
+                                case 80:
+                                    this.dfpedbghhma_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -137,7 +137,7 @@ public final class IrodoriChessEntranceInfoOuterClass {
                 }
             } finally {
                 if ((mutable_bitField0_ & 1) != 0) {
-                    this.monsterInfoList_ = Collections.unmodifiableList(this.monsterInfoList_);
+                    this.lhjhgbpjpkl_ = Collections.unmodifiableList(this.lhjhgbpjpkl_);
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -154,33 +154,33 @@ public final class IrodoriChessEntranceInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.IrodoriChessEntranceInfoOuterClass.IrodoriChessEntranceInfoOrBuilder
-        public int getEntrancePointId() {
-            return this.entrancePointId_;
+        public int getDfpedbghhma() {
+            return this.dfpedbghhma_;
         }
 
         @Override // emu.grasscutter.net.proto.IrodoriChessEntranceInfoOuterClass.IrodoriChessEntranceInfoOrBuilder
-        public List<IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo> getMonsterInfoListList() {
-            return this.monsterInfoList_;
+        public List<IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo> getLhjhgbpjpklList() {
+            return this.lhjhgbpjpkl_;
         }
 
         @Override // emu.grasscutter.net.proto.IrodoriChessEntranceInfoOuterClass.IrodoriChessEntranceInfoOrBuilder
-        public List<? extends IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder> getMonsterInfoListOrBuilderList() {
-            return this.monsterInfoList_;
+        public List<? extends IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder> getLhjhgbpjpklOrBuilderList() {
+            return this.lhjhgbpjpkl_;
         }
 
         @Override // emu.grasscutter.net.proto.IrodoriChessEntranceInfoOuterClass.IrodoriChessEntranceInfoOrBuilder
-        public int getMonsterInfoListCount() {
-            return this.monsterInfoList_.size();
+        public int getLhjhgbpjpklCount() {
+            return this.lhjhgbpjpkl_.size();
         }
 
         @Override // emu.grasscutter.net.proto.IrodoriChessEntranceInfoOuterClass.IrodoriChessEntranceInfoOrBuilder
-        public IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo getMonsterInfoList(int index) {
-            return this.monsterInfoList_.get(index);
+        public IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo getLhjhgbpjpkl(int index) {
+            return this.lhjhgbpjpkl_.get(index);
         }
 
         @Override // emu.grasscutter.net.proto.IrodoriChessEntranceInfoOuterClass.IrodoriChessEntranceInfoOrBuilder
-        public IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder getMonsterInfoListOrBuilder(int index) {
-            return this.monsterInfoList_.get(index);
+        public IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder getLhjhgbpjpklOrBuilder(int index) {
+            return this.lhjhgbpjpkl_.get(index);
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -198,11 +198,11 @@ public final class IrodoriChessEntranceInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            for (int i = 0; i < this.monsterInfoList_.size(); i++) {
-                output.writeMessage(8, this.monsterInfoList_.get(i));
+            for (int i = 0; i < this.lhjhgbpjpkl_.size(); i++) {
+                output.writeMessage(8, this.lhjhgbpjpkl_.get(i));
             }
-            if (this.entrancePointId_ != 0) {
-                output.writeUInt32(11, this.entrancePointId_);
+            if (this.dfpedbghhma_ != 0) {
+                output.writeUInt32(10, this.dfpedbghhma_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -214,11 +214,11 @@ public final class IrodoriChessEntranceInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            for (int i = 0; i < this.monsterInfoList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(8, this.monsterInfoList_.get(i));
+            for (int i = 0; i < this.lhjhgbpjpkl_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(8, this.lhjhgbpjpkl_.get(i));
             }
-            if (this.entrancePointId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.entrancePointId_);
+            if (this.dfpedbghhma_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(10, this.dfpedbghhma_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -234,7 +234,7 @@ public final class IrodoriChessEntranceInfoOuterClass {
                 return equals(obj);
             }
             IrodoriChessEntranceInfo other = (IrodoriChessEntranceInfo) obj;
-            return getEntrancePointId() == other.getEntrancePointId() && getMonsterInfoListList().equals(other.getMonsterInfoListList()) && this.unknownFields.equals(other.unknownFields);
+            return getDfpedbghhma() == other.getDfpedbghhma() && getLhjhgbpjpklList().equals(other.getLhjhgbpjpklList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -242,9 +242,9 @@ public final class IrodoriChessEntranceInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getEntrancePointId();
-            if (getMonsterInfoListCount() > 0) {
-                hash = (53 * ((37 * hash) + 8)) + getMonsterInfoListList().hashCode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getDfpedbghhma();
+            if (getLhjhgbpjpklCount() > 0) {
+                hash = (53 * ((37 * hash) + 8)) + getLhjhgbpjpklList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -326,9 +326,9 @@ public final class IrodoriChessEntranceInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/IrodoriChessEntranceInfoOuterClass$IrodoriChessEntranceInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements IrodoriChessEntranceInfoOrBuilder {
             private int bitField0_;
-            private int entrancePointId_;
-            private List<IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo> monsterInfoList_ = Collections.emptyList();
-            private RepeatedFieldBuilderV3<IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo, IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.Builder, IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder> monsterInfoListBuilder_;
+            private int dfpedbghhma_;
+            private List<IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo> lhjhgbpjpkl_ = Collections.emptyList();
+            private RepeatedFieldBuilderV3<IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo, IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.Builder, IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder> lhjhgbpjpklBuilder_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return IrodoriChessEntranceInfoOuterClass.internal_static_IrodoriChessEntranceInfo_descriptor;
@@ -350,19 +350,19 @@ public final class IrodoriChessEntranceInfoOuterClass {
 
             private void maybeForceBuilderInitialization() {
                 if (IrodoriChessEntranceInfo.alwaysUseFieldBuilders) {
-                    getMonsterInfoListFieldBuilder();
+                    getLhjhgbpjpklFieldBuilder();
                 }
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.entrancePointId_ = 0;
-                if (this.monsterInfoListBuilder_ == null) {
-                    this.monsterInfoList_ = Collections.emptyList();
+                this.dfpedbghhma_ = 0;
+                if (this.lhjhgbpjpklBuilder_ == null) {
+                    this.lhjhgbpjpkl_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
-                    this.monsterInfoListBuilder_.clear();
+                    this.lhjhgbpjpklBuilder_.clear();
                 }
                 return this;
             }
@@ -390,15 +390,15 @@ public final class IrodoriChessEntranceInfoOuterClass {
             public IrodoriChessEntranceInfo buildPartial() {
                 IrodoriChessEntranceInfo result = new IrodoriChessEntranceInfo(this);
                 int i = this.bitField0_;
-                result.entrancePointId_ = this.entrancePointId_;
-                if (this.monsterInfoListBuilder_ == null) {
+                result.dfpedbghhma_ = this.dfpedbghhma_;
+                if (this.lhjhgbpjpklBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
-                        this.monsterInfoList_ = Collections.unmodifiableList(this.monsterInfoList_);
+                        this.lhjhgbpjpkl_ = Collections.unmodifiableList(this.lhjhgbpjpkl_);
                         this.bitField0_ &= -2;
                     }
-                    result.monsterInfoList_ = this.monsterInfoList_;
+                    result.lhjhgbpjpkl_ = this.lhjhgbpjpkl_;
                 } else {
-                    result.monsterInfoList_ = this.monsterInfoListBuilder_.build();
+                    result.lhjhgbpjpkl_ = this.lhjhgbpjpklBuilder_.build();
                 }
                 onBuilt();
                 return result;
@@ -447,29 +447,29 @@ public final class IrodoriChessEntranceInfoOuterClass {
                 if (other == IrodoriChessEntranceInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getEntrancePointId() != 0) {
-                    setEntrancePointId(other.getEntrancePointId());
+                if (other.getDfpedbghhma() != 0) {
+                    setDfpedbghhma(other.getDfpedbghhma());
                 }
-                if (this.monsterInfoListBuilder_ == null) {
-                    if (!other.monsterInfoList_.isEmpty()) {
-                        if (this.monsterInfoList_.isEmpty()) {
-                            this.monsterInfoList_ = other.monsterInfoList_;
+                if (this.lhjhgbpjpklBuilder_ == null) {
+                    if (!other.lhjhgbpjpkl_.isEmpty()) {
+                        if (this.lhjhgbpjpkl_.isEmpty()) {
+                            this.lhjhgbpjpkl_ = other.lhjhgbpjpkl_;
                             this.bitField0_ &= -2;
                         } else {
-                            ensureMonsterInfoListIsMutable();
-                            this.monsterInfoList_.addAll(other.monsterInfoList_);
+                            ensureLhjhgbpjpklIsMutable();
+                            this.lhjhgbpjpkl_.addAll(other.lhjhgbpjpkl_);
                         }
                         onChanged();
                     }
-                } else if (!other.monsterInfoList_.isEmpty()) {
-                    if (this.monsterInfoListBuilder_.isEmpty()) {
-                        this.monsterInfoListBuilder_.dispose();
-                        this.monsterInfoListBuilder_ = null;
-                        this.monsterInfoList_ = other.monsterInfoList_;
+                } else if (!other.lhjhgbpjpkl_.isEmpty()) {
+                    if (this.lhjhgbpjpklBuilder_.isEmpty()) {
+                        this.lhjhgbpjpklBuilder_.dispose();
+                        this.lhjhgbpjpklBuilder_ = null;
+                        this.lhjhgbpjpkl_ = other.lhjhgbpjpkl_;
                         this.bitField0_ &= -2;
-                        this.monsterInfoListBuilder_ = IrodoriChessEntranceInfo.alwaysUseFieldBuilders ? getMonsterInfoListFieldBuilder() : null;
+                        this.lhjhgbpjpklBuilder_ = IrodoriChessEntranceInfo.alwaysUseFieldBuilders ? getLhjhgbpjpklFieldBuilder() : null;
                     } else {
-                        this.monsterInfoListBuilder_.addAllMessages(other.monsterInfoList_);
+                        this.lhjhgbpjpklBuilder_.addAllMessages(other.lhjhgbpjpkl_);
                     }
                 }
                 mergeUnknownFields(other.unknownFields);
@@ -505,196 +505,196 @@ public final class IrodoriChessEntranceInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.IrodoriChessEntranceInfoOuterClass.IrodoriChessEntranceInfoOrBuilder
-            public int getEntrancePointId() {
-                return this.entrancePointId_;
+            public int getDfpedbghhma() {
+                return this.dfpedbghhma_;
             }
 
-            public Builder setEntrancePointId(int value) {
-                this.entrancePointId_ = value;
+            public Builder setDfpedbghhma(int value) {
+                this.dfpedbghhma_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearEntrancePointId() {
-                this.entrancePointId_ = 0;
+            public Builder clearDfpedbghhma() {
+                this.dfpedbghhma_ = 0;
                 onChanged();
                 return this;
             }
 
-            private void ensureMonsterInfoListIsMutable() {
+            private void ensureLhjhgbpjpklIsMutable() {
                 if ((this.bitField0_ & 1) == 0) {
-                    this.monsterInfoList_ = new ArrayList(this.monsterInfoList_);
+                    this.lhjhgbpjpkl_ = new ArrayList(this.lhjhgbpjpkl_);
                     this.bitField0_ |= 1;
                 }
             }
 
             @Override // emu.grasscutter.net.proto.IrodoriChessEntranceInfoOuterClass.IrodoriChessEntranceInfoOrBuilder
-            public List<IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo> getMonsterInfoListList() {
-                if (this.monsterInfoListBuilder_ == null) {
-                    return Collections.unmodifiableList(this.monsterInfoList_);
+            public List<IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo> getLhjhgbpjpklList() {
+                if (this.lhjhgbpjpklBuilder_ == null) {
+                    return Collections.unmodifiableList(this.lhjhgbpjpkl_);
                 }
-                return this.monsterInfoListBuilder_.getMessageList();
+                return this.lhjhgbpjpklBuilder_.getMessageList();
             }
 
             @Override // emu.grasscutter.net.proto.IrodoriChessEntranceInfoOuterClass.IrodoriChessEntranceInfoOrBuilder
-            public int getMonsterInfoListCount() {
-                if (this.monsterInfoListBuilder_ == null) {
-                    return this.monsterInfoList_.size();
+            public int getLhjhgbpjpklCount() {
+                if (this.lhjhgbpjpklBuilder_ == null) {
+                    return this.lhjhgbpjpkl_.size();
                 }
-                return this.monsterInfoListBuilder_.getCount();
+                return this.lhjhgbpjpklBuilder_.getCount();
             }
 
             @Override // emu.grasscutter.net.proto.IrodoriChessEntranceInfoOuterClass.IrodoriChessEntranceInfoOrBuilder
-            public IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo getMonsterInfoList(int index) {
-                if (this.monsterInfoListBuilder_ == null) {
-                    return this.monsterInfoList_.get(index);
+            public IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo getLhjhgbpjpkl(int index) {
+                if (this.lhjhgbpjpklBuilder_ == null) {
+                    return this.lhjhgbpjpkl_.get(index);
                 }
-                return this.monsterInfoListBuilder_.getMessage(index);
+                return this.lhjhgbpjpklBuilder_.getMessage(index);
             }
 
-            public Builder setMonsterInfoList(int index, IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo value) {
-                if (this.monsterInfoListBuilder_ != null) {
-                    this.monsterInfoListBuilder_.setMessage(index, value);
+            public Builder setLhjhgbpjpkl(int index, IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo value) {
+                if (this.lhjhgbpjpklBuilder_ != null) {
+                    this.lhjhgbpjpklBuilder_.setMessage(index, value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureMonsterInfoListIsMutable();
-                    this.monsterInfoList_.set(index, value);
+                    ensureLhjhgbpjpklIsMutable();
+                    this.lhjhgbpjpkl_.set(index, value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder setMonsterInfoList(int index, IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.Builder builderForValue) {
-                if (this.monsterInfoListBuilder_ == null) {
-                    ensureMonsterInfoListIsMutable();
-                    this.monsterInfoList_.set(index, builderForValue.build());
+            public Builder setLhjhgbpjpkl(int index, IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.Builder builderForValue) {
+                if (this.lhjhgbpjpklBuilder_ == null) {
+                    ensureLhjhgbpjpklIsMutable();
+                    this.lhjhgbpjpkl_.set(index, builderForValue.build());
                     onChanged();
                 } else {
-                    this.monsterInfoListBuilder_.setMessage(index, builderForValue.build());
+                    this.lhjhgbpjpklBuilder_.setMessage(index, builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder addMonsterInfoList(IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo value) {
-                if (this.monsterInfoListBuilder_ != null) {
-                    this.monsterInfoListBuilder_.addMessage(value);
+            public Builder addLhjhgbpjpkl(IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo value) {
+                if (this.lhjhgbpjpklBuilder_ != null) {
+                    this.lhjhgbpjpklBuilder_.addMessage(value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureMonsterInfoListIsMutable();
-                    this.monsterInfoList_.add(value);
+                    ensureLhjhgbpjpklIsMutable();
+                    this.lhjhgbpjpkl_.add(value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder addMonsterInfoList(int index, IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo value) {
-                if (this.monsterInfoListBuilder_ != null) {
-                    this.monsterInfoListBuilder_.addMessage(index, value);
+            public Builder addLhjhgbpjpkl(int index, IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo value) {
+                if (this.lhjhgbpjpklBuilder_ != null) {
+                    this.lhjhgbpjpklBuilder_.addMessage(index, value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureMonsterInfoListIsMutable();
-                    this.monsterInfoList_.add(index, value);
+                    ensureLhjhgbpjpklIsMutable();
+                    this.lhjhgbpjpkl_.add(index, value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder addMonsterInfoList(IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.Builder builderForValue) {
-                if (this.monsterInfoListBuilder_ == null) {
-                    ensureMonsterInfoListIsMutable();
-                    this.monsterInfoList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    this.monsterInfoListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addMonsterInfoList(int index, IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.Builder builderForValue) {
-                if (this.monsterInfoListBuilder_ == null) {
-                    ensureMonsterInfoListIsMutable();
-                    this.monsterInfoList_.add(index, builderForValue.build());
+            public Builder addLhjhgbpjpkl(IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.Builder builderForValue) {
+                if (this.lhjhgbpjpklBuilder_ == null) {
+                    ensureLhjhgbpjpklIsMutable();
+                    this.lhjhgbpjpkl_.add(builderForValue.build());
                     onChanged();
                 } else {
-                    this.monsterInfoListBuilder_.addMessage(index, builderForValue.build());
+                    this.lhjhgbpjpklBuilder_.addMessage(builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder addAllMonsterInfoList(Iterable<? extends IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo> values) {
-                if (this.monsterInfoListBuilder_ == null) {
-                    ensureMonsterInfoListIsMutable();
-                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.monsterInfoList_);
+            public Builder addLhjhgbpjpkl(int index, IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.Builder builderForValue) {
+                if (this.lhjhgbpjpklBuilder_ == null) {
+                    ensureLhjhgbpjpklIsMutable();
+                    this.lhjhgbpjpkl_.add(index, builderForValue.build());
                     onChanged();
                 } else {
-                    this.monsterInfoListBuilder_.addAllMessages(values);
+                    this.lhjhgbpjpklBuilder_.addMessage(index, builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder clearMonsterInfoList() {
-                if (this.monsterInfoListBuilder_ == null) {
-                    this.monsterInfoList_ = Collections.emptyList();
+            public Builder addAllLhjhgbpjpkl(Iterable<? extends IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo> values) {
+                if (this.lhjhgbpjpklBuilder_ == null) {
+                    ensureLhjhgbpjpklIsMutable();
+                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.lhjhgbpjpkl_);
+                    onChanged();
+                } else {
+                    this.lhjhgbpjpklBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            public Builder clearLhjhgbpjpkl() {
+                if (this.lhjhgbpjpklBuilder_ == null) {
+                    this.lhjhgbpjpkl_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                     onChanged();
                 } else {
-                    this.monsterInfoListBuilder_.clear();
+                    this.lhjhgbpjpklBuilder_.clear();
                 }
                 return this;
             }
 
-            public Builder removeMonsterInfoList(int index) {
-                if (this.monsterInfoListBuilder_ == null) {
-                    ensureMonsterInfoListIsMutable();
-                    this.monsterInfoList_.remove(index);
+            public Builder removeLhjhgbpjpkl(int index) {
+                if (this.lhjhgbpjpklBuilder_ == null) {
+                    ensureLhjhgbpjpklIsMutable();
+                    this.lhjhgbpjpkl_.remove(index);
                     onChanged();
                 } else {
-                    this.monsterInfoListBuilder_.remove(index);
+                    this.lhjhgbpjpklBuilder_.remove(index);
                 }
                 return this;
             }
 
-            public IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.Builder getMonsterInfoListBuilder(int index) {
-                return getMonsterInfoListFieldBuilder().getBuilder(index);
+            public IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.Builder getLhjhgbpjpklBuilder(int index) {
+                return getLhjhgbpjpklFieldBuilder().getBuilder(index);
             }
 
             @Override // emu.grasscutter.net.proto.IrodoriChessEntranceInfoOuterClass.IrodoriChessEntranceInfoOrBuilder
-            public IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder getMonsterInfoListOrBuilder(int index) {
-                if (this.monsterInfoListBuilder_ == null) {
-                    return this.monsterInfoList_.get(index);
+            public IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder getLhjhgbpjpklOrBuilder(int index) {
+                if (this.lhjhgbpjpklBuilder_ == null) {
+                    return this.lhjhgbpjpkl_.get(index);
                 }
-                return this.monsterInfoListBuilder_.getMessageOrBuilder(index);
+                return this.lhjhgbpjpklBuilder_.getMessageOrBuilder(index);
             }
 
             @Override // emu.grasscutter.net.proto.IrodoriChessEntranceInfoOuterClass.IrodoriChessEntranceInfoOrBuilder
-            public List<? extends IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder> getMonsterInfoListOrBuilderList() {
-                if (this.monsterInfoListBuilder_ != null) {
-                    return this.monsterInfoListBuilder_.getMessageOrBuilderList();
+            public List<? extends IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder> getLhjhgbpjpklOrBuilderList() {
+                if (this.lhjhgbpjpklBuilder_ != null) {
+                    return this.lhjhgbpjpklBuilder_.getMessageOrBuilderList();
                 }
-                return Collections.unmodifiableList(this.monsterInfoList_);
+                return Collections.unmodifiableList(this.lhjhgbpjpkl_);
             }
 
-            public IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.Builder addMonsterInfoListBuilder() {
-                return getMonsterInfoListFieldBuilder().addBuilder(IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.getDefaultInstance());
+            public IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.Builder addLhjhgbpjpklBuilder() {
+                return getLhjhgbpjpklFieldBuilder().addBuilder(IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.getDefaultInstance());
             }
 
-            public IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.Builder addMonsterInfoListBuilder(int index) {
-                return getMonsterInfoListFieldBuilder().addBuilder(index, IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.getDefaultInstance());
+            public IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.Builder addLhjhgbpjpklBuilder(int index) {
+                return getLhjhgbpjpklFieldBuilder().addBuilder(index, IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.getDefaultInstance());
             }
 
-            public List<IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.Builder> getMonsterInfoListBuilderList() {
-                return getMonsterInfoListFieldBuilder().getBuilderList();
+            public List<IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.Builder> getLhjhgbpjpklBuilderList() {
+                return getLhjhgbpjpklFieldBuilder().getBuilderList();
             }
 
-            private RepeatedFieldBuilderV3<IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo, IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.Builder, IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder> getMonsterInfoListFieldBuilder() {
-                if (this.monsterInfoListBuilder_ == null) {
-                    this.monsterInfoListBuilder_ = new RepeatedFieldBuilderV3<>(this.monsterInfoList_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
-                    this.monsterInfoList_ = null;
+            private RepeatedFieldBuilderV3<IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo, IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfo.Builder, IrodoriChessMonsterInfoOuterClass.IrodoriChessMonsterInfoOrBuilder> getLhjhgbpjpklFieldBuilder() {
+                if (this.lhjhgbpjpklBuilder_ == null) {
+                    this.lhjhgbpjpklBuilder_ = new RepeatedFieldBuilderV3<>(this.lhjhgbpjpkl_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
+                    this.lhjhgbpjpkl_ = null;
                 }
-                return this.monsterInfoListBuilder_;
+                return this.lhjhgbpjpklBuilder_;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

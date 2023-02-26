@@ -12,34 +12,34 @@ import kotlin.UnsignedUtils;
 /* loaded from: grasscutter.jar:kotlin/internal/UProgressionUtilKt.class */
 public final class UProgressionUtil {
     /* renamed from: differenceModulo-WZ9TVnA  reason: not valid java name */
-    private static final int m8281differenceModuloWZ9TVnA(int a, int b, int c) {
-        int ac = UnsignedUtils.m7412uintRemainderJ1ME1BU(a, c);
-        int bc = UnsignedUtils.m7412uintRemainderJ1ME1BU(b, c);
+    private static final int m8278differenceModuloWZ9TVnA(int a, int b, int c) {
+        int ac = UnsignedUtils.m7409uintRemainderJ1ME1BU(a, c);
+        int bc = UnsignedUtils.m7409uintRemainderJ1ME1BU(b, c);
         if (UnsignedUtils.uintCompare(ac, bc) >= 0) {
-            return UInt.m7201constructorimpl(ac - bc);
+            return UInt.m7198constructorimpl(ac - bc);
         }
-        return UInt.m7201constructorimpl(UInt.m7201constructorimpl(ac - bc) + c);
+        return UInt.m7198constructorimpl(UInt.m7198constructorimpl(ac - bc) + c);
     }
 
     /* renamed from: differenceModulo-sambcqE  reason: not valid java name */
-    private static final long m8282differenceModulosambcqE(long a, long b, long c) {
-        long ac = UnsignedUtils.m7414ulongRemaindereb3DHEI(a, c);
-        long bc = UnsignedUtils.m7414ulongRemaindereb3DHEI(b, c);
+    private static final long m8279differenceModulosambcqE(long a, long b, long c) {
+        long ac = UnsignedUtils.m7411ulongRemaindereb3DHEI(a, c);
+        long bc = UnsignedUtils.m7411ulongRemaindereb3DHEI(b, c);
         if (UnsignedUtils.ulongCompare(ac, bc) >= 0) {
-            return ULong.m7280constructorimpl(ac - bc);
+            return ULong.m7277constructorimpl(ac - bc);
         }
-        return ULong.m7280constructorimpl(ULong.m7280constructorimpl(ac - bc) + c);
+        return ULong.m7277constructorimpl(ULong.m7277constructorimpl(ac - bc) + c);
     }
 
     @SinceKotlin(version = "1.3")
     @PublishedApi
     /* renamed from: getProgressionLastElement-Nkh28Cs  reason: not valid java name */
-    public static final int m8283getProgressionLastElementNkh28Cs(int start, int end, int step) {
+    public static final int m8280getProgressionLastElementNkh28Cs(int start, int end, int step) {
         if (step > 0) {
-            return UnsignedUtils.uintCompare(start, end) >= 0 ? end : UInt.m7201constructorimpl(end - m8281differenceModuloWZ9TVnA(end, start, UInt.m7201constructorimpl(step)));
+            return UnsignedUtils.uintCompare(start, end) >= 0 ? end : UInt.m7198constructorimpl(end - m8278differenceModuloWZ9TVnA(end, start, UInt.m7198constructorimpl(step)));
         }
         if (step < 0) {
-            return UnsignedUtils.uintCompare(start, end) <= 0 ? end : UInt.m7201constructorimpl(end + m8281differenceModuloWZ9TVnA(start, end, UInt.m7201constructorimpl(-step)));
+            return UnsignedUtils.uintCompare(start, end) <= 0 ? end : UInt.m7198constructorimpl(end + m8278differenceModuloWZ9TVnA(start, end, UInt.m7198constructorimpl(-step)));
         }
         throw new IllegalArgumentException("Step is zero.");
     }
@@ -47,12 +47,12 @@ public final class UProgressionUtil {
     @SinceKotlin(version = "1.3")
     @PublishedApi
     /* renamed from: getProgressionLastElement-7ftBX0g  reason: not valid java name */
-    public static final long m8284getProgressionLastElement7ftBX0g(long start, long end, long step) {
+    public static final long m8281getProgressionLastElement7ftBX0g(long start, long end, long step) {
         if (step > 0) {
-            return UnsignedUtils.ulongCompare(start, end) >= 0 ? end : ULong.m7280constructorimpl(end - m8282differenceModulosambcqE(end, start, ULong.m7280constructorimpl(step)));
+            return UnsignedUtils.ulongCompare(start, end) >= 0 ? end : ULong.m7277constructorimpl(end - m8279differenceModulosambcqE(end, start, ULong.m7277constructorimpl(step)));
         }
         if (step < 0) {
-            return UnsignedUtils.ulongCompare(start, end) <= 0 ? end : ULong.m7280constructorimpl(end + m8282differenceModulosambcqE(start, end, ULong.m7280constructorimpl(-step)));
+            return UnsignedUtils.ulongCompare(start, end) <= 0 ? end : ULong.m7277constructorimpl(end + m8279differenceModulosambcqE(start, end, ULong.m7277constructorimpl(-step)));
         }
         throw new IllegalArgumentException("Step is zero.");
     }

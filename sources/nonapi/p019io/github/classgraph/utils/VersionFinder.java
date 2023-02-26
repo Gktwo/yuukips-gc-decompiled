@@ -12,7 +12,7 @@ public final class VersionFinder {
     private static final String MAVEN_ARTIFACT = "classgraph";
 
     /* renamed from: OS */
-    public static final OperatingSystem f3111OS;
+    public static final OperatingSystem f3075OS;
     public static final String JAVA_VERSION = getProperty(ClassFileVersion.VersionLocator.JAVA_VERSION);
     public static final int JAVA_MAJOR_VERSION;
     public static final int JAVA_MINOR_VERSION;
@@ -63,21 +63,21 @@ public final class VersionFinder {
         JAVA_IS_EA_VERSION = JAVA_VERSION != null && JAVA_VERSION.endsWith("-ea");
         String osName = getProperty("os.name", "unknown").toLowerCase(Locale.ENGLISH);
         if (osName == null) {
-            f3111OS = OperatingSystem.Unknown;
+            f3075OS = OperatingSystem.Unknown;
         } else if (osName.contains("mac") || osName.contains("darwin")) {
-            f3111OS = OperatingSystem.MacOSX;
+            f3075OS = OperatingSystem.MacOSX;
         } else if (osName.contains("win")) {
-            f3111OS = OperatingSystem.Windows;
+            f3075OS = OperatingSystem.Windows;
         } else if (osName.contains("nux")) {
-            f3111OS = OperatingSystem.Linux;
+            f3075OS = OperatingSystem.Linux;
         } else if (osName.contains("sunos") || osName.contains("solaris")) {
-            f3111OS = OperatingSystem.Solaris;
+            f3075OS = OperatingSystem.Solaris;
         } else if (osName.contains("bsd")) {
-            f3111OS = OperatingSystem.Unix;
+            f3075OS = OperatingSystem.Unix;
         } else if (osName.contains("nix") || osName.contains("aix")) {
-            f3111OS = OperatingSystem.Unix;
+            f3075OS = OperatingSystem.Unix;
         } else {
-            f3111OS = OperatingSystem.Unknown;
+            f3075OS = OperatingSystem.Unknown;
         }
     }
 

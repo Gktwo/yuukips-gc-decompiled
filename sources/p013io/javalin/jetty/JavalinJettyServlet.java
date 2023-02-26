@@ -97,12 +97,12 @@ public final class JavalinJettyServlet extends WebSocketServlet {
             consumer.accept(factory);
         }
         factory.setCreator((v1, v2) -> {
-            return m5858configure$lambda2(r1, v1, v2);
+            return m5855configure$lambda2(r1, v1, v2);
         });
     }
 
     /* renamed from: configure$lambda-2  reason: not valid java name */
-    private static final Object m5858configure$lambda2(JavalinJettyServlet this$0, ServletUpgradeRequest req, ServletUpgradeResponse $noName_1) {
+    private static final Object m5855configure$lambda2(JavalinJettyServlet this$0, ServletUpgradeRequest req, ServletUpgradeResponse $noName_1) {
         LinkedHashMap linkedHashMap;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Object attribute = req.getHttpServletRequest().getAttribute(JavalinJettyServletKt.upgradeContextKey);
@@ -180,7 +180,7 @@ public final class JavalinJettyServlet extends WebSocketServlet {
     private final boolean allowedByAccessManager(WsEntry entry, Context ctx) {
         boolean z;
         try {
-            this.config.inner.accessManager.manage(JavalinJettyServlet::m5859allowedByAccessManager$lambda4, ctx, entry.getRoles());
+            this.config.inner.accessManager.manage(JavalinJettyServlet::m5856allowedByAccessManager$lambda4, ctx, entry.getRoles());
             z = Intrinsics.areEqual(ctx.attribute("javalin-ws-upgrade-allowed"), (Object) true);
         } catch (Exception e) {
             z = false;
@@ -189,7 +189,7 @@ public final class JavalinJettyServlet extends WebSocketServlet {
     }
 
     /* renamed from: allowedByAccessManager$lambda-4  reason: not valid java name */
-    private static final void m5859allowedByAccessManager$lambda4(Context it) {
+    private static final void m5856allowedByAccessManager$lambda4(Context it) {
         Intrinsics.checkNotNullParameter(it, "it");
         it.attribute("javalin-ws-upgrade-allowed", true);
     }

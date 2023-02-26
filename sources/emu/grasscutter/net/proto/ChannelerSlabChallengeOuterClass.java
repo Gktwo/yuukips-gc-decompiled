@@ -25,14 +25,12 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChannelerSlabChallengeOuterClass.class */
 public final class ChannelerSlabChallengeOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cChannelerSlabChallenge.proto\u001a\u0017ChannelerSlabCamp.proto\"Z\n\u0016ChannelerSlabChallenge\u0012\u0019\n\u0011active_camp_index\u0018\u0001 \u0001(\r\u0012%\n\tcamp_list\u0018\u000e \u0003(\u000b2\u0012.ChannelerSlabCampB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ChannelerSlabCampOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cChannelerSlabChallenge.proto\u001a\u0017ChannelerSlabCamp.proto\"W\n\u0016ChannelerSlabChallenge\u0012$\n\bcampList\u0018\u000f \u0003(\u000b2\u0012.ChannelerSlabCamp\u0012\u0017\n\u000factiveCampIndex\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ChannelerSlabCampOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_ChannelerSlabChallenge_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChannelerSlabChallenge_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChannelerSlabChallenge_descriptor, new String[]{"ActiveCampIndex", "CampList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChannelerSlabChallenge_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChannelerSlabChallenge_descriptor, new String[]{"CampList", "ActiveCampIndex"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChannelerSlabChallengeOuterClass$ChannelerSlabChallengeOrBuilder.class */
     public interface ChannelerSlabChallengeOrBuilder extends MessageOrBuilder {
-        int getActiveCampIndex();
-
         List<ChannelerSlabCampOuterClass.ChannelerSlabCamp> getCampListList();
 
         ChannelerSlabCampOuterClass.ChannelerSlabCamp getCampList(int i);
@@ -42,6 +40,8 @@ public final class ChannelerSlabChallengeOuterClass {
         List<? extends ChannelerSlabCampOuterClass.ChannelerSlabCampOrBuilder> getCampListOrBuilderList();
 
         ChannelerSlabCampOuterClass.ChannelerSlabCampOrBuilder getCampListOrBuilder(int i);
+
+        int getActiveCampIndex();
     }
 
     private ChannelerSlabChallengeOuterClass() {
@@ -57,10 +57,10 @@ public final class ChannelerSlabChallengeOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChannelerSlabChallengeOuterClass$ChannelerSlabChallenge.class */
     public static final class ChannelerSlabChallenge extends GeneratedMessageV3 implements ChannelerSlabChallengeOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ACTIVE_CAMP_INDEX_FIELD_NUMBER = 1;
-        private int activeCampIndex_;
-        public static final int CAMP_LIST_FIELD_NUMBER = 14;
+        public static final int CAMPLIST_FIELD_NUMBER = 15;
         private List<ChannelerSlabCampOuterClass.ChannelerSlabCamp> campList_;
+        public static final int ACTIVECAMPINDEX_FIELD_NUMBER = 14;
+        private int activeCampIndex_;
         private byte memoizedIsInitialized;
         private static final ChannelerSlabChallenge DEFAULT_INSTANCE = new ChannelerSlabChallenge();
         private static final Parser<ChannelerSlabChallenge> PARSER = new AbstractParser<ChannelerSlabChallenge>() { // from class: emu.grasscutter.net.proto.ChannelerSlabChallengeOuterClass.ChannelerSlabChallenge.1
@@ -110,10 +110,10 @@ public final class ChannelerSlabChallengeOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
+                                case 112:
                                     this.activeCampIndex_ = input.readUInt32();
                                     break;
-                                case 114:
+                                case 122:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.campList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -154,11 +154,6 @@ public final class ChannelerSlabChallengeOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ChannelerSlabChallengeOuterClass.ChannelerSlabChallengeOrBuilder
-        public int getActiveCampIndex() {
-            return this.activeCampIndex_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ChannelerSlabChallengeOuterClass.ChannelerSlabChallengeOrBuilder
         public List<ChannelerSlabCampOuterClass.ChannelerSlabCamp> getCampListList() {
             return this.campList_;
         }
@@ -183,6 +178,11 @@ public final class ChannelerSlabChallengeOuterClass {
             return this.campList_.get(index);
         }
 
+        @Override // emu.grasscutter.net.proto.ChannelerSlabChallengeOuterClass.ChannelerSlabChallengeOrBuilder
+        public int getActiveCampIndex() {
+            return this.activeCampIndex_;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -199,10 +199,10 @@ public final class ChannelerSlabChallengeOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.activeCampIndex_ != 0) {
-                output.writeUInt32(1, this.activeCampIndex_);
+                output.writeUInt32(14, this.activeCampIndex_);
             }
             for (int i = 0; i < this.campList_.size(); i++) {
-                output.writeMessage(14, this.campList_.get(i));
+                output.writeMessage(15, this.campList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -215,10 +215,10 @@ public final class ChannelerSlabChallengeOuterClass {
             }
             int size2 = 0;
             if (this.activeCampIndex_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.activeCampIndex_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(14, this.activeCampIndex_);
             }
             for (int i = 0; i < this.campList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(14, this.campList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(15, this.campList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -234,7 +234,7 @@ public final class ChannelerSlabChallengeOuterClass {
                 return equals(obj);
             }
             ChannelerSlabChallenge other = (ChannelerSlabChallenge) obj;
-            return getActiveCampIndex() == other.getActiveCampIndex() && getCampListList().equals(other.getCampListList()) && this.unknownFields.equals(other.unknownFields);
+            return getCampListList().equals(other.getCampListList()) && getActiveCampIndex() == other.getActiveCampIndex() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -242,11 +242,11 @@ public final class ChannelerSlabChallengeOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getActiveCampIndex();
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (getCampListCount() > 0) {
-                hash = (53 * ((37 * hash) + 14)) + getCampListList().hashCode();
+                hash = (53 * ((37 * hash) + 15)) + getCampListList().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 14)) + getActiveCampIndex())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -326,9 +326,9 @@ public final class ChannelerSlabChallengeOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChannelerSlabChallengeOuterClass$ChannelerSlabChallenge$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ChannelerSlabChallengeOrBuilder {
             private int bitField0_;
-            private int activeCampIndex_;
             private List<ChannelerSlabCampOuterClass.ChannelerSlabCamp> campList_ = Collections.emptyList();
             private RepeatedFieldBuilderV3<ChannelerSlabCampOuterClass.ChannelerSlabCamp, ChannelerSlabCampOuterClass.ChannelerSlabCamp.Builder, ChannelerSlabCampOuterClass.ChannelerSlabCampOrBuilder> campListBuilder_;
+            private int activeCampIndex_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ChannelerSlabChallengeOuterClass.internal_static_ChannelerSlabChallenge_descriptor;
@@ -357,13 +357,13 @@ public final class ChannelerSlabChallengeOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.activeCampIndex_ = 0;
                 if (this.campListBuilder_ == null) {
                     this.campList_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
                     this.campListBuilder_.clear();
                 }
+                this.activeCampIndex_ = 0;
                 return this;
             }
 
@@ -390,7 +390,6 @@ public final class ChannelerSlabChallengeOuterClass {
             public ChannelerSlabChallenge buildPartial() {
                 ChannelerSlabChallenge result = new ChannelerSlabChallenge(this);
                 int i = this.bitField0_;
-                result.activeCampIndex_ = this.activeCampIndex_;
                 if (this.campListBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
                         this.campList_ = Collections.unmodifiableList(this.campList_);
@@ -400,6 +399,7 @@ public final class ChannelerSlabChallengeOuterClass {
                 } else {
                     result.campList_ = this.campListBuilder_.build();
                 }
+                result.activeCampIndex_ = this.activeCampIndex_;
                 onBuilt();
                 return result;
             }
@@ -447,9 +447,6 @@ public final class ChannelerSlabChallengeOuterClass {
                 if (other == ChannelerSlabChallenge.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getActiveCampIndex() != 0) {
-                    setActiveCampIndex(other.getActiveCampIndex());
-                }
                 if (this.campListBuilder_ == null) {
                     if (!other.campList_.isEmpty()) {
                         if (this.campList_.isEmpty()) {
@@ -471,6 +468,9 @@ public final class ChannelerSlabChallengeOuterClass {
                     } else {
                         this.campListBuilder_.addAllMessages(other.campList_);
                     }
+                }
+                if (other.getActiveCampIndex() != 0) {
+                    setActiveCampIndex(other.getActiveCampIndex());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -502,23 +502,6 @@ public final class ChannelerSlabChallengeOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.ChannelerSlabChallengeOuterClass.ChannelerSlabChallengeOrBuilder
-            public int getActiveCampIndex() {
-                return this.activeCampIndex_;
-            }
-
-            public Builder setActiveCampIndex(int value) {
-                this.activeCampIndex_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearActiveCampIndex() {
-                this.activeCampIndex_ = 0;
-                onChanged();
-                return this;
             }
 
             private void ensureCampListIsMutable() {
@@ -695,6 +678,23 @@ public final class ChannelerSlabChallengeOuterClass {
                     this.campList_ = null;
                 }
                 return this.campListBuilder_;
+            }
+
+            @Override // emu.grasscutter.net.proto.ChannelerSlabChallengeOuterClass.ChannelerSlabChallengeOrBuilder
+            public int getActiveCampIndex() {
+                return this.activeCampIndex_;
+            }
+
+            public Builder setActiveCampIndex(int value) {
+                this.activeCampIndex_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearActiveCampIndex() {
+                this.activeCampIndex_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

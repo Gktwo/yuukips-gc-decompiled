@@ -25,11 +25,11 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WinterCampGetCanGiveFriendItemRspOuterClass.class */
 public final class WinterCampGetCanGiveFriendItemRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n'WinterCampGetCanGiveFriendItemRsp.proto\u001a\u000fItemParam.proto\"S\n!WinterCampGetCanGiveFriendItemRsp\u0012\u000f\n\u0007retcode\u0018\f \u0001(\u0005\u0012\u001d\n\titem_list\u0018\u000e \u0003(\u000b2\n.ItemParamB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n'WinterCampGetCanGiveFriendItemRsp.proto\u001a\u000fItemParam.proto\"R\n!WinterCampGetCanGiveFriendItemRsp\u0012\u000f\n\u0007retcode\u0018\u0002 \u0001(\u0005\u0012\u001c\n\bitemList\u0018\u0001 \u0003(\u000b2\n.ItemParamB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_WinterCampGetCanGiveFriendItemRsp_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_WinterCampGetCanGiveFriendItemRsp_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f951x78f6c04e = new GeneratedMessageV3.FieldAccessorTable(internal_static_WinterCampGetCanGiveFriendItemRsp_descriptor, new String[]{"Retcode", "ItemList"});
+    private static final GeneratedMessageV3.FieldAccessorTable f916x78f6c04e = new GeneratedMessageV3.FieldAccessorTable(internal_static_WinterCampGetCanGiveFriendItemRsp_descriptor, new String[]{"Retcode", "ItemList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WinterCampGetCanGiveFriendItemRspOuterClass$WinterCampGetCanGiveFriendItemRspOrBuilder.class */
     public interface WinterCampGetCanGiveFriendItemRspOrBuilder extends MessageOrBuilder {
@@ -59,9 +59,9 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WinterCampGetCanGiveFriendItemRspOuterClass$WinterCampGetCanGiveFriendItemRsp.class */
     public static final class WinterCampGetCanGiveFriendItemRsp extends GeneratedMessageV3 implements WinterCampGetCanGiveFriendItemRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 12;
+        public static final int RETCODE_FIELD_NUMBER = 2;
         private int retcode_;
-        public static final int ITEM_LIST_FIELD_NUMBER = 14;
+        public static final int ITEMLIST_FIELD_NUMBER = 1;
         private List<ItemParamOuterClass.ItemParam> itemList_;
         private byte memoizedIsInitialized;
         private static final WinterCampGetCanGiveFriendItemRsp DEFAULT_INSTANCE = new WinterCampGetCanGiveFriendItemRsp();
@@ -112,15 +112,15 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 96:
-                                    this.retcode_ = input.readInt32();
-                                    break;
-                                case 114:
+                                case 10:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.itemList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.itemList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+                                    break;
+                                case 16:
+                                    this.retcode_ = input.readInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -152,7 +152,7 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return WinterCampGetCanGiveFriendItemRspOuterClass.f951x78f6c04e.ensureFieldAccessorsInitialized(WinterCampGetCanGiveFriendItemRsp.class, Builder.class);
+            return WinterCampGetCanGiveFriendItemRspOuterClass.f916x78f6c04e.ensureFieldAccessorsInitialized(WinterCampGetCanGiveFriendItemRsp.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.WinterCampGetCanGiveFriendItemRspOuterClass.WinterCampGetCanGiveFriendItemRspOrBuilder
@@ -200,11 +200,11 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.retcode_ != 0) {
-                output.writeInt32(12, this.retcode_);
-            }
             for (int i = 0; i < this.itemList_.size(); i++) {
-                output.writeMessage(14, this.itemList_.get(i));
+                output.writeMessage(1, this.itemList_.get(i));
+            }
+            if (this.retcode_ != 0) {
+                output.writeInt32(2, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -216,11 +216,11 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(12, this.retcode_);
-            }
             for (int i = 0; i < this.itemList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(14, this.itemList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(1, this.itemList_.get(i));
+            }
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(2, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -244,9 +244,9 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getRetcode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getRetcode();
             if (getItemListCount() > 0) {
-                hash = (53 * ((37 * hash) + 14)) + getItemListList().hashCode();
+                hash = (53 * ((37 * hash) + 1)) + getItemListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -338,7 +338,7 @@ public final class WinterCampGetCanGiveFriendItemRspOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return WinterCampGetCanGiveFriendItemRspOuterClass.f951x78f6c04e.ensureFieldAccessorsInitialized(WinterCampGetCanGiveFriendItemRsp.class, Builder.class);
+                return WinterCampGetCanGiveFriendItemRspOuterClass.f916x78f6c04e.ensureFieldAccessorsInitialized(WinterCampGetCanGiveFriendItemRsp.class, Builder.class);
             }
 
             private Builder() {

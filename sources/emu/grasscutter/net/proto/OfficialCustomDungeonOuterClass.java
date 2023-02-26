@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/OfficialCustomDungeonOuterClass.class */
 public final class OfficialCustomDungeonOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bOfficialCustomDungeon.proto\">\n\u0015OfficialCustomDungeon\u0012\u0012\n\ndungeon_id\u0018\u0004 \u0001(\r\u0012\u0011\n\twin_times\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bOfficialCustomDungeon.proto\"<\n\u0015OfficialCustomDungeon\u0012\u0011\n\tdungeonId\u0018\u0003 \u0001(\r\u0012\u0010\n\bwinTimes\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_OfficialCustomDungeon_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_OfficialCustomDungeon_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_OfficialCustomDungeon_descriptor, new String[]{"DungeonId", "WinTimes"});
 
@@ -43,9 +43,9 @@ public final class OfficialCustomDungeonOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/OfficialCustomDungeonOuterClass$OfficialCustomDungeon.class */
     public static final class OfficialCustomDungeon extends GeneratedMessageV3 implements OfficialCustomDungeonOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int DUNGEON_ID_FIELD_NUMBER = 4;
+        public static final int DUNGEONID_FIELD_NUMBER = 3;
         private int dungeonId_;
-        public static final int WIN_TIMES_FIELD_NUMBER = 13;
+        public static final int WINTIMES_FIELD_NUMBER = 14;
         private int winTimes_;
         private byte memoizedIsInitialized;
         private static final OfficialCustomDungeon DEFAULT_INSTANCE = new OfficialCustomDungeon();
@@ -92,10 +92,10 @@ public final class OfficialCustomDungeonOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 32:
+                            case 24:
                                 this.dungeonId_ = input.readUInt32();
                                 break;
-                            case 104:
+                            case 112:
                                 this.winTimes_ = input.readUInt32();
                                 break;
                             default:
@@ -153,10 +153,10 @@ public final class OfficialCustomDungeonOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.dungeonId_ != 0) {
-                output.writeUInt32(4, this.dungeonId_);
+                output.writeUInt32(3, this.dungeonId_);
             }
             if (this.winTimes_ != 0) {
-                output.writeUInt32(13, this.winTimes_);
+                output.writeUInt32(14, this.winTimes_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class OfficialCustomDungeonOuterClass {
             }
             int size2 = 0;
             if (this.dungeonId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.dungeonId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.dungeonId_);
             }
             if (this.winTimes_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.winTimes_);
+                size2 += CodedOutputStream.computeUInt32Size(14, this.winTimes_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class OfficialCustomDungeonOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getDungeonId())) + 13)) + getWinTimes())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getDungeonId())) + 14)) + getWinTimes())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

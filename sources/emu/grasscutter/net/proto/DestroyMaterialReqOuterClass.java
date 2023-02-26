@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DestroyMaterialReqOuterClass.class */
 public final class DestroyMaterialReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018DestroyMaterialReq.proto\u001a\u0012MaterialInfo.proto\":\n\u0012DestroyMaterialReq\u0012$\n\rmaterial_list\u0018\u0001 \u0003(\u000b2\r.MaterialInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MaterialInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018DestroyMaterialReq.proto\u001a\u0012MaterialInfo.proto\"9\n\u0012DestroyMaterialReq\u0012#\n\fmaterialList\u0018\n \u0003(\u000b2\r.MaterialInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MaterialInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_DestroyMaterialReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_DestroyMaterialReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DestroyMaterialReq_descriptor, new String[]{"MaterialList"});
 
@@ -55,7 +55,7 @@ public final class DestroyMaterialReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DestroyMaterialReqOuterClass$DestroyMaterialReq.class */
     public static final class DestroyMaterialReq extends GeneratedMessageV3 implements DestroyMaterialReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MATERIAL_LIST_FIELD_NUMBER = 1;
+        public static final int MATERIALLIST_FIELD_NUMBER = 10;
         private List<MaterialInfoOuterClass.MaterialInfo> materialList_;
         private byte memoizedIsInitialized;
         private static final DestroyMaterialReq DEFAULT_INSTANCE = new DestroyMaterialReq();
@@ -106,7 +106,7 @@ public final class DestroyMaterialReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 10:
+                                case 82:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.materialList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -187,7 +187,7 @@ public final class DestroyMaterialReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.materialList_.size(); i++) {
-                output.writeMessage(1, this.materialList_.get(i));
+                output.writeMessage(10, this.materialList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,7 +200,7 @@ public final class DestroyMaterialReqOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.materialList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(1, this.materialList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(10, this.materialList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class DestroyMaterialReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getMaterialListCount() > 0) {
-                hash = (53 * ((37 * hash) + 1)) + getMaterialListList().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getMaterialListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

@@ -90,30 +90,30 @@ public abstract class AbstractInt2ShortSortedMap extends AbstractInt2ShortMap im
     public static class KeySetIterator implements IntBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Int2ShortMap.Entry> f2013i;
+        protected final ObjectBidirectionalIterator<Int2ShortMap.Entry> f1977i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Int2ShortMap.Entry> i) {
-            this.f2013i = i;
+            this.f1977i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntIterator, java.util.PrimitiveIterator.OfInt
         public int nextInt() {
-            return ((Int2ShortMap.Entry) this.f2013i.next()).getIntKey();
+            return ((Int2ShortMap.Entry) this.f1977i.next()).getIntKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntBidirectionalIterator
         public int previousInt() {
-            return this.f2013i.previous().getIntKey();
+            return this.f1977i.previous().getIntKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2013i.hasNext();
+            return this.f1977i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2013i.hasPrevious();
+            return this.f1977i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractInt2ShortSortedMap extends AbstractInt2ShortMap im
     public static class ValuesIterator implements ShortIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Int2ShortMap.Entry> f2014i;
+        protected final ObjectBidirectionalIterator<Int2ShortMap.Entry> f1978i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Int2ShortMap.Entry> i) {
-            this.f2014i = i;
+            this.f1978i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
         public short nextShort() {
-            return ((Int2ShortMap.Entry) this.f2014i.next()).getShortValue();
+            return ((Int2ShortMap.Entry) this.f1978i.next()).getShortValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2014i.hasNext();
+            return this.f1978i.hasNext();
         }
     }
 }

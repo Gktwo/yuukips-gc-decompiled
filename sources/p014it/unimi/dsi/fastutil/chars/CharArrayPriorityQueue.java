@@ -15,7 +15,7 @@ public class CharArrayPriorityQueue implements CharPriorityQueue, Serializable {
     protected int size;
 
     /* renamed from: c */
-    protected CharComparator f1483c;
+    protected CharComparator f1447c;
     protected transient int firstIndex;
     protected transient boolean firstIndexValid;
 
@@ -24,7 +24,7 @@ public class CharArrayPriorityQueue implements CharPriorityQueue, Serializable {
         if (capacity > 0) {
             this.array = new char[capacity];
         }
-        this.f1483c = c;
+        this.f1447c = c;
     }
 
     public CharArrayPriorityQueue(int capacity) {
@@ -65,12 +65,12 @@ public class CharArrayPriorityQueue implements CharPriorityQueue, Serializable {
         int i = this.size - 1;
         int firstIndex = i;
         char first = this.array[firstIndex];
-        if (this.f1483c != null) {
+        if (this.f1447c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f1483c.compare(this.array[i], first) < 0) {
+                } else if (this.f1447c.compare(this.array[i], first) < 0) {
                     firstIndex = i;
                     first = this.array[i];
                 }
@@ -103,11 +103,11 @@ public class CharArrayPriorityQueue implements CharPriorityQueue, Serializable {
         }
         if (!this.firstIndexValid) {
             this.firstIndexValid = false;
-        } else if (this.f1483c == null) {
+        } else if (this.f1447c == null) {
             if (x < this.array[this.firstIndex]) {
                 this.firstIndex = this.size;
             }
-        } else if (this.f1483c.compare(x, this.array[this.firstIndex]) < 0) {
+        } else if (this.f1447c.compare(x, this.array[this.firstIndex]) < 0) {
             this.firstIndex = this.size;
         }
         char[] cArr = this.array;
@@ -159,7 +159,7 @@ public class CharArrayPriorityQueue implements CharPriorityQueue, Serializable {
     /* Return type fixed from 'it.unimi.dsi.fastutil.chars.CharComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.chars.CharPriorityQueue, p014it.unimi.dsi.fastutil.PriorityQueue
     public Comparator<? super Character> comparator() {
-        return this.f1483c;
+        return this.f1447c;
     }
 
     private void writeObject(ObjectOutputStream s) throws IOException {

@@ -6,6 +6,7 @@ import com.google.common.annotations.GwtIncompatible;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.primitives.Ints;
+import emu.grasscutter.net.packet.PacketOpcodes;
 import java.math.RoundingMode;
 import kotlin.time.DurationKt;
 import okhttp3.internal.http2.Http2Connection;
@@ -25,7 +26,7 @@ public final class IntMath {
     static final int[] powersOf10 = {1, 10, 100, 1000, 10000, 100000, DurationKt.NANOS_IN_MILLIS, 10000000, 100000000, Http2Connection.DEGRADED_PONG_TIMEOUT_NS};
     @VisibleForTesting
     static final int[] halfPowersOf10 = {3, 31, 316, 3162, 31622, 316227, 3162277, 31622776, 316227766, Integer.MAX_VALUE};
-    private static final int[] factorials = {1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800, 479001600};
+    private static final int[] factorials = {1, 1, 2, 6, 24, 120, PacketOpcodes.GetShopmallDataReq, 5040, 40320, 362880, 3628800, 39916800, 479001600};
     @VisibleForTesting
     static int[] biggestBinomials = {Integer.MAX_VALUE, Integer.MAX_VALUE, 65536, 2345, 477, 193, 110, 75, 58, 49, 43, 39, 37, 35, 34, 34, 33};
 

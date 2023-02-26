@@ -294,50 +294,50 @@ public final class ByteSpliterators {
     private static class SpliteratorWrapper implements ByteSpliterator {
 
         /* renamed from: i */
-        final Spliterator<Byte> f1305i;
+        final Spliterator<Byte> f1269i;
 
         public SpliteratorWrapper(Spliterator<Byte> i) {
-            this.f1305i = i;
+            this.f1269i = i;
         }
 
         public boolean tryAdvance(ByteConsumer action) {
-            return this.f1305i.tryAdvance(action);
+            return this.f1269i.tryAdvance(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteSpliterator, java.util.Spliterator
         @Deprecated
         public boolean tryAdvance(Consumer<? super Byte> action) {
-            return this.f1305i.tryAdvance(action);
+            return this.f1269i.tryAdvance(action);
         }
 
         public void forEachRemaining(ByteConsumer action) {
-            this.f1305i.forEachRemaining(action);
+            this.f1269i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteSpliterator, java.util.Spliterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Byte> action) {
-            this.f1305i.forEachRemaining(action);
+            this.f1269i.forEachRemaining(action);
         }
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return this.f1305i.estimateSize();
+            return this.f1269i.estimateSize();
         }
 
         @Override // java.util.Spliterator
         public int characteristics() {
-            return this.f1305i.characteristics();
+            return this.f1269i.characteristics();
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteSpliterator, java.util.Spliterator
         public ByteComparator getComparator() {
-            return ByteComparators.asByteComparator(this.f1305i.getComparator());
+            return ByteComparators.asByteComparator(this.f1269i.getComparator());
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public ByteSpliterator trySplit() {
-            Spliterator<Byte> innerSplit = this.f1305i.trySplit();
+            Spliterator<Byte> innerSplit = this.f1269i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -362,7 +362,7 @@ public final class ByteSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteSpliterators.SpliteratorWrapper, p014it.unimi.dsi.fastutil.bytes.ByteSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public ByteSpliterator trySplit() {
-            Spliterator<Byte> innerSplit = this.f1305i.trySplit();
+            Spliterator<Byte> innerSplit = this.f1269i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -375,33 +375,33 @@ public final class ByteSpliterators {
     private static class PrimitiveSpliteratorWrapper implements ByteSpliterator {
 
         /* renamed from: i */
-        final Spliterator.OfInt f1303i;
+        final Spliterator.OfInt f1267i;
 
         public PrimitiveSpliteratorWrapper(Spliterator.OfInt i) {
-            this.f1303i = i;
+            this.f1267i = i;
         }
 
         public boolean tryAdvance(ByteConsumer action) {
-            return this.f1303i.tryAdvance((IntConsumer) action);
+            return this.f1267i.tryAdvance((IntConsumer) action);
         }
 
         public void forEachRemaining(ByteConsumer action) {
-            this.f1303i.forEachRemaining((IntConsumer) action);
+            this.f1267i.forEachRemaining((IntConsumer) action);
         }
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return this.f1303i.estimateSize();
+            return this.f1267i.estimateSize();
         }
 
         @Override // java.util.Spliterator
         public int characteristics() {
-            return this.f1303i.characteristics();
+            return this.f1267i.characteristics();
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteSpliterator, java.util.Spliterator
         public ByteComparator getComparator() {
-            Comparator<? super Integer> comp = this.f1303i.getComparator();
+            Comparator<? super Integer> comp = this.f1267i.getComparator();
             return left, right -> {
                 return comp.compare(Integer.valueOf(left), Integer.valueOf(right));
             };
@@ -409,7 +409,7 @@ public final class ByteSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public ByteSpliterator trySplit() {
-            Spliterator.OfInt innerSplit = this.f1303i.trySplit();
+            Spliterator.OfInt innerSplit = this.f1267i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -434,7 +434,7 @@ public final class ByteSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteSpliterators.PrimitiveSpliteratorWrapper, p014it.unimi.dsi.fastutil.bytes.ByteSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public ByteSpliterator trySplit() {
-            Spliterator.OfInt innerSplit = this.f1303i.trySplit();
+            Spliterator.OfInt innerSplit = this.f1267i.trySplit();
             if (innerSplit == null) {
                 return null;
             }
@@ -633,15 +633,15 @@ public final class ByteSpliterators {
         private byte curr;
 
         /* renamed from: to */
-        private byte f1302to;
+        private byte f1266to;
 
         public IntervalSpliterator(byte from, byte to) {
             this.curr = from;
-            this.f1302to = to;
+            this.f1266to = to;
         }
 
         public boolean tryAdvance(ByteConsumer action) {
-            if (this.curr >= this.f1302to) {
+            if (this.curr >= this.f1266to) {
                 return false;
             }
             byte b = this.curr;
@@ -652,7 +652,7 @@ public final class ByteSpliterators {
 
         public void forEachRemaining(ByteConsumer action) {
             Objects.requireNonNull(action);
-            while (this.curr < this.f1302to) {
+            while (this.curr < this.f1266to) {
                 action.accept(this.curr);
                 this.curr = (byte) (this.curr + 1);
             }
@@ -660,7 +660,7 @@ public final class ByteSpliterators {
 
         @Override // java.util.Spliterator
         public long estimateSize() {
-            return (long) (this.f1302to - this.curr);
+            return (long) (this.f1266to - this.curr);
         }
 
         @Override // java.util.Spliterator
@@ -675,7 +675,7 @@ public final class ByteSpliterators {
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
         public ByteSpliterator trySplit() {
-            int remaining = this.f1302to - this.curr;
+            int remaining = this.f1266to - this.curr;
             byte mid = (byte) (this.curr + (remaining >> 1));
             if (remaining >= 0 && remaining <= 2) {
                 return null;
@@ -689,13 +689,13 @@ public final class ByteSpliterators {
         public long skip(long n) {
             if (n < 0) {
                 throw new IllegalArgumentException("Argument must be nonnegative: " + n);
-            } else if (this.curr >= this.f1302to) {
+            } else if (this.curr >= this.f1266to) {
                 return 0;
             } else {
                 long newCurr = ((long) this.curr) + n;
-                if (newCurr > ((long) this.f1302to) || newCurr < ((long) this.curr)) {
-                    long n2 = (long) (this.f1302to - this.curr);
-                    this.curr = this.f1302to;
+                if (newCurr > ((long) this.f1266to) || newCurr < ((long) this.curr)) {
+                    long n2 = (long) (this.f1266to - this.curr);
+                    this.curr = this.f1266to;
                     return n2;
                 }
                 this.curr = SafeMath.safeLongToByte(newCurr);
@@ -716,7 +716,7 @@ public final class ByteSpliterators {
         private static final int CHARACTERISTICS_NOT_SUPPORTED_WHILE_MULTIPLE = 5;
 
         /* renamed from: a */
-        final ByteSpliterator[] f1304a;
+        final ByteSpliterator[] f1268a;
         int offset;
         int length;
         long remainingEstimatedExceptCurrent;
@@ -725,7 +725,7 @@ public final class ByteSpliterators {
         public SpliteratorConcatenator(ByteSpliterator[] a, int offset, int length) {
             this.remainingEstimatedExceptCurrent = LongCompanionObject.MAX_VALUE;
             this.characteristics = 0;
-            this.f1304a = a;
+            this.f1268a = a;
             this.offset = offset;
             this.length = length;
             this.remainingEstimatedExceptCurrent = recomputeRemaining();
@@ -754,7 +754,7 @@ public final class ByteSpliterators {
                 r0 = r6
                 if (r0 <= 0) goto L_0x004e
                 r0 = r5
-                it.unimi.dsi.fastutil.bytes.ByteSpliterator[] r0 = r0.f1304a
+                it.unimi.dsi.fastutil.bytes.ByteSpliterator[] r0 = r0.f1268a
                 r1 = r7
                 int r7 = r7 + 1
                 r0 = r0[r1]
@@ -804,7 +804,7 @@ public final class ByteSpliterators {
             }
             while (curLength > 0) {
                 curOffset++;
-                current &= this.f1304a[curOffset].characteristics();
+                current &= this.f1268a[curOffset].characteristics();
                 curLength--;
             }
             return current;
@@ -824,7 +824,7 @@ public final class ByteSpliterators {
             while (true) {
                 if (this.length <= 0) {
                     break;
-                } else if (this.f1304a[this.offset].tryAdvance((ByteSpliterator) action)) {
+                } else if (this.f1268a[this.offset].tryAdvance((ByteSpliterator) action)) {
                     any = true;
                     break;
                 } else {
@@ -836,7 +836,7 @@ public final class ByteSpliterators {
 
         public void forEachRemaining(ByteConsumer action) {
             while (this.length > 0) {
-                this.f1304a[this.offset].forEachRemaining((ByteSpliterator) action);
+                this.f1268a[this.offset].forEachRemaining((ByteSpliterator) action);
                 advanceNextSpliterator();
             }
         }
@@ -845,7 +845,7 @@ public final class ByteSpliterators {
         @Deprecated
         public void forEachRemaining(Consumer<? super Byte> action) {
             while (this.length > 0) {
-                this.f1304a[this.offset].forEachRemaining(action);
+                this.f1268a[this.offset].forEachRemaining(action);
                 advanceNextSpliterator();
             }
         }
@@ -855,7 +855,7 @@ public final class ByteSpliterators {
             if (this.length <= 0) {
                 return 0;
             }
-            long est = this.f1304a[this.offset].estimateSize() + this.remainingEstimatedExceptCurrent;
+            long est = this.f1268a[this.offset].estimateSize() + this.remainingEstimatedExceptCurrent;
             if (est < 0) {
                 return LongCompanionObject.MAX_VALUE;
             }
@@ -870,7 +870,7 @@ public final class ByteSpliterators {
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteSpliterator, java.util.Spliterator
         public ByteComparator getComparator() {
             if (this.length == 1 && (this.characteristics & 4) != 0) {
-                return this.f1304a[this.offset].getComparator();
+                return this.f1268a[this.offset].getComparator();
             }
             throw new IllegalStateException();
         }
@@ -881,16 +881,16 @@ public final class ByteSpliterators {
                 case 0:
                     return null;
                 case 1:
-                    ByteSpliterator split = this.f1304a[this.offset].trySplit();
-                    this.characteristics = this.f1304a[this.offset].characteristics();
+                    ByteSpliterator split = this.f1268a[this.offset].trySplit();
+                    this.characteristics = this.f1268a[this.offset].characteristics();
                     return split;
                 case 2:
-                    ByteSpliterator[] byteSpliteratorArr = this.f1304a;
+                    ByteSpliterator[] byteSpliteratorArr = this.f1268a;
                     int i = this.offset;
                     this.offset = i + 1;
                     ByteSpliterator split2 = byteSpliteratorArr[i];
                     this.length--;
-                    this.characteristics = this.f1304a[this.offset].characteristics();
+                    this.characteristics = this.f1268a[this.offset].characteristics();
                     this.remainingEstimatedExceptCurrent = 0;
                     return split2;
                 default:
@@ -900,7 +900,7 @@ public final class ByteSpliterators {
                     this.length -= mid;
                     this.remainingEstimatedExceptCurrent = recomputeRemaining();
                     this.characteristics = computeCharacteristics();
-                    return new SpliteratorConcatenator(this.f1304a, ret_offset, mid);
+                    return new SpliteratorConcatenator(this.f1268a, ret_offset, mid);
             }
         }
 
@@ -912,7 +912,7 @@ public final class ByteSpliterators {
                 return 0;
             }
             while (c < n && this.length >= 0) {
-                c += this.f1304a[this.offset].skip(n - c);
+                c += this.f1268a[this.offset].skip(n - c);
                 if (c < n) {
                     advanceNextSpliterator();
                 }

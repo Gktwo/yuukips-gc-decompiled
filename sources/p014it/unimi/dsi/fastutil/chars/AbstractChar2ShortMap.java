@@ -195,30 +195,30 @@ public abstract class AbstractChar2ShortMap extends AbstractChar2ShortFunction i
                 return new CharIterator() { // from class: it.unimi.dsi.fastutil.chars.AbstractChar2ShortMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Char2ShortMap.Entry> f1342i;
+                    private final ObjectIterator<Char2ShortMap.Entry> f1306i;
 
                     {
-                        this.f1342i = Char2ShortMaps.fastIterator(AbstractChar2ShortMap.this);
+                        this.f1306i = Char2ShortMaps.fastIterator(AbstractChar2ShortMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
                     public char nextChar() {
-                        return this.f1342i.next().getCharKey();
+                        return this.f1306i.next().getCharKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1342i.hasNext();
+                        return this.f1306i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1342i.remove();
+                        this.f1306i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
                     public void forEachRemaining(CharConsumer action) {
-                        this.f1342i.forEachRemaining(entry -> {
+                        this.f1306i.forEachRemaining(entry -> {
                             action.accept(entry.getCharKey());
                         });
                     }
@@ -256,30 +256,30 @@ public abstract class AbstractChar2ShortMap extends AbstractChar2ShortFunction i
                 return new ShortIterator() { // from class: it.unimi.dsi.fastutil.chars.AbstractChar2ShortMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Char2ShortMap.Entry> f1343i;
+                    private final ObjectIterator<Char2ShortMap.Entry> f1307i;
 
                     {
-                        this.f1343i = Char2ShortMaps.fastIterator(AbstractChar2ShortMap.this);
+                        this.f1307i = Char2ShortMaps.fastIterator(AbstractChar2ShortMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
                     public short nextShort() {
-                        return this.f1343i.next().getShortValue();
+                        return this.f1307i.next().getShortValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1343i.hasNext();
+                        return this.f1307i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1343i.remove();
+                        this.f1307i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
                     public void forEachRemaining(ShortConsumer action) {
-                        this.f1343i.forEachRemaining(entry -> {
+                        this.f1307i.forEachRemaining(entry -> {
                             action.accept(entry.getShortValue());
                         });
                     }

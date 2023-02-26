@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/StrengthenPointDataOuterClass.class */
 public final class StrengthenPointDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019StrengthenPointData.proto\"O\n\u0013StrengthenPointData\u0012\u001b\n\u0013Unk3300_HIKDEKIPCPB\u0018\u0001 \u0001(\r\u0012\u001b\n\u0013Unk3300_NNKPOLLBLDO\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019StrengthenPointData.proto\"O\n\u0013StrengthenPointData\u0012\u001b\n\u0013Unk3300_NNKPOLLBLDO\u0018\b \u0001(\r\u0012\u001b\n\u0013Unk3300_HIKDEKIPCPB\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_StrengthenPointData_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_StrengthenPointData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_StrengthenPointData_descriptor, new String[]{"Unk3300HIKDEKIPCPB", "Unk3300NNKPOLLBLDO"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_StrengthenPointData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_StrengthenPointData_descriptor, new String[]{"Unk3300NNKPOLLBLDO", "Unk3300HIKDEKIPCPB"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/StrengthenPointDataOuterClass$StrengthenPointDataOrBuilder.class */
     public interface StrengthenPointDataOrBuilder extends MessageOrBuilder {
-        int getUnk3300HIKDEKIPCPB();
-
         int getUnk3300NNKPOLLBLDO();
+
+        int getUnk3300HIKDEKIPCPB();
     }
 
     private StrengthenPointDataOuterClass() {
@@ -43,10 +43,10 @@ public final class StrengthenPointDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/StrengthenPointDataOuterClass$StrengthenPointData.class */
     public static final class StrengthenPointData extends GeneratedMessageV3 implements StrengthenPointDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int UNK3300_HIKDEKIPCPB_FIELD_NUMBER = 1;
-        private int unk3300HIKDEKIPCPB_;
-        public static final int UNK3300_NNKPOLLBLDO_FIELD_NUMBER = 10;
+        public static final int UNK3300_NNKPOLLBLDO_FIELD_NUMBER = 8;
         private int unk3300NNKPOLLBLDO_;
+        public static final int UNK3300_HIKDEKIPCPB_FIELD_NUMBER = 3;
+        private int unk3300HIKDEKIPCPB_;
         private byte memoizedIsInitialized;
         private static final StrengthenPointData DEFAULT_INSTANCE = new StrengthenPointData();
         private static final Parser<StrengthenPointData> PARSER = new AbstractParser<StrengthenPointData>() { // from class: emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData.1
@@ -92,10 +92,10 @@ public final class StrengthenPointDataOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
+                            case 24:
                                 this.unk3300HIKDEKIPCPB_ = input.readUInt32();
                                 break;
-                            case 80:
+                            case 64:
                                 this.unk3300NNKPOLLBLDO_ = input.readUInt32();
                                 break;
                             default:
@@ -128,13 +128,13 @@ public final class StrengthenPointDataOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointDataOrBuilder
-        public int getUnk3300HIKDEKIPCPB() {
-            return this.unk3300HIKDEKIPCPB_;
+        public int getUnk3300NNKPOLLBLDO() {
+            return this.unk3300NNKPOLLBLDO_;
         }
 
         @Override // emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointDataOrBuilder
-        public int getUnk3300NNKPOLLBLDO() {
-            return this.unk3300NNKPOLLBLDO_;
+        public int getUnk3300HIKDEKIPCPB() {
+            return this.unk3300HIKDEKIPCPB_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -153,10 +153,10 @@ public final class StrengthenPointDataOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.unk3300HIKDEKIPCPB_ != 0) {
-                output.writeUInt32(1, this.unk3300HIKDEKIPCPB_);
+                output.writeUInt32(3, this.unk3300HIKDEKIPCPB_);
             }
             if (this.unk3300NNKPOLLBLDO_ != 0) {
-                output.writeUInt32(10, this.unk3300NNKPOLLBLDO_);
+                output.writeUInt32(8, this.unk3300NNKPOLLBLDO_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class StrengthenPointDataOuterClass {
             }
             int size2 = 0;
             if (this.unk3300HIKDEKIPCPB_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.unk3300HIKDEKIPCPB_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.unk3300HIKDEKIPCPB_);
             }
             if (this.unk3300NNKPOLLBLDO_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.unk3300NNKPOLLBLDO_);
+                size2 += CodedOutputStream.computeUInt32Size(8, this.unk3300NNKPOLLBLDO_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -188,7 +188,7 @@ public final class StrengthenPointDataOuterClass {
                 return equals(obj);
             }
             StrengthenPointData other = (StrengthenPointData) obj;
-            return getUnk3300HIKDEKIPCPB() == other.getUnk3300HIKDEKIPCPB() && getUnk3300NNKPOLLBLDO() == other.getUnk3300NNKPOLLBLDO() && this.unknownFields.equals(other.unknownFields);
+            return getUnk3300NNKPOLLBLDO() == other.getUnk3300NNKPOLLBLDO() && getUnk3300HIKDEKIPCPB() == other.getUnk3300HIKDEKIPCPB() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -196,7 +196,7 @@ public final class StrengthenPointDataOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getUnk3300HIKDEKIPCPB())) + 10)) + getUnk3300NNKPOLLBLDO())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getUnk3300NNKPOLLBLDO())) + 3)) + getUnk3300HIKDEKIPCPB())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -275,8 +275,8 @@ public final class StrengthenPointDataOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/StrengthenPointDataOuterClass$StrengthenPointData$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements StrengthenPointDataOrBuilder {
-            private int unk3300HIKDEKIPCPB_;
             private int unk3300NNKPOLLBLDO_;
+            private int unk3300HIKDEKIPCPB_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return StrengthenPointDataOuterClass.internal_static_StrengthenPointData_descriptor;
@@ -304,8 +304,8 @@ public final class StrengthenPointDataOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.unk3300HIKDEKIPCPB_ = 0;
                 this.unk3300NNKPOLLBLDO_ = 0;
+                this.unk3300HIKDEKIPCPB_ = 0;
                 return this;
             }
 
@@ -331,8 +331,8 @@ public final class StrengthenPointDataOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public StrengthenPointData buildPartial() {
                 StrengthenPointData result = new StrengthenPointData(this);
-                result.unk3300HIKDEKIPCPB_ = this.unk3300HIKDEKIPCPB_;
                 result.unk3300NNKPOLLBLDO_ = this.unk3300NNKPOLLBLDO_;
+                result.unk3300HIKDEKIPCPB_ = this.unk3300HIKDEKIPCPB_;
                 onBuilt();
                 return result;
             }
@@ -380,11 +380,11 @@ public final class StrengthenPointDataOuterClass {
                 if (other == StrengthenPointData.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getUnk3300HIKDEKIPCPB() != 0) {
-                    setUnk3300HIKDEKIPCPB(other.getUnk3300HIKDEKIPCPB());
-                }
                 if (other.getUnk3300NNKPOLLBLDO() != 0) {
                     setUnk3300NNKPOLLBLDO(other.getUnk3300NNKPOLLBLDO());
+                }
+                if (other.getUnk3300HIKDEKIPCPB() != 0) {
+                    setUnk3300HIKDEKIPCPB(other.getUnk3300HIKDEKIPCPB());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -419,23 +419,6 @@ public final class StrengthenPointDataOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointDataOrBuilder
-            public int getUnk3300HIKDEKIPCPB() {
-                return this.unk3300HIKDEKIPCPB_;
-            }
-
-            public Builder setUnk3300HIKDEKIPCPB(int value) {
-                this.unk3300HIKDEKIPCPB_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk3300HIKDEKIPCPB() {
-                this.unk3300HIKDEKIPCPB_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointDataOrBuilder
             public int getUnk3300NNKPOLLBLDO() {
                 return this.unk3300NNKPOLLBLDO_;
             }
@@ -448,6 +431,23 @@ public final class StrengthenPointDataOuterClass {
 
             public Builder clearUnk3300NNKPOLLBLDO() {
                 this.unk3300NNKPOLLBLDO_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointDataOrBuilder
+            public int getUnk3300HIKDEKIPCPB() {
+                return this.unk3300HIKDEKIPCPB_;
+            }
+
+            public Builder setUnk3300HIKDEKIPCPB(int value) {
+                this.unk3300HIKDEKIPCPB_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300HIKDEKIPCPB() {
+                this.unk3300HIKDEKIPCPB_ = 0;
                 onChanged();
                 return this;
             }

@@ -195,30 +195,30 @@ public abstract class AbstractChar2BooleanMap extends AbstractChar2BooleanFuncti
                 return new CharIterator() { // from class: it.unimi.dsi.fastutil.chars.AbstractChar2BooleanMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Char2BooleanMap.Entry> f1306i;
+                    private final ObjectIterator<Char2BooleanMap.Entry> f1270i;
 
                     {
-                        this.f1306i = Char2BooleanMaps.fastIterator(AbstractChar2BooleanMap.this);
+                        this.f1270i = Char2BooleanMaps.fastIterator(AbstractChar2BooleanMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
                     public char nextChar() {
-                        return this.f1306i.next().getCharKey();
+                        return this.f1270i.next().getCharKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1306i.hasNext();
+                        return this.f1270i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1306i.remove();
+                        this.f1270i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
                     public void forEachRemaining(CharConsumer action) {
-                        this.f1306i.forEachRemaining(entry -> {
+                        this.f1270i.forEachRemaining(entry -> {
                             action.accept(entry.getCharKey());
                         });
                     }
@@ -256,30 +256,30 @@ public abstract class AbstractChar2BooleanMap extends AbstractChar2BooleanFuncti
                 return new BooleanIterator() { // from class: it.unimi.dsi.fastutil.chars.AbstractChar2BooleanMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Char2BooleanMap.Entry> f1307i;
+                    private final ObjectIterator<Char2BooleanMap.Entry> f1271i;
 
                     {
-                        this.f1307i = Char2BooleanMaps.fastIterator(AbstractChar2BooleanMap.this);
+                        this.f1271i = Char2BooleanMaps.fastIterator(AbstractChar2BooleanMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
                     public boolean nextBoolean() {
-                        return this.f1307i.next().getBooleanValue();
+                        return this.f1271i.next().getBooleanValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1307i.hasNext();
+                        return this.f1271i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1307i.remove();
+                        this.f1271i.remove();
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
                     public void forEachRemaining(BooleanConsumer action) {
-                        this.f1307i.forEachRemaining(entry -> {
+                        this.f1271i.forEachRemaining(entry -> {
                             action.accept(entry.getBooleanValue());
                         });
                     }

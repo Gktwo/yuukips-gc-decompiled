@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneEntityDrownReqOuterClass.class */
 public final class SceneEntityDrownReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019SceneEntityDrownReq.proto\"(\n\u0013SceneEntityDrownReq\u0012\u0011\n\tentity_id\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019SceneEntityDrownReq.proto\"'\n\u0013SceneEntityDrownReq\u0012\u0010\n\bentityId\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SceneEntityDrownReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SceneEntityDrownReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneEntityDrownReq_descriptor, new String[]{"EntityId"});
 
@@ -41,7 +41,7 @@ public final class SceneEntityDrownReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneEntityDrownReqOuterClass$SceneEntityDrownReq.class */
     public static final class SceneEntityDrownReq extends GeneratedMessageV3 implements SceneEntityDrownReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTITY_ID_FIELD_NUMBER = 14;
+        public static final int ENTITYID_FIELD_NUMBER = 14;
         private int entityId_;
         private byte memoizedIsInitialized;
         private static final SceneEntityDrownReq DEFAULT_INSTANCE = new SceneEntityDrownReq();

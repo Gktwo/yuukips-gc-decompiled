@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ServantInfoOuterClass.class */
 public final class ServantInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0011ServantInfo.proto\"@\n\u000bServantInfo\u0012\u0018\n\u0010master_entity_id\u0018\u0001 \u0001(\r\u0012\u0017\n\u000fborn_slot_index\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0011ServantInfo.proto\"<\n\u000bServantInfo\u0012\u0016\n\u000emasterEntityId\u0018\u0001 \u0001(\r\u0012\u0015\n\rbornSlotIndex\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ServantInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ServantInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ServantInfo_descriptor, new String[]{"MasterEntityId", "BornSlotIndex"});
 
@@ -43,9 +43,9 @@ public final class ServantInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ServantInfoOuterClass$ServantInfo.class */
     public static final class ServantInfo extends GeneratedMessageV3 implements ServantInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MASTER_ENTITY_ID_FIELD_NUMBER = 1;
+        public static final int MASTERENTITYID_FIELD_NUMBER = 1;
         private int masterEntityId_;
-        public static final int BORN_SLOT_INDEX_FIELD_NUMBER = 2;
+        public static final int BORNSLOTINDEX_FIELD_NUMBER = 2;
         private int bornSlotIndex_;
         private byte memoizedIsInitialized;
         private static final ServantInfo DEFAULT_INSTANCE = new ServantInfo();

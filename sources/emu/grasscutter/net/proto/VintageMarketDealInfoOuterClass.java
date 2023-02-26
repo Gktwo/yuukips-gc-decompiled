@@ -24,15 +24,15 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VintageMarketDealInfoOuterClass.class */
 public final class VintageMarketDealInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bVintageMarketDealInfo.proto\u001a\u001dVintageMarketTraderInfo.proto\"¸\u0001\n\u0015VintageMarketDealInfo\u0012K\n\u0014trader_item_info_map\u0018\u0005 \u0003(\u000b2-.VintageMarketDealInfo.TraderItemInfoMapEntry\u001aR\n\u0016TraderItemInfoMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012'\n\u0005value\u0018\u0002 \u0001(\u000b2\u0018.VintageMarketTraderInfo:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VintageMarketTraderInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bVintageMarketDealInfo.proto\u001a\u001dVintageMarketTraderInfo.proto\"µ\u0001\n\u0015VintageMarketDealInfo\u0012H\n\u0011traderItemInfoMap\u0018\r \u0003(\u000b2-.VintageMarketDealInfo.TraderItemInfoMapEntry\u001aR\n\u0016TraderItemInfoMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012'\n\u0005value\u0018\u0002 \u0001(\u000b2\u0018.VintageMarketTraderInfo:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VintageMarketTraderInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_VintageMarketDealInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_VintageMarketDealInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_VintageMarketDealInfo_descriptor, new String[]{"TraderItemInfoMap"});
 
     /* renamed from: internal_static_VintageMarketDealInfo_TraderItemInfoMapEntry_descriptor */
-    private static final Descriptors.Descriptor f931xb4296d57 = internal_static_VintageMarketDealInfo_descriptor.getNestedTypes().get(0);
+    private static final Descriptors.Descriptor f897xb4296d57 = internal_static_VintageMarketDealInfo_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_VintageMarketDealInfo_TraderItemInfoMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f932x251d4cd5 = new GeneratedMessageV3.FieldAccessorTable(f931xb4296d57, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f898x251d4cd5 = new GeneratedMessageV3.FieldAccessorTable(f897xb4296d57, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VintageMarketDealInfoOuterClass$VintageMarketDealInfoOrBuilder.class */
     public interface VintageMarketDealInfoOrBuilder extends MessageOrBuilder {
@@ -63,7 +63,7 @@ public final class VintageMarketDealInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VintageMarketDealInfoOuterClass$VintageMarketDealInfo.class */
     public static final class VintageMarketDealInfo extends GeneratedMessageV3 implements VintageMarketDealInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TRADER_ITEM_INFO_MAP_FIELD_NUMBER = 5;
+        public static final int TRADERITEMINFOMAP_FIELD_NUMBER = 13;
         private MapField<Integer, VintageMarketTraderInfoOuterClass.VintageMarketTraderInfo> traderItemInfoMap_;
         private byte memoizedIsInitialized;
         private static final VintageMarketDealInfo DEFAULT_INSTANCE = new VintageMarketDealInfo();
@@ -115,7 +115,7 @@ public final class VintageMarketDealInfoOuterClass {
                 r4 = this;
                 r0 = r5
                 switch(r0) {
-                    case 5: goto L_0x0014;
+                    case 13: goto L_0x0014;
                     default: goto L_0x0019;
                 }
                 r0 = r4
@@ -168,7 +168,7 @@ public final class VintageMarketDealInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 42:
+                            case 106:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.traderItemInfoMap_ = MapField.newMapField(TraderItemInfoMapDefaultEntryHolder.defaultEntry);
                                     mutable_bitField0_ |= 1;
@@ -208,7 +208,7 @@ public final class VintageMarketDealInfoOuterClass {
         /* access modifiers changed from: private */
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/VintageMarketDealInfoOuterClass$VintageMarketDealInfo$TraderItemInfoMapDefaultEntryHolder.class */
         public static final class TraderItemInfoMapDefaultEntryHolder {
-            static final MapEntry<Integer, VintageMarketTraderInfoOuterClass.VintageMarketTraderInfo> defaultEntry = MapEntry.newDefaultInstance(VintageMarketDealInfoOuterClass.f931xb4296d57, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.MESSAGE, VintageMarketTraderInfoOuterClass.VintageMarketTraderInfo.getDefaultInstance());
+            static final MapEntry<Integer, VintageMarketTraderInfoOuterClass.VintageMarketTraderInfo> defaultEntry = MapEntry.newDefaultInstance(VintageMarketDealInfoOuterClass.f897xb4296d57, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.MESSAGE, VintageMarketTraderInfoOuterClass.VintageMarketTraderInfo.getDefaultInstance());
 
             private TraderItemInfoMapDefaultEntryHolder() {
             }
@@ -272,7 +272,7 @@ public final class VintageMarketDealInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetTraderItemInfoMap(), TraderItemInfoMapDefaultEntryHolder.defaultEntry, 5);
+            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetTraderItemInfoMap(), TraderItemInfoMapDefaultEntryHolder.defaultEntry, 13);
             this.unknownFields.writeTo(output);
         }
 
@@ -284,7 +284,7 @@ public final class VintageMarketDealInfoOuterClass {
             }
             int size2 = 0;
             for (Map.Entry<Integer, VintageMarketTraderInfoOuterClass.VintageMarketTraderInfo> entry : internalGetTraderItemInfoMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(5, TraderItemInfoMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+                size2 += CodedOutputStream.computeMessageSize(13, TraderItemInfoMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -310,7 +310,7 @@ public final class VintageMarketDealInfoOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (!internalGetTraderItemInfoMap().getMap().isEmpty()) {
-                hash = (53 * ((37 * hash) + 5)) + internalGetTraderItemInfoMap().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + internalGetTraderItemInfoMap().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -431,7 +431,7 @@ public final class VintageMarketDealInfoOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 5: goto L_0x0014;
+                        case 13: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -484,7 +484,7 @@ public final class VintageMarketDealInfoOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 5: goto L_0x0014;
+                        case 13: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4

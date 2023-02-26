@@ -23,19 +23,19 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DelTeamEntityNotifyOuterClass.class */
 public final class DelTeamEntityNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019DelTeamEntityNotify.proto\"C\n\u0013DelTeamEntityNotify\u0012\u001a\n\u0012del_entity_id_list\u0018\u000e \u0003(\r\u0012\u0010\n\bscene_id\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019DelTeamEntityNotify.proto\"?\n\u0013DelTeamEntityNotify\u0012\u000f\n\u0007sceneId\u0018\u000f \u0001(\r\u0012\u0017\n\u000fdelEntityIdList\u0018\u0001 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_DelTeamEntityNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_DelTeamEntityNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DelTeamEntityNotify_descriptor, new String[]{"DelEntityIdList", "SceneId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_DelTeamEntityNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DelTeamEntityNotify_descriptor, new String[]{"SceneId", "DelEntityIdList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DelTeamEntityNotifyOuterClass$DelTeamEntityNotifyOrBuilder.class */
     public interface DelTeamEntityNotifyOrBuilder extends MessageOrBuilder {
+        int getSceneId();
+
         List<Integer> getDelEntityIdListList();
 
         int getDelEntityIdListCount();
 
         int getDelEntityIdList(int i);
-
-        int getSceneId();
     }
 
     private DelTeamEntityNotifyOuterClass() {
@@ -51,11 +51,11 @@ public final class DelTeamEntityNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DelTeamEntityNotifyOuterClass$DelTeamEntityNotify.class */
     public static final class DelTeamEntityNotify extends GeneratedMessageV3 implements DelTeamEntityNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int DEL_ENTITY_ID_LIST_FIELD_NUMBER = 14;
+        public static final int SCENEID_FIELD_NUMBER = 15;
+        private int sceneId_;
+        public static final int DELENTITYIDLIST_FIELD_NUMBER = 1;
         private Internal.IntList delEntityIdList_;
         private int delEntityIdListMemoizedSerializedSize;
-        public static final int SCENE_ID_FIELD_NUMBER = 10;
-        private int sceneId_;
         private byte memoizedIsInitialized;
         private static final DelTeamEntityNotify DEFAULT_INSTANCE = new DelTeamEntityNotify();
         private static final Parser<DelTeamEntityNotify> PARSER = new AbstractParser<DelTeamEntityNotify>() { // from class: emu.grasscutter.net.proto.DelTeamEntityNotifyOuterClass.DelTeamEntityNotify.1
@@ -107,17 +107,14 @@ public final class DelTeamEntityNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 80:
-                                    this.sceneId_ = input.readUInt32();
-                                    break;
-                                case 112:
+                                case 8:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.delEntityIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.delEntityIdList_.addInt(input.readUInt32());
                                     break;
-                                case 114:
+                                case 10:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.delEntityIdList_ = newIntList();
@@ -127,6 +124,9 @@ public final class DelTeamEntityNotifyOuterClass {
                                         this.delEntityIdList_.addInt(input.readUInt32());
                                     }
                                     input.popLimit(limit);
+                                    break;
+                                case 120:
+                                    this.sceneId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -162,6 +162,11 @@ public final class DelTeamEntityNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.DelTeamEntityNotifyOuterClass.DelTeamEntityNotifyOrBuilder
+        public int getSceneId() {
+            return this.sceneId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.DelTeamEntityNotifyOuterClass.DelTeamEntityNotifyOrBuilder
         public List<Integer> getDelEntityIdListList() {
             return this.delEntityIdList_;
         }
@@ -174,11 +179,6 @@ public final class DelTeamEntityNotifyOuterClass {
         @Override // emu.grasscutter.net.proto.DelTeamEntityNotifyOuterClass.DelTeamEntityNotifyOrBuilder
         public int getDelEntityIdList(int index) {
             return this.delEntityIdList_.getInt(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.DelTeamEntityNotifyOuterClass.DelTeamEntityNotifyOrBuilder
-        public int getSceneId() {
-            return this.sceneId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -197,15 +197,15 @@ public final class DelTeamEntityNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (this.sceneId_ != 0) {
-                output.writeUInt32(10, this.sceneId_);
-            }
             if (getDelEntityIdListList().size() > 0) {
-                output.writeUInt32NoTag(114);
+                output.writeUInt32NoTag(10);
                 output.writeUInt32NoTag(this.delEntityIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.delEntityIdList_.size(); i++) {
                 output.writeUInt32NoTag(this.delEntityIdList_.getInt(i));
+            }
+            if (this.sceneId_ != 0) {
+                output.writeUInt32(15, this.sceneId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -216,22 +216,21 @@ public final class DelTeamEntityNotifyOuterClass {
             if (size != -1) {
                 return size;
             }
-            int size2 = 0;
-            if (this.sceneId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(10, this.sceneId_);
-            }
             int dataSize = 0;
             for (int i = 0; i < this.delEntityIdList_.size(); i++) {
                 dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.delEntityIdList_.getInt(i));
             }
-            int size3 = size2 + dataSize;
+            int size2 = 0 + dataSize;
             if (!getDelEntityIdListList().isEmpty()) {
-                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.delEntityIdListMemoizedSerializedSize = dataSize;
-            int size4 = size3 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size4;
-            return size4;
+            if (this.sceneId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.sceneId_);
+            }
+            int size3 = size2 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size3;
+            return size3;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -243,7 +242,7 @@ public final class DelTeamEntityNotifyOuterClass {
                 return equals(obj);
             }
             DelTeamEntityNotify other = (DelTeamEntityNotify) obj;
-            return getDelEntityIdListList().equals(other.getDelEntityIdListList()) && getSceneId() == other.getSceneId() && this.unknownFields.equals(other.unknownFields);
+            return getSceneId() == other.getSceneId() && getDelEntityIdListList().equals(other.getDelEntityIdListList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -251,11 +250,11 @@ public final class DelTeamEntityNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getSceneId();
             if (getDelEntityIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 14)) + getDelEntityIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 1)) + getDelEntityIdListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 10)) + getSceneId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -335,8 +334,8 @@ public final class DelTeamEntityNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DelTeamEntityNotifyOuterClass$DelTeamEntityNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements DelTeamEntityNotifyOrBuilder {
             private int bitField0_;
-            private Internal.IntList delEntityIdList_ = DelTeamEntityNotify.emptyIntList();
             private int sceneId_;
+            private Internal.IntList delEntityIdList_ = DelTeamEntityNotify.emptyIntList();
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return DelTeamEntityNotifyOuterClass.internal_static_DelTeamEntityNotify_descriptor;
@@ -364,9 +363,9 @@ public final class DelTeamEntityNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.sceneId_ = 0;
                 this.delEntityIdList_ = DelTeamEntityNotify.emptyIntList();
                 this.bitField0_ &= -2;
-                this.sceneId_ = 0;
                 return this;
             }
 
@@ -393,12 +392,12 @@ public final class DelTeamEntityNotifyOuterClass {
             public DelTeamEntityNotify buildPartial() {
                 DelTeamEntityNotify result = new DelTeamEntityNotify(this);
                 int i = this.bitField0_;
+                result.sceneId_ = this.sceneId_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.delEntityIdList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.delEntityIdList_ = this.delEntityIdList_;
-                result.sceneId_ = this.sceneId_;
                 onBuilt();
                 return result;
             }
@@ -446,6 +445,9 @@ public final class DelTeamEntityNotifyOuterClass {
                 if (other == DelTeamEntityNotify.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getSceneId() != 0) {
+                    setSceneId(other.getSceneId());
+                }
                 if (!other.delEntityIdList_.isEmpty()) {
                     if (this.delEntityIdList_.isEmpty()) {
                         this.delEntityIdList_ = other.delEntityIdList_;
@@ -455,9 +457,6 @@ public final class DelTeamEntityNotifyOuterClass {
                         this.delEntityIdList_.addAll(other.delEntityIdList_);
                     }
                     onChanged();
-                }
-                if (other.getSceneId() != 0) {
-                    setSceneId(other.getSceneId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -489,6 +488,23 @@ public final class DelTeamEntityNotifyOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.DelTeamEntityNotifyOuterClass.DelTeamEntityNotifyOrBuilder
+            public int getSceneId() {
+                return this.sceneId_;
+            }
+
+            public Builder setSceneId(int value) {
+                this.sceneId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearSceneId() {
+                this.sceneId_ = 0;
+                onChanged();
+                return this;
             }
 
             private void ensureDelEntityIdListIsMutable() {
@@ -537,23 +553,6 @@ public final class DelTeamEntityNotifyOuterClass {
             public Builder clearDelEntityIdList() {
                 this.delEntityIdList_ = DelTeamEntityNotify.emptyIntList();
                 this.bitField0_ &= -2;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.DelTeamEntityNotifyOuterClass.DelTeamEntityNotifyOrBuilder
-            public int getSceneId() {
-                return this.sceneId_;
-            }
-
-            public Builder setSceneId(int value) {
-                this.sceneId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearSceneId() {
-                this.sceneId_ = 0;
                 onChanged();
                 return this;
             }

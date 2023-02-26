@@ -25,12 +25,16 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerLevelStarCondNotifyOuterClass.class */
 public final class TowerLevelStarCondNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eTowerLevelStarCondNotify.proto\u001a\u001cTowerLevelStarCondData.proto\"r\n\u0018TowerLevelStarCondNotify\u0012/\n\u000econd_data_list\u0018\u0001 \u0003(\u000b2\u0017.TowerLevelStarCondData\u0012\u0013\n\u000blevel_index\u0018\b \u0001(\r\u0012\u0010\n\bfloor_id\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{TowerLevelStarCondDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eTowerLevelStarCondNotify.proto\u001a\u001cTowerLevelStarCondData.proto\"n\n\u0018TowerLevelStarCondNotify\u0012\u000f\n\u0007floorId\u0018\r \u0001(\r\u0012\u0012\n\nlevelIndex\u0018\u0004 \u0001(\r\u0012-\n\fcondDataList\u0018\u000f \u0003(\u000b2\u0017.TowerLevelStarCondDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{TowerLevelStarCondDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_TowerLevelStarCondNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TowerLevelStarCondNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TowerLevelStarCondNotify_descriptor, new String[]{"CondDataList", "LevelIndex", "FloorId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TowerLevelStarCondNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TowerLevelStarCondNotify_descriptor, new String[]{"FloorId", "LevelIndex", "CondDataList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerLevelStarCondNotifyOuterClass$TowerLevelStarCondNotifyOrBuilder.class */
     public interface TowerLevelStarCondNotifyOrBuilder extends MessageOrBuilder {
+        int getFloorId();
+
+        int getLevelIndex();
+
         List<TowerLevelStarCondDataOuterClass.TowerLevelStarCondData> getCondDataListList();
 
         TowerLevelStarCondDataOuterClass.TowerLevelStarCondData getCondDataList(int i);
@@ -40,10 +44,6 @@ public final class TowerLevelStarCondNotifyOuterClass {
         List<? extends TowerLevelStarCondDataOuterClass.TowerLevelStarCondDataOrBuilder> getCondDataListOrBuilderList();
 
         TowerLevelStarCondDataOuterClass.TowerLevelStarCondDataOrBuilder getCondDataListOrBuilder(int i);
-
-        int getLevelIndex();
-
-        int getFloorId();
     }
 
     private TowerLevelStarCondNotifyOuterClass() {
@@ -59,12 +59,12 @@ public final class TowerLevelStarCondNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerLevelStarCondNotifyOuterClass$TowerLevelStarCondNotify.class */
     public static final class TowerLevelStarCondNotify extends GeneratedMessageV3 implements TowerLevelStarCondNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int COND_DATA_LIST_FIELD_NUMBER = 1;
-        private List<TowerLevelStarCondDataOuterClass.TowerLevelStarCondData> condDataList_;
-        public static final int LEVEL_INDEX_FIELD_NUMBER = 8;
-        private int levelIndex_;
-        public static final int FLOOR_ID_FIELD_NUMBER = 10;
+        public static final int FLOORID_FIELD_NUMBER = 13;
         private int floorId_;
+        public static final int LEVELINDEX_FIELD_NUMBER = 4;
+        private int levelIndex_;
+        public static final int CONDDATALIST_FIELD_NUMBER = 15;
+        private List<TowerLevelStarCondDataOuterClass.TowerLevelStarCondData> condDataList_;
         private byte memoizedIsInitialized;
         private static final TowerLevelStarCondNotify DEFAULT_INSTANCE = new TowerLevelStarCondNotify();
         private static final Parser<TowerLevelStarCondNotify> PARSER = new AbstractParser<TowerLevelStarCondNotify>() { // from class: emu.grasscutter.net.proto.TowerLevelStarCondNotifyOuterClass.TowerLevelStarCondNotify.1
@@ -113,18 +113,18 @@ public final class TowerLevelStarCondNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 10:
+                            case 32:
+                                this.levelIndex_ = input.readUInt32();
+                                break;
+                            case 104:
+                                this.floorId_ = input.readUInt32();
+                                break;
+                            case 122:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.condDataList_ = new ArrayList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.condDataList_.add((TowerLevelStarCondDataOuterClass.TowerLevelStarCondData) input.readMessage(TowerLevelStarCondDataOuterClass.TowerLevelStarCondData.parser(), extensionRegistry));
-                                break;
-                            case 64:
-                                this.levelIndex_ = input.readUInt32();
-                                break;
-                            case 80:
-                                this.floorId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -159,6 +159,16 @@ public final class TowerLevelStarCondNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.TowerLevelStarCondNotifyOuterClass.TowerLevelStarCondNotifyOrBuilder
+        public int getFloorId() {
+            return this.floorId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.TowerLevelStarCondNotifyOuterClass.TowerLevelStarCondNotifyOrBuilder
+        public int getLevelIndex() {
+            return this.levelIndex_;
+        }
+
+        @Override // emu.grasscutter.net.proto.TowerLevelStarCondNotifyOuterClass.TowerLevelStarCondNotifyOrBuilder
         public List<TowerLevelStarCondDataOuterClass.TowerLevelStarCondData> getCondDataListList() {
             return this.condDataList_;
         }
@@ -183,16 +193,6 @@ public final class TowerLevelStarCondNotifyOuterClass {
             return this.condDataList_.get(index);
         }
 
-        @Override // emu.grasscutter.net.proto.TowerLevelStarCondNotifyOuterClass.TowerLevelStarCondNotifyOrBuilder
-        public int getLevelIndex() {
-            return this.levelIndex_;
-        }
-
-        @Override // emu.grasscutter.net.proto.TowerLevelStarCondNotifyOuterClass.TowerLevelStarCondNotifyOrBuilder
-        public int getFloorId() {
-            return this.floorId_;
-        }
-
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -208,14 +208,14 @@ public final class TowerLevelStarCondNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            for (int i = 0; i < this.condDataList_.size(); i++) {
-                output.writeMessage(1, this.condDataList_.get(i));
-            }
             if (this.levelIndex_ != 0) {
-                output.writeUInt32(8, this.levelIndex_);
+                output.writeUInt32(4, this.levelIndex_);
             }
             if (this.floorId_ != 0) {
-                output.writeUInt32(10, this.floorId_);
+                output.writeUInt32(13, this.floorId_);
+            }
+            for (int i = 0; i < this.condDataList_.size(); i++) {
+                output.writeMessage(15, this.condDataList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -227,14 +227,14 @@ public final class TowerLevelStarCondNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            for (int i = 0; i < this.condDataList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(1, this.condDataList_.get(i));
-            }
             if (this.levelIndex_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.levelIndex_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.levelIndex_);
             }
             if (this.floorId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.floorId_);
+                size2 += CodedOutputStream.computeUInt32Size(13, this.floorId_);
+            }
+            for (int i = 0; i < this.condDataList_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(15, this.condDataList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -250,7 +250,7 @@ public final class TowerLevelStarCondNotifyOuterClass {
                 return equals(obj);
             }
             TowerLevelStarCondNotify other = (TowerLevelStarCondNotify) obj;
-            return getCondDataListList().equals(other.getCondDataListList()) && getLevelIndex() == other.getLevelIndex() && getFloorId() == other.getFloorId() && this.unknownFields.equals(other.unknownFields);
+            return getFloorId() == other.getFloorId() && getLevelIndex() == other.getLevelIndex() && getCondDataListList().equals(other.getCondDataListList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -258,11 +258,11 @@ public final class TowerLevelStarCondNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
+            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + getFloorId())) + 4)) + getLevelIndex();
             if (getCondDataListCount() > 0) {
-                hash = (53 * ((37 * hash) + 1)) + getCondDataListList().hashCode();
+                hash = (53 * ((37 * hash) + 15)) + getCondDataListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 8)) + getLevelIndex())) + 10)) + getFloorId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -342,10 +342,10 @@ public final class TowerLevelStarCondNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TowerLevelStarCondNotifyOuterClass$TowerLevelStarCondNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements TowerLevelStarCondNotifyOrBuilder {
             private int bitField0_;
+            private int floorId_;
+            private int levelIndex_;
             private List<TowerLevelStarCondDataOuterClass.TowerLevelStarCondData> condDataList_ = Collections.emptyList();
             private RepeatedFieldBuilderV3<TowerLevelStarCondDataOuterClass.TowerLevelStarCondData, TowerLevelStarCondDataOuterClass.TowerLevelStarCondData.Builder, TowerLevelStarCondDataOuterClass.TowerLevelStarCondDataOrBuilder> condDataListBuilder_;
-            private int levelIndex_;
-            private int floorId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return TowerLevelStarCondNotifyOuterClass.internal_static_TowerLevelStarCondNotify_descriptor;
@@ -374,14 +374,14 @@ public final class TowerLevelStarCondNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.floorId_ = 0;
+                this.levelIndex_ = 0;
                 if (this.condDataListBuilder_ == null) {
                     this.condDataList_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
                     this.condDataListBuilder_.clear();
                 }
-                this.levelIndex_ = 0;
-                this.floorId_ = 0;
                 return this;
             }
 
@@ -408,6 +408,8 @@ public final class TowerLevelStarCondNotifyOuterClass {
             public TowerLevelStarCondNotify buildPartial() {
                 TowerLevelStarCondNotify result = new TowerLevelStarCondNotify(this);
                 int i = this.bitField0_;
+                result.floorId_ = this.floorId_;
+                result.levelIndex_ = this.levelIndex_;
                 if (this.condDataListBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
                         this.condDataList_ = Collections.unmodifiableList(this.condDataList_);
@@ -417,8 +419,6 @@ public final class TowerLevelStarCondNotifyOuterClass {
                 } else {
                     result.condDataList_ = this.condDataListBuilder_.build();
                 }
-                result.levelIndex_ = this.levelIndex_;
-                result.floorId_ = this.floorId_;
                 onBuilt();
                 return result;
             }
@@ -466,6 +466,12 @@ public final class TowerLevelStarCondNotifyOuterClass {
                 if (other == TowerLevelStarCondNotify.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getFloorId() != 0) {
+                    setFloorId(other.getFloorId());
+                }
+                if (other.getLevelIndex() != 0) {
+                    setLevelIndex(other.getLevelIndex());
+                }
                 if (this.condDataListBuilder_ == null) {
                     if (!other.condDataList_.isEmpty()) {
                         if (this.condDataList_.isEmpty()) {
@@ -487,12 +493,6 @@ public final class TowerLevelStarCondNotifyOuterClass {
                     } else {
                         this.condDataListBuilder_.addAllMessages(other.condDataList_);
                     }
-                }
-                if (other.getLevelIndex() != 0) {
-                    setLevelIndex(other.getLevelIndex());
-                }
-                if (other.getFloorId() != 0) {
-                    setFloorId(other.getFloorId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -524,6 +524,40 @@ public final class TowerLevelStarCondNotifyOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.TowerLevelStarCondNotifyOuterClass.TowerLevelStarCondNotifyOrBuilder
+            public int getFloorId() {
+                return this.floorId_;
+            }
+
+            public Builder setFloorId(int value) {
+                this.floorId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearFloorId() {
+                this.floorId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.TowerLevelStarCondNotifyOuterClass.TowerLevelStarCondNotifyOrBuilder
+            public int getLevelIndex() {
+                return this.levelIndex_;
+            }
+
+            public Builder setLevelIndex(int value) {
+                this.levelIndex_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearLevelIndex() {
+                this.levelIndex_ = 0;
+                onChanged();
+                return this;
             }
 
             private void ensureCondDataListIsMutable() {
@@ -700,40 +734,6 @@ public final class TowerLevelStarCondNotifyOuterClass {
                     this.condDataList_ = null;
                 }
                 return this.condDataListBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.TowerLevelStarCondNotifyOuterClass.TowerLevelStarCondNotifyOrBuilder
-            public int getLevelIndex() {
-                return this.levelIndex_;
-            }
-
-            public Builder setLevelIndex(int value) {
-                this.levelIndex_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearLevelIndex() {
-                this.levelIndex_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.TowerLevelStarCondNotifyOuterClass.TowerLevelStarCondNotifyOrBuilder
-            public int getFloorId() {
-                return this.floorId_;
-            }
-
-            public Builder setFloorId(int value) {
-                this.floorId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearFloorId() {
-                this.floorId_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

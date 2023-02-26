@@ -35,19 +35,19 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneAvatarInfoOuterClass.class */
 public final class SceneAvatarInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015SceneAvatarInfo.proto\u001a\u0015AvatarExcelInfo.proto\u001a\u0014CurVehicleInfo.proto\u001a\u0018SceneReliquaryInfo.proto\u001a\u0015SceneWeaponInfo.proto\u001a\u0010ServerBuff.proto\"\u0006\n\u000fSceneAvatarInfo\u0012\u000b\n\u0003uid\u0018\u0001 \u0001(\r\u0012\u0011\n\tavatar_id\u0018\u0002 \u0001(\r\u0012\f\n\u0004guid\u0018\u0003 \u0001(\u0004\u0012\u000f\n\u0007peer_id\u0018\u0004 \u0001(\r\u0012\u0015\n\requip_id_list\u0018\u0005 \u0003(\r\u0012\u0016\n\u000eskill_depot_id\u0018\u0006 \u0001(\r\u0012\u0016\n\u000etalent_id_list\u0018\u0007 \u0003(\r\u0012 \n\u0006weapon\u0018\b \u0001(\u000b2\u0010.SceneWeaponInfo\u0012+\n\u000ereliquary_list\u0018\t \u0003(\u000b2\u0013.SceneReliquaryInfo\u0012\u001e\n\u0016core_proud_skill_level\u0018\u000b \u0001(\r\u0012!\n\u0019inherent_proud_skill_list\u0018\f \u0003(\r\u0012<\n\u000fskill_level_map\u0018\r \u0003(\u000b2#.SceneAvatarInfo.SkillLevelMapEntry\u0012R\n\u001bproud_skill_extra_level_map\u0018\u000e \u0003(\u000b2-.SceneAvatarInfo.ProudSkillExtraLevelMapEntry\u0012%\n\u0010server_buff_list\u0018\u000f \u0003(\u000b2\u000b.ServerBuff\u0012\u001b\n\u0013team_resonance_list\u0018\u0010 \u0003(\r\u0012\u001b\n\u0013wearing_flycloak_id\u0018\u0011 \u0001(\r\u0012\u0011\n\tborn_time\u0018\u0012 \u0001(\r\u0012\u0012\n\ncostume_id\u0018\u0013 \u0001(\r\u0012)\n\u0010cur_vehicle_info\u0018\u0014 \u0001(\u000b2\u000f.CurVehicleInfo\u0012$\n\nexcel_info\u0018\u0015 \u0001(\u000b2\u0010.AvatarExcelInfo\u0012\u0011\n\tanim_hash\u0018\u0016 \u0001(\r\u001a4\n\u0012SkillLevelMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001\u001a>\n\u001cProudSkillExtraLevelMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarExcelInfoOuterClass.getDescriptor(), CurVehicleInfoOuterClass.getDescriptor(), SceneReliquaryInfoOuterClass.getDescriptor(), SceneWeaponInfoOuterClass.getDescriptor(), ServerBuffOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015SceneAvatarInfo.proto\u001a\u0015SceneWeaponInfo.proto\u001a\u0014CurVehicleInfo.proto\u001a\u0015AvatarExcelInfo.proto\u001a\u0018SceneReliquaryInfo.proto\u001a\u0010ServerBuff.proto\"ü\u0005\n\u000fSceneAvatarInfo\u0012\u000b\n\u0003uid\u0018\u0001 \u0001(\r\u0012\u0010\n\bavatarId\u0018\u0002 \u0001(\r\u0012\f\n\u0004guid\u0018\u0003 \u0001(\u0004\u0012\u000e\n\u0006peerId\u0018\u0004 \u0001(\r\u0012\u0013\n\u000bequipIdList\u0018\u0005 \u0003(\r\u0012\u0014\n\fskillDepotId\u0018\u0006 \u0001(\r\u0012\u0014\n\ftalentIdList\u0018\u0007 \u0003(\r\u0012 \n\u0006weapon\u0018\b \u0001(\u000b2\u0010.SceneWeaponInfo\u0012*\n\rreliquaryList\u0018\t \u0003(\u000b2\u0013.SceneReliquaryInfo\u0012\u001b\n\u0013coreProudSkillLevel\u0018\u000b \u0001(\r\u0012\u001e\n\u0016inherentProudSkillList\u0018\f \u0003(\r\u0012:\n\rskillLevelMap\u0018\r \u0003(\u000b2#.SceneAvatarInfo.SkillLevelMapEntry\u0012N\n\u0017proudSkillExtraLevelMap\u0018\u000e \u0003(\u000b2-.SceneAvatarInfo.ProudSkillExtraLevelMapEntry\u0012#\n\u000eserverBuffList\u0018\u000f \u0003(\u000b2\u000b.ServerBuff\u0012\u0019\n\u0011teamResonanceList\u0018\u0010 \u0003(\r\u0012\u0019\n\u0011wearingFlycloakId\u0018\u0011 \u0001(\r\u0012\u0010\n\bbornTime\u0018\u0012 \u0001(\r\u0012\u0011\n\tcostumeId\u0018\u0013 \u0001(\r\u0012'\n\u000ecurVehicleInfo\u0018\u0014 \u0001(\u000b2\u000f.CurVehicleInfo\u0012#\n\texcelInfo\u0018\u0015 \u0001(\u000b2\u0010.AvatarExcelInfo\u0012\u0010\n\banimHash\u0018\u0016 \u0001(\r\u001a4\n\u0012SkillLevelMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001\u001a>\n\u001cProudSkillExtraLevelMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{SceneWeaponInfoOuterClass.getDescriptor(), CurVehicleInfoOuterClass.getDescriptor(), AvatarExcelInfoOuterClass.getDescriptor(), SceneReliquaryInfoOuterClass.getDescriptor(), ServerBuffOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SceneAvatarInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SceneAvatarInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneAvatarInfo_descriptor, new String[]{"Uid", "AvatarId", "Guid", "PeerId", "EquipIdList", "SkillDepotId", "TalentIdList", "Weapon", "ReliquaryList", "CoreProudSkillLevel", "InherentProudSkillList", "SkillLevelMap", "ProudSkillExtraLevelMap", "ServerBuffList", "TeamResonanceList", "WearingFlycloakId", "BornTime", "CostumeId", "CurVehicleInfo", "ExcelInfo", "AnimHash"});
     private static final Descriptors.Descriptor internal_static_SceneAvatarInfo_SkillLevelMapEntry_descriptor = internal_static_SceneAvatarInfo_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_SceneAvatarInfo_SkillLevelMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f857xcb560ca8 = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneAvatarInfo_SkillLevelMapEntry_descriptor, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f833xcb560ca8 = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneAvatarInfo_SkillLevelMapEntry_descriptor, new String[]{"Key", "Value"});
 
     /* renamed from: internal_static_SceneAvatarInfo_ProudSkillExtraLevelMapEntry_descriptor */
-    private static final Descriptors.Descriptor f858xb5b264f4 = internal_static_SceneAvatarInfo_descriptor.getNestedTypes().get(1);
+    private static final Descriptors.Descriptor f834xb5b264f4 = internal_static_SceneAvatarInfo_descriptor.getNestedTypes().get(1);
 
     /* renamed from: internal_static_SceneAvatarInfo_ProudSkillExtraLevelMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f859x13b75772 = new GeneratedMessageV3.FieldAccessorTable(f858xb5b264f4, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f835x13b75772 = new GeneratedMessageV3.FieldAccessorTable(f834xb5b264f4, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneAvatarInfoOuterClass$SceneAvatarInfoOrBuilder.class */
     public interface SceneAvatarInfoOrBuilder extends MessageOrBuilder {
@@ -175,49 +175,49 @@ public final class SceneAvatarInfoOuterClass {
         private static final long serialVersionUID = 0;
         public static final int UID_FIELD_NUMBER = 1;
         private int uid_;
-        public static final int AVATAR_ID_FIELD_NUMBER = 2;
+        public static final int AVATARID_FIELD_NUMBER = 2;
         private int avatarId_;
         public static final int GUID_FIELD_NUMBER = 3;
         private long guid_;
-        public static final int PEER_ID_FIELD_NUMBER = 4;
+        public static final int PEERID_FIELD_NUMBER = 4;
         private int peerId_;
-        public static final int EQUIP_ID_LIST_FIELD_NUMBER = 5;
+        public static final int EQUIPIDLIST_FIELD_NUMBER = 5;
         private Internal.IntList equipIdList_;
         private int equipIdListMemoizedSerializedSize;
-        public static final int SKILL_DEPOT_ID_FIELD_NUMBER = 6;
+        public static final int SKILLDEPOTID_FIELD_NUMBER = 6;
         private int skillDepotId_;
-        public static final int TALENT_ID_LIST_FIELD_NUMBER = 7;
+        public static final int TALENTIDLIST_FIELD_NUMBER = 7;
         private Internal.IntList talentIdList_;
         private int talentIdListMemoizedSerializedSize;
         public static final int WEAPON_FIELD_NUMBER = 8;
         private SceneWeaponInfoOuterClass.SceneWeaponInfo weapon_;
-        public static final int RELIQUARY_LIST_FIELD_NUMBER = 9;
+        public static final int RELIQUARYLIST_FIELD_NUMBER = 9;
         private List<SceneReliquaryInfoOuterClass.SceneReliquaryInfo> reliquaryList_;
-        public static final int CORE_PROUD_SKILL_LEVEL_FIELD_NUMBER = 11;
+        public static final int COREPROUDSKILLLEVEL_FIELD_NUMBER = 11;
         private int coreProudSkillLevel_;
-        public static final int INHERENT_PROUD_SKILL_LIST_FIELD_NUMBER = 12;
+        public static final int INHERENTPROUDSKILLLIST_FIELD_NUMBER = 12;
         private Internal.IntList inherentProudSkillList_;
         private int inherentProudSkillListMemoizedSerializedSize;
-        public static final int SKILL_LEVEL_MAP_FIELD_NUMBER = 13;
+        public static final int SKILLLEVELMAP_FIELD_NUMBER = 13;
         private MapField<Integer, Integer> skillLevelMap_;
-        public static final int PROUD_SKILL_EXTRA_LEVEL_MAP_FIELD_NUMBER = 14;
+        public static final int PROUDSKILLEXTRALEVELMAP_FIELD_NUMBER = 14;
         private MapField<Integer, Integer> proudSkillExtraLevelMap_;
-        public static final int SERVER_BUFF_LIST_FIELD_NUMBER = 15;
+        public static final int SERVERBUFFLIST_FIELD_NUMBER = 15;
         private List<ServerBuffOuterClass.ServerBuff> serverBuffList_;
-        public static final int TEAM_RESONANCE_LIST_FIELD_NUMBER = 16;
+        public static final int TEAMRESONANCELIST_FIELD_NUMBER = 16;
         private Internal.IntList teamResonanceList_;
         private int teamResonanceListMemoizedSerializedSize;
-        public static final int WEARING_FLYCLOAK_ID_FIELD_NUMBER = 17;
+        public static final int WEARINGFLYCLOAKID_FIELD_NUMBER = 17;
         private int wearingFlycloakId_;
-        public static final int BORN_TIME_FIELD_NUMBER = 18;
+        public static final int BORNTIME_FIELD_NUMBER = 18;
         private int bornTime_;
-        public static final int COSTUME_ID_FIELD_NUMBER = 19;
+        public static final int COSTUMEID_FIELD_NUMBER = 19;
         private int costumeId_;
-        public static final int CUR_VEHICLE_INFO_FIELD_NUMBER = 20;
+        public static final int CURVEHICLEINFO_FIELD_NUMBER = 20;
         private CurVehicleInfoOuterClass.CurVehicleInfo curVehicleInfo_;
-        public static final int EXCEL_INFO_FIELD_NUMBER = 21;
+        public static final int EXCELINFO_FIELD_NUMBER = 21;
         private AvatarExcelInfoOuterClass.AvatarExcelInfo excelInfo_;
-        public static final int ANIM_HASH_FIELD_NUMBER = 22;
+        public static final int ANIMHASH_FIELD_NUMBER = 22;
         private int animHash_;
         private byte memoizedIsInitialized;
         private static final SceneAvatarInfo DEFAULT_INSTANCE = new SceneAvatarInfo();
@@ -722,7 +722,7 @@ public final class SceneAvatarInfoOuterClass {
         /* access modifiers changed from: private */
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneAvatarInfoOuterClass$SceneAvatarInfo$ProudSkillExtraLevelMapDefaultEntryHolder.class */
         public static final class ProudSkillExtraLevelMapDefaultEntryHolder {
-            static final MapEntry<Integer, Integer> defaultEntry = MapEntry.newDefaultInstance(SceneAvatarInfoOuterClass.f858xb5b264f4, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.UINT32, 0);
+            static final MapEntry<Integer, Integer> defaultEntry = MapEntry.newDefaultInstance(SceneAvatarInfoOuterClass.f834xb5b264f4, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.UINT32, 0);
 
             private ProudSkillExtraLevelMapDefaultEntryHolder() {
             }
@@ -2871,10 +2871,10 @@ public final class SceneAvatarInfoOuterClass {
     }
 
     static {
-        AvatarExcelInfoOuterClass.getDescriptor();
-        CurVehicleInfoOuterClass.getDescriptor();
-        SceneReliquaryInfoOuterClass.getDescriptor();
         SceneWeaponInfoOuterClass.getDescriptor();
+        CurVehicleInfoOuterClass.getDescriptor();
+        AvatarExcelInfoOuterClass.getDescriptor();
+        SceneReliquaryInfoOuterClass.getDescriptor();
         ServerBuffOuterClass.getDescriptor();
     }
 }

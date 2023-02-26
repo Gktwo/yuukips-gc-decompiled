@@ -37,7 +37,7 @@ import org.bson.codecs.Decoder;
 /* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:com/mongodb/internal/operation/CommandOperationHelper.class */
 public final class CommandOperationHelper {
-    private static final List<Integer> RETRYABLE_ERROR_CODES = Arrays.asList(6, 7, 89, 91, 189, Integer.valueOf((int) PacketOpcodes.EnterSceneReadyReq), Integer.valueOf((int) RetcodeOuterClass.Retcode.RET_REUNION_FINISHED_VALUE), 13436, 13435, 11602, 11600, 10107);
+    private static final List<Integer> RETRYABLE_ERROR_CODES = Arrays.asList(6, 7, 89, 91, 189, Integer.valueOf((int) PacketOpcodes.SceneEntityMoveRsp), Integer.valueOf((int) RetcodeOuterClass.Retcode.RET_REUNION_FINISHED_VALUE), 13436, 13435, 11602, 11600, 10107);
     static final String RETRYABLE_WRITE_ERROR_LABEL = "RetryableWriteError";
 
     /* access modifiers changed from: package-private */

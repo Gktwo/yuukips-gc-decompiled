@@ -90,30 +90,30 @@ public abstract class AbstractChar2ShortSortedMap extends AbstractChar2ShortMap 
     public static class KeySetIterator implements CharBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Char2ShortMap.Entry> f1344i;
+        protected final ObjectBidirectionalIterator<Char2ShortMap.Entry> f1308i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Char2ShortMap.Entry> i) {
-            this.f1344i = i;
+            this.f1308i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public char nextChar() {
-            return ((Char2ShortMap.Entry) this.f1344i.next()).getCharKey();
+            return ((Char2ShortMap.Entry) this.f1308i.next()).getCharKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharBidirectionalIterator
         public char previousChar() {
-            return this.f1344i.previous().getCharKey();
+            return this.f1308i.previous().getCharKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1344i.hasNext();
+            return this.f1308i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1344i.hasPrevious();
+            return this.f1308i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractChar2ShortSortedMap extends AbstractChar2ShortMap 
     public static class ValuesIterator implements ShortIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Char2ShortMap.Entry> f1345i;
+        protected final ObjectBidirectionalIterator<Char2ShortMap.Entry> f1309i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Char2ShortMap.Entry> i) {
-            this.f1345i = i;
+            this.f1309i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterator
         public short nextShort() {
-            return ((Char2ShortMap.Entry) this.f1345i.next()).getShortValue();
+            return ((Char2ShortMap.Entry) this.f1309i.next()).getShortValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1345i.hasNext();
+            return this.f1309i.hasNext();
         }
     }
 }

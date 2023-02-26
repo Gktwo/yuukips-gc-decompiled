@@ -24,15 +24,15 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExpeditionCallBackRspOuterClass.class */
 public final class AvatarExpeditionCallBackRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!AvatarExpeditionCallBackRsp.proto\u001a\u001aAvatarExpeditionInfo.proto\"Ñ\u0001\n\u001bAvatarExpeditionCallBackRsp\u0012\u000f\n\u0007retcode\u0018\u0002 \u0001(\u0005\u0012P\n\u0013expedition_info_map\u0018\u0007 \u0003(\u000b23.AvatarExpeditionCallBackRsp.ExpeditionInfoMapEntry\u001aO\n\u0016ExpeditionInfoMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\u0004\u0012$\n\u0005value\u0018\u0002 \u0001(\u000b2\u0015.AvatarExpeditionInfo:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarExpeditionInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!AvatarExpeditionCallBackRsp.proto\u001a\u001aAvatarExpeditionInfo.proto\"Ï\u0001\n\u001bAvatarExpeditionCallBackRsp\u0012\u000f\n\u0007retcode\u0018\u000e \u0001(\u0005\u0012N\n\u0011expeditionInfoMap\u0018\u0007 \u0003(\u000b23.AvatarExpeditionCallBackRsp.ExpeditionInfoMapEntry\u001aO\n\u0016ExpeditionInfoMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\u0004\u0012$\n\u0005value\u0018\u0002 \u0001(\u000b2\u0015.AvatarExpeditionInfo:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarExpeditionInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AvatarExpeditionCallBackRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarExpeditionCallBackRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarExpeditionCallBackRsp_descriptor, new String[]{"Retcode", "ExpeditionInfoMap"});
 
     /* renamed from: internal_static_AvatarExpeditionCallBackRsp_ExpeditionInfoMapEntry_descriptor */
-    private static final Descriptors.Descriptor f629x4eadfa8b = internal_static_AvatarExpeditionCallBackRsp_descriptor.getNestedTypes().get(0);
+    private static final Descriptors.Descriptor f628x4eadfa8b = internal_static_AvatarExpeditionCallBackRsp_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_AvatarExpeditionCallBackRsp_ExpeditionInfoMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f630xcaab6609 = new GeneratedMessageV3.FieldAccessorTable(f629x4eadfa8b, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f629xcaab6609 = new GeneratedMessageV3.FieldAccessorTable(f628x4eadfa8b, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExpeditionCallBackRspOuterClass$AvatarExpeditionCallBackRspOrBuilder.class */
     public interface AvatarExpeditionCallBackRspOrBuilder extends MessageOrBuilder {
@@ -65,9 +65,9 @@ public final class AvatarExpeditionCallBackRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExpeditionCallBackRspOuterClass$AvatarExpeditionCallBackRsp.class */
     public static final class AvatarExpeditionCallBackRsp extends GeneratedMessageV3 implements AvatarExpeditionCallBackRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 2;
+        public static final int RETCODE_FIELD_NUMBER = 14;
         private int retcode_;
-        public static final int EXPEDITION_INFO_MAP_FIELD_NUMBER = 7;
+        public static final int EXPEDITIONINFOMAP_FIELD_NUMBER = 7;
         private MapField<Long, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> expeditionInfoMap_;
         private byte memoizedIsInitialized;
         private static final AvatarExpeditionCallBackRsp DEFAULT_INSTANCE = new AvatarExpeditionCallBackRsp();
@@ -172,9 +172,6 @@ public final class AvatarExpeditionCallBackRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 16:
-                                this.retcode_ = input.readInt32();
-                                break;
                             case 58:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.expeditionInfoMap_ = MapField.newMapField(ExpeditionInfoMapDefaultEntryHolder.defaultEntry);
@@ -182,6 +179,9 @@ public final class AvatarExpeditionCallBackRspOuterClass {
                                 }
                                 MapEntry<Long, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> expeditionInfoMap__ = (MapEntry) input.readMessage(ExpeditionInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                                 this.expeditionInfoMap_.getMutableMap().put(expeditionInfoMap__.getKey(), expeditionInfoMap__.getValue());
+                                break;
+                            case 112:
+                                this.retcode_ = input.readInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -220,7 +220,7 @@ public final class AvatarExpeditionCallBackRspOuterClass {
         /* access modifiers changed from: private */
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarExpeditionCallBackRspOuterClass$AvatarExpeditionCallBackRsp$ExpeditionInfoMapDefaultEntryHolder.class */
         public static final class ExpeditionInfoMapDefaultEntryHolder {
-            static final MapEntry<Long, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> defaultEntry = MapEntry.newDefaultInstance(AvatarExpeditionCallBackRspOuterClass.f629x4eadfa8b, WireFormat.FieldType.UINT64, 0L, WireFormat.FieldType.MESSAGE, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo.getDefaultInstance());
+            static final MapEntry<Long, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> defaultEntry = MapEntry.newDefaultInstance(AvatarExpeditionCallBackRspOuterClass.f628x4eadfa8b, WireFormat.FieldType.UINT64, 0L, WireFormat.FieldType.MESSAGE, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo.getDefaultInstance());
 
             private ExpeditionInfoMapDefaultEntryHolder() {
             }
@@ -284,10 +284,10 @@ public final class AvatarExpeditionCallBackRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.retcode_ != 0) {
-                output.writeInt32(2, this.retcode_);
-            }
             GeneratedMessageV3.serializeLongMapTo(output, internalGetExpeditionInfoMap(), ExpeditionInfoMapDefaultEntryHolder.defaultEntry, 7);
+            if (this.retcode_ != 0) {
+                output.writeInt32(14, this.retcode_);
+            }
             this.unknownFields.writeTo(output);
         }
 
@@ -298,11 +298,11 @@ public final class AvatarExpeditionCallBackRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(2, this.retcode_);
-            }
             for (Map.Entry<Long, AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> entry : internalGetExpeditionInfoMap().getMap().entrySet()) {
                 size2 += CodedOutputStream.computeMessageSize(7, ExpeditionInfoMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+            }
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(14, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -326,7 +326,7 @@ public final class AvatarExpeditionCallBackRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getRetcode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getRetcode();
             if (!internalGetExpeditionInfoMap().getMap().isEmpty()) {
                 hash = (53 * ((37 * hash) + 7)) + internalGetExpeditionInfoMap().hashCode();
             }

@@ -23,19 +23,19 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TryEnterHomeRspOuterClass.class */
 public final class TryEnterHomeRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015TryEnterHomeRsp.proto\"J\n\u000fTryEnterHomeRsp\u0012\u0012\n\nparam_list\u0018\u000b \u0003(\r\u0012\u0012\n\ntarget_uid\u0018\u0002 \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0004 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015TryEnterHomeRsp.proto\"H\n\u000fTryEnterHomeRsp\u0012\u0011\n\ttargetUid\u0018\u000f \u0001(\r\u0012\u0011\n\tparamList\u0018\n \u0003(\r\u0012\u000f\n\u0007retcode\u0018\f \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_TryEnterHomeRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TryEnterHomeRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TryEnterHomeRsp_descriptor, new String[]{"ParamList", "TargetUid", "Retcode"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TryEnterHomeRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TryEnterHomeRsp_descriptor, new String[]{"TargetUid", "ParamList", "Retcode"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TryEnterHomeRspOuterClass$TryEnterHomeRspOrBuilder.class */
     public interface TryEnterHomeRspOrBuilder extends MessageOrBuilder {
+        int getTargetUid();
+
         List<Integer> getParamListList();
 
         int getParamListCount();
 
         int getParamList(int i);
-
-        int getTargetUid();
 
         int getRetcode();
     }
@@ -53,12 +53,12 @@ public final class TryEnterHomeRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TryEnterHomeRspOuterClass$TryEnterHomeRsp.class */
     public static final class TryEnterHomeRsp extends GeneratedMessageV3 implements TryEnterHomeRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PARAM_LIST_FIELD_NUMBER = 11;
+        public static final int TARGETUID_FIELD_NUMBER = 15;
+        private int targetUid_;
+        public static final int PARAMLIST_FIELD_NUMBER = 10;
         private Internal.IntList paramList_;
         private int paramListMemoizedSerializedSize;
-        public static final int TARGET_UID_FIELD_NUMBER = 2;
-        private int targetUid_;
-        public static final int RETCODE_FIELD_NUMBER = 4;
+        public static final int RETCODE_FIELD_NUMBER = 12;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final TryEnterHomeRsp DEFAULT_INSTANCE = new TryEnterHomeRsp();
@@ -110,20 +110,14 @@ public final class TryEnterHomeRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 16:
-                                this.targetUid_ = input.readUInt32();
-                                break;
-                            case 32:
-                                this.retcode_ = input.readInt32();
-                                break;
-                            case 88:
+                            case 80:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.paramList_ = newIntList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.paramList_.addInt(input.readUInt32());
                                 break;
-                            case 90:
+                            case 82:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.paramList_ = newIntList();
@@ -133,6 +127,12 @@ public final class TryEnterHomeRspOuterClass {
                                     this.paramList_.addInt(input.readUInt32());
                                 }
                                 input.popLimit(limit);
+                                break;
+                            case 96:
+                                this.retcode_ = input.readInt32();
+                                break;
+                            case 120:
+                                this.targetUid_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -167,6 +167,11 @@ public final class TryEnterHomeRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.TryEnterHomeRspOuterClass.TryEnterHomeRspOrBuilder
+        public int getTargetUid() {
+            return this.targetUid_;
+        }
+
+        @Override // emu.grasscutter.net.proto.TryEnterHomeRspOuterClass.TryEnterHomeRspOrBuilder
         public List<Integer> getParamListList() {
             return this.paramList_;
         }
@@ -179,11 +184,6 @@ public final class TryEnterHomeRspOuterClass {
         @Override // emu.grasscutter.net.proto.TryEnterHomeRspOuterClass.TryEnterHomeRspOrBuilder
         public int getParamList(int index) {
             return this.paramList_.getInt(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.TryEnterHomeRspOuterClass.TryEnterHomeRspOrBuilder
-        public int getTargetUid() {
-            return this.targetUid_;
         }
 
         @Override // emu.grasscutter.net.proto.TryEnterHomeRspOuterClass.TryEnterHomeRspOrBuilder
@@ -207,18 +207,18 @@ public final class TryEnterHomeRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (this.targetUid_ != 0) {
-                output.writeUInt32(2, this.targetUid_);
-            }
-            if (this.retcode_ != 0) {
-                output.writeInt32(4, this.retcode_);
-            }
             if (getParamListList().size() > 0) {
-                output.writeUInt32NoTag(90);
+                output.writeUInt32NoTag(82);
                 output.writeUInt32NoTag(this.paramListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.paramList_.size(); i++) {
                 output.writeUInt32NoTag(this.paramList_.getInt(i));
+            }
+            if (this.retcode_ != 0) {
+                output.writeInt32(12, this.retcode_);
+            }
+            if (this.targetUid_ != 0) {
+                output.writeUInt32(15, this.targetUid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -229,25 +229,24 @@ public final class TryEnterHomeRspOuterClass {
             if (size != -1) {
                 return size;
             }
-            int size2 = 0;
-            if (this.targetUid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.targetUid_);
-            }
-            if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(4, this.retcode_);
-            }
             int dataSize = 0;
             for (int i = 0; i < this.paramList_.size(); i++) {
                 dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.paramList_.getInt(i));
             }
-            int size3 = size2 + dataSize;
+            int size2 = 0 + dataSize;
             if (!getParamListList().isEmpty()) {
-                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.paramListMemoizedSerializedSize = dataSize;
-            int size4 = size3 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size4;
-            return size4;
+            if (this.retcode_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(12, this.retcode_);
+            }
+            if (this.targetUid_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.targetUid_);
+            }
+            int size3 = size2 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size3;
+            return size3;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -259,7 +258,7 @@ public final class TryEnterHomeRspOuterClass {
                 return equals(obj);
             }
             TryEnterHomeRsp other = (TryEnterHomeRsp) obj;
-            return getParamListList().equals(other.getParamListList()) && getTargetUid() == other.getTargetUid() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
+            return getTargetUid() == other.getTargetUid() && getParamListList().equals(other.getParamListList()) && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -267,11 +266,11 @@ public final class TryEnterHomeRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getTargetUid();
             if (getParamListCount() > 0) {
-                hash = (53 * ((37 * hash) + 11)) + getParamListList().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getParamListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 2)) + getTargetUid())) + 4)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 12)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -351,8 +350,8 @@ public final class TryEnterHomeRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TryEnterHomeRspOuterClass$TryEnterHomeRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements TryEnterHomeRspOrBuilder {
             private int bitField0_;
-            private Internal.IntList paramList_ = TryEnterHomeRsp.emptyIntList();
             private int targetUid_;
+            private Internal.IntList paramList_ = TryEnterHomeRsp.emptyIntList();
             private int retcode_;
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -381,9 +380,9 @@ public final class TryEnterHomeRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.targetUid_ = 0;
                 this.paramList_ = TryEnterHomeRsp.emptyIntList();
                 this.bitField0_ &= -2;
-                this.targetUid_ = 0;
                 this.retcode_ = 0;
                 return this;
             }
@@ -411,12 +410,12 @@ public final class TryEnterHomeRspOuterClass {
             public TryEnterHomeRsp buildPartial() {
                 TryEnterHomeRsp result = new TryEnterHomeRsp(this);
                 int i = this.bitField0_;
+                result.targetUid_ = this.targetUid_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.paramList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.paramList_ = this.paramList_;
-                result.targetUid_ = this.targetUid_;
                 result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
@@ -465,6 +464,9 @@ public final class TryEnterHomeRspOuterClass {
                 if (other == TryEnterHomeRsp.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getTargetUid() != 0) {
+                    setTargetUid(other.getTargetUid());
+                }
                 if (!other.paramList_.isEmpty()) {
                     if (this.paramList_.isEmpty()) {
                         this.paramList_ = other.paramList_;
@@ -474,9 +476,6 @@ public final class TryEnterHomeRspOuterClass {
                         this.paramList_.addAll(other.paramList_);
                     }
                     onChanged();
-                }
-                if (other.getTargetUid() != 0) {
-                    setTargetUid(other.getTargetUid());
                 }
                 if (other.getRetcode() != 0) {
                     setRetcode(other.getRetcode());
@@ -511,6 +510,23 @@ public final class TryEnterHomeRspOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.TryEnterHomeRspOuterClass.TryEnterHomeRspOrBuilder
+            public int getTargetUid() {
+                return this.targetUid_;
+            }
+
+            public Builder setTargetUid(int value) {
+                this.targetUid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearTargetUid() {
+                this.targetUid_ = 0;
+                onChanged();
+                return this;
             }
 
             private void ensureParamListIsMutable() {
@@ -559,23 +575,6 @@ public final class TryEnterHomeRspOuterClass {
             public Builder clearParamList() {
                 this.paramList_ = TryEnterHomeRsp.emptyIntList();
                 this.bitField0_ &= -2;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.TryEnterHomeRspOuterClass.TryEnterHomeRspOrBuilder
-            public int getTargetUid() {
-                return this.targetUid_;
-            }
-
-            public Builder setTargetUid(int value) {
-                this.targetUid_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearTargetUid() {
-                this.targetUid_ = 0;
                 onChanged();
                 return this;
             }

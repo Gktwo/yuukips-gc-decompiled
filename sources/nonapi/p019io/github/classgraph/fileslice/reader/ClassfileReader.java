@@ -67,7 +67,7 @@ public class ClassfileReader implements RandomAccessReader, SequentialReader, Cl
         } else if (targetArrUsed > 2147483639 || targetArrUsed < 0 || this.arrUsed == maxArrLen) {
             throw new IOException("Hit 2GB limit while trying to grow buffer array");
         } else {
-            int maxNewArrUsed = (int) Math.min(Math.max((long) targetArrUsed, (long) (this.arrUsed + BUF_CHUNK_SIZE)), (long) maxArrLen);
+            int maxNewArrUsed = (int) Math.min(Math.max((long) targetArrUsed, (long) (this.arrUsed + 8184)), (long) maxArrLen);
             long newArrLength = (long) this.arr.length;
             while (newArrLength < ((long) maxNewArrUsed)) {
                 newArrLength = Math.min((long) maxNewArrUsed, newArrLength * 2);

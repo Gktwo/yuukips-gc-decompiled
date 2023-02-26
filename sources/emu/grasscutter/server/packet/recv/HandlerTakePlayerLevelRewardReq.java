@@ -10,7 +10,7 @@ import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketTakePlayerLevelRewardRsp;
 import java.util.Set;
 
-@Opcodes(120)
+@Opcodes(156)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerTakePlayerLevelRewardReq.class */
 public class HandlerTakePlayerLevelRewardReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

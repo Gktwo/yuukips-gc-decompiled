@@ -10,7 +10,6 @@ public class MainQuestData {
 
     /* renamed from: id */
     private int f501id;
-    private int ICLLDPJFIMA;
     private int series;
     private QuestType type;
     private long titleTextMapHash;
@@ -18,7 +17,6 @@ public class MainQuestData {
     private int[] rewardIdList;
     private SubQuestData[] subQuests;
     private List<TalkData> talks;
-    private long[] preloadLuaList;
 
     public int getId() {
         return this.f501id;

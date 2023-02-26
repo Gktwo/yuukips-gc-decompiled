@@ -11,10 +11,6 @@ public class EnvAnimalGatherConfigData extends GameResource {
     private int animalId;
     private String entityType;
     private List<ItemParamData> gatherItemId;
-    private String excludeWeathers;
-    private int aliveTime;
-    private int escapeTime;
-    private int escapeRadius;
 
     @Override // emu.grasscutter.data.GameResource
     public int getId() {

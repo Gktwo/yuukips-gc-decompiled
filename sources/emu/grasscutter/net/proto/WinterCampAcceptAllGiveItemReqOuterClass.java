@@ -23,7 +23,7 @@ public final class WinterCampAcceptAllGiveItemReqOuterClass {
     private static final Descriptors.Descriptor internal_static_WinterCampAcceptAllGiveItemReq_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_WinterCampAcceptAllGiveItemReq_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f947xb2f96ab6 = new GeneratedMessageV3.FieldAccessorTable(internal_static_WinterCampAcceptAllGiveItemReq_descriptor, new String[0]);
+    private static final GeneratedMessageV3.FieldAccessorTable f912xb2f96ab6 = new GeneratedMessageV3.FieldAccessorTable(internal_static_WinterCampAcceptAllGiveItemReq_descriptor, new String[0]);
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WinterCampAcceptAllGiveItemReqOuterClass$WinterCampAcceptAllGiveItemReqOrBuilder.class */
     public interface WinterCampAcceptAllGiveItemReqOrBuilder extends MessageOrBuilder {
@@ -113,7 +113,7 @@ public final class WinterCampAcceptAllGiveItemReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return WinterCampAcceptAllGiveItemReqOuterClass.f947xb2f96ab6.ensureFieldAccessorsInitialized(WinterCampAcceptAllGiveItemReq.class, Builder.class);
+            return WinterCampAcceptAllGiveItemReqOuterClass.f912xb2f96ab6.ensureFieldAccessorsInitialized(WinterCampAcceptAllGiveItemReq.class, Builder.class);
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -246,7 +246,7 @@ public final class WinterCampAcceptAllGiveItemReqOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return WinterCampAcceptAllGiveItemReqOuterClass.f947xb2f96ab6.ensureFieldAccessorsInitialized(WinterCampAcceptAllGiveItemReq.class, Builder.class);
+                return WinterCampAcceptAllGiveItemReqOuterClass.f912xb2f96ab6.ensureFieldAccessorsInitialized(WinterCampAcceptAllGiveItemReq.class, Builder.class);
             }
 
             private Builder() {

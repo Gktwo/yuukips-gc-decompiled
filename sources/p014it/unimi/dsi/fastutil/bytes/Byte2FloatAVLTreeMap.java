@@ -975,7 +975,7 @@ public class Byte2FloatAVLTreeMap extends AbstractByte2FloatSortedMap implements
         byte from;
 
         /* renamed from: to */
-        byte f1173to;
+        byte f1137to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Byte2FloatMap.Entry> entries;
@@ -986,7 +986,7 @@ public class Byte2FloatAVLTreeMap extends AbstractByte2FloatSortedMap implements
             if (bottom || top || Byte2FloatAVLTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f1173to = to;
+                this.f1137to = to;
                 this.top = top;
                 this.defRetValue = Byte2FloatAVLTreeMap.this.defRetValue;
                 return;
@@ -1005,7 +1005,7 @@ public class Byte2FloatAVLTreeMap extends AbstractByte2FloatSortedMap implements
 
         /* renamed from: in */
         final boolean m1106in(byte k) {
-            return (this.bottom || Byte2FloatAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Byte2FloatAVLTreeMap.this.compare(k, this.f1173to) < 0);
+            return (this.bottom || Byte2FloatAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Byte2FloatAVLTreeMap.this.compare(k, this.f1137to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.Byte2FloatMap, p014it.unimi.dsi.fastutil.bytes.Byte2FloatSortedMap
@@ -1180,7 +1180,7 @@ public class Byte2FloatAVLTreeMap extends AbstractByte2FloatSortedMap implements
         public float put(byte k, float v) {
             Byte2FloatAVLTreeMap.this.modified = false;
             if (!m1106in(k)) {
-                throw new IllegalArgumentException("Key (" + ((int) k) + ") out of range [" + (this.bottom ? "-" : String.valueOf((int) this.from)) + ", " + (this.top ? "-" : String.valueOf((int) this.f1173to)) + ")");
+                throw new IllegalArgumentException("Key (" + ((int) k) + ") out of range [" + (this.bottom ? "-" : String.valueOf((int) this.from)) + ", " + (this.top ? "-" : String.valueOf((int) this.f1137to)) + ")");
             }
             return Byte2FloatAVLTreeMap.this.modified ? this.defRetValue : Byte2FloatAVLTreeMap.this.put(k, v);
         }
@@ -1218,7 +1218,7 @@ public class Byte2FloatAVLTreeMap extends AbstractByte2FloatSortedMap implements
 
         @Override // p014it.unimi.dsi.fastutil.bytes.Byte2FloatSortedMap
         public Byte2FloatSortedMap headMap(byte to) {
-            if (!this.top && Byte2FloatAVLTreeMap.this.compare(to, this.f1173to) >= 0) {
+            if (!this.top && Byte2FloatAVLTreeMap.this.compare(to, this.f1137to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1229,7 +1229,7 @@ public class Byte2FloatAVLTreeMap extends AbstractByte2FloatSortedMap implements
             if (!this.bottom && Byte2FloatAVLTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f1173to, this.top);
+            return new Submap(from, false, this.f1137to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.Byte2FloatSortedMap
@@ -1238,12 +1238,12 @@ public class Byte2FloatAVLTreeMap extends AbstractByte2FloatSortedMap implements
                 return new Submap(from, false, to, false);
             }
             if (!this.top) {
-                to = Byte2FloatAVLTreeMap.this.compare(to, this.f1173to) < 0 ? to : this.f1173to;
+                to = Byte2FloatAVLTreeMap.this.compare(to, this.f1137to) < 0 ? to : this.f1137to;
             }
             if (!this.bottom) {
                 from = Byte2FloatAVLTreeMap.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f1173to) ? new Submap(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f1137to) ? new Submap(from, false, to, false) : this;
         }
 
         public Entry firstEntry() {
@@ -1262,7 +1262,7 @@ public class Byte2FloatAVLTreeMap extends AbstractByte2FloatSortedMap implements
             if (e == null) {
                 return null;
             }
-            if (this.top || Byte2FloatAVLTreeMap.this.compare(e.key, this.f1173to) < 0) {
+            if (this.top || Byte2FloatAVLTreeMap.this.compare(e.key, this.f1137to) < 0) {
                 return e;
             }
             return null;
@@ -1276,8 +1276,8 @@ public class Byte2FloatAVLTreeMap extends AbstractByte2FloatSortedMap implements
             if (this.top) {
                 e = Byte2FloatAVLTreeMap.this.lastEntry;
             } else {
-                e = Byte2FloatAVLTreeMap.this.locateKey(this.f1173to);
-                if (Byte2FloatAVLTreeMap.this.compare(e.key, this.f1173to) >= 0) {
+                e = Byte2FloatAVLTreeMap.this.locateKey(this.f1137to);
+                if (Byte2FloatAVLTreeMap.this.compare(e.key, this.f1137to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1355,7 +1355,7 @@ public class Byte2FloatAVLTreeMap extends AbstractByte2FloatSortedMap implements
             @Override // p014it.unimi.dsi.fastutil.bytes.Byte2FloatAVLTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Byte2FloatAVLTreeMap.this.compare(this.next.key, Submap.this.f1173to) >= 0) {
+                if (!Submap.this.top && this.next != null && Byte2FloatAVLTreeMap.this.compare(this.next.key, Submap.this.f1137to) >= 0) {
                     this.next = null;
                 }
             }

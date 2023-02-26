@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SummerTimeV2DungeonSettleInfoOuterClass.class */
 public final class SummerTimeV2DungeonSettleInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#SummerTimeV2DungeonSettleInfo.proto\"m\n\u001dSummerTimeV2DungeonSettleInfo\u0012\u001b\n\u0013Unk3300_JHBCHFHAGFO\u0018\n \u0001(\r\u0012\u0012\n\nis_success\u0018\u0001 \u0001(\b\u0012\u001b\n\u0013Unk3300_BNNMNCKEHHO\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#SummerTimeV2DungeonSettleInfo.proto\"l\n\u001dSummerTimeV2DungeonSettleInfo\u0012\u001b\n\u0013Unk3300_JHBCHFHAGFO\u0018\f \u0001(\r\u0012\u001b\n\u0013Unk3300_BNNMNCKEHHO\u0018\t \u0001(\r\u0012\u0011\n\tisSuccess\u0018\n \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SummerTimeV2DungeonSettleInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SummerTimeV2DungeonSettleInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SummerTimeV2DungeonSettleInfo_descriptor, new String[]{"Unk3300JHBCHFHAGFO", "IsSuccess", "Unk3300BNNMNCKEHHO"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SummerTimeV2DungeonSettleInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SummerTimeV2DungeonSettleInfo_descriptor, new String[]{"Unk3300JHBCHFHAGFO", "Unk3300BNNMNCKEHHO", "IsSuccess"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SummerTimeV2DungeonSettleInfoOuterClass$SummerTimeV2DungeonSettleInfoOrBuilder.class */
     public interface SummerTimeV2DungeonSettleInfoOrBuilder extends MessageOrBuilder {
         int getUnk3300JHBCHFHAGFO();
 
-        boolean getIsSuccess();
-
         int getUnk3300BNNMNCKEHHO();
+
+        boolean getIsSuccess();
     }
 
     private SummerTimeV2DungeonSettleInfoOuterClass() {
@@ -46,12 +46,12 @@ public final class SummerTimeV2DungeonSettleInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SummerTimeV2DungeonSettleInfoOuterClass$SummerTimeV2DungeonSettleInfo.class */
     public static final class SummerTimeV2DungeonSettleInfo extends GeneratedMessageV3 implements SummerTimeV2DungeonSettleInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int UNK3300_JHBCHFHAGFO_FIELD_NUMBER = 10;
+        public static final int UNK3300_JHBCHFHAGFO_FIELD_NUMBER = 12;
         private int unk3300JHBCHFHAGFO_;
-        public static final int IS_SUCCESS_FIELD_NUMBER = 1;
-        private boolean isSuccess_;
-        public static final int UNK3300_BNNMNCKEHHO_FIELD_NUMBER = 11;
+        public static final int UNK3300_BNNMNCKEHHO_FIELD_NUMBER = 9;
         private int unk3300BNNMNCKEHHO_;
+        public static final int ISSUCCESS_FIELD_NUMBER = 10;
+        private boolean isSuccess_;
         private byte memoizedIsInitialized;
         private static final SummerTimeV2DungeonSettleInfo DEFAULT_INSTANCE = new SummerTimeV2DungeonSettleInfo();
         private static final Parser<SummerTimeV2DungeonSettleInfo> PARSER = new AbstractParser<SummerTimeV2DungeonSettleInfo>() { // from class: emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfo.1
@@ -98,14 +98,14 @@ public final class SummerTimeV2DungeonSettleInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
-                                    this.isSuccess_ = input.readBool();
+                                case 72:
+                                    this.unk3300BNNMNCKEHHO_ = input.readUInt32();
                                     break;
                                 case 80:
-                                    this.unk3300JHBCHFHAGFO_ = input.readUInt32();
+                                    this.isSuccess_ = input.readBool();
                                     break;
-                                case 88:
-                                    this.unk3300BNNMNCKEHHO_ = input.readUInt32();
+                                case 96:
+                                    this.unk3300JHBCHFHAGFO_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -143,13 +143,13 @@ public final class SummerTimeV2DungeonSettleInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfoOrBuilder
-        public boolean getIsSuccess() {
-            return this.isSuccess_;
+        public int getUnk3300BNNMNCKEHHO() {
+            return this.unk3300BNNMNCKEHHO_;
         }
 
         @Override // emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfoOrBuilder
-        public int getUnk3300BNNMNCKEHHO() {
-            return this.unk3300BNNMNCKEHHO_;
+        public boolean getIsSuccess() {
+            return this.isSuccess_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,14 +167,14 @@ public final class SummerTimeV2DungeonSettleInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.unk3300BNNMNCKEHHO_ != 0) {
+                output.writeUInt32(9, this.unk3300BNNMNCKEHHO_);
+            }
             if (this.isSuccess_) {
-                output.writeBool(1, this.isSuccess_);
+                output.writeBool(10, this.isSuccess_);
             }
             if (this.unk3300JHBCHFHAGFO_ != 0) {
-                output.writeUInt32(10, this.unk3300JHBCHFHAGFO_);
-            }
-            if (this.unk3300BNNMNCKEHHO_ != 0) {
-                output.writeUInt32(11, this.unk3300BNNMNCKEHHO_);
+                output.writeUInt32(12, this.unk3300JHBCHFHAGFO_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class SummerTimeV2DungeonSettleInfoOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.unk3300BNNMNCKEHHO_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(9, this.unk3300BNNMNCKEHHO_);
+            }
             if (this.isSuccess_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(1, this.isSuccess_);
+                size2 += CodedOutputStream.computeBoolSize(10, this.isSuccess_);
             }
             if (this.unk3300JHBCHFHAGFO_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.unk3300JHBCHFHAGFO_);
-            }
-            if (this.unk3300BNNMNCKEHHO_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.unk3300BNNMNCKEHHO_);
+                size2 += CodedOutputStream.computeUInt32Size(12, this.unk3300JHBCHFHAGFO_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class SummerTimeV2DungeonSettleInfoOuterClass {
                 return equals(obj);
             }
             SummerTimeV2DungeonSettleInfo other = (SummerTimeV2DungeonSettleInfo) obj;
-            return getUnk3300JHBCHFHAGFO() == other.getUnk3300JHBCHFHAGFO() && getIsSuccess() == other.getIsSuccess() && getUnk3300BNNMNCKEHHO() == other.getUnk3300BNNMNCKEHHO() && this.unknownFields.equals(other.unknownFields);
+            return getUnk3300JHBCHFHAGFO() == other.getUnk3300JHBCHFHAGFO() && getUnk3300BNNMNCKEHHO() == other.getUnk3300BNNMNCKEHHO() && getIsSuccess() == other.getIsSuccess() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class SummerTimeV2DungeonSettleInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getUnk3300JHBCHFHAGFO())) + 1)) + Internal.hashBoolean(getIsSuccess()))) + 11)) + getUnk3300BNNMNCKEHHO())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getUnk3300JHBCHFHAGFO())) + 9)) + getUnk3300BNNMNCKEHHO())) + 10)) + Internal.hashBoolean(getIsSuccess()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -297,8 +297,8 @@ public final class SummerTimeV2DungeonSettleInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SummerTimeV2DungeonSettleInfoOuterClass$SummerTimeV2DungeonSettleInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SummerTimeV2DungeonSettleInfoOrBuilder {
             private int unk3300JHBCHFHAGFO_;
-            private boolean isSuccess_;
             private int unk3300BNNMNCKEHHO_;
+            private boolean isSuccess_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return SummerTimeV2DungeonSettleInfoOuterClass.internal_static_SummerTimeV2DungeonSettleInfo_descriptor;
@@ -327,8 +327,8 @@ public final class SummerTimeV2DungeonSettleInfoOuterClass {
             public Builder clear() {
                 clear();
                 this.unk3300JHBCHFHAGFO_ = 0;
-                this.isSuccess_ = false;
                 this.unk3300BNNMNCKEHHO_ = 0;
+                this.isSuccess_ = false;
                 return this;
             }
 
@@ -355,8 +355,8 @@ public final class SummerTimeV2DungeonSettleInfoOuterClass {
             public SummerTimeV2DungeonSettleInfo buildPartial() {
                 SummerTimeV2DungeonSettleInfo result = new SummerTimeV2DungeonSettleInfo(this);
                 result.unk3300JHBCHFHAGFO_ = this.unk3300JHBCHFHAGFO_;
-                result.isSuccess_ = this.isSuccess_;
                 result.unk3300BNNMNCKEHHO_ = this.unk3300BNNMNCKEHHO_;
+                result.isSuccess_ = this.isSuccess_;
                 onBuilt();
                 return result;
             }
@@ -407,11 +407,11 @@ public final class SummerTimeV2DungeonSettleInfoOuterClass {
                 if (other.getUnk3300JHBCHFHAGFO() != 0) {
                     setUnk3300JHBCHFHAGFO(other.getUnk3300JHBCHFHAGFO());
                 }
-                if (other.getIsSuccess()) {
-                    setIsSuccess(other.getIsSuccess());
-                }
                 if (other.getUnk3300BNNMNCKEHHO() != 0) {
                     setUnk3300BNNMNCKEHHO(other.getUnk3300BNNMNCKEHHO());
+                }
+                if (other.getIsSuccess()) {
+                    setIsSuccess(other.getIsSuccess());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -463,23 +463,6 @@ public final class SummerTimeV2DungeonSettleInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfoOrBuilder
-            public boolean getIsSuccess() {
-                return this.isSuccess_;
-            }
-
-            public Builder setIsSuccess(boolean value) {
-                this.isSuccess_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsSuccess() {
-                this.isSuccess_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfoOrBuilder
             public int getUnk3300BNNMNCKEHHO() {
                 return this.unk3300BNNMNCKEHHO_;
             }
@@ -492,6 +475,23 @@ public final class SummerTimeV2DungeonSettleInfoOuterClass {
 
             public Builder clearUnk3300BNNMNCKEHHO() {
                 this.unk3300BNNMNCKEHHO_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SummerTimeV2DungeonSettleInfoOuterClass.SummerTimeV2DungeonSettleInfoOrBuilder
+            public boolean getIsSuccess() {
+                return this.isSuccess_;
+            }
+
+            public Builder setIsSuccess(boolean value) {
+                this.isSuccess_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsSuccess() {
+                this.isSuccess_ = false;
                 onChanged();
                 return this;
             }

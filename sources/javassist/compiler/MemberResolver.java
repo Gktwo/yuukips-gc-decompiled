@@ -28,7 +28,7 @@ public class MemberResolver implements TokenId {
     private static final int YES = 0;
 
     /* renamed from: NO */
-    private static final int f3075NO = -1;
+    private static final int f3039NO = -1;
     private static final String INVALID = "<invalid>";
     private static Map<ClassPool, Reference<Map<String, String>>> invalidNamesMap = new WeakHashMap();
     private Map<String, String> invalidNames = null;
@@ -295,10 +295,10 @@ public class MemberResolver implements TokenId {
             case TokenId.LONG /* 326 */:
                 cname = "long";
                 break;
-            case 334:
+            case TokenId.SHORT /* 334 */:
                 cname = "short";
                 break;
-            case 344:
+            case TokenId.VOID /* 344 */:
                 cname = "void";
                 break;
             default:
@@ -460,7 +460,7 @@ public class MemberResolver implements TokenId {
             case 'Y':
             default:
                 fatal();
-                return 344;
+                return TokenId.VOID;
             case 'F':
                 return 317;
             case 'I':
@@ -471,9 +471,9 @@ public class MemberResolver implements TokenId {
             case '[':
                 return 307;
             case 'S':
-                return 334;
+                return TokenId.SHORT;
             case 'V':
-                return 344;
+                return TokenId.VOID;
             case 'Z':
                 return 301;
         }
@@ -500,16 +500,16 @@ public class MemberResolver implements TokenId {
                 case TokenId.PUBLIC /* 332 */:
                     m |= 1;
                     break;
-                case TokenId.STATIC /* 335 */:
+                case 335:
                     m |= 8;
                     break;
                 case TokenId.SYNCHRONIZED /* 338 */:
                     m |= 32;
                     break;
-                case TokenId.TRANSIENT /* 342 */:
+                case 342:
                     m |= 128;
                     break;
-                case TokenId.VOLATILE /* 345 */:
+                case 345:
                     m |= 64;
                     break;
                 case 347:

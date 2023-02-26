@@ -15,23 +15,23 @@ public final class CharPriorityQueues {
     public static class SynchronizedPriorityQueue implements CharPriorityQueue {
 
         /* renamed from: q */
-        protected final CharPriorityQueue f1527q;
+        protected final CharPriorityQueue f1491q;
         protected final Object sync;
 
         protected SynchronizedPriorityQueue(CharPriorityQueue q, Object sync) {
-            this.f1527q = q;
+            this.f1491q = q;
             this.sync = sync;
         }
 
         protected SynchronizedPriorityQueue(CharPriorityQueue q) {
-            this.f1527q = q;
+            this.f1491q = q;
             this.sync = this;
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharPriorityQueue
         public void enqueue(char x) {
             synchronized (this.sync) {
-                this.f1527q.enqueue(x);
+                this.f1491q.enqueue(x);
             }
         }
 
@@ -39,7 +39,7 @@ public final class CharPriorityQueues {
         public char dequeueChar() {
             char dequeueChar;
             synchronized (this.sync) {
-                dequeueChar = this.f1527q.dequeueChar();
+                dequeueChar = this.f1491q.dequeueChar();
             }
             return dequeueChar;
         }
@@ -48,7 +48,7 @@ public final class CharPriorityQueues {
         public char firstChar() {
             char firstChar;
             synchronized (this.sync) {
-                firstChar = this.f1527q.firstChar();
+                firstChar = this.f1491q.firstChar();
             }
             return firstChar;
         }
@@ -57,7 +57,7 @@ public final class CharPriorityQueues {
         public char lastChar() {
             char lastChar;
             synchronized (this.sync) {
-                lastChar = this.f1527q.lastChar();
+                lastChar = this.f1491q.lastChar();
             }
             return lastChar;
         }
@@ -66,7 +66,7 @@ public final class CharPriorityQueues {
         public boolean isEmpty() {
             boolean isEmpty;
             synchronized (this.sync) {
-                isEmpty = this.f1527q.isEmpty();
+                isEmpty = this.f1491q.isEmpty();
             }
             return isEmpty;
         }
@@ -75,7 +75,7 @@ public final class CharPriorityQueues {
         public int size() {
             int size;
             synchronized (this.sync) {
-                size = this.f1527q.size();
+                size = this.f1491q.size();
             }
             return size;
         }
@@ -83,14 +83,14 @@ public final class CharPriorityQueues {
         @Override // p014it.unimi.dsi.fastutil.PriorityQueue
         public void clear() {
             synchronized (this.sync) {
-                this.f1527q.clear();
+                this.f1491q.clear();
             }
         }
 
         @Override // p014it.unimi.dsi.fastutil.PriorityQueue
         public void changed() {
             synchronized (this.sync) {
-                this.f1527q.changed();
+                this.f1491q.changed();
             }
         }
 
@@ -99,7 +99,7 @@ public final class CharPriorityQueues {
         public Comparator<? super Character> comparator() {
             Comparator<? super Character> comparator;
             synchronized (this.sync) {
-                comparator = this.f1527q.comparator();
+                comparator = this.f1491q.comparator();
             }
             return comparator;
         }
@@ -108,7 +108,7 @@ public final class CharPriorityQueues {
         @Deprecated
         public void enqueue(Character x) {
             synchronized (this.sync) {
-                this.f1527q.enqueue(x);
+                this.f1491q.enqueue(x);
             }
         }
 
@@ -117,7 +117,7 @@ public final class CharPriorityQueues {
         public Character dequeue() {
             Character dequeue;
             synchronized (this.sync) {
-                dequeue = this.f1527q.dequeue();
+                dequeue = this.f1491q.dequeue();
             }
             return dequeue;
         }
@@ -127,7 +127,7 @@ public final class CharPriorityQueues {
         public Character first() {
             Character first;
             synchronized (this.sync) {
-                first = this.f1527q.first();
+                first = this.f1491q.first();
             }
             return first;
         }
@@ -137,7 +137,7 @@ public final class CharPriorityQueues {
         public Character last() {
             Character last;
             synchronized (this.sync) {
-                last = this.f1527q.last();
+                last = this.f1491q.last();
             }
             return last;
         }
@@ -145,7 +145,7 @@ public final class CharPriorityQueues {
         public int hashCode() {
             int hashCode;
             synchronized (this.sync) {
-                hashCode = this.f1527q.hashCode();
+                hashCode = this.f1491q.hashCode();
             }
             return hashCode;
         }
@@ -156,7 +156,7 @@ public final class CharPriorityQueues {
                 return true;
             }
             synchronized (this.sync) {
-                equals = this.f1527q.equals(o);
+                equals = this.f1491q.equals(o);
             }
             return equals;
         }

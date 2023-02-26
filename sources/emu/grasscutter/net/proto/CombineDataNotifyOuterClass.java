@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CombineDataNotifyOuterClass.class */
 public final class CombineDataNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017CombineDataNotify.proto\",\n\u0011CombineDataNotify\u0012\u0017\n\u000fcombine_id_list\u0018\u0007 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017CombineDataNotify.proto\"*\n\u0011CombineDataNotify\u0012\u0015\n\rcombineIdList\u0018\u0004 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_CombineDataNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_CombineDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CombineDataNotify_descriptor, new String[]{"CombineIdList"});
 
@@ -49,7 +49,7 @@ public final class CombineDataNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CombineDataNotifyOuterClass$CombineDataNotify.class */
     public static final class CombineDataNotify extends GeneratedMessageV3 implements CombineDataNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int COMBINE_ID_LIST_FIELD_NUMBER = 7;
+        public static final int COMBINEIDLIST_FIELD_NUMBER = 4;
         private Internal.IntList combineIdList_;
         private int combineIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -103,14 +103,14 @@ public final class CombineDataNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 56:
+                                case 32:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.combineIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.combineIdList_.addInt(input.readUInt32());
                                     break;
-                                case 58:
+                                case 34:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.combineIdList_ = newIntList();
@@ -186,7 +186,7 @@ public final class CombineDataNotifyOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getCombineIdListList().size() > 0) {
-                output.writeUInt32NoTag(58);
+                output.writeUInt32NoTag(34);
                 output.writeUInt32NoTag(this.combineIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.combineIdList_.size(); i++) {
@@ -234,7 +234,7 @@ public final class CombineDataNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getCombineIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 7)) + getCombineIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 4)) + getCombineIdListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

@@ -858,7 +858,7 @@ public class Int2FloatRBTreeMap extends AbstractInt2FloatSortedMap implements Se
         int from;
 
         /* renamed from: to */
-        int f2080to;
+        int f2044to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Int2FloatMap.Entry> entries;
@@ -869,7 +869,7 @@ public class Int2FloatRBTreeMap extends AbstractInt2FloatSortedMap implements Se
             if (bottom || top || Int2FloatRBTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f2080to = to;
+                this.f2044to = to;
                 this.top = top;
                 this.defRetValue = Int2FloatRBTreeMap.this.defRetValue;
                 return;
@@ -888,7 +888,7 @@ public class Int2FloatRBTreeMap extends AbstractInt2FloatSortedMap implements Se
 
         /* renamed from: in */
         final boolean m767in(int k) {
-            return (this.bottom || Int2FloatRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Int2FloatRBTreeMap.this.compare(k, this.f2080to) < 0);
+            return (this.bottom || Int2FloatRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Int2FloatRBTreeMap.this.compare(k, this.f2044to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.Int2FloatMap, p014it.unimi.dsi.fastutil.ints.Int2FloatSortedMap
@@ -1063,7 +1063,7 @@ public class Int2FloatRBTreeMap extends AbstractInt2FloatSortedMap implements Se
         public float put(int k, float v) {
             Int2FloatRBTreeMap.this.modified = false;
             if (!m767in(k)) {
-                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2080to)) + ")");
+                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2044to)) + ")");
             }
             return Int2FloatRBTreeMap.this.modified ? this.defRetValue : Int2FloatRBTreeMap.this.put(k, v);
         }
@@ -1101,7 +1101,7 @@ public class Int2FloatRBTreeMap extends AbstractInt2FloatSortedMap implements Se
 
         @Override // p014it.unimi.dsi.fastutil.ints.Int2FloatSortedMap
         public Int2FloatSortedMap headMap(int to) {
-            if (!this.top && Int2FloatRBTreeMap.this.compare(to, this.f2080to) >= 0) {
+            if (!this.top && Int2FloatRBTreeMap.this.compare(to, this.f2044to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1112,7 +1112,7 @@ public class Int2FloatRBTreeMap extends AbstractInt2FloatSortedMap implements Se
             if (!this.bottom && Int2FloatRBTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f2080to, this.top);
+            return new Submap(from, false, this.f2044to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.Int2FloatSortedMap
@@ -1121,12 +1121,12 @@ public class Int2FloatRBTreeMap extends AbstractInt2FloatSortedMap implements Se
                 return new Submap(from, false, to, false);
             }
             if (!this.top) {
-                to = Int2FloatRBTreeMap.this.compare(to, this.f2080to) < 0 ? to : this.f2080to;
+                to = Int2FloatRBTreeMap.this.compare(to, this.f2044to) < 0 ? to : this.f2044to;
             }
             if (!this.bottom) {
                 from = Int2FloatRBTreeMap.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f2080to) ? new Submap(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f2044to) ? new Submap(from, false, to, false) : this;
         }
 
         public Entry firstEntry() {
@@ -1145,7 +1145,7 @@ public class Int2FloatRBTreeMap extends AbstractInt2FloatSortedMap implements Se
             if (e == null) {
                 return null;
             }
-            if (this.top || Int2FloatRBTreeMap.this.compare(e.key, this.f2080to) < 0) {
+            if (this.top || Int2FloatRBTreeMap.this.compare(e.key, this.f2044to) < 0) {
                 return e;
             }
             return null;
@@ -1159,8 +1159,8 @@ public class Int2FloatRBTreeMap extends AbstractInt2FloatSortedMap implements Se
             if (this.top) {
                 e = Int2FloatRBTreeMap.this.lastEntry;
             } else {
-                e = Int2FloatRBTreeMap.this.locateKey(this.f2080to);
-                if (Int2FloatRBTreeMap.this.compare(e.key, this.f2080to) >= 0) {
+                e = Int2FloatRBTreeMap.this.locateKey(this.f2044to);
+                if (Int2FloatRBTreeMap.this.compare(e.key, this.f2044to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1238,7 +1238,7 @@ public class Int2FloatRBTreeMap extends AbstractInt2FloatSortedMap implements Se
             @Override // p014it.unimi.dsi.fastutil.ints.Int2FloatRBTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Int2FloatRBTreeMap.this.compare(this.next.key, Submap.this.f2080to) >= 0) {
+                if (!Submap.this.top && this.next != null && Int2FloatRBTreeMap.this.compare(this.next.key, Submap.this.f2044to) >= 0) {
                     this.next = null;
                 }
             }

@@ -20,19 +20,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarUnlockTalentNotifyOuterClass.class */
 public final class AvatarUnlockTalentNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eAvatarUnlockTalentNotify.proto\"m\n\u0018AvatarUnlockTalentNotify\u0012\u0016\n\u000eskill_depot_id\u0018\t \u0001(\r\u0012\u0013\n\u000bavatar_guid\u0018\u0003 \u0001(\u0004\u0012\u0011\n\tentity_id\u0018\n \u0001(\r\u0012\u0011\n\ttalent_id\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001eAvatarUnlockTalentNotify.proto\"h\n\u0018AvatarUnlockTalentNotify\u0012\u0012\n\navatarGuid\u0018\f \u0001(\u0004\u0012\u0010\n\btalentId\u0018\n \u0001(\r\u0012\u0014\n\fskillDepotId\u0018\u000f \u0001(\r\u0012\u0010\n\bentityId\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AvatarUnlockTalentNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarUnlockTalentNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarUnlockTalentNotify_descriptor, new String[]{"SkillDepotId", "AvatarGuid", "EntityId", "TalentId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarUnlockTalentNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarUnlockTalentNotify_descriptor, new String[]{"AvatarGuid", "TalentId", "SkillDepotId", "EntityId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarUnlockTalentNotifyOuterClass$AvatarUnlockTalentNotifyOrBuilder.class */
     public interface AvatarUnlockTalentNotifyOrBuilder extends MessageOrBuilder {
-        int getSkillDepotId();
-
         long getAvatarGuid();
 
-        int getEntityId();
-
         int getTalentId();
+
+        int getSkillDepotId();
+
+        int getEntityId();
     }
 
     private AvatarUnlockTalentNotifyOuterClass() {
@@ -48,14 +48,14 @@ public final class AvatarUnlockTalentNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarUnlockTalentNotifyOuterClass$AvatarUnlockTalentNotify.class */
     public static final class AvatarUnlockTalentNotify extends GeneratedMessageV3 implements AvatarUnlockTalentNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SKILL_DEPOT_ID_FIELD_NUMBER = 9;
-        private int skillDepotId_;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 3;
+        public static final int AVATARGUID_FIELD_NUMBER = 12;
         private long avatarGuid_;
-        public static final int ENTITY_ID_FIELD_NUMBER = 10;
-        private int entityId_;
-        public static final int TALENT_ID_FIELD_NUMBER = 8;
+        public static final int TALENTID_FIELD_NUMBER = 10;
         private int talentId_;
+        public static final int SKILLDEPOTID_FIELD_NUMBER = 15;
+        private int skillDepotId_;
+        public static final int ENTITYID_FIELD_NUMBER = 14;
+        private int entityId_;
         private byte memoizedIsInitialized;
         private static final AvatarUnlockTalentNotify DEFAULT_INSTANCE = new AvatarUnlockTalentNotify();
         private static final Parser<AvatarUnlockTalentNotify> PARSER = new AbstractParser<AvatarUnlockTalentNotify>() { // from class: emu.grasscutter.net.proto.AvatarUnlockTalentNotifyOuterClass.AvatarUnlockTalentNotify.1
@@ -102,17 +102,17 @@ public final class AvatarUnlockTalentNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 24:
-                                    this.avatarGuid_ = input.readUInt64();
-                                    break;
-                                case 64:
+                                case 80:
                                     this.talentId_ = input.readUInt32();
                                     break;
-                                case 72:
-                                    this.skillDepotId_ = input.readUInt32();
+                                case 96:
+                                    this.avatarGuid_ = input.readUInt64();
                                     break;
-                                case 80:
+                                case 112:
                                     this.entityId_ = input.readUInt32();
+                                    break;
+                                case 120:
+                                    this.skillDepotId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -145,23 +145,23 @@ public final class AvatarUnlockTalentNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AvatarUnlockTalentNotifyOuterClass.AvatarUnlockTalentNotifyOrBuilder
-        public int getSkillDepotId() {
-            return this.skillDepotId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarUnlockTalentNotifyOuterClass.AvatarUnlockTalentNotifyOrBuilder
         public long getAvatarGuid() {
             return this.avatarGuid_;
         }
 
         @Override // emu.grasscutter.net.proto.AvatarUnlockTalentNotifyOuterClass.AvatarUnlockTalentNotifyOrBuilder
-        public int getEntityId() {
-            return this.entityId_;
+        public int getTalentId() {
+            return this.talentId_;
         }
 
         @Override // emu.grasscutter.net.proto.AvatarUnlockTalentNotifyOuterClass.AvatarUnlockTalentNotifyOrBuilder
-        public int getTalentId() {
-            return this.talentId_;
+        public int getSkillDepotId() {
+            return this.skillDepotId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarUnlockTalentNotifyOuterClass.AvatarUnlockTalentNotifyOrBuilder
+        public int getEntityId() {
+            return this.entityId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -179,17 +179,17 @@ public final class AvatarUnlockTalentNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.avatarGuid_ != 0) {
-                output.writeUInt64(3, this.avatarGuid_);
-            }
             if (this.talentId_ != 0) {
-                output.writeUInt32(8, this.talentId_);
+                output.writeUInt32(10, this.talentId_);
             }
-            if (this.skillDepotId_ != 0) {
-                output.writeUInt32(9, this.skillDepotId_);
+            if (this.avatarGuid_ != 0) {
+                output.writeUInt64(12, this.avatarGuid_);
             }
             if (this.entityId_ != 0) {
-                output.writeUInt32(10, this.entityId_);
+                output.writeUInt32(14, this.entityId_);
+            }
+            if (this.skillDepotId_ != 0) {
+                output.writeUInt32(15, this.skillDepotId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -201,17 +201,17 @@ public final class AvatarUnlockTalentNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.avatarGuid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(3, this.avatarGuid_);
-            }
             if (this.talentId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.talentId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(10, this.talentId_);
             }
-            if (this.skillDepotId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.skillDepotId_);
+            if (this.avatarGuid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(12, this.avatarGuid_);
             }
             if (this.entityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.entityId_);
+                size2 += CodedOutputStream.computeUInt32Size(14, this.entityId_);
+            }
+            if (this.skillDepotId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.skillDepotId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -227,7 +227,7 @@ public final class AvatarUnlockTalentNotifyOuterClass {
                 return equals(obj);
             }
             AvatarUnlockTalentNotify other = (AvatarUnlockTalentNotify) obj;
-            return getSkillDepotId() == other.getSkillDepotId() && getAvatarGuid() == other.getAvatarGuid() && getEntityId() == other.getEntityId() && getTalentId() == other.getTalentId() && this.unknownFields.equals(other.unknownFields);
+            return getAvatarGuid() == other.getAvatarGuid() && getTalentId() == other.getTalentId() && getSkillDepotId() == other.getSkillDepotId() && getEntityId() == other.getEntityId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -235,7 +235,7 @@ public final class AvatarUnlockTalentNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getSkillDepotId())) + 3)) + Internal.hashLong(getAvatarGuid()))) + 10)) + getEntityId())) + 8)) + getTalentId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + Internal.hashLong(getAvatarGuid()))) + 10)) + getTalentId())) + 15)) + getSkillDepotId())) + 14)) + getEntityId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -314,10 +314,10 @@ public final class AvatarUnlockTalentNotifyOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarUnlockTalentNotifyOuterClass$AvatarUnlockTalentNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements AvatarUnlockTalentNotifyOrBuilder {
-            private int skillDepotId_;
             private long avatarGuid_;
-            private int entityId_;
             private int talentId_;
+            private int skillDepotId_;
+            private int entityId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return AvatarUnlockTalentNotifyOuterClass.internal_static_AvatarUnlockTalentNotify_descriptor;
@@ -345,10 +345,10 @@ public final class AvatarUnlockTalentNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.skillDepotId_ = 0;
                 this.avatarGuid_ = 0;
-                this.entityId_ = 0;
                 this.talentId_ = 0;
+                this.skillDepotId_ = 0;
+                this.entityId_ = 0;
                 return this;
             }
 
@@ -374,10 +374,10 @@ public final class AvatarUnlockTalentNotifyOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public AvatarUnlockTalentNotify buildPartial() {
                 AvatarUnlockTalentNotify result = new AvatarUnlockTalentNotify(this);
-                result.skillDepotId_ = this.skillDepotId_;
                 result.avatarGuid_ = this.avatarGuid_;
-                result.entityId_ = this.entityId_;
                 result.talentId_ = this.talentId_;
+                result.skillDepotId_ = this.skillDepotId_;
+                result.entityId_ = this.entityId_;
                 onBuilt();
                 return result;
             }
@@ -425,17 +425,17 @@ public final class AvatarUnlockTalentNotifyOuterClass {
                 if (other == AvatarUnlockTalentNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getSkillDepotId() != 0) {
-                    setSkillDepotId(other.getSkillDepotId());
-                }
                 if (other.getAvatarGuid() != 0) {
                     setAvatarGuid(other.getAvatarGuid());
                 }
-                if (other.getEntityId() != 0) {
-                    setEntityId(other.getEntityId());
-                }
                 if (other.getTalentId() != 0) {
                     setTalentId(other.getTalentId());
+                }
+                if (other.getSkillDepotId() != 0) {
+                    setSkillDepotId(other.getSkillDepotId());
+                }
+                if (other.getEntityId() != 0) {
+                    setEntityId(other.getEntityId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -470,23 +470,6 @@ public final class AvatarUnlockTalentNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AvatarUnlockTalentNotifyOuterClass.AvatarUnlockTalentNotifyOrBuilder
-            public int getSkillDepotId() {
-                return this.skillDepotId_;
-            }
-
-            public Builder setSkillDepotId(int value) {
-                this.skillDepotId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearSkillDepotId() {
-                this.skillDepotId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarUnlockTalentNotifyOuterClass.AvatarUnlockTalentNotifyOrBuilder
             public long getAvatarGuid() {
                 return this.avatarGuid_;
             }
@@ -504,23 +487,6 @@ public final class AvatarUnlockTalentNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AvatarUnlockTalentNotifyOuterClass.AvatarUnlockTalentNotifyOrBuilder
-            public int getEntityId() {
-                return this.entityId_;
-            }
-
-            public Builder setEntityId(int value) {
-                this.entityId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearEntityId() {
-                this.entityId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarUnlockTalentNotifyOuterClass.AvatarUnlockTalentNotifyOrBuilder
             public int getTalentId() {
                 return this.talentId_;
             }
@@ -533,6 +499,40 @@ public final class AvatarUnlockTalentNotifyOuterClass {
 
             public Builder clearTalentId() {
                 this.talentId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarUnlockTalentNotifyOuterClass.AvatarUnlockTalentNotifyOrBuilder
+            public int getSkillDepotId() {
+                return this.skillDepotId_;
+            }
+
+            public Builder setSkillDepotId(int value) {
+                this.skillDepotId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearSkillDepotId() {
+                this.skillDepotId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarUnlockTalentNotifyOuterClass.AvatarUnlockTalentNotifyOrBuilder
+            public int getEntityId() {
+                return this.entityId_;
+            }
+
+            public Builder setEntityId(int value) {
+                this.entityId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearEntityId() {
+                this.entityId_ = 0;
                 onChanged();
                 return this;
             }

@@ -21,11 +21,11 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/InvestigationMonsterUpdateNotifyOuterClass.class */
 public final class InvestigationMonsterUpdateNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n&InvestigationMonsterUpdateNotify.proto\u001a\u001aInvestigationMonster.proto\"X\n InvestigationMonsterUpdateNotify\u00124\n\u0015investigation_monster\u0018\u0006 \u0001(\u000b2\u0015.InvestigationMonsterB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{InvestigationMonsterOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n&InvestigationMonsterUpdateNotify.proto\u001a\u001aInvestigationMonster.proto\"W\n InvestigationMonsterUpdateNotify\u00123\n\u0014investigationMonster\u0018\u000f \u0001(\u000b2\u0015.InvestigationMonsterB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{InvestigationMonsterOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_InvestigationMonsterUpdateNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_InvestigationMonsterUpdateNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f765x14f02893 = new GeneratedMessageV3.FieldAccessorTable(internal_static_InvestigationMonsterUpdateNotify_descriptor, new String[]{"InvestigationMonster"});
+    private static final GeneratedMessageV3.FieldAccessorTable f749x14f02893 = new GeneratedMessageV3.FieldAccessorTable(internal_static_InvestigationMonsterUpdateNotify_descriptor, new String[]{"InvestigationMonster"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/InvestigationMonsterUpdateNotifyOuterClass$InvestigationMonsterUpdateNotifyOrBuilder.class */
     public interface InvestigationMonsterUpdateNotifyOrBuilder extends MessageOrBuilder {
@@ -49,7 +49,7 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/InvestigationMonsterUpdateNotifyOuterClass$InvestigationMonsterUpdateNotify.class */
     public static final class InvestigationMonsterUpdateNotify extends GeneratedMessageV3 implements InvestigationMonsterUpdateNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int INVESTIGATION_MONSTER_FIELD_NUMBER = 6;
+        public static final int INVESTIGATIONMONSTER_FIELD_NUMBER = 15;
         private InvestigationMonsterOuterClass.InvestigationMonster investigationMonster_;
         private byte memoizedIsInitialized;
         private static final InvestigationMonsterUpdateNotify DEFAULT_INSTANCE = new InvestigationMonsterUpdateNotify();
@@ -96,7 +96,7 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 50:
+                            case 122:
                                 InvestigationMonsterOuterClass.InvestigationMonster.Builder subBuilder = this.investigationMonster_ != null ? this.investigationMonster_.toBuilder() : null;
                                 this.investigationMonster_ = (InvestigationMonsterOuterClass.InvestigationMonster) input.readMessage(InvestigationMonsterOuterClass.InvestigationMonster.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -132,7 +132,7 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return InvestigationMonsterUpdateNotifyOuterClass.f765x14f02893.ensureFieldAccessorsInitialized(InvestigationMonsterUpdateNotify.class, Builder.class);
+            return InvestigationMonsterUpdateNotifyOuterClass.f749x14f02893.ensureFieldAccessorsInitialized(InvestigationMonsterUpdateNotify.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.InvestigationMonsterUpdateNotifyOuterClass.InvestigationMonsterUpdateNotifyOrBuilder
@@ -166,7 +166,7 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.investigationMonster_ != null) {
-                output.writeMessage(6, getInvestigationMonster());
+                output.writeMessage(15, getInvestigationMonster());
             }
             this.unknownFields.writeTo(output);
         }
@@ -179,7 +179,7 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
             }
             int size2 = 0;
             if (this.investigationMonster_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(6, getInvestigationMonster());
+                size2 = 0 + CodedOutputStream.computeMessageSize(15, getInvestigationMonster());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -208,7 +208,7 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasInvestigationMonster()) {
-                hash = (53 * ((37 * hash) + 6)) + getInvestigationMonster().hashCode();
+                hash = (53 * ((37 * hash) + 15)) + getInvestigationMonster().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -298,7 +298,7 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return InvestigationMonsterUpdateNotifyOuterClass.f765x14f02893.ensureFieldAccessorsInitialized(InvestigationMonsterUpdateNotify.class, Builder.class);
+                return InvestigationMonsterUpdateNotifyOuterClass.f749x14f02893.ensureFieldAccessorsInitialized(InvestigationMonsterUpdateNotify.class, Builder.class);
             }
 
             private Builder() {

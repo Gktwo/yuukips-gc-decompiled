@@ -13,9 +13,9 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Message;
 import com.google.protobuf.MessageOrBuilder;
 import com.google.protobuf.Parser;
-import com.google.protobuf.ProtocolMessageEnum;
 import com.google.protobuf.SingleFieldBuilderV3;
 import com.google.protobuf.UnknownFieldSet;
+import emu.grasscutter.net.proto.BreakoutActionTypeOuterClass;
 import emu.grasscutter.net.proto.BreakoutVector2OuterClass;
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,25 +23,25 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BreakoutActionOuterClass.class */
 public final class BreakoutActionOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014BreakoutAction.proto\u001a\u0015BreakoutVector2.proto\"Ã\u0005\n\u000eBreakoutAction\u00127\n\u000baction_type\u0018\u0001 \u0001(\u000e2\".BreakoutAction.BreakoutActionType\u0012\u0018\n\u0010client_game_time\u0018\u0002 \u0001(\u0004\u0012\u0018\n\u0010server_game_time\u0018\u0003 \u0001(\u0004\u0012\u0011\n\tis_failed\u0018\u0004 \u0001(\b\u0012\u0011\n\tpre_index\u0018\u0005 \u0001(\r\u0012\u0011\n\tnew_index\u0018\u0006 \u0001(\r\u0012\u001d\n\u0003pos\u0018\u0007 \u0001(\u000b2\u0010.BreakoutVector2\u0012\"\n\bmove_dir\u0018\b \u0001(\u000b2\u0010.BreakoutVector2\u0012\r\n\u0005speed\u0018\t \u0001(\u0005\u0012\u000f\n\u0007peer_id\u0018\n \u0001(\r\u0012\u0014\n\felement_type\u0018\u000b \u0001(\r\u0012\u001d\n\u0015element_reaction_buff\u0018\f \u0001(\r\u0012\u001c\n\u0014speed_increase_count\u0018\r \u0001(\r\u0012\u0016\n\u000ehas_extra_ball\u0018\u000e \u0001(\b\u0012(\n\u000eextra_ball_dir\u0018\u000f \u0001(\u000b2\u0010.BreakoutVector2\u0012\u0018\n\u0010extra_ball_index\u0018\u0010 \u0001(\r\u0012\u000e\n\u0006offset\u0018\u0011 \u0001(\u0005\u0012\u001b\n\u0013Unk3300_AIEBGJHBOHL\u0018\u0012 \u0001(\u0004\"Ë\u0001\n\u0012BreakoutActionType\u0012\u001d\n\u0019BREAKOUT_ACTION_TYPE_NONE\u0010��\u0012$\n BREAKOUT_ACTION_TYPE_LAUNCH_BALL\u0010\u0001\u0012%\n!BREAKOUT_ACTION_TYPE_DESTROY_BALL\u0010\u0002\u0012'\n#BREAKOUT_ACTION_TYPE_FALLING_OBJECT\u0010\u0003\u0012 \n\u001cBREAKOUT_ACTION_TYPE_MISSILE\u0010\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BreakoutVector2OuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014BreakoutAction.proto\u001a\u0018BreakoutActionType.proto\u001a\u0015BreakoutVector2.proto\"Â\u0003\n\u000eBreakoutAction\u0012'\n\nactionType\u0018\u0001 \u0001(\u000e2\u0013.BreakoutActionType\u0012\u0016\n\u000eclientGameTime\u0018\u0002 \u0001(\u0004\u0012\u0016\n\u000eserverGameTime\u0018\u0003 \u0001(\u0004\u0012\u0013\n\u000bmbfjjacbmck\u0018\u0004 \u0001(\b\u0012\u0013\n\u000bgddolpoemjk\u0018\u0005 \u0001(\r\u0012\u0013\n\u000bjoandihiadc\u0018\u0006 \u0001(\r\u0012\u001d\n\u0003pos\u0018\u0007 \u0001(\u000b2\u0010.BreakoutVector2\u0012%\n\u000bmjehpphliia\u0018\b \u0001(\u000b2\u0010.BreakoutVector2\u0012\r\n\u0005speed\u0018\t \u0001(\u0005\u0012\u000e\n\u0006peerId\u0018\n \u0001(\r\u0012\u0013\n\u000belementType\u0018\u000b \u0001(\r\u0012\u0013\n\u000binhflokdoal\u0018\f \u0001(\r\u0012\u0013\n\u000bapiembahlab\u0018\r \u0001(\r\u0012\u0013\n\u000bmhkdmdjeaan\u0018\u000e \u0001(\b\u0012%\n\u000bcjegmomlbck\u0018\u000f \u0001(\u000b2\u0010.BreakoutVector2\u0012\u0013\n\u000bidngdpalicj\u0018\u0010 \u0001(\r\u0012\u000e\n\u0006offset\u0018\u0011 \u0001(\u0005\u0012\u0013\n\u000blccmdkibdpf\u0018\u0012 \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BreakoutActionTypeOuterClass.getDescriptor(), BreakoutVector2OuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_BreakoutAction_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_BreakoutAction_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BreakoutAction_descriptor, new String[]{"ActionType", "ClientGameTime", "ServerGameTime", "IsFailed", "PreIndex", "NewIndex", "Pos", "MoveDir", "Speed", "PeerId", "ElementType", "ElementReactionBuff", "SpeedIncreaseCount", "HasExtraBall", "ExtraBallDir", "ExtraBallIndex", "Offset", "Unk3300AIEBGJHBOHL"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_BreakoutAction_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BreakoutAction_descriptor, new String[]{"ActionType", "ClientGameTime", "ServerGameTime", "Mbfjjacbmck", "Gddolpoemjk", "Joandihiadc", "Pos", "Mjehpphliia", "Speed", "PeerId", "ElementType", "Inhflokdoal", "Apiembahlab", "Mhkdmdjeaan", "Cjegmomlbck", "Idngdpalicj", "Offset", "Lccmdkibdpf"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BreakoutActionOuterClass$BreakoutActionOrBuilder.class */
     public interface BreakoutActionOrBuilder extends MessageOrBuilder {
         int getActionTypeValue();
 
-        BreakoutAction.BreakoutActionType getActionType();
+        BreakoutActionTypeOuterClass.BreakoutActionType getActionType();
 
         long getClientGameTime();
 
         long getServerGameTime();
 
-        boolean getIsFailed();
+        boolean getMbfjjacbmck();
 
-        int getPreIndex();
+        int getGddolpoemjk();
 
-        int getNewIndex();
+        int getJoandihiadc();
 
         boolean hasPos();
 
@@ -49,11 +49,11 @@ public final class BreakoutActionOuterClass {
 
         BreakoutVector2OuterClass.BreakoutVector2OrBuilder getPosOrBuilder();
 
-        boolean hasMoveDir();
+        boolean hasMjehpphliia();
 
-        BreakoutVector2OuterClass.BreakoutVector2 getMoveDir();
+        BreakoutVector2OuterClass.BreakoutVector2 getMjehpphliia();
 
-        BreakoutVector2OuterClass.BreakoutVector2OrBuilder getMoveDirOrBuilder();
+        BreakoutVector2OuterClass.BreakoutVector2OrBuilder getMjehpphliiaOrBuilder();
 
         int getSpeed();
 
@@ -61,23 +61,23 @@ public final class BreakoutActionOuterClass {
 
         int getElementType();
 
-        int getElementReactionBuff();
+        int getInhflokdoal();
 
-        int getSpeedIncreaseCount();
+        int getApiembahlab();
 
-        boolean getHasExtraBall();
+        boolean getMhkdmdjeaan();
 
-        boolean hasExtraBallDir();
+        boolean hasCjegmomlbck();
 
-        BreakoutVector2OuterClass.BreakoutVector2 getExtraBallDir();
+        BreakoutVector2OuterClass.BreakoutVector2 getCjegmomlbck();
 
-        BreakoutVector2OuterClass.BreakoutVector2OrBuilder getExtraBallDirOrBuilder();
+        BreakoutVector2OuterClass.BreakoutVector2OrBuilder getCjegmomlbckOrBuilder();
 
-        int getExtraBallIndex();
+        int getIdngdpalicj();
 
         int getOffset();
 
-        long getUnk3300AIEBGJHBOHL();
+        long getLccmdkibdpf();
     }
 
     private BreakoutActionOuterClass() {
@@ -93,42 +93,42 @@ public final class BreakoutActionOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BreakoutActionOuterClass$BreakoutAction.class */
     public static final class BreakoutAction extends GeneratedMessageV3 implements BreakoutActionOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ACTION_TYPE_FIELD_NUMBER = 1;
+        public static final int ACTIONTYPE_FIELD_NUMBER = 1;
         private int actionType_;
-        public static final int CLIENT_GAME_TIME_FIELD_NUMBER = 2;
+        public static final int CLIENTGAMETIME_FIELD_NUMBER = 2;
         private long clientGameTime_;
-        public static final int SERVER_GAME_TIME_FIELD_NUMBER = 3;
+        public static final int SERVERGAMETIME_FIELD_NUMBER = 3;
         private long serverGameTime_;
-        public static final int IS_FAILED_FIELD_NUMBER = 4;
-        private boolean isFailed_;
-        public static final int PRE_INDEX_FIELD_NUMBER = 5;
-        private int preIndex_;
-        public static final int NEW_INDEX_FIELD_NUMBER = 6;
-        private int newIndex_;
+        public static final int MBFJJACBMCK_FIELD_NUMBER = 4;
+        private boolean mbfjjacbmck_;
+        public static final int GDDOLPOEMJK_FIELD_NUMBER = 5;
+        private int gddolpoemjk_;
+        public static final int JOANDIHIADC_FIELD_NUMBER = 6;
+        private int joandihiadc_;
         public static final int POS_FIELD_NUMBER = 7;
         private BreakoutVector2OuterClass.BreakoutVector2 pos_;
-        public static final int MOVE_DIR_FIELD_NUMBER = 8;
-        private BreakoutVector2OuterClass.BreakoutVector2 moveDir_;
+        public static final int MJEHPPHLIIA_FIELD_NUMBER = 8;
+        private BreakoutVector2OuterClass.BreakoutVector2 mjehpphliia_;
         public static final int SPEED_FIELD_NUMBER = 9;
         private int speed_;
-        public static final int PEER_ID_FIELD_NUMBER = 10;
+        public static final int PEERID_FIELD_NUMBER = 10;
         private int peerId_;
-        public static final int ELEMENT_TYPE_FIELD_NUMBER = 11;
+        public static final int ELEMENTTYPE_FIELD_NUMBER = 11;
         private int elementType_;
-        public static final int ELEMENT_REACTION_BUFF_FIELD_NUMBER = 12;
-        private int elementReactionBuff_;
-        public static final int SPEED_INCREASE_COUNT_FIELD_NUMBER = 13;
-        private int speedIncreaseCount_;
-        public static final int HAS_EXTRA_BALL_FIELD_NUMBER = 14;
-        private boolean hasExtraBall_;
-        public static final int EXTRA_BALL_DIR_FIELD_NUMBER = 15;
-        private BreakoutVector2OuterClass.BreakoutVector2 extraBallDir_;
-        public static final int EXTRA_BALL_INDEX_FIELD_NUMBER = 16;
-        private int extraBallIndex_;
+        public static final int INHFLOKDOAL_FIELD_NUMBER = 12;
+        private int inhflokdoal_;
+        public static final int APIEMBAHLAB_FIELD_NUMBER = 13;
+        private int apiembahlab_;
+        public static final int MHKDMDJEAAN_FIELD_NUMBER = 14;
+        private boolean mhkdmdjeaan_;
+        public static final int CJEGMOMLBCK_FIELD_NUMBER = 15;
+        private BreakoutVector2OuterClass.BreakoutVector2 cjegmomlbck_;
+        public static final int IDNGDPALICJ_FIELD_NUMBER = 16;
+        private int idngdpalicj_;
         public static final int OFFSET_FIELD_NUMBER = 17;
         private int offset_;
-        public static final int UNK3300_AIEBGJHBOHL_FIELD_NUMBER = 18;
-        private long unk3300AIEBGJHBOHL_;
+        public static final int LCCMDKIBDPF_FIELD_NUMBER = 18;
+        private long lccmdkibdpf_;
         private byte memoizedIsInitialized;
         private static final BreakoutAction DEFAULT_INSTANCE = new BreakoutAction();
         private static final Parser<BreakoutAction> PARSER = new AbstractParser<BreakoutAction>() { // from class: emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutAction.1
@@ -185,13 +185,13 @@ public final class BreakoutActionOuterClass {
                                 this.serverGameTime_ = input.readUInt64();
                                 break;
                             case 32:
-                                this.isFailed_ = input.readBool();
+                                this.mbfjjacbmck_ = input.readBool();
                                 break;
                             case 40:
-                                this.preIndex_ = input.readUInt32();
+                                this.gddolpoemjk_ = input.readUInt32();
                                 break;
                             case 48:
-                                this.newIndex_ = input.readUInt32();
+                                this.joandihiadc_ = input.readUInt32();
                                 break;
                             case 58:
                                 BreakoutVector2OuterClass.BreakoutVector2.Builder subBuilder = this.pos_ != null ? this.pos_.toBuilder() : null;
@@ -204,13 +204,13 @@ public final class BreakoutActionOuterClass {
                                     break;
                                 }
                             case 66:
-                                BreakoutVector2OuterClass.BreakoutVector2.Builder subBuilder2 = this.moveDir_ != null ? this.moveDir_.toBuilder() : null;
-                                this.moveDir_ = (BreakoutVector2OuterClass.BreakoutVector2) input.readMessage(BreakoutVector2OuterClass.BreakoutVector2.parser(), extensionRegistry);
+                                BreakoutVector2OuterClass.BreakoutVector2.Builder subBuilder2 = this.mjehpphliia_ != null ? this.mjehpphliia_.toBuilder() : null;
+                                this.mjehpphliia_ = (BreakoutVector2OuterClass.BreakoutVector2) input.readMessage(BreakoutVector2OuterClass.BreakoutVector2.parser(), extensionRegistry);
                                 if (subBuilder2 == null) {
                                     break;
                                 } else {
-                                    subBuilder2.mergeFrom(this.moveDir_);
-                                    this.moveDir_ = subBuilder2.buildPartial();
+                                    subBuilder2.mergeFrom(this.mjehpphliia_);
+                                    this.mjehpphliia_ = subBuilder2.buildPartial();
                                     break;
                                 }
                             case 72:
@@ -223,32 +223,32 @@ public final class BreakoutActionOuterClass {
                                 this.elementType_ = input.readUInt32();
                                 break;
                             case 96:
-                                this.elementReactionBuff_ = input.readUInt32();
+                                this.inhflokdoal_ = input.readUInt32();
                                 break;
                             case 104:
-                                this.speedIncreaseCount_ = input.readUInt32();
+                                this.apiembahlab_ = input.readUInt32();
                                 break;
                             case 112:
-                                this.hasExtraBall_ = input.readBool();
+                                this.mhkdmdjeaan_ = input.readBool();
                                 break;
                             case 122:
-                                BreakoutVector2OuterClass.BreakoutVector2.Builder subBuilder3 = this.extraBallDir_ != null ? this.extraBallDir_.toBuilder() : null;
-                                this.extraBallDir_ = (BreakoutVector2OuterClass.BreakoutVector2) input.readMessage(BreakoutVector2OuterClass.BreakoutVector2.parser(), extensionRegistry);
+                                BreakoutVector2OuterClass.BreakoutVector2.Builder subBuilder3 = this.cjegmomlbck_ != null ? this.cjegmomlbck_.toBuilder() : null;
+                                this.cjegmomlbck_ = (BreakoutVector2OuterClass.BreakoutVector2) input.readMessage(BreakoutVector2OuterClass.BreakoutVector2.parser(), extensionRegistry);
                                 if (subBuilder3 == null) {
                                     break;
                                 } else {
-                                    subBuilder3.mergeFrom(this.extraBallDir_);
-                                    this.extraBallDir_ = subBuilder3.buildPartial();
+                                    subBuilder3.mergeFrom(this.cjegmomlbck_);
+                                    this.cjegmomlbck_ = subBuilder3.buildPartial();
                                     break;
                                 }
                             case 128:
-                                this.extraBallIndex_ = input.readUInt32();
+                                this.idngdpalicj_ = input.readUInt32();
                                 break;
                             case 136:
                                 this.offset_ = input.readInt32();
                                 break;
                             case 144:
-                                this.unk3300AIEBGJHBOHL_ = input.readUInt64();
+                                this.lccmdkibdpf_ = input.readUInt64();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -279,104 +279,15 @@ public final class BreakoutActionOuterClass {
             return BreakoutActionOuterClass.internal_static_BreakoutAction_fieldAccessorTable.ensureFieldAccessorsInitialized(BreakoutAction.class, Builder.class);
         }
 
-        /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BreakoutActionOuterClass$BreakoutAction$BreakoutActionType.class */
-        public enum BreakoutActionType implements ProtocolMessageEnum {
-            BREAKOUT_ACTION_TYPE_NONE(0),
-            BREAKOUT_ACTION_TYPE_LAUNCH_BALL(1),
-            BREAKOUT_ACTION_TYPE_DESTROY_BALL(2),
-            BREAKOUT_ACTION_TYPE_FALLING_OBJECT(3),
-            BREAKOUT_ACTION_TYPE_MISSILE(4),
-            UNRECOGNIZED(-1);
-            
-            public static final int BREAKOUT_ACTION_TYPE_NONE_VALUE = 0;
-            public static final int BREAKOUT_ACTION_TYPE_LAUNCH_BALL_VALUE = 1;
-            public static final int BREAKOUT_ACTION_TYPE_DESTROY_BALL_VALUE = 2;
-            public static final int BREAKOUT_ACTION_TYPE_FALLING_OBJECT_VALUE = 3;
-            public static final int BREAKOUT_ACTION_TYPE_MISSILE_VALUE = 4;
-            private static final Internal.EnumLiteMap<BreakoutActionType> internalValueMap = new Internal.EnumLiteMap<BreakoutActionType>() { // from class: emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutAction.BreakoutActionType.1
-                @Override // com.google.protobuf.Internal.EnumLiteMap
-                public BreakoutActionType findValueByNumber(int number) {
-                    return BreakoutActionType.forNumber(number);
-                }
-            };
-            private static final BreakoutActionType[] VALUES = values();
-            private final int value;
-
-            @Override // com.google.protobuf.ProtocolMessageEnum, com.google.protobuf.Internal.EnumLite
-            public final int getNumber() {
-                if (this != UNRECOGNIZED) {
-                    return this.value;
-                }
-                throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
-            }
-
-            @Deprecated
-            public static BreakoutActionType valueOf(int value) {
-                return forNumber(value);
-            }
-
-            public static BreakoutActionType forNumber(int value) {
-                switch (value) {
-                    case 0:
-                        return BREAKOUT_ACTION_TYPE_NONE;
-                    case 1:
-                        return BREAKOUT_ACTION_TYPE_LAUNCH_BALL;
-                    case 2:
-                        return BREAKOUT_ACTION_TYPE_DESTROY_BALL;
-                    case 3:
-                        return BREAKOUT_ACTION_TYPE_FALLING_OBJECT;
-                    case 4:
-                        return BREAKOUT_ACTION_TYPE_MISSILE;
-                    default:
-                        return null;
-                }
-            }
-
-            public static Internal.EnumLiteMap<BreakoutActionType> internalGetValueMap() {
-                return internalValueMap;
-            }
-
-            @Override // com.google.protobuf.ProtocolMessageEnum
-            public final Descriptors.EnumValueDescriptor getValueDescriptor() {
-                if (this != UNRECOGNIZED) {
-                    return getDescriptor().getValues().get(ordinal());
-                }
-                throw new IllegalStateException("Can't get the descriptor of an unrecognized enum value.");
-            }
-
-            @Override // com.google.protobuf.ProtocolMessageEnum
-            public final Descriptors.EnumDescriptor getDescriptorForType() {
-                return getDescriptor();
-            }
-
-            public static final Descriptors.EnumDescriptor getDescriptor() {
-                return BreakoutAction.getDescriptor().getEnumTypes().get(0);
-            }
-
-            public static BreakoutActionType valueOf(Descriptors.EnumValueDescriptor desc) {
-                if (desc.getType() != getDescriptor()) {
-                    throw new IllegalArgumentException("EnumValueDescriptor is not for this type.");
-                } else if (desc.getIndex() == -1) {
-                    return UNRECOGNIZED;
-                } else {
-                    return VALUES[desc.getIndex()];
-                }
-            }
-
-            BreakoutActionType(int value) {
-                this.value = value;
-            }
-        }
-
         @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
         public int getActionTypeValue() {
             return this.actionType_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-        public BreakoutActionType getActionType() {
-            BreakoutActionType result = BreakoutActionType.valueOf(this.actionType_);
-            return result == null ? BreakoutActionType.UNRECOGNIZED : result;
+        public BreakoutActionTypeOuterClass.BreakoutActionType getActionType() {
+            BreakoutActionTypeOuterClass.BreakoutActionType result = BreakoutActionTypeOuterClass.BreakoutActionType.valueOf(this.actionType_);
+            return result == null ? BreakoutActionTypeOuterClass.BreakoutActionType.UNRECOGNIZED : result;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
@@ -390,18 +301,18 @@ public final class BreakoutActionOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-        public boolean getIsFailed() {
-            return this.isFailed_;
+        public boolean getMbfjjacbmck() {
+            return this.mbfjjacbmck_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-        public int getPreIndex() {
-            return this.preIndex_;
+        public int getGddolpoemjk() {
+            return this.gddolpoemjk_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-        public int getNewIndex() {
-            return this.newIndex_;
+        public int getJoandihiadc() {
+            return this.joandihiadc_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
@@ -420,18 +331,18 @@ public final class BreakoutActionOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-        public boolean hasMoveDir() {
-            return this.moveDir_ != null;
+        public boolean hasMjehpphliia() {
+            return this.mjehpphliia_ != null;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-        public BreakoutVector2OuterClass.BreakoutVector2 getMoveDir() {
-            return this.moveDir_ == null ? BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : this.moveDir_;
+        public BreakoutVector2OuterClass.BreakoutVector2 getMjehpphliia() {
+            return this.mjehpphliia_ == null ? BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : this.mjehpphliia_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-        public BreakoutVector2OuterClass.BreakoutVector2OrBuilder getMoveDirOrBuilder() {
-            return getMoveDir();
+        public BreakoutVector2OuterClass.BreakoutVector2OrBuilder getMjehpphliiaOrBuilder() {
+            return getMjehpphliia();
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
@@ -450,38 +361,38 @@ public final class BreakoutActionOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-        public int getElementReactionBuff() {
-            return this.elementReactionBuff_;
+        public int getInhflokdoal() {
+            return this.inhflokdoal_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-        public int getSpeedIncreaseCount() {
-            return this.speedIncreaseCount_;
+        public int getApiembahlab() {
+            return this.apiembahlab_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-        public boolean getHasExtraBall() {
-            return this.hasExtraBall_;
+        public boolean getMhkdmdjeaan() {
+            return this.mhkdmdjeaan_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-        public boolean hasExtraBallDir() {
-            return this.extraBallDir_ != null;
+        public boolean hasCjegmomlbck() {
+            return this.cjegmomlbck_ != null;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-        public BreakoutVector2OuterClass.BreakoutVector2 getExtraBallDir() {
-            return this.extraBallDir_ == null ? BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : this.extraBallDir_;
+        public BreakoutVector2OuterClass.BreakoutVector2 getCjegmomlbck() {
+            return this.cjegmomlbck_ == null ? BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : this.cjegmomlbck_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-        public BreakoutVector2OuterClass.BreakoutVector2OrBuilder getExtraBallDirOrBuilder() {
-            return getExtraBallDir();
+        public BreakoutVector2OuterClass.BreakoutVector2OrBuilder getCjegmomlbckOrBuilder() {
+            return getCjegmomlbck();
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-        public int getExtraBallIndex() {
-            return this.extraBallIndex_;
+        public int getIdngdpalicj() {
+            return this.idngdpalicj_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
@@ -490,8 +401,8 @@ public final class BreakoutActionOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-        public long getUnk3300AIEBGJHBOHL() {
-            return this.unk3300AIEBGJHBOHL_;
+        public long getLccmdkibdpf() {
+            return this.lccmdkibdpf_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -509,7 +420,7 @@ public final class BreakoutActionOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.actionType_ != BreakoutActionType.BREAKOUT_ACTION_TYPE_NONE.getNumber()) {
+            if (this.actionType_ != BreakoutActionTypeOuterClass.BreakoutActionType.BREAKOUT_ACTION_TYPE_NONE.getNumber()) {
                 output.writeEnum(1, this.actionType_);
             }
             if (this.clientGameTime_ != 0) {
@@ -518,20 +429,20 @@ public final class BreakoutActionOuterClass {
             if (this.serverGameTime_ != 0) {
                 output.writeUInt64(3, this.serverGameTime_);
             }
-            if (this.isFailed_) {
-                output.writeBool(4, this.isFailed_);
+            if (this.mbfjjacbmck_) {
+                output.writeBool(4, this.mbfjjacbmck_);
             }
-            if (this.preIndex_ != 0) {
-                output.writeUInt32(5, this.preIndex_);
+            if (this.gddolpoemjk_ != 0) {
+                output.writeUInt32(5, this.gddolpoemjk_);
             }
-            if (this.newIndex_ != 0) {
-                output.writeUInt32(6, this.newIndex_);
+            if (this.joandihiadc_ != 0) {
+                output.writeUInt32(6, this.joandihiadc_);
             }
             if (this.pos_ != null) {
                 output.writeMessage(7, getPos());
             }
-            if (this.moveDir_ != null) {
-                output.writeMessage(8, getMoveDir());
+            if (this.mjehpphliia_ != null) {
+                output.writeMessage(8, getMjehpphliia());
             }
             if (this.speed_ != 0) {
                 output.writeInt32(9, this.speed_);
@@ -542,26 +453,26 @@ public final class BreakoutActionOuterClass {
             if (this.elementType_ != 0) {
                 output.writeUInt32(11, this.elementType_);
             }
-            if (this.elementReactionBuff_ != 0) {
-                output.writeUInt32(12, this.elementReactionBuff_);
+            if (this.inhflokdoal_ != 0) {
+                output.writeUInt32(12, this.inhflokdoal_);
             }
-            if (this.speedIncreaseCount_ != 0) {
-                output.writeUInt32(13, this.speedIncreaseCount_);
+            if (this.apiembahlab_ != 0) {
+                output.writeUInt32(13, this.apiembahlab_);
             }
-            if (this.hasExtraBall_) {
-                output.writeBool(14, this.hasExtraBall_);
+            if (this.mhkdmdjeaan_) {
+                output.writeBool(14, this.mhkdmdjeaan_);
             }
-            if (this.extraBallDir_ != null) {
-                output.writeMessage(15, getExtraBallDir());
+            if (this.cjegmomlbck_ != null) {
+                output.writeMessage(15, getCjegmomlbck());
             }
-            if (this.extraBallIndex_ != 0) {
-                output.writeUInt32(16, this.extraBallIndex_);
+            if (this.idngdpalicj_ != 0) {
+                output.writeUInt32(16, this.idngdpalicj_);
             }
             if (this.offset_ != 0) {
                 output.writeInt32(17, this.offset_);
             }
-            if (this.unk3300AIEBGJHBOHL_ != 0) {
-                output.writeUInt64(18, this.unk3300AIEBGJHBOHL_);
+            if (this.lccmdkibdpf_ != 0) {
+                output.writeUInt64(18, this.lccmdkibdpf_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -573,7 +484,7 @@ public final class BreakoutActionOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.actionType_ != BreakoutActionType.BREAKOUT_ACTION_TYPE_NONE.getNumber()) {
+            if (this.actionType_ != BreakoutActionTypeOuterClass.BreakoutActionType.BREAKOUT_ACTION_TYPE_NONE.getNumber()) {
                 size2 = 0 + CodedOutputStream.computeEnumSize(1, this.actionType_);
             }
             if (this.clientGameTime_ != 0) {
@@ -582,20 +493,20 @@ public final class BreakoutActionOuterClass {
             if (this.serverGameTime_ != 0) {
                 size2 += CodedOutputStream.computeUInt64Size(3, this.serverGameTime_);
             }
-            if (this.isFailed_) {
-                size2 += CodedOutputStream.computeBoolSize(4, this.isFailed_);
+            if (this.mbfjjacbmck_) {
+                size2 += CodedOutputStream.computeBoolSize(4, this.mbfjjacbmck_);
             }
-            if (this.preIndex_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.preIndex_);
+            if (this.gddolpoemjk_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(5, this.gddolpoemjk_);
             }
-            if (this.newIndex_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(6, this.newIndex_);
+            if (this.joandihiadc_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(6, this.joandihiadc_);
             }
             if (this.pos_ != null) {
                 size2 += CodedOutputStream.computeMessageSize(7, getPos());
             }
-            if (this.moveDir_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(8, getMoveDir());
+            if (this.mjehpphliia_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(8, getMjehpphliia());
             }
             if (this.speed_ != 0) {
                 size2 += CodedOutputStream.computeInt32Size(9, this.speed_);
@@ -606,26 +517,26 @@ public final class BreakoutActionOuterClass {
             if (this.elementType_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(11, this.elementType_);
             }
-            if (this.elementReactionBuff_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.elementReactionBuff_);
+            if (this.inhflokdoal_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(12, this.inhflokdoal_);
             }
-            if (this.speedIncreaseCount_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.speedIncreaseCount_);
+            if (this.apiembahlab_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(13, this.apiembahlab_);
             }
-            if (this.hasExtraBall_) {
-                size2 += CodedOutputStream.computeBoolSize(14, this.hasExtraBall_);
+            if (this.mhkdmdjeaan_) {
+                size2 += CodedOutputStream.computeBoolSize(14, this.mhkdmdjeaan_);
             }
-            if (this.extraBallDir_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(15, getExtraBallDir());
+            if (this.cjegmomlbck_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(15, getCjegmomlbck());
             }
-            if (this.extraBallIndex_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(16, this.extraBallIndex_);
+            if (this.idngdpalicj_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(16, this.idngdpalicj_);
             }
             if (this.offset_ != 0) {
                 size2 += CodedOutputStream.computeInt32Size(17, this.offset_);
             }
-            if (this.unk3300AIEBGJHBOHL_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(18, this.unk3300AIEBGJHBOHL_);
+            if (this.lccmdkibdpf_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(18, this.lccmdkibdpf_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -641,14 +552,14 @@ public final class BreakoutActionOuterClass {
                 return equals(obj);
             }
             BreakoutAction other = (BreakoutAction) obj;
-            if (this.actionType_ != other.actionType_ || getClientGameTime() != other.getClientGameTime() || getServerGameTime() != other.getServerGameTime() || getIsFailed() != other.getIsFailed() || getPreIndex() != other.getPreIndex() || getNewIndex() != other.getNewIndex() || hasPos() != other.hasPos()) {
+            if (this.actionType_ != other.actionType_ || getClientGameTime() != other.getClientGameTime() || getServerGameTime() != other.getServerGameTime() || getMbfjjacbmck() != other.getMbfjjacbmck() || getGddolpoemjk() != other.getGddolpoemjk() || getJoandihiadc() != other.getJoandihiadc() || hasPos() != other.hasPos()) {
                 return false;
             }
-            if ((hasPos() && !getPos().equals(other.getPos())) || hasMoveDir() != other.hasMoveDir()) {
+            if ((hasPos() && !getPos().equals(other.getPos())) || hasMjehpphliia() != other.hasMjehpphliia()) {
                 return false;
             }
-            if ((!hasMoveDir() || getMoveDir().equals(other.getMoveDir())) && getSpeed() == other.getSpeed() && getPeerId() == other.getPeerId() && getElementType() == other.getElementType() && getElementReactionBuff() == other.getElementReactionBuff() && getSpeedIncreaseCount() == other.getSpeedIncreaseCount() && getHasExtraBall() == other.getHasExtraBall() && hasExtraBallDir() == other.hasExtraBallDir()) {
-                return (!hasExtraBallDir() || getExtraBallDir().equals(other.getExtraBallDir())) && getExtraBallIndex() == other.getExtraBallIndex() && getOffset() == other.getOffset() && getUnk3300AIEBGJHBOHL() == other.getUnk3300AIEBGJHBOHL() && this.unknownFields.equals(other.unknownFields);
+            if ((!hasMjehpphliia() || getMjehpphliia().equals(other.getMjehpphliia())) && getSpeed() == other.getSpeed() && getPeerId() == other.getPeerId() && getElementType() == other.getElementType() && getInhflokdoal() == other.getInhflokdoal() && getApiembahlab() == other.getApiembahlab() && getMhkdmdjeaan() == other.getMhkdmdjeaan() && hasCjegmomlbck() == other.hasCjegmomlbck()) {
+                return (!hasCjegmomlbck() || getCjegmomlbck().equals(other.getCjegmomlbck())) && getIdngdpalicj() == other.getIdngdpalicj() && getOffset() == other.getOffset() && getLccmdkibdpf() == other.getLccmdkibdpf() && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -658,18 +569,18 @@ public final class BreakoutActionOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + this.actionType_)) + 2)) + Internal.hashLong(getClientGameTime()))) + 3)) + Internal.hashLong(getServerGameTime()))) + 4)) + Internal.hashBoolean(getIsFailed()))) + 5)) + getPreIndex())) + 6)) + getNewIndex();
+            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + this.actionType_)) + 2)) + Internal.hashLong(getClientGameTime()))) + 3)) + Internal.hashLong(getServerGameTime()))) + 4)) + Internal.hashBoolean(getMbfjjacbmck()))) + 5)) + getGddolpoemjk())) + 6)) + getJoandihiadc();
             if (hasPos()) {
                 hash = (53 * ((37 * hash) + 7)) + getPos().hashCode();
             }
-            if (hasMoveDir()) {
-                hash = (53 * ((37 * hash) + 8)) + getMoveDir().hashCode();
+            if (hasMjehpphliia()) {
+                hash = (53 * ((37 * hash) + 8)) + getMjehpphliia().hashCode();
             }
-            int hash2 = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 9)) + getSpeed())) + 10)) + getPeerId())) + 11)) + getElementType())) + 12)) + getElementReactionBuff())) + 13)) + getSpeedIncreaseCount())) + 14)) + Internal.hashBoolean(getHasExtraBall());
-            if (hasExtraBallDir()) {
-                hash2 = (53 * ((37 * hash2) + 15)) + getExtraBallDir().hashCode();
+            int hash2 = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 9)) + getSpeed())) + 10)) + getPeerId())) + 11)) + getElementType())) + 12)) + getInhflokdoal())) + 13)) + getApiembahlab())) + 14)) + Internal.hashBoolean(getMhkdmdjeaan());
+            if (hasCjegmomlbck()) {
+                hash2 = (53 * ((37 * hash2) + 15)) + getCjegmomlbck().hashCode();
             }
-            int hash3 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash2) + 16)) + getExtraBallIndex())) + 17)) + getOffset())) + 18)) + Internal.hashLong(getUnk3300AIEBGJHBOHL()))) + this.unknownFields.hashCode();
+            int hash3 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash2) + 16)) + getIdngdpalicj())) + 17)) + getOffset())) + 18)) + Internal.hashLong(getLccmdkibdpf()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash3;
             return hash3;
         }
@@ -751,24 +662,24 @@ public final class BreakoutActionOuterClass {
             private int actionType_ = 0;
             private long clientGameTime_;
             private long serverGameTime_;
-            private boolean isFailed_;
-            private int preIndex_;
-            private int newIndex_;
+            private boolean mbfjjacbmck_;
+            private int gddolpoemjk_;
+            private int joandihiadc_;
             private BreakoutVector2OuterClass.BreakoutVector2 pos_;
             private SingleFieldBuilderV3<BreakoutVector2OuterClass.BreakoutVector2, BreakoutVector2OuterClass.BreakoutVector2.Builder, BreakoutVector2OuterClass.BreakoutVector2OrBuilder> posBuilder_;
-            private BreakoutVector2OuterClass.BreakoutVector2 moveDir_;
-            private SingleFieldBuilderV3<BreakoutVector2OuterClass.BreakoutVector2, BreakoutVector2OuterClass.BreakoutVector2.Builder, BreakoutVector2OuterClass.BreakoutVector2OrBuilder> moveDirBuilder_;
+            private BreakoutVector2OuterClass.BreakoutVector2 mjehpphliia_;
+            private SingleFieldBuilderV3<BreakoutVector2OuterClass.BreakoutVector2, BreakoutVector2OuterClass.BreakoutVector2.Builder, BreakoutVector2OuterClass.BreakoutVector2OrBuilder> mjehpphliiaBuilder_;
             private int speed_;
             private int peerId_;
             private int elementType_;
-            private int elementReactionBuff_;
-            private int speedIncreaseCount_;
-            private boolean hasExtraBall_;
-            private BreakoutVector2OuterClass.BreakoutVector2 extraBallDir_;
-            private SingleFieldBuilderV3<BreakoutVector2OuterClass.BreakoutVector2, BreakoutVector2OuterClass.BreakoutVector2.Builder, BreakoutVector2OuterClass.BreakoutVector2OrBuilder> extraBallDirBuilder_;
-            private int extraBallIndex_;
+            private int inhflokdoal_;
+            private int apiembahlab_;
+            private boolean mhkdmdjeaan_;
+            private BreakoutVector2OuterClass.BreakoutVector2 cjegmomlbck_;
+            private SingleFieldBuilderV3<BreakoutVector2OuterClass.BreakoutVector2, BreakoutVector2OuterClass.BreakoutVector2.Builder, BreakoutVector2OuterClass.BreakoutVector2OrBuilder> cjegmomlbckBuilder_;
+            private int idngdpalicj_;
             private int offset_;
-            private long unk3300AIEBGJHBOHL_;
+            private long lccmdkibdpf_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return BreakoutActionOuterClass.internal_static_BreakoutAction_descriptor;
@@ -799,36 +710,36 @@ public final class BreakoutActionOuterClass {
                 this.actionType_ = 0;
                 this.clientGameTime_ = 0;
                 this.serverGameTime_ = 0;
-                this.isFailed_ = false;
-                this.preIndex_ = 0;
-                this.newIndex_ = 0;
+                this.mbfjjacbmck_ = false;
+                this.gddolpoemjk_ = 0;
+                this.joandihiadc_ = 0;
                 if (this.posBuilder_ == null) {
                     this.pos_ = null;
                 } else {
                     this.pos_ = null;
                     this.posBuilder_ = null;
                 }
-                if (this.moveDirBuilder_ == null) {
-                    this.moveDir_ = null;
+                if (this.mjehpphliiaBuilder_ == null) {
+                    this.mjehpphliia_ = null;
                 } else {
-                    this.moveDir_ = null;
-                    this.moveDirBuilder_ = null;
+                    this.mjehpphliia_ = null;
+                    this.mjehpphliiaBuilder_ = null;
                 }
                 this.speed_ = 0;
                 this.peerId_ = 0;
                 this.elementType_ = 0;
-                this.elementReactionBuff_ = 0;
-                this.speedIncreaseCount_ = 0;
-                this.hasExtraBall_ = false;
-                if (this.extraBallDirBuilder_ == null) {
-                    this.extraBallDir_ = null;
+                this.inhflokdoal_ = 0;
+                this.apiembahlab_ = 0;
+                this.mhkdmdjeaan_ = false;
+                if (this.cjegmomlbckBuilder_ == null) {
+                    this.cjegmomlbck_ = null;
                 } else {
-                    this.extraBallDir_ = null;
-                    this.extraBallDirBuilder_ = null;
+                    this.cjegmomlbck_ = null;
+                    this.cjegmomlbckBuilder_ = null;
                 }
-                this.extraBallIndex_ = 0;
+                this.idngdpalicj_ = 0;
                 this.offset_ = 0;
-                this.unk3300AIEBGJHBOHL_ = 0;
+                this.lccmdkibdpf_ = 0;
                 return this;
             }
 
@@ -857,33 +768,33 @@ public final class BreakoutActionOuterClass {
                 result.actionType_ = this.actionType_;
                 result.clientGameTime_ = this.clientGameTime_;
                 result.serverGameTime_ = this.serverGameTime_;
-                result.isFailed_ = this.isFailed_;
-                result.preIndex_ = this.preIndex_;
-                result.newIndex_ = this.newIndex_;
+                result.mbfjjacbmck_ = this.mbfjjacbmck_;
+                result.gddolpoemjk_ = this.gddolpoemjk_;
+                result.joandihiadc_ = this.joandihiadc_;
                 if (this.posBuilder_ == null) {
                     result.pos_ = this.pos_;
                 } else {
                     result.pos_ = this.posBuilder_.build();
                 }
-                if (this.moveDirBuilder_ == null) {
-                    result.moveDir_ = this.moveDir_;
+                if (this.mjehpphliiaBuilder_ == null) {
+                    result.mjehpphliia_ = this.mjehpphliia_;
                 } else {
-                    result.moveDir_ = this.moveDirBuilder_.build();
+                    result.mjehpphliia_ = this.mjehpphliiaBuilder_.build();
                 }
                 result.speed_ = this.speed_;
                 result.peerId_ = this.peerId_;
                 result.elementType_ = this.elementType_;
-                result.elementReactionBuff_ = this.elementReactionBuff_;
-                result.speedIncreaseCount_ = this.speedIncreaseCount_;
-                result.hasExtraBall_ = this.hasExtraBall_;
-                if (this.extraBallDirBuilder_ == null) {
-                    result.extraBallDir_ = this.extraBallDir_;
+                result.inhflokdoal_ = this.inhflokdoal_;
+                result.apiembahlab_ = this.apiembahlab_;
+                result.mhkdmdjeaan_ = this.mhkdmdjeaan_;
+                if (this.cjegmomlbckBuilder_ == null) {
+                    result.cjegmomlbck_ = this.cjegmomlbck_;
                 } else {
-                    result.extraBallDir_ = this.extraBallDirBuilder_.build();
+                    result.cjegmomlbck_ = this.cjegmomlbckBuilder_.build();
                 }
-                result.extraBallIndex_ = this.extraBallIndex_;
+                result.idngdpalicj_ = this.idngdpalicj_;
                 result.offset_ = this.offset_;
-                result.unk3300AIEBGJHBOHL_ = this.unk3300AIEBGJHBOHL_;
+                result.lccmdkibdpf_ = this.lccmdkibdpf_;
                 onBuilt();
                 return result;
             }
@@ -940,20 +851,20 @@ public final class BreakoutActionOuterClass {
                 if (other.getServerGameTime() != 0) {
                     setServerGameTime(other.getServerGameTime());
                 }
-                if (other.getIsFailed()) {
-                    setIsFailed(other.getIsFailed());
+                if (other.getMbfjjacbmck()) {
+                    setMbfjjacbmck(other.getMbfjjacbmck());
                 }
-                if (other.getPreIndex() != 0) {
-                    setPreIndex(other.getPreIndex());
+                if (other.getGddolpoemjk() != 0) {
+                    setGddolpoemjk(other.getGddolpoemjk());
                 }
-                if (other.getNewIndex() != 0) {
-                    setNewIndex(other.getNewIndex());
+                if (other.getJoandihiadc() != 0) {
+                    setJoandihiadc(other.getJoandihiadc());
                 }
                 if (other.hasPos()) {
                     mergePos(other.getPos());
                 }
-                if (other.hasMoveDir()) {
-                    mergeMoveDir(other.getMoveDir());
+                if (other.hasMjehpphliia()) {
+                    mergeMjehpphliia(other.getMjehpphliia());
                 }
                 if (other.getSpeed() != 0) {
                     setSpeed(other.getSpeed());
@@ -964,26 +875,26 @@ public final class BreakoutActionOuterClass {
                 if (other.getElementType() != 0) {
                     setElementType(other.getElementType());
                 }
-                if (other.getElementReactionBuff() != 0) {
-                    setElementReactionBuff(other.getElementReactionBuff());
+                if (other.getInhflokdoal() != 0) {
+                    setInhflokdoal(other.getInhflokdoal());
                 }
-                if (other.getSpeedIncreaseCount() != 0) {
-                    setSpeedIncreaseCount(other.getSpeedIncreaseCount());
+                if (other.getApiembahlab() != 0) {
+                    setApiembahlab(other.getApiembahlab());
                 }
-                if (other.getHasExtraBall()) {
-                    setHasExtraBall(other.getHasExtraBall());
+                if (other.getMhkdmdjeaan()) {
+                    setMhkdmdjeaan(other.getMhkdmdjeaan());
                 }
-                if (other.hasExtraBallDir()) {
-                    mergeExtraBallDir(other.getExtraBallDir());
+                if (other.hasCjegmomlbck()) {
+                    mergeCjegmomlbck(other.getCjegmomlbck());
                 }
-                if (other.getExtraBallIndex() != 0) {
-                    setExtraBallIndex(other.getExtraBallIndex());
+                if (other.getIdngdpalicj() != 0) {
+                    setIdngdpalicj(other.getIdngdpalicj());
                 }
                 if (other.getOffset() != 0) {
                     setOffset(other.getOffset());
                 }
-                if (other.getUnk3300AIEBGJHBOHL() != 0) {
-                    setUnk3300AIEBGJHBOHL(other.getUnk3300AIEBGJHBOHL());
+                if (other.getLccmdkibdpf() != 0) {
+                    setLccmdkibdpf(other.getLccmdkibdpf());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -1029,12 +940,12 @@ public final class BreakoutActionOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-            public BreakoutActionType getActionType() {
-                BreakoutActionType result = BreakoutActionType.valueOf(this.actionType_);
-                return result == null ? BreakoutActionType.UNRECOGNIZED : result;
+            public BreakoutActionTypeOuterClass.BreakoutActionType getActionType() {
+                BreakoutActionTypeOuterClass.BreakoutActionType result = BreakoutActionTypeOuterClass.BreakoutActionType.valueOf(this.actionType_);
+                return result == null ? BreakoutActionTypeOuterClass.BreakoutActionType.UNRECOGNIZED : result;
             }
 
-            public Builder setActionType(BreakoutActionType value) {
+            public Builder setActionType(BreakoutActionTypeOuterClass.BreakoutActionType value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -1084,52 +995,52 @@ public final class BreakoutActionOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-            public boolean getIsFailed() {
-                return this.isFailed_;
+            public boolean getMbfjjacbmck() {
+                return this.mbfjjacbmck_;
             }
 
-            public Builder setIsFailed(boolean value) {
-                this.isFailed_ = value;
+            public Builder setMbfjjacbmck(boolean value) {
+                this.mbfjjacbmck_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearIsFailed() {
-                this.isFailed_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-            public int getPreIndex() {
-                return this.preIndex_;
-            }
-
-            public Builder setPreIndex(int value) {
-                this.preIndex_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearPreIndex() {
-                this.preIndex_ = 0;
+            public Builder clearMbfjjacbmck() {
+                this.mbfjjacbmck_ = false;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-            public int getNewIndex() {
-                return this.newIndex_;
+            public int getGddolpoemjk() {
+                return this.gddolpoemjk_;
             }
 
-            public Builder setNewIndex(int value) {
-                this.newIndex_ = value;
+            public Builder setGddolpoemjk(int value) {
+                this.gddolpoemjk_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearNewIndex() {
-                this.newIndex_ = 0;
+            public Builder clearGddolpoemjk() {
+                this.gddolpoemjk_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
+            public int getJoandihiadc() {
+                return this.joandihiadc_;
+            }
+
+            public Builder setJoandihiadc(int value) {
+                this.joandihiadc_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearJoandihiadc() {
+                this.joandihiadc_ = 0;
                 onChanged();
                 return this;
             }
@@ -1216,84 +1127,84 @@ public final class BreakoutActionOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-            public boolean hasMoveDir() {
-                return (this.moveDirBuilder_ == null && this.moveDir_ == null) ? false : true;
+            public boolean hasMjehpphliia() {
+                return (this.mjehpphliiaBuilder_ == null && this.mjehpphliia_ == null) ? false : true;
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-            public BreakoutVector2OuterClass.BreakoutVector2 getMoveDir() {
-                if (this.moveDirBuilder_ == null) {
-                    return this.moveDir_ == null ? BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : this.moveDir_;
+            public BreakoutVector2OuterClass.BreakoutVector2 getMjehpphliia() {
+                if (this.mjehpphliiaBuilder_ == null) {
+                    return this.mjehpphliia_ == null ? BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : this.mjehpphliia_;
                 }
-                return this.moveDirBuilder_.getMessage();
+                return this.mjehpphliiaBuilder_.getMessage();
             }
 
-            public Builder setMoveDir(BreakoutVector2OuterClass.BreakoutVector2 value) {
-                if (this.moveDirBuilder_ != null) {
-                    this.moveDirBuilder_.setMessage(value);
+            public Builder setMjehpphliia(BreakoutVector2OuterClass.BreakoutVector2 value) {
+                if (this.mjehpphliiaBuilder_ != null) {
+                    this.mjehpphliiaBuilder_.setMessage(value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    this.moveDir_ = value;
+                    this.mjehpphliia_ = value;
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder setMoveDir(BreakoutVector2OuterClass.BreakoutVector2.Builder builderForValue) {
-                if (this.moveDirBuilder_ == null) {
-                    this.moveDir_ = builderForValue.build();
+            public Builder setMjehpphliia(BreakoutVector2OuterClass.BreakoutVector2.Builder builderForValue) {
+                if (this.mjehpphliiaBuilder_ == null) {
+                    this.mjehpphliia_ = builderForValue.build();
                     onChanged();
                 } else {
-                    this.moveDirBuilder_.setMessage(builderForValue.build());
+                    this.mjehpphliiaBuilder_.setMessage(builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder mergeMoveDir(BreakoutVector2OuterClass.BreakoutVector2 value) {
-                if (this.moveDirBuilder_ == null) {
-                    if (this.moveDir_ != null) {
-                        this.moveDir_ = BreakoutVector2OuterClass.BreakoutVector2.newBuilder(this.moveDir_).mergeFrom(value).buildPartial();
+            public Builder mergeMjehpphliia(BreakoutVector2OuterClass.BreakoutVector2 value) {
+                if (this.mjehpphliiaBuilder_ == null) {
+                    if (this.mjehpphliia_ != null) {
+                        this.mjehpphliia_ = BreakoutVector2OuterClass.BreakoutVector2.newBuilder(this.mjehpphliia_).mergeFrom(value).buildPartial();
                     } else {
-                        this.moveDir_ = value;
+                        this.mjehpphliia_ = value;
                     }
                     onChanged();
                 } else {
-                    this.moveDirBuilder_.mergeFrom(value);
+                    this.mjehpphliiaBuilder_.mergeFrom(value);
                 }
                 return this;
             }
 
-            public Builder clearMoveDir() {
-                if (this.moveDirBuilder_ == null) {
-                    this.moveDir_ = null;
+            public Builder clearMjehpphliia() {
+                if (this.mjehpphliiaBuilder_ == null) {
+                    this.mjehpphliia_ = null;
                     onChanged();
                 } else {
-                    this.moveDir_ = null;
-                    this.moveDirBuilder_ = null;
+                    this.mjehpphliia_ = null;
+                    this.mjehpphliiaBuilder_ = null;
                 }
                 return this;
             }
 
-            public BreakoutVector2OuterClass.BreakoutVector2.Builder getMoveDirBuilder() {
+            public BreakoutVector2OuterClass.BreakoutVector2.Builder getMjehpphliiaBuilder() {
                 onChanged();
-                return getMoveDirFieldBuilder().getBuilder();
+                return getMjehpphliiaFieldBuilder().getBuilder();
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-            public BreakoutVector2OuterClass.BreakoutVector2OrBuilder getMoveDirOrBuilder() {
-                if (this.moveDirBuilder_ != null) {
-                    return this.moveDirBuilder_.getMessageOrBuilder();
+            public BreakoutVector2OuterClass.BreakoutVector2OrBuilder getMjehpphliiaOrBuilder() {
+                if (this.mjehpphliiaBuilder_ != null) {
+                    return this.mjehpphliiaBuilder_.getMessageOrBuilder();
                 }
-                return this.moveDir_ == null ? BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : this.moveDir_;
+                return this.mjehpphliia_ == null ? BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : this.mjehpphliia_;
             }
 
-            private SingleFieldBuilderV3<BreakoutVector2OuterClass.BreakoutVector2, BreakoutVector2OuterClass.BreakoutVector2.Builder, BreakoutVector2OuterClass.BreakoutVector2OrBuilder> getMoveDirFieldBuilder() {
-                if (this.moveDirBuilder_ == null) {
-                    this.moveDirBuilder_ = new SingleFieldBuilderV3<>(getMoveDir(), getParentForChildren(), isClean());
-                    this.moveDir_ = null;
+            private SingleFieldBuilderV3<BreakoutVector2OuterClass.BreakoutVector2, BreakoutVector2OuterClass.BreakoutVector2.Builder, BreakoutVector2OuterClass.BreakoutVector2OrBuilder> getMjehpphliiaFieldBuilder() {
+                if (this.mjehpphliiaBuilder_ == null) {
+                    this.mjehpphliiaBuilder_ = new SingleFieldBuilderV3<>(getMjehpphliia(), getParentForChildren(), isClean());
+                    this.mjehpphliia_ = null;
                 }
-                return this.moveDirBuilder_;
+                return this.mjehpphliiaBuilder_;
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
@@ -1348,150 +1259,150 @@ public final class BreakoutActionOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-            public int getElementReactionBuff() {
-                return this.elementReactionBuff_;
+            public int getInhflokdoal() {
+                return this.inhflokdoal_;
             }
 
-            public Builder setElementReactionBuff(int value) {
-                this.elementReactionBuff_ = value;
+            public Builder setInhflokdoal(int value) {
+                this.inhflokdoal_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearElementReactionBuff() {
-                this.elementReactionBuff_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-            public int getSpeedIncreaseCount() {
-                return this.speedIncreaseCount_;
-            }
-
-            public Builder setSpeedIncreaseCount(int value) {
-                this.speedIncreaseCount_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearSpeedIncreaseCount() {
-                this.speedIncreaseCount_ = 0;
+            public Builder clearInhflokdoal() {
+                this.inhflokdoal_ = 0;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-            public boolean getHasExtraBall() {
-                return this.hasExtraBall_;
+            public int getApiembahlab() {
+                return this.apiembahlab_;
             }
 
-            public Builder setHasExtraBall(boolean value) {
-                this.hasExtraBall_ = value;
+            public Builder setApiembahlab(int value) {
+                this.apiembahlab_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearHasExtraBall() {
-                this.hasExtraBall_ = false;
+            public Builder clearApiembahlab() {
+                this.apiembahlab_ = 0;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-            public boolean hasExtraBallDir() {
-                return (this.extraBallDirBuilder_ == null && this.extraBallDir_ == null) ? false : true;
+            public boolean getMhkdmdjeaan() {
+                return this.mhkdmdjeaan_;
+            }
+
+            public Builder setMhkdmdjeaan(boolean value) {
+                this.mhkdmdjeaan_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearMhkdmdjeaan() {
+                this.mhkdmdjeaan_ = false;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-            public BreakoutVector2OuterClass.BreakoutVector2 getExtraBallDir() {
-                if (this.extraBallDirBuilder_ == null) {
-                    return this.extraBallDir_ == null ? BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : this.extraBallDir_;
+            public boolean hasCjegmomlbck() {
+                return (this.cjegmomlbckBuilder_ == null && this.cjegmomlbck_ == null) ? false : true;
+            }
+
+            @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
+            public BreakoutVector2OuterClass.BreakoutVector2 getCjegmomlbck() {
+                if (this.cjegmomlbckBuilder_ == null) {
+                    return this.cjegmomlbck_ == null ? BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : this.cjegmomlbck_;
                 }
-                return this.extraBallDirBuilder_.getMessage();
+                return this.cjegmomlbckBuilder_.getMessage();
             }
 
-            public Builder setExtraBallDir(BreakoutVector2OuterClass.BreakoutVector2 value) {
-                if (this.extraBallDirBuilder_ != null) {
-                    this.extraBallDirBuilder_.setMessage(value);
+            public Builder setCjegmomlbck(BreakoutVector2OuterClass.BreakoutVector2 value) {
+                if (this.cjegmomlbckBuilder_ != null) {
+                    this.cjegmomlbckBuilder_.setMessage(value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    this.extraBallDir_ = value;
+                    this.cjegmomlbck_ = value;
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder setExtraBallDir(BreakoutVector2OuterClass.BreakoutVector2.Builder builderForValue) {
-                if (this.extraBallDirBuilder_ == null) {
-                    this.extraBallDir_ = builderForValue.build();
+            public Builder setCjegmomlbck(BreakoutVector2OuterClass.BreakoutVector2.Builder builderForValue) {
+                if (this.cjegmomlbckBuilder_ == null) {
+                    this.cjegmomlbck_ = builderForValue.build();
                     onChanged();
                 } else {
-                    this.extraBallDirBuilder_.setMessage(builderForValue.build());
+                    this.cjegmomlbckBuilder_.setMessage(builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder mergeExtraBallDir(BreakoutVector2OuterClass.BreakoutVector2 value) {
-                if (this.extraBallDirBuilder_ == null) {
-                    if (this.extraBallDir_ != null) {
-                        this.extraBallDir_ = BreakoutVector2OuterClass.BreakoutVector2.newBuilder(this.extraBallDir_).mergeFrom(value).buildPartial();
+            public Builder mergeCjegmomlbck(BreakoutVector2OuterClass.BreakoutVector2 value) {
+                if (this.cjegmomlbckBuilder_ == null) {
+                    if (this.cjegmomlbck_ != null) {
+                        this.cjegmomlbck_ = BreakoutVector2OuterClass.BreakoutVector2.newBuilder(this.cjegmomlbck_).mergeFrom(value).buildPartial();
                     } else {
-                        this.extraBallDir_ = value;
+                        this.cjegmomlbck_ = value;
                     }
                     onChanged();
                 } else {
-                    this.extraBallDirBuilder_.mergeFrom(value);
+                    this.cjegmomlbckBuilder_.mergeFrom(value);
                 }
                 return this;
             }
 
-            public Builder clearExtraBallDir() {
-                if (this.extraBallDirBuilder_ == null) {
-                    this.extraBallDir_ = null;
+            public Builder clearCjegmomlbck() {
+                if (this.cjegmomlbckBuilder_ == null) {
+                    this.cjegmomlbck_ = null;
                     onChanged();
                 } else {
-                    this.extraBallDir_ = null;
-                    this.extraBallDirBuilder_ = null;
+                    this.cjegmomlbck_ = null;
+                    this.cjegmomlbckBuilder_ = null;
                 }
                 return this;
             }
 
-            public BreakoutVector2OuterClass.BreakoutVector2.Builder getExtraBallDirBuilder() {
+            public BreakoutVector2OuterClass.BreakoutVector2.Builder getCjegmomlbckBuilder() {
                 onChanged();
-                return getExtraBallDirFieldBuilder().getBuilder();
+                return getCjegmomlbckFieldBuilder().getBuilder();
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-            public BreakoutVector2OuterClass.BreakoutVector2OrBuilder getExtraBallDirOrBuilder() {
-                if (this.extraBallDirBuilder_ != null) {
-                    return this.extraBallDirBuilder_.getMessageOrBuilder();
+            public BreakoutVector2OuterClass.BreakoutVector2OrBuilder getCjegmomlbckOrBuilder() {
+                if (this.cjegmomlbckBuilder_ != null) {
+                    return this.cjegmomlbckBuilder_.getMessageOrBuilder();
                 }
-                return this.extraBallDir_ == null ? BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : this.extraBallDir_;
+                return this.cjegmomlbck_ == null ? BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : this.cjegmomlbck_;
             }
 
-            private SingleFieldBuilderV3<BreakoutVector2OuterClass.BreakoutVector2, BreakoutVector2OuterClass.BreakoutVector2.Builder, BreakoutVector2OuterClass.BreakoutVector2OrBuilder> getExtraBallDirFieldBuilder() {
-                if (this.extraBallDirBuilder_ == null) {
-                    this.extraBallDirBuilder_ = new SingleFieldBuilderV3<>(getExtraBallDir(), getParentForChildren(), isClean());
-                    this.extraBallDir_ = null;
+            private SingleFieldBuilderV3<BreakoutVector2OuterClass.BreakoutVector2, BreakoutVector2OuterClass.BreakoutVector2.Builder, BreakoutVector2OuterClass.BreakoutVector2OrBuilder> getCjegmomlbckFieldBuilder() {
+                if (this.cjegmomlbckBuilder_ == null) {
+                    this.cjegmomlbckBuilder_ = new SingleFieldBuilderV3<>(getCjegmomlbck(), getParentForChildren(), isClean());
+                    this.cjegmomlbck_ = null;
                 }
-                return this.extraBallDirBuilder_;
+                return this.cjegmomlbckBuilder_;
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-            public int getExtraBallIndex() {
-                return this.extraBallIndex_;
+            public int getIdngdpalicj() {
+                return this.idngdpalicj_;
             }
 
-            public Builder setExtraBallIndex(int value) {
-                this.extraBallIndex_ = value;
+            public Builder setIdngdpalicj(int value) {
+                this.idngdpalicj_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearExtraBallIndex() {
-                this.extraBallIndex_ = 0;
+            public Builder clearIdngdpalicj() {
+                this.idngdpalicj_ = 0;
                 onChanged();
                 return this;
             }
@@ -1514,18 +1425,18 @@ public final class BreakoutActionOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutActionOuterClass.BreakoutActionOrBuilder
-            public long getUnk3300AIEBGJHBOHL() {
-                return this.unk3300AIEBGJHBOHL_;
+            public long getLccmdkibdpf() {
+                return this.lccmdkibdpf_;
             }
 
-            public Builder setUnk3300AIEBGJHBOHL(long value) {
-                this.unk3300AIEBGJHBOHL_ = value;
+            public Builder setLccmdkibdpf(long value) {
+                this.lccmdkibdpf_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearUnk3300AIEBGJHBOHL() {
-                this.unk3300AIEBGJHBOHL_ = 0;
+            public Builder clearLccmdkibdpf() {
+                this.lccmdkibdpf_ = 0;
                 onChanged();
                 return this;
             }
@@ -1565,6 +1476,7 @@ public final class BreakoutActionOuterClass {
     }
 
     static {
+        BreakoutActionTypeOuterClass.getDescriptor();
         BreakoutVector2OuterClass.getDescriptor();
     }
 }

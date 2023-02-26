@@ -169,14 +169,14 @@ public class NonBlockingHashMapLong<TypeV> extends AbstractMap<Long, TypeV> impl
     public static final class Prime {
 
         /* renamed from: _V */
-        final Object f3190_V;
+        final Object f3154_V;
 
         Prime(Object V) {
-            this.f3190_V = V;
+            this.f3154_V = V;
         }
 
         static Object unbox(Object V) {
-            return V instanceof Prime ? ((Prime) V).f3190_V : V;
+            return V instanceof Prime ? ((Prime) V).f3154_V : V;
         }
     }
 
@@ -821,7 +821,7 @@ public class NonBlockingHashMapLong<TypeV> extends AbstractMap<Long, TypeV> impl
             if (oldval == NonBlockingHashMapLong.TOMBPRIME) {
                 return false;
             }
-            Object old_unboxed = ((Prime) oldval).f3190_V;
+            Object old_unboxed = ((Prime) oldval).f3154_V;
             if ($assertionsDisabled || old_unboxed != NonBlockingHashMapLong.TOMBSTONE) {
                 this._newchm.putIfMatch(key, old_unboxed, null);
                 while (oldval != NonBlockingHashMapLong.TOMBPRIME && !CAS_val(idx, oldval, NonBlockingHashMapLong.TOMBPRIME)) {

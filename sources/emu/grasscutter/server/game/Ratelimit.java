@@ -56,6 +56,13 @@ public class Ratelimit {
         this.time = last.GetTime();
     }
 
+    public void Reset(String key) {
+        Ratelimit last = nextWaitCMD.get(key);
+        if (last != null) {
+            last.New();
+        }
+    }
+
     /* renamed from: Is */
     public boolean m1192Is() {
         if (GetMs() <= 0) {
@@ -67,5 +74,13 @@ public class Ratelimit {
             Count();
             return false;
         }
+    }
+
+    public boolean IsCount() {
+        if (GetCount() >= this.set_count) {
+            return true;
+        }
+        Count();
+        return false;
     }
 }

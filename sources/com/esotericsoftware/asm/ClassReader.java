@@ -1624,7 +1624,7 @@ public class ClassReader {
                 context.f98t = 1;
             } else if (i2 >= 248 && i2 < 251) {
                 context.f94p = 2;
-                context.f96r = PacketOpcodes.EnterSceneReadyRsp - i2;
+                context.f96r = PacketOpcodes.SceneForceLockNotify - i2;
                 context.f95q -= context.f96r;
                 context.f98t = 0;
             } else if (i2 == 251) {
@@ -1632,12 +1632,12 @@ public class ClassReader {
                 context.f98t = 0;
             } else if (i2 < 255) {
                 int i4 = z2 ? context.f95q : 0;
-                for (int i5 = i2 - PacketOpcodes.EnterSceneReadyRsp; i5 > 0; i5--) {
+                for (int i5 = i2 - PacketOpcodes.SceneForceLockNotify; i5 > 0; i5--) {
                     i4++;
                     i = m1559a(context.f97s, i4, i, cArr, labelArr);
                 }
                 context.f94p = 1;
-                context.f96r = i2 - PacketOpcodes.EnterSceneReadyRsp;
+                context.f96r = i2 - PacketOpcodes.SceneForceLockNotify;
                 context.f95q += context.f96r;
                 context.f98t = 0;
             } else {

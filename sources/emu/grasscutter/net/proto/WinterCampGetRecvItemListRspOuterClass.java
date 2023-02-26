@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WinterCampGetRecvItemListRspOuterClass.class */
 public final class WinterCampGetRecvItemListRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"WinterCampGetRecvItemListRsp.proto\u001a\u001cWinterCampRecvItemData.proto\"e\n\u001cWinterCampGetRecvItemListRsp\u00124\n\u0013recv_item_data_list\u0018\u0006 \u0003(\u000b2\u0017.WinterCampRecvItemData\u0012\u000f\n\u0007retcode\u0018\u0005 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{WinterCampRecvItemDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"WinterCampGetRecvItemListRsp.proto\u001a\u001cWinterCampRecvItemData.proto\"b\n\u001cWinterCampGetRecvItemListRsp\u00121\n\u0010recvItemDataList\u0018\r \u0003(\u000b2\u0017.WinterCampRecvItemData\u0012\u000f\n\u0007retcode\u0018\u000b \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{WinterCampRecvItemDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_WinterCampGetRecvItemListRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_WinterCampGetRecvItemListRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WinterCampGetRecvItemListRsp_descriptor, new String[]{"RecvItemDataList", "Retcode"});
 
@@ -57,9 +57,9 @@ public final class WinterCampGetRecvItemListRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WinterCampGetRecvItemListRspOuterClass$WinterCampGetRecvItemListRsp.class */
     public static final class WinterCampGetRecvItemListRsp extends GeneratedMessageV3 implements WinterCampGetRecvItemListRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RECV_ITEM_DATA_LIST_FIELD_NUMBER = 6;
+        public static final int RECVITEMDATALIST_FIELD_NUMBER = 13;
         private List<WinterCampRecvItemDataOuterClass.WinterCampRecvItemData> recvItemDataList_;
-        public static final int RETCODE_FIELD_NUMBER = 5;
+        public static final int RETCODE_FIELD_NUMBER = 11;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final WinterCampGetRecvItemListRsp DEFAULT_INSTANCE = new WinterCampGetRecvItemListRsp();
@@ -110,10 +110,10 @@ public final class WinterCampGetRecvItemListRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 40:
+                                case 88:
                                     this.retcode_ = input.readInt32();
                                     break;
-                                case 50:
+                                case 106:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.recvItemDataList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -199,10 +199,10 @@ public final class WinterCampGetRecvItemListRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.retcode_ != 0) {
-                output.writeInt32(5, this.retcode_);
+                output.writeInt32(11, this.retcode_);
             }
             for (int i = 0; i < this.recvItemDataList_.size(); i++) {
-                output.writeMessage(6, this.recvItemDataList_.get(i));
+                output.writeMessage(13, this.recvItemDataList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -215,10 +215,10 @@ public final class WinterCampGetRecvItemListRspOuterClass {
             }
             int size2 = 0;
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(5, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(11, this.retcode_);
             }
             for (int i = 0; i < this.recvItemDataList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(6, this.recvItemDataList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(13, this.recvItemDataList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -244,9 +244,9 @@ public final class WinterCampGetRecvItemListRspOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getRecvItemDataListCount() > 0) {
-                hash = (53 * ((37 * hash) + 6)) + getRecvItemDataListList().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getRecvItemDataListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 5)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 11)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

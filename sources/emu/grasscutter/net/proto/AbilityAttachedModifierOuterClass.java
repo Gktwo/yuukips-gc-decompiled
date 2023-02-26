@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityAttachedModifierOuterClass.class */
 public final class AbilityAttachedModifierOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dAbilityAttachedModifier.proto\"\u0001\n\u0017AbilityAttachedModifier\u0012\u0012\n\nis_invalid\u0018\u0001 \u0001(\b\u0012\u0017\n\u000fowner_entity_id\u0018\u0002 \u0001(\r\u0012\u001d\n\u0015instanced_modifier_id\u0018\u0003 \u0001(\r\u0012\u001e\n\u0016is_serverbuff_modifier\u0018\u0004 \u0001(\b\u0012\u0018\n\u0010attach_name_hash\u0018\u0005 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dAbilityAttachedModifier.proto\"\u0001\n\u0017AbilityAttachedModifier\u0012\u0011\n\tisInvalid\u0018\u0001 \u0001(\b\u0012\u0015\n\rownerEntityId\u0018\u0002 \u0001(\r\u0012\u001b\n\u0013instancedModifierId\u0018\u0003 \u0001(\r\u0012\u001c\n\u0014isServerbuffModifier\u0018\u0004 \u0001(\b\u0012\u0016\n\u000eattachNameHash\u0018\u0005 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AbilityAttachedModifier_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AbilityAttachedModifier_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AbilityAttachedModifier_descriptor, new String[]{"IsInvalid", "OwnerEntityId", "InstancedModifierId", "IsServerbuffModifier", "AttachNameHash"});
 
@@ -50,15 +50,15 @@ public final class AbilityAttachedModifierOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityAttachedModifierOuterClass$AbilityAttachedModifier.class */
     public static final class AbilityAttachedModifier extends GeneratedMessageV3 implements AbilityAttachedModifierOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_INVALID_FIELD_NUMBER = 1;
+        public static final int ISINVALID_FIELD_NUMBER = 1;
         private boolean isInvalid_;
-        public static final int OWNER_ENTITY_ID_FIELD_NUMBER = 2;
+        public static final int OWNERENTITYID_FIELD_NUMBER = 2;
         private int ownerEntityId_;
-        public static final int INSTANCED_MODIFIER_ID_FIELD_NUMBER = 3;
+        public static final int INSTANCEDMODIFIERID_FIELD_NUMBER = 3;
         private int instancedModifierId_;
-        public static final int IS_SERVERBUFF_MODIFIER_FIELD_NUMBER = 4;
+        public static final int ISSERVERBUFFMODIFIER_FIELD_NUMBER = 4;
         private boolean isServerbuffModifier_;
-        public static final int ATTACH_NAME_HASH_FIELD_NUMBER = 5;
+        public static final int ATTACHNAMEHASH_FIELD_NUMBER = 5;
         private int attachNameHash_;
         private byte memoizedIsInitialized;
         private static final AbilityAttachedModifier DEFAULT_INSTANCE = new AbilityAttachedModifier();

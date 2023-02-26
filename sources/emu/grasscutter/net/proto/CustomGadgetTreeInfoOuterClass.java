@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CustomGadgetTreeInfoOuterClass.class */
 public final class CustomGadgetTreeInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aCustomGadgetTreeInfo.proto\u001a\u001aCustomCommonNodeInfo.proto\"@\n\u0014CustomGadgetTreeInfo\u0012(\n\tnode_list\u0018\u0001 \u0003(\u000b2\u0015.CustomCommonNodeInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CustomCommonNodeInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aCustomGadgetTreeInfo.proto\u001a\u001aCustomCommonNodeInfo.proto\"?\n\u0014CustomGadgetTreeInfo\u0012'\n\bnodeList\u0018\u0001 \u0003(\u000b2\u0015.CustomCommonNodeInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{CustomCommonNodeInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_CustomGadgetTreeInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_CustomGadgetTreeInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CustomGadgetTreeInfo_descriptor, new String[]{"NodeList"});
 
@@ -55,7 +55,7 @@ public final class CustomGadgetTreeInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CustomGadgetTreeInfoOuterClass$CustomGadgetTreeInfo.class */
     public static final class CustomGadgetTreeInfo extends GeneratedMessageV3 implements CustomGadgetTreeInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int NODE_LIST_FIELD_NUMBER = 1;
+        public static final int NODELIST_FIELD_NUMBER = 1;
         private List<CustomCommonNodeInfoOuterClass.CustomCommonNodeInfo> nodeList_;
         private byte memoizedIsInitialized;
         private static final CustomGadgetTreeInfo DEFAULT_INSTANCE = new CustomGadgetTreeInfo();

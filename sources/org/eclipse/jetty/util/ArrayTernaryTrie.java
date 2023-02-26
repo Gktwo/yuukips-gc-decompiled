@@ -13,13 +13,13 @@ import p014it.unimi.dsi.fastutil.p015io.FastMultiByteArrayInputStream;
 public class ArrayTernaryTrie<V> extends AbstractTrie<V> {
 
     /* renamed from: LO */
-    private static int f3155LO = 1;
+    private static int f3119LO = 1;
 
     /* renamed from: EQ */
-    private static int f3156EQ = 2;
+    private static int f3120EQ = 2;
 
     /* renamed from: HI */
-    private static int f3157HI = 3;
+    private static int f3121HI = 3;
     private static final int ROW_SIZE = 4;
     public static final int MAX_CAPACITY = 65534;
     private final char[] _tree;
@@ -95,7 +95,7 @@ public class ArrayTernaryTrie<V> extends AbstractTrie<V> {
                 int row = 4 * c;
                 int diff = this._tree[row] - c2;
                 if (diff == 0) {
-                    c = this._tree[row + f3156EQ];
+                    c = this._tree[row + f3120EQ];
                     if (c == 0) {
                         return null;
                     }
@@ -125,7 +125,7 @@ public class ArrayTernaryTrie<V> extends AbstractTrie<V> {
                 int row = 4 * c;
                 int diff = this._tree[row] - c2;
                 if (diff == 0) {
-                    c = this._tree[row + f3156EQ];
+                    c = this._tree[row + f3120EQ];
                     if (c == 0) {
                         return null;
                     }
@@ -312,9 +312,9 @@ public class ArrayTernaryTrie<V> extends AbstractTrie<V> {
             Object[] objArr = new Object[7];
             objArr[0] = Integer.valueOf(r);
             objArr[1] = (c < ' ' || c > 127) ? "" + ((int) c) : "'" + c + "'";
-            objArr[2] = Integer.valueOf(this._tree[(r * 4) + f3155LO]);
-            objArr[3] = Integer.valueOf(this._tree[(r * 4) + f3156EQ]);
-            objArr[4] = Integer.valueOf(this._tree[(r * 4) + f3157HI]);
+            objArr[2] = Integer.valueOf(this._tree[(r * 4) + f3119LO]);
+            objArr[3] = Integer.valueOf(this._tree[(r * 4) + f3120EQ]);
+            objArr[4] = Integer.valueOf(this._tree[(r * 4) + f3121HI]);
             objArr[5] = this._key[r];
             objArr[6] = this._value[r];
             printStream.printf("%4d [%s,%d,%d,%d] '%s':%s%n", objArr);

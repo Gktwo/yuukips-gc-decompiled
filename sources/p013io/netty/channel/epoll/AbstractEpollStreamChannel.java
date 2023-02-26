@@ -664,7 +664,7 @@ public abstract class AbstractEpollStreamChannel extends AbstractEpollChannel im
     public final class SpliceInChannelTask extends SpliceInTask implements ChannelFutureListener {
 
         /* renamed from: ch */
-        private final AbstractEpollStreamChannel f981ch;
+        private final AbstractEpollStreamChannel f945ch;
         static final /* synthetic */ boolean $assertionsDisabled;
 
         static {
@@ -673,7 +673,7 @@ public abstract class AbstractEpollStreamChannel extends AbstractEpollChannel im
 
         SpliceInChannelTask(AbstractEpollStreamChannel ch, int len, ChannelPromise promise) {
             super(len, promise);
-            this.f981ch = ch;
+            this.f945ch = ch;
         }
 
         public void operationComplete(ChannelFuture future) throws Exception {
@@ -685,18 +685,18 @@ public abstract class AbstractEpollStreamChannel extends AbstractEpollChannel im
         @Override // p013io.netty.channel.epoll.AbstractEpollStreamChannel.SpliceInTask
         public boolean spliceIn(RecvByteBufAllocator.Handle handle) {
             ChannelPromise splicePromise;
-            if (!$assertionsDisabled && !this.f981ch.eventLoop().inEventLoop()) {
+            if (!$assertionsDisabled && !this.f945ch.eventLoop().inEventLoop()) {
                 throw new AssertionError();
             } else if (this.len == 0) {
                 this.promise.setSuccess();
                 return true;
             } else {
                 try {
-                    FileDescriptor pipeOut = this.f981ch.pipeOut;
+                    FileDescriptor pipeOut = this.f945ch.pipeOut;
                     if (pipeOut == null) {
                         FileDescriptor[] pipe = FileDescriptor.pipe();
-                        this.f981ch.pipeIn = pipe[0];
-                        pipeOut = this.f981ch.pipeOut = pipe[1];
+                        this.f945ch.pipeIn = pipe[0];
+                        pipeOut = this.f945ch.pipeOut = pipe[1];
                     }
                     int splicedIn = spliceIn(pipeOut, handle);
                     if (splicedIn > 0) {
@@ -706,11 +706,11 @@ public abstract class AbstractEpollStreamChannel extends AbstractEpollChannel im
                         if (this.len == 0) {
                             splicePromise = this.promise;
                         } else {
-                            splicePromise = this.f981ch.newPromise().addListener((GenericFutureListener<? extends Future<? super Void>>) this);
+                            splicePromise = this.f945ch.newPromise().addListener((GenericFutureListener<? extends Future<? super Void>>) this);
                         }
                         boolean autoRead = AbstractEpollStreamChannel.this.config().isAutoRead();
-                        this.f981ch.unsafe().write(new SpliceOutTask(this.f981ch, splicedIn, autoRead), splicePromise);
-                        this.f981ch.unsafe().flush();
+                        this.f945ch.unsafe().write(new SpliceOutTask(this.f945ch, splicedIn, autoRead), splicePromise);
+                        this.f945ch.unsafe().flush();
                         if (autoRead && !splicePromise.isDone()) {
                             AbstractEpollStreamChannel.this.config().setAutoRead(false);
                         }
@@ -730,7 +730,7 @@ public abstract class AbstractEpollStreamChannel extends AbstractEpollChannel im
     public final class SpliceOutTask {
 
         /* renamed from: ch */
-        private final AbstractEpollStreamChannel f982ch;
+        private final AbstractEpollStreamChannel f946ch;
         private final boolean autoRead;
         private int len;
         static final /* synthetic */ boolean $assertionsDisabled;
@@ -740,15 +740,15 @@ public abstract class AbstractEpollStreamChannel extends AbstractEpollChannel im
         }
 
         SpliceOutTask(AbstractEpollStreamChannel ch, int len, boolean autoRead) {
-            this.f982ch = ch;
+            this.f946ch = ch;
             this.len = len;
             this.autoRead = autoRead;
         }
 
         public boolean spliceOut() throws Exception {
-            if ($assertionsDisabled || this.f982ch.eventLoop().inEventLoop()) {
+            if ($assertionsDisabled || this.f946ch.eventLoop().inEventLoop()) {
                 try {
-                    this.len -= Native.splice(this.f982ch.pipeIn.intValue(), -1, this.f982ch.socket.intValue(), -1, (long) this.len);
+                    this.len -= Native.splice(this.f946ch.pipeIn.intValue(), -1, this.f946ch.socket.intValue(), -1, (long) this.len);
                     if (this.len != 0) {
                         return false;
                     }
@@ -775,7 +775,7 @@ public abstract class AbstractEpollStreamChannel extends AbstractEpollChannel im
     public final class SpliceFdTask extends SpliceInTask {
 
         /* renamed from: fd */
-        private final FileDescriptor f980fd;
+        private final FileDescriptor f944fd;
         private final ChannelPromise promise;
         private int offset;
         static final /* synthetic */ boolean $assertionsDisabled;
@@ -786,7 +786,7 @@ public abstract class AbstractEpollStreamChannel extends AbstractEpollChannel im
 
         SpliceFdTask(FileDescriptor fd, int offset, int len, ChannelPromise promise) {
             super(len, promise);
-            this.f980fd = fd;
+            this.f944fd = fd;
             this.promise = promise;
             this.offset = offset;
         }
@@ -809,7 +809,7 @@ public abstract class AbstractEpollStreamChannel extends AbstractEpollChannel im
                             this.len -= splicedIn;
                         }
                         do {
-                            int splicedOut = Native.splice(pipeIn.intValue(), -1, this.f980fd.intValue(), (long) this.offset, (long) splicedIn);
+                            int splicedOut = Native.splice(pipeIn.intValue(), -1, this.f944fd.intValue(), (long) this.offset, (long) splicedIn);
                             this.offset += splicedOut;
                             splicedIn -= splicedOut;
                         } while (splicedIn > 0);

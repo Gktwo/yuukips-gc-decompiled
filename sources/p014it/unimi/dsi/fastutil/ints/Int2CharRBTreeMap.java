@@ -857,7 +857,7 @@ public class Int2CharRBTreeMap extends AbstractInt2CharSortedMap implements Seri
         int from;
 
         /* renamed from: to */
-        int f2056to;
+        int f2020to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Int2CharMap.Entry> entries;
@@ -868,7 +868,7 @@ public class Int2CharRBTreeMap extends AbstractInt2CharSortedMap implements Seri
             if (bottom || top || Int2CharRBTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f2056to = to;
+                this.f2020to = to;
                 this.top = top;
                 this.defRetValue = Int2CharRBTreeMap.this.defRetValue;
                 return;
@@ -887,7 +887,7 @@ public class Int2CharRBTreeMap extends AbstractInt2CharSortedMap implements Seri
 
         /* renamed from: in */
         final boolean m771in(int k) {
-            return (this.bottom || Int2CharRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Int2CharRBTreeMap.this.compare(k, this.f2056to) < 0);
+            return (this.bottom || Int2CharRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Int2CharRBTreeMap.this.compare(k, this.f2020to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.Int2CharMap, p014it.unimi.dsi.fastutil.ints.Int2CharSortedMap
@@ -1062,7 +1062,7 @@ public class Int2CharRBTreeMap extends AbstractInt2CharSortedMap implements Seri
         public char put(int k, char v) {
             Int2CharRBTreeMap.this.modified = false;
             if (!m771in(k)) {
-                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2056to)) + ")");
+                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f2020to)) + ")");
             }
             return Int2CharRBTreeMap.this.modified ? this.defRetValue : Int2CharRBTreeMap.this.put(k, v);
         }
@@ -1100,7 +1100,7 @@ public class Int2CharRBTreeMap extends AbstractInt2CharSortedMap implements Seri
 
         @Override // p014it.unimi.dsi.fastutil.ints.Int2CharSortedMap
         public Int2CharSortedMap headMap(int to) {
-            if (!this.top && Int2CharRBTreeMap.this.compare(to, this.f2056to) >= 0) {
+            if (!this.top && Int2CharRBTreeMap.this.compare(to, this.f2020to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1111,7 +1111,7 @@ public class Int2CharRBTreeMap extends AbstractInt2CharSortedMap implements Seri
             if (!this.bottom && Int2CharRBTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f2056to, this.top);
+            return new Submap(from, false, this.f2020to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.Int2CharSortedMap
@@ -1120,12 +1120,12 @@ public class Int2CharRBTreeMap extends AbstractInt2CharSortedMap implements Seri
                 return new Submap(from, false, to, false);
             }
             if (!this.top) {
-                to = Int2CharRBTreeMap.this.compare(to, this.f2056to) < 0 ? to : this.f2056to;
+                to = Int2CharRBTreeMap.this.compare(to, this.f2020to) < 0 ? to : this.f2020to;
             }
             if (!this.bottom) {
                 from = Int2CharRBTreeMap.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f2056to) ? new Submap(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f2020to) ? new Submap(from, false, to, false) : this;
         }
 
         public Entry firstEntry() {
@@ -1144,7 +1144,7 @@ public class Int2CharRBTreeMap extends AbstractInt2CharSortedMap implements Seri
             if (e == null) {
                 return null;
             }
-            if (this.top || Int2CharRBTreeMap.this.compare(e.key, this.f2056to) < 0) {
+            if (this.top || Int2CharRBTreeMap.this.compare(e.key, this.f2020to) < 0) {
                 return e;
             }
             return null;
@@ -1158,8 +1158,8 @@ public class Int2CharRBTreeMap extends AbstractInt2CharSortedMap implements Seri
             if (this.top) {
                 e = Int2CharRBTreeMap.this.lastEntry;
             } else {
-                e = Int2CharRBTreeMap.this.locateKey(this.f2056to);
-                if (Int2CharRBTreeMap.this.compare(e.key, this.f2056to) >= 0) {
+                e = Int2CharRBTreeMap.this.locateKey(this.f2020to);
+                if (Int2CharRBTreeMap.this.compare(e.key, this.f2020to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1237,7 +1237,7 @@ public class Int2CharRBTreeMap extends AbstractInt2CharSortedMap implements Seri
             @Override // p014it.unimi.dsi.fastutil.ints.Int2CharRBTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Int2CharRBTreeMap.this.compare(this.next.key, Submap.this.f2056to) >= 0) {
+                if (!Submap.this.top && this.next != null && Int2CharRBTreeMap.this.compare(this.next.key, Submap.this.f2020to) >= 0) {
                     this.next = null;
                 }
             }

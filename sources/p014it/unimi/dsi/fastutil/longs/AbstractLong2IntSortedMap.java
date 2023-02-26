@@ -90,30 +90,30 @@ public abstract class AbstractLong2IntSortedMap extends AbstractLong2IntMap impl
     public static class KeySetIterator implements LongBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Long2IntMap.Entry> f2239i;
+        protected final ObjectBidirectionalIterator<Long2IntMap.Entry> f2203i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Long2IntMap.Entry> i) {
-            this.f2239i = i;
+            this.f2203i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
         public long nextLong() {
-            return ((Long2IntMap.Entry) this.f2239i.next()).getLongKey();
+            return ((Long2IntMap.Entry) this.f2203i.next()).getLongKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongBidirectionalIterator
         public long previousLong() {
-            return this.f2239i.previous().getLongKey();
+            return this.f2203i.previous().getLongKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2239i.hasNext();
+            return this.f2203i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2239i.hasPrevious();
+            return this.f2203i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractLong2IntSortedMap extends AbstractLong2IntMap impl
     public static class ValuesIterator implements IntIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Long2IntMap.Entry> f2240i;
+        protected final ObjectBidirectionalIterator<Long2IntMap.Entry> f2204i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Long2IntMap.Entry> i) {
-            this.f2240i = i;
+            this.f2204i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntIterator, java.util.PrimitiveIterator.OfInt
         public int nextInt() {
-            return ((Long2IntMap.Entry) this.f2240i.next()).getIntValue();
+            return ((Long2IntMap.Entry) this.f2204i.next()).getIntValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2240i.hasNext();
+            return this.f2204i.hasNext();
         }
     }
 }

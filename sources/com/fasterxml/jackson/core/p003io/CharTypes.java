@@ -38,11 +38,11 @@ public final class CharTypes {
         int[] table2 = new int[sInputCodes.length];
         System.arraycopy(sInputCodes, 0, table2, 0, table2.length);
         for (int c = 128; c < 256; c++) {
-            if ((c & PacketOpcodes.WorldPlayerLocationNotify) == 192) {
+            if ((c & PacketOpcodes.SceneAvatarStaminaStepRsp) == 192) {
                 code = 2;
-            } else if ((c & PacketOpcodes.ExecuteGadgetLuaRsp) == 224) {
+            } else if ((c & PacketOpcodes.SceneKickPlayerRsp) == 224) {
                 code = 3;
-            } else if ((c & PacketOpcodes.ScenePlayerLocationNotify) == 240) {
+            } else if ((c & PacketOpcodes.EnterSceneDoneReq) == 240) {
                 code = 4;
             } else {
                 code = -1;

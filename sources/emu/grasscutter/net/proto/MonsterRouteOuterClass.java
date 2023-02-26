@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MonsterRouteOuterClass.class */
 public final class MonsterRouteOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012MonsterRoute.proto\u001a\u0010RoutePoint.proto\"p\n\fMonsterRoute\u0012!\n\froute_points\u0018\u0001 \u0003(\u000b2\u000b.RoutePoint\u0012\u0013\n\u000bspeed_level\u0018\u0002 \u0001(\r\u0012\u0012\n\nroute_type\u0018\u0003 \u0001(\r\u0012\u0014\n\farrive_range\u0018\u0004 \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{RoutePointOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012MonsterRoute.proto\u001a\u0010RoutePoint.proto\"l\n\fMonsterRoute\u0012 \n\u000broutePoints\u0018\u0001 \u0003(\u000b2\u000b.RoutePoint\u0012\u0012\n\nspeedLevel\u0018\u0002 \u0001(\r\u0012\u0011\n\trouteType\u0018\u0003 \u0001(\r\u0012\u0013\n\u000barriveRange\u0018\u0004 \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{RoutePointOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_MonsterRoute_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_MonsterRoute_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MonsterRoute_descriptor, new String[]{"RoutePoints", "SpeedLevel", "RouteType", "ArriveRange"});
 
@@ -61,13 +61,13 @@ public final class MonsterRouteOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MonsterRouteOuterClass$MonsterRoute.class */
     public static final class MonsterRoute extends GeneratedMessageV3 implements MonsterRouteOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ROUTE_POINTS_FIELD_NUMBER = 1;
+        public static final int ROUTEPOINTS_FIELD_NUMBER = 1;
         private List<RoutePointOuterClass.RoutePoint> routePoints_;
-        public static final int SPEED_LEVEL_FIELD_NUMBER = 2;
+        public static final int SPEEDLEVEL_FIELD_NUMBER = 2;
         private int speedLevel_;
-        public static final int ROUTE_TYPE_FIELD_NUMBER = 3;
+        public static final int ROUTETYPE_FIELD_NUMBER = 3;
         private int routeType_;
-        public static final int ARRIVE_RANGE_FIELD_NUMBER = 4;
+        public static final int ARRIVERANGE_FIELD_NUMBER = 4;
         private float arriveRange_;
         private byte memoizedIsInitialized;
         private static final MonsterRoute DEFAULT_INSTANCE = new MonsterRoute();

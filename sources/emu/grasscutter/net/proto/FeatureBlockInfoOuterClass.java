@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FeatureBlockInfoOuterClass.class */
 public final class FeatureBlockInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016FeatureBlockInfo.proto\":\n\u0010FeatureBlockInfo\u0012\u0014\n\ffeature_type\u0018\u0001 \u0001(\r\u0012\u0010\n\bend_time\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016FeatureBlockInfo.proto\"8\n\u0010FeatureBlockInfo\u0012\u0013\n\u000bfeatureType\u0018\u0001 \u0001(\r\u0012\u000f\n\u0007endTime\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_FeatureBlockInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_FeatureBlockInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FeatureBlockInfo_descriptor, new String[]{"FeatureType", "EndTime"});
 
@@ -43,9 +43,9 @@ public final class FeatureBlockInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FeatureBlockInfoOuterClass$FeatureBlockInfo.class */
     public static final class FeatureBlockInfo extends GeneratedMessageV3 implements FeatureBlockInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int FEATURE_TYPE_FIELD_NUMBER = 1;
+        public static final int FEATURETYPE_FIELD_NUMBER = 1;
         private int featureType_;
-        public static final int END_TIME_FIELD_NUMBER = 2;
+        public static final int ENDTIME_FIELD_NUMBER = 2;
         private int endTime_;
         private byte memoizedIsInitialized;
         private static final FeatureBlockInfo DEFAULT_INSTANCE = new FeatureBlockInfo();

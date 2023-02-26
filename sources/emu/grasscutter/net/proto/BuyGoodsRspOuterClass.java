@@ -26,15 +26,19 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BuyGoodsRspOuterClass.class */
 public final class BuyGoodsRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0011BuyGoodsRsp.proto\u001a\u000fShopGoods.proto\"\n\u000bBuyGoodsRsp\u0012\u0011\n\tshop_type\u0018\u000f \u0001(\r\u0012\u000f\n\u0007retcode\u0018\r \u0001(\u0005\u0012\u001e\n\ngoods_list\u0018\n \u0003(\u000b2\n.ShopGoods\u0012\u0019\n\u0005goods\u0018\u0007 \u0001(\u000b2\n.ShopGoods\u0012\u0011\n\tbuy_count\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ShopGoodsOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0011BuyGoodsRsp.proto\u001a\u000fShopGoods.proto\"|\n\u000bBuyGoodsRsp\u0012\u0010\n\bbuyCount\u0018\u0002 \u0001(\r\u0012\u0019\n\u0005goods\u0018\u0001 \u0001(\u000b2\n.ShopGoods\u0012\u001d\n\tgoodsList\u0018\u0007 \u0003(\u000b2\n.ShopGoods\u0012\u000f\n\u0007retcode\u0018\u0005 \u0001(\u0005\u0012\u0010\n\bshopType\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ShopGoodsOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_BuyGoodsRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_BuyGoodsRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BuyGoodsRsp_descriptor, new String[]{"ShopType", "Retcode", "GoodsList", "Goods", "BuyCount"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_BuyGoodsRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BuyGoodsRsp_descriptor, new String[]{"BuyCount", "Goods", "GoodsList", "Retcode", "ShopType"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BuyGoodsRspOuterClass$BuyGoodsRspOrBuilder.class */
     public interface BuyGoodsRspOrBuilder extends MessageOrBuilder {
-        int getShopType();
+        int getBuyCount();
 
-        int getRetcode();
+        boolean hasGoods();
+
+        ShopGoodsOuterClass.ShopGoods getGoods();
+
+        ShopGoodsOuterClass.ShopGoodsOrBuilder getGoodsOrBuilder();
 
         List<ShopGoodsOuterClass.ShopGoods> getGoodsListList();
 
@@ -46,13 +50,9 @@ public final class BuyGoodsRspOuterClass {
 
         ShopGoodsOuterClass.ShopGoodsOrBuilder getGoodsListOrBuilder(int i);
 
-        boolean hasGoods();
+        int getRetcode();
 
-        ShopGoodsOuterClass.ShopGoods getGoods();
-
-        ShopGoodsOuterClass.ShopGoodsOrBuilder getGoodsOrBuilder();
-
-        int getBuyCount();
+        int getShopType();
     }
 
     private BuyGoodsRspOuterClass() {
@@ -68,16 +68,16 @@ public final class BuyGoodsRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BuyGoodsRspOuterClass$BuyGoodsRsp.class */
     public static final class BuyGoodsRsp extends GeneratedMessageV3 implements BuyGoodsRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SHOP_TYPE_FIELD_NUMBER = 15;
-        private int shopType_;
-        public static final int RETCODE_FIELD_NUMBER = 13;
-        private int retcode_;
-        public static final int GOODS_LIST_FIELD_NUMBER = 10;
-        private List<ShopGoodsOuterClass.ShopGoods> goodsList_;
-        public static final int GOODS_FIELD_NUMBER = 7;
-        private ShopGoodsOuterClass.ShopGoods goods_;
-        public static final int BUY_COUNT_FIELD_NUMBER = 9;
+        public static final int BUYCOUNT_FIELD_NUMBER = 2;
         private int buyCount_;
+        public static final int GOODS_FIELD_NUMBER = 1;
+        private ShopGoodsOuterClass.ShopGoods goods_;
+        public static final int GOODSLIST_FIELD_NUMBER = 7;
+        private List<ShopGoodsOuterClass.ShopGoods> goodsList_;
+        public static final int RETCODE_FIELD_NUMBER = 5;
+        private int retcode_;
+        public static final int SHOPTYPE_FIELD_NUMBER = 14;
+        private int shopType_;
         private byte memoizedIsInitialized;
         private static final BuyGoodsRsp DEFAULT_INSTANCE = new BuyGoodsRsp();
         private static final Parser<BuyGoodsRsp> PARSER = new AbstractParser<BuyGoodsRsp>() { // from class: emu.grasscutter.net.proto.BuyGoodsRspOuterClass.BuyGoodsRsp.1
@@ -126,7 +126,7 @@ public final class BuyGoodsRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 58:
+                            case 10:
                                 ShopGoodsOuterClass.ShopGoods.Builder subBuilder = this.goods_ != null ? this.goods_.toBuilder() : null;
                                 this.goods_ = (ShopGoodsOuterClass.ShopGoods) input.readMessage(ShopGoodsOuterClass.ShopGoods.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -136,20 +136,20 @@ public final class BuyGoodsRspOuterClass {
                                     this.goods_ = subBuilder.buildPartial();
                                     break;
                                 }
-                            case 72:
+                            case 16:
                                 this.buyCount_ = input.readUInt32();
                                 break;
-                            case 82:
+                            case 40:
+                                this.retcode_ = input.readInt32();
+                                break;
+                            case 58:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.goodsList_ = new ArrayList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.goodsList_.add((ShopGoodsOuterClass.ShopGoods) input.readMessage(ShopGoodsOuterClass.ShopGoods.parser(), extensionRegistry));
                                 break;
-                            case 104:
-                                this.retcode_ = input.readInt32();
-                                break;
-                            case 120:
+                            case 112:
                                 this.shopType_ = input.readUInt32();
                                 break;
                             default:
@@ -185,13 +185,23 @@ public final class BuyGoodsRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.BuyGoodsRspOuterClass.BuyGoodsRspOrBuilder
-        public int getShopType() {
-            return this.shopType_;
+        public int getBuyCount() {
+            return this.buyCount_;
         }
 
         @Override // emu.grasscutter.net.proto.BuyGoodsRspOuterClass.BuyGoodsRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
+        public boolean hasGoods() {
+            return this.goods_ != null;
+        }
+
+        @Override // emu.grasscutter.net.proto.BuyGoodsRspOuterClass.BuyGoodsRspOrBuilder
+        public ShopGoodsOuterClass.ShopGoods getGoods() {
+            return this.goods_ == null ? ShopGoodsOuterClass.ShopGoods.getDefaultInstance() : this.goods_;
+        }
+
+        @Override // emu.grasscutter.net.proto.BuyGoodsRspOuterClass.BuyGoodsRspOrBuilder
+        public ShopGoodsOuterClass.ShopGoodsOrBuilder getGoodsOrBuilder() {
+            return getGoods();
         }
 
         @Override // emu.grasscutter.net.proto.BuyGoodsRspOuterClass.BuyGoodsRspOrBuilder
@@ -220,23 +230,13 @@ public final class BuyGoodsRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.BuyGoodsRspOuterClass.BuyGoodsRspOrBuilder
-        public boolean hasGoods() {
-            return this.goods_ != null;
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // emu.grasscutter.net.proto.BuyGoodsRspOuterClass.BuyGoodsRspOrBuilder
-        public ShopGoodsOuterClass.ShopGoods getGoods() {
-            return this.goods_ == null ? ShopGoodsOuterClass.ShopGoods.getDefaultInstance() : this.goods_;
-        }
-
-        @Override // emu.grasscutter.net.proto.BuyGoodsRspOuterClass.BuyGoodsRspOrBuilder
-        public ShopGoodsOuterClass.ShopGoodsOrBuilder getGoodsOrBuilder() {
-            return getGoods();
-        }
-
-        @Override // emu.grasscutter.net.proto.BuyGoodsRspOuterClass.BuyGoodsRspOrBuilder
-        public int getBuyCount() {
-            return this.buyCount_;
+        public int getShopType() {
+            return this.shopType_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -255,19 +255,19 @@ public final class BuyGoodsRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.goods_ != null) {
-                output.writeMessage(7, getGoods());
+                output.writeMessage(1, getGoods());
             }
             if (this.buyCount_ != 0) {
-                output.writeUInt32(9, this.buyCount_);
-            }
-            for (int i = 0; i < this.goodsList_.size(); i++) {
-                output.writeMessage(10, this.goodsList_.get(i));
+                output.writeUInt32(2, this.buyCount_);
             }
             if (this.retcode_ != 0) {
-                output.writeInt32(13, this.retcode_);
+                output.writeInt32(5, this.retcode_);
+            }
+            for (int i = 0; i < this.goodsList_.size(); i++) {
+                output.writeMessage(7, this.goodsList_.get(i));
             }
             if (this.shopType_ != 0) {
-                output.writeUInt32(15, this.shopType_);
+                output.writeUInt32(14, this.shopType_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -280,19 +280,19 @@ public final class BuyGoodsRspOuterClass {
             }
             int size2 = 0;
             if (this.goods_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(7, getGoods());
+                size2 = 0 + CodedOutputStream.computeMessageSize(1, getGoods());
             }
             if (this.buyCount_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.buyCount_);
-            }
-            for (int i = 0; i < this.goodsList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(10, this.goodsList_.get(i));
+                size2 += CodedOutputStream.computeUInt32Size(2, this.buyCount_);
             }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(13, this.retcode_);
+                size2 += CodedOutputStream.computeInt32Size(5, this.retcode_);
+            }
+            for (int i = 0; i < this.goodsList_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(7, this.goodsList_.get(i));
             }
             if (this.shopType_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.shopType_);
+                size2 += CodedOutputStream.computeUInt32Size(14, this.shopType_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -308,8 +308,8 @@ public final class BuyGoodsRspOuterClass {
                 return equals(obj);
             }
             BuyGoodsRsp other = (BuyGoodsRsp) obj;
-            if (getShopType() == other.getShopType() && getRetcode() == other.getRetcode() && getGoodsListList().equals(other.getGoodsListList()) && hasGoods() == other.hasGoods()) {
-                return (!hasGoods() || getGoods().equals(other.getGoods())) && getBuyCount() == other.getBuyCount() && this.unknownFields.equals(other.unknownFields);
+            if (getBuyCount() == other.getBuyCount() && hasGoods() == other.hasGoods()) {
+                return (!hasGoods() || getGoods().equals(other.getGoods())) && getGoodsListList().equals(other.getGoodsListList()) && getRetcode() == other.getRetcode() && getShopType() == other.getShopType() && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -319,14 +319,14 @@ public final class BuyGoodsRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getShopType())) + 13)) + getRetcode();
-            if (getGoodsListCount() > 0) {
-                hash = (53 * ((37 * hash) + 10)) + getGoodsListList().hashCode();
-            }
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getBuyCount();
             if (hasGoods()) {
-                hash = (53 * ((37 * hash) + 7)) + getGoods().hashCode();
+                hash = (53 * ((37 * hash) + 1)) + getGoods().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 9)) + getBuyCount())) + this.unknownFields.hashCode();
+            if (getGoodsListCount() > 0) {
+                hash = (53 * ((37 * hash) + 7)) + getGoodsListList().hashCode();
+            }
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 5)) + getRetcode())) + 14)) + getShopType())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -406,13 +406,13 @@ public final class BuyGoodsRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BuyGoodsRspOuterClass$BuyGoodsRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements BuyGoodsRspOrBuilder {
             private int bitField0_;
-            private int shopType_;
-            private int retcode_;
-            private List<ShopGoodsOuterClass.ShopGoods> goodsList_ = Collections.emptyList();
-            private RepeatedFieldBuilderV3<ShopGoodsOuterClass.ShopGoods, ShopGoodsOuterClass.ShopGoods.Builder, ShopGoodsOuterClass.ShopGoodsOrBuilder> goodsListBuilder_;
+            private int buyCount_;
             private ShopGoodsOuterClass.ShopGoods goods_;
             private SingleFieldBuilderV3<ShopGoodsOuterClass.ShopGoods, ShopGoodsOuterClass.ShopGoods.Builder, ShopGoodsOuterClass.ShopGoodsOrBuilder> goodsBuilder_;
-            private int buyCount_;
+            private List<ShopGoodsOuterClass.ShopGoods> goodsList_ = Collections.emptyList();
+            private RepeatedFieldBuilderV3<ShopGoodsOuterClass.ShopGoods, ShopGoodsOuterClass.ShopGoods.Builder, ShopGoodsOuterClass.ShopGoodsOrBuilder> goodsListBuilder_;
+            private int retcode_;
+            private int shopType_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return BuyGoodsRspOuterClass.internal_static_BuyGoodsRsp_descriptor;
@@ -441,21 +441,21 @@ public final class BuyGoodsRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.shopType_ = 0;
-                this.retcode_ = 0;
-                if (this.goodsListBuilder_ == null) {
-                    this.goodsList_ = Collections.emptyList();
-                    this.bitField0_ &= -2;
-                } else {
-                    this.goodsListBuilder_.clear();
-                }
+                this.buyCount_ = 0;
                 if (this.goodsBuilder_ == null) {
                     this.goods_ = null;
                 } else {
                     this.goods_ = null;
                     this.goodsBuilder_ = null;
                 }
-                this.buyCount_ = 0;
+                if (this.goodsListBuilder_ == null) {
+                    this.goodsList_ = Collections.emptyList();
+                    this.bitField0_ &= -2;
+                } else {
+                    this.goodsListBuilder_.clear();
+                }
+                this.retcode_ = 0;
+                this.shopType_ = 0;
                 return this;
             }
 
@@ -482,8 +482,12 @@ public final class BuyGoodsRspOuterClass {
             public BuyGoodsRsp buildPartial() {
                 BuyGoodsRsp result = new BuyGoodsRsp(this);
                 int i = this.bitField0_;
-                result.shopType_ = this.shopType_;
-                result.retcode_ = this.retcode_;
+                result.buyCount_ = this.buyCount_;
+                if (this.goodsBuilder_ == null) {
+                    result.goods_ = this.goods_;
+                } else {
+                    result.goods_ = this.goodsBuilder_.build();
+                }
                 if (this.goodsListBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
                         this.goodsList_ = Collections.unmodifiableList(this.goodsList_);
@@ -493,12 +497,8 @@ public final class BuyGoodsRspOuterClass {
                 } else {
                     result.goodsList_ = this.goodsListBuilder_.build();
                 }
-                if (this.goodsBuilder_ == null) {
-                    result.goods_ = this.goods_;
-                } else {
-                    result.goods_ = this.goodsBuilder_.build();
-                }
-                result.buyCount_ = this.buyCount_;
+                result.retcode_ = this.retcode_;
+                result.shopType_ = this.shopType_;
                 onBuilt();
                 return result;
             }
@@ -546,11 +546,11 @@ public final class BuyGoodsRspOuterClass {
                 if (other == BuyGoodsRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getShopType() != 0) {
-                    setShopType(other.getShopType());
+                if (other.getBuyCount() != 0) {
+                    setBuyCount(other.getBuyCount());
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
+                if (other.hasGoods()) {
+                    mergeGoods(other.getGoods());
                 }
                 if (this.goodsListBuilder_ == null) {
                     if (!other.goodsList_.isEmpty()) {
@@ -574,11 +574,11 @@ public final class BuyGoodsRspOuterClass {
                         this.goodsListBuilder_.addAllMessages(other.goodsList_);
                     }
                 }
-                if (other.hasGoods()) {
-                    mergeGoods(other.getGoods());
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
-                if (other.getBuyCount() != 0) {
-                    setBuyCount(other.getBuyCount());
+                if (other.getShopType() != 0) {
+                    setShopType(other.getShopType());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -613,37 +613,101 @@ public final class BuyGoodsRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.BuyGoodsRspOuterClass.BuyGoodsRspOrBuilder
-            public int getShopType() {
-                return this.shopType_;
+            public int getBuyCount() {
+                return this.buyCount_;
             }
 
-            public Builder setShopType(int value) {
-                this.shopType_ = value;
+            public Builder setBuyCount(int value) {
+                this.buyCount_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearShopType() {
-                this.shopType_ = 0;
+            public Builder clearBuyCount() {
+                this.buyCount_ = 0;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.BuyGoodsRspOuterClass.BuyGoodsRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
+            public boolean hasGoods() {
+                return (this.goodsBuilder_ == null && this.goods_ == null) ? false : true;
             }
 
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
+            @Override // emu.grasscutter.net.proto.BuyGoodsRspOuterClass.BuyGoodsRspOrBuilder
+            public ShopGoodsOuterClass.ShopGoods getGoods() {
+                if (this.goodsBuilder_ == null) {
+                    return this.goods_ == null ? ShopGoodsOuterClass.ShopGoods.getDefaultInstance() : this.goods_;
+                }
+                return this.goodsBuilder_.getMessage();
+            }
+
+            public Builder setGoods(ShopGoodsOuterClass.ShopGoods value) {
+                if (this.goodsBuilder_ != null) {
+                    this.goodsBuilder_.setMessage(value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    this.goods_ = value;
+                    onChanged();
+                }
                 return this;
             }
 
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
+            public Builder setGoods(ShopGoodsOuterClass.ShopGoods.Builder builderForValue) {
+                if (this.goodsBuilder_ == null) {
+                    this.goods_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    this.goodsBuilder_.setMessage(builderForValue.build());
+                }
                 return this;
+            }
+
+            public Builder mergeGoods(ShopGoodsOuterClass.ShopGoods value) {
+                if (this.goodsBuilder_ == null) {
+                    if (this.goods_ != null) {
+                        this.goods_ = ShopGoodsOuterClass.ShopGoods.newBuilder(this.goods_).mergeFrom(value).buildPartial();
+                    } else {
+                        this.goods_ = value;
+                    }
+                    onChanged();
+                } else {
+                    this.goodsBuilder_.mergeFrom(value);
+                }
+                return this;
+            }
+
+            public Builder clearGoods() {
+                if (this.goodsBuilder_ == null) {
+                    this.goods_ = null;
+                    onChanged();
+                } else {
+                    this.goods_ = null;
+                    this.goodsBuilder_ = null;
+                }
+                return this;
+            }
+
+            public ShopGoodsOuterClass.ShopGoods.Builder getGoodsBuilder() {
+                onChanged();
+                return getGoodsFieldBuilder().getBuilder();
+            }
+
+            @Override // emu.grasscutter.net.proto.BuyGoodsRspOuterClass.BuyGoodsRspOrBuilder
+            public ShopGoodsOuterClass.ShopGoodsOrBuilder getGoodsOrBuilder() {
+                if (this.goodsBuilder_ != null) {
+                    return this.goodsBuilder_.getMessageOrBuilder();
+                }
+                return this.goods_ == null ? ShopGoodsOuterClass.ShopGoods.getDefaultInstance() : this.goods_;
+            }
+
+            private SingleFieldBuilderV3<ShopGoodsOuterClass.ShopGoods, ShopGoodsOuterClass.ShopGoods.Builder, ShopGoodsOuterClass.ShopGoodsOrBuilder> getGoodsFieldBuilder() {
+                if (this.goodsBuilder_ == null) {
+                    this.goodsBuilder_ = new SingleFieldBuilderV3<>(getGoods(), getParentForChildren(), isClean());
+                    this.goods_ = null;
+                }
+                return this.goodsBuilder_;
             }
 
             private void ensureGoodsListIsMutable() {
@@ -823,99 +887,35 @@ public final class BuyGoodsRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.BuyGoodsRspOuterClass.BuyGoodsRspOrBuilder
-            public boolean hasGoods() {
-                return (this.goodsBuilder_ == null && this.goods_ == null) ? false : true;
+            public int getRetcode() {
+                return this.retcode_;
             }
 
-            @Override // emu.grasscutter.net.proto.BuyGoodsRspOuterClass.BuyGoodsRspOrBuilder
-            public ShopGoodsOuterClass.ShopGoods getGoods() {
-                if (this.goodsBuilder_ == null) {
-                    return this.goods_ == null ? ShopGoodsOuterClass.ShopGoods.getDefaultInstance() : this.goods_;
-                }
-                return this.goodsBuilder_.getMessage();
-            }
-
-            public Builder setGoods(ShopGoodsOuterClass.ShopGoods value) {
-                if (this.goodsBuilder_ != null) {
-                    this.goodsBuilder_.setMessage(value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    this.goods_ = value;
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder setGoods(ShopGoodsOuterClass.ShopGoods.Builder builderForValue) {
-                if (this.goodsBuilder_ == null) {
-                    this.goods_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    this.goodsBuilder_.setMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder mergeGoods(ShopGoodsOuterClass.ShopGoods value) {
-                if (this.goodsBuilder_ == null) {
-                    if (this.goods_ != null) {
-                        this.goods_ = ShopGoodsOuterClass.ShopGoods.newBuilder(this.goods_).mergeFrom(value).buildPartial();
-                    } else {
-                        this.goods_ = value;
-                    }
-                    onChanged();
-                } else {
-                    this.goodsBuilder_.mergeFrom(value);
-                }
-                return this;
-            }
-
-            public Builder clearGoods() {
-                if (this.goodsBuilder_ == null) {
-                    this.goods_ = null;
-                    onChanged();
-                } else {
-                    this.goods_ = null;
-                    this.goodsBuilder_ = null;
-                }
-                return this;
-            }
-
-            public ShopGoodsOuterClass.ShopGoods.Builder getGoodsBuilder() {
-                onChanged();
-                return getGoodsFieldBuilder().getBuilder();
-            }
-
-            @Override // emu.grasscutter.net.proto.BuyGoodsRspOuterClass.BuyGoodsRspOrBuilder
-            public ShopGoodsOuterClass.ShopGoodsOrBuilder getGoodsOrBuilder() {
-                if (this.goodsBuilder_ != null) {
-                    return this.goodsBuilder_.getMessageOrBuilder();
-                }
-                return this.goods_ == null ? ShopGoodsOuterClass.ShopGoods.getDefaultInstance() : this.goods_;
-            }
-
-            private SingleFieldBuilderV3<ShopGoodsOuterClass.ShopGoods, ShopGoodsOuterClass.ShopGoods.Builder, ShopGoodsOuterClass.ShopGoodsOrBuilder> getGoodsFieldBuilder() {
-                if (this.goodsBuilder_ == null) {
-                    this.goodsBuilder_ = new SingleFieldBuilderV3<>(getGoods(), getParentForChildren(), isClean());
-                    this.goods_ = null;
-                }
-                return this.goodsBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.BuyGoodsRspOuterClass.BuyGoodsRspOrBuilder
-            public int getBuyCount() {
-                return this.buyCount_;
-            }
-
-            public Builder setBuyCount(int value) {
-                this.buyCount_ = value;
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearBuyCount() {
-                this.buyCount_ = 0;
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.BuyGoodsRspOuterClass.BuyGoodsRspOrBuilder
+            public int getShopType() {
+                return this.shopType_;
+            }
+
+            public Builder setShopType(int value) {
+                this.shopType_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearShopType() {
+                this.shopType_ = 0;
                 onChanged();
                 return this;
             }

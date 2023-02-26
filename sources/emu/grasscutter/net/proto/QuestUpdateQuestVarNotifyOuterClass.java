@@ -23,12 +23,14 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestUpdateQuestVarNotifyOuterClass.class */
 public final class QuestUpdateQuestVarNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fQuestUpdateQuestVarNotify.proto\"e\n\u0019QuestUpdateQuestVarNotify\u0012\u001c\n\u0014parent_quest_var_seq\u0018\t \u0001(\r\u0012\u0011\n\tquest_var\u0018\u0003 \u0003(\u0005\u0012\u0017\n\u000fparent_quest_id\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fQuestUpdateQuestVarNotify.proto\"_\n\u0019QuestUpdateQuestVarNotify\u0012\u0015\n\rparentQuestId\u0018\u000b \u0001(\r\u0012\u0019\n\u0011parentQuestVarSeq\u0018\u000e \u0001(\r\u0012\u0010\n\bquestVar\u0018\u0007 \u0003(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_QuestUpdateQuestVarNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_QuestUpdateQuestVarNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QuestUpdateQuestVarNotify_descriptor, new String[]{"ParentQuestVarSeq", "QuestVar", "ParentQuestId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_QuestUpdateQuestVarNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_QuestUpdateQuestVarNotify_descriptor, new String[]{"ParentQuestId", "ParentQuestVarSeq", "QuestVar"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestUpdateQuestVarNotifyOuterClass$QuestUpdateQuestVarNotifyOrBuilder.class */
     public interface QuestUpdateQuestVarNotifyOrBuilder extends MessageOrBuilder {
+        int getParentQuestId();
+
         int getParentQuestVarSeq();
 
         List<Integer> getQuestVarList();
@@ -36,8 +38,6 @@ public final class QuestUpdateQuestVarNotifyOuterClass {
         int getQuestVarCount();
 
         int getQuestVar(int i);
-
-        int getParentQuestId();
     }
 
     private QuestUpdateQuestVarNotifyOuterClass() {
@@ -53,13 +53,13 @@ public final class QuestUpdateQuestVarNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestUpdateQuestVarNotifyOuterClass$QuestUpdateQuestVarNotify.class */
     public static final class QuestUpdateQuestVarNotify extends GeneratedMessageV3 implements QuestUpdateQuestVarNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PARENT_QUEST_VAR_SEQ_FIELD_NUMBER = 9;
+        public static final int PARENTQUESTID_FIELD_NUMBER = 11;
+        private int parentQuestId_;
+        public static final int PARENTQUESTVARSEQ_FIELD_NUMBER = 14;
         private int parentQuestVarSeq_;
-        public static final int QUEST_VAR_FIELD_NUMBER = 3;
+        public static final int QUESTVAR_FIELD_NUMBER = 7;
         private Internal.IntList questVar_;
         private int questVarMemoizedSerializedSize;
-        public static final int PARENT_QUEST_ID_FIELD_NUMBER = 7;
-        private int parentQuestId_;
         private byte memoizedIsInitialized;
         private static final QuestUpdateQuestVarNotify DEFAULT_INSTANCE = new QuestUpdateQuestVarNotify();
         private static final Parser<QuestUpdateQuestVarNotify> PARSER = new AbstractParser<QuestUpdateQuestVarNotify>() { // from class: emu.grasscutter.net.proto.QuestUpdateQuestVarNotifyOuterClass.QuestUpdateQuestVarNotify.1
@@ -110,14 +110,14 @@ public final class QuestUpdateQuestVarNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 24:
+                            case 56:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.questVar_ = newIntList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.questVar_.addInt(input.readInt32());
                                 break;
-                            case 26:
+                            case 58:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.questVar_ = newIntList();
@@ -128,10 +128,10 @@ public final class QuestUpdateQuestVarNotifyOuterClass {
                                 }
                                 input.popLimit(limit);
                                 break;
-                            case 56:
+                            case 88:
                                 this.parentQuestId_ = input.readUInt32();
                                 break;
-                            case 72:
+                            case 112:
                                 this.parentQuestVarSeq_ = input.readUInt32();
                                 break;
                             default:
@@ -167,6 +167,11 @@ public final class QuestUpdateQuestVarNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.QuestUpdateQuestVarNotifyOuterClass.QuestUpdateQuestVarNotifyOrBuilder
+        public int getParentQuestId() {
+            return this.parentQuestId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.QuestUpdateQuestVarNotifyOuterClass.QuestUpdateQuestVarNotifyOrBuilder
         public int getParentQuestVarSeq() {
             return this.parentQuestVarSeq_;
         }
@@ -186,11 +191,6 @@ public final class QuestUpdateQuestVarNotifyOuterClass {
             return this.questVar_.getInt(index);
         }
 
-        @Override // emu.grasscutter.net.proto.QuestUpdateQuestVarNotifyOuterClass.QuestUpdateQuestVarNotifyOrBuilder
-        public int getParentQuestId() {
-            return this.parentQuestId_;
-        }
-
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -208,17 +208,17 @@ public final class QuestUpdateQuestVarNotifyOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getQuestVarList().size() > 0) {
-                output.writeUInt32NoTag(26);
+                output.writeUInt32NoTag(58);
                 output.writeUInt32NoTag(this.questVarMemoizedSerializedSize);
             }
             for (int i = 0; i < this.questVar_.size(); i++) {
                 output.writeInt32NoTag(this.questVar_.getInt(i));
             }
             if (this.parentQuestId_ != 0) {
-                output.writeUInt32(7, this.parentQuestId_);
+                output.writeUInt32(11, this.parentQuestId_);
             }
             if (this.parentQuestVarSeq_ != 0) {
-                output.writeUInt32(9, this.parentQuestVarSeq_);
+                output.writeUInt32(14, this.parentQuestVarSeq_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -239,10 +239,10 @@ public final class QuestUpdateQuestVarNotifyOuterClass {
             }
             this.questVarMemoizedSerializedSize = dataSize;
             if (this.parentQuestId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.parentQuestId_);
+                size2 += CodedOutputStream.computeUInt32Size(11, this.parentQuestId_);
             }
             if (this.parentQuestVarSeq_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.parentQuestVarSeq_);
+                size2 += CodedOutputStream.computeUInt32Size(14, this.parentQuestVarSeq_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -258,7 +258,7 @@ public final class QuestUpdateQuestVarNotifyOuterClass {
                 return equals(obj);
             }
             QuestUpdateQuestVarNotify other = (QuestUpdateQuestVarNotify) obj;
-            return getParentQuestVarSeq() == other.getParentQuestVarSeq() && getQuestVarList().equals(other.getQuestVarList()) && getParentQuestId() == other.getParentQuestId() && this.unknownFields.equals(other.unknownFields);
+            return getParentQuestId() == other.getParentQuestId() && getParentQuestVarSeq() == other.getParentQuestVarSeq() && getQuestVarList().equals(other.getQuestVarList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -266,11 +266,11 @@ public final class QuestUpdateQuestVarNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getParentQuestVarSeq();
+            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getParentQuestId())) + 14)) + getParentQuestVarSeq();
             if (getQuestVarCount() > 0) {
-                hash = (53 * ((37 * hash) + 3)) + getQuestVarList().hashCode();
+                hash = (53 * ((37 * hash) + 7)) + getQuestVarList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 7)) + getParentQuestId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -350,9 +350,9 @@ public final class QuestUpdateQuestVarNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/QuestUpdateQuestVarNotifyOuterClass$QuestUpdateQuestVarNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements QuestUpdateQuestVarNotifyOrBuilder {
             private int bitField0_;
+            private int parentQuestId_;
             private int parentQuestVarSeq_;
             private Internal.IntList questVar_ = QuestUpdateQuestVarNotify.emptyIntList();
-            private int parentQuestId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return QuestUpdateQuestVarNotifyOuterClass.internal_static_QuestUpdateQuestVarNotify_descriptor;
@@ -380,10 +380,10 @@ public final class QuestUpdateQuestVarNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.parentQuestId_ = 0;
                 this.parentQuestVarSeq_ = 0;
                 this.questVar_ = QuestUpdateQuestVarNotify.emptyIntList();
                 this.bitField0_ &= -2;
-                this.parentQuestId_ = 0;
                 return this;
             }
 
@@ -410,13 +410,13 @@ public final class QuestUpdateQuestVarNotifyOuterClass {
             public QuestUpdateQuestVarNotify buildPartial() {
                 QuestUpdateQuestVarNotify result = new QuestUpdateQuestVarNotify(this);
                 int i = this.bitField0_;
+                result.parentQuestId_ = this.parentQuestId_;
                 result.parentQuestVarSeq_ = this.parentQuestVarSeq_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.questVar_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.questVar_ = this.questVar_;
-                result.parentQuestId_ = this.parentQuestId_;
                 onBuilt();
                 return result;
             }
@@ -464,6 +464,9 @@ public final class QuestUpdateQuestVarNotifyOuterClass {
                 if (other == QuestUpdateQuestVarNotify.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getParentQuestId() != 0) {
+                    setParentQuestId(other.getParentQuestId());
+                }
                 if (other.getParentQuestVarSeq() != 0) {
                     setParentQuestVarSeq(other.getParentQuestVarSeq());
                 }
@@ -476,9 +479,6 @@ public final class QuestUpdateQuestVarNotifyOuterClass {
                         this.questVar_.addAll(other.questVar_);
                     }
                     onChanged();
-                }
-                if (other.getParentQuestId() != 0) {
-                    setParentQuestId(other.getParentQuestId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -510,6 +510,23 @@ public final class QuestUpdateQuestVarNotifyOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.QuestUpdateQuestVarNotifyOuterClass.QuestUpdateQuestVarNotifyOrBuilder
+            public int getParentQuestId() {
+                return this.parentQuestId_;
+            }
+
+            public Builder setParentQuestId(int value) {
+                this.parentQuestId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearParentQuestId() {
+                this.parentQuestId_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.QuestUpdateQuestVarNotifyOuterClass.QuestUpdateQuestVarNotifyOrBuilder
@@ -575,23 +592,6 @@ public final class QuestUpdateQuestVarNotifyOuterClass {
             public Builder clearQuestVar() {
                 this.questVar_ = QuestUpdateQuestVarNotify.emptyIntList();
                 this.bitField0_ &= -2;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.QuestUpdateQuestVarNotifyOuterClass.QuestUpdateQuestVarNotifyOrBuilder
-            public int getParentQuestId() {
-                return this.parentQuestId_;
-            }
-
-            public Builder setParentQuestId(int value) {
-                this.parentQuestId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearParentQuestId() {
-                this.parentQuestId_ = 0;
                 onChanged();
                 return this;
             }

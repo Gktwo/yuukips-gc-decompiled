@@ -195,9 +195,10 @@ public abstract class ImmutableMultiset<E> extends ImmutableMultisetGwtSerializa
         throw new UnsupportedOperationException();
     }
 
+    /* access modifiers changed from: package-private */
     @Override // com.google.common.collect.ImmutableCollection
     @GwtIncompatible
-    int copyIntoArray(Object[] dst, int offset) {
+    public int copyIntoArray(Object[] dst, int offset) {
         UnmodifiableIterator<Multiset.Entry<E>> it = entrySet().iterator();
         while (it.hasNext()) {
             Multiset.Entry<E> entry = it.next();
@@ -245,8 +246,9 @@ public abstract class ImmutableMultiset<E> extends ImmutableMultisetGwtSerializa
         private EntrySet() {
         }
 
+        /* access modifiers changed from: package-private */
         @Override // com.google.common.collect.ImmutableCollection
-        boolean isPartialView() {
+        public boolean isPartialView() {
             return ImmutableMultiset.this.isPartialView();
         }
 
@@ -406,8 +408,9 @@ public abstract class ImmutableMultiset<E> extends ImmutableMultisetGwtSerializa
             return this.delegate.contains(object);
         }
 
+        /* access modifiers changed from: package-private */
         @Override // com.google.common.collect.ImmutableCollection
-        boolean isPartialView() {
+        public boolean isPartialView() {
             return true;
         }
 

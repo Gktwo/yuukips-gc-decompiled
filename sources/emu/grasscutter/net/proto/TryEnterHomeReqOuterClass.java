@@ -20,15 +20,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TryEnterHomeReqOuterClass.class */
 public final class TryEnterHomeReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015TryEnterHomeReq.proto\"^\n\u000fTryEnterHomeReq\u0012!\n\u0019is_transfer_to_safe_point\u0018\r \u0001(\b\u0012\u0014\n\ftarget_point\u0018\n \u0001(\r\u0012\u0012\n\ntarget_uid\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0015TryEnterHomeReq.proto\"X\n\u000fTryEnterHomeReq\u0012\u0013\n\u000btargetPoint\u0018\u000b \u0001(\r\u0012\u001d\n\u0015isTransferToSafePoint\u0018\u0004 \u0001(\b\u0012\u0011\n\ttargetUid\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_TryEnterHomeReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TryEnterHomeReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TryEnterHomeReq_descriptor, new String[]{"IsTransferToSafePoint", "TargetPoint", "TargetUid"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_TryEnterHomeReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_TryEnterHomeReq_descriptor, new String[]{"TargetPoint", "IsTransferToSafePoint", "TargetUid"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TryEnterHomeReqOuterClass$TryEnterHomeReqOrBuilder.class */
     public interface TryEnterHomeReqOrBuilder extends MessageOrBuilder {
-        boolean getIsTransferToSafePoint();
-
         int getTargetPoint();
+
+        boolean getIsTransferToSafePoint();
 
         int getTargetUid();
     }
@@ -46,11 +46,11 @@ public final class TryEnterHomeReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TryEnterHomeReqOuterClass$TryEnterHomeReq.class */
     public static final class TryEnterHomeReq extends GeneratedMessageV3 implements TryEnterHomeReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_TRANSFER_TO_SAFE_POINT_FIELD_NUMBER = 13;
-        private boolean isTransferToSafePoint_;
-        public static final int TARGET_POINT_FIELD_NUMBER = 10;
+        public static final int TARGETPOINT_FIELD_NUMBER = 11;
         private int targetPoint_;
-        public static final int TARGET_UID_FIELD_NUMBER = 1;
+        public static final int ISTRANSFERTOSAFEPOINT_FIELD_NUMBER = 4;
+        private boolean isTransferToSafePoint_;
+        public static final int TARGETUID_FIELD_NUMBER = 6;
         private int targetUid_;
         private byte memoizedIsInitialized;
         private static final TryEnterHomeReq DEFAULT_INSTANCE = new TryEnterHomeReq();
@@ -98,14 +98,14 @@ public final class TryEnterHomeReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
+                                case 32:
+                                    this.isTransferToSafePoint_ = input.readBool();
+                                    break;
+                                case 48:
                                     this.targetUid_ = input.readUInt32();
                                     break;
-                                case 80:
+                                case 88:
                                     this.targetPoint_ = input.readUInt32();
-                                    break;
-                                case 104:
-                                    this.isTransferToSafePoint_ = input.readBool();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -138,13 +138,13 @@ public final class TryEnterHomeReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.TryEnterHomeReqOuterClass.TryEnterHomeReqOrBuilder
-        public boolean getIsTransferToSafePoint() {
-            return this.isTransferToSafePoint_;
+        public int getTargetPoint() {
+            return this.targetPoint_;
         }
 
         @Override // emu.grasscutter.net.proto.TryEnterHomeReqOuterClass.TryEnterHomeReqOrBuilder
-        public int getTargetPoint() {
-            return this.targetPoint_;
+        public boolean getIsTransferToSafePoint() {
+            return this.isTransferToSafePoint_;
         }
 
         @Override // emu.grasscutter.net.proto.TryEnterHomeReqOuterClass.TryEnterHomeReqOrBuilder
@@ -167,14 +167,14 @@ public final class TryEnterHomeReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.isTransferToSafePoint_) {
+                output.writeBool(4, this.isTransferToSafePoint_);
+            }
             if (this.targetUid_ != 0) {
-                output.writeUInt32(1, this.targetUid_);
+                output.writeUInt32(6, this.targetUid_);
             }
             if (this.targetPoint_ != 0) {
-                output.writeUInt32(10, this.targetPoint_);
-            }
-            if (this.isTransferToSafePoint_) {
-                output.writeBool(13, this.isTransferToSafePoint_);
+                output.writeUInt32(11, this.targetPoint_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class TryEnterHomeReqOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.isTransferToSafePoint_) {
+                size2 = 0 + CodedOutputStream.computeBoolSize(4, this.isTransferToSafePoint_);
+            }
             if (this.targetUid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.targetUid_);
+                size2 += CodedOutputStream.computeUInt32Size(6, this.targetUid_);
             }
             if (this.targetPoint_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.targetPoint_);
-            }
-            if (this.isTransferToSafePoint_) {
-                size2 += CodedOutputStream.computeBoolSize(13, this.isTransferToSafePoint_);
+                size2 += CodedOutputStream.computeUInt32Size(11, this.targetPoint_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class TryEnterHomeReqOuterClass {
                 return equals(obj);
             }
             TryEnterHomeReq other = (TryEnterHomeReq) obj;
-            return getIsTransferToSafePoint() == other.getIsTransferToSafePoint() && getTargetPoint() == other.getTargetPoint() && getTargetUid() == other.getTargetUid() && this.unknownFields.equals(other.unknownFields);
+            return getTargetPoint() == other.getTargetPoint() && getIsTransferToSafePoint() == other.getIsTransferToSafePoint() && getTargetUid() == other.getTargetUid() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class TryEnterHomeReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + Internal.hashBoolean(getIsTransferToSafePoint()))) + 10)) + getTargetPoint())) + 1)) + getTargetUid())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getTargetPoint())) + 4)) + Internal.hashBoolean(getIsTransferToSafePoint()))) + 6)) + getTargetUid())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -296,8 +296,8 @@ public final class TryEnterHomeReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TryEnterHomeReqOuterClass$TryEnterHomeReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements TryEnterHomeReqOrBuilder {
-            private boolean isTransferToSafePoint_;
             private int targetPoint_;
+            private boolean isTransferToSafePoint_;
             private int targetUid_;
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -326,8 +326,8 @@ public final class TryEnterHomeReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.isTransferToSafePoint_ = false;
                 this.targetPoint_ = 0;
+                this.isTransferToSafePoint_ = false;
                 this.targetUid_ = 0;
                 return this;
             }
@@ -354,8 +354,8 @@ public final class TryEnterHomeReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public TryEnterHomeReq buildPartial() {
                 TryEnterHomeReq result = new TryEnterHomeReq(this);
-                result.isTransferToSafePoint_ = this.isTransferToSafePoint_;
                 result.targetPoint_ = this.targetPoint_;
+                result.isTransferToSafePoint_ = this.isTransferToSafePoint_;
                 result.targetUid_ = this.targetUid_;
                 onBuilt();
                 return result;
@@ -404,11 +404,11 @@ public final class TryEnterHomeReqOuterClass {
                 if (other == TryEnterHomeReq.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getIsTransferToSafePoint()) {
-                    setIsTransferToSafePoint(other.getIsTransferToSafePoint());
-                }
                 if (other.getTargetPoint() != 0) {
                     setTargetPoint(other.getTargetPoint());
+                }
+                if (other.getIsTransferToSafePoint()) {
+                    setIsTransferToSafePoint(other.getIsTransferToSafePoint());
                 }
                 if (other.getTargetUid() != 0) {
                     setTargetUid(other.getTargetUid());
@@ -446,23 +446,6 @@ public final class TryEnterHomeReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.TryEnterHomeReqOuterClass.TryEnterHomeReqOrBuilder
-            public boolean getIsTransferToSafePoint() {
-                return this.isTransferToSafePoint_;
-            }
-
-            public Builder setIsTransferToSafePoint(boolean value) {
-                this.isTransferToSafePoint_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsTransferToSafePoint() {
-                this.isTransferToSafePoint_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.TryEnterHomeReqOuterClass.TryEnterHomeReqOrBuilder
             public int getTargetPoint() {
                 return this.targetPoint_;
             }
@@ -475,6 +458,23 @@ public final class TryEnterHomeReqOuterClass {
 
             public Builder clearTargetPoint() {
                 this.targetPoint_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.TryEnterHomeReqOuterClass.TryEnterHomeReqOrBuilder
+            public boolean getIsTransferToSafePoint() {
+                return this.isTransferToSafePoint_;
+            }
+
+            public Builder setIsTransferToSafePoint(boolean value) {
+                this.isTransferToSafePoint_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsTransferToSafePoint() {
+                this.isTransferToSafePoint_ = false;
                 onChanged();
                 return this;
             }

@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SeaLampSectionInfoOuterClass.class */
 public final class SeaLampSectionInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018SeaLampSectionInfo.proto\"(\n\u0012SeaLampSectionInfo\u0012\u0012\n\nsection_id\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018SeaLampSectionInfo.proto\"'\n\u0012SeaLampSectionInfo\u0012\u0011\n\tsectionId\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SeaLampSectionInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SeaLampSectionInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SeaLampSectionInfo_descriptor, new String[]{"SectionId"});
 
@@ -41,7 +41,7 @@ public final class SeaLampSectionInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SeaLampSectionInfoOuterClass$SeaLampSectionInfo.class */
     public static final class SeaLampSectionInfo extends GeneratedMessageV3 implements SeaLampSectionInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SECTION_ID_FIELD_NUMBER = 8;
+        public static final int SECTIONID_FIELD_NUMBER = 13;
         private int sectionId_;
         private byte memoizedIsInitialized;
         private static final SeaLampSectionInfo DEFAULT_INSTANCE = new SeaLampSectionInfo();
@@ -88,7 +88,7 @@ public final class SeaLampSectionInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 64:
+                            case 104:
                                 this.sectionId_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class SeaLampSectionInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.sectionId_ != 0) {
-                output.writeUInt32(8, this.sectionId_);
+                output.writeUInt32(13, this.sectionId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class SeaLampSectionInfoOuterClass {
             }
             int size2 = 0;
             if (this.sectionId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(8, this.sectionId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(13, this.sectionId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class SeaLampSectionInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getSectionId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + getSectionId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

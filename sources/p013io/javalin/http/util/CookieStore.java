@@ -1,5 +1,6 @@
 package p013io.javalin.http.util;
 
+import emu.grasscutter.net.packet.PacketOpcodes;
 import java.util.Base64;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -69,7 +70,7 @@ public final class CookieStore {
         String str = COOKIE_NAME;
         String serialize = serialize(this.cookieMap);
         Intrinsics.checkNotNullExpressionValue(serialize, "serialize(cookieMap)");
-        return new Cookie(str, serialize, null, 0, false, 0, false, null, null, null, 1020, null);
+        return new Cookie(str, serialize, null, 0, false, 0, false, null, null, null, PacketOpcodes.BigTalentPointConvertReq, null);
     }
 
     public final <T> T get(@NotNull String key) {

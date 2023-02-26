@@ -168,7 +168,7 @@ public class Socket extends FileDescriptor {
                 return;
             }
         } while (!casState(oldState, newState));
-        int res = shutdown(this.f990fd, read, write);
+        int res = shutdown(this.f954fd, read, write);
         if (res < 0) {
             Errors.ioResult("shutdown", res);
         }
@@ -201,7 +201,7 @@ public class Socket extends FileDescriptor {
             scopeId = 0;
             address = NativeInetAddress.ipv4MappedIpv6Address(addr.getAddress());
         }
-        int res = sendTo(this.f990fd, useIpv6(addr), buf, pos, limit, address, scopeId, port, fastOpen ? msgFastopen() : 0);
+        int res = sendTo(this.f954fd, useIpv6(addr), buf, pos, limit, address, scopeId, port, fastOpen ? msgFastopen() : 0);
         if (res >= 0) {
             return res;
         }
@@ -215,7 +215,7 @@ public class Socket extends FileDescriptor {
     }
 
     public final int sendToDomainSocket(ByteBuffer buf, int pos, int limit, byte[] path) throws IOException {
-        int res = sendToDomainSocket(this.f990fd, buf, pos, limit, path);
+        int res = sendToDomainSocket(this.f954fd, buf, pos, limit, path);
         if (res >= 0) {
             return res;
         }
@@ -236,7 +236,7 @@ public class Socket extends FileDescriptor {
             scopeId = 0;
             address = NativeInetAddress.ipv4MappedIpv6Address(addr.getAddress());
         }
-        int res = sendToAddress(this.f990fd, useIpv6(addr), memoryAddress, pos, limit, address, scopeId, port, fastOpen ? msgFastopen() : 0);
+        int res = sendToAddress(this.f954fd, useIpv6(addr), memoryAddress, pos, limit, address, scopeId, port, fastOpen ? msgFastopen() : 0);
         if (res >= 0) {
             return res;
         }
@@ -250,7 +250,7 @@ public class Socket extends FileDescriptor {
     }
 
     public final int sendToAddressDomainSocket(long memoryAddress, int pos, int limit, byte[] path) throws IOException {
-        int res = sendToAddressDomainSocket(this.f990fd, memoryAddress, pos, limit, path);
+        int res = sendToAddressDomainSocket(this.f954fd, memoryAddress, pos, limit, path);
         if (res >= 0) {
             return res;
         }
@@ -271,7 +271,7 @@ public class Socket extends FileDescriptor {
             scopeId = 0;
             address = NativeInetAddress.ipv4MappedIpv6Address(addr.getAddress());
         }
-        int res = sendToAddresses(this.f990fd, useIpv6(addr), memoryAddress, length, address, scopeId, port, fastOpen ? msgFastopen() : 0);
+        int res = sendToAddresses(this.f954fd, useIpv6(addr), memoryAddress, length, address, scopeId, port, fastOpen ? msgFastopen() : 0);
         if (res >= 0) {
             return res;
         }
@@ -285,7 +285,7 @@ public class Socket extends FileDescriptor {
     }
 
     public final int sendToAddressesDomainSocket(long memoryAddress, int length, byte[] path) throws IOException {
-        int res = sendToAddressesDomainSocket(this.f990fd, memoryAddress, length, path);
+        int res = sendToAddressesDomainSocket(this.f954fd, memoryAddress, length, path);
         if (res >= 0) {
             return res;
         }
@@ -293,23 +293,23 @@ public class Socket extends FileDescriptor {
     }
 
     public final DatagramSocketAddress recvFrom(ByteBuffer buf, int pos, int limit) throws IOException {
-        return recvFrom(this.f990fd, buf, pos, limit);
+        return recvFrom(this.f954fd, buf, pos, limit);
     }
 
     public final DatagramSocketAddress recvFromAddress(long memoryAddress, int pos, int limit) throws IOException {
-        return recvFromAddress(this.f990fd, memoryAddress, pos, limit);
+        return recvFromAddress(this.f954fd, memoryAddress, pos, limit);
     }
 
     public final DomainDatagramSocketAddress recvFromDomainSocket(ByteBuffer buf, int pos, int limit) throws IOException {
-        return recvFromDomainSocket(this.f990fd, buf, pos, limit);
+        return recvFromDomainSocket(this.f954fd, buf, pos, limit);
     }
 
     public final DomainDatagramSocketAddress recvFromAddressDomainSocket(long memoryAddress, int pos, int limit) throws IOException {
-        return recvFromAddressDomainSocket(this.f990fd, memoryAddress, pos, limit);
+        return recvFromAddressDomainSocket(this.f954fd, memoryAddress, pos, limit);
     }
 
     public final int recvFd() throws IOException {
-        int res = recvFd(this.f990fd);
+        int res = recvFd(this.f954fd);
         if (res > 0) {
             return res;
         }
@@ -323,7 +323,7 @@ public class Socket extends FileDescriptor {
     }
 
     public final int sendFd(int fdToSend) throws IOException {
-        int res = sendFd(this.f990fd, fdToSend);
+        int res = sendFd(this.f954fd, fdToSend);
         if (res >= 0) {
             return res;
         }
@@ -339,9 +339,9 @@ public class Socket extends FileDescriptor {
             InetSocketAddress inetSocketAddress = (InetSocketAddress) socketAddress;
             InetAddress inetAddress = inetSocketAddress.getAddress();
             NativeInetAddress address = NativeInetAddress.newInstance(inetAddress);
-            res = connect(this.f990fd, useIpv6(inetAddress), address.address, address.scopeId, inetSocketAddress.getPort());
+            res = connect(this.f954fd, useIpv6(inetAddress), address.address, address.scopeId, inetSocketAddress.getPort());
         } else if (socketAddress instanceof DomainSocketAddress) {
-            res = connectDomainSocket(this.f990fd, ((DomainSocketAddress) socketAddress).path().getBytes(CharsetUtil.UTF_8));
+            res = connectDomainSocket(this.f954fd, ((DomainSocketAddress) socketAddress).path().getBytes(CharsetUtil.UTF_8));
         } else {
             throw new Error("Unexpected SocketAddress implementation " + socketAddress);
         }
@@ -352,7 +352,7 @@ public class Socket extends FileDescriptor {
     }
 
     public final boolean finishConnect() throws IOException {
-        int res = finishConnect(this.f990fd);
+        int res = finishConnect(this.f954fd);
         if (res < 0) {
             return Errors.handleConnectErrno("finishConnect", res);
         }
@@ -360,7 +360,7 @@ public class Socket extends FileDescriptor {
     }
 
     public final void disconnect() throws IOException {
-        int res = disconnect(this.f990fd, this.ipv6);
+        int res = disconnect(this.f954fd, this.ipv6);
         if (res < 0) {
             Errors.handleConnectErrno("disconnect", res);
         }
@@ -371,12 +371,12 @@ public class Socket extends FileDescriptor {
             InetSocketAddress addr = (InetSocketAddress) socketAddress;
             InetAddress inetAddress = addr.getAddress();
             NativeInetAddress address = NativeInetAddress.newInstance(inetAddress);
-            int res = bind(this.f990fd, useIpv6(inetAddress), address.address, address.scopeId, addr.getPort());
+            int res = bind(this.f954fd, useIpv6(inetAddress), address.address, address.scopeId, addr.getPort());
             if (res < 0) {
                 throw Errors.newIOException(Tmux.CMD_BIND, res);
             }
         } else if (socketAddress instanceof DomainSocketAddress) {
-            int res2 = bindDomainSocket(this.f990fd, ((DomainSocketAddress) socketAddress).path().getBytes(CharsetUtil.UTF_8));
+            int res2 = bindDomainSocket(this.f954fd, ((DomainSocketAddress) socketAddress).path().getBytes(CharsetUtil.UTF_8));
             if (res2 < 0) {
                 throw Errors.newIOException(Tmux.CMD_BIND, res2);
             }
@@ -386,14 +386,14 @@ public class Socket extends FileDescriptor {
     }
 
     public final void listen(int backlog) throws IOException {
-        int res = listen(this.f990fd, backlog);
+        int res = listen(this.f954fd, backlog);
         if (res < 0) {
             throw Errors.newIOException("listen", res);
         }
     }
 
     public final int accept(byte[] addr) throws IOException {
-        int res = accept(this.f990fd, addr);
+        int res = accept(this.f954fd, addr);
         if (res >= 0) {
             return res;
         }
@@ -404,7 +404,7 @@ public class Socket extends FileDescriptor {
     }
 
     public final InetSocketAddress remoteAddress() {
-        byte[] addr = remoteAddress(this.f990fd);
+        byte[] addr = remoteAddress(this.f954fd);
         if (addr == null) {
             return null;
         }
@@ -412,7 +412,7 @@ public class Socket extends FileDescriptor {
     }
 
     public final InetSocketAddress localAddress() {
-        byte[] addr = localAddress(this.f990fd);
+        byte[] addr = localAddress(this.f954fd);
         if (addr == null) {
             return null;
         }
@@ -420,111 +420,111 @@ public class Socket extends FileDescriptor {
     }
 
     public final int getReceiveBufferSize() throws IOException {
-        return getReceiveBufferSize(this.f990fd);
+        return getReceiveBufferSize(this.f954fd);
     }
 
     public final int getSendBufferSize() throws IOException {
-        return getSendBufferSize(this.f990fd);
+        return getSendBufferSize(this.f954fd);
     }
 
     public final boolean isKeepAlive() throws IOException {
-        return isKeepAlive(this.f990fd) != 0;
+        return isKeepAlive(this.f954fd) != 0;
     }
 
     public final boolean isTcpNoDelay() throws IOException {
-        return isTcpNoDelay(this.f990fd) != 0;
+        return isTcpNoDelay(this.f954fd) != 0;
     }
 
     public final boolean isReuseAddress() throws IOException {
-        return isReuseAddress(this.f990fd) != 0;
+        return isReuseAddress(this.f954fd) != 0;
     }
 
     public final boolean isReusePort() throws IOException {
-        return isReusePort(this.f990fd) != 0;
+        return isReusePort(this.f954fd) != 0;
     }
 
     public final boolean isBroadcast() throws IOException {
-        return isBroadcast(this.f990fd) != 0;
+        return isBroadcast(this.f954fd) != 0;
     }
 
     public final int getSoLinger() throws IOException {
-        return getSoLinger(this.f990fd);
+        return getSoLinger(this.f954fd);
     }
 
     public final int getSoError() throws IOException {
-        return getSoError(this.f990fd);
+        return getSoError(this.f954fd);
     }
 
     public final int getTrafficClass() throws IOException {
-        return getTrafficClass(this.f990fd, this.ipv6);
+        return getTrafficClass(this.f954fd, this.ipv6);
     }
 
     public final void setKeepAlive(boolean keepAlive) throws IOException {
-        setKeepAlive(this.f990fd, keepAlive ? 1 : 0);
+        setKeepAlive(this.f954fd, keepAlive ? 1 : 0);
     }
 
     public final void setReceiveBufferSize(int receiveBufferSize) throws IOException {
-        setReceiveBufferSize(this.f990fd, receiveBufferSize);
+        setReceiveBufferSize(this.f954fd, receiveBufferSize);
     }
 
     public final void setSendBufferSize(int sendBufferSize) throws IOException {
-        setSendBufferSize(this.f990fd, sendBufferSize);
+        setSendBufferSize(this.f954fd, sendBufferSize);
     }
 
     public final void setTcpNoDelay(boolean tcpNoDelay) throws IOException {
-        setTcpNoDelay(this.f990fd, tcpNoDelay ? 1 : 0);
+        setTcpNoDelay(this.f954fd, tcpNoDelay ? 1 : 0);
     }
 
     public final void setSoLinger(int soLinger) throws IOException {
-        setSoLinger(this.f990fd, soLinger);
+        setSoLinger(this.f954fd, soLinger);
     }
 
     public final void setReuseAddress(boolean reuseAddress) throws IOException {
-        setReuseAddress(this.f990fd, reuseAddress ? 1 : 0);
+        setReuseAddress(this.f954fd, reuseAddress ? 1 : 0);
     }
 
     public final void setReusePort(boolean reusePort) throws IOException {
-        setReusePort(this.f990fd, reusePort ? 1 : 0);
+        setReusePort(this.f954fd, reusePort ? 1 : 0);
     }
 
     public final void setBroadcast(boolean broadcast) throws IOException {
-        setBroadcast(this.f990fd, broadcast ? 1 : 0);
+        setBroadcast(this.f954fd, broadcast ? 1 : 0);
     }
 
     public final void setTrafficClass(int trafficClass) throws IOException {
-        setTrafficClass(this.f990fd, this.ipv6, trafficClass);
+        setTrafficClass(this.f954fd, this.ipv6, trafficClass);
     }
 
     public void setIntOpt(int level, int optname, int optvalue) throws IOException {
-        setIntOpt(this.f990fd, level, optname, optvalue);
+        setIntOpt(this.f954fd, level, optname, optvalue);
     }
 
     public void setRawOpt(int level, int optname, ByteBuffer optvalue) throws IOException {
         int limit = optvalue.limit();
         if (optvalue.isDirect()) {
-            setRawOptAddress(this.f990fd, level, optname, Buffer.memoryAddress(optvalue) + ((long) optvalue.position()), optvalue.remaining());
+            setRawOptAddress(this.f954fd, level, optname, Buffer.memoryAddress(optvalue) + ((long) optvalue.position()), optvalue.remaining());
         } else if (optvalue.hasArray()) {
-            setRawOptArray(this.f990fd, level, optname, optvalue.array(), optvalue.arrayOffset() + optvalue.position(), optvalue.remaining());
+            setRawOptArray(this.f954fd, level, optname, optvalue.array(), optvalue.arrayOffset() + optvalue.position(), optvalue.remaining());
         } else {
             byte[] bytes = new byte[optvalue.remaining()];
             optvalue.duplicate().get(bytes);
-            setRawOptArray(this.f990fd, level, optname, bytes, 0, bytes.length);
+            setRawOptArray(this.f954fd, level, optname, bytes, 0, bytes.length);
         }
         optvalue.position(limit);
     }
 
     public int getIntOpt(int level, int optname) throws IOException {
-        return getIntOpt(this.f990fd, level, optname);
+        return getIntOpt(this.f954fd, level, optname);
     }
 
     public void getRawOpt(int level, int optname, ByteBuffer out) throws IOException {
         if (out.isDirect()) {
-            getRawOptAddress(this.f990fd, level, optname, Buffer.memoryAddress(out) + ((long) out.position()), out.remaining());
+            getRawOptAddress(this.f954fd, level, optname, Buffer.memoryAddress(out) + ((long) out.position()), out.remaining());
         } else if (out.hasArray()) {
-            getRawOptArray(this.f990fd, level, optname, out.array(), out.position() + out.arrayOffset(), out.remaining());
+            getRawOptArray(this.f954fd, level, optname, out.array(), out.position() + out.arrayOffset(), out.remaining());
         } else {
             byte[] outArray = new byte[out.remaining()];
-            getRawOptArray(this.f990fd, level, optname, outArray, 0, outArray.length);
+            getRawOptArray(this.f954fd, level, optname, outArray, 0, outArray.length);
             out.put(outArray);
         }
         out.position(out.limit());
@@ -540,7 +540,7 @@ public class Socket extends FileDescriptor {
 
     @Override // p013io.netty.channel.unix.FileDescriptor
     public String toString() {
-        return "Socket{fd=" + this.f990fd + '}';
+        return "Socket{fd=" + this.f954fd + '}';
     }
 
     public static Socket newSocketStream() {

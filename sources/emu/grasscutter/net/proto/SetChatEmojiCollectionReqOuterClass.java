@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetChatEmojiCollectionReqOuterClass.class */
 public final class SetChatEmojiCollectionReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fSetChatEmojiCollectionReq.proto\u001a\u001dChatEmojiCollectionData.proto\"Y\n\u0019SetChatEmojiCollectionReq\u0012<\n\u001achat_emoji_collection_data\u0018\r \u0001(\u000b2\u0018.ChatEmojiCollectionDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ChatEmojiCollectionDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fSetChatEmojiCollectionReq.proto\u001a\u001dChatEmojiCollectionData.proto\"V\n\u0019SetChatEmojiCollectionReq\u00129\n\u0017chatEmojiCollectionData\u0018\u000b \u0001(\u000b2\u0018.ChatEmojiCollectionDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ChatEmojiCollectionDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SetChatEmojiCollectionReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SetChatEmojiCollectionReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SetChatEmojiCollectionReq_descriptor, new String[]{"ChatEmojiCollectionData"});
 
@@ -47,7 +47,7 @@ public final class SetChatEmojiCollectionReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SetChatEmojiCollectionReqOuterClass$SetChatEmojiCollectionReq.class */
     public static final class SetChatEmojiCollectionReq extends GeneratedMessageV3 implements SetChatEmojiCollectionReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CHAT_EMOJI_COLLECTION_DATA_FIELD_NUMBER = 13;
+        public static final int CHATEMOJICOLLECTIONDATA_FIELD_NUMBER = 11;
         private ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData chatEmojiCollectionData_;
         private byte memoizedIsInitialized;
         private static final SetChatEmojiCollectionReq DEFAULT_INSTANCE = new SetChatEmojiCollectionReq();
@@ -94,7 +94,7 @@ public final class SetChatEmojiCollectionReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 106:
+                            case 90:
                                 ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData.Builder subBuilder = this.chatEmojiCollectionData_ != null ? this.chatEmojiCollectionData_.toBuilder() : null;
                                 this.chatEmojiCollectionData_ = (ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData) input.readMessage(ChatEmojiCollectionDataOuterClass.ChatEmojiCollectionData.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -164,7 +164,7 @@ public final class SetChatEmojiCollectionReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.chatEmojiCollectionData_ != null) {
-                output.writeMessage(13, getChatEmojiCollectionData());
+                output.writeMessage(11, getChatEmojiCollectionData());
             }
             this.unknownFields.writeTo(output);
         }
@@ -177,7 +177,7 @@ public final class SetChatEmojiCollectionReqOuterClass {
             }
             int size2 = 0;
             if (this.chatEmojiCollectionData_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(13, getChatEmojiCollectionData());
+                size2 = 0 + CodedOutputStream.computeMessageSize(11, getChatEmojiCollectionData());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -206,7 +206,7 @@ public final class SetChatEmojiCollectionReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasChatEmojiCollectionData()) {
-                hash = (53 * ((37 * hash) + 13)) + getChatEmojiCollectionData().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + getChatEmojiCollectionData().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

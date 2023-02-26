@@ -29,7 +29,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilitySyncStateInfoOuterClass.class */
 public final class AbilitySyncStateInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aAbilitySyncStateInfo.proto\u001a\u001bAbilityAppliedAbility.proto\u001a\u001cAbilityAppliedModifier.proto\u001a\u001dAbilityMixinRecoverInfo.proto\u001a\u001dAbilityScalarValueEntry.proto\"µ\u0002\n\u0014AbilitySyncStateInfo\u0012\u0011\n\tis_inited\u0018\u0001 \u0001(\b\u00123\n\u0011dynamic_value_map\u0018\u0002 \u0003(\u000b2\u0018.AbilityScalarValueEntry\u00121\n\u0011applied_abilities\u0018\u0003 \u0003(\u000b2\u0016.AbilityAppliedAbility\u00122\n\u0011applied_modifiers\u0018\u0004 \u0003(\u000b2\u0017.AbilityAppliedModifier\u00125\n\u0013mixin_recover_infos\u0018\u0005 \u0003(\u000b2\u0018.AbilityMixinRecoverInfo\u00127\n\u0015sgv_dynamic_value_map\u0018\u0006 \u0003(\u000b2\u0018.AbilityScalarValueEntryB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityAppliedAbilityOuterClass.getDescriptor(), AbilityAppliedModifierOuterClass.getDescriptor(), AbilityMixinRecoverInfoOuterClass.getDescriptor(), AbilityScalarValueEntryOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aAbilitySyncStateInfo.proto\u001a\u001dAbilityScalarValueEntry.proto\u001a\u001bAbilityAppliedAbility.proto\u001a\u001cAbilityAppliedModifier.proto\u001a\u001dAbilityMixinRecoverInfo.proto\"«\u0002\n\u0014AbilitySyncStateInfo\u0012\u0010\n\bisInited\u0018\u0001 \u0001(\b\u00121\n\u000fdynamicValueMap\u0018\u0002 \u0003(\u000b2\u0018.AbilityScalarValueEntry\u00120\n\u0010appliedAbilities\u0018\u0003 \u0003(\u000b2\u0016.AbilityAppliedAbility\u00121\n\u0010appliedModifiers\u0018\u0004 \u0003(\u000b2\u0017.AbilityAppliedModifier\u00123\n\u0011mixinRecoverInfos\u0018\u0005 \u0003(\u000b2\u0018.AbilityMixinRecoverInfo\u00124\n\u0012sgvDynamicValueMap\u0018\u0006 \u0003(\u000b2\u0018.AbilityScalarValueEntryB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityScalarValueEntryOuterClass.getDescriptor(), AbilityAppliedAbilityOuterClass.getDescriptor(), AbilityAppliedModifierOuterClass.getDescriptor(), AbilityMixinRecoverInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AbilitySyncStateInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AbilitySyncStateInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AbilitySyncStateInfo_descriptor, new String[]{"IsInited", "DynamicValueMap", "AppliedAbilities", "AppliedModifiers", "MixinRecoverInfos", "SgvDynamicValueMap"});
 
@@ -101,17 +101,17 @@ public final class AbilitySyncStateInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilitySyncStateInfoOuterClass$AbilitySyncStateInfo.class */
     public static final class AbilitySyncStateInfo extends GeneratedMessageV3 implements AbilitySyncStateInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_INITED_FIELD_NUMBER = 1;
+        public static final int ISINITED_FIELD_NUMBER = 1;
         private boolean isInited_;
-        public static final int DYNAMIC_VALUE_MAP_FIELD_NUMBER = 2;
+        public static final int DYNAMICVALUEMAP_FIELD_NUMBER = 2;
         private List<AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry> dynamicValueMap_;
-        public static final int APPLIED_ABILITIES_FIELD_NUMBER = 3;
+        public static final int APPLIEDABILITIES_FIELD_NUMBER = 3;
         private List<AbilityAppliedAbilityOuterClass.AbilityAppliedAbility> appliedAbilities_;
-        public static final int APPLIED_MODIFIERS_FIELD_NUMBER = 4;
+        public static final int APPLIEDMODIFIERS_FIELD_NUMBER = 4;
         private List<AbilityAppliedModifierOuterClass.AbilityAppliedModifier> appliedModifiers_;
-        public static final int MIXIN_RECOVER_INFOS_FIELD_NUMBER = 5;
+        public static final int MIXINRECOVERINFOS_FIELD_NUMBER = 5;
         private List<AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfo> mixinRecoverInfos_;
-        public static final int SGV_DYNAMIC_VALUE_MAP_FIELD_NUMBER = 6;
+        public static final int SGVDYNAMICVALUEMAP_FIELD_NUMBER = 6;
         private List<AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry> sgvDynamicValueMap_;
         private byte memoizedIsInitialized;
         private static final AbilitySyncStateInfo DEFAULT_INSTANCE = new AbilitySyncStateInfo();
@@ -1830,9 +1830,9 @@ public final class AbilitySyncStateInfoOuterClass {
     }
 
     static {
+        AbilityScalarValueEntryOuterClass.getDescriptor();
         AbilityAppliedAbilityOuterClass.getDescriptor();
         AbilityAppliedModifierOuterClass.getDescriptor();
         AbilityMixinRecoverInfoOuterClass.getDescriptor();
-        AbilityScalarValueEntryOuterClass.getDescriptor();
     }
 }

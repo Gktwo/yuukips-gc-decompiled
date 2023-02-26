@@ -15,7 +15,6 @@ import java.util.Collections;
 import java.util.List;
 import javassist.bytecode.DeprecatedAttribute;
 import javassist.bytecode.SourceFileAttribute;
-import javassist.compiler.TokenId;
 
 /* loaded from: grasscutter.jar:com/google/protobuf/DescriptorProtos.class */
 public final class DescriptorProtos {
@@ -15556,16 +15555,16 @@ public final class DescriptorProtos {
                                     this.bitField0_ |= 16;
                                     this.javaStringCheckUtf8_ = input.readBool();
                                     break;
-                                case PacketOpcodes.ScenePlayerLocationNotify /* 248 */:
+                                case PacketOpcodes.EnterSceneDoneReq /* 248 */:
                                     this.bitField0_ |= 4096;
                                     this.ccEnableArenas_ = input.readBool();
                                     break;
-                                case PacketOpcodes.ExitTransPointRegionNotify /* 290 */:
+                                case PacketOpcodes.ExecuteGroupTriggerReq /* 290 */:
                                     ByteString bs4 = input.readBytes();
                                     this.bitField0_ |= 8192;
                                     this.objcClassPrefix_ = bs4;
                                     break;
-                                case 298:
+                                case PacketOpcodes.SceneInitFinishReq /* 298 */:
                                     ByteString bs5 = input.readBytes();
                                     this.bitField0_ |= 16384;
                                     this.csharpNamespace_ = bs5;
@@ -15585,7 +15584,7 @@ public final class DescriptorProtos {
                                     this.bitField0_ |= 131072;
                                     this.phpNamespace_ = bs8;
                                     break;
-                                case TokenId.SUPER /* 336 */:
+                                case 336:
                                     this.bitField0_ |= 1024;
                                     this.phpGenericServices_ = input.readBool();
                                     break;
@@ -15594,7 +15593,7 @@ public final class DescriptorProtos {
                                     this.bitField0_ |= 262144;
                                     this.phpMetadataNamespace_ = bs9;
                                     break;
-                                case TokenId.PLUSPLUS /* 362 */:
+                                case 362:
                                     ByteString bs10 = input.readBytes();
                                     this.bitField0_ |= 524288;
                                     this.rubyPackage_ = bs10;
@@ -22464,7 +22463,7 @@ public final class DescriptorProtos {
                             case 0:
                                 done = true;
                                 break;
-                            case 264:
+                            case PacketOpcodes.ScenePlayerInfoNotify /* 264 */:
                                 this.bitField0_ |= 1;
                                 this.deprecated_ = input.readBool();
                                 break;
@@ -23215,11 +23214,11 @@ public final class DescriptorProtos {
                                 case 0:
                                     done = true;
                                     break;
-                                case 264:
+                                case PacketOpcodes.ScenePlayerInfoNotify /* 264 */:
                                     this.bitField0_ |= 1;
                                     this.deprecated_ = input.readBool();
                                     break;
-                                case PacketOpcodes.SceneCreateEntityRsp /* 272 */:
+                                case PacketOpcodes.HitClientTrivialNotify /* 272 */:
                                     int rawValue = input.readEnum();
                                     if (IdempotencyLevel.valueOf(rawValue) != null) {
                                         this.bitField0_ |= 2;

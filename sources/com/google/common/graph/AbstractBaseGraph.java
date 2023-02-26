@@ -107,8 +107,9 @@ public abstract class AbstractBaseGraph<N> implements BaseGraph<N> {
         return endpoints.isOrdered() || !isDirected();
     }
 
+    /* access modifiers changed from: private */
     /* loaded from: grasscutter.jar:com/google/common/graph/AbstractBaseGraph$IncidentEdgeSet.class */
-    private static abstract class IncidentEdgeSet<N> extends AbstractSet<EndpointPair<N>> {
+    public static abstract class IncidentEdgeSet<N> extends AbstractSet<EndpointPair<N>> {
         protected final N node;
         protected final BaseGraph<N> graph;
 

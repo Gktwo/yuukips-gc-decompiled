@@ -189,30 +189,30 @@ public abstract class AbstractReference2LongMap<K> extends AbstractReference2Lon
                 return new ObjectIterator<K>() { // from class: it.unimi.dsi.fastutil.objects.AbstractReference2LongMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Reference2LongMap.Entry<K>> f2518i;
+                    private final ObjectIterator<Reference2LongMap.Entry<K>> f2482i;
 
                     {
-                        this.f2518i = Reference2LongMaps.fastIterator(AbstractReference2LongMap.this);
+                        this.f2482i = Reference2LongMaps.fastIterator(AbstractReference2LongMap.this);
                     }
 
                     @Override // java.util.Iterator
                     public K next() {
-                        return this.f2518i.next().getKey();
+                        return this.f2482i.next().getKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2518i.hasNext();
+                        return this.f2482i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2518i.remove();
+                        this.f2482i.remove();
                     }
 
                     @Override // java.util.Iterator
                     public void forEachRemaining(Consumer<? super K> action) {
-                        this.f2518i.forEachRemaining(entry -> {
+                        this.f2482i.forEachRemaining(entry -> {
                             action.accept(entry.getKey());
                         });
                     }
@@ -250,30 +250,30 @@ public abstract class AbstractReference2LongMap<K> extends AbstractReference2Lon
                 return new LongIterator() { // from class: it.unimi.dsi.fastutil.objects.AbstractReference2LongMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Reference2LongMap.Entry<K>> f2519i;
+                    private final ObjectIterator<Reference2LongMap.Entry<K>> f2483i;
 
                     {
-                        this.f2519i = Reference2LongMaps.fastIterator(AbstractReference2LongMap.this);
+                        this.f2483i = Reference2LongMaps.fastIterator(AbstractReference2LongMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
                     public long nextLong() {
-                        return this.f2519i.next().getLongValue();
+                        return this.f2483i.next().getLongValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2519i.hasNext();
+                        return this.f2483i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2519i.remove();
+                        this.f2483i.remove();
                     }
 
                     @Override // java.util.PrimitiveIterator.OfLong
                     public void forEachRemaining(LongConsumer action) {
-                        this.f2519i.forEachRemaining(entry -> {
+                        this.f2483i.forEachRemaining(entry -> {
                             action.accept(entry.getLongValue());
                         });
                     }

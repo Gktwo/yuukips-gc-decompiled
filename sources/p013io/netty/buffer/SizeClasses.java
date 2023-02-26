@@ -16,7 +16,7 @@ public abstract class SizeClasses implements SizeClassesMetric {
     private static final int LOG2_DELTA_LOOKUP_IDX = 6;
 
     /* renamed from: no */
-    private static final byte f976no = 0;
+    private static final byte f940no = 0;
     private static final byte yes = 1;
     protected final int pageSize;
     protected final int pageShifts;

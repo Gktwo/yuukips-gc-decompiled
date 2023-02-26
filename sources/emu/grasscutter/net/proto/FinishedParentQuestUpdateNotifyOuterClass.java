@@ -25,11 +25,11 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FinishedParentQuestUpdateNotifyOuterClass.class */
 public final class FinishedParentQuestUpdateNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n%FinishedParentQuestUpdateNotify.proto\u001a\u0011ParentQuest.proto\"J\n\u001fFinishedParentQuestUpdateNotify\u0012'\n\u0011parent_quest_list\u0018\u0003 \u0003(\u000b2\f.ParentQuestB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ParentQuestOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n%FinishedParentQuestUpdateNotify.proto\u001a\u0011ParentQuest.proto\"H\n\u001fFinishedParentQuestUpdateNotify\u0012%\n\u000fparentQuestList\u0018\u000f \u0003(\u000b2\f.ParentQuestB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ParentQuestOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_FinishedParentQuestUpdateNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_FinishedParentQuestUpdateNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f710x45ae2a03 = new GeneratedMessageV3.FieldAccessorTable(internal_static_FinishedParentQuestUpdateNotify_descriptor, new String[]{"ParentQuestList"});
+    private static final GeneratedMessageV3.FieldAccessorTable f708x45ae2a03 = new GeneratedMessageV3.FieldAccessorTable(internal_static_FinishedParentQuestUpdateNotify_descriptor, new String[]{"ParentQuestList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FinishedParentQuestUpdateNotifyOuterClass$FinishedParentQuestUpdateNotifyOrBuilder.class */
     public interface FinishedParentQuestUpdateNotifyOrBuilder extends MessageOrBuilder {
@@ -57,7 +57,7 @@ public final class FinishedParentQuestUpdateNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FinishedParentQuestUpdateNotifyOuterClass$FinishedParentQuestUpdateNotify.class */
     public static final class FinishedParentQuestUpdateNotify extends GeneratedMessageV3 implements FinishedParentQuestUpdateNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PARENT_QUEST_LIST_FIELD_NUMBER = 3;
+        public static final int PARENTQUESTLIST_FIELD_NUMBER = 15;
         private List<ParentQuestOuterClass.ParentQuest> parentQuestList_;
         private byte memoizedIsInitialized;
         private static final FinishedParentQuestUpdateNotify DEFAULT_INSTANCE = new FinishedParentQuestUpdateNotify();
@@ -108,7 +108,7 @@ public final class FinishedParentQuestUpdateNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 26:
+                                case 122:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.parentQuestList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -145,7 +145,7 @@ public final class FinishedParentQuestUpdateNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return FinishedParentQuestUpdateNotifyOuterClass.f710x45ae2a03.ensureFieldAccessorsInitialized(FinishedParentQuestUpdateNotify.class, Builder.class);
+            return FinishedParentQuestUpdateNotifyOuterClass.f708x45ae2a03.ensureFieldAccessorsInitialized(FinishedParentQuestUpdateNotify.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.FinishedParentQuestUpdateNotifyOuterClass.FinishedParentQuestUpdateNotifyOrBuilder
@@ -189,7 +189,7 @@ public final class FinishedParentQuestUpdateNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.parentQuestList_.size(); i++) {
-                output.writeMessage(3, this.parentQuestList_.get(i));
+                output.writeMessage(15, this.parentQuestList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -202,7 +202,7 @@ public final class FinishedParentQuestUpdateNotifyOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.parentQuestList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(3, this.parentQuestList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(15, this.parentQuestList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -228,7 +228,7 @@ public final class FinishedParentQuestUpdateNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getParentQuestListCount() > 0) {
-                hash = (53 * ((37 * hash) + 3)) + getParentQuestListList().hashCode();
+                hash = (53 * ((37 * hash) + 15)) + getParentQuestListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -319,7 +319,7 @@ public final class FinishedParentQuestUpdateNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return FinishedParentQuestUpdateNotifyOuterClass.f710x45ae2a03.ensureFieldAccessorsInitialized(FinishedParentQuestUpdateNotify.class, Builder.class);
+                return FinishedParentQuestUpdateNotifyOuterClass.f708x45ae2a03.ensureFieldAccessorsInitialized(FinishedParentQuestUpdateNotify.class, Builder.class);
             }
 
             private Builder() {

@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EvtDestroyGadgetNotifyOuterClass.class */
 public final class EvtDestroyGadgetNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cEvtDestroyGadgetNotify.proto\u001a\u0011ForwardType.proto\"O\n\u0016EvtDestroyGadgetNotify\u0012\u0011\n\tentity_id\u0018\b \u0001(\r\u0012\"\n\fforward_type\u0018\n \u0001(\u000e2\f.ForwardTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ForwardTypeOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cEvtDestroyGadgetNotify.proto\u001a\u0011ForwardType.proto\"M\n\u0016EvtDestroyGadgetNotify\u0012!\n\u000bforwardType\u0018\u000b \u0001(\u000e2\f.ForwardType\u0012\u0010\n\bentityId\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ForwardTypeOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_EvtDestroyGadgetNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_EvtDestroyGadgetNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EvtDestroyGadgetNotify_descriptor, new String[]{"EntityId", "ForwardType"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_EvtDestroyGadgetNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EvtDestroyGadgetNotify_descriptor, new String[]{"ForwardType", "EntityId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EvtDestroyGadgetNotifyOuterClass$EvtDestroyGadgetNotifyOrBuilder.class */
     public interface EvtDestroyGadgetNotifyOrBuilder extends MessageOrBuilder {
-        int getEntityId();
-
         int getForwardTypeValue();
 
         ForwardTypeOuterClass.ForwardType getForwardType();
+
+        int getEntityId();
     }
 
     private EvtDestroyGadgetNotifyOuterClass() {
@@ -46,10 +46,10 @@ public final class EvtDestroyGadgetNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EvtDestroyGadgetNotifyOuterClass$EvtDestroyGadgetNotify.class */
     public static final class EvtDestroyGadgetNotify extends GeneratedMessageV3 implements EvtDestroyGadgetNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTITY_ID_FIELD_NUMBER = 8;
-        private int entityId_;
-        public static final int FORWARD_TYPE_FIELD_NUMBER = 10;
+        public static final int FORWARDTYPE_FIELD_NUMBER = 11;
         private int forwardType_;
+        public static final int ENTITYID_FIELD_NUMBER = 3;
+        private int entityId_;
         private byte memoizedIsInitialized;
         private static final EvtDestroyGadgetNotify DEFAULT_INSTANCE = new EvtDestroyGadgetNotify();
         private static final Parser<EvtDestroyGadgetNotify> PARSER = new AbstractParser<EvtDestroyGadgetNotify>() { // from class: emu.grasscutter.net.proto.EvtDestroyGadgetNotifyOuterClass.EvtDestroyGadgetNotify.1
@@ -97,10 +97,10 @@ public final class EvtDestroyGadgetNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 64:
+                                case 24:
                                     this.entityId_ = input.readUInt32();
                                     break;
-                                case 80:
+                                case 88:
                                     this.forwardType_ = input.readEnum();
                                     break;
                                 default:
@@ -134,11 +134,6 @@ public final class EvtDestroyGadgetNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.EvtDestroyGadgetNotifyOuterClass.EvtDestroyGadgetNotifyOrBuilder
-        public int getEntityId() {
-            return this.entityId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.EvtDestroyGadgetNotifyOuterClass.EvtDestroyGadgetNotifyOrBuilder
         public int getForwardTypeValue() {
             return this.forwardType_;
         }
@@ -147,6 +142,11 @@ public final class EvtDestroyGadgetNotifyOuterClass {
         public ForwardTypeOuterClass.ForwardType getForwardType() {
             ForwardTypeOuterClass.ForwardType result = ForwardTypeOuterClass.ForwardType.valueOf(this.forwardType_);
             return result == null ? ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
+        }
+
+        @Override // emu.grasscutter.net.proto.EvtDestroyGadgetNotifyOuterClass.EvtDestroyGadgetNotifyOrBuilder
+        public int getEntityId() {
+            return this.entityId_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -165,10 +165,10 @@ public final class EvtDestroyGadgetNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.entityId_ != 0) {
-                output.writeUInt32(8, this.entityId_);
+                output.writeUInt32(3, this.entityId_);
             }
             if (this.forwardType_ != ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
-                output.writeEnum(10, this.forwardType_);
+                output.writeEnum(11, this.forwardType_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -181,10 +181,10 @@ public final class EvtDestroyGadgetNotifyOuterClass {
             }
             int size2 = 0;
             if (this.entityId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(8, this.entityId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.entityId_);
             }
             if (this.forwardType_ != ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(10, this.forwardType_);
+                size2 += CodedOutputStream.computeEnumSize(11, this.forwardType_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -200,7 +200,7 @@ public final class EvtDestroyGadgetNotifyOuterClass {
                 return equals(obj);
             }
             EvtDestroyGadgetNotify other = (EvtDestroyGadgetNotify) obj;
-            return getEntityId() == other.getEntityId() && this.forwardType_ == other.forwardType_ && this.unknownFields.equals(other.unknownFields);
+            return this.forwardType_ == other.forwardType_ && getEntityId() == other.getEntityId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -208,7 +208,7 @@ public final class EvtDestroyGadgetNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getEntityId())) + 10)) + this.forwardType_)) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + this.forwardType_)) + 3)) + getEntityId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -287,8 +287,8 @@ public final class EvtDestroyGadgetNotifyOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EvtDestroyGadgetNotifyOuterClass$EvtDestroyGadgetNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements EvtDestroyGadgetNotifyOrBuilder {
-            private int entityId_;
             private int forwardType_ = 0;
+            private int entityId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return EvtDestroyGadgetNotifyOuterClass.internal_static_EvtDestroyGadgetNotify_descriptor;
@@ -316,8 +316,8 @@ public final class EvtDestroyGadgetNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.entityId_ = 0;
                 this.forwardType_ = 0;
+                this.entityId_ = 0;
                 return this;
             }
 
@@ -343,8 +343,8 @@ public final class EvtDestroyGadgetNotifyOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public EvtDestroyGadgetNotify buildPartial() {
                 EvtDestroyGadgetNotify result = new EvtDestroyGadgetNotify(this);
-                result.entityId_ = this.entityId_;
                 result.forwardType_ = this.forwardType_;
+                result.entityId_ = this.entityId_;
                 onBuilt();
                 return result;
             }
@@ -392,11 +392,11 @@ public final class EvtDestroyGadgetNotifyOuterClass {
                 if (other == EvtDestroyGadgetNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getEntityId() != 0) {
-                    setEntityId(other.getEntityId());
-                }
                 if (other.forwardType_ != 0) {
                     setForwardTypeValue(other.getForwardTypeValue());
+                }
+                if (other.getEntityId() != 0) {
+                    setEntityId(other.getEntityId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -431,23 +431,6 @@ public final class EvtDestroyGadgetNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.EvtDestroyGadgetNotifyOuterClass.EvtDestroyGadgetNotifyOrBuilder
-            public int getEntityId() {
-                return this.entityId_;
-            }
-
-            public Builder setEntityId(int value) {
-                this.entityId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearEntityId() {
-                this.entityId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.EvtDestroyGadgetNotifyOuterClass.EvtDestroyGadgetNotifyOrBuilder
             public int getForwardTypeValue() {
                 return this.forwardType_;
             }
@@ -475,6 +458,23 @@ public final class EvtDestroyGadgetNotifyOuterClass {
 
             public Builder clearForwardType() {
                 this.forwardType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.EvtDestroyGadgetNotifyOuterClass.EvtDestroyGadgetNotifyOrBuilder
+            public int getEntityId() {
+                return this.entityId_;
+            }
+
+            public Builder setEntityId(int value) {
+                this.entityId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearEntityId() {
+                this.entityId_ = 0;
                 onChanged();
                 return this;
             }

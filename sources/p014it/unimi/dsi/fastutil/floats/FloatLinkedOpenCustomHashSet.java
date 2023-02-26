@@ -29,13 +29,13 @@ public class FloatLinkedOpenCustomHashSet extends AbstractFloatSortedSet impleme
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f1953n;
+    protected transient int f1917n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1954f;
+    protected final float f1918f;
     private static final int SPLITERATOR_CHARACTERISTICS = 337;
 
     public FloatLinkedOpenCustomHashSet(int expected, float f, FloatHash.Strategy strategy) {
@@ -47,14 +47,14 @@ public class FloatLinkedOpenCustomHashSet extends AbstractFloatSortedSet impleme
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1954f = f;
+            this.f1918f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1953n = arraySize;
+            this.f1917n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1953n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1953n, f);
-            this.key = new float[this.f1953n + 1];
-            this.link = new long[this.f1953n + 1];
+            this.mask = this.f1917n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1917n, f);
+            this.key = new float[this.f1917n + 1];
+            this.link = new long[this.f1917n + 1];
         }
     }
 
@@ -132,22 +132,22 @@ public class FloatLinkedOpenCustomHashSet extends AbstractFloatSortedSet impleme
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1954f);
-        if (needed > this.f1953n) {
+        int needed = HashCommon.arraySize(capacity, this.f1918f);
+        if (needed > this.f1917n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1954f)))));
-        if (needed > this.f1953n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1918f)))));
+        if (needed > this.f1917n) {
             rehash(needed);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatCollection, p014it.unimi.dsi.fastutil.floats.FloatCollection
     public boolean addAll(FloatCollection c) {
-        if (((double) this.f1954f) <= 0.5d) {
+        if (((double) this.f1918f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -157,7 +157,7 @@ public class FloatLinkedOpenCustomHashSet extends AbstractFloatSortedSet impleme
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Float> c) {
-        if (((double) this.f1954f) <= 0.5d) {
+        if (((double) this.f1918f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -191,9 +191,9 @@ public class FloatLinkedOpenCustomHashSet extends AbstractFloatSortedSet impleme
         } else if (this.containsNull) {
             return false;
         } else {
-            pos = this.f1953n;
+            pos = this.f1917n;
             this.containsNull = true;
-            this.key[this.f1953n] = k;
+            this.key[this.f1917n] = k;
         }
         if (this.size == 0) {
             this.last = pos;
@@ -211,7 +211,7 @@ public class FloatLinkedOpenCustomHashSet extends AbstractFloatSortedSet impleme
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f1954f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f1918f));
         return true;
     }
 
@@ -249,22 +249,22 @@ public class FloatLinkedOpenCustomHashSet extends AbstractFloatSortedSet impleme
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f1953n <= this.minN || this.size >= this.maxFill / 4 || this.f1953n <= 16) {
+        if (this.f1917n <= this.minN || this.size >= this.maxFill / 4 || this.f1917n <= 16) {
             return true;
         }
-        rehash(this.f1953n / 2);
+        rehash(this.f1917n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f1953n] = 0.0f;
+        this.key[this.f1917n] = 0.0f;
         this.size--;
-        fixPointers(this.f1953n);
-        if (this.f1953n <= this.minN || this.size >= this.maxFill / 4 || this.f1953n <= 16) {
+        fixPointers(this.f1917n);
+        if (this.f1917n <= this.minN || this.size >= this.maxFill / 4 || this.f1917n <= 16) {
             return true;
         }
-        rehash(this.f1953n / 2);
+        rehash(this.f1917n / 2);
         return true;
     }
 
@@ -340,12 +340,12 @@ public class FloatLinkedOpenCustomHashSet extends AbstractFloatSortedSet impleme
         this.size--;
         if (this.strategy.equals(k, 0.0f)) {
             this.containsNull = false;
-            this.key[this.f1953n] = 0.0f;
+            this.key[this.f1917n] = 0.0f;
         } else {
             shiftKeys(pos);
         }
-        if (this.f1953n > this.minN && this.size < this.maxFill / 4 && this.f1953n > 16) {
-            rehash(this.f1953n / 2);
+        if (this.f1917n > this.minN && this.size < this.maxFill / 4 && this.f1917n > 16) {
+            rehash(this.f1917n / 2);
         }
         return k;
     }
@@ -365,12 +365,12 @@ public class FloatLinkedOpenCustomHashSet extends AbstractFloatSortedSet impleme
         this.size--;
         if (this.strategy.equals(k, 0.0f)) {
             this.containsNull = false;
-            this.key[this.f1953n] = 0.0f;
+            this.key[this.f1917n] = 0.0f;
         } else {
             shiftKeys(pos);
         }
-        if (this.f1953n > this.minN && this.size < this.maxFill / 4 && this.f1953n > 16) {
-            rehash(this.f1953n / 2);
+        if (this.f1917n > this.minN && this.size < this.maxFill / 4 && this.f1917n > 16) {
+            rehash(this.f1917n / 2);
         }
         return k;
     }
@@ -442,11 +442,11 @@ public class FloatLinkedOpenCustomHashSet extends AbstractFloatSortedSet impleme
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToFirst(this.f1953n);
+            moveIndexToFirst(this.f1917n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f1953n;
+            pos = this.f1917n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -465,7 +465,7 @@ public class FloatLinkedOpenCustomHashSet extends AbstractFloatSortedSet impleme
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f1954f));
+        rehash(HashCommon.arraySize(this.size, this.f1918f));
         return true;
     }
 
@@ -488,11 +488,11 @@ public class FloatLinkedOpenCustomHashSet extends AbstractFloatSortedSet impleme
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToLast(this.f1953n);
+            moveIndexToLast(this.f1917n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f1953n;
+            pos = this.f1917n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -511,7 +511,7 @@ public class FloatLinkedOpenCustomHashSet extends AbstractFloatSortedSet impleme
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f1954f));
+        rehash(HashCommon.arraySize(this.size, this.f1918f));
         return true;
     }
 
@@ -656,8 +656,8 @@ public class FloatLinkedOpenCustomHashSet extends AbstractFloatSortedSet impleme
             this.index = -1;
             if (FloatLinkedOpenCustomHashSet.this.strategy.equals(from, 0.0f)) {
                 if (FloatLinkedOpenCustomHashSet.this.containsNull) {
-                    this.next = (int) FloatLinkedOpenCustomHashSet.this.link[FloatLinkedOpenCustomHashSet.this.f1953n];
-                    this.prev = FloatLinkedOpenCustomHashSet.this.f1953n;
+                    this.next = (int) FloatLinkedOpenCustomHashSet.this.link[FloatLinkedOpenCustomHashSet.this.f1917n];
+                    this.prev = FloatLinkedOpenCustomHashSet.this.f1917n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + from + " does not belong to this set.");
@@ -796,9 +796,9 @@ public class FloatLinkedOpenCustomHashSet extends AbstractFloatSortedSet impleme
             }
             int pos = this.curr;
             this.curr = -1;
-            if (pos == FloatLinkedOpenCustomHashSet.this.f1953n) {
+            if (pos == FloatLinkedOpenCustomHashSet.this.f1917n) {
                 FloatLinkedOpenCustomHashSet.this.containsNull = false;
-                FloatLinkedOpenCustomHashSet.this.key[FloatLinkedOpenCustomHashSet.this.f1953n] = 0.0f;
+                FloatLinkedOpenCustomHashSet.this.key[FloatLinkedOpenCustomHashSet.this.f1917n] = 0.0f;
                 return;
             }
             float[] key = FloatLinkedOpenCustomHashSet.this.key;
@@ -868,8 +868,8 @@ public class FloatLinkedOpenCustomHashSet extends AbstractFloatSortedSet impleme
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1954f)));
-        if (l >= this.f1953n || this.size > HashCommon.maxFill(l, this.f1954f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1918f)));
+        if (l >= this.f1917n || this.size > HashCommon.maxFill(l, this.f1918f)) {
             return true;
         }
         try {
@@ -927,9 +927,9 @@ public class FloatLinkedOpenCustomHashSet extends AbstractFloatSortedSet impleme
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f1953n = newN;
+        this.f1917n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f1953n, this.f1954f);
+        this.maxFill = HashCommon.maxFill(this.f1917n, this.f1918f);
         this.key = newKey;
     }
 
@@ -983,12 +983,12 @@ public class FloatLinkedOpenCustomHashSet extends AbstractFloatSortedSet impleme
         int pos;
         int i;
         s.defaultReadObject();
-        this.f1953n = HashCommon.arraySize(this.size, this.f1954f);
-        this.maxFill = HashCommon.maxFill(this.f1953n, this.f1954f);
-        this.mask = this.f1953n - 1;
-        float[] key = new float[this.f1953n + 1];
+        this.f1917n = HashCommon.arraySize(this.size, this.f1918f);
+        this.maxFill = HashCommon.maxFill(this.f1917n, this.f1918f);
+        this.mask = this.f1917n - 1;
+        float[] key = new float[this.f1917n + 1];
         this.key = key;
-        long[] link = new long[this.f1953n + 1];
+        long[] link = new long[this.f1917n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -1001,7 +1001,7 @@ public class FloatLinkedOpenCustomHashSet extends AbstractFloatSortedSet impleme
             }
             float k = s.readFloat();
             if (this.strategy.equals(k, 0.0f)) {
-                pos = this.f1953n;
+                pos = this.f1917n;
                 this.containsNull = true;
             } else {
                 int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;

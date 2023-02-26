@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FindHilichurlDayContentInfoOuterClass.class */
 public final class FindHilichurlDayContentInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!FindHilichurlDayContentInfo.proto\"1\n\u001bFindHilichurlDayContentInfo\u0012\u0012\n\nstart_time\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!FindHilichurlDayContentInfo.proto\"0\n\u001bFindHilichurlDayContentInfo\u0012\u0011\n\tstartTime\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_FindHilichurlDayContentInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_FindHilichurlDayContentInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FindHilichurlDayContentInfo_descriptor, new String[]{"StartTime"});
 
@@ -41,7 +41,7 @@ public final class FindHilichurlDayContentInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FindHilichurlDayContentInfoOuterClass$FindHilichurlDayContentInfo.class */
     public static final class FindHilichurlDayContentInfo extends GeneratedMessageV3 implements FindHilichurlDayContentInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int START_TIME_FIELD_NUMBER = 13;
+        public static final int STARTTIME_FIELD_NUMBER = 5;
         private int startTime_;
         private byte memoizedIsInitialized;
         private static final FindHilichurlDayContentInfo DEFAULT_INSTANCE = new FindHilichurlDayContentInfo();
@@ -88,7 +88,7 @@ public final class FindHilichurlDayContentInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 104:
+                            case 40:
                                 this.startTime_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class FindHilichurlDayContentInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.startTime_ != 0) {
-                output.writeUInt32(13, this.startTime_);
+                output.writeUInt32(5, this.startTime_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class FindHilichurlDayContentInfoOuterClass {
             }
             int size2 = 0;
             if (this.startTime_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(13, this.startTime_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.startTime_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class FindHilichurlDayContentInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + getStartTime())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getStartTime())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

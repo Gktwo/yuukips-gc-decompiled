@@ -20,25 +20,25 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/StoreWeightLimitNotifyOuterClass.class */
 public final class StoreWeightLimitNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cStoreWeightLimitNotify.proto\u001a\u000fStoreType.proto\"Æ\u0001\n\u0016StoreWeightLimitNotify\u0012\u001d\n\u0015reliquary_count_limit\u0018\u000e \u0001(\r\u0012\u001d\n\u0015furniture_count_limit\u0018\n \u0001(\r\u0012\u001c\n\u0014material_count_limit\u0018\u0005 \u0001(\r\u0012\u001a\n\u0012weapon_count_limit\u0018\u0001 \u0001(\r\u0012\u0014\n\fweight_limit\u0018\b \u0001(\r\u0012\u001e\n\nstore_type\u0018\t \u0001(\u000e2\n.StoreTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{StoreTypeOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cStoreWeightLimitNotify.proto\u001a\u000fStoreType.proto\"¼\u0001\n\u0016StoreWeightLimitNotify\u0012\u001b\n\u0013furnitureCountLimit\u0018\u0002 \u0001(\r\u0012\u001a\n\u0012materialCountLimit\u0018\u0003 \u0001(\r\u0012\u001b\n\u0013reliquaryCountLimit\u0018\u0005 \u0001(\r\u0012\u0013\n\u000bweightLimit\u0018\u000e \u0001(\r\u0012\u001d\n\tstoreType\u0018\u000b \u0001(\u000e2\n.StoreType\u0012\u0018\n\u0010weaponCountLimit\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{StoreTypeOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_StoreWeightLimitNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_StoreWeightLimitNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_StoreWeightLimitNotify_descriptor, new String[]{"ReliquaryCountLimit", "FurnitureCountLimit", "MaterialCountLimit", "WeaponCountLimit", "WeightLimit", "StoreType"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_StoreWeightLimitNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_StoreWeightLimitNotify_descriptor, new String[]{"FurnitureCountLimit", "MaterialCountLimit", "ReliquaryCountLimit", "WeightLimit", "StoreType", "WeaponCountLimit"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/StoreWeightLimitNotifyOuterClass$StoreWeightLimitNotifyOrBuilder.class */
     public interface StoreWeightLimitNotifyOrBuilder extends MessageOrBuilder {
-        int getReliquaryCountLimit();
-
         int getFurnitureCountLimit();
 
         int getMaterialCountLimit();
 
-        int getWeaponCountLimit();
+        int getReliquaryCountLimit();
 
         int getWeightLimit();
 
         int getStoreTypeValue();
 
         StoreTypeOuterClass.StoreType getStoreType();
+
+        int getWeaponCountLimit();
     }
 
     private StoreWeightLimitNotifyOuterClass() {
@@ -54,18 +54,18 @@ public final class StoreWeightLimitNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/StoreWeightLimitNotifyOuterClass$StoreWeightLimitNotify.class */
     public static final class StoreWeightLimitNotify extends GeneratedMessageV3 implements StoreWeightLimitNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RELIQUARY_COUNT_LIMIT_FIELD_NUMBER = 14;
-        private int reliquaryCountLimit_;
-        public static final int FURNITURE_COUNT_LIMIT_FIELD_NUMBER = 10;
+        public static final int FURNITURECOUNTLIMIT_FIELD_NUMBER = 2;
         private int furnitureCountLimit_;
-        public static final int MATERIAL_COUNT_LIMIT_FIELD_NUMBER = 5;
+        public static final int MATERIALCOUNTLIMIT_FIELD_NUMBER = 3;
         private int materialCountLimit_;
-        public static final int WEAPON_COUNT_LIMIT_FIELD_NUMBER = 1;
-        private int weaponCountLimit_;
-        public static final int WEIGHT_LIMIT_FIELD_NUMBER = 8;
+        public static final int RELIQUARYCOUNTLIMIT_FIELD_NUMBER = 5;
+        private int reliquaryCountLimit_;
+        public static final int WEIGHTLIMIT_FIELD_NUMBER = 14;
         private int weightLimit_;
-        public static final int STORE_TYPE_FIELD_NUMBER = 9;
+        public static final int STORETYPE_FIELD_NUMBER = 11;
         private int storeType_;
+        public static final int WEAPONCOUNTLIMIT_FIELD_NUMBER = 9;
+        private int weaponCountLimit_;
         private byte memoizedIsInitialized;
         private static final StoreWeightLimitNotify DEFAULT_INSTANCE = new StoreWeightLimitNotify();
         private static final Parser<StoreWeightLimitNotify> PARSER = new AbstractParser<StoreWeightLimitNotify>() { // from class: emu.grasscutter.net.proto.StoreWeightLimitNotifyOuterClass.StoreWeightLimitNotify.1
@@ -112,23 +112,23 @@ public final class StoreWeightLimitNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
-                                this.weaponCountLimit_ = input.readUInt32();
-                                break;
-                            case 40:
-                                this.materialCountLimit_ = input.readUInt32();
-                                break;
-                            case 64:
-                                this.weightLimit_ = input.readUInt32();
-                                break;
-                            case 72:
-                                this.storeType_ = input.readEnum();
-                                break;
-                            case 80:
+                            case 16:
                                 this.furnitureCountLimit_ = input.readUInt32();
                                 break;
-                            case 112:
+                            case 24:
+                                this.materialCountLimit_ = input.readUInt32();
+                                break;
+                            case 40:
                                 this.reliquaryCountLimit_ = input.readUInt32();
+                                break;
+                            case 72:
+                                this.weaponCountLimit_ = input.readUInt32();
+                                break;
+                            case 88:
+                                this.storeType_ = input.readEnum();
+                                break;
+                            case 112:
+                                this.weightLimit_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -160,11 +160,6 @@ public final class StoreWeightLimitNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.StoreWeightLimitNotifyOuterClass.StoreWeightLimitNotifyOrBuilder
-        public int getReliquaryCountLimit() {
-            return this.reliquaryCountLimit_;
-        }
-
-        @Override // emu.grasscutter.net.proto.StoreWeightLimitNotifyOuterClass.StoreWeightLimitNotifyOrBuilder
         public int getFurnitureCountLimit() {
             return this.furnitureCountLimit_;
         }
@@ -175,8 +170,8 @@ public final class StoreWeightLimitNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.StoreWeightLimitNotifyOuterClass.StoreWeightLimitNotifyOrBuilder
-        public int getWeaponCountLimit() {
-            return this.weaponCountLimit_;
+        public int getReliquaryCountLimit() {
+            return this.reliquaryCountLimit_;
         }
 
         @Override // emu.grasscutter.net.proto.StoreWeightLimitNotifyOuterClass.StoreWeightLimitNotifyOrBuilder
@@ -195,6 +190,11 @@ public final class StoreWeightLimitNotifyOuterClass {
             return result == null ? StoreTypeOuterClass.StoreType.UNRECOGNIZED : result;
         }
 
+        @Override // emu.grasscutter.net.proto.StoreWeightLimitNotifyOuterClass.StoreWeightLimitNotifyOrBuilder
+        public int getWeaponCountLimit() {
+            return this.weaponCountLimit_;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -210,23 +210,23 @@ public final class StoreWeightLimitNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.weaponCountLimit_ != 0) {
-                output.writeUInt32(1, this.weaponCountLimit_);
+            if (this.furnitureCountLimit_ != 0) {
+                output.writeUInt32(2, this.furnitureCountLimit_);
             }
             if (this.materialCountLimit_ != 0) {
-                output.writeUInt32(5, this.materialCountLimit_);
-            }
-            if (this.weightLimit_ != 0) {
-                output.writeUInt32(8, this.weightLimit_);
-            }
-            if (this.storeType_ != StoreTypeOuterClass.StoreType.STORE_TYPE_NONE.getNumber()) {
-                output.writeEnum(9, this.storeType_);
-            }
-            if (this.furnitureCountLimit_ != 0) {
-                output.writeUInt32(10, this.furnitureCountLimit_);
+                output.writeUInt32(3, this.materialCountLimit_);
             }
             if (this.reliquaryCountLimit_ != 0) {
-                output.writeUInt32(14, this.reliquaryCountLimit_);
+                output.writeUInt32(5, this.reliquaryCountLimit_);
+            }
+            if (this.weaponCountLimit_ != 0) {
+                output.writeUInt32(9, this.weaponCountLimit_);
+            }
+            if (this.storeType_ != StoreTypeOuterClass.StoreType.STORE_TYPE_NONE.getNumber()) {
+                output.writeEnum(11, this.storeType_);
+            }
+            if (this.weightLimit_ != 0) {
+                output.writeUInt32(14, this.weightLimit_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -238,23 +238,23 @@ public final class StoreWeightLimitNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.weaponCountLimit_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.weaponCountLimit_);
+            if (this.furnitureCountLimit_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.furnitureCountLimit_);
             }
             if (this.materialCountLimit_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.materialCountLimit_);
-            }
-            if (this.weightLimit_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.weightLimit_);
-            }
-            if (this.storeType_ != StoreTypeOuterClass.StoreType.STORE_TYPE_NONE.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(9, this.storeType_);
-            }
-            if (this.furnitureCountLimit_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.furnitureCountLimit_);
+                size2 += CodedOutputStream.computeUInt32Size(3, this.materialCountLimit_);
             }
             if (this.reliquaryCountLimit_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.reliquaryCountLimit_);
+                size2 += CodedOutputStream.computeUInt32Size(5, this.reliquaryCountLimit_);
+            }
+            if (this.weaponCountLimit_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(9, this.weaponCountLimit_);
+            }
+            if (this.storeType_ != StoreTypeOuterClass.StoreType.STORE_TYPE_NONE.getNumber()) {
+                size2 += CodedOutputStream.computeEnumSize(11, this.storeType_);
+            }
+            if (this.weightLimit_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(14, this.weightLimit_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -270,7 +270,7 @@ public final class StoreWeightLimitNotifyOuterClass {
                 return equals(obj);
             }
             StoreWeightLimitNotify other = (StoreWeightLimitNotify) obj;
-            return getReliquaryCountLimit() == other.getReliquaryCountLimit() && getFurnitureCountLimit() == other.getFurnitureCountLimit() && getMaterialCountLimit() == other.getMaterialCountLimit() && getWeaponCountLimit() == other.getWeaponCountLimit() && getWeightLimit() == other.getWeightLimit() && this.storeType_ == other.storeType_ && this.unknownFields.equals(other.unknownFields);
+            return getFurnitureCountLimit() == other.getFurnitureCountLimit() && getMaterialCountLimit() == other.getMaterialCountLimit() && getReliquaryCountLimit() == other.getReliquaryCountLimit() && getWeightLimit() == other.getWeightLimit() && this.storeType_ == other.storeType_ && getWeaponCountLimit() == other.getWeaponCountLimit() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -278,7 +278,7 @@ public final class StoreWeightLimitNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getReliquaryCountLimit())) + 10)) + getFurnitureCountLimit())) + 5)) + getMaterialCountLimit())) + 1)) + getWeaponCountLimit())) + 8)) + getWeightLimit())) + 9)) + this.storeType_)) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getFurnitureCountLimit())) + 3)) + getMaterialCountLimit())) + 5)) + getReliquaryCountLimit())) + 14)) + getWeightLimit())) + 11)) + this.storeType_)) + 9)) + getWeaponCountLimit())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -357,12 +357,12 @@ public final class StoreWeightLimitNotifyOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/StoreWeightLimitNotifyOuterClass$StoreWeightLimitNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements StoreWeightLimitNotifyOrBuilder {
-            private int reliquaryCountLimit_;
             private int furnitureCountLimit_;
             private int materialCountLimit_;
-            private int weaponCountLimit_;
+            private int reliquaryCountLimit_;
             private int weightLimit_;
             private int storeType_ = 0;
+            private int weaponCountLimit_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return StoreWeightLimitNotifyOuterClass.internal_static_StoreWeightLimitNotify_descriptor;
@@ -390,12 +390,12 @@ public final class StoreWeightLimitNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.reliquaryCountLimit_ = 0;
                 this.furnitureCountLimit_ = 0;
                 this.materialCountLimit_ = 0;
-                this.weaponCountLimit_ = 0;
+                this.reliquaryCountLimit_ = 0;
                 this.weightLimit_ = 0;
                 this.storeType_ = 0;
+                this.weaponCountLimit_ = 0;
                 return this;
             }
 
@@ -421,12 +421,12 @@ public final class StoreWeightLimitNotifyOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public StoreWeightLimitNotify buildPartial() {
                 StoreWeightLimitNotify result = new StoreWeightLimitNotify(this);
-                result.reliquaryCountLimit_ = this.reliquaryCountLimit_;
                 result.furnitureCountLimit_ = this.furnitureCountLimit_;
                 result.materialCountLimit_ = this.materialCountLimit_;
-                result.weaponCountLimit_ = this.weaponCountLimit_;
+                result.reliquaryCountLimit_ = this.reliquaryCountLimit_;
                 result.weightLimit_ = this.weightLimit_;
                 result.storeType_ = this.storeType_;
+                result.weaponCountLimit_ = this.weaponCountLimit_;
                 onBuilt();
                 return result;
             }
@@ -474,23 +474,23 @@ public final class StoreWeightLimitNotifyOuterClass {
                 if (other == StoreWeightLimitNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getReliquaryCountLimit() != 0) {
-                    setReliquaryCountLimit(other.getReliquaryCountLimit());
-                }
                 if (other.getFurnitureCountLimit() != 0) {
                     setFurnitureCountLimit(other.getFurnitureCountLimit());
                 }
                 if (other.getMaterialCountLimit() != 0) {
                     setMaterialCountLimit(other.getMaterialCountLimit());
                 }
-                if (other.getWeaponCountLimit() != 0) {
-                    setWeaponCountLimit(other.getWeaponCountLimit());
+                if (other.getReliquaryCountLimit() != 0) {
+                    setReliquaryCountLimit(other.getReliquaryCountLimit());
                 }
                 if (other.getWeightLimit() != 0) {
                     setWeightLimit(other.getWeightLimit());
                 }
                 if (other.storeType_ != 0) {
                     setStoreTypeValue(other.getStoreTypeValue());
+                }
+                if (other.getWeaponCountLimit() != 0) {
+                    setWeaponCountLimit(other.getWeaponCountLimit());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -522,23 +522,6 @@ public final class StoreWeightLimitNotifyOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.StoreWeightLimitNotifyOuterClass.StoreWeightLimitNotifyOrBuilder
-            public int getReliquaryCountLimit() {
-                return this.reliquaryCountLimit_;
-            }
-
-            public Builder setReliquaryCountLimit(int value) {
-                this.reliquaryCountLimit_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearReliquaryCountLimit() {
-                this.reliquaryCountLimit_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // emu.grasscutter.net.proto.StoreWeightLimitNotifyOuterClass.StoreWeightLimitNotifyOrBuilder
@@ -576,18 +559,18 @@ public final class StoreWeightLimitNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.StoreWeightLimitNotifyOuterClass.StoreWeightLimitNotifyOrBuilder
-            public int getWeaponCountLimit() {
-                return this.weaponCountLimit_;
+            public int getReliquaryCountLimit() {
+                return this.reliquaryCountLimit_;
             }
 
-            public Builder setWeaponCountLimit(int value) {
-                this.weaponCountLimit_ = value;
+            public Builder setReliquaryCountLimit(int value) {
+                this.reliquaryCountLimit_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearWeaponCountLimit() {
-                this.weaponCountLimit_ = 0;
+            public Builder clearReliquaryCountLimit() {
+                this.reliquaryCountLimit_ = 0;
                 onChanged();
                 return this;
             }
@@ -637,6 +620,23 @@ public final class StoreWeightLimitNotifyOuterClass {
 
             public Builder clearStoreType() {
                 this.storeType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.StoreWeightLimitNotifyOuterClass.StoreWeightLimitNotifyOrBuilder
+            public int getWeaponCountLimit() {
+                return this.weaponCountLimit_;
+            }
+
+            public Builder setWeaponCountLimit(int value) {
+                this.weaponCountLimit_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearWeaponCountLimit() {
+                this.weaponCountLimit_ = 0;
                 onChanged();
                 return this;
             }

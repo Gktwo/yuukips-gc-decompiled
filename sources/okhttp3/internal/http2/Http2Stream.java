@@ -29,7 +29,7 @@ public final class Http2Stream {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: id */
-    private final int f3113id;
+    private final int f3077id;
     @NotNull
     private final Http2Connection connection;
     private long readBytesTotal;
@@ -55,7 +55,7 @@ public final class Http2Stream {
 
     public Http2Stream(int id, @NotNull Http2Connection connection, boolean outFinished, boolean inFinished, @Nullable Headers headers) {
         Intrinsics.checkNotNullParameter(connection, "connection");
-        this.f3113id = id;
+        this.f3077id = id;
         this.connection = connection;
         this.writeBytesMaximum = (long) this.connection.getPeerSettings().getInitialWindowSize();
         this.source = new FramingSource(this, (long) this.connection.getOkHttpSettings().getInitialWindowSize(), inFinished);
@@ -71,7 +71,7 @@ public final class Http2Stream {
     }
 
     public final int getId() {
-        return this.f3113id;
+        return this.f3077id;
     }
 
     @NotNull
@@ -163,7 +163,7 @@ public final class Http2Stream {
     }
 
     public final boolean isLocallyInitiated() {
-        return this.connection.getClient$okhttp() == ((this.f3113id & 1) == 1);
+        return this.connection.getClient$okhttp() == ((this.f3077id & 1) == 1);
     }
 
     @NotNull
@@ -225,7 +225,7 @@ public final class Http2Stream {
                     Unit unit2 = Unit.INSTANCE;
                 }
             }
-            this.connection.writeHeaders$okhttp(this.f3113id, outFinished, list);
+            this.connection.writeHeaders$okhttp(this.f3077id, outFinished, list);
             if (flushHeaders2) {
                 this.connection.flush();
                 return;
@@ -278,14 +278,14 @@ public final class Http2Stream {
     public final void close(@NotNull ErrorCode rstStatusCode, @Nullable IOException errorException) throws IOException {
         Intrinsics.checkNotNullParameter(rstStatusCode, "rstStatusCode");
         if (closeInternal(rstStatusCode, errorException)) {
-            this.connection.writeSynReset$okhttp(this.f3113id, rstStatusCode);
+            this.connection.writeSynReset$okhttp(this.f3077id, rstStatusCode);
         }
     }
 
     public final void closeLater(@NotNull ErrorCode errorCode) {
         Intrinsics.checkNotNullParameter(errorCode, "errorCode");
         if (closeInternal(errorCode, null)) {
-            this.connection.writeSynResetLater$okhttp(this.f3113id, errorCode);
+            this.connection.writeSynResetLater$okhttp(this.f3077id, errorCode);
         }
     }
 
@@ -302,7 +302,7 @@ public final class Http2Stream {
                 setErrorException$okhttp(errorException);
                 notifyAll();
                 Unit unit = Unit.INSTANCE;
-                this.connection.removeStream$okhttp(this.f3113id);
+                this.connection.removeStream$okhttp(this.f3077id);
                 return true;
             }
         }
@@ -337,7 +337,7 @@ public final class Http2Stream {
                 Unit unit = Unit.INSTANCE;
             }
             if (!open) {
-                this.connection.removeStream$okhttp(this.f3113id);
+                this.connection.removeStream$okhttp(this.f3077id);
                 return;
             }
             return;
@@ -587,7 +587,7 @@ public final class Http2Stream {
             if (cancel) {
                 close(ErrorCode.CANCEL, null);
             } else if (!open) {
-                this.connection.removeStream$okhttp(this.f3113id);
+                this.connection.removeStream$okhttp(this.f3077id);
             }
         } else {
             throw new AssertionError("Thread " + ((Object) Thread.currentThread().getName()) + " MUST NOT hold lock on " + this);

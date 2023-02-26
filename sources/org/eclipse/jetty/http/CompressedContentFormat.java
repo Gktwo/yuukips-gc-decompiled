@@ -11,7 +11,7 @@ public class CompressedContentFormat {
     public static final CompressedContentFormat GZIP = new CompressedContentFormat(GzipHandler.GZIP, ".gz");
 
     /* renamed from: BR */
-    public static final CompressedContentFormat f3129BR = new CompressedContentFormat("br", ".br");
+    public static final CompressedContentFormat f3093BR = new CompressedContentFormat("br", ".br");
     public static final CompressedContentFormat[] NONE = new CompressedContentFormat[0];
     private final String _encoding;
     private final String _extension;

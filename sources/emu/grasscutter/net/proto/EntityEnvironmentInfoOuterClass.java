@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityEnvironmentInfoOuterClass.class */
 public final class EntityEnvironmentInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bEntityEnvironmentInfo.proto\"K\n\u0015EntityEnvironmentInfo\u0012\u0019\n\u0011json_climate_type\u0018\u0001 \u0001(\r\u0012\u0017\n\u000fclimate_area_id\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bEntityEnvironmentInfo.proto\"G\n\u0015EntityEnvironmentInfo\u0012\u0017\n\u000fjsonClimateType\u0018\u0001 \u0001(\r\u0012\u0015\n\rclimateAreaId\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_EntityEnvironmentInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_EntityEnvironmentInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EntityEnvironmentInfo_descriptor, new String[]{"JsonClimateType", "ClimateAreaId"});
 
@@ -43,9 +43,9 @@ public final class EntityEnvironmentInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityEnvironmentInfoOuterClass$EntityEnvironmentInfo.class */
     public static final class EntityEnvironmentInfo extends GeneratedMessageV3 implements EntityEnvironmentInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int JSON_CLIMATE_TYPE_FIELD_NUMBER = 1;
+        public static final int JSONCLIMATETYPE_FIELD_NUMBER = 1;
         private int jsonClimateType_;
-        public static final int CLIMATE_AREA_ID_FIELD_NUMBER = 2;
+        public static final int CLIMATEAREAID_FIELD_NUMBER = 2;
         private int climateAreaId_;
         private byte memoizedIsInitialized;
         private static final EntityEnvironmentInfo DEFAULT_INSTANCE = new EntityEnvironmentInfo();

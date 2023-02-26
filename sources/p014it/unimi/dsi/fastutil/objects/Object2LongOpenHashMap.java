@@ -33,13 +33,13 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
     protected transient boolean containsNullKey;
 
     /* renamed from: n */
-    protected transient int f2633n;
+    protected transient int f2597n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2634f;
+    protected final float f2598f;
     protected transient Object2LongMap.FastEntrySet<K> entries;
     protected transient ObjectSet<K> keys;
     protected transient LongCollection values;
@@ -116,14 +116,14 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2634f = f;
+            this.f2598f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2633n = arraySize;
+            this.f2597n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2633n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2633n, f);
-            this.key = (K[]) new Object[this.f2633n + 1];
-            this.value = new long[this.f2633n + 1];
+            this.mask = this.f2597n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2597n, f);
+            this.key = (K[]) new Object[this.f2597n + 1];
+            this.value = new long[this.f2597n + 1];
         }
     }
 
@@ -173,15 +173,15 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2634f);
-        if (needed > this.f2633n) {
+        int needed = HashCommon.arraySize(capacity, this.f2598f);
+        if (needed > this.f2597n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2634f)))));
-        if (needed > this.f2633n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2598f)))));
+        if (needed > this.f2597n) {
             rehash(needed);
         }
     }
@@ -191,8 +191,8 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
         long oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f2633n > this.minN && this.size < this.maxFill / 4 && this.f2633n > 16) {
-            rehash(this.f2633n / 2);
+        if (this.f2597n > this.minN && this.size < this.maxFill / 4 && this.f2597n > 16) {
+            rehash(this.f2597n / 2);
         }
         return oldValue;
     }
@@ -200,18 +200,18 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
     /* access modifiers changed from: private */
     public long removeNullEntry() {
         this.containsNullKey = false;
-        this.key[this.f2633n] = null;
-        long oldValue = this.value[this.f2633n];
+        this.key[this.f2597n] = null;
+        long oldValue = this.value[this.f2597n];
         this.size--;
-        if (this.f2633n > this.minN && this.size < this.maxFill / 4 && this.f2633n > 16) {
-            rehash(this.f2633n / 2);
+        if (this.f2597n > this.minN && this.size < this.maxFill / 4 && this.f2597n > 16) {
+            rehash(this.f2597n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObject2LongMap, java.util.Map
     public void putAll(Map<? extends K, ? extends Long> m) {
-        if (((double) this.f2634f) <= 0.5d) {
+        if (((double) this.f2598f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -222,7 +222,7 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
     private int find(K k) {
         K curr;
         if (k == null) {
-            return this.containsNullKey ? this.f2633n : -(this.f2633n + 1);
+            return this.containsNullKey ? this.f2597n : -(this.f2597n + 1);
         }
         K[] key = this.key;
         int mix = HashCommon.mix(k.hashCode()) & this.mask;
@@ -246,7 +246,7 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
     }
 
     private void insert(int pos, K k, long v) {
-        if (pos == this.f2633n) {
+        if (pos == this.f2597n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -254,7 +254,7 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2634f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2598f));
         }
     }
 
@@ -298,9 +298,9 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f2633n, incr);
+            return addToValue(this.f2597n, incr);
         } else {
-            pos = this.f2633n;
+            pos = this.f2597n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -308,7 +308,7 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2634f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2598f));
         }
         return this.defRetValue;
     }
@@ -374,7 +374,7 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
     public long getLong(Object k) {
         K curr;
         if (k == null) {
-            return this.containsNullKey ? this.value[this.f2633n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2597n] : this.defRetValue;
         }
         K[] key = this.key;
         int mix = HashCommon.mix(k.hashCode()) & this.mask;
@@ -428,10 +428,10 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
     public boolean containsValue(long v) {
         long[] value = this.value;
         K[] key = this.key;
-        if (this.containsNullKey && value[this.f2633n] == v) {
+        if (this.containsNullKey && value[this.f2597n] == v) {
             return true;
         }
-        int i = this.f2633n;
+        int i = this.f2597n;
         while (true) {
             i--;
             if (i == 0) {
@@ -447,7 +447,7 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
     public long getOrDefault(Object k, long defaultValue) {
         K curr;
         if (k == null) {
-            return this.containsNullKey ? this.value[this.f2633n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2597n] : defaultValue;
         }
         K[] key = this.key;
         int mix = HashCommon.mix(k.hashCode()) & this.mask;
@@ -507,7 +507,7 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
                 removeEntry(pos);
                 return true;
             }
-        } else if (!this.containsNullKey || v != this.value[this.f2633n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f2597n]) {
             return false;
         } else {
             removeNullEntry();
@@ -667,31 +667,31 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
         int last;
 
         /* renamed from: c */
-        int f2635c;
+        int f2599c;
         boolean mustReturnNullKey;
         ObjectArrayList<K> wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Object2LongOpenHashMap.this.f2633n;
+            this.pos = Object2LongOpenHashMap.this.f2597n;
             this.last = -1;
-            this.f2635c = Object2LongOpenHashMap.this.size;
+            this.f2599c = Object2LongOpenHashMap.this.size;
             this.mustReturnNullKey = Object2LongOpenHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f2635c != 0;
+            return this.f2599c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2635c--;
+            this.f2599c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Object2LongOpenHashMap.this.f2633n;
+                int i = Object2LongOpenHashMap.this.f2597n;
                 this.last = i;
                 return i;
             }
@@ -723,13 +723,13 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Object2LongOpenHashMap.this.f2633n;
+                int i = Object2LongOpenHashMap.this.f2597n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f2635c--;
+                this.f2599c--;
             }
             K[] key = Object2LongOpenHashMap.this.key;
-            while (this.f2635c != 0) {
+            while (this.f2599c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -746,12 +746,12 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
                         i3 = Object2LongOpenHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f2635c--;
+                    this.f2599c--;
                 } else if (key[this.pos] != null) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f2635c--;
+                    this.f2599c--;
                 }
             }
         }
@@ -800,9 +800,9 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Object2LongOpenHashMap.this.f2633n) {
+            if (this.last == Object2LongOpenHashMap.this.f2597n) {
                 Object2LongOpenHashMap.this.containsNullKey = false;
-                Object2LongOpenHashMap.this.key[Object2LongOpenHashMap.this.f2633n] = null;
+                Object2LongOpenHashMap.this.key[Object2LongOpenHashMap.this.f2597n] = null;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -906,7 +906,7 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
         int max;
 
         /* renamed from: c */
-        int f2636c;
+        int f2600c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -916,16 +916,16 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Object2LongOpenHashMap.this.f2633n;
-            this.f2636c = 0;
+            this.max = Object2LongOpenHashMap.this.f2597n;
+            this.f2600c = 0;
             this.mustReturnNull = Object2LongOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Object2LongOpenHashMap.this.f2633n;
-            this.f2636c = 0;
+            this.max = Object2LongOpenHashMap.this.f2597n;
+            this.f2600c = 0;
             this.mustReturnNull = Object2LongOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -937,14 +937,14 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2636c++;
-                acceptOnIndex(action, Object2LongOpenHashMap.this.f2633n);
+                this.f2600c++;
+                acceptOnIndex(action, Object2LongOpenHashMap.this.f2597n);
                 return true;
             }
             K[] key = Object2LongOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != null) {
-                    this.f2636c++;
+                    this.f2600c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -958,14 +958,14 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2636c++;
-                acceptOnIndex(action, Object2LongOpenHashMap.this.f2633n);
+                this.f2600c++;
+                acceptOnIndex(action, Object2LongOpenHashMap.this.f2597n);
             }
             K[] key = Object2LongOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != null) {
                     acceptOnIndex(action, this.pos);
-                    this.f2636c++;
+                    this.f2600c++;
                 }
                 this.pos++;
             }
@@ -973,9 +973,9 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Object2LongOpenHashMap.this.size - this.f2636c);
+                return (long) (Object2LongOpenHashMap.this.size - this.f2600c);
             }
-            return Math.min((long) (Object2LongOpenHashMap.this.size - this.f2636c), ((long) ((((double) Object2LongOpenHashMap.this.realSize()) / ((double) Object2LongOpenHashMap.this.f2633n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Object2LongOpenHashMap.this.size - this.f2600c), ((long) ((((double) Object2LongOpenHashMap.this.realSize()) / ((double) Object2LongOpenHashMap.this.f2597n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1172,7 +1172,7 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
             Object key = e.getKey();
             long v = ((Long) e.getValue()).longValue();
             if (key == null) {
-                return Object2LongOpenHashMap.this.containsNullKey && Object2LongOpenHashMap.this.value[Object2LongOpenHashMap.this.f2633n] == v;
+                return Object2LongOpenHashMap.this.containsNullKey && Object2LongOpenHashMap.this.value[Object2LongOpenHashMap.this.f2597n] == v;
             }
             K[] key2 = Object2LongOpenHashMap.this.key;
             int mix = HashCommon.mix(key.hashCode()) & Object2LongOpenHashMap.this.mask;
@@ -1233,7 +1233,7 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
                     Object2LongOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Object2LongOpenHashMap.this.containsNullKey || Object2LongOpenHashMap.this.value[Object2LongOpenHashMap.this.f2633n] != v) {
+            } else if (!Object2LongOpenHashMap.this.containsNullKey || Object2LongOpenHashMap.this.value[Object2LongOpenHashMap.this.f2597n] != v) {
                 return false;
             } else {
                 Object2LongOpenHashMap.this.removeNullEntry();
@@ -1254,9 +1254,9 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Object2LongMap.Entry<K>> consumer) {
             if (Object2LongOpenHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractObject2LongMap.BasicEntry(Object2LongOpenHashMap.this.key[Object2LongOpenHashMap.this.f2633n], Object2LongOpenHashMap.this.value[Object2LongOpenHashMap.this.f2633n]));
+                consumer.accept(new AbstractObject2LongMap.BasicEntry(Object2LongOpenHashMap.this.key[Object2LongOpenHashMap.this.f2597n], Object2LongOpenHashMap.this.value[Object2LongOpenHashMap.this.f2597n]));
             }
-            int pos = Object2LongOpenHashMap.this.f2633n;
+            int pos = Object2LongOpenHashMap.this.f2597n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1272,11 +1272,11 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
         public void fastForEach(Consumer<? super Object2LongMap.Entry<K>> consumer) {
             AbstractObject2LongMap.BasicEntry<K> entry = new AbstractObject2LongMap.BasicEntry<>();
             if (Object2LongOpenHashMap.this.containsNullKey) {
-                entry.key = Object2LongOpenHashMap.this.key[Object2LongOpenHashMap.this.f2633n];
-                entry.value = Object2LongOpenHashMap.this.value[Object2LongOpenHashMap.this.f2633n];
+                entry.key = Object2LongOpenHashMap.this.key[Object2LongOpenHashMap.this.f2597n];
+                entry.value = Object2LongOpenHashMap.this.value[Object2LongOpenHashMap.this.f2597n];
                 consumer.accept(entry);
             }
-            int pos = Object2LongOpenHashMap.this.f2633n;
+            int pos = Object2LongOpenHashMap.this.f2597n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1392,9 +1392,9 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super K> consumer) {
             if (Object2LongOpenHashMap.this.containsNullKey) {
-                consumer.accept((Object) Object2LongOpenHashMap.this.key[Object2LongOpenHashMap.this.f2633n]);
+                consumer.accept((Object) Object2LongOpenHashMap.this.key[Object2LongOpenHashMap.this.f2597n]);
             }
-            int pos = Object2LongOpenHashMap.this.f2633n;
+            int pos = Object2LongOpenHashMap.this.f2597n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1522,9 +1522,9 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
                 @Override // p014it.unimi.dsi.fastutil.longs.LongIterable
                 public void forEach(LongConsumer consumer) {
                     if (Object2LongOpenHashMap.this.containsNullKey) {
-                        consumer.accept(Object2LongOpenHashMap.this.value[Object2LongOpenHashMap.this.f2633n]);
+                        consumer.accept(Object2LongOpenHashMap.this.value[Object2LongOpenHashMap.this.f2597n]);
                     }
-                    int pos = Object2LongOpenHashMap.this.f2633n;
+                    int pos = Object2LongOpenHashMap.this.f2597n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1560,8 +1560,8 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2634f)));
-        if (l >= this.f2633n || this.size > HashCommon.maxFill(l, this.f2634f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2598f)));
+        if (l >= this.f2597n || this.size > HashCommon.maxFill(l, this.f2598f)) {
             return true;
         }
         try {
@@ -1579,7 +1579,7 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
         int mask = newN - 1;
         K[] newKey = (K[]) new Object[newN + 1];
         long[] newValue = new long[newN + 1];
-        int i2 = this.f2633n;
+        int i2 = this.f2597n;
         int j = realSize();
         while (true) {
             j--;
@@ -1598,10 +1598,10 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f2633n];
-                this.f2633n = newN;
+                newValue[newN] = value[this.f2597n];
+                this.f2597n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2633n, this.f2634f);
+                this.maxFill = HashCommon.maxFill(this.f2597n, this.f2598f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1647,7 +1647,7 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
             i++;
         }
         if (this.containsNullKey) {
-            h += HashCommon.long2int(this.value[this.f2633n]);
+            h += HashCommon.long2int(this.value[this.f2597n]);
         }
         return h;
     }
@@ -1676,12 +1676,12 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2633n = HashCommon.arraySize(this.size, this.f2634f);
-        this.maxFill = HashCommon.maxFill(this.f2633n, this.f2634f);
-        this.mask = this.f2633n - 1;
-        K[] key = (K[]) new Object[this.f2633n + 1];
+        this.f2597n = HashCommon.arraySize(this.size, this.f2598f);
+        this.maxFill = HashCommon.maxFill(this.f2597n, this.f2598f);
+        this.mask = this.f2597n - 1;
+        K[] key = (K[]) new Object[this.f2597n + 1];
         this.key = key;
-        long[] value = new long[this.f2633n + 1];
+        long[] value = new long[this.f2597n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1690,7 +1690,7 @@ public class Object2LongOpenHashMap<K> extends AbstractObject2LongMap<K> impleme
                 Object readObject = s.readObject();
                 long v = s.readLong();
                 if (readObject == null) {
-                    pos = this.f2633n;
+                    pos = this.f2597n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix(readObject.hashCode());

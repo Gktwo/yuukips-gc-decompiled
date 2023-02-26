@@ -17,7 +17,7 @@ public class LongArraySet extends AbstractLongSet implements Serializable, Clone
     private static final long serialVersionUID = 1;
 
     /* renamed from: a */
-    private transient long[] f2395a;
+    private transient long[] f2359a;
     private int size;
 
     static /* synthetic */ int access$010(LongArraySet x0) {
@@ -27,16 +27,16 @@ public class LongArraySet extends AbstractLongSet implements Serializable, Clone
     }
 
     public LongArraySet(long[] a) {
-        this.f2395a = a;
+        this.f2359a = a;
         this.size = a.length;
     }
 
     public LongArraySet() {
-        this.f2395a = LongArrays.EMPTY_ARRAY;
+        this.f2359a = LongArrays.EMPTY_ARRAY;
     }
 
     public LongArraySet(int capacity) {
-        this.f2395a = new long[capacity];
+        this.f2359a = new long[capacity];
     }
 
     public LongArraySet(LongCollection c) {
@@ -54,7 +54,7 @@ public class LongArraySet extends AbstractLongSet implements Serializable, Clone
         int i = 0;
         LongIterator it = c.iterator();
         while (it.hasNext()) {
-            this.f2395a[i] = it.next().longValue();
+            this.f2359a[i] = it.next().longValue();
             i++;
         }
         this.size = i;
@@ -64,14 +64,14 @@ public class LongArraySet extends AbstractLongSet implements Serializable, Clone
         this(c.size());
         int i = 0;
         for (Long x : c) {
-            this.f2395a[i] = x.longValue();
+            this.f2359a[i] = x.longValue();
             i++;
         }
         this.size = i;
     }
 
     public LongArraySet(long[] a, int size) {
-        this.f2395a = a;
+        this.f2359a = a;
         this.size = size;
         if (size > a.length) {
             throw new IllegalArgumentException("The provided size (" + size + ") is larger than or equal to the array size (" + a.length + ")");
@@ -115,7 +115,7 @@ public class LongArraySet extends AbstractLongSet implements Serializable, Clone
             if (i == 0) {
                 return -1;
             }
-        } while (this.f2395a[i] != o);
+        } while (this.f2359a[i] != o);
         return i;
     }
 
@@ -134,7 +134,7 @@ public class LongArraySet extends AbstractLongSet implements Serializable, Clone
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                long[] jArr = LongArraySet.this.f2395a;
+                long[] jArr = LongArraySet.this.f2359a;
                 int i = this.next;
                 this.next = i + 1;
                 return jArr[i];
@@ -145,7 +145,7 @@ public class LongArraySet extends AbstractLongSet implements Serializable, Clone
                 int access$010 = LongArraySet.access$010(LongArraySet.this);
                 int i = this.next;
                 this.next = i - 1;
-                System.arraycopy(LongArraySet.this.f2395a, this.next + 1, LongArraySet.this.f2395a, this.next, access$010 - i);
+                System.arraycopy(LongArraySet.this.f2359a, this.next + 1, LongArraySet.this.f2359a, this.next, access$010 - i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectIterator
@@ -211,7 +211,7 @@ public class LongArraySet extends AbstractLongSet implements Serializable, Clone
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            long[] jArr = LongArraySet.this.f2395a;
+            long[] jArr = LongArraySet.this.f2359a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(jArr[i]);
@@ -222,7 +222,7 @@ public class LongArraySet extends AbstractLongSet implements Serializable, Clone
         public void forEachRemaining(LongConsumer action) {
             int max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(LongArraySet.this.f2395a[this.pos]);
+                action.accept(LongArraySet.this.f2359a[this.pos]);
                 this.pos++;
             }
         }
@@ -285,7 +285,7 @@ public class LongArraySet extends AbstractLongSet implements Serializable, Clone
         }
         int tail = (this.size - pos) - 1;
         for (int i = 0; i < tail; i++) {
-            this.f2395a[pos + i] = this.f2395a[pos + i + 1];
+            this.f2359a[pos + i] = this.f2359a[pos + i + 1];
         }
         this.size--;
         return true;
@@ -296,7 +296,7 @@ public class LongArraySet extends AbstractLongSet implements Serializable, Clone
         if (findKey(k) != -1) {
             return false;
         }
-        if (this.size == this.f2395a.length) {
+        if (this.size == this.f2359a.length) {
             long[] b = new long[this.size == 0 ? 2 : this.size * 2];
             int i = this.size;
             while (true) {
@@ -304,11 +304,11 @@ public class LongArraySet extends AbstractLongSet implements Serializable, Clone
                 if (i == 0) {
                     break;
                 }
-                b[i] = this.f2395a[i];
+                b[i] = this.f2359a[i];
             }
-            this.f2395a = b;
+            this.f2359a = b;
         }
-        long[] jArr = this.f2395a;
+        long[] jArr = this.f2359a;
         int i2 = this.size;
         this.size = i2 + 1;
         jArr[i2] = k;
@@ -327,7 +327,7 @@ public class LongArraySet extends AbstractLongSet implements Serializable, Clone
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongCollection, p014it.unimi.dsi.fastutil.longs.LongCollection
     public long[] toLongArray() {
-        return Arrays.copyOf(this.f2395a, this.size);
+        return Arrays.copyOf(this.f2359a, this.size);
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongCollection, p014it.unimi.dsi.fastutil.longs.LongCollection
@@ -335,7 +335,7 @@ public class LongArraySet extends AbstractLongSet implements Serializable, Clone
         if (a == null || a.length < this.size) {
             a = new long[this.size];
         }
-        System.arraycopy(this.f2395a, 0, a, 0, this.size);
+        System.arraycopy(this.f2359a, 0, a, 0, this.size);
         return a;
     }
 
@@ -343,7 +343,7 @@ public class LongArraySet extends AbstractLongSet implements Serializable, Clone
     public LongArraySet clone() {
         try {
             LongArraySet c = (LongArraySet) clone();
-            c.f2395a = (long[]) this.f2395a.clone();
+            c.f2359a = (long[]) this.f2359a.clone();
             return c;
         } catch (CloneNotSupportedException e) {
             throw new InternalError();
@@ -353,15 +353,15 @@ public class LongArraySet extends AbstractLongSet implements Serializable, Clone
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; i < this.size; i++) {
-            s.writeLong(this.f2395a[i]);
+            s.writeLong(this.f2359a[i]);
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f2395a = new long[this.size];
+        this.f2359a = new long[this.size];
         for (int i = 0; i < this.size; i++) {
-            this.f2395a[i] = s.readLong();
+            this.f2359a[i] = s.readLong();
         }
     }
 }

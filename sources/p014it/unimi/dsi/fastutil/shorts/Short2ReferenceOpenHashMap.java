@@ -34,13 +34,13 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
     protected transient boolean containsNullKey;
 
     /* renamed from: n */
-    protected transient int f2996n;
+    protected transient int f2960n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2997f;
+    protected final float f2961f;
     protected transient Short2ReferenceMap.FastEntrySet<V> entries;
     protected transient ShortSet keys;
     protected transient ReferenceCollection<V> values;
@@ -51,14 +51,14 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2997f = f;
+            this.f2961f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2996n = arraySize;
+            this.f2960n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2996n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2996n, f);
-            this.key = new short[this.f2996n + 1];
-            this.value = (V[]) new Object[this.f2996n + 1];
+            this.mask = this.f2960n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2960n, f);
+            this.key = new short[this.f2960n + 1];
+            this.value = (V[]) new Object[this.f2960n + 1];
         }
     }
 
@@ -108,15 +108,15 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2997f);
-        if (needed > this.f2996n) {
+        int needed = HashCommon.arraySize(capacity, this.f2961f);
+        if (needed > this.f2960n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2997f)))));
-        if (needed > this.f2996n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2961f)))));
+        if (needed > this.f2960n) {
             rehash(needed);
         }
     }
@@ -127,8 +127,8 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
         this.value[pos] = null;
         this.size--;
         shiftKeys(pos);
-        if (this.f2996n > this.minN && this.size < this.maxFill / 4 && this.f2996n > 16) {
-            rehash(this.f2996n / 2);
+        if (this.f2960n > this.minN && this.size < this.maxFill / 4 && this.f2960n > 16) {
+            rehash(this.f2960n / 2);
         }
         return oldValue;
     }
@@ -136,18 +136,18 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
     /* access modifiers changed from: private */
     public V removeNullEntry() {
         this.containsNullKey = false;
-        V oldValue = this.value[this.f2996n];
-        this.value[this.f2996n] = null;
+        V oldValue = this.value[this.f2960n];
+        this.value[this.f2960n] = null;
         this.size--;
-        if (this.f2996n > this.minN && this.size < this.maxFill / 4 && this.f2996n > 16) {
-            rehash(this.f2996n / 2);
+        if (this.f2960n > this.minN && this.size < this.maxFill / 4 && this.f2960n > 16) {
+            rehash(this.f2960n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.shorts.AbstractShort2ReferenceMap, java.util.Map
     public void putAll(Map<? extends Short, ? extends V> m) {
-        if (((double) this.f2997f) <= 0.5d) {
+        if (((double) this.f2961f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -158,7 +158,7 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
     private int find(short k) {
         short curr;
         if (k == 0) {
-            return this.containsNullKey ? this.f2996n : -(this.f2996n + 1);
+            return this.containsNullKey ? this.f2960n : -(this.f2960n + 1);
         }
         short[] key = this.key;
         int mix = HashCommon.mix((int) k) & this.mask;
@@ -182,7 +182,7 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
     }
 
     private void insert(int pos, short k, V v) {
-        if (pos == this.f2996n) {
+        if (pos == this.f2960n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -190,7 +190,7 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2997f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2961f));
         }
     }
 
@@ -268,7 +268,7 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
     public V get(short k) {
         short curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f2996n] : (V) this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2960n] : (V) this.defRetValue;
         }
         short[] key = this.key;
         int mix = HashCommon.mix((int) k) & this.mask;
@@ -322,10 +322,10 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
     public boolean containsValue(Object v) {
         V[] value = this.value;
         short[] key = this.key;
-        if (this.containsNullKey && value[this.f2996n] == v) {
+        if (this.containsNullKey && value[this.f2960n] == v) {
             return true;
         }
-        int i = this.f2996n;
+        int i = this.f2960n;
         while (true) {
             i--;
             if (i == 0) {
@@ -341,7 +341,7 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
     public V getOrDefault(short k, V defaultValue) {
         short curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f2996n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2960n] : defaultValue;
         }
         short[] key = this.key;
         int mix = HashCommon.mix((int) k) & this.mask;
@@ -400,7 +400,7 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
                     return true;
                 }
             }
-        } else if (!this.containsNullKey || v != this.value[this.f2996n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f2960n]) {
             return false;
         } else {
             removeNullEntry();
@@ -624,31 +624,31 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
         int last;
 
         /* renamed from: c */
-        int f2998c;
+        int f2962c;
         boolean mustReturnNullKey;
         ShortArrayList wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Short2ReferenceOpenHashMap.this.f2996n;
+            this.pos = Short2ReferenceOpenHashMap.this.f2960n;
             this.last = -1;
-            this.f2998c = Short2ReferenceOpenHashMap.this.size;
+            this.f2962c = Short2ReferenceOpenHashMap.this.size;
             this.mustReturnNullKey = Short2ReferenceOpenHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f2998c != 0;
+            return this.f2962c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2998c--;
+            this.f2962c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Short2ReferenceOpenHashMap.this.f2996n;
+                int i = Short2ReferenceOpenHashMap.this.f2960n;
                 this.last = i;
                 return i;
             }
@@ -680,13 +680,13 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Short2ReferenceOpenHashMap.this.f2996n;
+                int i = Short2ReferenceOpenHashMap.this.f2960n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f2998c--;
+                this.f2962c--;
             }
             short[] key = Short2ReferenceOpenHashMap.this.key;
-            while (this.f2998c != 0) {
+            while (this.f2962c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -703,12 +703,12 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
                         i3 = Short2ReferenceOpenHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f2998c--;
+                    this.f2962c--;
                 } else if (key[this.pos] != 0) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f2998c--;
+                    this.f2962c--;
                 }
             }
         }
@@ -758,9 +758,9 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Short2ReferenceOpenHashMap.this.f2996n) {
+            if (this.last == Short2ReferenceOpenHashMap.this.f2960n) {
                 Short2ReferenceOpenHashMap.this.containsNullKey = false;
-                Short2ReferenceOpenHashMap.this.value[Short2ReferenceOpenHashMap.this.f2996n] = null;
+                Short2ReferenceOpenHashMap.this.value[Short2ReferenceOpenHashMap.this.f2960n] = null;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -864,7 +864,7 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
         int max;
 
         /* renamed from: c */
-        int f2999c;
+        int f2963c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -874,16 +874,16 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Short2ReferenceOpenHashMap.this.f2996n;
-            this.f2999c = 0;
+            this.max = Short2ReferenceOpenHashMap.this.f2960n;
+            this.f2963c = 0;
             this.mustReturnNull = Short2ReferenceOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Short2ReferenceOpenHashMap.this.f2996n;
-            this.f2999c = 0;
+            this.max = Short2ReferenceOpenHashMap.this.f2960n;
+            this.f2963c = 0;
             this.mustReturnNull = Short2ReferenceOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -895,14 +895,14 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2999c++;
-                acceptOnIndex(action, Short2ReferenceOpenHashMap.this.f2996n);
+                this.f2963c++;
+                acceptOnIndex(action, Short2ReferenceOpenHashMap.this.f2960n);
                 return true;
             }
             short[] key = Short2ReferenceOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f2999c++;
+                    this.f2963c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -916,14 +916,14 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2999c++;
-                acceptOnIndex(action, Short2ReferenceOpenHashMap.this.f2996n);
+                this.f2963c++;
+                acceptOnIndex(action, Short2ReferenceOpenHashMap.this.f2960n);
             }
             short[] key = Short2ReferenceOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     acceptOnIndex(action, this.pos);
-                    this.f2999c++;
+                    this.f2963c++;
                 }
                 this.pos++;
             }
@@ -931,9 +931,9 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Short2ReferenceOpenHashMap.this.size - this.f2999c);
+                return (long) (Short2ReferenceOpenHashMap.this.size - this.f2963c);
             }
-            return Math.min((long) (Short2ReferenceOpenHashMap.this.size - this.f2999c), ((long) ((((double) Short2ReferenceOpenHashMap.this.realSize()) / ((double) Short2ReferenceOpenHashMap.this.f2996n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Short2ReferenceOpenHashMap.this.size - this.f2963c), ((long) ((((double) Short2ReferenceOpenHashMap.this.realSize()) / ((double) Short2ReferenceOpenHashMap.this.f2960n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1130,7 +1130,7 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
             short k = ((Short) e.getKey()).shortValue();
             Object value = e.getValue();
             if (k == 0) {
-                return Short2ReferenceOpenHashMap.this.containsNullKey && Short2ReferenceOpenHashMap.this.value[Short2ReferenceOpenHashMap.this.f2996n] == value;
+                return Short2ReferenceOpenHashMap.this.containsNullKey && Short2ReferenceOpenHashMap.this.value[Short2ReferenceOpenHashMap.this.f2960n] == value;
             }
             short[] key = Short2ReferenceOpenHashMap.this.key;
             int mix = HashCommon.mix((int) k) & Short2ReferenceOpenHashMap.this.mask;
@@ -1191,7 +1191,7 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
                     Short2ReferenceOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Short2ReferenceOpenHashMap.this.containsNullKey || Short2ReferenceOpenHashMap.this.value[Short2ReferenceOpenHashMap.this.f2996n] != value) {
+            } else if (!Short2ReferenceOpenHashMap.this.containsNullKey || Short2ReferenceOpenHashMap.this.value[Short2ReferenceOpenHashMap.this.f2960n] != value) {
                 return false;
             } else {
                 Short2ReferenceOpenHashMap.this.removeNullEntry();
@@ -1212,9 +1212,9 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Short2ReferenceMap.Entry<V>> consumer) {
             if (Short2ReferenceOpenHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractShort2ReferenceMap.BasicEntry(Short2ReferenceOpenHashMap.this.key[Short2ReferenceOpenHashMap.this.f2996n], Short2ReferenceOpenHashMap.this.value[Short2ReferenceOpenHashMap.this.f2996n]));
+                consumer.accept(new AbstractShort2ReferenceMap.BasicEntry(Short2ReferenceOpenHashMap.this.key[Short2ReferenceOpenHashMap.this.f2960n], Short2ReferenceOpenHashMap.this.value[Short2ReferenceOpenHashMap.this.f2960n]));
             }
-            int pos = Short2ReferenceOpenHashMap.this.f2996n;
+            int pos = Short2ReferenceOpenHashMap.this.f2960n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1230,11 +1230,11 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
         public void fastForEach(Consumer<? super Short2ReferenceMap.Entry<V>> consumer) {
             AbstractShort2ReferenceMap.BasicEntry<V> entry = new AbstractShort2ReferenceMap.BasicEntry<>();
             if (Short2ReferenceOpenHashMap.this.containsNullKey) {
-                entry.key = Short2ReferenceOpenHashMap.this.key[Short2ReferenceOpenHashMap.this.f2996n];
-                entry.value = Short2ReferenceOpenHashMap.this.value[Short2ReferenceOpenHashMap.this.f2996n];
+                entry.key = Short2ReferenceOpenHashMap.this.key[Short2ReferenceOpenHashMap.this.f2960n];
+                entry.value = Short2ReferenceOpenHashMap.this.value[Short2ReferenceOpenHashMap.this.f2960n];
                 consumer.accept(entry);
             }
-            int pos = Short2ReferenceOpenHashMap.this.f2996n;
+            int pos = Short2ReferenceOpenHashMap.this.f2960n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1332,9 +1332,9 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
         @Override // p014it.unimi.dsi.fastutil.shorts.ShortIterable
         public void forEach(ShortConsumer consumer) {
             if (Short2ReferenceOpenHashMap.this.containsNullKey) {
-                consumer.accept(Short2ReferenceOpenHashMap.this.key[Short2ReferenceOpenHashMap.this.f2996n]);
+                consumer.accept(Short2ReferenceOpenHashMap.this.key[Short2ReferenceOpenHashMap.this.f2960n]);
             }
-            int pos = Short2ReferenceOpenHashMap.this.f2996n;
+            int pos = Short2ReferenceOpenHashMap.this.f2960n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1470,9 +1470,9 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
                 @Override // java.lang.Iterable
                 public void forEach(Consumer<? super V> consumer) {
                     if (Short2ReferenceOpenHashMap.this.containsNullKey) {
-                        consumer.accept((Object) Short2ReferenceOpenHashMap.this.value[Short2ReferenceOpenHashMap.this.f2996n]);
+                        consumer.accept((Object) Short2ReferenceOpenHashMap.this.value[Short2ReferenceOpenHashMap.this.f2960n]);
                     }
-                    int pos = Short2ReferenceOpenHashMap.this.f2996n;
+                    int pos = Short2ReferenceOpenHashMap.this.f2960n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1508,8 +1508,8 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2997f)));
-        if (l >= this.f2996n || this.size > HashCommon.maxFill(l, this.f2997f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2961f)));
+        if (l >= this.f2960n || this.size > HashCommon.maxFill(l, this.f2961f)) {
             return true;
         }
         try {
@@ -1527,7 +1527,7 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
         int mask = newN - 1;
         short[] newKey = new short[newN + 1];
         V[] newValue = (V[]) new Object[newN + 1];
-        int i2 = this.f2996n;
+        int i2 = this.f2960n;
         int j = realSize();
         while (true) {
             j--;
@@ -1546,10 +1546,10 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f2996n];
-                this.f2996n = newN;
+                newValue[newN] = value[this.f2960n];
+                this.f2960n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2996n, this.f2997f);
+                this.maxFill = HashCommon.maxFill(this.f2960n, this.f2961f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1599,7 +1599,7 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f2996n] == null ? 0 : System.identityHashCode(this.value[this.f2996n]);
+            h += this.value[this.f2960n] == null ? 0 : System.identityHashCode(this.value[this.f2960n]);
         }
         return h;
     }
@@ -1627,12 +1627,12 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2996n = HashCommon.arraySize(this.size, this.f2997f);
-        this.maxFill = HashCommon.maxFill(this.f2996n, this.f2997f);
-        this.mask = this.f2996n - 1;
-        short[] key = new short[this.f2996n + 1];
+        this.f2960n = HashCommon.arraySize(this.size, this.f2961f);
+        this.maxFill = HashCommon.maxFill(this.f2960n, this.f2961f);
+        this.mask = this.f2960n - 1;
+        short[] key = new short[this.f2960n + 1];
         this.key = key;
-        V[] value = (V[]) new Object[this.f2996n + 1];
+        V[] value = (V[]) new Object[this.f2960n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1641,7 +1641,7 @@ public class Short2ReferenceOpenHashMap<V> extends AbstractShort2ReferenceMap<V>
                 short k = s.readShort();
                 Object readObject = s.readObject();
                 if (k == 0) {
-                    pos = this.f2996n;
+                    pos = this.f2960n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix((int) k);

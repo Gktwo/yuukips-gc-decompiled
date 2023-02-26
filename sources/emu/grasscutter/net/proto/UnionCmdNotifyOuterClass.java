@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnionCmdNotifyOuterClass.class */
 public final class UnionCmdNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014UnionCmdNotify.proto\u001a\u000eUnionCmd.proto\"-\n\u000eUnionCmdNotify\u0012\u001b\n\bcmd_list\u0018\u0007 \u0003(\u000b2\t.UnionCmdB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{UnionCmdOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0014UnionCmdNotify.proto\u001a\u000eUnionCmd.proto\",\n\u000eUnionCmdNotify\u0012\u001a\n\u0007cmdList\u0018\u000b \u0003(\u000b2\t.UnionCmdB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{UnionCmdOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_UnionCmdNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_UnionCmdNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_UnionCmdNotify_descriptor, new String[]{"CmdList"});
 
@@ -55,7 +55,7 @@ public final class UnionCmdNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnionCmdNotifyOuterClass$UnionCmdNotify.class */
     public static final class UnionCmdNotify extends GeneratedMessageV3 implements UnionCmdNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CMD_LIST_FIELD_NUMBER = 7;
+        public static final int CMDLIST_FIELD_NUMBER = 11;
         private List<UnionCmdOuterClass.UnionCmd> cmdList_;
         private byte memoizedIsInitialized;
         private static final UnionCmdNotify DEFAULT_INSTANCE = new UnionCmdNotify();
@@ -106,7 +106,7 @@ public final class UnionCmdNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 58:
+                                case 90:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.cmdList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -187,7 +187,7 @@ public final class UnionCmdNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.cmdList_.size(); i++) {
-                output.writeMessage(7, this.cmdList_.get(i));
+                output.writeMessage(11, this.cmdList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,7 +200,7 @@ public final class UnionCmdNotifyOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.cmdList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(7, this.cmdList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(11, this.cmdList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class UnionCmdNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getCmdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 7)) + getCmdListList().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + getCmdListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

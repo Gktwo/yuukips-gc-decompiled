@@ -45,7 +45,7 @@ public class AnnotationRemapper extends AnnotationVisitor {
         if (annotationVisitor == null) {
             return null;
         }
-        if (annotationVisitor == this.f3100av) {
+        if (annotationVisitor == this.f3064av) {
             return this;
         }
         return createAnnotationRemapper(descriptor, annotationVisitor);
@@ -57,7 +57,7 @@ public class AnnotationRemapper extends AnnotationVisitor {
         if (annotationVisitor == null) {
             return null;
         }
-        if (annotationVisitor == this.f3100av) {
+        if (annotationVisitor == this.f3064av) {
             return this;
         }
         return createAnnotationRemapper(null, annotationVisitor);
@@ -76,7 +76,7 @@ public class AnnotationRemapper extends AnnotationVisitor {
     public final AnnotationVisitor orDeprecatedValue(AnnotationVisitor deprecatedAnnotationVisitor) {
         if (deprecatedAnnotationVisitor.getClass() == getClass()) {
             AnnotationRemapper deprecatedAnnotationRemapper = (AnnotationRemapper) deprecatedAnnotationVisitor;
-            if (deprecatedAnnotationRemapper.api == this.api && deprecatedAnnotationRemapper.f3100av == this.f3100av && deprecatedAnnotationRemapper.remapper == this.remapper) {
+            if (deprecatedAnnotationRemapper.api == this.api && deprecatedAnnotationRemapper.f3064av == this.f3064av && deprecatedAnnotationRemapper.remapper == this.remapper) {
                 return this;
             }
         }

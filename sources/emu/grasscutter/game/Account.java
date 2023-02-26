@@ -8,6 +8,7 @@ import dev.morphia.annotations.Indexed;
 import dev.morphia.annotations.PreLoad;
 import emu.grasscutter.config.Configuration;
 import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass;
 import emu.grasscutter.utils.Crypto;
 import emu.grasscutter.utils.Utils;
 import java.util.ArrayList;
@@ -210,7 +211,7 @@ public class Account {
                         break;
                     }
                     break;
-                case 1344:
+                case GetPlayerTokenRspOuterClass.GetPlayerTokenRsp.TAG_FIELD_NUMBER /* 1344 */:
                     if (str.equals(Constraint.ANY_AUTH)) {
                         c = 0;
                         break;

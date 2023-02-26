@@ -28,37 +28,37 @@ public final class UByteArray implements Collection<UByte>, KMappedMarker {
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7136toStringimpl(byte[] arg0) {
+    public static String m7133toStringimpl(byte[] arg0) {
         return "UByteArray(storage=" + Arrays.toString(arg0) + ')';
     }
 
     @Override // java.lang.Object
     public String toString() {
-        return m7136toStringimpl(this.storage);
+        return m7133toStringimpl(this.storage);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7137hashCodeimpl(byte[] arg0) {
+    public static int m7134hashCodeimpl(byte[] arg0) {
         return Arrays.hashCode(arg0);
     }
 
     @Override // java.util.Collection, java.lang.Object
     public int hashCode() {
-        return m7137hashCodeimpl(this.storage);
+        return m7134hashCodeimpl(this.storage);
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7138equalsimpl(byte[] arg0, Object other) {
-        return (other instanceof UByteArray) && Intrinsics.areEqual(arg0, ((UByteArray) other).m7142unboximpl());
+    public static boolean m7135equalsimpl(byte[] arg0, Object other) {
+        return (other instanceof UByteArray) && Intrinsics.areEqual(arg0, ((UByteArray) other).m7139unboximpl());
     }
 
     @Override // java.util.Collection, java.lang.Object
     public boolean equals(Object other) {
-        return m7138equalsimpl(this.storage, other);
+        return m7135equalsimpl(this.storage, other);
     }
 
     /* renamed from: add-7apg3OU  reason: not valid java name */
-    public boolean m7139add7apg3OU(byte element) {
+    public boolean m7136add7apg3OU(byte element) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
@@ -90,23 +90,23 @@ public final class UByteArray implements Collection<UByte>, KMappedMarker {
     @PublishedApi
     @NotNull
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static byte[] m7140constructorimpl(@NotNull byte[] storage) {
+    public static byte[] m7137constructorimpl(@NotNull byte[] storage) {
         Intrinsics.checkNotNullParameter(storage, "storage");
         return storage;
     }
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ UByteArray m7141boximpl(byte[] v) {
+    public static final /* synthetic */ UByteArray m7138boximpl(byte[] v) {
         return new UByteArray(v);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ byte[] m7142unboximpl() {
+    public final /* synthetic */ byte[] m7139unboximpl() {
         return this.storage;
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7143equalsimpl0(byte[] p1, byte[] p2) {
+    public static final boolean m7140equalsimpl0(byte[] p1, byte[] p2) {
         return Intrinsics.areEqual(p1, p2);
     }
 
@@ -132,7 +132,7 @@ public final class UByteArray implements Collection<UByte>, KMappedMarker {
         if (!(element instanceof UByte)) {
             return false;
         }
-        return m7133contains7apg3OU(((UByte) element).m7124unboximpl());
+        return m7130contains7apg3OU(((UByte) element).m7121unboximpl());
     }
 
     @PublishedApi
@@ -142,40 +142,40 @@ public final class UByteArray implements Collection<UByte>, KMappedMarker {
 
     @NotNull
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static byte[] m7127constructorimpl(int size) {
-        return m7140constructorimpl(new byte[size]);
+    public static byte[] m7124constructorimpl(int size) {
+        return m7137constructorimpl(new byte[size]);
     }
 
     /* renamed from: get-w2LRezQ  reason: not valid java name */
-    public static final byte m7128getw2LRezQ(byte[] arg0, int index) {
-        return UByte.m7122constructorimpl(arg0[index]);
+    public static final byte m7125getw2LRezQ(byte[] arg0, int index) {
+        return UByte.m7119constructorimpl(arg0[index]);
     }
 
     /* renamed from: set-VurrAj0  reason: not valid java name */
-    public static final void m7129setVurrAj0(byte[] arg0, int index, byte value) {
+    public static final void m7126setVurrAj0(byte[] arg0, int index, byte value) {
         arg0[index] = value;
     }
 
     /* renamed from: getSize-impl  reason: not valid java name */
-    public static int m7130getSizeimpl(byte[] arg0) {
+    public static int m7127getSizeimpl(byte[] arg0) {
         return arg0.length;
     }
 
     /* renamed from: getSize */
     public int size() {
-        return m7130getSizeimpl(this.storage);
+        return m7127getSizeimpl(this.storage);
     }
 
     @NotNull
     /* renamed from: iterator-impl  reason: not valid java name */
-    public static java.util.Iterator<UByte> m7131iteratorimpl(byte[] arg0) {
+    public static java.util.Iterator<UByte> m7128iteratorimpl(byte[] arg0) {
         return new Iterator(arg0);
     }
 
     @Override // java.util.Collection, java.lang.Iterable
     @NotNull
     public java.util.Iterator<UByte> iterator() {
-        return m7131iteratorimpl(this.storage);
+        return m7128iteratorimpl(this.storage);
     }
 
     /* compiled from: UByteArray.kt */
@@ -199,35 +199,35 @@ public final class UByteArray implements Collection<UByte>, KMappedMarker {
 
         @Override // kotlin.collections.UByteIterator
         /* renamed from: nextUByte-w2LRezQ  reason: not valid java name */
-        public byte mo7144nextUBytew2LRezQ() {
+        public byte mo7141nextUBytew2LRezQ() {
             if (this.index < this.array.length) {
                 byte[] bArr = this.array;
                 int i = this.index;
                 this.index = i + 1;
-                return UByte.m7122constructorimpl(bArr[i]);
+                return UByte.m7119constructorimpl(bArr[i]);
             }
             throw new NoSuchElementException(String.valueOf(this.index));
         }
     }
 
     /* renamed from: contains-7apg3OU  reason: not valid java name */
-    public boolean m7133contains7apg3OU(byte element) {
-        return m7132contains7apg3OU(this.storage, element);
+    public boolean m7130contains7apg3OU(byte element) {
+        return m7129contains7apg3OU(this.storage, element);
     }
 
     /* renamed from: contains-7apg3OU  reason: not valid java name */
-    public static boolean m7132contains7apg3OU(byte[] arg0, byte element) {
+    public static boolean m7129contains7apg3OU(byte[] arg0, byte element) {
         return ArraysKt.contains(arg0, element);
     }
 
     @Override // java.util.Collection
     public boolean containsAll(@NotNull Collection<? extends Object> collection) {
         Intrinsics.checkNotNullParameter(collection, "elements");
-        return m7134containsAllimpl(this.storage, collection);
+        return m7131containsAllimpl(this.storage, collection);
     }
 
     /* renamed from: containsAll-impl  reason: not valid java name */
-    public static boolean m7134containsAllimpl(byte[] arg0, @NotNull Collection<UByte> collection) {
+    public static boolean m7131containsAllimpl(byte[] arg0, @NotNull Collection<UByte> collection) {
         boolean z;
         Intrinsics.checkNotNullParameter(collection, "elements");
         Collection<UByte> $this$all$iv = collection;
@@ -235,7 +235,7 @@ public final class UByteArray implements Collection<UByte>, KMappedMarker {
             return true;
         }
         for (Object element$iv : $this$all$iv) {
-            if (!(element$iv instanceof UByte) || !ArraysKt.contains(arg0, ((UByte) element$iv).m7124unboximpl())) {
+            if (!(element$iv instanceof UByte) || !ArraysKt.contains(arg0, ((UByte) element$iv).m7121unboximpl())) {
                 z = false;
                 continue;
             } else {
@@ -250,12 +250,12 @@ public final class UByteArray implements Collection<UByte>, KMappedMarker {
     }
 
     /* renamed from: isEmpty-impl  reason: not valid java name */
-    public static boolean m7135isEmptyimpl(byte[] arg0) {
+    public static boolean m7132isEmptyimpl(byte[] arg0) {
         return arg0.length == 0;
     }
 
     @Override // java.util.Collection
     public boolean isEmpty() {
-        return m7135isEmptyimpl(this.storage);
+        return m7132isEmptyimpl(this.storage);
     }
 }

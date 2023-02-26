@@ -1,6 +1,5 @@
 package p014it.unimi.dsi.fastutil.shorts;
 
-import emu.grasscutter.net.proto.ActivityInfoOuterClass;
 import java.io.Serializable;
 import java.util.Random;
 import java.util.concurrent.ExecutorCompletionService;
@@ -290,16 +289,16 @@ public final class ShortArrays {
         private final int from;
 
         /* renamed from: to */
-        private final int f3031to;
+        private final int f2995to;
 
         /* renamed from: x */
-        private final short[] f3032x;
+        private final short[] f2996x;
         private final ShortComparator comp;
 
         public ForkJoinQuickSortComp(short[] x, int from, int to, ShortComparator comp) {
             this.from = from;
-            this.f3031to = to;
-            this.f3032x = x;
+            this.f2995to = to;
+            this.f2996x = x;
             this.comp = comp;
         }
 
@@ -307,20 +306,20 @@ public final class ShortArrays {
         protected void compute() {
             int comparison;
             int comparison2;
-            short[] x = this.f3032x;
-            int len = this.f3031to - this.from;
+            short[] x = this.f2996x;
+            int len = this.f2995to - this.from;
             if (len < 8192) {
-                ShortArrays.quickSort(x, this.from, this.f3031to, this.comp);
+                ShortArrays.quickSort(x, this.from, this.f2995to, this.comp);
                 return;
             }
             int m = this.from + (len / 2);
             int l = this.from;
-            int n = this.f3031to - 1;
+            int n = this.f2995to - 1;
             int s = len / 8;
             short v = x[ShortArrays.med3(x, ShortArrays.med3(x, l, l + s, l + (2 * s), this.comp), ShortArrays.med3(x, m - s, m, m + s, this.comp), ShortArrays.med3(x, n - (2 * s), n - s, n, this.comp), this.comp)];
             int a = this.from;
             int b = a;
-            int c = this.f3031to - 1;
+            int c = this.f2995to - 1;
             int d = c;
             while (true) {
                 if (b > c || (comparison2 = this.comp.compare(x[b], v)) > 0) {
@@ -347,16 +346,16 @@ public final class ShortArrays {
             }
             int s2 = Math.min(a - this.from, b - a);
             ShortArrays.swap(x, this.from, b - s2, s2);
-            int s3 = Math.min(d - c, (this.f3031to - d) - 1);
-            ShortArrays.swap(x, b, this.f3031to - s3, s3);
+            int s3 = Math.min(d - c, (this.f2995to - d) - 1);
+            ShortArrays.swap(x, b, this.f2995to - s3, s3);
             int s4 = b - a;
             int t = d - c;
             if (s4 > 1 && t > 1) {
-                invokeAll(new ForkJoinQuickSortComp(x, this.from, this.from + s4, this.comp), new ForkJoinQuickSortComp(x, this.f3031to - t, this.f3031to, this.comp));
+                invokeAll(new ForkJoinQuickSortComp(x, this.from, this.from + s4, this.comp), new ForkJoinQuickSortComp(x, this.f2995to - t, this.f2995to, this.comp));
             } else if (s4 > 1) {
                 invokeAll(new ForkJoinTask[]{new ForkJoinQuickSortComp(x, this.from, this.from + s4, this.comp)});
             } else {
-                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSortComp(x, this.f3031to - t, this.f3031to, this.comp)});
+                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSortComp(x, this.f2995to - t, this.f2995to, this.comp)});
             }
         }
     }
@@ -496,35 +495,35 @@ public final class ShortArrays {
         private final int from;
 
         /* renamed from: to */
-        private final int f3026to;
+        private final int f2990to;
 
         /* renamed from: x */
-        private final short[] f3027x;
+        private final short[] f2991x;
 
         public ForkJoinQuickSort(short[] x, int from, int to) {
             this.from = from;
-            this.f3026to = to;
-            this.f3027x = x;
+            this.f2990to = to;
+            this.f2991x = x;
         }
 
         @Override // java.util.concurrent.RecursiveAction
         protected void compute() {
             int comparison;
             int comparison2;
-            short[] x = this.f3027x;
-            int len = this.f3026to - this.from;
+            short[] x = this.f2991x;
+            int len = this.f2990to - this.from;
             if (len < 8192) {
-                ShortArrays.quickSort(x, this.from, this.f3026to);
+                ShortArrays.quickSort(x, this.from, this.f2990to);
                 return;
             }
             int m = this.from + (len / 2);
             int l = this.from;
-            int n = this.f3026to - 1;
+            int n = this.f2990to - 1;
             int s = len / 8;
             short v = x[ShortArrays.med3(x, ShortArrays.med3(x, l, l + s, l + (2 * s)), ShortArrays.med3(x, m - s, m, m + s), ShortArrays.med3(x, n - (2 * s), n - s, n))];
             int a = this.from;
             int b = a;
-            int c = this.f3026to - 1;
+            int c = this.f2990to - 1;
             int d = c;
             while (true) {
                 if (b > c || (comparison2 = Short.compare(x[b], v)) > 0) {
@@ -551,16 +550,16 @@ public final class ShortArrays {
             }
             int s2 = Math.min(a - this.from, b - a);
             ShortArrays.swap(x, this.from, b - s2, s2);
-            int s3 = Math.min(d - c, (this.f3026to - d) - 1);
-            ShortArrays.swap(x, b, this.f3026to - s3, s3);
+            int s3 = Math.min(d - c, (this.f2990to - d) - 1);
+            ShortArrays.swap(x, b, this.f2990to - s3, s3);
             int s4 = b - a;
             int t = d - c;
             if (s4 > 1 && t > 1) {
-                invokeAll(new ForkJoinQuickSort(x, this.from, this.from + s4), new ForkJoinQuickSort(x, this.f3026to - t, this.f3026to));
+                invokeAll(new ForkJoinQuickSort(x, this.from, this.from + s4), new ForkJoinQuickSort(x, this.f2990to - t, this.f2990to));
             } else if (s4 > 1) {
                 invokeAll(new ForkJoinTask[]{new ForkJoinQuickSort(x, this.from, this.from + s4)});
             } else {
-                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSort(x, this.f3026to - t, this.f3026to)});
+                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSort(x, this.f2990to - t, this.f2990to)});
             }
         }
     }
@@ -687,16 +686,16 @@ public final class ShortArrays {
         private final int from;
 
         /* renamed from: to */
-        private final int f3033to;
+        private final int f2997to;
         private final int[] perm;
 
         /* renamed from: x */
-        private final short[] f3034x;
+        private final short[] f2998x;
 
         public ForkJoinQuickSortIndirect(int[] perm, short[] x, int from, int to) {
             this.from = from;
-            this.f3033to = to;
-            this.f3034x = x;
+            this.f2997to = to;
+            this.f2998x = x;
             this.perm = perm;
         }
 
@@ -704,20 +703,20 @@ public final class ShortArrays {
         protected void compute() {
             int comparison;
             int comparison2;
-            short[] x = this.f3034x;
-            int len = this.f3033to - this.from;
+            short[] x = this.f2998x;
+            int len = this.f2997to - this.from;
             if (len < 8192) {
-                ShortArrays.quickSortIndirect(this.perm, x, this.from, this.f3033to);
+                ShortArrays.quickSortIndirect(this.perm, x, this.from, this.f2997to);
                 return;
             }
             int m = this.from + (len / 2);
             int l = this.from;
-            int n = this.f3033to - 1;
+            int n = this.f2997to - 1;
             int s = len / 8;
             short v = x[this.perm[ShortArrays.med3Indirect(this.perm, x, ShortArrays.med3Indirect(this.perm, x, l, l + s, l + (2 * s)), ShortArrays.med3Indirect(this.perm, x, m - s, m, m + s), ShortArrays.med3Indirect(this.perm, x, n - (2 * s), n - s, n))]];
             int a = this.from;
             int b = a;
-            int c = this.f3033to - 1;
+            int c = this.f2997to - 1;
             int d = c;
             while (true) {
                 if (b > c || (comparison2 = Short.compare(x[this.perm[b]], v)) > 0) {
@@ -744,16 +743,16 @@ public final class ShortArrays {
             }
             int s2 = Math.min(a - this.from, b - a);
             IntArrays.swap(this.perm, this.from, b - s2, s2);
-            int s3 = Math.min(d - c, (this.f3033to - d) - 1);
-            IntArrays.swap(this.perm, b, this.f3033to - s3, s3);
+            int s3 = Math.min(d - c, (this.f2997to - d) - 1);
+            IntArrays.swap(this.perm, b, this.f2997to - s3, s3);
             int s4 = b - a;
             int t = d - c;
             if (s4 > 1 && t > 1) {
-                invokeAll(new ForkJoinQuickSortIndirect(this.perm, x, this.from, this.from + s4), new ForkJoinQuickSortIndirect(this.perm, x, this.f3033to - t, this.f3033to));
+                invokeAll(new ForkJoinQuickSortIndirect(this.perm, x, this.from, this.from + s4), new ForkJoinQuickSortIndirect(this.perm, x, this.f2997to - t, this.f2997to));
             } else if (s4 > 1) {
                 invokeAll(new ForkJoinTask[]{new ForkJoinQuickSortIndirect(this.perm, x, this.from, this.from + s4)});
             } else {
-                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSortIndirect(this.perm, x, this.f3033to - t, this.f3033to)});
+                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSortIndirect(this.perm, x, this.f2997to - t, this.f2997to)});
             }
         }
     }
@@ -922,40 +921,40 @@ public final class ShortArrays {
         private final int from;
 
         /* renamed from: to */
-        private final int f3028to;
+        private final int f2992to;
 
         /* renamed from: x */
-        private final short[] f3029x;
+        private final short[] f2993x;
 
         /* renamed from: y */
-        private final short[] f3030y;
+        private final short[] f2994y;
 
         public ForkJoinQuickSort2(short[] x, short[] y, int from, int to) {
             this.from = from;
-            this.f3028to = to;
-            this.f3029x = x;
-            this.f3030y = y;
+            this.f2992to = to;
+            this.f2993x = x;
+            this.f2994y = y;
         }
 
         @Override // java.util.concurrent.RecursiveAction
         protected void compute() {
-            short[] x = this.f3029x;
-            short[] y = this.f3030y;
-            int len = this.f3028to - this.from;
+            short[] x = this.f2993x;
+            short[] y = this.f2994y;
+            int len = this.f2992to - this.from;
             if (len < 8192) {
-                ShortArrays.quickSort(x, y, this.from, this.f3028to);
+                ShortArrays.quickSort(x, y, this.from, this.f2992to);
                 return;
             }
             int m = this.from + (len / 2);
             int l = this.from;
-            int n = this.f3028to - 1;
+            int n = this.f2992to - 1;
             int s = len / 8;
             int m2 = ShortArrays.med3(x, y, ShortArrays.med3(x, y, l, l + s, l + (2 * s)), ShortArrays.med3(x, y, m - s, m, m + s), ShortArrays.med3(x, y, n - (2 * s), n - s, n));
             short v = x[m2];
             short w = y[m2];
             int a = this.from;
             int b = a;
-            int c = this.f3028to - 1;
+            int c = this.f2992to - 1;
             int d = c;
             while (true) {
                 if (b <= c) {
@@ -990,16 +989,16 @@ public final class ShortArrays {
             }
             int s2 = Math.min(a - this.from, b - a);
             ShortArrays.swap(x, y, this.from, b - s2, s2);
-            int s3 = Math.min(d - c, (this.f3028to - d) - 1);
-            ShortArrays.swap(x, y, b, this.f3028to - s3, s3);
+            int s3 = Math.min(d - c, (this.f2992to - d) - 1);
+            ShortArrays.swap(x, y, b, this.f2992to - s3, s3);
             int s4 = b - a;
             int t3 = d - c;
             if (s4 > 1 && t3 > 1) {
-                invokeAll(new ForkJoinQuickSort2(x, y, this.from, this.from + s4), new ForkJoinQuickSort2(x, y, this.f3028to - t3, this.f3028to));
+                invokeAll(new ForkJoinQuickSort2(x, y, this.from, this.from + s4), new ForkJoinQuickSort2(x, y, this.f2992to - t3, this.f2992to));
             } else if (s4 > 1) {
                 invokeAll(new ForkJoinTask[]{new ForkJoinQuickSort2(x, y, this.from, this.from + s4)});
             } else {
-                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSort2(x, y, this.f3028to - t3, this.f3028to)});
+                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSort2(x, y, this.f2992to - t3, this.f2992to)});
             }
         }
     }
@@ -1657,9 +1656,9 @@ public final class ShortArrays {
             quickSort(a, b, from, to);
             return;
         }
-        int[] offsetStack = new int[ActivityInfoOuterClass.ActivityInfo.MOONFIN_TRIAL_INFO_FIELD_NUMBER];
-        int[] lengthStack = new int[ActivityInfoOuterClass.ActivityInfo.MOONFIN_TRIAL_INFO_FIELD_NUMBER];
-        int[] levelStack = new int[ActivityInfoOuterClass.ActivityInfo.MOONFIN_TRIAL_INFO_FIELD_NUMBER];
+        int[] offsetStack = new int[766];
+        int[] lengthStack = new int[766];
+        int[] levelStack = new int[766];
         offsetStack[0] = from;
         lengthStack[0] = to - from;
         int stackPos = 0 + 1;
@@ -1893,9 +1892,9 @@ public final class ShortArrays {
             insertionSortIndirect(perm, a, b, from, to);
             return;
         }
-        int[] offsetStack = new int[ActivityInfoOuterClass.ActivityInfo.MOONFIN_TRIAL_INFO_FIELD_NUMBER];
-        int[] lengthStack = new int[ActivityInfoOuterClass.ActivityInfo.MOONFIN_TRIAL_INFO_FIELD_NUMBER];
-        int[] levelStack = new int[ActivityInfoOuterClass.ActivityInfo.MOONFIN_TRIAL_INFO_FIELD_NUMBER];
+        int[] offsetStack = new int[766];
+        int[] lengthStack = new int[766];
+        int[] levelStack = new int[766];
         offsetStack[0] = from;
         lengthStack[0] = to - from;
         int stackPos = 0 + 1;

@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UgcMusicTrackOuterClass.class */
 public final class UgcMusicTrackOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013UgcMusicTrack.proto\u001a\u0012UgcMusicNote.proto\"7\n\rUgcMusicTrack\u0012&\n\u000fmusic_note_list\u0018\u0006 \u0003(\u000b2\r.UgcMusicNoteB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{UgcMusicNoteOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013UgcMusicTrack.proto\u001a\u0012UgcMusicNote.proto\"5\n\rUgcMusicTrack\u0012$\n\rmusicNoteList\u0018\r \u0003(\u000b2\r.UgcMusicNoteB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{UgcMusicNoteOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_UgcMusicTrack_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_UgcMusicTrack_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_UgcMusicTrack_descriptor, new String[]{"MusicNoteList"});
 
@@ -55,7 +55,7 @@ public final class UgcMusicTrackOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UgcMusicTrackOuterClass$UgcMusicTrack.class */
     public static final class UgcMusicTrack extends GeneratedMessageV3 implements UgcMusicTrackOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MUSIC_NOTE_LIST_FIELD_NUMBER = 6;
+        public static final int MUSICNOTELIST_FIELD_NUMBER = 13;
         private List<UgcMusicNoteOuterClass.UgcMusicNote> musicNoteList_;
         private byte memoizedIsInitialized;
         private static final UgcMusicTrack DEFAULT_INSTANCE = new UgcMusicTrack();
@@ -106,7 +106,7 @@ public final class UgcMusicTrackOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 50:
+                                case 106:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.musicNoteList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -187,7 +187,7 @@ public final class UgcMusicTrackOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.musicNoteList_.size(); i++) {
-                output.writeMessage(6, this.musicNoteList_.get(i));
+                output.writeMessage(13, this.musicNoteList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,7 +200,7 @@ public final class UgcMusicTrackOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.musicNoteList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(6, this.musicNoteList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(13, this.musicNoteList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class UgcMusicTrackOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getMusicNoteListCount() > 0) {
-                hash = (53 * ((37 * hash) + 6)) + getMusicNoteListList().hashCode();
+                hash = (53 * ((37 * hash) + 13)) + getMusicNoteListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

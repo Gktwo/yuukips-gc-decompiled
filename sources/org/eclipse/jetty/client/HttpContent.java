@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import org.eclipse.jetty.client.api.ContentProvider;
 import org.eclipse.jetty.util.BufferUtil;
-import org.eclipse.jetty.util.C5747IO;
+import org.eclipse.jetty.util.C5739IO;
 import org.eclipse.jetty.util.Callback;
 import org.eclipse.jetty.util.log.Log;
 import org.eclipse.jetty.util.log.Logger;
@@ -118,7 +118,7 @@ public class HttpContent implements Callback, Closeable {
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public void close() {
         if (this.iterator instanceof Closeable) {
-            C5747IO.close((Closeable) this.iterator);
+            C5739IO.close((Closeable) this.iterator);
         }
     }
 

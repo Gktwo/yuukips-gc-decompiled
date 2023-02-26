@@ -23,13 +23,13 @@ public class BooleanOpenHashSet extends AbstractBooleanSet implements Serializab
     protected transient boolean containsNull;
 
     /* renamed from: n */
-    protected transient int f1073n;
+    protected transient int f1037n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1074f;
+    protected final float f1038f;
 
     public BooleanOpenHashSet(int expected, float f) {
         if (f <= 0.0f || f >= 1.0f) {
@@ -37,13 +37,13 @@ public class BooleanOpenHashSet extends AbstractBooleanSet implements Serializab
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1074f = f;
+            this.f1038f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1073n = arraySize;
+            this.f1037n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1073n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1073n, f);
-            this.key = new boolean[this.f1073n + 1];
+            this.mask = this.f1037n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1037n, f);
+            this.key = new boolean[this.f1037n + 1];
         }
     }
 
@@ -164,22 +164,22 @@ public class BooleanOpenHashSet extends AbstractBooleanSet implements Serializab
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1074f);
-        if (needed > this.f1073n) {
+        int needed = HashCommon.arraySize(capacity, this.f1038f);
+        if (needed > this.f1037n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1074f)))));
-        if (needed > this.f1073n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1038f)))));
+        if (needed > this.f1037n) {
             rehash(needed);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanCollection, p014it.unimi.dsi.fastutil.booleans.BooleanCollection
     public boolean addAll(BooleanCollection c) {
-        if (((double) this.f1074f) <= 0.5d) {
+        if (((double) this.f1038f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -189,7 +189,7 @@ public class BooleanOpenHashSet extends AbstractBooleanSet implements Serializab
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Boolean> c) {
-        if (((double) this.f1074f) <= 0.5d) {
+        if (((double) this.f1038f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -229,7 +229,7 @@ public class BooleanOpenHashSet extends AbstractBooleanSet implements Serializab
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f1074f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f1038f));
         return true;
     }
 
@@ -265,21 +265,21 @@ public class BooleanOpenHashSet extends AbstractBooleanSet implements Serializab
     private boolean removeEntry(int pos) {
         this.size--;
         shiftKeys(pos);
-        if (this.f1073n <= this.minN || this.size >= this.maxFill / 4 || this.f1073n <= 16) {
+        if (this.f1037n <= this.minN || this.size >= this.maxFill / 4 || this.f1037n <= 16) {
             return true;
         }
-        rehash(this.f1073n / 2);
+        rehash(this.f1037n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f1073n] = false;
+        this.key[this.f1037n] = false;
         this.size--;
-        if (this.f1073n <= this.minN || this.size >= this.maxFill / 4 || this.f1073n <= 16) {
+        if (this.f1037n <= this.minN || this.size >= this.maxFill / 4 || this.f1037n <= 16) {
             return true;
         }
-        rehash(this.f1073n / 2);
+        rehash(this.f1037n / 2);
         return true;
     }
 
@@ -367,20 +367,20 @@ public class BooleanOpenHashSet extends AbstractBooleanSet implements Serializab
         int last;
 
         /* renamed from: c */
-        int f1075c;
+        int f1039c;
         boolean mustReturnNull;
         BooleanArrayList wrapped;
 
         private SetIterator() {
-            this.pos = BooleanOpenHashSet.this.f1073n;
+            this.pos = BooleanOpenHashSet.this.f1037n;
             this.last = -1;
-            this.f1075c = BooleanOpenHashSet.this.size;
+            this.f1039c = BooleanOpenHashSet.this.size;
             this.mustReturnNull = BooleanOpenHashSet.this.containsNull;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1075c != 0;
+            return this.f1039c != 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator
@@ -388,11 +388,11 @@ public class BooleanOpenHashSet extends AbstractBooleanSet implements Serializab
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f1075c--;
+            this.f1039c--;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = BooleanOpenHashSet.this.f1073n;
-                return BooleanOpenHashSet.this.key[BooleanOpenHashSet.this.f1073n];
+                this.last = BooleanOpenHashSet.this.f1037n;
+                return BooleanOpenHashSet.this.key[BooleanOpenHashSet.this.f1037n];
             }
             boolean[] key = BooleanOpenHashSet.this.key;
             do {
@@ -451,9 +451,9 @@ public class BooleanOpenHashSet extends AbstractBooleanSet implements Serializab
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == BooleanOpenHashSet.this.f1073n) {
+            if (this.last == BooleanOpenHashSet.this.f1037n) {
                 BooleanOpenHashSet.this.containsNull = false;
-                BooleanOpenHashSet.this.key[BooleanOpenHashSet.this.f1073n] = false;
+                BooleanOpenHashSet.this.key[BooleanOpenHashSet.this.f1037n] = false;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -470,22 +470,22 @@ public class BooleanOpenHashSet extends AbstractBooleanSet implements Serializab
             boolean[] key = BooleanOpenHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = BooleanOpenHashSet.this.f1073n;
-                action.accept(key[BooleanOpenHashSet.this.f1073n]);
-                this.f1075c--;
+                this.last = BooleanOpenHashSet.this.f1037n;
+                action.accept(key[BooleanOpenHashSet.this.f1037n]);
+                this.f1039c--;
             }
-            while (this.f1075c != 0) {
+            while (this.f1039c != 0) {
                 int i = this.pos - 1;
                 this.pos = i;
                 if (i < 0) {
                     this.last = Integer.MIN_VALUE;
                     action.accept(this.wrapped.getBoolean((-this.pos) - 1));
-                    this.f1075c--;
+                    this.f1039c--;
                 } else if (key[this.pos]) {
                     int i2 = this.pos;
                     this.last = i2;
                     action.accept(key[i2]);
-                    this.f1075c--;
+                    this.f1039c--;
                 }
             }
         }
@@ -505,22 +505,22 @@ public class BooleanOpenHashSet extends AbstractBooleanSet implements Serializab
         int max;
 
         /* renamed from: c */
-        int f1076c;
+        int f1040c;
         boolean mustReturnNull;
         boolean hasSplit;
 
         SetSpliterator() {
             this.pos = 0;
-            this.max = BooleanOpenHashSet.this.f1073n;
-            this.f1076c = 0;
+            this.max = BooleanOpenHashSet.this.f1037n;
+            this.f1040c = 0;
             this.mustReturnNull = BooleanOpenHashSet.this.containsNull;
             this.hasSplit = false;
         }
 
         SetSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = BooleanOpenHashSet.this.f1073n;
-            this.f1076c = 0;
+            this.max = BooleanOpenHashSet.this.f1037n;
+            this.f1040c = 0;
             this.mustReturnNull = BooleanOpenHashSet.this.containsNull;
             this.hasSplit = false;
             this.pos = pos;
@@ -532,14 +532,14 @@ public class BooleanOpenHashSet extends AbstractBooleanSet implements Serializab
         public boolean tryAdvance(BooleanConsumer action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1076c++;
-                action.accept(BooleanOpenHashSet.this.key[BooleanOpenHashSet.this.f1073n]);
+                this.f1040c++;
+                action.accept(BooleanOpenHashSet.this.key[BooleanOpenHashSet.this.f1037n]);
                 return true;
             }
             boolean[] key = BooleanOpenHashSet.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos]) {
-                    this.f1076c++;
+                    this.f1040c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(key[i]);
@@ -554,13 +554,13 @@ public class BooleanOpenHashSet extends AbstractBooleanSet implements Serializab
             boolean[] key = BooleanOpenHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                action.accept(key[BooleanOpenHashSet.this.f1073n]);
-                this.f1076c++;
+                action.accept(key[BooleanOpenHashSet.this.f1037n]);
+                this.f1040c++;
             }
             while (this.pos < this.max) {
                 if (key[this.pos]) {
                     action.accept(key[this.pos]);
-                    this.f1076c++;
+                    this.f1040c++;
                 }
                 this.pos++;
             }
@@ -574,9 +574,9 @@ public class BooleanOpenHashSet extends AbstractBooleanSet implements Serializab
         @Override // java.util.Spliterator
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (BooleanOpenHashSet.this.size - this.f1076c);
+                return (long) (BooleanOpenHashSet.this.size - this.f1040c);
             }
-            return Math.min((long) (BooleanOpenHashSet.this.size - this.f1076c), ((long) ((((double) BooleanOpenHashSet.this.realSize()) / ((double) BooleanOpenHashSet.this.f1073n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (BooleanOpenHashSet.this.size - this.f1040c), ((long) ((((double) BooleanOpenHashSet.this.realSize()) / ((double) BooleanOpenHashSet.this.f1037n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanSpliterator, java.util.Spliterator.OfPrimitive, java.util.Spliterator
@@ -702,10 +702,10 @@ public class BooleanOpenHashSet extends AbstractBooleanSet implements Serializab
     @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterable
     public void forEach(BooleanConsumer action) {
         if (this.containsNull) {
-            action.accept(this.key[this.f1073n]);
+            action.accept(this.key[this.f1037n]);
         }
         boolean[] key = this.key;
-        int pos = this.f1073n;
+        int pos = this.f1037n;
         while (true) {
             pos--;
             if (pos == 0) {
@@ -722,8 +722,8 @@ public class BooleanOpenHashSet extends AbstractBooleanSet implements Serializab
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1074f)));
-        if (l >= this.f1073n || this.size > HashCommon.maxFill(l, this.f1074f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1038f)));
+        if (l >= this.f1037n || this.size > HashCommon.maxFill(l, this.f1038f)) {
             return true;
         }
         try {
@@ -739,7 +739,7 @@ public class BooleanOpenHashSet extends AbstractBooleanSet implements Serializab
         boolean[] key = this.key;
         int mask = newN - 1;
         boolean[] newKey = new boolean[newN + 1];
-        int i2 = this.f1073n;
+        int i2 = this.f1037n;
         int j = realSize();
         while (true) {
             j--;
@@ -757,9 +757,9 @@ public class BooleanOpenHashSet extends AbstractBooleanSet implements Serializab
                 }
                 newKey[pos] = key[i2];
             } else {
-                this.f1073n = newN;
+                this.f1037n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f1073n, this.f1074f);
+                this.maxFill = HashCommon.maxFill(this.f1037n, this.f1038f);
                 this.key = newKey;
                 return;
             }
@@ -814,10 +814,10 @@ public class BooleanOpenHashSet extends AbstractBooleanSet implements Serializab
         int pos;
         int i;
         s.defaultReadObject();
-        this.f1073n = HashCommon.arraySize(this.size, this.f1074f);
-        this.maxFill = HashCommon.maxFill(this.f1073n, this.f1074f);
-        this.mask = this.f1073n - 1;
-        boolean[] key = new boolean[this.f1073n + 1];
+        this.f1037n = HashCommon.arraySize(this.size, this.f1038f);
+        this.maxFill = HashCommon.maxFill(this.f1037n, this.f1038f);
+        this.mask = this.f1037n - 1;
+        boolean[] key = new boolean[this.f1037n + 1];
         this.key = key;
         int i2 = this.size;
         while (true) {
@@ -825,7 +825,7 @@ public class BooleanOpenHashSet extends AbstractBooleanSet implements Serializab
             if (i2 != 0) {
                 boolean k = s.readBoolean();
                 if (!k) {
-                    pos = this.f1073n;
+                    pos = this.f1037n;
                     this.containsNull = true;
                 } else {
                     int i3 = (k ? 262886248 : -878682501) & this.mask;

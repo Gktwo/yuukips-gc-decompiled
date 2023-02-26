@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ClosedItemNotifyOuterClass.class */
 public final class ClosedItemNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016ClosedItemNotify.proto\"(\n\u0010ClosedItemNotify\u0012\u0014\n\fitem_id_list\u0018\n \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016ClosedItemNotify.proto\"&\n\u0010ClosedItemNotify\u0012\u0012\n\nitemIdList\u0018\u0006 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ClosedItemNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ClosedItemNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ClosedItemNotify_descriptor, new String[]{"ItemIdList"});
 
@@ -49,7 +49,7 @@ public final class ClosedItemNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ClosedItemNotifyOuterClass$ClosedItemNotify.class */
     public static final class ClosedItemNotify extends GeneratedMessageV3 implements ClosedItemNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ITEM_ID_LIST_FIELD_NUMBER = 10;
+        public static final int ITEMIDLIST_FIELD_NUMBER = 6;
         private Internal.IntList itemIdList_;
         private int itemIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -103,14 +103,14 @@ public final class ClosedItemNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 80:
+                                case 48:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.itemIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.itemIdList_.addInt(input.readUInt32());
                                     break;
-                                case 82:
+                                case 50:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.itemIdList_ = newIntList();
@@ -186,7 +186,7 @@ public final class ClosedItemNotifyOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getItemIdListList().size() > 0) {
-                output.writeUInt32NoTag(82);
+                output.writeUInt32NoTag(50);
                 output.writeUInt32NoTag(this.itemIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.itemIdList_.size(); i++) {
@@ -234,7 +234,7 @@ public final class ClosedItemNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getItemIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 10)) + getItemIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 6)) + getItemIdListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

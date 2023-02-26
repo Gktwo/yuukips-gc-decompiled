@@ -29,13 +29,13 @@ public class ByteLinkedOpenCustomHashSet extends AbstractByteSortedSet implement
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f1287n;
+    protected transient int f1251n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1288f;
+    protected final float f1252f;
     private static final int SPLITERATOR_CHARACTERISTICS = 337;
 
     public ByteLinkedOpenCustomHashSet(int expected, float f, ByteHash.Strategy strategy) {
@@ -47,14 +47,14 @@ public class ByteLinkedOpenCustomHashSet extends AbstractByteSortedSet implement
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1288f = f;
+            this.f1252f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1287n = arraySize;
+            this.f1251n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1287n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1287n, f);
-            this.key = new byte[this.f1287n + 1];
-            this.link = new long[this.f1287n + 1];
+            this.mask = this.f1251n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1251n, f);
+            this.key = new byte[this.f1251n + 1];
+            this.link = new long[this.f1251n + 1];
         }
     }
 
@@ -132,22 +132,22 @@ public class ByteLinkedOpenCustomHashSet extends AbstractByteSortedSet implement
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1288f);
-        if (needed > this.f1287n) {
+        int needed = HashCommon.arraySize(capacity, this.f1252f);
+        if (needed > this.f1251n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1288f)))));
-        if (needed > this.f1287n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1252f)))));
+        if (needed > this.f1251n) {
             rehash(needed);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteCollection, p014it.unimi.dsi.fastutil.bytes.ByteCollection
     public boolean addAll(ByteCollection c) {
-        if (((double) this.f1288f) <= 0.5d) {
+        if (((double) this.f1252f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -157,7 +157,7 @@ public class ByteLinkedOpenCustomHashSet extends AbstractByteSortedSet implement
 
     @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Byte> c) {
-        if (((double) this.f1288f) <= 0.5d) {
+        if (((double) this.f1252f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -191,9 +191,9 @@ public class ByteLinkedOpenCustomHashSet extends AbstractByteSortedSet implement
         } else if (this.containsNull) {
             return false;
         } else {
-            pos = this.f1287n;
+            pos = this.f1251n;
             this.containsNull = true;
-            this.key[this.f1287n] = k;
+            this.key[this.f1251n] = k;
         }
         if (this.size == 0) {
             this.last = pos;
@@ -211,7 +211,7 @@ public class ByteLinkedOpenCustomHashSet extends AbstractByteSortedSet implement
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f1288f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f1252f));
         return true;
     }
 
@@ -249,22 +249,22 @@ public class ByteLinkedOpenCustomHashSet extends AbstractByteSortedSet implement
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f1287n <= this.minN || this.size >= this.maxFill / 4 || this.f1287n <= 16) {
+        if (this.f1251n <= this.minN || this.size >= this.maxFill / 4 || this.f1251n <= 16) {
             return true;
         }
-        rehash(this.f1287n / 2);
+        rehash(this.f1251n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f1287n] = 0;
+        this.key[this.f1251n] = 0;
         this.size--;
-        fixPointers(this.f1287n);
-        if (this.f1287n <= this.minN || this.size >= this.maxFill / 4 || this.f1287n <= 16) {
+        fixPointers(this.f1251n);
+        if (this.f1251n <= this.minN || this.size >= this.maxFill / 4 || this.f1251n <= 16) {
             return true;
         }
-        rehash(this.f1287n / 2);
+        rehash(this.f1251n / 2);
         return true;
     }
 
@@ -340,12 +340,12 @@ public class ByteLinkedOpenCustomHashSet extends AbstractByteSortedSet implement
         this.size--;
         if (this.strategy.equals(k, (byte) 0)) {
             this.containsNull = false;
-            this.key[this.f1287n] = 0;
+            this.key[this.f1251n] = 0;
         } else {
             shiftKeys(pos);
         }
-        if (this.f1287n > this.minN && this.size < this.maxFill / 4 && this.f1287n > 16) {
-            rehash(this.f1287n / 2);
+        if (this.f1251n > this.minN && this.size < this.maxFill / 4 && this.f1251n > 16) {
+            rehash(this.f1251n / 2);
         }
         return k;
     }
@@ -365,12 +365,12 @@ public class ByteLinkedOpenCustomHashSet extends AbstractByteSortedSet implement
         this.size--;
         if (this.strategy.equals(k, (byte) 0)) {
             this.containsNull = false;
-            this.key[this.f1287n] = 0;
+            this.key[this.f1251n] = 0;
         } else {
             shiftKeys(pos);
         }
-        if (this.f1287n > this.minN && this.size < this.maxFill / 4 && this.f1287n > 16) {
-            rehash(this.f1287n / 2);
+        if (this.f1251n > this.minN && this.size < this.maxFill / 4 && this.f1251n > 16) {
+            rehash(this.f1251n / 2);
         }
         return k;
     }
@@ -442,11 +442,11 @@ public class ByteLinkedOpenCustomHashSet extends AbstractByteSortedSet implement
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToFirst(this.f1287n);
+            moveIndexToFirst(this.f1251n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f1287n;
+            pos = this.f1251n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -465,7 +465,7 @@ public class ByteLinkedOpenCustomHashSet extends AbstractByteSortedSet implement
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f1288f));
+        rehash(HashCommon.arraySize(this.size, this.f1252f));
         return true;
     }
 
@@ -488,11 +488,11 @@ public class ByteLinkedOpenCustomHashSet extends AbstractByteSortedSet implement
                 }
             }
         } else if (this.containsNull) {
-            moveIndexToLast(this.f1287n);
+            moveIndexToLast(this.f1251n);
             return false;
         } else {
             this.containsNull = true;
-            pos = this.f1287n;
+            pos = this.f1251n;
         }
         this.key[pos] = k;
         if (this.size == 0) {
@@ -511,7 +511,7 @@ public class ByteLinkedOpenCustomHashSet extends AbstractByteSortedSet implement
         if (i3 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size, this.f1288f));
+        rehash(HashCommon.arraySize(this.size, this.f1252f));
         return true;
     }
 
@@ -656,8 +656,8 @@ public class ByteLinkedOpenCustomHashSet extends AbstractByteSortedSet implement
             this.index = -1;
             if (ByteLinkedOpenCustomHashSet.this.strategy.equals(from, (byte) 0)) {
                 if (ByteLinkedOpenCustomHashSet.this.containsNull) {
-                    this.next = (int) ByteLinkedOpenCustomHashSet.this.link[ByteLinkedOpenCustomHashSet.this.f1287n];
-                    this.prev = ByteLinkedOpenCustomHashSet.this.f1287n;
+                    this.next = (int) ByteLinkedOpenCustomHashSet.this.link[ByteLinkedOpenCustomHashSet.this.f1251n];
+                    this.prev = ByteLinkedOpenCustomHashSet.this.f1251n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + ((int) from) + " does not belong to this set.");
@@ -796,9 +796,9 @@ public class ByteLinkedOpenCustomHashSet extends AbstractByteSortedSet implement
             }
             int pos = this.curr;
             this.curr = -1;
-            if (pos == ByteLinkedOpenCustomHashSet.this.f1287n) {
+            if (pos == ByteLinkedOpenCustomHashSet.this.f1251n) {
                 ByteLinkedOpenCustomHashSet.this.containsNull = false;
-                ByteLinkedOpenCustomHashSet.this.key[ByteLinkedOpenCustomHashSet.this.f1287n] = 0;
+                ByteLinkedOpenCustomHashSet.this.key[ByteLinkedOpenCustomHashSet.this.f1251n] = 0;
                 return;
             }
             byte[] key = ByteLinkedOpenCustomHashSet.this.key;
@@ -868,8 +868,8 @@ public class ByteLinkedOpenCustomHashSet extends AbstractByteSortedSet implement
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1288f)));
-        if (l >= this.f1287n || this.size > HashCommon.maxFill(l, this.f1288f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1252f)));
+        if (l >= this.f1251n || this.size > HashCommon.maxFill(l, this.f1252f)) {
             return true;
         }
         try {
@@ -927,9 +927,9 @@ public class ByteLinkedOpenCustomHashSet extends AbstractByteSortedSet implement
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f1287n = newN;
+        this.f1251n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f1287n, this.f1288f);
+        this.maxFill = HashCommon.maxFill(this.f1251n, this.f1252f);
         this.key = newKey;
     }
 
@@ -983,12 +983,12 @@ public class ByteLinkedOpenCustomHashSet extends AbstractByteSortedSet implement
         int pos;
         int i;
         s.defaultReadObject();
-        this.f1287n = HashCommon.arraySize(this.size, this.f1288f);
-        this.maxFill = HashCommon.maxFill(this.f1287n, this.f1288f);
-        this.mask = this.f1287n - 1;
-        byte[] key = new byte[this.f1287n + 1];
+        this.f1251n = HashCommon.arraySize(this.size, this.f1252f);
+        this.maxFill = HashCommon.maxFill(this.f1251n, this.f1252f);
+        this.mask = this.f1251n - 1;
+        byte[] key = new byte[this.f1251n + 1];
         this.key = key;
-        long[] link = new long[this.f1287n + 1];
+        long[] link = new long[this.f1251n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -1001,7 +1001,7 @@ public class ByteLinkedOpenCustomHashSet extends AbstractByteSortedSet implement
             }
             byte k = s.readByte();
             if (this.strategy.equals(k, (byte) 0)) {
-                pos = this.f1287n;
+                pos = this.f1251n;
                 this.containsNull = true;
             } else {
                 int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;

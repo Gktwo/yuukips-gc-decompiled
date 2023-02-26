@@ -24,23 +24,23 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneEntityDisappearNotifyOuterClass.class */
 public final class SceneEntityDisappearNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n SceneEntityDisappearNotify.proto\u001a\u0010VisionType.proto\"e\n\u001aSceneEntityDisappearNotify\u0012\r\n\u0005param\u0018\u000f \u0001(\r\u0012#\n\u000edisappear_type\u0018\f \u0001(\u000e2\u000b.VisionType\u0012\u0013\n\u000bentity_list\u0018\r \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VisionTypeOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n SceneEntityDisappearNotify.proto\u001a\u0010VisionType.proto\"c\n\u001aSceneEntityDisappearNotify\u0012\u0012\n\nentityList\u0018\r \u0003(\r\u0012\r\n\u0005param\u0018\n \u0001(\r\u0012\"\n\rdisappearType\u0018\u0007 \u0001(\u000e2\u000b.VisionTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VisionTypeOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SceneEntityDisappearNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SceneEntityDisappearNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneEntityDisappearNotify_descriptor, new String[]{"Param", "DisappearType", "EntityList"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SceneEntityDisappearNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneEntityDisappearNotify_descriptor, new String[]{"EntityList", "Param", "DisappearType"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneEntityDisappearNotifyOuterClass$SceneEntityDisappearNotifyOrBuilder.class */
     public interface SceneEntityDisappearNotifyOrBuilder extends MessageOrBuilder {
-        int getParam();
-
-        int getDisappearTypeValue();
-
-        VisionTypeOuterClass.VisionType getDisappearType();
-
         List<Integer> getEntityListList();
 
         int getEntityListCount();
 
         int getEntityList(int i);
+
+        int getParam();
+
+        int getDisappearTypeValue();
+
+        VisionTypeOuterClass.VisionType getDisappearType();
     }
 
     private SceneEntityDisappearNotifyOuterClass() {
@@ -56,13 +56,13 @@ public final class SceneEntityDisappearNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneEntityDisappearNotifyOuterClass$SceneEntityDisappearNotify.class */
     public static final class SceneEntityDisappearNotify extends GeneratedMessageV3 implements SceneEntityDisappearNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PARAM_FIELD_NUMBER = 15;
-        private int param_;
-        public static final int DISAPPEAR_TYPE_FIELD_NUMBER = 12;
-        private int disappearType_;
-        public static final int ENTITY_LIST_FIELD_NUMBER = 13;
+        public static final int ENTITYLIST_FIELD_NUMBER = 13;
         private Internal.IntList entityList_;
         private int entityListMemoizedSerializedSize;
+        public static final int PARAM_FIELD_NUMBER = 10;
+        private int param_;
+        public static final int DISAPPEARTYPE_FIELD_NUMBER = 7;
+        private int disappearType_;
         private byte memoizedIsInitialized;
         private static final SceneEntityDisappearNotify DEFAULT_INSTANCE = new SceneEntityDisappearNotify();
         private static final Parser<SceneEntityDisappearNotify> PARSER = new AbstractParser<SceneEntityDisappearNotify>() { // from class: emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotify.1
@@ -81,8 +81,8 @@ public final class SceneEntityDisappearNotifyOuterClass {
         private SceneEntityDisappearNotify() {
             this.entityListMemoizedSerializedSize = -1;
             this.memoizedIsInitialized = -1;
-            this.disappearType_ = 0;
             this.entityList_ = emptyIntList();
+            this.disappearType_ = 0;
         }
 
         /* access modifiers changed from: protected */
@@ -114,8 +114,11 @@ public final class SceneEntityDisappearNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 96:
+                            case 56:
                                 this.disappearType_ = input.readEnum();
+                                break;
+                            case 80:
+                                this.param_ = input.readUInt32();
                                 break;
                             case 104:
                                 if ((mutable_bitField0_ & 1) == 0) {
@@ -134,9 +137,6 @@ public final class SceneEntityDisappearNotifyOuterClass {
                                     this.entityList_.addInt(input.readUInt32());
                                 }
                                 input.popLimit(limit);
-                                break;
-                            case 120:
-                                this.param_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -171,6 +171,21 @@ public final class SceneEntityDisappearNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotifyOrBuilder
+        public List<Integer> getEntityListList() {
+            return this.entityList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotifyOrBuilder
+        public int getEntityListCount() {
+            return this.entityList_.size();
+        }
+
+        @Override // emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotifyOrBuilder
+        public int getEntityList(int index) {
+            return this.entityList_.getInt(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotifyOrBuilder
         public int getParam() {
             return this.param_;
         }
@@ -184,21 +199,6 @@ public final class SceneEntityDisappearNotifyOuterClass {
         public VisionTypeOuterClass.VisionType getDisappearType() {
             VisionTypeOuterClass.VisionType result = VisionTypeOuterClass.VisionType.valueOf(this.disappearType_);
             return result == null ? VisionTypeOuterClass.VisionType.UNRECOGNIZED : result;
-        }
-
-        @Override // emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotifyOrBuilder
-        public List<Integer> getEntityListList() {
-            return this.entityList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotifyOrBuilder
-        public int getEntityListCount() {
-            return this.entityList_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotifyOrBuilder
-        public int getEntityList(int index) {
-            return this.entityList_.getInt(index);
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -218,7 +218,10 @@ public final class SceneEntityDisappearNotifyOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (this.disappearType_ != VisionTypeOuterClass.VisionType.VISION_TYPE_NONE.getNumber()) {
-                output.writeEnum(12, this.disappearType_);
+                output.writeEnum(7, this.disappearType_);
+            }
+            if (this.param_ != 0) {
+                output.writeUInt32(10, this.param_);
             }
             if (getEntityListList().size() > 0) {
                 output.writeUInt32NoTag(106);
@@ -226,9 +229,6 @@ public final class SceneEntityDisappearNotifyOuterClass {
             }
             for (int i = 0; i < this.entityList_.size(); i++) {
                 output.writeUInt32NoTag(this.entityList_.getInt(i));
-            }
-            if (this.param_ != 0) {
-                output.writeUInt32(15, this.param_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -241,7 +241,10 @@ public final class SceneEntityDisappearNotifyOuterClass {
             }
             int size2 = 0;
             if (this.disappearType_ != VisionTypeOuterClass.VisionType.VISION_TYPE_NONE.getNumber()) {
-                size2 = 0 + CodedOutputStream.computeEnumSize(12, this.disappearType_);
+                size2 = 0 + CodedOutputStream.computeEnumSize(7, this.disappearType_);
+            }
+            if (this.param_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(10, this.param_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.entityList_.size(); i++) {
@@ -252,9 +255,6 @@ public final class SceneEntityDisappearNotifyOuterClass {
                 size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.entityListMemoizedSerializedSize = dataSize;
-            if (this.param_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(15, this.param_);
-            }
             int size4 = size3 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size4;
             return size4;
@@ -269,7 +269,7 @@ public final class SceneEntityDisappearNotifyOuterClass {
                 return equals(obj);
             }
             SceneEntityDisappearNotify other = (SceneEntityDisappearNotify) obj;
-            return getParam() == other.getParam() && this.disappearType_ == other.disappearType_ && getEntityListList().equals(other.getEntityListList()) && this.unknownFields.equals(other.unknownFields);
+            return getEntityListList().equals(other.getEntityListList()) && getParam() == other.getParam() && this.disappearType_ == other.disappearType_ && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -277,11 +277,11 @@ public final class SceneEntityDisappearNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getParam())) + 12)) + this.disappearType_;
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (getEntityListCount() > 0) {
                 hash = (53 * ((37 * hash) + 13)) + getEntityListList().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 10)) + getParam())) + 7)) + this.disappearType_)) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -362,8 +362,8 @@ public final class SceneEntityDisappearNotifyOuterClass {
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SceneEntityDisappearNotifyOrBuilder {
             private int bitField0_;
             private int param_;
-            private int disappearType_ = 0;
             private Internal.IntList entityList_ = SceneEntityDisappearNotify.emptyIntList();
+            private int disappearType_ = 0;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return SceneEntityDisappearNotifyOuterClass.internal_static_SceneEntityDisappearNotify_descriptor;
@@ -391,10 +391,10 @@ public final class SceneEntityDisappearNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.param_ = 0;
-                this.disappearType_ = 0;
                 this.entityList_ = SceneEntityDisappearNotify.emptyIntList();
                 this.bitField0_ &= -2;
+                this.param_ = 0;
+                this.disappearType_ = 0;
                 return this;
             }
 
@@ -421,13 +421,13 @@ public final class SceneEntityDisappearNotifyOuterClass {
             public SceneEntityDisappearNotify buildPartial() {
                 SceneEntityDisappearNotify result = new SceneEntityDisappearNotify(this);
                 int i = this.bitField0_;
-                result.param_ = this.param_;
-                result.disappearType_ = this.disappearType_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.entityList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.entityList_ = this.entityList_;
+                result.param_ = this.param_;
+                result.disappearType_ = this.disappearType_;
                 onBuilt();
                 return result;
             }
@@ -475,12 +475,6 @@ public final class SceneEntityDisappearNotifyOuterClass {
                 if (other == SceneEntityDisappearNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getParam() != 0) {
-                    setParam(other.getParam());
-                }
-                if (other.disappearType_ != 0) {
-                    setDisappearTypeValue(other.getDisappearTypeValue());
-                }
                 if (!other.entityList_.isEmpty()) {
                     if (this.entityList_.isEmpty()) {
                         this.entityList_ = other.entityList_;
@@ -490,6 +484,12 @@ public final class SceneEntityDisappearNotifyOuterClass {
                         this.entityList_.addAll(other.entityList_);
                     }
                     onChanged();
+                }
+                if (other.getParam() != 0) {
+                    setParam(other.getParam());
+                }
+                if (other.disappearType_ != 0) {
+                    setDisappearTypeValue(other.getDisappearTypeValue());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -521,55 +521,6 @@ public final class SceneEntityDisappearNotifyOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotifyOrBuilder
-            public int getParam() {
-                return this.param_;
-            }
-
-            public Builder setParam(int value) {
-                this.param_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearParam() {
-                this.param_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotifyOrBuilder
-            public int getDisappearTypeValue() {
-                return this.disappearType_;
-            }
-
-            public Builder setDisappearTypeValue(int value) {
-                this.disappearType_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotifyOrBuilder
-            public VisionTypeOuterClass.VisionType getDisappearType() {
-                VisionTypeOuterClass.VisionType result = VisionTypeOuterClass.VisionType.valueOf(this.disappearType_);
-                return result == null ? VisionTypeOuterClass.VisionType.UNRECOGNIZED : result;
-            }
-
-            public Builder setDisappearType(VisionTypeOuterClass.VisionType value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.disappearType_ = value.getNumber();
-                onChanged();
-                return this;
-            }
-
-            public Builder clearDisappearType() {
-                this.disappearType_ = 0;
-                onChanged();
-                return this;
             }
 
             private void ensureEntityListIsMutable() {
@@ -618,6 +569,55 @@ public final class SceneEntityDisappearNotifyOuterClass {
             public Builder clearEntityList() {
                 this.entityList_ = SceneEntityDisappearNotify.emptyIntList();
                 this.bitField0_ &= -2;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotifyOrBuilder
+            public int getParam() {
+                return this.param_;
+            }
+
+            public Builder setParam(int value) {
+                this.param_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearParam() {
+                this.param_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotifyOrBuilder
+            public int getDisappearTypeValue() {
+                return this.disappearType_;
+            }
+
+            public Builder setDisappearTypeValue(int value) {
+                this.disappearType_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.SceneEntityDisappearNotifyOuterClass.SceneEntityDisappearNotifyOrBuilder
+            public VisionTypeOuterClass.VisionType getDisappearType() {
+                VisionTypeOuterClass.VisionType result = VisionTypeOuterClass.VisionType.valueOf(this.disappearType_);
+                return result == null ? VisionTypeOuterClass.VisionType.UNRECOGNIZED : result;
+            }
+
+            public Builder setDisappearType(VisionTypeOuterClass.VisionType value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.disappearType_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+
+            public Builder clearDisappearType() {
+                this.disappearType_ = 0;
                 onChanged();
                 return this;
             }

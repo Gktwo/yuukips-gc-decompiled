@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RoguelikeGadgetInfoOuterClass.class */
 public final class RoguelikeGadgetInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019RoguelikeGadgetInfo.proto\"e\n\u0013RoguelikeGadgetInfo\u0012\u0016\n\u000ecell_config_id\u0018\u0001 \u0001(\r\u0012\u0011\n\tcell_type\u0018\u0002 \u0001(\r\u0012\u0012\n\ncell_state\u0018\u0003 \u0001(\r\u0012\u000f\n\u0007cell_id\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019RoguelikeGadgetInfo.proto\"`\n\u0013RoguelikeGadgetInfo\u0012\u0014\n\fcellConfigId\u0018\u0001 \u0001(\r\u0012\u0010\n\bcellType\u0018\u0002 \u0001(\r\u0012\u0011\n\tcellState\u0018\u0003 \u0001(\r\u0012\u000e\n\u0006cellId\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_RoguelikeGadgetInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_RoguelikeGadgetInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_RoguelikeGadgetInfo_descriptor, new String[]{"CellConfigId", "CellType", "CellState", "CellId"});
 
@@ -47,13 +47,13 @@ public final class RoguelikeGadgetInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/RoguelikeGadgetInfoOuterClass$RoguelikeGadgetInfo.class */
     public static final class RoguelikeGadgetInfo extends GeneratedMessageV3 implements RoguelikeGadgetInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CELL_CONFIG_ID_FIELD_NUMBER = 1;
+        public static final int CELLCONFIGID_FIELD_NUMBER = 1;
         private int cellConfigId_;
-        public static final int CELL_TYPE_FIELD_NUMBER = 2;
+        public static final int CELLTYPE_FIELD_NUMBER = 2;
         private int cellType_;
-        public static final int CELL_STATE_FIELD_NUMBER = 3;
+        public static final int CELLSTATE_FIELD_NUMBER = 3;
         private int cellState_;
-        public static final int CELL_ID_FIELD_NUMBER = 4;
+        public static final int CELLID_FIELD_NUMBER = 4;
         private int cellId_;
         private byte memoizedIsInitialized;
         private static final RoguelikeGadgetInfo DEFAULT_INSTANCE = new RoguelikeGadgetInfo();

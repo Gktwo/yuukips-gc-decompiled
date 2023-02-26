@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PrivateChatNotifyOuterClass.class */
 public final class PrivateChatNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017PrivateChatNotify.proto\u001a\u000eChatInfo.proto\"1\n\u0011PrivateChatNotify\u0012\u001c\n\tchat_info\u0018\t \u0001(\u000b2\t.ChatInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ChatInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017PrivateChatNotify.proto\u001a\u000eChatInfo.proto\"0\n\u0011PrivateChatNotify\u0012\u001b\n\bchatInfo\u0018\u000f \u0001(\u000b2\t.ChatInfoB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ChatInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_PrivateChatNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PrivateChatNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PrivateChatNotify_descriptor, new String[]{"ChatInfo"});
 
@@ -47,7 +47,7 @@ public final class PrivateChatNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PrivateChatNotifyOuterClass$PrivateChatNotify.class */
     public static final class PrivateChatNotify extends GeneratedMessageV3 implements PrivateChatNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CHAT_INFO_FIELD_NUMBER = 9;
+        public static final int CHATINFO_FIELD_NUMBER = 15;
         private ChatInfoOuterClass.ChatInfo chatInfo_;
         private byte memoizedIsInitialized;
         private static final PrivateChatNotify DEFAULT_INSTANCE = new PrivateChatNotify();
@@ -94,7 +94,7 @@ public final class PrivateChatNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 74:
+                            case 122:
                                 ChatInfoOuterClass.ChatInfo.Builder subBuilder = this.chatInfo_ != null ? this.chatInfo_.toBuilder() : null;
                                 this.chatInfo_ = (ChatInfoOuterClass.ChatInfo) input.readMessage(ChatInfoOuterClass.ChatInfo.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -164,7 +164,7 @@ public final class PrivateChatNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.chatInfo_ != null) {
-                output.writeMessage(9, getChatInfo());
+                output.writeMessage(15, getChatInfo());
             }
             this.unknownFields.writeTo(output);
         }
@@ -177,7 +177,7 @@ public final class PrivateChatNotifyOuterClass {
             }
             int size2 = 0;
             if (this.chatInfo_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(9, getChatInfo());
+                size2 = 0 + CodedOutputStream.computeMessageSize(15, getChatInfo());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -206,7 +206,7 @@ public final class PrivateChatNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasChatInfo()) {
-                hash = (53 * ((37 * hash) + 9)) + getChatInfo().hashCode();
+                hash = (53 * ((37 * hash) + 15)) + getChatInfo().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

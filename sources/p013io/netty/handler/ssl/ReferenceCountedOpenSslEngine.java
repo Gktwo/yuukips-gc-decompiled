@@ -1832,7 +1832,7 @@ public class ReferenceCountedOpenSslEngine extends SSLEngine implements Referenc
         private boolean valid = true;
 
         /* renamed from: id */
-        private OpenSslSessionId f1025id = OpenSslSessionId.NULL_ID;
+        private OpenSslSessionId f989id = OpenSslSessionId.NULL_ID;
         private volatile int applicationBufferSize = ReferenceCountedOpenSslEngine.MAX_PLAINTEXT_LENGTH;
 
         DefaultOpenSslSession(OpenSslSessionContext sessionContext) {
@@ -1846,8 +1846,8 @@ public class ReferenceCountedOpenSslEngine extends SSLEngine implements Referenc
         @Override // p013io.netty.handler.ssl.OpenSslSession
         public void setSessionId(OpenSslSessionId sessionId) {
             synchronized (ReferenceCountedOpenSslEngine.this) {
-                if (this.f1025id == OpenSslSessionId.NULL_ID) {
-                    this.f1025id = sessionId;
+                if (this.f989id == OpenSslSessionId.NULL_ID) {
+                    this.f989id = sessionId;
                     this.creationTime = System.currentTimeMillis();
                 }
             }
@@ -1858,10 +1858,10 @@ public class ReferenceCountedOpenSslEngine extends SSLEngine implements Referenc
             OpenSslSessionId openSslSessionId;
             byte[] sessionId;
             synchronized (ReferenceCountedOpenSslEngine.this) {
-                if (this.f1025id == OpenSslSessionId.NULL_ID && !ReferenceCountedOpenSslEngine.this.isDestroyed() && (sessionId = SSL.getSessionId(ReferenceCountedOpenSslEngine.this.ssl)) != null) {
-                    this.f1025id = new OpenSslSessionId(sessionId);
+                if (this.f989id == OpenSslSessionId.NULL_ID && !ReferenceCountedOpenSslEngine.this.isDestroyed() && (sessionId = SSL.getSessionId(ReferenceCountedOpenSslEngine.this.ssl)) != null) {
+                    this.f989id = new OpenSslSessionId(sessionId);
                 }
-                openSslSessionId = this.f1025id;
+                openSslSessionId = this.f989id;
             }
             return openSslSessionId;
         }
@@ -1900,7 +1900,7 @@ public class ReferenceCountedOpenSslEngine extends SSLEngine implements Referenc
         public void invalidate() {
             synchronized (ReferenceCountedOpenSslEngine.this) {
                 this.valid = false;
-                this.sessionContext.removeFromCache(this.f1025id);
+                this.sessionContext.removeFromCache(this.f989id);
             }
         }
 
@@ -1908,7 +1908,7 @@ public class ReferenceCountedOpenSslEngine extends SSLEngine implements Referenc
         public boolean isValid() {
             boolean z;
             synchronized (ReferenceCountedOpenSslEngine.this) {
-                z = this.valid || this.sessionContext.isInCache(this.f1025id);
+                z = this.valid || this.sessionContext.isInCache(this.f989id);
             }
             return z;
         }
@@ -1977,8 +1977,8 @@ public class ReferenceCountedOpenSslEngine extends SSLEngine implements Referenc
             synchronized (ReferenceCountedOpenSslEngine.this) {
                 if (!ReferenceCountedOpenSslEngine.this.isDestroyed()) {
                     this.creationTime = creationTime;
-                    if (this.f1025id == OpenSslSessionId.NULL_ID) {
-                        this.f1025id = id == null ? OpenSslSessionId.NULL_ID : new OpenSslSessionId(id);
+                    if (this.f989id == OpenSslSessionId.NULL_ID) {
+                        this.f989id = id == null ? OpenSslSessionId.NULL_ID : new OpenSslSessionId(id);
                     }
                     this.cipher = ReferenceCountedOpenSslEngine.this.toJavaCipherSuite(cipher);
                     this.protocol = protocol;
@@ -2121,7 +2121,7 @@ public class ReferenceCountedOpenSslEngine extends SSLEngine implements Referenc
 
         @Override // java.lang.Object
         public String toString() {
-            return "DefaultOpenSslSession{sessionContext=" + this.sessionContext + ", id=" + this.f1025id + '}';
+            return "DefaultOpenSslSession{sessionContext=" + this.sessionContext + ", id=" + this.f989id + '}';
         }
     }
 }

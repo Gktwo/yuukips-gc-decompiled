@@ -173,51 +173,51 @@ public final class LongBigListIterators {
     public static class UnmodifiableBigListIterator implements LongBigListIterator {
 
         /* renamed from: i */
-        protected final LongBigListIterator f2411i;
+        protected final LongBigListIterator f2375i;
 
         public UnmodifiableBigListIterator(LongBigListIterator i) {
-            this.f2411i = i;
+            this.f2375i = i;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2411i.hasNext();
+            return this.f2375i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2411i.hasPrevious();
+            return this.f2375i.hasPrevious();
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
         public long nextLong() {
-            return this.f2411i.nextLong();
+            return this.f2375i.nextLong();
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongBidirectionalIterator
         public long previousLong() {
-            return this.f2411i.previousLong();
+            return this.f2375i.previousLong();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long nextIndex() {
-            return this.f2411i.nextIndex();
+            return this.f2375i.nextIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long previousIndex() {
-            return this.f2411i.previousIndex();
+            return this.f2375i.previousIndex();
         }
 
         @Override // java.util.PrimitiveIterator.OfLong
         public void forEachRemaining(LongConsumer action) {
-            this.f2411i.forEachRemaining(action);
+            this.f2375i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Long> action) {
-            this.f2411i.forEachRemaining(action);
+            this.f2375i.forEachRemaining(action);
         }
     }
 
@@ -230,10 +230,10 @@ public final class LongBigListIterators {
     public static class BigListIteratorListIterator implements LongBigListIterator {
 
         /* renamed from: i */
-        protected final LongListIterator f2410i;
+        protected final LongListIterator f2374i;
 
         protected BigListIteratorListIterator(LongListIterator i) {
-            this.f2410i = i;
+            this.f2374i = i;
         }
 
         private int intDisplacement(long n) {
@@ -245,78 +245,78 @@ public final class LongBigListIterators {
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongBigListIterator
         public void set(long ok) {
-            this.f2410i.set(ok);
+            this.f2374i.set(ok);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongBigListIterator
         public void add(long ok) {
-            this.f2410i.add(ok);
+            this.f2374i.add(ok);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator
         public int back(int n) {
-            return this.f2410i.back(n);
+            return this.f2374i.back(n);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongBigListIterator
         public long back(long n) {
-            return (long) this.f2410i.back(intDisplacement(n));
+            return (long) this.f2374i.back(intDisplacement(n));
         }
 
         @Override // java.util.Iterator
         public void remove() {
-            this.f2410i.remove();
+            this.f2374i.remove();
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongBigListIterator, p014it.unimi.dsi.fastutil.longs.LongBidirectionalIterator, p014it.unimi.dsi.fastutil.longs.LongIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectIterator
         public int skip(int n) {
-            return this.f2410i.skip(n);
+            return this.f2374i.skip(n);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongBigListIterator
         public long skip(long n) {
-            return (long) this.f2410i.skip(intDisplacement(n));
+            return (long) this.f2374i.skip(intDisplacement(n));
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2410i.hasNext();
+            return this.f2374i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2410i.hasPrevious();
+            return this.f2374i.hasPrevious();
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
         public long nextLong() {
-            return this.f2410i.nextLong();
+            return this.f2374i.nextLong();
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongBidirectionalIterator
         public long previousLong() {
-            return this.f2410i.previousLong();
+            return this.f2374i.previousLong();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long nextIndex() {
-            return (long) this.f2410i.nextIndex();
+            return (long) this.f2374i.nextIndex();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BigListIterator
         public long previousIndex() {
-            return (long) this.f2410i.previousIndex();
+            return (long) this.f2374i.previousIndex();
         }
 
         @Override // java.util.PrimitiveIterator.OfLong
         public void forEachRemaining(LongConsumer action) {
-            this.f2410i.forEachRemaining(action);
+            this.f2374i.forEachRemaining(action);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong, java.util.Iterator
         @Deprecated
         public void forEachRemaining(Consumer<? super Long> action) {
-            this.f2410i.forEachRemaining(action);
+            this.f2374i.forEachRemaining(action);
         }
     }
 

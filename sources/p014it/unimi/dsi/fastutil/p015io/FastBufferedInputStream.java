@@ -14,7 +14,7 @@ public class FastBufferedInputStream extends MeasurableInputStream implements Re
     public static final EnumSet<LineTerminator> ALL_TERMINATORS = EnumSet.allOf(LineTerminator.class);
 
     /* renamed from: is */
-    protected InputStream f2206is;
+    protected InputStream f2170is;
     protected byte[] buffer;
     protected int pos;
     protected long readBytes;
@@ -39,7 +39,7 @@ public class FastBufferedInputStream extends MeasurableInputStream implements Re
     }
 
     public FastBufferedInputStream(InputStream is, byte[] buffer) {
-        this.f2206is = is;
+        this.f2170is = is;
         ensureBufferSize(buffer.length);
         this.buffer = buffer;
         if (is instanceof RepositionableStream) {
@@ -72,7 +72,7 @@ public class FastBufferedInputStream extends MeasurableInputStream implements Re
         if (this.avail != 0) {
             return false;
         }
-        this.avail = this.f2206is.read(this.buffer);
+        this.avail = this.f2170is.read(this.buffer);
         if (this.avail <= 0) {
             this.avail = 0;
             return true;
@@ -109,7 +109,7 @@ public class FastBufferedInputStream extends MeasurableInputStream implements Re
         this.pos = 0;
         this.readBytes += (long) head;
         if (length > this.buffer.length) {
-            int result = this.f2206is.read(b, offset + head, length - head);
+            int result = this.f2170is.read(b, offset + head, length - head);
             if (result > 0) {
                 this.readBytes += (long) result;
             }
@@ -286,7 +286,7 @@ public class FastBufferedInputStream extends MeasurableInputStream implements Re
             int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
             if (r0 <= 0) goto L_0x002f
             r0 = r8
-            java.io.InputStream r0 = r0.f2206is
+            java.io.InputStream r0 = r0.f2170is
             r1 = r8
             byte[] r1 = r1.buffer
             r2 = 0
@@ -388,7 +388,7 @@ public class FastBufferedInputStream extends MeasurableInputStream implements Re
             int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
             if (r0 == 0) goto L_0x0089
             r0 = r7
-            java.io.InputStream r0 = r0.f2206is
+            java.io.InputStream r0 = r0.f2170is
             java.io.InputStream r1 = java.lang.System.in
             if (r0 != r1) goto L_0x0055
             r0 = r7
@@ -397,7 +397,7 @@ public class FastBufferedInputStream extends MeasurableInputStream implements Re
             goto L_0x005d
         L_0x0055:
             r0 = r7
-            java.io.InputStream r0 = r0.f2206is
+            java.io.InputStream r0 = r0.f2170is
             r1 = r10
             long r0 = r0.skip(r1)
         L_0x005d:
@@ -411,7 +411,7 @@ public class FastBufferedInputStream extends MeasurableInputStream implements Re
             int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
             if (r0 != 0) goto L_0x0081
             r0 = r7
-            java.io.InputStream r0 = r0.f2206is
+            java.io.InputStream r0 = r0.f2170is
             int r0 = r0.read()
             r1 = -1
             if (r0 != r1) goto L_0x007a
@@ -449,22 +449,22 @@ public class FastBufferedInputStream extends MeasurableInputStream implements Re
 
     @Override // java.io.InputStream
     public int available() throws IOException {
-        return (int) Math.min(((long) this.f2206is.available()) + ((long) this.avail), 2147483647L);
+        return (int) Math.min(((long) this.f2170is.available()) + ((long) this.avail), 2147483647L);
     }
 
     @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
     public void close() throws IOException {
-        if (this.f2206is != null) {
-            if (this.f2206is != System.in) {
-                this.f2206is.close();
+        if (this.f2170is != null) {
+            if (this.f2170is != System.in) {
+                this.f2170is.close();
             }
-            this.f2206is = null;
+            this.f2170is = null;
             this.buffer = null;
         }
     }
 
     public void flush() {
-        if (this.f2206is != null) {
+        if (this.f2170is != null) {
             this.readBytes += (long) this.avail;
             this.pos = 0;
             this.avail = 0;

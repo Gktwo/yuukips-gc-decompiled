@@ -1000,7 +1000,7 @@ public class Double2ByteRBTreeMap extends AbstractDouble2ByteSortedMap implement
         double from;
 
         /* renamed from: to */
-        double f1602to;
+        double f1566to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Double2ByteMap.Entry> entries;
@@ -1011,7 +1011,7 @@ public class Double2ByteRBTreeMap extends AbstractDouble2ByteSortedMap implement
             if (bottom || top || Double2ByteRBTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f1602to = to;
+                this.f1566to = to;
                 this.top = top;
                 this.defRetValue = Double2ByteRBTreeMap.this.defRetValue;
                 return;
@@ -1030,7 +1030,7 @@ public class Double2ByteRBTreeMap extends AbstractDouble2ByteSortedMap implement
 
         /* renamed from: in */
         final boolean m941in(double k) {
-            return (this.bottom || Double2ByteRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Double2ByteRBTreeMap.this.compare(k, this.f1602to) < 0);
+            return (this.bottom || Double2ByteRBTreeMap.this.compare(k, this.from) >= 0) && (this.top || Double2ByteRBTreeMap.this.compare(k, this.f1566to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.doubles.Double2ByteMap, p014it.unimi.dsi.fastutil.doubles.Double2ByteSortedMap
@@ -1205,7 +1205,7 @@ public class Double2ByteRBTreeMap extends AbstractDouble2ByteSortedMap implement
         public byte put(double k, byte v) {
             Double2ByteRBTreeMap.this.modified = false;
             if (!m941in(k)) {
-                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1602to)) + ")");
+                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1566to)) + ")");
             }
             return Double2ByteRBTreeMap.this.modified ? this.defRetValue : Double2ByteRBTreeMap.this.put(k, v);
         }
@@ -1243,7 +1243,7 @@ public class Double2ByteRBTreeMap extends AbstractDouble2ByteSortedMap implement
 
         @Override // p014it.unimi.dsi.fastutil.doubles.Double2ByteSortedMap
         public Double2ByteSortedMap headMap(double to) {
-            if (!this.top && Double2ByteRBTreeMap.this.compare(to, this.f1602to) >= 0) {
+            if (!this.top && Double2ByteRBTreeMap.this.compare(to, this.f1566to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1254,7 +1254,7 @@ public class Double2ByteRBTreeMap extends AbstractDouble2ByteSortedMap implement
             if (!this.bottom && Double2ByteRBTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f1602to, this.top);
+            return new Submap(from, false, this.f1566to, this.top);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -1273,7 +1273,7 @@ public class Double2ByteRBTreeMap extends AbstractDouble2ByteSortedMap implement
             }
             double to = d2;
             if (!this.top) {
-                to = Double2ByteRBTreeMap.this.compare(d2, this.f1602to) < 0 ? d2 : this.f1602to;
+                to = Double2ByteRBTreeMap.this.compare(d2, this.f1566to) < 0 ? d2 : this.f1566to;
             }
             double from = d;
             if (!this.bottom) {
@@ -1281,7 +1281,7 @@ public class Double2ByteRBTreeMap extends AbstractDouble2ByteSortedMap implement
             }
             if (!this.top && !this.bottom) {
                 if ((from == Double.MIN_VALUE ? 1.0d : 0.0d) == this.from) {
-                    if ((to == Double.MIN_VALUE ? 1.0d : 0.0d) == this.f1602to) {
+                    if ((to == Double.MIN_VALUE ? 1.0d : 0.0d) == this.f1566to) {
                         return this;
                     }
                 }
@@ -1305,7 +1305,7 @@ public class Double2ByteRBTreeMap extends AbstractDouble2ByteSortedMap implement
             if (e == null) {
                 return null;
             }
-            if (this.top || Double2ByteRBTreeMap.this.compare(e.key, this.f1602to) < 0) {
+            if (this.top || Double2ByteRBTreeMap.this.compare(e.key, this.f1566to) < 0) {
                 return e;
             }
             return null;
@@ -1319,8 +1319,8 @@ public class Double2ByteRBTreeMap extends AbstractDouble2ByteSortedMap implement
             if (this.top) {
                 e = Double2ByteRBTreeMap.this.lastEntry;
             } else {
-                e = Double2ByteRBTreeMap.this.locateKey(this.f1602to);
-                if (Double2ByteRBTreeMap.this.compare(e.key, this.f1602to) >= 0) {
+                e = Double2ByteRBTreeMap.this.locateKey(this.f1566to);
+                if (Double2ByteRBTreeMap.this.compare(e.key, this.f1566to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1398,7 +1398,7 @@ public class Double2ByteRBTreeMap extends AbstractDouble2ByteSortedMap implement
             @Override // p014it.unimi.dsi.fastutil.doubles.Double2ByteRBTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Double2ByteRBTreeMap.this.compare(this.next.key, Submap.this.f1602to) >= 0) {
+                if (!Submap.this.top && this.next != null && Double2ByteRBTreeMap.this.compare(this.next.key, Submap.this.f1566to) >= 0) {
                     this.next = null;
                 }
             }

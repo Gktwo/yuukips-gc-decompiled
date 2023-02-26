@@ -9,7 +9,7 @@ import java.util.Collection;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketStoreItemDelNotify.class */
 public class PacketStoreItemDelNotify extends BasePacket {
     private PacketStoreItemDelNotify() {
-        super(619);
+        super(698);
     }
 
     public PacketStoreItemDelNotify(GameItem item) {

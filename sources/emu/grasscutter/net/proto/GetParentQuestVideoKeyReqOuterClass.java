@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetParentQuestVideoKeyReqOuterClass.class */
 public final class GetParentQuestVideoKeyReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fGetParentQuestVideoKeyReq.proto\"4\n\u0019GetParentQuestVideoKeyReq\u0012\u0017\n\u000fparent_quest_id\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fGetParentQuestVideoKeyReq.proto\"2\n\u0019GetParentQuestVideoKeyReq\u0012\u0015\n\rparentQuestId\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GetParentQuestVideoKeyReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetParentQuestVideoKeyReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetParentQuestVideoKeyReq_descriptor, new String[]{"ParentQuestId"});
 
@@ -41,7 +41,7 @@ public final class GetParentQuestVideoKeyReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetParentQuestVideoKeyReqOuterClass$GetParentQuestVideoKeyReq.class */
     public static final class GetParentQuestVideoKeyReq extends GeneratedMessageV3 implements GetParentQuestVideoKeyReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PARENT_QUEST_ID_FIELD_NUMBER = 13;
+        public static final int PARENTQUESTID_FIELD_NUMBER = 14;
         private int parentQuestId_;
         private byte memoizedIsInitialized;
         private static final GetParentQuestVideoKeyReq DEFAULT_INSTANCE = new GetParentQuestVideoKeyReq();
@@ -88,7 +88,7 @@ public final class GetParentQuestVideoKeyReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 104:
+                            case 112:
                                 this.parentQuestId_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class GetParentQuestVideoKeyReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.parentQuestId_ != 0) {
-                output.writeUInt32(13, this.parentQuestId_);
+                output.writeUInt32(14, this.parentQuestId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class GetParentQuestVideoKeyReqOuterClass {
             }
             int size2 = 0;
             if (this.parentQuestId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(13, this.parentQuestId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(14, this.parentQuestId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class GetParentQuestVideoKeyReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + getParentQuestId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getParentQuestId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

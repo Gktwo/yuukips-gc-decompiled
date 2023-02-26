@@ -7,7 +7,7 @@ import emu.grasscutter.net.proto.PlayerSetPauseReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketPlayerSetPauseRsp;
 
-@Opcodes(122)
+@Opcodes(153)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerPlayerSetPauseReq.class */
 public class HandlerPlayerSetPauseReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

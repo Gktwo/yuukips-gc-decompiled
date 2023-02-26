@@ -2,12 +2,11 @@ package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.VehicleInteractReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketVehicleInteractRsp;
 
-@Opcodes(PacketOpcodes.VehicleInteractReq)
+@Opcodes(888)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerVehicleInteractReq.class */
 public class HandlerVehicleInteractReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

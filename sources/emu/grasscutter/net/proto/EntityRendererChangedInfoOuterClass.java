@@ -24,15 +24,15 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityRendererChangedInfoOuterClass.class */
 public final class EntityRendererChangedInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fEntityRendererChangedInfo.proto\"Î\u0001\n\u0019EntityRendererChangedInfo\u0012K\n\u0011changed_renderers\u0018\u0001 \u0003(\u000b20.EntityRendererChangedInfo.ChangedRenderersEntry\u0012\u0018\n\u0010visibility_count\u0018\u0002 \u0001(\r\u0012\u0011\n\tis_cached\u0018\u0003 \u0001(\b\u001a7\n\u0015ChangedRenderersEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\t\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fEntityRendererChangedInfo.proto\"Ë\u0001\n\u0019EntityRendererChangedInfo\u0012J\n\u0010changedRenderers\u0018\u0001 \u0003(\u000b20.EntityRendererChangedInfo.ChangedRenderersEntry\u0012\u0017\n\u000fvisibilityCount\u0018\u0002 \u0001(\r\u0012\u0010\n\bisCached\u0018\u0003 \u0001(\b\u001a7\n\u0015ChangedRenderersEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\t\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_EntityRendererChangedInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_EntityRendererChangedInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EntityRendererChangedInfo_descriptor, new String[]{"ChangedRenderers", "VisibilityCount", "IsCached"});
 
     /* renamed from: internal_static_EntityRendererChangedInfo_ChangedRenderersEntry_descriptor */
-    private static final Descriptors.Descriptor f699x35ddfcea = internal_static_EntityRendererChangedInfo_descriptor.getNestedTypes().get(0);
+    private static final Descriptors.Descriptor f696x35ddfcea = internal_static_EntityRendererChangedInfo_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_EntityRendererChangedInfo_ChangedRenderersEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f700x101e9968 = new GeneratedMessageV3.FieldAccessorTable(f699x35ddfcea, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f697x101e9968 = new GeneratedMessageV3.FieldAccessorTable(f696x35ddfcea, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityRendererChangedInfoOuterClass$EntityRendererChangedInfoOrBuilder.class */
     public interface EntityRendererChangedInfoOrBuilder extends MessageOrBuilder {
@@ -67,11 +67,11 @@ public final class EntityRendererChangedInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityRendererChangedInfoOuterClass$EntityRendererChangedInfo.class */
     public static final class EntityRendererChangedInfo extends GeneratedMessageV3 implements EntityRendererChangedInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int CHANGED_RENDERERS_FIELD_NUMBER = 1;
+        public static final int CHANGEDRENDERERS_FIELD_NUMBER = 1;
         private MapField<String, Integer> changedRenderers_;
-        public static final int VISIBILITY_COUNT_FIELD_NUMBER = 2;
+        public static final int VISIBILITYCOUNT_FIELD_NUMBER = 2;
         private int visibilityCount_;
-        public static final int IS_CACHED_FIELD_NUMBER = 3;
+        public static final int ISCACHED_FIELD_NUMBER = 3;
         private boolean isCached_;
         private byte memoizedIsInitialized;
         private static final EntityRendererChangedInfo DEFAULT_INSTANCE = new EntityRendererChangedInfo();
@@ -222,7 +222,7 @@ public final class EntityRendererChangedInfoOuterClass {
         /* access modifiers changed from: private */
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EntityRendererChangedInfoOuterClass$EntityRendererChangedInfo$ChangedRenderersDefaultEntryHolder.class */
         public static final class ChangedRenderersDefaultEntryHolder {
-            static final MapEntry<String, Integer> defaultEntry = MapEntry.newDefaultInstance(EntityRendererChangedInfoOuterClass.f699x35ddfcea, WireFormat.FieldType.STRING, "", WireFormat.FieldType.UINT32, 0);
+            static final MapEntry<String, Integer> defaultEntry = MapEntry.newDefaultInstance(EntityRendererChangedInfoOuterClass.f696x35ddfcea, WireFormat.FieldType.STRING, "", WireFormat.FieldType.UINT32, 0);
 
             private ChangedRenderersDefaultEntryHolder() {
             }

@@ -30,7 +30,7 @@ import org.luaj.vm2.script.LuajContext;
 public class ScriptLoader {
 
     /* renamed from: sm */
-    private static ScriptEngineManager f955sm;
+    private static ScriptEngineManager f920sm;
     private static ScriptEngine engine;
     private static Serializer serializer;
     private static ScriptLib scriptLib;
@@ -145,11 +145,11 @@ public class ScriptLoader {
     }
 
     public static synchronized void init() throws Exception {
-        if (f955sm != null) {
+        if (f920sm != null) {
             throw new Exception("Script loader already initialized");
         }
-        f955sm = new ScriptEngineManager();
-        engine = f955sm.getEngineByName("luaj");
+        f920sm = new ScriptEngineManager();
+        engine = f920sm.getEngineByName("luaj");
         serializer = new LuaSerializer();
         LuajContext ctx = engine.getContext();
         ctx.globals.set("require", new OneArgFunction() { // from class: emu.grasscutter.scripts.ScriptLoader.1
@@ -203,7 +203,7 @@ public class ScriptLoader {
                     org.luaj.vm2.LuaNumber r0 = org.luaj.vm2.LuaValue.ZERO
                     return r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: emu.grasscutter.scripts.ScriptLoader.C26941.call(org.luaj.vm2.LuaValue):org.luaj.vm2.LuaValue");
+                throw new UnsupportedOperationException("Method not decompiled: emu.grasscutter.scripts.ScriptLoader.C26861.call(org.luaj.vm2.LuaValue):org.luaj.vm2.LuaValue");
             }
         });
         ctx.globals.set("Initial", CoerceJavaToLua.coerce(new Object()));

@@ -19,11 +19,11 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FindHilichurlFinishSecondQuestNotifyOuterClass.class */
 public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n*FindHilichurlFinishSecondQuestNotify.proto\"9\n$FindHilichurlFinishSecondQuestNotify\u0012\u0011\n\tday_index\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n*FindHilichurlFinishSecondQuestNotify.proto\"8\n$FindHilichurlFinishSecondQuestNotify\u0012\u0010\n\bdayIndex\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_FindHilichurlFinishSecondQuestNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_FindHilichurlFinishSecondQuestNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f709x8950768c = new GeneratedMessageV3.FieldAccessorTable(internal_static_FindHilichurlFinishSecondQuestNotify_descriptor, new String[]{"DayIndex"});
+    private static final GeneratedMessageV3.FieldAccessorTable f707x8950768c = new GeneratedMessageV3.FieldAccessorTable(internal_static_FindHilichurlFinishSecondQuestNotify_descriptor, new String[]{"DayIndex"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FindHilichurlFinishSecondQuestNotifyOuterClass$FindHilichurlFinishSecondQuestNotifyOrBuilder.class */
     public interface FindHilichurlFinishSecondQuestNotifyOrBuilder extends MessageOrBuilder {
@@ -43,7 +43,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FindHilichurlFinishSecondQuestNotifyOuterClass$FindHilichurlFinishSecondQuestNotify.class */
     public static final class FindHilichurlFinishSecondQuestNotify extends GeneratedMessageV3 implements FindHilichurlFinishSecondQuestNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int DAY_INDEX_FIELD_NUMBER = 4;
+        public static final int DAYINDEX_FIELD_NUMBER = 9;
         private int dayIndex_;
         private byte memoizedIsInitialized;
         private static final FindHilichurlFinishSecondQuestNotify DEFAULT_INSTANCE = new FindHilichurlFinishSecondQuestNotify();
@@ -90,7 +90,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 32:
+                            case 72:
                                 this.dayIndex_ = input.readUInt32();
                                 break;
                             default:
@@ -119,7 +119,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return FindHilichurlFinishSecondQuestNotifyOuterClass.f709x8950768c.ensureFieldAccessorsInitialized(FindHilichurlFinishSecondQuestNotify.class, Builder.class);
+            return FindHilichurlFinishSecondQuestNotifyOuterClass.f707x8950768c.ensureFieldAccessorsInitialized(FindHilichurlFinishSecondQuestNotify.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.FindHilichurlFinishSecondQuestNotifyOuterClass.FindHilichurlFinishSecondQuestNotifyOrBuilder
@@ -143,7 +143,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.dayIndex_ != 0) {
-                output.writeUInt32(4, this.dayIndex_);
+                output.writeUInt32(9, this.dayIndex_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -156,7 +156,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
             }
             int size2 = 0;
             if (this.dayIndex_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.dayIndex_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(9, this.dayIndex_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -180,7 +180,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getDayIndex())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getDayIndex())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -267,7 +267,7 @@ public final class FindHilichurlFinishSecondQuestNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return FindHilichurlFinishSecondQuestNotifyOuterClass.f709x8950768c.ensureFieldAccessorsInitialized(FindHilichurlFinishSecondQuestNotify.class, Builder.class);
+                return FindHilichurlFinishSecondQuestNotifyOuterClass.f707x8950768c.ensureFieldAccessorsInitialized(FindHilichurlFinishSecondQuestNotify.class, Builder.class);
             }
 
             private Builder() {

@@ -19,17 +19,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerEnterDungeonRspOuterClass.class */
 public final class PlayerEnterDungeonRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bPlayerEnterDungeonRsp.proto\"N\n\u0015PlayerEnterDungeonRsp\u0012\u000f\n\u0007retcode\u0018\u0005 \u0001(\u0005\u0012\u0010\n\bpoint_id\u0018\u0006 \u0001(\r\u0012\u0012\n\ndungeon_id\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bPlayerEnterDungeonRsp.proto\"L\n\u0015PlayerEnterDungeonRsp\u0012\u000f\n\u0007pointId\u0018\u0001 \u0001(\r\u0012\u0011\n\tdungeonId\u0018\u000b \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0003 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PlayerEnterDungeonRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerEnterDungeonRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerEnterDungeonRsp_descriptor, new String[]{"Retcode", "PointId", "DungeonId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerEnterDungeonRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerEnterDungeonRsp_descriptor, new String[]{"PointId", "DungeonId", "Retcode"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerEnterDungeonRspOuterClass$PlayerEnterDungeonRspOrBuilder.class */
     public interface PlayerEnterDungeonRspOrBuilder extends MessageOrBuilder {
-        int getRetcode();
-
         int getPointId();
 
         int getDungeonId();
+
+        int getRetcode();
     }
 
     private PlayerEnterDungeonRspOuterClass() {
@@ -45,12 +45,12 @@ public final class PlayerEnterDungeonRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerEnterDungeonRspOuterClass$PlayerEnterDungeonRsp.class */
     public static final class PlayerEnterDungeonRsp extends GeneratedMessageV3 implements PlayerEnterDungeonRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 5;
-        private int retcode_;
-        public static final int POINT_ID_FIELD_NUMBER = 6;
+        public static final int POINTID_FIELD_NUMBER = 1;
         private int pointId_;
-        public static final int DUNGEON_ID_FIELD_NUMBER = 1;
+        public static final int DUNGEONID_FIELD_NUMBER = 11;
         private int dungeonId_;
+        public static final int RETCODE_FIELD_NUMBER = 3;
+        private int retcode_;
         private byte memoizedIsInitialized;
         private static final PlayerEnterDungeonRsp DEFAULT_INSTANCE = new PlayerEnterDungeonRsp();
         private static final Parser<PlayerEnterDungeonRsp> PARSER = new AbstractParser<PlayerEnterDungeonRsp>() { // from class: emu.grasscutter.net.proto.PlayerEnterDungeonRspOuterClass.PlayerEnterDungeonRsp.1
@@ -98,13 +98,13 @@ public final class PlayerEnterDungeonRspOuterClass {
                                     done = true;
                                     break;
                                 case 8:
-                                    this.dungeonId_ = input.readUInt32();
+                                    this.pointId_ = input.readUInt32();
                                     break;
-                                case 40:
+                                case 24:
                                     this.retcode_ = input.readInt32();
                                     break;
-                                case 48:
-                                    this.pointId_ = input.readUInt32();
+                                case 88:
+                                    this.dungeonId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -137,11 +137,6 @@ public final class PlayerEnterDungeonRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PlayerEnterDungeonRspOuterClass.PlayerEnterDungeonRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerEnterDungeonRspOuterClass.PlayerEnterDungeonRspOrBuilder
         public int getPointId() {
             return this.pointId_;
         }
@@ -149,6 +144,11 @@ public final class PlayerEnterDungeonRspOuterClass {
         @Override // emu.grasscutter.net.proto.PlayerEnterDungeonRspOuterClass.PlayerEnterDungeonRspOrBuilder
         public int getDungeonId() {
             return this.dungeonId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerEnterDungeonRspOuterClass.PlayerEnterDungeonRspOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -166,14 +166,14 @@ public final class PlayerEnterDungeonRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.dungeonId_ != 0) {
-                output.writeUInt32(1, this.dungeonId_);
+            if (this.pointId_ != 0) {
+                output.writeUInt32(1, this.pointId_);
             }
             if (this.retcode_ != 0) {
-                output.writeInt32(5, this.retcode_);
+                output.writeInt32(3, this.retcode_);
             }
-            if (this.pointId_ != 0) {
-                output.writeUInt32(6, this.pointId_);
+            if (this.dungeonId_ != 0) {
+                output.writeUInt32(11, this.dungeonId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -185,14 +185,14 @@ public final class PlayerEnterDungeonRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.dungeonId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.dungeonId_);
+            if (this.pointId_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.pointId_);
             }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(5, this.retcode_);
+                size2 += CodedOutputStream.computeInt32Size(3, this.retcode_);
             }
-            if (this.pointId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(6, this.pointId_);
+            if (this.dungeonId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(11, this.dungeonId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -208,7 +208,7 @@ public final class PlayerEnterDungeonRspOuterClass {
                 return equals(obj);
             }
             PlayerEnterDungeonRsp other = (PlayerEnterDungeonRsp) obj;
-            return getRetcode() == other.getRetcode() && getPointId() == other.getPointId() && getDungeonId() == other.getDungeonId() && this.unknownFields.equals(other.unknownFields);
+            return getPointId() == other.getPointId() && getDungeonId() == other.getDungeonId() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -216,7 +216,7 @@ public final class PlayerEnterDungeonRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getRetcode())) + 6)) + getPointId())) + 1)) + getDungeonId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getPointId())) + 11)) + getDungeonId())) + 3)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -295,9 +295,9 @@ public final class PlayerEnterDungeonRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerEnterDungeonRspOuterClass$PlayerEnterDungeonRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements PlayerEnterDungeonRspOrBuilder {
-            private int retcode_;
             private int pointId_;
             private int dungeonId_;
+            private int retcode_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return PlayerEnterDungeonRspOuterClass.internal_static_PlayerEnterDungeonRsp_descriptor;
@@ -325,9 +325,9 @@ public final class PlayerEnterDungeonRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.retcode_ = 0;
                 this.pointId_ = 0;
                 this.dungeonId_ = 0;
+                this.retcode_ = 0;
                 return this;
             }
 
@@ -353,9 +353,9 @@ public final class PlayerEnterDungeonRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public PlayerEnterDungeonRsp buildPartial() {
                 PlayerEnterDungeonRsp result = new PlayerEnterDungeonRsp(this);
-                result.retcode_ = this.retcode_;
                 result.pointId_ = this.pointId_;
                 result.dungeonId_ = this.dungeonId_;
+                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -403,14 +403,14 @@ public final class PlayerEnterDungeonRspOuterClass {
                 if (other == PlayerEnterDungeonRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
                 if (other.getPointId() != 0) {
                     setPointId(other.getPointId());
                 }
                 if (other.getDungeonId() != 0) {
                     setDungeonId(other.getDungeonId());
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -445,23 +445,6 @@ public final class PlayerEnterDungeonRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.PlayerEnterDungeonRspOuterClass.PlayerEnterDungeonRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerEnterDungeonRspOuterClass.PlayerEnterDungeonRspOrBuilder
             public int getPointId() {
                 return this.pointId_;
             }
@@ -491,6 +474,23 @@ public final class PlayerEnterDungeonRspOuterClass {
 
             public Builder clearDungeonId() {
                 this.dungeonId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerEnterDungeonRspOuterClass.PlayerEnterDungeonRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }

@@ -1442,7 +1442,7 @@ class _Strings extends _StringsJvm {
     @OverloadResolutionByLambdaReturnType
     @InlineOnly
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final float m8427maxOf(CharSequence $this$maxOf, Function1<? super Character, Float> function1) {
+    private static final float m8424maxOf(CharSequence $this$maxOf, Function1<? super Character, Float> function1) {
         Intrinsics.checkNotNullParameter($this$maxOf, "<this>");
         Intrinsics.checkNotNullParameter(function1, "selector");
         if ($this$maxOf.length() == 0) {
@@ -1468,7 +1468,7 @@ class _Strings extends _StringsJvm {
     @OverloadResolutionByLambdaReturnType
     @InlineOnly
     /* renamed from: maxOf  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m8428maxOf(CharSequence $this$maxOf, Function1<? super Character, ? extends R> function1) {
+    private static final <R extends Comparable<? super R>> R m8425maxOf(CharSequence $this$maxOf, Function1<? super Character, ? extends R> function1) {
         Intrinsics.checkNotNullParameter($this$maxOf, "<this>");
         Intrinsics.checkNotNullParameter(function1, "selector");
         if ($this$maxOf.length() == 0) {
@@ -1520,7 +1520,7 @@ class _Strings extends _StringsJvm {
     @OverloadResolutionByLambdaReturnType
     @InlineOnly
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final Float m8429maxOfOrNull(CharSequence $this$maxOfOrNull, Function1<? super Character, Float> function1) {
+    private static final Float m8426maxOfOrNull(CharSequence $this$maxOfOrNull, Function1<? super Character, Float> function1) {
         Intrinsics.checkNotNullParameter($this$maxOfOrNull, "<this>");
         Intrinsics.checkNotNullParameter(function1, "selector");
         if ($this$maxOfOrNull.length() == 0) {
@@ -1546,7 +1546,7 @@ class _Strings extends _StringsJvm {
     @OverloadResolutionByLambdaReturnType
     @InlineOnly
     /* renamed from: maxOfOrNull  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m8430maxOfOrNull(CharSequence $this$maxOfOrNull, Function1<? super Character, ? extends R> function1) {
+    private static final <R extends Comparable<? super R>> R m8427maxOfOrNull(CharSequence $this$maxOfOrNull, Function1<? super Character, ? extends R> function1) {
         Intrinsics.checkNotNullParameter($this$maxOfOrNull, "<this>");
         Intrinsics.checkNotNullParameter(function1, "selector");
         if ($this$maxOfOrNull.length() == 0) {
@@ -1777,7 +1777,7 @@ class _Strings extends _StringsJvm {
     @OverloadResolutionByLambdaReturnType
     @InlineOnly
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final float m8431minOf(CharSequence $this$minOf, Function1<? super Character, Float> function1) {
+    private static final float m8428minOf(CharSequence $this$minOf, Function1<? super Character, Float> function1) {
         Intrinsics.checkNotNullParameter($this$minOf, "<this>");
         Intrinsics.checkNotNullParameter(function1, "selector");
         if ($this$minOf.length() == 0) {
@@ -1803,7 +1803,7 @@ class _Strings extends _StringsJvm {
     @OverloadResolutionByLambdaReturnType
     @InlineOnly
     /* renamed from: minOf  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m8432minOf(CharSequence $this$minOf, Function1<? super Character, ? extends R> function1) {
+    private static final <R extends Comparable<? super R>> R m8429minOf(CharSequence $this$minOf, Function1<? super Character, ? extends R> function1) {
         Intrinsics.checkNotNullParameter($this$minOf, "<this>");
         Intrinsics.checkNotNullParameter(function1, "selector");
         if ($this$minOf.length() == 0) {
@@ -1855,7 +1855,7 @@ class _Strings extends _StringsJvm {
     @OverloadResolutionByLambdaReturnType
     @InlineOnly
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final Float m8433minOfOrNull(CharSequence $this$minOfOrNull, Function1<? super Character, Float> function1) {
+    private static final Float m8430minOfOrNull(CharSequence $this$minOfOrNull, Function1<? super Character, Float> function1) {
         Intrinsics.checkNotNullParameter($this$minOfOrNull, "<this>");
         Intrinsics.checkNotNullParameter(function1, "selector");
         if ($this$minOfOrNull.length() == 0) {
@@ -1881,7 +1881,7 @@ class _Strings extends _StringsJvm {
     @OverloadResolutionByLambdaReturnType
     @InlineOnly
     /* renamed from: minOfOrNull  reason: collision with other method in class */
-    private static final <R extends Comparable<? super R>> R m8434minOfOrNull(CharSequence $this$minOfOrNull, Function1<? super Character, ? extends R> function1) {
+    private static final <R extends Comparable<? super R>> R m8431minOfOrNull(CharSequence $this$minOfOrNull, Function1<? super Character, ? extends R> function1) {
         Intrinsics.checkNotNullParameter($this$minOfOrNull, "<this>");
         Intrinsics.checkNotNullParameter(function1, "selector");
         if ($this$minOfOrNull.length() == 0) {
@@ -2419,9 +2419,9 @@ class _Strings extends _StringsJvm {
     private static final int sumOfUInt(CharSequence $this$sumOf, Function1<? super Character, UInt> function1) {
         Intrinsics.checkNotNullParameter($this$sumOf, "<this>");
         Intrinsics.checkNotNullParameter(function1, "selector");
-        int sum = UInt.m7201constructorimpl(0);
+        int sum = UInt.m7198constructorimpl(0);
         for (int i = 0; i < $this$sumOf.length(); i++) {
-            sum = UInt.m7201constructorimpl(sum + function1.invoke(Character.valueOf($this$sumOf.charAt(i))).m7203unboximpl());
+            sum = UInt.m7198constructorimpl(sum + function1.invoke(Character.valueOf($this$sumOf.charAt(i))).m7200unboximpl());
         }
         return sum;
     }
@@ -2436,9 +2436,9 @@ class _Strings extends _StringsJvm {
     private static final long sumOfULong(CharSequence $this$sumOf, Function1<? super Character, ULong> function1) {
         Intrinsics.checkNotNullParameter($this$sumOf, "<this>");
         Intrinsics.checkNotNullParameter(function1, "selector");
-        char r7 = ULong.m7280constructorimpl(0);
+        char r7 = ULong.m7277constructorimpl(0);
         for (int i = 0; i < $this$sumOf.length(); i++) {
-            r7 = ULong.m7280constructorimpl(r7 + function1.invoke(Character.valueOf($this$sumOf.charAt(i))).m7282unboximpl());
+            r7 = ULong.m7277constructorimpl(r7 + function1.invoke(Character.valueOf($this$sumOf.charAt(i))).m7279unboximpl());
         }
         return r7;
     }

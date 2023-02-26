@@ -41,13 +41,13 @@ public abstract class LuaValue extends Varargs {
     public static final LuaString LEN = valueOf("__len");
 
     /* renamed from: EQ */
-    public static final LuaString f3291EQ = valueOf("__eq");
+    public static final LuaString f3255EQ = valueOf("__eq");
 
     /* renamed from: LT */
-    public static final LuaString f3292LT = valueOf("__lt");
+    public static final LuaString f3256LT = valueOf("__lt");
 
     /* renamed from: LE */
-    public static final LuaString f3293LE = valueOf("__le");
+    public static final LuaString f3257LE = valueOf("__le");
     public static final LuaString TOSTRING = valueOf("__tostring");
     public static final LuaString CONCAT = valueOf("__concat");
     public static final LuaString EMPTYSTRING = valueOf("");
@@ -707,8 +707,8 @@ public abstract class LuaValue extends Varargs {
     }
 
     public static final boolean eqmtcall(LuaValue luaValue, LuaValue luaValue2, LuaValue luaValue3, LuaValue luaValue4) {
-        LuaValue rawget = luaValue2.rawget(f3291EQ);
-        if (rawget.isnil() || rawget != luaValue4.rawget(f3291EQ)) {
+        LuaValue rawget = luaValue2.rawget(f3255EQ);
+        if (rawget.isnil() || rawget != luaValue4.rawget(f3255EQ)) {
             return false;
         }
         return rawget.call(luaValue, luaValue3).toboolean();
@@ -831,7 +831,7 @@ public abstract class LuaValue extends Varargs {
 
     /* renamed from: lt */
     public LuaValue mo18lt(LuaValue luaValue) {
-        return comparemt(f3292LT, luaValue);
+        return comparemt(f3256LT, luaValue);
     }
 
     /* renamed from: lt */
@@ -845,7 +845,7 @@ public abstract class LuaValue extends Varargs {
     }
 
     public boolean lt_b(LuaValue luaValue) {
-        return comparemt(f3292LT, luaValue).toboolean();
+        return comparemt(f3256LT, luaValue).toboolean();
     }
 
     public boolean lt_b(int i) {
@@ -859,7 +859,7 @@ public abstract class LuaValue extends Varargs {
     }
 
     public LuaValue lteq(LuaValue luaValue) {
-        return comparemt(f3293LE, luaValue);
+        return comparemt(f3257LE, luaValue);
     }
 
     public LuaValue lteq(double d) {
@@ -871,7 +871,7 @@ public abstract class LuaValue extends Varargs {
     }
 
     public boolean lteq_b(LuaValue luaValue) {
-        return comparemt(f3293LE, luaValue).toboolean();
+        return comparemt(f3257LE, luaValue).toboolean();
     }
 
     public boolean lteq_b(int i) {
@@ -886,7 +886,7 @@ public abstract class LuaValue extends Varargs {
 
     /* renamed from: gt */
     public LuaValue mo21gt(LuaValue luaValue) {
-        return luaValue.comparemt(f3293LE, this);
+        return luaValue.comparemt(f3257LE, this);
     }
 
     /* renamed from: gt */
@@ -900,7 +900,7 @@ public abstract class LuaValue extends Varargs {
     }
 
     public boolean gt_b(LuaValue luaValue) {
-        return luaValue.comparemt(f3293LE, this).toboolean();
+        return luaValue.comparemt(f3257LE, this).toboolean();
     }
 
     public boolean gt_b(int i) {
@@ -914,7 +914,7 @@ public abstract class LuaValue extends Varargs {
     }
 
     public LuaValue gteq(LuaValue luaValue) {
-        return luaValue.comparemt(f3292LT, this);
+        return luaValue.comparemt(f3256LT, this);
     }
 
     public LuaValue gteq(double d) {
@@ -926,7 +926,7 @@ public abstract class LuaValue extends Varargs {
     }
 
     public boolean gteq_b(LuaValue luaValue) {
-        return luaValue.comparemt(f3292LT, this).toboolean();
+        return luaValue.comparemt(f3256LT, this).toboolean();
     }
 
     public boolean gteq_b(int i) {
@@ -967,19 +967,19 @@ public abstract class LuaValue extends Varargs {
             org.luaj.vm2.LuaValue r0 = r0.call(r1, r2)
             return r0
         L_0x0021:
-            org.luaj.vm2.LuaString r0 = org.luaj.vm2.LuaValue.f3293LE
+            org.luaj.vm2.LuaString r0 = org.luaj.vm2.LuaValue.f3257LE
             r1 = r5
             boolean r0 = r0.raweq(r1)
             if (r0 == 0) goto L_0x0053
             r0 = r4
-            org.luaj.vm2.LuaString r1 = org.luaj.vm2.LuaValue.f3292LT
+            org.luaj.vm2.LuaString r1 = org.luaj.vm2.LuaValue.f3256LT
             org.luaj.vm2.LuaValue r0 = r0.metatag(r1)
             r1 = r0
             r7 = r1
             boolean r0 = r0.isnil()
             if (r0 == 0) goto L_0x0049
             r0 = r6
-            org.luaj.vm2.LuaString r1 = org.luaj.vm2.LuaValue.f3292LT
+            org.luaj.vm2.LuaString r1 = org.luaj.vm2.LuaValue.f3256LT
             org.luaj.vm2.LuaValue r0 = r0.metatag(r1)
             r1 = r0
             r7 = r1

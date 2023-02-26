@@ -19,15 +19,15 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BuyBattlePassLevelRspOuterClass.class */
 public final class BuyBattlePassLevelRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bBuyBattlePassLevelRsp.proto\";\n\u0015BuyBattlePassLevelRsp\u0012\u000f\n\u0007retcode\u0018\u000b \u0001(\u0005\u0012\u0011\n\tbuy_level\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bBuyBattlePassLevelRsp.proto\":\n\u0015BuyBattlePassLevelRsp\u0012\u0010\n\bbuyLevel\u0018\u000f \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0007 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_BuyBattlePassLevelRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_BuyBattlePassLevelRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BuyBattlePassLevelRsp_descriptor, new String[]{"Retcode", "BuyLevel"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_BuyBattlePassLevelRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BuyBattlePassLevelRsp_descriptor, new String[]{"BuyLevel", "Retcode"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BuyBattlePassLevelRspOuterClass$BuyBattlePassLevelRspOrBuilder.class */
     public interface BuyBattlePassLevelRspOrBuilder extends MessageOrBuilder {
-        int getRetcode();
-
         int getBuyLevel();
+
+        int getRetcode();
     }
 
     private BuyBattlePassLevelRspOuterClass() {
@@ -43,10 +43,10 @@ public final class BuyBattlePassLevelRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BuyBattlePassLevelRspOuterClass$BuyBattlePassLevelRsp.class */
     public static final class BuyBattlePassLevelRsp extends GeneratedMessageV3 implements BuyBattlePassLevelRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 11;
-        private int retcode_;
-        public static final int BUY_LEVEL_FIELD_NUMBER = 15;
+        public static final int BUYLEVEL_FIELD_NUMBER = 15;
         private int buyLevel_;
+        public static final int RETCODE_FIELD_NUMBER = 7;
+        private int retcode_;
         private byte memoizedIsInitialized;
         private static final BuyBattlePassLevelRsp DEFAULT_INSTANCE = new BuyBattlePassLevelRsp();
         private static final Parser<BuyBattlePassLevelRsp> PARSER = new AbstractParser<BuyBattlePassLevelRsp>() { // from class: emu.grasscutter.net.proto.BuyBattlePassLevelRspOuterClass.BuyBattlePassLevelRsp.1
@@ -92,7 +92,7 @@ public final class BuyBattlePassLevelRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 88:
+                            case 56:
                                 this.retcode_ = input.readInt32();
                                 break;
                             case 120:
@@ -128,13 +128,13 @@ public final class BuyBattlePassLevelRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.BuyBattlePassLevelRspOuterClass.BuyBattlePassLevelRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
+        public int getBuyLevel() {
+            return this.buyLevel_;
         }
 
         @Override // emu.grasscutter.net.proto.BuyBattlePassLevelRspOuterClass.BuyBattlePassLevelRspOrBuilder
-        public int getBuyLevel() {
-            return this.buyLevel_;
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -153,7 +153,7 @@ public final class BuyBattlePassLevelRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.retcode_ != 0) {
-                output.writeInt32(11, this.retcode_);
+                output.writeInt32(7, this.retcode_);
             }
             if (this.buyLevel_ != 0) {
                 output.writeUInt32(15, this.buyLevel_);
@@ -169,7 +169,7 @@ public final class BuyBattlePassLevelRspOuterClass {
             }
             int size2 = 0;
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(11, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(7, this.retcode_);
             }
             if (this.buyLevel_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(15, this.buyLevel_);
@@ -188,7 +188,7 @@ public final class BuyBattlePassLevelRspOuterClass {
                 return equals(obj);
             }
             BuyBattlePassLevelRsp other = (BuyBattlePassLevelRsp) obj;
-            return getRetcode() == other.getRetcode() && getBuyLevel() == other.getBuyLevel() && this.unknownFields.equals(other.unknownFields);
+            return getBuyLevel() == other.getBuyLevel() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -196,7 +196,7 @@ public final class BuyBattlePassLevelRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getRetcode())) + 15)) + getBuyLevel())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getBuyLevel())) + 7)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -275,8 +275,8 @@ public final class BuyBattlePassLevelRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BuyBattlePassLevelRspOuterClass$BuyBattlePassLevelRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements BuyBattlePassLevelRspOrBuilder {
-            private int retcode_;
             private int buyLevel_;
+            private int retcode_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return BuyBattlePassLevelRspOuterClass.internal_static_BuyBattlePassLevelRsp_descriptor;
@@ -304,8 +304,8 @@ public final class BuyBattlePassLevelRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.retcode_ = 0;
                 this.buyLevel_ = 0;
+                this.retcode_ = 0;
                 return this;
             }
 
@@ -331,8 +331,8 @@ public final class BuyBattlePassLevelRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public BuyBattlePassLevelRsp buildPartial() {
                 BuyBattlePassLevelRsp result = new BuyBattlePassLevelRsp(this);
-                result.retcode_ = this.retcode_;
                 result.buyLevel_ = this.buyLevel_;
+                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -380,11 +380,11 @@ public final class BuyBattlePassLevelRspOuterClass {
                 if (other == BuyBattlePassLevelRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
                 if (other.getBuyLevel() != 0) {
                     setBuyLevel(other.getBuyLevel());
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -419,23 +419,6 @@ public final class BuyBattlePassLevelRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.BuyBattlePassLevelRspOuterClass.BuyBattlePassLevelRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.BuyBattlePassLevelRspOuterClass.BuyBattlePassLevelRspOrBuilder
             public int getBuyLevel() {
                 return this.buyLevel_;
             }
@@ -448,6 +431,23 @@ public final class BuyBattlePassLevelRspOuterClass {
 
             public Builder clearBuyLevel() {
                 this.buyLevel_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.BuyBattlePassLevelRspOuterClass.BuyBattlePassLevelRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }

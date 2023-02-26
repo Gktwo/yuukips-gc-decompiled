@@ -702,7 +702,7 @@ public class Session implements SessionHandler.SessionIf {
         try {
             checkValidForRead();
             final Iterator<String> itor = this._sessionData.getKeys().iterator();
-            C57241 r0 = new Enumeration<String>() { // from class: org.eclipse.jetty.server.session.Session.1
+            C57161 r0 = new Enumeration<String>() { // from class: org.eclipse.jetty.server.session.Session.1
                 @Override // java.util.Enumeration
                 public boolean hasMoreElements() {
                     return itor.hasNext();
@@ -829,7 +829,7 @@ public class Session implements SessionHandler.SessionIf {
     /* access modifiers changed from: package-private */
     /* renamed from: org.eclipse.jetty.server.session.Session$2 */
     /* loaded from: grasscutter.jar:org/eclipse/jetty/server/session/Session$2.class */
-    public static /* synthetic */ class C57252 {
+    public static /* synthetic */ class C57172 {
         static final /* synthetic */ int[] $SwitchMap$org$eclipse$jetty$server$session$Session$State = new int[State.values().length];
 
         static {
@@ -961,7 +961,7 @@ public class Session implements SessionHandler.SessionIf {
             org.eclipse.jetty.util.thread.Locker$Lock r0 = r0.lock()
             r9 = r0
         L_0x000a:
-            int[] r0 = org.eclipse.jetty.server.session.Session.C57252.$SwitchMap$org$eclipse$jetty$server$session$Session$State     // Catch: Throwable -> 0x00ba
+            int[] r0 = org.eclipse.jetty.server.session.Session.C57172.$SwitchMap$org$eclipse$jetty$server$session$Session$State     // Catch: Throwable -> 0x00ba
             r1 = r7
             org.eclipse.jetty.server.session.Session$State r1 = r1._state     // Catch: Throwable -> 0x00ba
             int r1 = r1.ordinal()     // Catch: Throwable -> 0x00ba

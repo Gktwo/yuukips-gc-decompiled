@@ -6,7 +6,7 @@ import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass;
 import emu.grasscutter.server.game.GameSession;
 
-@Opcodes(879)
+@Opcodes(805)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerGadgetInteractReq.class */
 public class HandlerGadgetInteractReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

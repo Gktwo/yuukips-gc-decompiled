@@ -25,21 +25,23 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerDataNotifyOuterClass.class */
 public final class PlayerDataNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016PlayerDataNotify.proto\u001a\u000fPropValue.proto\"Ù\u0001\n\u0010PlayerDataNotify\u0012\u001c\n\u0014is_first_login_today\u0018\f \u0001(\b\u0012\u0011\n\tnick_name\u0018\t \u0001(\t\u0012\u0013\n\u000bserver_time\u0018\u0001 \u0001(\u0004\u00120\n\bprop_map\u0018\u0004 \u0003(\u000b2\u001e.PlayerDataNotify.PropMapEntry\u0012\u0011\n\tregion_id\u0018\u0002 \u0001(\r\u001a:\n\fPropMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\u0019\n\u0005value\u0018\u0002 \u0001(\u000b2\n.PropValue:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PropValueOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016PlayerDataNotify.proto\u001a\u000fPropValue.proto\"Ò\u0001\n\u0010PlayerDataNotify\u0012\u0010\n\bnickName\u0018\u000b \u0001(\t\u0012\u0010\n\bregionId\u0018\t \u0001(\r\u0012\u0012\n\nserverTime\u0018\u0003 \u0001(\u0004\u0012\u0019\n\u0011isFirstLoginToday\u0018\u0007 \u0001(\b\u0012/\n\u0007propMap\u0018\u0005 \u0003(\u000b2\u001e.PlayerDataNotify.PropMapEntry\u001a:\n\fPropMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\u0019\n\u0005value\u0018\u0002 \u0001(\u000b2\n.PropValue:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PropValueOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_PlayerDataNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerDataNotify_descriptor, new String[]{"IsFirstLoginToday", "NickName", "ServerTime", "PropMap", "RegionId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerDataNotify_descriptor, new String[]{"NickName", "RegionId", "ServerTime", "IsFirstLoginToday", "PropMap"});
     private static final Descriptors.Descriptor internal_static_PlayerDataNotify_PropMapEntry_descriptor = internal_static_PlayerDataNotify_descriptor.getNestedTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerDataNotify_PropMapEntry_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerDataNotify_PropMapEntry_descriptor, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerDataNotifyOuterClass$PlayerDataNotifyOrBuilder.class */
     public interface PlayerDataNotifyOrBuilder extends MessageOrBuilder {
-        boolean getIsFirstLoginToday();
-
         String getNickName();
 
         ByteString getNickNameBytes();
 
+        int getRegionId();
+
         long getServerTime();
+
+        boolean getIsFirstLoginToday();
 
         int getPropMapCount();
 
@@ -53,8 +55,6 @@ public final class PlayerDataNotifyOuterClass {
         PropValueOuterClass.PropValue getPropMapOrDefault(int i, PropValueOuterClass.PropValue propValue);
 
         PropValueOuterClass.PropValue getPropMapOrThrow(int i);
-
-        int getRegionId();
     }
 
     private PlayerDataNotifyOuterClass() {
@@ -70,16 +70,16 @@ public final class PlayerDataNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerDataNotifyOuterClass$PlayerDataNotify.class */
     public static final class PlayerDataNotify extends GeneratedMessageV3 implements PlayerDataNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_FIRST_LOGIN_TODAY_FIELD_NUMBER = 12;
-        private boolean isFirstLoginToday_;
-        public static final int NICK_NAME_FIELD_NUMBER = 9;
+        public static final int NICKNAME_FIELD_NUMBER = 11;
         private volatile Object nickName_;
-        public static final int SERVER_TIME_FIELD_NUMBER = 1;
-        private long serverTime_;
-        public static final int PROP_MAP_FIELD_NUMBER = 4;
-        private MapField<Integer, PropValueOuterClass.PropValue> propMap_;
-        public static final int REGION_ID_FIELD_NUMBER = 2;
+        public static final int REGIONID_FIELD_NUMBER = 9;
         private int regionId_;
+        public static final int SERVERTIME_FIELD_NUMBER = 3;
+        private long serverTime_;
+        public static final int ISFIRSTLOGINTODAY_FIELD_NUMBER = 7;
+        private boolean isFirstLoginToday_;
+        public static final int PROPMAP_FIELD_NUMBER = 5;
+        private MapField<Integer, PropValueOuterClass.PropValue> propMap_;
         private byte memoizedIsInitialized;
         private static final PlayerDataNotify DEFAULT_INSTANCE = new PlayerDataNotify();
         private static final Parser<PlayerDataNotify> PARSER = new AbstractParser<PlayerDataNotify>() { // from class: emu.grasscutter.net.proto.PlayerDataNotifyOuterClass.PlayerDataNotify.1
@@ -130,7 +130,7 @@ public final class PlayerDataNotifyOuterClass {
                 r4 = this;
                 r0 = r5
                 switch(r0) {
-                    case 4: goto L_0x0014;
+                    case 5: goto L_0x0014;
                     default: goto L_0x0019;
                 }
                 r0 = r4
@@ -184,13 +184,10 @@ public final class PlayerDataNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
+                            case 24:
                                 this.serverTime_ = input.readUInt64();
                                 break;
-                            case 16:
-                                this.regionId_ = input.readUInt32();
-                                break;
-                            case 34:
+                            case 42:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.propMap_ = MapField.newMapField(PropMapDefaultEntryHolder.defaultEntry);
                                     mutable_bitField0_ |= 1;
@@ -198,11 +195,14 @@ public final class PlayerDataNotifyOuterClass {
                                 MapEntry<Integer, PropValueOuterClass.PropValue> propMap__ = (MapEntry) input.readMessage(PropMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                                 this.propMap_.getMutableMap().put(propMap__.getKey(), propMap__.getValue());
                                 break;
-                            case 74:
-                                this.nickName_ = input.readStringRequireUtf8();
-                                break;
-                            case 96:
+                            case 56:
                                 this.isFirstLoginToday_ = input.readBool();
+                                break;
+                            case 72:
+                                this.regionId_ = input.readUInt32();
+                                break;
+                            case 90:
+                                this.nickName_ = input.readStringRequireUtf8();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -234,11 +234,6 @@ public final class PlayerDataNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PlayerDataNotifyOuterClass.PlayerDataNotifyOrBuilder
-        public boolean getIsFirstLoginToday() {
-            return this.isFirstLoginToday_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerDataNotifyOuterClass.PlayerDataNotifyOrBuilder
         public String getNickName() {
             Object ref = this.nickName_;
             if (ref instanceof String) {
@@ -261,8 +256,18 @@ public final class PlayerDataNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PlayerDataNotifyOuterClass.PlayerDataNotifyOrBuilder
+        public int getRegionId() {
+            return this.regionId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerDataNotifyOuterClass.PlayerDataNotifyOrBuilder
         public long getServerTime() {
             return this.serverTime_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerDataNotifyOuterClass.PlayerDataNotifyOrBuilder
+        public boolean getIsFirstLoginToday() {
+            return this.isFirstLoginToday_;
         }
 
         /* access modifiers changed from: private */
@@ -317,11 +322,6 @@ public final class PlayerDataNotifyOuterClass {
             throw new IllegalArgumentException();
         }
 
-        @Override // emu.grasscutter.net.proto.PlayerDataNotifyOuterClass.PlayerDataNotifyOrBuilder
-        public int getRegionId() {
-            return this.regionId_;
-        }
-
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -338,17 +338,17 @@ public final class PlayerDataNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.serverTime_ != 0) {
-                output.writeUInt64(1, this.serverTime_);
+                output.writeUInt64(3, this.serverTime_);
+            }
+            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetPropMap(), PropMapDefaultEntryHolder.defaultEntry, 5);
+            if (this.isFirstLoginToday_) {
+                output.writeBool(7, this.isFirstLoginToday_);
             }
             if (this.regionId_ != 0) {
-                output.writeUInt32(2, this.regionId_);
+                output.writeUInt32(9, this.regionId_);
             }
-            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetPropMap(), PropMapDefaultEntryHolder.defaultEntry, 4);
             if (!GeneratedMessageV3.isStringEmpty(this.nickName_)) {
-                GeneratedMessageV3.writeString(output, 9, this.nickName_);
-            }
-            if (this.isFirstLoginToday_) {
-                output.writeBool(12, this.isFirstLoginToday_);
+                GeneratedMessageV3.writeString(output, 11, this.nickName_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -361,19 +361,19 @@ public final class PlayerDataNotifyOuterClass {
             }
             int size2 = 0;
             if (this.serverTime_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(1, this.serverTime_);
-            }
-            if (this.regionId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(2, this.regionId_);
+                size2 = 0 + CodedOutputStream.computeUInt64Size(3, this.serverTime_);
             }
             for (Map.Entry<Integer, PropValueOuterClass.PropValue> entry : internalGetPropMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(4, PropMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.nickName_)) {
-                size2 += GeneratedMessageV3.computeStringSize(9, this.nickName_);
+                size2 += CodedOutputStream.computeMessageSize(5, PropMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
             }
             if (this.isFirstLoginToday_) {
-                size2 += CodedOutputStream.computeBoolSize(12, this.isFirstLoginToday_);
+                size2 += CodedOutputStream.computeBoolSize(7, this.isFirstLoginToday_);
+            }
+            if (this.regionId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(9, this.regionId_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.nickName_)) {
+                size2 += GeneratedMessageV3.computeStringSize(11, this.nickName_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -389,7 +389,7 @@ public final class PlayerDataNotifyOuterClass {
                 return equals(obj);
             }
             PlayerDataNotify other = (PlayerDataNotify) obj;
-            return getIsFirstLoginToday() == other.getIsFirstLoginToday() && getNickName().equals(other.getNickName()) && getServerTime() == other.getServerTime() && internalGetPropMap().equals(other.internalGetPropMap()) && getRegionId() == other.getRegionId() && this.unknownFields.equals(other.unknownFields);
+            return getNickName().equals(other.getNickName()) && getRegionId() == other.getRegionId() && getServerTime() == other.getServerTime() && getIsFirstLoginToday() == other.getIsFirstLoginToday() && internalGetPropMap().equals(other.internalGetPropMap()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -397,11 +397,11 @@ public final class PlayerDataNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + Internal.hashBoolean(getIsFirstLoginToday()))) + 9)) + getNickName().hashCode())) + 1)) + Internal.hashLong(getServerTime());
+            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getNickName().hashCode())) + 9)) + getRegionId())) + 3)) + Internal.hashLong(getServerTime()))) + 7)) + Internal.hashBoolean(getIsFirstLoginToday());
             if (!internalGetPropMap().getMap().isEmpty()) {
-                hash = (53 * ((37 * hash) + 4)) + internalGetPropMap().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + internalGetPropMap().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 2)) + getRegionId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -481,11 +481,11 @@ public final class PlayerDataNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerDataNotifyOuterClass$PlayerDataNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements PlayerDataNotifyOrBuilder {
             private int bitField0_;
-            private boolean isFirstLoginToday_;
             private Object nickName_ = "";
-            private long serverTime_;
-            private MapField<Integer, PropValueOuterClass.PropValue> propMap_;
             private int regionId_;
+            private long serverTime_;
+            private boolean isFirstLoginToday_;
+            private MapField<Integer, PropValueOuterClass.PropValue> propMap_;
 
             /*  JADX ERROR: Dependency scan failed at insn: 0x001E: INVOKE_CUSTOM r0
                 java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
@@ -524,7 +524,7 @@ public final class PlayerDataNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 4: goto L_0x0014;
+                        case 5: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -577,7 +577,7 @@ public final class PlayerDataNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 4: goto L_0x0014;
+                        case 5: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -619,11 +619,11 @@ public final class PlayerDataNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.isFirstLoginToday_ = false;
                 this.nickName_ = "";
-                this.serverTime_ = 0;
-                internalGetMutablePropMap().clear();
                 this.regionId_ = 0;
+                this.serverTime_ = 0;
+                this.isFirstLoginToday_ = false;
+                internalGetMutablePropMap().clear();
                 return this;
             }
 
@@ -650,12 +650,12 @@ public final class PlayerDataNotifyOuterClass {
             public PlayerDataNotify buildPartial() {
                 PlayerDataNotify result = new PlayerDataNotify(this);
                 int i = this.bitField0_;
-                result.isFirstLoginToday_ = this.isFirstLoginToday_;
                 result.nickName_ = this.nickName_;
+                result.regionId_ = this.regionId_;
                 result.serverTime_ = this.serverTime_;
+                result.isFirstLoginToday_ = this.isFirstLoginToday_;
                 result.propMap_ = internalGetPropMap();
                 result.propMap_.makeImmutable();
-                result.regionId_ = this.regionId_;
                 onBuilt();
                 return result;
             }
@@ -703,20 +703,20 @@ public final class PlayerDataNotifyOuterClass {
                 if (other == PlayerDataNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getIsFirstLoginToday()) {
-                    setIsFirstLoginToday(other.getIsFirstLoginToday());
-                }
                 if (!other.getNickName().isEmpty()) {
                     this.nickName_ = other.nickName_;
                     onChanged();
                 }
-                if (other.getServerTime() != 0) {
-                    setServerTime(other.getServerTime());
-                }
-                internalGetMutablePropMap().mergeFrom(other.internalGetPropMap());
                 if (other.getRegionId() != 0) {
                     setRegionId(other.getRegionId());
                 }
+                if (other.getServerTime() != 0) {
+                    setServerTime(other.getServerTime());
+                }
+                if (other.getIsFirstLoginToday()) {
+                    setIsFirstLoginToday(other.getIsFirstLoginToday());
+                }
+                internalGetMutablePropMap().mergeFrom(other.internalGetPropMap());
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
                 return this;
@@ -747,23 +747,6 @@ public final class PlayerDataNotifyOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerDataNotifyOuterClass.PlayerDataNotifyOrBuilder
-            public boolean getIsFirstLoginToday() {
-                return this.isFirstLoginToday_;
-            }
-
-            public Builder setIsFirstLoginToday(boolean value) {
-                this.isFirstLoginToday_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsFirstLoginToday() {
-                this.isFirstLoginToday_ = false;
-                onChanged();
-                return this;
             }
 
             @Override // emu.grasscutter.net.proto.PlayerDataNotifyOuterClass.PlayerDataNotifyOrBuilder
@@ -814,6 +797,23 @@ public final class PlayerDataNotifyOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.PlayerDataNotifyOuterClass.PlayerDataNotifyOrBuilder
+            public int getRegionId() {
+                return this.regionId_;
+            }
+
+            public Builder setRegionId(int value) {
+                this.regionId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRegionId() {
+                this.regionId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerDataNotifyOuterClass.PlayerDataNotifyOrBuilder
             public long getServerTime() {
                 return this.serverTime_;
             }
@@ -826,6 +826,23 @@ public final class PlayerDataNotifyOuterClass {
 
             public Builder clearServerTime() {
                 this.serverTime_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerDataNotifyOuterClass.PlayerDataNotifyOrBuilder
+            public boolean getIsFirstLoginToday() {
+                return this.isFirstLoginToday_;
+            }
+
+            public Builder setIsFirstLoginToday(boolean value) {
+                this.isFirstLoginToday_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsFirstLoginToday() {
+                this.isFirstLoginToday_ = false;
                 onChanged();
                 return this;
             }
@@ -909,23 +926,6 @@ public final class PlayerDataNotifyOuterClass {
 
             public Builder putAllPropMap(Map<Integer, PropValueOuterClass.PropValue> values) {
                 internalGetMutablePropMap().getMutableMap().putAll(values);
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerDataNotifyOuterClass.PlayerDataNotifyOrBuilder
-            public int getRegionId() {
-                return this.regionId_;
-            }
-
-            public Builder setRegionId(int value) {
-                this.regionId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRegionId() {
-                this.regionId_ = 0;
-                onChanged();
                 return this;
             }
 

@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneForceUnlockNotifyOuterClass.class */
 public final class SceneForceUnlockNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cSceneForceUnlockNotify.proto\"?\n\u0016SceneForceUnlockNotify\u0012\u000e\n\u0006is_add\u0018\u000f \u0001(\b\u0012\u0015\n\rforce_id_list\u0018\u000b \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cSceneForceUnlockNotify.proto\"<\n\u0016SceneForceUnlockNotify\u0012\r\n\u0005isAdd\u0018\b \u0001(\b\u0012\u0013\n\u000bforceIdList\u0018\u000e \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SceneForceUnlockNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SceneForceUnlockNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneForceUnlockNotify_descriptor, new String[]{"IsAdd", "ForceIdList"});
 
@@ -51,9 +51,9 @@ public final class SceneForceUnlockNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneForceUnlockNotifyOuterClass$SceneForceUnlockNotify.class */
     public static final class SceneForceUnlockNotify extends GeneratedMessageV3 implements SceneForceUnlockNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_ADD_FIELD_NUMBER = 15;
+        public static final int ISADD_FIELD_NUMBER = 8;
         private boolean isAdd_;
-        public static final int FORCE_ID_LIST_FIELD_NUMBER = 11;
+        public static final int FORCEIDLIST_FIELD_NUMBER = 14;
         private Internal.IntList forceIdList_;
         private int forceIdListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -107,14 +107,17 @@ public final class SceneForceUnlockNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 88:
+                                case 64:
+                                    this.isAdd_ = input.readBool();
+                                    break;
+                                case 112:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.forceIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.forceIdList_.addInt(input.readUInt32());
                                     break;
-                                case 90:
+                                case 114:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.forceIdList_ = newIntList();
@@ -124,9 +127,6 @@ public final class SceneForceUnlockNotifyOuterClass {
                                         this.forceIdList_.addInt(input.readUInt32());
                                     }
                                     input.popLimit(limit);
-                                    break;
-                                case 120:
-                                    this.isAdd_ = input.readBool();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -197,15 +197,15 @@ public final class SceneForceUnlockNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
+            if (this.isAdd_) {
+                output.writeBool(8, this.isAdd_);
+            }
             if (getForceIdListList().size() > 0) {
-                output.writeUInt32NoTag(90);
+                output.writeUInt32NoTag(114);
                 output.writeUInt32NoTag(this.forceIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.forceIdList_.size(); i++) {
                 output.writeUInt32NoTag(this.forceIdList_.getInt(i));
-            }
-            if (this.isAdd_) {
-                output.writeBool(15, this.isAdd_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -216,21 +216,22 @@ public final class SceneForceUnlockNotifyOuterClass {
             if (size != -1) {
                 return size;
             }
+            int size2 = 0;
+            if (this.isAdd_) {
+                size2 = 0 + CodedOutputStream.computeBoolSize(8, this.isAdd_);
+            }
             int dataSize = 0;
             for (int i = 0; i < this.forceIdList_.size(); i++) {
                 dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.forceIdList_.getInt(i));
             }
-            int size2 = 0 + dataSize;
+            int size3 = size2 + dataSize;
             if (!getForceIdListList().isEmpty()) {
-                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.forceIdListMemoizedSerializedSize = dataSize;
-            if (this.isAdd_) {
-                size2 += CodedOutputStream.computeBoolSize(15, this.isAdd_);
-            }
-            int size3 = size2 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size3;
-            return size3;
+            int size4 = size3 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size4;
+            return size4;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -250,9 +251,9 @@ public final class SceneForceUnlockNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + Internal.hashBoolean(getIsAdd());
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + Internal.hashBoolean(getIsAdd());
             if (getForceIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 11)) + getForceIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 14)) + getForceIdListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

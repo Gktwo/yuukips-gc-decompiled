@@ -40,13 +40,13 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
     protected transient boolean containsNullKey;
 
     /* renamed from: n */
-    protected transient int f1819n;
+    protected transient int f1783n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1820f;
+    protected final float f1784f;
     protected transient Float2ByteMap.FastEntrySet entries;
     protected transient FloatSet keys;
     protected transient ByteCollection values;
@@ -57,14 +57,14 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1820f = f;
+            this.f1784f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1819n = arraySize;
+            this.f1783n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1819n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1819n, f);
-            this.key = new float[this.f1819n + 1];
-            this.value = new byte[this.f1819n + 1];
+            this.mask = this.f1783n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1783n, f);
+            this.key = new float[this.f1783n + 1];
+            this.value = new byte[this.f1783n + 1];
         }
     }
 
@@ -114,15 +114,15 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1820f);
-        if (needed > this.f1819n) {
+        int needed = HashCommon.arraySize(capacity, this.f1784f);
+        if (needed > this.f1783n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1820f)))));
-        if (needed > this.f1819n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1784f)))));
+        if (needed > this.f1783n) {
             rehash(needed);
         }
     }
@@ -132,8 +132,8 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
         byte oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f1819n > this.minN && this.size < this.maxFill / 4 && this.f1819n > 16) {
-            rehash(this.f1819n / 2);
+        if (this.f1783n > this.minN && this.size < this.maxFill / 4 && this.f1783n > 16) {
+            rehash(this.f1783n / 2);
         }
         return oldValue;
     }
@@ -141,17 +141,17 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
     /* access modifiers changed from: private */
     public byte removeNullEntry() {
         this.containsNullKey = false;
-        byte oldValue = this.value[this.f1819n];
+        byte oldValue = this.value[this.f1783n];
         this.size--;
-        if (this.f1819n > this.minN && this.size < this.maxFill / 4 && this.f1819n > 16) {
-            rehash(this.f1819n / 2);
+        if (this.f1783n > this.minN && this.size < this.maxFill / 4 && this.f1783n > 16) {
+            rehash(this.f1783n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloat2ByteMap, java.util.Map
     public void putAll(Map<? extends Float, ? extends Byte> m) {
-        if (((double) this.f1820f) <= 0.5d) {
+        if (((double) this.f1784f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -162,7 +162,7 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
     private int find(float k) {
         float curr;
         if (Float.floatToIntBits(k) == 0) {
-            return this.containsNullKey ? this.f1819n : -(this.f1819n + 1);
+            return this.containsNullKey ? this.f1783n : -(this.f1783n + 1);
         }
         float[] key = this.key;
         int mix = HashCommon.mix(HashCommon.float2int(k)) & this.mask;
@@ -186,7 +186,7 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
     }
 
     private void insert(int pos, float k, byte v) {
-        if (pos == this.f1819n) {
+        if (pos == this.f1783n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -194,7 +194,7 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f1820f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f1784f));
         }
     }
 
@@ -238,9 +238,9 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f1819n, incr);
+            return addToValue(this.f1783n, incr);
         } else {
-            pos = this.f1819n;
+            pos = this.f1783n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -248,7 +248,7 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f1820f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f1784f));
         }
         return this.defRetValue;
     }
@@ -314,7 +314,7 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
     public byte get(float k) {
         float curr;
         if (Float.floatToIntBits(k) == 0) {
-            return this.containsNullKey ? this.value[this.f1819n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f1783n] : this.defRetValue;
         }
         float[] key = this.key;
         int mix = HashCommon.mix(HashCommon.float2int(k)) & this.mask;
@@ -368,10 +368,10 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
     public boolean containsValue(byte v) {
         byte[] value = this.value;
         float[] key = this.key;
-        if (this.containsNullKey && value[this.f1819n] == v) {
+        if (this.containsNullKey && value[this.f1783n] == v) {
             return true;
         }
-        int i = this.f1819n;
+        int i = this.f1783n;
         while (true) {
             i--;
             if (i == 0) {
@@ -387,7 +387,7 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
     public byte getOrDefault(float k, byte defaultValue) {
         float curr;
         if (Float.floatToIntBits(k) == 0) {
-            return this.containsNullKey ? this.value[this.f1819n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f1783n] : defaultValue;
         }
         float[] key = this.key;
         int mix = HashCommon.mix(HashCommon.float2int(k)) & this.mask;
@@ -446,7 +446,7 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
                     return true;
                 }
             }
-        } else if (!this.containsNullKey || v != this.value[this.f1819n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f1783n]) {
             return false;
         } else {
             removeNullEntry();
@@ -701,31 +701,31 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
         int last;
 
         /* renamed from: c */
-        int f1821c;
+        int f1785c;
         boolean mustReturnNullKey;
         FloatArrayList wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Float2ByteOpenHashMap.this.f1819n;
+            this.pos = Float2ByteOpenHashMap.this.f1783n;
             this.last = -1;
-            this.f1821c = Float2ByteOpenHashMap.this.size;
+            this.f1785c = Float2ByteOpenHashMap.this.size;
             this.mustReturnNullKey = Float2ByteOpenHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f1821c != 0;
+            return this.f1785c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f1821c--;
+            this.f1785c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Float2ByteOpenHashMap.this.f1819n;
+                int i = Float2ByteOpenHashMap.this.f1783n;
                 this.last = i;
                 return i;
             }
@@ -757,13 +757,13 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Float2ByteOpenHashMap.this.f1819n;
+                int i = Float2ByteOpenHashMap.this.f1783n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f1821c--;
+                this.f1785c--;
             }
             float[] key = Float2ByteOpenHashMap.this.key;
-            while (this.f1821c != 0) {
+            while (this.f1785c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -780,12 +780,12 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
                         i3 = Float2ByteOpenHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f1821c--;
+                    this.f1785c--;
                 } else if (Float.floatToIntBits(key[this.pos]) != 0) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f1821c--;
+                    this.f1785c--;
                 }
             }
         }
@@ -834,7 +834,7 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Float2ByteOpenHashMap.this.f1819n) {
+            if (this.last == Float2ByteOpenHashMap.this.f1783n) {
                 Float2ByteOpenHashMap.this.containsNullKey = false;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
@@ -931,7 +931,7 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
         int max;
 
         /* renamed from: c */
-        int f1822c;
+        int f1786c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -941,16 +941,16 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Float2ByteOpenHashMap.this.f1819n;
-            this.f1822c = 0;
+            this.max = Float2ByteOpenHashMap.this.f1783n;
+            this.f1786c = 0;
             this.mustReturnNull = Float2ByteOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Float2ByteOpenHashMap.this.f1819n;
-            this.f1822c = 0;
+            this.max = Float2ByteOpenHashMap.this.f1783n;
+            this.f1786c = 0;
             this.mustReturnNull = Float2ByteOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -962,14 +962,14 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1822c++;
-                acceptOnIndex(action, Float2ByteOpenHashMap.this.f1819n);
+                this.f1786c++;
+                acceptOnIndex(action, Float2ByteOpenHashMap.this.f1783n);
                 return true;
             }
             float[] key = Float2ByteOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (Float.floatToIntBits(key[this.pos]) != 0) {
-                    this.f1822c++;
+                    this.f1786c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -983,14 +983,14 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1822c++;
-                acceptOnIndex(action, Float2ByteOpenHashMap.this.f1819n);
+                this.f1786c++;
+                acceptOnIndex(action, Float2ByteOpenHashMap.this.f1783n);
             }
             float[] key = Float2ByteOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (Float.floatToIntBits(key[this.pos]) != 0) {
                     acceptOnIndex(action, this.pos);
-                    this.f1822c++;
+                    this.f1786c++;
                 }
                 this.pos++;
             }
@@ -998,9 +998,9 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Float2ByteOpenHashMap.this.size - this.f1822c);
+                return (long) (Float2ByteOpenHashMap.this.size - this.f1786c);
             }
-            return Math.min((long) (Float2ByteOpenHashMap.this.size - this.f1822c), ((long) ((((double) Float2ByteOpenHashMap.this.realSize()) / ((double) Float2ByteOpenHashMap.this.f1819n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Float2ByteOpenHashMap.this.size - this.f1786c), ((long) ((((double) Float2ByteOpenHashMap.this.realSize()) / ((double) Float2ByteOpenHashMap.this.f1783n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1194,7 +1194,7 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
             float k = ((Float) e.getKey()).floatValue();
             byte v = ((Byte) e.getValue()).byteValue();
             if (Float.floatToIntBits(k) == 0) {
-                return Float2ByteOpenHashMap.this.containsNullKey && Float2ByteOpenHashMap.this.value[Float2ByteOpenHashMap.this.f1819n] == v;
+                return Float2ByteOpenHashMap.this.containsNullKey && Float2ByteOpenHashMap.this.value[Float2ByteOpenHashMap.this.f1783n] == v;
             }
             float[] key = Float2ByteOpenHashMap.this.key;
             int mix = HashCommon.mix(HashCommon.float2int(k)) & Float2ByteOpenHashMap.this.mask;
@@ -1255,7 +1255,7 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
                     Float2ByteOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Float2ByteOpenHashMap.this.containsNullKey || Float2ByteOpenHashMap.this.value[Float2ByteOpenHashMap.this.f1819n] != v) {
+            } else if (!Float2ByteOpenHashMap.this.containsNullKey || Float2ByteOpenHashMap.this.value[Float2ByteOpenHashMap.this.f1783n] != v) {
                 return false;
             } else {
                 Float2ByteOpenHashMap.this.removeNullEntry();
@@ -1276,9 +1276,9 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Float2ByteMap.Entry> consumer) {
             if (Float2ByteOpenHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractFloat2ByteMap.BasicEntry(Float2ByteOpenHashMap.this.key[Float2ByteOpenHashMap.this.f1819n], Float2ByteOpenHashMap.this.value[Float2ByteOpenHashMap.this.f1819n]));
+                consumer.accept(new AbstractFloat2ByteMap.BasicEntry(Float2ByteOpenHashMap.this.key[Float2ByteOpenHashMap.this.f1783n], Float2ByteOpenHashMap.this.value[Float2ByteOpenHashMap.this.f1783n]));
             }
-            int pos = Float2ByteOpenHashMap.this.f1819n;
+            int pos = Float2ByteOpenHashMap.this.f1783n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1294,11 +1294,11 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
         public void fastForEach(Consumer<? super Float2ByteMap.Entry> consumer) {
             AbstractFloat2ByteMap.BasicEntry entry = new AbstractFloat2ByteMap.BasicEntry();
             if (Float2ByteOpenHashMap.this.containsNullKey) {
-                entry.key = Float2ByteOpenHashMap.this.key[Float2ByteOpenHashMap.this.f1819n];
-                entry.value = Float2ByteOpenHashMap.this.value[Float2ByteOpenHashMap.this.f1819n];
+                entry.key = Float2ByteOpenHashMap.this.key[Float2ByteOpenHashMap.this.f1783n];
+                entry.value = Float2ByteOpenHashMap.this.value[Float2ByteOpenHashMap.this.f1783n];
                 consumer.accept(entry);
             }
-            int pos = Float2ByteOpenHashMap.this.f1819n;
+            int pos = Float2ByteOpenHashMap.this.f1783n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1396,9 +1396,9 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
         @Override // p014it.unimi.dsi.fastutil.floats.FloatIterable
         public void forEach(FloatConsumer consumer) {
             if (Float2ByteOpenHashMap.this.containsNullKey) {
-                consumer.accept(Float2ByteOpenHashMap.this.key[Float2ByteOpenHashMap.this.f1819n]);
+                consumer.accept(Float2ByteOpenHashMap.this.key[Float2ByteOpenHashMap.this.f1783n]);
             }
-            int pos = Float2ByteOpenHashMap.this.f1819n;
+            int pos = Float2ByteOpenHashMap.this.f1783n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1517,9 +1517,9 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
                 @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterable
                 public void forEach(ByteConsumer consumer) {
                     if (Float2ByteOpenHashMap.this.containsNullKey) {
-                        consumer.accept(Float2ByteOpenHashMap.this.value[Float2ByteOpenHashMap.this.f1819n]);
+                        consumer.accept(Float2ByteOpenHashMap.this.value[Float2ByteOpenHashMap.this.f1783n]);
                     }
-                    int pos = Float2ByteOpenHashMap.this.f1819n;
+                    int pos = Float2ByteOpenHashMap.this.f1783n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1555,8 +1555,8 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1820f)));
-        if (l >= this.f1819n || this.size > HashCommon.maxFill(l, this.f1820f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1784f)));
+        if (l >= this.f1783n || this.size > HashCommon.maxFill(l, this.f1784f)) {
             return true;
         }
         try {
@@ -1574,7 +1574,7 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
         int mask = newN - 1;
         float[] newKey = new float[newN + 1];
         byte[] newValue = new byte[newN + 1];
-        int i2 = this.f1819n;
+        int i2 = this.f1783n;
         int j = realSize();
         while (true) {
             j--;
@@ -1593,10 +1593,10 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f1819n];
-                this.f1819n = newN;
+                newValue[newN] = value[this.f1783n];
+                this.f1783n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f1819n, this.f1820f);
+                this.maxFill = HashCommon.maxFill(this.f1783n, this.f1784f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1637,7 +1637,7 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f1819n];
+            h += this.value[this.f1783n];
         }
         return h;
     }
@@ -1663,12 +1663,12 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f1819n = HashCommon.arraySize(this.size, this.f1820f);
-        this.maxFill = HashCommon.maxFill(this.f1819n, this.f1820f);
-        this.mask = this.f1819n - 1;
-        float[] key = new float[this.f1819n + 1];
+        this.f1783n = HashCommon.arraySize(this.size, this.f1784f);
+        this.maxFill = HashCommon.maxFill(this.f1783n, this.f1784f);
+        this.mask = this.f1783n - 1;
+        float[] key = new float[this.f1783n + 1];
         this.key = key;
-        byte[] value = new byte[this.f1819n + 1];
+        byte[] value = new byte[this.f1783n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1677,7 +1677,7 @@ public class Float2ByteOpenHashMap extends AbstractFloat2ByteMap implements Seri
                 float k = s.readFloat();
                 byte v = s.readByte();
                 if (Float.floatToIntBits(k) == 0) {
-                    pos = this.f1819n;
+                    pos = this.f1783n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix(HashCommon.float2int(k));

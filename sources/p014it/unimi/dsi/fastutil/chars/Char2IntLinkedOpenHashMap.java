@@ -48,13 +48,13 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
     protected transient long[] link;
 
     /* renamed from: n */
-    protected transient int f1413n;
+    protected transient int f1377n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1414f;
+    protected final float f1378f;
     protected transient Char2IntSortedMap.FastSortedEntrySet entries;
     protected transient CharSortedSet keys;
     protected transient IntCollection values;
@@ -67,15 +67,15 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1414f = f;
+            this.f1378f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1413n = arraySize;
+            this.f1377n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1413n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1413n, f);
-            this.key = new char[this.f1413n + 1];
-            this.value = new int[this.f1413n + 1];
-            this.link = new long[this.f1413n + 1];
+            this.mask = this.f1377n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1377n, f);
+            this.key = new char[this.f1377n + 1];
+            this.value = new int[this.f1377n + 1];
+            this.link = new long[this.f1377n + 1];
         }
     }
 
@@ -124,15 +124,15 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1414f);
-        if (needed > this.f1413n) {
+        int needed = HashCommon.arraySize(capacity, this.f1378f);
+        if (needed > this.f1377n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1414f)))));
-        if (needed > this.f1413n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1378f)))));
+        if (needed > this.f1377n) {
             rehash(needed);
         }
     }
@@ -143,8 +143,8 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
         this.size--;
         fixPointers(pos);
         shiftKeys(pos);
-        if (this.f1413n > this.minN && this.size < this.maxFill / 4 && this.f1413n > 16) {
-            rehash(this.f1413n / 2);
+        if (this.f1377n > this.minN && this.size < this.maxFill / 4 && this.f1377n > 16) {
+            rehash(this.f1377n / 2);
         }
         return oldValue;
     }
@@ -152,18 +152,18 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
     /* access modifiers changed from: private */
     public int removeNullEntry() {
         this.containsNullKey = false;
-        int oldValue = this.value[this.f1413n];
+        int oldValue = this.value[this.f1377n];
         this.size--;
-        fixPointers(this.f1413n);
-        if (this.f1413n > this.minN && this.size < this.maxFill / 4 && this.f1413n > 16) {
-            rehash(this.f1413n / 2);
+        fixPointers(this.f1377n);
+        if (this.f1377n > this.minN && this.size < this.maxFill / 4 && this.f1377n > 16) {
+            rehash(this.f1377n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.chars.AbstractChar2IntMap, java.util.Map
     public void putAll(Map<? extends Character, ? extends Integer> m) {
-        if (((double) this.f1414f) <= 0.5d) {
+        if (((double) this.f1378f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -174,7 +174,7 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
     private int find(char k) {
         char curr;
         if (k == 0) {
-            return this.containsNullKey ? this.f1413n : -(this.f1413n + 1);
+            return this.containsNullKey ? this.f1377n : -(this.f1377n + 1);
         }
         char[] key = this.key;
         int mix = HashCommon.mix((int) k) & this.mask;
@@ -198,7 +198,7 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
     }
 
     private void insert(int pos, char k, int v) {
-        if (pos == this.f1413n) {
+        if (pos == this.f1377n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -217,7 +217,7 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f1414f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f1378f));
         }
     }
 
@@ -261,9 +261,9 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f1413n, incr);
+            return addToValue(this.f1377n, incr);
         } else {
-            pos = this.f1413n;
+            pos = this.f1377n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -282,7 +282,7 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f1414f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f1378f));
         }
         return this.defRetValue;
     }
@@ -364,13 +364,13 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
         }
         this.size--;
         int v = this.value[pos];
-        if (pos == this.f1413n) {
+        if (pos == this.f1377n) {
             this.containsNullKey = false;
         } else {
             shiftKeys(pos);
         }
-        if (this.f1413n > this.minN && this.size < this.maxFill / 4 && this.f1413n > 16) {
-            rehash(this.f1413n / 2);
+        if (this.f1377n > this.minN && this.size < this.maxFill / 4 && this.f1377n > 16) {
+            rehash(this.f1377n / 2);
         }
         return v;
     }
@@ -388,13 +388,13 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
         }
         this.size--;
         int v = this.value[pos];
-        if (pos == this.f1413n) {
+        if (pos == this.f1377n) {
             this.containsNullKey = false;
         } else {
             shiftKeys(pos);
         }
-        if (this.f1413n > this.minN && this.size < this.maxFill / 4 && this.f1413n > 16) {
-            rehash(this.f1413n / 2);
+        if (this.f1377n > this.minN && this.size < this.maxFill / 4 && this.f1377n > 16) {
+            rehash(this.f1377n / 2);
         }
         return v;
     }
@@ -474,8 +474,8 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
         } else if (!this.containsNullKey) {
             return this.defRetValue;
         } else {
-            moveIndexToFirst(this.f1413n);
-            return this.value[this.f1413n];
+            moveIndexToFirst(this.f1377n);
+            return this.value[this.f1377n];
         }
     }
 
@@ -506,8 +506,8 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
         } else if (!this.containsNullKey) {
             return this.defRetValue;
         } else {
-            moveIndexToLast(this.f1413n);
-            return this.value[this.f1413n];
+            moveIndexToLast(this.f1377n);
+            return this.value[this.f1377n];
         }
     }
 
@@ -535,11 +535,11 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
                 return setValue(pos, v);
             }
         } else if (this.containsNullKey) {
-            moveIndexToFirst(this.f1413n);
-            return setValue(this.f1413n, v);
+            moveIndexToFirst(this.f1377n);
+            return setValue(this.f1377n, v);
         } else {
             this.containsNullKey = true;
-            pos = this.f1413n;
+            pos = this.f1377n;
         }
         this.key[pos] = k;
         this.value[pos] = v;
@@ -557,7 +557,7 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size, this.f1414f));
+            rehash(HashCommon.arraySize(this.size, this.f1378f));
         }
         return this.defRetValue;
     }
@@ -586,11 +586,11 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
                 return setValue(pos, v);
             }
         } else if (this.containsNullKey) {
-            moveIndexToLast(this.f1413n);
-            return setValue(this.f1413n, v);
+            moveIndexToLast(this.f1377n);
+            return setValue(this.f1377n, v);
         } else {
             this.containsNullKey = true;
-            pos = this.f1413n;
+            pos = this.f1377n;
         }
         this.key[pos] = k;
         this.value[pos] = v;
@@ -608,7 +608,7 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
         int i3 = this.size;
         this.size = i3 + 1;
         if (i3 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size, this.f1414f));
+            rehash(HashCommon.arraySize(this.size, this.f1378f));
         }
         return this.defRetValue;
     }
@@ -617,7 +617,7 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
     public int get(char k) {
         char curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f1413n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f1377n] : this.defRetValue;
         }
         char[] key = this.key;
         int mix = HashCommon.mix((int) k) & this.mask;
@@ -671,10 +671,10 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
     public boolean containsValue(int v) {
         int[] value = this.value;
         char[] key = this.key;
-        if (this.containsNullKey && value[this.f1413n] == v) {
+        if (this.containsNullKey && value[this.f1377n] == v) {
             return true;
         }
-        int i = this.f1413n;
+        int i = this.f1377n;
         while (true) {
             i--;
             if (i == 0) {
@@ -690,7 +690,7 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
     public int getOrDefault(char k, int defaultValue) {
         char curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f1413n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f1377n] : defaultValue;
         }
         char[] key = this.key;
         int mix = HashCommon.mix((int) k) & this.mask;
@@ -749,7 +749,7 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
                     return true;
                 }
             }
-        } else if (!this.containsNullKey || v != this.value[this.f1413n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f1377n]) {
             return false;
         } else {
             removeNullEntry();
@@ -1120,8 +1120,8 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
             this.index = -1;
             if (from == 0) {
                 if (Char2IntLinkedOpenHashMap.this.containsNullKey) {
-                    this.next = (int) Char2IntLinkedOpenHashMap.this.link[Char2IntLinkedOpenHashMap.this.f1413n];
-                    this.prev = Char2IntLinkedOpenHashMap.this.f1413n;
+                    this.next = (int) Char2IntLinkedOpenHashMap.this.link[Char2IntLinkedOpenHashMap.this.f1377n];
+                    this.prev = Char2IntLinkedOpenHashMap.this.f1377n;
                     return;
                 }
                 throw new NoSuchElementException("The key " + from + " does not belong to this map.");
@@ -1448,7 +1448,7 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
             char k = ((Character) e.getKey()).charValue();
             int v = ((Integer) e.getValue()).intValue();
             if (k == 0) {
-                return Char2IntLinkedOpenHashMap.this.containsNullKey && Char2IntLinkedOpenHashMap.this.value[Char2IntLinkedOpenHashMap.this.f1413n] == v;
+                return Char2IntLinkedOpenHashMap.this.containsNullKey && Char2IntLinkedOpenHashMap.this.value[Char2IntLinkedOpenHashMap.this.f1377n] == v;
             }
             char[] key = Char2IntLinkedOpenHashMap.this.key;
             int mix = HashCommon.mix((int) k) & Char2IntLinkedOpenHashMap.this.mask;
@@ -1509,7 +1509,7 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
                     Char2IntLinkedOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Char2IntLinkedOpenHashMap.this.containsNullKey || Char2IntLinkedOpenHashMap.this.value[Char2IntLinkedOpenHashMap.this.f1413n] != v) {
+            } else if (!Char2IntLinkedOpenHashMap.this.containsNullKey || Char2IntLinkedOpenHashMap.this.value[Char2IntLinkedOpenHashMap.this.f1377n] != v) {
                 return false;
             } else {
                 Char2IntLinkedOpenHashMap.this.removeNullEntry();
@@ -1807,8 +1807,8 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1414f)));
-        if (l >= this.f1413n || this.size > HashCommon.maxFill(l, this.f1414f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1378f)));
+        if (l >= this.f1377n || this.size > HashCommon.maxFill(l, this.f1378f)) {
             return true;
         }
         try {
@@ -1869,9 +1869,9 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
         if (newPrev != -1) {
             newLink[newPrev] = newLink[newPrev] | 4294967295L;
         }
-        this.f1413n = newN;
+        this.f1377n = newN;
         this.mask = mask;
-        this.maxFill = HashCommon.maxFill(this.f1413n, this.f1414f);
+        this.maxFill = HashCommon.maxFill(this.f1377n, this.f1378f);
         this.key = newKey;
         this.value = newValue;
     }
@@ -1910,7 +1910,7 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f1413n];
+            h += this.value[this.f1377n];
         }
         return h;
     }
@@ -1936,14 +1936,14 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f1413n = HashCommon.arraySize(this.size, this.f1414f);
-        this.maxFill = HashCommon.maxFill(this.f1413n, this.f1414f);
-        this.mask = this.f1413n - 1;
-        char[] key = new char[this.f1413n + 1];
+        this.f1377n = HashCommon.arraySize(this.size, this.f1378f);
+        this.maxFill = HashCommon.maxFill(this.f1377n, this.f1378f);
+        this.mask = this.f1377n - 1;
+        char[] key = new char[this.f1377n + 1];
         this.key = key;
-        int[] value = new int[this.f1413n + 1];
+        int[] value = new int[this.f1377n + 1];
         this.value = value;
-        long[] link = new long[this.f1413n + 1];
+        long[] link = new long[this.f1377n + 1];
         this.link = link;
         int prev = -1;
         this.last = -1;
@@ -1968,7 +1968,7 @@ public class Char2IntLinkedOpenHashMap extends AbstractChar2IntSortedMap impleme
                     i2 = this.mask;
                 }
             } else {
-                pos = this.f1413n;
+                pos = this.f1377n;
                 this.containsNullKey = true;
             }
             key[pos] = k;

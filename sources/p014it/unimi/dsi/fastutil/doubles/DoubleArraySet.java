@@ -17,7 +17,7 @@ public class DoubleArraySet extends AbstractDoubleSet implements Serializable, C
     private static final long serialVersionUID = 1;
 
     /* renamed from: a */
-    private transient double[] f1703a;
+    private transient double[] f1667a;
     private int size;
 
     static /* synthetic */ int access$010(DoubleArraySet x0) {
@@ -27,16 +27,16 @@ public class DoubleArraySet extends AbstractDoubleSet implements Serializable, C
     }
 
     public DoubleArraySet(double[] a) {
-        this.f1703a = a;
+        this.f1667a = a;
         this.size = a.length;
     }
 
     public DoubleArraySet() {
-        this.f1703a = DoubleArrays.EMPTY_ARRAY;
+        this.f1667a = DoubleArrays.EMPTY_ARRAY;
     }
 
     public DoubleArraySet(int capacity) {
-        this.f1703a = new double[capacity];
+        this.f1667a = new double[capacity];
     }
 
     public DoubleArraySet(DoubleCollection c) {
@@ -54,7 +54,7 @@ public class DoubleArraySet extends AbstractDoubleSet implements Serializable, C
         int i = 0;
         DoubleIterator it = c.iterator();
         while (it.hasNext()) {
-            this.f1703a[i] = it.next().doubleValue();
+            this.f1667a[i] = it.next().doubleValue();
             i++;
         }
         this.size = i;
@@ -64,14 +64,14 @@ public class DoubleArraySet extends AbstractDoubleSet implements Serializable, C
         this(c.size());
         int i = 0;
         for (Double x : c) {
-            this.f1703a[i] = x.doubleValue();
+            this.f1667a[i] = x.doubleValue();
             i++;
         }
         this.size = i;
     }
 
     public DoubleArraySet(double[] a, int size) {
-        this.f1703a = a;
+        this.f1667a = a;
         this.size = size;
         if (size > a.length) {
             throw new IllegalArgumentException("The provided size (" + size + ") is larger than or equal to the array size (" + a.length + ")");
@@ -115,7 +115,7 @@ public class DoubleArraySet extends AbstractDoubleSet implements Serializable, C
             if (i == 0) {
                 return -1;
             }
-        } while (Double.doubleToLongBits(this.f1703a[i]) != Double.doubleToLongBits(o));
+        } while (Double.doubleToLongBits(this.f1667a[i]) != Double.doubleToLongBits(o));
         return i;
     }
 
@@ -134,7 +134,7 @@ public class DoubleArraySet extends AbstractDoubleSet implements Serializable, C
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                double[] dArr = DoubleArraySet.this.f1703a;
+                double[] dArr = DoubleArraySet.this.f1667a;
                 int i = this.next;
                 this.next = i + 1;
                 return dArr[i];
@@ -145,7 +145,7 @@ public class DoubleArraySet extends AbstractDoubleSet implements Serializable, C
                 int access$010 = DoubleArraySet.access$010(DoubleArraySet.this);
                 int i = this.next;
                 this.next = i - 1;
-                System.arraycopy(DoubleArraySet.this.f1703a, this.next + 1, DoubleArraySet.this.f1703a, this.next, access$010 - i);
+                System.arraycopy(DoubleArraySet.this.f1667a, this.next + 1, DoubleArraySet.this.f1667a, this.next, access$010 - i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectIterator
@@ -211,7 +211,7 @@ public class DoubleArraySet extends AbstractDoubleSet implements Serializable, C
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            double[] dArr = DoubleArraySet.this.f1703a;
+            double[] dArr = DoubleArraySet.this.f1667a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(dArr[i]);
@@ -222,7 +222,7 @@ public class DoubleArraySet extends AbstractDoubleSet implements Serializable, C
         public void forEachRemaining(DoubleConsumer action) {
             int max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(DoubleArraySet.this.f1703a[this.pos]);
+                action.accept(DoubleArraySet.this.f1667a[this.pos]);
                 this.pos++;
             }
         }
@@ -285,7 +285,7 @@ public class DoubleArraySet extends AbstractDoubleSet implements Serializable, C
         }
         int tail = (this.size - pos) - 1;
         for (int i = 0; i < tail; i++) {
-            this.f1703a[pos + i] = this.f1703a[pos + i + 1];
+            this.f1667a[pos + i] = this.f1667a[pos + i + 1];
         }
         this.size--;
         return true;
@@ -296,7 +296,7 @@ public class DoubleArraySet extends AbstractDoubleSet implements Serializable, C
         if (findKey(k) != -1) {
             return false;
         }
-        if (this.size == this.f1703a.length) {
+        if (this.size == this.f1667a.length) {
             double[] b = new double[this.size == 0 ? 2 : this.size * 2];
             int i = this.size;
             while (true) {
@@ -304,11 +304,11 @@ public class DoubleArraySet extends AbstractDoubleSet implements Serializable, C
                 if (i == 0) {
                     break;
                 }
-                b[i] = this.f1703a[i];
+                b[i] = this.f1667a[i];
             }
-            this.f1703a = b;
+            this.f1667a = b;
         }
-        double[] dArr = this.f1703a;
+        double[] dArr = this.f1667a;
         int i2 = this.size;
         this.size = i2 + 1;
         dArr[i2] = k;
@@ -327,7 +327,7 @@ public class DoubleArraySet extends AbstractDoubleSet implements Serializable, C
 
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleCollection, p014it.unimi.dsi.fastutil.doubles.DoubleCollection
     public double[] toDoubleArray() {
-        return Arrays.copyOf(this.f1703a, this.size);
+        return Arrays.copyOf(this.f1667a, this.size);
     }
 
     @Override // p014it.unimi.dsi.fastutil.doubles.AbstractDoubleCollection, p014it.unimi.dsi.fastutil.doubles.DoubleCollection
@@ -335,7 +335,7 @@ public class DoubleArraySet extends AbstractDoubleSet implements Serializable, C
         if (a == null || a.length < this.size) {
             a = new double[this.size];
         }
-        System.arraycopy(this.f1703a, 0, a, 0, this.size);
+        System.arraycopy(this.f1667a, 0, a, 0, this.size);
         return a;
     }
 
@@ -343,7 +343,7 @@ public class DoubleArraySet extends AbstractDoubleSet implements Serializable, C
     public DoubleArraySet clone() {
         try {
             DoubleArraySet c = (DoubleArraySet) clone();
-            c.f1703a = (double[]) this.f1703a.clone();
+            c.f1667a = (double[]) this.f1667a.clone();
             return c;
         } catch (CloneNotSupportedException e) {
             throw new InternalError();
@@ -353,15 +353,15 @@ public class DoubleArraySet extends AbstractDoubleSet implements Serializable, C
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; i < this.size; i++) {
-            s.writeDouble(this.f1703a[i]);
+            s.writeDouble(this.f1667a[i]);
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f1703a = new double[this.size];
+        this.f1667a = new double[this.size];
         for (int i = 0; i < this.size; i++) {
-            this.f1703a[i] = s.readDouble();
+            this.f1667a[i] = s.readDouble();
         }
     }
 }

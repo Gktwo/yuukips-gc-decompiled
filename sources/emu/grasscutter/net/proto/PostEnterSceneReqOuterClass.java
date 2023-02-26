@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PostEnterSceneReqOuterClass.class */
 public final class PostEnterSceneReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017PostEnterSceneReq.proto\".\n\u0011PostEnterSceneReq\u0012\u0019\n\u0011enter_scene_token\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017PostEnterSceneReq.proto\",\n\u0011PostEnterSceneReq\u0012\u0017\n\u000fenterSceneToken\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PostEnterSceneReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PostEnterSceneReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PostEnterSceneReq_descriptor, new String[]{"EnterSceneToken"});
 
@@ -41,7 +41,7 @@ public final class PostEnterSceneReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PostEnterSceneReqOuterClass$PostEnterSceneReq.class */
     public static final class PostEnterSceneReq extends GeneratedMessageV3 implements PostEnterSceneReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ENTER_SCENE_TOKEN_FIELD_NUMBER = 3;
+        public static final int ENTERSCENETOKEN_FIELD_NUMBER = 1;
         private int enterSceneToken_;
         private byte memoizedIsInitialized;
         private static final PostEnterSceneReq DEFAULT_INSTANCE = new PostEnterSceneReq();
@@ -88,7 +88,7 @@ public final class PostEnterSceneReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 24:
+                            case 8:
                                 this.enterSceneToken_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class PostEnterSceneReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.enterSceneToken_ != 0) {
-                output.writeUInt32(3, this.enterSceneToken_);
+                output.writeUInt32(1, this.enterSceneToken_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class PostEnterSceneReqOuterClass {
             }
             int size2 = 0;
             if (this.enterSceneToken_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.enterSceneToken_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.enterSceneToken_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class PostEnterSceneReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getEnterSceneToken())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getEnterSceneToken())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

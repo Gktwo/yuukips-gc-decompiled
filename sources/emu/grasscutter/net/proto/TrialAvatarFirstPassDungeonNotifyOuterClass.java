@@ -19,11 +19,11 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TrialAvatarFirstPassDungeonNotifyOuterClass.class */
 public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n'TrialAvatarFirstPassDungeonNotify.proto\"B\n!TrialAvatarFirstPassDungeonNotify\u0012\u001d\n\u0015trial_avatar_index_id\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n'TrialAvatarFirstPassDungeonNotify.proto\"?\n!TrialAvatarFirstPassDungeonNotify\u0012\u001a\n\u0012trialAvatarIndexId\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_TrialAvatarFirstPassDungeonNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_TrialAvatarFirstPassDungeonNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f898xe6965c8a = new GeneratedMessageV3.FieldAccessorTable(internal_static_TrialAvatarFirstPassDungeonNotify_descriptor, new String[]{"TrialAvatarIndexId"});
+    private static final GeneratedMessageV3.FieldAccessorTable f866xe6965c8a = new GeneratedMessageV3.FieldAccessorTable(internal_static_TrialAvatarFirstPassDungeonNotify_descriptor, new String[]{"TrialAvatarIndexId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TrialAvatarFirstPassDungeonNotifyOuterClass$TrialAvatarFirstPassDungeonNotifyOrBuilder.class */
     public interface TrialAvatarFirstPassDungeonNotifyOrBuilder extends MessageOrBuilder {
@@ -43,7 +43,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/TrialAvatarFirstPassDungeonNotifyOuterClass$TrialAvatarFirstPassDungeonNotify.class */
     public static final class TrialAvatarFirstPassDungeonNotify extends GeneratedMessageV3 implements TrialAvatarFirstPassDungeonNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TRIAL_AVATAR_INDEX_ID_FIELD_NUMBER = 1;
+        public static final int TRIALAVATARINDEXID_FIELD_NUMBER = 9;
         private int trialAvatarIndexId_;
         private byte memoizedIsInitialized;
         private static final TrialAvatarFirstPassDungeonNotify DEFAULT_INSTANCE = new TrialAvatarFirstPassDungeonNotify();
@@ -90,7 +90,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
+                            case 72:
                                 this.trialAvatarIndexId_ = input.readUInt32();
                                 break;
                             default:
@@ -119,7 +119,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return TrialAvatarFirstPassDungeonNotifyOuterClass.f898xe6965c8a.ensureFieldAccessorsInitialized(TrialAvatarFirstPassDungeonNotify.class, Builder.class);
+            return TrialAvatarFirstPassDungeonNotifyOuterClass.f866xe6965c8a.ensureFieldAccessorsInitialized(TrialAvatarFirstPassDungeonNotify.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.TrialAvatarFirstPassDungeonNotifyOuterClass.TrialAvatarFirstPassDungeonNotifyOrBuilder
@@ -143,7 +143,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.trialAvatarIndexId_ != 0) {
-                output.writeUInt32(1, this.trialAvatarIndexId_);
+                output.writeUInt32(9, this.trialAvatarIndexId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -156,7 +156,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
             }
             int size2 = 0;
             if (this.trialAvatarIndexId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.trialAvatarIndexId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(9, this.trialAvatarIndexId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -180,7 +180,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getTrialAvatarIndexId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getTrialAvatarIndexId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -267,7 +267,7 @@ public final class TrialAvatarFirstPassDungeonNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return TrialAvatarFirstPassDungeonNotifyOuterClass.f898xe6965c8a.ensureFieldAccessorsInitialized(TrialAvatarFirstPassDungeonNotify.class, Builder.class);
+                return TrialAvatarFirstPassDungeonNotifyOuterClass.f866xe6965c8a.ensureFieldAccessorsInitialized(TrialAvatarFirstPassDungeonNotify.class, Builder.class);
             }
 
             private Builder() {

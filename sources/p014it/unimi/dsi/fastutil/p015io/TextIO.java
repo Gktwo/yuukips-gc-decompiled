@@ -210,7 +210,7 @@ public class TextIO {
         private boolean toAdvance = true;
 
         /* renamed from: s */
-        private String f2214s;
+        private String f2178s;
         private int next;
 
         public IntReaderWrapper(BufferedReader reader) {
@@ -220,19 +220,19 @@ public class TextIO {
         @Override // java.util.Iterator
         public boolean hasNext() {
             if (!this.toAdvance) {
-                return this.f2214s != null;
+                return this.f2178s != null;
             }
             this.toAdvance = false;
             try {
-                this.f2214s = this.reader.readLine();
+                this.f2178s = this.reader.readLine();
             } catch (EOFException e) {
             } catch (IOException rethrow) {
                 throw new RuntimeException(rethrow);
             }
-            if (this.f2214s == null) {
+            if (this.f2178s == null) {
                 return false;
             }
-            this.next = Integer.parseInt(this.f2214s.trim());
+            this.next = Integer.parseInt(this.f2178s.trim());
             return true;
         }
 
@@ -449,7 +449,7 @@ public class TextIO {
         private boolean toAdvance = true;
 
         /* renamed from: s */
-        private String f2215s;
+        private String f2179s;
         private long next;
 
         public LongReaderWrapper(BufferedReader reader) {
@@ -459,19 +459,19 @@ public class TextIO {
         @Override // java.util.Iterator
         public boolean hasNext() {
             if (!this.toAdvance) {
-                return this.f2215s != null;
+                return this.f2179s != null;
             }
             this.toAdvance = false;
             try {
-                this.f2215s = this.reader.readLine();
+                this.f2179s = this.reader.readLine();
             } catch (EOFException e) {
             } catch (IOException rethrow) {
                 throw new RuntimeException(rethrow);
             }
-            if (this.f2215s == null) {
+            if (this.f2179s == null) {
                 return false;
             }
-            this.next = Long.parseLong(this.f2215s.trim());
+            this.next = Long.parseLong(this.f2179s.trim());
             return true;
         }
 
@@ -688,7 +688,7 @@ public class TextIO {
         private boolean toAdvance = true;
 
         /* renamed from: s */
-        private String f2212s;
+        private String f2176s;
         private double next;
 
         public DoubleReaderWrapper(BufferedReader reader) {
@@ -698,19 +698,19 @@ public class TextIO {
         @Override // java.util.Iterator
         public boolean hasNext() {
             if (!this.toAdvance) {
-                return this.f2212s != null;
+                return this.f2176s != null;
             }
             this.toAdvance = false;
             try {
-                this.f2212s = this.reader.readLine();
+                this.f2176s = this.reader.readLine();
             } catch (EOFException e) {
             } catch (IOException rethrow) {
                 throw new RuntimeException(rethrow);
             }
-            if (this.f2212s == null) {
+            if (this.f2176s == null) {
                 return false;
             }
-            this.next = Double.parseDouble(this.f2212s.trim());
+            this.next = Double.parseDouble(this.f2176s.trim());
             return true;
         }
 
@@ -927,7 +927,7 @@ public class TextIO {
         private boolean toAdvance = true;
 
         /* renamed from: s */
-        private String f2210s;
+        private String f2174s;
         private boolean next;
 
         public BooleanReaderWrapper(BufferedReader reader) {
@@ -937,19 +937,19 @@ public class TextIO {
         @Override // java.util.Iterator
         public boolean hasNext() {
             if (!this.toAdvance) {
-                return this.f2210s != null;
+                return this.f2174s != null;
             }
             this.toAdvance = false;
             try {
-                this.f2210s = this.reader.readLine();
+                this.f2174s = this.reader.readLine();
             } catch (EOFException e) {
             } catch (IOException rethrow) {
                 throw new RuntimeException(rethrow);
             }
-            if (this.f2210s == null) {
+            if (this.f2174s == null) {
                 return false;
             }
-            this.next = Boolean.parseBoolean(this.f2210s.trim());
+            this.next = Boolean.parseBoolean(this.f2174s.trim());
             return true;
         }
 
@@ -1166,7 +1166,7 @@ public class TextIO {
         private boolean toAdvance = true;
 
         /* renamed from: s */
-        private String f2211s;
+        private String f2175s;
         private byte next;
 
         public ByteReaderWrapper(BufferedReader reader) {
@@ -1176,19 +1176,19 @@ public class TextIO {
         @Override // java.util.Iterator
         public boolean hasNext() {
             if (!this.toAdvance) {
-                return this.f2211s != null;
+                return this.f2175s != null;
             }
             this.toAdvance = false;
             try {
-                this.f2211s = this.reader.readLine();
+                this.f2175s = this.reader.readLine();
             } catch (EOFException e) {
             } catch (IOException rethrow) {
                 throw new RuntimeException(rethrow);
             }
-            if (this.f2211s == null) {
+            if (this.f2175s == null) {
                 return false;
             }
-            this.next = Byte.parseByte(this.f2211s.trim());
+            this.next = Byte.parseByte(this.f2175s.trim());
             return true;
         }
 
@@ -1405,7 +1405,7 @@ public class TextIO {
         private boolean toAdvance = true;
 
         /* renamed from: s */
-        private String f2216s;
+        private String f2180s;
         private short next;
 
         public ShortReaderWrapper(BufferedReader reader) {
@@ -1415,19 +1415,19 @@ public class TextIO {
         @Override // java.util.Iterator
         public boolean hasNext() {
             if (!this.toAdvance) {
-                return this.f2216s != null;
+                return this.f2180s != null;
             }
             this.toAdvance = false;
             try {
-                this.f2216s = this.reader.readLine();
+                this.f2180s = this.reader.readLine();
             } catch (EOFException e) {
             } catch (IOException rethrow) {
                 throw new RuntimeException(rethrow);
             }
-            if (this.f2216s == null) {
+            if (this.f2180s == null) {
                 return false;
             }
-            this.next = Short.parseShort(this.f2216s.trim());
+            this.next = Short.parseShort(this.f2180s.trim());
             return true;
         }
 
@@ -1644,7 +1644,7 @@ public class TextIO {
         private boolean toAdvance = true;
 
         /* renamed from: s */
-        private String f2213s;
+        private String f2177s;
         private float next;
 
         public FloatReaderWrapper(BufferedReader reader) {
@@ -1654,19 +1654,19 @@ public class TextIO {
         @Override // java.util.Iterator
         public boolean hasNext() {
             if (!this.toAdvance) {
-                return this.f2213s != null;
+                return this.f2177s != null;
             }
             this.toAdvance = false;
             try {
-                this.f2213s = this.reader.readLine();
+                this.f2177s = this.reader.readLine();
             } catch (EOFException e) {
             } catch (IOException rethrow) {
                 throw new RuntimeException(rethrow);
             }
-            if (this.f2213s == null) {
+            if (this.f2177s == null) {
                 return false;
             }
-            this.next = Float.parseFloat(this.f2213s.trim());
+            this.next = Float.parseFloat(this.f2177s.trim());
             return true;
         }
 

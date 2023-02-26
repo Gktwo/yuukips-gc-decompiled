@@ -17,7 +17,7 @@ public class PacketHomeComfortInfoNotify extends BasePacket {
             List<HomeModuleComfortInfoOuterClass.HomeModuleComfortInfo> comfortInfoList = new ArrayList<>();
             for (Integer num : player.getRealmList()) {
                 int moduleId = num.intValue();
-                HomeSceneItem homeScene = player.getHome().getHomeSceneItem(PacketOpcodes.SetCoopChapterViewedRsp + moduleId);
+                HomeSceneItem homeScene = player.getHome().getHomeSceneItem(2000 + moduleId);
                 if (homeScene != null) {
                     List<Integer> blockComfortList = homeScene.getBlockItems().values().stream().map((v0) -> {
                         return v0.calComfort();

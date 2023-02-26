@@ -26,14 +26,16 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CalcWeaponUpgradeReturnItemsRspOuterClass.class */
 public final class CalcWeaponUpgradeReturnItemsRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n%CalcWeaponUpgradeReturnItemsRsp.proto\u001a\u000fItemParam.proto\"s\n\u001fCalcWeaponUpgradeReturnItemsRsp\u0012\u001a\n\u0012target_weapon_guid\u0018\u0003 \u0001(\u0004\u0012#\n\u000fitem_param_list\u0018\n \u0003(\u000b2\n.ItemParam\u0012\u000f\n\u0007retcode\u0018\u0004 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n%CalcWeaponUpgradeReturnItemsRsp.proto\u001a\u000fItemParam.proto\"o\n\u001fCalcWeaponUpgradeReturnItemsRsp\u0012\u000f\n\u0007retcode\u0018\u0004 \u0001(\u0005\u0012\u0018\n\u0010targetWeaponGuid\u0018\t \u0001(\u0004\u0012!\n\ritemParamList\u0018\u0007 \u0003(\u000b2\n.ItemParamB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ItemParamOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_CalcWeaponUpgradeReturnItemsRsp_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_CalcWeaponUpgradeReturnItemsRsp_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f671x9e9bbf31 = new GeneratedMessageV3.FieldAccessorTable(internal_static_CalcWeaponUpgradeReturnItemsRsp_descriptor, new String[]{"TargetWeaponGuid", "ItemParamList", "Retcode"});
+    private static final GeneratedMessageV3.FieldAccessorTable f668x9e9bbf31 = new GeneratedMessageV3.FieldAccessorTable(internal_static_CalcWeaponUpgradeReturnItemsRsp_descriptor, new String[]{"Retcode", "TargetWeaponGuid", "ItemParamList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CalcWeaponUpgradeReturnItemsRspOuterClass$CalcWeaponUpgradeReturnItemsRspOrBuilder.class */
     public interface CalcWeaponUpgradeReturnItemsRspOrBuilder extends MessageOrBuilder {
+        int getRetcode();
+
         long getTargetWeaponGuid();
 
         List<ItemParamOuterClass.ItemParam> getItemParamListList();
@@ -45,8 +47,6 @@ public final class CalcWeaponUpgradeReturnItemsRspOuterClass {
         List<? extends ItemParamOuterClass.ItemParamOrBuilder> getItemParamListOrBuilderList();
 
         ItemParamOuterClass.ItemParamOrBuilder getItemParamListOrBuilder(int i);
-
-        int getRetcode();
     }
 
     private CalcWeaponUpgradeReturnItemsRspOuterClass() {
@@ -62,12 +62,12 @@ public final class CalcWeaponUpgradeReturnItemsRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CalcWeaponUpgradeReturnItemsRspOuterClass$CalcWeaponUpgradeReturnItemsRsp.class */
     public static final class CalcWeaponUpgradeReturnItemsRsp extends GeneratedMessageV3 implements CalcWeaponUpgradeReturnItemsRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TARGET_WEAPON_GUID_FIELD_NUMBER = 3;
-        private long targetWeaponGuid_;
-        public static final int ITEM_PARAM_LIST_FIELD_NUMBER = 10;
-        private List<ItemParamOuterClass.ItemParam> itemParamList_;
         public static final int RETCODE_FIELD_NUMBER = 4;
         private int retcode_;
+        public static final int TARGETWEAPONGUID_FIELD_NUMBER = 9;
+        private long targetWeaponGuid_;
+        public static final int ITEMPARAMLIST_FIELD_NUMBER = 7;
+        private List<ItemParamOuterClass.ItemParam> itemParamList_;
         private byte memoizedIsInitialized;
         private static final CalcWeaponUpgradeReturnItemsRsp DEFAULT_INSTANCE = new CalcWeaponUpgradeReturnItemsRsp();
         private static final Parser<CalcWeaponUpgradeReturnItemsRsp> PARSER = new AbstractParser<CalcWeaponUpgradeReturnItemsRsp>() { // from class: emu.grasscutter.net.proto.CalcWeaponUpgradeReturnItemsRspOuterClass.CalcWeaponUpgradeReturnItemsRsp.1
@@ -116,18 +116,18 @@ public final class CalcWeaponUpgradeReturnItemsRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 24:
-                                this.targetWeaponGuid_ = input.readUInt64();
-                                break;
                             case 32:
                                 this.retcode_ = input.readInt32();
                                 break;
-                            case 82:
+                            case 58:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.itemParamList_ = new ArrayList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.itemParamList_.add((ItemParamOuterClass.ItemParam) input.readMessage(ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
+                                break;
+                            case 72:
+                                this.targetWeaponGuid_ = input.readUInt64();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -158,7 +158,12 @@ public final class CalcWeaponUpgradeReturnItemsRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return CalcWeaponUpgradeReturnItemsRspOuterClass.f671x9e9bbf31.ensureFieldAccessorsInitialized(CalcWeaponUpgradeReturnItemsRsp.class, Builder.class);
+            return CalcWeaponUpgradeReturnItemsRspOuterClass.f668x9e9bbf31.ensureFieldAccessorsInitialized(CalcWeaponUpgradeReturnItemsRsp.class, Builder.class);
+        }
+
+        @Override // emu.grasscutter.net.proto.CalcWeaponUpgradeReturnItemsRspOuterClass.CalcWeaponUpgradeReturnItemsRspOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // emu.grasscutter.net.proto.CalcWeaponUpgradeReturnItemsRspOuterClass.CalcWeaponUpgradeReturnItemsRspOrBuilder
@@ -191,11 +196,6 @@ public final class CalcWeaponUpgradeReturnItemsRspOuterClass {
             return this.itemParamList_.get(index);
         }
 
-        @Override // emu.grasscutter.net.proto.CalcWeaponUpgradeReturnItemsRspOuterClass.CalcWeaponUpgradeReturnItemsRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
-        }
-
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -211,14 +211,14 @@ public final class CalcWeaponUpgradeReturnItemsRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.targetWeaponGuid_ != 0) {
-                output.writeUInt64(3, this.targetWeaponGuid_);
-            }
             if (this.retcode_ != 0) {
                 output.writeInt32(4, this.retcode_);
             }
             for (int i = 0; i < this.itemParamList_.size(); i++) {
-                output.writeMessage(10, this.itemParamList_.get(i));
+                output.writeMessage(7, this.itemParamList_.get(i));
+            }
+            if (this.targetWeaponGuid_ != 0) {
+                output.writeUInt64(9, this.targetWeaponGuid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -230,14 +230,14 @@ public final class CalcWeaponUpgradeReturnItemsRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.targetWeaponGuid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(3, this.targetWeaponGuid_);
-            }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(4, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(4, this.retcode_);
             }
             for (int i = 0; i < this.itemParamList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(10, this.itemParamList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(7, this.itemParamList_.get(i));
+            }
+            if (this.targetWeaponGuid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(9, this.targetWeaponGuid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -253,7 +253,7 @@ public final class CalcWeaponUpgradeReturnItemsRspOuterClass {
                 return equals(obj);
             }
             CalcWeaponUpgradeReturnItemsRsp other = (CalcWeaponUpgradeReturnItemsRsp) obj;
-            return getTargetWeaponGuid() == other.getTargetWeaponGuid() && getItemParamListList().equals(other.getItemParamListList()) && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
+            return getRetcode() == other.getRetcode() && getTargetWeaponGuid() == other.getTargetWeaponGuid() && getItemParamListList().equals(other.getItemParamListList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -261,11 +261,11 @@ public final class CalcWeaponUpgradeReturnItemsRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + Internal.hashLong(getTargetWeaponGuid());
+            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getRetcode())) + 9)) + Internal.hashLong(getTargetWeaponGuid());
             if (getItemParamListCount() > 0) {
-                hash = (53 * ((37 * hash) + 10)) + getItemParamListList().hashCode();
+                hash = (53 * ((37 * hash) + 7)) + getItemParamListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 4)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -345,10 +345,10 @@ public final class CalcWeaponUpgradeReturnItemsRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CalcWeaponUpgradeReturnItemsRspOuterClass$CalcWeaponUpgradeReturnItemsRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements CalcWeaponUpgradeReturnItemsRspOrBuilder {
             private int bitField0_;
+            private int retcode_;
             private long targetWeaponGuid_;
             private List<ItemParamOuterClass.ItemParam> itemParamList_ = Collections.emptyList();
             private RepeatedFieldBuilderV3<ItemParamOuterClass.ItemParam, ItemParamOuterClass.ItemParam.Builder, ItemParamOuterClass.ItemParamOrBuilder> itemParamListBuilder_;
-            private int retcode_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return CalcWeaponUpgradeReturnItemsRspOuterClass.internal_static_CalcWeaponUpgradeReturnItemsRsp_descriptor;
@@ -356,7 +356,7 @@ public final class CalcWeaponUpgradeReturnItemsRspOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return CalcWeaponUpgradeReturnItemsRspOuterClass.f671x9e9bbf31.ensureFieldAccessorsInitialized(CalcWeaponUpgradeReturnItemsRsp.class, Builder.class);
+                return CalcWeaponUpgradeReturnItemsRspOuterClass.f668x9e9bbf31.ensureFieldAccessorsInitialized(CalcWeaponUpgradeReturnItemsRsp.class, Builder.class);
             }
 
             private Builder() {
@@ -377,6 +377,7 @@ public final class CalcWeaponUpgradeReturnItemsRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.retcode_ = 0;
                 this.targetWeaponGuid_ = 0;
                 if (this.itemParamListBuilder_ == null) {
                     this.itemParamList_ = Collections.emptyList();
@@ -384,7 +385,6 @@ public final class CalcWeaponUpgradeReturnItemsRspOuterClass {
                 } else {
                     this.itemParamListBuilder_.clear();
                 }
-                this.retcode_ = 0;
                 return this;
             }
 
@@ -411,6 +411,7 @@ public final class CalcWeaponUpgradeReturnItemsRspOuterClass {
             public CalcWeaponUpgradeReturnItemsRsp buildPartial() {
                 CalcWeaponUpgradeReturnItemsRsp result = new CalcWeaponUpgradeReturnItemsRsp(this);
                 int i = this.bitField0_;
+                result.retcode_ = this.retcode_;
                 result.targetWeaponGuid_ = this.targetWeaponGuid_;
                 if (this.itemParamListBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
@@ -421,7 +422,6 @@ public final class CalcWeaponUpgradeReturnItemsRspOuterClass {
                 } else {
                     result.itemParamList_ = this.itemParamListBuilder_.build();
                 }
-                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -469,6 +469,9 @@ public final class CalcWeaponUpgradeReturnItemsRspOuterClass {
                 if (other == CalcWeaponUpgradeReturnItemsRsp.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
+                }
                 if (other.getTargetWeaponGuid() != 0) {
                     setTargetWeaponGuid(other.getTargetWeaponGuid());
                 }
@@ -493,9 +496,6 @@ public final class CalcWeaponUpgradeReturnItemsRspOuterClass {
                     } else {
                         this.itemParamListBuilder_.addAllMessages(other.itemParamList_);
                     }
-                }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -527,6 +527,23 @@ public final class CalcWeaponUpgradeReturnItemsRspOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.CalcWeaponUpgradeReturnItemsRspOuterClass.CalcWeaponUpgradeReturnItemsRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.CalcWeaponUpgradeReturnItemsRspOuterClass.CalcWeaponUpgradeReturnItemsRspOrBuilder
@@ -720,23 +737,6 @@ public final class CalcWeaponUpgradeReturnItemsRspOuterClass {
                     this.itemParamList_ = null;
                 }
                 return this.itemParamListBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.CalcWeaponUpgradeReturnItemsRspOuterClass.CalcWeaponUpgradeReturnItemsRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

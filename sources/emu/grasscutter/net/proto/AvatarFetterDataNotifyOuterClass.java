@@ -24,15 +24,15 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarFetterDataNotifyOuterClass.class */
 public final class AvatarFetterDataNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cAvatarFetterDataNotify.proto\u001a\u0016AvatarFetterInfo.proto\"¦\u0001\n\u0016AvatarFetterDataNotify\u0012C\n\u000ffetter_info_map\u0018\u0002 \u0003(\u000b2*.AvatarFetterDataNotify.FetterInfoMapEntry\u001aG\n\u0012FetterInfoMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\u0004\u0012 \n\u0005value\u0018\u0002 \u0001(\u000b2\u0011.AvatarFetterInfo:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarFetterInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cAvatarFetterDataNotify.proto\u001a\u0016AvatarFetterInfo.proto\"¤\u0001\n\u0016AvatarFetterDataNotify\u0012A\n\rfetterInfoMap\u0018\u000b \u0003(\u000b2*.AvatarFetterDataNotify.FetterInfoMapEntry\u001aG\n\u0012FetterInfoMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\u0004\u0012 \n\u0005value\u0018\u0002 \u0001(\u000b2\u0011.AvatarFetterInfo:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarFetterInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AvatarFetterDataNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarFetterDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarFetterDataNotify_descriptor, new String[]{"FetterInfoMap"});
 
     /* renamed from: internal_static_AvatarFetterDataNotify_FetterInfoMapEntry_descriptor */
-    private static final Descriptors.Descriptor f637x940ee286 = internal_static_AvatarFetterDataNotify_descriptor.getNestedTypes().get(0);
+    private static final Descriptors.Descriptor f636x940ee286 = internal_static_AvatarFetterDataNotify_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_AvatarFetterDataNotify_FetterInfoMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f638xcf4e2304 = new GeneratedMessageV3.FieldAccessorTable(f637x940ee286, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f637xcf4e2304 = new GeneratedMessageV3.FieldAccessorTable(f636x940ee286, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarFetterDataNotifyOuterClass$AvatarFetterDataNotifyOrBuilder.class */
     public interface AvatarFetterDataNotifyOrBuilder extends MessageOrBuilder {
@@ -63,7 +63,7 @@ public final class AvatarFetterDataNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarFetterDataNotifyOuterClass$AvatarFetterDataNotify.class */
     public static final class AvatarFetterDataNotify extends GeneratedMessageV3 implements AvatarFetterDataNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int FETTER_INFO_MAP_FIELD_NUMBER = 2;
+        public static final int FETTERINFOMAP_FIELD_NUMBER = 11;
         private MapField<Long, AvatarFetterInfoOuterClass.AvatarFetterInfo> fetterInfoMap_;
         private byte memoizedIsInitialized;
         private static final AvatarFetterDataNotify DEFAULT_INSTANCE = new AvatarFetterDataNotify();
@@ -115,7 +115,7 @@ public final class AvatarFetterDataNotifyOuterClass {
                 r4 = this;
                 r0 = r5
                 switch(r0) {
-                    case 2: goto L_0x0014;
+                    case 11: goto L_0x0014;
                     default: goto L_0x0019;
                 }
                 r0 = r4
@@ -168,7 +168,7 @@ public final class AvatarFetterDataNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 18:
+                            case 90:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.fetterInfoMap_ = MapField.newMapField(FetterInfoMapDefaultEntryHolder.defaultEntry);
                                     mutable_bitField0_ |= 1;
@@ -208,7 +208,7 @@ public final class AvatarFetterDataNotifyOuterClass {
         /* access modifiers changed from: private */
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarFetterDataNotifyOuterClass$AvatarFetterDataNotify$FetterInfoMapDefaultEntryHolder.class */
         public static final class FetterInfoMapDefaultEntryHolder {
-            static final MapEntry<Long, AvatarFetterInfoOuterClass.AvatarFetterInfo> defaultEntry = MapEntry.newDefaultInstance(AvatarFetterDataNotifyOuterClass.f637x940ee286, WireFormat.FieldType.UINT64, 0L, WireFormat.FieldType.MESSAGE, AvatarFetterInfoOuterClass.AvatarFetterInfo.getDefaultInstance());
+            static final MapEntry<Long, AvatarFetterInfoOuterClass.AvatarFetterInfo> defaultEntry = MapEntry.newDefaultInstance(AvatarFetterDataNotifyOuterClass.f636x940ee286, WireFormat.FieldType.UINT64, 0L, WireFormat.FieldType.MESSAGE, AvatarFetterInfoOuterClass.AvatarFetterInfo.getDefaultInstance());
 
             private FetterInfoMapDefaultEntryHolder() {
             }
@@ -272,7 +272,7 @@ public final class AvatarFetterDataNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            GeneratedMessageV3.serializeLongMapTo(output, internalGetFetterInfoMap(), FetterInfoMapDefaultEntryHolder.defaultEntry, 2);
+            GeneratedMessageV3.serializeLongMapTo(output, internalGetFetterInfoMap(), FetterInfoMapDefaultEntryHolder.defaultEntry, 11);
             this.unknownFields.writeTo(output);
         }
 
@@ -284,7 +284,7 @@ public final class AvatarFetterDataNotifyOuterClass {
             }
             int size2 = 0;
             for (Map.Entry<Long, AvatarFetterInfoOuterClass.AvatarFetterInfo> entry : internalGetFetterInfoMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(2, FetterInfoMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+                size2 += CodedOutputStream.computeMessageSize(11, FetterInfoMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -310,7 +310,7 @@ public final class AvatarFetterDataNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (!internalGetFetterInfoMap().getMap().isEmpty()) {
-                hash = (53 * ((37 * hash) + 2)) + internalGetFetterInfoMap().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + internalGetFetterInfoMap().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -431,7 +431,7 @@ public final class AvatarFetterDataNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 2: goto L_0x0014;
+                        case 11: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -484,7 +484,7 @@ public final class AvatarFetterDataNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 2: goto L_0x0014;
+                        case 11: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4

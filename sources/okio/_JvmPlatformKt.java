@@ -27,7 +27,7 @@ public final class _JvmPlatformKt {
 
     /* JADX INFO: finally extract failed */
     /* renamed from: synchronized  reason: not valid java name */
-    public static final <R> R m9408synchronized(@NotNull Object lock, @NotNull Function0<? extends R> function0) {
+    public static final <R> R m9405synchronized(@NotNull Object lock, @NotNull Function0<? extends R> function0) {
         R r;
         Intrinsics.checkNotNullParameter(lock, "lock");
         Intrinsics.checkNotNullParameter(function0, "block");

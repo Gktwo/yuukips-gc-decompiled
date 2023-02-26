@@ -15,12 +15,12 @@ public final class ErrorMapperKt {
         Intrinsics.checkNotNullParameter(contentType, "contentType");
         Intrinsics.checkNotNullParameter(errorHandler, "errorHandler");
         return (v2) -> {
-            m5819contentTypeWrap$lambda0(r0, r1, v2);
+            m5816contentTypeWrap$lambda0(r0, r1, v2);
         };
     }
 
     /* renamed from: contentTypeWrap$lambda-0  reason: not valid java name */
-    private static final void m5819contentTypeWrap$lambda0(String $contentType, Handler $errorHandler, Context ctx) {
+    private static final void m5816contentTypeWrap$lambda0(String $contentType, Handler $errorHandler, Context ctx) {
         Intrinsics.checkNotNullParameter($contentType, "$contentType");
         Intrinsics.checkNotNullParameter($errorHandler, "$errorHandler");
         Intrinsics.checkNotNullParameter(ctx, "ctx");

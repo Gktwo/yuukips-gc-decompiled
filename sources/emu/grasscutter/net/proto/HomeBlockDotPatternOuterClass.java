@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeBlockDotPatternOuterClass.class */
 public final class HomeBlockDotPatternOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019HomeBlockDotPattern.proto\"B\n\u0013HomeBlockDotPattern\u0012\r\n\u0005width\u0018\r \u0001(\r\u0012\f\n\u0004data\u0018\f \u0001(\f\u0012\u000e\n\u0006height\u0018\u000b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019HomeBlockDotPattern.proto\"B\n\u0013HomeBlockDotPattern\u0012\r\n\u0005width\u0018\u0003 \u0001(\r\u0012\f\n\u0004data\u0018\u000e \u0001(\f\u0012\u000e\n\u0006height\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_HomeBlockDotPattern_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeBlockDotPattern_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeBlockDotPattern_descriptor, new String[]{"Width", "Data", "Height"});
 
@@ -45,11 +45,11 @@ public final class HomeBlockDotPatternOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeBlockDotPatternOuterClass$HomeBlockDotPattern.class */
     public static final class HomeBlockDotPattern extends GeneratedMessageV3 implements HomeBlockDotPatternOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int WIDTH_FIELD_NUMBER = 13;
+        public static final int WIDTH_FIELD_NUMBER = 3;
         private int width_;
-        public static final int DATA_FIELD_NUMBER = 12;
+        public static final int DATA_FIELD_NUMBER = 14;
         private ByteString data_;
-        public static final int HEIGHT_FIELD_NUMBER = 11;
+        public static final int HEIGHT_FIELD_NUMBER = 8;
         private int height_;
         private byte memoizedIsInitialized;
         private static final HomeBlockDotPattern DEFAULT_INSTANCE = new HomeBlockDotPattern();
@@ -98,14 +98,14 @@ public final class HomeBlockDotPatternOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 88:
+                                case 24:
+                                    this.width_ = input.readUInt32();
+                                    break;
+                                case 64:
                                     this.height_ = input.readUInt32();
                                     break;
-                                case 98:
+                                case 114:
                                     this.data_ = input.readBytes();
-                                    break;
-                                case 104:
-                                    this.width_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -167,14 +167,14 @@ public final class HomeBlockDotPatternOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.width_ != 0) {
+                output.writeUInt32(3, this.width_);
+            }
             if (this.height_ != 0) {
-                output.writeUInt32(11, this.height_);
+                output.writeUInt32(8, this.height_);
             }
             if (!this.data_.isEmpty()) {
-                output.writeBytes(12, this.data_);
-            }
-            if (this.width_ != 0) {
-                output.writeUInt32(13, this.width_);
+                output.writeBytes(14, this.data_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class HomeBlockDotPatternOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.width_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.width_);
+            }
             if (this.height_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(11, this.height_);
+                size2 += CodedOutputStream.computeUInt32Size(8, this.height_);
             }
             if (!this.data_.isEmpty()) {
-                size2 += CodedOutputStream.computeBytesSize(12, this.data_);
-            }
-            if (this.width_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.width_);
+                size2 += CodedOutputStream.computeBytesSize(14, this.data_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -217,7 +217,7 @@ public final class HomeBlockDotPatternOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + getWidth())) + 12)) + getData().hashCode())) + 11)) + getHeight())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getWidth())) + 14)) + getData().hashCode())) + 8)) + getHeight())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

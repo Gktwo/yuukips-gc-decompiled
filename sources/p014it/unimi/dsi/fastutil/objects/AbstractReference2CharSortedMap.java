@@ -87,30 +87,30 @@ public abstract class AbstractReference2CharSortedMap<K> extends AbstractReferen
     public static class KeySetIterator<K> implements ObjectBidirectionalIterator<K> {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Reference2CharMap.Entry<K>> f2504i;
+        protected final ObjectBidirectionalIterator<Reference2CharMap.Entry<K>> f2468i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Reference2CharMap.Entry<K>> i) {
-            this.f2504i = i;
+            this.f2468i = i;
         }
 
         @Override // java.util.Iterator
         public K next() {
-            return ((Reference2CharMap.Entry) this.f2504i.next()).getKey();
+            return ((Reference2CharMap.Entry) this.f2468i.next()).getKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public K previous() {
-            return this.f2504i.previous().getKey();
+            return this.f2468i.previous().getKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2504i.hasNext();
+            return this.f2468i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2504i.hasPrevious();
+            return this.f2468i.hasPrevious();
         }
     }
 
@@ -153,20 +153,20 @@ public abstract class AbstractReference2CharSortedMap<K> extends AbstractReferen
     public static class ValuesIterator<K> implements CharIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Reference2CharMap.Entry<K>> f2505i;
+        protected final ObjectBidirectionalIterator<Reference2CharMap.Entry<K>> f2469i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Reference2CharMap.Entry<K>> i) {
-            this.f2505i = i;
+            this.f2469i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.CharIterator
         public char nextChar() {
-            return ((Reference2CharMap.Entry) this.f2505i.next()).getCharValue();
+            return ((Reference2CharMap.Entry) this.f2469i.next()).getCharValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2505i.hasNext();
+            return this.f2469i.hasNext();
         }
     }
 }

@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FleurFairMusicGameStartReqOuterClass.class */
 public final class FleurFairMusicGameStartReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n FleurFairMusicGameStartReq.proto\"4\n\u001aFleurFairMusicGameStartReq\u0012\u0016\n\u000emusic_basic_id\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n FleurFairMusicGameStartReq.proto\"2\n\u001aFleurFairMusicGameStartReq\u0012\u0014\n\fmusicBasicId\u0018\b \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_FleurFairMusicGameStartReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_FleurFairMusicGameStartReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FleurFairMusicGameStartReq_descriptor, new String[]{"MusicBasicId"});
 
@@ -41,7 +41,7 @@ public final class FleurFairMusicGameStartReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FleurFairMusicGameStartReqOuterClass$FleurFairMusicGameStartReq.class */
     public static final class FleurFairMusicGameStartReq extends GeneratedMessageV3 implements FleurFairMusicGameStartReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MUSIC_BASIC_ID_FIELD_NUMBER = 5;
+        public static final int MUSICBASICID_FIELD_NUMBER = 8;
         private int musicBasicId_;
         private byte memoizedIsInitialized;
         private static final FleurFairMusicGameStartReq DEFAULT_INSTANCE = new FleurFairMusicGameStartReq();
@@ -88,7 +88,7 @@ public final class FleurFairMusicGameStartReqOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 40:
+                            case 64:
                                 this.musicBasicId_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class FleurFairMusicGameStartReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.musicBasicId_ != 0) {
-                output.writeUInt32(5, this.musicBasicId_);
+                output.writeUInt32(8, this.musicBasicId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class FleurFairMusicGameStartReqOuterClass {
             }
             int size2 = 0;
             if (this.musicBasicId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.musicBasicId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(8, this.musicBasicId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class FleurFairMusicGameStartReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getMusicBasicId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getMusicBasicId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

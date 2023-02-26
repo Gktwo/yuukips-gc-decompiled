@@ -16,7 +16,7 @@ public class BooleanArraySet extends AbstractBooleanSet implements Serializable,
     private static final long serialVersionUID = 1;
 
     /* renamed from: a */
-    private transient boolean[] f1047a;
+    private transient boolean[] f1011a;
     private int size;
 
     static /* synthetic */ int access$010(BooleanArraySet x0) {
@@ -26,16 +26,16 @@ public class BooleanArraySet extends AbstractBooleanSet implements Serializable,
     }
 
     public BooleanArraySet(boolean[] a) {
-        this.f1047a = a;
+        this.f1011a = a;
         this.size = a.length;
     }
 
     public BooleanArraySet() {
-        this.f1047a = BooleanArrays.EMPTY_ARRAY;
+        this.f1011a = BooleanArrays.EMPTY_ARRAY;
     }
 
     public BooleanArraySet(int capacity) {
-        this.f1047a = new boolean[capacity];
+        this.f1011a = new boolean[capacity];
     }
 
     public BooleanArraySet(BooleanCollection c) {
@@ -53,7 +53,7 @@ public class BooleanArraySet extends AbstractBooleanSet implements Serializable,
         int i = 0;
         BooleanIterator it = c.iterator();
         while (it.hasNext()) {
-            this.f1047a[i] = it.next().booleanValue();
+            this.f1011a[i] = it.next().booleanValue();
             i++;
         }
         this.size = i;
@@ -63,14 +63,14 @@ public class BooleanArraySet extends AbstractBooleanSet implements Serializable,
         this(c.size());
         int i = 0;
         for (Boolean x : c) {
-            this.f1047a[i] = x.booleanValue();
+            this.f1011a[i] = x.booleanValue();
             i++;
         }
         this.size = i;
     }
 
     public BooleanArraySet(boolean[] a, int size) {
-        this.f1047a = a;
+        this.f1011a = a;
         this.size = size;
         if (size > a.length) {
             throw new IllegalArgumentException("The provided size (" + size + ") is larger than or equal to the array size (" + a.length + ")");
@@ -114,7 +114,7 @@ public class BooleanArraySet extends AbstractBooleanSet implements Serializable,
             if (i == 0) {
                 return -1;
             }
-        } while (this.f1047a[i] != o);
+        } while (this.f1011a[i] != o);
         return i;
     }
 
@@ -133,7 +133,7 @@ public class BooleanArraySet extends AbstractBooleanSet implements Serializable,
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                boolean[] zArr = BooleanArraySet.this.f1047a;
+                boolean[] zArr = BooleanArraySet.this.f1011a;
                 int i = this.next;
                 this.next = i + 1;
                 return zArr[i];
@@ -144,7 +144,7 @@ public class BooleanArraySet extends AbstractBooleanSet implements Serializable,
                 int access$010 = BooleanArraySet.access$010(BooleanArraySet.this);
                 int i = this.next;
                 this.next = i - 1;
-                System.arraycopy(BooleanArraySet.this.f1047a, this.next + 1, BooleanArraySet.this.f1047a, this.next, access$010 - i);
+                System.arraycopy(BooleanArraySet.this.f1011a, this.next + 1, BooleanArraySet.this.f1011a, this.next, access$010 - i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterator, p014it.unimi.dsi.fastutil.objects.ObjectBidirectionalIterator, p014it.unimi.dsi.fastutil.objects.ObjectIterator
@@ -209,7 +209,7 @@ public class BooleanArraySet extends AbstractBooleanSet implements Serializable,
             if (this.pos >= getWorkingMax()) {
                 return false;
             }
-            boolean[] zArr = BooleanArraySet.this.f1047a;
+            boolean[] zArr = BooleanArraySet.this.f1011a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(zArr[i]);
@@ -219,7 +219,7 @@ public class BooleanArraySet extends AbstractBooleanSet implements Serializable,
         public void forEachRemaining(BooleanConsumer action) {
             int max = getWorkingMax();
             while (this.pos < max) {
-                action.accept(BooleanArraySet.this.f1047a[this.pos]);
+                action.accept(BooleanArraySet.this.f1011a[this.pos]);
                 this.pos++;
             }
         }
@@ -282,7 +282,7 @@ public class BooleanArraySet extends AbstractBooleanSet implements Serializable,
         }
         int tail = (this.size - pos) - 1;
         for (int i = 0; i < tail; i++) {
-            this.f1047a[pos + i] = this.f1047a[pos + i + 1];
+            this.f1011a[pos + i] = this.f1011a[pos + i + 1];
         }
         this.size--;
         return true;
@@ -293,7 +293,7 @@ public class BooleanArraySet extends AbstractBooleanSet implements Serializable,
         if (findKey(k) != -1) {
             return false;
         }
-        if (this.size == this.f1047a.length) {
+        if (this.size == this.f1011a.length) {
             boolean[] b = new boolean[this.size == 0 ? 2 : this.size * 2];
             int i = this.size;
             while (true) {
@@ -301,11 +301,11 @@ public class BooleanArraySet extends AbstractBooleanSet implements Serializable,
                 if (i == 0) {
                     break;
                 }
-                b[i] = this.f1047a[i];
+                b[i] = this.f1011a[i];
             }
-            this.f1047a = b;
+            this.f1011a = b;
         }
-        boolean[] zArr = this.f1047a;
+        boolean[] zArr = this.f1011a;
         int i2 = this.size;
         this.size = i2 + 1;
         zArr[i2] = k;
@@ -324,7 +324,7 @@ public class BooleanArraySet extends AbstractBooleanSet implements Serializable,
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanCollection, p014it.unimi.dsi.fastutil.booleans.BooleanCollection
     public boolean[] toBooleanArray() {
-        return Arrays.copyOf(this.f1047a, this.size);
+        return Arrays.copyOf(this.f1011a, this.size);
     }
 
     @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanCollection, p014it.unimi.dsi.fastutil.booleans.BooleanCollection
@@ -332,7 +332,7 @@ public class BooleanArraySet extends AbstractBooleanSet implements Serializable,
         if (a == null || a.length < this.size) {
             a = new boolean[this.size];
         }
-        System.arraycopy(this.f1047a, 0, a, 0, this.size);
+        System.arraycopy(this.f1011a, 0, a, 0, this.size);
         return a;
     }
 
@@ -340,7 +340,7 @@ public class BooleanArraySet extends AbstractBooleanSet implements Serializable,
     public BooleanArraySet clone() {
         try {
             BooleanArraySet c = (BooleanArraySet) clone();
-            c.f1047a = (boolean[]) this.f1047a.clone();
+            c.f1011a = (boolean[]) this.f1011a.clone();
             return c;
         } catch (CloneNotSupportedException e) {
             throw new InternalError();
@@ -350,15 +350,15 @@ public class BooleanArraySet extends AbstractBooleanSet implements Serializable,
     private void writeObject(ObjectOutputStream s) throws IOException {
         s.defaultWriteObject();
         for (int i = 0; i < this.size; i++) {
-            s.writeBoolean(this.f1047a[i]);
+            s.writeBoolean(this.f1011a[i]);
         }
     }
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f1047a = new boolean[this.size];
+        this.f1011a = new boolean[this.size];
         for (int i = 0; i < this.size; i++) {
-            this.f1047a[i] = s.readBoolean();
+            this.f1011a[i] = s.readBoolean();
         }
     }
 }

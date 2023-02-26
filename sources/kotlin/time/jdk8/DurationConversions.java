@@ -17,15 +17,15 @@ public final class DurationConversions {
     @ExperimentalTime
     @InlineOnly
     private static final long toKotlinDuration(Duration $this$toKotlinDuration) {
-        return kotlin.time.Duration.m8453plusLRDsOJo(kotlin.time.Duration.Companion.m8562secondsUwyO8pc($this$toKotlinDuration.getSeconds()), kotlin.time.Duration.Companion.m8552nanosecondsUwyO8pc($this$toKotlinDuration.getNano()));
+        return kotlin.time.Duration.m8450plusLRDsOJo(kotlin.time.Duration.Companion.m8559secondsUwyO8pc($this$toKotlinDuration.getSeconds()), kotlin.time.Duration.Companion.m8549nanosecondsUwyO8pc($this$toKotlinDuration.getNano()));
     }
 
     @SinceKotlin(version = "1.3")
     @ExperimentalTime
     @InlineOnly
     /* renamed from: toJavaDuration-LRDsOJo  reason: not valid java name */
-    private static final Duration m8594toJavaDurationLRDsOJo(long $this$toJavaDuration) {
-        Duration ofSeconds = Duration.ofSeconds(kotlin.time.Duration.m8489getInWholeSecondsimpl($this$toJavaDuration), (long) kotlin.time.Duration.m8475getNanosecondsComponentimpl($this$toJavaDuration));
+    private static final Duration m8591toJavaDurationLRDsOJo(long $this$toJavaDuration) {
+        Duration ofSeconds = Duration.ofSeconds(kotlin.time.Duration.m8486getInWholeSecondsimpl($this$toJavaDuration), (long) kotlin.time.Duration.m8472getNanosecondsComponentimpl($this$toJavaDuration));
         Intrinsics.checkNotNullExpressionValue(ofSeconds, "toComponents { seconds, …, nanoseconds.toLong()) }");
         return ofSeconds;
     }

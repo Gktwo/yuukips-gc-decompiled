@@ -59,7 +59,7 @@ import p014it.unimi.dsi.fastutil.objects.ObjectIterator;
 public class InventorySystem extends BaseGameSystem {
     private static final Int2IntMap weaponRefundMaterials = new Int2IntArrayMap();
 
-    /*  JADX ERROR: Dependency scan failed at insn: 0x00F6: INVOKE_CUSTOM r-6, r-5
+    /*  JADX ERROR: Dependency scan failed at insn: 0x0101: INVOKE_CUSTOM r-8, r-7
         java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
         	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
         	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
@@ -75,7 +75,7 @@ public class InventorySystem extends BaseGameSystem {
         	at jadx.core.dex.visitors.usage.UsageInfoVisitor.init(UsageInfoVisitor.java:36)
         	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:267)
         */
-    /*  JADX ERROR: Failed to decode insn: 0x00F6: INVOKE_CUSTOM r1, r2, method: emu.grasscutter.game.systems.InventorySystem.useItemDirect(emu.grasscutter.data.excels.ItemData, emu.grasscutter.game.props.ItemUseAction.UseItemParams):boolean
+    /*  JADX ERROR: Failed to decode insn: 0x0101: INVOKE_CUSTOM r1, r2, method: emu.grasscutter.game.systems.InventorySystem.useItemDirect(emu.grasscutter.data.excels.ItemData, emu.grasscutter.game.props.ItemUseAction.UseItemParams):boolean
         jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I, I)Ljava/lang/String;}, Error use Item:  | size ]}
         	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:55)
         	at jadx.core.dex.instructions.InsnDecoder.invoke(InsnDecoder.java:568)
@@ -95,7 +95,7 @@ public class InventorySystem extends BaseGameSystem {
         */
     public synchronized boolean useItemDirect(emu.grasscutter.data.excels.ItemData r7, emu.grasscutter.game.props.ItemUseAction.UseItemParams r8) {
         /*
-        // Method dump skipped, instructions count: 319
+        // Method dump skipped, instructions count: 330
         */
         throw new UnsupportedOperationException("Method not decompiled: emu.grasscutter.game.systems.InventorySystem.useItemDirect(emu.grasscutter.data.excels.ItemData, emu.grasscutter.game.props.ItemUseAction.UseItemParams):boolean");
     }

@@ -23,21 +23,21 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnlockedFurnitureSuiteDataNotifyOuterClass.class */
 public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n&UnlockedFurnitureSuiteDataNotify.proto\"S\n UnlockedFurnitureSuiteDataNotify\u0012\u000e\n\u0006is_all\u0018\u0001 \u0001(\b\u0012\u001f\n\u0017furniture_suite_id_list\u0018\u0003 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n&UnlockedFurnitureSuiteDataNotify.proto\"O\n UnlockedFurnitureSuiteDataNotify\u0012\u001c\n\u0014furnitureSuiteIdList\u0018\f \u0003(\r\u0012\r\n\u0005isAll\u0018\t \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_UnlockedFurnitureSuiteDataNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_UnlockedFurnitureSuiteDataNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f902x7999ef01 = new GeneratedMessageV3.FieldAccessorTable(internal_static_UnlockedFurnitureSuiteDataNotify_descriptor, new String[]{"IsAll", "FurnitureSuiteIdList"});
+    private static final GeneratedMessageV3.FieldAccessorTable f871x7999ef01 = new GeneratedMessageV3.FieldAccessorTable(internal_static_UnlockedFurnitureSuiteDataNotify_descriptor, new String[]{"FurnitureSuiteIdList", "IsAll"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnlockedFurnitureSuiteDataNotifyOuterClass$UnlockedFurnitureSuiteDataNotifyOrBuilder.class */
     public interface UnlockedFurnitureSuiteDataNotifyOrBuilder extends MessageOrBuilder {
-        boolean getIsAll();
-
         List<Integer> getFurnitureSuiteIdListList();
 
         int getFurnitureSuiteIdListCount();
 
         int getFurnitureSuiteIdList(int i);
+
+        boolean getIsAll();
     }
 
     private UnlockedFurnitureSuiteDataNotifyOuterClass() {
@@ -53,11 +53,11 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnlockedFurnitureSuiteDataNotifyOuterClass$UnlockedFurnitureSuiteDataNotify.class */
     public static final class UnlockedFurnitureSuiteDataNotify extends GeneratedMessageV3 implements UnlockedFurnitureSuiteDataNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_ALL_FIELD_NUMBER = 1;
-        private boolean isAll_;
-        public static final int FURNITURE_SUITE_ID_LIST_FIELD_NUMBER = 3;
+        public static final int FURNITURESUITEIDLIST_FIELD_NUMBER = 12;
         private Internal.IntList furnitureSuiteIdList_;
         private int furnitureSuiteIdListMemoizedSerializedSize;
+        public static final int ISALL_FIELD_NUMBER = 9;
+        private boolean isAll_;
         private byte memoizedIsInitialized;
         private static final UnlockedFurnitureSuiteDataNotify DEFAULT_INSTANCE = new UnlockedFurnitureSuiteDataNotify();
         private static final Parser<UnlockedFurnitureSuiteDataNotify> PARSER = new AbstractParser<UnlockedFurnitureSuiteDataNotify>() { // from class: emu.grasscutter.net.proto.UnlockedFurnitureSuiteDataNotifyOuterClass.UnlockedFurnitureSuiteDataNotify.1
@@ -109,17 +109,17 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
+                                case 72:
                                     this.isAll_ = input.readBool();
                                     break;
-                                case 24:
+                                case 96:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.furnitureSuiteIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.furnitureSuiteIdList_.addInt(input.readUInt32());
                                     break;
-                                case 26:
+                                case 98:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.furnitureSuiteIdList_ = newIntList();
@@ -160,12 +160,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return UnlockedFurnitureSuiteDataNotifyOuterClass.f902x7999ef01.ensureFieldAccessorsInitialized(UnlockedFurnitureSuiteDataNotify.class, Builder.class);
-        }
-
-        @Override // emu.grasscutter.net.proto.UnlockedFurnitureSuiteDataNotifyOuterClass.UnlockedFurnitureSuiteDataNotifyOrBuilder
-        public boolean getIsAll() {
-            return this.isAll_;
+            return UnlockedFurnitureSuiteDataNotifyOuterClass.f871x7999ef01.ensureFieldAccessorsInitialized(UnlockedFurnitureSuiteDataNotify.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.UnlockedFurnitureSuiteDataNotifyOuterClass.UnlockedFurnitureSuiteDataNotifyOrBuilder
@@ -181,6 +176,11 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
         @Override // emu.grasscutter.net.proto.UnlockedFurnitureSuiteDataNotifyOuterClass.UnlockedFurnitureSuiteDataNotifyOrBuilder
         public int getFurnitureSuiteIdList(int index) {
             return this.furnitureSuiteIdList_.getInt(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.UnlockedFurnitureSuiteDataNotifyOuterClass.UnlockedFurnitureSuiteDataNotifyOrBuilder
+        public boolean getIsAll() {
+            return this.isAll_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -200,10 +200,10 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (this.isAll_) {
-                output.writeBool(1, this.isAll_);
+                output.writeBool(9, this.isAll_);
             }
             if (getFurnitureSuiteIdListList().size() > 0) {
-                output.writeUInt32NoTag(26);
+                output.writeUInt32NoTag(98);
                 output.writeUInt32NoTag(this.furnitureSuiteIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.furnitureSuiteIdList_.size(); i++) {
@@ -220,7 +220,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
             }
             int size2 = 0;
             if (this.isAll_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(1, this.isAll_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(9, this.isAll_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.furnitureSuiteIdList_.size(); i++) {
@@ -245,7 +245,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
                 return equals(obj);
             }
             UnlockedFurnitureSuiteDataNotify other = (UnlockedFurnitureSuiteDataNotify) obj;
-            return getIsAll() == other.getIsAll() && getFurnitureSuiteIdListList().equals(other.getFurnitureSuiteIdListList()) && this.unknownFields.equals(other.unknownFields);
+            return getFurnitureSuiteIdListList().equals(other.getFurnitureSuiteIdListList()) && getIsAll() == other.getIsAll() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -253,11 +253,11 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + Internal.hashBoolean(getIsAll());
+            int hash = (19 * 41) + getDescriptor().hashCode();
             if (getFurnitureSuiteIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 3)) + getFurnitureSuiteIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 12)) + getFurnitureSuiteIdListList().hashCode();
             }
-            int hash2 = (29 * hash) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 9)) + Internal.hashBoolean(getIsAll()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -337,8 +337,8 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UnlockedFurnitureSuiteDataNotifyOuterClass$UnlockedFurnitureSuiteDataNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements UnlockedFurnitureSuiteDataNotifyOrBuilder {
             private int bitField0_;
-            private boolean isAll_;
             private Internal.IntList furnitureSuiteIdList_ = UnlockedFurnitureSuiteDataNotify.emptyIntList();
+            private boolean isAll_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return UnlockedFurnitureSuiteDataNotifyOuterClass.internal_static_UnlockedFurnitureSuiteDataNotify_descriptor;
@@ -346,7 +346,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return UnlockedFurnitureSuiteDataNotifyOuterClass.f902x7999ef01.ensureFieldAccessorsInitialized(UnlockedFurnitureSuiteDataNotify.class, Builder.class);
+                return UnlockedFurnitureSuiteDataNotifyOuterClass.f871x7999ef01.ensureFieldAccessorsInitialized(UnlockedFurnitureSuiteDataNotify.class, Builder.class);
             }
 
             private Builder() {
@@ -366,9 +366,9 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.isAll_ = false;
                 this.furnitureSuiteIdList_ = UnlockedFurnitureSuiteDataNotify.emptyIntList();
                 this.bitField0_ &= -2;
+                this.isAll_ = false;
                 return this;
             }
 
@@ -395,12 +395,12 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
             public UnlockedFurnitureSuiteDataNotify buildPartial() {
                 UnlockedFurnitureSuiteDataNotify result = new UnlockedFurnitureSuiteDataNotify(this);
                 int i = this.bitField0_;
-                result.isAll_ = this.isAll_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.furnitureSuiteIdList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.furnitureSuiteIdList_ = this.furnitureSuiteIdList_;
+                result.isAll_ = this.isAll_;
                 onBuilt();
                 return result;
             }
@@ -448,9 +448,6 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
                 if (other == UnlockedFurnitureSuiteDataNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getIsAll()) {
-                    setIsAll(other.getIsAll());
-                }
                 if (!other.furnitureSuiteIdList_.isEmpty()) {
                     if (this.furnitureSuiteIdList_.isEmpty()) {
                         this.furnitureSuiteIdList_ = other.furnitureSuiteIdList_;
@@ -460,6 +457,9 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
                         this.furnitureSuiteIdList_.addAll(other.furnitureSuiteIdList_);
                     }
                     onChanged();
+                }
+                if (other.getIsAll()) {
+                    setIsAll(other.getIsAll());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -491,23 +491,6 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.UnlockedFurnitureSuiteDataNotifyOuterClass.UnlockedFurnitureSuiteDataNotifyOrBuilder
-            public boolean getIsAll() {
-                return this.isAll_;
-            }
-
-            public Builder setIsAll(boolean value) {
-                this.isAll_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsAll() {
-                this.isAll_ = false;
-                onChanged();
-                return this;
             }
 
             private void ensureFurnitureSuiteIdListIsMutable() {
@@ -556,6 +539,23 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
             public Builder clearFurnitureSuiteIdList() {
                 this.furnitureSuiteIdList_ = UnlockedFurnitureSuiteDataNotify.emptyIntList();
                 this.bitField0_ &= -2;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.UnlockedFurnitureSuiteDataNotifyOuterClass.UnlockedFurnitureSuiteDataNotifyOrBuilder
+            public boolean getIsAll() {
+                return this.isAll_;
+            }
+
+            public Builder setIsAll(boolean value) {
+                this.isAll_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsAll() {
+                this.isAll_ = false;
                 onChanged();
                 return this;
             }

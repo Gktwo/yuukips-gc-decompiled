@@ -5,6 +5,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.config.Configuration;
 import emu.grasscutter.data.DataLoader;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.excels.AvatarSkillData;
 import emu.grasscutter.data.excels.AvatarSkillDepotData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.MonsterData;
@@ -24,9 +25,11 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AbilityActionGenerateElemBallOuterClass;
 import emu.grasscutter.net.proto.AbilityIdentifierOuterClass;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass;
+import emu.grasscutter.net.proto.ActivityInfoOuterClass;
 import emu.grasscutter.net.proto.AttackResultOuterClass;
 import emu.grasscutter.net.proto.ChangeEnergyReasonOuterClass;
 import emu.grasscutter.net.proto.EvtBeingHitInfoOuterClass;
+import emu.grasscutter.net.proto.PlayerLoginReqOuterClass;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.utils.Position;
@@ -94,25 +97,25 @@ public class EnergyManager extends BasePlayerManager {
 
     private int getBallIdForElement(ElementType element) {
         if (element == null) {
-            return 2024;
+            return PlayerLoginReqOuterClass.PlayerLoginReq.UNK3300_OOBHAIIIPHH_FIELD_NUMBER;
         }
         switch (element) {
             case Fire:
-                return 2017;
+                return PacketOpcodes.FlightActivityRestartReq;
             case Water:
                 return 2018;
             case Grass:
-                return PacketOpcodes.TakeAsterSpecialRewardReq;
+                return 2019;
             case Electric:
-                return 2020;
+                return PacketOpcodes.ExpeditionStartReq;
             case Wind:
-                return PacketOpcodes.TreasureMapMpChallengeNotify;
+                return ActivityInfoOuterClass.ActivityInfo.FDJEFLDHELA_FIELD_NUMBER;
             case Ice:
-                return PacketOpcodes.EffigyChallengeResultNotify;
+                return PacketOpcodes.SeaLampTakeContributionRewardReq;
             case Rock:
-                return PacketOpcodes.AsterLargeInfoNotify;
+                return 2023;
             default:
-                return 2024;
+                return PlayerLoginReqOuterClass.PlayerLoginReq.UNK3300_OOBHAIIIPHH_FIELD_NUMBER;
         }
     }
 
@@ -239,9 +242,13 @@ public class EnergyManager extends BasePlayerManager {
     public boolean refillEntityAvatarEnergy() {
         try {
             EntityAvatar activeEntity = this.player.getTeamManager().getCurrentAvatarEntity();
-            return activeEntity.addEnergy(activeEntity.getAvatar().getSkillDepot().getEnergySkillData().getCostElemVal());
+            AvatarSkillData d = activeEntity.getAvatar().getSkillDepot().getEnergySkillData();
+            if (d != null) {
+                return activeEntity.addEnergy(d.getCostElemVal());
+            }
+            return false;
         } catch (Exception e) {
-            Grasscutter.getLogger().error("Error refillEntityAvatarEnergy: ", (Throwable) e);
+            Grasscutter.getLogger().debug("Error refillEntityAvatarEnergy: ", (Throwable) e);
             return false;
         }
     }
@@ -249,7 +256,10 @@ public class EnergyManager extends BasePlayerManager {
     public void refillTeamEnergy(PropChangeReasonOuterClass.PropChangeReason changeReason, boolean isFlat) {
         for (EntityAvatar entityAvatar : this.player.getTeamManager().getActiveTeam()) {
             try {
-                entityAvatar.addEnergy(entityAvatar.getAvatar().getSkillDepot().getEnergySkillData().getCostElemVal(), changeReason, isFlat);
+                AvatarSkillData d = entityAvatar.getAvatar().getSkillDepot().getEnergySkillData();
+                if (d != null) {
+                    entityAvatar.addEnergy(d.getCostElemVal(), changeReason, isFlat);
+                }
             } catch (Exception e) {
                 Grasscutter.getLogger().error("Error refillTeamEnergy: ", (Throwable) e);
             }

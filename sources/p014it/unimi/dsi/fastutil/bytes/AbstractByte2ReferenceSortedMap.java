@@ -90,30 +90,30 @@ public abstract class AbstractByte2ReferenceSortedMap<V> extends AbstractByte2Re
     public static class KeySetIterator<V> implements ByteBidirectionalIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Byte2ReferenceMap.Entry<V>> f1113i;
+        protected final ObjectBidirectionalIterator<Byte2ReferenceMap.Entry<V>> f1077i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Byte2ReferenceMap.Entry<V>> i) {
-            this.f1113i = i;
+            this.f1077i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteIterator
         public byte nextByte() {
-            return ((Byte2ReferenceMap.Entry) this.f1113i.next()).getByteKey();
+            return ((Byte2ReferenceMap.Entry) this.f1077i.next()).getByteKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteBidirectionalIterator
         public byte previousByte() {
-            return this.f1113i.previous().getByteKey();
+            return this.f1077i.previous().getByteKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1113i.hasNext();
+            return this.f1077i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f1113i.hasPrevious();
+            return this.f1077i.hasPrevious();
         }
     }
 
@@ -156,20 +156,20 @@ public abstract class AbstractByte2ReferenceSortedMap<V> extends AbstractByte2Re
     public static class ValuesIterator<V> implements ObjectIterator<V> {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Byte2ReferenceMap.Entry<V>> f1114i;
+        protected final ObjectBidirectionalIterator<Byte2ReferenceMap.Entry<V>> f1078i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Byte2ReferenceMap.Entry<V>> i) {
-            this.f1114i = i;
+            this.f1078i = i;
         }
 
         @Override // java.util.Iterator
         public V next() {
-            return ((Byte2ReferenceMap.Entry) this.f1114i.next()).getValue();
+            return ((Byte2ReferenceMap.Entry) this.f1078i.next()).getValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f1114i.hasNext();
+            return this.f1078i.hasNext();
         }
     }
 }

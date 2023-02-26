@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BartenderLevelInfoOuterClass.class */
 public final class BartenderLevelInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018BartenderLevelInfo.proto\"F\n\u0012BartenderLevelInfo\u0012\n\n\u0002id\u0018\f \u0001(\r\u0012\u0011\n\tis_finish\u0018\u0003 \u0001(\b\u0012\u0011\n\tmax_score\u0018\u0002 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0018BartenderLevelInfo.proto\"D\n\u0012BartenderLevelInfo\u0012\u0010\n\bisFinish\u0018\r \u0001(\b\u0012\u0010\n\bmaxScore\u0018\f \u0001(\r\u0012\n\n\u0002id\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_BartenderLevelInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_BartenderLevelInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BartenderLevelInfo_descriptor, new String[]{"Id", "IsFinish", "MaxScore"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_BartenderLevelInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BartenderLevelInfo_descriptor, new String[]{"IsFinish", "MaxScore", "Id"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BartenderLevelInfoOuterClass$BartenderLevelInfoOrBuilder.class */
     public interface BartenderLevelInfoOrBuilder extends MessageOrBuilder {
-        int getId();
-
         boolean getIsFinish();
 
         int getMaxScore();
+
+        int getId();
     }
 
     private BartenderLevelInfoOuterClass() {
@@ -46,12 +46,12 @@ public final class BartenderLevelInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BartenderLevelInfoOuterClass$BartenderLevelInfo.class */
     public static final class BartenderLevelInfo extends GeneratedMessageV3 implements BartenderLevelInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ID_FIELD_NUMBER = 12;
-        private int id_;
-        public static final int IS_FINISH_FIELD_NUMBER = 3;
+        public static final int ISFINISH_FIELD_NUMBER = 13;
         private boolean isFinish_;
-        public static final int MAX_SCORE_FIELD_NUMBER = 2;
+        public static final int MAXSCORE_FIELD_NUMBER = 12;
         private int maxScore_;
+        public static final int ID_FIELD_NUMBER = 10;
+        private int id_;
         private byte memoizedIsInitialized;
         private static final BartenderLevelInfo DEFAULT_INSTANCE = new BartenderLevelInfo();
         private static final Parser<BartenderLevelInfo> PARSER = new AbstractParser<BartenderLevelInfo>() { // from class: emu.grasscutter.net.proto.BartenderLevelInfoOuterClass.BartenderLevelInfo.1
@@ -98,14 +98,14 @@ public final class BartenderLevelInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
-                                    this.maxScore_ = input.readUInt32();
-                                    break;
-                                case 24:
-                                    this.isFinish_ = input.readBool();
+                                case 80:
+                                    this.id_ = input.readUInt32();
                                     break;
                                 case 96:
-                                    this.id_ = input.readUInt32();
+                                    this.maxScore_ = input.readUInt32();
+                                    break;
+                                case 104:
+                                    this.isFinish_ = input.readBool();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -138,11 +138,6 @@ public final class BartenderLevelInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.BartenderLevelInfoOuterClass.BartenderLevelInfoOrBuilder
-        public int getId() {
-            return this.id_;
-        }
-
-        @Override // emu.grasscutter.net.proto.BartenderLevelInfoOuterClass.BartenderLevelInfoOrBuilder
         public boolean getIsFinish() {
             return this.isFinish_;
         }
@@ -150,6 +145,11 @@ public final class BartenderLevelInfoOuterClass {
         @Override // emu.grasscutter.net.proto.BartenderLevelInfoOuterClass.BartenderLevelInfoOrBuilder
         public int getMaxScore() {
             return this.maxScore_;
+        }
+
+        @Override // emu.grasscutter.net.proto.BartenderLevelInfoOuterClass.BartenderLevelInfoOrBuilder
+        public int getId() {
+            return this.id_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -167,14 +167,14 @@ public final class BartenderLevelInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
+            if (this.id_ != 0) {
+                output.writeUInt32(10, this.id_);
+            }
             if (this.maxScore_ != 0) {
-                output.writeUInt32(2, this.maxScore_);
+                output.writeUInt32(12, this.maxScore_);
             }
             if (this.isFinish_) {
-                output.writeBool(3, this.isFinish_);
-            }
-            if (this.id_ != 0) {
-                output.writeUInt32(12, this.id_);
+                output.writeBool(13, this.isFinish_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -186,14 +186,14 @@ public final class BartenderLevelInfoOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.id_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(10, this.id_);
+            }
             if (this.maxScore_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(2, this.maxScore_);
+                size2 += CodedOutputStream.computeUInt32Size(12, this.maxScore_);
             }
             if (this.isFinish_) {
-                size2 += CodedOutputStream.computeBoolSize(3, this.isFinish_);
-            }
-            if (this.id_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.id_);
+                size2 += CodedOutputStream.computeBoolSize(13, this.isFinish_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class BartenderLevelInfoOuterClass {
                 return equals(obj);
             }
             BartenderLevelInfo other = (BartenderLevelInfo) obj;
-            return getId() == other.getId() && getIsFinish() == other.getIsFinish() && getMaxScore() == other.getMaxScore() && this.unknownFields.equals(other.unknownFields);
+            return getIsFinish() == other.getIsFinish() && getMaxScore() == other.getMaxScore() && getId() == other.getId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class BartenderLevelInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getId())) + 3)) + Internal.hashBoolean(getIsFinish()))) + 2)) + getMaxScore())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + Internal.hashBoolean(getIsFinish()))) + 12)) + getMaxScore())) + 10)) + getId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -296,9 +296,9 @@ public final class BartenderLevelInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BartenderLevelInfoOuterClass$BartenderLevelInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements BartenderLevelInfoOrBuilder {
-            private int id_;
             private boolean isFinish_;
             private int maxScore_;
+            private int id_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return BartenderLevelInfoOuterClass.internal_static_BartenderLevelInfo_descriptor;
@@ -326,9 +326,9 @@ public final class BartenderLevelInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.id_ = 0;
                 this.isFinish_ = false;
                 this.maxScore_ = 0;
+                this.id_ = 0;
                 return this;
             }
 
@@ -354,9 +354,9 @@ public final class BartenderLevelInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public BartenderLevelInfo buildPartial() {
                 BartenderLevelInfo result = new BartenderLevelInfo(this);
-                result.id_ = this.id_;
                 result.isFinish_ = this.isFinish_;
                 result.maxScore_ = this.maxScore_;
+                result.id_ = this.id_;
                 onBuilt();
                 return result;
             }
@@ -404,14 +404,14 @@ public final class BartenderLevelInfoOuterClass {
                 if (other == BartenderLevelInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getId() != 0) {
-                    setId(other.getId());
-                }
                 if (other.getIsFinish()) {
                     setIsFinish(other.getIsFinish());
                 }
                 if (other.getMaxScore() != 0) {
                     setMaxScore(other.getMaxScore());
+                }
+                if (other.getId() != 0) {
+                    setId(other.getId());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -446,23 +446,6 @@ public final class BartenderLevelInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.BartenderLevelInfoOuterClass.BartenderLevelInfoOrBuilder
-            public int getId() {
-                return this.id_;
-            }
-
-            public Builder setId(int value) {
-                this.id_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearId() {
-                this.id_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.BartenderLevelInfoOuterClass.BartenderLevelInfoOrBuilder
             public boolean getIsFinish() {
                 return this.isFinish_;
             }
@@ -492,6 +475,23 @@ public final class BartenderLevelInfoOuterClass {
 
             public Builder clearMaxScore() {
                 this.maxScore_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.BartenderLevelInfoOuterClass.BartenderLevelInfoOrBuilder
+            public int getId() {
+                return this.id_;
+            }
+
+            public Builder setId(int value) {
+                this.id_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearId() {
+                this.id_ = 0;
                 onChanged();
                 return this;
             }

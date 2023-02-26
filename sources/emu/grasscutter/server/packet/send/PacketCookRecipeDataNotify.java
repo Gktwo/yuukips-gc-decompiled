@@ -7,12 +7,12 @@ import emu.grasscutter.net.proto.CookRecipeDataOuterClass;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketCookRecipeDataNotify.class */
 public class PacketCookRecipeDataNotify extends BasePacket {
     public PacketCookRecipeDataNotify(CookRecipeDataOuterClass.CookRecipeData recipe) {
-        super(110);
+        super(185);
         setData(CookRecipeDataNotifyOuterClass.CookRecipeDataNotify.newBuilder().setRecipeData(recipe).build());
     }
 
     public PacketCookRecipeDataNotify(int recipeId) {
-        super(110);
+        super(185);
         setData(CookRecipeDataNotifyOuterClass.CookRecipeDataNotify.newBuilder().setRecipeData(CookRecipeDataOuterClass.CookRecipeData.newBuilder().setRecipeId(recipeId)).build());
     }
 }

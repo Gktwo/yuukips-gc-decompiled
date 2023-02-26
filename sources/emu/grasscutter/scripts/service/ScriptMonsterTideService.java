@@ -31,7 +31,7 @@ public class ScriptMonsterTideService {
         this.sceneScriptManager.getScriptMonsterSpawnService().addMonsterCreatedListener(this.onMonsterCreated);
         this.sceneScriptManager.getScriptMonsterSpawnService().addMonsterDeadListener(this.onMonsterDead);
         for (int i = 0; i < this.monsterSceneLimit; i++) {
-            sceneScriptManager.addEntity(this.sceneScriptManager.createMonster(group.f957id, group.block_id, getNextMonster()));
+            sceneScriptManager.addEntity(this.sceneScriptManager.createMonster(group.f922id, group.block_id, getNextMonster()));
         }
     }
 
@@ -67,7 +67,7 @@ public class ScriptMonsterTideService {
             if (ScriptMonsterTideService.this.monsterSceneLimit > 0 && ScriptMonsterTideService.this.monsterAlive.decrementAndGet() < ScriptMonsterTideService.this.monsterSceneLimit) {
                 ScriptMonsterTideService.this.monsterKillCount.incrementAndGet();
                 if (ScriptMonsterTideService.this.monsterTideCount.get() > 0) {
-                    ScriptMonsterTideService.this.sceneScriptManager.addEntity(ScriptMonsterTideService.this.sceneScriptManager.createMonster(ScriptMonsterTideService.this.currentGroup.f957id, ScriptMonsterTideService.this.currentGroup.block_id, ScriptMonsterTideService.this.getNextMonster()));
+                    ScriptMonsterTideService.this.sceneScriptManager.addEntity(ScriptMonsterTideService.this.sceneScriptManager.createMonster(ScriptMonsterTideService.this.currentGroup.f922id, ScriptMonsterTideService.this.currentGroup.block_id, ScriptMonsterTideService.this.getNextMonster()));
                 }
                 ScriptMonsterTideService.this.sceneScriptManager.callEvent(new ScriptArgs(37, ScriptMonsterTideService.this.monsterKillCount.get()));
             }

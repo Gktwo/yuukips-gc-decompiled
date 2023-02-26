@@ -23,7 +23,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MapMarkPointOuterClass.class */
 public final class MapMarkPointOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012MapMarkPoint.proto\u001a\u0015MapMarkFromType.proto\u001a\u0016MapMarkPointType.proto\u001a\fVector.proto\"¶\u0001\n\fMapMarkPoint\u0012\u0010\n\bscene_id\u0018\u0001 \u0001(\r\u0012\f\n\u0004name\u0018\u0002 \u0001(\t\u0012\u0014\n\u0003pos\u0018\u0003 \u0001(\u000b2\u0007.Vector\u0012%\n\npoint_type\u0018\u0004 \u0001(\u000e2\u0011.MapMarkPointType\u0012\u0012\n\nmonster_id\u0018\u0005 \u0001(\r\u0012#\n\tfrom_type\u0018\u0006 \u0001(\u000e2\u0010.MapMarkFromType\u0012\u0010\n\bquest_id\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{MapMarkFromTypeOuterClass.getDescriptor(), MapMarkPointTypeOuterClass.getDescriptor(), VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012MapMarkPoint.proto\u001a\fVector.proto\u001a\u0016MapMarkPointType.proto\u001a\u0015MapMarkFromType.proto\"±\u0001\n\fMapMarkPoint\u0012\u000f\n\u0007sceneId\u0018\u0001 \u0001(\r\u0012\f\n\u0004name\u0018\u0002 \u0001(\t\u0012\u0014\n\u0003pos\u0018\u0003 \u0001(\u000b2\u0007.Vector\u0012$\n\tpointType\u0018\u0004 \u0001(\u000e2\u0011.MapMarkPointType\u0012\u0011\n\tmonsterId\u0018\u0005 \u0001(\r\u0012\"\n\bfromType\u0018\u0006 \u0001(\u000e2\u0010.MapMarkFromType\u0012\u000f\n\u0007questId\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor(), MapMarkPointTypeOuterClass.getDescriptor(), MapMarkFromTypeOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_MapMarkPoint_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_MapMarkPoint_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_MapMarkPoint_descriptor, new String[]{"SceneId", "Name", "Pos", "PointType", "MonsterId", "FromType", "QuestId"});
 
@@ -67,19 +67,19 @@ public final class MapMarkPointOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/MapMarkPointOuterClass$MapMarkPoint.class */
     public static final class MapMarkPoint extends GeneratedMessageV3 implements MapMarkPointOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SCENE_ID_FIELD_NUMBER = 1;
+        public static final int SCENEID_FIELD_NUMBER = 1;
         private int sceneId_;
         public static final int NAME_FIELD_NUMBER = 2;
         private volatile Object name_;
         public static final int POS_FIELD_NUMBER = 3;
         private VectorOuterClass.Vector pos_;
-        public static final int POINT_TYPE_FIELD_NUMBER = 4;
+        public static final int POINTTYPE_FIELD_NUMBER = 4;
         private int pointType_;
-        public static final int MONSTER_ID_FIELD_NUMBER = 5;
+        public static final int MONSTERID_FIELD_NUMBER = 5;
         private int monsterId_;
-        public static final int FROM_TYPE_FIELD_NUMBER = 6;
+        public static final int FROMTYPE_FIELD_NUMBER = 6;
         private int fromType_;
-        public static final int QUEST_ID_FIELD_NUMBER = 7;
+        public static final int QUESTID_FIELD_NUMBER = 7;
         private int questId_;
         private byte memoizedIsInitialized;
         private static final MapMarkPoint DEFAULT_INSTANCE = new MapMarkPoint();
@@ -897,8 +897,8 @@ public final class MapMarkPointOuterClass {
     }
 
     static {
-        MapMarkFromTypeOuterClass.getDescriptor();
-        MapMarkPointTypeOuterClass.getDescriptor();
         VectorOuterClass.getDescriptor();
+        MapMarkPointTypeOuterClass.getDescriptor();
+        MapMarkFromTypeOuterClass.getDescriptor();
     }
 }

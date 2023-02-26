@@ -33,7 +33,7 @@ import javassist.bytecode.SignatureAttribute;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FriendBriefOuterClass.class */
 public final class FriendBriefOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0011FriendBrief.proto\u001a\u001bFriendEnterHomeOption.proto\u001a\u0017FriendOnlineState.proto\u001a\u0012PlatformType.proto\u001a\u0014ProfilePicture.proto\u001a\u001aSocialShowAvatarInfo.proto\"Þ\u0004\n\u000bFriendBrief\u0012\u000b\n\u0003uid\u0018\u0001 \u0001(\r\u0012\u0010\n\bnickname\u0018\u0002 \u0001(\t\u0012\r\n\u0005level\u0018\u0003 \u0001(\r\u0012\u0011\n\tavatar_id\u0018\u0004 \u0001(\r\u0012\u0013\n\u000bworld_level\u0018\u0005 \u0001(\r\u0012\u0011\n\tsignature\u0018\u0006 \u0001(\t\u0012(\n\fonline_state\u0018\u0007 \u0001(\u000e2\u0012.FriendOnlineState\u0012\r\n\u0005param\u0018\b \u0001(\r\u0012\u001c\n\u0014is_mp_mode_available\u0018\n \u0001(\b\u0012\u0011\n\tonline_id\u0018\u000b \u0001(\t\u0012\u0018\n\u0010last_active_time\u0018\f \u0001(\r\u0012\u0014\n\fname_card_id\u0018\r \u0001(\r\u0012\u0015\n\rmp_player_num\u0018\u000e \u0001(\r\u0012\u001a\n\u0012is_chat_no_disturb\u0018\u000f \u0001(\b\u0012\u0015\n\rchat_sequence\u0018\u0010 \u0001(\r\u0012\u0013\n\u000bremark_name\u0018\u0011 \u0001(\t\u00124\n\u0015show_avatar_info_list\u0018\u0016 \u0003(\u000b2\u0015.SocialShowAvatarInfo\u00128\n\u0018friend_enter_home_option\u0018\u0017 \u0001(\u000e2\u0016.FriendEnterHomeOption\u0012(\n\u000fprofile_picture\u0018\u0018 \u0001(\u000b2\u000f.ProfilePicture\u0012\u0016\n\u000eis_game_source\u0018\u0019 \u0001(\b\u0012\u0015\n\ris_psn_source\u0018\u001a \u0001(\b\u0012$\n\rplatform_type\u0018\u001b \u0001(\u000e2\r.PlatformTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{FriendEnterHomeOptionOuterClass.getDescriptor(), FriendOnlineStateOuterClass.getDescriptor(), PlatformTypeOuterClass.getDescriptor(), ProfilePictureOuterClass.getDescriptor(), SocialShowAvatarInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0011FriendBrief.proto\u001a\u0017FriendOnlineState.proto\u001a\u001bFriendEnterHomeOption.proto\u001a\u0014ProfilePicture.proto\u001a\u0012PlatformType.proto\u001a\u001aSocialShowAvatarInfo.proto\"À\u0004\n\u000bFriendBrief\u0012\u000b\n\u0003uid\u0018\u0001 \u0001(\r\u0012\u0010\n\bnickname\u0018\u0002 \u0001(\t\u0012\r\n\u0005level\u0018\u0003 \u0001(\r\u0012\u0010\n\bavatarId\u0018\u0004 \u0001(\r\u0012\u0012\n\nworldLevel\u0018\u0005 \u0001(\r\u0012\u0011\n\tsignature\u0018\u0006 \u0001(\t\u0012'\n\u000bonlineState\u0018\u0007 \u0001(\u000e2\u0012.FriendOnlineState\u0012\r\n\u0005param\u0018\b \u0001(\r\u0012\u0019\n\u0011isMpModeAvailable\u0018\n \u0001(\b\u0012\u0010\n\bonlineId\u0018\u000b \u0001(\t\u0012\u0016\n\u000elastActiveTime\u0018\f \u0001(\r\u0012\u0012\n\nnameCardId\u0018\r \u0001(\r\u0012\u0013\n\u000bmpPlayerNum\u0018\u000e \u0001(\r\u0012\u0017\n\u000fisChatNoDisturb\u0018\u000f \u0001(\b\u0012\u0014\n\fchatSequence\u0018\u0010 \u0001(\r\u0012\u0012\n\nremarkName\u0018\u0011 \u0001(\t\u00121\n\u0012showAvatarInfoList\u0018\u0016 \u0003(\u000b2\u0015.SocialShowAvatarInfo\u00125\n\u0015friendEnterHomeOption\u0018\u0017 \u0001(\u000e2\u0016.FriendEnterHomeOption\u0012'\n\u000eprofilePicture\u0018\u0018 \u0001(\u000b2\u000f.ProfilePicture\u0012\u0014\n\fisGameSource\u0018\u0019 \u0001(\b\u0012\u0013\n\u000bisPsnSource\u0018\u001a \u0001(\b\u0012#\n\fplatformType\u0018\u001b \u0001(\u000e2\r.PlatformTypeB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{FriendOnlineStateOuterClass.getDescriptor(), FriendEnterHomeOptionOuterClass.getDescriptor(), ProfilePictureOuterClass.getDescriptor(), PlatformTypeOuterClass.getDescriptor(), SocialShowAvatarInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_FriendBrief_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_FriendBrief_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FriendBrief_descriptor, new String[]{"Uid", "Nickname", "Level", "AvatarId", "WorldLevel", SignatureAttribute.tag, "OnlineState", "Param", "IsMpModeAvailable", "OnlineId", "LastActiveTime", "NameCardId", "MpPlayerNum", "IsChatNoDisturb", "ChatSequence", "RemarkName", "ShowAvatarInfoList", "FriendEnterHomeOption", "ProfilePicture", "IsGameSource", "IsPsnSource", "PlatformType"});
 
@@ -129,43 +129,43 @@ public final class FriendBriefOuterClass {
         private volatile Object nickname_;
         public static final int LEVEL_FIELD_NUMBER = 3;
         private int level_;
-        public static final int AVATAR_ID_FIELD_NUMBER = 4;
+        public static final int AVATARID_FIELD_NUMBER = 4;
         private int avatarId_;
-        public static final int WORLD_LEVEL_FIELD_NUMBER = 5;
+        public static final int WORLDLEVEL_FIELD_NUMBER = 5;
         private int worldLevel_;
         public static final int SIGNATURE_FIELD_NUMBER = 6;
         private volatile Object signature_;
-        public static final int ONLINE_STATE_FIELD_NUMBER = 7;
+        public static final int ONLINESTATE_FIELD_NUMBER = 7;
         private int onlineState_;
         public static final int PARAM_FIELD_NUMBER = 8;
         private int param_;
-        public static final int IS_MP_MODE_AVAILABLE_FIELD_NUMBER = 10;
+        public static final int ISMPMODEAVAILABLE_FIELD_NUMBER = 10;
         private boolean isMpModeAvailable_;
-        public static final int ONLINE_ID_FIELD_NUMBER = 11;
+        public static final int ONLINEID_FIELD_NUMBER = 11;
         private volatile Object onlineId_;
-        public static final int LAST_ACTIVE_TIME_FIELD_NUMBER = 12;
+        public static final int LASTACTIVETIME_FIELD_NUMBER = 12;
         private int lastActiveTime_;
-        public static final int NAME_CARD_ID_FIELD_NUMBER = 13;
+        public static final int NAMECARDID_FIELD_NUMBER = 13;
         private int nameCardId_;
-        public static final int MP_PLAYER_NUM_FIELD_NUMBER = 14;
+        public static final int MPPLAYERNUM_FIELD_NUMBER = 14;
         private int mpPlayerNum_;
-        public static final int IS_CHAT_NO_DISTURB_FIELD_NUMBER = 15;
+        public static final int ISCHATNODISTURB_FIELD_NUMBER = 15;
         private boolean isChatNoDisturb_;
-        public static final int CHAT_SEQUENCE_FIELD_NUMBER = 16;
+        public static final int CHATSEQUENCE_FIELD_NUMBER = 16;
         private int chatSequence_;
-        public static final int REMARK_NAME_FIELD_NUMBER = 17;
+        public static final int REMARKNAME_FIELD_NUMBER = 17;
         private volatile Object remarkName_;
-        public static final int SHOW_AVATAR_INFO_LIST_FIELD_NUMBER = 22;
+        public static final int SHOWAVATARINFOLIST_FIELD_NUMBER = 22;
         private List<SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo> showAvatarInfoList_;
-        public static final int FRIEND_ENTER_HOME_OPTION_FIELD_NUMBER = 23;
+        public static final int FRIENDENTERHOMEOPTION_FIELD_NUMBER = 23;
         private int friendEnterHomeOption_;
-        public static final int PROFILE_PICTURE_FIELD_NUMBER = 24;
+        public static final int PROFILEPICTURE_FIELD_NUMBER = 24;
         private ProfilePictureOuterClass.ProfilePicture profilePicture_;
-        public static final int IS_GAME_SOURCE_FIELD_NUMBER = 25;
+        public static final int ISGAMESOURCE_FIELD_NUMBER = 25;
         private boolean isGameSource_;
-        public static final int IS_PSN_SOURCE_FIELD_NUMBER = 26;
+        public static final int ISPSNSOURCE_FIELD_NUMBER = 26;
         private boolean isPsnSource_;
-        public static final int PLATFORM_TYPE_FIELD_NUMBER = 27;
+        public static final int PLATFORMTYPE_FIELD_NUMBER = 27;
         private int platformType_;
         private byte memoizedIsInitialized;
         private static final FriendBrief DEFAULT_INSTANCE = new FriendBrief();
@@ -293,7 +293,7 @@ public final class FriendBriefOuterClass {
                             case 200:
                                 this.isGameSource_ = input.readBool();
                                 break;
-                            case PacketOpcodes.PlatformStartRouteNotify:
+                            case PacketOpcodes.SetSceneWeatherAreaReq:
                                 this.isPsnSource_ = input.readBool();
                                 break;
                             case 216:
@@ -1936,10 +1936,10 @@ public final class FriendBriefOuterClass {
     }
 
     static {
-        FriendEnterHomeOptionOuterClass.getDescriptor();
         FriendOnlineStateOuterClass.getDescriptor();
-        PlatformTypeOuterClass.getDescriptor();
+        FriendEnterHomeOptionOuterClass.getDescriptor();
         ProfilePictureOuterClass.getDescriptor();
+        PlatformTypeOuterClass.getDescriptor();
         SocialShowAvatarInfoOuterClass.getDescriptor();
     }
 }

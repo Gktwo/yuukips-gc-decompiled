@@ -124,33 +124,33 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
     public static final class IndexBasedSpliterator extends LongSpliterators.LateBindingSizeIndexBasedSpliterator {
 
         /* renamed from: l */
-        final LongList f2260l;
+        final LongList f2224l;
 
         /* access modifiers changed from: package-private */
         public IndexBasedSpliterator(LongList l, int pos) {
             super(pos);
-            this.f2260l = l;
+            this.f2224l = l;
         }
 
         IndexBasedSpliterator(LongList l, int pos, int maxPos) {
             super(pos, maxPos);
-            this.f2260l = l;
+            this.f2224l = l;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongSpliterators.LateBindingSizeIndexBasedSpliterator
         protected final int getMaxPosFromBackingStore() {
-            return this.f2260l.size();
+            return this.f2224l.size();
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongSpliterators.AbstractIndexBasedSpliterator
         protected final long get(int i) {
-            return this.f2260l.getLong(i);
+            return this.f2224l.getLong(i);
         }
 
         /* access modifiers changed from: protected */
         @Override // p014it.unimi.dsi.fastutil.longs.LongSpliterators.AbstractIndexBasedSpliterator
         public final IndexBasedSpliterator makeForSplit(int pos, int maxPos) {
-            return new IndexBasedSpliterator(this.f2260l, pos, maxPos);
+            return new IndexBasedSpliterator(this.f2224l, pos, maxPos);
         }
     }
 
@@ -870,11 +870,11 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
         private static final long serialVersionUID = -7046029254386353129L;
 
         /* renamed from: l */
-        protected final LongList f2261l;
+        protected final LongList f2225l;
         protected final int from;
 
         /* renamed from: to */
-        protected int f2262to;
+        protected int f2226to;
         static final /* synthetic */ boolean $assertionsDisabled;
 
         /* Return type fixed from 'java.util.ListIterator' to match base method */
@@ -894,18 +894,18 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
         }
 
         public LongSubList(LongList l, int from, int to) {
-            this.f2261l = l;
+            this.f2225l = l;
             this.from = from;
-            this.f2262to = to;
+            this.f2226to = to;
         }
 
         /* access modifiers changed from: private */
         public boolean assertRange() {
-            if (!$assertionsDisabled && this.from > this.f2261l.size()) {
+            if (!$assertionsDisabled && this.from > this.f2225l.size()) {
                 throw new AssertionError();
-            } else if (!$assertionsDisabled && this.f2262to > this.f2261l.size()) {
+            } else if (!$assertionsDisabled && this.f2226to > this.f2225l.size()) {
                 throw new AssertionError();
-            } else if ($assertionsDisabled || this.f2262to >= this.from) {
+            } else if ($assertionsDisabled || this.f2226to >= this.from) {
                 return true;
             } else {
                 throw new AssertionError();
@@ -914,8 +914,8 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.AbstractLongCollection, p014it.unimi.dsi.fastutil.longs.LongCollection
         public boolean add(long k) {
-            this.f2261l.add(this.f2262to, k);
-            this.f2262to++;
+            this.f2225l.add(this.f2226to, k);
+            this.f2226to++;
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }
@@ -925,8 +925,8 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongList
         public void add(int index, long k) {
             ensureIndex(index);
-            this.f2261l.add(this.from + index, k);
-            this.f2262to++;
+            this.f2225l.add(this.from + index, k);
+            this.f2226to++;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -935,32 +935,32 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, java.util.List
         public boolean addAll(int index, Collection<? extends Long> c) {
             ensureIndex(index);
-            this.f2262to += c.size();
-            return this.f2261l.addAll(this.from + index, c);
+            this.f2226to += c.size();
+            return this.f2225l.addAll(this.from + index, c);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.LongList
         public long getLong(int index) {
             ensureRestrictedIndex(index);
-            return this.f2261l.getLong(this.from + index);
+            return this.f2225l.getLong(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongList
         public long removeLong(int index) {
             ensureRestrictedIndex(index);
-            this.f2262to--;
-            return this.f2261l.removeLong(this.from + index);
+            this.f2226to--;
+            return this.f2225l.removeLong(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongList
         public long set(int index, long k) {
             ensureRestrictedIndex(index);
-            return this.f2261l.set(this.from + index, k);
+            return this.f2225l.set(this.from + index, k);
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public int size() {
-            return this.f2262to - this.from;
+            return this.f2226to - this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongList
@@ -969,15 +969,15 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
             if (from + length > size()) {
                 throw new IndexOutOfBoundsException("End index (" + from + length + ") is greater than list size (" + size() + ")");
             }
-            this.f2261l.getElements(this.from + from, a, offset, length);
+            this.f2225l.getElements(this.from + from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongList
         public void removeElements(int from, int to) {
             ensureIndex(from);
             ensureIndex(to);
-            this.f2261l.removeElements(this.from + from, this.from + to);
-            this.f2262to -= to - from;
+            this.f2225l.removeElements(this.from + from, this.from + to);
+            this.f2226to -= to - from;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -986,8 +986,8 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongList
         public void addElements(int index, long[] a, int offset, int length) {
             ensureIndex(index);
-            this.f2261l.addElements(this.from + index, a, offset, length);
-            this.f2262to += length;
+            this.f2225l.addElements(this.from + index, a, offset, length);
+            this.f2226to += length;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -996,7 +996,7 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongList
         public void setElements(int index, long[] a, int offset, int length) {
             ensureIndex(index);
-            this.f2261l.setElements(this.from + index, a, offset, length);
+            this.f2225l.setElements(this.from + index, a, offset, length);
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1018,7 +1018,7 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongIterators.AbstractIndexBasedIterator
             protected final long get(int i) {
-                return LongSubList.this.f2261l.getLong(LongSubList.this.from + i);
+                return LongSubList.this.f2225l.getLong(LongSubList.this.from + i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongIterators.AbstractIndexBasedListIterator
@@ -1038,7 +1038,7 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongIterators.AbstractIndexBasedIterator
             protected final int getMaxPos() {
-                return LongSubList.this.f2262to - LongSubList.this.from;
+                return LongSubList.this.f2226to - LongSubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.longs.LongIterators.AbstractIndexBasedListIterator, p014it.unimi.dsi.fastutil.longs.LongListIterator
@@ -1080,7 +1080,7 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
 
             @Override // java.util.Iterator, java.util.ListIterator
             public boolean hasNext() {
-                return this.parent.nextIndex() < LongSubList.this.f2262to;
+                return this.parent.nextIndex() < LongSubList.this.f2226to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -1139,8 +1139,8 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
                 }
                 int currentPos = this.parent.nextIndex();
                 int parentNewPos = currentPos + n;
-                if (parentNewPos > LongSubList.this.f2262to) {
-                    parentNewPos = LongSubList.this.f2262to;
+                if (parentNewPos > LongSubList.this.f2226to) {
+                    parentNewPos = LongSubList.this.f2226to;
                 }
                 return this.parent.skip(parentNewPos - currentPos);
             }
@@ -1151,12 +1151,12 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
         @Override // p014it.unimi.dsi.fastutil.longs.AbstractLongList, p014it.unimi.dsi.fastutil.longs.LongList, java.util.List
         public ListIterator<Long> listIterator(int index) {
             ensureIndex(index);
-            return this.f2261l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f2261l.listIterator(index + this.from));
+            return this.f2225l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f2225l.listIterator(index + this.from));
         }
 
         @Override // java.util.Collection, java.lang.Iterable, p014it.unimi.dsi.fastutil.longs.LongCollection, p014it.unimi.dsi.fastutil.longs.LongIterable
         public LongSpliterator spliterator() {
-            return this.f2261l instanceof RandomAccess ? new IndexBasedSpliterator(this.f2261l, this.from, this.f2262to) : spliterator();
+            return this.f2225l instanceof RandomAccess ? new IndexBasedSpliterator(this.f2225l, this.from, this.f2226to) : spliterator();
         }
 
         /* Return type fixed from 'it.unimi.dsi.fastutil.longs.LongList' to match base method */
@@ -1176,8 +1176,8 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
             if (index == -1) {
                 return false;
             }
-            this.f2262to--;
-            this.f2261l.removeLong(this.from + index);
+            this.f2226to--;
+            this.f2225l.removeLong(this.from + index);
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }

@@ -27,12 +27,26 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarLifeStateChangeNotifyOuterClass.class */
 public final class AvatarLifeStateChangeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!AvatarLifeStateChangeNotify.proto\u001a\u0013PlayerDieType.proto\u001a\u0010ServerBuff.proto\"Ø\u0001\n\u001bAvatarLifeStateChangeNotify\u0012\u0018\n\u0010source_entity_id\u0018\u000b \u0001(\r\u0012%\n\u0010server_buff_list\u0018\u000e \u0003(\u000b2\u000b.ServerBuff\u0012\u0019\n\u0011move_reliable_seq\u0018\f \u0001(\r\u0012\u0012\n\nlife_state\u0018\u0006 \u0001(\r\u0012 \n\bdie_type\u0018\u0005 \u0001(\u000e2\u000e.PlayerDieType\u0012\u0012\n\nattack_tag\u0018\u000f \u0001(\t\u0012\u0013\n\u000bavatar_guid\u0018\u0002 \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PlayerDieTypeOuterClass.getDescriptor(), ServerBuffOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!AvatarLifeStateChangeNotify.proto\u001a\u0013PlayerDieType.proto\u001a\u0010ServerBuff.proto\"Î\u0001\n\u001bAvatarLifeStateChangeNotify\u0012\u0011\n\tlifeState\u0018\b \u0001(\r\u0012\u0017\n\u000fmoveReliableSeq\u0018\n \u0001(\r\u0012\u001f\n\u0007dieType\u0018\u0001 \u0001(\u000e2\u000e.PlayerDieType\u0012\u0011\n\tattackTag\u0018\u0006 \u0001(\t\u0012\u0012\n\navatarGuid\u0018\u0003 \u0001(\u0004\u0012\u0016\n\u000esourceEntityId\u0018\u0005 \u0001(\r\u0012#\n\u000eserverBuffList\u0018\u0004 \u0003(\u000b2\u000b.ServerBuffB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PlayerDieTypeOuterClass.getDescriptor(), ServerBuffOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AvatarLifeStateChangeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarLifeStateChangeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarLifeStateChangeNotify_descriptor, new String[]{"SourceEntityId", "ServerBuffList", "MoveReliableSeq", "LifeState", "DieType", "AttackTag", "AvatarGuid"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarLifeStateChangeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarLifeStateChangeNotify_descriptor, new String[]{"LifeState", "MoveReliableSeq", "DieType", "AttackTag", "AvatarGuid", "SourceEntityId", "ServerBuffList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarLifeStateChangeNotifyOuterClass$AvatarLifeStateChangeNotifyOrBuilder.class */
     public interface AvatarLifeStateChangeNotifyOrBuilder extends MessageOrBuilder {
+        int getLifeState();
+
+        int getMoveReliableSeq();
+
+        int getDieTypeValue();
+
+        PlayerDieTypeOuterClass.PlayerDieType getDieType();
+
+        String getAttackTag();
+
+        ByteString getAttackTagBytes();
+
+        long getAvatarGuid();
+
         int getSourceEntityId();
 
         List<ServerBuffOuterClass.ServerBuff> getServerBuffListList();
@@ -44,20 +58,6 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
         List<? extends ServerBuffOuterClass.ServerBuffOrBuilder> getServerBuffListOrBuilderList();
 
         ServerBuffOuterClass.ServerBuffOrBuilder getServerBuffListOrBuilder(int i);
-
-        int getMoveReliableSeq();
-
-        int getLifeState();
-
-        int getDieTypeValue();
-
-        PlayerDieTypeOuterClass.PlayerDieType getDieType();
-
-        String getAttackTag();
-
-        ByteString getAttackTagBytes();
-
-        long getAvatarGuid();
     }
 
     private AvatarLifeStateChangeNotifyOuterClass() {
@@ -73,20 +73,20 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarLifeStateChangeNotifyOuterClass$AvatarLifeStateChangeNotify.class */
     public static final class AvatarLifeStateChangeNotify extends GeneratedMessageV3 implements AvatarLifeStateChangeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SOURCE_ENTITY_ID_FIELD_NUMBER = 11;
-        private int sourceEntityId_;
-        public static final int SERVER_BUFF_LIST_FIELD_NUMBER = 14;
-        private List<ServerBuffOuterClass.ServerBuff> serverBuffList_;
-        public static final int MOVE_RELIABLE_SEQ_FIELD_NUMBER = 12;
-        private int moveReliableSeq_;
-        public static final int LIFE_STATE_FIELD_NUMBER = 6;
+        public static final int LIFESTATE_FIELD_NUMBER = 8;
         private int lifeState_;
-        public static final int DIE_TYPE_FIELD_NUMBER = 5;
+        public static final int MOVERELIABLESEQ_FIELD_NUMBER = 10;
+        private int moveReliableSeq_;
+        public static final int DIETYPE_FIELD_NUMBER = 1;
         private int dieType_;
-        public static final int ATTACK_TAG_FIELD_NUMBER = 15;
+        public static final int ATTACKTAG_FIELD_NUMBER = 6;
         private volatile Object attackTag_;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 2;
+        public static final int AVATARGUID_FIELD_NUMBER = 3;
         private long avatarGuid_;
+        public static final int SOURCEENTITYID_FIELD_NUMBER = 5;
+        private int sourceEntityId_;
+        public static final int SERVERBUFFLIST_FIELD_NUMBER = 4;
+        private List<ServerBuffOuterClass.ServerBuff> serverBuffList_;
         private byte memoizedIsInitialized;
         private static final AvatarLifeStateChangeNotify DEFAULT_INSTANCE = new AvatarLifeStateChangeNotify();
         private static final Parser<AvatarLifeStateChangeNotify> PARSER = new AbstractParser<AvatarLifeStateChangeNotify>() { // from class: emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotify.1
@@ -103,9 +103,9 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
 
         private AvatarLifeStateChangeNotify() {
             this.memoizedIsInitialized = -1;
-            this.serverBuffList_ = Collections.emptyList();
             this.dieType_ = 0;
             this.attackTag_ = "";
+            this.serverBuffList_ = Collections.emptyList();
         }
 
         /* access modifiers changed from: protected */
@@ -137,30 +137,30 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 16:
-                                this.avatarGuid_ = input.readUInt64();
-                                break;
-                            case 40:
+                            case 8:
                                 this.dieType_ = input.readEnum();
                                 break;
-                            case 48:
-                                this.lifeState_ = input.readUInt32();
+                            case 24:
+                                this.avatarGuid_ = input.readUInt64();
                                 break;
-                            case 88:
-                                this.sourceEntityId_ = input.readUInt32();
-                                break;
-                            case 96:
-                                this.moveReliableSeq_ = input.readUInt32();
-                                break;
-                            case 114:
+                            case 34:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.serverBuffList_ = new ArrayList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.serverBuffList_.add((ServerBuffOuterClass.ServerBuff) input.readMessage(ServerBuffOuterClass.ServerBuff.parser(), extensionRegistry));
                                 break;
-                            case 122:
+                            case 40:
+                                this.sourceEntityId_ = input.readUInt32();
+                                break;
+                            case 50:
                                 this.attackTag_ = input.readStringRequireUtf8();
+                                break;
+                            case 64:
+                                this.lifeState_ = input.readUInt32();
+                                break;
+                            case 80:
+                                this.moveReliableSeq_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -195,43 +195,13 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
-        public int getSourceEntityId() {
-            return this.sourceEntityId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
-        public List<ServerBuffOuterClass.ServerBuff> getServerBuffListList() {
-            return this.serverBuffList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
-        public List<? extends ServerBuffOuterClass.ServerBuffOrBuilder> getServerBuffListOrBuilderList() {
-            return this.serverBuffList_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
-        public int getServerBuffListCount() {
-            return this.serverBuffList_.size();
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
-        public ServerBuffOuterClass.ServerBuff getServerBuffList(int index) {
-            return this.serverBuffList_.get(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
-        public ServerBuffOuterClass.ServerBuffOrBuilder getServerBuffListOrBuilder(int index) {
-            return this.serverBuffList_.get(index);
+        public int getLifeState() {
+            return this.lifeState_;
         }
 
         @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
         public int getMoveReliableSeq() {
             return this.moveReliableSeq_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
-        public int getLifeState() {
-            return this.lifeState_;
         }
 
         @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
@@ -272,6 +242,36 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
             return this.avatarGuid_;
         }
 
+        @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
+        public int getSourceEntityId() {
+            return this.sourceEntityId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
+        public List<ServerBuffOuterClass.ServerBuff> getServerBuffListList() {
+            return this.serverBuffList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
+        public List<? extends ServerBuffOuterClass.ServerBuffOrBuilder> getServerBuffListOrBuilderList() {
+            return this.serverBuffList_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
+        public int getServerBuffListCount() {
+            return this.serverBuffList_.size();
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
+        public ServerBuffOuterClass.ServerBuff getServerBuffList(int index) {
+            return this.serverBuffList_.get(index);
+        }
+
+        @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
+        public ServerBuffOuterClass.ServerBuffOrBuilder getServerBuffListOrBuilder(int index) {
+            return this.serverBuffList_.get(index);
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -287,26 +287,26 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.avatarGuid_ != 0) {
-                output.writeUInt64(2, this.avatarGuid_);
-            }
             if (this.dieType_ != PlayerDieTypeOuterClass.PlayerDieType.PLAYER_DIE_TYPE_NONE.getNumber()) {
-                output.writeEnum(5, this.dieType_);
+                output.writeEnum(1, this.dieType_);
             }
-            if (this.lifeState_ != 0) {
-                output.writeUInt32(6, this.lifeState_);
-            }
-            if (this.sourceEntityId_ != 0) {
-                output.writeUInt32(11, this.sourceEntityId_);
-            }
-            if (this.moveReliableSeq_ != 0) {
-                output.writeUInt32(12, this.moveReliableSeq_);
+            if (this.avatarGuid_ != 0) {
+                output.writeUInt64(3, this.avatarGuid_);
             }
             for (int i = 0; i < this.serverBuffList_.size(); i++) {
-                output.writeMessage(14, this.serverBuffList_.get(i));
+                output.writeMessage(4, this.serverBuffList_.get(i));
+            }
+            if (this.sourceEntityId_ != 0) {
+                output.writeUInt32(5, this.sourceEntityId_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.attackTag_)) {
-                GeneratedMessageV3.writeString(output, 15, this.attackTag_);
+                GeneratedMessageV3.writeString(output, 6, this.attackTag_);
+            }
+            if (this.lifeState_ != 0) {
+                output.writeUInt32(8, this.lifeState_);
+            }
+            if (this.moveReliableSeq_ != 0) {
+                output.writeUInt32(10, this.moveReliableSeq_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -318,26 +318,26 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.avatarGuid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(2, this.avatarGuid_);
-            }
             if (this.dieType_ != PlayerDieTypeOuterClass.PlayerDieType.PLAYER_DIE_TYPE_NONE.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(5, this.dieType_);
+                size2 = 0 + CodedOutputStream.computeEnumSize(1, this.dieType_);
             }
-            if (this.lifeState_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(6, this.lifeState_);
-            }
-            if (this.sourceEntityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(11, this.sourceEntityId_);
-            }
-            if (this.moveReliableSeq_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.moveReliableSeq_);
+            if (this.avatarGuid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(3, this.avatarGuid_);
             }
             for (int i = 0; i < this.serverBuffList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(14, this.serverBuffList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(4, this.serverBuffList_.get(i));
+            }
+            if (this.sourceEntityId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(5, this.sourceEntityId_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.attackTag_)) {
-                size2 += GeneratedMessageV3.computeStringSize(15, this.attackTag_);
+                size2 += GeneratedMessageV3.computeStringSize(6, this.attackTag_);
+            }
+            if (this.lifeState_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(8, this.lifeState_);
+            }
+            if (this.moveReliableSeq_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(10, this.moveReliableSeq_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -353,7 +353,7 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
                 return equals(obj);
             }
             AvatarLifeStateChangeNotify other = (AvatarLifeStateChangeNotify) obj;
-            return getSourceEntityId() == other.getSourceEntityId() && getServerBuffListList().equals(other.getServerBuffListList()) && getMoveReliableSeq() == other.getMoveReliableSeq() && getLifeState() == other.getLifeState() && this.dieType_ == other.dieType_ && getAttackTag().equals(other.getAttackTag()) && getAvatarGuid() == other.getAvatarGuid() && this.unknownFields.equals(other.unknownFields);
+            return getLifeState() == other.getLifeState() && getMoveReliableSeq() == other.getMoveReliableSeq() && this.dieType_ == other.dieType_ && getAttackTag().equals(other.getAttackTag()) && getAvatarGuid() == other.getAvatarGuid() && getSourceEntityId() == other.getSourceEntityId() && getServerBuffListList().equals(other.getServerBuffListList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -361,11 +361,11 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getSourceEntityId();
+            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getLifeState())) + 10)) + getMoveReliableSeq())) + 1)) + this.dieType_)) + 6)) + getAttackTag().hashCode())) + 3)) + Internal.hashLong(getAvatarGuid()))) + 5)) + getSourceEntityId();
             if (getServerBuffListCount() > 0) {
-                hash = (53 * ((37 * hash) + 14)) + getServerBuffListList().hashCode();
+                hash = (53 * ((37 * hash) + 4)) + getServerBuffListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 12)) + getMoveReliableSeq())) + 6)) + getLifeState())) + 5)) + this.dieType_)) + 15)) + getAttackTag().hashCode())) + 2)) + Internal.hashLong(getAvatarGuid()))) + this.unknownFields.hashCode();
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -445,14 +445,14 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarLifeStateChangeNotifyOuterClass$AvatarLifeStateChangeNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements AvatarLifeStateChangeNotifyOrBuilder {
             private int bitField0_;
+            private int lifeState_;
+            private int moveReliableSeq_;
+            private long avatarGuid_;
             private int sourceEntityId_;
             private RepeatedFieldBuilderV3<ServerBuffOuterClass.ServerBuff, ServerBuffOuterClass.ServerBuff.Builder, ServerBuffOuterClass.ServerBuffOrBuilder> serverBuffListBuilder_;
-            private int moveReliableSeq_;
-            private int lifeState_;
-            private long avatarGuid_;
-            private List<ServerBuffOuterClass.ServerBuff> serverBuffList_ = Collections.emptyList();
             private int dieType_ = 0;
             private Object attackTag_ = "";
+            private List<ServerBuffOuterClass.ServerBuff> serverBuffList_ = Collections.emptyList();
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return AvatarLifeStateChangeNotifyOuterClass.internal_static_AvatarLifeStateChangeNotify_descriptor;
@@ -481,6 +481,11 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.lifeState_ = 0;
+                this.moveReliableSeq_ = 0;
+                this.dieType_ = 0;
+                this.attackTag_ = "";
+                this.avatarGuid_ = 0;
                 this.sourceEntityId_ = 0;
                 if (this.serverBuffListBuilder_ == null) {
                     this.serverBuffList_ = Collections.emptyList();
@@ -488,11 +493,6 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
                 } else {
                     this.serverBuffListBuilder_.clear();
                 }
-                this.moveReliableSeq_ = 0;
-                this.lifeState_ = 0;
-                this.dieType_ = 0;
-                this.attackTag_ = "";
-                this.avatarGuid_ = 0;
                 return this;
             }
 
@@ -519,6 +519,11 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
             public AvatarLifeStateChangeNotify buildPartial() {
                 AvatarLifeStateChangeNotify result = new AvatarLifeStateChangeNotify(this);
                 int i = this.bitField0_;
+                result.lifeState_ = this.lifeState_;
+                result.moveReliableSeq_ = this.moveReliableSeq_;
+                result.dieType_ = this.dieType_;
+                result.attackTag_ = this.attackTag_;
+                result.avatarGuid_ = this.avatarGuid_;
                 result.sourceEntityId_ = this.sourceEntityId_;
                 if (this.serverBuffListBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
@@ -529,11 +534,6 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
                 } else {
                     result.serverBuffList_ = this.serverBuffListBuilder_.build();
                 }
-                result.moveReliableSeq_ = this.moveReliableSeq_;
-                result.lifeState_ = this.lifeState_;
-                result.dieType_ = this.dieType_;
-                result.attackTag_ = this.attackTag_;
-                result.avatarGuid_ = this.avatarGuid_;
                 onBuilt();
                 return result;
             }
@@ -581,6 +581,22 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
                 if (other == AvatarLifeStateChangeNotify.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getLifeState() != 0) {
+                    setLifeState(other.getLifeState());
+                }
+                if (other.getMoveReliableSeq() != 0) {
+                    setMoveReliableSeq(other.getMoveReliableSeq());
+                }
+                if (other.dieType_ != 0) {
+                    setDieTypeValue(other.getDieTypeValue());
+                }
+                if (!other.getAttackTag().isEmpty()) {
+                    this.attackTag_ = other.attackTag_;
+                    onChanged();
+                }
+                if (other.getAvatarGuid() != 0) {
+                    setAvatarGuid(other.getAvatarGuid());
+                }
                 if (other.getSourceEntityId() != 0) {
                     setSourceEntityId(other.getSourceEntityId());
                 }
@@ -605,22 +621,6 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
                     } else {
                         this.serverBuffListBuilder_.addAllMessages(other.serverBuffList_);
                     }
-                }
-                if (other.getMoveReliableSeq() != 0) {
-                    setMoveReliableSeq(other.getMoveReliableSeq());
-                }
-                if (other.getLifeState() != 0) {
-                    setLifeState(other.getLifeState());
-                }
-                if (other.dieType_ != 0) {
-                    setDieTypeValue(other.getDieTypeValue());
-                }
-                if (!other.getAttackTag().isEmpty()) {
-                    this.attackTag_ = other.attackTag_;
-                    onChanged();
-                }
-                if (other.getAvatarGuid() != 0) {
-                    setAvatarGuid(other.getAvatarGuid());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -652,6 +652,136 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
+            public int getLifeState() {
+                return this.lifeState_;
+            }
+
+            public Builder setLifeState(int value) {
+                this.lifeState_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearLifeState() {
+                this.lifeState_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
+            public int getMoveReliableSeq() {
+                return this.moveReliableSeq_;
+            }
+
+            public Builder setMoveReliableSeq(int value) {
+                this.moveReliableSeq_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearMoveReliableSeq() {
+                this.moveReliableSeq_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
+            public int getDieTypeValue() {
+                return this.dieType_;
+            }
+
+            public Builder setDieTypeValue(int value) {
+                this.dieType_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
+            public PlayerDieTypeOuterClass.PlayerDieType getDieType() {
+                PlayerDieTypeOuterClass.PlayerDieType result = PlayerDieTypeOuterClass.PlayerDieType.valueOf(this.dieType_);
+                return result == null ? PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED : result;
+            }
+
+            public Builder setDieType(PlayerDieTypeOuterClass.PlayerDieType value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.dieType_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+
+            public Builder clearDieType() {
+                this.dieType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
+            public String getAttackTag() {
+                Object ref = this.attackTag_;
+                if (ref instanceof String) {
+                    return (String) ref;
+                }
+                String s = ((ByteString) ref).toStringUtf8();
+                this.attackTag_ = s;
+                return s;
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
+            public ByteString getAttackTagBytes() {
+                Object ref = this.attackTag_;
+                if (!(ref instanceof String)) {
+                    return (ByteString) ref;
+                }
+                ByteString b = ByteString.copyFromUtf8((String) ref);
+                this.attackTag_ = b;
+                return b;
+            }
+
+            public Builder setAttackTag(String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.attackTag_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearAttackTag() {
+                this.attackTag_ = AvatarLifeStateChangeNotify.getDefaultInstance().getAttackTag();
+                onChanged();
+                return this;
+            }
+
+            public Builder setAttackTagBytes(ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                AvatarLifeStateChangeNotify.checkByteStringIsUtf8(value);
+                this.attackTag_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
+            public long getAvatarGuid() {
+                return this.avatarGuid_;
+            }
+
+            public Builder setAvatarGuid(long value) {
+                this.avatarGuid_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearAvatarGuid() {
+                this.avatarGuid_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
@@ -845,136 +975,6 @@ public final class AvatarLifeStateChangeNotifyOuterClass {
                     this.serverBuffList_ = null;
                 }
                 return this.serverBuffListBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
-            public int getMoveReliableSeq() {
-                return this.moveReliableSeq_;
-            }
-
-            public Builder setMoveReliableSeq(int value) {
-                this.moveReliableSeq_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearMoveReliableSeq() {
-                this.moveReliableSeq_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
-            public int getLifeState() {
-                return this.lifeState_;
-            }
-
-            public Builder setLifeState(int value) {
-                this.lifeState_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearLifeState() {
-                this.lifeState_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
-            public int getDieTypeValue() {
-                return this.dieType_;
-            }
-
-            public Builder setDieTypeValue(int value) {
-                this.dieType_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
-            public PlayerDieTypeOuterClass.PlayerDieType getDieType() {
-                PlayerDieTypeOuterClass.PlayerDieType result = PlayerDieTypeOuterClass.PlayerDieType.valueOf(this.dieType_);
-                return result == null ? PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED : result;
-            }
-
-            public Builder setDieType(PlayerDieTypeOuterClass.PlayerDieType value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.dieType_ = value.getNumber();
-                onChanged();
-                return this;
-            }
-
-            public Builder clearDieType() {
-                this.dieType_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
-            public String getAttackTag() {
-                Object ref = this.attackTag_;
-                if (ref instanceof String) {
-                    return (String) ref;
-                }
-                String s = ((ByteString) ref).toStringUtf8();
-                this.attackTag_ = s;
-                return s;
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
-            public ByteString getAttackTagBytes() {
-                Object ref = this.attackTag_;
-                if (!(ref instanceof String)) {
-                    return (ByteString) ref;
-                }
-                ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.attackTag_ = b;
-                return b;
-            }
-
-            public Builder setAttackTag(String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.attackTag_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearAttackTag() {
-                this.attackTag_ = AvatarLifeStateChangeNotify.getDefaultInstance().getAttackTag();
-                onChanged();
-                return this;
-            }
-
-            public Builder setAttackTagBytes(ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                AvatarLifeStateChangeNotify.checkByteStringIsUtf8(value);
-                this.attackTag_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AvatarLifeStateChangeNotifyOuterClass.AvatarLifeStateChangeNotifyOrBuilder
-            public long getAvatarGuid() {
-                return this.avatarGuid_;
-            }
-
-            public Builder setAvatarGuid(long value) {
-                this.avatarGuid_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearAvatarGuid() {
-                this.avatarGuid_ = 0;
-                onChanged();
-                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

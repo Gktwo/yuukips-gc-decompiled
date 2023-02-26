@@ -13,31 +13,31 @@ public final class XorWowRandom extends Random implements Serializable {
     private static final Companion Companion = new Companion(null);
 
     /* renamed from: x */
-    private int f3090x;
+    private int f3054x;
 
     /* renamed from: y */
-    private int f3091y;
+    private int f3055y;
 
     /* renamed from: z */
-    private int f3092z;
+    private int f3056z;
 
     /* renamed from: w */
-    private int f3093w;
+    private int f3057w;
 
     /* renamed from: v */
-    private int f3094v;
+    private int f3058v;
     private int addend;
     @Deprecated
     private static final long serialVersionUID = 0;
 
     public XorWowRandom(int x, int y, int z, int w, int v, int addend) {
-        this.f3090x = x;
-        this.f3091y = y;
-        this.f3092z = z;
-        this.f3093w = w;
-        this.f3094v = v;
+        this.f3054x = x;
+        this.f3055y = y;
+        this.f3056z = z;
+        this.f3057w = w;
+        this.f3058v = v;
         this.addend = addend;
-        if (!(((((this.f3090x | this.f3091y) | this.f3092z) | this.f3093w) | this.f3094v) != 0)) {
+        if (!(((((this.f3054x | this.f3055y) | this.f3056z) | this.f3057w) | this.f3058v) != 0)) {
             throw new IllegalArgumentException("Initial state must have at least one non-zero element.".toString());
         }
         for (int i = 0; i < 64; i++) {
@@ -51,15 +51,15 @@ public final class XorWowRandom extends Random implements Serializable {
 
     @Override // kotlin.random.Random
     public int nextInt() {
-        int t = this.f3090x;
+        int t = this.f3054x;
         int t2 = t ^ (t >>> 2);
-        this.f3090x = this.f3091y;
-        this.f3091y = this.f3092z;
-        this.f3092z = this.f3093w;
-        int v0 = this.f3094v;
-        this.f3093w = v0;
+        this.f3054x = this.f3055y;
+        this.f3055y = this.f3056z;
+        this.f3056z = this.f3057w;
+        int v0 = this.f3058v;
+        this.f3057w = v0;
         int t3 = ((t2 ^ (t2 << 1)) ^ v0) ^ (v0 << 4);
-        this.f3094v = t3;
+        this.f3058v = t3;
         this.addend += 362437;
         return t3 + this.addend;
     }

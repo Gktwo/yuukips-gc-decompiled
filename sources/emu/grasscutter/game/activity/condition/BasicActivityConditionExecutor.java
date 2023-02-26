@@ -28,8 +28,8 @@ public class BasicActivityConditionExecutor implements ActivityConditionExecutor
 
     @Override // emu.grasscutter.game.activity.condition.ActivityConditionExecutor
     public List<Integer> getMeetActivitiesConditions(List<Integer> condIds) {
-        return (List) condIds.stream().filter((v1) -> {
-            return meetsCondition(v1);
+        return (List) condIds.stream().filter(arg0 -> {
+            return meetsCondition(arg0.intValue());
         }).collect(Collectors.toList());
     }
 
@@ -66,8 +66,8 @@ public class BasicActivityConditionExecutor implements ActivityConditionExecutor
                   (r1 I:emu.grasscutter.data.excels.ActivityCondExcelConfigData$ActivityConfigCondition)
                   (r2 I:emu.grasscutter.game.activity.PlayerActivityData)
                   (r3 I:emu.grasscutter.game.activity.ActivityConfigItem)
-                 type: VIRTUAL call: emu.grasscutter.game.activity.condition.BasicActivityConditionExecutor.lambda$meetsCondition$0(emu.grasscutter.data.excels.ActivityCondExcelConfigData$ActivityConfigCondition, emu.grasscutter.game.activity.PlayerActivityData, emu.grasscutter.game.activity.ActivityConfigItem):boolean)
-                 in method: emu.grasscutter.game.activity.condition.BasicActivityConditionExecutor.lambda$meetsCondition$1(emu.grasscutter.game.activity.PlayerActivityData, emu.grasscutter.game.activity.ActivityConfigItem, emu.grasscutter.data.excels.ActivityCondExcelConfigData$ActivityConfigCondition):java.util.function.BooleanSupplier, file: grasscutter.jar:emu/grasscutter/game/activity/condition/BasicActivityConditionExecutor.class
+                 type: VIRTUAL call: emu.grasscutter.game.activity.condition.BasicActivityConditionExecutor.lambda$meetsCondition$1(emu.grasscutter.data.excels.ActivityCondExcelConfigData$ActivityConfigCondition, emu.grasscutter.game.activity.PlayerActivityData, emu.grasscutter.game.activity.ActivityConfigItem):boolean)
+                 in method: emu.grasscutter.game.activity.condition.BasicActivityConditionExecutor.lambda$meetsCondition$2(emu.grasscutter.game.activity.PlayerActivityData, emu.grasscutter.game.activity.ActivityConfigItem, emu.grasscutter.data.excels.ActivityCondExcelConfigData$ActivityConfigCondition):java.util.function.BooleanSupplier, file: grasscutter.jar:emu/grasscutter/game/activity/condition/BasicActivityConditionExecutor.class
                 	at jadx.core.codegen.InsnGen.makeInsn(InsnGen.java:285)
                 	at jadx.core.codegen.InsnGen.makeInsn(InsnGen.java:248)
                 	at jadx.core.codegen.RegionGen.makeSimpleBlock(RegionGen.java:105)
@@ -155,11 +155,11 @@ public class BasicActivityConditionExecutor implements ActivityConditionExecutor
                 r2 = r6
                 r3 = r7
                 java.util.function.BooleanSupplier r0 = () -> { // java.util.function.BooleanSupplier.getAsBoolean():boolean
-                    return r0.lambda$meetsCondition$0(r1, r2, r3);
+                    return r0.lambda$meetsCondition$1(r1, r2, r3);
                 }
                 return r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: emu.grasscutter.game.activity.condition.BasicActivityConditionExecutor.lambda$meetsCondition$1(emu.grasscutter.game.activity.PlayerActivityData, emu.grasscutter.game.activity.ActivityConfigItem, emu.grasscutter.data.excels.ActivityCondExcelConfigData$ActivityConfigCondition):java.util.function.BooleanSupplier");
+            throw new UnsupportedOperationException("Method not decompiled: emu.grasscutter.game.activity.condition.BasicActivityConditionExecutor.lambda$meetsCondition$2(emu.grasscutter.game.activity.PlayerActivityData, emu.grasscutter.game.activity.ActivityConfigItem, emu.grasscutter.data.excels.ActivityCondExcelConfigData$ActivityConfigCondition):java.util.function.BooleanSupplier");
         }).collect(Collectors.toList()));
     }
 }

@@ -5,21 +5,21 @@ public class BadHttpRequest extends Exception {
     private static final long serialVersionUID = 1;
 
     /* renamed from: e */
-    private Exception f3081e;
+    private Exception f3045e;
 
     public BadHttpRequest() {
-        this.f3081e = null;
+        this.f3045e = null;
     }
 
     public BadHttpRequest(Exception _e) {
-        this.f3081e = _e;
+        this.f3045e = _e;
     }
 
     @Override // java.lang.Throwable, java.lang.Object
     public String toString() {
-        if (this.f3081e == null) {
+        if (this.f3045e == null) {
             return toString();
         }
-        return this.f3081e.toString();
+        return this.f3045e.toString();
     }
 }

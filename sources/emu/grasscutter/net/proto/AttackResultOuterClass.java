@@ -15,7 +15,6 @@ import com.google.protobuf.MessageOrBuilder;
 import com.google.protobuf.Parser;
 import com.google.protobuf.SingleFieldBuilderV3;
 import com.google.protobuf.UnknownFieldSet;
-import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AbilityIdentifierOuterClass;
 import emu.grasscutter.net.proto.AttackHitEffectResultOuterClass;
 import emu.grasscutter.net.proto.HitCollisionOuterClass;
@@ -26,35 +25,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AttackResultOuterClass.class */
 public final class AttackResultOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012AttackResult.proto\u001a\u0017AbilityIdentifier.proto\u001a\u001bAttackHitEffectResult.proto\u001a\u0012HitCollision.proto\u001a\fVector.proto\"Û\u0006\n\fAttackResult\u0012\u0012\n\ndefense_id\u0018\u0002 \u0001(\r\u0012\u0013\n\u000battacker_id\u0018\u0001 \u0001(\r\u0012\u0014\n\u000btarget_type\u0018Î\u000e \u0001(\r\u0012\u0015\n\fendure_delta\u0018£\u0006 \u0001(\u0002\u0012\u001c\n\u0013Unk3300_DOMAOPGPHMD\u0018Æ\u0003 \u0001(\b\u0012\u0014\n\felement_type\u0018\f \u0001(\r\u0012\u001c\n\u0013Unk3300_BALCPHMFIBC\u0018\u000b \u0001(\r\u0012\u000e\n\u0006damage\u0018\n \u0001(\u0002\u0012\u001d\n\u0014hashed_anim_event_id\u0018Û\b \u0001(\r\u0012\u0016\n\rcritical_rand\u0018\u0005 \u0001(\r\u0012\u001c\n\u0013Unk3300_ABJJNNNKGBB\u0018Î\r \u0001(\r\u0012\u001c\n\u0013Unk3300_KPKAECBFABP\u0018Ü\u000f \u0001(\r\u0012.\n\u000ehit_eff_result\u0018\b \u0001(\u000b2\u0016.AttackHitEffectResult\u0012\u0014\n\fendure_break\u0018\u000e \u0001(\r\u0012.\n\u0012ability_identifier\u0018\u0007 \u0001(\u000b2\u0012.AbilityIdentifier\u0012\u0014\n\fhit_pos_type\u0018\u0003 \u0001(\r\u0012\u001c\n\u0013attack_timestamp_ms\u0018ö\r \u0001(\r\u0012\u0016\n\rdamage_shield\u0018\u000f \u0001(\u0002\u0012\u0015\n\fattack_count\u0018Ì\u000b \u0001(\r\u0012\u0017\n\u000eis_resist_text\u0018ù\u0004 \u0001(\b\u0012 \n\u0018hit_retreat_angle_compat\u0018\u0005 \u0001(\u0005\u0012$\n\rhit_collision\u0018\u000f \u0001(\u000b2\r.HitCollision\u0012\u001c\n\u0013Unk3300_MGIMJGMIPLD\u0018Ü\u0005 \u0001(\b\u0012\u000f\n\u0007is_crit\u0018\u0006 \u0001(\b\u0012\u001d\n\fresolved_dir\u0018\u000b \u0001(\u000b2\u0007.Vector\u0012\u001c\n\u0014element_amplify_rate\u0018\u001c \u0001(\u0002\u0012\u0015\n\ranim_event_id\u0018\u0004 \u0001(\t\u0012\u001c\n\u0013Unk3300_GBPJCELJKJA\u0018´\u000e \u0001(\r\u0012\u001c\n\u0013Unk3300_JMJHGJCAOBH\u0018\u0007 \u0001(\r\u0012'\n\u001eelement_durability_attenuation\u0018\u0006 \u0001(\u0002B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityIdentifierOuterClass.getDescriptor(), AttackHitEffectResultOuterClass.getDescriptor(), HitCollisionOuterClass.getDescriptor(), VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012AttackResult.proto\u001a\u001bAttackHitEffectResult.proto\u001a\u0017AbilityIdentifier.proto\u001a\u0012HitCollision.proto\u001a\fVector.proto\"º\u0006\n\fAttackResult\u0012\u0013\n\u000bendureBreak\u0018\u0006 \u0001(\r\u0012\u001c\n\u0013Unk3300_BALCPHMFIBC\u0018\u000f \u0001(\r\u0012\u000e\n\u0006damage\u0018\f \u0001(\u0002\u0012\u000e\n\u0006isCrit\u0018\t \u0001(\b\u0012,\n\fhitEffResult\u0018\u0005 \u0001(\u000b2\u0016.AttackHitEffectResult\u0012%\n\u001celementDurabilityAttenuation\u0018µ\n \u0001(\u0002\u0012\u0015\n\fdamageShield\u0018Æ\u0001 \u0001(\u0002\u0012\u001c\n\u0013Unk3300_DOMAOPGPHMD\u0018¢\r \u0001(\b\u0012\u0013\n\u000belementType\u0018\u0001 \u0001(\r\u0012\u0013\n\ntargetType\u0018Ú\u0002 \u0001(\r\u0012\u001c\n\u0013Unk3300_MGIMJGMIPLD\u0018\u0004 \u0001(\b\u0012\u0015\n\fcriticalRand\u0018¨\f \u0001(\r\u0012-\n\u0011abilityIdentifier\u0018\u0002 \u0001(\u000b2\u0012.AbilityIdentifier\u0012#\n\fhitCollision\u0018\u000e \u0001(\u000b2\r.HitCollision\u0012\u001a\n\u0011attackTimestampMs\u0018¥\u000e \u0001(\r\u0012\u0012\n\nattackerId\u0018\u0004 \u0001(\r\u0012\u0013\n\u000banimEventId\u0018\u000b \u0001(\t\u0012\u001d\n\u0015hitRetreatAngleCompat\u0018\u000f \u0001(\u0005\u0012\u001b\n\u0013Unk3300_JMJHGJCAOBH\u00187 \u0001(\r\u0012\u0011\n\tdefenseId\u0018\r \u0001(\r\u0012\u0015\n\fisResistText\u0018«\u0004 \u0001(\b\u0012\u0014\n\u000battackCount\u0018¹\f \u0001(\r\u0012\u001c\n\u000bresolvedDir\u0018\b \u0001(\u000b2\u0007.Vector\u0012\u0012\n\nhitPosType\u0018\u0007 \u0001(\r\u0012\u001a\n\u0011hashedAnimEventId\u0018Ù\u000f \u0001(\r\u0012\u001c\n\u0013Unk3300_KPKAECBFABP\u0018¡\f \u0001(\r\u0012\u0014\n\u000bendureDelta\u0018\t \u0001(\u0002\u0012\u001c\n\u0013Unk3300_GBPJCELJKJA\u0018½\u0005 \u0001(\r\u0012\u001b\n\u0012elementAmplifyRate\u0018Â\u000e \u0001(\u0002\u0012\u001c\n\u0013Unk3300_ABJJNNNKGBB\u0018ø\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AttackHitEffectResultOuterClass.getDescriptor(), AbilityIdentifierOuterClass.getDescriptor(), HitCollisionOuterClass.getDescriptor(), VectorOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AttackResult_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AttackResult_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AttackResult_descriptor, new String[]{"DefenseId", "AttackerId", "TargetType", "EndureDelta", "Unk3300DOMAOPGPHMD", "ElementType", "Unk3300BALCPHMFIBC", "Damage", "HashedAnimEventId", "CriticalRand", "Unk3300ABJJNNNKGBB", "Unk3300KPKAECBFABP", "HitEffResult", "EndureBreak", "AbilityIdentifier", "HitPosType", "AttackTimestampMs", "DamageShield", "AttackCount", "IsResistText", "HitRetreatAngleCompat", "HitCollision", "Unk3300MGIMJGMIPLD", "IsCrit", "ResolvedDir", "ElementAmplifyRate", "AnimEventId", "Unk3300GBPJCELJKJA", "Unk3300JMJHGJCAOBH", "ElementDurabilityAttenuation"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AttackResult_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AttackResult_descriptor, new String[]{"EndureBreak", "Unk3300BALCPHMFIBC", "Damage", "IsCrit", "HitEffResult", "ElementDurabilityAttenuation", "DamageShield", "Unk3300DOMAOPGPHMD", "ElementType", "TargetType", "Unk3300MGIMJGMIPLD", "CriticalRand", "AbilityIdentifier", "HitCollision", "AttackTimestampMs", "AttackerId", "AnimEventId", "HitRetreatAngleCompat", "Unk3300JMJHGJCAOBH", "DefenseId", "IsResistText", "AttackCount", "ResolvedDir", "HitPosType", "HashedAnimEventId", "Unk3300KPKAECBFABP", "EndureDelta", "Unk3300GBPJCELJKJA", "ElementAmplifyRate", "Unk3300ABJJNNNKGBB"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AttackResultOuterClass$AttackResultOrBuilder.class */
     public interface AttackResultOrBuilder extends MessageOrBuilder {
-        int getDefenseId();
-
-        int getAttackerId();
-
-        int getTargetType();
-
-        float getEndureDelta();
-
-        boolean getUnk3300DOMAOPGPHMD();
-
-        int getElementType();
+        int getEndureBreak();
 
         int getUnk3300BALCPHMFIBC();
 
         float getDamage();
 
-        int getHashedAnimEventId();
-
-        int getCriticalRand();
-
-        int getUnk3300ABJJNNNKGBB();
-
-        int getUnk3300KPKAECBFABP();
+        boolean getIsCrit();
 
         boolean hasHitEffResult();
 
@@ -62,7 +45,19 @@ public final class AttackResultOuterClass {
 
         AttackHitEffectResultOuterClass.AttackHitEffectResultOrBuilder getHitEffResultOrBuilder();
 
-        int getEndureBreak();
+        float getElementDurabilityAttenuation();
+
+        float getDamageShield();
+
+        boolean getUnk3300DOMAOPGPHMD();
+
+        int getElementType();
+
+        int getTargetType();
+
+        boolean getUnk3300MGIMJGMIPLD();
+
+        int getCriticalRand();
 
         boolean hasAbilityIdentifier();
 
@@ -70,27 +65,29 @@ public final class AttackResultOuterClass {
 
         AbilityIdentifierOuterClass.AbilityIdentifierOrBuilder getAbilityIdentifierOrBuilder();
 
-        int getHitPosType();
-
-        int getAttackTimestampMs();
-
-        float getDamageShield();
-
-        int getAttackCount();
-
-        boolean getIsResistText();
-
-        int getHitRetreatAngleCompat();
-
         boolean hasHitCollision();
 
         HitCollisionOuterClass.HitCollision getHitCollision();
 
         HitCollisionOuterClass.HitCollisionOrBuilder getHitCollisionOrBuilder();
 
-        boolean getUnk3300MGIMJGMIPLD();
+        int getAttackTimestampMs();
 
-        boolean getIsCrit();
+        int getAttackerId();
+
+        String getAnimEventId();
+
+        ByteString getAnimEventIdBytes();
+
+        int getHitRetreatAngleCompat();
+
+        int getUnk3300JMJHGJCAOBH();
+
+        int getDefenseId();
+
+        boolean getIsResistText();
+
+        int getAttackCount();
 
         boolean hasResolvedDir();
 
@@ -98,17 +95,19 @@ public final class AttackResultOuterClass {
 
         VectorOuterClass.VectorOrBuilder getResolvedDirOrBuilder();
 
-        float getElementAmplifyRate();
+        int getHitPosType();
 
-        String getAnimEventId();
+        int getHashedAnimEventId();
 
-        ByteString getAnimEventIdBytes();
+        int getUnk3300KPKAECBFABP();
+
+        float getEndureDelta();
 
         int getUnk3300GBPJCELJKJA();
 
-        int getUnk3300JMJHGJCAOBH();
+        float getElementAmplifyRate();
 
-        float getElementDurabilityAttenuation();
+        int getUnk3300ABJJNNNKGBB();
     }
 
     private AttackResultOuterClass() {
@@ -124,66 +123,66 @@ public final class AttackResultOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AttackResultOuterClass$AttackResult.class */
     public static final class AttackResult extends GeneratedMessageV3 implements AttackResultOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int DEFENSE_ID_FIELD_NUMBER = 2;
-        private int defenseId_;
-        public static final int ATTACKER_ID_FIELD_NUMBER = 1;
-        private int attackerId_;
-        public static final int TARGET_TYPE_FIELD_NUMBER = 1870;
-        private int targetType_;
-        public static final int ENDURE_DELTA_FIELD_NUMBER = 803;
-        private float endureDelta_;
-        public static final int UNK3300_DOMAOPGPHMD_FIELD_NUMBER = 454;
-        private boolean unk3300DOMAOPGPHMD_;
-        public static final int ELEMENT_TYPE_FIELD_NUMBER = 12;
-        private int elementType_;
-        public static final int UNK3300_BALCPHMFIBC_FIELD_NUMBER = 1438;
-        private int unk3300BALCPHMFIBC_;
-        public static final int DAMAGE_FIELD_NUMBER = 10;
-        private float damage_;
-        public static final int HASHED_ANIM_EVENT_ID_FIELD_NUMBER = 1115;
-        private int hashedAnimEventId_;
-        public static final int CRITICAL_RAND_FIELD_NUMBER = 645;
-        private int criticalRand_;
-        public static final int UNK3300_ABJJNNNKGBB_FIELD_NUMBER = 1742;
-        private int unk3300ABJJNNNKGBB_;
-        public static final int UNK3300_KPKAECBFABP_FIELD_NUMBER = 2012;
-        private int unk3300KPKAECBFABP_;
-        public static final int HIT_EFF_RESULT_FIELD_NUMBER = 8;
-        private AttackHitEffectResultOuterClass.AttackHitEffectResult hitEffResult_;
-        public static final int ENDURE_BREAK_FIELD_NUMBER = 14;
+        public static final int ENDUREBREAK_FIELD_NUMBER = 6;
         private int endureBreak_;
-        public static final int ABILITY_IDENTIFIER_FIELD_NUMBER = 7;
-        private AbilityIdentifierOuterClass.AbilityIdentifier abilityIdentifier_;
-        public static final int HIT_POS_TYPE_FIELD_NUMBER = 3;
-        private int hitPosType_;
-        public static final int ATTACK_TIMESTAMP_MS_FIELD_NUMBER = 1782;
-        private int attackTimestampMs_;
-        public static final int DAMAGE_SHIELD_FIELD_NUMBER = 1932;
-        private float damageShield_;
-        public static final int ATTACK_COUNT_FIELD_NUMBER = 1484;
-        private int attackCount_;
-        public static final int IS_RESIST_TEXT_FIELD_NUMBER = 633;
-        private boolean isResistText_;
-        public static final int HIT_RETREAT_ANGLE_COMPAT_FIELD_NUMBER = 5;
-        private int hitRetreatAngleCompat_;
-        public static final int HIT_COLLISION_FIELD_NUMBER = 15;
-        private HitCollisionOuterClass.HitCollision hitCollision_;
-        public static final int UNK3300_MGIMJGMIPLD_FIELD_NUMBER = 732;
-        private boolean unk3300MGIMJGMIPLD_;
-        public static final int IS_CRIT_FIELD_NUMBER = 6;
+        public static final int UNK3300_BALCPHMFIBC_FIELD_NUMBER = 1940;
+        private int unk3300BALCPHMFIBC_;
+        public static final int DAMAGE_FIELD_NUMBER = 12;
+        private float damage_;
+        public static final int ISCRIT_FIELD_NUMBER = 9;
         private boolean isCrit_;
-        public static final int RESOLVED_DIR_FIELD_NUMBER = 11;
-        private VectorOuterClass.Vector resolvedDir_;
-        public static final int ELEMENT_AMPLIFY_RATE_FIELD_NUMBER = 28;
-        private float elementAmplifyRate_;
-        public static final int ANIM_EVENT_ID_FIELD_NUMBER = 4;
-        private volatile Object animEventId_;
-        public static final int UNK3300_GBPJCELJKJA_FIELD_NUMBER = 1844;
-        private int unk3300GBPJCELJKJA_;
-        public static final int UNK3300_JMJHGJCAOBH_FIELD_NUMBER = 914;
-        private int unk3300JMJHGJCAOBH_;
-        public static final int ELEMENT_DURABILITY_ATTENUATION_FIELD_NUMBER = 775;
+        public static final int HITEFFRESULT_FIELD_NUMBER = 5;
+        private AttackHitEffectResultOuterClass.AttackHitEffectResult hitEffResult_;
+        public static final int ELEMENTDURABILITYATTENUATION_FIELD_NUMBER = 1333;
         private float elementDurabilityAttenuation_;
+        public static final int DAMAGESHIELD_FIELD_NUMBER = 198;
+        private float damageShield_;
+        public static final int UNK3300_DOMAOPGPHMD_FIELD_NUMBER = 1698;
+        private boolean unk3300DOMAOPGPHMD_;
+        public static final int ELEMENTTYPE_FIELD_NUMBER = 1;
+        private int elementType_;
+        public static final int TARGETTYPE_FIELD_NUMBER = 346;
+        private int targetType_;
+        public static final int UNK3300_MGIMJGMIPLD_FIELD_NUMBER = 531;
+        private boolean unk3300MGIMJGMIPLD_;
+        public static final int CRITICALRAND_FIELD_NUMBER = 1576;
+        private int criticalRand_;
+        public static final int ABILITYIDENTIFIER_FIELD_NUMBER = 2;
+        private AbilityIdentifierOuterClass.AbilityIdentifier abilityIdentifier_;
+        public static final int HITCOLLISION_FIELD_NUMBER = 14;
+        private HitCollisionOuterClass.HitCollision hitCollision_;
+        public static final int ATTACKTIMESTAMPMS_FIELD_NUMBER = 1829;
+        private int attackTimestampMs_;
+        public static final int ATTACKERID_FIELD_NUMBER = 4;
+        private int attackerId_;
+        public static final int ANIMEVENTID_FIELD_NUMBER = 11;
+        private volatile Object animEventId_;
+        public static final int HITRETREATANGLECOMPAT_FIELD_NUMBER = 15;
+        private int hitRetreatAngleCompat_;
+        public static final int UNK3300_JMJHGJCAOBH_FIELD_NUMBER = 55;
+        private int unk3300JMJHGJCAOBH_;
+        public static final int DEFENSEID_FIELD_NUMBER = 13;
+        private int defenseId_;
+        public static final int ISRESISTTEXT_FIELD_NUMBER = 555;
+        private boolean isResistText_;
+        public static final int ATTACKCOUNT_FIELD_NUMBER = 1593;
+        private int attackCount_;
+        public static final int RESOLVEDDIR_FIELD_NUMBER = 8;
+        private VectorOuterClass.Vector resolvedDir_;
+        public static final int HITPOSTYPE_FIELD_NUMBER = 7;
+        private int hitPosType_;
+        public static final int HASHEDANIMEVENTID_FIELD_NUMBER = 2009;
+        private int hashedAnimEventId_;
+        public static final int UNK3300_KPKAECBFABP_FIELD_NUMBER = 1569;
+        private int unk3300KPKAECBFABP_;
+        public static final int ENDUREDELTA_FIELD_NUMBER = 1169;
+        private float endureDelta_;
+        public static final int UNK3300_GBPJCELJKJA_FIELD_NUMBER = 701;
+        private int unk3300GBPJCELJKJA_;
+        public static final int ELEMENTAMPLIFYRATE_FIELD_NUMBER = 1858;
+        private float elementAmplifyRate_;
+        public static final int UNK3300_ABJJNNNKGBB_FIELD_NUMBER = 888;
+        private int unk3300ABJJNNNKGBB_;
         private byte memoizedIsInitialized;
         private static final AttackResult DEFAULT_INSTANCE = new AttackResult();
         private static final Parser<AttackResult> PARSER = new AbstractParser<AttackResult>() { // from class: emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult.1
@@ -231,24 +230,9 @@ public final class AttackResultOuterClass {
                                 done = true;
                                 break;
                             case 8:
-                                this.attackerId_ = input.readUInt32();
+                                this.elementType_ = input.readUInt32();
                                 break;
-                            case 16:
-                                this.defenseId_ = input.readUInt32();
-                                break;
-                            case 24:
-                                this.hitPosType_ = input.readUInt32();
-                                break;
-                            case 34:
-                                this.animEventId_ = input.readStringRequireUtf8();
-                                break;
-                            case 40:
-                                this.hitRetreatAngleCompat_ = input.readInt32();
-                                break;
-                            case 48:
-                                this.isCrit_ = input.readBool();
-                                break;
-                            case 58:
+                            case 18:
                                 AbilityIdentifierOuterClass.AbilityIdentifier.Builder subBuilder = this.abilityIdentifier_ != null ? this.abilityIdentifier_.toBuilder() : null;
                                 this.abilityIdentifier_ = (AbilityIdentifierOuterClass.AbilityIdentifier) input.readMessage(AbilityIdentifierOuterClass.AbilityIdentifier.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -258,7 +242,10 @@ public final class AttackResultOuterClass {
                                     this.abilityIdentifier_ = subBuilder.buildPartial();
                                     break;
                                 }
-                            case 66:
+                            case 32:
+                                this.attackerId_ = input.readUInt32();
+                                break;
+                            case 42:
                                 AttackHitEffectResultOuterClass.AttackHitEffectResult.Builder subBuilder2 = this.hitEffResult_ != null ? this.hitEffResult_.toBuilder() : null;
                                 this.hitEffResult_ = (AttackHitEffectResultOuterClass.AttackHitEffectResult) input.readMessage(AttackHitEffectResultOuterClass.AttackHitEffectResult.parser(), extensionRegistry);
                                 if (subBuilder2 == null) {
@@ -268,10 +255,13 @@ public final class AttackResultOuterClass {
                                     this.hitEffResult_ = subBuilder2.buildPartial();
                                     break;
                                 }
-                            case 85:
-                                this.damage_ = input.readFloat();
+                            case 48:
+                                this.endureBreak_ = input.readUInt32();
                                 break;
-                            case 90:
+                            case 56:
+                                this.hitPosType_ = input.readUInt32();
+                                break;
+                            case 66:
                                 VectorOuterClass.Vector.Builder subBuilder3 = this.resolvedDir_ != null ? this.resolvedDir_.toBuilder() : null;
                                 this.resolvedDir_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
                                 if (subBuilder3 == null) {
@@ -281,13 +271,19 @@ public final class AttackResultOuterClass {
                                     this.resolvedDir_ = subBuilder3.buildPartial();
                                     break;
                                 }
-                            case 96:
-                                this.elementType_ = input.readUInt32();
+                            case 72:
+                                this.isCrit_ = input.readBool();
                                 break;
-                            case 112:
-                                this.endureBreak_ = input.readUInt32();
+                            case 90:
+                                this.animEventId_ = input.readStringRequireUtf8();
                                 break;
-                            case 122:
+                            case 101:
+                                this.damage_ = input.readFloat();
+                                break;
+                            case 104:
+                                this.defenseId_ = input.readUInt32();
+                                break;
+                            case 114:
                                 HitCollisionOuterClass.HitCollision.Builder subBuilder4 = this.hitCollision_ != null ? this.hitCollision_.toBuilder() : null;
                                 this.hitCollision_ = (HitCollisionOuterClass.HitCollision) input.readMessage(HitCollisionOuterClass.HitCollision.parser(), extensionRegistry);
                                 if (subBuilder4 == null) {
@@ -297,56 +293,59 @@ public final class AttackResultOuterClass {
                                     this.hitCollision_ = subBuilder4.buildPartial();
                                     break;
                                 }
-                            case PacketOpcodes.WorldPlayerReviveReq:
-                                this.elementAmplifyRate_ = input.readFloat();
+                            case 120:
+                                this.hitRetreatAngleCompat_ = input.readInt32();
                                 break;
-                            case 3632:
-                                this.unk3300DOMAOPGPHMD_ = input.readBool();
-                                break;
-                            case 5064:
-                                this.isResistText_ = input.readBool();
-                                break;
-                            case 5160:
-                                this.criticalRand_ = input.readUInt32();
-                                break;
-                            case 5856:
-                                this.unk3300MGIMJGMIPLD_ = input.readBool();
-                                break;
-                            case PacketOpcodes.GetCustomDungeonReq:
-                                this.elementDurabilityAttenuation_ = input.readFloat();
-                                break;
-                            case 6429:
-                                this.endureDelta_ = input.readFloat();
-                                break;
-                            case 7312:
+                            case 440:
                                 this.unk3300JMJHGJCAOBH_ = input.readUInt32();
                                 break;
-                            case 8920:
-                                this.hashedAnimEventId_ = input.readUInt32();
-                                break;
-                            case 11504:
-                                this.unk3300BALCPHMFIBC_ = input.readUInt32();
-                                break;
-                            case 11872:
-                                this.attackCount_ = input.readUInt32();
-                                break;
-                            case 13936:
-                                this.unk3300ABJJNNNKGBB_ = input.readUInt32();
-                                break;
-                            case 14256:
-                                this.attackTimestampMs_ = input.readUInt32();
-                                break;
-                            case 14752:
-                                this.unk3300GBPJCELJKJA_ = input.readUInt32();
-                                break;
-                            case 14960:
-                                this.targetType_ = input.readUInt32();
-                                break;
-                            case 15461:
+                            case RET_WIDGET_FEATHER_GADGET_TOO_FAR_AWAY_VALUE:
                                 this.damageShield_ = input.readFloat();
                                 break;
-                            case 16096:
+                            case 2768:
+                                this.targetType_ = input.readUInt32();
+                                break;
+                            case 4248:
+                                this.unk3300MGIMJGMIPLD_ = input.readBool();
+                                break;
+                            case 4440:
+                                this.isResistText_ = input.readBool();
+                                break;
+                            case 5608:
+                                this.unk3300GBPJCELJKJA_ = input.readUInt32();
+                                break;
+                            case RET_CITY_REPUTATION_PARENT_QUEST_TAKEN_VALUE:
+                                this.unk3300ABJJNNNKGBB_ = input.readUInt32();
+                                break;
+                            case 9357:
+                                this.endureDelta_ = input.readFloat();
+                                break;
+                            case 10669:
+                                this.elementDurabilityAttenuation_ = input.readFloat();
+                                break;
+                            case 12552:
                                 this.unk3300KPKAECBFABP_ = input.readUInt32();
+                                break;
+                            case 12608:
+                                this.criticalRand_ = input.readUInt32();
+                                break;
+                            case 12744:
+                                this.attackCount_ = input.readUInt32();
+                                break;
+                            case 13584:
+                                this.unk3300DOMAOPGPHMD_ = input.readBool();
+                                break;
+                            case 14632:
+                                this.attackTimestampMs_ = input.readUInt32();
+                                break;
+                            case 14869:
+                                this.elementAmplifyRate_ = input.readFloat();
+                                break;
+                            case 15520:
+                                this.unk3300BALCPHMFIBC_ = input.readUInt32();
+                                break;
+                            case 16072:
+                                this.hashedAnimEventId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -378,33 +377,8 @@ public final class AttackResultOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public int getDefenseId() {
-            return this.defenseId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public int getAttackerId() {
-            return this.attackerId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public int getTargetType() {
-            return this.targetType_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public float getEndureDelta() {
-            return this.endureDelta_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public boolean getUnk3300DOMAOPGPHMD() {
-            return this.unk3300DOMAOPGPHMD_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public int getElementType() {
-            return this.elementType_;
+        public int getEndureBreak() {
+            return this.endureBreak_;
         }
 
         @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
@@ -418,23 +392,8 @@ public final class AttackResultOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public int getHashedAnimEventId() {
-            return this.hashedAnimEventId_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public int getCriticalRand() {
-            return this.criticalRand_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public int getUnk3300ABJJNNNKGBB() {
-            return this.unk3300ABJJNNNKGBB_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public int getUnk3300KPKAECBFABP() {
-            return this.unk3300KPKAECBFABP_;
+        public boolean getIsCrit() {
+            return this.isCrit_;
         }
 
         @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
@@ -453,8 +412,38 @@ public final class AttackResultOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public int getEndureBreak() {
-            return this.endureBreak_;
+        public float getElementDurabilityAttenuation() {
+            return this.elementDurabilityAttenuation_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+        public float getDamageShield() {
+            return this.damageShield_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+        public boolean getUnk3300DOMAOPGPHMD() {
+            return this.unk3300DOMAOPGPHMD_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+        public int getElementType() {
+            return this.elementType_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+        public int getTargetType() {
+            return this.targetType_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+        public boolean getUnk3300MGIMJGMIPLD() {
+            return this.unk3300MGIMJGMIPLD_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+        public int getCriticalRand() {
+            return this.criticalRand_;
         }
 
         @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
@@ -473,36 +462,6 @@ public final class AttackResultOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public int getHitPosType() {
-            return this.hitPosType_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public int getAttackTimestampMs() {
-            return this.attackTimestampMs_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public float getDamageShield() {
-            return this.damageShield_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public int getAttackCount() {
-            return this.attackCount_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public boolean getIsResistText() {
-            return this.isResistText_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public int getHitRetreatAngleCompat() {
-            return this.hitRetreatAngleCompat_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
         public boolean hasHitCollision() {
             return this.hitCollision_ != null;
         }
@@ -518,33 +477,13 @@ public final class AttackResultOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public boolean getUnk3300MGIMJGMIPLD() {
-            return this.unk3300MGIMJGMIPLD_;
+        public int getAttackTimestampMs() {
+            return this.attackTimestampMs_;
         }
 
         @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public boolean getIsCrit() {
-            return this.isCrit_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public boolean hasResolvedDir() {
-            return this.resolvedDir_ != null;
-        }
-
-        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public VectorOuterClass.Vector getResolvedDir() {
-            return this.resolvedDir_ == null ? VectorOuterClass.Vector.getDefaultInstance() : this.resolvedDir_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public VectorOuterClass.VectorOrBuilder getResolvedDirOrBuilder() {
-            return getResolvedDir();
-        }
-
-        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public float getElementAmplifyRate() {
-            return this.elementAmplifyRate_;
+        public int getAttackerId() {
+            return this.attackerId_;
         }
 
         @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
@@ -570,8 +509,8 @@ public final class AttackResultOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public int getUnk3300GBPJCELJKJA() {
-            return this.unk3300GBPJCELJKJA_;
+        public int getHitRetreatAngleCompat() {
+            return this.hitRetreatAngleCompat_;
         }
 
         @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
@@ -580,8 +519,68 @@ public final class AttackResultOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-        public float getElementDurabilityAttenuation() {
-            return this.elementDurabilityAttenuation_;
+        public int getDefenseId() {
+            return this.defenseId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+        public boolean getIsResistText() {
+            return this.isResistText_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+        public int getAttackCount() {
+            return this.attackCount_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+        public boolean hasResolvedDir() {
+            return this.resolvedDir_ != null;
+        }
+
+        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+        public VectorOuterClass.Vector getResolvedDir() {
+            return this.resolvedDir_ == null ? VectorOuterClass.Vector.getDefaultInstance() : this.resolvedDir_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+        public VectorOuterClass.VectorOrBuilder getResolvedDirOrBuilder() {
+            return getResolvedDir();
+        }
+
+        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+        public int getHitPosType() {
+            return this.hitPosType_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+        public int getHashedAnimEventId() {
+            return this.hashedAnimEventId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+        public int getUnk3300KPKAECBFABP() {
+            return this.unk3300KPKAECBFABP_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+        public float getEndureDelta() {
+            return this.endureDelta_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+        public int getUnk3300GBPJCELJKJA() {
+            return this.unk3300GBPJCELJKJA_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+        public float getElementAmplifyRate() {
+            return this.elementAmplifyRate_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+        public int getUnk3300ABJJNNNKGBB() {
+            return this.unk3300ABJJNNNKGBB_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -599,95 +598,95 @@ public final class AttackResultOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.attackerId_ != 0) {
-                output.writeUInt32(1, this.attackerId_);
-            }
-            if (this.defenseId_ != 0) {
-                output.writeUInt32(2, this.defenseId_);
-            }
-            if (this.hitPosType_ != 0) {
-                output.writeUInt32(3, this.hitPosType_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.animEventId_)) {
-                GeneratedMessageV3.writeString(output, 4, this.animEventId_);
-            }
-            if (this.hitRetreatAngleCompat_ != 0) {
-                output.writeInt32(5, this.hitRetreatAngleCompat_);
-            }
-            if (this.isCrit_) {
-                output.writeBool(6, this.isCrit_);
+            if (this.elementType_ != 0) {
+                output.writeUInt32(1, this.elementType_);
             }
             if (this.abilityIdentifier_ != null) {
-                output.writeMessage(7, getAbilityIdentifier());
+                output.writeMessage(2, getAbilityIdentifier());
+            }
+            if (this.attackerId_ != 0) {
+                output.writeUInt32(4, this.attackerId_);
             }
             if (this.hitEffResult_ != null) {
-                output.writeMessage(8, getHitEffResult());
-            }
-            if (this.damage_ != 0.0f) {
-                output.writeFloat(10, this.damage_);
-            }
-            if (this.resolvedDir_ != null) {
-                output.writeMessage(11, getResolvedDir());
-            }
-            if (this.elementType_ != 0) {
-                output.writeUInt32(12, this.elementType_);
+                output.writeMessage(5, getHitEffResult());
             }
             if (this.endureBreak_ != 0) {
-                output.writeUInt32(14, this.endureBreak_);
+                output.writeUInt32(6, this.endureBreak_);
+            }
+            if (this.hitPosType_ != 0) {
+                output.writeUInt32(7, this.hitPosType_);
+            }
+            if (this.resolvedDir_ != null) {
+                output.writeMessage(8, getResolvedDir());
+            }
+            if (this.isCrit_) {
+                output.writeBool(9, this.isCrit_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.animEventId_)) {
+                GeneratedMessageV3.writeString(output, 11, this.animEventId_);
+            }
+            if (this.damage_ != 0.0f) {
+                output.writeFloat(12, this.damage_);
+            }
+            if (this.defenseId_ != 0) {
+                output.writeUInt32(13, this.defenseId_);
             }
             if (this.hitCollision_ != null) {
-                output.writeMessage(15, getHitCollision());
+                output.writeMessage(14, getHitCollision());
             }
-            if (this.elementAmplifyRate_ != 0.0f) {
-                output.writeFloat(28, this.elementAmplifyRate_);
-            }
-            if (this.unk3300DOMAOPGPHMD_) {
-                output.writeBool(454, this.unk3300DOMAOPGPHMD_);
-            }
-            if (this.isResistText_) {
-                output.writeBool(633, this.isResistText_);
-            }
-            if (this.criticalRand_ != 0) {
-                output.writeUInt32(645, this.criticalRand_);
-            }
-            if (this.unk3300MGIMJGMIPLD_) {
-                output.writeBool(UNK3300_MGIMJGMIPLD_FIELD_NUMBER, this.unk3300MGIMJGMIPLD_);
-            }
-            if (this.elementDurabilityAttenuation_ != 0.0f) {
-                output.writeFloat(ELEMENT_DURABILITY_ATTENUATION_FIELD_NUMBER, this.elementDurabilityAttenuation_);
-            }
-            if (this.endureDelta_ != 0.0f) {
-                output.writeFloat(803, this.endureDelta_);
+            if (this.hitRetreatAngleCompat_ != 0) {
+                output.writeInt32(15, this.hitRetreatAngleCompat_);
             }
             if (this.unk3300JMJHGJCAOBH_ != 0) {
-                output.writeUInt32(UNK3300_JMJHGJCAOBH_FIELD_NUMBER, this.unk3300JMJHGJCAOBH_);
+                output.writeUInt32(55, this.unk3300JMJHGJCAOBH_);
             }
-            if (this.hashedAnimEventId_ != 0) {
-                output.writeUInt32(1115, this.hashedAnimEventId_);
+            if (this.damageShield_ != 0.0f) {
+                output.writeFloat(198, this.damageShield_);
+            }
+            if (this.targetType_ != 0) {
+                output.writeUInt32(346, this.targetType_);
+            }
+            if (this.unk3300MGIMJGMIPLD_) {
+                output.writeBool(531, this.unk3300MGIMJGMIPLD_);
+            }
+            if (this.isResistText_) {
+                output.writeBool(555, this.isResistText_);
+            }
+            if (this.unk3300GBPJCELJKJA_ != 0) {
+                output.writeUInt32(701, this.unk3300GBPJCELJKJA_);
+            }
+            if (this.unk3300ABJJNNNKGBB_ != 0) {
+                output.writeUInt32(888, this.unk3300ABJJNNNKGBB_);
+            }
+            if (this.endureDelta_ != 0.0f) {
+                output.writeFloat(1169, this.endureDelta_);
+            }
+            if (this.elementDurabilityAttenuation_ != 0.0f) {
+                output.writeFloat(1333, this.elementDurabilityAttenuation_);
+            }
+            if (this.unk3300KPKAECBFABP_ != 0) {
+                output.writeUInt32(UNK3300_KPKAECBFABP_FIELD_NUMBER, this.unk3300KPKAECBFABP_);
+            }
+            if (this.criticalRand_ != 0) {
+                output.writeUInt32(CRITICALRAND_FIELD_NUMBER, this.criticalRand_);
+            }
+            if (this.attackCount_ != 0) {
+                output.writeUInt32(1593, this.attackCount_);
+            }
+            if (this.unk3300DOMAOPGPHMD_) {
+                output.writeBool(UNK3300_DOMAOPGPHMD_FIELD_NUMBER, this.unk3300DOMAOPGPHMD_);
+            }
+            if (this.attackTimestampMs_ != 0) {
+                output.writeUInt32(ATTACKTIMESTAMPMS_FIELD_NUMBER, this.attackTimestampMs_);
+            }
+            if (this.elementAmplifyRate_ != 0.0f) {
+                output.writeFloat(ELEMENTAMPLIFYRATE_FIELD_NUMBER, this.elementAmplifyRate_);
             }
             if (this.unk3300BALCPHMFIBC_ != 0) {
                 output.writeUInt32(UNK3300_BALCPHMFIBC_FIELD_NUMBER, this.unk3300BALCPHMFIBC_);
             }
-            if (this.attackCount_ != 0) {
-                output.writeUInt32(ATTACK_COUNT_FIELD_NUMBER, this.attackCount_);
-            }
-            if (this.unk3300ABJJNNNKGBB_ != 0) {
-                output.writeUInt32(UNK3300_ABJJNNNKGBB_FIELD_NUMBER, this.unk3300ABJJNNNKGBB_);
-            }
-            if (this.attackTimestampMs_ != 0) {
-                output.writeUInt32(1782, this.attackTimestampMs_);
-            }
-            if (this.unk3300GBPJCELJKJA_ != 0) {
-                output.writeUInt32(1844, this.unk3300GBPJCELJKJA_);
-            }
-            if (this.targetType_ != 0) {
-                output.writeUInt32(1870, this.targetType_);
-            }
-            if (this.damageShield_ != 0.0f) {
-                output.writeFloat(DAMAGE_SHIELD_FIELD_NUMBER, this.damageShield_);
-            }
-            if (this.unk3300KPKAECBFABP_ != 0) {
-                output.writeUInt32(2012, this.unk3300KPKAECBFABP_);
+            if (this.hashedAnimEventId_ != 0) {
+                output.writeUInt32(2009, this.hashedAnimEventId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -699,95 +698,95 @@ public final class AttackResultOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.attackerId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.attackerId_);
-            }
-            if (this.defenseId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(2, this.defenseId_);
-            }
-            if (this.hitPosType_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(3, this.hitPosType_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.animEventId_)) {
-                size2 += GeneratedMessageV3.computeStringSize(4, this.animEventId_);
-            }
-            if (this.hitRetreatAngleCompat_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(5, this.hitRetreatAngleCompat_);
-            }
-            if (this.isCrit_) {
-                size2 += CodedOutputStream.computeBoolSize(6, this.isCrit_);
+            if (this.elementType_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.elementType_);
             }
             if (this.abilityIdentifier_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(7, getAbilityIdentifier());
+                size2 += CodedOutputStream.computeMessageSize(2, getAbilityIdentifier());
+            }
+            if (this.attackerId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(4, this.attackerId_);
             }
             if (this.hitEffResult_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(8, getHitEffResult());
-            }
-            if (this.damage_ != 0.0f) {
-                size2 += CodedOutputStream.computeFloatSize(10, this.damage_);
-            }
-            if (this.resolvedDir_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(11, getResolvedDir());
-            }
-            if (this.elementType_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.elementType_);
+                size2 += CodedOutputStream.computeMessageSize(5, getHitEffResult());
             }
             if (this.endureBreak_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.endureBreak_);
+                size2 += CodedOutputStream.computeUInt32Size(6, this.endureBreak_);
+            }
+            if (this.hitPosType_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(7, this.hitPosType_);
+            }
+            if (this.resolvedDir_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(8, getResolvedDir());
+            }
+            if (this.isCrit_) {
+                size2 += CodedOutputStream.computeBoolSize(9, this.isCrit_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.animEventId_)) {
+                size2 += GeneratedMessageV3.computeStringSize(11, this.animEventId_);
+            }
+            if (this.damage_ != 0.0f) {
+                size2 += CodedOutputStream.computeFloatSize(12, this.damage_);
+            }
+            if (this.defenseId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(13, this.defenseId_);
             }
             if (this.hitCollision_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(15, getHitCollision());
+                size2 += CodedOutputStream.computeMessageSize(14, getHitCollision());
             }
-            if (this.elementAmplifyRate_ != 0.0f) {
-                size2 += CodedOutputStream.computeFloatSize(28, this.elementAmplifyRate_);
-            }
-            if (this.unk3300DOMAOPGPHMD_) {
-                size2 += CodedOutputStream.computeBoolSize(454, this.unk3300DOMAOPGPHMD_);
-            }
-            if (this.isResistText_) {
-                size2 += CodedOutputStream.computeBoolSize(633, this.isResistText_);
-            }
-            if (this.criticalRand_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(645, this.criticalRand_);
-            }
-            if (this.unk3300MGIMJGMIPLD_) {
-                size2 += CodedOutputStream.computeBoolSize(UNK3300_MGIMJGMIPLD_FIELD_NUMBER, this.unk3300MGIMJGMIPLD_);
-            }
-            if (this.elementDurabilityAttenuation_ != 0.0f) {
-                size2 += CodedOutputStream.computeFloatSize(ELEMENT_DURABILITY_ATTENUATION_FIELD_NUMBER, this.elementDurabilityAttenuation_);
-            }
-            if (this.endureDelta_ != 0.0f) {
-                size2 += CodedOutputStream.computeFloatSize(803, this.endureDelta_);
+            if (this.hitRetreatAngleCompat_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(15, this.hitRetreatAngleCompat_);
             }
             if (this.unk3300JMJHGJCAOBH_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(UNK3300_JMJHGJCAOBH_FIELD_NUMBER, this.unk3300JMJHGJCAOBH_);
+                size2 += CodedOutputStream.computeUInt32Size(55, this.unk3300JMJHGJCAOBH_);
             }
-            if (this.hashedAnimEventId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(1115, this.hashedAnimEventId_);
+            if (this.damageShield_ != 0.0f) {
+                size2 += CodedOutputStream.computeFloatSize(198, this.damageShield_);
+            }
+            if (this.targetType_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(346, this.targetType_);
+            }
+            if (this.unk3300MGIMJGMIPLD_) {
+                size2 += CodedOutputStream.computeBoolSize(531, this.unk3300MGIMJGMIPLD_);
+            }
+            if (this.isResistText_) {
+                size2 += CodedOutputStream.computeBoolSize(555, this.isResistText_);
+            }
+            if (this.unk3300GBPJCELJKJA_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(701, this.unk3300GBPJCELJKJA_);
+            }
+            if (this.unk3300ABJJNNNKGBB_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(888, this.unk3300ABJJNNNKGBB_);
+            }
+            if (this.endureDelta_ != 0.0f) {
+                size2 += CodedOutputStream.computeFloatSize(1169, this.endureDelta_);
+            }
+            if (this.elementDurabilityAttenuation_ != 0.0f) {
+                size2 += CodedOutputStream.computeFloatSize(1333, this.elementDurabilityAttenuation_);
+            }
+            if (this.unk3300KPKAECBFABP_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(UNK3300_KPKAECBFABP_FIELD_NUMBER, this.unk3300KPKAECBFABP_);
+            }
+            if (this.criticalRand_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(CRITICALRAND_FIELD_NUMBER, this.criticalRand_);
+            }
+            if (this.attackCount_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(1593, this.attackCount_);
+            }
+            if (this.unk3300DOMAOPGPHMD_) {
+                size2 += CodedOutputStream.computeBoolSize(UNK3300_DOMAOPGPHMD_FIELD_NUMBER, this.unk3300DOMAOPGPHMD_);
+            }
+            if (this.attackTimestampMs_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(ATTACKTIMESTAMPMS_FIELD_NUMBER, this.attackTimestampMs_);
+            }
+            if (this.elementAmplifyRate_ != 0.0f) {
+                size2 += CodedOutputStream.computeFloatSize(ELEMENTAMPLIFYRATE_FIELD_NUMBER, this.elementAmplifyRate_);
             }
             if (this.unk3300BALCPHMFIBC_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(UNK3300_BALCPHMFIBC_FIELD_NUMBER, this.unk3300BALCPHMFIBC_);
             }
-            if (this.attackCount_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(ATTACK_COUNT_FIELD_NUMBER, this.attackCount_);
-            }
-            if (this.unk3300ABJJNNNKGBB_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(UNK3300_ABJJNNNKGBB_FIELD_NUMBER, this.unk3300ABJJNNNKGBB_);
-            }
-            if (this.attackTimestampMs_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(1782, this.attackTimestampMs_);
-            }
-            if (this.unk3300GBPJCELJKJA_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(1844, this.unk3300GBPJCELJKJA_);
-            }
-            if (this.targetType_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(1870, this.targetType_);
-            }
-            if (this.damageShield_ != 0.0f) {
-                size2 += CodedOutputStream.computeFloatSize(DAMAGE_SHIELD_FIELD_NUMBER, this.damageShield_);
-            }
-            if (this.unk3300KPKAECBFABP_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(2012, this.unk3300KPKAECBFABP_);
+            if (this.hashedAnimEventId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(2009, this.hashedAnimEventId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -803,17 +802,17 @@ public final class AttackResultOuterClass {
                 return equals(obj);
             }
             AttackResult other = (AttackResult) obj;
-            if (getDefenseId() != other.getDefenseId() || getAttackerId() != other.getAttackerId() || getTargetType() != other.getTargetType() || Float.floatToIntBits(getEndureDelta()) != Float.floatToIntBits(other.getEndureDelta()) || getUnk3300DOMAOPGPHMD() != other.getUnk3300DOMAOPGPHMD() || getElementType() != other.getElementType() || getUnk3300BALCPHMFIBC() != other.getUnk3300BALCPHMFIBC() || Float.floatToIntBits(getDamage()) != Float.floatToIntBits(other.getDamage()) || getHashedAnimEventId() != other.getHashedAnimEventId() || getCriticalRand() != other.getCriticalRand() || getUnk3300ABJJNNNKGBB() != other.getUnk3300ABJJNNNKGBB() || getUnk3300KPKAECBFABP() != other.getUnk3300KPKAECBFABP() || hasHitEffResult() != other.hasHitEffResult()) {
+            if (getEndureBreak() != other.getEndureBreak() || getUnk3300BALCPHMFIBC() != other.getUnk3300BALCPHMFIBC() || Float.floatToIntBits(getDamage()) != Float.floatToIntBits(other.getDamage()) || getIsCrit() != other.getIsCrit() || hasHitEffResult() != other.hasHitEffResult()) {
                 return false;
             }
-            if ((hasHitEffResult() && !getHitEffResult().equals(other.getHitEffResult())) || getEndureBreak() != other.getEndureBreak() || hasAbilityIdentifier() != other.hasAbilityIdentifier()) {
+            if ((hasHitEffResult() && !getHitEffResult().equals(other.getHitEffResult())) || Float.floatToIntBits(getElementDurabilityAttenuation()) != Float.floatToIntBits(other.getElementDurabilityAttenuation()) || Float.floatToIntBits(getDamageShield()) != Float.floatToIntBits(other.getDamageShield()) || getUnk3300DOMAOPGPHMD() != other.getUnk3300DOMAOPGPHMD() || getElementType() != other.getElementType() || getTargetType() != other.getTargetType() || getUnk3300MGIMJGMIPLD() != other.getUnk3300MGIMJGMIPLD() || getCriticalRand() != other.getCriticalRand() || hasAbilityIdentifier() != other.hasAbilityIdentifier()) {
                 return false;
             }
-            if ((hasAbilityIdentifier() && !getAbilityIdentifier().equals(other.getAbilityIdentifier())) || getHitPosType() != other.getHitPosType() || getAttackTimestampMs() != other.getAttackTimestampMs() || Float.floatToIntBits(getDamageShield()) != Float.floatToIntBits(other.getDamageShield()) || getAttackCount() != other.getAttackCount() || getIsResistText() != other.getIsResistText() || getHitRetreatAngleCompat() != other.getHitRetreatAngleCompat() || hasHitCollision() != other.hasHitCollision()) {
+            if ((hasAbilityIdentifier() && !getAbilityIdentifier().equals(other.getAbilityIdentifier())) || hasHitCollision() != other.hasHitCollision()) {
                 return false;
             }
-            if ((!hasHitCollision() || getHitCollision().equals(other.getHitCollision())) && getUnk3300MGIMJGMIPLD() == other.getUnk3300MGIMJGMIPLD() && getIsCrit() == other.getIsCrit() && hasResolvedDir() == other.hasResolvedDir()) {
-                return (!hasResolvedDir() || getResolvedDir().equals(other.getResolvedDir())) && Float.floatToIntBits(getElementAmplifyRate()) == Float.floatToIntBits(other.getElementAmplifyRate()) && getAnimEventId().equals(other.getAnimEventId()) && getUnk3300GBPJCELJKJA() == other.getUnk3300GBPJCELJKJA() && getUnk3300JMJHGJCAOBH() == other.getUnk3300JMJHGJCAOBH() && Float.floatToIntBits(getElementDurabilityAttenuation()) == Float.floatToIntBits(other.getElementDurabilityAttenuation()) && this.unknownFields.equals(other.unknownFields);
+            if ((!hasHitCollision() || getHitCollision().equals(other.getHitCollision())) && getAttackTimestampMs() == other.getAttackTimestampMs() && getAttackerId() == other.getAttackerId() && getAnimEventId().equals(other.getAnimEventId()) && getHitRetreatAngleCompat() == other.getHitRetreatAngleCompat() && getUnk3300JMJHGJCAOBH() == other.getUnk3300JMJHGJCAOBH() && getDefenseId() == other.getDefenseId() && getIsResistText() == other.getIsResistText() && getAttackCount() == other.getAttackCount() && hasResolvedDir() == other.hasResolvedDir()) {
+                return (!hasResolvedDir() || getResolvedDir().equals(other.getResolvedDir())) && getHitPosType() == other.getHitPosType() && getHashedAnimEventId() == other.getHashedAnimEventId() && getUnk3300KPKAECBFABP() == other.getUnk3300KPKAECBFABP() && Float.floatToIntBits(getEndureDelta()) == Float.floatToIntBits(other.getEndureDelta()) && getUnk3300GBPJCELJKJA() == other.getUnk3300GBPJCELJKJA() && Float.floatToIntBits(getElementAmplifyRate()) == Float.floatToIntBits(other.getElementAmplifyRate()) && getUnk3300ABJJNNNKGBB() == other.getUnk3300ABJJNNNKGBB() && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -823,25 +822,24 @@ public final class AttackResultOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + getDefenseId())) + 1)) + getAttackerId())) + 1870)) + getTargetType())) + 803)) + Float.floatToIntBits(getEndureDelta()))) + 454)) + Internal.hashBoolean(getUnk3300DOMAOPGPHMD()))) + 12)) + getElementType())) + UNK3300_BALCPHMFIBC_FIELD_NUMBER)) + getUnk3300BALCPHMFIBC())) + 10)) + Float.floatToIntBits(getDamage()))) + 1115)) + getHashedAnimEventId())) + 645)) + getCriticalRand())) + UNK3300_ABJJNNNKGBB_FIELD_NUMBER)) + getUnk3300ABJJNNNKGBB())) + 2012)) + getUnk3300KPKAECBFABP();
+            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getEndureBreak())) + UNK3300_BALCPHMFIBC_FIELD_NUMBER)) + getUnk3300BALCPHMFIBC())) + 12)) + Float.floatToIntBits(getDamage()))) + 9)) + Internal.hashBoolean(getIsCrit());
             if (hasHitEffResult()) {
-                hash = (53 * ((37 * hash) + 8)) + getHitEffResult().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + getHitEffResult().hashCode();
             }
-            int hash2 = (53 * ((37 * hash) + 14)) + getEndureBreak();
+            int hash2 = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 1333)) + Float.floatToIntBits(getElementDurabilityAttenuation()))) + 198)) + Float.floatToIntBits(getDamageShield()))) + UNK3300_DOMAOPGPHMD_FIELD_NUMBER)) + Internal.hashBoolean(getUnk3300DOMAOPGPHMD()))) + 1)) + getElementType())) + 346)) + getTargetType())) + 531)) + Internal.hashBoolean(getUnk3300MGIMJGMIPLD()))) + CRITICALRAND_FIELD_NUMBER)) + getCriticalRand();
             if (hasAbilityIdentifier()) {
-                hash2 = (53 * ((37 * hash2) + 7)) + getAbilityIdentifier().hashCode();
+                hash2 = (53 * ((37 * hash2) + 2)) + getAbilityIdentifier().hashCode();
             }
-            int hash3 = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash2) + 3)) + getHitPosType())) + 1782)) + getAttackTimestampMs())) + DAMAGE_SHIELD_FIELD_NUMBER)) + Float.floatToIntBits(getDamageShield()))) + ATTACK_COUNT_FIELD_NUMBER)) + getAttackCount())) + 633)) + Internal.hashBoolean(getIsResistText()))) + 5)) + getHitRetreatAngleCompat();
             if (hasHitCollision()) {
-                hash3 = (53 * ((37 * hash3) + 15)) + getHitCollision().hashCode();
+                hash2 = (53 * ((37 * hash2) + 14)) + getHitCollision().hashCode();
             }
-            int hash4 = (53 * ((37 * ((53 * ((37 * hash3) + UNK3300_MGIMJGMIPLD_FIELD_NUMBER)) + Internal.hashBoolean(getUnk3300MGIMJGMIPLD()))) + 6)) + Internal.hashBoolean(getIsCrit());
+            int hash3 = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash2) + ATTACKTIMESTAMPMS_FIELD_NUMBER)) + getAttackTimestampMs())) + 4)) + getAttackerId())) + 11)) + getAnimEventId().hashCode())) + 15)) + getHitRetreatAngleCompat())) + 55)) + getUnk3300JMJHGJCAOBH())) + 13)) + getDefenseId())) + 555)) + Internal.hashBoolean(getIsResistText()))) + 1593)) + getAttackCount();
             if (hasResolvedDir()) {
-                hash4 = (53 * ((37 * hash4) + 11)) + getResolvedDir().hashCode();
+                hash3 = (53 * ((37 * hash3) + 8)) + getResolvedDir().hashCode();
             }
-            int hash5 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash4) + 28)) + Float.floatToIntBits(getElementAmplifyRate()))) + 4)) + getAnimEventId().hashCode())) + 1844)) + getUnk3300GBPJCELJKJA())) + UNK3300_JMJHGJCAOBH_FIELD_NUMBER)) + getUnk3300JMJHGJCAOBH())) + ELEMENT_DURABILITY_ATTENUATION_FIELD_NUMBER)) + Float.floatToIntBits(getElementDurabilityAttenuation()))) + this.unknownFields.hashCode();
-            this.memoizedHashCode = hash5;
-            return hash5;
+            int hash4 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash3) + 7)) + getHitPosType())) + 2009)) + getHashedAnimEventId())) + UNK3300_KPKAECBFABP_FIELD_NUMBER)) + getUnk3300KPKAECBFABP())) + 1169)) + Float.floatToIntBits(getEndureDelta()))) + 701)) + getUnk3300GBPJCELJKJA())) + ELEMENTAMPLIFYRATE_FIELD_NUMBER)) + Float.floatToIntBits(getElementAmplifyRate()))) + 888)) + getUnk3300ABJJNNNKGBB())) + this.unknownFields.hashCode();
+            this.memoizedHashCode = hash4;
+            return hash4;
         }
 
         public static AttackResult parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
@@ -918,40 +916,40 @@ public final class AttackResultOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AttackResultOuterClass$AttackResult$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements AttackResultOrBuilder {
-            private int defenseId_;
-            private int attackerId_;
-            private int targetType_;
-            private float endureDelta_;
-            private boolean unk3300DOMAOPGPHMD_;
-            private int elementType_;
+            private int endureBreak_;
             private int unk3300BALCPHMFIBC_;
             private float damage_;
-            private int hashedAnimEventId_;
-            private int criticalRand_;
-            private int unk3300ABJJNNNKGBB_;
-            private int unk3300KPKAECBFABP_;
+            private boolean isCrit_;
             private AttackHitEffectResultOuterClass.AttackHitEffectResult hitEffResult_;
             private SingleFieldBuilderV3<AttackHitEffectResultOuterClass.AttackHitEffectResult, AttackHitEffectResultOuterClass.AttackHitEffectResult.Builder, AttackHitEffectResultOuterClass.AttackHitEffectResultOrBuilder> hitEffResultBuilder_;
-            private int endureBreak_;
+            private float elementDurabilityAttenuation_;
+            private float damageShield_;
+            private boolean unk3300DOMAOPGPHMD_;
+            private int elementType_;
+            private int targetType_;
+            private boolean unk3300MGIMJGMIPLD_;
+            private int criticalRand_;
             private AbilityIdentifierOuterClass.AbilityIdentifier abilityIdentifier_;
             private SingleFieldBuilderV3<AbilityIdentifierOuterClass.AbilityIdentifier, AbilityIdentifierOuterClass.AbilityIdentifier.Builder, AbilityIdentifierOuterClass.AbilityIdentifierOrBuilder> abilityIdentifierBuilder_;
-            private int hitPosType_;
-            private int attackTimestampMs_;
-            private float damageShield_;
-            private int attackCount_;
-            private boolean isResistText_;
-            private int hitRetreatAngleCompat_;
             private HitCollisionOuterClass.HitCollision hitCollision_;
             private SingleFieldBuilderV3<HitCollisionOuterClass.HitCollision, HitCollisionOuterClass.HitCollision.Builder, HitCollisionOuterClass.HitCollisionOrBuilder> hitCollisionBuilder_;
-            private boolean unk3300MGIMJGMIPLD_;
-            private boolean isCrit_;
+            private int attackTimestampMs_;
+            private int attackerId_;
+            private Object animEventId_ = "";
+            private int hitRetreatAngleCompat_;
+            private int unk3300JMJHGJCAOBH_;
+            private int defenseId_;
+            private boolean isResistText_;
+            private int attackCount_;
             private VectorOuterClass.Vector resolvedDir_;
             private SingleFieldBuilderV3<VectorOuterClass.Vector, VectorOuterClass.Vector.Builder, VectorOuterClass.VectorOrBuilder> resolvedDirBuilder_;
-            private float elementAmplifyRate_;
-            private Object animEventId_ = "";
+            private int hitPosType_;
+            private int hashedAnimEventId_;
+            private int unk3300KPKAECBFABP_;
+            private float endureDelta_;
             private int unk3300GBPJCELJKJA_;
-            private int unk3300JMJHGJCAOBH_;
-            private float elementDurabilityAttenuation_;
+            private float elementAmplifyRate_;
+            private int unk3300ABJJNNNKGBB_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return AttackResultOuterClass.internal_static_AttackResult_descriptor;
@@ -979,56 +977,56 @@ public final class AttackResultOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.defenseId_ = 0;
-                this.attackerId_ = 0;
-                this.targetType_ = 0;
-                this.endureDelta_ = 0.0f;
-                this.unk3300DOMAOPGPHMD_ = false;
-                this.elementType_ = 0;
+                this.endureBreak_ = 0;
                 this.unk3300BALCPHMFIBC_ = 0;
                 this.damage_ = 0.0f;
-                this.hashedAnimEventId_ = 0;
-                this.criticalRand_ = 0;
-                this.unk3300ABJJNNNKGBB_ = 0;
-                this.unk3300KPKAECBFABP_ = 0;
+                this.isCrit_ = false;
                 if (this.hitEffResultBuilder_ == null) {
                     this.hitEffResult_ = null;
                 } else {
                     this.hitEffResult_ = null;
                     this.hitEffResultBuilder_ = null;
                 }
-                this.endureBreak_ = 0;
+                this.elementDurabilityAttenuation_ = 0.0f;
+                this.damageShield_ = 0.0f;
+                this.unk3300DOMAOPGPHMD_ = false;
+                this.elementType_ = 0;
+                this.targetType_ = 0;
+                this.unk3300MGIMJGMIPLD_ = false;
+                this.criticalRand_ = 0;
                 if (this.abilityIdentifierBuilder_ == null) {
                     this.abilityIdentifier_ = null;
                 } else {
                     this.abilityIdentifier_ = null;
                     this.abilityIdentifierBuilder_ = null;
                 }
-                this.hitPosType_ = 0;
-                this.attackTimestampMs_ = 0;
-                this.damageShield_ = 0.0f;
-                this.attackCount_ = 0;
-                this.isResistText_ = false;
-                this.hitRetreatAngleCompat_ = 0;
                 if (this.hitCollisionBuilder_ == null) {
                     this.hitCollision_ = null;
                 } else {
                     this.hitCollision_ = null;
                     this.hitCollisionBuilder_ = null;
                 }
-                this.unk3300MGIMJGMIPLD_ = false;
-                this.isCrit_ = false;
+                this.attackTimestampMs_ = 0;
+                this.attackerId_ = 0;
+                this.animEventId_ = "";
+                this.hitRetreatAngleCompat_ = 0;
+                this.unk3300JMJHGJCAOBH_ = 0;
+                this.defenseId_ = 0;
+                this.isResistText_ = false;
+                this.attackCount_ = 0;
                 if (this.resolvedDirBuilder_ == null) {
                     this.resolvedDir_ = null;
                 } else {
                     this.resolvedDir_ = null;
                     this.resolvedDirBuilder_ = null;
                 }
-                this.elementAmplifyRate_ = 0.0f;
-                this.animEventId_ = "";
+                this.hitPosType_ = 0;
+                this.hashedAnimEventId_ = 0;
+                this.unk3300KPKAECBFABP_ = 0;
+                this.endureDelta_ = 0.0f;
                 this.unk3300GBPJCELJKJA_ = 0;
-                this.unk3300JMJHGJCAOBH_ = 0;
-                this.elementDurabilityAttenuation_ = 0.0f;
+                this.elementAmplifyRate_ = 0.0f;
+                this.unk3300ABJJNNNKGBB_ = 0;
                 return this;
             }
 
@@ -1054,52 +1052,52 @@ public final class AttackResultOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public AttackResult buildPartial() {
                 AttackResult result = new AttackResult(this);
-                result.defenseId_ = this.defenseId_;
-                result.attackerId_ = this.attackerId_;
-                result.targetType_ = this.targetType_;
-                result.endureDelta_ = this.endureDelta_;
-                result.unk3300DOMAOPGPHMD_ = this.unk3300DOMAOPGPHMD_;
-                result.elementType_ = this.elementType_;
+                result.endureBreak_ = this.endureBreak_;
                 result.unk3300BALCPHMFIBC_ = this.unk3300BALCPHMFIBC_;
                 result.damage_ = this.damage_;
-                result.hashedAnimEventId_ = this.hashedAnimEventId_;
-                result.criticalRand_ = this.criticalRand_;
-                result.unk3300ABJJNNNKGBB_ = this.unk3300ABJJNNNKGBB_;
-                result.unk3300KPKAECBFABP_ = this.unk3300KPKAECBFABP_;
+                result.isCrit_ = this.isCrit_;
                 if (this.hitEffResultBuilder_ == null) {
                     result.hitEffResult_ = this.hitEffResult_;
                 } else {
                     result.hitEffResult_ = this.hitEffResultBuilder_.build();
                 }
-                result.endureBreak_ = this.endureBreak_;
+                result.elementDurabilityAttenuation_ = this.elementDurabilityAttenuation_;
+                result.damageShield_ = this.damageShield_;
+                result.unk3300DOMAOPGPHMD_ = this.unk3300DOMAOPGPHMD_;
+                result.elementType_ = this.elementType_;
+                result.targetType_ = this.targetType_;
+                result.unk3300MGIMJGMIPLD_ = this.unk3300MGIMJGMIPLD_;
+                result.criticalRand_ = this.criticalRand_;
                 if (this.abilityIdentifierBuilder_ == null) {
                     result.abilityIdentifier_ = this.abilityIdentifier_;
                 } else {
                     result.abilityIdentifier_ = this.abilityIdentifierBuilder_.build();
                 }
-                result.hitPosType_ = this.hitPosType_;
-                result.attackTimestampMs_ = this.attackTimestampMs_;
-                result.damageShield_ = this.damageShield_;
-                result.attackCount_ = this.attackCount_;
-                result.isResistText_ = this.isResistText_;
-                result.hitRetreatAngleCompat_ = this.hitRetreatAngleCompat_;
                 if (this.hitCollisionBuilder_ == null) {
                     result.hitCollision_ = this.hitCollision_;
                 } else {
                     result.hitCollision_ = this.hitCollisionBuilder_.build();
                 }
-                result.unk3300MGIMJGMIPLD_ = this.unk3300MGIMJGMIPLD_;
-                result.isCrit_ = this.isCrit_;
+                result.attackTimestampMs_ = this.attackTimestampMs_;
+                result.attackerId_ = this.attackerId_;
+                result.animEventId_ = this.animEventId_;
+                result.hitRetreatAngleCompat_ = this.hitRetreatAngleCompat_;
+                result.unk3300JMJHGJCAOBH_ = this.unk3300JMJHGJCAOBH_;
+                result.defenseId_ = this.defenseId_;
+                result.isResistText_ = this.isResistText_;
+                result.attackCount_ = this.attackCount_;
                 if (this.resolvedDirBuilder_ == null) {
                     result.resolvedDir_ = this.resolvedDir_;
                 } else {
                     result.resolvedDir_ = this.resolvedDirBuilder_.build();
                 }
-                result.elementAmplifyRate_ = this.elementAmplifyRate_;
-                result.animEventId_ = this.animEventId_;
+                result.hitPosType_ = this.hitPosType_;
+                result.hashedAnimEventId_ = this.hashedAnimEventId_;
+                result.unk3300KPKAECBFABP_ = this.unk3300KPKAECBFABP_;
+                result.endureDelta_ = this.endureDelta_;
                 result.unk3300GBPJCELJKJA_ = this.unk3300GBPJCELJKJA_;
-                result.unk3300JMJHGJCAOBH_ = this.unk3300JMJHGJCAOBH_;
-                result.elementDurabilityAttenuation_ = this.elementDurabilityAttenuation_;
+                result.elementAmplifyRate_ = this.elementAmplifyRate_;
+                result.unk3300ABJJNNNKGBB_ = this.unk3300ABJJNNNKGBB_;
                 onBuilt();
                 return result;
             }
@@ -1147,23 +1145,8 @@ public final class AttackResultOuterClass {
                 if (other == AttackResult.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getDefenseId() != 0) {
-                    setDefenseId(other.getDefenseId());
-                }
-                if (other.getAttackerId() != 0) {
-                    setAttackerId(other.getAttackerId());
-                }
-                if (other.getTargetType() != 0) {
-                    setTargetType(other.getTargetType());
-                }
-                if (other.getEndureDelta() != 0.0f) {
-                    setEndureDelta(other.getEndureDelta());
-                }
-                if (other.getUnk3300DOMAOPGPHMD()) {
-                    setUnk3300DOMAOPGPHMD(other.getUnk3300DOMAOPGPHMD());
-                }
-                if (other.getElementType() != 0) {
-                    setElementType(other.getElementType());
+                if (other.getEndureBreak() != 0) {
+                    setEndureBreak(other.getEndureBreak());
                 }
                 if (other.getUnk3300BALCPHMFIBC() != 0) {
                     setUnk3300BALCPHMFIBC(other.getUnk3300BALCPHMFIBC());
@@ -1171,72 +1154,87 @@ public final class AttackResultOuterClass {
                 if (other.getDamage() != 0.0f) {
                     setDamage(other.getDamage());
                 }
-                if (other.getHashedAnimEventId() != 0) {
-                    setHashedAnimEventId(other.getHashedAnimEventId());
-                }
-                if (other.getCriticalRand() != 0) {
-                    setCriticalRand(other.getCriticalRand());
-                }
-                if (other.getUnk3300ABJJNNNKGBB() != 0) {
-                    setUnk3300ABJJNNNKGBB(other.getUnk3300ABJJNNNKGBB());
-                }
-                if (other.getUnk3300KPKAECBFABP() != 0) {
-                    setUnk3300KPKAECBFABP(other.getUnk3300KPKAECBFABP());
+                if (other.getIsCrit()) {
+                    setIsCrit(other.getIsCrit());
                 }
                 if (other.hasHitEffResult()) {
                     mergeHitEffResult(other.getHitEffResult());
                 }
-                if (other.getEndureBreak() != 0) {
-                    setEndureBreak(other.getEndureBreak());
-                }
-                if (other.hasAbilityIdentifier()) {
-                    mergeAbilityIdentifier(other.getAbilityIdentifier());
-                }
-                if (other.getHitPosType() != 0) {
-                    setHitPosType(other.getHitPosType());
-                }
-                if (other.getAttackTimestampMs() != 0) {
-                    setAttackTimestampMs(other.getAttackTimestampMs());
+                if (other.getElementDurabilityAttenuation() != 0.0f) {
+                    setElementDurabilityAttenuation(other.getElementDurabilityAttenuation());
                 }
                 if (other.getDamageShield() != 0.0f) {
                     setDamageShield(other.getDamageShield());
                 }
-                if (other.getAttackCount() != 0) {
-                    setAttackCount(other.getAttackCount());
+                if (other.getUnk3300DOMAOPGPHMD()) {
+                    setUnk3300DOMAOPGPHMD(other.getUnk3300DOMAOPGPHMD());
                 }
-                if (other.getIsResistText()) {
-                    setIsResistText(other.getIsResistText());
+                if (other.getElementType() != 0) {
+                    setElementType(other.getElementType());
                 }
-                if (other.getHitRetreatAngleCompat() != 0) {
-                    setHitRetreatAngleCompat(other.getHitRetreatAngleCompat());
-                }
-                if (other.hasHitCollision()) {
-                    mergeHitCollision(other.getHitCollision());
+                if (other.getTargetType() != 0) {
+                    setTargetType(other.getTargetType());
                 }
                 if (other.getUnk3300MGIMJGMIPLD()) {
                     setUnk3300MGIMJGMIPLD(other.getUnk3300MGIMJGMIPLD());
                 }
-                if (other.getIsCrit()) {
-                    setIsCrit(other.getIsCrit());
+                if (other.getCriticalRand() != 0) {
+                    setCriticalRand(other.getCriticalRand());
                 }
-                if (other.hasResolvedDir()) {
-                    mergeResolvedDir(other.getResolvedDir());
+                if (other.hasAbilityIdentifier()) {
+                    mergeAbilityIdentifier(other.getAbilityIdentifier());
                 }
-                if (other.getElementAmplifyRate() != 0.0f) {
-                    setElementAmplifyRate(other.getElementAmplifyRate());
+                if (other.hasHitCollision()) {
+                    mergeHitCollision(other.getHitCollision());
+                }
+                if (other.getAttackTimestampMs() != 0) {
+                    setAttackTimestampMs(other.getAttackTimestampMs());
+                }
+                if (other.getAttackerId() != 0) {
+                    setAttackerId(other.getAttackerId());
                 }
                 if (!other.getAnimEventId().isEmpty()) {
                     this.animEventId_ = other.animEventId_;
                     onChanged();
                 }
-                if (other.getUnk3300GBPJCELJKJA() != 0) {
-                    setUnk3300GBPJCELJKJA(other.getUnk3300GBPJCELJKJA());
+                if (other.getHitRetreatAngleCompat() != 0) {
+                    setHitRetreatAngleCompat(other.getHitRetreatAngleCompat());
                 }
                 if (other.getUnk3300JMJHGJCAOBH() != 0) {
                     setUnk3300JMJHGJCAOBH(other.getUnk3300JMJHGJCAOBH());
                 }
-                if (other.getElementDurabilityAttenuation() != 0.0f) {
-                    setElementDurabilityAttenuation(other.getElementDurabilityAttenuation());
+                if (other.getDefenseId() != 0) {
+                    setDefenseId(other.getDefenseId());
+                }
+                if (other.getIsResistText()) {
+                    setIsResistText(other.getIsResistText());
+                }
+                if (other.getAttackCount() != 0) {
+                    setAttackCount(other.getAttackCount());
+                }
+                if (other.hasResolvedDir()) {
+                    mergeResolvedDir(other.getResolvedDir());
+                }
+                if (other.getHitPosType() != 0) {
+                    setHitPosType(other.getHitPosType());
+                }
+                if (other.getHashedAnimEventId() != 0) {
+                    setHashedAnimEventId(other.getHashedAnimEventId());
+                }
+                if (other.getUnk3300KPKAECBFABP() != 0) {
+                    setUnk3300KPKAECBFABP(other.getUnk3300KPKAECBFABP());
+                }
+                if (other.getEndureDelta() != 0.0f) {
+                    setEndureDelta(other.getEndureDelta());
+                }
+                if (other.getUnk3300GBPJCELJKJA() != 0) {
+                    setUnk3300GBPJCELJKJA(other.getUnk3300GBPJCELJKJA());
+                }
+                if (other.getElementAmplifyRate() != 0.0f) {
+                    setElementAmplifyRate(other.getElementAmplifyRate());
+                }
+                if (other.getUnk3300ABJJNNNKGBB() != 0) {
+                    setUnk3300ABJJNNNKGBB(other.getUnk3300ABJJNNNKGBB());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -1271,103 +1269,18 @@ public final class AttackResultOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public int getDefenseId() {
-                return this.defenseId_;
+            public int getEndureBreak() {
+                return this.endureBreak_;
             }
 
-            public Builder setDefenseId(int value) {
-                this.defenseId_ = value;
+            public Builder setEndureBreak(int value) {
+                this.endureBreak_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearDefenseId() {
-                this.defenseId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public int getAttackerId() {
-                return this.attackerId_;
-            }
-
-            public Builder setAttackerId(int value) {
-                this.attackerId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearAttackerId() {
-                this.attackerId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public int getTargetType() {
-                return this.targetType_;
-            }
-
-            public Builder setTargetType(int value) {
-                this.targetType_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearTargetType() {
-                this.targetType_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public float getEndureDelta() {
-                return this.endureDelta_;
-            }
-
-            public Builder setEndureDelta(float value) {
-                this.endureDelta_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearEndureDelta() {
-                this.endureDelta_ = 0.0f;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public boolean getUnk3300DOMAOPGPHMD() {
-                return this.unk3300DOMAOPGPHMD_;
-            }
-
-            public Builder setUnk3300DOMAOPGPHMD(boolean value) {
-                this.unk3300DOMAOPGPHMD_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk3300DOMAOPGPHMD() {
-                this.unk3300DOMAOPGPHMD_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public int getElementType() {
-                return this.elementType_;
-            }
-
-            public Builder setElementType(int value) {
-                this.elementType_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearElementType() {
-                this.elementType_ = 0;
+            public Builder clearEndureBreak() {
+                this.endureBreak_ = 0;
                 onChanged();
                 return this;
             }
@@ -1407,69 +1320,18 @@ public final class AttackResultOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public int getHashedAnimEventId() {
-                return this.hashedAnimEventId_;
+            public boolean getIsCrit() {
+                return this.isCrit_;
             }
 
-            public Builder setHashedAnimEventId(int value) {
-                this.hashedAnimEventId_ = value;
+            public Builder setIsCrit(boolean value) {
+                this.isCrit_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearHashedAnimEventId() {
-                this.hashedAnimEventId_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public int getCriticalRand() {
-                return this.criticalRand_;
-            }
-
-            public Builder setCriticalRand(int value) {
-                this.criticalRand_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearCriticalRand() {
-                this.criticalRand_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public int getUnk3300ABJJNNNKGBB() {
-                return this.unk3300ABJJNNNKGBB_;
-            }
-
-            public Builder setUnk3300ABJJNNNKGBB(int value) {
-                this.unk3300ABJJNNNKGBB_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk3300ABJJNNNKGBB() {
-                this.unk3300ABJJNNNKGBB_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public int getUnk3300KPKAECBFABP() {
-                return this.unk3300KPKAECBFABP_;
-            }
-
-            public Builder setUnk3300KPKAECBFABP(int value) {
-                this.unk3300KPKAECBFABP_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUnk3300KPKAECBFABP() {
-                this.unk3300KPKAECBFABP_ = 0;
+            public Builder clearIsCrit() {
+                this.isCrit_ = false;
                 onChanged();
                 return this;
             }
@@ -1556,18 +1418,120 @@ public final class AttackResultOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public int getEndureBreak() {
-                return this.endureBreak_;
+            public float getElementDurabilityAttenuation() {
+                return this.elementDurabilityAttenuation_;
             }
 
-            public Builder setEndureBreak(int value) {
-                this.endureBreak_ = value;
+            public Builder setElementDurabilityAttenuation(float value) {
+                this.elementDurabilityAttenuation_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearEndureBreak() {
-                this.endureBreak_ = 0;
+            public Builder clearElementDurabilityAttenuation() {
+                this.elementDurabilityAttenuation_ = 0.0f;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+            public float getDamageShield() {
+                return this.damageShield_;
+            }
+
+            public Builder setDamageShield(float value) {
+                this.damageShield_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearDamageShield() {
+                this.damageShield_ = 0.0f;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+            public boolean getUnk3300DOMAOPGPHMD() {
+                return this.unk3300DOMAOPGPHMD_;
+            }
+
+            public Builder setUnk3300DOMAOPGPHMD(boolean value) {
+                this.unk3300DOMAOPGPHMD_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300DOMAOPGPHMD() {
+                this.unk3300DOMAOPGPHMD_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+            public int getElementType() {
+                return this.elementType_;
+            }
+
+            public Builder setElementType(int value) {
+                this.elementType_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearElementType() {
+                this.elementType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+            public int getTargetType() {
+                return this.targetType_;
+            }
+
+            public Builder setTargetType(int value) {
+                this.targetType_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearTargetType() {
+                this.targetType_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+            public boolean getUnk3300MGIMJGMIPLD() {
+                return this.unk3300MGIMJGMIPLD_;
+            }
+
+            public Builder setUnk3300MGIMJGMIPLD(boolean value) {
+                this.unk3300MGIMJGMIPLD_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300MGIMJGMIPLD() {
+                this.unk3300MGIMJGMIPLD_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+            public int getCriticalRand() {
+                return this.criticalRand_;
+            }
+
+            public Builder setCriticalRand(int value) {
+                this.criticalRand_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearCriticalRand() {
+                this.criticalRand_ = 0;
                 onChanged();
                 return this;
             }
@@ -1654,108 +1618,6 @@ public final class AttackResultOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public int getHitPosType() {
-                return this.hitPosType_;
-            }
-
-            public Builder setHitPosType(int value) {
-                this.hitPosType_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearHitPosType() {
-                this.hitPosType_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public int getAttackTimestampMs() {
-                return this.attackTimestampMs_;
-            }
-
-            public Builder setAttackTimestampMs(int value) {
-                this.attackTimestampMs_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearAttackTimestampMs() {
-                this.attackTimestampMs_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public float getDamageShield() {
-                return this.damageShield_;
-            }
-
-            public Builder setDamageShield(float value) {
-                this.damageShield_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearDamageShield() {
-                this.damageShield_ = 0.0f;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public int getAttackCount() {
-                return this.attackCount_;
-            }
-
-            public Builder setAttackCount(int value) {
-                this.attackCount_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearAttackCount() {
-                this.attackCount_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public boolean getIsResistText() {
-                return this.isResistText_;
-            }
-
-            public Builder setIsResistText(boolean value) {
-                this.isResistText_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsResistText() {
-                this.isResistText_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public int getHitRetreatAngleCompat() {
-                return this.hitRetreatAngleCompat_;
-            }
-
-            public Builder setHitRetreatAngleCompat(int value) {
-                this.hitRetreatAngleCompat_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearHitRetreatAngleCompat() {
-                this.hitRetreatAngleCompat_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
             public boolean hasHitCollision() {
                 return (this.hitCollisionBuilder_ == null && this.hitCollision_ == null) ? false : true;
             }
@@ -1837,35 +1699,167 @@ public final class AttackResultOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public boolean getUnk3300MGIMJGMIPLD() {
-                return this.unk3300MGIMJGMIPLD_;
+            public int getAttackTimestampMs() {
+                return this.attackTimestampMs_;
             }
 
-            public Builder setUnk3300MGIMJGMIPLD(boolean value) {
-                this.unk3300MGIMJGMIPLD_ = value;
+            public Builder setAttackTimestampMs(int value) {
+                this.attackTimestampMs_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearUnk3300MGIMJGMIPLD() {
-                this.unk3300MGIMJGMIPLD_ = false;
+            public Builder clearAttackTimestampMs() {
+                this.attackTimestampMs_ = 0;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public boolean getIsCrit() {
-                return this.isCrit_;
+            public int getAttackerId() {
+                return this.attackerId_;
             }
 
-            public Builder setIsCrit(boolean value) {
-                this.isCrit_ = value;
+            public Builder setAttackerId(int value) {
+                this.attackerId_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearIsCrit() {
-                this.isCrit_ = false;
+            public Builder clearAttackerId() {
+                this.attackerId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+            public String getAnimEventId() {
+                Object ref = this.animEventId_;
+                if (ref instanceof String) {
+                    return (String) ref;
+                }
+                String s = ((ByteString) ref).toStringUtf8();
+                this.animEventId_ = s;
+                return s;
+            }
+
+            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+            public ByteString getAnimEventIdBytes() {
+                Object ref = this.animEventId_;
+                if (!(ref instanceof String)) {
+                    return (ByteString) ref;
+                }
+                ByteString b = ByteString.copyFromUtf8((String) ref);
+                this.animEventId_ = b;
+                return b;
+            }
+
+            public Builder setAnimEventId(String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.animEventId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearAnimEventId() {
+                this.animEventId_ = AttackResult.getDefaultInstance().getAnimEventId();
+                onChanged();
+                return this;
+            }
+
+            public Builder setAnimEventIdBytes(ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                AttackResult.checkByteStringIsUtf8(value);
+                this.animEventId_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+            public int getHitRetreatAngleCompat() {
+                return this.hitRetreatAngleCompat_;
+            }
+
+            public Builder setHitRetreatAngleCompat(int value) {
+                this.hitRetreatAngleCompat_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearHitRetreatAngleCompat() {
+                this.hitRetreatAngleCompat_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+            public int getUnk3300JMJHGJCAOBH() {
+                return this.unk3300JMJHGJCAOBH_;
+            }
+
+            public Builder setUnk3300JMJHGJCAOBH(int value) {
+                this.unk3300JMJHGJCAOBH_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUnk3300JMJHGJCAOBH() {
+                this.unk3300JMJHGJCAOBH_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+            public int getDefenseId() {
+                return this.defenseId_;
+            }
+
+            public Builder setDefenseId(int value) {
+                this.defenseId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearDefenseId() {
+                this.defenseId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+            public boolean getIsResistText() {
+                return this.isResistText_;
+            }
+
+            public Builder setIsResistText(boolean value) {
+                this.isResistText_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsResistText() {
+                this.isResistText_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+            public int getAttackCount() {
+                return this.attackCount_;
+            }
+
+            public Builder setAttackCount(int value) {
+                this.attackCount_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearAttackCount() {
+                this.attackCount_ = 0;
                 onChanged();
                 return this;
             }
@@ -1952,65 +1946,69 @@ public final class AttackResultOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public float getElementAmplifyRate() {
-                return this.elementAmplifyRate_;
+            public int getHitPosType() {
+                return this.hitPosType_;
             }
 
-            public Builder setElementAmplifyRate(float value) {
-                this.elementAmplifyRate_ = value;
+            public Builder setHitPosType(int value) {
+                this.hitPosType_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearElementAmplifyRate() {
-                this.elementAmplifyRate_ = 0.0f;
+            public Builder clearHitPosType() {
+                this.hitPosType_ = 0;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public String getAnimEventId() {
-                Object ref = this.animEventId_;
-                if (ref instanceof String) {
-                    return (String) ref;
-                }
-                String s = ((ByteString) ref).toStringUtf8();
-                this.animEventId_ = s;
-                return s;
+            public int getHashedAnimEventId() {
+                return this.hashedAnimEventId_;
+            }
+
+            public Builder setHashedAnimEventId(int value) {
+                this.hashedAnimEventId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearHashedAnimEventId() {
+                this.hashedAnimEventId_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public ByteString getAnimEventIdBytes() {
-                Object ref = this.animEventId_;
-                if (!(ref instanceof String)) {
-                    return (ByteString) ref;
-                }
-                ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.animEventId_ = b;
-                return b;
+            public int getUnk3300KPKAECBFABP() {
+                return this.unk3300KPKAECBFABP_;
             }
 
-            public Builder setAnimEventId(String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.animEventId_ = value;
+            public Builder setUnk3300KPKAECBFABP(int value) {
+                this.unk3300KPKAECBFABP_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearAnimEventId() {
-                this.animEventId_ = AttackResult.getDefaultInstance().getAnimEventId();
+            public Builder clearUnk3300KPKAECBFABP() {
+                this.unk3300KPKAECBFABP_ = 0;
                 onChanged();
                 return this;
             }
 
-            public Builder setAnimEventIdBytes(ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                AttackResult.checkByteStringIsUtf8(value);
-                this.animEventId_ = value;
+            @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
+            public float getEndureDelta() {
+                return this.endureDelta_;
+            }
+
+            public Builder setEndureDelta(float value) {
+                this.endureDelta_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearEndureDelta() {
+                this.endureDelta_ = 0.0f;
                 onChanged();
                 return this;
             }
@@ -2033,35 +2031,35 @@ public final class AttackResultOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public int getUnk3300JMJHGJCAOBH() {
-                return this.unk3300JMJHGJCAOBH_;
+            public float getElementAmplifyRate() {
+                return this.elementAmplifyRate_;
             }
 
-            public Builder setUnk3300JMJHGJCAOBH(int value) {
-                this.unk3300JMJHGJCAOBH_ = value;
+            public Builder setElementAmplifyRate(float value) {
+                this.elementAmplifyRate_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearUnk3300JMJHGJCAOBH() {
-                this.unk3300JMJHGJCAOBH_ = 0;
+            public Builder clearElementAmplifyRate() {
+                this.elementAmplifyRate_ = 0.0f;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.AttackResultOuterClass.AttackResultOrBuilder
-            public float getElementDurabilityAttenuation() {
-                return this.elementDurabilityAttenuation_;
+            public int getUnk3300ABJJNNNKGBB() {
+                return this.unk3300ABJJNNNKGBB_;
             }
 
-            public Builder setElementDurabilityAttenuation(float value) {
-                this.elementDurabilityAttenuation_ = value;
+            public Builder setUnk3300ABJJNNNKGBB(int value) {
+                this.unk3300ABJJNNNKGBB_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearElementDurabilityAttenuation() {
-                this.elementDurabilityAttenuation_ = 0.0f;
+            public Builder clearUnk3300ABJJNNNKGBB() {
+                this.unk3300ABJJNNNKGBB_ = 0;
                 onChanged();
                 return this;
             }
@@ -2101,8 +2099,8 @@ public final class AttackResultOuterClass {
     }
 
     static {
-        AbilityIdentifierOuterClass.getDescriptor();
         AttackHitEffectResultOuterClass.getDescriptor();
+        AbilityIdentifierOuterClass.getDescriptor();
         HitCollisionOuterClass.getDescriptor();
         VectorOuterClass.getDescriptor();
     }

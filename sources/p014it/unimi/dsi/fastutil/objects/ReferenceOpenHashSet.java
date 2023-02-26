@@ -25,13 +25,13 @@ public class ReferenceOpenHashSet<K> extends AbstractReferenceSet<K> implements 
     protected transient boolean containsNull;
 
     /* renamed from: n */
-    protected transient int f2843n;
+    protected transient int f2807n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2844f;
+    protected final float f2808f;
     private static final Collector<Object, ?, ReferenceOpenHashSet<Object>> TO_SET_COLLECTOR = Collector.of(ReferenceOpenHashSet::new, (v0, v1) -> {
         v0.add(v1);
     }, (v0, v1) -> {
@@ -44,13 +44,13 @@ public class ReferenceOpenHashSet<K> extends AbstractReferenceSet<K> implements 
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2844f = f;
+            this.f2808f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2843n = arraySize;
+            this.f2807n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2843n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2843n, f);
-            this.key = (K[]) new Object[this.f2843n + 1];
+            this.mask = this.f2807n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2807n, f);
+            this.key = (K[]) new Object[this.f2807n + 1];
         }
     }
 
@@ -185,22 +185,22 @@ public class ReferenceOpenHashSet<K> extends AbstractReferenceSet<K> implements 
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2844f);
-        if (needed > this.f2843n) {
+        int needed = HashCommon.arraySize(capacity, this.f2808f);
+        if (needed > this.f2807n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2844f)))));
-        if (needed > this.f2843n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2808f)))));
+        if (needed > this.f2807n) {
             rehash(needed);
         }
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public boolean addAll(Collection<? extends K> c) {
-        if (((double) this.f2844f) <= 0.5d) {
+        if (((double) this.f2808f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -240,7 +240,7 @@ public class ReferenceOpenHashSet<K> extends AbstractReferenceSet<K> implements 
         if (i2 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f2844f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f2808f));
         return true;
     }
 
@@ -276,21 +276,21 @@ public class ReferenceOpenHashSet<K> extends AbstractReferenceSet<K> implements 
     private boolean removeEntry(int pos) {
         this.size--;
         shiftKeys(pos);
-        if (this.f2843n <= this.minN || this.size >= this.maxFill / 4 || this.f2843n <= 16) {
+        if (this.f2807n <= this.minN || this.size >= this.maxFill / 4 || this.f2807n <= 16) {
             return true;
         }
-        rehash(this.f2843n / 2);
+        rehash(this.f2807n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f2843n] = null;
+        this.key[this.f2807n] = null;
         this.size--;
-        if (this.f2843n <= this.minN || this.size >= this.maxFill / 4 || this.f2843n <= 16) {
+        if (this.f2807n <= this.minN || this.size >= this.maxFill / 4 || this.f2807n <= 16) {
             return true;
         }
-        rehash(this.f2843n / 2);
+        rehash(this.f2807n / 2);
         return true;
     }
 
@@ -378,20 +378,20 @@ public class ReferenceOpenHashSet<K> extends AbstractReferenceSet<K> implements 
         int last;
 
         /* renamed from: c */
-        int f2845c;
+        int f2809c;
         boolean mustReturnNull;
         ReferenceArrayList<K> wrapped;
 
         private SetIterator() {
-            this.pos = ReferenceOpenHashSet.this.f2843n;
+            this.pos = ReferenceOpenHashSet.this.f2807n;
             this.last = -1;
-            this.f2845c = ReferenceOpenHashSet.this.size;
+            this.f2809c = ReferenceOpenHashSet.this.size;
             this.mustReturnNull = ReferenceOpenHashSet.this.containsNull;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2845c != 0;
+            return this.f2809c != 0;
         }
 
         @Override // java.util.Iterator
@@ -399,11 +399,11 @@ public class ReferenceOpenHashSet<K> extends AbstractReferenceSet<K> implements 
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2845c--;
+            this.f2809c--;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = ReferenceOpenHashSet.this.f2843n;
-                return ReferenceOpenHashSet.this.key[ReferenceOpenHashSet.this.f2843n];
+                this.last = ReferenceOpenHashSet.this.f2807n;
+                return ReferenceOpenHashSet.this.key[ReferenceOpenHashSet.this.f2807n];
             }
             K[] key = ReferenceOpenHashSet.this.key;
             do {
@@ -462,9 +462,9 @@ public class ReferenceOpenHashSet<K> extends AbstractReferenceSet<K> implements 
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == ReferenceOpenHashSet.this.f2843n) {
+            if (this.last == ReferenceOpenHashSet.this.f2807n) {
                 ReferenceOpenHashSet.this.containsNull = false;
-                ReferenceOpenHashSet.this.key[ReferenceOpenHashSet.this.f2843n] = null;
+                ReferenceOpenHashSet.this.key[ReferenceOpenHashSet.this.f2807n] = null;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -482,22 +482,22 @@ public class ReferenceOpenHashSet<K> extends AbstractReferenceSet<K> implements 
             K[] key = ReferenceOpenHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = ReferenceOpenHashSet.this.f2843n;
-                action.accept((Object) key[ReferenceOpenHashSet.this.f2843n]);
-                this.f2845c--;
+                this.last = ReferenceOpenHashSet.this.f2807n;
+                action.accept((Object) key[ReferenceOpenHashSet.this.f2807n]);
+                this.f2809c--;
             }
-            while (this.f2845c != 0) {
+            while (this.f2809c != 0) {
                 int i = this.pos - 1;
                 this.pos = i;
                 if (i < 0) {
                     this.last = Integer.MIN_VALUE;
                     action.accept((K) this.wrapped.get((-this.pos) - 1));
-                    this.f2845c--;
+                    this.f2809c--;
                 } else if (key[this.pos] != null) {
                     int i2 = this.pos;
                     this.last = i2;
                     action.accept((Object) key[i2]);
-                    this.f2845c--;
+                    this.f2809c--;
                 }
             }
         }
@@ -517,22 +517,22 @@ public class ReferenceOpenHashSet<K> extends AbstractReferenceSet<K> implements 
         int max;
 
         /* renamed from: c */
-        int f2846c;
+        int f2810c;
         boolean mustReturnNull;
         boolean hasSplit;
 
         SetSpliterator() {
             this.pos = 0;
-            this.max = ReferenceOpenHashSet.this.f2843n;
-            this.f2846c = 0;
+            this.max = ReferenceOpenHashSet.this.f2807n;
+            this.f2810c = 0;
             this.mustReturnNull = ReferenceOpenHashSet.this.containsNull;
             this.hasSplit = false;
         }
 
         SetSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = ReferenceOpenHashSet.this.f2843n;
-            this.f2846c = 0;
+            this.max = ReferenceOpenHashSet.this.f2807n;
+            this.f2810c = 0;
             this.mustReturnNull = ReferenceOpenHashSet.this.containsNull;
             this.hasSplit = false;
             this.pos = pos;
@@ -545,14 +545,14 @@ public class ReferenceOpenHashSet<K> extends AbstractReferenceSet<K> implements 
         public boolean tryAdvance(Consumer<? super K> action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2846c++;
-                action.accept((Object) ReferenceOpenHashSet.this.key[ReferenceOpenHashSet.this.f2843n]);
+                this.f2810c++;
+                action.accept((Object) ReferenceOpenHashSet.this.key[ReferenceOpenHashSet.this.f2807n]);
                 return true;
             }
             K[] key = ReferenceOpenHashSet.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != null) {
-                    this.f2846c++;
+                    this.f2810c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept((Object) key[i]);
@@ -568,13 +568,13 @@ public class ReferenceOpenHashSet<K> extends AbstractReferenceSet<K> implements 
             K[] key = ReferenceOpenHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                action.accept((Object) key[ReferenceOpenHashSet.this.f2843n]);
-                this.f2846c++;
+                action.accept((Object) key[ReferenceOpenHashSet.this.f2807n]);
+                this.f2810c++;
             }
             while (this.pos < this.max) {
                 if (key[this.pos] != null) {
                     action.accept((Object) key[this.pos]);
-                    this.f2846c++;
+                    this.f2810c++;
                 }
                 this.pos++;
             }
@@ -588,9 +588,9 @@ public class ReferenceOpenHashSet<K> extends AbstractReferenceSet<K> implements 
         @Override // java.util.Spliterator
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (ReferenceOpenHashSet.this.size - this.f2846c);
+                return (long) (ReferenceOpenHashSet.this.size - this.f2810c);
             }
-            return Math.min((long) (ReferenceOpenHashSet.this.size - this.f2846c), ((long) ((((double) ReferenceOpenHashSet.this.realSize()) / ((double) ReferenceOpenHashSet.this.f2843n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (ReferenceOpenHashSet.this.size - this.f2810c), ((long) ((((double) ReferenceOpenHashSet.this.realSize()) / ((double) ReferenceOpenHashSet.this.f2807n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -717,10 +717,10 @@ public class ReferenceOpenHashSet<K> extends AbstractReferenceSet<K> implements 
     @Override // java.lang.Iterable
     public void forEach(Consumer<? super K> action) {
         if (this.containsNull) {
-            action.accept((Object) this.key[this.f2843n]);
+            action.accept((Object) this.key[this.f2807n]);
         }
         K[] key = this.key;
-        int pos = this.f2843n;
+        int pos = this.f2807n;
         while (true) {
             pos--;
             if (pos == 0) {
@@ -737,8 +737,8 @@ public class ReferenceOpenHashSet<K> extends AbstractReferenceSet<K> implements 
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2844f)));
-        if (l >= this.f2843n || this.size > HashCommon.maxFill(l, this.f2844f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2808f)));
+        if (l >= this.f2807n || this.size > HashCommon.maxFill(l, this.f2808f)) {
             return true;
         }
         try {
@@ -754,7 +754,7 @@ public class ReferenceOpenHashSet<K> extends AbstractReferenceSet<K> implements 
         K[] key = this.key;
         int mask = newN - 1;
         K[] newKey = (K[]) new Object[newN + 1];
-        int i2 = this.f2843n;
+        int i2 = this.f2807n;
         int j = realSize();
         while (true) {
             j--;
@@ -772,9 +772,9 @@ public class ReferenceOpenHashSet<K> extends AbstractReferenceSet<K> implements 
                 }
                 newKey[pos] = key[i2];
             } else {
-                this.f2843n = newN;
+                this.f2807n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2843n, this.f2844f);
+                this.maxFill = HashCommon.maxFill(this.f2807n, this.f2808f);
                 this.key = newKey;
                 return;
             }
@@ -835,10 +835,10 @@ public class ReferenceOpenHashSet<K> extends AbstractReferenceSet<K> implements 
         int pos;
         int i;
         s.defaultReadObject();
-        this.f2843n = HashCommon.arraySize(this.size, this.f2844f);
-        this.maxFill = HashCommon.maxFill(this.f2843n, this.f2844f);
-        this.mask = this.f2843n - 1;
-        K[] key = (K[]) new Object[this.f2843n + 1];
+        this.f2807n = HashCommon.arraySize(this.size, this.f2808f);
+        this.maxFill = HashCommon.maxFill(this.f2807n, this.f2808f);
+        this.mask = this.f2807n - 1;
+        K[] key = (K[]) new Object[this.f2807n + 1];
         this.key = key;
         int i2 = this.size;
         while (true) {
@@ -846,7 +846,7 @@ public class ReferenceOpenHashSet<K> extends AbstractReferenceSet<K> implements 
             if (i2 != 0) {
                 Object readObject = s.readObject();
                 if (readObject == null) {
-                    pos = this.f2843n;
+                    pos = this.f2807n;
                     this.containsNull = true;
                 } else {
                     int mix = HashCommon.mix(System.identityHashCode(readObject)) & this.mask;

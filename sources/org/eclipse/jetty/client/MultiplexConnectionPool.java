@@ -26,7 +26,7 @@ public class MultiplexConnectionPool extends AbstractConnectionPool {
                 if (connection instanceof ConnectionPool.Multiplexable) {
                     multiplex = ((ConnectionPool.Multiplexable) connection).getMaxMultiplex();
                 } else {
-                    multiplex = getMaxMultiplex((C56031) connection);
+                    multiplex = getMaxMultiplex((C55951) connection);
                 }
                 if (multiplex > 0) {
                     return multiplex;

@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityActionGenerateElemBallOuterClass.class */
 public final class AbilityActionGenerateElemBallOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#AbilityActionGenerateElemBall.proto\u001a\fVector.proto\"\\\n\u001dAbilityActionGenerateElemBall\u0012\u000f\n\u0007room_id\u0018\b \u0001(\r\u0012\u0014\n\u0003rot\u0018\u0001 \u0001(\u000b2\u0007.Vector\u0012\u0014\n\u0003pos\u0018\u000e \u0001(\u000b2\u0007.VectorB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#AbilityActionGenerateElemBall.proto\u001a\fVector.proto\"[\n\u001dAbilityActionGenerateElemBall\u0012\u000e\n\u0006roomId\u0018\u0006 \u0001(\r\u0012\u0014\n\u0003rot\u0018\u000f \u0001(\u000b2\u0007.Vector\u0012\u0014\n\u0003pos\u0018\u0007 \u0001(\u000b2\u0007.VectorB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AbilityActionGenerateElemBall_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AbilityActionGenerateElemBall_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AbilityActionGenerateElemBall_descriptor, new String[]{"RoomId", "Rot", "Pos"});
 
@@ -55,11 +55,11 @@ public final class AbilityActionGenerateElemBallOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityActionGenerateElemBallOuterClass$AbilityActionGenerateElemBall.class */
     public static final class AbilityActionGenerateElemBall extends GeneratedMessageV3 implements AbilityActionGenerateElemBallOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ROOM_ID_FIELD_NUMBER = 8;
+        public static final int ROOMID_FIELD_NUMBER = 6;
         private int roomId_;
-        public static final int ROT_FIELD_NUMBER = 1;
+        public static final int ROT_FIELD_NUMBER = 15;
         private VectorOuterClass.Vector rot_;
-        public static final int POS_FIELD_NUMBER = 14;
+        public static final int POS_FIELD_NUMBER = 7;
         private VectorOuterClass.Vector pos_;
         private byte memoizedIsInitialized;
         private static final AbilityActionGenerateElemBall DEFAULT_INSTANCE = new AbilityActionGenerateElemBall();
@@ -106,27 +106,27 @@ public final class AbilityActionGenerateElemBallOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 10:
-                                VectorOuterClass.Vector.Builder subBuilder = this.rot_ != null ? this.rot_.toBuilder() : null;
-                                this.rot_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
+                            case 48:
+                                this.roomId_ = input.readUInt32();
+                                break;
+                            case 58:
+                                VectorOuterClass.Vector.Builder subBuilder = this.pos_ != null ? this.pos_.toBuilder() : null;
+                                this.pos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
                                 if (subBuilder == null) {
                                     break;
                                 } else {
-                                    subBuilder.mergeFrom(this.rot_);
-                                    this.rot_ = subBuilder.buildPartial();
+                                    subBuilder.mergeFrom(this.pos_);
+                                    this.pos_ = subBuilder.buildPartial();
                                     break;
                                 }
-                            case 64:
-                                this.roomId_ = input.readUInt32();
-                                break;
-                            case 114:
-                                VectorOuterClass.Vector.Builder subBuilder2 = this.pos_ != null ? this.pos_.toBuilder() : null;
-                                this.pos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
+                            case 122:
+                                VectorOuterClass.Vector.Builder subBuilder2 = this.rot_ != null ? this.rot_.toBuilder() : null;
+                                this.rot_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
                                 if (subBuilder2 == null) {
                                     break;
                                 } else {
-                                    subBuilder2.mergeFrom(this.pos_);
-                                    this.pos_ = subBuilder2.buildPartial();
+                                    subBuilder2.mergeFrom(this.rot_);
+                                    this.rot_ = subBuilder2.buildPartial();
                                     break;
                                 }
                             default:
@@ -208,14 +208,14 @@ public final class AbilityActionGenerateElemBallOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.rot_ != null) {
-                output.writeMessage(1, getRot());
-            }
             if (this.roomId_ != 0) {
-                output.writeUInt32(8, this.roomId_);
+                output.writeUInt32(6, this.roomId_);
             }
             if (this.pos_ != null) {
-                output.writeMessage(14, getPos());
+                output.writeMessage(7, getPos());
+            }
+            if (this.rot_ != null) {
+                output.writeMessage(15, getRot());
             }
             this.unknownFields.writeTo(output);
         }
@@ -227,14 +227,14 @@ public final class AbilityActionGenerateElemBallOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.rot_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(1, getRot());
-            }
             if (this.roomId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.roomId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.roomId_);
             }
             if (this.pos_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(14, getPos());
+                size2 += CodedOutputStream.computeMessageSize(7, getPos());
+            }
+            if (this.rot_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(15, getRot());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -264,12 +264,12 @@ public final class AbilityActionGenerateElemBallOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getRoomId();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getRoomId();
             if (hasRot()) {
-                hash = (53 * ((37 * hash) + 1)) + getRot().hashCode();
+                hash = (53 * ((37 * hash) + 15)) + getRot().hashCode();
             }
             if (hasPos()) {
-                hash = (53 * ((37 * hash) + 14)) + getPos().hashCode();
+                hash = (53 * ((37 * hash) + 7)) + getPos().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

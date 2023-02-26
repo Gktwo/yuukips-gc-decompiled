@@ -23,19 +23,19 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ParentQuestRandomInfoOuterClass.class */
 public final class ParentQuestRandomInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bParentQuestRandomInfo.proto\"V\n\u0015ParentQuestRandomInfo\u0012\u0013\n\u000bfactor_list\u0018\u0001 \u0003(\r\u0012\u0013\n\u000bentrance_id\u0018\b \u0001(\r\u0012\u0013\n\u000btemplate_id\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bParentQuestRandomInfo.proto\"S\n\u0015ParentQuestRandomInfo\u0012\u0012\n\nentranceId\u0018\u0001 \u0001(\r\u0012\u0012\n\nfactorList\u0018\u0003 \u0003(\r\u0012\u0012\n\ntemplateId\u0018\u0006 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ParentQuestRandomInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ParentQuestRandomInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ParentQuestRandomInfo_descriptor, new String[]{"FactorList", "EntranceId", "TemplateId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ParentQuestRandomInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ParentQuestRandomInfo_descriptor, new String[]{"EntranceId", "FactorList", "TemplateId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ParentQuestRandomInfoOuterClass$ParentQuestRandomInfoOrBuilder.class */
     public interface ParentQuestRandomInfoOrBuilder extends MessageOrBuilder {
+        int getEntranceId();
+
         List<Integer> getFactorListList();
 
         int getFactorListCount();
 
         int getFactorList(int i);
-
-        int getEntranceId();
 
         int getTemplateId();
     }
@@ -53,12 +53,12 @@ public final class ParentQuestRandomInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ParentQuestRandomInfoOuterClass$ParentQuestRandomInfo.class */
     public static final class ParentQuestRandomInfo extends GeneratedMessageV3 implements ParentQuestRandomInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int FACTOR_LIST_FIELD_NUMBER = 1;
+        public static final int ENTRANCEID_FIELD_NUMBER = 1;
+        private int entranceId_;
+        public static final int FACTORLIST_FIELD_NUMBER = 3;
         private Internal.IntList factorList_;
         private int factorListMemoizedSerializedSize;
-        public static final int ENTRANCE_ID_FIELD_NUMBER = 8;
-        private int entranceId_;
-        public static final int TEMPLATE_ID_FIELD_NUMBER = 15;
+        public static final int TEMPLATEID_FIELD_NUMBER = 6;
         private int templateId_;
         private byte memoizedIsInitialized;
         private static final ParentQuestRandomInfo DEFAULT_INSTANCE = new ParentQuestRandomInfo();
@@ -111,13 +111,16 @@ public final class ParentQuestRandomInfoOuterClass {
                                 done = true;
                                 break;
                             case 8:
+                                this.entranceId_ = input.readUInt32();
+                                break;
+                            case 24:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.factorList_ = newIntList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.factorList_.addInt(input.readUInt32());
                                 break;
-                            case 10:
+                            case 26:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.factorList_ = newIntList();
@@ -128,10 +131,7 @@ public final class ParentQuestRandomInfoOuterClass {
                                 }
                                 input.popLimit(limit);
                                 break;
-                            case 64:
-                                this.entranceId_ = input.readUInt32();
-                                break;
-                            case 120:
+                            case 48:
                                 this.templateId_ = input.readUInt32();
                                 break;
                             default:
@@ -167,6 +167,11 @@ public final class ParentQuestRandomInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfoOrBuilder
+        public int getEntranceId() {
+            return this.entranceId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfoOrBuilder
         public List<Integer> getFactorListList() {
             return this.factorList_;
         }
@@ -179,11 +184,6 @@ public final class ParentQuestRandomInfoOuterClass {
         @Override // emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfoOrBuilder
         public int getFactorList(int index) {
             return this.factorList_.getInt(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfoOrBuilder
-        public int getEntranceId() {
-            return this.entranceId_;
         }
 
         @Override // emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfoOrBuilder
@@ -207,18 +207,18 @@ public final class ParentQuestRandomInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
+            if (this.entranceId_ != 0) {
+                output.writeUInt32(1, this.entranceId_);
+            }
             if (getFactorListList().size() > 0) {
-                output.writeUInt32NoTag(10);
+                output.writeUInt32NoTag(26);
                 output.writeUInt32NoTag(this.factorListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.factorList_.size(); i++) {
                 output.writeUInt32NoTag(this.factorList_.getInt(i));
             }
-            if (this.entranceId_ != 0) {
-                output.writeUInt32(8, this.entranceId_);
-            }
             if (this.templateId_ != 0) {
-                output.writeUInt32(15, this.templateId_);
+                output.writeUInt32(6, this.templateId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -229,24 +229,25 @@ public final class ParentQuestRandomInfoOuterClass {
             if (size != -1) {
                 return size;
             }
+            int size2 = 0;
+            if (this.entranceId_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.entranceId_);
+            }
             int dataSize = 0;
             for (int i = 0; i < this.factorList_.size(); i++) {
                 dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.factorList_.getInt(i));
             }
-            int size2 = 0 + dataSize;
+            int size3 = size2 + dataSize;
             if (!getFactorListList().isEmpty()) {
-                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.factorListMemoizedSerializedSize = dataSize;
-            if (this.entranceId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.entranceId_);
-            }
             if (this.templateId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.templateId_);
+                size3 += CodedOutputStream.computeUInt32Size(6, this.templateId_);
             }
-            int size3 = size2 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size3;
-            return size3;
+            int size4 = size3 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size4;
+            return size4;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -258,7 +259,7 @@ public final class ParentQuestRandomInfoOuterClass {
                 return equals(obj);
             }
             ParentQuestRandomInfo other = (ParentQuestRandomInfo) obj;
-            return getFactorListList().equals(other.getFactorListList()) && getEntranceId() == other.getEntranceId() && getTemplateId() == other.getTemplateId() && this.unknownFields.equals(other.unknownFields);
+            return getEntranceId() == other.getEntranceId() && getFactorListList().equals(other.getFactorListList()) && getTemplateId() == other.getTemplateId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -266,11 +267,11 @@ public final class ParentQuestRandomInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getEntranceId();
             if (getFactorListCount() > 0) {
-                hash = (53 * ((37 * hash) + 1)) + getFactorListList().hashCode();
+                hash = (53 * ((37 * hash) + 3)) + getFactorListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 8)) + getEntranceId())) + 15)) + getTemplateId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 6)) + getTemplateId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -350,8 +351,8 @@ public final class ParentQuestRandomInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ParentQuestRandomInfoOuterClass$ParentQuestRandomInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ParentQuestRandomInfoOrBuilder {
             private int bitField0_;
-            private Internal.IntList factorList_ = ParentQuestRandomInfo.emptyIntList();
             private int entranceId_;
+            private Internal.IntList factorList_ = ParentQuestRandomInfo.emptyIntList();
             private int templateId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -380,9 +381,9 @@ public final class ParentQuestRandomInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.entranceId_ = 0;
                 this.factorList_ = ParentQuestRandomInfo.emptyIntList();
                 this.bitField0_ &= -2;
-                this.entranceId_ = 0;
                 this.templateId_ = 0;
                 return this;
             }
@@ -410,12 +411,12 @@ public final class ParentQuestRandomInfoOuterClass {
             public ParentQuestRandomInfo buildPartial() {
                 ParentQuestRandomInfo result = new ParentQuestRandomInfo(this);
                 int i = this.bitField0_;
+                result.entranceId_ = this.entranceId_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.factorList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.factorList_ = this.factorList_;
-                result.entranceId_ = this.entranceId_;
                 result.templateId_ = this.templateId_;
                 onBuilt();
                 return result;
@@ -464,6 +465,9 @@ public final class ParentQuestRandomInfoOuterClass {
                 if (other == ParentQuestRandomInfo.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getEntranceId() != 0) {
+                    setEntranceId(other.getEntranceId());
+                }
                 if (!other.factorList_.isEmpty()) {
                     if (this.factorList_.isEmpty()) {
                         this.factorList_ = other.factorList_;
@@ -473,9 +477,6 @@ public final class ParentQuestRandomInfoOuterClass {
                         this.factorList_.addAll(other.factorList_);
                     }
                     onChanged();
-                }
-                if (other.getEntranceId() != 0) {
-                    setEntranceId(other.getEntranceId());
                 }
                 if (other.getTemplateId() != 0) {
                     setTemplateId(other.getTemplateId());
@@ -510,6 +511,23 @@ public final class ParentQuestRandomInfoOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfoOrBuilder
+            public int getEntranceId() {
+                return this.entranceId_;
+            }
+
+            public Builder setEntranceId(int value) {
+                this.entranceId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearEntranceId() {
+                this.entranceId_ = 0;
+                onChanged();
+                return this;
             }
 
             private void ensureFactorListIsMutable() {
@@ -558,23 +576,6 @@ public final class ParentQuestRandomInfoOuterClass {
             public Builder clearFactorList() {
                 this.factorList_ = ParentQuestRandomInfo.emptyIntList();
                 this.bitField0_ &= -2;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfoOrBuilder
-            public int getEntranceId() {
-                return this.entranceId_;
-            }
-
-            public Builder setEntranceId(int value) {
-                this.entranceId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearEntranceId() {
-                this.entranceId_ = 0;
                 onChanged();
                 return this;
             }

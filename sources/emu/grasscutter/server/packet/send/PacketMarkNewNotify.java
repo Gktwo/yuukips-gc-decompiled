@@ -9,7 +9,7 @@ import java.util.Iterator;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketMarkNewNotify.class */
 public class PacketMarkNewNotify extends BasePacket {
     public PacketMarkNewNotify(Player player, int markNewType, ArrayList<Integer> idList) {
-        super(1239);
+        super(1229);
         MarkNewNotifyOuterClass.MarkNewNotify.Builder proto = MarkNewNotifyOuterClass.MarkNewNotify.newBuilder();
         proto.setMarkNewType(markNewType);
         Iterator<Integer> it = idList.iterator();

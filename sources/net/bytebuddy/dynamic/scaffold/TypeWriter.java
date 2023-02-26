@@ -2352,7 +2352,7 @@ public interface TypeWriter<T> {
 
                         @Override // net.bytebuddy.jar.asm.MethodVisitor
                         public void visitCode() {
-                            this.record.applyAttributes(this.f3104mv, this.annotationValueFilterFactory);
+                            this.record.applyAttributes(this.f3068mv, this.annotationValueFilterFactory);
                             visitCode();
                             onStart();
                         }
@@ -2371,7 +2371,7 @@ public interface TypeWriter<T> {
 
                         @Override // net.bytebuddy.dynamic.scaffold.TypeInitializer.Drain
                         public void apply(ClassVisitor classVisitor, TypeInitializer typeInitializer, Implementation.Context implementationContext) {
-                            ByteCodeAppender.Size size = typeInitializer.apply(this.f3104mv, implementationContext, new MethodDescription.Latent.TypeInitializer(this.instrumentedType));
+                            ByteCodeAppender.Size size = typeInitializer.apply(this.f3068mv, implementationContext, new MethodDescription.Latent.TypeInitializer(this.instrumentedType));
                             this.stackSize = Math.max(this.stackSize, size.getOperandStackSize());
                             this.localVariableLength = Math.max(this.localVariableLength, size.getLocalVariableSize());
                             onComplete(implementationContext);
@@ -2380,8 +2380,8 @@ public interface TypeWriter<T> {
                         @Override // net.bytebuddy.dynamic.scaffold.TypeWriter.Default.ForInlining.WithFullProcessing.InitializationHandler
                         public void complete(ClassVisitor classVisitor, Implementation.Context.ExtractableView implementationContext) {
                             implementationContext.drain(this, classVisitor, this.annotationValueFilterFactory);
-                            this.f3104mv.visitMaxs(this.stackSize, this.localVariableLength);
-                            this.f3104mv.visitEnd();
+                            this.f3068mv.visitMaxs(this.stackSize, this.localVariableLength);
+                            this.f3068mv.visitEnd();
                         }
 
                         /* loaded from: grasscutter.jar:net/bytebuddy/dynamic/scaffold/TypeWriter$Default$ForInlining$WithFullProcessing$InitializationHandler$Appending$FrameWriter.class */
@@ -2497,7 +2497,7 @@ public interface TypeWriter<T> {
                                 @Override // net.bytebuddy.jar.asm.MethodVisitor
                                 public void visitInsn(int opcode) {
                                     if (opcode == 177) {
-                                        this.f3104mv.visitJumpInsn(167, this.label);
+                                        this.f3068mv.visitJumpInsn(167, this.label);
                                     } else {
                                         visitInsn(opcode);
                                     }
@@ -2505,9 +2505,9 @@ public interface TypeWriter<T> {
 
                                 @Override // net.bytebuddy.dynamic.scaffold.TypeWriter.Default.ForInlining.WithFullProcessing.InitializationHandler.Appending
                                 protected void onComplete(Implementation.Context implementationContext) {
-                                    this.f3104mv.visitLabel(this.label);
-                                    this.frameWriter.emitFrame(this.f3104mv);
-                                    ByteCodeAppender.Size size = this.record.applyCode(this.f3104mv, implementationContext);
+                                    this.f3068mv.visitLabel(this.label);
+                                    this.frameWriter.emitFrame(this.f3068mv);
+                                    ByteCodeAppender.Size size = this.record.applyCode(this.f3068mv, implementationContext);
                                     this.stackSize = Math.max(this.stackSize, size.getOperandStackSize());
                                     this.localVariableLength = Math.max(this.localVariableLength, size.getLocalVariableSize());
                                 }
@@ -2528,20 +2528,20 @@ public interface TypeWriter<T> {
 
                             @Override // net.bytebuddy.dynamic.scaffold.TypeWriter.Default.ForInlining.WithFullProcessing.InitializationHandler.Appending
                             protected void onStart() {
-                                this.f3104mv.visitJumpInsn(167, this.appended);
-                                this.f3104mv.visitLabel(this.original);
-                                this.frameWriter.emitFrame(this.f3104mv);
+                                this.f3068mv.visitJumpInsn(167, this.appended);
+                                this.f3068mv.visitLabel(this.original);
+                                this.frameWriter.emitFrame(this.f3068mv);
                             }
 
                             @Override // net.bytebuddy.dynamic.scaffold.TypeWriter.Default.ForInlining.WithFullProcessing.InitializationHandler.Appending, net.bytebuddy.jar.asm.MethodVisitor
                             public void visitEnd() {
-                                this.f3104mv.visitLabel(this.appended);
-                                this.frameWriter.emitFrame(this.f3104mv);
+                                this.f3068mv.visitLabel(this.appended);
+                                this.frameWriter.emitFrame(this.f3068mv);
                             }
 
                             @Override // net.bytebuddy.dynamic.scaffold.TypeWriter.Default.ForInlining.WithFullProcessing.InitializationHandler.Appending
                             protected void onComplete(Implementation.Context implementationContext) {
-                                this.f3104mv.visitJumpInsn(167, this.original);
+                                this.f3068mv.visitJumpInsn(167, this.original);
                                 onAfterComplete(implementationContext);
                             }
 
@@ -2569,7 +2569,7 @@ public interface TypeWriter<T> {
                                 @Override // net.bytebuddy.jar.asm.MethodVisitor
                                 public void visitInsn(int opcode) {
                                     if (opcode == 177) {
-                                        this.f3104mv.visitJumpInsn(167, this.label);
+                                        this.f3068mv.visitJumpInsn(167, this.label);
                                     } else {
                                         visitInsn(opcode);
                                     }
@@ -2577,9 +2577,9 @@ public interface TypeWriter<T> {
 
                                 @Override // net.bytebuddy.dynamic.scaffold.TypeWriter.Default.ForInlining.WithFullProcessing.InitializationHandler.Appending.WithDrain
                                 protected void onAfterComplete(Implementation.Context implementationContext) {
-                                    this.f3104mv.visitLabel(this.label);
-                                    this.frameWriter.emitFrame(this.f3104mv);
-                                    ByteCodeAppender.Size size = this.record.applyCode(this.f3104mv, implementationContext);
+                                    this.f3068mv.visitLabel(this.label);
+                                    this.frameWriter.emitFrame(this.f3068mv);
+                                    ByteCodeAppender.Size size = this.record.applyCode(this.f3068mv, implementationContext);
                                     this.stackSize = Math.max(this.stackSize, size.getOperandStackSize());
                                     this.localVariableLength = Math.max(this.localVariableLength, size.getLocalVariableSize());
                                 }
@@ -2654,8 +2654,8 @@ public interface TypeWriter<T> {
                         this.implementationContext = WithFullProcessing.this.implementationContextFactory.make(WithFullProcessing.this.instrumentedType, WithFullProcessing.this.auxiliaryTypeNamingStrategy, this.typeInitializer, classFileVersion, WithFullProcessing.this.classFileVersion);
                         this.retainDeprecationModifiers = classFileVersion.isLessThan(ClassFileVersion.JAVA_V5);
                         this.contextRegistry.setImplementationContext(this.implementationContext);
-                        this.f3102cv = WithFullProcessing.this.asmVisitorWrapper.wrap(WithFullProcessing.this.instrumentedType, this.f3102cv, this.implementationContext, WithFullProcessing.this.typePool, WithFullProcessing.this.fields, WithFullProcessing.this.methods, this.writerFlags, this.readerFlags);
-                        ClassVisitor classVisitor = this.f3102cv;
+                        this.f3066cv = WithFullProcessing.this.asmVisitorWrapper.wrap(WithFullProcessing.this.instrumentedType, this.f3066cv, this.implementationContext, WithFullProcessing.this.typePool, WithFullProcessing.this.fields, WithFullProcessing.this.methods, this.writerFlags, this.readerFlags);
+                        ClassVisitor classVisitor = this.f3066cv;
                         int actualModifiers = WithFullProcessing.this.instrumentedType.getActualModifiers((modifiers & 32) != 0 && !WithFullProcessing.this.instrumentedType.isInterface()) | resolveDeprecationModifiers(modifiers) | (((modifiers & 16) == 0 || !WithFullProcessing.this.instrumentedType.isAnonymousType()) ? 0 : 16);
                         String internalName2 = WithFullProcessing.this.instrumentedType.getInternalName();
                         String genericSignature2 = TypeDescription.AbstractBase.RAW_TYPES ? genericSignature : WithFullProcessing.this.instrumentedType.getGenericSignature();
@@ -2675,14 +2675,14 @@ public interface TypeWriter<T> {
                     @Override // net.bytebuddy.utility.visitor.MetadataAwareClassVisitor
                     protected void onNestHost() {
                         if (!WithFullProcessing.this.instrumentedType.isNestHost()) {
-                            this.f3102cv.visitNestHost(WithFullProcessing.this.instrumentedType.getNestHost().getInternalName());
+                            this.f3066cv.visitNestHost(WithFullProcessing.this.instrumentedType.getNestHost().getInternalName());
                         }
                     }
 
                     @Override // net.bytebuddy.utility.visitor.MetadataAwareClassVisitor
                     protected void onVisitPermittedSubclass(String permittedSubclass) {
                         if (this.permittedSubclasses != null && this.permittedSubclasses.remove(permittedSubclass)) {
-                            this.f3102cv.visitPermittedSubclass(permittedSubclass);
+                            this.f3066cv.visitPermittedSubclass(permittedSubclass);
                         }
                     }
 
@@ -2691,7 +2691,7 @@ public interface TypeWriter<T> {
                         try {
                             onOuterType();
                         } catch (Throwable th) {
-                            this.f3102cv.visitOuterClass(owner, name, descriptor);
+                            this.f3066cv.visitOuterClass(owner, name, descriptor);
                         }
                     }
 
@@ -2699,21 +2699,21 @@ public interface TypeWriter<T> {
                     protected void onOuterType() {
                         MethodDescription.InDefinedShape enclosingMethod = WithFullProcessing.this.instrumentedType.getEnclosingMethod();
                         if (enclosingMethod != null) {
-                            this.f3102cv.visitOuterClass(enclosingMethod.getDeclaringType().getInternalName(), enclosingMethod.getInternalName(), enclosingMethod.getDescriptor());
+                            this.f3066cv.visitOuterClass(enclosingMethod.getDeclaringType().getInternalName(), enclosingMethod.getInternalName(), enclosingMethod.getDescriptor());
                         } else if (WithFullProcessing.this.instrumentedType.isLocalType() || WithFullProcessing.this.instrumentedType.isAnonymousType()) {
-                            this.f3102cv.visitOuterClass(WithFullProcessing.this.instrumentedType.getEnclosingType().getInternalName(), Default.NO_REFERENCE, Default.NO_REFERENCE);
+                            this.f3066cv.visitOuterClass(WithFullProcessing.this.instrumentedType.getEnclosingType().getInternalName(), Default.NO_REFERENCE, Default.NO_REFERENCE);
                         }
                     }
 
                     @Override // net.bytebuddy.utility.visitor.MetadataAwareClassVisitor
                     protected void onAfterAttributes() {
-                        WithFullProcessing.this.typeAttributeAppender.apply(this.f3102cv, WithFullProcessing.this.instrumentedType, WithFullProcessing.this.annotationValueFilterFactory.mo135on(WithFullProcessing.this.instrumentedType));
+                        WithFullProcessing.this.typeAttributeAppender.apply(this.f3066cv, WithFullProcessing.this.instrumentedType, WithFullProcessing.this.annotationValueFilterFactory.mo135on(WithFullProcessing.this.instrumentedType));
                     }
 
                     @Override // net.bytebuddy.utility.visitor.MetadataAwareClassVisitor
                     protected AnnotationVisitor onVisitTypeAnnotation(int typeReference, TypePath typePath, String descriptor, boolean visible) {
                         if (WithFullProcessing.this.annotationRetention.isEnabled()) {
-                            return this.f3102cv.visitTypeAnnotation(typeReference, typePath, descriptor, visible);
+                            return this.f3066cv.visitTypeAnnotation(typeReference, typePath, descriptor, visible);
                         }
                         return ForInlining.IGNORE_ANNOTATION;
                     }
@@ -2721,7 +2721,7 @@ public interface TypeWriter<T> {
                     @Override // net.bytebuddy.utility.visitor.MetadataAwareClassVisitor
                     protected AnnotationVisitor onVisitAnnotation(String descriptor, boolean visible) {
                         if (WithFullProcessing.this.annotationRetention.isEnabled()) {
-                            return this.f3102cv.visitAnnotation(descriptor, visible);
+                            return this.f3066cv.visitAnnotation(descriptor, visible);
                         }
                         return ForInlining.IGNORE_ANNOTATION;
                     }
@@ -2735,12 +2735,12 @@ public interface TypeWriter<T> {
                                 return redefine(record, genericSignature);
                             }
                         }
-                        return this.f3102cv.visitRecordComponent(name, descriptor, genericSignature);
+                        return this.f3066cv.visitRecordComponent(name, descriptor, genericSignature);
                     }
 
                     protected RecordComponentVisitor redefine(RecordComponentPool.Record record, String genericSignature) {
                         RecordComponentDescription recordComponentDescription = record.getRecordComponent();
-                        RecordComponentVisitor recordComponentVisitor = this.f3102cv.visitRecordComponent(recordComponentDescription.getActualName(), recordComponentDescription.getDescriptor(), TypeDescription.AbstractBase.RAW_TYPES ? genericSignature : recordComponentDescription.getGenericSignature());
+                        RecordComponentVisitor recordComponentVisitor = this.f3066cv.visitRecordComponent(recordComponentDescription.getActualName(), recordComponentDescription.getDescriptor(), TypeDescription.AbstractBase.RAW_TYPES ? genericSignature : recordComponentDescription.getGenericSignature());
                         return recordComponentVisitor == null ? ForInlining.IGNORE_RECORD_COMPONENT : new AttributeObtainingRecordComponentVisitor(recordComponentVisitor, record);
                     }
 
@@ -2753,19 +2753,19 @@ public interface TypeWriter<T> {
                                 return redefine(record, defaultValue, modifiers, genericSignature);
                             }
                         }
-                        return this.f3102cv.visitField(modifiers, internalName, descriptor, genericSignature, defaultValue);
+                        return this.f3066cv.visitField(modifiers, internalName, descriptor, genericSignature, defaultValue);
                     }
 
                     protected FieldVisitor redefine(FieldPool.Record record, Object defaultValue, int modifiers, String genericSignature) {
                         FieldDescription instrumentedField = record.getField();
-                        FieldVisitor fieldVisitor = this.f3102cv.visitField(instrumentedField.getActualModifiers() | resolveDeprecationModifiers(modifiers), instrumentedField.getInternalName(), instrumentedField.getDescriptor(), TypeDescription.AbstractBase.RAW_TYPES ? genericSignature : instrumentedField.getGenericSignature(), record.resolveDefault(defaultValue));
+                        FieldVisitor fieldVisitor = this.f3066cv.visitField(instrumentedField.getActualModifiers() | resolveDeprecationModifiers(modifiers), instrumentedField.getInternalName(), instrumentedField.getDescriptor(), TypeDescription.AbstractBase.RAW_TYPES ? genericSignature : instrumentedField.getGenericSignature(), record.resolveDefault(defaultValue));
                         return fieldVisitor == null ? ForInlining.IGNORE_FIELD : new AttributeObtainingFieldVisitor(fieldVisitor, record);
                     }
 
                     @Override // net.bytebuddy.utility.visitor.MetadataAwareClassVisitor
                     protected MethodVisitor onVisitMethod(int modifiers, String internalName, String descriptor, String genericSignature, String[] exceptionName) {
                         if (internalName.equals("<clinit>")) {
-                            MethodVisitor methodVisitor = this.f3102cv.visitMethod(modifiers, internalName, descriptor, genericSignature, exceptionName);
+                            MethodVisitor methodVisitor = this.f3066cv.visitMethod(modifiers, internalName, descriptor, genericSignature, exceptionName);
                             if (methodVisitor == null) {
                                 return ForInlining.IGNORE_METHOD;
                             }
@@ -2775,7 +2775,7 @@ public interface TypeWriter<T> {
                         }
                         MethodDescription methodDescription = this.declarableMethods.remove(internalName + descriptor);
                         if (methodDescription == null) {
-                            return this.f3102cv.visitMethod(modifiers, internalName, descriptor, genericSignature, exceptionName);
+                            return this.f3066cv.visitMethod(modifiers, internalName, descriptor, genericSignature, exceptionName);
                         }
                         return redefine(methodDescription, (modifiers & 1024) != 0, modifiers, genericSignature);
                     }
@@ -2783,10 +2783,10 @@ public interface TypeWriter<T> {
                     protected MethodVisitor redefine(MethodDescription methodDescription, boolean abstractOrigin, int modifiers, String genericSignature) {
                         MethodPool.Record record = this.methodPool.target(methodDescription);
                         if (!record.getSort().isDefined()) {
-                            return this.f3102cv.visitMethod(methodDescription.getActualModifiers() | resolveDeprecationModifiers(modifiers), methodDescription.getInternalName(), methodDescription.getDescriptor(), TypeDescription.AbstractBase.RAW_TYPES ? genericSignature : methodDescription.getGenericSignature(), methodDescription.getExceptionTypes().asErasures().toInternalNames());
+                            return this.f3066cv.visitMethod(methodDescription.getActualModifiers() | resolveDeprecationModifiers(modifiers), methodDescription.getInternalName(), methodDescription.getDescriptor(), TypeDescription.AbstractBase.RAW_TYPES ? genericSignature : methodDescription.getGenericSignature(), methodDescription.getExceptionTypes().asErasures().toInternalNames());
                         }
                         MethodDescription implementedMethod = record.getMethod();
-                        MethodVisitor methodVisitor = this.f3102cv.visitMethod(ModifierContributor.Resolver.m255of(Collections.singleton(record.getVisibility())).resolve(implementedMethod.getActualModifiers(record.getSort().isImplemented())) | resolveDeprecationModifiers(modifiers), implementedMethod.getInternalName(), implementedMethod.getDescriptor(), TypeDescription.AbstractBase.RAW_TYPES ? genericSignature : implementedMethod.getGenericSignature(), implementedMethod.getExceptionTypes().asErasures().toInternalNames());
+                        MethodVisitor methodVisitor = this.f3066cv.visitMethod(ModifierContributor.Resolver.m255of(Collections.singleton(record.getVisibility())).resolve(implementedMethod.getActualModifiers(record.getSort().isImplemented())) | resolveDeprecationModifiers(modifiers), implementedMethod.getInternalName(), implementedMethod.getDescriptor(), TypeDescription.AbstractBase.RAW_TYPES ? genericSignature : implementedMethod.getGenericSignature(), implementedMethod.getExceptionTypes().asErasures().toInternalNames());
                         if (methodVisitor == null) {
                             return ForInlining.IGNORE_METHOD;
                         }
@@ -2813,10 +2813,10 @@ public interface TypeWriter<T> {
                         if (!internalName.equals(WithFullProcessing.this.instrumentedType.getInternalName())) {
                             TypeDescription declaredType = this.declaredTypes.remove(internalName);
                             if (declaredType == null) {
-                                this.f3102cv.visitInnerClass(internalName, outerName, innerName, modifiers);
+                                this.f3066cv.visitInnerClass(internalName, outerName, innerName, modifiers);
                                 return;
                             }
-                            ClassVisitor classVisitor = this.f3102cv;
+                            ClassVisitor classVisitor = this.f3066cv;
                             if (declaredType.isMemberType() || (outerName != null && innerName == null && declaredType.isAnonymousType())) {
                                 str = WithFullProcessing.this.instrumentedType.getInternalName();
                             } else {
@@ -2834,7 +2834,7 @@ public interface TypeWriter<T> {
                     @Override // net.bytebuddy.utility.visitor.MetadataAwareClassVisitor
                     protected void onVisitNestMember(String nestMember) {
                         if (WithFullProcessing.this.instrumentedType.isNestHost() && this.nestMembers.remove(nestMember)) {
-                            this.f3102cv.visitNestMember(nestMember);
+                            this.f3066cv.visitNestMember(nestMember);
                         }
                     }
 
@@ -2843,23 +2843,23 @@ public interface TypeWriter<T> {
                         String str;
                         String str2;
                         for (String nestMember : this.nestMembers) {
-                            this.f3102cv.visitNestMember(nestMember);
+                            this.f3066cv.visitNestMember(nestMember);
                         }
                         if (this.permittedSubclasses != null) {
                             for (String permittedSubclass : this.permittedSubclasses) {
-                                this.f3102cv.visitPermittedSubclass(permittedSubclass);
+                                this.f3066cv.visitPermittedSubclass(permittedSubclass);
                             }
                         }
                         TypeDescription declaringType = WithFullProcessing.this.instrumentedType.getDeclaringType();
                         if (declaringType != null) {
-                            this.f3102cv.visitInnerClass(WithFullProcessing.this.instrumentedType.getInternalName(), declaringType.getInternalName(), WithFullProcessing.this.instrumentedType.getSimpleName(), WithFullProcessing.this.instrumentedType.getModifiers());
+                            this.f3066cv.visitInnerClass(WithFullProcessing.this.instrumentedType.getInternalName(), declaringType.getInternalName(), WithFullProcessing.this.instrumentedType.getSimpleName(), WithFullProcessing.this.instrumentedType.getModifiers());
                         } else if (WithFullProcessing.this.instrumentedType.isLocalType()) {
-                            this.f3102cv.visitInnerClass(WithFullProcessing.this.instrumentedType.getInternalName(), Default.NO_REFERENCE, WithFullProcessing.this.instrumentedType.getSimpleName(), WithFullProcessing.this.instrumentedType.getModifiers());
+                            this.f3066cv.visitInnerClass(WithFullProcessing.this.instrumentedType.getInternalName(), Default.NO_REFERENCE, WithFullProcessing.this.instrumentedType.getSimpleName(), WithFullProcessing.this.instrumentedType.getModifiers());
                         } else if (WithFullProcessing.this.instrumentedType.isAnonymousType()) {
-                            this.f3102cv.visitInnerClass(WithFullProcessing.this.instrumentedType.getInternalName(), Default.NO_REFERENCE, Default.NO_REFERENCE, WithFullProcessing.this.instrumentedType.getModifiers());
+                            this.f3066cv.visitInnerClass(WithFullProcessing.this.instrumentedType.getInternalName(), Default.NO_REFERENCE, Default.NO_REFERENCE, WithFullProcessing.this.instrumentedType.getModifiers());
                         }
                         for (TypeDescription typeDescription : this.declaredTypes.values()) {
-                            ClassVisitor classVisitor = this.f3102cv;
+                            ClassVisitor classVisitor = this.f3066cv;
                             String internalName = typeDescription.getInternalName();
                             if (typeDescription.isMemberType()) {
                                 str = WithFullProcessing.this.instrumentedType.getInternalName();
@@ -2874,16 +2874,16 @@ public interface TypeWriter<T> {
                             classVisitor.visitInnerClass(internalName, str, str2, typeDescription.getModifiers());
                         }
                         for (RecordComponentDescription recordComponent : this.declarableRecordComponents.values()) {
-                            WithFullProcessing.this.recordComponentPool.target(recordComponent).apply(this.f3102cv, WithFullProcessing.this.annotationValueFilterFactory);
+                            WithFullProcessing.this.recordComponentPool.target(recordComponent).apply(this.f3066cv, WithFullProcessing.this.annotationValueFilterFactory);
                         }
                         for (FieldDescription fieldDescription : this.declarableFields.values()) {
-                            WithFullProcessing.this.fieldPool.target(fieldDescription).apply(this.f3102cv, WithFullProcessing.this.annotationValueFilterFactory);
+                            WithFullProcessing.this.fieldPool.target(fieldDescription).apply(this.f3066cv, WithFullProcessing.this.annotationValueFilterFactory);
                         }
                         for (MethodDescription methodDescription : this.declarableMethods.values()) {
-                            this.methodPool.target(methodDescription).apply(this.f3102cv, this.implementationContext, WithFullProcessing.this.annotationValueFilterFactory);
+                            this.methodPool.target(methodDescription).apply(this.f3066cv, this.implementationContext, WithFullProcessing.this.annotationValueFilterFactory);
                         }
-                        this.initializationHandler.complete(this.f3102cv, this.implementationContext);
-                        this.f3102cv.visitEnd();
+                        this.initializationHandler.complete(this.f3066cv, this.implementationContext);
+                        this.f3066cv.visitEnd();
                     }
 
                     private int resolveDeprecationModifiers(int modifiers) {
@@ -2918,7 +2918,7 @@ public interface TypeWriter<T> {
 
                         @Override // net.bytebuddy.jar.asm.FieldVisitor
                         public void visitEnd() {
-                            this.record.apply(this.f3103fv, WithFullProcessing.this.annotationValueFilterFactory);
+                            this.record.apply(this.f3067fv, WithFullProcessing.this.annotationValueFilterFactory);
                             visitEnd();
                         }
                     }
@@ -3013,11 +3013,11 @@ public interface TypeWriter<T> {
                             this.record.applyBody(this.actualMethodVisitor, RedefinitionClassVisitor.this.implementationContext, WithFullProcessing.this.annotationValueFilterFactory);
                             this.actualMethodVisitor.visitEnd();
                             if (this.resolution.isRebased()) {
-                                methodVisitor = RedefinitionClassVisitor.this.f3102cv.visitMethod(this.resolution.getResolvedMethod().getActualModifiers(), this.resolution.getResolvedMethod().getInternalName(), this.resolution.getResolvedMethod().getDescriptor(), this.resolution.getResolvedMethod().getGenericSignature(), this.resolution.getResolvedMethod().getExceptionTypes().asErasures().toInternalNames());
+                                methodVisitor = RedefinitionClassVisitor.this.f3066cv.visitMethod(this.resolution.getResolvedMethod().getActualModifiers(), this.resolution.getResolvedMethod().getInternalName(), this.resolution.getResolvedMethod().getDescriptor(), this.resolution.getResolvedMethod().getGenericSignature(), this.resolution.getResolvedMethod().getExceptionTypes().asErasures().toInternalNames());
                             } else {
                                 methodVisitor = ForInlining.IGNORE_METHOD;
                             }
-                            this.f3104mv = methodVisitor;
+                            this.f3068mv = methodVisitor;
                             visitCode();
                         }
 
@@ -3078,7 +3078,7 @@ public interface TypeWriter<T> {
 
                         @Override // net.bytebuddy.jar.asm.MethodVisitor
                         public void visitCode() {
-                            this.f3104mv = ForInlining.IGNORE_METHOD;
+                            this.f3068mv = ForInlining.IGNORE_METHOD;
                         }
 
                         @Override // net.bytebuddy.jar.asm.MethodVisitor
@@ -3143,14 +3143,14 @@ public interface TypeWriter<T> {
                     public void visit(int classFileVersionNumber, int modifiers, String internalName, String genericSignature, String superClassInternalName, String[] interfaceTypeInternalName) {
                         this.implementationContext = WithDecorationOnly.this.implementationContextFactory.make(WithDecorationOnly.this.instrumentedType, WithDecorationOnly.this.auxiliaryTypeNamingStrategy, WithDecorationOnly.this.typeInitializer, ClassFileVersion.ofMinorMajor(classFileVersionNumber), WithDecorationOnly.this.classFileVersion);
                         this.contextRegistry.setImplementationContext(this.implementationContext);
-                        this.f3102cv = WithDecorationOnly.this.asmVisitorWrapper.wrap(WithDecorationOnly.this.instrumentedType, this.f3102cv, this.implementationContext, WithDecorationOnly.this.typePool, WithDecorationOnly.this.fields, WithDecorationOnly.this.methods, this.writerFlags, this.readerFlags);
-                        this.f3102cv.visit(classFileVersionNumber, modifiers, internalName, genericSignature, superClassInternalName, interfaceTypeInternalName);
+                        this.f3066cv = WithDecorationOnly.this.asmVisitorWrapper.wrap(WithDecorationOnly.this.instrumentedType, this.f3066cv, this.implementationContext, WithDecorationOnly.this.typePool, WithDecorationOnly.this.fields, WithDecorationOnly.this.methods, this.writerFlags, this.readerFlags);
+                        this.f3066cv.visit(classFileVersionNumber, modifiers, internalName, genericSignature, superClassInternalName, interfaceTypeInternalName);
                     }
 
                     @Override // net.bytebuddy.utility.visitor.MetadataAwareClassVisitor
                     protected AnnotationVisitor onVisitTypeAnnotation(int typeReference, TypePath typePath, String descriptor, boolean visible) {
                         if (WithDecorationOnly.this.annotationRetention.isEnabled()) {
-                            return this.f3102cv.visitTypeAnnotation(typeReference, typePath, descriptor, visible);
+                            return this.f3066cv.visitTypeAnnotation(typeReference, typePath, descriptor, visible);
                         }
                         return ForInlining.IGNORE_ANNOTATION;
                     }
@@ -3158,20 +3158,20 @@ public interface TypeWriter<T> {
                     @Override // net.bytebuddy.utility.visitor.MetadataAwareClassVisitor
                     protected AnnotationVisitor onVisitAnnotation(String descriptor, boolean visible) {
                         if (WithDecorationOnly.this.annotationRetention.isEnabled()) {
-                            return this.f3102cv.visitAnnotation(descriptor, visible);
+                            return this.f3066cv.visitAnnotation(descriptor, visible);
                         }
                         return ForInlining.IGNORE_ANNOTATION;
                     }
 
                     @Override // net.bytebuddy.utility.visitor.MetadataAwareClassVisitor
                     protected void onAfterAttributes() {
-                        WithDecorationOnly.this.typeAttributeAppender.apply(this.f3102cv, WithDecorationOnly.this.instrumentedType, WithDecorationOnly.this.annotationValueFilterFactory.mo135on(WithDecorationOnly.this.instrumentedType));
+                        WithDecorationOnly.this.typeAttributeAppender.apply(this.f3066cv, WithDecorationOnly.this.instrumentedType, WithDecorationOnly.this.annotationValueFilterFactory.mo135on(WithDecorationOnly.this.instrumentedType));
                     }
 
                     @Override // net.bytebuddy.utility.visitor.MetadataAwareClassVisitor
                     protected void onVisitEnd() {
-                        this.implementationContext.drain(this, this.f3102cv, WithDecorationOnly.this.annotationValueFilterFactory);
-                        this.f3102cv.visitEnd();
+                        this.implementationContext.drain(this, this.f3066cv, WithDecorationOnly.this.annotationValueFilterFactory);
+                        this.f3066cv.visitEnd();
                     }
 
                     @Override // net.bytebuddy.dynamic.scaffold.TypeInitializer.Drain

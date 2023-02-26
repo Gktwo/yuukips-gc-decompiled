@@ -25,7 +25,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SyncTeamEntityNotifyOuterClass.class */
 public final class SyncTeamEntityNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aSyncTeamEntityNotify.proto\u001a\u0014TeamEntityInfo.proto\"X\n\u0014SyncTeamEntityNotify\u0012.\n\u0015team_entity_info_list\u0018\n \u0003(\u000b2\u000f.TeamEntityInfo\u0012\u0010\n\bscene_id\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{TeamEntityInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aSyncTeamEntityNotify.proto\u001a\u0014TeamEntityInfo.proto\"T\n\u0014SyncTeamEntityNotify\u0012+\n\u0012teamEntityInfoList\u0018\u000e \u0003(\u000b2\u000f.TeamEntityInfo\u0012\u000f\n\u0007sceneId\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{TeamEntityInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SyncTeamEntityNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SyncTeamEntityNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SyncTeamEntityNotify_descriptor, new String[]{"TeamEntityInfoList", "SceneId"});
 
@@ -57,9 +57,9 @@ public final class SyncTeamEntityNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SyncTeamEntityNotifyOuterClass$SyncTeamEntityNotify.class */
     public static final class SyncTeamEntityNotify extends GeneratedMessageV3 implements SyncTeamEntityNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int TEAM_ENTITY_INFO_LIST_FIELD_NUMBER = 10;
+        public static final int TEAMENTITYINFOLIST_FIELD_NUMBER = 14;
         private List<TeamEntityInfoOuterClass.TeamEntityInfo> teamEntityInfoList_;
-        public static final int SCENE_ID_FIELD_NUMBER = 1;
+        public static final int SCENEID_FIELD_NUMBER = 5;
         private int sceneId_;
         private byte memoizedIsInitialized;
         private static final SyncTeamEntityNotify DEFAULT_INSTANCE = new SyncTeamEntityNotify();
@@ -110,10 +110,10 @@ public final class SyncTeamEntityNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
+                                case 40:
                                     this.sceneId_ = input.readUInt32();
                                     break;
-                                case 82:
+                                case 114:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.teamEntityInfoList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -199,10 +199,10 @@ public final class SyncTeamEntityNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.sceneId_ != 0) {
-                output.writeUInt32(1, this.sceneId_);
+                output.writeUInt32(5, this.sceneId_);
             }
             for (int i = 0; i < this.teamEntityInfoList_.size(); i++) {
-                output.writeMessage(10, this.teamEntityInfoList_.get(i));
+                output.writeMessage(14, this.teamEntityInfoList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -215,10 +215,10 @@ public final class SyncTeamEntityNotifyOuterClass {
             }
             int size2 = 0;
             if (this.sceneId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.sceneId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.sceneId_);
             }
             for (int i = 0; i < this.teamEntityInfoList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(10, this.teamEntityInfoList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(14, this.teamEntityInfoList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -244,9 +244,9 @@ public final class SyncTeamEntityNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getTeamEntityInfoListCount() > 0) {
-                hash = (53 * ((37 * hash) + 10)) + getTeamEntityInfoListList().hashCode();
+                hash = (53 * ((37 * hash) + 14)) + getTeamEntityInfoListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 1)) + getSceneId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 5)) + getSceneId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

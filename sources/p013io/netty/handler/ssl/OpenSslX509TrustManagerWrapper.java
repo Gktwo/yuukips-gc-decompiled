@@ -140,7 +140,7 @@ final class OpenSslX509TrustManagerWrapper {
                             r0 = r8
                             return r0
                         */
-                        throw new UnsupportedOperationException("Method not decompiled: p013io.netty.handler.ssl.OpenSslX509TrustManagerWrapper.C30343.run():java.lang.Object");
+                        throw new UnsupportedOperationException("Method not decompiled: p013io.netty.handler.ssl.OpenSslX509TrustManagerWrapper.C30263.run():java.lang.Object");
                     }
                 });
                 if (maybeWrapper instanceof Throwable) {

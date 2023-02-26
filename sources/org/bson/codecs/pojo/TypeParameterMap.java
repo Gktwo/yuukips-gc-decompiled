@@ -24,9 +24,8 @@ public final class TypeParameterMap {
         return !this.propertyToClassParamIndexMap.isEmpty();
     }
 
-    /* access modifiers changed from: package-private */
     /* loaded from: grasscutter.jar:org/bson/codecs/pojo/TypeParameterMap$Builder.class */
-    public static final class Builder {
+    static final class Builder {
         private final Map<Integer, Either<Integer, TypeParameterMap>> propertyToClassParamIndexMap;
 
         private Builder() {

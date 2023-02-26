@@ -23,27 +23,27 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChannelerSlabLoopDungeonInfoOuterClass.class */
 public final class ChannelerSlabLoopDungeonInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"ChannelerSlabLoopDungeonInfo.proto\"¬\u0001\n\u001cChannelerSlabLoopDungeonInfo\u0012\"\n\u001ais_first_pass_reward_taken\u0018\t \u0001(\b\u0012\r\n\u0005score\u0018\u0007 \u0001(\r\u0012\u001e\n\u0016last_condition_id_list\u0018\n \u0003(\r\u0012\u0015\n\rdungeon_index\u0018\u0001 \u0001(\r\u0012\u000f\n\u0007is_open\u0018\u0004 \u0001(\b\u0012\u0011\n\topen_time\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\"ChannelerSlabLoopDungeonInfo.proto\"¢\u0001\n\u001cChannelerSlabLoopDungeonInfo\u0012\u0014\n\fdungeonIndex\u0018\u0007 \u0001(\r\u0012\r\n\u0005score\u0018\u0004 \u0001(\r\u0012\u000e\n\u0006isOpen\u0018\u0002 \u0001(\b\u0012\u001e\n\u0016isFirstPassRewardTaken\u0018\u000b \u0001(\b\u0012\u0010\n\bopenTime\u0018\u0003 \u0001(\r\u0012\u001b\n\u0013lastConditionIdList\u0018\u0001 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ChannelerSlabLoopDungeonInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChannelerSlabLoopDungeonInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChannelerSlabLoopDungeonInfo_descriptor, new String[]{"IsFirstPassRewardTaken", "Score", "LastConditionIdList", "DungeonIndex", "IsOpen", "OpenTime"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChannelerSlabLoopDungeonInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChannelerSlabLoopDungeonInfo_descriptor, new String[]{"DungeonIndex", "Score", "IsOpen", "IsFirstPassRewardTaken", "OpenTime", "LastConditionIdList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChannelerSlabLoopDungeonInfoOuterClass$ChannelerSlabLoopDungeonInfoOrBuilder.class */
     public interface ChannelerSlabLoopDungeonInfoOrBuilder extends MessageOrBuilder {
-        boolean getIsFirstPassRewardTaken();
+        int getDungeonIndex();
 
         int getScore();
+
+        boolean getIsOpen();
+
+        boolean getIsFirstPassRewardTaken();
+
+        int getOpenTime();
 
         List<Integer> getLastConditionIdListList();
 
         int getLastConditionIdListCount();
 
         int getLastConditionIdList(int i);
-
-        int getDungeonIndex();
-
-        boolean getIsOpen();
-
-        int getOpenTime();
     }
 
     private ChannelerSlabLoopDungeonInfoOuterClass() {
@@ -59,19 +59,19 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChannelerSlabLoopDungeonInfoOuterClass$ChannelerSlabLoopDungeonInfo.class */
     public static final class ChannelerSlabLoopDungeonInfo extends GeneratedMessageV3 implements ChannelerSlabLoopDungeonInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_FIRST_PASS_REWARD_TAKEN_FIELD_NUMBER = 9;
-        private boolean isFirstPassRewardTaken_;
-        public static final int SCORE_FIELD_NUMBER = 7;
+        public static final int DUNGEONINDEX_FIELD_NUMBER = 7;
+        private int dungeonIndex_;
+        public static final int SCORE_FIELD_NUMBER = 4;
         private int score_;
-        public static final int LAST_CONDITION_ID_LIST_FIELD_NUMBER = 10;
+        public static final int ISOPEN_FIELD_NUMBER = 2;
+        private boolean isOpen_;
+        public static final int ISFIRSTPASSREWARDTAKEN_FIELD_NUMBER = 11;
+        private boolean isFirstPassRewardTaken_;
+        public static final int OPENTIME_FIELD_NUMBER = 3;
+        private int openTime_;
+        public static final int LASTCONDITIONIDLIST_FIELD_NUMBER = 1;
         private Internal.IntList lastConditionIdList_;
         private int lastConditionIdListMemoizedSerializedSize;
-        public static final int DUNGEON_INDEX_FIELD_NUMBER = 1;
-        private int dungeonIndex_;
-        public static final int IS_OPEN_FIELD_NUMBER = 4;
-        private boolean isOpen_;
-        public static final int OPEN_TIME_FIELD_NUMBER = 13;
-        private int openTime_;
         private byte memoizedIsInitialized;
         private static final ChannelerSlabLoopDungeonInfo DEFAULT_INSTANCE = new ChannelerSlabLoopDungeonInfo();
         private static final Parser<ChannelerSlabLoopDungeonInfo> PARSER = new AbstractParser<ChannelerSlabLoopDungeonInfo>() { // from class: emu.grasscutter.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfo.1
@@ -123,25 +123,13 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
                                 done = true;
                                 break;
                             case 8:
-                                this.dungeonIndex_ = input.readUInt32();
-                                break;
-                            case 32:
-                                this.isOpen_ = input.readBool();
-                                break;
-                            case 56:
-                                this.score_ = input.readUInt32();
-                                break;
-                            case 72:
-                                this.isFirstPassRewardTaken_ = input.readBool();
-                                break;
-                            case 80:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.lastConditionIdList_ = newIntList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.lastConditionIdList_.addInt(input.readUInt32());
                                 break;
-                            case 82:
+                            case 10:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.lastConditionIdList_ = newIntList();
@@ -152,8 +140,20 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
                                 }
                                 input.popLimit(limit);
                                 break;
-                            case 104:
+                            case 16:
+                                this.isOpen_ = input.readBool();
+                                break;
+                            case 24:
                                 this.openTime_ = input.readUInt32();
+                                break;
+                            case 32:
+                                this.score_ = input.readUInt32();
+                                break;
+                            case 56:
+                                this.dungeonIndex_ = input.readUInt32();
+                                break;
+                            case 88:
+                                this.isFirstPassRewardTaken_ = input.readBool();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -188,13 +188,28 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfoOrBuilder
-        public boolean getIsFirstPassRewardTaken() {
-            return this.isFirstPassRewardTaken_;
+        public int getDungeonIndex() {
+            return this.dungeonIndex_;
         }
 
         @Override // emu.grasscutter.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfoOrBuilder
         public int getScore() {
             return this.score_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfoOrBuilder
+        public boolean getIsOpen() {
+            return this.isOpen_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfoOrBuilder
+        public boolean getIsFirstPassRewardTaken() {
+            return this.isFirstPassRewardTaken_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfoOrBuilder
+        public int getOpenTime() {
+            return this.openTime_;
         }
 
         @Override // emu.grasscutter.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfoOrBuilder
@@ -210,21 +225,6 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
         @Override // emu.grasscutter.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfoOrBuilder
         public int getLastConditionIdList(int index) {
             return this.lastConditionIdList_.getInt(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfoOrBuilder
-        public int getDungeonIndex() {
-            return this.dungeonIndex_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfoOrBuilder
-        public boolean getIsOpen() {
-            return this.isOpen_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfoOrBuilder
-        public int getOpenTime() {
-            return this.openTime_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -243,27 +243,27 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
-            if (this.dungeonIndex_ != 0) {
-                output.writeUInt32(1, this.dungeonIndex_);
-            }
-            if (this.isOpen_) {
-                output.writeBool(4, this.isOpen_);
-            }
-            if (this.score_ != 0) {
-                output.writeUInt32(7, this.score_);
-            }
-            if (this.isFirstPassRewardTaken_) {
-                output.writeBool(9, this.isFirstPassRewardTaken_);
-            }
             if (getLastConditionIdListList().size() > 0) {
-                output.writeUInt32NoTag(82);
+                output.writeUInt32NoTag(10);
                 output.writeUInt32NoTag(this.lastConditionIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.lastConditionIdList_.size(); i++) {
                 output.writeUInt32NoTag(this.lastConditionIdList_.getInt(i));
             }
+            if (this.isOpen_) {
+                output.writeBool(2, this.isOpen_);
+            }
             if (this.openTime_ != 0) {
-                output.writeUInt32(13, this.openTime_);
+                output.writeUInt32(3, this.openTime_);
+            }
+            if (this.score_ != 0) {
+                output.writeUInt32(4, this.score_);
+            }
+            if (this.dungeonIndex_ != 0) {
+                output.writeUInt32(7, this.dungeonIndex_);
+            }
+            if (this.isFirstPassRewardTaken_) {
+                output.writeBool(11, this.isFirstPassRewardTaken_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -274,34 +274,33 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
             if (size != -1) {
                 return size;
             }
-            int size2 = 0;
-            if (this.dungeonIndex_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.dungeonIndex_);
-            }
-            if (this.isOpen_) {
-                size2 += CodedOutputStream.computeBoolSize(4, this.isOpen_);
-            }
-            if (this.score_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.score_);
-            }
-            if (this.isFirstPassRewardTaken_) {
-                size2 += CodedOutputStream.computeBoolSize(9, this.isFirstPassRewardTaken_);
-            }
             int dataSize = 0;
             for (int i = 0; i < this.lastConditionIdList_.size(); i++) {
                 dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.lastConditionIdList_.getInt(i));
             }
-            int size3 = size2 + dataSize;
+            int size2 = 0 + dataSize;
             if (!getLastConditionIdListList().isEmpty()) {
-                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.lastConditionIdListMemoizedSerializedSize = dataSize;
-            if (this.openTime_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(13, this.openTime_);
+            if (this.isOpen_) {
+                size2 += CodedOutputStream.computeBoolSize(2, this.isOpen_);
             }
-            int size4 = size3 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size4;
-            return size4;
+            if (this.openTime_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(3, this.openTime_);
+            }
+            if (this.score_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(4, this.score_);
+            }
+            if (this.dungeonIndex_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(7, this.dungeonIndex_);
+            }
+            if (this.isFirstPassRewardTaken_) {
+                size2 += CodedOutputStream.computeBoolSize(11, this.isFirstPassRewardTaken_);
+            }
+            int size3 = size2 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size3;
+            return size3;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -313,7 +312,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
                 return equals(obj);
             }
             ChannelerSlabLoopDungeonInfo other = (ChannelerSlabLoopDungeonInfo) obj;
-            return getIsFirstPassRewardTaken() == other.getIsFirstPassRewardTaken() && getScore() == other.getScore() && getLastConditionIdListList().equals(other.getLastConditionIdListList()) && getDungeonIndex() == other.getDungeonIndex() && getIsOpen() == other.getIsOpen() && getOpenTime() == other.getOpenTime() && this.unknownFields.equals(other.unknownFields);
+            return getDungeonIndex() == other.getDungeonIndex() && getScore() == other.getScore() && getIsOpen() == other.getIsOpen() && getIsFirstPassRewardTaken() == other.getIsFirstPassRewardTaken() && getOpenTime() == other.getOpenTime() && getLastConditionIdListList().equals(other.getLastConditionIdListList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -321,11 +320,11 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + Internal.hashBoolean(getIsFirstPassRewardTaken()))) + 7)) + getScore();
+            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getDungeonIndex())) + 4)) + getScore())) + 2)) + Internal.hashBoolean(getIsOpen()))) + 11)) + Internal.hashBoolean(getIsFirstPassRewardTaken()))) + 3)) + getOpenTime();
             if (getLastConditionIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 10)) + getLastConditionIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 1)) + getLastConditionIdListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 1)) + getDungeonIndex())) + 4)) + Internal.hashBoolean(getIsOpen()))) + 13)) + getOpenTime())) + this.unknownFields.hashCode();
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -405,12 +404,12 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChannelerSlabLoopDungeonInfoOuterClass$ChannelerSlabLoopDungeonInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ChannelerSlabLoopDungeonInfoOrBuilder {
             private int bitField0_;
-            private boolean isFirstPassRewardTaken_;
-            private int score_;
-            private Internal.IntList lastConditionIdList_ = ChannelerSlabLoopDungeonInfo.emptyIntList();
             private int dungeonIndex_;
+            private int score_;
             private boolean isOpen_;
+            private boolean isFirstPassRewardTaken_;
             private int openTime_;
+            private Internal.IntList lastConditionIdList_ = ChannelerSlabLoopDungeonInfo.emptyIntList();
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ChannelerSlabLoopDungeonInfoOuterClass.internal_static_ChannelerSlabLoopDungeonInfo_descriptor;
@@ -438,13 +437,13 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.isFirstPassRewardTaken_ = false;
+                this.dungeonIndex_ = 0;
                 this.score_ = 0;
+                this.isOpen_ = false;
+                this.isFirstPassRewardTaken_ = false;
+                this.openTime_ = 0;
                 this.lastConditionIdList_ = ChannelerSlabLoopDungeonInfo.emptyIntList();
                 this.bitField0_ &= -2;
-                this.dungeonIndex_ = 0;
-                this.isOpen_ = false;
-                this.openTime_ = 0;
                 return this;
             }
 
@@ -471,16 +470,16 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
             public ChannelerSlabLoopDungeonInfo buildPartial() {
                 ChannelerSlabLoopDungeonInfo result = new ChannelerSlabLoopDungeonInfo(this);
                 int i = this.bitField0_;
-                result.isFirstPassRewardTaken_ = this.isFirstPassRewardTaken_;
+                result.dungeonIndex_ = this.dungeonIndex_;
                 result.score_ = this.score_;
+                result.isOpen_ = this.isOpen_;
+                result.isFirstPassRewardTaken_ = this.isFirstPassRewardTaken_;
+                result.openTime_ = this.openTime_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.lastConditionIdList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.lastConditionIdList_ = this.lastConditionIdList_;
-                result.dungeonIndex_ = this.dungeonIndex_;
-                result.isOpen_ = this.isOpen_;
-                result.openTime_ = this.openTime_;
                 onBuilt();
                 return result;
             }
@@ -528,11 +527,20 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
                 if (other == ChannelerSlabLoopDungeonInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getIsFirstPassRewardTaken()) {
-                    setIsFirstPassRewardTaken(other.getIsFirstPassRewardTaken());
+                if (other.getDungeonIndex() != 0) {
+                    setDungeonIndex(other.getDungeonIndex());
                 }
                 if (other.getScore() != 0) {
                     setScore(other.getScore());
+                }
+                if (other.getIsOpen()) {
+                    setIsOpen(other.getIsOpen());
+                }
+                if (other.getIsFirstPassRewardTaken()) {
+                    setIsFirstPassRewardTaken(other.getIsFirstPassRewardTaken());
+                }
+                if (other.getOpenTime() != 0) {
+                    setOpenTime(other.getOpenTime());
                 }
                 if (!other.lastConditionIdList_.isEmpty()) {
                     if (this.lastConditionIdList_.isEmpty()) {
@@ -543,15 +551,6 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
                         this.lastConditionIdList_.addAll(other.lastConditionIdList_);
                     }
                     onChanged();
-                }
-                if (other.getDungeonIndex() != 0) {
-                    setDungeonIndex(other.getDungeonIndex());
-                }
-                if (other.getIsOpen()) {
-                    setIsOpen(other.getIsOpen());
-                }
-                if (other.getOpenTime() != 0) {
-                    setOpenTime(other.getOpenTime());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -586,18 +585,18 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfoOrBuilder
-            public boolean getIsFirstPassRewardTaken() {
-                return this.isFirstPassRewardTaken_;
+            public int getDungeonIndex() {
+                return this.dungeonIndex_;
             }
 
-            public Builder setIsFirstPassRewardTaken(boolean value) {
-                this.isFirstPassRewardTaken_ = value;
+            public Builder setDungeonIndex(int value) {
+                this.dungeonIndex_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearIsFirstPassRewardTaken() {
-                this.isFirstPassRewardTaken_ = false;
+            public Builder clearDungeonIndex() {
+                this.dungeonIndex_ = 0;
                 onChanged();
                 return this;
             }
@@ -615,6 +614,57 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
 
             public Builder clearScore() {
                 this.score_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfoOrBuilder
+            public boolean getIsOpen() {
+                return this.isOpen_;
+            }
+
+            public Builder setIsOpen(boolean value) {
+                this.isOpen_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsOpen() {
+                this.isOpen_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfoOrBuilder
+            public boolean getIsFirstPassRewardTaken() {
+                return this.isFirstPassRewardTaken_;
+            }
+
+            public Builder setIsFirstPassRewardTaken(boolean value) {
+                this.isFirstPassRewardTaken_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsFirstPassRewardTaken() {
+                this.isFirstPassRewardTaken_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfoOrBuilder
+            public int getOpenTime() {
+                return this.openTime_;
+            }
+
+            public Builder setOpenTime(int value) {
+                this.openTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearOpenTime() {
+                this.openTime_ = 0;
                 onChanged();
                 return this;
             }
@@ -665,57 +715,6 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
             public Builder clearLastConditionIdList() {
                 this.lastConditionIdList_ = ChannelerSlabLoopDungeonInfo.emptyIntList();
                 this.bitField0_ &= -2;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfoOrBuilder
-            public int getDungeonIndex() {
-                return this.dungeonIndex_;
-            }
-
-            public Builder setDungeonIndex(int value) {
-                this.dungeonIndex_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearDungeonIndex() {
-                this.dungeonIndex_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfoOrBuilder
-            public boolean getIsOpen() {
-                return this.isOpen_;
-            }
-
-            public Builder setIsOpen(boolean value) {
-                this.isOpen_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsOpen() {
-                this.isOpen_ = false;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfoOrBuilder
-            public int getOpenTime() {
-                return this.openTime_;
-            }
-
-            public Builder setOpenTime(int value) {
-                this.openTime_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearOpenTime() {
-                this.openTime_ = 0;
                 onChanged();
                 return this;
             }

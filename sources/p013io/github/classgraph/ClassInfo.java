@@ -18,7 +18,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import nonapi.p019io.github.classgraph.json.AbstractC5513Id;
+import nonapi.p019io.github.classgraph.json.AbstractC5505Id;
 import nonapi.p019io.github.classgraph.scanspec.ScanSpec;
 import nonapi.p019io.github.classgraph.types.ParseException;
 import nonapi.p019io.github.classgraph.types.TypeUtils;
@@ -28,7 +28,7 @@ import p013io.github.classgraph.Classfile;
 /* renamed from: io.github.classgraph.ClassInfo */
 /* loaded from: grasscutter.jar:io/github/classgraph/ClassInfo.class */
 public class ClassInfo extends ScanResultObject implements Comparable<ClassInfo>, HasName {
-    @AbstractC5513Id
+    @AbstractC5505Id
     protected String name;
     private int modifiers;
     private boolean isRecord;

@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonEnterPosInfoOuterClass.class */
 public final class DungeonEnterPosInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019DungeonEnterPosInfo.proto\"9\n\u0013DungeonEnterPosInfo\u0012\u0010\n\bquest_id\u0018\u0006 \u0001(\r\u0012\u0010\n\bpoint_id\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019DungeonEnterPosInfo.proto\"7\n\u0013DungeonEnterPosInfo\u0012\u000f\n\u0007questId\u0018\u000f \u0001(\r\u0012\u000f\n\u0007pointId\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_DungeonEnterPosInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_DungeonEnterPosInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DungeonEnterPosInfo_descriptor, new String[]{"QuestId", "PointId"});
 
@@ -43,9 +43,9 @@ public final class DungeonEnterPosInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonEnterPosInfoOuterClass$DungeonEnterPosInfo.class */
     public static final class DungeonEnterPosInfo extends GeneratedMessageV3 implements DungeonEnterPosInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int QUEST_ID_FIELD_NUMBER = 6;
+        public static final int QUESTID_FIELD_NUMBER = 15;
         private int questId_;
-        public static final int POINT_ID_FIELD_NUMBER = 14;
+        public static final int POINTID_FIELD_NUMBER = 7;
         private int pointId_;
         private byte memoizedIsInitialized;
         private static final DungeonEnterPosInfo DEFAULT_INSTANCE = new DungeonEnterPosInfo();
@@ -92,11 +92,11 @@ public final class DungeonEnterPosInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 48:
-                                this.questId_ = input.readUInt32();
-                                break;
-                            case 112:
+                            case 56:
                                 this.pointId_ = input.readUInt32();
+                                break;
+                            case 120:
+                                this.questId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -152,11 +152,11 @@ public final class DungeonEnterPosInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.questId_ != 0) {
-                output.writeUInt32(6, this.questId_);
-            }
             if (this.pointId_ != 0) {
-                output.writeUInt32(14, this.pointId_);
+                output.writeUInt32(7, this.pointId_);
+            }
+            if (this.questId_ != 0) {
+                output.writeUInt32(15, this.questId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -168,11 +168,11 @@ public final class DungeonEnterPosInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.questId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(6, this.questId_);
-            }
             if (this.pointId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.pointId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.pointId_);
+            }
+            if (this.questId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.questId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class DungeonEnterPosInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getQuestId())) + 14)) + getPointId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getQuestId())) + 7)) + getPointId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

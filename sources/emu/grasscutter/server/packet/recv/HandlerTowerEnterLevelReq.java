@@ -7,7 +7,7 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 @Opcodes(PacketOpcodes.TowerEnterLevelReq)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerTowerEnterLevelReq.class */
 public class HandlerTowerEnterLevelReq extends PacketHandler {
-    /*  JADX ERROR: Dependency scan failed at insn: 0x002F: INVOKE_CUSTOM r-1
+    /*  JADX ERROR: Dependency scan failed at insn: 0x0030: INVOKE_CUSTOM r-1
         java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
         	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
         	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
@@ -23,7 +23,7 @@ public class HandlerTowerEnterLevelReq extends PacketHandler {
         	at jadx.core.dex.visitors.usage.UsageInfoVisitor.init(UsageInfoVisitor.java:36)
         	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:267)
         */
-    /*  JADX ERROR: Failed to decode insn: 0x002F: INVOKE_CUSTOM r1, method: emu.grasscutter.server.packet.recv.HandlerTowerEnterLevelReq.handle(emu.grasscutter.server.game.GameSession, byte[], byte[]):void
+    /*  JADX ERROR: Failed to decode insn: 0x0030: INVOKE_CUSTOM r1, method: emu.grasscutter.server.packet.recv.HandlerTowerEnterLevelReq.handle(emu.grasscutter.server.game.GameSession, byte[], byte[]):void
         jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (Ljava/lang/String;)Ljava/lang/String;}, DEBUG Abyse: Player Start  ]}
         	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:55)
         	at jadx.core.dex.instructions.InsnDecoder.invoke(InsnDecoder.java:568)
@@ -46,16 +46,17 @@ public class HandlerTowerEnterLevelReq extends PacketHandler {
         /*
             r3 = this;
             r0 = r4
-            if (r0 != 0) goto L_0x0009
+            if (r0 != 0) goto L_0x0005
+            return
             r0 = r6
-            if (r0 != 0) goto L_0x0009
+            if (r0 != 0) goto L_0x000a
             return
             emu.grasscutter.config.ConfigContainer r0 = emu.grasscutter.Grasscutter.getConfig()
             emu.grasscutter.config.ConfigContainer$Server r0 = r0.server
             emu.grasscutter.config.ConfigContainer$Game r0 = r0.game
             emu.grasscutter.config.ConfigContainer$GameOptions r0 = r0.gameOptions
             boolean r0 = r0.AbyssMT
-            if (r0 == 0) goto L_0x0025
+            if (r0 == 0) goto L_0x0026
             r0 = r4
             emu.grasscutter.game.player.Player r0 = r0.getPlayer()
             java.lang.String r1 = "Sorry abyse has been temporarily turned off"

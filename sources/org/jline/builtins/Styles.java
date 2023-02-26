@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import kotlin.text.Typography;
 import org.jline.utils.StyleResolver;
 import p001ch.qos.logback.core.joran.util.beans.BeanUtil;
 import p013io.javalin.http.sse.EmitterKt;
@@ -97,8 +98,8 @@ public class Styles {
             COLORS_NANO.put("lagoon", 38);
             COLORS_NANO.put("mint", 48);
             COLORS_NANO.put("lime", 148);
-            COLORS_NANO.put("peach", 215);
-            COLORS_NANO.put("orange", Integer.valueOf((int) PacketOpcodes.PlatformStartRouteNotify));
+            COLORS_NANO.put("peach", Integer.valueOf((int) Typography.times));
+            COLORS_NANO.put("orange", Integer.valueOf((int) PacketOpcodes.SetSceneWeatherAreaReq));
             COLORS_NANO.put("latte", 137);
         }
 

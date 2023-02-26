@@ -5,7 +5,7 @@ public abstract class ClassVisitor {
     protected final int api;
 
     /* renamed from: cv */
-    protected ClassVisitor f3102cv;
+    protected ClassVisitor f3066cv;
 
     public ClassVisitor(int api) {
         this(api, null);
@@ -17,7 +17,7 @@ public abstract class ClassVisitor {
                 Constants.checkAsmExperimental(this);
             }
             this.api = api;
-            this.f3102cv = classVisitor;
+            this.f3066cv = classVisitor;
             return;
         }
         throw new IllegalArgumentException("Unsupported api " + api);
@@ -26,22 +26,22 @@ public abstract class ClassVisitor {
     public void visit(int version, int access, String name, String signature, String superName, String[] interfaces) {
         if (this.api < 524288 && (access & 65536) != 0) {
             throw new UnsupportedOperationException("Records requires ASM8");
-        } else if (this.f3102cv != null) {
-            this.f3102cv.visit(version, access, name, signature, superName, interfaces);
+        } else if (this.f3066cv != null) {
+            this.f3066cv.visit(version, access, name, signature, superName, interfaces);
         }
     }
 
     public void visitSource(String source, String debug) {
-        if (this.f3102cv != null) {
-            this.f3102cv.visitSource(source, debug);
+        if (this.f3066cv != null) {
+            this.f3066cv.visitSource(source, debug);
         }
     }
 
     public ModuleVisitor visitModule(String name, int access, String version) {
         if (this.api < 393216) {
             throw new UnsupportedOperationException("Module requires ASM6");
-        } else if (this.f3102cv != null) {
-            return this.f3102cv.visitModule(name, access, version);
+        } else if (this.f3066cv != null) {
+            return this.f3066cv.visitModule(name, access, version);
         } else {
             return null;
         }
@@ -50,20 +50,20 @@ public abstract class ClassVisitor {
     public void visitNestHost(String nestHost) {
         if (this.api < 458752) {
             throw new UnsupportedOperationException("NestHost requires ASM7");
-        } else if (this.f3102cv != null) {
-            this.f3102cv.visitNestHost(nestHost);
+        } else if (this.f3066cv != null) {
+            this.f3066cv.visitNestHost(nestHost);
         }
     }
 
     public void visitOuterClass(String owner, String name, String descriptor) {
-        if (this.f3102cv != null) {
-            this.f3102cv.visitOuterClass(owner, name, descriptor);
+        if (this.f3066cv != null) {
+            this.f3066cv.visitOuterClass(owner, name, descriptor);
         }
     }
 
     public AnnotationVisitor visitAnnotation(String descriptor, boolean visible) {
-        if (this.f3102cv != null) {
-            return this.f3102cv.visitAnnotation(descriptor, visible);
+        if (this.f3066cv != null) {
+            return this.f3066cv.visitAnnotation(descriptor, visible);
         }
         return null;
     }
@@ -71,68 +71,68 @@ public abstract class ClassVisitor {
     public AnnotationVisitor visitTypeAnnotation(int typeRef, TypePath typePath, String descriptor, boolean visible) {
         if (this.api < 327680) {
             throw new UnsupportedOperationException("TypeAnnotation requires ASM5");
-        } else if (this.f3102cv != null) {
-            return this.f3102cv.visitTypeAnnotation(typeRef, typePath, descriptor, visible);
+        } else if (this.f3066cv != null) {
+            return this.f3066cv.visitTypeAnnotation(typeRef, typePath, descriptor, visible);
         } else {
             return null;
         }
     }
 
     public void visitAttribute(Attribute attribute) {
-        if (this.f3102cv != null) {
-            this.f3102cv.visitAttribute(attribute);
+        if (this.f3066cv != null) {
+            this.f3066cv.visitAttribute(attribute);
         }
     }
 
     public void visitNestMember(String nestMember) {
         if (this.api < 458752) {
             throw new UnsupportedOperationException("NestMember requires ASM7");
-        } else if (this.f3102cv != null) {
-            this.f3102cv.visitNestMember(nestMember);
+        } else if (this.f3066cv != null) {
+            this.f3066cv.visitNestMember(nestMember);
         }
     }
 
     public void visitPermittedSubclass(String permittedSubclass) {
         if (this.api < 589824) {
             throw new UnsupportedOperationException("PermittedSubclasses requires ASM9");
-        } else if (this.f3102cv != null) {
-            this.f3102cv.visitPermittedSubclass(permittedSubclass);
+        } else if (this.f3066cv != null) {
+            this.f3066cv.visitPermittedSubclass(permittedSubclass);
         }
     }
 
     public void visitInnerClass(String name, String outerName, String innerName, int access) {
-        if (this.f3102cv != null) {
-            this.f3102cv.visitInnerClass(name, outerName, innerName, access);
+        if (this.f3066cv != null) {
+            this.f3066cv.visitInnerClass(name, outerName, innerName, access);
         }
     }
 
     public RecordComponentVisitor visitRecordComponent(String name, String descriptor, String signature) {
         if (this.api < 524288) {
             throw new UnsupportedOperationException("Record requires ASM8");
-        } else if (this.f3102cv != null) {
-            return this.f3102cv.visitRecordComponent(name, descriptor, signature);
+        } else if (this.f3066cv != null) {
+            return this.f3066cv.visitRecordComponent(name, descriptor, signature);
         } else {
             return null;
         }
     }
 
     public FieldVisitor visitField(int access, String name, String descriptor, String signature, Object value) {
-        if (this.f3102cv != null) {
-            return this.f3102cv.visitField(access, name, descriptor, signature, value);
+        if (this.f3066cv != null) {
+            return this.f3066cv.visitField(access, name, descriptor, signature, value);
         }
         return null;
     }
 
     public MethodVisitor visitMethod(int access, String name, String descriptor, String signature, String[] exceptions) {
-        if (this.f3102cv != null) {
-            return this.f3102cv.visitMethod(access, name, descriptor, signature, exceptions);
+        if (this.f3066cv != null) {
+            return this.f3066cv.visitMethod(access, name, descriptor, signature, exceptions);
         }
         return null;
     }
 
     public void visitEnd() {
-        if (this.f3102cv != null) {
-            this.f3102cv.visitEnd();
+        if (this.f3066cv != null) {
+            this.f3066cv.visitEnd();
         }
     }
 }

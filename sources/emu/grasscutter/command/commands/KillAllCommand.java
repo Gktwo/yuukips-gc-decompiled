@@ -3,10 +3,10 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 
-@Command(label = "killall", usage = {"[monster|item|gadget|char|all] [scene_id]"}, permission = "server.killall", permissionTargeted = "server.killall.others")
+@Command(label = "killall", usage = {"[monster|item|gadget|me|all] [scene_id]"}, permission = "server.killall", permissionTargeted = "server.killall.others")
 /* loaded from: grasscutter.jar:emu/grasscutter/command/commands/KillAllCommand.class */
 public final class KillAllCommand implements CommandHandler {
-    /*  JADX ERROR: Dependency scan failed at insn: 0x0114: INVOKE_CUSTOM r-18
+    /*  JADX ERROR: Dependency scan failed at insn: 0x011A: INVOKE_CUSTOM r-22
         java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
         	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
         	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
@@ -22,7 +22,7 @@ public final class KillAllCommand implements CommandHandler {
         	at jadx.core.dex.visitors.usage.UsageInfoVisitor.init(UsageInfoVisitor.java:36)
         	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:267)
         */
-    /*  JADX ERROR: Dependency scan failed at insn: 0x0162: INVOKE_CUSTOM r-24
+    /*  JADX ERROR: Dependency scan failed at insn: 0x016D: INVOKE_CUSTOM r-30
         java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
         	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
         	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
@@ -38,7 +38,7 @@ public final class KillAllCommand implements CommandHandler {
         	at jadx.core.dex.visitors.usage.UsageInfoVisitor.init(UsageInfoVisitor.java:36)
         	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:267)
         */
-    /*  JADX ERROR: Failed to decode insn: 0x0114: INVOKE_CUSTOM r1, method: emu.grasscutter.command.commands.KillAllCommand.execute(emu.grasscutter.game.player.Player, emu.grasscutter.game.player.Player, java.util.List<java.lang.String>):void
+    /*  JADX ERROR: Failed to decode insn: 0x011A: INVOKE_CUSTOM r1, method: emu.grasscutter.command.commands.KillAllCommand.execute(emu.grasscutter.game.player.Player, emu.grasscutter.game.player.Player, java.util.List<java.lang.String>):void
         jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, Killed  dropped items.]}
         	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:55)
         	at jadx.core.dex.instructions.InsnDecoder.invoke(InsnDecoder.java:568)
@@ -56,7 +56,7 @@ public final class KillAllCommand implements CommandHandler {
         	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:42)
         	... 11 more
         */
-    /*  JADX ERROR: Failed to decode insn: 0x0162: INVOKE_CUSTOM r1, method: emu.grasscutter.command.commands.KillAllCommand.execute(emu.grasscutter.game.player.Player, emu.grasscutter.game.player.Player, java.util.List<java.lang.String>):void
+    /*  JADX ERROR: Failed to decode insn: 0x016D: INVOKE_CUSTOM r1, method: emu.grasscutter.command.commands.KillAllCommand.execute(emu.grasscutter.game.player.Player, emu.grasscutter.game.player.Player, java.util.List<java.lang.String>):void
         jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I)Ljava/lang/String;}, Killed  Gadget.]}
         	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:55)
         	at jadx.core.dex.instructions.InsnDecoder.invoke(InsnDecoder.java:568)
@@ -77,7 +77,7 @@ public final class KillAllCommand implements CommandHandler {
     @Override // emu.grasscutter.command.CommandHandler
     public void execute(emu.grasscutter.game.player.Player r9, emu.grasscutter.game.player.Player r10, java.util.List<java.lang.String> r11) {
         /*
-        // Method dump skipped, instructions count: 468
+        // Method dump skipped, instructions count: 479
         */
         throw new UnsupportedOperationException("Method not decompiled: emu.grasscutter.command.commands.KillAllCommand.execute(emu.grasscutter.game.player.Player, emu.grasscutter.game.player.Player, java.util.List):void");
     }

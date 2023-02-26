@@ -24,7 +24,7 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerPropNotifyOuterClass.class */
 public final class PlayerPropNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016PlayerPropNotify.proto\u001a\u000fPropValue.proto\"\u0001\n\u0010PlayerPropNotify\u00120\n\bprop_map\u0018\u0001 \u0003(\u000b2\u001e.PlayerPropNotify.PropMapEntry\u001a:\n\fPropMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\u0019\n\u0005value\u0018\u0002 \u0001(\u000b2\n.PropValue:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PropValueOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016PlayerPropNotify.proto\u001a\u000fPropValue.proto\"\n\u0010PlayerPropNotify\u0012/\n\u0007propMap\u0018\u0005 \u0003(\u000b2\u001e.PlayerPropNotify.PropMapEntry\u001a:\n\fPropMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\u0019\n\u0005value\u0018\u0002 \u0001(\u000b2\n.PropValue:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PropValueOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_PlayerPropNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerPropNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerPropNotify_descriptor, new String[]{"PropMap"});
     private static final Descriptors.Descriptor internal_static_PlayerPropNotify_PropMapEntry_descriptor = internal_static_PlayerPropNotify_descriptor.getNestedTypes().get(0);
@@ -59,7 +59,7 @@ public final class PlayerPropNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerPropNotifyOuterClass$PlayerPropNotify.class */
     public static final class PlayerPropNotify extends GeneratedMessageV3 implements PlayerPropNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PROP_MAP_FIELD_NUMBER = 1;
+        public static final int PROPMAP_FIELD_NUMBER = 5;
         private MapField<Integer, PropValueOuterClass.PropValue> propMap_;
         private byte memoizedIsInitialized;
         private static final PlayerPropNotify DEFAULT_INSTANCE = new PlayerPropNotify();
@@ -111,7 +111,7 @@ public final class PlayerPropNotifyOuterClass {
                 r4 = this;
                 r0 = r5
                 switch(r0) {
-                    case 1: goto L_0x0014;
+                    case 5: goto L_0x0014;
                     default: goto L_0x0019;
                 }
                 r0 = r4
@@ -164,7 +164,7 @@ public final class PlayerPropNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 10:
+                            case 42:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.propMap_ = MapField.newMapField(PropMapDefaultEntryHolder.defaultEntry);
                                     mutable_bitField0_ |= 1;
@@ -268,7 +268,7 @@ public final class PlayerPropNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetPropMap(), PropMapDefaultEntryHolder.defaultEntry, 1);
+            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetPropMap(), PropMapDefaultEntryHolder.defaultEntry, 5);
             this.unknownFields.writeTo(output);
         }
 
@@ -280,7 +280,7 @@ public final class PlayerPropNotifyOuterClass {
             }
             int size2 = 0;
             for (Map.Entry<Integer, PropValueOuterClass.PropValue> entry : internalGetPropMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(1, PropMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+                size2 += CodedOutputStream.computeMessageSize(5, PropMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -306,7 +306,7 @@ public final class PlayerPropNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (!internalGetPropMap().getMap().isEmpty()) {
-                hash = (53 * ((37 * hash) + 1)) + internalGetPropMap().hashCode();
+                hash = (53 * ((37 * hash) + 5)) + internalGetPropMap().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -427,7 +427,7 @@ public final class PlayerPropNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 1: goto L_0x0014;
+                        case 5: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -480,7 +480,7 @@ public final class PlayerPropNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 1: goto L_0x0014;
+                        case 5: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4

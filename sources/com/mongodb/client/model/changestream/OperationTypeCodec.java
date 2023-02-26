@@ -6,9 +6,8 @@ import org.bson.codecs.Codec;
 import org.bson.codecs.DecoderContext;
 import org.bson.codecs.EncoderContext;
 
-/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:com/mongodb/client/model/changestream/OperationTypeCodec.class */
-public final class OperationTypeCodec implements Codec<OperationType> {
+final class OperationTypeCodec implements Codec<OperationType> {
     @Override // org.bson.codecs.Decoder
     public OperationType decode(BsonReader reader, DecoderContext decoderContext) {
         return OperationType.fromString(reader.readString());

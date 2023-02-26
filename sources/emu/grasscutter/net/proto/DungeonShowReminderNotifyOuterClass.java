@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonShowReminderNotifyOuterClass.class */
 public final class DungeonShowReminderNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fDungeonShowReminderNotify.proto\"0\n\u0019DungeonShowReminderNotify\u0012\u0013\n\u000breminder_id\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001fDungeonShowReminderNotify.proto\"/\n\u0019DungeonShowReminderNotify\u0012\u0012\n\nreminderId\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_DungeonShowReminderNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_DungeonShowReminderNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_DungeonShowReminderNotify_descriptor, new String[]{"ReminderId"});
 
@@ -41,7 +41,7 @@ public final class DungeonShowReminderNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonShowReminderNotifyOuterClass$DungeonShowReminderNotify.class */
     public static final class DungeonShowReminderNotify extends GeneratedMessageV3 implements DungeonShowReminderNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int REMINDER_ID_FIELD_NUMBER = 12;
+        public static final int REMINDERID_FIELD_NUMBER = 5;
         private int reminderId_;
         private byte memoizedIsInitialized;
         private static final DungeonShowReminderNotify DEFAULT_INSTANCE = new DungeonShowReminderNotify();
@@ -88,7 +88,7 @@ public final class DungeonShowReminderNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 96:
+                            case 40:
                                 this.reminderId_ = input.readUInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class DungeonShowReminderNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.reminderId_ != 0) {
-                output.writeUInt32(12, this.reminderId_);
+                output.writeUInt32(5, this.reminderId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class DungeonShowReminderNotifyOuterClass {
             }
             int size2 = 0;
             if (this.reminderId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(12, this.reminderId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.reminderId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class DungeonShowReminderNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getReminderId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getReminderId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

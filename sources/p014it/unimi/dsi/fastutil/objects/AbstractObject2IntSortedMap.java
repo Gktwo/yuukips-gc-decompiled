@@ -88,30 +88,30 @@ public abstract class AbstractObject2IntSortedMap<K> extends AbstractObject2IntM
     public static class KeySetIterator<K> implements ObjectBidirectionalIterator<K> {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Object2IntMap.Entry<K>> f2470i;
+        protected final ObjectBidirectionalIterator<Object2IntMap.Entry<K>> f2434i;
 
         public KeySetIterator(ObjectBidirectionalIterator<Object2IntMap.Entry<K>> i) {
-            this.f2470i = i;
+            this.f2434i = i;
         }
 
         @Override // java.util.Iterator
         public K next() {
-            return ((Object2IntMap.Entry) this.f2470i.next()).getKey();
+            return ((Object2IntMap.Entry) this.f2434i.next()).getKey();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public K previous() {
-            return this.f2470i.previous().getKey();
+            return this.f2434i.previous().getKey();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2470i.hasNext();
+            return this.f2434i.hasNext();
         }
 
         @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
         public boolean hasPrevious() {
-            return this.f2470i.hasPrevious();
+            return this.f2434i.hasPrevious();
         }
     }
 
@@ -154,20 +154,20 @@ public abstract class AbstractObject2IntSortedMap<K> extends AbstractObject2IntM
     public static class ValuesIterator<K> implements IntIterator {
 
         /* renamed from: i */
-        protected final ObjectBidirectionalIterator<Object2IntMap.Entry<K>> f2471i;
+        protected final ObjectBidirectionalIterator<Object2IntMap.Entry<K>> f2435i;
 
         public ValuesIterator(ObjectBidirectionalIterator<Object2IntMap.Entry<K>> i) {
-            this.f2471i = i;
+            this.f2435i = i;
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntIterator, java.util.PrimitiveIterator.OfInt
         public int nextInt() {
-            return ((Object2IntMap.Entry) this.f2471i.next()).getIntValue();
+            return ((Object2IntMap.Entry) this.f2435i.next()).getIntValue();
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2471i.hasNext();
+            return this.f2435i.hasNext();
         }
     }
 }

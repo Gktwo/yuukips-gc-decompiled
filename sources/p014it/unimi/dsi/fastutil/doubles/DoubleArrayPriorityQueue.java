@@ -15,7 +15,7 @@ public class DoubleArrayPriorityQueue implements DoublePriorityQueue, Serializab
     protected int size;
 
     /* renamed from: c */
-    protected DoubleComparator f1702c;
+    protected DoubleComparator f1666c;
     protected transient int firstIndex;
     protected transient boolean firstIndexValid;
 
@@ -24,7 +24,7 @@ public class DoubleArrayPriorityQueue implements DoublePriorityQueue, Serializab
         if (capacity > 0) {
             this.array = new double[capacity];
         }
-        this.f1702c = c;
+        this.f1666c = c;
     }
 
     public DoubleArrayPriorityQueue(int capacity) {
@@ -65,12 +65,12 @@ public class DoubleArrayPriorityQueue implements DoublePriorityQueue, Serializab
         int i = this.size - 1;
         int firstIndex = i;
         double first = this.array[firstIndex];
-        if (this.f1702c != null) {
+        if (this.f1666c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f1702c.compare(this.array[i], first) < 0) {
+                } else if (this.f1666c.compare(this.array[i], first) < 0) {
                     firstIndex = i;
                     first = this.array[i];
                 }
@@ -103,11 +103,11 @@ public class DoubleArrayPriorityQueue implements DoublePriorityQueue, Serializab
         }
         if (!this.firstIndexValid) {
             this.firstIndexValid = false;
-        } else if (this.f1702c == null) {
+        } else if (this.f1666c == null) {
             if (Double.compare(x, this.array[this.firstIndex]) < 0) {
                 this.firstIndex = this.size;
             }
-        } else if (this.f1702c.compare(x, this.array[this.firstIndex]) < 0) {
+        } else if (this.f1666c.compare(x, this.array[this.firstIndex]) < 0) {
             this.firstIndex = this.size;
         }
         double[] dArr = this.array;
@@ -159,7 +159,7 @@ public class DoubleArrayPriorityQueue implements DoublePriorityQueue, Serializab
     /* Return type fixed from 'it.unimi.dsi.fastutil.doubles.DoubleComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.doubles.DoublePriorityQueue, p014it.unimi.dsi.fastutil.PriorityQueue
     public Comparator<? super Double> comparator() {
-        return this.f1702c;
+        return this.f1666c;
     }
 
     private void writeObject(ObjectOutputStream s) throws IOException {

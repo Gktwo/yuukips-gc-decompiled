@@ -27,7 +27,7 @@ public final class Result<T> implements Serializable {
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7060hashCodeimpl(Object arg0) {
+    public static int m7057hashCodeimpl(Object arg0) {
         if (arg0 == null) {
             return 0;
         }
@@ -36,38 +36,38 @@ public final class Result<T> implements Serializable {
 
     @Override // java.lang.Object
     public int hashCode() {
-        return m7060hashCodeimpl(this.value);
+        return m7057hashCodeimpl(this.value);
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7061equalsimpl(Object arg0, Object other) {
-        return (other instanceof Result) && Intrinsics.areEqual(arg0, ((Result) other).m7064unboximpl());
+    public static boolean m7058equalsimpl(Object arg0, Object other) {
+        return (other instanceof Result) && Intrinsics.areEqual(arg0, ((Result) other).m7061unboximpl());
     }
 
     @Override // java.lang.Object
     public boolean equals(Object other) {
-        return m7061equalsimpl(this.value, other);
+        return m7058equalsimpl(this.value, other);
     }
 
     @PublishedApi
     @NotNull
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static <T> Object m7062constructorimpl(@Nullable Object value) {
+    public static <T> Object m7059constructorimpl(@Nullable Object value) {
         return value;
     }
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Result m7063boximpl(Object v) {
+    public static final /* synthetic */ Result m7060boximpl(Object v) {
         return new Result(v);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Object m7064unboximpl() {
+    public final /* synthetic */ Object m7061unboximpl() {
         return this.value;
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7065equalsimpl0(Object p1, Object p2) {
+    public static final boolean m7062equalsimpl0(Object p1, Object p2) {
         return Intrinsics.areEqual(p1, p2);
     }
 
@@ -77,12 +77,12 @@ public final class Result<T> implements Serializable {
     }
 
     /* renamed from: isSuccess-impl  reason: not valid java name */
-    public static final boolean m7055isSuccessimpl(Object arg0) {
+    public static final boolean m7052isSuccessimpl(Object arg0) {
         return !(arg0 instanceof Failure);
     }
 
     /* renamed from: isFailure-impl  reason: not valid java name */
-    public static final boolean m7056isFailureimpl(Object arg0) {
+    public static final boolean m7053isFailureimpl(Object arg0) {
         return arg0 instanceof Failure;
     }
 
@@ -90,8 +90,8 @@ public final class Result<T> implements Serializable {
     /* JADX WARN: Multi-variable type inference failed */
     @InlineOnly
     /* renamed from: getOrNull-impl  reason: not valid java name */
-    private static final T m7057getOrNullimpl(Object arg0) {
-        if (m7056isFailureimpl(arg0)) {
+    private static final T m7054getOrNullimpl(Object arg0) {
+        if (m7053isFailureimpl(arg0)) {
             return null;
         }
         return arg0;
@@ -99,7 +99,7 @@ public final class Result<T> implements Serializable {
 
     @Nullable
     /* renamed from: exceptionOrNull-impl  reason: not valid java name */
-    public static final Throwable m7058exceptionOrNullimpl(Object arg0) {
+    public static final Throwable m7055exceptionOrNullimpl(Object arg0) {
         if (arg0 instanceof Failure) {
             return ((Failure) arg0).exception;
         }
@@ -109,12 +109,12 @@ public final class Result<T> implements Serializable {
     @Override // java.lang.Object
     @NotNull
     public String toString() {
-        return m7059toStringimpl(this.value);
+        return m7056toStringimpl(this.value);
     }
 
     @NotNull
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7059toStringimpl(Object arg0) {
+    public static String m7056toStringimpl(Object arg0) {
         return arg0 instanceof Failure ? ((Failure) arg0).toString() : "Success(" + arg0 + ')';
     }
 
@@ -132,14 +132,14 @@ public final class Result<T> implements Serializable {
         @InlineOnly
         @JvmName(name = "success")
         private final <T> Object success(T t) {
-            return Result.m7062constructorimpl(t);
+            return Result.m7059constructorimpl(t);
         }
 
         @InlineOnly
         @JvmName(name = "failure")
         private final <T> Object failure(Throwable exception) {
             Intrinsics.checkNotNullParameter(exception, "exception");
-            return Result.m7062constructorimpl(ResultKt.createFailure(exception));
+            return Result.m7059constructorimpl(ResultKt.createFailure(exception));
         }
     }
 

@@ -53,7 +53,7 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
         /*
             r7 = this;
             r0 = r7
-            r1 = 279(0x117, float:3.91E-43)
+            r1 = 205(0xcd, float:2.87E-43)
             r0.<init>(r1)
             r0 = r8
             emu.grasscutter.game.player.Player$SceneLoadState r1 = emu.grasscutter.game.player.Player.SceneLoadState.LOADING
@@ -109,7 +109,7 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
         throw new UnsupportedOperationException("Method not decompiled: emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify.<init>(emu.grasscutter.game.player.Player):void");
     }
 
-    /*  JADX ERROR: Dependency scan failed at insn: 0x0077: INVOKE_CUSTOM r-17, r-16, r-15
+    /*  JADX ERROR: Dependency scan failed at insn: 0x0088: INVOKE_CUSTOM r-19, r-18, r-17
         java.lang.IndexOutOfBoundsException: Index 4 out of bounds for length 4
         	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
         	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
@@ -125,7 +125,7 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
         	at jadx.core.dex.visitors.usage.UsageInfoVisitor.init(UsageInfoVisitor.java:36)
         	at jadx.core.dex.nodes.RootNode.runPreDecompileStage(RootNode.java:267)
         */
-    /*  JADX ERROR: Failed to decode insn: 0x0077: INVOKE_CUSTOM r1, r2, r3, method: emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify.<init>(emu.grasscutter.game.player.Player, emu.grasscutter.game.player.Player, emu.grasscutter.net.proto.EnterTypeOuterClass$EnterType, emu.grasscutter.game.props.EnterReason, int, emu.grasscutter.utils.Position):void
+    /*  JADX ERROR: Failed to decode insn: 0x0088: INVOKE_CUSTOM r1, r2, r3, method: emu.grasscutter.server.packet.send.PacketPlayerEnterSceneNotify.<init>(emu.grasscutter.game.player.Player, emu.grasscutter.game.player.Player, emu.grasscutter.net.proto.EnterTypeOuterClass$EnterType, emu.grasscutter.game.props.EnterReason, int, emu.grasscutter.utils.Position):void
         jadx.core.utils.exceptions.JadxRuntimeException: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I, I, I)Ljava/lang/String;}, ---18402]}
         	at jadx.core.dex.instructions.InvokeCustomBuilder.build(InvokeCustomBuilder.java:55)
         	at jadx.core.dex.instructions.InsnDecoder.invoke(InsnDecoder.java:568)
@@ -147,8 +147,16 @@ public class PacketPlayerEnterSceneNotify extends BasePacket {
         /*
             r8 = this;
             r0 = r8
-            r1 = 279(0x117, float:3.91E-43)
+            r1 = 205(0xcd, float:2.87E-43)
             r0.<init>(r1)
+            r0 = r13
+            r1 = 3
+            if (r0 == r1) goto L_0x0010
+            goto L_0x0018
+            r0 = r9
+            r1 = r9
+            emu.grasscutter.utils.Position r1 = r1.getPosition()
+            r0.setPrevPos(r1)
             r0 = r9
             emu.grasscutter.game.player.Player$SceneLoadState r1 = emu.grasscutter.game.player.Player.SceneLoadState.LOADING
             r0.setSceneLoadState(r1)

@@ -22,23 +22,23 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeBeHelpedNotifyOuterClass.class */
 public final class FurnitureMakeBeHelpedNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!FurnitureMakeBeHelpedNotify.proto\u001a\u001fFurnitureMakeBeHelpedData.proto\u001a\u0017FurnitureMakeSlot.proto\"\u0001\n\u001bFurnitureMakeBeHelpedNotify\u0012>\n\u001afurniture_make_helped_data\u0018\f \u0001(\u000b2\u001a.FurnitureMakeBeHelpedData\u0012/\n\u0013furniture_make_slot\u0018\u0003 \u0001(\u000b2\u0012.FurnitureMakeSlotB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{FurnitureMakeBeHelpedDataOuterClass.getDescriptor(), FurnitureMakeSlotOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!FurnitureMakeBeHelpedNotify.proto\u001a\u0017FurnitureMakeSlot.proto\u001a\u001fFurnitureMakeBeHelpedData.proto\"\u0001\n\u001bFurnitureMakeBeHelpedNotify\u0012-\n\u0011furnitureMakeSlot\u0018\u0002 \u0001(\u000b2\u0012.FurnitureMakeSlot\u0012;\n\u0017furnitureMakeHelpedData\u0018\f \u0001(\u000b2\u001a.FurnitureMakeBeHelpedDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{FurnitureMakeSlotOuterClass.getDescriptor(), FurnitureMakeBeHelpedDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_FurnitureMakeBeHelpedNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_FurnitureMakeBeHelpedNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FurnitureMakeBeHelpedNotify_descriptor, new String[]{"FurnitureMakeHelpedData", "FurnitureMakeSlot"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_FurnitureMakeBeHelpedNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_FurnitureMakeBeHelpedNotify_descriptor, new String[]{"FurnitureMakeSlot", "FurnitureMakeHelpedData"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeBeHelpedNotifyOuterClass$FurnitureMakeBeHelpedNotifyOrBuilder.class */
     public interface FurnitureMakeBeHelpedNotifyOrBuilder extends MessageOrBuilder {
-        boolean hasFurnitureMakeHelpedData();
-
-        FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData getFurnitureMakeHelpedData();
-
-        FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedDataOrBuilder getFurnitureMakeHelpedDataOrBuilder();
-
         boolean hasFurnitureMakeSlot();
 
         FurnitureMakeSlotOuterClass.FurnitureMakeSlot getFurnitureMakeSlot();
 
         FurnitureMakeSlotOuterClass.FurnitureMakeSlotOrBuilder getFurnitureMakeSlotOrBuilder();
+
+        boolean hasFurnitureMakeHelpedData();
+
+        FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData getFurnitureMakeHelpedData();
+
+        FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedDataOrBuilder getFurnitureMakeHelpedDataOrBuilder();
     }
 
     private FurnitureMakeBeHelpedNotifyOuterClass() {
@@ -54,10 +54,10 @@ public final class FurnitureMakeBeHelpedNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeBeHelpedNotifyOuterClass$FurnitureMakeBeHelpedNotify.class */
     public static final class FurnitureMakeBeHelpedNotify extends GeneratedMessageV3 implements FurnitureMakeBeHelpedNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int FURNITURE_MAKE_HELPED_DATA_FIELD_NUMBER = 12;
-        private FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData furnitureMakeHelpedData_;
-        public static final int FURNITURE_MAKE_SLOT_FIELD_NUMBER = 3;
+        public static final int FURNITUREMAKESLOT_FIELD_NUMBER = 2;
         private FurnitureMakeSlotOuterClass.FurnitureMakeSlot furnitureMakeSlot_;
+        public static final int FURNITUREMAKEHELPEDDATA_FIELD_NUMBER = 12;
+        private FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData furnitureMakeHelpedData_;
         private byte memoizedIsInitialized;
         private static final FurnitureMakeBeHelpedNotify DEFAULT_INSTANCE = new FurnitureMakeBeHelpedNotify();
         private static final Parser<FurnitureMakeBeHelpedNotify> PARSER = new AbstractParser<FurnitureMakeBeHelpedNotify>() { // from class: emu.grasscutter.net.proto.FurnitureMakeBeHelpedNotifyOuterClass.FurnitureMakeBeHelpedNotify.1
@@ -104,7 +104,7 @@ public final class FurnitureMakeBeHelpedNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 26:
+                                case 18:
                                     FurnitureMakeSlotOuterClass.FurnitureMakeSlot.Builder subBuilder = this.furnitureMakeSlot_ != null ? this.furnitureMakeSlot_.toBuilder() : null;
                                     this.furnitureMakeSlot_ = (FurnitureMakeSlotOuterClass.FurnitureMakeSlot) input.readMessage(FurnitureMakeSlotOuterClass.FurnitureMakeSlot.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -155,21 +155,6 @@ public final class FurnitureMakeBeHelpedNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.FurnitureMakeBeHelpedNotifyOuterClass.FurnitureMakeBeHelpedNotifyOrBuilder
-        public boolean hasFurnitureMakeHelpedData() {
-            return this.furnitureMakeHelpedData_ != null;
-        }
-
-        @Override // emu.grasscutter.net.proto.FurnitureMakeBeHelpedNotifyOuterClass.FurnitureMakeBeHelpedNotifyOrBuilder
-        public FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData getFurnitureMakeHelpedData() {
-            return this.furnitureMakeHelpedData_ == null ? FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData.getDefaultInstance() : this.furnitureMakeHelpedData_;
-        }
-
-        @Override // emu.grasscutter.net.proto.FurnitureMakeBeHelpedNotifyOuterClass.FurnitureMakeBeHelpedNotifyOrBuilder
-        public FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedDataOrBuilder getFurnitureMakeHelpedDataOrBuilder() {
-            return getFurnitureMakeHelpedData();
-        }
-
-        @Override // emu.grasscutter.net.proto.FurnitureMakeBeHelpedNotifyOuterClass.FurnitureMakeBeHelpedNotifyOrBuilder
         public boolean hasFurnitureMakeSlot() {
             return this.furnitureMakeSlot_ != null;
         }
@@ -182,6 +167,21 @@ public final class FurnitureMakeBeHelpedNotifyOuterClass {
         @Override // emu.grasscutter.net.proto.FurnitureMakeBeHelpedNotifyOuterClass.FurnitureMakeBeHelpedNotifyOrBuilder
         public FurnitureMakeSlotOuterClass.FurnitureMakeSlotOrBuilder getFurnitureMakeSlotOrBuilder() {
             return getFurnitureMakeSlot();
+        }
+
+        @Override // emu.grasscutter.net.proto.FurnitureMakeBeHelpedNotifyOuterClass.FurnitureMakeBeHelpedNotifyOrBuilder
+        public boolean hasFurnitureMakeHelpedData() {
+            return this.furnitureMakeHelpedData_ != null;
+        }
+
+        @Override // emu.grasscutter.net.proto.FurnitureMakeBeHelpedNotifyOuterClass.FurnitureMakeBeHelpedNotifyOrBuilder
+        public FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData getFurnitureMakeHelpedData() {
+            return this.furnitureMakeHelpedData_ == null ? FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData.getDefaultInstance() : this.furnitureMakeHelpedData_;
+        }
+
+        @Override // emu.grasscutter.net.proto.FurnitureMakeBeHelpedNotifyOuterClass.FurnitureMakeBeHelpedNotifyOrBuilder
+        public FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedDataOrBuilder getFurnitureMakeHelpedDataOrBuilder() {
+            return getFurnitureMakeHelpedData();
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -200,7 +200,7 @@ public final class FurnitureMakeBeHelpedNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.furnitureMakeSlot_ != null) {
-                output.writeMessage(3, getFurnitureMakeSlot());
+                output.writeMessage(2, getFurnitureMakeSlot());
             }
             if (this.furnitureMakeHelpedData_ != null) {
                 output.writeMessage(12, getFurnitureMakeHelpedData());
@@ -216,7 +216,7 @@ public final class FurnitureMakeBeHelpedNotifyOuterClass {
             }
             int size2 = 0;
             if (this.furnitureMakeSlot_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(3, getFurnitureMakeSlot());
+                size2 = 0 + CodedOutputStream.computeMessageSize(2, getFurnitureMakeSlot());
             }
             if (this.furnitureMakeHelpedData_ != null) {
                 size2 += CodedOutputStream.computeMessageSize(12, getFurnitureMakeHelpedData());
@@ -235,11 +235,11 @@ public final class FurnitureMakeBeHelpedNotifyOuterClass {
                 return equals(obj);
             }
             FurnitureMakeBeHelpedNotify other = (FurnitureMakeBeHelpedNotify) obj;
-            if (hasFurnitureMakeHelpedData() != other.hasFurnitureMakeHelpedData()) {
+            if (hasFurnitureMakeSlot() != other.hasFurnitureMakeSlot()) {
                 return false;
             }
-            if ((!hasFurnitureMakeHelpedData() || getFurnitureMakeHelpedData().equals(other.getFurnitureMakeHelpedData())) && hasFurnitureMakeSlot() == other.hasFurnitureMakeSlot()) {
-                return (!hasFurnitureMakeSlot() || getFurnitureMakeSlot().equals(other.getFurnitureMakeSlot())) && this.unknownFields.equals(other.unknownFields);
+            if ((!hasFurnitureMakeSlot() || getFurnitureMakeSlot().equals(other.getFurnitureMakeSlot())) && hasFurnitureMakeHelpedData() == other.hasFurnitureMakeHelpedData()) {
+                return (!hasFurnitureMakeHelpedData() || getFurnitureMakeHelpedData().equals(other.getFurnitureMakeHelpedData())) && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -250,11 +250,11 @@ public final class FurnitureMakeBeHelpedNotifyOuterClass {
                 return this.memoizedHashCode;
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
+            if (hasFurnitureMakeSlot()) {
+                hash = (53 * ((37 * hash) + 2)) + getFurnitureMakeSlot().hashCode();
+            }
             if (hasFurnitureMakeHelpedData()) {
                 hash = (53 * ((37 * hash) + 12)) + getFurnitureMakeHelpedData().hashCode();
-            }
-            if (hasFurnitureMakeSlot()) {
-                hash = (53 * ((37 * hash) + 3)) + getFurnitureMakeSlot().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -335,10 +335,10 @@ public final class FurnitureMakeBeHelpedNotifyOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FurnitureMakeBeHelpedNotifyOuterClass$FurnitureMakeBeHelpedNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements FurnitureMakeBeHelpedNotifyOrBuilder {
-            private FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData furnitureMakeHelpedData_;
-            private SingleFieldBuilderV3<FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData, FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData.Builder, FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedDataOrBuilder> furnitureMakeHelpedDataBuilder_;
             private FurnitureMakeSlotOuterClass.FurnitureMakeSlot furnitureMakeSlot_;
             private SingleFieldBuilderV3<FurnitureMakeSlotOuterClass.FurnitureMakeSlot, FurnitureMakeSlotOuterClass.FurnitureMakeSlot.Builder, FurnitureMakeSlotOuterClass.FurnitureMakeSlotOrBuilder> furnitureMakeSlotBuilder_;
+            private FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData furnitureMakeHelpedData_;
+            private SingleFieldBuilderV3<FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData, FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData.Builder, FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedDataOrBuilder> furnitureMakeHelpedDataBuilder_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return FurnitureMakeBeHelpedNotifyOuterClass.internal_static_FurnitureMakeBeHelpedNotify_descriptor;
@@ -366,17 +366,17 @@ public final class FurnitureMakeBeHelpedNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                if (this.furnitureMakeHelpedDataBuilder_ == null) {
-                    this.furnitureMakeHelpedData_ = null;
-                } else {
-                    this.furnitureMakeHelpedData_ = null;
-                    this.furnitureMakeHelpedDataBuilder_ = null;
-                }
                 if (this.furnitureMakeSlotBuilder_ == null) {
                     this.furnitureMakeSlot_ = null;
                 } else {
                     this.furnitureMakeSlot_ = null;
                     this.furnitureMakeSlotBuilder_ = null;
+                }
+                if (this.furnitureMakeHelpedDataBuilder_ == null) {
+                    this.furnitureMakeHelpedData_ = null;
+                } else {
+                    this.furnitureMakeHelpedData_ = null;
+                    this.furnitureMakeHelpedDataBuilder_ = null;
                 }
                 return this;
             }
@@ -403,15 +403,15 @@ public final class FurnitureMakeBeHelpedNotifyOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public FurnitureMakeBeHelpedNotify buildPartial() {
                 FurnitureMakeBeHelpedNotify result = new FurnitureMakeBeHelpedNotify(this);
-                if (this.furnitureMakeHelpedDataBuilder_ == null) {
-                    result.furnitureMakeHelpedData_ = this.furnitureMakeHelpedData_;
-                } else {
-                    result.furnitureMakeHelpedData_ = this.furnitureMakeHelpedDataBuilder_.build();
-                }
                 if (this.furnitureMakeSlotBuilder_ == null) {
                     result.furnitureMakeSlot_ = this.furnitureMakeSlot_;
                 } else {
                     result.furnitureMakeSlot_ = this.furnitureMakeSlotBuilder_.build();
+                }
+                if (this.furnitureMakeHelpedDataBuilder_ == null) {
+                    result.furnitureMakeHelpedData_ = this.furnitureMakeHelpedData_;
+                } else {
+                    result.furnitureMakeHelpedData_ = this.furnitureMakeHelpedDataBuilder_.build();
                 }
                 onBuilt();
                 return result;
@@ -460,11 +460,11 @@ public final class FurnitureMakeBeHelpedNotifyOuterClass {
                 if (other == FurnitureMakeBeHelpedNotify.getDefaultInstance()) {
                     return this;
                 }
-                if (other.hasFurnitureMakeHelpedData()) {
-                    mergeFurnitureMakeHelpedData(other.getFurnitureMakeHelpedData());
-                }
                 if (other.hasFurnitureMakeSlot()) {
                     mergeFurnitureMakeSlot(other.getFurnitureMakeSlot());
+                }
+                if (other.hasFurnitureMakeHelpedData()) {
+                    mergeFurnitureMakeHelpedData(other.getFurnitureMakeHelpedData());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -496,87 +496,6 @@ public final class FurnitureMakeBeHelpedNotifyOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.FurnitureMakeBeHelpedNotifyOuterClass.FurnitureMakeBeHelpedNotifyOrBuilder
-            public boolean hasFurnitureMakeHelpedData() {
-                return (this.furnitureMakeHelpedDataBuilder_ == null && this.furnitureMakeHelpedData_ == null) ? false : true;
-            }
-
-            @Override // emu.grasscutter.net.proto.FurnitureMakeBeHelpedNotifyOuterClass.FurnitureMakeBeHelpedNotifyOrBuilder
-            public FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData getFurnitureMakeHelpedData() {
-                if (this.furnitureMakeHelpedDataBuilder_ == null) {
-                    return this.furnitureMakeHelpedData_ == null ? FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData.getDefaultInstance() : this.furnitureMakeHelpedData_;
-                }
-                return this.furnitureMakeHelpedDataBuilder_.getMessage();
-            }
-
-            public Builder setFurnitureMakeHelpedData(FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData value) {
-                if (this.furnitureMakeHelpedDataBuilder_ != null) {
-                    this.furnitureMakeHelpedDataBuilder_.setMessage(value);
-                } else if (value == null) {
-                    throw new NullPointerException();
-                } else {
-                    this.furnitureMakeHelpedData_ = value;
-                    onChanged();
-                }
-                return this;
-            }
-
-            public Builder setFurnitureMakeHelpedData(FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData.Builder builderForValue) {
-                if (this.furnitureMakeHelpedDataBuilder_ == null) {
-                    this.furnitureMakeHelpedData_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    this.furnitureMakeHelpedDataBuilder_.setMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder mergeFurnitureMakeHelpedData(FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData value) {
-                if (this.furnitureMakeHelpedDataBuilder_ == null) {
-                    if (this.furnitureMakeHelpedData_ != null) {
-                        this.furnitureMakeHelpedData_ = FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData.newBuilder(this.furnitureMakeHelpedData_).mergeFrom(value).buildPartial();
-                    } else {
-                        this.furnitureMakeHelpedData_ = value;
-                    }
-                    onChanged();
-                } else {
-                    this.furnitureMakeHelpedDataBuilder_.mergeFrom(value);
-                }
-                return this;
-            }
-
-            public Builder clearFurnitureMakeHelpedData() {
-                if (this.furnitureMakeHelpedDataBuilder_ == null) {
-                    this.furnitureMakeHelpedData_ = null;
-                    onChanged();
-                } else {
-                    this.furnitureMakeHelpedData_ = null;
-                    this.furnitureMakeHelpedDataBuilder_ = null;
-                }
-                return this;
-            }
-
-            public FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData.Builder getFurnitureMakeHelpedDataBuilder() {
-                onChanged();
-                return getFurnitureMakeHelpedDataFieldBuilder().getBuilder();
-            }
-
-            @Override // emu.grasscutter.net.proto.FurnitureMakeBeHelpedNotifyOuterClass.FurnitureMakeBeHelpedNotifyOrBuilder
-            public FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedDataOrBuilder getFurnitureMakeHelpedDataOrBuilder() {
-                if (this.furnitureMakeHelpedDataBuilder_ != null) {
-                    return this.furnitureMakeHelpedDataBuilder_.getMessageOrBuilder();
-                }
-                return this.furnitureMakeHelpedData_ == null ? FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData.getDefaultInstance() : this.furnitureMakeHelpedData_;
-            }
-
-            private SingleFieldBuilderV3<FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData, FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData.Builder, FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedDataOrBuilder> getFurnitureMakeHelpedDataFieldBuilder() {
-                if (this.furnitureMakeHelpedDataBuilder_ == null) {
-                    this.furnitureMakeHelpedDataBuilder_ = new SingleFieldBuilderV3<>(getFurnitureMakeHelpedData(), getParentForChildren(), isClean());
-                    this.furnitureMakeHelpedData_ = null;
-                }
-                return this.furnitureMakeHelpedDataBuilder_;
             }
 
             @Override // emu.grasscutter.net.proto.FurnitureMakeBeHelpedNotifyOuterClass.FurnitureMakeBeHelpedNotifyOrBuilder
@@ -660,6 +579,87 @@ public final class FurnitureMakeBeHelpedNotifyOuterClass {
                 return this.furnitureMakeSlotBuilder_;
             }
 
+            @Override // emu.grasscutter.net.proto.FurnitureMakeBeHelpedNotifyOuterClass.FurnitureMakeBeHelpedNotifyOrBuilder
+            public boolean hasFurnitureMakeHelpedData() {
+                return (this.furnitureMakeHelpedDataBuilder_ == null && this.furnitureMakeHelpedData_ == null) ? false : true;
+            }
+
+            @Override // emu.grasscutter.net.proto.FurnitureMakeBeHelpedNotifyOuterClass.FurnitureMakeBeHelpedNotifyOrBuilder
+            public FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData getFurnitureMakeHelpedData() {
+                if (this.furnitureMakeHelpedDataBuilder_ == null) {
+                    return this.furnitureMakeHelpedData_ == null ? FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData.getDefaultInstance() : this.furnitureMakeHelpedData_;
+                }
+                return this.furnitureMakeHelpedDataBuilder_.getMessage();
+            }
+
+            public Builder setFurnitureMakeHelpedData(FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData value) {
+                if (this.furnitureMakeHelpedDataBuilder_ != null) {
+                    this.furnitureMakeHelpedDataBuilder_.setMessage(value);
+                } else if (value == null) {
+                    throw new NullPointerException();
+                } else {
+                    this.furnitureMakeHelpedData_ = value;
+                    onChanged();
+                }
+                return this;
+            }
+
+            public Builder setFurnitureMakeHelpedData(FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData.Builder builderForValue) {
+                if (this.furnitureMakeHelpedDataBuilder_ == null) {
+                    this.furnitureMakeHelpedData_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    this.furnitureMakeHelpedDataBuilder_.setMessage(builderForValue.build());
+                }
+                return this;
+            }
+
+            public Builder mergeFurnitureMakeHelpedData(FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData value) {
+                if (this.furnitureMakeHelpedDataBuilder_ == null) {
+                    if (this.furnitureMakeHelpedData_ != null) {
+                        this.furnitureMakeHelpedData_ = FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData.newBuilder(this.furnitureMakeHelpedData_).mergeFrom(value).buildPartial();
+                    } else {
+                        this.furnitureMakeHelpedData_ = value;
+                    }
+                    onChanged();
+                } else {
+                    this.furnitureMakeHelpedDataBuilder_.mergeFrom(value);
+                }
+                return this;
+            }
+
+            public Builder clearFurnitureMakeHelpedData() {
+                if (this.furnitureMakeHelpedDataBuilder_ == null) {
+                    this.furnitureMakeHelpedData_ = null;
+                    onChanged();
+                } else {
+                    this.furnitureMakeHelpedData_ = null;
+                    this.furnitureMakeHelpedDataBuilder_ = null;
+                }
+                return this;
+            }
+
+            public FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData.Builder getFurnitureMakeHelpedDataBuilder() {
+                onChanged();
+                return getFurnitureMakeHelpedDataFieldBuilder().getBuilder();
+            }
+
+            @Override // emu.grasscutter.net.proto.FurnitureMakeBeHelpedNotifyOuterClass.FurnitureMakeBeHelpedNotifyOrBuilder
+            public FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedDataOrBuilder getFurnitureMakeHelpedDataOrBuilder() {
+                if (this.furnitureMakeHelpedDataBuilder_ != null) {
+                    return this.furnitureMakeHelpedDataBuilder_.getMessageOrBuilder();
+                }
+                return this.furnitureMakeHelpedData_ == null ? FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData.getDefaultInstance() : this.furnitureMakeHelpedData_;
+            }
+
+            private SingleFieldBuilderV3<FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData, FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData.Builder, FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedDataOrBuilder> getFurnitureMakeHelpedDataFieldBuilder() {
+                if (this.furnitureMakeHelpedDataBuilder_ == null) {
+                    this.furnitureMakeHelpedDataBuilder_ = new SingleFieldBuilderV3<>(getFurnitureMakeHelpedData(), getParentForChildren(), isClean());
+                    this.furnitureMakeHelpedData_ = null;
+                }
+                return this.furnitureMakeHelpedDataBuilder_;
+            }
+
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
             public final Builder setUnknownFields(UnknownFieldSet unknownFields) {
                 return setUnknownFields(unknownFields);
@@ -695,7 +695,7 @@ public final class FurnitureMakeBeHelpedNotifyOuterClass {
     }
 
     static {
-        FurnitureMakeBeHelpedDataOuterClass.getDescriptor();
         FurnitureMakeSlotOuterClass.getDescriptor();
+        FurnitureMakeBeHelpedDataOuterClass.getDescriptor();
     }
 }

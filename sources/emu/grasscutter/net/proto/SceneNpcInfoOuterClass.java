@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneNpcInfoOuterClass.class */
 public final class SceneNpcInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012SceneNpcInfo.proto\"Z\n\fSceneNpcInfo\u0012\u000e\n\u0006npc_id\u0018\u0001 \u0001(\r\u0012\u000f\n\u0007room_id\u0018\u0002 \u0001(\r\u0012\u0017\n\u000fparent_quest_id\u0018\u0003 \u0001(\r\u0012\u0010\n\bblock_id\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012SceneNpcInfo.proto\"U\n\fSceneNpcInfo\u0012\r\n\u0005npcId\u0018\u0001 \u0001(\r\u0012\u000e\n\u0006roomId\u0018\u0002 \u0001(\r\u0012\u0015\n\rparentQuestId\u0018\u0003 \u0001(\r\u0012\u000f\n\u0007blockId\u0018\u0004 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_SceneNpcInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_SceneNpcInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneNpcInfo_descriptor, new String[]{"NpcId", "RoomId", "ParentQuestId", "BlockId"});
 
@@ -47,13 +47,13 @@ public final class SceneNpcInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneNpcInfoOuterClass$SceneNpcInfo.class */
     public static final class SceneNpcInfo extends GeneratedMessageV3 implements SceneNpcInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int NPC_ID_FIELD_NUMBER = 1;
+        public static final int NPCID_FIELD_NUMBER = 1;
         private int npcId_;
-        public static final int ROOM_ID_FIELD_NUMBER = 2;
+        public static final int ROOMID_FIELD_NUMBER = 2;
         private int roomId_;
-        public static final int PARENT_QUEST_ID_FIELD_NUMBER = 3;
+        public static final int PARENTQUESTID_FIELD_NUMBER = 3;
         private int parentQuestId_;
-        public static final int BLOCK_ID_FIELD_NUMBER = 4;
+        public static final int BLOCKID_FIELD_NUMBER = 4;
         private int blockId_;
         private byte memoizedIsInitialized;
         private static final SceneNpcInfo DEFAULT_INSTANCE = new SceneNpcInfo();

@@ -21,21 +21,23 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeGroupPlayerInfoOuterClass.class */
 public final class HomeGroupPlayerInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019HomeGroupPlayerInfo.proto\u001a\u0014ProfilePicture.proto\"\u0001\n\u0013HomeGroupPlayerInfo\u0012\u000e\n\u0006psn_id\u0018\n \u0001(\t\u0012\u0010\n\bnickname\u0018\r \u0001(\t\u0012\u000b\n\u0003uid\u0018\u0001 \u0001(\r\u0012(\n\u000fprofile_picture\u0018\u0002 \u0001(\u000b2\u000f.ProfilePicture\u0012\u0014\n\fplayer_level\u0018\t \u0001(\r\u0012\u0011\n\tonline_id\u0018\u0004 \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ProfilePictureOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019HomeGroupPlayerInfo.proto\u001a\u0014ProfilePicture.proto\"\u0001\n\u0013HomeGroupPlayerInfo\u0012\u0010\n\bnickname\u0018\u000f \u0001(\t\u0012\u000b\n\u0003uid\u0018\u0003 \u0001(\r\u0012\u0013\n\u000bplayerLevel\u0018\u000e \u0001(\r\u0012\u0010\n\bonlineId\u0018\u000b \u0001(\t\u0012'\n\u000eprofilePicture\u0018\u0002 \u0001(\u000b2\u000f.ProfilePicture\u0012\r\n\u0005psnId\u0018\u0001 \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{ProfilePictureOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_HomeGroupPlayerInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeGroupPlayerInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeGroupPlayerInfo_descriptor, new String[]{"PsnId", "Nickname", "Uid", "ProfilePicture", "PlayerLevel", "OnlineId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_HomeGroupPlayerInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeGroupPlayerInfo_descriptor, new String[]{"Nickname", "Uid", "PlayerLevel", "OnlineId", "ProfilePicture", "PsnId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeGroupPlayerInfoOuterClass$HomeGroupPlayerInfoOrBuilder.class */
     public interface HomeGroupPlayerInfoOrBuilder extends MessageOrBuilder {
-        String getPsnId();
-
-        ByteString getPsnIdBytes();
-
         String getNickname();
 
         ByteString getNicknameBytes();
 
         int getUid();
+
+        int getPlayerLevel();
+
+        String getOnlineId();
+
+        ByteString getOnlineIdBytes();
 
         boolean hasProfilePicture();
 
@@ -43,11 +45,9 @@ public final class HomeGroupPlayerInfoOuterClass {
 
         ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder();
 
-        int getPlayerLevel();
+        String getPsnId();
 
-        String getOnlineId();
-
-        ByteString getOnlineIdBytes();
+        ByteString getPsnIdBytes();
     }
 
     private HomeGroupPlayerInfoOuterClass() {
@@ -63,18 +63,18 @@ public final class HomeGroupPlayerInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeGroupPlayerInfoOuterClass$HomeGroupPlayerInfo.class */
     public static final class HomeGroupPlayerInfo extends GeneratedMessageV3 implements HomeGroupPlayerInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PSN_ID_FIELD_NUMBER = 10;
-        private volatile Object psnId_;
-        public static final int NICKNAME_FIELD_NUMBER = 13;
+        public static final int NICKNAME_FIELD_NUMBER = 15;
         private volatile Object nickname_;
-        public static final int UID_FIELD_NUMBER = 1;
+        public static final int UID_FIELD_NUMBER = 3;
         private int uid_;
-        public static final int PROFILE_PICTURE_FIELD_NUMBER = 2;
-        private ProfilePictureOuterClass.ProfilePicture profilePicture_;
-        public static final int PLAYER_LEVEL_FIELD_NUMBER = 9;
+        public static final int PLAYERLEVEL_FIELD_NUMBER = 14;
         private int playerLevel_;
-        public static final int ONLINE_ID_FIELD_NUMBER = 4;
+        public static final int ONLINEID_FIELD_NUMBER = 11;
         private volatile Object onlineId_;
+        public static final int PROFILEPICTURE_FIELD_NUMBER = 2;
+        private ProfilePictureOuterClass.ProfilePicture profilePicture_;
+        public static final int PSNID_FIELD_NUMBER = 1;
+        private volatile Object psnId_;
         private byte memoizedIsInitialized;
         private static final HomeGroupPlayerInfo DEFAULT_INSTANCE = new HomeGroupPlayerInfo();
         private static final Parser<HomeGroupPlayerInfo> PARSER = new AbstractParser<HomeGroupPlayerInfo>() { // from class: emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.1
@@ -91,9 +91,9 @@ public final class HomeGroupPlayerInfoOuterClass {
 
         private HomeGroupPlayerInfo() {
             this.memoizedIsInitialized = -1;
-            this.psnId_ = "";
             this.nickname_ = "";
             this.onlineId_ = "";
+            this.psnId_ = "";
         }
 
         /* access modifiers changed from: protected */
@@ -123,8 +123,8 @@ public final class HomeGroupPlayerInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
-                                this.uid_ = input.readUInt32();
+                            case 10:
+                                this.psnId_ = input.readStringRequireUtf8();
                                 break;
                             case 18:
                                 ProfilePictureOuterClass.ProfilePicture.Builder subBuilder = this.profilePicture_ != null ? this.profilePicture_.toBuilder() : null;
@@ -136,16 +136,16 @@ public final class HomeGroupPlayerInfoOuterClass {
                                     this.profilePicture_ = subBuilder.buildPartial();
                                     break;
                                 }
-                            case 34:
+                            case 24:
+                                this.uid_ = input.readUInt32();
+                                break;
+                            case 90:
                                 this.onlineId_ = input.readStringRequireUtf8();
                                 break;
-                            case 72:
+                            case 112:
                                 this.playerLevel_ = input.readUInt32();
                                 break;
-                            case 82:
-                                this.psnId_ = input.readStringRequireUtf8();
-                                break;
-                            case 106:
+                            case 122:
                                 this.nickname_ = input.readStringRequireUtf8();
                                 break;
                             default:
@@ -178,28 +178,6 @@ public final class HomeGroupPlayerInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
-        public String getPsnId() {
-            Object ref = this.psnId_;
-            if (ref instanceof String) {
-                return (String) ref;
-            }
-            String s = ((ByteString) ref).toStringUtf8();
-            this.psnId_ = s;
-            return s;
-        }
-
-        @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
-        public ByteString getPsnIdBytes() {
-            Object ref = this.psnId_;
-            if (!(ref instanceof String)) {
-                return (ByteString) ref;
-            }
-            ByteString b = ByteString.copyFromUtf8((String) ref);
-            this.psnId_ = b;
-            return b;
-        }
-
-        @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
         public String getNickname() {
             Object ref = this.nickname_;
             if (ref instanceof String) {
@@ -224,21 +202,6 @@ public final class HomeGroupPlayerInfoOuterClass {
         @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
         public int getUid() {
             return this.uid_;
-        }
-
-        @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
-        public boolean hasProfilePicture() {
-            return this.profilePicture_ != null;
-        }
-
-        @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
-        public ProfilePictureOuterClass.ProfilePicture getProfilePicture() {
-            return this.profilePicture_ == null ? ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : this.profilePicture_;
-        }
-
-        @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
-        public ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
-            return getProfilePicture();
         }
 
         @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
@@ -268,6 +231,43 @@ public final class HomeGroupPlayerInfoOuterClass {
             return b;
         }
 
+        @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
+        public boolean hasProfilePicture() {
+            return this.profilePicture_ != null;
+        }
+
+        @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
+        public ProfilePictureOuterClass.ProfilePicture getProfilePicture() {
+            return this.profilePicture_ == null ? ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : this.profilePicture_;
+        }
+
+        @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
+        public ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
+            return getProfilePicture();
+        }
+
+        @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
+        public String getPsnId() {
+            Object ref = this.psnId_;
+            if (ref instanceof String) {
+                return (String) ref;
+            }
+            String s = ((ByteString) ref).toStringUtf8();
+            this.psnId_ = s;
+            return s;
+        }
+
+        @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
+        public ByteString getPsnIdBytes() {
+            Object ref = this.psnId_;
+            if (!(ref instanceof String)) {
+                return (ByteString) ref;
+            }
+            ByteString b = ByteString.copyFromUtf8((String) ref);
+            this.psnId_ = b;
+            return b;
+        }
+
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -283,23 +283,23 @@ public final class HomeGroupPlayerInfoOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.uid_ != 0) {
-                output.writeUInt32(1, this.uid_);
+            if (!GeneratedMessageV3.isStringEmpty(this.psnId_)) {
+                GeneratedMessageV3.writeString(output, 1, this.psnId_);
             }
             if (this.profilePicture_ != null) {
                 output.writeMessage(2, getProfilePicture());
             }
+            if (this.uid_ != 0) {
+                output.writeUInt32(3, this.uid_);
+            }
             if (!GeneratedMessageV3.isStringEmpty(this.onlineId_)) {
-                GeneratedMessageV3.writeString(output, 4, this.onlineId_);
+                GeneratedMessageV3.writeString(output, 11, this.onlineId_);
             }
             if (this.playerLevel_ != 0) {
-                output.writeUInt32(9, this.playerLevel_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.psnId_)) {
-                GeneratedMessageV3.writeString(output, 10, this.psnId_);
+                output.writeUInt32(14, this.playerLevel_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.nickname_)) {
-                GeneratedMessageV3.writeString(output, 13, this.nickname_);
+                GeneratedMessageV3.writeString(output, 15, this.nickname_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -311,23 +311,23 @@ public final class HomeGroupPlayerInfoOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.uid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.uid_);
+            if (!GeneratedMessageV3.isStringEmpty(this.psnId_)) {
+                size2 = 0 + GeneratedMessageV3.computeStringSize(1, this.psnId_);
             }
             if (this.profilePicture_ != null) {
                 size2 += CodedOutputStream.computeMessageSize(2, getProfilePicture());
             }
+            if (this.uid_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(3, this.uid_);
+            }
             if (!GeneratedMessageV3.isStringEmpty(this.onlineId_)) {
-                size2 += GeneratedMessageV3.computeStringSize(4, this.onlineId_);
+                size2 += GeneratedMessageV3.computeStringSize(11, this.onlineId_);
             }
             if (this.playerLevel_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(9, this.playerLevel_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.psnId_)) {
-                size2 += GeneratedMessageV3.computeStringSize(10, this.psnId_);
+                size2 += CodedOutputStream.computeUInt32Size(14, this.playerLevel_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.nickname_)) {
-                size2 += GeneratedMessageV3.computeStringSize(13, this.nickname_);
+                size2 += GeneratedMessageV3.computeStringSize(15, this.nickname_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -343,8 +343,8 @@ public final class HomeGroupPlayerInfoOuterClass {
                 return equals(obj);
             }
             HomeGroupPlayerInfo other = (HomeGroupPlayerInfo) obj;
-            if (getPsnId().equals(other.getPsnId()) && getNickname().equals(other.getNickname()) && getUid() == other.getUid() && hasProfilePicture() == other.hasProfilePicture()) {
-                return (!hasProfilePicture() || getProfilePicture().equals(other.getProfilePicture())) && getPlayerLevel() == other.getPlayerLevel() && getOnlineId().equals(other.getOnlineId()) && this.unknownFields.equals(other.unknownFields);
+            if (getNickname().equals(other.getNickname()) && getUid() == other.getUid() && getPlayerLevel() == other.getPlayerLevel() && getOnlineId().equals(other.getOnlineId()) && hasProfilePicture() == other.hasProfilePicture()) {
+                return (!hasProfilePicture() || getProfilePicture().equals(other.getProfilePicture())) && getPsnId().equals(other.getPsnId()) && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -354,11 +354,11 @@ public final class HomeGroupPlayerInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getPsnId().hashCode())) + 13)) + getNickname().hashCode())) + 1)) + getUid();
+            int hash = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getNickname().hashCode())) + 3)) + getUid())) + 14)) + getPlayerLevel())) + 11)) + getOnlineId().hashCode();
             if (hasProfilePicture()) {
                 hash = (53 * ((37 * hash) + 2)) + getProfilePicture().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * ((53 * ((37 * hash) + 9)) + getPlayerLevel())) + 4)) + getOnlineId().hashCode())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 1)) + getPsnId().hashCode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -438,12 +438,12 @@ public final class HomeGroupPlayerInfoOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeGroupPlayerInfoOuterClass$HomeGroupPlayerInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements HomeGroupPlayerInfoOrBuilder {
             private int uid_;
+            private int playerLevel_;
             private ProfilePictureOuterClass.ProfilePicture profilePicture_;
             private SingleFieldBuilderV3<ProfilePictureOuterClass.ProfilePicture, ProfilePictureOuterClass.ProfilePicture.Builder, ProfilePictureOuterClass.ProfilePictureOrBuilder> profilePictureBuilder_;
-            private int playerLevel_;
-            private Object psnId_ = "";
             private Object nickname_ = "";
             private Object onlineId_ = "";
+            private Object psnId_ = "";
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return HomeGroupPlayerInfoOuterClass.internal_static_HomeGroupPlayerInfo_descriptor;
@@ -471,17 +471,17 @@ public final class HomeGroupPlayerInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.psnId_ = "";
                 this.nickname_ = "";
                 this.uid_ = 0;
+                this.playerLevel_ = 0;
+                this.onlineId_ = "";
                 if (this.profilePictureBuilder_ == null) {
                     this.profilePicture_ = null;
                 } else {
                     this.profilePicture_ = null;
                     this.profilePictureBuilder_ = null;
                 }
-                this.playerLevel_ = 0;
-                this.onlineId_ = "";
+                this.psnId_ = "";
                 return this;
             }
 
@@ -507,16 +507,16 @@ public final class HomeGroupPlayerInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public HomeGroupPlayerInfo buildPartial() {
                 HomeGroupPlayerInfo result = new HomeGroupPlayerInfo(this);
-                result.psnId_ = this.psnId_;
                 result.nickname_ = this.nickname_;
                 result.uid_ = this.uid_;
+                result.playerLevel_ = this.playerLevel_;
+                result.onlineId_ = this.onlineId_;
                 if (this.profilePictureBuilder_ == null) {
                     result.profilePicture_ = this.profilePicture_;
                 } else {
                     result.profilePicture_ = this.profilePictureBuilder_.build();
                 }
-                result.playerLevel_ = this.playerLevel_;
-                result.onlineId_ = this.onlineId_;
+                result.psnId_ = this.psnId_;
                 onBuilt();
                 return result;
             }
@@ -564,10 +564,6 @@ public final class HomeGroupPlayerInfoOuterClass {
                 if (other == HomeGroupPlayerInfo.getDefaultInstance()) {
                     return this;
                 }
-                if (!other.getPsnId().isEmpty()) {
-                    this.psnId_ = other.psnId_;
-                    onChanged();
-                }
                 if (!other.getNickname().isEmpty()) {
                     this.nickname_ = other.nickname_;
                     onChanged();
@@ -575,14 +571,18 @@ public final class HomeGroupPlayerInfoOuterClass {
                 if (other.getUid() != 0) {
                     setUid(other.getUid());
                 }
-                if (other.hasProfilePicture()) {
-                    mergeProfilePicture(other.getProfilePicture());
-                }
                 if (other.getPlayerLevel() != 0) {
                     setPlayerLevel(other.getPlayerLevel());
                 }
                 if (!other.getOnlineId().isEmpty()) {
                     this.onlineId_ = other.onlineId_;
+                    onChanged();
+                }
+                if (other.hasProfilePicture()) {
+                    mergeProfilePicture(other.getProfilePicture());
+                }
+                if (!other.getPsnId().isEmpty()) {
+                    this.psnId_ = other.psnId_;
                     onChanged();
                 }
                 mergeUnknownFields(other.unknownFields);
@@ -615,53 +615,6 @@ public final class HomeGroupPlayerInfoOuterClass {
                     }
                     throw th;
                 }
-            }
-
-            @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
-            public String getPsnId() {
-                Object ref = this.psnId_;
-                if (ref instanceof String) {
-                    return (String) ref;
-                }
-                String s = ((ByteString) ref).toStringUtf8();
-                this.psnId_ = s;
-                return s;
-            }
-
-            @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
-            public ByteString getPsnIdBytes() {
-                Object ref = this.psnId_;
-                if (!(ref instanceof String)) {
-                    return (ByteString) ref;
-                }
-                ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.psnId_ = b;
-                return b;
-            }
-
-            public Builder setPsnId(String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.psnId_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearPsnId() {
-                this.psnId_ = HomeGroupPlayerInfo.getDefaultInstance().getPsnId();
-                onChanged();
-                return this;
-            }
-
-            public Builder setPsnIdBytes(ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                HomeGroupPlayerInfo.checkByteStringIsUtf8(value);
-                this.psnId_ = value;
-                onChanged();
-                return this;
             }
 
             @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
@@ -724,6 +677,70 @@ public final class HomeGroupPlayerInfoOuterClass {
 
             public Builder clearUid() {
                 this.uid_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
+            public int getPlayerLevel() {
+                return this.playerLevel_;
+            }
+
+            public Builder setPlayerLevel(int value) {
+                this.playerLevel_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearPlayerLevel() {
+                this.playerLevel_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
+            public String getOnlineId() {
+                Object ref = this.onlineId_;
+                if (ref instanceof String) {
+                    return (String) ref;
+                }
+                String s = ((ByteString) ref).toStringUtf8();
+                this.onlineId_ = s;
+                return s;
+            }
+
+            @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
+            public ByteString getOnlineIdBytes() {
+                Object ref = this.onlineId_;
+                if (!(ref instanceof String)) {
+                    return (ByteString) ref;
+                }
+                ByteString b = ByteString.copyFromUtf8((String) ref);
+                this.onlineId_ = b;
+                return b;
+            }
+
+            public Builder setOnlineId(String value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.onlineId_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearOnlineId() {
+                this.onlineId_ = HomeGroupPlayerInfo.getDefaultInstance().getOnlineId();
+                onChanged();
+                return this;
+            }
+
+            public Builder setOnlineIdBytes(ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                HomeGroupPlayerInfo.checkByteStringIsUtf8(value);
+                this.onlineId_ = value;
                 onChanged();
                 return this;
             }
@@ -810,65 +827,48 @@ public final class HomeGroupPlayerInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
-            public int getPlayerLevel() {
-                return this.playerLevel_;
-            }
-
-            public Builder setPlayerLevel(int value) {
-                this.playerLevel_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearPlayerLevel() {
-                this.playerLevel_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
-            public String getOnlineId() {
-                Object ref = this.onlineId_;
+            public String getPsnId() {
+                Object ref = this.psnId_;
                 if (ref instanceof String) {
                     return (String) ref;
                 }
                 String s = ((ByteString) ref).toStringUtf8();
-                this.onlineId_ = s;
+                this.psnId_ = s;
                 return s;
             }
 
             @Override // emu.grasscutter.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder
-            public ByteString getOnlineIdBytes() {
-                Object ref = this.onlineId_;
+            public ByteString getPsnIdBytes() {
+                Object ref = this.psnId_;
                 if (!(ref instanceof String)) {
                     return (ByteString) ref;
                 }
                 ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.onlineId_ = b;
+                this.psnId_ = b;
                 return b;
             }
 
-            public Builder setOnlineId(String value) {
+            public Builder setPsnId(String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
-                this.onlineId_ = value;
+                this.psnId_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearOnlineId() {
-                this.onlineId_ = HomeGroupPlayerInfo.getDefaultInstance().getOnlineId();
+            public Builder clearPsnId() {
+                this.psnId_ = HomeGroupPlayerInfo.getDefaultInstance().getPsnId();
                 onChanged();
                 return this;
             }
 
-            public Builder setOnlineIdBytes(ByteString value) {
+            public Builder setPsnIdBytes(ByteString value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
                 HomeGroupPlayerInfo.checkByteStringIsUtf8(value);
-                this.onlineId_ = value;
+                this.psnId_ = value;
                 onChanged();
                 return this;
             }

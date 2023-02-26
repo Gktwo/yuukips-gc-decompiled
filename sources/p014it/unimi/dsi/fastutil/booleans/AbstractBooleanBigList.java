@@ -119,32 +119,32 @@ public abstract class AbstractBooleanBigList extends AbstractBooleanCollection i
     public static final class IndexBasedSpliterator extends BooleanBigSpliterators.LateBindingSizeIndexBasedSpliterator {
 
         /* renamed from: l */
-        final BooleanBigList f1042l;
+        final BooleanBigList f1006l;
 
         IndexBasedSpliterator(BooleanBigList l, long pos) {
             super(pos);
-            this.f1042l = l;
+            this.f1006l = l;
         }
 
         IndexBasedSpliterator(BooleanBigList l, long pos, long maxPos) {
             super(pos, maxPos);
-            this.f1042l = l;
+            this.f1006l = l;
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanBigSpliterators.LateBindingSizeIndexBasedSpliterator
         protected final long getMaxPosFromBackingStore() {
-            return this.f1042l.size64();
+            return this.f1006l.size64();
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanBigSpliterators.AbstractIndexBasedSpliterator
         protected final boolean get(long i) {
-            return this.f1042l.getBoolean(i);
+            return this.f1006l.getBoolean(i);
         }
 
         /* access modifiers changed from: protected */
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanBigSpliterators.AbstractIndexBasedSpliterator
         public final IndexBasedSpliterator makeForSplit(long pos, long maxPos) {
-            return new IndexBasedSpliterator(this.f1042l, pos, maxPos);
+            return new IndexBasedSpliterator(this.f1006l, pos, maxPos);
         }
     }
 
@@ -1001,11 +1001,11 @@ public abstract class AbstractBooleanBigList extends AbstractBooleanCollection i
         private static final long serialVersionUID = -7046029254386353129L;
 
         /* renamed from: l */
-        protected final BooleanBigList f1040l;
+        protected final BooleanBigList f1004l;
         protected final long from;
 
         /* renamed from: to */
-        protected long f1041to;
+        protected long f1005to;
         static final /* synthetic */ boolean $assertionsDisabled;
 
         /* Return type fixed from 'it.unimi.dsi.fastutil.BigListIterator' to match base method */
@@ -1082,18 +1082,18 @@ public abstract class AbstractBooleanBigList extends AbstractBooleanCollection i
         }
 
         public BooleanSubList(BooleanBigList l, long from, long to) {
-            this.f1040l = l;
+            this.f1004l = l;
             this.from = from;
-            this.f1041to = to;
+            this.f1005to = to;
         }
 
         /* access modifiers changed from: private */
         public boolean assertRange() {
-            if (!$assertionsDisabled && this.from > this.f1040l.size64()) {
+            if (!$assertionsDisabled && this.from > this.f1004l.size64()) {
                 throw new AssertionError();
-            } else if (!$assertionsDisabled && this.f1041to > this.f1040l.size64()) {
+            } else if (!$assertionsDisabled && this.f1005to > this.f1004l.size64()) {
                 throw new AssertionError();
-            } else if ($assertionsDisabled || this.f1041to >= this.from) {
+            } else if ($assertionsDisabled || this.f1005to >= this.from) {
                 return true;
             } else {
                 throw new AssertionError();
@@ -1102,8 +1102,8 @@ public abstract class AbstractBooleanBigList extends AbstractBooleanCollection i
 
         @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanBigList, p014it.unimi.dsi.fastutil.booleans.AbstractBooleanCollection, p014it.unimi.dsi.fastutil.booleans.BooleanCollection
         public boolean add(boolean k) {
-            this.f1040l.add(this.f1041to, k);
-            this.f1041to++;
+            this.f1004l.add(this.f1005to, k);
+            this.f1005to++;
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }
@@ -1113,8 +1113,8 @@ public abstract class AbstractBooleanBigList extends AbstractBooleanCollection i
         @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanBigList, p014it.unimi.dsi.fastutil.booleans.BooleanBigList
         public void add(long index, boolean k) {
             ensureIndex(index);
-            this.f1040l.add(this.from + index, k);
-            this.f1041to++;
+            this.f1004l.add(this.from + index, k);
+            this.f1005to++;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1123,32 +1123,32 @@ public abstract class AbstractBooleanBigList extends AbstractBooleanCollection i
         @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanBigList, p014it.unimi.dsi.fastutil.BigList
         public boolean addAll(long index, Collection<? extends Boolean> c) {
             ensureIndex(index);
-            this.f1041to += (long) c.size();
-            return this.f1040l.addAll(this.from + index, c);
+            this.f1005to += (long) c.size();
+            return this.f1004l.addAll(this.from + index, c);
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.BooleanBigList
         public boolean getBoolean(long index) {
             ensureRestrictedIndex(index);
-            return this.f1040l.getBoolean(this.from + index);
+            return this.f1004l.getBoolean(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanBigList, p014it.unimi.dsi.fastutil.booleans.BooleanBigList
         public boolean removeBoolean(long index) {
             ensureRestrictedIndex(index);
-            this.f1041to--;
-            return this.f1040l.removeBoolean(this.from + index);
+            this.f1005to--;
+            return this.f1004l.removeBoolean(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanBigList, p014it.unimi.dsi.fastutil.booleans.BooleanBigList
         public boolean set(long index, boolean k) {
             ensureRestrictedIndex(index);
-            return this.f1040l.set(this.from + index, k);
+            return this.f1004l.set(this.from + index, k);
         }
 
         @Override // p014it.unimi.dsi.fastutil.Size64
         public long size64() {
-            return this.f1041to - this.from;
+            return this.f1005to - this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanBigList, p014it.unimi.dsi.fastutil.booleans.BooleanBigList
@@ -1157,15 +1157,15 @@ public abstract class AbstractBooleanBigList extends AbstractBooleanCollection i
             if (from + length > size64()) {
                 throw new IndexOutOfBoundsException("End index (" + from + length + ") is greater than list size (" + size64() + ")");
             }
-            this.f1040l.getElements(this.from + from, a, offset, length);
+            this.f1004l.getElements(this.from + from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanBigList, p014it.unimi.dsi.fastutil.booleans.BooleanBigList
         public void removeElements(long from, long to) {
             ensureIndex(from);
             ensureIndex(to);
-            this.f1040l.removeElements(this.from + from, this.from + to);
-            this.f1041to -= to - from;
+            this.f1004l.removeElements(this.from + from, this.from + to);
+            this.f1005to -= to - from;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1174,8 +1174,8 @@ public abstract class AbstractBooleanBigList extends AbstractBooleanCollection i
         @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanBigList, p014it.unimi.dsi.fastutil.booleans.BooleanBigList
         public void addElements(long index, boolean[][] a, long offset, long length) {
             ensureIndex(index);
-            this.f1040l.addElements(this.from + index, a, offset, length);
-            this.f1041to += length;
+            this.f1004l.addElements(this.from + index, a, offset, length);
+            this.f1005to += length;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1197,7 +1197,7 @@ public abstract class AbstractBooleanBigList extends AbstractBooleanCollection i
 
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanBigListIterators.AbstractIndexBasedBigIterator
             protected final boolean get(long i) {
-                return BooleanSubList.this.f1040l.getBoolean(BooleanSubList.this.from + i);
+                return BooleanSubList.this.f1004l.getBoolean(BooleanSubList.this.from + i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanBigListIterators.AbstractIndexBasedBigListIterator
@@ -1217,7 +1217,7 @@ public abstract class AbstractBooleanBigList extends AbstractBooleanCollection i
 
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanBigListIterators.AbstractIndexBasedBigIterator
             protected final long getMaxPos() {
-                return BooleanSubList.this.f1041to - BooleanSubList.this.from;
+                return BooleanSubList.this.f1005to - BooleanSubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.booleans.BooleanBigListIterators.AbstractIndexBasedBigListIterator, p014it.unimi.dsi.fastutil.booleans.BooleanBigListIterator
@@ -1259,7 +1259,7 @@ public abstract class AbstractBooleanBigList extends AbstractBooleanCollection i
 
             @Override // java.util.Iterator
             public boolean hasNext() {
-                return this.parent.nextIndex() < BooleanSubList.this.f1041to;
+                return this.parent.nextIndex() < BooleanSubList.this.f1005to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -1322,10 +1322,10 @@ public abstract class AbstractBooleanBigList extends AbstractBooleanCollection i
                 }
                 long currentPos = this.parent.nextIndex();
                 char c = currentPos + n;
-                int i = (c > BooleanSubList.this.f1041to ? 1 : (c == BooleanSubList.this.f1041to ? 0 : -1));
+                int i = (c > BooleanSubList.this.f1005to ? 1 : (c == BooleanSubList.this.f1005to ? 0 : -1));
                 long parentNewPos = c;
                 if (i > 0) {
-                    parentNewPos = BooleanSubList.this.f1041to;
+                    parentNewPos = BooleanSubList.this.f1005to;
                 }
                 return this.parent.skip((parentNewPos == 1 ? 1 : 0) - currentPos);
             }
@@ -1336,12 +1336,12 @@ public abstract class AbstractBooleanBigList extends AbstractBooleanCollection i
         @Override // p014it.unimi.dsi.fastutil.booleans.AbstractBooleanBigList, p014it.unimi.dsi.fastutil.booleans.BooleanBigList, p014it.unimi.dsi.fastutil.BigList
         public BigListIterator<Boolean> listIterator(long index) {
             ensureIndex(index);
-            return this.f1040l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f1040l.listIterator(index + this.from));
+            return this.f1004l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f1004l.listIterator(index + this.from));
         }
 
         @Override // java.util.Collection, java.lang.Iterable, p014it.unimi.dsi.fastutil.booleans.BooleanCollection, p014it.unimi.dsi.fastutil.booleans.BooleanIterable, p014it.unimi.dsi.fastutil.booleans.BooleanBigList
         public BooleanSpliterator spliterator() {
-            return this.f1040l instanceof RandomAccess ? new IndexBasedSpliterator(this.f1040l, this.from, this.f1041to) : spliterator();
+            return this.f1004l instanceof RandomAccess ? new IndexBasedSpliterator(this.f1004l, this.from, this.f1005to) : spliterator();
         }
 
         /* Return type fixed from 'it.unimi.dsi.fastutil.booleans.BooleanBigList' to match base method */
@@ -1361,8 +1361,8 @@ public abstract class AbstractBooleanBigList extends AbstractBooleanCollection i
             if (index == -1) {
                 return false;
             }
-            this.f1041to--;
-            this.f1040l.removeBoolean(this.from + index);
+            this.f1005to--;
+            this.f1004l.removeBoolean(this.from + index);
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }

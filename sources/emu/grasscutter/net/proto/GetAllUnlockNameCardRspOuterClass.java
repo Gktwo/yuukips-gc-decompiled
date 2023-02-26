@@ -23,19 +23,19 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetAllUnlockNameCardRspOuterClass.class */
 public final class GetAllUnlockNameCardRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dGetAllUnlockNameCardRsp.proto\"B\n\u0017GetAllUnlockNameCardRsp\u0012\u0016\n\u000ename_card_list\u0018\u000b \u0003(\r\u0012\u000f\n\u0007retcode\u0018\u000e \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dGetAllUnlockNameCardRsp.proto\"@\n\u0017GetAllUnlockNameCardRsp\u0012\u000f\n\u0007retcode\u0018\u000f \u0001(\u0005\u0012\u0014\n\fnameCardList\u0018\f \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_GetAllUnlockNameCardRsp_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetAllUnlockNameCardRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetAllUnlockNameCardRsp_descriptor, new String[]{"NameCardList", "Retcode"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetAllUnlockNameCardRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetAllUnlockNameCardRsp_descriptor, new String[]{"Retcode", "NameCardList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetAllUnlockNameCardRspOuterClass$GetAllUnlockNameCardRspOrBuilder.class */
     public interface GetAllUnlockNameCardRspOrBuilder extends MessageOrBuilder {
+        int getRetcode();
+
         List<Integer> getNameCardListList();
 
         int getNameCardListCount();
 
         int getNameCardList(int i);
-
-        int getRetcode();
     }
 
     private GetAllUnlockNameCardRspOuterClass() {
@@ -51,11 +51,11 @@ public final class GetAllUnlockNameCardRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetAllUnlockNameCardRspOuterClass$GetAllUnlockNameCardRsp.class */
     public static final class GetAllUnlockNameCardRsp extends GeneratedMessageV3 implements GetAllUnlockNameCardRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int NAME_CARD_LIST_FIELD_NUMBER = 11;
+        public static final int RETCODE_FIELD_NUMBER = 15;
+        private int retcode_;
+        public static final int NAMECARDLIST_FIELD_NUMBER = 12;
         private Internal.IntList nameCardList_;
         private int nameCardListMemoizedSerializedSize;
-        public static final int RETCODE_FIELD_NUMBER = 14;
-        private int retcode_;
         private byte memoizedIsInitialized;
         private static final GetAllUnlockNameCardRsp DEFAULT_INSTANCE = new GetAllUnlockNameCardRsp();
         private static final Parser<GetAllUnlockNameCardRsp> PARSER = new AbstractParser<GetAllUnlockNameCardRsp>() { // from class: emu.grasscutter.net.proto.GetAllUnlockNameCardRspOuterClass.GetAllUnlockNameCardRsp.1
@@ -107,14 +107,14 @@ public final class GetAllUnlockNameCardRspOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 88:
+                                case 96:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.nameCardList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.nameCardList_.addInt(input.readUInt32());
                                     break;
-                                case 90:
+                                case 98:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.nameCardList_ = newIntList();
@@ -125,7 +125,7 @@ public final class GetAllUnlockNameCardRspOuterClass {
                                     }
                                     input.popLimit(limit);
                                     break;
-                                case 112:
+                                case 120:
                                     this.retcode_ = input.readInt32();
                                     break;
                                 default:
@@ -162,6 +162,11 @@ public final class GetAllUnlockNameCardRspOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GetAllUnlockNameCardRspOuterClass.GetAllUnlockNameCardRspOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetAllUnlockNameCardRspOuterClass.GetAllUnlockNameCardRspOrBuilder
         public List<Integer> getNameCardListList() {
             return this.nameCardList_;
         }
@@ -174,11 +179,6 @@ public final class GetAllUnlockNameCardRspOuterClass {
         @Override // emu.grasscutter.net.proto.GetAllUnlockNameCardRspOuterClass.GetAllUnlockNameCardRspOrBuilder
         public int getNameCardList(int index) {
             return this.nameCardList_.getInt(index);
-        }
-
-        @Override // emu.grasscutter.net.proto.GetAllUnlockNameCardRspOuterClass.GetAllUnlockNameCardRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -198,14 +198,14 @@ public final class GetAllUnlockNameCardRspOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (getNameCardListList().size() > 0) {
-                output.writeUInt32NoTag(90);
+                output.writeUInt32NoTag(98);
                 output.writeUInt32NoTag(this.nameCardListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.nameCardList_.size(); i++) {
                 output.writeUInt32NoTag(this.nameCardList_.getInt(i));
             }
             if (this.retcode_ != 0) {
-                output.writeInt32(14, this.retcode_);
+                output.writeInt32(15, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -226,7 +226,7 @@ public final class GetAllUnlockNameCardRspOuterClass {
             }
             this.nameCardListMemoizedSerializedSize = dataSize;
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(14, this.retcode_);
+                size2 += CodedOutputStream.computeInt32Size(15, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -242,7 +242,7 @@ public final class GetAllUnlockNameCardRspOuterClass {
                 return equals(obj);
             }
             GetAllUnlockNameCardRsp other = (GetAllUnlockNameCardRsp) obj;
-            return getNameCardListList().equals(other.getNameCardListList()) && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
+            return getRetcode() == other.getRetcode() && getNameCardListList().equals(other.getNameCardListList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -250,11 +250,11 @@ public final class GetAllUnlockNameCardRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getRetcode();
             if (getNameCardListCount() > 0) {
-                hash = (53 * ((37 * hash) + 11)) + getNameCardListList().hashCode();
+                hash = (53 * ((37 * hash) + 12)) + getNameCardListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 14)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -334,8 +334,8 @@ public final class GetAllUnlockNameCardRspOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetAllUnlockNameCardRspOuterClass$GetAllUnlockNameCardRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements GetAllUnlockNameCardRspOrBuilder {
             private int bitField0_;
-            private Internal.IntList nameCardList_ = GetAllUnlockNameCardRsp.emptyIntList();
             private int retcode_;
+            private Internal.IntList nameCardList_ = GetAllUnlockNameCardRsp.emptyIntList();
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return GetAllUnlockNameCardRspOuterClass.internal_static_GetAllUnlockNameCardRsp_descriptor;
@@ -363,9 +363,9 @@ public final class GetAllUnlockNameCardRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.retcode_ = 0;
                 this.nameCardList_ = GetAllUnlockNameCardRsp.emptyIntList();
                 this.bitField0_ &= -2;
-                this.retcode_ = 0;
                 return this;
             }
 
@@ -392,12 +392,12 @@ public final class GetAllUnlockNameCardRspOuterClass {
             public GetAllUnlockNameCardRsp buildPartial() {
                 GetAllUnlockNameCardRsp result = new GetAllUnlockNameCardRsp(this);
                 int i = this.bitField0_;
+                result.retcode_ = this.retcode_;
                 if ((this.bitField0_ & 1) != 0) {
                     this.nameCardList_.makeImmutable();
                     this.bitField0_ &= -2;
                 }
                 result.nameCardList_ = this.nameCardList_;
-                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -445,6 +445,9 @@ public final class GetAllUnlockNameCardRspOuterClass {
                 if (other == GetAllUnlockNameCardRsp.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
+                }
                 if (!other.nameCardList_.isEmpty()) {
                     if (this.nameCardList_.isEmpty()) {
                         this.nameCardList_ = other.nameCardList_;
@@ -454,9 +457,6 @@ public final class GetAllUnlockNameCardRspOuterClass {
                         this.nameCardList_.addAll(other.nameCardList_);
                     }
                     onChanged();
-                }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -488,6 +488,23 @@ public final class GetAllUnlockNameCardRspOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.GetAllUnlockNameCardRspOuterClass.GetAllUnlockNameCardRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
+                onChanged();
+                return this;
             }
 
             private void ensureNameCardListIsMutable() {
@@ -536,23 +553,6 @@ public final class GetAllUnlockNameCardRspOuterClass {
             public Builder clearNameCardList() {
                 this.nameCardList_ = GetAllUnlockNameCardRsp.emptyIntList();
                 this.bitField0_ &= -2;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetAllUnlockNameCardRspOuterClass.GetAllUnlockNameCardRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
                 onChanged();
                 return this;
             }

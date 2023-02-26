@@ -61,7 +61,7 @@ public abstract class AbstractWebSocketConnection extends AbstractConnection imp
     private Stats stats = new Stats();
 
     /* renamed from: id */
-    private final String f3182id = Long.toString(ID_GEN.incrementAndGet());
+    private final String f3146id = Long.toString(ID_GEN.incrementAndGet());
 
     /* access modifiers changed from: private */
     /* renamed from: org.eclipse.jetty.websocket.common.io.AbstractWebSocketConnection$CallbackBridge */
@@ -269,7 +269,7 @@ public abstract class AbstractWebSocketConnection extends AbstractConnection imp
 
     @Override // org.eclipse.jetty.websocket.common.LogicalConnection
     public String getId() {
-        return this.f3182id;
+        return this.f3146id;
     }
 
     @Override // org.eclipse.jetty.websocket.common.LogicalConnection

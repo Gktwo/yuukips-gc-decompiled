@@ -92,9 +92,8 @@ public final class EpollDomainSocketChannel extends AbstractEpollStreamChannel i
         return (DomainSocketAddress) localAddress();
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.channel.epoll.AbstractEpollStreamChannel
-    public int doWriteSingle(ChannelOutboundBuffer in) throws Exception {
+    protected int doWriteSingle(ChannelOutboundBuffer in) throws Exception {
         Object msg = in.current();
         if (!(msg instanceof FileDescriptor) || this.socket.sendFd(((FileDescriptor) msg).intValue()) <= 0) {
             return doWriteSingle(in);
@@ -103,9 +102,8 @@ public final class EpollDomainSocketChannel extends AbstractEpollStreamChannel i
         return 1;
     }
 
-    /* access modifiers changed from: protected */
     @Override // p013io.netty.channel.epoll.AbstractEpollStreamChannel, p013io.netty.channel.AbstractChannel
-    public Object filterOutboundMessage(Object msg) {
+    protected Object filterOutboundMessage(Object msg) {
         if (msg instanceof FileDescriptor) {
             return msg;
         }
@@ -124,9 +122,8 @@ public final class EpollDomainSocketChannel extends AbstractEpollStreamChannel i
             super();
         }
 
-        /* access modifiers changed from: package-private */
         @Override // p013io.netty.channel.epoll.AbstractEpollStreamChannel.EpollStreamUnsafe, p013io.netty.channel.epoll.AbstractEpollChannel.AbstractEpollUnsafe
-        public void epollInReady() {
+        void epollInReady() {
             switch (EpollDomainSocketChannel.this.config().getReadMode()) {
                 case BYTES:
                     epollInReady();

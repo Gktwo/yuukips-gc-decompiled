@@ -1,5 +1,6 @@
 package p013io.javalin.http;
 
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.RetcodeOuterClass;
 import kotlin.Metadata;
 import kotlin.jvm.JvmOverloads;
@@ -195,7 +196,7 @@ public final class Cookie {
     /* JADX INFO: 'this' call moved to the top of the method (can break code semantics) */
     @JvmOverloads
     public Cookie(@NotNull String name, @NotNull String value, @NotNull String path, int maxAge, boolean secure) {
-        this(name, value, path, maxAge, secure, 0, false, null, null, null, 992, null);
+        this(name, value, path, maxAge, secure, 0, false, null, null, null, PacketOpcodes.DungeonFollowNotify, null);
         Intrinsics.checkNotNullParameter(name, "name");
         Intrinsics.checkNotNullParameter(value, "value");
         Intrinsics.checkNotNullParameter(path, "path");
@@ -213,7 +214,7 @@ public final class Cookie {
     /* JADX INFO: 'this' call moved to the top of the method (can break code semantics) */
     @JvmOverloads
     public Cookie(@NotNull String name, @NotNull String value, @NotNull String path) {
-        this(name, value, path, 0, false, 0, false, null, null, null, 1016, null);
+        this(name, value, path, 0, false, 0, false, null, null, null, PacketOpcodes.AvatarSkillChangeNotify, null);
         Intrinsics.checkNotNullParameter(name, "name");
         Intrinsics.checkNotNullParameter(value, "value");
         Intrinsics.checkNotNullParameter(path, "path");
@@ -222,7 +223,7 @@ public final class Cookie {
     /* JADX INFO: 'this' call moved to the top of the method (can break code semantics) */
     @JvmOverloads
     public Cookie(@NotNull String name, @NotNull String value) {
-        this(name, value, null, 0, false, 0, false, null, null, null, 1020, null);
+        this(name, value, null, 0, false, 0, false, null, null, null, PacketOpcodes.BigTalentPointConvertReq, null);
         Intrinsics.checkNotNullParameter(name, "name");
         Intrinsics.checkNotNullParameter(value, "value");
     }

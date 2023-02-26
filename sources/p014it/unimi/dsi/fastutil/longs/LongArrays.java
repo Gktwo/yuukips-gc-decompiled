@@ -1,6 +1,5 @@
 package p014it.unimi.dsi.fastutil.longs;
 
-import emu.grasscutter.net.packet.PacketOpcodes;
 import java.io.Serializable;
 import java.util.Random;
 import java.util.concurrent.ExecutorCompletionService;
@@ -290,16 +289,16 @@ public final class LongArrays {
         private final int from;
 
         /* renamed from: to */
-        private final int f2401to;
+        private final int f2365to;
 
         /* renamed from: x */
-        private final long[] f2402x;
+        private final long[] f2366x;
         private final LongComparator comp;
 
         public ForkJoinQuickSortComp(long[] x, int from, int to, LongComparator comp) {
             this.from = from;
-            this.f2401to = to;
-            this.f2402x = x;
+            this.f2365to = to;
+            this.f2366x = x;
             this.comp = comp;
         }
 
@@ -307,20 +306,20 @@ public final class LongArrays {
         protected void compute() {
             int comparison;
             int comparison2;
-            long[] x = this.f2402x;
-            int len = this.f2401to - this.from;
+            long[] x = this.f2366x;
+            int len = this.f2365to - this.from;
             if (len < 8192) {
-                LongArrays.quickSort(x, this.from, this.f2401to, this.comp);
+                LongArrays.quickSort(x, this.from, this.f2365to, this.comp);
                 return;
             }
             int m = this.from + (len / 2);
             int l = this.from;
-            int n = this.f2401to - 1;
+            int n = this.f2365to - 1;
             int s = len / 8;
             long v = x[LongArrays.med3(x, LongArrays.med3(x, l, l + s, l + (2 * s), this.comp), LongArrays.med3(x, m - s, m, m + s, this.comp), LongArrays.med3(x, n - (2 * s), n - s, n, this.comp), this.comp)];
             int a = this.from;
             int b = a;
-            int c = this.f2401to - 1;
+            int c = this.f2365to - 1;
             int d = c;
             while (true) {
                 if (b > c || (comparison2 = this.comp.compare(x[b], v)) > 0) {
@@ -347,16 +346,16 @@ public final class LongArrays {
             }
             int s2 = Math.min(a - this.from, b - a);
             LongArrays.swap(x, this.from, b - s2, s2);
-            int s3 = Math.min(d - c, (this.f2401to - d) - 1);
-            LongArrays.swap(x, b, this.f2401to - s3, s3);
+            int s3 = Math.min(d - c, (this.f2365to - d) - 1);
+            LongArrays.swap(x, b, this.f2365to - s3, s3);
             int s4 = b - a;
             int t = d - c;
             if (s4 > 1 && t > 1) {
-                invokeAll(new ForkJoinQuickSortComp(x, this.from, this.from + s4, this.comp), new ForkJoinQuickSortComp(x, this.f2401to - t, this.f2401to, this.comp));
+                invokeAll(new ForkJoinQuickSortComp(x, this.from, this.from + s4, this.comp), new ForkJoinQuickSortComp(x, this.f2365to - t, this.f2365to, this.comp));
             } else if (s4 > 1) {
                 invokeAll(new ForkJoinTask[]{new ForkJoinQuickSortComp(x, this.from, this.from + s4, this.comp)});
             } else {
-                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSortComp(x, this.f2401to - t, this.f2401to, this.comp)});
+                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSortComp(x, this.f2365to - t, this.f2365to, this.comp)});
             }
         }
     }
@@ -496,35 +495,35 @@ public final class LongArrays {
         private final int from;
 
         /* renamed from: to */
-        private final int f2396to;
+        private final int f2360to;
 
         /* renamed from: x */
-        private final long[] f2397x;
+        private final long[] f2361x;
 
         public ForkJoinQuickSort(long[] x, int from, int to) {
             this.from = from;
-            this.f2396to = to;
-            this.f2397x = x;
+            this.f2360to = to;
+            this.f2361x = x;
         }
 
         @Override // java.util.concurrent.RecursiveAction
         protected void compute() {
             int comparison;
             int comparison2;
-            long[] x = this.f2397x;
-            int len = this.f2396to - this.from;
+            long[] x = this.f2361x;
+            int len = this.f2360to - this.from;
             if (len < 8192) {
-                LongArrays.quickSort(x, this.from, this.f2396to);
+                LongArrays.quickSort(x, this.from, this.f2360to);
                 return;
             }
             int m = this.from + (len / 2);
             int l = this.from;
-            int n = this.f2396to - 1;
+            int n = this.f2360to - 1;
             int s = len / 8;
             long v = x[LongArrays.med3(x, LongArrays.med3(x, l, l + s, l + (2 * s)), LongArrays.med3(x, m - s, m, m + s), LongArrays.med3(x, n - (2 * s), n - s, n))];
             int a = this.from;
             int b = a;
-            int c = this.f2396to - 1;
+            int c = this.f2360to - 1;
             int d = c;
             while (true) {
                 if (b > c || (comparison2 = Long.compare(x[b], v)) > 0) {
@@ -551,16 +550,16 @@ public final class LongArrays {
             }
             int s2 = Math.min(a - this.from, b - a);
             LongArrays.swap(x, this.from, b - s2, s2);
-            int s3 = Math.min(d - c, (this.f2396to - d) - 1);
-            LongArrays.swap(x, b, this.f2396to - s3, s3);
+            int s3 = Math.min(d - c, (this.f2360to - d) - 1);
+            LongArrays.swap(x, b, this.f2360to - s3, s3);
             int s4 = b - a;
             int t = d - c;
             if (s4 > 1 && t > 1) {
-                invokeAll(new ForkJoinQuickSort(x, this.from, this.from + s4), new ForkJoinQuickSort(x, this.f2396to - t, this.f2396to));
+                invokeAll(new ForkJoinQuickSort(x, this.from, this.from + s4), new ForkJoinQuickSort(x, this.f2360to - t, this.f2360to));
             } else if (s4 > 1) {
                 invokeAll(new ForkJoinTask[]{new ForkJoinQuickSort(x, this.from, this.from + s4)});
             } else {
-                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSort(x, this.f2396to - t, this.f2396to)});
+                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSort(x, this.f2360to - t, this.f2360to)});
             }
         }
     }
@@ -687,16 +686,16 @@ public final class LongArrays {
         private final int from;
 
         /* renamed from: to */
-        private final int f2403to;
+        private final int f2367to;
         private final int[] perm;
 
         /* renamed from: x */
-        private final long[] f2404x;
+        private final long[] f2368x;
 
         public ForkJoinQuickSortIndirect(int[] perm, long[] x, int from, int to) {
             this.from = from;
-            this.f2403to = to;
-            this.f2404x = x;
+            this.f2367to = to;
+            this.f2368x = x;
             this.perm = perm;
         }
 
@@ -704,20 +703,20 @@ public final class LongArrays {
         protected void compute() {
             int comparison;
             int comparison2;
-            long[] x = this.f2404x;
-            int len = this.f2403to - this.from;
+            long[] x = this.f2368x;
+            int len = this.f2367to - this.from;
             if (len < 8192) {
-                LongArrays.quickSortIndirect(this.perm, x, this.from, this.f2403to);
+                LongArrays.quickSortIndirect(this.perm, x, this.from, this.f2367to);
                 return;
             }
             int m = this.from + (len / 2);
             int l = this.from;
-            int n = this.f2403to - 1;
+            int n = this.f2367to - 1;
             int s = len / 8;
             long v = x[this.perm[LongArrays.med3Indirect(this.perm, x, LongArrays.med3Indirect(this.perm, x, l, l + s, l + (2 * s)), LongArrays.med3Indirect(this.perm, x, m - s, m, m + s), LongArrays.med3Indirect(this.perm, x, n - (2 * s), n - s, n))]];
             int a = this.from;
             int b = a;
-            int c = this.f2403to - 1;
+            int c = this.f2367to - 1;
             int d = c;
             while (true) {
                 if (b > c || (comparison2 = Long.compare(x[this.perm[b]], v)) > 0) {
@@ -744,16 +743,16 @@ public final class LongArrays {
             }
             int s2 = Math.min(a - this.from, b - a);
             IntArrays.swap(this.perm, this.from, b - s2, s2);
-            int s3 = Math.min(d - c, (this.f2403to - d) - 1);
-            IntArrays.swap(this.perm, b, this.f2403to - s3, s3);
+            int s3 = Math.min(d - c, (this.f2367to - d) - 1);
+            IntArrays.swap(this.perm, b, this.f2367to - s3, s3);
             int s4 = b - a;
             int t = d - c;
             if (s4 > 1 && t > 1) {
-                invokeAll(new ForkJoinQuickSortIndirect(this.perm, x, this.from, this.from + s4), new ForkJoinQuickSortIndirect(this.perm, x, this.f2403to - t, this.f2403to));
+                invokeAll(new ForkJoinQuickSortIndirect(this.perm, x, this.from, this.from + s4), new ForkJoinQuickSortIndirect(this.perm, x, this.f2367to - t, this.f2367to));
             } else if (s4 > 1) {
                 invokeAll(new ForkJoinTask[]{new ForkJoinQuickSortIndirect(this.perm, x, this.from, this.from + s4)});
             } else {
-                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSortIndirect(this.perm, x, this.f2403to - t, this.f2403to)});
+                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSortIndirect(this.perm, x, this.f2367to - t, this.f2367to)});
             }
         }
     }
@@ -922,40 +921,40 @@ public final class LongArrays {
         private final int from;
 
         /* renamed from: to */
-        private final int f2398to;
+        private final int f2362to;
 
         /* renamed from: x */
-        private final long[] f2399x;
+        private final long[] f2363x;
 
         /* renamed from: y */
-        private final long[] f2400y;
+        private final long[] f2364y;
 
         public ForkJoinQuickSort2(long[] x, long[] y, int from, int to) {
             this.from = from;
-            this.f2398to = to;
-            this.f2399x = x;
-            this.f2400y = y;
+            this.f2362to = to;
+            this.f2363x = x;
+            this.f2364y = y;
         }
 
         @Override // java.util.concurrent.RecursiveAction
         protected void compute() {
-            long[] x = this.f2399x;
-            long[] y = this.f2400y;
-            int len = this.f2398to - this.from;
+            long[] x = this.f2363x;
+            long[] y = this.f2364y;
+            int len = this.f2362to - this.from;
             if (len < 8192) {
-                LongArrays.quickSort(x, y, this.from, this.f2398to);
+                LongArrays.quickSort(x, y, this.from, this.f2362to);
                 return;
             }
             int m = this.from + (len / 2);
             int l = this.from;
-            int n = this.f2398to - 1;
+            int n = this.f2362to - 1;
             int s = len / 8;
             int m2 = LongArrays.med3(x, y, LongArrays.med3(x, y, l, l + s, l + (2 * s)), LongArrays.med3(x, y, m - s, m, m + s), LongArrays.med3(x, y, n - (2 * s), n - s, n));
             long v = x[m2];
             long w = y[m2];
             int a = this.from;
             int b = a;
-            int c = this.f2398to - 1;
+            int c = this.f2362to - 1;
             int d = c;
             while (true) {
                 if (b <= c) {
@@ -990,16 +989,16 @@ public final class LongArrays {
             }
             int s2 = Math.min(a - this.from, b - a);
             LongArrays.swap(x, y, this.from, b - s2, s2);
-            int s3 = Math.min(d - c, (this.f2398to - d) - 1);
-            LongArrays.swap(x, y, b, this.f2398to - s3, s3);
+            int s3 = Math.min(d - c, (this.f2362to - d) - 1);
+            LongArrays.swap(x, y, b, this.f2362to - s3, s3);
             int s4 = b - a;
             int t3 = d - c;
             if (s4 > 1 && t3 > 1) {
-                invokeAll(new ForkJoinQuickSort2(x, y, this.from, this.from + s4), new ForkJoinQuickSort2(x, y, this.f2398to - t3, this.f2398to));
+                invokeAll(new ForkJoinQuickSort2(x, y, this.from, this.from + s4), new ForkJoinQuickSort2(x, y, this.f2362to - t3, this.f2362to));
             } else if (s4 > 1) {
                 invokeAll(new ForkJoinTask[]{new ForkJoinQuickSort2(x, y, this.from, this.from + s4)});
             } else {
-                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSort2(x, y, this.f2398to - t3, this.f2398to)});
+                invokeAll(new ForkJoinTask[]{new ForkJoinQuickSort2(x, y, this.f2362to - t3, this.f2362to)});
             }
         }
     }
@@ -1019,7 +1018,7 @@ public final class LongArrays {
     }
 
     public static void unstableSort(long[] a, int from, int to) {
-        if (to - from >= 4000) {
+        if (to - from >= RADIX_SORT_MIN_THRESHOLD) {
             radixSort(a, from, to);
         } else {
             quickSort(a, from, to);
@@ -1341,9 +1340,9 @@ public final class LongArrays {
             }
             return;
         }
-        int[] offsetStack = new int[PacketOpcodes.FocusAvatarRsp];
-        int[] lengthStack = new int[PacketOpcodes.FocusAvatarRsp];
-        int[] levelStack = new int[PacketOpcodes.FocusAvatarRsp];
+        int[] offsetStack = new int[1786];
+        int[] lengthStack = new int[1786];
+        int[] levelStack = new int[1786];
         offsetStack[0] = from;
         lengthStack[0] = to - from;
         int stackPos = 0 + 1;

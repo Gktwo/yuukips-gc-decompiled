@@ -16,12 +16,12 @@ public class CharArrayFrontCodedList extends AbstractObjectList<char[]> implemen
     private static final long serialVersionUID = 1;
 
     /* renamed from: n */
-    protected final int f1477n;
+    protected final int f1441n;
     protected final int ratio;
     protected final char[][] array;
 
     /* renamed from: p */
-    protected transient long[] f1478p;
+    protected transient long[] f1442p;
 
     /* JADX DEBUG: Failed to insert an additional move for type inference into block B:23:0x0142 */
     /* JADX WARN: Multi-variable type inference failed */
@@ -82,7 +82,7 @@ public class CharArrayFrontCodedList extends AbstractObjectList<char[]> implemen
     public int length(int index) {
         char[][] array = this.array;
         int delta = index % this.ratio;
-        long pos = this.f1478p[index / this.ratio];
+        long pos = this.f1442p[index / this.ratio];
         int length = readInt(array, pos);
         if (delta == 0) {
             return length;
@@ -144,7 +144,7 @@ public class CharArrayFrontCodedList extends AbstractObjectList<char[]> implemen
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public int size() {
-        return this.f1477n;
+        return this.f1441n;
     }
 
     @Override // p014it.unimi.dsi.fastutil.objects.AbstractObjectList, p014it.unimi.dsi.fastutil.objects.ObjectList, java.util.List
@@ -153,27 +153,27 @@ public class CharArrayFrontCodedList extends AbstractObjectList<char[]> implemen
         return new ObjectListIterator<char[]>() { // from class: it.unimi.dsi.fastutil.chars.CharArrayFrontCodedList.1
 
             /* renamed from: s */
-            char[] f1479s = CharArrays.EMPTY_ARRAY;
+            char[] f1443s = CharArrays.EMPTY_ARRAY;
 
             /* renamed from: i */
-            int f1480i;
+            int f1444i;
             long pos;
             boolean inSync;
 
             /* JADX WARN: Incorrect args count in method signature: ()V */
             {
-                this.f1480i = 0;
+                this.f1444i = 0;
                 this.pos = 0;
                 if (start == 0) {
                     return;
                 }
-                if (start == CharArrayFrontCodedList.this.f1477n) {
-                    this.f1480i = start;
+                if (start == CharArrayFrontCodedList.this.f1441n) {
+                    this.f1444i = start;
                     return;
                 }
-                this.pos = CharArrayFrontCodedList.this.f1478p[start / CharArrayFrontCodedList.this.ratio];
+                this.pos = CharArrayFrontCodedList.this.f1442p[start / CharArrayFrontCodedList.this.ratio];
                 int j = start % CharArrayFrontCodedList.this.ratio;
-                this.f1480i = start - j;
+                this.f1444i = start - j;
                 while (true) {
                     j--;
                     if (j != 0) {
@@ -186,22 +186,22 @@ public class CharArrayFrontCodedList extends AbstractObjectList<char[]> implemen
 
             @Override // java.util.Iterator, java.util.ListIterator
             public boolean hasNext() {
-                return this.f1480i < CharArrayFrontCodedList.this.f1477n;
+                return this.f1444i < CharArrayFrontCodedList.this.f1441n;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
             public boolean hasPrevious() {
-                return this.f1480i > 0;
+                return this.f1444i > 0;
             }
 
             @Override // java.util.ListIterator
             public int previousIndex() {
-                return this.f1480i - 1;
+                return this.f1444i - 1;
             }
 
             @Override // java.util.ListIterator
             public int nextIndex() {
-                return this.f1480i;
+                return this.f1444i;
             }
 
             @Override // java.util.Iterator, java.util.ListIterator
@@ -210,29 +210,29 @@ public class CharArrayFrontCodedList extends AbstractObjectList<char[]> implemen
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                if (this.f1480i % CharArrayFrontCodedList.this.ratio == 0) {
-                    this.pos = CharArrayFrontCodedList.this.f1478p[this.f1480i / CharArrayFrontCodedList.this.ratio];
+                if (this.f1444i % CharArrayFrontCodedList.this.ratio == 0) {
+                    this.pos = CharArrayFrontCodedList.this.f1442p[this.f1444i / CharArrayFrontCodedList.this.ratio];
                     length = CharArrayFrontCodedList.readInt(CharArrayFrontCodedList.this.array, this.pos);
-                    this.f1479s = CharArrays.ensureCapacity(this.f1479s, length, 0);
-                    BigArrays.copyFromBig(CharArrayFrontCodedList.this.array, this.pos + ((long) CharArrayFrontCodedList.count(length)), this.f1479s, 0, length);
+                    this.f1443s = CharArrays.ensureCapacity(this.f1443s, length, 0);
+                    BigArrays.copyFromBig(CharArrayFrontCodedList.this.array, this.pos + ((long) CharArrayFrontCodedList.count(length)), this.f1443s, 0, length);
                     this.pos += (long) (length + CharArrayFrontCodedList.count(length));
                     this.inSync = true;
                 } else if (this.inSync) {
                     int length2 = CharArrayFrontCodedList.readInt(CharArrayFrontCodedList.this.array, this.pos);
                     int common = CharArrayFrontCodedList.readInt(CharArrayFrontCodedList.this.array, this.pos + ((long) CharArrayFrontCodedList.count(length2)));
-                    this.f1479s = CharArrays.ensureCapacity(this.f1479s, length2 + common, common);
-                    BigArrays.copyFromBig(CharArrayFrontCodedList.this.array, this.pos + ((long) CharArrayFrontCodedList.count(length2)) + ((long) CharArrayFrontCodedList.count(common)), this.f1479s, common, length2);
+                    this.f1443s = CharArrays.ensureCapacity(this.f1443s, length2 + common, common);
+                    BigArrays.copyFromBig(CharArrayFrontCodedList.this.array, this.pos + ((long) CharArrayFrontCodedList.count(length2)) + ((long) CharArrayFrontCodedList.count(common)), this.f1443s, common, length2);
                     this.pos += (long) (CharArrayFrontCodedList.count(length2) + CharArrayFrontCodedList.count(common) + length2);
                     length = length2 + common;
                 } else {
-                    char[] cArr = this.f1479s;
-                    int length3 = CharArrayFrontCodedList.this.length(this.f1480i);
+                    char[] cArr = this.f1443s;
+                    int length3 = CharArrayFrontCodedList.this.length(this.f1444i);
                     length = length3;
-                    this.f1479s = CharArrays.ensureCapacity(cArr, length3, 0);
-                    CharArrayFrontCodedList.this.extract(this.f1480i, this.f1479s, 0, length);
+                    this.f1443s = CharArrays.ensureCapacity(cArr, length3, 0);
+                    CharArrayFrontCodedList.this.extract(this.f1444i, this.f1443s, 0, length);
                 }
-                this.f1480i++;
-                return CharArrays.copy(this.f1479s, 0, length);
+                this.f1444i++;
+                return CharArrays.copy(this.f1443s, 0, length);
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -242,8 +242,8 @@ public class CharArrayFrontCodedList extends AbstractObjectList<char[]> implemen
                 }
                 this.inSync = false;
                 CharArrayFrontCodedList charArrayFrontCodedList = CharArrayFrontCodedList.this;
-                int i = this.f1480i - 1;
-                this.f1480i = i;
+                int i = this.f1444i - 1;
+                this.f1444i = i;
                 return charArrayFrontCodedList.getArray(i);
             }
         };
@@ -258,7 +258,7 @@ public class CharArrayFrontCodedList extends AbstractObjectList<char[]> implemen
     public String toString() {
         StringBuffer s = new StringBuffer();
         s.append("[");
-        for (int i = 0; i < this.f1477n; i++) {
+        for (int i = 0; i < this.f1441n; i++) {
             if (i != 0) {
                 s.append(", ");
             }
@@ -274,13 +274,13 @@ public class CharArrayFrontCodedList extends AbstractObjectList<char[]> implemen
     protected long[] rebuildPointerArray() {
         int i;
         char c;
-        long[] p = new long[((this.f1477n + this.ratio) - 1) / this.ratio];
+        long[] p = new long[((this.f1441n + this.ratio) - 1) / this.ratio];
         char[][] a = this.array;
         char c2 = 0;
         int i2 = 0;
         int j = 0;
         int skip = this.ratio - 1;
-        while (i2 < this.f1477n) {
+        while (i2 < this.f1441n) {
             int length = readInt(a, c2 == 1 ? 1 : 0);
             int count = count(length);
             skip++;
@@ -302,6 +302,6 @@ public class CharArrayFrontCodedList extends AbstractObjectList<char[]> implemen
 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
-        this.f1478p = rebuildPointerArray();
+        this.f1442p = rebuildPointerArray();
     }
 }

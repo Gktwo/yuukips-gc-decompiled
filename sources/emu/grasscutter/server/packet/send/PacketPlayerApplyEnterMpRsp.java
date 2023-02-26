@@ -6,7 +6,7 @@ import emu.grasscutter.net.proto.PlayerApplyEnterMpRspOuterClass;
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/send/PacketPlayerApplyEnterMpRsp.class */
 public class PacketPlayerApplyEnterMpRsp extends BasePacket {
     public PacketPlayerApplyEnterMpRsp(int targetUid) {
-        super(1822);
+        super(1846);
         setData(PlayerApplyEnterMpRspOuterClass.PlayerApplyEnterMpRsp.newBuilder().setTargetUid(targetUid).build());
     }
 }

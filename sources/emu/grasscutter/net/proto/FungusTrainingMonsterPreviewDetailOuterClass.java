@@ -23,11 +23,11 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FungusTrainingMonsterPreviewDetailOuterClass.class */
 public final class FungusTrainingMonsterPreviewDetailOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n(FungusTrainingMonsterPreviewDetail.proto\"[\n\"FungusTrainingMonsterPreviewDetail\u0012\u0012\n\nmonster_id\u0018\f \u0001(\r\u0012\r\n\u0005level\u0018\b \u0001(\r\u0012\u0012\n\naffix_list\u0018\t \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n(FungusTrainingMonsterPreviewDetail.proto\"Y\n\"FungusTrainingMonsterPreviewDetail\u0012\u0011\n\tmonsterId\u0018\u0003 \u0001(\r\u0012\r\n\u0005level\u0018\u0005 \u0001(\r\u0012\u0011\n\taffixList\u0018\u000b \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_FungusTrainingMonsterPreviewDetail_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_FungusTrainingMonsterPreviewDetail_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f723x99eb633e = new GeneratedMessageV3.FieldAccessorTable(internal_static_FungusTrainingMonsterPreviewDetail_descriptor, new String[]{"MonsterId", "Level", "AffixList"});
+    private static final GeneratedMessageV3.FieldAccessorTable f716x99eb633e = new GeneratedMessageV3.FieldAccessorTable(internal_static_FungusTrainingMonsterPreviewDetail_descriptor, new String[]{"MonsterId", "Level", "AffixList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FungusTrainingMonsterPreviewDetailOuterClass$FungusTrainingMonsterPreviewDetailOrBuilder.class */
     public interface FungusTrainingMonsterPreviewDetailOrBuilder extends MessageOrBuilder {
@@ -55,11 +55,11 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/FungusTrainingMonsterPreviewDetailOuterClass$FungusTrainingMonsterPreviewDetail.class */
     public static final class FungusTrainingMonsterPreviewDetail extends GeneratedMessageV3 implements FungusTrainingMonsterPreviewDetailOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int MONSTER_ID_FIELD_NUMBER = 12;
+        public static final int MONSTERID_FIELD_NUMBER = 3;
         private int monsterId_;
-        public static final int LEVEL_FIELD_NUMBER = 8;
+        public static final int LEVEL_FIELD_NUMBER = 5;
         private int level_;
-        public static final int AFFIX_LIST_FIELD_NUMBER = 9;
+        public static final int AFFIXLIST_FIELD_NUMBER = 11;
         private Internal.IntList affixList_;
         private int affixListMemoizedSerializedSize;
         private byte memoizedIsInitialized;
@@ -112,17 +112,20 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 64:
+                            case 24:
+                                this.monsterId_ = input.readUInt32();
+                                break;
+                            case 40:
                                 this.level_ = input.readUInt32();
                                 break;
-                            case 72:
+                            case 88:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.affixList_ = newIntList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.affixList_.addInt(input.readUInt32());
                                 break;
-                            case 74:
+                            case 90:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.affixList_ = newIntList();
@@ -132,9 +135,6 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
                                     this.affixList_.addInt(input.readUInt32());
                                 }
                                 input.popLimit(limit);
-                                break;
-                            case 96:
-                                this.monsterId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -165,7 +165,7 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return FungusTrainingMonsterPreviewDetailOuterClass.f723x99eb633e.ensureFieldAccessorsInitialized(FungusTrainingMonsterPreviewDetail.class, Builder.class);
+            return FungusTrainingMonsterPreviewDetailOuterClass.f716x99eb633e.ensureFieldAccessorsInitialized(FungusTrainingMonsterPreviewDetail.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.FungusTrainingMonsterPreviewDetailOuterClass.FungusTrainingMonsterPreviewDetailOrBuilder
@@ -209,18 +209,18 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
+            if (this.monsterId_ != 0) {
+                output.writeUInt32(3, this.monsterId_);
+            }
             if (this.level_ != 0) {
-                output.writeUInt32(8, this.level_);
+                output.writeUInt32(5, this.level_);
             }
             if (getAffixListList().size() > 0) {
-                output.writeUInt32NoTag(74);
+                output.writeUInt32NoTag(90);
                 output.writeUInt32NoTag(this.affixListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.affixList_.size(); i++) {
                 output.writeUInt32NoTag(this.affixList_.getInt(i));
-            }
-            if (this.monsterId_ != 0) {
-                output.writeUInt32(12, this.monsterId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -232,8 +232,11 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.monsterId_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.monsterId_);
+            }
             if (this.level_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(8, this.level_);
+                size2 += CodedOutputStream.computeUInt32Size(5, this.level_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.affixList_.size(); i++) {
@@ -244,9 +247,6 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
                 size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.affixListMemoizedSerializedSize = dataSize;
-            if (this.monsterId_ != 0) {
-                size3 += CodedOutputStream.computeUInt32Size(12, this.monsterId_);
-            }
             int size4 = size3 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size4;
             return size4;
@@ -269,9 +269,9 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 12)) + getMonsterId())) + 8)) + getLevel();
+            int hash = (53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getMonsterId())) + 5)) + getLevel();
             if (getAffixListCount() > 0) {
-                hash = (53 * ((37 * hash) + 9)) + getAffixListList().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + getAffixListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -363,7 +363,7 @@ public final class FungusTrainingMonsterPreviewDetailOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return FungusTrainingMonsterPreviewDetailOuterClass.f723x99eb633e.ensureFieldAccessorsInitialized(FungusTrainingMonsterPreviewDetail.class, Builder.class);
+                return FungusTrainingMonsterPreviewDetailOuterClass.f716x99eb633e.ensureFieldAccessorsInitialized(FungusTrainingMonsterPreviewDetail.class, Builder.class);
             }
 
             private Builder() {

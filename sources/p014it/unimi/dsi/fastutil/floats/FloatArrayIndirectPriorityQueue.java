@@ -12,7 +12,7 @@ public class FloatArrayIndirectPriorityQueue implements FloatIndirectPriorityQue
     protected int size;
 
     /* renamed from: c */
-    protected FloatComparator f1921c;
+    protected FloatComparator f1885c;
     protected int firstIndex;
     protected boolean firstIndexValid;
 
@@ -22,7 +22,7 @@ public class FloatArrayIndirectPriorityQueue implements FloatIndirectPriorityQue
             this.array = new int[capacity];
         }
         this.refArray = refArray;
-        this.f1921c = c;
+        this.f1885c = c;
     }
 
     public FloatArrayIndirectPriorityQueue(float[] refArray, int capacity) {
@@ -63,12 +63,12 @@ public class FloatArrayIndirectPriorityQueue implements FloatIndirectPriorityQue
         int i = this.size - 1;
         int firstIndex = i;
         float first = this.refArray[this.array[firstIndex]];
-        if (this.f1921c != null) {
+        if (this.f1885c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f1921c.compare(this.refArray[this.array[i]], first) < 0) {
+                } else if (this.f1885c.compare(this.refArray[this.array[i]], first) < 0) {
                     firstIndex = i;
                     first = this.refArray[this.array[i]];
                 }
@@ -92,12 +92,12 @@ public class FloatArrayIndirectPriorityQueue implements FloatIndirectPriorityQue
         int i = this.size - 1;
         int lastIndex = i;
         float last = this.refArray[this.array[lastIndex]];
-        if (this.f1921c != null) {
+        if (this.f1885c != null) {
             while (true) {
                 i--;
                 if (i == 0) {
                     break;
-                } else if (this.f1921c.compare(last, this.refArray[this.array[i]]) < 0) {
+                } else if (this.f1885c.compare(last, this.refArray[this.array[i]]) < 0) {
                     lastIndex = i;
                     last = this.refArray[this.array[i]];
                 }
@@ -138,11 +138,11 @@ public class FloatArrayIndirectPriorityQueue implements FloatIndirectPriorityQue
         }
         if (!this.firstIndexValid) {
             this.firstIndexValid = false;
-        } else if (this.f1921c == null) {
+        } else if (this.f1885c == null) {
             if (Float.compare(this.refArray[x], this.refArray[this.array[this.firstIndex]]) < 0) {
                 this.firstIndex = this.size;
             }
-        } else if (this.f1921c.compare(this.refArray[x], this.refArray[this.array[this.firstIndex]]) < 0) {
+        } else if (this.f1885c.compare(this.refArray[x], this.refArray[this.array[this.firstIndex]]) < 0) {
             this.firstIndex = this.size;
         }
         int[] iArr = this.array;
@@ -255,7 +255,7 @@ public class FloatArrayIndirectPriorityQueue implements FloatIndirectPriorityQue
     /* Return type fixed from 'it.unimi.dsi.fastutil.floats.FloatComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.floats.FloatIndirectPriorityQueue, p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public Comparator<? super Float> comparator() {
-        return this.f1921c;
+        return this.f1885c;
     }
 
     public String toString() {

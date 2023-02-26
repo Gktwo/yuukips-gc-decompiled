@@ -20,10 +20,10 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
     static final FloatImmutableList EMPTY = new FloatImmutableList(FloatArrays.EMPTY_ARRAY);
 
     /* renamed from: a */
-    private final float[] f1943a;
+    private final float[] f1907a;
 
     public FloatImmutableList(float[] a) {
-        this.f1943a = a;
+        this.f1907a = a;
     }
 
     public FloatImmutableList(Collection<? extends Float> c) {
@@ -36,12 +36,12 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
 
     public FloatImmutableList(FloatList l) {
         this(l.isEmpty() ? FloatArrays.EMPTY_ARRAY : new float[l.size()]);
-        l.getElements(0, this.f1943a, 0, l.size());
+        l.getElements(0, this.f1907a, 0, l.size());
     }
 
     public FloatImmutableList(float[] a, int offset, int length) {
         this(length == 0 ? FloatArrays.EMPTY_ARRAY : new float[length]);
-        System.arraycopy(a, offset, this.f1943a, 0, length);
+        System.arraycopy(a, offset, this.f1907a, 0, length);
     }
 
     public FloatImmutableList(FloatIterator i) {
@@ -60,17 +60,17 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
 
     @Override // p014it.unimi.dsi.fastutil.floats.FloatList
     public float getFloat(int index) {
-        if (index < this.f1943a.length) {
-            return this.f1943a[index];
+        if (index < this.f1907a.length) {
+            return this.f1907a[index];
         }
-        throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.f1943a.length + ")");
+        throw new IndexOutOfBoundsException("Index (" + index + ") is greater than or equal to list size (" + this.f1907a.length + ")");
     }
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList, p014it.unimi.dsi.fastutil.floats.FloatList
     public int indexOf(float k) {
-        int size = this.f1943a.length;
+        int size = this.f1907a.length;
         for (int i = 0; i < size; i++) {
-            if (Float.floatToIntBits(k) == Float.floatToIntBits(this.f1943a[i])) {
+            if (Float.floatToIntBits(k) == Float.floatToIntBits(this.f1907a[i])) {
                 return i;
             }
         }
@@ -79,50 +79,50 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList, p014it.unimi.dsi.fastutil.floats.FloatList
     public int lastIndexOf(float k) {
-        int i = this.f1943a.length;
+        int i = this.f1907a.length;
         do {
             i--;
             if (i == 0) {
                 return -1;
             }
-        } while (Float.floatToIntBits(k) != Float.floatToIntBits(this.f1943a[i]));
+        } while (Float.floatToIntBits(k) != Float.floatToIntBits(this.f1907a[i]));
         return i;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public int size() {
-        return this.f1943a.length;
+        return this.f1907a.length;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List, p014it.unimi.dsi.fastutil.Stack
     public boolean isEmpty() {
-        return this.f1943a.length == 0;
+        return this.f1907a.length == 0;
     }
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList, p014it.unimi.dsi.fastutil.floats.FloatList
     public void getElements(int from, float[] a, int offset, int length) {
         FloatArrays.ensureOffsetLength(a, offset, length);
-        System.arraycopy(this.f1943a, from, a, offset, length);
+        System.arraycopy(this.f1907a, from, a, offset, length);
     }
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList, p014it.unimi.dsi.fastutil.floats.FloatIterable
     public void forEach(FloatConsumer action) {
-        for (int i = 0; i < this.f1943a.length; i++) {
-            action.accept(this.f1943a[i]);
+        for (int i = 0; i < this.f1907a.length; i++) {
+            action.accept(this.f1907a[i]);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList, p014it.unimi.dsi.fastutil.floats.AbstractFloatCollection, p014it.unimi.dsi.fastutil.floats.FloatCollection
     public float[] toFloatArray() {
-        return (float[]) this.f1943a.clone();
+        return (float[]) this.f1907a.clone();
     }
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList, p014it.unimi.dsi.fastutil.floats.AbstractFloatCollection, p014it.unimi.dsi.fastutil.floats.FloatCollection
     public float[] toArray(float[] a) {
         if (a == null || a.length < size()) {
-            a = new float[this.f1943a.length];
+            a = new float[this.f1907a.length];
         }
-        System.arraycopy(this.f1943a, 0, a, 0, a.length);
+        System.arraycopy(this.f1907a, 0, a, 0, a.length);
         return a;
     }
 
@@ -140,7 +140,7 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
 
             @Override // java.util.Iterator, java.util.ListIterator
             public boolean hasNext() {
-                return this.pos < FloatImmutableList.this.f1943a.length;
+                return this.pos < FloatImmutableList.this.f1907a.length;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -153,7 +153,7 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                float[] fArr = FloatImmutableList.this.f1943a;
+                float[] fArr = FloatImmutableList.this.f1907a;
                 int i = this.pos;
                 this.pos = i + 1;
                 return fArr[i];
@@ -164,7 +164,7 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
                 if (!hasPrevious()) {
                     throw new NoSuchElementException();
                 }
-                float[] fArr = FloatImmutableList.this.f1943a;
+                float[] fArr = FloatImmutableList.this.f1907a;
                 int i = this.pos - 1;
                 this.pos = i;
                 return fArr[i];
@@ -182,8 +182,8 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
 
             @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
             public void forEachRemaining(FloatConsumer action) {
-                while (this.pos < FloatImmutableList.this.f1943a.length) {
-                    float[] fArr = FloatImmutableList.this.f1943a;
+                while (this.pos < FloatImmutableList.this.f1907a.length) {
+                    float[] fArr = FloatImmutableList.this.f1907a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(fArr[i]);
@@ -210,7 +210,7 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
                 if (n < 0) {
                     throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                 }
-                int remaining = FloatImmutableList.this.f1943a.length - this.pos;
+                int remaining = FloatImmutableList.this.f1907a.length - this.pos;
                 if (n < remaining) {
                     this.pos -= n;
                 } else {
@@ -225,12 +225,12 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
                 if (n < 0) {
                     throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                 }
-                int remaining = FloatImmutableList.this.f1943a.length - this.pos;
+                int remaining = FloatImmutableList.this.f1907a.length - this.pos;
                 if (n < remaining) {
                     this.pos += n;
                 } else {
                     n = remaining;
-                    this.pos = FloatImmutableList.this.f1943a.length;
+                    this.pos = FloatImmutableList.this.f1907a.length;
                 }
                 return n;
             }
@@ -250,7 +250,7 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
         }
 
         public Spliterator(FloatImmutableList floatImmutableList) {
-            this(0, floatImmutableList.f1943a.length);
+            this(0, floatImmutableList.f1907a.length);
         }
 
         private Spliterator(int pos, int max) {
@@ -276,7 +276,7 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
             if (this.pos >= this.max) {
                 return false;
             }
-            float[] fArr = FloatImmutableList.this.f1943a;
+            float[] fArr = FloatImmutableList.this.f1907a;
             int i = this.pos;
             this.pos = i + 1;
             action.accept(fArr[i]);
@@ -285,7 +285,7 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
 
         public void forEachRemaining(FloatConsumer action) {
             while (this.pos < this.max) {
-                action.accept(FloatImmutableList.this.f1943a[this.pos]);
+                action.accept(FloatImmutableList.this.f1907a[this.pos]);
                 this.pos++;
             }
         }
@@ -335,28 +335,28 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
         final int from;
 
         /* renamed from: to */
-        final int f1944to;
+        final int f1908to;
 
         /* renamed from: a */
-        final transient float[] f1945a;
+        final transient float[] f1909a;
 
         ImmutableSubList(FloatImmutableList innerList, int from, int to) {
             this.innerList = innerList;
             this.from = from;
-            this.f1944to = to;
-            this.f1945a = innerList.f1943a;
+            this.f1908to = to;
+            this.f1909a = innerList.f1907a;
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.FloatList
         public float getFloat(int index) {
             ensureRestrictedIndex(index);
-            return this.f1945a[index + this.from];
+            return this.f1909a[index + this.from];
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList, p014it.unimi.dsi.fastutil.floats.FloatList
         public int indexOf(float k) {
-            for (int i = this.from; i < this.f1944to; i++) {
-                if (Float.floatToIntBits(k) == Float.floatToIntBits(this.f1945a[i])) {
+            for (int i = this.from; i < this.f1908to; i++) {
+                if (Float.floatToIntBits(k) == Float.floatToIntBits(this.f1909a[i])) {
                     return i - this.from;
                 }
             }
@@ -365,46 +365,46 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
 
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList, p014it.unimi.dsi.fastutil.floats.FloatList
         public int lastIndexOf(float k) {
-            int i = this.f1944to;
+            int i = this.f1908to;
             do {
                 i--;
                 if (i == this.from) {
                     return -1;
                 }
-            } while (Float.floatToIntBits(k) != Float.floatToIntBits(this.f1945a[i]));
+            } while (Float.floatToIntBits(k) != Float.floatToIntBits(this.f1909a[i]));
             return i - this.from;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public int size() {
-            return this.f1944to - this.from;
+            return this.f1908to - this.from;
         }
 
         @Override // java.util.AbstractCollection, java.util.Collection, java.util.List, p014it.unimi.dsi.fastutil.Stack
         public boolean isEmpty() {
-            return this.f1944to <= this.from;
+            return this.f1908to <= this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList, p014it.unimi.dsi.fastutil.floats.FloatList
         public void getElements(int fromSublistIndex, float[] a, int offset, int length) {
             FloatArrays.ensureOffsetLength(a, offset, length);
             ensureRestrictedIndex(fromSublistIndex);
-            if (this.from + length > this.f1944to) {
+            if (this.from + length > this.f1908to) {
                 throw new IndexOutOfBoundsException("Final index " + (this.from + length) + " (startingIndex: " + this.from + " + length: " + length + ") is greater then list length " + size());
             }
-            System.arraycopy(this.f1945a, fromSublistIndex + this.from, a, offset, length);
+            System.arraycopy(this.f1909a, fromSublistIndex + this.from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList, p014it.unimi.dsi.fastutil.floats.FloatIterable
         public void forEach(FloatConsumer action) {
-            for (int i = this.from; i < this.f1944to; i++) {
-                action.accept(this.f1945a[i]);
+            for (int i = this.from; i < this.f1908to; i++) {
+                action.accept(this.f1909a[i]);
             }
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList, p014it.unimi.dsi.fastutil.floats.AbstractFloatCollection, p014it.unimi.dsi.fastutil.floats.FloatCollection
         public float[] toFloatArray() {
-            return Arrays.copyOfRange(this.f1945a, this.from, this.f1944to);
+            return Arrays.copyOfRange(this.f1909a, this.from, this.f1908to);
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList, p014it.unimi.dsi.fastutil.floats.AbstractFloatCollection, p014it.unimi.dsi.fastutil.floats.FloatCollection
@@ -412,7 +412,7 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
             if (a == null || a.length < size()) {
                 a = new float[size()];
             }
-            System.arraycopy(this.f1945a, this.from, a, 0, size());
+            System.arraycopy(this.f1909a, this.from, a, 0, size());
             return a;
         }
 
@@ -430,7 +430,7 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
 
                 @Override // java.util.Iterator, java.util.ListIterator
                 public boolean hasNext() {
-                    return this.pos < ImmutableSubList.this.f1944to;
+                    return this.pos < ImmutableSubList.this.f1908to;
                 }
 
                 @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -443,7 +443,7 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
                     if (!hasNext()) {
                         throw new NoSuchElementException();
                     }
-                    float[] fArr = ImmutableSubList.this.f1945a;
+                    float[] fArr = ImmutableSubList.this.f1909a;
                     int i = this.pos;
                     this.pos = i + 1;
                     return fArr[i + ImmutableSubList.this.from];
@@ -454,7 +454,7 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
                     if (!hasPrevious()) {
                         throw new NoSuchElementException();
                     }
-                    float[] fArr = ImmutableSubList.this.f1945a;
+                    float[] fArr = ImmutableSubList.this.f1909a;
                     int i = this.pos - 1;
                     this.pos = i;
                     return fArr[i + ImmutableSubList.this.from];
@@ -472,8 +472,8 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
 
                 @Override // p014it.unimi.dsi.fastutil.floats.FloatIterator
                 public void forEachRemaining(FloatConsumer action) {
-                    while (this.pos < ImmutableSubList.this.f1944to) {
-                        float[] fArr = ImmutableSubList.this.f1945a;
+                    while (this.pos < ImmutableSubList.this.f1908to) {
+                        float[] fArr = ImmutableSubList.this.f1909a;
                         int i = this.pos;
                         this.pos = i + 1;
                         action.accept(fArr[i + ImmutableSubList.this.from]);
@@ -500,7 +500,7 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
                     if (n < 0) {
                         throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                     }
-                    int remaining = ImmutableSubList.this.f1944to - this.pos;
+                    int remaining = ImmutableSubList.this.f1908to - this.pos;
                     if (n < remaining) {
                         this.pos -= n;
                     } else {
@@ -515,12 +515,12 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
                     if (n < 0) {
                         throw new IllegalArgumentException("Argument must be nonnegative: " + n);
                     }
-                    int remaining = ImmutableSubList.this.f1944to - this.pos;
+                    int remaining = ImmutableSubList.this.f1908to - this.pos;
                     if (n < remaining) {
                         this.pos += n;
                     } else {
                         n = remaining;
-                        this.pos = ImmutableSubList.this.f1944to;
+                        this.pos = ImmutableSubList.this.f1908to;
                     }
                     return n;
                 }
@@ -532,7 +532,7 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
         /* loaded from: grasscutter.jar:it/unimi/dsi/fastutil/floats/FloatImmutableList$ImmutableSubList$SubListSpliterator.class */
         public final class SubListSpliterator extends FloatSpliterators.EarlyBindingSizeIndexBasedSpliterator {
             SubListSpliterator() {
-                super(ImmutableSubList.this.from, ImmutableSubList.this.f1944to);
+                super(ImmutableSubList.this.from, ImmutableSubList.this.f1908to);
             }
 
             private SubListSpliterator(int pos, int maxPos) {
@@ -541,7 +541,7 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
 
             @Override // p014it.unimi.dsi.fastutil.floats.FloatSpliterators.AbstractIndexBasedSpliterator
             protected final float get(int i) {
-                return ImmutableSubList.this.f1945a[i];
+                return ImmutableSubList.this.f1909a[i];
             }
 
             /* access modifiers changed from: protected */
@@ -555,7 +555,7 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
                 if (this.pos >= this.maxPos) {
                     return false;
                 }
-                float[] fArr = ImmutableSubList.this.f1945a;
+                float[] fArr = ImmutableSubList.this.f1909a;
                 int i = this.pos;
                 this.pos = i + 1;
                 action.accept(fArr[i]);
@@ -566,7 +566,7 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
             public void forEachRemaining(FloatConsumer action) {
                 int max = this.maxPos;
                 while (this.pos < max) {
-                    float[] fArr = ImmutableSubList.this.f1945a;
+                    float[] fArr = ImmutableSubList.this.f1909a;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(fArr[i]);
@@ -585,7 +585,7 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
         }
 
         boolean contentsEquals(float[] otherA, int otherAFrom, int otherATo) {
-            if (this.f1945a == otherA && this.from == otherAFrom && this.f1944to == otherATo) {
+            if (this.f1909a == otherA && this.from == otherAFrom && this.f1908to == otherATo) {
                 return true;
             }
             if (otherATo - otherAFrom != size()) {
@@ -593,10 +593,10 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
             }
             int pos = this.from;
             int otherPos = otherAFrom;
-            while (pos < this.f1944to) {
+            while (pos < this.f1908to) {
                 pos++;
                 otherPos++;
-                if (this.f1945a[pos] != otherA[otherPos]) {
+                if (this.f1909a[pos] != otherA[otherPos]) {
                     return false;
                 }
             }
@@ -613,23 +613,23 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
             }
             if (o instanceof FloatImmutableList) {
                 FloatImmutableList other = (FloatImmutableList) o;
-                return contentsEquals(other.f1943a, 0, other.size());
+                return contentsEquals(other.f1907a, 0, other.size());
             } else if (!(o instanceof ImmutableSubList)) {
                 return equals(o);
             } else {
                 ImmutableSubList other2 = (ImmutableSubList) o;
-                return contentsEquals(other2.f1945a, other2.from, other2.f1944to);
+                return contentsEquals(other2.f1909a, other2.from, other2.f1908to);
             }
         }
 
         int contentsCompareTo(float[] otherA, int otherAFrom, int otherATo) {
-            if (this.f1945a == otherA && this.from == otherAFrom && this.f1944to == otherATo) {
+            if (this.f1909a == otherA && this.from == otherAFrom && this.f1908to == otherATo) {
                 return 0;
             }
             int i = this.from;
             int j = otherAFrom;
-            while (i < this.f1944to && i < otherATo) {
-                int r = Float.compare(this.f1945a[i], otherA[j]);
+            while (i < this.f1908to && i < otherATo) {
+                int r = Float.compare(this.f1909a[i], otherA[j]);
                 if (r != 0) {
                     return r;
                 }
@@ -639,25 +639,25 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
             if (i < otherATo) {
                 return -1;
             }
-            return i < this.f1944to ? 1 : 0;
+            return i < this.f1908to ? 1 : 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList
         public int compareTo(List<? extends Float> l) {
             if (l instanceof FloatImmutableList) {
                 FloatImmutableList other = (FloatImmutableList) l;
-                return contentsCompareTo(other.f1943a, 0, other.size());
+                return contentsCompareTo(other.f1907a, 0, other.size());
             } else if (!(l instanceof ImmutableSubList)) {
                 return compareTo(l);
             } else {
                 ImmutableSubList other2 = (ImmutableSubList) l;
-                return contentsCompareTo(other2.f1945a, other2.from, other2.f1944to);
+                return contentsCompareTo(other2.f1909a, other2.from, other2.f1908to);
             }
         }
 
         private Object readResolve() throws ObjectStreamException {
             try {
-                return this.innerList.subList(this.from, this.f1944to);
+                return this.innerList.subList(this.from, this.f1908to);
             } catch (IllegalArgumentException | IndexOutOfBoundsException ex) {
                 throw ((InvalidObjectException) new InvalidObjectException(ex.getMessage()).initCause(ex));
             }
@@ -701,13 +701,13 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
     }
 
     public boolean equals(FloatImmutableList l) {
-        if (l == this || this.f1943a == l.f1943a) {
+        if (l == this || this.f1907a == l.f1907a) {
             return true;
         }
         if (size() != l.size()) {
             return false;
         }
-        return Arrays.equals(this.f1943a, l.f1943a);
+        return Arrays.equals(this.f1907a, l.f1907a);
     }
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloatList, java.util.Collection, java.lang.Object, java.util.List
@@ -728,13 +728,13 @@ public class FloatImmutableList extends FloatLists.ImmutableListBase implements 
     }
 
     public int compareTo(FloatImmutableList l) {
-        if (this.f1943a == l.f1943a) {
+        if (this.f1907a == l.f1907a) {
             return 0;
         }
         int s1 = size();
         int s2 = l.size();
-        float[] a1 = this.f1943a;
-        float[] a2 = l.f1943a;
+        float[] a1 = this.f1907a;
+        float[] a2 = l.f1907a;
         int i = 0;
         while (i < s1 && i < s2) {
             int r = Float.compare(a1[i], a2[i]);

@@ -19,19 +19,19 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerCookReqOuterClass.class */
 public final class PlayerCookReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013PlayerCookReq.proto\"b\n\rPlayerCookReq\u0012\u0011\n\trecipe_id\u0018\u0001 \u0001(\r\u0012\u0013\n\u000bqte_quality\u0018\u0005 \u0001(\r\u0012\u0012\n\ncook_count\u0018\u0007 \u0001(\r\u0012\u0015\n\rassist_avatar\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0013PlayerCookReq.proto\"^\n\rPlayerCookReq\u0012\u0010\n\brecipeId\u0018\u000f \u0001(\r\u0012\u0014\n\fassistAvatar\u0018\u0006 \u0001(\r\u0012\u0012\n\nqteQuality\u0018\r \u0001(\r\u0012\u0011\n\tcookCount\u0018\u0003 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PlayerCookReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerCookReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerCookReq_descriptor, new String[]{"RecipeId", "QteQuality", "CookCount", "AssistAvatar"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerCookReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerCookReq_descriptor, new String[]{"RecipeId", "AssistAvatar", "QteQuality", "CookCount"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerCookReqOuterClass$PlayerCookReqOrBuilder.class */
     public interface PlayerCookReqOrBuilder extends MessageOrBuilder {
         int getRecipeId();
 
+        int getAssistAvatar();
+
         int getQteQuality();
 
         int getCookCount();
-
-        int getAssistAvatar();
     }
 
     private PlayerCookReqOuterClass() {
@@ -47,14 +47,14 @@ public final class PlayerCookReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerCookReqOuterClass$PlayerCookReq.class */
     public static final class PlayerCookReq extends GeneratedMessageV3 implements PlayerCookReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RECIPE_ID_FIELD_NUMBER = 1;
+        public static final int RECIPEID_FIELD_NUMBER = 15;
         private int recipeId_;
-        public static final int QTE_QUALITY_FIELD_NUMBER = 5;
-        private int qteQuality_;
-        public static final int COOK_COUNT_FIELD_NUMBER = 7;
-        private int cookCount_;
-        public static final int ASSIST_AVATAR_FIELD_NUMBER = 12;
+        public static final int ASSISTAVATAR_FIELD_NUMBER = 6;
         private int assistAvatar_;
+        public static final int QTEQUALITY_FIELD_NUMBER = 13;
+        private int qteQuality_;
+        public static final int COOKCOUNT_FIELD_NUMBER = 3;
+        private int cookCount_;
         private byte memoizedIsInitialized;
         private static final PlayerCookReq DEFAULT_INSTANCE = new PlayerCookReq();
         private static final Parser<PlayerCookReq> PARSER = new AbstractParser<PlayerCookReq>() { // from class: emu.grasscutter.net.proto.PlayerCookReqOuterClass.PlayerCookReq.1
@@ -101,17 +101,17 @@ public final class PlayerCookReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 8:
-                                    this.recipeId_ = input.readUInt32();
-                                    break;
-                                case 40:
-                                    this.qteQuality_ = input.readUInt32();
-                                    break;
-                                case 56:
+                                case 24:
                                     this.cookCount_ = input.readUInt32();
                                     break;
-                                case 96:
+                                case 48:
                                     this.assistAvatar_ = input.readUInt32();
+                                    break;
+                                case 104:
+                                    this.qteQuality_ = input.readUInt32();
+                                    break;
+                                case 120:
+                                    this.recipeId_ = input.readUInt32();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -149,6 +149,11 @@ public final class PlayerCookReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.PlayerCookReqOuterClass.PlayerCookReqOrBuilder
+        public int getAssistAvatar() {
+            return this.assistAvatar_;
+        }
+
+        @Override // emu.grasscutter.net.proto.PlayerCookReqOuterClass.PlayerCookReqOrBuilder
         public int getQteQuality() {
             return this.qteQuality_;
         }
@@ -156,11 +161,6 @@ public final class PlayerCookReqOuterClass {
         @Override // emu.grasscutter.net.proto.PlayerCookReqOuterClass.PlayerCookReqOrBuilder
         public int getCookCount() {
             return this.cookCount_;
-        }
-
-        @Override // emu.grasscutter.net.proto.PlayerCookReqOuterClass.PlayerCookReqOrBuilder
-        public int getAssistAvatar() {
-            return this.assistAvatar_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -178,17 +178,17 @@ public final class PlayerCookReqOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.recipeId_ != 0) {
-                output.writeUInt32(1, this.recipeId_);
-            }
-            if (this.qteQuality_ != 0) {
-                output.writeUInt32(5, this.qteQuality_);
-            }
             if (this.cookCount_ != 0) {
-                output.writeUInt32(7, this.cookCount_);
+                output.writeUInt32(3, this.cookCount_);
             }
             if (this.assistAvatar_ != 0) {
-                output.writeUInt32(12, this.assistAvatar_);
+                output.writeUInt32(6, this.assistAvatar_);
+            }
+            if (this.qteQuality_ != 0) {
+                output.writeUInt32(13, this.qteQuality_);
+            }
+            if (this.recipeId_ != 0) {
+                output.writeUInt32(15, this.recipeId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -200,17 +200,17 @@ public final class PlayerCookReqOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.recipeId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.recipeId_);
-            }
-            if (this.qteQuality_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.qteQuality_);
-            }
             if (this.cookCount_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.cookCount_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(3, this.cookCount_);
             }
             if (this.assistAvatar_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(12, this.assistAvatar_);
+                size2 += CodedOutputStream.computeUInt32Size(6, this.assistAvatar_);
+            }
+            if (this.qteQuality_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(13, this.qteQuality_);
+            }
+            if (this.recipeId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.recipeId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,7 +226,7 @@ public final class PlayerCookReqOuterClass {
                 return equals(obj);
             }
             PlayerCookReq other = (PlayerCookReq) obj;
-            return getRecipeId() == other.getRecipeId() && getQteQuality() == other.getQteQuality() && getCookCount() == other.getCookCount() && getAssistAvatar() == other.getAssistAvatar() && this.unknownFields.equals(other.unknownFields);
+            return getRecipeId() == other.getRecipeId() && getAssistAvatar() == other.getAssistAvatar() && getQteQuality() == other.getQteQuality() && getCookCount() == other.getCookCount() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -234,7 +234,7 @@ public final class PlayerCookReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 1)) + getRecipeId())) + 5)) + getQteQuality())) + 7)) + getCookCount())) + 12)) + getAssistAvatar())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getRecipeId())) + 6)) + getAssistAvatar())) + 13)) + getQteQuality())) + 3)) + getCookCount())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -314,9 +314,9 @@ public final class PlayerCookReqOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerCookReqOuterClass$PlayerCookReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements PlayerCookReqOrBuilder {
             private int recipeId_;
+            private int assistAvatar_;
             private int qteQuality_;
             private int cookCount_;
-            private int assistAvatar_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return PlayerCookReqOuterClass.internal_static_PlayerCookReq_descriptor;
@@ -345,9 +345,9 @@ public final class PlayerCookReqOuterClass {
             public Builder clear() {
                 clear();
                 this.recipeId_ = 0;
+                this.assistAvatar_ = 0;
                 this.qteQuality_ = 0;
                 this.cookCount_ = 0;
-                this.assistAvatar_ = 0;
                 return this;
             }
 
@@ -374,9 +374,9 @@ public final class PlayerCookReqOuterClass {
             public PlayerCookReq buildPartial() {
                 PlayerCookReq result = new PlayerCookReq(this);
                 result.recipeId_ = this.recipeId_;
+                result.assistAvatar_ = this.assistAvatar_;
                 result.qteQuality_ = this.qteQuality_;
                 result.cookCount_ = this.cookCount_;
-                result.assistAvatar_ = this.assistAvatar_;
                 onBuilt();
                 return result;
             }
@@ -427,14 +427,14 @@ public final class PlayerCookReqOuterClass {
                 if (other.getRecipeId() != 0) {
                     setRecipeId(other.getRecipeId());
                 }
+                if (other.getAssistAvatar() != 0) {
+                    setAssistAvatar(other.getAssistAvatar());
+                }
                 if (other.getQteQuality() != 0) {
                     setQteQuality(other.getQteQuality());
                 }
                 if (other.getCookCount() != 0) {
                     setCookCount(other.getCookCount());
-                }
-                if (other.getAssistAvatar() != 0) {
-                    setAssistAvatar(other.getAssistAvatar());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -486,6 +486,23 @@ public final class PlayerCookReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.PlayerCookReqOuterClass.PlayerCookReqOrBuilder
+            public int getAssistAvatar() {
+                return this.assistAvatar_;
+            }
+
+            public Builder setAssistAvatar(int value) {
+                this.assistAvatar_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearAssistAvatar() {
+                this.assistAvatar_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.PlayerCookReqOuterClass.PlayerCookReqOrBuilder
             public int getQteQuality() {
                 return this.qteQuality_;
             }
@@ -515,23 +532,6 @@ public final class PlayerCookReqOuterClass {
 
             public Builder clearCookCount() {
                 this.cookCount_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.PlayerCookReqOuterClass.PlayerCookReqOrBuilder
-            public int getAssistAvatar() {
-                return this.assistAvatar_;
-            }
-
-            public Builder setAssistAvatar(int value) {
-                this.assistAvatar_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearAssistAvatar() {
-                this.assistAvatar_ = 0;
                 onChanged();
                 return this;
             }

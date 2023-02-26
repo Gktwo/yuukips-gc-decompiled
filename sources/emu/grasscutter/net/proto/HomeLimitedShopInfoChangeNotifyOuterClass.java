@@ -25,11 +25,11 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeLimitedShopInfoChangeNotifyOuterClass.class */
 public final class HomeLimitedShopInfoChangeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n%HomeLimitedShopInfoChangeNotify.proto\u001a\u001aHomeLimitedShopGoods.proto\"L\n\u001fHomeLimitedShopInfoChangeNotify\u0012)\n\ngoods_list\u0018\u0002 \u0003(\u000b2\u0015.HomeLimitedShopGoodsB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeLimitedShopGoodsOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n%HomeLimitedShopInfoChangeNotify.proto\u001a\u001aHomeLimitedShopGoods.proto\"K\n\u001fHomeLimitedShopInfoChangeNotify\u0012(\n\tgoodsList\u0018\u0001 \u0003(\u000b2\u0015.HomeLimitedShopGoodsB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{HomeLimitedShopGoodsOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_HomeLimitedShopInfoChangeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_HomeLimitedShopInfoChangeNotify_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f760x85d8a2c3 = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeLimitedShopInfoChangeNotify_descriptor, new String[]{"GoodsList"});
+    private static final GeneratedMessageV3.FieldAccessorTable f743x85d8a2c3 = new GeneratedMessageV3.FieldAccessorTable(internal_static_HomeLimitedShopInfoChangeNotify_descriptor, new String[]{"GoodsList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeLimitedShopInfoChangeNotifyOuterClass$HomeLimitedShopInfoChangeNotifyOrBuilder.class */
     public interface HomeLimitedShopInfoChangeNotifyOrBuilder extends MessageOrBuilder {
@@ -57,7 +57,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/HomeLimitedShopInfoChangeNotifyOuterClass$HomeLimitedShopInfoChangeNotify.class */
     public static final class HomeLimitedShopInfoChangeNotify extends GeneratedMessageV3 implements HomeLimitedShopInfoChangeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int GOODS_LIST_FIELD_NUMBER = 2;
+        public static final int GOODSLIST_FIELD_NUMBER = 1;
         private List<HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods> goodsList_;
         private byte memoizedIsInitialized;
         private static final HomeLimitedShopInfoChangeNotify DEFAULT_INSTANCE = new HomeLimitedShopInfoChangeNotify();
@@ -108,7 +108,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 18:
+                                case 10:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.goodsList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
@@ -145,7 +145,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return HomeLimitedShopInfoChangeNotifyOuterClass.f760x85d8a2c3.ensureFieldAccessorsInitialized(HomeLimitedShopInfoChangeNotify.class, Builder.class);
+            return HomeLimitedShopInfoChangeNotifyOuterClass.f743x85d8a2c3.ensureFieldAccessorsInitialized(HomeLimitedShopInfoChangeNotify.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.HomeLimitedShopInfoChangeNotifyOuterClass.HomeLimitedShopInfoChangeNotifyOrBuilder
@@ -189,7 +189,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             for (int i = 0; i < this.goodsList_.size(); i++) {
-                output.writeMessage(2, this.goodsList_.get(i));
+                output.writeMessage(1, this.goodsList_.get(i));
             }
             this.unknownFields.writeTo(output);
         }
@@ -202,7 +202,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
             }
             int size2 = 0;
             for (int i = 0; i < this.goodsList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(2, this.goodsList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(1, this.goodsList_.get(i));
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -228,7 +228,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getGoodsListCount() > 0) {
-                hash = (53 * ((37 * hash) + 2)) + getGoodsListList().hashCode();
+                hash = (53 * ((37 * hash) + 1)) + getGoodsListList().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -319,7 +319,7 @@ public final class HomeLimitedShopInfoChangeNotifyOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return HomeLimitedShopInfoChangeNotifyOuterClass.f760x85d8a2c3.ensureFieldAccessorsInitialized(HomeLimitedShopInfoChangeNotify.class, Builder.class);
+                return HomeLimitedShopInfoChangeNotifyOuterClass.f743x85d8a2c3.ensureFieldAccessorsInitialized(HomeLimitedShopInfoChangeNotify.class, Builder.class);
             }
 
             private Builder() {

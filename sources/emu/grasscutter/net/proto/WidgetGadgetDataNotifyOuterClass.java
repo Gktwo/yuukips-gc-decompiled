@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WidgetGadgetDataNotifyOuterClass.class */
 public final class WidgetGadgetDataNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cWidgetGadgetDataNotify.proto\u001a\u0016WidgetGadgetData.proto\"G\n\u0016WidgetGadgetDataNotify\u0012-\n\u0012widget_gadget_data\u0018\u0003 \u0001(\u000b2\u0011.WidgetGadgetDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{WidgetGadgetDataOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cWidgetGadgetDataNotify.proto\u001a\u0016WidgetGadgetData.proto\"E\n\u0016WidgetGadgetDataNotify\u0012+\n\u0010widgetGadgetData\u0018\n \u0001(\u000b2\u0011.WidgetGadgetDataB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{WidgetGadgetDataOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_WidgetGadgetDataNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_WidgetGadgetDataNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_WidgetGadgetDataNotify_descriptor, new String[]{"WidgetGadgetData"});
 
@@ -47,7 +47,7 @@ public final class WidgetGadgetDataNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/WidgetGadgetDataNotifyOuterClass$WidgetGadgetDataNotify.class */
     public static final class WidgetGadgetDataNotify extends GeneratedMessageV3 implements WidgetGadgetDataNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int WIDGET_GADGET_DATA_FIELD_NUMBER = 3;
+        public static final int WIDGETGADGETDATA_FIELD_NUMBER = 10;
         private WidgetGadgetDataOuterClass.WidgetGadgetData widgetGadgetData_;
         private byte memoizedIsInitialized;
         private static final WidgetGadgetDataNotify DEFAULT_INSTANCE = new WidgetGadgetDataNotify();
@@ -94,7 +94,7 @@ public final class WidgetGadgetDataNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 26:
+                            case 82:
                                 WidgetGadgetDataOuterClass.WidgetGadgetData.Builder subBuilder = this.widgetGadgetData_ != null ? this.widgetGadgetData_.toBuilder() : null;
                                 this.widgetGadgetData_ = (WidgetGadgetDataOuterClass.WidgetGadgetData) input.readMessage(WidgetGadgetDataOuterClass.WidgetGadgetData.parser(), extensionRegistry);
                                 if (subBuilder == null) {
@@ -164,7 +164,7 @@ public final class WidgetGadgetDataNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.widgetGadgetData_ != null) {
-                output.writeMessage(3, getWidgetGadgetData());
+                output.writeMessage(10, getWidgetGadgetData());
             }
             this.unknownFields.writeTo(output);
         }
@@ -177,7 +177,7 @@ public final class WidgetGadgetDataNotifyOuterClass {
             }
             int size2 = 0;
             if (this.widgetGadgetData_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(3, getWidgetGadgetData());
+                size2 = 0 + CodedOutputStream.computeMessageSize(10, getWidgetGadgetData());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -206,7 +206,7 @@ public final class WidgetGadgetDataNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasWidgetGadgetData()) {
-                hash = (53 * ((37 * hash) + 3)) + getWidgetGadgetData().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getWidgetGadgetData().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;

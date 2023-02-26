@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityChangeNotifyOuterClass.class */
 public final class AbilityChangeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019AbilityChangeNotify.proto\u001a\u0019AbilityControlBlock.proto\"]\n\u0013AbilityChangeNotify\u00123\n\u0015ability_control_block\u0018\u0006 \u0001(\u000b2\u0014.AbilityControlBlock\u0012\u0011\n\tentity_id\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityControlBlockOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019AbilityChangeNotify.proto\u001a\u0019AbilityControlBlock.proto\"Z\n\u0013AbilityChangeNotify\u00121\n\u0013abilityControlBlock\u0018\n \u0001(\u000b2\u0014.AbilityControlBlock\u0012\u0010\n\bentityId\u0018\u0007 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AbilityControlBlockOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AbilityChangeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AbilityChangeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AbilityChangeNotify_descriptor, new String[]{"AbilityControlBlock", "EntityId"});
 
@@ -49,9 +49,9 @@ public final class AbilityChangeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AbilityChangeNotifyOuterClass$AbilityChangeNotify.class */
     public static final class AbilityChangeNotify extends GeneratedMessageV3 implements AbilityChangeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ABILITY_CONTROL_BLOCK_FIELD_NUMBER = 6;
+        public static final int ABILITYCONTROLBLOCK_FIELD_NUMBER = 10;
         private AbilityControlBlockOuterClass.AbilityControlBlock abilityControlBlock_;
-        public static final int ENTITY_ID_FIELD_NUMBER = 10;
+        public static final int ENTITYID_FIELD_NUMBER = 7;
         private int entityId_;
         private byte memoizedIsInitialized;
         private static final AbilityChangeNotify DEFAULT_INSTANCE = new AbilityChangeNotify();
@@ -99,7 +99,10 @@ public final class AbilityChangeNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 50:
+                                case 56:
+                                    this.entityId_ = input.readUInt32();
+                                    break;
+                                case 82:
                                     AbilityControlBlockOuterClass.AbilityControlBlock.Builder subBuilder = this.abilityControlBlock_ != null ? this.abilityControlBlock_.toBuilder() : null;
                                     this.abilityControlBlock_ = (AbilityControlBlockOuterClass.AbilityControlBlock) input.readMessage(AbilityControlBlockOuterClass.AbilityControlBlock.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -109,9 +112,6 @@ public final class AbilityChangeNotifyOuterClass {
                                         this.abilityControlBlock_ = subBuilder.buildPartial();
                                         break;
                                     }
-                                case 80:
-                                    this.entityId_ = input.readUInt32();
-                                    break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
                                         break;
@@ -177,11 +177,11 @@ public final class AbilityChangeNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.abilityControlBlock_ != null) {
-                output.writeMessage(6, getAbilityControlBlock());
-            }
             if (this.entityId_ != 0) {
-                output.writeUInt32(10, this.entityId_);
+                output.writeUInt32(7, this.entityId_);
+            }
+            if (this.abilityControlBlock_ != null) {
+                output.writeMessage(10, getAbilityControlBlock());
             }
             this.unknownFields.writeTo(output);
         }
@@ -193,11 +193,11 @@ public final class AbilityChangeNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.abilityControlBlock_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(6, getAbilityControlBlock());
-            }
             if (this.entityId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.entityId_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(7, this.entityId_);
+            }
+            if (this.abilityControlBlock_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(10, getAbilityControlBlock());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,9 +226,9 @@ public final class AbilityChangeNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasAbilityControlBlock()) {
-                hash = (53 * ((37 * hash) + 6)) + getAbilityControlBlock().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getAbilityControlBlock().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 10)) + getEntityId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 7)) + getEntityId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

@@ -29,9 +29,9 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BreakoutPhysicalObjectOuterClass.class */
 public final class BreakoutPhysicalObjectOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cBreakoutPhysicalObject.proto\u001a\u0017BreakoutBrickInfo.proto\u001a$BreakoutPhysicalObjectModifier.proto\u001a\u0015BreakoutVector2.proto\"±\u0003\n\u0016BreakoutPhysicalObject\u0012\n\n\u0002id\u0018\u0001 \u0001(\r\u0012\r\n\u0005index\u0018\u0002 \u0001(\r\u0012\u0011\n\tis_active\u0018\u0003 \u0001(\b\u0012\u001d\n\u0003pos\u0018\u0004 \u0001(\u000b2\u0010.BreakoutVector2\u0012\"\n\bmove_dir\u0018\u0005 \u0001(\u000b2\u0010.BreakoutVector2\u0012\r\n\u0005speed\u0018\u0006 \u0001(\u0005\u0012\u0014\n\finit_peer_id\u0018\u0007 \u0001(\r\u0012\r\n\u0005state\u0018\b \u0001(\r\u0012\u0014\n\felement_type\u0018\t \u0001(\r\u0012\u001d\n\u0015element_reaction_buff\u0018\n \u0001(\r\u00126\n\rmodifier_list\u0018\u000b \u0003(\u000b2\u001f.BreakoutPhysicalObjectModifier\u0012\u0016\n\u000etotal_rotation\u0018\f \u0001(\u0005\u0012%\n\tinfo_list\u0018\r \u0003(\u000b2\u0012.BreakoutBrickInfo\u0012\u0018\n\u0010last_hit_peer_id\u0018\u000e \u0001(\r\u0012\u001c\n\u0014speed_increase_count\u0018\u000f \u0001(\r\u0012\u000e\n\u0006offset\u0018\u0010 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BreakoutBrickInfoOuterClass.getDescriptor(), BreakoutPhysicalObjectModifierOuterClass.getDescriptor(), BreakoutVector2OuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cBreakoutPhysicalObject.proto\u001a\u0015BreakoutVector2.proto\u001a$BreakoutPhysicalObjectModifier.proto\u001a\u0017BreakoutBrickInfo.proto\"\u0003\n\u0016BreakoutPhysicalObject\u0012\n\n\u0002id\u0018\u0001 \u0001(\r\u0012\r\n\u0005index\u0018\u0002 \u0001(\r\u0012\u0010\n\bisActive\u0018\u0003 \u0001(\b\u0012\u001d\n\u0003pos\u0018\u0004 \u0001(\u000b2\u0010.BreakoutVector2\u0012%\n\u000bmjehpphliia\u0018\u0005 \u0001(\u000b2\u0010.BreakoutVector2\u0012\r\n\u0005speed\u0018\u0006 \u0001(\u0005\u0012\u0013\n\u000bdlgpedplibk\u0018\u0007 \u0001(\r\u0012\r\n\u0005state\u0018\b \u0001(\r\u0012\u0013\n\u000belementType\u0018\t \u0001(\r\u0012\u0013\n\u000binhflokdoal\u0018\n \u0001(\r\u00124\n\u000bdlijmbkhdif\u0018\u000b \u0003(\u000b2\u001f.BreakoutPhysicalObjectModifier\u0012\u0013\n\u000babolecjpbhb\u0018\f \u0001(\u0005\u0012$\n\binfoList\u0018\r \u0003(\u000b2\u0012.BreakoutBrickInfo\u0012\u0013\n\u000bhmgmjglmbpl\u0018\u000e \u0001(\r\u0012\u0013\n\u000bapiembahlab\u0018\u000f \u0001(\r\u0012\u000e\n\u0006offset\u0018\u0010 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{BreakoutVector2OuterClass.getDescriptor(), BreakoutPhysicalObjectModifierOuterClass.getDescriptor(), BreakoutBrickInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_BreakoutPhysicalObject_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_BreakoutPhysicalObject_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BreakoutPhysicalObject_descriptor, new String[]{"Id", "Index", "IsActive", "Pos", "MoveDir", "Speed", "InitPeerId", "State", "ElementType", "ElementReactionBuff", "ModifierList", "TotalRotation", "InfoList", "LastHitPeerId", "SpeedIncreaseCount", "Offset"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_BreakoutPhysicalObject_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_BreakoutPhysicalObject_descriptor, new String[]{"Id", "Index", "IsActive", "Pos", "Mjehpphliia", "Speed", "Dlgpedplibk", "State", "ElementType", "Inhflokdoal", "Dlijmbkhdif", "Abolecjpbhb", "InfoList", "Hmgmjglmbpl", "Apiembahlab", "Offset"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/BreakoutPhysicalObjectOuterClass$BreakoutPhysicalObjectOrBuilder.class */
     public interface BreakoutPhysicalObjectOrBuilder extends MessageOrBuilder {
@@ -47,33 +47,33 @@ public final class BreakoutPhysicalObjectOuterClass {
 
         BreakoutVector2OuterClass.BreakoutVector2OrBuilder getPosOrBuilder();
 
-        boolean hasMoveDir();
+        boolean hasMjehpphliia();
 
-        BreakoutVector2OuterClass.BreakoutVector2 getMoveDir();
+        BreakoutVector2OuterClass.BreakoutVector2 getMjehpphliia();
 
-        BreakoutVector2OuterClass.BreakoutVector2OrBuilder getMoveDirOrBuilder();
+        BreakoutVector2OuterClass.BreakoutVector2OrBuilder getMjehpphliiaOrBuilder();
 
         int getSpeed();
 
-        int getInitPeerId();
+        int getDlgpedplibk();
 
         int getState();
 
         int getElementType();
 
-        int getElementReactionBuff();
+        int getInhflokdoal();
 
-        List<BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier> getModifierListList();
+        List<BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier> getDlijmbkhdifList();
 
-        BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier getModifierList(int i);
+        BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier getDlijmbkhdif(int i);
 
-        int getModifierListCount();
+        int getDlijmbkhdifCount();
 
-        List<? extends BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifierOrBuilder> getModifierListOrBuilderList();
+        List<? extends BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifierOrBuilder> getDlijmbkhdifOrBuilderList();
 
-        BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifierOrBuilder getModifierListOrBuilder(int i);
+        BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifierOrBuilder getDlijmbkhdifOrBuilder(int i);
 
-        int getTotalRotation();
+        int getAbolecjpbhb();
 
         List<BreakoutBrickInfoOuterClass.BreakoutBrickInfo> getInfoListList();
 
@@ -85,9 +85,9 @@ public final class BreakoutPhysicalObjectOuterClass {
 
         BreakoutBrickInfoOuterClass.BreakoutBrickInfoOrBuilder getInfoListOrBuilder(int i);
 
-        int getLastHitPeerId();
+        int getHmgmjglmbpl();
 
-        int getSpeedIncreaseCount();
+        int getApiembahlab();
 
         int getOffset();
     }
@@ -109,32 +109,32 @@ public final class BreakoutPhysicalObjectOuterClass {
         private int id_;
         public static final int INDEX_FIELD_NUMBER = 2;
         private int index_;
-        public static final int IS_ACTIVE_FIELD_NUMBER = 3;
+        public static final int ISACTIVE_FIELD_NUMBER = 3;
         private boolean isActive_;
         public static final int POS_FIELD_NUMBER = 4;
         private BreakoutVector2OuterClass.BreakoutVector2 pos_;
-        public static final int MOVE_DIR_FIELD_NUMBER = 5;
-        private BreakoutVector2OuterClass.BreakoutVector2 moveDir_;
+        public static final int MJEHPPHLIIA_FIELD_NUMBER = 5;
+        private BreakoutVector2OuterClass.BreakoutVector2 mjehpphliia_;
         public static final int SPEED_FIELD_NUMBER = 6;
         private int speed_;
-        public static final int INIT_PEER_ID_FIELD_NUMBER = 7;
-        private int initPeerId_;
+        public static final int DLGPEDPLIBK_FIELD_NUMBER = 7;
+        private int dlgpedplibk_;
         public static final int STATE_FIELD_NUMBER = 8;
         private int state_;
-        public static final int ELEMENT_TYPE_FIELD_NUMBER = 9;
+        public static final int ELEMENTTYPE_FIELD_NUMBER = 9;
         private int elementType_;
-        public static final int ELEMENT_REACTION_BUFF_FIELD_NUMBER = 10;
-        private int elementReactionBuff_;
-        public static final int MODIFIER_LIST_FIELD_NUMBER = 11;
-        private List<BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier> modifierList_;
-        public static final int TOTAL_ROTATION_FIELD_NUMBER = 12;
-        private int totalRotation_;
-        public static final int INFO_LIST_FIELD_NUMBER = 13;
+        public static final int INHFLOKDOAL_FIELD_NUMBER = 10;
+        private int inhflokdoal_;
+        public static final int DLIJMBKHDIF_FIELD_NUMBER = 11;
+        private List<BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier> dlijmbkhdif_;
+        public static final int ABOLECJPBHB_FIELD_NUMBER = 12;
+        private int abolecjpbhb_;
+        public static final int INFOLIST_FIELD_NUMBER = 13;
         private List<BreakoutBrickInfoOuterClass.BreakoutBrickInfo> infoList_;
-        public static final int LAST_HIT_PEER_ID_FIELD_NUMBER = 14;
-        private int lastHitPeerId_;
-        public static final int SPEED_INCREASE_COUNT_FIELD_NUMBER = 15;
-        private int speedIncreaseCount_;
+        public static final int HMGMJGLMBPL_FIELD_NUMBER = 14;
+        private int hmgmjglmbpl_;
+        public static final int APIEMBAHLAB_FIELD_NUMBER = 15;
+        private int apiembahlab_;
         public static final int OFFSET_FIELD_NUMBER = 16;
         private int offset_;
         private byte memoizedIsInitialized;
@@ -153,7 +153,7 @@ public final class BreakoutPhysicalObjectOuterClass {
 
         private BreakoutPhysicalObject() {
             this.memoizedIsInitialized = -1;
-            this.modifierList_ = Collections.emptyList();
+            this.dlijmbkhdif_ = Collections.emptyList();
             this.infoList_ = Collections.emptyList();
         }
 
@@ -208,20 +208,20 @@ public final class BreakoutPhysicalObjectOuterClass {
                                         break;
                                     }
                                 case 42:
-                                    BreakoutVector2OuterClass.BreakoutVector2.Builder subBuilder2 = this.moveDir_ != null ? this.moveDir_.toBuilder() : null;
-                                    this.moveDir_ = (BreakoutVector2OuterClass.BreakoutVector2) input.readMessage(BreakoutVector2OuterClass.BreakoutVector2.parser(), extensionRegistry);
+                                    BreakoutVector2OuterClass.BreakoutVector2.Builder subBuilder2 = this.mjehpphliia_ != null ? this.mjehpphliia_.toBuilder() : null;
+                                    this.mjehpphliia_ = (BreakoutVector2OuterClass.BreakoutVector2) input.readMessage(BreakoutVector2OuterClass.BreakoutVector2.parser(), extensionRegistry);
                                     if (subBuilder2 == null) {
                                         break;
                                     } else {
-                                        subBuilder2.mergeFrom(this.moveDir_);
-                                        this.moveDir_ = subBuilder2.buildPartial();
+                                        subBuilder2.mergeFrom(this.mjehpphliia_);
+                                        this.mjehpphliia_ = subBuilder2.buildPartial();
                                         break;
                                     }
                                 case 48:
                                     this.speed_ = input.readInt32();
                                     break;
                                 case 56:
-                                    this.initPeerId_ = input.readUInt32();
+                                    this.dlgpedplibk_ = input.readUInt32();
                                     break;
                                 case 64:
                                     this.state_ = input.readUInt32();
@@ -230,17 +230,17 @@ public final class BreakoutPhysicalObjectOuterClass {
                                     this.elementType_ = input.readUInt32();
                                     break;
                                 case 80:
-                                    this.elementReactionBuff_ = input.readUInt32();
+                                    this.inhflokdoal_ = input.readUInt32();
                                     break;
                                 case 90:
                                     if ((mutable_bitField0_ & 1) == 0) {
-                                        this.modifierList_ = new ArrayList();
+                                        this.dlijmbkhdif_ = new ArrayList();
                                         mutable_bitField0_ = (mutable_bitField0_ | 1) == 1 ? 1 : 0;
                                     }
-                                    this.modifierList_.add((BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier) input.readMessage(BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.parser(), extensionRegistry));
+                                    this.dlijmbkhdif_.add((BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier) input.readMessage(BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.parser(), extensionRegistry));
                                     break;
                                 case 96:
-                                    this.totalRotation_ = input.readInt32();
+                                    this.abolecjpbhb_ = input.readInt32();
                                     break;
                                 case 106:
                                     if ((mutable_bitField0_ & 2) == 0) {
@@ -250,10 +250,10 @@ public final class BreakoutPhysicalObjectOuterClass {
                                     this.infoList_.add((BreakoutBrickInfoOuterClass.BreakoutBrickInfo) input.readMessage(BreakoutBrickInfoOuterClass.BreakoutBrickInfo.parser(), extensionRegistry));
                                     break;
                                 case 112:
-                                    this.lastHitPeerId_ = input.readUInt32();
+                                    this.hmgmjglmbpl_ = input.readUInt32();
                                     break;
                                 case 120:
-                                    this.speedIncreaseCount_ = input.readUInt32();
+                                    this.apiembahlab_ = input.readUInt32();
                                     break;
                                 case 128:
                                     this.offset_ = input.readInt32();
@@ -276,7 +276,7 @@ public final class BreakoutPhysicalObjectOuterClass {
                 }
             } finally {
                 if ((mutable_bitField0_ & 1) != 0) {
-                    this.modifierList_ = Collections.unmodifiableList(this.modifierList_);
+                    this.dlijmbkhdif_ = Collections.unmodifiableList(this.dlijmbkhdif_);
                 }
                 if ((mutable_bitField0_ & 2) != 0) {
                     this.infoList_ = Collections.unmodifiableList(this.infoList_);
@@ -326,18 +326,18 @@ public final class BreakoutPhysicalObjectOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-        public boolean hasMoveDir() {
-            return this.moveDir_ != null;
+        public boolean hasMjehpphliia() {
+            return this.mjehpphliia_ != null;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-        public BreakoutVector2OuterClass.BreakoutVector2 getMoveDir() {
-            return this.moveDir_ == null ? BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : this.moveDir_;
+        public BreakoutVector2OuterClass.BreakoutVector2 getMjehpphliia() {
+            return this.mjehpphliia_ == null ? BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : this.mjehpphliia_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-        public BreakoutVector2OuterClass.BreakoutVector2OrBuilder getMoveDirOrBuilder() {
-            return getMoveDir();
+        public BreakoutVector2OuterClass.BreakoutVector2OrBuilder getMjehpphliiaOrBuilder() {
+            return getMjehpphliia();
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
@@ -346,8 +346,8 @@ public final class BreakoutPhysicalObjectOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-        public int getInitPeerId() {
-            return this.initPeerId_;
+        public int getDlgpedplibk() {
+            return this.dlgpedplibk_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
@@ -361,38 +361,38 @@ public final class BreakoutPhysicalObjectOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-        public int getElementReactionBuff() {
-            return this.elementReactionBuff_;
+        public int getInhflokdoal() {
+            return this.inhflokdoal_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-        public List<BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier> getModifierListList() {
-            return this.modifierList_;
+        public List<BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier> getDlijmbkhdifList() {
+            return this.dlijmbkhdif_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-        public List<? extends BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifierOrBuilder> getModifierListOrBuilderList() {
-            return this.modifierList_;
+        public List<? extends BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifierOrBuilder> getDlijmbkhdifOrBuilderList() {
+            return this.dlijmbkhdif_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-        public int getModifierListCount() {
-            return this.modifierList_.size();
+        public int getDlijmbkhdifCount() {
+            return this.dlijmbkhdif_.size();
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-        public BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier getModifierList(int index) {
-            return this.modifierList_.get(index);
+        public BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier getDlijmbkhdif(int index) {
+            return this.dlijmbkhdif_.get(index);
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-        public BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifierOrBuilder getModifierListOrBuilder(int index) {
-            return this.modifierList_.get(index);
+        public BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifierOrBuilder getDlijmbkhdifOrBuilder(int index) {
+            return this.dlijmbkhdif_.get(index);
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-        public int getTotalRotation() {
-            return this.totalRotation_;
+        public int getAbolecjpbhb() {
+            return this.abolecjpbhb_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
@@ -421,13 +421,13 @@ public final class BreakoutPhysicalObjectOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-        public int getLastHitPeerId() {
-            return this.lastHitPeerId_;
+        public int getHmgmjglmbpl() {
+            return this.hmgmjglmbpl_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-        public int getSpeedIncreaseCount() {
-            return this.speedIncreaseCount_;
+        public int getApiembahlab() {
+            return this.apiembahlab_;
         }
 
         @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
@@ -462,14 +462,14 @@ public final class BreakoutPhysicalObjectOuterClass {
             if (this.pos_ != null) {
                 output.writeMessage(4, getPos());
             }
-            if (this.moveDir_ != null) {
-                output.writeMessage(5, getMoveDir());
+            if (this.mjehpphliia_ != null) {
+                output.writeMessage(5, getMjehpphliia());
             }
             if (this.speed_ != 0) {
                 output.writeInt32(6, this.speed_);
             }
-            if (this.initPeerId_ != 0) {
-                output.writeUInt32(7, this.initPeerId_);
+            if (this.dlgpedplibk_ != 0) {
+                output.writeUInt32(7, this.dlgpedplibk_);
             }
             if (this.state_ != 0) {
                 output.writeUInt32(8, this.state_);
@@ -477,23 +477,23 @@ public final class BreakoutPhysicalObjectOuterClass {
             if (this.elementType_ != 0) {
                 output.writeUInt32(9, this.elementType_);
             }
-            if (this.elementReactionBuff_ != 0) {
-                output.writeUInt32(10, this.elementReactionBuff_);
+            if (this.inhflokdoal_ != 0) {
+                output.writeUInt32(10, this.inhflokdoal_);
             }
-            for (int i = 0; i < this.modifierList_.size(); i++) {
-                output.writeMessage(11, this.modifierList_.get(i));
+            for (int i = 0; i < this.dlijmbkhdif_.size(); i++) {
+                output.writeMessage(11, this.dlijmbkhdif_.get(i));
             }
-            if (this.totalRotation_ != 0) {
-                output.writeInt32(12, this.totalRotation_);
+            if (this.abolecjpbhb_ != 0) {
+                output.writeInt32(12, this.abolecjpbhb_);
             }
             for (int i2 = 0; i2 < this.infoList_.size(); i2++) {
                 output.writeMessage(13, this.infoList_.get(i2));
             }
-            if (this.lastHitPeerId_ != 0) {
-                output.writeUInt32(14, this.lastHitPeerId_);
+            if (this.hmgmjglmbpl_ != 0) {
+                output.writeUInt32(14, this.hmgmjglmbpl_);
             }
-            if (this.speedIncreaseCount_ != 0) {
-                output.writeUInt32(15, this.speedIncreaseCount_);
+            if (this.apiembahlab_ != 0) {
+                output.writeUInt32(15, this.apiembahlab_);
             }
             if (this.offset_ != 0) {
                 output.writeInt32(16, this.offset_);
@@ -520,14 +520,14 @@ public final class BreakoutPhysicalObjectOuterClass {
             if (this.pos_ != null) {
                 size2 += CodedOutputStream.computeMessageSize(4, getPos());
             }
-            if (this.moveDir_ != null) {
-                size2 += CodedOutputStream.computeMessageSize(5, getMoveDir());
+            if (this.mjehpphliia_ != null) {
+                size2 += CodedOutputStream.computeMessageSize(5, getMjehpphliia());
             }
             if (this.speed_ != 0) {
                 size2 += CodedOutputStream.computeInt32Size(6, this.speed_);
             }
-            if (this.initPeerId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(7, this.initPeerId_);
+            if (this.dlgpedplibk_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(7, this.dlgpedplibk_);
             }
             if (this.state_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(8, this.state_);
@@ -535,23 +535,23 @@ public final class BreakoutPhysicalObjectOuterClass {
             if (this.elementType_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(9, this.elementType_);
             }
-            if (this.elementReactionBuff_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.elementReactionBuff_);
+            if (this.inhflokdoal_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(10, this.inhflokdoal_);
             }
-            for (int i = 0; i < this.modifierList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(11, this.modifierList_.get(i));
+            for (int i = 0; i < this.dlijmbkhdif_.size(); i++) {
+                size2 += CodedOutputStream.computeMessageSize(11, this.dlijmbkhdif_.get(i));
             }
-            if (this.totalRotation_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(12, this.totalRotation_);
+            if (this.abolecjpbhb_ != 0) {
+                size2 += CodedOutputStream.computeInt32Size(12, this.abolecjpbhb_);
             }
             for (int i2 = 0; i2 < this.infoList_.size(); i2++) {
                 size2 += CodedOutputStream.computeMessageSize(13, this.infoList_.get(i2));
             }
-            if (this.lastHitPeerId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.lastHitPeerId_);
+            if (this.hmgmjglmbpl_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(14, this.hmgmjglmbpl_);
             }
-            if (this.speedIncreaseCount_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.speedIncreaseCount_);
+            if (this.apiembahlab_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(15, this.apiembahlab_);
             }
             if (this.offset_ != 0) {
                 size2 += CodedOutputStream.computeInt32Size(16, this.offset_);
@@ -573,8 +573,8 @@ public final class BreakoutPhysicalObjectOuterClass {
             if (getId() != other.getId() || getIndex() != other.getIndex() || getIsActive() != other.getIsActive() || hasPos() != other.hasPos()) {
                 return false;
             }
-            if ((!hasPos() || getPos().equals(other.getPos())) && hasMoveDir() == other.hasMoveDir()) {
-                return (!hasMoveDir() || getMoveDir().equals(other.getMoveDir())) && getSpeed() == other.getSpeed() && getInitPeerId() == other.getInitPeerId() && getState() == other.getState() && getElementType() == other.getElementType() && getElementReactionBuff() == other.getElementReactionBuff() && getModifierListList().equals(other.getModifierListList()) && getTotalRotation() == other.getTotalRotation() && getInfoListList().equals(other.getInfoListList()) && getLastHitPeerId() == other.getLastHitPeerId() && getSpeedIncreaseCount() == other.getSpeedIncreaseCount() && getOffset() == other.getOffset() && this.unknownFields.equals(other.unknownFields);
+            if ((!hasPos() || getPos().equals(other.getPos())) && hasMjehpphliia() == other.hasMjehpphliia()) {
+                return (!hasMjehpphliia() || getMjehpphliia().equals(other.getMjehpphliia())) && getSpeed() == other.getSpeed() && getDlgpedplibk() == other.getDlgpedplibk() && getState() == other.getState() && getElementType() == other.getElementType() && getInhflokdoal() == other.getInhflokdoal() && getDlijmbkhdifList().equals(other.getDlijmbkhdifList()) && getAbolecjpbhb() == other.getAbolecjpbhb() && getInfoListList().equals(other.getInfoListList()) && getHmgmjglmbpl() == other.getHmgmjglmbpl() && getApiembahlab() == other.getApiembahlab() && getOffset() == other.getOffset() && this.unknownFields.equals(other.unknownFields);
             }
             return false;
         }
@@ -588,18 +588,18 @@ public final class BreakoutPhysicalObjectOuterClass {
             if (hasPos()) {
                 hash = (53 * ((37 * hash) + 4)) + getPos().hashCode();
             }
-            if (hasMoveDir()) {
-                hash = (53 * ((37 * hash) + 5)) + getMoveDir().hashCode();
+            if (hasMjehpphliia()) {
+                hash = (53 * ((37 * hash) + 5)) + getMjehpphliia().hashCode();
             }
-            int hash2 = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 6)) + getSpeed())) + 7)) + getInitPeerId())) + 8)) + getState())) + 9)) + getElementType())) + 10)) + getElementReactionBuff();
-            if (getModifierListCount() > 0) {
-                hash2 = (53 * ((37 * hash2) + 11)) + getModifierListList().hashCode();
+            int hash2 = (53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash) + 6)) + getSpeed())) + 7)) + getDlgpedplibk())) + 8)) + getState())) + 9)) + getElementType())) + 10)) + getInhflokdoal();
+            if (getDlijmbkhdifCount() > 0) {
+                hash2 = (53 * ((37 * hash2) + 11)) + getDlijmbkhdifList().hashCode();
             }
-            int hash3 = (53 * ((37 * hash2) + 12)) + getTotalRotation();
+            int hash3 = (53 * ((37 * hash2) + 12)) + getAbolecjpbhb();
             if (getInfoListCount() > 0) {
                 hash3 = (53 * ((37 * hash3) + 13)) + getInfoListList().hashCode();
             }
-            int hash4 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash3) + 14)) + getLastHitPeerId())) + 15)) + getSpeedIncreaseCount())) + 16)) + getOffset())) + this.unknownFields.hashCode();
+            int hash4 = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * hash3) + 14)) + getHmgmjglmbpl())) + 15)) + getApiembahlab())) + 16)) + getOffset())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash4;
             return hash4;
         }
@@ -684,20 +684,20 @@ public final class BreakoutPhysicalObjectOuterClass {
             private boolean isActive_;
             private BreakoutVector2OuterClass.BreakoutVector2 pos_;
             private SingleFieldBuilderV3<BreakoutVector2OuterClass.BreakoutVector2, BreakoutVector2OuterClass.BreakoutVector2.Builder, BreakoutVector2OuterClass.BreakoutVector2OrBuilder> posBuilder_;
-            private BreakoutVector2OuterClass.BreakoutVector2 moveDir_;
-            private SingleFieldBuilderV3<BreakoutVector2OuterClass.BreakoutVector2, BreakoutVector2OuterClass.BreakoutVector2.Builder, BreakoutVector2OuterClass.BreakoutVector2OrBuilder> moveDirBuilder_;
+            private BreakoutVector2OuterClass.BreakoutVector2 mjehpphliia_;
+            private SingleFieldBuilderV3<BreakoutVector2OuterClass.BreakoutVector2, BreakoutVector2OuterClass.BreakoutVector2.Builder, BreakoutVector2OuterClass.BreakoutVector2OrBuilder> mjehpphliiaBuilder_;
             private int speed_;
-            private int initPeerId_;
+            private int dlgpedplibk_;
             private int state_;
             private int elementType_;
-            private int elementReactionBuff_;
-            private RepeatedFieldBuilderV3<BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier, BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.Builder, BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifierOrBuilder> modifierListBuilder_;
-            private int totalRotation_;
+            private int inhflokdoal_;
+            private RepeatedFieldBuilderV3<BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier, BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.Builder, BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifierOrBuilder> dlijmbkhdifBuilder_;
+            private int abolecjpbhb_;
             private RepeatedFieldBuilderV3<BreakoutBrickInfoOuterClass.BreakoutBrickInfo, BreakoutBrickInfoOuterClass.BreakoutBrickInfo.Builder, BreakoutBrickInfoOuterClass.BreakoutBrickInfoOrBuilder> infoListBuilder_;
-            private int lastHitPeerId_;
-            private int speedIncreaseCount_;
+            private int hmgmjglmbpl_;
+            private int apiembahlab_;
             private int offset_;
-            private List<BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier> modifierList_ = Collections.emptyList();
+            private List<BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier> dlijmbkhdif_ = Collections.emptyList();
             private List<BreakoutBrickInfoOuterClass.BreakoutBrickInfo> infoList_ = Collections.emptyList();
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -720,7 +720,7 @@ public final class BreakoutPhysicalObjectOuterClass {
 
             private void maybeForceBuilderInitialization() {
                 if (BreakoutPhysicalObject.alwaysUseFieldBuilders) {
-                    getModifierListFieldBuilder();
+                    getDlijmbkhdifFieldBuilder();
                     getInfoListFieldBuilder();
                 }
             }
@@ -737,32 +737,32 @@ public final class BreakoutPhysicalObjectOuterClass {
                     this.pos_ = null;
                     this.posBuilder_ = null;
                 }
-                if (this.moveDirBuilder_ == null) {
-                    this.moveDir_ = null;
+                if (this.mjehpphliiaBuilder_ == null) {
+                    this.mjehpphliia_ = null;
                 } else {
-                    this.moveDir_ = null;
-                    this.moveDirBuilder_ = null;
+                    this.mjehpphliia_ = null;
+                    this.mjehpphliiaBuilder_ = null;
                 }
                 this.speed_ = 0;
-                this.initPeerId_ = 0;
+                this.dlgpedplibk_ = 0;
                 this.state_ = 0;
                 this.elementType_ = 0;
-                this.elementReactionBuff_ = 0;
-                if (this.modifierListBuilder_ == null) {
-                    this.modifierList_ = Collections.emptyList();
+                this.inhflokdoal_ = 0;
+                if (this.dlijmbkhdifBuilder_ == null) {
+                    this.dlijmbkhdif_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
-                    this.modifierListBuilder_.clear();
+                    this.dlijmbkhdifBuilder_.clear();
                 }
-                this.totalRotation_ = 0;
+                this.abolecjpbhb_ = 0;
                 if (this.infoListBuilder_ == null) {
                     this.infoList_ = Collections.emptyList();
                     this.bitField0_ &= -3;
                 } else {
                     this.infoListBuilder_.clear();
                 }
-                this.lastHitPeerId_ = 0;
-                this.speedIncreaseCount_ = 0;
+                this.hmgmjglmbpl_ = 0;
+                this.apiembahlab_ = 0;
                 this.offset_ = 0;
                 return this;
             }
@@ -798,26 +798,26 @@ public final class BreakoutPhysicalObjectOuterClass {
                 } else {
                     result.pos_ = this.posBuilder_.build();
                 }
-                if (this.moveDirBuilder_ == null) {
-                    result.moveDir_ = this.moveDir_;
+                if (this.mjehpphliiaBuilder_ == null) {
+                    result.mjehpphliia_ = this.mjehpphliia_;
                 } else {
-                    result.moveDir_ = this.moveDirBuilder_.build();
+                    result.mjehpphliia_ = this.mjehpphliiaBuilder_.build();
                 }
                 result.speed_ = this.speed_;
-                result.initPeerId_ = this.initPeerId_;
+                result.dlgpedplibk_ = this.dlgpedplibk_;
                 result.state_ = this.state_;
                 result.elementType_ = this.elementType_;
-                result.elementReactionBuff_ = this.elementReactionBuff_;
-                if (this.modifierListBuilder_ == null) {
+                result.inhflokdoal_ = this.inhflokdoal_;
+                if (this.dlijmbkhdifBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
-                        this.modifierList_ = Collections.unmodifiableList(this.modifierList_);
+                        this.dlijmbkhdif_ = Collections.unmodifiableList(this.dlijmbkhdif_);
                         this.bitField0_ &= -2;
                     }
-                    result.modifierList_ = this.modifierList_;
+                    result.dlijmbkhdif_ = this.dlijmbkhdif_;
                 } else {
-                    result.modifierList_ = this.modifierListBuilder_.build();
+                    result.dlijmbkhdif_ = this.dlijmbkhdifBuilder_.build();
                 }
-                result.totalRotation_ = this.totalRotation_;
+                result.abolecjpbhb_ = this.abolecjpbhb_;
                 if (this.infoListBuilder_ == null) {
                     if ((this.bitField0_ & 2) != 0) {
                         this.infoList_ = Collections.unmodifiableList(this.infoList_);
@@ -827,8 +827,8 @@ public final class BreakoutPhysicalObjectOuterClass {
                 } else {
                     result.infoList_ = this.infoListBuilder_.build();
                 }
-                result.lastHitPeerId_ = this.lastHitPeerId_;
-                result.speedIncreaseCount_ = this.speedIncreaseCount_;
+                result.hmgmjglmbpl_ = this.hmgmjglmbpl_;
+                result.apiembahlab_ = this.apiembahlab_;
                 result.offset_ = this.offset_;
                 onBuilt();
                 return result;
@@ -889,14 +889,14 @@ public final class BreakoutPhysicalObjectOuterClass {
                 if (other.hasPos()) {
                     mergePos(other.getPos());
                 }
-                if (other.hasMoveDir()) {
-                    mergeMoveDir(other.getMoveDir());
+                if (other.hasMjehpphliia()) {
+                    mergeMjehpphliia(other.getMjehpphliia());
                 }
                 if (other.getSpeed() != 0) {
                     setSpeed(other.getSpeed());
                 }
-                if (other.getInitPeerId() != 0) {
-                    setInitPeerId(other.getInitPeerId());
+                if (other.getDlgpedplibk() != 0) {
+                    setDlgpedplibk(other.getDlgpedplibk());
                 }
                 if (other.getState() != 0) {
                     setState(other.getState());
@@ -904,33 +904,33 @@ public final class BreakoutPhysicalObjectOuterClass {
                 if (other.getElementType() != 0) {
                     setElementType(other.getElementType());
                 }
-                if (other.getElementReactionBuff() != 0) {
-                    setElementReactionBuff(other.getElementReactionBuff());
+                if (other.getInhflokdoal() != 0) {
+                    setInhflokdoal(other.getInhflokdoal());
                 }
-                if (this.modifierListBuilder_ == null) {
-                    if (!other.modifierList_.isEmpty()) {
-                        if (this.modifierList_.isEmpty()) {
-                            this.modifierList_ = other.modifierList_;
+                if (this.dlijmbkhdifBuilder_ == null) {
+                    if (!other.dlijmbkhdif_.isEmpty()) {
+                        if (this.dlijmbkhdif_.isEmpty()) {
+                            this.dlijmbkhdif_ = other.dlijmbkhdif_;
                             this.bitField0_ &= -2;
                         } else {
-                            ensureModifierListIsMutable();
-                            this.modifierList_.addAll(other.modifierList_);
+                            ensureDlijmbkhdifIsMutable();
+                            this.dlijmbkhdif_.addAll(other.dlijmbkhdif_);
                         }
                         onChanged();
                     }
-                } else if (!other.modifierList_.isEmpty()) {
-                    if (this.modifierListBuilder_.isEmpty()) {
-                        this.modifierListBuilder_.dispose();
-                        this.modifierListBuilder_ = null;
-                        this.modifierList_ = other.modifierList_;
+                } else if (!other.dlijmbkhdif_.isEmpty()) {
+                    if (this.dlijmbkhdifBuilder_.isEmpty()) {
+                        this.dlijmbkhdifBuilder_.dispose();
+                        this.dlijmbkhdifBuilder_ = null;
+                        this.dlijmbkhdif_ = other.dlijmbkhdif_;
                         this.bitField0_ &= -2;
-                        this.modifierListBuilder_ = BreakoutPhysicalObject.alwaysUseFieldBuilders ? getModifierListFieldBuilder() : null;
+                        this.dlijmbkhdifBuilder_ = BreakoutPhysicalObject.alwaysUseFieldBuilders ? getDlijmbkhdifFieldBuilder() : null;
                     } else {
-                        this.modifierListBuilder_.addAllMessages(other.modifierList_);
+                        this.dlijmbkhdifBuilder_.addAllMessages(other.dlijmbkhdif_);
                     }
                 }
-                if (other.getTotalRotation() != 0) {
-                    setTotalRotation(other.getTotalRotation());
+                if (other.getAbolecjpbhb() != 0) {
+                    setAbolecjpbhb(other.getAbolecjpbhb());
                 }
                 if (this.infoListBuilder_ == null) {
                     if (!other.infoList_.isEmpty()) {
@@ -954,11 +954,11 @@ public final class BreakoutPhysicalObjectOuterClass {
                         this.infoListBuilder_.addAllMessages(other.infoList_);
                     }
                 }
-                if (other.getLastHitPeerId() != 0) {
-                    setLastHitPeerId(other.getLastHitPeerId());
+                if (other.getHmgmjglmbpl() != 0) {
+                    setHmgmjglmbpl(other.getHmgmjglmbpl());
                 }
-                if (other.getSpeedIncreaseCount() != 0) {
-                    setSpeedIncreaseCount(other.getSpeedIncreaseCount());
+                if (other.getApiembahlab() != 0) {
+                    setApiembahlab(other.getApiembahlab());
                 }
                 if (other.getOffset() != 0) {
                     setOffset(other.getOffset());
@@ -1128,84 +1128,84 @@ public final class BreakoutPhysicalObjectOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-            public boolean hasMoveDir() {
-                return (this.moveDirBuilder_ == null && this.moveDir_ == null) ? false : true;
+            public boolean hasMjehpphliia() {
+                return (this.mjehpphliiaBuilder_ == null && this.mjehpphliia_ == null) ? false : true;
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-            public BreakoutVector2OuterClass.BreakoutVector2 getMoveDir() {
-                if (this.moveDirBuilder_ == null) {
-                    return this.moveDir_ == null ? BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : this.moveDir_;
+            public BreakoutVector2OuterClass.BreakoutVector2 getMjehpphliia() {
+                if (this.mjehpphliiaBuilder_ == null) {
+                    return this.mjehpphliia_ == null ? BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : this.mjehpphliia_;
                 }
-                return this.moveDirBuilder_.getMessage();
+                return this.mjehpphliiaBuilder_.getMessage();
             }
 
-            public Builder setMoveDir(BreakoutVector2OuterClass.BreakoutVector2 value) {
-                if (this.moveDirBuilder_ != null) {
-                    this.moveDirBuilder_.setMessage(value);
+            public Builder setMjehpphliia(BreakoutVector2OuterClass.BreakoutVector2 value) {
+                if (this.mjehpphliiaBuilder_ != null) {
+                    this.mjehpphliiaBuilder_.setMessage(value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    this.moveDir_ = value;
+                    this.mjehpphliia_ = value;
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder setMoveDir(BreakoutVector2OuterClass.BreakoutVector2.Builder builderForValue) {
-                if (this.moveDirBuilder_ == null) {
-                    this.moveDir_ = builderForValue.build();
+            public Builder setMjehpphliia(BreakoutVector2OuterClass.BreakoutVector2.Builder builderForValue) {
+                if (this.mjehpphliiaBuilder_ == null) {
+                    this.mjehpphliia_ = builderForValue.build();
                     onChanged();
                 } else {
-                    this.moveDirBuilder_.setMessage(builderForValue.build());
+                    this.mjehpphliiaBuilder_.setMessage(builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder mergeMoveDir(BreakoutVector2OuterClass.BreakoutVector2 value) {
-                if (this.moveDirBuilder_ == null) {
-                    if (this.moveDir_ != null) {
-                        this.moveDir_ = BreakoutVector2OuterClass.BreakoutVector2.newBuilder(this.moveDir_).mergeFrom(value).buildPartial();
+            public Builder mergeMjehpphliia(BreakoutVector2OuterClass.BreakoutVector2 value) {
+                if (this.mjehpphliiaBuilder_ == null) {
+                    if (this.mjehpphliia_ != null) {
+                        this.mjehpphliia_ = BreakoutVector2OuterClass.BreakoutVector2.newBuilder(this.mjehpphliia_).mergeFrom(value).buildPartial();
                     } else {
-                        this.moveDir_ = value;
+                        this.mjehpphliia_ = value;
                     }
                     onChanged();
                 } else {
-                    this.moveDirBuilder_.mergeFrom(value);
+                    this.mjehpphliiaBuilder_.mergeFrom(value);
                 }
                 return this;
             }
 
-            public Builder clearMoveDir() {
-                if (this.moveDirBuilder_ == null) {
-                    this.moveDir_ = null;
+            public Builder clearMjehpphliia() {
+                if (this.mjehpphliiaBuilder_ == null) {
+                    this.mjehpphliia_ = null;
                     onChanged();
                 } else {
-                    this.moveDir_ = null;
-                    this.moveDirBuilder_ = null;
+                    this.mjehpphliia_ = null;
+                    this.mjehpphliiaBuilder_ = null;
                 }
                 return this;
             }
 
-            public BreakoutVector2OuterClass.BreakoutVector2.Builder getMoveDirBuilder() {
+            public BreakoutVector2OuterClass.BreakoutVector2.Builder getMjehpphliiaBuilder() {
                 onChanged();
-                return getMoveDirFieldBuilder().getBuilder();
+                return getMjehpphliiaFieldBuilder().getBuilder();
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-            public BreakoutVector2OuterClass.BreakoutVector2OrBuilder getMoveDirOrBuilder() {
-                if (this.moveDirBuilder_ != null) {
-                    return this.moveDirBuilder_.getMessageOrBuilder();
+            public BreakoutVector2OuterClass.BreakoutVector2OrBuilder getMjehpphliiaOrBuilder() {
+                if (this.mjehpphliiaBuilder_ != null) {
+                    return this.mjehpphliiaBuilder_.getMessageOrBuilder();
                 }
-                return this.moveDir_ == null ? BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : this.moveDir_;
+                return this.mjehpphliia_ == null ? BreakoutVector2OuterClass.BreakoutVector2.getDefaultInstance() : this.mjehpphliia_;
             }
 
-            private SingleFieldBuilderV3<BreakoutVector2OuterClass.BreakoutVector2, BreakoutVector2OuterClass.BreakoutVector2.Builder, BreakoutVector2OuterClass.BreakoutVector2OrBuilder> getMoveDirFieldBuilder() {
-                if (this.moveDirBuilder_ == null) {
-                    this.moveDirBuilder_ = new SingleFieldBuilderV3<>(getMoveDir(), getParentForChildren(), isClean());
-                    this.moveDir_ = null;
+            private SingleFieldBuilderV3<BreakoutVector2OuterClass.BreakoutVector2, BreakoutVector2OuterClass.BreakoutVector2.Builder, BreakoutVector2OuterClass.BreakoutVector2OrBuilder> getMjehpphliiaFieldBuilder() {
+                if (this.mjehpphliiaBuilder_ == null) {
+                    this.mjehpphliiaBuilder_ = new SingleFieldBuilderV3<>(getMjehpphliia(), getParentForChildren(), isClean());
+                    this.mjehpphliia_ = null;
                 }
-                return this.moveDirBuilder_;
+                return this.mjehpphliiaBuilder_;
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
@@ -1226,18 +1226,18 @@ public final class BreakoutPhysicalObjectOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-            public int getInitPeerId() {
-                return this.initPeerId_;
+            public int getDlgpedplibk() {
+                return this.dlgpedplibk_;
             }
 
-            public Builder setInitPeerId(int value) {
-                this.initPeerId_ = value;
+            public Builder setDlgpedplibk(int value) {
+                this.dlgpedplibk_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearInitPeerId() {
-                this.initPeerId_ = 0;
+            public Builder clearDlgpedplibk() {
+                this.dlgpedplibk_ = 0;
                 onChanged();
                 return this;
             }
@@ -1277,211 +1277,211 @@ public final class BreakoutPhysicalObjectOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-            public int getElementReactionBuff() {
-                return this.elementReactionBuff_;
+            public int getInhflokdoal() {
+                return this.inhflokdoal_;
             }
 
-            public Builder setElementReactionBuff(int value) {
-                this.elementReactionBuff_ = value;
+            public Builder setInhflokdoal(int value) {
+                this.inhflokdoal_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearElementReactionBuff() {
-                this.elementReactionBuff_ = 0;
+            public Builder clearInhflokdoal() {
+                this.inhflokdoal_ = 0;
                 onChanged();
                 return this;
             }
 
-            private void ensureModifierListIsMutable() {
+            private void ensureDlijmbkhdifIsMutable() {
                 if ((this.bitField0_ & 1) == 0) {
-                    this.modifierList_ = new ArrayList(this.modifierList_);
+                    this.dlijmbkhdif_ = new ArrayList(this.dlijmbkhdif_);
                     this.bitField0_ |= 1;
                 }
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-            public List<BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier> getModifierListList() {
-                if (this.modifierListBuilder_ == null) {
-                    return Collections.unmodifiableList(this.modifierList_);
+            public List<BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier> getDlijmbkhdifList() {
+                if (this.dlijmbkhdifBuilder_ == null) {
+                    return Collections.unmodifiableList(this.dlijmbkhdif_);
                 }
-                return this.modifierListBuilder_.getMessageList();
+                return this.dlijmbkhdifBuilder_.getMessageList();
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-            public int getModifierListCount() {
-                if (this.modifierListBuilder_ == null) {
-                    return this.modifierList_.size();
+            public int getDlijmbkhdifCount() {
+                if (this.dlijmbkhdifBuilder_ == null) {
+                    return this.dlijmbkhdif_.size();
                 }
-                return this.modifierListBuilder_.getCount();
+                return this.dlijmbkhdifBuilder_.getCount();
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-            public BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier getModifierList(int index) {
-                if (this.modifierListBuilder_ == null) {
-                    return this.modifierList_.get(index);
+            public BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier getDlijmbkhdif(int index) {
+                if (this.dlijmbkhdifBuilder_ == null) {
+                    return this.dlijmbkhdif_.get(index);
                 }
-                return this.modifierListBuilder_.getMessage(index);
+                return this.dlijmbkhdifBuilder_.getMessage(index);
             }
 
-            public Builder setModifierList(int index, BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier value) {
-                if (this.modifierListBuilder_ != null) {
-                    this.modifierListBuilder_.setMessage(index, value);
+            public Builder setDlijmbkhdif(int index, BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier value) {
+                if (this.dlijmbkhdifBuilder_ != null) {
+                    this.dlijmbkhdifBuilder_.setMessage(index, value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureModifierListIsMutable();
-                    this.modifierList_.set(index, value);
+                    ensureDlijmbkhdifIsMutable();
+                    this.dlijmbkhdif_.set(index, value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder setModifierList(int index, BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.Builder builderForValue) {
-                if (this.modifierListBuilder_ == null) {
-                    ensureModifierListIsMutable();
-                    this.modifierList_.set(index, builderForValue.build());
+            public Builder setDlijmbkhdif(int index, BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.Builder builderForValue) {
+                if (this.dlijmbkhdifBuilder_ == null) {
+                    ensureDlijmbkhdifIsMutable();
+                    this.dlijmbkhdif_.set(index, builderForValue.build());
                     onChanged();
                 } else {
-                    this.modifierListBuilder_.setMessage(index, builderForValue.build());
+                    this.dlijmbkhdifBuilder_.setMessage(index, builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder addModifierList(BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier value) {
-                if (this.modifierListBuilder_ != null) {
-                    this.modifierListBuilder_.addMessage(value);
+            public Builder addDlijmbkhdif(BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier value) {
+                if (this.dlijmbkhdifBuilder_ != null) {
+                    this.dlijmbkhdifBuilder_.addMessage(value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureModifierListIsMutable();
-                    this.modifierList_.add(value);
+                    ensureDlijmbkhdifIsMutable();
+                    this.dlijmbkhdif_.add(value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder addModifierList(int index, BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier value) {
-                if (this.modifierListBuilder_ != null) {
-                    this.modifierListBuilder_.addMessage(index, value);
+            public Builder addDlijmbkhdif(int index, BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier value) {
+                if (this.dlijmbkhdifBuilder_ != null) {
+                    this.dlijmbkhdifBuilder_.addMessage(index, value);
                 } else if (value == null) {
                     throw new NullPointerException();
                 } else {
-                    ensureModifierListIsMutable();
-                    this.modifierList_.add(index, value);
+                    ensureDlijmbkhdifIsMutable();
+                    this.dlijmbkhdif_.add(index, value);
                     onChanged();
                 }
                 return this;
             }
 
-            public Builder addModifierList(BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.Builder builderForValue) {
-                if (this.modifierListBuilder_ == null) {
-                    ensureModifierListIsMutable();
-                    this.modifierList_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    this.modifierListBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            public Builder addModifierList(int index, BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.Builder builderForValue) {
-                if (this.modifierListBuilder_ == null) {
-                    ensureModifierListIsMutable();
-                    this.modifierList_.add(index, builderForValue.build());
+            public Builder addDlijmbkhdif(BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.Builder builderForValue) {
+                if (this.dlijmbkhdifBuilder_ == null) {
+                    ensureDlijmbkhdifIsMutable();
+                    this.dlijmbkhdif_.add(builderForValue.build());
                     onChanged();
                 } else {
-                    this.modifierListBuilder_.addMessage(index, builderForValue.build());
+                    this.dlijmbkhdifBuilder_.addMessage(builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder addAllModifierList(Iterable<? extends BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier> values) {
-                if (this.modifierListBuilder_ == null) {
-                    ensureModifierListIsMutable();
-                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.modifierList_);
+            public Builder addDlijmbkhdif(int index, BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.Builder builderForValue) {
+                if (this.dlijmbkhdifBuilder_ == null) {
+                    ensureDlijmbkhdifIsMutable();
+                    this.dlijmbkhdif_.add(index, builderForValue.build());
                     onChanged();
                 } else {
-                    this.modifierListBuilder_.addAllMessages(values);
+                    this.dlijmbkhdifBuilder_.addMessage(index, builderForValue.build());
                 }
                 return this;
             }
 
-            public Builder clearModifierList() {
-                if (this.modifierListBuilder_ == null) {
-                    this.modifierList_ = Collections.emptyList();
+            public Builder addAllDlijmbkhdif(Iterable<? extends BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier> values) {
+                if (this.dlijmbkhdifBuilder_ == null) {
+                    ensureDlijmbkhdifIsMutable();
+                    AbstractMessageLite.Builder.addAll((Iterable) values, (List) this.dlijmbkhdif_);
+                    onChanged();
+                } else {
+                    this.dlijmbkhdifBuilder_.addAllMessages(values);
+                }
+                return this;
+            }
+
+            public Builder clearDlijmbkhdif() {
+                if (this.dlijmbkhdifBuilder_ == null) {
+                    this.dlijmbkhdif_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                     onChanged();
                 } else {
-                    this.modifierListBuilder_.clear();
+                    this.dlijmbkhdifBuilder_.clear();
                 }
                 return this;
             }
 
-            public Builder removeModifierList(int index) {
-                if (this.modifierListBuilder_ == null) {
-                    ensureModifierListIsMutable();
-                    this.modifierList_.remove(index);
+            public Builder removeDlijmbkhdif(int index) {
+                if (this.dlijmbkhdifBuilder_ == null) {
+                    ensureDlijmbkhdifIsMutable();
+                    this.dlijmbkhdif_.remove(index);
                     onChanged();
                 } else {
-                    this.modifierListBuilder_.remove(index);
+                    this.dlijmbkhdifBuilder_.remove(index);
                 }
                 return this;
             }
 
-            public BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.Builder getModifierListBuilder(int index) {
-                return getModifierListFieldBuilder().getBuilder(index);
+            public BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.Builder getDlijmbkhdifBuilder(int index) {
+                return getDlijmbkhdifFieldBuilder().getBuilder(index);
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-            public BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifierOrBuilder getModifierListOrBuilder(int index) {
-                if (this.modifierListBuilder_ == null) {
-                    return this.modifierList_.get(index);
+            public BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifierOrBuilder getDlijmbkhdifOrBuilder(int index) {
+                if (this.dlijmbkhdifBuilder_ == null) {
+                    return this.dlijmbkhdif_.get(index);
                 }
-                return this.modifierListBuilder_.getMessageOrBuilder(index);
+                return this.dlijmbkhdifBuilder_.getMessageOrBuilder(index);
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-            public List<? extends BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifierOrBuilder> getModifierListOrBuilderList() {
-                if (this.modifierListBuilder_ != null) {
-                    return this.modifierListBuilder_.getMessageOrBuilderList();
+            public List<? extends BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifierOrBuilder> getDlijmbkhdifOrBuilderList() {
+                if (this.dlijmbkhdifBuilder_ != null) {
+                    return this.dlijmbkhdifBuilder_.getMessageOrBuilderList();
                 }
-                return Collections.unmodifiableList(this.modifierList_);
+                return Collections.unmodifiableList(this.dlijmbkhdif_);
             }
 
-            public BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.Builder addModifierListBuilder() {
-                return getModifierListFieldBuilder().addBuilder(BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.getDefaultInstance());
+            public BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.Builder addDlijmbkhdifBuilder() {
+                return getDlijmbkhdifFieldBuilder().addBuilder(BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.getDefaultInstance());
             }
 
-            public BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.Builder addModifierListBuilder(int index) {
-                return getModifierListFieldBuilder().addBuilder(index, BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.getDefaultInstance());
+            public BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.Builder addDlijmbkhdifBuilder(int index) {
+                return getDlijmbkhdifFieldBuilder().addBuilder(index, BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.getDefaultInstance());
             }
 
-            public List<BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.Builder> getModifierListBuilderList() {
-                return getModifierListFieldBuilder().getBuilderList();
+            public List<BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.Builder> getDlijmbkhdifBuilderList() {
+                return getDlijmbkhdifFieldBuilder().getBuilderList();
             }
 
-            private RepeatedFieldBuilderV3<BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier, BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.Builder, BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifierOrBuilder> getModifierListFieldBuilder() {
-                if (this.modifierListBuilder_ == null) {
-                    this.modifierListBuilder_ = new RepeatedFieldBuilderV3<>(this.modifierList_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
-                    this.modifierList_ = null;
+            private RepeatedFieldBuilderV3<BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier, BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.Builder, BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifierOrBuilder> getDlijmbkhdifFieldBuilder() {
+                if (this.dlijmbkhdifBuilder_ == null) {
+                    this.dlijmbkhdifBuilder_ = new RepeatedFieldBuilderV3<>(this.dlijmbkhdif_, (this.bitField0_ & 1) != 0, getParentForChildren(), isClean());
+                    this.dlijmbkhdif_ = null;
                 }
-                return this.modifierListBuilder_;
+                return this.dlijmbkhdifBuilder_;
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-            public int getTotalRotation() {
-                return this.totalRotation_;
+            public int getAbolecjpbhb() {
+                return this.abolecjpbhb_;
             }
 
-            public Builder setTotalRotation(int value) {
-                this.totalRotation_ = value;
+            public Builder setAbolecjpbhb(int value) {
+                this.abolecjpbhb_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearTotalRotation() {
-                this.totalRotation_ = 0;
+            public Builder clearAbolecjpbhb() {
+                this.abolecjpbhb_ = 0;
                 onChanged();
                 return this;
             }
@@ -1663,35 +1663,35 @@ public final class BreakoutPhysicalObjectOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-            public int getLastHitPeerId() {
-                return this.lastHitPeerId_;
+            public int getHmgmjglmbpl() {
+                return this.hmgmjglmbpl_;
             }
 
-            public Builder setLastHitPeerId(int value) {
-                this.lastHitPeerId_ = value;
+            public Builder setHmgmjglmbpl(int value) {
+                this.hmgmjglmbpl_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearLastHitPeerId() {
-                this.lastHitPeerId_ = 0;
+            public Builder clearHmgmjglmbpl() {
+                this.hmgmjglmbpl_ = 0;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.BreakoutPhysicalObjectOuterClass.BreakoutPhysicalObjectOrBuilder
-            public int getSpeedIncreaseCount() {
-                return this.speedIncreaseCount_;
+            public int getApiembahlab() {
+                return this.apiembahlab_;
             }
 
-            public Builder setSpeedIncreaseCount(int value) {
-                this.speedIncreaseCount_ = value;
+            public Builder setApiembahlab(int value) {
+                this.apiembahlab_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearSpeedIncreaseCount() {
-                this.speedIncreaseCount_ = 0;
+            public Builder clearApiembahlab() {
+                this.apiembahlab_ = 0;
                 onChanged();
                 return this;
             }
@@ -1748,8 +1748,8 @@ public final class BreakoutPhysicalObjectOuterClass {
     }
 
     static {
-        BreakoutBrickInfoOuterClass.getDescriptor();
-        BreakoutPhysicalObjectModifierOuterClass.getDescriptor();
         BreakoutVector2OuterClass.getDescriptor();
+        BreakoutPhysicalObjectModifierOuterClass.getDescriptor();
+        BreakoutBrickInfoOuterClass.getDescriptor();
     }
 }

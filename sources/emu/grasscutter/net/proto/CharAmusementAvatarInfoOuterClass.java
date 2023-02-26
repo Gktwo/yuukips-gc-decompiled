@@ -23,9 +23,9 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CharAmusementAvatarInfoOuterClass.class */
 public final class CharAmusementAvatarInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dCharAmusementAvatarInfo.proto\"S\n\u0017CharAmusementAvatarInfo\u0012\u000b\n\u0003uid\u0018\u000e \u0001(\r\u0012\u0016\n\u000eavatar_id_list\u0018\u0004 \u0003(\r\u0012\u0013\n\u000bpunish_time\u0018\u0005 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001dCharAmusementAvatarInfo.proto\"Q\n\u0017CharAmusementAvatarInfo\u0012\u000b\n\u0003uid\u0018\u0003 \u0001(\r\u0012\u0014\n\favatarIdList\u0018\u000b \u0003(\r\u0012\u0013\n\u000bpmahgkplcgi\u0018\u0001 \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_CharAmusementAvatarInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_CharAmusementAvatarInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CharAmusementAvatarInfo_descriptor, new String[]{"Uid", "AvatarIdList", "PunishTime"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_CharAmusementAvatarInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CharAmusementAvatarInfo_descriptor, new String[]{"Uid", "AvatarIdList", "Pmahgkplcgi"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CharAmusementAvatarInfoOuterClass$CharAmusementAvatarInfoOrBuilder.class */
     public interface CharAmusementAvatarInfoOrBuilder extends MessageOrBuilder {
@@ -37,7 +37,7 @@ public final class CharAmusementAvatarInfoOuterClass {
 
         int getAvatarIdList(int i);
 
-        int getPunishTime();
+        int getPmahgkplcgi();
     }
 
     private CharAmusementAvatarInfoOuterClass() {
@@ -53,13 +53,13 @@ public final class CharAmusementAvatarInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CharAmusementAvatarInfoOuterClass$CharAmusementAvatarInfo.class */
     public static final class CharAmusementAvatarInfo extends GeneratedMessageV3 implements CharAmusementAvatarInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int UID_FIELD_NUMBER = 14;
+        public static final int UID_FIELD_NUMBER = 3;
         private int uid_;
-        public static final int AVATAR_ID_LIST_FIELD_NUMBER = 4;
+        public static final int AVATARIDLIST_FIELD_NUMBER = 11;
         private Internal.IntList avatarIdList_;
         private int avatarIdListMemoizedSerializedSize;
-        public static final int PUNISH_TIME_FIELD_NUMBER = 5;
-        private int punishTime_;
+        public static final int PMAHGKPLCGI_FIELD_NUMBER = 1;
+        private int pmahgkplcgi_;
         private byte memoizedIsInitialized;
         private static final CharAmusementAvatarInfo DEFAULT_INSTANCE = new CharAmusementAvatarInfo();
         private static final Parser<CharAmusementAvatarInfo> PARSER = new AbstractParser<CharAmusementAvatarInfo>() { // from class: emu.grasscutter.net.proto.CharAmusementAvatarInfoOuterClass.CharAmusementAvatarInfo.1
@@ -110,14 +110,20 @@ public final class CharAmusementAvatarInfoOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 32:
+                            case 8:
+                                this.pmahgkplcgi_ = input.readUInt32();
+                                break;
+                            case 24:
+                                this.uid_ = input.readUInt32();
+                                break;
+                            case 88:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.avatarIdList_ = newIntList();
                                     mutable_bitField0_ |= 1;
                                 }
                                 this.avatarIdList_.addInt(input.readUInt32());
                                 break;
-                            case 34:
+                            case 90:
                                 int limit = input.pushLimit(input.readRawVarint32());
                                 if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                     this.avatarIdList_ = newIntList();
@@ -127,12 +133,6 @@ public final class CharAmusementAvatarInfoOuterClass {
                                     this.avatarIdList_.addInt(input.readUInt32());
                                 }
                                 input.popLimit(limit);
-                                break;
-                            case 40:
-                                this.punishTime_ = input.readUInt32();
-                                break;
-                            case 112:
-                                this.uid_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -187,8 +187,8 @@ public final class CharAmusementAvatarInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.CharAmusementAvatarInfoOuterClass.CharAmusementAvatarInfoOrBuilder
-        public int getPunishTime() {
-            return this.punishTime_;
+        public int getPmahgkplcgi() {
+            return this.pmahgkplcgi_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -207,18 +207,18 @@ public final class CharAmusementAvatarInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
+            if (this.pmahgkplcgi_ != 0) {
+                output.writeUInt32(1, this.pmahgkplcgi_);
+            }
+            if (this.uid_ != 0) {
+                output.writeUInt32(3, this.uid_);
+            }
             if (getAvatarIdListList().size() > 0) {
-                output.writeUInt32NoTag(34);
+                output.writeUInt32NoTag(90);
                 output.writeUInt32NoTag(this.avatarIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.avatarIdList_.size(); i++) {
                 output.writeUInt32NoTag(this.avatarIdList_.getInt(i));
-            }
-            if (this.punishTime_ != 0) {
-                output.writeUInt32(5, this.punishTime_);
-            }
-            if (this.uid_ != 0) {
-                output.writeUInt32(14, this.uid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -229,24 +229,25 @@ public final class CharAmusementAvatarInfoOuterClass {
             if (size != -1) {
                 return size;
             }
+            int size2 = 0;
+            if (this.pmahgkplcgi_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.pmahgkplcgi_);
+            }
+            if (this.uid_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(3, this.uid_);
+            }
             int dataSize = 0;
             for (int i = 0; i < this.avatarIdList_.size(); i++) {
                 dataSize += CodedOutputStream.computeUInt32SizeNoTag(this.avatarIdList_.getInt(i));
             }
-            int size2 = 0 + dataSize;
+            int size3 = size2 + dataSize;
             if (!getAvatarIdListList().isEmpty()) {
-                size2 = size2 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
+                size3 = size3 + 1 + CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             this.avatarIdListMemoizedSerializedSize = dataSize;
-            if (this.punishTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.punishTime_);
-            }
-            if (this.uid_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.uid_);
-            }
-            int size3 = size2 + this.unknownFields.getSerializedSize();
-            this.memoizedSize = size3;
-            return size3;
+            int size4 = size3 + this.unknownFields.getSerializedSize();
+            this.memoizedSize = size4;
+            return size4;
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -258,7 +259,7 @@ public final class CharAmusementAvatarInfoOuterClass {
                 return equals(obj);
             }
             CharAmusementAvatarInfo other = (CharAmusementAvatarInfo) obj;
-            return getUid() == other.getUid() && getAvatarIdListList().equals(other.getAvatarIdListList()) && getPunishTime() == other.getPunishTime() && this.unknownFields.equals(other.unknownFields);
+            return getUid() == other.getUid() && getAvatarIdListList().equals(other.getAvatarIdListList()) && getPmahgkplcgi() == other.getPmahgkplcgi() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -266,11 +267,11 @@ public final class CharAmusementAvatarInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 14)) + getUid();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getUid();
             if (getAvatarIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 4)) + getAvatarIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + getAvatarIdListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 5)) + getPunishTime())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 1)) + getPmahgkplcgi())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -352,7 +353,7 @@ public final class CharAmusementAvatarInfoOuterClass {
             private int bitField0_;
             private int uid_;
             private Internal.IntList avatarIdList_ = CharAmusementAvatarInfo.emptyIntList();
-            private int punishTime_;
+            private int pmahgkplcgi_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return CharAmusementAvatarInfoOuterClass.internal_static_CharAmusementAvatarInfo_descriptor;
@@ -383,7 +384,7 @@ public final class CharAmusementAvatarInfoOuterClass {
                 this.uid_ = 0;
                 this.avatarIdList_ = CharAmusementAvatarInfo.emptyIntList();
                 this.bitField0_ &= -2;
-                this.punishTime_ = 0;
+                this.pmahgkplcgi_ = 0;
                 return this;
             }
 
@@ -416,7 +417,7 @@ public final class CharAmusementAvatarInfoOuterClass {
                     this.bitField0_ &= -2;
                 }
                 result.avatarIdList_ = this.avatarIdList_;
-                result.punishTime_ = this.punishTime_;
+                result.pmahgkplcgi_ = this.pmahgkplcgi_;
                 onBuilt();
                 return result;
             }
@@ -477,8 +478,8 @@ public final class CharAmusementAvatarInfoOuterClass {
                     }
                     onChanged();
                 }
-                if (other.getPunishTime() != 0) {
-                    setPunishTime(other.getPunishTime());
+                if (other.getPmahgkplcgi() != 0) {
+                    setPmahgkplcgi(other.getPmahgkplcgi());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -580,18 +581,18 @@ public final class CharAmusementAvatarInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.CharAmusementAvatarInfoOuterClass.CharAmusementAvatarInfoOrBuilder
-            public int getPunishTime() {
-                return this.punishTime_;
+            public int getPmahgkplcgi() {
+                return this.pmahgkplcgi_;
             }
 
-            public Builder setPunishTime(int value) {
-                this.punishTime_ = value;
+            public Builder setPmahgkplcgi(int value) {
+                this.pmahgkplcgi_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearPunishTime() {
-                this.punishTime_ = 0;
+            public Builder clearPmahgkplcgi() {
+                this.pmahgkplcgi_ = 0;
                 onChanged();
                 return this;
             }

@@ -41,13 +41,13 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
     protected transient boolean containsNullKey;
 
     /* renamed from: n */
-    protected transient int f2270n;
+    protected transient int f2234n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2271f;
+    protected final float f2235f;
     protected transient Long2BooleanMap.FastEntrySet entries;
     protected transient LongSet keys;
     protected transient BooleanCollection values;
@@ -58,14 +58,14 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2271f = f;
+            this.f2235f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2270n = arraySize;
+            this.f2234n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2270n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2270n, f);
-            this.key = new long[this.f2270n + 1];
-            this.value = new boolean[this.f2270n + 1];
+            this.mask = this.f2234n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2234n, f);
+            this.key = new long[this.f2234n + 1];
+            this.value = new boolean[this.f2234n + 1];
         }
     }
 
@@ -115,15 +115,15 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2271f);
-        if (needed > this.f2270n) {
+        int needed = HashCommon.arraySize(capacity, this.f2235f);
+        if (needed > this.f2234n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2271f)))));
-        if (needed > this.f2270n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2235f)))));
+        if (needed > this.f2234n) {
             rehash(needed);
         }
     }
@@ -133,8 +133,8 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
         boolean oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f2270n > this.minN && this.size < this.maxFill / 4 && this.f2270n > 16) {
-            rehash(this.f2270n / 2);
+        if (this.f2234n > this.minN && this.size < this.maxFill / 4 && this.f2234n > 16) {
+            rehash(this.f2234n / 2);
         }
         return oldValue;
     }
@@ -142,17 +142,17 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
     /* access modifiers changed from: private */
     public boolean removeNullEntry() {
         this.containsNullKey = false;
-        boolean oldValue = this.value[this.f2270n];
+        boolean oldValue = this.value[this.f2234n];
         this.size--;
-        if (this.f2270n > this.minN && this.size < this.maxFill / 4 && this.f2270n > 16) {
-            rehash(this.f2270n / 2);
+        if (this.f2234n > this.minN && this.size < this.maxFill / 4 && this.f2234n > 16) {
+            rehash(this.f2234n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.longs.AbstractLong2BooleanMap, java.util.Map
     public void putAll(Map<? extends Long, ? extends Boolean> m) {
-        if (((double) this.f2271f) <= 0.5d) {
+        if (((double) this.f2235f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -163,7 +163,7 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
     private int find(long k) {
         long curr;
         if (k == 0) {
-            return this.containsNullKey ? this.f2270n : -(this.f2270n + 1);
+            return this.containsNullKey ? this.f2234n : -(this.f2234n + 1);
         }
         long[] key = this.key;
         int mix = ((int) HashCommon.mix(k)) & this.mask;
@@ -187,7 +187,7 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
     }
 
     private void insert(int pos, long k, boolean v) {
-        if (pos == this.f2270n) {
+        if (pos == this.f2234n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -195,7 +195,7 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f2271f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f2235f));
         }
     }
 
@@ -272,7 +272,7 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
     public boolean get(long k) {
         long curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f2270n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f2234n] : this.defRetValue;
         }
         long[] key = this.key;
         int mix = ((int) HashCommon.mix(k)) & this.mask;
@@ -326,10 +326,10 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
     public boolean containsValue(boolean v) {
         boolean[] value = this.value;
         long[] key = this.key;
-        if (this.containsNullKey && value[this.f2270n] == v) {
+        if (this.containsNullKey && value[this.f2234n] == v) {
             return true;
         }
-        int i = this.f2270n;
+        int i = this.f2234n;
         while (true) {
             i--;
             if (i == 0) {
@@ -345,7 +345,7 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
     public boolean getOrDefault(long k, boolean defaultValue) {
         long curr;
         if (k == 0) {
-            return this.containsNullKey ? this.value[this.f2270n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f2234n] : defaultValue;
         }
         long[] key = this.key;
         int mix = ((int) HashCommon.mix(k)) & this.mask;
@@ -404,7 +404,7 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
                     return true;
                 }
             }
-        } else if (!this.containsNullKey || v != this.value[this.f2270n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f2234n]) {
             return false;
         } else {
             removeNullEntry();
@@ -659,31 +659,31 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
         int last;
 
         /* renamed from: c */
-        int f2272c;
+        int f2236c;
         boolean mustReturnNullKey;
         LongArrayList wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Long2BooleanOpenHashMap.this.f2270n;
+            this.pos = Long2BooleanOpenHashMap.this.f2234n;
             this.last = -1;
-            this.f2272c = Long2BooleanOpenHashMap.this.size;
+            this.f2236c = Long2BooleanOpenHashMap.this.size;
             this.mustReturnNullKey = Long2BooleanOpenHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f2272c != 0;
+            return this.f2236c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2272c--;
+            this.f2236c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Long2BooleanOpenHashMap.this.f2270n;
+                int i = Long2BooleanOpenHashMap.this.f2234n;
                 this.last = i;
                 return i;
             }
@@ -715,13 +715,13 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Long2BooleanOpenHashMap.this.f2270n;
+                int i = Long2BooleanOpenHashMap.this.f2234n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f2272c--;
+                this.f2236c--;
             }
             long[] key = Long2BooleanOpenHashMap.this.key;
-            while (this.f2272c != 0) {
+            while (this.f2236c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -738,12 +738,12 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
                         i3 = Long2BooleanOpenHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f2272c--;
+                    this.f2236c--;
                 } else if (key[this.pos] != 0) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f2272c--;
+                    this.f2236c--;
                 }
             }
         }
@@ -792,7 +792,7 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Long2BooleanOpenHashMap.this.f2270n) {
+            if (this.last == Long2BooleanOpenHashMap.this.f2234n) {
                 Long2BooleanOpenHashMap.this.containsNullKey = false;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
@@ -889,7 +889,7 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
         int max;
 
         /* renamed from: c */
-        int f2273c;
+        int f2237c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -899,16 +899,16 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Long2BooleanOpenHashMap.this.f2270n;
-            this.f2273c = 0;
+            this.max = Long2BooleanOpenHashMap.this.f2234n;
+            this.f2237c = 0;
             this.mustReturnNull = Long2BooleanOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Long2BooleanOpenHashMap.this.f2270n;
-            this.f2273c = 0;
+            this.max = Long2BooleanOpenHashMap.this.f2234n;
+            this.f2237c = 0;
             this.mustReturnNull = Long2BooleanOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -920,14 +920,14 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2273c++;
-                acceptOnIndex(action, Long2BooleanOpenHashMap.this.f2270n);
+                this.f2237c++;
+                acceptOnIndex(action, Long2BooleanOpenHashMap.this.f2234n);
                 return true;
             }
             long[] key = Long2BooleanOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f2273c++;
+                    this.f2237c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -941,14 +941,14 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2273c++;
-                acceptOnIndex(action, Long2BooleanOpenHashMap.this.f2270n);
+                this.f2237c++;
+                acceptOnIndex(action, Long2BooleanOpenHashMap.this.f2234n);
             }
             long[] key = Long2BooleanOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     acceptOnIndex(action, this.pos);
-                    this.f2273c++;
+                    this.f2237c++;
                 }
                 this.pos++;
             }
@@ -956,9 +956,9 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Long2BooleanOpenHashMap.this.size - this.f2273c);
+                return (long) (Long2BooleanOpenHashMap.this.size - this.f2237c);
             }
-            return Math.min((long) (Long2BooleanOpenHashMap.this.size - this.f2273c), ((long) ((((double) Long2BooleanOpenHashMap.this.realSize()) / ((double) Long2BooleanOpenHashMap.this.f2270n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Long2BooleanOpenHashMap.this.size - this.f2237c), ((long) ((((double) Long2BooleanOpenHashMap.this.realSize()) / ((double) Long2BooleanOpenHashMap.this.f2234n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1153,7 +1153,7 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
             long k = ((Long) e.getKey()).longValue();
             boolean v = ((Boolean) e.getValue()).booleanValue();
             if (k == 0) {
-                return Long2BooleanOpenHashMap.this.containsNullKey && Long2BooleanOpenHashMap.this.value[Long2BooleanOpenHashMap.this.f2270n] == v;
+                return Long2BooleanOpenHashMap.this.containsNullKey && Long2BooleanOpenHashMap.this.value[Long2BooleanOpenHashMap.this.f2234n] == v;
             }
             long[] key = Long2BooleanOpenHashMap.this.key;
             int mix = ((int) HashCommon.mix(k)) & Long2BooleanOpenHashMap.this.mask;
@@ -1214,7 +1214,7 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
                     Long2BooleanOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Long2BooleanOpenHashMap.this.containsNullKey || Long2BooleanOpenHashMap.this.value[Long2BooleanOpenHashMap.this.f2270n] != v) {
+            } else if (!Long2BooleanOpenHashMap.this.containsNullKey || Long2BooleanOpenHashMap.this.value[Long2BooleanOpenHashMap.this.f2234n] != v) {
                 return false;
             } else {
                 Long2BooleanOpenHashMap.this.removeNullEntry();
@@ -1235,9 +1235,9 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Long2BooleanMap.Entry> consumer) {
             if (Long2BooleanOpenHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractLong2BooleanMap.BasicEntry(Long2BooleanOpenHashMap.this.key[Long2BooleanOpenHashMap.this.f2270n], Long2BooleanOpenHashMap.this.value[Long2BooleanOpenHashMap.this.f2270n]));
+                consumer.accept(new AbstractLong2BooleanMap.BasicEntry(Long2BooleanOpenHashMap.this.key[Long2BooleanOpenHashMap.this.f2234n], Long2BooleanOpenHashMap.this.value[Long2BooleanOpenHashMap.this.f2234n]));
             }
-            int pos = Long2BooleanOpenHashMap.this.f2270n;
+            int pos = Long2BooleanOpenHashMap.this.f2234n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1253,11 +1253,11 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
         public void fastForEach(Consumer<? super Long2BooleanMap.Entry> consumer) {
             AbstractLong2BooleanMap.BasicEntry entry = new AbstractLong2BooleanMap.BasicEntry();
             if (Long2BooleanOpenHashMap.this.containsNullKey) {
-                entry.key = Long2BooleanOpenHashMap.this.key[Long2BooleanOpenHashMap.this.f2270n];
-                entry.value = Long2BooleanOpenHashMap.this.value[Long2BooleanOpenHashMap.this.f2270n];
+                entry.key = Long2BooleanOpenHashMap.this.key[Long2BooleanOpenHashMap.this.f2234n];
+                entry.value = Long2BooleanOpenHashMap.this.value[Long2BooleanOpenHashMap.this.f2234n];
                 consumer.accept(entry);
             }
-            int pos = Long2BooleanOpenHashMap.this.f2270n;
+            int pos = Long2BooleanOpenHashMap.this.f2234n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1365,9 +1365,9 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
         @Override // p014it.unimi.dsi.fastutil.longs.LongIterable
         public void forEach(LongConsumer consumer) {
             if (Long2BooleanOpenHashMap.this.containsNullKey) {
-                consumer.accept(Long2BooleanOpenHashMap.this.key[Long2BooleanOpenHashMap.this.f2270n]);
+                consumer.accept(Long2BooleanOpenHashMap.this.key[Long2BooleanOpenHashMap.this.f2234n]);
             }
-            int pos = Long2BooleanOpenHashMap.this.f2270n;
+            int pos = Long2BooleanOpenHashMap.this.f2234n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1486,9 +1486,9 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
                 @Override // p014it.unimi.dsi.fastutil.booleans.BooleanIterable
                 public void forEach(BooleanConsumer consumer) {
                     if (Long2BooleanOpenHashMap.this.containsNullKey) {
-                        consumer.accept(Long2BooleanOpenHashMap.this.value[Long2BooleanOpenHashMap.this.f2270n]);
+                        consumer.accept(Long2BooleanOpenHashMap.this.value[Long2BooleanOpenHashMap.this.f2234n]);
                     }
-                    int pos = Long2BooleanOpenHashMap.this.f2270n;
+                    int pos = Long2BooleanOpenHashMap.this.f2234n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1524,8 +1524,8 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2271f)));
-        if (l >= this.f2270n || this.size > HashCommon.maxFill(l, this.f2271f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2235f)));
+        if (l >= this.f2234n || this.size > HashCommon.maxFill(l, this.f2235f)) {
             return true;
         }
         try {
@@ -1543,7 +1543,7 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
         int mask = newN - 1;
         long[] newKey = new long[newN + 1];
         boolean[] newValue = new boolean[newN + 1];
-        int i2 = this.f2270n;
+        int i2 = this.f2234n;
         int j = realSize();
         while (true) {
             j--;
@@ -1562,10 +1562,10 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f2270n];
-                this.f2270n = newN;
+                newValue[newN] = value[this.f2234n];
+                this.f2234n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2270n, this.f2271f);
+                this.maxFill = HashCommon.maxFill(this.f2234n, this.f2235f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1606,7 +1606,7 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
             i++;
         }
         if (this.containsNullKey) {
-            h += this.value[this.f2270n] ? RetcodeOuterClass.Retcode.RET_MP_OTHER_DATA_VERSION_NOT_LATEST_VALUE : RetcodeOuterClass.Retcode.RET_MP_MATCH_FULL_VALUE;
+            h += this.value[this.f2234n] ? RetcodeOuterClass.Retcode.RET_MP_OTHER_DATA_VERSION_NOT_LATEST_VALUE : RetcodeOuterClass.Retcode.RET_MP_MATCH_FULL_VALUE;
         }
         return h;
     }
@@ -1632,12 +1632,12 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f2270n = HashCommon.arraySize(this.size, this.f2271f);
-        this.maxFill = HashCommon.maxFill(this.f2270n, this.f2271f);
-        this.mask = this.f2270n - 1;
-        long[] key = new long[this.f2270n + 1];
+        this.f2234n = HashCommon.arraySize(this.size, this.f2235f);
+        this.maxFill = HashCommon.maxFill(this.f2234n, this.f2235f);
+        this.mask = this.f2234n - 1;
+        long[] key = new long[this.f2234n + 1];
         this.key = key;
-        boolean[] value = new boolean[this.f2270n + 1];
+        boolean[] value = new boolean[this.f2234n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1646,7 +1646,7 @@ public class Long2BooleanOpenHashMap extends AbstractLong2BooleanMap implements 
                 long k = s.readLong();
                 boolean v = s.readBoolean();
                 if (k == 0) {
-                    pos = this.f2270n;
+                    pos = this.f2234n;
                     this.containsNullKey = true;
                 } else {
                     int mix = (int) HashCommon.mix(k);

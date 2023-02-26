@@ -16,7 +16,7 @@ public class QuotedStringTokenizer extends StringTokenizer {
     private boolean _hasToken;
 
     /* renamed from: _i */
-    private int f3160_i;
+    private int f3124_i;
     private int _lastStart;
     private boolean _double;
     private boolean _single;
@@ -28,7 +28,7 @@ public class QuotedStringTokenizer extends StringTokenizer {
         this._returnQuotes = false;
         this._returnDelimiters = false;
         this._hasToken = false;
-        this.f3160_i = 0;
+        this.f3124_i = 0;
         this._lastStart = 0;
         this._double = true;
         this._single = true;
@@ -61,13 +61,13 @@ public class QuotedStringTokenizer extends StringTokenizer {
         if (this._hasToken) {
             return true;
         }
-        this._lastStart = this.f3160_i;
+        this._lastStart = this.f3124_i;
         int state = 0;
         boolean escape = false;
-        while (this.f3160_i < this._string.length()) {
+        while (this.f3124_i < this._string.length()) {
             String str = this._string;
-            int i = this.f3160_i;
-            this.f3160_i = i + 1;
+            int i = this.f3124_i;
+            this.f3124_i = i + 1;
             char c = str.charAt(i);
             switch (state) {
                 case 0:
@@ -122,7 +122,7 @@ public class QuotedStringTokenizer extends StringTokenizer {
                         }
                     } else {
                         if (this._returnDelimiters) {
-                            this.f3160_i--;
+                            this.f3124_i--;
                         }
                         return this._hasToken;
                     }
@@ -197,7 +197,7 @@ public class QuotedStringTokenizer extends StringTokenizer {
     @Override // java.util.StringTokenizer
     public String nextToken(String delim) throws NoSuchElementException {
         this._delim = delim;
-        this.f3160_i = this._lastStart;
+        this.f3124_i = this._lastStart;
         this._token.setLength(0);
         this._hasToken = false;
         return nextToken();

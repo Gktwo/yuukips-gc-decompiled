@@ -119,32 +119,32 @@ public abstract class AbstractByteBigList extends AbstractByteCollection impleme
     public static final class IndexBasedSpliterator extends ByteBigSpliterators.LateBindingSizeIndexBasedSpliterator {
 
         /* renamed from: l */
-        final ByteBigList f1121l;
+        final ByteBigList f1085l;
 
         IndexBasedSpliterator(ByteBigList l, long pos) {
             super(pos);
-            this.f1121l = l;
+            this.f1085l = l;
         }
 
         IndexBasedSpliterator(ByteBigList l, long pos, long maxPos) {
             super(pos, maxPos);
-            this.f1121l = l;
+            this.f1085l = l;
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigSpliterators.LateBindingSizeIndexBasedSpliterator
         protected final long getMaxPosFromBackingStore() {
-            return this.f1121l.size64();
+            return this.f1085l.size64();
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigSpliterators.AbstractIndexBasedSpliterator
         protected final byte get(long i) {
-            return this.f1121l.getByte(i);
+            return this.f1085l.getByte(i);
         }
 
         /* access modifiers changed from: protected */
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigSpliterators.AbstractIndexBasedSpliterator
         public final IndexBasedSpliterator makeForSplit(long pos, long maxPos) {
-            return new IndexBasedSpliterator(this.f1121l, pos, maxPos);
+            return new IndexBasedSpliterator(this.f1085l, pos, maxPos);
         }
     }
 
@@ -1008,11 +1008,11 @@ public abstract class AbstractByteBigList extends AbstractByteCollection impleme
         private static final long serialVersionUID = -7046029254386353129L;
 
         /* renamed from: l */
-        protected final ByteBigList f1119l;
+        protected final ByteBigList f1083l;
         protected final long from;
 
         /* renamed from: to */
-        protected long f1120to;
+        protected long f1084to;
         static final /* synthetic */ boolean $assertionsDisabled;
 
         /* Return type fixed from 'it.unimi.dsi.fastutil.BigListIterator' to match base method */
@@ -1089,18 +1089,18 @@ public abstract class AbstractByteBigList extends AbstractByteCollection impleme
         }
 
         public ByteSubList(ByteBigList l, long from, long to) {
-            this.f1119l = l;
+            this.f1083l = l;
             this.from = from;
-            this.f1120to = to;
+            this.f1084to = to;
         }
 
         /* access modifiers changed from: private */
         public boolean assertRange() {
-            if (!$assertionsDisabled && this.from > this.f1119l.size64()) {
+            if (!$assertionsDisabled && this.from > this.f1083l.size64()) {
                 throw new AssertionError();
-            } else if (!$assertionsDisabled && this.f1120to > this.f1119l.size64()) {
+            } else if (!$assertionsDisabled && this.f1084to > this.f1083l.size64()) {
                 throw new AssertionError();
-            } else if ($assertionsDisabled || this.f1120to >= this.from) {
+            } else if ($assertionsDisabled || this.f1084to >= this.from) {
                 return true;
             } else {
                 throw new AssertionError();
@@ -1109,8 +1109,8 @@ public abstract class AbstractByteBigList extends AbstractByteCollection impleme
 
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteBigList, p014it.unimi.dsi.fastutil.bytes.AbstractByteCollection, p014it.unimi.dsi.fastutil.bytes.ByteCollection
         public boolean add(byte k) {
-            this.f1119l.add(this.f1120to, k);
-            this.f1120to++;
+            this.f1083l.add(this.f1084to, k);
+            this.f1084to++;
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }
@@ -1120,8 +1120,8 @@ public abstract class AbstractByteBigList extends AbstractByteCollection impleme
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteBigList, p014it.unimi.dsi.fastutil.bytes.ByteBigList
         public void add(long index, byte k) {
             ensureIndex(index);
-            this.f1119l.add(this.from + index, k);
-            this.f1120to++;
+            this.f1083l.add(this.from + index, k);
+            this.f1084to++;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1130,32 +1130,32 @@ public abstract class AbstractByteBigList extends AbstractByteCollection impleme
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteBigList, p014it.unimi.dsi.fastutil.BigList
         public boolean addAll(long index, Collection<? extends Byte> c) {
             ensureIndex(index);
-            this.f1120to += (long) c.size();
-            return this.f1119l.addAll(this.from + index, c);
+            this.f1084to += (long) c.size();
+            return this.f1083l.addAll(this.from + index, c);
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigList
         public byte getByte(long index) {
             ensureRestrictedIndex(index);
-            return this.f1119l.getByte(this.from + index);
+            return this.f1083l.getByte(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteBigList, p014it.unimi.dsi.fastutil.bytes.ByteBigList
         public byte removeByte(long index) {
             ensureRestrictedIndex(index);
-            this.f1120to--;
-            return this.f1119l.removeByte(this.from + index);
+            this.f1084to--;
+            return this.f1083l.removeByte(this.from + index);
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteBigList, p014it.unimi.dsi.fastutil.bytes.ByteBigList
         public byte set(long index, byte k) {
             ensureRestrictedIndex(index);
-            return this.f1119l.set(this.from + index, k);
+            return this.f1083l.set(this.from + index, k);
         }
 
         @Override // p014it.unimi.dsi.fastutil.Size64
         public long size64() {
-            return this.f1120to - this.from;
+            return this.f1084to - this.from;
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteBigList, p014it.unimi.dsi.fastutil.bytes.ByteBigList
@@ -1164,15 +1164,15 @@ public abstract class AbstractByteBigList extends AbstractByteCollection impleme
             if (from + length > size64()) {
                 throw new IndexOutOfBoundsException("End index (" + from + length + ") is greater than list size (" + size64() + ")");
             }
-            this.f1119l.getElements(this.from + from, a, offset, length);
+            this.f1083l.getElements(this.from + from, a, offset, length);
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteBigList, p014it.unimi.dsi.fastutil.bytes.ByteBigList
         public void removeElements(long from, long to) {
             ensureIndex(from);
             ensureIndex(to);
-            this.f1119l.removeElements(this.from + from, this.from + to);
-            this.f1120to -= to - from;
+            this.f1083l.removeElements(this.from + from, this.from + to);
+            this.f1084to -= to - from;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1181,8 +1181,8 @@ public abstract class AbstractByteBigList extends AbstractByteCollection impleme
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteBigList, p014it.unimi.dsi.fastutil.bytes.ByteBigList
         public void addElements(long index, byte[][] a, long offset, long length) {
             ensureIndex(index);
-            this.f1119l.addElements(this.from + index, a, offset, length);
-            this.f1120to += length;
+            this.f1083l.addElements(this.from + index, a, offset, length);
+            this.f1084to += length;
             if (!$assertionsDisabled && !assertRange()) {
                 throw new AssertionError();
             }
@@ -1204,7 +1204,7 @@ public abstract class AbstractByteBigList extends AbstractByteCollection impleme
 
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigListIterators.AbstractIndexBasedBigIterator
             protected final byte get(long i) {
-                return ByteSubList.this.f1119l.getByte(ByteSubList.this.from + i);
+                return ByteSubList.this.f1083l.getByte(ByteSubList.this.from + i);
             }
 
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigListIterators.AbstractIndexBasedBigListIterator
@@ -1224,7 +1224,7 @@ public abstract class AbstractByteBigList extends AbstractByteCollection impleme
 
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigListIterators.AbstractIndexBasedBigIterator
             protected final long getMaxPos() {
-                return ByteSubList.this.f1120to - ByteSubList.this.from;
+                return ByteSubList.this.f1084to - ByteSubList.this.from;
             }
 
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteBigListIterators.AbstractIndexBasedBigListIterator, p014it.unimi.dsi.fastutil.bytes.ByteBigListIterator
@@ -1266,7 +1266,7 @@ public abstract class AbstractByteBigList extends AbstractByteCollection impleme
 
             @Override // java.util.Iterator
             public boolean hasNext() {
-                return this.parent.nextIndex() < ByteSubList.this.f1120to;
+                return this.parent.nextIndex() < ByteSubList.this.f1084to;
             }
 
             @Override // p014it.unimi.dsi.fastutil.BidirectionalIterator
@@ -1329,10 +1329,10 @@ public abstract class AbstractByteBigList extends AbstractByteCollection impleme
                 }
                 long currentPos = this.parent.nextIndex();
                 char c = currentPos + n;
-                int i = (c > ByteSubList.this.f1120to ? 1 : (c == ByteSubList.this.f1120to ? 0 : -1));
+                int i = (c > ByteSubList.this.f1084to ? 1 : (c == ByteSubList.this.f1084to ? 0 : -1));
                 long parentNewPos = c;
                 if (i > 0) {
-                    parentNewPos = ByteSubList.this.f1120to;
+                    parentNewPos = ByteSubList.this.f1084to;
                 }
                 return this.parent.skip((parentNewPos == 1 ? 1 : 0) - currentPos);
             }
@@ -1343,17 +1343,17 @@ public abstract class AbstractByteBigList extends AbstractByteCollection impleme
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteBigList, p014it.unimi.dsi.fastutil.bytes.ByteBigList, p014it.unimi.dsi.fastutil.BigList
         public BigListIterator<Byte> listIterator(long index) {
             ensureIndex(index);
-            return this.f1119l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f1119l.listIterator(index + this.from));
+            return this.f1083l instanceof RandomAccess ? new RandomAccessIter(index) : new ParentWrappingIter(this.f1083l.listIterator(index + this.from));
         }
 
         @Override // java.util.Collection, java.lang.Iterable, p014it.unimi.dsi.fastutil.bytes.ByteCollection, p014it.unimi.dsi.fastutil.bytes.ByteIterable, p014it.unimi.dsi.fastutil.bytes.ByteSet, java.util.Set
         public ByteSpliterator spliterator() {
-            return this.f1119l instanceof RandomAccess ? new IndexBasedSpliterator(this.f1119l, this.from, this.f1120to) : spliterator();
+            return this.f1083l instanceof RandomAccess ? new IndexBasedSpliterator(this.f1083l, this.from, this.f1084to) : spliterator();
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteBigList, p014it.unimi.dsi.fastutil.bytes.ByteCollection, p014it.unimi.dsi.fastutil.bytes.ByteIterable
         public IntSpliterator intSpliterator() {
-            if (this.f1119l instanceof RandomAccess) {
+            if (this.f1083l instanceof RandomAccess) {
                 return ByteSpliterators.widen(spliterator());
             }
             return intSpliterator();
@@ -1376,8 +1376,8 @@ public abstract class AbstractByteBigList extends AbstractByteCollection impleme
             if (index == -1) {
                 return false;
             }
-            this.f1120to--;
-            this.f1119l.removeByte(this.from + index);
+            this.f1084to--;
+            this.f1083l.removeByte(this.from + index);
             if ($assertionsDisabled || assertRange()) {
                 return true;
             }

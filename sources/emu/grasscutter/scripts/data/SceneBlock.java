@@ -10,7 +10,7 @@ import java.util.Map;
 public class SceneBlock {
 
     /* renamed from: id */
-    public int f956id;
+    public int f921id;
     public Position max;
     public Position min;
     public int sceneId;
@@ -103,7 +103,7 @@ public class SceneBlock {
             r0 = r7
             r1 = r7
             r2 = r6
-            int r2 = r2.f956id
+            int r2 = r2.f921id
             // decode failed: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I, I, I)Ljava/lang/String;}, Scene//scene_block.lua]}
             r9 = r0
             r0 = r9
@@ -159,7 +159,7 @@ public class SceneBlock {
             r11 = move-exception
             ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
             r1 = r6
-            int r1 = r1.f956id
+            int r1 = r1.f921id
             r2 = r7
             // decode failed: 'invoke-custom' instruction processing error: Failed to process invoke-custom instruction: CallSite{[{ENCODED_METHOD_HANDLE: INVOKE_STATIC: Ljava/lang/invoke/StringConcatFactory;->makeConcatWithConstants(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;}, makeConcatWithConstants, {ENCODED_METHOD_TYPE: (I, I)Ljava/lang/String;}, An error occurred while loading block  in scene ]}
             r2 = r11
@@ -167,7 +167,7 @@ public class SceneBlock {
             ch.qos.logback.classic.Logger r0 = emu.grasscutter.Grasscutter.getLogger()
             java.lang.String r1 = "Successfully loaded block {} in scene {}."
             r2 = r6
-            int r2 = r2.f956id
+            int r2 = r2.f921id
             java.lang.Integer r2 = java.lang.Integer.valueOf(r2)
             r3 = r7
             java.lang.Integer r3 = java.lang.Integer.valueOf(r3)
@@ -216,7 +216,7 @@ public class SceneBlock {
         /*
             r8 = this;
             r0 = r8
-            int r0 = r0.f956id
+            int r0 = r0.f921id
             r1 = r8
             emu.grasscutter.utils.Position r1 = r1.max
             r2 = r8
@@ -236,7 +236,7 @@ public class SceneBlock {
     }
 
     public void setId(int id) {
-        this.f956id = id;
+        this.f921id = id;
     }
 
     public void setMax(Position max) {

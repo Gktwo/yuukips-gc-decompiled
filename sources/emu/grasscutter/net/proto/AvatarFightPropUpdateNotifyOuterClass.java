@@ -24,15 +24,15 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarFightPropUpdateNotifyOuterClass.class */
 public final class AvatarFightPropUpdateNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!AvatarFightPropUpdateNotify.proto\"¯\u0001\n\u001bAvatarFightPropUpdateNotify\u0012\u0013\n\u000bavatar_guid\u0018\r \u0001(\u0004\u0012F\n\u000efight_prop_map\u0018\n \u0003(\u000b2..AvatarFightPropUpdateNotify.FightPropMapEntry\u001a3\n\u0011FightPropMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\u0002:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n!AvatarFightPropUpdateNotify.proto\"¬\u0001\n\u001bAvatarFightPropUpdateNotify\u0012\u0012\n\navatarGuid\u0018\b \u0001(\u0004\u0012D\n\ffightPropMap\u0018\n \u0003(\u000b2..AvatarFightPropUpdateNotify.FightPropMapEntry\u001a3\n\u0011FightPropMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\u0002:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AvatarFightPropUpdateNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarFightPropUpdateNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarFightPropUpdateNotify_descriptor, new String[]{"AvatarGuid", "FightPropMap"});
 
     /* renamed from: internal_static_AvatarFightPropUpdateNotify_FightPropMapEntry_descriptor */
-    private static final Descriptors.Descriptor f641x8a99f647 = internal_static_AvatarFightPropUpdateNotify_descriptor.getNestedTypes().get(0);
+    private static final Descriptors.Descriptor f640x8a99f647 = internal_static_AvatarFightPropUpdateNotify_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_AvatarFightPropUpdateNotify_FightPropMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f642xe6ade5c5 = new GeneratedMessageV3.FieldAccessorTable(f641x8a99f647, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f641xe6ade5c5 = new GeneratedMessageV3.FieldAccessorTable(f640x8a99f647, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarFightPropUpdateNotifyOuterClass$AvatarFightPropUpdateNotifyOrBuilder.class */
     public interface AvatarFightPropUpdateNotifyOrBuilder extends MessageOrBuilder {
@@ -65,9 +65,9 @@ public final class AvatarFightPropUpdateNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarFightPropUpdateNotifyOuterClass$AvatarFightPropUpdateNotify.class */
     public static final class AvatarFightPropUpdateNotify extends GeneratedMessageV3 implements AvatarFightPropUpdateNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 13;
+        public static final int AVATARGUID_FIELD_NUMBER = 8;
         private long avatarGuid_;
-        public static final int FIGHT_PROP_MAP_FIELD_NUMBER = 10;
+        public static final int FIGHTPROPMAP_FIELD_NUMBER = 10;
         private MapField<Integer, Float> fightPropMap_;
         private byte memoizedIsInitialized;
         private static final AvatarFightPropUpdateNotify DEFAULT_INSTANCE = new AvatarFightPropUpdateNotify();
@@ -172,6 +172,9 @@ public final class AvatarFightPropUpdateNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
+                            case 64:
+                                this.avatarGuid_ = input.readUInt64();
+                                break;
                             case 82:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.fightPropMap_ = MapField.newMapField(FightPropMapDefaultEntryHolder.defaultEntry);
@@ -179,9 +182,6 @@ public final class AvatarFightPropUpdateNotifyOuterClass {
                                 }
                                 MapEntry<Integer, Float> fightPropMap__ = (MapEntry) input.readMessage(FightPropMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                                 this.fightPropMap_.getMutableMap().put(fightPropMap__.getKey(), fightPropMap__.getValue());
-                                break;
-                            case 104:
-                                this.avatarGuid_ = input.readUInt64();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -220,7 +220,7 @@ public final class AvatarFightPropUpdateNotifyOuterClass {
         /* access modifiers changed from: private */
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarFightPropUpdateNotifyOuterClass$AvatarFightPropUpdateNotify$FightPropMapDefaultEntryHolder.class */
         public static final class FightPropMapDefaultEntryHolder {
-            static final MapEntry<Integer, Float> defaultEntry = MapEntry.newDefaultInstance(AvatarFightPropUpdateNotifyOuterClass.f641x8a99f647, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.FLOAT, Float.valueOf(0.0f));
+            static final MapEntry<Integer, Float> defaultEntry = MapEntry.newDefaultInstance(AvatarFightPropUpdateNotifyOuterClass.f640x8a99f647, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.FLOAT, Float.valueOf(0.0f));
 
             private FightPropMapDefaultEntryHolder() {
             }
@@ -284,10 +284,10 @@ public final class AvatarFightPropUpdateNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetFightPropMap(), FightPropMapDefaultEntryHolder.defaultEntry, 10);
             if (this.avatarGuid_ != 0) {
-                output.writeUInt64(13, this.avatarGuid_);
+                output.writeUInt64(8, this.avatarGuid_);
             }
+            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetFightPropMap(), FightPropMapDefaultEntryHolder.defaultEntry, 10);
             this.unknownFields.writeTo(output);
         }
 
@@ -298,11 +298,11 @@ public final class AvatarFightPropUpdateNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
+            if (this.avatarGuid_ != 0) {
+                size2 = 0 + CodedOutputStream.computeUInt64Size(8, this.avatarGuid_);
+            }
             for (Map.Entry<Integer, Float> entry : internalGetFightPropMap().getMap().entrySet()) {
                 size2 += CodedOutputStream.computeMessageSize(10, FightPropMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
-            }
-            if (this.avatarGuid_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(13, this.avatarGuid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -326,7 +326,7 @@ public final class AvatarFightPropUpdateNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + Internal.hashLong(getAvatarGuid());
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + Internal.hashLong(getAvatarGuid());
             if (!internalGetFightPropMap().getMap().isEmpty()) {
                 hash = (53 * ((37 * hash) + 10)) + internalGetFightPropMap().hashCode();
             }

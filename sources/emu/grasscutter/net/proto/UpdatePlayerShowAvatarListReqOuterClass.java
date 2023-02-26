@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UpdatePlayerShowAvatarListReqOuterClass.class */
 public final class UpdatePlayerShowAvatarListReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#UpdatePlayerShowAvatarListReq.proto\"T\n\u001dUpdatePlayerShowAvatarListReq\u0012\u001b\n\u0013show_avatar_id_list\u0018\n \u0003(\r\u0012\u0016\n\u000eis_show_avatar\u0018\u0006 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n#UpdatePlayerShowAvatarListReq.proto\"O\n\u001dUpdatePlayerShowAvatarListReq\u0012\u0018\n\u0010showAvatarIdList\u0018\u000b \u0003(\r\u0012\u0014\n\fisShowAvatar\u0018\u0004 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_UpdatePlayerShowAvatarListReq_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_UpdatePlayerShowAvatarListReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_UpdatePlayerShowAvatarListReq_descriptor, new String[]{"ShowAvatarIdList", "IsShowAvatar"});
 
@@ -51,10 +51,10 @@ public final class UpdatePlayerShowAvatarListReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/UpdatePlayerShowAvatarListReqOuterClass$UpdatePlayerShowAvatarListReq.class */
     public static final class UpdatePlayerShowAvatarListReq extends GeneratedMessageV3 implements UpdatePlayerShowAvatarListReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SHOW_AVATAR_ID_LIST_FIELD_NUMBER = 10;
+        public static final int SHOWAVATARIDLIST_FIELD_NUMBER = 11;
         private Internal.IntList showAvatarIdList_;
         private int showAvatarIdListMemoizedSerializedSize;
-        public static final int IS_SHOW_AVATAR_FIELD_NUMBER = 6;
+        public static final int ISSHOWAVATAR_FIELD_NUMBER = 4;
         private boolean isShowAvatar_;
         private byte memoizedIsInitialized;
         private static final UpdatePlayerShowAvatarListReq DEFAULT_INSTANCE = new UpdatePlayerShowAvatarListReq();
@@ -107,17 +107,17 @@ public final class UpdatePlayerShowAvatarListReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 48:
+                                case 32:
                                     this.isShowAvatar_ = input.readBool();
                                     break;
-                                case 80:
+                                case 88:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.showAvatarIdList_ = newIntList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.showAvatarIdList_.addInt(input.readUInt32());
                                     break;
-                                case 82:
+                                case 90:
                                     int limit = input.pushLimit(input.readRawVarint32());
                                     if ((mutable_bitField0_ & 1) == 0 && input.getBytesUntilLimit() > 0) {
                                         this.showAvatarIdList_ = newIntList();
@@ -198,10 +198,10 @@ public final class UpdatePlayerShowAvatarListReqOuterClass {
         public void writeTo(CodedOutputStream output) throws IOException {
             getSerializedSize();
             if (this.isShowAvatar_) {
-                output.writeBool(6, this.isShowAvatar_);
+                output.writeBool(4, this.isShowAvatar_);
             }
             if (getShowAvatarIdListList().size() > 0) {
-                output.writeUInt32NoTag(82);
+                output.writeUInt32NoTag(90);
                 output.writeUInt32NoTag(this.showAvatarIdListMemoizedSerializedSize);
             }
             for (int i = 0; i < this.showAvatarIdList_.size(); i++) {
@@ -218,7 +218,7 @@ public final class UpdatePlayerShowAvatarListReqOuterClass {
             }
             int size2 = 0;
             if (this.isShowAvatar_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(6, this.isShowAvatar_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(4, this.isShowAvatar_);
             }
             int dataSize = 0;
             for (int i = 0; i < this.showAvatarIdList_.size(); i++) {
@@ -253,9 +253,9 @@ public final class UpdatePlayerShowAvatarListReqOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (getShowAvatarIdListCount() > 0) {
-                hash = (53 * ((37 * hash) + 10)) + getShowAvatarIdListList().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + getShowAvatarIdListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 6)) + Internal.hashBoolean(getIsShowAvatar()))) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 4)) + Internal.hashBoolean(getIsShowAvatar()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

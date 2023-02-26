@@ -1,6 +1,5 @@
 package nonapi.p019io.github.classgraph.fastzipfilereader;
 
-import emu.grasscutter.net.packet.PacketOpcodes;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.TimeZone;
@@ -102,7 +101,7 @@ public class FastZipEntry implements Comparable<FastZipEntry> {
             int lastModifiedHour = this.lastModifiedTimeMSDOS >> 11;
             int lastModifiedDay = this.lastModifiedDateMSDOS & 31;
             int lastModifiedMonth = ((this.lastModifiedDateMSDOS >> 5) & 7) - 1;
-            int lastModifiedYear = (this.lastModifiedDateMSDOS >> 9) + PacketOpcodes.TakeCoopRewardReq;
+            int lastModifiedYear = (this.lastModifiedDateMSDOS >> 9) + 1980;
             Calendar lastModifiedCalendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
             lastModifiedCalendar.set(lastModifiedYear, lastModifiedMonth, lastModifiedDay, lastModifiedHour, lastModifiedMinute, lastModifiedSecond);
             lastModifiedCalendar.set(14, 0);

@@ -30,7 +30,7 @@ public final class LineReader {
     @NotNull
 
     /* renamed from: sb */
-    private static final StringBuilder f3087sb = new StringBuilder();
+    private static final StringBuilder f3051sb = new StringBuilder();
 
     private LineReader() {
     }
@@ -73,7 +73,7 @@ public final class LineReader {
             if (!coderResult.isOverflow()) {
                 return nChars;
             }
-            f3087sb.append(chars, 0, nChars - 1);
+            f3051sb.append(chars, 0, nChars - 1);
             charBuf.position(0);
             charBuf.limit(32);
             charBuf.put(chars[nChars - 1]);
@@ -128,11 +128,11 @@ public final class LineReader {
         }
         charsetDecoder.reset();
         byteBuf.position(0);
-        f3087sb.setLength(0);
+        f3051sb.setLength(0);
     }
 
     private final void trimStringBuilder() {
-        f3087sb.setLength(32);
-        f3087sb.trimToSize();
+        f3051sb.setLength(32);
+        f3051sb.trimToSize();
     }
 }

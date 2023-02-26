@@ -23,7 +23,7 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/NightCrowGadgetInfoOuterClass.class */
 public final class NightCrowGadgetInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019NightCrowGadgetInfo.proto\",\n\u0013NightCrowGadgetInfo\u0012\u0015\n\rargument_list\u0018\u0001 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019NightCrowGadgetInfo.proto\"+\n\u0013NightCrowGadgetInfo\u0012\u0014\n\fargumentList\u0018\u0001 \u0003(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_NightCrowGadgetInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_NightCrowGadgetInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_NightCrowGadgetInfo_descriptor, new String[]{"ArgumentList"});
 
@@ -49,7 +49,7 @@ public final class NightCrowGadgetInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/NightCrowGadgetInfoOuterClass$NightCrowGadgetInfo.class */
     public static final class NightCrowGadgetInfo extends GeneratedMessageV3 implements NightCrowGadgetInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ARGUMENT_LIST_FIELD_NUMBER = 1;
+        public static final int ARGUMENTLIST_FIELD_NUMBER = 1;
         private Internal.IntList argumentList_;
         private int argumentListMemoizedSerializedSize;
         private byte memoizedIsInitialized;

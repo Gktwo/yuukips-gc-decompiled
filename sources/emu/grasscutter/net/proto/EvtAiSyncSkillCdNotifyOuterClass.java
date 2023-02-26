@@ -24,13 +24,13 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EvtAiSyncSkillCdNotifyOuterClass.class */
 public final class EvtAiSyncSkillCdNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cEvtAiSyncSkillCdNotify.proto\u001a\u0013AiSkillCdInfo.proto\"\u0001\n\u0016EvtAiSyncSkillCdNotify\u00127\n\tai_cd_map\u0018\u000e \u0003(\u000b2$.EvtAiSyncSkillCdNotify.AiCdMapEntry\u001a>\n\fAiCdMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\u001d\n\u0005value\u0018\u0002 \u0001(\u000b2\u000e.AiSkillCdInfo:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AiSkillCdInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cEvtAiSyncSkillCdNotify.proto\u001a\u0013AiSkillCdInfo.proto\"\u0001\n\u0016EvtAiSyncSkillCdNotify\u00125\n\u0007aiCdMap\u0018\u000b \u0003(\u000b2$.EvtAiSyncSkillCdNotify.AiCdMapEntry\u001a>\n\fAiCdMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\u001d\n\u0005value\u0018\u0002 \u0001(\u000b2\u000e.AiSkillCdInfo:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AiSkillCdInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_EvtAiSyncSkillCdNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_EvtAiSyncSkillCdNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_EvtAiSyncSkillCdNotify_descriptor, new String[]{"AiCdMap"});
     private static final Descriptors.Descriptor internal_static_EvtAiSyncSkillCdNotify_AiCdMapEntry_descriptor = internal_static_EvtAiSyncSkillCdNotify_descriptor.getNestedTypes().get(0);
 
     /* renamed from: internal_static_EvtAiSyncSkillCdNotify_AiCdMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f705x9e746312 = new GeneratedMessageV3.FieldAccessorTable(internal_static_EvtAiSyncSkillCdNotify_AiCdMapEntry_descriptor, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f702x9e746312 = new GeneratedMessageV3.FieldAccessorTable(internal_static_EvtAiSyncSkillCdNotify_AiCdMapEntry_descriptor, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EvtAiSyncSkillCdNotifyOuterClass$EvtAiSyncSkillCdNotifyOrBuilder.class */
     public interface EvtAiSyncSkillCdNotifyOrBuilder extends MessageOrBuilder {
@@ -61,7 +61,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/EvtAiSyncSkillCdNotifyOuterClass$EvtAiSyncSkillCdNotify.class */
     public static final class EvtAiSyncSkillCdNotify extends GeneratedMessageV3 implements EvtAiSyncSkillCdNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AI_CD_MAP_FIELD_NUMBER = 14;
+        public static final int AICDMAP_FIELD_NUMBER = 11;
         private MapField<Integer, AiSkillCdInfoOuterClass.AiSkillCdInfo> aiCdMap_;
         private byte memoizedIsInitialized;
         private static final EvtAiSyncSkillCdNotify DEFAULT_INSTANCE = new EvtAiSyncSkillCdNotify();
@@ -113,7 +113,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
                 r4 = this;
                 r0 = r5
                 switch(r0) {
-                    case 14: goto L_0x0014;
+                    case 11: goto L_0x0014;
                     default: goto L_0x0019;
                 }
                 r0 = r4
@@ -166,7 +166,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 114:
+                            case 90:
                                 if ((mutable_bitField0_ & 1) == 0) {
                                     this.aiCdMap_ = MapField.newMapField(AiCdMapDefaultEntryHolder.defaultEntry);
                                     mutable_bitField0_ |= 1;
@@ -270,7 +270,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetAiCdMap(), AiCdMapDefaultEntryHolder.defaultEntry, 14);
+            GeneratedMessageV3.serializeIntegerMapTo(output, internalGetAiCdMap(), AiCdMapDefaultEntryHolder.defaultEntry, 11);
             this.unknownFields.writeTo(output);
         }
 
@@ -282,7 +282,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
             }
             int size2 = 0;
             for (Map.Entry<Integer, AiSkillCdInfoOuterClass.AiSkillCdInfo> entry : internalGetAiCdMap().getMap().entrySet()) {
-                size2 += CodedOutputStream.computeMessageSize(14, AiCdMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
+                size2 += CodedOutputStream.computeMessageSize(11, AiCdMapDefaultEntryHolder.defaultEntry.newBuilderForType().setKey(entry.getKey()).setValue(entry.getValue()).build());
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -308,7 +308,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (!internalGetAiCdMap().getMap().isEmpty()) {
-                hash = (53 * ((37 * hash) + 14)) + internalGetAiCdMap().hashCode();
+                hash = (53 * ((37 * hash) + 11)) + internalGetAiCdMap().hashCode();
             }
             int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
@@ -429,7 +429,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 14: goto L_0x0014;
+                        case 11: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4
@@ -482,7 +482,7 @@ public final class EvtAiSyncSkillCdNotifyOuterClass {
                     r4 = this;
                     r0 = r5
                     switch(r0) {
-                        case 14: goto L_0x0014;
+                        case 11: goto L_0x0014;
                         default: goto L_0x0019;
                     }
                     r0 = r4

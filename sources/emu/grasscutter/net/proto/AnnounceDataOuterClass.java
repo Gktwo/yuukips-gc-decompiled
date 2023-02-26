@@ -20,35 +20,35 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AnnounceDataOuterClass.class */
 public final class AnnounceDataOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012AnnounceData.proto\"\u0002\n\fAnnounceData\u0012\u0012\n\nbegin_time\u0018\n \u0001(\r\u0012-\n%is_center_system_last_5_every_minutes\u0018\u0003 \u0001(\b\u0012\u0010\n\bend_time\u0018\u0001 \u0001(\r\u0012\u0011\n\tconfig_id\u0018\u0002 \u0001(\r\u0012\u001a\n\u0012center_system_text\u0018\u000b \u0001(\t\u0012\u001c\n\u0014count_down_frequency\u0018\u0005 \u0001(\r\u0012\u001f\n\u0017center_system_frequency\u0018\r \u0001(\r\u0012\u001c\n\u0014dungeon_confirm_text\u0018\u0004 \u0001(\t\u0012\u0017\n\u000fcount_down_text\u0018\u0006 \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0012AnnounceData.proto\"ö\u0001\n\fAnnounceData\u0012\u0010\n\bconfigId\u0018\t \u0001(\r\u0012\u001d\n\u0015centerSystemFrequency\u0018\u000e \u0001(\r\u0012\u000f\n\u0007endTime\u0018\u0005 \u0001(\r\u0012\u0011\n\tbeginTime\u0018\u0004 \u0001(\r\u0012\u0015\n\rcountDownText\u0018\u0007 \u0001(\t\u0012(\n isCenterSystemLast_5EveryMinutes\u0018\f \u0001(\b\u0012\u001a\n\u0012dungeonConfirmText\u0018\u0002 \u0001(\t\u0012\u001a\n\u0012countDownFrequency\u0018\b \u0001(\r\u0012\u0018\n\u0010centerSystemText\u0018\r \u0001(\tB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AnnounceData_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AnnounceData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AnnounceData_descriptor, new String[]{"BeginTime", "IsCenterSystemLast5EveryMinutes", "EndTime", "ConfigId", "CenterSystemText", "CountDownFrequency", "CenterSystemFrequency", "DungeonConfirmText", "CountDownText"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_AnnounceData_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AnnounceData_descriptor, new String[]{"ConfigId", "CenterSystemFrequency", "EndTime", "BeginTime", "CountDownText", "IsCenterSystemLast5EveryMinutes", "DungeonConfirmText", "CountDownFrequency", "CenterSystemText"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AnnounceDataOuterClass$AnnounceDataOrBuilder.class */
     public interface AnnounceDataOrBuilder extends MessageOrBuilder {
-        int getBeginTime();
+        int getConfigId();
 
-        boolean getIsCenterSystemLast5EveryMinutes();
+        int getCenterSystemFrequency();
 
         int getEndTime();
 
-        int getConfigId();
+        int getBeginTime();
 
-        String getCenterSystemText();
+        String getCountDownText();
 
-        ByteString getCenterSystemTextBytes();
+        ByteString getCountDownTextBytes();
 
-        int getCountDownFrequency();
-
-        int getCenterSystemFrequency();
+        boolean getIsCenterSystemLast5EveryMinutes();
 
         String getDungeonConfirmText();
 
         ByteString getDungeonConfirmTextBytes();
 
-        String getCountDownText();
+        int getCountDownFrequency();
 
-        ByteString getCountDownTextBytes();
+        String getCenterSystemText();
+
+        ByteString getCenterSystemTextBytes();
     }
 
     private AnnounceDataOuterClass() {
@@ -64,24 +64,24 @@ public final class AnnounceDataOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AnnounceDataOuterClass$AnnounceData.class */
     public static final class AnnounceData extends GeneratedMessageV3 implements AnnounceDataOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int BEGIN_TIME_FIELD_NUMBER = 10;
-        private int beginTime_;
-        public static final int IS_CENTER_SYSTEM_LAST_5_EVERY_MINUTES_FIELD_NUMBER = 3;
-        private boolean isCenterSystemLast5EveryMinutes_;
-        public static final int END_TIME_FIELD_NUMBER = 1;
-        private int endTime_;
-        public static final int CONFIG_ID_FIELD_NUMBER = 2;
+        public static final int CONFIGID_FIELD_NUMBER = 9;
         private int configId_;
-        public static final int CENTER_SYSTEM_TEXT_FIELD_NUMBER = 11;
-        private volatile Object centerSystemText_;
-        public static final int COUNT_DOWN_FREQUENCY_FIELD_NUMBER = 5;
-        private int countDownFrequency_;
-        public static final int CENTER_SYSTEM_FREQUENCY_FIELD_NUMBER = 13;
+        public static final int CENTERSYSTEMFREQUENCY_FIELD_NUMBER = 14;
         private int centerSystemFrequency_;
-        public static final int DUNGEON_CONFIRM_TEXT_FIELD_NUMBER = 4;
-        private volatile Object dungeonConfirmText_;
-        public static final int COUNT_DOWN_TEXT_FIELD_NUMBER = 6;
+        public static final int ENDTIME_FIELD_NUMBER = 5;
+        private int endTime_;
+        public static final int BEGINTIME_FIELD_NUMBER = 4;
+        private int beginTime_;
+        public static final int COUNTDOWNTEXT_FIELD_NUMBER = 7;
         private volatile Object countDownText_;
+        public static final int ISCENTERSYSTEMLAST_5EVERYMINUTES_FIELD_NUMBER = 12;
+        private boolean isCenterSystemLast5EveryMinutes_;
+        public static final int DUNGEONCONFIRMTEXT_FIELD_NUMBER = 2;
+        private volatile Object dungeonConfirmText_;
+        public static final int COUNTDOWNFREQUENCY_FIELD_NUMBER = 8;
+        private int countDownFrequency_;
+        public static final int CENTERSYSTEMTEXT_FIELD_NUMBER = 13;
+        private volatile Object centerSystemText_;
         private byte memoizedIsInitialized;
         private static final AnnounceData DEFAULT_INSTANCE = new AnnounceData();
         private static final Parser<AnnounceData> PARSER = new AbstractParser<AnnounceData>() { // from class: emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceData.1
@@ -98,9 +98,9 @@ public final class AnnounceDataOuterClass {
 
         private AnnounceData() {
             this.memoizedIsInitialized = -1;
-            this.centerSystemText_ = "";
-            this.dungeonConfirmText_ = "";
             this.countDownText_ = "";
+            this.dungeonConfirmText_ = "";
+            this.centerSystemText_ = "";
         }
 
         /* access modifiers changed from: protected */
@@ -130,31 +130,31 @@ public final class AnnounceDataOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 8:
-                                this.endTime_ = input.readUInt32();
-                                break;
-                            case 16:
-                                this.configId_ = input.readUInt32();
-                                break;
-                            case 24:
-                                this.isCenterSystemLast5EveryMinutes_ = input.readBool();
-                                break;
-                            case 34:
+                            case 18:
                                 this.dungeonConfirmText_ = input.readStringRequireUtf8();
                                 break;
-                            case 40:
-                                this.countDownFrequency_ = input.readUInt32();
-                                break;
-                            case 50:
-                                this.countDownText_ = input.readStringRequireUtf8();
-                                break;
-                            case 80:
+                            case 32:
                                 this.beginTime_ = input.readUInt32();
                                 break;
-                            case 90:
+                            case 40:
+                                this.endTime_ = input.readUInt32();
+                                break;
+                            case 58:
+                                this.countDownText_ = input.readStringRequireUtf8();
+                                break;
+                            case 64:
+                                this.countDownFrequency_ = input.readUInt32();
+                                break;
+                            case 72:
+                                this.configId_ = input.readUInt32();
+                                break;
+                            case 96:
+                                this.isCenterSystemLast5EveryMinutes_ = input.readBool();
+                                break;
+                            case 106:
                                 this.centerSystemText_ = input.readStringRequireUtf8();
                                 break;
-                            case 104:
+                            case 112:
                                 this.centerSystemFrequency_ = input.readUInt32();
                                 break;
                             default:
@@ -187,13 +187,13 @@ public final class AnnounceDataOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
-        public int getBeginTime() {
-            return this.beginTime_;
+        public int getConfigId() {
+            return this.configId_;
         }
 
         @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
-        public boolean getIsCenterSystemLast5EveryMinutes() {
-            return this.isCenterSystemLast5EveryMinutes_;
+        public int getCenterSystemFrequency() {
+            return this.centerSystemFrequency_;
         }
 
         @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
@@ -202,40 +202,35 @@ public final class AnnounceDataOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
-        public int getConfigId() {
-            return this.configId_;
+        public int getBeginTime() {
+            return this.beginTime_;
         }
 
         @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
-        public String getCenterSystemText() {
-            Object ref = this.centerSystemText_;
+        public String getCountDownText() {
+            Object ref = this.countDownText_;
             if (ref instanceof String) {
                 return (String) ref;
             }
             String s = ((ByteString) ref).toStringUtf8();
-            this.centerSystemText_ = s;
+            this.countDownText_ = s;
             return s;
         }
 
         @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
-        public ByteString getCenterSystemTextBytes() {
-            Object ref = this.centerSystemText_;
+        public ByteString getCountDownTextBytes() {
+            Object ref = this.countDownText_;
             if (!(ref instanceof String)) {
                 return (ByteString) ref;
             }
             ByteString b = ByteString.copyFromUtf8((String) ref);
-            this.centerSystemText_ = b;
+            this.countDownText_ = b;
             return b;
         }
 
         @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
-        public int getCountDownFrequency() {
-            return this.countDownFrequency_;
-        }
-
-        @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
-        public int getCenterSystemFrequency() {
-            return this.centerSystemFrequency_;
+        public boolean getIsCenterSystemLast5EveryMinutes() {
+            return this.isCenterSystemLast5EveryMinutes_;
         }
 
         @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
@@ -261,24 +256,29 @@ public final class AnnounceDataOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
-        public String getCountDownText() {
-            Object ref = this.countDownText_;
+        public int getCountDownFrequency() {
+            return this.countDownFrequency_;
+        }
+
+        @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
+        public String getCenterSystemText() {
+            Object ref = this.centerSystemText_;
             if (ref instanceof String) {
                 return (String) ref;
             }
             String s = ((ByteString) ref).toStringUtf8();
-            this.countDownText_ = s;
+            this.centerSystemText_ = s;
             return s;
         }
 
         @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
-        public ByteString getCountDownTextBytes() {
-            Object ref = this.countDownText_;
+        public ByteString getCenterSystemTextBytes() {
+            Object ref = this.centerSystemText_;
             if (!(ref instanceof String)) {
                 return (ByteString) ref;
             }
             ByteString b = ByteString.copyFromUtf8((String) ref);
-            this.countDownText_ = b;
+            this.centerSystemText_ = b;
             return b;
         }
 
@@ -297,32 +297,32 @@ public final class AnnounceDataOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.endTime_ != 0) {
-                output.writeUInt32(1, this.endTime_);
-            }
-            if (this.configId_ != 0) {
-                output.writeUInt32(2, this.configId_);
-            }
-            if (this.isCenterSystemLast5EveryMinutes_) {
-                output.writeBool(3, this.isCenterSystemLast5EveryMinutes_);
-            }
             if (!GeneratedMessageV3.isStringEmpty(this.dungeonConfirmText_)) {
-                GeneratedMessageV3.writeString(output, 4, this.dungeonConfirmText_);
-            }
-            if (this.countDownFrequency_ != 0) {
-                output.writeUInt32(5, this.countDownFrequency_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.countDownText_)) {
-                GeneratedMessageV3.writeString(output, 6, this.countDownText_);
+                GeneratedMessageV3.writeString(output, 2, this.dungeonConfirmText_);
             }
             if (this.beginTime_ != 0) {
-                output.writeUInt32(10, this.beginTime_);
+                output.writeUInt32(4, this.beginTime_);
+            }
+            if (this.endTime_ != 0) {
+                output.writeUInt32(5, this.endTime_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.countDownText_)) {
+                GeneratedMessageV3.writeString(output, 7, this.countDownText_);
+            }
+            if (this.countDownFrequency_ != 0) {
+                output.writeUInt32(8, this.countDownFrequency_);
+            }
+            if (this.configId_ != 0) {
+                output.writeUInt32(9, this.configId_);
+            }
+            if (this.isCenterSystemLast5EveryMinutes_) {
+                output.writeBool(12, this.isCenterSystemLast5EveryMinutes_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.centerSystemText_)) {
-                GeneratedMessageV3.writeString(output, 11, this.centerSystemText_);
+                GeneratedMessageV3.writeString(output, 13, this.centerSystemText_);
             }
             if (this.centerSystemFrequency_ != 0) {
-                output.writeUInt32(13, this.centerSystemFrequency_);
+                output.writeUInt32(14, this.centerSystemFrequency_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -334,32 +334,32 @@ public final class AnnounceDataOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.endTime_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.endTime_);
-            }
-            if (this.configId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(2, this.configId_);
-            }
-            if (this.isCenterSystemLast5EveryMinutes_) {
-                size2 += CodedOutputStream.computeBoolSize(3, this.isCenterSystemLast5EveryMinutes_);
-            }
             if (!GeneratedMessageV3.isStringEmpty(this.dungeonConfirmText_)) {
-                size2 += GeneratedMessageV3.computeStringSize(4, this.dungeonConfirmText_);
-            }
-            if (this.countDownFrequency_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(5, this.countDownFrequency_);
-            }
-            if (!GeneratedMessageV3.isStringEmpty(this.countDownText_)) {
-                size2 += GeneratedMessageV3.computeStringSize(6, this.countDownText_);
+                size2 = 0 + GeneratedMessageV3.computeStringSize(2, this.dungeonConfirmText_);
             }
             if (this.beginTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(10, this.beginTime_);
+                size2 += CodedOutputStream.computeUInt32Size(4, this.beginTime_);
+            }
+            if (this.endTime_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(5, this.endTime_);
+            }
+            if (!GeneratedMessageV3.isStringEmpty(this.countDownText_)) {
+                size2 += GeneratedMessageV3.computeStringSize(7, this.countDownText_);
+            }
+            if (this.countDownFrequency_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(8, this.countDownFrequency_);
+            }
+            if (this.configId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(9, this.configId_);
+            }
+            if (this.isCenterSystemLast5EveryMinutes_) {
+                size2 += CodedOutputStream.computeBoolSize(12, this.isCenterSystemLast5EveryMinutes_);
             }
             if (!GeneratedMessageV3.isStringEmpty(this.centerSystemText_)) {
-                size2 += GeneratedMessageV3.computeStringSize(11, this.centerSystemText_);
+                size2 += GeneratedMessageV3.computeStringSize(13, this.centerSystemText_);
             }
             if (this.centerSystemFrequency_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.centerSystemFrequency_);
+                size2 += CodedOutputStream.computeUInt32Size(14, this.centerSystemFrequency_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -375,7 +375,7 @@ public final class AnnounceDataOuterClass {
                 return equals(obj);
             }
             AnnounceData other = (AnnounceData) obj;
-            return getBeginTime() == other.getBeginTime() && getIsCenterSystemLast5EveryMinutes() == other.getIsCenterSystemLast5EveryMinutes() && getEndTime() == other.getEndTime() && getConfigId() == other.getConfigId() && getCenterSystemText().equals(other.getCenterSystemText()) && getCountDownFrequency() == other.getCountDownFrequency() && getCenterSystemFrequency() == other.getCenterSystemFrequency() && getDungeonConfirmText().equals(other.getDungeonConfirmText()) && getCountDownText().equals(other.getCountDownText()) && this.unknownFields.equals(other.unknownFields);
+            return getConfigId() == other.getConfigId() && getCenterSystemFrequency() == other.getCenterSystemFrequency() && getEndTime() == other.getEndTime() && getBeginTime() == other.getBeginTime() && getCountDownText().equals(other.getCountDownText()) && getIsCenterSystemLast5EveryMinutes() == other.getIsCenterSystemLast5EveryMinutes() && getDungeonConfirmText().equals(other.getDungeonConfirmText()) && getCountDownFrequency() == other.getCountDownFrequency() && getCenterSystemText().equals(other.getCenterSystemText()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -383,7 +383,7 @@ public final class AnnounceDataOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getBeginTime())) + 3)) + Internal.hashBoolean(getIsCenterSystemLast5EveryMinutes()))) + 1)) + getEndTime())) + 2)) + getConfigId())) + 11)) + getCenterSystemText().hashCode())) + 5)) + getCountDownFrequency())) + 13)) + getCenterSystemFrequency())) + 4)) + getDungeonConfirmText().hashCode())) + 6)) + getCountDownText().hashCode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 9)) + getConfigId())) + 14)) + getCenterSystemFrequency())) + 5)) + getEndTime())) + 4)) + getBeginTime())) + 7)) + getCountDownText().hashCode())) + 12)) + Internal.hashBoolean(getIsCenterSystemLast5EveryMinutes()))) + 2)) + getDungeonConfirmText().hashCode())) + 8)) + getCountDownFrequency())) + 13)) + getCenterSystemText().hashCode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -462,15 +462,15 @@ public final class AnnounceDataOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AnnounceDataOuterClass$AnnounceData$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements AnnounceDataOrBuilder {
+            private int configId_;
+            private int centerSystemFrequency_;
+            private int endTime_;
             private int beginTime_;
             private boolean isCenterSystemLast5EveryMinutes_;
-            private int endTime_;
-            private int configId_;
             private int countDownFrequency_;
-            private int centerSystemFrequency_;
-            private Object centerSystemText_ = "";
-            private Object dungeonConfirmText_ = "";
             private Object countDownText_ = "";
+            private Object dungeonConfirmText_ = "";
+            private Object centerSystemText_ = "";
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return AnnounceDataOuterClass.internal_static_AnnounceData_descriptor;
@@ -498,15 +498,15 @@ public final class AnnounceDataOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.beginTime_ = 0;
-                this.isCenterSystemLast5EveryMinutes_ = false;
-                this.endTime_ = 0;
                 this.configId_ = 0;
-                this.centerSystemText_ = "";
-                this.countDownFrequency_ = 0;
                 this.centerSystemFrequency_ = 0;
-                this.dungeonConfirmText_ = "";
+                this.endTime_ = 0;
+                this.beginTime_ = 0;
                 this.countDownText_ = "";
+                this.isCenterSystemLast5EveryMinutes_ = false;
+                this.dungeonConfirmText_ = "";
+                this.countDownFrequency_ = 0;
+                this.centerSystemText_ = "";
                 return this;
             }
 
@@ -532,15 +532,15 @@ public final class AnnounceDataOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public AnnounceData buildPartial() {
                 AnnounceData result = new AnnounceData(this);
-                result.beginTime_ = this.beginTime_;
-                result.isCenterSystemLast5EveryMinutes_ = this.isCenterSystemLast5EveryMinutes_;
-                result.endTime_ = this.endTime_;
                 result.configId_ = this.configId_;
-                result.centerSystemText_ = this.centerSystemText_;
-                result.countDownFrequency_ = this.countDownFrequency_;
                 result.centerSystemFrequency_ = this.centerSystemFrequency_;
-                result.dungeonConfirmText_ = this.dungeonConfirmText_;
+                result.endTime_ = this.endTime_;
+                result.beginTime_ = this.beginTime_;
                 result.countDownText_ = this.countDownText_;
+                result.isCenterSystemLast5EveryMinutes_ = this.isCenterSystemLast5EveryMinutes_;
+                result.dungeonConfirmText_ = this.dungeonConfirmText_;
+                result.countDownFrequency_ = this.countDownFrequency_;
+                result.centerSystemText_ = this.centerSystemText_;
                 onBuilt();
                 return result;
             }
@@ -588,34 +588,34 @@ public final class AnnounceDataOuterClass {
                 if (other == AnnounceData.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getBeginTime() != 0) {
-                    setBeginTime(other.getBeginTime());
+                if (other.getConfigId() != 0) {
+                    setConfigId(other.getConfigId());
                 }
-                if (other.getIsCenterSystemLast5EveryMinutes()) {
-                    setIsCenterSystemLast5EveryMinutes(other.getIsCenterSystemLast5EveryMinutes());
+                if (other.getCenterSystemFrequency() != 0) {
+                    setCenterSystemFrequency(other.getCenterSystemFrequency());
                 }
                 if (other.getEndTime() != 0) {
                     setEndTime(other.getEndTime());
                 }
-                if (other.getConfigId() != 0) {
-                    setConfigId(other.getConfigId());
+                if (other.getBeginTime() != 0) {
+                    setBeginTime(other.getBeginTime());
                 }
-                if (!other.getCenterSystemText().isEmpty()) {
-                    this.centerSystemText_ = other.centerSystemText_;
+                if (!other.getCountDownText().isEmpty()) {
+                    this.countDownText_ = other.countDownText_;
                     onChanged();
                 }
-                if (other.getCountDownFrequency() != 0) {
-                    setCountDownFrequency(other.getCountDownFrequency());
-                }
-                if (other.getCenterSystemFrequency() != 0) {
-                    setCenterSystemFrequency(other.getCenterSystemFrequency());
+                if (other.getIsCenterSystemLast5EveryMinutes()) {
+                    setIsCenterSystemLast5EveryMinutes(other.getIsCenterSystemLast5EveryMinutes());
                 }
                 if (!other.getDungeonConfirmText().isEmpty()) {
                     this.dungeonConfirmText_ = other.dungeonConfirmText_;
                     onChanged();
                 }
-                if (!other.getCountDownText().isEmpty()) {
-                    this.countDownText_ = other.countDownText_;
+                if (other.getCountDownFrequency() != 0) {
+                    setCountDownFrequency(other.getCountDownFrequency());
+                }
+                if (!other.getCenterSystemText().isEmpty()) {
+                    this.centerSystemText_ = other.centerSystemText_;
                     onChanged();
                 }
                 mergeUnknownFields(other.unknownFields);
@@ -651,35 +651,35 @@ public final class AnnounceDataOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
-            public int getBeginTime() {
-                return this.beginTime_;
+            public int getConfigId() {
+                return this.configId_;
             }
 
-            public Builder setBeginTime(int value) {
-                this.beginTime_ = value;
+            public Builder setConfigId(int value) {
+                this.configId_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearBeginTime() {
-                this.beginTime_ = 0;
+            public Builder clearConfigId() {
+                this.configId_ = 0;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
-            public boolean getIsCenterSystemLast5EveryMinutes() {
-                return this.isCenterSystemLast5EveryMinutes_;
+            public int getCenterSystemFrequency() {
+                return this.centerSystemFrequency_;
             }
 
-            public Builder setIsCenterSystemLast5EveryMinutes(boolean value) {
-                this.isCenterSystemLast5EveryMinutes_ = value;
+            public Builder setCenterSystemFrequency(int value) {
+                this.centerSystemFrequency_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearIsCenterSystemLast5EveryMinutes() {
-                this.isCenterSystemLast5EveryMinutes_ = false;
+            public Builder clearCenterSystemFrequency() {
+                this.centerSystemFrequency_ = 0;
                 onChanged();
                 return this;
             }
@@ -702,99 +702,82 @@ public final class AnnounceDataOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
-            public int getConfigId() {
-                return this.configId_;
+            public int getBeginTime() {
+                return this.beginTime_;
             }
 
-            public Builder setConfigId(int value) {
-                this.configId_ = value;
+            public Builder setBeginTime(int value) {
+                this.beginTime_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearConfigId() {
-                this.configId_ = 0;
+            public Builder clearBeginTime() {
+                this.beginTime_ = 0;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
-            public String getCenterSystemText() {
-                Object ref = this.centerSystemText_;
+            public String getCountDownText() {
+                Object ref = this.countDownText_;
                 if (ref instanceof String) {
                     return (String) ref;
                 }
                 String s = ((ByteString) ref).toStringUtf8();
-                this.centerSystemText_ = s;
+                this.countDownText_ = s;
                 return s;
             }
 
             @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
-            public ByteString getCenterSystemTextBytes() {
-                Object ref = this.centerSystemText_;
+            public ByteString getCountDownTextBytes() {
+                Object ref = this.countDownText_;
                 if (!(ref instanceof String)) {
                     return (ByteString) ref;
                 }
                 ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.centerSystemText_ = b;
+                this.countDownText_ = b;
                 return b;
             }
 
-            public Builder setCenterSystemText(String value) {
+            public Builder setCountDownText(String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
-                this.centerSystemText_ = value;
+                this.countDownText_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearCenterSystemText() {
-                this.centerSystemText_ = AnnounceData.getDefaultInstance().getCenterSystemText();
+            public Builder clearCountDownText() {
+                this.countDownText_ = AnnounceData.getDefaultInstance().getCountDownText();
                 onChanged();
                 return this;
             }
 
-            public Builder setCenterSystemTextBytes(ByteString value) {
+            public Builder setCountDownTextBytes(ByteString value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
                 AnnounceData.checkByteStringIsUtf8(value);
-                this.centerSystemText_ = value;
+                this.countDownText_ = value;
                 onChanged();
                 return this;
             }
 
             @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
-            public int getCountDownFrequency() {
-                return this.countDownFrequency_;
+            public boolean getIsCenterSystemLast5EveryMinutes() {
+                return this.isCenterSystemLast5EveryMinutes_;
             }
 
-            public Builder setCountDownFrequency(int value) {
-                this.countDownFrequency_ = value;
+            public Builder setIsCenterSystemLast5EveryMinutes(boolean value) {
+                this.isCenterSystemLast5EveryMinutes_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearCountDownFrequency() {
-                this.countDownFrequency_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
-            public int getCenterSystemFrequency() {
-                return this.centerSystemFrequency_;
-            }
-
-            public Builder setCenterSystemFrequency(int value) {
-                this.centerSystemFrequency_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearCenterSystemFrequency() {
-                this.centerSystemFrequency_ = 0;
+            public Builder clearIsCenterSystemLast5EveryMinutes() {
+                this.isCenterSystemLast5EveryMinutes_ = false;
                 onChanged();
                 return this;
             }
@@ -847,48 +830,65 @@ public final class AnnounceDataOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
-            public String getCountDownText() {
-                Object ref = this.countDownText_;
+            public int getCountDownFrequency() {
+                return this.countDownFrequency_;
+            }
+
+            public Builder setCountDownFrequency(int value) {
+                this.countDownFrequency_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearCountDownFrequency() {
+                this.countDownFrequency_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
+            public String getCenterSystemText() {
+                Object ref = this.centerSystemText_;
                 if (ref instanceof String) {
                     return (String) ref;
                 }
                 String s = ((ByteString) ref).toStringUtf8();
-                this.countDownText_ = s;
+                this.centerSystemText_ = s;
                 return s;
             }
 
             @Override // emu.grasscutter.net.proto.AnnounceDataOuterClass.AnnounceDataOrBuilder
-            public ByteString getCountDownTextBytes() {
-                Object ref = this.countDownText_;
+            public ByteString getCenterSystemTextBytes() {
+                Object ref = this.centerSystemText_;
                 if (!(ref instanceof String)) {
                     return (ByteString) ref;
                 }
                 ByteString b = ByteString.copyFromUtf8((String) ref);
-                this.countDownText_ = b;
+                this.centerSystemText_ = b;
                 return b;
             }
 
-            public Builder setCountDownText(String value) {
+            public Builder setCenterSystemText(String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
-                this.countDownText_ = value;
+                this.centerSystemText_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearCountDownText() {
-                this.countDownText_ = AnnounceData.getDefaultInstance().getCountDownText();
+            public Builder clearCenterSystemText() {
+                this.centerSystemText_ = AnnounceData.getDefaultInstance().getCenterSystemText();
                 onChanged();
                 return this;
             }
 
-            public Builder setCountDownTextBytes(ByteString value) {
+            public Builder setCenterSystemTextBytes(ByteString value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
                 AnnounceData.checkByteStringIsUtf8(value);
-                this.countDownText_ = value;
+                this.centerSystemText_ = value;
                 onChanged();
                 return this;
             }

@@ -177,7 +177,7 @@ public class Pool<T> implements AutoCloseable, Dumpable {
                 if (l != null) {
                     l.close();
                 }
-                copy.forEach(C5747IO::close);
+                copy.forEach(C5739IO::close);
             } else if (l != null) {
                 l.close();
             }
@@ -412,7 +412,7 @@ public class Pool<T> implements AutoCloseable, Dumpable {
             for (Pool<T>.Entry entry : copy) {
                 if (entry.tryRemove()) {
                     if (((Entry) entry).pooled instanceof Closeable) {
-                        C5747IO.close((Closeable) ((Entry) entry).pooled);
+                        C5739IO.close((Closeable) ((Entry) entry).pooled);
                     }
                 } else if (LOGGER.isDebugEnabled()) {
                     LOGGER.debug("Pooled object still in use: {}", entry);

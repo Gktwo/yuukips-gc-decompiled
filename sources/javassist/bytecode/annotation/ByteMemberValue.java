@@ -37,11 +37,11 @@ public class ByteMemberValue extends MemberValue {
     }
 
     public byte getValue() {
-        return (byte) this.f3074cp.getIntegerInfo(this.valueIndex);
+        return (byte) this.f3038cp.getIntegerInfo(this.valueIndex);
     }
 
     public void setValue(byte newValue) {
-        this.valueIndex = this.f3074cp.addIntegerInfo(newValue);
+        this.valueIndex = this.f3038cp.addIntegerInfo(newValue);
     }
 
     public String toString() {

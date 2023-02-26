@@ -15,16 +15,16 @@ public final class ULongArrayKt {
         Intrinsics.checkNotNullParameter(function1, "init");
         long[] jArr = new long[size];
         for (int i = 0; i < size; i++) {
-            jArr[i] = function1.invoke(Integer.valueOf(i)).m7282unboximpl();
+            jArr[i] = function1.invoke(Integer.valueOf(i)).m7279unboximpl();
         }
-        return ULongArray.m7298constructorimpl(jArr);
+        return ULongArray.m7295constructorimpl(jArr);
     }
 
     @SinceKotlin(version = "1.3")
     @ExperimentalUnsignedTypes
     @InlineOnly
     /* renamed from: ulongArrayOf-QwZRm1k  reason: not valid java name */
-    private static final long[] m7303ulongArrayOfQwZRm1k(long... elements) {
+    private static final long[] m7300ulongArrayOfQwZRm1k(long... elements) {
         Intrinsics.checkNotNullParameter(elements, "elements");
         return elements;
     }

@@ -36,6 +36,7 @@ import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.mail.MailHandler;
 import emu.grasscutter.game.managers.FurnitureManager;
 import emu.grasscutter.game.managers.ResinManager;
+import emu.grasscutter.game.managers.SatiationManager;
 import emu.grasscutter.game.managers.SotSManager;
 import emu.grasscutter.game.managers.cooking.ActiveCookCompoundData;
 import emu.grasscutter.game.managers.cooking.CookingCompoundManager;
@@ -86,6 +87,7 @@ import emu.grasscutter.server.packet.send.PacketAvatarGainFlycloakNotify;
 import emu.grasscutter.server.packet.send.PacketCardProductRewardNotify;
 import emu.grasscutter.server.packet.send.PacketClientAbilityInitFinishNotify;
 import emu.grasscutter.server.packet.send.PacketCombatInvocationsNotify;
+import emu.grasscutter.server.packet.send.PacketHomeModuleUnlockNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerApplyEnterMpResultNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerPropChangeNotify;
 import emu.grasscutter.server.packet.send.PacketPlayerPropChangeReasonNotify;
@@ -137,6 +139,7 @@ public class Player {
     private int headImage;
     private int nameCardId;
     private Position position;
+    private Position prevPos;
     private Position rotation;
     private PlayerBirthday birthday;
     private PlayerCodex codex;
@@ -155,7 +158,9 @@ public class Player {
     private Set<Integer> flyCloakList;
     private Set<Integer> costumeList;
     private Set<Integer> rewardedLevels;
+    private Set<Integer> homeRewardedLevels;
     private Set<Integer> realmList;
+    private Set<Integer> seenRealmList;
     private Set<Integer> unlockedForgingBlueprints;
     private Set<Integer> unlockedCombines;
     private Set<Integer> unlockedFurniture;
@@ -203,6 +208,7 @@ public class Player {
     private transient ActivityManager activityManager;
     private transient PlayerBuffManager buffManager;
     private transient PlayerProgressManager progressManager;
+    private transient SatiationManager satiationManager;
     private transient DailyTaskManager dailyTaskManager;
     private PlayerProfile playerProfile;
     private TeamManager teamManager;
@@ -828,6 +834,14 @@ public class Player {
         return this.position;
     }
 
+    public Position getPrevPos() {
+        return this.prevPos;
+    }
+
+    public void setPrevPos(Position prevPos) {
+        this.prevPos = prevPos;
+    }
+
     public Position getRotation() {
         return this.rotation;
     }
@@ -928,12 +942,28 @@ public class Player {
         this.rewardedLevels = rewardedLevels;
     }
 
+    public Set<Integer> getHomeRewardedLevels() {
+        return this.homeRewardedLevels;
+    }
+
+    public void setHomeRewardedLevels(Set<Integer> homeRewardedLevels) {
+        this.homeRewardedLevels = homeRewardedLevels;
+    }
+
     public Set<Integer> getRealmList() {
         return this.realmList;
     }
 
     public void setRealmList(Set<Integer> realmList) {
         this.realmList = realmList;
+    }
+
+    public Set<Integer> getSeenRealmList() {
+        return this.seenRealmList;
+    }
+
+    public void setSeenRealmList(Set<Integer> seenRealmList) {
+        this.seenRealmList = seenRealmList;
     }
 
     public Set<Integer> getUnlockedForgingBlueprints() {
@@ -1112,6 +1142,10 @@ public class Player {
         return this.progressManager;
     }
 
+    public SatiationManager getSatiationManager() {
+        return this.satiationManager;
+    }
+
     public DailyTaskManager getDailyTaskManager() {
         return this.dailyTaskManager;
     }
@@ -1244,6 +1278,7 @@ public class Player {
         this.questManager = new QuestManager(this);
         this.buffManager = new PlayerBuffManager(this);
         this.position = new Position(GameConstants.START_POSITION);
+        this.prevPos = new Position();
         this.rotation = new Position(0.0f, 307.0f, 0.0f);
         this.sceneId = 3;
         this.regionId = 1;
@@ -1279,6 +1314,8 @@ public class Player {
         this.clientAbilityInitFinishHandler = new InvokeHandler<>(PacketClientAbilityInitFinishNotify.class);
         this.birthday = new PlayerBirthday();
         this.rewardedLevels = new HashSet();
+        this.homeRewardedLevels = new HashSet();
+        this.seenRealmList = new HashSet();
         this.moonCardGetTimes = new HashSet();
         this.codex = new PlayerCodex(this);
         this.progressManager = new PlayerProgressManager(this);
@@ -1295,6 +1332,7 @@ public class Player {
         this.furnitureManager = new FurnitureManager(this);
         this.cookingManager = new CookingManager(this);
         this.cookingCompoundManager = new CookingCompoundManager(this);
+        this.satiationManager = new SatiationManager(this);
     }
 
     public Player(GameSession session) {
@@ -1329,6 +1367,7 @@ public class Player {
         this.furnitureManager = new FurnitureManager(this);
         this.cookingManager = new CookingManager(this);
         this.cookingCompoundManager = new CookingCompoundManager(this);
+        this.satiationManager = new SatiationManager(this);
     }
 
     public int getUid() {
@@ -1395,6 +1434,7 @@ public class Player {
 
     public synchronized void setWeather(int weatherId, ClimateType climate) {
         WeatherData w;
+        Grasscutter.getLogger().info("setWeather -> {},{}", Integer.valueOf(weatherId), climate.getShortName());
         if (climate == ClimateType.CLIMATE_NONE && (w = GameData.getWeatherDataMap().get(weatherId)) != null) {
             climate = w.getDefaultClimate();
         }
@@ -1425,6 +1465,19 @@ public class Player {
             return;
         }
         this.realmList.add(Integer.valueOf(realmId));
+        if (realmId > 3) {
+            sendPacket(new PacketHomeModuleUnlockNotify(realmId));
+            getHome().onClaimReward(this);
+        }
+    }
+
+    public void addSeenRealmList(int seenId) {
+        if (this.seenRealmList == null) {
+            this.seenRealmList = new HashSet();
+        } else if (this.seenRealmList.contains(Integer.valueOf(seenId))) {
+            return;
+        }
+        this.seenRealmList.add(Integer.valueOf(seenId));
     }
 
     public int getExpeditionLimit() {
@@ -2154,10 +2207,6 @@ public class Player {
 
     public synchronized void onTick() {
         long time = System.currentTimeMillis();
-        if (getLastPingTime() > time + 60000) {
-            getSession().Logout("Timeout", true);
-            return;
-        }
         getCoopRequests().values().removeIf(this::expireCoopRequest);
         getBuffManager().onTick();
         if (getWorld() != null) {
@@ -2187,6 +2236,7 @@ public class Player {
         }
         getForgingManager().sendPlayerForgingUpdate();
         getResinManager().rechargeResin();
+        getSatiationManager().reduceSatiation();
     }
 
     private synchronized void doDailyReset() {
@@ -2312,22 +2362,30 @@ public class Player {
     }
 
     private boolean setPropertyWithSanityCheck(PlayerProperty prop, int value, boolean sendPacket) {
+        if (prop == null) {
+            return false;
+        }
         int min = getPropertyMin(prop);
         int max = getPropertyMax(prop);
         if (min > value || value > max) {
             return false;
         }
-        int currentValue = this.properties.get(Integer.valueOf(prop.getId())).intValue();
-        this.properties.put(Integer.valueOf(prop.getId()), Integer.valueOf(value));
-        if (!sendPacket) {
+        try {
+            int currentValue = this.properties.get(Integer.valueOf(prop.getId())).intValue();
+            this.properties.put(Integer.valueOf(prop.getId()), Integer.valueOf(value));
+            if (!sendPacket) {
+                return true;
+            }
+            sendPacket(new PacketPlayerPropNotify(this, prop));
+            sendPacket(new PacketPlayerPropChangeNotify(this, prop, value - currentValue));
+            if (prop != PlayerProperty.PROP_PLAYER_EXP) {
+                return true;
+            }
+            sendPacket(new PacketPlayerPropChangeReasonNotify(this, prop, currentValue, value, PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_PLAYER_ADD_EXP));
             return true;
+        } catch (Exception e) {
+            Grasscutter.getLogger().error("Error setPropertyWithSanityCheck", (Throwable) e);
+            return false;
         }
-        sendPacket(new PacketPlayerPropNotify(this, prop));
-        sendPacket(new PacketPlayerPropChangeNotify(this, prop, value - currentValue));
-        if (prop != PlayerProperty.PROP_PLAYER_EXP) {
-            return true;
-        }
-        sendPacket(new PacketPlayerPropChangeReasonNotify(this, prop, currentValue, value, PropChangeReasonOuterClass.PropChangeReason.PROP_CHANGE_REASON_PLAYER_ADD_EXP));
-        return true;
     }
 }

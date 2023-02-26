@@ -2,7 +2,6 @@ package com.google.common.collect;
 
 import com.google.common.annotations.GwtCompatible;
 import com.google.common.annotations.VisibleForTesting;
-import emu.grasscutter.net.proto.ActivityInfoOuterClass;
 import java.util.Spliterator;
 import java.util.Spliterators;
 
@@ -57,7 +56,7 @@ public final class RegularImmutableSet<E> extends ImmutableSet<E> {
 
     @Override // com.google.common.collect.ImmutableCollection, java.util.Collection, java.lang.Iterable
     public Spliterator<E> spliterator() {
-        return Spliterators.spliterator(this.elements, (int) ActivityInfoOuterClass.ActivityInfo.GACHA_INFO_FIELD_NUMBER);
+        return Spliterators.spliterator(this.elements, 1297);
     }
 
     @Override // com.google.common.collect.ImmutableCollection

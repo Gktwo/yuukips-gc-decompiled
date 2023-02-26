@@ -103,7 +103,7 @@ public abstract class MemberAttributeExtension<T> {
 
             @Override // net.bytebuddy.jar.asm.FieldVisitor
             public void visitEnd() {
-                this.fieldAttributeAppender.apply(this.f3103fv, this.fieldDescription, this.annotationValueFilter);
+                this.fieldAttributeAppender.apply(this.f3067fv, this.fieldDescription, this.annotationValueFilter);
                 visitEnd();
             }
         }
@@ -190,7 +190,7 @@ public abstract class MemberAttributeExtension<T> {
             @Override // net.bytebuddy.jar.asm.MethodVisitor
             public void visitCode() {
                 if (this.applicable) {
-                    this.methodAttributeAppender.apply(this.f3104mv, this.methodDescription, this.annotationValueFilter);
+                    this.methodAttributeAppender.apply(this.f3068mv, this.methodDescription, this.annotationValueFilter);
                     this.applicable = false;
                 }
                 visitCode();
@@ -199,7 +199,7 @@ public abstract class MemberAttributeExtension<T> {
             @Override // net.bytebuddy.jar.asm.MethodVisitor
             public void visitEnd() {
                 if (this.applicable) {
-                    this.methodAttributeAppender.apply(this.f3104mv, this.methodDescription, this.annotationValueFilter);
+                    this.methodAttributeAppender.apply(this.f3068mv, this.methodDescription, this.annotationValueFilter);
                     this.applicable = false;
                 }
                 visitEnd();

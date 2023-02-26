@@ -38,7 +38,7 @@ import java.util.Map;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarInfoOuterClass.class */
 public final class AvatarInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010AvatarInfo.proto\u001a\u001aAvatarEquipAffixInfo.proto\u001a\u0015AvatarExcelInfo.proto\u001a\u001bAvatarExpeditionState.proto\u001a\u0016AvatarFetterInfo.proto\u001a\u0015AvatarSkillInfo.proto\u001a\u000fPropValue.proto\u001a\u0015TrialAvatarInfo.proto\"®\t\n\nAvatarInfo\u0012\u0011\n\tavatar_id\u0018\u0001 \u0001(\r\u0012\f\n\u0004guid\u0018\u0002 \u0001(\u0004\u0012*\n\bprop_map\u0018\u0003 \u0003(\u000b2\u0018.AvatarInfo.PropMapEntry\u0012\u0012\n\nlife_state\u0018\u0004 \u0001(\r\u0012\u0017\n\u000fequip_guid_list\u0018\u0005 \u0003(\u0004\u0012\u0016\n\u000etalent_id_list\u0018\u0006 \u0003(\r\u00125\n\u000efight_prop_map\u0018\u0007 \u0003(\u000b2\u001d.AvatarInfo.FightPropMapEntry\u0012+\n\u0011trial_avatar_info\u0018\t \u0001(\u000b2\u0010.TrialAvatarInfo\u0012,\n\tskill_map\u0018\n \u0003(\u000b2\u0019.AvatarInfo.SkillMapEntry\u0012\u0016\n\u000eskill_depot_id\u0018\u000b \u0001(\r\u0012&\n\u000bfetter_info\u0018\f \u0001(\u000b2\u0011.AvatarFetterInfo\u0012\u001e\n\u0016core_proud_skill_level\u0018\r \u0001(\r\u0012!\n\u0019inherent_proud_skill_list\u0018\u000e \u0003(\r\u00127\n\u000fskill_level_map\u0018\u000f \u0003(\u000b2\u001e.AvatarInfo.SkillLevelMapEntry\u00120\n\u0010expedition_state\u0018\u0010 \u0001(\u000e2\u0016.AvatarExpeditionState\u0012M\n\u001bproud_skill_extra_level_map\u0018\u0011 \u0003(\u000b2(.AvatarInfo.ProudSkillExtraLevelMapEntry\u0012\u0010\n\bis_focus\u0018\u0012 \u0001(\b\u0012\u0013\n\u000bavatar_type\u0018\u0013 \u0001(\r\u0012\u001b\n\u0013team_resonance_list\u0018\u0014 \u0003(\r\u0012\u001b\n\u0013wearing_flycloak_id\u0018\u0015 \u0001(\r\u0012/\n\u0010equip_affix_list\u0018\u0016 \u0003(\u000b2\u0015.AvatarEquipAffixInfo\u0012\u0011\n\tborn_time\u0018\u0017 \u0001(\r\u0012#\n\u001bpending_promote_reward_list\u0018\u0018 \u0003(\r\u0012\u0012\n\ncostume_id\u0018\u0019 \u0001(\r\u0012$\n\nexcel_info\u0018\u001a \u0001(\u000b2\u0010.AvatarExcelInfo\u0012\u0011\n\tanim_hash\u0018\u001b \u0001(\r\u001a:\n\fPropMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\u0019\n\u0005value\u0018\u0002 \u0001(\u000b2\n.PropValue:\u00028\u0001\u001a3\n\u0011FightPropMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\u0002:\u00028\u0001\u001aA\n\rSkillMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\u001f\n\u0005value\u0018\u0002 \u0001(\u000b2\u0010.AvatarSkillInfo:\u00028\u0001\u001a4\n\u0012SkillLevelMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001\u001a>\n\u001cProudSkillExtraLevelMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarEquipAffixInfoOuterClass.getDescriptor(), AvatarExcelInfoOuterClass.getDescriptor(), AvatarExpeditionStateOuterClass.getDescriptor(), AvatarFetterInfoOuterClass.getDescriptor(), AvatarSkillInfoOuterClass.getDescriptor(), PropValueOuterClass.getDescriptor(), TrialAvatarInfoOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010AvatarInfo.proto\u001a\u001aAvatarEquipAffixInfo.proto\u001a\u0015AvatarExcelInfo.proto\u001a\u001bAvatarExpeditionState.proto\u001a\u0016AvatarFetterInfo.proto\u001a\u0015AvatarSkillInfo.proto\u001a\u000fPropValue.proto\u001a\u0015TrialAvatarInfo.proto\"\t\n\nAvatarInfo\u0012\u0010\n\bavatarId\u0018\u0001 \u0001(\r\u0012\f\n\u0004guid\u0018\u0002 \u0001(\u0004\u0012)\n\u0007propMap\u0018\u0003 \u0003(\u000b2\u0018.AvatarInfo.PropMapEntry\u0012\u0011\n\tlifeState\u0018\u0004 \u0001(\r\u0012\u0015\n\requipGuidList\u0018\u0005 \u0003(\u0004\u0012\u0014\n\ftalentIdList\u0018\u0006 \u0003(\r\u00123\n\ffightPropMap\u0018\u0007 \u0003(\u000b2\u001d.AvatarInfo.FightPropMapEntry\u0012)\n\u000ftrialAvatarInfo\u0018\t \u0001(\u000b2\u0010.TrialAvatarInfo\u0012+\n\bskillMap\u0018\n \u0003(\u000b2\u0019.AvatarInfo.SkillMapEntry\u0012\u0014\n\fskillDepotId\u0018\u000b \u0001(\r\u0012%\n\nfetterInfo\u0018\f \u0001(\u000b2\u0011.AvatarFetterInfo\u0012\u001b\n\u0013coreProudSkillLevel\u0018\r \u0001(\r\u0012\u001e\n\u0016inherentProudSkillList\u0018\u000e \u0003(\r\u00125\n\rskillLevelMap\u0018\u000f \u0003(\u000b2\u001e.AvatarInfo.SkillLevelMapEntry\u0012/\n\u000fexpeditionState\u0018\u0010 \u0001(\u000e2\u0016.AvatarExpeditionState\u0012I\n\u0017proudSkillExtraLevelMap\u0018\u0011 \u0003(\u000b2(.AvatarInfo.ProudSkillExtraLevelMapEntry\u0012\u000f\n\u0007isFocus\u0018\u0012 \u0001(\b\u0012\u0012\n\navatarType\u0018\u0013 \u0001(\r\u0012\u0019\n\u0011teamResonanceList\u0018\u0014 \u0003(\r\u0012\u0019\n\u0011wearingFlycloakId\u0018\u0015 \u0001(\r\u0012-\n\u000eequipAffixList\u0018\u0016 \u0003(\u000b2\u0015.AvatarEquipAffixInfo\u0012\u0010\n\bbornTime\u0018\u0017 \u0001(\r\u0012 \n\u0018pendingPromoteRewardList\u0018\u0018 \u0003(\r\u0012\u0011\n\tcostumeId\u0018\u0019 \u0001(\r\u0012#\n\texcelInfo\u0018\u001a \u0001(\u000b2\u0010.AvatarExcelInfo\u0012\u0010\n\banimHash\u0018\u001b \u0001(\r\u001a:\n\fPropMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\u0019\n\u0005value\u0018\u0002 \u0001(\u000b2\n.PropValue:\u00028\u0001\u001a3\n\u0011FightPropMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\u0002:\u00028\u0001\u001aA\n\rSkillMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\u001f\n\u0005value\u0018\u0002 \u0001(\u000b2\u0010.AvatarSkillInfo:\u00028\u0001\u001a4\n\u0012SkillLevelMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001\u001a>\n\u001cProudSkillExtraLevelMapEntry\u0012\u000b\n\u0003key\u0018\u0001 \u0001(\r\u0012\r\n\u0005value\u0018\u0002 \u0001(\r:\u00028\u0001B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{AvatarEquipAffixInfoOuterClass.getDescriptor(), AvatarExcelInfoOuterClass.getDescriptor(), AvatarExpeditionStateOuterClass.getDescriptor(), AvatarFetterInfoOuterClass.getDescriptor(), AvatarSkillInfoOuterClass.getDescriptor(), PropValueOuterClass.getDescriptor(), TrialAvatarInfoOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AvatarInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarInfo_descriptor, new String[]{"AvatarId", "Guid", "PropMap", "LifeState", "EquipGuidList", "TalentIdList", "FightPropMap", "TrialAvatarInfo", "SkillMap", "SkillDepotId", "FetterInfo", "CoreProudSkillLevel", "InherentProudSkillList", "SkillLevelMap", "ExpeditionState", "ProudSkillExtraLevelMap", "IsFocus", "AvatarType", "TeamResonanceList", "WearingFlycloakId", "EquipAffixList", "BornTime", "PendingPromoteRewardList", "CostumeId", "ExcelInfo", "AnimHash"});
     private static final Descriptors.Descriptor internal_static_AvatarInfo_PropMapEntry_descriptor = internal_static_AvatarInfo_descriptor.getNestedTypes().get(0);
@@ -51,10 +51,10 @@ public final class AvatarInfoOuterClass {
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarInfo_SkillLevelMapEntry_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarInfo_SkillLevelMapEntry_descriptor, new String[]{"Key", "Value"});
 
     /* renamed from: internal_static_AvatarInfo_ProudSkillExtraLevelMapEntry_descriptor */
-    private static final Descriptors.Descriptor f643xd297af06 = internal_static_AvatarInfo_descriptor.getNestedTypes().get(4);
+    private static final Descriptors.Descriptor f642xd297af06 = internal_static_AvatarInfo_descriptor.getNestedTypes().get(4);
 
     /* renamed from: internal_static_AvatarInfo_ProudSkillExtraLevelMapEntry_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f644xb0826f84 = new GeneratedMessageV3.FieldAccessorTable(f643xd297af06, new String[]{"Key", "Value"});
+    private static final GeneratedMessageV3.FieldAccessorTable f643xb0826f84 = new GeneratedMessageV3.FieldAccessorTable(f642xd297af06, new String[]{"Key", "Value"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarInfoOuterClass$AvatarInfoOrBuilder.class */
     public interface AvatarInfoOrBuilder extends MessageOrBuilder {
@@ -221,62 +221,62 @@ public final class AvatarInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarInfoOuterClass$AvatarInfo.class */
     public static final class AvatarInfo extends GeneratedMessageV3 implements AvatarInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_ID_FIELD_NUMBER = 1;
+        public static final int AVATARID_FIELD_NUMBER = 1;
         private int avatarId_;
         public static final int GUID_FIELD_NUMBER = 2;
         private long guid_;
-        public static final int PROP_MAP_FIELD_NUMBER = 3;
+        public static final int PROPMAP_FIELD_NUMBER = 3;
         private MapField<Integer, PropValueOuterClass.PropValue> propMap_;
-        public static final int LIFE_STATE_FIELD_NUMBER = 4;
+        public static final int LIFESTATE_FIELD_NUMBER = 4;
         private int lifeState_;
-        public static final int EQUIP_GUID_LIST_FIELD_NUMBER = 5;
+        public static final int EQUIPGUIDLIST_FIELD_NUMBER = 5;
         private Internal.LongList equipGuidList_;
         private int equipGuidListMemoizedSerializedSize;
-        public static final int TALENT_ID_LIST_FIELD_NUMBER = 6;
+        public static final int TALENTIDLIST_FIELD_NUMBER = 6;
         private Internal.IntList talentIdList_;
         private int talentIdListMemoizedSerializedSize;
-        public static final int FIGHT_PROP_MAP_FIELD_NUMBER = 7;
+        public static final int FIGHTPROPMAP_FIELD_NUMBER = 7;
         private MapField<Integer, Float> fightPropMap_;
-        public static final int TRIAL_AVATAR_INFO_FIELD_NUMBER = 9;
+        public static final int TRIALAVATARINFO_FIELD_NUMBER = 9;
         private TrialAvatarInfoOuterClass.TrialAvatarInfo trialAvatarInfo_;
-        public static final int SKILL_MAP_FIELD_NUMBER = 10;
+        public static final int SKILLMAP_FIELD_NUMBER = 10;
         private MapField<Integer, AvatarSkillInfoOuterClass.AvatarSkillInfo> skillMap_;
-        public static final int SKILL_DEPOT_ID_FIELD_NUMBER = 11;
+        public static final int SKILLDEPOTID_FIELD_NUMBER = 11;
         private int skillDepotId_;
-        public static final int FETTER_INFO_FIELD_NUMBER = 12;
+        public static final int FETTERINFO_FIELD_NUMBER = 12;
         private AvatarFetterInfoOuterClass.AvatarFetterInfo fetterInfo_;
-        public static final int CORE_PROUD_SKILL_LEVEL_FIELD_NUMBER = 13;
+        public static final int COREPROUDSKILLLEVEL_FIELD_NUMBER = 13;
         private int coreProudSkillLevel_;
-        public static final int INHERENT_PROUD_SKILL_LIST_FIELD_NUMBER = 14;
+        public static final int INHERENTPROUDSKILLLIST_FIELD_NUMBER = 14;
         private Internal.IntList inherentProudSkillList_;
         private int inherentProudSkillListMemoizedSerializedSize;
-        public static final int SKILL_LEVEL_MAP_FIELD_NUMBER = 15;
+        public static final int SKILLLEVELMAP_FIELD_NUMBER = 15;
         private MapField<Integer, Integer> skillLevelMap_;
-        public static final int EXPEDITION_STATE_FIELD_NUMBER = 16;
+        public static final int EXPEDITIONSTATE_FIELD_NUMBER = 16;
         private int expeditionState_;
-        public static final int PROUD_SKILL_EXTRA_LEVEL_MAP_FIELD_NUMBER = 17;
+        public static final int PROUDSKILLEXTRALEVELMAP_FIELD_NUMBER = 17;
         private MapField<Integer, Integer> proudSkillExtraLevelMap_;
-        public static final int IS_FOCUS_FIELD_NUMBER = 18;
+        public static final int ISFOCUS_FIELD_NUMBER = 18;
         private boolean isFocus_;
-        public static final int AVATAR_TYPE_FIELD_NUMBER = 19;
+        public static final int AVATARTYPE_FIELD_NUMBER = 19;
         private int avatarType_;
-        public static final int TEAM_RESONANCE_LIST_FIELD_NUMBER = 20;
+        public static final int TEAMRESONANCELIST_FIELD_NUMBER = 20;
         private Internal.IntList teamResonanceList_;
         private int teamResonanceListMemoizedSerializedSize;
-        public static final int WEARING_FLYCLOAK_ID_FIELD_NUMBER = 21;
+        public static final int WEARINGFLYCLOAKID_FIELD_NUMBER = 21;
         private int wearingFlycloakId_;
-        public static final int EQUIP_AFFIX_LIST_FIELD_NUMBER = 22;
+        public static final int EQUIPAFFIXLIST_FIELD_NUMBER = 22;
         private List<AvatarEquipAffixInfoOuterClass.AvatarEquipAffixInfo> equipAffixList_;
-        public static final int BORN_TIME_FIELD_NUMBER = 23;
+        public static final int BORNTIME_FIELD_NUMBER = 23;
         private int bornTime_;
-        public static final int PENDING_PROMOTE_REWARD_LIST_FIELD_NUMBER = 24;
+        public static final int PENDINGPROMOTEREWARDLIST_FIELD_NUMBER = 24;
         private Internal.IntList pendingPromoteRewardList_;
         private int pendingPromoteRewardListMemoizedSerializedSize;
-        public static final int COSTUME_ID_FIELD_NUMBER = 25;
+        public static final int COSTUMEID_FIELD_NUMBER = 25;
         private int costumeId_;
-        public static final int EXCEL_INFO_FIELD_NUMBER = 26;
+        public static final int EXCELINFO_FIELD_NUMBER = 26;
         private AvatarExcelInfoOuterClass.AvatarExcelInfo excelInfo_;
-        public static final int ANIM_HASH_FIELD_NUMBER = 27;
+        public static final int ANIMHASH_FIELD_NUMBER = 27;
         private int animHash_;
         private byte memoizedIsInitialized;
         private static final AvatarInfo DEFAULT_INSTANCE = new AvatarInfo();
@@ -616,7 +616,7 @@ public final class AvatarInfoOuterClass {
                             case 200:
                                 this.costumeId_ = input.readUInt32();
                                 break;
-                            case PacketOpcodes.SceneForceUnlockNotify:
+                            case PacketOpcodes.ExecuteGadgetLuaReq:
                                 AvatarExcelInfoOuterClass.AvatarExcelInfo.Builder subBuilder3 = this.excelInfo_ != null ? this.excelInfo_.toBuilder() : null;
                                 this.excelInfo_ = (AvatarExcelInfoOuterClass.AvatarExcelInfo) input.readMessage(AvatarExcelInfoOuterClass.AvatarExcelInfo.parser(), extensionRegistry);
                                 if (subBuilder3 == null) {
@@ -999,7 +999,7 @@ public final class AvatarInfoOuterClass {
         /* access modifiers changed from: private */
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarInfoOuterClass$AvatarInfo$ProudSkillExtraLevelMapDefaultEntryHolder.class */
         public static final class ProudSkillExtraLevelMapDefaultEntryHolder {
-            static final MapEntry<Integer, Integer> defaultEntry = MapEntry.newDefaultInstance(AvatarInfoOuterClass.f643xd297af06, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.UINT32, 0);
+            static final MapEntry<Integer, Integer> defaultEntry = MapEntry.newDefaultInstance(AvatarInfoOuterClass.f642xd297af06, WireFormat.FieldType.UINT32, 0, WireFormat.FieldType.UINT32, 0);
 
             private ProudSkillExtraLevelMapDefaultEntryHolder() {
             }

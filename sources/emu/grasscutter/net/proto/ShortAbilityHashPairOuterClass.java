@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ShortAbilityHashPairOuterClass.class */
 public final class ShortAbilityHashPairOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aShortAbilityHashPair.proto\"N\n\u0014ShortAbilityHashPair\u0012\u0019\n\u0011ability_name_hash\u0018\u0006 \u0001(\u000f\u0012\u001b\n\u0013ability_config_hash\u0018\u000f \u0001(\u000fB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001aShortAbilityHashPair.proto\"J\n\u0014ShortAbilityHashPair\u0012\u0017\n\u000fabilityNameHash\u0018\u0006 \u0001(\u0007\u0012\u0019\n\u0011abilityConfigHash\u0018\n \u0001(\u0007B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ShortAbilityHashPair_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ShortAbilityHashPair_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ShortAbilityHashPair_descriptor, new String[]{"AbilityNameHash", "AbilityConfigHash"});
 
@@ -43,9 +43,9 @@ public final class ShortAbilityHashPairOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ShortAbilityHashPairOuterClass$ShortAbilityHashPair.class */
     public static final class ShortAbilityHashPair extends GeneratedMessageV3 implements ShortAbilityHashPairOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int ABILITY_NAME_HASH_FIELD_NUMBER = 6;
+        public static final int ABILITYNAMEHASH_FIELD_NUMBER = 6;
         private int abilityNameHash_;
-        public static final int ABILITY_CONFIG_HASH_FIELD_NUMBER = 15;
+        public static final int ABILITYCONFIGHASH_FIELD_NUMBER = 10;
         private int abilityConfigHash_;
         private byte memoizedIsInitialized;
         private static final ShortAbilityHashPair DEFAULT_INSTANCE = new ShortAbilityHashPair();
@@ -93,10 +93,10 @@ public final class ShortAbilityHashPairOuterClass {
                                 done = true;
                                 break;
                             case 53:
-                                this.abilityNameHash_ = input.readSFixed32();
+                                this.abilityNameHash_ = input.readFixed32();
                                 break;
-                            case 125:
-                                this.abilityConfigHash_ = input.readSFixed32();
+                            case 85:
+                                this.abilityConfigHash_ = input.readFixed32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -153,10 +153,10 @@ public final class ShortAbilityHashPairOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.abilityNameHash_ != 0) {
-                output.writeSFixed32(6, this.abilityNameHash_);
+                output.writeFixed32(6, this.abilityNameHash_);
             }
             if (this.abilityConfigHash_ != 0) {
-                output.writeSFixed32(15, this.abilityConfigHash_);
+                output.writeFixed32(10, this.abilityConfigHash_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class ShortAbilityHashPairOuterClass {
             }
             int size2 = 0;
             if (this.abilityNameHash_ != 0) {
-                size2 = 0 + CodedOutputStream.computeSFixed32Size(6, this.abilityNameHash_);
+                size2 = 0 + CodedOutputStream.computeFixed32Size(6, this.abilityNameHash_);
             }
             if (this.abilityConfigHash_ != 0) {
-                size2 += CodedOutputStream.computeSFixed32Size(15, this.abilityConfigHash_);
+                size2 += CodedOutputStream.computeFixed32Size(10, this.abilityConfigHash_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class ShortAbilityHashPairOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getAbilityNameHash())) + 15)) + getAbilityConfigHash())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + getAbilityNameHash())) + 10)) + getAbilityConfigHash())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

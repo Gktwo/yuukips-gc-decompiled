@@ -38,13 +38,13 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
     protected transient boolean containsNullKey;
 
     /* renamed from: n */
-    protected transient int f1879n;
+    protected transient int f1843n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f1880f;
+    protected final float f1844f;
     protected transient Float2LongMap.FastEntrySet entries;
     protected transient FloatSet keys;
     protected transient LongCollection values;
@@ -121,14 +121,14 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f1880f = f;
+            this.f1844f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f1879n = arraySize;
+            this.f1843n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f1879n - 1;
-            this.maxFill = HashCommon.maxFill(this.f1879n, f);
-            this.key = new float[this.f1879n + 1];
-            this.value = new long[this.f1879n + 1];
+            this.mask = this.f1843n - 1;
+            this.maxFill = HashCommon.maxFill(this.f1843n, f);
+            this.key = new float[this.f1843n + 1];
+            this.value = new long[this.f1843n + 1];
         }
     }
 
@@ -178,15 +178,15 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f1880f);
-        if (needed > this.f1879n) {
+        int needed = HashCommon.arraySize(capacity, this.f1844f);
+        if (needed > this.f1843n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1880f)))));
-        if (needed > this.f1879n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f1844f)))));
+        if (needed > this.f1843n) {
             rehash(needed);
         }
     }
@@ -196,8 +196,8 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
         long oldValue = this.value[pos];
         this.size--;
         shiftKeys(pos);
-        if (this.f1879n > this.minN && this.size < this.maxFill / 4 && this.f1879n > 16) {
-            rehash(this.f1879n / 2);
+        if (this.f1843n > this.minN && this.size < this.maxFill / 4 && this.f1843n > 16) {
+            rehash(this.f1843n / 2);
         }
         return oldValue;
     }
@@ -205,17 +205,17 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
     /* access modifiers changed from: private */
     public long removeNullEntry() {
         this.containsNullKey = false;
-        long oldValue = this.value[this.f1879n];
+        long oldValue = this.value[this.f1843n];
         this.size--;
-        if (this.f1879n > this.minN && this.size < this.maxFill / 4 && this.f1879n > 16) {
-            rehash(this.f1879n / 2);
+        if (this.f1843n > this.minN && this.size < this.maxFill / 4 && this.f1843n > 16) {
+            rehash(this.f1843n / 2);
         }
         return oldValue;
     }
 
     @Override // p014it.unimi.dsi.fastutil.floats.AbstractFloat2LongMap, java.util.Map
     public void putAll(Map<? extends Float, ? extends Long> m) {
-        if (((double) this.f1880f) <= 0.5d) {
+        if (((double) this.f1844f) <= 0.5d) {
             ensureCapacity(m.size());
         } else {
             tryCapacity((long) (size() + m.size()));
@@ -226,7 +226,7 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
     private int find(float k) {
         float curr;
         if (Float.floatToIntBits(k) == 0) {
-            return this.containsNullKey ? this.f1879n : -(this.f1879n + 1);
+            return this.containsNullKey ? this.f1843n : -(this.f1843n + 1);
         }
         float[] key = this.key;
         int mix = HashCommon.mix(HashCommon.float2int(k)) & this.mask;
@@ -250,7 +250,7 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
     }
 
     private void insert(int pos, float k, long v) {
-        if (pos == this.f1879n) {
+        if (pos == this.f1843n) {
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -258,7 +258,7 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
         int i = this.size;
         this.size = i + 1;
         if (i >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f1880f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f1844f));
         }
     }
 
@@ -302,9 +302,9 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
                 return addToValue(pos, incr);
             }
         } else if (this.containsNullKey) {
-            return addToValue(this.f1879n, incr);
+            return addToValue(this.f1843n, incr);
         } else {
-            pos = this.f1879n;
+            pos = this.f1843n;
             this.containsNullKey = true;
         }
         this.key[pos] = k;
@@ -312,7 +312,7 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 >= this.maxFill) {
-            rehash(HashCommon.arraySize(this.size + 1, this.f1880f));
+            rehash(HashCommon.arraySize(this.size + 1, this.f1844f));
         }
         return this.defRetValue;
     }
@@ -378,7 +378,7 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
     public long get(float k) {
         float curr;
         if (Float.floatToIntBits(k) == 0) {
-            return this.containsNullKey ? this.value[this.f1879n] : this.defRetValue;
+            return this.containsNullKey ? this.value[this.f1843n] : this.defRetValue;
         }
         float[] key = this.key;
         int mix = HashCommon.mix(HashCommon.float2int(k)) & this.mask;
@@ -432,10 +432,10 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
     public boolean containsValue(long v) {
         long[] value = this.value;
         float[] key = this.key;
-        if (this.containsNullKey && value[this.f1879n] == v) {
+        if (this.containsNullKey && value[this.f1843n] == v) {
             return true;
         }
-        int i = this.f1879n;
+        int i = this.f1843n;
         while (true) {
             i--;
             if (i == 0) {
@@ -451,7 +451,7 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
     public long getOrDefault(float k, long defaultValue) {
         float curr;
         if (Float.floatToIntBits(k) == 0) {
-            return this.containsNullKey ? this.value[this.f1879n] : defaultValue;
+            return this.containsNullKey ? this.value[this.f1843n] : defaultValue;
         }
         float[] key = this.key;
         int mix = HashCommon.mix(HashCommon.float2int(k)) & this.mask;
@@ -510,7 +510,7 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
                     return true;
                 }
             }
-        } else if (!this.containsNullKey || v != this.value[this.f1879n]) {
+        } else if (!this.containsNullKey || v != this.value[this.f1843n]) {
             return false;
         } else {
             removeNullEntry();
@@ -692,31 +692,31 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
         int last;
 
         /* renamed from: c */
-        int f1881c;
+        int f1845c;
         boolean mustReturnNullKey;
         FloatArrayList wrapped;
 
         abstract void acceptOnIndex(ConsumerType consumertype, int i);
 
         private MapIterator() {
-            this.pos = Float2LongOpenHashMap.this.f1879n;
+            this.pos = Float2LongOpenHashMap.this.f1843n;
             this.last = -1;
-            this.f1881c = Float2LongOpenHashMap.this.size;
+            this.f1845c = Float2LongOpenHashMap.this.size;
             this.mustReturnNullKey = Float2LongOpenHashMap.this.containsNullKey;
         }
 
         public boolean hasNext() {
-            return this.f1881c != 0;
+            return this.f1845c != 0;
         }
 
         public int nextEntry() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f1881c--;
+            this.f1845c--;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Float2LongOpenHashMap.this.f1879n;
+                int i = Float2LongOpenHashMap.this.f1843n;
                 this.last = i;
                 return i;
             }
@@ -748,13 +748,13 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
             int p;
             if (this.mustReturnNullKey) {
                 this.mustReturnNullKey = false;
-                int i = Float2LongOpenHashMap.this.f1879n;
+                int i = Float2LongOpenHashMap.this.f1843n;
                 this.last = i;
                 acceptOnIndex(action, i);
-                this.f1881c--;
+                this.f1845c--;
             }
             float[] key = Float2LongOpenHashMap.this.key;
-            while (this.f1881c != 0) {
+            while (this.f1845c != 0) {
                 int i2 = this.pos - 1;
                 this.pos = i2;
                 if (i2 < 0) {
@@ -771,12 +771,12 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
                         i3 = Float2LongOpenHashMap.this.mask;
                     }
                     acceptOnIndex(action, p);
-                    this.f1881c--;
+                    this.f1845c--;
                 } else if (Float.floatToIntBits(key[this.pos]) != 0) {
                     int i4 = this.pos;
                     this.last = i4;
                     acceptOnIndex(action, i4);
-                    this.f1881c--;
+                    this.f1845c--;
                 }
             }
         }
@@ -825,7 +825,7 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == Float2LongOpenHashMap.this.f1879n) {
+            if (this.last == Float2LongOpenHashMap.this.f1843n) {
                 Float2LongOpenHashMap.this.containsNullKey = false;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
@@ -922,7 +922,7 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
         int max;
 
         /* renamed from: c */
-        int f1882c;
+        int f1846c;
         boolean mustReturnNull;
         boolean hasSplit;
 
@@ -932,16 +932,16 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
 
         MapSpliterator() {
             this.pos = 0;
-            this.max = Float2LongOpenHashMap.this.f1879n;
-            this.f1882c = 0;
+            this.max = Float2LongOpenHashMap.this.f1843n;
+            this.f1846c = 0;
             this.mustReturnNull = Float2LongOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
         }
 
         MapSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = Float2LongOpenHashMap.this.f1879n;
-            this.f1882c = 0;
+            this.max = Float2LongOpenHashMap.this.f1843n;
+            this.f1846c = 0;
             this.mustReturnNull = Float2LongOpenHashMap.this.containsNullKey;
             this.hasSplit = false;
             this.pos = pos;
@@ -953,14 +953,14 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
         public boolean tryAdvance(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1882c++;
-                acceptOnIndex(action, Float2LongOpenHashMap.this.f1879n);
+                this.f1846c++;
+                acceptOnIndex(action, Float2LongOpenHashMap.this.f1843n);
                 return true;
             }
             float[] key = Float2LongOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (Float.floatToIntBits(key[this.pos]) != 0) {
-                    this.f1882c++;
+                    this.f1846c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     acceptOnIndex(action, i);
@@ -974,14 +974,14 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
         public void forEachRemaining(ConsumerType action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f1882c++;
-                acceptOnIndex(action, Float2LongOpenHashMap.this.f1879n);
+                this.f1846c++;
+                acceptOnIndex(action, Float2LongOpenHashMap.this.f1843n);
             }
             float[] key = Float2LongOpenHashMap.this.key;
             while (this.pos < this.max) {
                 if (Float.floatToIntBits(key[this.pos]) != 0) {
                     acceptOnIndex(action, this.pos);
-                    this.f1882c++;
+                    this.f1846c++;
                 }
                 this.pos++;
             }
@@ -989,9 +989,9 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
 
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (Float2LongOpenHashMap.this.size - this.f1882c);
+                return (long) (Float2LongOpenHashMap.this.size - this.f1846c);
             }
-            return Math.min((long) (Float2LongOpenHashMap.this.size - this.f1882c), ((long) ((((double) Float2LongOpenHashMap.this.realSize()) / ((double) Float2LongOpenHashMap.this.f1879n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (Float2LongOpenHashMap.this.size - this.f1846c), ((long) ((((double) Float2LongOpenHashMap.this.realSize()) / ((double) Float2LongOpenHashMap.this.f1843n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.objects.ObjectSpliterator, java.util.Spliterator
@@ -1185,7 +1185,7 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
             float k = ((Float) e.getKey()).floatValue();
             long v = ((Long) e.getValue()).longValue();
             if (Float.floatToIntBits(k) == 0) {
-                return Float2LongOpenHashMap.this.containsNullKey && Float2LongOpenHashMap.this.value[Float2LongOpenHashMap.this.f1879n] == v;
+                return Float2LongOpenHashMap.this.containsNullKey && Float2LongOpenHashMap.this.value[Float2LongOpenHashMap.this.f1843n] == v;
             }
             float[] key = Float2LongOpenHashMap.this.key;
             int mix = HashCommon.mix(HashCommon.float2int(k)) & Float2LongOpenHashMap.this.mask;
@@ -1246,7 +1246,7 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
                     Float2LongOpenHashMap.this.removeEntry(pos);
                     return true;
                 }
-            } else if (!Float2LongOpenHashMap.this.containsNullKey || Float2LongOpenHashMap.this.value[Float2LongOpenHashMap.this.f1879n] != v) {
+            } else if (!Float2LongOpenHashMap.this.containsNullKey || Float2LongOpenHashMap.this.value[Float2LongOpenHashMap.this.f1843n] != v) {
                 return false;
             } else {
                 Float2LongOpenHashMap.this.removeNullEntry();
@@ -1267,9 +1267,9 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
         @Override // java.lang.Iterable
         public void forEach(Consumer<? super Float2LongMap.Entry> consumer) {
             if (Float2LongOpenHashMap.this.containsNullKey) {
-                consumer.accept(new AbstractFloat2LongMap.BasicEntry(Float2LongOpenHashMap.this.key[Float2LongOpenHashMap.this.f1879n], Float2LongOpenHashMap.this.value[Float2LongOpenHashMap.this.f1879n]));
+                consumer.accept(new AbstractFloat2LongMap.BasicEntry(Float2LongOpenHashMap.this.key[Float2LongOpenHashMap.this.f1843n], Float2LongOpenHashMap.this.value[Float2LongOpenHashMap.this.f1843n]));
             }
-            int pos = Float2LongOpenHashMap.this.f1879n;
+            int pos = Float2LongOpenHashMap.this.f1843n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1285,11 +1285,11 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
         public void fastForEach(Consumer<? super Float2LongMap.Entry> consumer) {
             AbstractFloat2LongMap.BasicEntry entry = new AbstractFloat2LongMap.BasicEntry();
             if (Float2LongOpenHashMap.this.containsNullKey) {
-                entry.key = Float2LongOpenHashMap.this.key[Float2LongOpenHashMap.this.f1879n];
-                entry.value = Float2LongOpenHashMap.this.value[Float2LongOpenHashMap.this.f1879n];
+                entry.key = Float2LongOpenHashMap.this.key[Float2LongOpenHashMap.this.f1843n];
+                entry.value = Float2LongOpenHashMap.this.value[Float2LongOpenHashMap.this.f1843n];
                 consumer.accept(entry);
             }
-            int pos = Float2LongOpenHashMap.this.f1879n;
+            int pos = Float2LongOpenHashMap.this.f1843n;
             while (true) {
                 pos--;
                 if (pos == 0) {
@@ -1387,9 +1387,9 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
         @Override // p014it.unimi.dsi.fastutil.floats.FloatIterable
         public void forEach(FloatConsumer consumer) {
             if (Float2LongOpenHashMap.this.containsNullKey) {
-                consumer.accept(Float2LongOpenHashMap.this.key[Float2LongOpenHashMap.this.f1879n]);
+                consumer.accept(Float2LongOpenHashMap.this.key[Float2LongOpenHashMap.this.f1843n]);
             }
-            int pos = Float2LongOpenHashMap.this.f1879n;
+            int pos = Float2LongOpenHashMap.this.f1843n;
             while (true) {
                 pos--;
                 if (pos != 0) {
@@ -1518,9 +1518,9 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
                 @Override // p014it.unimi.dsi.fastutil.longs.LongIterable
                 public void forEach(LongConsumer consumer) {
                     if (Float2LongOpenHashMap.this.containsNullKey) {
-                        consumer.accept(Float2LongOpenHashMap.this.value[Float2LongOpenHashMap.this.f1879n]);
+                        consumer.accept(Float2LongOpenHashMap.this.value[Float2LongOpenHashMap.this.f1843n]);
                     }
-                    int pos = Float2LongOpenHashMap.this.f1879n;
+                    int pos = Float2LongOpenHashMap.this.f1843n;
                     while (true) {
                         pos--;
                         if (pos == 0) {
@@ -1556,8 +1556,8 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1880f)));
-        if (l >= this.f1879n || this.size > HashCommon.maxFill(l, this.f1880f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f1844f)));
+        if (l >= this.f1843n || this.size > HashCommon.maxFill(l, this.f1844f)) {
             return true;
         }
         try {
@@ -1575,7 +1575,7 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
         int mask = newN - 1;
         float[] newKey = new float[newN + 1];
         long[] newValue = new long[newN + 1];
-        int i2 = this.f1879n;
+        int i2 = this.f1843n;
         int j = realSize();
         while (true) {
             j--;
@@ -1594,10 +1594,10 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
                 newKey[pos] = key[i2];
                 newValue[pos] = value[i2];
             } else {
-                newValue[newN] = value[this.f1879n];
-                this.f1879n = newN;
+                newValue[newN] = value[this.f1843n];
+                this.f1843n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f1879n, this.f1880f);
+                this.maxFill = HashCommon.maxFill(this.f1843n, this.f1844f);
                 this.key = newKey;
                 this.value = newValue;
                 return;
@@ -1638,7 +1638,7 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
             i++;
         }
         if (this.containsNullKey) {
-            h += HashCommon.long2int(this.value[this.f1879n]);
+            h += HashCommon.long2int(this.value[this.f1843n]);
         }
         return h;
     }
@@ -1664,12 +1664,12 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         int pos;
         s.defaultReadObject();
-        this.f1879n = HashCommon.arraySize(this.size, this.f1880f);
-        this.maxFill = HashCommon.maxFill(this.f1879n, this.f1880f);
-        this.mask = this.f1879n - 1;
-        float[] key = new float[this.f1879n + 1];
+        this.f1843n = HashCommon.arraySize(this.size, this.f1844f);
+        this.maxFill = HashCommon.maxFill(this.f1843n, this.f1844f);
+        this.mask = this.f1843n - 1;
+        float[] key = new float[this.f1843n + 1];
         this.key = key;
-        long[] value = new long[this.f1879n + 1];
+        long[] value = new long[this.f1843n + 1];
         this.value = value;
         int i = this.size;
         while (true) {
@@ -1678,7 +1678,7 @@ public class Float2LongOpenHashMap extends AbstractFloat2LongMap implements Seri
                 float k = s.readFloat();
                 long v = s.readLong();
                 if (Float.floatToIntBits(k) == 0) {
-                    pos = this.f1879n;
+                    pos = this.f1843n;
                     this.containsNullKey = true;
                 } else {
                     int mix = HashCommon.mix(HashCommon.float2int(k));

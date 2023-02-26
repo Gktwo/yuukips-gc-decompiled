@@ -23,25 +23,25 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetUgcReqOuterClass.class */
 public final class GetUgcReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000fGetUgcReq.proto\u001a\u0010GetUgcType.proto\u001a\u0011RecordUsage.proto\u001a\rUgcType.proto\"\u0001\n\tGetUgcReq\u0012\u0010\n\bugc_guid\u0018\u0006 \u0001(\u0004\u0012\u001a\n\bugc_type\u0018\u0002 \u0001(\u000e2\b.UgcType\u0012!\n\fget_ugc_type\u0018\f \u0001(\u000e2\u000b.GetUgcType\u0012&\n\u0010ugc_record_usage\u0018\r \u0001(\u000e2\f.RecordUsage\u0012\u0018\n\u0010is_require_brief\u0018\u0007 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{GetUgcTypeOuterClass.getDescriptor(), RecordUsageOuterClass.getDescriptor(), UgcTypeOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000fGetUgcReq.proto\u001a\u0011RecordUsage.proto\u001a\u0010GetUgcType.proto\u001a\rUgcType.proto\"\u0001\n\tGetUgcReq\u0012$\n\u000eugcRecordUsage\u0018\b \u0001(\u000e2\f.RecordUsage\u0012\u001f\n\ngetUgcType\u0018\n \u0001(\u000e2\u000b.GetUgcType\u0012\u000f\n\u0007ugcGuid\u0018\u000f \u0001(\u0004\u0012\u0019\n\u0007ugcType\u0018\u0002 \u0001(\u000e2\b.UgcType\u0012\u0016\n\u000eisRequireBrief\u0018\u0005 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{RecordUsageOuterClass.getDescriptor(), GetUgcTypeOuterClass.getDescriptor(), UgcTypeOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_GetUgcReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetUgcReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetUgcReq_descriptor, new String[]{"UgcGuid", "UgcType", "GetUgcType", "UgcRecordUsage", "IsRequireBrief"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_GetUgcReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_GetUgcReq_descriptor, new String[]{"UgcRecordUsage", "GetUgcType", "UgcGuid", "UgcType", "IsRequireBrief"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetUgcReqOuterClass$GetUgcReqOrBuilder.class */
     public interface GetUgcReqOrBuilder extends MessageOrBuilder {
-        long getUgcGuid();
+        int getUgcRecordUsageValue();
 
-        int getUgcTypeValue();
-
-        UgcTypeOuterClass.UgcType getUgcType();
+        RecordUsageOuterClass.RecordUsage getUgcRecordUsage();
 
         int getGetUgcTypeValue();
 
         GetUgcTypeOuterClass.GetUgcType getGetUgcType();
 
-        int getUgcRecordUsageValue();
+        long getUgcGuid();
 
-        RecordUsageOuterClass.RecordUsage getUgcRecordUsage();
+        int getUgcTypeValue();
+
+        UgcTypeOuterClass.UgcType getUgcType();
 
         boolean getIsRequireBrief();
     }
@@ -59,15 +59,15 @@ public final class GetUgcReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetUgcReqOuterClass$GetUgcReq.class */
     public static final class GetUgcReq extends GeneratedMessageV3 implements GetUgcReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int UGC_GUID_FIELD_NUMBER = 6;
-        private long ugcGuid_;
-        public static final int UGC_TYPE_FIELD_NUMBER = 2;
-        private int ugcType_;
-        public static final int GET_UGC_TYPE_FIELD_NUMBER = 12;
-        private int getUgcType_;
-        public static final int UGC_RECORD_USAGE_FIELD_NUMBER = 13;
+        public static final int UGCRECORDUSAGE_FIELD_NUMBER = 8;
         private int ugcRecordUsage_;
-        public static final int IS_REQUIRE_BRIEF_FIELD_NUMBER = 7;
+        public static final int GETUGCTYPE_FIELD_NUMBER = 10;
+        private int getUgcType_;
+        public static final int UGCGUID_FIELD_NUMBER = 15;
+        private long ugcGuid_;
+        public static final int UGCTYPE_FIELD_NUMBER = 2;
+        private int ugcType_;
+        public static final int ISREQUIREBRIEF_FIELD_NUMBER = 5;
         private boolean isRequireBrief_;
         private byte memoizedIsInitialized;
         private static final GetUgcReq DEFAULT_INSTANCE = new GetUgcReq();
@@ -85,9 +85,9 @@ public final class GetUgcReqOuterClass {
 
         private GetUgcReq() {
             this.memoizedIsInitialized = -1;
-            this.ugcType_ = 0;
-            this.getUgcType_ = 0;
             this.ugcRecordUsage_ = 0;
+            this.getUgcType_ = 0;
+            this.ugcType_ = 0;
         }
 
         /* access modifiers changed from: protected */
@@ -121,17 +121,17 @@ public final class GetUgcReqOuterClass {
                                 case 16:
                                     this.ugcType_ = input.readEnum();
                                     break;
-                                case 48:
-                                    this.ugcGuid_ = input.readUInt64();
-                                    break;
-                                case 56:
+                                case 40:
                                     this.isRequireBrief_ = input.readBool();
                                     break;
-                                case 96:
+                                case 64:
+                                    this.ugcRecordUsage_ = input.readEnum();
+                                    break;
+                                case 80:
                                     this.getUgcType_ = input.readEnum();
                                     break;
-                                case 104:
-                                    this.ugcRecordUsage_ = input.readEnum();
+                                case 120:
+                                    this.ugcGuid_ = input.readUInt64();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -164,19 +164,14 @@ public final class GetUgcReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GetUgcReqOuterClass.GetUgcReqOrBuilder
-        public long getUgcGuid() {
-            return this.ugcGuid_;
+        public int getUgcRecordUsageValue() {
+            return this.ugcRecordUsage_;
         }
 
         @Override // emu.grasscutter.net.proto.GetUgcReqOuterClass.GetUgcReqOrBuilder
-        public int getUgcTypeValue() {
-            return this.ugcType_;
-        }
-
-        @Override // emu.grasscutter.net.proto.GetUgcReqOuterClass.GetUgcReqOrBuilder
-        public UgcTypeOuterClass.UgcType getUgcType() {
-            UgcTypeOuterClass.UgcType result = UgcTypeOuterClass.UgcType.valueOf(this.ugcType_);
-            return result == null ? UgcTypeOuterClass.UgcType.UNRECOGNIZED : result;
+        public RecordUsageOuterClass.RecordUsage getUgcRecordUsage() {
+            RecordUsageOuterClass.RecordUsage result = RecordUsageOuterClass.RecordUsage.valueOf(this.ugcRecordUsage_);
+            return result == null ? RecordUsageOuterClass.RecordUsage.UNRECOGNIZED : result;
         }
 
         @Override // emu.grasscutter.net.proto.GetUgcReqOuterClass.GetUgcReqOrBuilder
@@ -191,14 +186,19 @@ public final class GetUgcReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.GetUgcReqOuterClass.GetUgcReqOrBuilder
-        public int getUgcRecordUsageValue() {
-            return this.ugcRecordUsage_;
+        public long getUgcGuid() {
+            return this.ugcGuid_;
         }
 
         @Override // emu.grasscutter.net.proto.GetUgcReqOuterClass.GetUgcReqOrBuilder
-        public RecordUsageOuterClass.RecordUsage getUgcRecordUsage() {
-            RecordUsageOuterClass.RecordUsage result = RecordUsageOuterClass.RecordUsage.valueOf(this.ugcRecordUsage_);
-            return result == null ? RecordUsageOuterClass.RecordUsage.UNRECOGNIZED : result;
+        public int getUgcTypeValue() {
+            return this.ugcType_;
+        }
+
+        @Override // emu.grasscutter.net.proto.GetUgcReqOuterClass.GetUgcReqOrBuilder
+        public UgcTypeOuterClass.UgcType getUgcType() {
+            UgcTypeOuterClass.UgcType result = UgcTypeOuterClass.UgcType.valueOf(this.ugcType_);
+            return result == null ? UgcTypeOuterClass.UgcType.UNRECOGNIZED : result;
         }
 
         @Override // emu.grasscutter.net.proto.GetUgcReqOuterClass.GetUgcReqOrBuilder
@@ -224,17 +224,17 @@ public final class GetUgcReqOuterClass {
             if (this.ugcType_ != UgcTypeOuterClass.UgcType.UGC_TYPE_NONE.getNumber()) {
                 output.writeEnum(2, this.ugcType_);
             }
-            if (this.ugcGuid_ != 0) {
-                output.writeUInt64(6, this.ugcGuid_);
-            }
             if (this.isRequireBrief_) {
-                output.writeBool(7, this.isRequireBrief_);
-            }
-            if (this.getUgcType_ != GetUgcTypeOuterClass.GetUgcType.GET_UGC_TYPE_NONE.getNumber()) {
-                output.writeEnum(12, this.getUgcType_);
+                output.writeBool(5, this.isRequireBrief_);
             }
             if (this.ugcRecordUsage_ != RecordUsageOuterClass.RecordUsage.RECORD_USAGE_UGC_RECORD_USAGE_NONE.getNumber()) {
-                output.writeEnum(13, this.ugcRecordUsage_);
+                output.writeEnum(8, this.ugcRecordUsage_);
+            }
+            if (this.getUgcType_ != GetUgcTypeOuterClass.GetUgcType.GET_UGC_TYPE_NONE.getNumber()) {
+                output.writeEnum(10, this.getUgcType_);
+            }
+            if (this.ugcGuid_ != 0) {
+                output.writeUInt64(15, this.ugcGuid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -249,17 +249,17 @@ public final class GetUgcReqOuterClass {
             if (this.ugcType_ != UgcTypeOuterClass.UgcType.UGC_TYPE_NONE.getNumber()) {
                 size2 = 0 + CodedOutputStream.computeEnumSize(2, this.ugcType_);
             }
-            if (this.ugcGuid_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(6, this.ugcGuid_);
-            }
             if (this.isRequireBrief_) {
-                size2 += CodedOutputStream.computeBoolSize(7, this.isRequireBrief_);
-            }
-            if (this.getUgcType_ != GetUgcTypeOuterClass.GetUgcType.GET_UGC_TYPE_NONE.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(12, this.getUgcType_);
+                size2 += CodedOutputStream.computeBoolSize(5, this.isRequireBrief_);
             }
             if (this.ugcRecordUsage_ != RecordUsageOuterClass.RecordUsage.RECORD_USAGE_UGC_RECORD_USAGE_NONE.getNumber()) {
-                size2 += CodedOutputStream.computeEnumSize(13, this.ugcRecordUsage_);
+                size2 += CodedOutputStream.computeEnumSize(8, this.ugcRecordUsage_);
+            }
+            if (this.getUgcType_ != GetUgcTypeOuterClass.GetUgcType.GET_UGC_TYPE_NONE.getNumber()) {
+                size2 += CodedOutputStream.computeEnumSize(10, this.getUgcType_);
+            }
+            if (this.ugcGuid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(15, this.ugcGuid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -275,7 +275,7 @@ public final class GetUgcReqOuterClass {
                 return equals(obj);
             }
             GetUgcReq other = (GetUgcReq) obj;
-            return getUgcGuid() == other.getUgcGuid() && this.ugcType_ == other.ugcType_ && this.getUgcType_ == other.getUgcType_ && this.ugcRecordUsage_ == other.ugcRecordUsage_ && getIsRequireBrief() == other.getIsRequireBrief() && this.unknownFields.equals(other.unknownFields);
+            return this.ugcRecordUsage_ == other.ugcRecordUsage_ && this.getUgcType_ == other.getUgcType_ && getUgcGuid() == other.getUgcGuid() && this.ugcType_ == other.ugcType_ && getIsRequireBrief() == other.getIsRequireBrief() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -283,7 +283,7 @@ public final class GetUgcReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + Internal.hashLong(getUgcGuid()))) + 2)) + this.ugcType_)) + 12)) + this.getUgcType_)) + 13)) + this.ugcRecordUsage_)) + 7)) + Internal.hashBoolean(getIsRequireBrief()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + this.ugcRecordUsage_)) + 10)) + this.getUgcType_)) + 15)) + Internal.hashLong(getUgcGuid()))) + 2)) + this.ugcType_)) + 5)) + Internal.hashBoolean(getIsRequireBrief()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -363,10 +363,10 @@ public final class GetUgcReqOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/GetUgcReqOuterClass$GetUgcReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements GetUgcReqOrBuilder {
             private long ugcGuid_;
-            private int ugcType_ = 0;
-            private int getUgcType_ = 0;
-            private int ugcRecordUsage_ = 0;
             private boolean isRequireBrief_;
+            private int ugcRecordUsage_ = 0;
+            private int getUgcType_ = 0;
+            private int ugcType_ = 0;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return GetUgcReqOuterClass.internal_static_GetUgcReq_descriptor;
@@ -394,10 +394,10 @@ public final class GetUgcReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.ugcRecordUsage_ = 0;
+                this.getUgcType_ = 0;
                 this.ugcGuid_ = 0;
                 this.ugcType_ = 0;
-                this.getUgcType_ = 0;
-                this.ugcRecordUsage_ = 0;
                 this.isRequireBrief_ = false;
                 return this;
             }
@@ -424,10 +424,10 @@ public final class GetUgcReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public GetUgcReq buildPartial() {
                 GetUgcReq result = new GetUgcReq(this);
+                result.ugcRecordUsage_ = this.ugcRecordUsage_;
+                result.getUgcType_ = this.getUgcType_;
                 result.ugcGuid_ = this.ugcGuid_;
                 result.ugcType_ = this.ugcType_;
-                result.getUgcType_ = this.getUgcType_;
-                result.ugcRecordUsage_ = this.ugcRecordUsage_;
                 result.isRequireBrief_ = this.isRequireBrief_;
                 onBuilt();
                 return result;
@@ -476,17 +476,17 @@ public final class GetUgcReqOuterClass {
                 if (other == GetUgcReq.getDefaultInstance()) {
                     return this;
                 }
+                if (other.ugcRecordUsage_ != 0) {
+                    setUgcRecordUsageValue(other.getUgcRecordUsageValue());
+                }
+                if (other.getUgcType_ != 0) {
+                    setGetUgcTypeValue(other.getGetUgcTypeValue());
+                }
                 if (other.getUgcGuid() != 0) {
                     setUgcGuid(other.getUgcGuid());
                 }
                 if (other.ugcType_ != 0) {
                     setUgcTypeValue(other.getUgcTypeValue());
-                }
-                if (other.getUgcType_ != 0) {
-                    setGetUgcTypeValue(other.getGetUgcTypeValue());
-                }
-                if (other.ugcRecordUsage_ != 0) {
-                    setUgcRecordUsageValue(other.getUgcRecordUsageValue());
                 }
                 if (other.getIsRequireBrief()) {
                     setIsRequireBrief(other.getIsRequireBrief());
@@ -521,6 +521,70 @@ public final class GetUgcReqOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.GetUgcReqOuterClass.GetUgcReqOrBuilder
+            public int getUgcRecordUsageValue() {
+                return this.ugcRecordUsage_;
+            }
+
+            public Builder setUgcRecordUsageValue(int value) {
+                this.ugcRecordUsage_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetUgcReqOuterClass.GetUgcReqOrBuilder
+            public RecordUsageOuterClass.RecordUsage getUgcRecordUsage() {
+                RecordUsageOuterClass.RecordUsage result = RecordUsageOuterClass.RecordUsage.valueOf(this.ugcRecordUsage_);
+                return result == null ? RecordUsageOuterClass.RecordUsage.UNRECOGNIZED : result;
+            }
+
+            public Builder setUgcRecordUsage(RecordUsageOuterClass.RecordUsage value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.ugcRecordUsage_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+
+            public Builder clearUgcRecordUsage() {
+                this.ugcRecordUsage_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetUgcReqOuterClass.GetUgcReqOrBuilder
+            public int getGetUgcTypeValue() {
+                return this.getUgcType_;
+            }
+
+            public Builder setGetUgcTypeValue(int value) {
+                this.getUgcType_ = value;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.GetUgcReqOuterClass.GetUgcReqOrBuilder
+            public GetUgcTypeOuterClass.GetUgcType getGetUgcType() {
+                GetUgcTypeOuterClass.GetUgcType result = GetUgcTypeOuterClass.GetUgcType.valueOf(this.getUgcType_);
+                return result == null ? GetUgcTypeOuterClass.GetUgcType.UNRECOGNIZED : result;
+            }
+
+            public Builder setGetUgcType(GetUgcTypeOuterClass.GetUgcType value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                this.getUgcType_ = value.getNumber();
+                onChanged();
+                return this;
+            }
+
+            public Builder clearGetUgcType() {
+                this.getUgcType_ = 0;
+                onChanged();
+                return this;
             }
 
             @Override // emu.grasscutter.net.proto.GetUgcReqOuterClass.GetUgcReqOrBuilder
@@ -568,70 +632,6 @@ public final class GetUgcReqOuterClass {
 
             public Builder clearUgcType() {
                 this.ugcType_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetUgcReqOuterClass.GetUgcReqOrBuilder
-            public int getGetUgcTypeValue() {
-                return this.getUgcType_;
-            }
-
-            public Builder setGetUgcTypeValue(int value) {
-                this.getUgcType_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetUgcReqOuterClass.GetUgcReqOrBuilder
-            public GetUgcTypeOuterClass.GetUgcType getGetUgcType() {
-                GetUgcTypeOuterClass.GetUgcType result = GetUgcTypeOuterClass.GetUgcType.valueOf(this.getUgcType_);
-                return result == null ? GetUgcTypeOuterClass.GetUgcType.UNRECOGNIZED : result;
-            }
-
-            public Builder setGetUgcType(GetUgcTypeOuterClass.GetUgcType value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.getUgcType_ = value.getNumber();
-                onChanged();
-                return this;
-            }
-
-            public Builder clearGetUgcType() {
-                this.getUgcType_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetUgcReqOuterClass.GetUgcReqOrBuilder
-            public int getUgcRecordUsageValue() {
-                return this.ugcRecordUsage_;
-            }
-
-            public Builder setUgcRecordUsageValue(int value) {
-                this.ugcRecordUsage_ = value;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.GetUgcReqOuterClass.GetUgcReqOrBuilder
-            public RecordUsageOuterClass.RecordUsage getUgcRecordUsage() {
-                RecordUsageOuterClass.RecordUsage result = RecordUsageOuterClass.RecordUsage.valueOf(this.ugcRecordUsage_);
-                return result == null ? RecordUsageOuterClass.RecordUsage.UNRECOGNIZED : result;
-            }
-
-            public Builder setUgcRecordUsage(RecordUsageOuterClass.RecordUsage value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                this.ugcRecordUsage_ = value.getNumber();
-                onChanged();
-                return this;
-            }
-
-            public Builder clearUgcRecordUsage() {
-                this.ugcRecordUsage_ = 0;
                 onChanged();
                 return this;
             }
@@ -688,8 +688,8 @@ public final class GetUgcReqOuterClass {
     }
 
     static {
-        GetUgcTypeOuterClass.getDescriptor();
         RecordUsageOuterClass.getDescriptor();
+        GetUgcTypeOuterClass.getDescriptor();
         UgcTypeOuterClass.getDescriptor();
     }
 }

@@ -7,8 +7,9 @@ import java.util.AbstractSet;
 import java.util.Iterator;
 import java.util.Map;
 
+/* access modifiers changed from: package-private */
 /* loaded from: grasscutter.jar:com/google/common/graph/MultiEdgesConnecting.class */
-abstract class MultiEdgesConnecting<E> extends AbstractSet<E> {
+public abstract class MultiEdgesConnecting<E> extends AbstractSet<E> {
     private final Map<E, ?> outEdgeToNode;
     private final Object targetNode;
 

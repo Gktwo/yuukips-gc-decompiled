@@ -109,20 +109,20 @@ public class HttpTokens {
         private final Type _type;
 
         /* renamed from: _b */
-        private final byte f3139_b;
+        private final byte f3103_b;
 
         /* renamed from: _c */
-        private final char f3140_c;
+        private final char f3104_c;
 
         /* renamed from: _x */
-        private final int f3141_x;
+        private final int f3105_x;
 
         private Token(byte b, Type type) {
             this._type = type;
-            this.f3139_b = b;
-            this.f3140_c = (char) (255 & b);
-            char lc = (this.f3140_c >= 'A') & (this.f3140_c <= 'Z') ? (char) ((this.f3140_c - 'A') + 97) : this.f3140_c;
-            this.f3141_x = (this._type == Type.DIGIT || (this._type == Type.ALPHA && lc >= 'a' && lc <= 'f')) ? TypeUtil.convertHexDigit(b) : -1;
+            this.f3103_b = b;
+            this.f3104_c = (char) (255 & b);
+            char lc = (this.f3104_c >= 'A') & (this.f3104_c <= 'Z') ? (char) ((this.f3104_c - 'A') + 97) : this.f3104_c;
+            this.f3105_x = (this._type == Type.DIGIT || (this._type == Type.ALPHA && lc >= 'a' && lc <= 'f')) ? TypeUtil.convertHexDigit(b) : -1;
         }
 
         public Type getType() {
@@ -130,19 +130,19 @@ public class HttpTokens {
         }
 
         public byte getByte() {
-            return this.f3139_b;
+            return this.f3103_b;
         }
 
         public char getChar() {
-            return this.f3140_c;
+            return this.f3104_c;
         }
 
         public boolean isHexDigit() {
-            return this.f3141_x >= 0;
+            return this.f3105_x >= 0;
         }
 
         public int getHexDigit() {
-            return this.f3141_x;
+            return this.f3105_x;
         }
 
         public String toString() {
@@ -153,13 +153,13 @@ public class HttpTokens {
                 case DIGIT:
                 case TCHAR:
                 case VCHAR:
-                    return this._type + "='" + this.f3140_c + "'";
+                    return this._type + "='" + this.f3104_c + "'";
                 case CR:
                     return "CR=\\r";
                 case LF:
                     return "LF=\\n";
                 default:
-                    return String.format("%s=0x%x", this._type, Byte.valueOf(this.f3139_b));
+                    return String.format("%s=0x%x", this._type, Byte.valueOf(this.f3103_b));
             }
         }
     }

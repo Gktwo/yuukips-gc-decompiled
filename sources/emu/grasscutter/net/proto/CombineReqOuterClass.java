@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CombineReqOuterClass.class */
 public final class CombineReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010CombineReq.proto\"L\n\nCombineReq\u0012\u0013\n\u000bavatar_guid\u0018\u0006 \u0001(\u0004\u0012\u0012\n\ncombine_id\u0018\u0005 \u0001(\r\u0012\u0015\n\rcombine_count\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0010CombineReq.proto\"I\n\nCombineReq\u0012\u0014\n\fcombineCount\u0018\n \u0001(\r\u0012\u0011\n\tcombineId\u0018\b \u0001(\r\u0012\u0012\n\navatarGuid\u0018\u000f \u0001(\u0004B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_CombineReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_CombineReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CombineReq_descriptor, new String[]{"AvatarGuid", "CombineId", "CombineCount"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_CombineReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_CombineReq_descriptor, new String[]{"CombineCount", "CombineId", "AvatarGuid"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CombineReqOuterClass$CombineReqOrBuilder.class */
     public interface CombineReqOrBuilder extends MessageOrBuilder {
-        long getAvatarGuid();
+        int getCombineCount();
 
         int getCombineId();
 
-        int getCombineCount();
+        long getAvatarGuid();
     }
 
     private CombineReqOuterClass() {
@@ -46,12 +46,12 @@ public final class CombineReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CombineReqOuterClass$CombineReq.class */
     public static final class CombineReq extends GeneratedMessageV3 implements CombineReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int AVATAR_GUID_FIELD_NUMBER = 6;
-        private long avatarGuid_;
-        public static final int COMBINE_ID_FIELD_NUMBER = 5;
-        private int combineId_;
-        public static final int COMBINE_COUNT_FIELD_NUMBER = 15;
+        public static final int COMBINECOUNT_FIELD_NUMBER = 10;
         private int combineCount_;
+        public static final int COMBINEID_FIELD_NUMBER = 8;
+        private int combineId_;
+        public static final int AVATARGUID_FIELD_NUMBER = 15;
+        private long avatarGuid_;
         private byte memoizedIsInitialized;
         private static final CombineReq DEFAULT_INSTANCE = new CombineReq();
         private static final Parser<CombineReq> PARSER = new AbstractParser<CombineReq>() { // from class: emu.grasscutter.net.proto.CombineReqOuterClass.CombineReq.1
@@ -98,14 +98,14 @@ public final class CombineReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 40:
+                                case 64:
                                     this.combineId_ = input.readUInt32();
                                     break;
-                                case 48:
-                                    this.avatarGuid_ = input.readUInt64();
+                                case 80:
+                                    this.combineCount_ = input.readUInt32();
                                     break;
                                 case 120:
-                                    this.combineCount_ = input.readUInt32();
+                                    this.avatarGuid_ = input.readUInt64();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -138,8 +138,8 @@ public final class CombineReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.CombineReqOuterClass.CombineReqOrBuilder
-        public long getAvatarGuid() {
-            return this.avatarGuid_;
+        public int getCombineCount() {
+            return this.combineCount_;
         }
 
         @Override // emu.grasscutter.net.proto.CombineReqOuterClass.CombineReqOrBuilder
@@ -148,8 +148,8 @@ public final class CombineReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.CombineReqOuterClass.CombineReqOrBuilder
-        public int getCombineCount() {
-            return this.combineCount_;
+        public long getAvatarGuid() {
+            return this.avatarGuid_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -168,13 +168,13 @@ public final class CombineReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.combineId_ != 0) {
-                output.writeUInt32(5, this.combineId_);
-            }
-            if (this.avatarGuid_ != 0) {
-                output.writeUInt64(6, this.avatarGuid_);
+                output.writeUInt32(8, this.combineId_);
             }
             if (this.combineCount_ != 0) {
-                output.writeUInt32(15, this.combineCount_);
+                output.writeUInt32(10, this.combineCount_);
+            }
+            if (this.avatarGuid_ != 0) {
+                output.writeUInt64(15, this.avatarGuid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -187,13 +187,13 @@ public final class CombineReqOuterClass {
             }
             int size2 = 0;
             if (this.combineId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(5, this.combineId_);
-            }
-            if (this.avatarGuid_ != 0) {
-                size2 += CodedOutputStream.computeUInt64Size(6, this.avatarGuid_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(8, this.combineId_);
             }
             if (this.combineCount_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.combineCount_);
+                size2 += CodedOutputStream.computeUInt32Size(10, this.combineCount_);
+            }
+            if (this.avatarGuid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(15, this.avatarGuid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class CombineReqOuterClass {
                 return equals(obj);
             }
             CombineReq other = (CombineReq) obj;
-            return getAvatarGuid() == other.getAvatarGuid() && getCombineId() == other.getCombineId() && getCombineCount() == other.getCombineCount() && this.unknownFields.equals(other.unknownFields);
+            return getCombineCount() == other.getCombineCount() && getCombineId() == other.getCombineId() && getAvatarGuid() == other.getAvatarGuid() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class CombineReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 6)) + Internal.hashLong(getAvatarGuid()))) + 5)) + getCombineId())) + 15)) + getCombineCount())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 10)) + getCombineCount())) + 8)) + getCombineId())) + 15)) + Internal.hashLong(getAvatarGuid()))) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -296,9 +296,9 @@ public final class CombineReqOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/CombineReqOuterClass$CombineReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements CombineReqOrBuilder {
-            private long avatarGuid_;
-            private int combineId_;
             private int combineCount_;
+            private int combineId_;
+            private long avatarGuid_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return CombineReqOuterClass.internal_static_CombineReq_descriptor;
@@ -326,9 +326,9 @@ public final class CombineReqOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.avatarGuid_ = 0;
-                this.combineId_ = 0;
                 this.combineCount_ = 0;
+                this.combineId_ = 0;
+                this.avatarGuid_ = 0;
                 return this;
             }
 
@@ -354,9 +354,9 @@ public final class CombineReqOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public CombineReq buildPartial() {
                 CombineReq result = new CombineReq(this);
-                result.avatarGuid_ = this.avatarGuid_;
-                result.combineId_ = this.combineId_;
                 result.combineCount_ = this.combineCount_;
+                result.combineId_ = this.combineId_;
+                result.avatarGuid_ = this.avatarGuid_;
                 onBuilt();
                 return result;
             }
@@ -404,14 +404,14 @@ public final class CombineReqOuterClass {
                 if (other == CombineReq.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getAvatarGuid() != 0) {
-                    setAvatarGuid(other.getAvatarGuid());
+                if (other.getCombineCount() != 0) {
+                    setCombineCount(other.getCombineCount());
                 }
                 if (other.getCombineId() != 0) {
                     setCombineId(other.getCombineId());
                 }
-                if (other.getCombineCount() != 0) {
-                    setCombineCount(other.getCombineCount());
+                if (other.getAvatarGuid() != 0) {
+                    setAvatarGuid(other.getAvatarGuid());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -446,18 +446,18 @@ public final class CombineReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.CombineReqOuterClass.CombineReqOrBuilder
-            public long getAvatarGuid() {
-                return this.avatarGuid_;
+            public int getCombineCount() {
+                return this.combineCount_;
             }
 
-            public Builder setAvatarGuid(long value) {
-                this.avatarGuid_ = value;
+            public Builder setCombineCount(int value) {
+                this.combineCount_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearAvatarGuid() {
-                this.avatarGuid_ = 0;
+            public Builder clearCombineCount() {
+                this.combineCount_ = 0;
                 onChanged();
                 return this;
             }
@@ -480,18 +480,18 @@ public final class CombineReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.CombineReqOuterClass.CombineReqOrBuilder
-            public int getCombineCount() {
-                return this.combineCount_;
+            public long getAvatarGuid() {
+                return this.avatarGuid_;
             }
 
-            public Builder setCombineCount(int value) {
-                this.combineCount_ = value;
+            public Builder setAvatarGuid(long value) {
+                this.avatarGuid_ = value;
                 onChanged();
                 return this;
             }
 
-            public Builder clearCombineCount() {
-                this.combineCount_ = 0;
+            public Builder clearAvatarGuid() {
+                this.avatarGuid_ = 0;
                 onChanged();
                 return this;
             }

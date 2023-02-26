@@ -975,7 +975,7 @@ public class Char2DoubleAVLTreeMap extends AbstractChar2DoubleSortedMap implemen
         char from;
 
         /* renamed from: to */
-        char f1388to;
+        char f1352to;
         boolean bottom;
         boolean top;
         protected transient ObjectSortedSet<Char2DoubleMap.Entry> entries;
@@ -986,7 +986,7 @@ public class Char2DoubleAVLTreeMap extends AbstractChar2DoubleSortedMap implemen
             if (bottom || top || Char2DoubleAVLTreeMap.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f1388to = to;
+                this.f1352to = to;
                 this.top = top;
                 this.defRetValue = Char2DoubleAVLTreeMap.this.defRetValue;
                 return;
@@ -1005,7 +1005,7 @@ public class Char2DoubleAVLTreeMap extends AbstractChar2DoubleSortedMap implemen
 
         /* renamed from: in */
         final boolean m1023in(char k) {
-            return (this.bottom || Char2DoubleAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Char2DoubleAVLTreeMap.this.compare(k, this.f1388to) < 0);
+            return (this.bottom || Char2DoubleAVLTreeMap.this.compare(k, this.from) >= 0) && (this.top || Char2DoubleAVLTreeMap.this.compare(k, this.f1352to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.Char2DoubleMap, p014it.unimi.dsi.fastutil.chars.Char2DoubleSortedMap
@@ -1180,7 +1180,7 @@ public class Char2DoubleAVLTreeMap extends AbstractChar2DoubleSortedMap implemen
         public double put(char k, double v) {
             Char2DoubleAVLTreeMap.this.modified = false;
             if (!m1023in(k)) {
-                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1388to)) + ")");
+                throw new IllegalArgumentException("Key (" + k + ") out of range [" + (this.bottom ? "-" : String.valueOf(this.from)) + ", " + (this.top ? "-" : String.valueOf(this.f1352to)) + ")");
             }
             return Char2DoubleAVLTreeMap.this.modified ? this.defRetValue : Char2DoubleAVLTreeMap.this.put(k, v);
         }
@@ -1218,7 +1218,7 @@ public class Char2DoubleAVLTreeMap extends AbstractChar2DoubleSortedMap implemen
 
         @Override // p014it.unimi.dsi.fastutil.chars.Char2DoubleSortedMap
         public Char2DoubleSortedMap headMap(char to) {
-            if (!this.top && Char2DoubleAVLTreeMap.this.compare(to, this.f1388to) >= 0) {
+            if (!this.top && Char2DoubleAVLTreeMap.this.compare(to, this.f1352to) >= 0) {
                 return this;
             }
             return new Submap(this.from, this.bottom, to, false);
@@ -1229,7 +1229,7 @@ public class Char2DoubleAVLTreeMap extends AbstractChar2DoubleSortedMap implemen
             if (!this.bottom && Char2DoubleAVLTreeMap.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Submap(from, false, this.f1388to, this.top);
+            return new Submap(from, false, this.f1352to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.chars.Char2DoubleSortedMap
@@ -1238,12 +1238,12 @@ public class Char2DoubleAVLTreeMap extends AbstractChar2DoubleSortedMap implemen
                 return new Submap(from, false, to, false);
             }
             if (!this.top) {
-                to = Char2DoubleAVLTreeMap.this.compare(to, this.f1388to) < 0 ? to : this.f1388to;
+                to = Char2DoubleAVLTreeMap.this.compare(to, this.f1352to) < 0 ? to : this.f1352to;
             }
             if (!this.bottom) {
                 from = Char2DoubleAVLTreeMap.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f1388to) ? new Submap(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f1352to) ? new Submap(from, false, to, false) : this;
         }
 
         public Entry firstEntry() {
@@ -1262,7 +1262,7 @@ public class Char2DoubleAVLTreeMap extends AbstractChar2DoubleSortedMap implemen
             if (e == null) {
                 return null;
             }
-            if (this.top || Char2DoubleAVLTreeMap.this.compare(e.key, this.f1388to) < 0) {
+            if (this.top || Char2DoubleAVLTreeMap.this.compare(e.key, this.f1352to) < 0) {
                 return e;
             }
             return null;
@@ -1276,8 +1276,8 @@ public class Char2DoubleAVLTreeMap extends AbstractChar2DoubleSortedMap implemen
             if (this.top) {
                 e = Char2DoubleAVLTreeMap.this.lastEntry;
             } else {
-                e = Char2DoubleAVLTreeMap.this.locateKey(this.f1388to);
-                if (Char2DoubleAVLTreeMap.this.compare(e.key, this.f1388to) >= 0) {
+                e = Char2DoubleAVLTreeMap.this.locateKey(this.f1352to);
+                if (Char2DoubleAVLTreeMap.this.compare(e.key, this.f1352to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -1355,7 +1355,7 @@ public class Char2DoubleAVLTreeMap extends AbstractChar2DoubleSortedMap implemen
             @Override // p014it.unimi.dsi.fastutil.chars.Char2DoubleAVLTreeMap.TreeIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Submap.this.top && this.next != null && Char2DoubleAVLTreeMap.this.compare(this.next.key, Submap.this.f1388to) >= 0) {
+                if (!Submap.this.top && this.next != null && Char2DoubleAVLTreeMap.this.compare(this.next.key, Submap.this.f1352to) >= 0) {
                     this.next = null;
                 }
             }

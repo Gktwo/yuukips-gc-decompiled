@@ -5,10 +5,9 @@ import java.net.StandardProtocolFamily;
 import p013io.netty.channel.socket.InternetProtocolFamily;
 import p013io.netty.util.internal.SuppressJava6Requirement;
 
-/* access modifiers changed from: package-private */
 /* renamed from: io.netty.channel.socket.nio.ProtocolFamilyConverter */
 /* loaded from: grasscutter.jar:io/netty/channel/socket/nio/ProtocolFamilyConverter.class */
-public final class ProtocolFamilyConverter {
+final class ProtocolFamilyConverter {
     private ProtocolFamilyConverter() {
     }
 

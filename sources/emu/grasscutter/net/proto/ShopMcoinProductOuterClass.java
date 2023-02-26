@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ShopMcoinProductOuterClass.class */
 public final class ShopMcoinProductOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016ShopMcoinProduct.proto\"¢\u0001\n\u0010ShopMcoinProduct\u0012\u0012\n\nproduct_id\u0018\u0001 \u0001(\t\u0012\u0012\n\nprice_tier\u0018\u0002 \u0001(\t\u0012\u0012\n\nmcoin_base\u0018\u0003 \u0001(\r\u0012\u0017\n\u000fmcoin_non_first\u0018\u0004 \u0001(\r\u0012\u0013\n\u000bmcoin_first\u0018\u0005 \u0001(\r\u0012\u0012\n\nbought_num\u0018\u0006 \u0001(\r\u0012\u0010\n\bis_audit\u0018\u0007 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016ShopMcoinProduct.proto\"\u0001\n\u0010ShopMcoinProduct\u0012\u0011\n\tproductId\u0018\u0001 \u0001(\t\u0012\u0011\n\tpriceTier\u0018\u0002 \u0001(\t\u0012\u0011\n\tmcoinBase\u0018\u0003 \u0001(\r\u0012\u0015\n\rmcoinNonFirst\u0018\u0004 \u0001(\r\u0012\u0012\n\nmcoinFirst\u0018\u0005 \u0001(\r\u0012\u0011\n\tboughtNum\u0018\u0006 \u0001(\r\u0012\u000f\n\u0007isAudit\u0018\u0007 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ShopMcoinProduct_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_ShopMcoinProduct_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ShopMcoinProduct_descriptor, new String[]{"ProductId", "PriceTier", "McoinBase", "McoinNonFirst", "McoinFirst", "BoughtNum", "IsAudit"});
 
@@ -58,19 +58,19 @@ public final class ShopMcoinProductOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ShopMcoinProductOuterClass$ShopMcoinProduct.class */
     public static final class ShopMcoinProduct extends GeneratedMessageV3 implements ShopMcoinProductOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PRODUCT_ID_FIELD_NUMBER = 1;
+        public static final int PRODUCTID_FIELD_NUMBER = 1;
         private volatile Object productId_;
-        public static final int PRICE_TIER_FIELD_NUMBER = 2;
+        public static final int PRICETIER_FIELD_NUMBER = 2;
         private volatile Object priceTier_;
-        public static final int MCOIN_BASE_FIELD_NUMBER = 3;
+        public static final int MCOINBASE_FIELD_NUMBER = 3;
         private int mcoinBase_;
-        public static final int MCOIN_NON_FIRST_FIELD_NUMBER = 4;
+        public static final int MCOINNONFIRST_FIELD_NUMBER = 4;
         private int mcoinNonFirst_;
-        public static final int MCOIN_FIRST_FIELD_NUMBER = 5;
+        public static final int MCOINFIRST_FIELD_NUMBER = 5;
         private int mcoinFirst_;
-        public static final int BOUGHT_NUM_FIELD_NUMBER = 6;
+        public static final int BOUGHTNUM_FIELD_NUMBER = 6;
         private int boughtNum_;
-        public static final int IS_AUDIT_FIELD_NUMBER = 7;
+        public static final int ISAUDIT_FIELD_NUMBER = 7;
         private boolean isAudit_;
         private byte memoizedIsInitialized;
         private static final ShopMcoinProduct DEFAULT_INSTANCE = new ShopMcoinProduct();

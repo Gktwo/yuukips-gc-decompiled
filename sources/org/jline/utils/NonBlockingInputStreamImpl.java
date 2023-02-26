@@ -11,13 +11,13 @@ import java.io.InterruptedIOException;
 public class NonBlockingInputStreamImpl extends NonBlockingInputStream {
 
     /* renamed from: in */
-    private InputStream f3270in;
+    private InputStream f3234in;
     private String name;
     private Thread thread;
     static final /* synthetic */ boolean $assertionsDisabled;
 
     /* renamed from: b */
-    private int f3271b = -2;
+    private int f3235b = -2;
     private boolean threadIsReading = false;
     private IOException exception = null;
     private long threadDelay = 60000;
@@ -27,7 +27,7 @@ public class NonBlockingInputStreamImpl extends NonBlockingInputStream {
     }
 
     public NonBlockingInputStreamImpl(String name, InputStream in) {
-        this.f3270in = in;
+        this.f3234in = in;
         this.name = name;
     }
 
@@ -49,7 +49,7 @@ public class NonBlockingInputStreamImpl extends NonBlockingInputStream {
 
     @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
     public void close() throws IOException {
-        this.f3270in.close();
+        this.f3234in.close();
         shutdown();
     }
 
@@ -65,7 +65,7 @@ public class NonBlockingInputStreamImpl extends NonBlockingInputStream {
     @Override // org.jline.utils.NonBlockingInputStream
     public synchronized int read(long j, boolean isPeek) throws IOException {
         if (this.exception == null) {
-            if (this.f3271b >= -1) {
+            if (this.f3235b >= -1) {
                 if (!$assertionsDisabled && this.exception != null) {
                     throw new AssertionError();
                 }
@@ -91,7 +91,7 @@ public class NonBlockingInputStreamImpl extends NonBlockingInputStream {
                     }
                     wait(j);
                     if (this.exception != null) {
-                        if ($assertionsDisabled || this.f3271b == -2) {
+                        if ($assertionsDisabled || this.f3235b == -2) {
                             IOException toBeThrown = this.exception;
                             if (!isPeek) {
                                 this.exception = null;
@@ -99,7 +99,7 @@ public class NonBlockingInputStreamImpl extends NonBlockingInputStream {
                             throw toBeThrown;
                         }
                         throw new AssertionError();
-                    } else if (this.f3271b >= -1) {
+                    } else if (this.f3235b >= -1) {
                         if (!$assertionsDisabled && this.exception != null) {
                             throw new AssertionError();
                         }
@@ -108,14 +108,14 @@ public class NonBlockingInputStreamImpl extends NonBlockingInputStream {
                     }
                 }
             } else {
-                this.f3271b = this.f3270in.read();
+                this.f3235b = this.f3234in.read();
             }
-            int ret = this.f3271b;
+            int ret = this.f3235b;
             if (!isPeek) {
-                this.f3271b = -2;
+                this.f3235b = -2;
             }
             return ret;
-        } else if ($assertionsDisabled || this.f3271b == -2) {
+        } else if ($assertionsDisabled || this.f3235b == -2) {
             IOException toBeThrown2 = this.exception;
             if (!isPeek) {
                 this.exception = null;

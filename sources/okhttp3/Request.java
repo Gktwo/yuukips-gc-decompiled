@@ -131,7 +131,7 @@ public final class Request {
     @JvmName(name = "-deprecated_url")
     @NotNull
     /* renamed from: -deprecated_url  reason: not valid java name */
-    public final HttpUrl m9279deprecated_url() {
+    public final HttpUrl m9276deprecated_url() {
         return this.url;
     }
 
@@ -139,7 +139,7 @@ public final class Request {
     @JvmName(name = "-deprecated_method")
     @NotNull
     /* renamed from: -deprecated_method  reason: not valid java name */
-    public final String m9280deprecated_method() {
+    public final String m9277deprecated_method() {
         return this.method;
     }
 
@@ -147,7 +147,7 @@ public final class Request {
     @JvmName(name = "-deprecated_headers")
     @NotNull
     /* renamed from: -deprecated_headers  reason: not valid java name */
-    public final Headers m9281deprecated_headers() {
+    public final Headers m9278deprecated_headers() {
         return this.headers;
     }
 
@@ -155,7 +155,7 @@ public final class Request {
     @JvmName(name = "-deprecated_body")
     @Nullable
     /* renamed from: -deprecated_body  reason: not valid java name */
-    public final RequestBody m9282deprecated_body() {
+    public final RequestBody m9279deprecated_body() {
         return this.body;
     }
 
@@ -163,7 +163,7 @@ public final class Request {
     @JvmName(name = "-deprecated_cacheControl")
     @NotNull
     /* renamed from: -deprecated_cacheControl  reason: not valid java name */
-    public final CacheControl m9283deprecated_cacheControl() {
+    public final CacheControl m9280deprecated_cacheControl() {
         return cacheControl();
     }
 

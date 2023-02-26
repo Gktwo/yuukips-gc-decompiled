@@ -26,12 +26,14 @@ import java.util.List;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneTeamUpdateNotifyOuterClass.class */
 public final class SceneTeamUpdateNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bSceneTeamUpdateNotify.proto\u001a\u0015SceneTeamAvatar.proto\"[\n\u0015SceneTeamUpdateNotify\u00120\n\u0016scene_team_avatar_list\u0018\u000b \u0003(\u000b2\u0010.SceneTeamAvatar\u0012\u0010\n\bis_in_mp\u0018\u0007 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{SceneTeamAvatarOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001bSceneTeamUpdateNotify.proto\u001a\u0015SceneTeamAvatar.proto\"V\n\u0015SceneTeamUpdateNotify\u0012\u000e\n\u0006isInMp\u0018\u000f \u0001(\b\u0012-\n\u0013sceneTeamAvatarList\u0018\f \u0003(\u000b2\u0010.SceneTeamAvatarB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{SceneTeamAvatarOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_SceneTeamUpdateNotify_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SceneTeamUpdateNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneTeamUpdateNotify_descriptor, new String[]{"SceneTeamAvatarList", "IsInMp"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_SceneTeamUpdateNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_SceneTeamUpdateNotify_descriptor, new String[]{"IsInMp", "SceneTeamAvatarList"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneTeamUpdateNotifyOuterClass$SceneTeamUpdateNotifyOrBuilder.class */
     public interface SceneTeamUpdateNotifyOrBuilder extends MessageOrBuilder {
+        boolean getIsInMp();
+
         List<SceneTeamAvatarOuterClass.SceneTeamAvatar> getSceneTeamAvatarListList();
 
         SceneTeamAvatarOuterClass.SceneTeamAvatar getSceneTeamAvatarList(int i);
@@ -41,8 +43,6 @@ public final class SceneTeamUpdateNotifyOuterClass {
         List<? extends SceneTeamAvatarOuterClass.SceneTeamAvatarOrBuilder> getSceneTeamAvatarListOrBuilderList();
 
         SceneTeamAvatarOuterClass.SceneTeamAvatarOrBuilder getSceneTeamAvatarListOrBuilder(int i);
-
-        boolean getIsInMp();
     }
 
     private SceneTeamUpdateNotifyOuterClass() {
@@ -58,10 +58,10 @@ public final class SceneTeamUpdateNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneTeamUpdateNotifyOuterClass$SceneTeamUpdateNotify.class */
     public static final class SceneTeamUpdateNotify extends GeneratedMessageV3 implements SceneTeamUpdateNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int SCENE_TEAM_AVATAR_LIST_FIELD_NUMBER = 11;
-        private List<SceneTeamAvatarOuterClass.SceneTeamAvatar> sceneTeamAvatarList_;
-        public static final int IS_IN_MP_FIELD_NUMBER = 7;
+        public static final int ISINMP_FIELD_NUMBER = 15;
         private boolean isInMp_;
+        public static final int SCENETEAMAVATARLIST_FIELD_NUMBER = 12;
+        private List<SceneTeamAvatarOuterClass.SceneTeamAvatar> sceneTeamAvatarList_;
         private byte memoizedIsInitialized;
         private static final SceneTeamUpdateNotify DEFAULT_INSTANCE = new SceneTeamUpdateNotify();
         private static final Parser<SceneTeamUpdateNotify> PARSER = new AbstractParser<SceneTeamUpdateNotify>() { // from class: emu.grasscutter.net.proto.SceneTeamUpdateNotifyOuterClass.SceneTeamUpdateNotify.1
@@ -111,15 +111,15 @@ public final class SceneTeamUpdateNotifyOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 56:
-                                    this.isInMp_ = input.readBool();
-                                    break;
-                                case 90:
+                                case 98:
                                     if ((mutable_bitField0_ & 1) == 0) {
                                         this.sceneTeamAvatarList_ = new ArrayList();
                                         mutable_bitField0_ |= 1;
                                     }
                                     this.sceneTeamAvatarList_.add((SceneTeamAvatarOuterClass.SceneTeamAvatar) input.readMessage(SceneTeamAvatarOuterClass.SceneTeamAvatar.parser(), extensionRegistry));
+                                    break;
+                                case 120:
+                                    this.isInMp_ = input.readBool();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -155,6 +155,11 @@ public final class SceneTeamUpdateNotifyOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.SceneTeamUpdateNotifyOuterClass.SceneTeamUpdateNotifyOrBuilder
+        public boolean getIsInMp() {
+            return this.isInMp_;
+        }
+
+        @Override // emu.grasscutter.net.proto.SceneTeamUpdateNotifyOuterClass.SceneTeamUpdateNotifyOrBuilder
         public List<SceneTeamAvatarOuterClass.SceneTeamAvatar> getSceneTeamAvatarListList() {
             return this.sceneTeamAvatarList_;
         }
@@ -179,11 +184,6 @@ public final class SceneTeamUpdateNotifyOuterClass {
             return this.sceneTeamAvatarList_.get(index);
         }
 
-        @Override // emu.grasscutter.net.proto.SceneTeamUpdateNotifyOuterClass.SceneTeamUpdateNotifyOrBuilder
-        public boolean getIsInMp() {
-            return this.isInMp_;
-        }
-
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte isInitialized = this.memoizedIsInitialized;
@@ -199,11 +199,11 @@ public final class SceneTeamUpdateNotifyOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.isInMp_) {
-                output.writeBool(7, this.isInMp_);
-            }
             for (int i = 0; i < this.sceneTeamAvatarList_.size(); i++) {
-                output.writeMessage(11, this.sceneTeamAvatarList_.get(i));
+                output.writeMessage(12, this.sceneTeamAvatarList_.get(i));
+            }
+            if (this.isInMp_) {
+                output.writeBool(15, this.isInMp_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -215,11 +215,11 @@ public final class SceneTeamUpdateNotifyOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.isInMp_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(7, this.isInMp_);
-            }
             for (int i = 0; i < this.sceneTeamAvatarList_.size(); i++) {
-                size2 += CodedOutputStream.computeMessageSize(11, this.sceneTeamAvatarList_.get(i));
+                size2 += CodedOutputStream.computeMessageSize(12, this.sceneTeamAvatarList_.get(i));
+            }
+            if (this.isInMp_) {
+                size2 += CodedOutputStream.computeBoolSize(15, this.isInMp_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -235,7 +235,7 @@ public final class SceneTeamUpdateNotifyOuterClass {
                 return equals(obj);
             }
             SceneTeamUpdateNotify other = (SceneTeamUpdateNotify) obj;
-            return getSceneTeamAvatarListList().equals(other.getSceneTeamAvatarListList()) && getIsInMp() == other.getIsInMp() && this.unknownFields.equals(other.unknownFields);
+            return getIsInMp() == other.getIsInMp() && getSceneTeamAvatarListList().equals(other.getSceneTeamAvatarListList()) && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -243,11 +243,11 @@ public final class SceneTeamUpdateNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (19 * 41) + getDescriptor().hashCode();
+            int hash = (53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + Internal.hashBoolean(getIsInMp());
             if (getSceneTeamAvatarListCount() > 0) {
-                hash = (53 * ((37 * hash) + 11)) + getSceneTeamAvatarListList().hashCode();
+                hash = (53 * ((37 * hash) + 12)) + getSceneTeamAvatarListList().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 7)) + Internal.hashBoolean(getIsInMp()))) + this.unknownFields.hashCode();
+            int hash2 = (29 * hash) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }
@@ -327,9 +327,9 @@ public final class SceneTeamUpdateNotifyOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/SceneTeamUpdateNotifyOuterClass$SceneTeamUpdateNotify$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements SceneTeamUpdateNotifyOrBuilder {
             private int bitField0_;
+            private boolean isInMp_;
             private List<SceneTeamAvatarOuterClass.SceneTeamAvatar> sceneTeamAvatarList_ = Collections.emptyList();
             private RepeatedFieldBuilderV3<SceneTeamAvatarOuterClass.SceneTeamAvatar, SceneTeamAvatarOuterClass.SceneTeamAvatar.Builder, SceneTeamAvatarOuterClass.SceneTeamAvatarOrBuilder> sceneTeamAvatarListBuilder_;
-            private boolean isInMp_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return SceneTeamUpdateNotifyOuterClass.internal_static_SceneTeamUpdateNotify_descriptor;
@@ -358,13 +358,13 @@ public final class SceneTeamUpdateNotifyOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.isInMp_ = false;
                 if (this.sceneTeamAvatarListBuilder_ == null) {
                     this.sceneTeamAvatarList_ = Collections.emptyList();
                     this.bitField0_ &= -2;
                 } else {
                     this.sceneTeamAvatarListBuilder_.clear();
                 }
-                this.isInMp_ = false;
                 return this;
             }
 
@@ -391,6 +391,7 @@ public final class SceneTeamUpdateNotifyOuterClass {
             public SceneTeamUpdateNotify buildPartial() {
                 SceneTeamUpdateNotify result = new SceneTeamUpdateNotify(this);
                 int i = this.bitField0_;
+                result.isInMp_ = this.isInMp_;
                 if (this.sceneTeamAvatarListBuilder_ == null) {
                     if ((this.bitField0_ & 1) != 0) {
                         this.sceneTeamAvatarList_ = Collections.unmodifiableList(this.sceneTeamAvatarList_);
@@ -400,7 +401,6 @@ public final class SceneTeamUpdateNotifyOuterClass {
                 } else {
                     result.sceneTeamAvatarList_ = this.sceneTeamAvatarListBuilder_.build();
                 }
-                result.isInMp_ = this.isInMp_;
                 onBuilt();
                 return result;
             }
@@ -448,6 +448,9 @@ public final class SceneTeamUpdateNotifyOuterClass {
                 if (other == SceneTeamUpdateNotify.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getIsInMp()) {
+                    setIsInMp(other.getIsInMp());
+                }
                 if (this.sceneTeamAvatarListBuilder_ == null) {
                     if (!other.sceneTeamAvatarList_.isEmpty()) {
                         if (this.sceneTeamAvatarList_.isEmpty()) {
@@ -469,9 +472,6 @@ public final class SceneTeamUpdateNotifyOuterClass {
                     } else {
                         this.sceneTeamAvatarListBuilder_.addAllMessages(other.sceneTeamAvatarList_);
                     }
-                }
-                if (other.getIsInMp()) {
-                    setIsInMp(other.getIsInMp());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -503,6 +503,23 @@ public final class SceneTeamUpdateNotifyOuterClass {
                     }
                     throw th;
                 }
+            }
+
+            @Override // emu.grasscutter.net.proto.SceneTeamUpdateNotifyOuterClass.SceneTeamUpdateNotifyOrBuilder
+            public boolean getIsInMp() {
+                return this.isInMp_;
+            }
+
+            public Builder setIsInMp(boolean value) {
+                this.isInMp_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearIsInMp() {
+                this.isInMp_ = false;
+                onChanged();
+                return this;
             }
 
             private void ensureSceneTeamAvatarListIsMutable() {
@@ -679,23 +696,6 @@ public final class SceneTeamUpdateNotifyOuterClass {
                     this.sceneTeamAvatarList_ = null;
                 }
                 return this.sceneTeamAvatarListBuilder_;
-            }
-
-            @Override // emu.grasscutter.net.proto.SceneTeamUpdateNotifyOuterClass.SceneTeamUpdateNotifyOrBuilder
-            public boolean getIsInMp() {
-                return this.isInMp_;
-            }
-
-            public Builder setIsInMp(boolean value) {
-                this.isInMp_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearIsInMp() {
-                this.isInMp_ = false;
-                onChanged();
-                return this;
             }
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder

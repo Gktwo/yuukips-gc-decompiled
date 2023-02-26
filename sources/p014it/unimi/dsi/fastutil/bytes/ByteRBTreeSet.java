@@ -569,7 +569,7 @@ public class ByteRBTreeSet extends AbstractByteSortedSet implements Serializable
         byte from;
 
         /* renamed from: to */
-        byte f1301to;
+        byte f1265to;
         boolean bottom;
         boolean top;
 
@@ -577,7 +577,7 @@ public class ByteRBTreeSet extends AbstractByteSortedSet implements Serializable
             if (bottom || top || ByteRBTreeSet.this.compare(from, to) <= 0) {
                 this.from = from;
                 this.bottom = bottom;
-                this.f1301to = to;
+                this.f1265to = to;
                 this.top = top;
                 return;
             }
@@ -595,7 +595,7 @@ public class ByteRBTreeSet extends AbstractByteSortedSet implements Serializable
 
         /* renamed from: in */
         final boolean m1042in(byte k) {
-            return (this.bottom || ByteRBTreeSet.this.compare(k, this.from) >= 0) && (this.top || ByteRBTreeSet.this.compare(k, this.f1301to) < 0);
+            return (this.bottom || ByteRBTreeSet.this.compare(k, this.from) >= 0) && (this.top || ByteRBTreeSet.this.compare(k, this.f1265to) < 0);
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteCollection, p014it.unimi.dsi.fastutil.bytes.ByteCollection
@@ -608,7 +608,7 @@ public class ByteRBTreeSet extends AbstractByteSortedSet implements Serializable
             if (m1042in(k)) {
                 return ByteRBTreeSet.this.add(k);
             }
-            throw new IllegalArgumentException("Element (" + ((int) k) + ") out of range [" + (this.bottom ? "-" : String.valueOf((int) this.from)) + ", " + (this.top ? "-" : String.valueOf((int) this.f1301to)) + ")");
+            throw new IllegalArgumentException("Element (" + ((int) k) + ") out of range [" + (this.bottom ? "-" : String.valueOf((int) this.from)) + ", " + (this.top ? "-" : String.valueOf((int) this.f1265to)) + ")");
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.AbstractByteSet, p014it.unimi.dsi.fastutil.bytes.ByteSet
@@ -653,7 +653,7 @@ public class ByteRBTreeSet extends AbstractByteSortedSet implements Serializable
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteSortedSet
         public ByteSortedSet headSet(byte to) {
-            if (!this.top && ByteRBTreeSet.this.compare(to, this.f1301to) >= 0) {
+            if (!this.top && ByteRBTreeSet.this.compare(to, this.f1265to) >= 0) {
                 return this;
             }
             return new Subset(this.from, this.bottom, to, false);
@@ -664,7 +664,7 @@ public class ByteRBTreeSet extends AbstractByteSortedSet implements Serializable
             if (!this.bottom && ByteRBTreeSet.this.compare(from, this.from) <= 0) {
                 return this;
             }
-            return new Subset(from, false, this.f1301to, this.top);
+            return new Subset(from, false, this.f1265to, this.top);
         }
 
         @Override // p014it.unimi.dsi.fastutil.bytes.ByteSortedSet
@@ -673,12 +673,12 @@ public class ByteRBTreeSet extends AbstractByteSortedSet implements Serializable
                 return new Subset(from, false, to, false);
             }
             if (!this.top) {
-                to = ByteRBTreeSet.this.compare(to, this.f1301to) < 0 ? to : this.f1301to;
+                to = ByteRBTreeSet.this.compare(to, this.f1265to) < 0 ? to : this.f1265to;
             }
             if (!this.bottom) {
                 from = ByteRBTreeSet.this.compare(from, this.from) > 0 ? from : this.from;
             }
-            return (this.top || this.bottom || from != this.from || to != this.f1301to) ? new Subset(from, false, to, false) : this;
+            return (this.top || this.bottom || from != this.from || to != this.f1265to) ? new Subset(from, false, to, false) : this;
         }
 
         public Entry firstEntry() {
@@ -697,7 +697,7 @@ public class ByteRBTreeSet extends AbstractByteSortedSet implements Serializable
             if (e == null) {
                 return null;
             }
-            if (this.top || ByteRBTreeSet.this.compare(e.key, this.f1301to) < 0) {
+            if (this.top || ByteRBTreeSet.this.compare(e.key, this.f1265to) < 0) {
                 return e;
             }
             return null;
@@ -711,8 +711,8 @@ public class ByteRBTreeSet extends AbstractByteSortedSet implements Serializable
             if (this.top) {
                 e = ByteRBTreeSet.this.lastEntry;
             } else {
-                e = ByteRBTreeSet.this.locateKey(this.f1301to);
-                if (ByteRBTreeSet.this.compare(e.key, this.f1301to) >= 0) {
+                e = ByteRBTreeSet.this.locateKey(this.f1265to);
+                if (ByteRBTreeSet.this.compare(e.key, this.f1265to) >= 0) {
                     e = e.prev();
                 }
             }
@@ -790,7 +790,7 @@ public class ByteRBTreeSet extends AbstractByteSortedSet implements Serializable
             @Override // p014it.unimi.dsi.fastutil.bytes.ByteRBTreeSet.SetIterator
             void updateNext() {
                 this.next = this.next.next();
-                if (!Subset.this.top && this.next != null && ByteRBTreeSet.this.compare(this.next.key, Subset.this.f1301to) >= 0) {
+                if (!Subset.this.top && this.next != null && ByteRBTreeSet.this.compare(this.next.key, Subset.this.f1265to) >= 0) {
                     this.next = null;
                 }
             }

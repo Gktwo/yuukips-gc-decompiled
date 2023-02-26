@@ -203,30 +203,30 @@ public abstract class AbstractLong2IntMap extends AbstractLong2IntFunction imple
                 return new LongIterator() { // from class: it.unimi.dsi.fastutil.longs.AbstractLong2IntMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Long2IntMap.Entry> f2237i;
+                    private final ObjectIterator<Long2IntMap.Entry> f2201i;
 
                     {
-                        this.f2237i = Long2IntMaps.fastIterator(AbstractLong2IntMap.this);
+                        this.f2201i = Long2IntMaps.fastIterator(AbstractLong2IntMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.longs.LongIterator, java.util.PrimitiveIterator.OfLong
                     public long nextLong() {
-                        return this.f2237i.next().getLongKey();
+                        return this.f2201i.next().getLongKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2237i.hasNext();
+                        return this.f2201i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2237i.remove();
+                        this.f2201i.remove();
                     }
 
                     @Override // java.util.PrimitiveIterator.OfLong
                     public void forEachRemaining(LongConsumer action) {
-                        this.f2237i.forEachRemaining(entry -> {
+                        this.f2201i.forEachRemaining(entry -> {
                             action.accept(entry.getLongKey());
                         });
                     }
@@ -264,30 +264,30 @@ public abstract class AbstractLong2IntMap extends AbstractLong2IntFunction imple
                 return new IntIterator() { // from class: it.unimi.dsi.fastutil.longs.AbstractLong2IntMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Long2IntMap.Entry> f2238i;
+                    private final ObjectIterator<Long2IntMap.Entry> f2202i;
 
                     {
-                        this.f2238i = Long2IntMaps.fastIterator(AbstractLong2IntMap.this);
+                        this.f2202i = Long2IntMaps.fastIterator(AbstractLong2IntMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.ints.IntIterator, java.util.PrimitiveIterator.OfInt
                     public int nextInt() {
-                        return this.f2238i.next().getIntValue();
+                        return this.f2202i.next().getIntValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f2238i.hasNext();
+                        return this.f2202i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f2238i.remove();
+                        this.f2202i.remove();
                     }
 
                     @Override // java.util.PrimitiveIterator.OfInt
                     public void forEachRemaining(IntConsumer action) {
-                        this.f2238i.forEachRemaining(entry -> {
+                        this.f2202i.forEachRemaining(entry -> {
                             action.accept(entry.getIntValue());
                         });
                     }

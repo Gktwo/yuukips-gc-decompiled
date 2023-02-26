@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarPromoteRspOuterClass.class */
 public final class AvatarPromoteRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016AvatarPromoteRsp.proto\"1\n\u0010AvatarPromoteRsp\u0012\f\n\u0004guid\u0018\u000b \u0001(\u0004\u0012\u000f\n\u0007retcode\u0018\r \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016AvatarPromoteRsp.proto\"1\n\u0010AvatarPromoteRsp\u0012\f\n\u0004guid\u0018\r \u0001(\u0004\u0012\u000f\n\u0007retcode\u0018\u0007 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AvatarPromoteRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AvatarPromoteRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AvatarPromoteRsp_descriptor, new String[]{"Guid", "Retcode"});
 
@@ -44,9 +44,9 @@ public final class AvatarPromoteRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AvatarPromoteRspOuterClass$AvatarPromoteRsp.class */
     public static final class AvatarPromoteRsp extends GeneratedMessageV3 implements AvatarPromoteRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int GUID_FIELD_NUMBER = 11;
+        public static final int GUID_FIELD_NUMBER = 13;
         private long guid_;
-        public static final int RETCODE_FIELD_NUMBER = 13;
+        public static final int RETCODE_FIELD_NUMBER = 7;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final AvatarPromoteRsp DEFAULT_INSTANCE = new AvatarPromoteRsp();
@@ -93,11 +93,11 @@ public final class AvatarPromoteRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 88:
-                                this.guid_ = input.readUInt64();
+                            case 56:
+                                this.retcode_ = input.readInt32();
                                 break;
                             case 104:
-                                this.retcode_ = input.readInt32();
+                                this.guid_ = input.readUInt64();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -153,11 +153,11 @@ public final class AvatarPromoteRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.guid_ != 0) {
-                output.writeUInt64(11, this.guid_);
-            }
             if (this.retcode_ != 0) {
-                output.writeInt32(13, this.retcode_);
+                output.writeInt32(7, this.retcode_);
+            }
+            if (this.guid_ != 0) {
+                output.writeUInt64(13, this.guid_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,11 +169,11 @@ public final class AvatarPromoteRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.guid_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt64Size(11, this.guid_);
-            }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(13, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(7, this.retcode_);
+            }
+            if (this.guid_ != 0) {
+                size2 += CodedOutputStream.computeUInt64Size(13, this.guid_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -197,7 +197,7 @@ public final class AvatarPromoteRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + Internal.hashLong(getGuid()))) + 13)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + Internal.hashLong(getGuid()))) + 7)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

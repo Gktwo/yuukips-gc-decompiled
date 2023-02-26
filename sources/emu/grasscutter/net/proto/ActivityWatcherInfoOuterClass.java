@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ActivityWatcherInfoOuterClass.class */
 public final class ActivityWatcherInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019ActivityWatcherInfo.proto\"p\n\u0013ActivityWatcherInfo\u0012\u0017\n\u000fis_taken_reward\u0018\u0002 \u0001(\b\u0012\u0016\n\u000etotal_progress\u0018\u0001 \u0001(\r\u0012\u0014\n\fcur_progress\u0018\b \u0001(\r\u0012\u0012\n\nwatcher_id\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0019ActivityWatcherInfo.proto\"k\n\u0013ActivityWatcherInfo\u0012\u0013\n\u000bcurProgress\u0018\b \u0001(\r\u0012\u0015\n\risTakenReward\u0018\f \u0001(\b\u0012\u0015\n\rtotalProgress\u0018\u0001 \u0001(\r\u0012\u0011\n\twatcherId\u0018\n \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ActivityWatcherInfo_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ActivityWatcherInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ActivityWatcherInfo_descriptor, new String[]{"IsTakenReward", "TotalProgress", "CurProgress", "WatcherId"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ActivityWatcherInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ActivityWatcherInfo_descriptor, new String[]{"CurProgress", "IsTakenReward", "TotalProgress", "WatcherId"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ActivityWatcherInfoOuterClass$ActivityWatcherInfoOrBuilder.class */
     public interface ActivityWatcherInfoOrBuilder extends MessageOrBuilder {
+        int getCurProgress();
+
         boolean getIsTakenReward();
 
         int getTotalProgress();
-
-        int getCurProgress();
 
         int getWatcherId();
     }
@@ -48,13 +48,13 @@ public final class ActivityWatcherInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ActivityWatcherInfoOuterClass$ActivityWatcherInfo.class */
     public static final class ActivityWatcherInfo extends GeneratedMessageV3 implements ActivityWatcherInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int IS_TAKEN_REWARD_FIELD_NUMBER = 2;
-        private boolean isTakenReward_;
-        public static final int TOTAL_PROGRESS_FIELD_NUMBER = 1;
-        private int totalProgress_;
-        public static final int CUR_PROGRESS_FIELD_NUMBER = 8;
+        public static final int CURPROGRESS_FIELD_NUMBER = 8;
         private int curProgress_;
-        public static final int WATCHER_ID_FIELD_NUMBER = 14;
+        public static final int ISTAKENREWARD_FIELD_NUMBER = 12;
+        private boolean isTakenReward_;
+        public static final int TOTALPROGRESS_FIELD_NUMBER = 1;
+        private int totalProgress_;
+        public static final int WATCHERID_FIELD_NUMBER = 10;
         private int watcherId_;
         private byte memoizedIsInitialized;
         private static final ActivityWatcherInfo DEFAULT_INSTANCE = new ActivityWatcherInfo();
@@ -105,14 +105,14 @@ public final class ActivityWatcherInfoOuterClass {
                                 case 8:
                                     this.totalProgress_ = input.readUInt32();
                                     break;
-                                case 16:
-                                    this.isTakenReward_ = input.readBool();
-                                    break;
                                 case 64:
                                     this.curProgress_ = input.readUInt32();
                                     break;
-                                case 112:
+                                case 80:
                                     this.watcherId_ = input.readUInt32();
+                                    break;
+                                case 96:
+                                    this.isTakenReward_ = input.readBool();
                                     break;
                                 default:
                                     if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -145,6 +145,11 @@ public final class ActivityWatcherInfoOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder
+        public int getCurProgress() {
+            return this.curProgress_;
+        }
+
+        @Override // emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder
         public boolean getIsTakenReward() {
             return this.isTakenReward_;
         }
@@ -152,11 +157,6 @@ public final class ActivityWatcherInfoOuterClass {
         @Override // emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder
         public int getTotalProgress() {
             return this.totalProgress_;
-        }
-
-        @Override // emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder
-        public int getCurProgress() {
-            return this.curProgress_;
         }
 
         @Override // emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder
@@ -182,14 +182,14 @@ public final class ActivityWatcherInfoOuterClass {
             if (this.totalProgress_ != 0) {
                 output.writeUInt32(1, this.totalProgress_);
             }
-            if (this.isTakenReward_) {
-                output.writeBool(2, this.isTakenReward_);
-            }
             if (this.curProgress_ != 0) {
                 output.writeUInt32(8, this.curProgress_);
             }
             if (this.watcherId_ != 0) {
-                output.writeUInt32(14, this.watcherId_);
+                output.writeUInt32(10, this.watcherId_);
+            }
+            if (this.isTakenReward_) {
+                output.writeBool(12, this.isTakenReward_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -204,14 +204,14 @@ public final class ActivityWatcherInfoOuterClass {
             if (this.totalProgress_ != 0) {
                 size2 = 0 + CodedOutputStream.computeUInt32Size(1, this.totalProgress_);
             }
-            if (this.isTakenReward_) {
-                size2 += CodedOutputStream.computeBoolSize(2, this.isTakenReward_);
-            }
             if (this.curProgress_ != 0) {
                 size2 += CodedOutputStream.computeUInt32Size(8, this.curProgress_);
             }
             if (this.watcherId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(14, this.watcherId_);
+                size2 += CodedOutputStream.computeUInt32Size(10, this.watcherId_);
+            }
+            if (this.isTakenReward_) {
+                size2 += CodedOutputStream.computeBoolSize(12, this.isTakenReward_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -227,7 +227,7 @@ public final class ActivityWatcherInfoOuterClass {
                 return equals(obj);
             }
             ActivityWatcherInfo other = (ActivityWatcherInfo) obj;
-            return getIsTakenReward() == other.getIsTakenReward() && getTotalProgress() == other.getTotalProgress() && getCurProgress() == other.getCurProgress() && getWatcherId() == other.getWatcherId() && this.unknownFields.equals(other.unknownFields);
+            return getCurProgress() == other.getCurProgress() && getIsTakenReward() == other.getIsTakenReward() && getTotalProgress() == other.getTotalProgress() && getWatcherId() == other.getWatcherId() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -235,7 +235,7 @@ public final class ActivityWatcherInfoOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 2)) + Internal.hashBoolean(getIsTakenReward()))) + 1)) + getTotalProgress())) + 8)) + getCurProgress())) + 14)) + getWatcherId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getCurProgress())) + 12)) + Internal.hashBoolean(getIsTakenReward()))) + 1)) + getTotalProgress())) + 10)) + getWatcherId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -314,9 +314,9 @@ public final class ActivityWatcherInfoOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ActivityWatcherInfoOuterClass$ActivityWatcherInfo$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ActivityWatcherInfoOrBuilder {
+            private int curProgress_;
             private boolean isTakenReward_;
             private int totalProgress_;
-            private int curProgress_;
             private int watcherId_;
 
             public static final Descriptors.Descriptor getDescriptor() {
@@ -345,9 +345,9 @@ public final class ActivityWatcherInfoOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
+                this.curProgress_ = 0;
                 this.isTakenReward_ = false;
                 this.totalProgress_ = 0;
-                this.curProgress_ = 0;
                 this.watcherId_ = 0;
                 return this;
             }
@@ -374,9 +374,9 @@ public final class ActivityWatcherInfoOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public ActivityWatcherInfo buildPartial() {
                 ActivityWatcherInfo result = new ActivityWatcherInfo(this);
+                result.curProgress_ = this.curProgress_;
                 result.isTakenReward_ = this.isTakenReward_;
                 result.totalProgress_ = this.totalProgress_;
-                result.curProgress_ = this.curProgress_;
                 result.watcherId_ = this.watcherId_;
                 onBuilt();
                 return result;
@@ -425,14 +425,14 @@ public final class ActivityWatcherInfoOuterClass {
                 if (other == ActivityWatcherInfo.getDefaultInstance()) {
                     return this;
                 }
+                if (other.getCurProgress() != 0) {
+                    setCurProgress(other.getCurProgress());
+                }
                 if (other.getIsTakenReward()) {
                     setIsTakenReward(other.getIsTakenReward());
                 }
                 if (other.getTotalProgress() != 0) {
                     setTotalProgress(other.getTotalProgress());
-                }
-                if (other.getCurProgress() != 0) {
-                    setCurProgress(other.getCurProgress());
                 }
                 if (other.getWatcherId() != 0) {
                     setWatcherId(other.getWatcherId());
@@ -470,6 +470,23 @@ public final class ActivityWatcherInfoOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder
+            public int getCurProgress() {
+                return this.curProgress_;
+            }
+
+            public Builder setCurProgress(int value) {
+                this.curProgress_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearCurProgress() {
+                this.curProgress_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder
             public boolean getIsTakenReward() {
                 return this.isTakenReward_;
             }
@@ -499,23 +516,6 @@ public final class ActivityWatcherInfoOuterClass {
 
             public Builder clearTotalProgress() {
                 this.totalProgress_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder
-            public int getCurProgress() {
-                return this.curProgress_;
-            }
-
-            public Builder setCurProgress(int value) {
-                this.curProgress_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearCurProgress() {
-                this.curProgress_ = 0;
                 onChanged();
                 return this;
             }

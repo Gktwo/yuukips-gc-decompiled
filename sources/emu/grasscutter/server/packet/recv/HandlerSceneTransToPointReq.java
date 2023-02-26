@@ -11,7 +11,7 @@ import emu.grasscutter.server.event.player.PlayerTeleportEvent;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketSceneTransToPointRsp;
 
-@Opcodes(216)
+@Opcodes(246)
 /* loaded from: grasscutter.jar:emu/grasscutter/server/packet/recv/HandlerSceneTransToPointReq.class */
 public class HandlerSceneTransToPointReq extends PacketHandler {
     @Override // emu.grasscutter.net.packet.PacketHandler

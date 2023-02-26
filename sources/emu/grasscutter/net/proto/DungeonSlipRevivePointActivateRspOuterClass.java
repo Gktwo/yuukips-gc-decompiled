@@ -19,17 +19,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonSlipRevivePointActivateRspOuterClass.class */
 public final class DungeonSlipRevivePointActivateRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n'DungeonSlipRevivePointActivateRsp.proto\"R\n!DungeonSlipRevivePointActivateRsp\u0012\u000f\n\u0007retcode\u0018\u000f \u0001(\u0005\u0012\u001c\n\u0014slip_revive_point_id\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n'DungeonSlipRevivePointActivateRsp.proto\"O\n!DungeonSlipRevivePointActivateRsp\u0012\u0019\n\u0011slipRevivePointId\u0018\u000b \u0001(\r\u0012\u000f\n\u0007retcode\u0018\u0005 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_DungeonSlipRevivePointActivateRsp_descriptor = getDescriptor().getMessageTypes().get(0);
 
     /* renamed from: internal_static_DungeonSlipRevivePointActivateRsp_fieldAccessorTable */
-    private static final GeneratedMessageV3.FieldAccessorTable f694x814a78a0 = new GeneratedMessageV3.FieldAccessorTable(internal_static_DungeonSlipRevivePointActivateRsp_descriptor, new String[]{"Retcode", "SlipRevivePointId"});
+    private static final GeneratedMessageV3.FieldAccessorTable f691x814a78a0 = new GeneratedMessageV3.FieldAccessorTable(internal_static_DungeonSlipRevivePointActivateRsp_descriptor, new String[]{"SlipRevivePointId", "Retcode"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonSlipRevivePointActivateRspOuterClass$DungeonSlipRevivePointActivateRspOrBuilder.class */
     public interface DungeonSlipRevivePointActivateRspOrBuilder extends MessageOrBuilder {
-        int getRetcode();
-
         int getSlipRevivePointId();
+
+        int getRetcode();
     }
 
     private DungeonSlipRevivePointActivateRspOuterClass() {
@@ -45,10 +45,10 @@ public final class DungeonSlipRevivePointActivateRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonSlipRevivePointActivateRspOuterClass$DungeonSlipRevivePointActivateRsp.class */
     public static final class DungeonSlipRevivePointActivateRsp extends GeneratedMessageV3 implements DungeonSlipRevivePointActivateRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 15;
-        private int retcode_;
-        public static final int SLIP_REVIVE_POINT_ID_FIELD_NUMBER = 13;
+        public static final int SLIPREVIVEPOINTID_FIELD_NUMBER = 11;
         private int slipRevivePointId_;
+        public static final int RETCODE_FIELD_NUMBER = 5;
+        private int retcode_;
         private byte memoizedIsInitialized;
         private static final DungeonSlipRevivePointActivateRsp DEFAULT_INSTANCE = new DungeonSlipRevivePointActivateRsp();
         private static final Parser<DungeonSlipRevivePointActivateRsp> PARSER = new AbstractParser<DungeonSlipRevivePointActivateRsp>() { // from class: emu.grasscutter.net.proto.DungeonSlipRevivePointActivateRspOuterClass.DungeonSlipRevivePointActivateRsp.1
@@ -94,11 +94,11 @@ public final class DungeonSlipRevivePointActivateRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 104:
-                                this.slipRevivePointId_ = input.readUInt32();
-                                break;
-                            case 120:
+                            case 40:
                                 this.retcode_ = input.readInt32();
+                                break;
+                            case 88:
+                                this.slipRevivePointId_ = input.readUInt32();
                                 break;
                             default:
                                 if (parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -126,17 +126,17 @@ public final class DungeonSlipRevivePointActivateRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3
         protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-            return DungeonSlipRevivePointActivateRspOuterClass.f694x814a78a0.ensureFieldAccessorsInitialized(DungeonSlipRevivePointActivateRsp.class, Builder.class);
-        }
-
-        @Override // emu.grasscutter.net.proto.DungeonSlipRevivePointActivateRspOuterClass.DungeonSlipRevivePointActivateRspOrBuilder
-        public int getRetcode() {
-            return this.retcode_;
+            return DungeonSlipRevivePointActivateRspOuterClass.f691x814a78a0.ensureFieldAccessorsInitialized(DungeonSlipRevivePointActivateRsp.class, Builder.class);
         }
 
         @Override // emu.grasscutter.net.proto.DungeonSlipRevivePointActivateRspOuterClass.DungeonSlipRevivePointActivateRspOrBuilder
         public int getSlipRevivePointId() {
             return this.slipRevivePointId_;
+        }
+
+        @Override // emu.grasscutter.net.proto.DungeonSlipRevivePointActivateRspOuterClass.DungeonSlipRevivePointActivateRspOrBuilder
+        public int getRetcode() {
+            return this.retcode_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -154,11 +154,11 @@ public final class DungeonSlipRevivePointActivateRspOuterClass {
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
-            if (this.slipRevivePointId_ != 0) {
-                output.writeUInt32(13, this.slipRevivePointId_);
-            }
             if (this.retcode_ != 0) {
-                output.writeInt32(15, this.retcode_);
+                output.writeInt32(5, this.retcode_);
+            }
+            if (this.slipRevivePointId_ != 0) {
+                output.writeUInt32(11, this.slipRevivePointId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -170,11 +170,11 @@ public final class DungeonSlipRevivePointActivateRspOuterClass {
                 return size;
             }
             int size2 = 0;
-            if (this.slipRevivePointId_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(13, this.slipRevivePointId_);
-            }
             if (this.retcode_ != 0) {
-                size2 += CodedOutputStream.computeInt32Size(15, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(5, this.retcode_);
+            }
+            if (this.slipRevivePointId_ != 0) {
+                size2 += CodedOutputStream.computeUInt32Size(11, this.slipRevivePointId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -190,7 +190,7 @@ public final class DungeonSlipRevivePointActivateRspOuterClass {
                 return equals(obj);
             }
             DungeonSlipRevivePointActivateRsp other = (DungeonSlipRevivePointActivateRsp) obj;
-            return getRetcode() == other.getRetcode() && getSlipRevivePointId() == other.getSlipRevivePointId() && this.unknownFields.equals(other.unknownFields);
+            return getSlipRevivePointId() == other.getSlipRevivePointId() && getRetcode() == other.getRetcode() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -198,7 +198,7 @@ public final class DungeonSlipRevivePointActivateRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 15)) + getRetcode())) + 13)) + getSlipRevivePointId())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 11)) + getSlipRevivePointId())) + 5)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -277,8 +277,8 @@ public final class DungeonSlipRevivePointActivateRspOuterClass {
 
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/DungeonSlipRevivePointActivateRspOuterClass$DungeonSlipRevivePointActivateRsp$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements DungeonSlipRevivePointActivateRspOrBuilder {
-            private int retcode_;
             private int slipRevivePointId_;
+            private int retcode_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return DungeonSlipRevivePointActivateRspOuterClass.internal_static_DungeonSlipRevivePointActivateRsp_descriptor;
@@ -286,7 +286,7 @@ public final class DungeonSlipRevivePointActivateRspOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder
             protected GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
-                return DungeonSlipRevivePointActivateRspOuterClass.f694x814a78a0.ensureFieldAccessorsInitialized(DungeonSlipRevivePointActivateRsp.class, Builder.class);
+                return DungeonSlipRevivePointActivateRspOuterClass.f691x814a78a0.ensureFieldAccessorsInitialized(DungeonSlipRevivePointActivateRsp.class, Builder.class);
             }
 
             private Builder() {
@@ -306,8 +306,8 @@ public final class DungeonSlipRevivePointActivateRspOuterClass {
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public Builder clear() {
                 clear();
-                this.retcode_ = 0;
                 this.slipRevivePointId_ = 0;
+                this.retcode_ = 0;
                 return this;
             }
 
@@ -333,8 +333,8 @@ public final class DungeonSlipRevivePointActivateRspOuterClass {
             @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
             public DungeonSlipRevivePointActivateRsp buildPartial() {
                 DungeonSlipRevivePointActivateRsp result = new DungeonSlipRevivePointActivateRsp(this);
-                result.retcode_ = this.retcode_;
                 result.slipRevivePointId_ = this.slipRevivePointId_;
+                result.retcode_ = this.retcode_;
                 onBuilt();
                 return result;
             }
@@ -382,11 +382,11 @@ public final class DungeonSlipRevivePointActivateRspOuterClass {
                 if (other == DungeonSlipRevivePointActivateRsp.getDefaultInstance()) {
                     return this;
                 }
-                if (other.getRetcode() != 0) {
-                    setRetcode(other.getRetcode());
-                }
                 if (other.getSlipRevivePointId() != 0) {
                     setSlipRevivePointId(other.getSlipRevivePointId());
+                }
+                if (other.getRetcode() != 0) {
+                    setRetcode(other.getRetcode());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -421,23 +421,6 @@ public final class DungeonSlipRevivePointActivateRspOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.DungeonSlipRevivePointActivateRspOuterClass.DungeonSlipRevivePointActivateRspOrBuilder
-            public int getRetcode() {
-                return this.retcode_;
-            }
-
-            public Builder setRetcode(int value) {
-                this.retcode_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearRetcode() {
-                this.retcode_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.DungeonSlipRevivePointActivateRspOuterClass.DungeonSlipRevivePointActivateRspOrBuilder
             public int getSlipRevivePointId() {
                 return this.slipRevivePointId_;
             }
@@ -450,6 +433,23 @@ public final class DungeonSlipRevivePointActivateRspOuterClass {
 
             public Builder clearSlipRevivePointId() {
                 this.slipRevivePointId_ = 0;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.DungeonSlipRevivePointActivateRspOuterClass.DungeonSlipRevivePointActivateRspOrBuilder
+            public int getRetcode() {
+                return this.retcode_;
+            }
+
+            public Builder setRetcode(int value) {
+                this.retcode_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearRetcode() {
+                this.retcode_ = 0;
                 onChanged();
                 return this;
             }

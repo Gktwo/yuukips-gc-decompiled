@@ -19,7 +19,7 @@ public class AbilityModifier implements Serializable {
         @SerializedName("$type")
         public Type type;
         public String target;
-        @SerializedName(value = "amount", alternate = {"PDLLIFICICJ"})
+        @SerializedName(value = "amount", alternate = {"PDLLIFICICJ", "KBFADJMJOBK"})
         public DynamicFloat amount = DynamicFloat.ZERO;
         public DynamicFloat amountByCasterAttackRatio = DynamicFloat.ZERO;
         public DynamicFloat amountByCasterCurrentHPRatio = DynamicFloat.ZERO;

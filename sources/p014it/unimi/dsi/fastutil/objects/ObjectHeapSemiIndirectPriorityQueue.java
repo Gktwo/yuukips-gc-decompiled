@@ -13,7 +13,7 @@ public class ObjectHeapSemiIndirectPriorityQueue<K> implements IndirectPriorityQ
     protected int size;
 
     /* renamed from: c */
-    protected Comparator<? super K> f2702c;
+    protected Comparator<? super K> f2666c;
 
     public ObjectHeapSemiIndirectPriorityQueue(K[] refArray, int capacity, Comparator<? super K> c) {
         this.heap = IntArrays.EMPTY_ARRAY;
@@ -21,7 +21,7 @@ public class ObjectHeapSemiIndirectPriorityQueue<K> implements IndirectPriorityQ
             this.heap = new int[capacity];
         }
         this.refArray = refArray;
-        this.f2702c = c;
+        this.f2666c = c;
     }
 
     public ObjectHeapSemiIndirectPriorityQueue(K[] refArray, int capacity) {
@@ -73,7 +73,7 @@ public class ObjectHeapSemiIndirectPriorityQueue<K> implements IndirectPriorityQ
         int i = this.size;
         this.size = i + 1;
         iArr[i] = x;
-        ObjectSemiIndirectHeaps.upHeap(this.refArray, this.heap, this.size, this.size - 1, this.f2702c);
+        ObjectSemiIndirectHeaps.upHeap(this.refArray, this.heap, this.size, this.size - 1, this.f2666c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
@@ -88,7 +88,7 @@ public class ObjectHeapSemiIndirectPriorityQueue<K> implements IndirectPriorityQ
         this.size = i;
         iArr[0] = iArr2[i];
         if (this.size != 0) {
-            ObjectSemiIndirectHeaps.downHeap(this.refArray, this.heap, this.size, 0, this.f2702c);
+            ObjectSemiIndirectHeaps.downHeap(this.refArray, this.heap, this.size, 0, this.f2666c);
         }
         return result;
     }
@@ -103,12 +103,12 @@ public class ObjectHeapSemiIndirectPriorityQueue<K> implements IndirectPriorityQ
 
     @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public void changed() {
-        ObjectSemiIndirectHeaps.downHeap(this.refArray, this.heap, this.size, 0, this.f2702c);
+        ObjectSemiIndirectHeaps.downHeap(this.refArray, this.heap, this.size, 0, this.f2666c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public void allChanged() {
-        ObjectSemiIndirectHeaps.makeHeap(this.refArray, this.heap, this.size, this.f2702c);
+        ObjectSemiIndirectHeaps.makeHeap(this.refArray, this.heap, this.size, this.f2666c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
@@ -127,12 +127,12 @@ public class ObjectHeapSemiIndirectPriorityQueue<K> implements IndirectPriorityQ
 
     @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public Comparator<? super K> comparator() {
-        return this.f2702c;
+        return this.f2666c;
     }
 
     @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public int front(int[] a) {
-        return this.f2702c == null ? ObjectSemiIndirectHeaps.front(this.refArray, this.heap, this.size, a) : ObjectSemiIndirectHeaps.front(this.refArray, this.heap, this.size, a, this.f2702c);
+        return this.f2666c == null ? ObjectSemiIndirectHeaps.front(this.refArray, this.heap, this.size, a) : ObjectSemiIndirectHeaps.front(this.refArray, this.heap, this.size, a, this.f2666c);
     }
 
     public String toString() {

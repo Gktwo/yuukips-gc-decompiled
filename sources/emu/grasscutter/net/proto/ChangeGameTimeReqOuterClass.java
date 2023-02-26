@@ -20,17 +20,17 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChangeGameTimeReqOuterClass.class */
 public final class ChangeGameTimeReqOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017ChangeGameTimeReq.proto\"P\n\u0011ChangeGameTimeReq\u0012\u0012\n\nextra_days\u0018\u0003 \u0001(\r\u0012\u0011\n\tgame_time\u0018\b \u0001(\r\u0012\u0014\n\fis_force_set\u0018\u0002 \u0001(\bB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0017ChangeGameTimeReq.proto\"L\n\u0011ChangeGameTimeReq\u0012\u0011\n\textraDays\u0018\u0007 \u0001(\r\u0012\u0012\n\nisForceSet\u0018\u0006 \u0001(\b\u0012\u0010\n\bgameTime\u0018\t \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_ChangeGameTimeReq_descriptor = getDescriptor().getMessageTypes().get(0);
-    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChangeGameTimeReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChangeGameTimeReq_descriptor, new String[]{"ExtraDays", "GameTime", "IsForceSet"});
+    private static final GeneratedMessageV3.FieldAccessorTable internal_static_ChangeGameTimeReq_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_ChangeGameTimeReq_descriptor, new String[]{"ExtraDays", "IsForceSet", "GameTime"});
 
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChangeGameTimeReqOuterClass$ChangeGameTimeReqOrBuilder.class */
     public interface ChangeGameTimeReqOrBuilder extends MessageOrBuilder {
         int getExtraDays();
 
-        int getGameTime();
-
         boolean getIsForceSet();
+
+        int getGameTime();
     }
 
     private ChangeGameTimeReqOuterClass() {
@@ -46,12 +46,12 @@ public final class ChangeGameTimeReqOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChangeGameTimeReqOuterClass$ChangeGameTimeReq.class */
     public static final class ChangeGameTimeReq extends GeneratedMessageV3 implements ChangeGameTimeReqOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int EXTRA_DAYS_FIELD_NUMBER = 3;
+        public static final int EXTRADAYS_FIELD_NUMBER = 7;
         private int extraDays_;
-        public static final int GAME_TIME_FIELD_NUMBER = 8;
-        private int gameTime_;
-        public static final int IS_FORCE_SET_FIELD_NUMBER = 2;
+        public static final int ISFORCESET_FIELD_NUMBER = 6;
         private boolean isForceSet_;
+        public static final int GAMETIME_FIELD_NUMBER = 9;
+        private int gameTime_;
         private byte memoizedIsInitialized;
         private static final ChangeGameTimeReq DEFAULT_INSTANCE = new ChangeGameTimeReq();
         private static final Parser<ChangeGameTimeReq> PARSER = new AbstractParser<ChangeGameTimeReq>() { // from class: emu.grasscutter.net.proto.ChangeGameTimeReqOuterClass.ChangeGameTimeReq.1
@@ -98,13 +98,13 @@ public final class ChangeGameTimeReqOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 16:
+                                case 48:
                                     this.isForceSet_ = input.readBool();
                                     break;
-                                case 24:
+                                case 56:
                                     this.extraDays_ = input.readUInt32();
                                     break;
-                                case 64:
+                                case 72:
                                     this.gameTime_ = input.readUInt32();
                                     break;
                                 default:
@@ -143,13 +143,13 @@ public final class ChangeGameTimeReqOuterClass {
         }
 
         @Override // emu.grasscutter.net.proto.ChangeGameTimeReqOuterClass.ChangeGameTimeReqOrBuilder
-        public int getGameTime() {
-            return this.gameTime_;
+        public boolean getIsForceSet() {
+            return this.isForceSet_;
         }
 
         @Override // emu.grasscutter.net.proto.ChangeGameTimeReqOuterClass.ChangeGameTimeReqOrBuilder
-        public boolean getIsForceSet() {
-            return this.isForceSet_;
+        public int getGameTime() {
+            return this.gameTime_;
         }
 
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
@@ -168,13 +168,13 @@ public final class ChangeGameTimeReqOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.isForceSet_) {
-                output.writeBool(2, this.isForceSet_);
+                output.writeBool(6, this.isForceSet_);
             }
             if (this.extraDays_ != 0) {
-                output.writeUInt32(3, this.extraDays_);
+                output.writeUInt32(7, this.extraDays_);
             }
             if (this.gameTime_ != 0) {
-                output.writeUInt32(8, this.gameTime_);
+                output.writeUInt32(9, this.gameTime_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -187,13 +187,13 @@ public final class ChangeGameTimeReqOuterClass {
             }
             int size2 = 0;
             if (this.isForceSet_) {
-                size2 = 0 + CodedOutputStream.computeBoolSize(2, this.isForceSet_);
+                size2 = 0 + CodedOutputStream.computeBoolSize(6, this.isForceSet_);
             }
             if (this.extraDays_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(3, this.extraDays_);
+                size2 += CodedOutputStream.computeUInt32Size(7, this.extraDays_);
             }
             if (this.gameTime_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(8, this.gameTime_);
+                size2 += CodedOutputStream.computeUInt32Size(9, this.gameTime_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -209,7 +209,7 @@ public final class ChangeGameTimeReqOuterClass {
                 return equals(obj);
             }
             ChangeGameTimeReq other = (ChangeGameTimeReq) obj;
-            return getExtraDays() == other.getExtraDays() && getGameTime() == other.getGameTime() && getIsForceSet() == other.getIsForceSet() && this.unknownFields.equals(other.unknownFields);
+            return getExtraDays() == other.getExtraDays() && getIsForceSet() == other.getIsForceSet() && getGameTime() == other.getGameTime() && this.unknownFields.equals(other.unknownFields);
         }
 
         @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
@@ -217,7 +217,7 @@ public final class ChangeGameTimeReqOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 3)) + getExtraDays())) + 8)) + getGameTime())) + 2)) + Internal.hashBoolean(getIsForceSet()))) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 7)) + getExtraDays())) + 6)) + Internal.hashBoolean(getIsForceSet()))) + 9)) + getGameTime())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }
@@ -297,8 +297,8 @@ public final class ChangeGameTimeReqOuterClass {
         /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/ChangeGameTimeReqOuterClass$ChangeGameTimeReq$Builder.class */
         public static final class Builder extends GeneratedMessageV3.Builder<Builder> implements ChangeGameTimeReqOrBuilder {
             private int extraDays_;
-            private int gameTime_;
             private boolean isForceSet_;
+            private int gameTime_;
 
             public static final Descriptors.Descriptor getDescriptor() {
                 return ChangeGameTimeReqOuterClass.internal_static_ChangeGameTimeReq_descriptor;
@@ -327,8 +327,8 @@ public final class ChangeGameTimeReqOuterClass {
             public Builder clear() {
                 clear();
                 this.extraDays_ = 0;
-                this.gameTime_ = 0;
                 this.isForceSet_ = false;
+                this.gameTime_ = 0;
                 return this;
             }
 
@@ -355,8 +355,8 @@ public final class ChangeGameTimeReqOuterClass {
             public ChangeGameTimeReq buildPartial() {
                 ChangeGameTimeReq result = new ChangeGameTimeReq(this);
                 result.extraDays_ = this.extraDays_;
-                result.gameTime_ = this.gameTime_;
                 result.isForceSet_ = this.isForceSet_;
+                result.gameTime_ = this.gameTime_;
                 onBuilt();
                 return result;
             }
@@ -407,11 +407,11 @@ public final class ChangeGameTimeReqOuterClass {
                 if (other.getExtraDays() != 0) {
                     setExtraDays(other.getExtraDays());
                 }
-                if (other.getGameTime() != 0) {
-                    setGameTime(other.getGameTime());
-                }
                 if (other.getIsForceSet()) {
                     setIsForceSet(other.getIsForceSet());
+                }
+                if (other.getGameTime() != 0) {
+                    setGameTime(other.getGameTime());
                 }
                 mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -463,23 +463,6 @@ public final class ChangeGameTimeReqOuterClass {
             }
 
             @Override // emu.grasscutter.net.proto.ChangeGameTimeReqOuterClass.ChangeGameTimeReqOrBuilder
-            public int getGameTime() {
-                return this.gameTime_;
-            }
-
-            public Builder setGameTime(int value) {
-                this.gameTime_ = value;
-                onChanged();
-                return this;
-            }
-
-            public Builder clearGameTime() {
-                this.gameTime_ = 0;
-                onChanged();
-                return this;
-            }
-
-            @Override // emu.grasscutter.net.proto.ChangeGameTimeReqOuterClass.ChangeGameTimeReqOrBuilder
             public boolean getIsForceSet() {
                 return this.isForceSet_;
             }
@@ -492,6 +475,23 @@ public final class ChangeGameTimeReqOuterClass {
 
             public Builder clearIsForceSet() {
                 this.isForceSet_ = false;
+                onChanged();
+                return this;
+            }
+
+            @Override // emu.grasscutter.net.proto.ChangeGameTimeReqOuterClass.ChangeGameTimeReqOrBuilder
+            public int getGameTime() {
+                return this.gameTime_;
+            }
+
+            public Builder setGameTime(int value) {
+                this.gameTime_ = value;
+                onChanged();
+                return this;
+            }
+
+            public Builder clearGameTime() {
+                this.gameTime_ = 0;
                 onChanged();
                 return this;
             }

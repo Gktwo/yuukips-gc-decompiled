@@ -16,7 +16,7 @@ import org.jline.builtins.Tmux;
 /* loaded from: grasscutter.jar:kotlin/collections/UShortIterator.class */
 public abstract class UShortIterator implements Iterator<UShort>, KMappedMarker {
     /* renamed from: nextUShort-Mh2AYeg */
-    public abstract short mo7408nextUShortMh2AYeg();
+    public abstract short mo7405nextUShortMh2AYeg();
 
     @Override // java.util.Iterator
     public void remove() {
@@ -26,11 +26,11 @@ public abstract class UShortIterator implements Iterator<UShort>, KMappedMarker 
     /* Return type fixed from 'java.lang.Object' to match base method */
     @Override // java.util.Iterator
     public /* bridge */ /* synthetic */ UShort next() {
-        return UShort.m7387boximpl(m7536nextMh2AYeg());
+        return UShort.m7384boximpl(m7533nextMh2AYeg());
     }
 
     /* renamed from: next-Mh2AYeg  reason: not valid java name */
-    public final short m7536nextMh2AYeg() {
-        return mo7408nextUShortMh2AYeg();
+    public final short m7533nextMh2AYeg() {
+        return mo7405nextUShortMh2AYeg();
     }
 }

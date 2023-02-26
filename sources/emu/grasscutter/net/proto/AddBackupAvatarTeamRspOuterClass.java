@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AddBackupAvatarTeamRspOuterClass.class */
 public final class AddBackupAvatarTeamRspOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cAddBackupAvatarTeamRsp.proto\")\n\u0016AddBackupAvatarTeamRsp\u0012\u000f\n\u0007retcode\u0018\r \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cAddBackupAvatarTeamRsp.proto\")\n\u0016AddBackupAvatarTeamRsp\u0012\u000f\n\u0007retcode\u0018\u0005 \u0001(\u0005B\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_AddBackupAvatarTeamRsp_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AddBackupAvatarTeamRsp_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AddBackupAvatarTeamRsp_descriptor, new String[]{"Retcode"});
 
@@ -41,7 +41,7 @@ public final class AddBackupAvatarTeamRspOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AddBackupAvatarTeamRspOuterClass$AddBackupAvatarTeamRsp.class */
     public static final class AddBackupAvatarTeamRsp extends GeneratedMessageV3 implements AddBackupAvatarTeamRspOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int RETCODE_FIELD_NUMBER = 13;
+        public static final int RETCODE_FIELD_NUMBER = 5;
         private int retcode_;
         private byte memoizedIsInitialized;
         private static final AddBackupAvatarTeamRsp DEFAULT_INSTANCE = new AddBackupAvatarTeamRsp();
@@ -88,7 +88,7 @@ public final class AddBackupAvatarTeamRspOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 104:
+                            case 40:
                                 this.retcode_ = input.readInt32();
                                 break;
                             default:
@@ -141,7 +141,7 @@ public final class AddBackupAvatarTeamRspOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.retcode_ != 0) {
-                output.writeInt32(13, this.retcode_);
+                output.writeInt32(5, this.retcode_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -154,7 +154,7 @@ public final class AddBackupAvatarTeamRspOuterClass {
             }
             int size2 = 0;
             if (this.retcode_ != 0) {
-                size2 = 0 + CodedOutputStream.computeInt32Size(13, this.retcode_);
+                size2 = 0 + CodedOutputStream.computeInt32Size(5, this.retcode_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -178,7 +178,7 @@ public final class AddBackupAvatarTeamRspOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 13)) + getRetcode())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 5)) + getRetcode())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

@@ -632,7 +632,7 @@ public class XmlParser {
             return new Iterator<Node>() { // from class: org.eclipse.jetty.xml.XmlParser.Node.1
 
                 /* renamed from: c */
-                int f3187c = 0;
+                int f3151c = 0;
                 Node _node;
 
                 @Override // java.util.Iterator
@@ -640,8 +640,8 @@ public class XmlParser {
                     if (this._node != null) {
                         return true;
                     }
-                    while (Node.this._list != null && this.f3187c < Node.this._list.size()) {
-                        Object o = Node.this._list.get(this.f3187c);
+                    while (Node.this._list != null && this.f3151c < Node.this._list.size()) {
+                        Object o = Node.this._list.get(this.f3151c);
                         if (o instanceof Node) {
                             Node n = (Node) o;
                             if (tag.equals(n._tag)) {
@@ -649,7 +649,7 @@ public class XmlParser {
                                 return true;
                             }
                         }
-                        this.f3187c++;
+                        this.f3151c++;
                     }
                     return false;
                 }
@@ -660,13 +660,13 @@ public class XmlParser {
                         if (hasNext()) {
                             Node node = this._node;
                             this._node = null;
-                            this.f3187c++;
+                            this.f3151c++;
                             return node;
                         }
                         throw new NoSuchElementException();
                     } catch (Throwable th) {
                         this._node = null;
-                        this.f3187c++;
+                        this.f3151c++;
                         throw th;
                     }
                 }

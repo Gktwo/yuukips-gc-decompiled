@@ -12,7 +12,7 @@ public class FloatHeapSemiIndirectPriorityQueue implements FloatIndirectPriority
     protected int size;
 
     /* renamed from: c */
-    protected FloatComparator f1942c;
+    protected FloatComparator f1906c;
 
     public FloatHeapSemiIndirectPriorityQueue(float[] refArray, int capacity, FloatComparator c) {
         this.heap = IntArrays.EMPTY_ARRAY;
@@ -20,7 +20,7 @@ public class FloatHeapSemiIndirectPriorityQueue implements FloatIndirectPriority
             this.heap = new int[capacity];
         }
         this.refArray = refArray;
-        this.f1942c = c;
+        this.f1906c = c;
     }
 
     public FloatHeapSemiIndirectPriorityQueue(float[] refArray, int capacity) {
@@ -72,7 +72,7 @@ public class FloatHeapSemiIndirectPriorityQueue implements FloatIndirectPriority
         int i = this.size;
         this.size = i + 1;
         iArr[i] = x;
-        FloatSemiIndirectHeaps.upHeap(this.refArray, this.heap, this.size, this.size - 1, this.f1942c);
+        FloatSemiIndirectHeaps.upHeap(this.refArray, this.heap, this.size, this.size - 1, this.f1906c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
@@ -87,7 +87,7 @@ public class FloatHeapSemiIndirectPriorityQueue implements FloatIndirectPriority
         this.size = i;
         iArr[0] = iArr2[i];
         if (this.size != 0) {
-            FloatSemiIndirectHeaps.downHeap(this.refArray, this.heap, this.size, 0, this.f1942c);
+            FloatSemiIndirectHeaps.downHeap(this.refArray, this.heap, this.size, 0, this.f1906c);
         }
         return result;
     }
@@ -102,12 +102,12 @@ public class FloatHeapSemiIndirectPriorityQueue implements FloatIndirectPriority
 
     @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public void changed() {
-        FloatSemiIndirectHeaps.downHeap(this.refArray, this.heap, this.size, 0, this.f1942c);
+        FloatSemiIndirectHeaps.downHeap(this.refArray, this.heap, this.size, 0, this.f1906c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public void allChanged() {
-        FloatSemiIndirectHeaps.makeHeap(this.refArray, this.heap, this.size, this.f1942c);
+        FloatSemiIndirectHeaps.makeHeap(this.refArray, this.heap, this.size, this.f1906c);
     }
 
     @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
@@ -127,12 +127,12 @@ public class FloatHeapSemiIndirectPriorityQueue implements FloatIndirectPriority
     /* Return type fixed from 'it.unimi.dsi.fastutil.floats.FloatComparator' to match base method */
     @Override // p014it.unimi.dsi.fastutil.floats.FloatIndirectPriorityQueue, p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public Comparator<? super Float> comparator() {
-        return this.f1942c;
+        return this.f1906c;
     }
 
     @Override // p014it.unimi.dsi.fastutil.IndirectPriorityQueue
     public int front(int[] a) {
-        return this.f1942c == null ? FloatSemiIndirectHeaps.front(this.refArray, this.heap, this.size, a) : FloatSemiIndirectHeaps.front(this.refArray, this.heap, this.size, a, this.f1942c);
+        return this.f1906c == null ? FloatSemiIndirectHeaps.front(this.refArray, this.heap, this.size, a) : FloatSemiIndirectHeaps.front(this.refArray, this.heap, this.size, a, this.f1906c);
     }
 
     public String toString() {

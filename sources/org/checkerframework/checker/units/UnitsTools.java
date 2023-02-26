@@ -10,45 +10,45 @@ public class UnitsTools {
     public static final int mm2 = 1;
 
     /* renamed from: m2 */
-    public static final int f3115m2 = 1;
+    public static final int f3079m2 = 1;
     public static final int km2 = 1;
 
     /* renamed from: A */
-    public static final int f3116A = 1;
+    public static final int f3080A = 1;
 
     /* renamed from: cd */
-    public static final int f3117cd = 1;
+    public static final int f3081cd = 1;
 
     /* renamed from: mm */
-    public static final int f3118mm = 1;
+    public static final int f3082mm = 1;
 
     /* renamed from: m */
-    public static final int f3119m = 1;
+    public static final int f3083m = 1;
 
     /* renamed from: km */
-    public static final int f3120km = 1;
+    public static final int f3084km = 1;
 
     /* renamed from: g */
-    public static final int f3121g = 1;
+    public static final int f3085g = 1;
 
     /* renamed from: kg */
-    public static final int f3122kg = 1;
+    public static final int f3086kg = 1;
     public static final int mPERs = 1;
     public static final int kmPERh = 1;
     public static final int mol = 1;
 
     /* renamed from: K */
-    public static final int f3123K = 1;
+    public static final int f3087K = 1;
 
     /* renamed from: C */
-    public static final int f3124C = 1;
+    public static final int f3088C = 1;
 
     /* renamed from: s */
-    public static final int f3125s = 1;
+    public static final int f3089s = 1;
     public static final int min = 1;
 
     /* renamed from: h */
-    public static final int f3126h = 1;
+    public static final int f3090h = 1;
 
     public static double toRadians(double angdeg) {
         return Math.toRadians(angdeg);
@@ -91,11 +91,11 @@ public class UnitsTools {
     }
 
     public static int fromKelvinToCelsius(int k) {
-        return k - PacketOpcodes.SceneTransToPointRsp;
+        return k - PacketOpcodes.SceneCreateEntityRsp;
     }
 
     public static int fromCelsiusToKelvin(int c) {
-        return c + PacketOpcodes.SceneTransToPointRsp;
+        return c + PacketOpcodes.SceneCreateEntityRsp;
     }
 
     public static int fromSecondToMinute(int s) {

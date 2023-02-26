@@ -16,7 +16,7 @@ public class PortListener implements Runnable {
     private String name;
 
     /* renamed from: ip */
-    private String f3213ip;
+    private String f3177ip;
     private int port;
     private int floodProtection;
     private Thread thread;
@@ -27,7 +27,7 @@ public class PortListener implements Runnable {
 
     public PortListener(String name, String ip, int port, int floodprot) {
         this.name = name;
-        this.f3213ip = ip;
+        this.f3177ip = ip;
         this.port = port;
         this.floodProtection = floodprot;
     }
@@ -72,7 +72,7 @@ public class PortListener implements Runnable {
     @Override // java.lang.Runnable
     public void run() {
         try {
-            this.serverSocket = new ServerSocket(this.port, this.floodProtection, this.f3213ip != null ? InetAddress.getByName(this.f3213ip) : null);
+            this.serverSocket = new ServerSocket(this.port, this.floodProtection, this.f3177ip != null ? InetAddress.getByName(this.f3177ip) : null);
             LOG.info(MessageFormat.format(logmsg, Integer.valueOf(this.port), Integer.valueOf(this.floodProtection)));
             do {
                 Socket s = this.serverSocket.accept();

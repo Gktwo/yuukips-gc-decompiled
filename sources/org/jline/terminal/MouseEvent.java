@@ -12,10 +12,10 @@ public class MouseEvent {
     private final EnumSet<Modifier> modifiers;
 
     /* renamed from: x */
-    private final int f3236x;
+    private final int f3200x;
 
     /* renamed from: y */
-    private final int f3237y;
+    private final int f3201y;
 
     /* WARNING: Classes with same name are omitted:
   
@@ -56,8 +56,8 @@ public class MouseEvent {
         this.type = type;
         this.button = button;
         this.modifiers = modifiers;
-        this.f3236x = x;
-        this.f3237y = y;
+        this.f3200x = x;
+        this.f3201y = y;
     }
 
     public Type getType() {
@@ -73,14 +73,14 @@ public class MouseEvent {
     }
 
     public int getX() {
-        return this.f3236x;
+        return this.f3200x;
     }
 
     public int getY() {
-        return this.f3237y;
+        return this.f3201y;
     }
 
     public String toString() {
-        return "MouseEvent[type=" + this.type + ", button=" + this.button + ", modifiers=" + this.modifiers + ", x=" + this.f3236x + ", y=" + this.f3237y + ']';
+        return "MouseEvent[type=" + this.type + ", button=" + this.button + ", modifiers=" + this.modifiers + ", x=" + this.f3200x + ", y=" + this.f3201y + ']';
     }
 }

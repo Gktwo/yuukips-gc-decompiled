@@ -203,30 +203,30 @@ public abstract class AbstractInt2DoubleMap extends AbstractInt2DoubleFunction i
                 return new IntIterator() { // from class: it.unimi.dsi.fastutil.ints.AbstractInt2DoubleMap.1.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Int2DoubleMap.Entry> f1987i;
+                    private final ObjectIterator<Int2DoubleMap.Entry> f1951i;
 
                     {
-                        this.f1987i = Int2DoubleMaps.fastIterator(AbstractInt2DoubleMap.this);
+                        this.f1951i = Int2DoubleMaps.fastIterator(AbstractInt2DoubleMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.ints.IntIterator, java.util.PrimitiveIterator.OfInt
                     public int nextInt() {
-                        return this.f1987i.next().getIntKey();
+                        return this.f1951i.next().getIntKey();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1987i.hasNext();
+                        return this.f1951i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1987i.remove();
+                        this.f1951i.remove();
                     }
 
                     @Override // java.util.PrimitiveIterator.OfInt
                     public void forEachRemaining(IntConsumer action) {
-                        this.f1987i.forEachRemaining(entry -> {
+                        this.f1951i.forEachRemaining(entry -> {
                             action.accept(entry.getIntKey());
                         });
                     }
@@ -264,30 +264,30 @@ public abstract class AbstractInt2DoubleMap extends AbstractInt2DoubleFunction i
                 return new DoubleIterator() { // from class: it.unimi.dsi.fastutil.ints.AbstractInt2DoubleMap.2.1
 
                     /* renamed from: i */
-                    private final ObjectIterator<Int2DoubleMap.Entry> f1988i;
+                    private final ObjectIterator<Int2DoubleMap.Entry> f1952i;
 
                     {
-                        this.f1988i = Int2DoubleMaps.fastIterator(AbstractInt2DoubleMap.this);
+                        this.f1952i = Int2DoubleMaps.fastIterator(AbstractInt2DoubleMap.this);
                     }
 
                     @Override // p014it.unimi.dsi.fastutil.doubles.DoubleIterator, java.util.PrimitiveIterator.OfDouble
                     public double nextDouble() {
-                        return this.f1988i.next().getDoubleValue();
+                        return this.f1952i.next().getDoubleValue();
                     }
 
                     @Override // java.util.Iterator
                     public boolean hasNext() {
-                        return this.f1988i.hasNext();
+                        return this.f1952i.hasNext();
                     }
 
                     @Override // java.util.Iterator
                     public void remove() {
-                        this.f1988i.remove();
+                        this.f1952i.remove();
                     }
 
                     @Override // java.util.PrimitiveIterator.OfDouble
                     public void forEachRemaining(DoubleConsumer action) {
-                        this.f1988i.forEachRemaining(entry -> {
+                        this.f1952i.forEachRemaining(entry -> {
                             action.accept(entry.getDoubleValue());
                         });
                     }

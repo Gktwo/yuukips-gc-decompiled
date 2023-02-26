@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AsterMidCampInfoOuterClass.class */
 public final class AsterMidCampInfoOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016AsterMidCampInfo.proto\u001a\fVector.proto\"9\n\u0010AsterMidCampInfo\u0012\u0014\n\u0003pos\u0018\u0003 \u0001(\u000b2\u0007.Vector\u0012\u000f\n\u0007camp_id\u0018\u000f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u0016AsterMidCampInfo.proto\u001a\fVector.proto\"8\n\u0010AsterMidCampInfo\u0012\u0014\n\u0003pos\u0018\n \u0001(\u000b2\u0007.Vector\u0012\u000e\n\u0006campId\u0018\u000e \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{VectorOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_AsterMidCampInfo_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_AsterMidCampInfo_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_AsterMidCampInfo_descriptor, new String[]{"Pos", "CampId"});
 
@@ -49,9 +49,9 @@ public final class AsterMidCampInfoOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/AsterMidCampInfoOuterClass$AsterMidCampInfo.class */
     public static final class AsterMidCampInfo extends GeneratedMessageV3 implements AsterMidCampInfoOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int POS_FIELD_NUMBER = 3;
+        public static final int POS_FIELD_NUMBER = 10;
         private VectorOuterClass.Vector pos_;
-        public static final int CAMP_ID_FIELD_NUMBER = 15;
+        public static final int CAMPID_FIELD_NUMBER = 14;
         private int campId_;
         private byte memoizedIsInitialized;
         private static final AsterMidCampInfo DEFAULT_INSTANCE = new AsterMidCampInfo();
@@ -99,7 +99,7 @@ public final class AsterMidCampInfoOuterClass {
                                 case 0:
                                     done = true;
                                     break;
-                                case 26:
+                                case 82:
                                     VectorOuterClass.Vector.Builder subBuilder = this.pos_ != null ? this.pos_.toBuilder() : null;
                                     this.pos_ = (VectorOuterClass.Vector) input.readMessage(VectorOuterClass.Vector.parser(), extensionRegistry);
                                     if (subBuilder == null) {
@@ -109,7 +109,7 @@ public final class AsterMidCampInfoOuterClass {
                                         this.pos_ = subBuilder.buildPartial();
                                         break;
                                     }
-                                case 120:
+                                case 112:
                                     this.campId_ = input.readUInt32();
                                     break;
                                 default:
@@ -178,10 +178,10 @@ public final class AsterMidCampInfoOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.pos_ != null) {
-                output.writeMessage(3, getPos());
+                output.writeMessage(10, getPos());
             }
             if (this.campId_ != 0) {
-                output.writeUInt32(15, this.campId_);
+                output.writeUInt32(14, this.campId_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -194,10 +194,10 @@ public final class AsterMidCampInfoOuterClass {
             }
             int size2 = 0;
             if (this.pos_ != null) {
-                size2 = 0 + CodedOutputStream.computeMessageSize(3, getPos());
+                size2 = 0 + CodedOutputStream.computeMessageSize(10, getPos());
             }
             if (this.campId_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(15, this.campId_);
+                size2 += CodedOutputStream.computeUInt32Size(14, this.campId_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -226,9 +226,9 @@ public final class AsterMidCampInfoOuterClass {
             }
             int hash = (19 * 41) + getDescriptor().hashCode();
             if (hasPos()) {
-                hash = (53 * ((37 * hash) + 3)) + getPos().hashCode();
+                hash = (53 * ((37 * hash) + 10)) + getPos().hashCode();
             }
-            int hash2 = (29 * ((53 * ((37 * hash) + 15)) + getCampId())) + this.unknownFields.hashCode();
+            int hash2 = (29 * ((53 * ((37 * hash) + 14)) + getCampId())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash2;
             return hash2;
         }

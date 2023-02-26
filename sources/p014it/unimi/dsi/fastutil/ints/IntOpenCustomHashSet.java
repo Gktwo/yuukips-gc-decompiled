@@ -25,13 +25,13 @@ public class IntOpenCustomHashSet extends AbstractIntSet implements Serializable
     protected IntHash.Strategy strategy;
 
     /* renamed from: n */
-    protected transient int f2188n;
+    protected transient int f2152n;
     protected transient int maxFill;
     protected final transient int minN;
     protected int size;
 
     /* renamed from: f */
-    protected final float f2189f;
+    protected final float f2153f;
 
     public IntOpenCustomHashSet(int expected, float f, IntHash.Strategy strategy) {
         this.strategy = strategy;
@@ -40,13 +40,13 @@ public class IntOpenCustomHashSet extends AbstractIntSet implements Serializable
         } else if (expected < 0) {
             throw new IllegalArgumentException("The expected number of elements must be nonnegative");
         } else {
-            this.f2189f = f;
+            this.f2153f = f;
             int arraySize = HashCommon.arraySize(expected, f);
-            this.f2188n = arraySize;
+            this.f2152n = arraySize;
             this.minN = arraySize;
-            this.mask = this.f2188n - 1;
-            this.maxFill = HashCommon.maxFill(this.f2188n, f);
-            this.key = new int[this.f2188n + 1];
+            this.mask = this.f2152n - 1;
+            this.maxFill = HashCommon.maxFill(this.f2152n, f);
+            this.key = new int[this.f2152n + 1];
         }
     }
 
@@ -125,22 +125,22 @@ public class IntOpenCustomHashSet extends AbstractIntSet implements Serializable
     }
 
     private void ensureCapacity(int capacity) {
-        int needed = HashCommon.arraySize(capacity, this.f2189f);
-        if (needed > this.f2188n) {
+        int needed = HashCommon.arraySize(capacity, this.f2153f);
+        if (needed > this.f2152n) {
             rehash(needed);
         }
     }
 
     private void tryCapacity(long capacity) {
-        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2189f)))));
-        if (needed > this.f2188n) {
+        int needed = (int) Math.min((long) FileSize.GB_COEFFICIENT, Math.max(2L, HashCommon.nextPowerOfTwo((long) Math.ceil((double) (((float) capacity) / this.f2153f)))));
+        if (needed > this.f2152n) {
             rehash(needed);
         }
     }
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntCollection, p014it.unimi.dsi.fastutil.ints.IntCollection
     public boolean addAll(IntCollection c) {
-        if (((double) this.f2189f) <= 0.5d) {
+        if (((double) this.f2153f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -150,7 +150,7 @@ public class IntOpenCustomHashSet extends AbstractIntSet implements Serializable
 
     @Override // p014it.unimi.dsi.fastutil.ints.AbstractIntCollection, java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends Integer> c) {
-        if (((double) this.f2189f) <= 0.5d) {
+        if (((double) this.f2153f) <= 0.5d) {
             ensureCapacity(c.size());
         } else {
             tryCapacity((long) (size() + c.size()));
@@ -184,14 +184,14 @@ public class IntOpenCustomHashSet extends AbstractIntSet implements Serializable
             return false;
         } else {
             this.containsNull = true;
-            this.key[this.f2188n] = k;
+            this.key[this.f2152n] = k;
         }
         int i2 = this.size;
         this.size = i2 + 1;
         if (i2 < this.maxFill) {
             return true;
         }
-        rehash(HashCommon.arraySize(this.size + 1, this.f2189f));
+        rehash(HashCommon.arraySize(this.size + 1, this.f2153f));
         return true;
     }
 
@@ -227,21 +227,21 @@ public class IntOpenCustomHashSet extends AbstractIntSet implements Serializable
     private boolean removeEntry(int pos) {
         this.size--;
         shiftKeys(pos);
-        if (this.f2188n <= this.minN || this.size >= this.maxFill / 4 || this.f2188n <= 16) {
+        if (this.f2152n <= this.minN || this.size >= this.maxFill / 4 || this.f2152n <= 16) {
             return true;
         }
-        rehash(this.f2188n / 2);
+        rehash(this.f2152n / 2);
         return true;
     }
 
     private boolean removeNullEntry() {
         this.containsNull = false;
-        this.key[this.f2188n] = 0;
+        this.key[this.f2152n] = 0;
         this.size--;
-        if (this.f2188n <= this.minN || this.size >= this.maxFill / 4 || this.f2188n <= 16) {
+        if (this.f2152n <= this.minN || this.size >= this.maxFill / 4 || this.f2152n <= 16) {
             return true;
         }
-        rehash(this.f2188n / 2);
+        rehash(this.f2152n / 2);
         return true;
     }
 
@@ -329,20 +329,20 @@ public class IntOpenCustomHashSet extends AbstractIntSet implements Serializable
         int last;
 
         /* renamed from: c */
-        int f2190c;
+        int f2154c;
         boolean mustReturnNull;
         IntArrayList wrapped;
 
         private SetIterator() {
-            this.pos = IntOpenCustomHashSet.this.f2188n;
+            this.pos = IntOpenCustomHashSet.this.f2152n;
             this.last = -1;
-            this.f2190c = IntOpenCustomHashSet.this.size;
+            this.f2154c = IntOpenCustomHashSet.this.size;
             this.mustReturnNull = IntOpenCustomHashSet.this.containsNull;
         }
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.f2190c != 0;
+            return this.f2154c != 0;
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntIterator, java.util.PrimitiveIterator.OfInt
@@ -350,11 +350,11 @@ public class IntOpenCustomHashSet extends AbstractIntSet implements Serializable
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            this.f2190c--;
+            this.f2154c--;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = IntOpenCustomHashSet.this.f2188n;
-                return IntOpenCustomHashSet.this.key[IntOpenCustomHashSet.this.f2188n];
+                this.last = IntOpenCustomHashSet.this.f2152n;
+                return IntOpenCustomHashSet.this.key[IntOpenCustomHashSet.this.f2152n];
             }
             int[] key = IntOpenCustomHashSet.this.key;
             do {
@@ -413,9 +413,9 @@ public class IntOpenCustomHashSet extends AbstractIntSet implements Serializable
             if (this.last == -1) {
                 throw new IllegalStateException();
             }
-            if (this.last == IntOpenCustomHashSet.this.f2188n) {
+            if (this.last == IntOpenCustomHashSet.this.f2152n) {
                 IntOpenCustomHashSet.this.containsNull = false;
-                IntOpenCustomHashSet.this.key[IntOpenCustomHashSet.this.f2188n] = 0;
+                IntOpenCustomHashSet.this.key[IntOpenCustomHashSet.this.f2152n] = 0;
             } else if (this.pos >= 0) {
                 shiftKeys(this.last);
             } else {
@@ -432,22 +432,22 @@ public class IntOpenCustomHashSet extends AbstractIntSet implements Serializable
             int[] key = IntOpenCustomHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.last = IntOpenCustomHashSet.this.f2188n;
-                action.accept(key[IntOpenCustomHashSet.this.f2188n]);
-                this.f2190c--;
+                this.last = IntOpenCustomHashSet.this.f2152n;
+                action.accept(key[IntOpenCustomHashSet.this.f2152n]);
+                this.f2154c--;
             }
-            while (this.f2190c != 0) {
+            while (this.f2154c != 0) {
                 int i = this.pos - 1;
                 this.pos = i;
                 if (i < 0) {
                     this.last = Integer.MIN_VALUE;
                     action.accept(this.wrapped.getInt((-this.pos) - 1));
-                    this.f2190c--;
+                    this.f2154c--;
                 } else if (key[this.pos] != 0) {
                     int i2 = this.pos;
                     this.last = i2;
                     action.accept(key[i2]);
-                    this.f2190c--;
+                    this.f2154c--;
                 }
             }
         }
@@ -467,22 +467,22 @@ public class IntOpenCustomHashSet extends AbstractIntSet implements Serializable
         int max;
 
         /* renamed from: c */
-        int f2191c;
+        int f2155c;
         boolean mustReturnNull;
         boolean hasSplit;
 
         SetSpliterator() {
             this.pos = 0;
-            this.max = IntOpenCustomHashSet.this.f2188n;
-            this.f2191c = 0;
+            this.max = IntOpenCustomHashSet.this.f2152n;
+            this.f2155c = 0;
             this.mustReturnNull = IntOpenCustomHashSet.this.containsNull;
             this.hasSplit = false;
         }
 
         SetSpliterator(int pos, int max, boolean mustReturnNull, boolean hasSplit) {
             this.pos = 0;
-            this.max = IntOpenCustomHashSet.this.f2188n;
-            this.f2191c = 0;
+            this.max = IntOpenCustomHashSet.this.f2152n;
+            this.f2155c = 0;
             this.mustReturnNull = IntOpenCustomHashSet.this.containsNull;
             this.hasSplit = false;
             this.pos = pos;
@@ -495,14 +495,14 @@ public class IntOpenCustomHashSet extends AbstractIntSet implements Serializable
         public boolean tryAdvance(IntConsumer action) {
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                this.f2191c++;
-                action.accept(IntOpenCustomHashSet.this.key[IntOpenCustomHashSet.this.f2188n]);
+                this.f2155c++;
+                action.accept(IntOpenCustomHashSet.this.key[IntOpenCustomHashSet.this.f2152n]);
                 return true;
             }
             int[] key = IntOpenCustomHashSet.this.key;
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
-                    this.f2191c++;
+                    this.f2155c++;
                     int i = this.pos;
                     this.pos = i + 1;
                     action.accept(key[i]);
@@ -518,13 +518,13 @@ public class IntOpenCustomHashSet extends AbstractIntSet implements Serializable
             int[] key = IntOpenCustomHashSet.this.key;
             if (this.mustReturnNull) {
                 this.mustReturnNull = false;
-                action.accept(key[IntOpenCustomHashSet.this.f2188n]);
-                this.f2191c++;
+                action.accept(key[IntOpenCustomHashSet.this.f2152n]);
+                this.f2155c++;
             }
             while (this.pos < this.max) {
                 if (key[this.pos] != 0) {
                     action.accept(key[this.pos]);
-                    this.f2191c++;
+                    this.f2155c++;
                 }
                 this.pos++;
             }
@@ -538,9 +538,9 @@ public class IntOpenCustomHashSet extends AbstractIntSet implements Serializable
         @Override // java.util.Spliterator
         public long estimateSize() {
             if (!this.hasSplit) {
-                return (long) (IntOpenCustomHashSet.this.size - this.f2191c);
+                return (long) (IntOpenCustomHashSet.this.size - this.f2155c);
             }
-            return Math.min((long) (IntOpenCustomHashSet.this.size - this.f2191c), ((long) ((((double) IntOpenCustomHashSet.this.realSize()) / ((double) IntOpenCustomHashSet.this.f2188n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
+            return Math.min((long) (IntOpenCustomHashSet.this.size - this.f2155c), ((long) ((((double) IntOpenCustomHashSet.this.realSize()) / ((double) IntOpenCustomHashSet.this.f2152n)) * ((double) (this.max - this.pos)))) + ((long) (this.mustReturnNull ? 1 : 0)));
         }
 
         @Override // p014it.unimi.dsi.fastutil.ints.IntSpliterator, java.util.Spliterator.OfInt, java.util.Spliterator.OfPrimitive, java.util.Spliterator
@@ -666,10 +666,10 @@ public class IntOpenCustomHashSet extends AbstractIntSet implements Serializable
     @Override // p014it.unimi.dsi.fastutil.ints.IntIterable
     public void forEach(IntConsumer action) {
         if (this.containsNull) {
-            action.accept(this.key[this.f2188n]);
+            action.accept(this.key[this.f2152n]);
         }
         int[] key = this.key;
-        int pos = this.f2188n;
+        int pos = this.f2152n;
         while (true) {
             pos--;
             if (pos == 0) {
@@ -686,8 +686,8 @@ public class IntOpenCustomHashSet extends AbstractIntSet implements Serializable
     }
 
     public boolean trim(int n) {
-        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2189f)));
-        if (l >= this.f2188n || this.size > HashCommon.maxFill(l, this.f2189f)) {
+        int l = HashCommon.nextPowerOfTwo((int) Math.ceil((double) (((float) n) / this.f2153f)));
+        if (l >= this.f2152n || this.size > HashCommon.maxFill(l, this.f2153f)) {
             return true;
         }
         try {
@@ -703,7 +703,7 @@ public class IntOpenCustomHashSet extends AbstractIntSet implements Serializable
         int[] key = this.key;
         int mask = newN - 1;
         int[] newKey = new int[newN + 1];
-        int i2 = this.f2188n;
+        int i2 = this.f2152n;
         int j = realSize();
         while (true) {
             j--;
@@ -721,9 +721,9 @@ public class IntOpenCustomHashSet extends AbstractIntSet implements Serializable
                 }
                 newKey[pos] = key[i2];
             } else {
-                this.f2188n = newN;
+                this.f2152n = newN;
                 this.mask = mask;
-                this.maxFill = HashCommon.maxFill(this.f2188n, this.f2189f);
+                this.maxFill = HashCommon.maxFill(this.f2152n, this.f2153f);
                 this.key = newKey;
                 return;
             }
@@ -779,10 +779,10 @@ public class IntOpenCustomHashSet extends AbstractIntSet implements Serializable
         int pos;
         int i;
         s.defaultReadObject();
-        this.f2188n = HashCommon.arraySize(this.size, this.f2189f);
-        this.maxFill = HashCommon.maxFill(this.f2188n, this.f2189f);
-        this.mask = this.f2188n - 1;
-        int[] key = new int[this.f2188n + 1];
+        this.f2152n = HashCommon.arraySize(this.size, this.f2153f);
+        this.maxFill = HashCommon.maxFill(this.f2152n, this.f2153f);
+        this.mask = this.f2152n - 1;
+        int[] key = new int[this.f2152n + 1];
         this.key = key;
         int i2 = this.size;
         while (true) {
@@ -790,7 +790,7 @@ public class IntOpenCustomHashSet extends AbstractIntSet implements Serializable
             if (i2 != 0) {
                 int k = s.readInt();
                 if (this.strategy.equals(k, 0)) {
-                    pos = this.f2188n;
+                    pos = this.f2152n;
                     this.containsNull = true;
                 } else {
                     int mix = HashCommon.mix(this.strategy.hashCode(k)) & this.mask;

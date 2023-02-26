@@ -19,7 +19,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerPropChangeNotifyOuterClass.class */
 public final class PlayerPropChangeNotifyOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cPlayerPropChangeNotify.proto\"?\n\u0016PlayerPropChangeNotify\u0012\u0012\n\nprop_delta\u0018\u0004 \u0001(\r\u0012\u0011\n\tprop_type\u0018\r \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u001cPlayerPropChangeNotify.proto\"=\n\u0016PlayerPropChangeNotify\u0012\u0011\n\tpropDelta\u0018\b \u0001(\r\u0012\u0010\n\bpropType\u0018\f \u0001(\rB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[0]);
     private static final Descriptors.Descriptor internal_static_PlayerPropChangeNotify_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PlayerPropChangeNotify_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PlayerPropChangeNotify_descriptor, new String[]{"PropDelta", "PropType"});
 
@@ -43,9 +43,9 @@ public final class PlayerPropChangeNotifyOuterClass {
     /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PlayerPropChangeNotifyOuterClass$PlayerPropChangeNotify.class */
     public static final class PlayerPropChangeNotify extends GeneratedMessageV3 implements PlayerPropChangeNotifyOrBuilder {
         private static final long serialVersionUID = 0;
-        public static final int PROP_DELTA_FIELD_NUMBER = 4;
+        public static final int PROPDELTA_FIELD_NUMBER = 8;
         private int propDelta_;
-        public static final int PROP_TYPE_FIELD_NUMBER = 13;
+        public static final int PROPTYPE_FIELD_NUMBER = 12;
         private int propType_;
         private byte memoizedIsInitialized;
         private static final PlayerPropChangeNotify DEFAULT_INSTANCE = new PlayerPropChangeNotify();
@@ -92,10 +92,10 @@ public final class PlayerPropChangeNotifyOuterClass {
                             case 0:
                                 done = true;
                                 break;
-                            case 32:
+                            case 64:
                                 this.propDelta_ = input.readUInt32();
                                 break;
-                            case 104:
+                            case 96:
                                 this.propType_ = input.readUInt32();
                                 break;
                             default:
@@ -153,10 +153,10 @@ public final class PlayerPropChangeNotifyOuterClass {
         @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream output) throws IOException {
             if (this.propDelta_ != 0) {
-                output.writeUInt32(4, this.propDelta_);
+                output.writeUInt32(8, this.propDelta_);
             }
             if (this.propType_ != 0) {
-                output.writeUInt32(13, this.propType_);
+                output.writeUInt32(12, this.propType_);
             }
             this.unknownFields.writeTo(output);
         }
@@ -169,10 +169,10 @@ public final class PlayerPropChangeNotifyOuterClass {
             }
             int size2 = 0;
             if (this.propDelta_ != 0) {
-                size2 = 0 + CodedOutputStream.computeUInt32Size(4, this.propDelta_);
+                size2 = 0 + CodedOutputStream.computeUInt32Size(8, this.propDelta_);
             }
             if (this.propType_ != 0) {
-                size2 += CodedOutputStream.computeUInt32Size(13, this.propType_);
+                size2 += CodedOutputStream.computeUInt32Size(12, this.propType_);
             }
             int size3 = size2 + this.unknownFields.getSerializedSize();
             this.memoizedSize = size3;
@@ -196,7 +196,7 @@ public final class PlayerPropChangeNotifyOuterClass {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
             }
-            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 4)) + getPropDelta())) + 13)) + getPropType())) + this.unknownFields.hashCode();
+            int hash = (29 * ((53 * ((37 * ((53 * ((37 * ((19 * 41) + getDescriptor().hashCode())) + 8)) + getPropDelta())) + 12)) + getPropType())) + this.unknownFields.hashCode();
             this.memoizedHashCode = hash;
             return hash;
         }

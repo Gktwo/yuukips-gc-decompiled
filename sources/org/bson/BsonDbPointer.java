@@ -7,7 +7,7 @@ public class BsonDbPointer extends BsonValue {
     private final String namespace;
 
     /* renamed from: id */
-    private final ObjectId f3114id;
+    private final ObjectId f3078id;
 
     public BsonDbPointer(String namespace, ObjectId id) {
         if (namespace == null) {
@@ -16,7 +16,7 @@ public class BsonDbPointer extends BsonValue {
             throw new IllegalArgumentException("id can not be null");
         } else {
             this.namespace = namespace;
-            this.f3114id = id;
+            this.f3078id = id;
         }
     }
 
@@ -30,7 +30,7 @@ public class BsonDbPointer extends BsonValue {
     }
 
     public ObjectId getId() {
-        return this.f3114id;
+        return this.f3078id;
     }
 
     public boolean equals(Object o) {
@@ -41,17 +41,17 @@ public class BsonDbPointer extends BsonValue {
             return false;
         }
         BsonDbPointer dbPointer = (BsonDbPointer) o;
-        if (this.f3114id.equals(dbPointer.f3114id) && this.namespace.equals(dbPointer.namespace)) {
+        if (this.f3078id.equals(dbPointer.f3078id) && this.namespace.equals(dbPointer.namespace)) {
             return true;
         }
         return false;
     }
 
     public int hashCode() {
-        return (31 * this.namespace.hashCode()) + this.f3114id.hashCode();
+        return (31 * this.namespace.hashCode()) + this.f3078id.hashCode();
     }
 
     public String toString() {
-        return "BsonDbPointer{namespace='" + this.namespace + "', id=" + this.f3114id + '}';
+        return "BsonDbPointer{namespace='" + this.namespace + "', id=" + this.f3078id + '}';
     }
 }

@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 
 /* loaded from: grasscutter.jar:emu/grasscutter/net/proto/PropPairOuterClass.class */
 public final class PropPairOuterClass {
-    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000ePropPair.proto\u001a\u000fPropValue.proto\"8\n\bPropPair\u0012\f\n\u0004type\u0018\u0001 \u0001(\r\u0012\u001e\n\nprop_value\u0018\u0002 \u0001(\u000b2\n.PropValueB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PropValueOuterClass.getDescriptor()});
+    private static Descriptors.FileDescriptor descriptor = Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(new String[]{"\n\u000ePropPair.proto\u001a\u000fPropValue.proto\"7\n\bPropPair\u0012\f\n\u0004type\u0018\u0001 \u0001(\r\u0012\u001d\n\tpropValue\u0018\u0002 \u0001(\u000b2\n.PropValueB\u001b\n\u0019emu.grasscutter.net.protob\u0006proto3"}, new Descriptors.FileDescriptor[]{PropValueOuterClass.getDescriptor()});
     private static final Descriptors.Descriptor internal_static_PropPair_descriptor = getDescriptor().getMessageTypes().get(0);
     private static final GeneratedMessageV3.FieldAccessorTable internal_static_PropPair_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(internal_static_PropPair_descriptor, new String[]{"Type", "PropValue"});
 
@@ -51,7 +51,7 @@ public final class PropPairOuterClass {
         private static final long serialVersionUID = 0;
         public static final int TYPE_FIELD_NUMBER = 1;
         private int type_;
-        public static final int PROP_VALUE_FIELD_NUMBER = 2;
+        public static final int PROPVALUE_FIELD_NUMBER = 2;
         private PropValueOuterClass.PropValue propValue_;
         private byte memoizedIsInitialized;
         private static final PropPair DEFAULT_INSTANCE = new PropPair();
